@@ -7757,7 +7757,57 @@
     "src": "eco_js",
     "eco": "E07",
     "moves": "1. c4 e6 2. g3 d5 3. Bg2 Nf6 4. Nf3 Be7 5. d4 O-O 6. Nc3 c6 7. O-O Nbd7 8. Qd3",
-    "name": "Catalan Opening: Closed Variation, Botvinnik Variation"
+    "name": "Catalan Opening: Closed Variation, Botvinnik Variation",
+    "analysis_json": {
+      "description": "The Botvinnik Variation of the Closed Catalan is a sophisticated and highly strategic system where White aims for long-term positional pressure. By placing the queen on d3, White prepares the central e4-pawn break while keeping the queen flexible and safe from exchanges. This opening leads to a complex, maneuvering game, ideal for patient players who excel at understanding pawn structures, accumulating small advantages, and executing long-term plans.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed Game",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Long-term Pressure",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The Catalan Bishop's pressure",
+        "Preparing the e4 pawn break",
+        "Queenside expansion vs. Central control",
+        "The problem of Black's light-squared bishop"
+      ],
+      "common_plans": [
+        "White's primary plan is to prepare and execute the e4 pawn push to seize central space and activate the g2 bishop.",
+        "Black often seeks counterplay on the queenside with the ...b5 pawn break, aiming to free the c8 bishop and challenge White's structure.",
+        "White can play for queenside pressure with moves like b3 and Bb2, reinforcing the long diagonal and controlling the c4 square.",
+        "Black aims to complete development, neutralize White's pressure, and if possible, prepare a central break of their own with ...e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:10:44.392Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2NQ1NP1/PP2PPBP/R1B2RK1 b - - 1 8": {
     "src": "eco_tsv",
@@ -7771,6 +7821,56 @@
       "chessGraph": "Botvinnik Variation, Catalan",
       "chronos": "Catalan: closed, Botvinnik variation",
       "icsbot": "Botvinnik Variation, Catalan "
+    },
+    "analysis_json": {
+      "description": "The Botvinnik Variation of the Closed Catalan is a sophisticated and strategic system where White prepares the central e4 push with the subtle 8. Qd3. This setup leads to a complex, maneuvering game focused on central control and the long-term power of White's fianchettoed bishop versus Black's solid, resilient structure. It's an ideal choice for strategic players who enjoy building pressure slowly and understanding deep positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Pin",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Struggle for the center (e4 vs. c5 breaks)",
+        "The power of the Catalan bishop",
+        "Queenside pressure vs. central expansion",
+        "Prophylactic thinking"
+      ],
+      "common_plans": [
+        "White's primary plan is to achieve the e3-e4 pawn break, using the Qd3 to support this advance and control the center.",
+        "Black aims to neutralize the g2 bishop, often by preparing the ...c5 pawn break to challenge White's central grip and create queenside counterplay.",
+        "White often reroutes the c3-knight (e.g., to e2) to further support the e4 push and prepare for central skirmishes.",
+        "Black can develop a plan based on queenside expansion with ...a6 and ...b5, aiming to create weaknesses in White's camp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:10:59.246Z"
     }
   },
   "r1bq1rk1/pppnbppp/4pn2/3p4/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 b - - 0 7": {
@@ -7778,56 +7878,457 @@
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. b3",
     "name": "Catalan: Closed, 6...Nbd7 7.b3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 7.b3 is a highly strategic and solid system for White, aiming to exert long-term pressure on the long diagonal with the powerful fianchettoed bishop. The game unfolds as a slow, maneuvering battle where understanding pawn structures and piece placement is paramount. This opening is perfect for patient, positional players who enjoy building up small advantages and squeezing their opponents in a sophisticated, controlled manner.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed",
+        "System-based",
+        "Quiet"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Pressure",
+        "Initiative",
+        "Discovered Attack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Long-Diagonal Pressure",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Long-Diagonal Pressure",
+        "Queenside Expansion",
+        "Central Control",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Complete the fianchetto with Bb2, control the center, and prepare the e3-e4 pawn break to unleash the light-squared bishop.",
+        "White: Expand on the queenside with moves like a4 and Rb1, putting pressure on Black's structure and gaining space.",
+        "Black: Challenge White's central grip with the ...c7-c5 pawn break, aiming to liquidate the center or create queenside counterplay.",
+        "Black: Adopt a solid setup with ...b6 and ...Bb7, neutralizing White's long-diagonal pressure and completing development."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:11:21.125Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 w - - 0 8": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. b3 c6",
     "name": "Catalan: Closed, 6...Nbd7 7.b3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "This variation of the Closed Catalan is a highly strategic and solid system where both sides engage in a patient battle of maneuvers. White's 7.b3 reinforces the c4-pawn and prepares to develop the light-squared bishop to b2, bolstering the long diagonal pressure characteristic of the Catalan. Black's setup with ...Nbd7 and ...c6 creates a resilient pawn triangle, aiming to neutralize White's initiative and prepare for a timely central or queenside counter-thrust. The resulting game is ideal for strategic players who excel at long-term planning, understanding pawn structures, and accumulating small, lasting advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed Game",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Long-term Pressure",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the long diagonal",
+        "The fight for the center",
+        "Queenside pawn breaks (...c5 or ...b5)",
+        "Prophylactic maneuvering"
+      ],
+      "common_plans": [
+        "White: Complete development with Nc3 and Bb2, control the center, and use the Bg2 to create long-term pressure. Often, White will prepare a central push with e4 or expand on the queenside with a4.",
+        "Black: Solidify the position, complete development with ...b6 and ...Bb7 (the 'fianchetto defense'), and prepare the liberating ...c5 pawn break to challenge White's central control and open lines for their pieces.",
+        "White: Reposition the knight from f3 (e.g., to e1-d3) to support the center and prepare for the e4 push.",
+        "Black: Seek counterplay by targeting White's c4 pawn and challenging control of the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:11:38.737Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/BP3NP1/P3PPBP/RN1Q1RK1 b - - 1 8": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. b3 c6 8. Ba3",
     "name": "Catalan: Closed, 6...Nbd7 7.b3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "This variation of the Closed Catalan is a highly strategic and nuanced battle. White's key idea with 8.Ba3 is to immediately challenge and trade off Black's crucial light-squared bishop, aiming to create long-term weaknesses on the light squares around the Black king. This opening is perfect for patient, positional players who enjoy executing long-term plans and exploiting subtle positional advantages, rather than engaging in immediate tactical fireworks.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed Game",
+        "System-based",
+        "Long-term Strategy"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Light-Square Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Trading a Key Defender",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Trading a key defender (Be7)",
+        "Control of the light squares",
+        "The power of the Catalan Bishop (Bg2)",
+        "Prophylaxis against Black's plans"
+      ],
+      "common_plans": [
+        "White: Trade on e7 (Bxe7), then use the g2 bishop and knights to pressure the weakened light squares (f6, h6). Prepare a central advance with e4.",
+        "Black: Recapture on e7 (often with the knight) to keep the position solid, complete development, and prepare counterplay with a ...b5 or ...e5 pawn break.",
+        "White: Control the center and queenside, slowly building pressure while restricting Black's counterplay.",
+        "Black: If White delays the trade, Black may play ...b5 to challenge White's queenside control and create space for their pieces."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:11:57.482Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/1P3NP1/PB2PPBP/RN1Q1RK1 b - - 1 8": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. b3 c6 8. Bb2",
     "name": "Catalan: Closed, 6...Nbd7 7.b3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 7.b3 is a highly strategic and subtle system where White aims for long-term positional pressure. By reinforcing the fianchettoed bishop with Bb2, White solidifies control over the long diagonal and the crucial e5-square, patiently waiting to exploit any inaccuracies. This opening is perfect for strategic players who enjoy maneuvering, accumulating small advantages, and squeezing their opponents in a slow-paced, sophisticated game.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Slow-paced"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Pressure",
+        "Initiative",
+        "Constriction"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Long-term Pressure",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The Catalan Bishop",
+        "Control of the e5-square",
+        "The 'Bad' Bishop Problem for Black",
+        "Queenside Pressure"
+      ],
+      "common_plans": [
+        "White: Prepare the e2-e4 pawn break to open the position for the g2-bishop, often preceded by moves like Qc2 and Rd1.",
+        "Black: Consolidate, prepare the liberating ...e6-e5 pawn break, and solve the problem of the c8-bishop, typically with ...b6 and ...Bb7.",
+        "White: Exert pressure on the queenside, sometimes with a minority attack using the a-pawn.",
+        "Black: Seek counterplay by challenging White's center or expanding on the queenside with ...b5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:12:17.732Z"
+    }
   },
   "r1bq1rk1/pppnbppp/4pn2/3p4/2PP4/5NP1/PP1NPPBP/R1BQ1RK1 b - - 7 7": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. Nbd2",
     "name": "Catalan: Closed, 6...Nbd7 7.Nbd2",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 7.Nbd2 is a highly strategic and nuanced system, epitomizing a battle of long-term plans over immediate tactical clashes. White aims to leverage the subtle, persistent pressure of the fianchettoed bishop on the long diagonal, while Black builds a solid, resilient fortress, waiting for the right moment to challenge White's central control. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding pawn structures, and slowly building an advantage.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed",
+        "System-based",
+        "Maneuvering",
+        "Quiet"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage",
+        "Long-term Pressure"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the long diagonal (h1-a8)",
+        "The central pawn break (e4 for White, c5 for Black)",
+        "Queenside expansion and minority attack",
+        "Prophylaxis and piece maneuvering"
+      ],
+      "common_plans": [
+        "White's primary plan is to prepare and execute the e2-e4 pawn break, often supported by Qc2 and Rd1, to open the center for the powerful Bg2.",
+        "White often expands on the queenside with moves like b3, a3, and Rb1, preparing a minority attack with b4-b5 to create weaknesses in Black's pawn structure.",
+        "Black's main counter-plan involves the ...c7-c5 pawn break, aiming to liquidate White's central d4-pawn, relieve pressure, and activate the queenside pieces.",
+        "Black will often maneuver the b8-knight to a more active square, such as f8-e6, to bolster the center and prepare to challenge White's control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:12:36.694Z"
+    }
   },
   "r1bq1rk1/pppnbppp/4pn2/3p4/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 b - - 7 7": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. Nc3",
     "name": "Catalan: Closed, 6...Nbd7 7.Nc3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 7.Nc3 is a classical and highly strategic system where White aims to leverage the long-range power of the fianchettoed bishop on g2 to create lasting pressure on Black's center and queenside. The game is characterized by deep maneuvering and a focus on pawn structure, making it ideal for patient, positional players who enjoy accumulating small advantages and understanding long-term plans. Black's setup is extremely solid, aiming to complete development before challenging White's central ambitions.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Game",
+        "Long-term Strategy"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the long diagonal",
+        "Central tension (d4 vs d5)",
+        "Queenside pressure",
+        "Pawn break e2-e4"
+      ],
+      "common_plans": [
+        "White: Prepare the e2-e4 pawn break, pressure the c-file after ...dxc4, maneuver the Nc3 to support the center, and exploit the power of the Bg2.",
+        "Black: Solidify the center with ...c6, resolve the tension with ...dxc4 followed by ...b5 to create a queenside pawn majority, or challenge White's center with a timely ...c5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:12:52.907Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 8": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. Nc3 c6",
     "name": "Catalan: Closed, 6...Nbd7 7.Nc3 c6",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 7...c6 is one of Black's most solid and reliable responses, creating a resilient central pawn triangle. The resulting middlegames are deeply strategic, revolving around White's long-term pressure from the g2-bishop versus Black's solid structure and counter-attacking potential on the queenside. This opening is perfect for patient, strategic players who enjoy maneuvering and accumulating small advantages rather than engaging in immediate tactical skirmishes.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the long diagonal",
+        "Queenside expansion vs. Central control",
+        "The problem of the light-squared bishop",
+        "Timing of pawn breaks"
+      ],
+      "common_plans": [
+        "White: Exert pressure with the g2-bishop, prepare the e4 pawn break, and control the center. After ...dxc4, White aims to exploit the open lines and pressure Black's queenside.",
+        "Black: Maintain a solid central fortress with the c6-d5-e6 triangle, prepare queenside expansion with ...a6 and ...b5, and carefully time the ...dxc4 capture to create dynamic counterplay.",
+        "Black: A key plan involves solving the development of the c8-bishop, often via ...b6-Ba6 or by preparing a central break with ...e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:13:16.121Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/1PN2NP1/P3PPBP/R1BQ1RK1 b - - 0 8": {
     "src": "scid",
     "eco": "E07",
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O Nbd7 7. Nc3 c6 8. b3",
     "name": "Catalan: Closed, 6...Nbd7 7.Nc3 c6 8.b3",
-    "scid": "E07"
+    "scid": "E07",
+    "analysis_json": {
+      "description": "The Closed Catalan with 8.b3 is a highly strategic and nuanced system where White aims to build slow, long-term pressure based on the powerful fianchettoed bishop on g2. Black adopts a super-solid setup with the c6-d5 pawn chain, leading to a complex maneuvering game where understanding pawn structures and piece placement is paramount. This opening is perfect for patient, strategic players who excel at accumulating small advantages and converting them in the long run.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed Game",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage",
+        "Long-term Pressure"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The power of the Catalan Bishop",
+        "Pressure on the long diagonal",
+        "Queenside Expansion vs. Central Breaks",
+        "Prophylactic Play"
+      ],
+      "common_plans": [
+        "White: Play Qd2 followed by Bb2 to increase pressure on the long diagonal and complete development. The main plan is to prepare and execute the e3-e4 pawn break.",
+        "Black: Solidify the position with moves like ...a6, preparing the ...b5 counter-thrust to gain queenside space and challenge White's control.",
+        "White: Use the a-pawn (a4-a5) to cramp Black's queenside and fix a potential weakness on b5 or b7.",
+        "Black: Seek counterplay by preparing the ...e5 pawn break to challenge White's center, or by methodically trading pieces to relieve White's positional pressure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-24T23:13:37.552Z"
+    }
   },
   "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/1QN2NP1/PP2PPBP/R1B2RK1 b - - 1 8": {
     "src": "scid",

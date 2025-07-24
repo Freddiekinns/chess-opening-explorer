@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import '../styles/index.css'
 
 // Setup for tests
 global.ResizeObserver = class ResizeObserver {

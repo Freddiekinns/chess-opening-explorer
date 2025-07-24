@@ -1,12 +1,49 @@
-/* CSS Variables from original design - preserved exactly */
+/* PRD-F14 Design System Foundation - Global CSS Custom Properties */
 :root {
-  --bg-dark: #1a1a1a;
-  --panel-dark: #282828;
-  --content-dark: #3a3a3a;
-  --text-primary: #e0e0e0;
-  --text-secondary: #999999;
-  --accent-blue: #007bff;
-  --accent-green: #28a745;
+  /* Color Palette */
+  --bg-main: #121212;
+  --bg-surface: #1E1E1E;
+  --brand-orange: #E85D04;
+  --brand-orange-hover: #F48C06;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --border-color: #333333;
+
+  /* Typography Scale */
+  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2.25rem;
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-button: 1rem;
+
+  /* Font Weights */
+  --font-weight-h1: 700;
+  --font-weight-h2: 600;
+  --font-weight-h3: 600;
+  --font-weight-body: 400;
+  --font-weight-button: 500;
+
+  /* Spacing System */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 4rem;
+
+  /* Border Radius System */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+
+  /* Legacy variables for backwards compatibility */
+  --bg-dark: var(--bg-main);
+  --panel-dark: var(--bg-surface);
+  --content-dark: var(--bg-surface);
+  --accent-blue: var(--brand-orange);
+  --accent-green: var(--brand-orange);
 }
 
 /* Global styles */
@@ -17,40 +54,105 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-dark);
+  font-family: var(--font-family-primary);
+  background-color: var(--bg-main);
   color: var(--text-primary);
   line-height: 1.6;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-  font-weight: 600;
+/* Typography System Implementation */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
+  margin-bottom: var(--space-md);
+}
+
+h4, h5, h6 {
+  font-weight: var(--font-weight-h3);
+  margin-bottom: var(--space-md);
+}
+
+p {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  margin-bottom: var(--space-md);
+}
+
+/* Layout Components */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.global-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+  padding: var(--space-md) 0;
+}
+
+/* Interactive Components */
+.pill {
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-medium);
+  border: none;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pill.active {
+  background-color: var(--brand-orange);
+  color: var(--text-primary);
+}
+
+.pill:hover:not(.active) {
+  background-color: var(--border-color);
 }
 
 a {
-  color: var(--accent-blue);
+  color: var(--brand-orange);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: lighten(var(--accent-blue), 10%);
+  color: var(--brand-orange-hover);
 }
 
 /* Form elements */
 input, select, textarea {
-  background-color: var(--content-dark);
+  background-color: var(--bg-surface);
   color: var(--text-primary);
-  border: 1px solid var(--content-dark);
-  padding: 0.75rem;
-  border-radius: 6px;
-  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-body);
+  font-family: var(--font-family-primary);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 

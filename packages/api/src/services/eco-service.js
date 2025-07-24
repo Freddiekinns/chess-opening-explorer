@@ -7,7 +7,7 @@ class ECOService {
     // Handle different working directories: 
     // - From root directory (tests): 'data/eco'
     // - From packages/api directory (nodemon): '../../data/eco'
-    const isRunningFromRoot = process.cwd().endsWith('chess-trainer');
+    const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
     this.dataDir = isRunningFromRoot 
       ? path.join(process.cwd(), 'data/eco')
       : path.join(process.cwd(), '../../data/eco');

@@ -1,0 +1,293 @@
+.opening-trainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.trainer-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.trainer-header h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.trainer-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.eco-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eco-selector label {
+  font-weight: 500;
+  color: #34495e;
+}
+
+.eco-selector select {
+  padding: 8px 12px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.eco-selector select:hover {
+  border-color: #3498db;
+}
+
+.eco-selector select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: #3498db;
+  color: white;
+}
+
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.trainer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.board-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chessboard-container {
+  margin-bottom: 20px;
+}
+
+.move-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.opening-info {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  min-height: 400px;
+}
+
+.opening-header {
+  margin-bottom: 20px;
+}
+
+.opening-header h2 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+}
+
+.eco-code {
+  background-color: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.opening-details {
+  margin-bottom: 25px;
+}
+
+.opening-details p {
+  margin: 8px 0;
+  color: #34495e;
+}
+
+.aliases {
+  margin-top: 15px;
+}
+
+.aliases ul {
+  margin: 8px 0 0 20px;
+  padding: 0;
+}
+
+.aliases li {
+  margin: 4px 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.moves-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+}
+
+.moves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.moves-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.moves-display {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.moves-display p {
+  margin: 10px 0;
+  font-family: 'Courier New', monospace;
+  color: #34495e;
+}
+
+.no-opening {
+  text-align: center;
+  color: #7f8c8d;
+  margin-top: 50px;
+}
+
+.no-opening p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .trainer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .trainer-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .eco-selector {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .chessboard-container {
+    transform: scale(0.8);
+  }
+  
+  .move-controls {
+    transform: scale(0.9);
+  }
+  
+  .opening-info {
+    padding: 20px;
+  }
+  
+  .moves-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .opening-trainer {
+    padding: 15px;
+  }
+  
+  .trainer-header h1 {
+    font-size: 2rem;
+  }
+  
+  .chessboard-container {
+    transform: scale(0.7);
+  }
+  
+  .move-controls {
+    transform: scale(0.8);
+  }
+  
+  .opening-info {
+    padding: 15px;
+  }
+  
+  .opening-header h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,152 @@
+/* PopularityIndicator Component Styles */
+
+.popularity-indicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Badge Variant */
+.popularity-indicator.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
+}
+
+.popularity-indicator.badge .popularity-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.popularity-indicator.badge .popularity-score {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Bar Variant */
+.popularity-indicator.bar {
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.popularity-indicator.bar .popularity-label {
+  font-size: 0.75rem;
+  align-self: flex-start;
+}
+
+.popularity-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.popularity-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Detailed Variant */
+.popularity-indicator.detailed {
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popularity-indicator.detailed .popularity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.popularity-indicator.detailed .popularity-bar-container {
+  height: 8px;
+}
+
+/* Color Themes */
+.popularity-indicator.very-popular {
+  color: #45b7d1;
+  border-color: rgba(69, 183, 209, 0.3);
+}
+
+.popularity-indicator.very-popular .popularity-bar-fill {
+  background: linear-gradient(90deg, #45b7d1, #4ecdc4);
+}
+
+.popularity-indicator.popular {
+  color: #4ecdc4;
+  border-color: rgba(78, 205, 196, 0.3);
+}
+
+.popularity-indicator.popular .popularity-bar-fill {
+  background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+}
+
+.popularity-indicator.common {
+  color: #ffdd00;
+  border-color: rgba(255, 221, 0, 0.3);
+}
+
+.popularity-indicator.common .popularity-bar-fill {
+  background: linear-gradient(90deg, #ffdd00, #ffa500);
+}
+
+.popularity-indicator.uncommon {
+  color: #ffa500;
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.popularity-indicator.uncommon .popularity-bar-fill {
+  background: linear-gradient(90deg, #ffa500, #ff6b6b);
+}
+
+.popularity-indicator.rare {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+.popularity-indicator.rare .popularity-bar-fill {
+  background: linear-gradient(90deg, #ff6b6b, #666666);
+}
+
+.popularity-indicator.unknown {
+  color: #666666;
+  border-color: rgba(102, 102, 102, 0.3);
+}
+
+.popularity-indicator.unknown .popularity-bar-fill {
+  background: #666666;
+}
+
+/* Hover Effects */
+.popularity-indicator.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .popularity-indicator.badge {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+  
+  .popularity-indicator.badge .popularity-label {
+    font-size: 0.7rem;
+  }
+  
+  .popularity-indicator.badge .popularity-score {
+    font-size: 0.75rem;
+  }
+}

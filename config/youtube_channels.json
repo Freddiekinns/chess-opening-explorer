@@ -1,0 +1,116 @@
+{
+  "trusted_channels": [
+    {
+      "name": "Saint Louis Chess Club",
+      "channel_id": "UCM-ONC2bCHytG2mYtKDmIeA",
+      "handle": "@STLChessClub",
+      "priority": 1,
+      "boost_factor": 1.5,
+      "specialties": ["opening_theory", "grandmaster_analysis"],
+      "focus_areas": ["classical", "rapid", "blitz", "educational"],
+      "quality_tier": "premium",
+      "min_views": 1000
+    },
+    {
+      "name": "Hanging Pawns",
+      "channel_id": "UCkJdvwRC-oGPhRHW_XPNokg",
+      "priority": 2,
+      "boost_factor": 1.3,
+      "specialties": ["openings", "middlegame", "endgame"],
+      "focus_areas": ["openings", "middlegame", "endgame"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "Daniel Naroditsky",
+      "channel_id": "UCHP9CdeguNUI-_nBv_UXBhw",
+      "focus_areas": ["speedrun", "educational", "analysis"],
+      "quality_tier": "premium",
+      "min_views": 1000
+    },
+    {
+      "name": "Chess.com",
+      "channel_id": "UC5kS0l76kC0xOzMPtOmSFGw",
+      "handle": "@chesscom",
+      "focus_areas": ["tournaments", "educational", "entertainment"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "Chessbrah",
+      "channel_id": "UCvXxdkt1d8Uu08NAQP2IUTw",
+      "handle": "@chessbrah",
+      "focus_areas": ["streaming", "educational", "entertainment"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "GingerGM",
+      "channel_id": "UClV9nqHHcsrm2krkFDPPr-g",
+      "handle": "@GingerGM",
+      "focus_areas": ["openings", "analysis", "educational"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "Chess Network",
+      "channel_id": "UCCDOQrpqLqKVcTCKzqarxLg",
+      "handle": "@ChessNetwork",
+      "focus_areas": ["beginner", "intermediate", "tactics"],
+      "quality_tier": "premium",
+      "min_views": 1000
+    },
+    {
+      "name": "Ben Finegold",
+      "channel_id": "UC6EnFbK-P5q0zeaqI5yobKg",
+      "handle": "@GMBenjaminFinegold",
+      "focus_areas": ["lectures", "educational", "humor"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "Eric Rosen",
+      "channel_id": "UCXy10-NEFGxQ3b4NVrzHw1Q",
+      "handle": "@eric-rosen",
+      "focus_areas": ["openings", "tactics", "educational"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "GothamChess",
+      "channel_id": "UCQHX6ViZmPsWiYSFAyS0a3Q",
+      "handle": "@GothamChess",
+      "focus_areas": ["entertainment", "analysis", "news"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    },
+    {
+      "name": "agadmator",
+      "channel_id": "UCL5YbN5WLFD8dLIegT5QAbA",
+      "handle": "@agadmator",
+      "focus_areas": ["game analysis", "historical", "educational"],
+      "quality_tier": "standard",
+      "min_views": 1000
+    }
+  ],
+  "search_parameters": {
+    "max_results_per_opening": 2,
+    "min_duration_seconds": 180,
+    "max_duration_seconds": 3600,
+    "min_view_count": 1000,
+    "max_age_years": 5
+  },
+  "quality_thresholds": {
+    "allowlist_min_views": 1000,
+    "allowlist_min_subscribers": 1000,
+    "non_allowlist_min_views": 50000,
+    "non_allowlist_min_subscribers": 100000,
+    "non_allowlist_min_like_ratio": 0.95,
+    "max_external_content_percentage": 10
+  },
+  "search_strategy": {
+    "phase_1": "allowlist_primary",
+    "phase_2": "high_quality_external",
+    "phase_3": "alias_aware_filtering"
+  }
+}

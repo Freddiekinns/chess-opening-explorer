@@ -1,0 +1,1757 @@
+/* ==========================================================================
+   DETAIL PAGE SPECIFIC STYLES (detail.html) - IMPROVED VERSION
+   ========================================================================== */
+
+:root {
+    /* Updated color scheme for improved design */
+    --bg-primary-improved: #121212;
+    --bg-secondary-improved: #1e1e1e;
+    --bg-tertiary-improved: #2a2a2a;
+    --panel-dark: #282828;
+    --content-dark: #3a3a3a;
+    --text-primary-improved: #ffffff;
+    --text-secondary-improved: #b3b3b3;
+    --text-muted: #888888;
+    --accent-orange-improved: #ff6b35;
+    --accent-blue: #007bff;
+    --accent-green: #28a745;
+    --tag-orange: #EF6C00;
+    --tag-red: #C62828;
+    --border-color: #444;
+    --border-light: #555;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* Stats colors */
+    --stats-white: #f8f9fa;
+    --stats-draw: #6c757d;
+    --stats-black: #343a40;
+}
+
+/* Back to Search button styling */
+.back-to-search {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-right: 20px;
+    color: var(--text-primary-improved);
+    text-decoration: none;
+    background: var(--bg-secondary-improved);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.back-to-search:hover {
+    background: var(--bg-tertiary-improved);
+    color: var(--accent-orange-improved);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Improved Opening Header */
+.opening-header-improved {
+    background: var(--bg-secondary-improved);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.title-box h1 {
+    color: var(--text-primary-improved);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.opening-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.eco-tag-improved {
+    background: var(--accent-orange-improved);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tags-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.style-tag-improved {
+    background: var(--bg-tertiary-improved);
+    color: var(--text-secondary-improved);
+    padding: 4px 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Improved Content Layout */
+.content-layout-improved {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    margin: 20px 0;
+}
+
+.learning-path-improved {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fact-sheet-improved {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Improved Panel Styling */
+.content-panel-improved {
+    background: var(--bg-secondary-improved);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.panel-header-improved {
+    color: var(--text-primary-improved);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-orange-improved);
+}
+
+.panel-text-improved {
+    color: var(--text-secondary-improved);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+}
+
+/* Improved Board Container */
+.board-container-improved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.chessboard-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+/* Board controls below chessboard */
+.board-controls-below {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.control-button-improved {
+    background: var(--bg-tertiary-improved);
+    color: var(--text-primary-improved);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.control-button-improved:hover:not(:disabled) {
+    background: var(--accent-orange-improved);
+    border-color: var(--accent-orange-improved);
+    transform: translateY(-1px);
+}
+
+.control-button-improved:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Improved Common Plans Section */
+.common-plans-section {
+    background: var(--bg-secondary-improved);
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.plans-for-white h3,
+.plans-for-black h3 {
+    color: var(--text-primary-improved);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-list li {
+    color: var(--text-secondary-improved);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.plan-list li::before {
+    content: "→";
+    color: var(--accent-orange-improved);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Improved Statistics Panel */
+.stats-panel-improved {
+    background: var(--bg-secondary-improved);
+}
+
+.stats-header-improved {
+    color: var(--text-primary-improved);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+}
+
+.stats-bar-visual {
+    display: flex;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.stats-white-section {
+    background: var(--stats-white);
+    transition: width 0.3s ease;
+}
+
+.stats-draw-section {
+    background: var(--stats-draw);
+    transition: width 0.3s ease;
+}
+
+.stats-black-section {
+    background: var(--stats-black);
+    transition: width 0.3s ease;
+}
+
+.stats-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Video Carousel Placeholder */
+.video-carousel-placeholder {
+    background: var(--bg-secondary-improved);
+}
+
+.carousel-placeholder-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.placeholder-thumbnails {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.placeholder-thumb {
+    width: 120px;
+    height: 68px;
+    background: var(--bg-tertiary-improved);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    position: relative;
+}
+
+.placeholder-thumb::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-layout-improved {
+        grid-template-columns: 1fr 300px;
+        gap: 16px;
+    }
+    
+    .title-box h1 {
+        font-size: 1.6rem;
+    }
+    
+    .plans-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-layout-improved {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .opening-header-improved {
+        padding: 16px;
+        margin: 16px 0;
+    }
+    
+    .title-box h1 {
+        font-size: 1.4rem;
+    }
+    
+    .opening-meta {
+        gap: 8px;
+    }
+    
+    .content-panel-improved {
+        padding: 16px;
+    }
+    
+    .panel-header-improved {
+        font-size: 1.2rem;
+    }
+    
+    .board-controls-below {
+        gap: 6px;
+    }
+    
+    .control-button-improved {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 70px;
+    }
+    
+    .placeholder-thumbnails {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .placeholder-thumb {
+        width: 200px;
+        height: 112px;
+    }
+    
+    .back-to-search {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-page-body {
+        padding: 0 8px;
+    }
+    
+    .opening-header-improved {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .title-box h1 {
+        font-size: 1.2rem;
+    }
+    
+    .content-panel-improved {
+        padding: 12px;
+    }
+    
+    .panel-header-improved {
+        font-size: 1.1rem;
+    }
+    
+    .board-controls-below {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .control-button-improved {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .back-to-search {
+        display: none; /* Hide on very small screens to save space */
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
+}
+
+/* Ensure proper mobile handling for existing styles */
+.detail-page-body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: var(--bg-primary-improved);
+    color: var(--text-primary-improved);
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal bounce on iOS */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-first approach - safe area insets for modern phones */
+@supports (padding: max(0px)) {
+    .detail-page-body {
+        padding-left: max(8px, env(safe-area-inset-left)) !important;
+        padding-right: max(8px, env(safe-area-inset-right)) !important;
+    }
+}
+
+/* Improve touch interactions */
+.detail-page-body * {
+    -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+}
+
+/* Better button touch targets for mobile */
+.detail-page-body button,
+.detail-page-body a,
+.detail-page-body input {
+    touch-action: manipulation; /* Prevents double-tap zoom */
+}
+
+/* Override existing header styles with improved design */
+.detail-page-body .site-header {
+    background-color: var(--bg-secondary-improved);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+.detail-page-body .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 60px;
+}
+
+.detail-page-body .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.detail-page-body .logo-container .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary-improved);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.detail-page-body .logo-container .site-logo:hover {
+    color: var(--accent-orange-improved);
+}
+
+.detail-page-body .search-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.detail-page-body #search-container {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 0; /* Prevent flex items from overflowing */
+}
+
+.detail-page-body #search-input-wrapper {
+    position: relative;
+    display: flex; /* Use flex to align input and suggestions */
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0; /* Prevent flex items from overflowing */
+}
+
+.detail-page-body #search-bar {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--content-dark);
+    color: #ffffff;
+    font-size: 1rem;
+    width: 100%;
+    min-width: 200px; /* Reduced from 300px */
+    box-sizing: border-box;
+}
+
+.detail-page-body #search-bar:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.detail-page-body #search-bar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.detail-page-body #go-button,
+.detail-page-body #surprise-button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.detail-page-body #go-button:disabled,
+.detail-page-body #surprise-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.detail-page-body #go-button {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+    color: white;
+}
+
+.detail-page-body #go-button:hover:not(:disabled) {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.detail-page-body #surprise-button {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: white;
+}
+
+.detail-page-body #surprise-button:hover:not(:disabled) {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Suggestions List Styling for Detail Page */
+.detail-page-body #suggestions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 5px); /* Position below the search bar */
+    background-color: var(--panel-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.detail-page-body #suggestions-list li {
+    padding: 0.75rem 0.9375rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: background-color 0.2s ease;
+}
+
+.detail-page-body #suggestions-list li.active,
+.detail-page-body #suggestions-list li:hover {
+    background-color: var(--content-dark);
+}
+
+.detail-page-body #suggestions-list li strong {
+    color: var(--accent-blue);
+}
+
+/* Ensure text doesn't get cut off on small screens */
+.detail-page-body p,
+.detail-page-body h1,
+.detail-page-body h2,
+.detail-page-body h3,
+.detail-page-body div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Prevent content from ever extending beyond screen width */
+.detail-page-body * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Specific handling for potential overflow elements */
+.detail-page-body pre,
+.detail-page-body code,
+.detail-page-body .chess-notation {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.detail-page-body .page-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 2rem; 
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    padding: 0 1rem; 
+    box-sizing: border-box;
+    min-height: calc(100vh - 140px); /* Account for header */
+    /* Ensure the container never exceeds viewport */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.detail-page-body .main-content { 
+    flex: 2; 
+    min-width: 300px; 
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.detail-page-body .sidebar { 
+    flex: 1; 
+    min-width: 280px; 
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.detail-page-body .content-panel { 
+    background-color: var(--panel-dark); 
+    border-radius: 8px; 
+    padding: 1.5rem; 
+    margin-bottom: 2rem; 
+}
+
+.detail-page-body #opening-header { 
+    margin-bottom: 1rem; 
+}
+
+.detail-page-body #opening-header h1 { 
+    font-size: 2.5rem; 
+    color: #fff; 
+    margin: 0;
+}
+
+.detail-page-body .content-panel h2 { 
+    font-size: 1.5rem; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 0.5rem; 
+    color: var(--text-primary); 
+    margin-top: 0; 
+}
+
+.detail-page-body #tags-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+.detail-page-body .tag { 
+    padding: 0.25rem 0.75rem; 
+    border-radius: 1rem; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: #fff; 
+}
+
+.detail-page-body .tag-mainline { 
+    background-color: var(--accent-blue); 
+}
+
+.detail-page-body .tag-subvariation { 
+    background-color: #6a6a6a; 
+}
+
+.detail-page-body .tag-beginner { 
+    background-color: var(--accent-green); 
+}
+
+.detail-page-body .tag-intermediate { 
+    background-color: var(--tag-orange); 
+}
+
+.detail-page-body .tag-advanced { 
+    background-color: var(--tag-red); 
+}
+
+.detail-page-body .nav-list { 
+    list-style: none; 
+    padding-left: 0; 
+}
+
+.detail-page-body .nav-list li { 
+    padding: 0.5rem 0; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.detail-page-body .nav-list li:last-child { 
+    border-bottom: none; 
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+/* ==========================================================================
+   CHESSBOARD LAYOUT OVERRIDE
+   ========================================================================== */
+#pgn-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    /* Prevent content from going outside viewport */
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.board-column {
+    flex: 2; /* Takes up 2/3 of the width */
+    min-width: 320px;
+    display: flex;
+    flex-direction: column; /* Stacks the board and buttons vertically */
+    gap: 1rem;
+    box-sizing: border-box;
+    /* Ensure proper mobile sizing */
+    max-width: 100%;
+}
+
+.moves-column {
+    flex: 1; /* Takes up 1/3 of the width */
+    min-width: 200px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Ensure the generated inner elements fill our containers */
+#board-goes-here .board,
+#moves-goes-here .moves {
+    width: 100% !important;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+#moves-goes-here .moves {
+    height: 100%;
+    max-height: 450px; /* Give the movelist a max height to scroll */
+    overflow-y: auto;
+}
+
+/* Ensure board container doesn't overflow */
+#board-goes-here {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Responsive chessboard sizing */
+    max-width: 100%;
+    background: transparent; /* Prevent black bars */
+}
+
+/* Improve chessboard responsiveness */
+#board-goes-here * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Desktop and larger screens maintain aspect ratio */
+@media (min-width: 481px) {
+    #board-goes-here {
+        aspect-ratio: 1 / 1; /* Maintain square aspect ratio only on larger screens */
+        min-height: 200px;
+    }
+}
+
+/* ==========================================================================
+   4. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 900px) {
+    .detail-page-body .page-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+    
+    .detail-page-body .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+        align-items: stretch;
+        min-height: auto;
+    }
+    
+    .detail-page-body .logo-container {
+        justify-content: center;
+    }
+    
+    .detail-page-body .search-area {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+    }
+    
+    .detail-page-body #search-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    
+    .detail-page-body #search-bar {
+        min-width: unset;
+        width: 100%;
+    }
+    
+    .detail-page-body #go-button,
+    .detail-page-body #surprise-button {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-page-body .site-header {
+        padding: 0.75rem 1rem;
+        min-height: auto;
+    }
+    
+    .detail-page-body .header-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+        min-height: auto;
+    }
+    
+    .detail-page-body .logo-container .site-logo {
+        font-size: 1.25rem;
+    }
+    
+    .detail-page-body .page-container {
+        margin: 0.75rem auto;
+        padding: 0 1rem;
+        gap: 1rem;
+        min-height: calc(100vh - 120px);
+    }
+    
+    .detail-page-body #opening-header h1 {
+        font-size: 1.6rem;
+        word-break: break-word;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+        padding: 0 0.25rem; /* Add small horizontal padding */
+    }
+    
+    .detail-page-body .content-panel {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        /* Ensure panels don't touch screen edges */
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        width: calc(100% - 0.5rem);
+        box-sizing: border-box;
+    }
+    
+    .detail-page-body .content-panel h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .detail-page-body .content-panel p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Better chessboard mobile layout */
+    #pgn-container {
+        gap: 1rem;
+        padding: 0 0.25rem;
+    }
+    
+    .board-column {
+        min-width: calc(100% - 0.5rem);
+        margin: 0 0.25rem;
+    }
+    
+    .moves-column {
+        min-width: calc(100% - 0.5rem);
+        margin: 0 0.25rem;
+    }
+    
+    /* Ensure chessboard doesn't overflow */
+    #board-goes-here {
+        width: 100%;
+        max-width: calc(100vw - 2rem);
+        overflow: hidden;
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
+}
+
+@media(max-width: 600px) {
+    .detail-page-body .pgn-board-layout {
+        flex-direction: column;
+    }
+    
+    .detail-page-body .site-header {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .detail-page-body .page-container {
+        padding: 0 0.75rem;
+        margin: 0.5rem auto;
+        gap: 0.75rem;
+    }
+    
+    .detail-page-body #opening-header h1 {
+        font-size: 1.4rem;
+        padding: 0 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .detail-page-body .content-panel {
+        padding: 0.75rem;
+        margin-left: 0.125rem;
+        margin-right: 0.125rem;
+        width: calc(100% - 0.25rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    .detail-page-body .content-panel h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .detail-page-body .content-panel p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    /* Compact chessboard for small screens */
+    #pgn-container {
+        padding: 0 0.125rem;
+        gap: 0.75rem;
+    }
+    
+    .board-column,
+    .moves-column {
+        min-width: calc(100% - 0.25rem);
+        margin: 0 0.125rem;
+    }
+    
+    #board-goes-here {
+        max-width: calc(100vw - 1.5rem);
+        padding: 0.25rem;
+        aspect-ratio: unset !important; /* Remove fixed aspect ratio on mobile */
+        min-height: unset !important; /* Remove fixed min-height on mobile */
+        background: transparent !important;
+    }
+    
+    /* Let the inner chessboard component handle sizing */
+    #board-goes-here > div {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .detail-page-body #opening-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .detail-page-body .content-panel {
+        padding: 0.5rem;
+    }
+    
+    .detail-page-body .content-panel h2 {
+        font-size: 1rem;
+    }
+    
+    .detail-page-body .content-panel p {
+        font-size: 0.8rem;
+    }
+    
+    /* Minimum chessboard size for very small screens */
+    .board-column {
+        min-width: 240px;
+    }
+    
+    .moves-column {
+        min-width: 240px;
+    }
+}
+
+/* Very small screens (iPhone SE, old Android phones) */
+@media(max-width: 375px) {
+    /* Force everything to fit on screen */
+    .detail-page-body {
+        padding: 0 4px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .detail-page-body * {
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        box-sizing: border-box !important;
+    }
+    
+    .detail-page-body .site-header {
+        padding: 0.375rem 4px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .detail-page-body .page-container {
+        padding: 0 4px !important;
+        margin: 0.125rem 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 0.5rem !important;
+    }
+    
+    .detail-page-body #opening-header h1 {
+        font-size: 1.1rem !important;
+        padding: 0.125rem 4px !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .detail-page-body .content-panel {
+        padding: 0.5rem 4px !important;
+        margin: 0 0 0.375rem 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .detail-page-body .content-panel h2 {
+        font-size: 0.9rem !important;
+        margin: 0 0 0.375rem 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .detail-page-body .content-panel p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        margin: 0 0 0.375rem 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    /* Search controls for very small screens */
+    .detail-page-body .search-container {
+        padding: 4px 0 !important;
+        margin: 0 !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .detail-page-body .search-container input {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 4px !important;
+        padding: 8px !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    .detail-page-body .search-container .button-group {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+
+    .detail-page-body .search-container button {
+        width: 100% !important;
+        padding: 10px !important;
+        font-size: 14px !important;
+        min-height: 40px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Compact chessboard for very small screens - remove black bars */
+    #board-goes-here {
+        max-width: calc(100vw - 8px) !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: unset !important; /* Remove fixed aspect ratio */
+        min-height: unset !important; /* Remove fixed min-height */
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        background: transparent !important;
+    }
+    
+    /* Ensure the chessboard component fills available space properly */
+    #board-goes-here > div {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important; /* Let the inner component handle aspect ratio */
+        max-width: 100% !important;
+        background: transparent !important;
+    }
+    
+    /* Force react-chessboard to be responsive */
+    #board-goes-here .react-chessboard {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+    }
+    
+    #pgn-container {
+        gap: 0.375rem !important;
+        padding: 0 4px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Force main content and sidebar to stack and not overflow */
+    .detail-page-body .main-content {
+        flex: 1 !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .detail-page-body .sidebar {
+        flex: 1 !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* iPhone 11 and similar screen sizes - Mobile Design Best Practices */
+@media(max-width: 414px) {
+    .detail-page-body .site-header {
+        padding: 0.5rem;
+        min-height: 48px; /* Touch-friendly minimum */
+    }
+    
+    .detail-page-body .logo-container .site-logo {
+        font-size: 1.1rem;
+    }
+    
+    .detail-page-body .page-container {
+        gap: 0.75rem;
+        margin: 0.25rem auto;
+        padding: 0 0.5rem;
+        min-height: calc(100vh - 100px);
+    }
+    
+    .detail-page-body #opening-header h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        word-break: break-word;
+        hyphens: auto; /* Better word breaking */
+        -webkit-hyphens: auto;
+    }
+    
+    .detail-page-body .content-panel {
+        padding: 0.75rem 0.5rem;
+        margin-bottom: 0.5rem;
+        /* Better mobile spacing */
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        border-radius: 6px;
+    }
+    
+    .detail-page-body .content-panel h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    
+    .detail-page-body .content-panel p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        /* Better text spacing for mobile reading */
+        letter-spacing: 0.01em;
+    }
+    
+    .detail-page-body .main-content,
+    .detail-page-body .sidebar {
+        min-width: 100%;
+        flex: none; /* Remove flex to ensure full width */
+    }
+    
+    /* Mobile-optimized chessboard */
+    #pgn-container {
+        gap: 0.5rem;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .board-column,
+    .moves-column {
+        min-width: 100%;
+        margin: 0;
+        width: 100%;
+    }
+    
+    /* Optimal chessboard size for iPhone screens */
+    #board-goes-here {
+        width: 100%;
+        max-width: calc(100vw - 1rem);
+        aspect-ratio: unset !important; /* Remove fixed aspect ratio */
+        min-height: unset !important; /* Remove fixed min-height */
+        background: transparent !important;
+        padding: 0 !important;
+    }
+    
+    /* Let the inner component handle proper sizing */
+    #board-goes-here > div {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+        padding: 0.5rem 0.25rem;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    /* Touch-friendly button spacing */
+    .detail-page-body #go-button,
+    .detail-page-body #surprise-button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        min-height: 44px; /* iOS minimum touch target */
+    }
+    
+    /* Better search input on mobile */
+    .detail-page-body #search-bar {
+        font-size: 16px; /* Prevent zoom on iOS */
+        padding: 0.75rem;
+        min-height: 44px;
+    }
+}
+
+/* ==========================================================================
+   PHASE 2: NEW 70/30 LAYOUT STYLES
+   ========================================================================== */
+
+/* Main Container */
+.detail-page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-height: calc(100vh - 140px); /* Account for header */
+}
+
+/* Content Layout - 70/30 Split */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: start;
+}
+
+/* Learning Path - Main Content 70% */
+.learning-path {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0; /* Prevents flex overflow */
+}
+
+/* Fact Sheet - Sidebar 30% */
+.fact-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+/* Board Section */
+.board-section {
+    background: var(--panel-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.board-section h2 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.board-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Board Column */
+.board-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chessboard-container {
+    background: var(--content-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.board-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.control-button {
+    padding: 0.75rem 1rem;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.control-button:hover:not(:disabled) {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.control-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Moves Column */
+.moves-column {
+    background: var(--content-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.moves-display {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.moves-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.moves-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.move-counter {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.moves-text {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.position-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--content-dark);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.position-info strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.fen-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fen-display-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--panel-dark);
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.fen-display {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    word-break: break-all;
+}
+
+.copy-fen-btn {
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+    min-width: 30px;
+}
+
+.copy-fen-btn:hover {
+    background: #0056b3;
+}
+
+.copy-fen-btn:active {
+    background: #004085;
+}
+
+/* Fact Sheet Components */
+.metadata-panel {
+    background: var(--panel-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.metadata-panel h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.detail-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.detail-tag {
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.eco-tag {
+    background: var(--tag-orange);
+    color: white;
+}
+
+.source-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.opening-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.moves-code {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    margin-top: 0.25rem;
+    word-break: break-all;
+}
+
+.aliases-list {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.alias-item {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.alias-source {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-layout {
+        grid-template-columns: 1fr 320px;
+        gap: 1.5rem;
+    }
+    
+    .detail-page-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .content-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .fact-sheet {
+        position: static;
+        max-height: none;
+        order: 2;
+    }
+    
+    .learning-path {
+        order: 1;
+    }
+    
+    .board-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .board-controls {
+        justify-content: stretch;
+    }
+    
+    .control-button {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-page-container {
+        padding: 0.875rem;
+    }
+    
+    .content-layout {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .learning-path,
+    .fact-sheet {
+        gap: 1rem;
+    }
+    
+    .board-section {
+        padding: 1rem;
+    }
+    
+    .board-layout {
+        gap: 1rem;
+    }
+    
+    .chessboard-container {
+        padding: 0.75rem;
+    }
+    
+    .moves-column {
+        padding: 1rem;
+    }
+    
+    .metadata-panel {
+        padding: 1rem;
+    }
+    
+    .control-button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-page-container {
+        padding: 0.75rem;
+    }
+    
+    .board-section,
+    .moves-column,
+    .metadata-panel {
+        padding: 0.875rem;
+    }
+    
+    .board-section h2 {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+    
+    .moves-text {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+    }
+    
+    .fen-display {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+    
+    .control-button {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+        min-height: 44px;
+    }
+    
+    .detail-tags {
+        gap: 0.375rem;
+    }
+    
+    .detail-tag {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}

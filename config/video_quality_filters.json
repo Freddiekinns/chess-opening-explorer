@@ -1,0 +1,63 @@
+{
+  "trusted_channels": [
+    {
+      "channel_id": "UCM-ONC2bCHytG2mYtKDmIeA",
+      "name": "Saint Louis Chess Club",
+      "priority": 1,
+      "boost_factor": 1.5,
+      "specialties": ["opening_theory", "grandmaster_analysis"]
+    },
+    {
+      "channel_id": "UC5kS0l76kC0xOzMPtOmSFGw",
+      "name": "Chess.com",
+      "priority": 2,
+      "boost_factor": 1.3,
+      "specialties": ["beginner_tutorials", "opening_basics"]
+    },
+    {
+      "channel_id": "UCQHX6ViZmPsWiYSFAyS0a3Q",
+      "name": "GothamChess",
+      "priority": 2,
+      "boost_factor": 1.2,
+      "specialties": ["educational", "entertaining"]
+    },
+    {
+      "channel_id": "UCL5YbN5WLFD8dLIegT5QAbA",
+      "name": "agadmator",
+      "priority": 1,
+      "boost_factor": 1.4,
+      "specialties": ["game_analysis", "historical_games"]
+    }
+  ],
+  "search_parameters": {
+    "max_results_per_opening": 3,
+    "min_duration_seconds": 180,
+    "max_duration_seconds": 3600,
+    "min_view_count": 1000,
+    "max_age_years": 5
+  },
+  "quality_thresholds": {
+    "min_relevance_score": 0.6,
+    "trusted_channel_boost": 1.5,
+    "min_view_count": 1000,
+    "min_like_ratio": 0.8,
+    "max_video_age_days": 1825
+  },
+  "relevance_factors": {
+    "title_weight": 0.4,
+    "description_weight": 0.3,
+    "channel_weight": 0.2,
+    "engagement_weight": 0.1
+  },
+  "content_filters": {
+    "title_keywords": {
+      "required": ["chess", "opening"],
+      "exclude": ["blitz", "bullet", "live"]
+    }
+  },
+  "api_settings": {
+    "rate_limit_requests_per_second": 1,
+    "max_retries": 3,
+    "retry_delay_ms": 1000
+  }
+}

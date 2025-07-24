@@ -1,0 +1,125 @@
+/* CSS Variables from original design - preserved exactly */
+:root {
+  --bg-dark: #1a1a1a;
+  --panel-dark: #282828;
+  --content-dark: #3a3a3a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #999999;
+  --accent-blue: #007bff;
+  --accent-green: #28a745;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: lighten(var(--accent-blue), 10%);
+}
+
+/* Form elements */
+input, select, textarea {
+  background-color: var(--content-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--content-dark);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background-color: #0056b3;
+}
+
+button.success {
+  background-color: var(--accent-green);
+}
+
+button.success:hover {
+  background-color: #1e7e34;
+}
+
+/* Panels */
+.panel {
+  background-color: var(--panel-dark);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--accent-blue);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .panel {
+    padding: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+  }
+}

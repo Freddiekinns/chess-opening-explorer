@@ -1,0 +1,59 @@
+{
+  "name": "@chess-trainer/api",
+  "version": "1.0.0",
+  "description": "Chess Trainer API - Backend server for chess opening training",
+  "main": "src/server.js",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "build": "echo 'No build step required for API'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:integration": "jest --testNamePattern='integration'",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "eco:import": "node src/services/eco-service.js",
+    "eco:update": "node src/services/eco-service.js",
+    "data:import": "node ../../tools/data/import-data.js",
+    "data:export": "node ../../tools/data/export-data.js",
+    "data:validate": "node ../../tools/data/validate-data.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3",
+    "eslint": "^8.56.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./tests/setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  }
+}

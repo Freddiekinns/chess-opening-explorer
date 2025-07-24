@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Trainer - Master Your Openings</title>
+    <meta name="description" content="Learn and practice chess openings with our comprehensive training tool" />
+    <style>
+      /* CSS Variables from original design */
+      :root {
+        --bg-dark: #1a1a1a;
+        --panel-dark: #282828;
+        --content-dark: #3a3a3a;
+        --text-primary: #e0e0e0;
+        --text-secondary: #999999;
+        --accent-blue: #007bff;
+        --accent-green: #28a745;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      /* Loading spinner */
+      .loading-spinner {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: var(--accent-blue);
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

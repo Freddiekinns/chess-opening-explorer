@@ -1,0 +1,192 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & ROOT VARIABLES (Applied to ALL pages)
+   ========================================================================== */
+:root {
+    --bg-dark: #1a1a1a;
+    --panel-dark: #282828;
+    --content-dark: #3a3a3a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #999999;
+    --accent-blue: #007bff;
+    --accent-green: #28a745;
+    --tag-orange: #EF6C00;
+    --tag-red: #C62828;
+    --border-color: #444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at top left, var(--panel-dark), var(--bg-dark) 75%);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   2. LANDING PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+.landing-page-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    gap: 4rem;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-container i {
+    font-size: 3rem;
+    color: var(--tag-orange);
+}
+
+.logo-container h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.hero-search {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Main Content Sections */
+.main-grid,
+.main-stats {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .landing-page {
+        padding: 1rem 0.75rem;
+        gap: 3rem;
+    }
+
+    .logo-container i {
+        font-size: 2.5rem;
+    }
+
+    .logo-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-section {
+        margin-bottom: 1rem;
+    }
+
+    .main-grid,
+    .main-stats {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-page {
+        padding: 1rem 0.5rem;
+        gap: 2rem;
+    }
+
+    .logo-container {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .logo-container i {
+        font-size: 2rem;
+    }
+
+    .logo-container h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* ==========================================================================
+   4. UTILITIES & ANIMATIONS
+   ========================================================================== */
+
+@keyframes spin {
+    from { 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+
+/* Focus management */
+.landing-page *:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

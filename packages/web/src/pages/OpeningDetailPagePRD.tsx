@@ -85,37 +85,42 @@ const OpeningDetailPagePRD: React.FC = () => {
   const [suggestions, setSuggestions] = useState<Opening[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [openingsData, setOpeningsData] = useState<Opening[]>([])
-  const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    if (fen && dataLoaded) {
+    if (fen) {
       loadOpening(decodeURIComponent(fen))
     }
-  }, [fen, dataLoaded])
+  }, [fen])
 
-  // Load all openings data for search
+  // Initialize component without heavy data loading
   useEffect(() => {
-    const loadOpeningsData = async () => {
-      try {
-        const response = await fetch('/api/openings/all')
-        const data = await response.json()
-        
-        if (data.success) {
-          console.log(`Loaded ${data.data.length} openings for search`)
-          setOpeningsData(data.data)
-          setDataLoaded(true)
-        }
-      } catch (error) {
-        console.error('Error loading openings data:', error)
-      }
-    }
-    
-    loadOpeningsData()
+    // Component ready for immediate use
   }, [])
 
-  // Fast client-side search
+  // Load openings data only when search is actually used
   useEffect(() => {
-    if (!dataLoaded || searchTerm.length < 2) {
+    if (searchTerm.length >= 2 && openingsData.length === 0) {
+      const loadOpeningsData = async () => {
+        try {
+          const response = await fetch('/api/openings/all')
+          const data = await response.json()
+          
+          if (data.success) {
+            console.log(`Loaded ${data.data.length} openings for search`)
+            setOpeningsData(data.data)
+          }
+        } catch (error) {
+          console.error('Error loading openings data:', error)
+        }
+      }
+      
+      loadOpeningsData()
+    }
+  }, [searchTerm, openingsData.length])
+
+  // Fast client-side search (only when data is loaded)
+  useEffect(() => {
+    if (searchTerm.length < 2 || openingsData.length === 0) {
       setSuggestions([])
       setShowSuggestions(false)
       return
@@ -124,7 +129,7 @@ const OpeningDetailPagePRD: React.FC = () => {
     const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
     setSuggestions(relevantOpenings.slice(0, 8))
     setShowSuggestions(relevantOpenings.length > 0)
-  }, [searchTerm, openingsData, dataLoaded])
+  }, [searchTerm, openingsData])
 
   const loadOpening = async (fenString: string) => {
     try {
@@ -132,39 +137,25 @@ const OpeningDetailPagePRD: React.FC = () => {
       setError(null)
       
       console.log('Loading opening for FEN:', fenString)
-      console.log('Available openings count:', openingsData.length)
       
-      // First try to find the opening in our loaded data
-      const foundOpening = openingsData.find(opening => opening.fen === fenString)
+      // Use API directly for better performance - no need to load all data
+      const response = await fetch(`/api/openings/fen/${encodeURIComponent(fenString)}`)
+      const data = await response.json()
       
-      if (foundOpening) {
-        console.log('Opening found in local data:', foundOpening)
-        console.log('Analysis JSON:', foundOpening.analysis_json)
-        console.log('Description exists:', !!foundOpening.analysis_json?.description)
-        console.log('Common plans exist:', !!foundOpening.analysis_json?.common_plans)
-        console.log('Common plans count:', foundOpening.analysis_json?.common_plans?.length)
-        setOpening(foundOpening)
-        setupGame(foundOpening)
+      if (data.success) {
+        console.log('Opening data loaded from API:', data.data)
+        console.log('Analysis JSON:', data.data.analysis_json)
+        console.log('Description exists:', !!data.data.analysis_json?.description)
+        console.log('Common plans exist:', !!data.data.analysis_json?.common_plans)
+        console.log('Common plans count:', data.data.analysis_json?.common_plans?.length)
+        setOpening(data.data)
+        setupGame(data.data)
         loadPopularityStats(fenString)
       } else {
-        console.log('Opening not found in local data, trying API fallback...')
-        console.log('Sample of available FENs:', openingsData.slice(0, 3).map(o => o.fen))
-      } else {
-        // Fallback to API call
-        const response = await fetch(`/api/openings/fen/${encodeURIComponent(fenString)}`)
-        const data = await response.json()
-        
-        if (data.success) {
-          console.log('Opening data loaded from API:', data.data)
-          console.log('Analysis JSON:', data.data.analysis_json)
-          setOpening(data.data)
-          setupGame(data.data)
-          loadPopularityStats(fenString)
-        } else {
-          setError('Opening not found')
-        }
+        setError('Opening not found')
       }
     } catch (err) {
+      console.error('Error loading opening:', err)
       setError('Failed to load opening')
     } finally {
       setLoading(false)
@@ -583,6 +574,16 @@ const OpeningDetailPagePRD: React.FC = () => {
             <div className="tab-panels">
               {activeTab === 'overview' && (
                 <div className="tab-panel overview-panel">
+                  <div style={{padding: '20px', background: '#2a2a2a', marginBottom: '20px', borderRadius: '8px', color: 'white'}}>
+                    <h4>Debug Info</h4>
+                    <p>Loading state: {loading ? 'true' : 'false'}</p>
+                    <p>Opening exists: {opening ? 'true' : 'false'}</p>
+                    <p>Error: {error || 'none'}</p>
+                    <p>Opening name: {opening?.name || 'none'}</p>
+                    <p>Analysis JSON exists: {opening?.analysis_json ? 'Yes' : 'No'}</p>
+                    <p>Description exists: {opening?.analysis_json?.description ? 'Yes' : 'No'}</p>
+                  </div>
+                  
                   <div className="opening-description">
                     <h4>Opening Description</h4>
                     {opening?.analysis_json?.description ? (
@@ -596,7 +597,7 @@ const OpeningDetailPagePRD: React.FC = () => {
                     ) : (
                       <div className="description-content">
                         <p>
-                          The {opening?.name} is a chess opening classified under ECO code {opening?.eco}. 
+                          The {opening?.name || 'opening'} is a chess opening classified under ECO code {opening?.eco || 'unknown'}. 
                           This opening has been played in {opening?.games_analyzed?.toLocaleString() || 'many'} games 
                           and offers strategic opportunities for both sides.
                         </p>
@@ -613,59 +614,6 @@ const OpeningDetailPagePRD: React.FC = () => {
                         </div>
                       </div>
                     )}
-                    
-                    {opening?.analysis_json?.tactical_tags && opening.analysis_json.tactical_tags.length > 0 && (
-                      <div className="tactical-tags">
-                        <h5>Tactical Themes</h5>
-                        <div className="tags-grid">
-                          {opening.analysis_json.tactical_tags.map((tag, index) => (
-                            <span key={index} className="tactical-tag">{tag}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {opening?.analysis_json?.positional_tags && opening.analysis_json.positional_tags.length > 0 && (
-                      <div className="positional-tags">
-                        <h5>Positional Themes</h5>
-                        <div className="tags-grid">
-                          {opening.analysis_json.positional_tags.map((tag, index) => (
-                            <span key={index} className="positional-tag">{tag}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {(opening?.analysis_json?.complexity || opening?.analysis?.complexity) && (
-                      <div className="complexity-level">
-                        <h5>Complexity Level</h5>
-                        <span className={`complexity-badge ${(opening.analysis_json?.complexity || opening.analysis?.complexity || '').toLowerCase()}`}>
-                          {opening.analysis_json?.complexity || opening.analysis?.complexity}
-                        </span>
-                      </div>
-                    )}
-                    
-                    {opening?.analysis_json?.strategic_themes && opening.analysis_json.strategic_themes.length > 0 && (
-                      <div className="strategic-themes">
-                        <h5>Strategic Themes</h5>
-                        <ul>
-                          {opening.analysis_json.strategic_themes.map((theme, index) => (
-                            <li key={index}>{theme}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {/* Debug info */}
-                    <div style={{marginTop: '20px', padding: '10px', background: '#333', color: '#fff', fontSize: '12px', borderRadius: '4px'}}>
-                      <strong>Debug Info:</strong> 
-                      <div>Opening name: {opening?.name}</div>
-                      <div>Has analysis: {opening?.analysis ? 'Yes' : 'No'}</div>
-                      <div>Has analysis_json: {opening?.analysis_json ? 'Yes' : 'No'}</div>
-                      <div>Analysis keys: {opening?.analysis ? Object.keys(opening.analysis).join(', ') : 'None'}</div>
-                      <div>Analysis_json keys: {opening?.analysis_json ? Object.keys(opening.analysis_json).join(', ') : 'None'}</div>
-                      <div>Raw opening object keys: {opening ? Object.keys(opening).join(', ') : 'None'}</div>
-                    </div>
                   </div>
                 </div>
               )}
@@ -687,44 +635,30 @@ const OpeningDetailPagePRD: React.FC = () => {
                       </div>
                     ) : (
                       <div className="plans-content">
+                        <p>No specific strategic plans available for this opening.</p>
                         <div className="plan-section">
-                          <h5>🔲 White's Plans</h5>
+                          <h5>🔲 General White Plans</h5>
                           <ul>
                             <li>Control the center with pawns and pieces</li>
                             <li>Develop pieces quickly and safely</li>
                             <li>Castle early for king safety</li>
-                            <li>Look for tactical opportunities</li>
                           </ul>
                         </div>
-                        
                         <div className="plan-section">
-                          <h5>🔳 Black's Plans</h5>
+                          <h5>🔳 General Black Plans</h5>
                           <ul>
                             <li>Challenge White's central control</li>
                             <li>Develop with purpose</li>
                             <li>Seek counterplay opportunities</li>
-                            <li>Maintain piece coordination</li>
-                          </ul>
-                        </div>
-                        
-                        <div className="plan-section">
-                          <h5>⚡ Key Ideas</h5>
-                          <ul>
-                            <li>Focus on piece development over pawn moves</li>
-                            <li>Control key central squares</li>
-                            <li>Prepare for the middlegame transition</li>
-                            <li>Watch for tactical patterns</li>
                           </ul>
                         </div>
                       </div>
                     )}
                     
-                    {/* Debug info for Plans */}
                     <div style={{marginTop: '20px', padding: '10px', background: '#333', color: '#fff', fontSize: '12px', borderRadius: '4px'}}>
                       <strong>Plans Debug Info:</strong> 
                       <div>Has common_plans: {opening?.analysis_json?.common_plans ? 'Yes' : 'No'}</div>
                       <div>Common plans count: {opening?.analysis_json?.common_plans?.length || 0}</div>
-                      <div>Common plans: {opening?.analysis_json?.common_plans ? JSON.stringify(opening.analysis_json.common_plans) : 'None'}</div>
                     </div>
                   </div>
                 </div>

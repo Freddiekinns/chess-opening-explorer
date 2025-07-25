@@ -4,6 +4,7 @@ import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
+import { CommonPlans, DescriptionCard } from '../components/detail'
 import './OpeningDetailPagePRD.css'
 
 // Use ChessOpening type from shared
@@ -584,82 +585,34 @@ const OpeningDetailPagePRD: React.FC = () => {
                     <p>Description exists: {opening?.analysis_json?.description ? 'Yes' : 'No'}</p>
                   </div>
                   
-                  <div className="opening-description">
-                    <h4>Opening Description</h4>
-                    {opening?.analysis_json?.description ? (
-                      <div className="description-content">
-                        <p>{opening.analysis_json.description}</p>
-                      </div>
-                    ) : opening?.analysis?.description ? (
-                      <div className="description-content">
-                        <p>{opening.analysis.description}</p>
-                      </div>
-                    ) : (
-                      <div className="description-content">
-                        <p>
-                          The {opening?.name || 'opening'} is a chess opening classified under ECO code {opening?.eco || 'unknown'}. 
-                          This opening has been played in {opening?.games_analyzed?.toLocaleString() || 'many'} games 
-                          and offers strategic opportunities for both sides.
-                        </p>
-                      </div>
-                    )}
-                    
-                    {(opening?.analysis_json?.style_tags || opening?.analysis?.style_tags) && (
-                      <div className="style-tags">
-                        <h5>Style Tags</h5>
-                        <div className="tags-grid">
-                          {(opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).map((tag, index) => (
-                            <span key={index} className="style-tag">{tag}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  {/* Dynamic DescriptionCard component from ECO data */}
+                  {opening?.eco && (
+                    <DescriptionCard 
+                      ecoCode={opening.eco}
+                      fen={opening.fen}
+                      fallbackDescription={`The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
+                      className="content-panel-improved"
+                    />
+                  )}
                 </div>
               )}
               
               {activeTab === 'plans' && (
                 <div className="tab-panel plans-panel">
-                  <div className="common-plans">
-                    <h4>Strategic Plans</h4>
-                    {opening?.analysis_json?.common_plans && opening.analysis_json.common_plans.length > 0 ? (
-                      <div className="plans-content">
-                        <div className="specific-plans">
-                          {opening.analysis_json.common_plans.map((plan, index) => (
-                            <div key={index} className="plan-item">
-                              <div className="plan-number">Plan {index + 1}:</div>
-                              <div className="plan-text">{plan}</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="plans-content">
-                        <p>No specific strategic plans available for this opening.</p>
-                        <div className="plan-section">
-                          <h5>🔲 General White Plans</h5>
-                          <ul>
-                            <li>Control the center with pawns and pieces</li>
-                            <li>Develop pieces quickly and safely</li>
-                            <li>Castle early for king safety</li>
-                          </ul>
-                        </div>
-                        <div className="plan-section">
-                          <h5>🔳 General Black Plans</h5>
-                          <ul>
-                            <li>Challenge White's central control</li>
-                            <li>Develop with purpose</li>
-                            <li>Seek counterplay opportunities</li>
-                          </ul>
-                        </div>
-                      </div>
-                    )}
-                    
-                    <div style={{marginTop: '20px', padding: '10px', background: '#333', color: '#fff', fontSize: '12px', borderRadius: '4px'}}>
-                      <strong>Plans Debug Info:</strong> 
-                      <div>Has common_plans: {opening?.analysis_json?.common_plans ? 'Yes' : 'No'}</div>
-                      <div>Common plans count: {opening?.analysis_json?.common_plans?.length || 0}</div>
-                    </div>
+                  {/* Dynamic CommonPlans component from ECO data */}
+                  {opening?.eco && (
+                    <CommonPlans 
+                      ecoCode={opening.eco}
+                      fen={opening.fen}
+                      className="content-panel-improved"
+                    />
+                  )}
+                  
+                  <div style={{marginTop: '20px', padding: '10px', background: '#333', color: '#fff', fontSize: '12px', borderRadius: '4px'}}>
+                    <strong>Plans Debug Info:</strong> 
+                    <div>Opening ECO: {opening?.eco || 'Not available'}</div>
+                    <div>Opening FEN: {opening?.fen ? 'Available' : 'Not available'}</div>
+                    <div>Has CommonPlans component: Yes (dynamic from ECO data)</div>
                   </div>
                 </div>
               )}

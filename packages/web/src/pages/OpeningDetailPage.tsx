@@ -91,6 +91,10 @@ const OpeningDetailPage: React.FC = () => {
   const [activeSuggestion, setActiveSuggestion] = useState(-1)
   const [openingsData, setOpeningsData] = useState<Opening[]>([])
   const [dataLoaded, setDataLoaded] = useState(false)
+  
+  // New state for PRD compliance
+  const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
+  const [moves, setMoves] = useState<string[]>([])
 
   useEffect(() => {
     if (fen) {

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SearchBar } from '../components/shared/SearchBar/SearchBar'
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid/PopularOpeningsGrid'
-import { StatisticsShowcase } from '../components/landing/StatisticsShowcase/StatisticsShowcase'
 import './LandingPage.css'
 
 interface Opening {
@@ -30,11 +29,6 @@ const LandingPage: React.FC = () => {
   const [openingsData, setOpeningsData] = useState<Opening[]>([])
   const [dataLoaded, setDataLoaded] = useState(false)
   const [popularOpenings, setPopularOpenings] = useState<Opening[]>([])
-  const [statistics, setStatistics] = useState({
-    totalOpenings: 0,
-    totalVideos: 0,
-    avgRating: 2000
-  })
   const navigate = useNavigate()
 
   // Apply body class for this page
@@ -119,13 +113,6 @@ const LandingPage: React.FC = () => {
             setPopularOpenings(fallbackPopular)
           }
           
-          // Set statistics
-          setStatistics({
-            totalOpenings: openingsData.data.length,
-            totalVideos: 1222, // From PRD
-            avgRating: 2000
-          })
-          
           setDataLoaded(true)
         }
       } catch (error) {
@@ -145,26 +132,54 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="landing-page">
-      {/* Hero Section with Logo and Search */}
-      <div className="hero-section">
-        <div className="logo-container">
-          <i className="fas fa-chess-knight"></i>
-          <h1>Chess Trainer</h1>
+      {/* Hero Section - Correct Layout to Match Reference */}
+      <section className="hero-section" style={{ padding: 'var(--space-xxl) 0' }}>
+        <div className="hero-content" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 var(--space-lg)', textAlign: 'center' }}>
+          {/* Small Chess Trainer header */}
+          <div className="app-header" style={{ marginBottom: 'var(--space-lg)' }}>
+            <h1 style={{ 
+              fontSize: 'var(--font-size-h1)', 
+              fontWeight: 'var(--font-weight-h1)', 
+              color: 'var(--text-primary)',
+              marginBottom: 'var(--space-sm)'
+            }}>
+              Chess Trainer
+            </h1>
+          </div>
+
+          {/* Main subtitle - matching the reference image */}
+          <p style={{ 
+            fontSize: 'var(--font-size-h3)', 
+            color: 'var(--text-secondary)',
+            marginBottom: 'var(--space-xl)',
+            maxWidth: '600px',
+            margin: '0 auto var(--space-xl) auto'
+          }}>
+            Master every opening from the common to the obscure, this and much more.
+          </p>
+
+          {/* Search Component Container */}
+          <div className="search-container" style={{
+            backgroundColor: 'var(--bg-surface)',
+            borderRadius: 'var(--border-radius-medium)',
+            padding: 'var(--space-xl)',
+            maxWidth: '800px',
+            margin: '0 auto'
+          }}>
+            <SearchBar
+              variant="landing"
+              onSelect={handleOpeningSelect}
+              placeholder={loading ? "Loading openings..." : "Search for an opening by name or moves..."}
+              disabled={loading}
+              loading={loading}
+              openingsData={openingsData}
+              className="hero-search"
+            />
+          </div>
         </div>
-        <p className="tagline">Master every opening, from the common to the obscure. Find your next move.</p>
+      </section>
 
-        <SearchBar
-          variant="landing"
-          onSelect={handleOpeningSelect}
-          placeholder={loading ? "Loading openings..." : "Search for a chess opening..."}
-          disabled={loading}
-          loading={loading}
-          openingsData={openingsData}
-          className="hero-search"
-        />
-      </div>
-
-      {/* Popular Openings Grid */}
+      {/* Popular Openings - Use Component's Built-in UI */}
       {dataLoaded && popularOpenings.length > 0 && (
         <PopularOpeningsGrid
           openings={popularOpenings}
@@ -172,12 +187,6 @@ const LandingPage: React.FC = () => {
           className="main-grid"
         />
       )}
-
-      {/* Statistics Showcase */}
-      <StatisticsShowcase
-        stats={statistics}
-        className="main-stats"
-      />
     </div>
   )
 }

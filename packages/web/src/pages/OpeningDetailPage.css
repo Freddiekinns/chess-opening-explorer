@@ -1,31 +1,8 @@
 /* ==========================================================================
-   DETAIL PAGE SPECIFIC STYLES (detail.html) - IMPROVED VERSION
+   DETAIL PAGE SPECIFIC STYLES (detail.html) - ENHANCED WITH DESIGN SYSTEM
    ========================================================================== */
 
-:root {
-    /* Updated color scheme for improved design */
-    --bg-primary-improved: #121212;
-    --bg-secondary-improved: #1e1e1e;
-    --bg-tertiary-improved: #2a2a2a;
-    --panel-dark: #282828;
-    --content-dark: #3a3a3a;
-    --text-primary-improved: #ffffff;
-    --text-secondary-improved: #b3b3b3;
-    --text-muted: #888888;
-    --accent-orange-improved: #ff6b35;
-    --accent-blue: #007bff;
-    --accent-green: #28a745;
-    --tag-orange: #EF6C00;
-    --tag-red: #C62828;
-    --border-color: #444;
-    --border-light: #555;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    
-    /* Stats colors */
-    --stats-white: #f8f9fa;
-    --stats-draw: #6c757d;
-    --stats-black: #343a40;
-}
+/* Use design system variables - remove duplicate root definitions */
 
 /* Back to Search button styling */
 .back-to-search {
@@ -33,10 +10,10 @@
     align-items: center;
     padding: 8px 16px;
     margin-right: 20px;
-    color: var(--text-primary-improved);
+    color: var(--text-primary);
     text-decoration: none;
-    background: var(--bg-secondary-improved);
-    border: 1px solid var(--border-light);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
@@ -44,24 +21,24 @@
 }
 
 .back-to-search:hover {
-    background: var(--bg-tertiary-improved);
-    color: var(--accent-orange-improved);
+    background: var(--bg-surface);
+    color: var(--brand-orange);
     text-decoration: none;
     transform: translateY(-1px);
 }
 
 /* Improved Opening Header */
 .opening-header-improved {
-    background: var(--bg-secondary-improved);
+    background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 24px;
     margin: 20px 0;
-    box-shadow: 0 4px 12px var(--shadow-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .title-box h1 {
-    color: var(--text-primary-improved);
+    color: var(--text-primary);
     font-size: 2rem;
     font-weight: 700;
     margin: 0 0 16px 0;
@@ -76,7 +53,7 @@
 }
 
 .eco-tag-improved {
-    background: var(--accent-orange-improved);
+    background: var(--brand-orange);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -92,10 +69,10 @@
 }
 
 .style-tag-improved {
-    background: var(--bg-tertiary-improved);
-    color: var(--text-secondary-improved);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
     padding: 4px 10px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     font-size: 12px;
     font-weight: 500;

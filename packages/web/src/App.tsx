@@ -1,14 +1,16 @@
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
-import OpeningDetailPage from './pages/OpeningDetailPage'
+import OpeningDetailPagePRD from './pages/OpeningDetailPagePRD'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/opening/:fen" element={<OpeningDetailPage />} />
-      <Route path="*" element={<LandingPage />} />
-    </Routes>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/opening/:fen" element={<OpeningDetailPagePRD />} />
+        <Route path="*" element={<LandingPage />} />
+      </Routes>
+    </div>
   )
 }
 

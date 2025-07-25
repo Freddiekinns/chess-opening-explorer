@@ -57,12 +57,12 @@
 
 .category-tabs {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.5rem; /* space-sm = 8px = 0.5rem */
   flex-wrap: wrap;
 }
 
 .category-tab {
-  background: var(--content-dark);
+  background: var(--panel-dark); /* bg-surface per PRD */
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   padding: 0.5rem 0.75rem;
@@ -77,14 +77,14 @@
 }
 
 .category-tab:hover {
-  border-color: var(--accent-blue);
+  border-color: var(--accent-orange);
   color: var(--text-primary);
 }
 
 .category-tab.active {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  color: white;
+  background: var(--accent-orange); /* brand-orange per PRD */
+  border-color: var(--accent-orange);
+  color: var(--text-primary); /* text-primary per PRD */
 }
 
 .category-count {

@@ -1,36 +1,27 @@
 /* ==========================================================================
-   1. GLOBAL STYLES & ROOT VARIABLES (Applied to ALL pages)
+   1. ENHANCED LANDING PAGE WITH DESIGN SYSTEM
    ========================================================================== */
-:root {
-    --bg-dark: #1a1a1a;
-    --panel-dark: #282828;
-    --content-dark: #3a3a3a;
-    --text-primary: #e0e0e0;
-    --text-secondary: #999999;
-    --accent-blue: #007bff;
-    --accent-green: #28a745;
-    --tag-orange: #EF6C00;
-    --tag-red: #C62828;
-    --border-color: #444;
-}
+
+/* Remove duplicate root variables - use design system from index.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family-primary);
     margin: 0;
-    background-color: var(--bg-dark);
-    background-image: radial-gradient(circle at top left, var(--panel-dark), var(--bg-dark) 75%);
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at top left, var(--bg-surface), var(--bg-main) 75%);
     color: var(--text-primary);
-    font-size: 16px;
+    font-size: var(--font-size-body);
     line-height: 1.6;
 }
 
 a {
-    color: var(--accent-blue);
+    color: var(--brand-orange);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 a:hover {
+    color: var(--brand-orange-hover);
     text-decoration: underline;
 }
 
@@ -67,6 +58,13 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+.app-header h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h1);
+    margin: 0;
+    color: var(--text-primary);
+}
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -80,15 +78,15 @@ a:hover {
 }
 
 .logo-container h1 {
-    font-size: 3rem;
+    font-size: var(--font-size-h1);
     margin: 0;
     color: var(--text-primary);
-    font-weight: 700;
+    font-weight: var(--font-weight-h1);
 }
 
 .tagline {
     color: var(--text-secondary);
-    font-size: 1.2rem;
+    font-size: var(--font-size-h3);
     margin-bottom: 40px;
     max-width: 600px;
     line-height: 1.5;
@@ -115,16 +113,20 @@ a:hover {
         gap: 3rem;
     }
 
+    .app-header h1 {
+        font-size: var(--font-size-h2);
+    }
+
     .logo-container i {
         font-size: 2.5rem;
     }
 
     .logo-container h1 {
-        font-size: 2.5rem;
+        font-size: var(--font-size-h2);
     }
 
     .tagline {
-        font-size: 1.1rem;
+        font-size: var(--font-size-body);
         margin-bottom: 30px;
     }
 
@@ -149,16 +151,20 @@ a:hover {
         margin-bottom: 15px;
     }
 
+    .app-header h1 {
+        font-size: var(--font-size-h3);
+    }
+
     .logo-container i {
         font-size: 2rem;
     }
 
     .logo-container h1 {
-        font-size: 2rem;
+        font-size: var(--font-size-h3);
     }
 
     .tagline {
-        font-size: 1rem;
+        font-size: var(--font-size-small);
         margin-bottom: 25px;
     }
 }

@@ -126,7 +126,7 @@
 
 /* Compact Variant */
 .opening-card.compact {
-  min-height: 160px;
+  min-height: 180px;
 }
 
 .opening-card.compact .opening-name {
@@ -137,6 +137,104 @@
 
 .opening-card.compact .card-content {
   padding: 0 1rem 0.25rem;
+}
+
+/* Data Points (PRD Compliance) */
+.data-point {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-point:last-child {
+  border-bottom: none;
+}
+
+.data-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.data-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.data-value {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* White Success Bar */
+.success-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.success-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.success-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.success-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.success-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-orange), #ffa726);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.success-value {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: 45px;
+  text-align: right;
+}
+
+/* First Moves Display */
+.first-moves {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.first-moves-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.first-moves-value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 /* List Variant */

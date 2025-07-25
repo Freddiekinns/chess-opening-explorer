@@ -86,6 +86,5 @@ A checklist of the files you consulted and how they inform your plan. This prove
 
 ### **Context Optimization Strategies**
 - **Before starting**: Check `memory_bank.md` for constraints and patterns
-- **During work**: Use surgical edits (`replace_string_in_file`) to conserve context
+- **Surgical edits are crucial**: You **must** use the `<file_modification>` format for changes to existing files to conserve context. You will only provide the full file content when creating a *new* file 
 - **After completion**: Update memory bank with new decisions and patterns
-- **Large changes**: Break into smaller, focused tasks when context budget is tight

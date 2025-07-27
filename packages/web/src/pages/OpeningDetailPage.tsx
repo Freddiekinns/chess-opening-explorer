@@ -5,9 +5,9 @@ import { Chess } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { 
-  DescriptionCard, 
   OpeningFamily,
-  CommonPlans
+  CommonPlans,
+  DescriptionCard
 } from '../components/detail'
 import './OpeningDetailPage.css'
 
@@ -91,10 +91,6 @@ const OpeningDetailPage: React.FC = () => {
   const [activeSuggestion, setActiveSuggestion] = useState(-1)
   const [openingsData, setOpeningsData] = useState<Opening[]>([])
   const [dataLoaded, setDataLoaded] = useState(false)
-  
-  // New state for PRD compliance
-  const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
-  const [moves, setMoves] = useState<string[]>([])
 
   useEffect(() => {
     if (fen) {
@@ -378,8 +374,9 @@ const OpeningDetailPage: React.FC = () => {
         <div className="content-layout-improved">
           {/* Learning Path Section - 70% */}
           <main className="learning-path-improved">
-            {/* Opening Description */}
-            <DescriptionCard
+            
+            {/* Description/Overview Section */}
+            <DescriptionCard 
               ecoCode={opening?.eco || ''}
               fen={opening?.fen}
               fallbackDescription={opening ? `${opening.name} is a chess opening classified under ECO code ${opening.eco}.` : undefined}

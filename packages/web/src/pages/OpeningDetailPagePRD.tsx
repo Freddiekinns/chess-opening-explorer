@@ -77,8 +77,6 @@ const OpeningDetailPagePRD: React.FC = () => {
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
-  const [moves, setMoves] = useState<string[]>([])
   const [popularityStats, setPopularityStats] = useState<any>(null)
   
   // Search functionality
@@ -203,7 +201,6 @@ const OpeningDetailPagePRD: React.FC = () => {
         }
       }
       
-      setMoves(movesArray)
       setGameHistory(history)
       setGame(new Chess()) // Reset to starting position
       setCurrentMoveIndex(0)
@@ -241,6 +238,14 @@ const OpeningDetailPagePRD: React.FC = () => {
       })
     }
     return pairs
+  }
+
+  const getMovesList = (): string[] => {
+    if (!opening?.moves) return []
+    return opening.moves
+      .replace(/\d+\./g, '') // Remove move numbers like "1.", "2.", etc.
+      .split(/\s+/)
+      .filter(move => move.trim() !== '' && !move.includes('.'))
   }
 
   const selectOpening = (opening: Opening) => {
@@ -391,14 +396,14 @@ const OpeningDetailPagePRD: React.FC = () => {
               <button 
                 onClick={nextMove}
                 className="nav-btn"
-                disabled={currentMoveIndex >= moves.length}
+                disabled={currentMoveIndex >= getMovesList().length}
               >
                 {'>'}
               </button>
               <button 
-                onClick={() => goToMove(moves.length)}
+                onClick={() => goToMove(getMovesList().length)}
                 className="nav-btn"
-                disabled={currentMoveIndex >= moves.length}
+                disabled={currentMoveIndex >= getMovesList().length}
               >
                 {'>>'}
               </button>
@@ -432,7 +437,7 @@ const OpeningDetailPagePRD: React.FC = () => {
           <div className="opening-moves-list">
             <h3>Opening Moves</h3>
             <div className="moves-notation">
-              {formatMovesAsPairs(moves).map((movePair, index) => (
+              {formatMovesAsPairs(getMovesList()).map((movePair, index) => (
                 <div key={index} className="move-pair">
                   <span className="move-number">{index + 1}.</span>
                   <button 
@@ -549,80 +554,29 @@ const OpeningDetailPagePRD: React.FC = () => {
             )}
           </div>
 
-          {/* Tabs Component */}
-          <div className="tabs-component">
-            <div className="tab-buttons">
-              <button 
-                className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
-                onClick={() => setActiveTab('overview')}
-              >
-                Overview
-              </button>
-              <button 
-                className={`tab-btn ${activeTab === 'plans' ? 'active' : ''}`}
-                onClick={() => setActiveTab('plans')}
-              >
-                Common Plans
-              </button>
-              <button 
-                className={`tab-btn ${activeTab === 'videos' ? 'active' : ''}`}
-                onClick={() => setActiveTab('videos')}
-              >
-                Videos
-              </button>
-            </div>
+          {/* Description/Overview Section - Always Visible */}
+          {opening?.eco && (
+            <DescriptionCard 
+              ecoCode={opening.eco}
+              fen={opening.fen}
+              fallbackDescription={`The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
+              className="content-panel-improved"
+            />
+          )}
 
-            <div className="tab-panels">
-              {activeTab === 'overview' && (
-                <div className="tab-panel overview-panel">
-                  <div style={{padding: '20px', background: '#2a2a2a', marginBottom: '20px', borderRadius: '8px', color: 'white'}}>
-                    <h4>Debug Info</h4>
-                    <p>Loading state: {loading ? 'true' : 'false'}</p>
-                    <p>Opening exists: {opening ? 'true' : 'false'}</p>
-                    <p>Error: {error || 'none'}</p>
-                    <p>Opening name: {opening?.name || 'none'}</p>
-                    <p>Analysis JSON exists: {opening?.analysis_json ? 'Yes' : 'No'}</p>
-                    <p>Description exists: {opening?.analysis_json?.description ? 'Yes' : 'No'}</p>
-                  </div>
-                  
-                  {/* Dynamic DescriptionCard component from ECO data */}
-                  {opening?.eco && (
-                    <DescriptionCard 
-                      ecoCode={opening.eco}
-                      fen={opening.fen}
-                      fallbackDescription={`The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
-                      className="content-panel-improved"
-                    />
-                  )}
-                </div>
-              )}
-              
-              {activeTab === 'plans' && (
-                <div className="tab-panel plans-panel">
-                  {/* Dynamic CommonPlans component from ECO data */}
-                  {opening?.eco && (
-                    <CommonPlans 
-                      ecoCode={opening.eco}
-                      fen={opening.fen}
-                      className="content-panel-improved"
-                    />
-                  )}
-                  
-                  <div style={{marginTop: '20px', padding: '10px', background: '#333', color: '#fff', fontSize: '12px', borderRadius: '4px'}}>
-                    <strong>Plans Debug Info:</strong> 
-                    <div>Opening ECO: {opening?.eco || 'Not available'}</div>
-                    <div>Opening FEN: {opening?.fen ? 'Available' : 'Not available'}</div>
-                    <div>Has CommonPlans component: Yes (dynamic from ECO data)</div>
-                  </div>
-                </div>
-              )}
-              
-              {activeTab === 'videos' && (
-                <div className="tab-panel videos-panel">
-                  <p>Video lessons coming soon...</p>
-                </div>
-              )}
-            </div>
+          {/* Strategic Plans - Always Visible */}
+          {opening?.eco && (
+            <CommonPlans 
+              ecoCode={opening.eco}
+              fen={opening.fen}
+              className="content-panel-improved"
+            />
+          )}
+
+          {/* Video Carousel Placeholder - Always Visible */}
+          <div className="video-lessons-section content-panel-improved">
+            <h3>Video Lessons</h3>
+            <p>Video lessons coming soon...</p>
           </div>
         </div>
       </div>

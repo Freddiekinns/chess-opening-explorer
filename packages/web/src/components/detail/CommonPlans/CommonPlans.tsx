@@ -134,13 +134,13 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
       
       {/* Single unified plans list */}
       <div className="plans-content">
-        <ul className="plans-list">
+        <div className="plans-list">
           {allPlans.map((plan, index) => (
-            <li key={index} className="plan-item">
+            <div key={index} className="plan-item">
               {plan}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

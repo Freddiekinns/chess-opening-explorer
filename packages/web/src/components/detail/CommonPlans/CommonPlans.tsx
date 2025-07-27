@@ -73,37 +73,11 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     }
   }, [ecoCode]);
 
-  const renderPlansSection = (plans: string[], title: string, colorClass: string) => {
-    if (!plans || plans.length === 0) {
-      return (
-        <div className={`plans-section ${colorClass}`}>
-          {title && <h3>{title}</h3>}
-          <ul className="plans-list">
-            <li className="empty-plan">No specific plans documented yet.</li>
-          </ul>
-        </div>
-      );
-    }
-
-    return (
-      <div className={`plans-section ${colorClass}`}>
-        {title && <h3>{title}</h3>}
-        <ul className="plans-list">
-          {plans.map((plan, index) => (
-            <li key={index} className="plan-item">
-              {plan}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
   if (loading) {
     return (
       <section className={`common-plans content-panel ${className}`}>
         <div className="plans-header">
-          <h2>Common Plans</h2>
+          <h3>Common Plans</h3>
         </div>
         <div className="plans-content">
           <div className="loading-state">
@@ -116,12 +90,32 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
   const hasWhitePlans = ecoAnalysis?.white_plans && ecoAnalysis.white_plans.length > 0;
   const hasBlackPlans = ecoAnalysis?.black_plans && ecoAnalysis.black_plans.length > 0;
+  const hasCommonPlans = ecoAnalysis?.common_plans && ecoAnalysis.common_plans.length > 0;
 
-  if (!hasWhitePlans && !hasBlackPlans) {
+  // Combine all plans into one unified list, prioritizing common_plans if available
+  const getAllPlans = (): string[] => {
+    if (hasCommonPlans) {
+      return ecoAnalysis.common_plans || [];
+    }
+    
+    // If no common_plans, combine white and black plans
+    const allPlans: string[] = [];
+    if (hasWhitePlans) {
+      allPlans.push(...ecoAnalysis.white_plans);
+    }
+    if (hasBlackPlans) {
+      allPlans.push(...ecoAnalysis.black_plans);
+    }
+    return allPlans;
+  };
+
+  const allPlans = getAllPlans();
+
+  if (allPlans.length === 0) {
     return (
       <section className={`common-plans content-panel ${className}`}>
         <div className="plans-header">
-          <h2>Common Plans</h2>
+          <h3>Common Plans</h3>
         </div>
         <div className="plans-content">
           <div className="empty-state">
@@ -135,13 +129,18 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   return (
     <section className={`common-plans content-panel ${className}`}>
       <div className="plans-header">
-        <h2>Common Plans</h2>
+        <h3>Common Plans</h3>
       </div>
       
-      {/* Both sections displayed simultaneously */}
+      {/* Single unified plans list */}
       <div className="plans-content">
-        {hasWhitePlans && renderPlansSection(ecoAnalysis.white_plans, '', 'white-plans')}
-        {hasBlackPlans && renderPlansSection(ecoAnalysis.black_plans, '', 'black-plans')}
+        <ul className="plans-list">
+          {allPlans.map((plan, index) => (
+            <li key={index} className="plan-item">
+              {plan}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

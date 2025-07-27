@@ -28,7 +28,6 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = ({
   fallbackDescription,
   className = ''
 }) => {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -81,34 +80,16 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = ({
     }
   }, [ecoCode, fen]);
 
-  const toggleSection = (section: string) => {
-    setExpandedSection(expandedSection === section ? null : section);
-  };
-
-  const getDifficultyColor = (level?: string) => {
-    switch (level?.toLowerCase()) {
-      case 'beginner': return '#28a745';
-      case 'intermediate': return '#ffc107';
-      case 'advanced': return '#fd7e14';
-      case 'expert': return '#dc3545';
-      default: return '#6c757d';
-    }
-  };
-
-  const formatTagsList = (tags: string[], type: string) => {
-    return tags.map((tag, index) => (
-      <span key={index} className={`tag ${type}-tag`}>
-        {tag}
-      </span>
-    ));
-  };
-
   if (loading) {
     return (
       <section className={`description-card content-panel ${className}`}>
-        <h2>Opening Analysis</h2>
-        <div className="loading-state">
-          <span>Loading opening analysis...</span>
+        <div className="description-header">
+          <h3>Opening Analysis</h3>
+        </div>
+        <div className="description-content">
+          <div className="loading-state">
+            <span>Loading opening analysis...</span>
+          </div>
         </div>
       </section>
     );
@@ -116,10 +97,12 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = ({
 
   return (
     <section className={`description-card content-panel ${className}`}>
-      <h2>Opening Analysis</h2>
+      <div className="description-header">
+        <h3>Opening Analysis</h3>
+      </div>
       
       {/* Main Description from ECO data - Only show description text */}
-      <div className="description-section">
+      <div className="description-content">
         <p className="description-text">
           {ecoAnalysis?.description || fallbackDescription || 'No description available for this opening.'}
         </p>

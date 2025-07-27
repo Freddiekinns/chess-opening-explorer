@@ -347,6 +347,11 @@ const OpeningDetailPagePRD: React.FC = () => {
       <div className="page-title-area">
         <h1 className="opening-name">{opening.name}</h1>
         <span className="eco-code">{opening.eco}</span>
+        {(opening.analysis_json?.complexity || opening.analysis?.complexity) && (
+          <span className="complexity-tag">
+            {opening.analysis_json?.complexity || opening.analysis?.complexity}
+          </span>
+        )}
         {(opening.analysis_json?.style_tags || opening.analysis?.style_tags) && (opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).length > 0 && (
           <div className="tag-pills-row">
             {(opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).slice(0, 4).map((tag, index) => (

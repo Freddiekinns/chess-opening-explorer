@@ -118,120 +118,12 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = ({
     <section className={`description-card content-panel ${className}`}>
       <h2>Opening Analysis</h2>
       
-      {/* Main Description from ECO data */}
+      {/* Main Description from ECO data - Only show description text */}
       <div className="description-section">
         <p className="description-text">
           {ecoAnalysis?.description || fallbackDescription || 'No description available for this opening.'}
         </p>
       </div>
-
-      {/* Complexity Badge */}
-      {ecoAnalysis?.complexity && (
-        <div className="complexity-section">
-          <span 
-            className="complexity-badge"
-            style={{ backgroundColor: getDifficultyColor(ecoAnalysis.complexity) }}
-          >
-            {ecoAnalysis.complexity}
-          </span>
-        </div>
-      )}
-
-      {/* Style Tags */}
-      {ecoAnalysis?.style_tags && ecoAnalysis.style_tags.length > 0 && (
-        <div className="section">
-          <button
-            className="section-toggle"
-            onClick={() => toggleSection('style')}
-            aria-expanded={expandedSection === 'style'}
-          >
-            <span className="section-title">Strategic Style</span>
-            <span className={`toggle-icon ${expandedSection === 'style' ? 'expanded' : ''}`}>
-              ▼
-            </span>
-          </button>
-          
-          {expandedSection === 'style' && (
-            <div className="section-content">
-              <div className="tags-container">
-                {formatTagsList(ecoAnalysis.style_tags, 'style')}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Tactical Tags */}
-      {ecoAnalysis?.tactical_tags && ecoAnalysis.tactical_tags.length > 0 && (
-        <div className="section">
-          <button
-            className="section-toggle"
-            onClick={() => toggleSection('tactical')}
-            aria-expanded={expandedSection === 'tactical'}
-          >
-            <span className="section-title">Tactical Themes</span>
-            <span className={`toggle-icon ${expandedSection === 'tactical' ? 'expanded' : ''}`}>
-              ▼
-            </span>
-          </button>
-          
-          {expandedSection === 'tactical' && (
-            <div className="section-content">
-              <div className="tags-container">
-                {formatTagsList(ecoAnalysis.tactical_tags, 'tactical')}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Positional Tags */}
-      {ecoAnalysis?.positional_tags && ecoAnalysis.positional_tags.length > 0 && (
-        <div className="section">
-          <button
-            className="section-toggle"
-            onClick={() => toggleSection('positional')}
-            aria-expanded={expandedSection === 'positional'}
-          >
-            <span className="section-title">Positional Elements</span>
-            <span className={`toggle-icon ${expandedSection === 'positional' ? 'expanded' : ''}`}>
-              ▼
-            </span>
-          </button>
-          
-          {expandedSection === 'positional' && (
-            <div className="section-content">
-              <div className="tags-container">
-                {formatTagsList(ecoAnalysis.positional_tags, 'positional')}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Strategic Themes */}
-      {ecoAnalysis?.strategic_themes && ecoAnalysis.strategic_themes.length > 0 && (
-        <div className="section">
-          <button
-            className="section-toggle"
-            onClick={() => toggleSection('strategic')}
-            aria-expanded={expandedSection === 'strategic'}
-          >
-            <span className="section-title">Strategic Themes</span>
-            <span className={`toggle-icon ${expandedSection === 'strategic' ? 'expanded' : ''}`}>
-              ▼
-            </span>
-          </button>
-          
-          {expandedSection === 'strategic' && (
-            <div className="section-content">
-              <div className="tags-container">
-                {formatTagsList(ecoAnalysis.strategic_themes, 'strategic')}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
     </section>
   );
 };

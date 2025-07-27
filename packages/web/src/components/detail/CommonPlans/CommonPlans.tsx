@@ -77,7 +77,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     if (!plans || plans.length === 0) {
       return (
         <div className={`plans-section ${colorClass}`}>
-          <h3>{title}</h3>
+          {title && <h3>{title}</h3>}
           <ul className="plans-list">
             <li className="empty-plan">No specific plans documented yet.</li>
           </ul>
@@ -87,7 +87,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
     return (
       <div className={`plans-section ${colorClass}`}>
-        <h3>{title}</h3>
+        {title && <h3>{title}</h3>}
         <ul className="plans-list">
           {plans.map((plan, index) => (
             <li key={index} className="plan-item">
@@ -103,7 +103,6 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     return (
       <section className={`common-plans content-panel ${className}`}>
         <div className="plans-header">
-          <div className="plans-icon">🎯</div>
           <h2>Common Plans</h2>
         </div>
         <div className="plans-content">
@@ -122,7 +121,6 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     return (
       <section className={`common-plans content-panel ${className}`}>
         <div className="plans-header">
-          <div className="plans-icon">🎯</div>
           <h2>Common Plans</h2>
         </div>
         <div className="plans-content">
@@ -137,14 +135,13 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   return (
     <section className={`common-plans content-panel ${className}`}>
       <div className="plans-header">
-        <div className="plans-icon">🎯</div>
         <h2>Common Plans</h2>
       </div>
       
       {/* Both sections displayed simultaneously */}
       <div className="plans-content">
-        {hasWhitePlans && renderPlansSection(ecoAnalysis.white_plans, 'For White:', 'white-plans')}
-        {hasBlackPlans && renderPlansSection(ecoAnalysis.black_plans, 'For Black:', 'black-plans')}
+        {hasWhitePlans && renderPlansSection(ecoAnalysis.white_plans, '', 'white-plans')}
+        {hasBlackPlans && renderPlansSection(ecoAnalysis.black_plans, '', 'black-plans')}
       </div>
     </section>
   );

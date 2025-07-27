@@ -22,7 +22,7 @@
   color: var(--accent-orange);
 }
 
-.plans-header h2 {
+.plans-header h3 {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
@@ -59,19 +59,11 @@
 
 .plan-item {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 0;
   margin-bottom: 0.75rem;
   color: var(--text-secondary);
   line-height: 1.5;
   font-size: 0.9rem;
-}
-
-.plan-item::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--text-secondary);
-  font-weight: bold;
 }
 
 .empty-plan {

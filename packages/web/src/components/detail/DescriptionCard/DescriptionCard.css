@@ -8,6 +8,22 @@
 }
 
 /* Header */
+.description-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.description-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -35,6 +51,11 @@
 }
 
 /* Main Description */
+.description-content {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .description-section {
   padding: 1.25rem;
   border-bottom: 1px solid var(--border-color);

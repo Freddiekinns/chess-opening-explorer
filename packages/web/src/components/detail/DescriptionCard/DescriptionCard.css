@@ -96,7 +96,7 @@
 }
 
 .section-title {
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -232,13 +232,13 @@
   font-size: 1.1rem;
 }
 
-.plans-list {
+.description-card .plans-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.plan-item {
+.description-card .plan-item {
   position: relative;
   padding-left: 1rem;
   margin-bottom: 0.5rem;
@@ -247,7 +247,7 @@
   font-size: 0.85rem;
 }
 
-.plan-item::before {
+.description-card .plan-item::before {
   content: '→';
   position: absolute;
   left: 0;
@@ -255,7 +255,7 @@
   font-weight: bold;
 }
 
-.plan-item:last-child {
+.description-card .plan-item:last-child {
   margin-bottom: 0;
 }
 

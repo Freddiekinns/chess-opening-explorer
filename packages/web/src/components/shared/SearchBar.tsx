@@ -29,54 +29,47 @@ interface SearchBarProps {
   className?: string
 }
 
-// Fast client-side search function (based on original)
+// Simplified client-side search function
 function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
   const lowerCaseQuery = query.toLowerCase()
-  const rankedOpenings = openingsData.map(opening => {
-    let score = 0
-    const lowerCaseName = opening.name.toLowerCase()
-    
-    // Name matching (highest priority)
-    if (lowerCaseName.startsWith(lowerCaseQuery)) {
-      score += 100
-    } else if (lowerCaseName.includes(lowerCaseQuery)) {
-      score += 50
-    }
-    
-    // ECO code matching
-    if (opening.eco.toLowerCase().includes(lowerCaseQuery)) {
-      score += 30
-    }
-    
-    // Description matching
-    const description = opening.analysis?.description?.toLowerCase()
-    if (description && description.includes(lowerCaseQuery)) {
-      score += 10
-    }
-    
-    // Style tags matching
-    const styleTags = opening.analysis?.style_tags?.map(t => t.toLowerCase())
-    if (styleTags && styleTags.some(tag => tag.includes(lowerCaseQuery))) {
-      score += 5
-    }
-    
-    // Popularity boost - prefer games_analyzed data when available
-    if (score > 0) {
-      const gamesAnalyzed = (opening as any).games_analyzed || 0
-      if (gamesAnalyzed > 0) {
-        // Use logarithmic scale to boost popular openings without overwhelming other factors
-        score += Math.log10(gamesAnalyzed + 1) * 2
-      } else {
-        // Fallback to old popularity score
-        const popularity = opening.analysis?.popularity || 0
-        score += popularity / 100
-      }
-    }
-    
-    return { opening, score }
-  })
   
-  return rankedOpenings
+  return openingsData
+    .map(opening => {
+      let score = 0
+      const lowerCaseName = opening.name.toLowerCase()
+      
+      // Name matching (highest priority)
+      if (lowerCaseName.startsWith(lowerCaseQuery)) {
+        score += 100
+      } else if (lowerCaseName.includes(lowerCaseQuery)) {
+        score += 50
+      }
+      
+      // ECO code matching
+      if (opening.eco.toLowerCase().includes(lowerCaseQuery)) {
+        score += 30
+      }
+      
+      // Description matching
+      if (opening.analysis?.description?.toLowerCase().includes(lowerCaseQuery)) {
+        score += 10
+      }
+      
+      // Style tags matching
+      if (opening.analysis?.style_tags?.some(tag => 
+        tag.toLowerCase().includes(lowerCaseQuery)
+      )) {
+        score += 5
+      }
+      
+      // Simple popularity boost
+      if (score > 0) {
+        const popularity = opening.analysis?.popularity || 0
+        score += popularity / 10 // Simpler than logarithmic
+      }
+      
+      return { opening, score }
+    })
     .filter(item => item.score > 0)
     .sort((a, b) => b.score - a.score)
     .map(item => item.opening)
@@ -212,15 +205,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 onClick={() => handleSuggestionClick(opening)}
                 onMouseEnter={() => setActiveSuggestion(index)}
               >
-                <div className="suggestion-content">
-                  <strong className="opening-name">{opening.name}</strong>
-                  <span className="opening-eco">({opening.eco})</span>
-                </div>
-                {opening.analysis?.popularity && (
-                  <span className="popularity-hint">
-                    {opening.analysis.popularity.toFixed(1)}
-                  </span>
-                )}
+                <strong className="opening-name">{opening.name}</strong>
+                <span className="opening-eco">({opening.eco})</span>
               </li>
             ))}
           </ul>

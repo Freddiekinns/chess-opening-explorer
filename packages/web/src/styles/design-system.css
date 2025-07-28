@@ -31,14 +31,16 @@
   --color-hover: rgba(255, 255, 255, 0.1);
   --color-active: var(--color-brand-orange);
   --color-focus: rgba(232, 93, 4, 0.25);
+  --color-focus-blue: rgba(0, 123, 255, 0.25);  /* Legacy blue focus */
   --color-disabled: rgba(255, 255, 255, 0.3);
 
   /* =================
      TYPOGRAPHY
      ================= */
   
-  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-family-mono: 'Roboto Mono', 'Courier New', 'Monaco', 'Consolas', monospace;
+  /* System font stack for better native integration */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;    /* 12px */
@@ -49,12 +51,21 @@
   --font-size-xl: 1.5rem;     /* 24px */
   --font-size-2xl: 2rem;      /* 32px */
   --font-size-3xl: 2.5rem;    /* 40px */
+  
+  /* Additional sizes found in legacy files */
+  --font-size-sm-plus: 0.9rem;   /* 14.4px - for small text */
+  --font-size-md-plus: 1.1rem;   /* 17.6px - for slightly larger body text */
+  --font-size-lg-plus: 1.2rem;   /* 19.2px - for emphasis text */
+  --font-size-xxl: 2.25rem;      /* 36px - for large headings */
+  --font-size-4xl: 3rem;         /* 48px - for hero headings */
 
   /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
   /* Line Heights */
   --line-height-tight: 1.25;
@@ -98,6 +109,10 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Enhanced shadows for dark theme - matching legacy patterns */
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-landing-search: 0 5px 15px rgba(0, 0, 0, 0.5);
 
   /* =================
      TRANSITIONS
@@ -171,10 +186,19 @@ body {
 .text-2xl { font-size: var(--font-size-2xl); }
 .text-3xl { font-size: var(--font-size-3xl); }
 
+/* Additional font size utilities for legacy compatibility */
+.text-sm-plus { font-size: var(--font-size-sm-plus); }
+.text-md-plus { font-size: var(--font-size-md-plus); }
+.text-lg-plus { font-size: var(--font-size-lg-plus); }
+.text-xxl { font-size: var(--font-size-xxl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
 .font-normal { font-weight: var(--font-weight-normal); }
 .font-medium { font-weight: var(--font-weight-medium); }
 .font-semibold { font-weight: var(--font-weight-semibold); }
 .font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
 
 .text-primary { color: var(--color-text-primary); }
 .text-secondary { color: var(--color-text-secondary); }

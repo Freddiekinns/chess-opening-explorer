@@ -1,0 +1,380 @@
+.opening-explorer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-5);
+  font-family: var(--font-family-base);
+}
+
+.explorer-header {
+  margin-bottom: var(--space-8);
+}
+
+.explorer-header h1 {
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-3xl);
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Migrate to design system form-input component */
+.search-input {
+  flex: 1;
+}
+
+.classification-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.classification-filters label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.classification-buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Button styles migrated to design system - remove duplicates */
+
+.error-message {
+  background-color: var(--color-danger);
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  text-align: center;
+  font-weight: 500;
+}
+
+.stats-section {
+  background-color: var(--color-bg-surface);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.stats-section h3 {
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4) 0;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-brand-orange);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.explorer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  min-height: 600px;
+}
+
+/* Card styles migrated to design system */
+.results-section {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  height: fit-content;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.results-header h3 {
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4) 0;
+  font-size: var(--font-size-lg);
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.result-name mark {
+  background-color: var(--color-warning);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.result-moves {
+  font-family: var(--font-family-mono);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+.result-aliases {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.opening-display {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  height: fit-content;
+}
+
+.board-section {
+  margin-bottom: 30px;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.board-header h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.board-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.eco-badge {
+  background-color: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.chessboard-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.opening-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.detail-item span {
+  color: #34495e;
+  font-size: 14px;
+}
+
+.moves-text {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.aliases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alias-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.alias-name {
+  color: #34495e;
+  font-weight: 500;
+}
+
+.alias-source {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+.no-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.no-selection p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .explorer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .classification-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .classification-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .opening-explorer {
+    padding: 15px;
+  }
+  
+  .explorer-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  .board-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .board-controls {
+    justify-content: center;
+  }
+  
+  .chessboard-container {
+    transform: scale(0.8);
+  }
+  
+  .result-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .opening-explorer {
+    padding: 10px;
+  }
+  
+  .explorer-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .chessboard-container {
+    transform: scale(0.7);
+  }
+  
+  .classification-buttons .btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  
+  .opening-display {
+    padding: 15px;
+  }
+  
+  .results-section {
+    padding: 15px;
+  }
+}

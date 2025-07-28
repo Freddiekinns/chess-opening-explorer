@@ -1,8 +1,7 @@
-import React from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { CommonPlans } from '../components/detail/CommonPlans/CommonPlans';
+import { CommonPlans } from '../components/detail/CommonPlans';
 
 // Mock fetch globally
 global.fetch = vi.fn();

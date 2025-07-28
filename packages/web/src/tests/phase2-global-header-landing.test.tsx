@@ -9,7 +9,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 // Import components we'll create
 import { GlobalHeader } from '../components/layout/GlobalHeader'
-import { EnhancedLanding } from '../pages/EnhancedLanding'
+import LandingPage from '../pages/LandingPage'
 
 describe('PRD-F14 Phase 2: Global Header & Enhanced Landing Page', () => {
   beforeEach(() => {

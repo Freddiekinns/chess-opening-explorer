@@ -1,0 +1,48 @@
+/* =================================
+   Layout Systems
+   - Defines reusable layout structures for pages and components.
+   - Promotes consistency and responsiveness.
+   ================================= */
+
+/* Two-Column Layout for Detail Page */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first: single column */
+  gap: var(--space-6);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+/* Desktop view: 60/40 split */
+@media (min-width: 1024px) {
+  .two-column-layout {
+    /* 60% for the main content (left), 40% for the sidebar (right) */
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-8);
+    padding: var(--space-8);
+  }
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0; /* Prevents overflow in grid layouts */
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0; /* Prevents overflow in grid layouts */
+  
+  /* Sticky position for the right column on desktop */
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 85px; /* Height of the sticky header + some margin */
+    align-self: start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+}

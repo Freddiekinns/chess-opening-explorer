@@ -34,7 +34,6 @@ export interface OpeningAnalysis {
   description?: string;
   complexity?: ComplexityLevel;
   styleTags?: string[];
-  books?: import('./analysis.js').BookRecommendation[];
   courses?: CourseRecommendation[];
   videos?: VideoRecommendation[];
 }
@@ -43,6 +42,15 @@ export interface OpeningAnalysis {
 export type ComplexityLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
 
 // Resource recommendations
+export interface BookRecommendation {
+  title: string;
+  author: string;
+  publisher?: string;
+  isbn?: string;
+  url?: string;
+  level: ComplexityLevel;
+}
+
 export interface CourseRecommendation {
   title: string;
   author: string;

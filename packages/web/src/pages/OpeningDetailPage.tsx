@@ -4,7 +4,7 @@ import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
-import { CommonPlans, DescriptionCard } from '../components/detail'
+import { CommonPlans } from '../components/detail'
 import '../styles/index.css' // Use design system
 
 // Use ChessOpening type from shared
@@ -94,6 +94,7 @@ const OpeningDetailPage: React.FC = () => {
   const [suggestions, setSuggestions] = useState<Opening[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [openingsData, setOpeningsData] = useState<Opening[]>([])
+  const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
 
   useEffect(() => {
     if (fen) {
@@ -579,30 +580,62 @@ const OpeningDetailPage: React.FC = () => {
             )}
           </div>
 
-          {/* Description/Overview Section - Always Visible */}
+          {/* Simple Tabbed Content Section */}
           {opening?.eco && (
-            <DescriptionCard 
-              ecoCode={opening.eco}
-              fen={opening.fen}
-              fallbackDescription={`The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
-              className="content-panel-improved"
-            />
-          )}
+            <div className="simple-tabs">
+              {/* Tab Buttons */}
+              <div className="tab-buttons">
+                <button 
+                  className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('overview')}
+                >
+                  Overview
+                </button>
+                <button 
+                  className={`tab-button ${activeTab === 'plans' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('plans')}
+                >
+                  Common Plans
+                </button>
+                <button 
+                  className={`tab-button ${activeTab === 'videos' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('videos')}
+                >
+                  Related Videos
+                </button>
+              </div>
 
-          {/* Strategic Plans - Always Visible */}
-          {opening?.eco && (
-            <CommonPlans 
-              ecoCode={opening.eco}
-              fen={opening.fen}
-              className="content-panel-improved"
-            />
-          )}
+              {/* Tab Content */}
+              <div className="tab-content-area">
+                {/* Overview Tab */}
+                <div className={`tab-content-panel ${activeTab === 'overview' ? 'active' : ''}`}>
+                  <div className="content-panel-improved">
+                    <h3>Description</h3>
+                    <p>
+                      {opening.analysis?.description || 
+                       `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
+                    </p>
+                  </div>
+                </div>
 
-          {/* Video Carousel Placeholder - Always Visible */}
-          <div className="video-lessons-section content-panel-improved">
-            <h3>Video Lessons</h3>
-            <p>Video lessons coming soon...</p>
-          </div>
+                {/* Common Plans Tab */}
+                <div className={`tab-content-panel ${activeTab === 'plans' ? 'active' : ''}`}>
+                  <CommonPlans 
+                    ecoCode={opening.eco}
+                    fen={opening.fen}
+                  />
+                </div>
+
+                {/* Videos Tab */}
+                <div className={`tab-content-panel ${activeTab === 'videos' ? 'active' : ''}`}>
+                  <div className="video-lessons-section content-panel-improved">
+                    <h3>Video Lessons</h3>
+                    <p>Video lessons coming soon...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

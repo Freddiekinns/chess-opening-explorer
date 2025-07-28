@@ -9,7 +9,7 @@ describe('Dynamic CommonPlans Integration', () => {
   });
 
   it('should have dynamic CommonPlans component available for import', async () => {
-    const { CommonPlans } = await import('../components/detail/CommonPlans/CommonPlans');
+    const { CommonPlans } = await import('../components/detail/CommonPlans');
     expect(CommonPlans).toBeDefined();
     expect(typeof CommonPlans).toBe('function');
   });

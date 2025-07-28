@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SearchBar } from '../components/shared/SearchBar/SearchBar'
-import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid/PopularOpeningsGrid'
+import { SearchBar } from '../components/shared/SearchBar'
+import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid'
 import '../styles/index.css' // Use design system
 
 interface Opening {

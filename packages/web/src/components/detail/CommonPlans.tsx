@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../../styles/index.css';
+import '../../styles/index.css';
 
 interface CommonPlansProps {
   ecoCode: string;

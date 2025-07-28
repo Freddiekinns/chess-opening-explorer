@@ -31,6 +31,16 @@ type Opening = ChessOpening & {
     version?: string
     last_enriched_at?: string
   }
+  // Direct properties that come from the API
+  description?: string
+  style_tags?: string[]
+  tactical_tags?: string[]
+  positional_tags?: string[]
+  player_style_tags?: string[]
+  phase_tags?: string[]
+  complexity?: string
+  strategic_themes?: string[]
+  common_plans?: string[]
   games_analyzed?: number
   popularity_rank?: number
 }
@@ -143,10 +153,6 @@ const OpeningDetailPage: React.FC = () => {
       
       if (data.success) {
         console.log('Opening data loaded from API:', data.data)
-        console.log('Analysis JSON:', data.data.analysis_json)
-        console.log('Description exists:', !!data.data.analysis_json?.description)
-        console.log('Common plans exist:', !!data.data.analysis_json?.common_plans)
-        console.log('Common plans count:', data.data.analysis_json?.common_plans?.length)
         setOpening(data.data)
         setupGame(data.data)
         loadPopularityStats(fenString)
@@ -347,21 +353,32 @@ const OpeningDetailPage: React.FC = () => {
       <div className="page-title-area centered">
         <h1 className="opening-name">{opening.name}</h1>
         <div className="complexity-and-tags centered">
-          {/* Complexity pill */}
-          {(opening.analysis_json?.complexity || opening.analysis?.complexity) && (
-            <span className={`complexity-pill ${(opening.analysis_json?.complexity || opening.analysis?.complexity || '').toLowerCase()}`}>
-              {opening.analysis_json?.complexity || opening.analysis?.complexity}
+          {/* ECO code pill */}
+          {opening.eco && (
+            <span className="eco-pill">
+              {opening.eco}
             </span>
           )}
           
+          {/* Complexity pill */}
+          {(() => {
+            const complexity = opening.analysis_json?.complexity || opening.analysis?.complexity || opening.complexity;
+            return complexity ? (
+              <span className={`complexity-pill ${complexity.toLowerCase()}`}>
+                {complexity}
+              </span>
+            ) : null;
+          })()}
+          
           {/* Style tags pills */}
-          {(opening.analysis_json?.style_tags || opening.analysis?.style_tags) && (opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).length > 0 && (
-            <div className="style-tags-container">
-              {(opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).slice(0, 5).map((tag, index) => (
-                <span key={index} className="style-pill">{tag}</span>
-              ))}
-            </div>
-          )}
+          {(() => {
+            const styleTags = opening.analysis_json?.style_tags || opening.analysis?.style_tags || opening.style_tags || [];
+            return styleTags && styleTags.length > 0 ? styleTags.slice(0, 5).map((tag: string, index: number) => (
+              <span key={`style-${index}`} className="style-pill">
+                {tag}
+              </span>
+            )) : null;
+          })()}
         </div>
       </div>
 

@@ -3,7 +3,7 @@ import '../../styles/index.css';
 
 interface PopularityIndicatorProps {
   score: number  // 1-10 popularity score
-  variant?: 'badge' | 'bar' | 'detailed'
+  variant?: 'badge' | 'bar'
   showLabel?: boolean
   className?: string
 }
@@ -55,20 +55,14 @@ export const PopularityIndicator: React.FC<PopularityIndicatorProps> = ({
     )
   }
 
-  // Detailed variant (for future use)
+  // Default: badge variant
   return (
-    <div className={`popularity-indicator detailed ${popularityInfo.color} ${className}`}>
-      <div className="popularity-header">
+    <span className={`popularity-indicator badge ${popularityInfo.color} ${className}`}>
+      {showLabel && (
         <span className="popularity-label">{popularityInfo.level}</span>
-        <span className="popularity-score">{score.toFixed(1)}/10</span>
-      </div>
-      <div className="popularity-bar-container">
-        <div 
-          className="popularity-bar-fill" 
-          style={{ width: `${Math.min((score / 10) * 100, 100)}%` }}
-        />
-      </div>
-    </div>
+      )}
+      <span className="popularity-score">{score.toFixed(1)}</span>
+    </span>
   )
 }
 

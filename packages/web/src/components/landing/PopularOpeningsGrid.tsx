@@ -125,15 +125,14 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       </div>
 
       <div className="openings-grid">
-        {filteredOpenings.map((opening, index) => (
-          <OpeningCard
-            key={`${opening.fen}-${index}`}
+        {filteredOpenings.map((opening) => (
+                    <OpeningCard
+            key={opening.name}
             opening={opening}
-            variant="compact"
             showPopularity={true}
             showEco={true}
             onClick={onOpeningSelect}
-            className="grid-card"
+            className="opening-grid-item"
           />
         ))}
       </div>

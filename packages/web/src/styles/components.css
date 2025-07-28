@@ -53,7 +53,6 @@
 
 .btn--primary:hover:not(:disabled) {
   background-color: var(--color-brand-orange-hover);
-  transform: translateY(-1px);
 }
 
 .btn--primary:active {
@@ -78,7 +77,6 @@
 
 .btn--success:hover:not(:disabled) {
   background-color: var(--color-success-hover);
-  transform: translateY(-1px);
 }
 
 .btn--danger {
@@ -88,7 +86,6 @@
 
 .btn--danger:hover:not(:disabled) {
   background-color: var(--color-danger-hover);
-  transform: translateY(-1px);
 }
 
 .btn--outline {
@@ -357,7 +354,6 @@
 
 .go-button:hover:not(:disabled) {
   background-color: var(--color-success-hover);
-  transform: translateY(-1px);
 }
 
 .surprise-button {
@@ -367,7 +363,6 @@
 
 .surprise-button:hover:not(:disabled) {
   background-color: #0056b3;
-  transform: translateY(-1px);
 }
 
 /* Header and Inline Variants - Compact Styles */
@@ -800,8 +795,8 @@
 
 /* Hover Effects */
 .popularity-indicator.badge:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-lift-shadow);
 }
 
 .popularity-bar {
@@ -940,30 +935,17 @@
   max-width: 300px;
 }
 
-/* Keep original search input styling to maintain functionality */
-.detail-header .search-input {
-  width: 100%;
+/* Header variant for search input */
+.search-input--header {
   padding: var(--space-3) var(--space-4);
   background: var(--color-bg-main);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-primary);
   font-size: var(--font-size-sm);
-  font-family: var(--font-family-primary);
-  transition: var(--transition-base);
-  outline: none;
+  border-radius: var(--radius-lg);
+  max-width: 300px;
 }
 
-.detail-header .search-input:focus,
-.search-input:focus {
-  border-color: var(--color-brand-orange);
+.search-input--header:focus {
   background: var(--color-bg-surface);
-  box-shadow: 0 0 0 3px var(--color-focus);
-}
-
-.detail-header .search-input::placeholder,
-.search-input::placeholder {
-  color: var(--color-text-secondary);
 }
 
 /* Simple Action Button */
@@ -985,7 +967,7 @@
 
 .surprise-btn:hover {
   background: #0056b3;
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
 .surprise-btn:active {
@@ -1213,7 +1195,7 @@
 
 .eco-tag:hover,
 .eco-pill:hover {
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
 .line-type-tag {
@@ -1228,7 +1210,7 @@
 }
 
 .line-type-tag:hover {
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
 .line-type-tag.mainline {
@@ -1256,7 +1238,7 @@
 
 .complexity-tag:hover,
 .complexity-pill:hover {
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
 .complexity-tag.beginner,
@@ -1293,7 +1275,7 @@
 .style-tag:hover,
 .style-pill:hover {
   background: var(--color-border) !important;
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
 .moves-display {

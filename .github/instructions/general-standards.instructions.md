@@ -16,7 +16,9 @@ applyTo: "**/*.{js,ts,tsx,jsx,json,md}"
 ## Code Organization
 - **Import order**: External libraries → Internal modules → Relative imports
 - **Function length**: Keep functions under 20 lines (Single Responsibility)
-- **File length**: Keep files under 300 lines (consider splitting)
+- **File length**: Prioritize cohesion over line count (consider splitting when mixing unrelated concerns)
+  - ✅ **Keep together**: Related components, complete API resources, configuration groups, test suites
+  - ❌ **Split apart**: Mixed domains, unrelated features, varying change frequencies
 - **Nesting depth**: Avoid more than 3 levels of nesting
 
 ## Error Handling

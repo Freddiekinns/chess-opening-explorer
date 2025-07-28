@@ -128,6 +128,13 @@
   --transition-slow: 0.3s ease;
 
   /* =================
+     INTERACTION EFFECTS
+     ================= */
+  
+  --hover-lift: translateY(-1px);
+  --hover-lift-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  /* =================
      Z-INDEX SCALE
      ================= */
   
@@ -332,6 +339,15 @@ body {
   outline: 2px solid transparent;
   outline-offset: 2px;
   box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+/* ==========================================================================
+   INTERACTION UTILITIES
+   ========================================================================== */
+
+.hover-lift:hover:not(:disabled) {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-lift-shadow);
 }
 
 /* ==========================================================================

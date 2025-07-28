@@ -19,21 +19,14 @@
   /* Map legacy variables to new design system */
   --bg-main: var(--color-bg-main);
   --bg-surface: var(--color-bg-surface);
-  --bg-dark: var(--color-bg-main);
   --panel-dark: var(--color-bg-surface);
-  --content-dark: var(--color-bg-surface);
   --accent-blue: var(--color-info);
   --accent-green: var(--color-success);
-  --accent-orange: var(--color-brand-orange);
   --brand-orange: var(--color-brand-orange);
   --brand-orange-hover: var(--color-brand-orange-hover);
-  --tag-orange: var(--color-brand-orange);
-  --tag-red: var(--color-danger);
   --border-color: var(--color-border);
-  --border-light: var(--color-border);
   --text-primary: var(--color-text-primary);
   --text-secondary: var(--color-text-secondary);
-  --text-muted: var(--color-text-secondary);
   
   /* Legacy spacing (will be deprecated) */
   --space-xs: var(--space-1);
@@ -47,21 +40,6 @@
   --border-radius-small: var(--radius-sm);
   --border-radius-medium: var(--radius-md);
   --border-radius-large: var(--radius-lg);
-  
-  /* Legacy font variables (will be deprecated) */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
-  --font-family-mono: 'Roboto Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
-  --font-size-h1: var(--font-size-3xl);
-  --font-size-h2: var(--font-size-2xl);
-  --font-size-h3: var(--font-size-xl);
-  --font-size-body: var(--font-size-base);
-  --font-size-small: var(--font-size-sm);
-  --font-size-button: var(--font-size-base);
-  --font-weight-h1: var(--font-weight-bold);
-  --font-weight-h2: var(--font-weight-semibold);
-  --font-weight-h3: var(--font-weight-semibold);
-  --font-weight-body: var(--font-weight-normal);
-  --font-weight-button: var(--font-weight-medium);
 }
 
 /* ==========================================================================
@@ -179,29 +157,6 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.05em;
-}
-
-/* Popularity indicators */
-.popularity-indicator {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  transition: all var(--transition-base);
-}
-
-.popularity-bar-container {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-
-.popularity-bar-fill {
-  height: 100%;
-  border-radius: var(--radius-sm);
-  transition: width 0.3s ease;
 }
 
 /* ==========================================================================

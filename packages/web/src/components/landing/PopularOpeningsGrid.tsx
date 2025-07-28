@@ -52,27 +52,21 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(opening => {
         const styleTags = opening.analysis?.style_tags || []
-        // Match exact case-insensitive comparison
         return styleTags.some(tag => tag.toLowerCase() === selectedCategory.toLowerCase())
       })
     }
 
-    // Apply sorting - default to popularity (PRD doesn't specify sort controls)
+    // Simplified sorting - prioritize game volume, then popularity score, then name
     filtered.sort((a, b) => {
-      // Prefer games_analyzed over popularity score for more accurate sorting
-      const gamesA = (a as any).games_analyzed || 0
-      const gamesB = (b as any).games_analyzed || 0
-      if (gamesA > 0 || gamesB > 0) {
-        // If we have games_analyzed data, sort by that (descending), then alphabetically
-        const gamesDiff = gamesB - gamesA
-        if (gamesDiff !== 0) return gamesDiff
-        return a.name.localeCompare(b.name)
-      }
-      // Fallback to old popularity score method
+      // Prioritize actual game volume over popularity score
+      const gamesA = a.games_analyzed || 0
+      const gamesB = b.games_analyzed || 0
+      if (gamesA !== gamesB) return gamesB - gamesA
+      // Fallback to popularity score if no game data
       const popA = a.analysis?.popularity || 0
       const popB = b.analysis?.popularity || 0
-      const popDiff = popB - popA
-      if (popDiff !== 0) return popDiff
+      if (popA !== popB) return popB - popA
+      // Final fallback to alphabetical
       return a.name.localeCompare(b.name)
     })
 
@@ -82,27 +76,20 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
   // Update category counts
   useEffect(() => {
+    const categoryIds = ['aggressive', 'positional', 'tactical', 'gambit', 'solid']
+    
     const updatedCategories = [
       { id: 'all', label: 'All Openings', count: openings.length },
-      { id: 'aggressive', label: 'Aggressive', count: 0 },
-      { id: 'positional', label: 'Positional', count: 0 },
-      { id: 'tactical', label: 'Tactical', count: 0 },
-      { id: 'gambit', label: 'Gambit', count: 0 },
-      { id: 'solid', label: 'Solid', count: 0 }
+      ...categoryIds.map(categoryId => ({
+        id: categoryId,
+        label: categoryId.charAt(0).toUpperCase() + categoryId.slice(1),
+        count: openings.filter(opening => 
+          opening.analysis?.style_tags?.some(tag => 
+            tag.toLowerCase() === categoryId.toLowerCase()
+          )
+        ).length
+      }))
     ]
-
-    // Count openings for each category
-    updatedCategories.forEach(category => {
-      if (category.id === 'all') {
-        category.count = openings.length
-      } else {
-        category.count = openings.filter(opening => {
-          const styleTags = opening.analysis?.style_tags || []
-          // Match exact case-insensitive comparison
-          return styleTags.some(tag => tag.toLowerCase() === category.id.toLowerCase())
-        }).length
-      }
-    })
 
     setCategories(updatedCategories)
   }, [openings])

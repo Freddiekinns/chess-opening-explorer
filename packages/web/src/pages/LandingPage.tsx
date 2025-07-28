@@ -60,57 +60,25 @@ const LandingPage: React.FC = () => {
             if (popularData.success && popularData.data.length > 0) {
               setPopularOpenings(popularData.data)
             } else {
-              // Fallback: Extract most popular openings from all data
-              const fallbackPopular = [...openingsData.data]
-                .filter(opening => opening.analysis?.popularity && opening.analysis.popularity > 0)
-                .sort((a, b) => {
-                  // Sort by games_analyzed if available, otherwise by popularity score
-                  const gamesA = (a as any).games_analyzed || 0
-                  const gamesB = (b as any).games_analyzed || 0
-                  if (gamesA > 0 || gamesB > 0) {
-                    const gamesDiff = gamesB - gamesA
-                    if (gamesDiff !== 0) return gamesDiff
-                    return a.name.localeCompare(b.name)
-                  }
-                  // Fallback to popularity score, then alphabetical
-                  const popDiff = (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0)
-                  if (popDiff !== 0) return popDiff
-                  return a.name.localeCompare(b.name)
+              // Simple fallback: use openings with most games played
+              const fallbackPopular = openingsData.data
+                .filter((opening: Opening) => opening.games_analyzed || opening.analysis?.popularity)
+                .sort((a: Opening, b: Opening) => {
+                  // Prioritize actual game volume over popularity score
+                  const gamesA = a.games_analyzed || 0
+                  const gamesB = b.games_analyzed || 0
+                  if (gamesA !== gamesB) return gamesB - gamesA
+                  // Fallback to popularity score if no game data
+                  return (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0)
                 })
                 .slice(0, 12)
               
-              // If no popularity data, show some well-known openings
-              if (fallbackPopular.length === 0) {
-                const wellKnownOpenings = openingsData.data.filter((opening: Opening) => 
-                  ['e4', 'd4', 'Nf3', 'c4'].includes(opening.moves.split(' ')[0]) ||
-                  opening.name.toLowerCase().includes('sicilian') ||
-                  opening.name.toLowerCase().includes('queen') ||
-                  opening.name.toLowerCase().includes('ruy lopez') ||
-                  opening.name.toLowerCase().includes('italian') ||
-                  opening.name.toLowerCase().includes('french') ||
-                  opening.name.toLowerCase().includes('caro-kann') ||
-                  opening.name.toLowerCase().includes('english')
-                ).slice(0, 12)
-                setPopularOpenings(wellKnownOpenings)
-              } else {
-                setPopularOpenings(fallbackPopular)
-              }
+              setPopularOpenings(fallbackPopular.length > 0 ? fallbackPopular : openingsData.data.slice(0, 12))
             }
           } catch (error) {
             console.warn('Popular openings endpoint not available, using fallback')
-            // Use fallback approach
-            const fallbackPopular = [...openingsData.data]
-              .filter((opening: Opening) => 
-                ['e4', 'd4', 'Nf3', 'c4'].includes(opening.moves.split(' ')[0]) ||
-                opening.name.toLowerCase().includes('sicilian') ||
-                opening.name.toLowerCase().includes('queen') ||
-                opening.name.toLowerCase().includes('ruy lopez') ||
-                opening.name.toLowerCase().includes('italian') ||
-                opening.name.toLowerCase().includes('french') ||
-                opening.name.toLowerCase().includes('caro-kann') ||
-                opening.name.toLowerCase().includes('english')
-              ).slice(0, 12)
-            setPopularOpenings(fallbackPopular)
+            // Simple fallback: use first 12 openings
+            setPopularOpenings(openingsData.data.slice(0, 12))
           }
           
           setDataLoaded(true)

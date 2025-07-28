@@ -5,6 +5,7 @@ import { Chess } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans } from '../components/detail'
+import { SearchBar } from '../components/shared/SearchBar'
 import '../styles/index.css' // Use design system
 
 // Use ChessOpening type from shared
@@ -50,34 +51,6 @@ interface MovePair {
   black?: string
 }
 
-// Fast client-side search function
-function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
-  const lowerCaseQuery = query.toLowerCase()
-  const rankedOpenings = openingsData.map(opening => {
-    let score = 0
-    const lowerCaseName = opening.name.toLowerCase()
-    
-    // Name matching (highest priority)
-    if (lowerCaseName.startsWith(lowerCaseQuery)) {
-      score += 100
-    } else if (lowerCaseName.includes(lowerCaseQuery)) {
-      score += 50
-    }
-    
-    // ECO code matching
-    if (opening.eco.toLowerCase().includes(lowerCaseQuery)) {
-      score += 30
-    }
-    
-    return { opening, score }
-  })
-  
-  return rankedOpenings
-    .filter(item => item.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .map(item => item.opening)
-}
-
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>()
   const navigate = useNavigate()
@@ -88,12 +61,7 @@ const OpeningDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [popularityStats, setPopularityStats] = useState<any>(null)
-  
-  // Search functionality
-  const [searchTerm, setSearchTerm] = useState('')
-  const [suggestions, setSuggestions] = useState<Opening[]>([])
-  const [showSuggestions, setShowSuggestions] = useState(false)
-  const [openingsData, setOpeningsData] = useState<Opening[]>([])
+  const [openingsData, setOpeningsData] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
 
   useEffect(() => {
@@ -102,44 +70,23 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [fen])
 
-  // Initialize component without heavy data loading
+  // Load openings data for SearchBar component
   useEffect(() => {
-    // Component ready for immediate use
-  }, [])
-
-  // Load openings data only when search is actually used
-  useEffect(() => {
-    if (searchTerm.length >= 2 && openingsData.length === 0) {
-      const loadOpeningsData = async () => {
-        try {
-          const response = await fetch('/api/openings/all')
-          const data = await response.json()
-          
-          if (data.success) {
-            console.log(`Loaded ${data.data.length} openings for search`)
-            setOpeningsData(data.data)
-          }
-        } catch (error) {
-          console.error('Error loading openings data:', error)
+    const loadOpeningsData = async () => {
+      try {
+        const response = await fetch('/api/openings/all')
+        const data = await response.json()
+        
+        if (data.success) {
+          setOpeningsData(data.data)
         }
+      } catch (error) {
+        console.error('Error loading openings data:', error)
       }
-      
-      loadOpeningsData()
     }
-  }, [searchTerm, openingsData.length])
-
-  // Fast client-side search (only when data is loaded)
-  useEffect(() => {
-    if (searchTerm.length < 2 || openingsData.length === 0) {
-      setSuggestions([])
-      setShowSuggestions(false)
-      return
-    }
-
-    const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
-    setSuggestions(relevantOpenings.slice(0, 8))
-    setShowSuggestions(relevantOpenings.length > 0)
-  }, [searchTerm, openingsData])
+    
+    loadOpeningsData()
+  }, [])
 
   const loadOpening = async (fenString: string) => {
     try {
@@ -255,15 +202,9 @@ const OpeningDetailPage: React.FC = () => {
       .filter(move => move.trim() !== '' && !move.includes('.'))
   }
 
-  const selectOpening = (opening: Opening) => {
+  const selectOpening = (opening: any) => {
     const encodedFen = encodeURIComponent(opening.fen)
     navigate(`/opening/${encodedFen}`)
-    setSearchTerm('')
-    setShowSuggestions(false)
-  }
-
-  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value)
   }
 
   const handleSurpriseMe = async () => {
@@ -318,28 +259,13 @@ const OpeningDetailPage: React.FC = () => {
           </div>
           
           <div className="header-right">
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search openings..."
-                value={searchTerm}
-                onChange={handleSearchInputChange}
-                className="search-input"
-              />
-              {showSuggestions && suggestions.length > 0 && (
-                <div className="search-suggestions">
-                {suggestions.map((suggestion, index) => (
-                  <div
-                    key={`${suggestion.fen}-${index}`}
-                    className="suggestion-item"
-                    onClick={() => selectOpening(suggestion)}
-                  >
-                    <strong>{suggestion.name}</strong>
-                    <span className="eco-code">({suggestion.eco})</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            <SearchBar
+              variant="header"
+              onSelect={selectOpening}
+              placeholder="Search openings..."
+              openingsData={openingsData}
+              className="header-search"
+            />
             <button 
               className="surprise-btn"
               onClick={handleSurpriseMe}
@@ -349,7 +275,6 @@ const OpeningDetailPage: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
       </header>
 
       {/* Page Title Area - Full Width */}
@@ -622,7 +547,6 @@ const OpeningDetailPage: React.FC = () => {
                 <div className={`tab-content-panel ${activeTab === 'plans' ? 'active' : ''}`}>
                   <CommonPlans 
                     ecoCode={opening.eco}
-                    fen={opening.fen}
                   />
                 </div>
 

@@ -18,7 +18,6 @@ interface OpeningFamilyProps {
 export const OpeningFamily: React.FC<OpeningFamilyProps> = ({ ecoCode, currentFen }) => {
   const [familyOpenings, setFamilyOpenings] = useState<FamilyOpening[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchFamilyOpenings = async () => {
@@ -26,27 +25,20 @@ export const OpeningFamily: React.FC<OpeningFamilyProps> = ({ ecoCode, currentFe
 
       try {
         setLoading(true)
-        setError(null)
-        
-        // Get the ECO family code (first letter)
         const familyCode = ecoCode.charAt(0)
-        
         const response = await fetch(`/api/openings/family/${familyCode}`)
         const data = await response.json()
         
         if (data.success) {
-          // Filter out current opening and limit to top 8 related openings
+          // Filter out current opening and sort by popularity
           const relatedOpenings = data.data
             .filter((opening: FamilyOpening) => opening.fen !== currentFen)
             .sort((a: FamilyOpening, b: FamilyOpening) => (b.popularity || 0) - (a.popularity || 0))
             .slice(0, 8)
           
           setFamilyOpenings(relatedOpenings)
-        } else {
-          setError('Failed to load related openings')
         }
       } catch (err) {
-        setError('Error loading opening family')
         console.error('Error fetching family openings:', err)
       } finally {
         setLoading(false)
@@ -59,39 +51,24 @@ export const OpeningFamily: React.FC<OpeningFamilyProps> = ({ ecoCode, currentFe
   if (loading) {
     return (
       <div className="opening-family">
-        <h4 className="family-title">Related Openings</h4>
-        <div className="loading-state">
-          <span>Loading related openings...</span>
-        </div>
+        <h4>Related Openings</h4>
+        <div className="loading-state">Loading related openings...</div>
       </div>
     )
   }
 
-  if (error || familyOpenings.length === 0) {
+  if (familyOpenings.length === 0) {
     return (
       <div className="opening-family">
-        <h4 className="family-title">Related Openings</h4>
-        <div className="empty-state">
-          <span>{error || 'No related openings found'}</span>
-        </div>
+        <h4>Related Openings</h4>
+        <div className="empty-state">No related openings found</div>
       </div>
     )
-  }
-
-  const getPopularityColor = (popularity?: number) => {
-    if (!popularity) return '#6c757d'
-    if (popularity >= 80) return '#dc3545'
-    if (popularity >= 60) return '#fd7e14'
-    if (popularity >= 40) return '#ffc107'
-    if (popularity >= 20) return '#20c997'
-    return '#6f42c1'
   }
 
   return (
     <div className="opening-family">
-      <h4 className="family-title">
-        Related {ecoCode.charAt(0)} Family Openings
-      </h4>
+      <h4>Related {ecoCode.charAt(0)} Family Openings</h4>
       
       <div className="family-grid">
         {familyOpenings.map((opening) => (
@@ -102,13 +79,6 @@ export const OpeningFamily: React.FC<OpeningFamilyProps> = ({ ecoCode, currentFe
           >
             <div className="family-card-header">
               <span className="eco-badge">{opening.eco}</span>
-              {opening.popularity && (
-                <span 
-                  className="popularity-dot"
-                  style={{ backgroundColor: getPopularityColor(opening.popularity) }}
-                  title={`Popularity: ${opening.popularity}%`}
-                />
-              )}
             </div>
             
             <h5 className="opening-name">{opening.name}</h5>
@@ -121,14 +91,12 @@ export const OpeningFamily: React.FC<OpeningFamilyProps> = ({ ecoCode, currentFe
         ))}
       </div>
 
-      <div className="family-footer">
-        <Link 
-          to={`/search?eco=${ecoCode.charAt(0)}`}
-          className="view-all-link"
-        >
-          View all {ecoCode.charAt(0)} family openings →
-        </Link>
-      </div>
+      <Link 
+        to={`/search?eco=${ecoCode.charAt(0)}`}
+        className="view-all-link"
+      >
+        View all {ecoCode.charAt(0)} family openings →
+      </Link>
     </div>
   )
 }

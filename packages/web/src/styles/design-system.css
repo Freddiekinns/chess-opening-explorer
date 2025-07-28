@@ -11,6 +11,7 @@
   /* Primary Brand Colors */
   --color-bg-main: #121212;
   --color-bg-surface: #1E1E1E;
+  --color-bg-alt: #2A2A2A;
   --color-brand-orange: #E85D04;
   --color-brand-orange-hover: #F48C06;
   --color-text-primary: #FFFFFF;
@@ -26,9 +27,13 @@
   --color-warning-hover: #e0a800;
   --color-info: #17a2b8;
   --color-info-hover: #138496;
+  
+  /* Legacy Accent Colors */
+  --color-accent-blue: #007bff;
 
   /* Interactive States */
   --color-hover: rgba(255, 255, 255, 0.1);
+  --color-bg-hover: rgba(255, 255, 255, 0.05);
   --color-active: var(--color-brand-orange);
   --color-focus: rgba(232, 93, 4, 0.25);
   --color-focus-blue: rgba(0, 123, 255, 0.25);  /* Legacy blue focus */

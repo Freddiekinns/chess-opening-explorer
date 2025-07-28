@@ -94,16 +94,28 @@ export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
   }
 
   return (
-    <header className={`opening-header ${className}`}>
-      <div className="header-main">
-        <div className="opening-title">
-          <h1 className="opening-name">{opening.name}</h1>
-          <div className="primary-tags">
-            <span className="eco-tag">{opening.eco}</span>
+    <header className={`opening-header centered ${className}`}>
+      <div className="header-main centered">
+        <div className="opening-title centered">
+          <h1 className="opening-name centered">{opening.name}</h1>
+          <div className="primary-tags centered">
+            <span className="eco-tag eco-pill">{opening.eco}</span>
             <span className={`line-type-tag ${isMainline() ? 'mainline' : 'variation'}`}>
               {isMainline() ? 'Mainline' : 'Variation'}
             </span>
-            <span className="complexity-tag">{getComplexity()}</span>
+            <span className={`complexity-tag complexity-pill ${getComplexity().toLowerCase()}`}>
+              {getComplexity()}
+            </span>
+            {opening.analysis?.style_tags && opening.analysis.style_tags.length > 0 && (
+              <div className="style-tags-container">
+                {opening.analysis.style_tags.slice(0, 3).map((tag: string, index: number) => (
+                  <span key={index} className="style-tag style-pill">{tag}</span>
+                ))}
+                {opening.analysis.style_tags.length > 3 && (
+                  <span className="style-tag style-pill">+{opening.analysis.style_tags.length - 3} more</span>
+                )}
+              </div>
+            )}
           </div>
         </div>
         

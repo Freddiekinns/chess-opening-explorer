@@ -301,31 +301,32 @@ const OpeningDetailPage: React.FC = () => {
 
   return (
     <div className="detail-page-body">
-      {/* New Header Layout */}
+      {/* Professional Header Layout */}
       <header className="detail-header">
-        <div className="header-left">
-          <Link to="/" className="back-button">
-            ← Back to search
-          </Link>
-        </div>
-        
-        <div className="header-center">
-          <Link to="/" className="site-title">
-            Chess Trainer
-          </Link>
-        </div>
-        
-        <div className="header-right">
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search openings..."
-              value={searchTerm}
-              onChange={handleSearchInputChange}
-              className="search-input"
-            />
-            {showSuggestions && suggestions.length > 0 && (
-              <div className="search-suggestions">
+        <div className="detail-header-container">
+          <div className="header-left">
+            <Link to="/" className="back-button">
+              Back to search
+            </Link>
+          </div>
+          
+          <div className="header-center">
+            <Link to="/" className="site-title">
+              Chess Trainer
+            </Link>
+          </div>
+          
+          <div className="header-right">
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search openings..."
+                value={searchTerm}
+                onChange={handleSearchInputChange}
+                className="search-input"
+              />
+              {showSuggestions && suggestions.length > 0 && (
+                <div className="search-suggestions">
                 {suggestions.map((suggestion, index) => (
                   <div
                     key={`${suggestion.fen}-${index}`}
@@ -341,12 +342,13 @@ const OpeningDetailPage: React.FC = () => {
             <button 
               className="surprise-btn"
               onClick={handleSurpriseMe}
-              title="Random opening"
+              title="Explore random opening"
             >
-              🎲
+              Surprise me
             </button>
           </div>
         </div>
+      </div>
       </header>
 
       {/* Page Title Area - Full Width */}

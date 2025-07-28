@@ -1,25 +1,18 @@
 /* DescriptionCard Component Styles */
-
-.description-card {
-  background: var(--panel-dark);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  overflow: hidden;
-}
+/* Base styling handled by content-panel-improved class */
 
 /* Header */
 .description-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--border-color);
+  padding: 0;
+  background: transparent;
 }
 
 .description-header h3 {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -28,14 +21,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
+  padding: 0;
   background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .card-title {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -52,13 +44,11 @@
 
 /* Main Description */
 .description-content {
-  padding: 1.25rem;
-  border-bottom: 1px solid var(--border-color);
+  padding: 0;
 }
 
 .description-section {
-  padding: 1.25rem;
-  border-bottom: 1px solid var(--border-color);
+  padding: 0;
 }
 
 .description-text {
@@ -69,13 +59,6 @@
 }
 
 /* Expandable Sections */
-.section {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.section:last-child {
-  border-bottom: none;
-}
 
 .section-toggle {
   width: 100%;

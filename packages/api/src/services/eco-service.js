@@ -291,6 +291,7 @@ class ECOService {
 
     // Parse analysis_json for additional attributes
     let description = '';
+    let complexity = '';
     let tags = {
       style_tags: [],
       tactical_tags: [],
@@ -306,6 +307,7 @@ class ECOService {
           : opening.analysis_json;
         
         description = analysis.description || '';
+        complexity = analysis.complexity || '';
         tags.style_tags = analysis.style_tags || [];
         tags.tactical_tags = analysis.tactical_tags || [];
         tags.positional_tags = analysis.positional_tags || [];
@@ -330,6 +332,9 @@ class ECOService {
       
       // Description (attribute 1)
       description: description,
+      
+      // Complexity (from analysis_json)
+      complexity: complexity,
       
       // Tags (attribute 6)
       style_tags: tags.style_tags,

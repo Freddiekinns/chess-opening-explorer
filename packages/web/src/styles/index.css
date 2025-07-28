@@ -361,7 +361,7 @@ button.success:hover {
 }
 
 .opening-name {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 var(--spacing-sm) 0;
@@ -949,11 +949,9 @@ button.success:hover {
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .plan-item:last-child {
-  border-bottom: none;
 }
 
 .plan-checkbox {
@@ -1040,7 +1038,7 @@ button.success:hover {
 
 @media (max-width: 480px) {
   .opening-name {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-h3);
   }
   
   .stat-card {

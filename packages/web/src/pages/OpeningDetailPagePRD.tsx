@@ -5,7 +5,7 @@ import { Chess } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans, DescriptionCard } from '../components/detail'
-import './OpeningDetailPage.css'
+import './OpeningDetailPagePRD.css'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -31,16 +31,6 @@ type Opening = ChessOpening & {
     version?: string
     last_enriched_at?: string
   }
-  // Direct properties that come from the API
-  description?: string
-  style_tags?: string[]
-  tactical_tags?: string[]
-  positional_tags?: string[]
-  player_style_tags?: string[]
-  phase_tags?: string[]
-  complexity?: string
-  strategic_themes?: string[]
-  common_plans?: string[]
   games_analyzed?: number
   popularity_rank?: number
 }
@@ -78,7 +68,7 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
     .map(item => item.opening)
 }
 
-const OpeningDetailPage: React.FC = () => {
+const OpeningDetailPagePRD: React.FC = () => {
   const { fen } = useParams<{ fen: string }>()
   const navigate = useNavigate()
   const [opening, setOpening] = useState<Opening | null>(null)
@@ -153,6 +143,10 @@ const OpeningDetailPage: React.FC = () => {
       
       if (data.success) {
         console.log('Opening data loaded from API:', data.data)
+        console.log('Analysis JSON:', data.data.analysis_json)
+        console.log('Description exists:', !!data.data.analysis_json?.description)
+        console.log('Common plans exist:', !!data.data.analysis_json?.common_plans)
+        console.log('Common plans count:', data.data.analysis_json?.common_plans?.length)
         setOpening(data.data)
         setupGame(data.data)
         loadPopularityStats(fenString)
@@ -353,29 +347,21 @@ const OpeningDetailPage: React.FC = () => {
       <div className="page-title-area centered">
         <h1 className="opening-name">{opening.name}</h1>
         <div className="complexity-and-tags centered">
-          {/* ECO code pill */}
-          {opening.eco && (
-            <span className="eco-pill">
-              {opening.eco}
-            </span>
-          )}
-          
           {/* Complexity pill */}
-          {opening.complexity && (
-            <span className={`complexity-pill ${opening.complexity.toLowerCase()}`}>
-              {opening.complexity}
+          {(opening.analysis_json?.complexity || opening.analysis?.complexity) && (
+            <span className={`complexity-pill ${(opening.analysis_json?.complexity || opening.analysis?.complexity || '').toLowerCase()}`}>
+              {opening.analysis_json?.complexity || opening.analysis?.complexity}
             </span>
           )}
           
           {/* Style tags pills */}
-          {(() => {
-            const styleTags = opening.analysis_json?.style_tags || opening.analysis?.style_tags || opening.style_tags || [];
-            return styleTags && styleTags.length > 0 ? styleTags.slice(0, 5).map((tag: string, index: number) => (
-              <span key={`style-${index}`} className="style-pill">
-                {tag}
-              </span>
-            )) : null;
-          })()}
+          {(opening.analysis_json?.style_tags || opening.analysis?.style_tags) && (opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).length > 0 && (
+            <div className="style-tags-container">
+              {(opening.analysis_json?.style_tags || opening.analysis?.style_tags || []).slice(0, 5).map((tag, index) => (
+                <span key={index} className="style-pill">{tag}</span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -607,4 +593,4 @@ const OpeningDetailPage: React.FC = () => {
   )
 }
 
-export default OpeningDetailPage
+export default OpeningDetailPagePRD

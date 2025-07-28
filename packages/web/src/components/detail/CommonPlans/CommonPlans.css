@@ -1,20 +1,13 @@
 /* CommonPlans Component Styles */
-
-.common-plans {
-  background: var(--panel-dark);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  overflow: hidden;
-}
+/* Base styling handled by content-panel-improved class */
 
 /* Header */
 .plans-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--border-color);
+  padding: 0;
+  background: transparent;
 }
 
 .plans-icon {
@@ -24,14 +17,14 @@
 
 .plans-header h3 {
   margin: 0;
-  font-size: 1.125rem;;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 /* Plans Content */
 .plans-content {
-  padding: 1.5rem;
+  padding: 0;
 }
 
 /* Plans Sections */
@@ -109,7 +102,6 @@
 
 /* Plan Cards */
 .plan-card {
-  border: 1px solid var(--border-color);
   border-radius: 6px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
@@ -120,7 +112,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 0;
   background: none;
   border: none;
   color: var(--text-primary);
@@ -195,8 +187,7 @@
 
 /* Plan Content */
 .plan-content {
-  padding: 1.25rem;
-  border-top: 1px solid var(--border-color);
+  padding: 0.75rem 0;
   background: rgba(255, 255, 255, 0.01);
   animation: slideDown 0.2s ease-out;
 }
@@ -211,8 +202,8 @@
   to {
     opacity: 1;
     max-height: 200px;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 
@@ -226,7 +217,6 @@
 /* Key Moves */
 .key-moves {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 0.875rem;
 }
@@ -247,7 +237,6 @@
   background: rgba(255, 255, 255, 0.03);
   padding: 0.5rem;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   word-break: break-all;
 }
 
@@ -284,7 +273,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .plans-header {
-    padding: 1rem;
+    padding: 0;
   }
   
   .plans-tabs {
@@ -293,21 +282,19 @@
   
   .tab {
     padding: 0.875rem 1rem;
-    border-bottom: 1px solid var(--border-color);
     border-right: none;
   }
   
   .tab.active {
-    border-bottom-color: var(--border-color);
     border-left: 3px solid var(--accent-blue);
   }
   
   .tab-content {
-    padding: 1rem;
+    padding: 0;
   }
   
   .plan-header {
-    padding: 0.875rem 1rem;
+    padding: 0.5rem 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0.75rem;
@@ -323,7 +310,7 @@
   }
   
   .plan-content {
-    padding: 1rem;
+    padding: 0.5rem 0;
   }
   
   .empty-plans-state {
@@ -346,11 +333,11 @@
   }
   
   .tab-content {
-    padding: 0.875rem;
+    padding: 0;
   }
   
   .plan-header {
-    padding: 0.75rem 0.875rem;
+    padding: 0.5rem 0;
   }
   
   .plan-title {
@@ -363,7 +350,7 @@
   }
   
   .plan-content {
-    padding: 0.875rem;
+    padding: 0.5rem 0;
   }
   
   .moves-display {

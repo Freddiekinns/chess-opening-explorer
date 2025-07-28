@@ -156,10 +156,10 @@
 }
 
 .opening-name {
-  font-size: 2rem; /* Main heading - larger than section headers */
+  font-size: 1.5rem; /* Match other headings like "Game Statistics" */
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 var(--space-lg) 0; /* Increased bottom margin for spacing */
+  margin: 0 0 var(--space-md) 0;
   line-height: 1.2;
 }
 
@@ -167,30 +167,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: var(--space-md); /* Add space between header and pills */
-}
-
-/* ECO pill styling */
-.eco-pill {
-  background: var(--accent-blue, #3b82f6);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
 }
 
 /* Complexity pill styling */
 .complexity-pill {
-  padding: 6px 14px;
-  border-radius: 16px;
+  padding: 8px 16px;
+  border-radius: 20px;
   font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.3px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -393,6 +380,8 @@
   color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 600;
+  border-bottom: 2px solid var(--accent-orange);
+  padding-bottom: var(--space-sm);
 }
 
 .moves-notation {
@@ -451,7 +440,6 @@
   padding: var(--space-lg);
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  margin-bottom: var(--space-lg);
 }
 
 .statistics-component h3 {
@@ -459,6 +447,8 @@
   color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 600;
+  border-bottom: 2px solid var(--accent-orange);
+  padding-bottom: var(--space-sm);
 }
 
 .statistics-bars {
@@ -731,24 +721,22 @@
   }
   
   .opening-name {
-    font-size: 1.6rem; /* Larger on mobile too */
+    font-size: 1.3rem;
   }
   
   .complexity-and-tags.centered {
-    gap: 8px;
-    flex-direction: row; /* Keep horizontal on mobile */
-    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
     align-items: center;
   }
   
-  .eco-pill {
-    font-size: 11px;
-    padding: 4px 10px;
+  .style-tags-container {
+    gap: 6px;
   }
   
   .complexity-pill {
-    font-size: 11px;
-    padding: 4px 10px;
+    font-size: 12px;
+    padding: 5px 12px;
   }
   
   .style-pill {
@@ -763,22 +751,20 @@
   }
   
   .opening-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .complexity-and-tags.centered {
-    gap: 6px;
-    flex-direction: row;
-    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: column;
   }
   
-  .eco-pill {
-    font-size: 10px;
-    padding: 3px 8px;
+  .style-tags-container {
+    gap: 4px;
   }
   
   .complexity-pill {
-    font-size: 10px;
+    font-size: 11px;
     padding: 4px 10px;
   }
   
@@ -842,45 +828,4 @@
 .loading-state h2, .error-state h2 {
   color: var(--text-primary);
   margin-bottom: var(--space-md);
-}
-
-/* Video Lessons Section */
-.video-lessons-section h3 {
-  margin: 0 0 var(--space-lg) 0;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--accent-orange);
-  padding-bottom: var(--space-sm);
-}
-
-/* Content Panel Improved - Universal styling for right column panels */
-.content-panel-improved {
-  background: var(--panel-dark);
-  padding: var(--space-lg);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  margin-bottom: var(--space-lg);
-}
-
-.content-panel-improved h3 {
-  margin: 0 0 var(--space-lg) 0;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-/* Video Lessons Section */
-.video-lessons-section {
-  background: var(--panel-dark);
-  padding: var(--space-lg);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-}
-
-.video-lessons-section h3 {
-  margin: 0 0 var(--space-lg) 0;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chess } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
-import './OpeningExplorer.css';
+import '../styles/index.css'; // Use design system instead of component CSS
 
 const OpeningExplorer = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -166,15 +166,15 @@ const OpeningExplorer = () => {
         <h1>Opening Explorer</h1>
         
         <div className="search-section">
-          <form onSubmit={handleSearch} className="search-form">
+                    <form onSubmit={handleSearch} className="search-form">
             <input
               type="text"
-              placeholder="Search openings by name..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-input"
+              placeholder="Search for chess openings..."
+              className="search-input form-input form-input--lg"
             />
-            <button type="submit" className="btn btn-primary" disabled={loading}>
+            <button type="submit" className="btn btn--primary" disabled={loading}>
               {loading ? 'Searching...' : 'Search'}
             </button>
           </form>
@@ -186,7 +186,7 @@ const OpeningExplorer = () => {
                 <button
                   key={cls.code}
                   onClick={() => handleClassificationChange(cls.code)}
-                  className={`btn btn-outline ${selectedClassification === cls.code ? 'active' : ''}`}
+                  className={`btn btn--outline ${selectedClassification === cls.code ? 'active' : ''}`}
                   disabled={loading}
                   title={cls.description}
                 >
@@ -197,7 +197,7 @@ const OpeningExplorer = () => {
           </div>
           
           {(searchTerm || selectedClassification) && (
-            <button onClick={clearSearch} className="btn btn-secondary">
+            <button onClick={clearSearch} className="btn btn--secondary">
               Clear All
             </button>
           )}
@@ -252,14 +252,14 @@ const OpeningExplorer = () => {
             {searchResults.map((opening, index) => (
               <div
                 key={`${opening.fen}-${index}`}
-                className={`result-item ${selectedOpening?.fen === opening.fen ? 'selected' : ''}`}
+                className={`card card--interactive ${selectedOpening?.fen === opening.fen ? 'selected' : ''}`}
                 onClick={() => selectOpening(opening)}
               >
                 <div className="result-header">
                   <span className="result-name">
                     {highlightSearchTerm(opening.name, searchTerm)}
                   </span>
-                  <span className="result-eco">{formatEcoCode(opening.eco)}</span>
+                  <span className="pill pill--eco">{formatEcoCode(opening.eco)}</span>
                 </div>
                 <div className="result-moves">
                   {opening.moves}

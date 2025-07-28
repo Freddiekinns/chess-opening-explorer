@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import './SearchBar.css'
+import React, { useState, useEffect, useRef } from 'react';
+import '../../../styles/index.css'
 
 interface Opening {
   fen: string

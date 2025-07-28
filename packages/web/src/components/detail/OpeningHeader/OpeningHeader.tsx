@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { PopularityIndicator } from '../../shared/PopularityIndicator/PopularityIndicator'
-import './OpeningHeader.css'
+import '../../../styles/index.css'
 
 interface Opening {
   fen: string

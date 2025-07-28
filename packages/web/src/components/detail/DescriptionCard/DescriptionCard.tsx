@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './DescriptionCard.css';
+import '../../../styles/index.css';
 
 interface DescriptionCardProps {
   ecoCode: string;

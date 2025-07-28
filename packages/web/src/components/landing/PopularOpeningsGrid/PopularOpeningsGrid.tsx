@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { OpeningCard } from '../../shared/OpeningCard/OpeningCard'
-import './PopularOpeningsGrid.css'
+import React, { useState, useEffect } from 'react';
+import { OpeningCard } from '../../shared/OpeningCard/OpeningCard';
+import '../../../styles/index.css';
 
 interface Opening {
   fen: string

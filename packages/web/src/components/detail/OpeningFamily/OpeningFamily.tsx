@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import './OpeningFamily.css'
+import '../../../styles/index.css'
 
 interface FamilyOpening {
   fen: string

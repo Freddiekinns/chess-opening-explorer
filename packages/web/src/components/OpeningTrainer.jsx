@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chess } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
-import './OpeningTrainer.css';
+import '../styles/index.css'; // Use design system instead of component CSS
 
 const OpeningTrainer = () => {
   const [game, setGame] = useState(new Chess());

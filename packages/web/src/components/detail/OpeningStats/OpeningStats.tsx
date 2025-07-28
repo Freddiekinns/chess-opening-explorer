@@ -1,5 +1,5 @@
 import React from 'react';
-import './OpeningStats.css';
+import '../../../styles/index.css';
 
 interface GameStats {
   white_wins: number;

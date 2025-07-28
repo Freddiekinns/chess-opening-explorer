@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import './Layout.css'
+import '../styles/index.css'
 
 interface LayoutProps {
   children: ReactNode

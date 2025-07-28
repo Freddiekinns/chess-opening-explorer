@@ -48,6 +48,23 @@ This file should be consulted before making any architectural changes or impleme
 - **Rationale**: Fast, deterministic tests that don't incur costs or require network access
 - **Status**: Active
 
+### **AD-003: CSS Design System Architecture** 
+- **Decision**: Centralized CSS architecture using design tokens and BEM methodology
+- **Implementation**: 
+  - **File Structure**: `/packages/web/src/styles/` with `design-system.css`, `components.css`, `main.css`, `index.css`
+  - **Design Tokens**: CSS custom properties for colors, typography, spacing, shadows, transitions
+  - **Component Library**: Reusable `.btn`, `.form-input`, `.card`, `.pill` components using BEM naming
+  - **TDD Validation**: Comprehensive test suite validates design tokens and component structure
+  - **Legacy Migration**: Legacy CSS files archived in `/styles/legacy/` directory
+- **Rationale**: Eliminates CSS duplication (4+ button implementations), ensures visual consistency, enables TDD for CSS architecture
+- **Benefits**: 
+  - **DRY**: Single source of truth for all UI components
+  - **Performance**: Consolidated CSS bundle, no duplicate rules
+  - **Accessibility**: WCAG 2.1 AA compliant focus states built-in
+  - **Maintenance**: Easy to update brand colors/spacing globally via design tokens
+- **Migration Pattern**: Component CSS files → Use design system classes → Archive legacy files
+- **Status**: Implemented (OpeningExplorer, OpeningTrainer migrated)
+
 ### **AD-003: Channel-First Indexer Architecture**
 - **Decision**: Revolutionary approach to video discovery using local indexing instead of expensive search
 - **Key Innovation**: Get ALL videos from trusted channels, enrich only matches (no artificial limits)
@@ -206,28 +223,45 @@ The frontend delivers an instant, responsive search experience:
 
 ## **🎨 UI/UX and Design Principles**
 
-### **Color Palette**
-- **--bg-dark (#1a1a1a)**: Main background
-- **--panel-dark (#282828)**: Primary container/panel background
-- **--content-dark (#3a3a3a)**: Input fields and interactive element backgrounds
-- **--text-primary (#e0e0e0)**: Main text color
-- **--text-secondary (#999999)**: Less important text
-- **--accent-blue (#007bff)**: Primary accent for links and some buttons
-- **--accent-green (#28a745)**: "Go" or confirmation buttons
+### **Design System Architecture (AD-003)**
+- **CSS Architecture**: Centralized design system with tokens, components, and layout styles
+- **File Structure**: `/packages/web/src/styles/` → `design-system.css`, `components.css`, `main.css`
+- **Design Tokens**: CSS custom properties for consistent colors, typography, spacing
+- **Component Library**: BEM-based reusable components (`.btn`, `.form-input`, `.card`, `.pill`)
 
-### **Typography**
-- **Primary Font**: 'Segoe UI' or similar sans-serif fonts
-- **Monospace Font**: 'Roboto Mono' for displaying PGN moves
+### **Color System (Design Tokens)**
+- **Primary Colors**:
+  - `--color-brand-orange`: #ff8c00 (Primary brand color)
+  - `--color-text-primary`: #2c3e50 (Main text)
+  - `--color-text-secondary`: #6c757d (Secondary text)
+  - `--color-bg-primary`: #ffffff (Main background)
+  - `--color-bg-surface`: #f8f9fa (Card/panel backgrounds)
+- **Semantic Colors**:
+  - `--color-success`: #28a745 (Success states)
+  - `--color-danger`: #dc3545 (Error states)  
+  - `--color-warning`: #ffc107 (Warning states)
+  - `--color-border`: #dee2e6 (Default borders)
 
-### **Layout**
-- **Landing Page**: Centered, single-column layout focused on the search action
-- **Detail Page**: A responsive two-column layout. Main content on the left (flex: 2), sidebar on the right (flex: 1)
+### **Typography Scale**
+- **Font Family**: `--font-family-base` (system fonts), `--font-family-mono` (monospace)
+- **Font Sizes**: `--font-size-xs` to `--font-size-3xl` (12px to 36px scale)
+- **Font Weights**: `--font-weight-normal` (400), `--font-weight-medium` (500), `--font-weight-bold` (700)
 
-### **Component Style**
-- **Panels**: React components like `<ContentPanel>` should render divs with a background-color of --panel-dark and an 8px border-radius
-- **Buttons**: Should have a 6px border-radius and a subtle transform: translateY(-1px) on hover
-- **Inputs**: Should have a background-color of --content-dark and a blue focus ring (box-shadow) when active
-- **Tags**: Small, pill-shaped components with bold text, colored by category
+### **Spacing System**
+- **Scale**: `--space-1` (4px) to `--space-16` (64px) in incremental steps
+- **Usage**: Consistent padding, margins, gaps using design tokens
+
+### **Component Standards**
+- **Buttons**: Use `.btn .btn--primary/.btn--secondary/.btn--outline` classes
+- **Forms**: Use `.form-input .form-input--lg/.form-input--sm` classes  
+- **Cards**: Use `.card .card--interactive/.card--compact` classes
+- **Pills/Tags**: Use `.pill .pill--eco` classes for category badges
+- **Layout**: Use CSS Grid and Flexbox with design token spacing
+
+### **Responsive Design**
+- **Mobile-first**: Base styles for mobile, media queries for larger screens
+- **Breakpoints**: 768px (tablet), 1024px (desktop)
+- **Chess Board**: Responsive scaling (scale(0.8) on mobile, scale(0.7) on small screens)
 
 ---
 
@@ -325,6 +359,15 @@ YOUTUBE_API_KEY="..."
 - **Never** trust AI-generated URLs without manual verification (95% hallucination rate)
 - **Don't** skip error checking after implementation changes
 - **Avoid** moving core data files - scripts have hardcoded paths
+- **Don't** create component-specific CSS files - use design system components instead
+- **Avoid** hardcoded colors/spacing in CSS - use design tokens (CSS custom properties)
+- **Never** implement duplicate button/form styles - use centralized component library
+
+### **Critical Development Patterns**
+1. **CSS Architecture**: Use design system tokens → component classes → chess-specific layout
+2. **TDD for CSS**: Validate design tokens and component structure through comprehensive tests
+3. **Migration Strategy**: Archive legacy CSS → Update imports → Use design system classes
+4. **Component Naming**: Follow BEM methodology for predictable class structure (.btn .btn--primary)
 
 ### **Critical AI Integration Lessons**
 1. **Validate Before Deploy**: Build validation tools before deploying AI-generated content
@@ -341,5 +384,5 @@ Update this file when:
 
 ---
 
-*Last Updated: 2025-07-20*
+*Last Updated: 2025-07-28 - CSS Design System Architecture Implementation*
 *Next Review: When significant architectural changes are proposed*

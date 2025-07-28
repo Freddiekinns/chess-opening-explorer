@@ -1,6 +1,6 @@
-import React from 'react'
-import { PopularityIndicator } from '../PopularityIndicator/PopularityIndicator'
-import './OpeningCard.css'
+import React from 'react';
+import { PopularityIndicator } from '../PopularityIndicator/PopularityIndicator';
+import '../../../styles/index.css';
 
 interface Opening {
   fen: string

@@ -1,68 +1,168 @@
-/* PRD-F14 Design System Foundation - Global CSS Custom Properties */
-:root {
-  /* Color Palette */
-  --bg-main: #121212;
-  --bg-surface: #1E1E1E;
-  --brand-orange: #E85D04;
-  --brand-orange-hover: #F48C06;
-  --text-primary: #FFFFFF;
-  --text-secondary: #A0A0A0;
-  --border-color: #333333;
+/* ==========================================================================
+   MAIN CSS ENTRY POINT - NEW DESIGN SYSTEM
+   This replaces the old index.css with clean, TDD-tested architecture
+   ========================================================================== */
 
-  /* Typography Scale */
-  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-size-h1: 3rem;
-  --font-size-h2: 2.25rem;
-  --font-size-h3: 1.5rem;
-  --font-size-body: 1rem;
-  --font-size-small: 0.875rem;
-  --font-size-button: 1rem;
+/* Import new design system foundation */
+@import './main.css';
 
-  /* Font Weights */
-  --font-weight-h1: 700;
-  --font-weight-h2: 600;
-  --font-weight-h3: 600;
-  --font-weight-body: 400;
-  --font-weight-button: 500;
+/* TEMPORARY: Legacy styles for gradual migration */
+/* These will be removed once all components are migrated */
 
-  /* Spacing System */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-xxl: 4rem;
-
-  /* Border Radius System */
-  --border-radius-small: 4px;
-  --border-radius-medium: 8px;
-  --border-radius-large: 12px;
-
-  /* Legacy variables for backwards compatibility */
-  --bg-dark: var(--bg-main);
-  --panel-dark: var(--bg-surface);
-  --content-dark: var(--bg-surface);
-  --accent-blue: var(--brand-orange);
-  --accent-green: #28a745;
-  --tag-orange: #ff8c00;
-  --tag-red: #dc3545;
-  --border-light: var(--border-color);
-  
-  /* Legacy improved variables */
-  --bg-primary-improved: var(--bg-main);
-  --bg-secondary-improved: var(--bg-surface);
-  --bg-tertiary-improved: var(--bg-surface);
-  --text-primary-improved: var(--text-primary);
-  --text-secondary-improved: var(--text-secondary);
-  --text-muted: var(--text-secondary);
-  --accent-orange-improved: var(--brand-orange);
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  
-  /* Stats colors */
-  --stats-white: #f8f9fa;
-  --stats-draw: #6c757d;
-  --stats-black: #343a40;
+/* Legacy global styles that still need component migration */
+#root {
+  min-height: 100vh;
 }
+
+/* Container compatibility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+/* Loading spinner compatibility */
+.loading-spinner {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid var(--color-disabled);
+  border-radius: 50%;
+  border-top-color: var(--color-brand-orange);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Panel compatibility */
+.panel {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+/* Temporary button overrides for unmigrated components */
+button:not([class*="btn"]) {
+  background-color: var(--color-brand-orange);
+  color: var(--color-text-primary);
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+button:not([class*="btn"]):hover {
+  transform: translateY(-1px);
+  background-color: var(--color-brand-orange-hover);
+}
+
+button.success {
+  background-color: var(--color-success);
+}
+
+button.success:hover {
+  background-color: var(--color-success-hover);
+}
+
+/* Temporary input overrides for unmigrated components */
+input:not([class*="form-"]), select:not([class*="form-"]), textarea:not([class*="form-"]) {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-primary);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+input:not([class*="form-"]):focus, 
+select:not([class*="form-"]):focus, 
+textarea:not([class*="form-"]):focus {
+  outline: none;
+  border-color: var(--color-brand-orange);
+  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
+}
+
+/* Global header compatibility - will be migrated to components */
+.global-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+  z-index: var(--z-sticky);
+  padding: var(--space-4) 0;
+}
+
+/* Desktop/mobile nav compatibility */
+.desktop-nav {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   MIGRATION NOTICES
+   These styles will be deprecated in favor of design system components
+   ========================================================================== */
+
+/*
+  MIGRATION PLAN:
+  
+  Phase 1: ✅ COMPLETED
+  - Design system foundation established
+  - Component library created
+  - TDD tests implemented
+  
+  Phase 2: IN PROGRESS
+  - Migrate OpeningExplorer.css to use .btn, .card, .form-input classes
+  - Migrate OpeningTrainer.css to use design system components
+  - Migrate Layout.css to use design system tokens
+  
+  Phase 3: UPCOMING
+  - Remove all legacy CSS files
+  - Remove compatibility overrides above
+  - Implement CSS modules for component isolation
+  
+  USAGE EXAMPLES:
+  
+  Before:
+  <button className="btn-primary">Click me</button>
+  
+  After:
+  <button className="btn btn--primary">Click me</button>
+  
+  Before:
+  <input className="search-input" />
+  
+  After:
+  <input className="form-input form-input--lg" />
+  
+  Before:
+  <div className="opening-card">
+  
+  After:
+  <div className="card card--interactive">
+*/
 
 /* Global styles */
 * {
@@ -949,9 +1049,6 @@ button.success:hover {
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) 0;
-}
-
-.plan-item:last-child {
 }
 
 .plan-checkbox {

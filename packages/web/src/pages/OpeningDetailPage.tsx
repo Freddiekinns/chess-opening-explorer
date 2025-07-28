@@ -5,7 +5,7 @@ import { Chess } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans, DescriptionCard } from '../components/detail'
-import './OpeningDetailPage.css'
+import '../styles/index.css' // Use design system
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {

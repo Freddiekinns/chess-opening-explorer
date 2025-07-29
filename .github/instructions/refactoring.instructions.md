@@ -2,63 +2,51 @@
 applyTo: "**/*.{js,ts,tsx,jsx}"
 ---
 
-# RefactorArchitect Mindset Instructions
+# Refactoring: Simple & Clean
 
-*Adopt this mindset during Refactor Phase of TDD workflow.*
+*Make code cleaner without breaking functionality.*
 
-## Core Mission
-Improve code structure, eliminate duplication, and apply design patterns for maintainability.
-
-## Refactoring Trigger Matrix
+## 🎯 Quick Refactoring Triggers
 ```
-Code Smell Detected:
-├─ Duplication (3+ instances) → Extract method/constant
-├─ Long method (>20 lines) → Single Responsibility violation  
-├─ Complex conditionals → Strategy pattern candidate
-└─ Hard dependencies → Dependency injection needed
+When you see:
+├─ Copy-pasted code → Extract function/constant
+├─ Function >20 lines → Split responsibilities  
+├─ Complex if/else → Simplify logic or extract
+└─ Hard-coded values → Create constants
 ```
 
-## Refactoring Priorities
-1. **DRY Violations**: Extract repeated code into functions/constants
-2. **SRP Violations**: Split large functions with multiple responsibilities  
-3. **Design Patterns**: Apply Strategy, Factory, Observer where beneficial
-4. **Complexity Reduction**: Simplify complex conditionals and nested logic
+## ⚡ Refactoring Actions (In Order)
+1. **Remove duplication** - Extract repeated code
+2. **Simplify functions** - One responsibility per function
+3. **Extract constants** - No magic numbers/strings
+4. **Clear naming** - Self-documenting variable/function names
 
-## Code Quality Targets
+## 🎨 Before/After Examples
 ```javascript
-// ✅ Extract constants for magic numbers
-const MAX_RETRIES = 3;
-const TIMEOUT_MS = 5000;
+// ❌ Before: Duplicated, unclear
+if (user.type === 'admin' && user.permissions.includes('read')) {
+  // admin logic
+}
+if (user.type === 'admin' && user.permissions.includes('write')) {
+  // admin logic  
+}
 
-// ✅ Single responsibility functions
-function validateInput(data) { /* validation only */ }
-function processData(data) { /* processing only */ }
-function saveResult(result) { /* persistence only */ }
-
-// ✅ Strategy pattern for complex conditionals
-const strategies = {
-  chess: new ChessValidationStrategy(),
-  draughts: new DraughtsValidationStrategy()
-};
+// ✅ After: Clear, no duplication
+const isAdmin = user.type === 'admin';
+const canRead = user.permissions.includes('read');
+const canWrite = user.permissions.includes('write');
 ```
 
-## Architecture Consistency
-- Consult `memory_bank.md` for established patterns
-- Follow existing API contracts and schemas
-- Maintain performance targets: <200ms API responses
-- Preserve security patterns from SecurityAuditor
+## 🚫 Anti-Patterns to Fix
+- Copy-pasted code blocks
+- Functions doing multiple things
+- Magic numbers/strings
+- Unclear variable names
+- Unnecessary complexity
 
-## Anti-Patterns to Eliminate
-- ❌ Copy-pasted code blocks (DRY violation)
-- ❌ Functions >20 lines (SRP violation)  
-- ❌ Complex nested conditionals (strategy pattern candidate)
-- ❌ Hard-coded configuration values
-- ❌ Inconsistent error handling patterns
-
-## Activation Context
-Use RefactorArchitect mindset when:
-- Refactor Phase of TDD workflow
-- User mentions "improve", "refactor", "simplify"
-- Code duplication detected
-- Complex logic needs restructuring
-- Architecture decisions required
+## ❌ Refactoring Anti-Patterns
+- **Big bang refactoring** - Make small, incremental changes
+- **Refactoring without tests** - Always have tests before refactoring
+- **Premature optimization** - Focus on readability first
+- **Over-abstraction** - Don't create abstractions too early
+- **Breaking working code** - If it works, be cautious about changing it

@@ -2,42 +2,60 @@
 applyTo: "packages/web/**/*.{ts,tsx,js,jsx}"
 ---
 
-# Frontend Development Instructions
+# Frontend Development: Simple & Clean
 
-*These instructions extend the core TDD framework in `copilot-instructions.md` with React/TypeScript specific guidance.*
+*React/TypeScript patterns focused on functionality and maintainability.*
 
-## React/TypeScript Patterns
-
-### **Component Testing Strategy**
+## 🎯 React Component Essentials
 ```typescript
-// ✅ Test component behavior, not implementation
-import { render, screen, fireEvent } from '@testing-library/react';
-import { ChessBoard } from './ChessBoard';
+// ✅ Simple, clear component structure
+interface Props {
+  title: string;
+  onClick: () => void;
+}
 
-test('should highlight selected square when clicked', () => {
-  render(<ChessBoard />);
-  const square = screen.getByTestId('square-e4');
-  fireEvent.click(square);
-  expect(square).toHaveClass('highlighted');
+export const Button: React.FC<Props> = ({ title, onClick }) => {
+  return (
+    <button className="button" onClick={onClick}>
+      {title}
+    </button>
+  );
+};
+```
+
+## 🎨 CSS Strategy (Simplified Approach)
+- **Single CSS file**: `simplified.css` contains all styles
+- **CSS variables**: Use for colors, spacing, typography
+- **Minimal selectors**: Avoid complex nested rules
+- **Component-based**: One CSS class per component concept
+
+## 🧪 Testing Approach
+```typescript
+// ✅ Test behavior, not implementation
+import { render, screen, fireEvent } from '@testing-library/react';
+
+test('button calls onClick when clicked', () => {
+  const handleClick = jest.fn();
+  render(<Button title="Click me" onClick={handleClick} />);
+  
+  fireEvent.click(screen.getByText('Click me'));
+  expect(handleClick).toHaveBeenCalled();
 });
 ```
 
-### **Mock Patterns for Frontend**
-```typescript
-// ✅ Mock API hooks
-jest.mock('../hooks/useChessApi', () => ({
-  useChessApi: () => ({
-    loading: false,
-    data: mockChessData,
-    error: null
-  })
-}));
+## ⚡ Performance Guidelines
+- **Bundle size**: Import only what you need
+- **API calls**: Mock external dependencies in tests
+- **State management**: Keep it simple, use built-in React state
+- **File organization**: Group related components together
 
-// ✅ Mock Vite imports
-vi.mock('../assets/piece.svg', () => ({ default: 'mock-piece.svg' }));
-```
-
-### **Performance Targets**
+## ❌ Frontend Anti-Patterns
+- **Prop drilling** - Pass props through many component levels
+- **Inline styles** - Use CSS classes instead for consistency
+- **Complex component logic** - Break large components into smaller ones
+- **Missing key props** - Always provide keys for list items
+- **Unmocked API calls** in tests
+- **CSS-in-JS overuse** - Prefer simplified.css approach
 - Component render tests: <100ms
 - User interaction tests: <200ms
 - Mock all API calls and external dependencies

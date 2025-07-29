@@ -2,64 +2,57 @@
 applyTo: "**/*.{js,ts,tsx,jsx}"
 ---
 
-# TestEngineer Mindset Instructions
+# Testing: Simple & Effective
 
-*Adopt this mindset during Red Phase (test writing) of TDD workflow.*
+*Practical testing patterns for reliable code.*
 
-## Core Mission
-Write comprehensive, adversarial tests that break implementations and test edge cases.
+## 🎯 Testing Priorities
+1. **Make it work first** - Then add comprehensive tests
+2. **Test behavior** - Not implementation details
+3. **Mock externals** - APIs, databases, file system
+4. **Keep tests fast** - <1 second per test
 
-## Testing Priorities
-1. **Edge Cases First**: null, undefined, empty arrays, invalid types
-2. **External Dependencies**: Mock ALL APIs, databases, file I/O
-3. **Error Scenarios**: Network timeouts, service failures, invalid responses
-4. **Performance**: <1s per unit test, mock expensive operations
-
-## Mocking Strategy
+## 🧪 Testing Patterns
 ```javascript
-// ✅ Mock external services with realistic failures
-jest.mock('../services/apiService', () => ({
-  fetchData: jest.fn()
-    .mockResolvedValueOnce(mockSuccessData)
-    .mockRejectedValueOnce(new Error('Network timeout'))
+// ✅ Simple, clear test structure
+describe('Opening validation', () => {
+  test('should accept valid ECO codes', () => {
+    expect(isValidEco('B20')).toBe(true);
+    expect(isValidEco('E92')).toBe(true);
+  });
+  
+  test('should reject invalid ECO codes', () => {
+    expect(isValidEco('X99')).toBe(false);
+    expect(isValidEco('')).toBe(false);
+  });
+});
+```
+
+## 🎭 Mocking Strategy
+```javascript
+// ✅ Mock external dependencies
+jest.mock('../api/client', () => ({
+  fetchOpenings: jest.fn().mockResolvedValue(mockData)
 }));
 
-// ✅ Mock file system operations  
-jest.mock('fs/promises', () => ({
-  readFile: jest.fn(),
-  writeFile: jest.fn()
+// ✅ Mock with error scenarios
+jest.mock('../database', () => ({
+  query: jest.fn()
+    .mockResolvedValueOnce(successData)
+    .mockRejectedValueOnce(new Error('Connection failed'))
 }));
 ```
 
-## Anti-Patterns to Prevent
-- ❌ Real API calls in unit tests (expensive, slow, flaky)
-- ❌ Database connections in test environment
-- ❌ File system operations without mocking
-- ❌ Tests that take >1 second to execute
-- ❌ Happy path only testing
+## 🚫 Avoid These
+- Real API calls in tests
+- Database connections in tests  
+- File system operations without mocks
+- Tests that take >1 second
+- Testing implementation details
 
-## Activation Context
-Use TestEngineer mindset when:
-- Writing new test cases
-- User mentions "test", "mock", "edge case"  
-- Red Phase of TDD workflow
-- Debugging test failures
-
-## Test Strategy Decision Tree
-```
-External Dependency Present?
-├─ YES → Mock required
-│   ├─ API/Database → Full mock with error scenarios
-│   ├─ File System → In-memory or temp directory
-│   └─ Network → Mock with timeout simulation
-└─ NO → Direct unit test acceptable
-```
-
-## Performance Concern Triage
-```
-Test taking >1 second?
-├─ External calls → Add mocks
-├─ Large data sets → Use smaller fixtures  
-├─ Complex setup → Move to beforeAll
-└─ File I/O → Mock or use memory
-```
+## ❌ Testing Anti-Patterns
+- **Slow tests** - Real database connections, API calls
+- **Flaky tests** - Time-dependent or order-dependent tests
+- **Brittle tests** - Testing internal implementation details
+- **Unclear tests** - Vague test names or unclear assertions
+- **Monolithic tests** - Testing multiple behaviors in one test

@@ -1,79 +1,58 @@
 ---
 applyTo: "packages/shared/**/*.ts"
 ---
-# Shared Utilities Instructions
 
-*These instructions extend the core TDD framework in `copilot-instructions.md` with shared TypeScript utilities guidance.*
+# Shared Utilities: Pure & Simple
 
-## Shared Package Patterns
+*Clean, reusable functions and types.*
 
-### **Type-Safe Development**
+## 🎯 Shared Package Goals
+- **Pure functions**: No side effects, predictable outputs
+- **Clear types**: Well-defined interfaces
+- **No dependencies**: Minimal external imports
+- **Testable**: Easy to test in isolation
+
+## 🧩 Function Patterns
 ```typescript
-// ✅ Export clear, reusable types
-export interface ChessPosition {
-  fen: string;
-  turn: 'w' | 'b';
-  castling: string;
-  enPassant: string | null;
+// ✅ Pure function with clear types
+export function validateEcoCode(eco: string): boolean {
+  return /^[A-E]\d{2}$/.test(eco);
 }
 
-// ✅ Validation utilities with proper error handling
-export function validateFEN(fen: string): ValidationResult {
-  if (!fen || typeof fen !== 'string') {
-    return { valid: false, error: 'FEN must be a non-empty string' };
-  }
-  // Validation logic
-  return { valid: true };
+// ✅ Clear interface definitions
+export interface Opening {
+  name: string;
+  eco: string;
+  moves: string;
+  fen?: string;
 }
 ```
 
-### **Testing Shared Utilities**
+## 🧪 Testing Approach
 ```typescript
-// ✅ Test all edge cases and error conditions
-import { validateFEN, ChessPosition } from '../src/utils/validation';
-
-describe('validateFEN', () => {
-  test('should validate correct FEN strings', () => {
-    const result = validateFEN('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1');
-    expect(result.valid).toBe(true);
+// ✅ Simple, focused tests
+describe('validateEcoCode', () => {
+  test('accepts valid ECO codes', () => {
+    expect(validateEcoCode('B20')).toBe(true);
+    expect(validateEcoCode('E92')).toBe(true);
   });
-
-  test('should reject invalid FEN strings', () => {
-    const result = validateFEN('invalid-fen');
-    expect(result.valid).toBe(false);
-    expect(result.error).toContain('invalid');
-  });
-
-  test('should handle null and undefined inputs', () => {
-    expect(validateFEN(null as any).valid).toBe(false);
-    expect(validateFEN(undefined as any).valid).toBe(false);
+  
+  test('rejects invalid ECO codes', () => {
+    expect(validateEcoCode('X99')).toBe(false);
+    expect(validateEcoCode('')).toBe(false);
   });
 });
 ```
 
-### **Export Strategy**
-```typescript
-// ✅ Barrel exports for clean imports
-// packages/shared/src/index.ts
-export * from './types';
-export * from './utils';
-export * from './schemas';
+## 📦 Export Strategy
+- Export individual functions and types
+- Avoid default exports for better tree shaking
+- Keep function signatures simple
+- Document complex business logic
 
-// ✅ Consumers can import cleanly
-import { ChessPosition, validateFEN } from '@chess-trainer/shared';
-```
-
-### **Performance Targets**
-- Utility function tests: <50ms each
-- Type validation: <10ms per call
-- Mock any file I/O or external dependencies
-
-### **Shared Package Anti-Patterns**
-- ❌ Heavy dependencies in shared utilities
-- ❌ Platform-specific code (Node.js or browser only)
-- ❌ Stateful utilities (prefer pure functions)
-- ❌ Complex business logic (keep utilities simple)
-
-### **File Patterns This Applies To**
-- `packages/shared/src/**/*.ts` (Shared TypeScript utilities)
-- `packages/shared/tests/**/*.test.ts` (Shared utility tests)
+## ❌ Shared Utilities Anti-Patterns
+- **Heavy dependencies** - Keep shared code lightweight
+- **Platform-specific code** - Avoid Node.js or browser-only features
+- **Stateful utilities** - Prefer pure functions over classes
+- **Complex business logic** - Keep utilities simple and focused
+- **Default exports** - Use named exports for better tree shaking

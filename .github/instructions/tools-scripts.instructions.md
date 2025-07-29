@@ -2,75 +2,68 @@
 applyTo: "tools/**/*.{js,ts}"
 ---
 
-# Tools & Scripts Development Instructions
+# Tools & Scripts: Simple & Reliable
 
-*These instructions provide guidance for creating robust command-line scripts and utilities in the `tools/` directory.*
+*Clean command-line scripts and utilities.*
 
-## Scripting & Automation Patterns
-
-### **Command-Line Argument Parsing**
+## 🛠️ Script Essentials
 ```javascript
-// ✅ Use process.argv for simple arguments
-const args = process.argv.slice(2);
-const inputFile = args[0];
-const outputFile = args[1];
+// ✅ Simple argument handling
+const [inputFile, outputFile] = process.argv.slice(2);
 
 if (!inputFile || !outputFile) {
-  console.error('Usage: node <script.js> <inputFile> <outputFile>');
+  console.error('Usage: node script.js <input> <output>');
   process.exit(1);
 }
 ```
 
-### **File System Operations**
+## 📁 File Operations
 ```javascript
-// ✅ Always use fs/promises for async file I/O
+// ✅ Use fs/promises for async operations
 const fs = require('fs/promises');
 
 async function processFile(inputPath, outputPath) {
   try {
     const data = await fs.readFile(inputPath, 'utf8');
-    const processedData = JSON.parse(data).map(item => ({ ...item, processed: true }));
-    await fs.writeFile(outputPath, JSON.stringify(processedData, null, 2));
-    console.log(`Successfully processed file and saved to ${outputPath}`);
+    const result = JSON.parse(data).map(item => ({ ...item, processed: true }));
+    await fs.writeFile(outputPath, JSON.stringify(result, null, 2));
+    console.log(`Processed: ${outputPath}`);
   } catch (error) {
-    console.error(`Error processing file: ${error.message}`);
+    console.error(`Error: ${error.message}`);
     process.exit(1);
   }
 }
 ```
 
-### **Database Interaction (SQLite)**
+## 🗄️ Database Scripts
 ```javascript
-// ✅ Encapsulate database logic and handle connections properly
+// ✅ Simple database operations
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./data/videos.sqlite');
+const db = new sqlite3.Database('./data/database.sqlite');
 
-function getOpenings() {
+async function getOpenings() {
   return new Promise((resolve, reject) => {
     db.all('SELECT * FROM openings', [], (err, rows) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(rows);
+      if (err) reject(err);
+      else resolve(rows);
     });
   });
 }
 
-// ✅ Remember to close the database connection
-function closeDb() {
-  db.close();
-}
+// ✅ Always close connections
+process.on('exit', () => db.close());
 ```
 
-### **Logging and Error Handling**
-- **Use `console.log`** for status updates and progress indicators.
-- **Use `console.error`** for all errors.
-- **Exit with a non-zero status code** on failure (`process.exit(1)`).
-- **Wrap all major operations** in `try/catch` blocks.
+## 🚫 Avoid These
+- Synchronous file operations (use async)
+- Hard-coded file paths (use arguments)
+- Unclosed database connections
+- Empty catch blocks
+- Monolithic scripts (break into functions)
 
-### **Scripting Anti-Patterns**
-- ❌ Using synchronous file I/O (`fs.readFileSync`) unless absolutely necessary at startup.
-- ❌ Hard-coding file paths; accept them as arguments instead.
-- ❌ Leaving database connections open after the script finishes.
-- ❌ Swallowing errors with empty `catch` blocks.
-- ❌ Writing monolithic scripts; break logic into smaller, reusable functions.
+## ❌ Tools/Scripts Anti-Patterns
+- **No error handling** - Always handle failures gracefully
+- **Silent failures** - Provide clear success/failure feedback
+- **Complex one-liners** - Break complex logic into readable steps
+- **No documentation** - Include help text and usage examples
+- **Platform dependencies** - Use cross-platform compatible commands when possible

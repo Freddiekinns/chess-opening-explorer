@@ -2,81 +2,66 @@
 applyTo: "packages/api/**/*.{js,ts}"
 ---
 
-# Backend Development Instructions
+# Backend Development: Simple & Secure
 
-*Node.js/Express specific patterns for TDD workflow.*
+*Node.js/Express patterns focused on functionality and security.*
 
-## Node.js/Express Patterns
-
-### **API Testing Strategy**
+## 🛠️ API Route Structure
 ```javascript
-// ✅ Test API endpoints with mocked dependencies
-const request = require('supertest');
-const app = require('../src/app');
+// ✅ Simple, clear route handler
+app.get('/api/openings/:eco', async (req, res) => {
+  try {
+    const { eco } = req.params;
+    
+    // Validate input
+    if (!eco || !/^[A-E]\d{2}$/.test(eco)) {
+      return res.status(400).json({ error: 'Invalid ECO code' });
+    }
+    
+    const opening = await db.getOpeningByEco(eco);
+    res.json({ success: true, data: opening });
+  } catch (error) {
+    console.error('Error fetching opening:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+```
 
-// Mock database
-jest.mock('../src/database', () => ({
-  query: jest.fn()
+## 🛡️ Security Essentials
+- **Input validation**: Validate all parameters and body data
+- **SQL injection prevention**: Use parameterized queries
+- **Error handling**: Don't leak sensitive information
+- **Logging**: Log errors but never secrets
+
+## 🧪 Testing Strategy
+```javascript
+// ✅ Mock database calls
+jest.mock('../database', () => ({
+  getOpeningByEco: jest.fn()
 }));
 
-test('GET /api/openings should return opening data', async () => {
-  const mockData = [{ id: 1, name: 'Sicilian Defense' }];
-  require('../src/database').query.mockResolvedValue(mockData);
+test('GET /api/openings/:eco returns opening data', async () => {
+  const mockOpening = { name: 'Sicilian Defense', eco: 'B20' };
+  db.getOpeningByEco.mockResolvedValue(mockOpening);
   
   const response = await request(app)
-    .get('/api/openings')
+    .get('/api/openings/B20')
     .expect(200);
     
-  expect(response.body).toEqual(mockData);
+  expect(response.body.data).toEqual(mockOpening);
 });
 ```
 
-### **Database Mocking Patterns**
-```javascript
-// ✅ Mock SQLite for tests
-jest.mock('sqlite3', () => ({
-  Database: jest.fn().mockImplementation(() => ({
-    all: jest.fn(),
-    run: jest.fn(),
-    close: jest.fn()
-  }))
-}));
+## ⚡ Performance Guidelines
+- **Response times**: Target <200ms for API calls
+- **Database**: Use indexes, avoid N+1 queries
+- **Caching**: Cache expensive operations
+- **Error handling**: Fail fast with clear messages
 
-// ✅ Mock file system operations
-jest.mock('fs/promises', () => ({
-  readFile: jest.fn(),
-  writeFile: jest.fn()
-}));
-```
-
-### **Performance Targets**
-- API route tests: <500ms
-- Database operation mocks: <50ms
-- Mock all external services and file I/O
-
-### **Express-Specific Anti-Patterns**
-- ❌ Real database connections in unit tests
-- ❌ File system operations without mocking
-- ❌ External API calls in test environment
-- ❌ Missing error handling middleware tests
-
-### **Security Testing Requirements**
-```javascript
-// ✅ Test input validation
-test('should reject invalid opening ID', async () => {
-  await request(app)
-    .get('/api/openings/invalid-id')
-    .expect(400);
-});
-
-// ✅ Test authentication
-test('should require auth for protected routes', async () => {
-  await request(app)
-    .post('/api/admin/openings')
-    .expect(401);
-});
-```
-
-### **File Patterns This Applies To**
-- `packages/api/**/*.js` (Node.js/Express backend)
-- `tests/**/*.test.js` (Backend test files)
+## ❌ Backend Anti-Patterns
+- **Real database connections** in unit tests
+- **Unvalidated user input** reaching database
+- **String concatenation** in SQL queries (SQL injection risk)
+- **Sensitive data** in error responses or logs
+- **Missing error handling** middleware
+- **Synchronous operations** blocking the event loop

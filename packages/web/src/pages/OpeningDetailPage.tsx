@@ -293,7 +293,7 @@ const OpeningDetailPage: React.FC = () => {
           
           {/* Complexity pill */}
           {opening.complexity && (
-            <span className={`complexity-tag ${opening.complexity.toLowerCase()}`}>
+            <span className={`complexity-tag complexity-${opening.complexity.toLowerCase()}`}>
               {opening.complexity}
             </span>
           )}

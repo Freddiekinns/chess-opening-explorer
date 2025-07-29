@@ -7,7 +7,7 @@ This project follows a centralized testing approach with clear separation of con
 ### Directory Structure
 
 ```
-__tests__/
+tests/
 ├── setup/           # Environment & configuration tests
 ├── unit/            # Individual component/service tests
 ├── integration/     # Cross-component workflow tests

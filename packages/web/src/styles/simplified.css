@@ -472,8 +472,8 @@ body {
 }
 
 .moves-notation {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2);
   align-items: start;
   max-height: 120px;
@@ -486,7 +486,8 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  width: 100%;
+  flex-shrink: 0;
+  margin-right: var(--space-2);
 }
 
 .move-number {
@@ -752,7 +753,7 @@ body {
   border: none;
   padding: var(--space-4) var(--space-6);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.15s ease;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-base);
   letter-spacing: 0.3px;
@@ -769,7 +770,7 @@ body {
   bottom: 0;
   background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(244, 140, 6, 0.05) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: none;
 }
 
 .tab-button:hover {
@@ -831,28 +832,33 @@ body {
   padding: var(--space-2) 0;
 }
 
-/* Enhanced Common Plans Styling */
+/* Enhanced Common Plans Styling - Compact & Scannable */
 .plans-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  margin: var(--space-2) 0;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0 0;
   padding: 0;
 }
 
 .plan-item {
-  margin-bottom: var(--space-2);
+  margin-bottom: 0;
 }
 
 .plan-item p {
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin: 0;
-  padding: var(--space-6) var(--space-6);
-  background: rgba(255, 255, 255, 0.03);
+  padding: var(--space-4) var(--space-4);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: var(--border-radius-base);
   border-left: 3px solid var(--color-brand-orange);
   font-size: var(--font-size-base);
+  transition: background-color 0.2s ease;
+}
+
+.plan-item p:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* =================

@@ -305,13 +305,24 @@ function loadPopularityData() {
   if (popularityData) return popularityData;
   
   try {
-    const popularityPath = path.join(__dirname, '../../../../data/opening_popularity_data.json');
-    if (fs.existsSync(popularityPath)) {
-      const data = JSON.parse(fs.readFileSync(popularityPath, 'utf8'));
-      popularityData = data.top_100_openings || [];
-      console.log(`Loaded ${popularityData.length} popular openings from opening_popularity_data.json`);
+    const popularityStatsPath = path.join(__dirname, '../../../../data/popularity_stats.json');
+    if (fs.existsSync(popularityStatsPath)) {
+      const data = JSON.parse(fs.readFileSync(popularityStatsPath, 'utf8'));
+      
+      // Extract from the "positions" key in the data structure
+      const positions = data.positions || {};
+      popularityData = Object.entries(positions)
+        .filter(([fen, stats]) => stats.games_analyzed && stats.games_analyzed > 0)
+        .map(([fen, stats]) => ({
+          fen,
+          games_analyzed: stats.games_analyzed,
+          rank: stats.rank || 0
+        }))
+        .sort((a, b) => b.games_analyzed - a.games_analyzed);
+      
+      console.log(`✅ Loaded ${popularityData.length} openings with games data`);
     } else {
-      console.warn('opening_popularity_data.json not found, using fallback data');
+      console.warn('No popularity stats file found');
       popularityData = [];
     }
   } catch (error) {
@@ -454,24 +465,23 @@ router.get('/popular-by-eco', (req, res) => {
       });
     });
     
-    // Group openings by ECO family with enriched data
+    // Group ALL openings by ECO family and enrich with popularity data
     const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
     
     allOpenings.forEach(opening => {
-      const popularityInfo = gameCountsByFen.get(opening.fen);
-      if (popularityInfo) {
-        const ecoFamily = opening.eco ? opening.eco[0] : null;
-        if (ecoFamily && ecoCategories[ecoFamily]) {
-          ecoCategories[ecoFamily].push({
-            ...opening,
-            games_analyzed: popularityInfo.games_analyzed,
-            popularity_rank: popularityInfo.rank
-          });
-        }
+      const ecoFamily = opening.eco ? opening.eco[0] : null;
+      if (ecoFamily && ecoCategories[ecoFamily]) {
+        const popularityInfo = gameCountsByFen.get(opening.fen);
+        
+        ecoCategories[ecoFamily].push({
+          ...opening,
+          games_analyzed: popularityInfo ? popularityInfo.games_analyzed : 0,
+          popularity_rank: popularityInfo ? popularityInfo.rank : null
+        });
       }
     });
     
-    // Sort each category by games_analyzed and limit results
+    // Sort each category by games_analyzed (descending) and take top N
     Object.keys(ecoCategories).forEach(category => {
       ecoCategories[category] = ecoCategories[category]
         .sort((a, b) => {

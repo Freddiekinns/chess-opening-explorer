@@ -47,33 +47,37 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   useEffect(() => {
     console.log(`🔍 Processing ${openings.length} total openings for category: "${selectedCategory}"`);
     
-    // First, deduplicate openings by name + eco combination to prevent duplicates
-    const uniqueOpenings = openings.reduce((acc, opening) => {
-      const key = `${opening.name}-${opening.eco}`
+    // Apply ECO category filter FIRST, before any deduplication
+    let filtered = openings
+    if (selectedCategory !== 'all') {
+      filtered = openings.filter(opening => {
+        return opening.eco && opening.eco.startsWith(selectedCategory)
+      })
+      console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
+    }
+    
+    // Filter out any openings without valid FEN positions
+    filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0)
+    console.log(`🎯 After filtering valid FEN positions: ${filtered.length} openings`);
+    
+    // Then deduplicate openings by FEN within the filtered set
+    const uniqueOpenings = filtered.reduce((acc, opening) => {
+      const key = opening.fen
       if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
         acc[key] = opening
       }
       return acc
     }, {} as Record<string, Opening>)
     
-    let filtered = Object.values(uniqueOpenings)
-    console.log(`📊 After deduplication: ${filtered.length} unique openings`);
-
-    // Apply ECO category filter FIRST, before any limiting
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(opening => {
-        return opening.eco && opening.eco.startsWith(selectedCategory)
-      })
-      console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
-    }
+    const deduplicated = Object.values(uniqueOpenings)
+    console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
 
     // Sort by games played (descending order - most popular first)
-    filtered.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
+    deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-    // Limit to top 6 for specific categories, 12 for "all"
-    // Updated limits to show more with optimized data
+    // Limit to top 6 for specific categories, 30 for "all"
     const displayLimit = selectedCategory === 'all' ? 30 : 6
-    const finalResults = filtered.slice(0, displayLimit)
+    const finalResults = deduplicated.slice(0, displayLimit)
     console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
     
     // Debug: Log the actual games_analyzed values for the final results
@@ -87,26 +91,25 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
   // Update category counts
   useEffect(() => {
-    // First deduplicate openings for accurate counts
-    const uniqueOpenings = openings.reduce((acc, opening) => {
-      const key = `${opening.name}-${opening.eco}`
-      if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
-        acc[key] = opening
-      }
-      return acc
-    }, {} as Record<string, Opening>)
-    
-    const deduplicatedOpenings = Object.values(uniqueOpenings)
     const ecoCategories = ['A', 'B', 'C', 'D', 'E']
     
     const updatedCategories = [
-      { id: 'all', label: 'All Openings', count: deduplicatedOpenings.length },
+      { id: 'all', label: 'All Openings', count: openings.length },
       ...ecoCategories.map(ecoLetter => {
-        const matchingOpenings = deduplicatedOpenings.filter(opening => opening.eco && opening.eco.startsWith(ecoLetter))
+        // Filter by ECO family first, then deduplicate within that category
+        const categoryOpenings = openings.filter(opening => opening.eco && opening.eco.startsWith(ecoLetter))
+        const uniqueInCategory = categoryOpenings.reduce((acc, opening) => {
+          const key = opening.fen
+          if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
+            acc[key] = opening
+          }
+          return acc
+        }, {} as Record<string, Opening>)
+        
         return {
           id: ecoLetter,
           label: getEcoLabel(ecoLetter),
-          count: matchingOpenings.length
+          count: Object.keys(uniqueInCategory).length
         }
       })
     ]
@@ -158,7 +161,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       <div className="openings-grid">
         {filteredOpenings.map((opening, index) => (
           <OpeningCard
-            key={`${opening.eco}-${opening.name}-${opening.fen?.substring(0, 10) || index}`}
+            key={opening.fen || `fallback-${opening.eco}-${opening.name}-${index}`}
             opening={opening}
             showPopularity={true}
             showEco={true}

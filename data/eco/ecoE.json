@@ -30337,63 +30337,505 @@
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Bf4",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Bf4",
-    "scid": "E18s"
+    "scid": "E18s",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian is a sophisticated and strategic battleground, epitomizing the concept of hypermodern chess. Black's early ...Ne4 followed by ...Bxe4 establishes a prominent bishop in the center, which becomes the focal point of the game—it is both a strength and a potential target. The game revolves around subtle maneuvering and long-term plans, making it ideal for patient, strategic players who excel at understanding piece coordination and prophylaxis.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Quiet",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares",
+        "Prophylaxis",
+        "Bishop Pair"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The fate of the Black e4-bishop",
+        "The ...d5 pawn break for Black",
+        "White's central expansion with e2-e4"
+      ],
+      "common_plans": [
+        "White: Play b3 and Bb2 to challenge the e4-bishop and control the long diagonal. Prepare the e2-e4 pawn push to gain central space. Maneuver the queen to d2 or c2 to support the center and connect rooks.",
+        "Black: Solidify the e4-bishop with ...d5. Prepare the ...c5 pawn break to undermine White's center. Develop the remaining pieces harmoniously, often with ...Nd7 and ...c5 or ...f5.",
+        "White: Exchange the e4-bishop to gain the bishop pair and try to exploit Black's potentially weakened light squares in the long run.",
+        "Black: Trade the e4-bishop for a knight at an opportune moment to relieve pressure, then focus on controlling the dark squares with the remaining bishop on b7."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:06:43.881Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/3P4/2P1b3/5NP1/PP2PPBP/R1BQ1RK1 b - - 0 9": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. d5",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.d5",
-    "scid": "E18s"
+    "scid": "E18s",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian Defense introduces immediate tension with White's ambitious 9.d5 pawn thrust. While the opening starts with quiet, strategic maneuvering, this move transforms the game into a dynamic and complex struggle for central control. It's an excellent choice for players who enjoy creating imbalances and fighting for the initiative, turning a typically positional opening into a sharp, double-edged battle.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Sharp",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Versatile Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Pawn Break (d5)",
+        "Fighting for the Initiative",
+        "Blockade vs. Breakthrough",
+        "The Active Bishop on e4"
+      ],
+      "common_plans": [
+        "White: Support the d5 pawn, activate the light-squared bishop (Bf4), and use the central space to organize an attack.",
+        "Black: Undermine or blockade the d5 pawn (often with ...exd5 or ...c5), utilize the active Be4 to create weaknesses, and generate queenside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:07:08.306Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/8/2PPb3/6P1/PP2PPBP/R1BQNRK1 b - - 1 9": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1",
-    "scid": "E18t"
+    "scid": "E18t",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian is a sophisticated and strategic duel centered on the control of the e4-square and the potential of the bishop pair. White's plan, initiated by 9.Ne1, is to eliminate Black's active bishop, aiming for a slight, long-term advantage in an open position. Black, in return, achieves a rock-solid pawn structure and excellent piece coordination, making the position very difficult to break down. This opening is ideal for patient, strategic players who enjoy maneuvering and exploiting subtle positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Maneuvering",
+        "Technical",
+        "Quiet"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Technical Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Bishop Pair",
+        "Control of the e4-square",
+        "Queenside Expansion (Black)",
+        "Solid Structure vs. Active Pieces"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair advantage, often by preparing the e2-e4 pawn break to open the center.",
+        "Black: Solidify the center with ...d5, followed by queenside expansion using the ...c5 pawn break.",
+        "White: Restrict Black's counterplay and slowly improve piece placement, aiming for a favorable endgame where the two bishops can dominate.",
+        "Black: Keep the position relatively closed to blunt the power of White's bishops and seek counterplay against White's central setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:07:33.710Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/8/2PP4/6P1/PP2PPNP/R1BQ1RK1 b - - 0 10": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1 Bxg2 10. Nxg2",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1 Bxg2 10.Nxg2",
-    "scid": "E18u"
+    "scid": "E18u",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian leads to a highly strategic and nuanced middlegame. By exchanging the light-squared bishops, Black creates a very solid, resilient structure, aiming to control the e4-square and challenge White's central influence. White, in turn, gains the long-term advantage of the bishop pair and will seek to open the position to exploit it. This opening is ideal for patient, positional players who excel at subtle maneuvering, prophylaxis, and long-term strategic planning.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Quiet",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Bishop Pair vs. Solid Structure",
+        "Pawn Breaks (c5, e4)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White aims to prepare the e2-e4 pawn break to open the center for the bishop pair, often rerouting the g2-knight via e1-d3 or e3.",
+        "Black's main plan is to play ...d5, solidifying the center and preparing the ...c5 break to challenge White's d4-pawn.",
+        "White may expand on the queenside with b4-b5 to create weaknesses in Black's camp.",
+        "Black often prepares to challenge White's control of the center with a timely ...f5 push, creating a 'Stonewall' type of setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:07:50.121Z"
+    }
   },
   "rn1q1rk1/p1p1bppp/1p2p3/3p4/2PP4/6P1/PP2PPNP/R1BQ1RK1 w - - 0 11": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1 Bxg2 10. Nxg2 d5",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1 Bxg2 10.Nxg2 d5",
-    "scid": "E18u"
+    "scid": "E18u",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian leads to a strategically complex and balanced middlegame. By exchanging the light-squared bishops, Black resolves a typical problem piece and challenges White's central control with ...d5, creating a structure reminiscent of the Queen's Gambit Declined. The game becomes a sophisticated battle of maneuvering, focusing on control of the d5 and e4 squares and the influence of the remaining fianchettoed bishops.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Maneuvering",
+        "Closed Position",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Long-term Strategy"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Battle of the Fianchettoed Bishops",
+        "Central Pawn Tension"
+      ],
+      "common_plans": [
+        "White: Resolve the central tension with cxd5 and launch a queenside minority attack with b4-b5.",
+        "Black: Recapture on d5 with the e-pawn (...exd5) to open lines for the rook and b7-bishop, then challenge the center with ...c5.",
+        "White: Maneuver the knight to f4 (via e3 or h4) to pressure Black's central strongpoints.",
+        "Black: Solidify the center with ...Nbd7 and ...Qc7, preparing to contest the d-file and challenge White's space advantage."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:08:15.043Z"
+    }
   },
   "rn1q1rk1/p1p1bppp/1p2p3/3p4/Q1PP4/6P1/PP2PPNP/R1B2RK1 b - - 1 11": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1 Bxg2 10. Nxg2 d5 11. Qa4",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1 Bxg2 10.Nxg2 d5 11.Qa4",
-    "scid": "E18v"
+    "scid": "E18v",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian is a sophisticated and strategic battleground. White's 11.Qa4 is a direct attempt to challenge Black's setup, creating immediate queenside pressure and posing questions about Black's development. The game revolves around White's attempt to exploit the a4-e8 diagonal and control the c-file, versus Black's solid central structure and the long-range power of the b7 bishop. This opening is perfect for patient, strategic players who enjoy maneuvering and accumulating small advantages in a complex, nuanced position.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Maneuvering",
+        "Queenside Play",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Queenside Pressure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Pressure vs. Central Solidity",
+        "The Power of the Fianchettoed Bishop",
+        "Control of the c-file",
+        "Pawn Break Timing"
+      ],
+      "common_plans": [
+        "White: Exert pressure on the queenside with Qa4 and Rc1, prepare a central pawn push with e2-e4, and use the g2-knight to control key central squares.",
+        "Black: Solidify the center with ...Qd7 and ...c6, or challenge with an early ...c5. Develop the queenside, neutralize White's queen, and utilize the b7-bishop's influence on the long diagonal.",
+        "White: Trade on d5 (cxd5) to open the c-file for the rook and create a potential pawn majority on the queenside.",
+        "Black: Complete development smoothly, often with ...a6, and prepare to counter-attack in the center or on the kingside if White overextends on the queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:08:33.267Z"
+    }
   },
   "rn1q1rk1/p1p1bppp/1p2p3/8/Q1pP4/6P1/PP2PPNP/R1B2RK1 w - - 0 12": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1 Bxg2 10. Nxg2 d5 11. Qa4 dxc4",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1 Bxg2 10.Nxg2 d5 11.Qa4 dxc4",
-    "scid": "E18x"
+    "scid": "E18x",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian leads to a strategically complex and nuanced middlegame where White voluntarily cedes the bishop pair. In exchange for this concession, White achieves a solid pawn structure and active piece play, particularly with the queen on a4. The game becomes a sophisticated duel centered on whether Black's long-term advantage of the two bishops can outweigh White's central control and initiative. This opening is perfect for patient, strategic players who excel at understanding subtle positional imbalances and executing long-term plans.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Theoretical",
+        "Dynamic",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Queenside Play",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Technical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight Pair",
+        "Central Control vs. Flank Activity",
+        "Queenside Pawn Majority",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White's plan involves recapturing on c4 (12.Qxc4), controlling the center with a timely e2-e4 push, and using the active queen and knights to pressure Black's position, often targeting the c6 and d5 squares.",
+        "Black aims to consolidate after ...dxc4, typically with ...c5, ...Nd7, and ...Qc7. The main goal is to activate the powerful bishop pair, challenge White's central grip, and create counterplay on the queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:08:51.284Z"
+    }
   },
   "rn3rk1/p1pqbppp/1p2p3/3p4/Q1PP4/6P1/PP2PPNP/R1B2RK1 w - - 2 12": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Ne1 Bxg2 10. Nxg2 d5 11. Qa4 Qd7",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Ne1 Bxg2 10.Nxg2 d5 11.Qa4 Qd7",
-    "scid": "E18w"
+    "scid": "E18w",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian is a hallmark of high-level strategic play, where Black proactively neutralizes White's dangerous fianchettoed bishop. The resulting positions are often simplified after the queen exchange on d7, leading to a technical and subtle middlegame focused on pawn structure and piece maneuvering. This opening is ideal for patient, strategic players who excel at accumulating small advantages and navigating quiet, yet complex, endgames.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Quiet",
+        "Technical",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Tempo",
+        "Initiative",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Endgame Transition"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Technical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Neutralizing the Fianchetto Bishop",
+        "Control of the d5-square",
+        "Queenside Pressure vs. Central Solidity",
+        "Simplification"
+      ],
+      "common_plans": [
+        "White: After the queen trade on d7, White often plays b3 to solidify the queenside, develops the Rc1, and may seek a minority attack with b4-b5 to create weaknesses in Black's camp. The knight from g2 often moves to f4 to pressure the center.",
+        "Black: After ...Qxd7, Black typically recaptures with the knight (...Nxd7) to maintain central control. Plans involve completing development with ...e5 or ...c5 pawn breaks, controlling the open c-file, and using the solid structure to slowly outmaneuver White in the ensuing middlegame or endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:09:09.610Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/8/2PPb2N/6P1/PP2PPBP/R1BQ1RK1 b - - 1 9": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Nxe4 Bxe4 9. Nh4",
     "name": "Queen's Indian: 7.Nc3 Ne4 8.Nxe4 Bxe4 9.Nh4",
-    "scid": "E18s"
+    "scid": "E18s",
+    "analysis_json": {
+      "description": "This variation of the Queen's Indian is a sharp and modern strategic battle. White's provocative 9.Nh4 immediately challenges Black's key light-squared bishop, aiming to secure the long-term advantage of the bishop pair at the cost of a temporarily misplaced knight. The resulting positions are rich in positional nuance, revolving around whether White can exploit the two bishops or if Black can neutralize them with a solid central structure. This line is perfect for strategic players who enjoy subtle maneuvering and fighting for deep positional concepts.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Modern",
+        "Solid",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Battle for the Bishop Pair",
+        "Control of the e4-square",
+        "Queenside vs. Central Strategy",
+        "Restricting Enemy Pieces"
+      ],
+      "common_plans": [
+        "White: Force the exchange of the h4-knight for the e4-bishop, secure the bishop pair, and use it to control the board, often preparing a central push with e2-e4 or queenside expansion.",
+        "Black: Exchange the bishop on g2 (...Bxg2) and immediately challenge the center with ...d5 to restrict White's bishops. Alternatively, retreat the bishop (...Bg6) to preserve it, though this may concede space after a White f2-f4.",
+        "White: After ...Bxg2 Nxg2, White often plays b3 and Bb2 to complete development and strengthen the long diagonal, followed by queenside pressure.",
+        "Black: Create a solid pawn structure, neutralize White's bishop pair, and seek counterplay by targeting potential weaknesses in White's camp, such as the slightly exposed kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:09:29.565Z"
+    }
   },
   "rn1q1rk1/pbppbppp/1p2p3/8/2PPn3/2N2NP1/PPQ1PPBP/R1B2RK1 b - - 8 8": {
     "src": "scid",
@@ -30403,6 +30845,56 @@
     "scid": "E18y",
     "aliases": {
       "chessGraph": "E19"
+    },
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a classical and highly strategic battleground where deep understanding takes precedence over tactical flurries. White's 8.Qc2 directly challenges Black's central outpost on e4, leading to a rich, maneuvering game focused on central control, pawn structure, and the long-term influence of the fianchettoed bishops. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and navigating complex positional landscapes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Exchanges",
+        "Pin",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Minor Piece Play"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The fianchettoed bishop battle (Bb7 vs Bg2)",
+        "Pawn structure transformation",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: After the common 8...Nxc3, White recaptures (with bxc3 or Qxc3) and fights for central space, often preparing the e2-e4 pawn break to seize the initiative.",
+        "Black: Neutralize White's central pressure, often by exchanging on c3, and then either challenge the center with ...d5 or control the e4-square with ...f5, aiming to exploit the long-term power of the Bb7.",
+        "White: Develop pieces to optimal squares, control the center, and slowly build pressure on Black's position, looking for a favorable moment to break through.",
+        "Black: Maintain a solid and flexible structure, complete development, and seek counterplay based on White's chosen pawn structure, often targeting potential weaknesses on the queenside or in the center."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:09:47.595Z"
     }
   },
   "rn1q1rk1/pbppbppp/1p2p3/8/2PP4/2n2NP1/PPQ1PPBP/R1B2RK1 w - - 0 9": {
@@ -30410,14 +30902,110 @@
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3",
     "name": "Queen's Indian: Old Main Line, 8.Qc2 Nxc3",
-    "scid": "E18y"
+    "scid": "E18y",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a classical and deeply strategic system where both sides engage in a sophisticated battle for central control. Black employs a hypermodern strategy, controlling the center with pieces, and the exchange on c3 cedes the bishop pair to White in exchange for a rock-solid pawn structure and influence over the critical e4-square. This opening is perfect for patient, strategic players who enjoy maneuvering, long-term planning, and exploiting subtle positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Hypermodern",
+        "Quiet"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e4-square",
+        "Hypermodern Defense",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, prepare the e2-e4 pawn push to gain space, and exert pressure on the long diagonal.",
+        "Black: Firmly control the e4-square, prepare the ...c5 or ...d5 pawn breaks to challenge White's center, and seek counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:10:04.705Z"
+    }
   },
   "rn1q1rk1/pbppbppp/1p2p3/8/2PP4/2P2NP1/P1Q1PPBP/R1B2RK1 b - - 0 9": {
     "src": "scid",
     "eco": "E18",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. bxc3",
     "name": "Queen's Indian: Old Main Line, 8.Qc2 Nxc3 9.bxc3",
-    "scid": "E18z"
+    "scid": "E18z",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a classical and deeply strategic system where both sides engage in a sophisticated battle for central control. White establishes a powerful pawn center with bxc3, aiming to use it as a base for future expansion, while Black seeks to undermine this center, typically with the ...c5 or ...f5 pawn breaks. This opening is perfect for patient, strategic players who appreciate nuanced maneuvering and long-term planning over immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "White's central pawn mass",
+        "Black's counterplay with ...c5 or ...f5"
+      ],
+      "common_plans": [
+        "White: Support the d4-pawn, prepare the e3-e4 push, and utilize the open b-file for queenside pressure.",
+        "Black: Undermine White's center with the ...c5 pawn break, often leading to an IQP or hanging pawns structure.",
+        "Black: Alternatively, challenge the center with the ...f5 pawn break, aiming for kingside activity and control over e4.",
+        "White: Maneuver pieces to optimal squares (e.g., Re1, Bf1) to support the central advance and control key files."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:10:26.118Z"
+    }
   },
   "rn1q1rk1/pbppbppp/1p2p3/8/2PP4/2Q2NP1/PP2PPBP/R1B2RK1 b - - 0 9": {
     "src": "eco_tsv",
@@ -30430,84 +31018,681 @@
       "ct": "Queen's Indian Defense, Classical Variation",
       "chronos": "Queen's Indian: old main line, 9.Qxc3"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The main line of the Classical Queen's Indian is a battleground of profound strategic ideas. Black voluntarily cedes the bishop pair to gain time and challenge White's central control, particularly over the critical e4 square. The resulting positions are balanced and complex, revolving around themes of piece activity versus structural advantages, making it ideal for patient, strategic players who enjoy maneuvering and long-term planning.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Maneuvering",
+        "Closed Position"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the e4-square",
+        "The Bishop Pair vs. Piece Activity",
+        "Black's ...c5 and ...f5 pawn breaks",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn push to seize central space and activate the bishop pair.",
+        "White: Expand on the queenside with moves like a3 and b4 to gain space and challenge Black's setup.",
+        "Black: Challenge White's center with the ...c5 pawn break, opening lines for the pieces and fighting for the d5 square.",
+        "Black: Prepare the ...f5 pawn break to undermine White's control of e4 and create kingside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:10:48.129Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/8/2PPb3/2Q2NP1/PP2PPBP/R1B2RK1 w - - 1 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 Be4",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 Be4",
-    "scid": "E19d"
+    "scid": "E19d",
+    "analysis_json": {
+      "description": "The Queen's Indian, Old Main Line with 9...Be4, represents a sophisticated and strategically deep approach for Black. By immediately challenging White's control of the crucial e4-square, Black steers the game into a nuanced positional battle focused on piece maneuvering and long-term structural considerations. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and outmaneuvering their opponents in a complex middlegame.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Hypermodern",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The fianchettoed bishop battle (g2 vs b7)",
+        "Pawn breaks (...c5, ...d5)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White aims to prepare and achieve the e2-e4 pawn push to gain a space advantage in the center.",
+        "Black's primary plan is to restrain White, maintain control over the e4-square, and prepare counter-punches with ...c5 or ...d5.",
+        "White often develops a queenside initiative with a minority attack starting with b2-b4-b5.",
+        "Black will often reroute the Be4 to d5 or f5 after it has served its purpose of delaying White's central expansion."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:11:09.435Z"
+    }
   },
   "rn1q1rk1/p1ppbppp/1p2p3/8/2PPb3/2Q3P1/PP2PPBP/R1B1NRK1 b - - 2 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 Be4 10. Ne1",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 Be4 10.Ne1",
-    "scid": "E19e"
+    "scid": "E19e",
+    "analysis_json": {
+      "description": "The Old Main Line with 10.Ne1 is a classical and deeply strategic variation of the Queen's Indian Defense. White's plan is direct: challenge Black's active bishop on e4 to simplify the position and nullify the pressure against the g2-bishop. This leads to a technical, maneuvering game where White aims to leverage a slight space advantage, while Black relies on the solidity of their structure and long-term potential of the b7-bishop. This opening is perfect for patient, strategic players who excel at understanding subtle positional nuances and long-term planning.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "Technical"
+      ],
+      "tactical_tags": [
+        "Tempo",
+        "Counterattack",
+        "Prophylaxis",
+        "Simplification"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Bishop Pair Struggle"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Technical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Neutralizing the Fianchettoed Bishop",
+        "Queenside Counterplay",
+        "Prophylactic Thinking"
+      ],
+      "common_plans": [
+        "White's Plan: Exchange on e4 (Bxe4), play b3 and Bb2, and prepare the central e3-e4 pawn break to exploit their space advantage.",
+        "Black's Plan: After ...Bxe4 dxe4, Black often plays ...f5 to restrain White's center and fight for the e4-square. Alternatively, Black seeks queenside counterplay with moves like ...c5 and ...a5-a4.",
+        "White's Plan: Develop the remaining pieces harmoniously (e.g., Rd1, Re1) and slowly build pressure, aiming for a favorable endgame.",
+        "Black's Plan: Reposition the knight from f6 (e.g., to d7) to support the center and prepare to challenge White's control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:11:27.218Z"
+    }
   },
   "rn1q1rk1/pb1pbppp/1p2p3/2p5/2PP4/2Q2NP1/PP2PPBP/R1B2RK1 w - - 0 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5",
-    "scid": "E19j"
+    "scid": "E19j",
+    "analysis_json": {
+      "description": "The Old Main Line with 9...c5 is a cornerstone of classical Queen's Indian theory, leading to a profound strategic battle. Black immediately challenges White's central control, creating a tense and balanced position where understanding pawn structures is paramount. This opening is perfect for sophisticated, positional players who enjoy maneuvering and accumulating small advantages over a long game, rather than seeking immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "Balanced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Central Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Piece Activity",
+        "Weak Squares",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The Bishop Pair vs. Solid Structure",
+        "Undermining the d4-pawn",
+        "Control of the d5-square",
+        "Transition to IQP or Hanging Pawns"
+      ],
+      "common_plans": [
+        "White: Solidify the center, utilize the bishop pair, prepare the d4-d5 pawn break, and potentially launch a kingside attack.",
+        "Black: Pressure the d4-pawn, control the e4-square, neutralize the long-diagonal bishop, and create queenside counterplay with ...a6 and ...b5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:11:47.799Z"
+    }
   },
   "rn1q1rk1/pb1pbppp/1p2p3/2p5/2PP4/1PQ2NP1/P3PPBP/R1B2RK1 b - - 0 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. b3",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.b3",
-    "scid": "E19k"
+    "scid": "E19k",
+    "analysis_json": {
+      "description": "The Queen's Indian Old Main Line with 10.b3 is a classical and deeply strategic system. Both sides build solid, flexible pawn structures, leading to a sophisticated battle of maneuvers where understanding long-term plans is paramount. This opening is perfect for patient, positional players who excel at controlling key squares, timing pawn breaks, and accumulating small, lasting advantages in a complex middlegame.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Flexible",
+        "System-based",
+        "Classical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the d5-square",
+        "The power of the fianchettoed bishops",
+        "Pawn breaks (d4-d5 vs ...d6-d5)",
+        "Hedgehog formation for Black"
+      ],
+      "common_plans": [
+        "White aims to prepare the d4-d5 pawn push to gain a space advantage, often preceded by moves like Rd1 and Be1.",
+        "Black focuses on controlling the d5 square, often with ...Bf6, and prepares for a central break with ...d5 or challenges White's control of the c-file.",
+        "White may play on the queenside, using the b-pawn to create pressure and open lines for the rooks.",
+        "Black often seeks to exchange White's powerful light-squared bishop (Bg2) to relieve pressure and equalize."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:12:07.306Z"
+    }
   },
   "rn1q1rk1/pb1pbppp/1p2p3/2p5/2PP4/2Q2NP1/PP2PPBP/R1BR2K1 b - - 1 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1",
-    "scid": "E19l"
+    "scid": "E19l",
+    "analysis_json": {
+      "description": "This is a classical and deeply strategic variation of the Queen's Indian Defense, where both sides engage in a sophisticated maneuvering battle. The game revolves around control of the center, particularly the d4 and e5 squares, and the long-term potential of the fianchettoed bishops. It suits patient players who excel at understanding pawn structures, subtle piece placement, and accumulating small, lasting advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "Closed Position"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the d-file",
+        "The d5 pawn break",
+        "Pressure on the long diagonal",
+        "Queenside vs. Central play"
+      ],
+      "common_plans": [
+        "White aims to control the d-file, prepare the d4-d5 pawn push to gain space, and use the queen on c3 to pressure the queenside.",
+        "Black typically plays ...d6 to solidify the center, followed by developing pieces like ...Nc6 and ...Qc7 to pressure d4 and prepare for a potential ...d5 break.",
+        "White may reroute the knight from f3 to e1 and then d3 (or f3) to bolster the center and prepare for action.",
+        "Black seeks counterplay using the power of the Bb7 on the long diagonal, often targeting the d4 pawn and White's queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:12:23.824Z"
+    }
   },
   "rn1q1rk1/pb2bppp/1p1pp3/2p5/2PP4/2Q2NP1/PP2PPBP/R1BR2K1 w - - 0 11": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1 d6",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1 d6",
-    "scid": "E19m"
+    "scid": "E19m",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a battleground for the strategically profound, epitomizing the hypermodern approach. Black establishes a rock-solid, flexible 'hedgehog' formation, ceding space to absorb pressure and prepare for a timely counter-punch. This opening is perfect for patient, resilient players who excel at strategic maneuvering, understanding pawn breaks, and outlasting their opponents in a long, complex struggle.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Hypermodern",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pin",
+        "Initiative",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Hedgehog Formation",
+        "Control of the d-file",
+        "Queenside Counterplay",
+        "Prophylactic Thinking"
+      ],
+      "common_plans": [
+        "White's Plan: Use the space advantage to slowly squeeze Black, often by expanding on the queenside with b4, increasing pressure on the d-file, and preparing a central break with e4.",
+        "Black's Plan: Complete development (e.g., ...Qc7, ...Nbd7, ...Rfd8), maintain solidity, and prepare counter-attacking pawn breaks like ...b5 or ...d5 to liberate their position.",
+        "Both sides maneuver pieces to their optimal squares, patiently improving their position while waiting for the opponent to commit to a plan.",
+        "Transitioning into a favorable endgame where Black's active pieces or White's space advantage becomes the decisive factor."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:12:41.935Z"
+    }
   },
   "rn1q1rk1/pb2bppp/1p1pp3/2p5/2PP4/1PQ2NP1/P3PPBP/R1BR2K1 b - - 0 11": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1 d6 11. b3",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1 d6 11.b3",
-    "scid": "E19n"
+    "scid": "E19n",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a classical and deeply strategic system where both sides vie for central control and long-term positional advantages. White's double fianchetto setup aims to exert pressure on the long diagonals, while Black establishes a solid, flexible pawn structure, leading to a sophisticated maneuvering game. This opening is perfect for patient, strategic players who excel at accumulating small advantages and understanding complex pawn structures.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed",
+        "Maneuvering",
+        "Classical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Fianchetto Bishop Battle",
+        "Queenside Counterplay",
+        "Pawn Break Timing"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn break, use the Rd1 to pressure the d6-pawn, and complete development with Bb2.",
+        "Black: Maintain a firm grip on the e4-square, often with ...Bf8 and knight maneuvers, and seek counterplay through a queenside expansion with ...a6 and ...b5.",
+        "White: Reposition the queen from c3 (e.g., to b2) to support the queenside and prepare for central action.",
+        "Black: Challenge White's center by preparing to trade on d4 (...cxd4) followed by developing the knight to c6 or preparing the ...e5 break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:13:02.043Z"
+    }
   },
   "rn1q1rk1/pb3ppp/1p1ppb2/2p5/2PP4/1PQ2NP1/P3PPBP/R1BR2K1 w - - 1 12": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1 d6 11. b3 Bf6",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1 d6 11.b3 Bf6",
-    "scid": "E19o"
+    "scid": "E19o",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a battleground for deep strategic minds, epitomizing a sophisticated and nuanced approach to the opening. Black has resolved the central tension by exchanging on c3, and now with 11...Bf6, initiates a subtle fight for control of the long diagonal and the d4-square. This opening leads to a complex, maneuvering game where understanding pawn structures and long-term piece placement is paramount, making it ideal for patient, strategic players who thrive on accumulating small advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Maneuvering",
+        "Closed Position",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Long Diagonal Control",
+        "Space"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the d-file and d4-square",
+        "The battle of the fianchettoed bishops",
+        "Black's counterplay based on the pin along the a1-h8 diagonal",
+        "Prophylaxis against central breaks"
+      ],
+      "common_plans": [
+        "White: Complete development with Bb2, increase pressure on the d6-pawn, and prepare a potential e3-e4 pawn break.",
+        "Black: Play ...Qc7 to support the center and connect the rooks, challenge White's control of the long diagonal, and prepare to contest the c-file.",
+        "White: Reposition the queen from c3 to a more stable square like e1 or d2 to break the pin and prepare for action.",
+        "Black: Look for opportunities to achieve the ...e5 pawn break, which would fundamentally change the central pawn structure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:13:24.123Z"
+    }
   },
   "rn1q1rk1/pb3ppp/1p1ppb2/2p5/2PP4/1PQ2NP1/PB2PPBP/R2R2K1 b - - 2 12": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1 d6 11. b3 Bf6 12. Bb2",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1 d6 11.b3 Bf6",
-    "scid": "E19o"
+    "scid": "E19o",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian Defense leads to a sophisticated and deeply strategic battle. Both sides adopt a fianchetto setup, resulting in a game centered on long-term plans, piece maneuvering, and the subtle fight for central control, particularly the critical e4-square. This opening is perfect for patient, positional players who excel at understanding complex pawn structures and accumulating small, lasting advantages rather than seeking immediate tactical complications.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed Position",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Long-term Pressure",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Battle of the fianchettoed bishops",
+        "Pressure on the d6 pawn",
+        "Prophylactic play"
+      ],
+      "common_plans": [
+        "White aims to control the center, often preparing the e2-e4 pawn break, and puts pressure on Black's d6 pawn with pieces like the rook on d1 and a bishop rerouted to f1.",
+        "Black focuses on solidifying their position with moves like ...Qe7, challenging White's control of the long diagonal, and preparing counterplay either on the queenside with ...a6 and ...b5 or in the center with a timely ...e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:13:44.007Z"
+    }
   },
   "rn3rk1/pb2qppp/1p1ppb2/2p5/2PP4/1PQ2NP1/PB2PPBP/R2R2K1 w - - 3 13": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 c5 10. Rd1 d6 11. b3 Bf6 12. Bb2 Qe7",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 c5 10.Rd1 d6 11.b3 Bf6 12.Bb2 Qe7",
-    "scid": "E19p"
+    "scid": "E19p",
+    "analysis_json": {
+      "description": "The Old Main Line of the Queen's Indian is a classical and highly strategic system where both sides engage in a sophisticated battle for central control. The game is characterized by deep maneuvering and long-term planning rather than immediate tactical clashes, focusing on the key e4 and d5 squares. This opening is perfect for patient, strategic players who excel at understanding pawn structures and accumulating small, lasting advantages.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed Position",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Pressure on the d-file",
+        "The Fianchetto Battle (g2 vs b7)",
+        "The ...e5 pawn break for Black"
+      ],
+      "common_plans": [
+        "White: Control the center, prepare the e2-e4 pawn advance, and exert pressure on Black's d6-pawn. White often tries to trade Black's powerful b7-bishop.",
+        "Black: Maintain a solid structure, neutralize White's central control, and prepare the liberating ...e5 pawn break. Black often reroutes pieces to support the center and challenge White's space advantage."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:14:07.447Z"
+    }
   },
   "rn1q1rk1/pbp1bppp/1p1pp3/8/2PP4/2Q2NP1/PP2PPBP/R1B2RK1 w - - 0 10": {
     "src": "scid",
     "eco": "E19",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 Ne4 8. Qc2 Nxc3 9. Qxc3 d6",
     "name": "Queen's Indian: Old Main Line, 9.Qxc3 d6",
-    "scid": "E19b"
+    "scid": "E19b",
+    "analysis_json": {
+      "description": "The Old Main Line with 9...d6 ushers in a classic strategic battle, often leading to a 'Hedgehog' formation for Black. This opening is defined by its slow, maneuvering character, where understanding pawn structures and long-term plans is paramount. It is perfectly suited for patient, positional players who enjoy accumulating small advantages and preparing for decisive pawn breaks in the middlegame.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Hedgehog Formation",
+        "Control of the e4-square",
+        "Queenside Expansion vs. Central Control",
+        "Pawn Breaks (...b5, ...e5)"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn break to gain central space and activate the g2-bishop. Use the move a4 to restrict Black's queenside play.",
+        "Black: Maintain a solid, flexible structure, preparing counterplay with the ...b5 pawn break (minority attack) or a central push with ...e5. Re-route pieces to challenge White's control of key squares."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T10:14:26.619Z"
+    }
   },
   "rn1q1rk1/pbp1bppp/1p1pp3/8/2PP4/1PQ2NP1/P3PPBP/R1B2RK1 b - - 0 10": {
     "src": "scid",

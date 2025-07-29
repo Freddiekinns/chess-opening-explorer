@@ -70,14 +70,15 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     // Sort by games played (descending order - most popular first)
     filtered.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-    // Now limit to top 6 for specific categories, 12 for "all"
-    const displayLimit = selectedCategory === 'all' ? 12 : 6
+    // Limit to top 6 for specific categories, 12 for "all"
+    // Updated limits to show more with optimized data
+    const displayLimit = selectedCategory === 'all' ? 30 : 6
     const finalResults = filtered.slice(0, displayLimit)
     console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
     
     // Debug: Log the actual games_analyzed values for the final results
     console.log('🎯 Final sorted results with games_analyzed:');
-    finalResults.forEach((opening, index) => {
+    finalResults.slice(0, 6).forEach((opening, index) => {
       console.log(`  ${index + 1}. "${opening.name}" (${opening.eco}) - ${opening.games_analyzed || 0} games`);
     });
     

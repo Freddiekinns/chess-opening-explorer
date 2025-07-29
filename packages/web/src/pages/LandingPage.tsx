@@ -51,33 +51,44 @@ const LandingPage: React.FC = () => {
         if (openingsData.success) {
           setOpeningsData(openingsData.data)
           
-          // Try to load popular openings from API first
+          // Load popular openings with new optimized endpoint
           try {
-            const popularResponse = await fetch('/api/openings/popular?limit=12')
+            const popularResponse = await fetch('/api/openings/popular-by-eco?limit=6')
             const popularData = await popularResponse.json()
             
-            if (popularData.success && popularData.data.length > 0) {
-              setPopularOpenings(popularData.data)
+            if (popularData.success && popularData.data) {
+              // Flatten the categorized data into a single array for PopularOpeningsGrid
+              const flattenedPopular = Object.values(popularData.data).flat() as Opening[]
+              setPopularOpenings(flattenedPopular)
+              console.log(`✅ Loaded ${flattenedPopular.length} popular openings from optimized endpoint (${popularData.metadata.response_time_ms}ms)`)
             } else {
-              // Simple fallback: use openings with most games played
-              const fallbackPopular = openingsData.data
-                .filter((opening: Opening) => opening.games_analyzed || opening.analysis_json?.popularity)
-                .sort((a: Opening, b: Opening) => {
-                  // Prioritize actual game volume over popularity score
-                  const gamesA = a.games_analyzed || 0
-                  const gamesB = b.games_analyzed || 0
-                  if (gamesA !== gamesB) return gamesB - gamesA
-                  // Fallback to popularity score if no game data
-                  return (b.analysis_json?.popularity || 0) - (a.analysis_json?.popularity || 0)
-                })
-                .slice(0, 12)
+              // Fallback to original popular endpoint
+              const fallbackResponse = await fetch('/api/openings/popular?limit=30')
+              const fallbackData = await fallbackResponse.json()
               
-              setPopularOpenings(fallbackPopular.length > 0 ? fallbackPopular : openingsData.data.slice(0, 12))
+              if (fallbackData.success && fallbackData.data.length > 0) {
+                setPopularOpenings(fallbackData.data)
+              } else {
+                // Simple fallback: use openings with most games played
+                const fallbackPopular = openingsData.data
+                  .filter((opening: Opening) => opening.games_analyzed || opening.analysis_json?.popularity)
+                  .sort((a: Opening, b: Opening) => {
+                    // Prioritize actual game volume over popularity score
+                    const gamesA = a.games_analyzed || 0
+                    const gamesB = b.games_analyzed || 0
+                    if (gamesA !== gamesB) return gamesB - gamesA
+                    // Fallback to popularity score if no game data
+                    return (b.analysis_json?.popularity || 0) - (a.analysis_json?.popularity || 0)
+                  })
+                  .slice(0, 30)
+                
+                setPopularOpenings(fallbackPopular.length > 0 ? fallbackPopular : openingsData.data.slice(0, 30))
+              }
             }
           } catch (error) {
             console.warn('Popular openings endpoint not available, using fallback')
-            // Simple fallback: use first 12 openings
-            setPopularOpenings(openingsData.data.slice(0, 12))
+            // Simple fallback: use first 30 openings
+            setPopularOpenings(openingsData.data.slice(0, 30))
           }
           
           setDataLoaded(true)

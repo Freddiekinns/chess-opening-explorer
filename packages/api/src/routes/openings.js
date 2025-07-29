@@ -393,6 +393,116 @@ router.get('/popular', (req, res) => {
 });
 
 /**
+ * @route GET /api/openings/popular-by-eco
+ * @desc Get top openings by ECO category for optimized grid display
+ * @param {number} limit - Max results per category (default: 6, max: 10)
+ */
+router.get('/popular-by-eco', (req, res) => {
+  try {
+    const { limit = 6 } = req.query;
+    const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 10);
+    
+    const startTime = Date.now();
+    const allOpenings = ecoService.getAllOpenings();
+    const popularity = loadPopularityData();
+    
+    if (popularity.length === 0) {
+      // Fallback: group by ECO family using analysis.popularity
+      const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
+      
+      allOpenings
+        .filter(opening => opening.analysis && opening.analysis.popularity && opening.analysis.popularity > 0)
+        .forEach(opening => {
+          const ecoFamily = opening.eco ? opening.eco[0] : null;
+          if (ecoFamily && ecoCategories[ecoFamily]) {
+            ecoCategories[ecoFamily].push(opening);
+          }
+        });
+      
+      // Sort and limit each category
+      Object.keys(ecoCategories).forEach(category => {
+        ecoCategories[category] = ecoCategories[category]
+          .sort((a, b) => (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0))
+          .slice(0, maxResultsPerCategory);
+      });
+      
+      const responseTime = Date.now() - startTime;
+      
+      res.json({
+        success: true,
+        data: ecoCategories,
+        metadata: {
+          total_openings_analyzed: allOpenings.length,
+          response_time_ms: responseTime,
+          source: 'fallback',
+          categories_included: ['A', 'B', 'C', 'D', 'E'],
+          limit_per_category: maxResultsPerCategory
+        }
+      });
+      return;
+    }
+    
+    // Create optimized lookup map by FEN
+    const gameCountsByFen = new Map();
+    popularity.forEach(item => {
+      gameCountsByFen.set(item.fen, {
+        games_analyzed: item.games_analyzed,
+        rank: item.rank
+      });
+    });
+    
+    // Group openings by ECO family with enriched data
+    const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
+    
+    allOpenings.forEach(opening => {
+      const popularityInfo = gameCountsByFen.get(opening.fen);
+      if (popularityInfo) {
+        const ecoFamily = opening.eco ? opening.eco[0] : null;
+        if (ecoFamily && ecoCategories[ecoFamily]) {
+          ecoCategories[ecoFamily].push({
+            ...opening,
+            games_analyzed: popularityInfo.games_analyzed,
+            popularity_rank: popularityInfo.rank
+          });
+        }
+      }
+    });
+    
+    // Sort each category by games_analyzed and limit results
+    Object.keys(ecoCategories).forEach(category => {
+      ecoCategories[category] = ecoCategories[category]
+        .sort((a, b) => {
+          const gameCountDiff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
+          if (gameCountDiff !== 0) return gameCountDiff;
+          return a.name.localeCompare(b.name);
+        })
+        .slice(0, maxResultsPerCategory);
+    });
+    
+    const responseTime = Date.now() - startTime;
+    const totalOpeningsReturned = Object.values(ecoCategories).reduce((sum, arr) => sum + arr.length, 0);
+    
+    res.json({
+      success: true,
+      data: ecoCategories,
+      metadata: {
+        total_openings_analyzed: allOpenings.length,
+        total_openings_returned: totalOpeningsReturned,
+        response_time_ms: responseTime,
+        source: 'games_analyzed',
+        categories_included: ['A', 'B', 'C', 'D', 'E'],
+        limit_per_category: maxResultsPerCategory
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+/**
  * @route GET /api/openings/all
  * @desc Get all openings for client-side search
  */

@@ -280,10 +280,10 @@ const OpeningDetailPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Page Title Area - Full Width */}
+      {/* Page Title Area */}
       <div className="page-title-area centered">
-        <h1 className="title-page">{opening.name}</h1>
-        <div className="complexity-and-tags centered">
+        <h1 className="opening-name">{opening.name}</h1>
+        <div className="complexity-and-tags">
           {/* ECO code pill */}
           {opening.eco && (
             <span className="eco-pill">
@@ -293,7 +293,7 @@ const OpeningDetailPage: React.FC = () => {
           
           {/* Complexity pill */}
           {opening.complexity && (
-            <span className={`complexity-pill ${opening.complexity.toLowerCase()}`}>
+            <span className={`complexity-tag ${opening.complexity.toLowerCase()}`}>
               {opening.complexity}
             </span>
           )}

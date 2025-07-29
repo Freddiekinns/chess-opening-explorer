@@ -3,7 +3,7 @@
  * Following TDD approach - Red phase
  */
 
-const LLMService = require('../../src/services/llm-service');
+const LLMService = require('../../packages/api/src/services/llm-service');
 
 // Mock the Vertex AI module
 jest.mock('@google-cloud/vertexai', () => {

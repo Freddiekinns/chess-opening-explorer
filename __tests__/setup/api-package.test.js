@@ -1,3 +1,12 @@
+/**
+ * Api Package Setup Tests
+ * 
+ * Following TDD principles:
+ * - Test behavior, not implementation
+ * - Mock external dependencies  
+ * - Fast, isolated tests
+ */
+
 const fs = require('fs');
 const path = require('path');
 

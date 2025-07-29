@@ -1,4 +1,13 @@
-const ECOService = require('../../src/services/eco-service');
+/**
+ * Eco Service Unit Tests
+ * 
+ * Following TDD principles:
+ * - Test behavior, not implementation
+ * - Mock external dependencies  
+ * - Fast, isolated tests
+ */
+
+const ECOService = require('../../packages/api/src/services/eco-service');
 const fs = require('fs');
 const path = require('path');
 

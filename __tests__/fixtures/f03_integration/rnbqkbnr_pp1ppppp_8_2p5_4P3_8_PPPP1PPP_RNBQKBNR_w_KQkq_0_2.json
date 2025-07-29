@@ -1,0 +1,32 @@
+{
+  "analysis_for_opening": {
+    "rank": 5,
+    "name": "Sicilian Defense",
+    "moves": "1. e4 c5",
+    "eco": "B20",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "found_courses": [
+    {
+      "course_title": "Test Course for Sicilian Defense",
+      "author": "GM Test Player",
+      "platform": "Chessable",
+      "repertoire_for": "Black",
+      "scope": "Specialist",
+      "anchor_fens": [
+        "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+      ]
+    }
+  ],
+  "last_verified_on": "2025-07-29T07:21:56.251Z",
+  "processing_metadata": {
+    "llm_model": "gemini-2.5-pro",
+    "web_grounding_enabled": false,
+    "cost_breakdown": {
+      "inputTokens": 1000,
+      "outputTokens": 500,
+      "groundingQueries": 0,
+      "totalCost": 0.003725
+    }
+  }
+}

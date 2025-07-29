@@ -1,4 +1,13 @@
-const VideoAccessService = require('../../src/services/video-access-service');
+/**
+ * Video Access Service Unit Tests
+ * 
+ * Following TDD principles:
+ * - Test behavior, not implementation
+ * - Mock external dependencies  
+ * - Fast, isolated tests
+ */
+
+const VideoAccessService = require('../../packages/api/src/services/video-access-service');
 const fs = require('fs');
 const path = require('path');
 

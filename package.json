@@ -37,7 +37,10 @@
     "pipeline:match": "node tools/video-pipeline/video-matcher.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest __tests__/unit",
+    "test:integration": "jest __tests__/integration",
+    "test:setup": "jest __tests__/setup"
   },
   "keywords": [
     "chess",
@@ -60,14 +63,16 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "packages/**/*.js",
+      "packages/**/*.{js,ts,tsx}",
       "tools/**/*.js",
       "!**/node_modules/**",
+      "!**/__tests__/**",
       "!**/tests/**"
     ],
     "testMatch": [
-      "**/tests/**/*.test.js",
-      "**/__tests__/**/*.js"
+      "**/__tests__/**/*.test.js",
+      "**/__tests__/**/*.test.ts",
+      "**/__tests__/**/*.test.tsx"
     ],
     "coverageThreshold": {
       "global": {
@@ -76,7 +81,15 @@
         "lines": 90,
         "statements": 90
       }
-    }
+    },
+    "setupFilesAfterEnv": [
+      "./__tests__/setup/global-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/",
+      "/packages/.*/tests/"
+    ]
   },
   "dependencies": {
     "@google-cloud/vertexai": "^1.10.0",

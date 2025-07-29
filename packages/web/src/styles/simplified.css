@@ -645,7 +645,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -664,6 +664,16 @@ body {
   overflow: hidden;
   opacity: 0;
   animation: cardSlideIn 0.5s ease-out forwards;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .opening-card:nth-child(1) { animation-delay: 0.1s; }
@@ -676,7 +686,7 @@ body {
 @keyframes cardSlideIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -717,11 +727,14 @@ body {
   align-items: flex-start;
   margin-bottom: var(--space-4);
   gap: var(--space-3);
+  min-height: 60px;
 }
 
 .card-header .title-subsection {
   flex: 1;
   margin: 0;
+  line-height: var(--line-height-snug);
+  font-size: var(--font-size-xl);
 }
 
 .header-badges {
@@ -846,7 +859,7 @@ body {
 }
 
 .first-moves {
-  margin-top: var(--space-4);
+  margin-top: auto;
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
   display: flex;
@@ -1216,26 +1229,27 @@ body {
 }
 
 .search-bar-container.landing .search-input-field {
-  background-color: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: var(--color-text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--border-radius-large);
   padding: var(--space-6) var(--space-8);
   font-size: var(--font-size-lg);
   text-align: center;
-  transition: var(--transition-base);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .search-bar-container.landing .search-input-field::placeholder {
-  color: #888888;
+  color: #999999;
   text-align: center;
 }
 
 .search-bar-container.landing .search-input-field:focus {
   outline: none;
-  border-color: var(--color-brand-orange);
-  background-color: rgba(255, 255, 255, 0.09);
-  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.15);
+  border-color: rgba(232, 93, 4, 0.6);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
+  box-shadow: 0 4px 20px rgba(232, 93, 4, 0.15);
 }
 
 .search-surprise-btn {
@@ -1318,11 +1332,25 @@ body {
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin: 0 0 var(--space-2) 0;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand-orange) 0%, rgba(232, 93, 4, 0.3) 100%);
+  border-radius: 2px;
 }
 
 .section-subtitle {
   color: var(--color-text-secondary);
   font-size: var(--font-size-lg);
+  margin-top: var(--space-3);
 }
 
 .filters-container {

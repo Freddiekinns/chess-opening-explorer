@@ -139,34 +139,38 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
         )}
       </div>
       
-      <div className="data-point">
-        <div className="data-content">
-          <span className="text-label">Games Played</span>
-          <span className="text-base font-medium text-primary">{formatGamesPlayed(gamesPlayed)}</span>
-        </div>
-      </div>
-      
-      <div className="data-point">
-        <div className="game-results-bar">
-          <div className="results-label-row">
-            <span className="result-label white-label">White {gameStats.white.toFixed(0)}%</span>
-            <span className="result-label draw-label">Draw {gameStats.draw.toFixed(0)}%</span>
-            <span className="result-label black-label">Black {gameStats.black.toFixed(0)}%</span>
+      <div className="card-body">
+        <div className="data-sections">
+          <div className="data-point">
+            <div className="data-content">
+              <span className="text-label">Games Played</span>
+              <span className="text-base font-medium text-primary">{formatGamesPlayed(gamesPlayed)}</span>
+            </div>
           </div>
-          <div className="segmented-bar">
-            <div className="bar-segment white-segment" style={{ width: `${gameStats.white}%` }}></div>
-            <div className="bar-segment draw-segment" style={{ width: `${gameStats.draw}%` }}></div>
-            <div className="bar-segment black-segment" style={{ width: `${gameStats.black}%` }}></div>
+          
+          <div className="data-point">
+            <div className="game-results-bar">
+              <div className="results-label-row">
+                <span className="result-label white-label">White {gameStats.white.toFixed(0)}%</span>
+                <span className="result-label draw-label">Draw {gameStats.draw.toFixed(0)}%</span>
+                <span className="result-label black-label">Black {gameStats.black.toFixed(0)}%</span>
+              </div>
+              <div className="segmented-bar">
+                <div className="bar-segment white-segment" style={{ width: `${gameStats.white}%` }}></div>
+                <div className="bar-segment draw-segment" style={{ width: `${gameStats.draw}%` }}></div>
+                <div className="bar-segment black-segment" style={{ width: `${gameStats.black}%` }}></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="first-moves">
-        <span className="text-caption">First moves:</span>
-        <span className="text-sm text-secondary">{firstMoves}</span>
-        {primaryStyleTag && (
-          <span className="primary-style-tag">{primaryStyleTag}</span>
-        )}
+        
+        <div className="first-moves">
+          <span className="text-caption">First moves:</span>
+          <span className="text-sm text-secondary">{firstMoves}</span>
+          {primaryStyleTag && (
+            <span className="primary-style-tag">{primaryStyleTag}</span>
+          )}
+        </div>
       </div>
       
       <div className="card-footer">

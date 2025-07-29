@@ -90691,119 +90691,974 @@
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 exd4",
     "name": "King's Indian: Gligoric-Taimanov, 7...exd4",
-    "scid": "E92i"
+    "scid": "E92i",
+    "analysis_json": {
+      "description": "This variation of the King's Indian sees Black releasing the central tension early with 7...exd4, leading to a less volatile but strategically rich struggle. Unlike the closed, attack-focused main lines, this opening creates a more open game where Black aims to generate counterplay against White's e4-pawn and central space advantage. It's ideal for flexible, strategic players who enjoy dynamic piece play and fighting for the initiative from a solid, if slightly passive, foundation.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "Counter-attacking",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Pressure",
+        "Counterattack",
+        "Initiative",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Flexible Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the e4-pawn",
+        "White's space advantage vs. Black's piece activity",
+        "Control of the d5-square",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "Black: Play ...Re8 to pressure the e4-pawn, often followed by ...c6 and ...a6 to prepare queenside expansion with ...b5.",
+        "White: Solidify the center (e.g., with f3), complete development, and use the space advantage to restrict Black's pieces and prepare a central or kingside advance.",
+        "Black: Reroute the f6-knight (e.g., via d7 to c5 or e8) to challenge White's central control.",
+        "White: Castle queenside in some lines to create a sharp, opposite-side castling battle."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:14:53.102Z"
+    }
   },
   "rnbq1rk1/ppp2pbp/3p2p1/4p3/2PPP1n1/2N1BN2/PP2BPPP/R2QK2R w KQ - 2 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 Ng4",
     "name": "King's Indian: Gligoric-Taimanov, 7...Ng4",
-    "scid": "E92k"
+    "scid": "E92k",
+    "analysis_json": {
+      "description": "The Gligoric-Taimanov with 7...Ng4 is a sharp and provocative response, immediately challenging White's central setup by attacking the e3 bishop. This line steers the game into complex, tactical waters, demanding precise calculation and a willingness to fight for the initiative from the outset. It is perfectly suited for aggressive players who enjoy dynamic, unbalanced positions and are not afraid to create immediate complications.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Tactical",
+        "Sharp",
+        "Counter-attacking",
+        "Complex",
+        "Provocative"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Forcing Moves",
+        "Pins"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the Initiative",
+        "Challenging White's Central Control",
+        "Provoking Weaknesses",
+        "Dark-Square Control"
+      ],
+      "common_plans": [
+        "Black: Trade the Ng4 for the Be3 to gain the bishop pair and control of the dark squares, then launch a kingside attack with ...f5.",
+        "White: Respond to the knight challenge (e.g., with Bg5 or h3), consolidate the central space advantage, and seek to neutralize Black's active pieces.",
+        "Black: Undermine the d4 pawn and create counterplay on the queenside if White overextends on the kingside.",
+        "White: Use the h-pawn to initiate a kingside attack or exploit Black's sometimes-exposed king position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:15:15.697Z"
+    }
   },
   "rnbq1rk1/ppp3bp/3p1pp1/4p3/2PPP1n1/2N2N2/PP2BPPP/R1BQK2R b KQ - 1 9": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 Ng4 8. Bg5 f6 9. Bc1",
     "name": "King's Indian: Gligoric-Taimanov, 7...Ng4 8.Bg5 f6 9.Bc1",
-    "scid": "E92k"
+    "scid": "E92k",
+    "analysis_json": {
+      "description": "This variation of the Gligoric-Taimanov system is a sharp and strategically complex battle. Black's provocative 7...Ng4 and 8...f6 immediately challenge White's central setup, creating an unbalanced position where dynamic potential trumps static structure. White's unusual 9.Bc1 is a prophylactic retreat, aiming to preserve the bishop and calmly consolidate the space advantage, leading to a tense struggle where both sides must navigate intricate plans. This opening is perfect for sophisticated players who enjoy creating imbalances and thrive in complex, double-edged middlegames.",
+      "style_tags": [
+        "Sharp",
+        "Strategic",
+        "Dynamic",
+        "Complex",
+        "Unbalanced",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pin",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Tactical Player",
+        "Creative Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension vs. Flank Attack",
+        "Prophylaxis",
+        "Creating Imbalances",
+        "Exploiting Weaknesses"
+      ],
+      "common_plans": [
+        "White: Play h3 to challenge the g4-knight, consolidate the center, and prepare queenside expansion with b4-c5.",
+        "Black: Continue development with ...Nc6, prepare a kingside pawn storm with ...h5, and generate counterplay against White's center.",
+        "White: Reroute the c1-bishop to a more active diagonal (e.g., via d2 to b2 or f4) to support the center and pressure Black's position.",
+        "Black: Use the f-pawn to control e5 and support a kingside attack, while being mindful of the potential weaknesses around the king."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:15:37.545Z"
+    }
   },
   "rnbq1rk1/ppp3bp/3p1pp1/4p3/2PPP1nB/2N2N2/PP2BPPP/R2QK2R b KQ - 1 9": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 Ng4 8. Bg5 f6 9. Bh4",
     "name": "King's Indian: Gligoric-Taimanov, 7...Ng4 8.Bg5 f6 9.Bh4",
-    "scid": "E92l"
+    "scid": "E92l",
+    "analysis_json": {
+      "description": "This variation of the Gligoric-Taimanov system is a sharp and theoretically dense battleground within the King's Indian Defense. Black's provocative 7...Ng4 and 8...f6 deliberately weakens the kingside pawn structure in exchange for dynamic piece play and the initiative. The resulting positions are highly complex and double-edged, suiting players who thrive on tactical calculation and are comfortable navigating strategic imbalances where White's central control is pitted against Black's fierce kingside counter-attack.",
+      "style_tags": [
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Strategic",
+        "Counter-attacking",
+        "Aggressive",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Forcing Moves"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "King Safety",
+        "Central Control",
+        "Weaknesses",
+        "Piece Activity",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Central Control",
+        "Provocation and Dynamic Imbalance",
+        "Exploiting Structural Weaknesses"
+      ],
+      "common_plans": [
+        "Black: Continue the kingside expansion with ...g5, followed by a pawn storm (...h5-h4) or piece attack against the white king.",
+        "White: Solidify the center, often with h3, and prepare a queenside expansion with Rb1 and b4, or a central pawn break with d5.",
+        "Black: Put pressure on White's center, often by rerouting the knight via ...Nc6-a5 or preparing a ...c5 break.",
+        "White: Exploit Black's weakened kingside light squares (e.g., by maneuvering a knight to f5) and trade pieces to blunt the attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:16:02.325Z"
+    }
   },
   "rnb2rk1/ppp1qpbp/3p1np1/4p3/2PPP3/2N1BN2/PP2BPPP/R2QK2R w KQ - 2 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 Qe7",
     "name": "King's Indian: Gligoric-Taimanov, 7...Qe7",
-    "scid": "E92j"
+    "scid": "E92j",
+    "analysis_json": {
+      "description": "The Gligoric-Taimanov with 7...Qe7 is a highly respected and solid variation of the King's Indian Defense. Black's queen move prepares to challenge the center by contesting the e-file and supporting a potential ...exd4 trade, leading to a complex strategic battle. This line is perfect for patient players who excel at maneuvering and long-term planning, as it often leads to closed, intricate positions where understanding pawn structures and subtle piece play is paramount.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed Position",
+        "Maneuvering",
+        "System-based",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Struggle for the center",
+        "White's space advantage vs. Black's counterplay",
+        "Queenside expansion for Black",
+        "Prophylactic play"
+      ],
+      "common_plans": [
+        "White: Solidify the center with d5, then often expand on the queenside with a3 and b4 to restrict Black's counterplay.",
+        "Black: Challenge the center with ...exd4, followed by queenside expansion via ...c6 and ...b5 to create weaknesses in White's camp.",
+        "Black: Maneuver pieces to optimal squares, such as the knight route ...Na6-c7 or ...Nd7-c5, to control key points and prepare pawn breaks.",
+        "White: Play prophylactically (e.g., h3 to prevent ...Ng4) while improving piece coordination, waiting to exploit any inaccuracies from Black."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:16:18.723Z"
+    }
   },
   "r1bq1rk1/ppp3bp/2np1pp1/4p3/2PPP1nB/2N2N2/PP2BPPP/R2QK2R w KQ - 2 10": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. Be3 Ng4 8. Bg5 f6 9. Bh4 Nc6",
     "name": "King's Indian: Gligoric-Taimanov, Main Line",
-    "scid": "E92m"
+    "scid": "E92m",
+    "analysis_json": {
+      "description": "The Gligoric-Taimanov variation is a highly complex and theoretical battleground within the King's Indian Defense. White's 7.Be3 is a solid developing move, but Black's immediate 7...Ng4 provokes a sharp, double-edged struggle. The resulting positions are strategically dense, typically featuring a race between Black's kingside attack and White's central control and queenside counterplay. This opening is perfect for ambitious, well-prepared players who thrive on intricate strategic plans and are not afraid of sharp, tactical complications.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Sharp",
+        "Complex",
+        "Counter-attacking",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Attacking",
+        "Pins",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "King Safety",
+        "Space Advantage",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Strategic Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Counterplay",
+        "Central Tension and Pawn Breaks",
+        "Exploiting Weaknesses",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "Black: Initiate a kingside pawn storm with ...g5 and ...f5-f4, aiming to attack the white king.",
+        "White: Close the center with d5 and launch a queenside minority attack with c5 and b4.",
+        "Black: Maneuver the knight from c6 to e7 to support the kingside or challenge the center.",
+        "White: Maintain central tension, control the d4 square, and exploit the light squares weakened by Black's ...f6."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:16:32.339Z"
+    }
   },
   "rnbq1rk1/pp3pbp/3p1np1/2pPp3/2P1P3/2N2N2/PP2BPPP/R1BQK2R w KQ c6 0 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 c5",
     "name": "King's Indian: Petrosian, 7...c5",
-    "scid": "E92o"
+    "scid": "E92o",
+    "analysis_json": {
+      "description": "The Petrosian System with 7...c5 is a highly strategic and closed variation of the King's Indian Defense. By immediately challenging White's queenside with ...c5, Black creates a complex pawn structure where both sides maneuver for a decisive pawn break on the flanks. This opening is perfect for patient, strategic players who enjoy a slow-burning game of tension, focusing on long-term plans and understanding the nuances of a locked center.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Slow-burning",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Weak Squares",
+        "Piece Activity",
+        "Flank Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Counterplay",
+        "Pawn Break Timing",
+        "Prophylactic Thinking",
+        "Controlling Key Squares"
+      ],
+      "common_plans": [
+        "White: Expand on the queenside with a3 and b4, aiming to open the b-file and create weaknesses in Black's camp. Maneuver pieces to support this expansion, often with Nd2-c4 or Rb1.",
+        "Black: Counter on the queenside with moves like ...a6 and ...b5, or prepare the traditional KID kingside attack with ...f5. Control of the b6 square is paramount.",
+        "White: Restrain Black's kingside counterplay (the ...f5 break) by controlling the f4 square and maintaining a solid defensive setup.",
+        "Black: Use the closed center to maneuver pieces flexibly between flanks, seeking to provoke a weakness in White's structure before committing to a decisive pawn break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:16:49.646Z"
+    }
   },
   "rnbq1rk1/pp3pbp/3p1np1/2pPp1B1/2P1P3/2N2N2/PP2BPPP/R2QK2R b KQ - 1 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 c5 8. Bg5",
     "name": "King's Indian: Petrosian, 7...c5 8.Bg5",
-    "scid": "E92p"
+    "scid": "E92p",
+    "analysis_json": {
+      "description": "This variation of the Petrosian System is a highly strategic and prophylactic approach for White, aiming to restrict Black's typical King's Indian counterplay. White's 8.Bg5 pressures the f6 knight, often provoking ...h6 to set up a slow-burn kingside expansion with h4-g4. The game becomes a complex, strategic battle where White squeezes for space while Black seeks counterplay through the ...c5 break and subsequent queenside expansion. This opening is ideal for patient, strategic players who excel at long-term planning and understanding subtle positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Prophylactic",
+        "System-based",
+        "Slow-burn"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Restraint",
+        "Prophylaxis",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "Queenside Expansion",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Restricting the opponent",
+        "Queenside vs. Kingside play",
+        "Pawn breaks",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Provoke ...h6, then expand on the kingside with h4-g4. Control the center and restrict Black's pieces.",
+        "Black: Expand on the queenside with ...a6, ...Rb8, and ...b5. Reposition the f6 knight to prepare a central break or support the queenside.",
+        "White: Play a3 to prevent ...b5-b4 and solidify the queenside structure.",
+        "Black: Challenge White's control of the d-file and look for opportunities to undermine the d5 pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:17:09.057Z"
+    }
   },
   "rnbq1rk1/1pp2pbp/3p1np1/p2Pp1B1/2P1P3/2N2N2/PP2BPPP/R2QK2R b KQ - 1 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5",
     "name": "King's Indian: Petrosian, Stein, 8.Bg5",
-    "scid": "E92s"
+    "scid": "E92s",
+    "analysis_json": {
+      "description": "The Petrosian System is a strategic and prophylactic approach against the King's Indian, where White closes the center and aims for a long-term spatial advantage. The Stein Variation with 8.Bg5 adds a sharp, provocative element, putting immediate pressure on Black's setup by pinning the f6-knight and challenging the e5-pawn. This opening leads to a complex, strategic battle where White seeks to squeeze Black positionally, while Black aims for dynamic counterplay through the typical ...f5 pawn break and queenside expansion. It is ideal for patient, strategic players who excel at long-term planning and understanding structural nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Space Advantage",
+        "Weak Squares",
+        "Piece Activity",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Struggle for Central Control",
+        "Prophylaxis and Restriction",
+        "Pawn Structure Transformation"
+      ],
+      "common_plans": [
+        "White: Exchange the g5-bishop for the f6-knight (Bxf6) to damage Black's pawn structure, followed by queenside expansion with a3 and b4.",
+        "Black: Prepare the ...f5 pawn break to challenge White's center and launch a kingside attack, often preceded by ...h6 and ...Qe8.",
+        "White: Control the center, restrict Black's pieces, and methodically improve the position while preventing Black's counterplay.",
+        "Black: Use the a5-pawn to create queenside counterplay with the ...Na6-b4 maneuver, fighting for control of key squares."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:17:26.459Z"
+    }
   },
   "rnbq1rk1/1pp2pb1/3p1npp/p2Pp1B1/2P1P3/2N2N2/PP2BPPP/R2QK2R w KQ - 0 9": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6",
     "name": "King's Indian: Petrosian, Stein, 8.Bg5 h6",
-    "scid": "E92s"
+    "scid": "E92s",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a highly strategic and prophylactic approach for White, aiming to clamp down on Black's typical kingside attack. By closing the center with 7.d5 and developing the bishop to g5, White seeks to restrain Black's pieces and slowly build a space advantage on the queenside. This opening leads to a complex, maneuvering game of long-term plans, ideal for patient, strategic players who excel at understanding pawn structures and neutralizing an opponent's intentions.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Prophylactic",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Weaknesses",
+        "Piece Activity",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Counterplay",
+        "Restraint and Prophylaxis",
+        "Pawn Break Timing",
+        "Manipulating Weaknesses"
+      ],
+      "common_plans": [
+        "White's Plan: Expand on the queenside with moves like a3 and b4, often after preparing with Rb1, to create a passed pawn or attack Black's structure.",
+        "Black's Plan: Generate counterplay on the queenside via the c5-square with ...Na6-c5, putting pressure on White's center.",
+        "White's Plan: Maintain pressure on the kingside by keeping the bishop on the h4-d8 diagonal, making Black's ...f5 break more difficult to achieve.",
+        "Black's Plan: Methodically prepare the ...f5 pawn break, often preceded by moves like ...Qe8 and ...Ne8, to challenge White's central control and initiate a kingside attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:17:44.343Z"
+    }
   },
   "r1bq1rk1/1pp2pb1/n2p1npp/p2Pp3/2P1P2B/2N2N2/PP2BPPP/R2QK2R w KQ - 2 10": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6",
     "name": "King's Indian: Petrosian, Stein, 8.Bg5 h6 9.Bh4 Na6",
-    "scid": "E92t"
+    "scid": "E92t",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a profound strategic battle, and the Stein Variation with 9...Na6 is one of its most complex and respected lines. White aims for a positional clamp, restricting Black's typical kingside play and slowly expanding on the queenside. This opening is perfect for patient, strategic players who enjoy maneuvering, prophylaxis, and accumulating long-term advantages in a closed, intricate structure, rather than engaging in immediate tactical brawls.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Breakthrough",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Space Advantage",
+        "Piece Activity",
+        "Weak Squares",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Counterplay",
+        "Pawn Breaks (...b5, ...f5)",
+        "Control of Key Squares (c5, e4)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Execute a queenside expansion with moves like Nd2, a4, Rb1, and b4 to create a passed pawn or attack Black's structure.",
+        "White: Exchange the g5-bishop for the f6-knight to weaken Black's kingside pawn cover and control of dark squares.",
+        "Black: Prepare queenside counterplay, often by rerouting the knight to c7 to support a ...b5 pawn break.",
+        "Black: Reposition pieces (e.g., ...Ne8-d7) to prepare the thematic ...f5 break, challenging White's central clamp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:18:01.033Z"
+    }
   },
   "rnbq1rk1/1pp2pbp/3p1np1/p2Pp3/2P1P3/2N2N1P/PP2BPP1/R1BQK2R b KQ - 0 8": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. h3",
     "name": "King's Indian: Petrosian, Stein, 8.h3",
-    "scid": "E92r"
+    "scid": "E92r",
+    "analysis_json": {
+      "description": "The Petrosian System with 8.h3 is a highly strategic and prophylactic approach against the King's Indian Defense. White's key move prevents Black's annoying ...Ng4 jump and subtly prepares a slow, methodical kingside expansion with g4, aiming to cramp Black's position. This opening leads to complex, maneuvering middlegames where long-term plans and understanding pawn structures are paramount, making it ideal for patient, strategic players who enjoy a deep battle of ideas.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Prophylactic",
+        "System-based",
+        "Closed Position",
+        "Slow-paced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Breakthrough",
+        "Maneuvering"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Expansion vs. Queenside Counterplay",
+        "Prophylaxis",
+        "Space Control",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the c4-c5 pawn break to gain queenside space and attack Black's d6 pawn.",
+        "White: Slowly expand on the kingside with g2-g4 to restrict Black's pieces and prepare a long-term attack.",
+        "Black: Control the c5 square with ...Na6-c5, creating a strong outpost and pressuring White's center.",
+        "Black: Generate queenside counterplay with the ...b7-b5 pawn break, challenging White's control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:18:16.171Z"
+    }
   },
   "r1bq1rk1/1pp2pb1/n2p1npp/p2Pp3/2P1P2B/2N5/PP1NBPPP/R2QK2R b KQ - 3 10": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6 10. Nd2",
     "name": "King's Indian: Petrosian, Stein, Main Line",
-    "scid": "E92u"
+    "scid": "E92u",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a highly strategic and prophylactic approach, aiming to restrain Black's typical kingside ambitions. By closing the center with 7.d5 and developing with Bg5 and Nd2, White creates a complex, maneuvering game focused on queenside expansion and central control. This opening is perfect for patient, strategic players who excel at understanding subtle piece placement, long-term plans, and preventing the opponent's counterplay, leading to a slow-burning but deeply rich middlegame.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Prophylactic",
+        "Maneuvering",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Control",
+        "Prophylaxis",
+        "Piece Maneuvering",
+        "Fighting for Key Squares"
+      ],
+      "common_plans": [
+        "White's Plan: Expand on the queenside with a3 and b4, control the center, and use the Nd2 to reroute to key squares like c4 or f1-e3. The main goal is to restrict Black's counterplay and slowly improve the position.",
+        "Black's Plan: Challenge White's queenside space with the ...a5-a4 push and the ...b5 pawn break. The knight on a6 often reroutes to c7 to support the center and queenside, while the queen moves to e8 to prepare for central action.",
+        "Both Sides: A key struggle revolves around the dark-squared bishops. White often wants to exchange them to weaken Black's kingside, while Black tries to preserve the bishop or trade it on favorable terms.",
+        "Central Tension: Black may prepare to challenge the e4 pawn with moves like ...Qe8 and ...Rd8, while White works to solidify control and prevent the freeing ...f5 break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:18:31.774Z"
+    }
   },
   "r1b1qrk1/1pp2pb1/n2p1npp/p2Pp3/2P1P2B/2N5/PP1NBPPP/R2QK2R w KQ - 4 11": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6 10. Nd2 Qe8",
     "name": "King's Indian: Petrosian, Stein, Main Line, 10...Qe8",
-    "scid": "E92v"
+    "scid": "E92v",
+    "analysis_json": {
+      "description": "This line of the King's Indian is a profound strategic battle, a hallmark of the Petrosian system. Black adopts a patient, maneuvering approach with 10...Qe8, preparing the thematic ...f5 pawn break while keeping queenside counterplay options open. The game is a tense struggle of long-term plans, where White seeks to expand on the queenside and restrict Black, who in turn builds up pressure for a decisive kingside attack. This opening is perfect for deep strategic thinkers who enjoy complex, closed positions and the art of preparation.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Counterattacking",
+        "System-based",
+        "Dynamic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Attacking",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Space Advantage",
+        "Piece Maneuvering",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Pawn Breaks (...f5)",
+        "Prophylaxis",
+        "Piece Maneuvering"
+      ],
+      "common_plans": [
+        "White: Expand on the queenside with a4 and b4, control the center, reroute the Nd2 to c4 or f3, and prevent Black's ...f5 break or meet it favorably.",
+        "Black: Prepare and execute the ...f5 pawn break, often followed by ...f4 and a kingside pawn storm (...g5). Maneuver the Na6 to c5 or b4 to create queenside counter-pressure. Use the queen on e8 to support the kingside and connect the rooks."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:18:52.873Z"
+    }
   },
   "r1b1qrk1/1pp2pb1/n2p1npp/p2Pp3/2P1P2B/2N5/PP1NBPPP/R2Q1RK1 b - - 5 11": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6 10. Nd2 Qe8 11. O-O",
     "name": "King's Indian: Petrosian, Stein, Main Line, 10...Qe8 11.O-O",
-    "scid": "E92w"
+    "scid": "E92w",
+    "analysis_json": {
+      "description": "The Petrosian System is a highly strategic and prophylactic approach against the King's Indian, aiming to restrain Black's typical kingside ambitions. By closing the center with 7.d5 and rerouting the knight with 10.Nd2, White prepares to meet the ...f5 break under controlled circumstances. This opening leads to a complex, maneuvering game where both sides slowly build up their positions, making it ideal for patient, strategic players who excel at long-term planning and understanding subtle positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Restraint vs. Breakthrough",
+        "Queenside vs. Kingside Play",
+        "Prophylaxis",
+        "Maneuvering Warfare"
+      ],
+      "common_plans": [
+        "White's Plan: Control the f4-square to inhibit Black's ...f5 break, while expanding on the queenside with moves like a3 and b4 to create a second front.",
+        "Black's Plan: Prepare and execute the thematic ...f7-f5 pawn break to challenge White's center and launch a kingside attack.",
+        "Black's Alternative Plan: Reroute the Na6 to c7 to support a ...b5 push, creating queenside counterplay if the kingside is effectively blocked."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:19:13.720Z"
+    }
   },
   "r3qrk1/1ppb1pb1/n2p1npp/p2Pp3/2P1P2B/2N5/PP1NBPPP/R2Q1RK1 w - - 6 12": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6 10. Nd2 Qe8 11. O-O Bd7",
     "name": "King's Indian: Petrosian, Stein, Main Line, 10...Qe8 11.O-O Bd7",
-    "scid": "E92w"
+    "scid": "E92w",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a sophisticated and strategic battleground, epitomizing the classic KID struggle of queenside versus kingside. White aims for a methodical queenside expansion, while Black patiently prepares the thematic ...f5 pawn break to launch a decisive attack on the white king. This line is ideal for patient, strategic players who enjoy complex maneuvering and long-term planning, where understanding the deep-seated plans for both sides is more critical than immediate tactical calculation.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Dynamic",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Prophylaxis",
+        "Maneuvering"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Closed Center",
+        "Prophylactic Maneuvering",
+        "Pawn Breaks (...f5, c5)"
+      ],
+      "common_plans": [
+        "White's Plan: Expand on the queenside with b4 and c5, aiming to open files and create a passed pawn, while using the Nd2-f1 maneuver to defend the kingside.",
+        "Black's Plan: Prepare and execute the ...f7-f5 pawn break, often followed by ...g5 and ...f4, to open lines for a decisive attack against the white king.",
+        "White's Plan: Control key central squares, restrict Black's pieces, and slowly improve the position before committing to action on the queenside.",
+        "Black's Plan: Use the queen on e8 and knight on a6 to support the kingside attack and control important squares like c7 and c5, preparing to meet White's queenside ambitions."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:19:35.025Z"
+    }
   },
   "r1b1qrk1/1pp2pbn/n2p2pp/p2Pp3/2P1P2B/2N5/PP1NBPPP/R2Q1RK1 w - - 6 12": {
     "src": "scid",
     "eco": "E92",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 a5 8. Bg5 h6 9. Bh4 Na6 10. Nd2 Qe8 11. O-O Nh7",
     "name": "King's Indian: Petrosian, Stein, Main Line, 10...Qe8 11.O-O Nh7",
-    "scid": "E92x"
+    "scid": "E92x",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a sophisticated and strategic approach where White aims to restrain Black's typical kingside aggression. By developing with Bg5 and Nd2, White creates a flexible setup to counter Black's ...f5 pawn break, leading to a tense, maneuvering game. This line is perfect for strategic players who enjoy prophylaxis and slowly building a queenside advantage, while Black's side appeals to those who thrive on executing a well-prepared, thematic kingside attack.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Dynamic",
+        "System-based",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "King Safety",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Expansion",
+        "Pawn Breaks (...f5 vs. c5)",
+        "Prophylaxis",
+        "Restraint"
+      ],
+      "common_plans": [
+        "White's Plan: Prepare queenside expansion with a3 and b4, aiming for the c4-c5 pawn break to open lines. Use the f3 pawn push to blunt Black's ...f5 advance and secure the king. Maneuver the Nd2 to c4 or b3 to support the queenside.",
+        "Black's Plan: Prepare and execute the ...f5 pawn break, often followed by ...f4, to open the f-file and attack the white king. Use the h7-knight to support the advance and potentially transfer to g5. Launch a kingside pawn storm with ...g5-g4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:19:53.568Z"
+    }
   },
   "r1bq1rk1/pppn1pb1/3p3p/3Pp1pn/2P1P2P/2N2NB1/PP2BPP1/R2QK2R b KQ - 0 11": {
     "src": "eco_tsv",
@@ -90817,6 +91672,56 @@
       "chessGraph": "Keres Variation, KID",
       "chronos": "King's Indian: Petrosian system, Keres variation",
       "icsbot": "Keres Variation, KID "
+    },
+    "analysis_json": {
+      "description": "This line of the King's Indian Defense is a razor-sharp and highly theoretical battle. Black's aggressive kingside expansion (...g5 and ...Nh5) is immediately challenged by White's 11.h4, leading to a double-edged struggle where both sides play for keeps. The game becomes a race: Black aims for a decisive kingside attack, often involving sacrifices, while White seeks to exploit the resulting weaknesses in Black's pawn structure. This opening is perfect for fearless, tactical players who enjoy complex, high-stakes positions and excel at calculation.",
+      "style_tags": [
+        "Sharp",
+        "Tactical",
+        "Aggressive",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Sacrifice",
+        "Initiative",
+        "Counterattack",
+        "Pins"
+      ],
+      "positional_tags": [
+        "King Safety",
+        "Weaknesses",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Counterplay",
+        "Exploiting Weak Squares",
+        "Battle for the Initiative",
+        "Pawn Storms"
+      ],
+      "common_plans": [
+        "White: Play on the h-file after hxg5, often with Rh1-h3-g3, and exploit Black's weakened light squares. A typical plan involves expanding on the queenside with b4-c5 to create a second front.",
+        "Black: Continue the kingside assault with ...g4, followed by the thematic ...f5 pawn break to open lines against the white king. The knight on h5 is a key attacking piece, and material sacrifices are common to maintain the initiative."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:20:07.109Z"
     }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQK2R w KQ - 1 8": {
@@ -90831,70 +91736,564 @@
       "chessGraph": "E93",
       "chronos": "King's Indian: Petrosian system, main line"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Petrosian Variation is a highly strategic and respected system against the King's Indian Defense, aiming to restrict Black's typical kingside attack. By closing the center with 7.d5, White seeks a space advantage and plans a methodical queenside expansion, while Black prepares the thematic ...f5 pawn break to launch a counter-attack on the kingside. This opening leads to a complex, tense struggle ideal for patient, strategic players who excel at long-term planning and executing wing attacks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Dynamic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "Piece Activity",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Opposite-side wing attacks",
+        "Queenside expansion vs. Kingside attack",
+        "Thematic pawn breaks (...f5, c5)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Methodical queenside expansion with a4, b4, and the c5 pawn break. Restrict Black's kingside play with moves like h3. Maneuver pieces to support the queenside, e.g., Be3, Qd2, Rc1.",
+        "Black: Prepare and execute the ...f5 pawn break, often followed by ...f4, to open lines against the white king. Reroute the knight via ...Nf8 to support the attack. Launch a direct assault with pieces on the kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:20:25.608Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/3Pp3/2P1P3/2N1BN2/PP2BPPP/R2QK2R b KQ - 2 8": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Be3",
     "name": "King's Indian: Petrosian, Main Line, 8.Be3",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a strategically complex and popular choice for White, aiming to seize a space advantage and clamp down on Black's counterplay. By closing the center with 7.d5, White initiates a classic race: White's methodical queenside expansion versus Black's thematic kingside attack. This opening is perfect for strategic players who enjoy long-term planning and suffocating an opponent's plans before launching their own decisive action.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Dynamic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Attacking",
+        "Initiative",
+        "Pawn Break",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Central Control",
+        "King Safety",
+        "Prophylaxis",
+        "Piece Maneuvering"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Attack",
+        "Space Advantage",
+        "Pawn Breaks (f5 for Black, c5 for White)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Execute the c4-c5 pawn break to open the c-file and create a passed pawn, followed by queenside piece pressure (e.g., Rc1, b4).",
+        "Black: Prepare and execute the ...f7-f5 pawn break, often preceded by moves like ...Nh5 or ...Ng4, to launch a piece attack against the white king.",
+        "White: Restrain Black's kingside play with moves like h3 and careful piece placement, aiming to neutralize the attack before it begins.",
+        "Black: Reroute the knight from d7 to f8 to support the kingside or to c5 to challenge White's queenside control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:20:40.812Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p2p1/3Pp3/2P1P1n1/2N1BN2/PP2BPPP/R2QK2R w KQ - 3 9": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Be3 Ng4",
     "name": "King's Indian: Petrosian, Main Line, 8.Be3 Ng4",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "This variation of the Petrosian System is a sharp and theoretically rich battleground. Black's provocative 8...Ng4 immediately challenges White's setup, forcing the game into complex and dynamic channels where initiative is paramount. The resulting middlegames are a tense clash of styles: White aims for a strategic queenside clamp, while Black seeks active counterplay and a direct kingside attack. This opening is perfect for ambitious, well-prepared players who thrive in double-edged positions and enjoy fighting for the initiative from the very beginning.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Strategic",
+        "Counter-attacking",
+        "Complex",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Attacking",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Theoretical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Fighting for the Initiative",
+        "Space vs. Counterplay",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Execute a queenside expansion with c5 and the b2-b4 pawn push to create a passed pawn or attack Black's base.",
+        "White: Reposition the light-squared bishop (Bg5-h4) to control key squares and sidestep Black's threats.",
+        "Black: Create immediate complications with the Ng4-knight, often forcing the sequence 9.Bg5 f6 10.Bh4.",
+        "Black: Launch a kingside pawn storm with ...f5, often supported by ...g5 and ...h5, to attack the white king."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:20:59.866Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/3Pp1B1/2P1P3/2N2N2/PP2BPPP/R2QK2R b KQ - 2 8": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian Variation is a highly strategic and prophylactic system against the King's Indian Defense. By playing 8.Bg5, White aims to restrain Black's typical kingside attack by pinning the f6-knight, making the standard ...f5 break more difficult to achieve. The game evolves into a complex, strategic battle where White methodically expands on the queenside while Black maneuvers carefully to prepare kingside counterplay. This opening is ideal for patient, strategic players who excel at long-term planning and understanding structural nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Space Advantage",
+        "Prophylaxis",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Prophylaxis",
+        "Pawn Breaks (...f5 vs. c5)",
+        "Trading a Bishop for a Knight"
+      ],
+      "common_plans": [
+        "White: Expand on the queenside with Rb1, b4, and the c4-c5 pawn break, creating a second front.",
+        "Black: Prepare and execute the ...f7-f5 pawn break, often via maneuvers like ...h6, ...Qe8, and ...Ne8, to launch a kingside attack.",
+        "White: Trade the g5-bishop for the f6-knight (Bxf6) to damage Black's pawn structure and solidify control over the e4-square.",
+        "Black: Play ...a5 to restrain White's queenside expansion and secure the b6 square for a knight."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:21:17.576Z"
+    }
   },
   "r1bq1rk1/pppn1pb1/3p1npp/3Pp1B1/2P1P3/2N2N2/PP2BPPP/R2QK2R w KQ - 0 9": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5 h6",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5 h6",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian System is a highly respected and strategic method for White to combat the King's Indian Defense. By closing the center with 7.d5, White aims to restrict Black's typical kingside attack and instead focuses on a long-term queenside space advantage. This line is perfect for patient, strategic players who enjoy maneuvering, prophylaxis, and slowly building pressure, leading to a complex and nuanced middlegame.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Prophylaxis",
+        "Pawn Breaks (...f5, c5)",
+        "Maneuvering Warfare"
+      ],
+      "common_plans": [
+        "White's Plan: Expand on the queenside with a3 and b4, aiming to create weaknesses or a passed pawn, while restraining Black's kingside counterplay.",
+        "Black's Plan: Prepare and execute the ...f5 pawn break to open lines for an attack against the white king, often preceded by maneuvers like ...Ne8-g7.",
+        "White's Prophylaxis: Control key squares like f4 and e6, and be ready to meet ...f5 with a timely response, sometimes rerouting the f3-knight.",
+        "Black's Counterplay: If White's queenside play is too slow, Black can generate a decisive kingside attack or use the ...c6 break to challenge the center."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:21:34.904Z"
+    }
   },
   "r1bq1rk1/pppn1pb1/3p1npp/3Pp3/2P1P2B/2N2N2/PP2BPPP/R2QK2R b KQ - 1 9": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5 h6 9. Bh4",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5 h6 9.Bh4",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian System against the King's Indian is a highly strategic and prophylactic approach, aiming to restrict Black's typical kingside counterplay. By placing the bishop on h4, White maintains a pin and clamps down on the crucial f5-square, leading to a complex maneuvering game. This opening is perfect for patient, strategic players who enjoy slowly building pressure and outmaneuvering their opponents in closed positions, rather than engaging in immediate tactical brawls.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Solid",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Restricting Counterplay",
+        "Queenside Expansion vs. Central Control",
+        "Space Clamp",
+        "Pawn Break Preparation"
+      ],
+      "common_plans": [
+        "White: Solidify the center, often with h3 to give the bishop an escape square. Prepare queenside expansion with a3 and b4 to gain space. Maneuver pieces to control key squares and prevent Black's ...f5 break.",
+        "Black: Initiate queenside counterplay with ...a5-a4 and ...c6 to challenge White's space. Reroute the Nd7 to c5 or f8. Patiently prepare for the liberating ...f5 pawn break, or undermine White's center from the queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:21:50.979Z"
+    }
   },
   "r1bq1rk1/1ppn1pb1/3p1npp/p2Pp3/2P1P2B/2N2N2/PP2BPPP/R2QK2R w KQ - 0 10": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5 h6 9. Bh4 a5",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5 h6 9.Bh4 a5",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "This is a highly strategic and complex variation of the King's Indian Defense. White's plan is to restrain Black's typical kingside attack while methodically expanding on the queenside, a concept pioneered by Tigran Petrosian. Black's sophisticated 9...a5 directly challenges White's queenside ambitions, leading to a tense, maneuvering game where long-term strategy and prophylaxis are more important than immediate tactics. This opening is perfect for patient, strategic players who thrive in complex, closed positions.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Prophylactic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Weaknesses",
+        "Central Control",
+        "Prophylaxis",
+        "Piece Maneuvering"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Prophylaxis",
+        "Control of Key Squares",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White aims for a queenside expansion with Nd2, a3, b4, and the c5 pawn break to create pressure and open files.",
+        "Black counters on the queenside with ...a4 or ...Rb8, while preparing the traditional ...f5 pawn break, often after rerouting the knight via f8.",
+        "White often plays Bxf6 to disrupt Black's kingside pawn structure and weaken control over the dark squares, especially f5.",
+        "Black seeks to activate the powerful g7 bishop, which puts long-term pressure on White's center and queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:22:11.256Z"
+    }
   },
   "r1bq1rk1/1ppn1pb1/p2p1npp/3Pp3/2P1P2B/2N2N2/PP2BPPP/R2QK2R w KQ - 0 10": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5 h6 9. Bh4 a6",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5 h6 9.Bh4 a6",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian Variation of the King's Indian is a highly strategic and complex system where White aims for a space advantage and queenside pressure. By playing 9...a6, Black adopts a flexible and patient approach, preparing to counter White's c4-c5 push while slowly organizing the classic ...f5 pawn break. This opening leads to a tense, maneuvering game that suits players who enjoy long-term planning and understanding the subtle interplay between queenside and kingside operations.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "System-based",
+        "Dynamic",
+        "Counterattacking"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Attacking",
+        "Counterattack",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses",
+        "Central Control"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Prophylaxis",
+        "Maneuvering Warfare",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Methodically prepare the c4-c5 pawn break to gain space and open lines on the queenside, often rerouting the f3-knight to c4 to support this advance.",
+        "White: Restrain Black's kingside ambitions using the Bh4, and if Black plays ...g5, exchange the bishop to weaken Black's king position.",
+        "Black: Prepare the thematic ...f7-f5 pawn break to launch a kingside attack, often involving piece maneuvers like ...Nf8-g6-f4.",
+        "Black: Use the ...a6 and subsequent ...b5 pawn push to counter White's queenside expansion and create counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:22:35.752Z"
+    }
   },
   "r1bq1rk1/pppn1pb1/3p1n1p/3Pp1p1/2P1P2B/2N2N2/PP2BPPP/R2QK2R w KQ - 0 10": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Bg5 h6 9. Bh4 g5",
     "name": "King's Indian: Petrosian, Main Line, 8.Bg5 h6 9.Bh4 g5",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "This line represents one of the sharpest and most theoretically demanding battlegrounds in the King's Indian Defense. By pushing the g-pawn, Black commits to a full-scale kingside assault at the cost of creating permanent weaknesses around their own king. The resulting positions are incredibly dynamic and double-edged, suiting aggressive, tactical players who thrive on complexity and are willing to take calculated risks for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Double-edged",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "King Hunt"
+      ],
+      "positional_tags": [
+        "King Safety",
+        "Weak Squares",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Positional Counterplay",
+        "Exploiting Weaknesses",
+        "Race for the Initiative",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Play 10. Bg3 followed by h2-h4 to break open the h-file and attack the weakened Black king. Reroute the f3-knight (e.g., to h2) to support the attack and control key squares. Expand on the queenside with a4-a5.",
+        "Black: Continue the kingside expansion with ...f7-f5, often supported by ...Nf8. Use the g-pawn to cramp White's kingside and launch a direct attack. Must play with great energy to justify the created weaknesses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:22:54.178Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/3Pp3/2P1P3/2N2N2/PPQ1BPPP/R1B1K2R b KQ - 2 8": {
     "src": "scid",
     "eco": "E93",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 8. Qc2",
     "name": "King's Indian: Petrosian, Main Line, 8.Qc2",
-    "scid": "E93"
+    "scid": "E93",
+    "analysis_json": {
+      "description": "The Petrosian System with 8.Qc2 is a subtle and strategic approach for White against the King's Indian Defense. Instead of immediate confrontation, White plays prophylactically, aiming to slowly expand on the queenside while restraining Black's typical kingside attack. This opening leads to a complex, maneuvering game where long-term planning and understanding pawn structures are more critical than early tactical skirmishes, suiting patient players who excel at strategic battles.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Prophylactic",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Breakthrough",
+        "Initiative",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Maneuvering",
+        "Central Control",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Prophylaxis",
+        "Pawn Breaks (...f5, ...c5)",
+        "Maneuvering in a Closed Center"
+      ],
+      "common_plans": [
+        "White's Plan: Expand on the queenside with Rb1, b4, and the c5 pawn break. Restrict Black's counterplay and use the queen on c2 to control key squares and prepare for queenside operations.",
+        "Black's Plan: Prepare and execute the thematic ...f5 pawn break to open lines for an attack on the kingside, often preceded by moves like ...Ne8. Alternatively, challenge White's queenside control with ...a5-a4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:23:11.310Z"
+    }
   },
   "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 b - - 1 7": {
     "src": "eco_tsv",
@@ -90908,7 +92307,59 @@
       "chessGraph": "E94",
       "chronos": "King's Indian: orthodox variation"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Orthodox Variation is the classical and most tested battleground of the King's Indian Defense, where both sides fight for central control and the initiative. Black allows White to build a formidable pawn center, intending to undermine it and launch a fierce kingside attack, often starting with the ...f5 pawn break. This opening leads to exceptionally sharp, complex, and unbalanced positions, making it ideal for dynamic, counter-attacking players who are unafraid of tactical complications and thrive on strategic tension.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Strategic",
+        "Tactical",
+        "Complex",
+        "Counter-attacking",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Sacrifice",
+        "Initiative",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "King Safety",
+        "Space Advantage",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Expansion",
+        "Space Advantage vs. Counterplay",
+        "Undermining the Center",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Expand on the queenside (c5, Rb1, b4), control the center, and neutralize Black's kingside threats.",
+        "Black: Prepare and execute the ...f5 pawn break, transfer pieces to the kingside (...Nf6-h5-f4), and launch a direct attack on the white king.",
+        "White: Exchange pieces, particularly Black's dark-squared bishop, to reduce the attacking potential.",
+        "Black: Create weaknesses around the white king by advancing pawns (...f4, ...g5-g4) and sacrificing material to open lines."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:23:26.002Z"
+    }
   },
   "rnbq1rk1/pp3pbp/2pp1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 0 8": {
     "src": "eco_tsv",
@@ -90922,6 +92373,53 @@
       "chessGraph": "Donner Variation, KID",
       "chronos": "King's Indian: orthodox, Donner variation",
       "icsbot": "Donner Variation, KID "
+    },
+    "analysis_json": {
+      "description": "The Donner Defense is a solid and flexible system within the King's Indian Orthodox Variation, characterized by the waiting move 7...c6. Instead of immediately challenging the center with ...Nc6, Black bolsters the d5-square and prepares for queenside expansion, leading to a strategically complex game. This opening is perfect for patient, strategic players who enjoy maneuvering and understanding deep positional concepts, often sidestepping the sharpest theoretical lines for a more nuanced battle.",
+      "style_tags": [
+        "Strategic",
+        "Solid",
+        "Positional",
+        "Flexible",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pawn Break",
+        "Maneuvering",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Prophylaxis",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension vs. Flank Play",
+        "Queenside Expansion",
+        "Prophylaxis against White's plans",
+        "Pawn Structure Transformation"
+      ],
+      "common_plans": [
+        "Black: Prepare queenside counterplay with ...a6 and ...b5, often after an ...exd4 exchange. Alternatively, keep the center tense and prepare the traditional ...f5 kingside attack.",
+        "White: Either close the center with d5 and expand on the queenside with c5, or maintain central flexibility with 8. Re1, aiming to control the d-file and restrict Black's breaks."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:23:41.000Z"
     }
   },
   "r1bq1rk1/ppp2pbp/n2p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 2 8": {
@@ -90935,13 +92433,108 @@
       "ct": "King's Indian Defense, Orthodox Variation",
       "chessGraph": "Glek Defense, KID",
       "icsbot": "Glek Defense, KID "
+    },
+    "analysis_json": {
+      "description": "The Glek Defense is a subtle and flexible sideline in the King's Indian Orthodox Variation, characterized by the knight development to a6. Instead of the direct central confrontation of the main lines, Black aims for a more positional battle, preparing to undermine White's center and queenside with moves like ...b5. This opening suits strategic players who enjoy complex, non-standard positions and appreciate long-term maneuvering over immediate tactical clashes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Maneuvering"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control",
+        "Space Advantage",
+        "Queenside Expansion"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Undermining the center",
+        "Queenside counterplay",
+        "Flexibility vs. Space"
+      ],
+      "common_plans": [
+        "Black: Prepare and execute the ...b5 pawn break, often preceded by ...c6 and ...Rb8, to challenge White's queenside and central control. The Na6 can reroute to c7 or b4.",
+        "White: Maintain central tension with moves like Re1 or Be3, preparing to meet ...b5. Alternatively, play dxe5 to open the position and seek a small, lasting advantage based on space and development."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:24:24.676Z"
     }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 4 8": {
     "src": "eco_tsv",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 Nbd7 4. e4 e5 5. Nf3 g6 6. Be2 Bg7 7. O-O O-O",
-    "name": "King's Indian Defense: Orthodox Variation, Positional Defense"
+    "name": "King's Indian Defense: Orthodox Variation, Positional Defense",
+    "analysis_json": {
+      "description": "The King's Indian Defense is a hypermodern and ambitious response to 1.d4, where Black allows White to build a formidable pawn center before launching a decisive counter-attack. This opening leads to complex, strategically rich middlegames, often characterized by a race between White's queenside expansion and Black's kingside assault. It is perfect for dynamic, fighting players who are comfortable defending against a space advantage and excel at creating sharp, tactical complications.",
+      "style_tags": [
+        "Aggressive",
+        "Strategic",
+        "Dynamic",
+        "Counter-attacking",
+        "Complex",
+        "Hypermodern"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Sacrifice",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "King Safety",
+        "Space Advantage",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Dynamic Player",
+        "Strategic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Expansion",
+        "Pawn Breaks (...f5, ...c5)",
+        "Space Advantage vs. Counterplay",
+        "The Power of the Fianchettoed Bishop"
+      ],
+      "common_plans": [
+        "For Black, the primary plan is to launch a kingside attack, often initiated by the ...f5 pawn break, to undermine White's center and target the king.",
+        "For White, the main strategy is to use the space advantage to expand on the queenside with moves like b4 and c5, creating a second front and challenging Black's structure.",
+        "A key battle involves Black maneuvering pieces (e.g., ...Nh5-f4) to support the attack, while White organizes a defense (e.g., with f3) and seeks to trade Black's key attacking pieces.",
+        "An alternative plan for Black is to challenge the center with the ...c5 pawn break, leading to a different type of strategic struggle focused on the d-file and queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:24:47.550Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 b - - 0 8": {
     "src": "eco_tsv",
@@ -90952,6 +92545,56 @@
     "aliases": {
       "scid": "King's Indian: 7.O-O Nbd7 8.d5",
       "ct": "King's Indian Defense, Orthodox Variation"
+    },
+    "analysis_json": {
+      "description": "The Closed King's Indian is a classic strategic battleground where White's 8.d5 locks the center, defining the plans for both sides. The game becomes a tense race: White seeks to expand and break through on the queenside, while Black must generate a decisive kingside attack, typically initiated by the ...f5 pawn break. This opening is perfect for strategic players who enjoy executing long-term plans and understand the dynamic tension of attacking on opposite wings.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Dynamic",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Patient Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Locked Center",
+        "Thematic Pawn Breaks",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Execute a queenside expansion with moves like c5, b4, and Rb1, aiming to create a passed pawn or break through to Black's weak pawns.",
+        "Black: Launch a kingside attack, typically initiated by the ...f5 pawn break, followed by transferring pieces to assault the white king.",
+        "White: Maintain a firm grip on the center and use prophylactic moves (like Kh1) to prepare for Black's kingside storm.",
+        "Black: Maneuver the knight from d7, often to f8 or c5, to support the kingside attack or challenge White's queenside control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:25:08.475Z"
     }
   },
   "rnbq1rk1/1pp2pbp/3p1np1/p3p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 0 8": {
@@ -90963,6 +92606,53 @@
       "ct": "King's Indian Defense, Orthodox Variation",
       "chessGraph": "Ukranian Defense, KID",
       "icsbot": "Ukranian Defense, KID "
+    },
+    "analysis_json": {
+      "description": "The Ukrainian Defense is a subtle and strategic refinement within the aggressive King's Indian Defense. By playing 7...a5, Black takes prophylactic measures against White's queenside expansion (...b4) while preparing to gain space and create counterplay on that flank. This approach leads to a complex, strategically deep game where Black often combines the traditional KID kingside attack with nuanced queenside maneuvering, suiting players who enjoy long-term planning within a dynamic setting.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Counter-attacking",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Queenside Control",
+        "Central Control",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Prophylaxis",
+        "Kingside Attack",
+        "Space Control",
+        "Tension in the Center"
+      ],
+      "common_plans": [
+        "Black: Prepare the standard KID kingside pawn storm (...f5-f4) after securing the queenside with ...a4, often rerouting the f6-knight to support the attack.",
+        "White: Seek a queenside breakthrough with c4-c5, control the center, and use pieces like the light-squared bishop (often to d3) to restrain Black's kingside ambitions."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:25:26.666Z"
     }
   },
   "rnbq1rk1/ppp2pbp/3p1np1/8/2PpP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 0 8": {
@@ -90970,49 +92660,397 @@
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4",
     "name": "King's Indian: 7.O-O exd4",
-    "scid": "E94b"
+    "scid": "E94b",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Defense sees Black immediately resolve the central tension with 7...exd4. Unlike the closed, sharp attacking lines, this leads to a more open and strategically complex middlegame where White gains a space advantage and a strong knight on d4. Black, in return, obtains active piece play and aims to undermine White's central control. This opening is perfect for dynamic, strategic players who enjoy maneuvering and creating counter-chances rather than launching immediate, all-out attacks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Counter-attacking",
+        "Open Game"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Pressure"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Counterplay",
+        "Pressure on the d6-pawn",
+        "Queenside Expansion (White)",
+        "Undermining the Center (Black)"
+      ],
+      "common_plans": [
+        "White: After 8.Nxd4, White solidifies central control, often with moves like Re1, and prepares queenside expansion with Rb1 and b4 to create a minority attack or gain space.",
+        "Black: Black challenges White's center with ...Re8 and the ...c5 pawn break. A key plan involves maneuvering the b8-knight to b5 via ...Na6-c7 to pressure White's d4-knight and queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:25:46.223Z"
+    }
   },
   "rnbqr1k1/ppp2pbp/3p1np1/8/2PNP3/2N2P2/PP2B1PP/R1BQ1RK1 b - - 0 9": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3",
-    "scid": "E94c"
+    "scid": "E94c",
+    "analysis_json": {
+      "description": "This is a main line of the Classical King's Indian, where White's 9.f3 solidifies the center, creating a robust but slightly less flexible structure. The game transitions into a deep, strategic battle where White aims to leverage a space advantage, while Black seeks to undermine the d4-e4 pawn duo and generate counterplay, typically on the queenside. This opening is perfect for strategic players who enjoy complex, maneuvering games and have a deep understanding of pawn structures and long-term plans.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Complex",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pressure",
+        "Initiative",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Space Advantage vs. Black's Counterplay",
+        "Undermining the Center",
+        "Queenside Expansion",
+        "The d6-pawn as a weakness and strength"
+      ],
+      "common_plans": [
+        "White: Solidify the center, often with Be3 and Qd2. Restrict Black's pieces and slowly build up an attack, sometimes involving a g2-g4 push to gain kingside space. Target the potentially weak d6 pawn in the long run.",
+        "Black: Prepare queenside expansion with ...c6, ...a6, and the ...b5 pawn break to challenge White's c4 pawn. Reposition the queen's knight via ...Nbd7 to c5 or e5 to increase pressure on the center. Use the powerful g7-bishop to control the long diagonal and create threats."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:26:10.299Z"
+    }
   },
   "rnbqr1k1/pp3pbp/2pp1np1/8/2PNP3/2N2P2/PP2B1PP/R1BQ1RK1 w - - 0 10": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3 c6",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3 c6",
-    "scid": "E94c"
+    "scid": "E94c",
+    "analysis_json": {
+      "description": "This line of the King's Indian Defense, the Classical Variation with 9...c6, leads to one of the most strategically profound and complex battles in chess. Black adopts a solid setup, preparing to challenge White's central space advantage with the ...d5 pawn break, while White's f3 move creates a robust pawn chain to secure the center. The resulting game is a deep, maneuvering struggle, ideal for patient, strategic players who enjoy long-term planning and understanding the nuances of pawn structures and piece activity.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Solid",
+        "Dynamic",
+        "Counter-attacking",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pawn Break",
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player",
+        "Theoretical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Counterplay",
+        "Timing of the Pawn Break (...d5)",
+        "Queenside Expansion (for Black)",
+        "Exploiting a Space Advantage (for White)"
+      ],
+      "common_plans": [
+        "Black's Plan: Prepare and execute the ...d5 pawn break to liquidate the center. Alternatively, expand on the queenside with ...a6 followed by ...b5. The knight often maneuvers via ...Na6-c7 or ...Nb8-d7 to support these breaks.",
+        "White's Plan: Maintain central control, often with moves like Kh1 (to avoid back-rank tactics on the e-file) and Qc2. Restrict Black's queenside play with a4. Prepare to meet ...d5 with cxd5, aiming to pressure the newly created d6-pawn weakness."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:26:33.566Z"
+    }
   },
   "rnbqr1k1/pp3pbp/2pp1np1/8/2PNP3/2N2P2/PP2B1PP/R1BQ1R1K b - - 1 10": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3 c6 10. Kh1",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3 c6 10.Kh1",
-    "scid": "E94c"
+    "scid": "E94c",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Defense, the Classical Main Line with 9.f3, leads to a dense and highly strategic battle. White establishes a formidable pawn center, aiming to slowly squeeze Black and launch a queenside attack, while Black focuses on undermining this center, primarily through pressure on the e4-pawn and preparing the ...d5 pawn break. This opening is perfect for patient, strategic players who enjoy complex maneuvering and long-term planning over immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Solid",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pressure",
+        "Counterattack",
+        "Pin",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player",
+        "Technical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Counter-pressure",
+        "Undermining the Center",
+        "Prophylaxis",
+        "Exploiting a Space Advantage"
+      ],
+      "common_plans": [
+        "White: Consolidate the center, prepare queenside expansion with b2-b4, control the d5-square, and slowly improve piece placement (e.g., Nc3-e2).",
+        "Black: Prepare the ...d5 pawn break, often via ...Nbd7 followed by ...a5 (to stop b4) and rerouting the knight. Another plan is ...Na6-c7 to support ...d5.",
+        "White: Reposition the f3-knight, often to f1-g3 or f1-e3, to bolster the kingside and support the center.",
+        "Black: Increase pressure on the e4-pawn, forcing White to remain passive while Black organizes their counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:26:55.577Z"
+    }
   },
   "r1bqr1k1/ppp2pbp/2np1np1/8/2PNP3/2N2P2/PP2B1PP/R1BQ1RK1 w - - 1 10": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3 Nc6",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3 Nc6",
-    "scid": "E94d"
+    "scid": "E94d",
+    "analysis_json": {
+      "description": "This is a major line of the Classical King's Indian where Black opts to release the central tension with ...exd4. The resulting positions are deeply strategic and complex, revolving around White's central space advantage versus Black's dynamic counterplay and pressure on the e4-pawn. This opening is ideal for sophisticated players who enjoy maneuvering, understanding the subtle interplay between positional pressure, and creating tactical possibilities from a solid foundation.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "Complex",
+        "Counter-attacking",
+        "Main line"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pressure",
+        "Undermining"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Struggle for the Center",
+        "Space Advantage vs. Counterplay",
+        "Queenside Expansion",
+        "Pressure on the e4-pawn"
+      ],
+      "common_plans": [
+        "White: Solidify the center, expand on the queenside with a4 and b4, challenge Black's fianchettoed bishop with Be3-d2, and control the d-file.",
+        "Black: Exert pressure on the e4 and d4 pawns, challenge White's center with ...c5, reroute the knight from c6 to e7-d5, and prepare for kingside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:27:11.052Z"
+    }
   },
   "r1bqr1k1/ppp2pbp/2np1np1/8/2PNP3/2N1BP2/PP2B1PP/R2Q1RK1 b - - 2 10": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3 Nc6 10. Be3",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3 Nc6 10.Be3",
-    "scid": "E94d"
+    "scid": "E94d",
+    "analysis_json": {
+      "description": "This is a classical and highly strategic variation of the King's Indian Defense, often leading to the famous Mar del Plata structure. White establishes a formidable space advantage in the center, aiming for a slow-squeeze and a queenside attack, while Black seeks to undermine White's central control and generate counterplay against the e4-pawn. This opening is perfect for sophisticated, strategic players who enjoy complex maneuvering and long-term planning, where understanding pawn structures and piece coordination is paramount.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Complex",
+        "Main Line"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Pressure on e4"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Central Space Advantage vs. Black's Counterplay",
+        "The fight for the d5 square",
+        "Queenside Expansion (White) vs. Kingside Attack (Black)",
+        "Pressure on the e4-pawn"
+      ],
+      "common_plans": [
+        "White: Play on the queenside with Rb1, b4, c5. Control the d5 square with Nc2-e3. Repel Black's kingside pressure.",
+        "Black: Increase pressure on e4 with ...Nh5 or ...Ng4. Prepare a kingside attack with ...f5. Maneuver the c6-knight via ...a5-b6 or ...e7-g8.",
+        "Black: Challenge White's center with a timely ...c5 break.",
+        "White: Solidify the center and slowly improve piece placement, aiming for a favorable endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:27:27.425Z"
+    }
   },
   "r1bqr1k1/ppp2pbp/2np2p1/7n/2PNP3/2N1BP2/PP1QB1PP/R4RK1 b - - 4 11": {
     "src": "scid",
     "eco": "E94",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4 Re8 9. f3 Nc6 10. Be3 Nh5 11. Qd2",
     "name": "King's Indian: 7.O-O exd4 8.Nxd4 Re8 9.f3 Nc6 10.Be3 Nh5 11.Qd2",
-    "scid": "E94e"
+    "scid": "E94e",
+    "analysis_json": {
+      "description": "This line of the King's Indian Defense represents the classical struggle between White's central control and Black's kingside attack. White's setup with f3 is solid, aiming to blunt Black's typical ...Ng4 ideas and prepare for a queenside expansion, while Black's knight on h5 signals immediate aggressive intentions against the white king. The resulting middlegames are exceptionally sharp and complex, suiting dynamic players who enjoy double-edged positions where strategic understanding and precise calculation are paramount.",
+      "style_tags": [
+        "Aggressive",
+        "Strategic",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Sacrifice",
+        "Initiative",
+        "Counterattack",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "King Safety",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Central Control",
+        "Queenside Expansion",
+        "Prophylaxis",
+        "Exploiting Weaknesses"
+      ],
+      "common_plans": [
+        "Black's Plan: Initiate a kingside pawn storm with ...f5, often supported by ...Nf6 (from h5) and a rook lift. Sacrifices on f3 or g2 are common to expose the white king.",
+        "White's Plan: Consolidate the center, neutralize Black's attack, and launch a counter-offensive on the queenside with moves like b4 and c5, aiming to exploit the d6-pawn.",
+        "Black's Plan: Reposition the c6-knight to e7 to support the ...f5 push or to b4 to create queenside counterplay.",
+        "White's Plan: Exchange pieces, particularly Black's active ones, to defuse the attack and transition into a more favorable endgame where the d6-pawn is a clear weakness."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T21:27:46.970Z"
+    }
   },
   "r1bq1rk1/pppn1pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 2 8": {
     "src": "scid",

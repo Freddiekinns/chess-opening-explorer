@@ -187,15 +187,15 @@ describe('DataMigrator', () => {
       await migrator.migrateAllEcoFiles();
       
       expect(mockFs.readFile).toHaveBeenCalledWith(
-        expect.stringContaining('eco/ecoA.json'),
+        expect.stringMatching(/eco[/\\]ecoA\.json$/),
         'utf8'
       );
       expect(mockFs.readFile).toHaveBeenCalledWith(
-        expect.stringContaining('eco/ecoB.json'),
+        expect.stringMatching(/eco[/\\]ecoB\.json$/),
         'utf8'
       );
       expect(mockFs.readFile).toHaveBeenCalledWith(
-        expect.stringContaining('eco/ecoE.json'),
+        expect.stringMatching(/eco[/\\]ecoE\.json$/),
         'utf8'
       );
     });

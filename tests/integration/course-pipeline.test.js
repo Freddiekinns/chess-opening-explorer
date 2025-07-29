@@ -11,7 +11,12 @@ const fs = require('fs');
 const path = require('path');
 
 // Mock fs for controlled testing
-jest.mock('fs');
+jest.mock('fs', () => ({
+  existsSync: jest.fn(),
+  readFileSync: jest.fn(),
+  readFile: jest.fn(),
+  writeFileSync: jest.fn()
+}));
 
 describe('PRD-F03 Course Pipeline Integration', () => {
   let app;

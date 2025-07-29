@@ -104,6 +104,36 @@ class ECOService {
   }
 
   /**
+   * Load popularity data from popularity_stats.json
+   */
+  loadPopularityData() {
+    if (this.popularityData) {
+      return this.popularityData;
+    }
+
+    const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
+    const popularityPath = isRunningFromRoot 
+      ? path.join(process.cwd(), 'data/popularity_stats.json')
+      : path.join(process.cwd(), '../../data/popularity_stats.json');
+
+    try {
+      if (fs.existsSync(popularityPath)) {
+        const rawData = JSON.parse(fs.readFileSync(popularityPath, 'utf8'));
+        this.popularityData = rawData.positions || {};
+        console.log(`Loaded popularity data for ${Object.keys(this.popularityData).length} positions`);
+      } else {
+        console.warn('Popularity stats file not found, using empty data');
+        this.popularityData = {};
+      }
+    } catch (error) {
+      console.error('Error loading popularity data:', error);
+      this.popularityData = {};
+    }
+
+    return this.popularityData;
+  }
+
+  /**
    * Get ECO analysis data for a specific code
    * Extracts analysis_json fields like description, plans, complexity
    */
@@ -359,10 +389,24 @@ class ECOService {
    */
   getAllOpenings() {
     const ecoData = this.loadECOData();
+    const popularityData = this.loadPopularityData();
     const results = [];
     
     for (const [fen, opening] of Object.entries(ecoData)) {
-      results.push({ fen, ...opening });
+      // Enrich with popularity data if available
+      const popularity = popularityData[fen];
+      const enrichedOpening = {
+        fen,
+        ...opening,
+        games_analyzed: popularity ? popularity.games_analyzed : 0,
+        popularity_score: popularity ? popularity.popularity_score : 0,
+        white_win_rate: popularity ? popularity.white_win_rate : null,
+        black_win_rate: popularity ? popularity.black_win_rate : null,
+        draw_rate: popularity ? popularity.draw_rate : null,
+        avg_rating: popularity ? popularity.avg_rating : null
+      };
+      
+      results.push(enrichedOpening);
     }
     
     return results;

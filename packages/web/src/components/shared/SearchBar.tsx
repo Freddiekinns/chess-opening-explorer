@@ -178,7 +178,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         <input
           ref={searchRef}
           type="text"
-          className="search-input"
+          className="search-input-field"
           placeholder={loading ? "Loading openings..." : placeholder}
           value={searchTerm}
           onChange={handleInputChange}
@@ -189,6 +189,25 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           autoFocus={autoFocus}
         />
         
+        {variant === 'landing' && (
+          <div className="search-actions">
+            <button 
+              className="search-go-btn" 
+              onClick={handleGo}
+              disabled={disabled || loading || searchTerm.length < 2}
+            >
+              {loading ? 'Loading...' : 'Go'}
+            </button>
+            <button 
+              className="search-surprise-btn" 
+              onClick={handleSurpriseMe}
+              disabled={disabled || loading}
+            >
+              {loading ? 'Loading...' : 'Surprise Me'}
+            </button>
+          </div>
+        )}
+        
         {loading && (
           <div className="loading-indicator">
             <span className="loading-spinner">⟳</span>
@@ -196,7 +215,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         )}
         
         {showSuggestions && suggestions.length > 0 && (
-          <ul className="suggestions-list">
+          <ul className="search-suggestions">
             {suggestions.map((opening, index) => (
               <li
                 key={`${opening.fen}-${index}`}
@@ -205,31 +224,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 onMouseEnter={() => setActiveSuggestion(index)}
               >
                 <strong className="opening-name">{opening.name}</strong>
-                <span className="opening-eco">({opening.eco})</span>
+                <span className="opening-eco eco-code">({opening.eco})</span>
               </li>
             ))}
           </ul>
         )}
       </div>
-      
-      {variant === 'landing' && (
-        <div className="search-actions">
-          <button 
-            className="go-button" 
-            onClick={handleGo}
-            disabled={disabled || loading || searchTerm.length < 2}
-          >
-            {loading ? 'Loading...' : 'Go'}
-          </button>
-          <button 
-            className="surprise-button" 
-            onClick={handleSurpriseMe}
-            disabled={disabled || loading}
-          >
-            {loading ? 'Loading...' : 'Surprise Me'}
-          </button>
-        </div>
-      )}
     </div>
   )
 }

@@ -9,7 +9,7 @@ interface Opening {
   src: string
   scid?: string
   aliases?: Record<string, string>
-  analysis?: {
+  analysis_json?: {  // Changed from analysis to analysis_json to match API
     description?: string
     style_tags?: string[]
     popularity?: number
@@ -33,65 +33,96 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
-  // Available categories based on style_tags
+  // Available categories based on ECO codes
   const [categories, setCategories] = useState([
     { id: 'all', label: 'All Openings', count: 0 },
-    { id: 'aggressive', label: 'Aggressive', count: 0 },
-    { id: 'positional', label: 'Positional', count: 0 },
-    { id: 'tactical', label: 'Tactical', count: 0 },
-    { id: 'gambit', label: 'Gambit', count: 0 },
-    { id: 'solid', label: 'Solid', count: 0 }
+    { id: 'A', label: 'Flank Openings (A)', count: 0 },
+    { id: 'B', label: 'Semi-Open Games (B)', count: 0 },
+    { id: 'C', label: 'French & Others (C)', count: 0 },
+    { id: 'D', label: "Queen's Gambit (D)", count: 0 },
+    { id: 'E', label: 'Indian Systems (E)', count: 0 }
   ])
 
   // Update filtered openings when filters change
   useEffect(() => {
-    let filtered = [...openings]
+    console.log(`🔍 Processing ${openings.length} total openings for category: "${selectedCategory}"`);
+    
+    // First, deduplicate openings by name + eco combination to prevent duplicates
+    const uniqueOpenings = openings.reduce((acc, opening) => {
+      const key = `${opening.name}-${opening.eco}`
+      if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
+        acc[key] = opening
+      }
+      return acc
+    }, {} as Record<string, Opening>)
+    
+    let filtered = Object.values(uniqueOpenings)
+    console.log(`📊 After deduplication: ${filtered.length} unique openings`);
 
-    // Apply category filter
+    // Apply ECO category filter FIRST, before any limiting
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(opening => {
-        const styleTags = opening.analysis?.style_tags || []
-        return styleTags.some(tag => tag.toLowerCase() === selectedCategory.toLowerCase())
+        return opening.eco && opening.eco.startsWith(selectedCategory)
       })
+      console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
     }
 
-    // Simplified sorting - prioritize game volume, then popularity score, then name
-    filtered.sort((a, b) => {
-      // Prioritize actual game volume over popularity score
-      const gamesA = a.games_analyzed || 0
-      const gamesB = b.games_analyzed || 0
-      if (gamesA !== gamesB) return gamesB - gamesA
-      // Fallback to popularity score if no game data
-      const popA = a.analysis?.popularity || 0
-      const popB = b.analysis?.popularity || 0
-      if (popA !== popB) return popB - popA
-      // Final fallback to alphabetical
-      return a.name.localeCompare(b.name)
-    })
+    // Sort by games played (descending order - most popular first)
+    filtered.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-    // Limit to top results for performance
-    setFilteredOpenings(filtered.slice(0, 12))
+    // Now limit to top 6 for specific categories, 12 for "all"
+    const displayLimit = selectedCategory === 'all' ? 12 : 6
+    const finalResults = filtered.slice(0, displayLimit)
+    console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
+    
+    // Debug: Log the actual games_analyzed values for the final results
+    console.log('🎯 Final sorted results with games_analyzed:');
+    finalResults.forEach((opening, index) => {
+      console.log(`  ${index + 1}. "${opening.name}" (${opening.eco}) - ${opening.games_analyzed || 0} games`);
+    });
+    
+    setFilteredOpenings(finalResults)
   }, [openings, selectedCategory])
 
   // Update category counts
   useEffect(() => {
-    const categoryIds = ['aggressive', 'positional', 'tactical', 'gambit', 'solid']
+    // First deduplicate openings for accurate counts
+    const uniqueOpenings = openings.reduce((acc, opening) => {
+      const key = `${opening.name}-${opening.eco}`
+      if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
+        acc[key] = opening
+      }
+      return acc
+    }, {} as Record<string, Opening>)
+    
+    const deduplicatedOpenings = Object.values(uniqueOpenings)
+    const ecoCategories = ['A', 'B', 'C', 'D', 'E']
     
     const updatedCategories = [
-      { id: 'all', label: 'All Openings', count: openings.length },
-      ...categoryIds.map(categoryId => ({
-        id: categoryId,
-        label: categoryId.charAt(0).toUpperCase() + categoryId.slice(1),
-        count: openings.filter(opening => 
-          opening.analysis?.style_tags?.some(tag => 
-            tag.toLowerCase() === categoryId.toLowerCase()
-          )
-        ).length
-      }))
+      { id: 'all', label: 'All Openings', count: deduplicatedOpenings.length },
+      ...ecoCategories.map(ecoLetter => {
+        const matchingOpenings = deduplicatedOpenings.filter(opening => opening.eco && opening.eco.startsWith(ecoLetter))
+        return {
+          id: ecoLetter,
+          label: getEcoLabel(ecoLetter),
+          count: matchingOpenings.length
+        }
+      })
     ]
 
     setCategories(updatedCategories)
   }, [openings])
+
+  const getEcoLabel = (ecoLetter: string): string => {
+    const labels = {
+      'A': 'Flank Openings (A)',
+      'B': 'Semi-Open Games (B)', 
+      'C': 'French & Others (C)',
+      'D': "Queen's Gambit (D)",
+      'E': 'Indian Systems (E)'
+    }
+    return labels[ecoLetter as keyof typeof labels] || `ECO ${ecoLetter}`
+  }
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategory(categoryId)
@@ -102,31 +133,31 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       <div className="section-header">
         <h2>Popular Openings</h2>
         <p className="section-subtitle">
-          Discover the most played openings by millions of chess players
+          Explore openings by ECO classification - from flank openings to Indian systems
         </p>
       </div>
 
       <div className="filters-container">
         <div className="category-filters">
-          <div className="category-tabs">
-            {categories.slice(0, 6).map(category => (
-              <button
-                key={category.id}
-                className={`category-tab ${selectedCategory === category.id ? 'active' : ''}`}
-                onClick={() => handleCategoryChange(category.id)}
-              >
-                {category.label}
-                <span className="category-count">({category.count})</span>
-              </button>
-            ))}
-          </div>
+        <div className="category-filters">
+          {categories.slice(0, 6).map(category => (
+            <button
+              key={category.id}
+              className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              onClick={() => handleCategoryChange(category.id)}
+            >
+              {category.label}
+              <span className="category-count">({category.count})</span>
+            </button>
+          ))}
+        </div>
         </div>
       </div>
 
       <div className="openings-grid">
-        {filteredOpenings.map((opening) => (
-                    <OpeningCard
-            key={opening.name}
+        {filteredOpenings.map((opening, index) => (
+          <OpeningCard
+            key={`${opening.eco}-${opening.name}-${opening.fen?.substring(0, 10) || index}`}
             opening={opening}
             showPopularity={true}
             showEco={true}
@@ -138,7 +169,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
       {filteredOpenings.length === 0 && (
         <div className="empty-state">
-          <p>No openings found for the selected category.</p>
+          <p>No openings found in the selected ECO category.</p>
           <button 
             onClick={() => setSelectedCategory('all')}
             className="reset-filter-btn"

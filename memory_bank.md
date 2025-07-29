@@ -185,16 +185,6 @@ packages/api/src/data/
 - 🔄 **F11**: Progressive Web App Features
 - 🔄 **F12**: Error Handling & Production Polish
 
-### **Technical Debt & Known Issues**
-- **None currently identified** - recent Channel-First Indexer evolution achieved clean architecture
-- **Major Cleanup Complete (July 20, 2025)**: Comprehensive cleanup removed all development/analysis scripts
-  - Archived 20+ analysis scripts (`analyze_*.js`, `debug_*.js`, `test_*.js`, `fix_*.js`)
-  - Removed old pipeline versions and development utilities
-  - Current production state: 3 essential files properly organized in `tools/video-pipeline/`
-    - `tools/video-pipeline/run_new_pipeline_fixed.js` (production pipeline)
-    - `tools/video-pipeline/run_migration.js` (database setup)
-    - `tools/video-pipeline/analyze_comprehensive_performance.js` (performance monitoring)
-
 ---
 
 ## **⚙️ Core Application Logic**
@@ -277,22 +267,6 @@ interface ChessOpening {
 
 ---
 
-## **⚡ Performance Standards**
-
-### **Test Performance Targets**
-- **Unit tests**: <1 second each, <10 seconds total suite
-- **Integration tests**: <5 seconds each (respect Jest default)
-- **Mock all external dependencies**: APIs, databases, file I/O
-- **Clean up**: Remove test artifacts, reset mocks between tests
-
-### **API Performance Requirements**
-- **Course enrichment**: Target <$0.10 per opening analysis
-- **Batch processing**: Configurable batch sizes with cost limits
-- **Checkpointing**: File-based resumability for long-running processes
-- **Caching**: Avoid re-processing existing analyses
-
----
-
 ## **🔒 Security Constraints**
 
 ### **Environment Variables Required**
@@ -303,12 +277,6 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON="{...}"
 # YouTube API Key
 YOUTUBE_API_KEY="..."
 ```
-
-### **Security Rules**
-- **No hardcoded secrets** in any code files
-- **Input validation** on all API boundaries
-- **Parameterized queries** to prevent SQL injection
-- **No sensitive data in logs** (PII, API keys, tokens)
 
 ---
 

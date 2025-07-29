@@ -8,7 +8,12 @@ const path = require('path');
 const CourseService = require('../../packages/api/src/services/course-service');
 
 // Mock fs module for fast, deterministic tests
-jest.mock('fs');
+jest.mock('fs', () => ({
+  existsSync: jest.fn(),
+  readFileSync: jest.fn(),
+  readFile: jest.fn(),
+  writeFileSync: jest.fn()
+}));
 
 describe('CourseService', () => {
   let courseService;

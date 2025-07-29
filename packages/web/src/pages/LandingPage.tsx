@@ -11,7 +11,7 @@ interface Opening {
   src: string
   scid?: string
   aliases?: Record<string, string>
-  analysis?: {
+  analysis_json?: {  // Changed from analysis to analysis_json to match API
     description?: string
     style_tags?: string[]
     popularity?: number
@@ -61,14 +61,14 @@ const LandingPage: React.FC = () => {
             } else {
               // Simple fallback: use openings with most games played
               const fallbackPopular = openingsData.data
-                .filter((opening: Opening) => opening.games_analyzed || opening.analysis?.popularity)
+                .filter((opening: Opening) => opening.games_analyzed || opening.analysis_json?.popularity)
                 .sort((a: Opening, b: Opening) => {
                   // Prioritize actual game volume over popularity score
                   const gamesA = a.games_analyzed || 0
                   const gamesB = b.games_analyzed || 0
                   if (gamesA !== gamesB) return gamesB - gamesA
                   // Fallback to popularity score if no game data
-                  return (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0)
+                  return (b.analysis_json?.popularity || 0) - (a.analysis_json?.popularity || 0)
                 })
                 .slice(0, 12)
               
@@ -147,9 +147,9 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Popular Openings - Use Component's Built-in UI */}
-      {dataLoaded && popularOpenings.length > 0 && (
+      {dataLoaded && openingsData.length > 0 && (
         <PopularOpeningsGrid
-          openings={popularOpenings}
+          openings={openingsData}
           onOpeningSelect={handleOpeningSelect}
           className="main-grid"
         />

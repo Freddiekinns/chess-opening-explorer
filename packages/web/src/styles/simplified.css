@@ -533,6 +533,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-6);
   padding: var(--space-8) var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .opening-card {
@@ -812,8 +814,15 @@ body {
   max-width: 400px;
 }
 
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
 .search-input-field {
-  width: 100%;
+  flex: 1;
   background-color: var(--color-bg-alt);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border);
@@ -827,6 +836,39 @@ body {
   outline: none;
   border-color: var(--color-brand-orange);
   box-shadow: 0 0 0 2px rgba(232, 93, 4, 0.1);
+}
+
+.search-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.search-go-btn,
+.search-surprise-btn {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-base);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  transition: var(--transition-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  white-space: nowrap;
+}
+
+.search-go-btn:hover:not(:disabled),
+.search-surprise-btn:hover:not(:disabled) {
+  background-color: var(--color-brand-orange-hover);
+  transform: translateY(-1px);
+}
+
+.search-go-btn:disabled,
+.search-surprise-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .search-suggestions {
@@ -943,6 +985,7 @@ body {
   cursor: pointer;
   transition: var(--transition-base);
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
 }
 
 .category-btn:hover,
@@ -950,6 +993,38 @@ body {
   background-color: var(--color-brand-orange);
   color: white;
   border-color: var(--color-brand-orange);
+}
+
+.category-count {
+  margin-left: var(--space-1);
+  opacity: 0.8;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-xxl);
+  color: var(--color-text-secondary);
+}
+
+.empty-state p {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-lg);
+}
+
+.reset-filter-btn {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-base);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: var(--transition-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.reset-filter-btn:hover {
+  background-color: var(--color-brand-orange-hover);
+  transform: translateY(-1px);
 }
 
 /* =================

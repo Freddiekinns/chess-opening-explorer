@@ -53,7 +53,7 @@ describe('Chess Opening Trainer Setup', () => {
     // Check for the current simplified two-page architecture
     // The actual files are TypeScript files, not JSX
     const landingPagePath = path.join(webPackagePath, 'src', 'pages', 'LandingPage.tsx');
-    const detailPagePath = path.join(webPackagePath, 'src', 'pages', 'DetailPage.tsx');
+    const detailPagePath = path.join(webPackagePath, 'src', 'pages', 'OpeningDetailPage.tsx');
     
     expect(fs.existsSync(landingPagePath)).toBe(true);
     expect(fs.existsSync(detailPagePath)).toBe(true);

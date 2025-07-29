@@ -13,8 +13,15 @@
   --color-bg-alt: #2A2A2A;
   --color-brand-orange: #E85D04;
   --color-brand-orange-hover: #F48C06;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #A0A0A0;
+  /* Text Colors - Semantic Naming */
+  --color-text-primary: #FFFFFF;       /* Main content text */
+  --color-text-secondary: #A0A0A0;     /* Supporting text, labels */
+  --color-text-muted: #808080;         /* Subtle text, fine print */
+  --color-text-inverse: #121212;       /* Text on light backgrounds */
+  --color-text-accent: #E85D04;        /* Accent text, links */
+  --color-text-success: #28a745;       /* Success messages */
+  --color-text-warning: #ffc107;       /* Warning messages */
+  --color-text-error: #dc3545;         /* Error messages */
   --color-border: #333333;
   --color-success: #28a745;
   --color-danger: #dc3545;
@@ -33,20 +40,52 @@
   --space-xl: 2rem;
   --space-xxl: 3rem;
 
-  /* Typography */
+  /* Typography System - Comprehensive Design */
+  
+  /* Font Families */
   --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.5rem;
+  --font-family-mono: 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  
+  /* Font Sizes - Consistent Scale */
+  --font-size-xs: 0.75rem;      /* 12px - Fine print, captions */
+  --font-size-sm: 0.875rem;     /* 14px - Labels, secondary text */
+  --font-size-base: 1rem;       /* 16px - Body text, default */
+  --font-size-md: 1.125rem;     /* 18px - Large body text */
+  --font-size-lg: 1.25rem;      /* 20px - Subheadings */
+  --font-size-xl: 1.5rem;       /* 24px - Section headers */
+  --font-size-2xl: 1.875rem;    /* 30px - Page headers */
+  --font-size-3xl: 2.25rem;     /* 36px - Main titles */
+  --font-size-4xl: 3rem;        /* 48px - Hero titles */
+  
+  /* Legacy size mappings for gradual migration */
+  --font-size-h1: var(--font-size-3xl);
+  --font-size-h2: var(--font-size-2xl);
+  --font-size-h3: var(--font-size-xl);
+  
+  /* Font Weights - Clear Hierarchy */
+  --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-h1: 700;
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
+  --font-weight-extrabold: 800;
+  
+  /* Legacy weight mappings */
+  --font-weight-h1: var(--font-weight-bold);
+  
+  /* Line Heights - Optimized Readability */
+  --line-height-tight: 1.25;    /* Headlines, titles */
+  --line-height-snug: 1.375;    /* Large text */
+  --line-height-normal: 1.5;    /* Body text */
+  --line-height-relaxed: 1.625; /* Long-form content */
+  --line-height-loose: 2;       /* Spaced content */
+  
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
 
   /* Layout helpers */
   --border-radius-small: 4px;
@@ -180,8 +219,9 @@ body {
 }
 
 .opening-name {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-h1);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
   margin: 0 0 var(--space-4) 0;
   color: var(--color-text-primary);
 }
@@ -559,8 +599,9 @@ body {
 }
 
 .card-header .opening-name {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
   margin: 0;
 }
 
@@ -586,11 +627,15 @@ body {
 .data-label {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
 }
 
 .data-value {
   color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
 }
 
 .success-bar {
@@ -1154,4 +1199,115 @@ body {
     grid-template-columns: 1fr;
     gap: var(--space-4);
   }
+}
+
+/* =================
+   TYPOGRAPHY UTILITIES 
+   ================= */
+
+/* Typography Scale Classes */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+/* Font Weight Classes */
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+
+/* Line Height Classes */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-snug { line-height: var(--line-height-snug); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+
+/* Text Color Classes */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-text-accent); }
+.text-success { color: var(--color-text-success); }
+.text-warning { color: var(--color-text-warning); }
+.text-error { color: var(--color-text-error); }
+
+/* Letter Spacing Classes */
+.tracking-tighter { letter-spacing: var(--letter-spacing-tighter); }
+.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
+.tracking-normal { letter-spacing: var(--letter-spacing-normal); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
+.tracking-wider { letter-spacing: var(--letter-spacing-wider); }
+
+/* Semantic Typography Classes */
+.title-hero {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+}
+
+.title-page {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+.title-section {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-primary);
+}
+
+.title-subsection {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-primary);
+}
+
+.text-body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+}
+
+.text-body-large {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.text-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-muted);
+}
+
+.text-code {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
 }

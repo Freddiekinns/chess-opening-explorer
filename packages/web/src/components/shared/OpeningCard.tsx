@@ -1,5 +1,4 @@
 import React from 'react';
-import { PopularityIndicator } from './PopularityIndicator';
 
 interface Opening {
   fen: string
@@ -21,7 +20,6 @@ interface Opening {
 
 interface OpeningCardProps {
   opening: Opening
-  showPopularity?: boolean
   showEco?: boolean
   onClick?: (opening: Opening) => void
   className?: string
@@ -29,7 +27,6 @@ interface OpeningCardProps {
 
 export const OpeningCard: React.FC<OpeningCardProps> = ({
   opening,
-  showPopularity = true,
   showEco = true,
   onClick,
   className = ''
@@ -41,7 +38,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   }
 
   // Helper functions
-  const getPopularityScore = () => opening.analysis?.popularity || 0
   const getStyleTags = () => opening.analysis?.style_tags?.slice(0, 2) || []
   
   const formatGamesPlayed = (count: number): string => {
@@ -78,30 +74,23 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
-      <div className="card-header">
-        <h3 className="opening-name">{opening.name}</h3>
+      <div className="card-header" data-testid="card-header">
+        <h3 className="title-subsection">{opening.name}</h3>
         {showEco && (
           <span className="eco-badge">{opening.eco}</span>
-        )}
-        {showPopularity && (
-          <PopularityIndicator 
-            score={getPopularityScore()} 
-            variant="badge"
-            showLabel={false}
-          />
         )}
       </div>
       
       <div className="data-point">
         <div className="data-content">
-          <span className="data-label">Games Played</span>
-          <span className="data-value">{formatGamesPlayed(gamesPlayed)}</span>
+          <span className="text-label">Games Played</span>
+          <span className="text-base font-medium text-primary">{formatGamesPlayed(gamesPlayed)}</span>
         </div>
       </div>
       
       <div className="data-point">
         <div className="success-bar">
-          <div className="success-label">White Success</div>
+          <div className="text-label">White Success</div>
           <div className="success-container">
             <div className="success-track">
               <div 
@@ -109,14 +98,14 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
                 style={{ width: `${whiteSuccessPercent}%` }}
               ></div>
             </div>
-            <span className="success-value">{whiteSuccessPercent.toFixed(1)}%</span>
+            <span className="text-sm font-medium text-primary">{whiteSuccessPercent.toFixed(1)}%</span>
           </div>
         </div>
       </div>
       
       <div className="first-moves">
-        <span className="first-moves-label">First moves:</span>
-        <span className="first-moves-value">{firstMoves}</span>
+        <span className="text-caption">First moves:</span>
+        <span className="text-sm text-secondary">{firstMoves}</span>
       </div>
       
       <div className="card-footer">

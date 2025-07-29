@@ -40351,77 +40351,629 @@
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. e3",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Bg5 Bb7 8.e3",
-    "scid": "E32s"
+    "scid": "E32s",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a highly strategic and nuanced battle. Black cedes the bishop pair for a solid pawn structure and control over the critical e4-square, while White aims to leverage the two bishops and a potential space advantage. The game is ideal for patient, positional players who excel at long-term planning, maneuvering, and understanding the subtle interplay between pawn structure and piece activity.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Weak Squares",
+        "Counterattack",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Bishop Pair vs. Solid Structure",
+        "Queenside Pawn Majority",
+        "Light-Square Control"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e3-e4 pawn break, utilize the bishop pair, and expand on the queenside.",
+        "Black: Maintain a firm grip on the e4-square, create counterplay with ...c5 or ...d5, and leverage the powerful fianchettoed bishop on b7."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:03:42.600Z"
+    }
   },
   "rn1q1rk1/pbp2ppp/1p1ppn2/6B1/2PP4/P1Q1P3/1P3PPP/R3KBNR w KQ - 0 9": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. e3 d6",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Bg5 Bb7 8.e3 d6",
-    "scid": "E32t"
+    "scid": "E32t",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a profound strategic battle, often transposing to a Queen's Indian-style setup. Black cedes the bishop pair for a rock-solid pawn structure and excellent control over the crucial e4-square, aiming for a slow, maneuvering game. This opening is perfect for patient, strategic players who excel at long-term planning, understanding pawn breaks, and exploiting subtle positional advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Bishop Pair",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e4-square",
+        "Dark-Square Control",
+        "Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, prepare the e3-e4 pawn break to open the center, and expand on the queenside with b4.",
+        "Black: Restrain White's center by controlling e4, prepare the ...c5 or ...e5 pawn breaks to challenge White, and maneuver pieces to optimal squares.",
+        "White: Reposition the queen from c3 to support the center or attack on the kingside.",
+        "Black: Create a queenside initiative with moves like ...a5-a4 to undermine White's structure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:04:01.746Z"
+    }
   },
   "rn1q1rk1/pbpp1ppp/1p2pn2/6B1/2PP4/P1Q2P2/1P2P1PP/R3KBNR b KQ - 0 8": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. f3",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Bg5 Bb7 8.f3",
-    "scid": "E32q"
+    "scid": "E32q",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian Classical is a highly strategic and ambitious system for White. By playing 8.f3, White signals a clear intention to build a massive pawn center with e2-e4, aiming to leverage the bishop pair and a space advantage. Black's strategy revolves around controlling the light squares, particularly e4, with the fianchettoed bishop on b7 and challenging White's central expansion. The resulting positions are complex and double-edged, ideal for strategic players who enjoy deep planning and are prepared for sharp, decisive central battles.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Dynamic",
+        "System-based",
+        "Solid"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Attacking",
+        "Counterattack",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the e4-square",
+        "Bishop Pair vs. Damaged Pawn Structure",
+        "Central Expansion",
+        "Light-square Control"
+      ],
+      "common_plans": [
+        "White: Achieve the e2-e4 pawn push to create a powerful center, use the bishop pair to attack, and expand on the kingside.",
+        "Black: Prevent or undermine White's e4 push with moves like ...d5 or ...h6, control the light squares, and create counterplay against White's center and queenside pawns.",
+        "White: Maneuver the queen to a more active square (e.g., g3) to support the center and prepare a kingside attack.",
+        "Black: Challenge the Bg5 pin with ...h6, potentially forcing an exchange or making the bishop move, thus gaining time for development and counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:04:18.516Z"
+    }
   },
   "rn1q1rk1/pbpp1pp1/1p2pn1p/6B1/2PP4/P1Q2P2/1P2P1PP/R3KBNR w KQ - 0 9": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. f3 h6",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Bg5 Bb7 8.f3 h6",
-    "scid": "E32r"
+    "scid": "E32r",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian is a modern and strategically profound battleground. White's key idea is to use the f3-e4 pawn lever to build a massive center, leveraging the long-term advantage of the bishop pair. Black, in turn, creates a solid, resilient structure, aiming to control the dark squares and undermine White's central ambitions. The resulting game is a tense, maneuvering struggle ideal for patient, strategic players who excel at long-term planning and understanding structural nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Complex",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Piece Activity",
+        "Dark-square Control",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Struggle for the e4-square",
+        "White's Bishop Pair vs. Black's Solid Structure",
+        "Dark-square Control",
+        "Central Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Achieve the central e4-pawn push, often followed by developing with Nf3 and Be2, to cramp Black and launch an attack.",
+        "Black: Prevent or challenge White's e4-break with moves like ...d5 or ...c5, while creating counterplay on the queenside.",
+        "White: After Bh4, prepare a kingside expansion with g4 to challenge Black's king position.",
+        "Black: Reposition the knight to e8-d6 to bolster the center and prepare to challenge White's control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:04:59.901Z"
+    }
   },
   "rn1q1rk1/pbpp1pp1/1p2pn1p/8/2PP3B/P1Q2P2/1P2P1PP/R3KBNR b KQ - 1 9": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. f3 h6 9. Bh4",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Bg5 Bb7 8.f3 h6 9.Bh4",
-    "scid": "E32r"
+    "scid": "E32r",
+    "analysis_json": {
+      "description": "This line of the Nimzo-Indian Classical variation initiates a profound strategic battle. White, having secured the bishop pair, signals clear intent to build a massive pawn center with the f3-e4 push, aiming for a space advantage and a kingside attack. Black's strategy is one of restraint and control, using the solid pawn structure and the fianchettoed bishop on b7 to blockade the crucial e4-square. The resulting game is ideal for patient, strategic players who enjoy complex maneuvering and the long-term fight for central dominance.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Complex",
+        "System-based",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Bishop Pair",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's central expansion with f3-e4",
+        "Black's blockade and control of the e4-square",
+        "The long-term potential of the Bishop Pair",
+        "Prophylaxis and Restraint"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn push to gain space and open lines for an attack.",
+        "White: Develop the kingside, castle, and utilize the two bishops in the middlegame.",
+        "Black: Firmly control the e4-square with pieces (...Bb7, ...d5) and prevent White's central break.",
+        "Black: Prepare the ...c5 pawn break to challenge White's center and create queenside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:05:20.132Z"
+    }
   },
   "rnbq1rk1/p1pp1ppp/1p2pn2/8/2PP4/P1Q2N2/1P2PPPP/R1B1KB1R b KQ - 1 7": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Nf3",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...b6 7.Nf3",
-    "scid": "E32m"
+    "scid": "E32m",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 6...b6 is a sophisticated and strategically rich opening. White obtains the long-term advantage of the bishop pair, while Black secures a solid pawn structure and aims to control the crucial dark squares, particularly e4. The resulting middlegames are a battle of imbalances, ideal for patient, strategic players who excel at maneuvering and understanding long-term plans over immediate tactical clashes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Maneuvering",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e4-square",
+        "Dark-square Strategy",
+        "Fianchetto"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, prepare and execute the e2-e4 pawn break to gain central space, and develop the light-squared bishop to either d3 or g2.",
+        "Black: Fianchetto the bishop to b7 to control the long diagonal, blockade the e4-square, and challenge White's center with pawn breaks like ...d5 and/or ...c5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:05:39.182Z"
+    }
   },
   "rnbq1rk1/ppp2ppp/3ppn2/8/2PP4/P1Q5/1P2PPPP/R1B1KBNR w KQ - 0 7": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 d6",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...d6",
-    "scid": "E32j"
+    "scid": "E32j",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian is a highly strategic and flexible system for Black. By trading the bishop for the knight on c3, Black concedes the bishop pair but gains time and aims for a rock-solid structure, typically focused on controlling the key e5-square. The game evolves into a nuanced battle of long-term plans, where White seeks to open the position for their bishops, while Black relies on superior pawn formation and piece coordination. This opening is ideal for patient, strategic players who excel at subtle maneuvering and understanding structural advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Prophylaxis",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Central Control",
+        "Weak Squares",
+        "Piece Activity",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e5-square",
+        "Dark-square Strategy",
+        "Queenside vs. Central Play"
+      ],
+      "common_plans": [
+        "White: Prepare the f3-e4 pawn push to open the center and activate the bishop pair.",
+        "Black: Play ...b6 and ...Bb7 to control the e4-square and complete development, creating a solid 'hedgehog' setup.",
+        "White: Expand on the queenside with b4-b5 to create space and target Black's structure.",
+        "Black: Prepare the central break ...e5 to challenge White's control and liberate their position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:05:55.905Z"
+    }
   },
   "rnbq1rk1/pppp1ppp/4p3/8/2PPn3/P1Q5/1P2PPPP/R1B1KBNR w KQ - 1 7": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 Ne4",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.a3, 6...Ne4",
-    "scid": "E32k"
+    "scid": "E32k",
+    "analysis_json": {
+      "description": "The Nimzo-Indian Classical with 6...Ne4 is a highly respected and strategically rich system. Black immediately challenges White's central control by planting a knight on the e4-outpost, creating dynamic and complex middlegames. This line leads to a fascinating struggle between White's long-term asset of the bishop pair and Black's immediate piece activity and solid pawn structure. It is ideal for sophisticated players who enjoy blending deep positional understanding with sharp, tactical calculation.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "Counterattacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Outpost",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Central Control",
+        "Pawn Structure",
+        "Knight Outpost",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Well-rounded Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight Outpost",
+        "Struggle for Central Control",
+        "Queenside Minority Attack",
+        "Limiting the Scope of Enemy Pieces"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, prepare the e3-e4 pawn break to open the center, and challenge Black's control of the e4-square.",
+        "Black: Solidify the Ne4-knight (often with ...f5), launch a queenside minority attack with ...b5-b4 to create weaknesses, and keep the position controlled to blunt White's bishops.",
+        "White: Maneuver to exchange Black's active knight on e4, simplifying into a position where the bishop pair can dominate.",
+        "Black: Create counterplay against White's queen and target the c4-pawn, exploiting the temporary disharmony in White's camp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:06:15.194Z"
+    }
   },
   "rnbq1rk1/pppp1ppp/4pn2/6B1/1bPP4/2N5/PPQ1PPPP/R3KBNR b KQ - 5 5": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. Bg5",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.Bg5",
-    "scid": "E32e"
+    "scid": "E32e",
+    "analysis_json": {
+      "description": "This is a sharp and provocative variation of the Classical Nimzo-Indian where White's 5. Bg5 immediately creates a pin and signals aggressive intentions. The game often becomes a double-edged, tactical battle where White fights for the initiative and a central space advantage, while Black seeks to neutralize the pressure and launch counterattacks. This line is well-suited for dynamic players who thrive in complex positions and are not afraid of a direct confrontation from the opening.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Strategic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Attacking",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "King Safety",
+        "Initiative"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the initiative",
+        "Exploiting or breaking the pin on f6",
+        "Central control vs. counterplay",
+        "King safety in sharp positions"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn break to seize central space and open lines for attack.",
+        "Black: Challenge White's center with an early ...c5 or ...d5 pawn break.",
+        "White: Develop a kingside attack, often using the h-pawn and exploiting the Bg5 pin.",
+        "Black: Break the pin with ...h6, often followed by ...g5, to gain counter-chances at the cost of a weakened kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:06:33.495Z"
+    }
   },
   "rnbq1rk1/pppp1ppp/4pn2/8/1bPPP3/2N5/PPQ2PPP/R1B1KBNR b KQ - 0 5": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. e4",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.e4",
-    "scid": "E32f"
+    "scid": "E32f",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 5.e4 is an ambitious and direct attempt by White to seize a full pawn center and a lasting space advantage. This line transforms the typically strategic Nimzo into a sharp, dynamic battle where Black must counter-attack White's center, often leading to complex, open positions. It's an excellent choice for players who enjoy fighting for the initiative and are comfortable navigating tactical complications stemming from a central pawn clash.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Aggressive",
+        "Tactical",
+        "Complex",
+        "Central Control"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Attacking",
+        "Counterattack",
+        "Pin",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Strategic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for Central Control",
+        "Space Advantage vs. Piece Activity",
+        "Undermining the Center",
+        "King's Indian-style Attack"
+      ],
+      "common_plans": [
+        "White: Solidify the d4-e4 pawn center, restrict Black's pieces, and use the space advantage to prepare a kingside attack, often involving f2-f4.",
+        "Black: Immediately challenge White's center with the ...d5 pawn break, aiming to open lines for the pieces and create counterplay against the d4-pawn.",
+        "White: Complete development, control the critical d5-square, and slowly improve the position, squeezing Black who lacks space.",
+        "Black: Develop quickly and create pressure on the queenside and center via moves like ...c5 and ...Nc6, aiming to undermine White's spatial grip."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:06:57.607Z"
+    }
   },
   "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/2N2N2/PPQ1PPPP/R1B1KB1R b KQ - 5 5": {
     "src": "scid",
     "eco": "E32",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. Nf3",
     "name": "Nimzo-Indian: Classical, 4...O-O 5.Nf3",
-    "scid": "E32g"
+    "scid": "E32g",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 5.Nf3 is a highly respected and strategic battleground. White's 4.Qc2 aims to prevent doubled pawns and control the key e4-square, setting the stage for a central expansion. Black responds with solid development, maintaining flexibility and preparing to challenge White's central ambitions, often with ...c5 or ...d5. The resulting middlegames are complex and nuanced, revolving around pawn structure and piece activity, making it ideal for strategic players who enjoy long-term planning.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Flexible",
+        "Classical",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The fight for the Bishop Pair",
+        "Pawn breaks (c5, d5, e4)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Preparing and executing the e2-e4 pawn push to gain central space and activate the pieces.",
+        "Black: Challenging White's center with an early ...c5, aiming to open the c-file and create queenside pressure.",
+        "White: Developing the light-squared bishop to g2 (via a3 and g3) or f4 to control key diagonals.",
+        "Black: Exerting pressure on the c4-pawn and preparing to blockade White's central pawns, often creating a solid dark-square setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:07:13.160Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2nppn2/8/1bPP4/2N2N2/PPQ1PPPP/R1B1KB1R w KQkq - 0 6": {
     "src": "eco_tsv",
@@ -40435,6 +40987,57 @@
       "chessGraph": "Milner-Barry Variation, Nimzo-Indian",
       "chronos": "Nimzo-Indian: classical, Milner-Barry (Zurich) variation",
       "icsbot": "Milner-Barry Variation, Nimzo-Indian "
+    },
+    "analysis_json": {
+      "description": "The Milner-Barry Variation is a dynamic and highly respected system against the Classical Nimzo-Indian, where Black immediately challenges White's central control by targeting the d4 pawn and preparing to fight for the crucial e5-square. This leads to a strategically complex and tense middlegame, avoiding early simplifications and offering rich possibilities for both sides. It is perfect for sophisticated players who enjoy maneuvering, understanding subtle positional nuances, and are ready to engage in a deep strategic battle for the initiative.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Prophylaxis",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Struggle for the e4/e5 squares",
+        "Blockade of the d-pawn",
+        "Prophylaxis against central expansion",
+        "Flexibility in pawn structure"
+      ],
+      "common_plans": [
+        "Black: Solidify control over e5, often via a timely ...e5 push, and use the d6-pawn to restrain White's center. Development is aimed at challenging White's central grip, sometimes leading to kingside attacking ideas.",
+        "White: Play a3 to question the b4-bishop, followed by pushing for a central space advantage with e2-e4. Develop harmoniously and aim to exploit potential weaknesses in Black's camp, such as the d6-pawn or the d5-square.",
+        "Black: Maintain flexibility with moves like ...O-O and ...a5, keeping options open to react to White's central strategy, particularly whether to play ...exd4 or maintain the tension.",
+        "White: Complete development, often with Bd2 or g5, castle, and use the rooks to support the central pawn phalanx, aiming to convert a space advantage into a tangible attack or positional squeeze."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:07:36.659Z"
     }
   },
   "r1bqk2r/pppp1ppp/2n1pn2/8/1bPP4/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 4 5": {
@@ -40450,21 +41053,169 @@
       "chronos": "Nimzo-Indian: classical, 4...Nc6",
       "icsbot": "Milner-Barry, Zurich Variation, Nimzo-Indian; E33 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Zurich Variation is a sharp and ambitious response to the Classical Nimzo-Indian, where Black immediately challenges White's central control by developing the b8-knight. This leads to a complex and dynamic struggle, often involving tactical skirmishes over the key d4 and e5 squares. It suits players who enjoy less-trodden paths and are comfortable with double-edged positions where piece activity and initiative are paramount.",
+      "style_tags": [
+        "Dynamic",
+        "Tactical",
+        "Sharp",
+        "Aggressive",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the center (e4/d4/e5 squares)",
+        "Black's piece activity vs. White's solid structure",
+        "Exploiting the pin on the c3-knight",
+        "Prophylaxis against Black's threats"
+      ],
+      "common_plans": [
+        "White: Play 5. Nf3, followed by a3 to question the bishop, and aim to achieve the e2-e4 pawn break to seize central space.",
+        "Black: Exert pressure on d4, often with ...d5, and use the active knight on c6 to create threats, potentially targeting the e4 square or jumping to b4.",
+        "White: Control the e5 square to prevent the Black knight from landing there, often by developing the f1-bishop.",
+        "Black: Maintain the pin on c3 or trade the bishop to disrupt White's pawn structure, creating long-term weaknesses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:07:53.784Z"
+    }
   },
   "r1bqk2r/pppp1ppp/2n1pn2/8/1bPP4/2N2N2/PPQ1PPPP/R1B1KB1R b KQkq - 5 5": {
     "src": "scid",
     "eco": "E33",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3",
     "name": "Nimzo-Indian: Classical, 4...Nc6 5.Nf3",
-    "scid": "E33"
+    "scid": "E33",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 4...Nc6 is a sophisticated and dynamic response, immediately challenging White's central ambitions. Black puts pressure on the d4-pawn and prepares to fight for the key e5-square, leading to a complex strategic battle where piece activity and precise maneuvering are paramount. This line is perfect for players who enjoy intricate, non-symmetrical positions and are comfortable navigating subtle strategic tensions from the very beginning of the game.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Complex",
+        "Ambitious"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Tactical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Pressure on the d4-pawn",
+        "The Bishop Pair vs. Pawn Structure",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Play a3 to force the bishop's hand, complete development, and prepare to push e4 to gain central space.",
+        "Black: Solidify the center with ...d5, maintain pressure on d4, and prepare counter-play with pawn breaks like ...c5 or ...e5.",
+        "White: Utilize the bishop pair (if obtained) for a long-term advantage against Black's potentially rigid pawn structure.",
+        "Black: Exploit White's potential pawn weaknesses on the c-file after an exchange on c3, creating a long-term target."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:08:19.218Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2n1pn2/3p4/1bPP4/2N2N2/PPQ1PPPP/R1B1KB1R w KQkq - 0 6": {
     "src": "scid",
     "eco": "E33",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 d5",
     "name": "Nimzo-Indian: Classical, 4...Nc6 5.Nf3 d5",
-    "scid": "E33"
+    "scid": "E33",
+    "analysis_json": {
+      "description": "The Nimzo-Indian Classical with 4...Nc6 and 5...d5 is a robust and principled response where Black immediately challenges White's control of the center. This leads to a strategically rich and complex struggle, often revolving around the central pawn tension and the long-term structural consequences. It is an excellent choice for players who appreciate classical chess principles and enjoy maneuvering in positions where deep strategic understanding outweighs short-term tactics.",
+      "style_tags": [
+        "Strategic",
+        "Solid",
+        "Positional",
+        "Classical",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "The Nimzo-Indian Pin",
+        "Pawn Breaks (c5, d5)",
+        "Isolated Queen's Pawn (IQP)"
+      ],
+      "common_plans": [
+        "White: Resolve the central tension with cxd5 to create an IQP position, using the resulting space and development advantage to build an attack.",
+        "Black: Maintain a solid structure, pressure White's d4-pawn, and prepare the ...c5 pawn break to challenge White's central control.",
+        "White: Maintain the central tension, complete development, and use the space advantage to restrict Black's pieces before choosing a favorable pawn break.",
+        "Black: Trade pieces to ease the pressure from White's space advantage and aim to exploit any structural weaknesses White incurs, such as the c4-pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:08:36.357Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2nppn2/8/1bPP4/P1N2N2/1PQ1PPPP/R1B1KB1R b KQkq - 0 6": {
     "src": "scid",
@@ -40475,6 +41226,53 @@
     "aliases": {
       "chessGraph": "Old Zurich Variation, Nimzo-Indian",
       "icsbot": "Old Zurich Variation, Nimzo-Indian "
+    },
+    "analysis_json": {
+      "description": "A sharp and strategically complex variation of the Nimzo-Indian where White immediately challenges the pinning bishop. This line typically leads to positions where White obtains the bishop pair in exchange for a slightly weakened queenside pawn structure after ...Bxc3+. The game becomes a rich, double-edged battle, testing both players' understanding of long-term strategic concepts like the bishop pair versus a solid pawn structure and central control. It suits players who enjoy deep strategic planning and are comfortable navigating complex, non-forcing positions.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Double-edged",
+        "Complex",
+        "Main line"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Central Control",
+        "Weak Squares",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Advanced Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop pair vs. solid structure",
+        "Control of the e4-square",
+        "Queenside pawn play",
+        "Dark-square vs. Light-square control"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, prepare the e4 pawn break, expand on the queenside with b4, and control the light squares.",
+        "Black: Solidify control over the e5 and d5 squares, create a blockade on the dark squares, challenge White's center, and potentially launch a minority attack or kingside play."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:08:53.593Z"
     }
   },
   "r1bqk2r/ppp2ppp/2nppn2/8/2PP4/P1Q2N2/1P2PPPP/R1B1KB1R b KQkq - 0 7": {
@@ -40482,21 +41280,168 @@
     "eco": "E33",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 d6 6. a3 Bxc3+ 7. Qxc3",
     "name": "Nimzo-Indian: Classical, Milner-Barry (Zurich), 6.a3 Bxc3+ 7.Qxc3",
-    "scid": "E33"
+    "scid": "E33",
+    "analysis_json": {
+      "description": "The Milner-Barry variation of the Classical Nimzo-Indian is a strategically complex and nuanced system. Black voluntarily cedes the bishop pair to create a solid, hedgehog-like pawn structure, aiming to control the crucial e4-square and patiently build a counter-attack. This opening is perfect for strategic players who enjoy maneuvering, understanding pawn structures, and frustrating an opponent's attempts to use their space advantage and bishop pair.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Long-range Pieces",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Bishop Pair",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e4-square",
+        "Prophylaxis and Counter-attack",
+        "Pawn Break Timing"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e3-e4 pawn break to open the position for the bishop pair and gain a central space advantage.",
+        "Black: Solidify control over the e4-square, often with a fianchetto (...b6, ...Bb7) or by preparing a kingside expansion with ...f5.",
+        "White: Use the bishop pair to create threats on both wings and probe for weaknesses in Black's solid structure.",
+        "Black: Patiently maneuver and seek counterplay, often by targeting the c4-pawn or initiating a minority attack on the queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:09:17.481Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2nppn2/8/1bPP4/2N2N2/PPQBPPPP/R3KB1R b KQkq - 1 6": {
     "src": "scid",
     "eco": "E33",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 d6 6. Bd2",
     "name": "Nimzo-Indian: Classical, Milner-Barry (Zurich), 6.Bd2",
-    "scid": "E33"
+    "scid": "E33",
+    "analysis_json": {
+      "description": "The Milner-Barry variation of the Classical Nimzo-Indian is a sophisticated and strategically dense system. Black's early ...Nc6 and ...d6 signal an immediate fight for the central e4-square, leading to a dynamic and complex struggle. This opening is perfect for strategic players who enjoy maneuvering and understanding deep positional concepts, as both sides engage in a subtle battle of prophylaxis and planning to seize control of the center.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Complex",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Central Control",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Nimzo-Indian Pin",
+        "Pawn Breaks (...e5 vs e4)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn push, often preceded by a3 to challenge the b4-bishop.",
+        "Black: Prepare and execute the ...e6-e5 pawn break to challenge White's central grip.",
+        "White: Neutralize the pin with Bd2, then often reroute the bishop to c1 or e1 to support the center.",
+        "Black: Maintain flexibility, keeping the option to trade on c3 (...Bxc3+) to disrupt White's pawn structure before playing ...e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:09:41.692Z"
+    }
   },
   "r1bq1rk1/ppp2ppp/2nppn2/8/1bPP4/2N2N2/PPQBPPPP/R3KB1R w KQ - 2 7": {
     "src": "scid",
     "eco": "E33",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 d6 6. Bd2 O-O",
     "name": "Nimzo-Indian: Classical, Milner-Barry (Zurich), 6.Bd2 O-O",
-    "scid": "E33"
+    "scid": "E33",
+    "analysis_json": {
+      "description": "The Milner-Barry variation of the Classical Nimzo-Indian is a sophisticated and strategically dense battleground. The game revolves around the critical e4-square, with White meticulously preparing the e2-e4 advance while Black employs a flexible setup to restrain it and generate counterplay. This opening is perfect for patient, strategic players who enjoy maneuvering for subtle advantages and have a deep understanding of positional chess.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Dynamic",
+        "Main Line"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Bishop Pair",
+        "Prophylaxis",
+        "Flexibility"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn push, often after playing a3. Develop harmoniously to gain a space advantage and potentially the bishop pair.",
+        "Black: Restrain White's e4-break, often by preparing the ...e5 counter-thrust. Create pressure against the center and queenside while maintaining a flexible piece setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:10:01.874Z"
+    }
   },
   "rnb1k2r/ppp2ppp/5n2/4pq2/1b1P4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 8": {
     "src": "eco_tsv",
@@ -40505,6 +41450,55 @@
     "name": "Nimzo-Indian Defense: Classical Variation, Belyavsky Gambit",
     "aliases": {
       "ct": "Nimzo-Indian Defense, Classical Variation"
+    },
+    "analysis_json": {
+      "description": "The Belyavsky Gambit is a sharp and ambitious response within the Classical Nimzo-Indian, where Black sacrifices a central pawn to seize the initiative and launch a quick attack. This opening leads to a dynamic, tactical battle where Black's rapid development and piece activity are pitted against White's extra material. It is ideal for aggressive, creative players who thrive in complex positions and are comfortable playing for a direct attack from the earliest stages of the game.",
+      "style_tags": [
+        "Gambit",
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Sacrifice",
+        "Counterattack",
+        "Tempo",
+        "Attacking",
+        "Development"
+      ],
+      "positional_tags": [
+        "Piece Activity",
+        "Central Control",
+        "King Safety",
+        "Development",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Initiative vs. Material",
+        "Development Advantage",
+        "Attack on the King",
+        "Exploiting an Uncastled King"
+      ],
+      "common_plans": [
+        "Black's plan is to justify the pawn sacrifice by using the open lines (especially the e-file) to generate a swift attack against White's king, often before White can complete development and castle. This involves rapid mobilization of pieces with moves like ...Ne4, ...Nc6, and ...Bc5.",
+        "White's primary plan is to accept the pawn, consolidate the position, and neutralize Black's initiative. This involves careful development, trading pieces to defuse the attack, and aiming to convert the material advantage in the middlegame or a favorable endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:10:17.629Z"
     }
   },
   "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 0 5": {
@@ -40520,14 +41514,112 @@
       "chronos": "Nimzo-Indian: classical, Noa variation",
       "icsbot": "Noa Variation, Nimzo-Indian; E34 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Noa Variation is a classical and highly respected response to White's 4.Qc2, leading to a rich strategic battle. Black immediately challenges the center with ...d5, often transposing to structures reminiscent of the Queen's Gambit Declined, but with the unique Nimzo-Indian dynamic of the pin on c3. The game revolves around central control, pawn structure, and the potential exchange of Black's bishop for White's knight, making it ideal for strategic players who appreciate long-term planning and positional nuance.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "The Bishop Pair vs. Pawn Structure",
+        "Prophylaxis",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "White: Resolve the central tension with cxd5, play for a space advantage, and try to utilize the bishop pair if Black exchanges on c3.",
+        "Black: Maintain central tension, decide on the optimal moment to capture on c3 (...Bxc3+) to inflict doubled pawns, and create counterplay against White's center or queenside.",
+        "White: Complete development with a3, Bg5, and e3, preparing to fight for the e4 square and expand in the center or on the queenside.",
+        "Black: Develop pieces to challenge White's control (e.g., ...c5 or ...b6 followed by ...Ba6), aiming to neutralize White's initiative and exploit any structural weaknesses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:10:36.681Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/3P4/1b1P4/2N5/PPQ1PPPP/R1B1KBNR b KQkq - 0 5": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 5.cxd5 steers the game away from typical Nimzo imbalances into a more classical and strategic battle. After the common 5...exd5, the resulting symmetrical pawn structure leads to a game of deep maneuvering, where understanding pawn breaks and long-term plans is paramount. This opening is perfect for patient, positional players who enjoy accumulating small advantages and excel in strategically complex middlegames.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Minority Attack",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Symmetrical Pawn Structure",
+        "Minority Attack",
+        "Control of the c-file",
+        "Struggle for the e4-square"
+      ],
+      "common_plans": [
+        "White: Use the c-file for pressure, play Bg5 to pin the knight, and restrain Black's queenside counterplay.",
+        "Black: Neutralize White's central pressure, prepare and execute the minority attack with ...b5-b4, and trade pieces to reach a favorable endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:10:58.371Z"
+    }
   },
   "rnb1k2r/ppp2ppp/4pn2/3q4/1b1P4/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 0 6": {
     "src": "scid",
@@ -40537,6 +41629,56 @@
     "scid": "E34",
     "aliases": {
       "ct": "Nimzo-Indian Defense, Classical Variation"
+    },
+    "analysis_json": {
+      "description": "The Noa Variation is a sharp and dynamic response to the Classical Nimzo-Indian, characterized by Black's early queen development with 5...Qxd5. This move creates immediate central tension and challenges White's plans, leading to a concrete, tactical game where piece activity often takes precedence over static structural considerations. It is well-suited for ambitious players who are comfortable with early complications and enjoy fighting for the initiative from the outset.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Counter-attacking",
+        "Open",
+        "Strategic"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Development",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Queen Activity",
+        "Development Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the Initiative",
+        "Pressure on the d4-pawn",
+        "Early Queen Activity",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "White: Develop with Nf3 to challenge the Black queen. Aim to control the e4-square, often with e3 and Be2, and exploit the queen's early exposure to gain developmental tempo.",
+        "Black: Maintain central pressure with the queen on d5. Complete development quickly with ...Nc6 and prepare ...e5 or ...c5 to challenge White's center and open lines.",
+        "White: Castle kingside and complete development, preparing to challenge Black's central setup. A timely a3 can be used to force a decision from the b4-bishop.",
+        "Black: Use the active queen to disrupt White's coordination and create threats. Be prepared to trade the queen if it leads to a favorable structural or material advantage."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:11:20.315Z"
     }
   },
   "rnb1k2r/ppp2ppp/4pn2/3q4/1b1P4/2N1P3/PPQ2PPP/R1B1KBNR b KQkq - 0 6": {
@@ -40544,63 +41686,503 @@
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. e3",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.e3",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a highly strategic and respected system where both sides engage in a sophisticated battle for central control. White aims for a solid setup, reinforcing the d4-pawn and preparing to challenge for the e4-square, while Black uses the active queen on d5 to maintain pressure and flexibility. This opening leads to a complex, maneuvering game, ideal for strategic players who enjoy subtle positional struggles and long-term planning over immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Central Control",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the e4-square",
+        "Black's active Queen as a strength and target",
+        "Asymmetrical Pawn Structures",
+        "The role of the Nimzo Bishop"
+      ],
+      "common_plans": [
+        "White: Complete development with Nf3, Bd3, 0-0, and prepare the e3-e4 pawn break to gain central space.",
+        "Black: Challenge White's center with the ...c5 pawn break, often after preparing with ...b6 and ...Bb7 to increase pressure on the long diagonal.",
+        "White: Use the queen on c2 to support the center and prepare queenside expansion with a3 and b4.",
+        "Black: Maneuver the queen from d5 at the right moment to avoid loss of tempo and redeploy it to a more secure and active square."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:11:36.732Z"
+    }
   },
   "rnb1k2r/pp3ppp/4pn2/2pq4/1b1P4/2N1P3/PPQ2PPP/R1B1KBNR w KQkq - 0 7": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. e3 c5",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.e3 c5",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian leads to a dynamic and strategically complex middlegame. By recapturing with the queen and immediately challenging with ...c5, Black signals an intent to fight for the initiative, often leading to positions with an Isolated Queen's Pawn (IQP). The game revolves around Black's piece activity versus White's long-term structural advantages, making it ideal for players who enjoy dynamic, unbalanced positions and understand how to play with and against an IQP.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Counter-attacking",
+        "Open",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Isolated Queen's Pawn (IQP)",
+        "Initiative vs. Structure",
+        "Blockade of d4",
+        "Control of Open Files"
+      ],
+      "common_plans": [
+        "Black: Utilize active pieces and open files to generate a kingside attack or execute the d5-d4 pawn break to dissolve the IQP.",
+        "White: Blockade the isolated pawn on d4, exchange pieces to simplify into a favorable endgame, and exert pressure on the d5-pawn.",
+        "Black: Develop rapidly, often placing a bishop on g4 to pressure White's center and a knight on e4.",
+        "White: Complete development smoothly with moves like Bd3, Nf3, and O-O, aiming to control the center and neutralize Black's initiative."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:12:00.471Z"
+    }
   },
   "rnb1k2r/ppp2ppp/4pn2/3q4/1b1P4/2N2N2/PPQ1PPPP/R1B1KB1R b KQkq - 1 6": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. Nf3",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a dynamic and strategically rich system where Black immediately challenges the center with an active queen. By recapturing with 5...Qxd5, Black avoids a static pawn structure and aims for active piece play, though the queen can become a target. This opening leads to a complex middlegame where White seeks to exploit the exposed queen and build a central advantage, while Black relies on pressure and counterplay, making it ideal for players who enjoy a tense, strategic fight with tactical possibilities.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "Counter-attacking",
+        "Classical"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Pin",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Tactical Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on the d4-pawn",
+        "Exploiting the exposed Black queen",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "White's Plan: Develop pieces with tempo by attacking the Black queen, prepare the e2-e4 pawn break to seize the center, and exert pressure along the d-file.",
+        "Black's Plan: Justify the active queen by playing ...c5 to undermine d4, complete development quickly, and create counterplay before White can consolidate."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:12:30.372Z"
+    }
   },
   "rnb1k2r/pp3ppp/4pn2/2pq4/1b1P4/2N2N2/PPQ1PPPP/R1B1KB1R w KQkq - 0 7": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. Nf3 c5",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3 c5",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a dynamic and strategically complex middlegame, often revolving around an Isolated Queen's Pawn (IQP). Black's active queen and immediate central challenge with ...c5 create an unbalanced position where both sides have clear, opposing plans. This opening is perfect for players who enjoy sharp, strategic battles and understand the nuances of playing with and against isolated pawns.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Sharp",
+        "Positional",
+        "Open",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Isolated Queen's Pawn",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Dynamic Player",
+        "Strategic Player",
+        "Tactical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Isolated Queen's Pawn (IQP)",
+        "Central Tension",
+        "Piece Activity vs. Structural Weakness",
+        "Control of Key Squares (d4)"
+      ],
+      "common_plans": [
+        "White's Plan: After a likely ...cxd4, White aims to blockade the isolated d-pawn, control the d4-square, exchange pieces, and exploit the pawn as a weakness in the endgame.",
+        "Black's Plan: Use the open c and e-files for active piece play, support the d-pawn's advance to d4, and generate a kingside attack before the position simplifies.",
+        "A key struggle revolves around the d4-square, which White tries to use as an outpost and Black tries to control to facilitate the ...d4 pawn push."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:12:48.479Z"
+    }
   },
   "rnb1k2r/ppp2ppp/4pn2/5q2/1b1P4/2N2N2/PPQ1PPPP/R1B1KB1R w KQkq - 2 7": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. Nf3 Qf5",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3 Qf5",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a strategically rich and solid system where Black immediately challenges White's central ambitions. By offering an early queen trade with 6...Qf5, Black aims to neutralize White's initiative, simplify the position, and steer the game towards an endgame where subtle structural advantages can be decisive. This opening is perfect for patient, strategic players who are comfortable maneuvering in quiet positions and excel at converting long-term structural pluses into victory.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Simplifying",
+        "Endgame-oriented",
+        "Prophylactic"
+      ],
+      "tactical_tags": [
+        "Queen Trade",
+        "Tempo",
+        "Initiative",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Solid Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Queen Trade to Simplify",
+        "Controlling the e4-square",
+        "Exploiting Pawn Structure",
+        "Transition to Endgame"
+      ],
+      "common_plans": [
+        "Black's Plan: Trade queens to enter a favorable endgame, often after playing ...Bxc3 to create doubled pawns for White. Black will then exert pressure on the queenside, potentially with a minority attack (...b5-b4), and control key central squares.",
+        "White's Plan: Decide whether to accept the queen trade. If accepting (Qxf5 exf5), White will use superior development and central space to create pressure. If declining (e.g., Qb3), White will try to exploit Black's slightly exposed queen and fight for the initiative in a complex middlegame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:13:05.564Z"
+    }
   },
   "rnb1k2r/ppp2ppp/4pn2/5q2/1b1P4/1QN2N2/PP2PPPP/R1B1KB1R b KQkq - 3 7": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. Nf3 Qf5 7. Qb3",
     "name": "Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3 Qf5 7.Qb3",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian leads to a complex strategic battle centered around the activity of the black queen. By bringing the queen out early to d5 and then f5, Black challenges White's central control and dares them to find a way to exploit the queen's position without making concessions. The resulting positions are rich and double-edged, suiting players who are comfortable with subtle maneuvering and understanding the dynamic tension between piece activity and potential weaknesses.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking",
+        "Solid"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Queen Pressure"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Queen Placement",
+        "Pawn Structure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queen Activity vs. Queen as a Target",
+        "Control of the e4-square",
+        "Prophylaxis",
+        "Transition to the Endgame"
+      ],
+      "common_plans": [
+        "White: Develop pieces to harass the black queen, complete development with a3, Be2, and O-O, and fight for central control, particularly the e4 square.",
+        "Black: Solidify the position with moves like ...c5 and ...Nc6, either force a queen trade for a favorable endgame or use the active queen to create problems for White, and complete development.",
+        "White: Prepare a queenside expansion with b4 if Black commits to a structure with ...c5.",
+        "Black: Maintain a solid pawn structure and use the bishop pair potential if White is forced to play a3 to deal with the Bb4 pin."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:13:21.633Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2N1P3/PPQ2PPP/R1B1KBNR b KQkq - 0 5": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. e3",
     "name": "Nimzo-Indian: Classical, Noa, 5.e3",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Classical Noa Variation (5.e3) is a solid and strategic response to the Nimzo-Indian, steering the game into quieter, more positional waters. White solidifies the center and prepares for a slow development, while Black maintains pressure with the pin and challenges for central control. This opening is ideal for strategic players who enjoy maneuvering, understanding pawn structures, and accumulating small advantages in a complex middlegame.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Closed Position",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Minor Piece Play"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Fight for the center (e4 vs d5)",
+        "The Nimzo-Indian pin and its consequences",
+        "Pawn structure transformation (e.g., IQP)",
+        "Blockade"
+      ],
+      "common_plans": [
+        "White: Develop with Nf3, Bd3, 0-0, and prepare a central break with e4 or queenside expansion with a3 and b4.",
+        "Black: Challenge the center with ...c5, complete development, and use the pin on c3 to create weaknesses or gain time.",
+        "White: Resolve the central tension with cxd5, aiming to play against a potential Isolated Queen's Pawn (IQP).",
+        "Black: If an IQP arises, use the open files and diagonals for active piece play and to generate an attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:13:37.329Z"
+    }
   },
   "rnbq1rk1/ppp2ppp/4pn2/3p4/1bPP4/2N1P3/PPQ2PPP/R1B1KBNR w KQ - 1 6": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. e3 O-O",
     "name": "Nimzo-Indian: Classical, Noa, 5.e3 O-O",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 5.e3 leads to a strategically rich and nuanced game, eschewing immediate confrontation for a more protracted battle of ideas. Black establishes a solid foothold in the center, while White aims for smooth development and a slight space advantage. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding pawn breaks, and accumulating small advantages in a complex but fundamentally sound position.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Closed Game",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Nimzo-Indian Pin",
+        "Pawn Breaks (c5 for Black, d5 for White)",
+        "Queenside pressure"
+      ],
+      "common_plans": [
+        "White: Complete development with a3, Nf3, Bd3, and O-O, aiming to control the center and prepare a timely d5 pawn push to gain space.",
+        "Black: Challenge the center with ...c5, develop pieces with ...b6 and ...Bb7, and exert pressure on White's c4-pawn and the e4-square.",
+        "White: After an exchange on d5, White may try to use the open e-file and target potential weaknesses in Black's structure.",
+        "Black: Create a queenside minority attack (...b5-b4) if White adopts a Carlsbad-like structure after an exchange on d5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:13:57.034Z"
+    }
   },
   "rnb1k2r/ppp2ppp/4pn2/5Q2/1b1P4/2N2N2/PP2PPPP/R1B1KB1R b KQkq - 0 7": {
     "src": "scid",
     "eco": "E34",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 Qxd5 6. Nf3 Qf5 7. Qxf5",
     "name": "Nimzo-Indian: Classical, Noa, Queenswap",
-    "scid": "E34"
+    "scid": "E34",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to an immediate queen exchange, ushering in a strategically complex queenless middlegame. The game's character is highly positional, revolving around pawn structure nuances, such as Black's doubled f-pawns versus their control of the e4-square. This opening is perfect for patient, strategic players who excel in understanding subtle positional advantages and navigating the transition into the endgame.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Technical",
+        "Endgame-focused",
+        "Quiet"
+      ],
+      "tactical_tags": [
+        "Weak Squares",
+        "Pin",
+        "Tempo",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses",
+        "Bishop Pair"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Endgame Specialist"
+      ],
+      "phase_tags": [
+        "Endgame Transition",
+        "Long-term Strategy",
+        "Middlegame Plans"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Exploiting Pawn Structure",
+        "Control of Key Squares (d5, e4)",
+        "Bishop Pair vs. Knight",
+        "Queenless Middlegame"
+      ],
+      "common_plans": [
+        "White: Pressure the d5-pawn and the doubled f-pawns, often preparing a queenside expansion with a3 and b4.",
+        "Black: Utilize the f5-pawn to control the e4-square, develop pieces actively, and use the open e-file for the rook.",
+        "Both: Maneuver for control of the center and seek favorable piece trades to improve their position for the pure endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:14:21.026Z"
+    }
   },
   "rnbqk2r/ppp2ppp/5n2/3p4/1b1P4/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 0 6": {
     "src": "eco_tsv",
@@ -40614,56 +42196,455 @@
       "chessGraph": "E35",
       "chronos": "Nimzo-Indian: classical, Noa variation, 5.cd ed"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a highly respected and solid system, leading to a strategically rich game. By exchanging pawns in the center, the game often takes on the character of a Queen's Gambit Declined, but with the unique Nimzo-Indian feature of Black's active bishop on b4. This opening is perfect for positional players who enjoy maneuvering, fighting for key squares like e4, and understanding subtle pawn structure nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Central Control",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The Bishop Pair",
+        "Symmetrical Pawn Structure",
+        "Pressure on the c-file"
+      ],
+      "common_plans": [
+        "White: Play a3 to force a decision from the b4-bishop, develop with Bg5, e3, Nf3, and Bd3, aiming to control the center and build pressure on the c-file.",
+        "Black: Maintain control over the e4-square, often with a ...c5 pawn break. Complete development with ...Be7 and ...0-0, and consider a queenside minority attack with ...b5-b4.",
+        "White: If Black plays ...Bxc3+, recapture with Qxc3 to avoid doubled pawns and use the queen for central influence.",
+        "Black: Decide whether to exchange on c3 to disrupt White's coordination or retreat the bishop (e.g., to e7 or a5) to preserve the piece."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:14:39.315Z"
+    }
   },
   "rnbqk2r/ppp2ppp/5n2/3p4/1b1P4/P1N5/1PQ1PPPP/R1B1KBNR b KQkq - 0 6": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. a3",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.a3",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a strategically complex middlegame where White accepts doubled c-pawns in exchange for the long-term advantage of the bishop pair. The character of the game is a classic battle of static structure versus dynamic potential; Black aims to blockade the position and exploit the pawn weaknesses, while White seeks to use the two bishops to generate a kingside attack or central pressure. This opening is ideal for patient, strategic players who enjoy maneuvering and executing long-term plans.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed",
+        "System-based",
+        "Long-term"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Attacking",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Weaknesses",
+        "Central Control",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Bad Pawn Structure",
+        "Kingside Attack",
+        "Queenside Pressure",
+        "Light-Square Control"
+      ],
+      "common_plans": [
+        "White: Use the bishop pair to launch a kingside attack, often with f2-f3 and g2-g4, or play for the e3-e4 pawn break to open the position.",
+        "Black: Restrain White's pieces, blockade the light squares (often with ...Ne4), and exert pressure against the weak c4-pawn.",
+        "White: Slowly improve the position, aiming to prove the bishop pair's superiority in an open endgame.",
+        "Black: Exchange pieces to diminish the power of the bishop pair and steer towards an endgame where White's pawn structure is a clear liability."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:15:00.129Z"
+    }
   },
   "rnbqk2r/ppp2ppp/5n2/3p2B1/1b1P4/2N5/PPQ1PPPP/R3KBNR b KQkq - 1 6": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a strategically rich and complex middlegame, reminiscent of the Queen's Gambit Declined, Exchange Variation. White's key move, 6.Bg5, creates an immediate pin and challenges Black's central setup, aiming to generate a lasting initiative. The game revolves around subtle maneuvering, control of the e4-square, and the long-term consequences of the central pawn structure, making it ideal for strategic players who enjoy a deep theoretical battle.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Complex",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Central Tension",
+        "Initiative",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Theoretical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the e4-square",
+        "Exploiting/Neutralizing the pin on f6",
+        "Carlsbad pawn structure",
+        "Queenside minority attack"
+      ],
+      "common_plans": [
+        "White aims to complete kingside development (Nf3, Bd3, O-O) and prepare the e3-e4 pawn break to seize central space and activate the light-squared bishop.",
+        "White often tries to maintain pressure on the f6-knight, forcing concessions or creating attacking chances on the kingside.",
+        "Black's primary plan is to neutralize the pin, typically with ...h6, and complete development while maintaining a solid structure.",
+        "A key counter-plan for Black is the queenside minority attack (...a6, ...b5-b4) to create weaknesses in White's pawn structure and generate counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:15:19.372Z"
+    }
   },
   "rnbqk2r/pp3ppp/5n2/2pp2B1/1b1P4/2N5/PPQ1PPPP/R3KBNR w KQkq - 0 7": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5 c5",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5 c5",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "This variation is a sharp and theoretically intensive battleground within the Nimzo-Indian. By immediately challenging White's central control with 6...c5, Black steers the game into dynamic and often unbalanced positions, frequently revolving around an isolated queen's pawn for White. This opening is perfect for ambitious players who are well-prepared, enjoy tactical complications, and are comfortable handling double-edged positions where the initiative is paramount.",
+      "style_tags": [
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Aggressive",
+        "Theoretical",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Sacrifice",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Isolated Queen's Pawn (IQP)",
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Theoretical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the Initiative",
+        "Play around the Isolated Queen's Pawn (IQP)",
+        "Kingside Attack vs. Central Counterplay"
+      ],
+      "common_plans": [
+        "White: Use the d4-pawn as a springboard for a kingside attack, develop pieces rapidly to exploit the space advantage, and prevent Black from blockading the IQP.",
+        "Black: Blockade and pressure the isolated d4-pawn, trade minor pieces to reduce White's attacking potential, and launch a counterattack against White's center or queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:15:33.228Z"
+    }
   },
   "rnbqk2r/ppp2pp1/5n1p/3p2B1/1b1P4/2N5/PPQ1PPPP/R3KBNR w KQkq - 0 7": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5 h6",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5 h6",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "The Nimzo-Indian Classical with 6.Bg5 h6 leads to a strategically profound and complex struggle. By exchanging on d5, White creates a symmetrical pawn structure similar to the Queen's Gambit Declined, often aiming for a queenside minority attack. Black's challenge to the bishop with ...h6 forces White to make a critical decision, setting the stage for a game where deep positional understanding, long-term planning, and precise execution are paramount. This opening is perfect for strategic players who enjoy maneuvering and fighting for subtle advantages in a rich, classical setting.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Classical",
+        "Solid",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Minority Attack",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Minority Attack",
+        "Carlsbad Pawn Structure",
+        "Control of the e4-square",
+        "The Pin on f6"
+      ],
+      "common_plans": [
+        "White: Execute a queenside minority attack with the b-pawn (b2-b4-b5) to create a weakness on c6.",
+        "White: Prepare and execute the central pawn break with e3-e4 to seize space and initiative.",
+        "Black: Counter White's queenside plan with kingside activity, sometimes involving ...g5 after White plays Bh4.",
+        "Black: Firmly control the e4-square to stifle White's central ambitions and use the semi-open e-file for pressure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:15:52.132Z"
+    }
   },
   "rnbqk2r/ppp2pp1/5n1p/3p4/1b1P3B/2N5/PPQ1PPPP/R3KBNR b KQkq - 1 7": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5 h6 7. Bh4",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5 h6 7.Bh4",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "The Nimzo-Indian Classical with 7.Bh4 is a sharp and theoretically dense battleground where strategic depth meets dynamic tension. White maintains the pin on the f6-knight, aiming to build central pressure and often preparing a queenside minority attack. This opening is perfect for the well-prepared, strategic player who enjoys complex positions that require precise planning and a deep understanding of pawn structures and long-term initiative.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Complex",
+        "Solid",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Central Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Minority Attack",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Theoretical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The Pin on the f6 Knight",
+        "Queenside Minority Attack",
+        "Struggle for the e4-square",
+        "Symmetrical Pawn Structure"
+      ],
+      "common_plans": [
+        "White aims for a queenside minority attack with a3 and b4-b5 to create a weakness on c6.",
+        "White prepares the central e3-e4 pawn break to open the position and activate their pieces.",
+        "Black's primary counter-plan involves the ...c7-c5 pawn break to challenge White's center.",
+        "Black works to neutralize the pin, often with ...g5 or by developing pieces to challenge White's control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:16:11.331Z"
+    }
   },
   "rnbqk2r/pp3pp1/5n1p/2pp4/1b1P3B/2N5/PPQ1PPPP/R3KBNR w KQkq - 0 8": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5 h6 7. Bh4 c5",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5 h6 7.Bh4 c5",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian is a sharp and theoretically demanding battle where Black immediately challenges White's central control with the move 7...c5. The resulting positions are highly dynamic and double-edged, often leading to open files and complex tactical skirmishes. This line is perfect for ambitious players who enjoy fighting for the initiative from the outset and are comfortable navigating complex, concrete variations.",
+      "style_tags": [
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Aggressive",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Central Tension",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Break with ...c5",
+        "Exploiting the Pin on f6",
+        "Fighting for the Initiative",
+        "Isolated Queen's Pawn Structures"
+      ],
+      "common_plans": [
+        "White: Play dxc5 to open the position, followed by developing with e3, Nf3, and 0-0 to consolidate the d4-pawn and exploit the pin.",
+        "Black: Create immediate counterplay against d4, often resolving the pin with ...g5 or exchanging on c3 to disrupt White's structure.",
+        "White: Maintain pressure on the kingside and try to prove that Black's pawn thrusts (...h6, ...c5, sometimes ...g5) have created long-term weaknesses.",
+        "Black: Develop pieces rapidly to active squares (...Nc6, ...Qa5) to challenge White's central grip and prevent consolidation."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:16:31.385Z"
+    }
   },
   "rnbqk2r/ppp2pp1/5B1p/3p4/1b1P4/2N5/PPQ1PPPP/R3KBNR b KQkq - 0 7": {
     "src": "scid",
     "eco": "E35",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 exd5 6. Bg5 h6 7. Bxf6",
     "name": "Nimzo-Indian: Classical, Noa, Exchange, 6.Bg5 h6 7.Bxf6",
-    "scid": "E35"
+    "scid": "E35",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a strategically complex middlegame where the primary imbalance is Black's bishop pair versus White's superior pawn structure and control of the light squares. White aims to restrict the bishops and slowly build an advantage, while Black seeks to open the position to unleash their pieces. It's a rich battle of ideas suited for players who enjoy long-term strategic planning and understanding structural nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Long-term Strategy",
+        "Closed"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Central Control",
+        "Weaknesses",
+        "Light-Square Control",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Pawn Structure",
+        "Light-Square Control",
+        "Central Pawn Breaks",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Control the e4-square (often with a3, Nf3, e3), restrict Black's bishops, and prepare a central pawn push (e4) or a kingside attack.",
+        "Black: Utilize the bishop pair by opening the position (often with the ...c5 pawn break), challenge White's central control, and create counterplay against White's structure.",
+        "White: Play on the light squares, often targeting the d5 pawn and using the d-file for pressure.",
+        "Black: Maneuver pieces to prepare for an advantageous opening of the position, aiming to prove the long-term strength of the two bishops."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:16:47.289Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/P1N5/1PQ1PPPP/R1B1KBNR b KQkq - 0 5": {
     "src": "eco_tsv",
@@ -40678,7 +42659,57 @@
       "chessGraph": "E36",
       "chronos": "Nimzo-Indian: classical, Noa variation, 5.a3"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Noa Variation is a sharp and theoretically significant line within the Classical Nimzo-Indian, where White immediately challenges the pin with 5. a3. This forces Black to make a critical decision, usually surrendering the bishop pair for structural advantages and a lead in development. The resulting game is a classic strategic battle, pitting White's long-term potential of the two bishops against Black's solid central control and active piece play. It's an ideal opening for sophisticated players who thrive on navigating complex, dynamic middlegames where structural understanding is key.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Mainline",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Advanced Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Pawn Structure",
+        "Central Control",
+        "Development Lead vs. Long-term Assets",
+        "Light-square vs. Dark-square Strategy"
+      ],
+      "common_plans": [
+        "White's Plan: Leverage the bishop pair, prepare the e3-e4 pawn break to open the center, and potentially launch a kingside attack.",
+        "Black's Plan: Solidify the center with the d5/e6 pawn duo, exploit White's slightly compromised pawn structure after ...Bxc3, and use a lead in development to create counterplay.",
+        "Both sides vie for control of the e4-square, which is a critical strategic focal point in this variation.",
+        "Transitioning into an endgame where White's bishop pair can become a decisive advantage if the position opens up."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:17:06.037Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2n1pn2/3p4/2PP4/P1Q5/1P2PPPP/R1B1KBNR w KQkq - 1 7": {
     "src": "eco_tsv",
@@ -40692,6 +42723,58 @@
       "chessGraph": "Botvinnik Variation, Nimzo-Indian",
       "chronos": "Nimzo-Indian: classical, Botvinnik variation",
       "icsbot": "Botvinnik Variation, Nimzo-Indian "
+    },
+    "analysis_json": {
+      "description": "The Botvinnik Variation of the Nimzo-Indian is a dynamic and strategically complex system where Black immediately challenges the center with ...Nc6 after ceding the bishop pair. This opening leads to an imbalanced game where Black relies on rapid development and active piece play against White's long-term asset of the two bishops. It is an excellent choice for ambitious players who understand how to fight for the initiative and are comfortable creating and navigating complex, non-standard positions.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Counter-attacking",
+        "Imbalanced Position",
+        "Solid"
+      ],
+      "tactical_tags": [
+        "Central Pressure",
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Dynamic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Piece Activity",
+        "Struggle for Central Control",
+        "Prophylaxis against active pieces",
+        "Exploiting Imbalances"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Nf3 and e3, develop the light-squared bishop (often to b2), and use the bishop pair to restrict Black's pieces, aiming for a favorable endgame.",
+        "Black: Exert immediate pressure on the d4-pawn, often preparing a central break with ...e5. Develop pieces quickly to active squares to create threats before White can consolidate.",
+        "White: Open the position at a favorable moment to unleash the power of the two bishops.",
+        "Black: Control the e4-square to prevent White from gaining a space advantage and to create an outpost for the knight."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:17:27.117Z"
     }
   },
   "rnbqk2r/ppp2ppp/4p3/3p4/2PPn3/P1Q5/1P2PPPP/R1B1KBNR w KQkq - 1 7": {
@@ -40705,6 +42788,57 @@
       "eco_js": "Nimzo-Indian Defense: Classical, Noa Variation, Main Line",
       "chessGraph": "E37",
       "chronos": "Nimzo-Indian: classical, Noa variation, main line"
+    },
+    "analysis_json": {
+      "description": "The Noa Variation is a sharp and strategically complex response to the Classical Nimzo-Indian, defined by Black's immediate challenge with 6...Ne4. This move creates a significant imbalance: White gains the long-term advantage of the bishop pair, while Black secures a powerful, centralized knight that cramps White's position and creates immediate threats. The resulting middlegames are a dynamic struggle, suiting players who are comfortable with unbalanced positions and understand how to fight for the initiative.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Unbalanced Position",
+        "Positional",
+        "Counterattacking",
+        "Solid"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Knight Outpost",
+        "Pin",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Knight Outpost",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Dynamic Player",
+        "Positional Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight",
+        "Fight for the Initiative",
+        "Central Control",
+        "Restraint"
+      ],
+      "common_plans": [
+        "White: Use the bishop pair, challenge the Ne4 (often with f3), and expand in the center to create a favorable endgame.",
+        "Black: Maintain the strong Ne4 knight, challenge the center with the ...c5 pawn break, and create threats against White's king.",
+        "White: Neutralize Black's active pieces, consolidate the position, and slowly grind down Black with the two bishops.",
+        "Black: Keep the position complex and dynamic, preventing White from untangling and realizing the bishop pair advantage."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:17:46.894Z"
     }
   },
   "rnbqk2r/ppp1bppp/4pn2/3p4/2PP4/P1N5/1PQ1PPPP/R1B1KBNR w KQkq - 1 6": {
@@ -40712,35 +42846,281 @@
     "eco": "E36",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Be7",
     "name": "Nimzo-Indian: Classical, Noa, 5.a3 Be7",
-    "scid": "E36"
+    "scid": "E36",
+    "analysis_json": {
+      "description": "The Noa Variation is a highly solid and flexible response to the Classical Nimzo-Indian, where Black sidesteps the main theoretical battles by simply retreating the bishop. This choice leads to a more strategic and less volatile game, often transposing into structures resembling a Queen's Gambit Declined. It's an excellent choice for positional players who enjoy subtle maneuvering and accumulating small advantages in a balanced, low-risk position.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "Closed Position",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Minority Attack",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Solid Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Struggle for the e4-square",
+        "Flexibility of Black's structure",
+        "Minority Attack",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Exchange on d5 (cxd5 exd5) and use the queenside pawn majority, while preparing a central push with e4.",
+        "Black: After cxd5 exd5, initiate a queenside minority attack with ...b5-b4 to create weaknesses.",
+        "Black: Maintain central tension, complete development, and control the e4-square to prevent White's expansion.",
+        "White: Develop harmoniously with Nf3, Bg5, and e3, keeping pressure on the center and preparing to expand."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:18:08.355Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/3p4/2PP4/P1b5/1PQ1PPPP/R1B1KBNR w KQkq - 0 6": {
     "src": "scid",
     "eco": "E36",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+",
     "name": "Nimzo-Indian: Classical, Noa, 5.a3 Bxc3+",
-    "scid": "E36"
+    "scid": "E36",
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a deeply strategic battleground where Black immediately trades the 'Nimzo bishop' to inflict doubled pawns on White. This creates a fundamental imbalance: White gains the long-term advantage of the bishop pair, while Black secures a solid pawn structure and aims to control the crucial e4-square. The resulting middlegames are rich in positional nuance, ideal for players who enjoy long-term planning and exploiting structural weaknesses over sharp, tactical skirmishes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Closed",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Bishop Pair",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Damaged Pawn Structure",
+        "Control of the e4-square",
+        "Minority Attack",
+        "Light-square vs. Dark-square Control"
+      ],
+      "common_plans": [
+        "White: Prepare the e2-e4 pawn break to open the position for the bishop pair.",
+        "Black: Establish a firm blockade on the e4-square, often using the ...c5 pawn push and placing a knight on e4.",
+        "White: Utilize the semi-open b-file and the bishop pair to create long-term pressure on the queenside.",
+        "Black: Target White's doubled c-pawns and aim for a favorable endgame where this weakness is more pronounced."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:18:31.569Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/3p4/2PP4/P1Q5/1P2PPPP/R1B1KBNR b KQkq - 0 6": {
     "src": "scid",
     "eco": "E36",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+ 6. Qxc3",
     "name": "Nimzo-Indian: Classical, Noa, 5.a3 Bxc3+",
-    "scid": "E36"
+    "scid": "E36",
+    "analysis_json": {
+      "description": "The Noa Variation of the Classical Nimzo-Indian is a deeply strategic battleground where Black voluntarily cedes the bishop pair to inflict a long-term structural weakness on White's queenside. The resulting positions are a classic struggle of dynamic potential (White's bishops) versus static advantages (Black's superior pawn structure). This opening is perfect for strategic players who enjoy maneuvering, understanding pawn weaknesses, and fighting for control of key squares like e4.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Long-term",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Weak Squares",
+        "Central Control",
+        "Blockade",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Damaged Pawn Structure",
+        "Control of the e4-square",
+        "Queenside Pawn Weaknesses",
+        "Blockade"
+      ],
+      "common_plans": [
+        "White: Use the bishop pair to create threats, often by preparing a central pawn push (e.g., e4) or a kingside attack. Maneuver to open lines for the bishops and neutralize Black's control of the light squares.",
+        "Black: Pressure White's doubled c-pawns, control the e4-square to restrict the light-squared bishop, and often challenge the center with ...c5. Aim to trade pieces to simplify into a favorable endgame where White's pawn weaknesses are more pronounced."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:18:47.989Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4pn2/8/2pP4/P1Q5/1P2PPPP/R1B1KBNR w KQkq - 0 7": {
     "src": "scid",
     "eco": "E36",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+ 6. Qxc3 dxc4",
     "name": "Nimzo-Indian: Classical, Noa, 5.a3 Bxc3+ 6.Qxc3 dxc4",
-    "scid": "E36"
+    "scid": "E36",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a rich, strategic battle defined by a classic imbalance: White's bishop pair versus Black's superior pawn structure. By trading the bishop for the knight, Black inflicts doubled c-pawns on White, creating a long-term target. The game becomes a complex struggle where White tries to use the two bishops and central space to create an attack, while Black aims to restrain White's pieces and exploit the structural weaknesses. This opening is ideal for patient, strategic players who excel at long-term planning and understanding structural nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Restriction"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Weaknesses",
+        "Central Control",
+        "Piece Activity",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Damaged Pawn Structure",
+        "Central Control",
+        "Exploiting Weaknesses",
+        "Minority Attack"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair for a kingside attack, advance the e-pawn to gain central space, and use the semi-open b-file for rook activity.",
+        "Black: Restrain White's bishops, exert pressure on the weak c4-pawn (often with ...b6 and ...Ba6), and create counterplay with a central pawn break (...c5).",
+        "White: Slowly improve the position, untangle the doubled pawns if possible, and aim for a favorable endgame where the bishops can dominate.",
+        "Black: Develop quickly, challenge for the center with ...Ne4, and aim to trade pieces to reduce the power of White's bishop pair."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:19:06.379Z"
+    }
   },
   "rnbq1rk1/ppp2ppp/4pn2/3p4/2PP4/P1Q5/1P2PPPP/R1B1KBNR w KQ - 1 7": {
     "src": "scid",
     "eco": "E36",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+ 6. Qxc3 O-O",
     "name": "Nimzo-Indian: Classical, Noa, 5.a3 Bxc3+ 6.Qxc3 O-O",
-    "scid": "E36"
+    "scid": "E36",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 5.a3 is a battleground of strategic ideas, defined by a fundamental imbalance. White accepts doubled c-pawns in exchange for the powerful bishop pair and central influence, while Black obtains a solid pawn structure and a long-term target. The game revolves around White's attempt to use the bishops and space to generate an attack, versus Black's efforts to restrain White and exploit the structural weaknesses. This opening is perfect for strategic players who enjoy maneuvering and long-term planning based on structural considerations.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Dynamic",
+        "Classical",
+        "Mainline"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Bishop Pair",
+        "Central Control",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Pawn Structure",
+        "Control of the e4-square",
+        "Exploiting Weak Pawns"
+      ],
+      "common_plans": [
+        "White: Achieve the e2-e4 pawn break to open the position for the bishop pair and seize central dominance.",
+        "Black: Restrain White's center, challenge with the ...c5 pawn break, and exert pressure on the doubled c-pawns.",
+        "White: Develop with Nf3, Bg5, and O-O, using the space advantage to build kingside pressure.",
+        "Black: Develop the queenside with ...b6 and ...Bb7 to control key diagonals and prepare to challenge White's structure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:19:25.855Z"
+    }
   },
   "rnbqk2r/ppp2ppp/4p3/3p4/2PPn3/P7/1PQ1PPPP/R1B1KBNR b KQkq - 2 7": {
     "src": "eco_tsv",
@@ -40754,7 +43134,57 @@
       "ct": "Nimzo-Indian Defense, Classical Variation",
       "chronos": "Nimzo-Indian: classical, Noa variation, main line, 7.Qc2"
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Noa Variation of the Nimzo-Indian creates a classic strategic imbalance where White gains the long-term advantage of the bishop pair in exchange for allowing Black a firm grip on the center with the powerful Ne4. The resulting middlegames are complex and dynamic, revolving around White's attempts to open the position for the bishops versus Black's efforts to use their active pieces and central control. This opening is perfect for strategic players who appreciate deep, nuanced positions and understand how to handle dynamic trade-offs.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Solid",
+        "Complex",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pins"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight",
+        "Central Control",
+        "Dynamic Imbalance",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Prepare the e2-e4 pawn break, often supported by f3, to open lines for the bishop pair.",
+        "Black: Challenge White's center with ...c5, develop pieces to active squares, and exploit the strong e4-knight.",
+        "White: Develop the kingside and use the long-range power of the bishops to create threats.",
+        "Black: Solidify the e4-knight with moves like ...f5 and create pressure on White's structure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:19:44.631Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2n5/3pp3/2PPn3/P3P3/1PQ2PPP/R1B1KBNR w KQkq - 0 9": {
     "src": "eco_tsv",
@@ -40768,6 +43198,56 @@
       "chessGraph": "San Remo Variation, Nimzo-Indian",
       "chronos": "Nimzo-Indian: classical, San Remo variation",
       "icsbot": "San Remo Variation, Nimzo-Indian "
+    },
+    "analysis_json": {
+      "description": "The San Remo Variation is a sharp and ambitious line where Black immediately challenges White's central control with the ...e5 pawn break. By sacrificing the bishop pair, Black aims for rapid development and initiative, leading to a complex, tactical middlegame. This opening is perfect for dynamic players who enjoy seizing the initiative and are comfortable navigating sharp, open positions where calculation is paramount.",
+      "style_tags": [
+        "Aggressive",
+        "Tactical",
+        "Dynamic",
+        "Sharp",
+        "Open Game",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Central Tension",
+        "Tempo",
+        "Fork"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Development"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Initiative vs. Bishop Pair",
+        "Central Pawn Break",
+        "Fighting for Tempo",
+        "Exploiting Piece Activity"
+      ],
+      "common_plans": [
+        "Black's Plan: Liquidate the center with ...exd4, open lines for the rooks, and use active pieces to attack White's potential weaknesses. The goal is to convert dynamic, temporary advantages before White can consolidate the bishop pair.",
+        "White's Plan: Stabilize the center, often via dxe5 or d5, neutralize Black's active knights, and complete development. The long-term goal is to leverage the bishop pair advantage in an open position or a favorable endgame.",
+        "Black's Plan: Develop the light-squared bishop actively, often to f5, to increase pressure on White's central pawns and piece coordination.",
+        "White's Plan: Complete kingside development (Nf3, Be2/d3, 0-0) and use the rooks to challenge Black's control of the newly opened central files."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:20:05.808Z"
     }
   },
   "rnbqk2r/pp3ppp/4p3/2pp4/2PPn3/P7/1PQ1PPPP/R1B1KBNR w KQkq - 0 8": {
@@ -40778,6 +43258,54 @@
     "scid": "E37",
     "aliases": {
       "scid": "Nimzo-Indian: Classical, Noa, Main Line, 7.Qc2 c5"
+    },
+    "analysis_json": {
+      "description": "The Modern Variation of the Classical Nimzo-Indian is a sharp and ambitious system where Black immediately challenges the center with ...c5. This often leads to a gambit, creating dynamic, unbalanced positions where Black's piece activity and initiative serve as compensation for a potential material or structural deficit. It's an ideal choice for aggressive players who thrive in complex, tactical battles and are comfortable playing for the initiative from the outset.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Aggressive",
+        "Counter-attacking",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Sacrifice",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Piece Activity",
+        "Central Control",
+        "Pawn Structure",
+        "Initiative",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Initiative vs. Material",
+        "Piece Activity vs. Pawn Structure",
+        "Central Tension",
+        "The Bishop Pair"
+      ],
+      "common_plans": [
+        "Black aims to use superior piece activity and the Ne4 knight to pressure White's center, often sacrificing a pawn with ...c5 to open lines and seize the initiative.",
+        "White seeks to consolidate the center, often accepting an Isolated Queen's Pawn, and leverage the long-term advantage of the bishop pair to neutralize Black's threats and win in the endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:20:20.209Z"
     }
   },
   "r1bqk2r/pp3ppp/2n1p3/2Pp4/2P1n3/P7/1PQ1PPPP/R1B1KBNR w KQkq - 1 9": {
@@ -40785,14 +43313,112 @@
     "eco": "E37",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+ 6. Qxc3 Ne4 7. Qc2 c5 8. dxc5 Nc6",
     "name": "Nimzo-Indian: Classical, Noa, Main Line, 7.Qc2 c5 8.dxc5 Nc6",
-    "scid": "E37"
+    "scid": "E37",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian is a sharp and theoretically significant battleground. Black immediately challenges White's central setup with the ...c5 pawn break, leading to dynamic and complex positions where both sides have clear strategic goals. The game's character revolves around the classic trade-off: White's long-term advantage of the bishop pair versus Black's superior pawn structure and active piece play. This opening is perfect for ambitious players who thrive on complexity and enjoy fighting for the initiative from the very beginning.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Sharp",
+        "Complex",
+        "Counter-attacking",
+        "Main Line"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Bishop Pair",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Dynamic Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Pawn Structure",
+        "Fight for Central Control",
+        "Dynamic Piece Play",
+        "Pressure on Weak Pawns"
+      ],
+      "common_plans": [
+        "White: Consolidate the center, develop the bishop pair to active squares (e.g., b2 and d3), and neutralize Black's active pieces to realize the long-term potential of the bishops.",
+        "Black: Recapture on c5, exert pressure on White's doubled c-pawns (especially c4), and use the active knight on e4 to create threats and fight for the initiative.",
+        "Both sides often fight for control of the d-file and key central squares like d4 and e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:20:40.039Z"
+    }
   },
   "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/P7/1PQ1PPPP/R1B1KBNR w KQkq - 3 8": {
     "src": "scid",
     "eco": "E37",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. a3 Bxc3+ 6. Qxc3 Ne4 7. Qc2 Nc6",
     "name": "Nimzo-Indian: Classical, Noa, Main Line, 7.Qc2 Nc6",
-    "scid": "E37"
+    "scid": "E37",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian Classical is a battleground of strategic ideas, pitting White's long-term asset of the bishop pair against Black's immediate central influence and active piece play. Black's plan is dynamic and concrete, centered around the powerful knight on e4 and pressure on the d4-pawn. This opening is perfect for well-prepared, strategic players who enjoy complex, double-edged positions where understanding the trade-offs between static advantages and dynamic potential is key.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Complex",
+        "Theoretical",
+        "Solid"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Central Pressure"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Well-Prepared Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight Outpost",
+        "Control of the e4-square",
+        "Pressure on the d4-pawn",
+        "Dynamic Counterplay"
+      ],
+      "common_plans": [
+        "White: Play e3 and Nf3, challenge the e4-knight with f3, and slowly leverage the bishop pair advantage in an open position.",
+        "Black: Maintain the strong knight on e4, increase pressure on the center with ...c5 or ...e5, and use superior development to create immediate threats.",
+        "White: Develop the light-squared bishop (to b2 or d2) and connect the rooks, aiming for a favorable endgame where the two bishops can dominate.",
+        "Black: Target White's queen, which can become a liability, and exploit any tempo lost by White in consolidating their position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:20:58.885Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2p5/1bPP4/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 0 5": {
     "src": "eco_tsv",
@@ -40807,7 +43433,54 @@
       "chronos": "Nimzo-Indian: classical, 4...c5",
       "icsbot": "Berlin Variation, Nimzo-Indian; E38 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Berlin Variation (4...c5) is one of the most ambitious and dynamic responses to the Classical Nimzo-Indian. Black immediately challenges White's central control, aiming to create an imbalanced and strategically complex middlegame. This opening suits players who enjoy fighting for the initiative from the outset and are comfortable navigating sharp positions where piece activity and structural understanding are paramount.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Sharp",
+        "Aggressive",
+        "Positional",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses",
+        "Bishop Pair"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Strategic Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Pawn Structure Imbalance",
+        "Bishop Pair vs. Piece Activity",
+        "Initiative"
+      ],
+      "common_plans": [
+        "Black: Challenge White's center with ...c5 and ...d5. Often exchanges the b4-bishop for the c3-knight to create doubled pawns, then attacks these weaknesses. Develops pieces quickly to fight for the initiative, often using the a-file for counterplay.",
+        "White: Consolidate the center after dxc5. Use the bishop pair as a long-term advantage if Black plays ...Bxc3+. Develop pieces to control key squares like d4 and e4, and restrain Black's counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:21:16.934Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2P5/2P5/2b5/PPQ1PPPP/R1B1KBNR w KQkq - 0 6": {
     "src": "eco_tsv",
@@ -40818,6 +43491,55 @@
       "ct": "Nimzo-Indian Defense, Classical Variation",
       "chessGraph": "Steiner Variation, Nimzo-Indian",
       "icsbot": "Steiner Variation, Nimzo-Indian   "
+    },
+    "analysis_json": {
+      "description": "The Steiner Variation is a highly strategic and nuanced line where Black immediately resolves the central tension by trading the 'Nimzo bishop' for a knight. In exchange for conceding the bishop pair, Black inflicts a permanent structural weakness on White in the form of doubled c-pawns. The resulting middlegame is a classic struggle of imbalances, ideal for patient, strategic players who enjoy exploiting long-term structural defects.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Long-term Strategy"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Minority Attack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Weaknesses",
+        "Bishop Pair",
+        "Central Control",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Bad Pawn Structure",
+        "Queenside Pressure",
+        "Control of Key Squares (c4, d5)",
+        "Minority Attack"
+      ],
+      "common_plans": [
+        "Black: Control the c4-square, often with ...Na6, and prepare a queenside minority attack with ...a6 and ...b5-b4 to target White's weak c-pawns.",
+        "White: Utilize the bishop pair and central space, often aiming to achieve the e4 pawn break to open lines for the bishops.",
+        "Black: Restrict the scope of White's light-squared bishop and challenge for control of the d5 and e4 squares.",
+        "White: Use the open b-file for rook activity and demonstrate that the bishop pair is a more significant long-term advantage than Black's structural pluses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:21:41.297Z"
     }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2P5/1bP5/2N5/PPQ1PPPP/R1B1KBNR b KQkq - 0 5": {
@@ -40825,98 +43547,788 @@
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5",
-    "scid": "E38d"
+    "scid": "E38d",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 4...c5 is a sharp and theoretically significant battleground. Black immediately challenges White's central control, leading to dynamic, open positions where piece activity and precise calculation are paramount. This opening is perfect for ambitious players who enjoy complex strategic struggles and are comfortable navigating positions where the initiative can shift rapidly.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Open Game",
+        "Theoretically Heavy",
+        "Counter-attacking",
+        "Main Line"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin",
+        "Development"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Dynamic Player",
+        "Tactical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Piece Activity vs. Pawn Structure",
+        "The Nimzo-Indian Bishop",
+        "Development and Tempo"
+      ],
+      "common_plans": [
+        "White: Recapture on c5 (often via Na4), complete development, and use the central pawn majority to control the game. Often aims to pressure a potential isolated d-pawn for Black.",
+        "Black: Recapture on c5 (with ...Na6 or ...Bxc5), complete development quickly, and use active pieces to create counterplay against White's center, often involving a ...d5 pawn break.",
+        "White: Control the key e4-square and challenge Black's grip on the light squares.",
+        "Black: Utilize the open c-file for rooks and queen, and challenge White's control of the d4-square."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:21:58.702Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2b5/2P5/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 0 6": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Bxc5",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Bxc5",
-    "scid": "E38e"
+    "scid": "E38e",
+    "analysis_json": {
+      "description": "The Classical Nimzo with 4...c5 is a dynamic and ambitious response, leading to strategically rich and often unbalanced positions. Black immediately challenges White's central control, often accepting an Isolated Queen's Pawn (IQP) in exchange for active piece play and long-term initiative. This opening is perfect for players who enjoy fighting for the initiative from the start and are comfortable handling the complex strategic themes associated with IQP positions.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Active",
+        "Counter-attacking",
+        "Open"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Development",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Isolated Queen's Pawn",
+        "Piece Activity",
+        "Central Control",
+        "Pawn Structure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Dynamic Player",
+        "Strategic Player",
+        "Active Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Isolated Queen's Pawn (IQP) dynamics",
+        "Piece Activity vs. Structural Weakness",
+        "Control of the d4-square",
+        "Fighting for the Initiative"
+      ],
+      "common_plans": [
+        "Black aims to use their active pieces and space advantage to generate an attack, often involving a ...d5-d4 pawn break to open lines.",
+        "White's primary plan is to blockade the IQP on d4, exchange pieces to reduce Black's attacking potential, and exploit the pawn as a weakness in the endgame.",
+        "Black often develops their pieces to control key squares like d5 and e4, using the active Bc5 to pressure White's position.",
+        "White will often complete development with Nf3, Be2, and 0-0, then seek to challenge Black's control of the center and target the d5 pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:22:14.932Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2b5/2P5/2N2N2/PPQ1PPPP/R1B1KB1R b KQkq - 1 6": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Bxc5 6. Nf3",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Bxc5 6.Nf3",
-    "scid": "E38e"
+    "scid": "E38e",
+    "analysis_json": {
+      "description": "This line of the Nimzo-Indian represents a classical and strategically rich confrontation. Black immediately challenges White's center with 4...c5, leading to dynamic positions where both sides fight for central control and the initiative. The game often revolves around the theme of an Isolated Queen's Pawn (IQP) for Black, which offers active piece play in exchange for a potential long-term structural weakness. This opening is perfect for strategic players who enjoy complex middlegames and understand the interplay between pawn structure and piece activity.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Classical",
+        "Solid",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Isolated Queen's Pawn"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Isolated Queen's Pawn (IQP)",
+        "Development vs. Structure",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "White: Develop harmoniously with Bg5, e3, and Bd3, aiming to control the e4-square and blockade or attack Black's potential Isolated Queen's Pawn (IQP).",
+        "Black: Complete development with ...Nc6, ...0-0, and often strike in the center with ...d5, accepting an IQP for active piece play and attacking chances.",
+        "White: Utilize the semi-open d-file for pressure and prepare to transition into a favorable endgame by exploiting Black's structural weaknesses.",
+        "Black: Develop the queenside with ...b6 and ...Bb7, controlling the long diagonal and putting pressure on White's e4-pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:22:32.986Z"
+    }
   },
   "rnb1k2r/pp1p1ppp/1q2pn2/2b5/2P5/2N2N2/PPQ1PPPP/R1B1KB1R w KQkq - 2 7": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Bxc5 6. Nf3 Qb6",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Bxc5 6.Nf3 Qb6",
-    "scid": "E38f"
+    "scid": "E38f",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian is a sharp, tactical battle initiated by Black's early ...c5 and the provocative ...Qb6. Black immediately seizes the initiative, creating direct threats against the f2-pawn and forcing White into a reactive posture. This opening is perfect for dynamic, aggressive players who thrive on concrete calculation and are comfortable navigating complex, open positions where piece activity often trumps static structural considerations.",
+      "style_tags": [
+        "Dynamic",
+        "Tactical",
+        "Sharp",
+        "Aggressive",
+        "Counter-attacking",
+        "Open Position"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Pressure on f2"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Pressure on f2",
+        "Fight for the Center",
+        "Development with Tempo",
+        "Isolated Queen's Pawn Structures"
+      ],
+      "common_plans": [
+        "Black aims to use the active queen and bishop to maintain pressure, develop quickly, and exploit any weaknesses around White's king.",
+        "White's plan is to neutralize the immediate threats (often with 7.e3 or 7.g3), complete development, and challenge Black's central influence, potentially exploiting a future IQP weakness for Black."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:22:54.070Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/n3pn2/2P5/1bP5/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 1 6": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6",
-    "scid": "E38i"
+    "scid": "E38i",
+    "analysis_json": {
+      "description": "The 5...Na6 variation of the Classical Nimzo-Indian is a dynamic and ambitious system where Black immediately challenges White's central pawn grab. Instead of a standard recapture, Black plans to retake on c5 with the knight, developing a piece with tempo and aiming for active play. This opening leads to strategically complex positions where Black often concedes the bishop pair in exchange for a solid structure and active pieces, making it ideal for strategic players who enjoy fighting for the initiative and are comfortable with unbalanced positions.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Counter-attacking",
+        "Solid",
+        "Unbalanced Position"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Tempo",
+        "Counterattack"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Knight Outpost"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Bishop Pair vs. Piece Activity",
+        "Knight Maneuvering",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "Black's Plan: Recapture on c5 with the knight, complete development, and use active pieces to compensate for White's potential bishop pair, often challenging the center with a timely ...d5.",
+        "White's Plan: Force the capture on c3 with a3 to gain the bishop pair, then develop to control the center (often with a g3/Bg2 fianchetto) and exploit the two bishops in the middlegame.",
+        "Black's Counterplay: Often involves targeting the e4-square, using the knight on c5 as a strong outpost, and sometimes rerouting the dark-squared bishop via d7-e8-g6.",
+        "White's Central Strategy: Aims to establish a strong pawn center with e4 and d4, using it as a base to launch an attack or squeeze Black positionally."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:23:19.357Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/n3pn2/2P5/2P5/P1Q5/1P2PPPP/R1B1KBNR b KQkq - 0 7": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6 6.a3 Bxc3+ 7.Qxc3",
-    "scid": "E38j"
+    "scid": "E38j",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a highly dynamic and unbalanced struggle where Black voluntarily cedes the bishop pair for rapid development and central influence. The game's character revolves around the classic strategic battle of White's two bishops versus Black's superior pawn structure and active knight, which typically lands on the powerful c5-square. This opening is ideal for resourceful players who enjoy sharp, concrete positions and excel at fighting for the initiative.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Sharp",
+        "Unbalanced",
+        "Counter-attacking",
+        "Tactical"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Outpost",
+        "Pressure"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control",
+        "Weak Squares",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Dynamic Player",
+        "Strategic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight",
+        "Struggle for the Center",
+        "Exploiting Imbalances",
+        "Initiative and Tempo"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair by opening the center, often with moves like e3 and f4. Restrict Black's knight on c5 and prove the long-term power of the bishops.",
+        "Black: Establish a knight on the c5 outpost to pressure White's center (especially e4). Use superior piece activity to create threats and compensate for the bishop pair. Target potential weaknesses in White's pawn structure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:23:37.980Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/4pn2/2n5/1PP5/P1Q5/4PPPP/R1B1KBNR b KQkq - 0 8": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3 Nxc5 8. b4",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6: 8.b4",
-    "scid": "E38k"
+    "scid": "E38k",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a sharp and strategically complex middlegame. White's ambitious 8.b4 aggressively seizes queenside space, aiming to cramp Black's position. However, this advance creates long-term weaknesses (notably the c4 square) that Black will seek to exploit. The resulting positions are dynamic and unbalanced, ideal for players who thrive on complex struggles where initiative and concrete calculation are more important than quiet maneuvering.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Aggressive",
+        "Strategic",
+        "Unbalanced",
+        "Positional"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Weak Squares"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Weaknesses",
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Central Counterplay",
+        "Exploiting Weak Squares (c4)",
+        "The Fight for Initiative",
+        "Unbalanced Pawn Structures"
+      ],
+      "common_plans": [
+        "White: Continue queenside expansion with moves like b5, use the space advantage to restrict Black, and often fianchetto the light-squared bishop to b2 to control key diagonals.",
+        "Black: Immediately challenge White's space grab by targeting the c4-square, often with ...Nce4 or preparing ...a5. Develop pieces to generate counterplay against White's extended structure and potential king weaknesses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:23:53.861Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/4pn2/8/1PP1n3/P1Q5/4PPPP/R1B1KBNR w KQkq - 1 9": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3 Nxc5 8. b4 Nce4",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6: 8.b4 Nce4",
-    "scid": "E38k"
+    "scid": "E38k",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a sharp, dynamic, and strategically complex middlegame. Black immediately challenges White's central control and uses active knight maneuvers (...Na6-c5-e4) to create immediate tension and counterplay. The resulting positions are double-edged, with White's queenside space advantage pitted against Black's superior piece activity, making it ideal for players who thrive in tactical and imbalanced situations.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Strategic",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Knight Outposts",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Weak Squares",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Dynamic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Dynamic Imbalance"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside space advantage vs. Black's piece activity",
+        "The fight for the e4-square",
+        "Prophylaxis against knight activity",
+        "Undermining pawn structures"
+      ],
+      "common_plans": [
+        "White: Consolidate the queenside space advantage (Rb1, Ba3), challenge the Nce4 with f3, and prepare a central pawn push.",
+        "Black: Use the active knights to create threats, undermine White's queenside with ...a5, and exert pressure on the center, particularly the e4-pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:24:11.420Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/4pn2/8/1PPQn3/P7/4PPPP/R1B1KBNR b KQkq - 2 9": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3 Nxc5 8. b4 Nce4 9. Qd4",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6: 8.b4 Nce4 9.Qd4",
-    "scid": "E38l"
+    "scid": "E38l",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a sharp, theoretically rich, and unbalanced middlegame. White seizes space on the queenside with b4, while Black establishes a powerful knight outpost on e4, creating immediate tension. The game becomes a dynamic struggle where White aims to consolidate and exploit the space advantage, whereas Black seeks to generate a decisive attack using active pieces. This opening is perfect for ambitious, tactical players who are well-prepared and thrive in complex, double-edged positions.",
+      "style_tags": [
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Unbalanced",
+        "Aggressive"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Knight Outpost",
+        "Tempo",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Creative Player",
+        "Theoretician"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Central Counterplay",
+        "The e4-outpost",
+        "Queen as a Target",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Play f3 to challenge the e4-knight, complete development with Be2 and Nf3, and use the queenside space advantage to create a passed pawn or attack.",
+        "Black: Solidify the center with ...d5, develop the light-squared bishop via ...b6 and ...Bb7, and use the e4-knight as a pivot for an attack on the kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:24:29.217Z"
+    }
   },
   "r1bqk2r/pp3ppp/4pn2/2Pp4/1P1Qn3/P7/4PPPP/R1B1KBNR b KQkq - 0 10": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3 Nxc5 8. b4 Nce4 9. Qd4 d5 10. c5",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Na6: 8.b4 Nce4 9.Qd4 d5 10.c5",
-    "scid": "E38l"
+    "scid": "E38l",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a tense and highly strategic middlegame. White seizes a significant space advantage on the queenside with the b4 and c5 pawn pushes, aiming to nurture a powerful passed pawn. In return, Black obtains active piece play, particularly with the strong knight on e4, and plans to undermine White's structure. The game is a complex struggle between White's spatial control and Black's dynamic counterplay, ideal for strategic players who enjoy navigating complex pawn structures and long-term plans.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Dynamic",
+        "Closed Position",
+        "Sharp"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Weak Squares",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "Passed Pawn",
+        "Knight Outpost"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Space Advantage vs. Central Counterplay",
+        "Restraint and Prophylaxis",
+        "The Power of a Passed Pawn",
+        "Undermining Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Solidify the queenside structure, often with f3 to support the center and control g4. Slowly prepare to advance the c-pawn while neutralizing Black's active pieces. The queen may reposition to e3 or f2.",
+        "Black: Undermine White's queenside with the ...a6 and ...b6 pawn break. Fight for central control, often preparing the ...e5 break. Use the active knight on e4 to create threats and provoke weaknesses in White's camp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:24:49.767Z"
+    }
   },
   "r1bqk2r/pp1p1ppp/2n1pn2/2P5/1bP5/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 1 6": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Nc6",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Nc6",
-    "scid": "E38h"
+    "scid": "E38h",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a dynamic and open struggle where Black immediately challenges White's central control. By playing ...c5 and preparing to recapture, Black aims for rapid development and active piece play, often at the cost of a slightly less compact pawn structure. This line is perfect for players who enjoy fighting for the initiative from the outset and are comfortable with fluid, tactical positions where piece activity is paramount.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Tactical",
+        "Counter-attacking",
+        "Positional",
+        "Active Piece Play",
+        "Open Game"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Pin",
+        "Development"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Dynamic Player",
+        "Tactical Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Development vs. Structure",
+        "Control of the d5-square",
+        "Potential IQP positions"
+      ],
+      "common_plans": [
+        "Black: Recapture on c5 (often with ...Nxc5), complete development with ...O-O, and challenge the center with a timely ...d5 to activate pieces.",
+        "White: Solidify the center with Nf3 and e3, develop pieces harmoniously, and aim to control the d-file and exploit potential weaknesses in Black's structure.",
+        "Black: Use active pieces to pressure White's center, particularly the d4 pawn, and fight for control of key squares like e4 and d5.",
+        "White: Complete development and seek a space advantage, potentially launching a kingside attack if Black's king is neglected."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:25:14.027Z"
+    }
   },
   "rnb1k2r/ppqp1ppp/4pn2/2P5/1bP5/2N5/PPQ1PPPP/R1B1KBNR w KQkq - 1 6": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Qc7",
     "name": "Nimzo-Indian: Classical, 4...c5 5.dxc5 Qc7",
-    "scid": "E38g"
+    "scid": "E38g",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian is a sharp and dynamic response, immediately challenging White's central control. Black's plan, initiated by 5...Qc7, is to swiftly recapture the c5 pawn, activate the queen, and generate active counterplay, often leading to unbalanced and strategically complex middlegames. This line is perfect for ambitious players who enjoy fighting for the initiative and are comfortable navigating tactical and concrete positions.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Counterattacking",
+        "Tactical",
+        "Modern",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pin",
+        "Development"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the e4-square",
+        "Rapid Development and Initiative",
+        "Asymmetrical Pawn Structure",
+        "Queen Activity"
+      ],
+      "common_plans": [
+        "Black's Plan: Swiftly recapture on c5 with the Queen, complete kingside development, and use active pieces to challenge White's central ambitions, often preparing a ...d5 pawn break.",
+        "White's Plan: Consolidate the center, often by playing a3 to force the bishop's hand, and aim to achieve the e2-e4 pawn advance to claim a space advantage.",
+        "Positional Battle: The game often revolves around Black's control of the e4-square versus White's attempt to seize the center and potentially gain the long-term advantage of the bishop pair."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:25:40.817Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2p5/1bPP4/2N1P3/PPQ2PPP/R1B1KBNR b KQkq - 0 5": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. e3",
     "name": "Nimzo-Indian: Classical, 4...c5 5.e3",
-    "scid": "E38c"
+    "scid": "E38c",
+    "analysis_json": {
+      "description": "The Classical Variation with 4...c5 is a highly respected and strategically complex response to the Nimzo-Indian. Black immediately challenges White's central control, leading to a rich middlegame where pawn structure and piece activity are paramount. This line is perfect for strategic players who enjoy maneuvering and understanding the subtle nuances of central tension and pawn breaks, rather than engaging in immediate, wild tactical skirmishes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Dynamic",
+        "Flexible",
+        "Classical"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Isolated Queen's Pawn"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Classical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the Center",
+        "Isolated Queen's Pawn (IQP) Structures",
+        "The Bishop Pair",
+        "Developmental Harmony"
+      ],
+      "common_plans": [
+        "White: Complete development, control the center, and often play against an Isolated Queen's Pawn (IQP) if Black captures on d4.",
+        "Black: Challenge White's center with ...cxd4, leading to either an IQP position or a symmetrical structure, and seek counterplay on the queenside.",
+        "Both: Maneuver pieces to control key squares (especially e4 and d5) and exploit the specific pawn structure that arises.",
+        "White: Aim to gain the bishop pair and prove its superiority. Black: Strive to keep the position closed or demonstrate the strength of the knights against the bishops."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:26:03.929Z"
+    }
   },
   "rnbqk2r/pp1p1ppp/4pn2/2p5/1bPP4/2N2N2/PPQ1PPPP/R1B1KB1R b KQkq - 1 5": {
     "src": "scid",
     "eco": "E38",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. Nf3",
     "name": "Nimzo-Indian: Classical, 4...c5 5.Nf3",
-    "scid": "E38b"
+    "scid": "E38b",
+    "analysis_json": {
+      "description": "This variation of the Classical Nimzo-Indian involves Black immediately challenging White's center with 4...c5, creating a dynamic and strategically complex struggle. Unlike more passive approaches, this line leads to a fluid pawn structure where both sides fight for central control and the initiative. It is ideal for players who enjoy navigating intricate middlegames and are comfortable with managing central tension to create active counterplay.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Counter-attacking",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Central Tension",
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Dynamic Player",
+        "Positional Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the center (d4 vs c5)",
+        "Transformation of pawn structures",
+        "The Nimzo-Indian Bishop vs. White's central space",
+        "Control of the e4-square"
+      ],
+      "common_plans": [
+        "White aims to resolve the central tension favorably, often with dxc5 or d5, to gain a space advantage and control key squares like e4.",
+        "Black seeks to maintain pressure on d4, often through ...cxd4 followed by ...Nc6, creating counterplay against White's center.",
+        "The game frequently revolves around the timing of the ...cxd4 exchange, which can lead to Isolated Queen's Pawn (IQP) structures or positions resembling a Queen's Gambit Declined.",
+        "Black utilizes the active bishop on b4 to create imbalances and disrupt White's coordination, potentially trading it for the c3-knight to inflict a structural weakness."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:26:21.579Z"
+    }
   },
   "rnbq1rk1/p2p1ppp/1p2pn2/2b5/2P2B2/P1N2N2/1PQ1PPPP/R3KB1R b KQ - 1 8": {
     "src": "eco_tsv",
@@ -40925,6 +44337,55 @@
     "name": "Nimzo-Indian Defense: Classical Variation, Berlin Variation, Macieja System",
     "aliases": {
       "ct": "Nimzo-Indian Defense, Classical Variation"
+    },
+    "analysis_json": {
+      "description": "The Macieja System is a modern and dynamic way to handle the Classical Nimzo-Indian. White develops the light-squared bishop to the active f4 square before committing the e-pawn, aiming to control key squares and fight for the initiative. The resulting positions are strategically complex, often revolving around White's bishop pair versus Black's solid structure and piece activity, making it suitable for players who enjoy nuanced, double-edged battles.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Flexible",
+        "Modern",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Piece Play"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Long Diagonal Control"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Flexible Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop pair vs. solid structure",
+        "Control of the e5-square",
+        "Struggle for the long diagonal",
+        "Prophylactic play"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, often by opening the center with e2-e4. Control the e5 square to restrict Black's pieces and prepare a central advance. Expand on the queenside with b2-b4.",
+        "Black: Fianchetto the bishop to b7 to control the long diagonal. Challenge White's center with a ...d5 pawn break. Create counterplay against White's position, often targeting the e4 pawn if it advances."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:26:38.426Z"
     }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2P5/1bP5/2N5/PPQ1PPPP/R1B1KBNR w KQ - 1 6": {
@@ -40940,21 +44401,173 @@
       "chronos": "Nimzo-Indian: classical, Pirc variation",
       "icsbot": "Pirc Variation, Nimzo-Indian; E39 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Pirc Variation of the Classical Nimzo-Indian is a sharp and theoretically demanding line where Black immediately challenges White's center with 4...c5. This leads to dynamic, open positions with an asymmetrical pawn structure, where White typically gains a queenside majority. The opening is ideal for well-prepared, tactical players who enjoy fighting for the initiative and navigating complex middlegames where piece activity often trumps static structural considerations.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Strategic",
+        "Tactical",
+        "Mainline",
+        "Open Game"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Piece Activity",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Theorist"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Pawn Majority",
+        "Central Counterplay",
+        "Fight for the e4-square",
+        "Development vs. Structure"
+      ],
+      "common_plans": [
+        "White: Consolidate the center with a3, Nf3, and e4, then leverage the queenside pawn majority with a b4-b5 push.",
+        "Black: Recapture on c5 (usually via ...Na6), challenge White's central control with a ...d5 pawn break, and use active pieces to create counterplay.",
+        "White: Control the open d-file and restrict Black's pieces, particularly the light-squared bishop.",
+        "Black: Develop the queenside with ...b6 and ...Ba6 to pressure White's center and challenge the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:26:57.518Z"
+    }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2P5/1bP5/P1N5/1PQ1PPPP/R1B1KBNR b KQ - 0 6": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. a3",
     "name": "Nimzo-Indian: Classical, Pirc, 6.a3",
-    "scid": "E39i"
+    "scid": "E39i",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 6.a3 is a sharp and theoretically rich battleground where White seeks the long-term advantage of the bishop pair. Black, in turn, concedes the bishop but aims for rapid development and dynamic counterplay against White's center. This opening leads to complex, double-edged middlegames, suiting players who are well-prepared and enjoy navigating the tension between static and dynamic advantages.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Sharp",
+        "Theoretical",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Development",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control",
+        "Development Lead"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Tactical Player",
+        "Well-prepared Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop pair vs. piece activity",
+        "Struggle for central control (especially the e4-square)",
+        "Dynamic compensation for structural concessions",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White aims to consolidate the bishop pair advantage, control the center with a timely e2-e4 push, and slowly build pressure.",
+        "Black seeks rapid development, challenges White's center with moves like ...d5, and uses active pieces to create immediate threats.",
+        "White often expands on the queenside with b2-b4 to restrict Black's pieces and create a passed pawn threat in the long run.",
+        "Black looks to create counterplay by targeting White's pawn structure or by initiating a kingside attack if White is slow to consolidate."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:27:14.581Z"
+    }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2b5/2P5/P1N2N2/1PQ1PPPP/R1B1KB1R b KQ - 1 7": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. a3 Bxc5 7. Nf3",
     "name": "Nimzo-Indian: Classical, Pirc, 6.a3 Bxc5 7.Nf3",
-    "scid": "E39j"
+    "scid": "E39j",
+    "analysis_json": {
+      "description": "The Classical Nimzo-Indian with 7.Nf3 leads to a rich, strategic battle where long-term plans often outweigh immediate tactical skirmishes. White aims to leverage the long-term advantage of the bishop pair, while Black secures a solid pawn structure and active piece play, focusing on control of the critical d4-square. This opening is ideal for versatile, strategic players who appreciate complex middlegames and the subtle interplay between static advantages and dynamic potential.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Classical",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Minority Attack"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Versatile Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Knight Pair",
+        "Control of the d4-square",
+        "Queenside Counterplay",
+        "Central Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair, often by opening the position with a central pawn break like e2-e4, and sometimes expanding on the kingside.",
+        "Black: Control the d4-square with pieces, prepare the ...b5 pawn break to launch a minority attack and create weaknesses on the queenside.",
+        "White: Restrain Black's queenside play with b2-b4, preparing to develop the light-squared bishop to b2 where it influences the long diagonal.",
+        "Black: Reposition the knight from f6 (e.g., to d7-b6) to support the queenside and challenge White's central control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:27:32.664Z"
+    }
   },
   "rnbq1rk1/p2p1ppp/1p2pn2/2b5/2P5/P1N2N2/1PQ1PPPP/R1B1KB1R w KQ - 0 8": {
     "src": "eco_tsv",
@@ -40964,6 +44577,56 @@
     "scid": "E39l",
     "aliases": {
       "scid": "Nimzo-Indian: Classical, Pirc, 6.a3 Bxc5 7.Nf3 b6"
+    },
+    "analysis_json": {
+      "description": "The Macieja System is a modern and highly flexible approach within the Classical Nimzo-Indian. Black calmly develops with ...b6, preparing to fianchetto the light-squared bishop to challenge White's central control, particularly the e4-square. This opening leads to a strategically complex and nuanced game where Black cedes the bishop pair in exchange for a solid structure, active piece play, and long-term pressure. It is ideal for sophisticated, strategic players who excel at maneuvering and understanding the subtle dynamics of piece activity versus structural advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Flexible",
+        "System-based",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop pair vs. active pieces",
+        "Control of the d5-square",
+        "Pressure on the long diagonal",
+        "Queenside counterplay"
+      ],
+      "common_plans": [
+        "White: Utilize the bishop pair and space advantage, often preparing the e2-e4 pawn break to open the position.",
+        "Black: Control the center with pieces, particularly the d5 and e4 squares, using the fianchettoed bishop from b7.",
+        "White: Control the c-file and pressure Black's queenside.",
+        "Black: Develop pieces harmoniously, often rerouting the knight from f6 to d7 to support the center and prepare ...e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:27:50.368Z"
     }
   },
   "rnbq1rk1/p2p1ppp/1p2pn2/2b3B1/2P5/P1N2N2/1PQ1PPPP/R3KB1R b KQ - 1 8": {
@@ -40971,42 +44634,335 @@
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. a3 Bxc5 7. Nf3 b6 8. Bg5",
     "name": "Nimzo-Indian: Classical, Pirc, 6.a3 Bxc5 7.Nf3 b6 8.Bg5",
-    "scid": "E39m"
+    "scid": "E39m",
+    "analysis_json": {
+      "description": "This line of the Nimzo-Indian Classical variation is a sophisticated and strategically rich battle. White aims to leverage the long-term advantage of the bishop pair and a slight space advantage, while Black establishes a solid, flexible structure, often preparing to fianchetto the light-squared bishop to b7. The game revolves around deep positional maneuvering, with the key struggle being White's attempt to activate the bishops versus Black's control of key central squares like e4. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and understanding nuanced positional trade-offs.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Classical",
+        "Maneuvering",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Solid Structure",
+        "Control of the e4-square",
+        "Prophylaxis",
+        "Minority Attack"
+      ],
+      "common_plans": [
+        "White: Complete development with e3, Bd3, and O-O, then prepare the central advance e3-e4 to open lines for the bishop pair and seize the initiative.",
+        "Black: Fianchetto the bishop with ...Bb7 to control the long diagonal and the critical e4-square. Prepare the ...d5 pawn break to challenge White's center.",
+        "White: Restrain Black's counterplay and slowly improve the position, aiming to convert the bishop pair advantage in the middlegame or endgame.",
+        "Black: Neutralize White's active pieces, exchange one of the bishops if possible, and create counterplay against White's center or on the queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:28:13.198Z"
+    }
   },
   "r1bq1rk1/pp1p1ppp/2n1pn2/2b5/2P5/P1N2N2/1PQ1PPPP/R1B1KB1R w KQ - 2 8": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. a3 Bxc5 7. Nf3 Nc6",
     "name": "Nimzo-Indian: Classical, Pirc, 6.a3 Bxc5 7.Nf3 Nc6",
-    "scid": "E39k"
+    "scid": "E39k",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a strategically rich and complex middlegame. White aims to leverage the long-term advantage of the bishop pair and central space, while Black seeks dynamic counterplay and pressure on the d4-square. The game is a sophisticated battle of plans, ideal for well-prepared, strategic players who enjoy maneuvering and understanding deep positional concepts.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Solid",
+        "Complex",
+        "Positional",
+        "Main line"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Bishop Pair",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Well-prepared Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Bishop Pair vs. Piece Activity",
+        "Control of the d4-square",
+        "Central Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the e2-e4 pawn break to gain space and activate the bishops.",
+        "Black: Exert pressure on the center, particularly the d4-square, often with moves like ...b6 and ...Ba6.",
+        "White: Develop the light-squared bishop, typically to g2 or e2, to complete development and support the center.",
+        "Black: Challenge White's central control with a timely ...d5 pawn break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:28:33.059Z"
+    }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2P5/1bP2B2/2N5/PPQ1PPPP/R3KBNR b KQ - 2 6": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. Bf4",
     "name": "Nimzo-Indian: Classical, Pirc, 6.Bf4",
-    "scid": "E39b"
+    "scid": "E39b",
+    "analysis_json": {
+      "description": "The 6.Bf4 variation of the Classical Nimzo-Indian is a sharp and ambitious system where White prioritizes rapid development and initiative over structural purity. By developing the bishop to an active post, White immediately challenges Black's central control and aims to create tactical possibilities. This opening leads to dynamic, unbalanced positions and is well-suited for players who enjoy fighting for the initiative and are comfortable with concrete, tactical play.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Aggressive",
+        "Initiative",
+        "Strategic",
+        "Tactical"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Development"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the Initiative",
+        "Control of the e5-square",
+        "Black's c5-pawn recapture"
+      ],
+      "common_plans": [
+        "White: Complete development (Nf3, e3, Be2), use the Bf4 to control d6/e5, and build central/queenside pressure.",
+        "Black: Recapture the c5-pawn (usually via ...Na6-Nxc5), challenge the Bf4 with ...Ne4 or ...Nh5, and generate counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:29:00.788Z"
+    }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2P5/1bP5/2N2N2/PPQ1PPPP/R1B1KB1R b KQ - 2 6": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. Nf3",
     "name": "Nimzo-Indian: Classical, Pirc, 6.Nf3",
-    "scid": "E39c"
+    "scid": "E39c",
+    "analysis_json": {
+      "description": "The Classical Pirc variation of the Nimzo-Indian is a sharp and theoretically rich line where Black immediately challenges White's central control with 4...c5. This leads to a dynamic struggle, with Black aiming for active piece play and quick development, often at the cost of conceding the bishop pair. The resulting positions are complex and double-edged, suiting players who thrive on initiative and tactical calculation over quiet strategic maneuvering.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Strategic",
+        "Tactical",
+        "Counter-attacking",
+        "Open Game"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Counterattack",
+        "Development Race",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Bishop Pair",
+        "Open Files"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Dynamic Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Dynamic compensation vs. static advantages",
+        "Control of the center and open files",
+        "The fight for initiative",
+        "The value of the bishop pair"
+      ],
+      "common_plans": [
+        "White: Complete development with a3, Bg5, e3, and Be2, aiming to consolidate the center and leverage the long-term advantage of the bishop pair if Black is forced to trade on c3.",
+        "Black: Recapture the c5 pawn, typically via ...Na6-Nxc5, and use active pieces on the open c and d-files to generate counterplay against White's position.",
+        "White: Control the d4-square, restrict Black's pieces, and slowly build pressure, potentially launching a kingside attack after castling.",
+        "Black: Prevent White from consolidating by creating immediate threats, maintaining the initiative, and seeking to exploit any developmental delays by White."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:29:18.913Z"
+    }
   },
   "rnbq1rk1/pp1p1ppp/4pn2/2b5/2P5/2N2N2/PPQ1PPPP/R1B1KB1R w KQ - 0 7": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. Nf3 Bxc5",
     "name": "Nimzo-Indian: Classical, Pirc, 6.Nf3 Bxc5",
-    "scid": "E39d"
+    "scid": "E39d",
+    "analysis_json": {
+      "description": "This variation of the Nimzo-Indian leads to a dynamic and strategically rich middlegame. By recapturing on c5, Black resolves the central tension early, accepting a position where White holds the long-term advantage of the bishop pair in exchange for rapid development and active piece play. The resulting open positions are ideal for players who enjoy a blend of strategic planning and tactical awareness, fighting for the initiative without immediate, do-or-die attacks.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Open Game",
+        "Active"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Bishop Pair",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Active Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The Bishop Pair vs. Active Pieces",
+        "Control of the d-file",
+        "Central Pawn Breaks (e.g., e2-e4)",
+        "Queenside Pawn Structure"
+      ],
+      "common_plans": [
+        "White's Plan: Leverage the bishop pair by keeping the position open, often aiming for the e2-e4 pawn break. Control the d-file and use the queenside pawn structure to create long-term pressure.",
+        "Black's Plan: Counter White's central influence with active piece play, often targeting the e4-square and using the d-file. A key idea is to challenge White's light-squared bishop with ...b6 and ...Ba6.",
+        "Both sides fight for the initiative. Black seeks to neutralize White's bishop pair advantage through exchanges or by keeping White's bishops restricted."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:29:39.863Z"
+    }
   },
   "r1bq1rk1/pp1p1ppp/n3pn2/2P5/1bP5/2N2N2/PPQ1PPPP/R1B1KB1R w KQ - 3 7": {
     "src": "scid",
     "eco": "E39",
     "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 O-O 6. Nf3 Na6",
     "name": "Nimzo-Indian: Classical, Pirc, 6.Nf3 Na6",
-    "scid": "E39e"
+    "scid": "E39e",
+    "analysis_json": {
+      "description": "This dynamic line of the Classical Nimzo-Indian sees Black adopt a solid and flexible setup. The key idea behind 6...Na6 is to recapture on c5 with the knight, avoiding structural weaknesses and keeping the powerful bishop pair potential. The resulting middlegames are strategically rich, often revolving around control of the d5-square and the open c-file, making it ideal for patient, positional players who excel at maneuvering and long-term planning.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Dynamic",
+        "Flexible",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Bishop Pair"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the d5-square",
+        "The Isolated Queen's Pawn (IQP)",
+        "The battle of the Bishop Pair",
+        "Pressure on the c-file"
+      ],
+      "common_plans": [
+        "Black: Recapture on c5 with the knight (...Nxc5), control d5, and utilize the bishop pair for long-term pressure, often with a ...b6 and ...Bb7 setup.",
+        "White: Complete development with moves like a3, Bg5, and e3, control the center, and try to exploit Black's slightly passive knight on a6.",
+        "White: Prepare the central e3-e4 pawn push to gain a space advantage and challenge Black's central grip.",
+        "Black: Prevent White's e4-push or ensure it can be met effectively, often by preparing to challenge with ...d5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T11:30:03.173Z"
+    }
   },
   "r1bq1rk1/pp1p1ppp/n3pn2/2P5/1bP5/P1N2N2/1PQ1PPPP/R1B1KB1R b KQ - 0 7": {
     "src": "scid",

@@ -536,7 +536,7 @@ const OpeningDetailPage: React.FC = () => {
                   <div className="content-panel-improved">
                     <h3 className="title-subsection">Description</h3>
                     <p>
-                      {opening.analysis?.description || 
+                      {opening.description || opening.analysis?.description || opening.analysis_json?.description || 
                        `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
                     </p>
                   </div>

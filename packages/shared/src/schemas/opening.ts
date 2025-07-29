@@ -114,7 +114,6 @@ export const DEFAULT_OPENING_ANALYSIS: OpeningAnalysis = {
   description: '',
   complexity: 'Intermediate',
   styleTags: [],
-  books: [],
   courses: [],
   videos: []
 };

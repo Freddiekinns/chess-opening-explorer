@@ -23,10 +23,6 @@
   --color-text-warning: #ffc107;       /* Warning messages */
   --color-text-error: #dc3545;         /* Error messages */
   --color-border: #333333;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -89,7 +85,6 @@
 
   /* Layout helpers */
   --border-radius-small: 4px;
-  --border-radius-medium: 8px;
   --border-radius-large: 12px;
   --border-radius-base: 8px;
   --transition-base: all 0.2s ease;
@@ -624,8 +619,8 @@ body {
 }
 
 .eco-badge {
-  background-color: var(--color-info);
-  color: white;
+  background-color: var(--color-text-tertiary);
+  color: var(--color-text-contrast);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-sm);
@@ -683,7 +678,7 @@ body {
 
 .success-fill {
   height: 100%;
-  background-color: var(--color-success);
+  background-color: var(--color-text-success);
   border-radius: var(--border-radius-base);
   transition: var(--transition-base);
 }

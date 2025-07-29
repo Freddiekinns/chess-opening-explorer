@@ -121,9 +121,9 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     const labels = {
       'A': 'Flank Openings (A)',
       'B': 'Semi-Open Games (B)', 
-      'C': 'French & Others (C)',
-      'D': "Queen's Gambit (D)",
-      'E': 'Indian Systems (E)'
+      'C': 'Open Games (C)',
+      'D': "Closed and Semi-Closed Games (D)",
+      'E': 'Indian Defences (E)'
     }
     return labels[ecoLetter as keyof typeof labels] || `ECO ${ecoLetter}`
   }

@@ -762,9 +762,10 @@ body {
 }
 
 .eco-badge.secondary {
-  background-color: var(--color-bg-alt);
-  color: var(--color-text-secondary);
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
   font-size: var(--font-size-xs);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .complexity-badge {
@@ -772,7 +773,6 @@ body {
   border-radius: var(--border-radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
@@ -1189,11 +1189,11 @@ body {
    ================= */
 .hero-section {
   background-color: var(--color-bg-main);
-  min-height: 50vh;
+  min-height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
+  padding: var(--space-lg) var(--space-lg) var(--space-4) var(--space-lg);
 }
 
 .hero-content {
@@ -1314,7 +1314,7 @@ body {
    POPULAR OPENINGS GRID
    ================= */
 .popular-openings-section {
-  padding: var(--space-xl) var(--space-4) var(--space-xxl) var(--space-4);
+  padding: var(--space-lg) var(--space-4) var(--space-xxl) var(--space-4);
   background: var(--color-bg-surface);
   position: relative;
 }

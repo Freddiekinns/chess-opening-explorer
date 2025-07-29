@@ -161,7 +161,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           <span className="text-caption">First moves:</span>
           <span className="text-sm text-secondary">{firstMoves}</span>
           <span className={`complexity-badge complexity-${complexity.toLowerCase()}`}>
-            {complexity}
+            {complexity.charAt(0).toUpperCase() + complexity.slice(1).toLowerCase()}
           </span>
         </div>
       </div>

@@ -91,20 +91,17 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   }
 
   const getFirstMovesDisplay = (): string => {
-    return opening.moves.split(' ').slice(0, 4).join(' ')
+    // Split by move number pattern to preserve complete moves
+    const moves = opening.moves.trim()
+    const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g
+    const moveMatches = moves.match(movePattern) || []
+    
+    // Take up to 2 complete moves (e.g., "1. e4 e5 2. Nf3 Nc6")
+    return moveMatches.slice(0, 2).join(' ')
   }
 
   const getComplexity = (): string => {
     return opening.analysis?.complexity || opening.analysis_json?.complexity || 'Beginner'
-  }
-
-  const getPrimaryStyleTag = (): string | null => {
-    const tags = opening.analysis?.style_tags || opening.analysis_json?.style_tags || []
-    // Return the most descriptive/interesting tag, prioritizing tactical/strategic indicators
-    const priorityTags = tags.filter(tag => 
-      ['Aggressive', 'Tactical', 'Strategic', 'Positional', 'Sharp', 'Solid'].includes(tag)
-    )
-    return priorityTags[0] || tags[0] || null
   }
 
   // Generate display data
@@ -112,7 +109,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   const gameStats = getGameStats()
   const firstMoves = getFirstMovesDisplay()
   const complexity = getComplexity()
-  const primaryStyleTag = getPrimaryStyleTag()
 
   return (
     <div 
@@ -125,9 +121,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
       <div className="card-header" data-testid="card-header">
         <h3 className="title-subsection">{opening.name}</h3>
         <div className="header-badges">
-          <span className={`complexity-badge complexity-${complexity.toLowerCase()}`}>
-            {complexity}
-          </span>
           {showEco && (
             <span className="eco-badge secondary">{opening.eco}</span>
           )}
@@ -167,9 +160,9 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
         <div className="first-moves">
           <span className="text-caption">First moves:</span>
           <span className="text-sm text-secondary">{firstMoves}</span>
-          {primaryStyleTag && (
-            <span className="primary-style-tag">{primaryStyleTag}</span>
-          )}
+          <span className={`complexity-badge complexity-${complexity.toLowerCase()}`}>
+            {complexity}
+          </span>
         </div>
       </div>
       

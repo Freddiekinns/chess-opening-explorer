@@ -654,7 +654,7 @@ body {
 }
 
 .opening-card {
-  background-color: var(--color-bg-surface);
+  background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-large);
   padding: var(--space-6);
@@ -667,6 +667,7 @@ body {
   min-height: 280px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card-body {
@@ -713,8 +714,9 @@ body {
 
 .opening-card:hover {
   border-color: var(--color-brand-orange);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(232, 93, 4, 0.2);
+  background-color: var(--color-bg-surface);
 }
 
 .opening-card:hover::before {
@@ -866,6 +868,7 @@ body {
   align-items: center;
   gap: var(--space-2);
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .first-moves .text-caption {
@@ -877,6 +880,14 @@ body {
 .first-moves .text-sm {
   color: var(--color-text-primary);
   font-family: monospace;
+  font-weight: var(--font-weight-medium);
+}
+
+.first-moves .complexity-badge {
+  margin-left: auto;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
 }
 
@@ -1178,11 +1189,11 @@ body {
    ================= */
 .hero-section {
   background-color: var(--color-bg-main);
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xxl) var(--space-lg) var(--space-xl) var(--space-lg);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
 }
 
 .hero-content {
@@ -1195,7 +1206,7 @@ body {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin: 0 0 var(--space-6) 0;
+  margin: 0 0 var(--space-4) 0;
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
 }
@@ -1203,12 +1214,12 @@ body {
 .hero-subtitle {
   font-size: var(--font-size-lg);
   color: #B8B8B8;
-  margin: 0 0 var(--space-xxl) 0;
+  margin: 0 0 var(--space-xl) 0;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: var(--space-xxl);
+  margin-bottom: var(--space-xl);
 }
 
 .hero-search-wrapper {
@@ -1304,7 +1315,7 @@ body {
    ================= */
 .popular-openings-section {
   padding: var(--space-xl) var(--space-4) var(--space-xxl) var(--space-4);
-  background: linear-gradient(180deg, var(--color-bg-main) 0%, rgba(18, 18, 18, 0.95) 100%);
+  background: var(--color-bg-surface);
   position: relative;
 }
 

@@ -59,13 +59,29 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
     return 45 + Math.random() * 10
   }
 
+  const getDrawPercentage = (): number => {
+    return 25 + Math.random() * 15 // 25-40% draws
+  }
+
+  const getGameStats = () => {
+    const whitePercent = getWhiteSuccessPercentage()
+    const drawPercent = getDrawPercentage()
+    const blackPercent = 100 - whitePercent - drawPercent
+    
+    return {
+      white: Math.max(0, whitePercent),
+      draw: Math.max(0, drawPercent),
+      black: Math.max(0, blackPercent)
+    }
+  }
+
   const getFirstMovesDisplay = (): string => {
     return opening.moves.split(' ').slice(0, 3).join(' ')
   }
 
   // Generate display data
   const gamesPlayed = getGamesPlayed()
-  const whiteSuccessPercent = getWhiteSuccessPercentage()
+  const gameStats = getGameStats()
   const firstMoves = getFirstMovesDisplay()
 
   return (
@@ -96,16 +112,16 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
       </div>
       
       <div className="data-point">
-        <div className="success-bar">
-          <div className="text-label">White Success</div>
-          <div className="success-container">
-            <div className="success-track">
-              <div 
-                className="success-fill" 
-                style={{ width: `${whiteSuccessPercent}%` }}
-              ></div>
-            </div>
-            <span className="text-sm font-medium text-primary">{whiteSuccessPercent.toFixed(1)}%</span>
+        <div className="game-results-bar">
+          <div className="results-label-row">
+            <span className="result-label white-label">White {gameStats.white.toFixed(0)}%</span>
+            <span className="result-label draw-label">Draw {gameStats.draw.toFixed(0)}%</span>
+            <span className="result-label black-label">Black {gameStats.black.toFixed(0)}%</span>
+          </div>
+          <div className="segmented-bar">
+            <div className="bar-segment white-segment" style={{ width: `${gameStats.white}%` }}></div>
+            <div className="bar-segment draw-segment" style={{ width: `${gameStats.draw}%` }}></div>
+            <div className="bar-segment black-segment" style={{ width: `${gameStats.black}%` }}></div>
           </div>
         </div>
       </div>

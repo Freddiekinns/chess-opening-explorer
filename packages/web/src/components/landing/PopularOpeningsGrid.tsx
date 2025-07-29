@@ -137,12 +137,11 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       <div className="section-header">
         <h2>Popular Openings</h2>
         <p className="section-subtitle">
-          Explore openings by ECO classification - from flank openings to Indian systems
+          Explore openings by ECO classification - from King's openings to Indian systems
         </p>
       </div>
 
       <div className="filters-container">
-        <div className="category-filters">
         <div className="category-filters">
           {categories.slice(0, 6).map(category => (
             <button
@@ -154,7 +153,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
               <span className="category-count">({category.count})</span>
             </button>
           ))}
-        </div>
         </div>
       </div>
 

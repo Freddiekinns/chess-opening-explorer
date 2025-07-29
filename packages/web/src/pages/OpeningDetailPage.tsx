@@ -44,6 +44,9 @@ type Opening = ChessOpening & {
   common_plans?: string[]
   games_analyzed?: number
   popularity_rank?: number
+  white_win_rate?: number
+  black_win_rate?: number
+  draw_rate?: number
 }
 
 interface MovePair {

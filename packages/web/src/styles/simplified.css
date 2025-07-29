@@ -714,8 +714,20 @@ body {
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: var(--space-4);
+  gap: var(--space-3);
+}
+
+.card-header .title-subsection {
+  flex: 1;
+  margin: 0;
+}
+
+.header-badges {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
 }
 
 .card-header .opening-name {
@@ -732,6 +744,41 @@ body {
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
+}
+
+.eco-badge.secondary {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.complexity-badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.complexity-beginner {
+  background-color: #10B981;
+  color: white;
+}
+
+.complexity-intermediate {
+  background-color: #F59E0B;
+  color: white;
+}
+
+.complexity-advanced {
+  background-color: #EF4444;
+  color: white;
+}
+
+.complexity-expert {
+  background-color: #8B5CF6;
+  color: white;
 }
 
 .data-point {
@@ -802,6 +849,32 @@ body {
   margin-top: var(--space-4);
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.first-moves .text-caption {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+}
+
+.first-moves .text-sm {
+  color: var(--color-text-primary);
+  font-family: monospace;
+  font-weight: var(--font-weight-medium);
+}
+
+.primary-style-tag {
+  background-color: var(--color-brand-orange);
+  color: white;
+  padding: 2px var(--space-2);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  margin-left: auto;
 }
 
 .first-moves-label {

@@ -18,6 +18,9 @@ interface Opening {
   }
   games_analyzed?: number  // Number of games this opening was played
   popularity_rank?: number // Rank based on games_analyzed
+  white_win_rate?: number
+  black_win_rate?: number
+  draw_rate?: number
 }
 
 // Fast client-side search function (moved to SearchBar component)

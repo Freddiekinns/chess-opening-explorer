@@ -17,6 +17,9 @@ interface Opening {
   }
   games_analyzed?: number  // Number of games this opening was played
   popularity_rank?: number // Rank based on games_analyzed
+  white_win_rate?: number
+  black_win_rate?: number
+  draw_rate?: number
 }
 
 interface PopularOpeningsGridProps {
@@ -75,8 +78,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     // Sort by games played (descending order - most popular first)
     deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-    // Limit to top 6 for specific categories, 30 for "all"
-    const displayLimit = selectedCategory === 'all' ? 30 : 6
+    // Limit to top 6 for all categories for consistent display
+    const displayLimit = 6
     const finalResults = deduplicated.slice(0, displayLimit)
     console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
     

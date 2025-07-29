@@ -26,6 +26,7 @@ interface SearchBarProps {
   loading?: boolean
   openingsData: Opening[]
   className?: string
+  onExpandSearch?: () => void // Callback to load more search data if needed
 }
 
 // Simplified client-side search function
@@ -82,15 +83,17 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   disabled = false,
   loading = false,
   openingsData,
-  className = ''
+  className = '',
+  onExpandSearch
 }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState<Opening[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [activeSuggestion, setActiveSuggestion] = useState(-1)
+  const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  // Fast client-side search
+  // Fast client-side search with progressive enhancement
   useEffect(() => {
     if (searchTerm.length < 2) {
       setSuggestions([])
@@ -101,7 +104,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
     setSuggestions(relevantOpenings.slice(0, 8))
     setShowSuggestions(relevantOpenings.length > 0)
-  }, [searchTerm, openingsData])
+    
+    // If we have few results and haven't expanded yet, request more data
+    if (relevantOpenings.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
+      setHasRequestedExpansion(true)
+      onExpandSearch()
+    }
+  }, [searchTerm, openingsData, hasRequestedExpansion, onExpandSearch])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)

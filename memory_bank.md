@@ -1,12 +1,17 @@
 # **Memory Bank: Long-Term Context for Chess Trainer Project**
-test
-## **Purpose**
+
+## **Purpose & Usage**
 This memory bank serves as persistent storage for an AI agent working on the Chess Opening Explorer project. It enables the agent to:
 - **Maintain context** across multiple development sessions
 - **Remember architectural decisions** and avoid contradicting past choices
 - **Understand project structure** and key technical patterns
 - **Access critical API contracts** and data organization
 - **Apply consistent development practices** (TDD, testing patterns, AI integration guidelines)
+
+**🔗 Related Files:**
+- **Immediate commands**: `.github/instructions/dev-commands.instructions.md`
+- **Code patterns**: `.github/instructions/*.instructions.md` (specialized by file type)
+- **AI behavior**: `.github/copilot-instructions.md`
 
 This file should be consulted before making any architectural changes or implementing new features to ensure consistency and avoid repeating past mistakes.
 
@@ -339,5 +344,16 @@ Update this file when:
 
 ---
 
-*Last Updated: 2025-07-29 - CSS Consolidation Architecture Implementation*
+## **🧪 Development Commands**
+
+**Command Reference**: See `.github/instructions/dev-commands.instructions.md` for current testing and development commands.
+
+**Key Testing Patterns:**
+- **Backend**: Jest, runs from root, tests in `/tests/` directory
+- **Frontend**: Vitest, runs from root via workspace, tests in `/packages/web/src/`  
+- **Always run from ROOT unless specifically testing workspace isolation**
+
+---
+
+*Last Updated: 2025-07-29 - Performance Optimization & Testing Command Standardization*
 *Next Review: When significant architectural changes are proposed*

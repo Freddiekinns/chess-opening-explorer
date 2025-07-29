@@ -6,6 +6,15 @@ applyTo: "**/*.{js,ts,tsx,jsx,json,md}"
 
 *Simple, focused standards for clean, maintainable code.*
 
+**📚 Instruction Map:**
+- **This file**: General patterns (naming, organization, imports)
+- **dev-commands.instructions.md**: Testing & development workflow  
+- **frontend-dev.instructions.md**: React/TypeScript specific patterns
+- **backend-dev.instructions.md**: Node.js/Express API patterns
+- **testing.instructions.md**: Jest/Vitest testing strategies
+- **security-review.instructions.md**: Input validation & security checks
+- **See `.github/copilot-instructions.md`**: For TDD workflow and AI agent behavior
+
 ## 🎯 Naming (Clear & Consistent)
 - **Components/Types**: `PascalCase` (ChessBoard, OpeningData)
 - **Variables/Functions**: `camelCase` (getUserData, isValidMove)

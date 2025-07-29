@@ -297,6 +297,9 @@ router.get('/stats', (req, res) => {
 
 // Load popularity data once at startup
 let popularityData = null;
+let searchIndexCache = null;
+let searchIndexCacheTime = null;
+const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 function loadPopularityData() {
   if (popularityData) return popularityData;
@@ -494,6 +497,77 @@ router.get('/popular-by-eco', (req, res) => {
         limit_per_category: maxResultsPerCategory
       }
     });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+/**
+ * @route GET /api/openings/search-index
+ * @desc Get lightweight search index for client-side search (names and ECO codes only)
+ * @param {number} limit - Max results to return (default: all, can limit for faster initial load)
+ */
+router.get('/search-index', (req, res) => {
+  try {
+    const startTime = Date.now();
+    const { limit } = req.query;
+    
+    // Check cache first
+    const cacheKey = limit ? `limited_${limit}` : 'full';
+    const now = Date.now();
+    
+    if (searchIndexCache && searchIndexCache[cacheKey] && 
+        searchIndexCacheTime && (now - searchIndexCacheTime) < SEARCH_INDEX_CACHE_TTL) {
+      const cached = searchIndexCache[cacheKey];
+      res.json({
+        ...cached,
+        searchTime: `${Date.now() - startTime}ms (cached)`,
+        cached: true
+      });
+      return;
+    }
+    
+    const allOpenings = ecoService.getAllOpenings();
+    
+    // Create lightweight index with only essential search fields
+    let searchIndex = allOpenings.map(opening => ({
+      fen: opening.fen,
+      name: opening.name,
+      eco: opening.eco,
+      moves: opening.moves || '',
+      // Only include games_analyzed if available for sorting
+      ...(opening.games_analyzed && { games_analyzed: opening.games_analyzed })
+    }));
+    
+    // If limit specified, prioritize by games_analyzed and take top N
+    if (limit) {
+      const maxResults = Math.min(parseInt(limit) || searchIndex.length, searchIndex.length);
+      searchIndex = searchIndex
+        .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
+        .slice(0, maxResults);
+    }
+    
+    const searchTime = Date.now() - startTime;
+    
+    const response = {
+      success: true,
+      data: searchIndex,
+      count: searchIndex.length,
+      total_available: allOpenings.length,
+      searchTime: `${searchTime}ms`,
+      note: limit ? `Top ${searchIndex.length} popular openings for search` : 'Complete search index',
+      cached: false
+    };
+    
+    // Cache the result
+    if (!searchIndexCache) searchIndexCache = {};
+    searchIndexCache[cacheKey] = response;
+    searchIndexCacheTime = now;
+    
+    res.json(response);
   } catch (error) {
     res.status(500).json({
       success: false,

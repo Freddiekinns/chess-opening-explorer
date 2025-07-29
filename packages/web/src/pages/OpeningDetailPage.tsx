@@ -314,7 +314,7 @@ const OpeningDetailPage: React.FC = () => {
       <div className="two-column-layout">
         {/* Left Column - Position Explorer (45%) */}
         <div className="left-column position-explorer">
-          {/* Interactive Chessboard */}
+          {/* Interactive Chessboard with immediate navigation */}
           <div className="chessboard-section">
             <div className="chessboard-container">
               <Chessboard
@@ -328,62 +328,68 @@ const OpeningDetailPage: React.FC = () => {
                 }}
               />
             </div>
-          </div>
-
-          {/* Board Controls Container */}
-          <div className="board-controls">
-            <div className="navigation-buttons">
+            
+            {/* Navigation Controls - Immediately after board for intuitive control */}
+            <div className="chessboard-navigation">
               <button 
                 onClick={() => goToMove(0)}
-                className="nav-btn"
+                className="chessboard-nav-btn"
                 disabled={currentMoveIndex === 0}
+                title="Go to start"
               >
                 {'<<'}
               </button>
               <button 
                 onClick={previousMove}
-                className="nav-btn"
+                className="chessboard-nav-btn"
                 disabled={currentMoveIndex === 0}
+                title="Previous move"
               >
                 {'<'}
               </button>
               <button 
                 onClick={nextMove}
-                className="nav-btn"
+                className="chessboard-nav-btn"
                 disabled={currentMoveIndex >= getMovesList().length}
+                title="Next move"
               >
                 {'>'}
               </button>
               <button 
                 onClick={() => goToMove(getMovesList().length)}
-                className="nav-btn"
+                className="chessboard-nav-btn"
                 disabled={currentMoveIndex >= getMovesList().length}
+                title="Go to end"
               >
                 {'>>'}
               </button>
             </div>
-            
-            <div className="fen-display">
-              <input 
-                type="text" 
-                value={game.fen()} 
-                readOnly 
-                className="fen-input"
-              />
-              <button 
-                onClick={() => navigator.clipboard.writeText(game.fen())}
-                className="copy-btn"
-              >
-                Copy
-              </button>
-              <a 
-                href={`https://lichess.org/analysis/${game.fen()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="analyze-btn"
-              >
-                Analyze
-              </a>
+
+            {/* FEN Utilities - Technical information, less frequently accessed */}
+            <div className="chessboard-fen-utilities">
+              <label className="fen-utilities-label">Position (FEN)</label>
+              <div className="fen-display">
+                <input 
+                  type="text" 
+                  value={game.fen()} 
+                  readOnly 
+                  className="fen-input"
+                />
+                <button 
+                  onClick={() => navigator.clipboard.writeText(game.fen())}
+                  className="copy-btn"
+                >
+                  Copy
+                </button>
+                <a 
+                  href={`https://lichess.org/analysis/${game.fen()}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="analyze-btn"
+                >
+                  Analyse
+                </a>
+              </div>
             </div>
           </div>
 

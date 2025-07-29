@@ -333,141 +333,226 @@ body {
 }
 
 /* =================
-   CHESS BOARD SECTION
+   CHESS BOARD SECTION - INTEGRATED WITH FEN
    ================= */
 .chessboard-section {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
   padding: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chessboard-container {
   display: flex;
   justify-content: center;
   margin-bottom: var(--space-4);
+  position: relative;
 }
 
-/* =================
-   BOARD CONTROLS
-   ================= */
-.board-controls {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  background-color: var(--color-bg-surface);
-  border-radius: var(--border-radius-large);
-  padding: var(--space-6);
+.chessboard-fen-utilities {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
 }
 
-.navigation-buttons {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-2);
+.chessboard-fen-utilities .fen-utilities-label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-2);
+  display: block;
 }
 
-.nav-btn {
-  background-color: var(--color-bg-alt);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
-  padding: var(--space-2) var(--space-4);
-  cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.nav-btn:hover:not(:disabled) {
-  background-color: var(--color-brand-orange);
-}
-
-.nav-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.fen-display {
+.chessboard-fen-utilities .fen-display {
   display: flex;
   gap: var(--space-2);
   align-items: center;
 }
 
-.fen-input {
+.chessboard-fen-utilities .fen-input {
   flex: 1;
   background-color: var(--color-bg-alt);
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-base);
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--font-size-sm);
-  font-family: monospace;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-mono);
+  line-height: 1;
+  height: 32px;
+  box-sizing: border-box;
 }
 
-.copy-btn,
-.analyze-btn {
-  background-color: var(--color-brand-orange);
-  color: white;
-  border: none;
+.chessboard-fen-utilities .copy-btn,
+.chessboard-fen-utilities .analyze-btn {
+  background-color: rgba(232, 93, 4, 0.15);
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(232, 93, 4, 0.25);
+  border-radius: var(--border-radius-base);
+  padding: 0 var(--space-3);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  white-space: nowrap;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.chessboard-fen-utilities .copy-btn:hover,
+.chessboard-fen-utilities .analyze-btn:hover {
+  background-color: rgba(232, 93, 4, 0.25);
+  color: var(--color-brand-orange);
+  border-color: rgba(232, 93, 4, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Chessboard Navigation Controls */
+.chessboard-navigation {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chessboard-nav-btn {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-base);
   padding: var(--space-2) var(--space-3);
   cursor: pointer;
   transition: var(--transition-base);
-  text-decoration: none;
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  min-width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.copy-btn:hover,
-.analyze-btn:hover {
-  background-color: var(--color-brand-orange-hover);
+.chessboard-nav-btn:hover:not(:disabled) {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border-color: var(--color-brand-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(232, 93, 4, 0.3);
+}
+
+.chessboard-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  color: var(--color-text-muted);
 }
 
 /* =================
-   MOVES LIST
+   MOVES LIST - INTEGRATED WITH NAVIGATION
    ================= */
 .opening-moves-list {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
-  padding: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  margin-top: var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .opening-moves-list .title-subsection {
-  margin: 0 0 var(--space-4) 0;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 .moves-notation {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-2);
+  align-items: start;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: var(--space-2) 0;
+  line-height: 1.4;
 }
 
 .move-pair {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
+  width: 100%;
 }
 
 .move-number {
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
-  min-width: 2rem;
+  font-size: var(--font-size-xs);
+  min-width: 20px;
+  text-align: right;
+  margin-right: var(--space-1);
+  flex-shrink: 0;
 }
 
 .move-btn {
   background-color: var(--color-bg-alt);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
-  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-small);
+  padding: var(--space-1) var(--space-2);
   cursor: pointer;
   transition: var(--transition-base);
-  font-family: monospace;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  min-width: 48px;
+  text-align: center;
+  white-space: nowrap;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .move-btn:hover {
   background-color: var(--color-brand-orange);
+  border-color: var(--color-brand-orange);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(232, 93, 4, 0.3);
 }
 
 .move-btn.active {
   background-color: var(--color-brand-orange);
   border-color: var(--color-brand-orange);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0 2px 6px rgba(232, 93, 4, 0.4);
+}
+
+/* Scrollbar styling for moves list */
+.moves-notation::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.moves-notation::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: 2px;
+}
+
+.moves-notation::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.moves-notation::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
 }
 
 /* =================

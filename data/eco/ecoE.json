@@ -75256,7 +75256,55 @@
       "chronos": "King's Indian: Four pawns attack",
       "icsbot": "Four Pawns Attack, KID; E76 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious and aggressive attempt to refute the King's Indian Defense. By building a massive pawn center, White aims to seize a huge space advantage and suffocate Black's position. This leads to a brutally sharp and complex struggle where Black must counter-attack against the white center, often resulting in violent, double-edged middlegames. It is the perfect choice for fearless, tactical players who thrive in chaos and are willing to take calculated risks for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Attacking",
+        "Sacrifice",
+        "Initiative",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counter-attack",
+        "Undermining the Center",
+        "Pawn Breaks"
+      ],
+      "common_plans": [
+        "White: Solidify the massive pawn center, develop pieces to support it, and launch a queenside attack. A key plan is to push d5 at the right moment to cramp Black and open the c-file.",
+        "Black: Undermine White's overextended center with immediate pawn breaks like ...c5 or ...e5, accepting a cramped position in exchange for long-term attacking chances.",
+        "Black: After White plays d5, Black often reroutes the f6-knight and prepares a massive kingside assault, using the closed center as a shield."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:27:05.057Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2pP4/2P1PP2/2N2N2/PP4PP/R1BQKB1R b KQ - 0 7": {
     "src": "eco_tsv",
@@ -75270,6 +75318,56 @@
       "chessGraph": "Dynamic Attack, KID",
       "chronos": "King's Indian: Four pawns attack, dynamic line",
       "icsbot": "Dynamic Attack, KID "
+    },
+    "analysis_json": {
+      "description": "The Four Pawns Attack is one of the most ambitious and aggressive systems against the King's Indian, where White seizes a massive space advantage with a formidable pawn center. This leads to a sharp, double-edged struggle where White aims for a decisive kingside attack while Black seeks to undermine the center and generate powerful counterplay. It is a perfect choice for tactical players who thrive in complex, unbalanced positions and are willing to take calculated risks for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Unbalanced",
+        "Tactical"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Central Tension",
+        "Kingside Attack",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White: Launch a kingside attack, often with Be3, Qd2, and g4, to overwhelm Black's king.",
+        "Black: Undermine White's center with the ...e6 pawn break to open lines and challenge the d5 pawn.",
+        "Black: Create queenside counterplay with the ...b5 pawn break, often prepared by ...a6 and ...Na6, to distract White.",
+        "White: Solidify the massive pawn center, restrict Black's pieces, and slowly squeeze the opponent."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:27:20.734Z"
     }
   },
   "r1bqk2r/ppp1ppbp/n2p1np1/8/2PPPP2/2N5/PP4PP/R1BQKBNR w KQkq - 1 6": {
@@ -75281,6 +75379,56 @@
       "ct": "King's Indian Defense, Four Pawns Attack",
       "chessGraph": "Modern Defense, KID",
       "icsbot": "Modern Defense, KID "
+    },
+    "analysis_json": {
+      "description": "The Four Pawns Attack with 5...Na6 is a sharp, modern, and provocative response to one of White's most aggressive setups against the King's Indian Defense. White seizes a massive space advantage, aiming for central domination and a crushing kingside attack. Black's unusual knight move immediately prepares to undermine this ambitious structure, typically by supporting a ...b5 queenside expansion or a central ...c5 break. This opening leads to a complex, double-edged battle ideal for creative and tactical players who thrive on dynamic imbalances and fighting for the initiative from the very beginning.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Unbalanced",
+        "Modern",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Attacking",
+        "Initiative",
+        "Sacrifice",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Domination vs. Undermining",
+        "Space Advantage vs. Counterplay",
+        "Kingside Attack vs. Queenside Expansion"
+      ],
+      "common_plans": [
+        "White: Consolidate the massive pawn center and launch a kingside attack, often with a pawn storm (g4-g5) or a central push (e5).",
+        "Black: Undermine White's center with pawn breaks like ...c5 or ...e5, creating weaknesses to exploit.",
+        "Black: Reposition the Na6 to c7 to support a queenside expansion with ...b5, or to b4 to harass White's position.",
+        "White: Restrain Black's queenside counterplay while carefully preparing the decisive attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:27:39.729Z"
     }
   },
   "rnbqk2r/pp2ppbp/3p1np1/2p5/2PPPP2/2N5/PP4PP/R1BQKBNR w KQkq - 0 6": {
@@ -75288,133 +75436,1090 @@
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 c5",
     "name": "King's Indian: Four Pawns Attack, 5...c5",
-    "scid": "E76b"
+    "scid": "E76b",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of the most aggressive and ambitious systems White can choose, and Black's immediate 5...c5 response throws gasoline on the fire. This variation leads to a sharp, complex, and often chaotic struggle where White's massive pawn center grants a space advantage but also creates potential weaknesses. The game becomes a double-edged battle, ideal for tactical players who are comfortable with unbalanced positions and are willing to calculate deeply to seize the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Unbalanced",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension vs. Flank Counterplay",
+        "Space Advantage vs. Structural Weaknesses",
+        "Race to Attack",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White: Solidify the center with d5, develop pieces to support the pawn mass, and often launch a kingside attack aiming to overwhelm Black.",
+        "Black: Immediately challenge White's center, often creating a Benoni-like structure. Develop queenside counterplay with moves like ...b5 and ...Na6-c7 to attack the d4 pawn.",
+        "White: Control the e5 square and use the f4-pawn to support a kingside expansion with g4-g5.",
+        "Black: Exchange on d4 (cxd4) to open the c-file for the rook and create a target on d4, while the fianchettoed bishop pressures from g7."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:27:54.366Z"
+    }
   },
   "rnbqk2r/pp2ppbp/3p1np1/2pP4/2P1PP2/2N5/PP4PP/R1BQKBNR b KQkq - 0 6": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 c5 6. d5",
     "name": "King's Indian: Four Pawns Attack, 5...c5 6.d5",
-    "scid": "E76c"
+    "scid": "E76c",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of White's most ambitious and aggressive systems, aiming to seize a massive space advantage and cramp Black's position. By playing 5...c5 and White responding 6.d5, the game transposes into a Benoni-like structure defined by extreme tension and a race between White's central control and kingside attack versus Black's queenside counterplay. This opening leads to exceptionally sharp, complex, and double-edged battles, ideal for tactical players who are comfortable with high-stakes, unbalanced positions and are not afraid to attack or defend under pressure.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Unbalanced",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Central Control",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Kingside Attack vs. Queenside Expansion",
+        "Central Tension",
+        "Prophylaxis against Pawn Breaks"
+      ],
+      "common_plans": [
+        "White aims to consolidate the center, often with Nf3 and Be2, and then launch a decisive kingside attack with moves like Be3, Qd2, and a g2-g4 pawn push.",
+        "Black's primary plan is to undermine White's center and create queenside counterplay, typically initiated by the ...a6 and ...b5 pawn break, even at the cost of a pawn.",
+        "White must carefully time their attack while preventing Black's queenside play, often by controlling the b5-square or blockading the queenside.",
+        "Black seeks to activate the fianchettoed bishop on g7, which becomes a monster if the center opens, and must constantly be vigilant about king safety."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:28:11.317Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPPP2/2N5/PP4PP/R1BQKBNR w KQ - 1 6": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O",
     "name": "King's Indian: Four Pawns Attack, 5...O-O",
-    "scid": "E76d"
+    "scid": "E76d",
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious and aggressive response to the King's Indian Defense, seizing a massive space advantage in the center. This creates a tense, double-edged struggle where White aims to launch a decisive attack, while Black works to undermine and dismantle the powerful pawn center. This opening is perfect for fearless, dynamic players who enjoy sharp tactical battles and are comfortable navigating complex, unbalanced positions.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Tactical",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Sacrifice",
+        "Initiative",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Central Control",
+        "Weaknesses",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Undermining the Center",
+        "Kingside Attack"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Nf3 and Be2, then launch a powerful kingside attack, often with a pawn storm, to checkmate the Black king.",
+        "Black: Systematically undermine White's pawn center with the crucial ...c5 pawn break. Reroute pieces (e.g., ...Na6-c7) to pressure the d4-pawn and create queenside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:28:29.590Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPPP2/2N2N2/PP4PP/R1BQKB1R b KQ - 2 6": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3",
     "name": "King's Indian: Four Pawns Attack, 5...O-O 6.Nf3",
-    "scid": "E76e"
+    "scid": "E76e",
+    "analysis_json": {
+      "description": "The Four Pawns Attack is one of White's most ambitious and aggressive responses to the King's Indian Defense. By establishing a massive pawn center, White aims to seize a significant space advantage and launch a crushing kingside attack. This opening leads to exceptionally sharp, complex, and double-edged positions, suiting aggressive, tactical players who are comfortable navigating chaos and calculating deeply. Black's strategy is to absorb the initial pressure and strike back dynamically against White's overextended center, typically with the ...c5 pawn break.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Complex",
+        "Dynamic",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Dynamic Counterplay",
+        "Central Tension",
+        "Kingside Attack",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White: Advance with e4-e5, develop with Be3 and Qd2 to support a kingside attack, and try to suffocate Black's position.",
+        "Black: Prepare and execute the ...c5 pawn break to challenge White's center, often followed by ...Na6, ...Rb8, and ...b5 to create queenside counterplay.",
+        "White: Maintain central stability and prevent Black's counterplay, rerouting pieces to support the attack or defend weak points like d4.",
+        "Black: If White plays e5, Black will often blockade on d5 and attack the base of the pawn chain on d4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:28:47.523Z"
+    }
   },
   "rn1q1rk1/ppp1ppbp/3p1np1/8/2PPPPb1/2N2N2/PP4PP/R1BQKB1R w KQ - 3 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Bg4",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Bg4",
-    "scid": "E76e"
+    "scid": "E76e",
+    "analysis_json": {
+      "description": "The Four Pawns Attack with 6...Bg4 is a sharp and provocative response, immediately challenging White's ambitious central expansion. Black's pin on the f3-knight creates immediate tactical tension, aiming to undermine the pawn phalanx before White can consolidate. This opening leads to a complex, double-edged battle ideal for tactical players who thrive on chaos and fighting for the initiative from the very first moves.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Weaknesses",
+        "Piece Activity",
+        "Pawn Structure"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Domination vs. Undermining",
+        "Space Advantage",
+        "Kingside Attack",
+        "Exploiting Pins"
+      ],
+      "common_plans": [
+        "White: Consolidate the center with Be2, Be3, Qd2, then launch a kingside attack.",
+        "Black: Increase pressure on the center with ...Na6-c5 or a ...c5 pawn break.",
+        "Black: Exchange the g4-bishop for the f3-knight to damage White's pawn structure.",
+        "White: Prepare a g2-g4 pawn push to challenge Black's kingside and break the pin."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:29:07.011Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PPPP2/2N2N2/PP4PP/R1BQKB1R w KQ - 0 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5",
-    "scid": "E76k"
+    "scid": "E76k",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian Defense is one of the most aggressive and ambitious systems White can employ, aiming to seize a massive space advantage in the center. Black's immediate counter-strike with 6...c5 signals a refusal to be suffocated, leading to an exceptionally sharp and complex battle where the central tension must be resolved quickly. This opening is perfect for fearless, tactical players who enjoy high-stakes, dynamic positions and are adept at navigating chaotic middlegames.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Overextension vs. Counter-strike",
+        "Undermining the Pawn Center",
+        "Space Advantage vs. Piece Activity",
+        "Benoni-like Structures"
+      ],
+      "common_plans": [
+        "White: Solidify the massive pawn center with d5, restricting Black's pieces and launching a queenside attack.",
+        "White: Maintain the central tension, complete development, and use the space advantage to overwhelm Black.",
+        "Black: Immediately challenge and undermine White's center with ...cxd4, followed by pressure against the d4 and e4 pawns.",
+        "Black: Develop rapid counterplay on the queenside with moves like ...b5 and ...a6, aiming to prove White's center is overextended."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:29:30.727Z"
+    }
   },
   "rnbq1rk1/1p2ppbp/p2p1np1/2pP4/2P1PP2/2N2N2/PP4PP/R1BQKB1R w KQ - 0 8": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 a6",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.d5 a6",
-    "scid": "E76o"
+    "scid": "E76o",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is a fiercely ambitious and aggressive system where White seizes a massive space advantage in the center. Black's strategy is to counterattack immediately, undermining White's pawn phalanx with breaks like ...b5 (prepared by 7...a6) and ...e6, leading to exceptionally sharp, double-edged positions. This opening is perfect for dynamic, tactical players who are comfortable with complex, unbalanced struggles and are not afraid to take calculated risks for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Unbalanced",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Weaknesses",
+        "Central Control",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterattack",
+        "Queenside Expansion (Black)",
+        "Central Breakthrough",
+        "Kingside Attack (White)"
+      ],
+      "common_plans": [
+        "White: Solidify the massive center and prepare a kingside attack, often by developing with Be3, Qd2, and sometimes castling queenside.",
+        "Black: Execute the ...b5 pawn break to undermine White's c4-d5 pawn chain and create counterplay on the queenside.",
+        "White: Prevent or control Black's queenside expansion, often with the move a4, while looking for a decisive central push like e5.",
+        "Black: Prepare the secondary pawn break ...e6 to directly challenge the d5-pawn and open lines for the powerful Bg7."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:29:54.394Z"
+    }
   },
   "rnbq1rk1/p3ppbp/3p1np1/1ppP4/2P1PP2/2N2N2/PP4PP/R1BQKB1R w KQ - 0 8": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 b5",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.d5 b5",
-    "scid": "E76p"
+    "scid": "E76p",
+    "analysis_json": {
+      "description": "This is a hyper-aggressive and double-edged gambit line against the formidable Four Pawns Attack. Black immediately challenges White's massive pawn center by sacrificing a pawn with ...b5, aiming to undermine White's structure and seize the initiative on the queenside. The resulting positions are exceptionally sharp and tactical, suiting daring, creative players who are comfortable with material imbalances and thrive in complex, dynamic struggles.",
+      "style_tags": [
+        "Aggressive",
+        "Gambit",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Sacrifice",
+        "Counterattack",
+        "Initiative",
+        "Opening Lines",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Counterplay vs. Central Dominance",
+        "Gambit for Initiative",
+        "Undermining the Pawn Center",
+        "Dynamic Compensation"
+      ],
+      "common_plans": [
+        "For Black, the main plan is to accept the gambit with 8.cxb5 a6, followed by opening the a- and b-files for the rooks to pressure White's queenside and challenge the d5 pawn.",
+        "For White, a primary plan is to accept the pawn with 8.cxb5, try to consolidate the material advantage, and use the central space to launch a decisive kingside attack.",
+        "Black aims to activate the fianchettoed bishop on g7, which becomes a monster once lines are opened, often targeting the weak d4 and b2 squares.",
+        "White often seeks to restrain Black's pieces, particularly the light-squared bishop, and prove that Black's compensation for the pawn is insufficient."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:30:12.494Z"
+    }
   },
   "rnbq1rk1/4ppbp/p2p1np1/1PpP4/P3PP2/2N2N2/1P4PP/R1BQKB1R b KQ - 0 9": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 b5 8. cxb5 a6 9. a4",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.d5 b5 8.cxb5 a6 9.a4",
-    "scid": "E76q"
+    "scid": "E76q",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian Defense creates one of the sharpest and most complex battles in chess. White seizes a massive space advantage with a formidable pawn center, aiming to cramp Black and launch a decisive kingside attack. Black's strategy is a direct and violent counter-attack, using the ...c5 and ...b5 pawn breaks to undermine White's center and generate powerful queenside play. This opening is perfect for aggressive, tactical players who enjoy double-edged positions and are not afraid to engage in a theoretical slugfest where a single tempo can decide the game.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Gambit",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Counterplay vs. Central Dominance",
+        "Race to Attack",
+        "Pawn Break Timing",
+        "Exploiting Overextension"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Be3, Qd2, then launch a kingside attack, often with a g2-g4 pawn push, while trying to restrain Black's queenside play.",
+        "Black: Open the b-file with ...axb5, followed by developing pressure with ...Ra4, ...Qa5, and ...Nbd7-b6 to attack White's queenside and the d5 pawn.",
+        "White: Maintain the d5 pawn as a powerful wedge, restricting Black's pieces, especially the Bg7, and slowly build up pressure across the board.",
+        "Black: Prepare the ...e6 pawn break to challenge White's central control, open lines for the light-squared bishop, and create weaknesses around the d5 pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:30:32.542Z"
+    }
   },
   "rnbq1rk1/pp3pbp/3ppnp1/2pP4/2P1PP2/2N2N2/PP4PP/R1BQKB1R w KQ - 0 8": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 e6",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.d5 e6",
-    "scid": "E76r"
+    "scid": "E76r",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian Defense is one of the most aggressive and ambitious systems White can choose, leading to a sharp, double-edged struggle. By seizing a massive pawn center, White aims to cramp Black and launch a decisive kingside attack. Black's response creates a Benoni-like structure, immediately challenging White's central control and seeking dynamic counterplay on the queenside, making this opening a thrilling battle of space versus initiative for players who thrive in complex, tactical positions.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Unbalanced Position"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Central Tension",
+        "Undermining the Center",
+        "Kingside Attack vs. Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: Solidify the center, prepare a kingside attack with moves like g4-g5, and restrict Black's queenside expansion with a4.",
+        "Black: Undermine White's center via ...exd5, followed by queenside counterplay with ...a6 and ...b5 to create threats against White's extended structure.",
+        "White: Maintain the pawn chain, develop pieces to support it (Be3, Qd2), and prepare to meet Black's ...b5 break.",
+        "Black: Reposition pieces to optimal squares (...Na6-c7, ...Rb8) to support the queenside pawn storm and pressure the d5-pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:30:52.618Z"
+    }
   },
   "rnbq1rk1/pp3pbp/3pPnp1/2p5/2P1PP2/2N2N2/PP4PP/R1BQKB1R b KQ - 0 8": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 e6 8. dxe6",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.d5 e6 8.dxe6",
-    "scid": "E76r"
+    "scid": "E76r",
+    "analysis_json": {
+      "description": "This variation of the Four Pawns Attack leads to a sharp and unbalanced struggle where White's massive space advantage is pitted against Black's dynamic counterplay. By capturing on e6, White clarifies the central tension, but in return, Black often opens the f-file for their rook, creating immediate attacking chances against the white king. This opening is perfect for aggressive, tactical players who thrive in complex, double-edged positions and are not afraid to take calculated risks.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Unbalanced",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Weaknesses",
+        "King Safety",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Exploiting Space Advantage",
+        "Counterplay on the f-file",
+        "Provocation and Overextension"
+      ],
+      "common_plans": [
+        "White: Solidify the e4-pawn, complete development, and use the space advantage to expand on the queenside (b2-b4) or prepare a central break.",
+        "Black: Recapture with ...fxe6, use the open f-file for a kingside attack, and undermine White's central pawn structure, particularly the e4-pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:31:17.203Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2P5/2P1PP2/2N2N2/PP4PP/R1BQKB1R b KQ - 0 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. dxc5",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.dxc5",
-    "scid": "E76l"
+    "scid": "E76l",
+    "analysis_json": {
+      "description": "This variation of the Four Pawns Attack leads to a sharp, double-edged struggle where White immediately liquidates the central tension. By playing 7.dxc5, White steers the game into open, tactical waters, challenging Black to justify the ...c5 pawn break. The resulting positions are rich in dynamic possibilities, suiting players who enjoy complex calculation and fighting for the initiative from the very first moves.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Open Position",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Sacrifice",
+        "Tempo",
+        "Development"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Gambit Play",
+        "Initiative vs. Material",
+        "Central Pawn Breaks",
+        "Exploiting Overextension"
+      ],
+      "common_plans": [
+        "White: Solidify the e4-pawn, complete development, and use the space advantage to attack.",
+        "Black: Recapture on c5 (often via ...Qa5) and exert immediate pressure on White's central pawns.",
+        "White: Control the d-file and prevent Black's queenside counterplay.",
+        "Black: Develop quickly (...Na6, ...b5) to undermine White's central grip."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:31:35.573Z"
+    }
   },
   "r1b2rk1/pp2ppbp/2np1np1/2q5/2P1PP2/2NB1N2/PP2Q1PP/R1B1K2R w KQ - 2 10": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. dxc5 Qa5 8. Bd3 Qxc5 9. Qe2 Nc6",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 c5 7.dxc5 Qa5 8.Bd3 Qxc5 9.Qe2 Nc6",
-    "scid": "E76m"
+    "scid": "E76m",
+    "analysis_json": {
+      "description": "This variation of the Four Pawns Attack leads to a sharp, double-edged struggle where White's massive space advantage is pitted against Black's immediate counter-pressure. By challenging the center with ...c5 and developing the queen actively to c5, Black aims to undermine White's ambitious setup before it can be consolidated. The resulting positions are dynamic and tactical, suiting players who thrive in complex, unbalanced situations and are adept at fighting for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Attacking",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Space Advantage vs. Black's Counterplay",
+        "Undermining the Center",
+        "Kingside Attack Potential",
+        "Pressure on the d4-pawn"
+      ],
+      "common_plans": [
+        "White often continues with Be3, castles, and prepares a kingside expansion with h3 and g4 to launch an attack.",
+        "Black aims to increase pressure on the center with moves like ...Bg4, ...e6, and ...Rc8, targeting the d4-pawn and preparing to open lines.",
+        "White may try to neutralize Black's active queen with Na4, forcing a trade or displacing it to gain time for development.",
+        "Black seeks to exploit any weaknesses created by White's pawn advances, often targeting the e3 and d5 squares."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:31:54.219Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/n2p1np1/8/2PPPP2/2N2N2/PP4PP/R1BQKB1R w KQ - 3 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Na6",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Na6",
-    "scid": "E76f"
+    "scid": "E76f",
+    "analysis_json": {
+      "description": "The 6...Na6 variation of the Four Pawns Attack is a sharp and provocative response, immediately challenging White's massive space advantage. Instead of the standard central break with ...c5, Black opts for a more flexible approach, preparing to undermine the white center from the flank. This opening leads to highly unbalanced and complex middlegames, suiting players who are comfortable with cramped positions and thrive on creating dynamic counterplay against a dominant opponent.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Strategic",
+        "Tactical",
+        "Unbalanced",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Theorist"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Dynamic Counterplay",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Flank vs. Center"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Be3 and Qd2, often followed by a d5 push to cramp Black, and then launch a decisive kingside attack.",
+        "Black: Undermine White's pawn center by maneuvering the knight to c5 or preparing a flank pawn break with ...Nc7 followed by ...b5.",
+        "Black: Prepare the thematic King's Indian central breaks, such as ...c5 or ...e5, to dissolve White's space advantage and create counterplay.",
+        "White: Prevent Black's counterplay by controlling the c5-square and methodically preparing an attack, sometimes with a prophylactic a4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:32:21.187Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/n2p1np1/8/2PPPP2/2NB1N2/PP4PP/R1BQK2R b KQ - 4 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Na6 7. Bd3",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Na6 7.Bd3",
-    "scid": "E76i"
+    "scid": "E76i",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian Defense is one of the most aggressive and ambitious systems White can choose, aiming to seize a massive space advantage. Black's 6...Na6 is a sophisticated and flexible response, preparing to challenge White's center with ...c5 or ...e5 while keeping the position complex and double-edged. This opening leads to a sharp, tactical battle where both sides have clear attacking plans, suiting players who thrive in chaotic positions and are not afraid to take calculated risks.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Double-edged",
+        "Tactical"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Central Break"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Space Advantage vs. Structural Weakness",
+        "Undermining the Center",
+        "Kingside Attack"
+      ],
+      "common_plans": [
+        "White: Complete development, often with O-O, and use the central space to launch a powerful kingside attack, sometimes involving a g4-g5 pawn push.",
+        "Black: Prepare the ...e5 pawn break, often with ...Qe8, to shatter White's center. Alternatively, play ...c5 to undermine the d4-pawn.",
+        "White: Prevent Black's counterplay by solidifying the center and carefully neutralizing Black's active pieces.",
+        "Black: Reroute the Na6 to a better square like c7 (to support ...e5) or b4 to harass White's position, aiming to create a queenside counterattack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:32:37.574Z"
+    }
   },
   "r1bq1rk1/ppp2pbp/n2p1np1/4p3/2PPPP2/2NB1N2/PP4PP/R1BQK2R w KQ - 0 8": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Na6 7. Bd3 e5",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Na6 7.Bd3 e5",
-    "scid": "E76j"
+    "scid": "E76j",
+    "analysis_json": {
+      "description": "This variation represents a sharp and direct counter-punch against White's ambitious Four Pawns Attack. By immediately striking at the center with ...e5, Black aims to shatter White's spatial advantage and initiate a complex, tactical battle. The resulting positions are often double-edged and dynamic, appealing to players who thrive on initiative and are comfortable navigating sharp, open struggles.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Open Lines"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Break vs. Space Advantage",
+        "Fighting for the Initiative",
+        "Attack and Counter-attack"
+      ],
+      "common_plans": [
+        "White aims to accept the central challenge (fxe5 or dxe5) to open lines for a kingside attack, or close the center with d5 to build a slower attack.",
+        "Black seeks to liquidate the center to activate the g7-bishop and other pieces, fighting for control of open files and targeting White's pawn structure.",
+        "Black's Na6 often repositions to c7 or c5 to pressure the d4-pawn and support queenside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:33:04.028Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/n2p1np1/8/2PPPP2/2N2N2/PP2B1PP/R1BQK2R b KQ - 4 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Na6 7. Be2",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Na6 7.Be2",
-    "scid": "E76h"
+    "scid": "E76h",
+    "analysis_json": {
+      "description": "The Four Pawns Attack with 6...Na6 is a sharp and ambitious system where White seizes a massive space advantage in the center. Black's strategy is highly dynamic, using the unusual knight move to prepare the ...c5 pawn break, aiming to undermine White's imposing structure before it becomes a steamroller. This opening leads to complex, unbalanced positions ideal for aggressive, tactical players who are comfortable navigating double-edged situations and fighting for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Attacking",
+        "Sacrifice",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Consolidate the center, complete development with O-O, and use the space to launch a kingside attack, often involving g4-g5.",
+        "Black: Execute the ...c5 pawn break to challenge the d4-pawn and open lines for the pieces.",
+        "Black: Prepare the central ...e5 break, often after rerouting the knight via ...Nc7, to liquidate White's center.",
+        "White: Restrain Black's counterplay and slowly improve the position, converting the space advantage into a long-term edge."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:33:22.483Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/n2p1np1/4P3/2PP1P2/2N2N2/PP4PP/R1BQKB1R b KQ - 0 7": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 Na6 7. e5",
     "name": "King's Indian: Four Pawns Attack, 6.Nf3 Na6 7.e5",
-    "scid": "E76g"
+    "scid": "E76g",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of White's most ambitious and aggressive setups, aiming to seize a massive space advantage. The specific line with 6...Na6 and 7.e5 leads to exceptionally sharp and complex positions where both sides fight for the initiative. This opening is a double-edged sword, perfect for tactical players who enjoy navigating chaotic middlegames and are comfortable with high-risk, high-reward scenarios.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break",
+        "King Hunt"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Space Advantage vs. Black's Counterplay",
+        "Undermining an Overextended Center",
+        "Kingside Attack",
+        "Fighting for the Initiative"
+      ],
+      "common_plans": [
+        "White aims to consolidate the center, often with Be2 and O-O, and then launch a decisive kingside attack, sometimes involving a g2-g4 push.",
+        "Black's primary plan is to undermine White's pawn center with the ...c5 pawn break, often after playing ...Nd7. The knight on a6 is key, typically moving to c5 to pressure d4.",
+        "White must carefully guard against Black's counterplay, as the large pawn center can quickly become a weakness if not properly supported.",
+        "Black seeks to trade pieces to relieve the spatial pressure and exploit the holes White has created in their own camp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:33:40.756Z"
+    }
   },
   "rnbqk2r/pp2ppbp/3p1np1/2P5/2P1PP2/2N5/PP4PP/R1BQKBNR b KQkq - 0 6": {
     "src": "scid",
     "eco": "E76",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 c5 6. dxc5",
     "name": "King's Indian: Four Pawns Attack, Exchange",
-    "scid": "E76b"
+    "scid": "E76b",
+    "analysis_json": {
+      "description": "The Exchange variation of the Four Pawns Attack transforms the game from a space-grabbing crush into a sharp, open battle. By exchanging on c5, White releases the central tension for immediate piece play, while Black gains active counterplay on the open d-file and the long diagonal. This opening is ideal for dynamic, tactical players who thrive in complex, unbalanced positions where initiative and precise calculation are paramount.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Unbalanced",
+        "Open Game",
+        "Counterattacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Pins",
+        "Piece Activity"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's space advantage vs. Black's piece activity",
+        "Control of the open d-file",
+        "Pressure on the e4-pawn",
+        "The power of the fianchettoed bishop"
+      ],
+      "common_plans": [
+        "White: Solidify the e4-pawn, complete development (Nf3, Be3, Be2), and use the space advantage to organize an attack.",
+        "Black: Immediately pressure the center with ...Qa5, control the d-file, and use the active Bg7 to create threats against White's queenside and center.",
+        "White: Restrain Black's counterplay and seek to trade pieces to transition into a favorable endgame where the space advantage tells.",
+        "Black: Provoke weaknesses in White's extended pawn structure and maintain the initiative, even at the cost of material."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:33:57.364Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPPP2/2N5/PP2B1PP/R1BQK1NR b KQ - 0 6": {
     "src": "eco_tsv",
@@ -75423,6 +76528,59 @@
     "name": "King's Indian Defense: Four Pawns Attack",
     "aliases": {
       "eco_js": "King's Indian Defense: Four Pawns Attack, 5. Be2 O-O 6. f4"
+    },
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious and aggressive response to the King's Indian Defense, aiming to seize a massive space advantage in the center and launch a crushing attack. This opening leads to incredibly sharp, complex, and double-edged positions where both sides must play with precision and courage. It is perfect for aggressive, tactical players who thrive on chaos, enjoy calculating long variations, and are willing to risk everything for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Complex",
+        "Dynamic",
+        "Space Gaining",
+        "Risky"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Sacrifice",
+        "Initiative",
+        "Counterattack",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Weaknesses",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Central Pawn Breaks",
+        "Kingside Attack",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White: Push the central pawns (e5, d5) to cramp Black, launch a kingside attack with moves like g4-g5, and use the space advantage to restrict Black's pieces.",
+        "Black: Undermine White's center with the ...c5 pawn break, often followed by ...Na6-c7, to create queenside counterplay and attack the base of White's pawn chain.",
+        "White: Maintain the central tension, develop pieces to support the pawn phalanx, and prepare for a decisive breakthrough on the kingside or in the center.",
+        "Black: Reroute the f6-knight (e.g., to e8 or h5) to prepare for pawn breaks like ...f5 or to challenge White's control of key squares, aiming to dismantle the center before White's attack materializes."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:34:14.267Z"
     }
   },
   "rnbq1rk1/pp3pbp/3p1np1/2ppP3/2P2P2/2N2N2/PP2B1PP/R1BQK2R b KQ - 0 9": {
@@ -75437,6 +76595,59 @@
       "chessGraph": "Florentine Gambit, KID",
       "chronos": "King's Indian: Four pawns attack, Florentine gambit",
       "icsbot": "Florentine Gambit, KID "
+    },
+    "analysis_json": {
+      "description": "The Florentine Gambit is a hyper-aggressive and razor-sharp line within the Four Pawns Attack, where White sacrifices a pawn with 9.e5 to gain a massive space advantage and launch a direct assault. This opening leads to wildly complex and double-edged positions where initiative and tactical calculation are paramount. It is perfectly suited for aggressive, risk-taking players who enjoy navigating chaos and playing for a direct knockout from the very beginning.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Gambit",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Sacrifice",
+        "Attacking",
+        "Initiative",
+        "Counterattack",
+        "Open Lines",
+        "King Hunt"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Material Deficit",
+        "Attacking the King",
+        "Undermining an Overextended Center",
+        "Fighting for the Initiative"
+      ],
+      "common_plans": [
+        "White aims for a swift kingside attack, often involving moves like Ng5, Qh5, and using the f-file to pressure Black's king.",
+        "Black's primary plan is to challenge White's sprawling center, typically with ...Ng4 to attack the e5 pawn, followed by developing counterplay against the weak d5-pawn.",
+        "White seeks to consolidate their space advantage, restrict Black's pieces, and convert the central dominance into a decisive attack.",
+        "Black looks to absorb the initial pressure and exploit the weaknesses in White's position, turning the material advantage into a winning endgame if the attack is neutralized."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:34:28.803Z"
     }
   },
   "rnbq1rk1/pp3pbp/3ppnp1/2pP4/2P1PP2/2N2N2/PP2B1PP/R1BQK2R b KQ - 1 8": {
@@ -75449,6 +76660,52 @@
       "scid": "King's Indian: Four Pawns Attack, 6.Be2 c5 7.d5 e6 8.Nf3",
       "ct": "King's Indian Defense, Four Pawns Attack",
       "chronos": "King's Indian: Four pawns attack"
+    },
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious and aggressive response to the King's Indian, creating a massive pawn center to cramp Black and launch a decisive attack. This opening leads to a sharp, double-edged struggle where White's space advantage clashes with Black's dynamic counter-attacking potential. It is perfect for fearless, tactical players who thrive in complex positions and enjoy fighting for the initiative from the very first moves.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Sacrifice",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Domination vs. Counter-attack",
+        "Space Advantage",
+        "Pawn Breaks",
+        "Kingside Attack"
+      ],
+      "common_plans": [
+        "White: Solidify the center, often with Be3, and launch a kingside attack with moves like g4-g5, aiming to overwhelm Black before the counter-attack materializes.",
+        "Black: Challenge White's center immediately with ...exd5. Follow up by developing queenside counterplay with ...Na6-c7 and the crucial ...b5 pawn break to open lines and attack the base of White's pawn chain."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:34:49.202Z"
     }
   },
   "r1bq1rk1/pp4bp/2nppnp1/2p5/2P1PPPP/2N5/PP2B3/R1BQK1NR b KQ - 0 10": {
@@ -75463,6 +76720,57 @@
       "chessGraph": "Six Pawns Attack, KID",
       "chronos": "King's Indian: Six pawns attack",
       "icsbot": "Six Pawns Attack, KID "
+    },
+    "analysis_json": {
+      "description": "The King's Indian Defense: Six Pawns Attack is one of the most aggressive and uncompromising systems against the KID, leading to a ferociously sharp and tactical battle. White launches an immediate pawn storm on the kingside, aiming to overwhelm Black's king, while Black seeks dynamic counterplay using the open f-file and attacking White's overextended center. This opening is perfect for fearless, tactical players who enjoy high-stakes, double-edged positions and are confident in their calculation skills.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Unbalanced",
+        "Risky"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "King Hunt"
+      ],
+      "positional_tags": [
+        "King Safety",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Pawn Storm",
+        "Counterplay on the Open File",
+        "Attack vs. Defense",
+        "Space vs. Development"
+      ],
+      "common_plans": [
+        "White: Continue the kingside attack with g5 and h5, aiming to open lines against the Black king. Use the queen and bishops to create threats on the h-file and g7-square. Prevent Black's counterplay on the f-file.",
+        "Black: Utilize the open f-file for the rook, often targeting the f3-square. Attack White's central pawns, especially e4. Develop pieces rapidly to create counter-threats against White's potentially exposed king.",
+        "White: Solidify the center and complete development before launching the final wave of the attack. Maneuver the knight from c3 to support the kingside assault.",
+        "Black: Create a diversion on the queenside with ...b5 to stretch White's defenses. Look for tactical shots based on White's overextended position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:35:08.441Z"
     }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPPP2/2N5/PP2B1PP/R1BQK1NR b KQ - 2 6": {
@@ -75475,6 +76783,56 @@
     "aliases": {
       "ct": "King's Indian Defense, Four Pawns Attack",
       "chessGraph": "E77"
+    },
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious and aggressive response to the King's Indian Defense, seizing a massive pawn center to cramp Black. This variation with 6.Be2 leads to a sharp, double-edged struggle where White's space advantage and attacking plans are pitted against Black's strategy of undermining and counter-attacking the overextended center. It's an opening for bold, tactical players who thrive in complex, dynamic positions and are willing to fight for the initiative from the very first moves.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Tactical",
+        "Strategic"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterattack",
+        "Central Pawn Breaks",
+        "Kingside Attack",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Nf3, castle, and launch a kingside attack, often with g4-g5, to overwhelm Black's king.",
+        "Black: Undermine White's center with the ...c5 pawn break, creating queenside pressure and targeting the d4 pawn.",
+        "Black: Prepare the alternative ...e5 pawn break to directly challenge White's central control.",
+        "White: Restrain Black's counterplay and slowly improve the position, converting the space advantage into a long-term edge."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:35:28.447Z"
     }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PPPP2/2N5/PP2B1PP/R1BQK1NR w KQ - 0 7": {
@@ -75482,21 +76840,174 @@
     "eco": "E77",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5",
     "name": "King's Indian: Four Pawns Attack, 6.Be2 c5",
-    "scid": "E77"
+    "scid": "E77",
+    "analysis_json": {
+      "description": "This variation represents a direct and sharp confrontation where Black immediately challenges White's massive pawn center. White's Four Pawns Attack aims for a crushing space advantage and a kingside assault, while Black's ...c5 counter-strike seeks to undermine the d4-pawn and create dynamic counterplay. The resulting positions are incredibly complex and double-edged, making this opening ideal for aggressive, tactical players who thrive on navigating chaos and fighting for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Opening the Center"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Clash in the Center",
+        "Space vs. Counterplay",
+        "Undermining the Pawn Center",
+        "Kingside Attack vs. Queenside Counter"
+      ],
+      "common_plans": [
+        "White: Solidify the center with the d4-d5 advance, then use the space advantage to launch a decisive kingside attack, often involving a pawn storm with g4-g5.",
+        "Black: Undermine White's center with ...cxd4, opening the c-file for the rook and creating a target of the d5 pawn. This is often followed by queenside expansion with ...a6 and ...b5.",
+        "Black: If the center becomes locked, reroute the f6-knight (e.g., to e8 or d7) to prepare the thematic ...f5 pawn break, challenging White's e4-pawn.",
+        "White: Maintain central tension, complete development, and use the f4-pawn as a battering ram to support an attack on the kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:35:57.219Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2pP4/2P1PP2/2N5/PP2B1PP/R1BQK1NR b KQ - 0 7": {
     "src": "scid",
     "eco": "E77",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. d5",
     "name": "King's Indian: Four Pawns Attack, 6.Be2 c5 7.d5",
-    "scid": "E77"
+    "scid": "E77",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of White's most ambitious and aggressive systems, aiming to seize a massive space advantage and launch a crushing kingside attack. By locking the center with 7.d5, White commits to a direct confrontation, where Black's counterplay is based on a queenside assault, typically initiated by the ...b5 pawn break. This opening leads to exceptionally sharp, double-edged positions, making it ideal for aggressive, tactical players who enjoy complex, unbalanced struggles and are willing to take calculated risks to fight for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Unbalanced",
+        "Attacking"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Weaknesses",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Risk-Taker",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Kingside Attack vs. Queenside Counterplay",
+        "Space Advantage vs. Structural Weakness",
+        "Race for Initiative",
+        "Central Blockade"
+      ],
+      "common_plans": [
+        "White: Launch a kingside pawn storm with g4-g5, often supported by Nf3, to attack the Black king. Restrict Black's pieces and prevent the ...b5 break.",
+        "Black: Prepare and execute the ...b5 pawn break, often preceded by ...a6 and ...Rb8, to undermine White's center and create queenside counterplay.",
+        "White: Reposition pieces (e.g., Nd2) to support the center and prepare for the kingside offensive.",
+        "Black: Reroute the knight from f6 (e.g., to e8-c7) to support the queenside and challenge White's central control, while the Bg7 becomes a key attacking piece on the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:36:17.191Z"
+    }
   },
   "rnbq1rk1/pp3pbp/3p1np1/2pP4/2P2P2/2N2N2/PP2B1PP/R1BQK2R b KQ - 0 9": {
     "src": "scid",
     "eco": "E77",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. d5 e6 8. Nf3 exd5 9. exd5",
     "name": "King's Indian: Four Pawns Attack, 6.Be2 c5 7.d5 e6 8.Nf3 exd5 9.exd5",
-    "scid": "E77"
+    "scid": "E77",
+    "analysis_json": {
+      "description": "This variation of the Four Pawns Attack leads to a tense, strategically rich middlegame where White's massive space advantage clashes with Black's long-term counterplay. The resulting fixed pawn structure creates clear plans for both sides: White aims to consolidate and launch a kingside attack, while Black methodically undermines the white pawn chain, particularly the d5-pawn. This opening is perfect for deep strategic thinkers who enjoy complex maneuvering and are comfortable playing with or against a significant space disparity.",
+      "style_tags": [
+        "Strategic",
+        "Complex",
+        "Aggressive",
+        "Positional",
+        "Dynamic",
+        "Closed Position"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pin",
+        "Initiative",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Weaknesses",
+        "Piece Activity",
+        "Central Control",
+        "Blockade"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Attacking a Pawn Chain",
+        "Prophylaxis",
+        "Blockade"
+      ],
+      "common_plans": [
+        "White: Consolidate the central space, complete development, prevent Black's ...b5 break (often with a3), and prepare a kingside attack, sometimes involving a g2-g4 push.",
+        "Black: Systematically increase pressure on the d5 pawn with moves like ...Re8, ...Bg4, and ...Nbd7. Prepare the queenside pawn break ...b5 with ...a6 and ...Rb8 to undermine White's center.",
+        "White: Reroute pieces to support the center and prepare for attack, such as Nc3-e2-d4 or Nf3-h2-g4.",
+        "Black: Utilize the powerful g7 bishop along the long diagonal and seek to trade off White's key defensive pieces."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:36:38.789Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PPPP2/2N2N2/PP2B1PP/R1BQK2R b KQ - 1 7": {
     "src": "eco_tsv",
@@ -75511,28 +77022,227 @@
       "chronos": "King's Indian: Four pawns attack, with Be2 and Nf3",
       "icsbot": "Fluid Attack, KID; E78 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Four Pawns Attack is one of White's most aggressive responses to the King's Indian Defense, aiming to seize a massive space advantage. The 'Fluid Attack' with 7. Be2 deviates from the main line (7. d5), keeping the central tension and often leading to more open, dynamic positions after Black's typical ...cxd4 break. This opening creates a sharp, double-edged struggle where White's spatial control is pitted against Black's potent counter-attacking chances, suiting players who thrive in complex, tactical battles.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Breakthrough",
+        "Attacking",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Space Advantage vs. Black's Counterplay",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Exploiting the Fianchettoed Bishop"
+      ],
+      "common_plans": [
+        "White: Recapture on d4 with the knight after ...cxd4, leading to an open game where White leverages superior space and development.",
+        "Black: Execute the ...cxd4 pawn break to open the c-file and the long diagonal for the fianchettoed bishop, creating counterplay against White's center.",
+        "White: If the center remains stable, complete development and prepare a kingside pawn storm (g4-g5) to attack the Black king.",
+        "Black: Develop queenside pressure with moves like ...Na6, ...b5, and ...Rb8 to distract White from their kingside ambitions."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:36:56.488Z"
+    }
   },
   "rn1q1rk1/pp2ppbp/3p1np1/2p5/2PPPPb1/2N2N2/PP2B1PP/R1BQK2R w KQ - 2 8": {
     "src": "scid",
     "eco": "E78",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 Bg4",
     "name": "King's Indian: Four Pawns Attack, 7.Nf3 Bg4",
-    "scid": "E78"
+    "scid": "E78",
+    "analysis_json": {
+      "description": "The Four Pawns Attack with 7...Bg4 is a fiercely sharp and tactical battleground within the King's Indian Defense. White stakes a claim to a massive central space advantage, aiming to suffocate Black and launch a decisive kingside attack. Black immediately challenges this ambition with the pin on the f3-knight, seeking to undermine the overextended white center and generate powerful counterplay. This opening is perfect for aggressive, tactical players who thrive in complex, double-edged positions where the initiative is paramount.",
+      "style_tags": [
+        "Aggressive",
+        "Tactical",
+        "Dynamic",
+        "Sharp",
+        "Complex",
+        "Double-edged",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Undermining"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterattack",
+        "Undermining the Center",
+        "Prophylaxis against White's Attack",
+        "Battle for the Initiative"
+      ],
+      "common_plans": [
+        "White: Push d5 to cramp Black, launch a kingside pawn storm with g4-g5, and use the space advantage to develop an attack against the black king.",
+        "Black: Exchange on f3 with the bishop to disrupt White's pawn structure, attack the d4 pawn with moves like ...cxd4 followed by ...Nc6, and create queenside counterplay to distract from White's kingside intentions."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:37:15.919Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/8/2PpPP2/2N2N2/PP2B1PP/R1BQK2R w KQ - 0 8": {
     "src": "scid",
     "eco": "E78",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4",
     "name": "King's Indian: Four Pawns Attack, 7.Nf3 cxd4",
-    "scid": "E78"
+    "scid": "E78",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian Defense is one of the most aggressive and ambitious systems for White, aiming to seize a massive space advantage. By immediately challenging the center with ...cxd4, Black creates a highly dynamic and unbalanced position. The game becomes a sharp, tactical battle where White leverages space for a kingside attack, while Black seeks to undermine the overextended center and generate counterplay. This opening is perfect for fearless, tactical players who thrive in complex, double-edged situations.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Unbalanced Position"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Attacking",
+        "Sacrifice",
+        "Opening Lines"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: After 8.Nxd4, White solidifies the center with Be3 and Qd2, often castling long to support a kingside pawn storm with g4-g5, aiming for a decisive attack.",
+        "Black: Black pressures the d4-pawn with ...Nc6, prepares queenside expansion with ...a6 and ...b5, and uses the active fianchettoed bishop to create threats against White's extended position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:55:45.282Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/8/2PNPP2/2N5/PP2B1PP/R1BQK2R b KQ - 0 8": {
     "src": "scid",
     "eco": "E78",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4",
     "name": "King's Indian: Four Pawns Attack, 7.Nf3 cxd4",
-    "scid": "E78"
+    "scid": "E78",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of the most aggressive and ambitious systems White can employ, aiming to seize a massive space advantage. By exchanging on d4, Black immediately challenges White's central control, leading to a sharp, double-edged middlegame where tactical calculation and initiative are paramount. This opening is perfect for dynamic players who thrive in complex, unbalanced positions and are not afraid to engage in a direct confrontation from the very beginning.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Central Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterattack",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Queenside Expansion"
+      ],
+      "common_plans": [
+        "White: Consolidate the center with Be3 and Qd2, preparing a kingside attack, often with g4-g5, while using the Nd4 as a powerful pivot.",
+        "Black: Challenge White's center with ...Nc6, targeting the d4 and e4 pawns, and create queenside counterplay with the ...a6 and ...b5 pawn break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:56:04.258Z"
+    }
   },
   "r1bq1rk1/pp2ppbp/2np1np1/8/2PNPP2/2N1B3/PP2B1PP/R2QK2R b KQ - 2 9": {
     "src": "eco_tsv",
@@ -75547,49 +77257,395 @@
       "chronos": "King's Indian: Four pawns attack, main line",
       "icsbot": "Exchange Variation, Four Pawns Attack, KID; E79 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Four Pawns Attack, Exchange Variation is a sharp and ambitious system against the King's Indian Defense, where White seizes a massive space advantage. Black's strategy revolves around undermining this central dominance, leading to a tense, double-edged struggle. This opening is perfect for players who thrive in complex, dynamic positions and enjoy executing clear, opposing strategic plans.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Complex",
+        "Strategic",
+        "Central Control"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Weaknesses"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Strategic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Piece Activity",
+        "Undermining the Center",
+        "Kingside Attack",
+        "Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: Consolidate the central space advantage, often preparing a kingside pawn storm (g4-g5) to attack the Black king. Another plan is to simply restrict Black's pieces and convert the space advantage into a positional bind.",
+        "Black: Systematically attack the d4-pawn with pieces (...Ng4, ...Bd7, ...Qa5) to force weaknesses. Prepare counter-thrusts like ...e5 or ...a6 followed by ...b5 to challenge White's control and create queenside play."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:56:22.525Z"
+    }
   },
   "r2q1rk1/pp1bppbp/2np1np1/8/2PNPP2/2N1B3/PP2B1PP/R2QK2R w KQ - 3 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Bd7",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Bd7",
-    "scid": "E79e"
+    "scid": "E79e",
+    "analysis_json": {
+      "description": "The Four Pawns Attack is White's most ambitious attempt to refute the King's Indian Defense, seizing a massive pawn center to cramp Black. This line leads to exceptionally sharp and complex middlegames where White tries to consolidate and launch a kingside attack, while Black aims to undermine the center and generate a fierce counterattack. It is a battle of extremes, perfectly suited for aggressive, tactical players who are not afraid of double-edged positions and thrive on calculating concrete variations.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Breaks"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Dominance vs. Counterattack",
+        "Undermining the Center",
+        "Space Advantage",
+        "Race to Attack"
+      ],
+      "common_plans": [
+        "White: Maintain the center, use the space advantage for a kingside attack (g4-g5), and prevent Black's counterplay.",
+        "Black: Prepare the ...f5 pawn break to shatter White's center, create queenside pressure with ...a6 and ...b5, and reroute the c6-knight to challenge White's central control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:56:39.586Z"
+    }
   },
   "r2q1rk1/pp1bppbp/2np1np1/8/2PNPP2/2N1B3/PP2B1PP/R2Q1RK1 b - - 4 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Bd7 10. O-O",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Bd7 10.O-O",
-    "scid": "E79f"
+    "scid": "E79f",
+    "analysis_json": {
+      "description": "The Four Pawns Attack represents White's most ambitious attempt to refute the King's Indian, creating a massive pawn center to cramp Black. This line leads to a fiercely sharp and double-edged struggle where White's space advantage clashes with Black's dynamic counter-attacking potential against the center. It is a perfect choice for aggressive, well-prepared players who thrive in complex, tactical positions and are not afraid to fight for the initiative from the outset.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-Edged",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Breaks"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Well-Prepared Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Space Advantage",
+        "Undermining the Center",
+        "Race to Attack"
+      ],
+      "common_plans": [
+        "White: Consolidate the massive pawn center, launch a kingside attack often initiated by g2-g4, and restrain Black's queenside counterplay.",
+        "Black: Undermine White's center with the ...a6 and ...b5 pawn break, pressure the d4-pawn, and activate the g7-bishop on the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:56:57.544Z"
+    }
   },
   "r2q1rk1/pp1bppbp/2np1np1/8/2PNPP2/2N1B3/PP1QB1PP/R3K2R b KQ - 4 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Bd7 10. Qd2",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Bd7 10.Qd2",
-    "scid": "E79e"
+    "scid": "E79e",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is one of the most aggressive and ambitious systems White can employ, aiming for total central domination and a crushing kingside attack. Black's strategy is to absorb the initial pressure, undermine the powerful white center, and generate sharp counterplay on the queenside or by striking back in the center. This opening leads to exceptionally complex, double-edged battles, ideal for fearless, tactical players who thrive on calculating long variations and fighting for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged",
+        "Theoretical"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pins"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Domination vs. Flank Counterattack",
+        "Space Advantage vs. Piece Activity",
+        "Prophylaxis against pawn breaks"
+      ],
+      "common_plans": [
+        "White: Castle queenside, launch a kingside pawn storm (g4-g5), and use the central space to restrict Black.",
+        "Black: Undermine the white center with ...a6 and ...b5, create queenside pressure with ...Rc8, and seek piece exchanges to relieve the cramp."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:57:17.410Z"
+    }
   },
   "r2q1rk1/pp2ppbp/2np1np1/8/2PNPPb1/2N1B3/PP2B1PP/R2QK2R w KQ - 3 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Bg4",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Bg4",
-    "scid": "E79d"
+    "scid": "E79d",
+    "analysis_json": {
+      "description": "The Four Pawns Attack with 9...Bg4 is one of the sharpest and most theoretically demanding lines in the King's Indian Defense. White's ambitious central pawn wall aims for a massive space advantage and a direct kingside assault, while Black's provocative 9...Bg4 immediately challenges White's key f3-knight, leading to wildly complex and double-edged positions. This opening is a bare-knuckle brawl, ideal for fearless, tactical players who excel in calculating concrete variations and fighting for the initiative.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Tactical",
+        "Dynamic",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Calculation"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Risk-Taker"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterattack",
+        "Central Domination",
+        "Kingside Attack",
+        "Exploiting Overextension"
+      ],
+      "common_plans": [
+        "White: Exchange on g4 (Bxg4), play h3, and use the open g-file for a kingside attack (e.g., Rg1). Push the central pawns (e5, d5) to cramp Black and launch an assault.",
+        "Black: Exchange the bishop for the knight on f3 (Bxf3), damaging White's pawn structure. Attack the center, particularly the d4 pawn, and prepare the ...f5 pawn break to dismantle White's control.",
+        "White: Maintain the knight on d4 as a powerful central anchor, rerouting it if necessary, and coordinate pieces for an attack on the Black king.",
+        "Black: Develop queenside counterplay with moves like ...a6 and ...b5 to distract White and create a second front."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:57:34.390Z"
+    }
   },
   "r1bq1rk1/pp2ppbp/2np2p1/8/2PNPPn1/2N1B3/PP2B1PP/R2QK2R w KQ - 3 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Ng4",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Ng4",
-    "scid": "E79c"
+    "scid": "E79c",
+    "analysis_json": {
+      "description": "The 9...Ng4 variation of the Four Pawns Attack is one of the sharpest and most theoretically demanding lines in the King's Indian Defense. Black immediately challenges White's central control and piece coordination, aiming to provoke weaknesses and create tactical opportunities. This opening leads to a complex, double-edged battle where precise calculation and a feel for the initiative are paramount, making it ideal for aggressive, tactical players who thrive in chaotic positions.",
+      "style_tags": [
+        "Aggressive",
+        "Tactical",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Forcing Moves"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "King Safety"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Theorist"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Domination vs. Flank Attack",
+        "Space Advantage vs. Piece Activity",
+        "Race to Attack",
+        "Provoking Weaknesses"
+      ],
+      "common_plans": [
+        "White: After the forced sequence 10.Bxg4 Bxg4 11.Qxg4 Nxe3 12.fxe3, White will try to use the massive space advantage to launch a kingside attack, often with h4-h5. The goal is to overwhelm Black before the weaknesses in the center (doubled e-pawns) can be exploited.",
+        "Black: Black aims to exploit the static weaknesses created in White's camp, particularly the doubled e-pawns and the d4-pawn. Typical plans involve challenging the center with ...e6, expanding on the queenside with ...a6 and ...b5, and rerouting pieces to pressure White's weak points."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:57:54.831Z"
+    }
   },
   "r1bq1rk1/pp2ppbp/3p1np1/8/2PnPP2/2N1B3/PP2B1PP/R2QK2R w KQ - 0 10": {
     "src": "scid",
     "eco": "E79",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. Nf3 cxd4 8. Nxd4 Nc6 9. Be3 Nxd4",
     "name": "King's Indian: Four Pawns Attack, Main Line, 9...Nxd4",
-    "scid": "E79b"
+    "scid": "E79b",
+    "analysis_json": {
+      "description": "The Four Pawns Attack against the King's Indian is a fiercely aggressive system where White builds a massive pawn center to cramp the opponent and launch a kingside assault. This specific line, with 9...Nxd4, is a direct and modern way for Black to challenge White's central control, aiming to disrupt coordination and initiate immediate counterplay. The resulting positions are exceptionally sharp and tactical, suiting dynamic players who are comfortable navigating complex, double-edged middlegames where a single tempo can be decisive.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Tactical",
+        "Complex",
+        "Double-edged",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Attacking",
+        "Pins",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Tactical Player",
+        "Aggressive Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Undermining the Center",
+        "Space Advantage",
+        "Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: After 10.Bxd4, consolidate the center with Qd2, complete development with O-O, and prepare a kingside attack, often initiated by the f4-f5 pawn push.",
+        "Black: Exert pressure on the d4-pawn with ...Qa5 and ...Bd7, prepare the ...e5 pawn break to shatter White's center, and create queenside counterplay with ...a6 and ...b5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:58:13.086Z"
+    }
   },
   "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR b KQkq - 0 5": {
     "src": "eco_tsv",
@@ -75604,49 +77660,398 @@
       "chronos": "King's Indian: Saemisch variation",
       "icsbot": "Saemisch Variation, KID; E80 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Sämisch Variation is one of White's most aggressive and direct attempts to challenge the King's Indian Defense. By playing 5.f3, White builds a formidable pawn center, blunts the powerful g7 bishop, and prepares for a direct kingside assault. This opening leads to exceptionally sharp, double-edged positions where White's space advantage and attacking plans clash with Black's dynamic counterplay, typically on the queenside or against the center. It is ideal for aggressive, tactical players who enjoy complex, committal struggles and are not afraid to launch an early attack.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Double-edged",
+        "Complex",
+        "Strategic",
+        "Attacking",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Sacrifice",
+        "Initiative",
+        "Counterattack",
+        "King Hunt",
+        "Pawn Storm"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Central Control",
+        "Weak Squares",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Strategic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Kingside Attack vs. Black's Queenside Counterplay",
+        "Struggle for Central Control",
+        "The role of Black's fianchettoed bishop",
+        "Prophylaxis against pawn breaks"
+      ],
+      "common_plans": [
+        "White: Execute a kingside pawn storm with g4-h4-h5, often followed by piece sacrifices to open lines against the Black king.",
+        "White: Castle queenside to facilitate the kingside attack and remove the king from the center.",
+        "Black: Launch a queenside counter-attack with ...a6, ...Rb8, and the ...b5 pawn break to create diversions.",
+        "Black: Challenge White's center directly with the ...e5 or ...c5 pawn breaks, aiming to undermine the d4-e4 pawn duo."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:58:31.537Z"
+    }
   },
   "rnbqk2r/1pp1ppbp/p2p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR w KQkq - 0 6": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 a6",
     "name": "King's Indian: Saemisch, 5...a6",
-    "scid": "E80j"
+    "scid": "E80j",
+    "analysis_json": {
+      "description": "This is a sharp and modern response to the aggressive Saemisch Variation. By playing 5...a6, Black immediately signals an intention to fight for queenside space with ...b5, aiming to undermine White's massive pawn center before a decisive kingside attack can be launched. The resulting games are typically double-edged and highly complex, often featuring opposite-side castling and a race to attack the enemy king, suiting dynamic players who excel in unbalanced positions.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Counter-attacking",
+        "Strategic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Attacking",
+        "Sacrifice",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Queenside Expansion",
+        "Opposite-side Castling",
+        "King Safety",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Dynamic Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside counterplay vs. Kingside attack",
+        "Race for the initiative",
+        "Undermining a large pawn center"
+      ],
+      "common_plans": [
+        "White's plan is to castle queenside, launch a pawn storm with g4-h4-g5, and deliver checkmate on the kingside.",
+        "Black's plan is to expand on the queenside with ...b5 and ...c5, opening lines against the White king and creating counterplay.",
+        "Black often delays castling to see where White commits their king, maintaining flexibility.",
+        "White aims to keep the center closed to facilitate the flank attack, while Black seeks to break it open to neutralize White's initiative."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:58:48.628Z"
+    }
   },
   "rnbqk2r/1pp1ppbp/p2p1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQkq - 1 6": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 a6 6. Be3",
     "name": "King's Indian: Saemisch, 5...a6 6.Be3",
-    "scid": "E80k"
+    "scid": "E80k",
+    "analysis_json": {
+      "description": "The Saemisch with 5...a6 is a sharp and modern battleground within the King's Indian Defense. White establishes a formidable pawn center with f3, preparing for a kingside assault, while Black's flexible ...a6 signals immediate intent for queenside counterplay with ...b5. This creates a tense, double-edged game where both sides race to execute their plans on opposite flanks, making it ideal for aggressive players who thrive in complex, imbalanced positions.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Double-edged",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Pawn Storm",
+        "Sacrifice"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Opposite-side Castling"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Attack and Defense",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Opposite-side castling and attacks",
+        "Queenside expansion vs. Kingside pawn storm",
+        "Struggle for central control",
+        "Prophylaxis and timing"
+      ],
+      "common_plans": [
+        "White's Plan: Castle queenside (via Qd2, 0-0-0) and launch a decisive kingside pawn storm with g4-g5 and h4-h5 to attack the Black king.",
+        "Black's Plan: Initiate queenside counterplay with ...b5, often followed by ...c5, to undermine White's center and create threats against the white king.",
+        "White's Plan: Maintain central stability, restrict Black's pieces with the space advantage, and methodically build up the kingside attack.",
+        "Black's Plan: Challenge White's center with moves like ...e5 or ...c5 at an opportune moment, opening lines for the powerful dark-squared bishop."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:59:04.749Z"
+    }
   },
   "rnbqk2r/pp2ppbp/3p1np1/2p5/2PPP3/2N2P2/PP4PP/R1BQKBNR w KQkq - 0 6": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 c5",
     "name": "King's Indian: Saemisch, 5...c5",
-    "scid": "E80h"
+    "scid": "E80h",
+    "analysis_json": {
+      "description": "This is a highly aggressive and direct response to the Saemisch Variation. By immediately striking at the center with ...c5, Black aims to create dynamic, unbalanced positions, often resembling a Benoni Defense, before White can consolidate their space advantage. The resulting middlegames are typically sharp, double-edged, and tactical, suiting players who thrive on initiative and are comfortable with complex, concrete calculations.",
+      "style_tags": [
+        "Aggressive",
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Unbalanced",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking",
+        "Undermining"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Initiative"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension",
+        "Queenside Counterplay vs. Kingside Attack",
+        "Undermining the Center",
+        "Fighting for the Initiative"
+      ],
+      "common_plans": [
+        "White: Push d5 to gain space and cramp Black, launch a kingside pawn storm with g4-g5, and exploit the d6-pawn weakness.",
+        "Black: Exert pressure on the d4-pawn, create queenside counterplay (e.g., ...b5, ...a6), activate the fianchettoed bishop, and challenge White's central control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:59:19.640Z"
+    }
   },
   "rnbk3r/pp2ppbp/5np1/2p5/2P1P3/2N2P2/PP4PP/R1B1KBNR w KQ - 0 8": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 c5 6. dxc5 dxc5 7. Qxd8+ Kxd8",
     "name": "King's Indian: Saemisch, 5...c5 Queenswap",
-    "scid": "E80i"
+    "scid": "E80i",
+    "analysis_json": {
+      "description": "This variation of the Saemisch King's Indian leads to a highly strategic, queenless middlegame right out of the opening. By trading queens, Black sidesteps the traditional sharp, attacking lines and steers the game into more technical and positional waters, albeit with a slightly exposed king. This opening is perfect for strategic players who are comfortable in endgames and excel at maneuvering, understanding pawn structures, and fighting for subtle, long-term advantages.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Technical",
+        "Queenless Middlegame",
+        "Endgame-like"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Tempo",
+        "Pin",
+        "Minority Attack"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "King Safety",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares",
+        "Central Control"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Endgame Specialist"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Endgame Transition",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Exploiting White's Space Advantage",
+        "Managing Black's Exposed King",
+        "Battle for the d5-square",
+        "Activating the Fianchettoed Bishop"
+      ],
+      "common_plans": [
+        "White: Develop with Be3, Nf3, and O-O, aiming to control the d5-square with a knight. Use the central space to restrict Black and build pressure.",
+        "Black: Consolidate the king position, typically via ...Kc7. Develop pieces harmoniously (...e6, ...Be7, ...Nd7) and challenge White's center, often preparing the ...e5 pawn break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:59:38.122Z"
+    }
   },
   "rnbqk2r/pp2ppbp/2pp1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR w KQkq - 0 6": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 c6",
     "name": "King's Indian: Saemisch, 5...c6",
-    "scid": "E80l"
+    "scid": "E80l",
+    "analysis_json": {
+      "description": "This opening is a strategic and resilient response to the aggressive Saemisch Variation. By playing 5...c6, Black prepares to challenge White's formidable pawn center with a queenside expansion (...b5), creating a complex, double-edged struggle. This line is perfect for patient, strategic players who enjoy undermining an opponent's central control and are comfortable navigating positions with imbalanced pawn structures.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Dynamic",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Weaknesses",
+        "Piece Activity"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Undermining the Center",
+        "Queenside Counterplay vs. Kingside Attack",
+        "Space Advantage vs. Structural Soundness",
+        "Delayed Castling"
+      ],
+      "common_plans": [
+        "White: Solidify the center with Be3, Qd2, castle queenside, and launch a kingside pawn storm with g4-h4.",
+        "Black: Prepare and execute the ...b5 pawn break to open the c-file and attack White's central pawns.",
+        "White: Restrain Black's queenside play and slowly squeeze Black with the space advantage.",
+        "Black: Develop pieces to support the queenside counter-attack, such as Na6-c7, Rb8, and a5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T19:59:56.329Z"
+    }
   },
   "rnbqk2r/pp2ppbp/2pp1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQkq - 1 6": {
     "src": "scid",
     "eco": "E80",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 c6 6. Be3",
     "name": "King's Indian: Saemisch, 5...c6 6.Be3",
-    "scid": "E80m"
+    "scid": "E80m",
+    "analysis_json": {
+      "description": "The Saemisch variation with 5...c6 leads to one of the sharpest and most theoretically debated battlegrounds in the King's Indian Defense. White establishes a massive pawn center and prepares a direct kingside assault, often involving queenside castling and a pawn storm. Black responds with a solid but ambitious setup, aiming to launch a swift counterattack on the queenside with ...a6 and ...b5. This opening is perfect for aggressive, tactical players who thrive in complex, double-edged positions where a race for the initiative determines the outcome.",
+      "style_tags": [
+        "Aggressive",
+        "Sharp",
+        "Dynamic",
+        "Complex",
+        "Theoretical",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "King Safety",
+        "Space Advantage",
+        "Queenside Counterplay"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Opposite-side Castling",
+        "Kingside Attack vs. Queenside Counterplay",
+        "Pawn Storm",
+        "Race for Initiative"
+      ],
+      "common_plans": [
+        "White's Plan: Castle queenside (Qd2, 0-0-0), launch a kingside pawn storm with g4-h4-g5, and seek a mating attack on the h-file.",
+        "Black's Plan: Prepare and execute the ...b5 pawn break (often via ...a6) to open lines and create a counterattack against the White king on the queenside.",
+        "Black's Central Break: At an opportune moment, Black may challenge White's center directly with a timely ...e5 pawn break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T20:00:15.829Z"
+    }
   },
   "rnbqk2r/1p2ppbp/p1pp1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR w KQkq - 0 7": {
     "src": "scid",

@@ -131,37 +131,23 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="landing-page">
-      {/* Hero Section - Correct Layout to Match Reference */}
-      <section className="hero-section" style={{ padding: 'var(--space-xxl) 0' }}>
-        <div className="hero-content" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 var(--space-lg)', textAlign: 'center' }}>
-          {/* Small Chess Trainer header */}
-          <div className="app-header" style={{ marginBottom: 'var(--space-lg)' }}>
-            <h1 className="title-hero" style={{ marginBottom: 'var(--space-sm)' }}>
-              Chess Trainer
-            </h1>
-          </div>
-
-          {/* Main subtitle - matching the reference image */}
-          <p className="text-body-large text-secondary" style={{ 
-            marginBottom: 'var(--space-xl)',
-            maxWidth: '600px',
-            margin: '0 auto var(--space-xl) auto'
-          }}>
-            Master every opening from the common to the obscure, this and much more.
+      {/* Hero Section - Clean centered design */}
+      <section className="hero-section">
+        <div className="hero-content">
+          {/* Main title */}
+          <h1 className="hero-title">Chess Trainer</h1>
+          
+          {/* Subtitle */}
+          <p className="hero-subtitle">
+            Master every opening from the first move - discover, learn, and track chess openings with AI analysis and much more.
           </p>
 
-          {/* Search Component Container */}
-          <div className="search-container" style={{
-            backgroundColor: 'var(--bg-surface)',
-            borderRadius: 'var(--border-radius-medium)',
-            padding: 'var(--space-xl)',
-            maxWidth: '800px',
-            margin: '0 auto'
-          }}>
+          {/* Search bar */}
+          <div className="hero-search-wrapper">
             <SearchBar
               variant="landing"
               onSelect={handleOpeningSelect}
-              placeholder={loading ? "Loading openings..." : "Search for an opening by name or moves..."}
+              placeholder="Look for an opening by move or name..."
               disabled={loading}
               loading={loading}
               openingsData={openingsData}

@@ -199,22 +199,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         />
         
         {variant === 'landing' && (
-          <div className="search-actions">
-            <button 
-              className="search-go-btn" 
-              onClick={handleGo}
-              disabled={disabled || loading || searchTerm.length < 2}
-            >
-              {loading ? 'Loading...' : 'Go'}
-            </button>
-            <button 
-              className="search-surprise-btn" 
-              onClick={handleSurpriseMe}
-              disabled={disabled || loading}
-            >
-              {loading ? 'Loading...' : 'Surprise Me'}
-            </button>
-          </div>
+          <button 
+            className="search-surprise-btn" 
+            onClick={handleSurpriseMe}
+            disabled={disabled || loading}
+          >
+            {loading ? 'Loading...' : 'Surprise me!'}
+          </button>
         )}
         
         {loading && (

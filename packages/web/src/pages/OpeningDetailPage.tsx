@@ -278,7 +278,7 @@ const OpeningDetailPage: React.FC = () => {
 
       {/* Page Title Area - Full Width */}
       <div className="page-title-area centered">
-        <h1 className="opening-name">{opening.name}</h1>
+        <h1 className="title-page">{opening.name}</h1>
         <div className="complexity-and-tags centered">
           {/* ECO code pill */}
           {opening.eco && (
@@ -385,7 +385,7 @@ const OpeningDetailPage: React.FC = () => {
 
           {/* Opening Moves List */}
           <div className="opening-moves-list">
-            <h3>Opening Moves</h3>
+            <h3 className="title-subsection">Opening Moves</h3>
             <div className="moves-notation">
               {formatMovesAsPairs(getMovesList()).map((movePair, index) => (
                 <div key={index} className="move-pair">
@@ -414,7 +414,7 @@ const OpeningDetailPage: React.FC = () => {
         <div className="right-column knowledge-panel">
           {/* Statistics Component */}
           <div className="statistics-component">
-            <h3>Game Statistics</h3>
+            <h3 className="title-subsection">Game Statistics</h3>
             {popularityStats ? (
               <>
                 <div className="statistics-bars">
@@ -534,7 +534,7 @@ const OpeningDetailPage: React.FC = () => {
                 {/* Overview Tab */}
                 <div className={`tab-content-panel ${activeTab === 'overview' ? 'active' : ''}`}>
                   <div className="content-panel-improved">
-                    <h3>Description</h3>
+                    <h3 className="title-subsection">Description</h3>
                     <p>
                       {opening.analysis?.description || 
                        `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
@@ -552,7 +552,7 @@ const OpeningDetailPage: React.FC = () => {
                 {/* Videos Tab */}
                 <div className={`tab-content-panel ${activeTab === 'videos' ? 'active' : ''}`}>
                   <div className="video-lessons-section content-panel-improved">
-                    <h3>Video Lessons</h3>
+                    <h3 className="title-subsection">Video Lessons</h3>
                     <p>Video lessons coming soon...</p>
                   </div>
                 </div>

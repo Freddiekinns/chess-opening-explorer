@@ -20,6 +20,7 @@ interface Opening {
 
 interface OpeningCardProps {
   opening: Opening
+  showPopularity?: boolean
   showEco?: boolean
   onClick?: (opening: Opening) => void
   className?: string
@@ -27,6 +28,7 @@ interface OpeningCardProps {
 
 export const OpeningCard: React.FC<OpeningCardProps> = ({
   opening,
+  showPopularity = true,
   showEco = true,
   onClick,
   className = ''
@@ -78,6 +80,11 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
         <h3 className="title-subsection">{opening.name}</h3>
         {showEco && (
           <span className="eco-badge">{opening.eco}</span>
+        )}
+        {showPopularity && opening.analysis?.popularity && (
+          <span className="text-sm text-secondary">
+            Pop: {opening.analysis.popularity}
+          </span>
         )}
       </div>
       

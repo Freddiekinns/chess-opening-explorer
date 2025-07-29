@@ -136,20 +136,13 @@ const LandingPage: React.FC = () => {
         <div className="hero-content" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 var(--space-lg)', textAlign: 'center' }}>
           {/* Small Chess Trainer header */}
           <div className="app-header" style={{ marginBottom: 'var(--space-lg)' }}>
-            <h1 style={{ 
-              fontSize: 'var(--font-size-h1)', 
-              fontWeight: 'var(--font-weight-h1)', 
-              color: 'var(--text-primary)',
-              marginBottom: 'var(--space-sm)'
-            }}>
+            <h1 className="title-hero" style={{ marginBottom: 'var(--space-sm)' }}>
               Chess Trainer
             </h1>
           </div>
 
           {/* Main subtitle - matching the reference image */}
-          <p style={{ 
-            fontSize: 'var(--font-size-h3)', 
-            color: 'var(--text-secondary)',
+          <p className="text-body-large text-secondary" style={{ 
             marginBottom: 'var(--space-xl)',
             maxWidth: '600px',
             margin: '0 auto var(--space-xl) auto'
@@ -180,9 +173,9 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Popular Openings - Use Component's Built-in UI */}
-      {dataLoaded && openingsData.length > 0 && (
+      {dataLoaded && popularOpenings.length > 0 && (
         <PopularOpeningsGrid
-          openings={openingsData}
+          openings={popularOpenings}
           onOpeningSelect={handleOpeningSelect}
           className="main-grid"
         />

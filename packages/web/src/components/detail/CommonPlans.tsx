@@ -43,10 +43,10 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
   if (loading) {
     return (
-      <section className={`common-plans content-panel ${className}`}>
-        <h3>Common Plans</h3>
+      <div className={`content-panel-improved ${className}`}>
+        <h3 className="title-subsection">Common Plans</h3>
         <div className="loading-state">Loading common plans...</div>
-      </section>
+      </div>
     );
   }
 
@@ -59,24 +59,24 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
   if (commonPlans.length === 0) {
     return (
-      <section className={`common-plans content-panel ${className}`}>
-        <h3>Common Plans</h3>
-        <div className="empty-state">No common plans available for this opening.</div>
-      </section>
+      <div className={`content-panel-improved ${className}`}>
+        <h3 className="title-subsection">Common Plans</h3>
+        <p>No common plans available for this opening.</p>
+      </div>
     );
   }
 
   return (
-    <section className={`common-plans content-panel ${className}`}>
-      <h3>Common Plans</h3>
+    <div className={`content-panel-improved ${className}`}>
+      <h3 className="title-subsection">Common Plans</h3>
       <div className="plans-list">
         {commonPlans.map((plan, index) => (
           <div key={index} className="plan-item">
-            {plan}
+            <p>{plan}</p>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

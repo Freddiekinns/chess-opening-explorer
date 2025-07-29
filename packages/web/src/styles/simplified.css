@@ -205,8 +205,9 @@ body {
 .site-title {
   color: var(--color-text-primary);
   text-decoration: none;
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
 }
 
 /* =================
@@ -563,6 +564,23 @@ body {
 .content-panel-improved p {
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
+}
+
+/* Common Plans Styling */
+.plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.plan-item p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  margin: 0;
+  padding: var(--space-3);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--border-radius-medium);
+  border-left: 3px solid var(--color-brand-orange);
 }
 
 /* =================
@@ -1171,6 +1189,14 @@ body {
    RESPONSIVE DESIGN
    ================= */
 @media (max-width: 768px) {
+  /* Responsive Typography */
+  .title-hero { font-size: var(--font-size-3xl); }
+  .title-page { font-size: var(--font-size-2xl); }
+  .title-section { font-size: var(--font-size-xl); }
+  .title-subsection { font-size: var(--font-size-lg); }
+  .text-body-large { font-size: var(--font-size-base); }
+  
+  /* Layout Adjustments */
   .two-column-layout {
     grid-template-columns: 1fr;
     gap: var(--space-4);
@@ -1189,10 +1215,6 @@ body {
   
   .search-input {
     min-width: 250px;
-  }
-  
-  .opening-name {
-    font-size: var(--font-size-h2);
   }
   
   .openings-grid {

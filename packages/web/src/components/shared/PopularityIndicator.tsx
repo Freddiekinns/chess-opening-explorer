@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/index.css';
 
 interface PopularityIndicatorProps {
   score: number  // 1-10 popularity score

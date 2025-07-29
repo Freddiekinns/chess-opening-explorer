@@ -6,7 +6,6 @@ import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
-import '../styles/index.css' // Use design system
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {

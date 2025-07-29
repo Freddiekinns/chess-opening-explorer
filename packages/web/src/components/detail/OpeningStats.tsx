@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/index.css';
 
 interface OpeningStatsProps {
   gamesAnalyzed: number;
@@ -21,42 +20,46 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
   const blackPercent = (blackWins / gamesAnalyzed) * 100;
 
   return (
-    <div className="game-statistics">
-      <h3>Game Statistics</h3>
+    <div className="statistics-component">
+      <h3>Statistics</h3>
       
-      <div className="success-bars">
-        <div className="stat-row">
-          <span className="stat-label">WHITE SUCCESS</span>
-          <div className="progress-bar">
-            <div className="bar white" style={{width: `${whitePercent}%`}} />
+      <div className="statistics-bars">
+        <div className="stat-bar">
+          <span className="stat-label">White Success</span>
+          <div className="bar-container">
+            <div className="bar-fill white-bar" style={{width: `${whitePercent}%`}} />
           </div>
+          <span className="stat-value">{Math.round(whitePercent)}%</span>
         </div>
-        <div className="stat-row">
-          <span className="stat-label">DRAW</span>
-          <div className="progress-bar">
-            <div className="bar draw" style={{width: `${drawPercent}%`}} />
+        
+        <div className="stat-bar">
+          <span className="stat-label">Draw Rate</span>
+          <div className="bar-container">
+            <div className="bar-fill draw-bar" style={{width: `${drawPercent}%`}} />
           </div>
+          <span className="stat-value">{Math.round(drawPercent)}%</span>
         </div>
-        <div className="stat-row">
-          <span className="stat-label">BLACK SUCCESS</span>
-          <div className="progress-bar">
-            <div className="bar black" style={{width: `${blackPercent}%`}} />
+        
+        <div className="stat-bar">
+          <span className="stat-label">Black Success</span>
+          <div className="bar-container">
+            <div className="bar-fill black-bar" style={{width: `${blackPercent}%`}} />
           </div>
+          <span className="stat-value">{Math.round(blackPercent)}%</span>
         </div>
       </div>
 
-      <div className="stats-numbers">
-        <div className="stat-item">
-          <span className="stat-label">Total Games Analyzed:</span>
-          <span className="stat-value">{gamesAnalyzed.toLocaleString()}</span>
-        </div>
-        {averageRating && (
-          <div className="stat-item">
-            <span className="stat-label">Average Rating:</span>
-            <span className="stat-value">{averageRating}</span>
-          </div>
-        )}
+      <div className="total-games">
+        <span className="games-label">Total Games Analyzed</span>
+        <span className="games-value">{gamesAnalyzed.toLocaleString()}</span>
       </div>
+      
+      {averageRating && (
+        <div className="average-rating">
+          <span className="rating-label">Average Rating</span>
+          <span className="rating-value">{averageRating}</span>
+        </div>
+      )}
     </div>
   );
 };

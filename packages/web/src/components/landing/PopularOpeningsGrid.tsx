@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
-import '../../styles/index.css';
 
 interface Opening {
   fen: string

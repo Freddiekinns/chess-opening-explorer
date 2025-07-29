@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../../styles/index.css'
 
 interface Opening {
   fen: string

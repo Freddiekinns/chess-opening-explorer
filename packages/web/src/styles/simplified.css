@@ -338,9 +338,8 @@ body {
   padding: var(--space-6);
 }
 
-.opening-moves-list h3 {
+.opening-moves-list .title-subsection {
   margin: 0 0 var(--space-4) 0;
-  color: var(--color-text-primary);
 }
 
 .moves-notation {
@@ -388,13 +387,11 @@ body {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
   padding: var(--space-6);
+  margin-bottom: var(--space-6);
 }
 
-.statistics-component h3 {
-  margin: 0 0 var(--space-6) 0;
-  color: var(--color-text-primary);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
+.statistics-component .title-subsection {
+  margin: 0 0 var(--space-4) 0;
 }
 
 /* Game Statistics Bars */

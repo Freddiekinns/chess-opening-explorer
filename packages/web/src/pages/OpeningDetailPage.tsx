@@ -6,6 +6,7 @@ import { Chessboard } from 'react-chessboard'
 import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
+import { OpeningStats } from '../components/detail/OpeningStats'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -413,96 +414,22 @@ const OpeningDetailPage: React.FC = () => {
         {/* Right Column - Knowledge Panel (55%) */}
         <div className="right-column knowledge-panel">
           {/* Statistics Component */}
-          <div className="statistics-component">
-            <h3 className="title-subsection">Game Statistics</h3>
-            {popularityStats ? (
-              <>
-                <div className="statistics-bars">
-                  <div className="stat-bar">
-                    <span className="stat-label">White Success</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div 
-                          className="bar-fill white-bar" 
-                          style={{ width: `${((popularityStats.white_win_rate || 0) * 100).toFixed(1)}%` }}
-                        ></div>
-                      </div>
-                      <span className="stat-value">{((popularityStats.white_win_rate || 0) * 100).toFixed(1)}%</span>
-                    </div>
-                  </div>
-                  <div className="stat-bar">
-                    <span className="stat-label">Draw</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div 
-                          className="bar-fill draw-bar" 
-                          style={{ width: `${((popularityStats.draw_rate || 0) * 100).toFixed(1)}%` }}
-                        ></div>
-                      </div>
-                      <span className="stat-value">{((popularityStats.draw_rate || 0) * 100).toFixed(1)}%</span>
-                    </div>
-                  </div>
-                  <div className="stat-bar">
-                    <span className="stat-label">Black Success</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div 
-                          className="bar-fill black-bar" 
-                          style={{ width: `${((popularityStats.black_win_rate || 0) * 100).toFixed(1)}%` }}
-                        ></div>
-                      </div>
-                      <span className="stat-value">{((popularityStats.black_win_rate || 0) * 100).toFixed(1)}%</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="total-games">
-                  <span className="games-label">Total Games Analyzed:</span>
-                  <span className="games-value">{popularityStats.games_analyzed?.toLocaleString() || 'N/A'}</span>
-                </div>
-                {popularityStats.avg_rating && (
-                  <div className="average-rating">
-                    <span className="rating-label">Average Rating:</span>
-                    <span className="rating-value">{popularityStats.avg_rating}</span>
-                  </div>
-                )}
-              </>
-            ) : (
-              <>
-                <div className="statistics-bars">
-                  <div className="stat-bar">
-                    <span className="stat-label">White Success</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div className="bar-fill white-bar" style={{ width: '48%' }}></div>
-                      </div>
-                      <span className="stat-value">48%</span>
-                    </div>
-                  </div>
-                  <div className="stat-bar">
-                    <span className="stat-label">Draw</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div className="bar-fill draw-bar" style={{ width: '32%' }}></div>
-                      </div>
-                      <span className="stat-value">32%</span>
-                    </div>
-                  </div>
-                  <div className="stat-bar">
-                    <span className="stat-label">Black Success</span>
-                    <div className="bar-container">
-                      <div className="bar-track">
-                        <div className="bar-fill black-bar" style={{ width: '20%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="total-games">
-                  <span className="games-label">Total Games Analyzed:</span>
-                  <span className="games-value">{opening?.games_analyzed?.toLocaleString() || 'N/A'}</span>
-                </div>
-              </>
-            )}
-          </div>
+          {popularityStats ? (
+            <OpeningStats
+              gamesAnalyzed={popularityStats.games_analyzed || 0}
+              whiteWins={Math.round((popularityStats.white_win_rate || 0) * (popularityStats.games_analyzed || 0))}
+              draws={Math.round((popularityStats.draw_rate || 0) * (popularityStats.games_analyzed || 0))}
+              blackWins={Math.round((popularityStats.black_win_rate || 0) * (popularityStats.games_analyzed || 0))}
+              averageRating={popularityStats.avg_rating}
+            />
+          ) : (
+            <OpeningStats
+              gamesAnalyzed={opening?.games_analyzed || 100000}
+              whiteWins={48000}
+              draws={32000}
+              blackWins={20000}
+            />
+          )}
 
           {/* Simple Tabbed Content Section */}
           {opening?.eco && (

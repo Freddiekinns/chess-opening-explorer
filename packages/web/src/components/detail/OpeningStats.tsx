@@ -21,7 +21,7 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
 
   return (
     <div className="statistics-component">
-      <h3>Statistics</h3>
+      <h3 className="title-subsection">Game Statistics</h3>
       
       <div className="statistics-bars">
         <div className="stat-bar">

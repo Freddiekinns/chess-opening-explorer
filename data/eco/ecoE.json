@@ -59817,126 +59817,1014 @@
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. e3",
     "name": "King's Indian: 4.Nf3 O-O 5.e3",
-    "scid": "E61m"
+    "scid": "E61m",
+    "analysis_json": {
+      "description": "This variation represents a solid and positional approach by White against the King's Indian Defense, deliberately avoiding the sharper main lines. By playing 5.e3, White creates a robust central pawn structure, aiming for a strategic, maneuvering game based on space and central control. This opening is ideal for patient, strategic players who prefer to slowly outplay their opponents by understanding pawn structures and piece placement, rather than engaging in immediate, complex tactical battles.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Game",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pawn Break",
+        "Initiative",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Pawn Breaks (...e5 vs d5)",
+        "Restraining the Fianchettoed Bishop",
+        "Queenside Expansion"
+      ],
+      "common_plans": [
+        "White aims to complete development with Be2 and O-O, control the center, and often meet Black's ...e5 with d5, leading to a closed game where White expands on the queenside with b4.",
+        "Black's primary plan is to achieve the ...e5 pawn break to challenge White's center. If the center closes after d5, Black will launch a typical King's Indian kingside attack with moves like ...f5-f4 and ...g5.",
+        "Black can also opt for the ...c5 pawn break, challenging White's d4-pawn and creating queenside counterplay, leading to a different type of pawn structure.",
+        "White often plays prophylactically, for example with a3 to prevent ...Nb4, and prepares to methodically improve their position before committing to a concrete plan."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:54:30.644Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. e3 d6",
     "name": "King's Indian: 4.Nf3 O-O 5.e3 d6",
-    "scid": "E61m"
+    "scid": "E61m",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Defense sees White opt for a more restrained and solid setup with 5.e3. Instead of the sharp, clashing pawn structures of the main lines, the game takes on a more strategic and maneuvering character. This opening is well-suited for patient, strategic players who enjoy a complex, long-term battle of ideas and outmaneuvering their opponent rather than seeking immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "Closed Position",
+        "System-based",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Strategic Nuance"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Struggle for the Center",
+        "White's Queenside Play vs. Black's Kingside Potential",
+        "Preparing Pawn Breaks (...e5, ...c5)"
+      ],
+      "common_plans": [
+        "White: Complete development (Be2, O-O), control the d5 square, and launch a queenside expansion with moves like Rb1 and b4-b5.",
+        "Black: Methodically prepare the central ...e5 pawn break with ...Nbd7 and ...Re8 to liberate the position and activate the g7 bishop.",
+        "Black: If the ...e5 break is difficult to achieve, pivot to a Benoni-style plan with ...c5 to challenge White's center from the flank.",
+        "White: Restrict Black's pieces, particularly the g7 bishop, and exploit the d6 pawn as a potential long-term weakness."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:54:53.364Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PP4/2N1PN2/PP2BPPP/R1BQK2R w KQ - 0 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. e3 d6 6. Be2 c5",
     "name": "King's Indian: 4.Nf3 O-O 5.e3 d6 6.Be2 c5",
-    "scid": "E61o"
+    "scid": "E61o",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Defense sees Black immediately challenge White's central control with the ...c5 push, steering the game away from the typical kingside attacks. The resulting positions are highly strategic, often revolving around the tension in the center and potential transpositions to Benoni-like or Maroczy Bind structures. This line is perfect for the versatile, strategic player who enjoys complex pawn structures and fighting for the initiative on the queenside and in the center.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "Counter-attacking",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Versatile Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension vs. Pawn Break",
+        "Maroczy Bind Formation",
+        "Queenside Counterplay",
+        "Control of the d5 square"
+      ],
+      "common_plans": [
+        "White: Push d5 to create a Maroczy Bind, restricting Black and gaining a space advantage.",
+        "White: Maintain central tension, develop harmoniously, and react to Black's queenside plans.",
+        "Black: Generate queenside counterplay with ...a6 and ...b5 to challenge White's central grip.",
+        "Black: Maintain pressure on the d4-pawn and utilize the power of the fianchettoed bishop on the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:55:17.621Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 b - - 1 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. e3 d6 6. Be2 c5 7. O-O",
     "name": "King's Indian: 4.Nf3 O-O 5.e3 d6 6.Be2 c5",
-    "scid": "E61o"
+    "scid": "E61o",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Defense sees Black immediately challenge White's solid, classical setup with the move ...c5. This shifts the game away from the typical KID kingside attack and into a more positional and strategic battle centered around control of the d5 square. The resulting positions are often complex and resemble Benoni or Maroczy Bind structures, making this line ideal for strategic players who excel at maneuvering and understanding pawn structure transformations.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Dynamic",
+        "Closed Position"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension (d4 vs c5)",
+        "Transformation of Pawn Structure",
+        "Queenside Counterplay",
+        "Controlling the d5-square"
+      ],
+      "common_plans": [
+        "White: Advance d4-d5 to gain space and create a Benoni-like structure, then consolidate control and prepare for expansion on either flank.",
+        "Black: Create queenside counterplay with moves like ...a6 and ...b5 after White plays d5, while using the g7-bishop to pressure White's center.",
+        "White: Exchange on c5 (dxc5) to open the position, aiming to exploit better development and control of the d-file.",
+        "Black: After dxc5, recapture with ...dxc5 to maintain central balance and fight for control of the open files with active pieces."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:55:38.203Z"
+    }
   },
   "rnbq1rk1/ppppppbp/5np1/8/2PP4/2N2NP1/PP2PP1P/R1BQKB1R b KQ - 0 5": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. g3",
     "name": "King's Indian: 4.Nf3 O-O 5.g3",
-    "scid": "E61l"
+    "scid": "E61l",
+    "analysis_json": {
+      "description": "The Fianchetto Variation against the King's Indian Defense is a highly strategic and positional system where White opts for solid development over immediate confrontation. By fianchettoing the light-squared bishop, White aims to control the long diagonal and neutralize Black's typical kingside attacking ideas, leading to a complex maneuvering game. This opening is perfect for strategic players who enjoy building pressure slowly, fighting for key squares, and understanding the nuances of pawn structure rather than engaging in early, sharp tactical battles.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Breakthrough"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Battle for the Long Diagonal",
+        "Central Pawn Breaks (...e5 or ...c5)",
+        "Prophylaxis vs. Dynamic Play",
+        "Queenside Expansion"
+      ],
+      "common_plans": [
+        "White: Control the long diagonal with Bg2, expand on the queenside with moves like Rb1 and b4, and restrict Black's central breaks.",
+        "Black: Prepare and execute the ...e5 pawn break to challenge the center, open the position, and activate the g7 bishop.",
+        "Black: An alternative plan involves the ...c5 break, putting pressure on d4 and fighting for queenside influence.",
+        "White: Systematically improve the position, often aiming to trade Black's powerful g7 bishop to blunt their counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:56:03.225Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PP4/2N1P1P1/PP3PBP/R1BQK1NR b KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. g3 O-O 5. Bg2 d6 6. e3",
     "name": "King's Indian: Fianchetto, Flohr Variation",
-    "scid": "E61h"
+    "scid": "E61h",
+    "analysis_json": {
+      "description": "The Flohr Variation is a quiet and strategic system for White against the King's Indian Defense. By playing 6.e3, White prepares to develop the knight to e2, avoiding common pins and aiming for a solid, space-gaining setup, often culminating in the d4-d5 push. This opening is ideal for positional players who enjoy slowly outmaneuvering their opponents in a complex, strategic battle, rather than engaging in immediate tactical warfare.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Game",
+        "Slow-paced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Breakthrough",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Prophylaxis",
+        "Central Pawn Breaks (...e5)",
+        "Space Advantage",
+        "Restricting the Fianchetto Bishop"
+      ],
+      "common_plans": [
+        "White: Complete development with Nge2 and O-O, prepare the d4-d5 pawn push to gain space and restrict the Bg7.",
+        "Black: Prepare the ...e7-e5 pawn break to challenge the center, or alternatively, play on the queenside with moves like ...c6 and ...b5.",
+        "White: Control key squares, especially d5 and e4, and slowly improve the position while preventing Black's counterplay.",
+        "Black: If White plays d5, reroute the f6-knight (e.g., to e8) to prepare the ...f7-f5 break and attack on the kingside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:56:23.254Z"
+    }
   },
   "rnbqk2r/ppp1ppb1/3p1npp/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. Bg5 h6",
     "name": "King's Indian: Smyslov System",
-    "scid": "E61j"
+    "scid": "E61j",
+    "analysis_json": {
+      "description": "The Smyslov System is a refined and strategic approach against the King's Indian Defense, where White develops the light-squared bishop to g5 to exert pressure on the f6-knight. Black's immediate challenge with 5...h6 forces White's hand, often leading to a complex positional struggle after the typical 6.Bh4. This opening is perfect for strategic players who enjoy maneuvering, controlling key squares, and building long-term pressure rather than engaging in immediate tactical brawls.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Prophylactic",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Restraining Black's ...e5 break",
+        "Queenside Counterplay vs. Central Control",
+        "The battle for key central squares",
+        "The fate of the light-squared bishop"
+      ],
+      "common_plans": [
+        "White: Maintain central control, often with e3 and Be2, and decide whether to retreat the bishop to h4 or exchange on f6. A key plan involves challenging Black's kingside after ...g5 with the move h4.",
+        "Black: Immediately question the g5-bishop with ...h6. Plans often revolve around either challenging the center with ...c5 or preparing the traditional King's Indian ...e5 break under more favorable conditions.",
+        "Black: After 6.Bh4, a common plan is to play ...g5 followed by ...Nh5 to eliminate White's active bishop, seizing control of the dark squares."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:56:49.972Z"
+    }
   },
   "rnbq1rk1/ppppppbp/5np1/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R b KQ - 5 5": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5",
     "name": "King's Indian: Smyslov System",
-    "scid": "E61s"
+    "scid": "E61s",
+    "analysis_json": {
+      "description": "The Smyslov System is a positional and flexible approach against the King's Indian Defense, sidestepping the sharpest main lines. White's 5.Bg5 develops a piece and puts pressure on the f6-knight, aiming to control the center and restrict Black's typical counterplay. This opening leads to a strategic battle where understanding piece placement and long-term plans is more crucial than memorizing sharp tactical variations, making it suitable for players who prefer a less theoretical and more maneuvering game.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "System-based",
+        "Solid",
+        "Flexible",
+        "Subtle"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weaknesses",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "System Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Controlling the e5-square",
+        "The fianchettoed bishop's role",
+        "Prophylaxis against Black's counterplay",
+        "Queenside expansion vs. Kingside activity"
+      ],
+      "common_plans": [
+        "White: Control the center, prevent Black's ...e5 break, and often prepare queenside expansion with moves like Rb1 and b4.",
+        "Black: Break the pin with ...h6 and often ...g5, creating kingside attacking chances but also potential weaknesses.",
+        "White: Reposition the bishop to h4 or f4 after ...h6 to maintain pressure and adapt to Black's setup.",
+        "Black: Prepare the central break ...e5 (often via ...d6 and ...Nbd7) or challenge White's center with ...c5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:57:05.945Z"
+    }
   },
   "rnbq1rk1/pp1pppbp/5np1/2p3B1/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 c5",
     "name": "King's Indian: Smyslov System, 5...c5",
-    "scid": "E61t"
+    "scid": "E61t",
+    "analysis_json": {
+      "description": "Black's 5...c5 is a sharp and ambitious response to the positional Smyslov System, immediately challenging White's central control. This line steers the game away from quiet channels, leading to a dynamic and strategically complex struggle where Black fights for the initiative from the outset. It is ideal for aggressive King's Indian players who want to create immediate central tension and unbalance the position.",
+      "style_tags": [
+        "Dynamic",
+        "Counter-attacking",
+        "Sharp",
+        "Strategic",
+        "Complex",
+        "Unbalanced"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Central Tension",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Counter-strike",
+        "Fighting for the Initiative",
+        "The Pin on f6",
+        "Benoni-type Pawn Structures"
+      ],
+      "common_plans": [
+        "White: Push d5 to gain space and clamp down on the center, aiming for a queenside expansion.",
+        "Black: Undermine White's center with pawn breaks like ...b5 (after d5) or ...e6 to challenge the d5 pawn.",
+        "White: Trade the bishop on f6 (Bxf6) to damage Black's kingside pawn structure and control the e4-square.",
+        "Black: Generate rapid piece activity, often using the long diagonal for the Bg7, to compensate for any structural weaknesses."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:57:27.440Z"
+    }
   },
   "rnbq1rk1/pp1pppbp/5np1/2p3B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 c5 6. e3",
     "name": "King's Indian: Smyslov System, 5...c5 6.e3",
-    "scid": "E61t"
+    "scid": "E61t",
+    "analysis_json": {
+      "description": "The Smyslov System with 6.e3 is a solid and strategic approach against the King's Indian setup. White opts for a robust pawn structure, aiming to control the center and slowly build pressure, avoiding the sharp, tactical melees of the main lines. This opening leads to a nuanced positional struggle where Black seeks to undermine White's central grip with pawn breaks like ...b5 and ...d6, making it ideal for players who enjoy complex strategic battles and maneuvering over immediate attacks.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Dynamic",
+        "Closed Position"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Opening Theory",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Central Control vs. Flank Attack",
+        "Queenside Expansion (Black)",
+        "Prophylaxis",
+        "Pawn Break Timing"
+      ],
+      "common_plans": [
+        "White: Solidify the center with moves like Be2, O-O, and often dxc5 to challenge Black's queenside.",
+        "Black: Recapture on c5 and prepare the ...b5 pawn break to create queenside counterplay.",
+        "White: Trade the Bg5 for Nf6 to create long-term structural weaknesses around the king.",
+        "Black: Utilize the g7 bishop by challenging White's central pawns and creating pressure on the long diagonal."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:57:47.436Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6",
     "name": "King's Indian: Smyslov System, 5...d6",
-    "scid": "E61u"
+    "scid": "E61u",
+    "analysis_json": {
+      "description": "The Smyslov System is a quieter, more positional approach against the King's Indian Defense compared to the main lines. White's 5.Bg5 aims to disrupt Black's development by pinning the f6-knight, leading to a strategic battle where White tries to exploit this pressure while Black works to neutralize it and create counterplay. This opening is ideal for patient, strategic players who enjoy maneuvering and accumulating small advantages rather than engaging in immediate, sharp tactical confrontations.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Subtle",
+        "Maneuvering",
+        "Prophylactic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Deflection",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "King Safety",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Exploiting or neutralizing the pin on f6",
+        "Control of the d5 and e4 squares",
+        "Preparing central pawn breaks (...e5 for Black, e4 for White)",
+        "Provoking and exploiting kingside weaknesses"
+      ],
+      "common_plans": [
+        "White: Maintain central control with e3, develop with Be2, and often prepare a queenside expansion with Rb1 and b4. White may try to provoke ...h6 and ...g5 to create long-term targets.",
+        "Black: Prepare the central break ...e5, often preceded by ...Nbd7. Black must decide how to deal with the Bg5, either by challenging it with ...h6 and ...g5 or by playing around it with moves like ...c6 and ...a5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:58:05.553Z"
+    }
   },
   "r1bq1rk1/pppnppbp/3p1np1/6B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ - 1 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 Nbd7",
     "name": "King's Indian: Smyslov System, 5...O-O 6.e3 Nbd7",
-    "scid": "E61y"
+    "scid": "E61y",
+    "analysis_json": {
+      "description": "The Smyslov System is a quiet and strategic approach against the King's Indian Defense, sidestepping the sharp, tactical battles of the main lines. White aims for solid central control with a classical pawn structure, looking to restrict Black's typical counterplay. This opening leads to a game of patient maneuvering and long-term planning, ideal for positional players who enjoy accumulating small advantages and understanding subtle pawn structures.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Control of the e5-square",
+        "Black's central pawn breaks (...e5 or ...c5)",
+        "The fianchettoed bishop",
+        "Prophylaxis vs. Counterplay"
+      ],
+      "common_plans": [
+        "White: Complete development with Be2, O-O, and Qc2, maintain central tension, and slowly build pressure on the queenside or in the center.",
+        "Black: Prepare and execute a central pawn break with ...e5 or ...c5, often preceded by moves like ...h6 to question the g5-bishop.",
+        "White: Play prophylactically to restrain Black's plans, for example by preparing to meet ...e5 with d5.",
+        "Black: If White is passive, Black can challenge the pinning bishop with ...h6 and ...g5, initiating kingside activity."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:58:22.737Z"
+    }
   },
   "r1bq1rk1/pppnppbp/3p1np1/6B1/2PP4/2N1PN2/PP2BPPP/R2QK2R b KQ - 2 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 Nbd7 7. Be2",
     "name": "King's Indian: Smyslov System, 5...O-O 6.e3 Nbd7 7.Be2",
-    "scid": "E61y"
+    "scid": "E61y",
+    "analysis_json": {
+      "description": "The Smyslov System is a quiet and positional approach against the King's Indian Defense, sidestepping the sharp, theoretical main lines. White aims for solid central control and a slight space advantage, intending to slowly squeeze Black rather than engage in a tactical brawl. This opening leads to a strategically complex game of maneuvering, ideal for patient players who excel at long-term planning and understanding subtle pawn structure shifts.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Controlling the e5-square",
+        "Prophylaxis against KID counterplay",
+        "Transposition to Queen's Gambit structures",
+        "Central Tension"
+      ],
+      "common_plans": [
+        "White: Complete development, control the center, and prepare a timely d4-d5 push to gain space.",
+        "Black: Prepare and execute the liberating ...e7-e5 pawn break, often preceded by ...Re8, to challenge White's central grip.",
+        "Black: Alternatively, challenge the center with ...c7-c5, aiming to create counterplay on the queenside and against the d4-pawn.",
+        "White: Respond to ...c5 by reinforcing the queenside (e.g., Rb1, b3) and exploiting the d6-pawn as a potential weakness."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:58:49.186Z"
+    }
   },
   "r1bq1rk1/pp1nppbp/2pp1np1/6B1/2PP4/2N1PN2/PP2BPPP/R2QK2R w KQ - 0 8": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 Nbd7 7. Be2 c6",
     "name": "King's Indian: Smyslov System, 5...O-O 6.e3 Nbd7 7.Be2 c6",
-    "scid": "E61z"
+    "scid": "E61z",
+    "analysis_json": {
+      "description": "The Smyslov System is a solid and strategic response to the King's Indian Defense, sidestepping the sharp main lines. White adopts a classical, robust setup aiming to control the center and restrict Black's typical counterplay, leading to a maneuvering game focused on long-term plans. This opening is ideal for patient, strategic players who excel at understanding pawn structures, prophylaxis, and accumulating small advantages rather than engaging in immediate tactical brawls.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Prophylaxis",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Restraining the fianchettoed bishop",
+        "Queenside expansion vs. Central break",
+        "Transformation of pawn structures",
+        "Prophylaxis and waiting moves"
+      ],
+      "common_plans": [
+        "White: Control the center with the d4/e3 pawn duo, prepare a queenside expansion with a3 and b4, and slowly build pressure.",
+        "Black: Prepare queenside counterplay with ...a6 and ...b5, or patiently prepare the central ...e5 break to challenge White's control.",
+        "White: Prepare the central d4-d5 push at an opportune moment to cramp Black's position and gain a space advantage.",
+        "Black: Challenge White's control of the e4-square and seek to trade pieces to relieve spatial pressure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:59:08.569Z"
+    }
   },
   "r1bq1rk1/pp1nppbp/2pp1np1/6B1/2PP4/2N1PN2/PP2BPPP/R2Q1RK1 b - - 1 8": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 Nbd7 7. Be2 c6 8. O-O",
     "name": "King's Indian: Smyslov System, 5...O-O 6.e3 Nbd7 7.Be2 c6 8.O-O",
-    "scid": "E61z"
+    "scid": "E61z",
+    "analysis_json": {
+      "description": "The Smyslov System against the King's Indian is a quiet and strategic approach, steering the game away from the typical sharp, tactical battles of the main lines. White adopts a solid, classical setup, aiming to restrict Black's counterplay and build a small but lasting space advantage. This opening is perfect for positional players who enjoy maneuvering, understanding subtle pawn breaks, and patiently accumulating advantages in a complex, closed middlegame.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Black's ...e5 pawn break",
+        "White's control of the center",
+        "Queenside expansion",
+        "The Bg5 Pin"
+      ],
+      "common_plans": [
+        "White: Play Qc2, control the center, and expand on the queenside with a3-b4.",
+        "Black: Prepare and execute the central break with ...e5, often via ...Qe8 or ...Re8.",
+        "Black: If the center is blocked, initiate queenside counterplay with ...a6 and ...b5.",
+        "White: Maneuver pieces to support the d4-pawn and restrict Black's fianchettoed bishop."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:59:33.681Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/6B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 0 6": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3",
     "name": "King's Indian: Smyslov System, 6.e3",
-    "scid": "E61v"
+    "scid": "E61v",
+    "analysis_json": {
+      "description": "The Smyslov System is a quiet and strategic approach against the King's Indian Defense, aiming to sidestep the main theoretical battles. By developing with Bg5 and e3, White creates a solid, classical pawn structure, often looking to exchange the dark-squared bishop for the f6 knight to blunt Black's kingside attacking potential. This opening is perfect for positional players who enjoy squeezing their opponents, focusing on long-term plans, and preventing Black's typical counterplay.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Prophylactic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Knight Maneuvers",
+        "Initiative"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "King Safety",
+        "Prophylactic Play",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Prophylaxis vs. Kingside Attack",
+        "Control of the e4-square",
+        "Queenside Expansion",
+        "Trading Bishop for Knight (Bxf6)"
+      ],
+      "common_plans": [
+        "White: Complete development with Be2/Bd3 and O-O, followed by queenside expansion with Rb1 and b4. A key decision is whether to exchange on f6 to disrupt Black's structure.",
+        "Black: Break the pin with ...Nbd7 and ...h6. Prepare a central counter-strike with ...c5 or ...e5, aiming to activate the Bg7 and challenge White's central control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T17:59:59.256Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/2pp1np1/6B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 c6",
     "name": "King's Indian: Smyslov System, 6.e3 c6",
-    "scid": "E61w"
+    "scid": "E61w",
+    "analysis_json": {
+      "description": "The Smyslov System against the King's Indian is a quiet and highly strategic approach, steering the game away from the sharp, tactical battles common in main lines. White establishes a solid, classical pawn center, aiming to slowly build pressure and restrict Black's activity. This opening is perfect for patient, positional players who enjoy maneuvering, understanding subtle pawn structures, and accumulating small, lasting advantages.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "White's central control vs. Black's queenside counterplay",
+        "The battle for the e4 and d5 squares",
+        "Prophylaxis and restricting opponent's plans",
+        "Maneuvering with minor pieces"
+      ],
+      "common_plans": [
+        "White: Complete development with Be2, O-O, and Rc1, aiming to control the center and slowly build a queenside initiative with moves like a4 and b4.",
+        "Black: Prepare queenside expansion with ...a6 and ...b5, often developing the queen to b6 or a5 to pressure White's d4-pawn and c4-square.",
+        "Black: Patiently maneuver pieces to prepare the thematic ...e7-e5 pawn break, which challenges White's central grip and opens lines for the Bg7.",
+        "Both sides: Engage in a long-term strategic battle, often involving the rerouting of knights and bishops to more effective squares before committing to a decisive plan."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:00:18.689Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/3p1np1/2p3B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 7": {
     "src": "scid",
     "eco": "E61",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. Bg5 d6 6. e3 c5",
     "name": "King's Indian: Smyslov System, 6.e3 c6",
-    "scid": "E61x"
+    "scid": "E61x",
+    "analysis_json": {
+      "description": "The Smyslov System against the King's Indian is a solid and strategic approach where White builds a classical center, sidestepping the sharpest main lines. Black's immediate counter-strike with 6...c5 creates a complex and nuanced battle for central control, often leading to positions resembling a Benoni or Hedgehog structure. This opening is ideal for strategic players who enjoy maneuvering and understanding pawn structure transformations over launching immediate, all-out attacks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Flexible",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension",
+        "Pawn Break Timing",
+        "Structural Transformation",
+        "Control of the d5-square"
+      ],
+      "common_plans": [
+        "White: Solidify the center, often with d5, to gain space and restrict Black's pieces. Alternatively, play dxc5 to clarify the central structure and put pressure on the d6-pawn.",
+        "Black: Undermine White's center, typically by preparing the ...b5 pawn break to challenge the c4 pawn. Another key plan is to achieve the freeing ...e5 pawn break under favorable circumstances.",
+        "White: Develop pieces harmoniously, often with Be2, and prepare to control the center or expand on the queenside if Black commits there.",
+        "Black: Create queenside counterplay, often targeting White's c4 pawn and d4-square, while keeping the kingside solid with the fianchettoed bishop."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:00:38.064Z"
+    }
   },
   "rnbqk2r/ppp1ppbp/3p1np1/8/2PP4/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 5": {
     "src": "eco_tsv",
@@ -59951,13 +60839,112 @@
       "chronos": "King's Indian: fianchetto variation",
       "icsbot": "Delayed Fianchetto, KID; E62 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Fianchetto Variation is White's most solid and positional response to the King's Indian Defense. By fianchettoing the light-squared bishop, White aims to neutralize Black's powerful Bg7 and control the long diagonal, steering the game away from the sharp, tactical battles common in other KID lines. This opening leads to a strategically complex struggle where understanding pawn breaks and long-term plans is paramount, making it ideal for patient, positional players who enjoy a game of maneuver.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed Position",
+        "Hypermodern"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Long Diagonal Control",
+        "Space Advantage",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "System Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the h1-a8 diagonal",
+        "Central pawn breaks (e.g., ...e5 vs d5)",
+        "Queenside expansion",
+        "Neutralizing Black's kingside attack"
+      ],
+      "common_plans": [
+        "White: Control the center, complete the fianchetto with Bg2, and often push d5 to gain space and restrict Black's pieces. White may seek a queenside advantage or simply play prophylactically against Black's plans.",
+        "Black: Challenge White's central control with the ...e5 pawn break. If White plays d5, Black often seeks counterplay on the queenside with moves like ...a6, ...Rb8, and ...b5, or prepares a central break with ...c6."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:00:52.866Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/2np1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQK2R w KQ - 2 7": {
     "src": "eco_tsv",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 O-O 5. Nc3 d6 6. Nf3 Nc6",
-    "name": "King's Indian Defense: Fianchetto Variation, Carlsbad Variation"
+    "name": "King's Indian Defense: Fianchetto Variation, Carlsbad Variation",
+    "analysis_json": {
+      "description": "The Carlsbad Variation of the KID Fianchetto is a highly strategic and flexible system where both sides engage in a sophisticated battle for central control. Unlike more aggressive King's Indian lines, this variation leads to a maneuvering game focused on pawn structure and piece placement, often revolving around Black's central ...e5 break. It is ideal for patient, strategic players who enjoy accumulating small advantages and understanding deep positional nuances.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Maneuvering",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Long Diagonal Control"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Flexible Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "The ...e5 pawn break",
+        "Control of the d5 square",
+        "Neutralizing the fianchettoed bishop",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Solidify central control, often by playing d5 to gain space, and use the g2-bishop to pressure the queenside.",
+        "Black: Prepare and execute the ...e5 pawn break to challenge the center, often leading to an exchange on d4 or increased central tension.",
+        "Black: If White plays d5, reroute the f6-knight (e.g., to e8 or h5) and attack the white center, particularly the d5 pawn.",
+        "White: Develop pieces harmoniously, control the long diagonal, and slowly build pressure, often waiting for Black to commit before choosing a definitive plan."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:01:11.415Z"
+    }
   },
   "rnb2rk1/pp2ppbp/2pp1np1/q7/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 2 8": {
     "src": "eco_tsv",
@@ -59971,6 +60958,54 @@
       "chessGraph": "Bronstein Variation",
       "chronos": "King's Indian: fianchetto, Kavalek (Bronstein) variation",
       "icsbot": "Bronstein Variation "
+    },
+    "analysis_json": {
+      "description": "The Kavalek Defense is a provocative and dynamic system against the King's Indian Fianchetto. By developing the queen to a5, Black immediately challenges White's central control, creating an asymmetrical and complex battle. This opening is ideal for aggressive and creative players who enjoy disrupting their opponent's plans and thrive in sharp, unbalanced positions where initiative is paramount.",
+      "style_tags": [
+        "Dynamic",
+        "Counter-attacking",
+        "Complex",
+        "Strategic",
+        "Aggressive",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Imbalance",
+        "Queenside Pressure"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Creative Player",
+        "Tactical Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Disrupting White's development",
+        "Fight for the e4-square",
+        "Queenside pressure vs. Central consolidation",
+        "Early queen activity"
+      ],
+      "common_plans": [
+        "For Black, common plans include executing the ...b5 pawn break to gain queenside space, preparing the central ...e5 thrust, and maneuvering the active queen to maintain pressure.",
+        "For White, typical responses involve playing e4 to seize the center (often after h3 or Re1), developing the queen to c2 or d2 to break the pin, and challenging Black's queenside ambitions with a3-a4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:01:28.210Z"
     }
   },
   "rn1q1rk1/pp2ppbp/2pp1np1/5b2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 2 8": {
@@ -59985,13 +61020,110 @@
       "chessGraph": "Larsen Defense, KID",
       "chronos": "King's Indian: fianchetto, Larsen system",
       "icsbot": "Larsen Defense, KID "
+    },
+    "analysis_json": {
+      "description": "The Larsen Defense is a subtle and strategic system against the King's Indian Fianchetto. Black's defining move, 7...Bf5, immediately challenges White's control of the crucial e4-square, steering the game away from typical KID attacking themes into a complex positional battle. This opening is ideal for patient, strategic players who enjoy nuanced maneuvering and fighting for central control, where understanding prophylaxis and piece placement is key.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Prophylactic",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "The fate of the light-squared bishop",
+        "Fianchetto Battle",
+        "Central Tension"
+      ],
+      "common_plans": [
+        "Black's Plan: Solidify control over e4 with ...Qd7, prepare the ...e5 pawn break, and create queenside counterplay with ...a5-a4. The Bf5 may need to be repositioned to ...h3 or ...d7 if attacked.",
+        "White's Plan: Challenge the Bf5 with moves like Nh4 or Ne1-d3. Methodically prepare the e2-e4 pawn break to seize the center. Expand on the queenside with b2-b4 to gain space."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:01:47.478Z"
     }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/5b2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 4 8": {
     "src": "eco_tsv",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 O-O 5. Nc3 d6 6. Nf3 Nc6 7. O-O Bf5",
-    "name": "King's Indian Defense: Fianchetto Variation, Lesser Simagin (Spassky)"
+    "name": "King's Indian Defense: Fianchetto Variation, Lesser Simagin (Spassky)",
+    "analysis_json": {
+      "description": "The Lesser Simagin, or Spassky Variation, is a dynamic and provocative response to the King's Indian Fianchetto system. By developing the light-squared bishop to f5, Black immediately challenges White's central control and fights for the key e4 square, steering the game away from typical KID structures. This opening is perfect for ambitious players who enjoy creating immediate imbalances and are comfortable navigating complex, strategically rich middlegames where piece activity often trumps pawn structure.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Counterattacking",
+        "Positional",
+        "Prophylactic",
+        "Sharp"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo",
+        "Weak Squares"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weaknesses",
+        "Bishop Pair"
+      ],
+      "player_style_tags": [
+        "Creative Player",
+        "Strategic Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Provocation and Creating Imbalances",
+        "Trading the Light-Squared Bishop",
+        "Central Tension"
+      ],
+      "common_plans": [
+        "Black: Challenge the center with ...e5 or trade the Bf5 for the Nf3 knight to disrupt White's setup.",
+        "White: Push d5 to gain space and launch a queenside attack, or play Ne1-d3 to prepare the e2-e4 advance.",
+        "Black: If White plays d5, respond with ...Na5 to pressure c4 or ...Ne8 to reroute for kingside play.",
+        "White: Develop calmly with moves like 8. b3 or 8. h3, aiming to exploit the potential weakness of the d6 pawn."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:02:13.712Z"
+    }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/8/2PP2b1/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 5 8": {
     "src": "eco_tsv",
@@ -60005,13 +61137,109 @@
       "chessGraph": "Simagin Variation, KID",
       "chronos": "King's Indian: fianchetto, Simagin variation",
       "icsbot": "Simagin Variation, KID "
+    },
+    "analysis_json": {
+      "description": "The Simagin Variation is a provocative and dynamic response to White's solid Fianchetto setup against the King's Indian. By playing 7...Bg4, Black immediately challenges White's central control, pinning the f3-knight and creating complex strategic and tactical problems. This opening leads to a rich, unbalanced struggle where understanding piece activity and structural transformations is paramount, suiting players who enjoy fighting for the initiative from the very beginning.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Counterattacking",
+        "Complex",
+        "Positional",
+        "Provocative"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Piece Pressure"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Imbalance"
+      ],
+      "player_style_tags": [
+        "Creative Player",
+        "Strategic Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for control of the d4-square",
+        "Creating imbalances with early piece play",
+        "Exploiting structural changes after a ...Bxf3 exchange",
+        "Prophylaxis against White's space advantage"
+      ],
+      "common_plans": [
+        "Black: Exchange the bishop on f3 to create doubled pawns, then fight for the light squares (d4, e5). Prepare the ...e5 pawn break to open the center. Generate queenside counterplay with ...a5-a4.",
+        "White: Respond to the pin with h3, forcing a decision. If Bxf3, utilize the bishop pair and control of the d5-square. Complete development and exert pressure on the d6-pawn. Expand on the queenside with moves like Rb1 and b4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:02:30.810Z"
     }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/8/2PP2b1/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 3 8": {
     "src": "eco_js",
     "eco": "E62",
     "moves": "1. Nf3 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 O-O 5. O-O d6 6. d4 Nc6 7. Nc3 Bg4",
-    "name": "King's Indian Defense: Fianchetto Variation, Simagin Variation"
+    "name": "King's Indian Defense: Fianchetto Variation, Simagin Variation",
+    "analysis_json": {
+      "description": "The Simagin Variation is a provocative and dynamic response to White's solid Fianchetto setup in the King's Indian. By playing ...Bg4, Black immediately challenges White's central control, creating imbalances and steering the game towards a strategically complex battle. This opening is ideal for players who enjoy active counterplay and are comfortable creating and navigating complicated positions, rather than settling for a quiet, positional game.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Counter-attacking",
+        "Complex",
+        "Provocative",
+        "Imbalanced"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Bishop Pair",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Creative Player",
+        "Tactical Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fighting for the Center",
+        "Bishop Pair vs. Damaged Pawn Structure",
+        "Provoking Weaknesses",
+        "Space Advantage vs. Counterplay"
+      ],
+      "common_plans": [
+        "Black: Exchange the g4-bishop for the f3-knight (Bxf3) to damage White's pawn structure and fight for control of the light squares.",
+        "Black: Prepare and execute the ...e5 pawn break to challenge White's central dominance.",
+        "White: Respond to ...Bg4 with h3, accepting a slightly weakened kingside structure in exchange for the long-term advantage of the bishop pair.",
+        "White: Push d5 to gain space, forcing Black's knight on c6 to move and aiming to consolidate central control."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:02:50.878Z"
+    }
   },
   "r1bq1rk1/ppp2pbp/2np1np1/4p3/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 8": {
     "src": "eco_tsv",
@@ -60025,6 +61253,56 @@
       "chessGraph": "Szabo Variation",
       "chronos": "King's Indian: fianchetto, Uhlmann (Szabo) variation",
       "icsbot": "Szabo Variation "
+    },
+    "analysis_json": {
+      "description": "The Uhlmann-Szabo System is a sophisticated and strategically rich response to the King's Indian Fianchetto. By challenging the center with ...Nc6 and ...e5, Black creates a dynamic and complex middlegame where positional understanding and long-term planning are paramount. This opening is perfect for players who enjoy a deep strategic fight, balancing central tension with active piece play, rather than immediate, sharp tactical skirmishes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "System-based",
+        "Complex"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension and Pawn Breaks",
+        "Control of the d-file",
+        "Queenside Expansion vs. Kingside Attack",
+        "Neutralizing the Fianchetto Bishop"
+      ],
+      "common_plans": [
+        "White: Resolve central tension with d4-d5, followed by queenside expansion with b4 and c5.",
+        "White: Exchange on e5 (dxe5), control the d-file, and aim to trade pieces for a favorable endgame.",
+        "Black: After d5, reroute the knight (Ne7) and prepare the ...f7-f5 pawn break to launch a kingside attack.",
+        "Black: After dxe5, fight for control of the d-file, activate the light-squared bishop, and create pressure on White's position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:03:08.942Z"
     }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PP4/2N2NP1/PP2PP1P/R1BQKB1R w KQ - 1 6": {
@@ -60032,35 +61310,280 @@
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O",
     "name": "King's Indian: Fianchetto Variation",
-    "scid": "E62a"
+    "scid": "E62a",
+    "analysis_json": {
+      "description": "The Fianchetto Variation is a highly respected and strategic response to the King's Indian Defense, where White mirrors Black's setup by developing their own king's bishop to g2. This leads to a complex, positional struggle where both sides vie for control of the center and the long diagonal. The game is less about immediate tactical clashes and more about long-term maneuvering, making it ideal for patient, strategic players who excel at understanding pawn breaks and subtle piece play.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Battle for the Center",
+        "The Fianchettoed Bishop",
+        "Pawn Breaks (...e5 vs d5)",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Control the d5 square, restrain Black's ...e5 pawn break, and use the space advantage to slowly build pressure, often targeting the d6 pawn.",
+        "Black: Prepare and execute the liberating ...e7-e5 pawn break to challenge White's central control and activate the g7 bishop.",
+        "White: Exchange Black's key f6 knight with Bg5, weakening Black's control of d5 and preparing to exploit the dark squares.",
+        "Black: Seek queenside counterplay with moves like ...Na6, ...Rb8, and the ...b7-b5 pawn push, especially if the center becomes blocked."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:03:29.595Z"
+    }
   },
   "rnbq1rk1/ppp1ppbp/3p1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQK2R b KQ - 2 6": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2",
     "name": "King's Indian: Fianchetto Variation",
-    "scid": "E62b"
+    "scid": "E62b",
+    "analysis_json": {
+      "description": "The Fianchetto Variation is a highly respected and positional method for White to combat the King's Indian Defense. By mirroring Black's fianchetto, White creates a solid, flexible setup, aiming to control the long diagonal and neutralize Black's typical kingside aggression. The resulting games are often strategic and maneuvering, focusing on pawn breaks and long-term plans rather than immediate tactical clashes. This opening is perfect for patient, strategic players who enjoy building pressure and outmaneuvering their opponents in complex middlegames.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the long diagonal",
+        "Pawn breaks (...e5 vs. ...c5)",
+        "Restraining Black's kingside attack",
+        "Queenside expansion"
+      ],
+      "common_plans": [
+        "White: Control the center, expand on the queenside with moves like Rb1 and b4, and neutralize Black's fianchettoed bishop.",
+        "Black: Prepare a central pawn break, typically with ...e5 (often supported by ...Na6) or ...c5 to challenge White's control.",
+        "White: Exchange dark-squared bishops (via Bh6) to weaken Black's kingside defenses and take control of the light squares.",
+        "Black: Reposition the f6-knight (e.g., to e8 or h5) to support a central break or initiate a kingside attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:03:51.921Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/2pp1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQK2R w KQ - 0 7": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6",
     "name": "King's Indian: Fianchetto, 6...c6",
-    "scid": "E62c"
+    "scid": "E62c",
+    "analysis_json": {
+      "description": "The 6...c6 variation of the Fianchetto King's Indian is a highly solid and strategic system, steering the game away from the sharp, attacking lines typical of the KID. Black aims for a flexible setup, preparing to challenge the center with ...d5 or expand on the queenside with ...b5, leading to a maneuvering game of attrition. This opening is ideal for patient, positional players who excel at understanding pawn structures and creating long-term counterplay.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Flexible",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Prophylaxis"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Queenside Expansion",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Intermediate",
+      "strategic_themes": [
+        "Control of the d5 square",
+        "Queenside expansion",
+        "Pawn structure transformation",
+        "Prophylaxis against White's plans"
+      ],
+      "common_plans": [
+        "For Black: Prepare and execute the ...b5 pawn break to gain queenside space. Control the d5 square, often with ...Na6-c7. Reroute pieces to optimal squares for a long strategic battle.",
+        "For White: Control the center and prevent Black's ...d5 break. Expand on the queenside with a3 and b4. Use the g2-bishop for long-term pressure and seek a favorable endgame."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:04:11.015Z"
+    }
   },
   "rnbq1rk1/pp2ppbp/2pp1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 b - - 1 7": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O",
     "name": "King's Indian: Fianchetto, 6...c6 7.O-O",
-    "scid": "E62d"
+    "scid": "E62d",
+    "analysis_json": {
+      "description": "The Fianchetto variation of the King's Indian with 6...c6 is a solid and highly strategic system for Black. Instead of the typical KID counter-attack, Black opts for a more patient setup, preparing to challenge White's central control with moves like ...d5 or ...b5. This opening leads to a complex maneuvering game where understanding pawn structures and long-term plans is paramount, making it ideal for strategic players who enjoy accumulating small advantages and outplaying their opponents in a subtle, positional battle.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Closed",
+        "Hypermodern",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the long diagonal",
+        "Queenside expansion vs. Central control",
+        "The ...d5 pawn break",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "For Black, the main plan involves preparing and executing the ...d5 pawn break, often supported by ...Qa5 or ...Na6, to challenge White's center.",
+        "An alternative plan for Black is to expand on the queenside with ...a6 and ...b5, aiming to gain space and create counterplay.",
+        "White's goal is to maintain central control, complete development, and often prepare the e2-e4 pawn push to gain a space advantage and open lines.",
+        "White frequently employs prophylactic moves like Rb1 or a4 to restrain Black's queenside ambitions while improving their own position."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:04:36.139Z"
+    }
   },
   "rnbq1rk1/1p2ppbp/p1pp1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O a6",
     "name": "King's Indian: Fianchetto, 6...c6 7.O-O a6",
-    "scid": "E62e"
+    "scid": "E62e",
+    "analysis_json": {
+      "description": "This variation of the Fianchetto King's Indian is a modern, highly strategic, and flexible system for Black. By playing ...c6 and ...a6, Black prepares to challenge White's control with a queenside expansion via ...b5, steering the game away from the typical KID kingside attack. This opening leads to a complex positional battle where understanding pawn breaks and long-term plans is paramount, suiting patient players who excel at creating counterplay and maneuvering in nuanced structures.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Dynamic",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Piece Activity",
+        "Central Control",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion",
+        "Control of the d5-square",
+        "Flexibility",
+        "Prophylaxis against White's central play"
+      ],
+      "common_plans": [
+        "Black's Plan: Execute the ...b5 pawn push to gain queenside space, often followed by ...Qa5 and ...Rb8 to increase pressure. The goal is to create weaknesses in White's camp and establish lasting counterplay on the flank.",
+        "White's Plan: Counter Black's queenside ambitions, typically with the move a4. White will seek to prepare and execute a central pawn break with e4 at an opportune moment to seize the initiative and challenge Black's entire setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:04:56.506Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/2np1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQK2R w KQ - 3 7": {
     "src": "scid",
@@ -60073,6 +61596,54 @@
       "chessGraph": "Carlsbad Variation, KID",
       "chronos": "King's Indian: fianchetto with ...Nc6",
       "icsbot": "Carlsbad Variation, KID "
+    },
+    "analysis_json": {
+      "description": "The 6...Nc6 variation against the King's Indian Fianchetto is a direct and ambitious approach for Black, immediately challenging White's central control. This line steers the game away from typical KID structures, leading to a dynamic and complex battle where both sides fight for the initiative and control of the crucial e5-square. It suits players who enjoy creating early imbalances and thrive in strategically rich, non-standard positions.",
+      "style_tags": [
+        "Dynamic",
+        "Strategic",
+        "Counterattacking",
+        "Complex",
+        "Unbalanced",
+        "Flexible"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Central Tension",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Creative Player",
+        "Strategic Player",
+        "Aggressive Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Fight for the e5-square",
+        "Pressure on the d4-pawn",
+        "Creating imbalances",
+        "Queenside vs. Kingside play"
+      ],
+      "common_plans": [
+        "Black: Prepare and execute the ...e5 pawn break, often rerouting the Nc6 to e7. Undermine White's queenside with ...a5-a4 or ...Rb8 and ...b5.",
+        "White: Solidify control of the center, often by playing d5 to blunt the Bg7. Expand on the queenside with moves like b4. Control the d-file if pawns are exchanged on e5."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:05:13.703Z"
     }
   },
   "r1bq1rk1/ppp1ppbp/2np1np1/3P4/2P5/2N2NP1/PP2PPBP/R1BQK2R b KQ - 0 7": {
@@ -60080,56 +61651,451 @@
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. d5",
     "name": "King's Indian: Fianchetto, 6...Nc6 7.d5",
-    "scid": "E62m"
+    "scid": "E62m",
+    "analysis_json": {
+      "description": "This variation of the King's Indian Fianchetto sees White immediately claim a space advantage with 7.d5, forcing Black's knight to retreat. The resulting positions are highly strategic, revolving around White's attempt to consolidate their central control and Black's efforts to undermine it through pawn breaks like ...e6 or ...b5. This opening is perfect for patient, strategic players who enjoy maneuvering and fighting for long-term positional advantages rather than engaging in immediate, sharp tactical skirmishes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Solid",
+        "Maneuvering",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Space Advantage vs. Counterplay",
+        "Central Tension",
+        "Queenside Expansion",
+        "Undermining the Center"
+      ],
+      "common_plans": [
+        "White's Plan: Solidify the center, often with O-O and Re1. Expand on the queenside with a3 and b4 to restrict Black and create a second front. Prevent Black's key pawn breaks.",
+        "Black's Plan: After 7...Na5, pressure the c4 pawn. Prepare the ...e6 pawn break to challenge the d5-pawn. Alternatively, prepare queenside counterplay with ...a6, ...Rb8, and the ...b5 break."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:05:31.726Z"
+    }
   },
   "r1bq1rk1/ppp1ppbp/2np1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 b - - 4 7": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O",
     "name": "King's Indian: Fianchetto, 6...Nc6 7.O-O",
-    "scid": "E62n"
+    "scid": "E62n",
+    "analysis_json": {
+      "description": "The Fianchetto Variation of the King's Indian is a sophisticated and strategically rich system where White opts for positional pressure over an immediate central confrontation. By developing the bishop to g2, White aims to control the long diagonal and the key d5 square, creating a stable space advantage. This opening is perfect for versatile players who enjoy a complex maneuvering game, where understanding pawn breaks and long-term plans is more crucial than immediate tactical fireworks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Solid",
+        "System-based",
+        "Complex",
+        "Maneuvering"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Versatile Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the d5 square",
+        "The ...e5 pawn break for Black",
+        "Battle of the Fianchettoed Bishops",
+        "Prophylaxis against Black's counterplay"
+      ],
+      "common_plans": [
+        "White: Control d5, prepare queenside expansion with Rb1 and b4, and restrain Black's ...e5 break.",
+        "Black: Prepare and execute the central ...e5 pawn break, often preceded by ...a5 to control the queenside.",
+        "Black: After an exchange on e5 (dxe5 dxe5), Black plays for piece activity and control of the open e-file.",
+        "White: Meet ...e5 with dxe5, aiming to pressure the potentially weak d6 pawn and use the open d-file."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:05:54.869Z"
+    }
   },
   "1rbq1rk1/ppp1ppbp/2np1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 5 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O Rb8",
     "name": "King's Indian: Fianchetto, 6...Nc6 7.O-O Rb8",
-    "scid": "E62o"
+    "scid": "E62o",
+    "analysis_json": {
+      "description": "This modern and flexible variation of the King's Indian Fianchetto sees Black adopt a waiting and preparatory stance with 7...Rb8. Instead of an immediate central break or kingside attack, Black prepares queenside expansion with ...b5, creating a complex, double-edged strategic battle. This opening is perfect for sophisticated players who enjoy creating imbalances and fighting for the initiative across the entire board, often leading to non-standard positions.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Positional",
+        "Flexible",
+        "Counter-attacking",
+        "System-based",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pawn Break",
+        "Pressure"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Piece Activity",
+        "Queenside Expansion",
+        "Central Control",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Counterplay vs. Central Control",
+        "Prophylaxis",
+        "Fighting for the Initiative",
+        "Pawn Breaks (...e5, ...b5)"
+      ],
+      "common_plans": [
+        "Black's Plan: Prepare and execute the ...b5 pawn break to challenge White's c4 pawn and gain queenside space, often followed by pressure on the b-file.",
+        "White's Plan: Control the center, restrict Black's ...e5 break, and often play a4 to clamp down on Black's queenside ambitions.",
+        "Black's Plan: Maneuver pieces to support a central ...e5 push, challenging White's d4-pawn and opening lines for the Bg7.",
+        "White's Plan: Complete development harmoniously (e.g., Re1, Qc2, b3) and maintain the strength of the g2-bishop, which exerts long-term pressure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:06:15.844Z"
+    }
   },
   "rnb2rk1/pp2ppbp/2pp1np1/q7/2PPP3/2N2NP1/PP3PBP/R1BQ1RK1 b - - 0 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O Qa5 8. e4",
     "name": "King's Indian: Fianchetto, Kavalek/Bronstein, 8.e4",
-    "scid": "E62j"
+    "scid": "E62j",
+    "analysis_json": {
+      "description": "The Kavalek/Bronstein variation with 8.e4 is a sharp and ambitious response to Black's provocative 7...Qa5. This line steers the game into a dynamic and complex struggle where White aims to use their central space advantage, while Black seeks to undermine it with timely pawn breaks and piece activity. It's a theoretically rich battleground ideal for players who thrive on tactical complications and fighting for the initiative from the early middlegame.",
+      "style_tags": [
+        "Dynamic",
+        "Sharp",
+        "Tactical",
+        "Aggressive",
+        "Modern",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Attacking",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Tension",
+        "Queenside Pressure vs. Central Control",
+        "Undermining the Center",
+        "Prophylaxis against Black's Queen"
+      ],
+      "common_plans": [
+        "White: Solidify the center with moves like Re1 and Be3, aiming to control the d5-square and restrict Black's counterplay.",
+        "Black: Prepare and execute the ...e7-e5 pawn break to challenge White's central pawn duo and open lines for the pieces.",
+        "White: Challenge the Black queen with moves like a3, forcing it to move and gaining time to consolidate or expand on the queenside.",
+        "Black: Create queenside counterplay by targeting the c4-pawn and c3-knight, often involving moves like ...b5 or ...Na6-b4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:06:32.922Z"
+    }
   },
   "rn3rk1/pp2ppbp/2pp1np1/q7/2PPP1b1/2N2NP1/PP3PBP/R1BQ1RK1 w - - 1 9": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O Qa5 8. e4 Bg4",
     "name": "King's Indian: Fianchetto, Kavalek/Bronstein, 8.e4 Bg4",
-    "scid": "E62k"
+    "scid": "E62k",
+    "analysis_json": {
+      "description": "This opening is a sharp and provocative response to the solid King's Indian Fianchetto system. Black's early queen sortie to a5 and the subsequent pin with ...Bg4 create immediate tension, aiming to disrupt White's central control and provoke tactical complications. It's a dynamic battle where Black seeks counterplay and initiative, steering the game away from the quiet, strategic waters typically associated with the Fianchetto variation, making it ideal for ambitious players who enjoy creating imbalances.",
+      "style_tags": [
+        "Dynamic",
+        "Counter-attacking",
+        "Sharp",
+        "Complex",
+        "Strategic",
+        "Provocative"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Tempo",
+        "Central Tension"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weaknesses",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Aggressive Player",
+        "Tactical Player",
+        "Creative Player",
+        "Dynamic Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Undermining the Center",
+        "Fighting for the Initiative",
+        "Exploiting the Pin",
+        "Queen as an Active Piece"
+      ],
+      "common_plans": [
+        "Black: Prepare and execute the ...d5 pawn break to challenge White's center, often after ...e5. Use the active queen on a5 and the bishop on g4 to create tactical threats. If White plays h3, consider trading on f3 to damage White's pawn structure.",
+        "White: Break the pin with h3, forcing a decision from the g4-bishop. Solidify the center with moves like Be3 and Qd2, aiming to use the space advantage to squeeze Black. The fianchettoed bishop on g2 remains a key piece for long-term pressure."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:06:54.462Z"
+    }
   },
   "rnb2rk1/pp2ppbp/2pp1np1/q7/2PP4/2N2NPP/PP2PPB1/R1BQ1RK1 b - - 0 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O Qa5 8. h3",
     "name": "King's Indian: Fianchetto, Kavalek/Bronstein, 8.h3",
-    "scid": "E62i"
+    "scid": "E62i",
+    "analysis_json": {
+      "description": "This variation is a sophisticated and strategically dense battleground within the King's Indian Fianchetto. Black's early queen sortie with 7...Qa5 creates immediate tension, challenging White's central control and preparing queenside counterplay, while White's prophylactic 8.h3 aims to neutralize Black's tactical threats and continue a plan of steady central expansion. The resulting positions are complex and double-edged, suiting players who enjoy maneuvering and fighting for the initiative in a less-forced, more strategic manner than in mainline KID attacks.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Complex",
+        "System-based",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Initiative",
+        "Counterattack",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Space Advantage",
+        "Prophylaxis"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Counterplay vs. Central Control",
+        "The Active Queen",
+        "Prophylaxis",
+        "Fight for the e4-square"
+      ],
+      "common_plans": [
+        "White: Establish central control with e2-e4, challenge Black's queen with moves like Rb1 or a3, and use the space advantage to develop an initiative.",
+        "Black: Prepare the ...b7-b5 pawn break to undermine White's queenside and c4-pawn, while using the queen on a5 to restrain White's development.",
+        "White: Neutralize Black's fianchettoed bishop by controlling the long diagonal and potentially preparing to trade it off.",
+        "Black: Keep the position flexible, often delaying the central ...e5 break in favor of queenside pressure, and be ready to reroute the queen if it comes under attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:07:16.553Z"
+    }
   },
   "rn1q1rk1/pp2ppbp/2pp1np1/5b2/2PP4/1PN2NP1/P3PPBP/R1BQ1RK1 b - - 0 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6 7. O-O Bf5 8. b3",
     "name": "King's Indian: Fianchetto, Larsen System, 8.b3",
-    "scid": "E62g"
+    "scid": "E62g",
+    "analysis_json": {
+      "description": "The Larsen System is a sophisticated and strategic response to Black's solid ...c6 and ...Bf5 setup in the King's Indian Fianchetto. White opts for a double fianchetto with 8.b3, aiming to control the long diagonals and slowly build central pressure, often preparing the key e2-e4 break. This opening leads to a complex, maneuvering game, ideal for patient, positional players who excel at long-term planning and understanding the subtle interplay of pieces.",
+      "style_tags": [
+        "Positional",
+        "Strategic",
+        "System-based",
+        "Solid",
+        "Double Fianchetto",
+        "Slow-burn"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Counterattack",
+        "Initiative",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Piece Activity",
+        "Pawn Structure",
+        "Weak Squares",
+        "Battle of the Bishops"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Double Fianchetto Strategy",
+        "Control of the e4-square",
+        "Battle of the Fianchettoed Bishops",
+        "Queenside Counterplay"
+      ],
+      "common_plans": [
+        "White: Complete the double fianchetto with Bb2, prepare the e2-e4 pawn break, and neutralize Black's dark-squared bishop.",
+        "Black: Challenge White's central control with ...Ne4, trade the light-squared bishop for a knight, and create queenside counterplay with ...a5-a4."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:07:37.338Z"
+    }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/3P4/2P3b1/2N2NP1/PP2PPBP/R1BQ1RK1 b - - 0 8": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O Bg4 8. d5",
     "name": "King's Indian: Fianchetto, Simagin, 8.d5",
-    "scid": "E62s"
+    "scid": "E62s",
+    "analysis_json": {
+      "description": "The Simagin Variation against the King's Indian Fianchetto, marked by 8.d5, initiates a complex strategic struggle. White claims a significant space advantage in the center, forcing Black's knight to the edge of the board, while Black aims to undermine White's central pawn chain and generate dynamic counterplay. This opening is ideal for sophisticated, strategic players who thrive on maneuvering and creating imbalances from a seemingly passive position.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Complex",
+        "Counter-attacking",
+        "Dynamic",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Pin",
+        "Initiative",
+        "Counterattack",
+        "Undermining",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Pawn Structure",
+        "Piece Activity",
+        "Central Control",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "White's Space Advantage vs. Black's Dynamic Counterplay",
+        "The Pin on the f3-Knight",
+        "Queenside Pressure",
+        "Undermining the d5-pawn"
+      ],
+      "common_plans": [
+        "White: Solidify the center, often with Be3, and use the space advantage to restrict Black's pieces, potentially preparing a kingside attack.",
+        "Black: After 8...Na5, challenge White's queenside and center with moves like ...a6 and ...b5, aiming to dismantle the d5-c4 pawn structure.",
+        "White: Resolve the pin on f3 with h3, forcing a decision from the g4-bishop, and then consolidate control.",
+        "Black: Reroute the a5-knight to a more active square (like c6 or b7) and use the powerful g7-bishop to pressure White's center from afar."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:07:54.914Z"
+    }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/5b2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 5 8": {
     "src": "scid",
@@ -60142,6 +62108,54 @@
       "chessGraph": "Lesser Simagin (Spassky) Variation, KID",
       "chronos": "King's Indian: fianchetto, lesser Simagin (Spassky) variation",
       "icsbot": "Lesser Simagin (Spassky) Variation, KID "
+    },
+    "analysis_json": {
+      "description": "The Spassky Variation is a subtle and flexible response to the King's Indian Fianchetto system. By developing the light-squared bishop to f5, Black immediately challenges White's central setup and keeps options open, often aiming for a ...e7-e5 pawn break or transposing into favorable Grünfeld-like structures. This opening leads to a complex strategic battle where understanding piece placement and long-term plans is more critical than immediate tactical fireworks, suiting players who enjoy nuanced positional maneuvering.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Solid",
+        "System-based",
+        "Flexible",
+        "Nuanced"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Pin",
+        "Tempo"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares",
+        "Long-term Strategy"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Control of the e4-square",
+        "Flexibility of Black's pawn structure",
+        "Battle for the long diagonal",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Play d5 to gain space and restrict the Bg7, control the e4-square, reroute the knight from c3 to support the center, and use the Bg2 for long-term pressure.",
+        "Black: Prepare the ...e7-e5 pawn break, exchange the Bf5 for the Nf3 to weaken White's kingside, challenge White's center with moves like ...c5, and create queenside counterplay."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:08:12.205Z"
     }
   },
   "r2q1rk1/ppp1ppbp/2np1np1/3P1b2/2P5/2N2NP1/PP2PPBP/R1BQ1RK1 b - - 0 8": {
@@ -60149,21 +62163,168 @@
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O Bf5 8. d5",
     "name": "King's Indian: Fianchetto, Spassky, 8.d5",
-    "scid": "E62q"
+    "scid": "E62q",
+    "analysis_json": {
+      "description": "This variation of the Fianchetto King's Indian leads to a complex and strategically dense middlegame. White's space-gaining 8.d5 forces Black to react, typically with ...Na5, initiating a fight over the c4 square and the long-term stability of White's center. The game is less about the typical KID kingside attack and more about sophisticated maneuvering and undermining White's positional assets, making it ideal for strategic players who enjoy complex, non-standard positions.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Dynamic",
+        "Complex",
+        "System-based",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pin"
+      ],
+      "positional_tags": [
+        "Space Advantage",
+        "Central Control",
+        "Pawn Structure",
+        "Piece Activity",
+        "Weak Squares"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Space vs. Flank Counterplay",
+        "Undermining the Center",
+        "Prophylaxis",
+        "Exploiting Weak Squares"
+      ],
+      "common_plans": [
+        "White: Solidify the d5 pawn, control the c4 square (often with b3), develop the queenside, and use the space advantage to restrict Black's pieces.",
+        "Black: Attack the d5 pawn (often via ...e6), pressure the c4 square with the ...Na5, and create counterplay on the queenside or by challenging White's central grip."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:08:28.957Z"
+    }
   },
   "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P5/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 1 9": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O e5 8. d5 Ne7",
     "name": "King's Indian: Fianchetto, Uhlmann/Szabo Variation",
-    "scid": "E62u"
+    "scid": "E62u",
+    "analysis_json": {
+      "description": "The Uhlmann/Szabo Variation of the King's Indian Fianchetto system leads to a strategically profound and complex middlegame. By closing the center with 8.d5, White secures a space advantage and aims for a methodical queenside expansion, while Black prepares the classic King's Indian counter-attack on the kingside, typically starting with ...f5. This opening is a true test of long-term planning and suits strategic players who enjoy a tense, slow-burning battle where two opposing plans clash on opposite sides of the board.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Dynamic",
+        "Complex",
+        "System-based"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Attacking"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Space Advantage",
+        "Central Control",
+        "Piece Activity",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Positional Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Opening Theory",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Expansion vs. Kingside Attack",
+        "Closed Center",
+        "Prophylaxis",
+        "Race to Attack"
+      ],
+      "common_plans": [
+        "White: Expand on the queenside with b4, c5, and Rb1, using the space advantage and the power of the g2-bishop.",
+        "Black: Launch a kingside pawn storm with ...f5-f4, rerouting the e7-knight (e.g., to g8-h6) to support an attack against the white king.",
+        "White: Restrain Black's kingside play with prophylactic moves like h4 or by controlling the f5-square.",
+        "Black: Challenge White's central control and prepare to open lines for the dark-squared bishop."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:08:44.545Z"
+    }
   },
   "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N2NP1/PP3PBP/R1BQ1RK1 b - - 0 9": {
     "src": "scid",
     "eco": "E62",
     "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O e5 8. d5 Ne7 9. e4",
     "name": "King's Indian: Fianchetto, Uhlmann/Szabo, 9.e4",
-    "scid": "E62v"
+    "scid": "E62v",
+    "analysis_json": {
+      "description": "This variation leads to a classic King's Indian Defense battleground, characterized by a closed center and opposing flank attacks. White aims to use their space advantage on the queenside, often with the c4-c5 pawn break, while Black prepares a powerful kingside assault, typically initiated by the ...f7-f5 push. The game is a tense, strategic race, suiting players who enjoy long-term planning and executing decisive attacks on opposite sides of the board.",
+      "style_tags": [
+        "Strategic",
+        "Dynamic",
+        "Closed Position",
+        "System-based",
+        "Complex",
+        "Double-edged"
+      ],
+      "tactical_tags": [
+        "Attacking",
+        "Counterattack",
+        "Initiative",
+        "Sacrifice",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Central Control",
+        "Space Advantage",
+        "Pawn Structure",
+        "King Safety",
+        "Flank Attack"
+      ],
+      "player_style_tags": [
+        "Strategic Player",
+        "Aggressive Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Opposite-side flank attacks",
+        "Central tension and pawn breaks",
+        "Space advantage vs. dynamic counterplay",
+        "Prophylaxis"
+      ],
+      "common_plans": [
+        "White: Prepare and execute the c4-c5 pawn break to open the c-file and attack on the queenside, while restraining Black's kingside play.",
+        "Black: Prepare and execute the ...f7-f5 pawn break, often followed by ...f4, to launch a decisive piece attack against the white king.",
+        "White: Maneuver the knight from f3 to d2 to support the queenside and control the center.",
+        "Black: Transfer pieces, like the Ne7 and Nf6, towards the kingside to support the attack."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:09:01.684Z"
+    }
   },
   "r1bq1rk1/1pp1ppbp/p1np1np1/8/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 8": {
     "src": "eco_tsv",
@@ -60178,7 +62339,55 @@
       "chronos": "King's Indian: fianchetto, Panno variation",
       "icsbot": "Panno Variation, KID; E63 "
     },
-    "isEcoRoot": true
+    "isEcoRoot": true,
+    "analysis_json": {
+      "description": "The Panno Variation is a sophisticated and flexible response to the King's Indian Fianchetto system. By playing 7...a6, Black prepares queenside expansion with ...b5, aiming to challenge White's central control and create counterplay, rather than launching the typical KID kingside attack. This leads to a complex, strategic battle where understanding pawn structures and long-term plans is paramount, appealing to players who enjoy maneuvering and fighting for the initiative on the queenside.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "System-based",
+        "Dynamic",
+        "Complex",
+        "Counter-attacking"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Initiative",
+        "Tempo",
+        "Pawn Break"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Queenside Expansion",
+        "Piece Activity",
+        "Space Advantage"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Creative Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy",
+        "Endgame Transition"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Queenside Counterplay vs. Central Control",
+        "Pawn Breaks (...b5)",
+        "Prophylaxis",
+        "Maneuvering"
+      ],
+      "common_plans": [
+        "Black's Plan: Prepare and execute the ...b5 pawn break, often supported by ...Rb8, to gain space and create weaknesses in White's queenside. Control the c4-square and reroute the knight from c6 if necessary.",
+        "White's Plan: Restrain Black's ...b5 push, often with a timely a4 or h3 (to prepare Be3 without allowing ...Ng4). Solidify central control, often with e4, and develop pieces to challenge Black's setup."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:09:17.017Z"
+    }
   },
   "r1bq1rk1/1p3pbp/p2p1np1/n1pPp3/2P5/2N3P1/PPQNPPBP/R1B2RK1 w - e6 0 11": {
     "src": "eco_tsv",
@@ -60187,6 +62396,55 @@
     "name": "King's Indian Defense: Fianchetto Variation, Panno Variation, Blockade Line",
     "aliases": {
       "ct": "King's Indian Defense, Fianchetto Variation"
+    },
+    "analysis_json": {
+      "description": "The Panno Variation's Blockade Line is a highly strategic and complex response to the King's Indian Fianchetto. By playing d5, White establishes a central space advantage and a blockade, leading to a tense, closed game where maneuvering and long-term planning are paramount. This opening is perfect for patient, strategic players who enjoy slowly outplaying their opponents by undermining their structure and fighting for key squares, rather than engaging in immediate tactical skirmishes.",
+      "style_tags": [
+        "Strategic",
+        "Positional",
+        "Closed Position",
+        "Complex",
+        "System-based",
+        "Dynamic"
+      ],
+      "tactical_tags": [
+        "Counterattack",
+        "Pawn Break",
+        "Initiative",
+        "Maneuvering"
+      ],
+      "positional_tags": [
+        "Pawn Structure",
+        "Central Control",
+        "Space Advantage",
+        "Blockade",
+        "Weaknesses"
+      ],
+      "player_style_tags": [
+        "Positional Player",
+        "Strategic Player",
+        "Patient Player"
+      ],
+      "phase_tags": [
+        "Opening Theory",
+        "Middlegame Plans",
+        "Long-term Strategy"
+      ],
+      "complexity": "Advanced",
+      "strategic_themes": [
+        "Central Blockade vs. Undermining Counterplay",
+        "Queenside Expansion (Black)",
+        "Prophylaxis",
+        "Struggle for Key Squares"
+      ],
+      "common_plans": [
+        "White's plan is to solidify the center with moves like b3, prevent Black's counterplay with a4, and often prepare a kingside attack with f4.",
+        "Black's primary goal is to achieve the ...b5 pawn break to create queenside counterplay and undermine White's central control.",
+        "Black often repositions the Na5 knight (e.g., to c6 or b7) and prepares to challenge White's kingside ambitions with a timely ...f5.",
+        "White aims to control the c4 square and use the Nd2 to flexibly support the center and queenside."
+      ],
+      "version": "1.0",
+      "last_enriched_at": "2025-07-29T18:09:35.759Z"
     }
   },
   "1rbq1rk1/4pp1p/p2p1npb/n1pP4/2P5/2N3P1/PBQNPPBP/R4RK1 w - - 1 14": {

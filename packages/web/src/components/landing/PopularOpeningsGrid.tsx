@@ -122,7 +122,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
   const getEcoLabel = (ecoLetter: string): string => {
     const labels = {
-      'A': 'Flank Openings (A)',
+      'A': 'Irregular Openings (A)',
       'B': 'Semi-Open Games (B)', 
       'C': 'Open Games (C)',
       'D': "Closed and Semi-Closed Games (D)",

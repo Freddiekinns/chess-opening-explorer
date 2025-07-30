@@ -142,7 +142,7 @@ const LandingPage: React.FC = () => {
           
           {/* Subtitle */}
           <p className="hero-subtitle">
-            Master every opening from the first move - discover, learn, and track chess openings with AI analysis and much more.
+            Master every opening from the first move - discover and learn chess openings.
           </p>
 
           {/* Search bar */}
@@ -161,14 +161,20 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Popular Openings - Use Component's Built-in UI */}
-      {dataLoaded && popularOpenings.length > 0 && (
-        <PopularOpeningsGrid
-          openings={popularOpenings}
-          onOpeningSelect={handleOpeningSelect}
-          className="main-grid"
-        />
-      )}
+      {/* Popular Openings - Always reserve space to prevent layout shift */}
+      <div className="popular-openings-container">
+        {dataLoaded && popularOpenings.length > 0 ? (
+          <PopularOpeningsGrid
+            openings={popularOpenings}
+            onOpeningSelect={handleOpeningSelect}
+            className="main-grid"
+          />
+        ) : (
+          <div className="popular-openings-placeholder">
+            {/* Reserved space for Popular Openings to prevent layout shift */}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

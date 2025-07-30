@@ -339,8 +339,8 @@ body {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
   padding: var(--space-6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .chessboard-container {
@@ -359,9 +359,11 @@ body {
 .chessboard-fen-utilities .fen-utilities-label {
   color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
   display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .chessboard-fen-utilities .fen-display {
@@ -412,7 +414,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* Chessboard Navigation Controls */
+/* Chessboard Navigation Controls - Primary Actions */
 .chessboard-navigation {
   display: flex;
   justify-content: center;
@@ -431,12 +433,13 @@ body {
   cursor: pointer;
   transition: var(--transition-base);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  min-width: 40px;
+  font-weight: var(--font-weight-semibold);
+  min-width: 44px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .chessboard-nav-btn:hover:not(:disabled) {
@@ -461,14 +464,16 @@ body {
   border-radius: var(--border-radius-large);
   padding: var(--space-4) var(--space-6);
   margin-top: var(--space-4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .opening-moves-list .title-subsection {
-  margin: 0;
+  margin: 0 0 var(--space-4) 0;
   color: var(--color-text-primary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .moves-notation {
@@ -559,15 +564,22 @@ body {
 /* =================
    STATISTICS
    ================= */
+/* Enhanced Game Statistics Visual Hierarchy */
 .statistics-component {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
   padding: var(--space-6);
   margin-bottom: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .statistics-component .title-subsection {
-  margin: 0 0 var(--space-4) 0;
+  margin: 0 0 var(--space-6) 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 /* Game Statistics Bars */
@@ -582,6 +594,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  padding: var(--space-1) 0;
 }
 
 .stat-label {
@@ -594,10 +607,11 @@ body {
 
 .bar-container {
   flex: 1;
-  height: 12px;
+  height: 14px;
   background: var(--color-bg-alt);
   border-radius: var(--border-radius-base);
   overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .bar-track {
@@ -694,8 +708,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: var(--space-4) 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  margin: 0 calc(-1 * var(--space-6)) var(--space-4) calc(-1 * var(--space-6));
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
 
 .games-label {
@@ -715,6 +733,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: var(--space-4) 0 0 0;
+  margin-top: var(--space-2);
 }
 
 .rating-label {
@@ -736,7 +755,8 @@ body {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tab-buttons {
@@ -828,8 +848,9 @@ body {
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   font-size: var(--font-size-base);
-  margin: 0 0 var(--space-4) 0;
-  padding: var(--space-2) 0;
+  margin: 0 0 var(--space-5) 0;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Enhanced Common Plans Styling - Compact & Scannable */
@@ -1198,21 +1219,6 @@ body {
   overflow-y: auto;
 }
 
-.suggestion-item {
-  padding: var(--space-3);
-  cursor: pointer;
-  transition: var(--transition-base);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.suggestion-item:hover {
-  background-color: var(--color-bg-alt);
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-}
-
 .surprise-btn {
   background: linear-gradient(135deg, #E85D04 0%, #F48C06 50%, #FF9500 100%);
   color: white;
@@ -1435,47 +1441,124 @@ body {
   border-radius: var(--border-radius-base);
   margin-top: var(--space-1);
   z-index: 1000;
-  max-height: 300px;
+  max-height: 280px;
   overflow-y: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: slideDown 0.2s ease-out;
+  /* Reset default ul styling */
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  list-style: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Suggestions for landing page variant */
 .search-bar-container.landing .search-suggestions {
   border-radius: var(--border-radius-large);
   margin-top: var(--space-2);
-  background-color: rgba(30, 30, 30, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(30, 30, 30, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  /* Position above the surprise button when it would overlap */
+  z-index: 1001;
+}
+
+/* When search is active, slightly dim the surprise button */
+.search-bar-container.landing:focus-within .search-surprise-btn {
+  opacity: 0.7;
+  transform: scale(0.98);
 }
 
 .suggestion-item {
-  padding: var(--space-3);
+  padding: var(--space-3) 0;
   cursor: pointer;
-  transition: var(--transition-base);
-  border-bottom: 1px solid var(--color-border);
+  transition: all 0.15s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 48px;
+  position: relative;
 }
 
 .suggestion-item:hover,
 .suggestion-item.active {
-  background-color: var(--color-bg-alt);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .suggestion-item:last-child {
   border-bottom: none;
+  border-bottom-left-radius: var(--border-radius-large);
+  border-bottom-right-radius: var(--border-radius-large);
 }
 
-.opening-name {
+.suggestion-item:first-child {
+  border-top-left-radius: var(--border-radius-large);
+  border-top-right-radius: var(--border-radius-large);
+}
+
+.suggestion-item .opening-name {
   color: var(--color-text-primary);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  flex: 1;
+  /* Override global .opening-name styles */
+  text-align: left;
+  line-height: var(--line-height-normal);
+  margin: 0 var(--space-4) 0 var(--space-4);
+  letter-spacing: var(--letter-spacing-normal);
+  position: static;
 }
 
-.eco-code {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
+.suggestion-item .eco-code {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-base);
+  text-transform: uppercase;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: var(--space-4);
+}
+
+/* Scrollbar styling for search suggestions */
+.search-suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: 3px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
 }
 
 /* =================
@@ -1531,6 +1614,9 @@ body {
   flex-direction: column;
   gap: var(--space-6);
   align-items: stretch;
+  position: relative;
+  /* Ensure dropdown doesn't get clipped */
+  z-index: 10;
 }
 
 .search-bar-container.landing .search-input-field {
@@ -1575,6 +1661,8 @@ body {
   box-shadow: 0 4px 12px rgba(232, 93, 4, 0.25);
   position: relative;
   overflow: hidden;
+  /* Ensure it stays below search dropdown */
+  z-index: 5;
 }
 
 .search-surprise-btn::before {
@@ -1607,6 +1695,19 @@ body {
 /* =================
    POPULAR OPENINGS GRID
    ================= */
+.popular-openings-container {
+  /* Ensure consistent layout regardless of loading state */
+  min-height: 600px; /* Reserve space to prevent layout shift */
+}
+
+.popular-openings-placeholder {
+  min-height: 600px; /* Match the approximate height of the loaded grid */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Invisible but still takes up space */
+}
+
 .popular-openings-section {
   padding: var(--space-lg) var(--space-4) var(--space-xxl) var(--space-4);
   background: var(--color-bg-surface);

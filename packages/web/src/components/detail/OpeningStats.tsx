@@ -50,13 +50,13 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
       </div>
 
       <div className="total-games">
-        <span className="games-label">Total Games Analyzed</span>
+        <span className="games-label">Total Games Analysed</span>
         <span className="games-value">{gamesAnalyzed.toLocaleString()}</span>
       </div>
       
       {averageRating && (
         <div className="average-rating">
-          <span className="rating-label">Average Rating</span>
+          <span className="rating-label">Average Lichess Rating</span>
           <span className="rating-value">{averageRating}</span>
         </div>
       )}

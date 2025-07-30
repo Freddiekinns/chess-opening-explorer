@@ -163,6 +163,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile header that can be hidden on scroll */
+.detail-header.mobile-hidden {
+  transform: translateY(-100%);
 }
 
 .detail-header-container {
@@ -174,6 +180,42 @@ body {
   padding: 0 var(--space-4);
   min-height: 52px;
   position: relative;
+}
+
+/* Mobile menu toggle - hidden by default */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Back button responsive text */
+.back-text-mobile {
+  display: none;
+}
+
+.back-text-desktop {
+  display: inline;
+}
+
+/* Floating Back Button for Mobile */
+.floating-back-btn {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
 }
 
 .header-left {
@@ -1500,6 +1542,13 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+/* Add subtle focus state for keyboard navigation */
+.suggestion-item:focus {
+  outline: 2px solid rgba(232, 93, 4, 0.5);
+  outline-offset: -2px;
+  background: linear-gradient(135deg, rgba(232, 93, 4, 0.08) 0%, rgba(232, 93, 4, 0.04) 100%);
+}
+
 .suggestion-item:last-child {
   border-bottom: none;
   border-bottom-left-radius: var(--border-radius-large);
@@ -1540,6 +1589,13 @@ body {
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin-right: var(--space-4);
+  transition: all 0.15s ease;
+}
+
+.suggestion-item:hover .eco-code {
+  background: rgba(232, 93, 4, 0.15);
+  border-color: rgba(232, 93, 4, 0.3);
+  color: rgba(232, 93, 4, 0.9);
 }
 
 /* Scrollbar styling for search suggestions */
@@ -2018,6 +2074,28 @@ body {
 /* =================
    RESPONSIVE DESIGN
    ================= */
+
+/* Tablet breakpoint (768px - 1024px) */
+@media (max-width: 1024px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-3);
+  }
+  
+  .openings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-3);
+  }
+  
+  .hero-section {
+    padding: var(--space-8) var(--space-4);
+    min-height: 40vh;
+  }
+}
+
+/* Mobile breakpoint (up to 768px) */
 @media (max-width: 768px) {
   /* Responsive Typography */
   .title-hero { font-size: var(--font-size-3xl); }
@@ -2026,16 +2104,292 @@ body {
   .title-subsection { font-size: var(--font-size-lg); }
   .text-body-large { font-size: var(--font-size-base); }
   
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--space-4);
+  }
+  
+  /* Mobile-First Header Approach - Standardized Three-Section Layout */
+  .detail-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--space-3) 0;
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .detail-header-container {
+    display: grid; /* Natural specificity without !important */
+    grid-template-columns: 64px 1fr 64px; /* Standardized sections: Left | Center | Right */
+    grid-template-areas: "left center right";
+    align-items: center;
+    padding: 0 var(--space-4);
+    min-height: 56px; /* Standardized height */
+    max-width: 100vw;
+    margin: 0 auto;
+    justify-content: initial; /* Override any flexbox justify-content */
+    flex-direction: initial; /* Override any flex-direction */
+  }
+  
+  /* Left Section - Back Arrow - High specificity without !important */
+  .detail-header-container .header-left {
+    grid-area: left;
+    display: flex;
+    justify-content: flex-start;
+    position: static;
+    flex: initial;
+  }
+  
+  .detail-header-container .header-left .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; /* Force exact size */
+    height: 44px; /* Force exact size */
+    padding: 0; /* Override desktop padding */
+    border-radius: var(--border-radius-base);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-width: 44px; /* Override min-width: fit-content */
+    white-space: normal; /* Override white-space: nowrap */
+    gap: 0; /* Remove any gap */
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  
+  .detail-header-container .header-left .back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px); /* Override desktop translateX */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Back Button Text - High specificity to override base styles */
+  .detail-header-container .back-text-desktop {
+    display: none; /* Hidden on mobile */
+  }
+  
+  .detail-header-container .back-text-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Standardized arrow size */
+    font-weight: 300;
+    line-height: 1;
+    height: 100%; /* Take full height of button */
+    width: 100%; /* Take full width of button */
+  }
+  
+  /* Center Section - Site Title - High specificity */
+  .detail-header-container .header-center {
+    grid-area: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static; /* Override desktop absolute positioning */
+    left: auto;
+    top: auto;
+    transform: none;
+    z-index: auto;
+  }
+  
+  .detail-header-container .header-center .site-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  /* Right Section - Search Icon - High specificity without !important */
+  .detail-header-container .header-right {
+    grid-area: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: initial;
+    gap: 0;
+    min-width: auto;
+  }
+  
+  /* Hide desktop search and surprise button on mobile */
+  .detail-header-container .header-right .header-search,
+  .detail-header-container .header-right .surprise-btn {
+    display: none;
+  }
+  
+  /* Mobile Search Toggle - Standardized to Match Back Button */
+  .detail-header-container .header-right .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; /* Match back button size exactly */
+    height: 44px;
+    padding: 0; /* Override any inherited padding */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-base); /* Match back button radius */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Match back button depth */
+    min-width: 44px;
+    white-space: normal;
+  }
+  
+  .detail-header-container .header-right .mobile-menu-toggle svg {
+    width: 20px; /* Standardized icon size */
+    height: 20px;
+    opacity: 0.9;
+  }
+  
+  .detail-header-container .header-right .mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Match back button hover shadow */
+  }
+  
+  .detail-header-container .header-right .mobile-menu-toggle:hover svg {
+    opacity: 1;
+  }
+  
+  /* Hide floating back button since we have header back */
+  .floating-back-btn {
+    display: none !important;
+  }
+  
+  /* Hide floating back button since we have header back */
+  .floating-back-btn {
+    display: none;
+  }
+  
+  /* Mobile Search Overlay */
+  .mobile-search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 1100;
+    display: none;
+    flex-direction: column;
+    padding: var(--space-4) var(--space-3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-search-overlay.active {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .mobile-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+    padding: 0 var(--space-2);
+  }
+  
+  .mobile-search-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .mobile-search-close {
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--border-radius-base);
+    transition: background-color 0.2s ease;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-search-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-search-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 100%;
+    padding: 0 var(--space-2);
+  }
+  
+  .mobile-search-overlay .search-bar-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .mobile-search-overlay .search-input-field {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    font-size: var(--font-size-lg);
+    border-radius: var(--border-radius-large);
+    box-sizing: border-box;
+  }
+  
+  .mobile-search-overlay .surprise-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius-large);
+    margin-top: var(--space-4);
+    box-sizing: border-box;
+  }
+  
+  /* Mobile Search Optimization */
+  .search-bar-container.header {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .search-bar-container.header .search-input-field {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-base);
+  }
+  
+  .surprise-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-4);
+  }
+  
   /* Layout Adjustments */
   .two-column-layout {
     grid-template-columns: 1fr;
     gap: var(--space-4);
-  }
-  
-  .detail-header-container {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-    text-align: center;
+    padding: var(--space-2);
   }
   
   .header-left,
@@ -2043,13 +2397,121 @@ body {
     justify-content: center;
   }
   
-  .search-input {
+  .search-input-field {
     min-width: 250px;
+  }
+  
+  .search-bar-container.header .search-input-field {
+    min-width: 200px;
+    max-width: 100%;
   }
   
   .openings-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
+    padding: var(--space-4) var(--space-2);
+  }
+  
+  .opening-card {
+    padding: var(--space-4);
+    min-height: 240px;
+  }
+  
+  .hero-section {
+    min-height: 35vh;
+    padding: var(--space-6) var(--space-2);
+  }
+  
+  .search-bar-container.landing .search-input-field {
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--font-size-base);
+  }
+  
+  .search-surprise-btn {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+  
+  .chessboard-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .suggestion-item .opening-name {
+    font-size: var(--font-size-sm);
+    margin: 0 var(--space-3) 0 var(--space-3);
+  }
+  
+  .suggestion-item .eco-code {
+    margin-right: var(--space-3);
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Small mobile breakpoint (up to 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-snug);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .two-column-layout {
+    padding: var(--space-1);
+    gap: var(--space-3);
+  }
+  
+  .opening-card {
+    padding: var(--space-3);
+    min-height: 200px;
+  }
+  
+  .card-header .title-subsection {
+    font-size: var(--font-size-lg);
+  }
+  
+  .search-bar-container.landing .search-input-field {
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .search-surprise-btn {
+    padding: var(--space-2) var(--space-4);
+    max-width: 160px;
+  }
+  
+  .chessboard-container {
+    max-width: 320px;
+  }
+  
+  .hero-section {
+    min-height: 30vh;
+    padding: var(--space-4) var(--space-1);
+  }
+  
+  .suggestion-item {
+    min-height: 40px;
+    padding: var(--space-2) 0;
+  }
+  
+  .suggestion-item .opening-name {
+    font-size: var(--font-size-xs);
+    margin: 0 var(--space-2) 0 var(--space-2);
+  }
+  
+  .suggestion-item .eco-code {
+    margin-right: var(--space-2);
+    padding: var(--space-1);
+    height: 18px;
+  }
+  
+  /* Override grid minmax for very small screens */
+  .openings-grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-3) var(--space-1);
   }
 }
 
@@ -2208,29 +2670,72 @@ body {
   }
   
   .detail-header-container {
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    min-height: auto;
+    display: grid !important; /* Maintain grid layout on very small screens */
+    grid-template-columns: 56px 1fr 56px; /* Slightly smaller sections for very small screens */
+    grid-template-areas: "left center right";
+    align-items: center;
+    padding: 0 var(--space-3); /* Slightly reduced padding */
+    min-height: 52px; /* Slightly smaller height */
+    max-width: 100vw;
+    margin: 0 auto;
+    flex-wrap: initial !important; /* Override any flex-wrap */
+    gap: 0 !important; /* No gaps in grid */
   }
   
   .header-center {
-    position: static;
-    transform: none;
-    order: -1;
-    width: 100%;
+    grid-area: center;
+    position: static !important;
+    transform: none !important;
+    order: initial !important;
+    width: auto !important;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .header-left,
   .header-right {
-    flex: 1;
+    flex: initial !important; /* Override flex: 1 */
+  }
+  
+  .header-left {
+    grid-area: left;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .header-right {
+    grid-area: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .detail-header-container .header-left .back-button {
+    width: 40px; /* Slightly smaller for very small screens */
+    height: 40px;
+    padding: 0; /* Ensure no padding on small screens */
+    border-radius: var(--border-radius-base); /* Consistent with larger screens */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-width: 40px;
+  }
+  
+  .detail-header-container .header-right .mobile-menu-toggle {
+    width: 40px; /* Match back button exactly */
+    height: 40px;
+    padding: 0; /* Ensure no padding on small screens */
+    border-radius: var(--border-radius-base); /* Consistent radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Consistent depth */
+    min-width: 40px;
+  }
+  
+  .mobile-menu-toggle svg {
+    width: 18px; /* Slightly smaller icon */
+    height: 18px;
   }
   
   .surprise-btn {
-    white-space: nowrap;
-    min-width: 80px;
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--font-size-xs);
-    height: 28px;
+    display: none !important; /* Hide completely on very small screens */
   }
 }

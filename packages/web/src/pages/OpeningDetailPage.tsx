@@ -7,6 +7,8 @@ import { ChessOpening } from '../../../shared/src/types/chess'
 import { CommonPlans } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
+import { FloatingBackButton } from '../components/shared/FloatingBackButton'
+import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -66,6 +68,7 @@ const OpeningDetailPage: React.FC = () => {
   const [popularityStats, setPopularityStats] = useState<any>(null)
   const [openingsData, setOpeningsData] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
 
   useEffect(() => {
     if (fen) {
@@ -246,12 +249,16 @@ const OpeningDetailPage: React.FC = () => {
 
   return (
     <div className="detail-page-body">
+      {/* Floating Back Button for Mobile */}
+      <FloatingBackButton />
+      
       {/* Professional Header Layout */}
       <header className="detail-header">
         <div className="detail-header-container">
           <div className="header-left">
             <Link to="/" className="back-button">
-              Back to search
+              <span className="back-text-desktop">Back to search</span>
+              <span className="back-text-mobile">←</span>
             </Link>
           </div>
           
@@ -276,9 +283,30 @@ const OpeningDetailPage: React.FC = () => {
             >
               Surprise me
             </button>
+            
+            {/* Mobile menu toggle */}
+            <button 
+              className="mobile-menu-toggle"
+              onClick={() => setIsMobileSearchOpen(true)}
+              aria-label="Open search menu"
+              title="Search openings"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </header>
+
+      {/* Mobile Search Overlay */}
+      <MobileSearchOverlay
+        isOpen={isMobileSearchOpen}
+        onClose={() => setIsMobileSearchOpen(false)}
+        onSelect={selectOpening}
+        openingsData={openingsData}
+      />
 
       {/* Page Title Area */}
       <div className="page-title-area centered">

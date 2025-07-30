@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import VideoGallery from '../VideoGallery';
-import { Video } from '../../../../../shared/src/types/video';
+import VideoGallery from '../../packages/web/src/components/detail/VideoGallery';
+import { Video } from '../../packages/shared/src/types/video';
 
 const mockVideos: Video[] = [
   {

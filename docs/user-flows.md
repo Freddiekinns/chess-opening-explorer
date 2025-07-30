@@ -203,8 +203,7 @@ interface MobileUserFlow {
   }
   
   chessboard: {
-    scaling: 'Automatic responsive scaling (scale 0.8 on mobile, 0.7 on small)'
-    interaction: 'Touch-friendly piece interaction'
+    scaling: 'The board is fully responsive and scales to fit its container.',
     navigation: 'Swipe gestures for move navigation'
   }
   

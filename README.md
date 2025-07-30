@@ -213,10 +213,11 @@ For more details, see the full list of [Product Requirements Documents](docs/).
 
 ## 📚 Documentation
 
--   **[CLAUDE.md](CLAUDE.md)**: The operational framework for the AI agent, detailing TDD workflows and development protocols.
--   **[memory_bank.md](memory_bank.md)**: The project's long-term memory, containing architectural decisions, API contracts, and other critical context.
--   **[Implementation Docs](docs/)**: Detailed technical documentation for completed features.
--   **[Archived PRDs](docs/archive/)**: Historical product requirements for completed features.
+The project's documentation is organized to support development and provide clear, up-to-date context for AI agents and human developers alike.
+
+-   **[memory_bank.md](memory_bank.md)**: The project's long-term memory, containing high-level architectural decisions, API contracts, and critical development rules. This is the primary context file for AI-driven development.
+-   **[docs/](docs/)**: Contains detailed documentation for the project, including API references, design systems, and pipeline architecture. See the `docs/README.md` for a full index.
+-   **[.github/copilot-instructions.md](.github/copilot-instructions.md)**: The operational framework for the AI agent, detailing TDD workflows, development protocols, and quality assurance mindsets.
 
 
 

@@ -1,56 +1,24 @@
-# Chess Trainer Documentation
+# Project Documentation
 
-## Current Documentation Structure
+This directory contains the core documentation for the Chess Opening Explorer project. These documents are the primary source of truth for architecture, design, and development lifecycle.
 
-### Active Development Documents
+## 📚 Core Documents
 
-#### Implementation Documents (IMPL-*)
-- **IMPL-F01-LLM-Enrichment-Pipeline.md** - ✅ **COMPLETED** - LLM enrichment implementation details
-- **IMPL-F02-Game-Data-Popularity-Analysis.md** - ✅ **COMPLETED** - Game data analysis implementation
-- **IMPL-F03-Course-Recommendation-Data-Pipeline.md** - ✅ **COMPLETED** - Course recommendation pipeline
-- **IMPL-F04-YouTube-Video-Data-Pipeline.md** - ✅ **COMPLETED** - Revolutionary Channel-First Indexer implementation
+-   **[api-reference.md](api-reference.md)**  
+    Detailed reference for all API endpoints, including request/response schemas and examples.
 
-#### Product Requirements Documents (PRD-*)
-- **PRD-F05-Enhanced-Search-Capabilities.md** - 📋 **DRAFT** - Enhanced search capabilities specification
+-   **[design-system.md](design-system.md)**  
+    The complete guide to the visual and interactive design of the application, including component styles, typography, and color palettes.
 
-#### System Documentation
-- **NUMBERING-SYSTEM.md** - Project numbering and organizational system
+-   **[pipeline-architecture.md](pipeline-architecture.md)**  
+    An in-depth explanation of the data processing pipelines, from data ingestion and AI enrichment to final data presentation.
 
-### Archived Documentation
+-   **[user-flows.md](user-flows.md)**  
+    Descriptions of key user journeys and interactions within the application.
 
-The `archive/` folder contains completed PRDs and superseded technical documents:
-
-#### Completed PRDs (ARCHIVED-PRD-*)
-- **ARCHIVED-PRD-F01-LLM-Enrichment-Pipeline-COMPLETED.md** - Original F01 requirements
-- **ARCHIVED-PRD-F02-Game-Data-Popularity-Analysis-COMPLETED.md** - Original F02 requirements  
-- **ARCHIVED-PRD-F03-Course-Recommendation-Data-Pipeline-COMPLETED.md** - Original F03 requirements
-- **ARCHIVED-PRD-F04-YouTube-Video-Data-Pipeline-COMPLETED.md** - Original F04 requirements
-
-## Documentation Lifecycle
-
-### Active vs Archived
-- **Active Docs**: Current specifications and implementations in main `docs/` folder
-- **Archived Docs**: Completed PRDs and superseded documents in `docs/archive/` with `ARCHIVED-` prefix
-
-### File Naming Convention
-- **PRD-F##-Feature-Name.md** - Active product requirements
-- **IMPL-F##-Feature-Name.md** - Implementation documentation
-- **ARCHIVED-[Original-Name].md** - Archived documents with clear prefix
-
-### Status Indicators
-- ✅ **COMPLETED** - Feature fully implemented and documented
-- 📋 **DRAFT** - Ready for review and implementation
-- 🔧 **IN PROGRESS** - Currently being developed
-- ⏸️ **PAUSED** - Development temporarily halted
-- ❌ **CANCELLED** - Feature cancelled or superseded
-
-## Next Steps
-
-1. **PRD-F05** - Enhanced Search Capabilities awaits implementation
-2. **Future Features** - Additional PRDs will be created as needed
-3. **Maintenance** - Regular review and archival of completed documents
+-   **[DEVELOPMENT_LIFECYCLE.md](DEVELOPMENT_LIFECYCLE.md)**  
+    Guidelines and processes for development, including branching, testing, and deployment strategies.
 
 ---
 
-*Last Updated: July 18, 2025*
-*Documentation reconciliation completed*
+*This documentation is actively maintained. Please ensure any architectural or strategic changes are reflected here.*

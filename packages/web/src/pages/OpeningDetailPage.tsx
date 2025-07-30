@@ -3,12 +3,13 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
-import { ChessOpening } from '../../../shared/src/types/chess'
-import { CommonPlans } from '../components/detail'
+import { ChessOpening, Video } from '../../../shared/src/types'
+import { CommonPlans, VideoGallery } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
 import { FloatingBackButton } from '../components/shared/FloatingBackButton'
 import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay'
+import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -51,6 +52,46 @@ type Opening = ChessOpening & {
   draw_rate?: number
 }
 
+interface Video {
+  id: string
+  title: string
+  channel: string
+  duration: number
+  views: number
+  published: string
+  thumbnail: string
+  url: string
+  score: number
+}
+
+interface Video {
+  id: string;
+  title: string;
+  channel: string;
+  duration: number;
+  views: number;
+  published: string;
+  thumbnail: string;
+  url: string;
+  score: number;
+}
+
+// Constants
+const TAB_TYPES = {
+  OVERVIEW: 'overview',
+  PLANS: 'plans',
+  VIDEOS: 'videos'
+} as const;
+
+type TabType = typeof TAB_TYPES[keyof typeof TAB_TYPES];
+
+const API_ENDPOINTS = {
+  OPENING_BY_FEN: '/api/openings/fen/',
+  VIDEOS_BY_FEN: '/api/openings/videos/',
+  STATS_BY_FEN: '/api/stats/',
+  ALL_OPENINGS: '/api/openings/all'
+} as const;
+
 interface MovePair {
   white: string
   black?: string
@@ -60,6 +101,7 @@ const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>()
   const navigate = useNavigate()
   const [opening, setOpening] = useState<Opening | null>(null)
+  const [videos, setVideos] = useState<Video[]>([])
   const [game, setGame] = useState(new Chess())
   const [gameHistory, setGameHistory] = useState<string[]>([])
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0)
@@ -67,7 +109,7 @@ const OpeningDetailPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [popularityStats, setPopularityStats] = useState<any>(null)
   const [openingsData, setOpeningsData] = useState<any[]>([])
-  const [activeTab, setActiveTab] = useState<'overview' | 'plans' | 'videos'>('overview')
+  const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
 
   useEffect(() => {
@@ -75,6 +117,25 @@ const OpeningDetailPage: React.FC = () => {
       loadOpening(decodeURIComponent(fen))
     }
   }, [fen])
+
+  // Switch away from videos tab if no videos are available
+  useEffect(() => {
+    if (activeTab === TAB_TYPES.VIDEOS && videos.length === 0) {
+      setActiveTab(TAB_TYPES.OVERVIEW)
+    }
+  }, [videos, activeTab])
+
+  // API Helper Functions
+  const fetchWithErrorHandling = async (url: string, errorMessage: string) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data.success ? data : null;
+    } catch (err) {
+      console.error(errorMessage, err);
+      return null;
+    }
+  };
 
   // Load openings data for SearchBar component
   useEffect(() => {
@@ -101,15 +162,17 @@ const OpeningDetailPage: React.FC = () => {
       
       console.log('Loading opening for FEN:', fenString)
       
-      // Use API directly for better performance - no need to load all data
-      const response = await fetch(`/api/openings/fen/${encodeURIComponent(fenString)}`)
-      const data = await response.json()
+      const data = await fetchWithErrorHandling(
+        `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
+        'Error loading opening:'
+      );
       
-      if (data.success) {
+      if (data) {
         console.log('Opening data loaded from API:', data.data)
         setOpening(data.data)
         setupGame(data.data)
         loadPopularityStats(fenString)
+        loadVideos(fenString)
       } else {
         setError('Opening not found')
       }
@@ -122,19 +185,21 @@ const OpeningDetailPage: React.FC = () => {
   }
 
   const loadPopularityStats = async (fenString: string) => {
-    try {
-      const response = await fetch(`/api/stats/${encodeURIComponent(fenString)}`)
-      const data = await response.json()
-      
-      if (data.success) {
-        setPopularityStats(data.data)
-      } else {
-        setPopularityStats(null)
-      }
-    } catch (err) {
-      console.error('Error loading popularity stats:', err)
-      setPopularityStats(null)
-    }
+    const data = await fetchWithErrorHandling(
+      `${API_ENDPOINTS.STATS_BY_FEN}${encodeURIComponent(fenString)}`,
+      'Error loading popularity stats:'
+    );
+    
+    setPopularityStats(data?.data || null);
+  }
+
+  const loadVideos = async (fenString: string) => {
+    const data = await fetchWithErrorHandling(
+      `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
+      'Error loading videos:'
+    );
+    
+    setVideos(data?.data || []);
   }
 
   const setupGame = (openingData: Opening) => {
@@ -474,29 +539,31 @@ const OpeningDetailPage: React.FC = () => {
               {/* Tab Buttons */}
               <div className="tab-buttons">
                 <button 
-                  className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('overview')}
+                  className={`tab-button ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}
+                  onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
                 >
                   Overview
                 </button>
                 <button 
-                  className={`tab-button ${activeTab === 'plans' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('plans')}
+                  className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
+                  onClick={() => setActiveTab(TAB_TYPES.PLANS)}
                 >
                   Common Plans
                 </button>
-                <button 
-                  className={`tab-button ${activeTab === 'videos' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('videos')}
-                >
-                  Related Videos
-                </button>
+                {videos.length > 0 && (
+                  <button 
+                    className={`tab-button ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
+                    onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
+                  >
+                    Related Videos ({videos.length})
+                  </button>
+                )}
               </div>
 
               {/* Tab Content */}
               <div className="tab-content-area">
                 {/* Overview Tab */}
-                <div className={`tab-content-panel ${activeTab === 'overview' ? 'active' : ''}`}>
+                <div className={`tab-content-panel ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}>
                   <div className="content-panel-improved">
                     <h3 className="title-subsection">Description</h3>
                     <p>
@@ -507,19 +574,24 @@ const OpeningDetailPage: React.FC = () => {
                 </div>
 
                 {/* Common Plans Tab */}
-                <div className={`tab-content-panel ${activeTab === 'plans' ? 'active' : ''}`}>
+                <div className={`tab-content-panel ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}>
                   <CommonPlans 
                     ecoCode={opening.eco}
                   />
                 </div>
 
                 {/* Videos Tab */}
-                <div className={`tab-content-panel ${activeTab === 'videos' ? 'active' : ''}`}>
-                  <div className="video-lessons-section content-panel-improved">
-                    <h3 className="title-subsection">Video Lessons</h3>
-                    <p>Video lessons coming soon...</p>
+                {videos.length > 0 && (
+                  <div className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}>
+                    <div className="content-panel-improved">
+                      <VideoErrorBoundary>
+                        <VideoGallery 
+                          videos={videos} 
+                        />
+                      </VideoErrorBoundary>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           )}

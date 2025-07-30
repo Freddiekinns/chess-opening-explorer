@@ -12,6 +12,10 @@ applyTo: "**/*.{js,ts,tsx,jsx}"
 3. **Mock externals** - APIs, databases, file system
 4. **Keep tests fast** - <1 second per test
 
+## 📁 Test Files: `tests/unit/` only
+- **All tests**: Must be in `tests/unit/` directory (NOT inside source folders)
+- **Run from root**: Always execute `npm run test:unit` from project root
+
 ## 🧪 Testing Patterns
 ```javascript
 // ✅ Simple, clear test structure

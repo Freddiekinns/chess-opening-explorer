@@ -2,9 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const ECOService = require('../services/eco-service');
+const VideoAccessService = require('../services/video-access-service');
 
 const router = express.Router();
 const ecoService = new ECOService();
+const videoAccessService = new VideoAccessService();
 
 // Simple in-memory cache for search results
 const searchCache = new Map();
@@ -648,6 +650,34 @@ router.get('/family/:familyCode', (req, res) => {
     res.status(500).json({
       success: false,
       error: error.message
+    });
+  }
+});
+
+/**
+ * @route GET /api/openings/videos/:fen
+ * @desc Get videos for a specific chess position
+ * @param {string} fen - FEN string (URL encoded)
+ */
+router.get('/videos/:fen', async (req, res) => {
+  try {
+    const { fen } = req.params;
+    const decodedFen = decodeURIComponent(fen);
+    
+    // Get videos for this FEN position
+    const videos = await videoAccessService.getVideosForPosition(decodedFen);
+    
+    res.json({
+      success: true,
+      data: videos,
+      count: videos.length,
+      fen: decodedFen
+    });
+  } catch (error) {
+    console.error('Error fetching videos:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to load videos'
     });
   }
 });

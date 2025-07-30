@@ -54,6 +54,11 @@ cd packages/web && npm test
 cd packages/web && npm test -- --coverage
 ```
 
+### **⚠️ Important Test Organization**
+- **All tests**: Must be in `tests/unit/` directory (never inside source folders)
+- **Run location**: Always run tests from project ROOT directory
+- **Naming**: Use clear descriptive names like `video-service.test.js`
+
 ## ⚡ Development Servers
 
 ```bash

@@ -24,6 +24,16 @@
   --color-text-error: #dc3545;         /* Error messages */
   --color-border: #333333;
 
+  /* Alpha variants for overlays and surfaces */
+  --color-overlay-dark: rgba(0, 0, 0, 0.8);
+  --color-overlay-light: rgba(255, 255, 255, 0.1);
+  --color-surface-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-brand-shadow: rgba(232, 93, 4, 0.3);
+  --color-brand-glow: rgba(232, 93, 4, 0.15);
+  --color-shadow-default: rgba(0, 0, 0, 0.1);
+  --color-shadow-elevated: rgba(0, 0, 0, 0.2);
+
   /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -32,9 +42,7 @@
   --space-6: 1.5rem;
   --space-8: 2rem;
   --space-12: 3rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-xxl: 3rem;
+  /* Consolidated aliases - use numbered vars directly */
 
   /* Typography System - Comprehensive Design */
   
@@ -53,11 +61,6 @@
   --font-size-3xl: 2.25rem;     /* 36px - Main titles */
   --font-size-4xl: 3rem;        /* 48px - Hero titles */
   
-  /* Legacy size mappings for gradual migration */
-  --font-size-h1: var(--font-size-3xl);
-  --font-size-h2: var(--font-size-2xl);
-  --font-size-h3: var(--font-size-xl);
-  
   /* Font Weights - Clear Hierarchy */
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -65,9 +68,6 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  
-  /* Legacy weight mappings */
-  --font-weight-h1: var(--font-weight-bold);
   
   /* Line Heights - Optimized Readability */
   --line-height-tight: 1.25;    /* Headlines, titles */
@@ -88,6 +88,13 @@
   --border-radius-large: 12px;
   --border-radius-base: 8px;
   --transition-base: all 0.2s ease;
+  
+  /* Common box shadows */
+  --shadow-sm: 0 1px 3px var(--color-shadow-default);
+  --shadow-md: 0 4px 12px var(--color-shadow-default);
+  --shadow-lg: 0 6px 20px var(--color-shadow-elevated);
+  --shadow-brand: 0 4px 12px var(--color-brand-shadow);
+  --shadow-brand-lg: 0 6px 20px rgba(232, 93, 4, 0.4);
 }
 
 /* =================
@@ -152,8 +159,145 @@ body {
 }
 
 /* =================
-   HEADER COMPONENTS
+   BUTTON SYSTEM - CONSOLIDATED
    ================= */
+
+/* Base Button Component */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-base);
+  border: 1px solid transparent;
+  background-color: transparent;
+  white-space: nowrap;
+  min-width: fit-content;
+  box-sizing: border-box;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button Variants */
+.btn--secondary {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border);
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border-color: var(--color-brand-orange);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-brand-orange-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border);
+}
+
+/* Button Sizes */
+.btn--small {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  height: 32px;
+}
+
+.btn--large {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  height: 44px;
+}
+
+/* Special Button Styles */
+.btn--gradient {
+  background: linear-gradient(135deg, var(--color-brand-orange) 0%, #F48C06 50%, #FF9500 100%);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(232, 93, 4, 0.2);
+  will-change: transform, box-shadow;
+}
+
+.btn--gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn--gradient:hover:not(:disabled) {
+  background: linear-gradient(135deg, #F48C06 0%, #FF9500 50%, #FFB01F 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-lg);
+}
+
+.btn--gradient:hover::before {
+  left: 100%;
+}
+
+.btn--circular {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  min-width: 48px;
+}
+
+/* =================
+   UPDATED COMPONENT STYLES
+   ================= */
+/* =================
+   PERFORMANCE OPTIMIZATIONS
+   ================= */
+
+/* Contain layout shifts for better performance */
+.opening-card {
+  contain: layout style;
+}
+
+.video-card {
+  contain: layout style;
+}
+
+.chessboard-container {
+  contain: layout;
+}
+
 .detail-header {
   background-color: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border);
@@ -968,6 +1112,7 @@ body {
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  will-change: transform, box-shadow, border-color;
 }
 
 .card-body {
@@ -1053,8 +1198,8 @@ body {
 }
 
 .eco-badge {
-  background-color: var(--color-text-tertiary);
-  color: var(--color-text-contrast);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-sm);
@@ -1631,7 +1776,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg) var(--space-lg) var(--space-4) var(--space-lg);
+  padding: var(--space-8) var(--space-4) var(--space-4) var(--space-4);
 }
 
 .hero-content {
@@ -1652,12 +1797,12 @@ body {
 .hero-subtitle {
   font-size: var(--font-size-lg);
   color: #B8B8B8;
-  margin: 0 0 var(--space-xl) 0;
+  margin: 0 0 var(--space-8) 0;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-8);
 }
 
 .hero-search-wrapper {
@@ -1770,7 +1915,7 @@ body {
 }
 
 .popular-openings-section {
-  padding: var(--space-lg) var(--space-4) var(--space-xxl) var(--space-4);
+  padding: var(--space-8) var(--space-4) var(--space-12) var(--space-4);
   background: var(--color-bg-surface);
   position: relative;
 }
@@ -1787,7 +1932,7 @@ body {
 
 .section-header {
   text-align: left;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-8);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1830,7 +1975,7 @@ body {
   display: flex;
   justify-content: flex-start;
   gap: var(--space-2);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-8);
   flex-wrap: wrap;
 }
 
@@ -1880,7 +2025,7 @@ body {
 
 .empty-state {
   text-align: center;
-  padding: var(--space-xxl);
+  padding: var(--space-12);
   color: var(--color-text-secondary);
 }
 
@@ -1908,7 +2053,7 @@ body {
 /* View All Openings CTA */
 .view-all-cta {
   text-align: center;
-  padding: var(--space-xl) var(--space-4);
+  padding: var(--space-8) var(--space-4);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1993,8 +2138,91 @@ body {
 }
 
 /* =================
+   ANIMATION UTILITIES
+   ================= */
+
+/* Animation performance optimizations */
+.animate-on-hover {
+  will-change: transform;
+  transition: transform 0.2s ease;
+}
+
+.animate-on-hover:hover {
+  transform: translateY(-2px);
+}
+
+.animate-fade-in {
+  will-change: opacity, transform;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in {
+  will-change: opacity, transform;
+  animation: cardSlideIn 0.5s ease-out forwards;
+}
+
+.animate-skeleton {
+  will-change: background-position;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* =================
    UTILITY CLASSES
    ================= */
+
+/* Surface Components */
+.surface {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.surface--compact {
+  padding: var(--space-4);
+}
+
+.surface--comfortable {
+  padding: var(--space-6);
+}
+
+/* Interactive States */
+.interactive {
+  transition: var(--transition-base);
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--color-shadow-elevated);
+}
+
+/* Scrollable Areas */
+.scrollable {
+  overflow-y: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: 3px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Loading States */
 .loading-state,
 .error-state {
   display: flex;
@@ -2011,6 +2239,7 @@ body {
   background: linear-gradient(90deg, var(--color-bg-alt) 25%, var(--color-bg-surface) 50%, var(--color-bg-alt) 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
+  will-change: background-position;
 }
 
 @keyframes skeleton-loading {
@@ -2077,6 +2306,44 @@ body {
 }
 
 /* =================
+   CRITICAL PATH OPTIMIZATIONS
+   ================= */
+
+/* High-frequency classes optimized for performance */
+.btn-hover-lift {
+  will-change: transform;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-1px);
+}
+
+.card-interactive {
+  will-change: transform, box-shadow;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-in,
+  .animate-skeleton,
+  .animate-on-hover,
+  .interactive,
+  .btn,
+  .opening-card {
+    animation: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+/* =================
    RESPONSIVE DESIGN
    ================= */
 
@@ -2112,20 +2379,12 @@ body {
 
 /* Mobile breakpoint (up to 768px) */
 @media (max-width: 768px) {
-  /* Responsive Typography */
-  .title-hero { font-size: var(--font-size-3xl); }
-  .title-page { font-size: var(--font-size-2xl); }
-  .title-section { font-size: var(--font-size-xl); }
-  .title-subsection { font-size: var(--font-size-lg); }
-  .text-body-large { font-size: var(--font-size-base); }
-  
-  .hero-title {
-    font-size: var(--font-size-3xl);
-  }
-  
-  .hero-subtitle {
-    font-size: var(--font-size-base);
-    padding: 0 var(--space-4);
+  /* Responsive Typography - Consolidated */
+  :root {
+    --font-size-4xl: var(--font-size-3xl);
+    --font-size-3xl: var(--font-size-2xl);
+    --font-size-2xl: var(--font-size-xl);
+    --font-size-xl: var(--font-size-lg);
   }
   
   /* Mobile-First Header Approach - Premium Navigation Bar */
@@ -2547,7 +2806,12 @@ body {
 
 /* Small mobile breakpoint (up to 480px) */
 @media (max-width: 480px) {
-  /* Enhanced small screen navigation */
+  :root {
+    --font-size-3xl: var(--font-size-2xl);
+    --font-size-2xl: var(--font-size-xl);
+    --font-size-xl: var(--font-size-lg);
+    --font-size-lg: var(--font-size-base);
+  }
   .detail-header-container {
     padding: 0 var(--space-2); /* Reduced padding for very small screens */
     grid-template-columns: 52px 1fr 52px; /* Slightly smaller button areas */
@@ -2564,14 +2828,7 @@ body {
     letter-spacing: -0.02em;
   }
   
-  .hero-title {
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-snug);
-  }
-  
-  .hero-subtitle {
-    font-size: var(--font-size-sm);
-  }
+  /* Enhanced small screen navigation */
   
   .two-column-layout {
     padding: var(--space-1);

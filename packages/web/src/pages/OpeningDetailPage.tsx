@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
-import { ChessOpening, Video } from '../../../shared/src/types'
+import { ChessOpening, Video } from '../../../shared/src'
 import { CommonPlans, VideoGallery } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
@@ -50,30 +50,6 @@ type Opening = ChessOpening & {
   white_win_rate?: number
   black_win_rate?: number
   draw_rate?: number
-}
-
-interface Video {
-  id: string
-  title: string
-  channel: string
-  duration: number
-  views: number
-  published: string
-  thumbnail: string
-  url: string
-  score: number
-}
-
-interface Video {
-  id: string;
-  title: string;
-  channel: string;
-  duration: number;
-  views: number;
-  published: string;
-  thumbnail: string;
-  url: string;
-  score: number;
 }
 
 // Constants

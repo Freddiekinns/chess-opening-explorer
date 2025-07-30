@@ -1,4 +1,4 @@
 // Export all types
-export * from './chess.js';
-export * from './analysis.js';
-export * from './video.js';
+export * from './chess';
+export * from './analysis';
+export * from './video';

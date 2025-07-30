@@ -1,48 +1,158 @@
-# Chess Trainer: High-Performance Chess Opening Explorer
+# Chess Opening Explorer
 
-A web-based tool for chess enthusiasts to learn and explore chess openings, featuring a high-performance searchable collection of over 12,000 openings, interactive chessboards, and a modern React architecture.
+A chess learning platform focused on opening study through client-side search, AI-enhanced content, and interactive exploration. Built for chess players who want to understand openings systematically.
 
-## ✨ Key Features
+## ✨ Core Capabilities
 
-- **Instant Search**: Client-side search provides results in 1-5ms.
-- **Interactive UI**: Explore openings on a fully interactive chessboard.
-- **Rich Data**: Openings are enhanced with AI-generated analysis, popularity stats, and course recommendations.
-- **Quality Video Pipeline**: 60% noise reduction with educational content prioritization.
-- **Modern Stack**: Built with React, TypeScript, and a Node.js/Express backend.
-- **Monorepo Architecture**: Cleanly structured with `api`, `web`, and `shared` packages.
+### **Search & Discovery**
+- **1-5ms Search**: Client-side filtering across 12,377+ openings
+- **ECO Classification**: Filter by standard chess opening codes (A-E) and strategic themes  
+- **Popularity Rankings**: Based on 40M+ analyzed games from Lichess database
+- **Real-time Results**: No API calls during search - all data loaded once per session
+
+### **Learning Experience**
+- **Interactive Chessboard**: Explore moves with full keyboard navigation
+- **AI-Enhanced Content**: Google Vertex AI provides strategic analysis and complexity ratings
+- **Educational Videos**: Curated YouTube content from 11+ trusted chess channels
+- **Course Recommendations**: Expert-verified learning paths for each opening
+
+### **Technical Architecture**
+- **React 19 + TypeScript**: Type-safe, component-based frontend
+- **Express.js API**: RESTful backend with caching
+- **Hybrid Data Storage**: SQLite + JSON for performance
+- **Monorepo Structure**: Clean separation with shared utilities
+
+## 🏗️ Application Architecture
+
+### **Pages & User Experience**
+```
+Landing Page
+├── Hero Section (Search + "Surprise Me")
+├── Popular Openings Grid (Category Filtering)
+└── Statistics Showcase (12K+ openings, 1K+ videos)
+
+Opening Detail Page  
+├── Learning Path (70% width)
+│   ├── Opening Header (Name, ECO, Popularity)
+│   ├── FEN (position, copy, analyse on lichess) 
+│   └── Interactive Chessboard (Move navigation)
+└── Fact Sheet (30% width)
+    ├── Game Statistics (Win/draw/loss rates)
+    ├── Common Plans (Tabbed strategic content)
+    ├── Strategic Description (AI-generated)
+    └── Related Videos (Curated matches)
+```
+
+### **Core Functionality**
+```
+Search System
+├── Client-Side Filtering (4.7MB dataset loaded once)
+├── Popularity-Weighted Ranking (Game frequency scoring)
+├── Keyboard Navigation (Arrow keys, Enter/Escape)
+└── Category Filtering (ECO A-E classifications)
+
+Chess Integration
+├── Interactive Board (react-chessboard + chess.js)
+├── Move Validation (FEN position handling)
+├── Keyboard Controls (Left/Right arrows, Home/End)
+└── Position Analysis (Strategic themes, complexity)
+
+Data Enhancement
+├── AI Analysis (Google Vertex AI strategic insights)
+├── Popularity Metrics (Lichess game frequency analysis)
+├── Video Matching (YouTube educational content)
+└── Course Integration (Expert-curated learning paths)
+```
+
+## 🗃️ Data Architecture & Pipelines
+
+### **Core Datasets**
+```
+data/
+├── videos.sqlite (26MB)           # Main operational database
+├── popularity_stats.json (4.7MB) # Complete search dataset 
+├── eco/ (18MB)                    # ECO classifications + AI analysis
+├── course_analysis/ (16KB)        # Course recommendation cache
+└── Videos/ (114MB)                # Individual video metadata files
+```
+
+### **Production Scripts & Automation**
+```
+Video Pipeline (F04)
+├── Channel-First Indexer → Fetch ALL videos from trusted channels
+├── Video Matcher → Match openings to educational content  
+├── Quality Filter → 60% noise reduction prioritizing education
+└── Static File Generator → Optimize for web serving
+
+AI Enrichment Pipeline (F01)  
+├── LLM Enrichment → Strategic analysis via Google Vertex AI
+├── Complexity Analysis → Beginner/Intermediate/Advanced ratings
+├── Strategic Themes → Tactical vs positional categorization
+└── Quality Validation → Conservative "if in doubt, exclude" policy
+
+Popularity Analysis (F02)
+├── Lichess Data Processing → 40M+ games analyzed
+├── Frequency Ranking → Game volume-based popularity scores
+├── Statistical Analysis → Win/draw/loss rate calculations  
+└── Trend Analysis → Opening popularity over time
+
+Course Integration (F03) [Backend Complete]
+├── AI Course Discovery → LLM-powered course recommendations
+├── Manual URL Verification → Human validation (95% URL hallucination rate)
+├── Quality Scoring → Multi-factor course quality assessment
+└── API Integration → Fast FEN-based course lookup
+```
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Node.js, Express.js
-- **Frontend**: React 19, TypeScript, Vite, React Router
-- **Chess Logic**: `chess.js` and `react-chessboard`
-- **AI Enrichment**: Google Cloud Vertex AI SDK
-- **Testing**: Jest
+### **Frontend Stack**
+- **React 19**: Latest React with concurrent features
+- **TypeScript**: Strict typing for reliability  
+- **Vite**: Fast development server and building
+- **React Router**: Client-side routing
+- **Chess.js**: Move validation and game logic
+- **React-Chessboard**: Interactive chess board component
 
-## 📂 Project Structure
+### **Backend Stack**  
+- **Node.js + Express**: RESTful API server
+- **SQLite**: Operational data storage
+- **JSON Files**: Static data serving
+- **Jest**: Testing with mocking
 
-The project uses a monorepo structure to manage the different parts of the application:
+### **AI & External Services**
+- **Google Vertex AI**: Strategic analysis generation
+- **YouTube Data API**: Educational video discovery  
+- **Lichess Database**: Popularity statistics source
 
+## 🎨 Design System & Styling
+
+### **CSS Architecture (Single-File Approach)**
 ```
-/packages/
-  /api/     - Backend services (Node.js/Express)
-  /shared/  - Shared types/utilities (TypeScript)
-  /web/     - Frontend application (React/Vite)
-/data/      - Core operational data
-  videos.sqlite           - Main database (openings, videos, relationships)
-  popularity_stats.json   - Complete opening statistics (12,377 positions)
-  opening_popularity_data.json - Top 185 ranked openings
-  channel_first_index.json - YouTube video metadata cache
-  /eco/                   - ECO classification data with AI analysis
-  /course_analysis/       - Course recommendation cache
-/public/api/openings/     - Individual opening files for frontend serving
-/tools/     - Data processing and utility scripts
-  /video-pipeline/ - Modern video matching pipeline (✅ COMPLETE)
-  /production/     - Production data processing scripts
-  /analysis/       - Data analysis and validation tools
-  /utilities/      - General utility scripts
-/tests/     - Integration tests
-/docs/      - Comprehensive project documentation
+packages/web/src/styles/simplified.css (2,100+ lines)
+├── CSS Custom Properties (Consistent theming)
+├── Component-Specific Styles (All UI components)
+├── Responsive Design (Mobile-first approach)
+└── Utility Classes (Reusable patterns)
+
+Benefits:
+✅ Zero CSS conflicts (single source of truth)
+✅ Fast loading (one CSS bundle)
+✅ Easy maintenance (all styles in one place)
+✅ Consistent theming (CSS variables throughout)
+```
+
+### **Component Library**
+```
+Shared Components
+├── SearchBar (Landing/header variants, keyboard navigation)
+├── OpeningCard (Featured/compact/list layouts)
+├── PopularityIndicator (1-10 scoring with color coding)
+└── ChessBoard Integration (Move navigation, position display)
+
+Page-Specific Components  
+├── Landing: PopularOpeningsGrid, StatisticsShowcase
+├── Detail: OpeningHeader, DescriptionCard, CommonPlans
+└── Layout: Navigation, FooterContent, ErrorBoundaries
 ```
 
 ## 🚀 Getting Started
@@ -82,7 +192,7 @@ Start both the backend and frontend servers concurrently:
 ```bash
 npm run dev
 ```
--   **Backend API**: `http://localhost:3001`
+-   **Backend API**: `http://localhost:3010`
 -   **Frontend App**: `http://localhost:3000`
 
 ### Running Tests
@@ -94,13 +204,10 @@ npm test
 
 ## 🗺️ Development Roadmap
 
-The project has a clean, high-performance architecture and is ready for new features. Our current roadmap includes:
+The project has a stable architecture and is ready for new features. Current roadmap includes:
 
 -   **✅ F03: Course Recommendation Data Pipeline**: Manually curate and integrate expert course recommendations. **(COMPLETED)**
--   **✅ F04: YouTube Video Data Pipeline**: Automatically fetch and display relevant YouTube videos. **(COMPLETED - Phase 1 & 2)**
--   **📋 F04-Phase3: Static File Generation**: Convert pipeline output to optimized web-ready files **(IN PROGRESS)**
 -   **F05: Enhanced Search Capabilities**: Evolve the search to understand natural language and strategic concepts.
--   **F06: Data-Driven Detail Page Content**: Make the opening detail page fully dynamic.
 
 For more details, see the full list of [Product Requirements Documents](docs/).
 
@@ -110,3 +217,7 @@ For more details, see the full list of [Product Requirements Documents](docs/).
 -   **[memory_bank.md](memory_bank.md)**: The project's long-term memory, containing architectural decisions, API contracts, and other critical context.
 -   **[Implementation Docs](docs/)**: Detailed technical documentation for completed features.
 -   **[Archived PRDs](docs/archive/)**: Historical product requirements for completed features.
+
+
+
+

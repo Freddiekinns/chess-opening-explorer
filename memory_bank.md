@@ -40,7 +40,11 @@
 ```
 packages/web/src/
 ├── pages/                        # LandingPage.tsx, OpeningDetailPage.tsx
-├── components/shared/            # SearchBar, OpeningCard, ChessBoard
+├── components/
+│   ├── shared/                   # SearchBar, OpeningCard, PopularityIndicator
+│   ├── detail/                   # OpeningHeader, VideoGallery, CommonPlans
+│   ├── landing/                  # PopularOpeningsGrid, StatisticsShowcase
+│   └── layout/                   # Layout, GlobalHeader
 ├── styles/simplified.css         # Single consolidated CSS (2,100+ lines)
 └── utils/                        # Frontend utilities
 
@@ -96,10 +100,10 @@ interface ChessOpening {
 - **Policy**: "If in doubt, exclude it"
 
 ### **Testing Strategy (AD-002)**
-- **ALWAYS** mock external dependencies (APIs, databases, file I/O)
-- **Tests location**: `/tests/unit/` directory
-- **Run from**: Project ROOT directory
-- **Performance**: <1 second per test
+- **Mock all externals**: APIs, databases, file I/O (never use real calls)
+- **Location**: `/tests/unit/` directory only, run from project ROOT
+- **Performance**: <1 second per test, deterministic results
+- **Commands**: See `.github/instructions/dev-commands.instructions.md`
 
 ---
 
@@ -111,19 +115,19 @@ interface ChessOpening {
 3. **Refactor Phase**: Improve code while maintaining tests
 
 ### **File Naming Conventions**
-- **Tests**: `*.test.js` in `/tests/unit/` directory
+- **Tests**: `*.test.js` (location defined in AD-002 above)
 - **Mock files**: `__mocks__/` directories alongside source
 - **Config files**: Environment-specific with `.env` fallbacks
 - **Generated files**: Use FEN-to-filename sanitization
 
 ### **Critical Patterns**
-- **Always mock external dependencies** (APIs, databases, file I/O) in tests
-- **Use NODE_ENV detection** for test vs production behavior
 - **Build validation tools** before deploying AI-generated content
 - **Conservative AI approach**: Remove problematic fields rather than fixing hallucination
+- **Use NODE_ENV detection** for test vs production behavior
+
 
 ### **Common Anti-Patterns to Avoid**
-- **Never** use real API calls in tests (incurs costs, breaks determinism)
+- **Never** use real API calls in tests (see AD-002 for testing strategy)
 - **Never** trust AI-generated URLs without manual verification (95% hallucination rate)
 - **Never** create separate CSS files - use single `simplified.css` approach
 - **Never** duplicate styling logic - maintain all styles in consolidated CSS file
@@ -163,12 +167,12 @@ YOUTUBE_API_KEY="..."
 
 ## **🧪 Development Commands**
 
-**Command Reference**: See `.github/instructions/dev-commands.instructions.md` for current testing and development commands.
+**All development and testing commands**: See `.github/instructions/dev-commands.instructions.md`
 
-**Key Testing Patterns:**
-- **Backend**: Jest, runs from root, tests in `/tests/` directory
-- **Frontend**: Vitest, runs from root via workspace, tests in `/packages/web/src/`  
-- **Always run from ROOT unless specifically testing workspace isolation**
+**Quick Reference:**
+- **Backend tests**: `npm run test:unit` (Jest, from root)
+- **Frontend tests**: `cd packages/web && npm test` (Vitest)
+- **Run servers**: `npm run dev` (both), `npm run dev:api`, `npm run dev:web`
 
 ---
 

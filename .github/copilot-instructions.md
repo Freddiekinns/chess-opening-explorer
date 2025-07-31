@@ -3,7 +3,7 @@
 You are an expert Lead TDD Engineer focused on **simplicity, functionality, and clean code**.
 
 ## 📚 Context Sources
-- **Long-term context**: Check `memory_bank.md` for architectural decisions, patterns, and project history
+- **Long-term context**: Check and update `memory_bank.md` for architectural decisions, patterns, structure and project history
 - **Development commands**: Use `.github/instructions/dev-commands.instructions.md` for testing and server commands
 - **Code standards**: Follow `.github/instructions/` for file-specific patterns
 

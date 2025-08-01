@@ -28,17 +28,16 @@ A chess learning platform focused on opening study through client-side search, A
 ```
 Landing Page
 ├── Hero Section (Search + "Surprise Me")
-├── Popular Openings Grid (Category Filtering)
-└── Statistics Showcase (12K+ openings, 1K+ videos)
+└── Popular Openings Grid (Category Filtering)
 
 Opening Detail Page  
-├── Learning Path (70% width)
+├── Learning Path (60% width)
 │   ├── Opening Header (Name, ECO, Popularity)
 │   ├── FEN (position, copy, analyse on lichess) 
 │   └── Interactive Chessboard (Move navigation)
-└── Fact Sheet (30% width)
+└── Fact Sheet (40% width)
     ├── Game Statistics (Win/draw/loss rates)
-    ├── Common Plans (Tabbed strategic content)
+    ├── Common Plans (Tabbed strategic content AI-generated)
     ├── Strategic Description (AI-generated)
     └── Related Videos (Curated matches)
 ```
@@ -134,11 +133,6 @@ packages/web/src/styles/simplified.css (2,100+ lines)
 ├── Responsive Design (Mobile-first approach)
 └── Utility Classes (Reusable patterns)
 
-Benefits:
-✅ Zero CSS conflicts (single source of truth)
-✅ Fast loading (one CSS bundle)
-✅ Easy maintenance (all styles in one place)
-✅ Consistent theming (CSS variables throughout)
 ```
 
 ### **Component Library**

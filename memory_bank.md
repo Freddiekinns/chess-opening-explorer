@@ -186,5 +186,27 @@ For comprehensive details, see:
 
 ---
 
-*Last Updated: 2025-07-30 - Streamlined for AI context efficiency*
-*Target: ~250 lines (65% reduction from original 701 lines)*
+## **🤖 Cline Integration Notes**
+
+### **Tool Usage Patterns**
+- **File Exploration**: Use `read_file` before making changes to understand context
+- **Targeted Edits**: Prefer `replace_in_file` for specific changes over `write_to_file`
+- **Command Execution**: Always run `npm run test:unit` from root after changes
+- **Architecture Check**: Reference `.cline/cline_rules.md` for Cline-specific workflow
+
+### **Cline Workflow Preferences**
+- **Plan → Act → Verify**: Aligns with TDD Red → Green → Refactor
+- **Iterative Development**: Make one change, test, then proceed
+- **Context First**: Leverage Cline's file exploration before implementing changes
+- **Reference Existing**: Use `.github/instructions/` files for specialized patterns
+
+### **Critical Cline Reminders**
+- **AD-003 (CSS)**: NEVER create separate CSS files - always add to `simplified.css`
+- **Testing Location**: All tests in `tests/unit/` directory, run from project ROOT
+- **Mock Strategy**: Mock all external dependencies (APIs, databases, file I/O)
+- **Performance Target**: <200ms API responses, use client-side filtering
+
+---
+
+*Last Updated: 2025-08-05 - Added Cline integration for tool-based workflow*
+*Target: ~270 lines with Cline integration*

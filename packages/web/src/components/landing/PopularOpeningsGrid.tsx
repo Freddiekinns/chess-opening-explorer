@@ -274,7 +274,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
               onClick={() => handleCategoryChange(category.id)}
             >
               {category.label}
-              <span className="category-count">({category.count})</span>
             </button>
           ))}
         </div>

@@ -2050,6 +2050,30 @@ body {
   transform: translateY(-1px);
 }
 
+/* Load More Section */
+.load-more-section {
+  text-align: center;
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+}
+
+.load-more-btn {
+  background-color: var(--color-brand-blue);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-base);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: var(--transition-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+}
+
+.load-more-btn:hover {
+  background-color: var(--color-brand-blue-dark);
+  transform: translateY(-1px);
+}
+
 /* View All Openings CTA */
 .view-all-cta {
   text-align: center;

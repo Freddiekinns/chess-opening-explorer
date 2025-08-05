@@ -37,7 +37,22 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedComplexity, setSelectedComplexity] = useState<string | null>(null)
+  const [allOpenings, setAllOpenings] = useState<Opening[]>([]) // Store all openings
+  const [displayLimit, setDisplayLimit] = useState(12) // Show 12 initially, can load more
   
+  // Helper function to count the number of moves in a moves string
+  const countMoves = (moves: string): number => {
+    if (!moves || typeof moves !== 'string') return 0;
+    
+    // Remove move numbers (1., 2., etc.) and split by spaces
+    // Example: "1. e4 e5 2. Nf3" -> ["e4", "e5", "Nf3"] = 3 moves
+    const cleanMoves = moves.replace(/\d+\./g, '').trim();
+    if (!cleanMoves) return 0;
+    
+    const moveList = cleanMoves.split(/\s+/).filter(move => move.length > 0);
+    return moveList.length;
+  };
+
   // Available categories based on ECO codes
   const [categories, setCategories] = useState([
     { id: 'all', label: 'All Openings', count: 0 },
@@ -51,44 +66,67 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   // Update filtered openings when filters change
   useEffect(() => {
     const loadFilteredData = async () => {
-      // If complexity is selected, make API call to get filtered data
-      if (selectedComplexity) {
-        try {
-          console.log(`🔍 Loading openings for complexity: "${selectedComplexity}"`);
-          
-          const params = new URLSearchParams();
+      // Always make API call to get consistent data whether complexity is selected or not
+      try {
+        console.log(`🔍 Loading openings for category: "${selectedCategory}", complexity: "${selectedComplexity || 'all levels'}"`);
+        
+        const params = new URLSearchParams();
+        if (selectedComplexity) {
           params.append('complexity', selectedComplexity);
-          params.append('limit', '30'); // Get more data for better filtering
-          
-          const response = await fetch(`/api/openings/popular-by-eco?${params}`);
-          const data = await response.json();
-          
-          if (data.success) {
-            // Flatten the categorized data
-            const flattenedOpenings = Object.values(data.data).flat() as Opening[];
-            
-            // Apply ECO category filter
-            let filtered = flattenedOpenings;
-            if (selectedCategory !== 'all') {
-              filtered = flattenedOpenings.filter(opening => 
-                opening.eco && opening.eco.startsWith(selectedCategory)
-              );
-            }
-            
-            // Remove invalid FEN and limit results
-            filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0);
-            
-            setFilteredOpenings(filtered.slice(0, 6));
-            console.log(`✅ Loaded ${filtered.length} complexity-filtered openings`);
-            return;
-          }
-        } catch (error) {
-          console.error('Error loading complexity-filtered openings:', error);
         }
+        params.append('limit', '50'); // Get more comprehensive data for better filtering
+        
+        const response = await fetch(`/api/openings/popular-by-eco?${params}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          // Flatten the categorized data
+          const flattenedOpenings = Object.values(data.data).flat() as Opening[];
+          
+          // Apply ECO category filter
+          let filtered = flattenedOpenings;
+          if (selectedCategory !== 'all') {
+            filtered = flattenedOpenings.filter(opening => 
+              opening.eco && opening.eco.startsWith(selectedCategory)
+            );
+          }
+          
+          // Remove invalid FEN and openings with only 1 move
+          filtered = filtered.filter(opening => {
+            if (!opening.fen || opening.fen.trim().length === 0) return false;
+            if (countMoves(opening.moves) <= 1) return false;
+            return true;
+          });
+          
+          // Deduplicate openings by FEN
+          const uniqueOpenings = filtered.reduce((acc, opening) => {
+            const key = opening.fen
+            if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
+              acc[key] = opening
+            }
+            return acc
+          }, {} as Record<string, Opening>)
+          
+          const deduplicated = Object.values(uniqueOpenings)
+          console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
+
+          // Sort by games played (descending order - most popular first)
+          deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
+
+          // Show all valid openings instead of limiting to 6
+          console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
+          
+          setAllOpenings(deduplicated);
+          setFilteredOpenings(deduplicated);
+          setDisplayLimit(12); // Reset display limit when filters change
+          return;
+        }
+      } catch (error) {
+        console.error('Error loading openings:', error);
       }
       
-      // Fallback to client-side filtering when no complexity filter or API fails
-      console.log(`🔍 Processing ${openings.length} total openings for category: "${selectedCategory}"`);
+      // Fallback to client-side filtering only if API fails
+      console.log(`🔍 Fallback: Processing ${openings.length} total openings for category: "${selectedCategory}"`);
       
       let filtered = openings;
       if (selectedCategory !== 'all') {
@@ -98,9 +136,13 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
         console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
       }
       
-      // Filter out any openings without valid FEN positions
-      filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0)
-      console.log(`🎯 After filtering valid FEN positions: ${filtered.length} openings`);
+      // Filter out any openings without valid FEN positions and openings with only 1 move
+      filtered = filtered.filter(opening => {
+        if (!opening.fen || opening.fen.trim().length === 0) return false;
+        if (countMoves(opening.moves) <= 1) return false;
+        return true;
+      })
+      console.log(`🎯 After filtering valid FEN positions and multi-move openings: ${filtered.length} openings`);
       
       // Deduplicate openings by FEN
       const uniqueOpenings = filtered.reduce((acc, opening) => {
@@ -117,12 +159,12 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       // Sort by games played (descending order - most popular first)
       deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-      // Limit to top 6 for all categories for consistent display
-      const displayLimit = 6
-      const finalResults = deduplicated.slice(0, displayLimit)
-      console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
+      // Show all valid openings instead of limiting to 6
+      console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
       
-      setFilteredOpenings(finalResults);
+      setAllOpenings(deduplicated);
+      setFilteredOpenings(deduplicated);
+      setDisplayLimit(12); // Reset display limit when filters change
     };
     
     loadFilteredData();
@@ -202,7 +244,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       </div>
 
       <div className="openings-grid">
-        {filteredOpenings.map((opening, index) => (
+        {filteredOpenings.slice(0, displayLimit).map((opening, index) => (
           <OpeningCard
             key={opening.fen || `fallback-${opening.eco}-${opening.name}-${index}`}
             opening={opening}
@@ -213,6 +255,17 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           />
         ))}
       </div>
+
+      {filteredOpenings.length > displayLimit && (
+        <div className="load-more-section">
+          <button 
+            onClick={() => setDisplayLimit(prev => prev + 12)}
+            className="load-more-btn"
+          >
+            Load More Openings ({filteredOpenings.length - displayLimit} remaining)
+          </button>
+        </div>
+      )}
 
       {filteredOpenings.length === 0 && (
         <div className="empty-state">

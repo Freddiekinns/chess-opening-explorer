@@ -411,12 +411,12 @@ router.get('/popular', (req, res) => {
 /**
  * @route GET /api/openings/popular-by-eco
  * @desc Get top openings by ECO category for optimized grid display
- * @param {number} limit - Max results per category (default: 6, max: 10)
+ * @param {number} limit - Max results per category (default: 6, max: 20)
  */
 router.get('/popular-by-eco', (req, res) => {
   try {
     const { limit = 6, complexity } = req.query;
-    const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 10);
+    const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 20); // Increased from 10 to 20
     
     const startTime = Date.now();
     let allOpenings = ecoService.getAllOpenings();

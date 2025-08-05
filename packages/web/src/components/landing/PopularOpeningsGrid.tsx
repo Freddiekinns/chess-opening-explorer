@@ -66,15 +66,15 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   // Update filtered openings when filters change
   useEffect(() => {
     const loadFilteredData = async () => {
-      // Always make API call to get consistent data whether complexity is selected or not
       try {
         console.log(`🔍 Loading openings for category: "${selectedCategory}", complexity: "${selectedComplexity || 'all levels'}"`);
         
+        // Strategy: Use popular-by-eco API for all scenarios to ensure good coverage
         const params = new URLSearchParams();
         if (selectedComplexity) {
           params.append('complexity', selectedComplexity);
         }
-        params.append('limit', '50'); // Get more comprehensive data for better filtering
+        params.append('limit', '20'); // Get 20 per category for comprehensive coverage
         
         const response = await fetch(`/api/openings/popular-by-eco?${params}`);
         const data = await response.json();
@@ -83,7 +83,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           // Flatten the categorized data
           const flattenedOpenings = Object.values(data.data).flat() as Opening[];
           
-          // Apply ECO category filter
+          // Apply ECO category filter if specific category is selected
           let filtered = flattenedOpenings;
           if (selectedCategory !== 'all') {
             filtered = flattenedOpenings.filter(opening => 
@@ -108,17 +108,54 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           }, {} as Record<string, Opening>)
           
           const deduplicated = Object.values(uniqueOpenings)
-          console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
-
+          
           // Sort by games played (descending order - most popular first)
           deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
-
-          // Show all valid openings instead of limiting to 6
-          console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
+          
+          console.log(`✅ ${selectedCategory === 'all' ? 'All categories' : `Category "${selectedCategory}"`}: ${deduplicated.length} openings`);
+          
+          // If we get very few results for a specific category, try the search-index API as fallback
+          if (selectedCategory !== 'all' && deduplicated.length < 5) {
+            console.log(`⚠️ Low results for category "${selectedCategory}", trying search-index fallback...`);
+            
+            const fallbackResponse = await fetch('/api/openings/search-index?limit=500');
+            const fallbackData = await fallbackResponse.json();
+            
+            if (fallbackData.success) {
+              let fallbackFiltered = fallbackData.data.filter((opening: Opening) => 
+                opening.eco && opening.eco.startsWith(selectedCategory)
+              );
+              
+              fallbackFiltered = fallbackFiltered.filter((opening: Opening) => {
+                if (!opening.fen || opening.fen.trim().length === 0) return false;
+                if (countMoves(opening.moves) <= 1) return false;
+                return true;
+              });
+              
+              const fallbackUnique = fallbackFiltered.reduce((acc: Record<string, Opening>, opening: Opening) => {
+                const key = opening.fen
+                if (!acc[key]) {
+                  acc[key] = opening
+                }
+                return acc
+              }, {} as Record<string, Opening>)
+              
+              const fallbackDeduplicated = Object.values(fallbackUnique) as Opening[]
+              fallbackDeduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
+              
+              if (fallbackDeduplicated.length > deduplicated.length) {
+                console.log(`✅ Fallback successful: ${fallbackDeduplicated.length} openings for category "${selectedCategory}"`);
+                setAllOpenings(fallbackDeduplicated);
+                setFilteredOpenings(fallbackDeduplicated);
+                setDisplayLimit(12);
+                return;
+              }
+            }
+          }
           
           setAllOpenings(deduplicated);
           setFilteredOpenings(deduplicated);
-          setDisplayLimit(12); // Reset display limit when filters change
+          setDisplayLimit(12);
           return;
         }
       } catch (error) {
@@ -243,7 +280,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
         </div>
       </div>
 
-      <div className="openings-grid">
+      <div className="openings-grid" key={`${selectedCategory}-${selectedComplexity}-${displayLimit}`}>
         {filteredOpenings.slice(0, displayLimit).map((opening, index) => (
           <OpeningCard
             key={opening.fen || `fallback-${opening.eco}-${opening.name}-${index}`}

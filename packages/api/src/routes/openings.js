@@ -415,11 +415,18 @@ router.get('/popular', (req, res) => {
  */
 router.get('/popular-by-eco', (req, res) => {
   try {
-    const { limit = 6 } = req.query;
+    const { limit = 6, complexity } = req.query;
     const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 10);
     
     const startTime = Date.now();
-    const allOpenings = ecoService.getAllOpenings();
+    let allOpenings = ecoService.getAllOpenings();
+    
+    // Filter by complexity if provided
+    if (complexity && ['Beginner', 'Intermediate', 'Advanced'].includes(complexity)) {
+      allOpenings = allOpenings.filter(opening => 
+        opening.analysis_json?.complexity === complexity
+      );
+    }
     const popularity = loadPopularityData();
     
     if (popularity.length === 0) {

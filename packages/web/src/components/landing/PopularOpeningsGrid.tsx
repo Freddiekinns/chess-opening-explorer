@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
+import { ComplexityFilters } from '../filters/ComplexityFilters';
 
 interface Opening {
   fen: string
@@ -35,7 +36,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 }) => {
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
-
+  const [selectedComplexity, setSelectedComplexity] = useState<string | null>(null)
+  
   // Available categories based on ECO codes
   const [categories, setCategories] = useState([
     { id: 'all', label: 'All Openings', count: 0 },
@@ -48,49 +50,83 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
   // Update filtered openings when filters change
   useEffect(() => {
-    console.log(`🔍 Processing ${openings.length} total openings for category: "${selectedCategory}"`);
-    
-    // Apply ECO category filter FIRST, before any deduplication
-    let filtered = openings
-    if (selectedCategory !== 'all') {
-      filtered = openings.filter(opening => {
-        return opening.eco && opening.eco.startsWith(selectedCategory)
-      })
-      console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
-    }
-    
-    // Filter out any openings without valid FEN positions
-    filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0)
-    console.log(`🎯 After filtering valid FEN positions: ${filtered.length} openings`);
-    
-    // Then deduplicate openings by FEN within the filtered set
-    const uniqueOpenings = filtered.reduce((acc, opening) => {
-      const key = opening.fen
-      if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
-        acc[key] = opening
+    const loadFilteredData = async () => {
+      // If complexity is selected, make API call to get filtered data
+      if (selectedComplexity) {
+        try {
+          console.log(`🔍 Loading openings for complexity: "${selectedComplexity}"`);
+          
+          const params = new URLSearchParams();
+          params.append('complexity', selectedComplexity);
+          params.append('limit', '30'); // Get more data for better filtering
+          
+          const response = await fetch(`/api/openings/popular-by-eco?${params}`);
+          const data = await response.json();
+          
+          if (data.success) {
+            // Flatten the categorized data
+            const flattenedOpenings = Object.values(data.data).flat() as Opening[];
+            
+            // Apply ECO category filter
+            let filtered = flattenedOpenings;
+            if (selectedCategory !== 'all') {
+              filtered = flattenedOpenings.filter(opening => 
+                opening.eco && opening.eco.startsWith(selectedCategory)
+              );
+            }
+            
+            // Remove invalid FEN and limit results
+            filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0);
+            
+            setFilteredOpenings(filtered.slice(0, 6));
+            console.log(`✅ Loaded ${filtered.length} complexity-filtered openings`);
+            return;
+          }
+        } catch (error) {
+          console.error('Error loading complexity-filtered openings:', error);
+        }
       }
-      return acc
-    }, {} as Record<string, Opening>)
-    
-    const deduplicated = Object.values(uniqueOpenings)
-    console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
+      
+      // Fallback to client-side filtering when no complexity filter or API fails
+      console.log(`🔍 Processing ${openings.length} total openings for category: "${selectedCategory}"`);
+      
+      let filtered = openings;
+      if (selectedCategory !== 'all') {
+        filtered = openings.filter(opening => {
+          return opening.eco && opening.eco.startsWith(selectedCategory)
+        })
+        console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
+      }
+      
+      // Filter out any openings without valid FEN positions
+      filtered = filtered.filter(opening => opening.fen && opening.fen.trim().length > 0)
+      console.log(`🎯 After filtering valid FEN positions: ${filtered.length} openings`);
+      
+      // Deduplicate openings by FEN
+      const uniqueOpenings = filtered.reduce((acc, opening) => {
+        const key = opening.fen
+        if (!acc[key] || (opening.games_analyzed || 0) > (acc[key].games_analyzed || 0)) {
+          acc[key] = opening
+        }
+        return acc
+      }, {} as Record<string, Opening>)
+      
+      const deduplicated = Object.values(uniqueOpenings)
+      console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
 
-    // Sort by games played (descending order - most popular first)
-    deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
+      // Sort by games played (descending order - most popular first)
+      deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
 
-    // Limit to top 6 for all categories for consistent display
-    const displayLimit = 6
-    const finalResults = deduplicated.slice(0, displayLimit)
-    console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
+      // Limit to top 6 for all categories for consistent display
+      const displayLimit = 6
+      const finalResults = deduplicated.slice(0, displayLimit)
+      console.log(`✅ Final results for "${selectedCategory}": ${finalResults.length} openings, showing top ${displayLimit}`);
+      
+      setFilteredOpenings(finalResults);
+    };
     
-    // Debug: Log the actual games_analyzed values for the final results
-    console.log('🎯 Final sorted results with games_analyzed:');
-    finalResults.slice(0, 6).forEach((opening, index) => {
-      console.log(`  ${index + 1}. "${opening.name}" (${opening.eco}) - ${opening.games_analyzed || 0} games`);
-    });
-    
-    setFilteredOpenings(finalResults)
-  }, [openings, selectedCategory])
+    loadFilteredData();
+  }, [openings, selectedCategory, selectedComplexity])
 
   // Update category counts
   useEffect(() => {
@@ -138,13 +174,19 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>Popular Openings</h2>
+        <h2>Browse Chess Openings</h2>
         <p className="section-subtitle">
-          Explore openings by ECO classification - from King's openings to Indian systems
+          Filter by skill level and explore openings by ECO classification
         </p>
       </div>
 
       <div className="filters-container">
+        <ComplexityFilters
+          selectedComplexity={selectedComplexity}
+          onComplexityChange={setSelectedComplexity}
+          className="complexity-filters"
+        />
+        
         <div className="category-filters">
           {categories.slice(0, 6).map(category => (
             <button

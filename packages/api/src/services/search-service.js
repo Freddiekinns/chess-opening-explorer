@@ -1,92 +1,22 @@
 const Fuse = require('fuse.js');
 const { getOpenings } = require('./opening-data-service');
 
-// Enhanced semantic mappings for natural language search
-const SEMANTIC_MAPPINGS = {
-  // Style-based intent mappings
-  'aggressive': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice', 'risky', 'dynamic'],
-  'attacking': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice', 'kingside attack'],
-  'solid': ['solid', 'safe', 'defensive', 'reliable', 'stable', 'sound', 'positional'],
-  'defensive': ['solid', 'safe', 'defensive', 'reliable', 'stable', 'sound', 'counterattack'],
-  'positional': ['positional', 'strategic', 'quiet', 'closed', 'slow', 'maneuvering', 'solid'],
-  'tactical': ['tactical', 'sharp', 'aggressive', 'sacrifice', 'attacking', 'combination'],
-  'dynamic': ['dynamic', 'unbalanced', 'complex', 'imbalanced', 'volatile', 'sharp'],
-  'classical': ['classical', 'traditional', 'main line', 'principled', 'standard'],
-  'hypermodern': ['hypermodern', 'fianchetto', 'control center', 'flexible', 'modern'],
-  
-  // Complexity-based mappings
-  'beginner': ['beginner', 'simple', 'easy', 'fundamental', 'basic', 'elementary'],
-  'intermediate': ['intermediate', 'moderate', 'standard'],
-  'advanced': ['advanced', 'theoretical', 'complex', 'difficult', 'expert', 'master'],
-  
-  // Opening move patterns
-  'queens pawn': ['d4', 'queen\'s pawn', 'queens pawn'],
-  'kings pawn': ['e4', 'king\'s pawn', 'kings pawn'],
-  'english': ['c4', 'english'],
-  'reti': ['nf3', 'reti'],
-  'bird': ['f4', 'bird'],
-  
-  // Response patterns
-  'response to d4': ['d4', 'queen\'s pawn'],
-  'response to e4': ['e4', 'king\'s pawn'],
-  'defense': ['defense', 'defence', 'defensive'],
-  'counter': ['counter', 'counterattack', 'counter-attack'],
-  
-  // Color-specific searches
-  'for white': ['white'],
-  'for black': ['black'],
-  'black options': ['black'],
-  'white openings': ['white']
-};
-
-// Legacy category mappings (kept for backward compatibility)
-const STYLE_CATEGORIES = {
-  'attacking': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice'],
-  'positional': ['positional', 'strategic', 'quiet', 'closed', 'slow', 'maneuvering'],
-  'solid': ['solid', 'safe', 'defensive', 'reliable', 'stable', 'sound'],
-  'dynamic': ['dynamic', 'unbalanced', 'complex', 'imbalanced', 'volatile'],
-  'classical': ['classical', 'traditional', 'main line', 'principled'],
-  'hypermodern': ['hypermodern', 'fianchetto', 'control center', 'flexible'],
-  'beginner-friendly': ['beginner', 'simple', 'easy', 'fundamental', 'basic'],
-  'advanced': ['advanced', 'theoretical', 'complex', 'difficult', 'expert']
-};
-
-// Common query patterns and their intents
-const QUERY_PATTERNS = {
-  // Pattern: "X openings" or "X for Y"
-  STYLE_OPENINGS: /^(aggressive|attacking|solid|defensive|positional|tactical|dynamic|classical|hypermodern|beginner|advanced|simple|complex)\s+(openings?|for\s+\w+|options?)$/i,
-  
-  // Pattern: "response to X" or "defense against X"
-  RESPONSE_TO: /^(response|defense|defence|counter)\s+(to|against)\s+(.+)$/i,
-  
-  // Pattern: "X for color"
-  COLOR_SPECIFIC: /^(.+)\s+(for|as)\s+(white|black)$/i,
-  
-  // Pattern: "beginner/advanced X"
-  COMPLEXITY_SPECIFIC: /^(beginner|intermediate|advanced|simple|complex)\s+(.+)$/i,
-  
-  // Pattern: specific opening names with modifiers
-  OPENING_WITH_MODIFIER: /^(aggressive|solid|tactical|positional|sharp|quiet)\s+(.+)$/i
-};
-
-// Fuse.js configuration for fuzzy search
-const FUSE_OPTIONS = {
-  includeScore: true,
-  threshold: 0.4, // Lower = more strict matching
-  ignoreLocation: true,
-  keys: [
-    { name: 'name', weight: 0.4 },
-    { name: 'moves', weight: 0.3 },
-    { name: 'style_tags', weight: 0.2 },
-    { name: 'description', weight: 0.1 }
-  ]
-};
+// Import search modules
+const { 
+  SEMANTIC_MAPPINGS, 
+  STYLE_CATEGORIES, 
+  FUSE_OPTIONS 
+} = require('./search/SearchConstants');
+const QueryUtils = require('./search/QueryUtils');
+const QueryIntentParser = require('./search/QueryIntentParser');
 
 class SearchService {
   constructor() {
     this.fuse = null;
     this.openings = null;
+    this.popularitySorted = null;
     this.initialized = false;
+    this.popularCache = new Map(); // Cache for popular search results
   }
 
   async initialize() {
@@ -94,6 +24,18 @@ class SearchService {
     
     try {
       this.openings = await getOpenings();
+      
+      // Pre-sort by popularity for better performance
+      this.popularitySorted = [...this.openings].sort((a, b) => {
+        const popularityA = a.analysis_json?.popularity_score || 0;
+        const popularityB = b.analysis_json?.popularity_score || 0;
+        
+        if (popularityA !== popularityB) {
+          return popularityB - popularityA;
+        }
+        
+        return a.name.localeCompare(b.name);
+      });
       
       // Prepare search index with flattened data
       const searchIndex = this.openings.map(opening => ({
@@ -114,63 +56,123 @@ class SearchService {
    * Main search method supporting various query types
    * @param {string} query - The search query
    * @param {Object} options - Search options
-   * @returns {Array} Array of search results
+   * @returns {Object} Search results with metadata
    */
   async search(query, options = {}) {
+    try {
+      await this.initialize();
+      
+      // Validate and sanitize inputs
+      const { query: sanitizedQuery, options: sanitizedOptions } = 
+        QueryUtils.validateAndSanitize(query, options);
+      
+      if (!sanitizedQuery || sanitizedQuery === '') {
+        return this.getAllOpenings(sanitizedOptions);
+      }
+
+      const normalizedQuery = sanitizedQuery.toLowerCase().trim();
+      
+      // Check if this is a chess move query and handle specially
+      if (QueryUtils.isChessMove(normalizedQuery)) {
+        return this.searchByMove(normalizedQuery, sanitizedOptions);
+      }
+      
+      // Enhanced search routing: for ambiguous terms like "attacking" or "gambit"
+      // try popularity-based name search first, then semantic search if poor results
+      const looksLikeOpeningName = QueryUtils.looksLikeOpeningName(normalizedQuery);
+      const isAmbiguousTerm = QueryUtils.isAmbiguousSemanticTerm(normalizedQuery);
+      
+      // For ambiguous terms, ALWAYS try name search first with word-precision matching
+      // This ensures queries like "kings indian" get proper name matching instead of fuzzy
+      if (isAmbiguousTerm) {
+        const nameSearchResults = await this.tryNameSearchFirst(normalizedQuery, sanitizedOptions);
+        if (nameSearchResults && nameSearchResults.results.length > 0) {
+          // Always return name search results for ambiguous terms to get word-precision matching
+          // This fixes "kings indian" and other similar routing issues
+          return {
+            ...nameSearchResults,
+            searchType: 'popularity_first'
+          };
+        }
+      }
+      
+      // Use semantic search for clear natural language queries
+      if (!looksLikeOpeningName && !isAmbiguousTerm) {
+        const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
+        if (semanticResults.results.length > 0) {
+          return semanticResults;
+        }
+      }
+      
+      // Use fuzzy search with enhanced name matching for opening names
+      const fuzzyResults = this.fuse.search(normalizedQuery);
+      
+      // Extract openings from fuzzy results and enhance with name-based scoring
+      let results = fuzzyResults.map(result => ({
+        ...result.item,
+        searchScore: 1 - result.score // Convert to positive score
+      }));
+
+      // Apply enhanced name matching boost
+      results = this.applyNameMatchingBoost(results, normalizedQuery);
+
+      // Apply multi-pass filtering for enhanced results
+      results = this.applyMultiPassFiltering(results, normalizedQuery);
+      
+      // Apply additional filters
+      if (sanitizedOptions.category) {
+        results = this.filterByCategory(results, sanitizedOptions.category);
+      }
+      
+      // Apply pagination
+      const { limit, offset } = sanitizedOptions;
+      const totalResults = results.length;
+      results = results.slice(offset, offset + limit);
+      
+      return {
+        results,
+        totalResults,
+        hasMore: offset + limit < totalResults,
+        searchType: 'fuzzy'
+      };
+      
+    } catch (error) {
+      console.error('Search error:', { query, error: error.message });
+      
+      // Return graceful fallback
+      return {
+        results: [],
+        totalResults: 0,
+        hasMore: false,
+        error: 'Search temporarily unavailable',
+        searchType: 'error'
+      };
+    }
+  }
+
+  /**
+   * Enhanced semantic search with natural language understanding
+   * @param {string} query - The search query
+   * @param {Object} options - Search options
+   * @returns {Object} Search results with metadata
+   */
+  async semanticSearch(query, options = {}) {
     await this.initialize();
     
-    if (!query || query.trim() === '') {
-      return this.getAllOpenings(options);
-    }
-
     const normalizedQuery = query.toLowerCase().trim();
+    const queryIntent = QueryIntentParser.parseQueryIntent(normalizedQuery);
     
-    // Check if this is a chess move query and handle specially
-    if (this.isChessMove(normalizedQuery)) {
-      return this.searchByMove(normalizedQuery, options);
+    let results = [];
+    let searchType = 'semantic';
+    
+    // Apply semantic filtering based on detected intent
+    if (queryIntent.type !== 'unknown') {
+      results = this.applySemanticFiltering(queryIntent);
+      searchType = `semantic_${queryIntent.type}`;
+    } else {
+      // If no specific intent detected, fall back to enhanced fuzzy search
+      return { results: [], totalResults: 0, hasMore: false, searchType: 'no_semantic_match' };
     }
-    
-    // Enhanced search routing: for ambiguous terms like "attacking" or "gambit"
-    // try popularity-based name search first, then semantic search if poor results
-    const looksLikeOpeningName = this.looksLikeOpeningName(normalizedQuery);
-    const isAmbiguousTerm = this.isAmbiguousSemanticTerm(normalizedQuery);
-    
-    // For ambiguous terms, ALWAYS try name search first with word-precision matching
-    // This ensures queries like "kings indian" get proper name matching instead of fuzzy
-    if (isAmbiguousTerm) {
-      const nameSearchResults = await this.tryNameSearchFirst(normalizedQuery, options);
-      if (nameSearchResults && nameSearchResults.results.length > 0) {
-        // Always return name search results for ambiguous terms to get word-precision matching
-        // This fixes "kings indian" and other similar routing issues
-        return {
-          ...nameSearchResults,
-          searchType: 'popularity_first'
-        };
-      }
-    }
-    
-    // Use semantic search for clear natural language queries
-    if (!looksLikeOpeningName && !isAmbiguousTerm) {
-      const semanticResults = await this.semanticSearch(normalizedQuery, options);
-      if (semanticResults.results.length > 0) {
-        return semanticResults;
-      }
-    }
-    
-    // Use fuzzy search with enhanced name matching for opening names
-    const fuzzyResults = this.fuse.search(normalizedQuery);
-    
-    // Extract openings from fuzzy results and enhance with name-based scoring
-    let results = fuzzyResults.map(result => ({
-      ...result.item,
-      searchScore: 1 - result.score // Convert to positive score
-    }));
-
-    // Apply enhanced name matching boost
-    results = this.applyNameMatchingBoost(results, normalizedQuery);
-
-    // Apply multi-pass filtering for enhanced results
-    results = this.applyMultiPassFiltering(results, normalizedQuery);
     
     // Apply additional filters
     if (options.category) {
@@ -186,26 +188,9 @@ class SearchService {
       results,
       totalResults,
       hasMore: offset + limit < totalResults,
-      searchType: 'fuzzy'
+      searchType,
+      queryIntent
     };
-  }
-
-  /**
-   * Check if query looks like a chess move
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  isChessMove(query) {
-    const movePatterns = [
-      /^[a-h][1-8]$/, // Pawn moves: e4, d4, etc.
-      /^[nbrqk][a-h][1-8]$/, // Piece moves: nf3, bb5, etc.
-      /^o-o-o$/, // Long castling
-      /^o-o$/, // Short castling
-      /^[a-h]x[a-h][1-8]$/, // Captures: exd5, etc.
-      /^[nbrqk]x[a-h][1-8]$/, // Piece captures: nxe5, etc.
-    ];
-    
-    return movePatterns.some(pattern => pattern.test(query));
   }
 
   /**
@@ -300,7 +285,7 @@ class SearchService {
     await this.initialize();
     
     const normalizedQuery = query.toLowerCase().trim();
-    const queryIntent = this.parseQueryIntent(normalizedQuery);
+    const queryIntent = QueryIntentParser.parseQueryIntent(normalizedQuery);
     
     let results = [];
     let searchType = 'semantic';
@@ -334,150 +319,21 @@ class SearchService {
   }
 
   /**
-   * Parse query intent from natural language
-   * @param {string} query - Normalized query string
-   * @returns {Object} Query intent object
+   * Get all openings with basic sorting (uses pre-sorted cache)
+   * @private
    */
-  parseQueryIntent(query) {
-    const intent = {
-      type: 'unknown',
-      modifiers: [],
-      targetMoves: [],
-      complexity: null,
-      style: [],
-      color: null,
-      originalQuery: query
+  getAllOpenings(options = {}) {
+    const { limit = 50, offset = 0 } = options;
+    
+    // Use pre-sorted popularity cache for better performance
+    const totalResults = this.popularitySorted.length;
+    const results = this.popularitySorted.slice(offset, offset + limit);
+    
+    return {
+      results,
+      totalResults,
+      hasMore: offset + limit < totalResults
     };
-
-    // Check for style-based openings (e.g., "aggressive openings")
-    const styleMatch = query.match(QUERY_PATTERNS.STYLE_OPENINGS);
-    if (styleMatch) {
-      intent.type = 'style_search';
-      intent.style = [styleMatch[1]];
-      return intent;
-    }
-
-    // Check for response patterns (e.g., "solid response to d4")
-    const responseMatch = query.match(QUERY_PATTERNS.RESPONSE_TO);
-    if (responseMatch) {
-      intent.type = 'response_search';
-      intent.targetMoves = this.extractMoves(responseMatch[3]);
-      
-      // Check if there's a style modifier before "response"
-      const words = query.split(' ');
-      const responseIndex = words.findIndex(word => 
-        ['response', 'defense', 'defence', 'counter'].includes(word)
-      );
-      
-      if (responseIndex > 0) {
-        const potentialModifier = words[responseIndex - 1];
-        if (SEMANTIC_MAPPINGS[potentialModifier]) {
-          intent.modifiers = [potentialModifier];
-        }
-      }
-      
-      return intent;
-    }
-
-    // Check for color-specific searches (e.g., "attacking options for black")
-    const colorMatch = query.match(QUERY_PATTERNS.COLOR_SPECIFIC);
-    if (colorMatch) {
-      intent.type = 'color_specific';
-      intent.color = colorMatch[3];
-      
-      // Parse the opening description part
-      const openingPart = colorMatch[1];
-      intent.style = this.extractStylesFromText(openingPart);
-      
-      return intent;
-    }
-
-    // Check for complexity-specific searches (e.g., "beginner french defense")
-    const complexityMatch = query.match(QUERY_PATTERNS.COMPLEXITY_SPECIFIC);
-    if (complexityMatch) {
-      intent.type = 'complexity_search';
-      intent.complexity = complexityMatch[1];
-      
-      // Parse the opening part
-      const openingPart = complexityMatch[2];
-      intent.style = this.extractStylesFromText(openingPart);
-      
-      return intent;
-    }
-
-    // Check for opening with style modifiers (e.g., "aggressive sicilian")
-    const modifierMatch = query.match(QUERY_PATTERNS.OPENING_WITH_MODIFIER);
-    if (modifierMatch) {
-      intent.type = 'modified_opening';
-      intent.style = [modifierMatch[1]];
-      intent.openingName = modifierMatch[2];
-      
-      return intent;
-    }
-
-    // Check for direct semantic mapping matches
-    for (const [key, mappings] of Object.entries(SEMANTIC_MAPPINGS)) {
-      if (query.includes(key) || mappings.some(mapping => query.includes(mapping))) {
-        intent.type = 'semantic_match';
-        intent.style = [key];
-        return intent;
-      }
-    }
-
-    return intent;
-  }
-
-  /**
-   * Extract chess moves from text (e.g., "d4", "1.e4", "king's pawn")
-   * @param {string} text - Text containing move references
-   * @returns {Array} Array of move strings
-   */
-  extractMoves(text) {
-    const moves = [];
-    const normalizedText = text.toLowerCase();
-    
-    // Direct move notation (e.g., "d4", "e4", "nf3")
-    const moveMatches = text.match(/\b[a-h][1-8]\b|\b[NBRQK][a-h][1-8]\b/g);
-    if (moveMatches) {
-      moves.push(...moveMatches.map(move => move.toLowerCase()));
-    }
-    
-    // Named move patterns
-    if (normalizedText.includes('d4') || normalizedText.includes('queen\'s pawn') || normalizedText.includes('queens pawn')) {
-      moves.push('d4');
-    }
-    if (normalizedText.includes('e4') || normalizedText.includes('king\'s pawn') || normalizedText.includes('kings pawn')) {
-      moves.push('e4');
-    }
-    if (normalizedText.includes('c4') || normalizedText.includes('english')) {
-      moves.push('c4');
-    }
-    if (normalizedText.includes('nf3') || normalizedText.includes('reti')) {
-      moves.push('nf3');
-    }
-    if (normalizedText.includes('f4') || normalizedText.includes('bird')) {
-      moves.push('f4');
-    }
-    
-    return moves;
-  }
-
-  /**
-   * Extract style descriptors from text
-   * @param {string} text - Text to analyze
-   * @returns {Array} Array of style tags
-   */
-  extractStylesFromText(text) {
-    const styles = [];
-    const words = text.toLowerCase().split(/\s+/);
-    
-    for (const word of words) {
-      if (SEMANTIC_MAPPINGS[word]) {
-        styles.push(word);
-      }
-    }
-    
-    return styles;
   }
 
   /**

@@ -29,7 +29,78 @@ interface SearchBarProps {
   onExpandSearch?: () => void // Callback to load more search data if needed
 }
 
-// Simplified client-side search function
+// Enhanced search function with semantic search fallback
+async function searchOpenings(query: string, useSemanticSearch: boolean = true): Promise<{
+  results: Opening[],
+  searchType: string,
+  totalResults: number
+}> {
+  if (!query || query.trim().length < 2) {
+    return { results: [], searchType: 'empty', totalResults: 0 };
+  }
+
+  try {
+    // Try semantic search first if enabled
+    if (useSemanticSearch) {
+      const response = await fetch(`/api/openings/semantic-search?q=${encodeURIComponent(query)}&limit=20`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && data.data.length > 0) {
+          return {
+            results: data.data,
+            searchType: data.searchType || 'semantic',
+            totalResults: data.totalResults || data.data.length
+          };
+        }
+      }
+    }
+
+    // Fallback to regular search
+    const response = await fetch(`/api/openings/search?q=${encodeURIComponent(query)}&limit=20`);
+    
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        return {
+          results: data.data,
+          searchType: 'traditional',
+          totalResults: data.count
+        };
+      }
+    }
+
+    // Final fallback to client-side search if available
+    return { results: [], searchType: 'fallback', totalResults: 0 };
+  } catch (error) {
+    console.warn('Search API error:', error);
+    return { results: [], searchType: 'error', totalResults: 0 };
+  }
+}
+
+// Get search suggestions
+async function getSearchSuggestions(query: string): Promise<string[]> {
+  if (!query || query.trim().length < 2) {
+    return [];
+  }
+
+  try {
+    const response = await fetch(`/api/openings/search-suggestions?q=${encodeURIComponent(query)}&limit=8`);
+    
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        return data.data;
+      }
+    }
+  } catch (error) {
+    console.warn('Suggestions API error:', error);
+  }
+
+  return [];
+}
+
+// Client-side fallback search (kept for offline scenarios)
 function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
   const lowerCaseQuery = query.toLowerCase()
   
@@ -78,7 +149,7 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
 export const SearchBar: React.FC<SearchBarProps> = ({
   variant = 'landing',
   onSelect,
-  placeholder = "Search for a chess opening...",
+  placeholder = "Try: 'aggressive openings' or 'solid response to d4'",
   autoFocus = false,
   disabled = false,
   loading = false,
@@ -93,7 +164,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  // Fast client-side search with progressive enhancement
+  // Enhanced search with server-side semantic search
   useEffect(() => {
     if (searchTerm.length < 2) {
       setSuggestions([])
@@ -101,15 +172,39 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       return
     }
 
-    const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
-    setSuggestions(relevantOpenings.slice(0, 8))
-    setShowSuggestions(relevantOpenings.length > 0)
-    
-    // If we have few results and haven't expanded yet, request more data
-    if (relevantOpenings.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
-      setHasRequestedExpansion(true)
-      onExpandSearch()
-    }
+    // Debounce search requests
+    const searchTimeout = setTimeout(async () => {
+      try {
+        // Try semantic search first
+        const searchResults = await searchOpenings(searchTerm, true);
+        
+        if (searchResults.results.length > 0) {
+          setSuggestions(searchResults.results.slice(0, 8))
+          setShowSuggestions(true)
+          return
+        }
+        
+        // Fallback to client-side search if server search fails
+        const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
+        setSuggestions(relevantOpenings.slice(0, 8))
+        setShowSuggestions(relevantOpenings.length > 0)
+        
+        // If we have few results and haven't expanded yet, request more data
+        if (relevantOpenings.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
+          setHasRequestedExpansion(true)
+          onExpandSearch()
+        }
+      } catch (error) {
+        console.warn('Search failed, using client-side fallback:', error)
+        // Fallback to client-side search
+        const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
+        setSuggestions(relevantOpenings.slice(0, 8))
+        setShowSuggestions(relevantOpenings.length > 0)
+      }
+    }, 300) // 300ms debounce
+
+    // Cleanup timeout
+    return () => clearTimeout(searchTimeout)
   }, [searchTerm, openingsData, hasRequestedExpansion, onExpandSearch])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

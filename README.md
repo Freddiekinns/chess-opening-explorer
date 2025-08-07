@@ -201,7 +201,8 @@ npm test
 The project has a stable architecture and is ready for new features. Current roadmap includes:
 
 -   **✅ F03: Course Recommendation Data Pipeline**: Manually curate and integrate expert course recommendations. **(COMPLETED)**
--   **F05: Enhanced Search Capabilities**: Evolve the search to understand natural language and strategic concepts.
+-   **✅ F05: Enhanced Search Precision**: Fixed cross-contamination issues ("kings gambit" → "queens gambit") with word-level precision matching. **(COMPLETED)**
+-   **F06: Advanced Search Features**: Natural language queries and strategic concept understanding.
 
 For more details, see the full list of [Product Requirements Documents](docs/).
 
@@ -212,7 +213,3 @@ The project's documentation is organized to support development and provide clea
 -   **[memory_bank.md](memory_bank.md)**: The project's long-term memory, containing high-level architectural decisions, API contracts, and critical development rules. This is the primary context file for AI-driven development.
 -   **[docs/](docs/)**: Contains detailed documentation for the project, including API references, design systems, and pipeline architecture. See the `docs/README.md` for a full index.
 -   **[.github/copilot-instructions.md](.github/copilot-instructions.md)**: The operational framework for the AI agent, detailing TDD workflows, development protocols, and quality assurance mindsets.
-
-
-
-

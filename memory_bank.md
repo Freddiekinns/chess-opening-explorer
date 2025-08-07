@@ -33,6 +33,12 @@
 - **Metadata separation**: Store processing status separately from content
 - **Skip logic**: Skip already processed/failed items with logging
 
+### **AD-008: Search Discovery Philosophy**
+- **Natural Language First**: "attacking openings for black" > "Sicilian Defense"
+- **Progressive Discovery**: Semantic → Fuzzy → Exact matching hierarchy
+- **Intent Understanding**: Parse user goals, not just text matching
+- **Popularity Integration**: Weight results by real game frequency
+
 ---
 
 ## **📁 Key File Locations**
@@ -152,16 +158,17 @@ YOUTUBE_API_KEY="..."
 ## **📊 Current Status**
 
 ### **Performance Benchmarks**
-- **Search Response Time**: 1-5ms (instant client-side filtering)
-- **Initial Load Time**: 1-2 seconds (one-time data fetch)  
-- **Memory Efficiency**: ~2-3MB for 12,377 openings
-- **Zero Typing Lag**: No API calls during search input
+- **Search Response Time**: 1-5ms (server-side semantic + fuzzy search)
+- **Initial Load Time**: 1-2 seconds (search service initialization)  
+- **Memory Efficiency**: Smart semantic search with natural language understanding
+- **Discovery Experience**: "aggressive openings", "solid response to d4", "beginner french"
 
 ### **Completed Features**
 - ✅ **F01**: LLM Enrichment Pipeline (Google Vertex AI integration)
 - ✅ **F02**: Game Data Popularity Analysis (Lichess data processing)
 - ✅ **F03**: Course Recommendation Data Pipeline (Complete backend with API endpoints)
 - ✅ **F04**: YouTube Video Data Pipeline (Channel-First Indexer)
+- ✅ **F05**: Enhanced Search Precision (Fixed "kings gambit" → "queens gambit" cross-contamination)
 
 ---
 

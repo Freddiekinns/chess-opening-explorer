@@ -150,7 +150,7 @@ const LandingPage: React.FC = () => {
             <SearchBar
               variant="landing"
               onSelect={handleOpeningSelect}
-              placeholder="Try: 'aggressive openings' or 'solid response to d4'"
+              placeholder="Try: 'aggressive openings' or 'popular responses to d4'"
               disabled={loading}
               loading={loading}
               openingsData={openingsData}

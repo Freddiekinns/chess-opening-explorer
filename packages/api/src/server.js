@@ -62,7 +62,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
+// Start server  
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`🚀 Chess Trainer API running on port ${PORT}`);
@@ -71,3 +71,4 @@ if (require.main === module) {
 }
 
 module.exports = app;
+

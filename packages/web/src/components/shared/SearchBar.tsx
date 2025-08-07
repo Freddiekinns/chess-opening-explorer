@@ -149,7 +149,7 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
 export const SearchBar: React.FC<SearchBarProps> = ({
   variant = 'landing',
   onSelect,
-  placeholder = "Try: 'aggressive openings' or 'solid response to d4'",
+  placeholder = "Search to find your opening",
   autoFocus = false,
   disabled = false,
   loading = false,

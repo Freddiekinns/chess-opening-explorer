@@ -106,7 +106,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({ className = '' }) =>
           fontWeight: 'var(--font-weight-h3)'
         }}
       >
-        Chess Trainer
+        Opening Book
       </Link>
 
       {/* Center: Autocomplete Search Bar */}

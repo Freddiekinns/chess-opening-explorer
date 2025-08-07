@@ -138,7 +138,7 @@ const LandingPage: React.FC = () => {
       <section className="hero-section">
         <div className="hero-content">
           {/* Main title */}
-          <h1 className="hero-title">Chess Trainer</h1>
+          <h1 className="hero-title">Opening Book</h1>
           
           {/* Subtitle */}
           <p className="hero-subtitle">

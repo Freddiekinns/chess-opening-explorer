@@ -305,7 +305,7 @@ const OpeningDetailPage: React.FC = () => {
           
           <div className="header-center">
             <Link to="/" className="site-title">
-              Chess Trainer
+              Opening Book
             </Link>
           </div>
           

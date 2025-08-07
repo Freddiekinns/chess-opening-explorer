@@ -56,7 +56,7 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
       
       {averageRating && (
         <div className="average-rating">
-          <span className="rating-label">Average Lichess Rating</span>
+          <span className="rating-label">Average Lichess Player Rating</span>
           <span className="rating-value">{averageRating}</span>
         </div>
       )}

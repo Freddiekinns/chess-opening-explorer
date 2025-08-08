@@ -20,8 +20,8 @@ class PathResolver {
     let dataPath;
     
     if (this.isVercel) {
-      // In Vercel, data is at the root level
-      dataPath = path.join(process.cwd(), 'data');
+      // In Vercel, use API data directory prepared by build script
+      dataPath = path.join(process.cwd(), 'api', 'data');
     } else {
       // Local development - check if running from root or workspace
       const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');

@@ -1,0 +1,2348 @@
+{
+  "generated_at": "2025-07-17T22:56:09.589Z",
+  "total_openings_analyzed": 12377,
+  "ranking_method": "by_game_volume",
+  "summary": {
+    "top_100_openings": 100,
+    "eco_root_openings_in_top_100": 52,
+    "non_root_variations_in_top_100": 48,
+    "eco_root_percentage_in_top_100": 52,
+    "total_eco_root_score_10": 185,
+    "remaining_eco_root_score_10": 133,
+    "total_comprehensive_openings": 233
+  },
+  "top_100_openings": [
+    {
+      "rank": 1,
+      "games_analyzed": 3778178876,
+      "name": "King's Pawn Game",
+      "moves": "1. e4",
+      "eco": "B00",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 2,
+      "games_analyzed": 1633971770,
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 3,
+      "games_analyzed": 1501326875,
+      "name": "King's Pawn Game",
+      "moves": "1. e4 e5",
+      "eco": "C20",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 4,
+      "games_analyzed": 924349427,
+      "name": "King's Knight Opening",
+      "moves": "1. e4 e5 2. Nf3",
+      "eco": "C40",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 5,
+      "games_analyzed": 693122714,
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5",
+      "eco": "B20",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 6,
+      "games_analyzed": 672230053,
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4 d5",
+      "eco": "D00",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 7,
+      "games_analyzed": 592675575,
+      "name": "King's Knight Opening: Normal Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6",
+      "eco": "C44",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 8,
+      "games_analyzed": 396868889,
+      "name": "Scandinavian Defense",
+      "moves": "1. e4 d5",
+      "eco": "B01",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 9,
+      "games_analyzed": 389768542,
+      "name": "French Defense",
+      "moves": "1. e4 e6",
+      "eco": "C00",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 10,
+      "games_analyzed": 370721012,
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3",
+      "eco": "B27",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 11,
+      "games_analyzed": 370721012,
+      "name": "Sicilian Defence",
+      "moves": "1. Nf3  c5 2. e4 ",
+      "eco": "B27",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 12,
+      "games_analyzed": 318366817,
+      "name": "Indian Defense",
+      "moves": "1. d4 Nf6",
+      "eco": "A45",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 13,
+      "games_analyzed": 274533401,
+      "name": "Caro-Kann Defense",
+      "moves": "1. e4 c6",
+      "eco": "B10",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 14,
+      "games_analyzed": 264788485,
+      "name": "Italian Game",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+      "eco": "C50",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 15,
+      "games_analyzed": 262853519,
+      "name": "Scandinavian: 2.exd5",
+      "moves": "1. e4 d5 2. exd5",
+      "eco": "B01",
+      "fen": "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 16,
+      "games_analyzed": 262671686,
+      "name": "Queen's Gambit",
+      "moves": "1. d4 d5 2. c4",
+      "eco": "D06",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 17,
+      "games_analyzed": 225194459,
+      "name": "Zukertort Opening",
+      "moves": "1. Nf3",
+      "eco": "A04",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 18,
+      "games_analyzed": 215381550,
+      "name": "English Opening",
+      "moves": "1. c4",
+      "eco": "A10",
+      "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 19,
+      "games_analyzed": 188074015,
+      "name": "Scandinavian Defense: Mieses-Kotroc Variation",
+      "moves": "1. e4 d5 2. exd5 Qxd5",
+      "eco": "B01",
+      "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 20,
+      "games_analyzed": 184802696,
+      "name": "French Defense: Normal Variation",
+      "moves": "1. e4 e6 2. d4",
+      "eco": "C00",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 21,
+      "games_analyzed": 162552459,
+      "name": "Horwitz Defense",
+      "moves": "1. d4 e6",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 22,
+      "games_analyzed": 155169586,
+      "name": "Sicilian Defense: Old Sicilian",
+      "moves": "1. e4 c5 2. Nf3 Nc6",
+      "eco": "B30",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 23,
+      "games_analyzed": 154249905,
+      "name": "Bishop's Opening",
+      "moves": "1. e4 e5 2. Bc4",
+      "eco": "C23",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 24,
+      "games_analyzed": 141722463,
+      "name": "Philidor Defense",
+      "moves": "1. e4 e5 2. Nf3 d6",
+      "eco": "C41",
+      "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 25,
+      "games_analyzed": 141627466,
+      "name": "Pirc Defense",
+      "moves": "1. e4 d6",
+      "eco": "B00",
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 26,
+      "games_analyzed": 141499917,
+      "name": "Queen's Pawn Game",
+      "moves": "1. Nf3 d5 2. d4",
+      "eco": "A06",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 27,
+      "games_analyzed": 141499917,
+      "name": "Queen's Pawn Game: Zukertort Variation",
+      "moves": "1. d4 d5 2. Nf3",
+      "eco": "D02",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 28,
+      "games_analyzed": 138055423,
+      "name": "Scandinavian: 2...Qxd5 3.Nc3",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3",
+      "eco": "B01",
+      "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 29,
+      "games_analyzed": 136699151,
+      "name": "Indian Defense: Normal Variation",
+      "moves": "1. d4 Nf6 2. c4",
+      "eco": "A50",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 30,
+      "games_analyzed": 135336339,
+      "name": "Ruy Lopez",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+      "eco": "C60",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 31,
+      "games_analyzed": 131660437,
+      "name": "Van't Kruijs Opening",
+      "moves": "1. e3",
+      "eco": "A00",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 32,
+      "games_analyzed": 130538091,
+      "name": "Modern Defense",
+      "moves": "1. e4 g6",
+      "eco": "B06",
+      "fen": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 33,
+      "games_analyzed": 127905847,
+      "name": "French Defense",
+      "moves": "1. e4 e6 2. d4 d5",
+      "eco": "C00",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 34,
+      "games_analyzed": 121102758,
+      "name": "Queen's Pawn Game: Accelerated London System",
+      "moves": "1. d4 d5 2. Bf4",
+      "eco": "D00",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 35,
+      "games_analyzed": 120619077,
+      "name": "Caro-Kann Defense",
+      "moves": "1. e4 c6 2. d4",
+      "eco": "B12",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 36,
+      "games_analyzed": 119933522,
+      "name": "Sicilian Defense: Modern Variations",
+      "moves": "1. e4 c5 2. Nf3 d6",
+      "eco": "B50",
+      "fen": "rnbqkbnr/pp2pppp/3p4/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 37,
+      "games_analyzed": 117815232,
+      "name": "French Defense: Knight Variation",
+      "moves": "1. e4 e6 2. Nf3",
+      "eco": "C00",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 38,
+      "games_analyzed": 111568431,
+      "name": "Caro-Kann Defense",
+      "moves": "1. e4 c6 2. d4 d5",
+      "eco": "B12",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 39,
+      "games_analyzed": 110272859,
+      "name": "Petrov's Defense",
+      "moves": "1. e4 e5 2. Nf3 Nf6",
+      "eco": "C42",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 40,
+      "games_analyzed": 108010145,
+      "name": "Hungarian Opening",
+      "moves": "1. g3",
+      "eco": "A00",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 41,
+      "games_analyzed": 107722983,
+      "name": "Scotch Game",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4",
+      "eco": "C44",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 42,
+      "games_analyzed": 103048485,
+      "name": "Vienna Game",
+      "moves": "1. e4 e5 2. Nc3",
+      "eco": "C25",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 43,
+      "games_analyzed": 103048485,
+      "name": "Vienna Game",
+      "moves": "1. Nc3  e5 2. e4 ",
+      "eco": "C25",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 44,
+      "games_analyzed": 101140908,
+      "name": "Nimzo-Larsen Attack",
+      "moves": "1. b3",
+      "eco": "A01",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 45,
+      "games_analyzed": 99869403,
+      "name": "Englund Gambit",
+      "moves": "1. d4 e5",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 46,
+      "games_analyzed": 99548430,
+      "name": "Center Game",
+      "moves": "1. e4 e5 2. d4",
+      "eco": "C20",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 47,
+      "games_analyzed": 97838923,
+      "name": "Queen's Gambit Declined",
+      "moves": "1. d4 d5 2. c4 e6",
+      "eco": "D30",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 48,
+      "games_analyzed": 95782072,
+      "name": "Italian Game: Two Knights Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6",
+      "eco": "C55",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 49,
+      "games_analyzed": 94992678,
+      "name": "King's Gambit",
+      "moves": "1. e4 e5 2. f4",
+      "eco": "C30",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 50,
+      "games_analyzed": 89459365,
+      "name": "Italian Game: Giuoco Piano",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5",
+      "eco": "C50",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 51,
+      "games_analyzed": 85763307,
+      "name": "Scotch Game",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4",
+      "eco": "C44",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 52,
+      "games_analyzed": 82639398,
+      "name": "Three Knights Opening",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3",
+      "eco": "C46",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 53,
+      "games_analyzed": 82172641,
+      "name": "Caro-Kann: 2.Nf3",
+      "moves": "1. e4 c6 2. Nf3",
+      "eco": "B10",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 54,
+      "games_analyzed": 81063222,
+      "name": "Queen's Pawn Game: Modern Defense",
+      "moves": "1. d4 g6",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pppppp1p/6p1/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 55,
+      "games_analyzed": 78964611,
+      "name": "Owen Defense",
+      "moves": "1. e4 b6",
+      "eco": "B00",
+      "fen": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 56,
+      "games_analyzed": 77739740,
+      "name": "Benoni Defense: Old Benoni",
+      "moves": "1. d4 c5",
+      "eco": "A43",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 57,
+      "games_analyzed": 75551665,
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4 d5 2. e3",
+      "eco": "D00",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/4P3/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 58,
+      "games_analyzed": 72734896,
+      "name": "Alekhine Defense",
+      "moves": "1. e4 Nf6",
+      "eco": "B02",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 59,
+      "games_analyzed": 72440739,
+      "name": "Sicilian Defense: French Variation",
+      "moves": "1. e4 c5 2. Nf3 e6",
+      "eco": "B40",
+      "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 60,
+      "games_analyzed": 72292695,
+      "name": "Zukertort Opening",
+      "moves": "1. Nf3 d5",
+      "eco": "A06",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 61,
+      "games_analyzed": 72152585,
+      "name": "Sicilian Defense: Open",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4",
+      "eco": "B32",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 62,
+      "games_analyzed": 71224971,
+      "name": "French: 2.Nf3 d5",
+      "moves": "1. e4 e6 2. Nf3 d5",
+      "eco": "C00",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 63,
+      "games_analyzed": 71115263,
+      "name": "Slav Defense",
+      "moves": "1. d4 d5 2. c4 c6",
+      "eco": "D10",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 64,
+      "games_analyzed": 71062932,
+      "name": "Pirc Defense",
+      "moves": "1. e4 d6 2. d4",
+      "eco": "B00",
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 65,
+      "games_analyzed": 70875586,
+      "name": "Indian Defense: Knights Variation",
+      "moves": "1. d4 Nf6 2. Nf3",
+      "eco": "A46",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 2 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 66,
+      "games_analyzed": 70036004,
+      "name": "Sicilian, Closed",
+      "moves": "1. Nc3  c5 2. e4 ",
+      "eco": "A00",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 67,
+      "games_analyzed": 70036004,
+      "name": "Sicilian Defense: Closed",
+      "moves": "1. e4 c5 2. Nc3",
+      "eco": "B23",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 68,
+      "games_analyzed": 69007270,
+      "name": "Sicilian Defense: Open",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4",
+      "eco": "B32",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 69,
+      "games_analyzed": 64976757,
+      "name": "Sicilian Defense: Bowdler Attack",
+      "moves": "1. e4 c5 2. Bc4",
+      "eco": "B20",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 70,
+      "games_analyzed": 64968998,
+      "name": "Philidor Defense",
+      "moves": "1. e4 e5 2. Nf3 d6 3. Bc4",
+      "eco": "C41",
+      "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 71,
+      "games_analyzed": 64574489,
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4",
+      "eco": "B50",
+      "fen": "rnbqkbnr/pp2pppp/3p4/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 72,
+      "games_analyzed": 64205245,
+      "name": "Four Knights Game",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
+      "eco": "C47",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 73,
+      "games_analyzed": 64097770,
+      "name": "Sicilian Defense: Open",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4",
+      "eco": "B32",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 74,
+      "games_analyzed": 62896557,
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4 d6",
+      "eco": "A41",
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 75,
+      "games_analyzed": 62739580,
+      "name": "English Opening: King's English Variation",
+      "moves": "1. c4 e5",
+      "eco": "A20",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 76,
+      "games_analyzed": 62283062,
+      "name": "Modern",
+      "moves": "1. e4 g6 2. d4",
+      "eco": "B06",
+      "fen": "rnbqkbnr/pppppp1p/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 77,
+      "games_analyzed": 62158200,
+      "name": "Queen's Pawn: 1...c6",
+      "moves": "1. d4 c6",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 78,
+      "games_analyzed": 61374000,
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4",
+      "eco": "B50",
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 79,
+      "games_analyzed": 61182948,
+      "name": "Queen's Pawn: 1...e6 2.c4",
+      "moves": "1. d4 e6 2. c4",
+      "eco": "A40",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 80,
+      "games_analyzed": 60745996,
+      "name": "Center Game Accepted",
+      "moves": "1. e4 e5 2. d4 exd4",
+      "eco": "C21",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 81,
+      "games_analyzed": 60741075,
+      "name": "Bird Opening",
+      "moves": "1. f4",
+      "eco": "A02",
+      "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 82,
+      "games_analyzed": 60259779,
+      "name": "Sicilian Defense: Smith-Morra Gambit",
+      "moves": "1. e4 c5 2. d4",
+      "eco": "B21",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 83,
+      "games_analyzed": 59628417,
+      "name": "Scotch Game",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4",
+      "eco": "C45",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 84,
+      "games_analyzed": 59124034,
+      "name": "Queen's Gambit Accepted",
+      "moves": "1. d4 d5 2. c4 dxc4",
+      "eco": "D20",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 85,
+      "games_analyzed": 58534809,
+      "name": "Queen's Gambit Declined, Queen's Knight Variation",
+      "moves": "1. c4  e6 2. Nc3  d5 3.d4",
+      "eco": "D31",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 86,
+      "games_analyzed": 58534809,
+      "name": "Queen's Gambit Declined: Queen's Knight Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3",
+      "eco": "D31",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 87,
+      "games_analyzed": 56768535,
+      "name": "Mieses Opening",
+      "moves": "1. d3",
+      "eco": "A00",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 88,
+      "games_analyzed": 56704653,
+      "name": "Queen's Pawn Game: Symmetrical Variation",
+      "moves": "1. d4 d5 2. Nf3 Nf6",
+      "eco": "D02",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 89,
+      "games_analyzed": 56704653,
+      "name": "Indian Defence, Knights Variation",
+      "moves": "1. d4 Nf6 2. Nf3 d5",
+      "eco": "A46",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 90,
+      "games_analyzed": 55601495,
+      "name": "Modern Defense",
+      "moves": "1. e4 g6 2. d4 Bg7",
+      "eco": "B06",
+      "fen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 91,
+      "games_analyzed": 55421174,
+      "name": "Nimzowitsch Defense",
+      "moves": "1. e4 Nc6",
+      "eco": "B00",
+      "fen": "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 92,
+      "games_analyzed": 54654996,
+      "name": "Sicilian: Open, 2...d6",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4",
+      "eco": "B54",
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 93,
+      "games_analyzed": 54387158,
+      "name": "Scandinavian Defense: Valencian Variation",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8",
+      "eco": "B01",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 94,
+      "games_analyzed": 53227670,
+      "name": "Queen's Gambit Declined: Normal Defense",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6",
+      "eco": "D35",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 95,
+      "games_analyzed": 52525358,
+      "name": "Bishop's Opening",
+      "moves": "1. e4 e5 2. Bc4 Nc6",
+      "eco": "C23",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 96,
+      "games_analyzed": 52275674,
+      "name": "French Defense: Advance Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. e5",
+      "eco": "C02",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 97,
+      "games_analyzed": 52238089,
+      "name": "Queen's Gambit Declined: Marshall Defense",
+      "moves": "1. d4 d5 2. c4 Nf6",
+      "eco": "D06",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 98,
+      "games_analyzed": 52238089,
+      "name": "Marshall Defence",
+      "moves": "1. d4  Nf6 2. c4  d5 ",
+      "eco": "D06",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 99,
+      "games_analyzed": 52066399,
+      "name": "Scandinavian Defense: Modern Variation",
+      "moves": "1. e4 d5 2. exd5 Nf6",
+      "eco": "B01",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3",
+      "isEcoRoot": false,
+      "popularity_score": 10
+    },
+    {
+      "rank": 100,
+      "games_analyzed": 52028792,
+      "name": "Queen's Pawn: Neo-Indian",
+      "moves": "1. d4 Nf6 2. c4 e6",
+      "eco": "E00",
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    }
+  ],
+  "remaining_eco_root_score_10": [
+    {
+      "rank": 101,
+      "games_analyzed": 50689410,
+      "name": "Bishop's Opening: Berlin Defense",
+      "moves": "1. e4 e5 2. Bc4 Nf6",
+      "eco": "C24",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 102,
+      "games_analyzed": 43421550,
+      "name": "Indian Defense: West Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 g6",
+      "eco": "E60",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 103,
+      "games_analyzed": 38929769,
+      "name": "King's Gambit Accepted",
+      "moves": "1. e4 e5 2. f4 exf4",
+      "eco": "C33",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 104,
+      "games_analyzed": 38623105,
+      "name": "Sicilian: Open, 2...d6, 5.Nc3",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3",
+      "eco": "B56",
+      "fen": "rnbqkb1r/pp2pppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 105,
+      "games_analyzed": 37978845,
+      "name": "English Opening: King's English Variation, Reversed Sicilian",
+      "moves": "1. c4 e5 2. Nc3",
+      "eco": "A21",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/2N5/PP1PPPPP/R1BQKBNR b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 106,
+      "games_analyzed": 36660867,
+      "name": "Caro-Kann: Exchange, 3...cxd5",
+      "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5",
+      "eco": "B13",
+      "fen": "rnbqkbnr/pp2pppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 107,
+      "games_analyzed": 36058896,
+      "name": "Sicilian Defense: Alapin Variation",
+      "moves": "1. e4 c5 2. c3",
+      "eco": "B22",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 108,
+      "games_analyzed": 35575608,
+      "name": "English Opening: Anglo-Indian Defense",
+      "moves": "1. c4 Nf6",
+      "eco": "A15",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 109,
+      "games_analyzed": 35093405,
+      "name": "Vienna Game: Falkbeer Variation",
+      "moves": "1. e4 e5 2. Nc3 Nf6",
+      "eco": "C26",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 110,
+      "games_analyzed": 34746949,
+      "name": "King's Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3",
+      "eco": "E61",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 111,
+      "games_analyzed": 34737157,
+      "name": "Zukertort Opening",
+      "moves": "1. Nf3 Nf6",
+      "eco": "A05",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 112,
+      "games_analyzed": 34610679,
+      "name": "Pirc Defense",
+      "moves": "1. e4 d6 2. d4 Nf6",
+      "eco": "B00",
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 113,
+      "games_analyzed": 34349436,
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "eco": "C34",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 114,
+      "games_analyzed": 32984725,
+      "name": "French Defense: Paulsen Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3",
+      "eco": "C10",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 115,
+      "games_analyzed": 32543362,
+      "name": "Sicilian Defense: McDonnell Attack",
+      "moves": "1. e4 c5 2. f4",
+      "eco": "B21",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 116,
+      "games_analyzed": 31058451,
+      "name": "Italian Game: Two Knights Defense, Knight Attack",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5",
+      "eco": "C57",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 5 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 117,
+      "games_analyzed": 30237550,
+      "name": "Dutch Defense",
+      "moves": "1. d4 f5",
+      "eco": "A80",
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 118,
+      "games_analyzed": 28980704,
+      "name": "Ruy Lopez: Steinitz Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6",
+      "eco": "C62",
+      "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 119,
+      "games_analyzed": 28718639,
+      "name": "QGD: 4.Nf3",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3",
+      "eco": "D37",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 120,
+      "games_analyzed": 27495135,
+      "name": "Caro-Kann Defense",
+      "moves": "1. e4 c6 2. d4 d5 3. Nc3",
+      "eco": "B15",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 121,
+      "games_analyzed": 27129121,
+      "name": "Ruy Lopez: Berlin Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6",
+      "eco": "C65",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 122,
+      "games_analyzed": 24824695,
+      "name": "Italian Game: Classical Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3",
+      "eco": "C53",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 123,
+      "games_analyzed": 24687673,
+      "name": "English Opening: Symmetrical Variation",
+      "moves": "1. c4 c5",
+      "eco": "A30",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 124,
+      "games_analyzed": 24382735,
+      "name": "Sicilian Defense: Najdorf Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+      "eco": "B90",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 125,
+      "games_analyzed": 24063312,
+      "name": "East Indian Defense",
+      "moves": "1. d4 Nf6 2. Nf3 g6",
+      "eco": "A48",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 126,
+      "games_analyzed": 23604398,
+      "name": "English Opening: Agincourt Defense",
+      "moves": "1. c4 e6",
+      "eco": "A13",
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 127,
+      "games_analyzed": 21261428,
+      "name": "Bird Opening: Dutch Variation",
+      "moves": "1. f4 d5",
+      "eco": "A03",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 128,
+      "games_analyzed": 21234265,
+      "name": "English Opening: Anglo-Indian Defense, Queen's Knight Variation",
+      "moves": "1. c4 Nf6 2. Nc3",
+      "eco": "A16",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2P5/2N5/PP1PPPPP/R1BQKBNR b KQkq - 2 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 129,
+      "games_analyzed": 20862726,
+      "name": "Center Game: Normal Variation",
+      "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6",
+      "eco": "C22",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3QP3/8/PPP2PPP/RNB1KBNR w KQkq - 1 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 130,
+      "games_analyzed": 20777098,
+      "name": "Spanish: 4.Ba4",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4",
+      "eco": "C70",
+      "fen": "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 131,
+      "games_analyzed": 19875813,
+      "name": "Queen's Pawn Game: Colle System",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3",
+      "eco": "D04",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 132,
+      "games_analyzed": 19816724,
+      "name": "Slav Defense: Three Knights Variation",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3",
+      "eco": "D15",
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 133,
+      "games_analyzed": 18929709,
+      "name": "Slav Defense: Modern Line",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3",
+      "eco": "D11",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 134,
+      "games_analyzed": 18353961,
+      "name": "Four Knights Game: Spanish Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5",
+      "eco": "C48",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 135,
+      "games_analyzed": 18325968,
+      "name": "King's Indian Attack",
+      "moves": "1. Nf3 d5 2. g3",
+      "eco": "A07",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 136,
+      "games_analyzed": 17355874,
+      "name": "King's Indian Defense: Normal Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4",
+      "eco": "E70",
+      "fen": "rnbqk2r/ppppppbp/5np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 137,
+      "games_analyzed": 17086532,
+      "name": "Nimzo-Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+      "eco": "E20",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 138,
+      "games_analyzed": 16851313,
+      "name": "Ruy Lopez: Classical Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5",
+      "eco": "C64",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 139,
+      "games_analyzed": 16769608,
+      "name": "Sicilian Defense: Löwenthal Variation",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5",
+      "eco": "B32",
+      "fen": "r1bqkbnr/pp1p1ppp/2n5/4p3/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 140,
+      "games_analyzed": 16057409,
+      "name": "Sicilian Defense: Taimanov Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
+      "eco": "B44",
+      "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 141,
+      "games_analyzed": 15737370,
+      "name": "English Opening: King's English Variation, Two Knights Variation",
+      "moves": "1. c4 e5 2. Nc3 Nf6",
+      "eco": "A22",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 142,
+      "games_analyzed": 15303496,
+      "name": "Queen's Pawn Game: Colle System",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 e6",
+      "eco": "D05",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 143,
+      "games_analyzed": 15105932,
+      "name": "Indian Defense: Anti-Nimzo-Indian",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3",
+      "eco": "E10",
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 144,
+      "games_analyzed": 14898600,
+      "name": "Old Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 d6",
+      "eco": "A53",
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 145,
+      "games_analyzed": 14676442,
+      "name": "Queen's Gambit Declined: Modern Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5",
+      "eco": "D50",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 146,
+      "games_analyzed": 14425250,
+      "name": "English Opening: Symmetrical Variation, Normal Variation",
+      "moves": "1. c4 c5 2. Nc3",
+      "eco": "A34",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P5/2N5/PP1PPPPP/R1BQKBNR b KQkq - 1 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 147,
+      "games_analyzed": 14312535,
+      "name": "Semi-Slav Defense",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
+      "eco": "D43",
+      "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 148,
+      "games_analyzed": 14173958,
+      "name": "Benoni Defense",
+      "moves": "1. d4 Nf6 2. c4 c5",
+      "eco": "A56",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 149,
+      "games_analyzed": 13637258,
+      "name": "Ruy Lopez: Exchange Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6",
+      "eco": "C68",
+      "fen": "r1bqkbnr/1ppp1ppp/p1B5/4p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 150,
+      "games_analyzed": 13192787,
+      "name": "English Opening: Caro-Kann Defensive System",
+      "moves": "1. c4 c6",
+      "eco": "A11",
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 151,
+      "games_analyzed": 12753940,
+      "name": "Vienna Game: Stanley Variation, Three Knights Variation",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6",
+      "eco": "C28",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 152,
+      "games_analyzed": 12752644,
+      "name": "French Defense: Classical Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
+      "eco": "C11",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 153,
+      "games_analyzed": 12713904,
+      "name": "Alekhine Defense",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. d4",
+      "eco": "B03",
+      "fen": "rnbqkb1r/pppppppp/8/3nP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 154,
+      "games_analyzed": 12101990,
+      "name": "French Defense: Tarrasch Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2",
+      "eco": "C03",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 155,
+      "games_analyzed": 11803517,
+      "name": "Sicilian Defense: Taimanov Variation, Normal Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3",
+      "eco": "B45",
+      "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 156,
+      "games_analyzed": 11765095,
+      "name": "King's Indian Defense: Normal Variation, Rare Defenses",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3",
+      "eco": "E90",
+      "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 1 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 157,
+      "games_analyzed": 11538798,
+      "name": "Indian Defense: Budapest Defense",
+      "moves": "1. d4 Nf6 2. c4 e5",
+      "eco": "A51",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 158,
+      "games_analyzed": 11377783,
+      "name": "Spanish: Morphy Defence",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6",
+      "eco": "C77",
+      "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 159,
+      "games_analyzed": 11077328,
+      "name": "Queen's Gambit Declined: Chigorin Defense",
+      "moves": "1. d4 d5 2. c4 Nc6",
+      "eco": "D07",
+      "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 160,
+      "games_analyzed": 10879020,
+      "name": "Queen's Gambit Declined: Albin Countergambit",
+      "moves": "1. d4 d5 2. c4 e5",
+      "eco": "D08",
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 161,
+      "games_analyzed": 10749524,
+      "name": "Dutch Defense",
+      "moves": "1. d4 f5 2. c4",
+      "eco": "A84",
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 162,
+      "games_analyzed": 10422004,
+      "name": "Sicilian Defense: Kan Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+      "eco": "B41",
+      "fen": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 163,
+      "games_analyzed": 10202512,
+      "name": "Pirc Defense: Classical Variation",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3",
+      "eco": "B08",
+      "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 164,
+      "games_analyzed": 9857730,
+      "name": "Vienna Game: Vienna Gambit",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4",
+      "eco": "C29",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 165,
+      "games_analyzed": 9839503,
+      "name": "Réti Opening",
+      "moves": "1. Nf3 d5 2. c4",
+      "eco": "A09",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 166,
+      "games_analyzed": 9614424,
+      "name": "Caro-Kann Defense: Classical Variation",
+      "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5",
+      "eco": "B18",
+      "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 167,
+      "games_analyzed": 9461087,
+      "name": "Italian Game: Two Knights Defense, Polerio Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5",
+      "eco": "C58",
+      "fen": "r1bqkb1r/ppp2ppp/5n2/n2Pp1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 1 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 168,
+      "games_analyzed": 9185260,
+      "name": "Sicilian Defense: Dragon Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
+      "eco": "B70",
+      "fen": "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 169,
+      "games_analyzed": 8915640,
+      "name": "Grünfeld Defense",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+      "eco": "D80",
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 170,
+      "games_analyzed": 8899962,
+      "name": "King's Gambit Declined: Falkbeer Countergambit",
+      "moves": "1. e4 e5 2. f4 d5",
+      "eco": "C31",
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 171,
+      "games_analyzed": 8529164,
+      "name": "Queen's Gambit Declined",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7",
+      "eco": "D53",
+      "fen": "rnbqk2r/ppp1bppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq - 4 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 172,
+      "games_analyzed": 8449960,
+      "name": "QGD: Ragozin",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 Bb4",
+      "eco": "D38",
+      "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 4 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 173,
+      "games_analyzed": 8096853,
+      "name": "English Opening: King's English Variation, Reversed Closed Sicilian",
+      "moves": "1. c4 e5 2. Nc3 Nc6",
+      "eco": "A25",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 174,
+      "games_analyzed": 8078946,
+      "name": "Sicilian Defense: Moscow Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. Bb5+",
+      "eco": "B51",
+      "fen": "rnbqkbnr/pp2pppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 175,
+      "games_analyzed": 7950575,
+      "name": "Ruy Lopez: Morphy Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O",
+      "eco": "C78",
+      "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 176,
+      "games_analyzed": 7646291,
+      "name": "Sicilian Defense: O'Kelly Variation",
+      "moves": "1. e4 c5 2. Nf3 a6",
+      "eco": "B28",
+      "fen": "rnbqkbnr/1p1ppppp/p7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 177,
+      "games_analyzed": 7644072,
+      "name": "English Opening: Anglo-Indian Defense, Hedgehog System",
+      "moves": "1. c4 Nf6 2. Nc3 e6",
+      "eco": "A17",
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 178,
+      "games_analyzed": 7604977,
+      "name": "Sicilian Defense: Kan Variation, Knight Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3",
+      "eco": "B43",
+      "fen": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 1 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 179,
+      "games_analyzed": 7584339,
+      "name": "English Opening: Symmetrical Variation, Two Knights Variation",
+      "moves": "1. c4 c5 2. Nc3 Nc6",
+      "eco": "A35",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 180,
+      "games_analyzed": 7319012,
+      "name": "Ruy Lopez: Bird Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nd4",
+      "eco": "C61",
+      "fen": "r1bqkbnr/pppp1ppp/8/1B2p3/3nP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 181,
+      "games_analyzed": 7317200,
+      "name": "Italian Game: Evans Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4",
+      "eco": "C51",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 182,
+      "games_analyzed": 7279566,
+      "name": "French Defense: Winawer Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Bb4",
+      "eco": "C15",
+      "fen": "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 183,
+      "games_analyzed": 7167172,
+      "name": "King's Indian Defense: Orthodox Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2",
+      "eco": "E91",
+      "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 184,
+      "games_analyzed": 7038251,
+      "name": "Semi-Slav: 5.e3",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. e3",
+      "eco": "D45",
+      "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 185,
+      "games_analyzed": 6721702,
+      "name": "Modern Defense: Averbakh System",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6 4. e4",
+      "eco": "A42",
+      "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 186,
+      "games_analyzed": 6337334,
+      "name": "Italian Game: Classical Variation, Greco Gambit, Traditional Line",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4",
+      "eco": "C54",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 187,
+      "games_analyzed": 6261472,
+      "name": "Queen's Pawn Game: Torre Attack",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. Bg5",
+      "eco": "D03",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 3 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 188,
+      "games_analyzed": 6011780,
+      "name": "Sicilian Defense: Najdorf Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5",
+      "eco": "B94",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 189,
+      "games_analyzed": 5912545,
+      "name": "Dutch Defense: Queen's Knight Variation",
+      "moves": "1. d4 f5 2. c4 Nf6 3. Nc3",
+      "eco": "A85",
+      "fen": "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 190,
+      "games_analyzed": 5417372,
+      "name": "Queen's Gambit Accepted: Normal Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3",
+      "eco": "D21",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 191,
+      "games_analyzed": 5311665,
+      "name": "Indian Defense: Budapest Defense",
+      "moves": "1. d4 Nf6 2. c4 e5 3. dxe5 Ng4",
+      "eco": "A52",
+      "fen": "rnbqkb1r/pppp1ppp/8/4P3/2P3n1/8/PP2PPPP/RNBQKBNR w KQkq - 1 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 192,
+      "games_analyzed": 5303847,
+      "name": "Benko Gambit",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5",
+      "eco": "A57",
+      "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 193,
+      "games_analyzed": 5066056,
+      "name": "Richter-Veresov Attack",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bg5",
+      "eco": "D01",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 194,
+      "games_analyzed": 4826136,
+      "name": "Sicilian Defense: Moscow Variation, Main Line",
+      "moves": "1. e4 c5 2. Nf3 d6 3. Bb5+ Bd7",
+      "eco": "B52",
+      "fen": "rn1qkbnr/pp1bpppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 195,
+      "games_analyzed": 4562507,
+      "name": "QGD: 6.Nf3",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3",
+      "eco": "D55",
+      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 2 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 196,
+      "games_analyzed": 4484921,
+      "name": "Tarrasch Defense",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5",
+      "eco": "D32",
+      "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 197,
+      "games_analyzed": 4415241,
+      "name": "French Defense: Tarrasch Variation, Closed Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2 Nf6",
+      "eco": "C05",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 198,
+      "games_analyzed": 4213061,
+      "name": "Queen's Gambit Accepted",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6",
+      "eco": "D23",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 199,
+      "games_analyzed": 4211479,
+      "name": "Queen's Gambit Declined: Semi-Tarrasch Defense",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 c5",
+      "eco": "D40",
+      "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 200,
+      "games_analyzed": 4085939,
+      "name": "Sicilian Defense: Najdorf Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6",
+      "eco": "B95",
+      "fen": "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 0 7",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 201,
+      "games_analyzed": 4065483,
+      "name": "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack, Fianchetto Variation",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. Bb5 g6",
+      "eco": "B31",
+      "fen": "r1bqkbnr/pp1ppp1p/2n3p1/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 202,
+      "games_analyzed": 3999921,
+      "name": "King's Indian Attack: Sicilian Variation",
+      "moves": "1. Nf3 d5 2. g3 c5 3. Bg2",
+      "eco": "A08",
+      "fen": "rnbqkbnr/pp2pppp/8/2pp4/8/5NP1/PPPPPPBP/RNBQK2R b KQkq - 1 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 203,
+      "games_analyzed": 3998480,
+      "name": "King's Gambit Accepted: Modern Defense",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d5",
+      "eco": "C36",
+      "fen": "rnbqkbnr/ppp2ppp/8/3p4/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 204,
+      "games_analyzed": 3964241,
+      "name": "Queen's Gambit Accepted: Showalter Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3",
+      "eco": "D24",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 205,
+      "games_analyzed": 3962157,
+      "name": "Sicilian Defense: Chekhover Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4",
+      "eco": "B53",
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 206,
+      "games_analyzed": 3941611,
+      "name": "Nimzo-Indian Defense: Three Knights Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Nf3",
+      "eco": "E21",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 207,
+      "games_analyzed": 3716075,
+      "name": "King's Indian Defense: Sämisch Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3",
+      "eco": "E80",
+      "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR b KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 208,
+      "games_analyzed": 3710922,
+      "name": "Sicilian Defense: Taimanov Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 a6",
+      "eco": "B46",
+      "fen": "r1bqkbnr/1p1p1ppp/p1n1p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 209,
+      "games_analyzed": 3679025,
+      "name": "Sicilian Defense: Nimzowitsch Variation",
+      "moves": "1. e4 c5 2. Nf3 Nf6",
+      "eco": "B29",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 210,
+      "games_analyzed": 3614920,
+      "name": "Ruy Lopez: Berlin Defense, Improved Steinitz Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O d6",
+      "eco": "C66",
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 211,
+      "games_analyzed": 3597854,
+      "name": "King's Indian Defense: Sämisch Variation, Normal Defense",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O",
+      "eco": "E81",
+      "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR w KQ - 1 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 212,
+      "games_analyzed": 3579591,
+      "name": "French Defense: Winawer Variation, Advance Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5",
+      "eco": "C16",
+      "fen": "rnbqk1nr/ppp2ppp/4p3/3pP3/1b1P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 213,
+      "games_analyzed": 3539938,
+      "name": "King's Indian Defense: Four Pawns Attack",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4",
+      "eco": "E76",
+      "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPPP2/2N5/PP4PP/R1BQKBNR b KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 214,
+      "games_analyzed": 3530898,
+      "name": "Sicilian Defense: Closed, Fianchetto Variation",
+      "moves": "1. e4 c5 2. Nc3 Nc6 3. g3",
+      "eco": "B24",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/2N3P1/PPPP1P1P/R1BQKBNR b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 215,
+      "games_analyzed": 3496581,
+      "name": "Grünfeld Defense: Exchange Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5",
+      "eco": "D85",
+      "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 216,
+      "games_analyzed": 3432368,
+      "name": "Benoni Defense: Modern Variation",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6",
+      "eco": "A60",
+      "fen": "rnbqkb1r/pp1p1ppp/4pn2/2pP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 217,
+      "games_analyzed": 3427781,
+      "name": "King's Gambit Accepted: Cunningham Defense",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Be7",
+      "eco": "C35",
+      "fen": "rnbqk1nr/ppppbppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 218,
+      "games_analyzed": 3402747,
+      "name": "Sicilian Defense: Dragon Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3",
+      "eco": "B72",
+      "fen": "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N1B3/PPP2PPP/R2QKB1R b KQkq - 1 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 219,
+      "games_analyzed": 3350335,
+      "name": "Benoni Defense: King's Pawn Line",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4",
+      "eco": "A65",
+      "fen": "rnbqkb1r/pp3ppp/3p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 220,
+      "games_analyzed": 3318113,
+      "name": "Sicilian Defense: Accelerated Dragon, Exchange Variation",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nxc6",
+      "eco": "B34",
+      "fen": "r1bqkbnr/pp1ppp1p/2N3p1/8/4P3/8/PPP2PPP/RNBQKB1R b KQkq - 0 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 221,
+      "games_analyzed": 3222279,
+      "name": "Indian Defense: Przepiorka Variation",
+      "moves": "1. d4 Nf6 2. Nf3 g6 3. g3",
+      "eco": "A49",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 222,
+      "games_analyzed": 3169951,
+      "name": "English Opening: Symmetrical Variation, Two Knights, Fianchetto Variation",
+      "moves": "1. c4 c5 2. Nc3 Nc6 3. g3",
+      "eco": "A36",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/2P5/2N3P1/PP1PPP1P/R1BQKBNR b KQkq - 0 3",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 223,
+      "games_analyzed": 3159854,
+      "name": "Four Knights Game: Spanish Variation, Double Spanish",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Bb4",
+      "eco": "C49",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/1B2p3/1b2P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 224,
+      "games_analyzed": 3053583,
+      "name": "English Opening: King's English Variation, Four Knights Variation",
+      "moves": "1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6",
+      "eco": "A28",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq - 4 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 225,
+      "games_analyzed": 3042792,
+      "name": "Caro-Kann Defense: Two Knights Attack, Mindeno Variation",
+      "moves": "1. e4 c6 2. Nc3 d5 3. Nf3 Bg4",
+      "eco": "B11",
+      "fen": "rn1qkbnr/pp2pppp/2p5/3p4/4P1b1/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 226,
+      "games_analyzed": 3017158,
+      "name": "Nimzo-Indian Defense: Classical Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2",
+      "eco": "E32",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PPQ1PPPP/R1B1KBNR b KQkq - 3 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 227,
+      "games_analyzed": 3006291,
+      "name": "Grünfeld Defense: Three Knights Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3",
+      "eco": "D90",
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 228,
+      "games_analyzed": 3000394,
+      "name": "French Defense: Tarrasch Variation, Open System",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2 c5",
+      "eco": "C07",
+      "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 229,
+      "games_analyzed": 2926243,
+      "name": "Pirc Defense: Austrian Attack",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4",
+      "eco": "B09",
+      "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PPP2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 230,
+      "games_analyzed": 2908634,
+      "name": "Bogo-Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+      "eco": "E11",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 231,
+      "games_analyzed": 2886866,
+      "name": "Ruy Lopez: Closed",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7",
+      "eco": "C84",
+      "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 232,
+      "games_analyzed": 2853810,
+      "name": "Ruy Lopez: Closed",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3",
+      "eco": "C88",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    },
+    {
+      "rank": 233,
+      "games_analyzed": 2808685,
+      "name": "Sicilian Defense: Scheveningen Variation",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+      "eco": "B80",
+      "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "isEcoRoot": true,
+      "popularity_score": 10
+    }
+  ]
+}

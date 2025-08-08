@@ -23,6 +23,8 @@
     "start:web": "npm run start --workspace=packages/web",
     "install:all": "npm install && npm install --workspaces",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
+    "vercel:prepare": "node scripts/prepare-vercel-data.js",
+    "build:vercel": "npm run vercel:prepare && npm run build:web",
     "eco:import": "node packages/api/src/scripts/download-eco-data.js",
     "enrich": "node ./tools/production/enrich_openings_llm.js",
     "course:enrich": "node ./tools/production/enrich_course_data.js",

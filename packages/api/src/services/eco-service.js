@@ -406,6 +406,75 @@ class ECOService {
   }
 
   /**
+   * Get popular openings by ECO category for optimized grid display
+   * @param {string} category - ECO category ('A', 'B', 'C', 'D', 'E') or null for all
+   * @param {number} limit - Max results per category (default: 6)
+   * @param {string} complexity - Filter by complexity ('Beginner', 'Intermediate', 'Advanced')
+   * @returns {Object} - ECO categories with popular openings
+   */
+  getPopularOpeningsByECO(category = null, limit = 6, complexity = null) {
+    const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 20);
+    
+    let allOpenings = this.getAllOpenings();
+    
+    // Filter by complexity if provided
+    if (complexity && ['Beginner', 'Intermediate', 'Advanced'].includes(complexity)) {
+      allOpenings = allOpenings.filter(opening => 
+        opening.analysis_json?.complexity === complexity
+      );
+    }
+    
+    const popularityData = this.loadPopularityData();
+    
+    // Create optimized lookup map by FEN
+    const gameCountsByFen = new Map();
+    Object.entries(popularityData).forEach(([fen, stats]) => {
+      if (stats.games_analyzed && stats.games_analyzed > 0) {
+        gameCountsByFen.set(fen, {
+          games_analyzed: stats.games_analyzed,
+          rank: stats.rank || 0
+        });
+      }
+    });
+    
+    // Group openings by ECO family and enrich with popularity data
+    const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
+    
+    allOpenings.forEach(opening => {
+      const ecoFamily = opening.eco ? opening.eco[0] : null;
+      if (ecoFamily && ecoCategories[ecoFamily]) {
+        const popularityInfo = gameCountsByFen.get(opening.fen);
+        
+        ecoCategories[ecoFamily].push({
+          ...opening,
+          games_analyzed: popularityInfo ? popularityInfo.games_analyzed : 0,
+          popularity_rank: popularityInfo ? popularityInfo.rank : null
+        });
+      }
+    });
+    
+    // Sort each category by games_analyzed (descending) and take top N
+    Object.keys(ecoCategories).forEach(cat => {
+      ecoCategories[cat] = ecoCategories[cat]
+        .sort((a, b) => {
+          const gameCountDiff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
+          if (gameCountDiff !== 0) return gameCountDiff;
+          return a.name.localeCompare(b.name);
+        })
+        .slice(0, maxResultsPerCategory);
+    });
+    
+    // If a specific category is requested, return only that category
+    if (category && ecoCategories[category.toUpperCase()]) {
+      return {
+        [category.toUpperCase()]: ecoCategories[category.toUpperCase()]
+      };
+    }
+    
+    return ecoCategories;
+  }
+
+  /**
    * Search openings by ECO code
    */
   getOpeningsByECO(ecoCode) {

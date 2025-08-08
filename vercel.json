@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:web",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": "packages/web/dist",
   "devCommand": "npm run dev:web",
   "installCommand": "npm install && npm run install:all",

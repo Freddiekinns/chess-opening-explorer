@@ -38,6 +38,12 @@
 - **Files**: `packages/api/src/routes/openings.js` (748 lines) vs `api/openings.js` (full implementation)
 - **Status**: ✅ COMPLETED - Service layer consolidation achieved 95% feature parity
 - **Phase 1 Results**: ECOService consolidation, route refactoring, code duplication eliminated
+- **August 8 Update**: ✅ Added missing endpoints to Vercel deployment:
+  - `/api/stats/popularity` - Popularity statistics
+  - `/api/courses` - Course recommendations (all courses)
+  - `/api/courses/stats` - Course database statistics  
+  - `/api/courses/:fen` - Courses for specific position
+  - `/api/openings/videos/:fen` - Videos for specific position
 - **Remaining Issue**: Video data architecture (Phase 2) - 18.37MB cannot deploy to Vercel
 
 ### **AD-009: Video Data Architecture Challenge (URGENT - Aug 2025)**

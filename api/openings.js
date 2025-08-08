@@ -350,6 +350,36 @@ module.exports = async (req, res) => {
           });
         }
       }
+      
+      // Videos endpoint
+      if (route.startsWith('/videos/')) {
+        const fen = decodeURIComponent(route.replace('/videos/', ''));
+        
+        if (!fen) {
+          return res.status(400).json({
+            success: false,
+            error: 'FEN string is required'
+          });
+        }
+        
+        try {
+          // Get videos for this FEN position
+          const videos = await videoAccessService.getVideosForPosition(fen);
+          
+          return res.json({
+            success: true,
+            data: videos,
+            count: videos.length,
+            fen: fen
+          });
+        } catch (error) {
+          console.error('Error fetching videos:', error);
+          return res.status(500).json({
+            success: false,
+            error: 'Failed to load videos'
+          });
+        }
+      }
     }
     
     // Handle POST requests

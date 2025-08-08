@@ -19,6 +19,10 @@
       "destination": "/api/stats"
     },
     {
+      "source": "/api/courses/(.*)",
+      "destination": "/api/courses"
+    },
+    {
       "source": "/api/health",
       "destination": "/api/health"
     }

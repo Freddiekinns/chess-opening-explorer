@@ -7,7 +7,7 @@ const VIDEO_FILE_EXTENSION = '.json';
 const CACHE_DEFAULT_SIZE = 1000; // Maximum cached positions
 
 /**
- * Service for accessing videos using the new FEN-based file structure
+ * Service for accessing videos using either consolidated index (production) or individual files (development)
  * Replaces embedded video access from analysis_json
  */
 class VideoAccessService {
@@ -17,16 +17,38 @@ class VideoAccessService {
     this.videoCache = new Map();
     this.maxCacheSize = CACHE_DEFAULT_SIZE;
     
-    this._validateDirectory();
+    // Check for consolidated video index first (for production/Vercel)
+    this.consolidatedIndexPath = pathResolver.getAPIDataPath('video-index.json');
+    this.videoIndex = null;
+    this.useConsolidatedIndex = false;
+    
+    this._initializeVideoAccess();
   }
 
   /**
-   * Validate that the video directory exists
+   * Initialize video access method based on available data sources
    * @private
    */
-  _validateDirectory() {
+  _initializeVideoAccess() {
+    // Check for consolidated index first (production/Vercel environment)
+    if (fs.existsSync(this.consolidatedIndexPath)) {
+      try {
+        console.log('📦 Loading consolidated video index...');
+        const indexContent = fs.readFileSync(this.consolidatedIndexPath, 'utf8');
+        this.videoIndex = JSON.parse(indexContent);
+        this.useConsolidatedIndex = true;
+        console.log(`✅ Loaded consolidated video index: ${this.videoIndex.totalPositions} positions`);
+        return;
+      } catch (error) {
+        console.warn('Failed to load consolidated video index, falling back to individual files:', error.message);
+      }
+    }
+    
+    // Fallback to individual files (development environment)
     if (!fs.existsSync(this.videoDirectory)) {
       console.warn(`Video directory not found: ${this.videoDirectory}`);
+    } else {
+      console.log(`📁 Using individual video files from: ${this.videoDirectory}`);
     }
   }
 
@@ -85,15 +107,16 @@ class VideoAccessService {
     }
 
     try {
-      const videoFilePath = this._getVideoFilePath(fen);
-
-      if (!fs.existsSync(videoFilePath)) {
-        // Cache empty result to avoid repeated file checks
-        this._cacheVideos(fen, []);
-        return [];
+      let videos = [];
+      
+      if (this.useConsolidatedIndex) {
+        // Use consolidated index (production)
+        videos = await this._getVideosFromIndex(fen);
+      } else {
+        // Use individual files (development)
+        videos = await this._getVideosFromFiles(fen);
       }
-
-      const videos = await this._loadVideosFromFile(videoFilePath);
+      
       this._cacheVideos(fen, videos);
       return videos;
 
@@ -101,6 +124,43 @@ class VideoAccessService {
       console.warn(`Error loading videos for FEN ${fen}: ${error.message}`);
       return [];
     }
+  }
+
+  /**
+   * Get videos from consolidated index
+   * @param {string} fen - The FEN string
+   * @returns {Promise<Array>} - Array of video objects
+   * @private
+   */
+  async _getVideosFromIndex(fen) {
+    if (!this.videoIndex || !this.videoIndex.positions) {
+      return [];
+    }
+
+    const sanitizedFEN = this.sanitizeFEN(fen);
+    const positionData = this.videoIndex.positions[sanitizedFEN];
+    
+    if (!positionData || !positionData.opening) {
+      return [];
+    }
+
+    return positionData.opening.videos || [];
+  }
+
+  /**
+   * Get videos from individual files (development)
+   * @param {string} fen - The FEN string
+   * @returns {Promise<Array>} - Array of video objects
+   * @private
+   */
+  async _getVideosFromFiles(fen) {
+    const videoFilePath = this._getVideoFilePath(fen);
+
+    if (!fs.existsSync(videoFilePath)) {
+      return [];
+    }
+
+    return await this._loadVideosFromFile(videoFilePath);
   }
 
   /**
@@ -118,6 +178,12 @@ class VideoAccessService {
         throw new Error('Invalid video data format');
       }
       
+      // Handle the structure from individual files: { opening: { videos: [...] } }
+      if (videoData.opening && videoData.opening.videos) {
+        return videoData.opening.videos;
+      }
+      
+      // Fallback for other structures
       return videoData.videos || [];
     } catch (error) {
       throw new Error(`Failed to parse video file: ${error.message}`);

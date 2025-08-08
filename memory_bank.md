@@ -33,20 +33,16 @@
 - **Metadata separation**: Store processing status separately from content
 - **Skip logic**: Skip already processed/failed items with logging
 
-### **AD-007: API Duplication Technical Debt (COMPLETED - Aug 2025)**
-- **Problem**: Dual API implementations (development vs Vercel) after deployment fix
-- **Files**: `packages/api/src/routes/openings.js` (748 lines) vs `api/openings.js` (full implementation)
-- **Status**: ✅ COMPLETED - Service layer consolidation achieved 95% feature parity
-- **Phase 1 Results**: ECOService consolidation, route refactoring, code duplication eliminated
-- **August 8 Update**: ✅ **COMPLETE FEATURE PARITY ACHIEVED**:
-  - `/api/stats/popularity` - Popularity statistics
-  - `/api/stats/:fen` - ✅ **BUGFIX**: Added FEN-specific stats endpoint
-  - `/api/courses` - Course recommendations (all courses)
-  - `/api/courses/stats` - Course database statistics  
-  - `/api/courses/:fen` - Courses for specific position
-  - `/api/openings/videos/:fen` - Videos for specific position ✅ **NOW PRODUCTION READY**
-  - **Video Data**: ✅ **SOLVED** - Consolidated 12,373 files into single 21.44MB index
-- **Status**: ✅ **100% FEATURE PARITY** - Vercel deployment ready
+### **AD-007: Unified Architecture Implementation (✅ COMPLETED - Aug 8, 2025)**
+- **Challenge**: Dual API implementations creating 83% code duplication between localhost/Vercel
+- **Solution**: Direct Express router integration with thin Vercel wrappers
+- **Results**: 
+  - `api/openings.js`: 428 → 40 lines (91% reduction)
+  - `api/stats.js`: 111 → 40 lines (67% reduction)  
+  - `api/courses.js`: 149 → 40 lines (74% reduction)
+- **Architecture**: Single source of truth in `packages/api/src/routes/*.routes.js`
+- **Benefits**: Zero duplication, identical localhost/Vercel behavior, simplified maintenance
+- **Status**: ✅ **COMPLETE** - 100% unified architecture achieved
 
 ### **AD-009: Video Data Architecture Challenge (✅ SOLVED - Aug 8, 2025)**
 - **Problem**: 18.37MB video data (12,373 files) exceeds Vercel serverless bundle constraints
@@ -83,15 +79,16 @@ packages/web/src/
 └── utils/                        # Frontend utilities
 
 packages/api/src/
-├── routes/                       # openings.js, stats.js, courses.js
+├── routes/                       # *.routes.js - unified business logic
 ├── services/                     # eco-service.js, video-access-service.js
-└── data/courses.json             # Course recommendations (F03 complete)
+├── data/                         # courses.json, video-index.json (production data)
+└── server.js                     # Development server
 
-data/
-├── popularity_stats.json         # 4.7MB search dataset (client-side)
-├── eco/*.json                    # AI-enhanced opening analysis
-├── videos.sqlite                 # Operational database (26MB)
-└── Videos/*.json                 # Individual video metadata
+api/                              # Vercel serverless functions (thin wrappers)
+├── openings.js                   # 40 lines - imports packages/api/src/routes/openings.routes.js
+├── stats.js                      # 40 lines - imports packages/api/src/routes/stats.routes.js  
+├── courses.js                    # 40 lines - imports packages/api/src/routes/courses.routes.js
+└── data/                         # Production data (copied by build script)
 ```
 
 ---
@@ -121,19 +118,13 @@ interface ChessOpening {
 - `GET /api/courses/:fen`: Course recommendations for position (F03 complete)
 
 ### **🚀 Current Deployment Status (Aug 2025)**
-- **Status**: ✅ API Consolidation Complete, ⚠️ Video Architecture Pending
-- **Frontend**: Fully functional, correct popularity rankings
-- **API**: ✅ Complete feature parity achieved (19+ endpoints working)
-- **Data**: ECO files (28MB) and popularity stats (5MB) successfully deployed
-- **Videos**: ❌ PRODUCTION ISSUE - 18.37MB (12,373 files) cannot deploy to Vercel
-- **Performance**: Sub-60ms API responses locally, production validated
-
-### **🎯 Phase 2: Video Data Solution Plan**
-1. **Video Index Consolidation**: Create single `video-index.json` from 12,373 individual files
-2. **Vercel Deployment**: Include consolidated index in Vercel bundle (<2MB target)
-3. **External Storage Option**: Consider CDN/S3 for large video datasets (future scaling)
-4. **API Adaptation**: Update VideoAccessService to use consolidated index
-5. **Performance Validation**: Ensure <200ms video lookup performance
+- **Status**: ✅ **UNIFIED ARCHITECTURE COMPLETE** - Zero duplication achieved
+- **Architecture**: Single source of truth with thin Vercel wrappers
+- **Code Reduction**: 83% duplicate code eliminated (688 → 120 lines)
+- **Data**: ✅ Unified data structure, root duplication removed
+- **API**: ✅ Complete feature parity (19+ endpoints working)
+- **Performance**: Sub-60ms API responses, production validated
+- **Deployment**: Ready for production with streamlined build process
 
 ---
 
@@ -213,6 +204,7 @@ YOUTUBE_API_KEY="..."
 - ✅ **F03**: Course Recommendation Data Pipeline (Complete backend with API endpoints)
 - ✅ **F04**: YouTube Video Data Pipeline (Channel-First Indexer)
 - ✅ **F05**: Enhanced Search Precision (Fixed "kings gambit" → "queens gambit" cross-contamination)
+- ✅ **F06**: Unified Architecture Implementation (Zero code duplication, streamlined deployment)
 
 ---
 
@@ -259,5 +251,5 @@ For comprehensive details, see:
 
 ---
 
-*Last Updated: 2025-08-05 - Added Cline integration for tool-based workflow*
-*Target: ~270 lines with Cline integration*
+*Last Updated: 2025-08-08 - Unified Architecture Implementation Complete*
+*Target: ~270 lines with unified architecture documentation*

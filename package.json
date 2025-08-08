@@ -68,10 +68,19 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "packages/**/*.{js,ts,tsx}",
-      "tools/**/*.js",
+      "packages/api/**/*.js",
+      "tools/database/**/*.js",
+      "tools/video-pipeline/**/*.js",
+      "tools/production/**/*.js",
       "!**/node_modules/**",
-      "!**/tests/**"
+      "!**/tests/**",
+      "!packages/web/**",
+      "!packages/shared/**/*.{ts,d.ts}",
+      "!tools/debug/**",
+      "!tools/utilities/**",
+      "!tools/validation/**",
+      "!tools/analysis/**",
+      "!tools/packages/**"
     ],
     "testMatch": [
       "**/tests/**/*.test.js"

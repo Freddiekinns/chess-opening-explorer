@@ -14,7 +14,8 @@ const express = require('express');
 const mockECOService = {
   getAllOpenings: jest.fn(),
   loadECOData: jest.fn(),
-  loadPopularityData: jest.fn()
+  loadPopularityData: jest.fn(),
+  getPopularOpeningsByECO: jest.fn()
 };
 
 jest.mock('../../packages/api/src/services/eco-service', () => {
@@ -85,13 +86,13 @@ describe('GET /api/openings/popular-by-eco', () => {
     { eco: 'C04', name: 'French Defense: Tarrasch Variation, Guimard Defense', fen: 'rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 2 4', games_analyzed: 60000000, src: 'eco_tsv', moves: '1. e4 e6 2. d4 d5 3. Nd2 Nf6', analysis_json: { complexity: 'Intermediate' }, popularity_score: 5, white_win_rate: 0.54, black_win_rate: 0.36, draw_rate: 0.1, avg_rating: 2000 },
     { eco: 'C05', name: 'French Defense: Tarrasch Variation, Closed System', fen: 'rnbqkb1r/pp3ppp/4pn2/2pp4/3PP3/2P5/PP1N1PPP/R1BQKBNR b KQkq - 0 5', games_analyzed: 55000000, src: 'eco_tsv', moves: '1. e4 e6 2. d4 d5 3. Nd2 Nf6 4. e5 Nfd7 5. c3', analysis_json: { complexity: 'Advanced' }, popularity_score: 4, white_win_rate: 0.55, black_win_rate: 0.35, draw_rate: 0.1, avg_rating: 2050 },
     
-    // ECO D openings (6 total)
+    // ECO D openings (6 total) - sorted by games_analyzed descending
     { eco: 'D00', name: "Queen's Pawn Game", fen: 'rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1', games_analyzed: 500000000, src: 'eco_tsv', moves: '1. d4', analysis_json: { complexity: 'Beginner' }, popularity_score: 10, white_win_rate: 0.51, black_win_rate: 0.39, draw_rate: 0.1, avg_rating: 1700 },
-    { eco: 'D01', name: 'Richter-Veresov Attack', fen: 'rnbqkb1r/pppppppp/5n2/8/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 2 2', games_analyzed: 15000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nc3', analysis_json: { complexity: 'Intermediate' }, popularity_score: 6, white_win_rate: 0.52, black_win_rate: 0.38, draw_rate: 0.1, avg_rating: 1850 },
     { eco: 'D02', name: 'London System', fen: 'rnbqkb1r/pppppppp/5n2/8/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 0 3', games_analyzed: 45000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nf3 g6 3. g3', analysis_json: { complexity: 'Beginner' }, popularity_score: 8, white_win_rate: 0.53, black_win_rate: 0.37, draw_rate: 0.1, avg_rating: 1800 },
     { eco: 'D03', name: 'Torre Attack', fen: 'rnbqkb1r/pppppppp/5n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 2 2', games_analyzed: 25000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nf3', analysis_json: { complexity: 'Intermediate' }, popularity_score: 7, white_win_rate: 0.54, black_win_rate: 0.36, draw_rate: 0.1, avg_rating: 1900 },
     { eco: 'D04', name: 'Colle System', fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3', games_analyzed: 20000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nf3 d5', analysis_json: { complexity: 'Intermediate' }, popularity_score: 5, white_win_rate: 0.55, black_win_rate: 0.35, draw_rate: 0.1, avg_rating: 1950 },
     { eco: 'D05', name: 'Colle System: Traditional', fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2N2N2/PPP1PPPP/R1BQKB1R b KQkq - 2 3', games_analyzed: 18000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nf3 d5 3. Nc3', analysis_json: { complexity: 'Intermediate' }, popularity_score: 4, white_win_rate: 0.56, black_win_rate: 0.34, draw_rate: 0.1, avg_rating: 2000 },
+    { eco: 'D01', name: 'Richter-Veresov Attack', fen: 'rnbqkb1r/pppppppp/5n2/8/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 2 2', games_analyzed: 15000000, src: 'eco_tsv', moves: '1. d4 Nf6 2. Nc3', analysis_json: { complexity: 'Intermediate' }, popularity_score: 6, white_win_rate: 0.52, black_win_rate: 0.38, draw_rate: 0.1, avg_rating: 1850 },
     
     // ECO E openings (6 total)
     { eco: 'E00', name: 'Indian Defense', fen: 'rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2', games_analyzed: 200000000, src: 'eco_tsv', moves: '1. d4 Nf6', analysis_json: { complexity: 'Intermediate' }, popularity_score: 9, white_win_rate: 0.52, black_win_rate: 0.38, draw_rate: 0.1, avg_rating: 1800 },
@@ -125,6 +126,29 @@ describe('GET /api/openings/popular-by-eco', () => {
       
       // Configure the ECOService mock
       mockECOService.getAllOpenings.mockReturnValue(mockOpeningsData);
+      mockECOService.getPopularOpeningsByECO.mockImplementation((category, limit = 6) => {
+        const actualLimit = Math.min(parseInt(limit) || 6, 20);
+        
+        const mockECOResponse = {
+          A: mockOpeningsData.filter(o => o.eco.startsWith('A')).sort((a, b) => b.games_analyzed - a.games_analyzed).slice(0, actualLimit),
+          B: mockOpeningsData.filter(o => o.eco.startsWith('B')).sort((a, b) => b.games_analyzed - a.games_analyzed).slice(0, actualLimit),
+          C: mockOpeningsData.filter(o => o.eco.startsWith('C')).sort((a, b) => b.games_analyzed - a.games_analyzed).slice(0, actualLimit),
+          D: mockOpeningsData.filter(o => o.eco.startsWith('D')).sort((a, b) => b.games_analyzed - a.games_analyzed).slice(0, actualLimit),
+          E: mockOpeningsData.filter(o => o.eco.startsWith('E')).sort((a, b) => b.games_analyzed - a.games_analyzed).slice(0, actualLimit)
+        };
+        
+        return {
+          data: mockECOResponse,
+          metadata: {
+            total_openings_analyzed: mockOpeningsData.length,
+            total_openings_returned: Object.values(mockECOResponse).reduce((sum, arr) => sum + arr.length, 0),
+            response_time_ms: 5,
+            source: 'games_analyzed',
+            categories_included: ['A', 'B', 'C', 'D', 'E'],
+            limit_per_category: actualLimit
+          }
+        };
+      });
       
       // Mock pathResolver
       pathResolver.getPopularityStatsPath.mockReturnValue('/mock/path/popularity_stats.json');
@@ -229,22 +253,24 @@ describe('GET /api/openings/popular-by-eco', () => {
     });
 
     test('should fallback gracefully when no popularity data available', async () => {
-      // Reset the cache and mock empty popularity data
-      jest.resetModules(); // Clear module cache
-      
-      const request = require('supertest');
-      const express = require('express');
-      
-      // Re-setup after module reset
-      const app = express();
-      app.use(express.json());
-      
-      // Mock empty popularity data
-      fs.readFileSync.mockReturnValue(JSON.stringify({ positions: {} }));
-      
-      // Re-import the router to get fresh instance
-      const openingsRouter = require('../../packages/api/src/routes/openings.routes');
-      app.use('/api/openings', openingsRouter);
+      // Mock the service to return fallback source
+      mockECOService.getPopularOpeningsByECO.mockReturnValue({
+        data: {
+          A: mockOpeningsData.filter(o => o.eco.startsWith('A')).slice(0, 6),
+          B: mockOpeningsData.filter(o => o.eco.startsWith('B')).slice(0, 6),
+          C: mockOpeningsData.filter(o => o.eco.startsWith('C')).slice(0, 6),
+          D: mockOpeningsData.filter(o => o.eco.startsWith('D')).slice(0, 6),
+          E: mockOpeningsData.filter(o => o.eco.startsWith('E')).slice(0, 6)
+        },
+        metadata: {
+          total_openings_analyzed: mockOpeningsData.length,
+          total_openings_returned: 30,
+          response_time_ms: 5,
+          source: 'fallback',
+          categories_included: ['A', 'B', 'C', 'D', 'E'],
+          limit_per_category: 6
+        }
+      });
       
       const response = await request(app)
         .get('/api/openings/popular-by-eco')
@@ -267,7 +293,7 @@ describe('GET /api/openings/popular-by-eco', () => {
 
     test('should handle ECOService errors gracefully', async () => {
       // Configure the mock to throw an error
-      mockECOService.getAllOpenings.mockImplementation(() => {
+      mockECOService.getPopularOpeningsByECO.mockImplementation(() => {
         throw new Error('Database connection failed');
       });
 

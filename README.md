@@ -18,9 +18,10 @@ A chess learning platform focused on opening study through client-side search, A
 
 ### **Technical Architecture**
 - **React 19 + TypeScript**: Type-safe, component-based frontend
-- **Express.js API**: RESTful backend with caching
+- **Express.js API**: RESTful backend with unified route architecture
 - **Hybrid Data Storage**: SQLite + JSON for performance
 - **Monorepo Structure**: Clean separation with shared utilities
+- **Unified Deployment**: Zero duplication between localhost/Vercel environments
 
 ## 🏗️ Application Architecture
 
@@ -67,12 +68,18 @@ Data Enhancement
 
 ### **Core Datasets**
 ```
-data/
-├── videos.sqlite (26MB)           # Main operational database
-├── popularity_stats.json (4.7MB) # Complete search dataset 
-├── eco/ (18MB)                    # ECO classifications + AI analysis
-├── course_analysis/ (16KB)        # Course recommendation cache
-└── Videos/ (114MB)                # Individual video metadata files
+packages/api/src/data/           # Production data (unified)
+├── video-index.json (21MB)      # Consolidated video metadata
+├── popularity_stats.json (5MB)  # Complete search dataset 
+├── courses.json (16KB)          # Course recommendations
+└── mock_popularity_stats.json   # Development fallback
+
+api/data/                        # Vercel deployment data (build-time copy)
+├── video-index.json             # Same as packages/api/src/data/
+├── popularity_stats.json        # Build script copies essential data
+└── courses.json                 # Production course data
+
+Note: Root data/ folder removed in unified architecture implementation
 ```
 
 ### **Production Scripts & Automation**
@@ -168,7 +175,7 @@ Page-Specific Components
     ```
 
 3.  **Download ECO data**:
-    This command populates the `data/eco` directory with the necessary chess opening files.
+    This command populates the API data directory with the necessary chess opening files.
     ```bash
     npm run eco:import
     ```
@@ -196,13 +203,37 @@ Execute the entire test suite:
 npm test
 ```
 
+## 🏗️ Unified Architecture
+
+The application uses a **unified architecture** that eliminates code duplication between development and production environments:
+
+### **Development Environment**
+- **API Routes**: `packages/api/src/routes/*.routes.js` (single source of truth)
+- **Data Location**: `packages/api/src/data/`
+- **Server**: Express.js development server
+
+### **Production (Vercel)**
+- **API Endpoints**: `api/*.js` (thin wrappers, ~40 lines each)
+- **Data Location**: `api/data/` (populated by build script)
+- **Functions**: Serverless functions that import development route logic
+
+### **Benefits**
+- **83% Code Reduction**: Eliminated duplicate implementations
+- **Identical Behavior**: Localhost and Vercel use same business logic
+- **Simplified Maintenance**: Single codebase for all environments
+- **Zero Feature Lag**: Production automatically inherits development features
+
 ## 🗺️ Development Roadmap
 
-The project has a stable architecture and is ready for new features. Current roadmap includes:
+The project has a stable unified architecture and is ready for new features. Recent completion:
 
+-   **✅ F06: Unified Architecture Implementation**: Eliminated 83% code duplication between localhost and Vercel environments. Single source of truth with thin deployment wrappers. **(COMPLETED Aug 2025)**
 -   **✅ F03: Course Recommendation Data Pipeline**: Manually curate and integrate expert course recommendations. **(COMPLETED)**
 -   **✅ F05: Enhanced Search Precision**: Fixed cross-contamination issues ("kings gambit" → "queens gambit") with word-level precision matching. **(COMPLETED)**
--   **F06: Advanced Search Features**: Natural language queries and strategic concept understanding.
+
+Upcoming features:
+-   **F07: Advanced Search Features**: Natural language queries and strategic concept understanding.
+-   **F08: Performance Optimization**: Sub-100ms API responses with advanced caching.
 
 For more details, see the full list of [Product Requirements Documents](docs/).
 

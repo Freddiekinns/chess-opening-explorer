@@ -26,8 +26,8 @@ class PathResolver {
       // Local development - check if running from root or workspace
       const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
       dataPath = isRunningFromRoot 
-        ? path.join(process.cwd(), 'data')
-        : path.join(process.cwd(), '../../data');
+        ? path.join(process.cwd(), 'api', 'data')
+        : path.join(process.cwd(), '../../api', 'data');
     }
     
     return subPath ? path.join(dataPath, subPath) : dataPath;

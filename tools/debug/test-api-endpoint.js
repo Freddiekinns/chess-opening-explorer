@@ -12,7 +12,7 @@ try {
   console.log('Testing /api/openings popular-by-eco endpoint...');
   
   // Load the openings route module (this is what Vercel will call)
-  const handler = require('./api/openings');
+  const handler = require('../../api/openings');
   
   // Create mock request and response objects
   const mockReq = {

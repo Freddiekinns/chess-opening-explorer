@@ -8,7 +8,7 @@
 process.env.VERCEL = '1';
 process.env.NODE_ENV = 'production';
 
-const vercelOpeningsAPI = require('./api/openings');
+const vercelOpeningsAPI = require('../../api/openings');
 
 console.log('🧪 Testing Vercel API Endpoint');
 console.log('==========================================');

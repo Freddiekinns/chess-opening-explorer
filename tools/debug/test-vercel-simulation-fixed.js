@@ -12,7 +12,7 @@ process.env.NODE_ENV = 'production';
 console.log('🧪 Testing Vercel Environment Simulation');
 console.log('==========================================');
 
-const pathResolver = require('./packages/api/src/utils/path-resolver');
+const pathResolver = require('../../packages/api/src/utils/path-resolver');
 
 console.log('\n📱 Environment Information:');
 console.log('NODE_ENV:', process.env.NODE_ENV);
@@ -32,7 +32,7 @@ console.log('Popularity Stats exists:', pathResolver.exists(pathResolver.getPopu
 // Test ECO service
 console.log('\n🔧 ECOService Test (Vercel Mode):');
 try {
-  const ECOService = require('./packages/api/src/services/eco-service');
+  const ECOService = require('../../packages/api/src/services/eco-service');
   const ecoService = new ECOService();
   
   console.log('ECOService methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(ecoService)));

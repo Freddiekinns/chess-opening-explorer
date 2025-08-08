@@ -11,7 +11,7 @@ console.log('Environment:', { VERCEL: process.env.VERCEL, NODE_ENV: process.env.
 
 try {
   console.log('Loading ECOService...');
-  const ECOService = require('./packages/api/src/services/eco-service');
+  const ECOService = require('../../packages/api/src/services/eco-service');
   
   console.log('Creating instance...');
   const ecoService = new ECOService();

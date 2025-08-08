@@ -33,6 +33,13 @@
 - **Metadata separation**: Store processing status separately from content
 - **Skip logic**: Skip already processed/failed items with logging
 
+### **AD-007: API Duplication Technical Debt (URGENT - Aug 2025)**
+- **Problem**: Dual API implementations (development vs Vercel) after deployment fix
+- **Files**: `packages/api/src/routes/openings.js` (887 lines) vs `api/openings.js` (103 lines)
+- **Impact**: 70% feature gap, maintenance overhead, potential inconsistencies
+- **Solution**: Phase 1 - Service layer consolidation, Phase 2 - Data architecture fix
+- **Documentation**: `docs/TECHNICAL_DEBT_API_DUPLICATION.md` (complete plan)
+
 ### **AD-008: Search Discovery Philosophy**
 - **Natural Language First**: "attacking openings for black" > "Sicilian Defense"
 - **Progressive Discovery**: Semantic → Fuzzy → Exact matching hierarchy
@@ -87,9 +94,18 @@ interface ChessOpening {
 
 ### **Essential API Endpoints**
 - `GET /api/openings/all`: Fetches all 12,377+ openings for client-side search (4.7MB)
+- `GET /api/openings/popular-by-eco`: Popular openings by ECO category (A-E)
 - `GET /api/openings/fen/:fen`: Complete opening data by FEN position
 - `GET /api/openings/random`: Random opening for exploration
 - `GET /api/courses/:fen`: Course recommendations for position (F03 complete)
+
+### **🚀 Current Deployment Status (Aug 2025)**
+- **Status**: ✅ Working Vercel deployment with known technical debt
+- **Frontend**: Fully functional, correct popularity rankings
+- **API**: Core functionality works, missing 11+ advanced endpoints in production
+- **Data**: ECO files (28MB) and popularity stats (5MB) successfully deployed
+- **Videos**: On-demand loading (12,373 files) - may fail in production (18MB not deployed)
+- **Performance**: Sub-60ms API responses locally, needs production validation
 
 ---
 

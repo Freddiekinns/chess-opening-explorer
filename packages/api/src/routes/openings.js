@@ -299,43 +299,10 @@ router.get('/stats', (req, res) => {
   }
 });
 
-// Load popularity data once at startup
-let popularityData = null;
+// Cache for search results
 let searchIndexCache = null;
 let searchIndexCacheTime = null;
 const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-function loadPopularityData() {
-  if (popularityData) return popularityData;
-  
-  try {
-    const popularityStatsPath = pathResolver.getPopularityStatsPath();
-    if (fs.existsSync(popularityStatsPath)) {
-      const data = JSON.parse(fs.readFileSync(popularityStatsPath, 'utf8'));
-      
-      // Extract from the "positions" key in the data structure
-      const positions = data.positions || {};
-      popularityData = Object.entries(positions)
-        .filter(([fen, stats]) => stats.games_analyzed && stats.games_analyzed > 0)
-        .map(([fen, stats]) => ({
-          fen,
-          games_analyzed: stats.games_analyzed,
-          rank: stats.rank || 0
-        }))
-        .sort((a, b) => b.games_analyzed - a.games_analyzed);
-      
-      console.log(`✅ Loaded ${popularityData.length} openings with games data`);
-    } else {
-      console.warn('No popularity stats file found');
-      popularityData = [];
-    }
-  } catch (error) {
-    console.error('Error loading popularity data:', error);
-    popularityData = [];
-  }
-  
-  return popularityData;
-}
 
 /**
  * @route GET /api/openings/popular
@@ -344,63 +311,16 @@ function loadPopularityData() {
  */
 router.get('/popular', (req, res) => {
   try {
-    const { limit = 12 } = req.query;
-    const maxResults = Math.min(parseInt(limit) || 12, 50);
+    const { limit = 12, complexity } = req.query;
     
-    const allOpenings = ecoService.getAllOpenings();
-    const popularity = loadPopularityData();
-    
-    if (popularity.length === 0) {
-      // Fallback to old method if no popularity data
-      const popularOpenings = allOpenings
-        .filter(opening => opening.analysis && opening.analysis.popularity && opening.analysis.popularity > 0)
-        .sort((a, b) => (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0))
-        .slice(0, maxResults);
-      
-      res.json({
-        success: true,
-        data: popularOpenings,
-        count: popularOpenings.length,
-        total_analyzed: allOpenings.length,
-        source: 'fallback'
-      });
-      return;
-    }
-    
-    // Create a map for quick lookup of game counts by FEN
-    const gameCountsByFen = new Map();
-    popularity.forEach(item => {
-      gameCountsByFen.set(item.fen, {
-        games_analyzed: item.games_analyzed,
-        rank: item.rank
-      });
-    });
-    
-    // Filter openings that have popularity data and enrich with game counts
-    const popularOpenings = allOpenings
-      .filter(opening => gameCountsByFen.has(opening.fen))
-      .map(opening => {
-        const popularityInfo = gameCountsByFen.get(opening.fen);
-        return {
-          ...opening,
-          games_analyzed: popularityInfo.games_analyzed,
-          popularity_rank: popularityInfo.rank
-        };
-      })
-      // Sort by absolute game count (descending), then alphabetically
-      .sort((a, b) => {
-        const gameCountDiff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
-        if (gameCountDiff !== 0) return gameCountDiff;
-        return a.name.localeCompare(b.name);
-      })
-      .slice(0, maxResults);
+    const result = ecoService.getPopularOpenings(limit, complexity);
     
     res.json({
       success: true,
-      data: popularOpenings,
-      count: popularOpenings.length,
-      total_analyzed: allOpenings.length,
-      source: 'games_analyzed'
+      data: result.data,
+      count: result.count,
+      total_analyzed: result.total_analyzed,
+      source: result.source
     });
   } catch (error) {
     res.status(500).json({
@@ -417,106 +337,14 @@ router.get('/popular', (req, res) => {
  */
 router.get('/popular-by-eco', (req, res) => {
   try {
-    const { limit = 6, complexity } = req.query;
-    const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 20); // Increased from 10 to 20
+    const { limit = 6, complexity, category } = req.query;
     
-    const startTime = Date.now();
-    let allOpenings = ecoService.getAllOpenings();
-    
-    // Filter by complexity if provided
-    if (complexity && ['Beginner', 'Intermediate', 'Advanced'].includes(complexity)) {
-      allOpenings = allOpenings.filter(opening => 
-        opening.analysis_json?.complexity === complexity
-      );
-    }
-    const popularity = loadPopularityData();
-    
-    if (popularity.length === 0) {
-      // Fallback: group by ECO family using analysis.popularity
-      const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
-      
-      allOpenings
-        .filter(opening => opening.analysis && opening.analysis.popularity && opening.analysis.popularity > 0)
-        .forEach(opening => {
-          const ecoFamily = opening.eco ? opening.eco[0] : null;
-          if (ecoFamily && ecoCategories[ecoFamily]) {
-            ecoCategories[ecoFamily].push(opening);
-          }
-        });
-      
-      // Sort and limit each category
-      Object.keys(ecoCategories).forEach(category => {
-        ecoCategories[category] = ecoCategories[category]
-          .sort((a, b) => (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0))
-          .slice(0, maxResultsPerCategory);
-      });
-      
-      const responseTime = Date.now() - startTime;
-      
-      res.json({
-        success: true,
-        data: ecoCategories,
-        metadata: {
-          total_openings_analyzed: allOpenings.length,
-          response_time_ms: responseTime,
-          source: 'fallback',
-          categories_included: ['A', 'B', 'C', 'D', 'E'],
-          limit_per_category: maxResultsPerCategory
-        }
-      });
-      return;
-    }
-    
-    // Create optimized lookup map by FEN
-    const gameCountsByFen = new Map();
-    popularity.forEach(item => {
-      gameCountsByFen.set(item.fen, {
-        games_analyzed: item.games_analyzed,
-        rank: item.rank
-      });
-    });
-    
-    // Group ALL openings by ECO family and enrich with popularity data
-    const ecoCategories = { A: [], B: [], C: [], D: [], E: [] };
-    
-    allOpenings.forEach(opening => {
-      const ecoFamily = opening.eco ? opening.eco[0] : null;
-      if (ecoFamily && ecoCategories[ecoFamily]) {
-        const popularityInfo = gameCountsByFen.get(opening.fen);
-        
-        ecoCategories[ecoFamily].push({
-          ...opening,
-          games_analyzed: popularityInfo ? popularityInfo.games_analyzed : 0,
-          popularity_rank: popularityInfo ? popularityInfo.rank : null
-        });
-      }
-    });
-    
-    // Sort each category by games_analyzed (descending) and take top N
-    Object.keys(ecoCategories).forEach(category => {
-      ecoCategories[category] = ecoCategories[category]
-        .sort((a, b) => {
-          const gameCountDiff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
-          if (gameCountDiff !== 0) return gameCountDiff;
-          return a.name.localeCompare(b.name);
-        })
-        .slice(0, maxResultsPerCategory);
-    });
-    
-    const responseTime = Date.now() - startTime;
-    const totalOpeningsReturned = Object.values(ecoCategories).reduce((sum, arr) => sum + arr.length, 0);
+    const result = ecoService.getPopularOpeningsByECO(category, limit, complexity);
     
     res.json({
       success: true,
-      data: ecoCategories,
-      metadata: {
-        total_openings_analyzed: allOpenings.length,
-        total_openings_returned: totalOpeningsReturned,
-        response_time_ms: responseTime,
-        source: 'games_analyzed',
-        categories_included: ['A', 'B', 'C', 'D', 'E'],
-        limit_per_category: maxResultsPerCategory
-      }
+      data: result.data,
+      metadata: result.metadata
     });
   } catch (error) {
     res.status(500).json({

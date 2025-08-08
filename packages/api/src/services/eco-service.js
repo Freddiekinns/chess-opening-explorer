@@ -413,6 +413,7 @@ class ECOService {
    * @returns {Object} - ECO categories with popular openings
    */
   getPopularOpeningsByECO(category = null, limit = 6, complexity = null) {
+    const startTime = Date.now();
     const maxResultsPerCategory = Math.min(parseInt(limit) || 6, 20);
     
     let allOpenings = this.getAllOpenings();
@@ -463,15 +464,107 @@ class ECOService {
         })
         .slice(0, maxResultsPerCategory);
     });
+
+    const responseTime = Date.now() - startTime;
+    const totalOpeningsReturned = Object.values(ecoCategories).reduce((sum, arr) => sum + arr.length, 0);
+    
+    const result = {
+      data: ecoCategories,
+      metadata: {
+        total_openings_analyzed: allOpenings.length,
+        total_openings_returned: totalOpeningsReturned,
+        response_time_ms: responseTime,
+        source: 'games_analyzed',
+        categories_included: ['A', 'B', 'C', 'D', 'E'],
+        limit_per_category: maxResultsPerCategory
+      }
+    };
     
     // If a specific category is requested, return only that category
     if (category && ecoCategories[category.toUpperCase()]) {
       return {
-        [category.toUpperCase()]: ecoCategories[category.toUpperCase()]
+        data: {
+          [category.toUpperCase()]: ecoCategories[category.toUpperCase()]
+        },
+        metadata: {
+          ...result.metadata,
+          categories_included: [category.toUpperCase()],
+          total_openings_returned: ecoCategories[category.toUpperCase()].length
+        }
       };
     }
     
-    return ecoCategories;
+    return result;
+  }
+
+  /**
+   * Get popular openings sorted by absolute game count
+   */
+  getPopularOpenings(limit = 20, complexity = null) {
+    const maxResults = Math.min(parseInt(limit) || 20, 50);
+    
+    let allOpenings = this.getAllOpenings();
+    
+    // Filter by complexity if provided
+    if (complexity && ['Beginner', 'Intermediate', 'Advanced'].includes(complexity)) {
+      allOpenings = allOpenings.filter(opening => 
+        opening.analysis_json?.complexity === complexity
+      );
+    }
+    
+    const popularityData = this.loadPopularityData();
+    
+    if (Object.keys(popularityData).length === 0) {
+      // Fallback to old method if no popularity data
+      const popularOpenings = allOpenings
+        .filter(opening => opening.analysis && opening.analysis.popularity && opening.analysis.popularity > 0)
+        .sort((a, b) => (b.analysis?.popularity || 0) - (a.analysis?.popularity || 0))
+        .slice(0, maxResults);
+      
+      return {
+        data: popularOpenings,
+        count: popularOpenings.length,
+        total_analyzed: allOpenings.length,
+        source: 'fallback'
+      };
+    }
+    
+    // Create a map for quick lookup of game counts by FEN
+    const gameCountsByFen = new Map();
+    Object.entries(popularityData).forEach(([fen, stats]) => {
+      if (stats.games_analyzed && stats.games_analyzed > 0) {
+        gameCountsByFen.set(fen, {
+          games_analyzed: stats.games_analyzed,
+          rank: stats.rank || 0
+        });
+      }
+    });
+    
+    // Filter openings that have popularity data and enrich with game counts
+    const popularOpenings = allOpenings
+      .filter(opening => gameCountsByFen.has(opening.fen))
+      .map(opening => {
+        const popularityInfo = gameCountsByFen.get(opening.fen);
+        return {
+          ...opening,
+          games_analyzed: popularityInfo.games_analyzed,
+          popularity_rank: popularityInfo.rank
+        };
+      })
+      // Sort by absolute game count (descending), then alphabetically
+      .sort((a, b) => {
+        const gameCountDiff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
+        if (gameCountDiff !== 0) return gameCountDiff;
+        return a.name.localeCompare(b.name);
+      })
+      .slice(0, maxResults);
+    
+    return {
+      data: popularOpenings,
+      count: popularOpenings.length,
+      total_analyzed: allOpenings.length,
+      source: 'games_analyzed'
+    };
   }
 
   /**

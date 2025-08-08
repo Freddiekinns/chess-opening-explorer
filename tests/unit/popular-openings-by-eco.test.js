@@ -30,7 +30,7 @@ jest.mock('../../packages/api/src/services/video-access-service', () => {
 });
 
 // Now import the router after mocking the dependencies
-const openingsRouter = require('../../packages/api/src/routes/openings');
+const openingsRouter = require('../../packages/api/src/routes/openings.routes');
 const fs = require('fs');
 
 // Mock fs module
@@ -243,7 +243,7 @@ describe('GET /api/openings/popular-by-eco', () => {
       fs.readFileSync.mockReturnValue(JSON.stringify({ positions: {} }));
       
       // Re-import the router to get fresh instance
-      const openingsRouter = require('../../packages/api/src/routes/openings');
+      const openingsRouter = require('../../packages/api/src/routes/openings.routes');
       app.use('/api/openings', openingsRouter);
       
       const response = await request(app)

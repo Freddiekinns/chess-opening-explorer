@@ -5,7 +5,7 @@
 
 const request = require('supertest');
 const express = require('express');
-const createCourseRoutes = require('../../packages/api/src/routes/courses');
+const createCourseRoutes = require('../../packages/api/src/routes/courses.routes');
 
 describe('Course API Routes', () => {
   let app;

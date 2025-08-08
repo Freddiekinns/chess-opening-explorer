@@ -3,9 +3,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 // Import routes
-const openingRoutes = require('../packages/api/src/routes/openings');
-const statsRoutes = require('../packages/api/src/routes/stats');
-const courseRoutes = require('../packages/api/src/routes/courses');
+const openingRoutes = require('../packages/api/src/routes/openings.routes');
+const statsRoutes = require('../packages/api/src/routes/stats.routes');
+const courseRoutes = require('../packages/api/src/routes/courses.routes');
 
 const app = express();
 

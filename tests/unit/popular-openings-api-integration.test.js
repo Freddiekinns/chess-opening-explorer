@@ -17,7 +17,7 @@ describe('Popular Openings API Integration', () => {
     app.use(express.json());
     
     // Import and use routes after app setup
-    const openingsRouter = require('../../packages/api/src/routes/openings');
+    const openingsRouter = require('../../packages/api/src/routes/openings.routes');
     app.use('/api/openings', openingsRouter);
   });
 

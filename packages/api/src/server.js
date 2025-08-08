@@ -29,9 +29,9 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
-const openingRoutes = require('./routes/openings');
-const statsRoutes = require('./routes/stats');
-const courseRoutes = require('./routes/courses');
+const openingRoutes = require('./routes/openings.routes');
+const statsRoutes = require('./routes/stats.routes');
+const courseRoutes = require('./routes/courses.routes');
 
 app.use('/api/openings', openingRoutes);
 app.use('/api/stats', statsRoutes);

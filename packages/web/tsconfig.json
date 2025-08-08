@@ -20,6 +20,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "../../tests/unit/VideoGallery.test.tsx"],
+  "include": ["src"],
+  "exclude": ["../../tests/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

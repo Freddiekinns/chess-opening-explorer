@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const pathResolver = require('../utils/path-resolver');
 
 // Constants
-const VIDEO_DIRECTORY_PATH = ['..', '..', 'data', 'Videos'];
 const VIDEO_FILE_EXTENSION = '.json';
 const CACHE_DEFAULT_SIZE = 1000; // Maximum cached positions
 
@@ -12,8 +12,8 @@ const CACHE_DEFAULT_SIZE = 1000; // Maximum cached positions
  */
 class VideoAccessService {
   constructor() {
-    // Go up two levels from packages/api to reach project root
-    this.videoDirectory = path.join(process.cwd(), ...VIDEO_DIRECTORY_PATH);
+    // Use path resolver for environment-aware paths
+    this.videoDirectory = pathResolver.getVideosDataPath();
     this.videoCache = new Map();
     this.maxCacheSize = CACHE_DEFAULT_SIZE;
     

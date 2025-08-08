@@ -30,7 +30,7 @@ interface SearchBarProps {
 }
 
 // Enhanced search function with semantic search as primary
-async function searchOpenings(query: string, useSemanticSearch: boolean = true): Promise<{
+async function searchOpenings(query: string, _useSemanticSearch: boolean = true): Promise<{
   results: Opening[],
   searchType: string,
   totalResults: number
@@ -76,7 +76,8 @@ async function searchOpenings(query: string, useSemanticSearch: boolean = true):
   }
 }
 
-// Get search suggestions
+// Get search suggestions (currently unused)
+/*
 async function getSearchSuggestions(query: string): Promise<string[]> {
   if (!query || query.trim().length < 2) {
     return [];
@@ -97,6 +98,7 @@ async function getSearchSuggestions(query: string): Promise<string[]> {
 
   return [];
 }
+*/
 
 // Helper function to detect if a query looks like a chess move
 function isChessMove(query: string): boolean {

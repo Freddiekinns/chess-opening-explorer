@@ -37,7 +37,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedComplexity, setSelectedComplexity] = useState<string | null>(null)
-  const [allOpenings, setAllOpenings] = useState<Opening[]>([]) // Store all openings
   const [displayLimit, setDisplayLimit] = useState(12) // Show 12 initially, can load more
   
   // Helper function to count the number of moves in a moves string
@@ -145,7 +144,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
               
               if (fallbackDeduplicated.length > deduplicated.length) {
                 console.log(`✅ Fallback successful: ${fallbackDeduplicated.length} openings for category "${selectedCategory}"`);
-                setAllOpenings(fallbackDeduplicated);
                 setFilteredOpenings(fallbackDeduplicated);
                 setDisplayLimit(12);
                 return;
@@ -153,7 +151,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
             }
           }
           
-          setAllOpenings(deduplicated);
           setFilteredOpenings(deduplicated);
           setDisplayLimit(12);
           return;
@@ -199,7 +196,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       // Show all valid openings instead of limiting to 6
       console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
       
-      setAllOpenings(deduplicated);
       setFilteredOpenings(deduplicated);
       setDisplayLimit(12); // Reset display limit when filters change
     };

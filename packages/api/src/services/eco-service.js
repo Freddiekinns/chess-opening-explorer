@@ -1,16 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const pathResolver = require('../utils/path-resolver');
 
 class ECOService {
   constructor() {
-    // Handle different working directories: 
-    // - From root directory (tests): 'data/eco'
-    // - From packages/api directory (nodemon): '../../data/eco'
-    const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
-    this.dataDir = isRunningFromRoot 
-      ? path.join(process.cwd(), 'data/eco')
-      : path.join(process.cwd(), '../../data/eco');
+    // Use path resolver for environment-aware paths
+    this.dataDir = pathResolver.getECODataPath();
     this.ecoFile = 'eco.json';
     this.baseUrl = 'https://raw.githubusercontent.com/hayatbiralem/eco.json/master/';
     this.ecoFiles = ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.json'];
@@ -111,10 +107,7 @@ class ECOService {
       return this.popularityData;
     }
 
-    const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
-    const popularityPath = isRunningFromRoot 
-      ? path.join(process.cwd(), 'data/popularity_stats.json')
-      : path.join(process.cwd(), '../../data/popularity_stats.json');
+    const popularityPath = pathResolver.getPopularityStatsPath();
 
     try {
       if (fs.existsSync(popularityPath)) {

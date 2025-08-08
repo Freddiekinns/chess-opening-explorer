@@ -4,6 +4,7 @@ const path = require('path');
 const ECOService = require('../services/eco-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
+const pathResolver = require('../utils/path-resolver');
 
 const router = express.Router();
 const ecoService = new ECOService();
@@ -308,7 +309,7 @@ function loadPopularityData() {
   if (popularityData) return popularityData;
   
   try {
-    const popularityStatsPath = path.join(__dirname, '../../../../data/popularity_stats.json');
+    const popularityStatsPath = pathResolver.getPopularityStatsPath();
     if (fs.existsSync(popularityStatsPath)) {
       const data = JSON.parse(fs.readFileSync(popularityStatsPath, 'utf8'));
       

@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const pathResolver = require('../utils/path-resolver');
 
 const router = express.Router();
 
@@ -11,8 +12,8 @@ function loadPopularityStats() {
   if (popularityStats === null) {
     try {
       // Try to load real stats file first (from project root data directory)
-      const realStatsPath = path.join(__dirname, '../../../../data/popularity_stats.json');
-      const mockStatsPath = path.join(__dirname, '../data/mock_popularity_stats.json');
+      const realStatsPath = pathResolver.getPopularityStatsPath();
+      const mockStatsPath = pathResolver.getAPIDataPath('mock_popularity_stats.json');
       
       let statsPath = mockStatsPath; // Default to mock
       let useRealStats = false;

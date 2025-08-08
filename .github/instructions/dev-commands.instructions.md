@@ -74,12 +74,9 @@ npm run dev:web
 
 ## 🔧 Performance Testing
 
-```bash
+```powershell
 # PowerShell timing
 Measure-Command { Invoke-RestMethod "http://localhost:3010/api/openings/popular-by-eco" }
-
-# cURL with timing
-curl -w "Time: %{time_total}s\n" -o /dev/null -s "URL"
 ```
 
 ## 📦 Build Commands

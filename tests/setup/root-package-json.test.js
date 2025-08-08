@@ -83,8 +83,8 @@ describe('Root Package.json Configuration', () => {
     
     expect(packageJson.jest).toBeDefined();
     expect(packageJson.jest.testEnvironment).toBe('node');
-    expect(packageJson.jest.collectCoverageFrom).toContain('packages/**/*.{js,ts,tsx}');
-    expect(packageJson.jest.collectCoverageFrom).toContain('tools/**/*.js');
+    expect(packageJson.jest.collectCoverageFrom).toContain('packages/api/**/*.js');
+    expect(packageJson.jest.collectCoverageFrom).toContain('tools/database/**/*.js');
     expect(packageJson.jest.testMatch).toContain('**/tests/**/*.test.js');
     
     // Coverage thresholds

@@ -17,6 +17,9 @@
 
 const request = require('supertest');
 const express = require('express');
+
+// Mock ECOService before requiring the routes
+jest.mock('../../packages/api/src/services/eco-service');
 const ECOService = require('../../packages/api/src/services/eco-service');
 
 // Mock data based on real structure from ecoA.json
@@ -58,75 +61,71 @@ const mockPopularityStats = {
 
 describe('Opening Data Consistency Integration Tests', () => {
   let app;
-  let ecoService;
+  let mockEcoService;
   const testFEN = 'rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2';
   const expectedOpening = mockECOData[testFEN];
 
   beforeAll(() => {
+    // Create mock ECO service instance
+    mockEcoService = {
+      getOpeningByFEN: jest.fn((fen) => {
+        const opening = mockECOData[fen];
+        if (!opening) return null;
+        
+        // Simulate the formatOpeningData method behavior
+        return {
+          name: opening.name,
+          eco: opening.eco,
+          fen: fen,
+          moves: opening.moves || '',
+          aliases: [], // No aliases in our test data
+          description: opening.analysis_json?.description || '',
+          style_tags: opening.analysis_json?.style_tags || [],
+          tactical_tags: opening.analysis_json?.tactical_tags || [],
+          positional_tags: opening.analysis_json?.positional_tags || [],
+          strategic_themes: opening.analysis_json?.strategic_themes || [],
+          common_plans: opening.analysis_json?.common_plans || [],
+          src: opening.src,
+          scid: opening.scid
+        };
+      }),
+      getECOAnalysisByFEN: jest.fn((fen) => {
+        const opening = mockECOData[fen];
+        if (!opening?.analysis_json) return null;
+        
+        const analysis = opening.analysis_json;
+        return {
+          eco: opening.eco,
+          fen: fen,
+          name: opening.name,
+          moves: opening.moves || '',
+          aliases: [], // No aliases in our test data
+          description: analysis.description,
+          style_tags: analysis.style_tags || [],
+          tactical_tags: analysis.tactical_tags || [],
+          positional_tags: analysis.positional_tags || [],
+          strategic_themes: analysis.strategic_themes || [],
+          complexity: analysis.complexity || 'Unknown',
+          white_plans: analysis.white_plans || [],
+          black_plans: analysis.black_plans || [],
+          common_plans: analysis.common_plans || [],
+          mainline_moves: analysis.mainline_moves,
+          last_enriched_at: analysis.last_enriched_at
+        };
+      })
+    };
+
+    // Mock the ECOService constructor to return our mock instance
+    ECOService.mockImplementation(() => mockEcoService);
+    
     // Setup Express app with mocked services
     app = express();
     app.use(express.json());
-    
-    // Mock ECO Service
-    ecoService = new ECOService();
-    
-    // Mock ECO service methods
-    jest.spyOn(ecoService, 'loadECOData').mockReturnValue(mockECOData);
-    jest.spyOn(ecoService, 'getOpeningByFEN').mockImplementation((fen) => {
-      const opening = mockECOData[fen];
-      if (!opening) return null;
-      
-      // Simulate the formatOpeningData method behavior
-      return {
-        name: opening.name,
-        eco: opening.eco,
-        fen: fen,
-        moves: opening.moves || '',
-        aliases: [], // No aliases in our test data
-        description: opening.analysis_json?.description || '',
-        style_tags: opening.analysis_json?.style_tags || [],
-        tactical_tags: opening.analysis_json?.tactical_tags || [],
-        positional_tags: opening.analysis_json?.positional_tags || [],
-        strategic_themes: opening.analysis_json?.strategic_themes || [],
-        common_plans: opening.analysis_json?.common_plans || [],
-        src: opening.src,
-        scid: opening.scid
-      };
-    });
-    jest.spyOn(ecoService, 'getECOAnalysisByFEN').mockImplementation((fen) => {
-      const opening = mockECOData[fen];
-      if (!opening?.analysis_json) return null;
-      
-      const analysis = opening.analysis_json;
-      return {
-        eco: opening.eco,
-        fen: fen,
-        name: opening.name,
-        moves: opening.moves || '',
-        aliases: [], // No aliases in our test data
-        description: analysis.description,
-        style_tags: analysis.style_tags || [],
-        tactical_tags: analysis.tactical_tags || [],
-        positional_tags: analysis.positional_tags || [],
-        strategic_themes: analysis.strategic_themes || [],
-        complexity: analysis.complexity || 'Unknown',
-        white_plans: analysis.white_plans || [],
-        black_plans: analysis.black_plans || [],
-        common_plans: analysis.common_plans || [],
-        mainline_moves: analysis.mainline_moves,
-        last_enriched_at: analysis.last_enriched_at
-      };
-    });
 
-    // Setup routes with mocked services
-    const openingsRouter = require('../../packages/api/src/routes/openings');
-    const statsRouter = require('../../packages/api/src/routes/stats');
-    
-    // Mock the services in the routes
-    openingsRouter.ecoService = ecoService;
+    // Setup routes with mocked services (require after mocking)
+    const openingsRouter = require('../../packages/api/src/routes/openings.routes');
     
     app.use('/api/openings', openingsRouter);
-    app.use('/api/stats', statsRouter);
   });
 
   afterAll(() => {

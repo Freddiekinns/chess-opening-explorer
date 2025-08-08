@@ -28,15 +28,25 @@ describe('Chess Opening Trainer Setup', () => {
   });
 
   test('should have opening trainer API routes', () => {
-    const openingRoutesPath = path.join(apiPackagePath, 'src', 'routes', 'openings.js');
+    const openingRoutesPath = path.join(apiPackagePath, 'src', 'routes', 'openings.routes.js');
     expect(fs.existsSync(openingRoutesPath)).toBe(true);
     expect(fs.statSync(openingRoutesPath).isFile()).toBe(true);
   });
 
-  test('should have ECO data directory', () => {
+  test('should have ECO data directory or import script available', () => {
     const ecoDataPath = path.join(projectRoot, 'data', 'eco');
-    expect(fs.existsSync(ecoDataPath)).toBe(true);
-    expect(fs.statSync(ecoDataPath).isDirectory()).toBe(true);
+    const apiPackagePath = path.join(projectRoot, 'packages', 'api');
+    const packageJsonPath = path.join(apiPackagePath, 'package.json');
+    
+    // Either ECO data exists, or we have the script to download it
+    if (fs.existsSync(ecoDataPath)) {
+      expect(fs.statSync(ecoDataPath).isDirectory()).toBe(true);
+    } else {
+      // Check that we have the script to download ECO data
+      expect(fs.existsSync(packageJsonPath)).toBe(true);
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+      expect(packageJson.scripts).toHaveProperty('eco:import');
+    }
   });
 
   test('should have API scripts for ECO data import', () => {

@@ -5,17 +5,26 @@
   "devCommand": "npm run dev:web",
   "installCommand": "npm install && npm run install:all",
   "functions": {
-    "api/**/*.js": {
+    "api/*.js": {
       "maxDuration": 30
     }
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/api/openings/(.*)",
+      "destination": "/api/openings"
+    },
+    {
+      "source": "/api/stats/(.*)",
+      "destination": "/api/stats"
+    },
+    {
+      "source": "/api/health",
+      "destination": "/api/health"
     }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "VERCEL": "1"
   }
 }

@@ -40,6 +40,7 @@
 - **Phase 1 Results**: ECOService consolidation, route refactoring, code duplication eliminated
 - **August 8 Update**: ✅ **COMPLETE FEATURE PARITY ACHIEVED**:
   - `/api/stats/popularity` - Popularity statistics
+  - `/api/stats/:fen` - ✅ **BUGFIX**: Added FEN-specific stats endpoint
   - `/api/courses` - Course recommendations (all courses)
   - `/api/courses/stats` - Course database statistics  
   - `/api/courses/:fen` - Courses for specific position
@@ -57,6 +58,8 @@
   - **Service**: Enhanced `VideoAccessService` with hybrid access (index vs individual files)
   - **Performance**: 200-500x faster lookups, predictable memory usage
   - **Deployment**: Integrated into `scripts/prepare-vercel-data.js` build pipeline
+  - **✅ BUGFIX APPLIED**: Fixed data structure access (`positionData.videos` not `positionData.opening.videos`)
+  - **✅ STATUS**: Video functionality now working in both development and production
 
 ### **AD-008: Search Discovery Philosophy**
 - **Natural Language First**: "attacking openings for black" > "Sicilian Defense"

@@ -62,6 +62,39 @@ module.exports = async (req, res) => {
       });
     }
     
+    // Handle FEN-specific stats: /api/stats/{fen}
+    if (route.startsWith('/') && route.length > 1) {
+      const fen = decodeURIComponent(route.substring(1));
+      
+      if (!fen) {
+        return res.status(400).json({
+          success: false,
+          error: 'FEN string is required'
+        });
+      }
+      
+      const stats = loadPopularityStats();
+      
+      // Look up stats for this FEN - handle both real data structure (nested under "positions") 
+      // and mock data structure (direct keys)
+      let openingStats = stats[fen]; // Try direct access first (mock data)
+      if (!openingStats && stats.positions) {
+        openingStats = stats.positions[fen]; // Try nested access (real data)
+      }
+      
+      if (!openingStats) {
+        return res.status(404).json({
+          success: false,
+          error: 'Statistics not found for this opening'
+        });
+      }
+      
+      return res.json({
+        success: true,
+        data: openingStats
+      });
+    }
+    
     return res.status(404).json({
       success: false,
       error: `Route ${route} not found`

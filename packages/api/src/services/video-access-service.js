@@ -140,11 +140,12 @@ class VideoAccessService {
     const sanitizedFEN = this.sanitizeFEN(fen);
     const positionData = this.videoIndex.positions[sanitizedFEN];
     
-    if (!positionData || !positionData.opening) {
+    if (!positionData) {
       return [];
     }
 
-    return positionData.opening.videos || [];
+    // Videos are stored directly in the position data, not inside opening
+    return positionData.videos || [];
   }
 
   /**

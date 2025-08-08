@@ -15,7 +15,29 @@ const fs = require('fs');
 
 // Mock ECOService
 jest.mock('../../packages/api/src/services/eco-service');
-jest.mock('fs');
+
+// Mock VideoAccessService
+jest.mock('../../packages/api/src/services/video-access-service', () => {
+  return jest.fn().mockImplementation(() => ({
+    getVideosForPosition: jest.fn().mockReturnValue([]),
+    _validateDirectory: jest.fn()
+  }));
+});
+
+// Mock fs module
+jest.mock('fs', () => ({
+  existsSync: jest.fn(),
+  readFileSync: jest.fn(),
+  createWriteStream: jest.fn(),
+  rmSync: jest.fn()
+}));
+
+// Mock pathResolver
+jest.mock('../../packages/api/src/utils/path-resolver', () => ({
+  getPopularityStatsPath: jest.fn(),
+  getECODataPath: jest.fn(),
+  getVideosDataPath: jest.fn()
+}));
 
 describe('GET /api/openings/popular-by-eco', () => {
   let app;
@@ -30,66 +52,320 @@ describe('GET /api/openings/popular-by-eco', () => {
   });
 
   const mockOpeningsData = [
-    // ECO A openings
-    { eco: 'A00', name: 'Irregular Opening', fen: 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1', games_analyzed: 1500000 },
-    { eco: 'A01', name: 'Nimzo-Larsen Attack', fen: 'rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1', games_analyzed: 1200000 },
-    { eco: 'A02', name: "Bird's Opening", fen: 'rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1', games_analyzed: 1100000 },
-    { eco: 'A03', name: "Bird's Opening: Dutch Variation", fen: 'rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2', games_analyzed: 900000 },
-    { eco: 'A04', name: 'Zukertort Opening', fen: 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1', games_analyzed: 800000 },
-    { eco: 'A05', name: 'Zukertort Opening: Quiet System', fen: 'rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2', games_analyzed: 750000 },
-    { eco: 'A06', name: 'Zukertort Opening: Tennison Gambit', fen: 'rnbqkbnr/pppp1ppp/8/4p3/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2', games_analyzed: 700000 },
+    // ECO A openings - with full structure like real ECO service
+    { 
+      eco: 'A00', 
+      name: 'Irregular Opening', 
+      fen: 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1', 
+      games_analyzed: 1500000,
+      src: 'eco_tsv',
+      moves: '1. Nf3',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 9,
+      white_win_rate: 0.5,
+      black_win_rate: 0.4,
+      draw_rate: 0.1,
+      avg_rating: 1800
+    },
+    { 
+      eco: 'A01', 
+      name: 'Nimzo-Larsen Attack', 
+      fen: 'rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1', 
+      games_analyzed: 1200000,
+      src: 'eco_tsv',
+      moves: '1. b3',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 8,
+      white_win_rate: 0.48,
+      black_win_rate: 0.42,
+      draw_rate: 0.1,
+      avg_rating: 1900
+    },
+    { 
+      eco: 'A02', 
+      name: "Bird's Opening", 
+      fen: 'rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1', 
+      games_analyzed: 1100000,
+      src: 'eco_tsv',
+      moves: '1. f4',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 7,
+      white_win_rate: 0.49,
+      black_win_rate: 0.41,
+      draw_rate: 0.1,
+      avg_rating: 1850
+    },
+    { 
+      eco: 'A03', 
+      name: "Bird's Opening: Dutch Variation", 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2', 
+      games_analyzed: 900000,
+      src: 'eco_tsv',
+      moves: '1. f4 d5',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 6,
+      white_win_rate: 0.47,
+      black_win_rate: 0.43,
+      draw_rate: 0.1,
+      avg_rating: 1870
+    },
+    { 
+      eco: 'A04', 
+      name: 'Zukertort Opening', 
+      fen: 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1', 
+      games_analyzed: 800000,
+      src: 'eco_tsv',
+      moves: '1. Nf3',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 5,
+      white_win_rate: 0.51,
+      black_win_rate: 0.39,
+      draw_rate: 0.1,
+      avg_rating: 1750
+    },
+    { 
+      eco: 'A05', 
+      name: 'Zukertort Opening: Quiet System', 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2', 
+      games_analyzed: 750000,
+      src: 'eco_tsv',
+      moves: '1. Nf3 d5',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 4,
+      white_win_rate: 0.52,
+      black_win_rate: 0.38,
+      draw_rate: 0.1,
+      avg_rating: 1780
+    },
+    { 
+      eco: 'A06', 
+      name: 'Zukertort Opening: Tennison Gambit', 
+      fen: 'rnbqkbnr/pppp1ppp/8/4p3/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2', 
+      games_analyzed: 700000,
+      src: 'eco_tsv',
+      moves: '1. Nf3 e5',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 3,
+      white_win_rate: 0.45,
+      black_win_rate: 0.45,
+      draw_rate: 0.1,
+      avg_rating: 1800
+    },
     
     // ECO B openings  
-    { eco: 'B00', name: "King's Pawn Game", fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1', games_analyzed: 3778178876 },
-    { eco: 'B01', name: 'Scandinavian Defense', fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', games_analyzed: 50000000 },
-    { eco: 'B02', name: 'Alekhine Defense', fen: 'rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2', games_analyzed: 35000000 },
-    { eco: 'B03', name: 'Alekhine Defense: Four Pawns Attack', fen: 'rnbqkb1r/ppp1pppp/3p1n2/8/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3', games_analyzed: 30000000 },
-    { eco: 'B04', name: 'Alekhine Defense: Modern Variation', fen: 'rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 3', games_analyzed: 25000000 },
-    { eco: 'B05', name: 'Alekhine Defense: Modern, Flohr Variation', fen: 'r1bqkb1r/ppp1pppp/2np1n2/8/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 2 4', games_analyzed: 20000000 },
-    { eco: 'B06', name: 'Robatsch Defense', fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', games_analyzed: 15000000 },
+    { 
+      eco: 'B00', 
+      name: "King's Pawn Game", 
+      fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1', 
+      games_analyzed: 3778178876,
+      src: 'eco_tsv',
+      moves: '1. e4',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 10,
+      white_win_rate: 0.52,
+      black_win_rate: 0.38,
+      draw_rate: 0.1,
+      avg_rating: 1600
+    },
+    { 
+      eco: 'B01', 
+      name: 'Scandinavian Defense', 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', 
+      games_analyzed: 50000000,
+      src: 'eco_tsv',
+      moves: '1. e4 d5',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 9,
+      white_win_rate: 0.53,
+      black_win_rate: 0.37,
+      draw_rate: 0.1,
+      avg_rating: 1750
+    },
+    { 
+      eco: 'B02', 
+      name: 'Alekhine Defense', 
+      fen: 'rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2', 
+      games_analyzed: 35000000,
+      src: 'eco_tsv',
+      moves: '1. e4 Nf6',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 8,
+      white_win_rate: 0.54,
+      black_win_rate: 0.36,
+      draw_rate: 0.1,
+      avg_rating: 1900
+    },
+    { 
+      eco: 'B03', 
+      name: 'Alekhine Defense: Four Pawns Attack', 
+      fen: 'rnbqkb1r/ppp1pppp/3p1n2/8/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3', 
+      games_analyzed: 30000000,
+      src: 'eco_tsv',
+      moves: '1. e4 Nf6 2. e5 Nd5 3. c4',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 7,
+      white_win_rate: 0.55,
+      black_win_rate: 0.35,
+      draw_rate: 0.1,
+      avg_rating: 1950
+    },
+    { 
+      eco: 'B04', 
+      name: 'Alekhine Defense: Modern Variation', 
+      fen: 'rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 3', 
+      games_analyzed: 25000000,
+      src: 'eco_tsv',
+      moves: '1. e4 Nf6 2. e5 Nd5 3. Nf3',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 6,
+      white_win_rate: 0.51,
+      black_win_rate: 0.39,
+      draw_rate: 0.1,
+      avg_rating: 1880
+    },
+    { 
+      eco: 'B05', 
+      name: 'Alekhine Defense: Modern, Flohr Variation', 
+      fen: 'r1bqkb1r/ppp1pppp/2np1n2/8/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 2 4', 
+      games_analyzed: 20000000,
+      src: 'eco_tsv',
+      moves: '1. e4 Nf6 2. e5 Nd5 3. Nf3 Nc6',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 5,
+      white_win_rate: 0.50,
+      black_win_rate: 0.40,
+      draw_rate: 0.1,
+      avg_rating: 1920
+    },
+    { 
+      eco: 'B06', 
+      name: 'Robatsch Defense', 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', 
+      games_analyzed: 15000000,
+      src: 'eco_tsv',
+      moves: '1. e4 g6',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 4,
+      white_win_rate: 0.52,
+      black_win_rate: 0.38,
+      draw_rate: 0.1,
+      avg_rating: 1800
+    },
     
     // ECO C openings
-    { eco: 'C00', name: 'French Defense', fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', games_analyzed: 120000000 },
-    { eco: 'C01', name: 'French Defense: Exchange Variation', fen: 'rnbqkbnr/ppp2ppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2', games_analyzed: 100000000 },
-    { eco: 'C02', name: 'French Defense: Advance Variation', fen: 'rnbqkbnr/ppp2ppp/4p3/3pP3/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3', games_analyzed: 95000000 },
-    { eco: 'C03', name: 'French Defense: Tarrasch Variation', fen: 'rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 3', games_analyzed: 90000000 },
-    { eco: 'C04', name: 'French Defense: Tarrasch, Guimard Main Line', fen: 'r1bqkbnr/ppp2ppp/2n1p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 4', games_analyzed: 85000000 },
-    { eco: 'C05', name: 'French Defense: Tarrasch, Closed Variation', fen: 'r1bqkbnr/ppp2ppp/2n1p3/3p4/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 2 4', games_analyzed: 80000000 },
-    { eco: 'C06', name: 'French Defense: Tarrasch, Closed, Main Line', fen: 'r1bqkb1r/ppp2ppp/2n1pn2/3p4/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 3 5', games_analyzed: 75000000 },
+    { 
+      eco: 'C00', 
+      name: 'French Defense', 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', 
+      games_analyzed: 120000000,
+      src: 'eco_tsv',
+      moves: '1. e4 e6',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 9,
+      white_win_rate: 0.51,
+      black_win_rate: 0.39,
+      draw_rate: 0.1,
+      avg_rating: 1850
+    },
+    { 
+      eco: 'C01', 
+      name: 'French Defense: Exchange Variation', 
+      fen: 'rnbqkbnr/ppp2ppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2', 
+      games_analyzed: 100000000,
+      src: 'eco_tsv',
+      moves: '1. e4 e6 2. d4 d5 3. exd5',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 8,
+      white_win_rate: 0.50,
+      black_win_rate: 0.40,
+      draw_rate: 0.1,
+      avg_rating: 1750
+    },
     
     // ECO D openings
-    { eco: 'D00', name: "Queen's Pawn Game", fen: 'rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2', games_analyzed: 200000000 },
-    { eco: 'D01', name: 'Richter-Veresov Attack', fen: 'rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2', games_analyzed: 180000000 },
-    { eco: 'D02', name: "Queen's Pawn Game: London System", fen: 'rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 1 2', games_analyzed: 170000000 },
-    { eco: 'D03', name: "Queen's Pawn Game: Torre Attack", fen: 'rnbqkbnr/ppp2ppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3', games_analyzed: 160000000 },
-    { eco: 'D04', name: "Queen's Pawn Game: Colle System", fen: 'rnbqkbnr/ppp2ppp/8/3p4/3P4/3B1N2/PPP1PPPP/RNBQK2R b KQkq - 2 3', games_analyzed: 150000000 },
-    { eco: 'D05', name: "Queen's Pawn Game: Colle System, Traditional", fen: 'r1bqkbnr/ppp2ppp/2n5/3p4/3P4/3B1N2/PPP1PPPP/RNBQK2R w KQkq - 3 4', games_analyzed: 140000000 },
-    { eco: 'D06', name: "Queen's Gambit Declined", fen: 'rnbqkbnr/ppp2ppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2', games_analyzed: 135000000 },
+    { 
+      eco: 'D00', 
+      name: "Queen's Pawn Game", 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2', 
+      games_analyzed: 200000000,
+      src: 'eco_tsv',
+      moves: '1. d4 d5',
+      analysis_json: { complexity: 'Beginner' },
+      popularity_score: 9,
+      white_win_rate: 0.49,
+      black_win_rate: 0.41,
+      draw_rate: 0.1,
+      avg_rating: 1650
+    },
+    { 
+      eco: 'D01', 
+      name: 'Richter-Veresov Attack', 
+      fen: 'rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2', 
+      games_analyzed: 180000000,
+      src: 'eco_tsv',
+      moves: '1. d4 d5 2. Nc3',
+      analysis_json: { complexity: 'Intermediate' },
+      popularity_score: 8,
+      white_win_rate: 0.52,
+      black_win_rate: 0.38,
+      draw_rate: 0.1,
+      avg_rating: 1800
+    },
     
     // ECO E openings
-    { eco: 'E00', name: "Queen's Pawn Game: Neo-Indian Attack", fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2', games_analyzed: 52000000 },
-    { eco: 'E01', name: 'Catalan Opening', fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3', games_analyzed: 45000000 },
-    { eco: 'E02', name: 'Catalan Opening: Open Defense', fen: 'rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4', games_analyzed: 40000000 },
-    { eco: 'E03', name: 'Catalan Opening: Open Defense, Alekhine Line', fen: 'r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 1 5', games_analyzed: 38000000 },
-    { eco: 'E04', name: 'Catalan Opening: Open Defense, 5.Nf3', fen: 'r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 2 5', games_analyzed: 35000000 },
-    { eco: 'E05', name: 'Catalan Opening: Open Defense, Classical Line', fen: 'r1bqk2r/ppp1bppp/2n1pn2/3p4/2PP4/5NP1/PP2PP1P/RNBQKB1R w KQkq - 3 6', games_analyzed: 32000000 },
-    { eco: 'E06', name: 'Catalan Opening: Closed', fen: 'rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 1 4', games_analyzed: 30000000 }
+    { 
+      eco: 'E00', 
+      name: "Queen's Pawn Game: Neo-Indian Attack", 
+      fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2', 
+      games_analyzed: 52000000,
+      src: 'eco_tsv',
+      moves: '1. d4 Nf6 2. c4 e6',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 7,
+      white_win_rate: 0.53,
+      black_win_rate: 0.37,
+      draw_rate: 0.1,
+      avg_rating: 1950
+    },
+    { 
+      eco: 'E01', 
+      name: 'Catalan Opening', 
+      fen: 'rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3', 
+      games_analyzed: 45000000,
+      src: 'eco_tsv',
+      moves: '1. d4 Nf6 2. c4 e6 3. g3',
+      analysis_json: { complexity: 'Advanced' },
+      popularity_score: 6,
+      white_win_rate: 0.54,
+      black_win_rate: 0.36,
+      draw_rate: 0.1,
+      avg_rating: 2000
+    }
   ];
 
   const mockPopularityData = {
-    top_100_openings: mockOpeningsData.map((opening, index) => ({
-      rank: index + 1,
-      games_analyzed: opening.games_analyzed,
-      name: opening.name,
-      eco: opening.eco,
-      fen: opening.fen
-    }))
+    positions: mockOpeningsData.reduce((acc, opening, index) => {
+      acc[opening.fen] = {
+        games_analyzed: opening.games_analyzed,
+        rank: index + 1,
+        popularity_score: 10 - (index * 0.1),
+        white_win_rate: 0.5,
+        black_win_rate: 0.4,
+        draw_rate: 0.1
+      };
+      return acc;
+    }, {})
   };
 
   describe('Performance and functionality tests', () => {
     beforeEach(() => {
+      const pathResolver = require('../../packages/api/src/utils/path-resolver');
+      
       // Mock ECOService.getAllOpenings()
       ECOService.prototype.getAllOpenings = jest.fn().mockReturnValue(mockOpeningsData);
+      
+      // Mock pathResolver
+      pathResolver.getPopularityStatsPath.mockReturnValue('/mock/path/popularity_stats.json');
       
       // Mock fs.existsSync and fs.readFileSync for popularity data
       fs.existsSync.mockReturnValue(true);
@@ -98,9 +374,15 @@ describe('GET /api/openings/popular-by-eco', () => {
 
     test('should return top 6 openings for each ECO category', async () => {
       const response = await request(app)
-        .get('/api/openings/popular-by-eco')
-        .expect(200);
+        .get('/api/openings/popular-by-eco');
 
+      if (response.status !== 200) {
+        console.log('Error response status:', response.status);
+        console.log('Error response body:', response.body);
+        console.log('Error response text:', response.text);
+      }
+      
+      expect(response.status).toBe(200);
       expect(response.body.success).toBe(true);
       expect(response.body.data).toBeDefined();
       

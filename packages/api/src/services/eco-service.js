@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const pathResolver = require('../utils/path-resolver');
+const { getGlobalCache } = require('./cache-service');
 
 class ECOService {
   constructor() {
@@ -11,6 +12,7 @@ class ECOService {
     this.baseUrl = 'https://raw.githubusercontent.com/hayatbiralem/eco.json/master/';
     this.ecoFiles = ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.json'];
     this.ecoData = null;
+    this.cache = getGlobalCache(); // Add cache
   }
 
   /**
@@ -73,57 +75,61 @@ class ECOService {
    * Load and merge all ECO data into a single object
    */
   loadECOData() {
-    if (this.mergedData) {
-      return this.mergedData;
-    }
+    // Check global cache first (survives function restarts)
+    return this.cache.getOrSet('eco-data', () => {
+      if (this.mergedData) {
+        return this.mergedData;
+      }
 
-    const mergedData = {};
-    
-    for (const filename of this.ecoFiles) {
-      const filePath = path.join(this.dataDir, filename);
+      const mergedData = {};
       
-      if (!fs.existsSync(filePath)) {
-        console.warn(`ECO file not found: ${filename}. Run 'npm run eco:import' to download.`);
-        continue;
+      for (const filename of this.ecoFiles) {
+        const filePath = path.join(this.dataDir, filename);
+        
+        if (!fs.existsSync(filePath)) {
+          console.warn(`ECO file not found: ${filename}. Run 'npm run eco:import' to download.`);
+          continue;
+        }
+      
+        try {
+          const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          Object.assign(mergedData, fileData);
+        } catch (error) {
+          console.error(`Error loading ${filename}:`, error);
+        }
       }
       
-      try {
-        const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        Object.assign(mergedData, fileData);
-      } catch (error) {
-        console.error(`Error loading ${filename}:`, error);
-      }
-    }
-    
-    this.mergedData = mergedData;
-    return mergedData;
-  }
-
-  /**
+      this.mergedData = mergedData;
+      return mergedData;
+    }, 3600000); // Cache for 1 hour
+  }  /**
    * Load popularity data from popularity_stats.json
    */
   loadPopularityData() {
-    if (this.popularityData) {
-      return this.popularityData;
-    }
+    // Check global cache first (survives function restarts) 
+    return this.cache.getOrSet('popularity-data', () => {
+      if (this.popularityData) {
+        return this.popularityData;
+      }
 
-    const popularityPath = pathResolver.getPopularityStatsPath();
+      const popularityPath = pathResolver.getPopularityStatsPath();
 
-    try {
-      if (fs.existsSync(popularityPath)) {
-        const rawData = JSON.parse(fs.readFileSync(popularityPath, 'utf8'));
-        this.popularityData = rawData.positions || {};
-        console.log(`Loaded popularity data for ${Object.keys(this.popularityData).length} positions`);
-      } else {
-        console.warn('Popularity stats file not found, using empty data');
+      try {
+        if (fs.existsSync(popularityPath)) {
+          const rawData = JSON.parse(fs.readFileSync(popularityPath, 'utf8'));
+          this.popularityData = rawData.positions || {};
+          console.log(`Loaded popularity data for ${Object.keys(this.popularityData).length} positions`);
+        } else {
+          console.warn('Popularity stats file not found, using empty data');
+          this.popularityData = {};
+        }
+      } catch (error) {
+        console.error('Error loading popularity data:', error);
         this.popularityData = {};
       }
-    } catch (error) {
-      console.error('Error loading popularity data:', error);
-      this.popularityData = {};
-    }
 
-    return this.popularityData;
+      return this.popularityData;
+    }, 3600000); // Cache for 1 hour
   }
 
   /**

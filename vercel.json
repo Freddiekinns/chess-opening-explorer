@@ -9,6 +9,35 @@
       "maxDuration": 30
     }
   },
+  "headers": [
+    {
+      "source": "/api/openings/popular",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1800, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/popular-by-eco",
+      "headers": [
+        {
+          "key": "Cache-Control", 
+          "value": "s-maxage=1800, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
+      "source": "/api/stats",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=7200"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/openings/(.*)",

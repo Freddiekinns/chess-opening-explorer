@@ -71,18 +71,13 @@
     "testEnvironment": "node",
     "collectCoverageFrom": [
       "packages/api/**/*.js",
-      "tools/database/**/*.js",
-      "tools/video-pipeline/**/*.js",
-      "tools/production/**/*.js",
       "!**/node_modules/**",
       "!**/tests/**",
       "!packages/web/**",
       "!packages/shared/**/*.{ts,d.ts}",
-      "!tools/debug/**",
-      "!tools/utilities/**",
-      "!tools/validation/**",
-      "!tools/analysis/**",
-      "!tools/packages/**"
+      "!tools/**",
+      "!scripts/**",
+      "!prompts/**"
     ],
     "testMatch": [
       "**/tests/**/*.test.js"

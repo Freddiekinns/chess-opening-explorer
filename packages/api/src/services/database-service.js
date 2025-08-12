@@ -7,11 +7,12 @@
 const fs = require('fs');
 const path = require('path');
 const ECOService = require('./eco-service');
+const pathResolver = require('../utils/path-resolver');
 
 class DatabaseService {
   constructor(ecoService = null) {
     this.ecoService = ecoService || new ECOService();
-    this.ecoDataPath = path.join(__dirname, '../../../../data/eco');
+    this.ecoDataPath = pathResolver.getECODataPath();
   }
 
   /**

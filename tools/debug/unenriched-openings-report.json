@@ -1,0 +1,62 @@
+{
+  "totalOpenings": 12377,
+  "unenrichedOpenings": [
+    {
+      "file": "ecoB.json",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "eco": "B20",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5",
+      "enrichmentType": "missing"
+    },
+    {
+      "file": "ecoB.json",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "eco": "B27",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3",
+      "enrichmentType": "missing"
+    },
+    {
+      "file": "ecoB.json",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 2",
+      "eco": "B27",
+      "name": "Sicilian Defence",
+      "moves": "1. Nf3  c5 2. e4 ",
+      "enrichmentType": "missing"
+    }
+  ],
+  "fileStats": {
+    "ecoA.json": {
+      "total": 2721,
+      "unenriched": 0,
+      "enriched": 2721
+    },
+    "ecoB.json": {
+      "total": 2726,
+      "unenriched": 3,
+      "enriched": 2723
+    },
+    "ecoC.json": {
+      "total": 2865,
+      "unenriched": 0,
+      "enriched": 2865
+    },
+    "ecoD.json": {
+      "total": 2273,
+      "unenriched": 0,
+      "enriched": 2273
+    },
+    "ecoE.json": {
+      "total": 1792,
+      "unenriched": 0,
+      "enriched": 1792
+    }
+  },
+  "enrichmentTypes": {
+    "missing": 3,
+    "null": 0,
+    "emptyObject": 0,
+    "emptyString": 0
+  }
+}

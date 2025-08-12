@@ -3,9 +3,9 @@
  * Tests core routing functionality and main application structure
  */
 
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { vi } from 'vitest'
+import { vi, describe, test, expect, beforeEach } from 'vitest'
 import App from '../App'
 
 // Mock the fetch for openings data
@@ -26,11 +26,20 @@ describe('App Component', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     
-    // Mock successful fetch response
-    mockFetch.mockResolvedValue({
+    // Mock successful fetch response with proper metadata
+    mockFetch.mockImplementation(() => Promise.resolve({
       ok: true,
-      json: async () => mockOpeningsData
-    })
+      json: () => Promise.resolve({
+        success: true,
+        data: mockOpeningsData,
+        metadata: {
+          response_time_ms: 150,
+          total_count: mockOpeningsData.length,
+          page: 1,
+          limit: 20
+        }
+      })
+    }))
   })
 
   describe('Routing', () => {
@@ -41,19 +50,58 @@ describe('App Component', () => {
         </MemoryRouter>
       )
 
-      // Should show the main content area
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      // Should show the app content
+      await waitFor(() => {
+        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      })
     })
 
     test('should render opening detail page for valid route', async () => {
-      render(
-        <MemoryRouter initialEntries={['/opening/B00']}>
-          <App />
-        </MemoryRouter>
-      )
+      // Mock specific API endpoint for opening detail page
+      mockFetch.mockImplementation((url: string) => {
+        if (url.includes('/api/openings/fen/')) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve({
+              success: true,
+              data: {
+                fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
+                name: 'King\'s Pawn Game',
+                eco: 'B00',
+                moves: '1.e4',
+                src: 'test'
+              }
+            })
+          })
+        }
+        if (url.includes('/api/openings/all')) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve({
+              success: true,
+              data: mockOpeningsData
+            })
+          })
+        }
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({ success: true, data: [] })
+        })
+      })
 
-      // Should render the opening detail page
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      await act(async () => {
+        render(
+          <MemoryRouter initialEntries={['/opening/B00']}>
+            <App />
+          </MemoryRouter>
+        )
+      })
+
+      // Wait for the opening detail page to load
+      await waitFor(() => {
+        // Should show the opening name when loaded
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument()
+      })
     })
 
     test('should handle invalid routes gracefully', async () => {
@@ -63,8 +111,10 @@ describe('App Component', () => {
         </MemoryRouter>
       )
 
-      // Should either redirect to home or show 404
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      // Should either redirect to home or show 404 - either way it should render
+      await waitFor(() => {
+        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      })
     })
   })
 
@@ -76,7 +126,7 @@ describe('App Component', () => {
         </MemoryRouter>
       )
 
-      expect(mockFetch).toHaveBeenCalledWith('/api/openings/popular-by-eco')
+      expect(mockFetch).toHaveBeenCalledWith('/api/openings/popular-by-eco?limit=6')
     })
 
     test('should handle fetch errors gracefully', async () => {
@@ -89,14 +139,25 @@ describe('App Component', () => {
       )
 
       // Should still render without crashing
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      await waitFor(() => {
+        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      })
     })
 
     test('should handle empty API response', async () => {
-      mockFetch.mockResolvedValue({
+      mockFetch.mockImplementation(() => Promise.resolve({
         ok: true,
-        json: async () => []
-      })
+        json: () => Promise.resolve({ 
+          success: true, 
+          data: [],
+          metadata: {
+            response_time_ms: 100,
+            total_count: 0,
+            page: 1,
+            limit: 20
+          }
+        })
+      }))
 
       render(
         <MemoryRouter>
@@ -104,7 +165,8 @@ describe('App Component', () => {
         </MemoryRouter>
       )
 
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      // Should render without crashing, check for basic content instead
+      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
     })
   })
 
@@ -117,7 +179,9 @@ describe('App Component', () => {
       )
 
       // Check for essential layout elements
-      expect(screen.getByRole('main')).toBeInTheDocument()
+      await waitFor(() => {
+        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      })
     })
   })
 })

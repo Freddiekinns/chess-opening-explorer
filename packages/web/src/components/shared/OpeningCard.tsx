@@ -172,5 +172,3 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
     </div>
   )
 }
-
-export default OpeningCard

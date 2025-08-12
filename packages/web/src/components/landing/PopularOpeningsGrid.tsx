@@ -313,5 +313,3 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     </section>
   )
 }
-
-export default PopularOpeningsGrid

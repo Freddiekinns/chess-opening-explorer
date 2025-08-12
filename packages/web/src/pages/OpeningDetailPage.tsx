@@ -181,6 +181,16 @@ const OpeningDetailPage: React.FC = () => {
   const setupGame = (openingData: Opening) => {
     try {
       const newGame = new Chess()
+      
+      // Check if moves exist and is a string
+      if (!openingData.moves || typeof openingData.moves !== 'string') {
+        console.warn('No valid moves found in opening data:', openingData)
+        setGameHistory(['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'])
+        setGame(new Chess())
+        setCurrentMoveIndex(0)
+        return
+      }
+      
       // Parse moves properly - remove move numbers and split
       const movesArray = openingData.moves
         .replace(/\d+\./g, '') // Remove move numbers like "1.", "2.", etc.

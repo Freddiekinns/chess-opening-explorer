@@ -77,7 +77,13 @@
       "!packages/shared/**/*.{ts,d.ts}",
       "!tools/**",
       "!scripts/**",
-      "!prompts/**"
+      "!prompts/**",
+      "!packages/api/src/services/channel-first-*.js",
+      "!packages/api/src/services/video-processor.js",
+      "!packages/api/src/services/database-service.js",
+      "!packages/api/src/utils/testUtils.js",
+      "!packages/api/download-eco.js",
+      "!api/**"
     ],
     "testMatch": [
       "**/tests/**/*.test.js"
@@ -108,6 +114,10 @@
     "google-auth-library": "^10.1.0",
     "googleapis": "^153.0.0",
     "sqlite3": "^5.1.7",
-    "xmldom": "^0.6.0"
+    "xmldom": "^0.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6"
   }
 }

@@ -8,13 +8,16 @@ interface Opening {
   src: string
   scid?: string
   aliases?: Record<string, string>
-  analysis?: {
+  analysis_json?: {  // Updated to match LandingPage interface
     description?: string
     style_tags?: string[]
     popularity?: number
   }
   games_analyzed?: number  // Number of games this opening was played
   popularity_rank?: number // Rank based on games_analyzed
+  white_win_rate?: number
+  black_win_rate?: number
+  draw_rate?: number
 }
 
 interface SearchBarProps {
@@ -190,12 +193,12 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
       }
       
       // Description matching
-      if (opening.analysis?.description?.toLowerCase().includes(lowerCaseQuery)) {
+      if (opening.analysis_json?.description?.toLowerCase().includes(lowerCaseQuery)) {
         score += 50
       }
       
       // Style tags matching
-      if (opening.analysis?.style_tags?.some(tag => 
+      if (opening.analysis_json?.style_tags?.some((tag: string) => 
         tag.toLowerCase().includes(lowerCaseQuery)
       )) {
         score += 25
@@ -204,7 +207,7 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
       // Popularity boost (more significant for move queries to surface popular openings)
       if (score > 0) {
         const gamesAnalyzed = opening.games_analyzed || 0
-        const analysisPopularity = opening.analysis?.popularity || 0
+        const analysisPopularity = opening.analysis_json?.popularity || 0
         
         // Use games_analyzed if available, otherwise analysis popularity
         const popularity = gamesAnalyzed > 0 ? gamesAnalyzed : analysisPopularity * 1000
@@ -437,5 +440,3 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     </div>
   )
 }
-
-export default SearchBar

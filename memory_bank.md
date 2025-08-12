@@ -142,7 +142,9 @@ interface ChessOpening {
 
 ### **Testing Strategy (AD-002)**
 - **Mock all externals**: APIs, databases, file I/O (never use real calls)
-- **Location**: `/tests/unit/` directory only, run from project ROOT
+- **Dual Architecture**: 
+  - **Backend Tests (Jest)**: `/tests/unit/` directory, run from project ROOT
+  - **Frontend Tests (Vitest)**: `/packages/web/src/**/__tests__/`, run from web workspace
 - **Performance**: <1 second per test, deterministic results
 - **Commands**: See `.github/instructions/dev-commands.instructions.md`
 
@@ -156,7 +158,8 @@ interface ChessOpening {
 3. **Refactor Phase**: Improve code while maintaining tests
 
 ### **File Naming Conventions**
-- **Tests**: `*.test.js` (location defined in AD-002 above)
+- **Backend Tests**: `*.test.js` in `/tests/unit/` (Jest)
+- **Frontend Tests**: `*.test.tsx` in `/packages/web/src/**/__tests__/` (Vitest)
 - **Mock files**: `__mocks__/` directories alongside source
 - **Config files**: Environment-specific with `.env` fallbacks
 - **Generated files**: Use FEN-to-filename sanitization
@@ -214,7 +217,8 @@ YOUTUBE_API_KEY="..."
 
 **Quick Reference:**
 - **Backend tests**: `npm run test:unit` (Jest, from root)
-- **Frontend tests**: `cd packages/web && npm test` (Vitest)
+- **Frontend tests**: `npm run test:frontend` or `cd packages/web && npm test` (Vitest)
+- **All tests**: `npm run test:all` (backend + frontend)
 - **Run servers**: `npm run dev` (both), `npm run dev:api`, `npm run dev:web`
 
 ---
@@ -234,7 +238,7 @@ For comprehensive details, see:
 ### **Tool Usage Patterns**
 - **File Exploration**: Use `read_file` before making changes to understand context
 - **Targeted Edits**: Prefer `replace_in_file` for specific changes over `write_to_file`
-- **Command Execution**: Always run `npm run test:unit` from root after changes
+- **Command Execution**: Run `npm run test:unit` (backend) or `npm run test:all` (both) after changes
 - **Architecture Check**: Reference `.cline/cline_rules.md` for Cline-specific workflow
 
 ### **Cline Workflow Preferences**
@@ -245,7 +249,7 @@ For comprehensive details, see:
 
 ### **Critical Cline Reminders**
 - **AD-003 (CSS)**: NEVER create separate CSS files - always add to `simplified.css`
-- **Testing Location**: All tests in `tests/unit/` directory, run from project ROOT
+- **Testing Location**: Backend tests in `tests/unit/`, Frontend tests in `packages/web/src/**/__tests__/`
 - **Mock Strategy**: Mock all external dependencies (APIs, databases, file I/O)
 - **Performance Target**: <200ms API responses, use client-side filtering
 

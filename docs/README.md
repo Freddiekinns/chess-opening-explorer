@@ -13,6 +13,12 @@ This directory contains the core documentation for the Chess Opening Explorer pr
 -   **[pipeline-architecture.md](pipeline-architecture.md)**  
     An in-depth explanation of the data processing pipelines, from data ingestion and AI enrichment to final data presentation.
 
+-   **[FRONTEND_TESTING_STRATEGY.md](FRONTEND_TESTING_STRATEGY.md)**  
+    Comprehensive frontend testing approach using Vitest and React Testing Library, including test architecture and component coverage.
+
+-   **[UNIT_TEST_COVERAGE_PLAN.md](UNIT_TEST_COVERAGE_PLAN.md)**  
+    Overall testing strategy and coverage improvement plan for both frontend and backend components.
+
 -   **[user-flows.md](user-flows.md)**  
     Descriptions of key user journeys and interactions within the application.
 

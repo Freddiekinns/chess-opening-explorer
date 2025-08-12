@@ -198,10 +198,46 @@ npm run dev
 
 ### Running Tests
 
-Execute the entire test suite:
+The project uses a **dual testing architecture** optimized for different components:
+
+#### **Frontend Tests** (React Components)
 ```bash
-npm test
+# All frontend tests (Vitest + React Testing Library)
+npm run test:frontend
+
+# Frontend tests with watch mode
+cd packages/web && npm run test:watch
+
+# Frontend tests with coverage
+cd packages/web && npm test -- --coverage
+
+# Frontend tests with UI dashboard
+cd packages/web && npm run test:ui
 ```
+
+#### **Backend Tests** (Services & APIs)
+```bash
+# All backend unit tests (Jest + Node.js)
+npm run test:unit
+
+# Backend tests with watch mode
+npm run test:unit -- --watch
+
+# Backend tests with coverage
+npm run test:unit -- --coverage
+```
+
+#### **All Tests**
+```bash
+# Execute the entire test suite (backend + frontend)
+npm run test:all
+```
+
+#### **Testing Architecture**
+- **Frontend**: Vitest in `packages/web/src/**/__tests__/` for React components
+- **Backend**: Jest in `tests/unit/` for services, APIs, and business logic
+- **Coverage Target**: 70% overall with comprehensive component testing
+- **Key Areas**: SearchBar, routing, opening data, user interactions
 
 ## 🏗️ Unified Architecture
 

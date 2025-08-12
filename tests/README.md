@@ -1,18 +1,45 @@
 # Test Organization Guide
 
-## 🏗️ Standardized Test Structure
+## 🏗️ Dual Testing Architecture
 
-This project follows a centralized testing approach with clear separation of concerns.
+This project uses **two testing approaches** optimized for different components:
 
-### Directory Structure
+### **Backend Testing** (Jest - Root Level)
+- **Location**: `tests/unit/` and `tests/integration/`
+- **Engine**: Jest with Node.js environment
+- **Purpose**: API services, data processing, backend logic
 
+### **Frontend Testing** (Vitest - Workspace Level)  
+- **Location**: `packages/web/src/**/__tests__/`
+- **Engine**: Vitest with jsdom environment
+- **Purpose**: React components, user interactions, frontend logic
+
+---
+
+## 📂 Directory Structure
+
+### Backend Tests (Root Level)
 ```
 tests/
 ├── setup/           # Environment & configuration tests
-├── unit/            # Individual component/service tests
-├── integration/     # Cross-component workflow tests
-├── fixtures/        # Shared test data
+├── unit/            # Backend services, utilities, API logic
+├── integration/     # Cross-component workflows, API endpoints
+├── fixtures/        # Shared test data and mocks
 └── README.md       # This file
+```
+
+### Frontend Tests (Workspace Level)
+```
+packages/web/src/
+├── components/
+│   └── shared/__tests__/
+│       └── SearchBar.test.tsx
+├── pages/__tests__/
+│   └── LandingPage.test.tsx
+├── __tests__/
+│   └── App.test.tsx
+└── test/
+    └── setup.ts     # Vitest configuration
 ```
 
 ### 📋 Naming Conventions
@@ -29,25 +56,74 @@ tests/
 - **Integration**: `describe('[FeatureName] Integration', () => {})`
 - **Individual Tests**: `test('should [expected behavior] when [condition]', () => {})`
 
-### 🎯 Test Categories
+## 🧪 Testing Commands
 
-#### Unit Tests (`unit/`)
-- Test individual functions/components in isolation
-- Mock all external dependencies
-- Fast execution (< 1 second each)
-- Focus on business logic and edge cases
+### **Backend Tests (Jest)**
+```bash
+# All backend unit tests (from root)
+npm run test:unit
 
-#### Integration Tests (`integration/`)
-- Test component interactions
-- Test full workflows end-to-end
-- Mock external APIs but allow internal communication
-- Verify data flow between layers
+# Specific backend test file
+npm run test:unit -- --testPathPattern="eco-service.test.js"
 
-#### Setup Tests (`setup/`)
-- Environment configuration validation
-- Package.json structure tests
-- Build pipeline verification
-- Development environment checks
+# Backend tests with watch mode
+npm run test:unit -- --watch
+
+# Backend tests with coverage
+npm run test:unit -- --coverage
+```
+
+### **Frontend Tests (Vitest)**
+```bash
+# All frontend tests (from root via workspace)
+npm run test:frontend
+
+# All tests (backend + frontend)
+npm run test:all
+
+# Frontend tests directly from web workspace
+cd packages/web && npm test
+
+# Frontend tests with watch mode
+cd packages/web && npm run test:watch
+
+# Frontend tests with coverage
+cd packages/web && npm test -- --coverage
+
+# Frontend tests with UI dashboard
+cd packages/web && npm run test:ui
+```
+
+### **Combined Testing**
+```bash
+# Run all tests (backend + frontend)
+npm run test:all
+
+# Backend only
+npm run test:backend
+
+# Frontend only  
+npm run test:frontend
+```
+
+---
+
+## 🎯 Testing Strategy by Component Type
+
+### **React Components** → Use Frontend Tests (Vitest)
+- **Why**: Better React support, fast HMR, modern tooling
+- **Location**: `packages/web/src/**/__tests__/`
+- **Tools**: Vitest + React Testing Library + jest-dom
+
+### **Backend Services** → Use Backend Tests (Jest) 
+- **Why**: Node.js environment, mature ecosystem, extensive mocking
+- **Location**: `tests/unit/` and `tests/integration/`
+- **Tools**: Jest + Supertest + Node mocks
+
+### **Integration Workflows** → Use Backend Tests (Jest)
+- **Why**: Can test full API → DB → response flows
+- **Location**: `tests/integration/`
+- **Tools**: Jest + Supertest + Test databases
 
 ### 🧪 Test Standards
 

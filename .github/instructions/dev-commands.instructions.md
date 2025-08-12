@@ -48,16 +48,30 @@ npm run test:unit -- --coverage
 ### **Frontend Tests (Vitest)**
 ```bash
 # All frontend tests (from root via workspace)
+npm run test:frontend
+
+# All tests (backend + frontend)
+npm run test:all
+
+# Frontend tests directly from web workspace  
 cd packages/web && npm test
 
-# Test with coverage
+# Frontend tests with watch mode
+cd packages/web && npm run test:watch
+
+# Frontend tests with coverage
 cd packages/web && npm test -- --coverage
+
+# Frontend tests with UI dashboard
+cd packages/web && npm run test:ui
 ```
 
-### **⚠️ Important Test Organization**
-- **All tests**: Must be in `tests/unit/` directory (never inside source folders)
-- **Run location**: Always run tests from project ROOT directory
-- **Naming**: Use clear descriptive names like `video-service.test.js`
+### **⚠️ Important Testing Architecture**
+- **Frontend Tests**: Use Vitest in `packages/web/src/**/__tests__/` 
+- **Backend Tests**: Use Jest in `tests/unit/` directory  
+- **Component Tests**: Always in frontend workspace for proper React environment
+- **Service Tests**: Always in root tests/ for proper Node.js environment
+- **Run Location**: Frontend tests from web workspace, backend tests from root
 
 ## ⚡ Development Servers
 

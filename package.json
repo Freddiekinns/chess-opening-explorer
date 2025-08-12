@@ -38,6 +38,8 @@
     "pipeline:enrich": "node tools/video-pipeline/3-enrich-videos.js",
     "pipeline:match": "node tools/video-pipeline/video-matcher.js",
     "test": "jest",
+    "eco:fix-analysis": "node scripts/fix-analysis-json.js",
+    "eco:validate-analysis": "node scripts/validate-analysis-json.js",
     "test:backend": "jest",
     "test:frontend": "npm run test --workspace=packages/web",
     "test:all": "npm run test:backend && npm run test:frontend",

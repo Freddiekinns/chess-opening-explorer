@@ -7,10 +7,11 @@ applyTo: "**/*.{js,ts,tsx,jsx}"
 *Practical testing patterns for both frontend and backend code.*
 
 ## 🎯 Testing Priorities
-1. **Make it work first** - Then add comprehensive tests
+1. **90% minimum test coverage** for new components (MANDATORY)
 2. **Test behavior** - Not implementation details
 3. **Mock externals** - APIs, databases, file system
 4. **Keep tests fast** - <1 second per test
+5. **100% test success** - Zero failing tests allowed 
 
 ## 📁 Dual Testing Architecture
 

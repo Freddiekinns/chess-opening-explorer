@@ -33,60 +33,6 @@
 - **Metadata separation**: Store processing status separately from content
 - **Skip logic**: Skip already processed/failed items with logging
 
-### **AD-007: Unified Architecture Implementation (✅ COMPLETED - Aug 8, 2025)**
-- **Challenge**: Dual API implementations creating 83% code duplication between localhost/Vercel
-- **Solution**: Direct Express router integration with thin Vercel wrappers
-- **Results**: 
-  - `api/openings.js`: 428 → 40 lines (91% reduction)
-  - `api/stats.js`: 111 → 40 lines (67% reduction)  
-  - `api/courses.js`: 149 → 40 lines (74% reduction)
-- **Architecture**: Single source of truth in `packages/api/src/routes/*.routes.js`
-- **Benefits**: Zero duplication, identical localhost/Vercel behavior, simplified maintenance
-- **Status**: ✅ **COMPLETE** - 100% unified architecture achieved
-
-### **AD-009: Video Data Architecture Challenge (✅ SOLVED - Aug 8, 2025)**
-- **Problem**: 18.37MB video data (12,373 files) exceeds Vercel serverless bundle constraints
-- **Impact**: Video functionality fails in production, on-demand loading not feasible
-- **Root Cause**: Individual JSON files per position creates deployment bottleneck
-
-### **AD-010: Frontend Testing Strategy Implementation (✅ PHASE 2 COMPLETE - Aug 12, 2025)**
-- **Challenge**: React 19.1.0 adoption broke testing ecosystem compatibility
-- **Impact**: 50+ comprehensive tests blocked by "Objects are not valid as React child" errors
-- **Root Cause**: @testing-library/react version conflicts with React 19 internals
-- **Strategy**: Multi-phase testing strategy focusing on component interface alignment first
-- **Phase 1**: ✅ Test Infrastructure Setup (Vitest + @testing-library/react@16.3.0)
-- **Phase 2**: ✅ **Component Interface Alignment** (COMPLETED)
-  - Fixed SearchBar.tsx: Removed default export, standardized named export
-  - Fixed PopularOpeningsGrid.tsx: Export consistency implemented
-  - Fixed OpeningCard.tsx: Interface alignment completed
-  - Eliminated analysis vs analysis_json prop mismatches across all components
-  - Achieved 100% component export pattern standardization
-- **Status**: Interface fixes complete and production-ready, tests written but blocked by React 19/testing-library compatibility
-- **Workaround**: Added package.json overrides to force React 19 consistency, module resolution issues persist
-- **Next**: Monitor React testing ecosystem for React 19 compatibility updates
-
-### **AD-010: Unit Test Coverage Strategy (✅ COMPLETED - Aug 12, 2025)**
-- **Challenge**: Low test coverage (24%) with unclear priorities on what to test
-- **Strategy**: Focus on business-critical services, exclude pipeline tools from coverage
-- **Implementation**: 
-  - Phase 1: Core services (ECO, Search, Opening Routes)
-  - Phase 2: Supporting services (Video Access)
-  - Coverage configuration: Exclude non-critical services
-- **Results**:
-  - Business-critical coverage: **38.74%** (vs 23.87% diluted)
-  - Critical services: 60-100% coverage on user-facing functionality
-  - 288 passing tests across 22 suites
-- **Key Insight**: Quality beats quantity - focused coverage provides more value
-- **Status**: ✅ **COMPLETE** - Production-ready test coverage achieved
-- **✅ SOLUTION IMPLEMENTED**: Video Index Consolidation
-  - **Script**: `scripts/consolidate-video-index.js` - Merges all 12,373 video files
-  - **Output**: `api/data/video-index.json` (21.44MB single file)
-  - **Service**: Enhanced `VideoAccessService` with hybrid access (index vs individual files)
-  - **Performance**: 200-500x faster lookups, predictable memory usage
-  - **Deployment**: Integrated into `scripts/prepare-vercel-data.js` build pipeline
-  - **✅ BUGFIX APPLIED**: Fixed data structure access (`positionData.videos` not `positionData.opening.videos`)
-  - **✅ STATUS**: Video functionality now working in both development and production
-
 ### **AD-008: Search Discovery Philosophy**
 - **Natural Language First**: "attacking openings for black" > "Sicilian Defense"
 - **Progressive Discovery**: Semantic → Fuzzy → Exact matching hierarchy
@@ -146,15 +92,6 @@ interface ChessOpening {
 - `GET /api/openings/fen/:fen`: Complete opening data by FEN position
 - `GET /api/openings/random`: Random opening for exploration
 - `GET /api/courses/:fen`: Course recommendations for position (F03 complete)
-
-### **🚀 Current Deployment Status (Aug 2025)**
-- **Status**: ✅ **UNIFIED ARCHITECTURE COMPLETE** - Zero duplication achieved
-- **Architecture**: Single source of truth with thin Vercel wrappers
-- **Code Reduction**: 83% duplicate code eliminated (688 → 120 lines)
-- **Data**: ✅ Unified data structure, root duplication removed
-- **API**: ✅ Complete feature parity (19+ endpoints working)
-- **Performance**: Sub-60ms API responses, production validated
-- **Deployment**: Ready for production with streamlined build process
 
 ---
 
@@ -248,7 +185,6 @@ YOUTUBE_API_KEY="..."
 - **Frontend tests**: `npm run test:frontend` or `cd packages/web && npm test` (Vitest)
 - **All tests**: `npm run test:all` (backend + frontend)
 - **Run servers**: `npm run dev` (both), `npm run dev:api`, `npm run dev:web`
-- **⚠️ Current Issue**: React 19 + @testing-library compatibility blocking frontend test execution
 
 ---
 

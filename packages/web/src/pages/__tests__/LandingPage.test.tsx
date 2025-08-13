@@ -8,9 +8,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { vi, describe, test, expect, beforeEach } from 'vitest'
 import LandingPage from '../LandingPage'
 import { 
-  mockApiResponse, 
-  mockApiResponseEmpty, 
-  mockApiResponseError,
   mockOpeningsList 
 } from '../../test/fixtures/openingData'
 

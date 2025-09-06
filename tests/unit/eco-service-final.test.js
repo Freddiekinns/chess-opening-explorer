@@ -197,4 +197,61 @@ describe('ECOService Final Working Tests', () => {
       expect(result).toHaveProperty('bySource');
     });
   });
+
+  describe('isEcoRoot Field Handling', () => {
+    // Simple test to verify the formatOpeningData method includes isEcoRoot
+    it('should include isEcoRoot field in formatOpeningData method', () => {
+      const mockOpening = {
+        name: 'Sicilian Defense',
+        eco: 'B20',
+        moves: '1.e4 c5',
+        isEcoRoot: true,
+        src: 'test'
+      };
+
+      const testFen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+      
+      // Test the formatOpeningData method directly
+      const result = ecoService.formatOpeningData(mockOpening, testFen);
+      
+      expect(result).toHaveProperty('isEcoRoot', true);
+      expect(result.name).toBe('Sicilian Defense');
+      expect(result.fen).toBe(testFen);
+    });
+
+    it('should include isEcoRoot as false when specified', () => {
+      const mockOpening = {
+        name: 'Sicilian Defense: Alapin Variation',
+        eco: 'B22',
+        moves: '1.e4 c5 2.c3',
+        isEcoRoot: false,
+        src: 'test'
+      };
+
+      const testFen = 'test-fen';
+      
+      const result = ecoService.formatOpeningData(mockOpening, testFen);
+      
+      expect(result).toHaveProperty('isEcoRoot', false);
+      expect(result.name).toBe('Sicilian Defense: Alapin Variation');
+    });
+
+    it('should include isEcoRoot as undefined when not present in source', () => {
+      const mockOpening = {
+        name: 'Kings Pawn Game',
+        eco: 'C20',
+        moves: '1.e4 e5',
+        src: 'test'
+        // Note: no isEcoRoot field
+      };
+
+      const testFen = 'test-fen';
+      
+      const result = ecoService.formatOpeningData(mockOpening, testFen);
+      
+      expect(result).toHaveProperty('isEcoRoot');
+      expect(result.isEcoRoot).toBeUndefined();
+      expect(result.name).toBe('Kings Pawn Game');
+    });
+  });
 });

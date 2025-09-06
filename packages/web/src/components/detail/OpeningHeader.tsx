@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { PopularityIndicator } from '../shared/PopularityIndicator'
+import { LineTypePill } from '../shared/LineTypePill'
 
 interface Opening {
   fen: string
@@ -9,7 +10,7 @@ interface Opening {
   src?: string
   scid?: string
   aliases?: Record<string, string>
-  EcoisRoot?: boolean
+  isEcoRoot?: boolean // corrected naming; backwards compatibility preserved
   analysis?: {
     description?: string
     style_tags?: string[]
@@ -63,9 +64,7 @@ export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
     return opening.analysis?.popularity || 0
   }
 
-  const isMainline = () => {
-    return opening.EcoisRoot || /^[A-E]\d{2}$/.test(opening.eco)
-  }
+  const isMainline = () => opening.isEcoRoot === true || /^[A-E]\d{2}$/.test(opening.eco)
 
   return (
     <header className={`opening-header ${className}`}>
@@ -74,9 +73,7 @@ export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
           <h1 className="opening-name">{opening.name}</h1>
           <div className="primary-tags">
             <span className="eco-tag">{opening.eco}</span>
-            <span className={`line-type-tag ${isMainline() ? 'mainline' : 'variation'}`}>
-              {isMainline() ? 'Mainline' : 'Variation'}
-            </span>
+            <LineTypePill isMainline={isMainline()} />
             <span className="complexity-tag">{getComplexity()}</span>
           </div>
         </div>

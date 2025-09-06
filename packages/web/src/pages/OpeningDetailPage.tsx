@@ -10,6 +10,7 @@ import { OpeningStats } from '../components/detail/OpeningStats'
 import { FloatingBackButton } from '../components/shared/FloatingBackButton'
 import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay'
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary'
+import { LineTypePill } from '../components/shared/LineTypePill'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -365,10 +366,11 @@ const OpeningDetailPage: React.FC = () => {
         <div className="complexity-and-tags">
           {/* ECO code pill */}
           {opening.eco && (
-            <span className="eco-pill">
-              {opening.eco}
-            </span>
+            <span className="eco-pill">{opening.eco}</span>
           )}
+
+                    {/* Mainline / Variation pill */}
+          <LineTypePill isMainline={opening.isEcoRoot === true} />
           
           {/* Complexity pill */}
           {opening.complexity && (

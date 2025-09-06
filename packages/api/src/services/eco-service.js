@@ -378,6 +378,9 @@ class ECOService {
       src: opening.src,
       scid: opening.scid,
       
+      // ECO structure flags
+      isEcoRoot: opening.isEcoRoot,
+      
       // Note: Stats (attribute 5) should be retrieved separately via stats API
       // to maintain separation of concerns
     };

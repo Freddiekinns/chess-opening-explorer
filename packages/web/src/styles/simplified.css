@@ -485,10 +485,13 @@ body {
   margin-top: var(--space-2);
 }
 
+/* Base pill styles - shared foundation */
 .eco-pill,
 .style-pill,
 .complexity-tag,
 .style-tag {
+  display: inline-flex;
+  align-items: center;
   padding: var(--space-1) var(--space-3);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-xs);
@@ -497,6 +500,7 @@ body {
   text-transform: capitalize;
   border: 1px solid transparent;
   transition: all 0.2s ease;
+  line-height: 1;
 }
 
 /* ECO Code Tags - Technical Identifier Style */

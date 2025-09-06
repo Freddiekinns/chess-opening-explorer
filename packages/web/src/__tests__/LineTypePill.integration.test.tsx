@@ -54,7 +54,8 @@ const mockVariationResponse: MockApiResponse = {
 }
 
 // Mock fetch globally
-global.fetch = vi.fn()
+const mockFetch = vi.fn()
+global.fetch = mockFetch
 
 // Mock useParams to return a test FEN
 vi.mock('react-router-dom', async () => {
@@ -80,7 +81,7 @@ describe('LineTypePill Integration Tests', () => {
     vi.clearAllMocks()
     
     // Mock all API calls that the OpeningDetailPage makes
-    ;(global.fetch as any).mockImplementation((url: string) => {
+    mockFetch.mockImplementation((url: string) => {
       console.log('Mocked fetch call to:', url)
       
       // Mock the all openings API for SearchBar
@@ -138,9 +139,12 @@ describe('LineTypePill Integration Tests', () => {
   describe('Mainline Opening Display', () => {
     it('should display "Mainline" pill for ECO root opening', async () => {
       // Mock API response for mainline opening
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockApiResponse
+        json: async () => ({
+          success: true,
+          data: mockApiResponse
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -155,9 +159,12 @@ describe('LineTypePill Integration Tests', () => {
     })
 
     it('should have correct tooltip for mainline opening', async () => {
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockApiResponse
+        json: async () => ({
+          success: true,
+          data: mockApiResponse
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -174,9 +181,12 @@ describe('LineTypePill Integration Tests', () => {
   describe('Variation Opening Display', () => {
     it('should display "Variation" pill for non-ECO root opening', async () => {
       // Mock API response for variation opening
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockVariationResponse
+        json: async () => ({
+          success: true,
+          data: mockVariationResponse
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -191,9 +201,12 @@ describe('LineTypePill Integration Tests', () => {
     })
 
     it('should have correct tooltip for variation opening', async () => {
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockVariationResponse
+        json: async () => ({
+          success: true,
+          data: mockVariationResponse
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -228,9 +241,12 @@ describe('LineTypePill Integration Tests', () => {
         // Note: no isEcoRoot field
       }
 
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => responseData
+        json: async () => ({
+          success: true,
+          data: responseData
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -264,9 +280,12 @@ describe('LineTypePill Integration Tests', () => {
         scid: ''
       }
 
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => responseData
+        json: async () => ({
+          success: true,
+          data: responseData
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -284,7 +303,7 @@ describe('LineTypePill Integration Tests', () => {
   describe('API Error Handling', () => {
     it('should handle API errors gracefully', async () => {
       // Mock API error
-      (global.fetch as any).mockRejectedValueOnce(new Error('API Error'))
+      mockFetch.mockRejectedValueOnce(new Error('API Error'))
 
       renderWithRouter(<OpeningDetailPage />)
 
@@ -297,7 +316,7 @@ describe('LineTypePill Integration Tests', () => {
 
     it('should handle 404 responses gracefully', async () => {
       // Mock 404 response
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: false,
         status: 404,
         json: async () => ({ error: 'Opening not found' })
@@ -315,9 +334,12 @@ describe('LineTypePill Integration Tests', () => {
 
   describe('Pill Visual Consistency', () => {
     it('should apply same CSS classes as other pills', async () => {
-      (global.fetch as any).mockResolvedValueOnce({
+      mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockApiResponse
+        json: async () => ({
+          success: true,
+          data: mockApiResponse
+        })
       })
 
       renderWithRouter(<OpeningDetailPage />)
@@ -329,9 +351,9 @@ describe('LineTypePill Integration Tests', () => {
       const mainlinePill = screen.getByText('Mainline')
       const ecoPill = screen.getByText('B20')
 
-      // Both pills should have the same base class
+      // Both pills should have the correct CSS classes
       expect(mainlinePill).toHaveClass('style-pill')
-      expect(ecoPill).toHaveClass('style-pill')
+      expect(ecoPill).toHaveClass('eco-pill')
     })
   })
 })

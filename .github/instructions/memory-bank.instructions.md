@@ -251,6 +251,21 @@ Each task file follows this format:
 
 ### [Date]
 - [Additional updates as work progresses]
+
+## Release Summary (Completed Tasks)
+*This section should be filled out when the task status is moved to "Completed."*
+
+**Total Files Affected:** [Number]
+
+### Files Created ([Count])
+- `path/to/new/file.ext` - Purpose of the new file.
+
+### Files Modified ([Count])
+- `path/to/modified/file.ext` - Summary of changes made.
+
+### Dependencies & Infrastructure
+- **New Dependencies**: [List of new dependencies added, e.g., `react-toastify`]
+- **Configuration Updates**: [Summary of any changes to config files, e.g., `vite.config.ts`]
 ```
 
 **Important**: I must update both the subtask status table AND the progress log when making progress on a task. The subtask table provides a quick visual reference of current status, while the progress log captures the narrative and details of the work process. When providing updates, I should:

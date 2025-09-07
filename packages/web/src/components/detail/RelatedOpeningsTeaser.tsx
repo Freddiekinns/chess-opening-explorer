@@ -46,7 +46,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
           <h3 id="related-teaser-heading" className="section-title">Related Openings</h3>
           {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
         </div>
-        <p className="related-teaser__descriptor">Top variations (sorted by games analyzed)</p>
+  <p className="related-teaser__descriptor">Top variations (games analyzed) with complexity</p>
       </header>
       <ul className="related-teaser__list" role="list">
         {!currentIsMainline && mainline && (
@@ -54,8 +54,10 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
             fen={mainline.fen}
             name={mainline.name}
             isEcoRoot={true}
+            complexity={(mainline as any).complexity}
             onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
             className="related-teaser__item related-teaser__item--mainline"
+            showComplexityTag={true}
           />
         )}
         {top.map(o => (
@@ -64,8 +66,11 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
             fen={o.fen}
             name={o.name}
             isEcoRoot={o.isEcoRoot}
+            complexity={o.complexity}
             onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
             className="related-teaser__item"
+            showLineTypePill={false}
+            showComplexityTag={true}
           />
         ))}
       </ul>

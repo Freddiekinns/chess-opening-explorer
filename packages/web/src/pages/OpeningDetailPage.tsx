@@ -4,7 +4,7 @@ import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
-import { CommonPlans, VideoGallery, RelatedOpeningsTeaser, RelatedOpeningsTab } from '../components/detail'
+import { CommonPlans, VideoGallery, RelatedOpeningsTeaser } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
 import { FloatingBackButton } from '../components/shared/FloatingBackButton'
@@ -581,7 +581,7 @@ const OpeningDetailPage: React.FC = () => {
                 <div className={`tab-content-panel ${activeTab === TAB_TYPES.RELATED ? 'active' : ''}`}>
                   {opening?.fen && (
                     <div className="content-panel-improved">
-                      <RelatedOpeningsTab fen={opening.fen} />
+                      {/* Related openings tab removed: hybrid teaser only retained */}
                     </div>
                   )}
                 </div>

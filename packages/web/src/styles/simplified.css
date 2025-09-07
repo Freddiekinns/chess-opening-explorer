@@ -1270,6 +1270,22 @@ body {
   border-color: rgba(16, 185, 129, 0.25);
 }
 
+/* Complexity tag (generic class applied in VariationItem) aligns with badge palette */
+.complexity-tag {
+  font-family: var(--font-family-sans);
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.complexity-tag.complexity-beginner:focus-visible,
+.complexity-tag.complexity-intermediate:focus-visible,
+.complexity-tag.complexity-advanced:focus-visible,
+.complexity-tag.complexity-expert:focus-visible {
+  outline: 2px solid var(--color-focus-outline, #fff);
+  outline-offset: 2px;
+}
+
 .complexity-intermediate {
   background-color: rgba(245, 158, 11, 0.15);
   color: rgba(245, 158, 11, 0.9);

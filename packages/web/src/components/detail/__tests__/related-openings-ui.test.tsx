@@ -32,27 +32,29 @@ describe('Related Openings UI Components', () => {
     expect(container.firstChild).toBeNull()
   })
 
-  test('Teaser renders mainline + view all', () => {
+  test('Teaser renders complexity tags and view all', () => {
     ;(useRelatedOpenings as any).mockReturnValue({
       data: {
         current: { fen: 'VAR1', isEcoRoot: false },
         ecoCode: 'A00',
-        mainline: { fen: 'MAIN', name: 'Mainline', isEcoRoot: true, games_analyzed: 5000 },
+        mainline: { fen: 'MAIN', name: 'Mainline', isEcoRoot: true, games_analyzed: 5000, complexity: 'Intermediate' },
         siblings: [
-          { fen: 'S1', name: 'Var A', isEcoRoot: false, games_analyzed: 1000 },
-          { fen: 'S2', name: 'Var B', isEcoRoot: false, games_analyzed: 900 },
-          { fen: 'S3', name: 'Var C', isEcoRoot: false, games_analyzed: 800 },
-          { fen: 'S4', name: 'Var D', isEcoRoot: false, games_analyzed: 700 }
+          { fen: 'S1', name: 'Var A', isEcoRoot: false, games_analyzed: 1000, complexity: 'Advanced' },
+          { fen: 'S2', name: 'Var B', isEcoRoot: false, games_analyzed: 900, complexity: 'Intermediate' },
+          { fen: 'S3', name: 'Var C', isEcoRoot: false, games_analyzed: 800, complexity: 'Beginner' },
+          { fen: 'S4', name: 'Var D', isEcoRoot: false, games_analyzed: 700, complexity: 'Advanced' }
         ],
         counts: { siblings: 4 }
       },
       loading: false,
       error: null
     })
-  render(<MemoryRouter><RelatedOpeningsTeaser fen="VAR1" /></MemoryRouter>)
-  const mainlineEls = screen.getAllByText('Mainline')
-  expect(mainlineEls.length).toBeGreaterThanOrEqual(1)
-  expect(screen.getByRole('button', { name: /view all 4 related openings/i })).toBeInTheDocument()
+    render(<MemoryRouter><RelatedOpeningsTeaser fen="VAR1" /></MemoryRouter>)
+    // Complexity tags should be present
+    const complexityTags = screen.getAllByLabelText(/Complexity:/i)
+    expect(complexityTags.length).toBeGreaterThan(0)
+    // View all button still present
+    expect(screen.getByRole('button', { name: /view all 4 related openings/i })).toBeInTheDocument()
   })
 
   test('Tab renders expand control when more than 10 siblings', () => {

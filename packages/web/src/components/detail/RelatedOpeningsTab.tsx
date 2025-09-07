@@ -91,7 +91,9 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
                 name={o.name}
                 isEcoRoot={o.isEcoRoot}
                 games_analyzed={o.games_analyzed}
+                complexity={o.complexity}
                 onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+                showLineTypePill={true}
               />
             ))}
           </ul>

@@ -21,7 +21,12 @@ export const VariationItem: React.FC<VariationItemProps> = ({ fen, name, isEcoRo
         <span className="variation-item__name">{name}</span>
         {showLineTypePill && <LineTypePill isMainline={!!isEcoRoot} className="inline-pill" />}
         {showComplexityTag && complexity && (
-          <span className={`complexity-tag complexity-${complexity.toLowerCase().replace(/[^a-z]/g,'')}`}>{complexity}</span>
+          <span
+            className={`complexity-tag complexity-${complexity.toLowerCase().replace(/[^a-z]/g,'')}`}
+            aria-label={`Complexity: ${complexity}`}
+          >
+            {complexity}
+          </span>
         )}
         {typeof games_analyzed === 'number' && games_analyzed > 0 && (
           <span className="variation-item__games" aria-label={`${games_analyzed.toLocaleString()} games analyzed`}>

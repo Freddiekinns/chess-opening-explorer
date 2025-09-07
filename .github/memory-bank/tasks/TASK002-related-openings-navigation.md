@@ -181,5 +181,31 @@ We will implement a Hybrid approach in Phase 1:
 - Added regression test `related-openings-navigation.test.tsx` mocking `window.location` to assert path includes `/opening/`.
 - Status: Tests passing; regression prevented.
 
+### 2025-09-07 (UX Refinement Decisions)
+User clarifications received:
+- Win rates: EXCLUDED (will not surface per-variation win/draw/lose data in related lists).
+- Compare view: NOT IN SCOPE (no side-by-side or diff comparison feature to be implemented in this phase).
+- Sorting: FIXED to "games analyzed" descending. No alternate sort selector for now; copy should simply state "Sorted by games analyzed" (no dropdown until future requirement).
+
+Adjustments to plan:
+- Remove pending question regarding adding win-rate snippet.
+- Remove potential Phase 7 idea (compare mainline) from near-term roadmap.
+- Simplify Phase 3 (Content & Clarity) to omit popularity/win-rate bars; retain optional move snippet only.
+- Acceptance criteria updated below.
+
+### Updated Acceptance Criteria (Incremental UX Phase)
+1. Teaser shows up to 3 variations + optional mainline (if current is variation) with clear CTA; visually aligned with design system surfaces.
+2. Related tab lists variations sorted strictly by games analyzed (descending) with a static helper text "Sorted by games analyzed".
+3. No win-rate or compare UI elements present; code avoids placeholders for these to reduce dead UI.
+4. Navigation uses router `<Link>` or `navigate()` (no full page reloads) in subsequent refactor.
+5. Mainline callout appears only when viewing a variation.
+6. Keyboard and screen reader access maintained (focus states + aria labels for counts) once refactor implemented.
+
+### Open Questions (Revised)
+All previously listed open questions resolved for this phase. Future-only (not active):
+- Whether to introduce alternative sort modes (popularity rank, alphabetical) — defer until validated need.
+- Whether to display truncated move snippets — still optional; can be toggled in implementation review.
+
+
 ## Release Summary (To Fill When Completed)
 *Pending implementation.*

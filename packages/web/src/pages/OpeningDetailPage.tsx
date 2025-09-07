@@ -4,7 +4,7 @@ import { Chess } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
-import { CommonPlans, VideoGallery } from '../components/detail'
+import { CommonPlans, VideoGallery, RelatedOpeningsTeaser, RelatedOpeningsTab } from '../components/detail'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
 import { FloatingBackButton } from '../components/shared/FloatingBackButton'
@@ -56,6 +56,7 @@ type Opening = ChessOpening & {
 // Constants
 const TAB_TYPES = {
   OVERVIEW: 'overview',
+  RELATED: 'related',
   PLANS: 'plans',
   VIDEOS: 'videos'
 } as const;
@@ -521,6 +522,15 @@ const OpeningDetailPage: React.FC = () => {
             />
           )}
 
+          {/* Related Openings Teaser (hybrid UI) */}
+          {opening?.fen && (
+            <RelatedOpeningsTeaser
+              fen={opening.fen}
+              onViewAll={() => setActiveTab(TAB_TYPES.RELATED)}
+              className="related-teaser-block"
+            />
+          )}
+
           {/* Simple Tabbed Content Section */}
           {opening?.eco && (
             <div className="simple-tabs">
@@ -531,6 +541,12 @@ const OpeningDetailPage: React.FC = () => {
                   onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
                 >
                   Overview
+                </button>
+                <button 
+                  className={`tab-button ${activeTab === TAB_TYPES.RELATED ? 'active' : ''}`}
+                  onClick={() => setActiveTab(TAB_TYPES.RELATED)}
+                >
+                  Related
                 </button>
                 <button 
                   className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
@@ -559,6 +575,15 @@ const OpeningDetailPage: React.FC = () => {
                        `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
                     </p>
                   </div>
+                </div>
+
+                {/* Related Openings Tab */}
+                <div className={`tab-content-panel ${activeTab === TAB_TYPES.RELATED ? 'active' : ''}`}>
+                  {opening?.fen && (
+                    <div className="content-panel-improved">
+                      <RelatedOpeningsTab fen={opening.fen} />
+                    </div>
+                  )}
                 </div>
 
                 {/* Common Plans Tab */}

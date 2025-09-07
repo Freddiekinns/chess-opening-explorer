@@ -2,7 +2,7 @@
 
 **Status:** In Progress  
 **Added:** 2025-09-07  
-**Updated:** 2025-09-07  
+**Updated:** 2025-09-07 (backend + UI integrated)  
 
 ## Original Request
 Enable improved chess opening exploration from an opening detail page:
@@ -133,23 +133,22 @@ We will implement a Hybrid approach in Phase 1:
 
 ## Progress Tracking
 
-**Overall Status:** In Progress - 5%
+**Overall Status:** In Progress - 60%
 
 ### Subtasks
 | ID | Description | Status | Updated | Notes |
 |----|-------------|--------|---------|-------|
 | 2.1 | Confirm data model fields (isMainline, ecoCode) | Not Started | 2025-09-07 | |
 | 2.1 | Confirm data model fields (isMainline, ecoCode) | Complete | 2025-09-07 | `isEcoRoot` flag confirmed; FEN acts as unique id |
-| 2.2 | Define backend contract & DTO | In Progress | 2025-09-07 | Will integrate confirmed decisions |
-| 2.2 | Define backend contract & DTO | Not Started | 2025-09-07 | Draft above |
-| 2.3 | Implement repository query by ECO | Not Started | 2025-09-07 | |
-| 2.4 | Implement service logic (mainline + siblings) | Not Started | 2025-09-07 | |
-| 2.5 | Add API endpoint `/openings/{id}/related` | Not Started | 2025-09-07 | |
-| 2.6 | Frontend data hook | Not Started | 2025-09-07 | |
-| 2.7 | UI component (Option A) | Not Started | 2025-09-07 | |
-| 2.7a | Teaser component variant | Not Started | 2025-09-07 | Inline top 3 + view all |
-| 2.7b | Full tab component variant | Not Started | 2025-09-07 | Uses shared panel core |
-| 2.8 | Truncation + expand interaction | Not Started | 2025-09-07 | |
+| 2.2 | Define backend contract & DTO | Complete | 2025-09-07 | Implemented in endpoint shape |
+| 2.3 | Implement repository query by ECO | Complete | 2025-09-07 | Using existing service methods |
+| 2.4 | Implement service logic (mainline + siblings) | Complete | 2025-09-07 | Sorting + mainline fallback added |
+| 2.5 | Add API endpoint `/openings/{id}/related` | Complete | 2025-09-07 | `/api/openings/fen/:fen/related` live |
+| 2.6 | Frontend data hook | Complete | 2025-09-07 | `useRelatedOpenings` created |
+| 2.7 | UI component (Option A) | Superseded | 2025-09-07 | Replaced by Hybrid strategy |
+| 2.7a | Teaser component variant | Complete | 2025-09-07 | Inline top 3 + view all |
+| 2.7b | Full tab component variant | Complete | 2025-09-07 | Tab lists siblings + expand |
+| 2.8 | Truncation + expand interaction | Complete | 2025-09-07 | Implemented (10 threshold) |
 | 2.9 | Unit tests (backend) | Not Started | 2025-09-07 | |
 | 2.10 | Component tests (frontend) | Not Started | 2025-09-07 | |
 | 2.11 | Accessibility & empty states | Not Started | 2025-09-07 | |
@@ -160,7 +159,13 @@ We will implement a Hybrid approach in Phase 1:
 ## Progress Log
 ### 2025-09-07
 - Created task file with full planning, design options, phased strategy, and subtasks.
-- Awaiting confirmation of data model and preferred UI Option (A/B/C) before implementation.
+- Data model confirmed (`isEcoRoot`, FEN-as-id). Hybrid UI approach selected (teaser + tab).
+- Implemented backend endpoint `/api/openings/fen/:fen/related` with mainline detection + sorting + sanitization.
+- Added frontend hook `useRelatedOpenings`.
+- Built `RelatedOpeningsTeaser` (inline mainline + top 3 variations + view all CTA).
+- Built `RelatedOpeningsTab` (full list with truncation/expand, grouping, counts, error + loading states).
+- Integrated teaser and new "Related" tab into `OpeningDetailPage` (hybrid UI live).
+- Next: add backend & frontend tests, accessibility review, minor docs & TODO analytics placeholders.
 
 ## Release Summary (To Fill When Completed)
 *Pending implementation.*

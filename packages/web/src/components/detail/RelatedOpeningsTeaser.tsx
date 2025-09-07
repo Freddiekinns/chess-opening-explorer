@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRelatedOpenings } from '../../useRelatedOpenings'
 import { VariationItem } from './VariationItem'
 
 interface Props {
   fen: string | undefined
-  onViewAll?: () => void
   className?: string
 }
 
-export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, className = '' }) => {
+export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) => {
   const { data, loading, error } = useRelatedOpenings(fen)
   const navigate = useNavigate()
+  const [expanded, setExpanded] = useState(false)
 
   if (!fen) return null
   if (loading) {
@@ -31,7 +31,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
   const { mainline, siblings = [], counts } = data as any
   const safeCounts = counts || { siblings: siblings.length }
   const top = Array.isArray(siblings) ? siblings.slice(0, 3) : []
-  const showViewAll = safeCounts.siblings > 3
+  const showViewAll = safeCounts.siblings > 3 && !expanded
 
   // Avoid duplicating mainline if it's also the current; if current is variation, highlight mainline separately
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
@@ -60,7 +60,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
             showComplexityTag={true}
           />
         )}
-        {top.map(o => (
+        {(expanded ? siblings : top).map((o: any) => (
           <VariationItem
             key={o.fen}
             fen={o.fen}
@@ -76,10 +76,15 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
       </ul>
       {showViewAll && (
         <footer className="related-teaser__footer">
-          <button className="view-all-link" onClick={onViewAll} aria-label={`View all ${safeCounts.siblings} related openings`}>
+          <button className="view-all-link" onClick={() => setExpanded(true)} aria-expanded={expanded} aria-controls="related-full-list" aria-label={`View all ${safeCounts.siblings} related openings`}>
             View all ({safeCounts.siblings})
           </button>
         </footer>
+      )}
+      {expanded && (
+        <div id="related-full-list" className="related-teaser__expanded" aria-live="polite">
+          <button className="collapse-link" onClick={() => setExpanded(false)} aria-label="Collapse related openings list">Collapse</button>
+        </div>
       )}
     </section>
   )

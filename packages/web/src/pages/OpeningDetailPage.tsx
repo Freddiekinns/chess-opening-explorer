@@ -56,7 +56,6 @@ type Opening = ChessOpening & {
 // Constants
 const TAB_TYPES = {
   OVERVIEW: 'overview',
-  RELATED: 'related',
   PLANS: 'plans',
   VIDEOS: 'videos'
 } as const;
@@ -522,11 +521,10 @@ const OpeningDetailPage: React.FC = () => {
             />
           )}
 
-          {/* Related Openings Teaser (hybrid UI) */}
+          {/* Related Openings Teaser inline expandable */}
           {opening?.fen && (
             <RelatedOpeningsTeaser
               fen={opening.fen}
-              onViewAll={() => setActiveTab(TAB_TYPES.RELATED)}
               className="related-teaser-block"
             />
           )}
@@ -541,12 +539,6 @@ const OpeningDetailPage: React.FC = () => {
                   onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
                 >
                   Overview
-                </button>
-                <button 
-                  className={`tab-button ${activeTab === TAB_TYPES.RELATED ? 'active' : ''}`}
-                  onClick={() => setActiveTab(TAB_TYPES.RELATED)}
-                >
-                  Related
                 </button>
                 <button 
                   className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
@@ -566,7 +558,6 @@ const OpeningDetailPage: React.FC = () => {
 
               {/* Tab Content */}
               <div className="tab-content-area">
-                {/* Overview Tab */}
                 <div className={`tab-content-panel ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}>
                   <div className="content-panel-improved">
                     <h3 className="title-subsection">Description</h3>
@@ -577,23 +568,12 @@ const OpeningDetailPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Related Openings Tab */}
-                <div className={`tab-content-panel ${activeTab === TAB_TYPES.RELATED ? 'active' : ''}`}>
-                  {opening?.fen && (
-                    <div className="content-panel-improved">
-                      {/* Related openings tab removed: hybrid teaser only retained */}
-                    </div>
-                  )}
-                </div>
-
-                {/* Common Plans Tab */}
                 <div className={`tab-content-panel ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}>
                   <CommonPlans 
                     ecoCode={opening.eco}
                   />
                 </div>
 
-                {/* Videos Tab */}
                 {videos.length > 0 && (
                   <div className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}>
                     <div className="content-panel-improved">

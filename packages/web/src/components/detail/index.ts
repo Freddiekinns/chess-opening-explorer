@@ -5,4 +5,3 @@ export { CommonPlans } from './CommonPlans';
 export { OpeningFamily } from './OpeningFamily';
 export { default as VideoGallery } from './VideoGallery';
 export { RelatedOpeningsTeaser } from './RelatedOpeningsTeaser';
-export { RelatedOpeningsTab } from './RelatedOpeningsTab';

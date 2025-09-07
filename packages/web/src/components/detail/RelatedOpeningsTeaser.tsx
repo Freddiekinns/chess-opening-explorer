@@ -12,10 +12,11 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   const { data, loading, error } = useRelatedOpenings(fen)
   const navigate = useNavigate()
   const [expanded, setExpanded] = useState(false)
-  const listWrapperRef = useRef<HTMLDivElement | null>(null)
+  const bodyRef = useRef<HTMLDivElement | null>(null)
+  const animatingRef = useRef(false)
   useEffect(() => {
-    if (expanded && listWrapperRef.current) {
-      listWrapperRef.current.focus({ preventScroll: false })
+    if (expanded && bodyRef.current) {
+      bodyRef.current.focus({ preventScroll: false })
     }
   }, [expanded])
 
@@ -35,14 +36,15 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   if (error || !data) return null
 
   const { mainline, siblings = [] } = data as any
-  // Collapsed view now shows 5 siblings (5th partially faded) to give richer preview.
-  const COLLAPSED_COUNT = 5
-  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen)
-  const top = fullList.slice(0, COLLAPSED_COUNT)
-  const showToggle = fullList.length > COLLAPSED_COUNT
-
-  // Avoid duplicating mainline if it's also the current; if current is variation, highlight mainline separately
+  // Determine if we are currently at the mainline first
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
+  // Show at most 4 total rows (including mainline if displayed) when collapsed
+  const COLLAPSED_TOTAL = 4
+  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen)
+  const mainlineRowCount = !currentIsMainline && mainline ? 1 : 0
+  const remainingSlots = COLLAPSED_TOTAL - mainlineRowCount
+  const top = fullList.slice(0, remainingSlots)
+  const showToggle = fullList.length > remainingSlots
 
   return (
     <section 
@@ -55,7 +57,10 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
           {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
         </div>
       </header>
-      <div className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}> 
+      <div 
+        ref={bodyRef}
+        className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}
+      > 
   <ul id="related-teaser-list" className="related-teaser__list" role="list" aria-label="Related variations">
           {!currentIsMainline && mainline && (
             <VariationItem
@@ -82,15 +87,66 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
             />
           ))}
         </ul>
-        {showToggle && (
-          <div className="related-teaser__gradient" aria-hidden="true" />
-        )}
+  {/* Gradient removed for cleaner UX; no spacer element needed */}
       </div>
       {showToggle && (
         <footer className="related-teaser__footer">
           <button
             className="related-teaser__toggle"
-            onClick={() => setExpanded(e => !e)}
+            onClick={() => {
+              const el = bodyRef.current
+              if (!el || animatingRef.current) return
+              const mm = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+                ? window.matchMedia('(prefers-reduced-motion: reduce)')
+                : ({ matches: false } as any)
+              const prefersReduced = mm.matches
+              // If reduced motion, just toggle without animation
+              if (prefersReduced) {
+                setExpanded(e => !e)
+                return
+              }
+              animatingRef.current = true
+              const targetExpanded = !expanded
+              const prevHeight = el.scrollHeight
+              // Apply next state (synchronously queues React update)
+              setExpanded(targetExpanded)
+              requestAnimationFrame(() => {
+                // If component unmounted or no longer animating, abort
+                if (!el) return
+                const nextHeight = el.scrollHeight
+                // If heights equal, skip animation
+                if (prevHeight === nextHeight) {
+                  animatingRef.current = false
+                  return
+                }
+                // Set explicit start height (prev)
+                el.style.height = prevHeight + 'px'
+                // Force reflow
+                void el.offsetHeight
+                el.style.transition = 'height 320ms cubic-bezier(.4,0,.2,1)'
+                el.style.height = nextHeight + 'px'
+                const cleanup = () => {
+                  if (!el) return
+                  el.style.height = ''
+                  el.style.transition = ''
+                  animatingRef.current = false
+                }
+                const onEnd = (ev: TransitionEvent) => {
+                  if (ev.propertyName === 'height') {
+                    el.removeEventListener('transitionend', onEnd)
+                    cleanup()
+                  }
+                }
+                el.addEventListener('transitionend', onEnd)
+                // Fallback cleanup (in case transitionend doesn't fire)
+                setTimeout(() => {
+                  if (animatingRef.current) {
+                    el.removeEventListener('transitionend', onEnd)
+                    cleanup()
+                  }
+                }, 400)
+              })
+            }}
             aria-expanded={expanded}
             aria-controls="related-teaser-list"
           >

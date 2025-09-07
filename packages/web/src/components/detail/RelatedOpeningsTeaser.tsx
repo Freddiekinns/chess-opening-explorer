@@ -26,12 +26,13 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
   }
   if (error || !data) return null
 
-  const { mainline, siblings, counts } = data
-  const top = siblings.slice(0, 3)
-  const showViewAll = counts.siblings > 3
+  const { mainline, siblings = [], counts } = data as any
+  const safeCounts = counts || { siblings: siblings.length }
+  const top = Array.isArray(siblings) ? siblings.slice(0, 3) : []
+  const showViewAll = safeCounts.siblings > 3
 
   // Avoid duplicating mainline if it's also the current; if current is variation, highlight mainline separately
-  const currentIsMainline = data.current.isEcoRoot
+  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
 
   return (
     <div className={`related-teaser surface surface--compact ${className}`.trim()}>
@@ -60,7 +61,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
       {showViewAll && (
         <div className="teaser-footer">
           <button className="view-all-link" onClick={onViewAll}>
-            View all ({counts.siblings})
+            View all ({safeCounts.siblings})
           </button>
         </div>
       )}
@@ -69,8 +70,8 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
 }
 
 function navigateToFen(fen: string) {
-  // Simple client-side navigation preserving pattern used elsewhere
-  window.location.href = `/openings/fen/${encodeURIComponent(fen)}`
+  // Navigate to canonical opening detail route
+  window.location.href = `/opening/${encodeURIComponent(fen)}`
 }
 
 export default RelatedOpeningsTeaser

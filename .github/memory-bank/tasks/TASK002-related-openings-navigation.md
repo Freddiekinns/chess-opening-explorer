@@ -2,7 +2,7 @@
 
 **Status:** In Progress  
 **Added:** 2025-09-07  
-**Updated:** 2025-09-07 (backend + UI integrated)  
+**Updated:** 2025-09-07 (backend + UI integrated, tests passing, resiliency guards added)  
 
 ## Original Request
 Enable improved chess opening exploration from an opening detail page:
@@ -133,7 +133,7 @@ We will implement a Hybrid approach in Phase 1:
 
 ## Progress Tracking
 
-**Overall Status:** In Progress - 60%
+**Overall Status:** In Progress - 85%
 
 ### Subtasks
 | ID | Description | Status | Updated | Notes |
@@ -149,15 +149,15 @@ We will implement a Hybrid approach in Phase 1:
 | 2.7a | Teaser component variant | Complete | 2025-09-07 | Inline top 3 + view all |
 | 2.7b | Full tab component variant | Complete | 2025-09-07 | Tab lists siblings + expand |
 | 2.8 | Truncation + expand interaction | Complete | 2025-09-07 | Implemented (10 threshold) |
-| 2.9 | Unit tests (backend) | Not Started | 2025-09-07 | |
-| 2.10 | Component tests (frontend) | Not Started | 2025-09-07 | |
-| 2.11 | Accessibility & empty states | Not Started | 2025-09-07 | |
+| 2.9 | Unit tests (backend) | Complete | 2025-09-07 | Endpoint tests: variation, mainline, 404 |
+| 2.10 | Component tests (frontend) | Complete | 2025-09-07 | Vitest suite: teaser + tab states, expand interaction |
+| 2.11 | Accessibility & empty states | In Progress | 2025-09-07 | Empty + loading states implemented; ARIA review pending |
 | 2.12 | Caching layer (optional) | Not Started | 2025-09-07 | |
-| 2.13 | Documentation updates | Not Started | 2025-09-07 | |
+| 2.13 | Documentation updates | In Progress | 2025-09-07 | Task file updated; README additions pending |
 | 2.14 | Phase 2 placeholder TODOs | Not Started | 2025-09-07 | |
 
 ## Progress Log
-### 2025-09-07
+### 2025-09-07 (Earlier)
 - Created task file with full planning, design options, phased strategy, and subtasks.
 - Data model confirmed (`isEcoRoot`, FEN-as-id). Hybrid UI approach selected (teaser + tab).
 - Implemented backend endpoint `/api/openings/fen/:fen/related` with mainline detection + sorting + sanitization.
@@ -165,7 +165,21 @@ We will implement a Hybrid approach in Phase 1:
 - Built `RelatedOpeningsTeaser` (inline mainline + top 3 variations + view all CTA).
 - Built `RelatedOpeningsTab` (full list with truncation/expand, grouping, counts, error + loading states).
 - Integrated teaser and new "Related" tab into `OpeningDetailPage` (hybrid UI live).
-- Next: add backend & frontend tests, accessibility review, minor docs & TODO analytics placeholders.
+
+### 2025-09-07 (Later)
+- Added backend endpoint test suite (passes: mainline, variation, 404 cases).
+- Implemented Vitest component tests for teaser & tab (loading, error, truncation, expand, empty states).
+- Added defensive null/undefined guards in `RelatedOpeningsTeaser` and `RelatedOpeningsTab` (resolved integration failure slicing undefined siblings).
+- Full frontend test suite now passes (93/93). 
+- Updated task progress percentages; marked testing subtasks complete.
+- Remaining: ARIA role audit, optional analytics TODO placeholders, small README or developer notes update.
+
+### 2025-09-07 (Bug Fix: Navigation Path)
+- Issue: Clicking related opening names navigated to legacy path `/openings/fen/:fen` causing return to search page.
+- Cause: Hardcoded `window.location.href = /openings/fen/` in teaser & tab components while router expects `/opening/:fen`.
+- Fix: Updated navigation helpers in `RelatedOpeningsTeaser.tsx` and `RelatedOpeningsTab.tsx` to use `/opening/` + encoded FEN.
+- Added regression test `related-openings-navigation.test.tsx` mocking `window.location` to assert path includes `/opening/`.
+- Status: Tests passing; regression prevented.
 
 ## Release Summary (To Fill When Completed)
 *Pending implementation.*

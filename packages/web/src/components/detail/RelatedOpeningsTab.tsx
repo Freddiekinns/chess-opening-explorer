@@ -35,10 +35,12 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
 
   if (!data) return null
 
-  const { mainline, siblings, counts } = data
-  const list = expanded ? siblings : siblings.slice(0, 10)
-  const needsExpand = counts.siblings > 10
-  const currentIsMainline = data.current.isEcoRoot
+  const { mainline, siblings = [], counts } = data as any
+  const safeSiblings = Array.isArray(siblings) ? siblings : []
+  const safeCounts = counts || { siblings: safeSiblings.length }
+  const list = expanded ? safeSiblings : safeSiblings.slice(0, 10)
+  const needsExpand = safeCounts.siblings > 10
+  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
 
   return (
     <div className={`related-openings-tab ${className}`.trim()}>
@@ -60,9 +62,9 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
         </div>
       )}
       <div className="variations-block">
-        <h4 className="group-label">Variations ({counts.siblings})</h4>
-        {counts.siblings === 0 && <p className="empty-state">No other variations in this ECO group.</p>}
-        {counts.siblings > 0 && (
+  <h4 className="group-label">Variations ({safeCounts.siblings})</h4>
+  {safeCounts.siblings === 0 && <p className="empty-state">No other variations in this ECO group.</p>}
+  {safeCounts.siblings > 0 && (
           <ul className="related-list" role="list">
             {list.map(o => (
               <li key={o.fen} className="related-item" role="listitem">
@@ -78,7 +80,7 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
         {needsExpand && (
           <div className="expand-container">
             <button className="expand-btn" onClick={() => setExpanded(e => !e)}>
-              {expanded ? 'Collapse' : `Show All (${counts.siblings})`}
+              {expanded ? 'Collapse' : `Show All (${safeCounts.siblings})`}
             </button>
           </div>
         )}
@@ -88,7 +90,7 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
 }
 
 function navigateToFen(fen: string) {
-  window.location.href = `/openings/fen/${encodeURIComponent(fen)}`
+  window.location.href = `/opening/${encodeURIComponent(fen)}`
 }
 
 export default RelatedOpeningsTab

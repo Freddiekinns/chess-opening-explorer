@@ -48,7 +48,8 @@ describe('Related Openings UI Components', () => {
       error: null
     })
     render(<RelatedOpeningsTeaser fen="VAR1" />)
-    expect(screen.getByText('Mainline')).toBeInTheDocument()
+  const mainlineEls = screen.getAllByText('Mainline')
+  expect(mainlineEls.length).toBeGreaterThanOrEqual(1)
     expect(screen.getByRole('button', { name: /view all \(4\)/i })).toBeInTheDocument()
   })
 

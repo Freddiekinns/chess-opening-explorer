@@ -51,11 +51,8 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
       className={`related-teaser surface surface--compact ${className}`.trim()} 
       aria-labelledby="related-teaser-heading"
     >
-      <header className="related-teaser__header">
-        <div className="related-teaser__title-group">
-          <h3 id="related-teaser-heading" className="section-title section-title--sub">Related Openings</h3>
-          {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
-        </div>
+      <header className="related-teaser__header card-header">
+        <h3 id="related-teaser-heading" className="card-header__title card-header__title--accent">Related Openings {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}</h3>
       </header>
       <div 
         ref={bodyRef}

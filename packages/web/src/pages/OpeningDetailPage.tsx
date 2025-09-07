@@ -476,7 +476,9 @@ const OpeningDetailPage: React.FC = () => {
 
           {/* Opening Moves List */}
           <div className="opening-moves-list">
-            <h3 className="title-subsection">Opening Moves</h3>
+            <div className="card-header">
+              <h3 className="card-header__title card-header__title--accent">Opening Moves</h3>
+            </div>
             <div className="moves-notation">
               {formatMovesAsPairs(getMovesList()).map((movePair, index) => (
                 <div key={index} className="move-pair">

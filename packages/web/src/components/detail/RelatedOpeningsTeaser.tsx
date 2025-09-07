@@ -24,7 +24,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   if (loading) {
     return (
       <div className={`related-teaser surface surface--compact ${className}`.trim()} aria-busy="true">
-        <h3 className="section-title">Related Openings</h3>
+  <h3 className="section-title section-title--sub">Related Openings</h3>
         <ul className="teaser-list skeleton">
           <li className="skeleton-text short" />
           <li className="skeleton-text medium" />
@@ -53,7 +53,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
     >
       <header className="related-teaser__header">
         <div className="related-teaser__title-group">
-          <h3 id="related-teaser-heading" className="section-title">Related Openings</h3>
+          <h3 id="related-teaser-heading" className="section-title section-title--sub">Related Openings</h3>
           {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
         </div>
       </header>

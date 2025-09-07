@@ -60,6 +60,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
       <div 
         ref={bodyRef}
         className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}
+        data-animating={animatingRef.current ? 'true' : 'false'}
       > 
   <ul id="related-teaser-list" className="related-teaser__list" role="list" aria-label="Related variations">
           {!currentIsMainline && mainline && (
@@ -119,8 +120,9 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
                   animatingRef.current = false
                   return
                 }
-                // Set explicit start height (prev)
-                el.style.height = prevHeight + 'px'
+                  // Set explicit start height, hide overflow to mask list growth
+                  el.style.overflow = 'hidden'
+                  el.style.height = prevHeight + 'px'
                 // Force reflow
                 void el.offsetHeight
                 el.style.transition = 'height 320ms cubic-bezier(.4,0,.2,1)'
@@ -129,6 +131,7 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
                   if (!el) return
                   el.style.height = ''
                   el.style.transition = ''
+                    el.style.overflow = ''
                   animatingRef.current = false
                 }
                 const onEnd = (ev: TransitionEvent) => {

@@ -309,8 +309,8 @@ body {
 .related-teaser__body .related-teaser__list { padding-bottom: 0; position: relative; }
 .related-teaser__body.is-collapsed .related-teaser__list { max-height: 188px; overflow: hidden; }
 .related-teaser__body.is-expanded .related-teaser__list { max-height: 420px; overflow: auto; padding-right: 4px; }
-/* Expand / collapse animation */
-.related-teaser__list { transition: max-height 360ms cubic-bezier(.4,0,.2,1), padding 240ms ease; will-change: max-height; }
+/* Expand / collapse animation now JS-driven on wrapper height; keep lightweight fade/transform if desired */
+.related-teaser__list { will-change: contents; }
 .related-teaser__list > .related-teaser__item { opacity: 1; transform: translateY(0); transition: opacity 320ms ease, transform 360ms ease; }
 /* gradient removed */
 /* Toggle button micro interaction */

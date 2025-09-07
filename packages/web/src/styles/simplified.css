@@ -304,13 +304,15 @@ body {
 .related-teaser__descriptor { font-size: var(--font-size-xs); color: var(--color-text-muted); margin: 0; }
 .related-teaser__list { list-style: none; padding: 0; margin: 0 0 var(--space-2) 0; display: flex; flex-direction: column; gap: var(--space-2); }
 .related-teaser__item--mainline { border: 1px solid var(--color-border-subtle); border-radius: var(--border-radius-small); background: var(--color-surface-subtle); }
-.related-teaser__footer { display: flex; justify-content: flex-end; }
-.view-all-link { background: none; border: none; color: var(--color-text-accent); cursor: pointer; font-size: var(--font-size-sm); }
-.view-all-link:hover { color: var(--color-brand-orange-hover); }
-.expand-btn { background: none; border: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); padding: var(--space-2) var(--space-3); border-radius: var(--border-radius-small); cursor: pointer; font-size: var(--font-size-xs); }
-.expand-btn:hover { color: var(--color-text-primary); background: var(--color-bg-alt); }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-
+.related-teaser__body { position: relative; }
+.related-teaser__body.is-collapsed .related-teaser__list { max-height: 230px; overflow: hidden; }
+.related-teaser__body.is-expanded .related-teaser__list { max-height: 420px; overflow: auto; padding-right: 4px; }
+.related-teaser__list { transition: max-height 0.35s ease; }
+.related-teaser__gradient { position: absolute; left: 0; right: 0; bottom: 48px; height: 64px; background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, var(--color-bg-surface) 90%); pointer-events: none; opacity: 1; transition: opacity 0.3s; }
+.related-teaser__body.is-expanded .related-teaser__gradient { opacity: 0; }
+.view-all-link { font-weight: var(--font-weight-medium); }
+.related-teaser__body.is-expanded + .related-teaser__footer .view-all-link { align-self: flex-start; }
+@media (max-width: 720px) { .related-teaser__body.is-expanded .related-teaser__list { max-height: 60vh; } }
 /* =================
    PERFORMANCE OPTIMIZATIONS
    ================= */
@@ -430,7 +432,6 @@ body {
   align-items: center;
   gap: var(--space-2);
   white-space: nowrap;
-  min-width: fit-content;
 }
 
 .back-button:hover {
@@ -2893,194 +2894,6 @@ body {
     --font-size-lg: var(--font-size-base);
   }
   .detail-header-container {
-    padding: 0 var(--space-2); /* Reduced padding for very small screens */
-    grid-template-columns: 52px 1fr 52px; /* Slightly smaller button areas */
-  }
-  
-  .detail-header-container .header-left .back-button,
-  .detail-header-container .header-right .mobile-menu-toggle {
-    width: 44px; /* Slightly smaller for cramped screens */
-    height: 44px;
-  }
-  
-  .detail-header-container .header-center .site-title {
-    font-size: var(--font-size-base); /* Smaller title for very small screens */
-    letter-spacing: -0.02em;
-  }
-  
-  /* Enhanced small screen navigation */
-  
-  .two-column-layout {
-    padding: var(--space-1);
-    gap: var(--space-3);
-  }
-  
-  .opening-card {
-    padding: var(--space-3);
-    min-height: 200px;
-  }
-  
-  .card-header .title-subsection {
-    font-size: var(--font-size-lg);
-  }
-  
-  .search-bar-container.landing .search-input-field {
-    padding: var(--space-3) var(--space-4);
-  }
-  
-  .search-surprise-btn {
-    padding: var(--space-2) var(--space-4);
-    max-width: 160px;
-  }
-  
-  .chessboard-container {
-    max-width: 320px;
-  }
-  
-  .hero-section {
-    min-height: 30vh;
-    padding: var(--space-4) var(--space-1);
-  }
-  
-  .suggestion-item {
-    min-height: 40px;
-    padding: var(--space-2) 0;
-  }
-  
-  .suggestion-item .opening-name {
-    font-size: var(--font-size-xs);
-    margin: 0 var(--space-2) 0 var(--space-2);
-  }
-  
-  .suggestion-item .eco-code {
-    margin-right: var(--space-2);
-    padding: var(--space-1);
-    height: 18px;
-  }
-  
-  /* Override grid minmax for very small screens */
-  .openings-grid {
-    grid-template-columns: 1fr;
-    padding: var(--space-3) var(--space-1);
-  }
-}
-
-/* =================
-   TYPOGRAPHY UTILITIES 
-   ================= */
-
-/* Typography Scale Classes */
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-base { font-size: var(--font-size-base); }
-.text-md { font-size: var(--font-size-md); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: var(--font-size-xl); }
-.text-2xl { font-size: var(--font-size-2xl); }
-.text-3xl { font-size: var(--font-size-3xl); }
-.text-4xl { font-size: var(--font-size-4xl); }
-
-/* Font Weight Classes */
-.font-light { font-weight: var(--font-weight-light); }
-.font-normal { font-weight: var(--font-weight-normal); }
-.font-medium { font-weight: var(--font-weight-medium); }
-.font-semibold { font-weight: var(--font-weight-semibold); }
-.font-bold { font-weight: var(--font-weight-bold); }
-.font-extrabold { font-weight: var(--font-weight-extrabold); }
-
-/* Line Height Classes */
-.leading-tight { line-height: var(--line-height-tight); }
-.leading-snug { line-height: var(--line-height-snug); }
-.leading-normal { line-height: var(--line-height-normal); }
-.leading-relaxed { line-height: var(--line-height-relaxed); }
-.leading-loose { line-height: var(--line-height-loose); }
-
-/* Text Color Classes */
-.text-primary { color: var(--color-text-primary); }
-.text-secondary { color: var(--color-text-secondary); }
-.text-muted { color: var(--color-text-muted); }
-.text-accent { color: var(--color-text-accent); }
-.text-success { color: var(--color-text-success); }
-.text-warning { color: var(--color-text-warning); }
-.text-error { color: var(--color-text-error); }
-
-/* Letter Spacing Classes */
-.tracking-tighter { letter-spacing: var(--letter-spacing-tighter); }
-.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
-.tracking-normal { letter-spacing: var(--letter-spacing-normal); }
-.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
-.tracking-wider { letter-spacing: var(--letter-spacing-wider); }
-
-/* Semantic Typography Classes */
-.title-hero {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-primary);
-}
-
-.title-page {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
-}
-
-.title-section {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-snug);
-  color: var(--color-text-primary);
-}
-
-.title-subsection {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-snug);
-  color: var(--color-text-primary);
-}
-
-.text-body {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-}
-
-.text-body-large {
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text-primary);
-}
-
-.text-label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-secondary);
-}
-
-.text-caption {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-muted);
-}
-
-.text-code {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
-}
-
-/* =================
-   RESPONSIVE HEADER IMPROVEMENTS
-   ================= */
-@media (max-width: 768px) {
-  .detail-header-container {
     padding: 0 var(--space-3);
     min-height: 48px;
   }
@@ -3111,82 +2924,6 @@ body {
   
   .header-right {
     gap: var(--space-2);
-  }
-}
-
-@media (max-width: 480px) {
-  .detail-header {
-    padding: var(--space-2) 0;
-  }
-  
-  .detail-header-container {
-    display: grid !important; /* Maintain grid layout on very small screens */
-    grid-template-columns: 56px 1fr 56px; /* Slightly smaller sections for very small screens */
-    grid-template-areas: "left center right";
-    align-items: center;
-    padding: 0 var(--space-3); /* Slightly reduced padding */
-    min-height: 52px; /* Slightly smaller height */
-    max-width: 100vw;
-    margin: 0 auto;
-    flex-wrap: initial !important; /* Override any flex-wrap */
-    gap: 0 !important; /* No gaps in grid */
-  }
-  
-  .header-center {
-    grid-area: center;
-    position: static !important;
-    transform: none !important;
-    order: initial !important;
-    width: auto !important;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .header-left,
-  .header-right {
-    flex: initial !important; /* Override flex: 1 */
-  }
-  
-  .header-left {
-    grid-area: left;
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .header-right {
-    grid-area: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .detail-header-container .header-left .back-button {
-    width: 40px; /* Slightly smaller for very small screens */
-    height: 40px;
-    padding: 0; /* Ensure no padding on small screens */
-    border-radius: var(--border-radius-base); /* Consistent with larger screens */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    min-width: 40px;
-  }
-  
-  .detail-header-container .header-right .mobile-menu-toggle {
-    width: 40px; /* Match back button exactly */
-    height: 40px;
-    padding: 0; /* Ensure no padding on small screens */
-    border-radius: var(--border-radius-base); /* Consistent radius */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Consistent depth */
-    min-width: 40px;
-  }
-  
-  .mobile-menu-toggle svg {
-    width: 18px; /* Slightly smaller icon */
-    height: 18px;
-  }
-  
-  .surprise-btn {
-    display: none !important; /* Hide completely on very small screens */
   }
 }
 

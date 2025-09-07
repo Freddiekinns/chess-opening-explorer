@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRelatedOpenings } from '../../useRelatedOpenings'
 import { VariationItem } from './VariationItem'
@@ -12,6 +12,12 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   const { data, loading, error } = useRelatedOpenings(fen)
   const navigate = useNavigate()
   const [expanded, setExpanded] = useState(false)
+  const listWrapperRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    if (expanded && listWrapperRef.current) {
+      listWrapperRef.current.focus({ preventScroll: false })
+    }
+  }, [expanded])
 
   if (!fen) return null
   if (loading) {
@@ -28,10 +34,10 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   }
   if (error || !data) return null
 
-  const { mainline, siblings = [], counts } = data as any
-  const safeCounts = counts || { siblings: siblings.length }
-  const top = Array.isArray(siblings) ? siblings.slice(0, 3) : []
-  const showViewAll = safeCounts.siblings > 3 && !expanded
+  const { mainline, siblings = [] } = data as any
+  const fullList = siblings || []
+  const top = fullList.slice(0, 3)
+  const showToggle = fullList.length > 3
 
   // Avoid duplicating mainline if it's also the current; if current is variation, highlight mainline separately
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
@@ -48,36 +54,46 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
         </div>
   <p className="related-teaser__descriptor">Top variations (games analyzed) with complexity</p>
       </header>
-      <ul className="related-teaser__list" role="list">
-        {!currentIsMainline && mainline && (
-          <VariationItem
-            fen={mainline.fen}
-            name={mainline.name}
-            isEcoRoot={true}
-            complexity={(mainline as any).complexity}
-            onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
-            className="related-teaser__item related-teaser__item--mainline"
-            showComplexityTag={true}
-          />
+      <div className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}> 
+        <ul className="related-teaser__list" role="list" aria-label="Related variations">
+          {!currentIsMainline && mainline && (
+            <VariationItem
+              fen={mainline.fen}
+              name={mainline.name}
+              isEcoRoot={true}
+              complexity={(mainline as any).complexity}
+              onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+              className="related-teaser__item related-teaser__item--mainline"
+              showComplexityTag={true}
+            />
+          )}
+          {(expanded ? fullList : top).map((o: any) => (
+            <VariationItem
+              key={o.fen}
+              fen={o.fen}
+              name={o.name}
+              isEcoRoot={o.isEcoRoot}
+              complexity={o.complexity}
+              onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+              className="related-teaser__item"
+              showLineTypePill={false}
+              showComplexityTag={true}
+            />
+          ))}
+        </ul>
+        {showToggle && (
+          <div className="related-teaser__gradient" aria-hidden="true" />
         )}
-        {(expanded ? siblings : top).map((o: any) => (
-          <VariationItem
-            key={o.fen}
-            fen={o.fen}
-            name={o.name}
-            isEcoRoot={o.isEcoRoot}
-            complexity={o.complexity}
-            onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
-            className="related-teaser__item"
-            showLineTypePill={false}
-            showComplexityTag={true}
-          />
-        ))}
-      </ul>
-      {showViewAll && (
+      </div>
+      {showToggle && (
         <footer className="related-teaser__footer">
-          <button className="view-all-link" onClick={() => setExpanded(true)} aria-expanded={expanded} aria-controls="related-full-list" aria-label={`View all ${safeCounts.siblings} related openings`}>
-            View all ({safeCounts.siblings})
+          <button
+            className="view-all-link"
+            onClick={() => setExpanded(e => !e)}
+            aria-expanded={expanded}
+            aria-controls="related-teaser-list"
+          >
+            {expanded ? 'Collapse' : `Show all (${fullList.length})`}
           </button>
         </footer>
       )}

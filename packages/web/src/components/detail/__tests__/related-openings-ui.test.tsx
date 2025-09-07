@@ -40,17 +40,19 @@ describe('Related Openings Teaser (inline expansion)', () => {
           { fen: 'S1', name: 'Var A', isEcoRoot: false, games_analyzed: 1000, complexity: 'Advanced' },
           { fen: 'S2', name: 'Var B', isEcoRoot: false, games_analyzed: 900, complexity: 'Intermediate' },
           { fen: 'S3', name: 'Var C', isEcoRoot: false, games_analyzed: 800, complexity: 'Beginner' },
-          { fen: 'S4', name: 'Var D', isEcoRoot: false, games_analyzed: 700, complexity: 'Advanced' }
+          { fen: 'S4', name: 'Var D', isEcoRoot: false, games_analyzed: 700, complexity: 'Advanced' },
+          { fen: 'S5', name: 'Var E', isEcoRoot: false, games_analyzed: 600, complexity: 'Advanced' }
         ],
-        counts: { siblings: 4 }
+        counts: { siblings: 5 }
       },
       loading: false,
       error: null
     })
     render(<MemoryRouter><RelatedOpeningsTeaser fen="VAR1" /></MemoryRouter>)
-    const viewAllBtn = screen.getByRole('button', { name: /view all 4 related openings/i })
-    fireEvent.click(viewAllBtn)
-    // After expansion, collapse button appears
-    expect(screen.getByRole('button', { name: /collapse related openings list/i })).toBeInTheDocument()
+    const showAllBtn = screen.getByRole('button', { name: /show all \(5\)/i })
+    fireEvent.click(showAllBtn)
+    expect(showAllBtn).toHaveAttribute('aria-expanded', 'true')
+    // Collapse label now visible
+    expect(screen.getByRole('button', { name: /collapse/i })).toBeInTheDocument()
   })
 })

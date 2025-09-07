@@ -1,7 +1,7 @@
 # Tasks Index
 
 ## In Progress
-_No in-progress tasks._
+- [TASK002] Related Openings Navigation - Planning & design exploration (5%)
 
 ## Pending
 _No pending tasks._

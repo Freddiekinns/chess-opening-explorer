@@ -207,6 +207,85 @@ router.get('/fen/:fen', (req, res) => {
 });
 
 /**
+ * @route GET /api/openings/fen/:fen/related
+ * @desc Get related openings (same ECO code) including mainline + siblings
+ * @param {string} fen - FEN string (URL encoded)
+ */
+router.get('/fen/:fen/related', (req, res) => {
+  try {
+    const { fen } = req.params;
+    const decodedFen = decodeURIComponent(fen);
+
+    if (!decodedFen || typeof decodedFen !== 'string') {
+      return res.status(400).json({ success: false, error: 'Invalid FEN parameter' });
+    }
+
+    const current = ecoService.getOpeningByFEN(decodedFen);
+    if (!current) {
+      return res.status(404).json({ success: false, error: 'Opening not found for this position' });
+    }
+
+    const ecoCode = current.eco;
+    if (!ecoCode) {
+      return res.status(200).json({
+        success: true,
+        data: {
+          current: sanitize(current),
+          ecoCode: null,
+          mainline: null,
+          siblings: [],
+          counts: { siblings: 0 }
+        }
+      });
+    }
+
+    // Fetch all by ECO
+    const group = ecoService.getOpeningsByECO(ecoCode) || [];
+
+    // Identify mainline (isEcoRoot) or fallback highest games_analyzed
+    let mainline = group.find(o => o.isEcoRoot === true);
+    if (!mainline && group.length > 0) {
+      mainline = [...group].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))[0];
+    }
+
+    const siblings = group
+      .filter(o => o.fen !== decodedFen) // exclude current
+      .sort((a, b) => {
+        // mainline priority handled separately; here just games_analyzed desc then name
+        const diff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
+        if (diff !== 0) return diff;
+        return (a.name || '').localeCompare(b.name || '');
+      });
+
+    const payload = {
+      current: sanitize(current),
+      ecoCode,
+      mainline: mainline ? sanitize(mainline) : null,
+      siblings: siblings.map(sanitize),
+      counts: { siblings: siblings.length }
+    };
+
+    return res.json({ success: true, data: payload });
+  } catch (error) {
+    console.error('Related openings error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to load related openings' });
+  }
+});
+
+// Helper to minimize payload surface
+function sanitize(opening) {
+  if (!opening) return null;
+  return {
+    fen: opening.fen,
+    name: opening.name,
+    eco: opening.eco,
+    moves: opening.moves || '',
+    isEcoRoot: opening.isEcoRoot === true,
+    games_analyzed: opening.games_analyzed || 0
+  };
+}
+
+/**
  * @route GET /api/openings/classification/:classification
  * @desc Get openings by classification (A, B, C, D, E)
  * @param {string} classification - Classification letter (A, B, C, D, E)

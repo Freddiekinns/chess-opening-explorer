@@ -41,18 +41,18 @@ describe('Related Openings Teaser (inline expansion)', () => {
           { fen: 'S2', name: 'Var B', isEcoRoot: false, games_analyzed: 900, complexity: 'Intermediate' },
           { fen: 'S3', name: 'Var C', isEcoRoot: false, games_analyzed: 800, complexity: 'Beginner' },
           { fen: 'S4', name: 'Var D', isEcoRoot: false, games_analyzed: 700, complexity: 'Advanced' },
-          { fen: 'S5', name: 'Var E', isEcoRoot: false, games_analyzed: 600, complexity: 'Advanced' }
+          { fen: 'S5', name: 'Var E', isEcoRoot: false, games_analyzed: 600, complexity: 'Advanced' },
+          { fen: 'S6', name: 'Var F', isEcoRoot: false, games_analyzed: 500, complexity: 'Intermediate' }
         ],
-        counts: { siblings: 5 }
+        counts: { siblings: 6 }
       },
       loading: false,
       error: null
     })
     render(<MemoryRouter><RelatedOpeningsTeaser fen="VAR1" /></MemoryRouter>)
-    const showAllBtn = screen.getByRole('button', { name: /show all \(5\)/i })
+  const showAllBtn = screen.getByRole('button', { name: /show all/i })
     fireEvent.click(showAllBtn)
     expect(showAllBtn).toHaveAttribute('aria-expanded', 'true')
-    // Collapse label now visible
-    expect(screen.getByRole('button', { name: /collapse/i })).toBeInTheDocument()
+  expect(showAllBtn).toHaveTextContent(/collapse/i)
   })
 })

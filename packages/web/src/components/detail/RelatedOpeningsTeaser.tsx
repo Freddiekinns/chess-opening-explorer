@@ -35,9 +35,11 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
   if (error || !data) return null
 
   const { mainline, siblings = [] } = data as any
-  const fullList = siblings || []
-  const top = fullList.slice(0, 3)
-  const showToggle = fullList.length > 3
+  // Collapsed view now shows 5 siblings (5th partially faded) to give richer preview.
+  const COLLAPSED_COUNT = 5
+  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen)
+  const top = fullList.slice(0, COLLAPSED_COUNT)
+  const showToggle = fullList.length > COLLAPSED_COUNT
 
   // Avoid duplicating mainline if it's also the current; if current is variation, highlight mainline separately
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
@@ -52,10 +54,9 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
           <h3 id="related-teaser-heading" className="section-title">Related Openings</h3>
           {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
         </div>
-  <p className="related-teaser__descriptor">Top variations (games analyzed) with complexity</p>
       </header>
       <div className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}> 
-        <ul className="related-teaser__list" role="list" aria-label="Related variations">
+  <ul id="related-teaser-list" className="related-teaser__list" role="list" aria-label="Related variations">
           {!currentIsMainline && mainline && (
             <VariationItem
               fen={mainline.fen}
@@ -88,19 +89,18 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
       {showToggle && (
         <footer className="related-teaser__footer">
           <button
-            className="view-all-link"
+            className="related-teaser__toggle"
             onClick={() => setExpanded(e => !e)}
             aria-expanded={expanded}
             aria-controls="related-teaser-list"
           >
-            {expanded ? 'Collapse' : `Show all (${fullList.length})`}
+            <span className="related-teaser__toggle-icon" aria-hidden="true" />
+            <span className="related-teaser__toggle-label">
+              {expanded ? 'Collapse' : 'Show all'}
+              <span className="related-teaser__count" aria-hidden={expanded}> {expanded ? '' : `(${fullList.length})`}</span>
+            </span>
           </button>
         </footer>
-      )}
-      {expanded && (
-        <div id="related-full-list" className="related-teaser__expanded" aria-live="polite">
-          <button className="collapse-link" onClick={() => setExpanded(false)} aria-label="Collapse related openings list">Collapse</button>
-        </div>
       )}
     </section>
   )

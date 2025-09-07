@@ -307,12 +307,33 @@ body {
 .related-teaser__body { position: relative; }
 .related-teaser__body.is-collapsed .related-teaser__list { max-height: 230px; overflow: hidden; }
 .related-teaser__body.is-expanded .related-teaser__list { max-height: 420px; overflow: auto; padding-right: 4px; }
-.related-teaser__list { transition: max-height 0.35s ease; }
-.related-teaser__gradient { position: absolute; left: 0; right: 0; bottom: 48px; height: 64px; background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, var(--color-bg-surface) 90%); pointer-events: none; opacity: 1; transition: opacity 0.3s; }
+/* Expand / collapse animation */
+.related-teaser__list { transition: max-height 360ms cubic-bezier(.4,0,.2,1), padding 240ms ease; will-change: max-height; }
+.related-teaser__list > .related-teaser__item { opacity: 1; transform: translateY(0); transition: opacity 320ms ease, transform 360ms ease; }
+.related-teaser__body.is-collapsed .related-teaser__list > .related-teaser__item:nth-child(n+7) { opacity: 0; transform: translateY(4px); }
+.related-teaser__gradient { position: absolute; left: 0; right: 0; bottom: 0; height: 64px; background: linear-gradient(to bottom, rgba(30,30,30,0) 35%, var(--color-bg-surface) 95%); pointer-events: none; opacity: 1; transition: opacity 300ms ease; }
 .related-teaser__body.is-expanded .related-teaser__gradient { opacity: 0; }
+/* Toggle button micro interaction */
+.related-teaser__toggle { transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.related-teaser__toggle-icon::before, .related-teaser__toggle-icon::after { transition: transform 260ms cubic-bezier(.4,0,.2,1); }
+@media (prefers-reduced-motion: reduce) {
+  .related-teaser__list, .related-teaser__toggle-icon::before, .related-teaser__toggle-icon::after, .related-teaser__gradient, .related-teaser__list > .related-teaser__item { transition: none !important; }
+}
 .view-all-link { font-weight: var(--font-weight-medium); }
 .related-teaser__body.is-expanded + .related-teaser__footer .view-all-link { align-self: flex-start; }
 @media (max-width: 720px) { .related-teaser__body.is-expanded .related-teaser__list { max-height: 60vh; } }
+/* Improved toggle button */
+.related-teaser__footer { display: flex; justify-content: flex-start; }
+.related-teaser__toggle { display: inline-flex; align-items: center; gap: 6px; background: var(--color-bg-alt); border: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: var(--font-size-xs); padding: 4px 10px; border-radius: var(--border-radius-small); cursor: pointer; transition: var(--transition-base); line-height: 1; }
+.related-teaser__toggle:hover { background: var(--color-bg-surface); color: var(--color-text-primary); }
+.related-teaser__toggle:focus-visible { outline: 2px solid var(--color-brand-orange); outline-offset: 2px; }
+.related-teaser__toggle-icon { width: 10px; height: 10px; position: relative; }
+.related-teaser__toggle-icon::before, .related-teaser__toggle-icon::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 2px; background: currentColor; transition: transform 0.25s ease; transform-origin: center; }
+.related-teaser__toggle-icon::before { transform: translateY(-50%) rotate(45deg); }
+.related-teaser__toggle-icon::after { transform: translateY(-50%) rotate(-45deg); }
+.related-teaser__toggle[aria-expanded="true"] .related-teaser__toggle-icon::before { transform: translateY(-50%) rotate(135deg); }
+.related-teaser__toggle[aria-expanded="true"] .related-teaser__toggle-icon::after { transform: translateY(-50%) rotate(45deg); }
+.related-teaser__count { opacity: 0.85; }
 /* =================
    PERFORMANCE OPTIMIZATIONS
    ================= */

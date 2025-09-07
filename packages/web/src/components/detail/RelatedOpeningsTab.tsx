@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useRelatedOpenings } from '../../useRelatedOpenings'
 import { LineTypePill } from '../shared/LineTypePill'
+import { VariationItem } from './VariationItem'
 
 interface Props {
   fen: string | undefined
@@ -9,7 +11,9 @@ interface Props {
 
 export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => {
   const { data, loading, error, refetch } = useRelatedOpenings(fen)
+  const navigate = useNavigate()
   const [expanded, setExpanded] = useState(false)
+  const liveRef = useRef<HTMLDivElement | null>(null)
 
   if (!fen) return null
 
@@ -43,17 +47,29 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
 
   return (
-    <div className={`related-openings-tab ${className}`.trim()}>
+  <section className={`related-openings-tab ${className}`.trim()} aria-labelledby="related-openings-tab-heading">
       <div className="tab-header">
-        <h3 className="section-title">Related Openings</h3>
+    <h3 id="related-openings-tab-heading" className="section-title">Related Openings</h3>
         {data.ecoCode && <span className="eco-pill">{data.ecoCode}</span>}
       </div>
+      {/* Contextual callout when the user is currently on a variation (not the ECO root) */}
+      {!currentIsMainline && mainline && (
+        <div className="mainline-callout" role="note" aria-label="Mainline reference">
+          <span className="mainline-callout__text">Viewing a variation. Mainline:</span>{' '}
+          <button
+            className="mainline-callout__link"
+            onClick={() => navigate(`/opening/${encodeURIComponent(mainline.fen)}`)}
+          >
+            {mainline.name}
+          </button>
+        </div>
+      )}
       {(!currentIsMainline && mainline) && (
         <div className="mainline-block">
           <h4 className="group-label">Mainline</h4>
           <ul className="related-list" role="list">
             <li className="related-item mainline" role="listitem">
-              <button className="related-link" onClick={() => navigateToFen(mainline.fen)}>
+        <button className="related-link" onClick={() => navigate(`/opening/${encodeURIComponent(mainline.fen)}`)}>
                 <span className="name">{mainline.name}</span>
                 <LineTypePill isMainline={true} className="inline-pill" />
               </button>
@@ -63,34 +79,48 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
       )}
       <div className="variations-block">
   <h4 className="group-label">Variations ({safeCounts.siblings})</h4>
+  {/* Static sort descriptor bar per scope decision: fixed sorting by games analyzed */}
+  <div className="sort-descriptor" aria-label="Sorting description">Sorted by games analyzed</div>
   {safeCounts.siblings === 0 && <p className="empty-state">No other variations in this ECO group.</p>}
   {safeCounts.siblings > 0 && (
-          <ul className="related-list" role="list">
+          <ul className={`related-list variation-grid cols-${expanded ? 'full' : 'partial'}`} role="list">
             {list.map(o => (
-              <li key={o.fen} className="related-item" role="listitem">
-                <button className="related-link" onClick={() => navigateToFen(o.fen)}>
-                  <span className="name">{o.name}</span>
-                  <LineTypePill isMainline={o.isEcoRoot} className="inline-pill" />
-                  {o.games_analyzed > 0 && <span className="meta games">{o.games_analyzed.toLocaleString()} games</span>}
-                </button>
-              </li>
+              <VariationItem
+                key={o.fen}
+                fen={o.fen}
+                name={o.name}
+                isEcoRoot={o.isEcoRoot}
+                games_analyzed={o.games_analyzed}
+                onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+              />
             ))}
           </ul>
         )}
         {needsExpand && (
           <div className="expand-container">
-            <button className="expand-btn" onClick={() => setExpanded(e => !e)}>
+            <button
+              className="expand-btn"
+              onClick={() => {
+                setExpanded(e => {
+                  const next = !e
+                  // Announce change for screen readers
+                  if (liveRef.current) {
+                    liveRef.current.textContent = next
+                      ? `Expanded list to show all ${safeCounts.siblings} variations.`
+                      : 'Collapsed list to show top variations.'
+                  }
+                  return next
+                })
+              }}
+              aria-expanded={expanded}
+            >
               {expanded ? 'Collapse' : `Show All (${safeCounts.siblings})`}
             </button>
           </div>
         )}
+        <div className="sr-only" aria-live="polite" ref={liveRef} />
       </div>
-    </div>
+  </section>
   )
 }
-
-function navigateToFen(fen: string) {
-  window.location.href = `/opening/${encodeURIComponent(fen)}`
-}
-
 export default RelatedOpeningsTab

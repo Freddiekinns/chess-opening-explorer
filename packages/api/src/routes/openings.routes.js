@@ -281,7 +281,11 @@ function sanitize(opening) {
     eco: opening.eco,
     moves: opening.moves || '',
     isEcoRoot: opening.isEcoRoot === true,
-    games_analyzed: opening.games_analyzed || 0
+    games_analyzed: opening.games_analyzed || 0,
+    // Pass through complexity if present from analysis_json (used in teaser tag)
+    complexity: opening.analysis_json && opening.analysis_json.complexity
+      ? opening.analysis_json.complexity
+      : (opening.complexity || null)
   };
 }
 

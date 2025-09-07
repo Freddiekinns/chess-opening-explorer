@@ -1,8 +1,19 @@
-import { describe, it, expect, vi, beforeEach, afterAll } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { RelatedOpeningsTeaser } from '../RelatedOpeningsTeaser'
 import { RelatedOpeningsTab } from '../RelatedOpeningsTab'
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
+
+// Mock react-router navigate
+const mockNavigate = vi.fn()
+vi.mock('react-router-dom', async () => {
+  const actual: any = await vi.importActual('react-router-dom')
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate
+  }
+})
 
 // Mock hook to supply deterministic data
 vi.mock('../../../useRelatedOpenings', () => ({
@@ -24,34 +35,20 @@ vi.mock('../../../useRelatedOpenings', () => ({
 }))
 
 describe('Related Openings navigation', () => {
-  let assignedHref: string | null = null
-  const originalDescriptor = Object.getOwnPropertyDescriptor(window, 'location')
-
-  beforeEach(() => {
-    assignedHref = null
-    // Mock only the href setter
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      value: {
-        set href(val: string) { assignedHref = val },
-        get href() { return 'http://localhost/' },
-      }
-    })
-  })
-
-  afterAll(() => {
-    if (originalDescriptor) Object.defineProperty(window, 'location', originalDescriptor)
-  })
-
   it('teaser navigates with /opening/ path', () => {
-    render(<RelatedOpeningsTeaser fen="current-fen" />)
+    render(<MemoryRouter><RelatedOpeningsTeaser fen="current-fen" /></MemoryRouter>)
     fireEvent.click(screen.getByText('Sicilian Defense'))
-    expect(assignedHref).toMatch(/\/opening\//)
+    expect(mockNavigate).toHaveBeenCalled()
+    expect(mockNavigate.mock.calls[0][0]).toMatch(/\/opening\//)
   })
 
-  it('tab navigates with /opening/ path', () => {
-    render(<RelatedOpeningsTab fen="current-fen" />)
-    fireEvent.click(screen.getByText('Sicilian Defense'))
-    expect(assignedHref).toMatch(/\/opening\//)
+  it('tab navigates with /opening/ path (mainline entry)', () => {
+    mockNavigate.mockReset()
+    render(<MemoryRouter><RelatedOpeningsTab fen="current-fen" /></MemoryRouter>)
+    const all = screen.getAllByText('Sicilian Defense')
+    // The second occurrence is inside the mainline list button (first is callout link)
+    fireEvent.click(all[1])
+    expect(mockNavigate).toHaveBeenCalled()
+    expect(mockNavigate.mock.calls[0][0]).toMatch(/\/opening\//)
   })
 })

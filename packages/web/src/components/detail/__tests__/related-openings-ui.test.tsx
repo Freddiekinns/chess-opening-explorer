@@ -1,5 +1,6 @@
 import { describe, test, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom'
 
 import { RelatedOpeningsTeaser } from '../RelatedOpeningsTeaser'
@@ -18,15 +19,16 @@ describe('Related Openings UI Components', () => {
 
   test('Teaser shows skeleton while loading', () => {
     ;(useRelatedOpenings as any).mockReturnValue({ data: null, loading: true, error: null })
-    render(<RelatedOpeningsTeaser fen="FEN1" />)
-    expect(screen.getByRole('heading', { name: /related openings/i })).toBeInTheDocument()
-    // skeleton list items present
-    expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0)
+  const { container } = render(<MemoryRouter><RelatedOpeningsTeaser fen="FEN1" /></MemoryRouter>)
+  expect(screen.getByRole('heading', { name: /related openings/i })).toBeInTheDocument()
+  // skeleton loading indicators (divs with skeleton-text class)
+  const skeletons = container.querySelectorAll('.skeleton-text')
+  expect(skeletons.length).toBeGreaterThan(0)
   })
 
   test('Teaser hides when error', () => {
     ;(useRelatedOpenings as any).mockReturnValue({ data: null, loading: false, error: 'boom' })
-    const { container } = render(<RelatedOpeningsTeaser fen="FEN1" />)
+  const { container } = render(<MemoryRouter><RelatedOpeningsTeaser fen="FEN1" /></MemoryRouter>)
     expect(container.firstChild).toBeNull()
   })
 
@@ -47,10 +49,10 @@ describe('Related Openings UI Components', () => {
       loading: false,
       error: null
     })
-    render(<RelatedOpeningsTeaser fen="VAR1" />)
+  render(<MemoryRouter><RelatedOpeningsTeaser fen="VAR1" /></MemoryRouter>)
   const mainlineEls = screen.getAllByText('Mainline')
   expect(mainlineEls.length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByRole('button', { name: /view all \(4\)/i })).toBeInTheDocument()
+  expect(screen.getByRole('button', { name: /view all 4 related openings/i })).toBeInTheDocument()
   })
 
   test('Tab renders expand control when more than 10 siblings', () => {
@@ -71,7 +73,7 @@ describe('Related Openings UI Components', () => {
       loading: false,
       error: null
     })
-    render(<RelatedOpeningsTab fen="MAIN" />)
+  render(<MemoryRouter><RelatedOpeningsTab fen="MAIN" /></MemoryRouter>)
     expect(screen.getByText(/Variations \(12\)/i)).toBeInTheDocument()
     // Show all button present
     const btn = screen.getByRole('button', { name: /show all \(12\)/i })
@@ -81,7 +83,7 @@ describe('Related Openings UI Components', () => {
 
   test('Tab shows error state with retry button', () => {
     ;(useRelatedOpenings as any).mockReturnValue({ data: null, loading: false, error: 'X' })
-    render(<RelatedOpeningsTab fen="X" />)
+  render(<MemoryRouter><RelatedOpeningsTab fen="X" /></MemoryRouter>)
     expect(screen.getByText(/failed to load/i)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /retry/i })).toBeInTheDocument()
   })

@@ -1,6 +1,7 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useRelatedOpenings } from '../../useRelatedOpenings'
-import { LineTypePill } from '../shared/LineTypePill'
+import { VariationItem } from './VariationItem'
 
 interface Props {
   fen: string | undefined
@@ -10,6 +11,7 @@ interface Props {
 
 export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, className = '' }) => {
   const { data, loading, error } = useRelatedOpenings(fen)
+  const navigate = useNavigate()
 
   if (!fen) return null
   if (loading) {
@@ -35,43 +37,47 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, onViewAll, classNa
   const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
 
   return (
-    <div className={`related-teaser surface surface--compact ${className}`.trim()}>
-      <div className="teaser-header">
-        <h3 className="section-title">Related Openings</h3>
-        {data.ecoCode && <span className="eco-pill">{data.ecoCode}</span>}
-      </div>
-      <ul className="related-list" role="list">
+    <section 
+      className={`related-teaser surface surface--compact ${className}`.trim()} 
+      aria-labelledby="related-teaser-heading"
+    >
+      <header className="related-teaser__header">
+        <div className="related-teaser__title-group">
+          <h3 id="related-teaser-heading" className="section-title">Related Openings</h3>
+          {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}
+        </div>
+        <p className="related-teaser__descriptor">Top variations (sorted by games analyzed)</p>
+      </header>
+      <ul className="related-teaser__list" role="list">
         {!currentIsMainline && mainline && (
-          <li className="related-item mainline" role="listitem">
-            <button className="related-link" onClick={() => navigateToFen(mainline.fen)}>
-              <span className="name">{mainline.name}</span>
-              <LineTypePill isMainline={true} className="inline-pill" />
-            </button>
-          </li>
+          <VariationItem
+            fen={mainline.fen}
+            name={mainline.name}
+            isEcoRoot={true}
+            onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+            className="related-teaser__item related-teaser__item--mainline"
+          />
         )}
         {top.map(o => (
-          <li key={o.fen} className="related-item" role="listitem">
-            <button className="related-link" onClick={() => navigateToFen(o.fen)}>
-              <span className="name">{o.name}</span>
-              <LineTypePill isMainline={o.isEcoRoot} className="inline-pill" />
-            </button>
-          </li>
+          <VariationItem
+            key={o.fen}
+            fen={o.fen}
+            name={o.name}
+            isEcoRoot={o.isEcoRoot}
+            onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
+            className="related-teaser__item"
+          />
         ))}
       </ul>
       {showViewAll && (
-        <div className="teaser-footer">
-          <button className="view-all-link" onClick={onViewAll}>
+        <footer className="related-teaser__footer">
+          <button className="view-all-link" onClick={onViewAll} aria-label={`View all ${safeCounts.siblings} related openings`}>
             View all ({safeCounts.siblings})
           </button>
-        </div>
+        </footer>
       )}
-    </div>
+    </section>
   )
-}
-
-function navigateToFen(fen: string) {
-  // Navigate to canonical opening detail route
-  window.location.href = `/opening/${encodeURIComponent(fen)}`
 }
 
 export default RelatedOpeningsTeaser

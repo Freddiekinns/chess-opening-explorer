@@ -37,7 +37,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedComplexity, setSelectedComplexity] = useState<string | null>(null)
-  const [displayLimit, setDisplayLimit] = useState(12) // Show 12 initially, can load more
+  const [displayLimit, setDisplayLimit] = useState(6) // Show 6 initially, then load more
   
   // Helper function to count the number of moves in a moves string
   const countMoves = (moves: string): number => {
@@ -145,14 +145,14 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
               if (fallbackDeduplicated.length > deduplicated.length) {
                 console.log(`✅ Fallback successful: ${fallbackDeduplicated.length} openings for category "${selectedCategory}"`);
                 setFilteredOpenings(fallbackDeduplicated);
-                setDisplayLimit(12);
+                setDisplayLimit(6);
                 return;
               }
             }
           }
           
           setFilteredOpenings(deduplicated);
-          setDisplayLimit(12);
+          setDisplayLimit(6);
           return;
         }
       } catch (error) {
@@ -197,7 +197,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
       
       setFilteredOpenings(deduplicated);
-      setDisplayLimit(12); // Reset display limit when filters change
+      setDisplayLimit(6); // Reset display limit when filters change
     };
     
     loadFilteredData();
@@ -291,7 +291,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       {filteredOpenings.length > displayLimit && (
         <div className="load-more-section">
           <button 
-            onClick={() => setDisplayLimit(prev => prev + 12)}
+            onClick={() => setDisplayLimit(prev => prev + 6)}
             className="load-more-btn"
           >
             Load More Openings ({filteredOpenings.length - displayLimit} remaining)

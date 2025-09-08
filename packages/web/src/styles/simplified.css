@@ -2051,12 +2051,17 @@ body {
 
 /* ECO pill spacing refinement when paired with sub title */
 .related-teaser__title-group .eco-pill { margin-top: 0; }
+.related-teaser__header.card-header { gap: var(--space-3); }
+.related-teaser__eco--right { margin-left: auto; }
+/* Dim ECO pill when in a card header (meta, not primary action) */
+.card-header .eco-pill { opacity: 0.72; transition: opacity .2s ease; }
+.card-header .eco-pill:hover { opacity: 0.9; }
 
 /* Unified card header pattern */
 .card-header { display:flex; align-items:center; justify-content:space-between; margin:0 0 var(--space-4) 0; }
 .card-header__title { font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin:0; color: var(--color-text-primary); letter-spacing: var(--letter-spacing-tight); display:flex; align-items:center; gap: var(--space-2); }
 .card-header__title--accent { position:relative; padding-left: var(--space-3); }
-.card-header__title--accent::before { content:''; position:absolute; left:0; top:4px; bottom:4px; width:3px; border-radius:2px; background: linear-gradient(180deg,var(--color-brand-orange),rgba(232,93,4,0.35)); }
+.card-header__title--accent::before { content:''; position:absolute; left:0; top:4px; bottom:4px; width:3px; border-radius:2px; background: linear-gradient(180deg,rgba(232,93,4,0.88),rgba(232,93,4,0.18)); }
 
 /* Map legacy title-subsection to new system for gradual migration */
 .title-subsection { font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin:0 0 var(--space-4) 0; color: var(--color-text-primary); letter-spacing: var(--letter-spacing-tight); }

@@ -52,7 +52,16 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
       aria-labelledby="related-teaser-heading"
     >
       <header className="related-teaser__header card-header">
-        <h3 id="related-teaser-heading" className="card-header__title card-header__title--accent">Related Openings {data.ecoCode && <span className="eco-pill related-teaser__eco">{data.ecoCode}</span>}</h3>
+        <h3 id="related-teaser-heading" className="card-header__title card-header__title--accent">Related Openings</h3>
+        {data.ecoCode && (
+          <span
+            className="eco-pill related-teaser__eco related-teaser__eco--right"
+            title={`ECO code ${data.ecoCode} – Encyclopaedia of Chess Openings classification`}
+            aria-label={`ECO code ${data.ecoCode}. Encyclopaedia of Chess Openings classification.`}
+          >
+            {data.ecoCode}
+          </span>
+        )}
       </header>
       <div 
         ref={bodyRef}

@@ -11,6 +11,7 @@ import { FloatingBackButton } from '../components/shared/FloatingBackButton'
 import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay'
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary'
 import { LineTypePill } from '../components/shared/LineTypePill'
+import { FeedbackSection } from '../components/shared/FeedbackSection'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -592,6 +593,8 @@ const OpeningDetailPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      <FeedbackSection source="detail" />
     </div>
   )
 }

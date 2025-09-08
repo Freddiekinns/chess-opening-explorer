@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SearchBar } from '../components/shared/SearchBar'
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid'
+import { FeedbackSection } from '../components/shared/FeedbackSection'
 
 interface Opening {
   fen: string
@@ -36,7 +37,7 @@ const LandingPage: React.FC = () => {
 
   // Apply body class for this page
   useEffect(() => {
-    document.body.className = 'landing-page-body'
+    document.body.className = 'landing-page'
     return () => {
       document.body.className = ''
     }
@@ -175,6 +176,7 @@ const LandingPage: React.FC = () => {
           </div>
         )}
       </div>
+      <FeedbackSection source="landing" />
     </div>
   )
 }

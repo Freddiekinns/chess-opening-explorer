@@ -79,3 +79,10 @@ No win rates, comparison view, or sorting toggles were introduced (per scope). P
 
 ## Completion
 Phase 1 complete and ready for integration review.
+
+### Final Addendum (2025-09-08)
+- Subsequent consolidation removed the separate tab/modal pathway; teaser now sole UI surface (see TASK002 final log).
+- JS-driven height animation introduced after this task's original closure for smoother symmetric expand/collapse (replaces earlier CSS max-height pattern).
+- Visual refinements: removed gradient fade, standardized collapsed preview (4 rows including mainline), unified card header pattern, softened accent bar gradient, ECO pill right alignment + de-emphasis with tooltip.
+- All targeted related openings tests remain green (7/7) post refinements.
+- No new dependencies; animation logic lightweight and guarded by prefers-reduced-motion.

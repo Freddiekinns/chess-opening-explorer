@@ -1,7 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
 import { RelatedOpeningsTeaser } from '../RelatedOpeningsTeaser'
-import { RelatedOpeningsTab } from '../RelatedOpeningsTab'
-import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
@@ -42,13 +40,5 @@ describe('Related Openings navigation', () => {
     expect(mockNavigate.mock.calls[0][0]).toMatch(/\/opening\//)
   })
 
-  it('tab navigates with /opening/ path (mainline entry)', () => {
-    mockNavigate.mockReset()
-    render(<MemoryRouter><RelatedOpeningsTab fen="current-fen" /></MemoryRouter>)
-    const all = screen.getAllByText('Sicilian Defense')
-    // The second occurrence is inside the mainline list button (first is callout link)
-    fireEvent.click(all[1])
-    expect(mockNavigate).toHaveBeenCalled()
-    expect(mockNavigate.mock.calls[0][0]).toMatch(/\/opening\//)
-  })
+  // Legacy tab component removed; navigation validated via teaser only.
 })

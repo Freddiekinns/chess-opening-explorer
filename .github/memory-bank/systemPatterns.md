@@ -53,3 +53,26 @@ This document outlines the key architectural decisions and recurring patterns in
     -   The "real" API logic, services, and data reside in `packages/api`.
     -   A thin wrapper layer exists in the root `api/` directory. Each file in `api/` is a Vercel serverless function that simply imports and exports the corresponding route handler from `packages/api`.
 -   **Rationale:** This pattern allows for a clean monorepo structure with shared packages (`packages/shared`) while complying with Vercel's build and deployment model. The `vercel.json` file orchestrates this.
+
+## AD-009: Unified Card Header Pattern
+
+- **Pattern:** Consistent header block (`.card-header`) with optional vertical accent bar pseudo-element (`.card-header__title--accent::before`) and metadata (e.g., ECO pill) right-aligned.
+- **Rationale:** Establishes visual hierarchy without oversized headings; accent provides subtle section anchoring while reducing cognitive load vs multiple heading sizes. Right-aligning metadata reduces competition with primary title text.
+- **Implementation Details:** Single CSS file (`simplified.css`), softened gradient (rgba(232,93,4,0.88) → rgba(232,93,4,0.18)). ECO pill de-emphasized via opacity; tooltip (`title` + `aria-label`) for accessibility.
+- **Considerations:** Future tokenization of gradient stops & width; conditional accent suppression in dense stacks.
+
+## AD-010: JS-Driven Height Animation for Progressive Disclosure
+
+- **Pattern:** Expand/collapse transitions use measured element heights instead of CSS max-height tricks.
+- **Rationale:** Symmetric animation (expand & collapse), avoids layout thrash and timing mismatch when content height is dynamic; cleaner accessibility fallback.
+- **Implementation Details:** Measure `wrapper.scrollHeight` pre/post state toggle; set explicit start/end heights; clear inline style after transition; guard with `prefers-reduced-motion` to disable motion; fallback timeout to ensure cleanup even if `transitionend` not fired.
+- **Pitfalls Avoided:** No simultaneous animation on child list (prevents early content pop-in); avoids partially visible rows formerly hidden by gradient.
+- **Future Enhancements:** Optional fade/stagger for newly revealed rows, caching last expanded height if performance becomes a concern (currently negligible).
+
+## AD-011: Test Runner Separation (Backend vs Frontend)
+
+- **Pattern:** Backend/server logic tested with Jest under the root `tests/` directory; frontend React component/UI tests reside within `packages/web` and use Vitest. No Vitest tests live under root; no Jest tests target `packages/web` client code.
+- **Rationale:** Prevents overlapping globals (`jest` vs `vi`), simplifies tooling configs, and accelerates frontend test runs via Vite-powered Vitest while keeping backend coverage thresholds enforced by Jest.
+- **Implementation Details:** Removed duplicate root UI test (`tests/unit/related-openings-ui.test.tsx`) after migrating to package-local Vitest tests. Root Jest config excludes `packages/web`. Frontend tests import `@testing-library/jest-dom/vitest` (or equivalent) as needed.
+- **Guideline:** New UI/component tests must be added under `packages/web/src/**/__tests__/`. Any backend/service tests go under `tests/` (unit, integration). Avoid cross-runner mocking patterns.
+- **Future Considerations:** Optionally add separate `npm run test:watch:web` alias; consider coverage reporting for frontend if desired (Vitest coverage) aggregated in CI.

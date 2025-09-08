@@ -9,11 +9,15 @@
 -   **Course Recommendations:** The backend data and API endpoint (`/api/courses/:fen`) for course recommendations are complete. The initial data for the F03 (King's Pawn Game) ECO code is fully integrated.
 -   **Unified Architecture:** The monorepo structure with shared packages and the Vercel deployment pattern are implemented and working.
 -   **Frontend Foundation:** The React/Vite frontend is set up with routing, a basic layout, and the critical single CSS file architecture.
+-   **Related Openings UI:** Consolidated inline expandable teaser with smooth JS height animation, unified card header pattern, contextual mainline callout (variation view), ECO pill metadata (accessible & de-emphasized), passing test coverage (navigation, structure, UI).
+	-   Frontend test consolidation: Removed legacy tab component & duplicate root Jest UI test; now all related openings UI tests live under `packages/web` (Vitest).
 
 ## What's Left to Build
 
 -   **Frontend UI for Courses:** While the backend is ready, the UI to display course recommendations on the opening detail page needs to be built.
 -   **Advanced Filtering:** The client-side filtering capabilities can be expanded (e.g., filter by win rate, draw rate, etc.).
+-   **Design System Tokenization:** Extract accent bar gradient & spacing into CSS variables for theme agility.
+-   **Tooltip Abstraction:** Central component for consistent ARIA + styling (currently native title attributes).
 
 ## Current Status
 

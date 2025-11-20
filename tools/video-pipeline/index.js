@@ -1,10 +1,10 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const RSSVideoDiscovery = require('./1-discover-videos-rss');
-const PreFilterVideos = require('./2-prefilter-candidates');
-const VideoEnrichment = require('./3-enrich-videos');
-const VideoMatcher = require('./video-matcher');
+const RSSVideoDiscovery = require('./lib/rss-discovery');
+const PreFilterVideos = require('./lib/candidate-filter');
+const VideoEnrichment = require('./lib/video-enricher');
+const VideoMatcher = require('./lib/video-matcher');
 const DatabaseSchema = require('../database/schema-manager');
 const StaticFileGenerator = require('../database/static-file-generator');
 const { consolidateVideoIndex } = require('../../scripts/consolidate-video-index');

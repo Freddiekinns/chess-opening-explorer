@@ -19,19 +19,20 @@ const VIDEOS_DIR = path.join(__dirname, '..', 'data', 'Videos');
 const OUTPUT_DIR = path.join(__dirname, '..', 'api', 'data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'video-index.json');
 
-async function consolidateVideoIndex() {
+async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_DIR) {
+  const outputFile = path.join(outputDir, 'video-index.json');
   console.log('🎬 Starting Video Index Consolidation...');
-  console.log(`📁 Source: ${VIDEOS_DIR}`);
-  console.log(`📦 Output: ${OUTPUT_FILE}`);
-  
+  console.log(`📁 Source: ${inputDir}`);
+  console.log(`📦 Output: ${outputFile}`);
+
   // Ensure output directory exists
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
   }
 
   try {
     // Read all video files
-    const videoFiles = fs.readdirSync(VIDEOS_DIR).filter(file => file.endsWith('.json'));
+    const videoFiles = fs.readdirSync(inputDir).filter(file => file.endsWith('.json'));
     console.log(`📊 Found ${videoFiles.length} video files to process`);
 
     const videoIndex = {
@@ -46,32 +47,32 @@ async function consolidateVideoIndex() {
     let totalSize = 0;
 
     for (const filename of videoFiles) {
-      const filePath = path.join(VIDEOS_DIR, filename);
+      const filePath = path.join(inputDir, filename);
       const fileStats = fs.statSync(filePath);
       totalSize += fileStats.size;
 
       try {
         const content = fs.readFileSync(filePath, 'utf8');
         const videoData = JSON.parse(content);
-        
+
         // Extract FEN from filename (remove .json extension)
         const fenKey = filename.replace('.json', '');
-        
+
         // Store the video data under the FEN key
         videoIndex.positions[fenKey] = videoData;
-        
+
         // Count videos in this position
-        if (videoData.opening && videoData.opening.videos) {
-          totalVideoCount += videoData.opening.videos.length;
+        if (videoData.videos) {
+          totalVideoCount += videoData.videos.length;
         }
 
         processedCount++;
-        
+
         // Progress indicator every 1000 files
         if (processedCount % 1000 === 0) {
           console.log(`  ⏳ Processed ${processedCount}/${videoFiles.length} files...`);
         }
-        
+
       } catch (parseError) {
         console.warn(`⚠️  Failed to parse ${filename}:`, parseError.message);
       }
@@ -89,10 +90,10 @@ async function consolidateVideoIndex() {
     // Write consolidated index
     console.log(`💾 Writing consolidated index...`);
     const indexContent = JSON.stringify(videoIndex, null, 2);
-    fs.writeFileSync(OUTPUT_FILE, indexContent);
+    fs.writeFileSync(outputFile, indexContent);
 
     // Calculate final statistics
-    const outputStats = fs.statSync(OUTPUT_FILE);
+    const outputStats = fs.statSync(outputFile);
     const outputSizeMB = (outputStats.size / (1024 * 1024)).toFixed(2);
     const compressionRatio = (totalSize / outputStats.size).toFixed(1);
 
@@ -101,7 +102,7 @@ async function consolidateVideoIndex() {
     videoIndex.metadata.compressionRatio = `${compressionRatio}x`;
 
     // Rewrite with updated metadata
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(videoIndex, null, 2));
+    fs.writeFileSync(outputFile, JSON.stringify(videoIndex, null, 2));
 
     console.log('✅ Video Index Consolidation Complete!');
     console.log('');

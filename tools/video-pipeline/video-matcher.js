@@ -19,7 +19,7 @@ class VideoMatcher {
     if (!aliasesJson || aliasesJson === '"[]"' || aliasesJson === '[]') {
       return [];
     }
-    
+
     try {
       // Handle double-encoded JSON strings from database
       let parsed;
@@ -30,9 +30,9 @@ class VideoMatcher {
         // Single-encoded
         parsed = JSON.parse(aliasesJson);
       }
-      
+
       const aliases = [];
-      
+
       if (Array.isArray(parsed)) {
         aliases.push(...parsed);
       } else if (typeof parsed === 'object') {
@@ -45,7 +45,7 @@ class VideoMatcher {
           }
         });
       }
-      
+
       // Remove duplicates and clean up
       return [...new Set(aliases.map(alias => alias.trim()))];
     } catch (error) {
@@ -59,7 +59,7 @@ class VideoMatcher {
    */
   async clearExistingMatches() {
     console.log('🗑️  Clearing existing video matches...');
-    
+
     // Get counts before deletion
     const videoCount = await new Promise((resolve, reject) => {
       this.db.db.get('SELECT COUNT(*) as count FROM videos', (err, row) => {
@@ -67,16 +67,16 @@ class VideoMatcher {
         else resolve(row.count);
       });
     });
-    
+
     const matchCount = await new Promise((resolve, reject) => {
       this.db.db.get('SELECT COUNT(*) as count FROM opening_videos', (err, row) => {
         if (err) reject(err);
         else resolve(row.count);
       });
     });
-    
+
     console.log(`   📊 Found ${videoCount} existing videos and ${matchCount} existing matches`);
-    
+
     // Clear opening_videos table
     await new Promise((resolve, reject) => {
       this.db.db.run('DELETE FROM opening_videos', (err) => {
@@ -84,7 +84,7 @@ class VideoMatcher {
         else resolve();
       });
     });
-    
+
     // Clear videos table
     await new Promise((resolve, reject) => {
       this.db.db.run('DELETE FROM videos', (err) => {
@@ -92,7 +92,7 @@ class VideoMatcher {
         else resolve();
       });
     });
-    
+
     console.log('✅ Database cleared and ready for fresh matching');
   }
 
@@ -116,7 +116,7 @@ class VideoMatcher {
    */
   getOpeningAbbreviations(openingName) {
     const abbreviations = [];
-    
+
     // Common chess opening abbreviations
     const abbrevMap = {
       'queens gambit': ['qgd', 'qga', 'queens pawn'],
@@ -139,14 +139,14 @@ class VideoMatcher {
       'grunfeld defense': ['grunfeld defence', 'grunfeld'],
       'bogo indian': ['bogo-indian', 'bogo indian defense']
     };
-    
+
     // Check if opening name matches any known abbreviations
     for (const [fullName, abbrevs] of Object.entries(abbrevMap)) {
       if (openingName.includes(fullName)) {
         abbreviations.push(...abbrevs);
       }
     }
-    
+
     // Generate automatic abbreviations for long names
     if (openingName.length > 15) {
       const words = openingName.split(/\s+/);
@@ -161,7 +161,7 @@ class VideoMatcher {
         }
       }
     }
-    
+
     return abbreviations;
   }
 
@@ -170,11 +170,11 @@ class VideoMatcher {
    */
   getEcoBasedFamily(ecoCode) {
     if (!ecoCode || ecoCode.length < 3) return null;
-    
+
     const code = ecoCode.toUpperCase();
     const firstChar = code[0];
     const numPart = parseInt(code.substring(1, 3));
-    
+
     // ECO family mappings based on standard chess opening classification
     const ecoFamilies = {
       // A00-A39: Irregular and flank openings
@@ -184,12 +184,12 @@ class VideoMatcher {
       'A45-A49': 'indian_systems',
       'A50-A79': 'indian_defenses',
       'A80-A99': 'dutch',
-      
+
       // B00-B99: Semi-open games (1.e4 without 1...e5)
       'B00-B09': 'kings_pawn_misc',
       'B10-B19': 'caro_kann',
       'B20-B99': 'sicilian',
-      
+
       // C00-C99: Open games (1.e4 e5) and French
       'C00-C19': 'french',
       'C20-C29': 'kings_pawn_games',
@@ -197,31 +197,31 @@ class VideoMatcher {
       'C40-C49': 'kings_pawn_misc',
       'C50-C59': 'italian',
       'C60-C99': 'spanish', // Ruy Lopez
-      
+
       // D00-D99: Closed games (1.d4 d5)
       'D00-D05': 'queens_pawn_misc',
       'D06-D69': 'queens_gambit',
       'D70-D99': 'grunfeld_neo_grunfeld',
-      
+
       // E00-E99: Indian defenses
       'E00-E09': 'catalan',
       'E10-E19': 'queens_indian',
       'E20-E59': 'nimzo_indian',
       'E60-E99': 'kings_indian'
     };
-    
+
     // Find matching range
     for (const [range, family] of Object.entries(ecoFamilies)) {
       const [start, end] = range.split('-');
       const startNum = parseInt(start.substring(1));
       const endNum = parseInt(end.substring(1));
       const startChar = start[0];
-      
+
       if (firstChar === startChar && numPart >= startNum && numPart <= endNum) {
         return family;
       }
     }
-    
+
     return null;
   }
 
@@ -230,7 +230,7 @@ class VideoMatcher {
    */
   getVideoConflictingFamily(title) {
     const lowerTitle = title.toLowerCase();
-    
+
     // Only detect the most problematic mismatches - focus on major conflicts
     const conflictDetectors = {
       'nimzo_indian': ['nimzo-indian', 'nimzo indian'],
@@ -244,13 +244,13 @@ class VideoMatcher {
       'english': ['english opening', 'english'],
       'dutch': ['dutch defense', 'dutch defence']
     };
-    
+
     for (const [family, detectors] of Object.entries(conflictDetectors)) {
       if (detectors.some(detector => lowerTitle.includes(detector))) {
         return family;
       }
     }
-    
+
     return null;
   }
 
@@ -259,10 +259,10 @@ class VideoMatcher {
    */
   getFamilyMismatchPenalty(videoFamily, openingEco) {
     if (!videoFamily || !openingEco) return 0;
-    
+
     const openingFamily = this.getEcoBasedFamily(openingEco);
     if (!openingFamily) return 0;
-    
+
     // Normalize family names for comparison
     const normalizeFamily = (family) => {
       const familyMap = {
@@ -278,14 +278,14 @@ class VideoMatcher {
       };
       return familyMap[family] || family;
     };
-    
+
     const normalizedVideoFamily = normalizeFamily(videoFamily);
     const normalizedOpeningFamily = normalizeFamily(openingFamily);
-    
+
     if (normalizedVideoFamily === normalizedOpeningFamily) {
       return 0; // Perfect match
     }
-    
+
     // Define severe incompatibilities (block completely)
     const severeIncompatibilities = [
       ['nimzo_indian', 'queens_gambit'],
@@ -300,15 +300,15 @@ class VideoMatcher {
       ['caro_kann', 'sicilian'],
       ['caro_kann', 'french']
     ];
-    
+
     // Check for severe incompatibility
     for (const [family1, family2] of severeIncompatibilities) {
       if ((normalizedVideoFamily === family1 && normalizedOpeningFamily === family2) ||
-          (normalizedVideoFamily === family2 && normalizedOpeningFamily === family1)) {
+        (normalizedVideoFamily === family2 && normalizedOpeningFamily === family1)) {
         return 100; // Complete rejection
       }
     }
-    
+
     // Moderate penalty for other mismatches
     return 30;
   }
@@ -319,7 +319,7 @@ class VideoMatcher {
   preFilterVideo(video) {
     const title = video.title.toLowerCase();
     const description = (video.description || '').toLowerCase();
-    
+
     // Hard exclusions from pipeline plan (refined for educational content)
     const excludeKeywords = [
       'tournament', 'interview', 'recap', 'highlights', 'live', 'stream',
@@ -329,7 +329,7 @@ class VideoMatcher {
       // Removed 'cheat' - blocks educational "Cheater Detected" content
       // Removed 'classical' - blocks educational "Classical Variation" content
     ];
-    
+
     // Fast rejection - check exclusions first (with educational exceptions)
     for (const keyword of excludeKeywords) {
       if (title.includes(keyword) || description.includes(keyword)) {
@@ -340,15 +340,15 @@ class VideoMatcher {
         return false;
       }
     }
-    
+
     // Parse duration and get view count from correct location
     const durationSeconds = this.parseDuration(video.duration);
     const viewCount = video.statistics?.viewCount ? parseInt(video.statistics.viewCount) : 0;
-    
+
     // Basic quality gates
     return durationSeconds >= 180 && // 3+ minutes
-           durationSeconds <= 7200 && // < 2 hours  
-           viewCount >= 500; // View threshold
+      durationSeconds <= 7200 && // < 2 hours  
+      viewCount >= 500; // View threshold
   }
 
   /**
@@ -364,33 +364,33 @@ class VideoMatcher {
     const allNames = [openingName, ...opening.aliases];
     let matchType = null;
     let hasNameMatch = false;
-    
+
     for (const name of allNames) {
       const cleanName = name.toLowerCase().trim();
-      
+
       // Skip very short or generic names to avoid false matches
       if (cleanName.length < 6 || ['e4', 'd4', 'nf3', 'nc3', 'main line', 'variation', 'general', 'opening', 'defense', 'defence'].includes(cleanName)) {
         continue;
       }
-      
+
       // Exact match in title (highest priority)
       if (title.includes(cleanName)) {
         hasNameMatch = true;
         matchType = 'title_exact';
         break;
       }
-      
+
       // Exact match in content (still good)
       if (videoContent.includes(cleanName)) {
         hasNameMatch = true;
         matchType = 'exact';
         break;
       }
-      
+
       // Partial word matching for long opening names (much more restrictive)
       if (cleanName.length > 15) {
-        const words = cleanName.split(/\s+/).filter(word => 
-          word.length > 5 && 
+        const words = cleanName.split(/\s+/).filter(word =>
+          word.length > 5 &&
           !['defense', 'defence', 'opening', 'attack', 'gambit', 'system', 'variation', 'line'].includes(word)
         );
         if (words.length >= 3) {
@@ -404,7 +404,7 @@ class VideoMatcher {
         }
       }
     }
-    
+
     // Check opening family using simplified ECO-based approach
     if (!hasNameMatch) {
       // Simple family matching for major openings only
@@ -418,7 +418,7 @@ class VideoMatcher {
         'kings indian': ['kings indian', 'king\'s indian'],
         'english': ['english opening']
       };
-      
+
       for (const [openingKey, familyTerms] of Object.entries(simpleFamilies)) {
         if (openingName.includes(openingKey)) {
           for (const familyTerm of familyTerms) {
@@ -432,7 +432,7 @@ class VideoMatcher {
         }
       }
     }
-    
+
     // Check common abbreviations (only for well-known openings, only in title)
     if (!hasNameMatch) {
       const abbreviations = this.getOpeningAbbreviations(openingName);
@@ -444,7 +444,7 @@ class VideoMatcher {
         }
       }
     }
-    
+
     // ECO code matching - only if it's in title AND accompanied by other opening terms
     if (!hasNameMatch && opening.eco && title.includes(opening.eco.toLowerCase())) {
       const hasOpeningContext = ['opening', 'repertoire', 'theory', 'explained', 'guide'].some(word => title.includes(word));
@@ -453,14 +453,14 @@ class VideoMatcher {
         matchType = 'eco';
       }
     }
-    
+
     if (!hasNameMatch) {
       return 0; // No opening reference found
     }
-    
+
     // FAMILY-BASED NEGATIVE MATCHING - Prevent cross-family contamination
     const videoConflictingFamily = this.getVideoConflictingFamily(title);
-    
+
     if (videoConflictingFamily) {
       const familyMismatchPenalty = this.getFamilyMismatchPenalty(videoConflictingFamily, opening.eco);
       if (familyMismatchPenalty >= 100) {
@@ -469,7 +469,7 @@ class VideoMatcher {
       // Apply family mismatch penalty AFTER initial scoring to ensure it's not overridden
       score -= familyMismatchPenalty;
     }
-    
+
     // Much more conservative scoring
     if (matchType === 'title_exact') score += 80;
     else if (matchType === 'exact') score += 60;
@@ -483,10 +483,10 @@ class VideoMatcher {
     if (strongEducationalKeywords.some(word => title.includes(word))) {
       score += 25; // Increased bonus for educational content
     }
-    
+
     // 3. Penalize generic game analysis (major penalty) - EXPANDED
     const gameAnalysisTerms = [
-      'brilliant', 'amazing', 'incredible', 'insane', 'crazy', 'epic', 
+      'brilliant', 'amazing', 'incredible', 'insane', 'crazy', 'epic',
       'vs', 'beats', 'wins', 'loses', 'sacrifices', 'mates in',
       '||', 'recap', 'highlights', 'match', 'round', 'tournament',
       'world championship', 'candidates', 'fide', 'grand prix',
@@ -497,36 +497,36 @@ class VideoMatcher {
     if (gameAnalysisTerms.some(term => title.includes(term))) {
       score -= 60; // Even heavier penalty for game analysis
     }
-    
+
     // 4. Specific agadmator penalty (since he's primarily game analysis)
     if ((video.channel_title || '').toLowerCase().includes('agadmator')) {
       score -= 50; // Much stronger penalty for agadmator since it's mostly game analysis
     }
-    
+
     // 5. Penalize movie/documentary content
     const movieTerms = ['movie', 'film', 'documentary', 'biopic', 'story of'];
     if (movieTerms.some(term => title.includes(term))) {
       score -= 50;
     }
-    
+
     // 6. Enhanced Channel Quality System (PRIORITY: Maximize good creators)
     const premiumEducators = [
       'daniel naroditsky', 'naroditsky', 'hanging pawns', 'saint louis chess club',
       'chess.com', 'chessnetwork', 'gingergm', 'eric rosen', 'chess network',
       'john bartholomew', 'christof sielecki', 'chess24', 'chess club and scholastic center'
     ];
-    
+
     const goodEducators = [
       'gothamchess', 'chess.com', 'chessexplained', 'powerplaychess',
       'remote chess academy', 'thechesswebsite', 'chess.com', 'iichess'
     ];
-    
+
     const entertainmentChannels = [
       'agadmator', 'chess24', 'world chess', 'fide chess'
     ];
-    
+
     const channelTitle = (video.channel_title || '').toLowerCase();
-    
+
     if (premiumEducators.some(channel => channelTitle.includes(channel))) {
       score += 40; // Major bonus for premium educators
     } else if (goodEducators.some(channel => channelTitle.includes(channel))) {
@@ -534,7 +534,7 @@ class VideoMatcher {
     } else if (entertainmentChannels.some(channel => channelTitle.includes(channel))) {
       score -= 30; // Penalty for entertainment-focused channels
     }
-    
+
     // 7. Duration requirements (favor substantial educational content)
     if (video.duration >= 1200 && video.duration <= 3600) { // 20-60 minutes ideal for detailed instruction
       score += 15;
@@ -549,16 +549,16 @@ class VideoMatcher {
       'explained', 'theory', 'fundamentals', 'guide', 'tutorial', 'lesson', 'masterclass',
       'repertoire', 'how to', 'mastering', 'understanding', 'principles', 'concepts'
     ];
-    
+
     const speedrunEducationalTerms = [
       'speedrun', 'theory speedrun', 'educational speedrun', 'unrated to rated',
       'sensei speedrun', 'climbing ladder', 'road to'
     ];
-    
+
     const hasStrongEducational = strongEducationalTerms.some(term => title.includes(term));
     const hasSpeedrunEducational = speedrunEducationalTerms.some(term => title.includes(term));
     const isPremiumEducator = premiumEducators.some(channel => channelTitle.includes(channel));
-    
+
     if (hasStrongEducational) {
       score += 30; // Strong bonus for explicit educational content
     } else if (hasSpeedrunEducational && isPremiumEducator) {
@@ -579,13 +579,15 @@ class VideoMatcher {
   /**
    * Run matching with provided video candidates (new pipeline order)
    */
-  async runMatchingWithVideos(candidateVideos) {
+  async runMatchingWithVideos(candidateVideos, options = {}) {
     console.log('🚀 Starting FEN-based Video Matching with provided candidates...');
     console.log(`📹 Processing ${candidateVideos.length} pre-filtered candidates`);
-    
-    // Clear existing matches first
-    await this.clearExistingMatches();
-    
+
+    // Clear existing matches first (default to true for backward compatibility)
+    if (options.clearDb !== false) {
+      await this.clearExistingMatches();
+    }
+
     // Get all openings from database
     console.log('🔍 Loading openings from database...');
     const openings = await new Promise((resolve, reject) => {
@@ -602,20 +604,20 @@ class VideoMatcher {
       });
     });
     console.log(`📚 Found ${openings.length} openings to match against`);
-    
+
     // Match videos to openings (with smart pre-filtering)
     console.log('🎯 Matching videos to specific openings...');
     const matches = [];
     let processedVideos = 0;
     let totalChecks = 0;
     let actualMatches = 0;
-    
+
     for (const video of candidateVideos) {
       processedVideos++;
       if (processedVideos % 100 === 0) {
         console.log(`   Processed ${processedVideos}/${candidateVideos.length} videos... (${actualMatches} matches found)`);
       }
-      
+
       // Convert video format for matching
       const videoForMatching = {
         id: video.id,
@@ -628,29 +630,29 @@ class VideoMatcher {
         thumbnail_url: video.thumbnails?.default?.url,
         tags: video.tags || []
       };
-      
+
       const videoContent = `${video.title} ${video.description || ''} ${(video.tags || []).join(' ')}`.toLowerCase();
-      
+
       // Smart pre-filtering: only check openings that might match (more restrictive)
       const candidateOpenings = openings.filter(opening => {
         const allNames = [opening.name, ...opening.aliases];
-        
+
         // Check for any potential match (stricter than before)
         return allNames.some(name => {
           const cleanName = name.toLowerCase().trim();
-          
+
           // Skip very short names or generic terms
           if (cleanName.length < 5 || ['opening', 'defense', 'defence', 'attack', 'system', 'general'].includes(cleanName)) {
             return false;
           }
-          
+
           // Quick exact match check
           if (videoContent.includes(cleanName)) return true;
-          
+
           // For longer names, require more substantial word overlap
           if (cleanName.length > 15) {
-            const words = cleanName.split(/\s+/).filter(word => 
-              word.length > 4 && 
+            const words = cleanName.split(/\s+/).filter(word =>
+              word.length > 4 &&
               !['defense', 'defence', 'opening', 'attack', 'gambit', 'system', 'variation'].includes(word)
             );
             if (words.length >= 2) {
@@ -661,18 +663,18 @@ class VideoMatcher {
               }
             }
           }
-          
+
           // ECO code check (only for exact matches)
           if (opening.eco && videoContent.includes(opening.eco.toLowerCase())) {
             return true;
           }
-          
+
           return false;
         });
       });
-      
+
       totalChecks += candidateOpenings.length;
-      
+
       // Only score openings that passed pre-filter
       for (const opening of candidateOpenings) {
         const score = this.calculateMatchScore(videoForMatching, opening);
@@ -688,10 +690,10 @@ class VideoMatcher {
         }
       }
     }
-    
+
     console.log(`🎯 Created ${matches.length} video-opening matches`);
-    console.log(`   📊 Efficiency: ${totalChecks} opening checks (avg ${(totalChecks/candidateVideos.length).toFixed(1)} per video vs ${openings.length} without pre-filter)`);
-    
+    console.log(`   📊 Efficiency: ${totalChecks} opening checks (avg ${(totalChecks / candidateVideos.length).toFixed(1)} per video vs ${openings.length} without pre-filter)`);
+
     // Select top videos per opening
     console.log('🔝 Selecting top videos per opening...');
     const openingGroups = {};
@@ -701,31 +703,31 @@ class VideoMatcher {
       }
       openingGroups[match.opening_id].push(match);
     });
-    
+
     console.log(`   📊 Openings with matches: ${Object.keys(openingGroups).length}`);
-    
+
     const finalMatches = [];
     const uniqueVideos = new Set();
-    
+
     Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
       // Sort by score and take top 10
       const topMatches = openingMatches
         .sort((a, b) => b.match_score - a.match_score)
         .slice(0, 10);
-      
+
       console.log(`   📝 Opening ${openingId}: ${openingMatches.length} matches → selected top ${topMatches.length}`);
-      
+
       topMatches.forEach(match => {
         finalMatches.push(match);
         uniqueVideos.add(match.video_id);
       });
     });
-    
+
     console.log(`✅ Final selection: ${finalMatches.length} matches, ${uniqueVideos.size} unique videos`);
-    
+
     // Save results to database
     console.log('💾 Saving results to database...');
-    
+
     // Insert videos
     for (const match of finalMatches) {
       const video = match.video;
@@ -744,15 +746,15 @@ class VideoMatcher {
           video.view_count,
           video.published_at,
           video.thumbnail_url
-        ], function(err) {
+        ], function (err) {
           if (err) reject(err);
           else resolve();
         });
       });
     }
-    
+
     console.log(`   🔗 Creating ${finalMatches.length} video-opening relationships...`);
-    
+
     // Insert relationships
     for (const match of finalMatches) {
       await new Promise((resolve, reject) => {
@@ -764,15 +766,15 @@ class VideoMatcher {
           match.opening_id,
           match.video_id,
           match.match_score
-        ], function(err) {
+        ], function (err) {
           if (err) reject(err);
           else resolve();
         });
       });
     }
-    
+
     console.log('✅ Database save complete!');
-    
+
     return {
       totalVideos: candidateVideos.length,
       candidateVideos: candidateVideos.length,
@@ -791,21 +793,21 @@ class VideoMatcher {
    */
   async runNewMatching() {
     console.log('🚀 Starting FEN-based Video Re-Matching...');
-    
+
     // Clear existing matches first
     await this.clearExistingMatches();
-    
+
     // Load video data
     console.log('📁 Loading video data...');
     const videoDataPath = path.join(__dirname, '../../data/video_enrichment_cache.json');
     const videoData = JSON.parse(fs.readFileSync(videoDataPath, 'utf8'));
     const videoKeys = Object.keys(videoData).filter(key => !['lastUpdated', 'version', 'entries'].includes(key));
-    
+
     // Pre-filter videos
     console.log('🚫 Pre-filtering problematic content...');
     const filteredVideos = [];
     let filteredCount = 0;
-    
+
     for (const key of videoKeys) {
       const video = videoData[key];
       if (this.preFilterVideo(video)) {
@@ -824,9 +826,9 @@ class VideoMatcher {
         filteredCount++;
       }
     }
-    
+
     console.log(`✅ Filtered ${filteredCount} problematic videos, ${filteredVideos.length} candidates remaining`);
-    
+
     // Get all openings from database
     console.log('🔍 Loading openings from database...');
     const openings = await new Promise((resolve, reject) => {
@@ -836,18 +838,18 @@ class VideoMatcher {
       });
     });
     console.log(`📚 Found ${openings.length} openings to match against`);
-    
+
     // Match videos to openings
     console.log('🎯 Matching videos to specific openings...');
     const matches = [];
     let processedVideos = 0;
-    
+
     for (const video of filteredVideos) {
       processedVideos++;
       if (processedVideos % 100 === 0) {
         console.log(`   Processed ${processedVideos}/${filteredVideos.length} videos...`);
       }
-      
+
       for (const opening of openings) {
         const score = this.calculateMatchScore(video, opening);
         if (score > 0) {
@@ -860,9 +862,9 @@ class VideoMatcher {
         }
       }
     }
-    
+
     console.log(`🎯 Created ${matches.length} video-opening matches`);
-    
+
     // Select top videos per opening
     console.log('🔝 Selecting top videos per opening...');
     const openingGroups = {};
@@ -872,31 +874,31 @@ class VideoMatcher {
       }
       openingGroups[match.opening_id].push(match);
     });
-    
+
     const finalMatches = [];
     const uniqueVideos = new Set();
-    
+
     Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
       // Sort by score and take top 10
       const topMatches = openingMatches
         .sort((a, b) => b.match_score - a.match_score)
         .slice(0, 10);
-      
+
       topMatches.forEach(match => {
         finalMatches.push(match);
         uniqueVideos.add(match.video_id);
       });
     });
-    
+
     console.log(`✅ Final selection: ${finalMatches.length} matches, ${uniqueVideos.size} unique videos`);
-    
+
     // Save results to database
     console.log('💾 Saving results to database...');
-    
+
     // First, collect all unique videos to insert
     const videosToInsert = new Map();
     const enrichmentData = JSON.parse(fs.readFileSync('data/video_enrichment_cache.json', 'utf8'));
-    
+
     finalMatches.forEach(match => {
       if (!videosToInsert.has(match.video_id)) {
         const video = enrichmentData[match.video_id];
@@ -904,10 +906,10 @@ class VideoMatcher {
           // Parse duration from ISO 8601 format
           const durationMatch = video.duration?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
           const hours = parseInt(durationMatch?.[1] || '0');
-          const minutes = parseInt(durationMatch?.[2] || '0'); 
+          const minutes = parseInt(durationMatch?.[2] || '0');
           const seconds = parseInt(durationMatch?.[3] || '0');
           const durationSeconds = hours * 3600 + minutes * 60 + seconds;
-          
+
           videosToInsert.set(match.video_id, {
             id: video.id,
             title: video.title,
@@ -921,9 +923,9 @@ class VideoMatcher {
         }
       }
     });
-    
+
     console.log(`   📹 Inserting ${videosToInsert.size} unique videos...`);
-    
+
     // Insert videos
     for (const [videoId, videoData] of videosToInsert) {
       await new Promise((resolve, reject) => {
@@ -941,15 +943,15 @@ class VideoMatcher {
           videoData.view_count,
           videoData.published_at,
           videoData.thumbnail_url
-        ], function(err) {
+        ], function (err) {
           if (err) reject(err);
           else resolve();
         });
       });
     }
-    
+
     console.log(`   🔗 Creating ${finalMatches.length} video-opening relationships...`);
-    
+
     // Insert relationships
     for (const match of finalMatches) {
       await new Promise((resolve, reject) => {
@@ -961,15 +963,15 @@ class VideoMatcher {
           match.opening_id,
           match.video_id,
           match.match_score
-        ], function(err) {
+        ], function (err) {
           if (err) reject(err);
           else resolve();
         });
       });
     }
-    
+
     console.log('✅ Database save complete!');
-    
+
     return {
       totalVideos: videoKeys.length,
       filteredOut: filteredCount,

@@ -1,0 +1,32 @@
+{
+  "_comment": "Example configuration for Lichess analysis pipeline",
+  
+  "lichess_base_url": "https://database.lichess.org/standard/lichess_db_standard_rated_{}.pgn.zst",
+  "start_date": "2021-07",
+  
+  "_paths_comment": "Paths can be absolute or relative to project root. Leave null for defaults.",
+  "eco_base_path": null,
+  "output_file": null,
+  "checkpoint_file": null,
+  "work_dir": null,
+  
+  "_processing_comment": "Processing parameters control game analysis behavior",
+  "max_moves_per_game": 35,
+  "min_rating": 0,
+  "chunk_size": 8192,
+  
+  "_parallel_comment": "Parallel processing settings (1 download + 1 process recommended)",
+  "max_concurrent_downloads": 1,
+  "download_queue_size": 2,
+  
+  "_validation_comment": "File validation parameters in MB and GB",
+  "min_file_size_mb": 100,
+  "max_file_size_gb": 50,
+  
+  "_checkpoint_comment": "Checkpoint settings for resume capability",
+  "checkpoint_interval_games": 100000,
+  
+  "_retry_comment": "Retry settings for downloads",
+  "max_download_retries": 3,
+  "download_retry_delay": 30
+}

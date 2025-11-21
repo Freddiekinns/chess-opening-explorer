@@ -33,10 +33,23 @@ function loadECOData() {
 
 // Load popularity stats
 function loadPopularityStats() {
-  const statsPath = path.join(__dirname, '../../data/popularity_stats.json');
+  // Try multiple potential paths
+  const potentialPaths = [
+    path.join(__dirname, '../../api/data/popularity_stats.json'),  // From tools/analysis
+    path.join(__dirname, 'api/data/popularity_stats.json')          // From project root
+  ];
   
-  if (!fs.existsSync(statsPath)) {
-    console.error('Popularity stats file not found:', statsPath);
+  let statsPath = null;
+  for (const p of potentialPaths) {
+    if (fs.existsSync(p)) {
+      statsPath = p;
+      break;
+    }
+  }
+  
+  if (!statsPath) {
+    console.error('Popularity stats file not found. Tried:');
+    potentialPaths.forEach(p => console.error(`  - ${p}`));
     process.exit(1);
   }
   

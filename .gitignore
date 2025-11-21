@@ -109,3 +109,9 @@ data/channel_first_results.json
 # Future large files to exclude
 data/backups/
 *.log
+
+# Enrichment script state and config files
+tools/production/.enrichrc.json
+tools/production/enrich-state.json
+tools/production/enrich-*.log
+tools/production/enrich-errors.json

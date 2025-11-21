@@ -5,8 +5,8 @@ const RSSVideoDiscovery = require('./lib/rss-discovery');
 const PreFilterVideos = require('./lib/candidate-filter');
 const VideoEnrichment = require('./lib/video-enricher');
 const VideoMatcher = require('./lib/video-matcher');
-const DatabaseSchema = require('../database/schema-manager');
-const StaticFileGenerator = require('../database/static-file-generator');
+const DatabaseSchema = require('./database/schema-manager');
+const StaticFileGenerator = require('./database/static-file-generator');
 const { consolidateVideoIndex } = require('../../scripts/consolidate-video-index');
 
 /**
@@ -24,7 +24,7 @@ async function runIncrementalPipeline() {
     console.log('🚀 Starting Incremental Video Pipeline');
     console.log('======================================');
 
-    const dbPath = path.join(__dirname, '../../data/videos.sqlite');
+    const dbPath = path.join(__dirname, '../data/videos.sqlite');
 
     // Ensure data directory exists
     const dataDir = path.dirname(dbPath);
@@ -37,7 +37,6 @@ async function runIncrementalPipeline() {
 
     try {
         // Step 0: Ensure DB schema exists
-        console.log('\n📁 Step 0: Checking Database...');
         await db.initializeSchema();
 
         // Step 0.5: Check and Populate Openings

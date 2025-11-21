@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const DatabaseSchema = require('../../database/schema-manager.js');
+const DatabaseSchema = require('../database/schema-manager.js');
 
 /**
  * New FEN-based Video Matching System

@@ -79,6 +79,39 @@ class VideoEnrichment {
   }
 
   /**
+   * Search for videos using YouTube API
+   * @param {string} query - Search query
+   * @param {number} maxResults - Max results to return
+   * @returns {Promise<Array>} - Array of video objects (basic info)
+   */
+  async searchVideos(query, maxResults = 10) {
+    try {
+      const response = await this.youtube.search.list({
+        part: ['snippet'],
+        q: query,
+        type: 'video',
+        maxResults: maxResults,
+        order: 'relevance',
+        videoDuration: 'medium' // 4-20 mins
+      });
+
+      if (!response.data || !response.data.items) {
+        return [];
+      }
+
+      return response.data.items.map(item => ({
+        id: item.id.videoId,
+        title: item.snippet.title,
+        channelTitle: item.snippet.channelTitle,
+        publishedAt: item.snippet.publishedAt
+      }));
+    } catch (error) {
+      console.error(`Search failed for "${query}":`, error.message);
+      return [];
+    }
+  }
+
+  /**
    * Enriches multiple videos in efficient batches
    * @param {Array} candidateVideos - Array of pre-filtered video candidates
    * @returns {Promise<Array>} - Array of enriched video data

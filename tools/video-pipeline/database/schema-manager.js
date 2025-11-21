@@ -423,7 +423,7 @@ class DatabaseSchema {
     const integrityChecks = [
       'SELECT COUNT(*) as count FROM opening_videos WHERE video_id NOT IN (SELECT id FROM videos)',
       'SELECT COUNT(*) as count FROM opening_videos WHERE opening_id NOT IN (SELECT id FROM openings)',
-      'SELECT COUNT(*) as count FROM opening_videos WHERE match_score < 0 OR match_score > 1'
+      'SELECT COUNT(*) as count FROM opening_videos WHERE match_score < 0 OR match_score > 100'
     ];
     
     const results = await Promise.all(

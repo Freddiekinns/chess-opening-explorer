@@ -1,112 +1,81 @@
-# Tools Directory Structure
+# Tools Directory
 
-This directory contains various tools and utilities for the Chess Trainer project, organized by purpose and usage pattern.
+This directory contains the operational tools for the Chess Trainer project.
 
 ## Directory Structure
 
 ```
 tools/
-├── production/           # Production-ready tools (used in package.json scripts)
-├── video-pipeline/       # Video processing pipeline (F04 feature)
-├── validation/          # Data validation and quality assurance tools
-├── utilities/           # Helper utilities and manual tools
-├── analysis/            # Data analysis and research tools
-├── debug/               # Development and debugging tools
+├── video-pipeline/       # F04: YouTube Video Integration Pipeline
+├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
+├── analysis/             # F02: Data Analysis & Statistics
+├── data/                 # Shared data storage (SQLite DB, cache files)
+└── packages/             # Shared internal packages
 ```
 
-## Video Pipeline (`video-pipeline/`)
+## 📹 Video Pipeline (`tools/video-pipeline/`)
 
-Production video processing system for F04 YouTube integration:
+Handles the discovery, enrichment, and matching of YouTube videos to chess openings.
 
-- **`run_new_pipeline_fixed.js`** - Main production video pipeline
-- **`run_migration.js`** - Database migration and setup
-- **`analyze_comprehensive_performance.js`** - Pipeline performance analysis
-- **`video-matcher.js`** - Core video matching logic
+### **How to Run**
 
-See `README-PIPELINE.md` for complete usage documentation.
+**1. Backfill Historical Videos (Recommended for fresh DB)**
+If the database is empty or you need to find videos for specific openings immediately:
 
-## Production Tools (`production/`)
+```bash
+node tools/video-pipeline/backfill-videos.js
+```
 
-These tools are used in automated workflows and referenced in `package.json` scripts:
+_This searches YouTube for major openings and populates the database._
 
-- **`enrich_openings_llm.js`** - LLM enrichment pipeline for F01 feature
-  - NPM script: `npm run enrich`
-  - Usage: `node tools/production/enrich_openings_llm.js --batchSize=25`
+**2. Run the Main Pipeline**
+To process RSS feeds, match videos, and generate static JSON files:
 
-- **`enrich_course_data.js`** - Course enrichment pipeline for F03 feature
-  - NPM script: `npm run course:enrich`
-  - Usage: `node tools/production/enrich_course_data.js --single "Opening Name"`
+```bash
+node tools/video-pipeline/index.js
+```
 
-- **`integrate_course_data.js`** - Course data integration pipeline for F03 feature
-  - NPM script: `npm run course:integrate`
-  - Usage: `node tools/production/integrate_course_data.js`
+_This will:_
 
-- **`run-channel-first-pipeline.js`** - YouTube video data pipeline for F04 feature
-  - NPM script: `npm run videos:channel-first`
-  - Usage: `node tools/production/run-channel-first-pipeline.js`
+- _Fetch new videos from configured RSS feeds._
+- _Match them against the opening database._
+- _Generate/Update static JSON files in `public/api/openings/`._
 
-- **`verify_youtube_channels.js`** - YouTube channel verification for F04 feature
-  - NPM script: `npm run videos:verify-channels`
-  - Usage: `node tools/production/verify_youtube_channels.js`
+---
 
-## Validation Tools (`validation/`)
+## 🧠 LLM Enrichment (`tools/llm-enrichment/`)
 
-Quality assurance and data validation tools:
+Enriches opening PGNs with textual explanations using an LLM.
 
-- **`validate_course_data.js`** - Comprehensive course data validation
-- **`validate_course_urls.js`** - URL validation for course data
-- **`validate_fens.js`** - FEN string validation
-- **`validate_video_data.js`** - YouTube video data validation
+### **How to Run**
 
-## Utilities (`utilities/`)
+```bash
+node tools/llm-enrichment/enrich_openings_llm.js --help
+```
 
-Manual tools and helper utilities:
+_Common usage:_
 
-- **`manual_url_enrichment.js`** - Interactive URL enrichment for course data
-- **`research_helper.js`** - Research assistance with automated browser searches
-- **`clean_corrupted_analysis.js`** - Clean corrupted analysis data
+```bash
+node tools/llm-enrichment/enrich_openings_llm.js --batchSize=10
+```
 
-## Analysis Tools (`analysis/`)
+---
 
-Data analysis and research tools:
+## 📊 Analysis (`tools/analysis/`)
 
-- **`analyze_lichess_popularity.py`** - Lichess popularity analysis (F02 feature)
-- **`analyze_top_openings.js`** - Opening popularity analysis
-- **`check_enrichment_status.py`** - LLM enrichment status checking
+Tools for analyzing opening popularity and statistics.
 
-## Debug Tools (`debug/`)
+### **How to Run**
 
-Development and debugging utilities:
+```bash
+node tools/analysis/analyze_top_openings.js
+```
 
-- **`debug_args.js`** - Command-line argument debugging
-- **`debug_llm_response.js`** - LLM response debugging
-- **`minimal_test.js`** - Minimal LLM service test
-- **`simple_test.js`** - Simple environment test
-- **`test_course_analysis.js`** - Course analysis testing
-- **`test_llm_service.js`** - LLM service testing
+---
 
-## Migration Notes
+## 💾 Data (`tools/data/`)
 
-**Breaking Changes**: This restructuring moves tools from the root `tools/` directory to categorized subdirectories. All references in:
-- `package.json` scripts
-- Test files
-- Documentation
-- Tool internal paths
+Contains the persistent data stores:
 
-...have been updated to use the new paths.
-
-## Best Practices
-
-1. **Production Tools**: Keep these stable and well-tested as they're used in CI/CD workflows
-2. **Validation Tools**: Use these to ensure data quality before production deployment
-3. **Utilities**: Use these for manual data curation and one-off tasks
-4. **Analysis Tools**: Use these for research and data insights
-5. **Debug Tools**: Use these for development and troubleshooting
-
-## Backward Compatibility
-
-The old flat structure has been preserved temporarily. To complete the migration:
-
-1. Verify all automated workflows use the new paths
-2. Update any deployment scripts
-3. Remove the old files from the root tools directory
+- `videos.sqlite`: The main video database.
+- `video_enrichment_cache.json`: Cache for YouTube API responses.

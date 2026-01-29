@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { Chess } from 'chess.js'
+import { Chess, Move } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
@@ -12,6 +12,7 @@ import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay'
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary'
 import { LineTypePill } from '../components/shared/LineTypePill'
 import { FeedbackSection } from '../components/shared/FeedbackSection'
+import { useAudio } from '../hooks/useAudio'
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -89,6 +90,18 @@ const OpeningDetailPage: React.FC = () => {
   const [openingsData, setOpeningsData] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
+
+  // Practice mode state
+  const [practiceMode, setPracticeMode] = useState(false)
+  const [practiceColor, setPracticeColor] = useState<'white' | 'black'>('white')
+  const [practiceIndex, setPracticeIndex] = useState(0)
+  const [practiceGame, setPracticeGame] = useState<Chess | null>(null)
+  const [incorrectAttempts, setIncorrectAttempts] = useState(0)
+  const [showHint, setShowHint] = useState(false)
+  const [highlightSquares, setHighlightSquares] = useState<Record<string, CSSProperties>>({})
+  const [isComplete, setIsComplete] = useState(false)
+  const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { playAudio } = useAudio()
 
   useEffect(() => {
     if (fen) {
@@ -270,7 +283,7 @@ const OpeningDetailPage: React.FC = () => {
     try {
       const response = await fetch('/api/openings/random')
       const data = await response.json()
-      
+
       if (data.success) {
         selectOpening(data.data)
       }
@@ -278,6 +291,192 @@ const OpeningDetailPage: React.FC = () => {
       console.error('Random opening error:', error)
     }
   }
+
+  // Practice mode functions
+  const startPractice = useCallback(() => {
+    const newGame = new Chess()
+    setPracticeGame(newGame)
+    setPracticeIndex(0)
+    setIncorrectAttempts(0)
+    setShowHint(false)
+    setHighlightSquares({})
+    setIsComplete(false)
+    setPracticeMode(true)
+
+    // If playing as black, auto-play white's first move
+    if (practiceColor === 'black') {
+      const movesArray = getMovesList()
+      if (movesArray.length > 0) {
+        setTimeout(() => {
+          const tempGame = new Chess()
+          const move = tempGame.move(movesArray[0])
+          if (move) {
+            setPracticeGame(new Chess(tempGame.fen()))
+            setPracticeIndex(1)
+            playAudio('move')
+          }
+        }, 400)
+      }
+    }
+  }, [practiceColor, opening])
+
+  const exitPractice = useCallback(() => {
+    if (autoPlayTimeoutRef.current) {
+      clearTimeout(autoPlayTimeoutRef.current)
+    }
+    setPracticeMode(false)
+    setPracticeGame(null)
+    setPracticeIndex(0)
+    setIncorrectAttempts(0)
+    setShowHint(false)
+    setHighlightSquares({})
+    setIsComplete(false)
+  }, [])
+
+  const isUserTurn = useCallback((): boolean => {
+    if (!practiceGame) return false
+    const turn = practiceGame.turn()
+    return (turn === 'w' && practiceColor === 'white') || (turn === 'b' && practiceColor === 'black')
+  }, [practiceGame, practiceColor])
+
+  const getExpectedMove = useCallback((): string | null => {
+    const movesArray = getMovesList()
+    if (practiceIndex >= movesArray.length) return null
+    return movesArray[practiceIndex]
+  }, [opening, practiceIndex])
+
+  const getHintSquare = useCallback((): string | null => {
+    if (!practiceGame) return null
+    const expectedMove = getExpectedMove()
+    if (!expectedMove) return null
+
+    // Try to find the source square by testing the move
+    const tempGame = new Chess(practiceGame.fen())
+    const move = tempGame.move(expectedMove)
+    return move?.from || null
+  }, [practiceGame, getExpectedMove])
+
+  const showHintHighlight = useCallback(() => {
+    const hintSquare = getHintSquare()
+    if (hintSquare) {
+      setHighlightSquares({
+        [hintSquare]: { backgroundColor: 'rgba(255, 170, 0, 0.5)' }
+      })
+      setShowHint(true)
+    }
+  }, [getHintSquare])
+
+  const handleCorrectMove = useCallback((move: Move) => {
+    if (!practiceGame) return
+
+    const movesArray = getMovesList()
+    const newIndex = practiceIndex + 1
+
+    // Update game state with the move
+    const newGame = new Chess(practiceGame.fen())
+    newGame.move(move.san)
+    setPracticeGame(newGame)
+    setPracticeIndex(newIndex)
+    setIncorrectAttempts(0)
+    setShowHint(false)
+
+    // Show green highlight briefly
+    setHighlightSquares({
+      [move.from]: { backgroundColor: 'rgba(0, 200, 83, 0.4)' },
+      [move.to]: { backgroundColor: 'rgba(0, 200, 83, 0.4)' }
+    })
+    playAudio('move')
+
+    setTimeout(() => {
+      setHighlightSquares({})
+    }, 300)
+
+    // Check for completion
+    if (newIndex >= movesArray.length) {
+      setIsComplete(true)
+      playAudio('success')
+      return
+    }
+
+    // Auto-play opponent's move if it exists
+    if (newIndex < movesArray.length) {
+      const nextMove = movesArray[newIndex]
+      const nextTurnIsUser = (newGame.turn() === 'w' && practiceColor === 'white') ||
+                             (newGame.turn() === 'b' && practiceColor === 'black')
+
+      if (!nextTurnIsUser) {
+        autoPlayTimeoutRef.current = setTimeout(() => {
+          const autoGame = new Chess(newGame.fen())
+          const autoMove = autoGame.move(nextMove)
+          if (autoMove) {
+            setPracticeGame(new Chess(autoGame.fen()))
+            setPracticeIndex(newIndex + 1)
+            playAudio('move')
+
+            // Check completion after auto-play
+            if (newIndex + 1 >= movesArray.length) {
+              setIsComplete(true)
+              playAudio('success')
+            }
+          }
+        }, 400)
+      }
+    }
+  }, [practiceGame, practiceIndex, practiceColor, opening, playAudio])
+
+  const handleIncorrectMove = useCallback(() => {
+    const newAttempts = incorrectAttempts + 1
+    setIncorrectAttempts(newAttempts)
+
+    // Auto-show hint after 2 failed attempts
+    if (newAttempts >= 2) {
+      showHintHighlight()
+    }
+  }, [incorrectAttempts, showHintHighlight])
+
+  const validateAndHandleMove = useCallback(({ sourceSquare, targetSquare }: { piece?: any; sourceSquare: string; targetSquare: string | null }): boolean => {
+    if (!practiceGame || !isUserTurn() || !targetSquare) return false
+
+    const expectedMove = getExpectedMove()
+    if (!expectedMove) return false
+
+    // Try the move on a temp instance
+    const tempGame = new Chess(practiceGame.fen())
+    const attempt = tempGame.move({
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: 'q' // Auto-promote to queen for simplicity
+    })
+
+    if (!attempt) return false // Illegal move
+
+    // Compare with expected move
+    const isCorrect = attempt.san === expectedMove
+
+    if (isCorrect) {
+      handleCorrectMove(attempt)
+    } else {
+      handleIncorrectMove()
+    }
+
+    return isCorrect
+  }, [practiceGame, isUserTurn, getExpectedMove, handleCorrectMove, handleIncorrectMove])
+
+  // Cleanup auto-play timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoPlayTimeoutRef.current) {
+        clearTimeout(autoPlayTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  // Reset practice mode when opening changes
+  useEffect(() => {
+    if (practiceMode) {
+      exitPractice()
+    }
+  }, [fen])
 
   if (loading) {
     return (
@@ -401,51 +600,134 @@ const OpeningDetailPage: React.FC = () => {
             <div className="chessboard-container">
               <Chessboard
                 options={{
-                  position: game.fen(),
-                  boardOrientation: 'white',
-                  allowDragging: false,
+                  position: practiceMode ? practiceGame?.fen() : game.fen(),
+                  boardOrientation: practiceMode ? practiceColor : 'white',
+                  allowDragging: practiceMode && isUserTurn() && !isComplete,
+                  onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
+                  squareStyles: highlightSquares,
                   boardStyle: {
                     borderRadius: '8px',
                   },
                 }}
               />
             </div>
-            
-            {/* Navigation Controls - Immediately after board for intuitive control */}
-            <div className="chessboard-navigation">
-              <button 
-                onClick={() => goToMove(0)}
-                className="chessboard-nav-btn"
-                disabled={currentMoveIndex === 0}
-                title="Go to start"
-              >
-                {'<<'}
-              </button>
-              <button 
-                onClick={previousMove}
-                className="chessboard-nav-btn"
-                disabled={currentMoveIndex === 0}
-                title="Previous move"
-              >
-                {'<'}
-              </button>
-              <button 
-                onClick={nextMove}
-                className="chessboard-nav-btn"
-                disabled={currentMoveIndex >= getMovesList().length}
-                title="Next move"
-              >
-                {'>'}
-              </button>
-              <button 
-                onClick={() => goToMove(getMovesList().length)}
-                className="chessboard-nav-btn"
-                disabled={currentMoveIndex >= getMovesList().length}
-                title="Go to end"
-              >
-                {'>>'}
-              </button>
-            </div>
+
+            {/* Practice Mode Controls */}
+            {practiceMode ? (
+              <div className="practice-controls">
+                <div className="practice-controls-row">
+                  <div className="practice-color-toggle">
+                    <span className="practice-label">Playing as:</span>
+                    <button
+                      className={`practice-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
+                      onClick={() => {
+                        setPracticeColor('white')
+                        if (practiceMode) startPractice()
+                      }}
+                      disabled={isComplete}
+                    >
+                      White
+                    </button>
+                    <button
+                      className={`practice-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
+                      onClick={() => {
+                        setPracticeColor('black')
+                        if (practiceMode) {
+                          // Need to restart with black
+                          const newGame = new Chess()
+                          const movesArray = getMovesList()
+                          if (movesArray.length > 0) {
+                            const move = newGame.move(movesArray[0])
+                            if (move) {
+                              setPracticeGame(new Chess(newGame.fen()))
+                              setPracticeIndex(1)
+                              setIncorrectAttempts(0)
+                              setShowHint(false)
+                              setHighlightSquares({})
+                              setIsComplete(false)
+                            }
+                          }
+                        }
+                      }}
+                      disabled={isComplete}
+                    >
+                      Black
+                    </button>
+                  </div>
+
+                  <div className="practice-progress">
+                    {isComplete ? (
+                      <span className="practice-complete">Complete!</span>
+                    ) : (
+                      <span className="practice-counter">
+                        Move {Math.floor(practiceIndex / 2) + 1} of {Math.ceil(getMovesList().length / 2)}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="practice-actions">
+                    {!isComplete && !showHint && (
+                      <button
+                        className="practice-btn practice-hint-btn"
+                        onClick={showHintHighlight}
+                        title="Show which piece to move"
+                      >
+                        Hint
+                      </button>
+                    )}
+                    <button
+                      className="practice-btn practice-exit-btn"
+                      onClick={exitPractice}
+                    >
+                      Exit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Navigation Controls - Shown when not in practice mode */
+              <div className="chessboard-navigation">
+                <button
+                  onClick={() => goToMove(0)}
+                  className="chessboard-nav-btn"
+                  disabled={currentMoveIndex === 0}
+                  title="Go to start"
+                >
+                  {'<<'}
+                </button>
+                <button
+                  onClick={previousMove}
+                  className="chessboard-nav-btn"
+                  disabled={currentMoveIndex === 0}
+                  title="Previous move"
+                >
+                  {'<'}
+                </button>
+                <button
+                  onClick={nextMove}
+                  className="chessboard-nav-btn"
+                  disabled={currentMoveIndex >= getMovesList().length}
+                  title="Next move"
+                >
+                  {'>'}
+                </button>
+                <button
+                  onClick={() => goToMove(getMovesList().length)}
+                  className="chessboard-nav-btn"
+                  disabled={currentMoveIndex >= getMovesList().length}
+                  title="Go to end"
+                >
+                  {'>>'}
+                </button>
+                <button
+                  className="chessboard-nav-btn practice-toggle-btn"
+                  onClick={startPractice}
+                  title="Practice this opening"
+                >
+                  Practice
+                </button>
+              </div>
+            )}
 
             {/* FEN Utilities - Technical information, less frequently accessed */}
             <div className="chessboard-fen-utilities">

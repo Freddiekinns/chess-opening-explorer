@@ -3286,3 +3286,153 @@ body {
   margin: 0;
   color: var(--color-text-secondary);
 }
+
+/* =================
+   PRACTICE MODE
+   ================= */
+.practice-controls {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--color-border);
+}
+
+.practice-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.practice-color-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.practice-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.practice-color-btn {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.practice-color-btn:hover:not(:disabled) {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-muted);
+}
+
+.practice-color-btn.active {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border-color: var(--color-brand-orange);
+}
+
+.practice-color-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.practice-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.practice-counter {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.practice-complete {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-success);
+  font-weight: var(--font-weight-semibold);
+}
+
+.practice-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.practice-btn {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.practice-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-muted);
+  transform: translateY(-1px);
+}
+
+.practice-hint-btn:hover {
+  background-color: rgba(255, 170, 0, 0.15);
+  border-color: rgba(255, 170, 0, 0.4);
+  color: #ffaa00;
+}
+
+.practice-exit-btn:hover {
+  background-color: rgba(232, 93, 4, 0.15);
+  border-color: rgba(232, 93, 4, 0.4);
+  color: var(--color-brand-orange);
+}
+
+.practice-toggle-btn {
+  background-color: rgba(232, 93, 4, 0.15);
+  color: var(--color-brand-orange);
+  border-color: rgba(232, 93, 4, 0.3);
+  margin-left: var(--space-2);
+}
+
+.practice-toggle-btn:hover:not(:disabled) {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border-color: var(--color-brand-orange);
+}
+
+/* Responsive adjustments for practice mode */
+@media (max-width: 600px) {
+  .practice-controls-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .practice-color-toggle,
+  .practice-progress,
+  .practice-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .practice-btn,
+  .practice-color-btn {
+    transition: none;
+  }
+}

@@ -7,6 +7,53 @@ global.ResizeObserver = class ResizeObserver {
   disconnect() {}
 };
 
+// Mock AudioContext for practice mode audio
+class MockAudioContext {
+  state = 'running'
+  createBufferSource() {
+    return {
+      buffer: null,
+      connect: () => {},
+      start: () => {},
+      stop: () => {}
+    }
+  }
+  createOscillator() {
+    return {
+      frequency: { value: 440 },
+      type: 'sine',
+      connect: () => {},
+      start: () => {},
+      stop: () => {}
+    }
+  }
+  createGain() {
+    return {
+      gain: {
+        value: 1,
+        setValueAtTime: () => {},
+        exponentialRampToValueAtTime: () => {}
+      },
+      connect: () => {}
+    }
+  }
+  decodeAudioData() {
+    return Promise.resolve({})
+  }
+  resume() {
+    return Promise.resolve()
+  }
+  get destination() {
+    return {}
+  }
+  get currentTime() {
+    return 0
+  }
+}
+
+(global as any).AudioContext = MockAudioContext;
+(global as any).webkitAudioContext = MockAudioContext;
+
 // Mock canvas context for chessboard
 (global as any).HTMLCanvasElement.prototype.getContext = () => ({
   fillRect: () => {},

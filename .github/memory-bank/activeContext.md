@@ -1,12 +1,25 @@
 # Active Context
 
-**Date:** 2025-09-08
+**Date:** 2025-01-29
 
-## Current Focus: Related Openings UX Consolidation & Design System Alignment
+## Current Focus: Interactive Move Trainer (Practice Mode) MVP
 
-Completed consolidation of the Related Openings experience from a dual (teaser + tab/modal) model to a single inline expandable teaser. Added JS-driven height animation for smoother expand/collapse with reduced-motion safeguard. Unified header hierarchy via new card header pattern (accent bar with softened gradient) and de-emphasized ECO pill (right alignment + tooltip accessibility).
+Implemented Practice Mode on the opening detail page - an interactive trainer where users can play opening moves, receive feedback, and build muscle memory through guided repetition.
 
-## Recent Changes (2025-09-07 → 2025-09-08)
+## Recent Changes (2025-01-29)
+- **Practice Mode MVP** - Full implementation of interactive move trainer:
+  - Toggle between explore and practice modes via "Practice" button
+  - Color selection (White default, can switch to Black with board flip)
+  - Move validation using chess.js - only correct moves accepted
+  - Auto-play opponent responses after 400ms delay
+  - Hint system - manual button or auto-show after 2 failed attempts (amber highlight)
+  - Completion state with "Complete!" message
+  - Audio feedback (move sounds, success chime) with WebAudio API + fallback tones
+  - 12 unit/integration tests covering all functionality
+- **New files:** `useAudio.ts` hook, `practice-mode.test.tsx`, CSS styles
+- **Modified:** `OpeningDetailPage.tsx`, `simplified.css`, test setup
+
+## Previous Changes (2025-09-07 → 2025-09-08)
 - Hybrid related openings UI implemented (TASK003) then consolidated (TASK002 final pass).
 - Removed gradient fade & partial row artifact; standardized collapsed preview to 4 rows (including mainline row when present).
 - Replaced CSS max-height transition approach with measured JS height animation (supports collapse symmetry, cleans up transition end, respects `prefers-reduced-motion`).

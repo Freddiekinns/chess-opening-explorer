@@ -1,12 +1,25 @@
 # Active Context
 
-**Date:** 2025-01-29
+**Date:** 2025-01-30
 
-## Current Focus: Interactive Move Trainer (Practice Mode) MVP
+## Current Focus: PGN Opening Identification Feature
 
-Implemented Practice Mode on the opening detail page - an interactive trainer where users can play opening moves, receive feedback, and build muscle memory through guided repetition.
+Implemented ability for users to paste PGN text and identify the matching chess opening, navigating directly to its detail page.
 
-## Recent Changes (2025-01-29)
+## Recent Changes (2025-01-30)
+- **PGN Opening Identification** - Full implementation:
+  - Modal entry point via "Or search by PGN" link below search bar on landing page
+  - Client-side PGN parsing using chess.js (strips headers, comments, variations)
+  - FEN generation after each move for opening lookup
+  - Deepest match algorithm - finds last known opening position
+  - Distinguishes exact matches vs partial matches (game extends beyond known openings)
+  - Error handling for invalid PGN moves
+  - Full accessibility: focus trap, Escape to close, ARIA attributes
+  - 36 unit tests for PGN utilities, 28 integration tests for modal
+- **New files:** `pgn-utils.ts`, `PGNInputModal.tsx`, test files
+- **Modified:** `LandingPage.tsx`, `simplified.css`, `utils/index.ts`
+
+## Previous Changes (2025-01-29)
 - **Practice Mode MVP** - Full implementation of interactive move trainer:
   - Toggle between explore and practice modes via "Practice" button
   - Color selection (White default, can switch to Black with board flip)

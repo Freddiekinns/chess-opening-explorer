@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { SearchBar } from '../components/shared/SearchBar'
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid'
 import { FeedbackSection } from '../components/shared/FeedbackSection'
+import { PGNInputModal } from '../components/shared/PGNInputModal'
 
 interface Opening {
   fen: string
@@ -33,6 +34,7 @@ const LandingPage: React.FC = () => {
   const [dataLoaded, setDataLoaded] = useState(false)
   const [popularOpenings, setPopularOpenings] = useState<Opening[]>([])
   const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false)
+  const [isPGNModalOpen, setIsPGNModalOpen] = useState(false)
   const navigate = useNavigate()
 
   // Apply body class for this page
@@ -133,6 +135,11 @@ const LandingPage: React.FC = () => {
     navigate(`/opening/${encodedFen}`)
   }
 
+  const handlePGNOpeningFound = (fen: string) => {
+    const encodedFen = encodeURIComponent(fen)
+    navigate(`/opening/${encodedFen}`)
+  }
+
   return (
     <div className="landing-page">
       {/* Hero Section - Clean centered design */}
@@ -158,6 +165,14 @@ const LandingPage: React.FC = () => {
               onExpandSearch={handleExpandSearch}
               className="hero-search"
             />
+            <div className="pgn-search-link-wrapper">
+              <button
+                className="pgn-search-link"
+                onClick={() => setIsPGNModalOpen(true)}
+              >
+                Or search by PGN
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -177,6 +192,13 @@ const LandingPage: React.FC = () => {
         )}
       </div>
       <FeedbackSection source="landing" />
+
+      <PGNInputModal
+        isOpen={isPGNModalOpen}
+        onClose={() => setIsPGNModalOpen(false)}
+        onOpeningFound={handlePGNOpeningFound}
+        openingsData={openingsData}
+      />
     </div>
   )
 }

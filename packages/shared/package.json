@@ -42,14 +42,19 @@
     }
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vitest": "^1.0.4",
-    "eslint": "^8.55.0",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0"
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "typescript": "^5.2.2",
+    "vitest": "^1.0.4"
   },
   "vitest": {
     "environment": "node",
-    "testMatch": ["**/tests/**/*.test.ts"]
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ]
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0"
   }
 }

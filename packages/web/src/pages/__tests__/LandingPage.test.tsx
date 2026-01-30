@@ -61,8 +61,8 @@ describe('LandingPage Component', () => {
       await act(async () => {
         renderLandingPage()
       })
-      
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       expect(screen.getByText(/Master every opening from the first move/i)).toBeInTheDocument()
     })
 
@@ -190,7 +190,7 @@ describe('LandingPage Component', () => {
 
       renderLandingPage()
       
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
   })
 
@@ -204,7 +204,7 @@ describe('LandingPage Component', () => {
       
       renderLandingPage()
       
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       
       // Should not show opening data
       await waitFor(() => {
@@ -221,14 +221,14 @@ describe('LandingPage Component', () => {
       
       renderLandingPage()
       
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
 
     test('should show loading state while data is being fetched', () => {
       renderLandingPage()
       
       // Should still render the basic structure immediately
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
   })
 
@@ -249,7 +249,7 @@ describe('LandingPage Component', () => {
       renderLandingPage()
       
       // Should still render without crashing
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
 
     test('should handle fetch errors', async () => {
@@ -259,7 +259,7 @@ describe('LandingPage Component', () => {
       renderLandingPage()
       
       // Should still render without crashing
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
   })
 

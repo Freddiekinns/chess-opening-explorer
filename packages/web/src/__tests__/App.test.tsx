@@ -52,7 +52,7 @@ describe('App Component', () => {
 
       // Should show the app content
       await waitFor(() => {
-        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       })
     })
 
@@ -113,7 +113,7 @@ describe('App Component', () => {
 
       // Should either redirect to home or show 404 - either way it should render
       await waitFor(() => {
-        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       })
     })
   })
@@ -140,7 +140,7 @@ describe('App Component', () => {
 
       // Should still render without crashing
       await waitFor(() => {
-        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       })
     })
 
@@ -166,7 +166,7 @@ describe('App Component', () => {
       )
 
       // Should render without crashing, check for basic content instead
-      expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
     })
   })
 
@@ -180,7 +180,7 @@ describe('App Component', () => {
 
       // Check for essential layout elements
       await waitFor(() => {
-        expect(screen.getByText(/Opening Book/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
       })
     })
   })

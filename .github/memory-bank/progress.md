@@ -19,6 +19,14 @@
     -   Hear audio feedback (move sounds, completion chime)
     -   See progress counter and completion state
     -   12 passing tests covering the full practice flow
+-   **PGN Opening Identification:** Users can paste PGN games/moves to identify openings:
+    -   Modal accessible via "Or search by PGN" link on landing page
+    -   Parses full PGN (headers, comments, variations stripped automatically)
+    -   Validates moves and generates FEN positions using chess.js
+    -   Finds deepest matching opening in database
+    -   Shows exact vs partial match info (when game extends beyond known openings)
+    -   Direct navigation to opening detail page
+    -   36 unit tests + 28 integration tests
 
 ## What's Left to Build
 

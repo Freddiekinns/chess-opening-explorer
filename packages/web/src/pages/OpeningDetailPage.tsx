@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Chess, Move } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
@@ -79,6 +79,7 @@ interface MovePair {
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
   const [opening, setOpening] = useState<Opening | null>(null)
   const [videos, setVideos] = useState<Video[]>([])
   const [game, setGame] = useState(new Chess())
@@ -499,6 +500,15 @@ const OpeningDetailPage: React.FC = () => {
     )
   }
 
+  const params = new URLSearchParams(location.search)
+  const ref = params.get('ref')
+  const personalPlatform = params.get('platform')
+  const personalUsername = params.get('username')
+
+  const backHref = ref === 'personal'
+    ? `/?view=personal${personalPlatform ? `&platform=${encodeURIComponent(personalPlatform)}` : ''}${personalUsername ? `&username=${encodeURIComponent(personalUsername)}` : ''}`
+    : '/'
+
   return (
     <div className="detail-page-body">
       {/* Floating Back Button for Mobile */}
@@ -508,8 +518,8 @@ const OpeningDetailPage: React.FC = () => {
       <header className="detail-header">
         <div className="detail-header-container">
           <div className="header-left">
-            <Link to="/" className="back-button">
-              <span className="back-text-desktop">Back to search</span>
+            <Link to={backHref} className="back-button">
+              <span className="back-text-desktop">{ref === 'personal' ? 'Back to personal stats' : 'Back to search'}</span>
               <span className="back-text-mobile">←</span>
             </Link>
           </div>

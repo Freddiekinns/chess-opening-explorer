@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect, useMemo } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { SearchBar } from '../components/shared/SearchBar'
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid'
 import { FeedbackSection } from '../components/shared/FeedbackSection'
 import { PGNInputModal } from '../components/shared/PGNInputModal'
+import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats'
 
 interface Opening {
   fen: string
@@ -35,6 +36,9 @@ const LandingPage: React.FC = () => {
   const [popularOpenings, setPopularOpenings] = useState<Opening[]>([])
   const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false)
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false)
+  const location = useLocation()
+  const [view, setView] = useState<'global' | 'personal'>('global')
+  const [personalUsernamePrefill, setPersonalUsernamePrefill] = useState('')
   const navigate = useNavigate()
 
   // Apply body class for this page
@@ -62,6 +66,25 @@ const LandingPage: React.FC = () => {
     } catch (error) {
       console.warn('Failed to expand search index:', error)
     }
+  }
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    setView(params.get('view') === 'personal' ? 'personal' : 'global')
+    setPersonalUsernamePrefill(params.get('username') || '')
+  }, [location.search])
+
+  const setViewAndUpdateUrl = (nextView: 'global' | 'personal') => {
+    const params = new URLSearchParams(location.search)
+
+    if (nextView === 'personal') {
+      params.set('view', 'personal')
+    } else {
+      params.delete('view')
+    }
+
+    const qs = params.toString()
+    navigate({ pathname: '/', search: qs ? `?${qs}` : '' }, { replace: true })
   }
 
   // Load openings data and popular openings with optimized loading strategy
@@ -140,6 +163,12 @@ const LandingPage: React.FC = () => {
     navigate(`/opening/${encodedFen}`)
   }
 
+  const effectiveOpeningsData = useMemo(() => {
+    // Personal analysis uses the full index. If we're still on the limited index, allow the user
+    // to trigger the expansion via SearchBar.
+    return openingsData
+  }, [openingsData])
+
   return (
     <div className="landing-page">
       {/* Hero Section - Clean centered design */}
@@ -152,6 +181,30 @@ const LandingPage: React.FC = () => {
           <p className="hero-subtitle">
             Master every opening from the first move - discover and learn chess openings.
           </p>
+
+          <div className="hero-view-toggle" role="tablist" aria-label="Explore view">
+            <button
+              type="button"
+              className={`hero-view-toggle__btn ${view === 'global' ? 'is-active' : ''}`}
+              onClick={() => setViewAndUpdateUrl('global')}
+              role="tab"
+              aria-selected={view === 'global'}
+            >
+              Global Popularity
+            </button>
+            <button
+              type="button"
+              className={`hero-view-toggle__btn ${view === 'personal' ? 'is-active' : ''}`}
+              onClick={() => {
+                setViewAndUpdateUrl('personal')
+                void handleExpandSearch()
+              }}
+              role="tab"
+              aria-selected={view === 'personal'}
+            >
+              Personal Repertoire
+            </button>
+          </div>
 
           {/* Search bar */}
           <div className="hero-search-wrapper">
@@ -179,16 +232,22 @@ const LandingPage: React.FC = () => {
 
       {/* Popular Openings - Always reserve space to prevent layout shift */}
       <div className="popular-openings-container">
-        {dataLoaded && popularOpenings.length > 0 ? (
-          <PopularOpeningsGrid
-            openings={popularOpenings}
-            onOpeningSelect={handleOpeningSelect}
-            className="main-grid"
-          />
+        {view === 'personal' ? (
+          <PersonalOpeningStats openingsData={effectiveOpeningsData} prefillUsername={personalUsernamePrefill} />
         ) : (
-          <div className="popular-openings-placeholder">
-            {/* Reserved space for Popular Openings to prevent layout shift */}
-          </div>
+          <>
+            {dataLoaded && popularOpenings.length > 0 ? (
+              <PopularOpeningsGrid
+                openings={popularOpenings}
+                onOpeningSelect={handleOpeningSelect}
+                className="main-grid"
+              />
+            ) : (
+              <div className="popular-openings-placeholder">
+                {/* Reserved space for Popular Openings to prevent layout shift */}
+              </div>
+            )}
+          </>
         )}
       </div>
       <FeedbackSection source="landing" />

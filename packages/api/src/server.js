@@ -32,10 +32,12 @@ app.get('/health', (req, res) => {
 const openingRoutes = require('./routes/openings.routes');
 const statsRoutes = require('./routes/stats.routes');
 const courseRoutes = require('./routes/courses.routes');
+const personalRoutes = require('./routes/personal.routes');
 
 app.use('/api/openings', openingRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/courses', courseRoutes());
+app.use('/api/personal', personalRoutes());
 
 app.get('/api/status', (req, res) => {
   res.json({

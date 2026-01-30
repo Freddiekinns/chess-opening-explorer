@@ -52,6 +52,10 @@
       "destination": "/api/courses"
     },
     {
+      "source": "/api/personal/(.*)",
+      "destination": "/api/personal"
+    },
+    {
       "source": "/api/health",
       "destination": "/api/health"
     },

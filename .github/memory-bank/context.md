@@ -1,0 +1,91 @@
+# Project Context: Chess Opening Explorer
+
+## What This Project Is
+
+A web application helping chess players explore, learn, and analyze openings. Combines opening data, Lichess statistics, LLM-generated content, and curated YouTube videos.
+
+**Target Users**: Beginner to intermediate players (under 1800) who need guidance; advanced players for quick reference.
+
+## Core Features
+
+1. **Opening Database** - 12,377+ openings with ECO codes, move sequences, variations
+2. **Popularity Stats** - Real-time data from Lichess master games (win/draw/loss rates)
+3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas
+4. **Video Integration** - Curated YouTube videos matched to openings
+5. **Practice Mode** - Interactive move trainer with feedback and hints
+
+## Technology Stack
+
+### Frontend
+- **Framework**: React 19 + TypeScript, Vite
+- **Styling**: Single CSS file (`packages/web/src/styles/simplified.css`)
+- **Testing**: Vitest + React Testing Library (in `packages/web/src/**/__tests__/`)
+
+### Backend
+- **Runtime**: Node.js + Express
+- **Data**: JSON files as production database (pre-processed)
+- **API**: Thin Vercel serverless wrappers in `api/` importing from `packages/api`
+- **Testing**: Jest (in root `tests/`)
+
+### Data Pipelines
+- **Python**: LLM enrichment, Lichess integration, analysis (`tools/analysis/`)
+- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`)
+- **External APIs**: Lichess, YouTube Data API, Google Gemini
+
+## Key Architecture Decisions
+
+### AD-003: Single CSS File
+All styles in `packages/web/src/styles/simplified.css`. No new CSS files - ever.
+
+### AD-004: Channel-First Video Pipeline
+Index videos from trusted channels first, then match to openings. Saves 99%+ API quota.
+
+### AD-005: Conservative AI Policy
+AI content treated with skepticism. URLs from AI almost always discarded (95%+ hallucination rate). Validation scripts verify AI output before committing.
+
+### AD-006: Idempotent Data Processing
+All `tools/` scripts can be re-run safely without duplicating data.
+
+### AD-009: Unified Card Header Pattern
+Consistent `.card-header` with optional accent bar, ECO pill right-aligned with tooltip.
+
+### AD-010: JS-Driven Height Animation
+Measure `scrollHeight` for expand/collapse instead of CSS max-height. Respect `prefers-reduced-motion`.
+
+### AD-011: Test Runner Separation
+- Backend (Jest): `tests/` directory
+- Frontend (Vitest): `packages/web/src/**/__tests__/`
+
+## Project Structure
+
+```
+chess-opening-explorer/
+├── packages/
+│   ├── api/          # API logic and services
+│   ├── web/          # React frontend
+│   └── shared/       # Shared utilities
+├── api/              # Vercel serverless wrappers
+├── data/             # JSON data files
+├── tools/            # Data pipelines (Python + Node.js)
+├── tests/            # Backend tests (Jest)
+└── .github/
+    ├── instructions/ # Coding standards
+    └── memory-bank/  # Project context
+```
+
+## Data Flow
+
+```
+Lichess API → Python Analysis → popularity-stats.json
+YouTube API → Channel-First Pipeline → video-index.json
+Gemini API → LLM Enrichment → openings.json (enhanced)
+All JSON → Frontend (static, pre-generated)
+```
+
+## Known Constraints
+
+- **Lichess API**: Rate limited
+- **YouTube API**: Daily quota limits
+- **Gemini API**: Token limits and costs
+- **Static Data**: Updates require rebuild/redeploy
+- **Large Payload**: `/api/openings/all` is 4.7MB JSON

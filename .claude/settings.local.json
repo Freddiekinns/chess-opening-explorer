@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"C:\\\\Users\\\\fred_\\\\chess-opening-explorer\\\\pages\"\" && echo \"---\" && ls -la \"C:Usersfred_chess-opening-explorercomponents\"\")",
+      "Bash(tree:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:react-chessboard.vercel.app)",
+      "Bash(dir /s /b \"C:\\\\Users\\\\fred_\\\\chess-opening-explorer\\\\packages\\\\web\\\\public\")",
+      "Bash(npm test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(grep:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(claude --chrome)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(wc:*)"
+    ]
+  }
+}

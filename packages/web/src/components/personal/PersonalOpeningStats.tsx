@@ -125,6 +125,8 @@ function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
   return qualified.reduce((worst, curr) => (getWinRate(curr) < getWinRate(worst) ? curr : worst))
 }
 
+type SideTab = 'white' | 'black'
+
 export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; prefillUsername?: string }> = ({
   openingsData,
   prefillUsername
@@ -140,6 +142,10 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
   const [total, setTotal] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [dashboard, setDashboard] = useState<DashboardData | null>(null)
+
+  // Mobile-specific UI state
+  const [controlsCollapsed, setControlsCollapsed] = useState(false)
+  const [activeTab, setActiveTab] = useState<SideTab>('white')
 
   const abortRef = useRef<AbortController | null>(null)
 
@@ -319,6 +325,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
       setStep('done')
       setStepText('Done')
       setProgress(100)
+      setControlsCollapsed(true) // Collapse controls on mobile after analysis
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'Failed'
       setError(msg)
@@ -345,14 +352,32 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
 
   const placeholderText = platform === 'lichess' ? 'e.g. DrNykterstein' : 'e.g. MagnusCarlsen'
 
+  const platformLabel = platform === 'lichess' ? 'Lichess' : 'Chess.com'
+
   return (
     <div className="personal-card">
       <div className="card-header">
         <h2 className="card-header__title card-header__title--accent">Personal Opening Explorer</h2>
       </div>
 
-      <div className="personal-controls">
-        <div className="personal-controls__panel">
+      {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
+      {dashboard && controlsCollapsed && (
+        <button
+          type="button"
+          className="personal-controls-summary"
+          onClick={() => setControlsCollapsed(false)}
+          aria-expanded="false"
+          aria-controls="personal-controls-panel"
+        >
+          <span className="personal-controls-summary__text">
+            {normalizeUsername(username)} · {platformLabel} · {limit} games
+          </span>
+          <span className="personal-controls-summary__chevron" aria-hidden="true">&#9660;</span>
+        </button>
+      )}
+
+      <div className={`personal-controls ${controlsCollapsed && dashboard ? 'personal-controls--collapsed' : ''}`}>
+        <div className="personal-controls__panel" id="personal-controls-panel">
           <div className="personal-controls__row">
             <label className="personal-field">
               <span className="personal-field__label">Platform</span>
@@ -432,6 +457,18 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
           {!dashboard && (
             <div className="personal-note">Rated rapid/blitz/classical only. Max 200 games. Bullet excluded.</div>
           )}
+
+          {/* Mobile: button to collapse controls after they've been expanded */}
+          {dashboard && !controlsCollapsed && (
+            <button
+              type="button"
+              className="personal-controls-collapse"
+              onClick={() => setControlsCollapsed(true)}
+            >
+              <span className="personal-controls-collapse__chevron" aria-hidden="true">&#9650;</span>
+              <span>Hide</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -460,9 +497,28 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
         const bestOpening = findBestOpening(allOpenings)
         const weakestOpening = findWeakestOpening(allOpenings)
 
+        // Get data for the active tab (mobile)
+        const activeData = activeTab === 'white' 
+          ? { openings: dashboard.asWhite, games: dashboard.whiteGames, win: dashboard.whiteWin, draw: dashboard.whiteDraw, loss: dashboard.whiteLoss }
+          : { openings: dashboard.asBlack, games: dashboard.blackGames, win: dashboard.blackWin, draw: dashboard.blackDraw, loss: dashboard.blackLoss }
+
         return (
         <div className="personal-dashboard">
           <div className="personal-insights">
+            {/* Mobile: Inline compact win rates */}
+            <div className="personal-insights__rates-inline">
+              <span className="personal-rates-inline__item">
+                <span className="personal-rates-inline__icon" aria-hidden="true">&#9812;</span>
+                <span className="personal-rates-inline__value">{whiteWinRate}%</span>
+              </span>
+              <span className="personal-rates-inline__sep" aria-hidden="true">·</span>
+              <span className="personal-rates-inline__item">
+                <span className="personal-rates-inline__icon" aria-hidden="true">&#9818;</span>
+                <span className="personal-rates-inline__value">{blackWinRate}%</span>
+              </span>
+            </div>
+
+            {/* Desktop: Full win rate cards */}
             <div className="personal-insights__row personal-insights__row--rates">
               <div className="personal-insight personal-insight--white">
                 <span className="personal-insight__icon" aria-hidden="true">&#9812;</span>
@@ -506,6 +562,67 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
             </div>
           </div>
 
+          {/* Mobile: Tab bar for White/Black */}
+          <div className="personal-tabs" role="tablist" aria-label="View openings by side">
+            <button
+              type="button"
+              role="tab"
+              className={`personal-tabs__btn ${activeTab === 'white' ? 'personal-tabs__btn--active' : ''}`}
+              onClick={() => setActiveTab('white')}
+              aria-selected={activeTab === 'white'}
+              aria-controls="personal-tabpanel-white"
+            >
+              <span aria-hidden="true">&#9812;</span> As White ({dashboard.whiteGames})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              className={`personal-tabs__btn ${activeTab === 'black' ? 'personal-tabs__btn--active' : ''}`}
+              onClick={() => setActiveTab('black')}
+              aria-selected={activeTab === 'black'}
+              aria-controls="personal-tabpanel-black"
+            >
+              <span aria-hidden="true">&#9818;</span> As Black ({dashboard.blackGames})
+            </button>
+          </div>
+
+          {/* Mobile: Tab panel content */}
+          <div className="personal-tabpanel" role="tabpanel" id={`personal-tabpanel-${activeTab}`}>
+            <div className="personal-tabpanel__meta">
+              W {activeData.win} · D {activeData.draw} · L {activeData.loss}
+            </div>
+            {activeData.openings.length === 0 ? (
+              <div className="personal-empty">No classified openings.</div>
+            ) : (
+              <div className="personal-list">
+                {activeData.openings.map((o) => (
+                  <Link
+                    key={o.fen}
+                    className="personal-row"
+                    to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                    style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
+                  >
+                    <div className="personal-row__main">
+                      <span className="eco-pill">{o.eco}</span>
+                      <span className="personal-row__name" title={o.name}>{o.name}</span>
+                    </div>
+                    <div className="personal-row__stats">
+                      <span className="personal-pill personal-pill--games">{o.games} games</span>
+                      <span className="personal-pill personal-pill--win">W {o.win}</span>
+                      <span className="personal-pill personal-pill--draw">D {o.draw}</span>
+                      <span className="personal-pill personal-pill--loss">L {o.loss}</span>
+                    </div>
+                    {/* Mobile: Compact stats */}
+                    <div className="personal-row__stats-compact">
+                      <span className="personal-pill personal-pill--compact">{o.games}g: {o.win}-{o.draw}-{o.loss}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Desktop: Side-by-side columns */}
           <div className="personal-sides">
             <div className="personal-side personal-side--white">
               <div className="personal-side__header">

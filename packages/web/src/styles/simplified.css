@@ -2351,6 +2351,8 @@ body {
   border-radius: var(--border-radius-base);
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .personal-insight--white {
@@ -2645,6 +2647,46 @@ body {
   border-color: rgba(239, 68, 68, 0.25);
 }
 
+/* Compact pill variant for mobile row stats */
+.personal-pill--compact {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-xs);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+/* Mobile controls summary bar - hidden on desktop */
+.personal-controls-summary {
+  display: none;
+}
+
+/* Mobile controls collapse button - hidden on desktop */
+.personal-controls-collapse {
+  display: none;
+}
+
+/* Mobile inline win rates - hidden on desktop */
+.personal-insights__rates-inline {
+  display: none;
+}
+
+/* Mobile tabs - hidden on desktop */
+.personal-tabs {
+  display: none;
+}
+
+/* Mobile tab panel - hidden on desktop */
+.personal-tabpanel {
+  display: none;
+}
+
+/* Mobile compact row stats - hidden on desktop */
+.personal-row__stats-compact {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .personal-controls__row {
     grid-template-columns: minmax(140px, 180px) 1fr;
@@ -2720,6 +2762,229 @@ body {
     grid-column: 1 / -1;
     justify-self: start;
     width: auto;
+  }
+}
+
+/* =================
+   PERSONAL OPENING EXPLORER - MOBILE
+   ================= */
+@media (max-width: 768px) {
+  /* Collapsed controls summary bar */
+  .personal-controls-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-base);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .personal-controls-summary:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(232, 93, 4, 0.3);
+  }
+
+  .personal-controls-summary__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .personal-controls-summary__chevron {
+    font-size: 10px;
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-left: var(--space-2);
+  }
+
+  /* Hide controls when collapsed */
+  .personal-controls--collapsed {
+    display: none;
+  }
+
+  /* Controls collapse button (shown when controls are expanded after analysis) */
+  .personal-controls-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px;
+    margin-top: var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-base);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .personal-controls-collapse:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .personal-controls-collapse__chevron {
+    font-size: 10px;
+  }
+
+  /* Hide desktop win rate cards, show inline version */
+  .personal-insights__row--rates {
+    display: none;
+  }
+
+  .personal-insights__rates-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .personal-rates-inline__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .personal-rates-inline__icon {
+    font-size: 1.1em;
+    opacity: 0.7;
+  }
+
+  .personal-rates-inline__value {
+    color: var(--color-text-primary);
+  }
+
+  .personal-rates-inline__sep {
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+  }
+
+  /* Best/weakest openings - stack vertically on mobile */
+  .personal-insights__row--openings {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .personal-insight--best,
+  .personal-insight--weak {
+    padding: var(--space-3);
+  }
+
+  .personal-insight__opening {
+    font-size: var(--font-size-sm);
+  }
+
+  .personal-insight__detail {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Hide confirmation line on mobile */
+  .personal-insights__confirmation {
+    display: none;
+  }
+
+  /* Hide desktop side-by-side columns */
+  .personal-sides {
+    display: none;
+  }
+
+  /* Show mobile tabs */
+  .personal-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: var(--space-4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+  }
+
+  .personal-tabs__btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    min-height: 48px;
+  }
+
+  .personal-tabs__btn:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .personal-tabs__btn--active {
+    background: rgba(232, 93, 4, 0.12);
+    color: var(--color-text-primary);
+  }
+
+  .personal-tabs__btn:hover:not(.personal-tabs__btn--active) {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Show mobile tab panel */
+  .personal-tabpanel {
+    display: block;
+    margin-top: var(--space-3);
+  }
+
+  .personal-tabpanel__meta {
+    padding: var(--space-2) 0;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Mobile row layout - show compact stats, hide regular stats */
+  .personal-row__stats {
+    display: none;
+  }
+
+  .personal-row__stats-compact {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .personal-row {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .personal-row__main {
+    gap: var(--space-2);
+  }
+
+  .personal-row__name {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Compact personal card padding */
+  .personal-card {
+    padding: var(--space-4);
+  }
+
+  .personal-insights {
+    padding: var(--space-3);
   }
 }
 

@@ -590,6 +590,11 @@ body {
   justify-content: center;
   margin-bottom: var(--space-4);
   position: relative;
+  /* Prevent iOS default touch behaviors (magnify, text selection) */
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .chessboard-fen-utilities {

@@ -729,9 +729,17 @@ const OpeningDetailPage: React.FC = () => {
                   dragActivationDistance: 15, // Higher threshold to distinguish taps from drags on mobile
                   onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
                   onSquareClick: practiceMode && isUserTurn() && !isComplete ? handleSquareClick : undefined,
+                  squareStyle: {
+                    touchAction: 'none', // Prevent iOS magnify/text selection on touch
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                  },
                   squareStyles: highlightSquares,
                   boardStyle: {
                     borderRadius: '8px',
+                    touchAction: 'none', // Prevent default touch behaviors on the board
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
                   },
                 }}
               />

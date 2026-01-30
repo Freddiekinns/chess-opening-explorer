@@ -83,6 +83,20 @@ Consistent header with optional accent bar:
 </div>
 ```
 
+### Monorepo Imports (Critical for Vercel builds)
+
+When importing from the shared package in web components, **use relative imports**, not package names:
+
+```typescript
+// CORRECT - works in Vercel
+import { SomeType, someUtil } from '../../../../shared/src'
+
+// WRONG - fails in Vercel build
+import { SomeType, someUtil } from '@chess-trainer/shared'
+```
+
+The package name import doesn't resolve correctly in Vercel's build environment. Follow the pattern used by existing files like `OpeningDetailPage.tsx`.
+
 ## Key Rules
 
 1. **Functional components only** - no class components
@@ -90,3 +104,4 @@ Consistent header with optional accent bar:
 3. **Tests in `packages/web`** - use Vitest, not Jest
 4. **Named exports** for utilities, default for page components
 5. **Respect `prefers-reduced-motion`** for animations
+6. **Relative imports for shared package** - not `@chess-trainer/shared`

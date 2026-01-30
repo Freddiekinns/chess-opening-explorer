@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react'
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
-import { Chess, Move } from 'chess.js'
+import { Chess, Move, Square } from 'chess.js'
 // @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
@@ -102,6 +102,10 @@ const OpeningDetailPage: React.FC = () => {
   const [highlightSquares, setHighlightSquares] = useState<Record<string, CSSProperties>>({})
   const [isComplete, setIsComplete] = useState(false)
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
+  // Click-to-move state
+  const [selectedSquare, setSelectedSquare] = useState<string | null>(null)
+  const [legalMoves, setLegalMoves] = useState<string[]>([])
   const { playAudio } = useAudio()
 
   useEffect(() => {
@@ -303,6 +307,9 @@ const OpeningDetailPage: React.FC = () => {
     setHighlightSquares({})
     setIsComplete(false)
     setPracticeMode(true)
+    // Clear any click-to-move selection
+    setSelectedSquare(null)
+    setLegalMoves([])
 
     // If playing as black, auto-play white's first move
     if (practiceColor === 'black') {
@@ -332,6 +339,9 @@ const OpeningDetailPage: React.FC = () => {
     setShowHint(false)
     setHighlightSquares({})
     setIsComplete(false)
+    // Clear any click-to-move selection
+    setSelectedSquare(null)
+    setLegalMoves([])
   }, [])
 
   const isUserTurn = useCallback((): boolean => {
@@ -435,7 +445,91 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [incorrectAttempts, showHintHighlight])
 
+  // Get legal moves for a given square (for click-to-move)
+  const getLegalMovesForSquare = useCallback((square: string): string[] => {
+    if (!practiceGame) return []
+    const moves = practiceGame.moves({ square: square as Square, verbose: true })
+    return moves.map(m => m.to)
+  }, [practiceGame])
+
+  // Clear click-to-move selection
+  const clearSelection = useCallback(() => {
+    setSelectedSquare(null)
+    setLegalMoves([])
+  }, [])
+
+  // Function to handle move from click (defined before handleSquareClick to avoid undefined reference)
+  const validateAndHandleMoveFromClick = useCallback((sourceSquare: string, targetSquare: string): boolean => {
+    if (!practiceGame || !isUserTurn()) return false
+
+    const expectedMove = getExpectedMove()
+    if (!expectedMove) return false
+
+    // Try the move on a temp instance
+    const tempGame = new Chess(practiceGame.fen())
+    const attempt = tempGame.move({
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: 'q' // Auto-promote to queen for simplicity
+    })
+
+    if (!attempt) return false // Illegal move
+
+    // Compare with expected move
+    const isCorrect = attempt.san === expectedMove
+
+    if (isCorrect) {
+      handleCorrectMove(attempt)
+    } else {
+      handleIncorrectMove()
+    }
+
+    return isCorrect
+  }, [practiceGame, isUserTurn, getExpectedMove, handleCorrectMove, handleIncorrectMove])
+
+  // Handle square click for click-to-move functionality
+  const handleSquareClick = useCallback(({ piece, square }: { piece: { pieceType: string } | null; square: string }) => {
+    if (!practiceGame || !isUserTurn() || isComplete) return
+
+    // If we have a selected square and clicking on a legal move target
+    if (selectedSquare && legalMoves.includes(square)) {
+      // Execute the move
+      validateAndHandleMoveFromClick(selectedSquare, square)
+      clearSelection()
+      return
+    }
+
+    // If clicking on a piece that belongs to the current player
+    if (piece) {
+      // pieceType format is like "wP" (white Pawn), "bN" (black Knight)
+      // First character is the color: 'w' for white, 'b' for black
+      const pieceColor = piece.pieceType.charAt(0) === 'w' ? 'white' : 'black'
+      const currentTurn = practiceGame.turn() === 'w' ? 'white' : 'black'
+      
+      if (pieceColor === currentTurn) {
+        // Select this piece
+        if (selectedSquare === square) {
+          // Clicking the same square deselects
+          clearSelection()
+        } else {
+          // Select new piece
+          setSelectedSquare(square)
+          setLegalMoves(getLegalMovesForSquare(square))
+        }
+        return
+      }
+    }
+
+    // Clicking on empty square or opponent piece (not a legal capture) - clear selection
+    clearSelection()
+  }, [practiceGame, isUserTurn, isComplete, selectedSquare, legalMoves, getLegalMovesForSquare, clearSelection, validateAndHandleMoveFromClick])
+
   const validateAndHandleMove = useCallback(({ sourceSquare, targetSquare }: { piece?: any; sourceSquare: string; targetSquare: string | null }): boolean => {
+    // If source and target are the same, it's a click not a drag - let onSquareClick handle it
+    if (sourceSquare === targetSquare) return false
+    
+    // Clear any click-to-move selection when dragging
+    clearSelection()
     if (!practiceGame || !isUserTurn() || !targetSquare) return false
 
     const expectedMove = getExpectedMove()
@@ -471,6 +565,25 @@ const OpeningDetailPage: React.FC = () => {
       }
     }
   }, [])
+
+  // Update highlight squares when selection changes (for click-to-move)
+  useEffect(() => {
+    if (!practiceMode || !selectedSquare) return
+
+    const newHighlights: Record<string, CSSProperties> = {}
+    
+    // Highlight selected square - bright yellow like Lichess/Chess.com
+    newHighlights[selectedSquare] = { backgroundColor: 'rgba(255, 255, 0, 0.5)' }
+    
+    // Highlight legal move squares - green tint for available moves
+    legalMoves.forEach(square => {
+      newHighlights[square] = { 
+        backgroundColor: 'rgba(0, 180, 0, 0.35)',
+      }
+    })
+
+    setHighlightSquares(newHighlights)
+  }, [selectedSquare, legalMoves, practiceMode, practiceGame])
 
   // Reset practice mode when opening changes
   useEffect(() => {
@@ -614,6 +727,7 @@ const OpeningDetailPage: React.FC = () => {
                   boardOrientation: practiceMode ? practiceColor : 'white',
                   allowDragging: practiceMode && isUserTurn() && !isComplete,
                   onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
+                  onSquareClick: practiceMode && isUserTurn() && !isComplete ? handleSquareClick : undefined,
                   squareStyles: highlightSquares,
                   boardStyle: {
                     borderRadius: '8px',
@@ -624,26 +738,98 @@ const OpeningDetailPage: React.FC = () => {
 
             {/* Practice Mode Controls */}
             {practiceMode ? (
-              <div className="practice-controls">
-                <div className="practice-controls-row">
-                  <div className="practice-color-toggle">
-                    <span className="practice-label">Playing as:</span>
+              <>
+                {/* Desktop controls - hidden on mobile via CSS */}
+                <div className="practice-controls practice-controls-desktop">
+                  <div className="practice-controls-row">
+                    <div className="practice-color-toggle">
+                      <span className="practice-label">Playing as:</span>
+                      <button
+                        className={`practice-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
+                        onClick={() => {
+                          setPracticeColor('white')
+                          if (practiceMode) startPractice()
+                        }}
+                        disabled={isComplete}
+                      >
+                        White
+                      </button>
+                      <button
+                        className={`practice-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
+                        onClick={() => {
+                          setPracticeColor('black')
+                          if (practiceMode) {
+                            // Need to restart with black
+                            const newGame = new Chess()
+                            const movesArray = getMovesList()
+                            if (movesArray.length > 0) {
+                              const move = newGame.move(movesArray[0])
+                              if (move) {
+                                setPracticeGame(new Chess(newGame.fen()))
+                                setPracticeIndex(1)
+                                setIncorrectAttempts(0)
+                                setShowHint(false)
+                                setHighlightSquares({})
+                                setIsComplete(false)
+                              }
+                            }
+                          }
+                        }}
+                        disabled={isComplete}
+                      >
+                        Black
+                      </button>
+                    </div>
+
+                    <div className="practice-progress">
+                      {isComplete ? (
+                        <span className="practice-complete">Complete!</span>
+                      ) : (
+                        <span className="practice-counter">
+                          Move {Math.floor(practiceIndex / 2) + 1} of {Math.ceil(getMovesList().length / 2)}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="practice-actions">
+                      {!isComplete && !showHint && (
+                        <button
+                          className="practice-btn practice-hint-btn"
+                          onClick={showHintHighlight}
+                          title="Show which piece to move"
+                        >
+                          Hint
+                        </button>
+                      )}
+                      <button
+                        className="practice-btn practice-exit-btn"
+                        onClick={exitPractice}
+                      >
+                        Exit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile bottom bar - shown only on mobile via CSS */}
+                <div className="practice-mobile-bar">
+                  <div className="practice-mobile-color-toggle">
                     <button
-                      className={`practice-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
+                      className={`practice-mobile-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
                       onClick={() => {
                         setPracticeColor('white')
                         if (practiceMode) startPractice()
                       }}
                       disabled={isComplete}
+                      title="Play as White"
                     >
-                      White
+                      W
                     </button>
                     <button
-                      className={`practice-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
+                      className={`practice-mobile-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
                       onClick={() => {
                         setPracticeColor('black')
                         if (practiceMode) {
-                          // Need to restart with black
                           const newGame = new Chess()
                           const movesArray = getMovesList()
                           if (movesArray.length > 0) {
@@ -660,25 +846,26 @@ const OpeningDetailPage: React.FC = () => {
                         }
                       }}
                       disabled={isComplete}
+                      title="Play as Black"
                     >
-                      Black
+                      B
                     </button>
                   </div>
 
-                  <div className="practice-progress">
+                  <div className="practice-mobile-progress">
                     {isComplete ? (
-                      <span className="practice-complete">Complete!</span>
+                      <span className="practice-mobile-complete">Complete!</span>
                     ) : (
-                      <span className="practice-counter">
-                        Move {Math.floor(practiceIndex / 2) + 1} of {Math.ceil(getMovesList().length / 2)}
+                      <span className="practice-mobile-counter">
+                        Move {Math.floor(practiceIndex / 2) + 1}/{Math.ceil(getMovesList().length / 2)}
                       </span>
                     )}
                   </div>
 
-                  <div className="practice-actions">
+                  <div className="practice-mobile-actions">
                     {!isComplete && !showHint && (
                       <button
-                        className="practice-btn practice-hint-btn"
+                        className="practice-mobile-btn practice-mobile-hint-btn"
                         onClick={showHintHighlight}
                         title="Show which piece to move"
                       >
@@ -686,14 +873,15 @@ const OpeningDetailPage: React.FC = () => {
                       </button>
                     )}
                     <button
-                      className="practice-btn practice-exit-btn"
+                      className="practice-mobile-btn practice-mobile-exit-btn"
                       onClick={exitPractice}
+                      title="Exit practice mode"
                     >
                       Exit
                     </button>
                   </div>
                 </div>
-              </div>
+              </>
             ) : (
               /* Navigation Controls - Shown when not in practice mode */
               <div className="chessboard-navigation">

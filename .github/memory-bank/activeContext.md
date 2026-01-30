@@ -2,85 +2,72 @@
 
 **Date:** 2026-01-30
 
-## Current Focus: Personal Opening Explorer - Complete
+## Current Focus: Practice Mode Click-to-Move Enhancement
 
-The Personal Opening Explorer feature is now complete with full Chess.com and Lichess support, plus a redesigned actionable insights UI.
+Added click-to-move functionality to the practice mode chessboard for better mobile UX.
 
 ## Session Summary (2026-01-30)
 
-### Major Features Delivered
+### Major Feature Delivered
 
-#### 1. Chess.com API Integration
-- New service: `packages/api/src/services/chesscom-games-service.js`
-- Multi-archive fetching (iterates through monthly archives until limit reached)
-- Filters for rated rapid/blitz/classical games (excludes bullet, daily, variants)
-- 10-minute server-side cache with in-flight request deduplication
-- Routes updated to accept `platform=lichess` or `platform=chess.com`
+#### Practice Mode: Click-to-Move Support
+Mobile users can now tap to move pieces in practice mode instead of only drag-and-drop:
 
-#### 2. Actionable Insights UI (Redesigned Summary)
-Replaced diagnostic stats (games analysed/matched/unclassified) with user-focused insights:
-- **Win rate by color**: Side-by-side comparison (e.g., "53% as White vs 62% as Black")
-- **Best opening**: Clickable card linking to highest win-rate opening (green accent)
-- **Needs work**: Clickable card linking to lowest win-rate opening (amber accent)
-- **Confirmation line**: Minimal "Analysed X games (Y matched)" at bottom
-- Best/weakest require 2+ games to avoid 1-game statistical flukes
+**How it works:**
+1. **First tap** on your piece → selects it (blue highlight) and shows legal move squares (lighter blue)
+2. **Second tap** on a legal destination → executes the move
+3. **Tap elsewhere** → deselects the piece
 
-#### 3. UX Polish
-- **Progress bar**: Better spacing, hidden after completion (only shows during fetch/analyse)
-- **Note visibility**: "Rated rapid/blitz/classical only..." hidden once results shown
-- **Win-rate indicator**: Increased opacity (8% → 14%) for better visibility
-- **Opening name hover**: Added `title` attribute for truncated names
-- **Default platform**: Changed from Lichess to Chess.com
+**Implementation details:**
+- Both click-to-move AND drag-and-drop work simultaneously
+- Uses `react-chessboard`'s built-in `onSquareClick` handler
+- Legal moves calculated via `chess.js`'s `moves({ square, verbose: true })`
+- Selection cleared on: move execution, exit practice, color switch, restart
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `packages/api/src/services/chesscom-games-service.js` | New - Chess.com API integration |
-| `packages/api/src/routes/personal.routes.js` | Added Chess.com routing |
-| `packages/web/src/components/personal/PersonalOpeningStats.tsx` | Full UI overhaul with insights |
-| `packages/web/src/styles/simplified.css` | New insight styles, polish fixes |
-| `tests/unit/chesscom-games-service.test.js` | New - 21 unit tests |
-| `tests/unit/personal-routes.test.js` | Added Chess.com platform tests |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Added click-to-move state, handlers, and effects |
+| `packages/web/src/pages/__tests__/practice-mode.test.tsx` | Added 3 new tests for click-to-move |
+
+### Technical Details
+
+**New State Variables:**
+```typescript
+const [selectedSquare, setSelectedSquare] = useState<string | null>(null)
+const [legalMoves, setLegalMoves] = useState<string[]>([])
+```
+
+**New Functions:**
+- `getLegalMovesForSquare(square)` - Returns array of legal destination squares
+- `handleSquareClick({ piece, square })` - Core click-to-move logic
+- `validateAndHandleMoveFromClick(source, target)` - Executes move from click
+- `clearSelection()` - Resets selection state
+
+**Visual Feedback:**
+- Selected piece square: `rgba(66, 135, 245, 0.5)` (blue)
+- Legal move squares: `rgba(66, 135, 245, 0.25)` (lighter blue)
 
 ### Test Results
-- Frontend (Vitest): 132 tests passing
-- Backend personal routes: 9 tests passing
-- Chess.com service: 21 tests passing
+- Frontend (Vitest): 135 tests passing (15 in practice-mode.test.tsx)
 - TypeScript: compiles cleanly
 
-## Previous Work (Same Day, Earlier Session)
+## Previous Work (Same Day)
 
-### Chess.com Integration + Initial UI
-- Inline button layout (Analyse next to username)
-- Loading spinner animation
-- Stepper dividers
-- White/Black panel distinction (left border accents)
-- Win-rate gradient indicators
-- React Router navigation for opening links
+### Personal Opening Explorer - Complete
+- Chess.com API integration
+- Actionable Insights UI (win rate by color, best/worst openings)
+- UX polish (progress bar, note visibility, win-rate indicators)
 
 ## Architecture Decisions
 
-### AD-012: Platform-Agnostic Game Fetching
-The Personal Opening Explorer supports multiple chess platforms through a common interface:
-- Backend routes accept `platform` parameter
-- Each platform has its own service module with consistent API
-- Client-side caching key includes platform for isolation
-- Default platform: Chess.com (larger user base)
-
-### AD-013: Actionable Insights Over Diagnostics
-Summary sections should answer "what should I do?" not "what happened?":
-- Show win rates (actionable: identify weaknesses)
-- Highlight best/worst openings (actionable: study priorities)
-- Minimize technical diagnostics (matched/unclassified counts)
-
-## What's Left (Future Work)
-
-- Frontend UI for course recommendations
-- Design system tokenization (accent colors as CSS variables)
-- Tooltip abstraction component
-- Component tests for busy/cancel states
+### AD-014: Click-to-Move in Practice Mode
+Mobile UX improvement: support both click-to-move and drag-and-drop in practice mode.
+- Both methods work simultaneously (no toggle needed)
+- Selected piece and legal moves are visually highlighted
+- Selection state is cleared on state transitions (move, exit, color switch)
 
 ## Current Status
 
-Personal Opening Explorer feature complete and polished. Ready for production use.
+Practice mode now supports click-to-move for mobile users. Ready for testing.

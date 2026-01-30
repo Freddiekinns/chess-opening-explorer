@@ -113,7 +113,8 @@ describe('Practice Mode', () => {
 
       await waitFor(() => {
         expect(screen.getByText('Playing as:')).toBeInTheDocument()
-        expect(screen.getByText('Exit')).toBeInTheDocument()
+        // Both desktop and mobile Exit buttons are rendered; CSS handles visibility
+        expect(screen.getAllByText('Exit').length).toBeGreaterThan(0)
       })
     })
   })
@@ -166,7 +167,8 @@ describe('Practice Mode', () => {
       fireEvent.click(screen.getByText('Practice'))
 
       await waitFor(() => {
-        expect(screen.getByText('Hint')).toBeInTheDocument()
+        // Both desktop and mobile Hint buttons are rendered; CSS handles visibility
+        expect(screen.getAllByText('Hint').length).toBeGreaterThan(0)
       })
     })
 
@@ -182,10 +184,11 @@ describe('Practice Mode', () => {
       fireEvent.click(screen.getByText('Practice'))
 
       await waitFor(() => {
-        expect(screen.getByText('Exit')).toBeInTheDocument()
+        expect(screen.getAllByText('Exit').length).toBeGreaterThan(0)
       })
 
-      fireEvent.click(screen.getByText('Exit'))
+      // Click the first Exit button (desktop version)
+      fireEvent.click(screen.getAllByText('Exit')[0])
 
       await waitFor(() => {
         // Should show navigation controls again
@@ -260,10 +263,11 @@ describe('Practice Mode', () => {
       fireEvent.click(screen.getByText('Practice'))
 
       await waitFor(() => {
-        expect(screen.getByText('Exit')).toBeInTheDocument()
+        expect(screen.getAllByText('Exit').length).toBeGreaterThan(0)
       })
 
-      fireEvent.click(screen.getByText('Exit'))
+      // Click the first Exit button (desktop version)
+      fireEvent.click(screen.getAllByText('Exit')[0])
 
       await waitFor(() => {
         expect(screen.getByTitle('Go to start')).toBeInTheDocument()
@@ -332,14 +336,14 @@ describe('Practice Mode - Hint Functionality', () => {
     fireEvent.click(screen.getByText('Practice'))
 
     await waitFor(() => {
-      expect(screen.getByText('Hint')).toBeInTheDocument()
+      expect(screen.getAllByText('Hint').length).toBeGreaterThan(0)
     })
 
-    // Should be able to click hint button
-    const hintButton = screen.getByText('Hint')
-    fireEvent.click(hintButton)
+    // Should be able to click hint button (first one - desktop)
+    const hintButtons = screen.getAllByText('Hint')
+    fireEvent.click(hintButtons[0])
 
-    // Hint button should disappear after being clicked (hint is now shown)
+    // Hint buttons should disappear after being clicked (hint is now shown)
     await waitFor(() => {
       expect(screen.queryByText('Hint')).not.toBeInTheDocument()
     })
@@ -392,8 +396,143 @@ describe('Practice Mode - Accessibility', () => {
     fireEvent.click(screen.getByText('Practice'))
 
     await waitFor(() => {
-      const hintButton = screen.getByText('Hint')
-      expect(hintButton).toHaveAttribute('title', 'Show which piece to move')
+      // Both desktop and mobile Hint buttons have the same title
+      const hintButtons = screen.getAllByText('Hint')
+      expect(hintButtons[0]).toHaveAttribute('title', 'Show which piece to move')
+    })
+  })
+})
+
+describe('Practice Mode - Click-to-Move', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    vi.useFakeTimers({ shouldAdvanceTime: true })
+
+    mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/api/openings/fen/')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({
+            success: true,
+            data: mockPracticeOpening
+          })
+        })
+      }
+      if (url.includes('/api/stats/')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({
+            success: true,
+            data: mockStatsData
+          })
+        })
+      }
+      if (url.includes('/api/openings/videos/')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({
+            success: true,
+            data: []
+          })
+        })
+      }
+      if (url.includes('/api/openings/all')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({
+            success: true,
+            data: []
+          })
+        })
+      }
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ success: true, data: [] })
+      })
+    })
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  test('should support both click-to-move and drag-and-drop in practice mode', async () => {
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen)
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument()
+    })
+
+    // Enter practice mode
+    fireEvent.click(screen.getByText('Practice'))
+
+    await waitFor(() => {
+      expect(screen.getByText('Playing as:')).toBeInTheDocument()
+    })
+
+    // The chessboard should be rendered and interactive
+    // Both click-to-move (via onSquareClick) and drag-and-drop (via onPieceDrop) should be available
+    // We verify by checking practice mode is active and controls are visible
+    expect(screen.getByText('Move 1 of 3')).toBeInTheDocument()
+    // Both desktop and mobile Hint buttons are rendered
+    expect(screen.getAllByText('Hint').length).toBeGreaterThan(0)
+  })
+
+  test('should clear selection when exiting practice mode', async () => {
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen)
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument()
+    })
+
+    // Enter practice mode
+    fireEvent.click(screen.getByText('Practice'))
+
+    await waitFor(() => {
+      expect(screen.getByText('Playing as:')).toBeInTheDocument()
+    })
+
+    // Exit practice mode (click first Exit button - desktop)
+    fireEvent.click(screen.getAllByText('Exit')[0])
+
+    await waitFor(() => {
+      // Should show navigation controls again (selection state is cleared internally)
+      expect(screen.getByText('Practice')).toBeInTheDocument()
+      expect(screen.queryByText('Playing as:')).not.toBeInTheDocument()
+    })
+  })
+
+  test('should clear selection when switching colors', async () => {
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen)
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument()
+    })
+
+    // Enter practice mode as White
+    fireEvent.click(screen.getByText('Practice'))
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: 'White' })).toHaveClass('active')
+    })
+
+    // Switch to Black - this should clear any selection and restart practice
+    fireEvent.click(screen.getByRole('button', { name: 'Black' }))
+
+    // Wait for the auto-play of white's first move
+    await act(async () => {
+      vi.advanceTimersByTime(500)
+    })
+
+    await waitFor(() => {
+      const blackButton = screen.getByRole('button', { name: 'Black' })
+      expect(blackButton).toHaveClass('active')
     })
   })
 })

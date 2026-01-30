@@ -54,6 +54,10 @@
     {
       "source": "/api/health",
       "destination": "/api/health"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ],
   "env": {

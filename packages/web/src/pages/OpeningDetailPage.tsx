@@ -726,6 +726,7 @@ const OpeningDetailPage: React.FC = () => {
                   position: practiceMode ? practiceGame?.fen() : game.fen(),
                   boardOrientation: practiceMode ? practiceColor : 'white',
                   allowDragging: practiceMode && isUserTurn() && !isComplete,
+                  dragActivationDistance: 15, // Higher threshold to distinguish taps from drags on mobile
                   onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
                   onSquareClick: practiceMode && isUserTurn() && !isComplete ? handleSquareClick : undefined,
                   squareStyles: highlightSquares,

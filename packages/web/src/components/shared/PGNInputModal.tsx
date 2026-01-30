@@ -4,7 +4,7 @@ import {
   lookupOpeningFromPGN,
   OpeningForLookup,
   PGNLookupResult
-} from '@chess-trainer/shared'
+} from '../../../../shared/src'
 
 interface PGNInputModalProps {
   isOpen: boolean

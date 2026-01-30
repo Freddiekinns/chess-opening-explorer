@@ -4,6 +4,10 @@ const {
   getLichessGamesPgnRatedCached: defaultGetLichessGamesPgnRatedCached
 } = require('../services/personal-games-service');
 
+const {
+  getChessComGamesPgnCached: defaultGetChessComGamesPgnCached
+} = require('../services/chesscom-games-service');
+
 function clampInt(value, min, max, fallback) {
   const n = Number.parseInt(String(value), 10);
   if (Number.isNaN(n)) return fallback;
@@ -62,6 +66,7 @@ function createRateLimiter({ windowMs, max }) {
 function createPersonalRoutes(
   {
     getLichessGamesPgnRatedCached = defaultGetLichessGamesPgnRatedCached,
+    getChessComGamesPgnCached = defaultGetChessComGamesPgnCached,
     rateLimit = { windowMs: 10 * 60 * 1000, max: 30 }
   } = {}
 ) {
@@ -86,15 +91,15 @@ function createPersonalRoutes(
         return res.status(400).json({
           success: false,
           error: 'platform is required',
-          message: 'Use platform=lichess'
+          message: 'Use platform=lichess or platform=chess.com'
         });
       }
 
-      if (platform !== 'lichess') {
+      if (platform !== 'lichess' && platform !== 'chess.com') {
         return res.status(400).json({
           success: false,
           error: 'Unsupported platform',
-          message: 'Only platform=lichess is supported right now'
+          message: 'Supported platforms: lichess, chess.com'
         });
       }
 
@@ -106,7 +111,12 @@ function createPersonalRoutes(
         });
       }
 
-      const result = await getLichessGamesPgnRatedCached({ username, limit });
+      let result;
+      if (platform === 'lichess') {
+        result = await getLichessGamesPgnRatedCached({ username, limit });
+      } else {
+        result = await getChessComGamesPgnCached({ username, limit });
+      }
 
       return res.json({
         success: true,

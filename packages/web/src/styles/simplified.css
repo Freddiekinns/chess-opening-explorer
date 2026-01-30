@@ -2055,34 +2055,44 @@ body {
 
 .personal-controls__row {
   display: grid;
-  grid-template-columns: minmax(180px, 220px) minmax(320px, 1fr) minmax(200px, 240px);
+  grid-template-columns: minmax(140px, 180px) 1fr minmax(140px, 180px);
   gap: 18px;
   align-items: end;
 }
 
-.personal-controls__actions {
-  display: grid;
-  grid-template-columns: 1fr minmax(160px, 200px);
-  gap: 18px;
-  align-items: center;
-}
-
-.personal-action {
+/* Username field with inline button */
+.personal-field--username {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
-.personal-field--action {
-  align-self: end;
+.personal-username-group {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.personal-username-group .personal-field__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.personal-username-group .personal-btn--analyse {
+  flex-shrink: 0;
+  width: auto;
+  min-width: 110px;
+  padding: 0 20px;
 }
 
 .personal-btn--analyse {
-  width: 100%;
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-large);
+  gap: 8px;
+  border-radius: var(--border-radius-base);
   box-shadow: 0 4px 12px rgba(232, 93, 4, 0.18);
   position: relative;
   overflow: hidden;
@@ -2102,6 +2112,22 @@ body {
 
 .personal-btn--analyse:hover:not(:disabled)::before {
   left: 100%;
+}
+
+/* Loading spinner */
+.personal-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: personal-spin 0.8s linear infinite;
+}
+
+@keyframes personal-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .personal-field {
@@ -2166,8 +2192,16 @@ body {
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
+.personal-stepper__btn:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.personal-stepper__btn:last-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .personal-stepper__btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .personal-stepper__btn:active:not(:disabled) {
@@ -2238,19 +2272,13 @@ body {
 .personal-note {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
-  margin-top: var(--space-3);
-  padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.personal-controls__actions .personal-note {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
+  padding-top: var(--space-2);
 }
 
 .personal-progress {
-  margin-top: var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .personal-progress__bar {
@@ -2291,31 +2319,132 @@ body {
   margin-top: var(--space-6);
 }
 
-.personal-summary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Actionable insights section */
+.personal-insights {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
-  padding: var(--space-4);
+  padding: var(--space-5);
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--border-radius-large);
 }
 
-.personal-summary__item {
+.personal-insights__row {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.personal-insights__row--rates {
+  grid-template-columns: 1fr 1fr;
+}
+
+.personal-insights__row--openings {
+  grid-template-columns: 1fr 1fr;
+}
+
+.personal-insight {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-base);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.personal-summary__label {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
+.personal-insight--white {
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-.personal-summary__value {
+.personal-insight--black {
+  border-left: 3px solid rgba(80, 80, 80, 0.6);
+}
+
+.personal-insight--best {
+  border-left: 3px solid rgba(16, 185, 129, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.personal-insight--best:hover {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.personal-insight--weak {
+  border-left: 3px solid rgba(245, 158, 11, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.personal-insight--weak:hover {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.personal-insight__icon {
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+.personal-insight__rate {
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
   color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.personal-insight__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.personal-insight__games {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+}
+
+.personal-insight__tag {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.personal-insight--best .personal-insight__tag {
+  color: rgba(16, 185, 129, 0.9);
+}
+
+.personal-insight--weak .personal-insight__tag {
+  color: rgba(245, 158, 11, 0.9);
+}
+
+.personal-insight__opening {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.personal-insight__detail {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.personal-insights__confirmation {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--space-4) 0;
+  margin-top: var(--space-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .personal-sides {
@@ -2335,11 +2464,27 @@ body {
   flex-direction: column;
 }
 
+.personal-side--white {
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.personal-side--black {
+  border-left: 3px solid rgba(80, 80, 80, 0.6);
+}
+
 .personal-side__title {
   margin: 0;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.personal-side__icon {
+  font-size: 1.1em;
+  opacity: 0.7;
 }
 
 .personal-side__header {
@@ -2386,12 +2531,36 @@ body {
   text-decoration: none;
   color: var(--color-text-primary);
   transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Win-rate background indicator */
+.personal-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--win-rate, 0%);
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0.03) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.personal-row > * {
+  position: relative;
+  z-index: 1;
 }
 
 .personal-row:hover {
   background: rgba(232, 93, 4, 0.08);
   border-color: rgba(232, 93, 4, 0.22);
   transform: translateY(-1px);
+}
+
+.personal-row:hover::before {
+  opacity: 0.5;
 }
 
 .personal-row__main {
@@ -2478,7 +2647,11 @@ body {
 
 @media (max-width: 1100px) {
   .personal-controls__row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(140px, 180px) 1fr;
+  }
+
+  .personal-field--small {
+    grid-column: 1 / -1;
   }
 }
 
@@ -2487,16 +2660,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .personal-controls__actions {
-    grid-template-columns: 1fr;
-    align-items: stretch;
+  .personal-username-group {
+    flex-direction: column;
   }
 
-  .personal-action {
-    justify-content: stretch;
-  }
-
-  .personal-btn--analyse {
+  .personal-username-group .personal-btn--analyse {
+    width: 100%;
     height: 44px;
   }
 
@@ -2506,10 +2675,15 @@ body {
   }
 
   .personal-note {
-    margin-top: var(--space-3);
+    margin-top: var(--space-2);
   }
 
   .personal-sides {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-insights__row--rates,
+  .personal-insights__row--openings {
     grid-template-columns: 1fr;
   }
 }

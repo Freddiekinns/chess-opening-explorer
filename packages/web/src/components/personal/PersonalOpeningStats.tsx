@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src'
 
-type Platform = 'lichess'
+type Platform = 'lichess' | 'chess.com'
 
 type Side = 'white' | 'black'
 
@@ -98,11 +99,37 @@ function upsertAgg(map: Map<string, OpeningAgg>, opening: { fen: string; name: s
   map.set(opening.fen, existing)
 }
 
+function getWinRate(o: OpeningAgg): number {
+  if (o.games === 0) return 0
+  return Math.round((o.win / o.games) * 100)
+}
+
+function getWinRateFromCounts(wins: number, games: number): number {
+  if (games === 0) return 0
+  return Math.round((wins / games) * 100)
+}
+
+function findBestOpening(list: OpeningAgg[]): OpeningAgg | null {
+  if (list.length === 0) return null
+  // Require at least 2 games for "best" to be meaningful
+  const qualified = list.filter((o) => o.games >= 2)
+  if (qualified.length === 0) return list[0] // fallback to most played
+  return qualified.reduce((best, curr) => (getWinRate(curr) > getWinRate(best) ? curr : best))
+}
+
+function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
+  if (list.length === 0) return null
+  // Require at least 2 games for "weakest" to be meaningful
+  const qualified = list.filter((o) => o.games >= 2)
+  if (qualified.length === 0) return null
+  return qualified.reduce((worst, curr) => (getWinRate(curr) < getWinRate(worst) ? curr : worst))
+}
+
 export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; prefillUsername?: string }> = ({
   openingsData,
   prefillUsername
 }) => {
-  const [platform] = useState<Platform>('lichess')
+  const [platform, setPlatform] = useState<Platform>('chess.com')
   const [username, setUsername] = useState(prefillUsername || '')
   const [limit, setLimit] = useState(200)
 
@@ -179,7 +206,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
     setError(null)
     setDashboard(null)
     setStep('fetching')
-    setStepText('Fetching rated rapid/blitz/classical games...')
+    setStepText(`Fetching games from ${platform === 'lichess' ? 'Lichess' : 'Chess.com'}...`)
     setProgress(5)
     setProcessed(0)
     setTotal(0)
@@ -316,6 +343,8 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
     void handleAnalyse()
   }
 
+  const placeholderText = platform === 'lichess' ? 'e.g. DrNykterstein' : 'e.g. MagnusCarlsen'
+
   return (
     <div className="personal-card">
       <div className="card-header">
@@ -327,24 +356,40 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
           <div className="personal-controls__row">
             <label className="personal-field">
               <span className="personal-field__label">Platform</span>
-              <select className="personal-field__input" value={platform} disabled>
-                <option value="lichess">Lichess (rated)</option>
+              <select
+                className="personal-field__input"
+                value={platform}
+                onChange={(e) => setPlatform(e.target.value as Platform)}
+                disabled={isBusy}
+              >
+                <option value="lichess">Lichess</option>
+                <option value="chess.com">Chess.com</option>
               </select>
             </label>
 
-            <label className="personal-field">
+            <div className="personal-field personal-field--username">
               <span className="personal-field__label">Username</span>
-              <input
-                className="personal-field__input"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                onKeyDown={handleEnterToAnalyse}
-                placeholder="e.g. thibault"
-                inputMode="text"
-                autoComplete="off"
-                disabled={isBusy}
-              />
-            </label>
+              <div className="personal-username-group">
+                <input
+                  className="personal-field__input"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  onKeyDown={handleEnterToAnalyse}
+                  placeholder={placeholderText}
+                  inputMode="text"
+                  autoComplete="off"
+                  disabled={isBusy}
+                />
+                <button
+                  className="personal-btn personal-btn--primary personal-btn--analyse"
+                  onClick={isBusy ? handleCancel : handleAnalyse}
+                  disabled={!isBusy && !canAnalyse}
+                >
+                  {isBusy && <span className="personal-spinner" aria-hidden="true" />}
+                  <span>{isBusy ? 'Cancel' : 'Analyse'}</span>
+                </button>
+              </div>
+            </div>
 
             <label className="personal-field personal-field--small">
               <span className="personal-field__label">Games</span>
@@ -384,22 +429,13 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
             </label>
           </div>
 
-          <div className="personal-controls__actions">
+          {!dashboard && (
             <div className="personal-note">Rated rapid/blitz/classical only. Max 200 games. Bullet excluded.</div>
-            <div className="personal-action">
-              <button
-                className="personal-btn personal-btn--primary personal-btn--analyse"
-                onClick={isBusy ? handleCancel : handleAnalyse}
-                disabled={!isBusy && !canAnalyse}
-              >
-                {isBusy ? 'Cancel' : 'Analyse'}
-              </button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
-      {(step === 'fetching' || step === 'analysing' || step === 'done') && (
+      {(step === 'fetching' || step === 'analysing') && (
         <div className="personal-progress" aria-live="polite">
           <div className="personal-progress__bar" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
             <div className="personal-progress__barFill" style={{ width: `${progress}%` }} />
@@ -417,27 +453,66 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
         </div>
       )}
 
-      {dashboard && (
+      {dashboard && (() => {
+        const whiteWinRate = getWinRateFromCounts(dashboard.whiteWin, dashboard.whiteGames)
+        const blackWinRate = getWinRateFromCounts(dashboard.blackWin, dashboard.blackGames)
+        const allOpenings = [...dashboard.asWhite, ...dashboard.asBlack]
+        const bestOpening = findBestOpening(allOpenings)
+        const weakestOpening = findWeakestOpening(allOpenings)
+
+        return (
         <div className="personal-dashboard">
-          <div className="personal-summary">
-            <div className="personal-summary__item">
-              <span className="personal-summary__label">Games analysed</span>
-              <span className="personal-summary__value">{dashboard.totalGames}</span>
+          <div className="personal-insights">
+            <div className="personal-insights__row personal-insights__row--rates">
+              <div className="personal-insight personal-insight--white">
+                <span className="personal-insight__icon" aria-hidden="true">&#9812;</span>
+                <span className="personal-insight__rate">{whiteWinRate}%</span>
+                <span className="personal-insight__label">win rate as White</span>
+                <span className="personal-insight__games">({dashboard.whiteGames} games)</span>
+              </div>
+              <div className="personal-insight personal-insight--black">
+                <span className="personal-insight__icon" aria-hidden="true">&#9818;</span>
+                <span className="personal-insight__rate">{blackWinRate}%</span>
+                <span className="personal-insight__label">win rate as Black</span>
+                <span className="personal-insight__games">({dashboard.blackGames} games)</span>
+              </div>
             </div>
-            <div className="personal-summary__item">
-              <span className="personal-summary__label">Matched openings</span>
-              <span className="personal-summary__value">{dashboard.classifiedGames}</span>
-            </div>
-            <div className="personal-summary__item">
-              <span className="personal-summary__label">Unclassified</span>
-              <span className="personal-summary__value">{dashboard.unclassifiedGames}</span>
+            {(bestOpening || weakestOpening) && (
+              <div className="personal-insights__row personal-insights__row--openings">
+                {bestOpening && (
+                  <Link
+                    className="personal-insight personal-insight--best"
+                    to={`/opening/${encodeURIComponent(bestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                  >
+                    <span className="personal-insight__tag">Best opening</span>
+                    <span className="personal-insight__opening">{bestOpening.name}</span>
+                    <span className="personal-insight__detail">{getWinRate(bestOpening)}% win rate ({bestOpening.games} games)</span>
+                  </Link>
+                )}
+                {weakestOpening && bestOpening?.fen !== weakestOpening?.fen && (
+                  <Link
+                    className="personal-insight personal-insight--weak"
+                    to={`/opening/${encodeURIComponent(weakestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                  >
+                    <span className="personal-insight__tag">Needs work</span>
+                    <span className="personal-insight__opening">{weakestOpening.name}</span>
+                    <span className="personal-insight__detail">{getWinRate(weakestOpening)}% win rate ({weakestOpening.games} games)</span>
+                  </Link>
+                )}
+              </div>
+            )}
+            <div className="personal-insights__confirmation">
+              Analysed {dashboard.totalGames} games ({dashboard.classifiedGames} matched known openings)
             </div>
           </div>
 
           <div className="personal-sides">
-            <div className="personal-side">
+            <div className="personal-side personal-side--white">
               <div className="personal-side__header">
-                <h3 className="personal-side__title">As White</h3>
+                <h3 className="personal-side__title">
+                  <span className="personal-side__icon" aria-hidden="true">&#9812;</span>
+                  As White
+                </h3>
                 <div className="personal-side__meta" aria-label="White summary">
                   <span className="personal-pill personal-pill--games">{dashboard.whiteGames} games</span>
                   <span className="personal-pill personal-pill--win">W {dashboard.whiteWin}</span>
@@ -450,14 +525,15 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
               ) : (
                 <div className="personal-list">
                   {dashboard.asWhite.map((o) => (
-                    <a
+                    <Link
                       key={o.fen}
                       className="personal-row"
-                      href={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                      to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                      style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
                     >
                       <div className="personal-row__main">
                         <span className="eco-pill">{o.eco}</span>
-                        <span className="personal-row__name">{o.name}</span>
+                        <span className="personal-row__name" title={o.name}>{o.name}</span>
                       </div>
                       <div className="personal-row__stats">
                         <span className="personal-pill personal-pill--games">{o.games} games</span>
@@ -465,15 +541,18 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
                         <span className="personal-pill personal-pill--draw">D {o.draw}</span>
                         <span className="personal-pill personal-pill--loss">L {o.loss}</span>
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
 
-            <div className="personal-side">
+            <div className="personal-side personal-side--black">
               <div className="personal-side__header">
-                <h3 className="personal-side__title">As Black</h3>
+                <h3 className="personal-side__title">
+                  <span className="personal-side__icon" aria-hidden="true">&#9818;</span>
+                  As Black
+                </h3>
                 <div className="personal-side__meta" aria-label="Black summary">
                   <span className="personal-pill personal-pill--games">{dashboard.blackGames} games</span>
                   <span className="personal-pill personal-pill--win">W {dashboard.blackWin}</span>
@@ -486,14 +565,15 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
               ) : (
                 <div className="personal-list">
                   {dashboard.asBlack.map((o) => (
-                    <a
+                    <Link
                       key={o.fen}
                       className="personal-row"
-                      href={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                      to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                      style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
                     >
                       <div className="personal-row__main">
                         <span className="eco-pill">{o.eco}</span>
-                        <span className="personal-row__name">{o.name}</span>
+                        <span className="personal-row__name" title={o.name}>{o.name}</span>
                       </div>
                       <div className="personal-row__stats">
                         <span className="personal-pill personal-pill--games">{o.games} games</span>
@@ -501,14 +581,15 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
                         <span className="personal-pill personal-pill--draw">D {o.draw}</span>
                         <span className="personal-pill personal-pill--loss">L {o.loss}</span>
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
           </div>
         </div>
-      )}
+        )
+      })()}
     </div>
   )
 }

@@ -4417,26 +4417,131 @@ body {
   border-color: var(--color-brand-orange);
 }
 
+/* =================
+   PRACTICE MODE - MOBILE BOTTOM BAR
+   ================= */
+
+/* Mobile bar hidden by default (desktop) */
+.practice-mobile-bar {
+  display: none;
+}
+
 /* Responsive adjustments for practice mode */
 @media (max-width: 600px) {
-  .practice-controls-row {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Hide desktop controls on mobile */
+  .practice-controls-desktop {
+    display: none;
+  }
+
+  /* Show mobile bar - stays in document flow below board */
+  .practice-mobile-bar {
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-alt);
+    border-radius: var(--border-radius-base);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--space-3);
   }
 
-  .practice-color-toggle,
-  .practice-progress,
-  .practice-actions {
-    width: 100%;
-    justify-content: space-between;
+  /* Pill toggle for W/B color selection */
+  .practice-mobile-color-toggle {
+    display: flex;
+    background: var(--color-bg-surface);
+    border-radius: var(--border-radius-base);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .practice-mobile-color-btn {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+  }
+
+  .practice-mobile-color-btn:first-child {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .practice-mobile-color-btn.active {
+    background: var(--color-brand-orange);
+    color: white;
+  }
+
+  .practice-mobile-color-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Progress display in center */
+  .practice-mobile-progress {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .practice-mobile-counter {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .practice-mobile-complete {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-success);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Action buttons with large touch targets */
+  .practice-mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+  }
+
+  .practice-mobile-btn {
+    min-height: 44px;
+    min-width: 56px;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-base);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-surface);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: var(--transition-base);
+  }
+
+  .practice-mobile-hint-btn {
+    background: rgba(255, 170, 0, 0.15);
+    border-color: rgba(255, 170, 0, 0.4);
+    color: #ffaa00;
+  }
+
+  .practice-mobile-exit-btn {
+    background: rgba(232, 93, 4, 0.15);
+    border-color: rgba(232, 93, 4, 0.4);
+    color: var(--color-brand-orange);
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .practice-btn,
-  .practice-color-btn {
+  .practice-color-btn,
+  .practice-mobile-btn,
+  .practice-mobile-color-btn {
     transition: none;
   }
 }

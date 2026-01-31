@@ -373,14 +373,8 @@ const OpeningDetailPage: React.FC = () => {
   }, [practiceGame, getExpectedMove])
 
   const showHintHighlight = useCallback(() => {
-    const hintSquare = getHintSquare()
-    if (hintSquare) {
-      setHighlightSquares({
-        [hintSquare]: { backgroundColor: 'rgba(255, 170, 0, 0.5)' }
-      })
-      setShowHint(true)
-    }
-  }, [getHintSquare])
+    setShowHint(true)
+  }, [])
 
   const handleCorrectMove = useCallback((move: Move) => {
     if (!practiceGame) return
@@ -566,7 +560,7 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [])
 
-  // Update highlight squares when selection or last move changes (for click-to-move and previous move)
+  // Update highlight squares when selection, last move, or hint changes
   useEffect(() => {
     if (!practiceMode) return
 
@@ -603,9 +597,17 @@ const OpeningDetailPage: React.FC = () => {
         }
       })
     }
+    
+    // 4. Hint highlighting (highest priority - persists until correct move)
+    if (showHint) {
+      const hintSquare = getHintSquare()
+      if (hintSquare) {
+        newHighlights[hintSquare] = { backgroundColor: 'rgba(255, 170, 0, 0.5)' }
+      }
+    }
 
     setHighlightSquares(newHighlights)
-  }, [selectedSquare, legalMoves, lastMoveSquares, practiceMode, practiceGame])
+  }, [selectedSquare, legalMoves, lastMoveSquares, practiceMode, practiceGame, showHint, getHintSquare])
 
   // Reset practice mode when opening changes
   useEffect(() => {

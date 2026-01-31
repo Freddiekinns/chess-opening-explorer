@@ -1,5 +1,7 @@
 # Chess Opening Explorer
 
+**Live at [openingbook.vercel.app](https://openingbook.vercel.app)**
+
 A chess learning platform for exploring and practising openings. Features 12,377+ openings with AI-enhanced content, Lichess statistics, curated videos, and interactive practice mode.
 
 ## Features

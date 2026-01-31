@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react'
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Chess, Move, Square } from 'chess.js'
-// @ts-ignore
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
 import { CommonPlans, VideoGallery, RelatedOpeningsTeaser } from '../components/detail'
@@ -106,6 +105,8 @@ const OpeningDetailPage: React.FC = () => {
   // Click-to-move state
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null)
   const [legalMoves, setLegalMoves] = useState<string[]>([])
+  // Track the last move for visual highlighting
+  const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null)
   const { playAudio } = useAudio()
 
   useEffect(() => {
@@ -307,9 +308,10 @@ const OpeningDetailPage: React.FC = () => {
     setHighlightSquares({})
     setIsComplete(false)
     setPracticeMode(true)
-    // Clear any click-to-move selection
+    // Clear any click-to-move selection and last move
     setSelectedSquare(null)
     setLegalMoves([])
+    setLastMoveSquares(null)
 
     // If playing as black, auto-play white's first move
     if (practiceColor === 'black') {
@@ -321,6 +323,8 @@ const OpeningDetailPage: React.FC = () => {
           if (move) {
             setPracticeGame(new Chess(tempGame.fen()))
             setPracticeIndex(1)
+            // Set last move to show white's opening move
+            setLastMoveSquares({ from: move.from, to: move.to })
             playAudio('move')
           }
         }, 400)
@@ -339,9 +343,10 @@ const OpeningDetailPage: React.FC = () => {
     setShowHint(false)
     setHighlightSquares({})
     setIsComplete(false)
-    // Clear any click-to-move selection
+    // Clear any click-to-move selection and last move
     setSelectedSquare(null)
     setLegalMoves([])
+    setLastMoveSquares(null)
   }, [])
 
   const isUserTurn = useCallback((): boolean => {
@@ -391,16 +396,9 @@ const OpeningDetailPage: React.FC = () => {
     setIncorrectAttempts(0)
     setShowHint(false)
 
-    // Show green highlight briefly
-    setHighlightSquares({
-      [move.from]: { backgroundColor: 'rgba(0, 200, 83, 0.4)' },
-      [move.to]: { backgroundColor: 'rgba(0, 200, 83, 0.4)' }
-    })
+    // Set the last move for highlighting
+    setLastMoveSquares({ from: move.from, to: move.to })
     playAudio('move')
-
-    setTimeout(() => {
-      setHighlightSquares({})
-    }, 300)
 
     // Check for completion
     if (newIndex >= movesArray.length) {
@@ -422,6 +420,8 @@ const OpeningDetailPage: React.FC = () => {
           if (autoMove) {
             setPracticeGame(new Chess(autoGame.fen()))
             setPracticeIndex(newIndex + 1)
+            // Update last move to show opponent's move
+            setLastMoveSquares({ from: autoMove.from, to: autoMove.to })
             playAudio('move')
 
             // Check completion after auto-play
@@ -566,24 +566,46 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [])
 
-  // Update highlight squares when selection changes (for click-to-move)
+  // Update highlight squares when selection or last move changes (for click-to-move and previous move)
   useEffect(() => {
-    if (!practiceMode || !selectedSquare) return
+    if (!practiceMode) return
 
     const newHighlights: Record<string, CSSProperties> = {}
     
-    // Highlight selected square - bright yellow like Lichess/Chess.com
-    newHighlights[selectedSquare] = { backgroundColor: 'rgba(255, 255, 0, 0.5)' }
+    // 1. Previous move highlighting (lowest priority - can be overridden)
+    if (lastMoveSquares) {
+      const prevMoveStyle = { backgroundColor: 'rgba(186, 202, 68, 0.4)' }
+      newHighlights[lastMoveSquares.from] = prevMoveStyle
+      newHighlights[lastMoveSquares.to] = prevMoveStyle
+    }
     
-    // Highlight legal move squares - green tint for available moves
-    legalMoves.forEach(square => {
-      newHighlights[square] = { 
-        backgroundColor: 'rgba(0, 180, 0, 0.35)',
-      }
-    })
+    // 2. Selected square - bright yellow like Lichess/Chess.com (overrides previous move)
+    if (selectedSquare) {
+      newHighlights[selectedSquare] = { backgroundColor: 'rgba(255, 255, 0, 0.5)' }
+    }
+    
+    // 3. Legal move squares - dots for empty, rings for captures
+    if (selectedSquare && practiceGame) {
+      legalMoves.forEach(square => {
+        const piece = practiceGame.get(square as Square)
+        if (piece) {
+          // Capture indicator: hollow ring around enemy piece
+          newHighlights[square] = {
+            background: 'radial-gradient(circle, transparent 64%, rgba(0, 0, 0, 0.14) 65%)',
+            cursor: 'pointer'
+          }
+        } else {
+          // Empty square: small centered dot
+          newHighlights[square] = {
+            background: 'radial-gradient(circle, rgba(0, 0, 0, 0.14) 22%, transparent 23%)',
+            cursor: 'pointer'
+          }
+        }
+      })
+    }
 
     setHighlightSquares(newHighlights)
-  }, [selectedSquare, legalMoves, practiceMode, practiceGame])
+  }, [selectedSquare, legalMoves, lastMoveSquares, practiceMode, practiceGame])
 
   // Reset practice mode when opening changes
   useEffect(() => {
@@ -726,7 +748,7 @@ const OpeningDetailPage: React.FC = () => {
                   position: practiceMode ? practiceGame?.fen() : game.fen(),
                   boardOrientation: practiceMode ? practiceColor : 'white',
                   allowDragging: practiceMode && isUserTurn() && !isComplete,
-                  dragActivationDistance: 15, // Higher threshold to distinguish taps from drags on mobile
+                  dragActivationDistance: 5, // Lower threshold - library v5.2.2+ properly handles tap vs drag on mobile
                   onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
                   onSquareClick: practiceMode && isUserTurn() && !isComplete ? handleSquareClick : undefined,
                   squareStyle: {

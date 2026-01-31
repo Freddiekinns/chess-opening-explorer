@@ -12,13 +12,15 @@
 - **Related Openings UI:** Consolidated inline expandable teaser with smooth JS height animation, unified card header pattern, contextual mainline callout (variation view), ECO pill metadata (accessible & de-emphasized), passing test coverage (navigation, structure, UI).
   - Frontend test consolidation: Removed legacy tab component & duplicate root Jest UI test; now all related openings UI tests live under `packages/web` (Vitest).
 - **Practice Mode (Move Trainer):** Interactive practice mode on opening detail page where users can:
-  - Play opening moves by dragging pieces on the board
+  - Play opening moves by dragging OR tapping pieces on the board
   - Receive immediate feedback (correct moves accepted, incorrect rejected)
   - Get hints (amber highlight on piece to move) after 2 failed attempts or manually
   - Toggle between playing as White or Black (board flips accordingly)
   - Hear audio feedback (move sounds, completion chime)
   - See progress counter and completion state
-  - 12 passing tests covering the full practice flow
+  - **Visual indicators (Lichess-style):** Previous move highlighting, dots for legal moves, rings for captures
+  - **Mobile tap-to-move:** Works on real mobile devices (react-chessboard v5.8.6)
+  - 15 passing tests covering the full practice flow
 - **PGN Opening Identification:** Users can paste PGN games/moves to identify openings:
   - Modal accessible via "Or search by PGN" link on landing page
   - Parses full PGN (headers, comments, variations stripped automatically)

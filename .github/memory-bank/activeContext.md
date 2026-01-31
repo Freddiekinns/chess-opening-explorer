@@ -1,73 +1,75 @@
 # Active Context
 
-**Date:** 2026-01-30
+**Date:** 2026-01-31
 
-## Current Focus: Practice Mode Click-to-Move Enhancement
+## Current Focus: Practice Mode Mobile & Visual Enhancements - COMPLETE
 
-Added click-to-move functionality to the practice mode chessboard for better mobile UX.
+Fixed mobile tap-to-move bug and added Lichess/Chess.com-style visual indicators to practice mode.
 
-## Session Summary (2026-01-30)
+## Session Summary (2026-01-31)
 
-### Major Feature Delivered
+### Bug Fix: Mobile Tap-to-Move
 
-#### Practice Mode: Click-to-Move Support
-Mobile users can now tap to move pieces in practice mode instead of only drag-and-drop:
+**Problem:** Tap-to-move wasn't working on real mobile devices (only drag worked).
 
-**How it works:**
-1. **First tap** on your piece → selects it (blue highlight) and shows legal move squares (lighter blue)
-2. **Second tap** on a legal destination → executes the move
-3. **Tap elsewhere** → deselects the piece
+**Root Cause:** Outdated `react-chessboard` library (v5.1.0). The bug was fixed in v5.2.2 (Aug 2025) per GitHub issue #206.
 
-**Implementation details:**
-- Both click-to-move AND drag-and-drop work simultaneously
-- Uses `react-chessboard`'s built-in `onSquareClick` handler
-- Legal moves calculated via `chess.js`'s `moves({ square, verbose: true })`
-- Selection cleared on: move execution, exit practice, color switch, restart
+**Solution:** Upgraded `react-chessboard` from `^5.1.0` to `^5.8.6`.
+
+### Enhancement: Lichess-Style Visual Indicators
+
+**Previous:** Blue highlights for selection, no previous move indicator.
+
+**New (matching Lichess/Chess.com):**
+- **Previous move highlight:** Yellow-green `rgba(186, 202, 68, 0.4)` on both from/to squares
+- **Selected square:** Bright yellow `rgba(255, 255, 0, 0.5)`
+- **Legal moves (empty squares):** Small dark dot via radial gradient (22% radius)
+- **Legal moves (capture squares):** Hollow ring via radial gradient (65% outer ring)
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Added click-to-move state, handlers, and effects |
-| `packages/web/src/pages/__tests__/practice-mode.test.tsx` | Added 3 new tests for click-to-move |
+| `packages/web/package.json` | react-chessboard ^5.1.0 → ^5.8.6 |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Added lastMoveSquares state, updated visual effects, lowered dragActivationDistance to 5, removed @ts-ignore |
 
 ### Technical Details
 
-**New State Variables:**
+**New State:**
 ```typescript
-const [selectedSquare, setSelectedSquare] = useState<string | null>(null)
-const [legalMoves, setLegalMoves] = useState<string[]>([])
+const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null)
 ```
 
-**New Functions:**
-- `getLegalMovesForSquare(square)` - Returns array of legal destination squares
-- `handleSquareClick({ piece, square })` - Core click-to-move logic
-- `validateAndHandleMoveFromClick(source, target)` - Executes move from click
-- `clearSelection()` - Resets selection state
+**Updated Effects:**
+- `handleCorrectMove`: Sets lastMoveSquares after user move AND opponent auto-move
+- `startPractice`: Sets lastMoveSquares when auto-playing white's first move (black player)
+- `exitPractice`: Clears lastMoveSquares
 
-**Visual Feedback:**
-- Selected piece square: `rgba(66, 135, 245, 0.5)` (blue)
-- Legal move squares: `rgba(66, 135, 245, 0.25)` (lighter blue)
+**Chessboard Options:**
+- `dragActivationDistance: 5` (lowered from 15 - library now handles tap vs drag properly)
 
 ### Test Results
-- Frontend (Vitest): 135 tests passing (15 in practice-mode.test.tsx)
-- TypeScript: compiles cleanly
+- Frontend (Vitest): 15 practice-mode tests passing
+- TypeScript: compiles cleanly (no errors after removing @ts-ignore)
 
-## Previous Work (Same Day)
+## Previous Work (2026-01-30)
+
+### Practice Mode: Click-to-Move Support
+- Both click-to-move AND drag-and-drop work simultaneously
+- Uses react-chessboard's built-in onSquareClick handler
+- Legal moves calculated via chess.js
 
 ### Personal Opening Explorer - Complete
 - Chess.com API integration
 - Actionable Insights UI (win rate by color, best/worst openings)
-- UX polish (progress bar, note visibility, win-rate indicators)
 
 ## Architecture Decisions
 
-### AD-014: Click-to-Move in Practice Mode
-Mobile UX improvement: support both click-to-move and drag-and-drop in practice mode.
-- Both methods work simultaneously (no toggle needed)
-- Selected piece and legal moves are visually highlighted
-- Selection state is cleared on state transitions (move, exit, color switch)
+### AD-015: Previous Move Highlighting
+Show last move persistently (yellow-green) to help users track game flow in practice mode.
+- Separate from selection highlighting (bright yellow)
+- Cleared on exit/restart, updated after each move pair
 
 ## Current Status
 
-Practice mode now supports click-to-move for mobile users. Ready for testing.
+Practice mode mobile fix and visual enhancements complete. Ready for manual testing on real mobile device.

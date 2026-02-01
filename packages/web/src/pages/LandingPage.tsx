@@ -179,7 +179,7 @@ const LandingPage: React.FC = () => {
           
           {/* Subtitle */}
           <p className="hero-subtitle">
-            Master every opening from the first move - discover and learn chess openings.
+            Discover, explore and learn chess openings.
           </p>
 
           <div className="hero-view-toggle" role="tablist" aria-label="Explore view">
@@ -190,7 +190,7 @@ const LandingPage: React.FC = () => {
               role="tab"
               aria-selected={view === 'global'}
             >
-              Global Popularity
+              Most popular
             </button>
             <button
               type="button"
@@ -202,7 +202,7 @@ const LandingPage: React.FC = () => {
               role="tab"
               aria-selected={view === 'personal'}
             >
-              Personal Repertoire
+              Your Games
             </button>
           </div>
 

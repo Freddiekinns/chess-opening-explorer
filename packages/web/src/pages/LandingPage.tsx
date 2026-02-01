@@ -190,7 +190,7 @@ const LandingPage: React.FC = () => {
               role="tab"
               aria-selected={view === 'global'}
             >
-              Most popular
+              Most Popular
             </button>
             <button
               type="button"

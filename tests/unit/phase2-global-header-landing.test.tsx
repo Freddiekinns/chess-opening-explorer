@@ -130,7 +130,7 @@ describe('PRD-F14 Phase 2: Global Header & Enhanced Landing Page', () => {
       expect(heroSection).toBeInTheDocument()
       
       // Main heading
-      expect(screen.getByRole('heading', { level: 1, name: /master chess openings/i })).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: /Opening Book/i })).toBeInTheDocument()
       
       // Prominent search input
       const searchInput = screen.getByRole('textbox', { name: /search openings/i })

@@ -63,7 +63,7 @@ describe('LandingPage Component', () => {
       })
 
       expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i)
-      expect(screen.getByText(/Master every opening from the first move/i)).toBeInTheDocument()
+      expect(screen.getByText(/Discover, explore and learn chess openings/i)).toBeInTheDocument()
     })
 
     test('should render search component', async () => {

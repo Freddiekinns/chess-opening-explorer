@@ -58,7 +58,7 @@ describe('Personal API Routes', () => {
   test('GET /api/personal/games returns games PGN list for Lichess', async () => {
     const mockLichess = jest.fn().mockResolvedValue({
       gamesPgn: ['[Event "test"]\n\n1. e4 e5 1-0'],
-      meta: { requested: 200, returned: 1 },
+      meta: { requested: 500, returned: 1 },
       cacheHit: true
     });
     const mockChessCom = jest.fn();
@@ -70,16 +70,16 @@ describe('Personal API Routes', () => {
     }));
 
     const res = await request(app)
-      .get('/api/personal/games?platform=lichess&username=SomeUser&limit=200')
+      .get('/api/personal/games?platform=lichess&username=SomeUser&limit=500')
       .expect(200);
 
     expect(res.body).toEqual({
       success: true,
       data: { gamesPgn: ['[Event "test"]\n\n1. e4 e5 1-0'] },
-      meta: { requested: 200, returned: 1, cacheHit: true }
+      meta: { requested: 500, returned: 1, cacheHit: true }
     });
 
-    expect(mockLichess).toHaveBeenCalledWith({ username: 'SomeUser', limit: 200 });
+    expect(mockLichess).toHaveBeenCalledWith({ username: 'SomeUser', limit: 500 });
     expect(mockChessCom).not.toHaveBeenCalled();
   });
 
@@ -114,7 +114,7 @@ describe('Personal API Routes', () => {
   test('GET /api/personal/games enforces rate limit', async () => {
     const mockGet = jest.fn().mockResolvedValue({
       gamesPgn: [],
-      meta: { requested: 200, returned: 0 },
+      meta: { requested: 500, returned: 0 },
       cacheHit: false
     });
 

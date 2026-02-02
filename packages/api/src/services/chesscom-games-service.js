@@ -146,11 +146,11 @@ function isGameAccepted(game) {
  * Fetches from most recent archives until we have enough games
  * @param {Object} options
  * @param {string} options.username
- * @param {number} [options.limit=200]
+ * @param {number} [options.limit=500]
  * @param {Function} [options.fetchImpl] - Optional fetch implementation for testing
  * @returns {Promise<{gamesPgn: string[], meta: Object}>}
  */
-async function fetchChessComGamesPgn({ username, limit = 200, fetchImpl } = {}) {
+async function fetchChessComGamesPgn({ username, limit = 500, fetchImpl } = {}) {
   const normalizedUsername = normalizeUsername(username);
   if (!normalizedUsername) {
     const err = new Error('username is required');
@@ -158,7 +158,7 @@ async function fetchChessComGamesPgn({ username, limit = 200, fetchImpl } = {}) 
     throw err;
   }
 
-  const clampedLimit = clampInt(limit, 1, 200, 200);
+  const clampedLimit = clampInt(limit, 1, 500, 500);
 
   // Step 1: Get list of archives
   const archives = await fetchChessComArchives({ username: normalizedUsername, fetchImpl });
@@ -216,12 +216,12 @@ async function fetchChessComGamesPgn({ username, limit = 200, fetchImpl } = {}) 
  * Cached version of fetchChessComGamesPgn with deduplication of in-flight requests
  * @param {Object} options
  * @param {string} options.username
- * @param {number} [options.limit=200]
+ * @param {number} [options.limit=500]
  * @param {Function} [options.fetchImpl] - Optional fetch implementation for testing
  * @returns {Promise<{gamesPgn: string[], meta: Object, cacheHit: boolean}>}
  */
-async function getChessComGamesPgnCached({ username, limit = 200, fetchImpl } = {}) {
-  const clampedLimit = clampInt(limit, 1, 200, 200);
+async function getChessComGamesPgnCached({ username, limit = 500, fetchImpl } = {}) {
+  const clampedLimit = clampInt(limit, 1, 500, 500);
   const key = buildChessComCacheKey({ username, limit: clampedLimit });
   const now = Date.now();
 

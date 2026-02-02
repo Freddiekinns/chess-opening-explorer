@@ -133,7 +133,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
 }) => {
   const [platform, setPlatform] = useState<Platform>('chess.com')
   const [username, setUsername] = useState(prefillUsername || '')
-  const [limit, setLimit] = useState(200)
+  const [limit, setLimit] = useState(500)
 
   const [step, setStep] = useState<'idle' | 'fetching' | 'analysing' | 'done' | 'error'>('idle')
   const [stepText, setStepText] = useState('')
@@ -185,7 +185,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
   }
 
   const setLimitSafe = (value: number) => {
-    setLimit(clampInt(value, 1, 200, 200))
+    setLimit(clampInt(value, 1, 500, 500))
   }
 
   const isBusy = step === 'fetching' || step === 'analysing'
@@ -218,7 +218,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
     setTotal(0)
 
     try {
-      const clamped = clampInt(limit, 1, 200, 200)
+      const clamped = clampInt(limit, 1, 500, 500)
       const u = normalizeUsername(username)
       const url = `/api/personal/games?platform=${encodeURIComponent(platform)}&username=${encodeURIComponent(u)}&limit=${clamped}`
 
@@ -433,7 +433,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
                   className="personal-stepper__input"
                   type="number"
                   min={1}
-                  max={200}
+                  max={500}
                   step={1}
                   value={limit}
                   onChange={(e) => setLimitSafe(Number(e.target.value))}
@@ -444,7 +444,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
                   type="button"
                   className="personal-stepper__btn"
                   onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
-                  disabled={isBusy || limit >= 200}
+                  disabled={isBusy || limit >= 500}
                   aria-label="Increase games"
                   title="Hold Shift for +10"
                 >
@@ -455,7 +455,7 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
           </div>
 
           {!dashboard && (
-            <div className="personal-note">Rated rapid/blitz/classical only. Max 200 games. Bullet excluded.</div>
+            <div className="personal-note">Rated rapid/blitz/classical only. Max 500 games. Bullet excluded.</div>
           )}
 
           {/* Mobile: button to collapse controls after they've been expanded */}

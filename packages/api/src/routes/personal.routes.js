@@ -79,13 +79,13 @@ function createPersonalRoutes(
    * @desc Fetch rated games PGN for a username (fetch-only)
    * @query platform=lichess
    * @query username
-   * @query limit (default 200, max 200)
+   * @query limit (default 500, max 500)
    */
   router.get('/games', async (req, res) => {
     try {
       const platform = normalizePlatform(req.query.platform);
       const username = normalizeUsername(req.query.username);
-      const limit = clampInt(req.query.limit, 1, 200, 200);
+      const limit = clampInt(req.query.limit, 1, 500, 500);
 
       if (!platform) {
         return res.status(400).json({

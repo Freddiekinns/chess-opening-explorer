@@ -84,7 +84,20 @@ class QueryIntentParser {
       intent.type = 'modified_opening';
       intent.style = [modifierMatch[1]];
       intent.openingName = modifierMatch[2];
-      
+
+      return intent;
+    }
+
+    // Check for style + move patterns (e.g., "attacking d4", "solid e4 openings")
+    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
+    const queryParts = query.split(/\s+/);
+    const styleInQuery = styleWords.find(s => queryParts.includes(s));
+    const movesInQuery = QueryUtils.extractMoves(query);
+
+    if (styleInQuery && movesInQuery.length > 0) {
+      intent.type = 'style_with_move';
+      intent.style = [styleInQuery];
+      intent.targetMoves = movesInQuery;
       return intent;
     }
 

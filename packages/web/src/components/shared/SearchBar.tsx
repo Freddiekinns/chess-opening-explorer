@@ -106,7 +106,7 @@ async function getSearchSuggestions(query: string): Promise<string[]> {
 // Helper function to detect if a query looks like a chess move
 function isChessMove(query: string): boolean {
   const trimmed = query.trim().toLowerCase();
-  
+
   // Common chess moves: d4, e4, nf3, etc.
   const movePatterns = [
     /^[a-h][1-8]$/, // Pawn moves: e4, d4, etc.
@@ -116,14 +116,85 @@ function isChessMove(query: string): boolean {
     /^[a-h]x[a-h][1-8]$/, // Captures: exd5, etc.
     /^[nbrqk]x[a-h][1-8]$/, // Piece captures: nxe5, etc.
   ];
-  
+
   return movePatterns.some(pattern => pattern.test(trimmed));
+}
+
+// Helper function to detect if a query is an ECO code
+function isEcoCode(query: string): boolean {
+  const trimmed = query.trim().toUpperCase();
+  // ECO codes are A00-E99
+  return /^[A-E]\d{1,2}$/.test(trimmed);
+}
+
+// Common abbreviations for chess openings
+const ABBREVIATION_MAP: Record<string, string> = {
+  'qgd': "Queen's Gambit Declined",
+  'qga': "Queen's Gambit Accepted",
+  'kid': "King's Indian Defense",
+  'qid': "Queen's Indian Defense",
+  'ck': "Caro-Kann Defense",
+  'caro': "Caro-Kann Defense",
+  'ruy': "Ruy Lopez",
+  'rl': "Ruy Lopez",
+  'nimzo': "Nimzo-Indian Defense",
+  'grunfeld': "Grunfeld Defense",
+  'grünfeld': "Grunfeld Defense",
+  'benoni': "Benoni Defense",
+  'slav': "Slav Defense",
+  'catalan': "Catalan Opening",
+  'dutch': "Dutch Defense",
+  'london': "London System",
+  'trompowsky': "Trompowsky Attack",
+  'tromp': "Trompowsky Attack",
+  'pirc': "Pirc Defense",
+  'alekhine': "Alekhine's Defense",
+  'scandi': "Scandinavian Defense",
+  'petroff': "Petrov's Defense",
+  'petrov': "Petrov's Defense",
+  'vienna': "Vienna Game",
+  'scotch': "Scotch Game",
+  'italian': "Italian Game",
+  'giuoco': "Italian Game",
+  'evans': "Evans Gambit",
+  'marshall': "Marshall Attack",
+  'berlin': "Berlin Defense",
+  'sveshnikov': "Sveshnikov Sicilian",
+  'dragon': "Sicilian Dragon",
+  'najdorf': "Sicilian Najdorf",
+  'scheveningen': "Sicilian Scheveningen",
+  'bogo': "Bogo-Indian Defense"
+};
+
+// Expand abbreviations in query
+function expandAbbreviations(query: string): string {
+  const lower = query.toLowerCase().trim();
+  return ABBREVIATION_MAP[lower] || query;
+}
+
+// Format moves for display (show first few moves)
+function formatMovesPreview(moves: string): string {
+  if (!moves) return '';
+  // Show first 3-4 half-moves, trimmed for display
+  const parts = moves.split(' ').slice(0, 6);
+  const preview = parts.join(' ');
+  return preview.length > 25 ? preview.substring(0, 25) + '...' : preview;
 }
 
 // Client-side fallback search (kept for offline scenarios)
 function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
-  const lowerCaseQuery = query.toLowerCase()
-  
+  // Expand abbreviations first (e.g., "qgd" -> "Queen's Gambit Declined")
+  const expandedQuery = expandAbbreviations(query);
+  const lowerCaseQuery = expandedQuery.toLowerCase()
+
+  // Handle ECO code searches specially
+  if (isEcoCode(query)) {
+    const ecoCode = query.trim().toUpperCase();
+    return openingsData
+      .filter(o => o.eco.toUpperCase().startsWith(ecoCode))
+      .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0));
+  }
+
   return openingsData
     .map(opening => {
       let score = 0
@@ -233,10 +304,13 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
     .map(item => item.opening)
 }
 
+// Default placeholder with helpful hints
+const DEFAULT_PLACEHOLDER = "Try: Sicilian, d4, QGD, B90, or 'aggressive openings'";
+
 export const SearchBar: React.FC<SearchBarProps> = ({
   variant = 'landing',
   onSelect,
-  placeholder = "Search to find your opening",
+  placeholder = DEFAULT_PLACEHOLDER,
   autoFocus = false,
   disabled = false,
   loading = false,
@@ -249,6 +323,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [activeSuggestion, setActiveSuggestion] = useState(-1)
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false)
+  const [noResults, setNoResults] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
   // Enhanced search with server-side semantic search
@@ -256,36 +331,53 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     if (searchTerm.length < 2) {
       setSuggestions([])
       setShowSuggestions(false)
+      setNoResults(false)
       return
     }
 
     // Debounce search requests
     const searchTimeout = setTimeout(async () => {
       try {
+        // Expand abbreviations (e.g., "qgd" -> "Queen's Gambit Declined")
+        const expandedQuery = expandAbbreviations(searchTerm);
+        const queryToUse = expandedQuery !== searchTerm ? expandedQuery : searchTerm;
+
+        // For ECO codes, use client-side search for instant results
+        if (isEcoCode(searchTerm)) {
+          const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
+          setSuggestions(relevantOpenings.slice(0, 8))
+          setShowSuggestions(relevantOpenings.length > 0)
+          setNoResults(relevantOpenings.length === 0)
+          return
+        }
+
         // For chess moves, prioritize client-side search for better move matching
         if (isChessMove(searchTerm)) {
           const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
           if (relevantOpenings.length > 0) {
             setSuggestions(relevantOpenings.slice(0, 8))
             setShowSuggestions(true)
+            setNoResults(false)
             return
           }
         }
 
         // For non-chess moves, try server-side search first
-        const searchResults = await searchOpenings(searchTerm, true);
+        const searchResults = await searchOpenings(queryToUse, true);
 
         if (searchResults.results.length > 0) {
           setSuggestions(searchResults.results.slice(0, 8))
           setShowSuggestions(true)
+          setNoResults(false)
           return
         }
 
         // Fallback to client-side search if server returns no results
-        const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
+        const relevantOpenings = findAndRankOpenings(queryToUse, openingsData)
         setSuggestions(relevantOpenings.slice(0, 8))
         setShowSuggestions(relevantOpenings.length > 0)
-        
+        setNoResults(relevantOpenings.length === 0 && searchTerm.length >= 2)
+
         // If we have few results and haven't expanded yet, request more data
         if (relevantOpenings.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
           setHasRequestedExpansion(true)
@@ -297,6 +389,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
         setSuggestions(relevantOpenings.slice(0, 8))
         setShowSuggestions(relevantOpenings.length > 0)
+        setNoResults(relevantOpenings.length === 0 && searchTerm.length >= 2)
       }
     }, 300) // 300ms debounce
 
@@ -416,11 +509,23 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 onClick={() => handleSuggestionClick(opening)}
                 onMouseEnter={() => setActiveSuggestion(index)}
               >
-                <strong className="opening-name">{opening.name}</strong>
-                <span className="opening-eco eco-code">({opening.eco})</span>
+                <div className="suggestion-main">
+                  <strong className="opening-name">{opening.name}</strong>
+                  <span className="opening-eco eco-code">({opening.eco})</span>
+                </div>
+                {opening.moves && (
+                  <div className="suggestion-moves">{formatMovesPreview(opening.moves)}</div>
+                )}
               </li>
             ))}
           </ul>
+        )}
+
+        {noResults && searchTerm.length >= 2 && !showSuggestions && (
+          <div className="search-no-results">
+            <p>No openings found for "{searchTerm}"</p>
+            <p className="search-no-results-hint">Try a different spelling, ECO code (e.g., B90), or abbreviation (e.g., QGD)</p>
+          </div>
         )}
       </div>
     </div>

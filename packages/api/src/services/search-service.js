@@ -115,12 +115,22 @@ class SearchService {
       if (QueryUtils.isChessMove(normalizedQuery)) {
         return this.searchByMove(normalizedQuery, sanitizedOptions);
       }
-      
+
+      // Check for style + move patterns FIRST (e.g., "attacking d4", "solid e4")
+      // These should use semantic search even if they contain ambiguous terms
+      const hasStyleAndMove = this.hasStyleWithMovePattern(normalizedQuery);
+      if (hasStyleAndMove) {
+        const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
+        if (semanticResults.results.length > 0) {
+          return semanticResults;
+        }
+      }
+
       // Enhanced search routing: for ambiguous terms like "attacking" or "gambit"
       // try popularity-based name search first, then semantic search if poor results
       const looksLikeOpeningName = QueryUtils.looksLikeOpeningName(normalizedQuery);
       const isAmbiguousTerm = QueryUtils.isAmbiguousSemanticTerm(normalizedQuery);
-      
+
       // For ambiguous terms, ALWAYS try name search first with word-precision matching
       // This ensures queries like "kings indian" get proper name matching instead of fuzzy
       if (isAmbiguousTerm) {
@@ -134,7 +144,7 @@ class SearchService {
           };
         }
       }
-      
+
       // Use semantic search for clear natural language queries
       if (!looksLikeOpeningName && !isAmbiguousTerm) {
         const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
@@ -369,10 +379,38 @@ class SearchService {
         results = this.filterByOpeningName(results, queryIntent.openingName);
         results = this.filterBySemanticStyle(results, queryIntent.style);
         break;
+
+      case 'style_with_move':
+        // Filter by move (e.g., d4 openings) AND style (e.g., attacking)
+        results = this.filterByOpeningMove(results, queryIntent.targetMoves);
+        results = this.filterBySemanticStyle(results, queryIntent.style);
+        break;
     }
-    
+
     // Score and sort results
     return this.scoreSemanticResults(results, queryIntent);
+  }
+
+  /**
+   * Filter openings by opening move
+   * @param {Array} openings - Array of openings to filter
+   * @param {Array} moves - Array of moves to filter by (e.g., ['d4'])
+   * @returns {Array} Filtered openings
+   */
+  filterByOpeningMove(openings, moves) {
+    if (!moves || moves.length === 0) return openings;
+
+    return openings.filter(opening => {
+      const openingMoves = opening.moves?.toLowerCase() || '';
+
+      // Only match openings that START with this move as White's first move
+      return moves.some(move => {
+        const moveLower = move.toLowerCase();
+        // Match as first white move (e.g., "1. d4" or "1.d4")
+        return openingMoves.startsWith(`1. ${moveLower}`) ||
+               openingMoves.startsWith(`1.${moveLower}`);
+      });
+    });
   }
 
   /**
@@ -842,6 +880,19 @@ class SearchService {
   }
 
   /**
+   * Check if query contains a style + move pattern (e.g., "attacking d4", "solid e4")
+   * @param {string} query - Normalized query
+   * @returns {boolean}
+   */
+  hasStyleWithMovePattern(query) {
+    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
+    const queryParts = query.split(/\s+/);
+    const hasStyle = styleWords.some(s => queryParts.includes(s));
+    const hasMovePattern = QueryUtils.extractMoves(query).length > 0;
+    return hasStyle && hasMovePattern;
+  }
+
+  /**
    * Check if a term is ambiguous between semantic and name search
    * @param {string} query - Normalized query
    * @returns {boolean}
@@ -855,7 +906,7 @@ class SearchService {
       // Add specific opening name patterns that need popularity-first search
       'indian', 'kings', 'queens'  // These cause cross-contamination issues
     ];
-    
+
     return ambiguousTerms.some(term => query.includes(term));
   }
 

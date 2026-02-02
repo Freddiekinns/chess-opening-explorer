@@ -166,6 +166,12 @@ const ABBREVIATION_MAP: Record<string, string> = {
   'bogo': "Bogo-Indian Defense"
 };
 
+// Check if query is a known abbreviation
+function isKnownAbbreviation(query: string): boolean {
+  const lower = query.toLowerCase().trim();
+  return lower in ABBREVIATION_MAP;
+}
+
 // Expand abbreviations in query
 function expandAbbreviations(query: string): string {
   const lower = query.toLowerCase().trim();
@@ -347,8 +353,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       setNoResults(false)
     }
 
-    // For ECO codes and chess moves, client-side is sufficient - no server call needed
-    if (isEcoCode(searchTerm) || isChessMove(searchTerm)) {
+    // For ECO codes, chess moves, and known abbreviations - client-side is sufficient
+    if (isEcoCode(searchTerm) || isChessMove(searchTerm) || isKnownAbbreviation(searchTerm)) {
       if (instantResults.length === 0) {
         setNoResults(true)
         setShowSuggestions(false)

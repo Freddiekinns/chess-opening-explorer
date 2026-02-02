@@ -254,8 +254,10 @@ const OpeningDetailPage: React.FC = () => {
       }
       
       setGameHistory(history)
-      setGame(new Chess()) // Reset to starting position
-      setCurrentMoveIndex(0)
+      // Initialize to final position (end of opening sequence)
+      const finalIndex = history.length - 1
+      setCurrentMoveIndex(finalIndex)
+      setGame(new Chess(history[finalIndex]))
     } catch (e) {
       console.error('Error setting up game:', e)
     }

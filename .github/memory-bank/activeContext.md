@@ -2,11 +2,37 @@
 
 **Date:** 2026-02-02
 
-## Current Focus: Related Openings UX Improvements - COMPLETE
+## Current Focus: Opening Board Initial Position - COMPLETE
 
-Enhanced Related Openings section to distinguish same-named variations and improve loading performance.
+Changed the opening detail page to display the final position of the opening sequence by default, providing immediate visual feedback of the opening's resulting position.
 
 ## Session Summary (2026-02-02)
+
+### Enhancement: Display Final Position by Default
+
+**Problem:** When viewing an opening detail page, the chessboard showed the starting position (unmoved pieces) instead of the final position of the opening sequence. Users had to manually navigate through moves to see what the opening looks like.
+
+**Solution:** Initialize the board to the final position of the opening sequence by default.
+
+**Implementation:**
+- Modified `setupGame()` function in `OpeningDetailPage.tsx`
+- Changed initial position from `currentMoveIndex: 0` to `currentMoveIndex: history.length - 1`
+- Board now loads with `new Chess(history[finalIndex])` instead of `new Chess()`
+- Practice mode still correctly starts from the beginning (unchanged behavior in `startPractice()`)
+- Users can navigate to any position using existing move controls (`<<`, `<`, `>`, `>>`)
+
+**Files Changed:**
+| File | Change |
+|------|--------|
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Modified setupGame to initialize at final position |
+
+**User Experience Impact:**
+- Immediate visual feedback: Users see the opening's final position upon page load
+- Better context: Users understand what the opening looks like without navigation
+- Practice mode: Still starts from beginning as expected
+- Navigation: All existing controls work as before
+
+## Previous Session (2026-02-02): Related Openings UX Improvements
 
 ### Enhancement: Move Sequence Display
 
@@ -76,4 +102,4 @@ useEffect(() => {
 
 ## Current Status
 
-Related Openings improvements complete. Branch `claude/distinguish-opening-variations-0ihi9` ready for merge to main.
+Opening board initial position enhancement complete. Branch `claude/opening-final-position-fEhHt` ready for merge to main.

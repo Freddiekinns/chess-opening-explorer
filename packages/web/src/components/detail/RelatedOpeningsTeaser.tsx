@@ -1,15 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRelatedOpenings } from '../../useRelatedOpenings'
+import { useRelatedOpenings, RelatedOpeningsResponse } from '../../useRelatedOpenings'
 import { VariationItem } from './VariationItem'
 
 interface Props {
   fen: string | undefined
   className?: string
+  /** Pre-fetched related openings data. If provided, skips the internal fetch. */
+  relatedData?: RelatedOpeningsResponse | null
+  /** Loading state when data is being fetched externally */
+  relatedLoading?: boolean
 }
 
-export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) => {
-  const { data, loading, error } = useRelatedOpenings(fen)
+export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', relatedData, relatedLoading }) => {
+  // Only use the hook if data wasn't provided externally
+  const hookResult = useRelatedOpenings(relatedData !== undefined ? undefined : fen)
+
+  // Use external data if provided, otherwise fall back to hook
+  const data = relatedData !== undefined ? relatedData : hookResult.data
+  const loading = relatedData !== undefined ? !!relatedLoading : hookResult.loading
+  const error = relatedData !== undefined ? null : hookResult.error
   const navigate = useNavigate()
   const [expanded, setExpanded] = useState(false)
   const bodyRef = useRef<HTMLDivElement | null>(null)
@@ -73,11 +83,13 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
             <VariationItem
               fen={mainline.fen}
               name={mainline.name}
+              moves={(mainline as any).moves}
               isEcoRoot={true}
               complexity={(mainline as any).complexity}
               onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
               className="related-teaser__item related-teaser__item--mainline"
               showComplexityTag={true}
+              showMoves={true}
             />
           )}
           {(expanded ? fullList : top).map((o: any) => (
@@ -85,12 +97,14 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
               key={o.fen}
               fen={o.fen}
               name={o.name}
+              moves={o.moves}
               isEcoRoot={o.isEcoRoot}
               complexity={o.complexity}
               onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
               className="related-teaser__item"
               showLineTypePill={false}
               showComplexityTag={true}
+              showMoves={true}
             />
           ))}
         </ul>

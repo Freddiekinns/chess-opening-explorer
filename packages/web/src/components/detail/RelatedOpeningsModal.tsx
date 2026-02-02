@@ -11,6 +11,7 @@ interface RelatedOpeningsModalProps {
 interface RelatedOpeningItem {
   fen: string
   name: string
+  moves?: string
   eco?: string
   games_analyzed?: number
   isCurrent?: boolean
@@ -119,11 +120,13 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
                   <VariationItem
                     fen={data.mainline.fen}
                     name={data.mainline.name}
+                    moves={data.mainline.moves}
                     games_analyzed={data.mainline.games_analyzed}
                     isEcoRoot={true}
                     showLineTypePill={false}
                     complexity={data.mainline.complexity}
                     showComplexityTag={!!data.mainline.complexity}
+                    showMoves={true}
                     onNavigate={(nextFen) => { window.location.href = `/opening/${encodeURIComponent(nextFen)}` }}
                   />
                 </div>
@@ -134,11 +137,13 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
                     key={sib.fen}
                     fen={sib.fen}
                     name={sib.name}
+                    moves={sib.moves}
                     games_analyzed={sib.games_analyzed}
                     isEcoRoot={sib.isMainline}
                     complexity={sib.complexity}
                     showComplexityTag={!!sib.complexity}
                     showLineTypePill={false}
+                    showMoves={true}
                     onNavigate={(nextFen) => { window.location.href = `/opening/${encodeURIComponent(nextFen)}` }}
                   />
                 ))}

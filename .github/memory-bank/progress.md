@@ -10,6 +10,8 @@
 - **Unified Architecture:** The monorepo structure with shared packages and the Vercel deployment pattern are implemented and working.
 - **Frontend Foundation:** The React/Vite frontend is set up with routing, a basic layout, and the critical single CSS file architecture.
 - **Related Openings UI:** Consolidated inline expandable teaser with smooth JS height animation, unified card header pattern, contextual mainline callout (variation view), ECO pill metadata (accessible & de-emphasized), passing test coverage (navigation, structure, UI).
+  - Move sequences displayed below opening names to distinguish same-named variations
+  - Parallel data fetching eliminates loading delay (fetched alongside main opening)
   - Frontend test consolidation: Removed legacy tab component & duplicate root Jest UI test; now all related openings UI tests live under `packages/web` (Vitest).
 - **Practice Mode (Move Trainer):** Interactive practice mode on opening detail page where users can:
   - Play opening moves by dragging OR tapping pieces on the board

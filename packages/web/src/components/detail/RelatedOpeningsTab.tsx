@@ -89,11 +89,13 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
                 key={o.fen}
                 fen={o.fen}
                 name={o.name}
+                moves={o.moves}
                 isEcoRoot={o.isEcoRoot}
                 games_analyzed={o.games_analyzed}
                 complexity={o.complexity}
                 onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
                 showLineTypePill={true}
+                showMoves={true}
               />
             ))}
           </ul>

@@ -73,11 +73,13 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
             <VariationItem
               fen={mainline.fen}
               name={mainline.name}
+              moves={(mainline as any).moves}
               isEcoRoot={true}
               complexity={(mainline as any).complexity}
               onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
               className="related-teaser__item related-teaser__item--mainline"
               showComplexityTag={true}
+              showMoves={true}
             />
           )}
           {(expanded ? fullList : top).map((o: any) => (
@@ -85,12 +87,14 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) 
               key={o.fen}
               fen={o.fen}
               name={o.name}
+              moves={o.moves}
               isEcoRoot={o.isEcoRoot}
               complexity={o.complexity}
               onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
               className="related-teaser__item"
               showLineTypePill={false}
               showComplexityTag={true}
+              showMoves={true}
             />
           ))}
         </ul>

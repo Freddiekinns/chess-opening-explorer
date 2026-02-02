@@ -67,6 +67,7 @@ const API_ENDPOINTS = {
   OPENING_BY_FEN: '/api/openings/fen/',
   VIDEOS_BY_FEN: '/api/openings/videos/',
   STATS_BY_FEN: '/api/stats/',
+  RELATED_BY_FEN: '/api/openings/fen/',
   ALL_OPENINGS: '/api/openings/all'
 } as const;
 
@@ -87,6 +88,8 @@ const OpeningDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [popularityStats, setPopularityStats] = useState<any>(null)
+  const [relatedOpenings, setRelatedOpenings] = useState<any>(null)
+  const [relatedLoading, setRelatedLoading] = useState(false)
   const [openingsData, setOpeningsData] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
@@ -111,7 +114,10 @@ const OpeningDetailPage: React.FC = () => {
 
   useEffect(() => {
     if (fen) {
-      loadOpening(decodeURIComponent(fen))
+      const decodedFen = decodeURIComponent(fen)
+      // Start both fetches in parallel
+      loadOpening(decodedFen)
+      loadRelatedOpenings(decodedFen)
     }
   }, [fen])
 
@@ -168,6 +174,7 @@ const OpeningDetailPage: React.FC = () => {
         console.log('Opening data loaded from API:', data.data)
         setOpening(data.data)
         setupGame(data.data)
+        // Fetch additional data (related openings fetched in parallel from useEffect)
         loadPopularityStats(fenString)
         loadVideos(fenString)
       } else {
@@ -195,8 +202,21 @@ const OpeningDetailPage: React.FC = () => {
       `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
       'Error loading videos:'
     );
-    
+
     setVideos(data?.data || []);
+  }
+
+  const loadRelatedOpenings = async (fenString: string) => {
+    setRelatedLoading(true)
+    try {
+      const data = await fetchWithErrorHandling(
+        `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/related`,
+        'Error loading related openings:'
+      );
+      setRelatedOpenings(data?.data || null);
+    } finally {
+      setRelatedLoading(false)
+    }
   }
 
   const setupGame = (openingData: Opening) => {
@@ -1042,6 +1062,8 @@ const OpeningDetailPage: React.FC = () => {
             <RelatedOpeningsTeaser
               fen={opening.fen}
               className="related-teaser-block"
+              relatedData={relatedOpenings}
+              relatedLoading={relatedLoading}
             />
           )}
 

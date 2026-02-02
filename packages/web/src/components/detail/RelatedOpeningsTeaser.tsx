@@ -1,15 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRelatedOpenings } from '../../useRelatedOpenings'
+import { useRelatedOpenings, RelatedOpeningsResponse } from '../../useRelatedOpenings'
 import { VariationItem } from './VariationItem'
 
 interface Props {
   fen: string | undefined
   className?: string
+  /** Pre-fetched related openings data. If provided, skips the internal fetch. */
+  relatedData?: RelatedOpeningsResponse | null
+  /** Loading state when data is being fetched externally */
+  relatedLoading?: boolean
 }
 
-export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '' }) => {
-  const { data, loading, error } = useRelatedOpenings(fen)
+export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', relatedData, relatedLoading }) => {
+  // Only use the hook if data wasn't provided externally
+  const hookResult = useRelatedOpenings(relatedData !== undefined ? undefined : fen)
+
+  // Use external data if provided, otherwise fall back to hook
+  const data = relatedData !== undefined ? relatedData : hookResult.data
+  const loading = relatedData !== undefined ? !!relatedLoading : hookResult.loading
+  const error = relatedData !== undefined ? null : hookResult.error
   const navigate = useNavigate()
   const [expanded, setExpanded] = useState(false)
   const bodyRef = useRef<HTMLDivElement | null>(null)

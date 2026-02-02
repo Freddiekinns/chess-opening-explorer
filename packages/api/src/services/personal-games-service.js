@@ -70,7 +70,9 @@ async function fetchLichessGamesPgnRated({ username, limit = 500, fetchImpl } = 
 
   const fetchFn = getFetch(fetchImpl);
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20000);
+  // Lichess throttles game exports at 10 games/second for anonymous requests
+  // 500 games = 50 seconds minimum, so we use 60 seconds timeout for buffer
+  const timeout = setTimeout(() => controller.abort(), 60000);
 
   try {
     const response = await fetchFn(url, {

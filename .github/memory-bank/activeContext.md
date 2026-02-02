@@ -1,75 +1,79 @@
 # Active Context
 
-**Date:** 2026-01-31
+**Date:** 2026-02-02
 
-## Current Focus: Practice Mode Mobile & Visual Enhancements - COMPLETE
+## Current Focus: Related Openings UX Improvements - COMPLETE
 
-Fixed mobile tap-to-move bug and added Lichess/Chess.com-style visual indicators to practice mode.
+Enhanced Related Openings section to distinguish same-named variations and improve loading performance.
 
-## Session Summary (2026-01-31)
+## Session Summary (2026-02-02)
 
-### Bug Fix: Mobile Tap-to-Move
+### Enhancement: Move Sequence Display
 
-**Problem:** Tap-to-move wasn't working on real mobile devices (only drag worked).
+**Problem:** Related openings with the same name (e.g., multiple "Caro-Kann Advance Variation" entries) were indistinguishable.
 
-**Root Cause:** Outdated `react-chessboard` library (v5.1.0). The bug was fixed in v5.2.2 (Aug 2025) per GitHub issue #206.
+**Solution:** Display move sequences below each opening name.
 
-**Solution:** Upgraded `react-chessboard` from `^5.1.0` to `^5.8.6`.
+**Implementation:**
+- Added `moves` and `showMoves` props to `VariationItem` component
+- `formatMoves()` utility truncates long sequences (8 moves desktop, CSS-based mobile truncation)
+- Native `title` tooltip shows full moves on hover
+- Monospace font, muted color for visual hierarchy
 
-### Enhancement: Lichess-Style Visual Indicators
+### Performance: Parallel Data Fetching
 
-**Previous:** Blue highlights for selection, no previous move indicator.
+**Problem:** Related Openings section loaded noticeably slower than the rest of the page due to waterfall request pattern.
 
-**New (matching Lichess/Chess.com):**
-- **Previous move highlight:** Yellow-green `rgba(186, 202, 68, 0.4)` on both from/to squares
-- **Selected square:** Bright yellow `rgba(255, 255, 0, 0.5)`
-- **Legal moves (empty squares):** Small dark dot via radial gradient (22% radius)
-- **Legal moves (capture squares):** Hollow ring via radial gradient (65% outer ring)
+**Root Cause:** `RelatedOpeningsTeaser` fetched its own data via `useRelatedOpenings` hook AFTER the component mounted.
+
+**Solution:** Fetch related openings in parallel with main opening data.
+
+**Implementation:**
+- `RelatedOpeningsTeaser` now accepts optional `relatedData` and `relatedLoading` props
+- When provided, skips internal fetch (backward compatible)
+- `OpeningDetailPage` starts both fetches simultaneously from `useEffect`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `packages/web/package.json` | react-chessboard ^5.1.0 → ^5.8.6 |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Added lastMoveSquares state, updated visual effects, lowered dragActivationDistance to 5, removed @ts-ignore |
+| `packages/web/src/components/detail/VariationItem.tsx` | Added moves display with truncation |
+| `packages/web/src/components/detail/RelatedOpeningsTeaser.tsx` | Accept pre-fetched data props |
+| `packages/web/src/components/detail/RelatedOpeningsModal.tsx` | Pass moves to VariationItem |
+| `packages/web/src/components/detail/RelatedOpeningsTab.tsx` | Pass moves to VariationItem |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Parallel fetch for related openings |
+| `packages/web/src/styles/simplified.css` | Styling for moves display |
 
 ### Technical Details
 
-**New State:**
+**New VariationItem Props:**
 ```typescript
-const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null)
+moves?: string           // Move sequence to display
+showMoves?: boolean      // Toggle move display (default: false)
 ```
 
-**Updated Effects:**
-- `handleCorrectMove`: Sets lastMoveSquares after user move AND opponent auto-move
-- `startPractice`: Sets lastMoveSquares when auto-playing white's first move (black player)
-- `exitPractice`: Clears lastMoveSquares
+**Move Truncation:**
+- Desktop: Up to 8 moves, then "..."
+- Mobile (<480px): CSS max-width 180px for tighter truncation
+- Full moves shown in native browser tooltip on hover
 
-**Chessboard Options:**
-- `dragActivationDistance: 5` (lowered from 15 - library now handles tap vs drag properly)
+**Parallel Fetch Pattern:**
+```typescript
+useEffect(() => {
+  if (fen) {
+    const decodedFen = decodeURIComponent(fen)
+    loadOpening(decodedFen)        // Main opening
+    loadRelatedOpenings(decodedFen) // In parallel
+  }
+}, [fen])
+```
 
-### Test Results
-- Frontend (Vitest): 15 practice-mode tests passing
-- TypeScript: compiles cleanly (no errors after removing @ts-ignore)
+## Previous Work (2026-01-31)
 
-## Previous Work (2026-01-30)
-
-### Practice Mode: Click-to-Move Support
-- Both click-to-move AND drag-and-drop work simultaneously
-- Uses react-chessboard's built-in onSquareClick handler
-- Legal moves calculated via chess.js
-
-### Personal Opening Explorer - Complete
-- Chess.com API integration
-- Actionable Insights UI (win rate by color, best/worst openings)
-
-## Architecture Decisions
-
-### AD-015: Previous Move Highlighting
-Show last move persistently (yellow-green) to help users track game flow in practice mode.
-- Separate from selection highlighting (bright yellow)
-- Cleared on exit/restart, updated after each move pair
+### Practice Mode Mobile & Visual Enhancements
+- Fixed mobile tap-to-move (upgraded react-chessboard to v5.8.6)
+- Added Lichess-style visual indicators (previous move, legal moves)
 
 ## Current Status
 
-Practice mode mobile fix and visual enhancements complete. Ready for manual testing on real mobile device.
+Related Openings improvements complete. Branch `claude/distinguish-opening-variations-0ihi9` ready for merge to main.

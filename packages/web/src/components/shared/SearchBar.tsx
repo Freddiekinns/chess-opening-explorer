@@ -229,20 +229,8 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
       return { opening, score }
     })
     .filter(item => item.score > 0)
-    .sort((a, b) => {
-      // Add debug logging for d4 searches
-      if (query.toLowerCase() === 'd4' && (a.score > 800 || b.score > 800)) {
-        console.log(`Sorting: ${a.opening.name} (${a.score}) vs ${b.opening.name} (${b.score})`)
-      }
-      return b.score - a.score
-    })
-    .map(item => {
-      // Log top results for d4
-      if (query.toLowerCase() === 'd4' && item.score > 800) {
-        console.log(`Top result: ${item.opening.name} - Score: ${item.score} - Moves: ${item.opening.moves}`)
-      }
-      return item.opening
-    })
+    .sort((a, b) => b.score - a.score)
+    .map(item => item.opening)
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -276,7 +264,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       try {
         // For chess moves, prioritize client-side search for better move matching
         if (isChessMove(searchTerm)) {
-          console.log('Chess move detected, using enhanced client-side search for:', searchTerm)
           const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
           if (relevantOpenings.length > 0) {
             setSuggestions(relevantOpenings.slice(0, 8))
@@ -287,15 +274,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
         // For non-chess moves, try server-side search first
         const searchResults = await searchOpenings(searchTerm, true);
-        
+
         if (searchResults.results.length > 0) {
           setSuggestions(searchResults.results.slice(0, 8))
           setShowSuggestions(true)
           return
         }
-        
+
         // Fallback to client-side search if server returns no results
-        console.log('Server search returned no results, trying client-side fallback')
         const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
         setSuggestions(relevantOpenings.slice(0, 8))
         setShowSuggestions(relevantOpenings.length > 0)

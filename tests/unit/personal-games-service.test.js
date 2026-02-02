@@ -28,9 +28,9 @@ describe('personal-games-service', () => {
       };
     };
 
-    const res = await fetchLichessGamesPgnRated({ username: 'Thibault', limit: 200, fetchImpl });
+    const res = await fetchLichessGamesPgnRated({ username: 'Thibault', limit: 500, fetchImpl });
     expect(res.gamesPgn).toHaveLength(2);
-    expect(res.meta).toEqual({ requested: 200, returned: 2 });
+    expect(res.meta).toEqual({ requested: 500, returned: 2 });
 
     expect(calls).toHaveLength(1);
     expect(calls[0].opts.method).toBe('GET');
@@ -39,7 +39,7 @@ describe('personal-games-service', () => {
     expect(String(calls[0].url)).toContain('rated=true');
     expect(String(calls[0].url)).toContain('variant=standard');
     expect(String(calls[0].url)).toContain('perfType=rapid%2Cblitz%2Cclassical');
-    expect(String(calls[0].url)).toContain('max=200');
+    expect(String(calls[0].url)).toContain('max=500');
     expect(String(calls[0].url)).toContain('pgnInJson=false');
   });
 
@@ -47,8 +47,8 @@ describe('personal-games-service', () => {
     let resolveFetch;
     const fetchImpl = jest.fn(() => new Promise((resolve) => { resolveFetch = resolve; }));
 
-    const p1 = getLichessGamesPgnRatedCached({ username: 'u', limit: 200, fetchImpl });
-    const p2 = getLichessGamesPgnRatedCached({ username: 'u', limit: 200, fetchImpl });
+    const p1 = getLichessGamesPgnRatedCached({ username: 'u', limit: 500, fetchImpl });
+    const p2 = getLichessGamesPgnRatedCached({ username: 'u', limit: 500, fetchImpl });
 
     // Note: getLichessGamesPgnRatedCached is async, so each call returns a distinct Promise
     // even if the underlying inflight fetch is shared.

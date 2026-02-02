@@ -48,7 +48,7 @@ function buildLichessCacheKey({ username, limit }) {
   ].join(':');
 }
 
-async function fetchLichessGamesPgnRated({ username, limit = 200, fetchImpl } = {}) {
+async function fetchLichessGamesPgnRated({ username, limit = 500, fetchImpl } = {}) {
   const normalizedUsername = normalizeUsername(username);
   if (!normalizedUsername) {
     const err = new Error('username is required');
@@ -56,7 +56,7 @@ async function fetchLichessGamesPgnRated({ username, limit = 200, fetchImpl } = 
     throw err;
   }
 
-  const clampedLimit = clampInt(limit, 1, 200, 200);
+  const clampedLimit = clampInt(limit, 1, 500, 500);
 
   const params = new URLSearchParams({
     max: String(clampedLimit),
@@ -103,8 +103,8 @@ async function fetchLichessGamesPgnRated({ username, limit = 200, fetchImpl } = 
   }
 }
 
-async function getLichessGamesPgnRatedCached({ username, limit = 200, fetchImpl } = {}) {
-  const clampedLimit = clampInt(limit, 1, 200, 200);
+async function getLichessGamesPgnRatedCached({ username, limit = 500, fetchImpl } = {}) {
+  const clampedLimit = clampInt(limit, 1, 500, 500);
   const key = buildLichessCacheKey({ username, limit: clampedLimit });
   const now = Date.now();
 

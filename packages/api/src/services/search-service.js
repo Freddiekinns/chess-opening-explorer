@@ -19,6 +19,45 @@ class SearchService {
     this.popularCache = new Map(); // Cache for popular search results
   }
 
+  /**
+   * Normalize a word for comparison - strips apostrophes, hyphens, and handles common variations
+   * @param {string} word - Word to normalize
+   * @returns {string} Normalized word
+   */
+  normalizeWord(word) {
+    return word
+      .toLowerCase()
+      .replace(/[''`]/g, '')      // Remove apostrophes (king's -> kings)
+      .replace(/-/g, '')           // Remove hyphens (neo-kings -> neokings)
+      .replace(/defence/g, 'defense'); // Normalize British/American spelling
+  }
+
+  /**
+   * Normalize all words in a string for comparison
+   * @param {string} text - Text to normalize
+   * @returns {string[]} Array of normalized words
+   */
+  normalizeWords(text) {
+    return text.toLowerCase()
+      .split(/[\s-]+/)  // Split on spaces and hyphens
+      .map(w => this.normalizeWord(w))
+      .filter(w => w.length > 0);
+  }
+
+  /**
+   * Check if query word matches a name word (with normalization)
+   * @param {string} queryWord - Normalized query word
+   * @param {string} nameWord - Name word to check
+   * @returns {string} Match type: 'exact', 'starts_with', 'contains', or 'none'
+   */
+  matchWord(queryWord, nameWord) {
+    const normalizedName = this.normalizeWord(nameWord);
+    if (normalizedName === queryWord) return 'exact';
+    if (normalizedName.startsWith(queryWord)) return 'starts_with';
+    if (normalizedName.includes(queryWord)) return 'contains';
+    return 'none';
+  }
+
   async initialize() {
     if (this.initialized) return;
     
@@ -76,12 +115,22 @@ class SearchService {
       if (QueryUtils.isChessMove(normalizedQuery)) {
         return this.searchByMove(normalizedQuery, sanitizedOptions);
       }
-      
+
+      // Check for style + move patterns FIRST (e.g., "attacking d4", "solid e4")
+      // These should use semantic search even if they contain ambiguous terms
+      const hasStyleAndMove = this.hasStyleWithMovePattern(normalizedQuery);
+      if (hasStyleAndMove) {
+        const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
+        if (semanticResults.results.length > 0) {
+          return semanticResults;
+        }
+      }
+
       // Enhanced search routing: for ambiguous terms like "attacking" or "gambit"
       // try popularity-based name search first, then semantic search if poor results
       const looksLikeOpeningName = QueryUtils.looksLikeOpeningName(normalizedQuery);
       const isAmbiguousTerm = QueryUtils.isAmbiguousSemanticTerm(normalizedQuery);
-      
+
       // For ambiguous terms, ALWAYS try name search first with word-precision matching
       // This ensures queries like "kings indian" get proper name matching instead of fuzzy
       if (isAmbiguousTerm) {
@@ -95,7 +144,7 @@ class SearchService {
           };
         }
       }
-      
+
       // Use semantic search for clear natural language queries
       if (!looksLikeOpeningName && !isAmbiguousTerm) {
         const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
@@ -276,49 +325,6 @@ class SearchService {
   }
 
   /**
-   * Enhanced semantic search with natural language understanding
-   * @param {string} query - The search query
-   * @param {Object} options - Search options
-   * @returns {Array} Array of search results
-   */
-  async semanticSearch(query, options = {}) {
-    await this.initialize();
-    
-    const normalizedQuery = query.toLowerCase().trim();
-    const queryIntent = QueryIntentParser.parseQueryIntent(normalizedQuery);
-    
-    let results = [];
-    let searchType = 'semantic';
-    
-    // Apply semantic filtering based on detected intent
-    if (queryIntent.type !== 'unknown') {
-      results = this.applySemanticFiltering(queryIntent);
-      searchType = `semantic_${queryIntent.type}`;
-    } else {
-      // If no specific intent detected, fall back to enhanced fuzzy search
-      return { results: [], totalResults: 0, hasMore: false, searchType: 'no_semantic_match' };
-    }
-    
-    // Apply additional filters
-    if (options.category) {
-      results = this.filterByCategory(results, options.category);
-    }
-    
-    // Apply pagination
-    const { limit = 50, offset = 0 } = options;
-    const totalResults = results.length;
-    results = results.slice(offset, offset + limit);
-    
-    return {
-      results,
-      totalResults,
-      hasMore: offset + limit < totalResults,
-      searchType,
-      queryIntent
-    };
-  }
-
-  /**
    * Get all openings with basic sorting (uses pre-sorted cache)
    * @private
    */
@@ -373,10 +379,38 @@ class SearchService {
         results = this.filterByOpeningName(results, queryIntent.openingName);
         results = this.filterBySemanticStyle(results, queryIntent.style);
         break;
+
+      case 'style_with_move':
+        // Filter by move (e.g., d4 openings) AND style (e.g., attacking)
+        results = this.filterByOpeningMove(results, queryIntent.targetMoves);
+        results = this.filterBySemanticStyle(results, queryIntent.style);
+        break;
     }
-    
+
     // Score and sort results
     return this.scoreSemanticResults(results, queryIntent);
+  }
+
+  /**
+   * Filter openings by opening move
+   * @param {Array} openings - Array of openings to filter
+   * @param {Array} moves - Array of moves to filter by (e.g., ['d4'])
+   * @returns {Array} Filtered openings
+   */
+  filterByOpeningMove(openings, moves) {
+    if (!moves || moves.length === 0) return openings;
+
+    return openings.filter(opening => {
+      const openingMoves = opening.moves?.toLowerCase() || '';
+
+      // Only match openings that START with this move as White's first move
+      return moves.some(move => {
+        const moveLower = move.toLowerCase();
+        // Match as first white move (e.g., "1. d4" or "1.d4")
+        return openingMoves.startsWith(`1. ${moveLower}`) ||
+               openingMoves.startsWith(`1.${moveLower}`);
+      });
+    });
   }
 
   /**
@@ -763,83 +797,99 @@ class SearchService {
 
   /**
    * Apply enhanced name matching boost for better opening name search
+   * Uses normalized word comparison to handle apostrophes and spelling variants
    * @param {Array} results - Search results to enhance
    * @param {string} query - Original search query
    * @returns {Array} Enhanced results with name matching boost
    */
   applyNameMatchingBoost(results, query) {
+    // Normalize query words
+    const queryWordsNormalized = this.normalizeWords(query).filter(w => w.length > 2);
+    const normalizedQuery = queryWordsNormalized.join(' ');
+
     return results.map(result => {
-      const name = result.name?.toLowerCase() || '';
-      const queryWords = query.split(/\s+/).filter(word => word.length > 2);
+      const name = result.name || '';
+      const nameWordsNormalized = this.normalizeWords(name);
+      const normalizedName = nameWordsNormalized.join(' ');
+
       let nameMatchBoost = 0;
       let matchType = 'none';
-      
-      // Exact name match gets huge boost
-      if (name === query) {
+
+      // Exact normalized match
+      if (normalizedName === normalizedQuery) {
         nameMatchBoost = 2.0;
         matchType = 'exact';
       }
-      // Name starts with query gets large boost
-      else if (name.startsWith(query)) {
+      // Name starts with query (only for multi-word queries that match full beginning)
+      // Don't use for single-word queries to avoid "najdorf" matching "Najdorf Sicilian" over "Sicilian: Najdorf"
+      else if (queryWordsNormalized.length > 1 && normalizedName.startsWith(normalizedQuery + ' ')) {
         nameMatchBoost = 1.5;
         matchType = 'starts_with';
       }
-      // Query matches complete words in name (e.g., "french defense" vs "owens defense french")
-      else if (queryWords.length === 1) {
-        // For single word queries, prioritize when the word appears as a complete word at start
-        const queryWord = queryWords[0];
-        const nameWords = name.split(/\s+/);
-        
-        if (nameWords[0] === queryWord) {
-          // Word appears as first word (e.g., "French Defense")
-          nameMatchBoost = 1.2;
-          matchType = 'first_word';
-        } else if (nameWords.includes(queryWord)) {
-          // Word appears somewhere else (e.g., "Owens Defense French")
-          nameMatchBoost = 0.4;
-          matchType = 'contains_word';
-        } else if (name.includes(queryWord)) {
-          // Partial word match
-          nameMatchBoost = 0.2;
+      // Single word query
+      else if (queryWordsNormalized.length === 1) {
+        const queryWord = queryWordsNormalized[0];
+        const exactMatchIdx = nameWordsNormalized.findIndex(nw => nw === queryWord);
+
+        if (exactMatchIdx >= 0) {
+          // Exact word match anywhere - same base boost, let popularity differentiate
+          // "Najdorf" in "Najdorf Sicilian" (1M) should NOT beat "Sicilian: Najdorf" (24M)
+          nameMatchBoost = 0.6;
+          matchType = exactMatchIdx === 0 ? 'first_word' : 'contains_word';
+        } else if (nameWordsNormalized.some(nw => nw.startsWith(queryWord))) {
+          nameMatchBoost = 0.3;
+          matchType = 'word_starts_with';
+        } else if (normalizedName.includes(queryWord)) {
+          nameMatchBoost = 0.15;
           matchType = 'partial';
         }
       }
-      // All query words present in name gets medium boost
-      else if (queryWords.every(word => name.includes(word))) {
-        nameMatchBoost = 0.8;
-        matchType = 'all_words';
-      }
-      // Most query words present gets small boost
+      // Multi-word query - check normalized word matches
       else {
-        const matchedWords = queryWords.filter(word => name.includes(word));
-        if (matchedWords.length > 0) {
-          nameMatchBoost = (matchedWords.length / queryWords.length) * 0.5;
+        let exactMatches = 0;
+        queryWordsNormalized.forEach(qw => {
+          if (nameWordsNormalized.includes(qw)) {
+            exactMatches++;
+          }
+        });
+
+        const exactRatio = exactMatches / queryWordsNormalized.length;
+        if (exactRatio >= 0.9) {
+          nameMatchBoost = 1.0;
+          matchType = 'all_words';
+        } else if (exactRatio >= 0.5) {
+          nameMatchBoost = exactRatio * 0.8;
+          matchType = 'most_words';
+        } else if (exactRatio > 0) {
+          nameMatchBoost = exactRatio * 0.4;
           matchType = 'partial_words';
         }
       }
-      
-      // Apply significant popularity boost for name matches - popularity should dominate
+
+      // Apply popularity boost for name matches
       if (nameMatchBoost > 0) {
-        const popularity = result.games_analyzed || result.analysis_json?.popularity_score || 0;
-        
-        // Much larger popularity scaling for name searches
-        let popularityBoost;
-        if (matchType === 'exact' || matchType === 'starts_with' || matchType === 'first_word') {
-          // For high-quality name matches, popularity is very important
-          popularityBoost = Math.min(2.0, popularity / 50000000); // Scale for major openings
-        } else {
-          // For partial matches, still significant but smaller boost
-          popularityBoost = Math.min(1.0, popularity / 100000000);
-        }
-        
-        nameMatchBoost += popularityBoost;
+        const popularity = result.games_analyzed || 0;
+        // Use log scale for popularity boost
+        const popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.2;
+        nameMatchBoost += Math.min(2.0, popularityBoost);
       }
-      
-      // Apply the boost to search score
-      result.searchScore = Math.min(3, result.searchScore + nameMatchBoost);
-      
+
+      result.searchScore = Math.min(5, result.searchScore + nameMatchBoost);
       return result;
     }).sort((a, b) => b.searchScore - a.searchScore);
+  }
+
+  /**
+   * Check if query contains a style + move pattern (e.g., "attacking d4", "solid e4")
+   * @param {string} query - Normalized query
+   * @returns {boolean}
+   */
+  hasStyleWithMovePattern(query) {
+    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
+    const queryParts = query.split(/\s+/);
+    const hasStyle = styleWords.some(s => queryParts.includes(s));
+    const hasMovePattern = QueryUtils.extractMoves(query).length > 0;
+    return hasStyle && hasMovePattern;
   }
 
   /**
@@ -856,7 +906,7 @@ class SearchService {
       // Add specific opening name patterns that need popularity-first search
       'indian', 'kings', 'queens'  // These cause cross-contamination issues
     ];
-    
+
     return ambiguousTerms.some(term => query.includes(term));
   }
 
@@ -906,167 +956,148 @@ class SearchService {
 
   /**
    * Enhanced name matching with extra popularity emphasis for ambiguous terms
+   * Uses normalized word comparison to handle apostrophes, hyphens, and spelling variants
    * @param {Array} results - Search results to enhance
    * @param {string} query - Original search query
    * @returns {Array} Enhanced results with popularity-first ranking
    */
   applyNameMatchingBoostWithPopularityEmphasis(results, query) {
+    // Normalize query words once
+    const queryWordsNormalized = this.normalizeWords(query).filter(w => w.length > 2);
+    const normalizedQuery = queryWordsNormalized.join(' ');
+
     return results.map(result => {
-      const name = result.name?.toLowerCase() || '';
-      const queryWords = query.split(/\s+/).filter(word => word.length > 2);
+      const name = result.name || '';
+      const nameLower = name.toLowerCase();
+      // Get both raw and normalized name words for matching
+      const nameWordsNormalized = this.normalizeWords(name);
+
       let nameMatchBoost = 0;
       let matchType = 'none';
-      let wordPrecisionScore = 0; // New: measure how precisely words match
-      
-      // Exact name match gets huge boost
-      if (name === query) {
+      let wordPrecisionScore = 0;
+
+      // Check for exact normalized match (handles "King's Indian" == "kings indian")
+      const normalizedName = nameWordsNormalized.join(' ');
+      if (normalizedName === normalizedQuery) {
         nameMatchBoost = 2.0;
         matchType = 'exact';
         wordPrecisionScore = 1.0;
       }
-      // Name starts with query gets large boost
-      else if (name.startsWith(query)) {
+      // Name starts with query (only for multi-word queries that match full beginning)
+      // Don't use for single-word queries to avoid "najdorf" matching "Najdorf Sicilian" over "Sicilian: Najdorf"
+      else if (queryWordsNormalized.length > 1 && normalizedName.startsWith(normalizedQuery + ' ')) {
         nameMatchBoost = 1.5;
         matchType = 'starts_with';
         wordPrecisionScore = 0.9;
       }
-      // Enhanced word-level matching with precision scoring
-      else if (queryWords.length === 1) {
-        const queryWord = queryWords[0];
-        const nameWords = name.split(/\s+/);
-        
-        // Check for exact word matches first (highest precision)
-        if (nameWords[0] === queryWord) {
-          nameMatchBoost = 1.2;
-          matchType = 'first_word_exact';
-          wordPrecisionScore = 0.8;
-        } else if (nameWords.includes(queryWord)) {
-          nameMatchBoost = 0.6;
-          matchType = 'contains_word_exact';
-          wordPrecisionScore = 0.7;
+      // Single word query
+      else if (queryWordsNormalized.length === 1) {
+        const queryWord = queryWordsNormalized[0];
+
+        // Check for exact word match at different positions
+        const exactMatchIdx = nameWordsNormalized.findIndex(nw => nw === queryWord);
+
+        if (exactMatchIdx >= 0) {
+          // Exact word match anywhere - give same base boost, let popularity differentiate
+          // "Najdorf" in "Najdorf Sicilian" (1M) should NOT beat "Sicilian Defense: Najdorf" (24M)
+          nameMatchBoost = 0.8;
+          matchType = exactMatchIdx === 0 ? 'first_word_exact' : 'contains_word_exact';
+          // Both get high precision - we found the exact word
+          wordPrecisionScore = 0.85;
         }
-        // Check for word-start matches (medium precision)
-        else if (nameWords.some(word => word.startsWith(queryWord))) {
+        // Check for word-start matches
+        else if (nameWordsNormalized.some(nw => nw.startsWith(queryWord))) {
           nameMatchBoost = 0.4;
           matchType = 'word_starts_with';
           wordPrecisionScore = 0.5;
         }
-        // Check for partial word matches (lowest precision, penalized)
-        else if (name.includes(queryWord)) {
-          // CRITICAL FIX: Much lower boost for partial matches to prevent "kings" matching "queens"
+        // Substring match (lowest priority)
+        else if (normalizedName.includes(queryWord)) {
           nameMatchBoost = 0.1;
           matchType = 'partial_substring';
           wordPrecisionScore = 0.2;
         }
       }
-      // Multi-word queries: require better word-level precision
-      else if (queryWords.length > 1) {
-        const nameWords = name.split(/\s+/);
+      // Multi-word queries with normalized matching
+      else if (queryWordsNormalized.length > 1) {
         let exactWordMatches = 0;
         let partialWordMatches = 0;
         let substringMatches = 0;
-        
-        queryWords.forEach(queryWord => {
-          if (nameWords.includes(queryWord)) {
+
+        queryWordsNormalized.forEach(qw => {
+          // Check for exact word match (normalized)
+          if (nameWordsNormalized.includes(qw)) {
             exactWordMatches++;
-          } else if (nameWords.some(word => word.startsWith(queryWord))) {
+          }
+          // Check for word-start match
+          else if (nameWordsNormalized.some(nw => nw.startsWith(qw))) {
             partialWordMatches++;
-          } else if (name.includes(queryWord)) {
+          }
+          // Check for substring match
+          else if (normalizedName.includes(qw)) {
             substringMatches++;
           }
         });
-        
-        // Calculate precision-based scoring
-        const totalQueryWords = queryWords.length;
+
+        const totalQueryWords = queryWordsNormalized.length;
         const exactWordRatio = exactWordMatches / totalQueryWords;
         const partialWordRatio = partialWordMatches / totalQueryWords;
         const substringRatio = substringMatches / totalQueryWords;
-        
-        // CRITICAL FIX: Require much higher precision for multi-word queries
-        // For "kings gambit", we need BOTH words to match well, not just 50%
-        if (exactWordRatio >= 0.8) { // At least 80% of words match exactly
-          nameMatchBoost = 1.2 * exactWordRatio + 0.3 * partialWordRatio + 0.1 * substringRatio;
+
+        // Require good word precision for multi-word queries
+        if (exactWordRatio >= 0.9) { // 90%+ exact (handles "kings indian" with 2 words)
+          nameMatchBoost = 1.5;
+          matchType = 'multi_word_excellent';
+          wordPrecisionScore = 0.95;
+        } else if (exactWordRatio >= 0.7) {
+          nameMatchBoost = 1.2;
           matchType = 'multi_word_precise';
-          wordPrecisionScore = exactWordRatio * 0.9 + partialWordRatio * 0.3;
-        } else if (exactWordRatio >= 0.6) { // At least 60% exact matches
-          nameMatchBoost = 0.8 * exactWordRatio + 0.4 * partialWordRatio + 0.1 * substringRatio;
+          wordPrecisionScore = exactWordRatio * 0.9;
+        } else if (exactWordRatio >= 0.5) {
+          nameMatchBoost = 0.8 * exactWordRatio + 0.3 * partialWordRatio;
           matchType = 'multi_word_good';
-          wordPrecisionScore = exactWordRatio * 0.7 + partialWordRatio * 0.4;
-        } else if (partialWordRatio + exactWordRatio >= 0.6) { // 60% partial+exact combined
-          nameMatchBoost = 0.4 * (exactWordRatio + partialWordRatio) + 0.1 * substringRatio;
+          wordPrecisionScore = exactWordRatio * 0.7 + partialWordRatio * 0.3;
+        } else if (exactWordRatio + partialWordRatio >= 0.5) {
+          nameMatchBoost = 0.4 * (exactWordRatio + partialWordRatio);
           matchType = 'multi_word_partial';
-          wordPrecisionScore = (exactWordRatio * 0.6 + partialWordRatio * 0.3);
+          wordPrecisionScore = (exactWordRatio + partialWordRatio) * 0.4;
         } else if (substringRatio > 0) {
-          // Very low boost for poor matches like "kings gambit" -> "queen's gambit"
-          nameMatchBoost = 0.1 * substringRatio;
+          // Very low boost for poor matches
+          nameMatchBoost = 0.05 * substringRatio;
           matchType = 'multi_word_poor';
-          wordPrecisionScore = substringRatio * 0.1;
+          wordPrecisionScore = substringRatio * 0.05;
         }
       }
-      
-      // Apply precision-adjusted popularity boost
+
+      // Apply popularity boost - stronger weighting for high-precision matches
       if (nameMatchBoost > 0) {
-        const popularity = result.games_analyzed || result.analysis_json?.popularity_score || 0;
-        
-        // Precision-weighted popularity scaling
-        // Higher word precision gets more popularity boost
-        let basePopularityMultiplier = wordPrecisionScore;
-        
-        // Tiered popularity boosts, but now scaled by word precision
+        const popularity = result.games_analyzed || 0;
+
+        // Calculate popularity boost with continuous scaling
+        // High precision matches get stronger popularity boost
         let popularityBoost = 0;
-        if (popularity >= 100000000) { // 100M+ games
-          popularityBoost = 3.0 * basePopularityMultiplier;
-        } else if (popularity >= 50000000) { // 50M+ games  
-          popularityBoost = 2.5 * basePopularityMultiplier;
-        } else if (popularity >= 10000000) { // 10M+ games
-          popularityBoost = 2.0 * basePopularityMultiplier;
-        } else if (popularity >= 1000000) { // 1M+ games
-          popularityBoost = 1.5 * basePopularityMultiplier;
-        } else if (popularity >= 100000) { // 100K+ games
-          popularityBoost = 1.0 * basePopularityMultiplier;
-        } else if (popularity >= 10000) { // 10K+ games
-          popularityBoost = 0.5 * basePopularityMultiplier;
+
+        if (wordPrecisionScore >= 0.7) {
+          // High precision: popularity is major factor
+          // Use log scale to prevent extreme dominance but still differentiate
+          // 34.7M vs 6.2M games should result in clear ranking difference
+          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.3 * wordPrecisionScore;
+        } else if (wordPrecisionScore >= 0.4) {
+          // Medium precision: moderate popularity boost
+          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.15 * wordPrecisionScore;
+        } else {
+          // Low precision: minimal popularity boost
+          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.05 * wordPrecisionScore;
         }
-        
+
         nameMatchBoost += popularityBoost;
       }
-      
+
       // Apply the boost to search score
-      result.searchScore = Math.min(5, result.searchScore + nameMatchBoost);
-      result._debugMatchType = matchType; // For debugging
-      result._debugWordPrecision = wordPrecisionScore;
-      
+      result.searchScore = Math.min(10, result.searchScore + nameMatchBoost);
+
       return result;
     }).sort((a, b) => b.searchScore - a.searchScore);
-  }
-
-  /**
-   * Get all openings with basic sorting
-   * @private
-   */
-  getAllOpenings(options = {}) {
-    const { limit = 50, offset = 0 } = options;
-    
-    // Sort by popularity if available, otherwise by name
-    const sorted = this.openings.sort((a, b) => {
-      const popularityA = a.analysis_json?.popularity_score || 0;
-      const popularityB = b.analysis_json?.popularity_score || 0;
-      
-      if (popularityA !== popularityB) {
-        return popularityB - popularityA;
-      }
-      
-      return a.name.localeCompare(b.name);
-    });
-    
-    const totalResults = sorted.length;
-    const results = sorted.slice(offset, offset + limit);
-    
-    return {
-      results,
-      totalResults,
-      hasMore: offset + limit < totalResults
-    };
   }
 }
 

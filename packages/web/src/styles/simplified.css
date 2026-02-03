@@ -2000,7 +2000,7 @@ body {
   padding: var(--space-4) var(--space-4) 0 var(--space-4);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .content-section-header .view-toggle {
@@ -3124,6 +3124,28 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(232, 93, 4, 0.3) 50%, transparent 100%);
+}
+
+/* Personal Opening Stats Section - matches popular-openings-section styling */
+.personal-section {
+  padding: var(--space-8) var(--space-4) var(--space-12) var(--space-4);
+  background: var(--color-bg-surface);
+  position: relative;
+}
+
+.personal-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(232, 93, 4, 0.3) 50%, transparent 100%);
+}
+
+.personal-section .personal-card {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-header {

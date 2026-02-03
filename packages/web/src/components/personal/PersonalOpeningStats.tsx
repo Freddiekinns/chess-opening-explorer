@@ -355,12 +355,16 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
   const platformLabel = platform === 'lichess' ? 'Lichess' : 'Chess.com'
 
   return (
-    <div className="personal-card">
-      <div className="card-header">
-        <h2 className="card-header__title card-header__title--accent">Personal Opening Explorer</h2>
+    <section className="personal-section">
+      <div className="section-header">
+        <h2>Analyse Your Games</h2>
+        <p className="section-subtitle">
+          Import from Lichess or Chess.com to discover your most played openings
+        </p>
       </div>
 
-      {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
+      <div className="personal-card">
+        {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
       {dashboard && controlsCollapsed && (
         <button
           type="button"
@@ -707,7 +711,8 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
         </div>
         )
       })()}
-    </div>
+      </div>
+    </section>
   )
 }
 

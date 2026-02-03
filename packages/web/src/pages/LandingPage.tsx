@@ -182,30 +182,6 @@ const LandingPage: React.FC = () => {
             Discover, explore and learn chess openings.
           </p>
 
-          <div className="hero-view-toggle" role="tablist" aria-label="Explore view">
-            <button
-              type="button"
-              className={`hero-view-toggle__btn ${view === 'global' ? 'is-active' : ''}`}
-              onClick={() => setViewAndUpdateUrl('global')}
-              role="tab"
-              aria-selected={view === 'global'}
-            >
-              Most Popular
-            </button>
-            <button
-              type="button"
-              className={`hero-view-toggle__btn ${view === 'personal' ? 'is-active' : ''}`}
-              onClick={() => {
-                setViewAndUpdateUrl('personal')
-                void handleExpandSearch()
-              }}
-              role="tab"
-              aria-selected={view === 'personal'}
-            >
-              Your Games
-            </button>
-          </div>
-
           {/* Search bar */}
           <div className="hero-search-wrapper">
             <SearchBar
@@ -229,6 +205,33 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Content Section Header with View Toggle */}
+      <div className="content-section-header">
+        <div className="view-toggle" role="tablist" aria-label="Explore view">
+          <button
+            type="button"
+            className={`view-toggle__btn ${view === 'global' ? 'is-active' : ''}`}
+            onClick={() => setViewAndUpdateUrl('global')}
+            role="tab"
+            aria-selected={view === 'global'}
+          >
+            Most Popular
+          </button>
+          <button
+            type="button"
+            className={`view-toggle__btn ${view === 'personal' ? 'is-active' : ''}`}
+            onClick={() => {
+              setViewAndUpdateUrl('personal')
+              void handleExpandSearch()
+            }}
+            role="tab"
+            aria-selected={view === 'personal'}
+          >
+            Your Games
+          </button>
+        </div>
+      </div>
 
       {/* Popular Openings - Always reserve space to prevent layout shift */}
       <div className="popular-openings-container">

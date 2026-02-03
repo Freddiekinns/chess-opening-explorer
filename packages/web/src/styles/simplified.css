@@ -135,7 +135,7 @@ body {
 
 .two-column-layout {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 50% 50%;
   gap: var(--space-8);
   max-width: 1400px;
   margin: 0 auto;
@@ -1913,7 +1913,7 @@ body {
    ================= */
 .hero-section {
   background-color: var(--color-bg-main);
-  min-height: 45vh;
+  min-height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1989,6 +1989,57 @@ body {
 }
 
 .hero-view-toggle__btn:focus-visible {
+  outline: 2px solid rgba(232, 93, 4, 0.65);
+  outline-offset: 2px;
+}
+
+/* Content Section Header - Tab Container */
+.content-section-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-section-header .view-toggle {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.content-section-header .view-toggle__btn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.content-section-header .view-toggle__btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  transform: translateY(-1px);
+}
+
+.content-section-header .view-toggle__btn.is-active {
+  background: linear-gradient(135deg, rgba(232, 93, 4, 0.35) 0%, rgba(255, 149, 0, 0.2) 100%);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(232, 93, 4, 0.12);
+}
+
+.content-section-header .view-toggle__btn:focus-visible {
   outline: 2px solid rgba(232, 93, 4, 0.65);
   outline-offset: 2px;
 }
@@ -3559,7 +3610,7 @@ body {
   
   .hero-section {
     padding: var(--space-8) var(--space-4);
-    min-height: 40vh;
+    min-height: 28vh;
   }
 
   /* Better video cards for tablet - smaller but still horizontal scroll */
@@ -3969,7 +4020,7 @@ body {
   }
   
   .hero-section {
-    min-height: 35vh;
+    min-height: 25vh;
     padding: var(--space-6) var(--space-2);
   }
   

@@ -166,6 +166,12 @@ const ABBREVIATION_MAP: Record<string, string> = {
   'bogo': "Bogo-Indian Defense"
 };
 
+// Check if query is a known abbreviation
+function isKnownAbbreviation(query: string): boolean {
+  const lower = query.toLowerCase().trim();
+  return lower in ABBREVIATION_MAP;
+}
+
 // Expand abbreviations in query
 function expandAbbreviations(query: string): string {
   const lower = query.toLowerCase().trim();
@@ -335,34 +341,30 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       return
     }
 
-    // Debounce search requests
+    // Expand abbreviations (e.g., "qgd" -> "Queen's Gambit Declined")
+    const expandedQuery = expandAbbreviations(searchTerm);
+    const queryToUse = expandedQuery !== searchTerm ? expandedQuery : searchTerm;
+
+    // INSTANT: Show client-side results immediately for responsive UX
+    const instantResults = findAndRankOpenings(queryToUse, openingsData)
+    if (instantResults.length > 0) {
+      setSuggestions(instantResults.slice(0, 8))
+      setShowSuggestions(true)
+      setNoResults(false)
+    }
+
+    // For ECO codes, chess moves, and known abbreviations - client-side is sufficient
+    if (isEcoCode(searchTerm) || isChessMove(searchTerm) || isKnownAbbreviation(searchTerm)) {
+      if (instantResults.length === 0) {
+        setNoResults(true)
+        setShowSuggestions(false)
+      }
+      return
+    }
+
+    // DEBOUNCED: Enhance with server-side semantic search for text queries
     const searchTimeout = setTimeout(async () => {
       try {
-        // Expand abbreviations (e.g., "qgd" -> "Queen's Gambit Declined")
-        const expandedQuery = expandAbbreviations(searchTerm);
-        const queryToUse = expandedQuery !== searchTerm ? expandedQuery : searchTerm;
-
-        // For ECO codes, use client-side search for instant results
-        if (isEcoCode(searchTerm)) {
-          const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
-          setSuggestions(relevantOpenings.slice(0, 8))
-          setShowSuggestions(relevantOpenings.length > 0)
-          setNoResults(relevantOpenings.length === 0)
-          return
-        }
-
-        // For chess moves, prioritize client-side search for better move matching
-        if (isChessMove(searchTerm)) {
-          const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
-          if (relevantOpenings.length > 0) {
-            setSuggestions(relevantOpenings.slice(0, 8))
-            setShowSuggestions(true)
-            setNoResults(false)
-            return
-          }
-        }
-
-        // For non-chess moves, try server-side search first
         const searchResults = await searchOpenings(queryToUse, true);
 
         if (searchResults.results.length > 0) {
@@ -372,26 +374,25 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           return
         }
 
-        // Fallback to client-side search if server returns no results
-        const relevantOpenings = findAndRankOpenings(queryToUse, openingsData)
-        setSuggestions(relevantOpenings.slice(0, 8))
-        setShowSuggestions(relevantOpenings.length > 0)
-        setNoResults(relevantOpenings.length === 0 && searchTerm.length >= 2)
+        // Server returned no results - keep client-side results if we have them
+        if (instantResults.length === 0) {
+          setNoResults(true)
+          setShowSuggestions(false)
+        }
 
         // If we have few results and haven't expanded yet, request more data
-        if (relevantOpenings.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
+        if (instantResults.length < 3 && !hasRequestedExpansion && onExpandSearch && openingsData.length < 5000) {
           setHasRequestedExpansion(true)
           onExpandSearch()
         }
       } catch (error) {
-        console.warn('Search failed, using client-side fallback:', error)
-        // Fallback to client-side search
-        const relevantOpenings = findAndRankOpenings(searchTerm, openingsData)
-        setSuggestions(relevantOpenings.slice(0, 8))
-        setShowSuggestions(relevantOpenings.length > 0)
-        setNoResults(relevantOpenings.length === 0 && searchTerm.length >= 2)
+        console.warn('Search failed, keeping client-side results:', error)
+        // Keep the instant results we already have
+        if (instantResults.length === 0) {
+          setNoResults(true)
+        }
       }
-    }, 300) // 300ms debounce
+    }, 300) // 300ms debounce for server call only
 
     // Cleanup timeout
     return () => clearTimeout(searchTimeout)

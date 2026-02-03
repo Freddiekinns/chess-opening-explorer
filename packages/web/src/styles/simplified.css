@@ -3111,7 +3111,7 @@ body {
 }
 
 .popular-openings-section {
-  padding: var(--space-8) var(--space-4) var(--space-12) var(--space-4);
+  padding: var(--space-6) var(--space-4) var(--space-12) var(--space-4);
   background: var(--color-bg-surface);
   position: relative;
 }
@@ -3128,7 +3128,7 @@ body {
 
 /* Personal Opening Stats Section - matches popular-openings-section styling */
 .personal-section {
-  padding: var(--space-8) var(--space-4) var(--space-12) var(--space-4);
+  padding: var(--space-6) var(--space-4) var(--space-12) var(--space-4);
   background: var(--color-bg-surface);
   position: relative;
 }
@@ -3143,14 +3143,20 @@ body {
   background: linear-gradient(90deg, transparent 0%, rgba(232, 93, 4, 0.3) 50%, transparent 100%);
 }
 
+/* Remove card styling when inside section - avoid nested container look */
 .personal-section .personal-card {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .section-header {
   text-align: left;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;

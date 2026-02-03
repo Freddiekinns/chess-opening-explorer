@@ -119,25 +119,48 @@ class VideoMatcher {
 
     // Common chess opening abbreviations
     const abbrevMap = {
+      // Queen's pawn openings
       'queens gambit': ['qgd', 'qga', 'queens pawn'],
+      'slav defense': ['slav defence', 'slav', 'semi-slav', 'semi slav'],
+      'london system': ['london', 'london opening'],
+      'trompowsky': ['tromp', 'trompowsky attack'],
+      'catalan opening': ['catalan'],
+      'grunfeld defense': ['grunfeld defence', 'grunfeld', 'grünfeld'],
+      'benoni defense': ['benoni defence', 'benoni'],
+      'dutch defense': ['dutch defence', 'dutch', 'leningrad dutch', 'stonewall dutch'],
+
+      // Indian systems
+      'kings indian': ['kid', 'kings indian defense', 'king\'s indian'],
+      'queens indian': ['qid', 'queens indian defense'],
+      'nimzo indian': ['nimzo-indian', 'nimzo indian defense', 'nimzo'],
+      'bogo indian': ['bogo-indian', 'bogo indian defense', 'bogo'],
+      'kings indian attack': ['kia', 'king\'s indian attack'],
+
+      // King's pawn openings
       'kings gambit': ['kings pawn'],
-      'english opening': ['english'],
       'french defense': ['french defence', 'french'],
       'caro kann': ['caro-kann', 'caro kann defense'],
-      'kings indian': ['kid', 'kings indian defense'],
-      'queens indian': ['qid', 'queens indian defense'],
-      'nimzo indian': ['nimzo-indian', 'nimzo indian defense'],
-      'ruy lopez': ['spanish opening', 'spanish game'],
-      'italian game': ['italian opening'],
-      'scotch game': ['scotch opening'],
       'sicilian defense': ['sicilian defence', 'sicilian'],
+      'sicilian najdorf': ['najdorf', 'najdorf variation'],
+      'sicilian dragon': ['dragon', 'dragon variation', 'accelerated dragon'],
+      'sicilian sveshnikov': ['sveshnikov', 'sveshnikov variation'],
+      'sicilian kalashnikov': ['kalashnikov'],
+      'ruy lopez': ['spanish opening', 'spanish game', 'spanish'],
+      'berlin defense': ['berlin', 'berlin wall', 'berlin endgame'],
+      'marshall attack': ['marshall', 'marshall gambit'],
+      'italian game': ['italian opening', 'italian', 'giuoco piano'],
+      'scotch game': ['scotch opening', 'scotch'],
+      'petrov defense': ['petroff', 'petrov', 'russian game', 'russian defense'],
+      'vienna game': ['vienna', 'vienna opening'],
+      'philidor defense': ['philidor defence', 'philidor'],
       'pirc defense': ['pirc defence', 'pirc'],
-      'alekhine defense': ['alekhine defence', 'alekhines defense'],
+      'modern defense': ['modern defence', 'modern'],
+      'alekhine defense': ['alekhine defence', 'alekhines defense', 'alekhine'],
       'scandinavian defense': ['center counter', 'scandinavian'],
-      'benoni defense': ['benoni defence', 'benoni'],
-      'catalan opening': ['catalan'],
-      'grunfeld defense': ['grunfeld defence', 'grunfeld'],
-      'bogo indian': ['bogo-indian', 'bogo indian defense']
+
+      // Flank openings
+      'english opening': ['english'],
+      'reti opening': ['reti', 'réti']
     };
 
     // Check if opening name matches any known abbreviations
@@ -287,18 +310,52 @@ class VideoMatcher {
     }
 
     // Define severe incompatibilities (block completely)
+    // These are openings that cannot possibly be about the same game
     const severeIncompatibilities = [
+      // Nimzo-Indian conflicts (1.d4 Nf6 2.c4 e6 3.Nc3 Bb4)
       ['nimzo_indian', 'queens_gambit'],
       ['nimzo_indian', 'sicilian'],
       ['nimzo_indian', 'french'],
+      ['nimzo_indian', 'spanish'],
+      ['nimzo_indian', 'italian'],
+
+      // Queen's Gambit conflicts (1.d4 d5 2.c4)
       ['queens_gambit', 'sicilian'],
       ['queens_gambit', 'french'],
       ['queens_gambit', 'kings_indian'],
+      ['queens_gambit', 'spanish'],
+      ['queens_gambit', 'italian'],
+
+      // Sicilian conflicts (1.e4 c5)
       ['sicilian', 'french'],
-      ['sicilian', 'spanish'], // Ruy Lopez
+      ['sicilian', 'spanish'],
+      ['sicilian', 'italian'],
+      ['sicilian', 'kings_gambit'],
+      ['sicilian', 'dutch'],
+
+      // French conflicts (1.e4 e6)
       ['french', 'spanish'],
+      ['french', 'italian'],
+      ['french', 'kings_gambit'],
+      ['french', 'dutch'],
+
+      // Caro-Kann conflicts (1.e4 c6)
       ['caro_kann', 'sicilian'],
-      ['caro_kann', 'french']
+      ['caro_kann', 'french'],
+      ['caro_kann', 'spanish'],
+      ['caro_kann', 'italian'],
+
+      // Spanish/Italian conflicts (require 1.e4 e5)
+      ['spanish', 'dutch'],
+      ['italian', 'dutch'],
+      ['italian', 'kings_indian'],
+      ['spanish', 'kings_indian'],
+
+      // Dutch conflicts (1.d4 f5)
+      ['dutch', 'kings_indian'],
+
+      // English vs closed game systems
+      ['english', 'sicilian'] // Can transpose but usually distinct
     ];
 
     // Check for severe incompatibility
@@ -478,13 +535,7 @@ class VideoMatcher {
     else if (matchType === 'abbreviation') score += 35;
     else if (matchType === 'eco') score += 20;
 
-    // 2. Strong educational content requirement (only specific terms)
-    const strongEducationalKeywords = ['explained', 'theory', 'fundamentals', 'guide', 'tutorial', 'lesson', 'masterclass', 'repertoire', 'how to'];
-    if (strongEducationalKeywords.some(word => title.includes(word))) {
-      score += 25; // Increased bonus for educational content
-    }
-
-    // 3. Penalize generic game analysis (major penalty) - EXPANDED
+    // 2. Penalize generic game analysis (major penalty) - EXPANDED
     const gameAnalysisTerms = [
       'brilliant', 'amazing', 'incredible', 'insane', 'crazy', 'epic',
       'vs', 'beats', 'wins', 'loses', 'sacrifices', 'mates in',
@@ -498,18 +549,18 @@ class VideoMatcher {
       score -= 60; // Even heavier penalty for game analysis
     }
 
-    // 4. Specific agadmator penalty (since he's primarily game analysis)
+    // 3. Specific agadmator penalty (since he's primarily game analysis)
     if ((video.channel_title || '').toLowerCase().includes('agadmator')) {
       score -= 50; // Much stronger penalty for agadmator since it's mostly game analysis
     }
 
-    // 5. Penalize movie/documentary content
+    // 4. Penalize movie/documentary content
     const movieTerms = ['movie', 'film', 'documentary', 'biopic', 'story of'];
     if (movieTerms.some(term => title.includes(term))) {
       score -= 50;
     }
 
-    // 6. Enhanced Channel Quality System (PRIORITY: Maximize good creators)
+    // 5. Enhanced Channel Quality System (PRIORITY: Maximize good creators)
     const premiumEducators = [
       'daniel naroditsky', 'naroditsky', 'hanging pawns', 'saint louis chess club',
       'chess.com', 'chessnetwork', 'gingergm', 'eric rosen', 'chess network',
@@ -535,7 +586,7 @@ class VideoMatcher {
       score -= 30; // Penalty for entertainment-focused channels
     }
 
-    // 7. Duration requirements (favor substantial educational content)
+    // 6. Duration requirements (favor substantial educational content)
     if (video.duration >= 1200 && video.duration <= 3600) { // 20-60 minutes ideal for detailed instruction
       score += 15;
     } else if (video.duration >= 600 && video.duration <= 1200) { // 10-20 minutes still good
@@ -544,7 +595,7 @@ class VideoMatcher {
       score -= 25;
     }
 
-    // 8. Enhanced Educational Content Recognition (PRIORITY: Capture Naroditsky-style content)
+    // 7. Enhanced Educational Content Recognition (PRIORITY: Capture Naroditsky-style content)
     const strongEducationalTerms = [
       'explained', 'theory', 'fundamentals', 'guide', 'tutorial', 'lesson', 'masterclass',
       'repertoire', 'how to', 'mastering', 'understanding', 'principles', 'concepts'

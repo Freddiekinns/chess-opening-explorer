@@ -4956,19 +4956,7 @@ body {
   padding: var(--space-4) var(--space-6);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.landing-header__logo {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  text-decoration: none;
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.landing-header__logo:hover {
-  color: var(--color-brand-orange);
+  justify-content: center;
 }
 
 .landing-header__nav {
@@ -5075,10 +5063,6 @@ body {
 @media (max-width: 768px) {
   .landing-header__container {
     padding: var(--space-3) var(--space-4);
-  }
-
-  .landing-header__logo {
-    font-size: var(--font-size-base);
   }
 
   .landing-header__link {

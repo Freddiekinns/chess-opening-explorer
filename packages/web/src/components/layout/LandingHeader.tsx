@@ -8,9 +8,6 @@ export const LandingHeader: React.FC = () => {
   return (
     <header className="landing-header">
       <div className="landing-header__container">
-        <Link to="/" className="landing-header__logo">
-          Opening Book
-        </Link>
         <nav className="landing-header__nav">
           <Link
             to="/"

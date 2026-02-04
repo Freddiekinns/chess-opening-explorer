@@ -124,7 +124,8 @@ body {
 }
 
 .landing-page {
-  padding: var(--space-4);
+  min-height: 100vh;
+  background-color: var(--color-bg-main);
 }
 
 .detail-page-body {

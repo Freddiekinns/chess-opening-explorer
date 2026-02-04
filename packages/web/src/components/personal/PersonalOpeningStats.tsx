@@ -356,13 +356,6 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
 
   return (
     <section className="personal-section">
-      <div className="section-header">
-        <h2>Analyse Your Games</h2>
-        <p className="section-subtitle">
-          Import from Lichess or Chess.com to discover your most played openings
-        </p>
-      </div>
-
       <div className="personal-card">
         {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
       {dashboard && controlsCollapsed && (
@@ -491,6 +484,22 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
       {step === 'error' && error && (
         <div className="personal-error" role="alert">
           {error}
+        </div>
+      )}
+
+      {/* Empty state - shown before analysis */}
+      {step === 'idle' && !dashboard && (
+        <div className="personal-empty-state">
+          <div className="personal-empty-state__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </div>
+          <h3 className="personal-empty-state__title">Ready to Analyse</h3>
+          <p className="personal-empty-state__text">
+            Enter your username above to fetch your recent games and get a detailed breakdown of your opening performance.
+          </p>
         </div>
       )}
 

@@ -1916,7 +1916,7 @@ body {
   background-color: var(--color-bg-main);
   min-height: 30vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 100px var(--space-4) var(--space-4) var(--space-4);
 }
@@ -5009,7 +5009,7 @@ body {
   background-color: var(--color-bg-main);
   min-height: 30vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 100px var(--space-4) var(--space-4) var(--space-4);
 }

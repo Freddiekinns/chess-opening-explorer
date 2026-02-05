@@ -4960,8 +4960,8 @@ body {
 
 .landing-header__nav {
   display: inline-flex;
-  gap: 0;
-  padding: 4px;
+  gap: var(--space-1);
+  padding: 6px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
   background: rgba(0, 0, 0, 0.3);
@@ -4969,9 +4969,9 @@ body {
 }
 
 .landing-header__link {
-  padding: var(--space-2) var(--space-5);
+  padding: var(--space-3) var(--space-6);
   border-radius: 999px;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -4997,15 +4997,15 @@ body {
 
 .analyse-hero {
   background-color: var(--color-bg-main);
+  min-height: 30vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 80px var(--space-4) var(--space-8) var(--space-4);
+  justify-content: center;
+  padding: 80px var(--space-4) var(--space-4) var(--space-4);
 }
 
 .analyse-hero__content {
-  max-width: 1000px;
+  max-width: 800px;
   width: 100%;
   text-align: center;
 }
@@ -5022,24 +5022,8 @@ body {
 .analyse-hero__subtitle {
   font-size: var(--font-size-md);
   color: var(--color-text-secondary);
-  margin: 0 0 var(--space-6) 0;
+  margin: 0;
   line-height: var(--line-height-normal);
-}
-
-/* Override personal-section styles when inside analyse-hero */
-.analyse-hero .personal-section {
-  padding: 0;
-  background: transparent;
-}
-
-.analyse-hero .personal-section::before {
-  display: none;
-}
-
-.analyse-hero .personal-card {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
 }
 
 /* =================
@@ -5089,25 +5073,25 @@ body {
   }
 
   .landing-header__link {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--font-size-xs);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
   }
 
   .analyse-hero {
-    padding: 70px var(--space-4) var(--space-6) var(--space-4);
+    padding: 70px var(--space-4) var(--space-4) var(--space-4);
+    min-height: 28vh;
   }
 
   .analyse-hero__title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 
   .analyse-hero__subtitle {
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--space-4);
+    font-size: var(--font-size-base);
   }
 
   .personal-empty-state {
-    padding: var(--space-6) var(--space-4);
+    padding: var(--space-8) var(--space-4);
   }
 
   .personal-empty-state__icon {

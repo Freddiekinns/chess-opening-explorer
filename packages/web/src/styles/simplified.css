@@ -4995,17 +4995,21 @@ body {
 
 .analyse-hero {
   background-color: var(--color-bg-main);
-  padding: var(--space-12) var(--space-6) var(--space-8);
-  text-align: center;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4) var(--space-4) var(--space-4);
 }
 
 .analyse-hero__content {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
 }
 
 .analyse-hero__title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin: 0 0 var(--space-4) 0;
@@ -5072,11 +5076,12 @@ body {
   }
 
   .analyse-hero {
-    padding: var(--space-8) var(--space-4) var(--space-6);
+    padding: var(--space-8) var(--space-4);
+    min-height: 28vh;
   }
 
   .analyse-hero__title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 
   .analyse-hero__subtitle {

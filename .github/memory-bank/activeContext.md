@@ -1,105 +1,58 @@
 # Active Context
 
-**Date:** 2026-02-02
+**Date:** 2026-02-05
 
-## Current Focus: Opening Board Initial Position - COMPLETE
+## Current Focus: Header Spacing & Navigation Fixes - COMPLETE
 
-Changed the opening detail page to display the final position of the opening sequence by default, providing immediate visual feedback of the opening's resulting position.
+Fixed header spacing issues between Discover and Analyse pages, improved mobile responsiveness, and corrected back navigation from opening detail pages.
 
-## Session Summary (2026-02-02)
+## Session Summary (2026-02-05)
 
-### Enhancement: Display Final Position by Default
+### Fix: Header and Hero Spacing Consistency
 
-**Problem:** When viewing an opening detail page, the chessboard showed the starting position (unmoved pieces) instead of the final position of the opening sequence. Users had to manually navigate through moves to see what the opening looks like.
+**Problem:** The pill navigation appeared cramped, and the "Opening Book" and "Analyse Your Games" titles appeared at different heights on their respective pages.
 
-**Solution:** Initialize the board to the final position of the opening sequence by default.
+**Solution:** Multiple CSS improvements to ensure visual consistency.
 
 **Implementation:**
-- Modified `setupGame()` function in `OpeningDetailPage.tsx`
-- Changed initial position from `currentMoveIndex: 0` to `currentMoveIndex: history.length - 1`
-- Board now loads with `new Chess(history[finalIndex])` instead of `new Chess()`
-- Practice mode still correctly starts from the beginning (unchanged behavior in `startPractice()`)
-- Users can navigate to any position using existing move controls (`<<`, `<`, `>`, `>>`)
+- Fixed pill navigation padding (6px → 8px outer, 10px 24px links)
+- Fixed link padding that used non-existent `--space-5` CSS variable
+- Changed hero `align-items` from `center` to `flex-start` so content aligns to top
+- Synchronized hero padding across all breakpoints:
+  - Desktop: 100px top padding
+  - Tablet (992px): 80px top padding
+  - Mobile (768px): 100px top padding
+- Removed `min-height: 30vh` from Analyse hero to eliminate empty space
+
+### Fix: Mobile Hero Spacing and Typography
+
+**Problem:** Mobile hero sections felt cramped with small fonts and tight spacing.
+
+**Solution:** Improved mobile-specific styles.
+
+**Implementation:**
+- Increased mobile hero top padding to 100px
+- Set explicit font sizes for mobile titles (`font-size-2xl` / 30px)
+- Added proper margin-bottom spacing between title, subtitle, and content
+- Reduced bottom padding to minimize empty space on Analyse page
+
+### Fix: Back Navigation from Opening Detail Page
+
+**Problem:** "Return to personal stats" button navigated to `/?view=personal...` but pages are now split with Analyse at `/analyse`.
+
+**Solution:** Updated navigation to return users to the correct page.
+
+**Implementation:**
+- Changed `backHref` from `/?view=personal...` to `/analyse?username=...&platform=...`
+- Updated button text from "Back to personal stats" to "Back to analysis"
+- Links from PersonalOpeningStats already include correct `ref=personal` parameter
 
 **Files Changed:**
 | File | Change |
 |------|--------|
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Modified setupGame to initialize at final position |
-
-**User Experience Impact:**
-- Immediate visual feedback: Users see the opening's final position upon page load
-- Better context: Users understand what the opening looks like without navigation
-- Practice mode: Still starts from beginning as expected
-- Navigation: All existing controls work as before
-
-## Previous Session (2026-02-02): Related Openings UX Improvements
-
-### Enhancement: Move Sequence Display
-
-**Problem:** Related openings with the same name (e.g., multiple "Caro-Kann Advance Variation" entries) were indistinguishable.
-
-**Solution:** Display move sequences below each opening name.
-
-**Implementation:**
-- Added `moves` and `showMoves` props to `VariationItem` component
-- `formatMoves()` utility truncates long sequences (8 moves desktop, CSS-based mobile truncation)
-- Native `title` tooltip shows full moves on hover
-- Monospace font, muted color for visual hierarchy
-
-### Performance: Parallel Data Fetching
-
-**Problem:** Related Openings section loaded noticeably slower than the rest of the page due to waterfall request pattern.
-
-**Root Cause:** `RelatedOpeningsTeaser` fetched its own data via `useRelatedOpenings` hook AFTER the component mounted.
-
-**Solution:** Fetch related openings in parallel with main opening data.
-
-**Implementation:**
-- `RelatedOpeningsTeaser` now accepts optional `relatedData` and `relatedLoading` props
-- When provided, skips internal fetch (backward compatible)
-- `OpeningDetailPage` starts both fetches simultaneously from `useEffect`
-
-### Files Changed
-
-| File | Change |
-|------|--------|
-| `packages/web/src/components/detail/VariationItem.tsx` | Added moves display with truncation |
-| `packages/web/src/components/detail/RelatedOpeningsTeaser.tsx` | Accept pre-fetched data props |
-| `packages/web/src/components/detail/RelatedOpeningsModal.tsx` | Pass moves to VariationItem |
-| `packages/web/src/components/detail/RelatedOpeningsTab.tsx` | Pass moves to VariationItem |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Parallel fetch for related openings |
-| `packages/web/src/styles/simplified.css` | Styling for moves display |
-
-### Technical Details
-
-**New VariationItem Props:**
-```typescript
-moves?: string           // Move sequence to display
-showMoves?: boolean      // Toggle move display (default: false)
-```
-
-**Move Truncation:**
-- Desktop: Up to 8 moves, then "..."
-- Mobile (<480px): CSS max-width 180px for tighter truncation
-- Full moves shown in native browser tooltip on hover
-
-**Parallel Fetch Pattern:**
-```typescript
-useEffect(() => {
-  if (fen) {
-    const decodedFen = decodeURIComponent(fen)
-    loadOpening(decodedFen)        // Main opening
-    loadRelatedOpenings(decodedFen) // In parallel
-  }
-}, [fen])
-```
-
-## Previous Work (2026-01-31)
-
-### Practice Mode Mobile & Visual Enhancements
-- Fixed mobile tap-to-move (upgraded react-chessboard to v5.8.6)
-- Added Lichess-style visual indicators (previous move, legal moves)
+| `packages/web/src/styles/simplified.css` | Hero spacing, pill nav sizing, mobile typography |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Back navigation href and button text |
 
 ## Current Status
 
-Opening board initial position enhancement complete. Branch `claude/opening-final-position-fEhHt` ready for merge to main.
+Header spacing and navigation fixes complete. Branch `claude/fix-header-spacing-1NVwU` ready for merge.

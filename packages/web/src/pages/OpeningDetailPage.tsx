@@ -665,7 +665,7 @@ const OpeningDetailPage: React.FC = () => {
   const personalUsername = params.get('username')
 
   const backHref = ref === 'personal'
-    ? `/?view=personal${personalPlatform ? `&platform=${encodeURIComponent(personalPlatform)}` : ''}${personalUsername ? `&username=${encodeURIComponent(personalUsername)}` : ''}`
+    ? `/analyse${personalUsername ? `?username=${encodeURIComponent(personalUsername)}` : ''}${personalPlatform ? `${personalUsername ? '&' : '?'}platform=${encodeURIComponent(personalPlatform)}` : ''}`
     : '/'
 
   return (
@@ -678,7 +678,7 @@ const OpeningDetailPage: React.FC = () => {
         <div className="detail-header-container">
           <div className="header-left">
             <Link to={backHref} className="back-button">
-              <span className="back-text-desktop">{ref === 'personal' ? 'Back to personal stats' : 'Back to search'}</span>
+              <span className="back-text-desktop">{ref === 'personal' ? 'Back to analysis' : 'Back to search'}</span>
               <span className="back-text-mobile">←</span>
             </Link>
           </div>

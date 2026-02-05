@@ -4054,13 +4054,25 @@ body {
   }
   
   .hero-section {
-    min-height: 25vh;
-    padding: 80px var(--space-4) var(--space-6) var(--space-4);
+    min-height: auto;
+    padding: 100px var(--space-4) var(--space-8) var(--space-4);
   }
 
   .analyse-hero {
-    min-height: 25vh;
-    padding: 80px var(--space-4) var(--space-6) var(--space-4);
+    min-height: auto;
+    padding: 100px var(--space-4) var(--space-8) var(--space-4);
+  }
+
+  .hero-title,
+  .analyse-hero__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle,
+  .analyse-hero__subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-6);
   }
 
   .search-bar-container.landing .search-input-field {
@@ -5089,14 +5101,6 @@ body {
   .landing-header__link {
     padding: 8px 18px;
     font-size: var(--font-size-sm);
-  }
-
-  .analyse-hero__title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .analyse-hero__subtitle {
-    font-size: var(--font-size-base);
   }
 
   .personal-empty-state {

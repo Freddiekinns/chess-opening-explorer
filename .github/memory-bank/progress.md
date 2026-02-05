@@ -32,6 +32,7 @@
   - Direct navigation to opening detail page
   - 36 unit tests + 28 integration tests
 - **Personal Opening Explorer:** Complete feature for analysing personal game history:
+  - **Dedicated Analyse page:** Separate `/analyse` route with its own hero section
   - **Multi-platform support:** Chess.com (default) and Lichess
   - **Game filtering:** Rated rapid/blitz/classical only (excludes bullet, daily, variants)
   - **Actionable insights dashboard:**
@@ -43,6 +44,7 @@
   - **Win-rate visualization:** Green gradient indicator on each row
   - **Performance:** Server-side caching (10 min), client-side session cache
   - **Responsive design:** Adapts from desktop to mobile layouts
+  - **Navigation:** Back button from opening detail returns to correct source page (Discover or Analyse)
   - **Test coverage:** 21 Chess.com service tests, 9 route tests, 132 frontend tests
 
 ## What's Left to Build

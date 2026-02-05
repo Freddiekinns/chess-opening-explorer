@@ -1039,8 +1039,68 @@ const OpeningDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Knowledge Panel (55%) */}
+        {/* Right Column - Knowledge Panel (50%) */}
         <div className="right-column knowledge-panel">
+          {/* Simple Tabbed Content Section - Primary learning content */}
+          {opening?.eco && (
+            <div className="simple-tabs">
+              {/* Tab Buttons */}
+              <div className="tab-buttons">
+                <button
+                  className={`tab-button ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}
+                  onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
+                >
+                  Overview
+                </button>
+                <button
+                  className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
+                  onClick={() => setActiveTab(TAB_TYPES.PLANS)}
+                >
+                  Common Plans
+                </button>
+                {videos.length > 0 && (
+                  <button
+                    className={`tab-button ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
+                    onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
+                  >
+                    Related Videos ({videos.length})
+                  </button>
+                )}
+              </div>
+
+              {/* Tab Content */}
+              <div className="tab-content-area">
+                <div className={`tab-content-panel ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}>
+                  <div className="content-panel-improved">
+                    <h3 className="title-subsection">Description</h3>
+                    <p>
+                      {opening.description || opening.analysis?.description || opening.analysis_json?.description ||
+                       `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
+                    </p>
+                  </div>
+                </div>
+
+                <div className={`tab-content-panel ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}>
+                  <CommonPlans
+                    ecoCode={opening.eco}
+                  />
+                </div>
+
+                {videos.length > 0 && (
+                  <div className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}>
+                    <div className="content-panel-improved">
+                      <VideoErrorBoundary>
+                        <VideoGallery
+                          videos={videos}
+                        />
+                      </VideoErrorBoundary>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Statistics Component */}
           {popularityStats ? (
             <OpeningStats
@@ -1067,66 +1127,6 @@ const OpeningDetailPage: React.FC = () => {
               relatedData={relatedOpenings}
               relatedLoading={relatedLoading}
             />
-          )}
-
-          {/* Simple Tabbed Content Section */}
-          {opening?.eco && (
-            <div className="simple-tabs">
-              {/* Tab Buttons */}
-              <div className="tab-buttons">
-                <button 
-                  className={`tab-button ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}
-                  onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
-                >
-                  Overview
-                </button>
-                <button 
-                  className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
-                  onClick={() => setActiveTab(TAB_TYPES.PLANS)}
-                >
-                  Common Plans
-                </button>
-                {videos.length > 0 && (
-                  <button 
-                    className={`tab-button ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
-                    onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
-                  >
-                    Related Videos ({videos.length})
-                  </button>
-                )}
-              </div>
-
-              {/* Tab Content */}
-              <div className="tab-content-area">
-                <div className={`tab-content-panel ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}>
-                  <div className="content-panel-improved">
-                    <h3 className="title-subsection">Description</h3>
-                    <p>
-                      {opening.description || opening.analysis?.description || opening.analysis_json?.description || 
-                       `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`tab-content-panel ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}>
-                  <CommonPlans 
-                    ecoCode={opening.eco}
-                  />
-                </div>
-
-                {videos.length > 0 && (
-                  <div className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}>
-                    <div className="content-panel-improved">
-                      <VideoErrorBoundary>
-                        <VideoGallery 
-                          videos={videos} 
-                        />
-                      </VideoErrorBoundary>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
           )}
         </div>
       </div>

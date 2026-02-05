@@ -355,12 +355,9 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
   const platformLabel = platform === 'lichess' ? 'Lichess' : 'Chess.com'
 
   return (
-    <div className="personal-card">
-      <div className="card-header">
-        <h2 className="card-header__title card-header__title--accent">Personal Opening Explorer</h2>
-      </div>
-
-      {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
+    <section className="personal-section">
+      <div className="personal-card">
+        {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
       {dashboard && controlsCollapsed && (
         <button
           type="button"
@@ -487,6 +484,22 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
       {step === 'error' && error && (
         <div className="personal-error" role="alert">
           {error}
+        </div>
+      )}
+
+      {/* Empty state - shown before analysis */}
+      {step === 'idle' && !dashboard && (
+        <div className="personal-empty-state">
+          <div className="personal-empty-state__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </div>
+          <h3 className="personal-empty-state__title">Ready to Analyse</h3>
+          <p className="personal-empty-state__text">
+            Enter your username above to fetch your recent games and get a detailed breakdown of your opening performance.
+          </p>
         </div>
       )}
 
@@ -707,7 +720,8 @@ export const PersonalOpeningStats: React.FC<{ openingsData: OpeningForLookup[]; 
         </div>
         )
       })()}
-    </div>
+      </div>
+    </section>
   )
 }
 

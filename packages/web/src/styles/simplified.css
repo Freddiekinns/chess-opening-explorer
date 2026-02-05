@@ -4055,12 +4055,12 @@ body {
   
   .hero-section {
     min-height: 25vh;
-    padding: 70px var(--space-2) var(--space-4) var(--space-2);
+    padding: 80px var(--space-4) var(--space-6) var(--space-4);
   }
 
   .analyse-hero {
     min-height: 25vh;
-    padding: 70px var(--space-2) var(--space-4) var(--space-2);
+    padding: 80px var(--space-4) var(--space-6) var(--space-4);
   }
 
   .search-bar-container.landing .search-input-field {
@@ -5079,11 +5079,15 @@ body {
 /* Landing header responsive */
 @media (max-width: 768px) {
   .landing-header {
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .landing-header__nav {
+    padding: 6px;
   }
 
   .landing-header__link {
-    padding: 8px 16px;
+    padding: 8px 18px;
     font-size: var(--font-size-sm);
   }
 

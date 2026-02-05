@@ -40,21 +40,20 @@ const AnalyseGamesPage: React.FC = () => {
     <div className="analyse-page">
       <LandingHeader />
 
-      {/* Hero Section */}
+      {/* Hero Section with integrated form */}
       <section className="analyse-hero">
         <div className="analyse-hero__content">
           <h1 className="analyse-hero__title">Analyse Your Games</h1>
           <p className="analyse-hero__subtitle">
             Review your performance and improve your openings by connecting your chess account.
           </p>
+          {/* Personal Opening Stats - form integrates into hero */}
+          <PersonalOpeningStats
+            openingsData={openingsData}
+            prefillUsername={prefillUsername}
+          />
         </div>
       </section>
-
-      {/* Personal Opening Stats */}
-      <PersonalOpeningStats
-        openingsData={openingsData}
-        prefillUsername={prefillUsername}
-      />
 
       <FeedbackSection source="analyse" />
     </div>

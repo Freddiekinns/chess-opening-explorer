@@ -479,7 +479,19 @@ body {
 /* Base pill styles - shared foundation */
 .eco-pill,
 .style-pill,
-.complexity-tag,
+.complexity-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
 
 /* ECO Code Tags - Technical Identifier Style */
 .eco-pill {
@@ -493,7 +505,11 @@ body {
 }
 
 /* Style Tags - Neutral Tone */
-.style-pill,
+.style-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-muted);
+  border-color: rgba(255, 255, 255, 0.1);
+}
 
 /* =================
    CHESS BOARD SECTION - INTEGRATED WITH FEN

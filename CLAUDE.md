@@ -2,7 +2,7 @@
 
 ## Quick Rules (Always Apply)
 
-1. **Single CSS file** - All styles go in `packages/web/src/styles/simplified.css`
+1. **CSS Modules when touching styles** - Extract component CSS into `.module.css` files when modifying styles. Legacy global styles in `packages/web/src/styles/simplified.css`. See `reactjs.instructions.md` for migration guide & checklist.
 2. **TypeScript** for React components
 3. **Python** for `tools/analysis/` only
 4. **Tests alongside source** - Backend: `tests/`, Frontend: `packages/web/src/**/__tests__/`

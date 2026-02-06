@@ -527,6 +527,11 @@ body {
   justify-content: center;
   margin-bottom: var(--space-4);
   position: relative;
+  /* Viewport-responsive: board is square, so cap width to available height */
+  max-width: calc(100vh - 300px);
+  max-width: calc(100dvh - 300px);
+  margin-left: auto;
+  margin-right: auto;
   /* Prevent iOS default touch behaviors (magnify, text selection) */
   touch-action: none;
   -webkit-touch-callout: none;
@@ -3199,6 +3204,11 @@ body {
     grid-template-columns: 1fr;
     gap: var(--space-6);
     padding: var(--space-3);
+  }
+
+  /* Remove viewport-height constraint on single-column layout */
+  .chessboard-container {
+    max-width: 560px;
   }
   
   .openings-grid {

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import LandingPage from './pages/LandingPage'
 import AnalyseGamesPage from './pages/AnalyseGamesPage'
 import OpeningDetailPage from './pages/OpeningDetailPage'
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<LandingPage />} />
       </Routes>
       <Analytics />
+      <SpeedInsights />
     </div>
   )
 }

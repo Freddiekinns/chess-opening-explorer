@@ -136,7 +136,7 @@ body {
 
 .two-column-layout {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   max-width: 1400px;
   margin: 0 auto;
@@ -1337,7 +1337,7 @@ body {
   padding: var(--space-2) var(--space-6);
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
   font-family: var(--font-family-primary);
   white-space: nowrap;

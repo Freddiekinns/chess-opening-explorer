@@ -566,6 +566,7 @@ body {
 
 .chessboard-fen-utilities .fen-input {
   flex: 1;
+  min-width: 0; /* Allow input to shrink below browser default */
   background-color: var(--color-bg-alt);
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);

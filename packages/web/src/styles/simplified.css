@@ -147,12 +147,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  min-width: 0; /* Allow grid item to shrink below content size */
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  min-width: 0; /* Allow grid item to shrink below content size */
 }
 
 .centered {
@@ -520,6 +522,7 @@ body {
   padding: var(--space-6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .chessboard-container {

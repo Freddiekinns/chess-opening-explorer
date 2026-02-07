@@ -531,10 +531,8 @@ body {
   /* Viewport-responsive: board is square, so cap width to available height */
   max-width: calc(100vh - 300px);
   max-width: calc(100dvh - 300px);
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
   /* Prevent iOS default touch behaviors (magnify, text selection) */
   touch-action: none;
   -webkit-touch-callout: none;

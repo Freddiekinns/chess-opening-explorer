@@ -15,8 +15,12 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   openingsData
 }) => {
   const handleSelect = (opening: any) => {
-    onSelect(opening);
     onClose();
+    // Allow layout to settle after overlay closes before navigating,
+    // so the chessboard measures its container at the correct width
+    requestAnimationFrame(() => {
+      onSelect(opening);
+    });
   };
 
   if (!isOpen) return null;

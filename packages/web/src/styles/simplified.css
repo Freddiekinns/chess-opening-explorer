@@ -520,6 +520,7 @@ body {
   padding: var(--space-6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .chessboard-container {
@@ -530,8 +531,10 @@ body {
   /* Viewport-responsive: board is square, so cap width to available height */
   max-width: calc(100vh - 300px);
   max-width: calc(100dvh - 300px);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
   /* Prevent iOS default touch behaviors (magnify, text selection) */
   touch-action: none;
   -webkit-touch-callout: none;
@@ -568,7 +571,7 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-base);
   padding: 0 var(--space-3);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base); /* 16px - prevents iOS auto-zoom on focus */
   font-family: var(--font-family-mono);
   line-height: 1;
   height: 32px;
@@ -1995,6 +1998,7 @@ body {
   background: var(--color-bg-alt);
   color: var(--color-text-primary);
   box-sizing: border-box;
+  font-size: var(--font-size-base); /* 16px - prevents iOS auto-zoom on focus */
 }
 
 /* Hide native number steppers (we provide a custom one) */

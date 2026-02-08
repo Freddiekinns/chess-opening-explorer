@@ -9,6 +9,7 @@
 - **Course Recommendations:** The backend data and API endpoint (`/api/courses/:fen`) for course recommendations are complete. The initial data for the F03 (King's Pawn Game) ECO code is fully integrated.
 - **Unified Architecture:** The monorepo structure with shared packages and the Vercel deployment pattern are implemented and working.
 - **Frontend Foundation:** The React/Vite frontend is set up with routing, a basic layout, and the critical single CSS file architecture.
+- **Opening Detail Layout:** Right column now prioritizes opening moves and win rate, with segmented win-rate bar styling aligned to landing page patterns.
 - **Related Openings UI:** Consolidated inline expandable teaser with smooth JS height animation, unified card header pattern, contextual mainline callout (variation view), ECO pill metadata (accessible & de-emphasized), passing test coverage (navigation, structure, UI).
   - Move sequences displayed below opening names to distinguish same-named variations
   - Parallel data fetching eliminates loading delay (fetched alongside main opening)

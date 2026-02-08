@@ -4,6 +4,7 @@ import { Chess, Move, Square } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
 import { CommonPlans, VideoGallery, RelatedOpeningsTeaser } from '../components/detail'
+import styles from './OpeningDetailPage.module.css'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
 import { FloatingBackButton } from '../components/shared/FloatingBackButton'
@@ -765,7 +766,7 @@ const OpeningDetailPage: React.FC = () => {
         {/* Left Column - Position Explorer (45%) */}
         <div className="left-column position-explorer">
           {/* Interactive Chessboard with immediate navigation */}
-          <div className="chessboard-section">
+          <div className={`chessboard-section ${styles.boardSectionCompact}`}>
             <div className="chessboard-container" style={practiceMode ? { touchAction: 'none' } : undefined}>
               <Chessboard
                 options={{
@@ -1010,8 +1011,12 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Right Column - Knowledge Panel (50%) */}
+        <div className="right-column knowledge-panel">
           {/* Opening Moves List */}
-          <div className="opening-moves-list">
+          <div className={`opening-moves-list ${styles.openingMovesCompact}`}>
             <div className="card-header">
               <h3 className="card-header__title card-header__title--accent">Opening Moves</h3>
             </div>
@@ -1037,10 +1042,25 @@ const OpeningDetailPage: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Right Column - Knowledge Panel (50%) */}
-        <div className="right-column knowledge-panel">
+          {/* Statistics Component */}
+          {popularityStats ? (
+            <OpeningStats
+              gamesAnalyzed={popularityStats.games_analyzed || 0}
+              whiteWins={Math.round((popularityStats.white_win_rate || 0) * (popularityStats.games_analyzed || 0))}
+              draws={Math.round((popularityStats.draw_rate || 0) * (popularityStats.games_analyzed || 0))}
+              blackWins={Math.round((popularityStats.black_win_rate || 0) * (popularityStats.games_analyzed || 0))}
+              averageRating={popularityStats.avg_rating}
+            />
+          ) : (
+            <OpeningStats
+              gamesAnalyzed={opening?.games_analyzed || 100000}
+              whiteWins={48000}
+              draws={32000}
+              blackWins={20000}
+            />
+          )}
+
           {/* Simple Tabbed Content Section - Primary learning content */}
           {opening?.eco && (
             <div className="simple-tabs">
@@ -1099,24 +1119,6 @@ const OpeningDetailPage: React.FC = () => {
                 )}
               </div>
             </div>
-          )}
-
-          {/* Statistics Component */}
-          {popularityStats ? (
-            <OpeningStats
-              gamesAnalyzed={popularityStats.games_analyzed || 0}
-              whiteWins={Math.round((popularityStats.white_win_rate || 0) * (popularityStats.games_analyzed || 0))}
-              draws={Math.round((popularityStats.draw_rate || 0) * (popularityStats.games_analyzed || 0))}
-              blackWins={Math.round((popularityStats.black_win_rate || 0) * (popularityStats.games_analyzed || 0))}
-              averageRating={popularityStats.avg_rating}
-            />
-          ) : (
-            <OpeningStats
-              gamesAnalyzed={opening?.games_analyzed || 100000}
-              whiteWins={48000}
-              draws={32000}
-              blackWins={20000}
-            />
           )}
 
           {/* Related Openings Teaser inline expandable */}

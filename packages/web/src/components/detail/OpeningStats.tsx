@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './OpeningStats.module.css';
 
 interface OpeningStatsProps {
   gamesAnalyzed: number;
@@ -15,53 +16,51 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
   blackWins,
   averageRating
 }) => {
-  const whitePercent = (whiteWins / gamesAnalyzed) * 100;
-  const drawPercent = (draws / gamesAnalyzed) * 100;
-  const blackPercent = (blackWins / gamesAnalyzed) * 100;
+  const totalGames = gamesAnalyzed > 0 ? gamesAnalyzed : 0;
+  const whitePercent = totalGames ? (whiteWins / totalGames) * 100 : 0;
+  const drawPercent = totalGames ? (draws / totalGames) * 100 : 0;
+  const blackPercent = totalGames ? (blackWins / totalGames) * 100 : 0;
 
   return (
-    <div className="statistics-component">
-      <div className="card-header">
-        <h3 className="card-header__title card-header__title--accent">Game Statistics</h3>
-      </div>
-      
-      <div className="statistics-bars">
-        <div className="stat-bar">
-          <span className="stat-label">White Success</span>
-          <div className="bar-container">
-            <div className="bar-fill white-bar" style={{width: `${whitePercent}%`}} />
-          </div>
-          <span className="stat-value">{Math.round(whitePercent)}%</span>
-        </div>
-        
-        <div className="stat-bar">
-          <span className="stat-label">Draw Rate</span>
-          <div className="bar-container">
-            <div className="bar-fill draw-bar" style={{width: `${drawPercent}%`}} />
-          </div>
-          <span className="stat-value">{Math.round(drawPercent)}%</span>
-        </div>
-        
-        <div className="stat-bar">
-          <span className="stat-label">Black Success</span>
-          <div className="bar-container">
-            <div className="bar-fill black-bar" style={{width: `${blackPercent}%`}} />
-          </div>
-          <span className="stat-value">{Math.round(blackPercent)}%</span>
+    <div className={styles.container}>
+      <div className={`card-header ${styles.headerRow}`}>
+        <h3 className="card-header__title card-header__title--accent">Win Rate</h3>
+        <div className={styles.metaRow}>
+          <span className={styles.metaItem}>{gamesAnalyzed.toLocaleString()} games</span>
+          {averageRating && (
+            <>
+              <span className={styles.metaSeparator} aria-hidden="true">•</span>
+              <span className={styles.metaItem}>Avg Lichess Rating: {averageRating}</span>
+            </>
+          )}
         </div>
       </div>
 
-      <div className="total-games">
-        <span className="games-label">Total Games Analysed</span>
-        <span className="games-value">{gamesAnalyzed.toLocaleString()}</span>
-      </div>
-      
-      {averageRating && (
-        <div className="average-rating">
-          <span className="rating-label">Average Lichess Player Rating</span>
-          <span className="rating-value">{averageRating}</span>
+      <div className={styles.results}>
+        <div className={styles.segmentedBar}>
+          <div className={`${styles.barSegment} ${styles.whiteSegment}`} style={{ width: `${whitePercent}%` }} />
+          <div className={`${styles.barSegment} ${styles.drawSegment}`} style={{ width: `${drawPercent}%` }} />
+          <div className={`${styles.barSegment} ${styles.blackSegment}`} style={{ width: `${blackPercent}%` }} />
         </div>
-      )}
+      </div>
+
+      <div className={styles.legend}>
+        <div className={styles.legendItem}>
+          <span className={`${styles.legendDot} ${styles.whiteDot}`} aria-hidden="true" />
+          <span className={styles.legendLabel}>White</span>
+          <span className={styles.legendValue}>{Math.round(whitePercent)}%</span>
+        </div>
+        <div className={styles.legendItem}>
+          <span className={`${styles.legendDot} ${styles.drawDot}`} aria-hidden="true" />
+          <span className={styles.legendLabel}>Draw</span>
+          <span className={styles.legendValue}>{Math.round(drawPercent)}%</span>
+        </div>
+        <div className={styles.legendItem}>
+          <span className={`${styles.legendDot} ${styles.blackDot}`} aria-hidden="true" />
+          <span className={styles.legendLabel}>Black</span>
+          <span className={styles.legendValue}>{Math.round(blackPercent)}%</span>
+        </div>
+      </div>
     </div>
   );
 };

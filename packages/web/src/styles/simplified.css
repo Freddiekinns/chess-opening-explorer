@@ -755,73 +755,12 @@ body {
 /* =================
    STATISTICS
    ================= */
-/* Enhanced Game Statistics Visual Hierarchy */
-.statistics-component {
-  background-color: var(--color-bg-surface);
-  border-radius: var(--border-radius-large);
-  padding: var(--space-6);
-  margin-bottom: var(--space-6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.statistics-component .title-subsection {
-  margin: 0 0 var(--space-6) 0;
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-/* Game Statistics Bars */
-.statistics-bars {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.stat-bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-1) 0;
-}
-
 .stat-label {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
   min-width: 100px;
   flex-shrink: 0;
-}
-
-.bar-container {
-  flex: 1;
-  height: 14px;
-  background: var(--color-bg-alt);
-  border-radius: var(--border-radius-base);
-  overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: var(--border-radius-base);
-  transition: width 0.8s ease-out;
-}
-
-/* Bar Colors - Updated with improved palette */
-.bar-fill.white-bar {
-  background-color: #4ECDC4;
-}
-
-.bar-fill.draw-bar {
-  background-color: #FFA726;
-}
-
-.bar-fill.black-bar {
-  background-color: #FF7043;
 }
 
 /* Three-segment results bar for opening cards */
@@ -885,52 +824,6 @@ body {
   min-width: 45px;
   text-align: right;
   flex-shrink: 0;
-}
-
-/* Total Games and Average Rating sections */
-.total-games {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-4) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.02);
-  margin: 0 calc(-1 * var(--space-6)) var(--space-4) calc(-1 * var(--space-6));
-  padding-left: var(--space-6);
-  padding-right: var(--space-6);
-}
-
-.games-label {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-}
-
-.games-value {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
-}
-
-.average-rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-4) 0 0 0;
-  margin-top: var(--space-2);
-}
-
-.rating-label {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-}
-
-.rating-value {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
 }
 
 /* =================

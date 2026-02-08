@@ -1,58 +1,28 @@
 # Active Context
 
-**Date:** 2026-02-05
+**Date:** 2026-02-08
 
-## Current Focus: Header Spacing & Navigation Fixes - COMPLETE
+## Current Focus: Opening Detail Stats Bar Redesign
 
-Fixed header spacing issues between Discover and Analyse pages, improved mobile responsiveness, and corrected back navigation from opening detail pages.
+Match the opening detail page stats to the segmented bar layout with in-bar labels, top meta row, and legend.
 
-## Session Summary (2026-02-05)
+## Session Summary (2026-02-08)
 
-### Fix: Header and Hero Spacing Consistency
+### Update: Opening Detail Stats Bars
 
-**Problem:** The pill navigation appeared cramped, and the "Opening Book" and "Analyse Your Games" titles appeared at different heights on their respective pages.
+**Problem:** The stats on the opening detail page did not match the intended segmented bar design with in-bar percentages and legend.
 
-**Solution:** Multiple CSS improvements to ensure visual consistency.
-
-**Implementation:**
-- Fixed pill navigation padding (6px → 8px outer, 10px 24px links)
-- Fixed link padding that used non-existent `--space-5` CSS variable
-- Changed hero `align-items` from `center` to `flex-start` so content aligns to top
-- Synchronized hero padding across all breakpoints:
-  - Desktop: 100px top padding
-  - Tablet (992px): 80px top padding
-  - Mobile (768px): 100px top padding
-- Removed `min-height: 30vh` from Analyse hero to eliminate empty space
-
-### Fix: Mobile Hero Spacing and Typography
-
-**Problem:** Mobile hero sections felt cramped with small fonts and tight spacing.
-
-**Solution:** Improved mobile-specific styles.
+**Solution:** Reworked the stats block to use a top meta row, centered in-bar labels, and a legend row.
 
 **Implementation:**
-- Increased mobile hero top padding to 100px
-- Set explicit font sizes for mobile titles (`font-size-2xl` / 30px)
-- Added proper margin-bottom spacing between title, subtitle, and content
-- Reduced bottom padding to minimize empty space on Analyse page
-
-### Fix: Back Navigation from Opening Detail Page
-
-**Problem:** "Return to personal stats" button navigated to `/?view=personal...` but pages are now split with Analyse at `/analyse`.
-
-**Solution:** Updated navigation to return users to the correct page.
-
-**Implementation:**
-- Changed `backHref` from `/?view=personal...` to `/analyse?username=...&platform=...`
-- Updated button text from "Back to personal stats" to "Back to analysis"
-- Links from PersonalOpeningStats already include correct `ref=personal` parameter
+- Updated `OpeningStats` markup to render the segmented bar with in-bar percentages and legend
+- Adjusted `OpeningStats.module.css` to match the requested layout and sizing
 
 **Files Changed:**
 | File | Change |
-|------|--------|
-| `packages/web/src/styles/simplified.css` | Hero spacing, pill nav sizing, mobile typography |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Back navigation href and button text |
-
+| --- | --- |
+| `packages/web/src/components/detail/OpeningStats.tsx` | Title + meta row, in-bar labels, legend |
+| `packages/web/src/components/detail/OpeningStats.module.css` | New layout + sizing for bar and legend |
 ## Current Status
 
-Header spacing and navigation fixes complete. Branch `claude/fix-header-spacing-1NVwU` ready for merge.
+Opening detail stats bar restyle complete; pending visual verification.

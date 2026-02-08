@@ -766,7 +766,7 @@ const OpeningDetailPage: React.FC = () => {
         <div className="left-column position-explorer">
           {/* Interactive Chessboard with immediate navigation */}
           <div className="chessboard-section">
-            <div className="chessboard-container">
+            <div className="chessboard-container" style={practiceMode ? { touchAction: 'none' } : undefined}>
               <Chessboard
                 options={{
                   position: practiceMode ? practiceGame?.fen() : game.fen(),
@@ -776,14 +776,14 @@ const OpeningDetailPage: React.FC = () => {
                   onPieceDrop: practiceMode ? validateAndHandleMove : undefined,
                   onSquareClick: practiceMode && isUserTurn() && !isComplete ? handleSquareClick : undefined,
                   squareStyle: {
-                    touchAction: 'none', // Prevent iOS magnify/text selection on touch
+                    touchAction: practiceMode ? 'none' : 'auto',
                     userSelect: 'none',
                     WebkitUserSelect: 'none',
                   },
                   squareStyles: highlightSquares,
                   boardStyle: {
                     borderRadius: '8px',
-                    touchAction: 'none', // Prevent default touch behaviors on the board
+                    touchAction: practiceMode ? 'none' : 'auto',
                     userSelect: 'none',
                     WebkitUserSelect: 'none',
                   },

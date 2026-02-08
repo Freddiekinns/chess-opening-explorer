@@ -535,8 +535,6 @@ body {
   max-width: calc(100dvh - 300px);
   margin-left: auto;
   margin-right: auto;
-  /* Prevent iOS default touch behaviors (magnify, text selection) */
-  touch-action: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;

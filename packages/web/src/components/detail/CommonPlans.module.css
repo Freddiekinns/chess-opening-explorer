@@ -1,0 +1,60 @@
+/* Grouped plans container */
+.groupedPlans {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: var(--space-4) 0 0 0;
+}
+
+/* Each side section (White / Black / General) */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Side label badge */
+.sectionLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-small);
+  width: fit-content;
+}
+
+.sectionLabel.white {
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sectionLabel.black {
+  color: #c0c0c0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.sectionLabel.general {
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Plan items within sections */
+.sectionPlans {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Override the left border colour per side */
+.planItem.white p {
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.planItem.black p {
+  border-left-color: rgba(100, 100, 100, 0.5);
+}
+
+.planItem.general p {
+  border-left-color: var(--color-brand-orange);
+}

@@ -14,6 +14,7 @@
   - Move sequences displayed below opening names to distinguish same-named variations
   - Parallel data fetching eliminates loading delay (fetched alongside main opening)
   - Frontend test consolidation: Removed legacy tab component & duplicate root Jest UI test; now all related openings UI tests live under `packages/web` (Vitest).
+  - Placement tuned so teaser sits under the board on desktop and moves to the bottom when the layout stacks
 - **Practice Mode (Move Trainer):** Interactive practice mode on opening detail page where users can:
   - Play opening moves by dragging OR tapping pieces on the board
   - Receive immediate feedback (correct moves accepted, incorrect rejected)

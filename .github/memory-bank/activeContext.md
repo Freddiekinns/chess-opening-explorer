@@ -1,28 +1,29 @@
 # Active Context
 
-**Date:** 2026-02-08
+**Date:** 2026-02-09
 
-## Current Focus: Opening Detail Stats Bar Redesign
+## Current Focus: Related Openings Placement
 
-Match the opening detail page stats to the segmented bar layout with in-bar labels, top meta row, and legend.
+Keep the related openings teaser directly under the chessboard on desktop while moving it to the bottom once the layout stacks.
 
-## Session Summary (2026-02-08)
+## Session Summary (2026-02-09)
 
-### Update: Opening Detail Stats Bars
+### Update: Related Openings Placement
 
-**Problem:** The stats on the opening detail page did not match the intended segmented bar design with in-bar percentages and legend.
+**Problem:** When the layout collapsed to one column, the related openings teaser was still positioned under the board, leaving a large gap.
 
-**Solution:** Reworked the stats block to use a top meta row, centered in-bar labels, and a legend row.
+**Solution:** Render a desktop-only teaser beneath the board and a mobile/tablet-only teaser at the bottom, switching visibility at the stacked breakpoint.
 
 **Implementation:**
-- Updated `OpeningStats` markup to render the segmented bar with in-bar percentages and legend
-- Adjusted `OpeningStats.module.css` to match the requested layout and sizing
+- Rendered the teaser inside the left column for desktop and a second instance after the right column for stacked layouts
+- Added CSS module visibility toggles to swap at the 1024px breakpoint
 
 **Files Changed:**
 | File | Change |
 | --- | --- |
-| `packages/web/src/components/detail/OpeningStats.tsx` | Title + meta row, in-bar labels, legend |
-| `packages/web/src/components/detail/OpeningStats.module.css` | New layout + sizing for bar and legend |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Desktop + stacked layout placements |
+| `packages/web/src/pages/OpeningDetailPage.module.css` | Responsive visibility rules |
+
 ## Current Status
 
-Opening detail stats bar restyle complete; pending visual verification.
+Related openings placement aligned for desktop and stacked layouts; ready for verification.

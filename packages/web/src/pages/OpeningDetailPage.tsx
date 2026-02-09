@@ -1011,6 +1011,16 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Related Openings Teaser - under board on desktop */}
+          {opening?.fen && (
+            <RelatedOpeningsTeaser
+              fen={opening.fen}
+              className={`related-teaser-block ${styles.relatedTeaserDesktop}`}
+              relatedData={relatedOpenings}
+              relatedLoading={relatedLoading}
+            />
+          )}
+
         </div>
 
         {/* Right Column - Knowledge Panel (50%) */}
@@ -1123,11 +1133,11 @@ const OpeningDetailPage: React.FC = () => {
 
         </div>
 
-        {/* Related Openings Teaser - placed in left column on desktop, last on mobile */}
+        {/* Related Openings Teaser - bottom on mobile */}
         {opening?.fen && (
           <RelatedOpeningsTeaser
             fen={opening.fen}
-            className="related-teaser-block related-teaser-grid-item"
+            className={`related-teaser-block ${styles.relatedTeaserMobile}`}
             relatedData={relatedOpenings}
             relatedLoading={relatedLoading}
           />

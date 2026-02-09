@@ -6,7 +6,7 @@
  * for 10x faster video discovery and 88% API quota reduction.
  */
 
-const RSSVideoDiscovery = require('../../tools/video-pipeline/1-discover-videos-rss');
+const RSSVideoDiscovery = require('../lib/rss-discovery');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -251,24 +251,35 @@ describe('RSSVideoDiscovery', () => {
     });
 
     it('should filter videos by publication date when specified', async () => {
-      // Mock older video that should be filtered out
-      discovery.fetchRSSFeed = jest.fn().mockResolvedValue({
-        channelId: 'UCM-ONC2bCHytG2mYtKDmIeA',
-        videos: [
-          {
-            id: 'old_video',
-            title: 'Old Chess Video',
-            publishedAt: '2023-01-01T10:30:00+00:00',
-            channelTitle: 'Saint Louis Chess Club'
-          },
-          {
-            id: 'new_video',
-            title: 'New Chess Video',
-            publishedAt: '2024-06-01T10:30:00+00:00',
-            channelTitle: 'Saint Louis Chess Club'
-          }
-        ]
-      });
+      discovery.fetchRSSFeed = jest.fn()
+        .mockResolvedValueOnce({
+          channelId: 'UCM-ONC2bCHytG2mYtKDmIeA',
+          videos: [
+            {
+              id: 'old_video',
+              title: 'Old Chess Video',
+              publishedAt: '2023-01-01T10:30:00+00:00',
+              channelTitle: 'Saint Louis Chess Club'
+            },
+            {
+              id: 'new_video',
+              title: 'New Chess Video',
+              publishedAt: '2024-06-01T10:30:00+00:00',
+              channelTitle: 'Saint Louis Chess Club'
+            }
+          ]
+        })
+        .mockResolvedValueOnce({
+          channelId: 'UCkJdvwRC-oGPhRHW_XPNokg',
+          videos: [
+            {
+              id: 'older_video',
+              title: 'Older Chess Video',
+              publishedAt: '2023-02-01T10:30:00+00:00',
+              channelTitle: 'Hanging Pawns'
+            }
+          ]
+        });
       
       const options = { publishedAfter: '2024-01-01T00:00:00Z' };
       const result = await discovery.discoverNewVideos(options);

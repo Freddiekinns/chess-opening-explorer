@@ -6,7 +6,7 @@
  * using batch requests and intelligent caching.
  */
 
-const VideoEnrichment = require('../../tools/video-pipeline/3-enrich-videos');
+const VideoEnrichment = require('../../tools/video-pipeline/lib/video-enricher');
 
 // Mock YouTube API
 jest.mock('googleapis', () => ({

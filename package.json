@@ -71,11 +71,11 @@
     "testEnvironment": "node",
     "collectCoverageFrom": [
       "packages/api/**/*.js",
+      "tools/video-pipeline/database/**/*.js",
       "!**/node_modules/**",
       "!**/tests/**",
       "!packages/web/**",
       "!packages/shared/**/*.{ts,d.ts}",
-      "!tools/**",
       "!scripts/**",
       "!prompts/**",
       "!packages/api/src/services/channel-first-*.js",

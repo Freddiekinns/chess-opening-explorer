@@ -27,3 +27,10 @@ Keep the related openings teaser directly under the chessboard on desktop while 
 ## Current Status
 
 Related openings placement aligned for desktop and stacked layouts; ready for verification.
+
+### Update: Test Suite Stabilization
+
+**Problem:** Jest failures from outdated video pipeline/database test imports and coverage config.
+
+**Solution:** Repointed tests to current module paths, retired obsolete pipeline tests, and aligned
+Jest coverage to the active database path.

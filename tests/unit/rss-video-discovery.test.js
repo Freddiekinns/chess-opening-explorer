@@ -6,7 +6,7 @@
  * for 10x faster video discovery and 88% API quota reduction.
  */
 
-const RSSVideoDiscovery = require('../../tools/video-pipeline/1-discover-videos-rss');
+const RSSVideoDiscovery = require('../../tools/video-pipeline/lib/rss-discovery');
 const fs = require('fs').promises;
 const path = require('path');
 

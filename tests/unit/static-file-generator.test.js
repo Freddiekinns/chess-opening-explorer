@@ -16,7 +16,7 @@
 
 // Mock dependencies first before any imports
 jest.mock('sqlite3');
-jest.mock('../../tools/database/schema-manager');
+jest.mock('../../tools/video-pipeline/database/schema-manager');
 jest.mock('fs', () => ({
   promises: {
     writeFile: jest.fn(),
@@ -30,7 +30,7 @@ jest.mock('fs', () => ({
 }));
 
 // Import after mocks
-const StaticFileGenerator = require('../../tools/database/static-file-generator');
+const StaticFileGenerator = require('../../tools/video-pipeline/database/static-file-generator');
 const path = require('path');
 const fs = require('fs').promises;
 

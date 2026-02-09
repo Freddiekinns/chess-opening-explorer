@@ -6,7 +6,7 @@
  * using title-based filtering and quality gates.
  */
 
-const PreFilterVideos = require('../../tools/video-pipeline/2-prefilter-candidates');
+const PreFilterVideos = require('../../tools/video-pipeline/lib/candidate-filter');
 
 describe('PreFilterVideos', () => {
   let preFilter;

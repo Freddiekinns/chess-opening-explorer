@@ -67,6 +67,12 @@ chess-opening-explorer/
 - `/update-popularity-stats` - Update Lichess statistics
 - `/video-pipeline` - Discover and match YouTube videos
 
+## Video Pipeline Notes
+
+- RSS discovery, candidate filtering, and enrichment live in `tools/video-pipeline/lib/`
+- Database utilities (schema + static generator) live in `tools/video-pipeline/database/`
+- Tests should import from these paths instead of legacy numbered scripts
+
 ## Common Patterns
 
 ### Bug Fix

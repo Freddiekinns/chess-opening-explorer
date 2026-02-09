@@ -6,7 +6,7 @@
  * Replaces 116MB JSON files with ~5MB SQLite for 96% storage reduction.
  */
 
-const DatabaseSchema = require('../../tools/database/schema-manager');
+const DatabaseSchema = require('../../tools/video-pipeline/database/schema-manager');
 const path = require('path');
 const fs = require('fs');
 

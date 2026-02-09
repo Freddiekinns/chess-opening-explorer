@@ -1011,16 +1011,6 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Related Openings Teaser inline expandable */}
-          {opening?.fen && (
-            <RelatedOpeningsTeaser
-              fen={opening.fen}
-              className="related-teaser-block"
-              relatedData={relatedOpenings}
-              relatedLoading={relatedLoading}
-            />
-          )}
-
         </div>
 
         {/* Right Column - Knowledge Panel (50%) */}
@@ -1132,6 +1122,16 @@ const OpeningDetailPage: React.FC = () => {
           )}
 
         </div>
+
+        {/* Related Openings Teaser - placed in left column on desktop, last on mobile */}
+        {opening?.fen && (
+          <RelatedOpeningsTeaser
+            fen={opening.fen}
+            className="related-teaser-block related-teaser-grid-item"
+            relatedData={relatedOpenings}
+            relatedLoading={relatedLoading}
+          />
+        )}
       </div>
 
       <FeedbackSection source="detail" />

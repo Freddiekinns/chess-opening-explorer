@@ -157,6 +157,13 @@ body {
   min-width: 0; /* Allow grid item to shrink below content size */
 }
 
+/* Related openings teaser as a standalone grid item:
+   Desktop: placed in left column under the board
+   Mobile: appears last, after right column content */
+.related-teaser-grid-item {
+  grid-column: 1;
+}
+
 .centered {
   text-align: center;
 }
@@ -3100,6 +3107,10 @@ body {
     grid-template-columns: 1fr;
     gap: var(--space-6);
     padding: var(--space-3);
+  }
+
+  .related-teaser-grid-item {
+    order: 99;
   }
 
   /* Remove viewport-height constraint on single-column layout */

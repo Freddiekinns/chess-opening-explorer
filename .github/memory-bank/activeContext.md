@@ -2,16 +2,24 @@
 
 **Date:** 2026-02-09
 
-## Current Focus: Related Openings Placement
+## Current Focus: TASK004 - Course Discovery & Workflow
 
-Keep the related openings teaser directly under the chessboard on desktop while moving it to the bottom once the layout stacks.
+Detailed implementation plan finalised for course discovery. Three-layer approach: known-author Lichess pipeline (via legitimate API), manual curation, and runtime search links. Backend API infrastructure already complete (~30%). Next step is implementation of the pipeline and search link fallback. Frontend UI deferred to a separate activity.
 
 ## Session Summary (2026-02-10)
 
-### Roadmap Planning: Courses & Analysis
+### TASK004 Planning Complete
+
+- **Constraints identified:** Lichess study search has no API (scraping ruled out), Chessable scraping violates ToS, LLM curation too expensive/error-prone.
+- **Approach:** Known-author pipeline using `GET /api/study/by/{username}` + PGN parsing + FEN matching against ECO database.
+- **Pipeline files:** `tools/course-discovery/` with orchestrator, lichess-fetcher, pgn-matcher, course-merger, and authors config.
+- **Search links:** Runtime generation of Lichess + Chessable search URLs added to course-service and routes.
+- **Patterns reused:** StateManager, Logger, yargs from existing pipelines.
+- **Frontend deferred:** CourseGallery component planned but not part of this implementation phase.
+
+### Earlier: Roadmap Planning
 
 - **Action:** Created `TASK004` and `TASK005` to document the new roadmap.
-- **Course Discovery:** Plan to scrape Lichess studies (slowly) and link to Chessable searches.
 - **Stockfish Analysis:** Plan for a hybrid Lichess Cloud Eval + Stockfish WASM analysis system.
 - **Mistake Trainer:** New feature to analyze personal games for opening blunders.
 

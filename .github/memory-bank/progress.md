@@ -51,7 +51,8 @@
 
 ## What's Left to Build
 
-- **Frontend UI for Courses:** While the backend is ready, the UI to display course recommendations on the opening detail page needs to be built.
+- **Course Discovery Pipeline:** Backend API infrastructure complete. Known-author Lichess pipeline (`tools/course-discovery/`), search link fallback, and manual curation pending implementation. See `TASK004`.
+- **Frontend UI for Courses:** CourseGallery component planned but deferred to separate activity.
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS variables for theme agility.
 - **Tooltip Abstraction:** Central component for consistent ARIA + styling (currently native title attributes).

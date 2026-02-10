@@ -16,7 +16,7 @@ Users viewing an opening want to find quality study materials. The backend API f
 
 ## Approach: Three Layers
 
-1. **Known-author pipeline** - Fetch studies from curated Lichess educators via API, parse PGN, match to openings by FEN - a starter director can be found https://lichess.org/@/CyberShredder/blog/cool-lichess-studies-list/UOPFWocV 
+1. **Known-author pipeline** - Fetch studies from curated Lichess educators via API, parse PGN, match to openings by FEN - a starter list can be found https://lichess.org/@/CyberShredder/blog/cool-lichess-studies-list/UOPFWocV and https://lichess.org/study/staff-picks 
 2. **Manual curation** - Add specific courses you know are good (Chessly, Naroditsky Jobava London, Alapin from Chessable, etc.) directly to `courses.json`. Build over time.
 3. **Search links** - Generate outbound URLs for Lichess + Chessable at runtime (no storage, always available)
 

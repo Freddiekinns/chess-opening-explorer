@@ -79,6 +79,20 @@ class CourseService {
   }
 
   /**
+   * Get search links for an opening name
+   * @param {string} openingName - Name of the opening
+   * @returns {{lichess: string, chessable: string}|null} Search URLs or null
+   */
+  getSearchLinks(openingName) {
+    if (!openingName || typeof openingName !== 'string') return null;
+    const encoded = encodeURIComponent(openingName.trim());
+    return {
+      lichess: `https://lichess.org/study/search?q=${encoded}`,
+      chessable: `https://www.chessable.com/courses/s/?q=${encoded}`
+    };
+  }
+
+  /**
    * Get statistics about the course database
    * @returns {Promise<Object>} Statistics object
    */

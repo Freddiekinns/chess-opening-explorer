@@ -7,6 +7,7 @@
 - **Popularity Stats:** The system successfully processes Lichess game data to calculate and display opening popularity scores.
 - **Video Pipeline:** The "Channel-First" data pipeline is complete and operational. It has successfully indexed over 1,000 videos from trusted channels.
 - **Course Recommendations:** The backend data and API endpoint (`/api/courses/:fen`) for course recommendations are complete. The initial data for the F03 (King's Pawn Game) ECO code is fully integrated.
+- **Course Discovery Pipeline:** Fetches public Lichess studies from known educators, parses PGN chapters, matches to openings by FEN, and merges into `courses.json`. Includes rate limiting, resume capability, and manual curation preservation. Run via `npm run course:discover`. 57 unit tests.
 - **Unified Architecture:** The monorepo structure with shared packages and the Vercel deployment pattern are implemented and working.
 - **Frontend Foundation:** The React/Vite frontend is set up with routing, a basic layout, and the critical single CSS file architecture.
 - **Opening Detail Layout:** Right column now prioritizes opening moves and win rate, with segmented win-rate bar styling aligned to landing page patterns.
@@ -51,7 +52,6 @@
 
 ## What's Left to Build
 
-- **Course Discovery Pipeline:** Backend API infrastructure complete. Known-author Lichess pipeline (`tools/course-discovery/`), search link fallback, and manual curation pending implementation. See `TASK004`.
 - **Frontend UI for Courses:** CourseGallery component planned but deferred to separate activity.
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS variables for theme agility.

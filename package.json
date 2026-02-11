@@ -37,6 +37,7 @@
     "pipeline:prefilter": "node tools/video-pipeline/2-prefilter-candidates.js",
     "pipeline:enrich": "node tools/video-pipeline/3-enrich-videos.js",
     "pipeline:match": "node tools/video-pipeline/video-matcher.js",
+    "course:discover": "node tools/course-discovery/index.js",
     "test": "jest",
     "eco:fix-analysis": "node scripts/fix-analysis-json.js",
     "eco:validate-analysis": "node scripts/validate-analysis-json.js",

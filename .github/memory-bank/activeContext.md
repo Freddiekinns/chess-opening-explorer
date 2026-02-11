@@ -1,10 +1,22 @@
 # Active Context
 
-**Date:** 2026-02-09
+**Date:** 2026-02-11
 
 ## Current Focus: TASK004 - Course Discovery & Workflow
 
-Detailed implementation plan finalised for course discovery. Three-layer approach: known-author Lichess pipeline (via legitimate API), manual curation, and runtime search links. Backend API infrastructure already complete (~30%). Next step is implementation of the pipeline and search link fallback. Frontend UI deferred to a separate activity.
+Course discovery backend is **complete**. Pipeline, search link fallback, and API modifications all implemented and tested. Frontend UI (CourseGallery component) deferred to a separate activity.
+
+## Session Summary (2026-02-11)
+
+### TASK004 Backend Implementation Complete
+
+- **Pipeline built:** `tools/course-discovery/` with orchestrator, lichess-fetcher, pgn-matcher, course-merger, and authors config.
+- **Dry-run verified:** 1 author (Fins) yielded 47 matched chapters across 44 openings from 9 studies.
+- **Search links:** `getSearchLinks(openingName)` added to course-service; `?openingName=` query param added to routes. Returns Lichess + Chessable search URLs.
+- **Tests:** 57 new unit tests (fetcher: 16, matcher: 25, merger: 16) + updated course-service and course-routes tests. Full suite: 418/419 pass (1 pre-existing Windows path issue).
+- **Bugs fixed during implementation:** yargs v18 API (`yargs()` not `yargs.usage()`), Logger property/method name collision (`this.verbose` shadowed `verbose()`), lichess-fetcher sleep mockability for fast tests.
+- **npm script:** `npm run course:discover` added.
+- **Documentation:** Standalone README at `tools/course-discovery/README.md`.
 
 ## Session Summary (2026-02-10)
 

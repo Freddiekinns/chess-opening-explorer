@@ -66,6 +66,7 @@ chess-opening-explorer/
 - `/enrich-openings` - Run LLM enrichment pipeline
 - `/update-popularity-stats` - Update Lichess statistics
 - `/video-pipeline` - Discover and match YouTube videos
+- `/course-discover` - Discover courses from Lichess educators (see `tools/course-discovery/README.md`)
 
 ## Common Patterns
 

@@ -38,6 +38,7 @@ describe('Course API Routes', () => {
       getCoursesByFen: jest.fn(),
       getAllCourses: jest.fn(),
       getStatistics: jest.fn(),
+      getSearchLinks: jest.fn().mockReturnValue(null),
       loadCourseData: jest.fn()
     };
 
@@ -64,7 +65,8 @@ describe('Course API Routes', () => {
         success: true,
         fen: decodedFen,
         courses: mockCourses,
-        count: 1
+        count: 1,
+        searchLinks: null
       });
 
       expect(mockCourseService.getCoursesByFen).toHaveBeenCalledWith(decodedFen);
@@ -83,7 +85,8 @@ describe('Course API Routes', () => {
         success: true,
         fen: decodedFen,
         courses: [],
-        count: 0
+        count: 0,
+        searchLinks: null
       });
     });
 
@@ -153,6 +156,38 @@ describe('Course API Routes', () => {
       const endTime = Date.now();
 
       expect(endTime - startTime).toBeLessThan(200);
+    });
+
+    test('should return search links when openingName query param is provided', async () => {
+      const fen = "rnbqkbnr%2Fpppppppp%2F8%2F8%2F4P3%2F8%2FPPPP1PPP%2FRNBQKBNR%20b%20KQkq%20e3%200%201";
+      mockCourseService.getCoursesByFen.mockResolvedValue([]);
+      mockCourseService.getSearchLinks.mockReturnValue({
+        lichess: 'https://lichess.org/study/search?q=French%20Defense',
+        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense'
+      });
+
+      const response = await request(app)
+        .get(`/api/courses/${fen}?openingName=French+Defense`)
+        .expect(200);
+
+      expect(response.body.searchLinks).toEqual({
+        lichess: 'https://lichess.org/study/search?q=French%20Defense',
+        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense'
+      });
+      expect(mockCourseService.getSearchLinks).toHaveBeenCalledWith('French Defense');
+    });
+
+    test('should return null searchLinks when no openingName provided', async () => {
+      const fen = "rnbqkbnr%2Fpppppppp%2F8%2F8%2F4P3%2F8%2FPPPP1PPP%2FRNBQKBNR%20b%20KQkq%20e3%200%201";
+      mockCourseService.getCoursesByFen.mockResolvedValue([]);
+      mockCourseService.getSearchLinks.mockReturnValue(null);
+
+      const response = await request(app)
+        .get(`/api/courses/${fen}`)
+        .expect(200);
+
+      expect(response.body.searchLinks).toBeNull();
+      expect(mockCourseService.getSearchLinks).toHaveBeenCalledWith(null);
     });
   });
 

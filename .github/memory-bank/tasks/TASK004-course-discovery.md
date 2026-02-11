@@ -1,6 +1,6 @@
 # [TASK004] - Course Discovery & Workflow
 
-**Status:** In Progress
+**Status:** Backend Complete (Frontend Deferred)
 **Added:** 2026-02-10
 **Updated:** 2026-02-10
 
@@ -107,14 +107,14 @@ No tooling needed. Add entries directly to `courses.json` following the existing
 
 ## Progress Tracking
 
-**Overall Status:** ~30% Complete (API infrastructure done, pipeline + UI pending)
+**Overall Status:** ~80% Complete (Backend done, frontend deferred)
 
 | Area | Status | Notes |
 |------|--------|-------|
 | Infrastructure: Courses API | **Complete** | Service, routes, tests, Vercel wrapper all done |
-| Known-Author Pipeline | **Pending** | `tools/course-discovery/` to be created |
-| Search Link Fallback | **Pending** | Add to course-service + routes |
-| Manual Curation | **Pending** | Add known good courses to `courses.json` |
+| Known-Author Pipeline | **Complete** | `tools/course-discovery/` with 57 unit tests |
+| Search Link Fallback | **Complete** | `getSearchLinks()` in course-service, `?openingName=` in routes |
+| Manual Curation | **Complete** | Pipeline preserves manual entries; add to `courses.json` directly |
 | UI: Courses Tab | **Pending** | Deferred to separate frontend task |
 
 ---
@@ -177,3 +177,212 @@ Add a COURSES tab to `OpeningDetailPage.tsx` following the VIDEOS tab pattern (c
 4. API returns courses + search links for any opening
 5. Existing tests continue to pass
 6. *(Frontend, deferred)* COURSES tab displays on opening detail page
+
+
+Implementation plan:
+TASK004: Course Discovery Backend Implementation
+Context
+Users viewing an opening want to find quality study materials. The API infrastructure (service, routes, tests) is built but courses.json has only 1 entry. We need a pipeline to populate it from Lichess educator studies, plus search link fallbacks for every opening.
+
+User decisions:
+
+Chapter-level linking (link to specific chapters, not whole studies)
+Author API only (blog post identifies authors, but only fetch via Lichess API)
+Drop quality scores for auto-discovered entries (simplified schema)
+Validation Findings
+Area	Status	Notes
+chess.js	Installed in packages/shared/node_modules/ (v1.4.0)	Should be hoisted to root by npm workspaces — verify at build time
+pgn-utils.ts	Solid, tested, 6 functions	ESM module — can't require() from CJS tools. Use as reference, write CJS equivalents
+ECO data	Valid, FEN-keyed objects in api/data/eco/ecoA-E.json	~4000+ positions, O(1) lookup
+Shared package	ESM ("type": "module")	Root is CJS ("type": "commonjs"). No CJS export from shared.
+Node.js	v24.3.0	Native fetch() available, no polyfills needed
+Root scripts	Several point to non-existent tools/production/	Not blocking for us — our scripts go in tools/course-discovery/
+yargs	Root devDependency (v18)	Available for CLI arg parsing
+ESM/CJS decision: The pipeline will be CJS (matching other tools). We'll write the PGN parsing functions directly in pgn-matcher.js using chess.js, referencing the logic in pgn-utils.ts as a proven implementation. This avoids ESM/CJS interop issues and keeps the tool self-contained.
+
+Part 1: Known-Author Pipeline
+New files
+tools/course-discovery/config/authors.json
+Seed list of known Lichess educators (sourced from CyberShredder blog + staff picks):
+
+
+{
+  "authors": [
+    { "username": "DrNykterstein", "note": "Magnus Carlsen" },
+    { "username": "Fins", "note": "John Bartholomew" },
+    { "username": "Msb2", "note": "Mateusz Bartel" },
+    { "username": "Chessexplained", "note": "Christof Sielecki" }
+  ]
+}
+Start small (4-6 authors), expand over time. We'll verify these usernames exist during first dry-run.
+
+tools/course-discovery/lib/lichess-fetcher.js
+Functions:
+
+fetchStudyList(username) — GET https://lichess.org/api/study/by/{username} with Accept: application/x-ndjson. Parse NDJSON: split by newlines, JSON.parse each line. Returns [{id, name, createdAt, updatedAt}]
+fetchStudyPGN(studyId) — GET https://lichess.org/api/study/{studyId}.pgn?comments=false&variations=false&clocks=false. Returns raw PGN string containing all chapters
+sleep(ms) — Promise-based delay for rate limiting
+rateLimitedFetch(url, options) — Wrapper: 1 req/sec minimum delay, 60s backoff on 429 response, 3 retries with exponential backoff
+Uses native fetch (Node 18+). No external HTTP library needed.
+
+tools/course-discovery/lib/pgn-matcher.js
+Functions:
+
+splitPGNIntoChapters(pgnText) — Split multi-chapter PGN by [Event " headers. Extract chapter metadata from PGN headers: chapter name from [Event], chapter URL from [Site] (format: https://lichess.org/study/{studyId}/{chapterId}). Returns [{ chapterId, chapterName, studyId, pgn }]
+generateFENsFromPGN(pgnText) — Port of pgn-utils.ts:124-162. Strip headers/comments/variations, regex-parse moves, step through with new Chess(), collect FEN at each position
+matchFENsToOpenings(fens, ecoIndex) — Check each FEN against ECO data. Return the deepest match (furthest into the line). Logic from pgn-utils.ts:197-248, simplified: normalize FEN (first 4 parts, strip move counters), lookup in ecoIndex
+loadECOIndex() — Load api/data/eco/ecoA.json through ecoE.json, merge into single FEN-keyed object. Normalize FEN keys (first 4 parts) for consistent matching
+FEN normalisation: ECO data uses full FEN (e.g. rnb... w KQkq - 0 5). For matching, strip halfmove + fullmove counters (use first 4 space-separated parts: position, turn, castling, en passant). This matches the approach in pgn-utils.ts:189-192.
+
+Matching algorithm (deepest match):
+
+Take a chapter's PGN mainline (e.g. 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5...)
+Replay moves one by one with chess.js, collecting FEN after each move
+Check each FEN (normalised) against the ECO index (~4000 positions)
+Return the deepest match — the FEN furthest into the line that still matches a known opening
+Example: A chapter going 20 moves into the French Winawer → matched to the Winawer FEN at move ~6, not to the broader "French Defense" at move 2
+If no FEN matches any opening → chapter is dropped (not an opening study)
+Each chapter is matched independently, so one study can link to multiple openings
+tools/course-discovery/lib/course-merger.js
+Functions:
+
+loadExistingCourses(filePath) — Read and parse courses.json. Return {} if file missing
+mergeDiscoveries(existing, discovered) — Merge algorithm:
+Clone existing data
+For each FEN key: filter out entries where auto_discovered === true (clear old auto entries)
+Add new auto-discovered entries from discovered
+Result: manual entries untouched, auto entries refreshed
+writeCourses(filePath, merged) — JSON.stringify(merged, null, 2) + write
+Key guarantee: Entries without auto_discovered: true (manual curation) are never modified or removed.
+
+tools/course-discovery/index.js
+Pipeline orchestrator using step-based pattern from video-pipeline/index.js.
+
+Reusable classes (copy Logger + StateManager from enrich_openings_llm.js — they're self-contained, ~100 lines total):
+
+Logger — verbose/quiet modes, file logging
+StateManager — tracks processedAuthors[] for resume capability
+Pipeline steps:
+
+Parse CLI args (yargs) + load config/authors.json
+Load ECO index (merge ecoA-E.json)
+Load existing courses.json
+For each author (respecting --limit, --author, --resume):
+Fetch study list via lichess-fetcher.fetchStudyList()
+For each study:
+Fetch PGN via lichess-fetcher.fetchStudyPGN()
+Split into chapters via pgn-matcher.splitPGNIntoChapters()
+For each chapter: generate FENs, match to openings
+Collect matched chapters as course entries
+Mark author as processed in state
+Merge discoveries via course-merger.mergeDiscoveries()
+Write result (unless --dryRun)
+Print summary: authors processed, studies fetched, chapters matched, FENs populated
+CLI args (yargs, root devDependency):
+
+
+--dryRun       Print what would be written, don't modify files
+--limit <n>    Max authors to process
+--author <u>   Process single author only
+--verbose      Detailed logging
+--quiet        Minimal output
+--resume       Skip already-processed authors (uses state file)
+--stateFile    Custom state file path (default: tools/course-discovery/.state.json)
+Auto-discovered entry schema
+
+{
+  "course_title": "Study Name - Chapter Name",
+  "author": "lichess_username",
+  "platform": "Lichess",
+  "source_url": "https://lichess.org/study/{studyId}/{chapterId}",
+  "anchor_fens": ["matched_fen"],
+  "auto_discovered": true,
+  "discovered_at": "2026-02-10T00:00:00.000Z"
+}
+No quality_score, publication_year, repertoire_for, estimated_level, scope, or vetting_notes. The auto_discovered flag is the key differentiator for the merger.
+
+Part 2: Search Link Fallback
+Modify packages/api/src/services/course-service.js
+Add method to the CourseService class:
+
+
+getSearchLinks(openingName) {
+  if (!openingName || typeof openingName !== 'string') return null;
+  const encoded = encodeURIComponent(openingName.trim());
+  return {
+    lichess: `https://lichess.org/study/search?q=${encoded}`,
+    chessable: `https://www.chessable.com/courses/s/?q=${encoded}`
+  };
+}
+Modify packages/api/src/routes/courses.routes.js
+Update GET /api/courses/:fen handler:
+
+Read optional openingName from req.query.openingName
+Call courseService.getSearchLinks(openingName)
+Include in response: { success, fen, courses, count, searchLinks }
+searchLinks is null when no openingName provided
+Part 3: Tests
+All test files go in tests/unit/ (matching existing pattern, Jest runner from root).
+
+tests/unit/lichess-fetcher.test.js
+Mock global fetch
+Test NDJSON parsing (multiple lines, empty response, malformed line)
+Test 429 rate limit handling (backoff + retry)
+Test network error handling
+tests/unit/pgn-matcher.test.js
+Test splitPGNIntoChapters() with multi-chapter PGN (verify chapterId extraction from [Site] header)
+Test generateFENsFromPGN() with known moves (e.g. 1. e4 e6 → verify French Defense FEN)
+Test matchFENsToOpenings() with mock ECO index
+Test no-match scenario (endgame positions)
+Test FEN normalisation (strips move counters)
+tests/unit/course-merger.test.js
+Test manual entries preserved after merge
+Test auto-discovered entries replaced on re-run
+Test new FEN keys added alongside existing
+Test empty existing file handled
+Test entries with auto_discovered: true cleared before fresh insert
+Update existing tests
+tests/unit/course-service.test.js — Add tests for getSearchLinks(): valid name, null name, empty string
+tests/unit/course-routes.test.js — Add test for ?openingName=French+Defense query param, verify searchLinks in response
+Implementation Order
+lib/lichess-fetcher.js + tests/unit/lichess-fetcher.test.js
+lib/pgn-matcher.js + tests/unit/pgn-matcher.test.js
+lib/course-merger.js + tests/unit/course-merger.test.js
+config/authors.json
+index.js (orchestrator)
+Search links: modify course-service.js + courses.routes.js + update existing tests
+End-to-end dry-run: node tools/course-discovery/index.js --dryRun --limit=1
+Critical Files Reference
+File	Action
+packages/shared/src/utils/pgn-utils.ts	Reference only — port FEN generation + matching logic to CJS
+packages/api/src/services/course-service.js	Modify — add getSearchLinks()
+packages/api/src/routes/courses.routes.js	Modify — add openingName query param, return searchLinks
+packages/api/src/data/courses.json	Pipeline output target
+api/data/eco/ecoA.json through ecoE.json	Read — opening database for FEN matching
+tools/llm-enrichment/enrich_openings_llm.js	Reference — copy Logger (lines 16-62), StateManager (lines 64-113)
+tools/video-pipeline/index.js	Reference — step-based pipeline structure
+tests/unit/course-service.test.js	Modify — add searchLinks tests
+tests/unit/course-routes.test.js	Modify — add openingName param tests
+Verification
+npx jest tests/unit/lichess-fetcher.test.js tests/unit/pgn-matcher.test.js tests/unit/course-merger.test.js — new unit tests pass
+npx jest tests/unit/course-service.test.js tests/unit/course-routes.test.js — existing + new tests pass
+node tools/course-discovery/index.js --dryRun --limit=1 — test with 1 author, verify output looks correct
+node tools/course-discovery/index.js --limit=1 — write to courses.json, verify manual French Defense entry still present
+npx jest — full test suite passes (90% coverage threshold)
+Manual API test: GET /api/courses/:fen?openingName=French+Defense returns courses + searchLinks
+Root package.json Script (optional)
+Add after pipeline is working:
+
+
+"course:discover": "node tools/course-discovery/index.js"
+User approved the plan
+The plan is approved. Let me start implementing. I'll set up the todo list and begin with the implementation order from the plan:
+
+lib/lichess-fetcher.js + tests
+lib/pgn-matcher.js + tests
+lib/course-merger.js + tests
+config/authors.json
+index.js (orchestrator)
+Search links: modify course-service.js + courses.routes.js + update tests
+End-to-end dry-run
+Let me start by creating the directory structure and then the first file.

@@ -84,12 +84,14 @@ router.get('/:fen', async (req, res) => {
     }
 
     const courses = await courseService.getCoursesByFen(fen);
+    const searchLinks = courseService.getSearchLinks(req.query.openingName || null);
 
     res.json({
       success: true,
       fen: fen,
       courses: courses,
-      count: courses.length
+      count: courses.length,
+      searchLinks: searchLinks
     });
   } catch (error) {
     res.status(500).json({

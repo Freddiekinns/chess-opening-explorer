@@ -219,6 +219,37 @@ describe('CourseService', () => {
     });
   });
 
+  describe('getSearchLinks', () => {
+    test('should return search URLs for valid opening name', () => {
+      const links = courseService.getSearchLinks('French Defense');
+      expect(links).toEqual({
+        lichess: 'https://lichess.org/study/search?q=French%20Defense',
+        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense'
+      });
+    });
+
+    test('should encode special characters', () => {
+      const links = courseService.getSearchLinks("King's Indian");
+      expect(links.lichess).toContain("King's%20Indian");
+    });
+
+    test('should trim whitespace', () => {
+      const links = courseService.getSearchLinks('  French Defense  ');
+      expect(links.lichess).toBe('https://lichess.org/study/search?q=French%20Defense');
+    });
+
+    test('should return null for null/empty input', () => {
+      expect(courseService.getSearchLinks(null)).toBeNull();
+      expect(courseService.getSearchLinks('')).toBeNull();
+      expect(courseService.getSearchLinks(undefined)).toBeNull();
+    });
+
+    test('should return null for non-string input', () => {
+      expect(courseService.getSearchLinks(123)).toBeNull();
+      expect(courseService.getSearchLinks({})).toBeNull();
+    });
+  });
+
   describe('performance requirements', () => {
     test('should complete FEN lookup in under 100ms', async () => {
       fs.existsSync.mockReturnValue(true);

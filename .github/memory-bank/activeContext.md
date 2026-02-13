@@ -16,10 +16,11 @@ Studies tab frontend is **implemented** on branch `feat/studies-tab`. Pipeline b
 - **Conditional rendering:** Studies tab shown when curated studies exist OR search links available. Search links always visible at bottom.
 - **Build verified:** TypeScript compiles cleanly, Vite build succeeds.
 
-### Pipeline Bug Fix: Chapter-Level URLs
+### Pipeline Bug Fixes: Chapter-Level URLs (2 bugs)
 
-- **Bug found:** PGN matcher read `[Site]` header for chapter URLs, but Lichess PGN API returns them in `[ChapterURL]`. Only 476/20,300 entries (2.3%) had chapter-level links.
-- **Fix:** Updated `splitPGNIntoChapters()` in `pgn-matcher.js` to also read `[ChapterURL]` as fallback.
+1. **`[ChapterURL]` not read:** PGN matcher only looked at `[Site]`, but most Lichess PGN exports use `[ChapterURL]`. Fixed by adding `[ChapterURL]` extraction.
+2. **`[Site]` wrongly prioritised over `[ChapterURL]`:** When both headers exist, `[Site]` can reference a different source study (imported chapters). Fixed by preferring `[ChapterURL]` over `[Site]`.
+- **Impact:** Only 476/20,300 entries (2.3%) had chapter-level links before fix.
 - **Tests:** All 30 pgn-matcher tests pass.
 - **Next step:** Re-run `npm run course:discover` to regenerate all entries with `/study/{studyId}/{chapterId}` URLs.
 

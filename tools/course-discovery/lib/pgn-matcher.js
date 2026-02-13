@@ -34,15 +34,17 @@ function splitPGNIntoChapters(pgnText) {
     }
 
     const chapterName = extractHeader(trimmed, 'Event') || 'Untitled';
-    // Lichess PGN exports include the chapter URL in either [Site] or [ChapterURL]
-    const siteUrl = extractHeader(trimmed, 'Site') || '';
+    // Lichess PGN exports include the chapter URL in [ChapterURL] (preferred)
+    // or sometimes [Site]. Prefer ChapterURL as Site can reference a different
+    // source study when the chapter was imported from another study.
     const chapterUrl = extractHeader(trimmed, 'ChapterURL') || '';
+    const siteUrl = extractHeader(trimmed, 'Site') || '';
 
-    // Extract studyId and chapterId from Site or ChapterURL
+    // Extract studyId and chapterId from ChapterURL or Site
     // Format: https://lichess.org/study/{studyId}/{chapterId}
     let studyId = null;
     let chapterId = null;
-    const urlToMatch = siteUrl || chapterUrl;
+    const urlToMatch = chapterUrl || siteUrl;
     const siteMatch = urlToMatch.match(/lichess\.org\/study\/([^/]+)\/([^/\s"]+)/);
     if (siteMatch) {
       studyId = siteMatch[1];

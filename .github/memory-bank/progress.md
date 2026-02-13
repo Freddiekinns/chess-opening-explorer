@@ -53,7 +53,7 @@
 
 ## What's Left to Build
 
-- **Course Data Quality:** Re-run pipeline (`npm run course:discover`) to backfill chapter-level URLs (currently only 2.3% have them due to fixed `[ChapterURL]` bug).
+- **Course Data Quality:** Re-run pipeline (`npm run course:discover`) to backfill chapter-level URLs (currently only 2.3% have them; two bugs fixed — `[ChapterURL]` not read, and `[Site]` wrongly prioritised over `[ChapterURL]` for imported chapters).
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS variables for theme agility.
 - **Tooltip Abstraction:** Central component for consistent ARIA + styling (currently native title attributes).

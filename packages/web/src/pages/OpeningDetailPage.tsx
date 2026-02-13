@@ -3,7 +3,8 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Chess, Move, Square } from 'chess.js'
 import { Chessboard } from 'react-chessboard'
 import { ChessOpening, Video } from '../../../shared/src'
-import { CommonPlans, VideoGallery, RelatedOpeningsTeaser } from '../components/detail'
+import { CommonPlans, VideoGallery, StudiesGallery, RelatedOpeningsTeaser } from '../components/detail'
+import type { Study, SearchLinks } from '../components/detail/StudiesGallery'
 import styles from './OpeningDetailPage.module.css'
 import { SearchBar } from '../components/shared/SearchBar'
 import { OpeningStats } from '../components/detail/OpeningStats'
@@ -59,6 +60,7 @@ type Opening = ChessOpening & {
 const TAB_TYPES = {
   OVERVIEW: 'overview',
   PLANS: 'plans',
+  STUDIES: 'studies',
   VIDEOS: 'videos'
 } as const;
 
@@ -67,6 +69,7 @@ type TabType = typeof TAB_TYPES[keyof typeof TAB_TYPES];
 const API_ENDPOINTS = {
   OPENING_BY_FEN: '/api/openings/fen/',
   VIDEOS_BY_FEN: '/api/openings/videos/',
+  COURSES_BY_FEN: '/api/courses/',
   STATS_BY_FEN: '/api/stats/',
   RELATED_BY_FEN: '/api/openings/fen/',
   ALL_OPENINGS: '/api/openings/all'
@@ -93,6 +96,8 @@ const OpeningDetailPage: React.FC = () => {
   const [relatedLoading, setRelatedLoading] = useState(false)
   const [openingsData, setOpeningsData] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW)
+  const [studies, setStudies] = useState<Study[]>([])
+  const [searchLinks, setSearchLinks] = useState<SearchLinks | null>(null)
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
 
   // Practice mode state
@@ -122,12 +127,15 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [fen])
 
-  // Switch away from videos tab if no videos are available
+  // Switch away from conditional tabs if no data available
   useEffect(() => {
     if (activeTab === TAB_TYPES.VIDEOS && videos.length === 0) {
       setActiveTab(TAB_TYPES.OVERVIEW)
     }
-  }, [videos, activeTab])
+    if (activeTab === TAB_TYPES.STUDIES && studies.length === 0 && !searchLinks) {
+      setActiveTab(TAB_TYPES.OVERVIEW)
+    }
+  }, [videos, studies, searchLinks, activeTab])
 
   // API Helper Functions
   const fetchWithErrorHandling = async (url: string, errorMessage: string) => {
@@ -178,6 +186,7 @@ const OpeningDetailPage: React.FC = () => {
         // Fetch additional data (related openings fetched in parallel from useEffect)
         loadPopularityStats(fenString)
         loadVideos(fenString)
+        loadStudies(fenString, data.data?.name || '')
       } else {
         setError('Opening not found')
       }
@@ -205,6 +214,18 @@ const OpeningDetailPage: React.FC = () => {
     );
 
     setVideos(data?.data || []);
+  }
+
+  const loadStudies = async (fenString: string, openingName: string) => {
+    const encodedFen = encodeURIComponent(fenString)
+    const nameParam = openingName ? `?openingName=${encodeURIComponent(openingName)}` : ''
+    const data = await fetchWithErrorHandling(
+      `${API_ENDPOINTS.COURSES_BY_FEN}${encodedFen}${nameParam}`,
+      'Error loading studies:'
+    );
+
+    setStudies(data?.courses || []);
+    setSearchLinks(data?.searchLinks || null);
   }
 
   const loadRelatedOpenings = async (fenString: string) => {
@@ -1086,14 +1107,22 @@ const OpeningDetailPage: React.FC = () => {
                   className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
                   onClick={() => setActiveTab(TAB_TYPES.PLANS)}
                 >
-                  Common Plans
+                  Plans
                 </button>
+                {(studies.length > 0 || searchLinks) && (
+                  <button
+                    className={`tab-button ${activeTab === TAB_TYPES.STUDIES ? 'active' : ''}`}
+                    onClick={() => setActiveTab(TAB_TYPES.STUDIES)}
+                  >
+                    {studies.length > 0 ? `Studies (${studies.length})` : 'Studies'}
+                  </button>
+                )}
                 {videos.length > 0 && (
                   <button
                     className={`tab-button ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
                     onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
                   >
-                    Related Videos ({videos.length})
+                    Videos ({videos.length})
                   </button>
                 )}
               </div>
@@ -1115,6 +1144,18 @@ const OpeningDetailPage: React.FC = () => {
                     ecoCode={opening.eco}
                   />
                 </div>
+
+                {(studies.length > 0 || searchLinks) && (
+                  <div className={`tab-content-panel ${activeTab === TAB_TYPES.STUDIES ? 'active' : ''}`}>
+                    <div className="content-panel-improved">
+                      <StudiesGallery
+                        studies={studies}
+                        searchLinks={searchLinks}
+                        openingName={opening?.name || ''}
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {videos.length > 0 && (
                   <div className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}>

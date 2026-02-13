@@ -1,22 +1,37 @@
 # Active Context
 
-**Date:** 2026-02-11
+**Date:** 2026-02-13
 
-## Current Focus: TASK004 - Course Discovery & Workflow
+## Current Focus: TASK004 - Studies Tab Frontend + Pipeline Fix
 
-Course discovery backend is **complete**. Pipeline, search link fallback, and API modifications all implemented and tested. Frontend UI (CourseGallery component) deferred to a separate activity.
+Studies tab frontend is **implemented** on branch `feat/studies-tab`. Pipeline bug fix for chapter-level URLs also included. Next step: re-run pipeline to backfill chapter links, then verify UI with real data.
 
-## Session Summary (2026-02-11)
+## Session Summary (2026-02-13)
 
-### TASK004 Backend Implementation Complete
+### Studies Tab Frontend Implementation
 
-- **Pipeline built:** `tools/course-discovery/` with orchestrator, lichess-fetcher, pgn-matcher, course-merger, and authors config.
-- **Dry-run verified:** 1 author (Fins) yielded 47 matched chapters across 44 openings from 9 studies.
-- **Search links:** `getSearchLinks(openingName)` added to course-service; `?openingName=` query param added to routes. Returns Lichess + Chessable search URLs.
-- **Tests:** 57 new unit tests (fetcher: 16, matcher: 25, merger: 16) + updated course-service and course-routes tests. Full suite: 418/419 pass (1 pre-existing Windows path issue).
-- **Bugs fixed during implementation:** yargs v18 API (`yargs()` not `yargs.usage()`), Logger property/method name collision (`this.verbose` shadowed `verbose()`), lichess-fetcher sleep mockability for fast tests.
-- **npm script:** `npm run course:discover` added.
-- **Documentation:** Standalone README at `tools/course-discovery/README.md`.
+- **New component:** `StudiesGallery.tsx` with CSS Module — vertical list of study cards (title, author, platform badge, "Open" link to Lichess), show-more toggle (5 initially, then all), and search links section (Lichess + Chessable).
+- **Tab integration:** Added `STUDIES` to `TAB_TYPES` in `OpeningDetailPage.tsx`. Tab order: Overview → Plans → Studies → Videos. Tab labels shortened: "Plans", "Studies (N)", "Videos (N)".
+- **Data fetching:** `loadStudies()` calls `GET /api/courses/:fen?openingName=...`, sets studies + searchLinks state.
+- **Conditional rendering:** Studies tab shown when curated studies exist OR search links available. Search links always visible at bottom.
+- **Build verified:** TypeScript compiles cleanly, Vite build succeeds.
+
+### Pipeline Bug Fix: Chapter-Level URLs
+
+- **Bug found:** PGN matcher read `[Site]` header for chapter URLs, but Lichess PGN API returns them in `[ChapterURL]`. Only 476/20,300 entries (2.3%) had chapter-level links.
+- **Fix:** Updated `splitPGNIntoChapters()` in `pgn-matcher.js` to also read `[ChapterURL]` as fallback.
+- **Tests:** All 30 pgn-matcher tests pass.
+- **Next step:** Re-run `npm run course:discover` to regenerate all entries with `/study/{studyId}/{chapterId}` URLs.
+
+### Files Changed
+
+| File | Change |
+|------|--------|
+| `packages/web/src/components/detail/StudiesGallery.tsx` | New component |
+| `packages/web/src/components/detail/StudiesGallery.module.css` | New styles |
+| `packages/web/src/components/detail/index.ts` | Added StudiesGallery export |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Added Studies tab (types, state, fetch, UI) |
+| `tools/course-discovery/lib/pgn-matcher.js` | Fixed ChapterURL extraction |
 
 ## Session Summary (2026-02-10)
 

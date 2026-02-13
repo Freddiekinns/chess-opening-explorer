@@ -8,6 +8,7 @@
 - **Video Pipeline:** The "Channel-First" data pipeline is complete and operational. It has successfully indexed over 1,000 videos from trusted channels.
 - **Course Recommendations:** The backend data and API endpoint (`/api/courses/:fen`) for course recommendations are complete. The initial data for the F03 (King's Pawn Game) ECO code is fully integrated.
 - **Course Discovery Pipeline:** Fetches public Lichess studies from known educators, parses PGN chapters, matches to openings by FEN, and merges into `courses.json`. Includes rate limiting, resume capability, and manual curation preservation. Run via `npm run course:discover`. 57 unit tests.
+- **Studies Tab (Frontend):** `StudiesGallery` component on opening detail page showing curated Lichess studies with "Open" links (chapter-level when available), show-more toggle, and Lichess/Chessable search links. Tab order: Overview → Plans → Studies → Videos. Branch: `feat/studies-tab`.
 - **Unified Architecture:** The monorepo structure with shared packages and the Vercel deployment pattern are implemented and working.
 - **Frontend Foundation:** The React/Vite frontend is set up with routing, a basic layout, and the critical single CSS file architecture.
 - **Opening Detail Layout:** Right column now prioritizes opening moves and win rate, with segmented win-rate bar styling aligned to landing page patterns.
@@ -52,7 +53,7 @@
 
 ## What's Left to Build
 
-- **Frontend UI for Courses:** CourseGallery component planned but deferred to separate activity.
+- **Course Data Quality:** Re-run pipeline (`npm run course:discover`) to backfill chapter-level URLs (currently only 2.3% have them due to fixed `[ChapterURL]` bug).
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS variables for theme agility.
 - **Tooltip Abstraction:** Central component for consistent ARIA + styling (currently native title attributes).

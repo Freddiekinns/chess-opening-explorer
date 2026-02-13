@@ -1,0 +1,200 @@
+/* Studies Gallery - list of curated Lichess studies */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+/* Study list */
+.studyList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Individual study card */
+.studyCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius-base);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.studyCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Left side: title + meta */
+.studyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+
+.studyTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studyMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.author {
+  white-space: nowrap;
+}
+
+.metaSeparator {
+  color: var(--color-text-muted);
+}
+
+.platformBadge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--border-radius-small);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* Right side: open button */
+.openButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-small);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.openButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.externalIcon {
+  opacity: 0.7;
+}
+
+/* Show more button */
+.showMoreButton {
+  align-self: center;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-base);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.showMoreButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* Empty state message */
+.emptyMessage {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  padding: var(--space-4) 0;
+  margin: 0;
+}
+
+/* Search links section */
+.searchLinks {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.searchLinksLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.searchButtons {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.searchButton {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid var(--color-brand-orange);
+  border-radius: var(--border-radius-small);
+  color: var(--color-brand-orange);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.searchButton:hover {
+  background: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .studyCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .openButton {
+    align-self: flex-end;
+  }
+
+  .studyTitle {
+    white-space: normal;
+  }
+
+  .searchButtons {
+    flex-direction: column;
+  }
+
+  .searchButton {
+    text-align: center;
+    justify-content: center;
+  }
+}

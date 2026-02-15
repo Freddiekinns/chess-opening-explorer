@@ -1,0 +1,73 @@
+name: Coverage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  coverage:
+    name: Coverage Report
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
+      - name: Check coverage thresholds
+        run: |
+          if [ ! -f coverage/coverage-summary.json ]; then
+            echo "Coverage summary not found"
+            exit 1
+          fi
+
+          # Extract coverage percentages
+          BRANCHES=$(jq '.total.branches.pct' coverage/coverage-summary.json)
+          FUNCTIONS=$(jq '.total.functions.pct' coverage/coverage-summary.json)
+          LINES=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+          STATEMENTS=$(jq '.total.statements.pct' coverage/coverage-summary.json)
+
+          echo "Coverage: Branches: $BRANCHES%, Functions: $FUNCTIONS%, Lines: $LINES%, Statements: $STATEMENTS%"
+
+          # Check if all are >= 90%
+          if (( $(echo "$BRANCHES < 90" | bc -l) )); then
+            echo "Branch coverage is below 90%"
+            exit 1
+          fi
+          if (( $(echo "$FUNCTIONS < 90" | bc -l) )); then
+            echo "Function coverage is below 90%"
+            exit 1
+          fi
+          if (( $(echo "$LINES < 90" | bc -l) )); then
+            echo "Line coverage is below 90%"
+            exit 1
+          fi
+          if (( $(echo "$STATEMENTS < 90" | bc -l) )); then
+            echo "Statement coverage is below 90%"
+            exit 1
+          fi
+
+      - name: Generate coverage badge
+        if: github.ref == 'refs/heads/main'
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: true
+
+      - name: Comment coverage on PR
+        if: github.event_name == 'pull_request'
+        uses: romeovs/lcov-reporter-action@v0.3.1
+        with:
+          lcov-file: ./coverage/lcov.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}

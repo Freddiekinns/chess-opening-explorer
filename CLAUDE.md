@@ -21,6 +21,43 @@
 2. **Check Current State** via `activeContext.md` and `progress.md`
 3. **Load instructions** only when relevant to your task
 
+## Environment Setup
+
+**Required:**
+- Node.js >= 18.0.0
+- npm >= 8.0.0
+
+**API Keys (optional for basic development):**
+- `YOUTUBE_API_KEY` - Required for video pipeline
+- `OPENAI_API_KEY` - Required for LLM enrichment
+- Copy `.env.example` to `.env` and add keys as needed
+
+## Essential Commands
+
+```bash
+# Setup
+npm install                    # Install all workspace dependencies
+npm run eco:import            # Import ECO opening data
+
+# Development
+npm run dev                   # Start API (3010) + Frontend (3000)
+npm run dev:web              # Frontend only
+npm run dev:api              # API only
+
+# Testing
+npm test                      # Backend tests (Jest)
+npm run test:frontend        # Frontend tests (Vitest)
+npm run test:all             # Full suite
+npm run test:watch           # Watch mode
+
+# Data Pipelines
+npm run enrich               # LLM enrichment
+npm run course:discover      # Discover Lichess educator courses
+npm run pipeline:complete    # Complete video pipeline
+npm run pipeline:discover    # Discover videos from RSS feeds
+npm run pipeline:match       # Match videos to openings
+```
+
 ## Memory Bank
 
 ```
@@ -61,12 +98,35 @@ chess-opening-explorer/
     └── memory-bank/  # Project context
 ```
 
-## Workflows
+## Data Pipeline Workflows
 
-- `/enrich-openings` - Run LLM enrichment pipeline
-- `/update-popularity-stats` - Update Lichess statistics
-- `/video-pipeline` - Discover and match YouTube videos
-- `/course-discover` - Discover courses from Lichess educators (see `tools/course-discovery/README.md`)
+**LLM Enrichment:**
+```bash
+npm run enrich               # Enrich openings with AI-generated content
+npm run course:enrich        # Enrich course data
+npm run course:integrate     # Integrate course data into main dataset
+```
+
+**Video Pipeline:**
+```bash
+npm run pipeline:complete    # Full pipeline (discover → filter → enrich → match)
+npm run pipeline:discover    # Step 1: Discover videos from RSS feeds
+npm run pipeline:prefilter   # Step 2: Pre-filter candidates
+npm run pipeline:enrich      # Step 3: Enrich video metadata
+npm run pipeline:match       # Step 4: Match videos to openings
+```
+
+**Course Discovery:**
+```bash
+npm run course:discover      # Discover courses from Lichess educators
+# See tools/course-discovery/README.md for details
+```
+
+**Popularity Stats:**
+```bash
+cd tools/analysis && python run_pipeline.py
+# Updates Lichess statistics from master games
+```
 
 ## Common Patterns
 

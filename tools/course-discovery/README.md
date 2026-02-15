@@ -30,27 +30,41 @@ npm run course:discover -- --dryRun
 2. **Fetch study list** for each author via
    `GET https://lichess.org/api/study/by/{username}` (legitimate documented API,
    returns NDJSON)
-3. **Fetch PGN** for each study via
+3. **Quality filter (study level)** - Filter studies BEFORE PGN fetch to save
+   API calls
+   - Require at least one opening keyword (opening, defense, gambit, etc.)
+   - Reject blacklisted terms (puzzle, endgame, Q&A, game analysis, etc.)
+   - Score based on freshness and keyword matching
+4. **Fetch PGN** for studies that pass the quality filter via
    `GET https://lichess.org/api/study/{studyId}.pgn`
-4. **Split PGN** into individual chapters, extracting chapter IDs from `[Site]`
+5. **Split PGN** into individual chapters, extracting chapter IDs from `[Site]`
    headers
-5. **Replay moves** with `chess.js`, collecting FEN at each position
-6. **Match FENs** against the ECO opening database (~12,000 positions) to find
+6. **Quality filter (chapter level)** - Filter chapters AFTER parsing
+   - Require minimum 8 moves (hard requirement)
+   - Reject chapters with blacklisted terms
+   - Score based on move depth and keyword matching
+7. **Replay moves** with `chess.js`, collecting FEN at each position
+8. **Match FENs** against the ECO opening database (~12,000 positions) to find
    the deepest opening match per chapter
-7. **Merge** discoveries into `packages/api/src/data/courses.json`, preserving
+9. **Merge** discoveries into `packages/api/src/data/courses.json`, preserving
    any manually curated entries
 
 ## CLI Options
 
-| Flag                  | Description                                                       |
-| --------------------- | ----------------------------------------------------------------- |
-| `--dryRun`            | Preview output without writing files                              |
-| `--limit <n>`         | Process at most `n` authors                                       |
-| `--author <username>` | Process a single author only                                      |
-| `--verbose`           | Detailed logging (per-chapter matches)                            |
-| `--quiet`             | Errors only                                                       |
-| `--resume`            | Skip authors already processed (uses state file)                  |
-| `--stateFile <path>`  | Custom state file (default: `tools/course-discovery/.state.json`) |
+| Flag                     | Description                                                       | Default |
+| ------------------------ | ----------------------------------------------------------------- | ------- |
+| `--dryRun`               | Preview output without writing files                              | `false` |
+| `--limit <n>`            | Process at most `n` authors                                       |         |
+| `--author <username>`    | Process a single author only                                      |         |
+| `--verbose`              | Detailed logging (per-chapter matches)                            | `false` |
+| `--quiet`                | Errors only                                                       | `false` |
+| `--resume`               | Skip authors already processed (uses state file)                  | `false` |
+| `--stateFile <path>`     | Custom state file (default: `tools/course-discovery/.state.json`) |         |
+| `--skipFilter`           | Disable all quality filtering (for debugging)                     | `false` |
+| `--minStudyScore <n>`    | Minimum study quality score (0-100)                               | `40`    |
+| `--minChapterScore <n>`  | Minimum chapter quality score (0-100)                             | `50`    |
+| `--minMoveDepth <n>`     | Minimum moves in chapter (hard requirement)                       | `8`     |
+| `--logFiltered`          | Log all filtered studies/chapters                                 | `false` |
 
 ## Adding Authors
 
@@ -110,6 +124,96 @@ Auto-discovered entries:
 }
 ```
 
+## Quality Filtering
+
+The pipeline uses two-stage quality filtering to reduce noise and save API calls:
+
+### Stage 1: Study-Level Pre-Filter (Before PGN Fetch)
+
+**Purpose:** Eliminate obviously irrelevant studies to save ~1,500-2,500 API calls
+
+**Signals:**
+
+- **Opening keywords (REQUIRED):** Study name must contain at least one: opening,
+  defense/defence, attack, gambit, variation, repertoire, theory, system, line
+- **Blacklist (hard reject):** Rejects studies with terms like: Q&A, puzzle,
+  endgame, game analysis, tournament, livestream, etc.
+- **Freshness:** Recent updates (within 1 year) receive bonus points
+
+**Default threshold:** Minimum score 40/100
+
+### Stage 2: Chapter-Level Post-Filter (After PGN Fetch)
+
+**Purpose:** Filter individual chapters that aren't theoretical opening content
+
+**Signals:**
+
+- **Move depth (REQUIRED):** Minimum 8 moves (4 full moves) - shallow game
+  annotations are rejected
+- **Chapter blacklist:** Same blacklist applied to chapter titles
+- **Quality score:** Combines freshness, keywords, and move depth
+
+**Default threshold:** Minimum score 50/100 AND minimum 8 moves
+
+### Scoring Algorithm
+
+Studies and chapters are scored 0-100 based on:
+
+- **Baseline:** 50 points
+- **Freshness:** 0-20 points (20 for <1 year, 10 for 1-2 years, 5 for 2-3
+  years, 0 for 3+ years)
+- **Keyword matches:** 0-15 points (5 points per keyword, max 15)
+- **Move depth (chapters only):** 0-20 points (20 for 16+ moves, 15 for 12+, 10
+  for 8+, -30 penalty for <8)
+
+### Expected Outcomes
+
+- **API calls saved:** ~1,500-2,500 PGN fetches (80-85% reduction)
+- **Processing time:** 3-4x faster (~30-40 min vs ~90-120 min)
+- **False negatives:** <5% (conservative thresholds)
+- **False positives:** <10% (ECO matching provides second quality gate)
+
+### Tuning Thresholds
+
+If you find the filter too strict or too lenient:
+
+```bash
+# More lenient (allow more studies through)
+node tools/course-discovery/index.js --minStudyScore=30 --minChapterScore=40
+
+# More strict (higher quality, fewer results)
+node tools/course-discovery/index.js --minStudyScore=60 --minChapterScore=70 --minMoveDepth=12
+
+# Disable filtering entirely (for debugging)
+node tools/course-discovery/index.js --skipFilter
+```
+
+### Debugging Filtering
+
+To review what's being filtered:
+
+```bash
+# Show all filter decisions
+node tools/course-discovery/index.js --logFiltered --limit=1
+
+# Combine with verbose for full details
+node tools/course-discovery/index.js --logFiltered --verbose --limit=1
+```
+
+The pipeline logs filter statistics in the summary:
+
+```
+=== Quality Filtering Stats ===
+Studies filtered: 56
+Chapters filtered: 12
+
+Filter Reasons:
+  no_opening_keywords: 50
+  blacklisted_term: 6
+  insufficient_moves: 8
+  low_chapter_score: 4
+```
+
 ## Rate Limiting
 
 The pipeline respects Lichess API guidelines:
@@ -128,18 +232,23 @@ tools/course-discovery/
     lichess-fetcher.js        # Lichess API client with rate limiting
     pgn-matcher.js            # PGN parsing, FEN generation, ECO matching
     course-merger.js          # Merge discoveries into courses.json
+    quality-filter.js         # Two-stage quality filtering system
 
 tests/unit/
     lichess-fetcher.test.js   # API + NDJSON + rate limit tests
     pgn-matcher.test.js       # PGN split, FEN gen, opening match tests
     course-merger.test.js     # Merge algorithm tests
+    quality-filter.test.js    # Quality filtering tests (64 tests)
 ```
 
 ## Tests
 
 ```bash
 # Run all course-discovery tests
-npx jest tests/unit/lichess-fetcher.test.js tests/unit/pgn-matcher.test.js tests/unit/course-merger.test.js
+npx jest tests/unit/lichess-fetcher.test.js tests/unit/pgn-matcher.test.js tests/unit/course-merger.test.js tests/unit/quality-filter.test.js
+
+# Run just quality filter tests
+npx jest tests/unit/quality-filter.test.js
 
 # Run full suite (includes course-service and course-routes)
 npx jest

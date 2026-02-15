@@ -22,6 +22,7 @@ const {
   loadECOIndex,
 } = require('./lib/pgn-matcher');
 const { loadExistingCourses, mergeDiscoveries, writeCourses } = require('./lib/course-merger');
+const qualityFilter = require('./lib/quality-filter');
 
 // --- Logger (adapted from tools/llm-enrichment/enrich_openings_llm.js) ---
 
@@ -108,6 +109,24 @@ class StateManager {
   }
 }
 
+/**
+ * Log a filtered item (study or chapter)
+ * @param {Logger} logger - Logger instance
+ * @param {string} type - 'study' or 'chapter'
+ * @param {string} name - Item name
+ * @param {object} filterResult - Filter result with {reason, score}
+ * @param {string} indent - Indentation string
+ * @param {boolean} shouldLog - Whether to log (checks argv flags)
+ */
+function logFilteredItem(logger, type, name, filterResult, indent, shouldLog) {
+  if (!shouldLog) return;
+
+  const logMethod = type === 'study' ? 'log' : 'verbose';
+  logger[logMethod](
+    `${indent}Filtered ${type}: ${name} - ${filterResult.reason} (score: ${filterResult.score})`
+  );
+}
+
 // --- Pipeline ---
 
 async function run() {
@@ -146,10 +165,42 @@ async function run() {
       default: path.join(__dirname, '.state.json'),
       describe: 'Path to state file for resume',
     })
+    .option('skipFilter', {
+      type: 'boolean',
+      default: false,
+      describe: 'Disable all quality filtering (for debugging)',
+    })
+    .option('minStudyScore', {
+      type: 'number',
+      default: 40,
+      describe: 'Minimum study quality score (0-100)',
+    })
+    .option('minChapterScore', {
+      type: 'number',
+      default: 50,
+      describe: 'Minimum chapter quality score (0-100)',
+    })
+    .option('minMoveDepth', {
+      type: 'number',
+      default: 8,
+      describe: 'Minimum moves in chapter (hard requirement)',
+    })
+    .option('logFiltered', {
+      type: 'boolean',
+      default: false,
+      describe: 'Log all filtered studies/chapters',
+    })
     .help().argv;
 
   const logger = new Logger({ verbose: argv.verbose, quiet: argv.quiet });
   const stateManager = argv.resume ? new StateManager(argv.stateFile) : new StateManager(null);
+
+  // Initialize quality filter thresholds
+  const thresholds = {
+    minStudyScore: argv.minStudyScore,
+    minChapterScore: argv.minChapterScore,
+    minMoveDepth: argv.minMoveDepth,
+  };
 
   // Step 1: Load config
   logger.info('Step 1: Loading author config...');
@@ -190,9 +241,12 @@ async function run() {
     authorsProcessed: 0,
     authorsSkipped: 0,
     studiesFetched: 0,
+    studiesFiltered: 0,
     chaptersParsed: 0,
     chaptersMatched: 0,
+    chaptersFiltered: 0,
     errors: [],
+    filterReasons: {},
   };
 
   for (const author of authors) {
@@ -211,6 +265,25 @@ async function run() {
       logger.verbose(`    Found ${studies.length} studies`);
 
       for (const study of studies) {
+        // Study-level filter (BEFORE PGN fetch)
+        if (!argv.skipFilter) {
+          const studyFilter = qualityFilter.filterStudy(study, thresholds);
+          if (!studyFilter.pass) {
+            stats.studiesFiltered++;
+            stats.filterReasons[studyFilter.reason] =
+              (stats.filterReasons[studyFilter.reason] || 0) + 1;
+            logFilteredItem(
+              logger,
+              'study',
+              study.name,
+              studyFilter,
+              '  ',
+              argv.logFiltered || argv.verbose
+            );
+            continue; // Skip PGN fetch - SAVES API CALL
+          }
+        }
+
         try {
           const pgn = await fetchStudyPGN(study.id);
           if (!pgn) {
@@ -224,8 +297,32 @@ async function run() {
 
           for (const chapter of chapters) {
             stats.chaptersParsed++;
+
+            // Generate FENs once for both filtering and matching
             const fens = generateFENsFromPGN(chapter.pgn);
             if (fens.length === 0) continue;
+
+            // Chapter-level filter
+            if (!argv.skipFilter) {
+              const chapterWithMoves = {
+                ...chapter,
+                moves: fens.length,
+              };
+
+              const chapterFilter = qualityFilter.filterChapter(chapterWithMoves, study, thresholds);
+              if (!chapterFilter.pass) {
+                stats.chaptersFiltered++;
+                logFilteredItem(
+                  logger,
+                  'chapter',
+                  chapter.chapterName,
+                  chapterFilter,
+                  '    ',
+                  argv.logFiltered || argv.verbose
+                );
+                continue;
+              }
+            }
 
             const match = matchFENsToOpenings(fens, ecoIndex);
             if (!match) continue;
@@ -305,8 +402,23 @@ async function run() {
   logger.info(`Chapters parsed: ${stats.chaptersParsed}`);
   logger.info(`Chapters matched to openings: ${stats.chaptersMatched}`);
   logger.info(`Total entries in courses.json: ${mergedCount}`);
+
+  if (!argv.skipFilter) {
+    logger.info('\n=== Quality Filtering Stats ===');
+    logger.info(`Studies filtered: ${stats.studiesFiltered}`);
+    logger.info(`Chapters filtered: ${stats.chaptersFiltered}`);
+    if (Object.keys(stats.filterReasons).length > 0) {
+      logger.info('\nFilter Reasons:');
+      Object.entries(stats.filterReasons)
+        .sort((a, b) => b[1] - a[1])
+        .forEach(([reason, count]) => {
+          logger.info(`  ${reason}: ${count}`);
+        });
+    }
+  }
+
   if (stats.errors.length > 0) {
-    logger.info(`Errors: ${stats.errors.length}`);
+    logger.info(`\nErrors: ${stats.errors.length}`);
     for (const err of stats.errors) {
       logger.verbose(`  ${JSON.stringify(err)}`);
     }

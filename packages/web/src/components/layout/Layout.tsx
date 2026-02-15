@@ -1,13 +1,13 @@
-import { ReactNode } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { ReactNode } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface LayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const location = useLocation()
-  
+  const location = useLocation();
+
   return (
     <div className="layout">
       <nav className="main-nav">
@@ -16,20 +16,17 @@ export default function Layout({ children }: LayoutProps) {
             <h1>Chess Trainer</h1>
           </Link>
           <div className="nav-links">
-            <Link 
-              to="/" 
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-            >
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
               Home
             </Link>
-            <Link 
-              to="/trainer" 
+            <Link
+              to="/trainer"
               className={`nav-link ${location.pathname === '/trainer' ? 'active' : ''}`}
             >
               Opening Trainer
             </Link>
-            <Link 
-              to="/explorer" 
+            <Link
+              to="/explorer"
               className={`nav-link ${location.pathname === '/explorer' ? 'active' : ''}`}
             >
               Opening Explorer
@@ -39,5 +36,5 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
       <main>{children}</main>
     </div>
-  )
+  );
 }

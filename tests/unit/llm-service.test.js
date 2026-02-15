@@ -10,9 +10,9 @@ jest.mock('@google-cloud/vertexai', () => {
   return {
     VertexAI: jest.fn().mockImplementation(() => ({
       getGenerativeModel: jest.fn().mockReturnValue({
-        generateContent: jest.fn()
-      })
-    }))
+        generateContent: jest.fn(),
+      }),
+    })),
   };
 });
 
@@ -26,17 +26,18 @@ describe('LLM Service for Enrichment', () => {
       type: 'service_account',
       project_id: 'test-project',
       private_key_id: 'test-key-id',
-      private_key: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC...\n-----END PRIVATE KEY-----\n',
+      private_key:
+        '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC...\n-----END PRIVATE KEY-----\n',
       client_email: 'test@test-project.iam.gserviceaccount.com',
       client_id: 'test-client-id',
       auth_uri: 'https://accounts.google.com/o/oauth2/auth',
-      token_uri: 'https://oauth2.googleapis.com/token'
+      token_uri: 'https://oauth2.googleapis.com/token',
     });
 
     const { VertexAI } = require('@google-cloud/vertexai');
     const mockVertexAI = new VertexAI();
     mockModel = mockVertexAI.getGenerativeModel();
-    
+
     llmService = new LLMService();
     llmService.model = mockModel;
   });
@@ -52,12 +53,13 @@ describe('LLM Service for Enrichment', () => {
         eco: 'B00',
         name: 'King Pawn Opening',
         moves: '1. e4',
-        src: 'eco_tsv'
+        src: 'eco_tsv',
       };
 
       // Mock LLM response (without books)
       const mockLLMResponse = {
-        description: 'A fundamental chess opening that begins with the move 1. e4, controlling the center and developing pieces.',
+        description:
+          'A fundamental chess opening that begins with the move 1. e4, controlling the center and developing pieces.',
         style_tags: ['Aggressive', 'Open', 'Tactical'],
         complexity: 'Beginner',
         strategic_themes: ['Central control', 'Quick development'],
@@ -65,19 +67,23 @@ describe('LLM Service for Enrichment', () => {
         tactical_tags: ['Central control', 'Tempo'],
         positional_tags: ['King safety', 'Development'],
         player_style_tags: ['Aggressive Player'],
-        phase_tags: ['Opening Theory']
+        phase_tags: ['Opening Theory'],
       };
 
       mockModel.generateContent.mockResolvedValue({
         response: {
-          candidates: [{
-            content: {
-              parts: [{
-                text: JSON.stringify(mockLLMResponse)
-              }]
-            }
-          }]
-        }
+          candidates: [
+            {
+              content: {
+                parts: [
+                  {
+                    text: JSON.stringify(mockLLMResponse),
+                  },
+                ],
+              },
+            },
+          ],
+        },
       });
 
       const result = await llmService.generateEnrichment(opening);
@@ -104,7 +110,7 @@ describe('LLM Service for Enrichment', () => {
         eco: 'C20',
         name: 'King Pawn Game',
         moves: '1. e4 e5',
-        src: 'eco_tsv'
+        src: 'eco_tsv',
       };
 
       const mockLLMResponse = {
@@ -116,19 +122,23 @@ describe('LLM Service for Enrichment', () => {
         tactical_tags: ['Central control', 'Tempo'],
         positional_tags: ['King safety', 'Development'],
         player_style_tags: ['Positional Player'],
-        phase_tags: ['Opening Theory', 'Middlegame Plans']
+        phase_tags: ['Opening Theory', 'Middlegame Plans'],
       };
 
       mockModel.generateContent.mockResolvedValue({
         response: {
-          candidates: [{
-            content: {
-              parts: [{
-                text: JSON.stringify(mockLLMResponse)
-              }]
-            }
-          }]
-        }
+          candidates: [
+            {
+              content: {
+                parts: [
+                  {
+                    text: JSON.stringify(mockLLMResponse),
+                  },
+                ],
+              },
+            },
+          ],
+        },
       });
 
       const result = await llmService.generateEnrichment(opening);
@@ -149,12 +159,14 @@ describe('LLM Service for Enrichment', () => {
         eco: 'INVALID',
         name: '',
         moves: '',
-        src: 'test'
+        src: 'test',
       };
 
       mockModel.generateContent.mockRejectedValue(new Error('API Error'));
 
-      await expect(llmService.generateEnrichment(badOpening)).rejects.toThrow('Failed to generate enrichment: API Error');
+      await expect(llmService.generateEnrichment(badOpening)).rejects.toThrow(
+        'Failed to generate enrichment: API Error'
+      );
     });
 
     test('should validate response schema', async () => {
@@ -163,7 +175,7 @@ describe('LLM Service for Enrichment', () => {
         eco: 'A00',
         name: 'Starting Position',
         moves: '',
-        src: 'eco_tsv'
+        src: 'eco_tsv',
       };
 
       const mockLLMResponse = {
@@ -175,19 +187,23 @@ describe('LLM Service for Enrichment', () => {
         tactical_tags: ['Central control'],
         positional_tags: ['King safety'],
         player_style_tags: ['Universal Player'],
-        phase_tags: ['Opening Theory']
+        phase_tags: ['Opening Theory'],
       };
 
       mockModel.generateContent.mockResolvedValue({
         response: {
-          candidates: [{
-            content: {
-              parts: [{
-                text: JSON.stringify(mockLLMResponse)
-              }]
-            }
-          }]
-        }
+          candidates: [
+            {
+              content: {
+                parts: [
+                  {
+                    text: JSON.stringify(mockLLMResponse),
+                  },
+                ],
+              },
+            },
+          ],
+        },
       });
 
       const result = await llmService.generateEnrichment(opening);
@@ -204,7 +220,7 @@ describe('LLM Service for Enrichment', () => {
         positional_tags: expect.any(Array),
         player_style_tags: expect.any(Array),
         phase_tags: expect.any(Array),
-        last_enriched_at: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/)
+        last_enriched_at: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/),
       });
     });
   });

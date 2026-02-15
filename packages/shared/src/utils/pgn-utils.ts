@@ -204,7 +204,7 @@ export function findDeepestMatch(
       error: 'No positions to search',
       bestMatch: null,
       lastKnownOpening: null,
-      totalMoves: 0
+      totalMoves: 0,
     };
   }
 
@@ -221,14 +221,14 @@ export function findDeepestMatch(
         fen: opening.fen,
         name: opening.name,
         eco: opening.eco,
-        matchedAtMove: i + 1
+        matchedAtMove: i + 1,
       };
 
       if (!bestMatch) {
         // This is the deepest match (closest to end of game)
         bestMatch = {
           ...match,
-          isExactEndMatch: i === fens.length - 1
+          isExactEndMatch: i === fens.length - 1,
         };
       }
 
@@ -243,7 +243,7 @@ export function findDeepestMatch(
     success: bestMatch !== null,
     bestMatch,
     lastKnownOpening,
-    totalMoves: fens.length
+    totalMoves: fens.length,
   };
 }
 
@@ -263,7 +263,7 @@ export function lookupOpeningFromPGN(
       error: validation.error,
       bestMatch: null,
       lastKnownOpening: null,
-      totalMoves: 0
+      totalMoves: 0,
     };
   }
 

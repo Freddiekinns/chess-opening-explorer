@@ -1,3 +1,3 @@
-import { describe } from 'vitest'
+import { describe } from 'vitest';
 // Legacy RelatedOpeningsTab removed; structure tests retired.
-describe.skip('RelatedOpeningsTab structure & accessibility (removed component)', () => {})
+describe.skip('RelatedOpeningsTab structure & accessibility (removed component)', () => {});

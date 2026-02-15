@@ -6,7 +6,7 @@
 const {
   loadExistingCourses,
   mergeDiscoveries,
-  writeCourses
+  writeCourses,
 } = require('../../tools/course-discovery/lib/course-merger');
 const fs = require('fs');
 
@@ -14,7 +14,7 @@ jest.mock('fs', () => ({
   existsSync: jest.fn(),
   readFileSync: jest.fn(),
   writeFileSync: jest.fn(),
-  mkdirSync: jest.fn()
+  mkdirSync: jest.fn(),
 }));
 
 const FRENCH_FEN = 'rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
@@ -24,7 +24,7 @@ const manualEntry = {
   course_title: 'French Defense Masterclass',
   author: 'GM Anish Giri',
   platform: 'Chessable',
-  quality_score: { total_score: 24 }
+  quality_score: { total_score: 24 },
 };
 
 const autoEntry = {
@@ -34,7 +34,7 @@ const autoEntry = {
   source_url: 'https://lichess.org/study/abc123/ch001',
   anchor_fens: [FRENCH_FEN],
   auto_discovered: true,
-  discovered_at: '2026-02-10T00:00:00.000Z'
+  discovered_at: '2026-02-10T00:00:00.000Z',
 };
 
 const autoEntry2 = {
@@ -44,7 +44,7 @@ const autoEntry2 = {
   source_url: 'https://lichess.org/study/abc123/ch002',
   anchor_fens: [FRENCH_FEN],
   auto_discovered: true,
-  discovered_at: '2026-02-10T00:00:00.000Z'
+  discovered_at: '2026-02-10T00:00:00.000Z',
 };
 
 describe('loadExistingCourses', () => {
@@ -79,12 +79,12 @@ describe('mergeDiscoveries', () => {
 
   test('should replace old auto-discovered entries on re-run', () => {
     const existing = {
-      [FRENCH_FEN]: [manualEntry, autoEntry]
+      [FRENCH_FEN]: [manualEntry, autoEntry],
     };
     const newAutoEntry = {
       ...autoEntry,
       course_title: 'Updated French Study',
-      discovered_at: '2026-02-11T00:00:00.000Z'
+      discovered_at: '2026-02-11T00:00:00.000Z',
     };
     const discovered = { [FRENCH_FEN]: [newAutoEntry] };
 
@@ -100,7 +100,7 @@ describe('mergeDiscoveries', () => {
     const sicilianAuto = {
       ...autoEntry,
       course_title: 'Sicilian Study',
-      anchor_fens: [SICILIAN_FEN]
+      anchor_fens: [SICILIAN_FEN],
     };
     const discovered = { [SICILIAN_FEN]: [sicilianAuto] };
 
@@ -133,25 +133,25 @@ describe('mergeDiscoveries', () => {
 
   test('should clear all auto entries before fresh insert', () => {
     const existing = {
-      [FRENCH_FEN]: [manualEntry, autoEntry, autoEntry2]
+      [FRENCH_FEN]: [manualEntry, autoEntry, autoEntry2],
     };
     const newAutoEntry = {
       ...autoEntry,
       course_title: 'Only New Entry',
-      discovered_at: '2026-02-11T00:00:00.000Z'
+      discovered_at: '2026-02-11T00:00:00.000Z',
     };
     const discovered = { [FRENCH_FEN]: [newAutoEntry] };
 
     const merged = mergeDiscoveries(existing, discovered);
 
-    const autoEntries = merged[FRENCH_FEN].filter(c => c.auto_discovered === true);
+    const autoEntries = merged[FRENCH_FEN].filter((c) => c.auto_discovered === true);
     expect(autoEntries).toHaveLength(1);
     expect(autoEntries[0].course_title).toBe('Only New Entry');
   });
 
   test('should remove FEN key if only auto entries existed and none discovered', () => {
     const existing = {
-      [FRENCH_FEN]: [autoEntry, autoEntry2]
+      [FRENCH_FEN]: [autoEntry, autoEntry2],
     };
     const discovered = {};
 
@@ -181,9 +181,6 @@ describe('writeCourses', () => {
 
     writeCourses('/path/to/courses.json', {});
 
-    expect(fs.mkdirSync).toHaveBeenCalledWith(
-      expect.any(String),
-      { recursive: true }
-    );
+    expect(fs.mkdirSync).toHaveBeenCalledWith(expect.any(String), { recursive: true });
   });
 });

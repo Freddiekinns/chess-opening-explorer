@@ -2,12 +2,14 @@
 description: Run LLM enrichment pipeline for chess openings
 ---
 
-This workflow enriches chess opening data with AI-generated analysis and explanations.
+This workflow enriches chess opening data with AI-generated analysis and
+explanations.
 
 ## Prerequisites
 
 - Ensure `.env` file has `GOOGLE_APPLICATION_CREDENTIALS_JSON` set
-- The API key must be connected to a **paid Google Cloud account** with billing enabled
+- The API key must be connected to a **paid Google Cloud account** with billing
+  enabled
 
 ## Steps
 
@@ -68,4 +70,5 @@ node tools/llm-enrichment/enrich_openings_llm.js --verbose --logFile=enrich.log 
 
 - The script automatically retries failed enrichments up to 3 times
 - Errors are logged to `enrich-errors.json`
-- Run multiple times to process all openings (check the output for "pending enrichment" count)
+- Run multiple times to process all openings (check the output for "pending
+  enrichment" count)

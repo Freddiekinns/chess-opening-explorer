@@ -49,7 +49,7 @@ function mergeDiscoveries(existing, discovered) {
 
   // Process all existing FEN keys - keep manual entries, drop old auto entries
   for (const [fen, courses] of Object.entries(existing)) {
-    const manualEntries = courses.filter(c => c.auto_discovered !== true);
+    const manualEntries = courses.filter((c) => c.auto_discovered !== true);
     if (manualEntries.length > 0) {
       merged[fen] = manualEntries;
     }
@@ -86,5 +86,5 @@ module.exports = {
   loadExistingCourses,
   mergeDiscoveries,
   writeCourses,
-  DEFAULT_COURSES_PATH
+  DEFAULT_COURSES_PATH,
 };

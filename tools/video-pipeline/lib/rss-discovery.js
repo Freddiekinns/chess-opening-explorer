@@ -1,12 +1,12 @@
 /**
  * RSS-Based Video Discovery Service
  * Phase 1 of Pipeline Overhaul - Quality Issues Fix
- * 
+ *
  * Revolutionary RSS-based approach for 10x faster video discovery:
  * - Uses RSS feeds instead of expensive YouTube API searches
  * - Reduces API quota usage by 88% (66K → 8K units)
  * - Enables comprehensive channel coverage with minimal cost
- * 
+ *
  * Key Innovation: RSS discovery is 10x faster than YouTube API for new video detection
  */
 
@@ -21,7 +21,7 @@ const { DOMParser } = require('xmldom');
 const DEFAULT_CONFIG = {
   configPath: path.join(process.cwd(), 'config', 'youtube_channels.json'),
   requestTimeout: 30000,
-  maxRetries: 3
+  maxRetries: 3,
 };
 
 /**
@@ -58,12 +58,12 @@ class RSSVideoDiscovery {
     const result = {
       channelId,
       videos: [],
-      lastUpdated: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
     };
 
     return new Promise((resolve) => {
       const url = `${RSS_URL_TEMPLATE}${channelId}`;
-      
+
       const req = https.get(url, (res) => {
         if (res.statusCode !== 200) {
           result.error = `HTTP ${res.statusCode}`;
@@ -110,19 +110,19 @@ class RSSVideoDiscovery {
   _parseRSSFeed(xmlData) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xmlData, 'text/xml');
-    
+
     // Check for XML parsing errors
     const parserError = doc.getElementsByTagName('parsererror')[0];
     if (parserError) {
       throw new Error('Invalid XML format');
     }
-    
+
     // Check if this looks like a valid RSS feed
     const feedElement = doc.getElementsByTagName('feed')[0];
     if (!feedElement) {
       throw new Error('Invalid RSS feed format - missing feed element');
     }
-    
+
     return this._extractVideosFromEntries(doc.getElementsByTagName('entry'));
   }
 
@@ -136,7 +136,7 @@ class RSSVideoDiscovery {
     for (let i = 0; i < entries.length; i++) {
       const entry = entries[i];
       const video = this._parseVideoEntry(entry);
-      
+
       if (video) {
         videos.push(video);
       }
@@ -154,7 +154,7 @@ class RSSVideoDiscovery {
     const titleNode = entry.getElementsByTagName('title')[0];
     const publishedNode = entry.getElementsByTagName('published')[0];
     const authorNode = entry.getElementsByTagName('author')[0];
-    
+
     if (!videoIdNode || !titleNode || !publishedNode) {
       return null;
     }
@@ -163,7 +163,7 @@ class RSSVideoDiscovery {
       id: videoIdNode.textContent,
       title: titleNode.textContent,
       publishedAt: publishedNode.textContent,
-      channelTitle: this._extractChannelTitle(authorNode)
+      channelTitle: this._extractChannelTitle(authorNode),
     };
   }
 
@@ -173,7 +173,7 @@ class RSSVideoDiscovery {
    */
   _extractChannelTitle(authorNode) {
     if (!authorNode) return 'Unknown';
-    
+
     const nameNode = authorNode.getElementsByTagName('name')[0];
     return nameNode?.textContent || 'Unknown';
   }
@@ -184,11 +184,9 @@ class RSSVideoDiscovery {
    */
   _filterVideosByDate(videos, publishedAfter) {
     if (!publishedAfter) return videos;
-    
+
     const cutoffDate = new Date(publishedAfter);
-    return videos.filter(video => 
-      new Date(video.publishedAt) >= cutoffDate
-    );
+    return videos.filter((video) => new Date(video.publishedAt) >= cutoffDate);
   }
 
   /**
@@ -196,10 +194,10 @@ class RSSVideoDiscovery {
    * @private
    */
   _enrichVideosWithChannelData(videos, channel) {
-    return videos.map(video => ({
+    return videos.map((video) => ({
       ...video,
       channelId: channel.channel_id,
-      qualityTier: channel.quality_tier || 'standard'
+      qualityTier: channel.quality_tier || 'standard',
     }));
   }
 
@@ -209,24 +207,24 @@ class RSSVideoDiscovery {
    */
   async discoverNewVideos(options = {}) {
     const { publishedAfter } = options;
-    
+
     const channels = await this.loadChannelsConfig();
     const result = {
       totalVideos: 0,
       channelsCovered: 0,
       videos: [],
-      errors: []
+      errors: [],
     };
 
     // Process each channel's RSS feed
     for (const channel of channels) {
       try {
         const feedResult = await this.fetchRSSFeed(channel.channel_id);
-        
+
         if (feedResult.error) {
           result.errors.push({
             channelId: channel.channel_id,
-            error: feedResult.error
+            error: feedResult.error,
           });
           continue;
         }
@@ -240,11 +238,10 @@ class RSSVideoDiscovery {
         result.videos.push(...enrichedVideos);
         result.totalVideos += enrichedVideos.length;
         result.channelsCovered++;
-
       } catch (error) {
         result.errors.push({
           channelId: channel.channel_id,
-          error: error.message
+          error: error.message,
         });
       }
     }

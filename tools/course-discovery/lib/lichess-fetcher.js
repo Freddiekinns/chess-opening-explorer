@@ -16,7 +16,7 @@ let lastRequestTime = 0;
  * @returns {Promise<void>}
  */
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -62,7 +62,7 @@ async function fetchStudyList(username) {
 
   const url = `${LICHESS_BASE}/api/study/by/${encodeURIComponent(username)}`;
   const response = await rateLimitedFetch(url, {
-    headers: { 'Accept': 'application/x-ndjson' }
+    headers: { Accept: 'application/x-ndjson' },
   });
 
   if (response.status === 404) {
@@ -70,7 +70,9 @@ async function fetchStudyList(username) {
   }
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch studies for ${username}: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to fetch studies for ${username}: ${response.status} ${response.statusText}`
+    );
   }
 
   const text = await response.text();
@@ -95,7 +97,9 @@ async function fetchStudyPGN(studyId) {
   }
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch PGN for study ${studyId}: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to fetch PGN for study ${studyId}: ${response.status} ${response.statusText}`
+    );
   }
 
   return response.text();
@@ -111,7 +115,7 @@ function parseNDJSON(text) {
     return [];
   }
 
-  const lines = text.split('\n').filter(line => line.trim());
+  const lines = text.split('\n').filter((line) => line.trim());
   const results = [];
 
   for (const line of lines) {
@@ -143,5 +147,5 @@ module.exports = {
   LICHESS_BASE,
   MIN_DELAY_MS,
   BACKOFF_429_MS,
-  MAX_RETRIES
+  MAX_RETRIES,
 };

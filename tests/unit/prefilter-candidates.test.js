@@ -1,7 +1,7 @@
 /**
  * Test Suite: Pre-Filter Video Candidates
  * Phase 1 of Pipeline Overhaul - Quality Issues Fix
- * 
+ *
  * This service eliminates 80% of videos before expensive API calls
  * using title-based filtering and quality gates.
  */
@@ -22,7 +22,7 @@ describe('PreFilterVideos', () => {
       publishedAt: '2024-01-15T10:30:00+00:00',
       channelTitle: 'Saint Louis Chess Club',
       channelId: 'UCM-ONC2bCHytG2mYtKDmIeA',
-      qualityTier: 'premium'
+      qualityTier: 'premium',
     };
 
     describe('title-based exclusions', () => {
@@ -72,19 +72,19 @@ describe('PreFilterVideos', () => {
 
     describe('quality gates', () => {
       it('should check minimum duration', () => {
-        const shortVideo = { 
-          ...baseVideo, 
+        const shortVideo = {
+          ...baseVideo,
           duration: 'PT2M30S', // 2.5 minutes
-          title: 'Quick Chess Tip'
+          title: 'Quick Chess Tip',
         };
         expect(preFilter.preFilterVideo(shortVideo)).toBe(false);
       });
 
       it('should accept videos above minimum duration', () => {
-        const longVideo = { 
-          ...baseVideo, 
+        const longVideo = {
+          ...baseVideo,
           duration: 'PT15M30S', // 15.5 minutes
-          title: 'In-depth Opening Analysis'
+          title: 'In-depth Opening Analysis',
         };
         expect(preFilter.preFilterVideo(longVideo)).toBe(true);
       });
@@ -96,19 +96,19 @@ describe('PreFilterVideos', () => {
       });
 
       it('should apply different standards for premium channels', () => {
-        const premiumVideo = { 
-          ...baseVideo, 
+        const premiumVideo = {
+          ...baseVideo,
           qualityTier: 'premium',
           title: 'Short but Sweet Opening Tip',
-          duration: 'PT4M00S' // 4 minutes
+          duration: 'PT4M00S', // 4 minutes
         };
         expect(preFilter.preFilterVideo(premiumVideo)).toBe(true);
 
-        const standardVideo = { 
-          ...baseVideo, 
+        const standardVideo = {
+          ...baseVideo,
           qualityTier: 'standard',
           title: 'Short Opening Tip',
-          duration: 'PT4M00S' // 4 minutes
+          duration: 'PT4M00S', // 4 minutes
         };
         expect(preFilter.preFilterVideo(standardVideo)).toBe(false);
       });
@@ -116,19 +116,19 @@ describe('PreFilterVideos', () => {
 
     describe('channel-specific rules', () => {
       it('should apply stricter filters to standard tier channels', () => {
-        const casualVideo = { 
-          ...baseVideo, 
+        const casualVideo = {
+          ...baseVideo,
           qualityTier: 'standard',
-          title: 'Casual Blitz Game'
+          title: 'Casual Blitz Game',
         };
         expect(preFilter.preFilterVideo(casualVideo)).toBe(false);
       });
 
       it('should be more lenient with premium channels', () => {
-        const analysisVideo = { 
-          ...baseVideo, 
+        const analysisVideo = {
+          ...baseVideo,
           qualityTier: 'premium',
-          title: 'Game Analysis: Kasparov vs Karpov'
+          title: 'Game Analysis: Kasparov vs Karpov',
         };
         expect(preFilter.preFilterVideo(analysisVideo)).toBe(true);
       });
@@ -158,63 +158,63 @@ describe('PreFilterVideos', () => {
         id: 'vid1',
         title: 'Sicilian Defense Complete Guide',
         channelTitle: 'Saint Louis Chess Club',
-        qualityTier: 'premium'
+        qualityTier: 'premium',
       },
       {
         id: 'vid2',
         title: 'LIVE: Tournament Stream',
         channelTitle: 'Chess.com',
-        qualityTier: 'standard'
+        qualityTier: 'standard',
       },
       {
         id: 'vid3',
         title: 'French Defense Masterclass',
         channelTitle: 'Hanging Pawns',
-        qualityTier: 'standard'
+        qualityTier: 'standard',
       },
       {
         id: 'vid4',
         title: 'NFL Draft Analysis',
         channelTitle: 'Sports Channel',
-        qualityTier: 'standard'
-      }
+        qualityTier: 'standard',
+      },
     ];
 
     it('should filter out rejected videos and return statistics', () => {
       const result = preFilter.filterCandidates(sampleVideos);
-      
+
       expect(result).toEqual({
         candidates: [
           expect.objectContaining({ id: 'vid1', title: 'Sicilian Defense Complete Guide' }),
-          expect.objectContaining({ id: 'vid3', title: 'French Defense Masterclass' })
+          expect.objectContaining({ id: 'vid3', title: 'French Defense Masterclass' }),
         ],
         totalInput: 4,
         totalCandidates: 2,
         rejectedCount: 2,
-        reductionPercentage: 50
+        reductionPercentage: 50,
       });
     });
 
     it('should handle empty input', () => {
       const result = preFilter.filterCandidates([]);
-      
+
       expect(result).toEqual({
         candidates: [],
         totalInput: 0,
         totalCandidates: 0,
         rejectedCount: 0,
-        reductionPercentage: 0
+        reductionPercentage: 0,
       });
     });
 
     it('should handle all videos being rejected', () => {
       const badVideos = [
         { id: 'bad1', title: 'NFL Game Highlights', qualityTier: 'standard' },
-        { id: 'bad2', title: 'LIVE Stream', qualityTier: 'standard' }
+        { id: 'bad2', title: 'LIVE Stream', qualityTier: 'standard' },
       ];
-      
+
       const result = preFilter.filterCandidates(badVideos);
-      
+
       expect(result.candidates).toHaveLength(0);
       expect(result.reductionPercentage).toBe(100);
     });
@@ -225,7 +225,7 @@ describe('PreFilterVideos', () => {
       const manyVideos = Array.from({ length: 1000 }, (_, i) => ({
         id: `vid${i}`,
         title: i % 2 === 0 ? 'Chess Opening Guide' : 'LIVE Stream',
-        qualityTier: 'standard'
+        qualityTier: 'standard',
       }));
 
       const startTime = Date.now();
@@ -244,22 +244,22 @@ describe('PreFilterVideos', () => {
         ...Array.from({ length: 20 }, (_, i) => ({
           id: `edu${i}`,
           title: 'Chess Opening Analysis',
-          qualityTier: 'premium'
+          qualityTier: 'premium',
         })),
         ...Array.from({ length: 30 }, (_, i) => ({
           id: `live${i}`,
           title: 'LIVE Tournament Stream',
-          qualityTier: 'standard'
+          qualityTier: 'standard',
         })),
         ...Array.from({ length: 50 }, (_, i) => ({
           id: `other${i}`,
           title: 'NFL Sports News',
-          qualityTier: 'standard'
-        }))
+          qualityTier: 'standard',
+        })),
       ];
 
       const result = preFilter.filterCandidates(realisticVideos);
-      
+
       expect(result.reductionPercentage).toBeGreaterThanOrEqual(70); // Allow some variance
       expect(result.candidates.length).toBeLessThanOrEqual(30); // Should keep ~20% or less
     });

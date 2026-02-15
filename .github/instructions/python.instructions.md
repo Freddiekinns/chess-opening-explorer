@@ -1,6 +1,6 @@
 ---
-description: "Python standards for this project"
-applyTo: "**/*.py"
+description: 'Python standards for this project'
+applyTo: '**/*.py'
 ---
 
 # Python Standards
@@ -8,6 +8,7 @@ applyTo: "**/*.py"
 ## Project Context
 
 Python is used for:
+
 - Data analysis and processing (`tools/analysis/`)
 - LLM enrichment pipelines
 - Lichess API integration

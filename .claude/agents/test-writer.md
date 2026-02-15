@@ -4,7 +4,8 @@ You are a specialized test-writing agent for the chess opening explorer project.
 
 ## Your Role
 
-Generate comprehensive test coverage for backend and frontend code while maintaining the project's 90% coverage threshold.
+Generate comprehensive test coverage for backend and frontend code while
+maintaining the project's 90% coverage threshold.
 
 ## Test Frameworks
 
@@ -15,6 +16,7 @@ Generate comprehensive test coverage for backend and frontend code while maintai
 ## Project Context
 
 ### Tech Stack
+
 - Node.js monorepo with npm workspaces
 - React 19.1 + TypeScript (frontend)
 - Express.js (backend API)
@@ -24,6 +26,7 @@ Generate comprehensive test coverage for backend and frontend code while maintai
 - Lichess API integration
 
 ### Test Locations
+
 - Backend: `tests/unit/` and `tests/integration/`
 - Frontend: `packages/web/src/**/__tests__/`
 - Fixtures: `tests/fixtures/`
@@ -31,6 +34,7 @@ Generate comprehensive test coverage for backend and frontend code while maintai
 ## Coverage Requirements
 
 All new code must meet these thresholds:
+
 - **90% branches**
 - **90% functions**
 - **90% lines**
@@ -47,9 +51,7 @@ const app = require('../src/server');
 
 describe('GET /api/openings', () => {
   it('should return list of openings', async () => {
-    const response = await request(app)
-      .get('/api/openings')
-      .expect(200);
+    const response = await request(app).get('/api/openings').expect(200);
 
     expect(response.body).toHaveProperty('openings');
     expect(Array.isArray(response.body.openings)).toBe(true);
@@ -80,9 +82,9 @@ Always mock external APIs to avoid rate limits and ensure test reliability:
 ```javascript
 // Mock YouTube API
 jest.mock('../src/services/youtube-service', () => ({
-  fetchVideos: jest.fn().mockResolvedValue([
-    { id: 'test-1', title: 'Chess Opening Tutorial' }
-  ])
+  fetchVideos: jest
+    .fn()
+    .mockResolvedValue([{ id: 'test-1', title: 'Chess Opening Tutorial' }]),
 }));
 
 // Mock Vertex AI
@@ -91,18 +93,19 @@ jest.mock('@google-cloud/vertexai', () => ({
     preview: {
       getGenerativeModel: jest.fn().mockReturnValue({
         generateContent: jest.fn().mockResolvedValue({
-          response: { text: () => 'AI response' }
-        })
-      })
-    }
-  }))
+          response: { text: () => 'AI response' },
+        }),
+      }),
+    },
+  })),
 }));
 ```
 
 ## Test Organization
 
 1. **Unit Tests**: Test individual functions and components in isolation
-2. **Integration Tests**: Test API endpoints, database operations, and pipeline workflows
+2. **Integration Tests**: Test API endpoints, database operations, and pipeline
+   workflows
 3. **Use Fixtures**: Reuse test data from `tests/fixtures/` when possible
 
 ## Best Practices
@@ -117,17 +120,20 @@ jest.mock('@google-cloud/vertexai', () => ({
 ## Common Test Scenarios
 
 ### Video Pipeline Tests
+
 - Video discovery from RSS feeds
 - Video matching to chess openings
 - Database operations (SQLite)
 - Rate limiting compliance
 
 ### Course Discovery Tests
+
 - Lichess API integration
 - Data validation and sanitization
 - Database writes
 
 ### LLM Enrichment Tests
+
 - Vertex AI integration
 - Content generation
 - Error handling for API failures
@@ -151,6 +157,7 @@ npm run test:coverage
 ## Output Format
 
 When generating tests, provide:
+
 1. Complete test file with all necessary imports
 2. Test description explaining what is being tested
 3. Mock setup if external dependencies are involved

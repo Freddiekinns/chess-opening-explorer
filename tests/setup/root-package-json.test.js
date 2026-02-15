@@ -1,9 +1,9 @@
 /**
  * Root Package Json Setup Tests
- * 
+ *
  * Following TDD principles:
  * - Test behavior, not implementation
- * - Mock external dependencies  
+ * - Mock external dependencies
  * - Fast, isolated tests
  */
 
@@ -26,7 +26,7 @@ describe('Root Package.json Configuration', () => {
 
   test('should have workspace configuration', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
+
     expect(packageJson.workspaces).toBeDefined();
     expect(Array.isArray(packageJson.workspaces)).toBe(true);
     expect(packageJson.workspaces).toContain('packages/*');
@@ -34,7 +34,7 @@ describe('Root Package.json Configuration', () => {
 
   test('should have monorepo management scripts', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
+
     const requiredScripts = [
       'dev',
       'build',
@@ -43,10 +43,10 @@ describe('Root Package.json Configuration', () => {
       'clean',
       'test',
       'test:watch',
-      'test:coverage'
+      'test:coverage',
     ];
 
-    requiredScripts.forEach(script => {
+    requiredScripts.forEach((script) => {
       expect(packageJson.scripts).toHaveProperty(script);
       expect(typeof packageJson.scripts[script]).toBe('string');
     });
@@ -54,15 +54,10 @@ describe('Root Package.json Configuration', () => {
 
   test('should have development dependencies for monorepo management', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
-    const requiredDevDeps = [
-      'concurrently',
-      'cross-env',
-      'jest',
-      'jest-environment-jsdom'
-    ];
 
-    requiredDevDeps.forEach(dep => {
+    const requiredDevDeps = ['concurrently', 'cross-env', 'jest', 'jest-environment-jsdom'];
+
+    requiredDevDeps.forEach((dep) => {
       expect(packageJson.devDependencies).toHaveProperty(dep);
       expect(typeof packageJson.devDependencies[dep]).toBe('string');
     });
@@ -70,7 +65,7 @@ describe('Root Package.json Configuration', () => {
 
   test('should have correct project metadata', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
+
     expect(packageJson.name).toBe('chess-trainer');
     expect(packageJson.version).toBe('1.0.0');
     expect(packageJson.description).toContain('chess opening trainer');
@@ -80,13 +75,13 @@ describe('Root Package.json Configuration', () => {
 
   test('should have proper Jest configuration for monorepo', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
+
     expect(packageJson.jest).toBeDefined();
     expect(packageJson.jest.testEnvironment).toBe('node');
     expect(packageJson.jest.collectCoverageFrom).toContain('packages/api/**/*.js');
     expect(packageJson.jest.collectCoverageFrom).toContain('tools/video-pipeline/database/**/*.js');
     expect(packageJson.jest.testMatch).toContain('**/tests/**/*.test.js');
-    
+
     // Coverage thresholds
     expect(packageJson.jest.coverageThreshold.global.branches).toBe(90);
     expect(packageJson.jest.coverageThreshold.global.functions).toBe(90);
@@ -96,7 +91,7 @@ describe('Root Package.json Configuration', () => {
 
   test('should have engines specification', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    
+
     expect(packageJson.engines).toBeDefined();
     expect(packageJson.engines.node).toBeDefined();
     expect(packageJson.engines.npm).toBeDefined();

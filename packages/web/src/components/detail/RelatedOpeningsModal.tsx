@@ -1,99 +1,104 @@
-import React, { useEffect, useRef } from 'react'
-import { VariationItem } from './VariationItem'
+import React, { useEffect, useRef } from 'react';
+import { VariationItem } from './VariationItem';
 
 interface RelatedOpeningsModalProps {
-  fen: string
-  isOpen: boolean
-  onClose: () => void
-  className?: string
+  fen: string;
+  isOpen: boolean;
+  onClose: () => void;
+  className?: string;
 }
 
 interface RelatedOpeningItem {
-  fen: string
-  name: string
-  moves?: string
-  eco?: string
-  games_analyzed?: number
-  isCurrent?: boolean
-  isMainline?: boolean
-  complexity?: string
+  fen: string;
+  name: string;
+  moves?: string;
+  eco?: string;
+  games_analyzed?: number;
+  isCurrent?: boolean;
+  isMainline?: boolean;
+  complexity?: string;
 }
 
 interface RelatedResponse {
-  success: boolean
+  success: boolean;
   data: {
-    current: RelatedOpeningItem
-    mainline?: RelatedOpeningItem
-    siblings: RelatedOpeningItem[]
-  }
+    current: RelatedOpeningItem;
+    mainline?: RelatedOpeningItem;
+    siblings: RelatedOpeningItem[];
+  };
 }
 
-export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen, isOpen, onClose, className = '' }) => {
-  const [data, setData] = React.useState<RelatedResponse['data'] | null>(null)
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState<string | null>(null)
-  const dialogRef = useRef<HTMLDivElement | null>(null)
-  const lastFocusedRef = useRef<HTMLElement | null>(null)
+export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({
+  fen,
+  isOpen,
+  onClose,
+  className = '',
+}) => {
+  const [data, setData] = React.useState<RelatedResponse['data'] | null>(null);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (isOpen) {
-      lastFocusedRef.current = document.activeElement as HTMLElement
-      fetchData()
+      lastFocusedRef.current = document.activeElement as HTMLElement;
+      fetchData();
       // trap focus start
       requestAnimationFrame(() => {
-        dialogRef.current?.focus()
-      })
+        dialogRef.current?.focus();
+      });
       const handleKey = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') onClose()
-        if (e.key === 'Tab') handleTabKey(e)
-      }
-      document.addEventListener('keydown', handleKey)
-      document.body.style.overflow = 'hidden'
+        if (e.key === 'Escape') onClose();
+        if (e.key === 'Tab') handleTabKey(e);
+      };
+      document.addEventListener('keydown', handleKey);
+      document.body.style.overflow = 'hidden';
       return () => {
-        document.removeEventListener('keydown', handleKey)
-        document.body.style.overflow = ''
-        lastFocusedRef.current?.focus()
-      }
+        document.removeEventListener('keydown', handleKey);
+        document.body.style.overflow = '';
+        lastFocusedRef.current?.focus();
+      };
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   const handleTabKey = (e: KeyboardEvent) => {
     const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )
-    if (!focusable || focusable.length === 0) return
-    const first = focusable[0]
-    const last = focusable[focusable.length - 1]
+    );
+    if (!focusable || focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
-        last.focus()
-        e.preventDefault()
+        last.focus();
+        e.preventDefault();
       }
     } else if (document.activeElement === last) {
-      first.focus()
-      e.preventDefault()
+      first.focus();
+      e.preventDefault();
     }
-  }
+  };
 
   const fetchData = async () => {
     try {
-      setLoading(true)
-      setError(null)
-      const res = await fetch(`/api/openings/fen/${encodeURIComponent(fen)}/related`)
-      const json: RelatedResponse = await res.json()
+      setLoading(true);
+      setError(null);
+      const res = await fetch(`/api/openings/fen/${encodeURIComponent(fen)}/related`);
+      const json: RelatedResponse = await res.json();
       if (json.success) {
-        setData(json.data)
+        setData(json.data);
       } else {
-        setError('Failed to load related openings')
+        setError('Failed to load related openings');
       }
     } catch (e) {
-      setError('Failed to load related openings')
+      setError('Failed to load related openings');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="related-modal-overlay" role="presentation">
@@ -107,11 +112,17 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
       >
         <div className="related-modal-header">
           <h2 id="related-openings-title">Related Openings</h2>
-          <button onClick={onClose} className="close-btn" aria-label="Close related openings">×</button>
+          <button onClick={onClose} className="close-btn" aria-label="Close related openings">
+            ×
+          </button>
         </div>
         <div className="related-modal-body">
           {loading && <p className="loading">Loading...</p>}
-          {error && <p role="alert" className="error">{error}</p>}
+          {error && (
+            <p role="alert" className="error">
+              {error}
+            </p>
+          )}
           {data && (
             <div className="related-full-list" aria-live="polite">
               {data.mainline && !data.mainline.isCurrent && (
@@ -127,12 +138,14 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
                     complexity={data.mainline.complexity}
                     showComplexityTag={!!data.mainline.complexity}
                     showMoves={true}
-                    onNavigate={(nextFen) => { window.location.href = `/opening/${encodeURIComponent(nextFen)}` }}
+                    onNavigate={(nextFen) => {
+                      window.location.href = `/opening/${encodeURIComponent(nextFen)}`;
+                    }}
                   />
                 </div>
               )}
               <div className="siblings-grid">
-                {data.siblings.map(sib => (
+                {data.siblings.map((sib) => (
                   <VariationItem
                     key={sib.fen}
                     fen={sib.fen}
@@ -144,7 +157,9 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
                     showComplexityTag={!!sib.complexity}
                     showLineTypePill={false}
                     showMoves={true}
-                    onNavigate={(nextFen) => { window.location.href = `/opening/${encodeURIComponent(nextFen)}` }}
+                    onNavigate={(nextFen) => {
+                      window.location.href = `/opening/${encodeURIComponent(nextFen)}`;
+                    }}
                   />
                 ))}
               </div>
@@ -153,7 +168,7 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({ fen,
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RelatedOpeningsModal
+export default RelatedOpeningsModal;

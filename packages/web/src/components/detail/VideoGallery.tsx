@@ -4,12 +4,12 @@ import { Video } from '../../../../shared/src/types/video.js';
 // Constants
 const VIDEO_DISPLAY_LIMITS = {
   MILLION: 1000000,
-  THOUSAND: 1000
+  THOUSAND: 1000,
 } as const;
 
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
-  month: 'short'
+  month: 'short',
 } as const;
 
 // Types
@@ -54,7 +54,7 @@ const getHighQualityThumbnail = (thumbnailUrl: string): string => {
 const handleThumbnailError = (event: React.SyntheticEvent<HTMLImageElement, Event>): void => {
   const img = event.currentTarget;
   const currentSrc = img.src;
-  
+
   // If maxresdefault.jpg fails, fallback to hqdefault.jpg
   if (currentSrc.includes('maxresdefault.jpg')) {
     img.src = currentSrc.replace('maxresdefault.jpg', 'hqdefault.jpg');
@@ -72,25 +72,18 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ video }) => (
   <div className="video-card">
-    <a 
-      href={video.url} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="video-link"
-    >
+    <a href={video.url} target="_blank" rel="noopener noreferrer" className="video-link">
       <div className="video-thumbnail-container">
-        <img 
-          src={getHighQualityThumbnail(video.thumbnail)} 
+        <img
+          src={getHighQualityThumbnail(video.thumbnail)}
           alt={video.title}
           className="video-thumbnail"
           loading="lazy"
           onError={handleThumbnailError}
         />
-        <div className="video-duration">
-          {formatDuration(video.duration)}
-        </div>
+        <div className="video-duration">{formatDuration(video.duration)}</div>
       </div>
-      
+
       <div className="video-info">
         <h4 className="video-title" title={video.title}>
           {video.title}
@@ -108,7 +101,7 @@ interface VideoMetadataProps {
 
 const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
   const formattedDate = formatDate(video.published);
-  
+
   return (
     <div className="video-meta">
       <span className="video-views">{formatViews(video.views)}</span>
@@ -131,7 +124,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
   return (
     <div className="video-gallery">
       <h3 className="video-gallery-title">Video Lessons</h3>
-      
+
       <div className="video-carousel">
         {videos.map((video) => (
           <VideoCard key={video.id} video={video} />

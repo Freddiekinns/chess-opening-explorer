@@ -9,12 +9,12 @@ interface ComplexityFiltersProps {
 export const ComplexityFilters: React.FC<ComplexityFiltersProps> = ({
   selectedComplexity,
   onComplexityChange,
-  className = ''
+  className = '',
 }) => {
   const complexityLevels = [
     { id: 'Beginner', label: 'Beginner' },
     { id: 'Intermediate', label: 'Intermediate' },
-    { id: 'Advanced', label: 'Advanced' }
+    { id: 'Advanced', label: 'Advanced' },
   ];
 
   return (
@@ -25,7 +25,7 @@ export const ComplexityFilters: React.FC<ComplexityFiltersProps> = ({
       >
         All Levels
       </button>
-      {complexityLevels.map(level => (
+      {complexityLevels.map((level) => (
         <button
           key={level.id}
           className={`category-btn ${selectedComplexity === level.id ? 'active' : ''}`}

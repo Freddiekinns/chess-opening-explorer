@@ -13,9 +13,9 @@ const ECO_FILES = ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.jso
 
 function fixAnalysisJson(ecoFile) {
   const filePath = path.join(ECO_DIR, ecoFile);
-  
+
   console.log(`\n🔍 Checking ${ecoFile}...`);
-  
+
   if (!fs.existsSync(filePath)) {
     console.log(`❌ File not found: ${filePath}`);
     return;
@@ -45,20 +45,22 @@ function fixAnalysisJson(ecoFile) {
     if (data.hasOwnProperty(fen)) {
       totalEntries++;
       const entry = data[fen];
-      
+
       // Check if analysis_json exists and is a string
       if (entry.analysis_json && typeof entry.analysis_json === 'string') {
         try {
           // Parse the stringified JSON
           const parsedAnalysis = JSON.parse(entry.analysis_json);
-          
+
           // Replace with the parsed object
           entry.analysis_json = parsedAnalysis;
           fixedCount++;
-          
+
           console.log(`✅ Fixed entry: ${entry.name || 'Unknown'} (${entry.eco || 'No ECO'})`);
         } catch (parseError) {
-          console.log(`❌ Failed to parse analysis_json for ${entry.name || 'Unknown'}: ${parseError.message}`);
+          console.log(
+            `❌ Failed to parse analysis_json for ${entry.name || 'Unknown'}: ${parseError.message}`
+          );
         }
       }
     }
@@ -68,7 +70,9 @@ function fixAnalysisJson(ecoFile) {
     try {
       // Write the fixed data back to the file
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-      console.log(`✅ Fixed ${fixedCount} entries out of ${totalEntries} total entries in ${ecoFile}`);
+      console.log(
+        `✅ Fixed ${fixedCount} entries out of ${totalEntries} total entries in ${ecoFile}`
+      );
     } catch (writeError) {
       console.log(`❌ Error writing file: ${writeError.message}`);
     }
@@ -79,11 +83,11 @@ function fixAnalysisJson(ecoFile) {
 
 function main() {
   console.log('🔧 Starting analysis_json fix process...');
-  
+
   for (const ecoFile of ECO_FILES) {
     fixAnalysisJson(ecoFile);
   }
-  
+
   console.log('\n🎉 Analysis complete!');
 }
 

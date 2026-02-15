@@ -1,10 +1,10 @@
 /**
  * Pre-Filter Video Candidates
  * Phase 1 of Pipeline Overhaul - Quality Issues Fix
- * 
+ *
  * Eliminates 80% of irrelevant videos before expensive API calls
  * using intelligent title-based filtering and quality gates.
- * 
+ *
  * Performance Target: Filter 1000 videos in <100ms
  * Reduction Target: 70-80% of typical YouTube discovery results
  */
@@ -15,21 +15,22 @@ class PreFilterVideos {
     this.exclusionPatterns = {
       // Tournament and live content
       tournaments: /(?:live|stream|tournament|championship|match|round|game\s+\d+)/i,
-      
+
       // Non-chess sports and entertainment
       sports: /(?:nfl|nba|soccer|football|baseball|basketball|hockey|tennis|golf|mma|ufc)/i,
-      
+
       // Non-educational content types
       casual: /(?:blitz|bullet|rapid|casual|just\s+playing|random|fun)/i,
-      
+
       // Reaction and commentary content
       reactions: /(?:react|reaction|reacting|commentary|responds?|watching)/i,
-      
+
       // Podcasts and interviews
       podcasts: /(?:podcast|interview|talks?|discussion|chat)/i,
-      
+
       // Non-chess content
-      nonChess: /(?:cooking|music|travel|news|politics|crypto|bitcoin|stock|movie|review|unboxing)/i
+      nonChess:
+        /(?:cooking|music|travel|news|politics|crypto|bitcoin|stock|movie|review|unboxing)/i,
     };
 
     // Positive patterns for educational content
@@ -38,13 +39,13 @@ class PreFilterVideos {
       tactics: /(?:tactic|puzzle|mate|checkmate|pin|fork|skewer|combination)/i,
       endgames: /(?:endgame|ending|pawn|rook|queen|king|opposition)/i,
       analysis: /(?:analysis|annotated|explained|masterclass|lesson|guide|tutorial)/i,
-      strategy: /(?:strategy|plan|structure|weakness|strength|positional)/i
+      strategy: /(?:strategy|plan|structure|weakness|strength|positional)/i,
     };
 
     // Duration thresholds (in seconds)
     this.durationThresholds = {
-      premium: 240,  // 4 minutes for premium channels
-      standard: 480  // 8 minutes for standard channels
+      premium: 240, // 4 minutes for premium channels
+      standard: 480, // 8 minutes for standard channels
     };
   }
 
@@ -95,7 +96,8 @@ class PreFilterVideos {
       return true; // Allow if duration can't be parsed
     }
 
-    const threshold = this.durationThresholds[video.qualityTier] || this.durationThresholds.standard;
+    const threshold =
+      this.durationThresholds[video.qualityTier] || this.durationThresholds.standard;
     return durationSeconds >= threshold;
   }
 
@@ -128,7 +130,7 @@ class PreFilterVideos {
    */
   meetsChannelQualityGates(video) {
     const qualityTier = video.qualityTier || 'standard';
-    
+
     if (qualityTier === 'standard') {
       // Stricter filtering for standard channels
       const casualPattern = /(?:casual|random|just\s+playing|quick|short)/i;
@@ -167,22 +169,21 @@ class PreFilterVideos {
         totalInput: 0,
         totalCandidates: 0,
         rejectedCount: 0,
-        reductionPercentage: 0
+        reductionPercentage: 0,
       };
     }
 
-    const candidates = videos.filter(video => this.preFilterVideo(video));
+    const candidates = videos.filter((video) => this.preFilterVideo(video));
     const rejectedCount = videos.length - candidates.length;
-    const reductionPercentage = videos.length > 0 
-      ? Math.round((rejectedCount / videos.length) * 100) 
-      : 0;
+    const reductionPercentage =
+      videos.length > 0 ? Math.round((rejectedCount / videos.length) * 100) : 0;
 
     return {
       candidates,
       totalInput: videos.length,
       totalCandidates: candidates.length,
       rejectedCount,
-      reductionPercentage
+      reductionPercentage,
     };
   }
 }

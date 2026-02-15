@@ -10,7 +10,10 @@ interface VideoErrorBoundaryProps {
   fallback?: React.ReactNode;
 }
 
-export class VideoErrorBoundary extends React.Component<VideoErrorBoundaryProps, VideoErrorBoundaryState> {
+export class VideoErrorBoundary extends React.Component<
+  VideoErrorBoundaryProps,
+  VideoErrorBoundaryState
+> {
   constructor(props: VideoErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
@@ -26,10 +29,12 @@ export class VideoErrorBoundary extends React.Component<VideoErrorBoundaryProps,
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
-        <div className="video-error-fallback">
-          <p>Unable to load video content. Please try refreshing the page.</p>
-        </div>
+      return (
+        this.props.fallback || (
+          <div className="video-error-fallback">
+            <p>Unable to load video content. Please try refreshing the page.</p>
+          </div>
+        )
       );
     }
 

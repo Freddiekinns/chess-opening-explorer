@@ -1,10 +1,10 @@
 /**
  * Database Schema Manager
  * Phase 2 of Pipeline Overhaul - Database Migration
- * 
+ *
  * Manages SQLite database schema for normalized video storage.
  * Replaces 116MB JSON files with ~5MB SQLite database.
- * 
+ *
  * Key Features:
  * - Normalized schema with FEN-based opening identification
  * - Performance indexes for fast querying
@@ -20,11 +20,11 @@ const fs = require('fs');
 class DatabaseSchema {
   constructor(dbPath = null) {
     this.dbPath = dbPath || path.join(__dirname, '../../data/videos.sqlite');
-    
+
     // Initialize database connection immediately
     // In tests, this will be a mock; in production, it will be a real connection
     this.db = new sqlite3.Database(this.dbPath);
-    
+
     // SQL Schema definitions
     this.schemas = {
       openings: `
@@ -36,7 +36,7 @@ class DatabaseSchema {
           created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
       `,
-      
+
       videos: `
         CREATE TABLE IF NOT EXISTS videos (
           id TEXT PRIMARY KEY,
@@ -50,7 +50,7 @@ class DatabaseSchema {
           created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
       `,
-      
+
       opening_videos: `
         CREATE TABLE IF NOT EXISTS opening_videos (
           opening_id TEXT,           -- Links to specific FEN, not generic ECO
@@ -61,14 +61,14 @@ class DatabaseSchema {
           FOREIGN KEY(opening_id) REFERENCES openings(id),
           FOREIGN KEY(video_id) REFERENCES videos(id)
         )
-      `
+      `,
     };
-    
+
     // Performance indexes
     this.indexes = [
       'CREATE INDEX IF NOT EXISTS idx_opening_videos_score ON opening_videos(opening_id, match_score DESC)',
       'CREATE INDEX IF NOT EXISTS idx_videos_published ON videos(published_at DESC)',
-      'CREATE INDEX IF NOT EXISTS idx_videos_channel ON videos(channel_id)'
+      'CREATE INDEX IF NOT EXISTS idx_videos_channel ON videos(channel_id)',
     ];
   }
 
@@ -77,18 +77,19 @@ class DatabaseSchema {
    * @returns {Promise<void>}
    */
   async initializeSchema() {
-    const run = (sql) => new Promise((resolve, reject) => {
-      this.db.run(sql, (err) => {
-        if (err) reject(err);
-        else resolve();
+    const run = (sql) =>
+      new Promise((resolve, reject) => {
+        this.db.run(sql, (err) => {
+          if (err) reject(err);
+          else resolve();
+        });
       });
-    });
 
     try {
       await run(this.schemas.openings);
       await run(this.schemas.videos);
       await run(this.schemas.opening_videos);
-      
+
       for (const indexSql of this.indexes) {
         await run(indexSql);
       }
@@ -103,25 +104,22 @@ class DatabaseSchema {
    */
   async verifySchema() {
     return new Promise((resolve, reject) => {
-      this.db.all(
-        "SELECT name, type FROM sqlite_master WHERE type='table'",
-        (err, rows) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          
-          const tables = rows.map(row => row.name);
-          const requiredTables = ['openings', 'videos', 'opening_videos'];
-          const hasAllTables = requiredTables.every(table => tables.includes(table));
-          
-          resolve({
-            valid: hasAllTables,
-            tables: tables,
-            missing: requiredTables.filter(table => !tables.includes(table))
-          });
+      this.db.all("SELECT name, type FROM sqlite_master WHERE type='table'", (err, rows) => {
+        if (err) {
+          reject(err);
+          return;
         }
-      );
+
+        const tables = rows.map((row) => row.name);
+        const requiredTables = ['openings', 'videos', 'opening_videos'];
+        const hasAllTables = requiredTables.every((table) => tables.includes(table));
+
+        resolve({
+          valid: hasAllTables,
+          tables: tables,
+          missing: requiredTables.filter((table) => !tables.includes(table)),
+        });
+      });
     });
   }
 
@@ -136,16 +134,11 @@ class DatabaseSchema {
         INSERT OR IGNORE INTO openings (id, name, eco, aliases)
         VALUES (?, ?, ?, ?)
       `;
-      
+
       this.db.run(
         sql,
-        [
-          opening.fen,
-          opening.name,
-          opening.eco,
-          JSON.stringify(opening.aliases || [])
-        ],
-        function(err) {
+        [opening.fen, opening.name, opening.eco, JSON.stringify(opening.aliases || [])],
+        function (err) {
           if (err) {
             reject(err);
           } else {
@@ -167,7 +160,7 @@ class DatabaseSchema {
         INSERT INTO videos (id, title, channel_id, channel_title, duration, view_count, published_at, thumbnail_url)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `;
-      
+
       this.db.run(
         sql,
         [
@@ -178,9 +171,9 @@ class DatabaseSchema {
           video.duration,
           video.viewCount,
           video.publishedAt,
-          video.thumbnailUrl
+          video.thumbnailUrl,
         ],
-        function(err) {
+        function (err) {
           if (err) {
             reject(err);
           } else {
@@ -202,11 +195,11 @@ class DatabaseSchema {
         INSERT INTO opening_videos (opening_id, video_id, match_score)
         VALUES (?, ?, ?)
       `;
-      
+
       this.db.run(
         sql,
         [relationship.openingId, relationship.videoId, relationship.matchScore],
-        function(err) {
+        function (err) {
           if (err) {
             reject(err);
           } else {
@@ -224,17 +217,13 @@ class DatabaseSchema {
    */
   async getOpeningsByEco(ecoPattern) {
     return new Promise((resolve, reject) => {
-      this.db.all(
-        'SELECT * FROM openings WHERE eco LIKE ?',
-        [ecoPattern],
-        (err, rows) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(rows);
-          }
+      this.db.all('SELECT * FROM openings WHERE eco LIKE ?', [ecoPattern], (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
         }
-      );
+      });
     });
   }
 
@@ -254,7 +243,7 @@ class DatabaseSchema {
         ORDER BY ov.match_score DESC 
         LIMIT ?
       `;
-      
+
       this.db.all(sql, [openingFen, limit], (err, rows) => {
         if (err) {
           reject(err);
@@ -273,23 +262,26 @@ class DatabaseSchema {
     const queries = [
       'SELECT COUNT(*) as count FROM openings',
       'SELECT COUNT(*) as count FROM videos',
-      'SELECT COUNT(*) as count FROM opening_videos'
+      'SELECT COUNT(*) as count FROM opening_videos',
     ];
-    
+
     const results = await Promise.all(
-      queries.map(query => new Promise((resolve, reject) => {
-        this.db.get(query, (err, row) => {
-          if (err) reject(err);
-          else resolve(row.count);
-        });
-      }))
+      queries.map(
+        (query) =>
+          new Promise((resolve, reject) => {
+            this.db.get(query, (err, row) => {
+              if (err) reject(err);
+              else resolve(row.count);
+            });
+          })
+      )
     );
-    
+
     return {
       openings: results[0],
       videos: results[1],
       relationships: results[2],
-      storageReduction: 96 // 116MB -> ~5MB = 96% reduction
+      storageReduction: 96, // 116MB -> ~5MB = 96% reduction
     };
   }
 
@@ -350,7 +342,7 @@ class DatabaseSchema {
         if (err) {
           reject(err);
         } else {
-          resolve(rows.map(row => row.detail));
+          resolve(rows.map((row) => row.detail));
         }
       });
     });
@@ -362,30 +354,27 @@ class DatabaseSchema {
    */
   async validateIndexes() {
     return new Promise((resolve, reject) => {
-      this.db.all(
-        "SELECT name FROM sqlite_master WHERE type='index'",
-        (err, rows) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          
-          const existingIndexes = rows.map(row => row.name);
-          const requiredIndexes = [
-            'idx_opening_videos_score',
-            'idx_videos_published', 
-            'idx_videos_channel'
-          ];
-          
-          const missing = requiredIndexes.filter(idx => !existingIndexes.includes(idx));
-          
-          resolve({
-            valid: missing.length === 0,
-            existing: existingIndexes,
-            missing: missing
-          });
+      this.db.all("SELECT name FROM sqlite_master WHERE type='index'", (err, rows) => {
+        if (err) {
+          reject(err);
+          return;
         }
-      );
+
+        const existingIndexes = rows.map((row) => row.name);
+        const requiredIndexes = [
+          'idx_opening_videos_score',
+          'idx_videos_published',
+          'idx_videos_channel',
+        ];
+
+        const missing = requiredIndexes.filter((idx) => !existingIndexes.includes(idx));
+
+        resolve({
+          valid: missing.length === 0,
+          existing: existingIndexes,
+          missing: missing,
+        });
+      });
     });
   }
 
@@ -423,23 +412,26 @@ class DatabaseSchema {
     const integrityChecks = [
       'SELECT COUNT(*) as count FROM opening_videos WHERE video_id NOT IN (SELECT id FROM videos)',
       'SELECT COUNT(*) as count FROM opening_videos WHERE opening_id NOT IN (SELECT id FROM openings)',
-      'SELECT COUNT(*) as count FROM opening_videos WHERE match_score < 0 OR match_score > 100'
+      'SELECT COUNT(*) as count FROM opening_videos WHERE match_score < 0 OR match_score > 100',
     ];
-    
+
     const results = await Promise.all(
-      integrityChecks.map(query => new Promise((resolve, reject) => {
-        this.db.get(query, (err, row) => {
-          if (err) reject(err);
-          else resolve(row.count);
-        });
-      }))
+      integrityChecks.map(
+        (query) =>
+          new Promise((resolve, reject) => {
+            this.db.get(query, (err, row) => {
+              if (err) reject(err);
+              else resolve(row.count);
+            });
+          })
+      )
     );
-    
+
     return {
       orphanedVideos: results[0],
-      orphanedRelationships: results[1], 
+      orphanedRelationships: results[1],
       invalidScores: results[2],
-      valid: results.every(count => count === 0)
+      valid: results.every((count) => count === 0),
     };
   }
 }

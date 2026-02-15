@@ -3,23 +3,23 @@
  * Testing design tokens, components, and cross-browser compatibility
  */
 
-import { describe, test, expect, beforeEach, afterEach } from 'vitest'
+import { describe, test, expect, beforeEach, afterEach } from 'vitest';
 
 describe('CSS Design System Foundation', () => {
-  let styleSheet: HTMLStyleElement
-  
+  let styleSheet: HTMLStyleElement;
+
   beforeEach(() => {
     // Create a test stylesheet
-    styleSheet = document.createElement('style')
-    styleSheet.setAttribute('data-test-id', 'design-system-test')
-    document.head.appendChild(styleSheet)
-  })
-  
+    styleSheet = document.createElement('style');
+    styleSheet.setAttribute('data-test-id', 'design-system-test');
+    document.head.appendChild(styleSheet);
+  });
+
   afterEach(() => {
     // Clean up test stylesheet
-    const existingStyles = document.querySelectorAll('style[data-test-id="design-system-test"]')
-    existingStyles.forEach(style => style.remove())
-  })
+    const existingStyles = document.querySelectorAll('style[data-test-id="design-system-test"]');
+    existingStyles.forEach((style) => style.remove());
+  });
 
   describe('Design Tokens Validation', () => {
     test('should define all required color tokens', () => {
@@ -37,25 +37,25 @@ describe('CSS Design System Foundation', () => {
           --color-warning: #ffc107;
           --color-info: #17a2b8;
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+
       // Test required color tokens
-      expect(computedStyle.getPropertyValue('--color-bg-main').trim()).toBe('#121212')
-      expect(computedStyle.getPropertyValue('--color-bg-surface').trim()).toBe('#1E1E1E')
-      expect(computedStyle.getPropertyValue('--color-brand-orange').trim()).toBe('#E85D04')
-      expect(computedStyle.getPropertyValue('--color-brand-orange-hover').trim()).toBe('#F48C06')
-      expect(computedStyle.getPropertyValue('--color-text-primary').trim()).toBe('#FFFFFF')
-      expect(computedStyle.getPropertyValue('--color-text-secondary').trim()).toBe('#A0A0A0')
-      expect(computedStyle.getPropertyValue('--color-border').trim()).toBe('#333333')
-      
+      expect(computedStyle.getPropertyValue('--color-bg-main').trim()).toBe('#121212');
+      expect(computedStyle.getPropertyValue('--color-bg-surface').trim()).toBe('#1E1E1E');
+      expect(computedStyle.getPropertyValue('--color-brand-orange').trim()).toBe('#E85D04');
+      expect(computedStyle.getPropertyValue('--color-brand-orange-hover').trim()).toBe('#F48C06');
+      expect(computedStyle.getPropertyValue('--color-text-primary').trim()).toBe('#FFFFFF');
+      expect(computedStyle.getPropertyValue('--color-text-secondary').trim()).toBe('#A0A0A0');
+      expect(computedStyle.getPropertyValue('--color-border').trim()).toBe('#333333');
+
       // Test semantic colors
-      expect(computedStyle.getPropertyValue('--color-success').trim()).toBe('#28a745')
-      expect(computedStyle.getPropertyValue('--color-danger').trim()).toBe('#dc3545')
-      expect(computedStyle.getPropertyValue('--color-warning').trim()).toBe('#ffc107')
-      expect(computedStyle.getPropertyValue('--color-info').trim()).toBe('#17a2b8')
-    })
+      expect(computedStyle.getPropertyValue('--color-success').trim()).toBe('#28a745');
+      expect(computedStyle.getPropertyValue('--color-danger').trim()).toBe('#dc3545');
+      expect(computedStyle.getPropertyValue('--color-warning').trim()).toBe('#ffc107');
+      expect(computedStyle.getPropertyValue('--color-info').trim()).toBe('#17a2b8');
+    });
 
     test('should define typography scale correctly', () => {
       styleSheet.textContent = `
@@ -74,25 +74,23 @@ describe('CSS Design System Foundation', () => {
           --font-weight-semibold: 600;
           --font-weight-bold: 700;
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+
       // Test font families
-      expect(computedStyle.getPropertyValue('--font-family-primary').trim())
-        .toContain('Inter')
-      expect(computedStyle.getPropertyValue('--font-family-mono').trim())
-        .toContain('Courier New')
-      
+      expect(computedStyle.getPropertyValue('--font-family-primary').trim()).toContain('Inter');
+      expect(computedStyle.getPropertyValue('--font-family-mono').trim()).toContain('Courier New');
+
       // Test font sizes
-      expect(computedStyle.getPropertyValue('--font-size-xs').trim()).toBe('0.75rem')
-      expect(computedStyle.getPropertyValue('--font-size-base').trim()).toBe('1rem')
-      expect(computedStyle.getPropertyValue('--font-size-3xl').trim()).toBe('2.5rem')
-      
+      expect(computedStyle.getPropertyValue('--font-size-xs').trim()).toBe('0.75rem');
+      expect(computedStyle.getPropertyValue('--font-size-base').trim()).toBe('1rem');
+      expect(computedStyle.getPropertyValue('--font-size-3xl').trim()).toBe('2.5rem');
+
       // Test font weights
-      expect(computedStyle.getPropertyValue('--font-weight-normal').trim()).toBe('400')
-      expect(computedStyle.getPropertyValue('--font-weight-bold').trim()).toBe('700')
-    })
+      expect(computedStyle.getPropertyValue('--font-weight-normal').trim()).toBe('400');
+      expect(computedStyle.getPropertyValue('--font-weight-bold').trim()).toBe('700');
+    });
 
     test('should define spacing system correctly', () => {
       styleSheet.textContent = `
@@ -106,82 +104,82 @@ describe('CSS Design System Foundation', () => {
           --space-8: 2rem;
           --space-16: 4rem;
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      
-      expect(computedStyle.getPropertyValue('--space-0').trim()).toBe('0')
-      expect(computedStyle.getPropertyValue('--space-1').trim()).toBe('0.25rem')
-      expect(computedStyle.getPropertyValue('--space-4').trim()).toBe('1rem')
-      expect(computedStyle.getPropertyValue('--space-16').trim()).toBe('4rem')
-    })
-  })
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+
+      expect(computedStyle.getPropertyValue('--space-0').trim()).toBe('0');
+      expect(computedStyle.getPropertyValue('--space-1').trim()).toBe('0.25rem');
+      expect(computedStyle.getPropertyValue('--space-4').trim()).toBe('1rem');
+      expect(computedStyle.getPropertyValue('--space-16').trim()).toBe('4rem');
+    });
+  });
 
   describe('Component Library Tests', () => {
     test('button components should have correct class structure', () => {
       // Test that our design system classes are properly structured
-      const primaryBtn = document.createElement('button')
-      primaryBtn.className = 'btn btn--primary'
-      
-      const secondaryBtn = document.createElement('button')
-      secondaryBtn.className = 'btn btn--secondary'
-      
+      const primaryBtn = document.createElement('button');
+      primaryBtn.className = 'btn btn--primary';
+
+      const secondaryBtn = document.createElement('button');
+      secondaryBtn.className = 'btn btn--secondary';
+
       // Test class presence
-      expect(primaryBtn.classList.contains('btn')).toBe(true)
-      expect(primaryBtn.classList.contains('btn--primary')).toBe(true)
-      
-      expect(secondaryBtn.classList.contains('btn')).toBe(true)
-      expect(secondaryBtn.classList.contains('btn--secondary')).toBe(true)
-      
+      expect(primaryBtn.classList.contains('btn')).toBe(true);
+      expect(primaryBtn.classList.contains('btn--primary')).toBe(true);
+
+      expect(secondaryBtn.classList.contains('btn')).toBe(true);
+      expect(secondaryBtn.classList.contains('btn--secondary')).toBe(true);
+
       // Test that classes are correctly structured (BEM methodology)
-      expect(primaryBtn.className).toBe('btn btn--primary')
-      expect(secondaryBtn.className).toBe('btn btn--secondary')
-    })
+      expect(primaryBtn.className).toBe('btn btn--primary');
+      expect(secondaryBtn.className).toBe('btn btn--secondary');
+    });
 
     test('form inputs should have consistent class naming', () => {
-      const input = document.createElement('input')
-      input.className = 'form-input'
-      input.type = 'text'
-      
-      const select = document.createElement('select')
-      select.className = 'form-select'
-      
+      const input = document.createElement('input');
+      input.className = 'form-input';
+      input.type = 'text';
+
+      const select = document.createElement('select');
+      select.className = 'form-select';
+
       // Test consistent naming pattern
-      expect(input.classList.contains('form-input')).toBe(true)
-      expect(select.classList.contains('form-select')).toBe(true)
-      
+      expect(input.classList.contains('form-input')).toBe(true);
+      expect(select.classList.contains('form-select')).toBe(true);
+
       // Test that form components follow consistent pattern
-      expect(input.className).toMatch(/^form-/)
-      expect(select.className).toMatch(/^form-/)
-    })
+      expect(input.className).toMatch(/^form-/);
+      expect(select.className).toMatch(/^form-/);
+    });
 
     test('card components should follow BEM methodology', () => {
-      const card = document.createElement('div')
-      card.className = 'card card--interactive'
-      
-      const compactCard = document.createElement('div')
-      compactCard.className = 'card card--compact'
-      
+      const card = document.createElement('div');
+      card.className = 'card card--interactive';
+
+      const compactCard = document.createElement('div');
+      compactCard.className = 'card card--compact';
+
       // Test BEM structure
-      expect(card.classList.contains('card')).toBe(true)
-      expect(card.classList.contains('card--interactive')).toBe(true)
-      
-      expect(compactCard.classList.contains('card')).toBe(true)
-      expect(compactCard.classList.contains('card--compact')).toBe(true)
-      
+      expect(card.classList.contains('card')).toBe(true);
+      expect(card.classList.contains('card--interactive')).toBe(true);
+
+      expect(compactCard.classList.contains('card')).toBe(true);
+      expect(compactCard.classList.contains('card--compact')).toBe(true);
+
       // Test modifier pattern
-      expect(card.className).toContain('card--')
-      expect(compactCard.className).toContain('card--')
-    })
-  })
+      expect(card.className).toContain('card--');
+      expect(compactCard.className).toContain('card--');
+    });
+  });
 
   describe('Accessibility Tests', () => {
     test('focus states should be clearly visible', () => {
-      const button = document.createElement('button')
-      button.className = 'btn btn--primary'
-      
-      document.body.appendChild(button)
-      
+      const button = document.createElement('button');
+      button.className = 'btn btn--primary';
+
+      document.body.appendChild(button);
+
       styleSheet.textContent = `
         :root {
           --color-brand-orange: #E85D04;
@@ -208,39 +206,39 @@ describe('CSS Design System Foundation', () => {
           outline-offset: 2px;
           box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.25);
         }
-      `
-      
-      button.focus()
-      const focusedStyle = getComputedStyle(button)
-      
+      `;
+
+      button.focus();
+      const focusedStyle = getComputedStyle(button);
+
       // Verify focus styles are defined
-      expect(focusedStyle.outline).toBeDefined()
-      
-      document.body.removeChild(button)
-    })
+      expect(focusedStyle.outline).toBeDefined();
+
+      document.body.removeChild(button);
+    });
 
     test('touch targets should meet minimum size requirements', () => {
-      const button = document.createElement('button')
-      button.className = 'tab-button'
-      
-      document.body.appendChild(button)
-      
+      const button = document.createElement('button');
+      button.className = 'tab-button';
+
+      document.body.appendChild(button);
+
       styleSheet.textContent = `
         .tab-button {
           min-height: 44px;
           padding: 0.75rem 1.5rem;
         }
-      `
-      
-      const buttonStyle = getComputedStyle(button)
-      const minHeight = parseInt(buttonStyle.minHeight)
-      
+      `;
+
+      const buttonStyle = getComputedStyle(button);
+      const minHeight = parseInt(buttonStyle.minHeight);
+
       // WCAG 2.1 AA requires minimum 44px touch targets
-      expect(minHeight).toBeGreaterThanOrEqual(44)
-      
-      document.body.removeChild(button)
-    })
-  })
+      expect(minHeight).toBeGreaterThanOrEqual(44);
+
+      document.body.removeChild(button);
+    });
+  });
 
   describe('Legacy Compatibility Tests', () => {
     test('should map legacy variables to new design tokens', () => {
@@ -251,14 +249,16 @@ describe('CSS Design System Foundation', () => {
           --bg-dark: var(--color-bg-main);
           --accent-blue: var(--color-brand-orange);
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+
       // Test legacy mappings
-      expect(computedStyle.getPropertyValue('--bg-dark').trim()).toBe('var(--color-bg-main)')
-      expect(computedStyle.getPropertyValue('--accent-blue').trim()).toBe('var(--color-brand-orange)')
-    })
+      expect(computedStyle.getPropertyValue('--bg-dark').trim()).toBe('var(--color-bg-main)');
+      expect(computedStyle.getPropertyValue('--accent-blue').trim()).toBe(
+        'var(--color-brand-orange)'
+      );
+    });
 
     test('should maintain backwards compatibility for spacing', () => {
       styleSheet.textContent = `
@@ -268,22 +268,22 @@ describe('CSS Design System Foundation', () => {
           --space-xs: var(--space-1);
           --space-md: var(--space-4);
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      
-      expect(computedStyle.getPropertyValue('--space-xs').trim()).toBe('var(--space-1)')
-      expect(computedStyle.getPropertyValue('--space-md').trim()).toBe('var(--space-4)')
-    })
-  })
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+
+      expect(computedStyle.getPropertyValue('--space-xs').trim()).toBe('var(--space-1)');
+      expect(computedStyle.getPropertyValue('--space-md').trim()).toBe('var(--space-4)');
+    });
+  });
 
   describe('Responsive Design Tests', () => {
     test('should apply mobile styles correctly', () => {
-      const container = document.createElement('div')
-      container.className = 'content-container'
-      
-      document.body.appendChild(container)
-      
+      const container = document.createElement('div');
+      container.className = 'content-container';
+
+      document.body.appendChild(container);
+
       styleSheet.textContent = `
         :root {
           --space-4: 1rem;
@@ -299,16 +299,16 @@ describe('CSS Design System Foundation', () => {
             padding: var(--space-3);
           }
         }
-      `
-      
+      `;
+
       // Note: Media query testing in JSDOM is limited
       // This would require more sophisticated testing tools like Playwright
-      const containerStyle = getComputedStyle(container)
-      expect(containerStyle.padding).toBeDefined()
-      
-      document.body.removeChild(container)
-    })
-  })
+      const containerStyle = getComputedStyle(container);
+      expect(containerStyle.padding).toBeDefined();
+
+      document.body.removeChild(container);
+    });
+  });
 
   describe('Performance Tests', () => {
     test('should not define unnecessary duplicate variables', () => {
@@ -317,43 +317,37 @@ describe('CSS Design System Foundation', () => {
           --color-bg-main: #121212;
           --color-bg-surface: #1E1E1E;
         }
-      `
-      
-      const computedStyle = getComputedStyle(document.documentElement)
-      const definedProperties = []
-      
+      `;
+
+      const computedStyle = getComputedStyle(document.documentElement);
+      const definedProperties = [];
+
       // Check for CSS custom properties
       for (let i = 0; i < computedStyle.length; i++) {
-        const property = computedStyle.item(i)
+        const property = computedStyle.item(i);
         if (property.startsWith('--color-')) {
-          definedProperties.push(property)
+          definedProperties.push(property);
         }
       }
-      
+
       // Verify no duplicates exist
-      const uniqueProperties = [...new Set(definedProperties)]
-      expect(definedProperties.length).toBe(uniqueProperties.length)
-    })
+      const uniqueProperties = [...new Set(definedProperties)];
+      expect(definedProperties.length).toBe(uniqueProperties.length);
+    });
 
     test('should use efficient CSS selectors', () => {
       // Test that component classes are simple and efficient
-      const testClasses = [
-        '.btn',
-        '.btn--primary', 
-        '.form-input',
-        '.card',
-        '.pill'
-      ]
-      
-      testClasses.forEach(className => {
+      const testClasses = ['.btn', '.btn--primary', '.form-input', '.card', '.pill'];
+
+      testClasses.forEach((className) => {
         // Efficient selectors should not have excessive nesting
-        const depth = className.split(' ').length
-        expect(depth).toBeLessThanOrEqual(2)
-        
+        const depth = className.split(' ').length;
+        expect(depth).toBeLessThanOrEqual(2);
+
         // Should not use excessive specificity
-        const specificity = className.split('.').length - 1
-        expect(specificity).toBeLessThanOrEqual(2)
-      })
-    })
-  })
-})
+        const specificity = className.split('.').length - 1;
+        expect(specificity).toBeLessThanOrEqual(2);
+      });
+    });
+  });
+});

@@ -1,7 +1,7 @@
 /**
  * Test Suite: Database Schema Manager
  * Phase 2 of Pipeline Overhaul - Database Migration
- * 
+ *
  * Creates and manages SQLite database schema for normalized video storage.
  * Replaces 116MB JSON files with ~5MB SQLite for 96% storage reduction.
  */
@@ -17,8 +17,8 @@ jest.mock('sqlite3', () => ({
     get: jest.fn(),
     all: jest.fn(),
     close: jest.fn(),
-    serialize: jest.fn(callback => callback())
-  }))
+    serialize: jest.fn((callback) => callback()),
+  })),
 }));
 
 describe('DatabaseSchema', () => {
@@ -28,7 +28,7 @@ describe('DatabaseSchema', () => {
   beforeEach(() => {
     // Clear mocks
     jest.clearAllMocks();
-    
+
     // Setup SQLite mock
     const sqlite3 = require('sqlite3');
     mockDb = {
@@ -52,31 +52,31 @@ describe('DatabaseSchema', () => {
         }
       }),
       all: jest.fn((sql, params, callback) => {
-        // Support both callback and mockResolvedValue patterns  
+        // Support both callback and mockResolvedValue patterns
         if (mockDb.all.mockResolvedValue) {
           // If using mockResolvedValue pattern, handle async
           return Promise.resolve([
             { name: 'openings', type: 'table' },
             { name: 'videos', type: 'table' },
-            { name: 'opening_videos', type: 'table' }
+            { name: 'opening_videos', type: 'table' },
           ]);
         }
         if (typeof params === 'function') {
           params(null, [
             { name: 'openings', type: 'table' },
             { name: 'videos', type: 'table' },
-            { name: 'opening_videos', type: 'table' }
+            { name: 'opening_videos', type: 'table' },
           ]);
         } else if (callback) {
           callback(null, [
             { name: 'openings', type: 'table' },
             { name: 'videos', type: 'table' },
-            { name: 'opening_videos', type: 'table' }
+            { name: 'opening_videos', type: 'table' },
           ]);
         }
       }),
-      close: jest.fn(callback => callback && callback()),
-      serialize: jest.fn(callback => callback())
+      close: jest.fn((callback) => callback && callback()),
+      serialize: jest.fn((callback) => callback()),
     };
     sqlite3.Database.mockReturnValue(mockDb);
 
@@ -128,7 +128,7 @@ describe('DatabaseSchema', () => {
         callback(null, [
           { name: 'openings', type: 'table' },
           { name: 'videos', type: 'table' },
-          { name: 'opening_videos', type: 'table' }
+          { name: 'opening_videos', type: 'table' },
         ]);
       });
 
@@ -154,9 +154,9 @@ describe('DatabaseSchema', () => {
     it('should insert opening data with FEN as primary key', async () => {
       const opening = {
         fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
-        name: 'King\'s Indian Attack',
+        name: "King's Indian Attack",
         eco: 'A07',
-        aliases: ['KIA', 'King\'s Indian Setup']
+        aliases: ['KIA', "King's Indian Setup"],
       };
 
       await schemaManager.insertOpening(opening);
@@ -171,13 +171,13 @@ describe('DatabaseSchema', () => {
     it('should insert video data with proper field mapping', async () => {
       const video = {
         id: 'test123',
-        title: 'King\'s Indian Attack Complete Guide',
+        title: "King's Indian Attack Complete Guide",
         channelId: 'UC1234567890',
         channelTitle: 'Chess Channel',
         duration: 900,
         viewCount: 25000,
         publishedAt: '2024-01-15T10:30:00Z',
-        thumbnailUrl: 'https://img.youtube.com/vi/test123/default.jpg'
+        thumbnailUrl: 'https://img.youtube.com/vi/test123/default.jpg',
       };
 
       await schemaManager.insertVideo(video);
@@ -192,7 +192,7 @@ describe('DatabaseSchema', () => {
           video.duration,
           video.viewCount,
           video.publishedAt,
-          video.thumbnailUrl
+          video.thumbnailUrl,
         ],
         expect.any(Function)
       );
@@ -202,7 +202,7 @@ describe('DatabaseSchema', () => {
       const relationship = {
         openingId: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
         videoId: 'test123',
-        matchScore: 0.85
+        matchScore: 0.85,
       };
 
       await schemaManager.insertOpeningVideo(relationship);
@@ -224,10 +224,12 @@ describe('DatabaseSchema', () => {
       const opening = {
         fen: 'test_fen',
         name: 'Test Opening',
-        eco: 'A00'
+        eco: 'A00',
       };
 
-      await expect(schemaManager.insertOpening(opening)).rejects.toThrow('UNIQUE constraint failed');
+      await expect(schemaManager.insertOpening(opening)).rejects.toThrow(
+        'UNIQUE constraint failed'
+      );
     });
   });
 
@@ -235,7 +237,7 @@ describe('DatabaseSchema', () => {
     it('should retrieve openings by ECO code', async () => {
       const mockOpenings = [
         { id: 'fen1', name: 'French Defense', eco: 'C00' },
-        { id: 'fen2', name: 'French Defense Advance', eco: 'C02' }
+        { id: 'fen2', name: 'French Defense Advance', eco: 'C02' },
       ];
       mockDb.all.mockImplementation((sql, params, callback) => {
         callback(null, mockOpenings);
@@ -257,14 +259,14 @@ describe('DatabaseSchema', () => {
           id: 'vid1',
           title: 'French Defense Guide',
           match_score: 0.95,
-          view_count: 50000
+          view_count: 50000,
         },
         {
           id: 'vid2',
           title: 'French Defense Tactics',
           match_score: 0.88,
-          view_count: 30000
-        }
+          view_count: 30000,
+        },
       ];
       mockDb.all.mockImplementation((sql, params, callback) => {
         callback(null, mockVideos);
@@ -288,7 +290,7 @@ describe('DatabaseSchema', () => {
         if (callCount === 1) {
           callback(null, { count: 2700 }); // openings count
         } else if (callCount === 2) {
-          callback(null, { count: 5000 }); // videos count  
+          callback(null, { count: 5000 }); // videos count
         } else {
           callback(null, { count: 12000 }); // relationships count
         }
@@ -300,7 +302,7 @@ describe('DatabaseSchema', () => {
         openings: 2700,
         videos: 5000,
         relationships: 12000,
-        storageReduction: expect.any(Number)
+        storageReduction: expect.any(Number),
       });
     });
   });
@@ -309,15 +311,12 @@ describe('DatabaseSchema', () => {
     it('should vacuum database to reclaim space', async () => {
       await schemaManager.vacuum();
 
-      expect(mockDb.run).toHaveBeenCalledWith(
-        'VACUUM',
-        expect.any(Function)
-      );
+      expect(mockDb.run).toHaveBeenCalledWith('VACUUM', expect.any(Function));
     });
 
     it('should backup database to specified location', async () => {
       const backupPath = '/tmp/test-backup.sqlite';
-      
+
       // Mock file operations
       const fs = require('fs');
       jest.spyOn(fs, 'copyFileSync').mockImplementation();
@@ -325,10 +324,7 @@ describe('DatabaseSchema', () => {
       await schemaManager.backup(backupPath);
 
       // Verify backup was attempted
-      expect(fs.copyFileSync).toHaveBeenCalledWith(
-        expect.any(String),
-        backupPath
-      );
+      expect(fs.copyFileSync).toHaveBeenCalledWith(expect.any(String), backupPath);
     });
 
     it('should close database connection properly', async () => {
@@ -343,7 +339,7 @@ describe('DatabaseSchema', () => {
       mockDb.all.mockImplementation((sql, callback) => {
         callback(null, [
           { detail: 'SCAN TABLE videos' },
-          { detail: 'USE INDEX idx_opening_videos_score' }
+          { detail: 'USE INDEX idx_opening_videos_score' },
         ]);
       });
 
@@ -352,7 +348,7 @@ describe('DatabaseSchema', () => {
       );
 
       expect(analysis).toContain('SCAN TABLE videos');
-      expect(analysis.some(detail => detail.includes('USE INDEX'))).toBe(true);
+      expect(analysis.some((detail) => detail.includes('USE INDEX'))).toBe(true);
     });
 
     it('should validate all indexes exist', async () => {
@@ -360,7 +356,7 @@ describe('DatabaseSchema', () => {
         callback(null, [
           { name: 'idx_opening_videos_score' },
           { name: 'idx_videos_published' },
-          { name: 'idx_videos_channel' }
+          { name: 'idx_videos_channel' },
         ]);
       });
 
@@ -376,19 +372,13 @@ describe('DatabaseSchema', () => {
       await schemaManager.prepareMigration();
 
       // Should disable foreign key constraints during migration
-      expect(mockDb.run).toHaveBeenCalledWith(
-        'PRAGMA foreign_keys = OFF',
-        expect.any(Function)
-      );
+      expect(mockDb.run).toHaveBeenCalledWith('PRAGMA foreign_keys = OFF', expect.any(Function));
     });
 
     it('should finalize migration and re-enable constraints', async () => {
       await schemaManager.finalizeMigration();
 
-      expect(mockDb.run).toHaveBeenCalledWith(
-        'PRAGMA foreign_keys = ON',
-        expect.any(Function)
-      );
+      expect(mockDb.run).toHaveBeenCalledWith('PRAGMA foreign_keys = ON', expect.any(Function));
     });
 
     it('should validate data integrity after migration', async () => {

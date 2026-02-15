@@ -42,14 +42,24 @@ const StudyCard: React.FC<{ study: Study }> = ({ study }) => (
       className={styles.openButton}
     >
       Open
-      <svg className={styles.externalIcon} viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+      <svg
+        className={styles.externalIcon}
+        viewBox="0 0 16 16"
+        width="14"
+        height="14"
+        fill="currentColor"
+      >
         <path d="M3.75 2a.75.75 0 0 0 0 1.5h6.69L2.72 11.22a.75.75 0 1 0 1.06 1.06L11.5 4.56v6.69a.75.75 0 0 0 1.5 0V2.75a.75.75 0 0 0-.75-.75H3.75Z" />
       </svg>
     </a>
   </div>
 );
 
-const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, searchLinks, openingName: _openingName }) => {
+const StudiesGallery: React.FC<StudiesGalleryProps> = ({
+  studies,
+  searchLinks,
+  openingName: _openingName,
+}) => {
   const [showAll, setShowAll] = useState(false);
 
   if ((!studies || studies.length === 0) && !searchLinks) {
@@ -71,10 +81,7 @@ const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, searchLinks, o
           </div>
 
           {hasMore && !showAll && (
-            <button
-              className={styles.showMoreButton}
-              onClick={() => setShowAll(true)}
-            >
+            <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
               Show {remainingCount} more ▾
             </button>
           )}
@@ -82,9 +89,7 @@ const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, searchLinks, o
       )}
 
       {studies.length === 0 && (
-        <p className={styles.emptyMessage}>
-          No curated studies found for this opening yet.
-        </p>
+        <p className={styles.emptyMessage}>No curated studies found for this opening yet.</p>
       )}
 
       {searchLinks && (

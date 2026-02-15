@@ -5,9 +5,7 @@ interface FloatingBackButtonProps {
   className?: string;
 }
 
-export const FloatingBackButton: React.FC<FloatingBackButtonProps> = ({ 
-  className = '' 
-}) => {
+export const FloatingBackButton: React.FC<FloatingBackButtonProps> = ({ className = '' }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -20,7 +18,7 @@ export const FloatingBackButton: React.FC<FloatingBackButtonProps> = ({
   };
 
   return (
-    <button 
+    <button
       className={`floating-back-btn ${className}`}
       onClick={handleBack}
       aria-label="Go back"

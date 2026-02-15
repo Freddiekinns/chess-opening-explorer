@@ -7,7 +7,7 @@ describe('CategoryFilters UX Improvements', () => {
     selectedCategories: ['most-popular'],
     onCategoryToggle: jest.fn(),
     onClearFilters: jest.fn(),
-    resultCount: 12377
+    resultCount: 12377,
   };
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('CategoryFilters UX Improvements', () => {
   describe('Three-Column Layout', () => {
     it('should render three category groups with proper structure', () => {
       render(<CategoryFilters {...mockProps} />);
-      
+
       // Check for group titles
       expect(screen.getByText('Skill Level')).toBeInTheDocument();
       expect(screen.getByText('Playing Style')).toBeInTheDocument();
@@ -26,7 +26,7 @@ describe('CategoryFilters UX Improvements', () => {
 
     it('should display improved category names', () => {
       render(<CategoryFilters {...mockProps} />);
-      
+
       // Check for chess-accurate naming
       expect(screen.getByText('Beginner')).toBeInTheDocument();
       expect(screen.getByText('Intermediate')).toBeInTheDocument();
@@ -64,27 +64,33 @@ describe('CategoryFilters UX Improvements', () => {
   describe('Results Summary', () => {
     it('should display result count with proper formatting', () => {
       render(<CategoryFilters {...mockProps} />);
-      expect(screen.getByText(/Currently Showing: Most Popular \(12,377 openings\)/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Currently Showing: Most Popular \(12,377 openings\)/)
+      ).toBeInTheDocument();
     });
 
     it('should display selected category names in summary', () => {
       const propsWithSelected = {
         ...mockProps,
         selectedCategories: ['attacking'],
-        resultCount: 6864
+        resultCount: 6864,
       };
       render(<CategoryFilters {...propsWithSelected} />);
-      expect(screen.getByText(/Currently Showing: Attacking \(6,864 openings\)/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Currently Showing: Attacking \(6,864 openings\)/)
+      ).toBeInTheDocument();
     });
 
     it('should display multiple selected categories', () => {
       const propsWithMultiple = {
         ...mockProps,
         selectedCategories: ['attacking', 'advanced'],
-        resultCount: 2134
+        resultCount: 2134,
       };
       render(<CategoryFilters {...propsWithMultiple} />);
-      expect(screen.getByText(/Currently Showing: Attacking, Advanced \(2,134 openings\)/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Currently Showing: Attacking, Advanced \(2,134 openings\)/)
+      ).toBeInTheDocument();
     });
   });
 
@@ -122,14 +128,14 @@ describe('CategoryFilters UX Improvements', () => {
     it('should highlight selected categories with active class', () => {
       const propsWithSelected = {
         ...mockProps,
-        selectedCategories: ['attacking', 'advanced']
+        selectedCategories: ['attacking', 'advanced'],
       };
       render(<CategoryFilters {...propsWithSelected} />);
-      
+
       const attackingBtn = screen.getByText('Attacking');
       const advancedBtn = screen.getByText('Advanced');
       const beginnerBtn = screen.getByText('Beginner');
-      
+
       expect(attackingBtn).toHaveClass('active');
       expect(advancedBtn).toHaveClass('active');
       expect(beginnerBtn).not.toHaveClass('active');
@@ -144,7 +150,7 @@ describe('CategoryFilters UX Improvements', () => {
     it('should show secondary state for Show All Popular when other categories are selected', () => {
       const propsWithOther = {
         ...mockProps,
-        selectedCategories: ['attacking']
+        selectedCategories: ['attacking'],
       };
       render(<CategoryFilters {...propsWithOther} />);
       const showAllBtn = screen.getByText('Show All Popular');
@@ -155,11 +161,11 @@ describe('CategoryFilters UX Improvements', () => {
   describe('Accessibility', () => {
     it('should have proper semantic structure with headings', () => {
       render(<CategoryFilters {...mockProps} />);
-      
+
       // Main title should be h3
       const mainTitle = screen.getByRole('heading', { level: 3 });
       expect(mainTitle).toHaveTextContent('Find Your Opening Style');
-      
+
       // Group titles should be h4
       const groupTitles = screen.getAllByRole('heading', { level: 4 });
       expect(groupTitles).toHaveLength(3);
@@ -170,14 +176,14 @@ describe('CategoryFilters UX Improvements', () => {
 
     it('should have clickable buttons for all categories', () => {
       render(<CategoryFilters {...mockProps} />);
-      
+
       // All category buttons should be clickable
-      const categoryButtons = screen.getAllByRole('button').filter(btn => 
-        !btn.textContent.includes('Show All Popular')
-      );
-      
+      const categoryButtons = screen
+        .getAllByRole('button')
+        .filter((btn) => !btn.textContent.includes('Show All Popular'));
+
       expect(categoryButtons).toHaveLength(9); // 3 skill + 4 style + 2 approach
-      categoryButtons.forEach(btn => {
+      categoryButtons.forEach((btn) => {
         expect(btn).toBeEnabled();
       });
     });

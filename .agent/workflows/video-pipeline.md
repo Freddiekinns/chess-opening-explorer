@@ -19,7 +19,8 @@ This workflow manages the YouTube video integration pipeline.
 node tools/video-pipeline/backfill-videos.js
 ```
 
-This searches YouTube for major openings (Sicilian, Ruy Lopez, Queen's Gambit, etc.) and populates the database.
+This searches YouTube for major openings (Sicilian, Ruy Lopez, Queen's Gambit,
+etc.) and populates the database.
 
 **Note:** Edit `backfill-videos.js` to add/remove opening names as needed.
 

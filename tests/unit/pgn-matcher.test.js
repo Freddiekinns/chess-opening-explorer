@@ -10,7 +10,7 @@ const {
   generateFENsFromPGN,
   normalizeFEN,
   matchFENsToOpenings,
-  loadECOIndex
+  loadECOIndex,
 } = require('../../tools/course-discovery/lib/pgn-matcher');
 
 describe('splitPGNIntoChapters', () => {
@@ -199,16 +199,18 @@ describe('matchFENsToOpenings', () => {
 
   beforeAll(() => {
     // French Defense: 1. e4 e6
-    mockEcoIndex.set(
-      'rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -',
-      { fen: 'rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2', name: 'French Defense', eco: 'C00' }
-    );
+    mockEcoIndex.set('rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -', {
+      fen: 'rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2',
+      name: 'French Defense',
+      eco: 'C00',
+    });
     // French Winawer: 1. e4 e6 2. d4 d5 3. Nc3 Bb4
     // Position after 3...Bb4: rnbqk1nr (b8-knight still present, f8-bishop moved to b4)
-    mockEcoIndex.set(
-      'rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -',
-      { fen: 'rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4', name: 'French Winawer', eco: 'C15' }
-    );
+    mockEcoIndex.set('rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -', {
+      fen: 'rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4',
+      name: 'French Winawer',
+      eco: 'C15',
+    });
   });
 
   test('should find deepest match (Winawer over French)', () => {

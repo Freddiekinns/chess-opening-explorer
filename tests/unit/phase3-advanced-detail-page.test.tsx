@@ -1,7 +1,7 @@
 /**
  * @fileoverview Phase 3: Advanced Detail Page Components Test Suite
  * PRD-F14 Implementation - TDD Red Phase
- * 
+ *
  * Testing sophisticated detail page layouts with advanced interactions:
  * - Enhanced opening detail page with tabbed content
  * - Interactive move tree visualization
@@ -9,14 +9,14 @@
  * - User preference and personalization features
  */
 
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest';
 
 describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
   beforeEach(() => {
     // Reset DOM before each test
-    document.head.innerHTML = ''
-    document.body.innerHTML = ''
-  })
+    document.head.innerHTML = '';
+    document.body.innerHTML = '';
+  });
 
   describe('Enhanced Opening Detail Page Layout', () => {
     it('should create detailed opening page with tabbed navigation', () => {
@@ -33,16 +33,16 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             <div class="tab-panel active" role="tabpanel">Overview content</div>
           </div>
         </div>
-      `
-      
-      const detailPage = document.querySelector('.opening-detail-page')
-      const tabs = document.querySelectorAll('.tab-button')
-      const activeTab = document.querySelector('.tab-button.active')
-      
-      expect(detailPage).toBeTruthy()
-      expect(tabs.length).toBe(4)
-      expect(activeTab?.textContent).toBe('Overview')
-    })
+      `;
+
+      const detailPage = document.querySelector('.opening-detail-page');
+      const tabs = document.querySelectorAll('.tab-button');
+      const activeTab = document.querySelector('.tab-button.active');
+
+      expect(detailPage).toBeTruthy();
+      expect(tabs.length).toBe(4);
+      expect(activeTab?.textContent).toBe('Overview');
+    });
 
     it('should display comprehensive opening information in overview tab', () => {
       // Test overview tab content structure
@@ -64,17 +64,17 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             </ul>
           </div>
         </div>
-      `
-      
-      const overviewTab = document.querySelector('.overview-tab')
-      const openingName = document.querySelector('.opening-name')
-      const keyConcepts = document.querySelector('.key-concepts')
-      
-      expect(overviewTab).toBeTruthy()
-      expect(openingName?.textContent).toBe('Sicilian Defense')
-      expect(keyConcepts?.querySelector('h3')?.textContent).toBe('Key Concepts')
-    })
-  })
+      `;
+
+      const overviewTab = document.querySelector('.overview-tab');
+      const openingName = document.querySelector('.opening-name');
+      const keyConcepts = document.querySelector('.key-concepts');
+
+      expect(overviewTab).toBeTruthy();
+      expect(openingName?.textContent).toBe('Sicilian Defense');
+      expect(keyConcepts?.querySelector('h3')?.textContent).toBe('Key Concepts');
+    });
+  });
 
   describe('Interactive Move Tree Visualization', () => {
     it('should create interactive move tree with expandable branches', () => {
@@ -101,16 +101,16 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             <button class="collapse-all">Collapse All</button>
           </div>
         </div>
-      `
-      
-      const moveTree = document.querySelector('[data-testid="move-tree"]')
-      const moveNodes = document.querySelectorAll('.move-node')
-      const treeControls = document.querySelector('.tree-controls')
-      
-      expect(moveTree).toBeTruthy()
-      expect(moveNodes.length).toBe(3) // Root + 2 moves
-      expect(treeControls?.children.length).toBe(2)
-    })
+      `;
+
+      const moveTree = document.querySelector('[data-testid="move-tree"]');
+      const moveNodes = document.querySelectorAll('.move-node');
+      const treeControls = document.querySelector('.tree-controls');
+
+      expect(moveTree).toBeTruthy();
+      expect(moveNodes.length).toBe(3); // Root + 2 moves
+      expect(treeControls?.children.length).toBe(2);
+    });
 
     it('should display move statistics and popularity data', () => {
       // Test move statistics display
@@ -132,17 +132,17 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             </div>
           </div>
         </div>
-      `
-      
-      const moveStats = document.querySelector('.move-statistics')
-      const popularityBar = document.querySelector('.popularity-bar')
-      const winRateDisplay = document.querySelector('.win-rate-display')
-      
-      expect(moveStats).toBeTruthy()
-      expect(popularityBar?.querySelector('.popularity-text')?.textContent).toBe('52%')
-      expect(winRateDisplay?.children.length).toBe(3)
-    })
-  })
+      `;
+
+      const moveStats = document.querySelector('.move-statistics');
+      const popularityBar = document.querySelector('.popularity-bar');
+      const winRateDisplay = document.querySelector('.win-rate-display');
+
+      expect(moveStats).toBeTruthy();
+      expect(popularityBar?.querySelector('.popularity-text')?.textContent).toBe('52%');
+      expect(winRateDisplay?.children.length).toBe(3);
+    });
+  });
 
   describe('Advanced Statistics and Analytics Panels', () => {
     it('should create comprehensive statistics dashboard', () => {
@@ -170,16 +170,16 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             <canvas class="performance-chart" width="400" height="200"></canvas>
           </div>
         </div>
-      `
-      
-      const dashboard = document.querySelector('.analytics-dashboard')
-      const statCards = document.querySelectorAll('.stat-card')
-      const chartContainer = document.querySelector('.chart-container')
-      
-      expect(dashboard).toBeTruthy()
-      expect(statCards.length).toBe(3)
-      expect(chartContainer?.querySelector('canvas')).toBeTruthy()
-    })
+      `;
+
+      const dashboard = document.querySelector('.analytics-dashboard');
+      const statCards = document.querySelectorAll('.stat-card');
+      const chartContainer = document.querySelector('.chart-container');
+
+      expect(dashboard).toBeTruthy();
+      expect(statCards.length).toBe(3);
+      expect(chartContainer?.querySelector('canvas')).toBeTruthy();
+    });
 
     it('should display filterable game history with advanced search', () => {
       // Test game history with filtering capabilities
@@ -206,17 +206,17 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             </div>
           </div>
         </div>
-      `
-      
-      const historyPanel = document.querySelector('.game-history-panel')
-      const filters = document.querySelector('.history-filters')
-      const gameList = document.querySelector('.game-list')
-      
-      expect(historyPanel).toBeTruthy()
-      expect(filters?.children.length).toBe(3)
-      expect(gameList?.querySelector('.game-item')).toBeTruthy()
-    })
-  })
+      `;
+
+      const historyPanel = document.querySelector('.game-history-panel');
+      const filters = document.querySelector('.history-filters');
+      const gameList = document.querySelector('.game-list');
+
+      expect(historyPanel).toBeTruthy();
+      expect(filters?.children.length).toBe(3);
+      expect(gameList?.querySelector('.game-item')).toBeTruthy();
+    });
+  });
 
   describe('User Preference and Personalization', () => {
     it('should create personalized dashboard with user preferences', () => {
@@ -243,16 +243,16 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             </select>
           </div>
         </div>
-      `
-      
-      const preferences = document.querySelector('.user-preferences')
-      const sections = document.querySelectorAll('.preference-section')
-      const coordinatesCheckbox = document.querySelector('.show-coordinates') as HTMLInputElement
-      
-      expect(preferences).toBeTruthy()
-      expect(sections.length).toBe(2)
-      expect(coordinatesCheckbox?.checked).toBe(true)
-    })
+      `;
+
+      const preferences = document.querySelector('.user-preferences');
+      const sections = document.querySelectorAll('.preference-section');
+      const coordinatesCheckbox = document.querySelector('.show-coordinates') as HTMLInputElement;
+
+      expect(preferences).toBeTruthy();
+      expect(sections.length).toBe(2);
+      expect(coordinatesCheckbox?.checked).toBe(true);
+    });
 
     it('should provide bookmarking and personal notes functionality', () => {
       // Test bookmarking and notes features
@@ -277,19 +277,19 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             </div>
           </div>
         </div>
-      `
-      
-      const personalFeatures = document.querySelector('.personal-features')
-      const bookmarkButton = document.querySelector('.bookmark-button')
-      const notesTextarea = document.querySelector('.personal-notes')
-      const studyPlan = document.querySelector('.study-plan')
-      
-      expect(personalFeatures).toBeTruthy()
-      expect(bookmarkButton?.getAttribute('data-bookmarked')).toBe('false')
-      expect(notesTextarea).toBeTruthy()
-      expect(studyPlan?.querySelector('.plan-item')).toBeTruthy()
-    })
-  })
+      `;
+
+      const personalFeatures = document.querySelector('.personal-features');
+      const bookmarkButton = document.querySelector('.bookmark-button');
+      const notesTextarea = document.querySelector('.personal-notes');
+      const studyPlan = document.querySelector('.study-plan');
+
+      expect(personalFeatures).toBeTruthy();
+      expect(bookmarkButton?.getAttribute('data-bookmarked')).toBe('false');
+      expect(notesTextarea).toBeTruthy();
+      expect(studyPlan?.querySelector('.plan-item')).toBeTruthy();
+    });
+  });
 
   describe('Responsive Design and Accessibility', () => {
     it('should adapt layout for mobile devices', () => {
@@ -302,14 +302,14 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
             .move-tree { font-size: 14px; }
           }
         </style>
-      `
-      
-      const styles = document.head.querySelector('style')?.textContent
-      
-      expect(styles).toContain('@media (max-width: 768px)')
-      expect(styles).toContain('flex-direction: column')
-      expect(styles).toContain('grid-template-columns: 1fr')
-    })
+      `;
+
+      const styles = document.head.querySelector('style')?.textContent;
+
+      expect(styles).toContain('@media (max-width: 768px)');
+      expect(styles).toContain('flex-direction: column');
+      expect(styles).toContain('grid-template-columns: 1fr');
+    });
 
     it('should provide keyboard navigation for all interactive elements', () => {
       // Test keyboard accessibility
@@ -320,13 +320,13 @@ describe('PRD-F14 Phase 3: Advanced Detail Page Components', () => {
           <input class="search-input" tabindex="0" aria-label="Search games">
           <textarea class="notes-area" tabindex="0" aria-label="Personal notes"></textarea>
         </div>
-      `
-      
-      const interactiveElements = document.querySelectorAll('[tabindex="0"]')
-      const ariaLabels = document.querySelectorAll('[aria-label]')
-      
-      expect(interactiveElements.length).toBe(5)
-      expect(ariaLabels.length).toBe(4)
-    })
-  })
-})
+      `;
+
+      const interactiveElements = document.querySelectorAll('[tabindex="0"]');
+      const ariaLabels = document.querySelectorAll('[aria-label]');
+
+      expect(interactiveElements.length).toBe(5);
+      expect(ariaLabels.length).toBe(4);
+    });
+  });
+});

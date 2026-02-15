@@ -1,6 +1,7 @@
 # Claude Code Automation Setup Guide
 
-This guide will help you complete the setup of all recommended Claude Code automations for your chess opening explorer project.
+This guide will help you complete the setup of all recommended Claude Code
+automations for your chess opening explorer project.
 
 ## ✅ What's Already Configured
 
@@ -49,7 +50,9 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
 claude mcp add-json github '{"command":"npx","args":["-y","@modelcontextprotocol/server-github"],"env":{"GITHUB_PERSONAL_ACCESS_TOKEN":"'$GITHUB_TOKEN'"}}'
 ```
 
-**Alternative for GitHub MCP** (if you have `gh` CLI installed and authenticated):
+**Alternative for GitHub MCP** (if you have `gh` CLI installed and
+authenticated):
+
 ```bash
 # This uses your gh CLI authentication
 gh auth login
@@ -61,6 +64,7 @@ claude mcp add github -- gh api graphql
 Install plugins using the interactive `/plugin` command in Claude Code:
 
 **Option 1: Interactive Installation (Recommended)**
+
 1. In your Claude Code session, type: `/plugin`
 2. Select "Add MarketPlace"
 3. Enter: `anthropics/claude-code`
@@ -69,6 +73,7 @@ Install plugins using the interactive `/plugin` command in Claude Code:
 6. Confirm installation
 
 **Option 2: Command Line (if available)**
+
 ```bash
 # These commands may work depending on your Claude Code version
 claude plugin add anthropic-agent-skills/commit-commands
@@ -84,7 +89,8 @@ Edit a file to test the hooks:
 # After saving, you should see auto-lint and type-check run automatically
 ```
 
-If hooks aren't running, restart your Claude Code session to reload the configuration.
+If hooks aren't running, restart your Claude Code session to reload the
+configuration.
 
 ### Step 5: Run Initial Formatting (Optional)
 
@@ -94,7 +100,8 @@ Format all code with Prettier:
 npm run format
 ```
 
-This will format all JavaScript, TypeScript, JSON, and Markdown files according to the project's style guide.
+This will format all JavaScript, TypeScript, JSON, and Markdown files according
+to the project's style guide.
 
 ### Step 6: Test GitHub Actions (Optional)
 
@@ -114,6 +121,7 @@ git push -u origin test/setup-verification
 ### MCP Servers
 
 #### context7
+
 Ask Claude questions about libraries and it will fetch live documentation:
 
 - "Show me the latest React 19 concurrent features"
@@ -121,6 +129,7 @@ Ask Claude questions about libraries and it will fetch live documentation:
 - "What's the Vertex AI API for text generation?"
 
 #### GitHub MCP
+
 Manage your repository directly from Claude:
 
 - "Show me open issues labeled 'bug'"
@@ -130,6 +139,7 @@ Manage your repository directly from Claude:
 ### Plugins
 
 #### /commit
+
 Automatically create conventional commits:
 
 ```bash
@@ -143,6 +153,7 @@ Automatically create conventional commits:
 ```
 
 #### /frontend-design
+
 Generate production-ready React components:
 
 ```bash
@@ -155,6 +166,7 @@ Generate production-ready React components:
 ### Subagents
 
 #### test-writer
+
 Invoke manually or let Claude use it:
 
 ```
@@ -162,6 +174,7 @@ Invoke manually or let Claude use it:
 ```
 
 #### pipeline-reviewer
+
 Invoke for code reviews:
 
 ```
@@ -180,11 +193,13 @@ Hooks run automatically - you don't need to do anything! They'll:
 
 ### Adding More Hooks
 
-Edit `.claude/settings.local.json` to add custom hooks. See the existing hooks for examples.
+Edit `.claude/settings.local.json` to add custom hooks. See the existing hooks
+for examples.
 
 ### Adding More Subagents
 
-Create new `.md` files in `.claude/agents/` following the pattern of the existing agents.
+Create new `.md` files in `.claude/agents/` following the pattern of the
+existing agents.
 
 ### Adjusting Prettier Rules
 
@@ -197,20 +212,24 @@ Add new workflow files to `.github/workflows/` for additional CI/CD steps.
 ## 🆘 Troubleshooting
 
 ### Hooks not running?
+
 - Restart your Claude Code session
 - Check `.claude/settings.local.json` for syntax errors
 - Ensure permissions include the hook commands
 
 ### MCP servers not working?
+
 - Run `claude mcp list` to see installed servers
 - Check that servers are enabled in Claude settings
 - For GitHub MCP, ensure `gh` CLI is authenticated
 
 ### Plugins not found?
+
 - Run `claude plugin list` to see installed plugins
 - Try `claude plugin update` to refresh the plugin cache
 
 ### GitHub Actions failing?
+
 - Check that all tests pass locally first
 - Ensure Node 18+ is used in workflows
 - Review the action logs on GitHub for specific errors
@@ -224,6 +243,7 @@ Add new workflow files to `.github/workflows/` for additional CI/CD steps.
 ## 🎉 You're All Set!
 
 Your Claude Code environment is now fully configured with:
+
 - ✅ Automated linting and type-checking
 - ✅ Specialized subagents for testing and pipeline review
 - ✅ Live documentation access via MCP

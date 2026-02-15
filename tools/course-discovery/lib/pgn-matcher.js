@@ -55,7 +55,7 @@ function splitPGNIntoChapters(pgnText) {
       chapterId,
       chapterName,
       studyId,
-      pgn: trimmed
+      pgn: trimmed,
     });
   }
 
@@ -195,7 +195,7 @@ function matchFENsToOpenings(fens, ecoIndex) {
         fen: opening.fen || fens[i],
         name: opening.name,
         eco: opening.eco,
-        matchedAtMove: i + 1
+        matchedAtMove: i + 1,
       };
     }
   }
@@ -229,7 +229,7 @@ function loadECOIndex(ecoDir) {
       index.set(normalizedFen, {
         fen,
         name: opening.name,
-        eco: opening.eco
+        eco: opening.eco,
       });
     }
   }
@@ -244,5 +244,5 @@ module.exports = {
   generateFENsFromPGN,
   normalizeFEN,
   matchFENsToOpenings,
-  loadECOIndex
+  loadECOIndex,
 };

@@ -1,6 +1,6 @@
 ---
-description: "Git workflow, commits, and memory bank management"
-applyTo: "**"
+description: 'Git workflow, commits, and memory bank management'
+applyTo: '**'
 ---
 
 # Workflow Standards
@@ -16,6 +16,7 @@ applyTo: "**"
 ```
 
 ### Types
+
 - **feat**: New feature
 - **fix**: Bug fix
 - **docs**: Documentation
@@ -24,6 +25,7 @@ applyTo: "**"
 - **chore**: Maintenance (deps, config)
 
 ### Scopes
+
 - **frontend**: React components, pages
 - **pipeline**: Data pipelines
 - **analysis**: Analysis tools
@@ -104,5 +106,6 @@ The memory bank tracks project state across sessions.
 ### At Session Start
 
 Always read:
+
 1. `activeContext.md` - Current work focus
 2. `progress.md` - What works and what's left

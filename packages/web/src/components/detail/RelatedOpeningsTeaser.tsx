@@ -1,68 +1,78 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useRelatedOpenings, RelatedOpeningsResponse } from '../../useRelatedOpenings'
-import { VariationItem } from './VariationItem'
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRelatedOpenings, RelatedOpeningsResponse } from '../../useRelatedOpenings';
+import { VariationItem } from './VariationItem';
 
 interface Props {
-  fen: string | undefined
-  className?: string
+  fen: string | undefined;
+  className?: string;
   /** Pre-fetched related openings data. If provided, skips the internal fetch. */
-  relatedData?: RelatedOpeningsResponse | null
+  relatedData?: RelatedOpeningsResponse | null;
   /** Loading state when data is being fetched externally */
-  relatedLoading?: boolean
+  relatedLoading?: boolean;
 }
 
-export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', relatedData, relatedLoading }) => {
+export const RelatedOpeningsTeaser: React.FC<Props> = ({
+  fen,
+  className = '',
+  relatedData,
+  relatedLoading,
+}) => {
   // Only use the hook if data wasn't provided externally
-  const hookResult = useRelatedOpenings(relatedData !== undefined ? undefined : fen)
+  const hookResult = useRelatedOpenings(relatedData !== undefined ? undefined : fen);
 
   // Use external data if provided, otherwise fall back to hook
-  const data = relatedData !== undefined ? relatedData : hookResult.data
-  const loading = relatedData !== undefined ? !!relatedLoading : hookResult.loading
-  const error = relatedData !== undefined ? null : hookResult.error
-  const navigate = useNavigate()
-  const [expanded, setExpanded] = useState(false)
-  const bodyRef = useRef<HTMLDivElement | null>(null)
-  const animatingRef = useRef(false)
+  const data = relatedData !== undefined ? relatedData : hookResult.data;
+  const loading = relatedData !== undefined ? !!relatedLoading : hookResult.loading;
+  const error = relatedData !== undefined ? null : hookResult.error;
+  const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+  const bodyRef = useRef<HTMLDivElement | null>(null);
+  const animatingRef = useRef(false);
   useEffect(() => {
     if (expanded && bodyRef.current) {
-      bodyRef.current.focus({ preventScroll: false })
+      bodyRef.current.focus({ preventScroll: false });
     }
-  }, [expanded])
+  }, [expanded]);
 
-  if (!fen) return null
+  if (!fen) return null;
   if (loading) {
     return (
-      <div className={`related-teaser surface surface--compact ${className}`.trim()} aria-busy="true">
-  <h3 className="section-title section-title--sub">Related Openings</h3>
+      <div
+        className={`related-teaser surface surface--compact ${className}`.trim()}
+        aria-busy="true"
+      >
+        <h3 className="section-title section-title--sub">Related Openings</h3>
         <ul className="teaser-list skeleton">
           <li className="skeleton-text short" />
           <li className="skeleton-text medium" />
           <li className="skeleton-text long" />
         </ul>
       </div>
-    )
+    );
   }
-  if (error || !data) return null
+  if (error || !data) return null;
 
-  const { mainline, siblings = [] } = data as any
+  const { mainline, siblings = [] } = data as any;
   // Determine if we are currently at the mainline first
-  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
+  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot);
   // Show at most 4 total rows (including mainline if displayed) when collapsed
-  const COLLAPSED_TOTAL = 4
-  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen)
-  const mainlineRowCount = !currentIsMainline && mainline ? 1 : 0
-  const remainingSlots = COLLAPSED_TOTAL - mainlineRowCount
-  const top = fullList.slice(0, remainingSlots)
-  const showToggle = fullList.length > remainingSlots
+  const COLLAPSED_TOTAL = 4;
+  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen);
+  const mainlineRowCount = !currentIsMainline && mainline ? 1 : 0;
+  const remainingSlots = COLLAPSED_TOTAL - mainlineRowCount;
+  const top = fullList.slice(0, remainingSlots);
+  const showToggle = fullList.length > remainingSlots;
 
   return (
-    <section 
-      className={`related-teaser surface surface--compact ${className}`.trim()} 
+    <section
+      className={`related-teaser surface surface--compact ${className}`.trim()}
       aria-labelledby="related-teaser-heading"
     >
       <header className="related-teaser__header card-header">
-        <h3 id="related-teaser-heading" className="card-header__title card-header__title--accent">Related Openings</h3>
+        <h3 id="related-teaser-heading" className="card-header__title card-header__title--accent">
+          Related Openings
+        </h3>
         {data.ecoCode && (
           <span
             className="eco-pill related-teaser__eco related-teaser__eco--right"
@@ -73,12 +83,17 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', re
           </span>
         )}
       </header>
-      <div 
+      <div
         ref={bodyRef}
         className={`related-teaser__body ${expanded ? 'is-expanded' : 'is-collapsed'}`}
         data-animating={animatingRef.current ? 'true' : 'false'}
-      > 
-  <ul id="related-teaser-list" className="related-teaser__list" role="list" aria-label="Related variations">
+      >
+        <ul
+          id="related-teaser-list"
+          className="related-teaser__list"
+          role="list"
+          aria-label="Related variations"
+        >
           {!currentIsMainline && mainline && (
             <VariationItem
               fen={mainline.fen}
@@ -108,67 +123,68 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', re
             />
           ))}
         </ul>
-  {/* Gradient removed for cleaner UX; no spacer element needed */}
+        {/* Gradient removed for cleaner UX; no spacer element needed */}
       </div>
       {showToggle && (
         <footer className="related-teaser__footer">
           <button
             className="related-teaser__toggle"
             onClick={() => {
-              const el = bodyRef.current
-              if (!el || animatingRef.current) return
-              const mm = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
-                ? window.matchMedia('(prefers-reduced-motion: reduce)')
-                : ({ matches: false } as any)
-              const prefersReduced = mm.matches
+              const el = bodyRef.current;
+              if (!el || animatingRef.current) return;
+              const mm =
+                typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+                  ? window.matchMedia('(prefers-reduced-motion: reduce)')
+                  : ({ matches: false } as any);
+              const prefersReduced = mm.matches;
               // If reduced motion, just toggle without animation
               if (prefersReduced) {
-                setExpanded(e => !e)
-                return
+                setExpanded((e) => !e);
+                return;
               }
-              animatingRef.current = true
-              const targetExpanded = !expanded
-              const prevHeight = el.scrollHeight
+              animatingRef.current = true;
+              const targetExpanded = !expanded;
+              const prevHeight = el.scrollHeight;
               // Apply next state (synchronously queues React update)
-              setExpanded(targetExpanded)
+              setExpanded(targetExpanded);
               requestAnimationFrame(() => {
                 // If component unmounted or no longer animating, abort
-                if (!el) return
-                const nextHeight = el.scrollHeight
+                if (!el) return;
+                const nextHeight = el.scrollHeight;
                 // If heights equal, skip animation
                 if (prevHeight === nextHeight) {
-                  animatingRef.current = false
-                  return
+                  animatingRef.current = false;
+                  return;
                 }
-                  // Set explicit start height, hide overflow to mask list growth
-                  el.style.overflow = 'hidden'
-                  el.style.height = prevHeight + 'px'
+                // Set explicit start height, hide overflow to mask list growth
+                el.style.overflow = 'hidden';
+                el.style.height = prevHeight + 'px';
                 // Force reflow
-                void el.offsetHeight
-                el.style.transition = 'height 320ms cubic-bezier(.4,0,.2,1)'
-                el.style.height = nextHeight + 'px'
+                void el.offsetHeight;
+                el.style.transition = 'height 320ms cubic-bezier(.4,0,.2,1)';
+                el.style.height = nextHeight + 'px';
                 const cleanup = () => {
-                  if (!el) return
-                  el.style.height = ''
-                  el.style.transition = ''
-                    el.style.overflow = ''
-                  animatingRef.current = false
-                }
+                  if (!el) return;
+                  el.style.height = '';
+                  el.style.transition = '';
+                  el.style.overflow = '';
+                  animatingRef.current = false;
+                };
                 const onEnd = (ev: TransitionEvent) => {
                   if (ev.propertyName === 'height') {
-                    el.removeEventListener('transitionend', onEnd)
-                    cleanup()
+                    el.removeEventListener('transitionend', onEnd);
+                    cleanup();
                   }
-                }
-                el.addEventListener('transitionend', onEnd)
+                };
+                el.addEventListener('transitionend', onEnd);
                 // Fallback cleanup (in case transitionend doesn't fire)
                 setTimeout(() => {
                   if (animatingRef.current) {
-                    el.removeEventListener('transitionend', onEnd)
-                    cleanup()
+                    el.removeEventListener('transitionend', onEnd);
+                    cleanup();
                   }
-                }, 400)
-              })
+                }, 400);
+              });
             }}
             aria-expanded={expanded}
             aria-controls="related-teaser-list"
@@ -176,13 +192,16 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({ fen, className = '', re
             <span className="related-teaser__toggle-icon" aria-hidden="true" />
             <span className="related-teaser__toggle-label">
               {expanded ? 'Collapse' : 'Show all'}
-              <span className="related-teaser__count" aria-hidden={expanded}> {expanded ? '' : `(${fullList.length})`}</span>
+              <span className="related-teaser__count" aria-hidden={expanded}>
+                {' '}
+                {expanded ? '' : `(${fullList.length})`}
+              </span>
             </span>
           </button>
         </footer>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default RelatedOpeningsTeaser
+export default RelatedOpeningsTeaser;

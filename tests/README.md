@@ -5,11 +5,13 @@
 This project uses **two testing approaches** optimized for different components:
 
 ### **Backend Testing** (Jest - Root Level)
+
 - **Location**: `tests/unit/` and `tests/integration/`
 - **Engine**: Jest with Node.js environment
 - **Purpose**: API services, data processing, backend logic
 
-### **Frontend Testing** (Vitest - Workspace Level)  
+### **Frontend Testing** (Vitest - Workspace Level)
+
 - **Location**: `packages/web/src/**/__tests__/`
 - **Engine**: Vitest with jsdom environment
 - **Purpose**: React components, user interactions, frontend logic
@@ -19,6 +21,7 @@ This project uses **two testing approaches** optimized for different components:
 ## 📂 Directory Structure
 
 ### Backend Tests (Root Level)
+
 ```
 tests/
 ├── setup/           # Environment & configuration tests
@@ -29,6 +32,7 @@ tests/
 ```
 
 ### Frontend Tests (Workspace Level)
+
 ```
 packages/web/src/
 ├── components/
@@ -45,6 +49,7 @@ packages/web/src/
 ### 📋 Naming Conventions
 
 #### Files
+
 - **Pattern**: `[feature].[type].test.[ext]`
 - **Examples**:
   - `opening-validator.unit.test.js`
@@ -52,13 +57,16 @@ packages/web/src/
   - `api-routes.unit.test.ts`
 
 #### Test Descriptions
+
 - **Unit**: `describe('[ComponentName]', () => {})`
 - **Integration**: `describe('[FeatureName] Integration', () => {})`
-- **Individual Tests**: `test('should [expected behavior] when [condition]', () => {})`
+- **Individual Tests**:
+  `test('should [expected behavior] when [condition]', () => {})`
 
 ## 🧪 Testing Commands
 
 ### **Backend Tests (Jest)**
+
 ```bash
 # All backend unit tests (from root)
 npm run test:unit
@@ -74,6 +82,7 @@ npm run test:unit -- --coverage
 ```
 
 ### **Frontend Tests (Vitest)**
+
 ```bash
 # All frontend tests (from root via workspace)
 npm run test:frontend
@@ -95,6 +104,7 @@ cd packages/web && npm run test:ui
 ```
 
 ### **Combined Testing**
+
 ```bash
 # Run all tests (backend + frontend)
 npm run test:all
@@ -102,7 +112,7 @@ npm run test:all
 # Backend only
 npm run test:backend
 
-# Frontend only  
+# Frontend only
 npm run test:frontend
 ```
 
@@ -111,16 +121,19 @@ npm run test:frontend
 ## 🎯 Testing Strategy by Component Type
 
 ### **React Components** → Use Frontend Tests (Vitest)
+
 - **Why**: Better React support, fast HMR, modern tooling
 - **Location**: `packages/web/src/**/__tests__/`
 - **Tools**: Vitest + React Testing Library + jest-dom
 
-### **Backend Services** → Use Backend Tests (Jest) 
+### **Backend Services** → Use Backend Tests (Jest)
+
 - **Why**: Node.js environment, mature ecosystem, extensive mocking
 - **Location**: `tests/unit/` and `tests/integration/`
 - **Tools**: Jest + Supertest + Node mocks
 
 ### **Integration Workflows** → Use Backend Tests (Jest)
+
 - **Why**: Can test full API → DB → response flows
 - **Location**: `tests/integration/`
 - **Tools**: Jest + Supertest + Test databases
@@ -128,6 +141,7 @@ npm run test:frontend
 ### 🧪 Test Standards
 
 #### What to Test
+
 - ✅ Business logic and edge cases
 - ✅ Error handling scenarios
 - ✅ API endpoints and data validation
@@ -135,6 +149,7 @@ npm run test:frontend
 - ✅ Integration between internal services
 
 #### What NOT to Test
+
 - ❌ Implementation details
 - ❌ Third-party library functionality
 - ❌ Simple getters/setters
@@ -151,7 +166,7 @@ jest.mock('../api/youtube-service');
 // ✅ Good: Mock file system operations
 jest.mock('fs', () => ({
   readFile: jest.fn(),
-  writeFile: jest.fn()
+  writeFile: jest.fn(),
 }));
 
 // ❌ Bad: Real API calls or file operations
@@ -166,16 +181,16 @@ describe('OpeningValidator', () => {
       expect(validateEcoCode('B20')).toBe(true);
       expect(validateEcoCode('E92')).toBe(true);
     });
-    
+
     test('should reject invalid ECO codes', () => {
       expect(validateEcoCode('X99')).toBe(false);
       expect(validateEcoCode('')).toBe(false);
       expect(validateEcoCode(null)).toBe(false);
     });
-    
+
     test('should handle edge cases', () => {
-      expect(validateEcoCode('A00')).toBe(true);  // Lower bound
-      expect(validateEcoCode('E99')).toBe(true);  // Upper bound
+      expect(validateEcoCode('A00')).toBe(true); // Lower bound
+      expect(validateEcoCode('E99')).toBe(true); // Upper bound
       expect(validateEcoCode('F00')).toBe(false); // Out of range
     });
   });
@@ -185,6 +200,7 @@ describe('OpeningValidator', () => {
 ### 🔧 Configuration
 
 Tests use:
+
 - **Jest** for Node.js packages (API, tools)
 - **Vitest** for frontend packages (web)
 - **Centralized fixtures** for shared test data

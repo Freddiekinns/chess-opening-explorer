@@ -11,8 +11,8 @@ jest.mock('../database/schema-manager.js', () => {
     db: {
       all: jest.fn(),
       run: jest.fn(),
-      get: jest.fn()
-    }
+      get: jest.fn(),
+    },
   }));
 });
 
@@ -49,7 +49,9 @@ describe('VideoMatcher', () => {
     });
 
     it('should generate initials for long opening names', () => {
-      const abbrevs = matcher.getOpeningAbbreviations('sicilian defense accelerated dragon variation');
+      const abbrevs = matcher.getOpeningAbbreviations(
+        'sicilian defense accelerated dragon variation'
+      );
       // Should have some abbreviation generated
       expect(abbrevs.length).toBeGreaterThan(0);
     });
@@ -138,14 +140,14 @@ describe('VideoMatcher', () => {
       channel_title: 'Test Channel',
       duration: 1800, // 30 minutes
       tags: [],
-      ...overrides
+      ...overrides,
     });
 
     const createOpening = (overrides = {}) => ({
       name: 'Sicilian Defense',
       eco: 'B20',
       aliases: [],
-      ...overrides
+      ...overrides,
     });
 
     describe('name matching', () => {
@@ -174,10 +176,10 @@ describe('VideoMatcher', () => {
     describe('educational content bonuses', () => {
       it('should add bonus for educational keywords', () => {
         const videoWithEducational = createVideo({
-          title: 'sicilian defense explained'
+          title: 'sicilian defense explained',
         });
         const videoWithout = createVideo({
-          title: 'sicilian defense'
+          title: 'sicilian defense',
         });
         const opening = createOpening();
 
@@ -189,7 +191,7 @@ describe('VideoMatcher', () => {
 
       it('should not double-count educational keywords', () => {
         const video = createVideo({
-          title: 'sicilian defense theory explained guide'
+          title: 'sicilian defense theory explained guide',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
@@ -204,14 +206,14 @@ describe('VideoMatcher', () => {
       it('should add +40 for premium educators', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          channel_title: 'Daniel Naroditsky'
+          channel_title: 'Daniel Naroditsky',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
 
         const videoNoChannel = createVideo({
           title: 'sicilian defense',
-          channel_title: 'Unknown Channel'
+          channel_title: 'Unknown Channel',
         });
         const scoreNoChannel = matcher.calculateMatchScore(videoNoChannel, opening);
 
@@ -221,14 +223,14 @@ describe('VideoMatcher', () => {
       it('should penalize agadmator channel', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          channel_title: 'agadmator Chess Channel'
+          channel_title: 'agadmator Chess Channel',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
 
         const videoNormal = createVideo({
           title: 'sicilian defense',
-          channel_title: 'Some Channel'
+          channel_title: 'Some Channel',
         });
         const scoreNormal = matcher.calculateMatchScore(videoNormal, opening);
 
@@ -239,13 +241,13 @@ describe('VideoMatcher', () => {
     describe('game analysis penalties', () => {
       it('should penalize game analysis terms like "vs"', () => {
         const video = createVideo({
-          title: 'sicilian defense magnus vs hikaru'
+          title: 'sicilian defense magnus vs hikaru',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
 
         const videoClean = createVideo({
-          title: 'sicilian defense complete guide'
+          title: 'sicilian defense complete guide',
         });
         const scoreClean = matcher.calculateMatchScore(videoClean, opening);
 
@@ -254,7 +256,7 @@ describe('VideoMatcher', () => {
 
       it('should penalize "brilliant" and similar hype terms', () => {
         const video = createVideo({
-          title: 'brilliant sicilian defense game'
+          title: 'brilliant sicilian defense game',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
@@ -267,14 +269,14 @@ describe('VideoMatcher', () => {
       it('should add +15 for 20-60 minute videos', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          duration: 2400 // 40 minutes
+          duration: 2400, // 40 minutes
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
 
         const videoShort = createVideo({
           title: 'sicilian defense',
-          duration: 180 // 3 minutes
+          duration: 180, // 3 minutes
         });
         const scoreShort = matcher.calculateMatchScore(videoShort, opening);
 
@@ -284,7 +286,7 @@ describe('VideoMatcher', () => {
       it('should penalize very short videos', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          duration: 120 // 2 minutes
+          duration: 120, // 2 minutes
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
@@ -297,11 +299,11 @@ describe('VideoMatcher', () => {
     describe('family mismatch detection', () => {
       it('should reject Sicilian video for French opening', () => {
         const video = createVideo({
-          title: 'sicilian defense najdorf explained'
+          title: 'sicilian defense najdorf explained',
         });
         const opening = createOpening({
           name: 'french defense',
-          eco: 'C15'
+          eco: 'C15',
         });
         const score = matcher.calculateMatchScore(video, opening);
 
@@ -310,11 +312,11 @@ describe('VideoMatcher', () => {
 
       it('should reject Queens Gambit video for Sicilian opening', () => {
         const video = createVideo({
-          title: 'queens gambit declined complete guide'
+          title: 'queens gambit declined complete guide',
         });
         const opening = createOpening({
           name: 'sicilian defense najdorf',
-          eco: 'B90'
+          eco: 'B90',
         });
         const score = matcher.calculateMatchScore(video, opening);
 
@@ -323,11 +325,11 @@ describe('VideoMatcher', () => {
 
       it('should allow matching family', () => {
         const video = createVideo({
-          title: 'sicilian najdorf explained'
+          title: 'sicilian najdorf explained',
         });
         const opening = createOpening({
           name: 'sicilian defense dragon',
-          eco: 'B70'
+          eco: 'B70',
         });
         const score = matcher.calculateMatchScore(video, opening);
 
@@ -340,7 +342,7 @@ describe('VideoMatcher', () => {
       it('should handle videos with empty description', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          description: ''
+          description: '',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
@@ -351,7 +353,7 @@ describe('VideoMatcher', () => {
       it('should handle videos with null tags', () => {
         const video = createVideo({
           title: 'sicilian defense',
-          tags: null
+          tags: null,
         });
         const opening = createOpening();
 
@@ -371,7 +373,7 @@ describe('VideoMatcher', () => {
         const video = createVideo({
           title: 'sicilian defense amazing brilliant vs crushes genius',
           channel_title: 'agadmator',
-          duration: 60
+          duration: 60,
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
@@ -401,7 +403,7 @@ describe('VideoMatcher', () => {
     it('should parse object format with multiple sources', () => {
       const aliasObj = JSON.stringify({
         scid: 'Sicilian Defense',
-        eco_wikip: 'Najdorf Variation'
+        eco_wikip: 'Najdorf Variation',
       });
       const aliases = matcher.parseAliases(aliasObj);
       expect(aliases).toContain('Sicilian Defense');

@@ -42,7 +42,7 @@ export function isValidFEN(fen: string): boolean {
   // Validate move numbers
   const halfmoveNum = parseInt(halfmove, 10);
   const fullmoveNum = parseInt(fullmove, 10);
-  
+
   if (isNaN(halfmoveNum) || isNaN(fullmoveNum) || halfmoveNum < 0 || fullmoveNum < 1) {
     return false;
   }
@@ -106,7 +106,7 @@ export function sanitizeSearchQuery(query: string): string {
   if (!query || typeof query !== 'string') {
     return '';
   }
-  
+
   return query
     .trim()
     .replace(/[^\w\s-]/g, '') // Remove special characters except spaces and hyphens

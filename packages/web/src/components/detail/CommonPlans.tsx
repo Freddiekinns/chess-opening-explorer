@@ -19,12 +19,15 @@ interface ClassifiedPlan {
   text: string;
 }
 
-const WHITE_PREFIX = /^(?:(?:for\s+)?white[\s:,]|white's\s+(?:plan|primary|main|goal|key|long)|as\s+white[\s:,]|white\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|solidifies|completes|accepts|looks|develops|prepares))/i;
+const WHITE_PREFIX =
+  /^(?:(?:for\s+)?white[\s:,]|white's\s+(?:plan|primary|main|goal|key|long)|as\s+white[\s:,]|white\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|solidifies|completes|accepts|looks|develops|prepares))/i;
 
-const BLACK_PREFIX = /^(?:(?:for\s+)?black[\s:,]|black's\s+(?:plan|primary|main|goal|key|long)|as\s+black[\s:,]|black\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|works|challenges|develops|looks|frequently|sacrifices))/i;
+const BLACK_PREFIX =
+  /^(?:(?:for\s+)?black[\s:,]|black's\s+(?:plan|primary|main|goal|key|long)|as\s+black[\s:,]|black\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|works|challenges|develops|looks|frequently|sacrifices))/i;
 
 // Matches the label portion to strip from the display text
-const STRIP_PREFIX = /^(?:(?:for\s+)?(?:white|black)[\s:,]+(?:the\s+plan\s+is\s+to\s+)?|(?:white|black)'s\s+plan(?:\s+is)?\s*[:.]?\s*|as\s+(?:white|black)[\s:,]+)/i;
+const STRIP_PREFIX =
+  /^(?:(?:for\s+)?(?:white|black)[\s:,]+(?:the\s+plan\s+is\s+to\s+)?|(?:white|black)'s\s+plan(?:\s+is)?\s*[:.]?\s*|as\s+(?:white|black)[\s:,]+)/i;
 
 function classifyPlan(plan: string): ClassifiedPlan {
   const trimmed = plan.trim();
@@ -50,10 +53,7 @@ const SIDE_CONFIG: Record<PlanSide, { label: string; className: string }> = {
   general: { label: 'Both', className: styles.general },
 };
 
-export const CommonPlans: React.FC<CommonPlansProps> = ({
-  ecoCode,
-  className = ''
-}) => {
+export const CommonPlans: React.FC<CommonPlansProps> = ({ ecoCode, className = '' }) => {
   const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -123,9 +123,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
     return (
       <div className={styles.section}>
-        <div className={`${styles.sectionLabel} ${config.className}`}>
-          {config.label}
-        </div>
+        <div className={`${styles.sectionLabel} ${config.className}`}>{config.label}</div>
         <div className={styles.sectionPlans}>
           {plans.map((plan, i) => (
             <div key={i} className={`plan-item ${styles.planItem} ${config.className}`}>

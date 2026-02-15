@@ -1,14 +1,14 @@
 const {
   splitMultiPgn,
   fetchLichessGamesPgnRated,
-  getLichessGamesPgnRatedCached
+  getLichessGamesPgnRatedCached,
 } = require('../../packages/api/src/services/personal-games-service');
 
 describe('personal-games-service', () => {
   test('splitMultiPgn splits lichess multi-PGN concatenation', () => {
     const text = [
       '[Event "A"]\n[Site "lichess.org"]\n\n1. e4 e5 1-0',
-      '[Event "B"]\n[Site "lichess.org"]\n\n1. d4 d5 1/2-1/2'
+      '[Event "B"]\n[Site "lichess.org"]\n\n1. d4 d5 1/2-1/2',
     ].join('\n\n');
 
     const parts = splitMultiPgn(text);
@@ -24,7 +24,7 @@ describe('personal-games-service', () => {
       return {
         ok: true,
         status: 200,
-        text: async () => '[Event "A"]\n\n1. e4 e5 1-0\n\n[Event "B"]\n\n1. d4 d5 0-1'
+        text: async () => '[Event "A"]\n\n1. e4 e5 1-0\n\n[Event "B"]\n\n1. d4 d5 0-1',
       };
     };
 
@@ -45,7 +45,12 @@ describe('personal-games-service', () => {
 
   test('getLichessGamesPgnRatedCached dedupes inflight requests', async () => {
     let resolveFetch;
-    const fetchImpl = jest.fn(() => new Promise((resolve) => { resolveFetch = resolve; }));
+    const fetchImpl = jest.fn(
+      () =>
+        new Promise((resolve) => {
+          resolveFetch = resolve;
+        })
+    );
 
     const p1 = getLichessGamesPgnRatedCached({ username: 'u', limit: 500, fetchImpl });
     const p2 = getLichessGamesPgnRatedCached({ username: 'u', limit: 500, fetchImpl });
@@ -57,7 +62,7 @@ describe('personal-games-service', () => {
     resolveFetch({
       ok: true,
       status: 200,
-      text: async () => '[Event "A"]\n\n1. e4 e5 1-0'
+      text: async () => '[Event "A"]\n\n1. e4 e5 1-0',
     });
 
     const data = await p1;

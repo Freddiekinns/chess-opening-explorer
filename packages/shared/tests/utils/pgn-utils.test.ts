@@ -10,7 +10,7 @@ import {
   buildOpeningsMap,
   findDeepestMatch,
   lookupOpeningFromPGN,
-  OpeningForLookup
+  OpeningForLookup,
 } from '../../src/utils/pgn-utils.js';
 
 describe('extractMoveText', () => {
@@ -167,13 +167,13 @@ describe('buildOpeningsMap', () => {
     {
       fen: 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2',
       name: "King's Pawn Game",
-      eco: 'C20'
+      eco: 'C20',
     },
     {
       fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2',
       name: 'Sicilian Defense',
-      eco: 'B20'
-    }
+      eco: 'B20',
+    },
   ];
 
   test('should build map from openings array', () => {
@@ -194,10 +194,7 @@ describe('buildOpeningsMap', () => {
   });
 
   test('should skip openings without FEN', () => {
-    const openings = [
-      { fen: '', name: 'No FEN', eco: 'A00' },
-      ...mockOpenings
-    ];
+    const openings = [{ fen: '', name: 'No FEN', eco: 'A00' }, ...mockOpenings];
     const map = buildOpeningsMap(openings);
     expect(map.size).toBe(2);
   });
@@ -208,18 +205,18 @@ describe('findDeepestMatch', () => {
     {
       fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
       name: "King's Pawn Opening",
-      eco: 'B00'
+      eco: 'B00',
     },
     {
       fen: 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2',
       name: "King's Pawn Game",
-      eco: 'C20'
+      eco: 'C20',
     },
     {
       fen: 'rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2',
       name: "King's Knight Opening",
-      eco: 'C40'
-    }
+      eco: 'C40',
+    },
   ];
 
   test('should find exact end match', () => {
@@ -278,13 +275,13 @@ describe('lookupOpeningFromPGN', () => {
     {
       fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2',
       name: 'Sicilian Defense',
-      eco: 'B20'
+      eco: 'B20',
     },
     {
       fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2',
       name: 'Sicilian Defense: Open',
-      eco: 'B27'
-    }
+      eco: 'B27',
+    },
   ];
 
   test('should find Sicilian Defense from PGN', () => {

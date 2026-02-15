@@ -1,13 +1,18 @@
 ---
-description: "Chess Opening Explorer project architecture, domain knowledge, and key patterns"
-applyTo: "**"
+description:
+  'Chess Opening Explorer project architecture, domain knowledge, and key
+  patterns'
+applyTo: '**'
 ---
 
 # Chess Opening Explorer - Project Overview
 
 ## Project Purpose
 
-The Chess Opening Explorer is a comprehensive web application that helps chess players explore, learn, and analyze chess openings. It combines rich opening data, popularity statistics from Lichess, LLM-generated educational content, and curated YouTube videos to provide an immersive learning experience.
+The Chess Opening Explorer is a comprehensive web application that helps chess
+players explore, learn, and analyze chess openings. It combines rich opening
+data, popularity statistics from Lichess, LLM-generated educational content, and
+curated YouTube videos to provide an immersive learning experience.
 
 ## Core Features
 

@@ -1,21 +1,21 @@
-import React, { useState, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useRelatedOpenings } from '../../useRelatedOpenings'
-import { LineTypePill } from '../shared/LineTypePill'
-import { VariationItem } from './VariationItem'
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRelatedOpenings } from '../../useRelatedOpenings';
+import { LineTypePill } from '../shared/LineTypePill';
+import { VariationItem } from './VariationItem';
 
 interface Props {
-  fen: string | undefined
-  className?: string
+  fen: string | undefined;
+  className?: string;
 }
 
 export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => {
-  const { data, loading, error, refetch } = useRelatedOpenings(fen)
-  const navigate = useNavigate()
-  const [expanded, setExpanded] = useState(false)
-  const liveRef = useRef<HTMLDivElement | null>(null)
+  const { data, loading, error, refetch } = useRelatedOpenings(fen);
+  const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+  const liveRef = useRef<HTMLDivElement | null>(null);
 
-  if (!fen) return null
+  if (!fen) return null;
 
   if (loading) {
     return (
@@ -25,31 +25,38 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
         <div className="skeleton-text medium" />
         <div className="skeleton-text long" />
       </div>
-    )
+    );
   }
 
   if (error) {
     return (
       <div className={`related-openings-tab ${className}`.trim()} role="alert">
         <p className="error-state">Failed to load related openings.</p>
-        <button onClick={refetch} className="retry-btn">Retry</button>
+        <button onClick={refetch} className="retry-btn">
+          Retry
+        </button>
       </div>
-    )
+    );
   }
 
-  if (!data) return null
+  if (!data) return null;
 
-  const { mainline, siblings = [], counts } = data as any
-  const safeSiblings = Array.isArray(siblings) ? siblings : []
-  const safeCounts = counts || { siblings: safeSiblings.length }
-  const list = expanded ? safeSiblings : safeSiblings.slice(0, 10)
-  const needsExpand = safeCounts.siblings > 10
-  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot)
+  const { mainline, siblings = [], counts } = data as any;
+  const safeSiblings = Array.isArray(siblings) ? siblings : [];
+  const safeCounts = counts || { siblings: safeSiblings.length };
+  const list = expanded ? safeSiblings : safeSiblings.slice(0, 10);
+  const needsExpand = safeCounts.siblings > 10;
+  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot);
 
   return (
-  <section className={`related-openings-tab ${className}`.trim()} aria-labelledby="related-openings-tab-heading">
+    <section
+      className={`related-openings-tab ${className}`.trim()}
+      aria-labelledby="related-openings-tab-heading"
+    >
       <div className="tab-header">
-    <h3 id="related-openings-tab-heading" className="section-title">Related Openings</h3>
+        <h3 id="related-openings-tab-heading" className="section-title">
+          Related Openings
+        </h3>
         {data.ecoCode && <span className="eco-pill">{data.ecoCode}</span>}
       </div>
       {/* Contextual callout when the user is currently on a variation (not the ECO root) */}
@@ -64,12 +71,15 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
           </button>
         </div>
       )}
-      {(!currentIsMainline && mainline) && (
+      {!currentIsMainline && mainline && (
         <div className="mainline-block">
           <h4 className="group-label">Mainline</h4>
           <ul className="related-list" role="list">
             <li className="related-item mainline" role="listitem">
-        <button className="related-link" onClick={() => navigate(`/opening/${encodeURIComponent(mainline.fen)}`)}>
+              <button
+                className="related-link"
+                onClick={() => navigate(`/opening/${encodeURIComponent(mainline.fen)}`)}
+              >
                 <span className="name">{mainline.name}</span>
                 <LineTypePill isMainline={true} className="inline-pill" />
               </button>
@@ -78,13 +88,20 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
         </div>
       )}
       <div className="variations-block">
-  <h4 className="group-label">Variations ({safeCounts.siblings})</h4>
-  {/* Static sort descriptor bar per scope decision: fixed sorting by games analyzed */}
-  <div className="sort-descriptor" aria-label="Sorting description">Sorted by games analyzed</div>
-  {safeCounts.siblings === 0 && <p className="empty-state">No other variations in this ECO group.</p>}
-  {safeCounts.siblings > 0 && (
-          <ul className={`related-list variation-grid cols-${expanded ? 'full' : 'partial'}`} role="list">
-            {list.map(o => (
+        <h4 className="group-label">Variations ({safeCounts.siblings})</h4>
+        {/* Static sort descriptor bar per scope decision: fixed sorting by games analyzed */}
+        <div className="sort-descriptor" aria-label="Sorting description">
+          Sorted by games analyzed
+        </div>
+        {safeCounts.siblings === 0 && (
+          <p className="empty-state">No other variations in this ECO group.</p>
+        )}
+        {safeCounts.siblings > 0 && (
+          <ul
+            className={`related-list variation-grid cols-${expanded ? 'full' : 'partial'}`}
+            role="list"
+          >
+            {list.map((o) => (
               <VariationItem
                 key={o.fen}
                 fen={o.fen}
@@ -105,16 +122,16 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
             <button
               className="expand-btn"
               onClick={() => {
-                setExpanded(e => {
-                  const next = !e
+                setExpanded((e) => {
+                  const next = !e;
                   // Announce change for screen readers
                   if (liveRef.current) {
                     liveRef.current.textContent = next
                       ? `Expanded list to show all ${safeCounts.siblings} variations.`
-                      : 'Collapsed list to show top variations.'
+                      : 'Collapsed list to show top variations.';
                   }
-                  return next
-                })
+                  return next;
+                });
               }}
               aria-expanded={expanded}
             >
@@ -124,7 +141,7 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
         )}
         <div className="sr-only" aria-live="polite" ref={liveRef} />
       </div>
-  </section>
-  )
-}
-export default RelatedOpeningsTab
+    </section>
+  );
+};
+export default RelatedOpeningsTab;

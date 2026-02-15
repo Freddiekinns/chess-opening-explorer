@@ -12,24 +12,28 @@ describe('Personal API Routes', () => {
   });
 
   test('GET /api/personal/games validates platform', async () => {
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: jest.fn(),
-      getChessComGamesPgnCached: jest.fn()
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: jest.fn(),
+        getChessComGamesPgnCached: jest.fn(),
+      })
+    );
 
-    const res = await request(app)
-      .get('/api/personal/games?username=foo')
-      .expect(400);
+    const res = await request(app).get('/api/personal/games?username=foo').expect(400);
 
     expect(res.body.success).toBe(false);
     expect(res.body.error).toBe('platform is required');
   });
 
   test('GET /api/personal/games rejects unsupported platform', async () => {
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: jest.fn(),
-      getChessComGamesPgnCached: jest.fn()
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: jest.fn(),
+        getChessComGamesPgnCached: jest.fn(),
+      })
+    );
 
     const res = await request(app)
       .get('/api/personal/games?platform=invalid&username=foo')
@@ -42,14 +46,15 @@ describe('Personal API Routes', () => {
   });
 
   test('GET /api/personal/games validates username', async () => {
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: jest.fn(),
-      getChessComGamesPgnCached: jest.fn()
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: jest.fn(),
+        getChessComGamesPgnCached: jest.fn(),
+      })
+    );
 
-    const res = await request(app)
-      .get('/api/personal/games?platform=lichess')
-      .expect(400);
+    const res = await request(app).get('/api/personal/games?platform=lichess').expect(400);
 
     expect(res.body.success).toBe(false);
     expect(res.body.error).toBe('username is required');
@@ -59,15 +64,18 @@ describe('Personal API Routes', () => {
     const mockLichess = jest.fn().mockResolvedValue({
       gamesPgn: ['[Event "test"]\n\n1. e4 e5 1-0'],
       meta: { requested: 500, returned: 1 },
-      cacheHit: true
+      cacheHit: true,
     });
     const mockChessCom = jest.fn();
 
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: mockLichess,
-      getChessComGamesPgnCached: mockChessCom,
-      rateLimit: { windowMs: 10 * 60 * 1000, max: 1000 }
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockLichess,
+        getChessComGamesPgnCached: mockChessCom,
+        rateLimit: { windowMs: 10 * 60 * 1000, max: 1000 },
+      })
+    );
 
     const res = await request(app)
       .get('/api/personal/games?platform=lichess&username=SomeUser&limit=500')
@@ -76,7 +84,7 @@ describe('Personal API Routes', () => {
     expect(res.body).toEqual({
       success: true,
       data: { gamesPgn: ['[Event "test"]\n\n1. e4 e5 1-0'] },
-      meta: { requested: 500, returned: 1, cacheHit: true }
+      meta: { requested: 500, returned: 1, cacheHit: true },
     });
 
     expect(mockLichess).toHaveBeenCalledWith({ username: 'SomeUser', limit: 500 });
@@ -88,14 +96,17 @@ describe('Personal API Routes', () => {
     const mockChessCom = jest.fn().mockResolvedValue({
       gamesPgn: ['[Event "Live Chess"]\n\n1. d4 d5 1/2-1/2'],
       meta: { requested: 100, returned: 1, archivesChecked: 1 },
-      cacheHit: false
+      cacheHit: false,
     });
 
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: mockLichess,
-      getChessComGamesPgnCached: mockChessCom,
-      rateLimit: { windowMs: 10 * 60 * 1000, max: 1000 }
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockLichess,
+        getChessComGamesPgnCached: mockChessCom,
+        rateLimit: { windowMs: 10 * 60 * 1000, max: 1000 },
+      })
+    );
 
     const res = await request(app)
       .get('/api/personal/games?platform=chess.com&username=MagnusCarlsen&limit=100')
@@ -104,7 +115,7 @@ describe('Personal API Routes', () => {
     expect(res.body).toEqual({
       success: true,
       data: { gamesPgn: ['[Event "Live Chess"]\n\n1. d4 d5 1/2-1/2'] },
-      meta: { requested: 100, returned: 1, archivesChecked: 1, cacheHit: false }
+      meta: { requested: 100, returned: 1, archivesChecked: 1, cacheHit: false },
     });
 
     expect(mockChessCom).toHaveBeenCalledWith({ username: 'MagnusCarlsen', limit: 100 });
@@ -115,18 +126,19 @@ describe('Personal API Routes', () => {
     const mockGet = jest.fn().mockResolvedValue({
       gamesPgn: [],
       meta: { requested: 500, returned: 0 },
-      cacheHit: false
+      cacheHit: false,
     });
 
-    app.use('/api/personal', createPersonalRoutes({
-      getLichessGamesPgnRatedCached: mockGet,
-      getChessComGamesPgnCached: jest.fn(),
-      rateLimit: { windowMs: 60 * 1000, max: 1 }
-    }));
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockGet,
+        getChessComGamesPgnCached: jest.fn(),
+        rateLimit: { windowMs: 60 * 1000, max: 1 },
+      })
+    );
 
-    await request(app)
-      .get('/api/personal/games?platform=lichess&username=user')
-      .expect(200);
+    await request(app).get('/api/personal/games?platform=lichess&username=user').expect(200);
 
     const res = await request(app)
       .get('/api/personal/games?platform=lichess&username=user')

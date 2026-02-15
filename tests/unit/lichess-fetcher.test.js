@@ -4,12 +4,7 @@
  */
 
 const fetcher = require('../../tools/course-discovery/lib/lichess-fetcher');
-const {
-  fetchStudyList,
-  fetchStudyPGN,
-  parseNDJSON,
-  resetRateLimiter
-} = fetcher;
+const { fetchStudyList, fetchStudyPGN, parseNDJSON, resetRateLimiter } = fetcher;
 
 // Mock global fetch
 const originalFetch = global.fetch;
@@ -31,7 +26,7 @@ describe('parseNDJSON', () => {
     const result = parseNDJSON(text);
     expect(result).toEqual([
       { id: 'abc', name: 'Study 1' },
-      { id: 'def', name: 'Study 2' }
+      { id: 'def', name: 'Study 2' },
     ]);
   });
 
@@ -64,12 +59,13 @@ describe('parseNDJSON', () => {
 
 describe('fetchStudyList', () => {
   test('should fetch and parse study list', async () => {
-    const ndjson = '{"id":"abc123","name":"French Defense","createdAt":1609459200,"updatedAt":1609545600}\n{"id":"def456","name":"Sicilian","createdAt":1609459200,"updatedAt":1609545600}\n';
+    const ndjson =
+      '{"id":"abc123","name":"French Defense","createdAt":1609459200,"updatedAt":1609545600}\n{"id":"def456","name":"Sicilian","createdAt":1609459200,"updatedAt":1609545600}\n';
 
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve(ndjson)
+      text: () => Promise.resolve(ndjson),
     });
 
     const result = await fetchStudyList('TestUser');
@@ -79,19 +75,18 @@ describe('fetchStudyList', () => {
       id: 'abc123',
       name: 'French Defense',
       createdAt: 1609459200,
-      updatedAt: 1609545600
+      updatedAt: 1609545600,
     });
-    expect(global.fetch).toHaveBeenCalledWith(
-      'https://lichess.org/api/study/by/TestUser',
-      { headers: { 'Accept': 'application/x-ndjson' } }
-    );
+    expect(global.fetch).toHaveBeenCalledWith('https://lichess.org/api/study/by/TestUser', {
+      headers: { Accept: 'application/x-ndjson' },
+    });
   });
 
   test('should return empty array for 404 (user not found)', async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 404,
-      statusText: 'Not Found'
+      statusText: 'Not Found',
     });
 
     const result = await fetchStudyList('NonexistentUser');
@@ -102,7 +97,7 @@ describe('fetchStudyList', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 500,
-      statusText: 'Internal Server Error'
+      statusText: 'Internal Server Error',
     });
 
     await expect(fetchStudyList('TestUser')).rejects.toThrow('Failed to fetch studies');
@@ -117,7 +112,7 @@ describe('fetchStudyList', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve('')
+      text: () => Promise.resolve(''),
     });
 
     const result = await fetchStudyList('EmptyUser');
@@ -127,12 +122,13 @@ describe('fetchStudyList', () => {
 
 describe('fetchStudyPGN', () => {
   test('should fetch PGN for a study', async () => {
-    const pgn = '[Event "Chapter 1"]\n[Site "https://lichess.org/study/abc123/ch1"]\n\n1. e4 e6 *\n';
+    const pgn =
+      '[Event "Chapter 1"]\n[Site "https://lichess.org/study/abc123/ch1"]\n\n1. e4 e6 *\n';
 
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve(pgn)
+      text: () => Promise.resolve(pgn),
     });
 
     const result = await fetchStudyPGN('abc123');
@@ -148,7 +144,7 @@ describe('fetchStudyPGN', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 404,
-      statusText: 'Not Found'
+      statusText: 'Not Found',
     });
 
     const result = await fetchStudyPGN('nonexistent');
@@ -159,7 +155,7 @@ describe('fetchStudyPGN', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 500,
-      statusText: 'Internal Server Error'
+      statusText: 'Internal Server Error',
     });
 
     await expect(fetchStudyPGN('abc123')).rejects.toThrow('Failed to fetch PGN');
@@ -181,7 +177,7 @@ describe('rate limiting', () => {
       return Promise.resolve({
         ok: true,
         status: 200,
-        text: () => Promise.resolve('{"id":"abc"}')
+        text: () => Promise.resolve('{"id":"abc"}'),
       });
     });
 
@@ -197,7 +193,7 @@ describe('rate limiting', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 429,
-      statusText: 'Too Many Requests'
+      statusText: 'Too Many Requests',
     });
 
     await expect(fetchStudyList('TestUser')).rejects.toThrow('Rate limited after');

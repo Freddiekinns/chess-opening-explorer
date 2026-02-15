@@ -2,10 +2,14 @@
 
 ## Quick Rules (Always Apply)
 
-1. **CSS Modules when touching styles** - Extract component CSS into `.module.css` files when modifying styles. Legacy global styles in `packages/web/src/styles/simplified.css`. See `reactjs.instructions.md` for migration guide & checklist.
+1. **CSS Modules when touching styles** - Extract component CSS into
+   `.module.css` files when modifying styles. Legacy global styles in
+   `packages/web/src/styles/simplified.css`. See `reactjs.instructions.md` for
+   migration guide & checklist.
 2. **TypeScript** for React components
 3. **Python** for `tools/analysis/` only
-4. **Tests alongside source** - Backend: `tests/`, Frontend: `packages/web/src/**/__tests__/`
+4. **Tests alongside source** - Backend: `tests/`, Frontend:
+   `packages/web/src/**/__tests__/`
 5. **Commits**: conventional format (`feat`/`fix`/`chore`)
 6. **Early returns** over nested conditionals
 7. **Named exports** for utilities, default for components
@@ -24,10 +28,12 @@
 ## Environment Setup
 
 **Required:**
+
 - Node.js >= 18.0.0
 - npm >= 8.0.0
 
 **API Keys (optional for basic development):**
+
 - `YOUTUBE_API_KEY` - Required for video pipeline
 - `OPENAI_API_KEY` - Required for LLM enrichment
 - Copy `.env.example` to `.env` and add keys as needed
@@ -71,15 +77,15 @@ npm run pipeline:match       # Match videos to openings
 
 ## Instructions (Load As Needed)
 
-| Task | File |
-|------|------|
-| **JavaScript/Node.js** | `javascript.instructions.md` |
-| **Python** | `python.instructions.md` |
-| **React** | `reactjs.instructions.md` |
-| **Code Quality** | `code-standards.instructions.md` |
-| **Testing** | `testing.instructions.md` |
-| **Git/Commits** | `workflow.instructions.md` |
-| **Project Overview** | `project-overview.instructions.md` |
+| Task                   | File                               |
+| ---------------------- | ---------------------------------- |
+| **JavaScript/Node.js** | `javascript.instructions.md`       |
+| **Python**             | `python.instructions.md`           |
+| **React**              | `reactjs.instructions.md`          |
+| **Code Quality**       | `code-standards.instructions.md`   |
+| **Testing**            | `testing.instructions.md`          |
+| **Git/Commits**        | `workflow.instructions.md`         |
+| **Project Overview**   | `project-overview.instructions.md` |
 
 ## Project Structure
 
@@ -101,6 +107,7 @@ chess-opening-explorer/
 ## Data Pipeline Workflows
 
 **LLM Enrichment:**
+
 ```bash
 npm run enrich               # Enrich openings with AI-generated content
 npm run course:enrich        # Enrich course data
@@ -108,6 +115,7 @@ npm run course:integrate     # Integrate course data into main dataset
 ```
 
 **Video Pipeline:**
+
 ```bash
 npm run pipeline:complete    # Full pipeline (discover → filter → enrich → match)
 npm run pipeline:discover    # Step 1: Discover videos from RSS feeds
@@ -117,12 +125,14 @@ npm run pipeline:match       # Step 4: Match videos to openings
 ```
 
 **Course Discovery:**
+
 ```bash
 npm run course:discover      # Discover courses from Lichess educators
 # See tools/course-discovery/README.md for details
 ```
 
 **Popularity Stats:**
+
 ```bash
 cd tools/analysis && python run_pipeline.py
 # Updates Lichess statistics from master games
@@ -131,16 +141,19 @@ cd tools/analysis && python run_pipeline.py
 ## Common Patterns
 
 ### Bug Fix
+
 1. Read `activeContext.md` + `progress.md`
 2. Load language-specific + `testing.instructions.md`
 3. Fix, test, commit
 
 ### New Feature
+
 1. Read `activeContext.md` + `progress.md` + `context.md`
 2. Load language-specific + `testing.instructions.md`
 3. Implement, test, commit
 
 ### Refactoring
+
 1. Read `context.md` (for patterns) + `activeContext.md`
 2. Load `code-standards.instructions.md`
 3. Refactor, test, commit

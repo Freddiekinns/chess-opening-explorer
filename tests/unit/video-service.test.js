@@ -10,7 +10,7 @@ jest.mock('fs', () => ({
   readFileSync: jest.fn(),
   writeFileSync: jest.fn(),
   mkdirSync: jest.fn(),
-  readdirSync: jest.fn()
+  readdirSync: jest.fn(),
 }));
 
 const fs = require('fs');
@@ -23,10 +23,10 @@ describe('VideoAccessService', () => {
     jest.clearAllMocks();
     mockVideoDir = '/mock/video/dir';
     service = new VideoAccessService(mockVideoDir);
-    
+
     // Mock fs.existsSync with default behavior (can be overridden in individual tests)
     fs.existsSync.mockReturnValue(false);
-    
+
     service.clearCache();
   });
 
@@ -47,7 +47,7 @@ describe('VideoAccessService', () => {
     it('should return empty array for position without videos', async () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       fs.existsSync.mockReturnValue(false);
-      
+
       const videos = await service.getVideosForPosition(fen);
       expect(videos).toEqual([]);
     });
@@ -57,16 +57,18 @@ describe('VideoAccessService', () => {
       const mockVideoData = {
         fen: fen,
         name: 'Kings Pawn Opening',
-        videos: [{
-          title: 'Test Opening Video',
-          url: 'https://youtube.com/watch?v=test123',
-          channel: 'Test Channel'
-        }]
+        videos: [
+          {
+            title: 'Test Opening Video',
+            url: 'https://youtube.com/watch?v=test123',
+            channel: 'Test Channel',
+          },
+        ],
       };
-      
+
       fs.existsSync.mockReturnValue(true);
       fs.readFileSync.mockReturnValue(JSON.stringify(mockVideoData));
-      
+
       const videos = await service.getVideosForPosition(fen);
       expect(videos).toHaveLength(1);
       expect(videos[0].title).toBe('Test Opening Video');
@@ -74,12 +76,12 @@ describe('VideoAccessService', () => {
 
     it('should handle file read errors gracefully', async () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1';
-      
+
       fs.existsSync.mockReturnValue(true);
       fs.readFileSync.mockImplementation(() => {
         throw new Error('File read error');
       });
-      
+
       const videos = await service.getVideosForPosition(fen);
       expect(videos).toEqual([]);
     });
@@ -89,7 +91,7 @@ describe('VideoAccessService', () => {
     it('should return false for position without videos', async () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       fs.existsSync.mockReturnValue(false);
-      
+
       const hasVideos = await service.hasExistingVideos(fen);
       expect(hasVideos).toBe(false);
     });
@@ -97,12 +99,12 @@ describe('VideoAccessService', () => {
     it('should return true for position with videos', async () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1';
       fs.existsSync.mockReturnValue(true);
-      fs.readFileSync.mockReturnValue(JSON.stringify({
-        videos: [
-          { id: 'test-video', title: 'Test Video', channel: 'Test Channel' }
-        ]
-      }));
-      
+      fs.readFileSync.mockReturnValue(
+        JSON.stringify({
+          videos: [{ id: 'test-video', title: 'Test Video', channel: 'Test Channel' }],
+        })
+      );
+
       const hasVideos = await service.hasExistingVideos(fen);
       expect(hasVideos).toBe(true);
     });
@@ -112,10 +114,10 @@ describe('VideoAccessService', () => {
     it('should clear the video cache', async () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       fs.existsSync.mockReturnValue(false);
-      
+
       await service.getVideosForPosition(fen);
       expect(service.getCacheStats().cachedPositions).toBe(1);
-      
+
       service.clearCache();
       expect(service.getCacheStats().cachedPositions).toBe(0);
     });

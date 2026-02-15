@@ -1,6 +1,6 @@
 ---
-description: "Code quality, commenting, and performance standards"
-applyTo: "**"
+description: 'Code quality, commenting, and performance standards'
+applyTo: '**'
 ---
 
 # Code Standards
@@ -16,7 +16,7 @@ applyTo: "**"
 
 ```javascript
 // Variables/functions: camelCase (JS) or snake_case (Python)
-const openingName = "Sicilian Defense";
+const openingName = 'Sicilian Defense';
 
 // Constants: UPPER_SNAKE_CASE
 const MAX_RETRIES = 3;
@@ -55,8 +55,11 @@ function createOpening({ name, eco, moves, popularity }) {}
 try {
   processData();
 } catch (error) {
-  logger.error("Failed to process opening data", { error: error.message, openingId });
-  throw new ProcessingError("Opening data processing failed", { cause: error });
+  logger.error('Failed to process opening data', {
+    error: error.message,
+    openingId,
+  });
+  throw new ProcessingError('Opening data processing failed', { cause: error });
 }
 ```
 
@@ -65,20 +68,25 @@ try {
 **Write code that speaks for itself. Comment only to explain WHY, not WHAT.**
 
 ### Avoid
+
 ```javascript
-let counter = 0;  // Initialize counter to zero  ❌
+let counter = 0; // Initialize counter to zero  ❌
 ```
 
 ### Write
+
 ```javascript
 // GitHub API rate limit: 5000 requests/hour for authenticated users
 await rateLimiter.wait();
 
 // Using Floyd-Warshall because we need all-pairs shortest paths
-for (let k = 0; k < vertices; k++) { /* ... */ }
+for (let k = 0; k < vertices; k++) {
+  /* ... */
+}
 ```
 
 ### Annotations
+
 ```javascript
 // TODO: Replace after security review
 // FIXME: Memory leak - investigate connection pooling
@@ -88,18 +96,21 @@ for (let k = 0; k < vertices; k++) { /* ... */ }
 ## Performance (When It Matters)
 
 ### Frontend
+
 - Batch DOM updates
 - Use `React.memo`, `useMemo`, `useCallback` to prevent re-renders
 - Lazy load images: `loading="lazy"`
 - Debounce/throttle event handlers
 
 ### Backend
+
 - Use async I/O - never block
 - Batch database/API calls
 - Cache expensive computations
 - Stream large data sets
 
 ### Database
+
 - Index frequently queried columns
 - Avoid `SELECT *`
 - Use `LIMIT` for large result sets

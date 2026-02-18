@@ -45,6 +45,7 @@ chess-opening-explorer/
 ├── api/                  # Vercel serverless wrappers
 ├── tools/
 │   ├── analysis/         # Python: Lichess stats pipeline
+│   ├── course-discovery/ # Node: Lichess study import pipeline
 │   ├── llm-enrichment/   # Node: AI content generation
 │   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/                # Backend tests (Jest)
@@ -79,6 +80,16 @@ cd tools/analysis && python run_pipeline.py
 ```
 
 Processes Lichess game data to calculate opening statistics.
+
+### Course Discovery
+
+```bash
+npm run course:discover   # Find popular Lichess studies
+npm run course:import     # Import studies into courses.json
+```
+
+Imports Lichess studies matched to openings by FEN. See
+[tools/course-discovery/README.md](tools/course-discovery/README.md).
 
 ### Video Pipeline
 

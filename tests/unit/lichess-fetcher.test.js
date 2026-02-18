@@ -4,7 +4,7 @@
  */
 
 const fetcher = require('../../tools/course-discovery/lib/lichess-fetcher');
-const { fetchStudyList, fetchStudyPGN, parseNDJSON, resetRateLimiter } = fetcher;
+const { fetchStudyList, fetchStudyPGN, fetchStudyMetadata, parseNDJSON, resetRateLimiter } = fetcher;
 
 // Mock global fetch
 const originalFetch = global.fetch;
@@ -163,6 +163,101 @@ describe('fetchStudyPGN', () => {
 
   test('should throw on null study ID', async () => {
     await expect(fetchStudyPGN(null)).rejects.toThrow('Study ID is required');
+  });
+});
+
+describe('fetchStudyMetadata', () => {
+  test('should fetch metadata for a study', async () => {
+    const responseData = {
+      study: {
+        id: 'abc123',
+        name: 'French Defense Study',
+        likes: 42,
+        ownerId: 'TestAuthor',
+        members: { TestAuthor: { user: { name: 'TestAuthor' }, role: 'w' } },
+      },
+    };
+
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve(responseData),
+    });
+
+    const result = await fetchStudyMetadata('abc123');
+
+    expect(result).toEqual({
+      id: 'abc123',
+      name: 'French Defense Study',
+      likes: 42,
+      owner: 'TestAuthor',
+    });
+    expect(global.fetch).toHaveBeenCalledWith(
+      'https://lichess.org/study/abc123',
+      { headers: { Accept: 'application/json' } }
+    );
+  });
+
+  test('should return null for 404', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+    });
+
+    const result = await fetchStudyMetadata('nonexistent');
+    expect(result).toBeNull();
+  });
+
+  test('should throw on server error', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
+
+    await expect(fetchStudyMetadata('abc123')).rejects.toThrow('Failed to fetch metadata');
+  });
+
+  test('should throw on null study ID', async () => {
+    await expect(fetchStudyMetadata(null)).rejects.toThrow('Study ID is required');
+  });
+
+  test('should handle missing ownerId gracefully', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ study: { id: 'abc', name: 'Test', likes: 10 } }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.owner).toBe('');
+    expect(result.likes).toBe(10);
+  });
+
+  test('should handle missing likes field', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ study: { id: 'abc', name: 'Test', ownerId: 'User' } }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.likes).toBe(0);
+    expect(result.owner).toBe('User');
+  });
+
+  test('should handle flat response format (no study wrapper)', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ id: 'abc', name: 'Test', likes: 5, ownerId: 'FlatUser' }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.name).toBe('Test');
+    expect(result.likes).toBe(5);
+    expect(result.owner).toBe('FlatUser');
   });
 });
 

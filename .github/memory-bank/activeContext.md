@@ -1,53 +1,75 @@
 # Active Context
 
-**Date:** 2026-02-13
+**Date:** 2026-02-18
 
-## Current Focus: TASK004 - Studies Tab Frontend + Pipeline Fix
+## Current Focus: TASK004 - Course Discovery Pipeline Complete
 
-Studies tab frontend is **implemented** on branch `feat/studies-tab`. Pipeline
-bug fix for chapter-level URLs also included. Next step: re-run pipeline to
-backfill chapter links, then verify UI with real data.
+The course discovery pipeline has been fully rebuilt with a clean two-step
+architecture on branch `feat/studies-tab`. All data is imported and the pipeline
+is consolidated.
 
-## Session Summary (2026-02-13)
+## Session Summary (2026-02-18)
 
-### Studies Tab Frontend Implementation
+### Course Discovery Pipeline: Full Rebuild & Import
 
-- **New component:** `StudiesGallery.tsx` with CSS Module — vertical list of
-  study cards (title, author, platform badge, "Open" link to Lichess), show-more
-  toggle (5 initially, then all), and search links section (Lichess +
-  Chessable).
-- **Tab integration:** Added `STUDIES` to `TAB_TYPES` in
-  `OpeningDetailPage.tsx`. Tab order: Overview → Plans → Studies → Videos. Tab
-  labels shortened: "Plans", "Studies (N)", "Videos (N)".
-- **Data fetching:** `loadStudies()` calls
-  `GET /api/courses/:fen?openingName=...`, sets studies + searchLinks state.
-- **Conditional rendering:** Studies tab shown when curated studies exist OR
-  search links available. Search links always visible at bottom.
-- **Build verified:** TypeScript compiles cleanly, Vite build succeeds.
+**Architecture:** Two-step pipeline replacing the old author-based approach:
 
-### Pipeline Bug Fixes: Chapter-Level URLs (2 bugs)
+1. **Discover** (`discover-popular.js`): Search Lichess for popular studies
+   (500+ likes), classify as opening-related, output new URLs
+2. **Import** (`add-studies.js`): Read `curated-studies.txt`, fetch
+   metadata+PGN, match chapters to ECO openings by FEN, write `courses.json`
 
-1. **`[ChapterURL]` not read:** PGN matcher only looked at `[Site]`, but most
-   Lichess PGN exports use `[ChapterURL]`. Fixed by adding `[ChapterURL]`
-   extraction.
-2. **`[Site]` wrongly prioritised over `[ChapterURL]`:** When both headers
-   exist, `[Site]` can reference a different source study (imported chapters).
-   Fixed by preferring `[ChapterURL]` over `[Site]`.
+**Data Results:**
 
-- **Impact:** Only 476/20,300 entries (2.3%) had chapter-level links before fix.
-- **Tests:** All 30 pgn-matcher tests pass.
-- **Next step:** Re-run `npm run course:discover` to regenerate all entries with
-  `/study/{studyId}/{chapterId}` URLs.
+| Metric          | Value                              |
+| --------------- | ---------------------------------- |
+| Curated studies | 630 URLs in curated-studies.txt    |
+| Studies fetched | 440 (97 failed: 58 404s, 39 403s) |
+| FEN positions   | 2,255 unique                       |
+| Course entries  | 6,142 total                        |
+| All curated     | Yes (no auto_discovered entries)   |
+| All have likes  | Yes                                |
+
+**Discovery Phase:**
+
+- Searched 46 opening terms on Lichess study search
+- Found 441 unique studies with 500+ likes
+- 431 classified as opening-related (10 correctly excluded: endgames, puzzles)
+- 294 new studies not already in curated list
+- Appended to curated-studies.txt and imported
+
+**Cleanup & Consolidation:**
+
+- Removed deprecated files: `index.js` (author pipeline), `quality-filter.js`,
+  `authors.json`, `quality-filter.test.js`
+- Updated integration tests (removed quality-filter tests)
+- Updated `course-merger.js` JSDoc
+- Rewrote `tools/course-discovery/README.md` for new architecture
+- Updated npm scripts (`course:discover` → `discover-popular.js`)
+- Added state file patterns to `.gitignore`
+- Deleted stale `api/data/courses.json` (was 692 bytes, unused)
+- All 35 test suites (491 tests) passing
 
 ### Files Changed
 
-| File                                                           | Change                                      |
-| -------------------------------------------------------------- | ------------------------------------------- |
-| `packages/web/src/components/detail/StudiesGallery.tsx`        | New component                               |
-| `packages/web/src/components/detail/StudiesGallery.module.css` | New styles                                  |
-| `packages/web/src/components/detail/index.ts`                  | Added StudiesGallery export                 |
-| `packages/web/src/pages/OpeningDetailPage.tsx`                 | Added Studies tab (types, state, fetch, UI) |
-| `tools/course-discovery/lib/pgn-matcher.js`                    | Fixed ChapterURL extraction                 |
+| File                                            | Change                           |
+| ----------------------------------------------- | -------------------------------- |
+| `tools/course-discovery/add-studies.js`         | Main importer (created earlier)  |
+| `tools/course-discovery/discover-popular.js`    | Discovery tool (created earlier) |
+| `tools/course-discovery/lib/lichess-fetcher.js` | Updated metadata endpoint        |
+| `tools/course-discovery/lib/course-merger.js`   | Updated JSDoc                    |
+| `tools/course-discovery/README.md`              | Complete rewrite                 |
+| `tools/course-discovery/config/curated-studies.txt` | 630 study URLs             |
+| `tools/course-discovery/config/discovered-studies.txt` | 294 discovered URLs     |
+| `packages/api/src/data/courses.json`            | 6,142 entries across 2,255 FENs |
+| `package.json`                                  | Updated npm scripts              |
+| `tests/integration/course-pipeline.test.js`     | Removed quality-filter tests     |
+| `.gitignore`                                    | Added state file patterns        |
+| `api/data/courses.json`                         | Deleted (stale)                  |
+| `tools/course-discovery/index.js`               | Deleted (deprecated)             |
+| `tools/course-discovery/lib/quality-filter.js`  | Deleted (deprecated)             |
+| `tools/course-discovery/config/authors.json`    | Deleted (deprecated)             |
+| `tests/unit/quality-filter.test.js`             | Deleted (deprecated)             |
 
 ## Session Summary (2026-02-10)
 

@@ -14,10 +14,16 @@
 - **Course Recommendations:** The backend data and API endpoint
   (`/api/courses/:fen`) for course recommendations are complete. The initial
   data for the F03 (King's Pawn Game) ECO code is fully integrated.
-- **Course Discovery Pipeline:** Fetches public Lichess studies from known
-  educators, parses PGN chapters, matches to openings by FEN, and merges into
-  `courses.json`. Includes rate limiting, resume capability, and manual curation
-  preservation. Run via `npm run course:discover`. 57 unit tests.
+- **Course Discovery Pipeline:** Two-step architecture for importing Lichess
+  studies into `courses.json`. Step 1: `discover-popular.js` searches Lichess
+  for popular studies (500+ likes), classifies as opening-related, outputs new
+  URLs. Step 2: `add-studies.js` reads `curated-studies.txt`, fetches
+  metadata+PGN via Lichess API, matches chapters to ECO openings by FEN, and
+  writes to `courses.json`. Supports `--resume`, `--dryRun`, `--limit`,
+  `--verbose`. Currently 6,142 entries across 2,255 FENs from 440 studies.
+  All entries are `curated: true` with like counts. 491 tests across 35 suites.
+  Run via `npm run course:discover` (discovery) or `npm run course:import`
+  (import).
 - **Studies Tab (Frontend):** `StudiesGallery` component on opening detail page
   showing curated Lichess studies with "Open" links (chapter-level when
   available), show-more toggle, and Lichess/Chessable search links. Tab order:
@@ -87,10 +93,6 @@
 
 ## What's Left to Build
 
-- **Course Data Quality:** Re-run pipeline (`npm run course:discover`) to
-  backfill chapter-level URLs (currently only 2.3% have them; two bugs fixed —
-  `[ChapterURL]` not read, and `[Site]` wrongly prioritised over `[ChapterURL]`
-  for imported chapters).
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded
   (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS

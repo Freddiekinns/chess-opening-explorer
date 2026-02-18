@@ -58,7 +58,8 @@ npm run test:watch           # Watch mode
 
 # Data Pipelines
 npm run enrich               # LLM enrichment
-npm run course:discover      # Discover Lichess educator courses
+npm run course:discover      # Find popular Lichess studies
+npm run course:import        # Import studies into courses.json
 npm run pipeline:complete    # Complete video pipeline
 npm run pipeline:discover    # Discover videos from RSS feeds
 npm run pipeline:match       # Match videos to openings
@@ -127,7 +128,8 @@ npm run pipeline:match       # Step 4: Match videos to openings
 **Course Discovery:**
 
 ```bash
-npm run course:discover      # Discover courses from Lichess educators
+npm run course:discover      # Find popular Lichess studies (500+ likes)
+npm run course:import        # Import curated studies into courses.json
 # See tools/course-discovery/README.md for details
 ```
 

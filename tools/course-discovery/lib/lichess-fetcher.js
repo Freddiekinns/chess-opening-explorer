@@ -106,6 +106,44 @@ async function fetchStudyPGN(studyId) {
 }
 
 /**
+ * Fetch metadata for a single study (JSON endpoint)
+ * Returns study name, likes count, and owner username
+ * Uses the study page endpoint with JSON accept header (not the /api/ endpoint)
+ * @param {string} studyId - Lichess study ID
+ * @returns {Promise<{id: string, name: string, likes: number, owner: string}|null>}
+ */
+async function fetchStudyMetadata(studyId) {
+  if (!studyId || typeof studyId !== 'string') {
+    throw new Error('Study ID is required');
+  }
+
+  const url = `${LICHESS_BASE}/study/${encodeURIComponent(studyId)}`;
+  const response = await rateLimitedFetch(url, {
+    headers: { Accept: 'application/json' },
+  });
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch metadata for study ${studyId}: ${response.status} ${response.statusText}`
+    );
+  }
+
+  const data = await response.json();
+  const study = data.study || data;
+
+  return {
+    id: study.id || studyId,
+    name: study.name || '',
+    likes: typeof study.likes === 'number' ? study.likes : 0,
+    owner: study.ownerId || '',
+  };
+}
+
+/**
  * Parse NDJSON (newline-delimited JSON) text into an array of objects
  * @param {string} text - NDJSON text
  * @returns {Array<object>}
@@ -139,6 +177,7 @@ function resetRateLimiter() {
 module.exports = {
   fetchStudyList,
   fetchStudyPGN,
+  fetchStudyMetadata,
   parseNDJSON,
   rateLimitedFetch,
   resetRateLimiter,

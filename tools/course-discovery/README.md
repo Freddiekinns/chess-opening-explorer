@@ -1,7 +1,7 @@
 # Course Discovery Pipeline
 
-Fetches public Lichess studies from known chess educators, parses PGN chapters,
-matches positions to openings by FEN, and writes results to `courses.json`.
+Discovers and imports Lichess studies into `courses.json`, matching each study
+chapter to chess openings by FEN position.
 
 ## Prerequisites
 
@@ -11,258 +11,172 @@ matches positions to openings by FEN, and writes results to `courses.json`.
 ## Quick Start
 
 ```bash
-# Preview what would be discovered (no files modified)
-node tools/course-discovery/index.js --dryRun --limit=1
+# Import curated studies into courses.json
+npm run course:import
 
-# Run for all configured authors
-node tools/course-discovery/index.js
+# Discover new popular studies (500+ likes)
+npm run course:discover
 
-# Run for a single author
-node tools/course-discovery/index.js --author=Fins
-
-# Or use the npm script
-npm run course:discover -- --dryRun
+# Add a single study URL
+npm run course:import -- --url https://lichess.org/study/abc123
 ```
 
-## How It Works
+## Workflow
 
-1. **Load authors** from `config/authors.json`
-2. **Fetch study list** for each author via
-   `GET https://lichess.org/api/study/by/{username}` (legitimate documented API,
-   returns NDJSON)
-3. **Quality filter (study level)** - Filter studies BEFORE PGN fetch to save
-   API calls
-   - Require at least one opening keyword (opening, defense, gambit, etc.)
-   - Reject blacklisted terms (puzzle, endgame, Q&A, game analysis, etc.)
-   - Score based on freshness and keyword matching
-4. **Fetch PGN** for studies that pass the quality filter via
-   `GET https://lichess.org/api/study/{studyId}.pgn`
-5. **Split PGN** into individual chapters, extracting chapter IDs from `[Site]`
-   headers
-6. **Quality filter (chapter level)** - Filter chapters AFTER parsing
-   - Require minimum 8 moves (hard requirement)
-   - Reject chapters with blacklisted terms
-   - Score based on move depth and keyword matching
-7. **Replay moves** with `chess.js`, collecting FEN at each position
-8. **Match FENs** against the ECO opening database (~12,000 positions) to find
-   the deepest opening match per chapter
-9. **Merge** discoveries into `packages/api/src/data/courses.json`, preserving
-   any manually curated entries
+The pipeline has two phases: **discovery** (find study URLs) and **import**
+(fetch PGN, match to openings, write courses.json).
+
+```
+Discovery                    Review              Import
+┌──────────────┐             ┌────────┐         ┌──────────────┐
+│ discover-     │ ──writes──▶│curated-│──read──▶│ add-studies.js│──▶ courses.json
+│ popular.js   │             │studies │         │              │
+└──────────────┘             │.txt    │         └──────────────┘
+                             └────────┘
+Manual paste ──────────────▶     │
+                                 │
+Single URL ────────────────────────────────────▶ add-studies.js
+```
+
+### 1. Discover Popular Studies
+
+Searches Lichess with ~46 opening-related terms, sorted by popularity.
+Filters out non-opening content (endgames, puzzles, etc.) and cross-references
+against the existing curated list to find new studies.
+
+```bash
+# Preview (no files written)
+npm run course:discover -- --dryRun --verbose
+
+# Write new discoveries to discovered-studies.txt
+npm run course:discover
+
+# Use a different likes threshold
+npm run course:discover -- --minLikes 1000
+
+# Append directly to curated-studies.txt
+npm run course:discover -- --append
+```
+
+### 2. Import Studies
+
+Reads study URLs from `curated-studies.txt`, fetches metadata and PGN from
+Lichess, splits each study into chapters, replays moves with `chess.js`, and
+matches FEN positions against the ECO database (~12,000 positions).
+
+```bash
+# Import all curated studies (with resume support)
+npm run course:import -- --resume --verbose
+
+# Dry run (preview without writing)
+npm run course:import -- --dryRun --limit 10
+
+# Import a single study URL
+npm run course:import -- --url https://lichess.org/study/abc123
+
+# Process a subset
+npm run course:import -- --limit 50
+```
 
 ## CLI Options
 
-| Flag                     | Description                                                       | Default |
-| ------------------------ | ----------------------------------------------------------------- | ------- |
-| `--dryRun`               | Preview output without writing files                              | `false` |
-| `--limit <n>`            | Process at most `n` authors                                       |         |
-| `--author <username>`    | Process a single author only                                      |         |
-| `--verbose`              | Detailed logging (per-chapter matches)                            | `false` |
-| `--quiet`                | Errors only                                                       | `false` |
-| `--resume`               | Skip authors already processed (uses state file)                  | `false` |
-| `--stateFile <path>`     | Custom state file (default: `tools/course-discovery/.state.json`) |         |
-| `--skipFilter`           | Disable all quality filtering (for debugging)                     | `false` |
-| `--minStudyScore <n>`    | Minimum study quality score (0-100)                               | `40`    |
-| `--minChapterScore <n>`  | Minimum chapter quality score (0-100)                             | `50`    |
-| `--minMoveDepth <n>`     | Minimum moves in chapter (hard requirement)                       | `8`     |
-| `--logFiltered`          | Log all filtered studies/chapters                                 | `false` |
+### discover-popular.js
 
-## Adding Authors
+| Flag             | Description                                  | Default |
+| ---------------- | -------------------------------------------- | ------- |
+| `--minLikes <n>` | Minimum likes threshold                      | `500`   |
+| `--dryRun`       | Show results without writing files           | `false` |
+| `--append`       | Append discoveries to curated-studies.txt     | `false` |
+| `--output <path>`| Custom output file path                      |         |
+| `--verbose`      | Show excluded studies for review             | `false` |
 
-Edit `config/authors.json`:
+### add-studies.js
 
-```json
-{
-  "authors": [
-    { "username": "LichessUsername", "note": "Description of who they are" }
-  ]
-}
+| Flag                   | Description                                    | Default              |
+| ---------------------- | ---------------------------------------------- | -------------------- |
+| `--file <path>`        | Input file with study URLs                     | `config/curated-studies.txt` |
+| `--url <url>`          | Import a single Lichess study URL              |                      |
+| `--dryRun`             | Preview without writing courses.json           | `false`              |
+| `--limit <n>`          | Process at most n studies                      |                      |
+| `--resume`             | Skip previously processed studies              | `false`              |
+| `--replaceCurated`     | Replace existing curated entries               | `false`              |
+| `--verbose`            | Show per-chapter matching details              | `false`              |
+
+## Input Format
+
+`curated-studies.txt` uses alternating title/URL lines:
+
+```
+# Lines starting with # are comments
+Sicilian Defense Study
+https://lichess.org/study/abc123
+Caro-Kann Defense
+https://lichess.org/study/def456
 ```
 
-Usernames must be valid Lichess accounts with public studies. The pipeline
-gracefully skips 404s (non-existent users) and studies with no matching
-openings.
+Titles are optional (used for display only). The importer deduplicates by study
+ID automatically.
 
-## Adding Manual Courses
+## Output Format
 
-Add entries directly to `packages/api/src/data/courses.json` under the relevant
-FEN key. Omit `auto_discovered` (or set it to `false`) so the pipeline never
-modifies or removes them:
+Each chapter becomes an entry in `courses.json`, keyed by the matched FEN:
 
 ```json
 {
-  "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": [
+  "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3": [
     {
-      "course_title": "French Defense Masterclass",
-      "author": "Daniel Naroditsky",
-      "platform": "Chessable",
-      "source_url": "https://www.chessable.com/course/12345/",
-      "anchor_fens": [
-        "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
-      ]
+      "course_title": "Caro-Kann Defense - Introduction",
+      "author": "leninperez",
+      "platform": "Lichess",
+      "source_url": "https://lichess.org/study/jtlLwUvh/abc123",
+      "anchor_fens": ["rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"],
+      "curated": true,
+      "likes": 41363,
+      "discovered_at": "2026-02-18T00:00:00.000Z"
     }
   ]
 }
 ```
 
-When the pipeline runs, it clears all entries with `auto_discovered: true` and
-replaces them with fresh data. Manual entries (without that flag) are never
-touched.
-
-## Output Format
-
-Auto-discovered entries:
-
-```json
-{
-  "course_title": "Study Name - Chapter Name",
-  "author": "lichess_username",
-  "platform": "Lichess",
-  "source_url": "https://lichess.org/study/{studyId}/{chapterId}",
-  "anchor_fens": ["matched_fen"],
-  "auto_discovered": true,
-  "discovered_at": "2026-02-11T00:00:00.000Z"
-}
-```
-
-## Quality Filtering
-
-The pipeline uses two-stage quality filtering to reduce noise and save API calls:
-
-### Stage 1: Study-Level Pre-Filter (Before PGN Fetch)
-
-**Purpose:** Eliminate obviously irrelevant studies to save ~1,500-2,500 API calls
-
-**Signals:**
-
-- **Opening keywords (REQUIRED):** Study name must contain at least one: opening,
-  defense/defence, attack, gambit, variation, repertoire, theory, system, line
-- **Blacklist (hard reject):** Rejects studies with terms like: Q&A, puzzle,
-  endgame, game analysis, tournament, livestream, etc.
-- **Freshness:** Recent updates (within 1 year) receive bonus points
-
-**Default threshold:** Minimum score 40/100
-
-### Stage 2: Chapter-Level Post-Filter (After PGN Fetch)
-
-**Purpose:** Filter individual chapters that aren't theoretical opening content
-
-**Signals:**
-
-- **Move depth (REQUIRED):** Minimum 8 moves (4 full moves) - shallow game
-  annotations are rejected
-- **Chapter blacklist:** Same blacklist applied to chapter titles
-- **Quality score:** Combines freshness, keywords, and move depth
-
-**Default threshold:** Minimum score 50/100 AND minimum 8 moves
-
-### Scoring Algorithm
-
-Studies and chapters are scored 0-100 based on:
-
-- **Baseline:** 50 points
-- **Freshness:** 0-20 points (20 for <1 year, 10 for 1-2 years, 5 for 2-3
-  years, 0 for 3+ years)
-- **Keyword matches:** 0-15 points (5 points per keyword, max 15)
-- **Move depth (chapters only):** 0-20 points (20 for 16+ moves, 15 for 12+, 10
-  for 8+, -30 penalty for <8)
-
-### Expected Outcomes
-
-- **API calls saved:** ~1,500-2,500 PGN fetches (80-85% reduction)
-- **Processing time:** 3-4x faster (~30-40 min vs ~90-120 min)
-- **False negatives:** <5% (conservative thresholds)
-- **False positives:** <10% (ECO matching provides second quality gate)
-
-### Tuning Thresholds
-
-If you find the filter too strict or too lenient:
-
-```bash
-# More lenient (allow more studies through)
-node tools/course-discovery/index.js --minStudyScore=30 --minChapterScore=40
-
-# More strict (higher quality, fewer results)
-node tools/course-discovery/index.js --minStudyScore=60 --minChapterScore=70 --minMoveDepth=12
-
-# Disable filtering entirely (for debugging)
-node tools/course-discovery/index.js --skipFilter
-```
-
-### Debugging Filtering
-
-To review what's being filtered:
-
-```bash
-# Show all filter decisions
-node tools/course-discovery/index.js --logFiltered --limit=1
-
-# Combine with verbose for full details
-node tools/course-discovery/index.js --logFiltered --verbose --limit=1
-```
-
-The pipeline logs filter statistics in the summary:
-
-```
-=== Quality Filtering Stats ===
-Studies filtered: 56
-Chapters filtered: 12
-
-Filter Reasons:
-  no_opening_keywords: 50
-  blacklisted_term: 6
-  insufficient_moves: 8
-  low_chapter_score: 4
-```
-
 ## Rate Limiting
 
-The pipeline respects Lichess API guidelines:
+Both tools respect Lichess API guidelines:
 
-- Minimum 1.1 seconds between requests
-- 60-second exponential backoff on 429 (rate limit) responses
+- Minimum 1.1-1.5 seconds between requests
+- 60-second exponential backoff on 429 responses
 - Maximum 3 retries per request
 
 ## Architecture
 
 ```
 tools/course-discovery/
-  index.js                    # Pipeline orchestrator (CLI, logging, state)
-  config/authors.json         # Seed list of Lichess educators
-  lib/
-    lichess-fetcher.js        # Lichess API client with rate limiting
-    pgn-matcher.js            # PGN parsing, FEN generation, ECO matching
-    course-merger.js          # Merge discoveries into courses.json
-    quality-filter.js         # Two-stage quality filtering system
+├── add-studies.js           # Import curated URLs into courses.json
+├── discover-popular.js      # Find popular studies on Lichess
+├── config/
+│   ├── curated-studies.txt  # Source of truth for study URLs
+│   └── discovered-studies.txt  # Output from discover-popular
+├── lib/
+│   ├── lichess-fetcher.js   # Lichess API client with rate limiting
+│   ├── pgn-matcher.js       # PGN parsing, FEN generation, ECO matching
+│   └── course-merger.js     # Load/write courses.json
+└── README.md
 
 tests/unit/
-    lichess-fetcher.test.js   # API + NDJSON + rate limit tests
-    pgn-matcher.test.js       # PGN split, FEN gen, opening match tests
-    course-merger.test.js     # Merge algorithm tests
-    quality-filter.test.js    # Quality filtering tests (64 tests)
+├── add-studies.test.js      # Import tool tests
+├── discover-popular.test.js # Discovery tool tests
+├── lichess-fetcher.test.js  # API client tests
+├── pgn-matcher.test.js      # PGN/FEN matching tests
+└── course-merger.test.js    # Merge logic tests
 ```
 
 ## Tests
 
 ```bash
-# Run all course-discovery tests
-npx jest tests/unit/lichess-fetcher.test.js tests/unit/pgn-matcher.test.js tests/unit/course-merger.test.js tests/unit/quality-filter.test.js
+# Run all course-related tests
+npx jest tests/unit/add-studies.test.js tests/unit/discover-popular.test.js \
+  tests/unit/lichess-fetcher.test.js tests/unit/pgn-matcher.test.js \
+  tests/unit/course-merger.test.js
 
-# Run just quality filter tests
-npx jest tests/unit/quality-filter.test.js
-
-# Run full suite (includes course-service and course-routes)
+# Full suite
 npx jest
 ```
-
-## Using Standalone
-
-To reuse this pipeline in another project:
-
-1. Copy `tools/course-discovery/` into your project
-2. Install dependencies: `npm install chess.js yargs`
-3. Provide ECO data files at `api/data/eco/ecoA.json` through `ecoE.json`
-   (FEN-keyed JSON objects)
-4. Provide or create a `courses.json` output target
-5. Update the paths in `lib/pgn-matcher.js` (`loadECOIndex`) and
-   `lib/course-merger.js` (`DEFAULT_COURSES_PATH`) to match your project layout
-6. Run: `node tools/course-discovery/index.js --dryRun`

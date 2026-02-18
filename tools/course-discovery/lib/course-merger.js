@@ -1,7 +1,7 @@
 /**
  * Course data merger
- * Merges auto-discovered Lichess studies into courses.json
- * while preserving manually curated entries
+ * Loads, merges, and writes courses.json data
+ * Used by add-studies.js to import curated Lichess studies
  */
 
 const fs = require('fs');
@@ -33,15 +33,13 @@ function loadExistingCourses(filePath) {
 }
 
 /**
- * Merge auto-discovered courses into existing data
+ * Merge new course entries into existing data
  *
- * Algorithm:
- * 1. For each FEN in existing data: keep entries where auto_discovered !== true
- * 2. Add all new auto-discovered entries from discovered
- * 3. Result: manual entries untouched, auto entries refreshed
+ * Filters out entries with auto_discovered: true (legacy),
+ * then adds all new entries from the discovered set.
  *
  * @param {object} existing - Current courses.json data (FEN-keyed)
- * @param {object} discovered - New auto-discovered data (FEN-keyed)
+ * @param {object} discovered - New entries to add (FEN-keyed)
  * @returns {object} Merged courses data
  */
 function mergeDiscoveries(existing, discovered) {

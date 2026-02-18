@@ -6,9 +6,10 @@ This directory contains the operational tools for the Chess Trainer project.
 
 ```
 tools/
-├── video-pipeline/       # F04: YouTube Video Integration Pipeline
-├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
 ├── analysis/             # F02: Data Analysis & Statistics
+├── course-discovery/     # Lichess study import pipeline
+├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
+├── video-pipeline/       # F04: YouTube Video Integration Pipeline
 ├── data/                 # Shared data storage (SQLite DB, cache files)
 └── packages/             # Shared internal packages
 ```

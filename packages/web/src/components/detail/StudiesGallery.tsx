@@ -8,7 +8,8 @@ export interface Study {
   platform: string;
   source_url: string;
   anchor_fens: string[];
-  auto_discovered: boolean;
+  curated: boolean;
+  likes: number;
   discovered_at: string;
 }
 

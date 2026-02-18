@@ -195,53 +195,8 @@ describe('PRD-F03 Course Pipeline Integration', () => {
     });
   });
 
-  describe('Quality Filtering Integration', () => {
-    const qualityFilter = require('../../tools/course-discovery/lib/quality-filter');
+  describe('Course Merger Integration', () => {
     const { loadExistingCourses, mergeDiscoveries } = require('../../tools/course-discovery/lib/course-merger');
-
-    test('should filter non-opening studies before PGN fetch', () => {
-      const studies = [
-        { name: 'Sicilian Defense Repertoire', updatedAt: new Date().toISOString() },
-        { name: 'Weekly Q&A Session', updatedAt: new Date().toISOString() },
-        { name: 'Chess Puzzle Collection', updatedAt: new Date().toISOString() },
-        { name: 'French Defense Theory', updatedAt: new Date().toISOString() },
-        { name: 'Random Chess Stuff', updatedAt: new Date(Date.now() - 2000 * 24 * 60 * 60 * 1000).toISOString() },
-      ];
-
-      const thresholds = {
-        minStudyScore: 40,
-        minChapterScore: 50,
-        minMoveDepth: 8,
-      };
-
-      const filtered = studies.filter((study) => qualityFilter.filterStudy(study, thresholds).pass);
-
-      expect(filtered).toHaveLength(2);
-      expect(filtered[0].name).toBe('Sicilian Defense Repertoire');
-      expect(filtered[1].name).toBe('French Defense Theory');
-    });
-
-    test('should filter chapters with insufficient moves', () => {
-      const study = { name: 'Opening Theory', updatedAt: new Date().toISOString() };
-      const chapters = [
-        { chapterName: 'Sicilian Dragon', moves: 10 },
-        { chapterName: 'Quick Notes', moves: 3 },
-        { chapterName: 'Puzzle Time', moves: 10 },
-        { chapterName: 'Deep Analysis', moves: 20 },
-      ];
-
-      const thresholds = {
-        minStudyScore: 40,
-        minChapterScore: 50,
-        minMoveDepth: 8,
-      };
-
-      const filtered = chapters.filter((chapter) => qualityFilter.filterChapter(chapter, study, thresholds).pass);
-
-      expect(filtered).toHaveLength(2);
-      expect(filtered[0].chapterName).toBe('Sicilian Dragon');
-      expect(filtered[1].chapterName).toBe('Deep Analysis');
-    });
 
     test('should preserve manual entries while filtering auto-discovered', () => {
       const existingData = {
@@ -289,49 +244,6 @@ describe('PRD-F03 Course Pipeline Integration', () => {
       // New auto-discovered should replace old auto-discovered
       expect(merged['fen1'][1].course_title).toBe('New Auto Course');
       expect(merged['fen1'][1].auto_discovered).toBe(true);
-    });
-
-    test('should respect --skipFilter flag behavior', () => {
-      const study = { name: 'Random Study', updatedAt: new Date().toISOString() };
-      const thresholds = {
-        minStudyScore: 40,
-        minChapterScore: 50,
-        minMoveDepth: 8,
-      };
-
-      // With filtering enabled
-      const filteredResult = qualityFilter.filterStudy(study, thresholds);
-      expect(filteredResult.pass).toBe(false);
-      expect(filteredResult.reason).toBe('no_opening_keywords');
-
-      // With skipFilter, the study would be processed anyway
-      // (in actual pipeline, skipFilter bypasses the filter check entirely)
-      // This test just verifies the filter returns the expected result
-    });
-
-    test('should provide detailed filter reasons', () => {
-      const studies = [
-        { name: 'Weekly Q&A', updatedAt: new Date().toISOString() },
-        { name: 'Puzzle Set', updatedAt: new Date().toISOString() },
-        { name: 'Random Stuff', updatedAt: new Date(Date.now() - 2000 * 24 * 60 * 60 * 1000).toISOString() },
-      ];
-
-      const thresholds = {
-        minStudyScore: 40,
-        minChapterScore: 50,
-        minMoveDepth: 8,
-      };
-
-      const reasons = {};
-      studies.forEach((study) => {
-        const result = qualityFilter.filterStudy(study, thresholds);
-        if (!result.pass) {
-          reasons[result.reason] = (reasons[result.reason] || 0) + 1;
-        }
-      });
-
-      expect(reasons['blacklisted_term']).toBe(2); // Q&A and Puzzle
-      expect(reasons['no_opening_keywords']).toBe(1); // Random Stuff
     });
   });
 });

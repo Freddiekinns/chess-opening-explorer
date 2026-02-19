@@ -17,7 +17,12 @@ guidance; advanced players for quick reference.
    (win/draw/loss rates)
 3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas
 4. **Video Integration** - Curated YouTube videos matched to openings
-5. **Practice Mode** - Interactive move trainer with feedback and hints
+5. **Curated Studies** - 6,100+ Lichess study chapters matched to openings by
+   FEN position, sorted by popularity (likes). Two-step pipeline: discover
+   popular studies (500+ likes) → import chapters matched to ECO database.
+6. **Practice Mode** - Interactive move trainer with feedback and hints
+7. **Personal Opening Explorer** - Analyse Chess.com/Lichess game history for
+   opening strengths and weaknesses
 
 ## Technology Stack
 
@@ -39,7 +44,8 @@ guidance; advanced players for quick reference.
 ### Data Pipelines
 
 - **Python**: LLM enrichment, Lichess integration, analysis (`tools/analysis/`)
-- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`)
+- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`),
+  Course/study import pipeline (`tools/course-discovery/`)
 - **External APIs**: Lichess, YouTube Data API, Google Gemini
 
 ## Key Architecture Decisions
@@ -87,7 +93,11 @@ chess-opening-explorer/
 │   └── shared/       # Shared utilities
 ├── api/              # Vercel serverless wrappers
 ├── data/             # JSON data files
-├── tools/            # Data pipelines (Python + Node.js)
+├── tools/
+│   ├── analysis/         # Python: Lichess stats pipeline
+│   ├── course-discovery/ # Node: Lichess study import pipeline
+│   ├── llm-enrichment/   # Node: AI content generation
+│   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/            # Backend tests (Jest)
 └── .github/
     ├── instructions/ # Coding standards
@@ -100,6 +110,7 @@ chess-opening-explorer/
 Lichess API → Python Analysis → popularity-stats.json
 YouTube API → Channel-First Pipeline → video-index.json
 Gemini API → LLM Enrichment → openings.json (enhanced)
+Lichess Study API → Course Discovery Pipeline → courses.json
 All JSON → Frontend (static, pre-generated)
 ```
 

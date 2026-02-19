@@ -11,9 +11,7 @@
 - **Video Pipeline:** The "Channel-First" data pipeline is complete and
   operational. It has successfully indexed over 1,000 videos from trusted
   channels.
-- **Course Recommendations:** The backend data and API endpoint
-  (`/api/courses/:fen`) for course recommendations are complete. The initial
-  data for the F03 (King's Pawn Game) ECO code is fully integrated.
+- **Course Recommendations:** The backend data and API endpoint\n  (`/api/courses/:fen`) for course recommendations are complete. courses.json\n  contains 6,100+ study chapters across 2,255 FENs from 440+ Lichess studies,\n  all curated with like counts. Each entry is matched to the deepest ECO\n  position from the study chapter\u2019s PGN moves.
 - **Course Discovery Pipeline:** Two-step architecture for importing Lichess
   studies into `courses.json`. Step 1: `discover-popular.js` searches Lichess
   for popular studies (500+ likes), classifies as opening-related, outputs new

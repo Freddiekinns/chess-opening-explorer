@@ -4,7 +4,7 @@
 
 A chess learning platform for exploring and practising openings. Features
 12,377+ openings with AI-enhanced content, Lichess statistics, curated videos,
-and interactive practice mode.
+curated Lichess studies, and interactive practice mode.
 
 ## Features
 
@@ -16,6 +16,8 @@ and interactive practice mode.
 - **PGN Identification**: Paste any PGN to identify the opening
 - **AI Content**: Strategic analysis and complexity ratings via Google Vertex AI
 - **Video Integration**: Curated YouTube content from trusted chess channels
+- **Curated Studies**: 6,100+ Lichess study chapters matched to openings by FEN,
+  sorted by popularity (likes)
 - **Popularity Stats**: Win/draw/loss rates from 40M+ Lichess games
 
 ## Quick Start
@@ -122,4 +124,5 @@ fast client-side search.
 **Frontend**: React 19, TypeScript, Vite, chess.js, react-chessboard  
 **Backend**: Node.js, Express, SQLite, JSON  
 **Pipelines**: Python (Lichess), Node.js (YouTube, LLM)  
-**External**: Google Vertex AI, YouTube Data API, Lichess API
+**External**: Google Vertex AI, YouTube Data API, Lichess API  
+**Data**: 12,377+ openings, 1,000+ videos, 6,100+ study chapters (2,255 FENs)

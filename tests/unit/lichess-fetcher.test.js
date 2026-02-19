@@ -4,12 +4,7 @@
  */
 
 const fetcher = require('../../tools/course-discovery/lib/lichess-fetcher');
-const {
-  fetchStudyList,
-  fetchStudyPGN,
-  parseNDJSON,
-  resetRateLimiter
-} = fetcher;
+const { fetchStudyList, fetchStudyPGN, fetchStudyMetadata, parseNDJSON, resetRateLimiter } = fetcher;
 
 // Mock global fetch
 const originalFetch = global.fetch;
@@ -31,7 +26,7 @@ describe('parseNDJSON', () => {
     const result = parseNDJSON(text);
     expect(result).toEqual([
       { id: 'abc', name: 'Study 1' },
-      { id: 'def', name: 'Study 2' }
+      { id: 'def', name: 'Study 2' },
     ]);
   });
 
@@ -64,12 +59,13 @@ describe('parseNDJSON', () => {
 
 describe('fetchStudyList', () => {
   test('should fetch and parse study list', async () => {
-    const ndjson = '{"id":"abc123","name":"French Defense","createdAt":1609459200,"updatedAt":1609545600}\n{"id":"def456","name":"Sicilian","createdAt":1609459200,"updatedAt":1609545600}\n';
+    const ndjson =
+      '{"id":"abc123","name":"French Defense","createdAt":1609459200,"updatedAt":1609545600}\n{"id":"def456","name":"Sicilian","createdAt":1609459200,"updatedAt":1609545600}\n';
 
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve(ndjson)
+      text: () => Promise.resolve(ndjson),
     });
 
     const result = await fetchStudyList('TestUser');
@@ -79,19 +75,18 @@ describe('fetchStudyList', () => {
       id: 'abc123',
       name: 'French Defense',
       createdAt: 1609459200,
-      updatedAt: 1609545600
+      updatedAt: 1609545600,
     });
-    expect(global.fetch).toHaveBeenCalledWith(
-      'https://lichess.org/api/study/by/TestUser',
-      { headers: { 'Accept': 'application/x-ndjson' } }
-    );
+    expect(global.fetch).toHaveBeenCalledWith('https://lichess.org/api/study/by/TestUser', {
+      headers: { Accept: 'application/x-ndjson' },
+    });
   });
 
   test('should return empty array for 404 (user not found)', async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 404,
-      statusText: 'Not Found'
+      statusText: 'Not Found',
     });
 
     const result = await fetchStudyList('NonexistentUser');
@@ -102,7 +97,7 @@ describe('fetchStudyList', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 500,
-      statusText: 'Internal Server Error'
+      statusText: 'Internal Server Error',
     });
 
     await expect(fetchStudyList('TestUser')).rejects.toThrow('Failed to fetch studies');
@@ -117,7 +112,7 @@ describe('fetchStudyList', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve('')
+      text: () => Promise.resolve(''),
     });
 
     const result = await fetchStudyList('EmptyUser');
@@ -127,12 +122,13 @@ describe('fetchStudyList', () => {
 
 describe('fetchStudyPGN', () => {
   test('should fetch PGN for a study', async () => {
-    const pgn = '[Event "Chapter 1"]\n[Site "https://lichess.org/study/abc123/ch1"]\n\n1. e4 e6 *\n';
+    const pgn =
+      '[Event "Chapter 1"]\n[Site "https://lichess.org/study/abc123/ch1"]\n\n1. e4 e6 *\n';
 
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      text: () => Promise.resolve(pgn)
+      text: () => Promise.resolve(pgn),
     });
 
     const result = await fetchStudyPGN('abc123');
@@ -148,7 +144,7 @@ describe('fetchStudyPGN', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 404,
-      statusText: 'Not Found'
+      statusText: 'Not Found',
     });
 
     const result = await fetchStudyPGN('nonexistent');
@@ -159,7 +155,7 @@ describe('fetchStudyPGN', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 500,
-      statusText: 'Internal Server Error'
+      statusText: 'Internal Server Error',
     });
 
     await expect(fetchStudyPGN('abc123')).rejects.toThrow('Failed to fetch PGN');
@@ -167,6 +163,101 @@ describe('fetchStudyPGN', () => {
 
   test('should throw on null study ID', async () => {
     await expect(fetchStudyPGN(null)).rejects.toThrow('Study ID is required');
+  });
+});
+
+describe('fetchStudyMetadata', () => {
+  test('should fetch metadata for a study', async () => {
+    const responseData = {
+      study: {
+        id: 'abc123',
+        name: 'French Defense Study',
+        likes: 42,
+        ownerId: 'TestAuthor',
+        members: { TestAuthor: { user: { name: 'TestAuthor' }, role: 'w' } },
+      },
+    };
+
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve(responseData),
+    });
+
+    const result = await fetchStudyMetadata('abc123');
+
+    expect(result).toEqual({
+      id: 'abc123',
+      name: 'French Defense Study',
+      likes: 42,
+      owner: 'TestAuthor',
+    });
+    expect(global.fetch).toHaveBeenCalledWith(
+      'https://lichess.org/study/abc123',
+      { headers: { Accept: 'application/json' } }
+    );
+  });
+
+  test('should return null for 404', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+    });
+
+    const result = await fetchStudyMetadata('nonexistent');
+    expect(result).toBeNull();
+  });
+
+  test('should throw on server error', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
+
+    await expect(fetchStudyMetadata('abc123')).rejects.toThrow('Failed to fetch metadata');
+  });
+
+  test('should throw on null study ID', async () => {
+    await expect(fetchStudyMetadata(null)).rejects.toThrow('Study ID is required');
+  });
+
+  test('should handle missing ownerId gracefully', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ study: { id: 'abc', name: 'Test', likes: 10 } }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.owner).toBe('');
+    expect(result.likes).toBe(10);
+  });
+
+  test('should handle missing likes field', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ study: { id: 'abc', name: 'Test', ownerId: 'User' } }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.likes).toBe(0);
+    expect(result.owner).toBe('User');
+  });
+
+  test('should handle flat response format (no study wrapper)', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ id: 'abc', name: 'Test', likes: 5, ownerId: 'FlatUser' }),
+    });
+
+    const result = await fetchStudyMetadata('abc');
+    expect(result.name).toBe('Test');
+    expect(result.likes).toBe(5);
+    expect(result.owner).toBe('FlatUser');
   });
 });
 
@@ -181,7 +272,7 @@ describe('rate limiting', () => {
       return Promise.resolve({
         ok: true,
         status: 200,
-        text: () => Promise.resolve('{"id":"abc"}')
+        text: () => Promise.resolve('{"id":"abc"}'),
       });
     });
 
@@ -197,7 +288,7 @@ describe('rate limiting', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 429,
-      statusText: 'Too Many Requests'
+      statusText: 'Too Many Requests',
     });
 
     await expect(fetchStudyList('TestUser')).rejects.toThrow('Rate limited after');

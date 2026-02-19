@@ -1,6 +1,6 @@
 /**
  * UI Components Unit Tests
- * 
+ *
  * Tests for individual UI components following TDD principles:
  * - Test behavior, not implementation
  * - Mock external dependencies
@@ -32,7 +32,7 @@ describe('UI Components', () => {
       `;
 
       const button = mockContainer.querySelector('[data-testid="back-search-btn"]');
-      
+
       expect(button).toBeTruthy();
       expect(button.classList.contains('back-to-search')).toBe(true);
       expect(button.textContent.trim()).toBe('← Back to Search');
@@ -40,7 +40,7 @@ describe('UI Components', () => {
 
     test('should navigate to search page when clicked', () => {
       const mockNavigate = vi.fn();
-      
+
       mockContainer.innerHTML = `
         <button class="back-to-search" data-testid="back-search-btn">
           ← Back to Search
@@ -49,9 +49,9 @@ describe('UI Components', () => {
 
       const button = mockContainer.querySelector('[data-testid="back-search-btn"]');
       button.addEventListener('click', mockNavigate);
-      
+
       button.click();
-      
+
       expect(mockNavigate).toHaveBeenCalledTimes(1);
     });
   });
@@ -60,7 +60,7 @@ describe('UI Components', () => {
     test('should display opening name and ECO code', () => {
       const openingData = {
         name: 'Sicilian Defense',
-        eco: 'B20'
+        eco: 'B20',
       };
 
       mockContainer.innerHTML = `
@@ -81,7 +81,7 @@ describe('UI Components', () => {
     test('should handle missing ECO code gracefully', () => {
       const openingData = {
         name: 'Custom Opening',
-        eco: null
+        eco: null,
       };
 
       mockContainer.innerHTML = `
@@ -128,11 +128,11 @@ describe('UI Components', () => {
 
       const chessboard = mockContainer.querySelector('[data-testid="chessboard"]');
       const controls = mockContainer.querySelector('[data-testid="board-controls"]');
-      
+
       // Check that controls come after chessboard in DOM order
       const chessboardIndex = Array.from(mockContainer.children[0].children).indexOf(chessboard);
       const controlsIndex = Array.from(mockContainer.children[0].children).indexOf(controls);
-      
+
       expect(controlsIndex).toBeGreaterThan(chessboardIndex);
     });
   });
@@ -147,7 +147,7 @@ describe('UI Components', () => {
       `;
 
       const panel = mockContainer.querySelector('[data-testid="test-panel"]');
-      
+
       expect(panel.classList.contains('content-panel')).toBe(true);
     });
 

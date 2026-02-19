@@ -16,7 +16,7 @@ let lastRequestTime = 0;
  * @returns {Promise<void>}
  */
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -62,7 +62,7 @@ async function fetchStudyList(username) {
 
   const url = `${LICHESS_BASE}/api/study/by/${encodeURIComponent(username)}`;
   const response = await rateLimitedFetch(url, {
-    headers: { 'Accept': 'application/x-ndjson' }
+    headers: { Accept: 'application/x-ndjson' },
   });
 
   if (response.status === 404) {
@@ -70,7 +70,9 @@ async function fetchStudyList(username) {
   }
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch studies for ${username}: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to fetch studies for ${username}: ${response.status} ${response.statusText}`
+    );
   }
 
   const text = await response.text();
@@ -95,10 +97,50 @@ async function fetchStudyPGN(studyId) {
   }
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch PGN for study ${studyId}: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to fetch PGN for study ${studyId}: ${response.status} ${response.statusText}`
+    );
   }
 
   return response.text();
+}
+
+/**
+ * Fetch metadata for a single study (JSON endpoint)
+ * Returns study name, likes count, and owner username
+ * Uses the study page endpoint with JSON accept header (not the /api/ endpoint)
+ * @param {string} studyId - Lichess study ID
+ * @returns {Promise<{id: string, name: string, likes: number, owner: string}|null>}
+ */
+async function fetchStudyMetadata(studyId) {
+  if (!studyId || typeof studyId !== 'string') {
+    throw new Error('Study ID is required');
+  }
+
+  const url = `${LICHESS_BASE}/study/${encodeURIComponent(studyId)}`;
+  const response = await rateLimitedFetch(url, {
+    headers: { Accept: 'application/json' },
+  });
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch metadata for study ${studyId}: ${response.status} ${response.statusText}`
+    );
+  }
+
+  const data = await response.json();
+  const study = data.study || data;
+
+  return {
+    id: study.id || studyId,
+    name: study.name || '',
+    likes: typeof study.likes === 'number' ? study.likes : 0,
+    owner: study.ownerId || '',
+  };
 }
 
 /**
@@ -111,7 +153,7 @@ function parseNDJSON(text) {
     return [];
   }
 
-  const lines = text.split('\n').filter(line => line.trim());
+  const lines = text.split('\n').filter((line) => line.trim());
   const results = [];
 
   for (const line of lines) {
@@ -135,6 +177,7 @@ function resetRateLimiter() {
 module.exports = {
   fetchStudyList,
   fetchStudyPGN,
+  fetchStudyMetadata,
   parseNDJSON,
   rateLimitedFetch,
   resetRateLimiter,
@@ -143,5 +186,5 @@ module.exports = {
   LICHESS_BASE,
   MIN_DELAY_MS,
   BACKOFF_429_MS,
-  MAX_RETRIES
+  MAX_RETRIES,
 };

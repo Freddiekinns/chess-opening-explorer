@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
 // Setup for tests
 global.ResizeObserver = class ResizeObserver {
@@ -9,14 +9,14 @@ global.ResizeObserver = class ResizeObserver {
 
 // Mock AudioContext for practice mode audio
 class MockAudioContext {
-  state = 'running'
+  state = 'running';
   createBufferSource() {
     return {
       buffer: null,
       connect: () => {},
       start: () => {},
-      stop: () => {}
-    }
+      stop: () => {},
+    };
   }
   createOscillator() {
     return {
@@ -24,30 +24,30 @@ class MockAudioContext {
       type: 'sine',
       connect: () => {},
       start: () => {},
-      stop: () => {}
-    }
+      stop: () => {},
+    };
   }
   createGain() {
     return {
       gain: {
         value: 1,
         setValueAtTime: () => {},
-        exponentialRampToValueAtTime: () => {}
+        exponentialRampToValueAtTime: () => {},
       },
-      connect: () => {}
-    }
+      connect: () => {},
+    };
   }
   decodeAudioData() {
-    return Promise.resolve({})
+    return Promise.resolve({});
   }
   resume() {
-    return Promise.resolve()
+    return Promise.resolve();
   }
   get destination() {
-    return {}
+    return {};
   }
   get currentTime() {
-    return 0
+    return 0;
   }
 }
 
@@ -60,7 +60,12 @@ class MockAudioContext {
   clearRect: () => {},
   getImageData: () => ({ data: new Uint8ClampedArray(4) }),
   putImageData: () => {},
-  createImageData: () => ({ data: new Uint8ClampedArray(4), width: 0, height: 0, colorSpace: 'srgb' }),
+  createImageData: () => ({
+    data: new Uint8ClampedArray(4),
+    width: 0,
+    height: 0,
+    colorSpace: 'srgb',
+  }),
   setTransform: () => {},
   drawImage: () => {},
   save: () => {},
@@ -76,7 +81,7 @@ class MockAudioContext {
   rotate: () => {},
   arc: () => {},
   fill: () => {},
-  measureText: () => ({ 
+  measureText: () => ({
     width: 0,
     actualBoundingBoxAscent: 0,
     actualBoundingBoxDescent: 0,
@@ -88,7 +93,7 @@ class MockAudioContext {
     fontBoundingBoxAscent: 0,
     fontBoundingBoxDescent: 0,
     hangingBaseline: 0,
-    ideographicBaseline: 0
+    ideographicBaseline: 0,
   }),
   transform: () => {},
   rect: () => {},

@@ -12,52 +12,52 @@ jest.mock('fs', () => ({
   existsSync: jest.fn(),
   readFileSync: jest.fn(),
   readFile: jest.fn(),
-  writeFileSync: jest.fn()
+  writeFileSync: jest.fn(),
 }));
 
 describe('CourseService', () => {
   let courseService;
   const mockCourseData = {
-    "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1": [
+    'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1': [
       {
         course_title: "King's Pawn Opening Masterclass",
-        author: "GM Magnus Carlsen",
-        platform: "ChessGym",
-        repertoire_for: "White",
+        author: 'GM Magnus Carlsen',
+        platform: 'ChessGym',
+        repertoire_for: 'White',
         publication_year: 2023,
-        estimated_level: "Intermediate",
-        scope: "Specialist",
-        source_url: "https://chessgym.com/kings-pawn",
-        vetting_notes: "Comprehensive coverage of 1.e4 systems",
+        estimated_level: 'Intermediate',
+        scope: 'Specialist',
+        source_url: 'https://chessgym.com/kings-pawn',
+        vetting_notes: 'Comprehensive coverage of 1.e4 systems',
         quality_score: {
           authority_score: 5,
           social_proof_score: 3,
           buzz_score: 2,
-          total_score: 10
+          total_score: 10,
         },
-        anchor_fens: ["rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1"]
-      }
+        anchor_fens: ['rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1'],
+      },
     ],
-    "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2": [
+    'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2': [
       {
-        course_title: "Open Game Fundamentals",
-        author: "IM Anna Muzychuk", 
-        platform: "Chess.com",
-        repertoire_for: "Both",
+        course_title: 'Open Game Fundamentals',
+        author: 'IM Anna Muzychuk',
+        platform: 'Chess.com',
+        repertoire_for: 'Both',
         publication_year: 2024,
-        estimated_level: "Beginner",
-        scope: "Generalist",
-        source_url: "https://chess.com/learn/open-games",
-        vetting_notes: "Excellent for beginners learning open positions",
+        estimated_level: 'Beginner',
+        scope: 'Generalist',
+        source_url: 'https://chess.com/learn/open-games',
+        vetting_notes: 'Excellent for beginners learning open positions',
         quality_score: {
           authority_score: 4,
           social_proof_score: 3,
           buzz_score: 1,
-          total_score: 8
+          total_score: 8,
         },
-        anchor_fens: ["rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2"]
-      }
-    ]
+        anchor_fens: ['rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2'],
+      },
+    ],
   };
 
   beforeEach(() => {
@@ -84,10 +84,7 @@ describe('CourseService', () => {
 
       const result = await courseService.loadCourseData();
 
-      expect(fs.readFileSync).toHaveBeenCalledWith(
-        courseService.courseDataPath, 
-        'utf8'
-      );
+      expect(fs.readFileSync).toHaveBeenCalledWith(courseService.courseDataPath, 'utf8');
       expect(result).toEqual(mockCourseData);
     });
 
@@ -125,18 +122,18 @@ describe('CourseService', () => {
     });
 
     test('should return courses for valid FEN', async () => {
-      const fen = "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
-      
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+
       const courses = await courseService.getCoursesByFen(fen);
 
       expect(courses).toHaveLength(1);
       expect(courses[0].course_title).toBe("King's Pawn Opening Masterclass");
-      expect(courses[0].author).toBe("GM Magnus Carlsen");
+      expect(courses[0].author).toBe('GM Magnus Carlsen');
     });
 
     test('should return empty array for FEN with no courses', async () => {
-      const fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-      
+      const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+
       const courses = await courseService.getCoursesByFen(fen);
 
       expect(courses).toEqual([]);
@@ -157,8 +154,8 @@ describe('CourseService', () => {
     });
 
     test('should validate course quality scores', async () => {
-      const fen = "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
-      
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+
       const courses = await courseService.getCoursesByFen(fen);
 
       expect(courses[0].quality_score.total_score).toBeGreaterThan(4);
@@ -175,8 +172,8 @@ describe('CourseService', () => {
       const allCourses = await courseService.getAllCourses();
 
       expect(allCourses).toHaveLength(2);
-      expect(allCourses.map(c => c.course_title)).toContain("King's Pawn Opening Masterclass");
-      expect(allCourses.map(c => c.course_title)).toContain("Open Game Fundamentals");
+      expect(allCourses.map((c) => c.course_title)).toContain("King's Pawn Opening Masterclass");
+      expect(allCourses.map((c) => c.course_title)).toContain('Open Game Fundamentals');
     });
 
     test('should return empty array when no course data', async () => {
@@ -224,7 +221,7 @@ describe('CourseService', () => {
       const links = courseService.getSearchLinks('French Defense');
       expect(links).toEqual({
         lichess: 'https://lichess.org/study/search?q=French%20Defense',
-        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense'
+        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense',
       });
     });
 
@@ -257,7 +254,9 @@ describe('CourseService', () => {
       await courseService.loadCourseData();
 
       const startTime = Date.now();
-      await courseService.getCoursesByFen("rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1");
+      await courseService.getCoursesByFen(
+        'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1'
+      );
       const endTime = Date.now();
 
       expect(endTime - startTime).toBeLessThan(100);
@@ -277,14 +276,14 @@ describe('CourseService', () => {
   describe('error handling', () => {
     test('should handle corrupted course data gracefully', async () => {
       const corruptedData = {
-        "valid_fen": [{ missing_required_fields: true }]
+        valid_fen: [{ missing_required_fields: true }],
       };
-      
+
       fs.existsSync.mockReturnValue(true);
       fs.readFileSync.mockReturnValue(JSON.stringify(corruptedData));
 
-      const courses = await courseService.getCoursesByFen("valid_fen");
-      
+      const courses = await courseService.getCoursesByFen('valid_fen');
+
       expect(courses).toEqual([{ missing_required_fields: true }]);
     });
 

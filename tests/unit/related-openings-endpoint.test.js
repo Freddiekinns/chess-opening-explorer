@@ -12,7 +12,7 @@ jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getECODataPath: jest.fn(() => '/mock/data/eco'),
   getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json'),
   getVideosDataPath: jest.fn(() => '/mock/data/videos'),
-  getAPIDataPath: jest.fn((file) => `/mock/api/${file || ''}`)
+  getAPIDataPath: jest.fn((file) => `/mock/api/${file || ''}`),
 }));
 
 const fs = require('fs');
@@ -43,9 +43,25 @@ describe('GET /api/openings/fen/:fen/related', () => {
     fs.readFileSync = jest.fn((p) => {
       if (p.includes('ecoA.json')) {
         return JSON.stringify({
-          [MAINLINE_FEN]: { name: 'Example Opening', eco: 'A00', moves: '', isEcoRoot: true, games_analyzed: 5000 },
-          [VAR_FEN]: { name: 'Example Opening Variation', eco: 'A00', moves: '1.e4 c5', games_analyzed: 1200 },
-          [OTHER_VAR_FEN]: { name: 'Second Variation', eco: 'A00', moves: '1.e4 e5', games_analyzed: 800 }
+          [MAINLINE_FEN]: {
+            name: 'Example Opening',
+            eco: 'A00',
+            moves: '',
+            isEcoRoot: true,
+            games_analyzed: 5000,
+          },
+          [VAR_FEN]: {
+            name: 'Example Opening Variation',
+            eco: 'A00',
+            moves: '1.e4 c5',
+            games_analyzed: 1200,
+          },
+          [OTHER_VAR_FEN]: {
+            name: 'Second Variation',
+            eco: 'A00',
+            moves: '1.e4 e5',
+            games_analyzed: 800,
+          },
         });
       }
       if (p.includes('popularity_stats.json')) {
@@ -74,7 +90,7 @@ describe('GET /api/openings/fen/:fen/related', () => {
     expect(data.mainline.isEcoRoot).toBe(true);
     expect(Array.isArray(data.siblings)).toBe(true);
     // VAR_FEN excluded; OTHER_VAR_FEN present
-    const fens = data.siblings.map(s => s.fen);
+    const fens = data.siblings.map((s) => s.fen);
     expect(fens).toContain(OTHER_VAR_FEN);
     expect(fens).not.toContain(VAR_FEN);
   });
@@ -87,9 +103,8 @@ describe('GET /api/openings/fen/:fen/related', () => {
     expect(data.current.isEcoRoot).toBe(true);
     // mainline is still returned in payload
     expect(data.mainline).not.toBeNull();
-    expect(data.siblings.find(s => s.fen === MAINLINE_FEN)).toBeUndefined();
+    expect(data.siblings.find((s) => s.fen === MAINLINE_FEN)).toBeUndefined();
   });
-
 
   it('404 for unknown FEN', async () => {
     const unknown = encodeURIComponent('8/8/8/8/8/8/8/8 w - - 0 1');

@@ -23,7 +23,7 @@
       "source": "/api/openings/popular-by-eco",
       "headers": [
         {
-          "key": "Cache-Control", 
+          "key": "Cache-Control",
           "value": "s-maxage=1800, stale-while-revalidate=3600"
         }
       ]

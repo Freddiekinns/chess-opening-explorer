@@ -38,15 +38,15 @@ export interface OpeningWithAnalysis {
  * Feature 1.5: Game Data Popularity Analysis
  */
 export interface PopularityStats {
-  popularity_score: number;        // 1-10 scale (0 for zero games)
-  frequency_count: number;         // Raw count from all sources
-  white_win_rate?: number;         // 0-1 (if sufficient data)
-  black_win_rate?: number;         // 0-1 (if sufficient data)
-  draw_rate?: number;              // 0-1 (if sufficient data)
-  games_analyzed: number;          // Total games found
-  avg_rating?: number;             // Average player rating
-  confidence_score: number;        // Statistical confidence (0-1)
-  analysis_date: string;           // ISO date string
+  popularity_score: number; // 1-10 scale (0 for zero games)
+  frequency_count: number; // Raw count from all sources
+  white_win_rate?: number; // 0-1 (if sufficient data)
+  black_win_rate?: number; // 0-1 (if sufficient data)
+  draw_rate?: number; // 0-1 (if sufficient data)
+  games_analyzed: number; // Total games found
+  avg_rating?: number; // Average player rating
+  confidence_score: number; // Statistical confidence (0-1)
+  analysis_date: string; // ISO date string
 }
 
 /**

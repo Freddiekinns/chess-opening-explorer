@@ -1,70 +1,67 @@
-import React, { useState, useEffect } from 'react'
-import { PopularityIndicator } from '../shared/PopularityIndicator'
-import { LineTypePill } from '../shared/LineTypePill'
+import React, { useState, useEffect } from 'react';
+import { PopularityIndicator } from '../shared/PopularityIndicator';
+import { LineTypePill } from '../shared/LineTypePill';
 
 interface Opening {
-  fen: string
-  name: string
-  eco: string
-  moves: string
-  src?: string
-  scid?: string
-  aliases?: Record<string, string>
-  isEcoRoot?: boolean // corrected naming; backwards compatibility preserved
+  fen: string;
+  name: string;
+  eco: string;
+  moves: string;
+  src?: string;
+  scid?: string;
+  aliases?: Record<string, string>;
+  isEcoRoot?: boolean; // corrected naming; backwards compatibility preserved
   analysis?: {
-    description?: string
-    style_tags?: string[]
-    popularity?: number
-    complexity?: string
-  }
+    description?: string;
+    style_tags?: string[];
+    popularity?: number;
+    complexity?: string;
+  };
 }
 
 interface ECOAnalysis {
-  description: string
-  complexity: string
-  style_tags: string[]
+  description: string;
+  complexity: string;
+  style_tags: string[];
 }
 
 interface OpeningHeaderProps {
-  opening: Opening
-  className?: string
+  opening: Opening;
+  className?: string;
 }
 
-export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
-  opening,
-  className = ''
-}) => {
-  const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null)
+export const OpeningHeader: React.FC<OpeningHeaderProps> = ({ opening, className = '' }) => {
+  const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null);
 
   // Simplified ECO analysis fetch - just use ECO code
   useEffect(() => {
     const fetchECOAnalysis = async () => {
       try {
-        const response = await fetch(`/api/openings/eco-analysis/${opening.eco}`)
-        const data = await response.json()
-        
+        const response = await fetch(`/api/openings/eco-analysis/${opening.eco}`);
+        const data = await response.json();
+
         if (data.success) {
-          setEcoAnalysis(data.data)
+          setEcoAnalysis(data.data);
         }
       } catch (error) {
-        console.error('Failed to fetch ECO analysis:', error)
+        console.error('Failed to fetch ECO analysis:', error);
       }
-    }
+    };
 
     if (opening.eco) {
-      fetchECOAnalysis()
+      fetchECOAnalysis();
     }
-  }, [opening.eco])
+  }, [opening.eco]);
 
   const getComplexity = () => {
-    return ecoAnalysis?.complexity || opening.analysis?.complexity || 'Medium'
-  }
+    return ecoAnalysis?.complexity || opening.analysis?.complexity || 'Medium';
+  };
 
   const getPopularityScore = () => {
-    return opening.analysis?.popularity || 0
-  }
+    return opening.analysis?.popularity || 0;
+  };
 
-  const isMainline = () => opening.isEcoRoot === true || /^[A-E]\d{2}$/.test(opening.eco)
+  const isMainline = () => opening.isEcoRoot === true || /^[A-E]\d{2}$/.test(opening.eco);
 
   return (
     <header className={`opening-header ${className}`}>
@@ -77,12 +74,9 @@ export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
             <span className="complexity-tag">{getComplexity()}</span>
           </div>
         </div>
-        
+
         {getPopularityScore() > 0 && (
-          <PopularityIndicator 
-            score={getPopularityScore()}
-            className="header-popularity"
-          />
+          <PopularityIndicator score={getPopularityScore()} className="header-popularity" />
         )}
       </div>
 
@@ -91,7 +85,7 @@ export const OpeningHeader: React.FC<OpeningHeaderProps> = ({
         <span className="moves-text">{opening.moves}</span>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default OpeningHeader
+export default OpeningHeader;

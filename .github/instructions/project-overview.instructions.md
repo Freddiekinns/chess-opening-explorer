@@ -1,13 +1,18 @@
 ---
-description: "Chess Opening Explorer project architecture, domain knowledge, and key patterns"
-applyTo: "**"
+description:
+  'Chess Opening Explorer project architecture, domain knowledge, and key
+  patterns'
+applyTo: '**'
 ---
 
 # Chess Opening Explorer - Project Overview
 
 ## Project Purpose
 
-The Chess Opening Explorer is a comprehensive web application that helps chess players explore, learn, and analyze chess openings. It combines rich opening data, popularity statistics from Lichess, LLM-generated educational content, and curated YouTube videos to provide an immersive learning experience.
+The Chess Opening Explorer is a comprehensive web application that helps chess
+players explore, learn, and analyze chess openings. It combines rich opening
+data, popularity statistics from Lichess, LLM-generated educational content, and
+curated YouTube videos to provide an immersive learning experience.
 
 ## Core Features
 
@@ -39,41 +44,52 @@ The Chess Opening Explorer is a comprehensive web application that helps chess p
 - Quality scoring and relevance matching
 - Embedded video player integration
 
+### 5. Curated Lichess Studies
+
+- 6,100+ study chapters matched to openings by FEN position
+- Two-step pipeline: discover popular studies (500+ likes) → import & match
+- Chapters linked to deepest matching ECO position
+- Sorted by study popularity (like count)
+- Frontend StudiesGallery component on opening detail page
+
 ## Architecture Overview
 
 ```mermaid
 graph TD
-    A[Frontend - Next.js/React] --> B[Static Data Files]
+    A[Frontend - React/Vite] --> B[Static Data Files]
     B --> C[Opening Database JSON]
     B --> D[Popularity Stats JSON]
     B --> E[Video Index JSON]
+    B --> K[Courses JSON]
 
     F[Data Pipeline - Python] --> B
     G[Video Pipeline - Node.js] --> E
-    H[LLM Enrichment - Python] --> C
+    H[LLM Enrichment - Node.js] --> C
     I[Lichess Analysis - Python] --> D
+    J[Course Discovery - Node.js] --> K
 ```
 
 ## Technology Stack
 
 ### Frontend
 
-- **Framework**: Next.js (React)
-- **Styling**: CSS Modules
+- **Framework**: React 19 + TypeScript, Vite
+- **Styling**: Single CSS file
 - **Deployment**: Vercel
 - **Data**: Static JSON files (pre-generated)
 
 ### Backend/Pipelines
 
-- **Python**: Data analysis, LLM enrichment, Lichess integration
-- **Node.js**: Video discovery and matching pipeline
-- **Data Storage**: JSON files in `/data` directory
+- **Python**: Data analysis, Lichess integration (`tools/analysis/`)
+- **Node.js**: Video discovery (`tools/video-pipeline/`), course discovery
+  (`tools/course-discovery/`), LLM enrichment (`tools/llm-enrichment/`)
+- **Data Storage**: JSON files in `packages/api/src/data/`
 
 ### External Services
 
-- **Lichess API**: Game statistics and popularity data
+- **Lichess API**: Game statistics, popularity data, and study content
 - **YouTube API**: Video discovery and metadata
-- **Google Gemini**: LLM content generation
+- **Google Vertex AI**: LLM content generation
 
 ## Key Domain Concepts
 
@@ -118,6 +134,13 @@ Lichess API → Python Analysis → Aggregated Stats → Frontend
 YouTube Search → Video Discovery → Matching Algorithm → Video Index → Frontend
 ```
 
+### 4. Course Discovery Pipeline
+
+```
+Lichess Study Search → Discover Popular (500+ likes) → curated-studies.txt
+curated-studies.txt → Fetch PGN → Match FENs to ECO → courses.json → Frontend
+```
+
 ## Project Structure
 
 ```
@@ -125,25 +148,31 @@ chess-opening-explorer/
 ├── .github/
 │   ├── instructions/       # AI assistant guidelines
 │   └── memory-bank/        # Project context and tasks
-├── data/                   # Static data files
-│   ├── openings.json       # Opening database
-│   ├── popularity-stats.json
-│   └── video-index.json
-├── pages/                  # Next.js pages
-├── components/             # React components
+├── packages/
+│   ├── api/                # API logic and services
+│   │   └── src/data/       # JSON data (openings, courses, stats)
+│   ├── web/                # React 19 + TypeScript frontend
+│   └── shared/             # Shared utilities
+├── api/                    # Vercel serverless wrappers
+├── data/                   # Additional data files
 ├── scripts/                # Build and utility scripts
 ├── tools/
-│   ├── analysis/           # Python analysis tools
-│   └── video-pipeline/     # Video discovery tools
-└── workflows/              # Custom workflows
+│   ├── analysis/           # Python: Lichess stats pipeline
+│   ├── course-discovery/   # Node: Lichess study import pipeline
+│   ├── llm-enrichment/     # Node: AI content generation
+│   └── video-pipeline/     # Node: YouTube video discovery
+├── tests/                  # Backend tests (Jest)
+└── config/                 # Pipeline configuration
+```
 
 ## Workflows
 
-The project uses custom workflows (in `.agent/workflows/`) for common tasks:
+The project uses npm scripts for common tasks:
 
-- `/enrich-openings` - Run LLM enrichment for opening descriptions
-- `/update-popularity-stats` - Fetch and update Lichess statistics
-- `/video-pipeline` - Discover and match YouTube videos
+- `npm run course:discover` - Find popular Lichess studies (500+ likes)
+- `npm run course:import` - Import curated studies into courses.json
+- `npm run enrich` - Run LLM enrichment for opening descriptions
+- `npm run pipeline:complete` - Full video pipeline (discover → match)
 
 ## Key Design Decisions
 

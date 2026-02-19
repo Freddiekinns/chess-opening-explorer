@@ -12,7 +12,7 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   isOpen,
   onClose,
   onSelect,
-  openingsData
+  openingsData,
 }) => {
   const handleSelect = (opening: any) => {
     onClose();
@@ -29,15 +29,11 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
     <div className={`mobile-search-overlay ${isOpen ? 'active' : ''}`}>
       <div className="mobile-search-header">
         <h2 className="mobile-search-title">Search Openings</h2>
-        <button 
-          className="mobile-search-close" 
-          onClick={onClose}
-          aria-label="Close search"
-        >
+        <button className="mobile-search-close" onClick={onClose} aria-label="Close search">
           ×
         </button>
       </div>
-      
+
       <div className="mobile-search-content">
         <SearchBar
           variant="landing"

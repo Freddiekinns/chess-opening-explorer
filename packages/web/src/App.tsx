@@ -1,17 +1,17 @@
-import { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/react'
-import LandingPage from './pages/LandingPage'
-import AnalyseGamesPage from './pages/AnalyseGamesPage'
-import OpeningDetailPage from './pages/OpeningDetailPage'
+import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import LandingPage from './pages/LandingPage';
+import AnalyseGamesPage from './pages/AnalyseGamesPage';
+import OpeningDetailPage from './pages/OpeningDetailPage';
 
 const AnalyseRedirect = () => {
   useEffect(() => {
-    window.location.replace('/analyse')
-  }, [])
-  return null
-}
+    window.location.replace('/analyse');
+  }, []);
+  return null;
+};
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       <Analytics />
       <SpeedInsights />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

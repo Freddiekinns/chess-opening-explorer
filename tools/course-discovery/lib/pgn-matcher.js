@@ -34,13 +34,18 @@ function splitPGNIntoChapters(pgnText) {
     }
 
     const chapterName = extractHeader(trimmed, 'Event') || 'Untitled';
+    // Lichess PGN exports include the chapter URL in [ChapterURL] (preferred)
+    // or sometimes [Site]. Prefer ChapterURL as Site can reference a different
+    // source study when the chapter was imported from another study.
+    const chapterUrl = extractHeader(trimmed, 'ChapterURL') || '';
     const siteUrl = extractHeader(trimmed, 'Site') || '';
 
-    // Extract studyId and chapterId from Site URL
+    // Extract studyId and chapterId from ChapterURL or Site
     // Format: https://lichess.org/study/{studyId}/{chapterId}
     let studyId = null;
     let chapterId = null;
-    const siteMatch = siteUrl.match(/lichess\.org\/study\/([^/]+)\/([^/\s"]+)/);
+    const urlToMatch = chapterUrl || siteUrl;
+    const siteMatch = urlToMatch.match(/lichess\.org\/study\/([^/]+)\/([^/\s"]+)/);
     if (siteMatch) {
       studyId = siteMatch[1];
       chapterId = siteMatch[2];
@@ -50,7 +55,7 @@ function splitPGNIntoChapters(pgnText) {
       chapterId,
       chapterName,
       studyId,
-      pgn: trimmed
+      pgn: trimmed,
     });
   }
 
@@ -190,7 +195,7 @@ function matchFENsToOpenings(fens, ecoIndex) {
         fen: opening.fen || fens[i],
         name: opening.name,
         eco: opening.eco,
-        matchedAtMove: i + 1
+        matchedAtMove: i + 1,
       };
     }
   }
@@ -224,7 +229,7 @@ function loadECOIndex(ecoDir) {
       index.set(normalizedFen, {
         fen,
         name: opening.name,
-        eco: opening.eco
+        eco: opening.eco,
       });
     }
   }
@@ -239,5 +244,5 @@ module.exports = {
   generateFENsFromPGN,
   normalizeFEN,
   matchFENsToOpenings,
-  loadECOIndex
+  loadECOIndex,
 };

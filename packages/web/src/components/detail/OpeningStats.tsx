@@ -12,9 +12,9 @@ interface OpeningStatsProps {
 export const OpeningStats: React.FC<OpeningStatsProps> = ({
   gamesAnalyzed,
   whiteWins,
-  draws, 
+  draws,
   blackWins,
-  averageRating
+  averageRating,
 }) => {
   const totalGames = gamesAnalyzed > 0 ? gamesAnalyzed : 0;
   const whitePercent = totalGames ? (whiteWins / totalGames) * 100 : 0;
@@ -29,7 +29,9 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
           <span className={styles.metaItem}>{gamesAnalyzed.toLocaleString()} games</span>
           {averageRating && (
             <>
-              <span className={styles.metaSeparator} aria-hidden="true">•</span>
+              <span className={styles.metaSeparator} aria-hidden="true">
+                •
+              </span>
               <span className={styles.metaItem}>Avg Lichess Rating: {averageRating}</span>
             </>
           )}
@@ -38,9 +40,18 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
 
       <div className={styles.results}>
         <div className={styles.segmentedBar}>
-          <div className={`${styles.barSegment} ${styles.whiteSegment}`} style={{ width: `${whitePercent}%` }} />
-          <div className={`${styles.barSegment} ${styles.drawSegment}`} style={{ width: `${drawPercent}%` }} />
-          <div className={`${styles.barSegment} ${styles.blackSegment}`} style={{ width: `${blackPercent}%` }} />
+          <div
+            className={`${styles.barSegment} ${styles.whiteSegment}`}
+            style={{ width: `${whitePercent}%` }}
+          />
+          <div
+            className={`${styles.barSegment} ${styles.drawSegment}`}
+            style={{ width: `${drawPercent}%` }}
+          />
+          <div
+            className={`${styles.barSegment} ${styles.blackSegment}`}
+            style={{ width: `${blackPercent}%` }}
+          />
         </div>
       </div>
 

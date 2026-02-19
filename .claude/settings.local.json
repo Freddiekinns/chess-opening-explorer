@@ -32,7 +32,60 @@
       "Bash(node:*)",
       "Bash(npx jest:*)",
       "Bash(dir /s \"C:\\\\Users\\\\fred_\\\\chess-opening-explorer\\\\tools\\\\course-discovery\")",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(curl:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*\\.env$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Error: Direct .env edits are blocked for security. Please edit manually.' && exit 1",
+            "statusMessage": "Blocking .env edit"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "packages/web/.*\\.(ts|tsx|js|jsx)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint:fix --workspace=packages/web",
+            "statusMessage": "Auto-linting web workspace",
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "packages/api/.*\\.js$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint:fix --workspace=packages/api",
+            "statusMessage": "Auto-linting API workspace",
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "packages/web/.*\\.(ts|tsx)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run type-check --workspace=packages/web",
+            "statusMessage": "Type-checking TypeScript",
+            "async": true
+          }
+        ]
+      }
     ]
   }
 }

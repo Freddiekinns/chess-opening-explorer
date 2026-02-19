@@ -1,17 +1,17 @@
 /**
  * TDD Test: Opening Data Consistency Integration Tests
- * 
+ *
  * This test suite verifies that all 8 key opening attributes are consistent
  * when retrieved from different API endpoints and components:
  * 1. Description
- * 2. Name  
+ * 2. Name
  * 3. FEN
  * 4. Common Plans
  * 5. Stats
  * 6. Tags
  * 7. Aliases
  * 8. ECO Code
- * 
+ *
  * Following CLAUDE.md TDD methodology with comprehensive mocking
  */
 
@@ -30,20 +30,34 @@ const mockECOData = {
     name: 'Hungarian Opening: Sicilian Invitation',
     moves: '1. g3 c5',
     analysis_json: {
-      description: 'The Hungarian Opening with the Sicilian Invitation (1. g3 c5) is a flexible, hypermodern system where White adopts a reversed Sicilian setup with an extra tempo. This approach sidesteps mainstream theory, leading to a strategically complex game where understanding pawn structures and piece placement is paramount. It\'s ideal for patient, positional players who enjoy fianchetto systems and prefer to outmaneuver their opponents in a less-forced, more fluid battle.',
-      style_tags: ['Positional', 'Strategic', 'System-based', 'Flexible', 'Hypermodern', 'Transpositional', 'Quiet'],
+      description:
+        "The Hungarian Opening with the Sicilian Invitation (1. g3 c5) is a flexible, hypermodern system where White adopts a reversed Sicilian setup with an extra tempo. This approach sidesteps mainstream theory, leading to a strategically complex game where understanding pawn structures and piece placement is paramount. It's ideal for patient, positional players who enjoy fianchetto systems and prefer to outmaneuver their opponents in a less-forced, more fluid battle.",
+      style_tags: [
+        'Positional',
+        'Strategic',
+        'System-based',
+        'Flexible',
+        'Hypermodern',
+        'Transpositional',
+        'Quiet',
+      ],
       tactical_tags: ['Counterattack', 'Initiative', 'Tempo', 'Pin'],
       positional_tags: ['Central Control', 'Pawn Structure'],
-      strategic_themes: ['Reversed Sicilian', 'Fianchetto Attack', 'Control of the d4-square', 'Transpositional Play'],
+      strategic_themes: [
+        'Reversed Sicilian',
+        'Fianchetto Attack',
+        'Control of the d4-square',
+        'Transpositional Play',
+      ],
       complexity: 'Intermediate',
       common_plans: [
-        'White: Complete the kingside fianchetto (Bg2), control the center with moves like Nf3 and c4, and use the long diagonal to pressure Black\'s position.',
-        'Black: Challenge White\'s central ambitions with ...Nc6 and ...d5, develop pieces to fight for the d4-square, and create counterplay on the queenside.',
+        "White: Complete the kingside fianchetto (Bg2), control the center with moves like Nf3 and c4, and use the long diagonal to pressure Black's position.",
+        "Black: Challenge White's central ambitions with ...Nc6 and ...d5, develop pieces to fight for the d4-square, and create counterplay on the queenside.",
         'White: Often transposes into a favorable version of the English Opening or a Réti Setup, aiming for a small but lasting spatial or positional edge.',
-        'Black: Aims to equalize by neutralizing White\'s fianchettoed bishop and proving that White\'s setup is too passive.'
-      ]
-    }
-  }
+        "Black: Aims to equalize by neutralizing White's fianchettoed bishop and proving that White's setup is too passive.",
+      ],
+    },
+  },
 };
 
 const mockPopularityStats = {
@@ -55,8 +69,8 @@ const mockPopularityStats = {
     black_win_rate: 32.1,
     draw_rate: 15.6,
     confidence_score: 8.2,
-    analysis_date: '2024-01-15'
-  }
+    analysis_date: '2024-01-15',
+  },
 };
 
 describe('Opening Data Consistency Integration Tests', () => {
@@ -71,7 +85,7 @@ describe('Opening Data Consistency Integration Tests', () => {
       getOpeningByFEN: jest.fn((fen) => {
         const opening = mockECOData[fen];
         if (!opening) return null;
-        
+
         // Simulate the formatOpeningData method behavior
         return {
           name: opening.name,
@@ -86,13 +100,13 @@ describe('Opening Data Consistency Integration Tests', () => {
           strategic_themes: opening.analysis_json?.strategic_themes || [],
           common_plans: opening.analysis_json?.common_plans || [],
           src: opening.src,
-          scid: opening.scid
+          scid: opening.scid,
         };
       }),
       getECOAnalysisByFEN: jest.fn((fen) => {
         const opening = mockECOData[fen];
         if (!opening?.analysis_json) return null;
-        
+
         const analysis = opening.analysis_json;
         return {
           eco: opening.eco,
@@ -110,21 +124,21 @@ describe('Opening Data Consistency Integration Tests', () => {
           black_plans: analysis.black_plans || [],
           common_plans: analysis.common_plans || [],
           mainline_moves: analysis.mainline_moves,
-          last_enriched_at: analysis.last_enriched_at
+          last_enriched_at: analysis.last_enriched_at,
         };
-      })
+      }),
     };
 
     // Mock the ECOService constructor to return our mock instance
     ECOService.mockImplementation(() => mockEcoService);
-    
+
     // Setup Express app with mocked services
     app = express();
     app.use(express.json());
 
     // Setup routes with mocked services (require after mocking)
     const openingsRouter = require('../../packages/api/src/routes/openings.routes');
-    
+
     app.use('/api/openings', openingsRouter);
   });
 
@@ -135,10 +149,8 @@ describe('Opening Data Consistency Integration Tests', () => {
   describe('Core Opening Data Retrieval', () => {
     test('should return consistent opening data from FEN lookup endpoint', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
-      
-      const response = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(200);
+
+      const response = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
 
       expect(response.body.success).toBe(true);
       const opening = response.body.data;
@@ -174,12 +186,10 @@ describe('Opening Data Consistency Integration Tests', () => {
   describe('Cross-Endpoint Data Consistency', () => {
     test('should return the same opening name across all endpoints', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
-      
+
       // Get opening data
-      const openingResponse = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(200);
-      
+      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
+
       // Get analysis data
       const analysisResponse = await request(app)
         .post('/api/openings/fen-analysis')
@@ -195,13 +205,11 @@ describe('Opening Data Consistency Integration Tests', () => {
 
     test('should return the same ECO code across all endpoints', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
-      
+
       // Get opening data
-      const openingResponse = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(200);
-      
-      // Get analysis data  
+      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
+
+      // Get analysis data
       const analysisResponse = await request(app)
         .post('/api/openings/fen-analysis')
         .send({ fen: testFEN })
@@ -216,12 +224,10 @@ describe('Opening Data Consistency Integration Tests', () => {
 
     test('should return the same FEN across all endpoints', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
-      
+
       // Get opening data
-      const openingResponse = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(200);
-      
+      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
+
       // Get analysis data
       const analysisResponse = await request(app)
         .post('/api/openings/fen-analysis')
@@ -239,10 +245,8 @@ describe('Opening Data Consistency Integration Tests', () => {
   describe('Data Completeness Validation', () => {
     test('should include all required attributes in opening response', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
-      
-      const response = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(200);
+
+      const response = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
 
       const opening = response.body.data;
 
@@ -252,7 +256,7 @@ describe('Opening Data Consistency Integration Tests', () => {
       expect(opening).toHaveProperty('fen');
       expect(opening).toHaveProperty('moves');
       expect(opening).toHaveProperty('aliases');
-      
+
       // Verify they're not null/undefined/empty
       expect(opening.name).toBeTruthy();
       expect(opening.eco).toBeTruthy();
@@ -275,7 +279,7 @@ describe('Opening Data Consistency Integration Tests', () => {
       expect(analysis).toHaveProperty('style_tags');
       expect(analysis).toHaveProperty('complexity');
       expect(analysis).toHaveProperty('strategic_themes');
-      
+
       // Verify they contain meaningful data
       expect(analysis.description).toBeTruthy();
       expect(Array.isArray(analysis.common_plans)).toBe(true);
@@ -288,12 +292,10 @@ describe('Opening Data Consistency Integration Tests', () => {
     test('should handle non-existent FEN consistently across endpoints', async () => {
       const nonExistentFEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       const encodedFEN = encodeURIComponent(nonExistentFEN);
-      
+
       // Both endpoints should return 404 for non-existent FEN
-      await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(404);
-      
+      await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
+
       await request(app)
         .post('/api/openings/fen-analysis')
         .send({ fen: nonExistentFEN })
@@ -303,12 +305,10 @@ describe('Opening Data Consistency Integration Tests', () => {
     test('should handle malformed FEN consistently', async () => {
       const malformedFEN = 'invalid-fen-string';
       const encodedFEN = encodeURIComponent(malformedFEN);
-      
+
       // Both endpoints should handle malformed FEN gracefully
-      const openingResponse = await request(app)
-        .get(`/api/openings/fen/${encodedFEN}`)
-        .expect(404);
-      
+      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
+
       const analysisResponse = await request(app)
         .post('/api/openings/fen-analysis')
         .send({ fen: malformedFEN })

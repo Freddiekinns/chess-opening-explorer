@@ -1,6 +1,6 @@
 ---
-description: "Testing standards for this project"
-applyTo: "**/*.test.*, **/*.spec.*"
+description: 'Testing standards for this project'
+applyTo: '**/*.test.*, **/*.spec.*'
 ---
 
 # Testing Standards
@@ -8,7 +8,9 @@ applyTo: "**/*.test.*, **/*.spec.*"
 ## Test Organization
 
 ### Backend (Jest)
+
 Tests in root `tests/` directory:
+
 ```
 tests/
 ├── unit/
@@ -18,7 +20,9 @@ tests/
 ```
 
 ### Frontend (Vitest)
+
 Tests alongside components in `packages/web/src/**/__tests__/`:
+
 ```
 packages/web/src/
   components/
@@ -31,30 +35,30 @@ packages/web/src/
 ## Test Naming
 
 ```javascript
-describe("calculateWinRate", () => {
-  it("returns percentage when given wins and total games", () => {});
-  it("throws error when total is 0", () => {});
+describe('calculateWinRate', () => {
+  it('returns percentage when given wins and total games', () => {});
+  it('throws error when total is 0', () => {});
 });
 ```
 
 ## JavaScript (Jest)
 
 ```javascript
-import { describe, it, expect, beforeEach } from "@jest/globals";
+import { describe, it, expect, beforeEach } from '@jest/globals';
 
-describe("OpeningProcessor", () => {
+describe('OpeningProcessor', () => {
   let processor;
 
   beforeEach(() => {
     processor = new OpeningProcessor();
   });
 
-  it("processes opening correctly", async () => {
-    const result = await processor.process({ ecoCode: "E60" });
-    expect(result.ecoCode).toBe("E60");
+  it('processes opening correctly', async () => {
+    const result = await processor.process({ ecoCode: 'E60' });
+    expect(result.ecoCode).toBe('E60');
   });
 
-  it("handles errors gracefully", async () => {
+  it('handles errors gracefully', async () => {
     await expect(processor.process(null)).rejects.toThrow();
   });
 });

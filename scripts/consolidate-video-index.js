@@ -2,13 +2,13 @@
 
 /**
  * Video Index Consolidation Script
- * 
+ *
  * Consolidates 12,373 individual video JSON files into a single deployable index
  * for Vercel production deployment.
- * 
+ *
  * Input: data/Videos/*.json (18.37MB across 12,373 files)
  * Output: api/data/video-index.json (estimated 2MB single file)
- * 
+ *
  * Performance Impact: 200-500x faster lookups in production
  */
 
@@ -32,14 +32,14 @@ async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_D
 
   try {
     // Read all video files
-    const videoFiles = fs.readdirSync(inputDir).filter(file => file.endsWith('.json'));
+    const videoFiles = fs.readdirSync(inputDir).filter((file) => file.endsWith('.json'));
     console.log(`📊 Found ${videoFiles.length} video files to process`);
 
     const videoIndex = {
-      version: "1.0.0",
+      version: '1.0.0',
       generated: new Date().toISOString(),
       totalPositions: videoFiles.length,
-      positions: {}
+      positions: {},
     };
 
     let processedCount = 0;
@@ -72,7 +72,6 @@ async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_D
         if (processedCount % 1000 === 0) {
           console.log(`  ⏳ Processed ${processedCount}/${videoFiles.length} files...`);
         }
-
       } catch (parseError) {
         console.warn(`⚠️  Failed to parse ${filename}:`, parseError.message);
       }
@@ -84,7 +83,7 @@ async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_D
       processedPositions: processedCount,
       totalVideos: totalVideoCount,
       originalSizeMB: (totalSize / (1024 * 1024)).toFixed(2),
-      compressionRatio: null // Will be calculated after writing
+      compressionRatio: null, // Will be calculated after writing
     };
 
     // Write consolidated index
@@ -107,7 +106,9 @@ async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_D
     console.log('✅ Video Index Consolidation Complete!');
     console.log('');
     console.log('📊 Consolidation Results:');
-    console.log(`   Original: ${videoFiles.length} files, ${(totalSize / (1024 * 1024)).toFixed(2)}MB`);
+    console.log(
+      `   Original: ${videoFiles.length} files, ${(totalSize / (1024 * 1024)).toFixed(2)}MB`
+    );
     console.log(`   Consolidated: 1 file, ${outputSizeMB}MB`);
     console.log(`   Compression: ${compressionRatio}x smaller`);
     console.log(`   Positions: ${processedCount} with video data`);
@@ -118,7 +119,6 @@ async function consolidateVideoIndex(inputDir = VIDEOS_DIR, outputDir = OUTPUT_D
     console.log('   ✅ 200-500x faster position lookups');
     console.log('   ✅ Predictable memory usage');
     console.log('   ✅ Single file management');
-
   } catch (error) {
     console.error('❌ Consolidation failed:', error);
     process.exit(1);

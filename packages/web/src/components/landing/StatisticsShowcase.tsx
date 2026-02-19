@@ -2,23 +2,23 @@ import React from 'react';
 
 interface StatisticsShowcaseProps {
   stats: {
-    totalOpenings: number
-    totalVideos: number
-    avgRating?: number
-  }
-  className?: string
+    totalOpenings: number;
+    totalVideos: number;
+    avgRating?: number;
+  };
+  className?: string;
 }
 
 export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
   stats,
-  className = ''
+  className = '',
 }) => {
   const formatNumber = (num: number): string => {
     if (num >= 1000) {
-      return `${(num / 1000).toFixed(0)}K+`
+      return `${(num / 1000).toFixed(0)}K+`;
     }
-    return num.toString()
-  }
+    return num.toString();
+  };
 
   const statisticsData = [
     {
@@ -27,7 +27,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
       label: 'Chess Openings',
       description: 'Complete ECO classification with AI analysis',
       icon: '♛',
-      color: 'primary'
+      color: 'primary',
     },
     {
       id: 'videos',
@@ -35,7 +35,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
       label: 'Related Videos',
       description: 'Curated YouTube lessons from chess masters',
       icon: '📹',
-      color: 'secondary'
+      color: 'secondary',
     },
     {
       id: 'analysis',
@@ -43,7 +43,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
       label: 'AI-Enriched',
       description: 'Machine learning analysis for every opening',
       icon: '🧠',
-      color: 'tertiary'
+      color: 'tertiary',
     },
     {
       id: 'statistics',
@@ -51,9 +51,9 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
       label: 'Popularity Stats',
       description: 'Real game data from millions of chess matches',
       icon: '📊',
-      color: 'quaternary'
-    }
-  ]
+      color: 'quaternary',
+    },
+  ];
 
   return (
     <section className={`statistics-showcase ${className}`}>
@@ -67,9 +67,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
       <div className="stats-grid">
         {statisticsData.map((stat) => (
           <div key={stat.id} className={`stat-card ${stat.color}`}>
-            <div className="stat-icon">
-              {stat.icon}
-            </div>
+            <div className="stat-icon">{stat.icon}</div>
             <div className="stat-content">
               <div className="stat-value">{stat.value}</div>
               <div className="stat-label">{stat.label}</div>
@@ -100,7 +98,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default StatisticsShowcase
+export default StatisticsShowcase;

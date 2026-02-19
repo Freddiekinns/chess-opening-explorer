@@ -1,19 +1,25 @@
 # Lichess Chess Opening Popularity Analysis Pipeline
 
-A production-ready data pipeline for analyzing chess opening popularity from Lichess game database. This pipeline downloads, processes, and analyzes millions of chess games to generate comprehensive opening statistics.
+A production-ready data pipeline for analyzing chess opening popularity from
+Lichess game database. This pipeline downloads, processes, and analyzes millions
+of chess games to generate comprehensive opening statistics.
 
 ## Features
 
-- 📊 **Comprehensive Statistics**: Analyzes popularity, win rates, and confidence scores for chess openings
-- 🔄 **Incremental Updates**: Support for incremental processing to update statistics efficiently
-- 💾 **Checkpoint/Resume**: Automatic checkpointing for recovery from interruptions
+- 📊 **Comprehensive Statistics**: Analyzes popularity, win rates, and
+  confidence scores for chess openings
+- 🔄 **Incremental Updates**: Support for incremental processing to update
+  statistics efficiently
+- 💾 **Checkpoint/Resume**: Automatic checkpointing for recovery from
+  interruptions
 - 🚀 **Parallel Processing**: Efficient parallel download and processing
 - 🔍 **Data Validation**: Built-in validation for downloads and outputs
 - 📝 **Detailed Logging**: Comprehensive logging with progress bars
 
 ## Output
 
-The pipeline generates `popularity_stats.json` containing statistics for chess opening positions:
+The pipeline generates `popularity_stats.json` containing statistics for chess
+opening positions:
 
 ```json
 {
@@ -129,7 +135,8 @@ python run_pipeline.py --help
 
 ## Configuration
 
-The pipeline can be configured using a JSON configuration file. Create a config file based on `config.example.json`:
+The pipeline can be configured using a JSON configuration file. Create a config
+file based on `config.example.json`:
 
 ```json
 {
@@ -202,9 +209,11 @@ tools/analysis/
 
 ## Data Source
 
-The pipeline downloads data from the [Lichess Open Database](https://database.lichess.org/):
+The pipeline downloads data from the
+[Lichess Open Database](https://database.lichess.org/):
 
-- URL: `https://database.lichess.org/standard/lichess_db_standard_rated_YYYY-MM.pgn.zst`
+- URL:
+  `https://database.lichess.org/standard/lichess_db_standard_rated_YYYY-MM.pgn.zst`
 - Each file contains all rated standard games for one month
 - Files are compressed with zstandard (.zst)
 - File sizes: 1-10 GB compressed, larger when decompressed

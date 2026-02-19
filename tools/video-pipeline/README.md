@@ -1,6 +1,7 @@
 # Video Pipeline
 
-Discovers, enriches, and matches YouTube chess educational videos to chess openings.
+Discovers, enriches, and matches YouTube chess educational videos to chess
+openings.
 
 ## Quick Start
 
@@ -59,10 +60,10 @@ Trusted channels are configured in `config/youtube_channels.json`:
 
 ### Quality Tiers
 
-| Tier | Duration Requirement | Scoring Bonus |
-|------|---------------------|---------------|
-| `premium` | 4+ minutes | +40 points |
-| `standard` | 8+ minutes | +20 points |
+| Tier       | Duration Requirement | Scoring Bonus |
+| ---------- | -------------------- | ------------- |
+| `premium`  | 4+ minutes           | +40 points    |
+| `standard` | 8+ minutes           | +20 points    |
 
 ## Using Components Independently
 
@@ -75,7 +76,7 @@ const RSSVideoDiscovery = require('./lib/rss-discovery');
 
 const discovery = new RSSVideoDiscovery();
 const { videos, errors } = await discovery.discoverNewVideos({
-  publishedAfter: '2024-01-01T00:00:00Z'
+  publishedAfter: '2024-01-01T00:00:00Z',
 });
 ```
 
@@ -95,7 +96,7 @@ const VideoMatcher = require('./lib/video-matcher');
 
 const matcher = new VideoMatcher('./data/videos.sqlite');
 const results = await matcher.runMatchingWithVideos(enrichedVideos, {
-  clearDb: false  // Set true to start fresh
+  clearDb: false, // Set true to start fresh
 });
 ```
 
@@ -103,23 +104,24 @@ const results = await matcher.runMatchingWithVideos(enrichedVideos, {
 
 Videos are scored (0-200) based on:
 
-| Factor | Points | Description |
-|--------|--------|-------------|
-| **Name Match** | +80 | Opening name in video title |
-| **Content Match** | +60 | Opening name in description/tags |
-| **Family Match** | +50 | Major opening family detected |
-| **Abbreviation** | +35 | Known abbreviation (QGD, KID, etc.) |
-| **Educational Keywords** | +30 | "explained", "theory", "guide" |
-| **Premium Educator** | +40 | Naroditsky, St. Louis, etc. |
-| **Good Duration** | +15 | 20-60 minutes |
-| **Game Analysis** | -60 | "vs", "brilliant", "crushes" |
-| **Short Video** | -25 | Under 5 minutes |
+| Factor                   | Points | Description                         |
+| ------------------------ | ------ | ----------------------------------- |
+| **Name Match**           | +80    | Opening name in video title         |
+| **Content Match**        | +60    | Opening name in description/tags    |
+| **Family Match**         | +50    | Major opening family detected       |
+| **Abbreviation**         | +35    | Known abbreviation (QGD, KID, etc.) |
+| **Educational Keywords** | +30    | "explained", "theory", "guide"      |
+| **Premium Educator**     | +40    | Naroditsky, St. Louis, etc.         |
+| **Good Duration**        | +15    | 20-60 minutes                       |
+| **Game Analysis**        | -60    | "vs", "brilliant", "crushes"        |
+| **Short Video**          | -25    | Under 5 minutes                     |
 
 Minimum threshold: **60 points**
 
 ### Family Mismatch Protection
 
 Videos are rejected if they discuss an incompatible opening family:
+
 - A "Sicilian" video won't match French Defense openings
 - A "Queen's Gambit" video won't match King's Indian openings
 
@@ -163,13 +165,14 @@ npx jest tools/video-pipeline/tests/video-matcher.test.js
 
 The pipeline is optimized for minimal YouTube API usage:
 
-| Method | API Units |
-|--------|-----------|
-| YouTube Search | ~100 units/query |
-| RSS Discovery | **0 units** |
-| Video Details (batch) | 1 unit/video |
+| Method                | API Units        |
+| --------------------- | ---------------- |
+| YouTube Search        | ~100 units/query |
+| RSS Discovery         | **0 units**      |
+| Video Details (batch) | 1 unit/video     |
 
-By using RSS feeds for discovery, the pipeline saves ~88% of API quota compared to search-based approaches.
+By using RSS feeds for discovery, the pipeline saves ~88% of API quota compared
+to search-based approaches.
 
 ## Output
 
@@ -178,6 +181,7 @@ By using RSS feeds for discovery, the pipeline saves ~88% of API quota compared 
 Location: `tools/video-pipeline/data/videos.sqlite`
 
 Tables:
+
 - `openings` - Chess openings with ECO codes
 - `videos` - Video metadata
 - `opening_videos` - Match relationships with scores
@@ -190,16 +194,17 @@ Each file contains the top 10 matched videos for that opening.
 
 ## Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `YOUTUBE_API_KEY` | Yes | YouTube Data API v3 key |
-| `NODE_ENV` | No | Set to `test` to skip delays |
+| Variable          | Required | Description                  |
+| ----------------- | -------- | ---------------------------- |
+| `YOUTUBE_API_KEY` | Yes      | YouTube Data API v3 key      |
+| `NODE_ENV`        | No       | Set to `test` to skip delays |
 
 ## Troubleshooting
 
 ### "No API Key found"
 
 Set your YouTube API key:
+
 ```bash
 export YOUTUBE_API_KEY="AIza..."
 ```
@@ -211,6 +216,7 @@ The video may be private, deleted, or region-restricted.
 ### Low match scores
 
 Check if the opening name uses common abbreviations. The pipeline recognizes:
+
 - QGD, QGA (Queen's Gambit)
 - KID (King's Indian)
 - London, Dragon, Najdorf, etc.

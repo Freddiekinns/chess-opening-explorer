@@ -1,6 +1,6 @@
 /**
  * Global Test Setup Configuration
- * 
+ *
  * This file configures the testing environment for all tests
  * following the TDD principles from the coding instructions.
  */
@@ -17,14 +17,15 @@ jest.mock('@google-cloud/vertexai', () => ({
     getGenerativeModel: jest.fn().mockReturnValue({
       generateContent: jest.fn().mockResolvedValue({
         response: {
-          text: () => JSON.stringify({
-            analysis_for_opening: { test: 'data' },
-            found_courses: []
-          })
-        }
-      })
-    })
-  }))
+          text: () =>
+            JSON.stringify({
+              analysis_for_opening: { test: 'data' },
+              found_courses: [],
+            }),
+        },
+      }),
+    }),
+  })),
 }));
 
 // Mock YouTube API to prevent real API calls
@@ -40,15 +41,15 @@ jest.mock('googleapis', () => ({
                 snippet: {
                   title: 'Test Chess Video',
                   channelTitle: 'Test Channel',
-                  publishedAt: '2024-01-01T00:00:00Z'
-                }
-              }
-            ]
-          }
-        })
-      }
-    })
-  }
+                  publishedAt: '2024-01-01T00:00:00Z',
+                },
+              },
+            ],
+          },
+        }),
+      },
+    }),
+  },
 }));
 
 // Mock file system operations for consistent testing
@@ -59,8 +60,8 @@ jest.mock('fs', () => ({
     writeFile: jest.fn(),
     mkdir: jest.fn(),
     rmdir: jest.fn(),
-    stat: jest.fn()
-  }
+    stat: jest.fn(),
+  },
 }));
 
 // Global test utilities
@@ -72,7 +73,7 @@ global.testUtils = {
     moves: '1. e4',
     eco: 'B00',
     fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1',
-    ...overrides
+    ...overrides,
   }),
 
   // Create mock video data
@@ -82,14 +83,14 @@ global.testUtils = {
     channel: 'Test Channel',
     publishedAt: '2024-01-01T00:00:00Z',
     match_score: 0.85,
-    ...overrides
+    ...overrides,
   }),
 
   // Clean up test database/files
   cleanupTest: async () => {
     // Reset all mocks
     jest.clearAllMocks();
-  }
+  },
 };
 
 // Global setup and teardown
@@ -110,5 +111,5 @@ global.console = {
   debug: jest.fn(),
   info: jest.fn(),
   warn: console.warn, // Keep warnings
-  error: console.error // Keep errors
+  error: console.error, // Keep errors
 };

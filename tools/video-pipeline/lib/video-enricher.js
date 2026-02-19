@@ -1,10 +1,10 @@
 /**
  * Video Enrichment Service
  * Phase 1 of Pipeline Overhaul - Quality Issues Fix
- * 
+ *
  * Efficiently enriches pre-filtered video candidates with YouTube API data.
  * Uses intelligent batching, caching, and rate limiting to minimize API usage.
- * 
+ *
  * Performance Target: 50 videos in <5 seconds
  * API Efficiency: Batch requests of 50 videos max per call
  */
@@ -17,17 +17,17 @@ class VideoEnrichment {
   constructor(apiKey = null, options = {}) {
     this.youtube = google.youtube({
       version: 'v3',
-      auth: apiKey || process.env.YOUTUBE_API_KEY
+      auth: apiKey || process.env.YOUTUBE_API_KEY,
     });
-    
+
     this.batchSize = 50; // YouTube API allows up to 50 video IDs per request
     this.cacheDir = path.join(__dirname, '../../data');
     this.cacheFile = path.join(this.cacheDir, 'video_enrichment_cache.json');
     this.cacheMaxAge = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
     this.enableCache = options.enableCache !== false; // Allow disabling cache for tests
-    
+
     this.lastEnrichmentStats = null;
-    
+
     // Ensure cache directory exists
     if (this.enableCache) {
       this.ensureCacheDirectory();
@@ -52,27 +52,26 @@ class VideoEnrichment {
       // Fetch from YouTube API
       const response = await this.youtube.videos.list({
         part: ['snippet', 'contentDetails', 'statistics'],
-        id: [candidateVideo.id]
+        id: [candidateVideo.id],
       });
 
       if (!response.data || !response.data.items) {
         return this.createErrorResult(candidateVideo, 'Invalid API response structure');
       }
-      
+
       if (response.data.items.length === 0) {
         return this.createErrorResult(candidateVideo, 'Video not found in YouTube API');
       }
 
       const apiVideo = response.data.items[0];
       const enrichedVideo = this.transformApiResponse(apiVideo);
-      
+
       // Cache the result (if enabled)
       if (this.enableCache) {
         this.cacheVideoData(enrichedVideo);
       }
-      
+
       return enrichedVideo;
-      
     } catch (error) {
       return this.createErrorResult(candidateVideo, error.message);
     }
@@ -92,18 +91,18 @@ class VideoEnrichment {
         type: 'video',
         maxResults: maxResults,
         order: 'relevance',
-        videoDuration: 'medium' // 4-20 mins
+        videoDuration: 'medium', // 4-20 mins
       });
 
       if (!response.data || !response.data.items) {
         return [];
       }
 
-      return response.data.items.map(item => ({
+      return response.data.items.map((item) => ({
         id: item.id.videoId,
         title: item.snippet.title,
         channelTitle: item.snippet.channelTitle,
-        publishedAt: item.snippet.publishedAt
+        publishedAt: item.snippet.publishedAt,
       }));
     } catch (error) {
       console.error(`Search failed for "${query}":`, error.message);
@@ -127,12 +126,12 @@ class VideoEnrichment {
     for (let i = 0; i < candidateVideos.length; i += this.batchSize) {
       const batch = candidateVideos.slice(i, i + this.batchSize);
       const batchResults = await this.processBatch(batch);
-      
+
       results.push(...batchResults);
       totalApiCalls++;
-      
+
       // Count successes and errors
-      batchResults.forEach(result => {
+      batchResults.forEach((result) => {
         if (result.enrichmentError) {
           errorCount++;
         } else {
@@ -148,7 +147,7 @@ class VideoEnrichment {
       totalErrors: errorCount,
       apiCallsUsed: totalApiCalls,
       successRate: candidateVideos.length > 0 ? (successCount / candidateVideos.length) * 100 : 0,
-      duration: Date.now() - startTime
+      duration: Date.now() - startTime,
     };
 
     return results;
@@ -161,11 +160,11 @@ class VideoEnrichment {
    */
   async processBatch(batch) {
     try {
-      const videoIds = batch.map(video => video.id);
-      
+      const videoIds = batch.map((video) => video.id);
+
       const response = await this.youtube.videos.list({
         part: ['snippet', 'contentDetails', 'statistics'],
-        id: videoIds
+        id: videoIds,
       });
 
       if (!response.data || !response.data.items) {
@@ -177,8 +176,8 @@ class VideoEnrichment {
 
       // Map API results back to candidates
       for (const candidate of batch) {
-        const apiVideo = apiVideos.find(v => v.id === candidate.id);
-        
+        const apiVideo = apiVideos.find((v) => v.id === candidate.id);
+
         if (apiVideo) {
           const enrichedVideo = this.transformApiResponse(apiVideo);
           if (this.enableCache) {
@@ -191,10 +190,9 @@ class VideoEnrichment {
       }
 
       return results;
-      
     } catch (error) {
       // If batch fails, return error results for all videos in batch
-      return batch.map(candidate => this.createErrorResult(candidate, error.message));
+      return batch.map((candidate) => this.createErrorResult(candidate, error.message));
     }
   }
 
@@ -220,7 +218,7 @@ class VideoEnrichment {
       viewCount: parseInt(statistics.viewCount || '0', 10),
       likeCount: parseInt(statistics.likeCount || '0', 10),
       commentCount: parseInt(statistics.commentCount || '0', 10),
-      enrichedAt: new Date().toISOString()
+      enrichedAt: new Date().toISOString(),
     };
   }
 
@@ -234,7 +232,7 @@ class VideoEnrichment {
     return {
       ...candidateVideo,
       enrichmentError: errorMessage,
-      enrichedAt: new Date().toISOString()
+      enrichedAt: new Date().toISOString(),
     };
   }
 
@@ -268,7 +266,6 @@ class VideoEnrichment {
 
       const cacheData = JSON.parse(fs.readFileSync(this.cacheFile, 'utf8'));
       return cacheData[videoId] || null;
-      
     } catch (error) {
       // Cache file corrupted or invalid, ignore
       return null;
@@ -282,15 +279,14 @@ class VideoEnrichment {
   cacheVideoData(videoData) {
     try {
       let cacheData = {};
-      
+
       if (fs.existsSync(this.cacheFile)) {
         cacheData = JSON.parse(fs.readFileSync(this.cacheFile, 'utf8'));
       }
 
       cacheData[videoData.id] = videoData;
-      
+
       fs.writeFileSync(this.cacheFile, JSON.stringify(cacheData, null, 2));
-      
     } catch (error) {
       // Cache write failed, but don't fail the enrichment
       console.warn('Failed to write cache:', error.message);

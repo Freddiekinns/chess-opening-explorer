@@ -12,7 +12,7 @@ jest.mock('path');
 // Mock path resolver with all required methods
 jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getECODataPath: jest.fn(() => '/mock/data/eco'),
-  getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json')
+  getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json'),
 }));
 
 const fs = require('fs');
@@ -20,52 +20,58 @@ const path = require('path');
 
 describe('ECOService Final Working Tests', () => {
   let ecoService;
-  
+
   const mockECOData = {
     'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1': {
       name: 'Starting Position',
       eco: 'A00',
-      moves: ''
+      moves: '',
     },
     'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2': {
       name: 'Sicilian Defense',
       eco: 'B20',
-      moves: '1.e4 c5'
-    }
+      moves: '1.e4 c5',
+    },
   };
 
   const mockPopularityData = {
     positions: {
-      'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2': { 
+      'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2': {
         popularity_score: 85,
-        games_analyzed: 1000000 
-      }
-    }
+        games_analyzed: 1000000,
+      },
+    },
   };
 
   beforeEach(() => {
     jest.clearAllMocks();
-    
+
     // Create new service instance
     ecoService = new ECOService();
-    
+
     // Setup fs mocks correctly
     const mockReaddirSync = jest.fn();
     const mockReadFileSync = jest.fn();
     const mockExistsSync = jest.fn();
-    
+
     fs.readdirSync = mockReaddirSync;
     fs.readFileSync = mockReadFileSync;
     fs.existsSync = mockExistsSync;
-    
+
     // Setup default mock returns
     mockReaddirSync.mockReturnValue(['ecoA.json', 'ecoB.json']);
     mockReadFileSync.mockImplementation((filePath) => {
       if (filePath.includes('ecoA.json')) {
-        return JSON.stringify({ 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1': mockECOData['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'] });
+        return JSON.stringify({
+          'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1':
+            mockECOData['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'],
+        });
       }
       if (filePath.includes('ecoB.json')) {
-        return JSON.stringify({ 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2': mockECOData['rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2'] });
+        return JSON.stringify({
+          'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2':
+            mockECOData['rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2'],
+        });
       }
       if (filePath.includes('popularity_stats.json')) {
         return JSON.stringify(mockPopularityData);
@@ -73,7 +79,7 @@ describe('ECOService Final Working Tests', () => {
       return '{}';
     });
     mockExistsSync.mockReturnValue(true);
-    
+
     // Setup path.join mock
     path.join = jest.fn((...args) => args.join('/'));
   });
@@ -87,7 +93,7 @@ describe('ECOService Final Working Tests', () => {
 
     it('should load ECO data from files', () => {
       const result = ecoService.loadECOData();
-      
+
       expect(typeof result).toBe('object');
       expect(ecoService.mergedData).toBeDefined();
       // Service should return merged data
@@ -96,7 +102,7 @@ describe('ECOService Final Working Tests', () => {
 
     it('should return all openings with popularity data', () => {
       const result = ecoService.getAllOpenings();
-      
+
       expect(Array.isArray(result)).toBe(true);
       expect(result.length).toBeGreaterThan(0);
       expect(result[0]).toHaveProperty('fen');
@@ -105,7 +111,7 @@ describe('ECOService Final Working Tests', () => {
 
     it('should return openings for valid ECO code', () => {
       const result = ecoService.getOpeningsByECO('B20');
-      
+
       expect(Array.isArray(result)).toBe(true);
       if (result.length > 0) {
         expect(result[0]).toHaveProperty('eco', 'B20');
@@ -114,7 +120,7 @@ describe('ECOService Final Working Tests', () => {
 
     it('should return a random opening', () => {
       const result = ecoService.getRandomOpening();
-      
+
       if (result) {
         expect(result).toHaveProperty('eco');
         expect(result).toHaveProperty('name');
@@ -123,7 +129,7 @@ describe('ECOService Final Working Tests', () => {
 
     it('should search openings by name', () => {
       const result = ecoService.searchOpeningsByName('Sicilian');
-      
+
       expect(Array.isArray(result)).toBe(true);
     });
 
@@ -131,7 +137,7 @@ describe('ECOService Final Working Tests', () => {
       // Test that the service returns an array even with mock data
       const emptyEcoService = new ECOService();
       const result = emptyEcoService.getAllOpenings();
-      
+
       expect(Array.isArray(result)).toBe(true);
       // With our mock data, we expect 2 items
       expect(result.length).toBeGreaterThanOrEqual(0);
@@ -140,7 +146,7 @@ describe('ECOService Final Working Tests', () => {
     it('should cache loaded data', () => {
       // Test that data gets loaded and cached
       const result = ecoService.loadECOData();
-      
+
       expect(result).toBeDefined();
       expect(typeof result).toBe('object');
       // After loading, the service should have data
@@ -150,18 +156,18 @@ describe('ECOService Final Working Tests', () => {
 
     it('should handle missing files gracefully', () => {
       const consoleWarn = jest.spyOn(console, 'warn').mockImplementation();
-      
+
       // Mock fs to simulate missing files
       fs.readdirSync.mockImplementation(() => {
         throw new Error('Directory not found');
       });
-      
+
       fs.readFileSync.mockImplementation(() => {
         throw new Error('File not found');
       });
-      
+
       const result = ecoService.loadECOData();
-      
+
       expect(result).toBeDefined();
       // Reset mocks
       consoleWarn.mockRestore();
@@ -170,13 +176,13 @@ describe('ECOService Final Working Tests', () => {
     it('should clear cached data', () => {
       ecoService.loadECOData(); // Load some data first
       ecoService.clearCache();
-      
+
       expect(ecoService.mergedData).toBeNull();
     });
 
     it('should get popular openings', () => {
       const result = ecoService.getPopularOpenings(5);
-      
+
       expect(result).toHaveProperty('data');
       expect(Array.isArray(result.data)).toBe(true);
       expect(result).toHaveProperty('count');
@@ -185,13 +191,13 @@ describe('ECOService Final Working Tests', () => {
 
     it('should get ECO categories', () => {
       const result = ecoService.getECOCategories();
-      
+
       expect(Array.isArray(result)).toBe(true);
     });
 
     it('should get statistics', () => {
       const result = ecoService.getStatistics();
-      
+
       expect(result).toHaveProperty('total');
       expect(result).toHaveProperty('byClassification');
       expect(result).toHaveProperty('bySource');
@@ -206,14 +212,14 @@ describe('ECOService Final Working Tests', () => {
         eco: 'B20',
         moves: '1.e4 c5',
         isEcoRoot: true,
-        src: 'test'
+        src: 'test',
       };
 
       const testFen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
-      
+
       // Test the formatOpeningData method directly
       const result = ecoService.formatOpeningData(mockOpening, testFen);
-      
+
       expect(result).toHaveProperty('isEcoRoot', true);
       expect(result.name).toBe('Sicilian Defense');
       expect(result.fen).toBe(testFen);
@@ -225,13 +231,13 @@ describe('ECOService Final Working Tests', () => {
         eco: 'B22',
         moves: '1.e4 c5 2.c3',
         isEcoRoot: false,
-        src: 'test'
+        src: 'test',
       };
 
       const testFen = 'test-fen';
-      
+
       const result = ecoService.formatOpeningData(mockOpening, testFen);
-      
+
       expect(result).toHaveProperty('isEcoRoot', false);
       expect(result.name).toBe('Sicilian Defense: Alapin Variation');
     });
@@ -241,14 +247,14 @@ describe('ECOService Final Working Tests', () => {
         name: 'Kings Pawn Game',
         eco: 'C20',
         moves: '1.e4 e5',
-        src: 'test'
+        src: 'test',
         // Note: no isEcoRoot field
       };
 
       const testFen = 'test-fen';
-      
+
       const result = ecoService.formatOpeningData(mockOpening, testFen);
-      
+
       expect(result).toHaveProperty('isEcoRoot');
       expect(result.isEcoRoot).toBeUndefined();
       expect(result.name).toBe('Kings Pawn Game');

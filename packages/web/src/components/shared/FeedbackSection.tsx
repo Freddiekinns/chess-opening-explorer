@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-interface FeedbackSectionProps { source?: string }
+interface FeedbackSectionProps {
+  source?: string;
+}
 
 // Simplified feedback component with inline link
 export const FeedbackSection: React.FC<FeedbackSectionProps> = ({ source }) => {
-  const baseUrl = 'https://forms.gle/3DfV8NpbhapzyTi26'
-  const href = source ? `${baseUrl}?src=${encodeURIComponent(source)}` : baseUrl
+  const baseUrl = 'https://forms.gle/3DfV8NpbhapzyTi26';
+  const href = source ? `${baseUrl}?src=${encodeURIComponent(source)}` : baseUrl;
   return (
     <div style={{ margin: '3rem 0', textAlign: 'center' }}>
       <a
@@ -17,7 +19,7 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({ source }) => {
         Help Us Improve Opening Book
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default FeedbackSection
+export default FeedbackSection;

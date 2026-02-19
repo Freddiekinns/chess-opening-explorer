@@ -4,7 +4,8 @@ description: Update chess opening popularity statistics from Lichess
 
 # Update Popularity Statistics
 
-This workflow updates the chess opening popularity statistics by processing new Lichess game data.
+This workflow updates the chess opening popularity statistics by processing new
+Lichess game data.
 
 ## When to Run
 
@@ -34,7 +35,8 @@ cd tools/analysis
 python run_pipeline.py --incremental
 ```
 
-This will only process new months since the last run, which is much faster than a full re-run.
+This will only process new months since the last run, which is much faster than
+a full re-run.
 
 ### 3. Alternative: Full re-run
 
@@ -44,7 +46,8 @@ If you need to completely regenerate statistics:
 python run_pipeline.py
 ```
 
-⚠️ **Warning**: This will process all months from 2021-07 to present and may take 6-12 hours.
+⚠️ **Warning**: This will process all months from 2021-07 to present and may
+take 6-12 hours.
 
 ### 4. Verify output
 
@@ -101,7 +104,8 @@ If downloads fail repeatedly:
 
 1. Check available space: `df -h` (Unix) or `dir` (Windows)
 2. Clean up temp files: `rm -rf temp/*.zst*`
-3. Specify different work directory: `python run_pipeline.py --work-dir /path/with/space`
+3. Specify different work directory:
+   `python run_pipeline.py --work-dir /path/with/space`
 
 ### Process Interrupted
 

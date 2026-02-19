@@ -4,7 +4,9 @@ Production scripts for enriching chess opening data with AI-generated content.
 
 ## Overview
 
-This directory contains scripts to enrich chess opening data in the ECO (Encyclopedia of Chess Openings) JSON files with AI-generated analysis, including descriptions, strategic themes, style tags, and book recommendations.
+This directory contains scripts to enrich chess opening data in the ECO
+(Encyclopedia of Chess Openings) JSON files with AI-generated analysis,
+including descriptions, strategic themes, style tags, and book recommendations.
 
 ## Scripts
 
@@ -38,15 +40,17 @@ npm install
 
 ### 2. Configure Google Cloud Credentials
 
-Set the `GOOGLE_APPLICATION_CREDENTIALS_JSON` environment variable with your service account credentials:
+Set the `GOOGLE_APPLICATION_CREDENTIALS_JSON` environment variable with your
+service account credentials:
 
 ```bash
 # Create a .env file in the project root
 GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account","project_id":"your-project",...}'
 ```
 
-> [!IMPORTANT]
-> The Google Cloud project must have billing enabled. The script will fail with authentication errors if the API key is not connected to a paid account.
+> [!IMPORTANT] The Google Cloud project must have billing enabled. The script
+> will fail with authentication errors if the API key is not connected to a paid
+> account.
 
 ### 3. (Optional) Create Configuration File
 
@@ -144,7 +148,8 @@ node tools/production/enrich_openings_llm.js --quiet --batchSize=30
 node tools/production/enrich_openings_llm.js --config=.enrichrc.json
 ```
 
-Configuration files are automatically loaded from `.enrichrc.json` in the current directory. CLI arguments override config file settings.
+Configuration files are automatically loaded from `.enrichrc.json` in the
+current directory. CLI arguments override config file settings.
 
 ## Command-Line Options
 
@@ -188,8 +193,10 @@ Create a `.enrichrc.json` file:
 
 ## Output Files
 
-- **ECO JSON Files**: Updated in `packages/api/src/data/eco/` (or `api/data/eco/`)
-- **State File**: Tracks progress for resume capability (if `--stateFile` is specified)
+- **ECO JSON Files**: Updated in `packages/api/src/data/eco/` (or
+  `api/data/eco/`)
+- **State File**: Tracks progress for resume capability (if `--stateFile` is
+  specified)
 - **Log File**: Detailed execution logs (if `--logFile` is specified)
 - **Error Log**: Failed enrichments saved to `enrich-errors.json`
 
@@ -249,7 +256,8 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account",...}'
 
 ### "Authentication error" or "Billing not enabled"
 
-**Cause**: The Google Cloud project doesn't have billing enabled, or the API key is invalid.
+**Cause**: The Google Cloud project doesn't have billing enabled, or the API key
+is invalid.
 
 **Solution**:
 
@@ -259,7 +267,8 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account",...}'
 
 ### "Opening with FEN '...' not found in ECO files"
 
-**Cause**: The FEN key doesn't exist in any ECO JSON file, possibly due to data mismatch.
+**Cause**: The FEN key doesn't exist in any ECO JSON file, possibly due to data
+mismatch.
 
 **Solution**:
 
@@ -271,7 +280,8 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account",...}'
 
 **Cause**: All openings already have `analysis_json` data.
 
-**Solution**: Check enrichment statistics. If all openings are already enriched, the script will report this and exit gracefully.
+**Solution**: Check enrichment statistics. If all openings are already enriched,
+the script will report this and exit gracefully.
 
 ### Rate limiting or API errors
 
@@ -285,7 +295,8 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account",...}'
 
 ## Data Structure
 
-Each enriched opening will have an `analysis_json` field with the following structure:
+Each enriched opening will have an `analysis_json` field with the following
+structure:
 
 ```json
 {
@@ -317,7 +328,8 @@ Each enriched opening will have an `analysis_json` field with the following stru
 1. **Start with dry-run**: Always preview changes before running
 2. **Use small batches initially**: Test with `--batchSize=5` first
 3. **Enable logging**: Use `--logFile` to track progress
-4. **Use state files for large jobs**: Enable resume capability with `--stateFile`
+4. **Use state files for large jobs**: Enable resume capability with
+   `--stateFile`
 5. **Monitor API usage**: Check your Google Cloud billing regularly
 6. **Back up data**: The script modifies ECO JSON files directly - keep backups
 

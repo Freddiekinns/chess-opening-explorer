@@ -6,21 +6,23 @@ This directory contains the operational tools for the Chess Trainer project.
 
 ```
 tools/
-├── video-pipeline/       # F04: YouTube Video Integration Pipeline
-├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
 ├── analysis/             # F02: Data Analysis & Statistics
+├── course-discovery/     # Lichess study import pipeline
+├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
+├── video-pipeline/       # F04: YouTube Video Integration Pipeline
 ├── data/                 # Shared data storage (SQLite DB, cache files)
 └── packages/             # Shared internal packages
 ```
 
 ## 📹 Video Pipeline (`tools/video-pipeline/`)
 
-Handles the discovery, enrichment, and matching of YouTube videos to chess openings.
+Handles the discovery, enrichment, and matching of YouTube videos to chess
+openings.
 
 ### **How to Run**
 
-**1. Backfill Historical Videos (Recommended for fresh DB)**
-If the database is empty or you need to find videos for specific openings immediately:
+**1. Backfill Historical Videos (Recommended for fresh DB)** If the database is
+empty or you need to find videos for specific openings immediately:
 
 ```bash
 node tools/video-pipeline/backfill-videos.js
@@ -28,8 +30,8 @@ node tools/video-pipeline/backfill-videos.js
 
 _This searches YouTube for major openings and populates the database._
 
-**2. Run the Main Pipeline**
-To process RSS feeds, match videos, and generate static JSON files:
+**2. Run the Main Pipeline** To process RSS feeds, match videos, and generate
+static JSON files:
 
 ```bash
 node tools/video-pipeline/index.js

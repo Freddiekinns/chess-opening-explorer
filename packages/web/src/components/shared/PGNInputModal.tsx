@@ -1,142 +1,138 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   buildOpeningsMap,
   lookupOpeningFromPGN,
   OpeningForLookup,
-  PGNLookupResult
-} from '../../../../shared/src'
+  PGNLookupResult,
+} from '../../../../shared/src';
 
 interface PGNInputModalProps {
-  isOpen: boolean
-  onClose: () => void
-  onOpeningFound: (fen: string) => void
-  openingsData: OpeningForLookup[]
+  isOpen: boolean;
+  onClose: () => void;
+  onOpeningFound: (fen: string) => void;
+  openingsData: OpeningForLookup[];
 }
 
 export const PGNInputModal: React.FC<PGNInputModalProps> = ({
   isOpen,
   onClose,
   onOpeningFound,
-  openingsData
+  openingsData,
 }) => {
-  const [pgnText, setPgnText] = useState('')
-  const [result, setResult] = useState<PGNLookupResult | null>(null)
-  const [isSearching, setIsSearching] = useState(false)
+  const [pgnText, setPgnText] = useState('');
+  const [result, setResult] = useState<PGNLookupResult | null>(null);
+  const [isSearching, setIsSearching] = useState(false);
 
-  const dialogRef = useRef<HTMLDivElement | null>(null)
-  const lastFocusedRef = useRef<HTMLElement | null>(null)
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Build openings map once when data changes
   const openingsMap = useMemo(() => {
-    return buildOpeningsMap(openingsData)
-  }, [openingsData])
+    return buildOpeningsMap(openingsData);
+  }, [openingsData]);
 
   // Handle keyboard events and focus trap
   useEffect(() => {
     if (isOpen) {
-      lastFocusedRef.current = document.activeElement as HTMLElement
+      lastFocusedRef.current = document.activeElement as HTMLElement;
 
       // Focus textarea after modal opens
       requestAnimationFrame(() => {
-        textareaRef.current?.focus()
-      })
+        textareaRef.current?.focus();
+      });
 
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
-          onClose()
+          onClose();
         }
         if (e.key === 'Tab') {
-          handleTabKey(e)
+          handleTabKey(e);
         }
-      }
+      };
 
-      document.addEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'hidden'
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
 
       return () => {
-        document.removeEventListener('keydown', handleKeyDown)
-        document.body.style.overflow = ''
-        lastFocusedRef.current?.focus()
-      }
+        document.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = '';
+        lastFocusedRef.current?.focus();
+      };
     }
-  }, [isOpen, onClose])
+  }, [isOpen, onClose]);
 
   // Reset state when modal closes
   useEffect(() => {
     if (!isOpen) {
-      setPgnText('')
-      setResult(null)
-      setIsSearching(false)
+      setPgnText('');
+      setResult(null);
+      setIsSearching(false);
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   const handleTabKey = (e: KeyboardEvent) => {
     const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )
-    if (!focusable || focusable.length === 0) return
+    );
+    if (!focusable || focusable.length === 0) return;
 
-    const first = focusable[0]
-    const last = focusable[focusable.length - 1]
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
 
     if (e.shiftKey) {
       if (document.activeElement === first) {
-        last.focus()
-        e.preventDefault()
+        last.focus();
+        e.preventDefault();
       }
     } else if (document.activeElement === last) {
-      first.focus()
-      e.preventDefault()
+      first.focus();
+      e.preventDefault();
     }
-  }
+  };
 
   const handleFindOpening = useCallback(() => {
-    if (!pgnText.trim() || openingsMap.size === 0) return
+    if (!pgnText.trim() || openingsMap.size === 0) return;
 
-    setIsSearching(true)
-    setResult(null)
+    setIsSearching(true);
+    setResult(null);
 
     // Use setTimeout to allow UI to update
     setTimeout(() => {
-      const lookupResult = lookupOpeningFromPGN(pgnText, openingsMap)
-      setResult(lookupResult)
-      setIsSearching(false)
-    }, 10)
-  }, [pgnText, openingsMap])
+      const lookupResult = lookupOpeningFromPGN(pgnText, openingsMap);
+      setResult(lookupResult);
+      setIsSearching(false);
+    }, 10);
+  }, [pgnText, openingsMap]);
 
   const handleGoToOpening = useCallback(() => {
     if (result?.bestMatch?.fen) {
-      onOpeningFound(result.bestMatch.fen)
-      onClose()
+      onOpeningFound(result.bestMatch.fen);
+      onClose();
     }
-  }, [result, onOpeningFound, onClose])
+  }, [result, onOpeningFound, onClose]);
 
   const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setPgnText(e.target.value)
+    setPgnText(e.target.value);
     // Clear previous result when text changes
     if (result) {
-      setResult(null)
+      setResult(null);
     }
-  }
+  };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose()
+      onClose();
     }
-  }
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
-  const canSearch = pgnText.trim().length > 0 && openingsMap.size > 0
-  const hasMatch = result?.success && result.bestMatch
+  const canSearch = pgnText.trim().length > 0 && openingsMap.size > 0;
+  const hasMatch = result?.success && result.bestMatch;
 
   return (
-    <div
-      className="pgn-modal-overlay"
-      role="presentation"
-      onClick={handleOverlayClick}
-    >
+    <div className="pgn-modal-overlay" role="presentation" onClick={handleOverlayClick}>
       <div
         role="dialog"
         aria-modal="true"
@@ -147,11 +143,7 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
       >
         <div className="pgn-modal-header">
           <h2 id="pgn-modal-title">Find Opening from PGN</h2>
-          <button
-            onClick={onClose}
-            className="pgn-modal-close-btn"
-            aria-label="Close modal"
-          >
+          <button onClick={onClose} className="pgn-modal-close-btn" aria-label="Close modal">
             ×
           </button>
         </div>
@@ -183,7 +175,9 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
             <div
               className={`pgn-result ${
                 hasMatch
-                  ? (result.bestMatch?.isExactEndMatch ? 'pgn-result-success' : 'pgn-result-partial')
+                  ? result.bestMatch?.isExactEndMatch
+                    ? 'pgn-result-success'
+                    : 'pgn-result-partial'
                   : 'pgn-result-error'
               }`}
               role="status"
@@ -200,14 +194,12 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
                       <span>Exact match at move {result.bestMatch.matchedAtMove}</span>
                     ) : (
                       <span>
-                        Last known opening at move {result.bestMatch?.matchedAtMove} of {result.totalMoves}
+                        Last known opening at move {result.bestMatch?.matchedAtMove} of{' '}
+                        {result.totalMoves}
                       </span>
                     )}
                   </div>
-                  <button
-                    className="pgn-go-btn"
-                    onClick={handleGoToOpening}
-                  >
+                  <button className="pgn-go-btn" onClick={handleGoToOpening}>
                     Go to Opening
                   </button>
                 </>
@@ -221,7 +213,7 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PGNInputModal
+export default PGNInputModal;

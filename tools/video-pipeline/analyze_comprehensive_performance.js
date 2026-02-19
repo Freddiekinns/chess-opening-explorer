@@ -1,6 +1,6 @@
 /**
  * Comprehensive Pipeline Performance Report
- * 
+ *
  * Provides detailed insights into matching results and identifies areas for optimization
  */
 
@@ -143,35 +143,43 @@ class ComprehensiveAnalyzer {
       console.log(`   🎬 Total Videos: ${stats.videos.toLocaleString()}`);
       console.log(`   🎯 Total Openings: ${stats.openings.toLocaleString()}`);
       console.log(`   🔗 Total Matches: ${stats.relationships.toLocaleString()}`);
-      console.log(`   📊 Avg Matches per Video: ${(stats.relationships / stats.videos).toFixed(1)}`);
-      console.log(`   📊 Avg Videos per Opening: ${(stats.relationships / stats.openings).toFixed(1)}\n`);
+      console.log(
+        `   📊 Avg Matches per Video: ${(stats.relationships / stats.videos).toFixed(1)}`
+      );
+      console.log(
+        `   📊 Avg Videos per Opening: ${(stats.relationships / stats.openings).toFixed(1)}\n`
+      );
 
       // 2. Creator Performance Analysis
       const creatorPerformance = await this.analyzeCreatorPerformance();
       console.log('🎭 CREATOR PERFORMANCE BREAKDOWN:');
       console.log('================================');
-      
+
       console.log('\n🏆 Top Performers by Total Matches:');
-      console.table(creatorPerformance.slice(0, 8).map(creator => ({
-        'Creator': creator.creator,
-        'Videos': creator.total_videos,
-        'Matches': creator.total_matches.toLocaleString(),
-        'Unique Openings': creator.unique_openings.toLocaleString(),
-        'Avg Score': creator.avg_score,
-        'Match Rate': `${creator.match_rate}%`
-      })));
+      console.table(
+        creatorPerformance.slice(0, 8).map((creator) => ({
+          Creator: creator.creator,
+          Videos: creator.total_videos,
+          Matches: creator.total_matches.toLocaleString(),
+          'Unique Openings': creator.unique_openings.toLocaleString(),
+          'Avg Score': creator.avg_score,
+          'Match Rate': `${creator.match_rate}%`,
+        }))
+      );
 
       // 3. Score Pattern Analysis
       const scorePatterns = await this.analyzeScorePatterns();
       console.log('\n📊 SCORE DISTRIBUTION ANALYSIS:');
       console.log('==============================');
-      console.table(scorePatterns.map(pattern => ({
-        'Score Range': pattern.score_range,
-        'Count': pattern.count.toLocaleString(),
-        'Percentage': `${pattern.percentage}%`,
-        'Min Score': pattern.range_min,
-        'Max Score': pattern.range_max
-      })));
+      console.table(
+        scorePatterns.map((pattern) => ({
+          'Score Range': pattern.score_range,
+          Count: pattern.count.toLocaleString(),
+          Percentage: `${pattern.percentage}%`,
+          'Min Score': pattern.range_min,
+          'Max Score': pattern.range_max,
+        }))
+      );
 
       // 4. Over-matching Analysis
       const overMatched = await this.findOverMatchedVideos();
@@ -181,7 +189,9 @@ class ComprehensiveAnalyzer {
         console.log('Videos matched to suspiciously many openings (>50):');
         overMatched.slice(0, 5).forEach((video, idx) => {
           console.log(`\n${idx + 1}. "${video.title}" (${video.channel_title})`);
-          console.log(`   🔗 ${video.match_count} matches (Score range: ${video.min_score}-${video.max_score}, Avg: ${video.avg_score})`);
+          console.log(
+            `   🔗 ${video.match_count} matches (Score range: ${video.min_score}-${video.max_score}, Avg: ${video.avg_score})`
+          );
         });
       } else {
         console.log('✅ No severe over-matching detected.');
@@ -191,12 +201,14 @@ class ComprehensiveAnalyzer {
       const familyCoverage = await this.analyzeOpeningCoverage();
       console.log('\n🎯 ECO FAMILY COVERAGE:');
       console.log('======================');
-      console.table(familyCoverage.map(family => ({
-        'ECO Family': family.eco_family,
-        'Videos': family.video_count.toLocaleString(),
-        'Creators': family.creator_count,
-        'Avg Score': family.avg_score
-      })));
+      console.table(
+        familyCoverage.map((family) => ({
+          'ECO Family': family.eco_family,
+          Videos: family.video_count.toLocaleString(),
+          Creators: family.creator_count,
+          'Avg Score': family.avg_score,
+        }))
+      );
 
       // 6. Key Insights and Recommendations
       console.log('\n💡 KEY INSIGHTS & ANALYSIS:');
@@ -206,36 +218,53 @@ class ComprehensiveAnalyzer {
       const totalMatches = stats.relationships;
       const avgMatchesPerVideo = totalMatches / stats.videos;
       const topCreators = creatorPerformance.slice(0, 5);
-      const excellentScores = scorePatterns.find(p => p.score_range === 'Excellent (180+)')?.count || 0;
-      
+      const excellentScores =
+        scorePatterns.find((p) => p.score_range === 'Excellent (180+)')?.count || 0;
+
       console.log('\n🎯 MATCHING EFFICIENCY:');
-      console.log(`   • Average ${avgMatchesPerVideo.toFixed(1)} matches per video suggests the system is finding many related openings`);
-      console.log(`   • ${excellentScores.toLocaleString()} matches (${(excellentScores/totalMatches*100).toFixed(1)}%) scored 180+ (highest quality)`);
+      console.log(
+        `   • Average ${avgMatchesPerVideo.toFixed(1)} matches per video suggests the system is finding many related openings`
+      );
+      console.log(
+        `   • ${excellentScores.toLocaleString()} matches (${((excellentScores / totalMatches) * 100).toFixed(1)}%) scored 180+ (highest quality)`
+      );
       console.log(`   • All ${stats.videos} videos matched successfully (100% match rate)`);
 
       console.log('\n📚 CONTENT QUALITY:');
       const educationalCreators = ['Saint Louis Chess Club', 'Hanging Pawns', 'Daniel Naroditsky'];
       const educationalMatches = topCreators
-        .filter(c => educationalCreators.some(ec => c.creator.includes(ec)))
+        .filter((c) => educationalCreators.some((ec) => c.creator.includes(ec)))
         .reduce((sum, c) => sum + c.total_matches, 0);
-      
-      console.log(`   • Top 3 educational creators contribute ${educationalMatches.toLocaleString()} matches (${(educationalMatches/totalMatches*100).toFixed(1)}% of total)`);
-      console.log(`   • High average scores (155-165) indicate strong educational content prioritization`);
-      console.log(`   • Premium educators (Naroditsky, Hanging Pawns) show excellent match quality`);
+
+      console.log(
+        `   • Top 3 educational creators contribute ${educationalMatches.toLocaleString()} matches (${((educationalMatches / totalMatches) * 100).toFixed(1)}% of total)`
+      );
+      console.log(
+        `   • High average scores (155-165) indicate strong educational content prioritization`
+      );
+      console.log(
+        `   • Premium educators (Naroditsky, Hanging Pawns) show excellent match quality`
+      );
 
       console.log('\n⚠️  POTENTIAL CONCERNS:');
       if (avgMatchesPerVideo > 20) {
-        console.log(`   • High average matches per video (${avgMatchesPerVideo.toFixed(1)}) may indicate over-broad matching`);
+        console.log(
+          `   • High average matches per video (${avgMatchesPerVideo.toFixed(1)}) may indicate over-broad matching`
+        );
         console.log(`   • Consider tightening matching criteria to reduce false positives`);
       }
 
       if (overMatched.length > 10) {
-        console.log(`   • ${overMatched.length} videos matched to >50 openings - review matching algorithm specificity`);
+        console.log(
+          `   • ${overMatched.length} videos matched to >50 openings - review matching algorithm specificity`
+        );
       }
 
-      const scoreRange190 = scorePatterns.find(p => p.range_max === 190);
+      const scoreRange190 = scorePatterns.find((p) => p.range_max === 190);
       if (scoreRange190 && scoreRange190.count > totalMatches * 0.3) {
-        console.log(`   • ${(scoreRange190.count/totalMatches*100).toFixed(1)}% of matches scored exactly 190 - may indicate score ceiling issues`);
+        console.log(
+          `   • ${((scoreRange190.count / totalMatches) * 100).toFixed(1)}% of matches scored exactly 190 - may indicate score ceiling issues`
+        );
         console.log(`   • Consider expanding score range for better differentiation`);
       }
 
@@ -269,9 +298,8 @@ class ComprehensiveAnalyzer {
       console.log('• ✅ Maintained high average match scores');
       console.log('• ✅ Covered diverse range of chess openings');
       console.log('• ✅ Filtered out low-quality content effectively');
-      
-      console.log('\nNext steps: Fine-tune scoring ranges and implement over-matching prevention.');
 
+      console.log('\nNext steps: Fine-tune scoring ranges and implement over-matching prevention.');
     } catch (error) {
       console.error('❌ Analysis failed:', error.message);
       throw error;
@@ -286,7 +314,7 @@ class ComprehensiveAnalyzer {
 // Run the comprehensive analysis
 async function runComprehensiveAnalysis() {
   const analyzer = new ComprehensiveAnalyzer(path.join(__dirname, 'data/videos.sqlite'));
-  
+
   try {
     await analyzer.generateComprehensiveReport();
   } catch (error) {

@@ -1,24 +1,31 @@
 # Instructions Directory
 
-Instruction files for AI assistants working on the Chess Opening Explorer project.
+Instruction files for AI assistants working on the Chess Opening Explorer
+project.
 
 ## Instruction Files
 
 ### Core Standards
 
-- **[code-standards.instructions.md](code-standards.instructions.md)** - Code quality, commenting, and performance guidelines
+- **[code-standards.instructions.md](code-standards.instructions.md)** - Code
+  quality, commenting, and performance guidelines
 
 ### Language-Specific
 
-- **[javascript.instructions.md](javascript.instructions.md)** - JavaScript/Node.js standards
-- **[python.instructions.md](python.instructions.md)** - Python standards for analysis tools
-- **[reactjs.instructions.md](reactjs.instructions.md)** - React frontend standards
+- **[javascript.instructions.md](javascript.instructions.md)** -
+  JavaScript/Node.js standards
+- **[python.instructions.md](python.instructions.md)** - Python standards for
+  analysis tools
+- **[reactjs.instructions.md](reactjs.instructions.md)** - React frontend
+  standards
 
 ### Project Management
 
-- **[workflow.instructions.md](workflow.instructions.md)** - Git commits and memory bank management
+- **[workflow.instructions.md](workflow.instructions.md)** - Git commits and
+  memory bank management
 - **[testing.instructions.md](testing.instructions.md)** - Testing standards
-- **[project-overview.instructions.md](project-overview.instructions.md)** - Project architecture
+- **[project-overview.instructions.md](project-overview.instructions.md)** -
+  Project architecture
 
 ### Documentation
 

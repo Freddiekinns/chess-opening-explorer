@@ -9,11 +9,11 @@ describe('YouTube Configuration Validation', () => {
     // Load YouTube channel configuration
     const channelConfigPath = path.join(__dirname, '../../config/youtube_channels.json');
     const qualityConfigPath = path.join(__dirname, '../../config/video_quality_filters.json');
-    
+
     if (fs.existsSync(channelConfigPath)) {
       youtubeChannelConfig = JSON.parse(fs.readFileSync(channelConfigPath, 'utf8'));
     }
-    
+
     if (fs.existsSync(qualityConfigPath)) {
       videoQualityConfig = JSON.parse(fs.readFileSync(qualityConfigPath, 'utf8'));
     }
@@ -25,7 +25,7 @@ describe('YouTube Configuration Validation', () => {
       expect(youtubeChannelConfig.trusted_channels).toBeDefined();
       expect(Array.isArray(youtubeChannelConfig.trusted_channels)).toBe(true);
       expect(youtubeChannelConfig.trusted_channels.length).toBeGreaterThan(0);
-      
+
       // Validate first channel structure
       const firstChannel = youtubeChannelConfig.trusted_channels[0];
       expect(firstChannel).toMatchObject({
@@ -33,7 +33,7 @@ describe('YouTube Configuration Validation', () => {
         name: expect.any(String),
         priority: expect.any(Number),
         boost_factor: expect.any(Number),
-        specialties: expect.any(Array)
+        specialties: expect.any(Array),
       });
     });
 
@@ -44,7 +44,7 @@ describe('YouTube Configuration Validation', () => {
         min_duration_seconds: expect.any(Number),
         max_duration_seconds: expect.any(Number),
         min_view_count: expect.any(Number),
-        max_age_years: expect.any(Number)
+        max_age_years: expect.any(Number),
       });
     });
   });

@@ -1,19 +1,16 @@
 module.exports = {
   root: true,
-  env: { 
-    node: true, 
-    es2020: true 
+  env: {
+    node: true,
+    es2020: true,
   },
-  extends: [
-    'eslint:recommended',
-    '@typescript-eslint/recommended',
-  ],
+  extends: ['eslint:recommended', '@typescript-eslint/recommended'],
   ignorePatterns: ['dist', '.eslintrc.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   plugins: ['@typescript-eslint'],
   rules: {
@@ -24,4 +21,4 @@ module.exports = {
     'no-console': 'warn',
     'no-debugger': 'error',
   },
-}
+};

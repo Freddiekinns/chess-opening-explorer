@@ -5,16 +5,11 @@
  */
 
 const fs = require('fs');
-const path = require('path');
+const pathResolver = require('../utils/path-resolver');
 
 class CourseService {
   constructor() {
-    // Handle different working directories following established patterns
-    const isRunningFromRoot = process.cwd().endsWith('chess-trainer');
-    this.courseDataPath = isRunningFromRoot 
-      ? path.join(process.cwd(), 'packages/api/src/data/courses.json')
-      : path.join(process.cwd(), 'src/data/courses.json');
-    
+    this.courseDataPath = pathResolver.getAPIDataPath('courses.json');
     this.courseData = null;
   }
 

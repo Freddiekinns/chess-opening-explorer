@@ -14,8 +14,9 @@
 6. **Early returns** over nested conditionals
 7. **Named exports** for utilities, default for components
 8. **No console.log** in production code
-9. **Update activeContext.md** after significant changes
-10. **Ask rather than assume** requirements
+9. **Format with Prettier**: `npm run format` before committing; `npm run format:check` to verify
+10. **Update activeContext.md** after significant changes
+11. **Ask rather than assume** requirements
 
 ---
 
@@ -58,11 +59,20 @@ npm run test:watch           # Watch mode
 
 # Data Pipelines
 npm run enrich               # LLM enrichment
+npm run course:enrich        # Enrich course data
 npm run course:discover      # Find popular Lichess studies
 npm run course:import        # Import studies into courses.json
 npm run pipeline:complete    # Complete video pipeline
 npm run pipeline:discover    # Discover videos from RSS feeds
 npm run pipeline:match       # Match videos to openings
+
+# Code Quality
+npm run format               # Format all JS/TS/JSON/MD with Prettier
+npm run format:check         # Check formatting (CI)
+
+# Build & Deploy
+npm run build                # Build all packages
+npm run build:vercel         # Prepare data + build for Vercel deployment
 ```
 
 ## Memory Bank
@@ -98,6 +108,7 @@ chess-opening-explorer/
 │   └── shared/       # Shared utilities
 ├── api/              # Vercel serverless wrappers
 ├── data/             # JSON data files
+├── scripts/          # Utility scripts (Vercel prep, ECO data fixes)
 ├── tools/            # Data pipelines
 ├── tests/            # Backend tests (Jest)
 └── .github/
@@ -159,3 +170,11 @@ cd tools/analysis && python run_pipeline.py
 1. Read `context.md` (for patterns) + `activeContext.md`
 2. Load `code-standards.instructions.md`
 3. Refactor, test, commit
+
+## Gotchas
+
+- **`tools/production/` scripts**: `enrich`, `course:enrich`, `videos:channel-first` etc. reference
+  `tools/production/` in `package.json`, but this directory may not exist. Actual enrichment
+  logic lives in `tools/llm-enrichment/`. Verify before running these scripts.
+- **CSS Modules migration ongoing**: Legacy global styles still in
+  `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when touching a component.

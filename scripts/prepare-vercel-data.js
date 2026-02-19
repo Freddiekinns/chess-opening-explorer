@@ -33,7 +33,11 @@ const additionalFiles = [
     target: 'video-index.json',
     name: 'Video Index',
   },
-  { source: 'api/data/courses.json', target: 'courses.json', name: 'Courses Data' },
+  {
+    source: 'packages/api/src/data/courses.json',
+    target: 'courses.json',
+    name: 'Courses Data',
+  },
 ];
 
 const dirsToCopy = ['eco'];

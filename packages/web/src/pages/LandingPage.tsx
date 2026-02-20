@@ -131,7 +131,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="landing-page">
+    <main className="landing-page">
       <LandingHeader />
 
       {/* Hero Section */}
@@ -183,7 +183,7 @@ const LandingPage: React.FC = () => {
         onOpeningFound={handlePGNOpeningFound}
         openingsData={openingsData}
       />
-    </div>
+    </main>
   );
 };
 

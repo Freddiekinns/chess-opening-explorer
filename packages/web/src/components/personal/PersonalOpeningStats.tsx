@@ -131,13 +131,29 @@ function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
 
 type SideTab = 'white' | 'black';
 
+const FORM_STATE_KEY = 'personal-openings:form-state';
+
+function readSavedFormState(): {
+  username?: string;
+  platform?: Platform;
+  limit?: number;
+  activeTab?: SideTab;
+} | null {
+  try {
+    const raw = sessionStorage.getItem(FORM_STATE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
 export const PersonalOpeningStats: React.FC<{
   openingsData: OpeningForLookup[];
   prefillUsername?: string;
 }> = ({ openingsData, prefillUsername }) => {
-  const [platform, setPlatform] = useState<Platform>('chess.com');
-  const [username, setUsername] = useState(prefillUsername || '');
-  const [limit, setLimit] = useState(500);
+  const [platform, setPlatform] = useState<Platform>(() => readSavedFormState()?.platform ?? 'chess.com');
+  const [username, setUsername] = useState<string>(() => prefillUsername || readSavedFormState()?.username || '');
+  const [limit, setLimit] = useState<number>(() => readSavedFormState()?.limit ?? 500);
 
   const [step, setStep] = useState<'idle' | 'fetching' | 'analysing' | 'done' | 'error'>('idle');
   const [stepText, setStepText] = useState('');
@@ -149,7 +165,7 @@ export const PersonalOpeningStats: React.FC<{
 
   // Mobile-specific UI state
   const [controlsCollapsed, setControlsCollapsed] = useState(false);
-  const [activeTab, setActiveTab] = useState<SideTab>('white');
+  const [activeTab, setActiveTab] = useState<SideTab>(() => readSavedFormState()?.activeTab ?? 'white');
 
   const abortRef = useRef<AbortController | null>(null);
 
@@ -167,6 +183,12 @@ export const PersonalOpeningStats: React.FC<{
       abortRef.current?.abort();
     };
   }, []);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(FORM_STATE_KEY, JSON.stringify({ username, platform, limit, activeTab }));
+    } catch { /* ignore */ }
+  }, [username, platform, limit, activeTab]);
 
   const loadFromCache = () => {
     try {
@@ -187,6 +209,21 @@ export const PersonalOpeningStats: React.FC<{
       // ignore storage errors
     }
   };
+
+  useEffect(() => {
+    const saved = readSavedFormState();
+    if (!saved) return;
+    const cached = loadFromCache();
+    if (cached) {
+      setDashboard(cached);
+      setStep('done');
+      setStepText('Loaded cached results');
+      setProgress(100);
+      setProcessed(cached.totalGames);
+      setTotal(cached.totalGames);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const setLimitSafe = (value: number) => {
     setLimit(clampInt(value, 1, 500, 500));

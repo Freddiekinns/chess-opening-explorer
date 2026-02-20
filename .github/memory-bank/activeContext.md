@@ -1,8 +1,37 @@
 # Active Context
 
-**Date:** 2026-02-18
+**Date:** 2026-02-20
 
-## Current Focus: TASK004 - Course Discovery Pipeline Complete
+## Current Focus: UX - Persist Analysis Tab State Across Navigation
+
+## Session Summary (2026-02-20)
+
+### Fix: PersonalOpeningStats State Persistence
+
+**Problem:** Navigating from `/analyse` to an opening page (`/opening/:fen`) and
+back required re-entering username and re-running analysis, because all state
+lived in local `useState` and was destroyed on unmount.
+
+**Solution:** Persist the four form inputs (`username`, `platform`, `limit`,
+`activeTab`) to `sessionStorage` and auto-restore dashboard results on mount.
+
+**Implementation:**
+
+- Added `FORM_STATE_KEY` constant and `readSavedFormState()` helper
+- Lazy-initialised all four `useState` calls from `sessionStorage` so `cacheKey`
+  is correct on the very first render
+- `useEffect` saves form state to `sessionStorage` on every change
+- Mount-only `useEffect` reads saved state, checks the matching dashboard cache,
+  and restores results without user interaction
+- `prefillUsername` prop still takes priority over saved state for username
+
+**Files Changed:**
+
+| File | Change |
+| ---- | ------ |
+| `packages/web/src/components/personal/PersonalOpeningStats.tsx` | State persistence via sessionStorage |
+
+## Previous Focus: TASK004 - Course Discovery Pipeline Complete
 
 The course discovery pipeline has been fully rebuilt with a clean two-step
 architecture on branch `feat/studies-tab`. All data is imported and the pipeline

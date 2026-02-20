@@ -71,7 +71,7 @@ describe('RSSVideoDiscovery', () => {
       const channels = await discovery.loadChannelsConfig();
 
       expect(fs.readFile).toHaveBeenCalledWith(
-        expect.stringContaining('config/youtube_channels.json'),
+        expect.stringContaining(path.join('config', 'youtube_channels.json')),
         'utf8'
       );
       expect(channels).toEqual(mockChannelsConfig.trusted_channels);

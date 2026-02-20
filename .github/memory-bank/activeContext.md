@@ -6,6 +6,32 @@
 
 ## Session Summary (2026-02-20)
 
+### Update: Coverage Reporting Enabled
+
+**Problem:** Frontend coverage reports were missing; backend coverage reports
+were generated but not consistently documented.
+
+**Solution:** Enabled Vitest coverage reporting in the web workspace and
+documented coverage commands and report locations.
+
+**Implementation:**
+
+- Added Vitest coverage config for HTML and JSON summary output
+- Installed `@vitest/coverage-v8` in `packages/web`
+- Generated backend and frontend coverage reports
+- Added coverage instructions to README
+- Created `TASK006` to drive coverage improvements
+
+**Files Changed:**
+
+| File | Change |
+| ---- | ------ |
+| `packages/web/package.json` | Add Vitest coverage config + dependency |
+| `packages/web/vite.config.ts` | Add Vitest coverage config |
+| `README.md` | Add coverage commands + report locations |
+| `.github/memory-bank/tasks/TASK006-coverage-updates.md` | New task |
+| `.github/memory-bank/tasks/_index.md` | Index task |
+
 ### Fix: PersonalOpeningStats State Persistence
 
 **Problem:** Navigating from `/analyse` to an opening page (`/opening/:fen`) and

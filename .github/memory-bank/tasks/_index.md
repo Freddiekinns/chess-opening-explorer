@@ -8,6 +8,7 @@ _No active tasks._
 
 - [TASK004] Course Discovery & Workflow - Added 2026-02-10
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
+- [TASK006] Coverage Updates (Backend + Frontend) - Added 2026-02-20
 
 ## Completed
 

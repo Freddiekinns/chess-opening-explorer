@@ -130,7 +130,7 @@ function isChessMove(query: string): boolean {
 function isEcoCode(query: string): boolean {
   const trimmed = query.trim().toUpperCase();
   // ECO codes are A00-E99
-  return /^[A-E]\d{1,2}$/.test(trimmed);
+  return /^[A-E]\d{2}$/.test(trimmed);
 }
 
 // Common abbreviations for chess openings
@@ -210,8 +210,9 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
   return openingsData
     .map((opening) => {
       let score = 0;
-      const lowerCaseName = opening.name.toLowerCase();
-      const moves = opening.moves.toLowerCase();
+      const lowerCaseName = (opening.name || '').toLowerCase();
+      const moves = (opening.moves || '').toLowerCase();
+      const eco = (opening.eco || '').toLowerCase();
 
       // Move sequence matching (highest priority for move queries)
       if (isChessMove(lowerCaseQuery)) {
@@ -276,7 +277,7 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
       }
 
       // ECO code matching
-      if (opening.eco.toLowerCase().includes(lowerCaseQuery)) {
+      if (eco.includes(lowerCaseQuery)) {
         score += 150;
       }
 

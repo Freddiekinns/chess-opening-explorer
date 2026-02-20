@@ -40,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.6.1",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
@@ -72,6 +73,15 @@
     "setupFiles": [
       "./src/test/setup.ts"
     ],
-    "css": true
+    "css": true,
+    "coverage": {
+      "provider": "v8",
+      "reporter": [
+        "text",
+        "html",
+        "json-summary"
+      ],
+      "reportsDirectory": "coverage"
+    }
   }
 }

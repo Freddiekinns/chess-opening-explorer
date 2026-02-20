@@ -91,6 +91,8 @@
 
 ## What's Left to Build
 
+- **Coverage Improvements:** Increase backend coverage to meet 90% thresholds
+  and raise frontend coverage toward 70%+ (see TASK006).
 - **Advanced Filtering:** The client-side filtering capabilities can be expanded
   (e.g., filter by win rate, draw rate, etc.).
 - **Design System Tokenization:** Extract accent bar gradient & spacing into CSS

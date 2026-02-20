@@ -62,7 +62,14 @@ chess-opening-explorer/
 npm run test:all        # Full suite
 npm run test:frontend   # Vitest (React components)
 npm run test:unit       # Jest (backend services)
+npm run test:coverage   # Backend coverage (Jest)
+cd packages/web && npx vitest run --coverage  # Frontend coverage
 ```
+
+Coverage reports:
+
+- Backend HTML report: `coverage/lcov-report/index.html`
+- Frontend HTML report: `packages/web/coverage/index.html`
 
 ## Data Pipelines
 

@@ -478,4 +478,196 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
       expect(result).toHaveLength(3);
     });
   });
+
+  // ---------------------------------------------------------------------------
+  // saveVideosForPosition coverage
+  // ---------------------------------------------------------------------------
+  describe('saveVideosForPosition', () => {
+    beforeEach(() => {
+      fs.existsSync = jest.fn().mockReturnValue(false);
+      fs.writeFileSync = jest.fn();
+      fs.mkdirSync = jest.fn();
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+      videoService = new VideoAccessService();
+    });
+
+    afterEach(() => {
+      if (console.error.mockRestore) console.error.mockRestore();
+    });
+
+    it('should return early when fen is null', async () => {
+      await videoService.saveVideosForPosition(null, {}, [{ id: 'v1' }]);
+      expect(fs.writeFileSync).not.toHaveBeenCalled();
+    });
+
+    it('should return early when videos is null', async () => {
+      await videoService.saveVideosForPosition('e4 fen', {}, null);
+      expect(fs.writeFileSync).not.toHaveBeenCalled();
+    });
+
+    it('should return early when videos array is empty', async () => {
+      await videoService.saveVideosForPosition('e4 fen', {}, []);
+      expect(fs.writeFileSync).not.toHaveBeenCalled();
+    });
+
+    it('should save videos and create directory when it does not exist', async () => {
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+      const metadata = { name: "King's Pawn", eco: 'B00' };
+      const videos = [{ id: 'v1', title: 'Test Video' }];
+
+      // existsSync false → _ensureDirectoryExists calls mkdirSync
+      fs.existsSync = jest.fn().mockReturnValue(false);
+
+      await videoService.saveVideosForPosition(fen, metadata, videos);
+
+      expect(fs.mkdirSync).toHaveBeenCalled();
+      expect(fs.writeFileSync).toHaveBeenCalled();
+
+      // Verify cache was updated
+      expect(videoService.videoCache.has(fen)).toBe(true);
+    });
+
+    it('should skip mkdir when directory already exists', async () => {
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+      const videos = [{ id: 'v1' }];
+
+      // existsSync true → _ensureDirectoryExists skips mkdirSync
+      fs.existsSync = jest.fn().mockReturnValue(true);
+
+      await videoService.saveVideosForPosition(fen, { name: 'Test' }, videos);
+
+      expect(fs.mkdirSync).not.toHaveBeenCalled();
+      expect(fs.writeFileSync).toHaveBeenCalled();
+    });
+
+    it('should throw and log error when writeFileSync fails', async () => {
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+      fs.writeFileSync = jest.fn().mockImplementation(() => {
+        throw new Error('Disk full');
+      });
+
+      await expect(
+        videoService.saveVideosForPosition(fen, {}, [{ id: 'v1' }])
+      ).rejects.toThrow('Disk full');
+
+      expect(console.error).toHaveBeenCalled();
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // getPositionsWithVideos coverage
+  // ---------------------------------------------------------------------------
+  describe('getPositionsWithVideos', () => {
+    beforeEach(() => {
+      fs.existsSync = jest.fn().mockReturnValue(false);
+      fs.readdirSync = jest.fn();
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+      videoService = new VideoAccessService();
+    });
+
+    afterEach(() => {
+      if (console.error.mockRestore) console.error.mockRestore();
+    });
+
+    it('returns [] when video directory does not exist', async () => {
+      fs.existsSync = jest.fn().mockReturnValue(false);
+      const result = await videoService.getPositionsWithVideos();
+      expect(result).toEqual([]);
+    });
+
+    it('returns FENs from valid video files', async () => {
+      const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
+      fs.existsSync = jest.fn().mockReturnValue(true);
+      fs.readdirSync = jest.fn().mockReturnValue(['video1.json', 'not-json.txt']);
+      fs.readFileSync = jest.fn().mockReturnValue(
+        JSON.stringify({ fen, videos: [{ id: 'v1' }] })
+      );
+
+      const result = await videoService.getPositionsWithVideos();
+
+      // Only video1.json matches .json filter; not-json.txt is skipped
+      expect(result).toContain(fen);
+      expect(result).toHaveLength(1);
+    });
+
+    it('skips files with empty videos array', async () => {
+      fs.existsSync = jest.fn().mockReturnValue(true);
+      fs.readdirSync = jest.fn().mockReturnValue(['empty.json']);
+      fs.readFileSync = jest.fn().mockReturnValue(
+        JSON.stringify({ fen: 'some-fen', videos: [] })
+      );
+
+      const result = await videoService.getPositionsWithVideos();
+      expect(result).toEqual([]);
+    });
+
+    it('skips files with no fen field', async () => {
+      fs.existsSync = jest.fn().mockReturnValue(true);
+      fs.readdirSync = jest.fn().mockReturnValue(['nofen.json']);
+      fs.readFileSync = jest.fn().mockReturnValue(
+        JSON.stringify({ videos: [{ id: 'v1' }] })
+      );
+
+      const result = await videoService.getPositionsWithVideos();
+      expect(result).toEqual([]);
+    });
+
+    it('handles inner file read error gracefully (inner catch)', async () => {
+      fs.existsSync = jest.fn().mockReturnValue(true);
+      fs.readdirSync = jest.fn().mockReturnValue(['corrupt.json']);
+      fs.readFileSync = jest.fn().mockImplementation(() => {
+        throw new Error('Corrupt file');
+      });
+
+      const result = await videoService.getPositionsWithVideos();
+      expect(result).toEqual([]);
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // _loadVideosFromFile edge cases (lines 178-179, 189-190)
+  // ---------------------------------------------------------------------------
+  describe('_loadVideosFromFile edge cases', () => {
+    beforeEach(() => {
+      fs.existsSync = jest.fn().mockReturnValue(false);
+      videoService = new VideoAccessService();
+    });
+
+    it('returns [] when video file contains JSON null (line 178-179 invalid data guard)', async () => {
+      const fen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+
+      // existsSync true for the video file path → _loadVideosFromFile is called
+      fs.existsSync = jest.fn((p) => p.includes('.json'));
+      // JSON.parse('null') === null → triggers the null-data guard on line 178
+      fs.readFileSync = jest.fn().mockReturnValue('null');
+
+      // _loadVideosFromFile throws → rethrown → outer catch returns []
+      const result = await videoService.getVideosForPosition(fen);
+      expect(result).toEqual([]);
+    });
+
+    it('returns [] when readFileSync throws inside _loadVideosFromFile (line 189-190)', async () => {
+      const fen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+
+      fs.existsSync = jest.fn((p) => p.includes('.json'));
+      fs.readFileSync = jest.fn().mockImplementation(() => {
+        throw new Error('EACCES: permission denied');
+      });
+
+      const result = await videoService.getVideosForPosition(fen);
+      expect(result).toEqual([]);
+    });
+
+    it('returns videos array from fallback structure (videoData.videos, not opening)', async () => {
+      const fen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+
+      fs.existsSync = jest.fn((p) => p.includes('.json'));
+      fs.readFileSync = jest.fn().mockReturnValue(
+        JSON.stringify({ videos: [{ id: 'v1', title: 'Flat structure' }] })
+      );
+
+      const result = await videoService.getVideosForPosition(fen);
+      expect(result).toEqual([{ id: 'v1', title: 'Flat structure' }]);
+    });
+  });
 });

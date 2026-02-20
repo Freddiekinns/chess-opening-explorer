@@ -148,4 +148,81 @@ describe('Personal API Routes', () => {
     expect(res.body.error).toBe('Too Many Requests');
     expect(res.headers['retry-after']).toBeTruthy();
   });
+
+  test('GET /api/personal/games reads client IP from X-Forwarded-For header', async () => {
+    const mockGet = jest.fn().mockResolvedValue({
+      gamesPgn: [],
+      meta: { requested: 500, returned: 0 },
+      cacheHit: false,
+    });
+
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockGet,
+        getChessComGamesPgnCached: jest.fn(),
+        rateLimit: { windowMs: 60 * 1000, max: 10 },
+      })
+    );
+
+    const res = await request(app)
+      .get('/api/personal/games?platform=lichess&username=testuser')
+      .set('X-Forwarded-For', '1.2.3.4, 5.6.7.8')
+      .expect(200);
+
+    expect(res.body.success).toBe(true);
+  });
+
+  test('GET /api/personal/games allows second request within rate limit', async () => {
+    const mockGet = jest.fn().mockResolvedValue({
+      gamesPgn: [],
+      meta: { requested: 500, returned: 0 },
+      cacheHit: false,
+    });
+
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockGet,
+        getChessComGamesPgnCached: jest.fn(),
+        rateLimit: { windowMs: 60 * 1000, max: 5 },
+      })
+    );
+
+    // First request: count = 1, resetAt set
+    await request(app)
+      .get('/api/personal/games?platform=lichess&username=testuser')
+      .expect(200);
+
+    // Second request: count = 2, still within max=5 (exercises lines 50-53)
+    const res = await request(app)
+      .get('/api/personal/games?platform=lichess&username=testuser')
+      .expect(200);
+
+    expect(res.body.success).toBe(true);
+  });
+
+  test('GET /api/personal/games handles error with numeric status from service', async () => {
+    const serviceError = new Error('Service unavailable');
+    serviceError.status = 503;
+
+    const mockGet = jest.fn().mockRejectedValue(serviceError);
+
+    app.use(
+      '/api/personal',
+      createPersonalRoutes({
+        getLichessGamesPgnRatedCached: mockGet,
+        getChessComGamesPgnCached: jest.fn(),
+        rateLimit: { windowMs: 60 * 1000, max: 10 },
+      })
+    );
+
+    const res = await request(app)
+      .get('/api/personal/games?platform=lichess&username=testuser')
+      .expect(503);
+
+    expect(res.body.success).toBe(false);
+    expect(res.body.error).toBe('Request failed');
+    expect(res.body.message).toBe('Service unavailable');
+  });
 });

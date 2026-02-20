@@ -1,7 +1,5 @@
 ---
-description:
-  'Chess Opening Explorer project architecture, domain knowledge, and key
-  patterns'
+description: Chess Opening Explorer project architecture, domain knowledge, and key patterns
 applyTo: '**'
 ---
 

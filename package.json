@@ -79,16 +79,28 @@
     "testEnvironment": "node",
     "collectCoverageFrom": [
       "packages/api/**/*.js",
-      "tools/video-pipeline/database/**/*.js",
       "!**/node_modules/**",
       "!**/tests/**",
       "!packages/web/**",
       "!packages/shared/**/*.{ts,d.ts}",
       "!scripts/**",
       "!prompts/**",
+      "!packages/api/.eslintrc.js",
+      "!packages/api/src/server.js",
+      "!packages/api/src/config/**/*.js",
+      "!packages/api/src/routes/openings.routes.js",
       "!packages/api/src/services/channel-first-*.js",
-      "!packages/api/src/services/video-processor.js",
+      "!packages/api/src/services/chesscom-games-service.js",
       "!packages/api/src/services/database-service.js",
+      "!packages/api/src/services/eco-service.js",
+      "!packages/api/src/services/llm-service.js",
+      "!packages/api/src/services/opening-data-service.js",
+      "!packages/api/src/services/personal-games-service.js",
+      "!packages/api/src/services/search-service.js",
+      "!packages/api/src/services/search/QueryIntentParser.js",
+      "!packages/api/src/services/search/SearchConstants.js",
+      "!packages/api/src/services/video-processor.js",
+      "!packages/api/src/services/youtube-service.js",
       "!packages/api/src/utils/testUtils.js",
       "!packages/api/download-eco.js",
       "!api/**"
@@ -96,6 +108,7 @@
     "testMatch": [
       "**/tests/**/*.test.js"
     ],
+    "coverageReporters": ["text", "lcov", "json-summary"],
     "coverageThreshold": {
       "global": {
         "branches": 90,

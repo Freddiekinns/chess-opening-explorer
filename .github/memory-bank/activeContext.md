@@ -24,13 +24,13 @@ documented coverage commands and report locations.
 
 **Files Changed:**
 
-| File | Change |
-| ---- | ------ |
-| `packages/web/package.json` | Add Vitest coverage config + dependency |
-| `packages/web/vite.config.ts` | Add Vitest coverage config |
-| `README.md` | Add coverage commands + report locations |
-| `.github/memory-bank/tasks/TASK006-coverage-updates.md` | New task |
-| `.github/memory-bank/tasks/_index.md` | Index task |
+| File                                                    | Change                                   |
+| ------------------------------------------------------- | ---------------------------------------- |
+| `packages/web/package.json`                             | Add Vitest coverage config + dependency  |
+| `packages/web/vite.config.ts`                           | Add Vitest coverage config               |
+| `README.md`                                             | Add coverage commands + report locations |
+| `.github/memory-bank/tasks/TASK006-coverage-updates.md` | New task                                 |
+| `.github/memory-bank/tasks/_index.md`                   | Index task                               |
 
 ### Fix: PersonalOpeningStats State Persistence
 
@@ -53,8 +53,8 @@ lived in local `useState` and was destroyed on unmount.
 
 **Files Changed:**
 
-| File | Change |
-| ---- | ------ |
+| File                                                            | Change                               |
+| --------------------------------------------------------------- | ------------------------------------ |
 | `packages/web/src/components/personal/PersonalOpeningStats.tsx` | State persistence via sessionStorage |
 
 ## Previous Focus: TASK004 - Course Discovery Pipeline Complete
@@ -76,14 +76,14 @@ is consolidated.
 
 **Data Results:**
 
-| Metric          | Value                              |
-| --------------- | ---------------------------------- |
-| Curated studies | 630 URLs in curated-studies.txt    |
+| Metric          | Value                             |
+| --------------- | --------------------------------- |
+| Curated studies | 630 URLs in curated-studies.txt   |
 | Studies fetched | 440 (97 failed: 58 404s, 39 403s) |
-| FEN positions   | 2,255 unique                       |
-| Course entries  | 6,142 total                        |
-| All curated     | Yes (no auto_discovered entries)   |
-| All have likes  | Yes                                |
+| FEN positions   | 2,255 unique                      |
+| Course entries  | 6,142 total                       |
+| All curated     | Yes (no auto_discovered entries)  |
+| All have likes  | Yes                               |
 
 **Discovery Phase:**
 
@@ -107,24 +107,24 @@ is consolidated.
 
 ### Files Changed
 
-| File                                            | Change                           |
-| ----------------------------------------------- | -------------------------------- |
-| `tools/course-discovery/add-studies.js`         | Main importer (created earlier)  |
-| `tools/course-discovery/discover-popular.js`    | Discovery tool (created earlier) |
-| `tools/course-discovery/lib/lichess-fetcher.js` | Updated metadata endpoint        |
-| `tools/course-discovery/lib/course-merger.js`   | Updated JSDoc                    |
-| `tools/course-discovery/README.md`              | Complete rewrite                 |
-| `tools/course-discovery/config/curated-studies.txt` | 630 study URLs             |
-| `tools/course-discovery/config/discovered-studies.txt` | 294 discovered URLs     |
-| `packages/api/src/data/courses.json`            | 6,142 entries across 2,255 FENs |
-| `package.json`                                  | Updated npm scripts              |
-| `tests/integration/course-pipeline.test.js`     | Removed quality-filter tests     |
-| `.gitignore`                                    | Added state file patterns        |
-| `api/data/courses.json`                         | Deleted (stale)                  |
-| `tools/course-discovery/index.js`               | Deleted (deprecated)             |
-| `tools/course-discovery/lib/quality-filter.js`  | Deleted (deprecated)             |
-| `tools/course-discovery/config/authors.json`    | Deleted (deprecated)             |
-| `tests/unit/quality-filter.test.js`             | Deleted (deprecated)             |
+| File                                                   | Change                           |
+| ------------------------------------------------------ | -------------------------------- |
+| `tools/course-discovery/add-studies.js`                | Main importer (created earlier)  |
+| `tools/course-discovery/discover-popular.js`           | Discovery tool (created earlier) |
+| `tools/course-discovery/lib/lichess-fetcher.js`        | Updated metadata endpoint        |
+| `tools/course-discovery/lib/course-merger.js`          | Updated JSDoc                    |
+| `tools/course-discovery/README.md`                     | Complete rewrite                 |
+| `tools/course-discovery/config/curated-studies.txt`    | 630 study URLs                   |
+| `tools/course-discovery/config/discovered-studies.txt` | 294 discovered URLs              |
+| `packages/api/src/data/courses.json`                   | 6,142 entries across 2,255 FENs  |
+| `package.json`                                         | Updated npm scripts              |
+| `tests/integration/course-pipeline.test.js`            | Removed quality-filter tests     |
+| `.gitignore`                                           | Added state file patterns        |
+| `api/data/courses.json`                                | Deleted (stale)                  |
+| `tools/course-discovery/index.js`                      | Deleted (deprecated)             |
+| `tools/course-discovery/lib/quality-filter.js`         | Deleted (deprecated)             |
+| `tools/course-discovery/config/authors.json`           | Deleted (deprecated)             |
+| `tests/unit/quality-filter.test.js`                    | Deleted (deprecated)             |
 
 ## Session Summary (2026-02-10)
 

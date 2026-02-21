@@ -546,9 +546,9 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
         throw new Error('Disk full');
       });
 
-      await expect(
-        videoService.saveVideosForPosition(fen, {}, [{ id: 'v1' }])
-      ).rejects.toThrow('Disk full');
+      await expect(videoService.saveVideosForPosition(fen, {}, [{ id: 'v1' }])).rejects.toThrow(
+        'Disk full'
+      );
 
       expect(console.error).toHaveBeenCalled();
     });
@@ -579,9 +579,7 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
       const fen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1';
       fs.existsSync = jest.fn().mockReturnValue(true);
       fs.readdirSync = jest.fn().mockReturnValue(['video1.json', 'not-json.txt']);
-      fs.readFileSync = jest.fn().mockReturnValue(
-        JSON.stringify({ fen, videos: [{ id: 'v1' }] })
-      );
+      fs.readFileSync = jest.fn().mockReturnValue(JSON.stringify({ fen, videos: [{ id: 'v1' }] }));
 
       const result = await videoService.getPositionsWithVideos();
 
@@ -593,9 +591,7 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
     it('skips files with empty videos array', async () => {
       fs.existsSync = jest.fn().mockReturnValue(true);
       fs.readdirSync = jest.fn().mockReturnValue(['empty.json']);
-      fs.readFileSync = jest.fn().mockReturnValue(
-        JSON.stringify({ fen: 'some-fen', videos: [] })
-      );
+      fs.readFileSync = jest.fn().mockReturnValue(JSON.stringify({ fen: 'some-fen', videos: [] }));
 
       const result = await videoService.getPositionsWithVideos();
       expect(result).toEqual([]);
@@ -604,9 +600,7 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
     it('skips files with no fen field', async () => {
       fs.existsSync = jest.fn().mockReturnValue(true);
       fs.readdirSync = jest.fn().mockReturnValue(['nofen.json']);
-      fs.readFileSync = jest.fn().mockReturnValue(
-        JSON.stringify({ videos: [{ id: 'v1' }] })
-      );
+      fs.readFileSync = jest.fn().mockReturnValue(JSON.stringify({ videos: [{ id: 'v1' }] }));
 
       const result = await videoService.getPositionsWithVideos();
       expect(result).toEqual([]);
@@ -662,9 +656,9 @@ describe('VideoAccessService - Phase 2 Enhanced Coverage', () => {
       const fen = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
 
       fs.existsSync = jest.fn((p) => p.includes('.json'));
-      fs.readFileSync = jest.fn().mockReturnValue(
-        JSON.stringify({ videos: [{ id: 'v1', title: 'Flat structure' }] })
-      );
+      fs.readFileSync = jest
+        .fn()
+        .mockReturnValue(JSON.stringify({ videos: [{ id: 'v1', title: 'Flat structure' }] }));
 
       const result = await videoService.getVideosForPosition(fen);
       expect(result).toEqual([{ id: 'v1', title: 'Flat structure' }]);

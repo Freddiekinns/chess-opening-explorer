@@ -37,5 +37,6 @@ increase coverage for critical paths on both sides without regressing behavior.
 ## Notes
 
 Coverage reports are generated via:
+
 - Backend: `npm run test:coverage`
 - Frontend: `cd packages/web && npx vitest run --coverage`

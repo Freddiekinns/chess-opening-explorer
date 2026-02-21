@@ -11,17 +11,20 @@
 - **Video Pipeline:** The "Channel-First" data pipeline is complete and
   operational. It has successfully indexed over 1,000 videos from trusted
   channels.
-- **Course Recommendations:** The backend data and API endpoint\n  (`/api/courses/:fen`) for course recommendations are complete. courses.json\n  contains 6,100+ study chapters across 2,255 FENs from 440+ Lichess studies,\n  all curated with like counts. Each entry is matched to the deepest ECO\n  position from the study chapter\u2019s PGN moves.
+- **Course Recommendations:** The backend data and API endpoint\n
+  (`/api/courses/:fen`) for course recommendations are complete. courses.json\n
+  contains 6,100+ study chapters across 2,255 FENs from 440+ Lichess studies,\n
+  all curated with like counts. Each entry is matched to the deepest ECO\n
+  position from the study chapter\u2019s PGN moves.
 - **Course Discovery Pipeline:** Two-step architecture for importing Lichess
   studies into `courses.json`. Step 1: `discover-popular.js` searches Lichess
   for popular studies (500+ likes), classifies as opening-related, outputs new
   URLs. Step 2: `add-studies.js` reads `curated-studies.txt`, fetches
   metadata+PGN via Lichess API, matches chapters to ECO openings by FEN, and
   writes to `courses.json`. Supports `--resume`, `--dryRun`, `--limit`,
-  `--verbose`. Currently 6,142 entries across 2,255 FENs from 440 studies.
-  All entries are `curated: true` with like counts. 491 tests across 35 suites.
-  Run via `npm run course:discover` (discovery) or `npm run course:import`
-  (import).
+  `--verbose`. Currently 6,142 entries across 2,255 FENs from 440 studies. All
+  entries are `curated: true` with like counts. 491 tests across 35 suites. Run
+  via `npm run course:discover` (discovery) or `npm run course:import` (import).
 - **Studies Tab (Frontend):** `StudiesGallery` component on opening detail page
   showing curated Lichess studies with "Open" links (chapter-level when
   available), show-more toggle, and Lichess/Chessable search links. Tab order:

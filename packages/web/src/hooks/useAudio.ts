@@ -25,9 +25,11 @@ export function useAudio() {
     if (isInitializedRef.current) return;
 
     try {
-      const WebkitAudioContext = (window as Window & {
-        webkitAudioContext?: typeof AudioContext;
-      }).webkitAudioContext;
+      const WebkitAudioContext = (
+        window as Window & {
+          webkitAudioContext?: typeof AudioContext;
+        }
+      ).webkitAudioContext;
       const AudioContextCtor = window.AudioContext ?? WebkitAudioContext;
 
       if (!AudioContextCtor) {

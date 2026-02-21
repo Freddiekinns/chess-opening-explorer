@@ -36,9 +36,7 @@ describe('PathResolver - local environment', () => {
     });
 
     test('returns workspace-relative path when not running from root', () => {
-      jest
-        .spyOn(process, 'cwd')
-        .mockReturnValue('/home/user/chess-opening-explorer/packages/api');
+      jest.spyOn(process, 'cwd').mockReturnValue('/home/user/chess-opening-explorer/packages/api');
       const result = resolver.getDataPath();
       // Uses path.join(cwd, '../../api/data') so resolves up two levels
       expect(result).toContain('api/data');

@@ -190,9 +190,7 @@ describe('Personal API Routes', () => {
     );
 
     // First request: count = 1, resetAt set
-    await request(app)
-      .get('/api/personal/games?platform=lichess&username=testuser')
-      .expect(200);
+    await request(app).get('/api/personal/games?platform=lichess&username=testuser').expect(200);
 
     // Second request: count = 2, still within max=5 (exercises lines 50-53)
     const res = await request(app)

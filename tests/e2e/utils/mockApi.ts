@@ -155,9 +155,7 @@ export async function mockApiRoutes(page: Page) {
 
     if (path === '/api/openings/semantic-search' || path === '/api/openings/search') {
       const query = (url.searchParams.get('q') || '').toLowerCase();
-      const results = testOpenings.filter((opening) =>
-        opening.name.toLowerCase().includes(query)
-      );
+      const results = testOpenings.filter((opening) => opening.name.toLowerCase().includes(query));
       return fulfillJson(route, {
         success: true,
         data: results,

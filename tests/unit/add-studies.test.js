@@ -5,7 +5,11 @@
 
 const path = require('path');
 const fs = require('fs');
-const { parseInputText, extractStudyId, StateManager } = require('../../tools/course-discovery/add-studies');
+const {
+  parseInputText,
+  extractStudyId,
+  StateManager,
+} = require('../../tools/course-discovery/add-studies');
 
 describe('parseInputText', () => {
   test('should parse title + URL pairs', () => {
@@ -54,13 +58,7 @@ describe('parseInputText', () => {
   });
 
   test('should handle empty lines', () => {
-    const content = [
-      '',
-      'French Defense',
-      '',
-      'https://lichess.org/study/abc123',
-      '',
-    ].join('\n');
+    const content = ['', 'French Defense', '', 'https://lichess.org/study/abc123', ''].join('\n');
 
     const result = parseInputText(content);
     expect(result).toHaveLength(1);
@@ -76,10 +74,7 @@ describe('parseInputText', () => {
   });
 
   test('should handle emoji in titles', () => {
-    const content = [
-      '🏰 Caro-Kann Defense🔥',
-      'https://lichess.org/study/jtlLwUvh',
-    ].join('\n');
+    const content = ['🏰 Caro-Kann Defense🔥', 'https://lichess.org/study/jtlLwUvh'].join('\n');
 
     const result = parseInputText(content);
     expect(result).toHaveLength(1);
@@ -96,11 +91,7 @@ describe('parseInputText', () => {
   });
 
   test('should handle consecutive titles (only last used)', () => {
-    const content = [
-      'Title A',
-      'Title B',
-      'https://lichess.org/study/abc123',
-    ].join('\n');
+    const content = ['Title A', 'Title B', 'https://lichess.org/study/abc123'].join('\n');
 
     const result = parseInputText(content);
     expect(result).toHaveLength(1);
@@ -184,7 +175,7 @@ describe('merge behavior', () => {
 
   test('curated entries survive when auto_discovered entries are cleared', () => {
     const existing = {
-      'fen1': [
+      fen1: [
         { course_title: 'Auto Study', auto_discovered: true },
         { course_title: 'Curated Study', curated: true },
       ],
@@ -205,7 +196,7 @@ describe('merge behavior', () => {
 
   test('replaceCurated flag clears both auto and curated entries', () => {
     const existing = {
-      'fen1': [
+      fen1: [
         { course_title: 'Auto Study', auto_discovered: true },
         { course_title: 'Curated Study', curated: true },
         { course_title: 'Manual Study' },
@@ -232,8 +223,8 @@ describe('merge behavior', () => {
   test('new curated entries are added to merged result', () => {
     const merged = {};
     const discovered = {
-      'fen1': [{ course_title: 'New Study', curated: true }],
-      'fen2': [{ course_title: 'Another Study', curated: true }],
+      fen1: [{ course_title: 'New Study', curated: true }],
+      fen2: [{ course_title: 'Another Study', curated: true }],
     };
 
     for (const [fen, courses] of Object.entries(discovered)) {
@@ -263,6 +254,9 @@ describe('real curated-studies.txt format', () => {
     expect(result).toHaveLength(3);
     expect(result[0]).toEqual({ displayTitle: 'Opening Traps', studyId: 'Of3mcPk8' });
     expect(result[1]).toEqual({ displayTitle: '🏰 Caro-Kann Defense🔥', studyId: 'jtlLwUvh' });
-    expect(result[2]).toEqual({ displayTitle: '♦ All about the Sicilian Defense ♦', studyId: '8c8bmUfy' });
+    expect(result[2]).toEqual({
+      displayTitle: '♦ All about the Sicilian Defense ♦',
+      studyId: '8c8bmUfy',
+    });
   });
 });

@@ -24,16 +24,8 @@ const MIN_DELAY_MS = 1500; // Conservative rate limit for search endpoint
 const RESULTS_PER_PAGE = 16;
 
 const DEFAULT_MIN_LIKES = 500;
-const DEFAULT_CURATED_FILE = path.join(
-  __dirname,
-  'config',
-  'curated-studies.txt'
-);
-const DEFAULT_OUTPUT_FILE = path.join(
-  __dirname,
-  'config',
-  'discovered-studies.txt'
-);
+const DEFAULT_CURATED_FILE = path.join(__dirname, 'config', 'curated-studies.txt');
+const DEFAULT_OUTPUT_FILE = path.join(__dirname, 'config', 'discovered-studies.txt');
 
 // Search terms that broadly cover opening-related studies
 const SEARCH_TERMS = [
@@ -66,7 +58,7 @@ const SEARCH_TERMS = [
   'berlin defense',
   'scandinavian',
   'philidor',
-  'king\'s gambit',
+  "king's gambit",
   'evans gambit',
   'slav defense',
   'semi-slav',
@@ -228,9 +220,7 @@ async function searchStudies(query, minLikes) {
 
     const response = await rateLimitedFetch(url);
     if (!response.ok) {
-      console.warn(
-        `  Search "${query}" page ${page}: HTTP ${response.status}`
-      );
+      console.warn(`  Search "${query}" page ${page}: HTTP ${response.status}`);
       break;
     }
 
@@ -403,9 +393,7 @@ async function run() {
 
   for (const term of SEARCH_TERMS) {
     termsSearched++;
-    process.stdout.write(
-      `  [${termsSearched}/${SEARCH_TERMS.length}] "${term}"...`
-    );
+    process.stdout.write(`  [${termsSearched}/${SEARCH_TERMS.length}] "${term}"...`);
 
     try {
       const results = await searchStudies(term, minLikes);
@@ -460,9 +448,7 @@ async function run() {
       `  ${study.likes.toString().padStart(6)} likes | ${study.owner.padEnd(20)} | ${study.name}`
     );
     if (verbose) {
-      console.log(
-        `         https://lichess.org/study/${study.id}`
-      );
+      console.log(`         https://lichess.org/study/${study.id}`);
       if (study.topics.length) {
         console.log(`         topics: ${study.topics.join(', ')}`);
       }
@@ -486,9 +472,7 @@ async function run() {
     if (argv.append) {
       const appendText = formatForCuratedFile(newStudies);
       fs.appendFileSync(argv.curatedFile, appendText + '\n');
-      console.log(
-        `\nAppended ${newStudies.length} studies to ${argv.curatedFile}`
-      );
+      console.log(`\nAppended ${newStudies.length} studies to ${argv.curatedFile}`);
     } else {
       const outputText = formatForCuratedFile(newStudies);
       fs.writeFileSync(argv.output, outputText.trim() + '\n');

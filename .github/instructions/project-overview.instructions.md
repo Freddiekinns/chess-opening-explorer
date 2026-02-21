@@ -1,5 +1,7 @@
 ---
-description: Chess Opening Explorer project architecture, domain knowledge, and key patterns
+description:
+  Chess Opening Explorer project architecture, domain knowledge, and key
+  patterns
 applyTo: '**'
 ---
 
@@ -175,24 +177,28 @@ The project uses npm scripts for common tasks:
 ## Key Design Decisions
 
 ### Static Site Generation
+
 - All data pre-generated at build time
 - No runtime database or API calls
 - Fast page loads, excellent SEO
 - Simple deployment (Vercel)
 
 ### JSON Data Storage
+
 - Human-readable and version-controllable
 - Easy to inspect and debug
 - No database infrastructure needed
 - Simple backup and recovery
 
 ### Separate Pipelines
+
 - Each data source has dedicated pipeline
 - Can run independently
 - Clear separation of concerns
 - Easy to maintain and extend
 
 ### LLM Integration
+
 - Gemini API for content generation
 - Batch processing with rate limiting
 - State persistence for resumable runs
@@ -201,6 +207,7 @@ The project uses npm scripts for common tasks:
 ## Common Patterns
 
 ### Data Pipeline Pattern
+
 1. Fetch/generate raw data
 2. Transform and validate
 3. Merge with existing data
@@ -208,12 +215,14 @@ The project uses npm scripts for common tasks:
 5. Commit to version control
 
 ### Error Handling
+
 - Graceful degradation (missing data doesn't break UI)
 - Comprehensive logging in pipelines
 - State persistence for long-running jobs
 - Retry logic for API calls
 
 ### Performance Optimization
+
 - Lazy loading for large lists
 - Image optimization
 - Code splitting
@@ -233,4 +242,7 @@ The project uses npm scripts for common tasks:
 - **Gemini API**: Token limits and costs
 - **Build Time**: Large data files can slow builds
 - **Static Data**: Updates require rebuild/redeploy
+
+```
+
 ```

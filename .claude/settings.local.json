@@ -37,7 +37,9 @@
       "Bash(npm run lint:*)",
       "Bash(npm run type-check:*)",
       "Bash(curl:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(npm run format:*)",
+      "Bash(npm run test:all:*)"
     ]
   },
   "hooks": {

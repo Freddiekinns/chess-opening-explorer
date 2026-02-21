@@ -40,9 +40,9 @@ Single URL ───────────────────────
 
 ### 1. Discover Popular Studies
 
-Searches Lichess with ~46 opening-related terms, sorted by popularity.
-Filters out non-opening content (endgames, puzzles, etc.) and cross-references
-against the existing curated list to find new studies.
+Searches Lichess with ~46 opening-related terms, sorted by popularity. Filters
+out non-opening content (endgames, puzzles, etc.) and cross-references against
+the existing curated list to find new studies.
 
 ```bash
 # Preview (no files written)
@@ -82,25 +82,25 @@ npm run course:import -- --limit 50
 
 ### discover-popular.js
 
-| Flag             | Description                                  | Default |
-| ---------------- | -------------------------------------------- | ------- |
-| `--minLikes <n>` | Minimum likes threshold                      | `500`   |
-| `--dryRun`       | Show results without writing files           | `false` |
-| `--append`       | Append discoveries to curated-studies.txt     | `false` |
-| `--output <path>`| Custom output file path                      |         |
-| `--verbose`      | Show excluded studies for review             | `false` |
+| Flag              | Description                               | Default |
+| ----------------- | ----------------------------------------- | ------- |
+| `--minLikes <n>`  | Minimum likes threshold                   | `500`   |
+| `--dryRun`        | Show results without writing files        | `false` |
+| `--append`        | Append discoveries to curated-studies.txt | `false` |
+| `--output <path>` | Custom output file path                   |         |
+| `--verbose`       | Show excluded studies for review          | `false` |
 
 ### add-studies.js
 
-| Flag                   | Description                                    | Default              |
-| ---------------------- | ---------------------------------------------- | -------------------- |
-| `--file <path>`        | Input file with study URLs                     | `config/curated-studies.txt` |
-| `--url <url>`          | Import a single Lichess study URL              |                      |
-| `--dryRun`             | Preview without writing courses.json           | `false`              |
-| `--limit <n>`          | Process at most n studies                      |                      |
-| `--resume`             | Skip previously processed studies              | `false`              |
-| `--replaceCurated`     | Replace existing curated entries               | `false`              |
-| `--verbose`            | Show per-chapter matching details              | `false`              |
+| Flag               | Description                          | Default                      |
+| ------------------ | ------------------------------------ | ---------------------------- |
+| `--file <path>`    | Input file with study URLs           | `config/curated-studies.txt` |
+| `--url <url>`      | Import a single Lichess study URL    |                              |
+| `--dryRun`         | Preview without writing courses.json | `false`                      |
+| `--limit <n>`      | Process at most n studies            |                              |
+| `--resume`         | Skip previously processed studies    | `false`                      |
+| `--replaceCurated` | Replace existing curated entries     | `false`                      |
+| `--verbose`        | Show per-chapter matching details    | `false`                      |
 
 ## Input Format
 
@@ -129,7 +129,9 @@ Each chapter becomes an entry in `courses.json`, keyed by the matched FEN:
       "author": "leninperez",
       "platform": "Lichess",
       "source_url": "https://lichess.org/study/jtlLwUvh/abc123",
-      "anchor_fens": ["rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"],
+      "anchor_fens": [
+        "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+      ],
       "curated": true,
       "likes": 41363,
       "discovered_at": "2026-02-18T00:00:00.000Z"

@@ -196,11 +196,14 @@ describe('PRD-F03 Course Pipeline Integration', () => {
   });
 
   describe('Course Merger Integration', () => {
-    const { loadExistingCourses, mergeDiscoveries } = require('../../tools/course-discovery/lib/course-merger');
+    const {
+      loadExistingCourses,
+      mergeDiscoveries,
+    } = require('../../tools/course-discovery/lib/course-merger');
 
     test('should preserve manual entries while filtering auto-discovered', () => {
       const existingData = {
-        'fen1': [
+        fen1: [
           {
             course_title: 'Manual Course 1',
             author: 'Manual Author',
@@ -222,7 +225,7 @@ describe('PRD-F03 Course Pipeline Integration', () => {
       };
 
       const newDiscoveries = {
-        'fen1': [
+        fen1: [
           {
             course_title: 'New Auto Course',
             author: 'New Author',

@@ -14,9 +14,7 @@ test.describe('opening detail', () => {
 
     await page.getByRole('button', { name: 'Plans' }).click();
     const activePanel = page.locator('.tab-content-panel.active');
-    await expect(
-      activePanel.getByText('control the center and develop quickly')
-    ).toBeVisible();
+    await expect(activePanel.getByText('control the center and develop quickly')).toBeVisible();
 
     await page.getByRole('button', { name: /Studies/ }).click();
     await expect(activePanel.getByText('Sicilian Defense Essentials')).toBeVisible();

@@ -51,7 +51,7 @@ describe('Stats Routes – mock data path (existsSync = false)', () => {
       JSON.stringify({
         'valid-fen w - - 0 1': VALID_STATS,
         'bad-structure-fen': { only: 'bad' },
-      }),
+      })
     );
 
     const statsRouter = require('../../packages/api/src/routes/stats.routes');
@@ -99,9 +99,9 @@ describe('Stats Routes – real stats available (direct key structure)', () => {
 
     // Real stats file exists and has > 0 keys → used directly
     jest.spyOn(fs, 'existsSync').mockReturnValue(true);
-    jest.spyOn(fs, 'readFileSync').mockReturnValue(
-      JSON.stringify({ 'real-fen w - - 0 1': VALID_STATS }),
-    );
+    jest
+      .spyOn(fs, 'readFileSync')
+      .mockReturnValue(JSON.stringify({ 'real-fen w - - 0 1': VALID_STATS }));
 
     const statsRouter = require('../../packages/api/src/routes/stats.routes');
     app = buildApp(statsRouter);
@@ -132,9 +132,9 @@ describe('Stats Routes – nested positions structure', () => {
     fs = require('fs');
 
     jest.spyOn(fs, 'existsSync').mockReturnValue(true);
-    jest.spyOn(fs, 'readFileSync').mockReturnValue(
-      JSON.stringify({ positions: { 'nested-fen w - - 0 1': VALID_STATS } }),
-    );
+    jest
+      .spyOn(fs, 'readFileSync')
+      .mockReturnValue(JSON.stringify({ positions: { 'nested-fen w - - 0 1': VALID_STATS } }));
 
     const statsRouter = require('../../packages/api/src/routes/stats.routes');
     app = buildApp(statsRouter);
@@ -167,7 +167,8 @@ describe('Stats Routes – real stats file contains invalid JSON (fallback)', ()
     jest.spyOn(fs, 'existsSync').mockReturnValue(true);
     // First readFileSync call (validate real stats): invalid JSON → parse throws
     // Second call (load mock path): valid JSON
-    jest.spyOn(fs, 'readFileSync')
+    jest
+      .spyOn(fs, 'readFileSync')
       .mockReturnValueOnce('NOT VALID JSON }{')
       .mockReturnValue(JSON.stringify({ 'mock-fen w - - 0 1': VALID_STATS }));
 
@@ -201,7 +202,8 @@ describe('Stats Routes – real stats file is empty object (fallback)', () => {
     jest.spyOn(fs, 'existsSync').mockReturnValue(true);
     // First read: empty object (0 keys) → falls back to mock
     // Second read: mock path with valid data
-    jest.spyOn(fs, 'readFileSync')
+    jest
+      .spyOn(fs, 'readFileSync')
       .mockReturnValueOnce(JSON.stringify({}))
       .mockReturnValue(JSON.stringify({ 'mock-fen w - - 0 1': VALID_STATS }));
 

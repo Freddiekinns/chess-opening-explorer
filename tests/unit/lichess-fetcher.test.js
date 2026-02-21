@@ -4,7 +4,8 @@
  */
 
 const fetcher = require('../../tools/course-discovery/lib/lichess-fetcher');
-const { fetchStudyList, fetchStudyPGN, fetchStudyMetadata, parseNDJSON, resetRateLimiter } = fetcher;
+const { fetchStudyList, fetchStudyPGN, fetchStudyMetadata, parseNDJSON, resetRateLimiter } =
+  fetcher;
 
 // Mock global fetch
 const originalFetch = global.fetch;
@@ -192,10 +193,9 @@ describe('fetchStudyMetadata', () => {
       likes: 42,
       owner: 'TestAuthor',
     });
-    expect(global.fetch).toHaveBeenCalledWith(
-      'https://lichess.org/study/abc123',
-      { headers: { Accept: 'application/json' } }
-    );
+    expect(global.fetch).toHaveBeenCalledWith('https://lichess.org/study/abc123', {
+      headers: { Accept: 'application/json' },
+    });
   });
 
   test('should return null for 404', async () => {

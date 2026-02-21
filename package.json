@@ -108,7 +108,11 @@
     "testMatch": [
       "**/tests/**/*.test.js"
     ],
-    "coverageReporters": ["text", "lcov", "json-summary"],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "json-summary"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,

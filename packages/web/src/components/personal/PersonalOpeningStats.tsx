@@ -151,8 +151,12 @@ export const PersonalOpeningStats: React.FC<{
   openingsData: OpeningForLookup[];
   prefillUsername?: string;
 }> = ({ openingsData, prefillUsername }) => {
-  const [platform, setPlatform] = useState<Platform>(() => readSavedFormState()?.platform ?? 'chess.com');
-  const [username, setUsername] = useState<string>(() => prefillUsername || readSavedFormState()?.username || '');
+  const [platform, setPlatform] = useState<Platform>(
+    () => readSavedFormState()?.platform ?? 'chess.com'
+  );
+  const [username, setUsername] = useState<string>(
+    () => prefillUsername || readSavedFormState()?.username || ''
+  );
   const [limit, setLimit] = useState<number>(() => readSavedFormState()?.limit ?? 500);
 
   const [step, setStep] = useState<'idle' | 'fetching' | 'analysing' | 'done' | 'error'>('idle');
@@ -165,7 +169,9 @@ export const PersonalOpeningStats: React.FC<{
 
   // Mobile-specific UI state
   const [controlsCollapsed, setControlsCollapsed] = useState(false);
-  const [activeTab, setActiveTab] = useState<SideTab>(() => readSavedFormState()?.activeTab ?? 'white');
+  const [activeTab, setActiveTab] = useState<SideTab>(
+    () => readSavedFormState()?.activeTab ?? 'white'
+  );
 
   const abortRef = useRef<AbortController | null>(null);
 
@@ -186,8 +192,13 @@ export const PersonalOpeningStats: React.FC<{
 
   useEffect(() => {
     try {
-      sessionStorage.setItem(FORM_STATE_KEY, JSON.stringify({ username, platform, limit, activeTab }));
-    } catch { /* ignore */ }
+      sessionStorage.setItem(
+        FORM_STATE_KEY,
+        JSON.stringify({ username, platform, limit, activeTab })
+      );
+    } catch {
+      /* ignore */
+    }
   }, [username, platform, limit, activeTab]);
 
   const loadFromCache = () => {

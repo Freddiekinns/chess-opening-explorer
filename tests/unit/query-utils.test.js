@@ -157,7 +157,7 @@ describe('QueryUtils', () => {
 
     test('throws when query exceeds 200 characters', () => {
       expect(() => QueryUtils.validateAndSanitize('a'.repeat(201))).toThrow(
-        'Query too long (max 200 characters)',
+        'Query too long (max 200 characters)'
       );
     });
 

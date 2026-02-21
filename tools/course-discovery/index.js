@@ -15,7 +15,12 @@ const yargs = require('yargs');
 const fs = require('fs');
 const path = require('path');
 const { fetchStudyList, fetchStudyPGN } = require('./lib/lichess-fetcher');
-const { splitPGNIntoChapters, generateFENsFromPGN, matchFENsToOpenings, loadECOIndex } = require('./lib/pgn-matcher');
+const {
+  splitPGNIntoChapters,
+  generateFENsFromPGN,
+  matchFENsToOpenings,
+  loadECOIndex,
+} = require('./lib/pgn-matcher');
 const { loadExistingCourses, mergeDiscoveries, writeCourses } = require('./lib/course-merger');
 
 // --- Logger (adapted from tools/llm-enrichment/enrich_openings_llm.js) ---
@@ -50,9 +55,15 @@ class Logger {
     }
   }
 
-  info(message) { this.log(message, 'info'); }
-  verbose(message) { this.log(message, 'verbose'); }
-  error(message) { this.log(message, 'error'); }
+  info(message) {
+    this.log(message, 'info');
+  }
+  verbose(message) {
+    this.log(message, 'verbose');
+  }
+  error(message) {
+    this.log(message, 'error');
+  }
 }
 
 // --- StateManager (adapted from tools/llm-enrichment/enrich_openings_llm.js) ---
@@ -105,38 +116,37 @@ async function run() {
     .option('dryRun', {
       type: 'boolean',
       default: false,
-      describe: 'Print what would be written without modifying files'
+      describe: 'Print what would be written without modifying files',
     })
     .option('limit', {
       type: 'number',
-      describe: 'Max authors to process'
+      describe: 'Max authors to process',
     })
     .option('author', {
       type: 'string',
-      describe: 'Process a single author only'
+      describe: 'Process a single author only',
     })
     .option('verbose', {
       type: 'boolean',
       default: false,
-      describe: 'Detailed logging'
+      describe: 'Detailed logging',
     })
     .option('quiet', {
       type: 'boolean',
       default: false,
-      describe: 'Minimal output'
+      describe: 'Minimal output',
     })
     .option('resume', {
       type: 'boolean',
       default: false,
-      describe: 'Skip already-processed authors'
+      describe: 'Skip already-processed authors',
     })
     .option('stateFile', {
       type: 'string',
       default: path.join(__dirname, '.state.json'),
-      describe: 'Path to state file for resume'
+      describe: 'Path to state file for resume',
     })
-    .help()
-    .argv;
+    .help().argv;
 
   const logger = new Logger({ verbose: argv.verbose, quiet: argv.quiet });
   const stateManager = argv.resume ? new StateManager(argv.stateFile) : new StateManager(null);
@@ -148,16 +158,18 @@ async function run() {
 
   let authors = config.authors;
   if (argv.author) {
-    authors = authors.filter(a => a.username.toLowerCase() === argv.author.toLowerCase());
+    authors = authors.filter((a) => a.username.toLowerCase() === argv.author.toLowerCase());
     if (authors.length === 0) {
-      logger.error(`Author "${argv.author}" not found in config. Available: ${config.authors.map(a => a.username).join(', ')}`);
+      logger.error(
+        `Author "${argv.author}" not found in config. Available: ${config.authors.map((a) => a.username).join(', ')}`
+      );
       process.exit(1);
     }
   }
   if (argv.limit) {
     authors = authors.slice(0, argv.limit);
   }
-  logger.info(`  Authors to process: ${authors.map(a => a.username).join(', ')}`);
+  logger.info(`  Authors to process: ${authors.map((a) => a.username).join(', ')}`);
 
   // Step 2: Load ECO index
   logger.info('Step 2: Loading ECO opening database...');
@@ -180,7 +192,7 @@ async function run() {
     studiesFetched: 0,
     chaptersParsed: 0,
     chaptersMatched: 0,
-    errors: []
+    errors: [],
   };
 
   for (const author of authors) {
@@ -228,7 +240,7 @@ async function run() {
                 : `https://lichess.org/study/${study.id}`,
               anchor_fens: [match.fen],
               auto_discovered: true,
-              discovered_at: new Date().toISOString()
+              discovered_at: new Date().toISOString(),
             };
 
             if (!discovered[match.fen]) {
@@ -236,7 +248,9 @@ async function run() {
             }
             discovered[match.fen].push(entry);
 
-            logger.verbose(`      Matched: "${chapter.chapterName}" -> ${match.name} (${match.eco})`);
+            logger.verbose(
+              `      Matched: "${chapter.chapterName}" -> ${match.name} (${match.eco})`
+            );
           }
         } catch (error) {
           stats.errors.push({ study: study.id, error: error.message });
@@ -256,7 +270,9 @@ async function run() {
   // Step 5: Merge
   logger.info('Step 5: Merging discoveries...');
   const discoveredCount = Object.values(discovered).flat().length;
-  logger.info(`  Discovered ${discoveredCount} entries across ${Object.keys(discovered).length} FENs`);
+  logger.info(
+    `  Discovered ${discoveredCount} entries across ${Object.keys(discovered).length} FENs`
+  );
 
   const merged = mergeDiscoveries(existing, discovered);
   const mergedCount = Object.values(merged).flat().length;
@@ -297,7 +313,7 @@ async function run() {
   }
 }
 
-run().catch(error => {
+run().catch((error) => {
   console.error('Pipeline failed:', error.message);
   process.exit(1);
 });

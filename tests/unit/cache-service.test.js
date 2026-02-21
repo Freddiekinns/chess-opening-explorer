@@ -2,7 +2,10 @@
  * Unit Tests for SimpleCacheService and getGlobalCache
  */
 
-const { SimpleCacheService, getGlobalCache } = require('../../packages/api/src/services/cache-service');
+const {
+  SimpleCacheService,
+  getGlobalCache,
+} = require('../../packages/api/src/services/cache-service');
 
 describe('cache-service', () => {
   beforeAll(() => {

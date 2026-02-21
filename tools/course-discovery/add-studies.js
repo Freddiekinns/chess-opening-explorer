@@ -123,7 +123,10 @@ function parseInputFile(filePath) {
  * @returns {Array<{displayTitle: string, studyId: string}>}
  */
 function parseInputText(content) {
-  const lines = content.split('\n').map((l) => l.trim()).filter(Boolean);
+  const lines = content
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
   const entries = [];
   const seenIds = new Set();
 
@@ -272,7 +275,9 @@ async function run() {
       continue;
     }
 
-    logger.verbose(`  [${i + 1}/${studies.length}] Processing ${studyId}${displayTitle ? ` (${displayTitle})` : ''}...`);
+    logger.verbose(
+      `  [${i + 1}/${studies.length}] Processing ${studyId}${displayTitle ? ` (${displayTitle})` : ''}...`
+    );
 
     try {
       // Fetch metadata (name, likes, owner)
@@ -350,7 +355,9 @@ async function run() {
 
       // Progress update every 50 studies
       if (stats.studiesProcessed % 50 === 0) {
-        logger.info(`  Progress: ${stats.studiesProcessed}/${studies.length} studies, ${stats.chaptersMatched} chapters matched`);
+        logger.info(
+          `  Progress: ${stats.studiesProcessed}/${studies.length} studies, ${stats.chaptersMatched} chapters matched`
+        );
       }
     } catch (error) {
       stats.studiesFailed++;
@@ -368,7 +375,9 @@ async function run() {
   logger.info(`  Existing entries: ${existingCount} (${Object.keys(existing).length} FENs)`);
 
   const discoveredCount = Object.values(discovered).flat().length;
-  logger.info(`  New curated entries: ${discoveredCount} across ${Object.keys(discovered).length} FENs`);
+  logger.info(
+    `  New curated entries: ${discoveredCount} across ${Object.keys(discovered).length} FENs`
+  );
 
   // Build merged result
   const merged = {};

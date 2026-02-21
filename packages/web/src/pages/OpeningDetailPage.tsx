@@ -666,7 +666,14 @@ const OpeningDetailPage: React.FC = () => {
 
       return isCorrect;
     },
-    [practiceGame, isUserTurn, getExpectedMove, handleCorrectMove, handleIncorrectMove, clearSelection]
+    [
+      practiceGame,
+      isUserTurn,
+      getExpectedMove,
+      handleCorrectMove,
+      handleIncorrectMove,
+      clearSelection,
+    ]
   );
 
   // Cleanup auto-play timeout on unmount

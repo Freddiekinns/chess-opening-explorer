@@ -14,7 +14,8 @@
 6. **Early returns** over nested conditionals
 7. **Named exports** for utilities, default for components
 8. **No console.log** in production code
-9. **Format with Prettier**: `npm run format` before committing; `npm run format:check` to verify
+9. **Format with Prettier**: `npm run format` before committing;
+   `npm run format:check` to verify
 10. **Update activeContext.md** after significant changes
 11. **Ask rather than assume** requirements
 
@@ -173,8 +174,10 @@ cd tools/analysis && python run_pipeline.py
 
 ## Gotchas
 
-- **`tools/production/` scripts**: `enrich`, `course:enrich`, `videos:channel-first` etc. reference
-  `tools/production/` in `package.json`, but this directory may not exist. Actual enrichment
-  logic lives in `tools/llm-enrichment/`. Verify before running these scripts.
+- **`tools/production/` scripts**: `enrich`, `course:enrich`,
+  `videos:channel-first` etc. reference `tools/production/` in `package.json`,
+  but this directory may not exist. Actual enrichment logic lives in
+  `tools/llm-enrichment/`. Verify before running these scripts.
 - **CSS Modules migration ongoing**: Legacy global styles still in
-  `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when touching a component.
+  `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when
+  touching a component.

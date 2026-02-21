@@ -44,8 +44,8 @@ guidance; advanced players for quick reference.
 ### Data Pipelines
 
 - **Python**: LLM enrichment, Lichess integration, analysis (`tools/analysis/`)
-- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`),
-  Course/study import pipeline (`tools/course-discovery/`)
+- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`), Course/study
+  import pipeline (`tools/course-discovery/`)
 - **External APIs**: Lichess, YouTube Data API, Google Gemini
 
 ## Key Architecture Decisions

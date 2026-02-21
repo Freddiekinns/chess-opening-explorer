@@ -7,11 +7,8 @@ node_modules/
 *.sqlite3
 
 # Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
+!.env.example
 
 # Build outputs
 dist/
@@ -89,6 +86,9 @@ jspm_packages/
 *.swp
 *.swo
 *~
+
+# Local tool settings
+.claude/settings.local.json
 
 # OS generated files
 .DS_Store

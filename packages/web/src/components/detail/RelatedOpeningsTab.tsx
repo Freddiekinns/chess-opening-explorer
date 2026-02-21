@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRelatedOpenings } from '../../useRelatedOpenings';
+import { useRelatedOpenings, type RelatedOpeningsResponse } from '../../useRelatedOpenings';
 import { LineTypePill } from '../shared/LineTypePill';
 import { VariationItem } from './VariationItem';
 
@@ -41,12 +41,12 @@ export const RelatedOpeningsTab: React.FC<Props> = ({ fen, className = '' }) => 
 
   if (!data) return null;
 
-  const { mainline, siblings = [], counts } = data as any;
+  const { mainline, siblings = [], counts } = data as RelatedOpeningsResponse;
   const safeSiblings = Array.isArray(siblings) ? siblings : [];
   const safeCounts = counts || { siblings: safeSiblings.length };
   const list = expanded ? safeSiblings : safeSiblings.slice(0, 10);
   const needsExpand = safeCounts.siblings > 10;
-  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot);
+  const currentIsMainline = !!data.current?.isEcoRoot;
 
   return (
     <section

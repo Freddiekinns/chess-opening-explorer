@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { LandingHeader } from '../components/layout/LandingHeader';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
+import type { Opening as SearchOpening } from '../components/shared/SearchBar';
 
 const AnalyseGamesPage: React.FC = () => {
-  const [openingsData, setOpeningsData] = useState<any[]>([]);
+  const [openingsData, setOpeningsData] = useState<SearchOpening[]>([]);
   const location = useLocation();
 
   // Apply body class for this page

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { VariationItem } from './VariationItem';
 
 interface RelatedOpeningsModalProps {
@@ -40,6 +40,42 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastFocusedRef = useRef<HTMLElement | null>(null);
 
+  const handleTabKey = useCallback((e: KeyboardEvent) => {
+    const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable || focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        last.focus();
+        e.preventDefault();
+      }
+    } else if (document.activeElement === last) {
+      first.focus();
+      e.preventDefault();
+    }
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await fetch(`/api/openings/fen/${encodeURIComponent(fen)}/related`);
+      const json: RelatedResponse = await res.json();
+      if (json.success) {
+        setData(json.data);
+      } else {
+        setError('Failed to load related openings');
+      }
+    } catch (e) {
+      setError('Failed to load related openings');
+    } finally {
+      setLoading(false);
+    }
+  }, [fen]);
+
   useEffect(() => {
     if (isOpen) {
       lastFocusedRef.current = document.activeElement as HTMLElement;
@@ -60,43 +96,7 @@ export const RelatedOpeningsModal: React.FC<RelatedOpeningsModalProps> = ({
         lastFocusedRef.current?.focus();
       };
     }
-  }, [isOpen]);
-
-  const handleTabKey = (e: KeyboardEvent) => {
-    const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    if (!focusable || focusable.length === 0) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (e.shiftKey) {
-      if (document.activeElement === first) {
-        last.focus();
-        e.preventDefault();
-      }
-    } else if (document.activeElement === last) {
-      first.focus();
-      e.preventDefault();
-    }
-  };
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const res = await fetch(`/api/openings/fen/${encodeURIComponent(fen)}/related`);
-      const json: RelatedResponse = await res.json();
-      if (json.success) {
-        setData(json.data);
-      } else {
-        setError('Failed to load related openings');
-      }
-    } catch (e) {
-      setError('Failed to load related openings');
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [isOpen, onClose, fetchData, handleTabKey]);
 
   if (!isOpen) return null;
 

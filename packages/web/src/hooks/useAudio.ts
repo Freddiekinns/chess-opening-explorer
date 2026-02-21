@@ -25,7 +25,16 @@ export function useAudio() {
     if (isInitializedRef.current) return;
 
     try {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const WebkitAudioContext = (window as Window & {
+        webkitAudioContext?: typeof AudioContext;
+      }).webkitAudioContext;
+      const AudioContextCtor = window.AudioContext ?? WebkitAudioContext;
+
+      if (!AudioContextCtor) {
+        throw new Error('AudioContext not supported');
+      }
+
+      audioContextRef.current = new AudioContextCtor();
 
       // Preload sounds
       await Promise.all(

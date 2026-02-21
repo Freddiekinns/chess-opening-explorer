@@ -1,11 +1,11 @@
 import React from 'react';
-import { SearchBar } from './SearchBar';
+import { SearchBar, type Opening } from './SearchBar';
 
 interface MobileSearchOverlayProps {
   isOpen: boolean;
   onClose: () => void;
-  onSelect: (opening: any) => void;
-  openingsData: any[];
+  onSelect: (opening: Opening) => void;
+  openingsData: Opening[];
 }
 
 export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
@@ -14,7 +14,7 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   onSelect,
   openingsData,
 }) => {
-  const handleSelect = (opening: any) => {
+  const handleSelect = (opening: Opening) => {
     onClose();
     // Allow layout to settle after overlay closes before navigating,
     // so the chessboard measures its container at the correct width

@@ -39,8 +39,9 @@ export function useRelatedOpenings(fen: string | undefined) {
       const json = await res.json();
       const payload = json.data as RelatedOpeningsResponse;
       setState({ data: payload, loading: false, error: null });
-    } catch (e: any) {
-      setState({ data: null, loading: false, error: e.message || 'Unknown error' });
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : 'Unknown error';
+      setState({ data: null, loading: false, error: message });
     }
   }, [fen]);
 

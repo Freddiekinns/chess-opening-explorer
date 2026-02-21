@@ -57,6 +57,8 @@ const mockVariationResponse: MockApiResponse = {
 const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
+let nextOpeningResponse: MockApiResponse | null = null;
+
 // Mock useParams to return a test FEN
 vi.mock('react-router-dom', async () => {
   const actual = await vi.importActual('react-router-dom');
@@ -75,6 +77,7 @@ const renderWithRouter = (component: React.ReactElement) => {
 describe('LineTypePill Integration Tests', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    nextOpeningResponse = null;
 
     // Mock all API calls that the OpeningDetailPage makes
     mockFetch.mockImplementation((url: string) => {
@@ -93,23 +96,35 @@ describe('LineTypePill Integration Tests', () => {
 
       // Mock the specific opening API
       if (url.includes('/api/openings/fen/')) {
-        // Extract FEN from URL to determine which response to return
-        const encodedFen = url.split('/api/openings/fen/')[1];
-        const fen = decodeURIComponent(encodedFen);
+        const responseData = nextOpeningResponse ?? mockApiResponse;
+        if (nextOpeningResponse) {
+          nextOpeningResponse = null;
+        }
 
-        if (fen.includes('c5')) {
-          // Sicilian Defense FEN
-          const responseData = url.includes('test-variation')
-            ? mockVariationResponse
-            : mockApiResponse;
+        if (url.includes('/related')) {
+          const mainline = responseData.isEcoRoot ? responseData : mockApiResponse;
           return Promise.resolve({
             ok: true,
             json: async () => ({
               success: true,
-              data: responseData,
+              data: {
+                current: responseData,
+                ecoCode: responseData.eco,
+                mainline,
+                siblings: [],
+                counts: { siblings: 0 },
+              },
             }),
           });
         }
+
+        return Promise.resolve({
+          ok: true,
+          json: async () => ({
+            success: true,
+            data: responseData,
+          }),
+        });
       }
 
       // Mock other API calls (stats, videos, etc.) to prevent errors
@@ -138,13 +153,7 @@ describe('LineTypePill Integration Tests', () => {
   describe('Mainline Opening Display', () => {
     it('should display "Mainline" pill for ECO root opening', async () => {
       // Mock API response for mainline opening
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: mockApiResponse,
-        }),
-      });
+      nextOpeningResponse = mockApiResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -158,13 +167,7 @@ describe('LineTypePill Integration Tests', () => {
     });
 
     it('should have correct tooltip for mainline opening', async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: mockApiResponse,
-        }),
-      });
+      nextOpeningResponse = mockApiResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -180,13 +183,7 @@ describe('LineTypePill Integration Tests', () => {
   describe('Variation Opening Display', () => {
     it('should display "Variation" pill for non-ECO root opening', async () => {
       // Mock API response for variation opening
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: mockVariationResponse,
-        }),
-      });
+      nextOpeningResponse = mockVariationResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -200,13 +197,7 @@ describe('LineTypePill Integration Tests', () => {
     });
 
     it('should have correct tooltip for variation opening', async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: mockVariationResponse,
-        }),
-      });
+      nextOpeningResponse = mockVariationResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -240,13 +231,7 @@ describe('LineTypePill Integration Tests', () => {
         // Note: no isEcoRoot field
       };
 
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: responseData,
-        }),
-      });
+      nextOpeningResponse = responseData as MockApiResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -279,13 +264,7 @@ describe('LineTypePill Integration Tests', () => {
         scid: '',
       };
 
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: responseData,
-        }),
-      });
+      nextOpeningResponse = responseData as MockApiResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -333,13 +312,7 @@ describe('LineTypePill Integration Tests', () => {
 
   describe('Pill Visual Consistency', () => {
     it('should apply same CSS classes as other pills', async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({
-          success: true,
-          data: mockApiResponse,
-        }),
-      });
+      nextOpeningResponse = mockApiResponse;
 
       renderWithRouter(<OpeningDetailPage />);
 
@@ -348,7 +321,7 @@ describe('LineTypePill Integration Tests', () => {
       });
 
       const mainlinePill = screen.getByText('Mainline');
-      const ecoPill = screen.getByText('B20');
+      const ecoPill = screen.getAllByText('B20')[0];
 
       // Both pills should have the correct CSS classes
       expect(mainlinePill).toHaveClass('style-pill');

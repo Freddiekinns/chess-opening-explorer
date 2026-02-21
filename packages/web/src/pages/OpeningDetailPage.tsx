@@ -11,7 +11,7 @@ import {
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
-import { SearchBar } from '../components/shared/SearchBar';
+import { SearchBar, type Opening as SearchOpening } from '../components/shared/SearchBar';
 import { OpeningStats } from '../components/detail/OpeningStats';
 import { FloatingBackButton } from '../components/shared/FloatingBackButton';
 import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay';
@@ -19,6 +19,7 @@ import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
 import { LineTypePill } from '../components/shared/LineTypePill';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { useAudio } from '../hooks/useAudio';
+import type { RelatedOpeningsResponse } from '../useRelatedOpenings';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -85,6 +86,25 @@ interface MovePair {
   black?: string;
 }
 
+interface PopularityStats {
+  games_analyzed?: number;
+  white_win_rate?: number;
+  black_win_rate?: number;
+  draw_rate?: number;
+  avg_rating?: number;
+}
+
+type ApiResponse<T> = {
+  success: boolean;
+  data: T;
+};
+
+type CoursesResponse = {
+  success: boolean;
+  courses?: Study[];
+  searchLinks?: SearchLinks | null;
+};
+
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
   const navigate = useNavigate();
@@ -96,10 +116,10 @@ const OpeningDetailPage: React.FC = () => {
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [popularityStats, setPopularityStats] = useState<any>(null);
-  const [relatedOpenings, setRelatedOpenings] = useState<any>(null);
+  const [popularityStats, setPopularityStats] = useState<PopularityStats | null>(null);
+  const [relatedOpenings, setRelatedOpenings] = useState<RelatedOpeningsResponse | null>(null);
   const [relatedLoading, setRelatedLoading] = useState(false);
-  const [openingsData, setOpeningsData] = useState<any[]>([]);
+  const [openingsData, setOpeningsData] = useState<SearchOpening[]>([]);
   const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW);
   const [studies, setStudies] = useState<Study[]>([]);
   const [searchLinks, setSearchLinks] = useState<SearchLinks | null>(null);
@@ -115,6 +135,7 @@ const OpeningDetailPage: React.FC = () => {
   const [highlightSquares, setHighlightSquares] = useState<Record<string, CSSProperties>>({});
   const [isComplete, setIsComplete] = useState(false);
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const prevFenRef = useRef<string | undefined>(fen);
 
   // Click-to-move state
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
@@ -122,15 +143,6 @@ const OpeningDetailPage: React.FC = () => {
   // Track the last move for visual highlighting
   const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null);
   const { playAudio } = useAudio();
-
-  useEffect(() => {
-    if (fen) {
-      const decodedFen = decodeURIComponent(fen);
-      // Start both fetches in parallel
-      loadOpening(decodedFen);
-      loadRelatedOpenings(decodedFen);
-    }
-  }, [fen]);
 
   // Switch away from conditional tabs if no data available
   useEffect(() => {
@@ -143,23 +155,23 @@ const OpeningDetailPage: React.FC = () => {
   }, [videos, studies, searchLinks, activeTab]);
 
   // API Helper Functions
-  const fetchWithErrorHandling = async (url: string, errorMessage: string) => {
+  const fetchWithErrorHandling = useCallback(async (url: string, errorMessage: string) => {
     try {
       const response = await fetch(url);
-      const data = await response.json();
-      return data.success ? data : null;
+      const data = (await response.json()) as { success?: boolean };
+      return data?.success ? data : null;
     } catch (err) {
       console.error(errorMessage, err);
       return null;
     }
-  };
+  }, []);
 
   // Load openings data for SearchBar component
   useEffect(() => {
     const loadOpeningsData = async () => {
       try {
         const response = await fetch('/api/openings/all');
-        const data = await response.json();
+        const data = (await response.json()) as ApiResponse<SearchOpening[]>;
 
         if (data.success) {
           setOpeningsData(data.data);
@@ -172,81 +184,62 @@ const OpeningDetailPage: React.FC = () => {
     loadOpeningsData();
   }, []);
 
-  const loadOpening = async (fenString: string) => {
-    try {
-      setLoading(true);
-      setError(null);
+  const loadPopularityStats = useCallback(
+    async (fenString: string) => {
+      const data = (await fetchWithErrorHandling(
+        `${API_ENDPOINTS.STATS_BY_FEN}${encodeURIComponent(fenString)}`,
+        'Error loading popularity stats:'
+      )) as ApiResponse<PopularityStats> | null;
 
-      console.log('Loading opening for FEN:', fenString);
+      setPopularityStats(data?.data || null);
+    },
+    [fetchWithErrorHandling]
+  );
 
-      const data = await fetchWithErrorHandling(
-        `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
-        'Error loading opening:'
-      );
+  const loadVideos = useCallback(
+    async (fenString: string) => {
+      const data = (await fetchWithErrorHandling(
+        `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
+        'Error loading videos:'
+      )) as ApiResponse<Video[]> | null;
 
-      if (data) {
-        console.log('Opening data loaded from API:', data.data);
-        setOpening(data.data);
-        setupGame(data.data);
-        // Fetch additional data (related openings fetched in parallel from useEffect)
-        loadPopularityStats(fenString);
-        loadVideos(fenString);
-        loadStudies(fenString, data.data?.name || '');
-      } else {
-        setError('Opening not found');
+      setVideos(data?.data || []);
+    },
+    [fetchWithErrorHandling]
+  );
+
+  const loadStudies = useCallback(
+    async (fenString: string, openingName: string) => {
+      const encodedFen = encodeURIComponent(fenString);
+      const nameParam = openingName ? `?openingName=${encodeURIComponent(openingName)}` : '';
+      const data = (await fetchWithErrorHandling(
+        `${API_ENDPOINTS.COURSES_BY_FEN}${encodedFen}${nameParam}`,
+        'Error loading studies:'
+      )) as CoursesResponse | null;
+
+      setStudies(data?.courses || []);
+      setSearchLinks(data?.searchLinks || null);
+    },
+    [fetchWithErrorHandling]
+  );
+
+  const loadRelatedOpenings = useCallback(
+    async (fenString: string) => {
+      setRelatedLoading(true);
+      try {
+        const data = (await fetchWithErrorHandling(
+          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/related`,
+          'Error loading related openings:'
+        )) as ApiResponse<RelatedOpeningsResponse> | null;
+        setRelatedOpenings(data?.data || null);
+      } finally {
+        setRelatedLoading(false);
       }
-    } catch (err) {
-      console.error('Error loading opening:', err);
-      setError('Failed to load opening');
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+    [fetchWithErrorHandling]
+  );
 
-  const loadPopularityStats = async (fenString: string) => {
-    const data = await fetchWithErrorHandling(
-      `${API_ENDPOINTS.STATS_BY_FEN}${encodeURIComponent(fenString)}`,
-      'Error loading popularity stats:'
-    );
-
-    setPopularityStats(data?.data || null);
-  };
-
-  const loadVideos = async (fenString: string) => {
-    const data = await fetchWithErrorHandling(
-      `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
-      'Error loading videos:'
-    );
-
-    setVideos(data?.data || []);
-  };
-
-  const loadStudies = async (fenString: string, openingName: string) => {
-    const encodedFen = encodeURIComponent(fenString);
-    const nameParam = openingName ? `?openingName=${encodeURIComponent(openingName)}` : '';
-    const data = await fetchWithErrorHandling(
-      `${API_ENDPOINTS.COURSES_BY_FEN}${encodedFen}${nameParam}`,
-      'Error loading studies:'
-    );
-
-    setStudies(data?.courses || []);
-    setSearchLinks(data?.searchLinks || null);
-  };
-
-  const loadRelatedOpenings = async (fenString: string) => {
-    setRelatedLoading(true);
-    try {
-      const data = await fetchWithErrorHandling(
-        `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/related`,
-        'Error loading related openings:'
-      );
-      setRelatedOpenings(data?.data || null);
-    } finally {
-      setRelatedLoading(false);
-    }
-  };
-
-  const setupGame = (openingData: Opening) => {
+  const setupGame = useCallback((openingData: Opening) => {
     try {
       const newGame = new Chess();
 
@@ -288,7 +281,50 @@ const OpeningDetailPage: React.FC = () => {
     } catch (e) {
       console.error('Error setting up game:', e);
     }
-  };
+  }, []);
+
+  const loadOpening = useCallback(
+    async (fenString: string) => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        console.log('Loading opening for FEN:', fenString);
+
+        const data = (await fetchWithErrorHandling(
+          `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
+          'Error loading opening:'
+        )) as ApiResponse<Opening> | null;
+
+        if (data) {
+          console.log('Opening data loaded from API:', data.data);
+          setOpening(data.data);
+          setupGame(data.data);
+          // Fetch additional data (related openings fetched in parallel from useEffect)
+          loadPopularityStats(fenString);
+          loadVideos(fenString);
+          loadStudies(fenString, data.data?.name || '');
+        } else {
+          setError('Opening not found');
+        }
+      } catch (err) {
+        console.error('Error loading opening:', err);
+        setError('Failed to load opening');
+      } finally {
+        setLoading(false);
+      }
+    },
+    [fetchWithErrorHandling, loadPopularityStats, loadStudies, loadVideos, setupGame]
+  );
+
+  useEffect(() => {
+    if (fen) {
+      const decodedFen = decodeURIComponent(fen);
+      // Start both fetches in parallel
+      loadOpening(decodedFen);
+      loadRelatedOpenings(decodedFen);
+    }
+  }, [fen, loadOpening, loadRelatedOpenings]);
 
   const goToMove = (moveIndex: number) => {
     if (moveIndex >= 0 && moveIndex < gameHistory.length) {
@@ -321,15 +357,15 @@ const OpeningDetailPage: React.FC = () => {
     return pairs;
   };
 
-  const getMovesList = (): string[] => {
+  const getMovesList = useCallback((): string[] => {
     if (!opening?.moves) return [];
     return opening.moves
       .replace(/\d+\./g, '') // Remove move numbers like "1.", "2.", etc.
       .split(/\s+/)
       .filter((move) => move.trim() !== '' && !move.includes('.'));
-  };
+  }, [opening]);
 
-  const selectOpening = (opening: any) => {
+  const selectOpening = (opening: SearchOpening) => {
     const encodedFen = encodeURIComponent(opening.fen);
     navigate(`/opening/${encodedFen}`);
   };
@@ -379,7 +415,7 @@ const OpeningDetailPage: React.FC = () => {
         }, 400);
       }
     }
-  }, [practiceColor, opening]);
+  }, [practiceColor, getMovesList, playAudio]);
 
   const exitPractice = useCallback(() => {
     if (autoPlayTimeoutRef.current) {
@@ -410,7 +446,7 @@ const OpeningDetailPage: React.FC = () => {
     const movesArray = getMovesList();
     if (practiceIndex >= movesArray.length) return null;
     return movesArray[practiceIndex];
-  }, [opening, practiceIndex]);
+  }, [getMovesList, practiceIndex]);
 
   const getHintSquare = useCallback((): string | null => {
     if (!practiceGame) return null;
@@ -481,7 +517,7 @@ const OpeningDetailPage: React.FC = () => {
         }
       }
     },
-    [practiceGame, practiceIndex, practiceColor, opening, playAudio]
+    [practiceGame, practiceIndex, practiceColor, getMovesList, playAudio]
   );
 
   const handleIncorrectMove = useCallback(() => {
@@ -596,7 +632,6 @@ const OpeningDetailPage: React.FC = () => {
       sourceSquare,
       targetSquare,
     }: {
-      piece?: any;
       sourceSquare: string;
       targetSquare: string | null;
     }): boolean => {
@@ -631,7 +666,7 @@ const OpeningDetailPage: React.FC = () => {
 
       return isCorrect;
     },
-    [practiceGame, isUserTurn, getExpectedMove, handleCorrectMove, handleIncorrectMove]
+    [practiceGame, isUserTurn, getExpectedMove, handleCorrectMove, handleIncorrectMove, clearSelection]
   );
 
   // Cleanup auto-play timeout on unmount
@@ -702,10 +737,11 @@ const OpeningDetailPage: React.FC = () => {
 
   // Reset practice mode when opening changes
   useEffect(() => {
-    if (practiceMode) {
+    if (prevFenRef.current && prevFenRef.current !== fen && practiceMode) {
       exitPractice();
     }
-  }, [fen]);
+    prevFenRef.current = fen;
+  }, [fen, practiceMode, exitPractice]);
 
   if (loading) {
     return (

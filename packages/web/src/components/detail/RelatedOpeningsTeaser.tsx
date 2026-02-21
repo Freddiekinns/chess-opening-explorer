@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRelatedOpenings, RelatedOpeningsResponse } from '../../useRelatedOpenings';
+import {
+  useRelatedOpenings,
+  type RelatedOpeningsResponse,
+  type RelatedOpeningLite,
+} from '../../useRelatedOpenings';
 import { VariationItem } from './VariationItem';
 
 interface Props {
@@ -53,12 +57,12 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({
   }
   if (error || !data) return null;
 
-  const { mainline, siblings = [] } = data as any;
+  const { mainline, siblings = [] } = data as RelatedOpeningsResponse;
   // Determine if we are currently at the mainline first
-  const currentIsMainline = !!(data.current && (data.current as any).isEcoRoot);
+  const currentIsMainline = !!data.current?.isEcoRoot;
   // Show at most 4 total rows (including mainline if displayed) when collapsed
   const COLLAPSED_TOTAL = 4;
-  const fullList = (siblings || []).filter((o: any) => !mainline || o.fen !== mainline.fen);
+  const fullList = (siblings || []).filter((o) => !mainline || o.fen !== mainline.fen);
   const mainlineRowCount = !currentIsMainline && mainline ? 1 : 0;
   const remainingSlots = COLLAPSED_TOTAL - mainlineRowCount;
   const top = fullList.slice(0, remainingSlots);
@@ -98,16 +102,16 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({
             <VariationItem
               fen={mainline.fen}
               name={mainline.name}
-              moves={(mainline as any).moves}
+              moves={mainline.moves}
               isEcoRoot={true}
-              complexity={(mainline as any).complexity}
+              complexity={mainline.complexity}
               onNavigate={(toFen) => navigate(`/opening/${encodeURIComponent(toFen)}`)}
               className="related-teaser__item related-teaser__item--mainline"
               showComplexityTag={true}
               showMoves={true}
             />
           )}
-          {(expanded ? fullList : top).map((o: any) => (
+          {(expanded ? fullList : top).map((o: RelatedOpeningLite) => (
             <VariationItem
               key={o.fen}
               fen={o.fen}
@@ -132,11 +136,10 @@ export const RelatedOpeningsTeaser: React.FC<Props> = ({
             onClick={() => {
               const el = bodyRef.current;
               if (!el || animatingRef.current) return;
-              const mm =
+              const prefersReduced =
                 typeof window !== 'undefined' && typeof window.matchMedia === 'function'
-                  ? window.matchMedia('(prefers-reduced-motion: reduce)')
-                  : ({ matches: false } as any);
-              const prefersReduced = mm.matches;
+                  ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                  : false;
               // If reduced motion, just toggle without animation
               if (prefersReduced) {
                 setExpanded((e) => !e);

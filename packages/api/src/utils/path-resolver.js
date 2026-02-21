@@ -1,6 +1,15 @@
 const path = require('path');
 const fs = require('fs');
 
+const isPosixPath = (value) => typeof value === 'string' && value.startsWith('/');
+
+const joinFromBase = (basePath, ...segments) => {
+  if (isPosixPath(basePath)) {
+    return path.posix.join(basePath, ...segments);
+  }
+  return path.join(basePath, ...segments);
+};
+
 /**
  * Environment-aware path resolution for Vercel deployment
  * Handles both local development and serverless environments
@@ -18,19 +27,20 @@ class PathResolver {
    */
   getDataPath(subPath = '') {
     let dataPath;
+    const cwd = process.cwd();
     
     if (this.isVercel) {
       // In Vercel, use API data directory prepared by build script
-      dataPath = path.join(process.cwd(), 'api', 'data');
+      dataPath = joinFromBase(cwd, 'api', 'data');
     } else {
       // Local development - check if running from root or workspace
-      const isRunningFromRoot = process.cwd().endsWith('chess-opening-explorer');
+      const isRunningFromRoot = cwd.endsWith('chess-opening-explorer');
       dataPath = isRunningFromRoot 
-        ? path.join(process.cwd(), 'api', 'data')
-        : path.join(process.cwd(), '../../api', 'data');
+        ? joinFromBase(cwd, 'api', 'data')
+        : joinFromBase(cwd, '..', '..', 'api', 'data');
     }
     
-    return subPath ? path.join(dataPath, subPath) : dataPath;
+    return subPath ? joinFromBase(dataPath, subPath) : dataPath;
   }
 
   /**
@@ -81,7 +91,7 @@ class PathResolver {
    */
   getAPIDataPath(filename) {
     if (this.isVercel) {
-      return path.join(process.cwd(), 'api', 'data', filename);
+      return joinFromBase(process.cwd(), 'api', 'data', filename);
     } else {
       return path.join(__dirname, '../data', filename);
     }

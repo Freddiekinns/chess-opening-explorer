@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-interface Opening {
+export interface Opening {
   fen: string;
   name: string;
   eco: string;

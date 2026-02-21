@@ -7,6 +7,7 @@ interface RelatedOpeningLite {
   moves: string;
   isEcoRoot: boolean;
   games_analyzed: number;
+  complexity?: string | null;
 }
 
 interface RelatedOpeningsResponse {

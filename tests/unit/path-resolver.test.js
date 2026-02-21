@@ -95,11 +95,17 @@ describe('PathResolver - local environment', () => {
 
 describe('PathResolver - Vercel environment', () => {
   let resolver;
+  let fs;
 
   beforeAll(() => {
     process.env.VERCEL = '1';
     jest.resetModules();
     jest.spyOn(process, 'cwd').mockReturnValue('/var/task');
+    fs = require('fs');
+    jest.spyOn(fs, 'existsSync').mockImplementation((candidate) => {
+      if (typeof candidate !== 'string') return false;
+      return candidate.startsWith('/var/task/api/data');
+    });
     resolver = require('../../packages/api/src/utils/path-resolver');
   });
 

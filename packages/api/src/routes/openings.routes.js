@@ -445,7 +445,8 @@ router.get('/popular-by-eco', (req, res) => {
 router.get('/search-index', (req, res) => {
   try {
     const startTime = Date.now();
-    const { limit } = req.query;
+    const { limit, fields } = req.query;
+    const isLookupOnly = fields === 'lookup';
     
     // Check cache first
     const cacheKey = limit ? `limited_${limit}` : 'full';
@@ -469,9 +470,9 @@ router.get('/search-index', (req, res) => {
       fen: opening.fen,
       name: opening.name,
       eco: opening.eco,
-      moves: opening.moves || '',
+      ...(isLookupOnly ? {} : { moves: opening.moves || '' }),
       // Only include games_analyzed if available for sorting
-      ...(opening.games_analyzed && { games_analyzed: opening.games_analyzed })
+      ...(isLookupOnly ? {} : opening.games_analyzed && { games_analyzed: opening.games_analyzed })
     }));
     
     // If limit specified, prioritize by games_analyzed and take top N

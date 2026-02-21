@@ -34,7 +34,11 @@ module.exports = async (req, res) => {
   }
 
   // Convert Vercel request to Express request format
-  req.url = req.url || `/api/courses${req.path || ''}`;
+  const basePath = '/api/courses';
+  const originalUrl = req.url || req.path || '';
+  req.url = originalUrl.startsWith(basePath)
+    ? originalUrl
+    : `${basePath}${originalUrl.startsWith('/') ? '' : '/'}${originalUrl}`;
   req.method = req.method || 'GET';
   
   // Handle the request using the Express router

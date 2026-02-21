@@ -3,10 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { LandingHeader } from '../components/layout/LandingHeader';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
-import type { Opening as SearchOpening } from '../components/shared/SearchBar';
+import type { OpeningForLookup } from '../../../shared/src';
 
 const AnalyseGamesPage: React.FC = () => {
-  const [openingsData, setOpeningsData] = useState<SearchOpening[]>([]);
+  const [openingsData, setOpeningsData] = useState<OpeningForLookup[]>([]);
   const location = useLocation();
 
   // Apply body class for this page
@@ -25,7 +25,7 @@ const AnalyseGamesPage: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/api/openings/search-index');
+        const response = await fetch('/api/openings/search-index?fields=lookup');
         const data = await response.json();
         if (data.success) {
           setOpeningsData(data.data);

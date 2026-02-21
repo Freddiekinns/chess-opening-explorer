@@ -24,7 +24,11 @@ module.exports = async (req, res) => {
     return;
   }
 
-  req.url = req.url || `/api/personal${req.path || ''}`;
+  const basePath = '/api/personal';
+  const originalUrl = req.url || req.path || '';
+  req.url = originalUrl.startsWith(basePath)
+    ? originalUrl
+    : `${basePath}${originalUrl.startsWith('/') ? '' : '/'}${originalUrl}`;
   req.method = req.method || 'GET';
 
   return new Promise((resolve) => {

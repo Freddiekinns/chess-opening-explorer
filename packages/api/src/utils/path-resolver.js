@@ -28,18 +28,38 @@ class PathResolver {
   getDataPath(subPath = '') {
     let dataPath;
     const cwd = process.cwd();
-    
+
+    const pickExisting = (candidates) => {
+      for (const candidate of candidates) {
+        if (fs.existsSync(candidate)) {
+          return candidate;
+        }
+      }
+      return candidates[0];
+    };
+
     if (this.isVercel) {
-      // In Vercel, use API data directory prepared by build script
-      dataPath = joinFromBase(cwd, 'api', 'data');
+      const candidates = [
+        joinFromBase(cwd, 'api', 'data'),
+        joinFromBase(cwd, '..', 'api', 'data'),
+        joinFromBase(cwd, '..', '..', 'api', 'data'),
+        path.resolve(__dirname, '..', '..', '..', '..', 'api', 'data')
+      ];
+      dataPath = pickExisting(candidates);
     } else {
-      // Local development - check if running from root or workspace
       const isRunningFromRoot = cwd.endsWith('chess-opening-explorer');
-      dataPath = isRunningFromRoot 
-        ? joinFromBase(cwd, 'api', 'data')
-        : joinFromBase(cwd, '..', '..', 'api', 'data');
+      const candidates = isRunningFromRoot
+        ? [
+            joinFromBase(cwd, 'api', 'data'),
+            joinFromBase(cwd, '..', 'api', 'data')
+          ]
+        : [
+            joinFromBase(cwd, '..', '..', 'api', 'data'),
+            joinFromBase(cwd, '..', 'api', 'data')
+          ];
+      dataPath = pickExisting(candidates);
     }
-    
+
     return subPath ? joinFromBase(dataPath, subPath) : dataPath;
   }
 

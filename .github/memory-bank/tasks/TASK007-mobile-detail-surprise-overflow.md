@@ -6,20 +6,25 @@
 
 ## Problem Summary
 
-On mobile, the opening detail page intermittently shifts horizontally so content appears pushed off-screen to the right. The issue is not deterministic.
+On mobile, the opening detail page intermittently shifts horizontally so content
+appears pushed off-screen to the right. The issue is not deterministic.
 
 ### Key User Observation
 
-- The problem **does not** reproduce when navigating from the landing page to an opening.
-- The problem **does** reproduce when repeatedly using **Surprise me** from the **mobile search/overlay** while already on an opening detail page.
-- Frequency improved after fixes, but bug still reproduces (example: “got through 3 openings then broke”).
+- The problem **does not** reproduce when navigating from the landing page to an
+  opening.
+- The problem **does** reproduce when repeatedly using **Surprise me** from the
+  **mobile search/overlay** while already on an opening detail page.
+- Frequency improved after fixes, but bug still reproduces (example: “got
+  through 3 openings then broke”).
 
 ## Reproduction Path (Current Best Known)
 
 1. Open an opening detail page on mobile.
 2. Open the mobile search menu (magnifier icon in header).
 3. Use Surprise me / select openings repeatedly from this mobile detail flow.
-4. After several transitions, page may render with horizontal right-shift/overflow behavior.
+4. After several transitions, page may render with horizontal
+   right-shift/overflow behavior.
 
 ## Expected Behavior
 
@@ -29,23 +34,28 @@ On mobile, the opening detail page intermittently shifts horizontally so content
 
 ## Actual Behavior
 
-- Intermittent horizontal shift to the right after detail→detail navigation on mobile.
-- Appears as if left edge is clipped and subsequent components render outside viewport bounds.
+- Intermittent horizontal shift to the right after detail→detail navigation on
+  mobile.
+- Appears as if left edge is clipped and subsequent components render outside
+  viewport bounds.
 - Not consistently reproducible on every transition.
 
 ## Scope / Impact
 
 - Affects mobile UX and confidence in detail page stability.
-- Trigger path appears linked to overlay + keyboard + in-place route param updates.
+- Trigger path appears linked to overlay + keyboard + in-place route param
+  updates.
 
 ## What Was Tested and Changed
 
 ### 1) Tab overflow hardening
 
-- Wrapped tab buttons in a non-scrolling track and applied mobile horizontal scrolling only to tab row.
+- Wrapped tab buttons in a non-scrolling track and applied mobile horizontal
+  scrolling only to tab row.
 - Added right-edge fade indicator in module CSS.
 
 Files:
+
 - packages/web/src/pages/OpeningDetailPage.tsx
 - packages/web/src/pages/OpeningDetailPage.module.css
 
@@ -56,14 +66,17 @@ Files:
 - Ensured FEN input can shrink/wrap safely.
 
 Files:
+
 - packages/web/src/pages/OpeningDetailPage.module.css
 
 ### 3) Route transition stability in detail page
 
-- Added `key` to `Chessboard` bound to opening FEN to force remount on opening change.
+- Added `key` to `Chessboard` bound to opening FEN to force remount on opening
+  change.
 - On FEN route change: reset horizontal scroll offsets and close mobile overlay.
 
 Files:
+
 - packages/web/src/pages/OpeningDetailPage.tsx
 
 ### 4) Overlay/keyboard transition stability
@@ -73,6 +86,7 @@ Files:
 - Added short delay (180ms) before navigation to allow viewport/keyboard settle.
 
 Files:
+
 - packages/web/src/components/shared/MobileSearchOverlay.tsx
 
 ### 5) Page/global overflow guards
@@ -81,6 +95,7 @@ Files:
 - Added html/body/#root horizontal overflow guards.
 
 Files:
+
 - packages/web/src/styles/simplified.css
 
 ## Validation Performed
@@ -93,11 +108,15 @@ Files:
 ## Current Status
 
 - Issue reproduces less often but still present.
-- Bug remains open due intermittent failures in the same mobile detail navigation path.
+- Bug remains open due intermittent failures in the same mobile detail
+  navigation path.
 
 ## Recommended Next Debug Step
 
-Add a temporary runtime overflow probe (development-only) that logs first offending element when `document.documentElement.scrollWidth > window.innerWidth` after each detail-route transition:
+Add a temporary runtime overflow probe (development-only) that logs first
+offending element when
+`document.documentElement.scrollWidth > window.innerWidth` after each
+detail-route transition:
 
 - capture selector path/class list
 - capture element `scrollWidth/clientWidth/boundingClientRect`
@@ -108,4 +127,5 @@ This should identify the exact element causing the residual width expansion.
 ## Related Commit(s)
 
 - `e3ddf54fd` — fix(frontend): harden mobile detail navigation layout
-- Additional uncommitted continuation: global overflow guards in `simplified.css` (to be committed as follow-up)
+- Additional uncommitted continuation: global overflow guards in
+  `simplified.css` (to be committed as follow-up)

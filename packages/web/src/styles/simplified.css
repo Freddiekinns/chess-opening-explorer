@@ -3882,6 +3882,13 @@ body {
     color: var(--color-text-muted);
   }
 
+  /* Reduce tab button size on mobile to prevent overflow */
+  .tab-button {
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0;
+  }
+
   /* Reduce tab content padding on mobile to give more space for videos */
   .tab-content-panel {
     padding: var(--space-4) var(--space-3);
@@ -3904,6 +3911,12 @@ body {
   }
 
   .video-title {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Further reduce tab button size on small mobile */
+  .tab-button {
+    padding: var(--space-2) var(--space-2);
     font-size: var(--font-size-xs);
   }
 

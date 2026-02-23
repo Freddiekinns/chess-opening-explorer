@@ -6,6 +6,28 @@
 
 ## Session Summary (2026-02-20)
 
+## Session Summary (2026-02-23)
+
+### Bug: Intermittent Mobile Right-Shift on Opening Detail (Surprise-Me Loop)
+
+**Problem:** On mobile, opening detail intermittently shifts horizontally to the
+right after repeated detail→detail transitions triggered from mobile search/
+surprise flow. Not reproducible from landing→detail navigation.
+
+**Mitigations implemented:**
+
+- Added tab track wrapper + mobile-safe tab scrolling structure
+- Constrained chessboard container width and mobile wrapping for board/FEN
+  control rows
+- Added `Chessboard` remount key per FEN route change
+- Reset horizontal scroll and close overlay on FEN changes
+- Blurred active input before overlay close and delayed overlay select
+  navigation to allow keyboard/viewport settle
+- Added detail/global `overflow-x` guards
+
+**Status:** Repro frequency reduced but issue still occurs intermittently.
+Created TASK007 to track root-cause isolation and next instrumentation step.
+
 ### Update: Coverage Reporting Enabled
 
 **Problem:** Frontend coverage reports were missing; backend coverage reports

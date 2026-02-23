@@ -2,7 +2,7 @@
 
 ## In Progress
 
-_No active tasks._
+- [TASK007] Intermittent Mobile Overflow on Opening Detail (Surprise Me Loop) - Added 2026-02-23
 
 ## Pending
 

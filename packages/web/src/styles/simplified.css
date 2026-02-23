@@ -133,6 +133,7 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
+  overflow-x: hidden;
 }
 
 .two-column-layout {
@@ -499,10 +500,6 @@ body {
   contain: layout style;
 }
 
-.chessboard-container {
-  contain: layout;
-}
-
 .detail-header {
   background-color: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border);
@@ -730,6 +727,7 @@ body {
 .chessboard-section {
   background-color: var(--color-bg-surface);
   border-radius: var(--border-radius-large);
+  overflow: hidden;
   padding: var(--space-6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);

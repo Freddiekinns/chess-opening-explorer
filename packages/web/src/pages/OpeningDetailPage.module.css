@@ -13,6 +13,16 @@
   margin-top: 0;
 }
 
+.boardSectionCompact :global(.chessboard-container) {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.boardSectionCompact :global(.chessboard-container > div) {
+  max-width: 100%;
+}
+
 /* Desktop: constrain board height so it doesn't exceed the viewport vertically */
 @media (min-width: 1024px) {
   .boardSectionCompact :global(.chessboard-container) {
@@ -27,6 +37,19 @@
   .boardSectionCompact :global(.chessboard-container) {
     margin-bottom: var(--space-2);
     max-width: 100%;
+  }
+
+  .boardSectionCompact :global(.chessboard-navigation) {
+    flex-wrap: wrap;
+  }
+
+  .boardSectionCompact :global(.fen-display) {
+    flex-wrap: wrap;
+  }
+
+  .boardSectionCompact :global(.fen-input) {
+    min-width: 0;
+    width: 100%;
   }
 }
 

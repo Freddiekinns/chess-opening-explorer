@@ -1203,24 +1203,24 @@ const OpeningDetailPage: React.FC = () => {
 
           {/* Simple Tabbed Content Section - Primary learning content */}
           {opening?.eco && (
-            <div className="simple-tabs">
+            <div className={styles.simpleTabs}>
               {/* Tab Buttons */}
-              <div className="tab-buttons">
+              <div className={styles.tabButtons}>
                 <button
-                  className={`tab-button ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}
+                  className={`${styles.tabButton} ${activeTab === TAB_TYPES.OVERVIEW ? styles.active : ''}`}
                   onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
                 >
                   Overview
                 </button>
                 <button
-                  className={`tab-button ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
+                  className={`${styles.tabButton} ${activeTab === TAB_TYPES.PLANS ? styles.active : ''}`}
                   onClick={() => setActiveTab(TAB_TYPES.PLANS)}
                 >
                   Plans
                 </button>
                 {(studies.length > 0 || searchLinks) && (
                   <button
-                    className={`tab-button ${activeTab === TAB_TYPES.STUDIES ? 'active' : ''}`}
+                    className={`${styles.tabButton} ${activeTab === TAB_TYPES.STUDIES ? styles.active : ''}`}
                     onClick={() => setActiveTab(TAB_TYPES.STUDIES)}
                   >
                     {studies.length > 0 ? `Studies (${studies.length})` : 'Studies'}
@@ -1228,7 +1228,7 @@ const OpeningDetailPage: React.FC = () => {
                 )}
                 {videos.length > 0 && (
                   <button
-                    className={`tab-button ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
+                    className={`${styles.tabButton} ${activeTab === TAB_TYPES.VIDEOS ? styles.active : ''}`}
                     onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
                   >
                     Videos ({videos.length})
@@ -1237,9 +1237,9 @@ const OpeningDetailPage: React.FC = () => {
               </div>
 
               {/* Tab Content */}
-              <div className="tab-content-area">
+              <div className={styles.tabContentArea}>
                 <div
-                  className={`tab-content-panel ${activeTab === TAB_TYPES.OVERVIEW ? 'active' : ''}`}
+                  className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.OVERVIEW ? styles.active : ''}`}
                 >
                   <div className="content-panel-improved">
                     <h3 className="title-subsection">Description</h3>
@@ -1253,14 +1253,14 @@ const OpeningDetailPage: React.FC = () => {
                 </div>
 
                 <div
-                  className={`tab-content-panel ${activeTab === TAB_TYPES.PLANS ? 'active' : ''}`}
+                  className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.PLANS ? styles.active : ''}`}
                 >
                   <CommonPlans ecoCode={opening.eco} />
                 </div>
 
                 {(studies.length > 0 || searchLinks) && (
                   <div
-                    className={`tab-content-panel ${activeTab === TAB_TYPES.STUDIES ? 'active' : ''}`}
+                    className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.STUDIES ? styles.active : ''}`}
                   >
                     <div className="content-panel-improved">
                       <StudiesGallery
@@ -1274,7 +1274,7 @@ const OpeningDetailPage: React.FC = () => {
 
                 {videos.length > 0 && (
                   <div
-                    className={`tab-content-panel ${activeTab === TAB_TYPES.VIDEOS ? 'active' : ''}`}
+                    className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.VIDEOS ? styles.active : ''}`}
                   >
                     <div className="content-panel-improved">
                       <VideoErrorBoundary>

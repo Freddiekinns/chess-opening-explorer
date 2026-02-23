@@ -13,10 +13,21 @@
   margin-top: 0;
 }
 
-.boardSectionCompact :global(.chessboard-container) {
-  margin-bottom: var(--space-2);
-  max-width: calc(100vh - 380px);
-  max-width: calc(100dvh - 380px);
+/* Desktop: constrain board height so it doesn't exceed the viewport vertically */
+@media (min-width: 1024px) {
+  .boardSectionCompact :global(.chessboard-container) {
+    margin-bottom: var(--space-2);
+    max-width: calc(100vh - 380px);
+    max-width: calc(100dvh - 380px);
+  }
+}
+
+/* Mobile/tablet: let simplified.css 560px cap apply; just adjust margin */
+@media (max-width: 1023px) {
+  .boardSectionCompact :global(.chessboard-container) {
+    margin-bottom: var(--space-2);
+    max-width: 100%;
+  }
 }
 
 .boardSectionCompact :global(.chessboard-navigation) {
@@ -39,5 +50,111 @@
 
   .relatedTeaserMobile {
     display: block;
+  }
+}
+
+/* =================
+   TABS
+   ================= */
+.simpleTabs {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tabButtons {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.tabButton {
+  flex: 1;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  padding: var(--space-4) var(--space-6);
+  cursor: pointer;
+  transition: color 0.15s ease;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.3px;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tabButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(244, 140, 6, 0.05) 100%);
+  opacity: 0;
+  transition: none;
+}
+
+.tabButton:hover {
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tabButton:hover::before {
+  opacity: 1;
+}
+
+.tabButton.active {
+  color: var(--color-brand-orange);
+  background-color: transparent;
+  border-bottom-color: var(--color-brand-orange);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tabButton.active::before {
+  opacity: 0.3;
+}
+
+.tabContentArea {
+  position: relative;
+  min-height: 300px;
+}
+
+.tabContentPanel {
+  display: none;
+  padding: var(--space-6);
+  animation: fadeInContent 0.3s ease-out;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tabContentPanel.active {
+  display: block;
+}
+
+/* Mobile: scrollable tab bar so labels never clip */
+@media (max-width: 640px) {
+  .tabButtons {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tabButtons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabButton {
+    flex: 0 0 auto;
+  }
+
+  .tabContentPanel {
+    padding: var(--space-4) var(--space-3);
   }
 }

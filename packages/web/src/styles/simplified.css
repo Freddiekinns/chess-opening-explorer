@@ -834,86 +834,8 @@ body {
 }
 
 /* =================
-   TABS - REFINED DESIGN
+   TABS - styles live in OpeningDetailPage.module.css
    ================= */
-.simple-tabs {
-  background-color: var(--color-bg-surface);
-  border-radius: var(--border-radius-large);
-  overflow: hidden;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.tab-buttons {
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-}
-
-.tab-button {
-  flex: 1;
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  border: none;
-  padding: var(--space-4) var(--space-6);
-  cursor: pointer;
-  transition: color 0.15s ease;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-base);
-  letter-spacing: 0.3px;
-  position: relative;
-  border-bottom: 2px solid transparent;
-}
-
-.tab-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(244, 140, 6, 0.05) 100%);
-  opacity: 0;
-  transition: none;
-}
-
-.tab-button:hover {
-  color: var(--color-text-primary);
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-.tab-button:hover::before {
-  opacity: 1;
-}
-
-.tab-button.active {
-  color: var(--color-brand-orange);
-  background-color: transparent;
-  border-bottom-color: var(--color-brand-orange);
-  font-weight: var(--font-weight-semibold);
-}
-
-.tab-button.active::before {
-  opacity: 0.3;
-}
-
-.tab-content-area {
-  position: relative;
-  min-height: 300px;
-}
-
-.tab-content-panel {
-  display: none;
-  padding: var(--space-6) var(--space-6);
-  animation: fadeInContent 0.3s ease-out;
-  /* Ensure tab content doesn't cause layout issues */
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 @keyframes fadeInContent {
   from {
     opacity: 0;
@@ -923,10 +845,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.tab-content-panel.active {
-  display: block;
 }
 
 /* Remove redundant headers - content should flow naturally */
@@ -3174,7 +3092,7 @@ body {
     align-items: center;
     padding: 0 var(--space-3);
     min-height: 60px; /* Increased for better touch targets */
-    max-width: 100vw;
+    max-width: 100%;
     margin: 0 auto;
     justify-content: initial;
     flex-direction: initial;

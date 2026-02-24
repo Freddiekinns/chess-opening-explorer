@@ -750,17 +750,12 @@ const OpeningDetailPage: React.FC = () => {
       if (practiceMode) {
         exitPractice();
       }
-
-      // Mobile stability: ensure no stale horizontal scroll offset persists
-      // between opening-to-opening navigations (e.g. Surprise Me in mobile overlay).
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: window.scrollY, left: 0, behavior: 'auto' });
-        document.documentElement.scrollLeft = 0;
-        document.body.scrollLeft = 0;
-      }
-
-      // Safety: always close search overlay after route-param navigation.
       setIsMobileSearchOpen(false);
+
+      // Reset scroll after React has committed the render
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      });
     }
 
     prevFenRef.current = fen;
@@ -915,7 +910,6 @@ const OpeningDetailPage: React.FC = () => {
               style={practiceMode ? { touchAction: 'none' } : undefined}
             >
               <Chessboard
-                key={opening?.fen || fen || 'opening-board'}
                 options={{
                   position: practiceMode ? practiceGame?.fen() : game.fen(),
                   boardOrientation: practiceMode ? practiceColor : 'white',

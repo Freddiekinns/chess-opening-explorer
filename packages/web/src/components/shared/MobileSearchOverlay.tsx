@@ -27,16 +27,12 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   const handleSelect = (opening: Opening) => {
     closeOverlaySafely();
 
-    // Force-reset horizontal scroll before route navigation to prevent
-    // occasional carryover offset on mobile opening-to-opening transitions.
-    window.scrollTo({ top: window.scrollY, left: 0, behavior: 'auto' });
-    document.documentElement.scrollLeft = 0;
-    document.body.scrollLeft = 0;
-
-    // Give overlay + visual viewport (keyboard) time to settle.
-    window.setTimeout(() => {
+    // Navigate after the browser has painted the overlay close.
+    // rAF naturally fires after layout/paint, unlike a fixed setTimeout
+    // which races with overlay close and keyboard dismiss on different devices.
+    requestAnimationFrame(() => {
       onSelect(opening);
-    }, 180);
+    });
   };
 
   if (!isOpen) return null;

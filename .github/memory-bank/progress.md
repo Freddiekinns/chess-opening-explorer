@@ -121,3 +121,11 @@
   (4.7MB) JSON file. While this enables fast client-side search, it could be a
   performance bottleneck on slow connections. Future optimizations might involve
   a more advanced data-loading strategy.
+
+## Recently Resolved
+
+- **TASK007 — Mobile Overflow on Opening Detail (2026-02-23):** Content-heavy
+  openings overflowed horizontally on mobile due to CSS Grid `1fr` resolving to
+  `minmax(auto, 1fr)` and a grid child missing `min-width: 0`. Fixed with
+  `minmax(0, 1fr)` + wildcard `min-width: 0` on grid children. Regression test
+  added.

@@ -14,29 +14,11 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   onSelect,
   openingsData,
 }) => {
-  const closeOverlaySafely = () => {
-    // Mobile: dismiss keyboard first to avoid viewport/layout jitter
-    const activeEl = document.activeElement;
-    if (activeEl instanceof HTMLElement) {
-      activeEl.blur();
-    }
-
-    onClose();
-  };
-
   const handleSelect = (opening: Opening) => {
-    closeOverlaySafely();
-
-    // Force-reset horizontal scroll before route navigation to prevent
-    // occasional carryover offset on mobile opening-to-opening transitions.
-    window.scrollTo({ top: window.scrollY, left: 0, behavior: 'auto' });
-    document.documentElement.scrollLeft = 0;
-    document.body.scrollLeft = 0;
-
-    // Give overlay + visual viewport (keyboard) time to settle.
-    window.setTimeout(() => {
+    onClose();
+    requestAnimationFrame(() => {
       onSelect(opening);
-    }, 180);
+    });
   };
 
   if (!isOpen) return null;
@@ -45,11 +27,7 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
     <div className={`mobile-search-overlay ${isOpen ? 'active' : ''}`}>
       <div className="mobile-search-header">
         <h2 className="mobile-search-title">Search Openings</h2>
-        <button
-          className="mobile-search-close"
-          onClick={closeOverlaySafely}
-          aria-label="Close search"
-        >
+        <button className="mobile-search-close" onClick={onClose} aria-label="Close search">
           ×
         </button>
       </div>

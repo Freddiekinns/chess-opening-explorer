@@ -744,20 +744,9 @@ const OpeningDetailPage: React.FC = () => {
 
   // Reset practice mode when opening changes
   useEffect(() => {
-    const didFenChange = prevFenRef.current && prevFenRef.current !== fen;
-
-    if (didFenChange) {
-      if (practiceMode) {
-        exitPractice();
-      }
-      setIsMobileSearchOpen(false);
-
-      // Reset scroll after React has committed the render
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      });
+    if (prevFenRef.current && prevFenRef.current !== fen && practiceMode) {
+      exitPractice();
     }
-
     prevFenRef.current = fen;
   }, [fen, practiceMode, exitPractice]);
 

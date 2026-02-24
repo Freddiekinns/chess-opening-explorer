@@ -14,22 +14,8 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
   onSelect,
   openingsData,
 }) => {
-  const closeOverlaySafely = () => {
-    // Mobile: dismiss keyboard first to avoid viewport/layout jitter
-    const activeEl = document.activeElement;
-    if (activeEl instanceof HTMLElement) {
-      activeEl.blur();
-    }
-
-    onClose();
-  };
-
   const handleSelect = (opening: Opening) => {
-    closeOverlaySafely();
-
-    // Navigate after the browser has painted the overlay close.
-    // rAF naturally fires after layout/paint, unlike a fixed setTimeout
-    // which races with overlay close and keyboard dismiss on different devices.
+    onClose();
     requestAnimationFrame(() => {
       onSelect(opening);
     });
@@ -41,11 +27,7 @@ export const MobileSearchOverlay: React.FC<MobileSearchOverlayProps> = ({
     <div className={`mobile-search-overlay ${isOpen ? 'active' : ''}`}>
       <div className="mobile-search-header">
         <h2 className="mobile-search-title">Search Openings</h2>
-        <button
-          className="mobile-search-close"
-          onClick={closeOverlaySafely}
-          aria-label="Close search"
-        >
+        <button className="mobile-search-close" onClick={onClose} aria-label="Close search">
           ×
         </button>
       </div>

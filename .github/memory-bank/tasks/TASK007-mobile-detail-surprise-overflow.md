@@ -17,6 +17,8 @@ appears pushed off-screen to the right. The issue is not deterministic.
   **mobile search/overlay** while already on an opening detail page.
 - Frequency improved after fixes, but bug still reproduces (example: “got
   through 3 openings then broke”).
+- Viewport is currently locked, so horizontal scroll is not possible, but content appears shifted as if left
+  edge is clipped and subsequent components render outside viewport bounds. 
 
 ## Reproduction Path (Current Best Known)
 
@@ -117,6 +119,7 @@ Add a temporary runtime overflow probe (development-only) that logs first
 offending element when
 `document.documentElement.scrollWidth > window.innerWidth` after each
 detail-route transition:
+
 
 - capture selector path/class list
 - capture element `scrollWidth/clientWidth/boundingClientRect`

@@ -2,31 +2,44 @@
 
 **Date:** 2026-02-20
 
-## Current Focus: UX - Persist Analysis Tab State Across Navigation
+## Current Focus: TASK007 Resolved — Mobile Overflow Fix
 
 ## Session Summary (2026-02-20)
 
 ## Session Summary (2026-02-23)
 
-### Bug: Intermittent Mobile Right-Shift on Opening Detail (Surprise-Me Loop)
+### Fix: Mobile Horizontal Overflow on Opening Detail (TASK007 — Resolved)
 
-**Problem:** On mobile, opening detail intermittently shifts horizontally to the
-right after repeated detail→detail transitions triggered from mobile search/
-surprise flow. Not reproducible from landing→detail navigation.
+**Problem:** On mobile, certain opening detail pages overflowed horizontally.
+The bug was content-dependent — openings with many related variations (e.g., QGD
+with 5+ siblings) always broke, while simpler openings never did.
 
-**Mitigations implemented:**
+**Root Cause:** CSS Grid `1fr` resolves to `minmax(auto, 1fr)`. When
+`RelatedOpeningsTeaser` was moved from inside `.right-column` (had
+`min-width: 0`) to a direct child of `.two-column-layout`, the teaser's
+intrinsic width could expand the grid track beyond the viewport. Multiple
+`overflow: hidden` guards were ineffective because the containers **grew to
+fit** rather than overflowing.
 
-- Added tab track wrapper + mobile-safe tab scrolling structure
-- Constrained chessboard container width and mobile wrapping for board/FEN
-  control rows
-- Added `Chessboard` remount key per FEN route change
-- Reset horizontal scroll and close overlay on FEN changes
-- Blurred active input before overlay close and delayed overlay select
-  navigation to allow keyboard/viewport settle
-- Added detail/global `overflow-x` guards
+**Fix (3 CSS changes in `simplified.css`):**
 
-**Status:** Repro frequency reduced but issue still occurs intermittently.
-Created TASK007 to track root-cause isolation and next instrumentation step.
+1. Changed `1fr` → `minmax(0, 1fr)` at all grid breakpoints
+2. Added `.two-column-layout > * { min-width: 0; }` wildcard rule
+3. Removed ineffective `overflow-x: hidden` from `#root` and `.detail-page-body`
+
+**Regression Test:** Playwright e2e test (`mobile-overflow.spec.ts`) at 375px
+viewport with 6 related siblings, asserting no horizontal overflow.
+
+**Validation:** TypeScript check, Vite build, 135/135 frontend tests,
+user-confirmed on real mobile device.
+
+**Files Changed:**
+
+| File                                     | Change                                  |
+| ---------------------------------------- | --------------------------------------- |
+| `packages/web/src/styles/simplified.css` | Grid track fix + wildcard min-width     |
+| `tests/e2e/mobile-overflow.spec.ts`      | New regression test                     |
+| `tests/e2e/utils/mockApi.ts`             | Configurable related siblings for mocks |
 
 ### Update: Coverage Reporting Enabled
 

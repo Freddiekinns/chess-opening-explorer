@@ -2,8 +2,7 @@
 
 ## In Progress
 
-- [TASK007] Intermittent Mobile Overflow on Opening Detail (Surprise Me Loop) -
-  Added 2026-02-23
+_No tasks in progress._
 
 ## Pending
 
@@ -13,6 +12,7 @@
 
 ## Completed
 
+- [TASK007] Mobile Overflow on Opening Detail - Resolved 2026-02-23
 - [TASK001] Implement Memory Bank Structure - Completed on 2025-09-06
 - [TASK002] Related Openings Navigation - Completed on 2025-09-08
   (Consolidation + animation + design system finalization)

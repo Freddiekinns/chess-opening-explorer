@@ -70,38 +70,6 @@ const testStudies = [
   },
 ];
 
-const testRelated = {
-  current: {
-    fen: testOpenings[0].fen,
-    name: testOpenings[0].name,
-    eco: testOpenings[0].eco,
-    moves: testOpenings[0].moves,
-    isEcoRoot: false,
-    games_analyzed: 120000,
-  },
-  ecoCode: 'B50',
-  mainline: {
-    fen: testOpenings[0].fen,
-    name: 'Sicilian Defense: Main Line',
-    eco: 'B50',
-    moves: testOpenings[0].moves,
-    isEcoRoot: true,
-    games_analyzed: 150000,
-  },
-  siblings: [
-    {
-      fen: testOpenings[1].fen,
-      name: 'Sicilian Defense: Alapin',
-      eco: 'B22',
-      moves: '1. e4 c5 2. c3',
-      isEcoRoot: false,
-      games_analyzed: 42000,
-      complexity: 'Intermediate',
-    },
-  ],
-  counts: { siblings: 1 },
-};
-
 const testStats = {
   games_analyzed: 250000,
   white_win_rate: 0.45,
@@ -140,7 +108,75 @@ function fulfillJson(route: Route, payload: unknown, status = 200) {
   });
 }
 
-export async function mockApiRoutes(page: Page) {
+export interface MockOptions {
+  /** Number of related sibling openings to generate (default: 1) */
+  relatedSiblingCount?: number;
+}
+
+/**
+ * Build related openings data with a configurable number of siblings.
+ * More siblings = more content, useful for overflow regression tests.
+ */
+function buildRelatedData(siblingCount: number) {
+  const siblings = [
+    {
+      fen: testOpenings[1].fen,
+      name: 'Sicilian Defense: Alapin',
+      eco: 'B22',
+      moves: '1. e4 c5 2. c3',
+      isEcoRoot: false,
+      games_analyzed: 42000,
+      complexity: 'Intermediate',
+    },
+  ];
+
+  // Generate additional siblings with long realistic names
+  const extraNames = [
+    'Sicilian Defense: Najdorf, English Attack, 6.Be3 e5 7.Nb3',
+    'Sicilian Defense: Scheveningen, Keres Attack, 6.g4',
+    'Sicilian Defense: Dragon, Yugoslav Attack, 9.Bc4',
+    'Sicilian Defense: Sveshnikov, 7.Bg5 a6 8.Na3',
+    'Sicilian Defense: Kalashnikov, 5.Nb5 d6',
+  ];
+
+  for (let i = 0; i < Math.min(siblingCount - 1, extraNames.length); i++) {
+    siblings.push({
+      fen: `rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 ${i + 10}`,
+      name: extraNames[i],
+      eco: 'B50',
+      moves: `1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 ${i + 5}. Nc3`,
+      isEcoRoot: false,
+      games_analyzed: 30000 - i * 5000,
+      complexity: 'Advanced',
+    });
+  }
+
+  return {
+    current: {
+      fen: testOpenings[0].fen,
+      name: testOpenings[0].name,
+      eco: testOpenings[0].eco,
+      moves: testOpenings[0].moves,
+      isEcoRoot: false,
+      games_analyzed: 120000,
+    },
+    ecoCode: 'B50',
+    mainline: {
+      fen: testOpenings[0].fen,
+      name: 'Sicilian Defense: Main Line',
+      eco: 'B50',
+      moves: testOpenings[0].moves,
+      isEcoRoot: true,
+      games_analyzed: 150000,
+    },
+    siblings,
+    counts: { siblings: siblings.length },
+  };
+}
+
+export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
+  const { relatedSiblingCount = 1 } = options;
+  const relatedData = buildRelatedData(relatedSiblingCount);
   await page.route('**/api/**', async (route) => {
     const url = new URL(route.request().url());
     const path = url.pathname;
@@ -173,7 +209,7 @@ export async function mockApiRoutes(page: Page) {
     }
 
     if (path.startsWith('/api/openings/fen/') && path.endsWith('/related')) {
-      return fulfillJson(route, { success: true, data: testRelated });
+      return fulfillJson(route, { success: true, data: relatedData });
     }
 
     if (path.startsWith('/api/openings/fen/')) {

@@ -101,6 +101,12 @@
 /* =================
    GLOBAL STYLES
    ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -109,13 +115,14 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-main);
+  overflow-x: hidden; /* fallback for browsers without clip support */
+  overflow-x: clip; /* modern: clips overflow without blocking pinch-to-zoom */
 }
 
 #root {
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* =================
@@ -136,30 +143,33 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
-  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 .two-column-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-8);
   max-width: 1400px;
   margin: 0 auto;
   padding: var(--space-4);
 }
 
+/* Prevent ANY grid child from expanding the track beyond available space */
+.two-column-layout > * {
+  min-width: 0;
+}
+
 .left-column {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  min-width: 0; /* Allow grid item to shrink below content size */
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  min-width: 0; /* Allow grid item to shrink below content size */
 }
 
 /* Related openings teaser as a standalone grid item:
@@ -3331,13 +3341,23 @@ body {
 /* Tablet breakpoint (768px - 1024px) */
 @media (max-width: 1024px) {
   .two-column-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-6);
     padding: var(--space-3);
   }
 
   .related-teaser-grid-item {
     order: 99;
+  }
+
+  /* FEN display: wrap input and buttons on narrow viewports */
+  .chessboard-fen-utilities .fen-display {
+    flex-wrap: wrap;
+  }
+
+  .chessboard-fen-utilities .fen-input {
+    width: 100%;
+    min-width: 0;
   }
 
   /* Remove viewport-height constraint on single-column layout */
@@ -3741,7 +3761,7 @@ body {
 
   /* Layout Adjustments */
   .two-column-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-4);
     padding: var(--space-2);
   }

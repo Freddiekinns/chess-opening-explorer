@@ -60,7 +60,7 @@
       "destination": "/api/health"
     },
     {
-      "source": "/((?!api/).*)",
+      "source": "/((?!api/|sitemap\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ],

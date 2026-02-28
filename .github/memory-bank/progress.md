@@ -103,11 +103,20 @@
 - **Tooltip Abstraction:** Central component for consistent ARIA + styling
   (currently native title attributes).
 
+- **SEO & Google Indexing:** Vercel Edge Middleware injects unique `<title>`,
+  `<meta description>`, canonical URL, Open Graph, and Twitter Card tags for
+  every opening page at the edge layer (before JS runs). React 19 native
+  document metadata manages client-side meta tags for SPA navigation. JSON-LD
+  structured data on opening detail pages. Build-time SEO lookup generator
+  creates a 1.7MB compact FEN-to-metadata map from ECO data.
+
 ## Current Status
 
 - The project is in a solid state with a robust backend and data pipeline.
 - Personal Opening Explorer is complete with multi-platform support and polished
   UI.
+- SEO infrastructure deployed: unique meta tags for all 12,377 opening pages,
+  Open Graph tags for social sharing, JSON-LD structured data.
 - The core data-heavy features are largely complete on the backend.
 - The main focus is shifting towards building out the frontend UI to expose all
   the available data and features to the user.

@@ -132,6 +132,32 @@ const LandingPage: React.FC = () => {
 
   return (
     <main className="landing-page">
+      <title>Opening Book — Discover, explore and learn chess openings</title>
+      <meta
+        name="description"
+        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style."
+      />
+      <link rel="canonical" href="https://www.openingbook.com/" />
+      <meta
+        property="og:title"
+        content="Opening Book — Discover, explore and learn chess openings"
+      />
+      <meta
+        property="og:description"
+        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style."
+      />
+      <meta property="og:url" content="https://www.openingbook.com/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Opening Book" />
+      <meta name="twitter:card" content="summary" />
+      <meta
+        name="twitter:title"
+        content="Opening Book — Discover, explore and learn chess openings"
+      />
+      <meta
+        name="twitter:description"
+        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools."
+      />
       <LandingHeader />
 
       {/* Hero Section */}

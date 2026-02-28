@@ -4,20 +4,25 @@
 
 _No tasks in progress._
 
+## Reference / Strategy
+
+- [TASK008] Competitive Analysis & Feature Opportunities - Added 2026-02-28
+
 ## Pending
 
-- [TASK004] Course Discovery & Workflow - Added 2026-02-10
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
-- [TASK006] Coverage Updates (Backend + Frontend) - Added 2026-02-20
 
 ## Completed
 
+- [TASK009] SEO: Get Opening Pages Indexed by Google - Completed 2026-02-28
 - [TASK007] Mobile Overflow on Opening Detail - Resolved 2026-02-23
 - [TASK001] Implement Memory Bank Structure - Completed on 2025-09-06
 - [TASK002] Related Openings Navigation - Completed on 2025-09-08
   (Consolidation + animation + design system finalization)
 - [TASK003] Related Openings Hybrid Teaser Refinement - Completed on 2025-09-07
   (Structural + accessibility); Addendum 2025-09-08 (post-consolidation notes)
+- [TASK006] Coverage Updates (Backend + Frontend) - Completed on 2026-02-20
+- [TASK004] Course Discovery & Workflow - Completed on 2026-02-10
 
 ## Abandoned
 

@@ -1,10 +1,52 @@
 # Active Context
 
-**Date:** 2026-02-20
+**Date:** 2026-02-28
 
-## Current Focus: TASK007 Resolved — Mobile Overflow Fix
+## Current Focus: TASK009 Complete — SEO for Google Indexing
 
-## Session Summary (2026-02-20)
+## Session Summary (2026-02-28)
+
+### SEO: Get Opening Pages Indexed by Google (TASK009 — Done)
+
+**Problem:** All 12,377+ opening pages served identical HTML (`<title>`,
+`<meta description>`, empty `<div id="root">`). Google treated them as
+duplicates and only indexed the home page.
+
+**Solution:** Vercel Edge Middleware + React 19 native document metadata.
+
+**Implementation:**
+
+1. **Build-time SEO lookup generator** (`scripts/generate-seo-lookup.js`): Reads
+   all 5 ECO files, outputs compact 1.7MB `seo-lookup.json` keyed by raw FEN
+   with `[name, eco, shortMoves]` arrays. Hooked into `build:vercel`.
+
+2. **Vercel Edge Middleware** (`middleware.ts`): Intercepts `/opening/*` and
+   `/analyse` routes, fetches `seo-lookup.json` (cached), injects unique
+   `<title>`, `<meta description>`, canonical URL, Open Graph, and Twitter Card
+   tags into the HTML before it reaches the browser/crawler.
+
+3. **React 19 native metadata** (no library needed — `react-helmet-async`
+   doesn't support React 19): Added `<title>`, `<meta>`, `<link>`, OG/Twitter
+   tags, and JSON-LD structured data directly in page components. React 19
+   automatically hoists these to `<head>`.
+
+4. **Improved `index.html` baseline**: Better default description, added
+   `og:site_name`, `og:type`, `twitter:card` base tags.
+
+**Files Changed:**
+
+| File                                           | Change                                   |
+| ---------------------------------------------- | ---------------------------------------- |
+| `scripts/generate-seo-lookup.js`               | New: SEO lookup generator                |
+| `middleware.ts`                                | New: Vercel Edge Middleware              |
+| `package.json`                                 | Added generate step to `build:vercel`    |
+| `packages/web/index.html`                      | Improved meta tags baseline              |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | React 19 metadata + JSON-LD              |
+| `packages/web/src/pages/LandingPage.tsx`       | React 19 metadata                        |
+| `packages/web/src/pages/AnalyseGamesPage.tsx`  | React 19 metadata                        |
+| `.gitignore`                                   | Added `seo-lookup.json` (build artifact) |
+
+**Validation:** TypeScript build passes, 135/135 frontend tests pass.
 
 ## Session Summary (2026-02-23)
 

@@ -103,6 +103,9 @@ Thumbs.db
 *.tmp
 *.temp
 
+# Generated SEO lookup (build artifact)
+packages/web/public/seo-lookup.json
+
 # Course analysis data (keep structure but ignore content)
 data/course_analysis/by_opening/
 data/course_analysis/debug/

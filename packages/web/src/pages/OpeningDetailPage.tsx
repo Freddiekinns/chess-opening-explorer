@@ -105,6 +105,9 @@ type CoursesResponse = {
   searchLinks?: SearchLinks | null;
 };
 
+const SITE_NAME = 'Opening Book';
+const SITE_URL = 'https://www.openingbook.com';
+
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
   const navigate = useNavigate();
@@ -783,8 +786,44 @@ const OpeningDetailPage: React.FC = () => {
       ? `/analyse${personalUsername ? `?username=${encodeURIComponent(personalUsername)}` : ''}${personalPlatform ? `${personalUsername ? '&' : '?'}platform=${encodeURIComponent(personalPlatform)}` : ''}`
       : '/';
 
+  const seoTitle = opening
+    ? `${opening.name}${opening.eco ? ` (${opening.eco})` : ''} — ${SITE_NAME}`
+    : `Chess Opening — ${SITE_NAME}`;
+  const seoDescription = opening
+    ? `Explore the ${opening.name}${opening.eco ? ` (${opening.eco})` : ''}.${opening.moves ? ` Played after ${opening.moves.split(/\s+/).slice(0, 7).join(' ')}.` : ''} Learn key ideas, watch videos, and practice this opening.`
+    : 'Explore this chess opening. Learn key ideas, watch videos, and practice.';
+  const canonicalUrl = `${SITE_URL}/opening/${fen ? encodeURIComponent(fen) : ''}`;
+  const jsonLd = opening
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: seoTitle,
+        description: seoDescription,
+        url: canonicalUrl,
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+      }
+    : null;
+
   return (
     <div className="detail-page-body">
+      <title>{seoTitle}</title>
+      <meta name="description" content={seoDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={seoTitle} />
+      <meta property="og:description" content={seoDescription} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={seoTitle} />
+      <meta name="twitter:description" content={seoDescription} />
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          // Content is from our own ECO data files, not user input — safe for JSON-LD
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       {/* Floating Back Button for Mobile */}
       <FloatingBackButton />
 

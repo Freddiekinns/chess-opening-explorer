@@ -39,6 +39,26 @@ const AnalyseGamesPage: React.FC = () => {
 
   return (
     <div className="analyse-page">
+      <title>Analyse Your Games — Opening Book</title>
+      <meta
+        name="description"
+        content="Analyse your Chess.com and Lichess games to discover which openings you play and track your performance."
+      />
+      <link rel="canonical" href="https://www.openingbook.com/analyse" />
+      <meta property="og:title" content="Analyse Your Games — Opening Book" />
+      <meta
+        property="og:description"
+        content="Analyse your Chess.com and Lichess games to discover which openings you play and track your performance."
+      />
+      <meta property="og:url" content="https://www.openingbook.com/analyse" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Opening Book" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content="Analyse Your Games — Opening Book" />
+      <meta
+        name="twitter:description"
+        content="Analyse your Chess.com and Lichess games to discover which openings you play and track your performance."
+      />
       <LandingHeader />
 
       {/* Hero Section */}

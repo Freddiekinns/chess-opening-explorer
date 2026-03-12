@@ -234,7 +234,7 @@ export const PersonalOpeningStats: React.FC<{
     if (cached) {
       setDashboard(cached);
       setStep('done');
-      setStepText('Loaded cached results');
+      setStepText('Loaded your saved results');
       setProgress(100);
       setProcessed(cached.totalGames);
       setTotal(cached.totalGames);
@@ -256,7 +256,7 @@ export const PersonalOpeningStats: React.FC<{
       setDashboard(cached);
       setError(null);
       setStep('done');
-      setStepText('Loaded cached results');
+      setStepText('Loaded your saved results');
       setProgress(100);
       setProcessed(cached.totalGames);
       setTotal(cached.totalGames);
@@ -270,7 +270,7 @@ export const PersonalOpeningStats: React.FC<{
     setError(null);
     setDashboard(null);
     setStep('fetching');
-    setStepText(`Fetching games from ${platform === 'lichess' ? 'Lichess' : 'Chess.com'}...`);
+    setStepText(`Fetching your games from ${platform === 'lichess' ? 'Lichess' : 'Chess.com'}...`);
     setProgress(5);
     setProcessed(0);
     setTotal(0);
@@ -283,7 +283,9 @@ export const PersonalOpeningStats: React.FC<{
       const response = await fetch(url, { signal: controller.signal });
       const json = await response.json();
       if (!response.ok || !json?.success) {
-        throw new Error(json?.message || 'Failed to fetch games');
+        throw new Error(
+          json?.message || "We couldn't load your games. Please check the username and try again."
+        );
       }
 
       const gamesPgn: string[] = json?.data?.gamesPgn || [];
@@ -291,7 +293,7 @@ export const PersonalOpeningStats: React.FC<{
       setProgress(gamesPgn.length > 0 ? 15 : 100);
 
       setStep('analysing');
-      setStepText('Analysing games...');
+      setStepText('Analysing your games...');
 
       const asWhite = new Map<string, OpeningAgg>();
       const asBlack = new Map<string, OpeningAgg>();
@@ -315,7 +317,7 @@ export const PersonalOpeningStats: React.FC<{
         if (!side) {
           unclassified += 1;
           setProcessed(i + 1);
-          setStepText(`Analysing games... (${i + 1}/${gamesPgn.length})`);
+          setStepText(`Analysing your games... (${i + 1}/${gamesPgn.length})`);
           setProgress(15 + Math.round(((i + 1) / Math.max(1, gamesPgn.length)) * 85));
           continue;
         }
@@ -324,7 +326,7 @@ export const PersonalOpeningStats: React.FC<{
         if (!result) {
           unclassified += 1;
           setProcessed(i + 1);
-          setStepText(`Analysing games... (${i + 1}/${gamesPgn.length})`);
+          setStepText(`Analysing your games... (${i + 1}/${gamesPgn.length})`);
           setProgress(15 + Math.round(((i + 1) / Math.max(1, gamesPgn.length)) * 85));
           continue;
         }
@@ -333,7 +335,7 @@ export const PersonalOpeningStats: React.FC<{
         if (!lookup.success || !lookup.bestMatch) {
           unclassified += 1;
           setProcessed(i + 1);
-          setStepText(`Analysing games... (${i + 1}/${gamesPgn.length})`);
+          setStepText(`Analysing your games... (${i + 1}/${gamesPgn.length})`);
           setProgress(15 + Math.round(((i + 1) / Math.max(1, gamesPgn.length)) * 85));
           continue;
         }
@@ -354,7 +356,7 @@ export const PersonalOpeningStats: React.FC<{
         }
 
         setProcessed(i + 1);
-        setStepText(`Analysing games... (${i + 1}/${gamesPgn.length})`);
+        setStepText(`Analysing your games... (${i + 1}/${gamesPgn.length})`);
         setProgress(15 + Math.round(((i + 1) / Math.max(1, gamesPgn.length)) * 85));
 
         if ((i + 1) % 10 === 0) {
@@ -382,11 +384,14 @@ export const PersonalOpeningStats: React.FC<{
       setDashboard(data);
       setSortMode('frequency');
       setStep('done');
-      setStepText('Done');
+      setStepText('Analysis complete');
       setProgress(100);
       setControlsCollapsed(true); // Collapse controls on mobile after analysis
     } catch (e) {
-      const msg = e instanceof Error ? e.message : 'Failed';
+      const msg =
+        e instanceof Error
+          ? e.message
+          : 'Something went wrong while analysing your games. Please try again.';
       setError(msg);
       setStep('error');
       setStepText('');
@@ -516,7 +521,8 @@ export const PersonalOpeningStats: React.FC<{
 
             {!dashboard && (
               <div className="personal-note">
-                Rated rapid/blitz/classical only. Max 500 games. Bullet excluded.
+                Includes rated rapid, blitz, and classical games only (up to 500). Bullet is
+                excluded.
               </div>
             )}
 
@@ -530,7 +536,7 @@ export const PersonalOpeningStats: React.FC<{
                 <span className="personal-controls-collapse__chevron" aria-hidden="true">
                   &#9650;
                 </span>
-                <span>Hide</span>
+                <span>Hide controls</span>
               </button>
             )}
           </div>
@@ -580,10 +586,9 @@ export const PersonalOpeningStats: React.FC<{
                 <path d="m21 21-4.35-4.35" />
               </svg>
             </div>
-            <h3 className="personal-empty-state__title">Ready to Analyse</h3>
+            <h3 className="personal-empty-state__title">Ready to analyse your openings?</h3>
             <p className="personal-empty-state__text">
-              Enter your username above to fetch your recent games and get a detailed breakdown of
-              your opening performance.
+              Enter your username to see a clear breakdown of how you perform in each opening.
             </p>
           </div>
         )}
@@ -652,7 +657,7 @@ export const PersonalOpeningStats: React.FC<{
                         &#9812;
                       </span>
                       <span className="personal-insight__rate">{whiteWinRate}%</span>
-                      <span className="personal-insight__label">win rate as White</span>
+                      <span className="personal-insight__label">Win rate with White</span>
                       <span className="personal-insight__games">
                         ({dashboard.whiteGames} games)
                       </span>
@@ -662,7 +667,7 @@ export const PersonalOpeningStats: React.FC<{
                         &#9818;
                       </span>
                       <span className="personal-insight__rate">{blackWinRate}%</span>
-                      <span className="personal-insight__label">win rate as Black</span>
+                      <span className="personal-insight__label">Win rate with Black</span>
                       <span className="personal-insight__games">
                         ({dashboard.blackGames} games)
                       </span>
@@ -675,7 +680,7 @@ export const PersonalOpeningStats: React.FC<{
                           className="personal-insight personal-insight--best"
                           to={`/opening/${encodeURIComponent(bestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
                         >
-                          <span className="personal-insight__tag">Best opening</span>
+                          <span className="personal-insight__tag">Top-performing opening</span>
                           <span className="personal-insight__opening">{bestOpening.name}</span>
                           <span className="personal-insight__detail">
                             {getWinRate(bestOpening)}% win rate ({bestOpening.games} games)
@@ -700,7 +705,10 @@ export const PersonalOpeningStats: React.FC<{
                     Analysed {dashboard.totalGames} games ({dashboard.classifiedGames} matched known
                     openings)
                   </div>
-                  <div className="personal-sort-bar">
+                </div>
+
+                <div className="personal-sort-bar" role="group" aria-label="Sort openings">
+                  <div className="personal-sort-bar__pills">
                     {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
                       <button
                         key={mode}

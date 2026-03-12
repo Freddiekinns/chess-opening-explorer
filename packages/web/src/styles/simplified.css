@@ -2569,33 +2569,31 @@ body {
   white-space: nowrap;
 }
 
-/* Sort bar — bottom row of the insights card */
+/* Sort bar — standalone row between insights card and opening lists */
 .personal-sort-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 6px;
-  padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  margin-top: var(--space-2);
+  justify-content: center;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .personal-sort-bar__pills {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 3px;
+  border-radius: 10px;
+  padding: 4px;
 }
 
 .personal-sort-pill {
   display: inline-flex;
   align-items: center;
-  padding: 4px 11px;
-  border-radius: 5px;
-  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: var(--font-size-xs);
   font-weight: 500;
   border: none;
   background: transparent;

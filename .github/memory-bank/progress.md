@@ -84,6 +84,9 @@
     - Weakest opening identification (needs work, 2+ games)
     - Clickable cards linking directly to opening detail pages
   - **Opening breakdown:** Top 10 openings per color with W/D/L stats
+  - **Sort controls:** Segmented pill bar (Most played / Best first / Worst
+    first) between insights card and opening lists, shared across desktop
+    columns and mobile tabs
   - **Win-rate visualization:** Green gradient indicator on each row
   - **Performance:** Server-side caching (10 min), client-side session cache
   - **Responsive design:** Adapts from desktop to mobile layouts

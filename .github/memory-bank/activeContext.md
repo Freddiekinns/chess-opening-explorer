@@ -1,8 +1,45 @@
 # Active Context
 
-**Date:** 2026-02-28
+**Date:** 2026-03-12
 
-## Current Focus: TASK009 Complete — SEO for Google Indexing
+## Current Focus: Sort Controls for Personal Opening Explorer
+
+## Session Summary (2026-03-12)
+
+### Feat: Sort Controls for Personal Opening Stats
+
+**Feature:** Users can sort their opening breakdown by "Most played",
+"Best first", or "Worst first" in the Analyse Games page.
+
+**Implementation:**
+
+1. **Sort logic** (`sortAgg`): Extended with a `SortMode` type
+   (`'frequency' | 'best' | 'worst'`). "Best first" sorts by win rate
+   descending, "Worst first" by win rate ascending, "Most played" (default)
+   by game count.
+
+2. **Segmented pill control:** Three-button pill group rendered as a standalone
+   element between the insights summary card and the opening lists. Wrapped in
+   a `.personal-sort-bar__pills` container with subtle background/border for
+   visual grouping. Active pill uses green accent (`rgba(16,185,129)`).
+
+3. **Placement fix:** Sort controls were originally buried inside the insights
+   card (wrong hierarchy). Moved to a standalone centered row between insights
+   and the "As White" / "As Black" columns, so the control is visually
+   associated with the content it affects.
+
+4. **UX copy improvements:** Friendlier microcopy throughout — "Loaded your
+   saved results", "Analysing your games...", "Analysis complete",
+   "Top-performing opening", better error messages.
+
+**Files Changed:**
+
+| File                                                    | Change                                          |
+| ------------------------------------------------------- | ----------------------------------------------- |
+| `packages/web/src/components/personal/PersonalOpeningStats.tsx` | Sort state, `SortMode` type, pill UI, copy tweaks |
+| `packages/web/src/styles/simplified.css`                | Sort bar + pill styles                          |
+
+**Validation:** TypeScript build passes (`tsc --noEmit` clean).
 
 ## Session Summary (2026-02-28)
 

@@ -2569,6 +2569,52 @@ body {
   white-space: nowrap;
 }
 
+/* Sort bar — standalone row between insights card and opening lists */
+.personal-sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.personal-sort-bar__pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.personal-sort-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  white-space: nowrap;
+}
+
+.personal-sort-pill:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.personal-sort-pill--active {
+  background: rgba(16, 185, 129, 0.18);
+  color: rgba(16, 185, 129, 0.95);
+}
+
 /* Mobile controls summary bar - hidden on desktop */
 .personal-controls-summary {
   display: none;

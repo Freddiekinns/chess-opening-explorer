@@ -624,136 +624,196 @@ export const PersonalOpeningStats: React.FC<{
             };
 
             return (
-              <>
-                <div className="personal-sort-bar">
-                  <span className="personal-sort-bar__label">Sort by:</span>
-                  {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
-                    <button
-                      key={mode}
-                      type="button"
-                      className={`personal-sort-pill${sortMode === mode ? ' personal-sort-pill--active' : ''}`}
-                      onClick={() => setSortMode(mode)}
-                    >
-                      {sortLabels[mode]}
-                    </button>
-                  ))}
+              <div className="personal-dashboard">
+                <div className="personal-insights">
+                  {/* Mobile: Inline compact win rates */}
+                  <div className="personal-insights__rates-inline">
+                    <span className="personal-rates-inline__item">
+                      <span className="personal-rates-inline__icon" aria-hidden="true">
+                        &#9812;
+                      </span>
+                      <span className="personal-rates-inline__value">{whiteWinRate}%</span>
+                    </span>
+                    <span className="personal-rates-inline__sep" aria-hidden="true">
+                      ·
+                    </span>
+                    <span className="personal-rates-inline__item">
+                      <span className="personal-rates-inline__icon" aria-hidden="true">
+                        &#9818;
+                      </span>
+                      <span className="personal-rates-inline__value">{blackWinRate}%</span>
+                    </span>
+                  </div>
+
+                  {/* Desktop: Full win rate cards */}
+                  <div className="personal-insights__row personal-insights__row--rates">
+                    <div className="personal-insight personal-insight--white">
+                      <span className="personal-insight__icon" aria-hidden="true">
+                        &#9812;
+                      </span>
+                      <span className="personal-insight__rate">{whiteWinRate}%</span>
+                      <span className="personal-insight__label">win rate as White</span>
+                      <span className="personal-insight__games">
+                        ({dashboard.whiteGames} games)
+                      </span>
+                    </div>
+                    <div className="personal-insight personal-insight--black">
+                      <span className="personal-insight__icon" aria-hidden="true">
+                        &#9818;
+                      </span>
+                      <span className="personal-insight__rate">{blackWinRate}%</span>
+                      <span className="personal-insight__label">win rate as Black</span>
+                      <span className="personal-insight__games">
+                        ({dashboard.blackGames} games)
+                      </span>
+                    </div>
+                  </div>
+                  {(bestOpening || weakestOpening) && (
+                    <div className="personal-insights__row personal-insights__row--openings">
+                      {bestOpening && (
+                        <Link
+                          className="personal-insight personal-insight--best"
+                          to={`/opening/${encodeURIComponent(bestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                        >
+                          <span className="personal-insight__tag">Best opening</span>
+                          <span className="personal-insight__opening">{bestOpening.name}</span>
+                          <span className="personal-insight__detail">
+                            {getWinRate(bestOpening)}% win rate ({bestOpening.games} games)
+                          </span>
+                        </Link>
+                      )}
+                      {weakestOpening && bestOpening?.fen !== weakestOpening?.fen && (
+                        <Link
+                          className="personal-insight personal-insight--weak"
+                          to={`/opening/${encodeURIComponent(weakestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                        >
+                          <span className="personal-insight__tag">Needs work</span>
+                          <span className="personal-insight__opening">{weakestOpening.name}</span>
+                          <span className="personal-insight__detail">
+                            {getWinRate(weakestOpening)}% win rate ({weakestOpening.games} games)
+                          </span>
+                        </Link>
+                      )}
+                    </div>
+                  )}
+                  <div className="personal-insights__confirmation">
+                    Analysed {dashboard.totalGames} games ({dashboard.classifiedGames} matched known
+                    openings)
+                  </div>
+                  <div className="personal-sort-bar">
+                    {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
+                      <button
+                        key={mode}
+                        type="button"
+                        className={`personal-sort-pill${sortMode === mode ? ' personal-sort-pill--active' : ''}`}
+                        onClick={() => setSortMode(mode)}
+                      >
+                        {sortLabels[mode]}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="personal-dashboard">
-                  <div className="personal-insights">
-                    {/* Mobile: Inline compact win rates */}
-                    <div className="personal-insights__rates-inline">
-                      <span className="personal-rates-inline__item">
-                        <span className="personal-rates-inline__icon" aria-hidden="true">
-                          &#9812;
-                        </span>
-                        <span className="personal-rates-inline__value">{whiteWinRate}%</span>
-                      </span>
-                      <span className="personal-rates-inline__sep" aria-hidden="true">
-                        ·
-                      </span>
-                      <span className="personal-rates-inline__item">
-                        <span className="personal-rates-inline__icon" aria-hidden="true">
-                          &#9818;
-                        </span>
-                        <span className="personal-rates-inline__value">{blackWinRate}%</span>
-                      </span>
-                    </div>
 
-                    {/* Desktop: Full win rate cards */}
-                    <div className="personal-insights__row personal-insights__row--rates">
-                      <div className="personal-insight personal-insight--white">
-                        <span className="personal-insight__icon" aria-hidden="true">
-                          &#9812;
-                        </span>
-                        <span className="personal-insight__rate">{whiteWinRate}%</span>
-                        <span className="personal-insight__label">win rate as White</span>
-                        <span className="personal-insight__games">
-                          ({dashboard.whiteGames} games)
-                        </span>
-                      </div>
-                      <div className="personal-insight personal-insight--black">
-                        <span className="personal-insight__icon" aria-hidden="true">
-                          &#9818;
-                        </span>
-                        <span className="personal-insight__rate">{blackWinRate}%</span>
-                        <span className="personal-insight__label">win rate as Black</span>
-                        <span className="personal-insight__games">
-                          ({dashboard.blackGames} games)
-                        </span>
-                      </div>
-                    </div>
-                    {(bestOpening || weakestOpening) && (
-                      <div className="personal-insights__row personal-insights__row--openings">
-                        {bestOpening && (
-                          <Link
-                            className="personal-insight personal-insight--best"
-                            to={`/opening/${encodeURIComponent(bestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                          >
-                            <span className="personal-insight__tag">Best opening</span>
-                            <span className="personal-insight__opening">{bestOpening.name}</span>
-                            <span className="personal-insight__detail">
-                              {getWinRate(bestOpening)}% win rate ({bestOpening.games} games)
-                            </span>
-                          </Link>
-                        )}
-                        {weakestOpening && bestOpening?.fen !== weakestOpening?.fen && (
-                          <Link
-                            className="personal-insight personal-insight--weak"
-                            to={`/opening/${encodeURIComponent(weakestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                          >
-                            <span className="personal-insight__tag">Needs work</span>
-                            <span className="personal-insight__opening">{weakestOpening.name}</span>
-                            <span className="personal-insight__detail">
-                              {getWinRate(weakestOpening)}% win rate ({weakestOpening.games} games)
-                            </span>
-                          </Link>
-                        )}
-                      </div>
-                    )}
-                    <div className="personal-insights__confirmation">
-                      Analysed {dashboard.totalGames} games ({dashboard.classifiedGames} matched
-                      known openings)
-                    </div>
-                  </div>
-
-                  {/* Mobile: Tab bar for White/Black */}
-                  <div className="personal-tabs" role="tablist" aria-label="View openings by side">
-                    <button
-                      type="button"
-                      role="tab"
-                      className={`personal-tabs__btn ${activeTab === 'white' ? 'personal-tabs__btn--active' : ''}`}
-                      onClick={() => setActiveTab('white')}
-                      aria-selected={activeTab === 'white'}
-                      aria-controls="personal-tabpanel-white"
-                    >
-                      <span aria-hidden="true">&#9812;</span> As White ({dashboard.whiteGames})
-                    </button>
-                    <button
-                      type="button"
-                      role="tab"
-                      className={`personal-tabs__btn ${activeTab === 'black' ? 'personal-tabs__btn--active' : ''}`}
-                      onClick={() => setActiveTab('black')}
-                      aria-selected={activeTab === 'black'}
-                      aria-controls="personal-tabpanel-black"
-                    >
-                      <span aria-hidden="true">&#9818;</span> As Black ({dashboard.blackGames})
-                    </button>
-                  </div>
-
-                  {/* Mobile: Tab panel content */}
-                  <div
-                    className="personal-tabpanel"
-                    role="tabpanel"
-                    id={`personal-tabpanel-${activeTab}`}
+                {/* Mobile: Tab bar for White/Black */}
+                <div className="personal-tabs" role="tablist" aria-label="View openings by side">
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`personal-tabs__btn ${activeTab === 'white' ? 'personal-tabs__btn--active' : ''}`}
+                    onClick={() => setActiveTab('white')}
+                    aria-selected={activeTab === 'white'}
+                    aria-controls="personal-tabpanel-white"
                   >
-                    <div className="personal-tabpanel__meta">
-                      W {activeData.win} · D {activeData.draw} · L {activeData.loss}
+                    <span aria-hidden="true">&#9812;</span> As White ({dashboard.whiteGames})
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`personal-tabs__btn ${activeTab === 'black' ? 'personal-tabs__btn--active' : ''}`}
+                    onClick={() => setActiveTab('black')}
+                    aria-selected={activeTab === 'black'}
+                    aria-controls="personal-tabpanel-black"
+                  >
+                    <span aria-hidden="true">&#9818;</span> As Black ({dashboard.blackGames})
+                  </button>
+                </div>
+
+                {/* Mobile: Tab panel content */}
+                <div
+                  className="personal-tabpanel"
+                  role="tabpanel"
+                  id={`personal-tabpanel-${activeTab}`}
+                >
+                  <div className="personal-tabpanel__meta">
+                    W {activeData.win} · D {activeData.draw} · L {activeData.loss}
+                  </div>
+                  {activeData.openings.length === 0 ? (
+                    <div className="personal-empty">No classified openings.</div>
+                  ) : (
+                    <div className="personal-list">
+                      {activeData.openings.map((o) => (
+                        <Link
+                          key={o.fen}
+                          className="personal-row"
+                          to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                          style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
+                        >
+                          <div className="personal-row__main">
+                            <span className="eco-pill">{o.eco}</span>
+                            <span className="personal-row__name" title={o.name}>
+                              {o.name}
+                            </span>
+                          </div>
+                          <div className="personal-row__stats">
+                            <span className="personal-pill personal-pill--games">
+                              {o.games} games
+                            </span>
+                            <span className="personal-pill personal-pill--win">W {o.win}</span>
+                            <span className="personal-pill personal-pill--draw">D {o.draw}</span>
+                            <span className="personal-pill personal-pill--loss">L {o.loss}</span>
+                          </div>
+                          {/* Mobile: Compact stats */}
+                          <div className="personal-row__stats-compact">
+                            <span className="personal-pill personal-pill--compact">
+                              {o.games}g: {o.win}-{o.draw}-{o.loss}
+                            </span>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
-                    {activeData.openings.length === 0 ? (
+                  )}
+                </div>
+
+                {/* Desktop: Side-by-side columns */}
+                <div className="personal-sides">
+                  <div className="personal-side personal-side--white">
+                    <div className="personal-side__header">
+                      <h3 className="personal-side__title">
+                        <span className="personal-side__icon" aria-hidden="true">
+                          &#9812;
+                        </span>
+                        As White
+                      </h3>
+                      <div className="personal-side__meta" aria-label="White summary">
+                        <span className="personal-pill personal-pill--games">
+                          {dashboard.whiteGames} games
+                        </span>
+                        <span className="personal-pill personal-pill--win">
+                          W {dashboard.whiteWin}
+                        </span>
+                        <span className="personal-pill personal-pill--draw">
+                          D {dashboard.whiteDraw}
+                        </span>
+                        <span className="personal-pill personal-pill--loss">
+                          L {dashboard.whiteLoss}
+                        </span>
+                      </div>
+                    </div>
+                    {sortedWhite.length === 0 ? (
                       <div className="personal-empty">No classified openings.</div>
                     ) : (
                       <div className="personal-list">
-                        {activeData.openings.map((o) => (
+                        {sortedWhite.map((o) => (
                           <Link
                             key={o.fen}
                             className="personal-row"
@@ -774,138 +834,67 @@ export const PersonalOpeningStats: React.FC<{
                               <span className="personal-pill personal-pill--draw">D {o.draw}</span>
                               <span className="personal-pill personal-pill--loss">L {o.loss}</span>
                             </div>
-                            {/* Mobile: Compact stats */}
-                            <div className="personal-row__stats-compact">
-                              <span className="personal-pill personal-pill--compact">
-                                {o.games}g: {o.win}-{o.draw}-{o.loss}
-                              </span>
-                            </div>
                           </Link>
                         ))}
                       </div>
                     )}
                   </div>
 
-                  {/* Desktop: Side-by-side columns */}
-                  <div className="personal-sides">
-                    <div className="personal-side personal-side--white">
-                      <div className="personal-side__header">
-                        <h3 className="personal-side__title">
-                          <span className="personal-side__icon" aria-hidden="true">
-                            &#9812;
-                          </span>
-                          As White
-                        </h3>
-                        <div className="personal-side__meta" aria-label="White summary">
-                          <span className="personal-pill personal-pill--games">
-                            {dashboard.whiteGames} games
-                          </span>
-                          <span className="personal-pill personal-pill--win">
-                            W {dashboard.whiteWin}
-                          </span>
-                          <span className="personal-pill personal-pill--draw">
-                            D {dashboard.whiteDraw}
-                          </span>
-                          <span className="personal-pill personal-pill--loss">
-                            L {dashboard.whiteLoss}
-                          </span>
-                        </div>
+                  <div className="personal-side personal-side--black">
+                    <div className="personal-side__header">
+                      <h3 className="personal-side__title">
+                        <span className="personal-side__icon" aria-hidden="true">
+                          &#9818;
+                        </span>
+                        As Black
+                      </h3>
+                      <div className="personal-side__meta" aria-label="Black summary">
+                        <span className="personal-pill personal-pill--games">
+                          {dashboard.blackGames} games
+                        </span>
+                        <span className="personal-pill personal-pill--win">
+                          W {dashboard.blackWin}
+                        </span>
+                        <span className="personal-pill personal-pill--draw">
+                          D {dashboard.blackDraw}
+                        </span>
+                        <span className="personal-pill personal-pill--loss">
+                          L {dashboard.blackLoss}
+                        </span>
                       </div>
-                      {sortedWhite.length === 0 ? (
-                        <div className="personal-empty">No classified openings.</div>
-                      ) : (
-                        <div className="personal-list">
-                          {sortedWhite.map((o) => (
-                            <Link
-                              key={o.fen}
-                              className="personal-row"
-                              to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                              style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
-                            >
-                              <div className="personal-row__main">
-                                <span className="eco-pill">{o.eco}</span>
-                                <span className="personal-row__name" title={o.name}>
-                                  {o.name}
-                                </span>
-                              </div>
-                              <div className="personal-row__stats">
-                                <span className="personal-pill personal-pill--games">
-                                  {o.games} games
-                                </span>
-                                <span className="personal-pill personal-pill--win">W {o.win}</span>
-                                <span className="personal-pill personal-pill--draw">
-                                  D {o.draw}
-                                </span>
-                                <span className="personal-pill personal-pill--loss">
-                                  L {o.loss}
-                                </span>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
                     </div>
-
-                    <div className="personal-side personal-side--black">
-                      <div className="personal-side__header">
-                        <h3 className="personal-side__title">
-                          <span className="personal-side__icon" aria-hidden="true">
-                            &#9818;
-                          </span>
-                          As Black
-                        </h3>
-                        <div className="personal-side__meta" aria-label="Black summary">
-                          <span className="personal-pill personal-pill--games">
-                            {dashboard.blackGames} games
-                          </span>
-                          <span className="personal-pill personal-pill--win">
-                            W {dashboard.blackWin}
-                          </span>
-                          <span className="personal-pill personal-pill--draw">
-                            D {dashboard.blackDraw}
-                          </span>
-                          <span className="personal-pill personal-pill--loss">
-                            L {dashboard.blackLoss}
-                          </span>
-                        </div>
+                    {sortedBlack.length === 0 ? (
+                      <div className="personal-empty">No classified openings.</div>
+                    ) : (
+                      <div className="personal-list">
+                        {sortedBlack.map((o) => (
+                          <Link
+                            key={o.fen}
+                            className="personal-row"
+                            to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+                            style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
+                          >
+                            <div className="personal-row__main">
+                              <span className="eco-pill">{o.eco}</span>
+                              <span className="personal-row__name" title={o.name}>
+                                {o.name}
+                              </span>
+                            </div>
+                            <div className="personal-row__stats">
+                              <span className="personal-pill personal-pill--games">
+                                {o.games} games
+                              </span>
+                              <span className="personal-pill personal-pill--win">W {o.win}</span>
+                              <span className="personal-pill personal-pill--draw">D {o.draw}</span>
+                              <span className="personal-pill personal-pill--loss">L {o.loss}</span>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
-                      {sortedBlack.length === 0 ? (
-                        <div className="personal-empty">No classified openings.</div>
-                      ) : (
-                        <div className="personal-list">
-                          {sortedBlack.map((o) => (
-                            <Link
-                              key={o.fen}
-                              className="personal-row"
-                              to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                              style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
-                            >
-                              <div className="personal-row__main">
-                                <span className="eco-pill">{o.eco}</span>
-                                <span className="personal-row__name" title={o.name}>
-                                  {o.name}
-                                </span>
-                              </div>
-                              <div className="personal-row__stats">
-                                <span className="personal-pill personal-pill--games">
-                                  {o.games} games
-                                </span>
-                                <span className="personal-pill personal-pill--win">W {o.win}</span>
-                                <span className="personal-pill personal-pill--draw">
-                                  D {o.draw}
-                                </span>
-                                <span className="personal-pill personal-pill--loss">
-                                  L {o.loss}
-                                </span>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                    )}
                   </div>
                 </div>
-              </>
+              </div>
             );
           })()}
       </div>

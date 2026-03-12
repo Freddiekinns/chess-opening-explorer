@@ -270,7 +270,7 @@ export const PersonalOpeningStats: React.FC<{
     setError(null);
     setDashboard(null);
     setStep('fetching');
-    setStepText(`Fetching your games from ${platform === 'lichess' ? 'Lichess' : 'Chess.com'}...`);
+    setStepText(`Finding your games from ${platform === 'lichess' ? 'Lichess' : 'Chess.com'}...`);
     setProgress(5);
     setProcessed(0);
     setTotal(0);
@@ -588,7 +588,7 @@ export const PersonalOpeningStats: React.FC<{
             </div>
             <h3 className="personal-empty-state__title">Ready to analyse your openings?</h3>
             <p className="personal-empty-state__text">
-              Enter your username to see a clear breakdown of how you perform in each opening.
+              Enter your username to explore a detailed breakdown of your performance by opening.
             </p>
           </div>
         )}

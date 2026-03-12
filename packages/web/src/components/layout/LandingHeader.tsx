@@ -13,7 +13,7 @@ export const LandingHeader: React.FC = () => {
             Discover
           </Link>
           <Link to="/analyse" className={`landing-header__link ${isAnalyse ? 'is-active' : ''}`}>
-            Analyse Games
+            Analyse My Games
           </Link>
         </nav>
       </div>

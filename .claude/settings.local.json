@@ -48,7 +48,11 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
       "Bash(npm run:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(find /c/Users/fred_/chess-opening-explorer/packages/api/src -type f -name \"*.ts\" 2>/dev/null | head -30)",
+      "Bash(find /c/Users/fred_/chess-opening-explorer/api -type f -name \"*.ts\" 2>/dev/null | head -30)",
+      "Bash(git check-ignore -q .worktrees 2>/dev/null && echo \"ignored\" || echo \"not ignored\")",
+      "Bash(git worktree add .worktrees/sort-controls -b feature/game-sort-controls)"
     ]
   },
   "hooks": {

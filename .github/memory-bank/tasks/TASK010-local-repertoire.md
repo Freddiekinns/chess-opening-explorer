@@ -8,9 +8,10 @@ As a user, I want to save chess openings to a personal repertoire without creati
 - **View Repertoire**: As a user, I can see a list of my saved openings on the home page or a dedicated "My Repertoire" section.
 - **Remove Opening**: As a user, I can "unstar" an opening to remove it from my repertoire.
 - **Sync Status**: As a user, I can see if an opening is already saved when browsing many openings (e.g., a star icon on the search cards).
+- **Color Grouping (Phase 2)**: As a user, I can tag saved openings as 'For White' or 'For Black' to meaningfully organize my repertoire.
 
 ## Technical Requirements
-- **Storage Strategy**: Use `localStorage` to store an array of ECO codes or opening IDs.
+- **Storage Strategy**: Use `localStorage` to store your repertoire data. *Note: Consider storing lightweight objects (e.g. `{ id, name, eco }`) instead of just IDs during implementation planning to prevent expensive data lookups on the landing page.*
 - **Persistence**: Repertoire should persist across browser sessions on the same device.
 - **Component Changes**:
   - `OpeningDetail`: Add a toggle button for saving/unsaving.
@@ -23,6 +24,10 @@ As a user, I want to save chess openings to a personal repertoire without creati
 - **Iconography**: Use a Star (filled/outline) or Bookmark icon.
 - **Feedback**: Provide a brief toast or visual feedback when an opening is saved.
 - **Empty State**: Show a helpful message in the "My Repertoire" section when it's empty, encouraging users to browse and save openings.
+- **Scalability (Many vs. Few)**: Have a clear view of how to handle scaling. For a 'few' scenario (e.g. < 5-10), a simple list works. For 'many' items, consider a horizontal scrolling section on the landing page or a dedicated 'View All' page to avoid infinite scrolling.
+
+## Future Considerations
+- **Export/Import Repertoire**: Since there is no backend or user account, consider allowing users to export their repertoire as a copyable string and import it so they can move their configurations across browsers or devices.
 
 ## Success Criteria
 - [ ] Users can save an opening from the detail page.

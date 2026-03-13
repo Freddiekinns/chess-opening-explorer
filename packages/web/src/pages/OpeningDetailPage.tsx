@@ -19,6 +19,8 @@ import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
 import { LineTypePill } from '../components/shared/LineTypePill';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { useAudio } from '../hooks/useAudio';
+import { useRepertoire } from '../hooks/useRepertoire';
+import { StarButton } from '../components/shared/StarButton';
 import type { RelatedOpeningsResponse } from '../useRelatedOpenings';
 
 // Use ChessOpening type from shared
@@ -127,6 +129,8 @@ const OpeningDetailPage: React.FC = () => {
   const [studies, setStudies] = useState<Study[]>([]);
   const [searchLinks, setSearchLinks] = useState<SearchLinks | null>(null);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+
+  const { isSaved, toggle: toggleRepertoire } = useRepertoire();
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -894,7 +898,21 @@ const OpeningDetailPage: React.FC = () => {
 
       {/* Page Title Area */}
       <div className="page-title-area centered">
-        <h1 className="opening-name">{opening.name}</h1>
+        <div className={styles.titleWithStar}>
+          <h1 className="opening-name">{opening.name}</h1>
+          <StarButton
+            filled={isSaved(opening.fen)}
+            onClick={() =>
+              toggleRepertoire({
+                fen: opening.fen,
+                name: opening.name,
+                eco: opening.eco,
+                moves: opening.moves,
+              })
+            }
+            size="md"
+          />
+        </div>
         <div className="complexity-and-tags">
           {/* ECO code pill */}
           {opening.eco && <span className="eco-pill">{opening.eco}</span>}

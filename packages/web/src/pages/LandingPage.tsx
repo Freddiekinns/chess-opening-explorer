@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { LandingHeader } from '../components/layout/LandingHeader';
 import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
+import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { PGNInputModal } from '../components/shared/PGNInputModal';
 
@@ -185,6 +186,8 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <RepertoireSection onOpeningSelect={handleOpeningSelect} />
 
       {/* Popular Openings Grid */}
       <div className="popular-openings-container">

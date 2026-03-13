@@ -2,23 +2,43 @@
 
 **Date:** 2026-03-13
 
-## Current Focus: Local Repertoire and Starred Openings (TASK010)
+## Current Focus: Local Repertoire and Starred Openings (TASK010) — Implemented
 
 ## Session Summary (2026-03-13)
 
-### PRD: Local Repertoire via Browser Storage (TASK010)
-**Feature:** Users can "star" openings from the detail page and access them in
-a "My Repertoire" section on the landing page, using LocalStorage for account-less
+### Feat: Local Repertoire via Browser Storage (TASK010)
+
+**Feature:** Users can "star" openings from the detail page and access them in a
+"My Repertoire" section on the landing page, using localStorage for account-less
 persistence.
 
-**Drafted PRD:** Created [TASK010-local-repertoire.md](.github/memory-bank/tasks/TASK010-local-repertoire.md) 
-with user stories, technical requirements (LocalStorage, `useRepertoire` hook), 
-and success criteria.
+**Implementation:**
 
-**Next Steps:**
-1. Implement `useRepertoire` hook in `packages/web/src/hooks/`.
-2. Add Star toggle to `OpeningDetailPage`.
-3. Add "My Repertoire" section to `LandingPage`.
+1. **`useRepertoire` hook** (`packages/web/src/hooks/useRepertoire.ts`):
+   localStorage-backed repertoire with `toggle`, `remove`, `isSaved` (O(1) via
+   Set), `count`. Cross-tab sync via `storage` event. Stores lightweight
+   `RepertoireEntry` objects (~200 bytes each).
+
+2. **`StarButton` component**
+   (`packages/web/src/components/shared/StarButton.tsx`): Presentational star
+   with inline SVG, filled/outline states, CSS scale-pulse animation on toggle,
+   `stopPropagation` for use inside clickable cards.
+
+3. **Detail page star**: Inline with h1 title using `align-items: baseline` for
+   optical alignment with large display text.
+
+4. **"My Repertoire" section**
+   (`packages/web/src/components/landing/RepertoireSection.tsx`): Compact custom
+   cards (not full OpeningCard) showing ECO + complexity badge, 2-line clamped
+   name, monospace moves. Responsive sizing
+   (`flex: 1 0 200px; max-width: 300px`) fills available width, horizontal
+   scroll when needed. Empty state with star icon and hint text.
+
+5. **OpeningCard star support**: Optional `showStar`/`isStarred`/`onStarClick`
+   props for future use in search results or other card contexts.
+
+**Branch:** `feature/local-repertoire` **Validation:** 145/145 frontend tests
+(10 new), TypeScript clean, Prettier formatted.
 
 ---
 
@@ -26,19 +46,19 @@ and success criteria.
 
 ### Feat: Sort Controls for Personal Opening Stats
 
-**Feature:** Users can sort their opening breakdown by "Most played",
-"Best first", or "Worst first" in the Analyse Games page.
+**Feature:** Users can sort their opening breakdown by "Most played", "Best
+first", or "Worst first" in the Analyse Games page.
 
 **Implementation:**
 
 1. **Sort logic** (`sortAgg`): Extended with a `SortMode` type
    (`'frequency' | 'best' | 'worst'`). "Best first" sorts by win rate
-   descending, "Worst first" by win rate ascending, "Most played" (default)
-   by game count.
+   descending, "Worst first" by win rate ascending, "Most played" (default) by
+   game count.
 
 2. **Segmented pill control:** Three-button pill group rendered as a standalone
-   element between the insights summary card and the opening lists. Wrapped in
-   a `.personal-sort-bar__pills` container with subtle background/border for
+   element between the insights summary card and the opening lists. Wrapped in a
+   `.personal-sort-bar__pills` container with subtle background/border for
    visual grouping. Active pill uses green accent (`rgba(16,185,129)`).
 
 3. **Placement fix:** Sort controls were originally buried inside the insights
@@ -52,10 +72,10 @@ and success criteria.
 
 **Files Changed:**
 
-| File                                                    | Change                                          |
-| ------------------------------------------------------- | ----------------------------------------------- |
+| File                                                            | Change                                            |
+| --------------------------------------------------------------- | ------------------------------------------------- |
 | `packages/web/src/components/personal/PersonalOpeningStats.tsx` | Sort state, `SortMode` type, pill UI, copy tweaks |
-| `packages/web/src/styles/simplified.css`                | Sort bar + pill styles                          |
+| `packages/web/src/styles/simplified.css`                        | Sort bar + pill styles                            |
 
 **Validation:** TypeScript build passes (`tsc --noEmit` clean).
 

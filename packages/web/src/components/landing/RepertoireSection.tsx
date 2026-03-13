@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRepertoire } from '../../hooks/useRepertoire';
-import { OpeningCard } from '../shared/OpeningCard';
+import { StarButton } from '../shared/StarButton';
 import styles from './RepertoireSection.module.css';
 
 interface RepertoireSectionProps {
@@ -40,21 +40,29 @@ export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningS
       ) : (
         <div className={styles.cardScroller}>
           {repertoire.map((entry) => (
-            <div key={entry.fen} className={styles.cardItem}>
-              <OpeningCard
-                opening={{
-                  fen: entry.fen,
-                  name: entry.name,
-                  eco: entry.eco,
-                  moves: entry.moves,
-                  src: 'repertoire',
-                }}
-                onClick={() => onOpeningSelect({ fen: entry.fen })}
-                showStar
-                isStarred
-                onStarClick={() => remove(entry.fen)}
-              />
-            </div>
+            <button
+              key={entry.fen}
+              className={styles.repCard}
+              onClick={() => onOpeningSelect({ fen: entry.fen })}
+              type="button"
+            >
+              <div className={styles.repCardHeader}>
+                <div className={styles.repCardBadges}>
+                  <span className={styles.repCardEco}>{entry.eco}</span>
+                  {entry.complexity && (
+                    <span
+                      className={`complexity-badge complexity-${entry.complexity.toLowerCase()}`}
+                    >
+                      {entry.complexity.charAt(0).toUpperCase() +
+                        entry.complexity.slice(1).toLowerCase()}
+                    </span>
+                  )}
+                </div>
+                <StarButton filled onClick={() => remove(entry.fen)} size="sm" />
+              </div>
+              <h3 className={styles.repCardName}>{entry.name}</h3>
+              <span className={styles.repCardMoves}>{entry.moves}</span>
+            </button>
           ))}
         </div>
       )}

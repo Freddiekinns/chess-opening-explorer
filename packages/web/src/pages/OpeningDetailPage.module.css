@@ -1,8 +1,14 @@
 .titleWithStar {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+/* Remove the h1's own bottom margin when inside the flex wrapper */
+.titleWithStar :global(.opening-name) {
+  margin-bottom: 0;
 }
 
 .openingMovesCompact.openingMovesCompact {

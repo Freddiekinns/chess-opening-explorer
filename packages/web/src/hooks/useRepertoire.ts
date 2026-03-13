@@ -8,13 +8,20 @@ export interface RepertoireEntry {
   eco: string;
   moves: string;
   savedAt: number;
+  complexity?: string;
   color?: 'white' | 'black';
 }
 
 export interface UseRepertoireReturn {
   repertoire: RepertoireEntry[];
   isSaved: (fen: string) => boolean;
-  toggle: (opening: { fen: string; name: string; eco: string; moves: string }) => void;
+  toggle: (opening: {
+    fen: string;
+    name: string;
+    eco: string;
+    moves: string;
+    complexity?: string;
+  }) => void;
   remove: (fen: string) => void;
   count: number;
 }
@@ -52,7 +59,7 @@ export function useRepertoire(): UseRepertoireReturn {
   const isSaved = useCallback((fen: string) => savedFens.has(fen), [savedFens]);
 
   const toggle = useCallback(
-    (opening: { fen: string; name: string; eco: string; moves: string }) => {
+    (opening: { fen: string; name: string; eco: string; moves: string; complexity?: string }) => {
       setRepertoire((prev) => {
         let next: RepertoireEntry[];
         if (prev.some((e) => e.fen === opening.fen)) {

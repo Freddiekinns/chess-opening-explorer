@@ -908,6 +908,7 @@ const OpeningDetailPage: React.FC = () => {
                 name: opening.name,
                 eco: opening.eco,
                 moves: opening.moves,
+                complexity: opening.complexity,
               })
             }
             size="md"

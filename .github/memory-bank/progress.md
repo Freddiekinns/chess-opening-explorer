@@ -95,6 +95,13 @@
   - **Test coverage:** 21 Chess.com service tests, 9 route tests, 132 frontend
     tests
 
+- **Local Repertoire (TASK010):** Users can star openings from the detail page
+  and access them in a "My Repertoire" section on the landing page.
+  localStorage-backed with cross-tab sync, no backend required. Compact card
+  design with ECO badge, complexity tag, clamped name, and monospace moves.
+  Responsive horizontal scroller. Star toggle with CSS pulse animation. 10 hook
+  tests. Branch: `feature/local-repertoire`.
+
 ## What's Left to Build
 
 - **Coverage Improvements:** Increase backend coverage to meet 90% thresholds

@@ -1,8 +1,26 @@
 # Active Context
 
-**Date:** 2026-03-12
+**Date:** 2026-03-13
 
-## Current Focus: Sort Controls for Personal Opening Explorer
+## Current Focus: Local Repertoire and Starred Openings (TASK010)
+
+## Session Summary (2026-03-13)
+
+### PRD: Local Repertoire via Browser Storage (TASK010)
+**Feature:** Users can "star" openings from the detail page and access them in
+a "My Repertoire" section on the landing page, using LocalStorage for account-less
+persistence.
+
+**Drafted PRD:** Created [TASK010-local-repertoire.md](.github/memory-bank/tasks/TASK010-local-repertoire.md) 
+with user stories, technical requirements (LocalStorage, `useRepertoire` hook), 
+and success criteria.
+
+**Next Steps:**
+1. Implement `useRepertoire` hook in `packages/web/src/hooks/`.
+2. Add Star toggle to `OpeningDetailPage`.
+3. Add "My Repertoire" section to `LandingPage`.
+
+---
 
 ## Session Summary (2026-03-12)
 

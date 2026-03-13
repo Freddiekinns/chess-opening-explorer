@@ -10,6 +10,7 @@ _No tasks in progress._
 
 ## Pending
 
+- [TASK010] Local Repertoire & Saved Openings - Added 2026-03-13
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
 
 ## Completed

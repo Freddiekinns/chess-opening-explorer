@@ -74,7 +74,7 @@ their favorite lines and build a practice list.
 | File                                                               | Purpose                                                                  |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | `packages/web/src/hooks/useRepertoire.ts`                          | Hook: localStorage read/write, cross-tab sync, toggle/remove/isSaved API |
-| `packages/web/src/hooks/__tests__/useRepertoire.test.ts`           | 10 tests covering CRUD, sort order, corrupted data, cross-tab sync       |
+| `packages/web/src/hooks/__tests__/useRepertoire.test.ts`           | 12 tests covering CRUD, sync behavior, corrupted data, and write safety  |
 | `packages/web/src/components/shared/StarButton.tsx`                | Presentational star toggle with CSS pulse animation                      |
 | `packages/web/src/components/shared/StarButton.module.css`         | Star styles: filled/outline states, hover, animation keyframes           |
 | `packages/web/src/components/landing/RepertoireSection.tsx`        | "My Repertoire" section: compact cards, empty state, horizontal scroller |
@@ -91,8 +91,9 @@ their favorite lines and build a practice list.
 
 ### Design Decisions
 
-- **Hook-only (no Context)**: Two star locations never co-mounted; hook reads
-  localStorage on mount + listens for `storage` event for cross-tab sync.
+- **Hook-only (no Context)**: `useRepertoire` now uses a shared external-store
+  pattern backed by `useSyncExternalStore`, so multiple consumers stay synced in
+  the same tab while still responding to cross-tab `storage` events.
 - **Compact repertoire cards**: Custom lightweight cards (ECO + complexity
   badge, 2-line clamped name, monospace moves) instead of full OpeningCard —
   better information density for quick-access section.
@@ -103,9 +104,22 @@ their favorite lines and build a practice list.
 
 ### Validation
 
-- 145/145 frontend tests passing (10 new hook tests)
+- 147/147 frontend tests passing (12 hook tests)
 - TypeScript compiles cleanly (no source errors)
 - Prettier formatted
+
+### Bug Review Follow-up (2026-03-13)
+
+- **Same-Tab State Synchronization**: Fixed. `useRepertoire` now uses a shared
+  external-store pattern so multiple hook instances in the same tab update
+  immediately after a save/remove, without waiting for a refresh or a cross-tab
+  `storage` event.
+- **Unhandled `localStorage` Exceptions**: Fixed. Storage writes are wrapped
+  safely, and failed writes leave the hook state unchanged instead of throwing
+  through the React tree.
+- **Regression coverage**: Added targeted tests for same-tab synchronization and
+  storage write failures. `src/hooks/__tests__/useRepertoire.test.ts` now has 12
+  passing tests.
 
 ## Timeline
 

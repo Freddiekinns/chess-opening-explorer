@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { useRepertoire } from '../useRepertoire';
 
 const STORAGE_KEY = 'chess-repertoire';
@@ -19,6 +19,10 @@ const french = {
 
 beforeEach(() => {
   localStorage.clear();
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
 });
 
 describe('useRepertoire', () => {
@@ -110,6 +114,36 @@ describe('useRepertoire', () => {
 
     expect(result.current.count).toBe(1);
     expect(result.current.isSaved(sicilian.fen)).toBe(true);
+  });
+
+  it('syncs across multiple hook instances in the same tab', () => {
+    const first = renderHook(() => useRepertoire());
+    const second = renderHook(() => useRepertoire());
+
+    act(() => {
+      first.result.current.toggle(sicilian);
+    });
+
+    expect(first.result.current.count).toBe(1);
+    expect(second.result.current.count).toBe(1);
+    expect(second.result.current.isSaved(sicilian.fen)).toBe(true);
+  });
+
+  it('does not crash or mutate state when localStorage writes fail', () => {
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new DOMException('Quota exceeded', 'QuotaExceededError');
+    });
+
+    const { result } = renderHook(() => useRepertoire());
+
+    expect(() => {
+      act(() => {
+        result.current.toggle(sicilian);
+      });
+    }).not.toThrow();
+
+    expect(result.current.count).toBe(0);
+    expect(result.current.isSaved(sicilian.fen)).toBe(false);
   });
 
   it('ignores storage events for other keys', () => {

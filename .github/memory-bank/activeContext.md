@@ -16,8 +16,9 @@ persistence.
 
 1. **`useRepertoire` hook** (`packages/web/src/hooks/useRepertoire.ts`):
    localStorage-backed repertoire with `toggle`, `remove`, `isSaved` (O(1) via
-   Set), `count`. Cross-tab sync via `storage` event. Stores lightweight
-   `RepertoireEntry` objects (~200 bytes each).
+   Set), `count`. Shared external-store sync for same-tab consumers plus
+   cross-tab sync via `storage` event. Stores lightweight `RepertoireEntry`
+   objects (~200 bytes each).
 
 2. **`StarButton` component**
    (`packages/web/src/components/shared/StarButton.tsx`): Presentational star
@@ -37,8 +38,21 @@ persistence.
 5. **OpeningCard star support**: Optional `showStar`/`isStarred`/`onStarClick`
    props for future use in search results or other card contexts.
 
-**Branch:** `feature/local-repertoire` **Validation:** 145/145 frontend tests
-(10 new), TypeScript clean, Prettier formatted.
+### Fix: Repertoire Hook Sync + Storage Safety Follow-up
+
+**Problem:** The initial `useRepertoire` implementation only synchronized via
+the browser `storage` event, so multiple hook consumers in the same tab could
+drift out of sync. It also let `localStorage.setItem()` exceptions bubble out of
+the update path.
+
+**Fix:** Refactored the hook to a shared external-store pattern backed by
+`useSyncExternalStore`, with module-level subscribers for same-tab updates and a
+safe write path that preserves prior state when persistence fails.
+
+**Validation:** Targeted hook regression suite passes (`12/12`).
+
+**Branch:** `feature/local-repertoire` **Validation:** 147/147 frontend tests
+(12 hook tests), TypeScript clean, Prettier formatted.
 
 ---
 

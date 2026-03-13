@@ -1,4 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { useRepertoire } from '../useRepertoire';
 
 const STORAGE_KEY = 'chess-repertoire';

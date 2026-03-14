@@ -10,11 +10,11 @@ _No tasks in progress._
 
 ## Pending
 
-- [TASK010] Local Repertoire & Saved Openings - Added 2026-03-13
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
 
 ## Completed
 
+- [TASK010] Local Repertoire & Saved Openings - Completed 2026-03-13
 - [TASK009] SEO: Get Opening Pages Indexed by Google - Completed 2026-02-28
 - [TASK007] Mobile Overflow on Opening Detail - Resolved 2026-02-23
 - [TASK001] Implement Memory Bank Structure - Completed on 2025-09-06

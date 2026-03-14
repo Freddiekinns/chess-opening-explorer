@@ -1,4 +1,5 @@
 import React from 'react';
+import { StarButton } from './StarButton';
 
 interface Opening {
   fen: string;
@@ -33,6 +34,9 @@ interface OpeningCardProps {
   showEco?: boolean;
   onClick?: (opening: Opening) => void;
   className?: string;
+  showStar?: boolean;
+  isStarred?: boolean;
+  onStarClick?: (opening: Opening) => void;
 }
 
 export const OpeningCard: React.FC<OpeningCardProps> = ({
@@ -41,6 +45,9 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   showEco = true,
   onClick,
   className = '',
+  showStar = false,
+  isStarred = false,
+  onStarClick,
 }) => {
   const handleClick = () => {
     if (onClick) {
@@ -131,6 +138,9 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           <span className="text-sm text-secondary">
             Pop: {opening.analysis?.popularity || opening.analysis_json?.popularity}
           </span>
+        )}
+        {showStar && (
+          <StarButton filled={isStarred} onClick={() => onStarClick?.(opening)} size="sm" />
         )}
       </div>
 

@@ -83,8 +83,8 @@ describe('LineTypePill Integration Tests', () => {
     mockFetch.mockImplementation((url: string) => {
       console.log('Mocked fetch call to:', url);
 
-      // Mock the all openings API for SearchBar
-      if (url.includes('/api/openings/all')) {
+      // Mock the search index API for SearchBar
+      if (url.includes('/api/openings/search-index')) {
         return Promise.resolve({
           ok: true,
           json: async () => ({

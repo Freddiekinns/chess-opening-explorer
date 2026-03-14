@@ -3,9 +3,9 @@
  * PRD-F14 Phase 2: Sticky header with navigation, search, and responsive design
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Search, Loader2 } from 'lucide-react';
 
 interface Opening {
   fen: string;
@@ -22,50 +22,53 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({ className = '' }) =>
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Opening[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [openingsData, setOpeningsData] = useState<Opening[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navigate = useNavigate();
 
-  // Load openings data for autocomplete
   useEffect(() => {
-    const loadOpeningsData = async () => {
-      try {
-        const response = await fetch('/api/openings/all');
-        if (response.ok) {
-          const result = await response.json();
-          if (result.success && result.data) {
-            setOpeningsData(result.data);
-          }
-        }
-      } catch (error) {
-        console.error('Error loading openings data:', error);
+    return () => {
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
       }
     };
-    loadOpeningsData();
   }, []);
-
-  // Search function for autocomplete
-  const searchOpenings = (query: string): Opening[] => {
-    if (!query.trim() || openingsData.length === 0) return [];
-
-    const lowerQuery = query.toLowerCase();
-
-    return openingsData
-      .filter(
-        (opening) =>
-          opening.name.toLowerCase().includes(lowerQuery) ||
-          opening.eco.toLowerCase().includes(lowerQuery) ||
-          opening.moves.toLowerCase().includes(lowerQuery)
-      )
-      .slice(0, 10);
-  };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearchQuery(value);
 
-    const results = searchOpenings(value);
-    setSearchResults(results);
-    setShowDropdown(value.length > 0 && results.length > 0);
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+    }
+
+    if (value.trim().length < 2) {
+      setSearchResults([]);
+      setShowDropdown(false);
+      setIsSearching(false);
+      return;
+    }
+
+    setIsSearching(true);
+
+    searchTimeoutRef.current = setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=10`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success && data.data) {
+            setSearchResults(data.data);
+            setShowDropdown(data.data.length > 0);
+          }
+        }
+      } catch {
+        // Silent fail — user can keep typing
+      } finally {
+        setIsSearching(false);
+      }
+    }, 300);
   };
 
   const handleResultClick = (opening: Opening) => {
@@ -120,7 +123,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({ className = '' }) =>
               value={searchQuery}
               onChange={handleSearchChange}
               onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-              onFocus={() => searchQuery && setShowDropdown(searchResults.length > 0)}
+              onFocus={() => searchQuery.length >= 2 && setShowDropdown(searchResults.length > 0)}
               style={{
                 width: '100%',
                 padding: 'var(--space-sm) var(--space-md)',
@@ -132,17 +135,32 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({ className = '' }) =>
                 outline: 'none',
               }}
             />
-            <Search
-              size={20}
-              style={{
-                position: 'absolute',
-                right: 'var(--space-sm)',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: 'var(--text-secondary)',
-                pointerEvents: 'none',
-              }}
-            />
+            {isSearching ? (
+              <Loader2
+                size={20}
+                style={{
+                  position: 'absolute',
+                  right: 'var(--space-sm)',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: 'var(--text-secondary)',
+                  pointerEvents: 'none',
+                  animation: 'spin 1s linear infinite',
+                }}
+              />
+            ) : (
+              <Search
+                size={20}
+                style={{
+                  position: 'absolute',
+                  right: 'var(--space-sm)',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: 'var(--text-secondary)',
+                  pointerEvents: 'none',
+                }}
+              />
+            )}
           </div>
         </form>
 

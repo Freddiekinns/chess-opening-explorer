@@ -50,8 +50,8 @@ describe('LineTypePill Integration Tests', () => {
 
     // Mock all API calls that the OpeningDetailPage makes
     (global.fetch as any).mockImplementation((url: string) => {
-      // Mock the all openings API for SearchBar
-      if (url.includes('/api/openings/all')) {
+      // Mock the search index API for SearchBar
+      if (url.includes('/api/openings/search-index')) {
         return Promise.resolve({
           ok: true,
           json: async () => ({

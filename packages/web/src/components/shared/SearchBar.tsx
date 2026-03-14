@@ -455,8 +455,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleGo = () => {
-    if (searchTerm.trim() && openingsData.length > 0) {
-      // Use our improved client-side search for direct navigation
+    if (!searchTerm.trim()) return;
+
+    // Use current suggestions (from server-side or client-side search)
+    if (suggestions.length > 0) {
+      selectOpening(suggestions[0]);
+      return;
+    }
+
+    // Fall back to client-side search if data available
+    if (openingsData.length > 0) {
       const relevantOpenings = findAndRankOpenings(searchTerm, openingsData);
       if (relevantOpenings.length > 0) {
         selectOpening(relevantOpenings[0]);

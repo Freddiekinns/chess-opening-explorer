@@ -105,3 +105,59 @@ Origin Transfer risk, we must decouple the search bar from massive pre-loads.
   lightweight pre-warm ping on hover of the search bar, or migrate the Fuse.js
   index to a specialized edge data store (like empty Vercel Edge Config or
   Redis) in the future.
+
+## Implementation — Completed 2026-03-14
+
+### What Was Done
+
+**Phase 1 (Edge Caching) + Phase 2 (Architecture Fix) shipped together.**
+
+| Change                          | File(s)                                               | Detail                                                                                      |
+| ------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Edge cache headers              | `vercel.json`                                         | `s-maxage=3600` + `stale-while-revalidate=86400` on static routes; `s-maxage=300` on search |
+| GlobalHeader server-side search | `packages/web/src/components/layout/GlobalHeader.tsx` | Removed 24.8 MB preload. 300ms debounced `/api/openings/semantic-search`. Loading spinner.  |
+| DetailPage lighter endpoint     | `packages/web/src/pages/OpeningDetailPage.tsx`        | Switched `/api/openings/all` → `/api/openings/search-index` (1.6 MB, 94% smaller)           |
+| SearchBar resilience            | `packages/web/src/components/shared/SearchBar.tsx`    | `handleGo` uses current suggestions when `openingsData` is empty                            |
+| Test mock updates               | 4 test files                                          | Mocks updated from `/all` to `/search-index`                                                |
+
+### Bandwidth Impact
+
+| Scenario                          | Before                | After                                       |
+| --------------------------------- | --------------------- | ------------------------------------------- |
+| Single page visit (header+detail) | 2 × 24.8 MB = 49.6 MB | 0 MB (header) + 1.6 MB (detail, CDN-cached) |
+| Crawler indexing 3,900 pages      | ~96.8 GB origin       | ~0 MB (CDN-cached, no preload triggers)     |
+| User typing 5 searches            | 0 extra (pre-loaded)  | ~25 KB (5 × ~5 KB server responses)         |
+
+### Validation
+
+- TypeScript: `tsc --noEmit` clean
+- Frontend: 147/147 tests pass
+- Backend: all test suites pass
+- No remaining references to `/api/openings/all` in `packages/web/src/`
+
+### Decisions & Trade-offs
+
+- **GlobalHeader uses server-only search** (no client-side data). Acceptable
+  because the backend semantic search is superior to the old `.includes()`
+  filter, and the header is a simple autocomplete.
+- **OpeningDetailPage uses `/search-index`** (not server-only) to preserve
+  SearchBar's instant Tier 1 results for ECO codes, chess moves, and
+  abbreviations. "Surprise me" button only appears on LandingPage (which still
+  loads search-index data), so no feature loss.
+- **Phase 3 deferred.** No cold-start complaints yet. Revisit if users report
+  sluggish search on first keystroke.
+
+## Prevention Checklist
+
+To avoid repeating this class of issue:
+
+1. **Never fetch large payloads on component mount** — prefer server-side search
+   or paginated endpoints for any dataset > 100 KB.
+2. **Always set `Cache-Control` headers** on new API routes in `vercel.json`.
+   Static data: `s-maxage=3600, stale-while-revalidate=86400`. User-specific
+   data: `private, no-store`.
+3. **Monitor Vercel usage dashboard** monthly — check Fast Origin Transfer stays
+   under 5 GB (50% of limit).
+4. **Crawlers amplify everything** — any payload fetched on page render will be
+   multiplied by the number of indexed pages (~12,000+). Design for the crawler
+   case, not just the single-user case.

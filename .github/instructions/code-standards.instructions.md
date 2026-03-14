@@ -100,7 +100,10 @@ for (let k = 0; k < vertices; k++) {
 - Batch DOM updates
 - Use `React.memo`, `useMemo`, `useCallback` to prevent re-renders
 - Lazy load images: `loading="lazy"`
-- Debounce/throttle event handlers
+- Debounce/throttle event handlers (300ms for search inputs)
+- **Never fetch large datasets on component mount** — prefer server-side search
+  or paginated endpoints for anything > 100 KB. Crawlers multiply every
+  mount-time fetch across all indexed pages.
 
 ### Backend
 
@@ -108,6 +111,15 @@ for (let k = 0; k < vertices; k++) {
 - Batch database/API calls
 - Cache expensive computations
 - Stream large data sets
+
+### Vercel / API Caching
+
+- **Every new API route must have a `Cache-Control` entry in `vercel.json`.**
+- Static/semi-static data: `s-maxage=3600, stale-while-revalidate=86400`
+- Search/query endpoints: `s-maxage=300, stale-while-revalidate=600`
+- User-specific data (e.g., `/api/personal`): `private, no-store`
+- Verify with `curl -I <url>` — check for `x-vercel-cache: HIT` on second
+  request
 
 ### Database
 

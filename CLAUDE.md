@@ -181,3 +181,9 @@ cd tools/analysis && python run_pipeline.py
 - **CSS Modules migration ongoing**: Legacy global styles still in
   `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when
   touching a component.
+- **Never fetch large payloads on mount**: `/api/openings/all` (24.8 MB) was
+  removed from all client-side code (TASK011). Use `/api/openings/search-index`
+  (1.6 MB) for client-side search data, or `/api/openings/semantic-search` for
+  server-side queries. Any new API route **must** have a `Cache-Control` entry
+  in `vercel.json` — crawlers index 12,000+ pages and will amplify unbounded
+  payloads into massive origin transfer bills.

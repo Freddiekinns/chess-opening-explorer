@@ -11,6 +11,24 @@
   },
   "headers": [
     {
+      "source": "/api/openings/all",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/search-index",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
       "source": "/api/openings/popular",
       "headers": [
         {
@@ -29,11 +47,74 @@
       ]
     },
     {
-      "source": "/api/stats",
+      "source": "/api/openings/semantic-search",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=300, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/search",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=300, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/fen/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/eco/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/videos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1800, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
+      "source": "/api/openings/categories",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/stats/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "s-maxage=3600, stale-while-revalidate=7200"
+        }
+      ]
+    },
+    {
+      "source": "/api/courses/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate=86400"
         }
       ]
     }

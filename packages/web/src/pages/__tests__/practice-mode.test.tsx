@@ -73,7 +73,7 @@ describe('Practice Mode', () => {
             }),
         });
       }
-      if (url.includes('/api/openings/all')) {
+      if (url.includes('/api/openings/search-index')) {
         return Promise.resolve({
           ok: true,
           json: () =>
@@ -319,7 +319,7 @@ describe('Practice Mode - Hint Functionality', () => {
             }),
         });
       }
-      if (url.includes('/api/openings/all')) {
+      if (url.includes('/api/openings/search-index')) {
         return Promise.resolve({
           ok: true,
           json: () =>
@@ -452,7 +452,7 @@ describe('Practice Mode - Click-to-Move', () => {
             }),
         });
       }
-      if (url.includes('/api/openings/all')) {
+      if (url.includes('/api/openings/search-index')) {
         return Promise.resolve({
           ok: true,
           json: () =>

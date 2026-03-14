@@ -14,6 +14,8 @@ _No tasks in progress._
 
 ## Completed
 
+- [TASK011] Optimize Search Bandwidth & Vercel Data Limits - Completed
+  2026-03-14
 - [TASK010] Local Repertoire & Saved Openings - Completed 2026-03-13
 - [TASK009] SEO: Get Opening Pages Indexed by Google - Completed 2026-02-28
 - [TASK007] Mobile Overflow on Opening Detail - Resolved 2026-02-23

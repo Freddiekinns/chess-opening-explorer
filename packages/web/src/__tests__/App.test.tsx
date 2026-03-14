@@ -78,7 +78,7 @@ describe('App Component', () => {
               }),
           });
         }
-        if (url.includes('/api/openings/all')) {
+        if (url.includes('/api/openings/search-index')) {
           return Promise.resolve({
             ok: true,
             json: () =>

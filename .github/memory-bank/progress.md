@@ -3,9 +3,16 @@
 ## What Works
 
 - **Core Opening Data:** The full database of 12,377+ openings is integrated and
-  served via the API (`/api/openings/all`).
-- **Search:** The multi-layered search (Semantic, Fuzzy, Exact) is functional.
-  The backend service provides fast responses (1-5ms).
+  served via the API. Lightweight search index available at
+  `/api/openings/search-index` (1.6 MB).
+- **Search:** Multi-layered search (Semantic, Fuzzy, Exact) via server-side
+  `/api/openings/semantic-search`. GlobalHeader uses debounced server-side
+  search (zero preload). OpeningDetailPage uses `/search-index` for instant
+  client-side results + server-side fallback. Backend responds in 1-5ms.
+- **Edge Caching:** All API routes have `Cache-Control` headers in
+  `vercel.json`. Static data cached 1h at CDN edge with 24h
+  stale-while-revalidate. Search endpoints cached 5min. Crawler traffic served
+  from CDN, not origin lambdas.
 - **Popularity Stats:** The system successfully processes Lichess game data to
   calculate and display opening popularity scores.
 - **Video Pipeline:** The "Channel-First" data pipeline is complete and
@@ -137,13 +144,14 @@
 - **React 19 / Testing Library Compatibility:** There was a known issue with
   React 19 and `@testing-library/react`. While component fixes have been
   implemented, this is an area to watch during future upgrades.
-- **Large Initial Payload:** The `/api/openings/all` endpoint sends a large
-  (4.7MB) JSON file. While this enables fast client-side search, it could be a
-  performance bottleneck on slow connections. Future optimizations might involve
-  a more advanced data-loading strategy.
 
 ## Recently Resolved
 
+- **TASK011 — Search Bandwidth & Vercel Limits (2026-03-14):**
+  `/api/openings/all` (24.8 MB) was fetched on every page mount, causing 96.8 GB
+  origin transfer from crawler traffic. Fixed by adding CDN cache headers to all
+  API routes and eliminating the large preload from GlobalHeader (server-side
+  search) and OpeningDetailPage (switched to 1.6 MB search-index).
 - **TASK007 — Mobile Overflow on Opening Detail (2026-02-23):** Content-heavy
   openings overflowed horizontally on mobile due to CSS Grid `1fr` resolving to
   `minmax(auto, 1fr)` and a grid child missing `min-width: 0`. Fixed with

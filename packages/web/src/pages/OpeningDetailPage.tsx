@@ -80,7 +80,7 @@ const API_ENDPOINTS = {
   COURSES_BY_FEN: '/api/courses/',
   STATS_BY_FEN: '/api/stats/',
   RELATED_BY_FEN: '/api/openings/fen/',
-  ALL_OPENINGS: '/api/openings/all',
+  SEARCH_INDEX: '/api/openings/search-index',
 } as const;
 
 interface MovePair {
@@ -173,18 +173,18 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, []);
 
-  // Load openings data for SearchBar component
+  // Load lightweight search index for SearchBar component (1.6 MB vs 24.8 MB for /all)
   useEffect(() => {
     const loadOpeningsData = async () => {
       try {
-        const response = await fetch('/api/openings/all');
+        const response = await fetch(API_ENDPOINTS.SEARCH_INDEX);
         const data = (await response.json()) as ApiResponse<SearchOpening[]>;
 
         if (data.success) {
           setOpeningsData(data.data);
         }
-      } catch (error) {
-        console.error('Error loading openings data:', error);
+      } catch {
+        // Silent fail — server-side search in SearchBar still works
       }
     };
 

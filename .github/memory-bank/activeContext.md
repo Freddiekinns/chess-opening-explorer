@@ -1,8 +1,50 @@
 # Active Context
 
-**Date:** 2026-03-13
+**Date:** 2026-03-14
 
-## Current Focus: Local Repertoire and Starred Openings (TASK010) — Implemented
+## Current Focus: Search Bandwidth Optimization (TASK011) — Completed
+
+## Session Summary (2026-03-14)
+
+### Fix: Optimize Search Bandwidth & Vercel Data Limits (TASK011)
+
+**Problem:** Vercel Fast Origin Transfer hit 20.39 GB (10 GB limit). Root cause:
+`GlobalHeader.tsx` and `OpeningDetailPage.tsx` fetched `/api/openings/all` (24.8
+MB) on every mount. Crawler traffic (~3,900 pages) amplified this to ~96.8 GB.
+No API routes had `Cache-Control` headers.
+
+**Solution:** Two-phase fix shipped in one commit.
+
+**Phase 1 — Edge Caching:**
+
+- Added `Cache-Control` headers to all API routes in `vercel.json`
+- Static data: `s-maxage=3600, stale-while-revalidate=86400`
+- Search endpoints: `s-maxage=300, stale-while-revalidate=600`
+
+**Phase 2 — Eliminate large preloads:**
+
+- GlobalHeader: replaced 24.8 MB preload with 300ms debounced server-side
+  `/api/openings/semantic-search` (zero bytes on load, ~5 KB per query)
+- OpeningDetailPage: switched from `/all` to `/search-index` (1.6 MB, 94%
+  reduction)
+- SearchBar: fixed `handleGo` to use current suggestions when `openingsData` is
+  empty
+- Updated 4 test files to mock `/search-index` instead of `/all`
+
+**Files Changed:**
+
+| File                                                  | Change                                   |
+| ----------------------------------------------------- | ---------------------------------------- |
+| `vercel.json`                                         | Cache-Control headers for all API routes |
+| `packages/web/src/components/layout/GlobalHeader.tsx` | Debounced server-side search             |
+| `packages/web/src/pages/OpeningDetailPage.tsx`        | `/all` → `/search-index`                 |
+| `packages/web/src/components/shared/SearchBar.tsx`    | `handleGo` resilience for empty data     |
+| 4 test files                                          | Mock URL updates                         |
+
+**Validation:** 147/147 frontend tests, all backend suites pass, TypeScript
+clean.
+
+---
 
 ## Session Summary (2026-03-13)
 

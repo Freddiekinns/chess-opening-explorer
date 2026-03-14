@@ -114,10 +114,20 @@ Lichess Study API → Course Discovery Pipeline → courses.json
 All JSON → Frontend (static, pre-generated)
 ```
 
+### AD-016: Server-Side Search & Edge Caching
+
+Search moved from client-side preload to server-side semantic search.
+GlobalHeader uses debounced `/api/openings/semantic-search` (zero preload).
+OpeningDetailPage uses `/api/openings/search-index` (1.6 MB, 94% smaller than
+`/all`). All API routes have `Cache-Control` headers in `vercel.json` for Vercel
+CDN edge caching. See TASK011 for full details.
+
 ## Known Constraints
 
 - **Lichess API**: Rate limited
 - **YouTube API**: Daily quota limits
 - **Gemini API**: Token limits and costs
 - **Static Data**: Updates require rebuild/redeploy
-- **Large Payload**: `/api/openings/all` is 4.7MB JSON
+- **Vercel Hobby Tier**: 10 GB Fast Origin Transfer, 100 GB Fast Data Transfer.
+  All API routes must have `Cache-Control` headers. Never fetch large payloads
+  on component mount — crawlers will amplify across all 12,000+ pages.

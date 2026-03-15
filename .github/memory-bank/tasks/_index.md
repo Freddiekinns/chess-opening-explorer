@@ -10,6 +10,7 @@ _No tasks in progress._
 
 ## Pending
 
+- [TASK012] Video Pipeline Overhaul - Added 2026-03-15
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
 
 ## Completed

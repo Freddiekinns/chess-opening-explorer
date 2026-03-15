@@ -37,7 +37,7 @@
 **API Keys (optional for basic development):**
 
 - `YOUTUBE_API_KEY` - Required for video pipeline
-- `OPENAI_API_KEY` - Required for LLM enrichment
+- `GOOGLE_AI_API_KEY` - Required for LLM enrichment (Vertex AI / Gemini)
 - Copy `.env.example` to `.env` and add keys as needed
 
 ## Essential Commands
@@ -63,12 +63,7 @@ npm run enrich               # LLM enrichment
 npm run course:enrich        # Enrich course data
 npm run course:discover      # Find popular Lichess studies
 npm run course:import        # Import studies into courses.json
-npm run pipeline             # Incremental video pipeline (RSS, default)
-npm run pipeline:full        # Full catalogue rebuild (YouTube API)
-npm run pipeline:rematch     # Re-score existing videos (zero API cost)
-npm run pipeline:complete    # Complete video pipeline (legacy)
-npm run pipeline:discover    # Discover videos from RSS feeds
-npm run pipeline:match       # Match videos to openings
+npm run pipeline             # Video pipeline (see Data Pipeline Workflows)
 
 # Code Quality
 npm run format               # Format all JS/TS/JSON/MD with Prettier
@@ -114,6 +109,7 @@ chess-opening-explorer/
 ├── data/             # JSON data files
 ├── scripts/          # Utility scripts (Vercel prep, ECO data fixes)
 ├── tools/            # Data pipelines
+├── config/           # Pipeline configuration (youtube_channels.json)
 ├── tests/            # Backend tests (Jest)
 └── .github/
     ├── instructions/ # Coding standards
@@ -136,12 +132,11 @@ npm run course:integrate     # Integrate course data into main dataset
 npm run pipeline             # Incremental pipeline (RSS discovery, default)
 npm run pipeline:full        # Full catalogue rebuild (YouTube API, requires key)
 npm run pipeline:rematch     # Re-score existing videos (zero API cost)
-npm run pipeline:complete    # Legacy complete pipeline
-npm run pipeline:discover    # Step 1: Discover videos from RSS feeds
-npm run pipeline:prefilter   # Step 2: Pre-filter candidates
-npm run pipeline:enrich      # Step 3: Enrich video metadata
-npm run pipeline:match       # Step 4: Match videos to openings
 ```
+
+Legacy standalone steps (`pipeline:complete`, `pipeline:discover`,
+`pipeline:prefilter`, `pipeline:enrich`, `pipeline:match`) still work but are
+superseded by the unified modes above.
 
 **Course Discovery:**
 
@@ -154,29 +149,14 @@ npm run course:import        # Import curated studies into courses.json
 **Popularity Stats:**
 
 ```bash
-cd tools/analysis && python run_pipeline.py
+python tools/analysis/run_pipeline.py
 # Updates Lichess statistics from master games
 ```
 
-## Common Patterns
+## Workflow
 
-### Bug Fix
-
-1. Read `activeContext.md` + `progress.md`
-2. Load language-specific + `testing.instructions.md`
-3. Fix, test, commit
-
-### New Feature
-
-1. Read `activeContext.md` + `progress.md` + `context.md`
-2. Load language-specific + `testing.instructions.md`
-3. Implement, test, commit
-
-### Refactoring
-
-1. Read `context.md` (for patterns) + `activeContext.md`
-2. Load `code-standards.instructions.md`
-3. Refactor, test, commit
+For any task: read `activeContext.md` + `progress.md` first, then load the
+relevant instructions from the table above. Update `activeContext.md` when done.
 
 ## Gotchas
 
@@ -193,3 +173,13 @@ cd tools/analysis && python run_pipeline.py
   server-side queries. Any new API route **must** have a `Cache-Control` entry
   in `vercel.json` — crawlers index 12,000+ pages and will amplify unbounded
   payloads into massive origin transfer bills.
+- **Update docs with code changes**: When changing commands, modes, config, or
+  architecture, update all related docs in the same PR: CLAUDE.md, README files,
+  `.agent/workflows/`, `.claude/agents/`, `.github/memory-bank/`,
+  `.github/instructions/`
+- **YouTube channel IDs**: Never guess channel IDs — they must be verified by
+  the user or tested via RSS feed
+  (`https://www.youtube.com/feeds/videos.xml?channel_id={ID}`)
+- **Worktree test noise**: `npm test` picks up `.worktrees/` tests that fail
+  with module resolution errors. Use `--testPathIgnorePatterns='\.worktrees'`
+  for clean results.

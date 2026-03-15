@@ -52,7 +52,22 @@
       "Bash(find /c/Users/fred_/chess-opening-explorer/packages/api/src -type f -name \"*.ts\" 2>/dev/null | head -30)",
       "Bash(find /c/Users/fred_/chess-opening-explorer/api -type f -name \"*.ts\" 2>/dev/null | head -30)",
       "Bash(git check-ignore -q .worktrees 2>/dev/null && echo \"ignored\" || echo \"not ignored\")",
-      "Bash(git worktree add .worktrees/sort-controls -b feature/game-sort-controls)"
+      "Bash(git worktree add .worktrees/sort-controls -b feature/game-sort-controls)",
+      "Bash(git check-ignore:*)",
+      "Bash(git worktree:*)",
+      "Bash(find .worktrees/local-repertoire/packages/web/src -name \"useAudio*\" -o -name \"*.test.*\" -o -name \"*.spec.*\" 2>/dev/null | head -10)",
+      "Bash(find .worktrees/local-repertoire/packages/web/src -name \"useAudio*\" 2>/dev/null; find .worktrees/local-repertoire/packages/web -name \"*.test.*\" -o -name \"*.spec.*\" 2>/dev/null | head -10)",
+      "Bash(git -C .worktrees/local-repertoire status)",
+      "Bash(git -C .worktrees/local-repertoire log --oneline -5)",
+      "Bash(git -C .worktrees/local-repertoire diff --stat)",
+      "Bash(git -C .worktrees/local-repertoire add packages/web/src/hooks/useRepertoire.ts packages/web/src/hooks/__tests__/useRepertoire.test.ts packages/web/src/components/shared/StarButton.tsx packages/web/src/components/shared/StarButton.module.css packages/web/src/components/landing/RepertoireSection.tsx packages/web/src/components/landing/RepertoireSection.module.css packages/web/src/components/shared/OpeningCard.tsx packages/web/src/pages/OpeningDetailPage.tsx packages/web/src/pages/OpeningDetailPage.module.css packages/web/src/pages/LandingPage.tsx)",
+      "Bash(git -C .worktrees/local-repertoire status --porcelain)",
+      "Bash(git checkout:*)",
+      "Bash(npx prettier:*)",
+      "Bash(find:*)",
+      "Bash(git status:*)",
+      "Bash(sqlite3:*)",
+      "Bash(echo:*)"
     ]
   },
   "hooks": {

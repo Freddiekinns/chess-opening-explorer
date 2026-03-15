@@ -105,6 +105,12 @@ async function regenerateStaticFiles(dbPath) {
   const apiDataDir = path.join(__dirname, '../../api/data');
   await consolidateVideoIndex(publicApiDir, apiDataDir);
   console.log('   ✅ Video index consolidated.');
+
+  // Copy to API src/data where the dev server reads from
+  const srcIndex = path.join(apiDataDir, 'video-index.json');
+  const destIndex = path.join(__dirname, '../../packages/api/src/data/video-index.json');
+  fs.copyFileSync(srcIndex, destIndex);
+  console.log('   ✅ Copied video-index.json to packages/api/src/data/');
 }
 
 // ─── Mode: Incremental (RSS) ─────────────────────────────────

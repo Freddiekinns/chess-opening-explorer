@@ -40,7 +40,17 @@ npm run pipeline:rematch
 
 Loads all existing videos from the database, clears match relationships only
 (keeps video metadata), and re-runs the scorer. **Zero API cost. Run after
-scorer changes (channel list updates, penalty adjustments, etc.).**
+scorer changes (channel list updates, penalty adjustments, etc.)**
+
+**Important:** Rematch does NOT re-fetch YouTube metadata. View counts and
+thumbnails in the DB may be stale/null. After rematch, run:
+
+```bash
+node tools/video-pipeline/scripts/backfill-views.js
+```
+
+This re-enriches all DB videos from the YouTube API (~35 calls for ~1700
+videos).
 
 ### 4. Backfill specific openings (optional)
 
@@ -66,6 +76,13 @@ After running any mode:
 - **SQLite Database**: `tools/data/videos.sqlite` (video metadata and matches)
 - **Static JSON files**: `public/api/openings/*.json` (one per opening position)
 - **Video Index**: `api/data/video-index.json` (consolidated lookup file)
+
+**Important:** The API reads from `packages/api/src/data/video-index.json`, not
+`api/data/`. After regeneration, copy the index:
+
+```bash
+cp api/data/video-index.json packages/api/src/data/video-index.json
+```
 
 ## Channel Configuration
 

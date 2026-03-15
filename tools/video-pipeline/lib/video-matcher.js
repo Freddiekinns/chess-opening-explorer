@@ -47,7 +47,7 @@ class VideoMatcher {
             const names = value
               .split(/[;\/,]/)
               .map((name) => name.trim())
-              .filter((name) => name.length > 3);
+              .filter((name) => name.length > 3 && name.split(/\s+/).length >= 2);
             aliases.push(...names);
           }
         });
@@ -451,6 +451,33 @@ class VideoMatcher {
   }
 
   /**
+   * Check if video title mentions a specific opening that differs from target opening.
+   * E.g., title "The Wade Gambit" against opening "Latvian Gambit" → reject.
+   */
+  titleMentionsDifferentOpening(title, openingName) {
+    const openingLower = openingName.toLowerCase();
+    const openingFamily = openingLower.split(':')[0].trim();
+
+    // Extract "[Name] Gambit/Defense/Attack" patterns from title
+    const patterns = [
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+gambit\b/gi,
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+defen[sc]e\b/gi,
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+attack\b/gi,
+    ];
+
+    for (const pattern of patterns) {
+      let match;
+      while ((match = pattern.exec(title)) !== null) {
+        const titleOpening = match[0].toLowerCase();
+        if (!openingLower.includes(titleOpening) && !titleOpening.includes(openingFamily)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
    * Calculate weighted match score for video-opening pair
    */
   calculateMatchScore(video, opening) {
@@ -609,6 +636,28 @@ class VideoMatcher {
     else if (matchType === 'partial_title') score += 45;
     else if (matchType === 'abbreviation') score += 35;
     else if (matchType === 'eco') score += 20;
+
+    // Reject content-only matches where title clearly names a DIFFERENT opening
+    if (matchType === 'exact') {
+      if (this.titleMentionsDifferentOpening(title, openingName)) {
+        return 0;
+      }
+    }
+
+    // Sub-variation penalty: generic family video is less relevant to specific sub-variation
+    if ((matchType === 'family' || matchType === 'exact') && openingName.includes(':')) {
+      const variationPart = openingName.split(':').slice(1).join(':').toLowerCase().trim();
+      const variationWords = variationPart
+        .split(/[\s,]+/)
+        .filter(
+          (w) =>
+            w.length > 5 &&
+            !['variation', 'defense', 'defence', 'attack', 'gambit', 'system', 'line'].includes(w)
+        );
+      if (variationWords.length > 0 && !variationWords.some((w) => title.includes(w))) {
+        score -= 15;
+      }
+    }
 
     // 2. Penalize generic game analysis (major penalty) - EXPANDED
     const gameAnalysisTerms = [

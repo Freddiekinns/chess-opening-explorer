@@ -183,3 +183,11 @@ relevant instructions from the table above. Update `activeContext.md` when done.
 - **Worktree test noise**: `npm test` picks up `.worktrees/` tests that fail
   with module resolution errors. Use `--testPathIgnorePatterns='\.worktrees'`
   for clean results.
+- **Two `video-index.json` copies**: Pipeline writes to
+  `api/data/video-index.json` but the API reads from
+  `packages/api/src/data/video-index.json`. After regenerating the index, copy
+  it: `cp api/data/video-index.json packages/api/src/data/video-index.json`
+- **`pipeline:rematch` loses video metadata**: Rematch re-scores but does NOT
+  re-fetch from YouTube. DB `view_count` and `thumbnail_url` will be stale/null.
+  Run `node tools/video-pipeline/scripts/backfill-views.js` after rematch to
+  restore them (costs ~35 API calls for ~1700 videos).

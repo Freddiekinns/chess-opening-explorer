@@ -29,10 +29,15 @@ power the application.
 - `lib/candidate-filter.js` - Pre-filtering for educational content
 - `lib/video-enricher.js` - YouTube API metadata enrichment
 - `lib/video-matcher.js` - Matching algorithm and weighted scorer
+- `scripts/backfill-views.js` - Restore view counts/thumbnails from YouTube API
 
 **Channel Config**: `config/youtube_channels.json` (16 trusted channels)
 
 **Database**: SQLite (`data/videos.sqlite`)
+
+**Data path gotcha**: Pipeline writes `video-index.json` to `api/data/` but the
+API reads from `packages/api/src/data/`. Must copy after regeneration. Rematch
+mode loses `view_count`/`thumbnail_url` — run `backfill-views.js` after.
 
 **API Limits**:
 

@@ -92,7 +92,11 @@ async function getExistingVideoIds(db) {
  */
 async function regenerateStaticFiles(dbPath) {
   console.log('\n📄 Regenerating Static JSON Files...');
-  const staticGenerator = new StaticFileGenerator(dbPath);
+  const outputDir = path.join(__dirname, '../../public/api/openings');
+  const staticGenerator = new StaticFileGenerator({
+    databasePath: dbPath,
+    outputDir: outputDir,
+  });
   const staticResult = await staticGenerator.generateAllStaticFiles();
   console.log('   ✅ Static files generated:', staticResult);
 

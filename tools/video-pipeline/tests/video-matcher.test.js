@@ -501,5 +501,95 @@ describe('VideoMatcher', () => {
       expect(aliases).toContain('Sicilian Defense');
       expect(aliases).toContain('Najdorf Variation');
     });
+
+    it('should NOT produce single-word aliases from comma-separated values', () => {
+      const aliasObj = JSON.stringify({
+        eco_js: "King's Gambit, Accepted",
+      });
+      const aliases = matcher.parseAliases(aliasObj);
+      expect(aliases).not.toContain('Accepted');
+      expect(aliases).toContain("King's Gambit");
+    });
+
+    it('should keep multi-word aliases from comma-separated values', () => {
+      const aliasObj = JSON.stringify({
+        eco_js: "King's Gambit Accepted, Kieseritzky Gambit",
+      });
+      const aliases = matcher.parseAliases(aliasObj);
+      expect(aliases).toContain("King's Gambit Accepted");
+      expect(aliases).toContain('Kieseritzky Gambit');
+    });
+  });
+
+  describe('titleMentionsDifferentOpening', () => {
+    it('should detect "The Wade Gambit" against "Latvian Gambit"', () => {
+      expect(matcher.titleMentionsDifferentOpening('The Wade Gambit', 'Latvian Gambit')).toBe(true);
+    });
+
+    it('should allow "King\'s Gambit Deconstructed" against "King\'s Gambit Accepted: Kieseritzky"', () => {
+      expect(
+        matcher.titleMentionsDifferentOpening(
+          "King's Gambit Deconstructed",
+          "King's Gambit Accepted: Kieseritzky"
+        )
+      ).toBe(false);
+    });
+
+    it('should allow generic titles with no opening pattern', () => {
+      expect(matcher.titleMentionsDifferentOpening('Speedrun Episode 47', 'Latvian Gambit')).toBe(
+        false
+      );
+    });
+  });
+
+  describe('cross-opening and sub-variation scoring', () => {
+    const createVideo = (overrides = {}) => ({
+      title: 'Test Video',
+      description: '',
+      channel_title: 'Test Channel',
+      duration: 1800,
+      tags: [],
+      ...overrides,
+    });
+
+    const createOpening = (overrides = {}) => ({
+      name: 'Sicilian Defense',
+      eco: 'B20',
+      aliases: [],
+      ...overrides,
+    });
+
+    it('should score 0 for content-only match where title names a different opening', () => {
+      const video = createVideo({
+        title: 'The Wade Gambit Explained',
+        description: 'In this video we also discuss the latvian gambit and other openings',
+      });
+      const opening = createOpening({
+        name: 'Latvian Gambit',
+        eco: 'C40',
+      });
+      const score = matcher.calculateMatchScore(video, opening);
+      expect(score).toBe(0);
+    });
+
+    it('should apply sub-variation penalty when variation words absent from title', () => {
+      const video = createVideo({
+        title: 'sicilian defense overview',
+      });
+      const opening = createOpening({
+        name: 'Sicilian Defense: Najdorf Variation',
+        eco: 'B90',
+      });
+      const scoreSubVar = matcher.calculateMatchScore(video, opening);
+
+      const openingBase = createOpening({
+        name: 'Sicilian Defense',
+        eco: 'B20',
+      });
+      const scoreBase = matcher.calculateMatchScore(video, openingBase);
+
+      // Sub-variation should score lower than base opening for generic title
+      expect(scoreSubVar).toBeLessThan(scoreBase);
+    });
   });
 });

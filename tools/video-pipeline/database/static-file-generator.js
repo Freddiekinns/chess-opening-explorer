@@ -36,7 +36,7 @@ class StaticFileGenerator {
       format: options.format || 'json',
       compression: options.compression !== undefined ? options.compression : false,
       maxVideosPerOpening: options.maxVideosPerOpening || 10,
-      minMatchScore: options.minMatchScore || 40, // Much higher threshold for quality
+      minMatchScore: options.minMatchScore || 60, // Higher threshold for quality
       batchSize: options.batchSize || 50,
       retryAttempts: options.retryAttempts || 3,
       retryDelay: options.retryDelay || 1000,
@@ -142,7 +142,7 @@ class StaticFileGenerator {
         duration: video.duration,
         views: video.view_count,
         published: video.published_at,
-        thumbnail: video.thumbnail_url,
+        thumbnail: video.thumbnail_url || `https://i.ytimg.com/vi/${video.id}/default.jpg`,
         url: `https://youtube.com/watch?v=${video.id}`,
         score: video.match_score,
       })),

@@ -2,9 +2,48 @@
 
 **Date:** 2026-03-15
 
-## Current Focus: Video Pipeline Overhaul (TASK012) — Completed
+## Current Focus: Video Pipeline Overindexing Fix — Completed
 
-## Session Summary (2026-03-15)
+## Session Summary (2026-03-15, Part 2)
+
+### Fix: Video Pipeline Overindexing
+
+**Problem:** Spot-checking after TASK012 full pipeline run revealed the matcher
+was too generous — videos appeared on wrong openings. Three root causes:
+
+1. **Path mismatch** — `StaticFileGenerator` received a string instead of
+   options object, writing to `tools/public/api/openings/` instead of
+   `public/api/openings/` where consolidation reads.
+2. **Toxic short aliases** — `parseAliases()` split on `,`/`;`/`/`, creating
+   single-word fragments like `"Accepted"` that matched far too many videos.
+3. **Content-only false positives** — Videos whose descriptions mentioned many
+   openings got matched via content (e.g., Wade Gambit video matched Latvian
+   Gambit via description mention + educator bonus).
+
+**Fixes applied:**
+
+- **Fix 1:** `regenerateStaticFiles()` now passes `{ databasePath, outputDir }`
+  object to `StaticFileGenerator`
+- **Fix 2:** Alias splitting requires 2+ words per fragment
+- **Fix 3:** New `titleMentionsDifferentOpening()` rejects content-only matches
+  where title names a different gambit/defense/attack
+- **Fix 4:** Raised `minMatchScore` default from 40 to 60
+- **Fix 5:** Sub-variation penalty (-15) when variation-specific words absent
+  from title
+- **Backfill:** Created `scripts/backfill-views.js` to restore view counts and
+  thumbnails from YouTube API after rematch (which loses this metadata)
+
+**Also discovered:** Two copies of `video-index.json` exist — pipeline writes to
+`api/data/` but API reads from `packages/api/src/data/`. Must copy after
+regeneration.
+
+**Tests:** 633 passing (7 new matcher tests), all existing tests green.
+
+---
+
+## Previous: Video Pipeline Overhaul (TASK012) — Completed
+
+## Session Summary (2026-03-15, Part 1)
 
 ### TASK012: Video Pipeline Overhaul
 

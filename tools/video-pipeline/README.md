@@ -18,6 +18,8 @@ npm run pipeline:full
 
 # Rematch: re-score existing videos with updated scorer (zero API cost)
 npm run pipeline:rematch
+# After rematch, restore view counts/thumbnails from YouTube API:
+node tools/video-pipeline/scripts/backfill-views.js
 ```
 
 ## Modes
@@ -26,7 +28,10 @@ npm run pipeline:rematch
 | ------------- | -------------------------- | -------------- | -------- | ------------------------------ |
 | `incremental` | `npm run pipeline`         | RSS feeds      | Low      | Regular updates (daily/weekly) |
 | `full`        | `npm run pipeline:full`    | YouTube API    | High     | Historical catalogue rebuild   |
-| `rematch`     | `npm run pipeline:rematch` | None (DB only) | Zero     | Re-score after scorer changes  |
+| `rematch`     | `npm run pipeline:rematch` | None (DB only) | Zero\*   | Re-score after scorer changes  |
+
+\* Rematch itself is zero cost, but run `backfill-views.js` after to restore
+view counts/thumbnails (~35 API calls for ~1700 videos).
 
 ## What It Does
 
@@ -137,27 +142,32 @@ const results = await matcher.runMatchingWithVideos(enrichedVideos, {
 
 Videos are scored (0-200) based on:
 
-| Factor                   | Points | Description                         |
-| ------------------------ | ------ | ----------------------------------- |
-| **Name Match**           | +80    | Opening name in video title         |
-| **Content Match**        | +60    | Opening name in description/tags    |
-| **Family Match**         | +50    | Major opening family detected       |
-| **Abbreviation**         | +35    | Known abbreviation (QGD, KID, etc.) |
-| **Educational Keywords** | +30    | "explained", "theory", "guide"      |
-| **Premium Educator**     | +40    | Naroditsky, St. Louis, etc.         |
-| **Good Duration**        | +15    | 20-60 minutes                       |
-| **Player vs Player**     | -60    | "Magnus vs Hikaru" (capitalized)    |
-| **Game Analysis**        | -60    | "brilliant", "crushes", etc.        |
-| **Short Video**          | -25    | Under 5 minutes                     |
+| Factor                    | Points | Description                                    |
+| ------------------------- | ------ | ---------------------------------------------- |
+| **Name Match**            | +80    | Opening name in video title                    |
+| **Content Match**         | +60    | Opening name in description/tags               |
+| **Family Match**          | +50    | Major opening family detected                  |
+| **Abbreviation**          | +35    | Known abbreviation (QGD, KID, etc.)            |
+| **Educational Keywords**  | +30    | "explained", "theory", "guide"                 |
+| **Premium Educator**      | +40    | Naroditsky, St. Louis, etc.                    |
+| **Good Duration**         | +15    | 20-60 minutes                                  |
+| **Player vs Player**      | -60    | "Magnus vs Hikaru" (capitalized)               |
+| **Game Analysis**         | -60    | "brilliant", "crushes", etc.                   |
+| **Short Video**           | -25    | Under 5 minutes                                |
+| **Sub-variation Penalty** | -15    | Generic family video vs specific sub-variation |
 
 Minimum threshold: **60 points**
 
-### Family Mismatch Protection
+### Anti-Overindexing Protections
 
-Videos are rejected if they discuss an incompatible opening family:
-
-- A "Sicilian" video won't match French Defense openings
-- A "Queen's Gambit" video won't match King's Indian openings
+- **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
+  have 2+ words (prevents "Accepted" matching everything)
+- **Cross-opening title check**: Content-only matches rejected if the video
+  title names a different gambit/defense/attack
+- **Family mismatch protection**: Videos rejected if they discuss an
+  incompatible opening family (e.g., Sicilian video won't match French Defense)
+- **Sub-variation penalty**: Generic family videos score lower against specific
+  sub-variations (e.g., "Sicilian Defense" video vs "Sicilian Defense: Najdorf")
 
 ## Utilities
 
@@ -225,6 +235,24 @@ Tables:
 Location: `public/api/openings/{opening_id}.json`
 
 Each file contains the top 10 matched videos for that opening.
+
+### Video Index
+
+Location: `api/data/video-index.json` (consolidated from static files)
+
+**Important:** The API reads from `packages/api/src/data/video-index.json`.
+After regeneration, copy:
+
+```bash
+cp api/data/video-index.json packages/api/src/data/video-index.json
+```
+
+### Backfill Views
+
+Location: `tools/video-pipeline/scripts/backfill-views.js`
+
+Restores view counts and thumbnails from YouTube API for all videos in the DB.
+Run after `pipeline:rematch` which does not re-fetch this metadata.
 
 ## Environment Variables
 

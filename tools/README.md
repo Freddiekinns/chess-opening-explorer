@@ -37,6 +37,8 @@ npm run pipeline:full
 
 ```bash
 npm run pipeline:rematch
+# After rematch, restore view counts/thumbnails:
+node tools/video-pipeline/scripts/backfill-views.js
 ```
 
 **4. Backfill specific openings** (optional, for fresh DB):

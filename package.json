@@ -112,7 +112,8 @@
       "!api/**"
     ],
     "testMatch": [
-      "**/tests/**/*.test.js"
+      "<rootDir>/tests/**/*.test.js",
+      "<rootDir>/tools/**/tests/**/*.test.js"
     ],
     "coverageReporters": [
       "text",
@@ -135,8 +136,7 @@
       "/packages/.*/tests/",
       "tests/unit/.*ui.*\\.test\\.",
       "tests/unit/.*design.*\\.test\\.",
-      "tests/unit/.*phase.*\\.test\\.",
-      "tests/unit/category-filters\\.test\\.js"
+      "tests/unit/.*phase.*\\.test\\."
     ]
   },
   "dependencies": {

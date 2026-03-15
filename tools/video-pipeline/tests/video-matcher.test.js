@@ -220,7 +220,7 @@ describe('VideoMatcher', () => {
         expect(score).toBeGreaterThan(scoreNoChannel);
       });
 
-      it('should penalize agadmator channel', () => {
+      it('should give agadmator goodEducator bonus', () => {
         const video = createVideo({
           title: 'sicilian defense',
           channel_title: 'agadmator Chess Channel',
@@ -234,20 +234,112 @@ describe('VideoMatcher', () => {
         });
         const scoreNormal = matcher.calculateMatchScore(videoNormal, opening);
 
-        expect(score).toBeLessThan(scoreNormal);
+        expect(score).toBeGreaterThan(scoreNormal);
+      });
+
+      it('should give chessbrah goodEducator bonus', () => {
+        const video = createVideo({
+          title: 'sicilian defense explained',
+          channel_title: 'Chessbrah',
+        });
+        const opening = createOpening();
+        const score = matcher.calculateMatchScore(video, opening);
+
+        const videoUnknown = createVideo({
+          title: 'sicilian defense explained',
+          channel_title: 'Unknown Channel',
+        });
+        const scoreUnknown = matcher.calculateMatchScore(videoUnknown, opening);
+
+        expect(score).toBeGreaterThan(scoreUnknown);
+      });
+
+      it('should give ben finegold goodEducator bonus', () => {
+        const video = createVideo({
+          title: 'sicilian defense explained',
+          channel_title: 'Ben Finegold',
+        });
+        const opening = createOpening();
+        const score = matcher.calculateMatchScore(video, opening);
+
+        const videoUnknown = createVideo({
+          title: 'sicilian defense explained',
+          channel_title: 'Unknown Channel',
+        });
+        const scoreUnknown = matcher.calculateMatchScore(videoUnknown, opening);
+
+        expect(score).toBeGreaterThan(scoreUnknown);
+      });
+
+      it('should give chess24 entertainment penalty, not premium bonus', () => {
+        const video = createVideo({
+          title: 'sicilian defense',
+          channel_title: 'chess24',
+        });
+        const opening = createOpening();
+        const score = matcher.calculateMatchScore(video, opening);
+
+        const videoPremium = createVideo({
+          title: 'sicilian defense',
+          channel_title: 'Daniel Naroditsky',
+        });
+        const scorePremium = matcher.calculateMatchScore(videoPremium, opening);
+
+        expect(score).toBeLessThan(scorePremium);
       });
     });
 
     describe('game analysis penalties', () => {
-      it('should penalize game analysis terms like "vs"', () => {
+      it('should penalize player-vs-player titles like "Magnus vs Hikaru"', () => {
         const video = createVideo({
-          title: 'sicilian defense magnus vs hikaru',
+          title: 'Sicilian Defense Magnus vs Hikaru',
         });
         const opening = createOpening();
         const score = matcher.calculateMatchScore(video, opening);
 
         const videoClean = createVideo({
           title: 'sicilian defense complete guide',
+        });
+        const scoreClean = matcher.calculateMatchScore(videoClean, opening);
+
+        expect(score).toBeLessThan(scoreClean);
+      });
+
+      it('should NOT penalize "Sicilian vs French Defense"', () => {
+        const video = createVideo({
+          title: 'sicilian vs french defense - which is better?',
+        });
+        const opening = createOpening();
+        const score = matcher.calculateMatchScore(video, opening);
+
+        // Should not get the player-vs-player penalty (lowercase "vs" with lowercase words)
+        expect(score).toBeGreaterThan(0);
+      });
+
+      it('should NOT penalize "e4 vs d4 - Which is Better?"', () => {
+        const video = createVideo({
+          title: 'sicilian defense - e4 vs d4 overview',
+        });
+        const opening = createOpening();
+        const score = matcher.calculateMatchScore(video, opening);
+
+        // Lowercase on both sides of vs → no player-vs-player penalty
+        expect(score).toBeGreaterThan(0);
+      });
+
+      it('should penalize "Magnus vs Hikaru - Sicilian Najdorf"', () => {
+        const video = createVideo({
+          title: 'Magnus vs Hikaru - Sicilian Najdorf',
+        });
+        const opening = createOpening({
+          name: 'sicilian defense najdorf',
+          eco: 'B90',
+          aliases: ['najdorf'],
+        });
+        const score = matcher.calculateMatchScore(video, opening);
+
+        const videoClean = createVideo({
+          title: 'Sicilian Najdorf Complete Guide',
         });
         const scoreClean = matcher.calculateMatchScore(videoClean, opening);
 

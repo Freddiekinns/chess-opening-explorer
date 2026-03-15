@@ -216,34 +216,42 @@ class RSSVideoDiscovery {
       errors: [],
     };
 
-    // Process each channel's RSS feed
-    for (const channel of channels) {
-      try {
-        const feedResult = await this.fetchRSSFeed(channel.channel_id);
+    // Process all channels' RSS feeds in parallel
+    const feedPromises = channels.map(async (channel) => {
+      const feedResult = await this.fetchRSSFeed(channel.channel_id);
+      return { channel, feedResult };
+    });
 
-        if (feedResult.error) {
-          result.errors.push({
-            channelId: channel.channel_id,
-            error: feedResult.error,
-          });
-          continue;
-        }
+    const settled = await Promise.allSettled(feedPromises);
 
-        // Filter videos by publication date if specified
-        const filteredVideos = this._filterVideosByDate(feedResult.videos, publishedAfter);
+    for (const entry of settled) {
+      if (entry.status === 'rejected') {
+        result.errors.push({
+          channelId: 'unknown',
+          error: entry.reason?.message || String(entry.reason),
+        });
+        continue;
+      }
 
-        // Enrich videos with channel metadata
-        const enrichedVideos = this._enrichVideosWithChannelData(filteredVideos, channel);
+      const { channel, feedResult } = entry.value;
 
-        result.videos.push(...enrichedVideos);
-        result.totalVideos += enrichedVideos.length;
-        result.channelsCovered++;
-      } catch (error) {
+      if (feedResult.error) {
         result.errors.push({
           channelId: channel.channel_id,
-          error: error.message,
+          error: feedResult.error,
         });
+        continue;
       }
+
+      // Filter videos by publication date if specified
+      const filteredVideos = this._filterVideosByDate(feedResult.videos, publishedAfter);
+
+      // Enrich videos with channel metadata
+      const enrichedVideos = this._enrichVideosWithChannelData(filteredVideos, channel);
+
+      result.videos.push(...enrichedVideos);
+      result.totalVideos += enrichedVideos.length;
+      result.channelsCovered++;
     }
 
     return result;

@@ -1,8 +1,59 @@
 # Active Context
 
-**Date:** 2026-03-14
+**Date:** 2026-03-15
 
-## Current Focus: Search Bandwidth Optimization (TASK011) — Completed
+## Current Focus: Video Pipeline Overhaul (TASK012) — Completed
+
+## Session Summary (2026-03-15)
+
+### TASK012: Video Pipeline Overhaul
+
+**Problem:** Two separate video pipeline implementations (RSS-based in
+`tools/video-pipeline/` and channel-first in `packages/api/src/services/`) with
+divergent logic, scorer bugs (agadmator wrongly penalised, `vs` pattern too
+broad), missing channels, and no way to do a full historical rebuild or
+zero-cost re-scoring.
+
+**Solution:** Unified into a single pipeline with three modes.
+
+**Phase 1 — Scorer Fixes:**
+
+- Removed `'vs'` from gameAnalysisTerms; added targeted player-vs-player regex
+  (only penalizes `"Magnus vs Hikaru"`, not `"Sicilian vs French"`)
+- Removed hard-coded agadmator -50 penalty
+- Moved agadmator from entertainmentChannels to goodEducators (+100 net swing)
+- Removed chess24 from premiumEducators (stays in entertainmentChannels)
+- Added chessbrah, ben finegold to goodEducators
+- Removed duplicate chess.com from goodEducators
+
+**Phase 2 — Config + Filter + Parallel RSS:**
+
+- Added 5 channels to config: John Bartholomew, ChessExplained, PowerPlayChess
+  (Daniel King), Remote Chess Academy, TheChessWebsite
+- Removed `rapid` from candidate-filter exclusions
+- Added highlights exclusion pattern
+- Parallelized RSS fetching with Promise.allSettled
+
+**Phase 3 — New Modes:**
+
+- Created `channel-discovery.js` (YouTube API full-catalogue with UC→UU
+  conversion, pagination, rate limiting)
+- Refactored `index.js` into mode-based dispatch: incremental/full/rematch
+- Added npm scripts: `pipeline`, `pipeline:full`, `pipeline:rematch`
+- Duration guard for integer seconds (supports rematch mode)
+
+**Phase 4 — Cleanup:**
+
+- Deleted `channel-first-video-pipeline.js`, `channel-first-indexer.js`, and
+  orphaned test
+- Removed `videos:channel-first` script
+- Updated all documentation (CLAUDE.md, README files, agent workflows, memory
+  bank, project overview)
+
+**Tests:** 626 passing, 10 new test cases for scorer, 7 for channel-discovery, 4
+for pipeline-modes.
+
+---
 
 ## Session Summary (2026-03-14)
 

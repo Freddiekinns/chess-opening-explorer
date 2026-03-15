@@ -15,9 +15,12 @@
   from CDN, not origin lambdas.
 - **Popularity Stats:** The system successfully processes Lichess game data to
   calculate and display opening popularity scores.
-- **Video Pipeline:** The "Channel-First" data pipeline is complete and
-  operational. It has successfully indexed over 1,000 videos from trusted
-  channels.
+- **Video Pipeline:** Unified pipeline with three modes: `incremental` (RSS,
+  default), `full` (YouTube API catalogue rebuild), and `rematch` (re-score
+  only, zero API cost). 16 trusted channels configured. Scorer fixes: agadmator
+  promoted to goodEducator, chess24 demoted to entertainment, targeted
+  player-vs-player penalty replaces broad "vs" penalty. Parallel RSS fetching.
+  Over 1,000 videos indexed.
 - **Course Recommendations:** The backend data and API endpoint\n
   (`/api/courses/:fen`) for course recommendations are complete. courses.json\n
   contains 6,100+ study chapters across 2,255 FENs from 440+ Lichess studies,\n

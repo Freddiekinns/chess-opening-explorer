@@ -63,7 +63,10 @@ npm run enrich               # LLM enrichment
 npm run course:enrich        # Enrich course data
 npm run course:discover      # Find popular Lichess studies
 npm run course:import        # Import studies into courses.json
-npm run pipeline:complete    # Complete video pipeline
+npm run pipeline             # Incremental video pipeline (RSS, default)
+npm run pipeline:full        # Full catalogue rebuild (YouTube API)
+npm run pipeline:rematch     # Re-score existing videos (zero API cost)
+npm run pipeline:complete    # Complete video pipeline (legacy)
 npm run pipeline:discover    # Discover videos from RSS feeds
 npm run pipeline:match       # Match videos to openings
 
@@ -130,7 +133,10 @@ npm run course:integrate     # Integrate course data into main dataset
 **Video Pipeline:**
 
 ```bash
-npm run pipeline:complete    # Full pipeline (discover → filter → enrich → match)
+npm run pipeline             # Incremental pipeline (RSS discovery, default)
+npm run pipeline:full        # Full catalogue rebuild (YouTube API, requires key)
+npm run pipeline:rematch     # Re-score existing videos (zero API cost)
+npm run pipeline:complete    # Legacy complete pipeline
 npm run pipeline:discover    # Step 1: Discover videos from RSS feeds
 npm run pipeline:prefilter   # Step 2: Pre-filter candidates
 npm run pipeline:enrich      # Step 3: Enrich video metadata
@@ -174,10 +180,10 @@ cd tools/analysis && python run_pipeline.py
 
 ## Gotchas
 
-- **`tools/production/` scripts**: `enrich`, `course:enrich`,
-  `videos:channel-first` etc. reference `tools/production/` in `package.json`,
-  but this directory may not exist. Actual enrichment logic lives in
-  `tools/llm-enrichment/`. Verify before running these scripts.
+- **`tools/production/` scripts**: `enrich`, `course:enrich` etc. reference
+  `tools/production/` in `package.json`, but this directory may not exist.
+  Actual enrichment logic lives in `tools/llm-enrichment/`. Verify before
+  running these scripts.
 - **CSS Modules migration ongoing**: Legacy global styles still in
   `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when
   touching a component.

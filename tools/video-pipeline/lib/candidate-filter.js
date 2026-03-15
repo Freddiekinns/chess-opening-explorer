@@ -20,10 +20,13 @@ class PreFilterVideos {
       sports: /(?:nfl|nba|soccer|football|baseball|basketball|hockey|tennis|golf|mma|ufc)/i,
 
       // Non-educational content types
-      casual: /(?:blitz|bullet|rapid|casual|just\s+playing|random|fun)/i,
+      casual: /(?:blitz|bullet|casual|just\s+playing|random|fun)/i,
 
       // Reaction and commentary content
       reactions: /(?:react|reaction|reacting|commentary|responds?|watching)/i,
+
+      // Highlights and result-focused content
+      highlights: /(?:wins?\s+in\s+\d+\s+moves?|loses?\s+in\s+\d+\s+moves?|match\s+highlights)/i,
 
       // Podcasts and interviews
       podcasts: /(?:podcast|interview|talks?|discussion|chat)/i,

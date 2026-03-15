@@ -618,7 +618,6 @@ class VideoMatcher {
       'insane',
       'crazy',
       'epic',
-      'vs',
       'beats',
       'wins',
       'loses',
@@ -652,9 +651,11 @@ class VideoMatcher {
       score -= 60; // Even heavier penalty for game analysis
     }
 
-    // 3. Specific agadmator penalty (since he's primarily game analysis)
-    if ((video.channel_title || '').toLowerCase().includes('agadmator')) {
-      score -= 50; // Much stronger penalty for agadmator since it's mostly game analysis
+    // 3. Player-vs-player pattern penalty (targeted replacement for generic 'vs')
+    const rawTitle = video.title || '';
+    const playerVsPattern = /\b[A-Z][a-z]+\s+vs\.?\s+[A-Z][a-z]+/;
+    if (playerVsPattern.test(rawTitle)) {
+      score -= 60;
     }
 
     // 4. Penalize movie/documentary content
@@ -676,7 +677,6 @@ class VideoMatcher {
       'chess network',
       'john bartholomew',
       'christof sielecki',
-      'chess24',
       'chess club and scholastic center',
     ];
 
@@ -687,11 +687,12 @@ class VideoMatcher {
       'powerplaychess',
       'remote chess academy',
       'thechesswebsite',
-      'chess.com',
-      'iichess',
+      'chessbrah',
+      'ben finegold',
+      'agadmator',
     ];
 
-    const entertainmentChannels = ['agadmator', 'chess24', 'world chess', 'fide chess'];
+    const entertainmentChannels = ['chess24', 'world chess', 'fide chess'];
 
     const channelTitle = (video.channel_title || '').toLowerCase();
 
@@ -813,7 +814,8 @@ class VideoMatcher {
         title: video.title,
         description: video.description,
         channel_title: video.channelTitle,
-        duration: this.parseDuration(video.duration),
+        duration:
+          typeof video.duration === 'number' ? video.duration : this.parseDuration(video.duration),
         view_count: video.statistics?.viewCount ? parseInt(video.statistics.viewCount) : 0,
         published_at: video.publishedAt,
         thumbnail_url: video.thumbnails?.default?.url,

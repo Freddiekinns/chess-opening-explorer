@@ -54,10 +54,13 @@ guidance; advanced players for quick reference.
 
 All styles in `packages/web/src/styles/simplified.css`. No new CSS files - ever.
 
-### AD-004: Channel-First Video Pipeline
+### AD-004: Unified Video Pipeline
 
-Index videos from trusted channels first, then match to openings. Saves 99%+ API
-quota.
+Single pipeline with three modes: incremental (RSS feeds, free), full (YouTube
+API catalogue rebuild), and rematch (re-score existing, zero API cost). 16
+trusted channels configured in `config/youtube_channels.json`. RSS discovery
+parallelized with `Promise.allSettled`. Scorer uses channel tiers (premium +40,
+good +20, entertainment -30) and targeted player-vs-player penalty.
 
 ### AD-005: Conservative AI Policy
 
@@ -108,7 +111,7 @@ chess-opening-explorer/
 
 ```
 Lichess API → Python Analysis → popularity-stats.json
-YouTube API → Channel-First Pipeline → video-index.json
+YouTube RSS/API → Video Pipeline → video-index.json
 Gemini API → LLM Enrichment → openings.json (enhanced)
 Lichess Study API → Course Discovery Pipeline → courses.json
 All JSON → Frontend (static, pre-generated)

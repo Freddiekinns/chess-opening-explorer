@@ -131,8 +131,11 @@ Lichess API → Python Analysis → Aggregated Stats → Frontend
 ### 3. Video Pipeline
 
 ```
-YouTube Search → Video Discovery → Matching Algorithm → Video Index → Frontend
+RSS Feeds / YouTube API → Discovery → Pre-filter → Enrich → Match → Video Index → Frontend
 ```
+
+Three modes: `incremental` (RSS, default), `full` (YouTube API catalogue),
+`rematch` (re-score only, zero API cost).
 
 ### 4. Course Discovery Pipeline
 
@@ -172,7 +175,9 @@ The project uses npm scripts for common tasks:
 - `npm run course:discover` - Find popular Lichess studies (500+ likes)
 - `npm run course:import` - Import curated studies into courses.json
 - `npm run enrich` - Run LLM enrichment for opening descriptions
-- `npm run pipeline:complete` - Full video pipeline (discover → match)
+- `npm run pipeline` - Incremental video pipeline (RSS discovery)
+- `npm run pipeline:full` - Full catalogue rebuild (YouTube API)
+- `npm run pipeline:rematch` - Re-score existing videos (zero API cost)
 
 ## Key Design Decisions
 

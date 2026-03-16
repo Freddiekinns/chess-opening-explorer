@@ -1,8 +1,98 @@
 # Active Context
 
-**Date:** 2026-03-14
+**Date:** 2026-03-15
 
-## Current Focus: Search Bandwidth Optimization (TASK011) — Completed
+## Current Focus: Video Pipeline Overindexing Fix — Completed
+
+## Session Summary (2026-03-15, Part 2)
+
+### Fix: Video Pipeline Overindexing
+
+**Problem:** Spot-checking after TASK012 full pipeline run revealed the matcher
+was too generous — videos appeared on wrong openings. Three root causes:
+
+1. **Path mismatch** — `StaticFileGenerator` received a string instead of
+   options object, writing to `tools/public/api/openings/` instead of
+   `public/api/openings/` where consolidation reads.
+2. **Toxic short aliases** — `parseAliases()` split on `,`/`;`/`/`, creating
+   single-word fragments like `"Accepted"` that matched far too many videos.
+3. **Content-only false positives** — Videos whose descriptions mentioned many
+   openings got matched via content (e.g., Wade Gambit video matched Latvian
+   Gambit via description mention + educator bonus).
+
+**Fixes applied:**
+
+- **Fix 1:** `regenerateStaticFiles()` now passes `{ databasePath, outputDir }`
+  object to `StaticFileGenerator`
+- **Fix 2:** Alias splitting requires 2+ words per fragment
+- **Fix 3:** New `titleMentionsDifferentOpening()` rejects content-only matches
+  where title names a different gambit/defense/attack
+- **Fix 4:** Raised `minMatchScore` default from 40 to 60
+- **Fix 5:** Sub-variation penalty (-15) when variation-specific words absent
+  from title
+- **Backfill:** Created `scripts/backfill-views.js` to restore view counts and
+  thumbnails from YouTube API after rematch (which loses this metadata)
+
+**Also discovered:** Two copies of `video-index.json` exist — pipeline writes to
+`api/data/` but API reads from `packages/api/src/data/`. Must copy after
+regeneration.
+
+**Tests:** 633 passing (7 new matcher tests), all existing tests green.
+
+---
+
+## Previous: Video Pipeline Overhaul (TASK012) — Completed
+
+## Session Summary (2026-03-15, Part 1)
+
+### TASK012: Video Pipeline Overhaul
+
+**Problem:** Two separate video pipeline implementations (RSS-based in
+`tools/video-pipeline/` and channel-first in `packages/api/src/services/`) with
+divergent logic, scorer bugs (agadmator wrongly penalised, `vs` pattern too
+broad), missing channels, and no way to do a full historical rebuild or
+zero-cost re-scoring.
+
+**Solution:** Unified into a single pipeline with three modes.
+
+**Phase 1 — Scorer Fixes:**
+
+- Removed `'vs'` from gameAnalysisTerms; added targeted player-vs-player regex
+  (only penalizes `"Magnus vs Hikaru"`, not `"Sicilian vs French"`)
+- Removed hard-coded agadmator -50 penalty
+- Moved agadmator from entertainmentChannels to goodEducators (+100 net swing)
+- Removed chess24 from premiumEducators (stays in entertainmentChannels)
+- Added chessbrah, ben finegold to goodEducators
+- Removed duplicate chess.com from goodEducators
+
+**Phase 2 — Config + Filter + Parallel RSS:**
+
+- Added 5 channels to config: John Bartholomew, ChessExplained, PowerPlayChess
+  (Daniel King), Remote Chess Academy, TheChessWebsite
+- Removed `rapid` from candidate-filter exclusions
+- Added highlights exclusion pattern
+- Parallelized RSS fetching with Promise.allSettled
+
+**Phase 3 — New Modes:**
+
+- Created `channel-discovery.js` (YouTube API full-catalogue with UC→UU
+  conversion, pagination, rate limiting)
+- Refactored `index.js` into mode-based dispatch: incremental/full/rematch
+- Added npm scripts: `pipeline`, `pipeline:full`, `pipeline:rematch`
+- Duration guard for integer seconds (supports rematch mode)
+
+**Phase 4 — Cleanup:**
+
+- Deleted `channel-first-video-pipeline.js`, `channel-first-indexer.js`, and
+  orphaned test
+- Removed `videos:channel-first` script
+- Updated all documentation (CLAUDE.md, README files, agent workflows, memory
+  bank, project overview)
+
+**Tests:** 626 passing, 10 new test cases for scorer, 7 for channel-discovery, 4
+for pipeline-modes.
+
+---
 
 ## Session Summary (2026-03-14)
 

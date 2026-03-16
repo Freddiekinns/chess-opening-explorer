@@ -15,19 +15,35 @@ power the application.
 
 **Purpose**: Discover, enrich, and match YouTube chess videos to openings
 
-**Key Steps**:
+**Modes**:
 
-- `1-discover-videos-rss.js` - Fetch videos from YouTube channels via RSS
-- `2-prefilter-candidates.js` - Filter for relevant chess content
-- `3-enrich-videos.js` - Add metadata using Vertex AI
-- `video-matcher.js` - Match videos to specific openings
+- `incremental` (default) — RSS discovery for new videos only
+- `full` — YouTube API full-catalogue rebuild from all channel history
+- `rematch` — Re-score existing videos with zero API cost
+
+**Key Components**:
+
+- `index.js` - Mode-based orchestrator (`--mode=incremental|full|rematch`)
+- `lib/rss-discovery.js` - RSS feed discovery (parallel fetching)
+- `lib/channel-discovery.js` - YouTube API full-catalogue discovery
+- `lib/candidate-filter.js` - Pre-filtering for educational content
+- `lib/video-enricher.js` - YouTube API metadata enrichment
+- `lib/video-matcher.js` - Matching algorithm and weighted scorer
+- `scripts/backfill-views.js` - Restore view counts/thumbnails from YouTube API
+
+**Channel Config**: `config/youtube_channels.json` (16 trusted channels)
 
 **Database**: SQLite (`data/videos.sqlite`)
+
+**Data path gotcha**: Pipeline writes `video-index.json` to `api/data/` but the
+API reads from `packages/api/src/data/`. Must copy after regeneration. Rematch
+mode loses `view_count`/`thumbnail_url` — run `backfill-views.js` after.
 
 **API Limits**:
 
 - YouTube API: 10,000 quota units/day
-- Vertex AI: Rate limit varies by project
+- RSS feeds: Free, no limits
+- Rematch mode: Zero API cost
 
 ### 2. Course Discovery (`tools/course-discovery/`)
 

@@ -47,7 +47,7 @@ class VideoMatcher {
             const names = value
               .split(/[;\/,]/)
               .map((name) => name.trim())
-              .filter((name) => name.length > 3);
+              .filter((name) => name.length > 3 && name.split(/\s+/).length >= 2);
             aliases.push(...names);
           }
         });
@@ -451,6 +451,33 @@ class VideoMatcher {
   }
 
   /**
+   * Check if video title mentions a specific opening that differs from target opening.
+   * E.g., title "The Wade Gambit" against opening "Latvian Gambit" → reject.
+   */
+  titleMentionsDifferentOpening(title, openingName) {
+    const openingLower = openingName.toLowerCase();
+    const openingFamily = openingLower.split(':')[0].trim();
+
+    // Extract "[Name] Gambit/Defense/Attack" patterns from title
+    const patterns = [
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+gambit\b/gi,
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+defen[sc]e\b/gi,
+      /\b([\w'][\w']*(?:\s+[\w'][\w']*){0,2})\s+attack\b/gi,
+    ];
+
+    for (const pattern of patterns) {
+      let match;
+      while ((match = pattern.exec(title)) !== null) {
+        const titleOpening = match[0].toLowerCase();
+        if (!openingLower.includes(titleOpening) && !titleOpening.includes(openingFamily)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
    * Calculate weighted match score for video-opening pair
    */
   calculateMatchScore(video, opening) {
@@ -610,6 +637,28 @@ class VideoMatcher {
     else if (matchType === 'abbreviation') score += 35;
     else if (matchType === 'eco') score += 20;
 
+    // Reject content-only matches where title clearly names a DIFFERENT opening
+    if (matchType === 'exact') {
+      if (this.titleMentionsDifferentOpening(title, openingName)) {
+        return 0;
+      }
+    }
+
+    // Sub-variation penalty: generic family video is less relevant to specific sub-variation
+    if ((matchType === 'family' || matchType === 'exact') && openingName.includes(':')) {
+      const variationPart = openingName.split(':').slice(1).join(':').toLowerCase().trim();
+      const variationWords = variationPart
+        .split(/[\s,]+/)
+        .filter(
+          (w) =>
+            w.length > 5 &&
+            !['variation', 'defense', 'defence', 'attack', 'gambit', 'system', 'line'].includes(w)
+        );
+      if (variationWords.length > 0 && !variationWords.some((w) => title.includes(w))) {
+        score -= 15;
+      }
+    }
+
     // 2. Penalize generic game analysis (major penalty) - EXPANDED
     const gameAnalysisTerms = [
       'brilliant',
@@ -618,7 +667,6 @@ class VideoMatcher {
       'insane',
       'crazy',
       'epic',
-      'vs',
       'beats',
       'wins',
       'loses',
@@ -652,9 +700,11 @@ class VideoMatcher {
       score -= 60; // Even heavier penalty for game analysis
     }
 
-    // 3. Specific agadmator penalty (since he's primarily game analysis)
-    if ((video.channel_title || '').toLowerCase().includes('agadmator')) {
-      score -= 50; // Much stronger penalty for agadmator since it's mostly game analysis
+    // 3. Player-vs-player pattern penalty (targeted replacement for generic 'vs')
+    const rawTitle = video.title || '';
+    const playerVsPattern = /\b[A-Z][a-z]+\s+vs\.?\s+[A-Z][a-z]+/;
+    if (playerVsPattern.test(rawTitle)) {
+      score -= 60;
     }
 
     // 4. Penalize movie/documentary content
@@ -676,7 +726,6 @@ class VideoMatcher {
       'chess network',
       'john bartholomew',
       'christof sielecki',
-      'chess24',
       'chess club and scholastic center',
     ];
 
@@ -687,11 +736,12 @@ class VideoMatcher {
       'powerplaychess',
       'remote chess academy',
       'thechesswebsite',
-      'chess.com',
-      'iichess',
+      'chessbrah',
+      'ben finegold',
+      'agadmator',
     ];
 
-    const entertainmentChannels = ['agadmator', 'chess24', 'world chess', 'fide chess'];
+    const entertainmentChannels = ['chess24', 'world chess', 'fide chess'];
 
     const channelTitle = (video.channel_title || '').toLowerCase();
 
@@ -813,7 +863,8 @@ class VideoMatcher {
         title: video.title,
         description: video.description,
         channel_title: video.channelTitle,
-        duration: this.parseDuration(video.duration),
+        duration:
+          typeof video.duration === 'number' ? video.duration : this.parseDuration(video.duration),
         view_count: video.statistics?.viewCount ? parseInt(video.statistics.viewCount) : 0,
         published_at: video.publishedAt,
         thumbnail_url: video.thumbnails?.default?.url,

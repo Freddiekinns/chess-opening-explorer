@@ -5,196 +5,391 @@ const RSSVideoDiscovery = require('./lib/rss-discovery');
 const PreFilterVideos = require('./lib/candidate-filter');
 const VideoEnrichment = require('./lib/video-enricher');
 const VideoMatcher = require('./lib/video-matcher');
+const ChannelDiscovery = require('./lib/channel-discovery');
 const DatabaseSchema = require('./database/schema-manager');
 const StaticFileGenerator = require('./database/static-file-generator');
 const { consolidateVideoIndex } = require('../../scripts/consolidate-video-index');
 
 /**
- * Scalable Incremental Video Pipeline
+ * Video Pipeline — Mode-based dispatch
  *
- * 1. Discover videos via RSS (Fast, Free)
- * 2. Deduplicate against existing DB (Idempotent)
- * 3. Pre-filter candidates (Quality Gate)
- * 4. Enrich new candidates via YouTube API (Costly, but only for new videos)
- * 5. Match and Save (Incremental)
- * 6. Regenerate Static JSON (for Frontend)
- * 7. Consolidate Video Index (Legacy/Production Support)
+ * Modes:
+ *   incremental (default) — RSS discovery for new videos only
+ *   full                  — YouTube API full-catalogue rebuild
+ *   rematch               — Re-score all existing videos (zero API cost)
  */
-async function runIncrementalPipeline() {
+
+const DB_PATH = path.join(__dirname, '../data/videos.sqlite');
+
+/**
+ * Ensure DB schema and openings are populated
+ */
+async function initDatabase(db) {
+  await db.initializeSchema();
+
+  const openingCount = await new Promise((resolve, reject) => {
+    db.db.get('SELECT COUNT(*) as count FROM openings', (err, row) => {
+      if (err) reject(err);
+      else resolve(row.count);
+    });
+  });
+
+  if (openingCount === 0) {
+    console.log('   ⚠️  Openings table is empty. Populating from ECO files...');
+    const ecoDir = path.join(__dirname, '../../api/data/eco');
+    if (!fs.existsSync(ecoDir)) {
+      throw new Error(`ECO directory not found at ${ecoDir}`);
+    }
+
+    let totalOpenings = 0;
+    await new Promise((resolve, reject) => {
+      db.db.run('BEGIN TRANSACTION', (err) => (err ? reject(err) : resolve()));
+    });
+
+    try {
+      for (const ecoFile of ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.json']) {
+        const ecoPath = path.join(ecoDir, ecoFile);
+        if (fs.existsSync(ecoPath)) {
+          const ecoData = JSON.parse(fs.readFileSync(ecoPath, 'utf8'));
+          for (const [fen, opening] of Object.entries(ecoData)) {
+            await db.insertOpening({
+              fen,
+              name: opening.name,
+              eco: opening.eco,
+              aliases: opening.aliases || [],
+            });
+            totalOpenings++;
+          }
+        }
+      }
+      await new Promise((resolve, reject) => {
+        db.db.run('COMMIT', (err) => (err ? reject(err) : resolve()));
+      });
+      console.log(`   ✅ Populated ${totalOpenings} openings.`);
+    } catch (error) {
+      db.db.run('ROLLBACK');
+      throw error;
+    }
+  } else {
+    console.log(`   ✅ Openings table has ${openingCount} entries.`);
+  }
+}
+
+/**
+ * Get existing video IDs for deduplication
+ */
+async function getExistingVideoIds(db) {
+  return new Promise((resolve, reject) => {
+    db.db.all('SELECT id FROM videos', (err, rows) => {
+      if (err) reject(err);
+      else resolve(new Set(rows.map((row) => row.id)));
+    });
+  });
+}
+
+/**
+ * Regenerate static files and consolidate video index
+ */
+async function regenerateStaticFiles(dbPath) {
+  console.log('\n📄 Regenerating Static JSON Files...');
+  const outputDir = path.join(__dirname, '../../public/api/openings');
+  const staticGenerator = new StaticFileGenerator({
+    databasePath: dbPath,
+    outputDir: outputDir,
+  });
+  const staticResult = await staticGenerator.generateAllStaticFiles();
+  console.log('   ✅ Static files generated:', staticResult);
+
+  console.log('\n📦 Consolidating Video Index...');
+  const publicApiDir = path.join(__dirname, '../../public/api/openings');
+  const apiDataDir = path.join(__dirname, '../../api/data');
+  await consolidateVideoIndex(publicApiDir, apiDataDir);
+  console.log('   ✅ Video index consolidated.');
+
+  // Copy to API src/data where the dev server reads from
+  const srcIndex = path.join(apiDataDir, 'video-index.json');
+  const destIndex = path.join(__dirname, '../../packages/api/src/data/video-index.json');
+  fs.copyFileSync(srcIndex, destIndex);
+  console.log('   ✅ Copied video-index.json to packages/api/src/data/');
+}
+
+// ─── Mode: Incremental (RSS) ─────────────────────────────────
+
+async function runIncremental(db) {
   console.log('🚀 Starting Incremental Video Pipeline');
   console.log('======================================');
 
-  const dbPath = path.join(__dirname, '../data/videos.sqlite');
+  await initDatabase(db);
+
+  // Step 1: Get existing video IDs for deduplication
+  console.log('   Loading existing video IDs...');
+  const existingVideoIds = await getExistingVideoIds(db);
+  console.log(`   Found ${existingVideoIds.size} existing videos in database.`);
+
+  // Step 2: Discover videos via RSS
+  console.log('\n🔍 Step 2: Discovering videos via RSS...');
+  const rssDiscovery = new RSSVideoDiscovery();
+  const discoveryResult = await rssDiscovery.discoverNewVideos();
+  const allDiscoveredVideos = discoveryResult.videos;
+  console.log(`   Found ${allDiscoveredVideos.length} videos from RSS feeds.`);
+
+  // Step 3: Deduplicate
+  console.log('\n♻️  Step 3: Deduplicating...');
+  const newVideos = allDiscoveredVideos.filter((v) => !existingVideoIds.has(v.id));
+  console.log(`   Found ${newVideos.length} NEW videos to process.`);
+  console.log(`   Skipped ${allDiscoveredVideos.length - newVideos.length} existing videos.`);
+
+  if (newVideos.length === 0) {
+    console.log('\n✅ No new videos to process. Pipeline complete.');
+    return;
+  }
+
+  // Step 4: Pre-filter
+  console.log('\n🚫 Step 4: Pre-Filtering New Videos...');
+  const preFilter = new PreFilterVideos();
+  const filterResult = preFilter.filterCandidates(newVideos);
+  const candidates = filterResult.candidates;
+
+  console.log(`   Passed: ${candidates.length} / ${newVideos.length} videos`);
+  console.log(`   Rejected: ${filterResult.rejectedCount} videos`);
+
+  if (candidates.length === 0) {
+    console.log('\n✅ No candidates passed pre-filter. Pipeline complete.');
+    return;
+  }
+
+  // Step 5: Enrich
+  console.log('\n⚡ Step 5: Enriching Candidates (YouTube API)...');
+  const apiKey = process.env.YOUTUBE_API_KEY || process.env.GOOGLE_AI_API_KEY;
+  if (!apiKey) {
+    console.warn('⚠️  Warning: No API Key found. Enrichment will likely fail.');
+  }
+  const enrichment = new VideoEnrichment(apiKey);
+  const enrichedVideos = await enrichment.batchEnrichVideos(candidates);
+  const validEnrichedVideos = enrichedVideos.filter((v) => !v.enrichmentError);
+  console.log(`   Successfully enriched ${validEnrichedVideos.length} videos.`);
+
+  if (validEnrichedVideos.length === 0) {
+    console.log('\n✅ No videos successfully enriched. Pipeline complete.');
+    return;
+  }
+
+  // Step 6: Match and Save (Incremental)
+  console.log('\n🎯 Step 6: Matching and Saving...');
+  const matcher = new VideoMatcher(DB_PATH);
+  const matchResults = await matcher.runMatchingWithVideos(validEnrichedVideos, {
+    clearDb: false,
+  });
+
+  console.log(`\n🎉 Incremental Update Complete!`);
+  console.log(`   Added ${matchResults.uniqueVideos} new videos.`);
+  console.log(`   Created ${matchResults.finalMatches} new video-opening matches.`);
+
+  // Step 7: Regenerate
+  await regenerateStaticFiles(DB_PATH);
+}
+
+// ─── Mode: Full (YouTube API catalogue) ──────────────────────
+
+async function runFull(db) {
+  console.log('🚀 Starting Full Catalogue Video Pipeline');
+  console.log('==========================================');
+
+  const apiKey = process.env.YOUTUBE_API_KEY || process.env.GOOGLE_AI_API_KEY;
+  if (!apiKey) {
+    console.error('❌ YOUTUBE_API_KEY is required for full mode.');
+    process.exit(1);
+  }
+
+  await initDatabase(db);
+
+  // Step 1: Get existing video IDs for deduplication
+  console.log('\n📊 Loading existing video IDs...');
+  const existingVideoIds = await getExistingVideoIds(db);
+  console.log(`   Found ${existingVideoIds.size} existing videos in database.`);
+
+  // Step 2: Discover ALL videos via YouTube API
+  console.log('\n🔍 Discovering full catalogue via YouTube API...');
+  const channelDiscovery = new ChannelDiscovery(apiKey);
+  const discoveryResult = await channelDiscovery.discoverAllVideos();
+  console.log(
+    `   Discovered ${discoveryResult.totalVideos} total videos from ${discoveryResult.channelsCovered} channels.`
+  );
+
+  if (discoveryResult.errors.length > 0) {
+    console.warn(`   ⚠️  ${discoveryResult.errors.length} channel(s) had errors.`);
+  }
+
+  // Step 3: Deduplicate — only enrich new videos
+  const newVideos = discoveryResult.videos.filter((v) => !existingVideoIds.has(v.id));
+  console.log(
+    `\n♻️  ${newVideos.length} new videos to enrich (${existingVideoIds.size} already in DB).`
+  );
+
+  // Step 4: Pre-filter new candidates
+  console.log('\n🚫 Pre-Filtering new candidates...');
+  const preFilter = new PreFilterVideos();
+  const filterResult = preFilter.filterCandidates(newVideos);
+  const candidates = filterResult.candidates;
+  console.log(`   Passed: ${candidates.length} / ${newVideos.length} videos`);
+
+  // Step 5: Enrich new candidates via YouTube API
+  let validEnrichedVideos = [];
+  if (candidates.length > 0) {
+    console.log('\n⚡ Enriching new candidates (YouTube API)...');
+    const enrichment = new VideoEnrichment(apiKey);
+    const enrichedVideos = await enrichment.batchEnrichVideos(candidates);
+    validEnrichedVideos = enrichedVideos.filter((v) => !v.enrichmentError);
+    console.log(`   Successfully enriched ${validEnrichedVideos.length} videos.`);
+  }
+
+  // Step 6: Re-match ALL videos (existing + new enriched)
+  console.log('\n🎯 Re-matching ALL videos...');
+
+  // Load all existing videos from DB
+  const existingVideos = await new Promise((resolve, reject) => {
+    db.db.all(
+      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url FROM videos',
+      (err, rows) => {
+        if (err) reject(err);
+        else resolve(rows);
+      }
+    );
+  });
+
+  // Merge existing videos (already enriched) with newly enriched
+  const allVideosForMatching = [
+    ...existingVideos.map((v) => ({
+      id: v.id,
+      title: v.title,
+      description: '',
+      channelId: v.channelId,
+      channelTitle: v.channelTitle,
+      duration: v.duration,
+      statistics: { viewCount: String(v.view_count || 0) },
+      publishedAt: v.publishedAt,
+      thumbnails: { default: { url: v.thumbnail_url } },
+      tags: [],
+    })),
+    ...validEnrichedVideos,
+  ];
+
+  console.log(`   Total videos for matching: ${allVideosForMatching.length}`);
+
+  const matcher = new VideoMatcher(DB_PATH);
+  const matchResults = await matcher.runMatchingWithVideos(allVideosForMatching, {
+    clearDb: true,
+  });
+
+  console.log(`\n🎉 Full Catalogue Pipeline Complete!`);
+  console.log(`   ${matchResults.uniqueVideos} unique videos matched.`);
+  console.log(`   ${matchResults.finalMatches} video-opening matches created.`);
+  console.log(`   ${matchResults.openingsWithVideos} openings with videos.`);
+
+  // Step 7: Regenerate
+  await regenerateStaticFiles(DB_PATH);
+}
+
+// ─── Mode: Rematch (zero API cost) ──────────────────────────
+
+async function runRematch(db) {
+  console.log('🚀 Starting Rematch (Re-scoring) Pipeline');
+  console.log('==========================================');
+  console.log('   ℹ️  Zero API cost — re-scores existing videos only.');
+
+  await initDatabase(db);
+
+  // Step 1: Load ALL videos from database
+  console.log('\n📊 Loading all videos from database...');
+  const videos = await new Promise((resolve, reject) => {
+    db.db.all(
+      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url FROM videos',
+      (err, rows) => {
+        if (err) reject(err);
+        else resolve(rows);
+      }
+    );
+  });
+
+  if (videos.length === 0) {
+    console.log('   ⚠️  No videos in database. Run incremental or full mode first.');
+    return;
+  }
+
+  console.log(`   Found ${videos.length} videos to re-score.`);
+
+  // Step 2: Clear only opening_videos table (keep videos intact)
+  console.log('\n🗑️  Clearing opening_videos table only...');
+  await new Promise((resolve, reject) => {
+    db.db.run('DELETE FROM opening_videos', (err) => {
+      if (err) reject(err);
+      else resolve();
+    });
+  });
+  console.log('   ✅ opening_videos cleared.');
+
+  // Step 3: Re-match all videos with current scorer
+  console.log('\n🎯 Re-matching all videos with updated scorer...');
+
+  // Convert DB rows to format expected by runMatchingWithVideos
+  const videosForMatching = videos.map((v) => ({
+    id: v.id,
+    title: v.title,
+    description: '',
+    channelId: v.channelId,
+    channelTitle: v.channelTitle,
+    duration: v.duration, // Already integer seconds from DB
+    statistics: { viewCount: String(v.view_count || 0) },
+    publishedAt: v.publishedAt,
+    thumbnails: { default: { url: v.thumbnail_url } },
+    tags: [],
+  }));
+
+  const matcher = new VideoMatcher(DB_PATH);
+  const matchResults = await matcher.runMatchingWithVideos(videosForMatching, {
+    clearDb: false,
+  });
+
+  console.log(`\n🎉 Rematch Complete!`);
+  console.log(`   ${matchResults.uniqueVideos} unique videos matched.`);
+  console.log(`   ${matchResults.finalMatches} video-opening matches created.`);
+  console.log(`   ${matchResults.openingsWithVideos} openings with videos.`);
+
+  // Step 4: Regenerate
+  await regenerateStaticFiles(DB_PATH);
+}
+
+// ─── Main ────────────────────────────────────────────────────
+
+async function main() {
+  // Parse --mode= from process.argv
+  const modeArg = process.argv.find((arg) => arg.startsWith('--mode='));
+  const mode = modeArg ? modeArg.split('=')[1] : 'incremental';
+
+  if (!['incremental', 'full', 'rematch'].includes(mode)) {
+    console.error(`❌ Unknown mode: ${mode}. Use: incremental, full, or rematch.`);
+    process.exit(1);
+  }
+
+  console.log(`📋 Pipeline mode: ${mode}`);
 
   // Ensure data directory exists
-  const dataDir = path.dirname(dbPath);
+  const dataDir = path.dirname(DB_PATH);
   if (!fs.existsSync(dataDir)) {
     console.log(`📁 Creating data directory: ${dataDir}`);
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
-  const db = new DatabaseSchema(dbPath);
+  const db = new DatabaseSchema(DB_PATH);
 
   try {
-    // Step 0: Ensure DB schema exists
-    await db.initializeSchema();
-
-    // Step 0.5: Check and Populate Openings
-    const openingCount = await new Promise((resolve, reject) => {
-      db.db.get('SELECT COUNT(*) as count FROM openings', (err, row) => {
-        if (err) reject(err);
-        else resolve(row.count);
-      });
-    });
-
-    if (openingCount === 0) {
-      console.log('   ⚠️  Openings table is empty. Populating from ECO files...');
-      const ecoDir = path.join(__dirname, '../../api/data/eco');
-      if (fs.existsSync(ecoDir)) {
-        let totalOpenings = 0;
-
-        // Start transaction
-        await new Promise((resolve, reject) => {
-          db.db.run('BEGIN TRANSACTION', (err) => {
-            if (err) reject(err);
-            else resolve();
-          });
-        });
-
-        try {
-          for (const ecoFile of ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.json']) {
-            const ecoPath = path.join(ecoDir, ecoFile);
-            if (fs.existsSync(ecoPath)) {
-              const ecoData = JSON.parse(fs.readFileSync(ecoPath, 'utf8'));
-              for (const [fen, opening] of Object.entries(ecoData)) {
-                await db.insertOpening({
-                  fen: fen,
-                  name: opening.name,
-                  eco: opening.eco,
-                  aliases: opening.aliases || [],
-                });
-                totalOpenings++;
-              }
-            }
-          }
-
-          // Commit transaction
-          await new Promise((resolve, reject) => {
-            db.db.run('COMMIT', (err) => {
-              if (err) reject(err);
-              else resolve();
-            });
-          });
-
-          console.log(`   ✅ Populated ${totalOpenings} openings.`);
-        } catch (error) {
-          // Rollback on error
-          db.db.run('ROLLBACK');
-          throw error;
-        }
-      } else {
-        console.error(`   ❌ ECO directory not found at ${ecoDir}`);
-      }
-    } else {
-      console.log(`   ✅ Openings table has ${openingCount} entries.`);
+    if (mode === 'incremental') {
+      await runIncremental(db);
+    } else if (mode === 'full') {
+      await runFull(db);
+    } else if (mode === 'rematch') {
+      await runRematch(db);
     }
-
-    // Step 1: Get existing video IDs for deduplication
-    console.log('   Loading existing video IDs...');
-    const existingVideoIds = await new Promise((resolve, reject) => {
-      db.db.all('SELECT id FROM videos', (err, rows) => {
-        if (err) reject(err);
-        else resolve(new Set(rows.map((row) => row.id)));
-      });
-    });
-    console.log(`   Found ${existingVideoIds.size} existing videos in database.`);
-
-    // Step 2: Discover videos via RSS
-    console.log('\n🔍 Step 2: Discovering videos via RSS...');
-    const rssDiscovery = new RSSVideoDiscovery();
-    const discoveryResult = await rssDiscovery.discoverNewVideos();
-    const allDiscoveredVideos = discoveryResult.videos;
-    console.log(`   Found ${allDiscoveredVideos.length} videos from RSS feeds.`);
-
-    // Step 3: Deduplicate
-    console.log('\n♻️  Step 3: Deduplicating...');
-    const newVideos = allDiscoveredVideos.filter((v) => !existingVideoIds.has(v.id));
-    console.log(`   Found ${newVideos.length} NEW videos to process.`);
-    console.log(`   Skipped ${allDiscoveredVideos.length - newVideos.length} existing videos.`);
-
-    if (newVideos.length === 0) {
-      console.log('\n✅ No new videos to process. Pipeline complete.');
-      return;
-    }
-
-    // Step 4: Pre-filter
-    console.log('\n🚫 Step 4: Pre-Filtering New Videos...');
-    const preFilter = new PreFilterVideos();
-    const filterResult = preFilter.filterCandidates(newVideos);
-    const candidates = filterResult.candidates;
-
-    console.log(`   Passed: ${candidates.length} / ${newVideos.length} videos`);
-    console.log(`   Rejected: ${filterResult.rejectedCount} videos`);
-
-    if (candidates.length === 0) {
-      console.log('\n✅ No candidates passed pre-filter. Pipeline complete.');
-      return;
-    }
-
-    // Step 5: Enrich
-    console.log('\n⚡ Step 5: Enriching Candidates (YouTube API)...');
-
-    const apiKey = process.env.YOUTUBE_API_KEY || process.env.GOOGLE_AI_API_KEY;
-    if (!apiKey) {
-      console.warn('⚠️  Warning: No API Key found. Enrichment will likely fail.');
-    }
-    const enrichment = new VideoEnrichment(apiKey);
-
-    const enrichedVideos = await enrichment.batchEnrichVideos(candidates);
-
-    const validEnrichedVideos = enrichedVideos.filter((v) => !v.enrichmentError);
-    console.log(`   Successfully enriched ${validEnrichedVideos.length} videos.`);
-
-    if (enrichedVideos.length > validEnrichedVideos.length) {
-      console.log(
-        `   Failed to enrich ${enrichedVideos.length - validEnrichedVideos.length} videos.`
-      );
-      const firstError = enrichedVideos.find((v) => v.enrichmentError);
-      if (firstError) {
-        console.log(`   ❌ Sample Error: ${firstError.enrichmentError}`);
-      }
-    }
-
-    if (validEnrichedVideos.length === 0) {
-      console.log('\n✅ No videos successfully enriched. Pipeline complete.');
-      return;
-    }
-
-    // Step 6: Match and Save (Incremental)
-    console.log('\n🎯 Step 6: Matching and Saving...');
-    const matcher = new VideoMatcher(dbPath);
-
-    const matchResults = await matcher.runMatchingWithVideos(validEnrichedVideos, {
-      clearDb: false,
-    });
-
-    console.log(`\n🎉 Incremental Update Complete!`);
-    console.log(`   Added ${matchResults.uniqueVideos} new videos.`);
-    console.log(`   Created ${matchResults.finalMatches} new video-opening matches.`);
-
-    // Step 7: Generate Static Files (JSON)
-    console.log('\n📄 Step 7: Regenerating Static JSON Files...');
-    const staticGenerator = new StaticFileGenerator(dbPath);
-    const staticResult = await staticGenerator.generateAllStaticFiles();
-    console.log('   ✅ Static files generated:', staticResult);
-
-    // Step 8: Consolidate Video Index
-    console.log('\n📦 Step 8: Consolidating Video Index...');
-    const publicApiDir = path.join(__dirname, '../../public/api/openings');
-    const apiDataDir = path.join(__dirname, '../../api/data');
-
-    await consolidateVideoIndex(publicApiDir, apiDataDir);
-    console.log('   ✅ Video index consolidated.');
   } catch (error) {
     console.error('❌ Pipeline failed:', error);
     process.exit(1);
@@ -203,4 +398,4 @@ async function runIncrementalPipeline() {
   }
 }
 
-runIncrementalPipeline().catch(console.error);
+main().catch(console.error);

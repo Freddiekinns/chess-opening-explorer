@@ -1,3 +1,10 @@
+.titleWithStar {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
 .openingMovesCompact.openingMovesCompact {
   margin-top: 0;
   padding: var(--space-3) var(--space-6);

@@ -17,37 +17,31 @@ tools/
 ## 📹 Video Pipeline (`tools/video-pipeline/`)
 
 Handles the discovery, enrichment, and matching of YouTube videos to chess
-openings. Unified pipeline with three modes.
+openings.
 
 ### **How to Run**
 
-**1. Incremental (default)** — discover new videos via RSS:
-
-```bash
-npm run pipeline
-```
-
-**2. Full Catalogue** — rebuild from all channel history (requires API key):
-
-```bash
-npm run pipeline:full
-```
-
-**3. Rematch** — re-score existing videos after scorer changes (zero API cost):
-
-```bash
-npm run pipeline:rematch
-# After rematch, restore view counts/thumbnails:
-node tools/video-pipeline/scripts/backfill-views.js
-```
-
-**4. Backfill specific openings** (optional, for fresh DB):
+**1. Backfill Historical Videos (Recommended for fresh DB)** If the database is
+empty or you need to find videos for specific openings immediately:
 
 ```bash
 node tools/video-pipeline/backfill-videos.js
 ```
 
-_See `tools/video-pipeline/README.md` for full documentation._
+_This searches YouTube for major openings and populates the database._
+
+**2. Run the Main Pipeline** To process RSS feeds, match videos, and generate
+static JSON files:
+
+```bash
+node tools/video-pipeline/index.js
+```
+
+_This will:_
+
+- _Fetch new videos from configured RSS feeds._
+- _Match them against the opening database._
+- _Generate/Update static JSON files in `public/api/openings/`._
 
 ---
 

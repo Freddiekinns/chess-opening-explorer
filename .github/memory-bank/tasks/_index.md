@@ -10,6 +10,9 @@ _No tasks in progress._
 
 ## Pending
 
+- [TASK015] Hierarchical Family Tree Navigation (Opening Breadcrumbs) - Added 2026-03-17
+- [TASK014] Community-Driven Curation & Upvotes (Supabase) - Added 2026-03-17
+- [TASK013] Engine-Validated Practical Blunder Analysis - Added 2026-03-17
 - [TASK012] Video Pipeline Overhaul - Added 2026-03-15
 - [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
 

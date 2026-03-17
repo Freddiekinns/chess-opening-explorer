@@ -1,48 +1,140 @@
-# [TASK015] - Hierarchical Family Tree Navigation (Opening Breadcrumbs)
+# [TASK015] - Hierarchical Family Tree Navigation
 
-**Status:** Pending  
-**Added:** 2026-03-17  
-**Updated:** 2026-03-17
+**Status:** Pending **Added:** 2026-03-17 **Updated:** 2026-03-17
 
 ## 1. Problem Statement
-Currently, related openings are shown in a flat list. Users often don't understand the "lineage" or "Family" of a specific variation (e.g., how the "English Attack" relates to the "Najdorf" and the "Sicilian Defense").
 
-## 2. Proposed Solution (PRD)
-Create a structured hierarchy to navigate the opening "Family Tree."
+Chess openings have a natural hierarchy (Sicilian › Najdorf › 6.Bg5) but the UI
+currently presents related openings as a flat sibling list. Users have no way to
+understand where a specific variation sits in the broader theory tree, or
+navigate "up" to see the family landscape.
 
-### User Journey (Path to Variation)
-1. **Entry**: User lands on a "Modern Variation" (B06).
-2. **Contextualize**: User looks at the breadcrumbs at the top of the page.
-3. **Trace back**: Breadcrumbs read `King's Pawn Opening > Pirc Defense > Modern Variation`.
-4. **Learn parent**: User clicks "Pirc Defense" to see the "Major Alternatives" for each side in the root variation.
-5. **Zoom out**: User clicks "King's Pawn Opening (1.e4)" to see how the Pirc compares to the Sicilian or Ruy Lopez.
-6. **Navigate variations**: User scrolls to "Explore Families" and sees a visual card-based overview of the "Top 5 Sicilians" or "Top 3 French Defenses."
+## 2. User Journey
 
-### Features
-- **Opening Breadcrumbs**: A navigation path (e.g., `Sicilian Defense` > `Open Sicilian` > `Najdorf Variation`).
-- **Family Overview Page**: A specialized page for "Families" (e.g., all `B20-B99` ECO codes) showing the main variations as a tree.
-- **Transposition Awareness**: If a different move order leads to the same position, the breadcrumbs should reflect the "current" theoretical path.
-- **Sub-variation List**: Replace the "Variations" list with a nested tree structure for better visual clarity.
+> User is learning the Sicilian and lands on **Najdorf Variation, 6.Bg5 (B99)**
 
-### Feasibility: High
-- The ECO codes are already structured (e.g., `B50` is a child of `B20`).
-- No new external data needed; just a redesign of how existing data is linked.
-- **Risk**: Hardcoding family groups (e.g., `Sicilian = B20-B99`) can be brittle; need a configuration file for families.
+1. **Breadcrumb reads:** `Sicilian Defense › Najdorf Variation › 6.Bg5` — they
+   immediately understand the lineage
+2. **Click "Najdorf Variation"** → land on B90 detail page, see nested tree of
+   6.Bg5 / 6.Be3 / 6.f4 / English Attack
+3. **Click "Sicilian Defense"** → land on new Family Overview page with card
+   grid of all major Sicilian variations
+4. **From the Family page**, compare Najdorf vs Dragon vs Scheveningen at a
+   glance and choose what to study next
 
-### Desirability: Must Have
-- **Reassessment**: This is fundamentally desirable for "increased understanding." Opening theory isn't a flat list of names; it's a hierarchy. This UI makes that hierarchy explicit.
+## 3. Design Decisions
 
-### MoSCoW: Must Have
-- Addresses the core goal of "developing increased understanding" of how openings work.
+| Decision                    | Choice                                       | Rationale                                                      |
+| --------------------------- | -------------------------------------------- | -------------------------------------------------------------- |
+| Breadcrumb depth            | 3 levels max                                 | Covers 90% of cases; deeper positions show deepest 3 ancestors |
+| Top-level click destination | New Family Overview page (`/family/:slug`)   | Hub experience, not just another detail page                   |
+| Variations section          | Replace flat list with nested tree           | Makes hierarchy visible on the page itself                     |
+| Hierarchy source            | Config-file-driven (`opening_families.json`) | Semantic names, curated groupings, ~20 families to define      |
 
-## 3. Implementation Plan
-1. Create `config/opening_families.json` to map ECO ranges to family names.
-2. Build `useOpeningHierarchy` hook to determine parent/child relationships.
-3. Replace the `OpeningHeader` subtitle with interactive `OpeningBreadcrumbs`.
-4. Create the `FamilyOverview` component for the "Mainline" ECO roots.
+## 4. Three UI Surfaces
 
-## 4. Key Files
-- `config/opening_families.json`
-- `packages/web/src/hooks/useOpeningHierarchy.ts`
-- `packages/web/src/components/navigation/OpeningBreadcrumbs.tsx`
-- `packages/web/src/pages/FamilyOverviewPage.tsx`
+### Surface 1: Breadcrumbs (every detail page)
+
+- Location: above the opening title in the header
+- Format: `Family › Variation › Line` (3 levels max)
+- All but the rightmost level are clickable links
+- Mobile: truncate middle level with `…` if needed
+
+```
+Sicilian Defense  ›  Najdorf Variation  ›  6.Bg5
+King's Pawn  ›  Ruy Lopez  ›  Berlin Defense
+```
+
+### Surface 2: Variations section — nested tree (detail page)
+
+Replaces the current flat `RelatedOpeningsTeaser` / `RelatedOpeningsTab`
+siblings list.
+
+- Shows: parent opening (one level up) + all siblings at current level, indented
+- Current page highlighted; siblings are clickable
+- "See all [Family] variations →" link at bottom
+- Collapsed by default to top 5 siblings; expandable
+
+```
+Open Sicilian  (parent — clickable)
+  ├── Najdorf Variation  ← current page
+  ├── Dragon Variation
+  ├── Scheveningen
+  └── Classical Variation
+  [See all Sicilian variations →]
+```
+
+### Surface 3: Family Overview Page (new route `/family/:slug`)
+
+- Header: family name + ECO range + one-line description
+- Body: card grid of top 6–8 variations by games_analyzed within the family
+- Each card: name, ECO code, complexity tag, brief description, sub-variation
+  count
+- Below cards: collapsible full variation tree (all ECO codes in range, grouped)
+
+## 5. Data Model
+
+### `config/opening_families.json`
+
+Maps ~20 major opening families. All families can be derived from existing ECO
+data — no new external data needed.
+
+```json
+{
+  "sicilian": {
+    "name": "Sicilian Defense",
+    "eco_range": ["B20", "B99"],
+    "mainline_eco": "B20",
+    "slug": "sicilian",
+    "description": "The most popular response to 1.e4"
+  },
+  "ruy-lopez": {
+    "name": "Ruy Lopez",
+    "eco_range": ["C60", "C99"],
+    "mainline_eco": "C60",
+    "slug": "ruy-lopez",
+    "description": "The oldest and most classical of openings"
+  }
+}
+```
+
+### `useOpeningHierarchy` hook
+
+Given a FEN/ECO code, returns:
+
+- `family` — matched family from config
+- `breadcrumbs` — array of up to 3 `{ name, href }` items
+- `siblings` — openings at the same depth within the family
+- `parent` — immediate parent opening (one level up by move depth)
+
+## 6. Key Files
+
+| File                                                            | Status | Purpose                                              |
+| --------------------------------------------------------------- | ------ | ---------------------------------------------------- |
+| `config/opening_families.json`                                  | Create | Family definitions (ECO ranges, slugs, descriptions) |
+| `packages/web/src/hooks/useOpeningHierarchy.ts`                 | Create | Derive breadcrumbs + tree from ECO data + config     |
+| `packages/web/src/components/navigation/OpeningBreadcrumbs.tsx` | Create | Breadcrumb component for detail page header          |
+| `packages/web/src/pages/FamilyOverviewPage.tsx`                 | Create | New family hub page                                  |
+| `packages/web/src/components/detail/RelatedOpeningsTeaser.tsx`  | Modify | Replace flat list with nested tree                   |
+| `packages/web/src/components/detail/RelatedOpeningsTab.tsx`     | Modify | Replace flat list with nested tree                   |
+| `packages/api/src/routes/openings.routes.js`                    | Modify | Add `/api/openings/family/:slug` endpoint            |
+
+## 7. Deferred / Out of Scope
+
+- **Transposition awareness**: Same position via different move orders — which
+  breadcrumb to show? Phase 2.
+- **Visual tree diagram**: Graph/tree visualisation on the Family page. Phase 2
+  polish.
+- **Cross-family relationships**: Openings that belong to multiple families. Out
+  of scope.
+
+## 8. Verification
+
+1. Navigate to any opening detail page → breadcrumb shows correct 3-level path
+2. Click middle breadcrumb → lands on correct parent page with nested tree
+3. Click top-level breadcrumb → lands on `/family/:slug` with card grid
+4. Family page cards link through to correct detail pages
+5. Variations section shows nested tree with parent + siblings, current page
+   highlighted
+6. `npm run test:frontend` — existing related openings tests still pass
+7. `npm run build` — no TypeScript errors

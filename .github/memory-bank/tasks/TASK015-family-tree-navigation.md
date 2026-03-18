@@ -164,12 +164,27 @@ opening:
   "current": { "slug": "najdorf-variation", "name": "Najdorf Variation", "move": "5...a6" },
   "ancestors": [
     {
+      "slug": "kings-pawn-opening",
+      "name": "King's Pawn Opening",
+      "move": "1. e4",
+      "siblings": []
+    },
+    {
       "slug": "sicilian-defense",
       "name": "Sicilian Defense",
       "move": "1...c5",
       "siblings": [
         { "slug": "french-defense", "name": "French Defense", "move": "1...e6", "descendantCount": 544 },
         { "slug": "caro-kann-defense", "name": "Caro-Kann Defense", "move": "1...c6", "descendantCount": 362 }
+      ]
+    },
+    {
+      "slug": "sicilian-open",
+      "name": "Open Sicilian",
+      "move": "2. Nf3",
+      "siblings": [
+        { "slug": "sicilian-alapin", "name": "Alapin Variation", "move": "2. c3", "descendantCount": 72 },
+        { "slug": "sicilian-closed", "name": "Closed Sicilian", "move": "2. Nc3", "descendantCount": 91 }
       ]
     }
   ],
@@ -184,9 +199,25 @@ opening:
 }
 ```
 
+- `ancestors`: Full chain from root to parent, ordered root-first. Each
+  ancestor includes its own siblings (alternatives at that branch point).
+- `siblings`: Alternatives to the current opening at the same branch point.
+- `children`: Forward branches from the current opening.
+
 **Lazy loading for expansion:** When user expands a node, fetch its children via
 `GET /api/openings/:slug/tree/children` — lightweight endpoint returning just
 the immediate children of that node.
+
+### Performance
+
+The tree derivation does prefix-matching across 12,377 openings. Two options:
+
+- **On-the-fly:** Scan all openings per request. At 12k string comparisons this
+  is fast enough (<50ms) for a server-side endpoint with the data in memory.
+- **Pre-built index:** Build a trie or parent-child map at startup. Faster
+  lookups but more memory. Worth it if response times become a concern.
+
+Start with on-the-fly. Optimize to pre-built index if needed.
 
 ### Deriving the tree from move data
 
@@ -222,9 +253,24 @@ This is pure move-string manipulation — no new data sources needed.
 | `packages/web/src/components/detail/OpeningTreeMobile.tsx` | Create | Vertical tree for mobile |
 | `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Add tree section, remove RelatedOpeningsTeaser |
 
-## 7. Follow-ups (build after v1 tree ships)
+## 7. Definition of done (v1)
 
-### 7a. Family overview pages (keep)
+- [ ] `/api/openings/:slug/tree` endpoint returns ancestors, children, siblings
+- [ ] `/api/openings/:slug/tree/children` endpoint for lazy expansion
+- [ ] Mind-map tree component renders on desktop (1024px+) with horizontal scroll
+- [ ] Vertical tree component renders on mobile (<768px)
+- [ ] Current opening highlighted as center node
+- [ ] Expand/collapse chevrons work for both ancestors and descendants
+- [ ] Clicking an opening name navigates to its detail page
+- [ ] Tree section replaces `RelatedOpeningsTeaser` on the detail page
+- [ ] Leaf nodes handled gracefully (ancestors + siblings still shown)
+- [ ] Backend tests for tree-service
+- [ ] Frontend tests for tree components
+- [ ] Cache-Control header set in vercel.json for tree endpoints
+
+## 8. Follow-ups (build after v1 tree ships)
+
+### 8a. Family overview pages (keep)
 
 Curated entry points for ~20 major families (Sicilian, Ruy Lopez, KID, etc.)
 using the hybrid approach: a config file (`opening_families.json`) defines
@@ -232,26 +278,26 @@ family roots, the tree component renders dynamically within each family's scope.
 Low effort since the tree component and API already exist — just needs a config
 file and a `/family/:slug` route.
 
-### 7b. Landing page "Browse by Family" (keep)
+### 8b. Landing page "Browse by Family" (keep)
 
 Add ~20 family cards to the landing page as a third discovery path alongside
 search and popular openings. Suits exploratory users who want to browse rather
 than search. Build after family overview pages exist.
 
-### 7c. Keyboard navigation (keep — fast follow)
+### 8c. Keyboard navigation (keep — fast follow)
 
 Arrow keys to traverse the tree. Low effort once the tree component exists since
 the node structure is already there. Polish, not core — but valuable for power
 users.
 
-### 7d. Transposition awareness (keep — defer to v2)
+### 8d. Transposition awareness (keep — defer to v2)
 
 Same position reached via different move orders (e.g., 1. d4 Nf6 2. c4 g6 vs
 1. c4 g6 2. d4 Nf6). Affects ~5-10% of openings. Would make the tree more
 accurate but turns simple prefix-matching into FEN-based lookup — meaningful
 complexity jump. Not needed for v1 but real value for correctness.
 
-## 8. Binned (not building)
+## 9. Binned (not building)
 
 - **Breadcrumbs** — The tree already IS the breadcrumb. Ancestors are visible
   to the left (desktop) or above (mobile). A separate breadcrumb trail above

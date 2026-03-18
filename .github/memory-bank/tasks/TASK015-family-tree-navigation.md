@@ -222,36 +222,40 @@ This is pure move-string manipulation — no new data sources needed.
 | `packages/web/src/components/detail/OpeningTreeMobile.tsx` | Create | Vertical tree for mobile |
 | `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Add tree section, remove RelatedOpeningsTeaser |
 
-## 7. Open questions
+## 7. Follow-ups (build after v1 tree ships)
 
-### Family overview pages — curated or dynamic?
+### 7a. Family overview pages (keep)
 
-The tree on the detail page is always dynamic (generated from the current
-opening's position). But for a "Browse Sicilian family" entry point:
+Curated entry points for ~20 major families (Sicilian, Ruy Lopez, KID, etc.)
+using the hybrid approach: a config file (`opening_families.json`) defines
+family roots, the tree component renders dynamically within each family's scope.
+Low effort since the tree component and API already exist — just needs a config
+file and a `/family/:slug` route.
 
-- **(a) Curated config** (`opening_families.json` with ~20 families) — clean
-  entry points, guaranteed good UX, but needs manual maintenance
-- **(b) Fully dynamic** — any opening can be a "family root"
-- **(c) Hybrid** — curated families for entry points + dynamic tree within each
+### 7b. Landing page "Browse by Family" (keep)
 
-**Deferred.** Build the detail-page tree first. Family landing pages are a
-follow-up.
+Add ~20 family cards to the landing page as a third discovery path alongside
+search and popular openings. Suits exploratory users who want to browse rather
+than search. Build after family overview pages exist.
 
-### Landing page — should families be browsable from home?
+### 7c. Keyboard navigation (keep — fast follow)
 
-**Deferred.** Build the detail-page tree first. A "Browse by Family" section on
-the landing page is a natural follow-up once families are defined.
+Arrow keys to traverse the tree. Low effort once the tree component exists since
+the node structure is already there. Polish, not core — but valuable for power
+users.
 
-### Breadcrumbs
+### 7d. Transposition awareness (keep — defer to v2)
 
-The tree already shows the full ancestor chain visually. A separate breadcrumb
-above the title may be redundant. **Revisit after building the tree** — if users
-still need extra orientation, add minimal breadcrumbs then.
+Same position reached via different move orders (e.g., 1. d4 Nf6 2. c4 g6 vs
+1. c4 g6 2. d4 Nf6). Affects ~5-10% of openings. Would make the tree more
+accurate but turns simple prefix-matching into FEN-based lookup — meaningful
+complexity jump. Not needed for v1 but real value for correctness.
 
-## 8. Out of scope (for now)
+## 8. Binned (not building)
 
-- **Transposition awareness** — same position via different move orders
-- **Family overview pages** — `/family/:slug` with curated entry points
-- **Landing page family browsing** — "Browse by Family" section
-- **Keyboard navigation** — arrow keys to traverse the tree
-- **Minimap** — overview indicator for very deep trees
+- **Breadcrumbs** — The tree already IS the breadcrumb. Ancestors are visible
+  to the left (desktop) or above (mobile). A separate breadcrumb trail above
+  the title would be redundant UI.
+- **Minimap** — Over-engineered for the data. Max depth is ~10-12 moves, max
+  branching is 22. This isn't a massive graph that needs an overview indicator.
+  Horizontal scroll is sufficient.

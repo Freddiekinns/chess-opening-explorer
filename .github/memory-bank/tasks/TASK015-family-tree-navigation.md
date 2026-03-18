@@ -68,89 +68,139 @@ This replaces the flat related-openings list with something that shows the
 
 > On the **Sicilian Defense** page (`1. e4 c5`)
 
-1. At the bottom of the page, a full-width mind-map tree is centered on the
-   current opening
-2. To the right, forward branches are visible: `2. Nf3` → Open Sicilian /
-   `2. c3` → Alapin / `2. Nc3` → Closed / `2. f4` → Grand Prix
-3. User clicks the expand chevron on **Open Sicilian** → its children appear
-   inline: `2...d6`, `2...Nc6`, `2...e6`
-4. User can keep expanding nodes to explore the tree without leaving the page
-5. When they find the opening they want, clicking the **name** navigates to that
-   detail page
-6. The new page re-centers the tree on the newly selected opening
+1. Below the detail content, a vertical tree shows the current opening
+   highlighted, with its children listed below it (indented one level)
+2. Children visible: `2. Nf3` Open Sicilian / `2. c3` Alapin / `2. Nc3` Closed
+   / `2. f4` Grand Prix — each on its own row
+3. User presses **↓** to move focus through the children, or clicks the expand
+   chevron on **Open Sicilian** → its children appear indented below: `2...d6`,
+   `2...Nc6`, `2...e6`
+4. User keeps expanding deeper nodes — the tree grows downward, all within
+   natural vertical scroll
+5. Clicking an **opening name** (or pressing Enter on a focused node) navigates
+   to that detail page; the tree re-renders centered on the new opening
 
 ### Journey B: "What could I have played instead?" (zoom out)
 
 > On the **Najdorf Variation** page (`1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4
 > Nf6 5. Nc3 a6`)
 
-1. In the tree, the current opening is the center node
-2. To the left, ancestor nodes are visible: `...4. Nxd4` → `...2. Nf3` →
-   `Sicilian` → `1. e4`
-3. Siblings of the current node are visible: 5...e6 (Scheveningen), 5...g6
-   (Dragon), 5...Nc6 (Classical)
-4. User can expand any ancestor to see its siblings — what alternatives existed
-   at earlier branch points
-5. Clicking **Dragon** navigates to that page, re-centering the tree
+1. Above the current opening in the tree, ancestors are visible as a vertical
+   path: `1. e4` → `1...c5 Sicilian` → `2. Nf3` → … → `5. Nc3`
+2. The current node (5...a6 Najdorf) is highlighted. Its **siblings** are listed
+   at the same indent level: 5...e6 Scheveningen, 5...g6 Dragon, 5...Nc6
+   Classical — directly above or below the current node
+3. User presses **↑/↓** to move between siblings — this directly answers "what
+   could I have played instead?" without any expand/collapse
+4. User can expand any ancestor to reveal _its_ siblings — alternatives at
+   earlier branch points (e.g., expand `1...c5` to see `1...e5`, `1...e6`)
+5. Clicking **Dragon** navigates to that page; the tree re-renders with Dragon
+   as the highlighted node
 
-### Journey C: Free exploration (mind-map)
+### Journey C: Exploring the tree (keyboard-driven)
 
 > User wants to understand the whole Sicilian landscape
 
-1. Starting on any Sicilian opening, the tree shows ancestors and descendants
-2. User expands nodes in both directions — ancestors to the left, descendants
-   to the right — scrolling horizontally as the tree grows
-3. The tree becomes a navigable map of the entire opening family
-4. Each node is clickable → navigates to that detail page and re-centers
+1. Starting on any Sicilian opening, the tree shows the ancestor path above and
+   children below
+2. **↑/↓** moves between visible sibling nodes at the same level
+3. **→** expands the focused node (or moves into its first child if already
+   expanded)
+4. **←** collapses the focused node (or moves to its parent if already
+   collapsed)
+5. This matches the OS file-explorer keyboard model — instantly familiar
+6. Each node is clickable / Enter-navigable → loads that opening's detail page
 
-## 5. UX design: full-width mind-map tree
+## 5. UX design: vertical indented tree
+
+### Why vertical, not horizontal mind-map
+
+UX research (NNG eye-tracking, Fu et al. 2013, Figma's own testing) strongly
+favors vertical indented trees over horizontal node-link diagrams for
+navigation:
+
+- **Scanning:** Vertical lists require fewer eye fixations — users read
+  downward naturally. Labels get full row width instead of cramped node boxes.
+- **Familiarity:** Every OS file explorer, every doc sidebar, every IDE uses
+  vertical indented trees. Zero learning curve.
+- **Screen space:** Vertical trees scroll in one direction. Horizontal trees
+  consume both axes and require pan/zoom — Figma's team found users "lost all
+  context of parent items" when deeply nested horizontal trees scrolled.
+- **Mobile:** Vertical trees translate directly to mobile. Horizontal trees
+  need pinch-zoom and have tiny tap targets.
+- **Up/down navigation:** Siblings sit directly above/below each other —
+  answering "what could I have played instead?" is a single glance or arrow
+  press. In a horizontal layout, siblings stack vertically off a parent node to
+  the left, making them harder to compare with the current node.
+- **Keyboard model:** ↑/↓ for siblings, →/← for expand/collapse matches the
+  universal file-explorer convention. Horizontal trees invert this mapping,
+  creating friction.
+
+Chess-specific validation: Lichess uses a vertical indented tree at
+`lichess.org/opening/tree`. Every major chess site (Lichess, Chess.com,
+365Chess) uses drill-down tables — vertical layouts dominate the domain.
 
 ### Settled decisions
 
-**Location:** Full-width section at the bottom of the detail page, below the
-two-column layout. Replaces the current `RelatedOpeningsTeaser` component.
+**Location:** Replaces the current `RelatedOpeningsTeaser` component. On
+desktop, renders in the left column below the chessboard (same position as
+today's related openings). On mobile, renders at the bottom of the page.
 
-**Layout — mind-map style:**
-- The **current opening is the center node**, visually highlighted
-- **Ancestors extend to the left** (parent → grandparent → great-grandparent)
-- **Descendants extend to the right** (children → grandchildren)
-- **Siblings** are shown as vertical branches off the same parent node
-- Connecting lines between nodes show the tree structure
-- The tree is **horizontally scrollable** when it extends beyond the viewport
+**Layout — vertical indented tree (file-explorer style):**
+- **Ancestors** form a vertical path at the top, each indented one level deeper
+- The **current opening** is highlighted (distinct background + left border)
+- **Siblings** of the current opening sit at the same indent level — directly
+  above/below it
+- **Children** appear indented below the current opening
+- Indentation guides (subtle vertical lines) connect parent to children
+- The tree scrolls vertically within the page — no horizontal scroll needed
 
 **Interaction model:**
-- **Expand/collapse (chevron):** Toggle a node's children inline without
-  navigating. Lets you peek deeper into the tree.
-- **Click opening name:** Navigate to that opening's detail page. The tree
-  re-centers on the new opening.
-- **Horizontal scroll:** Drag or scroll to pan across the tree as it grows.
-- **Initial state:** Show 1 level of ancestors (with siblings) + 1 level of
-  descendants. User expands from there.
+- **Expand/collapse (chevron or → / ←):** Toggle a node's children inline.
+  Chevron rotates 90° when expanded.
+- **↑ / ↓ arrow keys:** Move focus between visible nodes. This naturally moves
+  between siblings at the same level, answering "what else could I play here?"
+- **→ arrow key:** Expand focused node, or move to first child if already
+  expanded.
+- **← arrow key:** Collapse focused node, or move to parent if already
+  collapsed.
+- **Enter or click opening name:** Navigate to that opening's detail page.
+- This is the standard `treeview` ARIA pattern — documented in WAI-ARIA
+  Authoring Practices and used by VS Code, GitHub, macOS Finder.
 
-**Width:** Breaks out of the 1400px content max-width to use the full viewport.
-This gives the tree room to breathe horizontally.
+**Initial state:** Ancestors shown collapsed (just the path to root) + current
+node highlighted + 1 level of children expanded + siblings of current node
+visible. User expands from there.
 
 **Responsive behavior:**
-- **Desktop (1024px+):** Full horizontal mind-map layout with scroll
-- **Tablet (768px–1023px):** Same layout, may need more scrolling
-- **Mobile (<768px):** Collapses to a vertical tree (indented list style, like
-  a file explorer) since horizontal space is too constrained for a mind-map
+- **All breakpoints:** Same vertical tree layout. No breakpoint-specific
+  component swap needed — vertical trees are naturally responsive.
+- **Desktop (1024px+):** Tree in left column below the board
+- **Mobile (<768px):** Tree at page bottom (same component, different placement)
 
-### Node design (each node in the tree)
+### Node design (each row in the tree)
 
-Each node shows:
-- **Move** that reaches this position (e.g., "5...a6")
-- **Opening name** (e.g., "Najdorf Variation") — clickable link
-- **Descendant count** badge (e.g., "251 lines") — gives sense of depth
-- **Expand/collapse chevron** if the node has children
-- Current node gets a highlighted/active treatment (border, background)
+Each row shows:
+- **Indent guides** — vertical lines showing tree depth
+- **Expand/collapse chevron** (if node has children) — rotates when expanded
+- **Move** that reaches this position (e.g., "5...a6") — subtle/secondary text
+- **Opening name** (e.g., "Najdorf Variation") — primary text, clickable link
+- **Descendant count** badge (e.g., "251 lines") — right-aligned, gives sense
+  of depth below this node
+- **Current node** gets highlighted treatment (background color + left accent
+  border)
+- **Focused node** (keyboard) gets a focus ring
+
+Row height: compact (32–36px) so many nodes are visible without scrolling.
+At max branching (22 siblings), that's ~750px — fits on screen without the tree
+feeling overwhelming.
 
 ### What about leaf nodes?
 
 47.5% of openings are leaves (no children). For these:
-- The "descendants" side of the tree is empty — no forward branches
-- The tree still shows ancestors + siblings, so there's always something useful
-- A subtle label like "End of line" on the right side
+- No expand chevron shown — the row is just a name + move
+- Ancestors + siblings are still visible above, so the tree is always useful
+- No special "end of line" label needed — absence of chevron is sufficient
 
 ## 6. Technical approach
 
@@ -248,24 +298,25 @@ This is pure move-string manipulation — no new data sources needed.
 |---|---|---|
 | `packages/api/src/routes/openings.routes.js` | Modify | Add `/tree` and `/tree/children` endpoints |
 | `packages/api/src/services/tree-service.js` | Create | Tree derivation logic |
-| `packages/web/src/components/detail/OpeningTreeMap.tsx` | Create | Mind-map tree component |
-| `packages/web/src/components/detail/OpeningTreeMap.module.css` | Create | Tree styles (CSS Modules) |
-| `packages/web/src/components/detail/OpeningTreeMobile.tsx` | Create | Vertical tree for mobile |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Add tree section, remove RelatedOpeningsTeaser |
+| `packages/web/src/components/detail/OpeningTree.tsx` | Create | Vertical indented tree component (all breakpoints) |
+| `packages/web/src/components/detail/OpeningTree.module.css` | Create | Tree styles (CSS Modules) — indent guides, node rows, focus/active states |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Replace RelatedOpeningsTeaser with OpeningTree |
 
 ## 7. Definition of done (v1)
 
 - [ ] `/api/openings/:slug/tree` endpoint returns ancestors, children, siblings
 - [ ] `/api/openings/:slug/tree/children` endpoint for lazy expansion
-- [ ] Mind-map tree component renders on desktop (1024px+) with horizontal scroll
-- [ ] Vertical tree component renders on mobile (<768px)
-- [ ] Current opening highlighted as center node
-- [ ] Expand/collapse chevrons work for both ancestors and descendants
+- [ ] Vertical indented tree component renders on all breakpoints (single component)
+- [ ] Current opening highlighted (background + left accent border)
+- [ ] Expand/collapse chevrons work — chevron rotates on expand
+- [ ] Indent guides (vertical lines) connect parents to children
+- [ ] Keyboard navigation: ↑/↓ between visible nodes, →/← expand/collapse, Enter to navigate
+- [ ] `role="tree"` / `role="treeitem"` ARIA pattern with correct `aria-expanded`, `aria-level`, `aria-setsize`, `aria-posinset`
 - [ ] Clicking an opening name navigates to its detail page
-- [ ] Tree section replaces `RelatedOpeningsTeaser` on the detail page
-- [ ] Leaf nodes handled gracefully (ancestors + siblings still shown)
+- [ ] Tree replaces `RelatedOpeningsTeaser` on the detail page (same positions: left column on desktop, bottom on mobile)
+- [ ] Leaf nodes: no chevron, ancestors + siblings still shown
 - [ ] Backend tests for tree-service
-- [ ] Frontend tests for tree components
+- [ ] Frontend tests for tree component (render, keyboard nav, expand/collapse)
 - [ ] Cache-Control header set in vercel.json for tree endpoints
 
 ## 8. Follow-ups (build after v1 tree ships)
@@ -284,11 +335,14 @@ Add ~20 family cards to the landing page as a third discovery path alongside
 search and popular openings. Suits exploratory users who want to browse rather
 than search. Build after family overview pages exist.
 
-### 8c. Keyboard navigation (keep — fast follow)
+### 8c. Breadcrumb trail (keep — fast follow)
 
-Arrow keys to traverse the tree. Low effort once the tree component exists since
-the node structure is already there. Polish, not core — but valuable for power
-users.
+Horizontal breadcrumb above the page title showing the ancestor path:
+`1. e4 › Sicilian › Open Sicilian › Najdorf`. Provides orientation without
+scrolling to the tree. Low effort — data already available from the tree API's
+`ancestors` array. Research (NNG, Smashing Magazine) recommends breadcrumbs
+alongside vertical trees for deep hierarchies to solve the "where am I?"
+problem.
 
 ### 8d. Transposition awareness (keep — defer to v2)
 
@@ -299,9 +353,12 @@ complexity jump. Not needed for v1 but real value for correctness.
 
 ## 9. Binned (not building)
 
-- **Breadcrumbs** — The tree already IS the breadcrumb. Ancestors are visible
-  to the left (desktop) or above (mobile). A separate breadcrumb trail above
-  the title would be redundant UI.
+- **Horizontal mind-map tree** — Research (NNG eye-tracking, Fu et al. 2013,
+  Figma engineering blog) shows vertical indented trees outperform horizontal
+  node-link diagrams on scannability, familiarity, screen space efficiency, and
+  mobile friendliness. Horizontal layout also inverts the natural ↑/↓ = siblings
+  keyboard mapping. The only advantage (seeing the "shape" of the tree at a
+  glance) doesn't justify the trade-offs for a navigation-focused UI.
 - **Minimap** — Over-engineered for the data. Max depth is ~10-12 moves, max
   branching is 22. This isn't a massive graph that needs an overview indicator.
-  Horizontal scroll is sufficient.
+  Vertical scroll is sufficient.

@@ -2,12 +2,14 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const ECOService = require('../services/eco-service');
+const TreeService = require('../services/tree-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
 const pathResolver = require('../utils/path-resolver');
 
 const router = express.Router();
 const ecoService = new ECOService();
+const treeService = new TreeService();
 const videoAccessService = new VideoAccessService();
 
 // Simple in-memory cache for search results
@@ -18,31 +20,31 @@ const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 /**
  * @route GET /api/openings/eco-analysis/:code
  * @desc Get ECO analysis data including descriptions, plans, and complexity
- * @param {string} code - ECO code (e.g., "A00", "B01") 
+ * @param {string} code - ECO code (e.g., "A00", "B01")
  */
 router.get('/eco-analysis/:code', (req, res) => {
   try {
     const { code } = req.params;
     const ecoCode = code.toUpperCase();
-    
+
     // Get analysis data from ECO service
     const analysisData = ecoService.getECOAnalysis(ecoCode);
-    
+
     if (!analysisData) {
       return res.status(404).json({
         success: false,
-        error: `No analysis data found for ECO code ${ecoCode}`
+        error: `No analysis data found for ECO code ${ecoCode}`,
       });
     }
-    
+
     res.json({
       success: true,
-      data: analysisData
+      data: analysisData,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -55,33 +57,33 @@ router.get('/eco-analysis/:code', (req, res) => {
 router.post('/fen-analysis', (req, res) => {
   try {
     const { fen } = req.body;
-    
+
     if (!fen) {
       return res.status(400).json({
         success: false,
-        error: 'FEN string is required in request body'
+        error: 'FEN string is required in request body',
       });
     }
-    
+
     // Get analysis data from ECO service by FEN
     const analysisData = ecoService.getECOAnalysisByFEN(fen);
-    
+
     if (!analysisData) {
       return res.status(404).json({
         success: false,
-        error: `No analysis data found for FEN position`
+        error: `No analysis data found for FEN position`,
       });
     }
-    
+
     res.json({
       success: true,
-      data: analysisData
+      data: analysisData,
     });
   } catch (error) {
     console.log('ERROR in FEN-analysis endpoint:', error.message);
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -95,16 +97,16 @@ router.get('/eco/:code', (req, res) => {
   try {
     const { code } = req.params;
     const openings = ecoService.getOpeningsByECO(code.toUpperCase());
-    
+
     res.json({
       success: true,
       data: openings,
-      count: openings.length
+      count: openings.length,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -118,18 +120,18 @@ router.get('/eco/:code', (req, res) => {
 router.get('/search', (req, res) => {
   try {
     const { q, limit = 10 } = req.query;
-    
+
     if (!q || q.length < 2) {
       return res.status(400).json({
         success: false,
-        error: 'Search query must be at least 2 characters long'
+        error: 'Search query must be at least 2 characters long',
       });
     }
-    
+
     // Limit results to prevent performance issues
     const maxResults = Math.min(parseInt(limit) || 10, 50);
     const cacheKey = `${q.toLowerCase()}_${maxResults}`;
-    
+
     // Check cache first
     if (searchCache.has(cacheKey)) {
       const cached = searchCache.get(cacheKey);
@@ -138,41 +140,85 @@ router.get('/search', (req, res) => {
           success: true,
           data: cached.data,
           count: cached.data.length,
-          cached: true
+          cached: true,
         });
       } else {
         searchCache.delete(cacheKey);
       }
     }
-    
+
     const startTime = Date.now();
     const openings = ecoService.searchOpeningsByName(q, maxResults);
     const searchTime = Date.now() - startTime;
-    
+
     // Cache the result
     if (searchCache.size >= CACHE_MAX_SIZE) {
       // Remove oldest entry
       const firstKey = searchCache.keys().next().value;
       searchCache.delete(firstKey);
     }
-    
+
     searchCache.set(cacheKey, {
       data: openings,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
-    
+
     res.json({
       success: true,
       data: openings,
       count: openings.length,
       searchTime: `${searchTime}ms`,
-      cached: false
+      cached: false,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
+  }
+});
+
+/**
+ * @route GET /api/openings/fen/:fen/tree
+ * @desc Get full tree context (ancestors, siblings, children) for an opening
+ * @param {string} fen - FEN string (URL encoded)
+ */
+router.get('/fen/:fen/tree', (req, res) => {
+  try {
+    const { fen } = req.params;
+    const decodedFen = decodeURIComponent(fen);
+
+    const treeContext = treeService.getTreeContext(decodedFen);
+    if (!treeContext) {
+      return res.status(404).json({ success: false, error: 'Opening not found for this position' });
+    }
+
+    res.json({ success: true, data: treeContext });
+  } catch (error) {
+    console.error('Tree context error:', error);
+    res.status(500).json({ success: false, error: 'Failed to load tree context' });
+  }
+});
+
+/**
+ * @route GET /api/openings/fen/:fen/tree/children
+ * @desc Get children of an opening (lazy-load for tree expansion)
+ * @param {string} fen - FEN string (URL encoded)
+ */
+router.get('/fen/:fen/tree/children', (req, res) => {
+  try {
+    const { fen } = req.params;
+    const decodedFen = decodeURIComponent(fen);
+
+    const result = treeService.getChildren(decodedFen);
+    if (!result) {
+      return res.status(404).json({ success: false, error: 'Opening not found for this position' });
+    }
+
+    res.json({ success: true, data: result });
+  } catch (error) {
+    console.error('Tree children error:', error);
+    res.status(500).json({ success: false, error: 'Failed to load tree children' });
   }
 });
 
@@ -186,22 +232,22 @@ router.get('/fen/:fen', (req, res) => {
     const { fen } = req.params;
     const decodedFen = decodeURIComponent(fen);
     const opening = ecoService.getOpeningByFEN(decodedFen);
-    
+
     if (!opening) {
       return res.status(404).json({
         success: false,
-        error: 'Opening not found for this position'
+        error: 'Opening not found for this position',
       });
     }
-    
+
     res.json({
       success: true,
-      data: opening
+      data: opening,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -234,8 +280,8 @@ router.get('/fen/:fen/related', (req, res) => {
           ecoCode: null,
           mainline: null,
           siblings: [],
-          counts: { siblings: 0 }
-        }
+          counts: { siblings: 0 },
+        },
       });
     }
 
@@ -243,13 +289,13 @@ router.get('/fen/:fen/related', (req, res) => {
     const group = ecoService.getOpeningsByECO(ecoCode) || [];
 
     // Identify mainline (isEcoRoot) or fallback highest games_analyzed
-    let mainline = group.find(o => o.isEcoRoot === true);
+    let mainline = group.find((o) => o.isEcoRoot === true);
     if (!mainline && group.length > 0) {
       mainline = [...group].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))[0];
     }
 
     const siblings = group
-      .filter(o => o.fen !== decodedFen) // exclude current
+      .filter((o) => o.fen !== decodedFen) // exclude current
       .sort((a, b) => {
         // mainline priority handled separately; here just games_analyzed desc then name
         const diff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
@@ -262,7 +308,7 @@ router.get('/fen/:fen/related', (req, res) => {
       ecoCode,
       mainline: mainline ? sanitize(mainline) : null,
       siblings: siblings.map(sanitize),
-      counts: { siblings: siblings.length }
+      counts: { siblings: siblings.length },
     };
 
     return res.json({ success: true, data: payload });
@@ -283,9 +329,10 @@ function sanitize(opening) {
     isEcoRoot: opening.isEcoRoot === true,
     games_analyzed: opening.games_analyzed || 0,
     // Pass through complexity if present from analysis_json (used in teaser tag)
-    complexity: opening.analysis_json && opening.analysis_json.complexity
-      ? opening.analysis_json.complexity
-      : (opening.complexity || null)
+    complexity:
+      opening.analysis_json && opening.analysis_json.complexity
+        ? opening.analysis_json.complexity
+        : opening.complexity || null,
   };
 }
 
@@ -298,25 +345,25 @@ router.get('/classification/:classification', (req, res) => {
   try {
     const { classification } = req.params;
     const upperClass = classification.toUpperCase();
-    
+
     if (!['A', 'B', 'C', 'D', 'E'].includes(upperClass)) {
       return res.status(400).json({
         success: false,
-        error: 'Classification must be A, B, C, D, or E'
+        error: 'Classification must be A, B, C, D, or E',
       });
     }
-    
+
     const openings = ecoService.getOpeningsByClassification(upperClass);
-    
+
     res.json({
       success: true,
       data: openings,
-      count: openings.length
+      count: openings.length,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -328,15 +375,15 @@ router.get('/classification/:classification', (req, res) => {
 router.get('/random', (req, res) => {
   try {
     const opening = ecoService.getRandomOpening();
-    
+
     res.json({
       success: true,
-      data: opening
+      data: opening,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -348,16 +395,16 @@ router.get('/random', (req, res) => {
 router.get('/categories', (req, res) => {
   try {
     const categories = ecoService.getECOCategories();
-    
+
     res.json({
       success: true,
       data: categories,
-      count: categories.length
+      count: categories.length,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -369,15 +416,15 @@ router.get('/categories', (req, res) => {
 router.get('/stats', (req, res) => {
   try {
     const stats = ecoService.getStatistics();
-    
+
     res.json({
       success: true,
-      data: stats
+      data: stats,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -395,20 +442,20 @@ const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 router.get('/popular', (req, res) => {
   try {
     const { limit = 12, complexity } = req.query;
-    
+
     const result = ecoService.getPopularOpenings(limit, complexity);
-    
+
     res.json({
       success: true,
       data: result.data,
       count: result.count,
       total_analyzed: result.total_analyzed,
-      source: result.source
+      source: result.source,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -421,18 +468,18 @@ router.get('/popular', (req, res) => {
 router.get('/popular-by-eco', (req, res) => {
   try {
     const { limit = 6, complexity, category } = req.query;
-    
+
     const result = ecoService.getPopularOpeningsByECO(category, limit, complexity);
-    
+
     res.json({
       success: true,
       data: result.data,
-      metadata: result.metadata
+      metadata: result.metadata,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -447,34 +494,38 @@ router.get('/search-index', (req, res) => {
     const startTime = Date.now();
     const { limit, fields } = req.query;
     const isLookupOnly = fields === 'lookup';
-    
+
     // Check cache first
     const cacheKey = limit ? `limited_${limit}` : 'full';
     const now = Date.now();
-    
-    if (searchIndexCache && searchIndexCache[cacheKey] && 
-        searchIndexCacheTime && (now - searchIndexCacheTime) < SEARCH_INDEX_CACHE_TTL) {
+
+    if (
+      searchIndexCache &&
+      searchIndexCache[cacheKey] &&
+      searchIndexCacheTime &&
+      now - searchIndexCacheTime < SEARCH_INDEX_CACHE_TTL
+    ) {
       const cached = searchIndexCache[cacheKey];
       res.json({
         ...cached,
         searchTime: `${Date.now() - startTime}ms (cached)`,
-        cached: true
+        cached: true,
       });
       return;
     }
-    
+
     const allOpenings = ecoService.getAllOpenings();
-    
+
     // Create lightweight index with only essential search fields
-    let searchIndex = allOpenings.map(opening => ({
+    let searchIndex = allOpenings.map((opening) => ({
       fen: opening.fen,
       name: opening.name,
       eco: opening.eco,
       ...(isLookupOnly ? {} : { moves: opening.moves || '' }),
       // Only include games_analyzed if available for sorting
-      ...(isLookupOnly ? {} : opening.games_analyzed && { games_analyzed: opening.games_analyzed })
+      ...(isLookupOnly ? {} : opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
     }));
-    
+
     // If limit specified, prioritize by games_analyzed and take top N
     if (limit) {
       const maxResults = Math.min(parseInt(limit) || searchIndex.length, searchIndex.length);
@@ -482,29 +533,31 @@ router.get('/search-index', (req, res) => {
         .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
         .slice(0, maxResults);
     }
-    
+
     const searchTime = Date.now() - startTime;
-    
+
     const response = {
       success: true,
       data: searchIndex,
       count: searchIndex.length,
       total_available: allOpenings.length,
       searchTime: `${searchTime}ms`,
-      note: limit ? `Top ${searchIndex.length} popular openings for search` : 'Complete search index',
-      cached: false
+      note: limit
+        ? `Top ${searchIndex.length} popular openings for search`
+        : 'Complete search index',
+      cached: false,
     };
-    
+
     // Cache the result
     if (!searchIndexCache) searchIndexCache = {};
     searchIndexCache[cacheKey] = response;
     searchIndexCacheTime = now;
-    
+
     res.json(response);
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -518,17 +571,17 @@ router.get('/all', (req, res) => {
     const startTime = Date.now();
     const allOpenings = ecoService.getAllOpenings();
     const searchTime = Date.now() - startTime;
-    
+
     res.json({
       success: true,
       data: allOpenings,
       count: allOpenings.length,
-      searchTime: `${searchTime}ms`
+      searchTime: `${searchTime}ms`,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -542,35 +595,35 @@ router.get('/family/:familyCode', (req, res) => {
   try {
     const { familyCode } = req.params;
     const family = familyCode.toUpperCase();
-    
+
     // Validate family code
     if (!['A', 'B', 'C', 'D', 'E'].includes(family)) {
       return res.status(400).json({
         success: false,
-        error: 'Invalid family code. Must be A, B, C, D, or E'
+        error: 'Invalid family code. Must be A, B, C, D, or E',
       });
     }
-    
+
     // Get openings for this family
     const familyOpenings = ecoService.getOpeningsByFamily(family);
-    
+
     if (!familyOpenings || familyOpenings.length === 0) {
       return res.status(404).json({
         success: false,
-        error: `No openings found for family ${family}`
+        error: `No openings found for family ${family}`,
       });
     }
-    
+
     res.json({
       success: true,
       data: familyOpenings,
       family: family,
-      count: familyOpenings.length
+      count: familyOpenings.length,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -584,21 +637,21 @@ router.get('/videos/:fen', async (req, res) => {
   try {
     const { fen } = req.params;
     const decodedFen = decodeURIComponent(fen);
-    
+
     // Get videos for this FEN position
     const videos = await videoAccessService.getVideosForPosition(decodedFen);
-    
+
     res.json({
       success: true,
       data: videos,
       count: videos.length,
-      fen: decodedFen
+      fen: decodedFen,
     });
   } catch (error) {
     console.error('Error fetching videos:', error);
     res.status(500).json({
       success: false,
-      error: 'Failed to load videos'
+      error: 'Failed to load videos',
     });
   }
 });
@@ -613,26 +666,26 @@ router.get('/videos/:fen', async (req, res) => {
 router.get('/semantic-search', async (req, res) => {
   try {
     const { q, limit = 20, offset = 0 } = req.query;
-    
+
     if (!q || q.length < 2) {
       return res.status(400).json({
         success: false,
-        error: 'Search query must be at least 2 characters long'
+        error: 'Search query must be at least 2 characters long',
       });
     }
-    
+
     const startTime = Date.now();
     const maxResults = Math.min(parseInt(limit) || 20, 50);
     const pageOffset = Math.max(parseInt(offset) || 0, 0);
-    
+
     // Use the enhanced search service
     const searchResults = await searchService.search(q, {
       limit: maxResults,
-      offset: pageOffset
+      offset: pageOffset,
     });
-    
+
     const searchTime = Date.now() - startTime;
-    
+
     res.json({
       success: true,
       data: searchResults.results,
@@ -642,13 +695,13 @@ router.get('/semantic-search', async (req, res) => {
       searchTime: `${searchTime}ms`,
       searchType: searchResults.searchType || 'semantic',
       queryIntent: searchResults.queryIntent,
-      query: q
+      query: q,
     });
   } catch (error) {
     console.error('Semantic search error:', error);
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -662,26 +715,26 @@ router.get('/semantic-search', async (req, res) => {
 router.get('/search-suggestions', async (req, res) => {
   try {
     const { q, limit = 8 } = req.query;
-    
+
     if (!q || q.length < 2) {
       return res.json({
         success: true,
         data: [],
         count: 0,
-        note: 'Query too short for suggestions'
+        note: 'Query too short for suggestions',
       });
     }
-    
+
     const startTime = Date.now();
     const maxResults = Math.min(parseInt(limit) || 8, 15);
-    
+
     // Get basic suggestions from search service
     const suggestions = await searchService.getSuggestions(q, maxResults);
-    
+
     // Add semantic suggestions for common patterns
     const semanticSuggestions = [];
     const queryLower = q.toLowerCase();
-    
+
     // Add common natural language patterns
     if (queryLower.includes('aggr') || queryLower.includes('attack')) {
       semanticSuggestions.push('aggressive openings', 'attacking options for black');
@@ -698,25 +751,25 @@ router.get('/search-suggestions', async (req, res) => {
     if (queryLower.includes('e4')) {
       semanticSuggestions.push('response to e4', 'attacking options for black');
     }
-    
+
     // Combine and deduplicate
     const allSuggestions = [...new Set([...suggestions, ...semanticSuggestions])];
     const finalSuggestions = allSuggestions.slice(0, maxResults);
-    
+
     const searchTime = Date.now() - startTime;
-    
+
     res.json({
       success: true,
       data: finalSuggestions,
       count: finalSuggestions.length,
       searchTime: `${searchTime}ms`,
-      query: q
+      query: q,
     });
   } catch (error) {
     console.error('Search suggestions error:', error);
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -731,25 +784,25 @@ router.get('/search-suggestions', async (req, res) => {
 router.get('/search-by-category', async (req, res) => {
   try {
     const { category, limit = 20, offset = 0 } = req.query;
-    
+
     if (!category) {
       return res.status(400).json({
         success: false,
-        error: 'Category parameter is required'
+        error: 'Category parameter is required',
       });
     }
-    
+
     const startTime = Date.now();
     const maxResults = Math.min(parseInt(limit) || 20, 50);
     const pageOffset = Math.max(parseInt(offset) || 0, 0);
-    
+
     const searchResults = await searchService.searchByCategory(category, {
       limit: maxResults,
-      offset: pageOffset
+      offset: pageOffset,
     });
-    
+
     const searchTime = Date.now() - startTime;
-    
+
     res.json({
       success: true,
       data: searchResults.results,
@@ -757,13 +810,13 @@ router.get('/search-by-category', async (req, res) => {
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,
       category: searchResults.category,
-      searchTime: `${searchTime}ms`
+      searchTime: `${searchTime}ms`,
     });
   } catch (error) {
     console.error('Category search error:', error);
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });
@@ -775,22 +828,22 @@ router.get('/search-by-category', async (req, res) => {
 router.get('/search-categories', async (req, res) => {
   try {
     const startTime = Date.now();
-    
+
     const categories = await searchService.getCategories();
-    
+
     const searchTime = Date.now() - startTime;
-    
+
     res.json({
       success: true,
       data: categories,
       count: categories.length,
-      searchTime: `${searchTime}ms`
+      searchTime: `${searchTime}ms`,
     });
   } catch (error) {
     console.error('Categories error:', error);
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
     });
   }
 });

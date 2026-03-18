@@ -3,12 +3,7 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { ChessOpening, Video } from '../../../shared/src';
-import {
-  CommonPlans,
-  VideoGallery,
-  StudiesGallery,
-  RelatedOpeningsTeaser,
-} from '../components/detail';
+import { CommonPlans, VideoGallery, StudiesGallery, OpeningTree } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
 import { SearchBar, type Opening as SearchOpening } from '../components/shared/SearchBar';
@@ -21,7 +16,7 @@ import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
 import { StarButton } from '../components/shared/StarButton';
-import type { RelatedOpeningsResponse } from '../useRelatedOpenings';
+import type { TreeContext } from '../hooks/useOpeningTree';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -122,8 +117,8 @@ const OpeningDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [popularityStats, setPopularityStats] = useState<PopularityStats | null>(null);
-  const [relatedOpenings, setRelatedOpenings] = useState<RelatedOpeningsResponse | null>(null);
-  const [relatedLoading, setRelatedLoading] = useState(false);
+  const [treeData, setTreeData] = useState<TreeContext | null>(null);
+  const [treeLoading, setTreeLoading] = useState(false);
   const [openingsData, setOpeningsData] = useState<SearchOpening[]>([]);
   const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW);
   const [studies, setStudies] = useState<Study[]>([]);
@@ -230,21 +225,33 @@ const OpeningDetailPage: React.FC = () => {
     [fetchWithErrorHandling]
   );
 
-  const loadRelatedOpenings = useCallback(
+  const loadTreeData = useCallback(
     async (fenString: string) => {
-      setRelatedLoading(true);
+      setTreeLoading(true);
       try {
         const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/related`,
-          'Error loading related openings:'
-        )) as ApiResponse<RelatedOpeningsResponse> | null;
-        setRelatedOpenings(data?.data || null);
+          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/tree`,
+          'Error loading tree data:'
+        )) as ApiResponse<TreeContext> | null;
+        setTreeData(data?.data || null);
       } finally {
-        setRelatedLoading(false);
+        setTreeLoading(false);
       }
     },
     [fetchWithErrorHandling]
   );
+
+  const fetchTreeChildren = useCallback(async (childFen: string) => {
+    const encoded = encodeURIComponent(childFen);
+    try {
+      const res = await fetch(`/api/openings/fen/${encoded}/tree/children`);
+      if (!res.ok) return [];
+      const json = await res.json();
+      return json.data?.children || [];
+    } catch {
+      return [];
+    }
+  }, []);
 
   const setupGame = useCallback((openingData: Opening) => {
     try {
@@ -329,9 +336,9 @@ const OpeningDetailPage: React.FC = () => {
       const decodedFen = decodeURIComponent(fen);
       // Start both fetches in parallel
       loadOpening(decodedFen);
-      loadRelatedOpenings(decodedFen);
+      loadTreeData(decodedFen);
     }
-  }, [fen, loadOpening, loadRelatedOpenings]);
+  }, [fen, loadOpening, loadTreeData]);
 
   const goToMove = (moveIndex: number) => {
     if (moveIndex >= 0 && moveIndex < gameHistory.length) {
@@ -1194,13 +1201,13 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Related Openings Teaser - under board on desktop */}
+          {/* Opening Tree - under board on desktop */}
           {opening?.fen && (
-            <RelatedOpeningsTeaser
-              fen={opening.fen}
-              className={`related-teaser-block ${styles.relatedTeaserDesktop}`}
-              relatedData={relatedOpenings}
-              relatedLoading={relatedLoading}
+            <OpeningTree
+              treeData={treeData}
+              loading={treeLoading}
+              currentFen={opening.fen}
+              onFetchChildren={fetchTreeChildren}
             />
           )}
         </div>
@@ -1347,16 +1354,6 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           )}
         </div>
-
-        {/* Related Openings Teaser - bottom on mobile */}
-        {opening?.fen && (
-          <RelatedOpeningsTeaser
-            fen={opening.fen}
-            className={`related-teaser-block ${styles.relatedTeaserMobile}`}
-            relatedData={relatedOpenings}
-            relatedLoading={relatedLoading}
-          />
-        )}
       </div>
 
       <FeedbackSection source="detail" />

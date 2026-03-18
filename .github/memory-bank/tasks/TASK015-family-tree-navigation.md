@@ -15,8 +15,8 @@ earlier branch point.
 
 ## 2. How the data works today
 
-- **12,377 openings** total, each with a `moves` string (e.g., `"1. e4 c5 2.
-  Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6"`)
+- **12,377 openings** total, each with a `moves` string (e.g.,
+  `"1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6"`)
 - **No explicit parent-child links** — hierarchy is implicit via move prefixes
 - Related openings API groups by ECO code only (e.g., all B90 = 31 openings)
 - "1. e4 c5" prefix → 1,722 openings (too many to list as "Sicilian")
@@ -30,13 +30,13 @@ points**, not flat lists.
 
 The branching factor is very manageable — never overwhelming at any single node:
 
-| Position | Distinct next moves | Meaningful branches |
-|---|---|---|
-| After 1. e4 | 20 | ~6 (e5, c5, e6, c6, d5, Nf6) |
-| After 1. e4 c5 (Sicilian) | 22 (**max in entire dataset**) | ~4 (Nf3, Nc3, c3, f4) |
-| After 1. e4 e5 | 20 | ~4 (Nf3, f4, Nc3, Bc4) |
-| After Najdorf (5...a6) | 11 | ~5 (Bg5, Be3, Be2, f4, g3) |
-| After 1. d4 | 14 | ~4 (Nf6, d5, f5, c5) |
+| Position                  | Distinct next moves            | Meaningful branches          |
+| ------------------------- | ------------------------------ | ---------------------------- |
+| After 1. e4               | 20                             | ~6 (e5, c5, e6, c6, d5, Nf6) |
+| After 1. e4 c5 (Sicilian) | 22 (**max in entire dataset**) | ~4 (Nf3, Nc3, c3, f4)        |
+| After 1. e4 e5            | 20                             | ~4 (Nf3, f4, Nc3, Bc4)       |
+| After Najdorf (5...a6)    | 11                             | ~5 (Bg5, Be3, Be2, f4, g3)   |
+| After 1. d4               | 14                             | ~4 (Nf6, d5, f5, c5)         |
 
 - **Max branching factor: 22** (at 1. e4 c5 — the Sicilian)
 - **Leaf nodes: 5,875 / 12,377 (47.5%)** — nearly half of all openings have no
@@ -70,8 +70,8 @@ This replaces the flat related-openings list with something that shows the
 
 1. Below the detail content, a vertical tree shows the current opening
    highlighted, with its children listed below it (indented one level)
-2. Children visible: `2. Nf3` Open Sicilian / `2. c3` Alapin / `2. Nc3` Closed
-   / `2. f4` Grand Prix — each on its own row
+2. Children visible: `2. Nf3` Open Sicilian / `2. c3` Alapin / `2. Nc3` Closed /
+   `2. f4` Grand Prix — each on its own row
 3. User presses **↓** to move focus through the children, or clicks the expand
    chevron on **Open Sicilian** → its children appear indented below: `2...d6`,
    `2...Nc6`, `2...e6`
@@ -82,8 +82,8 @@ This replaces the flat related-openings list with something that shows the
 
 ### Journey B: "What could I have played instead?" (zoom out)
 
-> On the **Najdorf Variation** page (`1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4
-> Nf6 5. Nc3 a6`)
+> On the **Najdorf Variation** page
+> (`1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6`)
 
 1. Above the current opening in the tree, ancestors are visible as a vertical
    path: `1. e4` → `1...c5 Sicilian` → `2. Nf3` → … → `5. Nc3`
@@ -119,15 +119,15 @@ UX research (NNG eye-tracking, Fu et al. 2013, Figma's own testing) strongly
 favors vertical indented trees over horizontal node-link diagrams for
 navigation:
 
-- **Scanning:** Vertical lists require fewer eye fixations — users read
-  downward naturally. Labels get full row width instead of cramped node boxes.
+- **Scanning:** Vertical lists require fewer eye fixations — users read downward
+  naturally. Labels get full row width instead of cramped node boxes.
 - **Familiarity:** Every OS file explorer, every doc sidebar, every IDE uses
   vertical indented trees. Zero learning curve.
 - **Screen space:** Vertical trees scroll in one direction. Horizontal trees
   consume both axes and require pan/zoom — Figma's team found users "lost all
   context of parent items" when deeply nested horizontal trees scrolled.
-- **Mobile:** Vertical trees translate directly to mobile. Horizontal trees
-  need pinch-zoom and have tiny tap targets.
+- **Mobile:** Vertical trees translate directly to mobile. Horizontal trees need
+  pinch-zoom and have tiny tap targets.
 - **Up/down navigation:** Siblings sit directly above/below each other —
   answering "what could I have played instead?" is a single glance or arrow
   press. In a horizontal layout, siblings stack vertically off a parent node to
@@ -155,14 +155,15 @@ all breakpoints — no desktop/mobile placement swap needed.
 
 This placement was chosen over the previous "left column below the board"
 approach because:
-1. The tree is **navigational** — it belongs near the top, not buried below
-   the board, controls, and FEN utilities
+
+1. The tree is **navigational** — it belongs near the top, not buried below the
+   board, controls, and FEN utilities
 2. The right column is where users are already looking for opening context
    (moves, stats, plans)
 3. A collapsed breadcrumb is **always visible** without scrolling — users see
    where the opening sits in the family at a glance
-4. No layout swap needed between desktop and mobile — the component stays in
-   the same DOM position and works identically
+4. No layout swap needed between desktop and mobile — the component stays in the
+   same DOM position and works identically
 
 **Replaces `RelatedOpeningsTeaser`:** Both the desktop instance (left column)
 and the mobile instance (page bottom) are removed. The tree subsumes their
@@ -170,6 +171,7 @@ functionality — siblings are visible in the tree, and the breadcrumb provides
 better orientation than the flat related-openings list.
 
 **Layout — vertical indented tree (file-explorer style):**
+
 - **Ancestors** form a vertical path at the top, each indented one level deeper
 - The **current opening** is highlighted (distinct background + left border)
 - **Siblings** of the current opening sit at the same indent level — directly
@@ -180,10 +182,11 @@ better orientation than the flat related-openings list.
   scroll needed
 
 **Interaction model:**
+
 - **Expand/collapse panel (breadcrumb row):** Toggle the tree open/closed.
   Disclosure chevron rotates when expanded.
-- **Expand/collapse nodes (chevron or → / ←):** Toggle a node's children
-  inline. Chevron rotates 90° when expanded.
+- **Expand/collapse nodes (chevron or → / ←):** Toggle a node's children inline.
+  Chevron rotates 90° when expanded.
 - **↑ / ↓ arrow keys:** Move focus between visible nodes. This naturally moves
   between siblings at the same level, answering "what else could I play here?"
 - **→ arrow key:** Expand focused node, or move to first child if already
@@ -199,32 +202,35 @@ root) + current node highlighted + 1 level of children expanded + siblings of
 current node visible. User expands from there.
 
 **Responsive behavior:**
+
 - **All breakpoints:** Same component, same DOM position in the right column.
-  Vertical indented trees are naturally responsive — no breakpoint-specific
-  swap needed.
+  Vertical indented trees are naturally responsive — no breakpoint-specific swap
+  needed.
 - **Collapsed breadcrumb** truncates gracefully on narrow screens (ellipsis on
   middle ancestors if needed, always showing first and last)
 
 ### Node design (each row in the tree)
 
 Each row shows:
+
 - **Indent guides** — vertical lines showing tree depth
 - **Expand/collapse chevron** (if node has children) — rotates when expanded
 - **Move** that reaches this position (e.g., "5...a6") — subtle/secondary text
 - **Opening name** (e.g., "Najdorf Variation") — primary text, clickable link
-- **Descendant count** badge (e.g., "251 lines") — right-aligned, gives sense
-  of depth below this node
+- **Descendant count** badge (e.g., "251 lines") — right-aligned, gives sense of
+  depth below this node
 - **Current node** gets highlighted treatment (background color + left accent
   border)
 - **Focused node** (keyboard) gets a focus ring
 
-Row height: compact (32–36px) so many nodes are visible without scrolling.
-At max branching (22 siblings), that's ~750px — fits on screen without the tree
+Row height: compact (32–36px) so many nodes are visible without scrolling. At
+max branching (22 siblings), that's ~750px — fits on screen without the tree
 feeling overwhelming.
 
 ### What about leaf nodes?
 
 47.5% of openings are leaves (no children). For these:
+
 - No expand chevron shown — the row is just a name + move
 - Ancestors + siblings are still visible above, so the tree is always useful
 - No special "end of line" label needed — absence of chevron is sufficient
@@ -238,7 +244,11 @@ opening:
 
 ```json
 {
-  "current": { "slug": "najdorf-variation", "name": "Najdorf Variation", "move": "5...a6" },
+  "current": {
+    "slug": "najdorf-variation",
+    "name": "Najdorf Variation",
+    "move": "5...a6"
+  },
   "ancestors": [
     {
       "slug": "kings-pawn-opening",
@@ -251,8 +261,18 @@ opening:
       "name": "Sicilian Defense",
       "move": "1...c5",
       "siblings": [
-        { "slug": "french-defense", "name": "French Defense", "move": "1...e6", "descendantCount": 544 },
-        { "slug": "caro-kann-defense", "name": "Caro-Kann Defense", "move": "1...c6", "descendantCount": 362 }
+        {
+          "slug": "french-defense",
+          "name": "French Defense",
+          "move": "1...e6",
+          "descendantCount": 544
+        },
+        {
+          "slug": "caro-kann-defense",
+          "name": "Caro-Kann Defense",
+          "move": "1...c6",
+          "descendantCount": 362
+        }
       ]
     },
     {
@@ -260,24 +280,56 @@ opening:
       "name": "Open Sicilian",
       "move": "2. Nf3",
       "siblings": [
-        { "slug": "sicilian-alapin", "name": "Alapin Variation", "move": "2. c3", "descendantCount": 72 },
-        { "slug": "sicilian-closed", "name": "Closed Sicilian", "move": "2. Nc3", "descendantCount": 91 }
+        {
+          "slug": "sicilian-alapin",
+          "name": "Alapin Variation",
+          "move": "2. c3",
+          "descendantCount": 72
+        },
+        {
+          "slug": "sicilian-closed",
+          "name": "Closed Sicilian",
+          "move": "2. Nc3",
+          "descendantCount": 91
+        }
       ]
     }
   ],
   "children": [
-    { "slug": "najdorf-bg5", "name": "Najdorf, 6.Bg5", "move": "6.Bg5", "descendantCount": 156, "hasChildren": true },
-    { "slug": "najdorf-be3", "name": "Najdorf, 6.Be3", "move": "6.Be3", "descendantCount": 24, "hasChildren": true }
+    {
+      "slug": "najdorf-bg5",
+      "name": "Najdorf, 6.Bg5",
+      "move": "6.Bg5",
+      "descendantCount": 156,
+      "hasChildren": true
+    },
+    {
+      "slug": "najdorf-be3",
+      "name": "Najdorf, 6.Be3",
+      "move": "6.Be3",
+      "descendantCount": 24,
+      "hasChildren": true
+    }
   ],
   "siblings": [
-    { "slug": "scheveningen-variation", "name": "Scheveningen", "move": "5...e6", "descendantCount": 89 },
-    { "slug": "dragon-variation", "name": "Dragon", "move": "5...g6", "descendantCount": 72 }
+    {
+      "slug": "scheveningen-variation",
+      "name": "Scheveningen",
+      "move": "5...e6",
+      "descendantCount": 89
+    },
+    {
+      "slug": "dragon-variation",
+      "name": "Dragon",
+      "move": "5...g6",
+      "descendantCount": 72
+    }
   ]
 }
 ```
 
-- `ancestors`: Full chain from root to parent, ordered root-first. Each
-  ancestor includes its own siblings (alternatives at that branch point).
+- `ancestors`: Full chain from root to parent, ordered root-first. Each ancestor
+  includes its own siblings (alternatives at that branch point).
 - `siblings`: Alternatives to the current opening at the same branch point.
 - `children`: Forward branches from the current opening.
 
@@ -321,28 +373,33 @@ This is pure move-string manipulation — no new data sources needed.
 
 ### Key files
 
-| File | Action | Purpose |
-|---|---|---|
-| `packages/api/src/routes/openings.routes.js` | Modify | Add `/tree` and `/tree/children` endpoints |
-| `packages/api/src/services/tree-service.js` | Create | Tree derivation logic |
-| `packages/web/src/components/detail/OpeningTree.tsx` | Create | Vertical indented tree component (all breakpoints) |
-| `packages/web/src/components/detail/OpeningTree.module.css` | Create | Tree styles (CSS Modules) — indent guides, node rows, focus/active states |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Remove RelatedOpeningsTeaser (both instances), add OpeningTree in right column between Stats and tabs |
-| `packages/web/src/pages/OpeningDetailPage.module.css` | Modify | Remove relatedTeaserDesktop/Mobile classes, add tree panel max-height/scroll styles |
+| File                                                        | Action | Purpose                                                                                               |
+| ----------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| `packages/api/src/routes/openings.routes.js`                | Modify | Add `/tree` and `/tree/children` endpoints                                                            |
+| `packages/api/src/services/tree-service.js`                 | Create | Tree derivation logic                                                                                 |
+| `packages/web/src/components/detail/OpeningTree.tsx`        | Create | Vertical indented tree component (all breakpoints)                                                    |
+| `packages/web/src/components/detail/OpeningTree.module.css` | Create | Tree styles (CSS Modules) — indent guides, node rows, focus/active states                             |
+| `packages/web/src/pages/OpeningDetailPage.tsx`              | Modify | Remove RelatedOpeningsTeaser (both instances), add OpeningTree in right column between Stats and tabs |
+| `packages/web/src/pages/OpeningDetailPage.module.css`       | Modify | Remove relatedTeaserDesktop/Mobile classes, add tree panel max-height/scroll styles                   |
 
 ## 7. Definition of done (v1)
 
 - [ ] `/api/openings/:slug/tree` endpoint returns ancestors, children, siblings
 - [ ] `/api/openings/:slug/tree/children` endpoint for lazy expansion
-- [ ] Vertical indented tree component renders on all breakpoints (single component)
+- [ ] Vertical indented tree component renders on all breakpoints (single
+      component)
 - [ ] Current opening highlighted (background + left accent border)
 - [ ] Expand/collapse chevrons work — chevron rotates on expand
 - [ ] Indent guides (vertical lines) connect parents to children
-- [ ] Keyboard navigation: ↑/↓ between visible nodes, →/← expand/collapse, Enter to navigate
-- [ ] `role="tree"` / `role="treeitem"` ARIA pattern with correct `aria-expanded`, `aria-level`, `aria-setsize`, `aria-posinset`
+- [ ] Keyboard navigation: ↑/↓ between visible nodes, →/← expand/collapse, Enter
+      to navigate
+- [ ] `role="tree"` / `role="treeitem"` ARIA pattern with correct
+      `aria-expanded`, `aria-level`, `aria-setsize`, `aria-posinset`
 - [ ] Clicking an opening name navigates to its detail page
-- [ ] Tree replaces `RelatedOpeningsTeaser` in the right column (between Stats and tabs), both RelatedOpeningsTeaser instances removed
-- [ ] Collapsed state shows breadcrumb path (~40px), expands to full tree on click
+- [ ] Tree replaces `RelatedOpeningsTeaser` in the right column (between Stats
+      and tabs), both RelatedOpeningsTeaser instances removed
+- [ ] Collapsed state shows breadcrumb path (~40px), expands to full tree on
+      click
 - [ ] Expanded tree has `max-height` with vertical scroll
 - [ ] Leaf nodes: no chevron, ancestors + siblings still shown
 - [ ] Backend tests for tree-service
@@ -377,9 +434,10 @@ problem.
 ### 8d. Transposition awareness (keep — defer to v2)
 
 Same position reached via different move orders (e.g., 1. d4 Nf6 2. c4 g6 vs
+
 1. c4 g6 2. d4 Nf6). Affects ~5-10% of openings. Would make the tree more
-accurate but turns simple prefix-matching into FEN-based lookup — meaningful
-complexity jump. Not needed for v1 but real value for correctness.
+   accurate but turns simple prefix-matching into FEN-based lookup — meaningful
+   complexity jump. Not needed for v1 but real value for correctness.
 
 ## 9. Binned (not building)
 

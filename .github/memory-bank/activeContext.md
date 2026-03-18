@@ -1,8 +1,108 @@
 # Active Context
 
-**Date:** 2026-03-15
+**Date:** 2026-03-18
 
-## Current Focus: Video Pipeline Overindexing Fix — Completed
+## Current Focus: TASK015 Opening Tree Navigation — Complete
+
+## Session Summary (2026-03-18)
+
+### Feat: Opening Tree Navigation (TASK015)
+
+**Problem:** Related openings displayed as a flat list grouped by ECO code
+(`RelatedOpeningsTeaser`). Users couldn't see the tree structure — "what
+branches from here?" or "what could I have played instead?" were unanswerable.
+
+**Solution:** Vertical indented tree (file-explorer style) with collapsible
+breadcrumb header, showing ancestor chain, current node (highlighted), siblings,
+and children. Replaces `RelatedOpeningsTeaser` entirely.
+
+**Phase 1 — Backend:**
+
+- Created `tree-service.js` with pre-built index from ECO data (~99ms build,
+  cached 1hr via global cache service)
+- Two maps: `moveIndex` (normalizedMoves → entry) and `childrenMap` (parentMoves
+  → children[])
+- `getTreeContext(fen)` returns
+  `{ current, ancestors[], children[], siblings[] }` with full ancestor chain
+  including each ancestor's siblings
+- `getChildren(fen)` for lazy-loading expansion
+- Added routes: `GET /fen/:fen/tree` and `GET /fen/:fen/tree/children`
+- 20 backend test assertions passing
+
+**Phase 2 — Frontend Hook:**
+
+- Created `useOpeningTree.ts` with `TreeNode`, `AncestorNode`, `TreeContext`
+  types
+- Returns `{ data, loading, error, fetchChildren }`
+
+**Phase 3 — Frontend Component:**
+
+- Created `OpeningTree.tsx` + `OpeningTree.module.css`
+- Collapsed state: breadcrumb bar with ancestor chain as clickable pills
+- Expanded state: vertical indented tree (max-height 400px, scrollable)
+- Current node: orange left border + subtle orange background
+- Keyboard navigation: ↑↓→← Home/End Enter (standard ARIA treeview)
+- Lazy-load children on expand via `onFetchChildren` callback
+- JS-driven height animation with `prefers-reduced-motion` support
+
+**Phase 4 — Integration:**
+
+- Replaced `RelatedOpeningsTeaser` with `OpeningTree` in `OpeningDetailPage.tsx`
+- Inline fetch pattern (not hook) matching existing page data loaders
+- Removed mobile/desktop split — tree works at all breakpoints
+
+**Phase 5 — Tests:**
+
+- 15 Vitest frontend tests passing (breadcrumbs, expand, highlight, ARIA,
+  keyboard, loading)
+- 20 Jest backend assertions passing (parsing, parent lookup, tree context,
+  children, leaf/root nodes)
+
+**Phase 6 — Cleanup:**
+
+- Deleted 9 dead files: `RelatedOpeningsTeaser.tsx`, `RelatedOpeningsModal.tsx`,
+  `RelatedOpeningsTab.tsx`, `VariationItem.tsx`, `OpeningFamily.tsx`,
+  `useRelatedOpenings.ts`, and 3 related test files
+- Removed `OpeningFamily` export from barrel
+- Removed `.relatedTeaserDesktop`/`.relatedTeaserMobile` CSS classes
+- TypeScript compiles clean, build succeeds, 132/158 tests pass (26 failures are
+  pre-existing: practice-mode, LineTypePill, App routing)
+
+**Files Created:**
+
+| File                                                                 | Purpose                      |
+| -------------------------------------------------------------------- | ---------------------------- |
+| `packages/api/src/services/tree-service.js`                          | Tree index + context service |
+| `packages/web/src/hooks/useOpeningTree.ts`                           | Data hook + TypeScript types |
+| `packages/web/src/components/detail/OpeningTree.tsx`                 | Tree component               |
+| `packages/web/src/components/detail/OpeningTree.module.css`          | Tree styles                  |
+| `tests/unit/tree-service.test.js`                                    | Backend tests                |
+| `packages/web/src/components/detail/__tests__/opening-tree.test.tsx` | Frontend tests               |
+
+**Files Modified:**
+
+| File                                                  | Change                                      |
+| ----------------------------------------------------- | ------------------------------------------- |
+| `packages/api/src/routes/openings.routes.js`          | Added 2 tree routes                         |
+| `packages/web/src/pages/OpeningDetailPage.tsx`        | Swapped RelatedOpeningsTeaser → OpeningTree |
+| `packages/web/src/pages/OpeningDetailPage.module.css` | Removed dead CSS classes                    |
+| `packages/web/src/components/detail/index.ts`         | Updated exports                             |
+
+**Files Deleted:**
+
+| File                                                           | Reason                          |
+| -------------------------------------------------------------- | ------------------------------- |
+| `packages/web/src/components/detail/RelatedOpeningsTeaser.tsx` | Replaced by OpeningTree         |
+| `packages/web/src/components/detail/RelatedOpeningsModal.tsx`  | Dead code (no consumers)        |
+| `packages/web/src/components/detail/RelatedOpeningsTab.tsx`    | Dead code (no consumers)        |
+| `packages/web/src/components/detail/VariationItem.tsx`         | Only used by deleted components |
+| `packages/web/src/components/detail/OpeningFamily.tsx`         | No-op stub, no consumers        |
+| `packages/web/src/useRelatedOpenings.ts`                       | Replaced by useOpeningTree      |
+| 3 related test files                                           | Tests for deleted components    |
+
+---
+
+## Previous: Video Pipeline Overindexing Fix — Completed
 
 ## Session Summary (2026-03-15, Part 2)
 

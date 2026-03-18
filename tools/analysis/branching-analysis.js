@@ -22,14 +22,14 @@ function parseMoves(moveStr) {
     .replace(/\d+\.\s*/g, '') // remove move numbers
     .trim()
     .split(/\s+/)
-    .filter(m => m.length > 0);
+    .filter((m) => m.length > 0);
 }
 
 // Build a map: move prefix -> set of next moves (with counts)
 // We'll store all parsed move sequences
-const allSequences = allOpenings.map(o => ({
+const allSequences = allOpenings.map((o) => ({
   ...o,
-  parsed: parseMoves(o.moves)
+  parsed: parseMoves(o.moves),
 }));
 
 // Generic function: given a prefix (as array of moves), find all distinct next moves
@@ -41,7 +41,10 @@ function findBranches(prefix) {
     // Check prefix match
     let match = true;
     for (let i = 0; i < prefix.length; i++) {
-      if (moves[i] !== prefix[i]) { match = false; break; }
+      if (moves[i] !== prefix[i]) {
+        match = false;
+        break;
+      }
     }
     if (match) {
       const nextMove = moves[prefix.length];
@@ -60,7 +63,10 @@ function countDescendants(prefix) {
     if (moves.length < prefix.length) continue;
     let match = true;
     for (let i = 0; i < prefix.length; i++) {
-      if (moves[i] !== prefix[i]) { match = false; break; }
+      if (moves[i] !== prefix[i]) {
+        match = false;
+        break;
+      }
     }
     if (match) count++;
   }
@@ -88,8 +94,18 @@ printBranches('Q2: After 1. e4 e5 — distinct White 2nd moves', ['e4', 'e5']);
 printBranches('Q3: After 1. e4 c5 (Sicilian) — distinct White 2nd moves', ['e4', 'c5']);
 
 // Q4: From Najdorf "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6"
-printBranches('Q4: After Najdorf (1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6)',
-  ['e4', 'c5', 'Nf3', 'd6', 'd4', 'cxd4', 'Nxd4', 'Nf6', 'Nc3', 'a6']);
+printBranches('Q4: After Najdorf (1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6)', [
+  'e4',
+  'c5',
+  'Nf3',
+  'd6',
+  'd4',
+  'cxd4',
+  'Nxd4',
+  'Nf6',
+  'Nc3',
+  'a6',
+]);
 
 // Q5: From "1. d4"
 printBranches('Q5: After 1. d4 — distinct Black responses', ['d4']);
@@ -165,7 +181,7 @@ for (const [key, prefix] of allPrefixes) {
 function prefixToMoveStr(prefix) {
   let str = '';
   for (let i = 0; i < prefix.length; i++) {
-    if (i % 2 === 0) str += `${Math.floor(i/2)+1}. `;
+    if (i % 2 === 0) str += `${Math.floor(i / 2) + 1}. `;
     str += prefix[i] + ' ';
   }
   return str.trim();
@@ -193,8 +209,10 @@ for (const seq of allSequences) {
     }
   }
 }
-console.log(`Leaf nodes (no further named extensions): ${leafCount} out of ${allSequences.length} total`);
-console.log(`Percentage: ${(leafCount / allSequences.length * 100).toFixed(1)}%`);
+console.log(
+  `Leaf nodes (no further named extensions): ${leafCount} out of ${allSequences.length} total`
+);
+console.log(`Percentage: ${((leafCount / allSequences.length) * 100).toFixed(1)}%`);
 console.log('Examples:');
 for (const ex of leafExamples) {
   console.log(`  ${ex}`);

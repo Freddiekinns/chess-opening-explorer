@@ -1,6 +1,6 @@
 # [TASK015] - Hierarchical Family Tree Navigation
 
-**Status:** Pending **Added:** 2026-03-17 **Updated:** 2026-03-17
+**Status:** Pending **Added:** 2026-03-17 **Updated:** 2026-03-18
 
 ## 1. Problem Statement
 
@@ -9,20 +9,164 @@ currently presents related openings as a flat sibling list. Users have no way to
 understand where a specific variation sits in the broader theory tree, or
 navigate "up" to see the family landscape.
 
-## 2. User Journey
+## 2. User Journeys
 
-> User is learning the Sicilian and lands on **Najdorf Variation, 6.Bg5 (B99)**
+### Journey 1: "Where am I?" — Understanding lineage from a detail page
 
-1. **Breadcrumb reads:** `Sicilian Defense › Najdorf Variation › 6.Bg5` — they
-   immediately understand the lineage
-2. **Click "Najdorf Variation"** → land on B90 detail page, see nested tree of
-   6.Bg5 / 6.Be3 / 6.f4 / English Attack
-3. **Click "Sicilian Defense"** → land on new Family Overview page with card
-   grid of all major Sicilian variations
-4. **From the Family page**, compare Najdorf vs Dragon vs Scheveningen at a
-   glance and choose what to study next
+> **Persona:** Intermediate player who searched for "Najdorf" and landed on
+> **Najdorf Variation, 6.Bg5 (B99)**
 
-## 3. Design Decisions
+1. Breadcrumb reads: `Sicilian Defense › Najdorf Variation › 6.Bg5` — instant
+   orientation
+2. The variations section shows a nested tree: parent "Open Sicilian" at top,
+   current position highlighted among siblings (6.Be3, 6.f4, English Attack)
+3. They now understand this is _one specific line_ within the Najdorf, which is
+   itself part of the Sicilian family
+
+**UX goal:** Zero-click orientation. The breadcrumb and tree answer "where does
+this fit?" without any interaction.
+
+### Journey 2: "What else is in this family?" — Exploring siblings
+
+> **Persona:** Player studying the Najdorf who wants to compare alternative 6th
+> moves
+
+1. On the **Najdorf 6.Bg5** detail page, the variations tree shows siblings:
+   6.Be3, 6.Be2, 6.f3, English Attack
+2. They click **6.Be3** → navigate to that detail page, breadcrumb updates
+3. They compare plans/stats between the two lines
+4. They click **"Najdorf Variation"** in the breadcrumb → go up one level to see
+   all Najdorf sub-lines together
+
+**UX goal:** Fluid lateral navigation between siblings at the same depth, and
+easy "zoom out" to the parent level.
+
+### Journey 3: "Show me the big picture" — Family overview browsing
+
+> **Persona:** Improving player who plays 1.e4 and wants to understand the
+> Sicilian landscape before choosing what to study
+
+1. They arrive at the **Family Overview page** for the Sicilian (via breadcrumb
+   click, search, or landing page link)
+2. Page shows: family name, ECO range B20–B99, description, and a card grid of
+   the top variations (Najdorf, Dragon, Scheveningen, Classical, etc.)
+3. Each card shows: name, ECO code, complexity, game count, brief description
+4. They compare at a glance — Najdorf is "Advanced" with 50k games, Dragon is
+   "Intermediate" with 30k games
+5. They click the Dragon card → land on the Dragon detail page with full info
+
+**UX goal:** A hub page that lets users compare variations within a family and
+make an informed choice about what to study.
+
+### Journey 4: "I want to browse all families" — Discovery from landing page
+
+> **Persona:** Beginner who wants to explore what opening families exist
+
+1. On the landing page, they see an "Opening Families" section (or nav link)
+   that lists all ~20 families as compact cards
+2. Each card shows: family name, ECO range, brief tagline, number of variations
+3. They click **"King's Indian Defense"** → land on the KID Family Overview page
+4. From there they drill into specific variations
+
+**UX goal:** Discoverability. Users who don't know what they're looking for can
+browse the full family catalogue.
+
+**Open question:** How prominent should families be on the landing page? Options:
+
+- **(a)** New section below popular openings grid ("Browse by Family")
+- **(b)** Replace the ECO category buttons (A/B/C/D/E) with family cards
+- **(c)** Add a top-nav link to a separate `/families` index page
+- **(d)** All of the above — section on landing + nav link
+
+### Journey 5: "I found an opening — which family is it?" — Reverse lookup
+
+> **Persona:** Player who searched for "Berlin Defense" and wants to understand
+> the broader context
+
+1. They land on the Berlin Defense detail page
+2. Breadcrumb reads: `Ruy Lopez › Berlin Defense` (only 2 levels — Berlin has no
+   sub-lines in our data)
+3. They click **"Ruy Lopez"** → Family Overview for the Ruy Lopez
+4. They see the Berlin alongside the Marshall, Morphy, Exchange, and Closed
+   variations
+
+**UX goal:** Every opening page is a doorway into its family. The breadcrumb
+always provides an "up" path.
+
+### Journey 6: "What should I play as Black against 1.d4?" — Cross-family comparison
+
+> **Persona:** Player building a repertoire who needs to choose between the
+> King's Indian, Nimzo-Indian, and Queen's Gambit Declined
+
+1. They browse the `/families` index or landing page family section
+2. They see cards for KID, Nimzo, QGD side by side
+3. They click into each family overview to compare complexity, game counts, and
+   style descriptions
+4. They choose the Nimzo, click into a specific variation, and star it for their
+   repertoire
+
+**UX goal:** Families as a decision-making tool. Users can compare families at
+the same level before committing to study.
+
+**Note:** This journey works well with the existing repertoire (star) feature —
+once they find a variation through family browsing, they star it.
+
+---
+
+## 3. UX Decisions Needed
+
+Before building, the following need to be resolved:
+
+### Decision 1: Landing page integration
+
+How do families appear on the landing page?
+
+| Option                          | Pros                               | Cons                                |
+| ------------------------------- | ---------------------------------- | ----------------------------------- |
+| New "Browse by Family" section  | Additive, no disruption            | Page gets longer                    |
+| Replace ECO buttons with family | More meaningful grouping           | Loses ECO-based filtering           |
+| Nav link to `/families` index   | Clean separation                   | Low discoverability                 |
+| Section + nav link              | Maximum discoverability            | More surface area to build/maintain |
+
+### Decision 2: Family overview page — what's the primary content?
+
+The current spec says "card grid of top 6–8 variations + collapsible full tree
+below." But should the family page also include:
+
+- A chessboard showing the family's starting position?
+- Aggregate stats (total games, average complexity)?
+- A "recommended for beginners" callout?
+- Videos/studies that cover the family broadly?
+
+Keeping it simple (cards + tree) is faster to build and avoids scope creep.
+
+### Decision 3: How to handle "shallow" families
+
+Some families have very few variations in our data (e.g., Grünfeld might only
+have 5 openings total). Should these still get a full family page, or be handled
+differently?
+
+### Decision 4: Breadcrumb for openings outside any defined family
+
+Not every ECO code will be covered by the ~20 families in the config. What
+happens for an orphan opening like "Polish Opening" (A00)?
+
+- **(a)** Show no breadcrumb (just the opening name)
+- **(b)** Show a generic breadcrumb using ECO letter: `Flank Openings (A) › Polish Opening`
+- **(c)** Ensure every opening has a family by defining catch-all families
+
+### Decision 5: Middle breadcrumb — what does it link to?
+
+The spec says 3 levels: `Family › Variation › Line`. The middle level click
+should go to:
+
+- **(a)** The detail page for the parent opening (e.g., `/opening/<najdorf-fen>`)
+- **(b)** A filtered family page showing only that sub-section
+
+Option (a) is simpler and reuses existing pages. Option (b) adds another
+bespoke view.
+
+## 4. Design Decisions (Resolved)
 
 | Decision                    | Choice                                       | Rationale                                                      |
 | --------------------------- | -------------------------------------------- | -------------------------------------------------------------- |
@@ -31,7 +175,7 @@ navigate "up" to see the family landscape.
 | Variations section          | Replace flat list with nested tree           | Makes hierarchy visible on the page itself                     |
 | Hierarchy source            | Config-file-driven (`opening_families.json`) | Semantic names, curated groupings, ~20 families to define      |
 
-## 4. Three UI Surfaces
+## 5. Three UI Surfaces
 
 ### Surface 1: Breadcrumbs (every detail page)
 
@@ -72,7 +216,7 @@ Open Sicilian  (parent — clickable)
   count
 - Below cards: collapsible full variation tree (all ECO codes in range, grouped)
 
-## 5. Data Model
+## 6. Data Model
 
 ### `config/opening_families.json`
 
@@ -107,7 +251,7 @@ Given a FEN/ECO code, returns:
 - `siblings` — openings at the same depth within the family
 - `parent` — immediate parent opening (one level up by move depth)
 
-## 6. Key Files
+## 7. Key Files
 
 | File                                                            | Status | Purpose                                              |
 | --------------------------------------------------------------- | ------ | ---------------------------------------------------- |
@@ -119,7 +263,7 @@ Given a FEN/ECO code, returns:
 | `packages/web/src/components/detail/RelatedOpeningsTab.tsx`     | Modify | Replace flat list with nested tree                   |
 | `packages/api/src/routes/openings.routes.js`                    | Modify | Add `/api/openings/family/:slug` endpoint            |
 
-## 7. Deferred / Out of Scope
+## 8. Deferred / Out of Scope
 
 - **Transposition awareness**: Same position via different move orders — which
   breadcrumb to show? Phase 2.
@@ -128,7 +272,7 @@ Given a FEN/ECO code, returns:
 - **Cross-family relationships**: Openings that belong to multiple families. Out
   of scope.
 
-## 8. Verification
+## 9. Verification
 
 1. Navigate to any opening detail page → breadcrumb shows correct 3-level path
 2. Click middle breadcrumb → lands on correct parent page with nested tree

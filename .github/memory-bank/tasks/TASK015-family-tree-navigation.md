@@ -142,9 +142,32 @@ Chess-specific validation: Lichess uses a vertical indented tree at
 
 ### Settled decisions
 
-**Location:** Replaces the current `RelatedOpeningsTeaser` component. On
-desktop, renders in the left column below the chessboard (same position as
-today's related openings). On mobile, renders at the bottom of the page.
+**Location:** Collapsible panel in the **right column**, between `OpeningStats`
+and the tabbed content section (Overview/Plans/Studies/Videos). Same position on
+all breakpoints — no desktop/mobile placement swap needed.
+
+- **Collapsed state (default):** A single-row breadcrumb path showing the
+  ancestor chain (e.g., `1. e4 › Sicilian › Open Sicilian › Najdorf`). Compact
+  (~40px tall). Click or press a disclosure chevron to expand.
+- **Expanded state:** The full vertical indented tree appears below the
+  breadcrumb, constrained by `max-height` with vertical scroll. A second click
+  on the chevron (or the breadcrumb row) collapses it back.
+
+This placement was chosen over the previous "left column below the board"
+approach because:
+1. The tree is **navigational** — it belongs near the top, not buried below
+   the board, controls, and FEN utilities
+2. The right column is where users are already looking for opening context
+   (moves, stats, plans)
+3. A collapsed breadcrumb is **always visible** without scrolling — users see
+   where the opening sits in the family at a glance
+4. No layout swap needed between desktop and mobile — the component stays in
+   the same DOM position and works identically
+
+**Replaces `RelatedOpeningsTeaser`:** Both the desktop instance (left column)
+and the mobile instance (page bottom) are removed. The tree subsumes their
+functionality — siblings are visible in the tree, and the breadcrumb provides
+better orientation than the flat related-openings list.
 
 **Layout — vertical indented tree (file-explorer style):**
 - **Ancestors** form a vertical path at the top, each indented one level deeper
@@ -153,11 +176,14 @@ today's related openings). On mobile, renders at the bottom of the page.
   above/below it
 - **Children** appear indented below the current opening
 - Indentation guides (subtle vertical lines) connect parent to children
-- The tree scrolls vertically within the page — no horizontal scroll needed
+- The tree scrolls vertically within a `max-height` container — no horizontal
+  scroll needed
 
 **Interaction model:**
-- **Expand/collapse (chevron or → / ←):** Toggle a node's children inline.
-  Chevron rotates 90° when expanded.
+- **Expand/collapse panel (breadcrumb row):** Toggle the tree open/closed.
+  Disclosure chevron rotates when expanded.
+- **Expand/collapse nodes (chevron or → / ←):** Toggle a node's children
+  inline. Chevron rotates 90° when expanded.
 - **↑ / ↓ arrow keys:** Move focus between visible nodes. This naturally moves
   between siblings at the same level, answering "what else could I play here?"
 - **→ arrow key:** Expand focused node, or move to first child if already
@@ -168,15 +194,16 @@ today's related openings). On mobile, renders at the bottom of the page.
 - This is the standard `treeview` ARIA pattern — documented in WAI-ARIA
   Authoring Practices and used by VS Code, GitHub, macOS Finder.
 
-**Initial state:** Ancestors shown collapsed (just the path to root) + current
-node highlighted + 1 level of children expanded + siblings of current node
-visible. User expands from there.
+**Initial state (when expanded):** Ancestors shown collapsed (just the path to
+root) + current node highlighted + 1 level of children expanded + siblings of
+current node visible. User expands from there.
 
 **Responsive behavior:**
-- **All breakpoints:** Same vertical tree layout. No breakpoint-specific
-  component swap needed — vertical trees are naturally responsive.
-- **Desktop (1024px+):** Tree in left column below the board
-- **Mobile (<768px):** Tree at page bottom (same component, different placement)
+- **All breakpoints:** Same component, same DOM position in the right column.
+  Vertical indented trees are naturally responsive — no breakpoint-specific
+  swap needed.
+- **Collapsed breadcrumb** truncates gracefully on narrow screens (ellipsis on
+  middle ancestors if needed, always showing first and last)
 
 ### Node design (each row in the tree)
 
@@ -300,7 +327,8 @@ This is pure move-string manipulation — no new data sources needed.
 | `packages/api/src/services/tree-service.js` | Create | Tree derivation logic |
 | `packages/web/src/components/detail/OpeningTree.tsx` | Create | Vertical indented tree component (all breakpoints) |
 | `packages/web/src/components/detail/OpeningTree.module.css` | Create | Tree styles (CSS Modules) — indent guides, node rows, focus/active states |
-| `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Replace RelatedOpeningsTeaser with OpeningTree |
+| `packages/web/src/pages/OpeningDetailPage.tsx` | Modify | Remove RelatedOpeningsTeaser (both instances), add OpeningTree in right column between Stats and tabs |
+| `packages/web/src/pages/OpeningDetailPage.module.css` | Modify | Remove relatedTeaserDesktop/Mobile classes, add tree panel max-height/scroll styles |
 
 ## 7. Definition of done (v1)
 
@@ -313,7 +341,9 @@ This is pure move-string manipulation — no new data sources needed.
 - [ ] Keyboard navigation: ↑/↓ between visible nodes, →/← expand/collapse, Enter to navigate
 - [ ] `role="tree"` / `role="treeitem"` ARIA pattern with correct `aria-expanded`, `aria-level`, `aria-setsize`, `aria-posinset`
 - [ ] Clicking an opening name navigates to its detail page
-- [ ] Tree replaces `RelatedOpeningsTeaser` on the detail page (same positions: left column on desktop, bottom on mobile)
+- [ ] Tree replaces `RelatedOpeningsTeaser` in the right column (between Stats and tabs), both RelatedOpeningsTeaser instances removed
+- [ ] Collapsed state shows breadcrumb path (~40px), expands to full tree on click
+- [ ] Expanded tree has `max-height` with vertical scroll
 - [ ] Leaf nodes: no chevron, ancestors + siblings still shown
 - [ ] Backend tests for tree-service
 - [ ] Frontend tests for tree component (render, keyboard nav, expand/collapse)

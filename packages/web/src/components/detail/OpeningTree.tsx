@@ -126,11 +126,16 @@ export const OpeningTree: React.FC<Props> = ({
 
   // Build three sections
   const { pathRows, continuationRows, siblingRows } = useMemo(() => {
-    if (!treeData) return { pathRows: [], continuationRows: [], siblingRows: [] };
+    if (!treeData || !treeData.current)
+      return { pathRows: [], continuationRows: [], siblingRows: [] };
+
+    const ancestors = treeData.ancestors || [];
+    const children = treeData.children || [];
+    const siblings = treeData.siblings || [];
 
     // Path: ancestors + current
     const pathRows: VisibleRow[] = [
-      ...treeData.ancestors.map((a) => ({
+      ...ancestors.map((a) => ({
         key: a.fen,
         fen: a.fen,
         name: a.name,
@@ -158,7 +163,7 @@ export const OpeningTree: React.FC<Props> = ({
 
     // Continuations: children of current (expandable)
     const continuationRows = buildExpandableRows(
-      treeData.children,
+      children,
       expandedNodes,
       lazyChildren,
       loadingNodes,
@@ -166,7 +171,7 @@ export const OpeningTree: React.FC<Props> = ({
     );
 
     // Siblings: siblings of current (expandable), sorted by move
-    const sortedSiblings = [...treeData.siblings].sort((a, b) => a.move.localeCompare(b.move));
+    const sortedSiblings = [...siblings].sort((a, b) => a.move.localeCompare(b.move));
     const siblingRows = buildExpandableRows(
       sortedSiblings,
       expandedNodes,
@@ -331,7 +336,7 @@ export const OpeningTree: React.FC<Props> = ({
   // Track global index across sections
   let globalIndex = 0;
 
-  const currentMove = treeData?.current.move || '';
+  const currentMove = treeData?.current?.move || '';
 
   return (
     <section className={styles.panel} aria-label="Opening tree navigation">

@@ -79,11 +79,12 @@ npm run build:vercel         # Prepare data + build for Vercel deployment
 ```
 .github/memory-bank/
 ├── context.md        # Project foundation (architecture, tech, patterns)
+├── user-journeys.md  # Core user functionality and flows
 ├── activeContext.md  # Current work focus
 └── progress.md       # What works, what's left
 ```
 
-**Always read first**: `activeContext.md` + `progress.md`
+**Always read first**: `user-journeys.md` + `activeContext.md` + `progress.md`
 
 ## Instructions (Load As Needed)
 

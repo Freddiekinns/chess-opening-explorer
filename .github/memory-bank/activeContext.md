@@ -102,11 +102,18 @@ and children. Replaces `RelatedOpeningsTeaser` entirely.
 
 ---
 
+## Current Focus: Documentation Upgrade (User Journeys) — Completed
+
+**Task:** Create a source of truth for all main user journeys and functionality.
+
+**Completed Steps:**
+- Created [.github/memory-bank/user-journeys.md](.github/memory-bank/user-journeys.md) with detailed breakdowns of the Landing Page, Opening Detail Page, and Analyse Page.
+- Updated [README.md](README.md) with a new Project Context section referencing the memory bank.
+- Updated [CLAUDE.md](CLAUDE.md) to include `user-journeys.md` as a critical file to read at the start of a session.
+
+---
+
 ## Previous: Video Pipeline Overindexing Fix — Completed
-
-## Session Summary (2026-03-15, Part 2)
-
-### Fix: Video Pipeline Overindexing
 
 **Problem:** Spot-checking after TASK012 full pipeline run revealed the matcher
 was too generous — videos appeared on wrong openings. Three root causes:

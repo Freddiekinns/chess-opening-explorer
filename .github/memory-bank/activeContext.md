@@ -1,8 +1,69 @@
 # Active Context
 
-**Date:** 2026-03-18
+**Date:** 2026-03-21
 
-## Current Focus: TASK015 Opening Tree Navigation — Complete
+## Current Focus: TASK016 Design Overhaul — Chunk 4b Complete
+
+### Chunk 4b: Replace sidebar with top bar (2026-03-21)
+
+**What was done:**
+
+- Created `TopBar.tsx` + `TopBar.module.css` — 56px sticky top bar replacing
+  sidebar
+- Logo left ("Opening Book"), nav centred (Discover, Analyse) using CSS Grid
+  `1fr auto 1fr` for true-centre alignment
+- Text-only nav items (dropped icons — cleaner for 2-item horizontal nav)
+- Orange underline active state (conventional for horizontal navs)
+- Focus-visible outlines on logo and nav items
+- Removed all sidebar `margin-left` rules from `.app-content`
+- Deleted `Sidebar.tsx` + `Sidebar.module.css`
+- Mobile: nav hidden below 640px, bottom tabs unchanged
+
+**Next:** Chunk 5 — detail page ContentHeader (with search).
+
+### Chunk 3: Remove old navigation (2026-03-21)
+
+**What was done:**
+
+- Removed `<LandingHeader />` from `LandingPage.tsx` and `AnalyseGamesPage.tsx`
+- Deleted `LandingHeader.tsx` entirely (no remaining references)
+- Removed all `.landing-header*` styles + responsive media query from
+  `simplified.css`
+- Reduced hero section `padding-top` from `100px` to `var(--space-8)` (desktop)
+  and `var(--space-6)` (tablet/mobile) — the 100px was for the old header
+  overlay
+- `GlobalHeader.tsx` kept for now (search logic useful for ContentHeader in
+  chunk 5)
+
+### Chunk 2: Responsive sidebar — collapse + bottom tabs (2026-03-21)
+
+**What was built:**
+
+- `BottomTabBar.tsx` + `BottomTabBar.module.css` — fixed bottom nav (56px), two
+  items (Discover, Analyse), hidden above 640px, orange active text
+- Updated `App.tsx` — added `<BottomTabBar />` to layout
+- Updated `simplified.css` — added `padding-bottom: 56px` on mobile to prevent
+  content being covered by the tab bar
+
+**Build:** clean. **Tests:** 163/163 pass.
+
+### Chunk 1: Layout shell — sidebar + content area grid (2026-03-21)
+
+**What was built:**
+
+- `Sidebar.tsx` + `Sidebar.module.css` — persistent left sidebar with "Opening
+  Book" wordmark (plain text, no monogram), two nav items (Discover, Analyse)
+  using `NavLink` for active state, orange left-border indicator on active item
+- Updated `App.tsx` — `<Sidebar />` + `<main className="app-content">` wrapper
+- Updated `simplified.css` — `.app` changed from flex column to CSS grid
+  (`200px 1fr`), responsive breakpoints (64px at 900px, hidden at 640px)
+
+**Decision:** Dropped "OB" monogram — plain wordmark is cleaner. Logged in
+TASK016 section 10.
+
+---
+
+## Previous: TASK015 Opening Tree Navigation — Complete
 
 ## Session Summary (2026-03-18)
 

@@ -4,6 +4,12 @@
   margin: 0 auto;
 }
 
+.repertoireSection.hasOpenings {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--border-radius-base);
+  padding: var(--space-6);
+}
+
 .sectionHeader {
   display: flex;
   align-items: center;

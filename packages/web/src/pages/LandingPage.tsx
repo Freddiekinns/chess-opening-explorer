@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LandingHeader } from '../components/layout/LandingHeader';
 import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
@@ -159,8 +158,6 @@ const LandingPage: React.FC = () => {
         name="twitter:description"
         content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools."
       />
-      <LandingHeader />
-
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">

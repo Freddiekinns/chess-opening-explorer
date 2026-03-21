@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { LandingHeader } from '../components/layout/LandingHeader';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
 import type { OpeningForLookup } from '../../../shared/src';
@@ -59,8 +58,6 @@ const AnalyseGamesPage: React.FC = () => {
         name="twitter:description"
         content="Analyse your Chess.com and Lichess games to discover which openings you play and track your performance."
       />
-      <LandingHeader />
-
       {/* Hero Section */}
       <section className="analyse-hero">
         <div className="analyse-hero__content">

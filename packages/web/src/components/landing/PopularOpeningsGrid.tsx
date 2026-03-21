@@ -278,7 +278,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>Browse Chess Openings</h2>
+        <h2>Browse chess openings</h2>
         <p className="section-subtitle">Filter by skill level and explore openings by type</p>
       </div>
 

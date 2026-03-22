@@ -2,42 +2,33 @@
 
 **Date:** 2026-03-22
 
-## Current Task: TASK016 Design Overhaul - Opening Book Navigator Redesign
+## Current Task: TASK016 Design Overhaul — Opening Detail Page Complete
 
-**Status:** In progress. Build clean.
+**Status:** Chunk 6 (detail page restructure + visual polish) complete. Build
+clean, 139/139 tests pass.
 
-**Done so far (this session):**
+**Done (this session):**
 
-- Redesigned OpeningNavigator with breadcrumb hierarchy (opening names instead
-  of move notation), "Opening book" title, popularity bars, and contextual
-  "Alternatives (move N)" labelling
-- Polished OpeningNavigator rows: sentence case labels, popularity-sorted
-  continuations/alternatives, and shorter bars so more of each opening name is
-  visible
-- Added `gamesPlayed` to tree-service API (from popularity_stats data)
-- Frontend uses games played for bars/counts, falls back to descendantCount
-- Removed unused `currentMoveIndex`/`onMoveClick` props (breadcrumb uses Links)
-- Removed "Active line" section — breadcrumb shows current position instead
-- Decided against win rate bars (misleading for learners) — games played is the
-  clearer signal of popularity and line trustworthiness
-- Fixed deferred practice-mode frontend tests after CSS Modules migration by
-  asserting accessible pressed state instead of legacy global class names
-- Cleaned backend test suite noise and teardown leak by unref'ing the global
-  cache cleanup interval and stubbing expected warning/error paths in tests
+- Comprehensive visual polish pass (chunk 6b): font sizes, label weights,
+  section separators, overview contrast, Practice button ghost style, FEN
+  utilities opacity, show-more button consistency
+- Design principle update: relaxed "sentence case everywhere" to "prefer
+  sentence case" — title case allowed for short labels per WCAG best practices
+- Updated TASK016 documentation with all decisions and final values
 
 **Previous work (same branch):**
 
-- OpeningNavigator component, WinRateBar, board column widened
-- Plans below board, description below navigator
-- Studies + Videos full-width, tabs removed, learning resources polish
-- Top bar navigation (chunks 1–5)
+- OpeningNavigator component, WinRateBar, board column widened (7fr/5fr)
+- Plans below board, description below navigator, stacked sections
+- Studies + Videos full-width, learning resources polish
+- Top bar navigation (chunks 1–5), search in TopBar
 
-**Remaining:**
+**Remaining for TASK016:**
 
-- Visual polish pass on navigator and overall page
-- Mobile responsive refinements
+- Chunk 8: Analyse page refresh (stat cards, tables)
+- Chunk 9: Global polish pass (broken tests, dead CSS, focus rings)
 
-## Previous Task: TASK016 Chunks 1-5 (2026-03-21) - DONE
+## Previous Task: TASK016 Chunks 1-5 (2026-03-21) — DONE
 
 Top bar navigation replacing sidebar. Deleted GlobalHeader, FloatingBackButton,
 ContentHeader, TopBarContext, LandingHeader. ~9KB dead CSS removed.

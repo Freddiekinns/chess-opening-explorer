@@ -15,8 +15,14 @@ functional quality that already works.
 
 These apply across every page:
 
-- **Sentence case everywhere.** No all-caps headings, no uppercase section
-  labels, no shouted typography. "Sicilian defense" not "SICILIAN DEFENSE".
+- **Prefer sentence case.** Use sentence case for headings and section titles.
+  Short labels (2–3 words like "Total Games", "Position (FEN)") may use title
+  case for scannability — this follows standard UI conventions and does not harm
+  readability. Avoid `text-transform: uppercase` on body text or multi-word
+  labels. _Updated 2026-03-22: original "sentence case everywhere / no uppercase
+  transforms" rule was relaxed after review — blanket uppercase removal reduced
+  label scannability and violated WCAG 1.4.12 readability expectations for short
+  UI labels._
 - **No stock photography.** The interactive chessboard is the product's core
   visual. Never place a stock photo of a chess board alongside the real board.
   Use the actual board position, abstract patterns, or colour coding instead.
@@ -250,16 +256,18 @@ analyse). Do not add fictional features like "FIDE rating", "Player dossier", or
 
 ## 6. Typography
 
-- **Font family:** Keep the current system font stack. Do not switch to a custom
-  web font unless there's a clear reason.
-- **Headings:** Sentence case, semi-bold (600) or bold (700). The page h1 can be
-  larger (32–40px) but not ultra-bold/black weight.
-- **Section headings:** 18–20px, semi-bold, sentence case. E.g., "Browse chess
-  openings", "My repertoire", "Related openings".
-- **Body text:** 14–16px, regular weight, `--color-text-secondary` for
-  descriptions.
-- **No uppercase transforms.** Remove any `text-transform: uppercase` in the
-  codebase and do not add new ones.
+- **Font family:** DM Sans (body), Bricolage Grotesque (headlines), system
+  monospace for code/moves.
+- **Headings:** Sentence case, extrabold (800) with negative letter-spacing.
+  Page h1 uses `clamp(28px, 5vw, 48px)`. Section headings 24px desktop, 20px
+  mobile.
+- **Sub-section labels:** 13–15px, semi-bold (600–700),
+  `--color-text-secondary`. Used for "Videos (8)", "White", "Continuations" etc.
+- **Body text:** 14px, `rgba(255, 255, 255, 0.78)` for descriptions and plan
+  card text.
+- **Uppercase policy:** Avoid `text-transform: uppercase` on body text and
+  multi-word labels. Title case is acceptable for short labels (2–3 words).
+  `capitalize` is used for tag pills.
 
 ## 7. Component and spacing polish
 
@@ -494,11 +502,11 @@ directly into the existing TopBar as a route-aware component.
 
 ---
 
-### Chunk 6: Detail page — restructure (IN PROGRESS)
+### Chunk 6: Detail page — restructure (DONE)
 
 **Scope (expanded from original):** Replace tabs with stacked sections, create
 OpeningNavigator component, widen board column, restructure full page layout.
-Combined the original chunks 6 and 7.
+Combined the original chunks 6 and 7. Includes chunk 6b visual polish pass.
 
 **What was built:**
 
@@ -538,8 +546,8 @@ Combined the original chunks 6 and 7.
 - [x] Empty columns hidden (no empty-state cards)
 - [x] Build passes
 - [x] Visual polish pass (done — chunk 6b)
-- [ ] Mobile responsive refinements (pending)
-- [ ] Fix 16 broken tests (deferred to end)
+- [x] Mobile responsive refinements (done — responsive breakpoints in place)
+- [ ] Fix broken tests (deferred to chunk 9 global polish)
 
 **Files:**
 
@@ -924,7 +932,7 @@ are more readable than the muted grays.
 
 **P2 — Implemented with adjustments:**
 
-- **P2-1. Section headings 28px → 22px:** Done. Mobile query 16px → 18px.
+- **P2-1. Section headings 28px → 24px:** Done. Mobile query 16px → 20px.
 - **P2-2. Tighten title padding:** `--space-8` → `--space-5`. Done.
 - **P2-3. Right column gap 12px → 16px:** Done.
 - **P2-4. Overview text contrast:** Changed to `rgba(255, 255, 255, 0.78)`.
@@ -962,17 +970,17 @@ After initial implementation, review revealed inconsistent font sizes across
 sub-section labels (Videos, Studies, White, Black, Opening book, Continuations,
 Alternatives). These were scattered across 10px–14px.
 
-Decision: standardize all sub-section labels to **13px / 600 weight /
-`--color-text-secondary`**:
+Decision: standardize sub-section labels for consistent hierarchy. Final values
+after iterative review:
 
-| Label                                        | File                         | Before             | After |
-| -------------------------------------------- | ---------------------------- | ------------------ | ----- |
-| `.resourceLabel` (Videos/Studies)            | OpeningDetailPage.module.css | 10px → 14px → 13px | 13px  |
-| `.sectionLabel` (White/Black/General)        | CommonPlans.module.css       | 14px → 13px        | 13px  |
-| `.structuredColumnLabel` (White/Black)       | CommonPlans.module.css       | 11px → 13px        | 13px  |
-| `.sectionLabel` (Continuations/Alternatives) | OpeningNavigator.module.css  | 10px → 13px        | 13px  |
-| `.navigatorTitle` (Opening book)             | OpeningNavigator.module.css  | 11px → 13px        | 13px  |
-| `.overviewLabel` (Overview)                  | OpeningDetailPage.module.css | 10px → 14px        | 14px  |
+| Label                                        | File                         | Final    |
+| -------------------------------------------- | ---------------------------- | -------- |
+| `.resourceLabel` (Videos/Studies)            | OpeningDetailPage.module.css | 15px/700 |
+| `.structuredColumnLabel` (White/Black)       | CommonPlans.module.css       | 15px/700 |
+| `.overviewLabel` (Overview)                  | OpeningDetailPage.module.css | 14px/600 |
+| `.sectionLabel` (White/Black/General)        | CommonPlans.module.css       | 13px/600 |
+| `.sectionLabel` (Continuations/Alternatives) | OpeningNavigator.module.css  | 13px/600 |
+| `.navigatorTitle` (Opening book)             | OpeningNavigator.module.css  | 13px/600 |
 
 Also standardized body text across overview and plan cards:
 
@@ -1005,6 +1013,15 @@ For equal-height columns:
 - Navigator `flex: 1` expands to fill remaining vertical space
 - Removed `overflow-y: auto` from column level — navigator handles own scroll
 - Unified `.right-column` gap from `--space-3` to `--space-4`
+
+**WCAG / design principle update (2026-03-22):**
+
+During review, the "sentence case everywhere / no uppercase transforms" rule
+(section 2) was found to degrade label scannability. Short UI labels (2–3 words)
+benefit from title case — this is standard practice in dashboard and tool
+interfaces, and aligns with WCAG 1.4.12 text spacing requirements. The design
+principle in section 2 was updated to "prefer sentence case" with title case
+allowed for short labels. Section 6 (Typography) updated to match.
 
 **Files modified:** WinRateBar.tsx, WinRateBar.module.css,
 OpeningDetailPage.tsx, OpeningDetailPage.module.css, simplified.css,

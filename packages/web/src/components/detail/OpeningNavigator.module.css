@@ -309,27 +309,54 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .navigator {
     padding: var(--space-3);
-    border-radius: var(--border-radius-base);
   }
 
   .contRow {
-    padding: 8px 10px;
-    gap: var(--space-2);
+    padding: 6px 10px;
   }
 
-  .rowName {
+  /* Hide bars on mobile — count alone conveys popularity */
+  .rowBarWrap {
     display: none;
+  }
+
+  .rowCount {
+    min-width: auto;
+    font-size: 10px;
   }
 
   .rowMove {
     min-width: 44px;
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .rowName {
+    font-size: 11px;
+  }
+
+  .sectionLabel {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigator {
+    border-radius: var(--border-radius-base);
+  }
+
+  .contRow {
+    padding: 6px 8px;
+    gap: var(--space-1);
   }
 
   .breadcrumb {
+    font-size: 12px;
+  }
+
+  .breadcrumbCurrent {
     font-size: 12px;
   }
 }

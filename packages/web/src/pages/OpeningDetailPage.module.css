@@ -404,6 +404,15 @@
     font-size: 12px;
     padding: 5px 12px;
   }
+
+  .tagPillsRow {
+    gap: 6px;
+  }
+
+  .tagPill {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

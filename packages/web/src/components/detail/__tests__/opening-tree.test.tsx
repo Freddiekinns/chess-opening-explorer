@@ -15,6 +15,7 @@ function makeNode(overrides: Partial<TreeNode> = {}): TreeNode {
     move: '1. e4',
     moves: '1. e4',
     descendantCount: 100,
+    gamesPlayed: 0,
     hasChildren: true,
     ...overrides,
   };

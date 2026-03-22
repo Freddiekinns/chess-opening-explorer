@@ -1,0 +1,299 @@
+/* ============================
+   Practice Mode Controls
+   Matches the polished dark surface style
+   used by WinRateBar, OpeningNavigator, etc.
+   ============================ */
+
+/* ── Desktop bar ── */
+.controls {
+  margin-top: var(--space-3);
+  padding: 10px var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 200ms ease-out both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ── Color picker (pill toggle) ── */
+.colorToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.label {
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.pillGroup {
+  display: flex;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.colorBtn {
+  padding: 6px 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.colorBtn:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.colorBtn:hover:not(:disabled):not(.colorBtnActive) {
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.colorBtnActive {
+  background: var(--color-brand-orange);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(232, 93, 4, 0.3);
+}
+
+.colorBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Progress indicator ── */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.counter {
+  font-family: var(--font-family-mono);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.complete {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4ade80;
+}
+
+/* ── Action buttons ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--color-text-secondary);
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.hintBtn:hover {
+  background: rgba(255, 170, 0, 0.12);
+  border-color: rgba(255, 170, 0, 0.35);
+  color: #ffaa00;
+}
+
+.exitBtn:hover {
+  background: rgba(232, 93, 4, 0.12);
+  border-color: rgba(232, 93, 4, 0.35);
+  color: var(--color-brand-orange);
+}
+
+/* ── Mobile bottom bar ── */
+.mobileBar {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  /* Hide desktop on mobile */
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileBar {
+    margin-top: var(--space-3);
+    padding: 10px var(--space-3);
+    background-color: var(--color-bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    animation: slideIn 200ms ease-out both;
+  }
+
+  /* Pill toggle for W / B */
+  .mobilePillGroup {
+    display: flex;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .mobileColorBtn {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      color 150ms ease;
+  }
+
+  .mobileColorBtn:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .mobileColorBtnActive {
+    background: var(--color-brand-orange);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(232, 93, 4, 0.3);
+  }
+
+  .mobileColorBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .mobileProgress {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .mobileCounter {
+    font-family: var(--font-family-mono);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .mobileComplete {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4ade80;
+  }
+
+  .mobileActions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .mobileBtn {
+    min-height: 40px;
+    min-width: 52px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+
+  .mobileHintBtn {
+    background: rgba(255, 170, 0, 0.12);
+    border-color: rgba(255, 170, 0, 0.3);
+    color: #ffaa00;
+  }
+
+  .mobileExitBtn {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.3);
+    color: var(--color-brand-orange);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .controls {
+    animation: none;
+  }
+
+  .mobileBar {
+    animation: none;
+  }
+
+  .btn,
+  .colorBtn,
+  .mobileBtn,
+  .mobileColorBtn {
+    transition: none;
+  }
+}

@@ -124,11 +124,8 @@ All JSON → Frontend (static, pre-generated)
 
 ### AD-016: Server-Side Search & Edge Caching
 
-Search moved from client-side preload to server-side semantic search.
-GlobalHeader uses debounced `/api/openings/semantic-search` (zero preload).
-OpeningDetailPage uses `/api/openings/search-index` (1.6 MB, 94% smaller than
-`/all`). All API routes have `Cache-Control` headers in `vercel.json` for Vercel
-CDN edge caching. See TASK011 for full details.
+All search is server-side. All API routes have `Cache-Control` headers in
+`vercel.json` for Vercel CDN edge caching.
 
 ## Known Constraints
 

@@ -31,12 +31,12 @@ export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats }) => {
     <div className={styles.statsCard}>
       <div className={styles.statsHeader}>
         <div className={styles.statGroup}>
-          <span className={styles.statLabel}>Total master games</span>
+          <span className={styles.statLabel}>Total Games</span>
           <span className={styles.statValue}>{formatNumber(totalGames)}</span>
         </div>
         {popularityStats?.avg_rating && (
           <div className={`${styles.statGroup} ${styles.statGroupRight}`}>
-            <span className={styles.statLabel}>Average Elo</span>
+            <span className={styles.statLabel}>Average Lichess Elo</span>
             <span className={`${styles.statValue} ${styles.statValueElo}`}>
               {popularityStats.avg_rating.toLocaleString()}
             </span>

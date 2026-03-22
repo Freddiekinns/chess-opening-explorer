@@ -80,11 +80,12 @@ npm run build:vercel         # Prepare data + build for Vercel deployment
 .github/memory-bank/
 ├── context.md        # Project foundation (architecture, tech, patterns)
 ├── user-journeys.md  # Core user functionality and flows
-├── activeContext.md  # Current work focus
-└── progress.md       # What works, what's left
+├── activeContext.md  # Current + previous task only (< 50 lines)
+├── progress.md       # One-liner per task + what's left (< 100 lines)
+└── archive.md        # Historical session details (never auto-loaded)
 ```
 
-**Always read first**: `user-journeys.md` + `activeContext.md` + `progress.md`
+**Always read first**: `activeContext.md` + `progress.md`
 
 ## Instructions (Load As Needed)
 
@@ -192,3 +193,10 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   re-fetch from YouTube. DB `view_count` and `thumbnail_url` will be stale/null.
   Run `node tools/video-pipeline/scripts/backfill-views.js` after rematch to
   restore them (costs ~35 API calls for ~1700 videos).
+- **Memory bank bloat prevention**: `activeContext.md` must stay under **50
+  lines** (current task + previous task only). `progress.md` must stay under
+  **100 lines** (one-liner per completed task). When updating memory bank: move
+  completed task details to `.github/memory-bank/archive.md`, then trim. Never
+  append session history to activeContext — replace the current task section.
+  Detailed history belongs in git commits and `archive.md`, not in files loaded
+  every session.

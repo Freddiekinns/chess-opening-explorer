@@ -7,6 +7,7 @@ export interface TreeNode {
   move: string;
   moves: string;
   descendantCount: number;
+  gamesPlayed: number;
   hasChildren: boolean;
 }
 

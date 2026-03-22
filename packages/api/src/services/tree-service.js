@@ -16,6 +16,7 @@ class TreeService {
       'tree-index',
       () => {
         const ecoData = this.ecoService.loadECOData();
+        const popularityData = this.ecoService.loadPopularityData();
 
         // moveIndex: normalizedMoves → { fen, name, eco, moves, isEcoRoot }
         const moveIndex = new Map();
@@ -23,6 +24,15 @@ class TreeService {
         const childrenMap = new Map();
         // descendantCount: moves → number of descendants
         const descendantCount = new Map();
+        // gamesByFen: fen → games_analyzed count
+        const gamesByFen = new Map();
+
+        // Build games lookup from popularity data
+        for (const [fen, stats] of Object.entries(popularityData)) {
+          if (stats.games_analyzed > 0) {
+            gamesByFen.set(fen, stats.games_analyzed);
+          }
+        }
 
         // First pass: populate moveIndex
         for (const [fen, opening] of Object.entries(ecoData)) {
@@ -70,7 +80,7 @@ class TreeService {
           countDescendants(normalizedMoves);
         }
 
-        return { moveIndex, childrenMap, descendantCount };
+        return { moveIndex, childrenMap, descendantCount, gamesByFen };
       },
       3600000
     );
@@ -172,8 +182,9 @@ class TreeService {
    * @param {object} entry - opening entry from moveIndex
    * @param {Map} descendantCount - pre-computed descendant counts
    * @param {Map} childrenMap - pre-computed children map
+   * @param {Map} gamesByFen - pre-computed games_analyzed counts by FEN
    */
-  _formatNode(entry, descendantCount, childrenMap) {
+  _formatNode(entry, descendantCount, childrenMap, gamesByFen) {
     const normalizedMoves = this._normalizeMoves(entry.moves);
     const hasChildren = (childrenMap.get(normalizedMoves) || []).length > 0;
 
@@ -184,6 +195,7 @@ class TreeService {
       move: this._getLastMoveDisplay(entry.moves),
       moves: entry.moves,
       descendantCount: descendantCount.get(normalizedMoves) || 0,
+      gamesPlayed: gamesByFen.get(entry.fen) || 0,
       hasChildren,
     };
   }
@@ -193,7 +205,7 @@ class TreeService {
    * Returns ancestors (named openings only), siblings, children.
    */
   getTreeContext(fen) {
-    const { moveIndex, childrenMap, descendantCount } = this._buildIndex();
+    const { moveIndex, childrenMap, descendantCount, gamesByFen } = this._buildIndex();
 
     // Find current opening by FEN
     const ecoData = this.ecoService.loadECOData();
@@ -215,7 +227,7 @@ class TreeService {
       const parentEntry = moveIndex.get(parentMoves);
       if (parentEntry) {
         // This is a named opening — include it as an ancestor
-        const parentNode = this._formatNode(parentEntry, descendantCount, childrenMap);
+        const parentNode = this._formatNode(parentEntry, descendantCount, childrenMap, gamesByFen);
 
         // Get siblings of this ancestor (other children of its parent)
         const grandparentMoves = this._getParentMovesNormalized(parentMoves);
@@ -224,7 +236,7 @@ class TreeService {
 
         parentNode.siblings = siblingEntries
           .filter((s) => this._normalizeMoves(s.moves) !== parentMoves)
-          .map((s) => this._formatNode(s, descendantCount, childrenMap));
+          .map((s) => this._formatNode(s, descendantCount, childrenMap, gamesByFen));
 
         ancestors.unshift(parentNode); // prepend so root is first
       }
@@ -232,11 +244,11 @@ class TreeService {
     }
 
     // Current node
-    const current = this._formatNode(currentEntry, descendantCount, childrenMap);
+    const current = this._formatNode(currentEntry, descendantCount, childrenMap, gamesByFen);
 
     // Children of current
     const childEntries = childrenMap.get(currentMoves) || [];
-    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap));
+    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, gamesByFen));
 
     // Siblings of current (other children of current's parent)
     const parentMoves = this._getParentMovesNormalized(currentMoves);
@@ -245,7 +257,7 @@ class TreeService {
       const siblingEntries = childrenMap.get(parentMoves) || [];
       siblings = siblingEntries
         .filter((s) => this._normalizeMoves(s.moves) !== currentMoves)
-        .map((s) => this._formatNode(s, descendantCount, childrenMap));
+        .map((s) => this._formatNode(s, descendantCount, childrenMap, gamesByFen));
     }
 
     return { current, ancestors, children, siblings };
@@ -255,7 +267,7 @@ class TreeService {
    * Get children of a given FEN (for lazy loading).
    */
   getChildren(fen) {
-    const { moveIndex, childrenMap, descendantCount } = this._buildIndex();
+    const { moveIndex, childrenMap, descendantCount, gamesByFen } = this._buildIndex();
 
     const ecoData = this.ecoService.loadECOData();
     const opening = ecoData[fen];
@@ -263,7 +275,7 @@ class TreeService {
 
     const normalizedMoves = this._normalizeMoves(opening.moves || '');
     const childEntries = childrenMap.get(normalizedMoves) || [];
-    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap));
+    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, gamesByFen));
 
     return { children };
   }

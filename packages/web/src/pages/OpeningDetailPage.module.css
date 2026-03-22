@@ -198,9 +198,15 @@
    IN-COLUMN SECTIONS
    ============================ */
 
-/* Right column: consistent spacing between cards */
+/* Right column: sticky, height matches left column via grid row */
 .rightColumn {
-  gap: var(--space-4);
+  gap: var(--space-3);
+  position: sticky;
+  top: 72px;
+  align-self: start;
+  max-height: calc(100vh - 88px);
+  max-height: calc(100dvh - 88px);
+  overflow: hidden;
 }
 
 /* Overview card — description in a contained surface */
@@ -208,7 +214,7 @@
   background-color: var(--color-bg-surface);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius-large);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) var(--space-4);
 }
 
 .overviewLabel {
@@ -219,13 +225,13 @@
   text-transform: uppercase;
   color: var(--color-text-muted);
   line-height: 1;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .overviewText {
   color: var(--color-text-secondary);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -363,6 +369,9 @@
 @media (max-width: 1024px) {
   .rightColumn {
     gap: var(--space-4);
+    position: static;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .overviewCard {

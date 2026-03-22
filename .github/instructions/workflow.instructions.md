@@ -86,26 +86,38 @@ The memory bank tracks project state across sessions.
 ```
 .github/memory-bank/
 ├── context.md        # Project foundation (rarely changes)
-├── activeContext.md  # Current work focus (frequently updated)
-└── progress.md       # What works, what's left (frequently updated)
+├── activeContext.md  # Current + previous task only (< 50 lines)
+├── progress.md       # One-liner per task + what's left (< 100 lines)
+├── archive.md        # Historical session details (never auto-loaded)
+└── user-journeys.md  # Core user flows and functionality
 ```
+
+### Size Limits
+
+| File               | Max Lines | Content                               |
+| ------------------ | --------- | ------------------------------------- |
+| `activeContext.md` | 50        | Current task + previous task          |
+| `progress.md`      | 100       | One-liner per task, what's left       |
+| `context.md`       | 160       | Architecture, tech stack, decisions   |
+| `archive.md`       | No limit  | Full session details (read on demand) |
 
 ### When to Update
 
-1. After implementing significant changes
-2. When discovering new patterns
-3. When user requests **update memory bank**
+1. **Task completes**: One-liner to `progress.md`, details to `archive.md`, wipe
+   from `activeContext.md`
+2. **New task starts**: Replace current task section in `activeContext.md`
+3. **Architecture changes**: Update `context.md`
+4. **User requests**: "update memory bank"
 
-### Commands
+### Rules
 
-- **update memory bank** - Review and update ALL memory bank files
-- **add task** / **create task** - Create new task
-- **update task [ID]** - Update existing task
-- **show tasks [filter]** - Display filtered task list
+- **Never append** to `activeContext.md` — replace the current task section
+- **Trim when exceeding limits** — move excess to `archive.md`
+- **Detailed history** belongs in git commits and `archive.md`
 
 ### At Session Start
 
 Always read:
 
 1. `activeContext.md` - Current work focus
-2. `progress.md` - What works and what's left
+2. `progress.md` - What's done and what's left

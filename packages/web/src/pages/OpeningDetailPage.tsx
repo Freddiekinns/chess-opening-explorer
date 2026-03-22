@@ -12,6 +12,7 @@ import {
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
+import practiceStyles from '../components/detail/PracticeControls.module.css';
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
 import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
@@ -842,81 +843,85 @@ const OpeningDetailPage: React.FC = () => {
             {/* Practice Mode Controls */}
             {practiceMode ? (
               <>
-                {/* Desktop controls - hidden on mobile via CSS */}
-                <div className="practice-controls practice-controls-desktop">
-                  <div className="practice-controls-row">
-                    <div className="practice-color-toggle">
-                      <span className="practice-label">Playing as:</span>
-                      <button
-                        className={`practice-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
-                        onClick={() => {
-                          setPracticeColor('white');
-                          if (practiceMode) startPractice();
-                        }}
-                        disabled={isComplete}
-                      >
-                        White
-                      </button>
-                      <button
-                        className={`practice-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
-                        onClick={() => {
-                          setPracticeColor('black');
-                          if (practiceMode) {
-                            // Need to restart with black
-                            const newGame = new Chess();
-                            const movesArray = getMovesList();
-                            if (movesArray.length > 0) {
-                              const move = newGame.move(movesArray[0]);
-                              if (move) {
-                                setPracticeGame(new Chess(newGame.fen()));
-                                setPracticeIndex(1);
-                                setIncorrectAttempts(0);
-                                setShowHint(false);
-                                setHighlightSquares({});
-                                setIsComplete(false);
+                {/* Desktop controls — hidden on mobile via CSS */}
+                <div className={`${practiceStyles.controls} ${practiceStyles.desktopOnly}`}>
+                  <div className={practiceStyles.row}>
+                    <div className={practiceStyles.colorToggle}>
+                      <span className={practiceStyles.label}>Playing as:</span>
+                      <div className={practiceStyles.pillGroup}>
+                        <button
+                          className={`${practiceStyles.colorBtn} ${practiceColor === 'white' ? practiceStyles.colorBtnActive : ''}`}
+                          onClick={() => {
+                            setPracticeColor('white');
+                            if (practiceMode) startPractice();
+                          }}
+                          disabled={isComplete}
+                        >
+                          White
+                        </button>
+                        <button
+                          className={`${practiceStyles.colorBtn} ${practiceColor === 'black' ? practiceStyles.colorBtnActive : ''}`}
+                          onClick={() => {
+                            setPracticeColor('black');
+                            if (practiceMode) {
+                              const newGame = new Chess();
+                              const movesArray = getMovesList();
+                              if (movesArray.length > 0) {
+                                const move = newGame.move(movesArray[0]);
+                                if (move) {
+                                  setPracticeGame(new Chess(newGame.fen()));
+                                  setPracticeIndex(1);
+                                  setIncorrectAttempts(0);
+                                  setShowHint(false);
+                                  setHighlightSquares({});
+                                  setIsComplete(false);
+                                }
                               }
                             }
-                          }
-                        }}
-                        disabled={isComplete}
-                      >
-                        Black
-                      </button>
+                          }}
+                          disabled={isComplete}
+                        >
+                          Black
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="practice-progress">
+                    <div className={practiceStyles.progress}>
                       {isComplete ? (
-                        <span className="practice-complete">Complete!</span>
+                        <span className={practiceStyles.complete}>Complete!</span>
                       ) : (
-                        <span className="practice-counter">
+                        <span className={practiceStyles.counter}>
                           Move {Math.floor(practiceIndex / 2) + 1} of{' '}
                           {Math.ceil(getMovesList().length / 2)}
                         </span>
                       )}
                     </div>
 
-                    <div className="practice-actions">
+                    <div className={practiceStyles.actions}>
                       {!isComplete && !showHint && (
                         <button
-                          className="practice-btn practice-hint-btn"
+                          className={`${practiceStyles.btn} ${practiceStyles.hintBtn}`}
                           onClick={showHintHighlight}
                           title="Show which piece to move"
                         >
                           Hint
                         </button>
                       )}
-                      <button className="practice-btn practice-exit-btn" onClick={exitPractice}>
+                      <button
+                        className={`${practiceStyles.btn} ${practiceStyles.exitBtn}`}
+                        onClick={exitPractice}
+                      >
                         Exit
                       </button>
                     </div>
                   </div>
                 </div>
 
-                {/* Mobile bottom bar - shown only on mobile via CSS */}
-                <div className="practice-mobile-bar">
-                  <div className="practice-mobile-color-toggle">
+                {/* Mobile bottom bar — shown only on mobile via CSS */}
+                <div className={practiceStyles.mobileBar}>
+                  <div className={practiceStyles.mobilePillGroup}>
                     <button
-                      className={`practice-mobile-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
+                      className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'white' ? practiceStyles.mobileColorBtnActive : ''}`}
                       onClick={() => {
                         setPracticeColor('white');
                         if (practiceMode) startPractice();
@@ -927,7 +932,7 @@ const OpeningDetailPage: React.FC = () => {
                       W
                     </button>
                     <button
-                      className={`practice-mobile-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
+                      className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'black' ? practiceStyles.mobileColorBtnActive : ''}`}
                       onClick={() => {
                         setPracticeColor('black');
                         if (practiceMode) {
@@ -953,21 +958,21 @@ const OpeningDetailPage: React.FC = () => {
                     </button>
                   </div>
 
-                  <div className="practice-mobile-progress">
+                  <div className={practiceStyles.mobileProgress}>
                     {isComplete ? (
-                      <span className="practice-mobile-complete">Complete!</span>
+                      <span className={practiceStyles.mobileComplete}>Complete!</span>
                     ) : (
-                      <span className="practice-mobile-counter">
+                      <span className={practiceStyles.mobileCounter}>
                         Move {Math.floor(practiceIndex / 2) + 1}/
                         {Math.ceil(getMovesList().length / 2)}
                       </span>
                     )}
                   </div>
 
-                  <div className="practice-mobile-actions">
+                  <div className={practiceStyles.mobileActions}>
                     {!isComplete && !showHint && (
                       <button
-                        className="practice-mobile-btn practice-mobile-hint-btn"
+                        className={`${practiceStyles.mobileBtn} ${practiceStyles.mobileHintBtn}`}
                         onClick={showHintHighlight}
                         title="Show which piece to move"
                       >
@@ -975,7 +980,7 @@ const OpeningDetailPage: React.FC = () => {
                       </button>
                     )}
                     <button
-                      className="practice-mobile-btn practice-mobile-exit-btn"
+                      className={`${practiceStyles.mobileBtn} ${practiceStyles.mobileExitBtn}`}
                       onClick={exitPractice}
                       title="Exit practice mode"
                     >
@@ -1030,8 +1035,8 @@ const OpeningDetailPage: React.FC = () => {
               </div>
             )}
 
-            {/* Move Strip - position scrubber */}
-            {getMovesList().length > 0 && (
+            {/* Move Strip - position scrubber (hidden during practice) */}
+            {!practiceMode && getMovesList().length > 0 && (
               <div className={styles.moveStrip} ref={moveStripRef}>
                 <span
                   className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
@@ -1100,27 +1105,29 @@ const OpeningDetailPage: React.FC = () => {
               </div>
             )}
 
-            {/* FEN Utilities - Technical information, less frequently accessed */}
-            <div className="chessboard-fen-utilities">
-              <label className="fen-utilities-label">Position (FEN)</label>
-              <div className="fen-display">
-                <input type="text" value={game.fen()} readOnly className="fen-input" />
-                <button
-                  onClick={() => navigator.clipboard.writeText(game.fen())}
-                  className="copy-btn"
-                >
-                  Copy
-                </button>
-                <a
-                  href={`https://lichess.org/analysis/${game.fen()}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="analyze-btn"
-                >
-                  Analyse
-                </a>
+            {/* FEN Utilities - Technical information (hidden during practice) */}
+            {!practiceMode && (
+              <div className="chessboard-fen-utilities">
+                <label className="fen-utilities-label">Position (FEN)</label>
+                <div className="fen-display">
+                  <input type="text" value={game.fen()} readOnly className="fen-input" />
+                  <button
+                    onClick={() => navigator.clipboard.writeText(game.fen())}
+                    className="copy-btn"
+                  >
+                    Copy
+                  </button>
+                  <a
+                    href={`https://lichess.org/analysis/${game.fen()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="analyze-btn"
+                  >
+                    Analyse
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -1141,12 +1148,7 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           )}
 
-          <OpeningNavigator
-            treeData={treeData}
-            loading={treeLoading}
-            currentMoveIndex={currentMoveIndex}
-            onMoveClick={goToMove}
-          />
+          <OpeningNavigator treeData={treeData} loading={treeLoading} />
         </div>
       </div>
 

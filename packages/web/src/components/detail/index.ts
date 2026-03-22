@@ -1,5 +1,4 @@
 // Detail Page Components
-export { OpeningHeader } from './OpeningHeader';
 export { OpeningStats } from './OpeningStats';
 export { CommonPlans } from './CommonPlans';
 export { default as VideoGallery } from './VideoGallery';

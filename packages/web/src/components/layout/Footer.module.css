@@ -1,0 +1,32 @@
+.footer {
+  background: #0e0e0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.brand {
+  font-family: var(--font-family-headline);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-brand-orange, #e85d04);
+  opacity: 0.5;
+  letter-spacing: -0.02em;
+}
+
+.copyright {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    align-items: center;
+    text-align: center;
+    padding: 32px 16px;
+  }
+}

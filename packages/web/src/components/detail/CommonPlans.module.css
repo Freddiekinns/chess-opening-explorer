@@ -39,6 +39,20 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
+/* Side-by-side grid layout for White + Black */
+.plansGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Plan items within sections */
 .sectionPlans {
   display: flex;
@@ -57,4 +71,153 @@
 
 .planItem.general p {
   border-left-color: var(--color-brand-orange);
+}
+
+/* ============================
+   CARDS LAYOUT
+   ============================ */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  padding: var(--space-5);
+  animation: cardIn 300ms ease-out both;
+}
+
+.card.white {
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.card.black {
+  border-left: 3px solid rgba(255, 255, 255, 0.08);
+}
+
+.card.general {
+  border-left: 3px solid var(--color-brand-orange);
+}
+
+.cardLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.cardPlans {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cardPlanText {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   STRUCTURED LAYOUT
+   ============================ */
+.sharedCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.sharedHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sharedTitle {
+  font-family: var(--font-family-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.sharedBadge {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-brand-orange, #e85d04);
+  border-radius: 9999px;
+  padding: 3px 10px;
+  line-height: 1;
+}
+
+.structuredGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.structuredColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.structuredColumnLabel {
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.structuredPlanCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  padding: var(--space-4);
+  transition: border-color 150ms ease;
+}
+
+.structuredPlanCard:hover {
+  border-color: rgba(232, 93, 4, 0.3);
+}
+
+@media (max-width: 768px) {
+  .structuredGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
 }

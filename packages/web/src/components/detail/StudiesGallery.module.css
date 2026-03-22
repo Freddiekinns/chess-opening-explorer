@@ -42,7 +42,7 @@
 }
 
 .studyTitle {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--color-text-primary);
   margin: 0;
@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: var(--font-size-sm);
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
 }
 
@@ -134,45 +134,6 @@
   margin: 0;
 }
 
-/* Search links section */
-.searchLinks {
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.searchLinksLabel {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  margin: 0 0 var(--space-3) 0;
-}
-
-.searchButtons {
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-}
-
-.searchButton {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--space-2) var(--space-4);
-  background: transparent;
-  border: 1px solid var(--color-brand-orange);
-  border-radius: var(--border-radius-small);
-  color: var(--color-brand-orange);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.searchButton:hover {
-  background: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   .studyCard {
@@ -189,12 +150,4 @@
     white-space: normal;
   }
 
-  .searchButtons {
-    flex-direction: column;
-  }
-
-  .searchButton {
-    text-align: center;
-    justify-content: center;
-  }
 }

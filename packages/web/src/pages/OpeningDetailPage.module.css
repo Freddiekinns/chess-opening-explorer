@@ -5,13 +5,46 @@
   gap: var(--space-3);
 }
 
-.openingMovesCompact.openingMovesCompact {
-  margin-top: 0;
-  padding: var(--space-3) var(--space-6);
+.titleFamily {
+  color: var(--color-text-primary);
 }
 
-.openingMovesCompact :global(.moves-notation) {
-  padding: var(--space-1) 0;
+.titleColon {
+  color: var(--color-text-muted);
+  margin: 0 0.15em;
+}
+
+.titleVariation {
+  color: var(--color-brand-orange, #e85d04);
+}
+
+.tagPillsRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: capitalize;
+  border-radius: 4px;
+  padding: 4px 12px;
+  line-height: 1;
+  border: none;
+  transition: background 150ms ease;
+}
+
+.tagPill:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .boardSectionCompact.boardSectionCompact {
@@ -34,8 +67,8 @@
 @media (min-width: 1024px) {
   .boardSectionCompact :global(.chessboard-container) {
     margin-bottom: var(--space-2);
-    max-width: calc(100vh - 380px);
-    max-width: calc(100dvh - 380px);
+    max-width: calc(100vh - 340px);
+    max-width: calc(100dvh - 340px);
   }
 }
 
@@ -65,126 +98,313 @@
   padding-top: var(--space-2);
 }
 
-/* =================
-   TABS
-   ================= */
-.simpleTabs {
-  background-color: var(--color-bg-surface);
-  border-radius: var(--border-radius-large);
-  overflow: hidden;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.tabButtonsTrack {
-  position: relative;
-}
-
-.tabButtons {
+/* ============================
+   MOVE STRIP
+   ============================ */
+.moveStrip {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  margin-top: var(--space-2);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.tabButton {
-  flex: 1;
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  border: none;
-  padding: var(--space-4) var(--space-6);
+.moveStrip::-webkit-scrollbar {
+  display: none;
+}
+
+.movePair {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: color 0.15s ease;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-base);
-  letter-spacing: 0.3px;
-  position: relative;
-  border-bottom: 2px solid transparent;
   white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+  flex-shrink: 0;
 }
 
-.tabButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(244, 140, 6, 0.05) 100%);
-  opacity: 0;
-  transition: none;
+.movePair:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-.tabButton:hover {
-  color: var(--color-text-primary);
-  background-color: rgba(255, 255, 255, 0.03);
+.movePairActive {
+  background: rgba(232, 93, 4, 0.1);
+  border-color: rgba(232, 93, 4, 0.3);
+  color: var(--color-brand-orange, #e85d04);
 }
 
-.tabButton:hover::before {
-  opacity: 1;
+.movePairActive:hover {
+  background: rgba(232, 93, 4, 0.15);
+  border-color: rgba(232, 93, 4, 0.4);
 }
 
-.tabButton.active {
-  color: var(--color-brand-orange);
-  background-color: transparent;
-  border-bottom-color: var(--color-brand-orange);
-  font-weight: var(--font-weight-semibold);
+.moveNumber {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
 }
 
-.tabButton.active::before {
+.movePairActive .moveNumber {
+  color: rgba(232, 93, 4, 0.7);
+}
+
+.movePairFuture {
   opacity: 0.3;
 }
 
-.tabContentArea {
-  position: relative;
-  min-height: 300px;
+.startPosition {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+  flex-shrink: 0;
 }
 
-.tabContentPanel {
-  display: none;
-  padding: var(--space-6);
-  animation: fadeInContent 0.3s ease-out;
+.startPosition:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.startPositionActive {
+  background: rgba(232, 93, 4, 0.1);
+  border-color: rgba(232, 93, 4, 0.3);
+  color: var(--color-brand-orange, #e85d04);
+}
+
+/* ============================
+   IN-COLUMN SECTIONS
+   ============================ */
+
+/* Right column: consistent spacing between cards */
+.rightColumn {
+  gap: var(--space-4);
+}
+
+/* Overview card — description in a contained surface */
+.overviewCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  padding: var(--space-4) var(--space-5);
+}
+
+.overviewLabel {
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1;
+  margin-bottom: var(--space-3);
+}
+
+.overviewText {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================
+   FULL-WIDTH SECTIONS
+   ============================ */
+.fullWidthSections {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.stackedSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: var(--space-6);
+  margin-top: var(--space-6);
+  animation: sectionReveal 300ms ease-out both;
+}
+
+.stackedSection:nth-child(1) { animation-delay: 160ms; }
+.stackedSection:nth-child(2) { animation-delay: 240ms; }
+.stackedSection:nth-child(3) { animation-delay: 320ms; }
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stackedSection:first-child {
+  margin-top: var(--space-4);
+}
+
+/* Section header: heading + inline actions */
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.sectionHeader .sectionHeading {
+  margin-bottom: 0;
+}
+
+.sectionHeading {
+  font-family: var(--font-family-headline);
+  font-size: 28px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* Search pills — inline with section heading */
+.searchPills {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.searchPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.searchPill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-primary);
+}
+
+.sectionBody {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 72ch;
+}
+
+/* ============================
+   LEARNING RESOURCES GRID
+   ============================ */
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.resourcesGrid > div {
+  min-width: 0;
   overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
-.tabContentPanel.active {
-  display: block;
+.resourcesGridSingle {
+  grid-template-columns: 1fr;
 }
 
-/* Mobile: scrollable tab bar so labels never clip */
-@media (max-width: 640px) {
-  .tabButtons {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+.resourceLabel {
+  font-family: var(--font-family-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .resourcesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .rightColumn {
+    gap: var(--space-4);
   }
 
-  .tabButtons::-webkit-scrollbar {
-    display: none;
+  .overviewCard {
+    padding: var(--space-3) var(--space-4);
   }
 
-  /* Right-edge fade: sits on the non-scrolling wrapper, stays fixed */
-  .tabButtonsTrack::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 48px;
-    background: linear-gradient(to right, transparent, var(--color-bg-surface));
-    pointer-events: none;
-    z-index: 1;
+  .fullWidthSections {
+    padding: 0 var(--space-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .fullWidthSections {
+    padding: 0 var(--space-2);
   }
 
-  .tabButton {
-    flex: 0 0 auto;
-    padding: var(--space-4) var(--space-4);
+  .stackedSection {
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
   }
 
-  .tabContentPanel {
-    padding: var(--space-4) var(--space-3);
+  .sectionHeading {
+    font-size: 16px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .searchPills {
+    gap: var(--space-2);
+  }
+
+  .searchPill {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stackedSection {
+    animation: none;
   }
 }

@@ -1,25 +1,55 @@
 # Active Context
 
-**Date:** 2026-03-21
+**Date:** 2026-03-22
 
-## Current Focus: TASK016 Design Overhaul — Chunk 4b Complete
+## Current Focus: TASK016 Design Overhaul — Chunk 6 In Progress
 
-### Chunk 4b: Replace sidebar with top bar (2026-03-21)
+### Chunk 6: Detail page restructure — IN PROGRESS
 
-**What was done:**
+**What was done (2026-03-21):**
 
-- Created `TopBar.tsx` + `TopBar.module.css` — 56px sticky top bar replacing
-  sidebar
-- Logo left ("Opening Book"), nav centred (Discover, Analyse) using CSS Grid
-  `1fr auto 1fr` for true-centre alignment
-- Text-only nav items (dropped icons — cleaner for 2-item horizontal nav)
-- Orange underline active state (conventional for horizontal navs)
-- Focus-visible outlines on logo and nav items
-- Removed all sidebar `margin-left` rules from `.app-content`
-- Deleted `Sidebar.tsx` + `Sidebar.module.css`
-- Mobile: nav hidden below 640px, bottom tabs unchanged
+- **OpeningNavigator component (new)** — replaces OpeningMoves, OpeningTree, and
+  OpeningStats with a unified navigator. Breadcrumb path with board sync,
+  current opening with star, inline win rate bar, continuations and alternatives
+  as navigable rows. Skeleton loading state included.
+- **Board column widened** — grid from `1fr 1fr` to `7fr 5fr` (~58:42)
+- **Plans below board** — `CommonPlans` moved to left column with new
+  `layout="sideBySide"` prop (White/Black in 2-column grid) and `hideTitle` prop
+- **Description below navigator** — overview card styled below OpeningNavigator
+  in right column
+- **Studies + Videos full-width** — stacked below the two-column area in a
+  `max-width: 1400px` container, each with heading and subtle divider
+- **Tabs removed entirely** — `activeTab`, `TAB_TYPES`, tab buttons, and all
+  show/hide logic deleted
+- **Dead code removed** — `fetchTreeChildren`, `MovePair`, `formatMovesAsPairs`,
+  `OpeningStats` import
 
-**Next:** Chunk 5 — detail page ContentHeader (with search).
+**Learning resources polish (2026-03-22):**
+
+- Search links moved from bottom of StudiesGallery to inline pill buttons in the
+  section header row (heading left, pills right)
+- Added "Search YouTube" pill alongside Lichess Studies and Chessable
+- Removed `searchLinks` prop from `StudiesGallery` — parent renders pills now
+- Empty columns not rendered: no "no videos/studies available" placeholders.
+  When neither exists but searchLinks are available, only heading + pills render
+- Study title font bumped to 1.05rem, meta to 0.875rem
+- Cleaned unused search link CSS from StudiesGallery.module.css
+
+**Remaining work (chunk 6 not finished):**
+
+- Visual polish pass on the navigator and overall page
+- Mobile responsive refinements
+- Fix 16 broken tests (deferred to the end per user instruction)
+
+**Build:** clean.
+
+### Chunk 5: Search in TopBar on detail pages (2026-03-21) — DONE
+
+- Route-aware `TopBarSearch` in `TopBar.tsx` with debounced server-side search
+- "Surprise me!" button, "Discover" force-highlighted on detail pages
+- Mobile search overlay, grid `1fr auto 1fr` centering
+- Deleted `GlobalHeader.tsx`, `FloatingBackButton.tsx`, `ContentHeader.tsx`,
+  `TopBarContext.tsx`; removed ~9KB dead CSS
 
 ### Chunk 3: Remove old navigation (2026-03-21)
 
@@ -168,9 +198,15 @@ and children. Replaces `RelatedOpeningsTeaser` entirely.
 **Task:** Create a source of truth for all main user journeys and functionality.
 
 **Completed Steps:**
-- Created [.github/memory-bank/user-journeys.md](.github/memory-bank/user-journeys.md) with detailed breakdowns of the Landing Page, Opening Detail Page, and Analyse Page.
-- Updated [README.md](README.md) with a new Project Context section referencing the memory bank.
-- Updated [CLAUDE.md](CLAUDE.md) to include `user-journeys.md` as a critical file to read at the start of a session.
+
+- Created
+  [.github/memory-bank/user-journeys.md](.github/memory-bank/user-journeys.md)
+  with detailed breakdowns of the Landing Page, Opening Detail Page, and Analyse
+  Page.
+- Updated [README.md](README.md) with a new Project Context section referencing
+  the memory bank.
+- Updated [CLAUDE.md](CLAUDE.md) to include `user-journeys.md` as a critical
+  file to read at the start of a session.
 
 ---
 

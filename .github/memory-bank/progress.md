@@ -6,9 +6,9 @@
   served via the API. Lightweight search index available at
   `/api/openings/search-index` (1.6 MB).
 - **Search:** Multi-layered search (Semantic, Fuzzy, Exact) via server-side
-  `/api/openings/semantic-search`. GlobalHeader uses debounced server-side
-  search (zero preload). OpeningDetailPage uses `/search-index` for instant
-  client-side results + server-side fallback. Backend responds in 1-5ms.
+  `/api/openings/semantic-search`. Landing page hero has full search bar. Detail
+  page TopBar has debounced server-side search (zero preload) + "Surprise me"
+  button. Backend responds in 1-5ms.
 - **Edge Caching:** All API routes have `Cache-Control` headers in
   `vercel.json`. Static data cached 1h at CDN edge with 24h
   stale-while-revalidate. Search endpoints cached 5min. Crawler traffic served
@@ -137,14 +137,18 @@
 
 ## Current Status
 
+- **TASK016 Design Overhaul — in progress.** Top bar navigation replaces sidebar
+  (chunks 1–5 done). Detail page restructured: tabs removed, stacked sections,
+  OpeningNavigator component, widened board column (chunk 6 in progress).
+  Learning resources section polished: search pills inline with heading, empty
+  columns hidden, font sizing improved. Remaining: visual polish, mobile
+  refinements, broken tests.
 - The project is in a solid state with a robust backend and data pipeline.
 - Personal Opening Explorer is complete with multi-platform support and polished
   UI.
 - SEO infrastructure deployed: unique meta tags for all 12,377 opening pages,
   Open Graph tags for social sharing, JSON-LD structured data.
 - The core data-heavy features are largely complete on the backend.
-- The main focus is shifting towards building out the frontend UI to expose all
-  the available data and features to the user.
 
 ## Known Issues
 

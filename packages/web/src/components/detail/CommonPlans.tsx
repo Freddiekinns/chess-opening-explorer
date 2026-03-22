@@ -4,6 +4,13 @@ import styles from './CommonPlans.module.css';
 interface CommonPlansProps {
   ecoCode: string;
   className?: string;
+  /** 'stacked' (default) renders White/Black/General vertically.
+   *  'sideBySide' puts White and Black in a 2-column grid with General below.
+   *  'cards' renders each side as a full-width card with left-border accent.
+   *  'structured' renders shared plans full-width, White/Black side-by-side below. */
+  layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured';
+  /** When true, hides the built-in "Common Plans" heading (parent provides its own). */
+  hideTitle?: boolean;
 }
 
 interface ECOAnalysis {
@@ -47,13 +54,18 @@ function capitaliseFirst(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-const SIDE_CONFIG: Record<PlanSide, { label: string; className: string }> = {
-  white: { label: 'White', className: styles.white },
-  black: { label: 'Black', className: styles.black },
-  general: { label: 'Both', className: styles.general },
+const SIDE_CONFIG: Record<PlanSide, { label: string; cardLabel: string; className: string }> = {
+  white: { label: 'White', cardLabel: 'White perspective', className: styles.white },
+  black: { label: 'Black', cardLabel: 'Black perspective', className: styles.black },
+  general: { label: 'Both', cardLabel: 'Shared objectives', className: styles.general },
 };
 
-export const CommonPlans: React.FC<CommonPlansProps> = ({ ecoCode, className = '' }) => {
+export const CommonPlans: React.FC<CommonPlansProps> = ({
+  ecoCode,
+  className = '',
+  layout = 'stacked',
+  hideTitle = false,
+}) => {
   const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -109,12 +121,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({ ecoCode, className = '
   const totalPlans = grouped.white.length + grouped.black.length + grouped.general.length;
 
   if (totalPlans === 0) {
-    return (
-      <div className={`content-panel-improved ${className}`}>
-        <h3 className="title-subsection">Common Plans</h3>
-        <p>No common plans available for this opening.</p>
-      </div>
-    );
+    return null;
   }
 
   const renderSection = (side: PlanSide, plans: ClassifiedPlan[]) => {
@@ -135,14 +142,113 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({ ecoCode, className = '
     );
   };
 
+  const renderCard = (side: PlanSide, plans: ClassifiedPlan[], index: number) => {
+    if (plans.length === 0) return null;
+    const config = SIDE_CONFIG[side];
+
+    return (
+      <div
+        className={`${styles.card} ${config.className}`}
+        style={{ animationDelay: `${index * 100}ms` }}
+      >
+        <div className={styles.cardLabel}>{config.cardLabel}</div>
+        <div className={styles.cardPlans}>
+          {plans.map((plan, i) => (
+            <p key={i} className={styles.cardPlanText}>
+              {plan.text}
+            </p>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  if (layout === 'structured') {
+    return (
+      <div className={className}>
+        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+
+        {/* Shared/general plans — full width */}
+        {grouped.general.length > 0 && (
+          <div className={styles.sharedCard}>
+            <div className={styles.sharedHeader}>
+              <span className={styles.sharedTitle}>Shared plans</span>
+              <span className={styles.sharedBadge}>Shared</span>
+            </div>
+            <div className={styles.cardPlans}>
+              {grouped.general.map((plan, i) => (
+                <p key={i} className={styles.cardPlanText}>
+                  {plan.text}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* White + Black side by side */}
+        {(grouped.white.length > 0 || grouped.black.length > 0) && (
+          <div className={styles.structuredGrid}>
+            {grouped.white.length > 0 && (
+              <div className={styles.structuredColumn}>
+                <div className={styles.structuredColumnLabel}>White</div>
+                {grouped.white.map((plan, i) => (
+                  <div key={i} className={`${styles.structuredPlanCard} ${styles.white}`}>
+                    <p className={styles.cardPlanText}>{plan.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {grouped.black.length > 0 && (
+              <div className={styles.structuredColumn}>
+                <div className={styles.structuredColumnLabel}>Black</div>
+                {grouped.black.map((plan, i) => (
+                  <div key={i} className={`${styles.structuredPlanCard} ${styles.black}`}>
+                    <p className={styles.cardPlanText}>{plan.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (layout === 'cards') {
+    return (
+      <div className={className}>
+        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+        <div className={styles.cardsGrid}>
+          {renderCard('white', grouped.white, 0)}
+          {renderCard('black', grouped.black, 1)}
+          {renderCard('general', grouped.general, 2)}
+        </div>
+      </div>
+    );
+  }
+
+  const isSideBySide = layout === 'sideBySide';
+
   return (
     <div className={`content-panel-improved ${className}`}>
-      <h3 className="title-subsection">Common Plans</h3>
-      <div className={styles.groupedPlans}>
-        {renderSection('white', grouped.white)}
-        {renderSection('black', grouped.black)}
-        {renderSection('general', grouped.general)}
-      </div>
+      {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+      {isSideBySide ? (
+        <>
+          <div className={styles.plansGrid}>
+            {renderSection('white', grouped.white)}
+            {renderSection('black', grouped.black)}
+          </div>
+          {grouped.general.length > 0 && (
+            <div className={styles.groupedPlans}>{renderSection('general', grouped.general)}</div>
+          )}
+        </>
+      ) : (
+        <div className={styles.groupedPlans}>
+          {renderSection('white', grouped.white)}
+          {renderSection('black', grouped.black)}
+          {renderSection('general', grouped.general)}
+        </div>
+      )}
     </div>
   );
 };

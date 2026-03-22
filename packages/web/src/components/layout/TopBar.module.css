@@ -5,20 +5,22 @@
   background-color: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border);
   display: grid;
+  /* 1fr auto 1fr keeps nav dead-centre regardless of right-slot content */
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 var(--space-6);
+  gap: var(--space-4);
   z-index: 100;
 }
 
 .logo {
+  justify-self: start;
   text-decoration: none;
   color: var(--color-text-primary);
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  justify-self: start;
   border-radius: 4px;
 }
 
@@ -44,9 +46,10 @@
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
+  /* Use inset shadow instead of border to avoid stacking with topBar border */
+  box-shadow: inset 0 -2px 0 transparent;
   transition:
-    border-color 150ms ease,
+    box-shadow 150ms ease,
     color 150ms ease;
 }
 
@@ -62,12 +65,261 @@
 
 .navItemActive {
   color: var(--color-brand-orange);
-  border-bottom-color: var(--color-brand-orange);
+  box-shadow: inset 0 -2px 0 var(--color-brand-orange);
 }
 
-/* Below 640px: hide nav items, logo only — bottom tabs handle navigation */
+/* Right slot — always present to keep grid stable */
+.rightSlot {
+  justify-self: end;
+  min-width: 0;
+}
+
+/* --- Desktop search + surprise --- */
+
+.searchDesktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.searchField {
+  position: relative;
+  width: 220px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 6px 32px 6px 12px;
+  background-color: var(--color-bg-main, #121212);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.searchInput:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+/* Surprise me — orange label button */
+.surpriseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-orange);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    opacity 150ms ease;
+}
+
+.surpriseBtn:hover {
+  opacity: 0.9;
+}
+
+.surpriseBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 200;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.dropdownItem:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dropdownItem:hover,
+.dropdownItemActive {
+  background-color: var(--color-bg-alt, rgba(255, 255, 255, 0.05));
+}
+
+.dropdownName {
+  display: block;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+
+.dropdownMeta {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* Mobile search icon — hidden on desktop */
+.searchMobileBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.searchMobileBtn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+}
+
+.searchMobileBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Mobile search overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-surface);
+  z-index: 300;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobileSearchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mobileSearchInput {
+  flex: 1;
+  padding: 10px 12px;
+  background-color: var(--color-bg-main, #121212);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  outline: none;
+}
+
+.mobileSearchInput:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.mobileSearchInput::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.mobileCloseBtn {
+  background: none;
+  border: none;
+  color: var(--color-brand-orange);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+/* Mobile surprise me — full-width orange button inside the overlay */
+.mobileSurpriseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-orange);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+}
+
+.mobileSurpriseBtn:hover {
+  opacity: 0.9;
+}
+
+/* Below 640px: hide nav + desktop search, show mobile search icon */
 @media (max-width: 639px) {
+  .topBar {
+    padding: 0 var(--space-4);
+    grid-template-columns: 1fr auto;
+  }
+
   .nav {
     display: none;
+  }
+
+  .searchDesktop {
+    display: none;
+  }
+
+  .searchMobileBtn {
+    display: flex;
+  }
+
+  /* Dropdown inside overlay needs full width */
+  .mobileOverlay .dropdown {
+    position: relative;
+    top: 0;
+  }
+}
+
+/* Tablet: narrower search */
+@media (min-width: 640px) and (max-width: 900px) {
+  .searchField {
+    width: 160px;
   }
 }

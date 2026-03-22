@@ -70,7 +70,12 @@
       "Bash(echo:*)",
       "Bash(ls node_modules/.bin/jest*)",
       "Bash(ls packages/web/node_modules/.bin/jest*)",
-      "Bash(ls tests/unit/*.test.js)"
+      "Bash(ls tests/unit/*.test.js)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer stash pop)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer log --oneline -4)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer stash drop)",
+      "Bash(git:*)",
+      "Bash(ls:*)"
     ]
   },
   "hooks": {

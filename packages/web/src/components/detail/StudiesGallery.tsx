@@ -20,7 +20,6 @@ export interface SearchLinks {
 
 interface StudiesGalleryProps {
   studies: Study[];
-  searchLinks: SearchLinks | null;
   openingName: string;
 }
 
@@ -56,14 +55,10 @@ const StudyCard: React.FC<{ study: Study }> = ({ study }) => (
   </div>
 );
 
-const StudiesGallery: React.FC<StudiesGalleryProps> = ({
-  studies,
-  searchLinks,
-  openingName: _openingName,
-}) => {
+const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, openingName: _openingName }) => {
   const [showAll, setShowAll] = useState(false);
 
-  if ((!studies || studies.length === 0) && !searchLinks) {
+  if (!studies || studies.length === 0) {
     return null;
   }
 
@@ -73,48 +68,16 @@ const StudiesGallery: React.FC<StudiesGalleryProps> = ({
 
   return (
     <div className={styles.gallery}>
-      {studies.length > 0 && (
-        <>
-          <div className={styles.studyList}>
-            {displayedStudies.map((study, index) => (
-              <StudyCard key={`${study.source_url}-${index}`} study={study} />
-            ))}
-          </div>
+      <div className={styles.studyList}>
+        {displayedStudies.map((study, index) => (
+          <StudyCard key={`${study.source_url}-${index}`} study={study} />
+        ))}
+      </div>
 
-          {hasMore && !showAll && (
-            <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
-              Show {remainingCount} more ▾
-            </button>
-          )}
-        </>
-      )}
-
-      {studies.length === 0 && (
-        <p className={styles.emptyMessage}>No curated studies found for this opening yet.</p>
-      )}
-
-      {searchLinks && (
-        <div className={styles.searchLinks}>
-          <p className={styles.searchLinksLabel}>Find more resources</p>
-          <div className={styles.searchButtons}>
-            <a
-              href={searchLinks.lichess}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.searchButton}
-            >
-              Search Lichess Studies
-            </a>
-            <a
-              href={searchLinks.chessable}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.searchButton}
-            >
-              Search Chessable
-            </a>
-          </div>
-        </div>
+      {hasMore && !showAll && (
+        <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
+          Show {remainingCount} more ▾
+        </button>
       )}
     </div>
   );

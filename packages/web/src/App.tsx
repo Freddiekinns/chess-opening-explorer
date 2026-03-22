@@ -7,6 +7,7 @@ import AnalyseGamesPage from './pages/AnalyseGamesPage';
 import OpeningDetailPage from './pages/OpeningDetailPage';
 import TopBar from './components/layout/TopBar';
 import BottomTabBar from './components/layout/BottomTabBar';
+import { Footer } from './components/layout/Footer';
 
 const AnalyseRedirect = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
           <Route path="*" element={<LandingPage />} />
         </Routes>
       </main>
+      <Footer />
       <BottomTabBar />
       <Analytics />
       <SpeedInsights />

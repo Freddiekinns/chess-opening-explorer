@@ -15,6 +15,7 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
 // Types
 interface VideoGalleryProps {
   videos: Video[];
+  hideTitle?: boolean;
 }
 
 // Utility functions
@@ -116,14 +117,14 @@ const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
 };
 
 // Main Component
-const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
+const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, hideTitle = false }) => {
   if (!videos || videos.length === 0) {
     return null; // Don't render anything if no videos
   }
 
   return (
     <div className="video-gallery">
-      <h3 className="video-gallery-title">Video Lessons</h3>
+      {!hideTitle && <h3 className="video-gallery-title">Video Lessons</h3>}
 
       <div className="video-carousel">
         {videos.map((video) => (

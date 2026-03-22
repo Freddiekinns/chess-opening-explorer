@@ -165,23 +165,18 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
   if (layout === 'structured') {
     return (
-      <div className={className}>
+      <div className={`${styles.structuredLayout} ${className}`}>
         {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
 
         {/* Shared/general plans — full width */}
         {grouped.general.length > 0 && (
-          <div className={styles.sharedCard}>
-            <div className={styles.sharedHeader}>
-              <span className={styles.sharedTitle}>Shared plans</span>
-              <span className={styles.sharedBadge}>Shared</span>
-            </div>
-            <div className={styles.cardPlans}>
-              {grouped.general.map((plan, i) => (
-                <p key={i} className={styles.cardPlanText}>
-                  {plan.text}
-                </p>
-              ))}
-            </div>
+          <div className={styles.structuredColumn}>
+            <div className={styles.structuredColumnLabel}>Shared</div>
+            {grouped.general.map((plan, i) => (
+              <div key={i} className={`${styles.structuredPlanCard} ${styles.general}`}>
+                <p className={styles.cardPlanText}>{plan.text}</p>
+              </div>
+            ))}
           </div>
         )}
 

@@ -51,6 +51,8 @@
   padding: var(--space-4);
   padding-top: var(--space-3);
   margin-top: 0;
+  flex: 1;
+  min-height: 0;
 }
 
 .boardSectionCompact :global(.chessboard-container) {
@@ -198,14 +200,10 @@
    IN-COLUMN SECTIONS
    ============================ */
 
-/* Right column: sticky, height matches left column via grid row */
+/* Right column: stretches to match left column via grid row;
+   Navigator's flex:1 absorbs any extra height */
 .rightColumn {
   gap: var(--space-3);
-  position: sticky;
-  top: 72px;
-  align-self: start;
-  max-height: calc(100vh - 88px);
-  max-height: calc(100dvh - 88px);
   overflow: hidden;
 }
 
@@ -284,7 +282,7 @@
 
 .sectionHeading {
   font-family: var(--font-family-headline);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
@@ -348,8 +346,8 @@
 
 .resourceLabel {
   font-family: var(--font-family-primary);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--color-text-secondary);
   line-height: 1;
   margin-bottom: 12px;
@@ -390,7 +388,7 @@
   }
 
   .sectionHeading {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .sectionHeader {

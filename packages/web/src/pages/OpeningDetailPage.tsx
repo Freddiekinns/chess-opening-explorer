@@ -795,7 +795,7 @@ const OpeningDetailPage: React.FC = () => {
               opening.style_tags ||
               [];
             return styleTags && styleTags.length > 0
-              ? styleTags.slice(0, 5).map((tag: string, index: number) => (
+              ? styleTags.map((tag: string, index: number) => (
                   <span key={`style-${index}`} className={styles.tagPill}>
                     {tag}
                   </span>
@@ -851,6 +851,7 @@ const OpeningDetailPage: React.FC = () => {
                       <div className={practiceStyles.pillGroup}>
                         <button
                           className={`${practiceStyles.colorBtn} ${practiceColor === 'white' ? practiceStyles.colorBtnActive : ''}`}
+                          aria-pressed={practiceColor === 'white'}
                           onClick={() => {
                             setPracticeColor('white');
                             if (practiceMode) startPractice();
@@ -861,6 +862,7 @@ const OpeningDetailPage: React.FC = () => {
                         </button>
                         <button
                           className={`${practiceStyles.colorBtn} ${practiceColor === 'black' ? practiceStyles.colorBtnActive : ''}`}
+                          aria-pressed={practiceColor === 'black'}
                           onClick={() => {
                             setPracticeColor('black');
                             if (practiceMode) {
@@ -922,6 +924,7 @@ const OpeningDetailPage: React.FC = () => {
                   <div className={practiceStyles.mobilePillGroup}>
                     <button
                       className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'white' ? practiceStyles.mobileColorBtnActive : ''}`}
+                      aria-pressed={practiceColor === 'white'}
                       onClick={() => {
                         setPracticeColor('white');
                         if (practiceMode) startPractice();
@@ -933,6 +936,7 @@ const OpeningDetailPage: React.FC = () => {
                     </button>
                     <button
                       className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'black' ? practiceStyles.mobileColorBtnActive : ''}`}
+                      aria-pressed={practiceColor === 'black'}
                       onClick={() => {
                         setPracticeColor('black');
                         if (practiceMode) {

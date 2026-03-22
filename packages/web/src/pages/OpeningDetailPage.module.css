@@ -32,9 +32,9 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.06);
   color: var(--color-text-muted);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: capitalize;
   border-radius: 4px;
   padding: 4px 12px;
@@ -219,18 +219,16 @@
 
 .overviewLabel {
   font-family: var(--font-family-primary);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
   line-height: 1;
   margin-bottom: var(--space-2);
 }
 
 .overviewText {
-  color: var(--color-text-secondary);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
   line-height: 1.6;
   margin: 0;
 }
@@ -245,7 +243,7 @@
 }
 
 .stackedSection {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: var(--space-6);
   margin-top: var(--space-6);
   animation: sectionReveal 300ms ease-out both;
@@ -286,7 +284,7 @@
 
 .sectionHeading {
   font-family: var(--font-family-headline);
-  font-size: 28px;
+  font-size: 22px;
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
@@ -350,11 +348,9 @@
 
 .resourceLabel {
   font-family: var(--font-family-primary);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -394,7 +390,7 @@
   }
 
   .sectionHeading {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .sectionHeader {

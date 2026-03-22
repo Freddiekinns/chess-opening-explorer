@@ -20,10 +20,9 @@
 /* ── Title ── */
 .navigatorTitle {
   font-family: var(--font-family-primary);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1;
 }
@@ -47,10 +46,9 @@
 
 .sectionLabel {
   font-family: var(--font-family-primary);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1;
 }
@@ -214,8 +212,8 @@
 .altRow .rowBar {
   background: linear-gradient(
     90deg,
-    rgba(232, 93, 4, 0.6),
-    rgba(255, 157, 77, 0.5)
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.12)
   );
 }
 
@@ -349,8 +347,8 @@
   display: block;
   width: 100%;
   margin-top: var(--space-2);
-  padding: 6px 0;
-  background: none;
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   color: var(--color-text-muted);

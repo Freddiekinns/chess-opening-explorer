@@ -43,10 +43,8 @@
 
 .label {
   font-family: var(--font-family-primary);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
   color: var(--color-text-muted);
   white-space: nowrap;
   line-height: 1;
@@ -64,7 +62,7 @@
   padding: 6px 16px;
   border: none;
   background: transparent;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -111,9 +109,7 @@
 
 .complete {
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 600;
   color: #4ade80;
 }
 
@@ -125,7 +121,7 @@
 }
 
 .btn {
-  padding: 6px 16px;
+  padding: 8px 20px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
@@ -236,9 +232,7 @@
 
   .mobileComplete {
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-weight: 600;
     color: #4ade80;
   }
 

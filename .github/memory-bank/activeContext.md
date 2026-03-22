@@ -20,6 +20,10 @@
 - Removed "Active line" section — breadcrumb shows current position instead
 - Decided against win rate bars (misleading for learners) — games played is the
   clearer signal of popularity and line trustworthiness
+- Fixed deferred practice-mode frontend tests after CSS Modules migration by
+  asserting accessible pressed state instead of legacy global class names
+- Cleaned backend test suite noise and teardown leak by unref'ing the global
+  cache cleanup interval and stubbing expected warning/error paths in tests
 
 **Previous work (same branch):**
 
@@ -32,7 +36,6 @@
 
 - Visual polish pass on navigator and overall page
 - Mobile responsive refinements
-- Fix broken tests (deferred to end per user instruction)
 
 ## Previous Task: TASK016 Chunks 1-5 (2026-03-21) - DONE
 

@@ -537,7 +537,7 @@ Combined the original chunks 6 and 7.
 - [x] Search pills inline with "Learning resources" heading
 - [x] Empty columns hidden (no empty-state cards)
 - [x] Build passes
-- [ ] Visual polish pass (pending)
+- [x] Visual polish pass (done — chunk 6b)
 - [ ] Mobile responsive refinements (pending)
 - [ ] Fix 16 broken tests (deferred to end)
 
@@ -895,6 +895,122 @@ Decision and rationale here. Reference the chunk number and what changed.
 If a decision changes something in sections 1–7 above, update those
 sections too and note it here.
 -->
+
+### 2026-03-22 — [chunk 6b] Detail page visual polish pass
+
+Comprehensive visual audit of the detail page. Applied CSS-only and minor JSX
+fixes across 9 files. Several plan items were overridden after visual review.
+
+**P1 — Implemented as planned:**
+
+- **P1-1. Remove uppercase:** Removed `text-transform: uppercase` and wide
+  `letter-spacing` from 12 selectors across 6 files (WinRateBar, OpeningDetail,
+  PracticeControls, CommonPlans, simplified.css). JSX text was already sentence
+  case — the CSS was forcing uppercase.
+- **P1-2. Bump 10px labels:** All 10px labels bumped to 11px. `.sharedBadge`
+  from 8px to 10px.
+- **P1-3. Fix right column overflow:** Changed from `overflow: hidden` to
+  `overflow-y: auto`. Later **overridden** — removed `overflow-y: auto` from the
+  column entirely (see equal-height decision below). The navigator component
+  handles its own scrolling internally.
+
+**P1-4 — Overridden (stats bar colors kept):**
+
+The plan called for changing win-rate bar segment colors from blue/orange to
+gray (white wins `#e0e0e0`, draw `#555`, black wins `#4a4a4a`). This was
+implemented but **reverted after review** — the original blue (#00b5fc) and
+orange (#ff8c00) colors were preferred. They provide better visual contrast and
+are more readable than the muted grays.
+
+**P2 — Implemented with adjustments:**
+
+- **P2-1. Section headings 28px → 22px:** Done. Mobile query 16px → 18px.
+- **P2-2. Tighten title padding:** `--space-8` → `--space-5`. Done.
+- **P2-3. Right column gap 12px → 16px:** Done.
+- **P2-4. Overview text contrast:** Changed to `rgba(255, 255, 255, 0.78)`.
+  Done.
+- **P2-5. Elo value color:** Cyan `#85cfff` → `var(--color-brand-orange)`. Done.
+- **P2-6. Ghost Practice button:** Solid orange fill → transparent with orange
+  border, light fill on hover. Done.
+- **P2-7. Demote FEN utilities:** Added `opacity: 0.7`, transitions to 1 on
+  hover/focus-within. Done.
+- **P2-8. Harmonize show-more buttons:** Navigator, VideoGallery, and
+  StudiesGallery show-more buttons now share:
+  `background: rgba(255,255,255, 0.04)`, `font-size: 12px`, `font-weight: 600`,
+  consistent padding/border.
+- **P2-9. Section separators:** Border opacity `0.06` → `0.1`. Done.
+
+**P3 — Implemented with overrides:**
+
+- **P3-1. Label weight 700 → 600:** Done across all sub-labels.
+- **P3-3. Gray gradient for alt rows:** Done — navigator alternative rows use
+  neutral gray gradient instead of orange.
+- **P3-4. Practice button touch targets:** `.btn` padding 6px 16px → 8px 20px.
+- **P3-6. Inactive color toggle:** `--color-text-muted` →
+  `--color-text- secondary`. Done.
+
+**P3-2 (scroll fade) — Skipped:** Requires wrapper div changes for `::after`
+with `overflow-y: auto`. Not worth the structural change.
+
+**P3-5 (cap tag pills) — Overridden:** Plan capped pills to 3 with "+N"
+indicator. Reverted to showing all tags — the pill row wraps naturally and
+showing all tags is more informative.
+
+**Font standardization (review feedback):**
+
+After initial implementation, review revealed inconsistent font sizes across
+sub-section labels (Videos, Studies, White, Black, Opening book, Continuations,
+Alternatives). These were scattered across 10px–14px.
+
+Decision: standardize all sub-section labels to **13px / 600 weight /
+`--color-text-secondary`**:
+
+| Label                                        | File                         | Before             | After |
+| -------------------------------------------- | ---------------------------- | ------------------ | ----- |
+| `.resourceLabel` (Videos/Studies)            | OpeningDetailPage.module.css | 10px → 14px → 13px | 13px  |
+| `.sectionLabel` (White/Black/General)        | CommonPlans.module.css       | 14px → 13px        | 13px  |
+| `.structuredColumnLabel` (White/Black)       | CommonPlans.module.css       | 11px → 13px        | 13px  |
+| `.sectionLabel` (Continuations/Alternatives) | OpeningNavigator.module.css  | 10px → 13px        | 13px  |
+| `.navigatorTitle` (Opening book)             | OpeningNavigator.module.css  | 11px → 13px        | 13px  |
+| `.overviewLabel` (Overview)                  | OpeningDetailPage.module.css | 10px → 14px        | 14px  |
+
+Also standardized body text across overview and plan cards:
+
+- `.overviewText`: 13px → **14px**, color `rgba(255, 255, 255, 0.78)`
+- `.cardPlanText`: `var(--font-size-base)` (16px) → **14px**, color matched
+- `.cardLabel` (White/Black headings in plan cards): 14px → **15px**, color
+  `--color-text-secondary` → `--color-text-primary`
+- `.sharedTitle`: 16px → **18px**
+
+Video and study card fonts standardized to px values:
+
+- Video `.title`: `var(--font-size-sm)` → **14px**
+- Video `.channel`: `0.75rem` → **12px**
+- Study `.studyTitle`: `1.05rem` → **14px**
+- Study `.studyMeta`: `0.875rem` → **12px**
+
+**Column layout (review feedback):**
+
+The column ratio went through three iterations:
+
+1. Original `7fr 5fr` (~58:42) — right column felt narrow
+2. `1fr 1fr` (50:50) — board lost visual prominence
+3. Back to **`7fr 5fr`** — board deserves more space, final decision
+
+For equal-height columns:
+
+- `align-items: start` → **`align-items: stretch`** — grid cells match height
+- Removed `position: sticky`, `align-self: start`, `max-height` from right
+  column — it now fills the grid row naturally
+- Navigator `flex: 1` expands to fill remaining vertical space
+- Removed `overflow-y: auto` from column level — navigator handles own scroll
+- Unified `.right-column` gap from `--space-3` to `--space-4`
+
+**Files modified:** WinRateBar.tsx, WinRateBar.module.css,
+OpeningDetailPage.tsx, OpeningDetailPage.module.css, simplified.css,
+PracticeControls.module.css, CommonPlans.module.css,
+OpeningNavigator.module.css, VideoGallery.module.css, StudiesGallery.module.css
+**Build:** clean. **Tests:** 139/139 pass.
 
 ## 11. Out of scope
 

@@ -108,6 +108,7 @@ class SimpleCacheService {
 
 // Singleton pattern for global cache across function invocations
 let globalCacheInstance = null;
+let cleanupInterval = null;
 
 /**
  * Get global cache instance (singleton)
@@ -119,9 +120,13 @@ function getGlobalCache() {
     console.log('🏗️ Initialized global cache service');
     
     // Cleanup expired entries every 30 minutes
-    setInterval(() => {
+    cleanupInterval = setInterval(() => {
       globalCacheInstance.cleanup();
     }, 1800000);
+
+    if (typeof cleanupInterval.unref === 'function') {
+      cleanupInterval.unref();
+    }
   }
   
   return globalCacheInstance;

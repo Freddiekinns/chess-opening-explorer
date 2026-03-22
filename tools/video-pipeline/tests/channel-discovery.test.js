@@ -241,6 +241,7 @@ describe('ChannelDiscovery', () => {
     });
 
     it('should handle errors for individual channels gracefully', async () => {
+      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
       const channels = [
         { name: 'Good Channel', channel_id: 'UCgood', quality_tier: 'standard' },
         { name: 'Bad Channel', channel_id: 'UCbad', quality_tier: 'standard' },
@@ -271,6 +272,7 @@ describe('ChannelDiscovery', () => {
       expect(result.channelsCovered).toBe(1);
       expect(result.errors).toHaveLength(1);
       expect(result.errors[0].channelId).toBe('UCbad');
+      consoleErrorSpy.mockRestore();
     });
 
     it('should return output shape matching RSS discovery', async () => {

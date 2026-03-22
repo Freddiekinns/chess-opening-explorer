@@ -2,6 +2,12 @@
 
 ## What's Done (newest first)
 
+- **Backend Test Cleanup** (2026-03-22): Removed expected console noise from
+  route/service tests and fixed Jest worker teardown risk by unref'ing the
+  global cache cleanup interval. Backend suite clean at 43/43 suites.
+- **TASK016 — Test Suite Repair** (2026-03-22): Fixed 3 broken practice-mode
+  Vitest specs after practice controls moved to CSS Modules. Added
+  `aria-pressed` to color toggles and mocked audio asset fetches in tests.
 - **TASK016 — Design Overhaul** (2026-03-21, in progress): Top bar nav, sidebar,
   bottom tabs, detail page restructure with OpeningNavigator, stacked sections
   replacing tabs. Chunks 1–5 done, chunk 6 in progress.
@@ -40,8 +46,7 @@
 
 ## What's Left
 
-- **TASK016 chunk 6 remaining**: Visual polish, mobile refinements, fix 16
-  broken tests
+- **TASK016 chunk 6 remaining**: Visual polish, mobile refinements
 - **TASK006 — Coverage**: Backend 90%+, frontend 70%+ targets
 - **Advanced Filtering**: Filter by win rate, draw rate, etc.
 - **Design System Tokens**: CSS variables for accent gradients and spacing

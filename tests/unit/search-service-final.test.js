@@ -148,6 +148,7 @@ describe('SearchService Final Working Tests', () => {
     });
 
     it('should handle fuse search errors gracefully', async () => {
+      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
       const mockFuse = {
         search: jest.fn().mockImplementation(() => {
           throw new Error('Search error');
@@ -162,6 +163,8 @@ describe('SearchService Final Working Tests', () => {
       expect(result).toHaveProperty('searchType', 'error');
       expect(Array.isArray(result.results)).toBe(true);
       expect(result.results).toHaveLength(0);
+
+      consoleErrorSpy.mockRestore();
     });
 
     it('should clear cache functionality', () => {

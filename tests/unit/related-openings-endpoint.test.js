@@ -1,10 +1,6 @@
 const request = require('supertest');
 const express = require('express');
 
-// System under test: openings routes
-const openingsRoutes = require('../../packages/api/src/routes/openings.routes');
-const ECOService = require('../../packages/api/src/services/eco-service');
-
 // Mock fs/path dependencies used inside ECOService bootstrap
 jest.mock('fs');
 jest.mock('path');
@@ -15,13 +11,14 @@ jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getAPIDataPath: jest.fn((file) => `/mock/api/${file || ''}`),
 }));
 
-const fs = require('fs');
-const path = require('path');
+let fs;
+let path;
 
 /**
  * Helper to build an express app with just the openings routes mounted.
  */
 function buildApp() {
+  const openingsRoutes = require('../../packages/api/src/routes/openings.routes');
   const app = express();
   app.use(express.json());
   app.use('/api/openings', openingsRoutes);
@@ -30,12 +27,19 @@ function buildApp() {
 
 describe('GET /api/openings/fen/:fen/related', () => {
   let app;
+  let consoleWarnSpy;
+  let consoleLogSpy;
   const MAINLINE_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
   const VAR_FEN = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
   const OTHER_VAR_FEN = 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
 
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.resetModules();
+    fs = require('fs');
+    path = require('path');
+    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
     // Mocks for fs layer used during ECOService initialization
     fs.readdirSync = jest.fn(() => ['ecoA.json']);
@@ -77,6 +81,11 @@ describe('GET /api/openings/fen/:fen/related', () => {
     // (Route module already imported, but internal ECOService instantiation reads fs each test due to mocks)
 
     app = buildApp();
+  });
+
+  afterEach(() => {
+    consoleWarnSpy.mockRestore();
+    consoleLogSpy.mockRestore();
   });
 
   it('returns siblings and mainline when current is a variation', async () => {

@@ -26,6 +26,18 @@ const mockPracticeOpening = {
   fen: 'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3',
 };
 
+const createMockFetchResponse = (data: unknown) =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve(data),
+  });
+
+const createMockAudioResponse = () =>
+  Promise.resolve({
+    ok: true,
+    arrayBuffer: () => Promise.resolve(new ArrayBuffer(8)),
+  });
+
 const renderOpeningDetailPage = (fen: string) => {
   return render(
     <MemoryRouter initialEntries={[`/opening/${encodeURIComponent(fen)}`]}>
@@ -43,50 +55,34 @@ describe('Practice Mode', () => {
 
     // Mock successful fetch responses
     mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
       if (url.includes('/api/openings/fen/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockPracticeOpening,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockPracticeOpening,
         });
       }
       if (url.includes('/api/stats/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockStatsData,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockStatsData,
         });
       }
       if (url.includes('/api/openings/videos/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockVideoData,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockVideoData,
         });
       }
       if (url.includes('/api/openings/search-index')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: [],
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: [],
         });
       }
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ success: true, data: [] }),
-      });
+      return createMockFetchResponse({ success: true, data: [] });
     });
   });
 
@@ -141,7 +137,7 @@ describe('Practice Mode', () => {
 
       await waitFor(() => {
         const whiteButton = screen.getByRole('button', { name: 'White' });
-        expect(whiteButton).toHaveClass('active');
+        expect(whiteButton).toHaveAttribute('aria-pressed', 'true');
       });
     });
 
@@ -231,7 +227,7 @@ describe('Practice Mode', () => {
 
       await waitFor(() => {
         const blackButton = screen.getByRole('button', { name: 'Black' });
-        expect(blackButton).toHaveClass('active');
+        expect(blackButton).toHaveAttribute('aria-pressed', 'true');
       });
     });
   });
@@ -289,50 +285,34 @@ describe('Practice Mode - Hint Functionality', () => {
     vi.clearAllMocks();
 
     mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
       if (url.includes('/api/openings/fen/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockPracticeOpening,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockPracticeOpening,
         });
       }
       if (url.includes('/api/stats/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockStatsData,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockStatsData,
         });
       }
       if (url.includes('/api/openings/videos/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: [],
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: [],
         });
       }
       if (url.includes('/api/openings/search-index')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: [],
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: [],
         });
       }
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ success: true, data: [] }),
-      });
+      return createMockFetchResponse({ success: true, data: [] });
     });
   });
 
@@ -367,20 +347,16 @@ describe('Practice Mode - Accessibility', () => {
     vi.clearAllMocks();
 
     mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
       if (url.includes('/api/openings/fen/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockPracticeOpening,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockPracticeOpening,
         });
       }
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ success: true, data: [] }),
-      });
+      return createMockFetchResponse({ success: true, data: [] });
     });
   });
 
@@ -422,50 +398,34 @@ describe('Practice Mode - Click-to-Move', () => {
     vi.useFakeTimers({ shouldAdvanceTime: true });
 
     mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
       if (url.includes('/api/openings/fen/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockPracticeOpening,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockPracticeOpening,
         });
       }
       if (url.includes('/api/stats/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockStatsData,
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: mockStatsData,
         });
       }
       if (url.includes('/api/openings/videos/')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: [],
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: [],
         });
       }
       if (url.includes('/api/openings/search-index')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: [],
-            }),
+        return createMockFetchResponse({
+          success: true,
+          data: [],
         });
       }
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ success: true, data: [] }),
-      });
+      return createMockFetchResponse({ success: true, data: [] });
     });
   });
 
@@ -536,7 +496,7 @@ describe('Practice Mode - Click-to-Move', () => {
     fireEvent.click(screen.getByText('Practice'));
 
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: 'White' })).toHaveClass('active');
+      expect(screen.getByRole('button', { name: 'White' })).toHaveAttribute('aria-pressed', 'true');
     });
 
     // Switch to Black - this should clear any selection and restart practice
@@ -549,7 +509,7 @@ describe('Practice Mode - Click-to-Move', () => {
 
     await waitFor(() => {
       const blackButton = screen.getByRole('button', { name: 'Black' });
-      expect(blackButton).toHaveClass('active');
+      expect(blackButton).toHaveAttribute('aria-pressed', 'true');
     });
   });
 });

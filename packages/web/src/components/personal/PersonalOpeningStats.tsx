@@ -233,7 +233,6 @@ const OpeningRow: React.FC<{
   username: string;
   index: number;
 }> = ({ opening, platform, username, index }) => {
-  const rate = getWinRate(opening);
   const delay = Math.min(index * 30, 300);
 
   return (

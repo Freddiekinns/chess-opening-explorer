@@ -134,12 +134,6 @@ function getLossRate(o: OpeningAgg): number {
   return Math.round((o.loss / o.games) * 100);
 }
 
-function winRateClass(rate: number): string {
-  if (rate > 60) return styles.winRateHigh;
-  if (rate >= 40) return styles.winRateMid;
-  return styles.winRateLow;
-}
-
 type SideTab = 'white' | 'black';
 
 const FORM_STATE_KEY = 'personal-openings:form-state';
@@ -244,7 +238,7 @@ const OpeningRow: React.FC<{
 
   return (
     <Link
-      className={`${styles.openingRow} ${winRateClass(rate)}`}
+      className={styles.openingRow}
       to={`/opening/${encodeURIComponent(opening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
       style={{ animationDelay: `${delay}ms` }}
     >
@@ -841,7 +835,7 @@ export const PersonalOpeningStats: React.FC<{
               {/* Summary cards */}
               <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
                 {/* Overall performance */}
-                <div className={`${styles.card} ${styles.cardOverall}`}>
+                <div className={`${styles.card}`}>
                   <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
                     Overall performance
                   </div>
@@ -875,7 +869,7 @@ export const PersonalOpeningStats: React.FC<{
                 {/* Top-performing opening */}
                 {bestOpening && (
                   <Link
-                    className={`${styles.card} ${styles.cardBest} ${styles.cardClickable}`}
+                    className={`${styles.card} ${styles.cardClickable}`}
                     to={openingLink(bestOpening)}
                   >
                     <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
@@ -901,7 +895,7 @@ export const PersonalOpeningStats: React.FC<{
                 {/* Needs work */}
                 {showWeakest && weakestOpening && (
                   <Link
-                    className={`${styles.card} ${styles.cardWorst} ${styles.cardClickable}`}
+                    className={`${styles.card} ${styles.cardClickable}`}
                     to={openingLink(weakestOpening)}
                   >
                     <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>Needs work</div>

@@ -662,7 +662,6 @@
   border-radius: var(--border-radius-large);
   padding: var(--space-5);
   animation: cardIn 300ms ease-out both;
-  border-left: 3px solid transparent;
 }
 
 .card:nth-child(1) {
@@ -685,18 +684,6 @@
 
 .cardClickable:hover {
   border-color: rgba(232, 93, 4, 0.3);
-}
-
-.cardOverall {
-  border-left-color: var(--color-brand-orange);
-}
-
-.cardBest {
-  border-left-color: var(--color-brand-orange);
-}
-
-.cardWorst {
-  border-left-color: rgba(255, 255, 255, 0.2);
 }
 
 .cardLabel {
@@ -999,8 +986,6 @@
   text-decoration: none;
   color: inherit;
   transition: background 150ms ease;
-  border-left: 3px solid transparent;
-  margin-left: -3px;
   animation: rowIn 200ms ease-out both;
 }
 
@@ -1080,7 +1065,7 @@
   display: flex;
   align-items: baseline;
   padding: 0 var(--space-2) var(--space-2);
-  padding-left: calc(var(--space-2) + 3px);
+  padding-left: var(--space-2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 0;
 }
@@ -1197,16 +1182,6 @@
   color: var(--color-text-muted);
 }
 
-/* Win rate left border colour */
-.winRateHigh {
-  border-left-color: var(--color-brand-orange);
-}
-.winRateMid {
-  border-left-color: rgba(255, 255, 255, 0.15);
-}
-.winRateLow {
-  border-left-color: rgba(255, 255, 255, 0.25);
-}
 
 /* Mobile */
 @media (max-width: 768px) {

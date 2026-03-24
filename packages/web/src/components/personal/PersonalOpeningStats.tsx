@@ -183,6 +183,21 @@ const GearIcon = () => (
 );
 
 /* ==============================
+   OPENING NAME SPLIT (family : variation)
+   ============================== */
+const OpeningNameSplit: React.FC<{ name: string; className?: string }> = ({ name, className }) => {
+  const colonIdx = name.indexOf(':');
+  if (colonIdx === -1) return <span className={className}>{name}</span>;
+  return (
+    <span className={className}>
+      <span className={styles.nameFamily}>{name.slice(0, colonIdx)}</span>
+      <span className={styles.nameColon}>:</span>
+      <span className={styles.nameVariation}>{name.slice(colonIdx + 1).trimStart()}</span>
+    </span>
+  );
+};
+
+/* ==============================
    OPENING ROW COMPONENT
    ============================== */
 /* ==============================
@@ -234,6 +249,9 @@ const OpeningRow: React.FC<{
   index: number;
 }> = ({ opening, platform, username, index }) => {
   const delay = Math.min(index * 30, 300);
+  const wPct = opening.games > 0 ? (opening.win / opening.games) * 100 : 0;
+  const dPct = opening.games > 0 ? (opening.draw / opening.games) * 100 : 0;
+  const lPct = opening.games > 0 ? (opening.loss / opening.games) * 100 : 0;
 
   return (
     <Link
@@ -242,9 +260,11 @@ const OpeningRow: React.FC<{
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className={styles.openingRowLeft}>
-        <span className={styles.openingName}>{opening.name}</span>
+        <OpeningNameSplit name={opening.name} className={styles.openingName} />
         {opening.moves && <span className={styles.openingMoves}>{opening.moves}</span>}
       </div>
+
+      {/* Desktop: inline GP + bar */}
       <div className={styles.openingRowRight}>
         <span className={styles.gamesCount}>{opening.games}</span>
         <DistributionBar
@@ -253,6 +273,41 @@ const OpeningRow: React.FC<{
           loss={opening.loss}
           games={opening.games}
         />
+      </div>
+
+      {/* Mobile: stat counters + accent bar */}
+      <div className={styles.mobileStats}>
+        <div className={styles.statCounters}>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotWin} />
+            <span className={styles.statNum}>{opening.win}</span>
+            <span className={styles.statLabel}>W</span>
+          </span>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotDraw} />
+            <span className={styles.statNum}>{opening.draw}</span>
+            <span className={styles.statLabel}>D</span>
+          </span>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotLoss} />
+            <span className={styles.statNum}>{opening.loss}</span>
+            <span className={styles.statLabel}>L</span>
+          </span>
+          <span className={styles.statGames}>{opening.games} games</span>
+        </div>
+        {opening.games > 0 && (
+          <div className={styles.accentBar}>
+            {wPct > 0 && (
+              <div className={styles.accentWin} style={{ width: `${wPct}%` }} />
+            )}
+            {dPct > 0 && (
+              <div className={styles.accentDraw} style={{ width: `${dPct}%` }} />
+            )}
+            {lPct > 0 && (
+              <div className={styles.accentLoss} style={{ width: `${lPct}%` }} />
+            )}
+          </div>
+        )}
       </div>
     </Link>
   );
@@ -309,6 +364,7 @@ export const PersonalOpeningStats: React.FC<{
   );
   const [showSettings, setShowSettings] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   // Displayed state: only updates when analysis completes (not while typing)
   const [displayedUsername, setDisplayedUsername] = useState('');
@@ -381,6 +437,8 @@ export const PersonalOpeningStats: React.FC<{
     const cached = loadFromCache();
     if (cached) {
       setDashboard(cached);
+      setDisplayedUsername(normalizeUsername(saved.username || username));
+      setDisplayedPlatform((saved.platform as Platform) || platform);
       setStep('done');
       setStepText('Loaded your saved results');
       setProgress(100);
@@ -751,6 +809,28 @@ export const PersonalOpeningStats: React.FC<{
             </button>
             <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
             {renderSearchForm()}
+            {(step === 'fetching' || step === 'analysing') && (
+              <div className={styles.overlayProgress}>
+                <div className={styles.progressBar}>
+                  <div
+                    className={styles.progressFill}
+                    role="progressbar"
+                    aria-valuenow={progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+                <div className={styles.progressMeta}>
+                  <span>{stepText}</span>
+                  {total > 0 && (
+                    <span>
+                      {processed}/{total}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -809,238 +889,276 @@ export const PersonalOpeningStats: React.FC<{
           const openingLink = (o: OpeningAgg) =>
             `/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`;
 
+          const totalWins = dashboard.whiteWin + dashboard.blackWin;
+          const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
+          const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
+
           return (
             <>
-              {/* Dashboard hero */}
-              <div className={styles.dashboardHero}>
-                <div className={styles.dashboardHeroContent}>
-                  <h2 className={styles.dashboardPlayerName}>{displayedUsername}</h2>
-                  <div className={styles.playerMeta}>
-                    <span className={styles.platformBadge}>{displayedPlatformLabel}</span>
-                    <span className={styles.gamesAnalysed}>
-                      {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
-                    </span>
-                  </div>
+              {/* ===== MOBILE DASHBOARD ===== */}
+              <div className={styles.mobileDashboard}>
+                {/* Centered hero */}
+                <div className={styles.mobileHero}>
+                  <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
+                  <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
                 </div>
-                <button
-                  type="button"
-                  className={styles.analyseAnotherBtn}
-                  onClick={() => setShowSearchOverlay(true)}
-                >
-                  Analyse another player <span aria-hidden="true">&rarr;</span>
-                </button>
-              </div>
 
-              {/* Summary cards */}
-              <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
-                {/* Overall performance */}
-                <div className={`${styles.card}`}>
-                  <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
-                    Overall performance
+                {/* 3 inline stat cards */}
+                <div className={styles.tripleStats}>
+                  <div className={`${styles.triStat} ${styles.triStatWin}`}>
+                    <span className={styles.triStatLabel}>Wins</span>
+                    <span className={styles.triStatValue}>{totalWins}</span>
                   </div>
-                  <h3 className={styles.cardTitle}>Career Totals</h3>
-                  <div className={styles.statsRows}>
-                    <div className={styles.statsRow}>
-                      <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>
-                        Total wins
-                      </span>
-                      <span className={styles.statsValue}>
-                        {(dashboard.whiteWin + dashboard.blackWin).toLocaleString()}
-                      </span>
-                    </div>
-                    <div className={styles.statsRow}>
-                      <span className={styles.statsLabel}>Total draws</span>
-                      <span className={styles.statsValue}>
-                        {(dashboard.whiteDraw + dashboard.blackDraw).toLocaleString()}
-                      </span>
-                    </div>
-                    <div className={styles.statsRow}>
-                      <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>
-                        Total losses
-                      </span>
-                      <span className={styles.statsValue}>
-                        {(dashboard.whiteLoss + dashboard.blackLoss).toLocaleString()}
-                      </span>
-                    </div>
+                  <div className={styles.triStat}>
+                    <span className={styles.triStatLabel}>Draws</span>
+                    <span className={styles.triStatValue}>{totalDraws}</span>
+                  </div>
+                  <div className={styles.triStat}>
+                    <span className={styles.triStatLabel}>Losses</span>
+                    <span className={styles.triStatValue}>{totalLosses}</span>
                   </div>
                 </div>
 
-                {/* Top-performing opening */}
+                {/* Highlight cards */}
                 {bestOpening && (
-                  <Link
-                    className={`${styles.card} ${styles.cardClickable}`}
-                    to={openingLink(bestOpening)}
-                  >
-                    <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
-                      Top-performing opening
-                    </div>
-                    <div className={styles.cardOpeningName}>{bestOpening.name}</div>
-                    <div className={styles.cardContext}>{bestOpening.games} games</div>
-                    <div className={styles.winRateRow}>
-                      <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
-                        {getWinRate(bestOpening)}%
-                      </span>
-                      <span className={styles.winRateLabel}>win rate</span>
-                    </div>
-                    <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
-                      <div
-                        className={styles.winRateBarFillWin}
-                        style={{ width: `${getWinRate(bestOpening)}%` }}
-                      />
-                    </div>
+                  <Link className={styles.highlightCard} to={openingLink(bestOpening)}>
+                    <span className={`${styles.highlightPill} ${styles.highlightPillWin}`}>Top-performing</span>
+                    <OpeningNameSplit name={bestOpening.name} className={styles.highlightName} />
+                    <span className={styles.highlightMeta}>
+                      {getWinRate(bestOpening)}% win rate &middot; {bestOpening.games} games
+                    </span>
                   </Link>
                 )}
-
-                {/* Needs work */}
                 {showWeakest && weakestOpening && (
-                  <Link
-                    className={`${styles.card} ${styles.cardClickable}`}
-                    to={openingLink(weakestOpening)}
-                  >
-                    <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>Needs work</div>
-                    <div className={styles.cardOpeningName}>{weakestOpening.name}</div>
-                    <div className={styles.cardContext}>{weakestOpening.games} games</div>
-                    <div className={styles.winRateRow}>
-                      <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>
-                        {getLossRate(weakestOpening)}%
-                      </span>
-                      <span className={styles.winRateLabel}>loss rate</span>
-                    </div>
-                    <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
-                      <div
-                        className={styles.winRateBarFillLoss}
-                        style={{ width: `${getLossRate(weakestOpening)}%` }}
-                      />
-                    </div>
+                  <Link className={styles.highlightCard} to={openingLink(weakestOpening)}>
+                    <span className={`${styles.highlightPill} ${styles.highlightPillLoss}`}>Needs work</span>
+                    <OpeningNameSplit name={weakestOpening.name} className={styles.highlightName} />
+                    <span className={styles.highlightMeta}>
+                      {getLossRate(weakestOpening)}% loss rate &middot; {weakestOpening.games} games
+                    </span>
                   </Link>
                 )}
-              </div>
 
-              {/* ===== OPENING LISTS ===== */}
+                {/* Pill toggle */}
+                <div className={styles.pillToggle} role="tablist" aria-label="View openings by side">
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`${styles.pillBtn} ${activeTab === 'white' ? styles.pillBtnActive : ''}`}
+                    onClick={() => { setActiveTab('white'); setShowAllMobile(false); }}
+                    aria-selected={activeTab === 'white'}
+                  >
+                    As White
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`${styles.pillBtn} ${activeTab === 'black' ? styles.pillBtnActive : ''}`}
+                    onClick={() => { setActiveTab('black'); setShowAllMobile(false); }}
+                    aria-selected={activeTab === 'black'}
+                  >
+                    As Black
+                  </button>
+                </div>
 
-              {/* Mobile: Tab bar */}
-              <div className={styles.tabBar} role="tablist" aria-label="View openings by side">
-                <button
-                  type="button"
-                  role="tab"
-                  className={`${styles.tabBtn} ${activeTab === 'white' ? styles.tabBtnActive : ''}`}
-                  onClick={() => setActiveTab('white')}
-                  aria-selected={activeTab === 'white'}
-                >
-                  &#9812; White ({dashboard.whiteGames})
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  className={`${styles.tabBtn} ${activeTab === 'black' ? styles.tabBtnActive : ''}`}
-                  onClick={() => setActiveTab('black')}
-                  aria-selected={activeTab === 'black'}
-                >
-                  &#9818; Black ({dashboard.blackGames})
-                </button>
-              </div>
-
-              {/* Mobile: active tab panel */}
-              <div className={styles.openingSectionMobile}>
-                <div className={styles.sectionHeader}>
-                  <h3 className={styles.sectionTitle}>
-                    {activeTab === 'white' ? 'Performance as White' : 'Performance as Black'}
-                    <span className={styles.sectionBadge}>{activeData.games} games</span>
+                {/* Section title + sort filters */}
+                <div className={styles.mobileSectionHead}>
+                  <h3 className={styles.mobileSectionTitle}>
+                    Performance as {activeTab === 'white' ? 'White' : 'Black'}
                   </h3>
                   <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
                 </div>
-                <div className={styles.colHeaders}>
-                  <span className={styles.colHeaderName}>Opening name</span>
-                  <div className={styles.colHeaderRight}>
-                    <span className={styles.colHeaderGp}>GP</span>
-                    <span className={styles.colHeaderDist}>W / D / L distribution</span>
-                  </div>
-                </div>
+
+                {/* Opening cards */}
                 {activeData.openings.length === 0 ? (
                   <div className={styles.emptyList}>No classified openings.</div>
                 ) : (
-                  <div className={styles.openingList}>
-                    {activeData.openings.map((o, i) => (
-                      <OpeningRow
-                        key={o.fen}
-                        opening={o}
-                        platform={displayedPlatform}
-                        username={displayedUsername}
-                        index={i}
-                      />
-                    ))}
+                  <div className={styles.mobileOpeningList}>
+                    {(showAllMobile ? activeData.openings : activeData.openings.slice(0, 5)).map((o, i) => {
+                      const wP = o.games > 0 ? Math.round((o.win / o.games) * 100) : 0;
+                      const dP = o.games > 0 ? Math.round((o.draw / o.games) * 100) : 0;
+                      const lP = o.games > 0 ? Math.round((o.loss / o.games) * 100) : 0;
+                      return (
+                        <Link
+                          key={o.fen}
+                          className={styles.mobileCard}
+                          to={openingLink(o)}
+                          style={{ animationDelay: `${Math.min(i * 30, 300)}ms` }}
+                        >
+                          <div className={styles.mobileCardHead}>
+                            <div className={styles.mobileCardNameCol}>
+                              <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
+                              {o.moves && <span className={styles.mobileCardMoves}>{o.moves}</span>}
+                            </div>
+                            <span className={styles.mobileCardGames}>Games {o.games}</span>
+                          </div>
+                          <div className={styles.mobileCardBar}>
+                            {wP > 0 && <div className={styles.mobileBarWin} style={{ width: `${wP}%` }} />}
+                            {dP > 0 && <div className={styles.mobileBarDraw} style={{ width: `${dP}%` }} />}
+                            {lP > 0 && <div className={styles.mobileBarLoss} style={{ width: `${lP}%` }} />}
+                          </div>
+                          <div className={styles.mobileCardPcts}>
+                            <span className={styles.mobileCardPctWin}>{wP}% win</span>
+                            <span className={styles.mobileCardPctDraw}>{dP}% draw</span>
+                            <span className={styles.mobileCardPctLoss}>{lP}% loss</span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                    {!showAllMobile && activeData.openings.length > 5 && (
+                      <button
+                        type="button"
+                        className={styles.showMoreBtn}
+                        onClick={() => setShowAllMobile(true)}
+                      >
+                        Show all {activeData.openings.length} openings
+                      </button>
+                    )}
                   </div>
                 )}
+
+                {/* Bottom CTA */}
+                <button
+                  type="button"
+                  className={styles.bottomCta}
+                  onClick={() => setShowSearchOverlay(true)}
+                >
+                  Analyse another player
+                </button>
               </div>
 
-              {/* Desktop: side-by-side */}
-              <div className={`${styles.openingSections} ${styles.openingSectionDesktop}`}>
-                <div className={styles.openingSection}>
-                  <div className={styles.sectionHeader}>
-                    <h3 className={styles.sectionTitle}>
-                      Performance as White
-                      <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
-                    </h3>
-                    <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
-                  </div>
-                  <div className={styles.colHeaders}>
-                    <span className={styles.colHeaderName}>Opening name</span>
-                    <div className={styles.colHeaderRight}>
-                      <span className={styles.colHeaderGp}>GP</span>
-                      <span className={styles.colHeaderDist}>W / D / L distribution</span>
+              {/* ===== DESKTOP DASHBOARD (unchanged) ===== */}
+              <div className={styles.desktopDashboard}>
+                {/* Dashboard hero */}
+                <div className={styles.dashboardHero}>
+                  <div className={styles.dashboardHeroContent}>
+                    <h2 className={styles.dashboardPlayerName}>{displayedUsername}</h2>
+                    <div className={styles.playerMeta}>
+                      <span className={styles.platformBadge}>{displayedPlatformLabel}</span>
+                      <span className={styles.gamesAnalysed}>
+                        {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
+                      </span>
                     </div>
                   </div>
-                  {sortedWhite.length === 0 ? (
-                    <div className={styles.emptyList}>No classified openings.</div>
-                  ) : (
-                    <div className={styles.openingList}>
-                      {sortedWhite.map((o, i) => (
-                        <OpeningRow
-                          key={o.fen}
-                          opening={o}
-                          platform={displayedPlatform}
-                          username={displayedUsername}
-                          index={i}
-                        />
-                      ))}
+                  <button
+                    type="button"
+                    className={styles.analyseAnotherBtn}
+                    onClick={() => setShowSearchOverlay(true)}
+                  >
+                    Analyse another player <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+
+                {/* Summary cards */}
+                <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
+                  <div className={styles.card}>
+                    <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
+                      Overall performance
                     </div>
+                    <h3 className={styles.cardTitle}>Career Totals</h3>
+                    <div className={styles.statsRows}>
+                      <div className={styles.statsRow}>
+                        <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>Total wins</span>
+                        <span className={styles.statsValue}>{totalWins.toLocaleString()}</span>
+                      </div>
+                      <div className={styles.statsRow}>
+                        <span className={styles.statsLabel}>Total draws</span>
+                        <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
+                      </div>
+                      <div className={styles.statsRow}>
+                        <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>Total losses</span>
+                        <span className={styles.statsValue}>{totalLosses.toLocaleString()}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {bestOpening && (
+                    <Link className={`${styles.card} ${styles.cardClickable}`} to={openingLink(bestOpening)}>
+                      <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>Top-performing opening</div>
+                      <OpeningNameSplit name={bestOpening.name} className={styles.cardOpeningName} />
+                      <div className={styles.cardContext}>{bestOpening.games} games</div>
+                      <div className={styles.winRateRow}>
+                        <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>{getWinRate(bestOpening)}%</span>
+                        <span className={styles.winRateLabel}>win rate</span>
+                      </div>
+                      <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
+                        <div className={styles.winRateBarFillWin} style={{ width: `${getWinRate(bestOpening)}%` }} />
+                      </div>
+                    </Link>
+                  )}
+
+                  {showWeakest && weakestOpening && (
+                    <Link className={`${styles.card} ${styles.cardClickable}`} to={openingLink(weakestOpening)}>
+                      <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>Needs work</div>
+                      <OpeningNameSplit name={weakestOpening.name} className={styles.cardOpeningName} />
+                      <div className={styles.cardContext}>{weakestOpening.games} games</div>
+                      <div className={styles.winRateRow}>
+                        <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>{getLossRate(weakestOpening)}%</span>
+                        <span className={styles.winRateLabel}>loss rate</span>
+                      </div>
+                      <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
+                        <div className={styles.winRateBarFillLoss} style={{ width: `${getLossRate(weakestOpening)}%` }} />
+                      </div>
+                    </Link>
                   )}
                 </div>
 
-                <div className={styles.openingSection}>
-                  <div className={styles.sectionHeader}>
-                    <h3 className={styles.sectionTitle}>
-                      Performance as Black
-                      <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
-                    </h3>
-                    <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
-                  </div>
-                  <div className={styles.colHeaders}>
-                    <span className={styles.colHeaderName}>Opening name</span>
-                    <div className={styles.colHeaderRight}>
-                      <span className={styles.colHeaderGp}>GP</span>
-                      <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                {/* Desktop: side-by-side opening lists */}
+                <div className={styles.openingSections}>
+                  <div className={styles.openingSection}>
+                    <div className={styles.sectionHeader}>
+                      <h3 className={styles.sectionTitle}>
+                        Performance as White
+                        <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
+                      </h3>
+                      <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
                     </div>
-                  </div>
-                  {sortedBlack.length === 0 ? (
-                    <div className={styles.emptyList}>No classified openings.</div>
-                  ) : (
-                    <div className={styles.openingList}>
-                      {sortedBlack.map((o, i) => (
-                        <OpeningRow
-                          key={o.fen}
-                          opening={o}
-                          platform={displayedPlatform}
-                          username={displayedUsername}
-                          index={i}
-                        />
-                      ))}
+                    <div className={styles.colHeaders}>
+                      <span className={styles.colHeaderName}>Opening name</span>
+                      <div className={styles.colHeaderRight}>
+                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                      </div>
                     </div>
-                  )}
+                    {sortedWhite.length === 0 ? (
+                      <div className={styles.emptyList}>No classified openings.</div>
+                    ) : (
+                      <div className={styles.openingList}>
+                        {sortedWhite.map((o, i) => (
+                          <OpeningRow key={o.fen} opening={o} platform={displayedPlatform} username={displayedUsername} index={i} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className={styles.openingSection}>
+                    <div className={styles.sectionHeader}>
+                      <h3 className={styles.sectionTitle}>
+                        Performance as Black
+                        <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
+                      </h3>
+                      <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
+                    </div>
+                    <div className={styles.colHeaders}>
+                      <span className={styles.colHeaderName}>Opening name</span>
+                      <div className={styles.colHeaderRight}>
+                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                      </div>
+                    </div>
+                    {sortedBlack.length === 0 ? (
+                      <div className={styles.emptyList}>No classified openings.</div>
+                    ) : (
+                      <div className={styles.openingList}>
+                        {sortedBlack.map((o, i) => (
+                          <OpeningRow key={o.fen} opening={o} platform={displayedPlatform} username={displayedUsername} index={i} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
-              {/* Spacer at bottom */}
               <div style={{ height: 'var(--space-8)' }} />
             </>
           );

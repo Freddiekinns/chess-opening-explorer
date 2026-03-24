@@ -559,38 +559,93 @@ Combined the original chunks 6 and 7. Includes chunk 6b visual polish pass.
 
 ---
 
-### Chunk 8: Analyse page — stat cards + tables
+### Chunk 8: Analyse page — mobile dashboard redesign (DONE)
 
-**Scope:** Refresh the Analyse page: left-align, redesign stat cards, replace
-pill-badge opening lists with tables.
+**Scope (evolved from original):** Originally scoped as "stat cards + tables"
+refresh. Evolved into a full mobile-first dashboard redesign based on a
+reference mockup, with separate mobile and desktop rendering paths.
 
-**What to do:**
+**What was built:**
 
-- Left-align the hero section (matches Discover page alignment)
-- Polish input bar styling (border radius, focus states)
-- Redesign summary area: row of stat cards (win rate, best opening, worst
-  opening, total games) with `--color-bg-surface` background and left border
-  accent
-- Replace the pill-badge opening rows with proper tables: columns for opening
-  name, games, W, D, L
-- Keep sort controls (Most played / Best first / Worst first)
-- Keep side-by-side layout (As white / As black) on desktop, stack mobile
-- Remove any `text-transform: uppercase`
+**Architecture — separate mobile/desktop dashboards:**
+
+- Created entirely separate `mobileDashboard` and `desktopDashboard` wrapper
+  sections, toggled via CSS media queries (`≤768px` / `>768px`). This avoids
+  responsive CSS hacks and lets each layout be purpose-built.
+- Desktop dashboard left unchanged from previous implementation.
+
+**Mobile dashboard layout (top to bottom):**
+
+1. **Centered hero** — player name + platform badge, centered alignment
+2. **Triple stat cards** — 3 inline cards (Wins/Draws/Losses) with accent top
+   borders (green/amber/red) and large value numbers
+3. **Highlight cards** — "Top Performing" and "Needs Work" openings with
+   coloured pills (green for wins, red for losses) and game count metadata
+4. **Pill toggle** — "As white" / "As black" colour switcher
+5. **Sort bar** — preserved existing sort filters (Most played / Highest win
+   rate / Lowest win rate) in mobile section header
+6. **Opening cards** — each card shows: opening name (with family:variation
+   colour split), move count, "Games N" badge, 8px W/D/L bar, and
+   space-between labelled percentages
+7. **Show more** — first 5 openings shown, expandable "Show all N openings"
+   dashed button. Resets on tab switch.
+8. **Bottom CTA** — orange "Analyse another player" button
+
+**OpeningNameSplit component:**
+
+- Helper component that splits opening names on the first colon into
+  `.nameFamily` (white), `.nameColon` (muted), `.nameVariation` (orange)
+- Applied to all 6 places opening names render: desktop rows, desktop cards,
+  mobile cards, and highlight cards
+- Matches the colour split pattern already used on the opening detail page
+
+**Colour review — de-oranging interactive controls:**
+
+- `sortPillActive`: orange fill → subtle white glass (`rgba(255,255,255,0.12)`)
+- `pillBtnActive`: orange fill → subtle white glass
+- `highlightPillWin`: orange tint → green (`#66bb6a`)
+- `cardLabelWin`: orange → green (`#66bb6a`)
+- Orange reserved for: win data bars, variation names, CTA button, hover accents
+
+**Overlay progress bar:**
+
+- Added progress bar (fill + step text + processed/total) inside the search
+  overlay on mobile so analysis loading is visible during overlay search
+
+**Design decisions:**
+
+- **"Games N" instead of mastery %** — mastery percentage was confusing. Plain
+  game count is more useful and immediately understood.
+- **Space-between for W/D/L percentages** — initial `gap`-based layout caused
+  left-alignment. `justify-content: space-between` distributes evenly.
+- **Show-more is mobile-only** — desktop has enough space to show all openings;
+  mobile benefits from progressive disclosure to reduce scroll fatigue.
+- **White glass toggles** — orange was overloaded (win data + toggles + pills +
+  CTA + names). Neutral glass for interactive controls reserves orange for
+  semantic meaning (wins, brand, variation names).
+- **Green for positive labels** — top-performing pill and win label use `#66bb6a`
+  instead of orange, providing semantic colour coding (green = good).
 
 **Review checkpoint:**
 
-- [ ] Hero is left-aligned
-- [ ] Input bar matches Discover search bar styling
-- [ ] Stat cards render as a row on desktop
-- [ ] Tables show W/D/L with colour coding
-- [ ] Sort controls work
-- [ ] Side-by-side on desktop, stacked on mobile
-- [ ] Analysis flow works end-to-end (enter username → analyse → results)
-- [ ] Empty state looks correct (no analysis run yet)
+- [x] Mobile dashboard renders as separate layout (not responsive CSS on desktop)
+- [x] Triple stat cards render inline with accent borders
+- [x] Highlight cards show top/worst openings with coloured pills
+- [x] Pill toggle switches between white/black openings
+- [x] Sort controls preserved and functional
+- [x] Opening cards show family:variation colour split
+- [x] W/D/L bar + space-between percentages
+- [x] "Games N" shown instead of mastery %
+- [x] Show-more pattern (5 initial, expandable)
+- [x] Overlay progress bar visible during analysis
+- [x] Analysis flow works end-to-end
+- [x] Desktop dashboard unchanged
+- [x] Build clean, 139/139 tests pass
 
 **Files:**
 
-- Modified: `AnalyseGamesPage.tsx`, `PersonalOpeningStats.tsx`, `simplified.css`
+- Modified: `PersonalOpeningStats.tsx`, `PersonalOpeningStats.module.css`,
+  `AnalyseGamesPage.module.css`
 
 ---
 
@@ -1027,6 +1082,59 @@ allowed for short labels. Section 6 (Typography) updated to match.
 OpeningDetailPage.tsx, OpeningDetailPage.module.css, simplified.css,
 PracticeControls.module.css, CommonPlans.module.css,
 OpeningNavigator.module.css, VideoGallery.module.css, StudiesGallery.module.css
+**Build:** clean. **Tests:** 139/139 pass.
+
+### 2026-03-22 — [chunk 8] Analyse page — mobile dashboard redesign
+
+Chunk 8 evolved significantly beyond the original "stat cards + tables" spec.
+A reference mockup drove a complete mobile-first redesign with separate
+mobile/desktop rendering paths rather than responsive CSS on a single layout.
+
+**Key deviations from original spec:**
+
+- **Not left-aligned** — the mobile dashboard uses centred hero (matches mobile
+  conventions), desktop left unchanged
+- **Not tables** — mobile uses cards (better touch targets, more visual), desktop
+  retains existing row layout
+- **CSS Modules, not simplified.css** — all new styles in
+  `PersonalOpeningStats.module.css` following the ongoing CSS Modules migration
+
+**Architecture decision — separate mobile/desktop:**
+
+Rather than making one layout responsive, created entirely separate
+`mobileDashboard` and `desktopDashboard` wrapper sections toggled by CSS media
+queries. This avoids complex responsive overrides and lets each layout be
+purpose-built for its context.
+
+**Colour review — reducing orange overload:**
+
+Orange was used for: win data bars, sort pills, toggle pills, top-performing
+labels, CTA button, variation names, and hover accents. This diluted its
+semantic meaning. Changes made:
+
+- Active sort pills and toggle pills → white glass (`rgba(255,255,255,0.12)`)
+- Top-performing pill and win label → green (`#66bb6a`)
+- Orange reserved for: win data bars, variation names, CTA button, hover accents
+
+**OpeningNameSplit component:**
+
+Created a helper that splits opening names on the first colon (e.g.,
+"Sicilian Defense: Najdorf Variation") into family (white) + colon (muted) +
+variation (orange). Applied to all 6 name render locations. Mirrors the colour
+split already used on the opening detail page.
+
+**Progressive disclosure — show-more:**
+
+Mobile shows first 5 openings with a "Show all N openings" dashed-border
+button. Resets on tab switch. Desktop shows all openings (sufficient space).
+
+**Overlay progress bar:**
+
+Analysis progress (step text + fill bar + count) added inside the mobile search
+overlay so loading state is visible without dismissing the overlay.
+
+**Files modified:** `PersonalOpeningStats.tsx`, `PersonalOpeningStats.module.css`,
+`AnalyseGamesPage.module.css`
 **Build:** clean. **Tests:** 139/139 pass.
 
 ## 11. Out of scope

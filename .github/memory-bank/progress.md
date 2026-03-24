@@ -10,8 +10,8 @@
   `aria-pressed` to color toggles and mocked audio asset fetches in tests.
 - **TASK016 — Design Overhaul** (2026-03-21, in progress): Top bar nav, sidebar,
   bottom tabs, detail page restructure with OpeningNavigator, stacked sections
-  replacing tabs. Chunks 1–6 done (including 6b visual polish). Chunks 8–9
-  remaining (Analyse page, global polish).
+  replacing tabs, Analyse page mobile dashboard redesign. Chunks 1–6 + 8 done.
+  Chunk 9 remaining (global polish).
 - **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree
   replacing flat related openings list. Backend tree-service + 2 routes,
   frontend OpeningTree component with ARIA keyboard nav. 9 dead files deleted.
@@ -47,8 +47,9 @@
 
 ## What's Left
 
-- **TASK016 chunk 8**: Analyse page refresh (stat cards, tables)
 - **TASK016 chunk 9**: Global polish pass (broken tests, dead CSS, focus rings)
+- **Bottom nav investigation**: User flagged bottom nav may be missing on Analyse
+  page — needs verification
 - **TASK006 — Coverage**: Backend 90%+, frontend 70%+ targets
 - **Advanced Filtering**: Filter by win rate, draw rate, etc.
 - **Design System Tokens**: CSS variables for accent gradients and spacing

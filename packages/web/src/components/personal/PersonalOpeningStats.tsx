@@ -309,11 +309,17 @@ export const PersonalOpeningStats: React.FC<{
   const [error, setError] = useState<string | null>(null);
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
 
-  const [sortMode, setSortMode] = useState<SortMode>('frequency');
+  const [whiteSortMode, setWhiteSortMode] = useState<SortMode>('frequency');
+  const [blackSortMode, setBlackSortMode] = useState<SortMode>('frequency');
   const [activeTab, setActiveTab] = useState<SideTab>(
     () => readSavedFormState()?.activeTab ?? 'white'
   );
   const [showSettings, setShowSettings] = useState(false);
+  const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+
+  // Displayed state: only updates when analysis completes (not while typing)
+  const [displayedUsername, setDisplayedUsername] = useState('');
+  const [displayedPlatform, setDisplayedPlatform] = useState<Platform>('chess.com');
 
   const abortRef = useRef<AbortController | null>(null);
   const settingsRef = useRef<HTMLDivElement>(null);
@@ -403,12 +409,15 @@ export const PersonalOpeningStats: React.FC<{
     const cached = loadFromCache();
     if (cached) {
       setDashboard(cached);
+      setDisplayedUsername(normalizeUsername(username));
+      setDisplayedPlatform(platform);
       setError(null);
       setStep('done');
       setStepText('Loaded your saved results');
       setProgress(100);
       setProcessed(cached.totalGames);
       setTotal(cached.totalGames);
+      setShowSearchOverlay(false);
       return;
     }
 
@@ -533,7 +542,11 @@ export const PersonalOpeningStats: React.FC<{
 
       saveToCache(data);
       setDashboard(data);
-      setSortMode('frequency');
+      setDisplayedUsername(normalizeUsername(username));
+      setDisplayedPlatform(platform);
+      setWhiteSortMode('frequency');
+      setBlackSortMode('frequency');
+      setShowSearchOverlay(false);
       setStep('done');
       setStepText('Analysis complete');
       setProgress(100);
@@ -564,161 +577,190 @@ export const PersonalOpeningStats: React.FC<{
     void handleAnalyse();
   };
 
-  const platformLabel = platform === 'lichess' ? 'Lichess' : 'Chess.com';
-
-  const handleResetToSearch = () => {
-    setDashboard(null);
-    setStep('idle');
-    setStepText('');
-    setProgress(0);
-    setProcessed(0);
-    setTotal(0);
-    setError(null);
-  };
-
   const showHero = !dashboard && step !== 'done';
+
+  const renderSearchForm = () => (
+    <>
+      <div className={styles.inputBar}>
+        <div className={styles.platformToggle}>
+          <button
+            type="button"
+            className={`${styles.platformBtn} ${platform === 'chess.com' ? styles.platformBtnActive : ''}`}
+            onClick={() => setPlatform('chess.com')}
+            disabled={isBusy}
+          >
+            Chess.com
+          </button>
+          <button
+            type="button"
+            className={`${styles.platformBtn} ${platform === 'lichess' ? styles.platformBtnActive : ''}`}
+            onClick={() => setPlatform('lichess')}
+            disabled={isBusy}
+          >
+            Lichess
+          </button>
+        </div>
+
+        <div className={styles.inputFields}>
+          <span className={styles.userIcon}>
+            <UserIcon />
+          </span>
+
+          <input
+            className={styles.usernameInput}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={handleEnterToAnalyse}
+            placeholder="Enter username..."
+            inputMode="text"
+            autoComplete="off"
+            disabled={isBusy}
+          />
+        </div>
+
+        <div className={styles.inputActions}>
+          {/* Gear / settings */}
+          <div ref={settingsRef} className={styles.settingsAnchor}>
+            <button
+              type="button"
+              className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
+              onClick={() => setShowSettings(!showSettings)}
+              aria-label="Settings"
+              title={`Analysing last ${limit} games`}
+            >
+              <GearIcon />
+            </button>
+            {showSettings && (
+              <div
+                className={styles.settingsPopover}
+                role="dialog"
+                aria-label="Games to analyse settings"
+              >
+                <div className={styles.settingsLabel}>Games to analyse</div>
+                <div
+                  className={styles.stepper}
+                  role="group"
+                  aria-label="Number of games to analyse"
+                >
+                  <button
+                    type="button"
+                    className={styles.stepperBtn}
+                    onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
+                    disabled={isBusy || limit <= 1}
+                    aria-label="Decrease games"
+                    title="Hold Shift for -10"
+                  >
+                    -
+                  </button>
+                  <input
+                    className={styles.stepperInput}
+                    type="number"
+                    min={1}
+                    max={500}
+                    step={1}
+                    aria-label="Games to analyse"
+                    value={limit}
+                    onChange={(e) => setLimitSafe(Number(e.target.value))}
+                    onKeyDown={handleEnterToAnalyse}
+                    disabled={isBusy}
+                  />
+                  <button
+                    type="button"
+                    className={styles.stepperBtn}
+                    onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
+                    disabled={isBusy || limit >= 500}
+                    aria-label="Increase games"
+                    title="Hold Shift for +10"
+                  >
+                    +
+                  </button>
+                </div>
+                <p className={styles.settingsHint}>Choose between 1 and 500 recent rated games.</p>
+              </div>
+            )}
+          </div>
+
+          <button
+            className={styles.analyseBtn}
+            onClick={isBusy ? handleCancel : handleAnalyse}
+            disabled={!isBusy && !canAnalyse}
+          >
+            {isBusy && <span className={styles.spinner} aria-hidden="true" />}
+            <span>{isBusy ? 'Cancel' : 'Analyse'}</span>
+          </button>
+        </div>
+      </div>
+
+      <p className={styles.inputNote}>
+        Includes rated rapid, blitz, and classical games only (up to {limit}). Bullet is excluded.
+      </p>
+    </>
+  );
 
   return (
     <div>
       {/* ===== LANDING (hero + search, centred in viewport when no results) ===== */}
-      <div className={`${styles.landing} ${showHero ? styles.landingCentered : ''}`}>
-        {showHero && (
-          <div className={styles.hero}>
-            <h1 className={styles.heroTitle}>Analyse Your Games</h1>
-            <p className={styles.heroSubtitle}>
-              Review your performance and improve your openings by connecting your chess account.
-            </p>
-          </div>
-        )}
-
-        {/* ===== INPUT BAR ===== */}
-        <div className={styles.inputBar}>
-          <div className={styles.platformToggle}>
-            <button
-              type="button"
-              className={`${styles.platformBtn} ${platform === 'chess.com' ? styles.platformBtnActive : ''}`}
-              onClick={() => setPlatform('chess.com')}
-              disabled={isBusy}
-            >
-              Chess.com
-            </button>
-            <button
-              type="button"
-              className={`${styles.platformBtn} ${platform === 'lichess' ? styles.platformBtnActive : ''}`}
-              onClick={() => setPlatform('lichess')}
-              disabled={isBusy}
-            >
-              Lichess
-            </button>
-          </div>
-
-          <div className={styles.inputFields}>
-            <span className={styles.userIcon}>
-              <UserIcon />
-            </span>
-
-            <input
-              className={styles.usernameInput}
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              onKeyDown={handleEnterToAnalyse}
-              placeholder="Enter username..."
-              inputMode="text"
-              autoComplete="off"
-              disabled={isBusy}
-            />
-          </div>
-
-          <div className={styles.inputActions}>
-            {/* Gear / settings */}
-            <div ref={settingsRef} style={{ position: 'relative' }}>
-              <button
-                type="button"
-                className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
-                onClick={() => setShowSettings(!showSettings)}
-                aria-label="Settings"
-                title={`Analysing last ${limit} games`}
-              >
-                <GearIcon />
-              </button>
-              {showSettings && (
-                <div className={styles.settingsPopover}>
-                  <div className={styles.settingsLabel}>Games to analyse</div>
-                  <div className={styles.stepper}>
-                    <button
-                      type="button"
-                      className={styles.stepperBtn}
-                      onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
-                      disabled={isBusy || limit <= 1}
-                      aria-label="Decrease games"
-                      title="Hold Shift for -10"
-                    >
-                      -
-                    </button>
-                    <input
-                      className={styles.stepperInput}
-                      type="number"
-                      min={1}
-                      max={500}
-                      step={1}
-                      value={limit}
-                      onChange={(e) => setLimitSafe(Number(e.target.value))}
-                      onKeyDown={handleEnterToAnalyse}
-                      disabled={isBusy}
-                    />
-                    <button
-                      type="button"
-                      className={styles.stepperBtn}
-                      onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
-                      disabled={isBusy || limit >= 500}
-                      aria-label="Increase games"
-                      title="Hold Shift for +10"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              )}
+      {!dashboard && (
+        <div className={`${styles.landing} ${showHero ? styles.landingCentered : ''}`}>
+          {showHero && (
+            <div className={styles.hero}>
+              <h1 className={styles.heroTitle}>Analyse Your Games</h1>
+              <p className={styles.heroSubtitle}>
+                Review your performance and improve your openings by connecting your chess account.
+              </p>
             </div>
+          )}
 
+          {renderSearchForm()}
+
+          {/* Secondary idle prompt */}
+          {showHero && step === 'idle' && (
+            <div className={styles.idlePrompt}>
+              <svg
+                className={styles.idlePromptIcon}
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <h2 className={styles.idlePromptTitle}>Ready to analyse your openings?</h2>
+              <p className={styles.idlePromptText}>
+                Enter your username to explore a detailed breakdown of your performance by opening.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ===== SEARCH OVERLAY (when dashboard is showing) ===== */}
+      {showSearchOverlay && (
+        <div
+          className={styles.searchOverlay}
+          onClick={() => setShowSearchOverlay(false)}
+          onKeyDown={(e) => e.key === 'Escape' && setShowSearchOverlay(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Search for a player"
+        >
+          <div className={styles.searchOverlayContent} onClick={(e) => e.stopPropagation()}>
             <button
-              className={styles.analyseBtn}
-              onClick={isBusy ? handleCancel : handleAnalyse}
-              disabled={!isBusy && !canAnalyse}
+              type="button"
+              className={styles.searchOverlayClose}
+              onClick={() => setShowSearchOverlay(false)}
+              aria-label="Close"
             >
-              {isBusy && <span className={styles.spinner} aria-hidden="true" />}
-              <span>{isBusy ? 'Cancel' : 'Analyse'}</span>
+              &times;
             </button>
+            <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
+            {renderSearchForm()}
           </div>
         </div>
-
-        {/* Contextual note below the bar */}
-        <p className={styles.inputNote}>
-          Includes rated rapid, blitz, and classical games only (up to {limit}). Bullet is excluded.
-        </p>
-
-        {/* Secondary idle prompt */}
-        {showHero && step === 'idle' && (
-          <div className={styles.idlePrompt}>
-            <svg
-              className={styles.idlePromptIcon}
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-            <h2 className={styles.idlePromptTitle}>Ready to analyse your openings?</h2>
-            <p className={styles.idlePromptText}>
-              Enter your username to explore a detailed breakdown of your performance by opening.
-            </p>
-          </div>
-        )}
-      </div>
+      )}
 
       {/* ===== PROGRESS ===== */}
       {(step === 'fetching' || step === 'analysing') && (
@@ -759,28 +801,41 @@ export const PersonalOpeningStats: React.FC<{
           const weakestOpening = findWeakestOpening(allOpenings);
           const showWeakest = weakestOpening && bestOpening?.fen !== weakestOpening?.fen;
 
-          const sortedWhite = sortAgg(dashboard.asWhite, sortMode);
-          const sortedBlack = sortAgg(dashboard.asBlack, sortMode);
+          const sortedWhite = sortAgg(dashboard.asWhite, whiteSortMode);
+          const sortedBlack = sortAgg(dashboard.asBlack, blackSortMode);
 
+          const activeSortMode = activeTab === 'white' ? whiteSortMode : blackSortMode;
+          const setActiveSortMode = activeTab === 'white' ? setWhiteSortMode : setBlackSortMode;
           const activeData =
             activeTab === 'white'
               ? { openings: sortedWhite, games: dashboard.whiteGames }
               : { openings: sortedBlack, games: dashboard.blackGames };
 
+          const displayedPlatformLabel = displayedPlatform === 'lichess' ? 'Lichess' : 'Chess.com';
+
           const openingLink = (o: OpeningAgg) =>
-            `/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`;
+            `/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`;
 
           return (
             <>
-              {/* Player header */}
-              <div className={styles.playerHeader}>
-                <h2 className={styles.playerName}>{normalizeUsername(username)}</h2>
-                <div className={styles.playerMeta}>
-                  <span className={styles.platformBadge}>{platformLabel}</span>
-                  <span className={styles.gamesAnalysed}>
-                    {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
-                  </span>
+              {/* Dashboard hero */}
+              <div className={styles.dashboardHero}>
+                <div className={styles.dashboardHeroContent}>
+                  <h2 className={styles.dashboardPlayerName}>{displayedUsername}</h2>
+                  <div className={styles.playerMeta}>
+                    <span className={styles.platformBadge}>{displayedPlatformLabel}</span>
+                    <span className={styles.gamesAnalysed}>
+                      {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
+                    </span>
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  className={styles.analyseAnotherBtn}
+                  onClick={() => setShowSearchOverlay(true)}
+                >
+                  Analyse another player <span aria-hidden="true">&rarr;</span>
+                </button>
               </div>
 
               {/* Summary cards */}
@@ -793,19 +848,23 @@ export const PersonalOpeningStats: React.FC<{
                   <h3 className={styles.cardTitle}>Career Totals</h3>
                   <div className={styles.statsRows}>
                     <div className={styles.statsRow}>
-                      <span className={styles.statsLabel}>Wins</span>
+                      <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>
+                        Total wins
+                      </span>
                       <span className={styles.statsValue}>
                         {(dashboard.whiteWin + dashboard.blackWin).toLocaleString()}
                       </span>
                     </div>
                     <div className={styles.statsRow}>
-                      <span className={styles.statsLabel}>Draws</span>
+                      <span className={styles.statsLabel}>Total draws</span>
                       <span className={styles.statsValue}>
                         {(dashboard.whiteDraw + dashboard.blackDraw).toLocaleString()}
                       </span>
                     </div>
                     <div className={styles.statsRow}>
-                      <span className={styles.statsLabel}>Losses</span>
+                      <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>
+                        Total losses
+                      </span>
                       <span className={styles.statsValue}>
                         {(dashboard.whiteLoss + dashboard.blackLoss).toLocaleString()}
                       </span>
@@ -895,12 +954,14 @@ export const PersonalOpeningStats: React.FC<{
                     {activeTab === 'white' ? 'Performance as White' : 'Performance as Black'}
                     <span className={styles.sectionBadge}>{activeData.games} games</span>
                   </h3>
-                  <SortBar sortMode={sortMode} onSort={setSortMode} />
+                  <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
                 </div>
                 <div className={styles.colHeaders}>
                   <span className={styles.colHeaderName}>Opening name</span>
-                  <span className={styles.colHeaderGp}>GP</span>
-                  <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                  <div className={styles.colHeaderRight}>
+                    <span className={styles.colHeaderGp}>GP</span>
+                    <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                  </div>
                 </div>
                 {activeData.openings.length === 0 ? (
                   <div className={styles.emptyList}>No classified openings.</div>
@@ -910,8 +971,8 @@ export const PersonalOpeningStats: React.FC<{
                       <OpeningRow
                         key={o.fen}
                         opening={o}
-                        platform={platform}
-                        username={username}
+                        platform={displayedPlatform}
+                        username={displayedUsername}
                         index={i}
                       />
                     ))}
@@ -927,12 +988,14 @@ export const PersonalOpeningStats: React.FC<{
                       Performance as White
                       <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
                     </h3>
-                    <SortBar sortMode={sortMode} onSort={setSortMode} />
+                    <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
                   </div>
                   <div className={styles.colHeaders}>
                     <span className={styles.colHeaderName}>Opening name</span>
-                    <span className={styles.colHeaderGp}>GP</span>
-                    <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                    <div className={styles.colHeaderRight}>
+                      <span className={styles.colHeaderGp}>GP</span>
+                      <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                    </div>
                   </div>
                   {sortedWhite.length === 0 ? (
                     <div className={styles.emptyList}>No classified openings.</div>
@@ -942,8 +1005,8 @@ export const PersonalOpeningStats: React.FC<{
                         <OpeningRow
                           key={o.fen}
                           opening={o}
-                          platform={platform}
-                          username={username}
+                          platform={displayedPlatform}
+                          username={displayedUsername}
                           index={i}
                         />
                       ))}
@@ -957,11 +1020,14 @@ export const PersonalOpeningStats: React.FC<{
                       Performance as Black
                       <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
                     </h3>
+                    <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
                   </div>
                   <div className={styles.colHeaders}>
                     <span className={styles.colHeaderName}>Opening name</span>
-                    <span className={styles.colHeaderGp}>GP</span>
-                    <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                    <div className={styles.colHeaderRight}>
+                      <span className={styles.colHeaderGp}>GP</span>
+                      <span className={styles.colHeaderDist}>W / D / L distribution</span>
+                    </div>
                   </div>
                   {sortedBlack.length === 0 ? (
                     <div className={styles.emptyList}>No classified openings.</div>
@@ -971,8 +1037,8 @@ export const PersonalOpeningStats: React.FC<{
                         <OpeningRow
                           key={o.fen}
                           opening={o}
-                          platform={platform}
-                          username={username}
+                          platform={displayedPlatform}
+                          username={displayedUsername}
                           index={i}
                         />
                       ))}
@@ -981,12 +1047,8 @@ export const PersonalOpeningStats: React.FC<{
                 </div>
               </div>
 
-              {/* Analyse another player */}
-              <div className={styles.resetRow}>
-                <button type="button" className={styles.resetLink} onClick={handleResetToSearch}>
-                  Analyse another player
-                </button>
-              </div>
+              {/* Spacer at bottom */}
+              <div style={{ height: 'var(--space-8)' }} />
             </>
           );
         })()}

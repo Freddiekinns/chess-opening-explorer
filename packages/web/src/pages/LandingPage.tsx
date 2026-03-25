@@ -161,14 +161,16 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Opening Book</h1>
+          <h1 className="hero-title">
+            Opening <span className="hero-title-accent">Book</span>
+          </h1>
           <p className="hero-subtitle">Discover, explore and learn chess openings.</p>
 
           <div className="hero-search-wrapper">
             <SearchBar
               variant="landing"
               onSelect={handleOpeningSelect}
-              placeholder="Try: 'aggressive openings' or 'popular responses to d4'"
+              placeholder="Search variations, ECO codes, or systems..."
               disabled={loading}
               loading={loading}
               openingsData={openingsData}
@@ -177,7 +179,7 @@ const LandingPage: React.FC = () => {
             />
             <div className="pgn-search-link-wrapper">
               <button className="pgn-search-link" onClick={() => setIsPGNModalOpen(true)}>
-                Or search by PGN
+                Search by pasting PGN
               </button>
             </div>
           </div>

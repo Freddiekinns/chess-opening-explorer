@@ -10,8 +10,8 @@
   `aria-pressed` to color toggles and mocked audio asset fetches in tests.
 - **TASK016 — Design Overhaul** (2026-03-21, in progress): Top bar nav, sidebar,
   bottom tabs, detail page restructure with OpeningNavigator, stacked sections
-  replacing tabs. Chunks 1–6 done (including 6b visual polish). Chunks 8–9
-  remaining (Analyse page, global polish).
+  replacing tabs. Chunks 1–7 done (including home page redesign with MiniBoard
+  thumbnails, OpeningCard variants, hero restyle). Chunks 8–9 remaining.
 - **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree
   replacing flat related openings list. Backend tree-service + 2 routes,
   frontend OpeningTree component with ARIA keyboard nav. 9 dead files deleted.

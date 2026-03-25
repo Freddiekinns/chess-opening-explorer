@@ -1,34 +1,38 @@
 # Active Context
 
-**Date:** 2026-03-22
+**Date:** 2026-03-24
 
-## Current Task: TASK016 Design Overhaul — Opening Detail Page Complete
+## Current Task: TASK016 Design Overhaul — Home Page Redesign (Chunk 7)
 
-**Status:** Chunk 6 (detail page restructure + visual polish) complete. Build
-clean, 139/139 tests pass.
+**Status:** Complete. Build clean, 139/139 tests pass.
 
 **Done (this session):**
 
-- Comprehensive visual polish pass (chunk 6b): font sizes, label weights,
-  section separators, overview contrast, Practice button ghost style, FEN
-  utilities opacity, show-more button consistency
-- Design principle update: relaxed "sentence case everywhere" to "prefer
-  sentence case" — title case allowed for short labels per WCAG best practices
-- Updated TASK016 documentation with all decisions and final values
+- Created MiniBoard component (static chessboard thumbnail via react-chessboard)
+- Updated OpeningCard: added `showBoard` prop for board thumbnails, `variant`
+  prop for list-item mobile layout, style tags display, card-info-column wrapper
+- Updated PopularOpeningsGrid: "Popular systems" title, passes showBoard=true
+- Updated RepertoireSection: board thumbnails on repertoire cards, mobile
+  list-item layout
+- Updated LandingPage hero: "Opening book" title with orange accent span,
+  side-by-side search+surprise on desktop
+- Restyled Surprise me button (dark bg, sentence case, no emoji)
+- PGN link restyled (uppercase tracking)
+- Filter pills restyled (pill shape, orange active state)
+- Mobile responsive: list-item cards, stacked search, compact typography
+- Fixed coordinate labels on MiniBoard via `showNotation: false` option
+- Updated tests for new button text and title changes
 
 **Previous work (same branch):**
 
-- OpeningNavigator component, WinRateBar, board column widened (7fr/5fr)
-- Plans below board, description below navigator, stacked sections
-- Studies + Videos full-width, learning resources polish
-- Top bar navigation (chunks 1–5), search in TopBar
+- Chunks 1–6: Top bar nav, detail page restructure, visual polish
 
 **Remaining for TASK016:**
 
 - Chunk 8: Analyse page refresh (stat cards, tables)
-- Chunk 9: Global polish pass (broken tests, dead CSS, focus rings)
+- Chunk 9: Global polish pass (dead CSS, focus rings)
 
-## Previous Task: TASK016 Chunks 1-5 (2026-03-21) — DONE
+## Previous Task: TASK016 Chunk 6 (2026-03-22) — DONE
 
-Top bar navigation replacing sidebar. Deleted GlobalHeader, FloatingBackButton,
-ContentHeader, TopBarContext, LandingHeader. ~9KB dead CSS removed.
+Visual polish pass, font sizes, label weights, section separators, Practice
+button ghost style, FEN utilities opacity, design principle update.

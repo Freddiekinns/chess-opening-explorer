@@ -1,0 +1,7 @@
+.miniBoard {
+  border-radius: var(--border-radius-base, 8px);
+  overflow: hidden;
+  pointer-events: none;
+  flex-shrink: 0;
+  line-height: 0;
+}

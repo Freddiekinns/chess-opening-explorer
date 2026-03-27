@@ -512,7 +512,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   animation: sectionReveal 300ms ease-out;
 }
 
@@ -529,6 +529,8 @@
   letter-spacing: -0.03em;
   line-height: 1.05;
   margin: 0 0 var(--space-2) 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .analyseAnotherBtn {
@@ -613,6 +615,12 @@
   text-align: center;
 }
 
+.overlayProgress {
+  width: 100%;
+  margin-top: var(--space-4);
+  animation: cardIn 200ms ease-out;
+}
+
 @keyframes overlayFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -647,13 +655,13 @@
    ============================== */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
 }
 
 .cardsGridTwo {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
@@ -662,6 +670,8 @@
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   animation: cardIn 300ms ease-out both;
+  overflow: hidden;
+  min-width: 0;
 }
 
 .card:nth-child(1) {
@@ -699,7 +709,7 @@
 }
 
 .cardLabelWin {
-  color: var(--color-brand-orange);
+  color: #66bb6a;
 }
 
 .cardLabelLoss {
@@ -725,6 +735,8 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .cardContext {
@@ -838,19 +850,42 @@
 @media (max-width: 768px) {
   .dashboardHero {
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-2);
   }
 
   .dashboardPlayerName {
     font-size: var(--text-3xl);
   }
 
+  .playerMeta {
+    flex-wrap: wrap;
+  }
+
+  .analyseAnotherBtn {
+    font-size: 14px;
+    padding: var(--space-1) 0;
+  }
+
   .cardsGrid {
     grid-template-columns: 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
   }
 
   .cardsGridTwo {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+
+  .cardTitle {
+    font-size: 19px;
+  }
+
+  .cardOpeningName {
+    font-size: 17px;
   }
 
   /* Career totals: revert to vertical on mobile */
@@ -874,8 +909,68 @@
     font-size: var(--text-xl);
   }
 
+  .winRateValue {
+    font-size: 24px;
+  }
+
+  /* Hide the column headers on mobile — stacked rows don't need them */
+  .colHeaders {
+    display: none;
+  }
+
   .colHeaderRight {
     gap: var(--space-2);
+  }
+
+  /* Stacked opening rows for mobile */
+  .openingRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-4);
+    border-radius: var(--border-radius-large);
+    margin-bottom: var(--space-3);
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .openingRow:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .openingRowLeft {
+    width: 100%;
+    margin-bottom: var(--space-3);
+  }
+
+  .openingName {
+    white-space: normal;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  /* Hide desktop GP + dist bar on mobile */
+  .openingRowRight {
+    display: none;
+  }
+
+  /* Show mobile stat counters + accent bar */
+  .mobileStats {
+    display: block;
+  }
+
+  .colHeaderDist {
+    width: auto;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
   }
 }
 
@@ -901,6 +996,8 @@
   gap: var(--space-3);
   flex-wrap: wrap;
   margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .sectionTitle {
@@ -939,22 +1036,21 @@
 }
 
 .sortPillActive {
-  background: var(--color-brand-orange);
-  border-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  box-shadow: var(--shadow-brand);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-primary);
 }
 
 /* Tab bar for mobile */
 .tabBar {
   display: none;
   margin-top: var(--space-6);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-1);
 }
 
 .tabBtn {
   flex: 1;
-  padding: var(--space-2-5);
+  padding: var(--space-3);
   border: none;
   background: transparent;
   color: var(--color-text-secondary);
@@ -962,7 +1058,7 @@
   font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
   transition: all 150ms ease;
 }
 
@@ -991,6 +1087,20 @@
 
 .openingRow:hover {
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* Opening name family:variation color split */
+.nameFamily {
+  color: var(--color-text-primary);
+}
+
+.nameColon {
+  color: var(--color-text-muted);
+  margin: 0 0.15em;
+}
+
+.nameVariation {
+  color: var(--color-brand-orange, #e85d04);
 }
 
 .openingRowLeft {
@@ -1182,25 +1292,492 @@
   color: var(--color-text-muted);
 }
 
+/* Mobile name row: name + games count inline */
+.openingNameRow {
+  display: contents;
+}
 
-/* Mobile */
+.openingGames {
+  display: none;
+}
+
+/* Mobile stats — hidden on desktop, shown on mobile */
+.mobileStats {
+  display: none;
+}
+
+/* Stat counters row */
+.statCounters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.statChip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.statDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statDotWin {
+  background: var(--color-brand-orange);
+}
+
+.statDotDraw {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.statDotLoss {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.statNum {
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-family-primary);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.statGames {
+  margin-left: auto;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* Slim accent bar */
+.accentBar {
+  display: flex;
+  height: 4px;
+  border-radius: 9999px;
+  overflow: hidden;
+  gap: 1px;
+  margin-top: var(--space-2);
+}
+
+.accentWin {
+  background: var(--color-brand-orange);
+  border-radius: 9999px 0 0 9999px;
+  min-width: 2px;
+  transition: width 0.4s ease-out;
+}
+
+.accentDraw {
+  background: rgba(255, 255, 255, 0.2);
+  min-width: 2px;
+  transition: width 0.4s ease-out;
+}
+
+.accentLoss {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 0 9999px 9999px 0;
+  min-width: 2px;
+  transition: width 0.4s ease-out;
+}
+
+
+/* ==============================
+   MOBILE DASHBOARD
+   ============================== */
+.mobileDashboard {
+  display: none;
+}
+
+.desktopDashboard {
+  display: block;
+}
+
+/* Centered hero */
+.mobileHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-5) 0 var(--space-4);
+  animation: sectionReveal 300ms ease-out;
+}
+
+.mobilePlayerName {
+  font-family: var(--font-family-headline);
+  font-size: 28px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.mobilePlatform {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-2);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+/* 3 inline stat cards */
+.tripleStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.triStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  background: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  animation: cardIn 300ms ease-out both;
+}
+
+.triStat:nth-child(1) { animation-delay: 0ms; }
+.triStat:nth-child(2) { animation-delay: 80ms; }
+.triStat:nth-child(3) { animation-delay: 160ms; }
+
+.triStatWin {
+  border-left: 3px solid var(--color-brand-orange);
+}
+
+.triStatLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.triStatValue {
+  font-family: var(--font-family-headline);
+  font-size: 26px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+/* Highlight cards */
+.highlightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  margin-bottom: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease;
+  animation: cardIn 300ms ease-out both;
+}
+
+.highlightCard:hover {
+  border-color: rgba(232, 93, 4, 0.3);
+}
+
+.highlightPill {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.highlightPillWin {
+  background: rgba(76, 175, 80, 0.15);
+  color: #66bb6a;
+}
+
+.highlightPillLoss {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+}
+
+.highlightName {
+  font-family: var(--font-family-headline);
+  font-size: 16px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.highlightMeta {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Pill toggle */
+.pillToggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 3px;
+  margin: var(--space-4) 0;
+}
+
+.pillBtn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: center;
+}
+
+.pillBtnActive {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-primary);
+}
+
+/* Section head with sort */
+.mobileSectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobileSectionTitle {
+  font-family: var(--font-family-headline);
+  font-size: 18px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Mobile opening list */
+.mobileOpeningList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mobileCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-large);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease;
+  animation: rowIn 200ms ease-out both;
+}
+
+.mobileCard:hover {
+  border-color: rgba(232, 93, 4, 0.3);
+}
+
+.mobileCardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.mobileCardNameCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.mobileCardName {
+  font-family: var(--font-family-primary);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.mobileCardMoves {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileCardGames {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* W/D/L bar */
+.mobileCardBar {
+  display: flex;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+  gap: 1px;
+}
+
+.mobileBarWin {
+  background: var(--color-brand-orange);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.mobileBarWin:first-child {
+  border-radius: 9999px 0 0 9999px;
+}
+
+.mobileBarDraw {
+  background: rgba(255, 255, 255, 0.2);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.mobileBarLoss {
+  background: rgba(255, 255, 255, 0.45);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.mobileBarLoss:last-child {
+  border-radius: 0 9999px 9999px 0;
+}
+
+/* Labeled percentages */
+.mobileCardPcts {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mobileCardPctWin {
+  color: var(--color-brand-orange);
+}
+
+.mobileCardPctDraw {
+  color: var(--color-text-muted);
+}
+
+.mobileCardPctLoss {
+  color: var(--color-text-secondary);
+}
+
+/* Show more button */
+.showMoreBtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-large);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: center;
+}
+
+.showMoreBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Bottom CTA */
+.bottomCta {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-6);
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-brand-orange);
+  color: #fff;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+  text-align: center;
+}
+
+.bottomCta:hover {
+  opacity: 0.9;
+}
+
+/* Mobile: show mobile dashboard, hide desktop */
 @media (max-width: 768px) {
-  .openingSections {
-    grid-template-columns: 1fr;
-    display: block; /* hidden by default, shown via tab panel */
+  .mobileDashboard {
+    display: block;
+    animation: sectionReveal 300ms ease-out;
   }
 
-  .openingSectionDesktop {
+  .desktopDashboard {
     display: none;
-  }
-
-  .tabBar {
-    display: flex;
   }
 
   .sectionHeader {
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
   }
 
   .openingRowRight {
@@ -1240,24 +1817,127 @@
   }
 
   .gamesCount {
-    font-size: var(--text-sm);
+    font-size: 12px;
   }
 
-  .distBar {
-    width: 80px;
-  }
-
-  .colHeaderDist {
-    width: 80px;
-  }
-
-  .colHeaderGp {
-    display: none;
+  .gamesAnalysed {
+    font-size: 12px;
   }
 
   .searchOverlayContent {
-    padding: var(--space-6) var(--space-4) var(--space-4);
-    border-radius: var(--radius-xl);
+    padding: var(--space-4) var(--space-3) var(--space-3);
+    border-radius: var(--radius-lg);
+  }
+
+  .card {
+    padding: var(--space-3);
+  }
+
+  .cardOpeningName {
+    font-size: 16px;
+  }
+
+  .cardTitle {
+    font-size: 17px;
+  }
+
+  .cardLabel {
+    font-size: 10px;
+    margin-bottom: var(--space-2);
+  }
+
+  .statsValue {
+    font-size: 18px;
+  }
+
+  .winRateValue {
+    font-size: 22px;
+  }
+
+  .winRateRow {
+    margin-top: var(--space-3);
+  }
+
+  .sortPills {
+    gap: var(--space-1);
+  }
+
+  .sortPill {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .tabBtn {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .openingRow {
+    padding: var(--space-3);
+  }
+
+  .openingName {
+    font-size: 13px;
+  }
+
+  .statNum {
+    font-size: 13px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+  }
+
+  .statGames {
+    font-size: 11px;
+  }
+
+  .statCounters {
+    gap: var(--space-2);
+  }
+
+  /* Mobile dashboard at 480px */
+  .mobilePlayerName {
+    font-size: 24px;
+  }
+
+  .triStatValue {
+    font-size: 22px;
+  }
+
+  .triStat {
+    padding: var(--space-2);
+  }
+
+  .mobileCardName {
+    font-size: 14px;
+  }
+
+  .mobileCardMoves {
+    display: none;
+  }
+
+  .mobileCardPcts {
+    gap: var(--space-3);
+    font-size: 11px;
+  }
+
+  .pillBtn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .mobileSectionTitle {
+    font-size: 16px;
+  }
+
+  .bottomCta {
+    font-size: 15px;
+    padding: 12px;
   }
 }
 
@@ -1304,14 +1984,25 @@
   .openingRow,
   .settingsPopover,
   .searchOverlay,
-  .searchOverlayContent {
+  .searchOverlayContent,
+  .mobileDashboard,
+  .mobileHero,
+  .triStat,
+  .highlightCard,
+  .mobileCard {
     animation: none;
   }
 
   .progressFill,
   .winRateBarFillWin,
   .winRateBarFillLoss,
-  .distSegment {
+  .distSegment,
+  .accentWin,
+  .accentDraw,
+  .accentLoss,
+  .mobileBarWin,
+  .mobileBarDraw,
+  .mobileBarLoss {
     transition: none;
   }
 }

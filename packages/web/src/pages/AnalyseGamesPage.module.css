@@ -2,7 +2,9 @@
   max-width: 960px;
   margin: 0 auto;
   padding: var(--space-8) var(--space-4);
-  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 @media (max-width: 640px) {

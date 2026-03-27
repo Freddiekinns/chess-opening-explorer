@@ -17,15 +17,13 @@
 }
 
 .sectionTitle {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
+  font: var(--heading-section);
   color: var(--color-text-primary);
   margin: 0;
-  font-family: var(--font-family-headline);
 }
 
 .count {
-  font-size: var(--font-size-sm);
+  font-size: var(--text-base);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-normal);
 }
@@ -39,7 +37,7 @@
   -webkit-overflow-scrolling: touch;
   padding: var(--space-1) 0 var(--space-2);
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  scrollbar-color: var(--border-hover) transparent;
 }
 
 .cardScroller::-webkit-scrollbar {
@@ -51,7 +49,7 @@
 }
 
 .cardScroller::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--border-hover);
   border-radius: 3px;
 }
 
@@ -60,9 +58,9 @@
   flex: 0 0 auto;
   width: 240px;
   scroll-snap-align: start;
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
+  background-color: var(--surface-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
   padding: 0;
   cursor: pointer;
   text-align: left;
@@ -86,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-main);
+  background: var(--surface-raised);
   overflow: hidden;
   pointer-events: none;
 }
@@ -113,11 +111,11 @@
 }
 
 .repCardName {
-  font-size: var(--font-size-base);
+  font-size: var(--text-md);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin: 0;
-  line-height: 1.3;
+  line-height: var(--line-height-snug);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -133,9 +131,9 @@
 }
 
 .repCardMoves {
-  font-size: var(--font-size-xs);
+  font-size: var(--text-xs);
   color: var(--color-brand-orange);
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-family-mono);
   font-weight: var(--font-weight-medium);
   white-space: nowrap;
   overflow: hidden;
@@ -161,7 +159,7 @@
   .repCardBoard {
     width: 90px;
     flex-shrink: 0;
-    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
 
   .repCardBoard > div {
@@ -179,7 +177,7 @@
   }
 
   .repCardName {
-    font-size: var(--font-size-sm);
+    font-size: var(--text-base);
     -webkit-line-clamp: 1;
     min-height: auto;
   }
@@ -198,27 +196,27 @@
   padding: var(--space-8) var(--space-4);
   text-align: center;
   color: var(--color-text-secondary);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-large);
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.02);
 }
 
 .emptyIcon {
-  font-size: 32px;
+  font-size: var(--text-3xl);
   margin-bottom: var(--space-3);
   opacity: 0.5;
 }
 
 .emptyTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--text-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   margin: 0 0 var(--space-2);
 }
 
 .emptyHint {
-  font-size: var(--font-size-sm);
+  font-size: var(--text-base);
   margin: 0;
   max-width: 300px;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }

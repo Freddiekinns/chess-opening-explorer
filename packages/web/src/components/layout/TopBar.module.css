@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   height: 56px;
-  background-color: var(--color-bg-surface);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
   display: grid;
   /* 1fr auto 1fr keeps nav dead-centre regardless of right-slot content */
   grid-template-columns: 1fr auto 1fr;
@@ -17,11 +17,11 @@
   justify-self: start;
   text-decoration: none;
   color: var(--color-text-primary);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .logo:focus-visible {
@@ -44,8 +44,8 @@
   height: 100%;
   text-decoration: none;
   color: var(--color-text-secondary);
-  font-size: 0.9375rem;
-  font-weight: 500;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
   /* Use inset shadow instead of border to avoid stacking with topBar border */
   box-shadow: inset 0 -2px 0 transparent;
   transition:
@@ -60,7 +60,7 @@
 .navItem:focus-visible {
   outline: 2px solid var(--color-brand-orange);
   outline-offset: -2px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .navItemActive {
@@ -89,12 +89,12 @@
 
 .searchInput {
   width: 100%;
-  padding: 6px 32px 6px 12px;
-  background-color: var(--color-bg-main, #121212);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  padding: var(--space-1-5) var(--space-8) var(--space-1-5) var(--space-3);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
   color: var(--color-text-primary);
-  font-size: 0.8125rem;
+  font-size: var(--text-sm);
   outline: none;
   transition: border-color 150ms ease;
 }
@@ -110,7 +110,7 @@
 
 .searchIcon {
   position: absolute;
-  right: 8px;
+  right: var(--space-2);
   top: 50%;
   transform: translateY(-50%);
   color: var(--color-text-secondary);
@@ -123,12 +123,12 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-brand-orange);
-  color: #fff;
+  color: var(--color-text-inverse);
   border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  padding: var(--space-1-5) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -148,48 +148,48 @@
 /* Dropdown */
 .dropdown {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + var(--space-1));
   left: 0;
   right: 0;
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
   max-height: 320px;
   overflow-y: auto;
   z-index: 200;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-lg);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .dropdownItem {
-  padding: 8px 12px;
+  padding: var(--space-2) var(--space-3);
   cursor: pointer;
   transition: background-color 150ms ease;
 }
 
 .dropdownItem:not(:last-child) {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .dropdownItem:hover,
 .dropdownItemActive {
-  background-color: var(--color-bg-alt, rgba(255, 255, 255, 0.05));
+  background-color: var(--surface-overlay);
 }
 
 .dropdownName {
   display: block;
-  font-weight: 500;
-  font-size: 0.8125rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm);
   color: var(--color-text-primary);
 }
 
 .dropdownMeta {
   display: block;
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   color: var(--color-text-secondary);
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
 }
 
 /* Mobile search icon — hidden on desktop */
@@ -198,11 +198,11 @@
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border-default);
   color: var(--color-text-secondary);
   width: 36px;
   height: 36px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition:
     color 150ms ease,
@@ -211,7 +211,7 @@
 
 .searchMobileBtn:hover {
   color: var(--color-text-primary);
-  border-color: var(--color-text-secondary);
+  border-color: var(--border-hover);
 }
 
 .searchMobileBtn:focus-visible {
@@ -226,7 +226,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-bg-surface);
+  background-color: var(--surface-elevated);
   z-index: 300;
   padding: var(--space-4);
   display: flex;
@@ -242,12 +242,12 @@
 
 .mobileSearchInput {
   flex: 1;
-  padding: 10px 12px;
-  background-color: var(--color-bg-main, #121212);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  padding: var(--space-2-5) var(--space-3);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
   color: var(--color-text-primary);
-  font-size: 1rem;
+  font-size: var(--text-md);
   outline: none;
 }
 
@@ -264,10 +264,10 @@
   background: none;
   border: none;
   color: var(--color-brand-orange);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  padding: 8px;
+  padding: var(--space-2);
   white-space: nowrap;
 }
 
@@ -277,12 +277,12 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-brand-orange);
-  color: #fff;
+  color: var(--color-text-inverse);
   border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: opacity 150ms ease;
 }

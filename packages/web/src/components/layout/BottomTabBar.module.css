@@ -13,8 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-bg-surface);
-    border-top: 1px solid var(--color-border);
+    background-color: var(--surface-elevated);
+    border-top: 1px solid var(--border-subtle);
     z-index: 100;
   }
 
@@ -23,13 +23,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: var(--space-1);
     flex: 1;
     height: 100%;
     text-decoration: none;
     color: var(--color-text-secondary);
-    font-size: 0.6875rem;
-    font-weight: 500;
+    font-size: var(--text-2xs);
+    font-weight: var(--font-weight-medium);
     transition:
       color 150ms ease,
       background-color 150ms ease;

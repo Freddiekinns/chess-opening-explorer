@@ -2,7 +2,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: var(--space-1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -31,8 +31,8 @@
 }
 
 .filled {
-  fill: var(--color-brand-orange, #e8912d);
-  stroke: var(--color-brand-orange, #e8912d);
+  fill: var(--color-brand-orange, #e85d04);
+  stroke: var(--color-brand-orange, #e85d04);
   stroke-width: 1.5;
 }
 

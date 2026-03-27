@@ -15,26 +15,26 @@
 
 /* Side label badge */
 .sectionLabel {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   padding: var(--space-1) var(--space-3);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--radius-sm);
   width: fit-content;
 }
 
 .sectionLabel.white {
-  color: #f0f0f0;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  background: var(--border-default);
 }
 
 .sectionLabel.black {
-  color: #c0c0c0;
+  color: var(--color-text-secondary);
   background: rgba(0, 0, 0, 0.35);
 }
 
 .sectionLabel.general {
   color: var(--color-text-secondary);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--border-subtle);
 }
 
 /* Side-by-side grid layout for White + Black */
@@ -60,7 +60,7 @@
 
 /* Override the left border colour per side */
 .planItem.white p {
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-left-color: var(--border-strong);
 }
 
 .planItem.black p {
@@ -81,19 +81,19 @@
 }
 
 .card {
-  background-color: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   padding: var(--space-5);
   animation: cardIn 300ms ease-out both;
 }
 
 .card.white {
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid var(--border-hover);
 }
 
 .card.black {
-  border-left: 3px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--border-default);
 }
 
 .card.general {
@@ -101,8 +101,8 @@
 }
 
 .cardLabel {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: var(--space-3);
 }
@@ -114,16 +114,17 @@
 }
 
 .cardPlanText {
-  font-size: 14px;
+  font-size: var(--text-base);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-primary);
   margin: 0;
+  opacity: 0.78;
 }
 
 @keyframes cardIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(var(--space-2));
   }
   to {
     opacity: 1;
@@ -160,27 +161,27 @@
 
 .structuredColumnLabel {
   font-family: var(--font-family-primary);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-secondary);
   line-height: 1;
 }
 
 .structuredPlanCard {
-  background-color: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   padding: var(--space-4);
   transition: border-color 150ms ease;
   border-left: 3px solid transparent;
 }
 
 .structuredPlanCard.white {
-  border-left-color: rgba(255, 255, 255, 0.2);
+  border-left-color: var(--border-hover);
 }
 
 .structuredPlanCard.black {
-  border-left-color: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--border-default);
 }
 
 .structuredPlanCard.general {
@@ -188,7 +189,7 @@
 }
 
 .structuredPlanCard:hover {
-  border-color: rgba(232, 93, 4, 0.3);
+  border-color: var(--accent-a30);
 }
 
 @media (max-width: 768px) {

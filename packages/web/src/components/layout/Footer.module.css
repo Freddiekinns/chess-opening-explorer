@@ -1,7 +1,7 @@
 .footer {
-  background: #0e0e0e;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 48px 32px;
+  background: var(--surface-base);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-12) var(--space-8);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -10,23 +10,23 @@
 
 .brand {
   font-family: var(--font-family-headline);
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--color-brand-orange, #e85d04);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-brand-orange);
   opacity: 0.5;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .copyright {
-  font-size: 10px;
+  font-size: var(--text-3xs);
   color: var(--color-text-muted);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 @media (max-width: 640px) {
   .footer {
     align-items: center;
     text-align: center;
-    padding: 32px 16px;
+    padding: var(--space-8) var(--space-4);
   }
 }

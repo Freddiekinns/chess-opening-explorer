@@ -46,16 +46,16 @@ export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats }) => {
 
       <div className={styles.bar}>
         <div
-          className={styles.barSegment}
-          style={{ width: `${whitePercent}%`, background: '#00b5fc' }}
+          className={`${styles.barSegment} ${styles.barWhite}`}
+          style={{ width: `${whitePercent}%` }}
         />
         <div
-          className={styles.barSegment}
-          style={{ width: `${drawPercent}%`, background: 'var(--color-bg-elevated, #3a3a3a)' }}
+          className={`${styles.barSegment} ${styles.barDraw}`}
+          style={{ width: `${drawPercent}%` }}
         />
         <div
-          className={styles.barSegment}
-          style={{ width: `${blackPercent}%`, background: '#ff8c00' }}
+          className={`${styles.barSegment} ${styles.barBlack}`}
+          style={{ width: `${blackPercent}%` }}
         />
       </div>
 

@@ -1,16 +1,16 @@
 /* OpeningTree — sectioned tree navigation */
 
 .panel {
-  background-color: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-4);
 }
 
 .panelTitle {
-  font-size: var(--font-size-small);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.3px;
@@ -23,7 +23,7 @@
   overflow-y: auto;
   padding: var(--space-2) var(--space-3) var(--space-3);
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  scrollbar-color: var(--border-hover) transparent;
 }
 
 .treeContainer::-webkit-scrollbar {
@@ -31,7 +31,7 @@
 }
 
 .treeContainer::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--border-hover);
   border-radius: 3px;
 }
 
@@ -45,18 +45,18 @@
 }
 
 .sectionHeader {
-  font-size: 11px;
+  font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: var(--space-2) var(--space-2) var(--space-1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
   margin-bottom: var(--space-1);
 }
 
 .emptyState {
-  font-size: var(--font-size-small);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   font-style: italic;
   padding: var(--space-2);
@@ -68,7 +68,7 @@
   align-items: center;
   height: 32px;
   padding: 0 var(--space-2);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--radius-sm);
   position: relative;
   transition: background-color 0.1s ease;
 }
@@ -78,16 +78,16 @@
 }
 
 .rowExpandable:hover {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--border-subtle);
 }
 
 .rowCurrent {
   border-left: 3px solid var(--color-brand-orange);
-  background-color: rgba(232, 93, 4, 0.08);
+  background-color: var(--accent-a6);
 }
 
 .rowCurrent:hover {
-  background-color: rgba(232, 93, 4, 0.12);
+  background-color: var(--accent-a12);
 }
 
 .rowFocused {
@@ -104,10 +104,10 @@
   padding-left: var(--space-2);
 }
 .indent1 {
-  padding-left: calc(var(--space-2) + 20px);
+  padding-left: calc(var(--space-2) + var(--space-5));
 }
 .indent2 {
-  padding-left: calc(var(--space-2) + 40px);
+  padding-left: calc(var(--space-2) + var(--space-10));
 }
 .indent3 {
   padding-left: calc(var(--space-2) + 60px);
@@ -124,14 +124,14 @@
 
 /* ── Row elements ── */
 .nodeChevron {
-  width: 16px;
-  height: 16px;
+  width: var(--space-4);
+  height: var(--space-4);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: var(--color-text-secondary);
-  font-size: 10px;
+  font-size: var(--text-3xs);
   transition: transform 0.15s ease;
   margin-right: var(--space-1);
 }
@@ -146,14 +146,14 @@
 
 .currentMarker {
   color: var(--color-brand-orange);
-  font-size: 12px;
+  font-size: var(--text-xs);
   margin-right: var(--space-1);
   flex-shrink: 0;
 }
 
 .moveText {
   font-family: var(--font-family-mono, 'Geist Mono', monospace);
-  font-size: var(--font-size-small);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin-right: var(--space-2);
   white-space: nowrap;
@@ -167,7 +167,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--color-text-primary);
-  font-size: var(--font-size-small);
+  font-size: var(--text-sm);
 }
 
 .nodeNameLink {
@@ -177,7 +177,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--color-text-primary);
-  font-size: var(--font-size-small);
+  font-size: var(--text-sm);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -190,7 +190,7 @@
 }
 
 .navIcon {
-  font-size: 10px;
+  font-size: var(--text-3xs);
   opacity: 0.4;
   flex-shrink: 0;
 }
@@ -200,7 +200,7 @@
 }
 
 .descendantCount {
-  font-size: 11px;
+  font-size: var(--text-2xs);
   color: var(--color-text-muted);
   margin-left: var(--space-2);
   flex-shrink: 0;
@@ -220,13 +220,13 @@
   width: 60%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--border-subtle) 25%,
+    var(--border-default) 50%,
+    var(--border-subtle) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--radius-sm);
 }
 
 @keyframes shimmer {

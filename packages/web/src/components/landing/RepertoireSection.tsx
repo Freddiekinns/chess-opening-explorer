@@ -70,6 +70,7 @@ export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningS
                       {entry.complexity}
                     </span>
                   )}
+                  {entry.eco && <span className="eco-pill">{entry.eco}</span>}
                 </div>
                 <span className={styles.repCardMoves}>{getFirstMovesDisplay(entry.moves)}</span>
               </div>

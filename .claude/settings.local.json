@@ -76,7 +76,9 @@
       "Bash(git -C C:/Users/fred_/chess-opening-explorer stash drop)",
       "Bash(git:*)",
       "Bash(ls:*)",
-      "Bash(xargs -I {} basename {})"
+      "Bash(xargs -I {} basename {})",
+      "Bash(npx concurrently:*)",
+      "Bash(npx vite:*)"
     ]
   },
   "hooks": {

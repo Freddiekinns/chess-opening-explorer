@@ -2,26 +2,26 @@
    Opening Book — Navigator
    ============================ */
 .navigator {
-  background-color: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
   gap: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  scrollbar-color: var(--border-default) transparent;
 }
 
 /* ── Title ── */
 .navigatorTitle {
   font-family: var(--font-family-primary);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1;
@@ -29,7 +29,7 @@
 
 /* ── Sections ── */
 .section {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border-subtle);
   padding-top: var(--space-3);
   padding-bottom: var(--space-3);
   animation: sectionIn 200ms ease-out both;
@@ -46,8 +46,8 @@
 
 .sectionLabel {
   font-family: var(--font-family-primary);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1;
@@ -61,7 +61,7 @@
 @keyframes sectionIn {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(var(--space-1));
   }
   to {
     opacity: 1;
@@ -79,7 +79,7 @@
 }
 
 .breadcrumbLink {
-  font-size: 13px;
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 150ms ease;
@@ -99,14 +99,14 @@
 .breadcrumbSep {
   color: var(--color-text-muted);
   opacity: 0.4;
-  font-size: 12px;
+  font-size: var(--text-xs);
   margin: 0 2px;
   user-select: none;
 }
 
 .breadcrumbCurrent {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-brand-orange, #e85d04);
 }
 
@@ -114,17 +114,17 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-1);
 }
 
 .contRow {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
   background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
   text-decoration: none;
   color: var(--color-text-secondary);
   transition: background-color 150ms ease, border-color 150ms ease;
@@ -133,7 +133,7 @@
 
 .contRow:hover {
   background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(232, 93, 4, 0.3);
+  border-color: var(--accent-a30);
   color: var(--color-text-primary);
 }
 
@@ -148,7 +148,7 @@
 
 .altRow {
   background: rgba(0, 0, 0, 0.12);
-  border-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-subtle);
 }
 
 .altRow:hover {
@@ -158,7 +158,7 @@
 @keyframes rowIn {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(var(--space-1));
   }
   to {
     opacity: 1;
@@ -168,7 +168,7 @@
 
 .rowMove {
   font-family: var(--font-family-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   min-width: 52px;
@@ -177,8 +177,8 @@
 }
 
 .rowName {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   flex: 1 1 auto;
   min-width: 0;
@@ -191,7 +191,7 @@
 .rowBarWrap {
   flex: 0 0 clamp(72px, 22%, 120px);
   height: 4px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--border-subtle);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -211,7 +211,7 @@
 
 .rowCount {
   font-family: var(--font-family-mono);
-  font-size: 11px;
+  font-size: var(--text-2xs);
   color: var(--color-text-muted);
   flex-shrink: 0;
   min-width: 76px;
@@ -231,13 +231,13 @@
   width: 75%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--border-subtle) 25%,
+    var(--border-default) 50%,
+    var(--border-subtle) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .skeletonActive {
@@ -245,13 +245,13 @@
   width: 100%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--border-subtle) 25%,
+    var(--border-default) 50%,
+    var(--border-subtle) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
 }
 
 .skeletonRows {
@@ -265,18 +265,18 @@
   width: 100%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--border-subtle) 25%,
+    var(--border-default) 50%,
+    var(--border-subtle) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
 }
 
 .skeletonPills {
   display: flex;
-  gap: 6px;
+  gap: var(--space-1-5);
 }
 
 .skeletonPill {
@@ -284,13 +284,13 @@
   width: 64px;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--border-subtle) 25%,
+    var(--border-default) 50%,
+    var(--border-subtle) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 @keyframes shimmer {
@@ -315,7 +315,7 @@
   }
 
   .contRow {
-    padding: 6px 10px;
+    padding: var(--space-1-5) var(--space-2-5);
   }
 
   /* Hide bars on mobile — count alone conveys popularity */
@@ -325,39 +325,39 @@
 
   .rowCount {
     min-width: auto;
-    font-size: 10px;
+    font-size: var(--text-3xs);
   }
 
   .rowMove {
     min-width: 44px;
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 
   .rowName {
-    font-size: 11px;
+    font-size: var(--text-2xs);
   }
 
   .sectionLabel {
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 }
 
 @media (max-width: 640px) {
   .navigator {
-    border-radius: var(--border-radius-base);
+    border-radius: var(--radius-md);
   }
 
   .contRow {
-    padding: 6px 8px;
+    padding: var(--space-1-5) var(--space-2);
     gap: var(--space-1);
   }
 
   .breadcrumb {
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 
   .breadcrumbCurrent {
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 }
 
@@ -366,20 +366,20 @@
   display: block;
   width: 100%;
   margin-top: var(--space-2);
-  padding: 8px 0;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  padding: var(--space-2) 0;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
   color: var(--color-text-muted);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
 .showMoreBtn:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--border-subtle);
+  border-color: var(--border-hover);
   color: var(--color-text-secondary);
 }
 

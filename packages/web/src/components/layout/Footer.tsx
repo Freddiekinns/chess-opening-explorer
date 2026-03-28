@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <div className={styles.meta}>
         <span className={styles.copyright}>&copy; 2026 Opening Book &middot; MIT License</span>
         <a
-          href="https://github.com/freddiekinns/chess-opening-explorer/issues"
+          href="https://forms.gle/3DfV8NpbhapzyTi26"
           className={styles.contribute}
           target="_blank"
           rel="noopener noreferrer"

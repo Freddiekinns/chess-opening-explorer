@@ -1,8 +1,24 @@
 # Active Context
 
-**Date:** 2026-03-24
+**Date:** 2026-03-28
 
-## Current Task: TASK016 Design Overhaul — Chunks 7 and 8 Complete
+## Current Task: Footer Standardisation — DONE
+
+**Status:** Complete and pushed to `claude/standardize-footer-license-Lqi5z`.
+
+**Done:**
+
+- Added MIT `LICENSE` file to repo root
+- Updated `package.json` license field: ISC → MIT
+- Standardised `Footer.tsx`: horizontal layout with brand,
+  `© 2026 Opening Book · MIT License`, and "Help make Opening Book better"
+  survey link (Google Form)
+- Removed `FeedbackSection` component (was on every page); survey link now lives
+  solely in the footer
+- Updated docs: `reactjs.instructions.md` (removed ghost `FeedbackSection`
+  entry), `user-journeys.md` (clarified feedback is in global footer)
+
+## Previous Task: TASK016 Design Overhaul — Chunks 7 and 8 Complete
 
 **Status:** Home page redesign and Analyse page mobile dashboard redesign
 complete. Build clean, 139/139 tests pass.

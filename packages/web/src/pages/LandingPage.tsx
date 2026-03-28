@@ -202,7 +202,6 @@ const LandingPage: React.FC = () => {
         )}
       </div>
 
-
       <PGNInputModal
         isOpen={isPGNModalOpen}
         onClose={() => setIsPGNModalOpen(false)}

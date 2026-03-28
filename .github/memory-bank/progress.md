@@ -2,6 +2,9 @@
 
 ## What's Done (newest first)
 
+- **Footer Standardisation** (2026-03-28): MIT LICENSE added to repo root;
+  footer consolidated with brand, copyright, MIT mention, and survey link;
+  `FeedbackSection` component removed from all pages.
 - **Backend Test Cleanup** (2026-03-22): Removed expected console noise from
   route/service tests and fixed Jest worker teardown risk by unref'ing the
   global cache cleanup interval. Backend suite clean at 43/43 suites.

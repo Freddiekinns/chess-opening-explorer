@@ -57,7 +57,6 @@ const AnalyseGamesPage: React.FC = () => {
       />
 
       <PersonalOpeningStats openingsData={openingsData} prefillUsername={prefillUsername} />
-
     </div>
   );
 };

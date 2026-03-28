@@ -76,8 +76,8 @@ The dedicated learning environment for mastering a specific position.
   or navigate back to the Mainline.
 - **External Deep Links**: Quick navigation to Lichess (Play/Analysis) or
   Chessable.
-- **Community Feedback**: Report errors in moves or AI content via the feedback
-  section.
+- **Community Feedback**: Report errors in moves or AI content via the "Help
+  make Opening Book better" link in the global footer (Google Form).
 
 ---
 

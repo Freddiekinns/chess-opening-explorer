@@ -1224,7 +1224,6 @@ const OpeningDetailPage: React.FC = () => {
           </div>
         )}
       </div>
-
     </div>
   );
 };

@@ -5,7 +5,17 @@ export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <span className={styles.brand}>Opening Book</span>
-      <span className={styles.copyright}>&copy; 2024 Opening Book</span>
+      <div className={styles.meta}>
+        <span className={styles.copyright}>&copy; 2026 Opening Book &middot; MIT License</span>
+        <a
+          href="https://github.com/freddiekinns/chess-opening-explorer/issues"
+          className={styles.contribute}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Help make Opening Book better
+        </a>
+      </div>
     </footer>
   );
 };

@@ -134,6 +134,20 @@ function getLossRate(o: OpeningAgg): number {
   return Math.round((o.loss / o.games) * 100);
 }
 
+function getOpeningMovesDisplay(moves: string): string {
+  const trimmedMoves = moves.trim();
+  if (!trimmedMoves) return '';
+
+  const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
+  const moveMatches = trimmedMoves.match(movePattern) || [];
+
+  if (moveMatches.length > 0) {
+    return moveMatches.slice(0, 2).join(' ');
+  }
+
+  return trimmedMoves;
+}
+
 type SideTab = 'white' | 'black';
 
 const FORM_STATE_KEY = 'personal-openings:form-state';
@@ -253,6 +267,7 @@ const OpeningRow: React.FC<{
   const wPct = opening.games > 0 ? (opening.win / opening.games) * 100 : 0;
   const dPct = opening.games > 0 ? (opening.draw / opening.games) * 100 : 0;
   const lPct = opening.games > 0 ? (opening.loss / opening.games) * 100 : 0;
+  const openingMoves = getOpeningMovesDisplay(opening.moves);
 
   return (
     <Link
@@ -262,7 +277,7 @@ const OpeningRow: React.FC<{
     >
       <div className={styles.openingRowLeft}>
         <OpeningNameSplit name={opening.name} className={styles.openingName} />
-        {opening.moves && <span className={styles.openingMoves}>{opening.moves}</span>}
+        {openingMoves && <span className={styles.openingMoves}>{openingMoves}</span>}
       </div>
 
       {/* Desktop: inline GP + bar */}
@@ -923,6 +938,11 @@ export const PersonalOpeningStats: React.FC<{
           const openingLink = (o: OpeningAgg) =>
             `/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`;
 
+          const bestOpeningMoves = bestOpening ? getOpeningMovesDisplay(bestOpening.moves) : '';
+          const weakestOpeningMoves = weakestOpening
+            ? getOpeningMovesDisplay(weakestOpening.moves)
+            : '';
+
           const totalWins = dashboard.whiteWin + dashboard.blackWin;
           const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
@@ -960,6 +980,9 @@ export const PersonalOpeningStats: React.FC<{
                       Top-performing
                     </span>
                     <OpeningNameSplit name={bestOpening.name} className={styles.highlightName} />
+                    {bestOpeningMoves && (
+                      <span className={styles.highlightMoves}>{bestOpeningMoves}</span>
+                    )}
                     <span className={styles.highlightMeta}>
                       {getWinRate(bestOpening)}% win rate &middot; {bestOpening.games} games
                     </span>
@@ -971,6 +994,9 @@ export const PersonalOpeningStats: React.FC<{
                       Needs work
                     </span>
                     <OpeningNameSplit name={weakestOpening.name} className={styles.highlightName} />
+                    {weakestOpeningMoves && (
+                      <span className={styles.highlightMoves}>{weakestOpeningMoves}</span>
+                    )}
                     <span className={styles.highlightMeta}>
                       {getLossRate(weakestOpening)}% loss rate &middot; {weakestOpening.games} games
                     </span>
@@ -1037,8 +1063,10 @@ export const PersonalOpeningStats: React.FC<{
                             <div className={styles.mobileCardHead}>
                               <div className={styles.mobileCardNameCol}>
                                 <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
-                                {o.moves && (
-                                  <span className={styles.mobileCardMoves}>{o.moves}</span>
+                                {getOpeningMovesDisplay(o.moves) && (
+                                  <span className={styles.mobileCardMoves}>
+                                    {getOpeningMovesDisplay(o.moves)}
+                                  </span>
                                 )}
                               </div>
                               <span className={styles.mobileCardGames}>Games {o.games}</span>
@@ -1146,6 +1174,9 @@ export const PersonalOpeningStats: React.FC<{
                         name={bestOpening.name}
                         className={styles.cardOpeningName}
                       />
+                      {bestOpeningMoves && (
+                        <div className={styles.cardMoves}>{bestOpeningMoves}</div>
+                      )}
                       <div className={styles.cardContext}>{bestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
@@ -1174,6 +1205,9 @@ export const PersonalOpeningStats: React.FC<{
                         name={weakestOpening.name}
                         className={styles.cardOpeningName}
                       />
+                      {weakestOpeningMoves && (
+                        <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
+                      )}
                       <div className={styles.cardContext}>{weakestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>

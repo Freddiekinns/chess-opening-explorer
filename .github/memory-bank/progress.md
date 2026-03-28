@@ -2,6 +2,15 @@
 
 ## What's Done (newest first)
 
+- **TASK016 Phase B — Design Token Migration & Polish** (2026-03-28): "Warm
+  Editorial Dark" design system fully applied. Replaced ~80 hardcoded colours in
+  `simplified.css` with design tokens. Analyse page overhauled: distribution
+  bars now use chess-thematic result colours (amber/grey/cream), card labels
+  subdued, orange dominance removed. Surface elevation scale warmed (#1a1816 →
+  #363330). Nav bar height 60px, logo/nav items 16px. Detail page section
+  headers use headline font at 16–18px. Landing page staggered entrance
+  animations added. Repertoire section entrance animation added. 14 CSS module
+  files migrated to design tokens by background agents.
 - **Footer Standardisation** (2026-03-28): MIT LICENSE added to repo root;
   footer consolidated with brand, copyright, MIT mention, and survey link;
   `FeedbackSection` component removed from all pages.
@@ -56,7 +65,6 @@
   Analyse page — needs verification
 - **TASK006 — Coverage**: Backend 90%+, frontend 70%+ targets
 - **Advanced Filtering**: Filter by win rate, draw rate, etc.
-- **Design System Tokens**: CSS variables for accent gradients and spacing
 - **Tooltip Abstraction**: Central ARIA tooltip component
 
 ## Known Issues

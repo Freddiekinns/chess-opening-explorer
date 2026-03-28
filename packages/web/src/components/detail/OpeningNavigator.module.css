@@ -19,10 +19,10 @@
 
 /* ── Title ── */
 .navigatorTitle {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  font-family: var(--font-family-headline);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-3);
   line-height: 1;
 }
@@ -45,10 +45,10 @@
 }
 
 .sectionLabel {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  font-family: var(--font-family-headline);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-3);
   line-height: 1;
 }

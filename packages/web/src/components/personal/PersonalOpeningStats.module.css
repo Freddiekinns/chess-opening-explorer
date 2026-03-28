@@ -70,6 +70,7 @@
   padding: var(--space-2-5) var(--space-2-5) var(--space-2-5) var(--space-4);
   width: 100%;
   max-width: 760px;
+  animation: sectionReveal 400ms ease-out 100ms both;
 }
 
 .inputFields {
@@ -705,11 +706,11 @@
 }
 
 .cardLabelAccent {
-  color: var(--color-brand-orange);
+  color: var(--color-text-secondary);
 }
 
 .cardLabelWin {
-  color: #66bb6a;
+  color: var(--color-text-secondary);
 }
 
 .cardLabelLoss {
@@ -739,11 +740,21 @@
   overflow-wrap: break-word;
 }
 
+.cardMoves {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cardContext {
   font-family: var(--font-family-primary);
   font-size: var(--text-base);
   color: var(--color-text-secondary);
-  margin-top: var(--space-0-5);
+  margin-top: var(--space-2);
 }
 
 /* Stats rows in overall card — horizontal on desktop */
@@ -769,7 +780,7 @@
 }
 
 .statsLabelWin {
-  color: var(--color-brand-orange);
+  color: var(--color-text-muted);
 }
 
 .statsLabelLoss {
@@ -802,7 +813,7 @@
 }
 
 .winRateValueWin {
-  color: var(--color-brand-orange);
+  color: var(--color-text-primary);
 }
 
 .winRateValueLoss {
@@ -832,7 +843,7 @@
 .winRateBarFillWin {
   height: 100%;
   border-radius: var(--radius-full);
-  background: var(--color-brand-orange);
+  background: var(--color-result-black);
   transition: width 0.6s ease-out;
 }
 
@@ -1100,7 +1111,7 @@
 }
 
 .nameVariation {
-  color: var(--color-brand-orange, #e85d04);
+  color: var(--color-text-secondary);
 }
 
 .openingRowLeft {
@@ -1244,15 +1255,15 @@
 }
 
 .distWin {
-  background: var(--color-brand-orange);
+  background: var(--color-result-black);
 }
 
 .distDraw {
-  background: var(--border-hover);
+  background: var(--color-result-draw);
 }
 
 .distLoss {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--color-result-white);
 }
 
 .distCount {
@@ -1281,7 +1292,7 @@
 }
 
 .distPctWin {
-  color: var(--color-brand-orange);
+  color: var(--color-text-secondary);
 }
 
 .distPctDraw {
@@ -1327,15 +1338,15 @@
 }
 
 .statDotWin {
-  background: var(--color-brand-orange);
+  background: var(--color-result-black);
 }
 
 .statDotDraw {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--color-result-draw);
 }
 
 .statDotLoss {
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--color-result-white);
 }
 
 .statNum {
@@ -1375,20 +1386,20 @@
 }
 
 .accentWin {
-  background: var(--color-brand-orange);
+  background: var(--color-result-black);
   border-radius: 9999px 0 0 9999px;
   min-width: 2px;
   transition: width 0.4s ease-out;
 }
 
 .accentDraw {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-result-draw);
   min-width: 2px;
   transition: width 0.4s ease-out;
 }
 
 .accentLoss {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--color-result-white);
   border-radius: 0 9999px 9999px 0;
   min-width: 2px;
   transition: width 0.4s ease-out;
@@ -1466,7 +1477,7 @@
 .triStat:nth-child(3) { animation-delay: 160ms; }
 
 .triStatWin {
-  border-left: 3px solid var(--color-brand-orange);
+  border-left: 3px solid var(--color-result-black);
 }
 
 .triStatLabel {
@@ -1505,7 +1516,7 @@
 }
 
 .highlightCard:hover {
-  border-color: rgba(232, 93, 4, 0.3);
+  border-color: var(--accent-a30);
 }
 
 .highlightPill {
@@ -1521,8 +1532,8 @@
 }
 
 .highlightPillWin {
-  background: rgba(76, 175, 80, 0.15);
-  color: #66bb6a;
+  background: var(--accent-a12);
+  color: var(--color-text-secondary);
 }
 
 .highlightPillLoss {
@@ -1542,6 +1553,15 @@
 .highlightMeta {
   font-size: 13px;
   color: var(--color-text-secondary);
+}
+
+.highlightMoves {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Pill toggle */
@@ -1617,7 +1637,7 @@
 }
 
 .mobileCard:hover {
-  border-color: rgba(232, 93, 4, 0.3);
+  border-color: var(--accent-a30);
 }
 
 .mobileCardHead {
@@ -1672,7 +1692,7 @@
 }
 
 .mobileBarWin {
-  background: var(--color-brand-orange);
+  background: var(--color-result-black);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
@@ -1682,13 +1702,13 @@
 }
 
 .mobileBarDraw {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-result-draw);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
 
 .mobileBarLoss {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--color-result-white);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
@@ -1706,7 +1726,7 @@
 }
 
 .mobileCardPctWin {
-  color: var(--color-brand-orange);
+  color: var(--color-text-secondary);
 }
 
 .mobileCardPctDraw {
@@ -1980,6 +2000,7 @@
 @media (prefers-reduced-motion: reduce) {
   .card,
   .dashboardHero,
+  .inputBar,
   .openingSections,
   .openingRow,
   .settingsPopover,

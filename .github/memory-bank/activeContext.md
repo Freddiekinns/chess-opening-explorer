@@ -2,52 +2,36 @@
 
 **Date:** 2026-03-28
 
-## Current Task: Footer Standardisation — DONE
+## Current Task: TASK016 Phase B — Design Token Migration & Polish
 
-**Status:** Complete and pushed to `claude/standardize-footer-license-Lqi5z`.
-
-**Done:**
-
-- Added MIT `LICENSE` file to repo root
-- Updated `package.json` license field: ISC → MIT
-- Standardised `Footer.tsx`: horizontal layout with brand,
-  `© 2026 Opening Book · MIT License`, and "Help make Opening Book better"
-  survey link (Google Form)
-- Removed `FeedbackSection` component (was on every page); survey link now lives
-  solely in the footer
-- Updated docs: `reactjs.instructions.md` (removed ghost `FeedbackSection`
-  entry), `user-journeys.md` (clarified feedback is in global footer)
-
-## Previous Task: TASK016 Design Overhaul — Chunks 7 and 8 Complete
-
-**Status:** Home page redesign and Analyse page mobile dashboard redesign
-complete. Build clean, 139/139 tests pass.
+**Status:** Complete. "Warm Editorial Dark" design system fully applied across
+all pages. Build clean.
 
 **Done (this session):**
 
-- Created MiniBoard component (static chessboard thumbnail via react-chessboard)
-- Updated OpeningCard and RepertoireSection for board thumbnails and mobile
-  list-item layout
-- Restyled LandingPage hero, Surprise me button, PGN link, and home-page filter
-  pills
-- Built mobile Analyse dashboard: separate mobile/desktop paths, triple stat
-  cards, highlight cards, pill toggle, sort bar, opening cards, show-more, CTA
-- Added OpeningNameSplit and moved mobile pills/toggles to white-glass styling
-- Moved search overlay progress bar inside overlay and switched mobile cards to
-  "Games N" copy
-- Updated tests and documentation for the redesign work
+- **Phase B token migration**: Replaced all hardcoded colours in
+  `simplified.css` (~80 instances) with design tokens — rgba borders →
+  `--border-*`, rgba shadows → `--shadow-*`, hardcoded fonts → `--text-*`, px
+  radii → `--radius-*`
+- **Analyse page overhaul**: Removed harsh brand-orange dominance — distribution
+  bars now use chess-thematic result colours (amber/grey/cream), card labels
+  subdued, win rate values neutral, sort pills use subtle warm highlight,
+  opening variation names in secondary text
+- **Surface warmth**: Bumped entire elevation scale warmer — base `#1a1816`,
+  raised `#232120`, elevated `#2c2a27`, overlay `#363330` (was near-black
+  `#100f0e`)
+- **Nav sizing**: Logo 16px, nav items 16px, bar height 60px (was
+  13px/13px/56px)
+- **Detail page headers**: "Overview", "Opening book", "Continuations",
+  "Videos", "Studies" bumped to headline font at 16-18px (were 13-14px body
+  text)
+- **Landing page animations**: Added staggered `sectionReveal` entrance
+  animations to hero, subtitle, search bar, PGN link, and repertoire section
+- **Detail + analyse page CSS modules**: Background agents migrated 14 module
+  files to design tokens
+- **Repertoire/popular card consistency**: Shared visual language (ECO pills,
+  matching warm backgrounds)
 
-**Previous work (same branch):**
+## Previous Task: Footer Standardisation — DONE
 
-- Chunks 1–6 (including 6b visual polish): top bar nav, detail page restructure,
-  OpeningNavigator, stacked sections, learning resources polish
-
-**Remaining for TASK016:**
-
-- Chunk 9: Global polish pass (broken tests, dead CSS, focus rings)
-- Bottom navigation: user flagged it may be missing — needs investigation
-
-## Previous Task: TASK016 Chunk 6b (2026-03-22) — DONE
-
-Detail page visual polish: font standardization, column layout, label weights,
-section separators, WCAG sentence case update.
+MIT LICENSE added; footer consolidated; `FeedbackSection` removed.

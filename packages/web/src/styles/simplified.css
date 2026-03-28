@@ -28,10 +28,10 @@
        raised → cards, panels, sidebar
        elevated → popovers, dropdowns, topbar
        overlay → hover states on raised surfaces, subtle highlights        */
-  --surface-base: #100f0e;
-  --surface-raised: #1a1917;
-  --surface-elevated: #242220;
-  --surface-overlay: #2e2b28;
+  --surface-base: #1a1816;
+  --surface-raised: #232120;
+  --surface-elevated: #2c2a27;
+  --surface-overlay: #363330;
 
   /* Legacy aliases — keep these so existing components don't break.
      Phase B will migrate components to the new surface-* names.          */
@@ -2016,6 +2016,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   padding: var(--space-8) var(--space-4) var(--space-4) var(--space-4);
+  animation: sectionReveal 400ms ease-out both;
 }
 
 .hero-content {
@@ -2032,6 +2033,8 @@ body {
   line-height: 1.1;
   letter-spacing: var(--letter-spacing-tight);
   font-family: var(--font-family-headline);
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 50ms;
 }
 
 .hero-title-accent {
@@ -2044,11 +2047,15 @@ body {
   margin: 0 auto var(--space-8) auto;
   line-height: 1.6;
   max-width: 600px;
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 100ms;
 }
 
 .hero-search-wrapper {
   max-width: 700px;
   margin: 0 auto;
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 150ms;
 }
 
 /* Landing view toggle (Global vs Personal) */
@@ -2158,6 +2165,8 @@ body {
 .popular-openings-section {
   padding: var(--space-4) var(--space-4) var(--space-12) var(--space-4);
   position: relative;
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 200ms;
 }
 
 
@@ -2917,6 +2926,8 @@ body {
 .pgn-search-link-wrapper {
   text-align: center;
   margin-top: var(--space-3);
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 200ms;
 }
 
 .pgn-search-link {
@@ -3209,7 +3220,14 @@ button:focus-visible,
 /* Reduced motion — disable all stagger animations */
 @media (prefers-reduced-motion: reduce) {
   .page-title-area,
-  .two-column-layout {
+  .two-column-layout,
+  .hero-section,
+  .hero-title,
+  .hero-subtitle,
+  .hero-search-wrapper,
+  .pgn-search-link-wrapper,
+  .popular-openings-section,
+  .not-found-page {
     animation: none;
   }
 }

@@ -213,13 +213,15 @@
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   padding: var(--space-3) var(--space-4);
+  animation: sectionReveal 300ms ease-out both;
+  animation-delay: 80ms;
 }
 
 .overviewLabel {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  font-family: var(--font-family-headline);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   line-height: 1;
   margin-bottom: var(--space-2);
 }
@@ -346,10 +348,10 @@
 }
 
 .resourceLabel {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-md);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-secondary);
+  font-family: var(--font-family-headline);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   line-height: 1;
   margin-bottom: var(--space-3);
 }
@@ -417,7 +419,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stackedSection {
+  .stackedSection,
+  .overviewCard {
     animation: none;
   }
 }

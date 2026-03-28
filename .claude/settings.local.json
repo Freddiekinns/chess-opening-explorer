@@ -78,7 +78,8 @@
       "Bash(ls:*)",
       "Bash(xargs -I {} basename {})",
       "Bash(npx concurrently:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(find C:Usersfred_chess-opening-explorer -type f \\\\\\(-name README.md -o -name *design* -o -name *style* -o -name *theme* \\\\\\) ! -path */node_modules/* ! -path */.worktrees/*)"
     ]
   },
   "hooks": {

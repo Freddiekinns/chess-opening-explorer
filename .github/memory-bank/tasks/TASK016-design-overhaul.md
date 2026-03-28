@@ -32,8 +32,11 @@ These apply across every page:
 - **Information density over decoration.** The current opening cards (ECO code,
   game count, W/D/L bar, difficulty badge) are more useful than pretty cards
   with a photo and a win rate. Polish the presentation without losing data.
-- **Dark theme, orange accent.** Keep the existing `#121212` / `#1e1e1e` /
-  `#e85d04` palette. It works.
+- **Warm Editorial Dark theme.** "Warm Editorial Dark" design system with warm
+  surface elevation (#1a1816 → #232120 → #2c2a27 → #363330), orange accent
+  (#e85d04) used sparingly via opacity scale, chess-thematic data viz colours
+  (amber/grey/cream for W/D/L). Typography: Bricolage Grotesque headlines, DM
+  Sans body.
 
 ## 3. Structural change: top bar navigation
 
@@ -46,7 +49,7 @@ top bar (see decision log, 2026-03-21).
 
 ### Top bar specification
 
-- **Height:** 56px, sticky (`position: sticky; top: 0`)
+- **Height:** 60px, sticky (`position: sticky; top: 0`)
 - **Background:** `--color-bg-surface` with
   `border-bottom: 1px solid var(--color-border)`
 - **Logo:** "Opening Book" wordmark on the left, linking to `/`. Plain text,

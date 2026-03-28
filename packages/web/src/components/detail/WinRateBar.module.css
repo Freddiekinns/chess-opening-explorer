@@ -4,6 +4,24 @@
   border-radius: var(--radius-xl);
   padding: var(--space-3) var(--space-4);
   box-shadow: var(--shadow-md);
+  animation: sectionReveal 300ms ease-out both;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statsCard {
+    animation: none;
+  }
 }
 
 .statsHeader {

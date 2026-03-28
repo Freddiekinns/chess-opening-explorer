@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { PGNInputModal } from '../components/shared/PGNInputModal';
 
 interface Opening {
@@ -203,7 +202,6 @@ const LandingPage: React.FC = () => {
         )}
       </div>
 
-      <FeedbackSection source="landing" />
 
       <PGNInputModal
         isOpen={isPGNModalOpen}

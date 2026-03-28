@@ -14,7 +14,6 @@ import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
 import practiceStyles from '../components/detail/PracticeControls.module.css';
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
@@ -1226,7 +1225,6 @@ const OpeningDetailPage: React.FC = () => {
         )}
       </div>
 
-      <FeedbackSection source="detail" />
     </div>
   );
 };

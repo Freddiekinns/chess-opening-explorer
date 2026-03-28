@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
 import type { OpeningForLookup } from '../../../shared/src';
 import pageStyles from './AnalyseGamesPage.module.css';
 
@@ -59,7 +58,6 @@ const AnalyseGamesPage: React.FC = () => {
 
       <PersonalOpeningStats openingsData={openingsData} prefillUsername={prefillUsername} />
 
-      <FeedbackSection source="analyse" />
     </div>
   );
 };

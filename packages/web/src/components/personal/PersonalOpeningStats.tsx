@@ -137,6 +137,7 @@ function getLossRate(o: OpeningAgg): number {
 type SideTab = 'white' | 'black';
 
 const FORM_STATE_KEY = 'personal-openings:form-state';
+const LAST_ANALYSIS_SNAPSHOT_KEY = 'personal-openings:last-analysis-snapshot';
 
 function readSavedFormState(): {
   username?: string;
@@ -420,6 +421,14 @@ export const PersonalOpeningStats: React.FC<{
   const saveToCache = (data: DashboardData) => {
     try {
       sessionStorage.setItem(cacheKey, JSON.stringify({ dashboard: data, cachedAt: Date.now() }));
+      sessionStorage.setItem(
+        LAST_ANALYSIS_SNAPSHOT_KEY,
+        JSON.stringify({
+          cacheKey,
+          displayedUsername: normalizeUsername(username),
+          displayedPlatform: platform,
+        })
+      );
     } catch {
       // ignore storage errors
     }
@@ -428,11 +437,42 @@ export const PersonalOpeningStats: React.FC<{
   useEffect(() => {
     const saved = readSavedFormState();
     if (!saved) return;
-    const cached = loadFromCache();
+
+    // Try derived cache key first; fall back to last-analysis snapshot so the
+    // player name is restored even if form fields (e.g. limit) were changed
+    // after the previous analysis.
+    let cached = loadFromCache();
+    let restoredUsername = normalizeUsername(saved.username || username);
+    let restoredPlatform: Platform = (saved.platform as Platform) || platform;
+
+    if (!cached) {
+      try {
+        const rawSnapshot = sessionStorage.getItem(LAST_ANALYSIS_SNAPSHOT_KEY);
+        if (rawSnapshot) {
+          const snapshot = JSON.parse(rawSnapshot) as {
+            cacheKey: string;
+            displayedUsername: string;
+            displayedPlatform: Platform;
+          };
+          const rawCache = sessionStorage.getItem(snapshot.cacheKey);
+          if (rawCache) {
+            const parsed = JSON.parse(rawCache) as { dashboard: DashboardData; cachedAt: number };
+            if (parsed?.dashboard) {
+              cached = parsed.dashboard;
+              restoredUsername = snapshot.displayedUsername;
+              restoredPlatform = snapshot.displayedPlatform;
+            }
+          }
+        }
+      } catch {
+        // ignore
+      }
+    }
+
     if (cached) {
       setDashboard(cached);
-      setDisplayedUsername(normalizeUsername(saved.username || username));
-      setDisplayedPlatform((saved.platform as Platform) || platform);
+      setDisplayedUsername(restoredUsername);
+      setDisplayedPlatform(restoredPlatform);
       setStep('done');
       setStepText('Loaded your saved results');
       setProgress(100);

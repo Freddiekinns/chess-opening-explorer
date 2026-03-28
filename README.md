@@ -92,7 +92,8 @@ Processes Lichess game data to calculate opening statistics.
 
 ## Project Context
 
-Complete documentation for the project's architecture, user journeys, and technical state can be found in the memory bank:
+Complete documentation for the project's architecture, user journeys, and
+technical state can be found in the memory bank:
 
 - [Project Foundation](.github/memory-bank/context.md)
 - [User Journeys & Core Functionality](.github/memory-bank/user-journeys.md)

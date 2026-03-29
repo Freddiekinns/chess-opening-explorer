@@ -9,7 +9,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 56px;
+    height: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;

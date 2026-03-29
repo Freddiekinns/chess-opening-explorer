@@ -138,6 +138,9 @@
   --space-3: 0.75rem;     /* 12px                                        */
   --space-4: 1rem;        /* 16px — default component padding            */
   --space-5: 1.25rem;     /* 20px                                        */
+
+  /* Mobile shell */
+  --bottom-tab-bar-height: 60px;
   --space-6: 1.5rem;      /* 24px — section spacing                      */
   --space-8: 2rem;        /* 32px — large section gaps                   */
   --space-10: 2.5rem;     /* 40px                                        */
@@ -300,7 +303,7 @@ body {
 /* Bottom tabs padding on mobile */
 @media (max-width: 639px) {
   .app-content {
-    padding-bottom: 56px;
+    padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
   }
 }
 
@@ -2748,14 +2751,17 @@ body {
   }
 
   .opening-card.has-board .card-board-wrapper {
-    width: 90px;
+    width: clamp(88px, 24vw, 104px);
     flex-shrink: 0;
+    align-self: center;
+    aspect-ratio: 1 / 1;
     border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    overflow: hidden;
   }
 
   .opening-card.has-board .card-board-wrapper > div {
-    width: 90px !important;
-    height: 90px !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .opening-card.has-board .card-info-column {

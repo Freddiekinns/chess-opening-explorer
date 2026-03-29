@@ -2,6 +2,12 @@
 
 ## What's Done (newest first)
 
+- **Mobile Footer + Landing Card Polish** (2026-03-29): Fixed mobile footer
+  overlap with bottom tab bar by unifying nav height spacing and adding footer
+  clearance above the fixed tabs. Fixed popular opening card thumbnails on
+  mobile so the chessboard stays square and fills the thumbnail rail without
+  dark bars. Frontend build clean.
+
 - **TASK016 Phase B — Design Token Migration & Polish** (2026-03-28): "Warm
   Editorial Dark" design system fully applied. Replaced ~80 hardcoded colours in
   `simplified.css` with design tokens. Analyse page overhauled: distribution

@@ -15,28 +15,40 @@
 
 /* Side label badge */
 .sectionLabel {
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   padding: var(--space-1) var(--space-3);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--radius-sm);
   width: fit-content;
 }
 
 .sectionLabel.white {
-  color: #f0f0f0;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  background: var(--border-default);
 }
 
 .sectionLabel.black {
-  color: #c0c0c0;
+  color: var(--color-text-secondary);
   background: rgba(0, 0, 0, 0.35);
 }
 
 .sectionLabel.general {
   color: var(--color-text-secondary);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--border-subtle);
+}
+
+/* Side-by-side grid layout for White + Black */
+.plansGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Plan items within sections */
@@ -48,7 +60,7 @@
 
 /* Override the left border colour per side */
 .planItem.white p {
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-left-color: var(--border-strong);
 }
 
 .planItem.black p {
@@ -57,4 +69,137 @@
 
 .planItem.general p {
   border-left-color: var(--color-brand-orange);
+}
+
+/* ============================
+   CARDS LAYOUT
+   ============================ */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  animation: cardIn 300ms ease-out both;
+}
+
+.card.white {
+  border-left: 3px solid var(--border-hover);
+}
+
+.card.black {
+  border-left: 3px solid var(--border-default);
+}
+
+.card.general {
+  border-left: 3px solid var(--color-brand-orange);
+}
+
+.cardLabel {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.cardPlans {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cardPlanText {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0;
+  opacity: 0.78;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-2));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   STRUCTURED LAYOUT
+   ============================ */
+.structuredLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.structuredGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.structuredColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.structuredColumnLabel {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+.structuredPlanCard {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: border-color 150ms ease;
+  border-left: 3px solid transparent;
+}
+
+.structuredPlanCard.white {
+  border-left-color: var(--border-hover);
+}
+
+.structuredPlanCard.black {
+  border-left-color: var(--border-default);
+}
+
+.structuredPlanCard.general {
+  border-left-color: var(--color-brand-orange);
+}
+
+.structuredPlanCard:hover {
+  border-color: var(--accent-a30);
+}
+
+@media (max-width: 768px) {
+  .structuredGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
 }

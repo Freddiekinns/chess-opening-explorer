@@ -162,8 +162,8 @@ describe('LandingPage Component', () => {
         expect(screen.getByText('1.e4 e5')).toBeInTheDocument();
       });
 
-      // Should have first moves section
-      expect(screen.getByText('First moves:')).toBeInTheDocument();
+      // Should have first moves displayed (no label, just the moves text)
+      expect(screen.getByText('1.e4 e5')).toBeInTheDocument();
     });
   });
 
@@ -177,7 +177,7 @@ describe('LandingPage Component', () => {
       });
 
       // Component should render properly
-      expect(screen.getByText('Opening Book')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening/i);
     });
 
     test('should render properly on mobile viewports', async () => {

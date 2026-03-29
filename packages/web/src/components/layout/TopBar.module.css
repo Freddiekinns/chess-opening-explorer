@@ -1,0 +1,325 @@
+.topBar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  background-color: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  display: grid;
+  /* 1fr auto 1fr keeps nav dead-centre regardless of right-slot content */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 var(--space-6);
+  gap: var(--space-4);
+  z-index: 100;
+}
+
+.logo {
+  justify-self: start;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  height: 100%;
+  gap: var(--space-4);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  height: 100%;
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
+  /* Use inset shadow instead of border to avoid stacking with topBar border */
+  box-shadow: inset 0 -2px 0 transparent;
+  transition:
+    box-shadow 150ms ease,
+    color 150ms ease;
+}
+
+.navItem:hover {
+  color: var(--color-text-primary);
+}
+
+.navItem:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+.navItemActive {
+  color: var(--color-brand-orange);
+  box-shadow: inset 0 -2px 0 var(--color-brand-orange);
+}
+
+/* Right slot — always present to keep grid stable */
+.rightSlot {
+  justify-self: end;
+  min-width: 0;
+}
+
+/* --- Desktop search + surprise --- */
+
+.searchDesktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.searchField {
+  position: relative;
+  width: 220px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-1-5) var(--space-8) var(--space-1-5) var(--space-3);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.searchInput:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.searchIcon {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+/* Surprise me — orange label button */
+.surpriseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
+  padding: var(--space-1-5) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    opacity 150ms ease;
+}
+
+.surpriseBtn:hover {
+  opacity: 0.9;
+}
+
+.surpriseBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  right: 0;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 200;
+  box-shadow: var(--shadow-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownItem {
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.dropdownItem:not(:last-child) {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dropdownItem:hover,
+.dropdownItemActive {
+  background-color: var(--surface-overlay);
+}
+
+.dropdownName {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.dropdownMeta {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-0-5);
+}
+
+/* Mobile search icon — hidden on desktop */
+.searchMobileBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border-default);
+  color: var(--color-text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.searchMobileBtn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--border-hover);
+}
+
+.searchMobileBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Mobile search overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--surface-elevated);
+  z-index: 300;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobileSearchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mobileSearchInput {
+  flex: 1;
+  padding: var(--space-2-5) var(--space-3);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-md);
+  outline: none;
+}
+
+.mobileSearchInput:focus {
+  border-color: var(--color-brand-orange);
+}
+
+.mobileSearchInput::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.mobileCloseBtn {
+  background: none;
+  border: none;
+  color: var(--color-brand-orange);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  padding: var(--space-2);
+  white-space: nowrap;
+}
+
+/* Mobile surprise me — full-width orange button inside the overlay */
+.mobileSurpriseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: opacity 150ms ease;
+}
+
+.mobileSurpriseBtn:hover {
+  opacity: 0.9;
+}
+
+/* Below 640px: hide nav + desktop search, show mobile search icon */
+@media (max-width: 639px) {
+  .topBar {
+    padding: 0 var(--space-4);
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .searchDesktop {
+    display: none;
+  }
+
+  .searchMobileBtn {
+    display: flex;
+  }
+
+  /* Dropdown inside overlay needs full width */
+  .mobileOverlay .dropdown {
+    position: relative;
+    top: 0;
+  }
+}
+
+/* Tablet: narrower search */
+@media (min-width: 640px) and (max-width: 900px) {
+  .searchField {
+    width: 160px;
+  }
+}

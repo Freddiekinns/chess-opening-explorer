@@ -2,6 +2,24 @@
   padding: var(--space-6) var(--space-4);
   max-width: 1200px;
   margin: 0 auto;
+  animation: sectionReveal 400ms ease-out both;
+  animation-delay: 250ms;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.repertoireSection.hasOpenings {
+  background-color: transparent;
+  padding: var(--space-6) var(--space-4);
 }
 
 .sectionHeader {
@@ -12,28 +30,27 @@
 }
 
 .sectionTitle {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font: var(--heading-section);
   color: var(--color-text-primary);
   margin: 0;
 }
 
 .count {
-  font-size: var(--font-size-sm);
+  font-size: var(--text-base);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-normal);
 }
 
-/* Horizontal scroll container */
+/* Horizontal scroll container — desktop */
 .cardScroller {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: var(--space-1) 0 var(--space-2);
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  scrollbar-color: var(--border-hover) transparent;
 }
 
 .cardScroller::-webkit-scrollbar {
@@ -45,29 +62,29 @@
 }
 
 .cardScroller::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--border-hover);
   border-radius: 3px;
 }
 
-/* Compact repertoire card */
+/* Repertoire card — matches popular opening card style */
 .repCard {
-  flex: 1 0 200px;
-  max-width: 300px;
+  flex: 0 0 auto;
+  width: 240px;
   scroll-snap-align: start;
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-large);
-  padding: var(--space-4);
+  background-color: var(--surface-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 0;
   cursor: pointer;
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
   transition:
     border-color 0.15s ease,
     transform 0.15s ease;
   font-family: inherit;
   color: inherit;
+  overflow: hidden;
 }
 
 .repCard:hover {
@@ -75,53 +92,112 @@
   transform: translateY(-2px);
 }
 
+.repCardBoard {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-raised);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.repCardBoard > div {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.repCardInfo {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
 .repCardHeader {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-2);
-}
-
-.repCardBadges {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-width: 0;
-}
-
-.repCardEco {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 2px 8px;
-  border-radius: var(--border-radius-small);
-  letter-spacing: 0.5px;
+  margin-bottom: var(--space-1);
 }
 
 .repCardName {
-  font-size: var(--font-size-base);
+  font-size: var(--text-md);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin: 0;
   line-height: var(--line-height-snug);
-  /* Reserve exactly 2 lines so moves always align across cards */
-  min-height: calc(2 * 1.3em);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: calc(2 * 1.3em);
+}
+
+.repCardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .repCardMoves {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs);
+  color: var(--color-brand-orange);
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
-  margin-top: auto;
+}
+
+/* Mobile: list-item layout */
+@media (max-width: 767px) {
+  .cardScroller {
+    flex-direction: column;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    gap: var(--space-3);
+  }
+
+  .repCard {
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .repCardBoard {
+    width: 90px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+
+  .repCardBoard > div {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  .repCardInfo {
+    padding: var(--space-2) var(--space-3);
+    justify-content: center;
+  }
+
+  .repCardHeader {
+    margin-bottom: 0;
+  }
+
+  .repCardName {
+    font-size: var(--text-base);
+    -webkit-line-clamp: 1;
+    min-height: auto;
+  }
+
+  .repCardMeta {
+    margin-bottom: 0;
+  }
 }
 
 /* Empty state */
@@ -133,27 +209,27 @@
   padding: var(--space-8) var(--space-4);
   text-align: center;
   color: var(--color-text-secondary);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-large);
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.02);
 }
 
 .emptyIcon {
-  font-size: 32px;
+  font-size: var(--text-3xl);
   margin-bottom: var(--space-3);
   opacity: 0.5;
 }
 
 .emptyTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--text-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   margin: 0 0 var(--space-2);
 }
 
 .emptyHint {
-  font-size: var(--font-size-sm);
+  font-size: var(--text-base);
   margin: 0;
   max-width: 300px;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }

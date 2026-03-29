@@ -29,7 +29,8 @@ guidance; advanced players for quick reference.
 ### Frontend
 
 - **Framework**: React 19 + TypeScript, Vite
-- **Styling**: Single CSS file (`packages/web/src/styles/simplified.css`)
+- **Styling**: CSS Modules + design tokens (legacy global styles in
+  `simplified.css`, migrating to `.module.css`)
 - **Testing**: Vitest + React Testing Library (in
   `packages/web/src/**/__tests__/`)
 
@@ -50,9 +51,23 @@ guidance; advanced players for quick reference.
 
 ## Key Architecture Decisions
 
-### AD-003: Single CSS File
+### AD-003: CSS Modules + Design Tokens
 
-All styles in `packages/web/src/styles/simplified.css`. No new CSS files - ever.
+Component styles use CSS Modules (`.module.css`). Legacy global styles remain in
+`packages/web/src/styles/simplified.css` and are migrated incrementally. A "Warm
+Editorial Dark" design system defines all visual tokens:
+
+- **Surfaces**: `--surface-base` (#1a1816) → `--surface-raised` (#232120) →
+  `--surface-elevated` (#2c2a27) → `--surface-overlay` (#363330)
+- **Typography**: Bricolage Grotesque (headlines), DM Sans (body), monospace for
+  data. Sizes from `--text-2xs` (10px) to `--text-3xl` (30px).
+- **Data viz**: Chess-thematic result colours — amber `--color-result-black`
+  (#c08840), warm grey `--color-result-draw` (#5a554e), cream
+  `--color-result-white` (#d4cfc7)
+- **Accent**: `--color-brand-orange` (#e85d04) with opacity scale `--accent-a6`
+  through `--accent-a50` for subtle tints
+- **Borders/shadows**: `--border-subtle`, `--border-default`, `--border-hover`;
+  `--shadow-sm` through `--shadow-lg`
 
 ### AD-004: Unified Video Pipeline
 
@@ -124,11 +139,8 @@ All JSON → Frontend (static, pre-generated)
 
 ### AD-016: Server-Side Search & Edge Caching
 
-Search moved from client-side preload to server-side semantic search.
-GlobalHeader uses debounced `/api/openings/semantic-search` (zero preload).
-OpeningDetailPage uses `/api/openings/search-index` (1.6 MB, 94% smaller than
-`/all`). All API routes have `Cache-Control` headers in `vercel.json` for Vercel
-CDN edge caching. See TASK011 for full details.
+All search is server-side. All API routes have `Cache-Control` headers in
+`vercel.json` for Vercel CDN edge caching.
 
 ## Known Constraints
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react';
-import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { ChessOpening, Video } from '../../../shared/src';
@@ -7,21 +7,18 @@ import {
   CommonPlans,
   VideoGallery,
   StudiesGallery,
-  RelatedOpeningsTeaser,
+  OpeningNavigator,
+  WinRateBar,
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
-import { SearchBar, type Opening as SearchOpening } from '../components/shared/SearchBar';
-import { OpeningStats } from '../components/detail/OpeningStats';
-import { FloatingBackButton } from '../components/shared/FloatingBackButton';
-import { MobileSearchOverlay } from '../components/shared/MobileSearchOverlay';
+import practiceStyles from '../components/detail/PracticeControls.module.css';
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
-import { LineTypePill } from '../components/shared/LineTypePill';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
+import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
 import { StarButton } from '../components/shared/StarButton';
-import type { RelatedOpeningsResponse } from '../useRelatedOpenings';
+import type { TreeContext } from '../hooks/useOpeningTree';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -64,29 +61,13 @@ type Opening = ChessOpening & {
   draw_rate?: number;
 };
 
-// Constants
-const TAB_TYPES = {
-  OVERVIEW: 'overview',
-  PLANS: 'plans',
-  STUDIES: 'studies',
-  VIDEOS: 'videos',
-} as const;
-
-type TabType = (typeof TAB_TYPES)[keyof typeof TAB_TYPES];
-
 const API_ENDPOINTS = {
   OPENING_BY_FEN: '/api/openings/fen/',
   VIDEOS_BY_FEN: '/api/openings/videos/',
   COURSES_BY_FEN: '/api/courses/',
   STATS_BY_FEN: '/api/stats/',
   RELATED_BY_FEN: '/api/openings/fen/',
-  SEARCH_INDEX: '/api/openings/search-index',
 } as const;
-
-interface MovePair {
-  white: string;
-  black?: string;
-}
 
 interface PopularityStats {
   games_analyzed?: number;
@@ -112,8 +93,6 @@ const SITE_URL = 'https://www.openingbook.com';
 
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
-  const navigate = useNavigate();
-  const location = useLocation();
   const [opening, setOpening] = useState<Opening | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);
   const [game, setGame] = useState(new Chess());
@@ -122,13 +101,10 @@ const OpeningDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [popularityStats, setPopularityStats] = useState<PopularityStats | null>(null);
-  const [relatedOpenings, setRelatedOpenings] = useState<RelatedOpeningsResponse | null>(null);
-  const [relatedLoading, setRelatedLoading] = useState(false);
-  const [openingsData, setOpeningsData] = useState<SearchOpening[]>([]);
-  const [activeTab, setActiveTab] = useState<TabType>(TAB_TYPES.OVERVIEW);
+  const [treeData, setTreeData] = useState<TreeContext | null>(null);
+  const [treeLoading, setTreeLoading] = useState(false);
   const [studies, setStudies] = useState<Study[]>([]);
   const [searchLinks, setSearchLinks] = useState<SearchLinks | null>(null);
-  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
 
   const { isSaved, toggle: toggleRepertoire } = useRepertoire();
 
@@ -143,6 +119,7 @@ const OpeningDetailPage: React.FC = () => {
   const [isComplete, setIsComplete] = useState(false);
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const prevFenRef = useRef<string | undefined>(fen);
+  const moveStripRef = useRef<HTMLDivElement>(null);
 
   // Click-to-move state
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
@@ -150,16 +127,6 @@ const OpeningDetailPage: React.FC = () => {
   // Track the last move for visual highlighting
   const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null);
   const { playAudio } = useAudio();
-
-  // Switch away from conditional tabs if no data available
-  useEffect(() => {
-    if (activeTab === TAB_TYPES.VIDEOS && videos.length === 0) {
-      setActiveTab(TAB_TYPES.OVERVIEW);
-    }
-    if (activeTab === TAB_TYPES.STUDIES && studies.length === 0 && !searchLinks) {
-      setActiveTab(TAB_TYPES.OVERVIEW);
-    }
-  }, [videos, studies, searchLinks, activeTab]);
 
   // API Helper Functions
   const fetchWithErrorHandling = useCallback(async (url: string, errorMessage: string) => {
@@ -171,24 +138,6 @@ const OpeningDetailPage: React.FC = () => {
       console.error(errorMessage, err);
       return null;
     }
-  }, []);
-
-  // Load lightweight search index for SearchBar component (1.6 MB vs 24.8 MB for /all)
-  useEffect(() => {
-    const loadOpeningsData = async () => {
-      try {
-        const response = await fetch(API_ENDPOINTS.SEARCH_INDEX);
-        const data = (await response.json()) as ApiResponse<SearchOpening[]>;
-
-        if (data.success) {
-          setOpeningsData(data.data);
-        }
-      } catch {
-        // Silent fail — server-side search in SearchBar still works
-      }
-    };
-
-    loadOpeningsData();
   }, []);
 
   const loadPopularityStats = useCallback(
@@ -230,17 +179,17 @@ const OpeningDetailPage: React.FC = () => {
     [fetchWithErrorHandling]
   );
 
-  const loadRelatedOpenings = useCallback(
+  const loadTreeData = useCallback(
     async (fenString: string) => {
-      setRelatedLoading(true);
+      setTreeLoading(true);
       try {
         const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/related`,
-          'Error loading related openings:'
-        )) as ApiResponse<RelatedOpeningsResponse> | null;
-        setRelatedOpenings(data?.data || null);
+          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/tree`,
+          'Error loading tree data:'
+        )) as ApiResponse<TreeContext> | null;
+        setTreeData(data?.data || null);
       } finally {
-        setRelatedLoading(false);
+        setTreeLoading(false);
       }
     },
     [fetchWithErrorHandling]
@@ -329,9 +278,21 @@ const OpeningDetailPage: React.FC = () => {
       const decodedFen = decodeURIComponent(fen);
       // Start both fetches in parallel
       loadOpening(decodedFen);
-      loadRelatedOpenings(decodedFen);
+      loadTreeData(decodedFen);
     }
-  }, [fen, loadOpening, loadRelatedOpenings]);
+  }, [fen, loadOpening, loadTreeData]);
+
+  // Auto-scroll move strip to keep active move visible
+  useEffect(() => {
+    if (!moveStripRef.current) return;
+    const pairIndex = currentMoveIndex === 0 ? 0 : Math.ceil(currentMoveIndex / 2);
+    const activeEl = moveStripRef.current.querySelector(
+      currentMoveIndex === 0 ? `.${styles.startPosition}` : `[data-move-pair="${pairIndex}"]`
+    ) as HTMLElement | null;
+    if (activeEl?.scrollIntoView) {
+      activeEl.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+    }
+  }, [currentMoveIndex]);
 
   const goToMove = (moveIndex: number) => {
     if (moveIndex >= 0 && moveIndex < gameHistory.length) {
@@ -353,17 +314,6 @@ const OpeningDetailPage: React.FC = () => {
     }
   };
 
-  const formatMovesAsPairs = (movesArray: string[]): MovePair[] => {
-    const pairs: MovePair[] = [];
-    for (let i = 0; i < movesArray.length; i += 2) {
-      pairs.push({
-        white: movesArray[i],
-        black: movesArray[i + 1] || undefined,
-      });
-    }
-    return pairs;
-  };
-
   const getMovesList = useCallback((): string[] => {
     if (!opening?.moves) return [];
     return opening.moves
@@ -371,24 +321,6 @@ const OpeningDetailPage: React.FC = () => {
       .split(/\s+/)
       .filter((move) => move.trim() !== '' && !move.includes('.'));
   }, [opening]);
-
-  const selectOpening = (opening: SearchOpening) => {
-    const encodedFen = encodeURIComponent(opening.fen);
-    navigate(`/opening/${encodedFen}`);
-  };
-
-  const handleSurpriseMe = async () => {
-    try {
-      const response = await fetch('/api/openings/random');
-      const data = await response.json();
-
-      if (data.success) {
-        selectOpening(data.data);
-      }
-    } catch (error) {
-      console.error('Random opening error:', error);
-    }
-  };
 
   // Practice mode functions
   const startPractice = useCallback(() => {
@@ -780,16 +712,6 @@ const OpeningDetailPage: React.FC = () => {
     );
   }
 
-  const params = new URLSearchParams(location.search);
-  const ref = params.get('ref');
-  const personalPlatform = params.get('platform');
-  const personalUsername = params.get('username');
-
-  const backHref =
-    ref === 'personal'
-      ? `/analyse${personalUsername ? `?username=${encodeURIComponent(personalUsername)}` : ''}${personalPlatform ? `${personalUsername ? '&' : '?'}platform=${encodeURIComponent(personalPlatform)}` : ''}`
-      : '/';
-
   const seoTitle = opening
     ? `${opening.name}${opening.eco ? ` (${opening.eco})` : ''} — ${SITE_NAME}`
     : `Chess Opening — ${SITE_NAME}`;
@@ -828,78 +750,24 @@ const OpeningDetailPage: React.FC = () => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      {/* Floating Back Button for Mobile */}
-      <FloatingBackButton />
-
-      {/* Professional Header Layout */}
-      <header className="detail-header">
-        <div className="detail-header-container">
-          <div className="header-left">
-            <Link to={backHref} className="back-button">
-              <span className="back-text-desktop">
-                {ref === 'personal' ? 'Back to analysis' : 'Back to search'}
-              </span>
-              <span className="back-text-mobile">←</span>
-            </Link>
-          </div>
-
-          <div className="header-center">
-            <Link to="/" className="site-title">
-              Opening Book
-            </Link>
-          </div>
-
-          <div className="header-right">
-            <SearchBar
-              variant="header"
-              onSelect={selectOpening}
-              placeholder="Search openings..."
-              openingsData={openingsData}
-              className="header-search"
-            />
-            <button
-              className="surprise-btn"
-              onClick={handleSurpriseMe}
-              title="Explore random opening"
-            >
-              Surprise me
-            </button>
-
-            {/* Mobile menu toggle */}
-            <button
-              className="mobile-menu-toggle"
-              onClick={() => setIsMobileSearchOpen(true)}
-              aria-label="Open search menu"
-              title="Search openings"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Search Overlay */}
-      <MobileSearchOverlay
-        isOpen={isMobileSearchOpen}
-        onClose={() => setIsMobileSearchOpen(false)}
-        onSelect={selectOpening}
-        openingsData={openingsData}
-      />
-
       {/* Page Title Area */}
       <div className="page-title-area centered">
         <div className={styles.titleWithStar}>
-          <h1 className="opening-name">{opening.name}</h1>
+          <h1 className="opening-name">
+            {(() => {
+              const colonIdx = opening.name.indexOf(':');
+              if (colonIdx === -1) return opening.name;
+              return (
+                <>
+                  <span className={styles.titleFamily}>{opening.name.slice(0, colonIdx)}</span>
+                  <span className={styles.titleColon}>:</span>
+                  <span className={styles.titleVariation}>
+                    {opening.name.slice(colonIdx + 1).trimStart()}
+                  </span>
+                </>
+              );
+            })()}
+          </h1>
           <StarButton
             filled={isSaved(opening.fen)}
             onClick={() =>
@@ -914,19 +782,9 @@ const OpeningDetailPage: React.FC = () => {
             size="md"
           />
         </div>
-        <div className="complexity-and-tags">
-          {/* ECO code pill */}
-          {opening.eco && <span className="eco-pill">{opening.eco}</span>}
-
-          {/* Mainline / Variation pill */}
-          <LineTypePill isMainline={opening.isEcoRoot === true} />
-
+        <div className={styles.tagPillsRow}>
           {/* Complexity pill */}
-          {opening.complexity && (
-            <span className={`complexity-tag complexity-${opening.complexity.toLowerCase()}`}>
-              {opening.complexity}
-            </span>
-          )}
+          {opening.complexity && <span className={styles.tagPill}>{opening.complexity}</span>}
 
           {/* Style tags pills */}
           {(() => {
@@ -936,8 +794,8 @@ const OpeningDetailPage: React.FC = () => {
               opening.style_tags ||
               [];
             return styleTags && styleTags.length > 0
-              ? styleTags.slice(0, 5).map((tag: string, index: number) => (
-                  <span key={`style-${index}`} className="style-pill">
+              ? styleTags.map((tag: string, index: number) => (
+                  <span key={`style-${index}`} className={styles.tagPill}>
                     {tag}
                   </span>
                 ))
@@ -984,81 +842,88 @@ const OpeningDetailPage: React.FC = () => {
             {/* Practice Mode Controls */}
             {practiceMode ? (
               <>
-                {/* Desktop controls - hidden on mobile via CSS */}
-                <div className="practice-controls practice-controls-desktop">
-                  <div className="practice-controls-row">
-                    <div className="practice-color-toggle">
-                      <span className="practice-label">Playing as:</span>
-                      <button
-                        className={`practice-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
-                        onClick={() => {
-                          setPracticeColor('white');
-                          if (practiceMode) startPractice();
-                        }}
-                        disabled={isComplete}
-                      >
-                        White
-                      </button>
-                      <button
-                        className={`practice-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
-                        onClick={() => {
-                          setPracticeColor('black');
-                          if (practiceMode) {
-                            // Need to restart with black
-                            const newGame = new Chess();
-                            const movesArray = getMovesList();
-                            if (movesArray.length > 0) {
-                              const move = newGame.move(movesArray[0]);
-                              if (move) {
-                                setPracticeGame(new Chess(newGame.fen()));
-                                setPracticeIndex(1);
-                                setIncorrectAttempts(0);
-                                setShowHint(false);
-                                setHighlightSquares({});
-                                setIsComplete(false);
+                {/* Desktop controls — hidden on mobile via CSS */}
+                <div className={`${practiceStyles.controls} ${practiceStyles.desktopOnly}`}>
+                  <div className={practiceStyles.row}>
+                    <div className={practiceStyles.colorToggle}>
+                      <span className={practiceStyles.label}>Playing as:</span>
+                      <div className={practiceStyles.pillGroup}>
+                        <button
+                          className={`${practiceStyles.colorBtn} ${practiceColor === 'white' ? practiceStyles.colorBtnActive : ''}`}
+                          aria-pressed={practiceColor === 'white'}
+                          onClick={() => {
+                            setPracticeColor('white');
+                            if (practiceMode) startPractice();
+                          }}
+                          disabled={isComplete}
+                        >
+                          White
+                        </button>
+                        <button
+                          className={`${practiceStyles.colorBtn} ${practiceColor === 'black' ? practiceStyles.colorBtnActive : ''}`}
+                          aria-pressed={practiceColor === 'black'}
+                          onClick={() => {
+                            setPracticeColor('black');
+                            if (practiceMode) {
+                              const newGame = new Chess();
+                              const movesArray = getMovesList();
+                              if (movesArray.length > 0) {
+                                const move = newGame.move(movesArray[0]);
+                                if (move) {
+                                  setPracticeGame(new Chess(newGame.fen()));
+                                  setPracticeIndex(1);
+                                  setIncorrectAttempts(0);
+                                  setShowHint(false);
+                                  setHighlightSquares({});
+                                  setIsComplete(false);
+                                }
                               }
                             }
-                          }
-                        }}
-                        disabled={isComplete}
-                      >
-                        Black
-                      </button>
+                          }}
+                          disabled={isComplete}
+                        >
+                          Black
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="practice-progress">
+                    <div className={practiceStyles.progress}>
                       {isComplete ? (
-                        <span className="practice-complete">Complete!</span>
+                        <span className={practiceStyles.complete}>Complete!</span>
                       ) : (
-                        <span className="practice-counter">
+                        <span className={practiceStyles.counter}>
                           Move {Math.floor(practiceIndex / 2) + 1} of{' '}
                           {Math.ceil(getMovesList().length / 2)}
                         </span>
                       )}
                     </div>
 
-                    <div className="practice-actions">
+                    <div className={practiceStyles.actions}>
                       {!isComplete && !showHint && (
                         <button
-                          className="practice-btn practice-hint-btn"
+                          className={`${practiceStyles.btn} ${practiceStyles.hintBtn}`}
                           onClick={showHintHighlight}
                           title="Show which piece to move"
                         >
                           Hint
                         </button>
                       )}
-                      <button className="practice-btn practice-exit-btn" onClick={exitPractice}>
+                      <button
+                        className={`${practiceStyles.btn} ${practiceStyles.exitBtn}`}
+                        onClick={exitPractice}
+                      >
                         Exit
                       </button>
                     </div>
                   </div>
                 </div>
 
-                {/* Mobile bottom bar - shown only on mobile via CSS */}
-                <div className="practice-mobile-bar">
-                  <div className="practice-mobile-color-toggle">
+                {/* Mobile bottom bar — shown only on mobile via CSS */}
+                <div className={practiceStyles.mobileBar}>
+                  <div className={practiceStyles.mobilePillGroup}>
                     <button
-                      className={`practice-mobile-color-btn ${practiceColor === 'white' ? 'active' : ''}`}
+                      className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'white' ? practiceStyles.mobileColorBtnActive : ''}`}
+                      aria-pressed={practiceColor === 'white'}
                       onClick={() => {
                         setPracticeColor('white');
                         if (practiceMode) startPractice();
@@ -1069,7 +934,8 @@ const OpeningDetailPage: React.FC = () => {
                       W
                     </button>
                     <button
-                      className={`practice-mobile-color-btn ${practiceColor === 'black' ? 'active' : ''}`}
+                      className={`${practiceStyles.mobileColorBtn} ${practiceColor === 'black' ? practiceStyles.mobileColorBtnActive : ''}`}
+                      aria-pressed={practiceColor === 'black'}
                       onClick={() => {
                         setPracticeColor('black');
                         if (practiceMode) {
@@ -1095,21 +961,21 @@ const OpeningDetailPage: React.FC = () => {
                     </button>
                   </div>
 
-                  <div className="practice-mobile-progress">
+                  <div className={practiceStyles.mobileProgress}>
                     {isComplete ? (
-                      <span className="practice-mobile-complete">Complete!</span>
+                      <span className={practiceStyles.mobileComplete}>Complete!</span>
                     ) : (
-                      <span className="practice-mobile-counter">
+                      <span className={practiceStyles.mobileCounter}>
                         Move {Math.floor(practiceIndex / 2) + 1}/
                         {Math.ceil(getMovesList().length / 2)}
                       </span>
                     )}
                   </div>
 
-                  <div className="practice-mobile-actions">
+                  <div className={practiceStyles.mobileActions}>
                     {!isComplete && !showHint && (
                       <button
-                        className="practice-mobile-btn practice-mobile-hint-btn"
+                        className={`${practiceStyles.mobileBtn} ${practiceStyles.mobileHintBtn}`}
                         onClick={showHintHighlight}
                         title="Show which piece to move"
                       >
@@ -1117,7 +983,7 @@ const OpeningDetailPage: React.FC = () => {
                       </button>
                     )}
                     <button
-                      className="practice-mobile-btn practice-mobile-exit-btn"
+                      className={`${practiceStyles.mobileBtn} ${practiceStyles.mobileExitBtn}`}
                       onClick={exitPractice}
                       title="Exit practice mode"
                     >
@@ -1135,7 +1001,7 @@ const OpeningDetailPage: React.FC = () => {
                   disabled={currentMoveIndex === 0}
                   title="Go to start"
                 >
-                  {'<<'}
+                  <ChevronsLeft size={20} />
                 </button>
                 <button
                   onClick={previousMove}
@@ -1143,7 +1009,7 @@ const OpeningDetailPage: React.FC = () => {
                   disabled={currentMoveIndex === 0}
                   title="Previous move"
                 >
-                  {'<'}
+                  <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={nextMove}
@@ -1151,7 +1017,7 @@ const OpeningDetailPage: React.FC = () => {
                   disabled={currentMoveIndex >= getMovesList().length}
                   title="Next move"
                 >
-                  {'>'}
+                  <ChevronRight size={20} />
                 </button>
                 <button
                   onClick={() => goToMove(getMovesList().length)}
@@ -1159,207 +1025,205 @@ const OpeningDetailPage: React.FC = () => {
                   disabled={currentMoveIndex >= getMovesList().length}
                   title="Go to end"
                 >
-                  {'>>'}
+                  <ChevronsRight size={20} />
                 </button>
                 <button
                   className="chessboard-nav-btn practice-toggle-btn"
                   onClick={startPractice}
                   title="Practice this opening"
                 >
+                  <Play size={14} />
                   Practice
                 </button>
               </div>
             )}
 
-            {/* FEN Utilities - Technical information, less frequently accessed */}
-            <div className="chessboard-fen-utilities">
-              <label className="fen-utilities-label">Position (FEN)</label>
-              <div className="fen-display">
-                <input type="text" value={game.fen()} readOnly className="fen-input" />
-                <button
-                  onClick={() => navigator.clipboard.writeText(game.fen())}
-                  className="copy-btn"
+            {/* Move Strip - position scrubber (hidden during practice) */}
+            {!practiceMode && getMovesList().length > 0 && (
+              <div className={styles.moveStrip} ref={moveStripRef}>
+                <span
+                  className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
+                  onClick={() => goToMove(0)}
                 >
-                  Copy
-                </button>
-                <a
-                  href={`https://lichess.org/analysis/${game.fen()}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="analyze-btn"
-                >
-                  Analyse
-                </a>
-              </div>
-            </div>
-          </div>
+                  Start
+                </span>
+                {getMovesList().reduce<React.ReactNode[]>((pairs, move, i) => {
+                  const moveNum = Math.floor(i / 2) + 1;
+                  const isWhite = i % 2 === 0;
+                  const moveIndex = i + 1; // gameHistory index (0 = start position)
+                  const isActive = currentMoveIndex === moveIndex;
+                  const isFuture = currentMoveIndex < moveIndex;
 
-          {/* Related Openings Teaser - under board on desktop */}
-          {opening?.fen && (
-            <RelatedOpeningsTeaser
-              fen={opening.fen}
-              className={`related-teaser-block ${styles.relatedTeaserDesktop}`}
-              relatedData={relatedOpenings}
-              relatedLoading={relatedLoading}
-            />
-          )}
+                  if (isWhite) {
+                    // Start a new pair
+                    const blackMove = getMovesList()[i + 1];
+                    const blackIndex = i + 2;
+                    const blackActive = currentMoveIndex === blackIndex;
+                    const pairActive = isActive || blackActive;
+                    const pairFuture = !pairActive && isFuture;
+
+                    pairs.push(
+                      <span
+                        key={moveNum}
+                        className={`${styles.movePair} ${pairActive ? styles.movePairActive : ''} ${pairFuture ? styles.movePairFuture : ''}`}
+                        data-move-pair={moveNum}
+                        onClick={() =>
+                          goToMove(isActive ? moveIndex : blackActive ? blackIndex : moveIndex)
+                        }
+                      >
+                        <span className={styles.moveNumber}>{moveNum}.</span>
+                        <span
+                          style={
+                            isActive
+                              ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
+                              : undefined
+                          }
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            goToMove(moveIndex);
+                          }}
+                        >
+                          {move}
+                        </span>
+                        {blackMove && (
+                          <span
+                            style={
+                              blackActive
+                                ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
+                                : undefined
+                            }
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              goToMove(blackIndex);
+                            }}
+                          >
+                            {blackMove}
+                          </span>
+                        )}
+                      </span>
+                    );
+                  }
+                  return pairs;
+                }, [])}
+              </div>
+            )}
+
+            {/* FEN Utilities - Technical information (hidden during practice) */}
+            {!practiceMode && (
+              <div className="chessboard-fen-utilities">
+                <label className="fen-utilities-label">Position (FEN)</label>
+                <div className="fen-display">
+                  <input type="text" value={game.fen()} readOnly className="fen-input" />
+                  <button
+                    onClick={() => navigator.clipboard.writeText(game.fen())}
+                    className="copy-btn"
+                  >
+                    Copy
+                  </button>
+                  <a
+                    href={`https://lichess.org/analysis/${game.fen()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="analyze-btn"
+                  >
+                    Analyse
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Right Column - Knowledge Panel (50%) */}
-        <div className="right-column knowledge-panel">
-          {/* Opening Moves List */}
-          <div className={`opening-moves-list ${styles.openingMovesCompact}`}>
-            <div className="card-header">
-              <h3 className="card-header__title card-header__title--accent">Opening Moves</h3>
-            </div>
-            <div className="moves-notation">
-              {formatMovesAsPairs(getMovesList()).map((movePair, index) => (
-                <div key={index} className="move-pair">
-                  <span className="move-number">{index + 1}.</span>
-                  <button
-                    className={`move-btn ${currentMoveIndex === index * 2 + 1 ? 'active' : ''}`}
-                    onClick={() => goToMove(index * 2 + 1)}
-                  >
-                    {movePair.white}
-                  </button>
-                  {movePair.black && (
-                    <button
-                      className={`move-btn ${currentMoveIndex === index * 2 + 2 ? 'active' : ''}`}
-                      onClick={() => goToMove(index * 2 + 2)}
-                    >
-                      {movePair.black}
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Right Column - Stats + Overview + Navigator */}
+        <div className={`right-column ${styles.rightColumn}`}>
+          <WinRateBar popularityStats={popularityStats} />
 
-          {/* Statistics Component */}
-          {popularityStats ? (
-            <OpeningStats
-              gamesAnalyzed={popularityStats.games_analyzed || 0}
-              whiteWins={Math.round(
-                (popularityStats.white_win_rate || 0) * (popularityStats.games_analyzed || 0)
-              )}
-              draws={Math.round(
-                (popularityStats.draw_rate || 0) * (popularityStats.games_analyzed || 0)
-              )}
-              blackWins={Math.round(
-                (popularityStats.black_win_rate || 0) * (popularityStats.games_analyzed || 0)
-              )}
-              averageRating={popularityStats.avg_rating}
-            />
-          ) : (
-            <OpeningStats
-              gamesAnalyzed={opening?.games_analyzed || 100000}
-              whiteWins={48000}
-              draws={32000}
-              blackWins={20000}
-            />
-          )}
-
-          {/* Simple Tabbed Content Section - Primary learning content */}
+          {/* Overview — about this opening */}
           {opening?.eco && (
-            <div className={styles.simpleTabs}>
-              {/* Tab Buttons */}
-              <div className={styles.tabButtonsTrack}>
-                <div className={styles.tabButtons}>
-                  <button
-                    className={`${styles.tabButton} ${activeTab === TAB_TYPES.OVERVIEW ? styles.active : ''}`}
-                    onClick={() => setActiveTab(TAB_TYPES.OVERVIEW)}
-                  >
-                    Overview
-                  </button>
-                  <button
-                    className={`${styles.tabButton} ${activeTab === TAB_TYPES.PLANS ? styles.active : ''}`}
-                    onClick={() => setActiveTab(TAB_TYPES.PLANS)}
-                  >
-                    Plans
-                  </button>
-                  {(studies.length > 0 || searchLinks) && (
-                    <button
-                      className={`${styles.tabButton} ${activeTab === TAB_TYPES.STUDIES ? styles.active : ''}`}
-                      onClick={() => setActiveTab(TAB_TYPES.STUDIES)}
-                    >
-                      {studies.length > 0 ? `Studies (${studies.length})` : 'Studies'}
-                    </button>
-                  )}
-                  {videos.length > 0 && (
-                    <button
-                      className={`${styles.tabButton} ${activeTab === TAB_TYPES.VIDEOS ? styles.active : ''}`}
-                      onClick={() => setActiveTab(TAB_TYPES.VIDEOS)}
-                    >
-                      Videos ({videos.length})
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* Tab Content */}
-              <div className={styles.tabContentArea}>
-                <div
-                  className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.OVERVIEW ? styles.active : ''}`}
-                >
-                  <div className="content-panel-improved">
-                    <h3 className="title-subsection">Description</h3>
-                    <p>
-                      {opening.description ||
-                        opening.analysis?.description ||
-                        opening.analysis_json?.description ||
-                        `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.PLANS ? styles.active : ''}`}
-                >
-                  <CommonPlans ecoCode={opening.eco} />
-                </div>
-
-                {(studies.length > 0 || searchLinks) && (
-                  <div
-                    className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.STUDIES ? styles.active : ''}`}
-                  >
-                    <div className="content-panel-improved">
-                      <StudiesGallery
-                        studies={studies}
-                        searchLinks={searchLinks}
-                        openingName={opening?.name || ''}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {videos.length > 0 && (
-                  <div
-                    className={`${styles.tabContentPanel} ${activeTab === TAB_TYPES.VIDEOS ? styles.active : ''}`}
-                  >
-                    <div className="content-panel-improved">
-                      <VideoErrorBoundary>
-                        <VideoGallery videos={videos} />
-                      </VideoErrorBoundary>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <div className={styles.overviewCard}>
+              <div className={styles.overviewLabel}>Overview</div>
+              <p className={styles.overviewText}>
+                {opening.description ||
+                  opening.analysis?.description ||
+                  opening.analysis_json?.description ||
+                  `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
+              </p>
             </div>
           )}
-        </div>
 
-        {/* Related Openings Teaser - bottom on mobile */}
-        {opening?.fen && (
-          <RelatedOpeningsTeaser
-            fen={opening.fen}
-            className={`related-teaser-block ${styles.relatedTeaserMobile}`}
-            relatedData={relatedOpenings}
-            relatedLoading={relatedLoading}
-          />
-        )}
+          <OpeningNavigator treeData={treeData} loading={treeLoading} />
+        </div>
       </div>
 
-      <FeedbackSection source="detail" />
+      {/* Full-width sections below two-column layout */}
+      <div className={styles.fullWidthSections}>
+        {/* Plans */}
+        {opening?.eco && (
+          <div className={styles.stackedSection}>
+            <h3 className={styles.sectionHeading}>Common plans</h3>
+            <CommonPlans ecoCode={opening.eco} layout="structured" hideTitle />
+          </div>
+        )}
+
+        {/* Learning Resources — combined videos + studies */}
+        {(videos.length > 0 || studies.length > 0 || searchLinks) && (
+          <div className={styles.stackedSection}>
+            <div className={styles.sectionHeader}>
+              <h3 className={styles.sectionHeading}>Learning resources</h3>
+              {searchLinks && (
+                <div className={styles.searchPills}>
+                  <a
+                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent((opening?.name || '') + ' chess opening')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.searchPill}
+                  >
+                    Search YouTube
+                  </a>
+                  <a
+                    href={searchLinks.lichess}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.searchPill}
+                  >
+                    Search Lichess Studies
+                  </a>
+                  <a
+                    href={searchLinks.chessable}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.searchPill}
+                  >
+                    Search Chessable
+                  </a>
+                </div>
+              )}
+            </div>
+            {(videos.length > 0 || studies.length > 0) && (
+              <div
+                className={`${styles.resourcesGrid} ${
+                  videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
+                }`}
+              >
+                {videos.length > 0 && (
+                  <div>
+                    <div className={styles.resourceLabel}>Videos ({videos.length})</div>
+                    <VideoErrorBoundary>
+                      <VideoGallery videos={videos} hideTitle />
+                    </VideoErrorBoundary>
+                  </div>
+                )}
+                {studies.length > 0 && (
+                  <div>
+                    <div className={styles.resourceLabel}>Studies ({studies.length})</div>
+                    <StudiesGallery studies={studies} openingName={opening?.name || ''} />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

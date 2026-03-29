@@ -49,6 +49,7 @@ describe('cache-service', () => {
       });
 
       test('stale data fallback - returns stale data when fetchFunction throws after expiry', () => {
+        const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
         const fetchFn = jest.fn();
         fetchFn.mockReturnValueOnce({ data: 'stale' });
         fetchFn.mockImplementationOnce(() => {
@@ -58,6 +59,7 @@ describe('cache-service', () => {
         jest.setSystemTime(1_000_000 + cache.cacheTTL + 1);
         const result = cache.getOrSet('key1', fetchFn);
         expect(result).toEqual({ data: 'stale' });
+        consoleWarnSpy.mockRestore();
       });
 
       test('throws when fetchFunction throws and cache is empty', () => {

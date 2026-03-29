@@ -229,10 +229,12 @@ describe('Stats Routes – real stats file is empty object (fallback)', () => {
 describe('Stats Routes – file read throws (empty stats fallback)', () => {
   let app;
   let fs;
+  let consoleErrorSpy;
 
   beforeAll(() => {
     jest.resetModules();
     fs = require('fs');
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     jest.spyOn(fs, 'existsSync').mockReturnValue(false);
     jest.spyOn(fs, 'readFileSync').mockImplementation(() => {
@@ -245,6 +247,7 @@ describe('Stats Routes – file read throws (empty stats fallback)', () => {
 
   afterAll(() => {
     jest.restoreAllMocks();
+    consoleErrorSpy.mockRestore();
   });
 
   test('GET /:fen returns 404 when all reads fail (stats is empty {})', async () => {

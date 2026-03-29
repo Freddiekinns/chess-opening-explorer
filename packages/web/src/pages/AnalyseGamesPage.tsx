@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { LandingHeader } from '../components/layout/LandingHeader';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
 import type { OpeningForLookup } from '../../../shared/src';
+import pageStyles from './AnalyseGamesPage.module.css';
 
 const AnalyseGamesPage: React.FC = () => {
   const [openingsData, setOpeningsData] = useState<OpeningForLookup[]>([]);
   const location = useLocation();
 
-  // Apply body class for this page
   useEffect(() => {
     document.body.className = 'analyse-page';
     return () => {
@@ -17,15 +15,13 @@ const AnalyseGamesPage: React.FC = () => {
     };
   }, []);
 
-  // Get prefill username from URL if provided
   const params = new URLSearchParams(location.search);
   const prefillUsername = params.get('username') || '';
 
-  // Load openings data for analysis
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/api/openings/search-index?fields=lookup');
+        const response = await fetch('/api/openings/search-index');
         const data = await response.json();
         if (data.success) {
           setOpeningsData(data.data);
@@ -38,7 +34,7 @@ const AnalyseGamesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="analyse-page">
+    <div className={pageStyles.page}>
       <title>Analyse Your Games — Opening Book</title>
       <meta
         name="description"
@@ -59,22 +55,8 @@ const AnalyseGamesPage: React.FC = () => {
         name="twitter:description"
         content="Analyse your Chess.com and Lichess games to discover which openings you play and track your performance."
       />
-      <LandingHeader />
 
-      {/* Hero Section */}
-      <section className="analyse-hero">
-        <div className="analyse-hero__content">
-          <h1 className="analyse-hero__title">Analyse Your Games</h1>
-          <p className="analyse-hero__subtitle">
-            Review your performance and improve your openings by connecting your chess account.
-          </p>
-        </div>
-      </section>
-
-      {/* Personal Opening Stats */}
       <PersonalOpeningStats openingsData={openingsData} prefillUsername={prefillUsername} />
-
-      <FeedbackSection source="analyse" />
     </div>
   );
 };

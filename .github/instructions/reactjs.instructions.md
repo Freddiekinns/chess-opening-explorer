@@ -299,5 +299,4 @@ each one as it gets migrated during normal development work.
 #### Skip (no meaningful CSS)
 
 - `NotFoundPage` — 1 className
-- `FeedbackSection` — no CSS
 - `OpeningFamily` — no CSS

@@ -521,7 +521,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             onClick={handleSurpriseMe}
             disabled={disabled || loading}
           >
-            {loading ? 'Loading...' : 'Surprise me!'}
+            {loading ? 'Loading...' : 'Surprise me'}
           </button>
         )}
 

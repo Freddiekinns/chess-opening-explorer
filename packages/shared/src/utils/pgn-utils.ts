@@ -38,6 +38,7 @@ export interface OpeningForLookup {
   fen: string;
   name: string;
   eco: string;
+  moves?: string;
 }
 
 /**

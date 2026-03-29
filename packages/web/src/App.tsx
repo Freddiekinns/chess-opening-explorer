@@ -5,6 +5,9 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import LandingPage from './pages/LandingPage';
 import AnalyseGamesPage from './pages/AnalyseGamesPage';
 import OpeningDetailPage from './pages/OpeningDetailPage';
+import TopBar from './components/layout/TopBar';
+import BottomTabBar from './components/layout/BottomTabBar';
+import { Footer } from './components/layout/Footer';
 
 const AnalyseRedirect = () => {
   useEffect(() => {
@@ -16,13 +19,18 @@ const AnalyseRedirect = () => {
 function App() {
   return (
     <div className="app">
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/analyse" element={<AnalyseGamesPage />} />
-        <Route path="/personal-explorer" element={<AnalyseRedirect />} />
-        <Route path="/opening/:fen" element={<OpeningDetailPage />} />
-        <Route path="*" element={<LandingPage />} />
-      </Routes>
+      <TopBar />
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/analyse" element={<AnalyseGamesPage />} />
+          <Route path="/personal-explorer" element={<AnalyseRedirect />} />
+          <Route path="/opening/:fen" element={<OpeningDetailPage />} />
+          <Route path="*" element={<LandingPage />} />
+        </Routes>
+      </main>
+      <Footer />
+      <BottomTabBar />
       <Analytics />
       <SpeedInsights />
     </div>

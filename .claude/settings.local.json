@@ -67,7 +67,19 @@
       "Bash(find:*)",
       "Bash(git status:*)",
       "Bash(sqlite3:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(ls node_modules/.bin/jest*)",
+      "Bash(ls packages/web/node_modules/.bin/jest*)",
+      "Bash(ls tests/unit/*.test.js)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer stash pop)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer log --oneline -4)",
+      "Bash(git -C C:/Users/fred_/chess-opening-explorer stash drop)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(npx concurrently:*)",
+      "Bash(npx vite:*)",
+      "Bash(find C:Usersfred_chess-opening-explorer -type f \\\\\\(-name README.md -o -name *design* -o -name *style* -o -name *theme* \\\\\\) ! -path */node_modules/* ! -path */.worktrees/*)"
     ]
   },
   "hooks": {

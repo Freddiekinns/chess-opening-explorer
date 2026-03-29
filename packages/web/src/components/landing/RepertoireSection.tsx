@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import { StarButton } from '../shared/StarButton';
+import { MiniBoard } from '../shared/MiniBoard';
 import styles from './RepertoireSection.module.css';
 
 interface RepertoireSectionProps {
@@ -11,10 +12,17 @@ interface RepertoireSectionProps {
 export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningSelect }) => {
   const { repertoire, count, remove } = useRepertoire();
 
+  const getFirstMovesDisplay = (moves: string): string => {
+    const trimmed = moves.trim();
+    const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
+    const moveMatches = trimmed.match(movePattern) || [];
+    return moveMatches.slice(0, 2).join(' ');
+  };
+
   return (
-    <section className={styles.repertoireSection}>
+    <section className={`${styles.repertoireSection}${count > 0 ? ` ${styles.hasOpenings}` : ''}`}>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>My Repertoire</h2>
+        <h2 className={styles.sectionTitle}>My repertoire</h2>
         {count > 0 && <span className={styles.count}>({count})</span>}
       </div>
 
@@ -46,22 +54,26 @@ export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningS
               onClick={() => onOpeningSelect({ fen: entry.fen })}
               type="button"
             >
-              <div className={styles.repCardHeader}>
-                <div className={styles.repCardBadges}>
-                  <span className={styles.repCardEco}>{entry.eco}</span>
+              <div className={styles.repCardBoard}>
+                <MiniBoard fen={entry.fen} size={120} />
+              </div>
+              <div className={styles.repCardInfo}>
+                <div className={styles.repCardHeader}>
+                  <h3 className={styles.repCardName}>{entry.name}</h3>
+                  <StarButton filled onClick={() => remove(entry.fen)} size="sm" />
+                </div>
+                <div className={styles.repCardMeta}>
                   {entry.complexity && (
                     <span
-                      className={`complexity-badge complexity-${entry.complexity.toLowerCase()}`}
+                      className={`complexity-pill complexity-${entry.complexity.toLowerCase()}`}
                     >
-                      {entry.complexity.charAt(0).toUpperCase() +
-                        entry.complexity.slice(1).toLowerCase()}
+                      {entry.complexity}
                     </span>
                   )}
+                  {entry.eco && <span className="eco-pill">{entry.eco}</span>}
                 </div>
-                <StarButton filled onClick={() => remove(entry.fen)} size="sm" />
+                <span className={styles.repCardMoves}>{getFirstMovesDisplay(entry.moves)}</span>
               </div>
-              <h3 className={styles.repCardName}>{entry.name}</h3>
-              <span className={styles.repCardMoves}>{entry.moves}</span>
             </button>
           ))}
         </div>

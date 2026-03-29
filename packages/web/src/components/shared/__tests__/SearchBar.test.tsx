@@ -51,13 +51,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should render surprise me button for landing variant', () => {
       render(<SearchBar {...defaultProps} variant="landing" />);
 
-      expect(screen.getByText('Surprise me!')).toBeInTheDocument();
+      expect(screen.getByText('Surprise me')).toBeInTheDocument();
     });
 
     it('should not render surprise me button for header variant', () => {
       render(<SearchBar {...defaultProps} variant="header" />);
 
-      expect(screen.queryByText('Surprise me!')).not.toBeInTheDocument();
+      expect(screen.queryByText('Surprise me')).not.toBeInTheDocument();
     });
 
     it('should show loading state when loading prop is true', () => {
@@ -400,7 +400,7 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       const user = userEvent.setup();
       render(<SearchBar {...defaultProps} variant="landing" />);
 
-      const surpriseButton = screen.getByText('Surprise me!');
+      const surpriseButton = screen.getByText('Surprise me');
       await user.click(surpriseButton);
 
       // Should call onSelect with a random opening

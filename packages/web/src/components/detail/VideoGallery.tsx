@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Video } from '../../../../shared/src/types/video.js';
+import styles from './VideoGallery.module.css';
 
 // Constants
 const VIDEO_DISPLAY_LIMITS = {
@@ -12,9 +13,12 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   month: 'short',
 } as const;
 
+const INITIAL_DISPLAY_COUNT = 4;
+
 // Types
 interface VideoGalleryProps {
   videos: Video[];
+  hideTitle?: boolean;
 }
 
 // Utility functions
@@ -71,24 +75,24 @@ interface VideoCardProps {
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({ video }) => (
-  <div className="video-card">
-    <a href={video.url} target="_blank" rel="noopener noreferrer" className="video-link">
-      <div className="video-thumbnail-container">
+  <div className={styles.videoCard}>
+    <a href={video.url} target="_blank" rel="noopener noreferrer" className={styles.videoLink}>
+      <div className={styles.thumbnailContainer}>
         <img
           src={getHighQualityThumbnail(video.thumbnail)}
           alt={video.title}
-          className="video-thumbnail"
+          className={styles.thumbnail}
           loading="lazy"
           onError={handleThumbnailError}
         />
-        <div className="video-duration">{formatDuration(video.duration)}</div>
+        <div className={styles.duration}>{formatDuration(video.duration)}</div>
       </div>
 
-      <div className="video-info">
-        <h4 className="video-title" title={video.title}>
+      <div className={styles.info}>
+        <h4 className={styles.title} title={video.title}>
           {video.title}
         </h4>
-        <p className="video-channel">{video.channel}</p>
+        <p className={styles.channel}>{video.channel}</p>
         <VideoMetadata video={video} />
       </div>
     </a>
@@ -103,12 +107,12 @@ const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
   const formattedDate = formatDate(video.published);
 
   return (
-    <div className="video-meta">
-      <span className="video-views">{formatViews(video.views)}</span>
+    <div className={styles.meta}>
+      <span>{formatViews(video.views)}</span>
       {formattedDate && (
         <>
-          <span className="video-meta-separator">•</span>
-          <span className="video-date">{formattedDate}</span>
+          <span className={styles.metaSeparator}>•</span>
+          <span>{formattedDate}</span>
         </>
       )}
     </div>
@@ -116,20 +120,32 @@ const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
 };
 
 // Main Component
-const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
+const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, hideTitle = false }) => {
+  const [showAll, setShowAll] = useState(false);
+
   if (!videos || videos.length === 0) {
-    return null; // Don't render anything if no videos
+    return null;
   }
 
-  return (
-    <div className="video-gallery">
-      <h3 className="video-gallery-title">Video Lessons</h3>
+  const hasMore = videos.length > INITIAL_DISPLAY_COUNT;
+  const displayedVideos = showAll ? videos : videos.slice(0, INITIAL_DISPLAY_COUNT);
+  const remainingCount = videos.length - INITIAL_DISPLAY_COUNT;
 
-      <div className="video-carousel">
-        {videos.map((video) => (
+  return (
+    <div className={styles.gallery}>
+      {!hideTitle && <h3>Video Lessons</h3>}
+
+      <div className={styles.videoList}>
+        {displayedVideos.map((video) => (
           <VideoCard key={video.id} video={video} />
         ))}
       </div>
+
+      {hasMore && !showAll && (
+        <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
+          Show {remainingCount} more ▾
+        </button>
+      )}
     </div>
   );
 };

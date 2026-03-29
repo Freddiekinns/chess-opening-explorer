@@ -1,0 +1,49 @@
+/* Hidden above mobile breakpoint */
+.bottomTabBar {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .bottomTabBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface-elevated);
+    border-top: 1px solid var(--border-subtle);
+    z-index: 100;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    flex: 1;
+    height: 100%;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-size: var(--text-2xs);
+    font-weight: var(--font-weight-medium);
+    transition:
+      color 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .tab:hover {
+    color: var(--color-text-primary);
+  }
+
+  .tabActive {
+    color: var(--color-brand-orange);
+  }
+
+  .tabLabel {
+    line-height: 1;
+  }
+}

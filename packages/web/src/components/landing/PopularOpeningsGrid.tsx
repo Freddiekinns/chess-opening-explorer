@@ -278,8 +278,10 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>Browse Chess Openings</h2>
-        <p className="section-subtitle">Filter by skill level and explore openings by type</p>
+        <h2>Popular openings</h2>
+        <p className="section-subtitle">
+          The most popular openings for every style of play, from classic variations to hypermodern
+        </p>
       </div>
 
       <div className="filters-container">
@@ -310,8 +312,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           <OpeningCard
             key={opening.fen || `fallback-${opening.eco}-${opening.name}-${index}`}
             opening={opening}
-            showPopularity={true}
             showEco={true}
+            showBoard={true}
             onClick={onOpeningSelect}
             className="opening-grid-item"
           />
@@ -321,7 +323,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       {filteredOpenings.length > displayLimit && (
         <div className="load-more-section">
           <button onClick={() => setDisplayLimit((prev) => prev + 6)} className="load-more-btn">
-            Load More Openings ({filteredOpenings.length - displayLimit} remaining)
+            Load more ({filteredOpenings.length - displayLimit} remaining)
           </button>
         </div>
       )}

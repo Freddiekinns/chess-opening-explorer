@@ -18,9 +18,13 @@ const fs = require('fs');
 describe('VideoAccessService', () => {
   let service;
   let mockVideoDir;
+  let consoleWarnSpy;
+  let consoleLogSpy;
 
   beforeEach(() => {
     jest.clearAllMocks();
+    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     mockVideoDir = '/mock/video/dir';
     service = new VideoAccessService(mockVideoDir);
 
@@ -28,6 +32,11 @@ describe('VideoAccessService', () => {
     fs.existsSync.mockReturnValue(false);
 
     service.clearCache();
+  });
+
+  afterEach(() => {
+    consoleWarnSpy.mockRestore();
+    consoleLogSpy.mockRestore();
   });
 
   describe('sanitizeFEN', () => {

@@ -74,7 +74,7 @@ graph TD
 ### Frontend
 
 - **Framework**: React 19 + TypeScript, Vite
-- **Styling**: Single CSS file
+- **Styling**: CSS Modules + design tokens ("Warm Editorial Dark" system)
 - **Deployment**: Vercel
 - **Data**: Static JSON files (pre-generated)
 

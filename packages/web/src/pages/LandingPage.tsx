@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LandingHeader } from '../components/layout/LandingHeader';
 import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
-import { FeedbackSection } from '../components/shared/FeedbackSection';
 import { PGNInputModal } from '../components/shared/PGNInputModal';
 
 interface Opening {
@@ -159,19 +157,19 @@ const LandingPage: React.FC = () => {
         name="twitter:description"
         content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools."
       />
-      <LandingHeader />
-
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Opening Book</h1>
+          <h1 className="hero-title">
+            Opening <span className="hero-title-accent">Book</span>
+          </h1>
           <p className="hero-subtitle">Discover, explore and learn chess openings.</p>
 
           <div className="hero-search-wrapper">
             <SearchBar
               variant="landing"
               onSelect={handleOpeningSelect}
-              placeholder="Try: 'aggressive openings' or 'popular responses to d4'"
+              placeholder="Search variations, ECO codes, or systems..."
               disabled={loading}
               loading={loading}
               openingsData={openingsData}
@@ -180,7 +178,7 @@ const LandingPage: React.FC = () => {
             />
             <div className="pgn-search-link-wrapper">
               <button className="pgn-search-link" onClick={() => setIsPGNModalOpen(true)}>
-                Or search by PGN
+                Search by pasting PGN
               </button>
             </div>
           </div>
@@ -203,8 +201,6 @@ const LandingPage: React.FC = () => {
           </div>
         )}
       </div>
-
-      <FeedbackSection source="landing" />
 
       <PGNInputModal
         isOpen={isPGNModalOpen}

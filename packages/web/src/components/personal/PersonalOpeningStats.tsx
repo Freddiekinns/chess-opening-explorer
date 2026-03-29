@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src';
+import styles from './PersonalOpeningStats.module.css';
 
 type Platform = 'lichess' | 'chess.com';
 
@@ -12,6 +13,7 @@ type OpeningAgg = {
   fen: string;
   name: string;
   eco: string;
+  moves: string;
   games: number;
   win: number;
   draw: number;
@@ -89,13 +91,14 @@ function sortAgg(list: OpeningAgg[], mode: SortMode = 'frequency') {
 
 function upsertAgg(
   map: Map<string, OpeningAgg>,
-  opening: { fen: string; name: string; eco: string },
+  opening: { fen: string; name: string; eco: string; moves?: string },
   result: Result
 ) {
   const existing = map.get(opening.fen) || {
     fen: opening.fen,
     name: opening.name,
     eco: opening.eco,
+    moves: opening.moves || '',
     games: 0,
     win: 0,
     draw: 0,
@@ -112,30 +115,43 @@ function getWinRate(o: OpeningAgg): number {
   return Math.round((o.win / o.games) * 100);
 }
 
-function getWinRateFromCounts(wins: number, games: number): number {
-  if (games === 0) return 0;
-  return Math.round((wins / games) * 100);
-}
-
 function findBestOpening(list: OpeningAgg[]): OpeningAgg | null {
   if (list.length === 0) return null;
-  // Require at least 2 games for "best" to be meaningful
   const qualified = list.filter((o) => o.games >= 2);
-  if (qualified.length === 0) return list[0]; // fallback to most played
+  if (qualified.length === 0) return list[0];
   return qualified.reduce((best, curr) => (getWinRate(curr) > getWinRate(best) ? curr : best));
 }
 
 function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
   if (list.length === 0) return null;
-  // Require at least 2 games for "weakest" to be meaningful
   const qualified = list.filter((o) => o.games >= 2);
   if (qualified.length === 0) return null;
   return qualified.reduce((worst, curr) => (getWinRate(curr) < getWinRate(worst) ? curr : worst));
 }
 
+function getLossRate(o: OpeningAgg): number {
+  if (o.games === 0) return 0;
+  return Math.round((o.loss / o.games) * 100);
+}
+
+function getOpeningMovesDisplay(moves: string): string {
+  const trimmedMoves = moves.trim();
+  if (!trimmedMoves) return '';
+
+  const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
+  const moveMatches = trimmedMoves.match(movePattern) || [];
+
+  if (moveMatches.length > 0) {
+    return moveMatches.slice(0, 2).join(' ');
+  }
+
+  return trimmedMoves;
+}
+
 type SideTab = 'white' | 'black';
 
 const FORM_STATE_KEY = 'personal-openings:form-state';
+const LAST_ANALYSIS_SNAPSHOT_KEY = 'personal-openings:last-analysis-snapshot';
 
 function readSavedFormState(): {
   username?: string;
@@ -151,6 +167,186 @@ function readSavedFormState(): {
   }
 }
 
+const sortLabels: Record<SortMode, string> = {
+  frequency: 'Most played',
+  best: 'Highest win rate',
+  worst: 'Lowest win rate',
+};
+
+/* ==============================
+   SVG Icons
+   ============================== */
+const UserIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+  >
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
+const GearIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+  </svg>
+);
+
+/* ==============================
+   OPENING NAME SPLIT (family : variation)
+   ============================== */
+const OpeningNameSplit: React.FC<{ name: string; className?: string }> = ({ name, className }) => {
+  const colonIdx = name.indexOf(':');
+  if (colonIdx === -1) return <span className={className}>{name}</span>;
+  return (
+    <span className={className}>
+      <span className={styles.nameFamily}>{name.slice(0, colonIdx)}</span>
+      <span className={styles.nameColon}>:</span>
+      <span className={styles.nameVariation}>{name.slice(colonIdx + 1).trimStart()}</span>
+    </span>
+  );
+};
+
+/* ==============================
+   OPENING ROW COMPONENT
+   ============================== */
+/* ==============================
+   DISTRIBUTION BAR COMPONENT
+   ============================== */
+const DistributionBar: React.FC<{
+  win: number;
+  draw: number;
+  loss: number;
+  games: number;
+}> = ({ win, draw, loss, games }) => {
+  if (games === 0) return null;
+  const wPct = (win / games) * 100;
+  const dPct = (draw / games) * 100;
+  const lPct = (loss / games) * 100;
+
+  return (
+    <div className={styles.distBar}>
+      <div className={styles.distSegments}>
+        {wPct > 0 && (
+          <div className={`${styles.distSegment} ${styles.distWin}`} style={{ width: `${wPct}%` }}>
+            {wPct >= 15 && <span className={styles.distCount}>{win}</span>}
+          </div>
+        )}
+        {dPct > 0 && (
+          <div className={`${styles.distSegment} ${styles.distDraw}`} style={{ width: `${dPct}%` }}>
+            {dPct >= 15 && <span className={styles.distCount}>{draw}</span>}
+          </div>
+        )}
+        {lPct > 0 && (
+          <div className={`${styles.distSegment} ${styles.distLoss}`} style={{ width: `${lPct}%` }}>
+            {lPct >= 15 && <span className={styles.distCount}>{loss}</span>}
+          </div>
+        )}
+      </div>
+      <div className={styles.distPcts}>
+        <span className={styles.distPctWin}>{Math.round(wPct)}%</span>
+        <span className={styles.distPctDraw}>{Math.round(dPct)}%</span>
+        <span className={styles.distPctLoss}>{Math.round(lPct)}%</span>
+      </div>
+    </div>
+  );
+};
+
+const OpeningRow: React.FC<{
+  opening: OpeningAgg;
+  platform: Platform;
+  username: string;
+  index: number;
+}> = ({ opening, platform, username, index }) => {
+  const delay = Math.min(index * 30, 300);
+  const wPct = opening.games > 0 ? (opening.win / opening.games) * 100 : 0;
+  const dPct = opening.games > 0 ? (opening.draw / opening.games) * 100 : 0;
+  const lPct = opening.games > 0 ? (opening.loss / opening.games) * 100 : 0;
+  const openingMoves = getOpeningMovesDisplay(opening.moves);
+
+  return (
+    <Link
+      className={styles.openingRow}
+      to={`/opening/${encodeURIComponent(opening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className={styles.openingRowLeft}>
+        <OpeningNameSplit name={opening.name} className={styles.openingName} />
+        {openingMoves && <span className={styles.openingMoves}>{openingMoves}</span>}
+      </div>
+
+      {/* Desktop: inline GP + bar */}
+      <div className={styles.openingRowRight}>
+        <span className={styles.gamesCount}>{opening.games}</span>
+        <DistributionBar
+          win={opening.win}
+          draw={opening.draw}
+          loss={opening.loss}
+          games={opening.games}
+        />
+      </div>
+
+      {/* Mobile: stat counters + accent bar */}
+      <div className={styles.mobileStats}>
+        <div className={styles.statCounters}>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotWin} />
+            <span className={styles.statNum}>{opening.win}</span>
+            <span className={styles.statLabel}>W</span>
+          </span>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotDraw} />
+            <span className={styles.statNum}>{opening.draw}</span>
+            <span className={styles.statLabel}>D</span>
+          </span>
+          <span className={styles.statChip}>
+            <span className={styles.statDot + ' ' + styles.statDotLoss} />
+            <span className={styles.statNum}>{opening.loss}</span>
+            <span className={styles.statLabel}>L</span>
+          </span>
+          <span className={styles.statGames}>{opening.games} games</span>
+        </div>
+        {opening.games > 0 && (
+          <div className={styles.accentBar}>
+            {wPct > 0 && <div className={styles.accentWin} style={{ width: `${wPct}%` }} />}
+            {dPct > 0 && <div className={styles.accentDraw} style={{ width: `${dPct}%` }} />}
+            {lPct > 0 && <div className={styles.accentLoss} style={{ width: `${lPct}%` }} />}
+          </div>
+        )}
+      </div>
+    </Link>
+  );
+};
+
+/* ==============================
+   SORT BAR COMPONENT
+   ============================== */
+const SortBar: React.FC<{
+  sortMode: SortMode;
+  onSort: (mode: SortMode) => void;
+}> = ({ sortMode, onSort }) => (
+  <div className={styles.sortPills}>
+    {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
+      <button
+        key={mode}
+        type="button"
+        className={`${styles.sortPill} ${sortMode === mode ? styles.sortPillActive : ''}`}
+        onClick={() => onSort(mode)}
+      >
+        {sortLabels[mode]}
+      </button>
+    ))}
+  </div>
+);
+
+/* ==============================
+   MAIN COMPONENT
+   ============================== */
 export const PersonalOpeningStats: React.FC<{
   openingsData: OpeningForLookup[];
   prefillUsername?: string;
@@ -171,15 +367,21 @@ export const PersonalOpeningStats: React.FC<{
   const [error, setError] = useState<string | null>(null);
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
 
-  const [sortMode, setSortMode] = useState<SortMode>('frequency');
-
-  // Mobile-specific UI state
-  const [controlsCollapsed, setControlsCollapsed] = useState(false);
+  const [whiteSortMode, setWhiteSortMode] = useState<SortMode>('frequency');
+  const [blackSortMode, setBlackSortMode] = useState<SortMode>('frequency');
   const [activeTab, setActiveTab] = useState<SideTab>(
     () => readSavedFormState()?.activeTab ?? 'white'
   );
+  const [showSettings, setShowSettings] = useState(false);
+  const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+  const [showAllMobile, setShowAllMobile] = useState(false);
+
+  // Displayed state: only updates when analysis completes (not while typing)
+  const [displayedUsername, setDisplayedUsername] = useState('');
+  const [displayedPlatform, setDisplayedPlatform] = useState<Platform>('chess.com');
 
   const abortRef = useRef<AbortController | null>(null);
+  const settingsRef = useRef<HTMLDivElement>(null);
 
   const openingsMap = useMemo(() => buildOpeningsMap(openingsData), [openingsData]);
 
@@ -207,6 +409,18 @@ export const PersonalOpeningStats: React.FC<{
     }
   }, [username, platform, limit, activeTab]);
 
+  // Close settings popover on outside click
+  useEffect(() => {
+    if (!showSettings) return;
+    const handleClick = (e: MouseEvent) => {
+      if (settingsRef.current && !settingsRef.current.contains(e.target as Node)) {
+        setShowSettings(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [showSettings]);
+
   const loadFromCache = () => {
     try {
       const raw = sessionStorage.getItem(cacheKey);
@@ -222,6 +436,14 @@ export const PersonalOpeningStats: React.FC<{
   const saveToCache = (data: DashboardData) => {
     try {
       sessionStorage.setItem(cacheKey, JSON.stringify({ dashboard: data, cachedAt: Date.now() }));
+      sessionStorage.setItem(
+        LAST_ANALYSIS_SNAPSHOT_KEY,
+        JSON.stringify({
+          cacheKey,
+          displayedUsername: normalizeUsername(username),
+          displayedPlatform: platform,
+        })
+      );
     } catch {
       // ignore storage errors
     }
@@ -230,9 +452,42 @@ export const PersonalOpeningStats: React.FC<{
   useEffect(() => {
     const saved = readSavedFormState();
     if (!saved) return;
-    const cached = loadFromCache();
+
+    // Try derived cache key first; fall back to last-analysis snapshot so the
+    // player name is restored even if form fields (e.g. limit) were changed
+    // after the previous analysis.
+    let cached = loadFromCache();
+    let restoredUsername = normalizeUsername(saved.username || username);
+    let restoredPlatform: Platform = (saved.platform as Platform) || platform;
+
+    if (!cached) {
+      try {
+        const rawSnapshot = sessionStorage.getItem(LAST_ANALYSIS_SNAPSHOT_KEY);
+        if (rawSnapshot) {
+          const snapshot = JSON.parse(rawSnapshot) as {
+            cacheKey: string;
+            displayedUsername: string;
+            displayedPlatform: Platform;
+          };
+          const rawCache = sessionStorage.getItem(snapshot.cacheKey);
+          if (rawCache) {
+            const parsed = JSON.parse(rawCache) as { dashboard: DashboardData; cachedAt: number };
+            if (parsed?.dashboard) {
+              cached = parsed.dashboard;
+              restoredUsername = snapshot.displayedUsername;
+              restoredPlatform = snapshot.displayedPlatform;
+            }
+          }
+        }
+      } catch {
+        // ignore
+      }
+    }
+
     if (cached) {
       setDashboard(cached);
+      setDisplayedUsername(restoredUsername);
+      setDisplayedPlatform(restoredPlatform);
       setStep('done');
       setStepText('Loaded your saved results');
       setProgress(100);
@@ -254,12 +509,15 @@ export const PersonalOpeningStats: React.FC<{
     const cached = loadFromCache();
     if (cached) {
       setDashboard(cached);
+      setDisplayedUsername(normalizeUsername(username));
+      setDisplayedPlatform(platform);
       setError(null);
       setStep('done');
       setStepText('Loaded your saved results');
       setProgress(100);
       setProcessed(cached.totalGames);
       setTotal(cached.totalGames);
+      setShowSearchOverlay(false);
       return;
     }
 
@@ -341,14 +599,16 @@ export const PersonalOpeningStats: React.FC<{
         }
 
         classified += 1;
+        const matchedMoves = openingsMap.get(lookup.bestMatch.fen)?.moves || '';
+        const openingWithMoves = { ...lookup.bestMatch, moves: matchedMoves };
         if (side === 'white') {
-          upsertAgg(asWhite, lookup.bestMatch, result);
+          upsertAgg(asWhite, openingWithMoves, result);
           whiteGames += 1;
           if (result === 'win') whiteWin += 1;
           if (result === 'draw') whiteDraw += 1;
           if (result === 'loss') whiteLoss += 1;
         } else {
-          upsertAgg(asBlack, lookup.bestMatch, result);
+          upsertAgg(asBlack, openingWithMoves, result);
           blackGames += 1;
           if (result === 'win') blackWin += 1;
           if (result === 'draw') blackDraw += 1;
@@ -382,11 +642,14 @@ export const PersonalOpeningStats: React.FC<{
 
       saveToCache(data);
       setDashboard(data);
-      setSortMode('frequency');
+      setDisplayedUsername(normalizeUsername(username));
+      setDisplayedPlatform(platform);
+      setWhiteSortMode('frequency');
+      setBlackSortMode('frequency');
+      setShowSearchOverlay(false);
       setStep('done');
       setStepText('Analysis complete');
       setProgress(100);
-      setControlsCollapsed(true); // Collapse controls on mobile after analysis
     } catch (e) {
       const msg =
         e instanceof Error
@@ -414,79 +677,74 @@ export const PersonalOpeningStats: React.FC<{
     void handleAnalyse();
   };
 
-  const placeholderText = platform === 'lichess' ? 'e.g. DrNykterstein' : 'e.g. MagnusCarlsen';
+  const showHero = !dashboard && step !== 'done';
 
-  const platformLabel = platform === 'lichess' ? 'Lichess' : 'Chess.com';
-
-  return (
-    <section className="personal-section">
-      <div className="personal-card">
-        {/* Mobile collapsed summary bar - only shown when controls are collapsed */}
-        {dashboard && controlsCollapsed && (
+  const renderSearchForm = () => (
+    <>
+      <div className={styles.inputBar}>
+        <div className={styles.platformToggle}>
           <button
             type="button"
-            className="personal-controls-summary"
-            onClick={() => setControlsCollapsed(false)}
-            aria-expanded="false"
-            aria-controls="personal-controls-panel"
+            className={`${styles.platformBtn} ${platform === 'chess.com' ? styles.platformBtnActive : ''}`}
+            onClick={() => setPlatform('chess.com')}
+            disabled={isBusy}
           >
-            <span className="personal-controls-summary__text">
-              {normalizeUsername(username)} · {platformLabel} · {limit} games
-            </span>
-            <span className="personal-controls-summary__chevron" aria-hidden="true">
-              &#9660;
-            </span>
+            Chess.com
           </button>
-        )}
+          <button
+            type="button"
+            className={`${styles.platformBtn} ${platform === 'lichess' ? styles.platformBtnActive : ''}`}
+            onClick={() => setPlatform('lichess')}
+            disabled={isBusy}
+          >
+            Lichess
+          </button>
+        </div>
 
-        <div
-          className={`personal-controls ${controlsCollapsed && dashboard ? 'personal-controls--collapsed' : ''}`}
-        >
-          <div className="personal-controls__panel" id="personal-controls-panel">
-            <div className="personal-controls__row">
-              <label className="personal-field">
-                <span className="personal-field__label">Platform</span>
-                <select
-                  className="personal-field__input"
-                  value={platform}
-                  onChange={(e) => setPlatform(e.target.value as Platform)}
-                  disabled={isBusy}
+        <div className={styles.inputFields}>
+          <span className={styles.userIcon}>
+            <UserIcon />
+          </span>
+
+          <input
+            className={styles.usernameInput}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={handleEnterToAnalyse}
+            placeholder="Enter username..."
+            inputMode="text"
+            autoComplete="off"
+            disabled={isBusy}
+          />
+        </div>
+
+        <div className={styles.inputActions}>
+          {/* Gear / settings */}
+          <div ref={settingsRef} className={styles.settingsAnchor}>
+            <button
+              type="button"
+              className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
+              onClick={() => setShowSettings(!showSettings)}
+              aria-label="Settings"
+              title={`Analysing last ${limit} games`}
+            >
+              <GearIcon />
+            </button>
+            {showSettings && (
+              <div
+                className={styles.settingsPopover}
+                role="dialog"
+                aria-label="Games to analyse settings"
+              >
+                <div className={styles.settingsLabel}>Games to analyse</div>
+                <div
+                  className={styles.stepper}
+                  role="group"
+                  aria-label="Number of games to analyse"
                 >
-                  <option value="lichess">Lichess</option>
-                  <option value="chess.com">Chess.com</option>
-                </select>
-              </label>
-
-              <div className="personal-field personal-field--username">
-                <span className="personal-field__label">Username</span>
-                <div className="personal-username-group">
-                  <input
-                    className="personal-field__input"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    onKeyDown={handleEnterToAnalyse}
-                    placeholder={placeholderText}
-                    inputMode="text"
-                    autoComplete="off"
-                    disabled={isBusy}
-                  />
-                  <button
-                    className="personal-btn personal-btn--primary personal-btn--analyse"
-                    onClick={isBusy ? handleCancel : handleAnalyse}
-                    disabled={!isBusy && !canAnalyse}
-                  >
-                    {isBusy && <span className="personal-spinner" aria-hidden="true" />}
-                    <span>{isBusy ? 'Cancel' : 'Analyse'}</span>
-                  </button>
-                </div>
-              </div>
-
-              <label className="personal-field personal-field--small">
-                <span className="personal-field__label">Games</span>
-                <div className="personal-stepper" aria-label="Games to analyse">
                   <button
                     type="button"
-                    className="personal-stepper__btn"
+                    className={styles.stepperBtn}
                     onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
                     disabled={isBusy || limit <= 1}
                     aria-label="Decrease games"
@@ -495,11 +753,12 @@ export const PersonalOpeningStats: React.FC<{
                     -
                   </button>
                   <input
-                    className="personal-stepper__input"
+                    className={styles.stepperInput}
                     type="number"
                     min={1}
                     max={500}
                     step={1}
+                    aria-label="Games to analyse"
                     value={limit}
                     onChange={(e) => setLimitSafe(Number(e.target.value))}
                     onKeyDown={handleEnterToAnalyse}
@@ -507,7 +766,7 @@ export const PersonalOpeningStats: React.FC<{
                   />
                   <button
                     type="button"
-                    className="personal-stepper__btn"
+                    className={styles.stepperBtn}
                     onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
                     disabled={isBusy || limit >= 500}
                     aria-label="Increase games"
@@ -516,65 +775,49 @@ export const PersonalOpeningStats: React.FC<{
                     +
                   </button>
                 </div>
-              </label>
-            </div>
-
-            {!dashboard && (
-              <div className="personal-note">
-                Includes rated rapid, blitz, and classical games only (up to 500). Bullet is
-                excluded.
+                <p className={styles.settingsHint}>Choose between 1 and 500 recent rated games.</p>
               </div>
             )}
-
-            {/* Mobile: button to collapse controls after they've been expanded */}
-            {dashboard && !controlsCollapsed && (
-              <button
-                type="button"
-                className="personal-controls-collapse"
-                onClick={() => setControlsCollapsed(true)}
-              >
-                <span className="personal-controls-collapse__chevron" aria-hidden="true">
-                  &#9650;
-                </span>
-                <span>Hide controls</span>
-              </button>
-            )}
           </div>
+
+          <button
+            className={styles.analyseBtn}
+            onClick={isBusy ? handleCancel : handleAnalyse}
+            disabled={!isBusy && !canAnalyse}
+          >
+            {isBusy && <span className={styles.spinner} aria-hidden="true" />}
+            <span>{isBusy ? 'Cancel' : 'Analyse'}</span>
+          </button>
         </div>
+      </div>
 
-        {(step === 'fetching' || step === 'analysing') && (
-          <div className="personal-progress" aria-live="polite">
-            <div
-              className="personal-progress__bar"
-              role="progressbar"
-              aria-valuenow={progress}
-              aria-valuemin={0}
-              aria-valuemax={100}
-            >
-              <div className="personal-progress__barFill" style={{ width: `${progress}%` }} />
+      <p className={styles.inputNote}>
+        Includes rated rapid, blitz, and classical games only (up to {limit}). Bullet is excluded.
+      </p>
+    </>
+  );
+
+  return (
+    <div>
+      {/* ===== LANDING (hero + search, centred in viewport when no results) ===== */}
+      {!dashboard && (
+        <div className={`${styles.landing} ${showHero ? styles.landingCentered : ''}`}>
+          {showHero && (
+            <div className={styles.hero}>
+              <h1 className={styles.heroTitle}>Analyse Your Games</h1>
+              <p className={styles.heroSubtitle}>
+                Review your performance and improve your openings by connecting your chess account.
+              </p>
             </div>
-            <div className="personal-progress__meta">
-              <span>{stepText}</span>
-              {total > 0 && (
-                <span>
-                  {processed}/{total}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
+          )}
 
-        {step === 'error' && error && (
-          <div className="personal-error" role="alert">
-            {error}
-          </div>
-        )}
+          {renderSearchForm()}
 
-        {/* Empty state - shown before analysis */}
-        {step === 'idle' && !dashboard && (
-          <div className="personal-empty-state">
-            <div className="personal-empty-state__icon">
+          {/* Secondary idle prompt */}
+          {showHero && step === 'idle' && (
+            <div className={styles.idlePrompt}>
               <svg
+                className={styles.idlePromptIcon}
                 width="48"
                 height="48"
                 viewBox="0 0 24 24"
@@ -583,330 +826,478 @@ export const PersonalOpeningStats: React.FC<{
                 strokeWidth="1.5"
               >
                 <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
+                <path d="M21 21l-4.35-4.35" />
               </svg>
+              <h2 className={styles.idlePromptTitle}>Ready to analyse your openings?</h2>
+              <p className={styles.idlePromptText}>
+                Enter your username to explore a detailed breakdown of your performance by opening.
+              </p>
             </div>
-            <h3 className="personal-empty-state__title">Ready to analyse your openings?</h3>
-            <p className="personal-empty-state__text">
-              Enter your username to explore a detailed breakdown of your performance by opening.
-            </p>
+          )}
+        </div>
+      )}
+
+      {/* ===== SEARCH OVERLAY (when dashboard is showing) ===== */}
+      {showSearchOverlay && (
+        <div
+          className={styles.searchOverlay}
+          onClick={() => setShowSearchOverlay(false)}
+          onKeyDown={(e) => e.key === 'Escape' && setShowSearchOverlay(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Search for a player"
+        >
+          <div className={styles.searchOverlayContent} onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className={styles.searchOverlayClose}
+              onClick={() => setShowSearchOverlay(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
+            {renderSearchForm()}
+            {(step === 'fetching' || step === 'analysing') && (
+              <div className={styles.overlayProgress}>
+                <div className={styles.progressBar}>
+                  <div
+                    className={styles.progressFill}
+                    role="progressbar"
+                    aria-valuenow={progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+                <div className={styles.progressMeta}>
+                  <span>{stepText}</span>
+                  {total > 0 && (
+                    <span>
+                      {processed}/{total}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
-        )}
+        </div>
+      )}
 
-        {dashboard &&
-          (() => {
-            const whiteWinRate = getWinRateFromCounts(dashboard.whiteWin, dashboard.whiteGames);
-            const blackWinRate = getWinRateFromCounts(dashboard.blackWin, dashboard.blackGames);
-            const allOpenings = [...dashboard.asWhite, ...dashboard.asBlack];
-            const bestOpening = findBestOpening(allOpenings);
-            const weakestOpening = findWeakestOpening(allOpenings);
+      {/* ===== PROGRESS ===== */}
+      {(step === 'fetching' || step === 'analysing') && (
+        <div className={styles.progress} aria-live="polite">
+          <div className={styles.progressBar}>
+            <div
+              className={styles.progressFill}
+              role="progressbar"
+              aria-valuenow={progress}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className={styles.progressMeta}>
+            <span>{stepText}</span>
+            {total > 0 && (
+              <span>
+                {processed}/{total}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
 
-            const sortedWhite = sortAgg(dashboard.asWhite, sortMode);
-            const sortedBlack = sortAgg(dashboard.asBlack, sortMode);
+      {/* ===== ERROR ===== */}
+      {step === 'error' && error && (
+        <div className={styles.error} role="alert">
+          {error}
+        </div>
+      )}
 
-            // Get data for the active tab (mobile)
-            const activeData =
-              activeTab === 'white'
-                ? {
-                    openings: sortedWhite,
-                    games: dashboard.whiteGames,
-                    win: dashboard.whiteWin,
-                    draw: dashboard.whiteDraw,
-                    loss: dashboard.whiteLoss,
-                  }
-                : {
-                    openings: sortedBlack,
-                    games: dashboard.blackGames,
-                    win: dashboard.blackWin,
-                    draw: dashboard.blackDraw,
-                    loss: dashboard.blackLoss,
-                  };
+      {/* ===== DASHBOARD ===== */}
+      {dashboard &&
+        (() => {
+          const allOpenings = [...dashboard.asWhite, ...dashboard.asBlack];
+          const bestOpening = findBestOpening(allOpenings);
+          const weakestOpening = findWeakestOpening(allOpenings);
+          const showWeakest = weakestOpening && bestOpening?.fen !== weakestOpening?.fen;
 
-            const sortLabels: Record<SortMode, string> = {
-              frequency: 'Most played',
-              best: 'Best first',
-              worst: 'Worst first',
-            };
+          const sortedWhite = sortAgg(dashboard.asWhite, whiteSortMode);
+          const sortedBlack = sortAgg(dashboard.asBlack, blackSortMode);
 
-            return (
-              <div className="personal-dashboard">
-                <div className="personal-insights">
-                  {/* Mobile: Inline compact win rates */}
-                  <div className="personal-insights__rates-inline">
-                    <span className="personal-rates-inline__item">
-                      <span className="personal-rates-inline__icon" aria-hidden="true">
-                        &#9812;
-                      </span>
-                      <span className="personal-rates-inline__value">{whiteWinRate}%</span>
-                    </span>
-                    <span className="personal-rates-inline__sep" aria-hidden="true">
-                      ·
-                    </span>
-                    <span className="personal-rates-inline__item">
-                      <span className="personal-rates-inline__icon" aria-hidden="true">
-                        &#9818;
-                      </span>
-                      <span className="personal-rates-inline__value">{blackWinRate}%</span>
-                    </span>
+          const activeSortMode = activeTab === 'white' ? whiteSortMode : blackSortMode;
+          const setActiveSortMode = activeTab === 'white' ? setWhiteSortMode : setBlackSortMode;
+          const activeData =
+            activeTab === 'white'
+              ? { openings: sortedWhite, games: dashboard.whiteGames }
+              : { openings: sortedBlack, games: dashboard.blackGames };
+
+          const displayedPlatformLabel = displayedPlatform === 'lichess' ? 'Lichess' : 'Chess.com';
+
+          const openingLink = (o: OpeningAgg) =>
+            `/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`;
+
+          const bestOpeningMoves = bestOpening ? getOpeningMovesDisplay(bestOpening.moves) : '';
+          const weakestOpeningMoves = weakestOpening
+            ? getOpeningMovesDisplay(weakestOpening.moves)
+            : '';
+
+          const totalWins = dashboard.whiteWin + dashboard.blackWin;
+          const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
+          const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
+
+          return (
+            <>
+              {/* ===== MOBILE DASHBOARD ===== */}
+              <div className={styles.mobileDashboard}>
+                {/* Centered hero */}
+                <div className={styles.mobileHero}>
+                  <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
+                  <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
+                </div>
+
+                {/* 3 inline stat cards */}
+                <div className={styles.tripleStats}>
+                  <div className={`${styles.triStat} ${styles.triStatWin}`}>
+                    <span className={styles.triStatLabel}>Wins</span>
+                    <span className={styles.triStatValue}>{totalWins}</span>
                   </div>
-
-                  {/* Desktop: Full win rate cards */}
-                  <div className="personal-insights__row personal-insights__row--rates">
-                    <div className="personal-insight personal-insight--white">
-                      <span className="personal-insight__icon" aria-hidden="true">
-                        &#9812;
-                      </span>
-                      <span className="personal-insight__rate">{whiteWinRate}%</span>
-                      <span className="personal-insight__label">Win rate with White</span>
-                      <span className="personal-insight__games">
-                        ({dashboard.whiteGames} games)
-                      </span>
-                    </div>
-                    <div className="personal-insight personal-insight--black">
-                      <span className="personal-insight__icon" aria-hidden="true">
-                        &#9818;
-                      </span>
-                      <span className="personal-insight__rate">{blackWinRate}%</span>
-                      <span className="personal-insight__label">Win rate with Black</span>
-                      <span className="personal-insight__games">
-                        ({dashboard.blackGames} games)
-                      </span>
-                    </div>
+                  <div className={styles.triStat}>
+                    <span className={styles.triStatLabel}>Draws</span>
+                    <span className={styles.triStatValue}>{totalDraws}</span>
                   </div>
-                  {(bestOpening || weakestOpening) && (
-                    <div className="personal-insights__row personal-insights__row--openings">
-                      {bestOpening && (
-                        <Link
-                          className="personal-insight personal-insight--best"
-                          to={`/opening/${encodeURIComponent(bestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                        >
-                          <span className="personal-insight__tag">Top-performing opening</span>
-                          <span className="personal-insight__opening">{bestOpening.name}</span>
-                          <span className="personal-insight__detail">
-                            {getWinRate(bestOpening)}% win rate ({bestOpening.games} games)
-                          </span>
-                        </Link>
-                      )}
-                      {weakestOpening && bestOpening?.fen !== weakestOpening?.fen && (
-                        <Link
-                          className="personal-insight personal-insight--weak"
-                          to={`/opening/${encodeURIComponent(weakestOpening.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                        >
-                          <span className="personal-insight__tag">Needs work</span>
-                          <span className="personal-insight__opening">{weakestOpening.name}</span>
-                          <span className="personal-insight__detail">
-                            {getWinRate(weakestOpening)}% win rate ({weakestOpening.games} games)
-                          </span>
-                        </Link>
-                      )}
-                    </div>
-                  )}
-                  <div className="personal-insights__confirmation">
-                    Analysed {dashboard.totalGames} games ({dashboard.classifiedGames} matched known
-                    openings)
+                  <div className={styles.triStat}>
+                    <span className={styles.triStatLabel}>Losses</span>
+                    <span className={styles.triStatValue}>{totalLosses}</span>
                   </div>
                 </div>
 
-                <div className="personal-sort-bar" role="group" aria-label="Sort openings">
-                  <div className="personal-sort-bar__pills">
-                    {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
-                      <button
-                        key={mode}
-                        type="button"
-                        className={`personal-sort-pill${sortMode === mode ? ' personal-sort-pill--active' : ''}`}
-                        onClick={() => setSortMode(mode)}
-                      >
-                        {sortLabels[mode]}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                {/* Highlight cards */}
+                {bestOpening && (
+                  <Link className={styles.highlightCard} to={openingLink(bestOpening)}>
+                    <span className={`${styles.highlightPill} ${styles.highlightPillWin}`}>
+                      Top-performing
+                    </span>
+                    <OpeningNameSplit name={bestOpening.name} className={styles.highlightName} />
+                    {bestOpeningMoves && (
+                      <span className={styles.highlightMoves}>{bestOpeningMoves}</span>
+                    )}
+                    <span className={styles.highlightMeta}>
+                      {getWinRate(bestOpening)}% win rate &middot; {bestOpening.games} games
+                    </span>
+                  </Link>
+                )}
+                {showWeakest && weakestOpening && (
+                  <Link className={styles.highlightCard} to={openingLink(weakestOpening)}>
+                    <span className={`${styles.highlightPill} ${styles.highlightPillLoss}`}>
+                      Needs work
+                    </span>
+                    <OpeningNameSplit name={weakestOpening.name} className={styles.highlightName} />
+                    {weakestOpeningMoves && (
+                      <span className={styles.highlightMoves}>{weakestOpeningMoves}</span>
+                    )}
+                    <span className={styles.highlightMeta}>
+                      {getLossRate(weakestOpening)}% loss rate &middot; {weakestOpening.games} games
+                    </span>
+                  </Link>
+                )}
 
-                {/* Mobile: Tab bar for White/Black */}
-                <div className="personal-tabs" role="tablist" aria-label="View openings by side">
-                  <button
-                    type="button"
-                    role="tab"
-                    className={`personal-tabs__btn ${activeTab === 'white' ? 'personal-tabs__btn--active' : ''}`}
-                    onClick={() => setActiveTab('white')}
-                    aria-selected={activeTab === 'white'}
-                    aria-controls="personal-tabpanel-white"
-                  >
-                    <span aria-hidden="true">&#9812;</span> As White ({dashboard.whiteGames})
-                  </button>
-                  <button
-                    type="button"
-                    role="tab"
-                    className={`personal-tabs__btn ${activeTab === 'black' ? 'personal-tabs__btn--active' : ''}`}
-                    onClick={() => setActiveTab('black')}
-                    aria-selected={activeTab === 'black'}
-                    aria-controls="personal-tabpanel-black"
-                  >
-                    <span aria-hidden="true">&#9818;</span> As Black ({dashboard.blackGames})
-                  </button>
-                </div>
-
-                {/* Mobile: Tab panel content */}
+                {/* Pill toggle */}
                 <div
-                  className="personal-tabpanel"
-                  role="tabpanel"
-                  id={`personal-tabpanel-${activeTab}`}
+                  className={styles.pillToggle}
+                  role="tablist"
+                  aria-label="View openings by side"
                 >
-                  <div className="personal-tabpanel__meta">
-                    W {activeData.win} · D {activeData.draw} · L {activeData.loss}
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`${styles.pillBtn} ${activeTab === 'white' ? styles.pillBtnActive : ''}`}
+                    onClick={() => {
+                      setActiveTab('white');
+                      setShowAllMobile(false);
+                    }}
+                    aria-selected={activeTab === 'white'}
+                  >
+                    As White
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    className={`${styles.pillBtn} ${activeTab === 'black' ? styles.pillBtnActive : ''}`}
+                    onClick={() => {
+                      setActiveTab('black');
+                      setShowAllMobile(false);
+                    }}
+                    aria-selected={activeTab === 'black'}
+                  >
+                    As Black
+                  </button>
+                </div>
+
+                {/* Section title + sort filters */}
+                <div className={styles.mobileSectionHead}>
+                  <h3 className={styles.mobileSectionTitle}>
+                    Performance as {activeTab === 'white' ? 'White' : 'Black'}
+                  </h3>
+                  <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
+                </div>
+
+                {/* Opening cards */}
+                {activeData.openings.length === 0 ? (
+                  <div className={styles.emptyList}>No classified openings.</div>
+                ) : (
+                  <div className={styles.mobileOpeningList}>
+                    {(showAllMobile ? activeData.openings : activeData.openings.slice(0, 5)).map(
+                      (o, i) => {
+                        const wP = o.games > 0 ? Math.round((o.win / o.games) * 100) : 0;
+                        const dP = o.games > 0 ? Math.round((o.draw / o.games) * 100) : 0;
+                        const lP = o.games > 0 ? Math.round((o.loss / o.games) * 100) : 0;
+                        return (
+                          <Link
+                            key={o.fen}
+                            className={styles.mobileCard}
+                            to={openingLink(o)}
+                            style={{ animationDelay: `${Math.min(i * 30, 300)}ms` }}
+                          >
+                            <div className={styles.mobileCardHead}>
+                              <div className={styles.mobileCardNameCol}>
+                                <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
+                                {getOpeningMovesDisplay(o.moves) && (
+                                  <span className={styles.mobileCardMoves}>
+                                    {getOpeningMovesDisplay(o.moves)}
+                                  </span>
+                                )}
+                              </div>
+                              <span className={styles.mobileCardGames}>Games {o.games}</span>
+                            </div>
+                            <div className={styles.mobileCardBar}>
+                              {wP > 0 && (
+                                <div className={styles.mobileBarWin} style={{ width: `${wP}%` }} />
+                              )}
+                              {dP > 0 && (
+                                <div className={styles.mobileBarDraw} style={{ width: `${dP}%` }} />
+                              )}
+                              {lP > 0 && (
+                                <div className={styles.mobileBarLoss} style={{ width: `${lP}%` }} />
+                              )}
+                            </div>
+                            <div className={styles.mobileCardPcts}>
+                              <span className={styles.mobileCardPctWin}>{wP}% win</span>
+                              <span className={styles.mobileCardPctDraw}>{dP}% draw</span>
+                              <span className={styles.mobileCardPctLoss}>{lP}% loss</span>
+                            </div>
+                          </Link>
+                        );
+                      }
+                    )}
+                    {!showAllMobile && activeData.openings.length > 5 && (
+                      <button
+                        type="button"
+                        className={styles.showMoreBtn}
+                        onClick={() => setShowAllMobile(true)}
+                      >
+                        Show all {activeData.openings.length} openings
+                      </button>
+                    )}
                   </div>
-                  {activeData.openings.length === 0 ? (
-                    <div className="personal-empty">No classified openings.</div>
-                  ) : (
-                    <div className="personal-list">
-                      {activeData.openings.map((o) => (
-                        <Link
-                          key={o.fen}
-                          className="personal-row"
-                          to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                          style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
-                        >
-                          <div className="personal-row__main">
-                            <span className="eco-pill">{o.eco}</span>
-                            <span className="personal-row__name" title={o.name}>
-                              {o.name}
-                            </span>
-                          </div>
-                          <div className="personal-row__stats">
-                            <span className="personal-pill personal-pill--games">
-                              {o.games} games
-                            </span>
-                            <span className="personal-pill personal-pill--win">W {o.win}</span>
-                            <span className="personal-pill personal-pill--draw">D {o.draw}</span>
-                            <span className="personal-pill personal-pill--loss">L {o.loss}</span>
-                          </div>
-                          {/* Mobile: Compact stats */}
-                          <div className="personal-row__stats-compact">
-                            <span className="personal-pill personal-pill--compact">
-                              {o.games}g: {o.win}-{o.draw}-{o.loss}
-                            </span>
-                          </div>
-                        </Link>
-                      ))}
+                )}
+
+                {/* Bottom CTA */}
+                <button
+                  type="button"
+                  className={styles.bottomCta}
+                  onClick={() => setShowSearchOverlay(true)}
+                >
+                  Analyse another player
+                </button>
+              </div>
+
+              {/* ===== DESKTOP DASHBOARD (unchanged) ===== */}
+              <div className={styles.desktopDashboard}>
+                {/* Dashboard hero */}
+                <div className={styles.dashboardHero}>
+                  <div className={styles.dashboardHeroContent}>
+                    <h2 className={styles.dashboardPlayerName}>{displayedUsername}</h2>
+                    <div className={styles.playerMeta}>
+                      <span className={styles.platformBadge}>{displayedPlatformLabel}</span>
+                      <span className={styles.gamesAnalysed}>
+                        {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
+                      </span>
                     </div>
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.analyseAnotherBtn}
+                    onClick={() => setShowSearchOverlay(true)}
+                  >
+                    Analyse another player <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+
+                {/* Summary cards */}
+                <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
+                  <div className={styles.card}>
+                    <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
+                      Overall performance
+                    </div>
+                    <h3 className={styles.cardTitle}>Career Totals</h3>
+                    <div className={styles.statsRows}>
+                      <div className={styles.statsRow}>
+                        <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>
+                          Total wins
+                        </span>
+                        <span className={styles.statsValue}>{totalWins.toLocaleString()}</span>
+                      </div>
+                      <div className={styles.statsRow}>
+                        <span className={styles.statsLabel}>Total draws</span>
+                        <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
+                      </div>
+                      <div className={styles.statsRow}>
+                        <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>
+                          Total losses
+                        </span>
+                        <span className={styles.statsValue}>{totalLosses.toLocaleString()}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {bestOpening && (
+                    <Link
+                      className={`${styles.card} ${styles.cardClickable}`}
+                      to={openingLink(bestOpening)}
+                    >
+                      <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
+                        Top-performing opening
+                      </div>
+                      <OpeningNameSplit
+                        name={bestOpening.name}
+                        className={styles.cardOpeningName}
+                      />
+                      {bestOpeningMoves && (
+                        <div className={styles.cardMoves}>{bestOpeningMoves}</div>
+                      )}
+                      <div className={styles.cardContext}>{bestOpening.games} games</div>
+                      <div className={styles.winRateRow}>
+                        <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
+                          {getWinRate(bestOpening)}%
+                        </span>
+                        <span className={styles.winRateLabel}>win rate</span>
+                      </div>
+                      <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
+                        <div
+                          className={styles.winRateBarFillWin}
+                          style={{ width: `${getWinRate(bestOpening)}%` }}
+                        />
+                      </div>
+                    </Link>
+                  )}
+
+                  {showWeakest && weakestOpening && (
+                    <Link
+                      className={`${styles.card} ${styles.cardClickable}`}
+                      to={openingLink(weakestOpening)}
+                    >
+                      <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>
+                        Needs work
+                      </div>
+                      <OpeningNameSplit
+                        name={weakestOpening.name}
+                        className={styles.cardOpeningName}
+                      />
+                      {weakestOpeningMoves && (
+                        <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
+                      )}
+                      <div className={styles.cardContext}>{weakestOpening.games} games</div>
+                      <div className={styles.winRateRow}>
+                        <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>
+                          {getLossRate(weakestOpening)}%
+                        </span>
+                        <span className={styles.winRateLabel}>loss rate</span>
+                      </div>
+                      <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
+                        <div
+                          className={styles.winRateBarFillLoss}
+                          style={{ width: `${getLossRate(weakestOpening)}%` }}
+                        />
+                      </div>
+                    </Link>
                   )}
                 </div>
 
-                {/* Desktop: Side-by-side columns */}
-                <div className="personal-sides">
-                  <div className="personal-side personal-side--white">
-                    <div className="personal-side__header">
-                      <h3 className="personal-side__title">
-                        <span className="personal-side__icon" aria-hidden="true">
-                          &#9812;
-                        </span>
-                        As White
+                {/* Desktop: side-by-side opening lists */}
+                <div className={styles.openingSections}>
+                  <div className={styles.openingSection}>
+                    <div className={styles.sectionHeader}>
+                      <h3 className={styles.sectionTitle}>
+                        Performance as White
+                        <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
                       </h3>
-                      <div className="personal-side__meta" aria-label="White summary">
-                        <span className="personal-pill personal-pill--games">
-                          {dashboard.whiteGames} games
-                        </span>
-                        <span className="personal-pill personal-pill--win">
-                          W {dashboard.whiteWin}
-                        </span>
-                        <span className="personal-pill personal-pill--draw">
-                          D {dashboard.whiteDraw}
-                        </span>
-                        <span className="personal-pill personal-pill--loss">
-                          L {dashboard.whiteLoss}
-                        </span>
+                      <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
+                    </div>
+                    <div className={styles.colHeaders}>
+                      <span className={styles.colHeaderName}>Opening name</span>
+                      <div className={styles.colHeaderRight}>
+                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
                     {sortedWhite.length === 0 ? (
-                      <div className="personal-empty">No classified openings.</div>
+                      <div className={styles.emptyList}>No classified openings.</div>
                     ) : (
-                      <div className="personal-list">
-                        {sortedWhite.map((o) => (
-                          <Link
+                      <div className={styles.openingList}>
+                        {sortedWhite.map((o, i) => (
+                          <OpeningRow
                             key={o.fen}
-                            className="personal-row"
-                            to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                            style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
-                          >
-                            <div className="personal-row__main">
-                              <span className="eco-pill">{o.eco}</span>
-                              <span className="personal-row__name" title={o.name}>
-                                {o.name}
-                              </span>
-                            </div>
-                            <div className="personal-row__stats">
-                              <span className="personal-pill personal-pill--games">
-                                {o.games} games
-                              </span>
-                              <span className="personal-pill personal-pill--win">W {o.win}</span>
-                              <span className="personal-pill personal-pill--draw">D {o.draw}</span>
-                              <span className="personal-pill personal-pill--loss">L {o.loss}</span>
-                            </div>
-                          </Link>
+                            opening={o}
+                            platform={displayedPlatform}
+                            username={displayedUsername}
+                            index={i}
+                          />
                         ))}
                       </div>
                     )}
                   </div>
 
-                  <div className="personal-side personal-side--black">
-                    <div className="personal-side__header">
-                      <h3 className="personal-side__title">
-                        <span className="personal-side__icon" aria-hidden="true">
-                          &#9818;
-                        </span>
-                        As Black
+                  <div className={styles.openingSection}>
+                    <div className={styles.sectionHeader}>
+                      <h3 className={styles.sectionTitle}>
+                        Performance as Black
+                        <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
                       </h3>
-                      <div className="personal-side__meta" aria-label="Black summary">
-                        <span className="personal-pill personal-pill--games">
-                          {dashboard.blackGames} games
-                        </span>
-                        <span className="personal-pill personal-pill--win">
-                          W {dashboard.blackWin}
-                        </span>
-                        <span className="personal-pill personal-pill--draw">
-                          D {dashboard.blackDraw}
-                        </span>
-                        <span className="personal-pill personal-pill--loss">
-                          L {dashboard.blackLoss}
-                        </span>
+                      <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
+                    </div>
+                    <div className={styles.colHeaders}>
+                      <span className={styles.colHeaderName}>Opening name</span>
+                      <div className={styles.colHeaderRight}>
+                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
                     {sortedBlack.length === 0 ? (
-                      <div className="personal-empty">No classified openings.</div>
+                      <div className={styles.emptyList}>No classified openings.</div>
                     ) : (
-                      <div className="personal-list">
-                        {sortedBlack.map((o) => (
-                          <Link
+                      <div className={styles.openingList}>
+                        {sortedBlack.map((o, i) => (
+                          <OpeningRow
                             key={o.fen}
-                            className="personal-row"
-                            to={`/opening/${encodeURIComponent(o.fen)}?ref=personal&platform=${platform}&username=${encodeURIComponent(normalizeUsername(username))}`}
-                            style={{ '--win-rate': `${getWinRate(o)}%` } as React.CSSProperties}
-                          >
-                            <div className="personal-row__main">
-                              <span className="eco-pill">{o.eco}</span>
-                              <span className="personal-row__name" title={o.name}>
-                                {o.name}
-                              </span>
-                            </div>
-                            <div className="personal-row__stats">
-                              <span className="personal-pill personal-pill--games">
-                                {o.games} games
-                              </span>
-                              <span className="personal-pill personal-pill--win">W {o.win}</span>
-                              <span className="personal-pill personal-pill--draw">D {o.draw}</span>
-                              <span className="personal-pill personal-pill--loss">L {o.loss}</span>
-                            </div>
-                          </Link>
+                            opening={o}
+                            platform={displayedPlatform}
+                            username={displayedUsername}
+                            index={i}
+                          />
                         ))}
                       </div>
                     )}
                   </div>
                 </div>
               </div>
-            );
-          })()}
-      </div>
-    </section>
+
+              <div style={{ height: 'var(--space-8)' }} />
+            </>
+          );
+        })()}
+    </div>
   );
 };
 

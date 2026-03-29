@@ -1,10 +1,10 @@
 .container {
-  background-color: var(--color-bg-surface);
-  border-radius: var(--border-radius-large);
+  background-color: var(--surface-raised);
+  border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-6);
   margin-bottom: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
 }
 
 .headerRow {
@@ -22,7 +22,7 @@
   align-items: center;
   gap: var(--space-3);
   color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
+  font-size: var(--text-xs);
   letter-spacing: 0.2px;
   font-weight: var(--font-weight-medium);
 }
@@ -42,8 +42,8 @@
 .segmentedBar {
   display: flex;
   height: 26px;
-  background-color: var(--color-bg-alt);
-  border-radius: 16px;
+  background-color: var(--surface-overlay);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
 }
@@ -55,20 +55,20 @@
   align-items: center;
   justify-content: center;
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
-  color: #0b0b0b;
+  font-size: var(--text-sm);
+  color: var(--color-text-inverse);
 }
 
 .whiteSegment {
-  background-color: #4ECDC4;
+  background-color: var(--color-result-white);
 }
 
 .drawSegment {
-  background-color: #FFA726;
+  background-color: var(--color-result-draw);
 }
 
 .blackSegment {
-  background-color: #FF7043;
+  background-color: var(--color-result-black);
 }
 
 .legend {
@@ -76,7 +76,7 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--space-3);
-  font-size: var(--font-size-sm);
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
@@ -89,20 +89,20 @@
 .legendDot {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
 }
 
 .whiteDot {
-  background-color: #4ECDC4;
+  background-color: var(--color-result-white);
 }
 
 .drawDot {
-  background-color: #FFA726;
+  background-color: var(--color-result-draw);
 }
 
 .blackDot {
-  background-color: #FF7043;
+  background-color: var(--color-result-black);
 }
 
 .legendLabel {

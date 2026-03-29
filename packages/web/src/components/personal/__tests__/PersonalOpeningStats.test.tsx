@@ -17,7 +17,6 @@ const mockOpeningsData: OpeningForLookup[] = [
     name: "King's Pawn Game",
     eco: 'B00',
     moves: '1. e4',
-    src: 'test',
   },
 ];
 
@@ -39,7 +38,6 @@ const mockDashboardData = {
       name: "King's Pawn Game",
       eco: 'B00',
       moves: '1. e4',
-      src: 'test',
       games: 3,
       win: 2,
       draw: 1,

@@ -2,6 +2,13 @@
 
 ## What's Done (newest first)
 
+- **Primary Domain Migration** (2026-03-29): Switched repo SEO outputs from
+  mixed `openingbook.com` / `openingbook.vercel.app` values to
+  `https://openingbook.xyz`. Added shared site config, updated canonical/OG/
+  JSON-LD tags, updated `robots.txt` and committed sitemap URLs, added
+  middleware redirect from `openingbook.vercel.app` to `.xyz`, and refreshed
+  README live-site link. `npm run build:vercel` clean.
+
 - **Mobile Footer + Landing Card Polish** (2026-03-29): Fixed mobile footer
   overlap with bottom tab bar by unifying nav height spacing and adding footer
   clearance above the fixed tabs. Fixed popular opening card thumbnails on

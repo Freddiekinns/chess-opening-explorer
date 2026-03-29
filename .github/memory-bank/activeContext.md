@@ -1,21 +1,21 @@
 # Active Context
 
-**Date:** 2026-03-28
+**Date:** 2026-03-29
 
-## Current Task: Mobile Footer + Landing Card Polish
+## Current Task: Primary Domain Migration to openingbook.xyz
 
-**Status:** Complete. Mobile footer/nav spacing aligned and popular opening
-thumbnails now render square without dark bars. Build clean.
+**Status:** Complete. `.xyz` is now the repo's primary SEO/domain target; old
+`openingbook.vercel.app` host redirects in middleware. Production build clean.
 
 **Done (this session):**
 
-- Added shared `--bottom-tab-bar-height` token and used it for mobile content
-  padding plus bottom tab sizing
-- Added mobile footer bottom margin so footer content sits above the fixed tab
-  bar instead of being obscured by it
-- Fixed landing-page popular opening cards on mobile: board rail now keeps a
-  square aspect ratio and the chessboard fills the thumbnail wrapper cleanly
+- Added shared site config for primary and legacy hosts
+- Updated landing, analyse, opening-detail, middleware, and base HTML
+  canonical/OG/JSON-LD URLs to `https://openingbook.xyz`
+- Updated `robots.txt`, `sitemap.xml`, and README to the new primary domain
+- Added legacy-host redirect in middleware to preserve path and query strings
 
-## Previous Task: TASK016 Phase B — Design Token Migration & Polish
+## Previous Task: Mobile Footer + Landing Card Polish
 
-"Warm Editorial Dark" design system fully applied across all pages. Build clean.
+Mobile footer/nav spacing aligned and popular opening thumbnails now render
+square without dark bars. Build clean.

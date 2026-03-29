@@ -4,6 +4,7 @@ import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { PGNInputModal } from '../components/shared/PGNInputModal';
+import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
 
 interface Opening {
   fen: string;
@@ -33,6 +34,10 @@ const LandingPage: React.FC = () => {
   const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false);
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false);
   const navigate = useNavigate();
+  const canonicalUrl = buildSiteUrl('/');
+  const seoTitle = `${SITE_NAME} — Discover, explore and learn chess openings`;
+  const seoDescription =
+    'Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style.';
 
   // Apply body class for this page
   useEffect(() => {
@@ -131,32 +136,17 @@ const LandingPage: React.FC = () => {
 
   return (
     <main className="landing-page">
-      <title>Opening Book — Discover, explore and learn chess openings</title>
-      <meta
-        name="description"
-        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style."
-      />
-      <link rel="canonical" href="https://www.openingbook.com/" />
-      <meta
-        property="og:title"
-        content="Opening Book — Discover, explore and learn chess openings"
-      />
-      <meta
-        property="og:description"
-        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style."
-      />
-      <meta property="og:url" content="https://www.openingbook.com/" />
+      <title>{seoTitle}</title>
+      <meta name="description" content={seoDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={seoTitle} />
+      <meta property="og:description" content={seoDescription} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Opening Book" />
+      <meta property="og:site_name" content={SITE_NAME} />
       <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:title"
-        content="Opening Book — Discover, explore and learn chess openings"
-      />
-      <meta
-        name="twitter:description"
-        content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools."
-      />
+      <meta name="twitter:title" content={seoTitle} />
+      <meta name="twitter:description" content={seoDescription} />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">

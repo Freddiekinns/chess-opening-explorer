@@ -19,6 +19,7 @@ import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext } from '../hooks/useOpeningTree';
+import { buildSiteUrl, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -87,9 +88,6 @@ type CoursesResponse = {
   courses?: Study[];
   searchLinks?: SearchLinks | null;
 };
-
-const SITE_NAME = 'Opening Book';
-const SITE_URL = 'https://www.openingbook.com';
 
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
@@ -718,7 +716,7 @@ const OpeningDetailPage: React.FC = () => {
   const seoDescription = opening
     ? `Explore the ${opening.name}${opening.eco ? ` (${opening.eco})` : ''}.${opening.moves ? ` Played after ${opening.moves.split(/\s+/).slice(0, 7).join(' ')}.` : ''} Learn key ideas, watch videos, and practice this opening.`
     : 'Explore this chess opening. Learn key ideas, watch videos, and practice.';
-  const canonicalUrl = `${SITE_URL}/opening/${fen ? encodeURIComponent(fen) : ''}`;
+  const canonicalUrl = buildSiteUrl(`/opening/${fen ? encodeURIComponent(fen) : ''}`);
   const jsonLd = opening
     ? {
         '@context': 'https://schema.org',
@@ -726,7 +724,7 @@ const OpeningDetailPage: React.FC = () => {
         name: seoTitle,
         description: seoDescription,
         url: canonicalUrl,
-        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: PRIMARY_SITE_URL },
       }
     : null;
 

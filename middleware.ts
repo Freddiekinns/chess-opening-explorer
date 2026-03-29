@@ -1,5 +1,4 @@
-const SITE_NAME = 'Opening Book';
-const SITE_URL = 'https://www.openingbook.com';
+import { buildSiteUrl, LEGACY_VERCEL_HOST, SITE_NAME } from './packages/web/src/lib/siteConfig';
 
 type SeoEntry = [name: string, eco: string, moves: string];
 type SeoLookup = Record<string, SeoEntry>;
@@ -45,6 +44,7 @@ function buildMetaTags(options: { title: string; description: string; url: strin
     `<meta property="og:url" content="${escaped.url}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="${SITE_NAME}" />`,
+    `<meta property="og:image" content="${buildSiteUrl('/opening-book-icon.png')}" />`,
     `<meta name="twitter:card" content="summary" />`,
     `<meta name="twitter:title" content="${escaped.title}" />`,
     `<meta name="twitter:description" content="${escaped.description}" />`,
@@ -52,12 +52,19 @@ function buildMetaTags(options: { title: string; description: string; url: strin
 }
 
 export const config = {
-  matcher: ['/opening/:path*', '/analyse'],
+  matcher: ['/((?!api/|assets/|sounds/|seo-lookup\.json|opening-book-icon\.png).*)'],
 };
 
 export default async function middleware(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const pathname = url.pathname;
+
+  if (url.host === LEGACY_VERCEL_HOST) {
+    const redirectUrl = new URL(url.pathname, buildSiteUrl('/'));
+    redirectUrl.search = url.search;
+
+    return Response.redirect(redirectUrl.toString(), 308);
+  }
 
   // Only process opening and analyse routes
   if (!pathname.startsWith('/opening/') && pathname !== '/analyse') {
@@ -67,7 +74,7 @@ export default async function middleware(request: Request): Promise<Response> {
   let title = `${SITE_NAME} — Discover, explore and learn chess openings`;
   let description =
     'Explore 12,000+ chess openings with videos, studies, win rates, and practice tools.';
-  let canonicalUrl = `${SITE_URL}${pathname}`;
+  let canonicalUrl = buildSiteUrl(pathname);
 
   if (pathname === '/analyse') {
     title = `Analyse Your Games — ${SITE_NAME}`;
@@ -109,6 +116,9 @@ export default async function middleware(request: Request): Promise<Response> {
 
   // Remove existing meta description
   modifiedHtml = modifiedHtml.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '');
+
+  // Remove existing canonical tag from base HTML to avoid duplicates
+  modifiedHtml = modifiedHtml.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '');
 
   // Remove existing og/twitter tags from base HTML to avoid duplicates
   modifiedHtml = modifiedHtml.replace(/<meta\s+(?:property="og:|name="twitter:)[^>]*\/?>/g, '');

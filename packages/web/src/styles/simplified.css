@@ -63,14 +63,14 @@
      ----------------------------------------------------------------------- */
   --color-text-primary: #ece8e1;     /* Warm white — headings, body       */
   --color-text-secondary: #9a958e;   /* Warm mid-grey — labels, metadata  */
-  --color-text-muted: #6b665f;       /* Subdued — fine print, disabled    */
+  --color-text-muted: #8e887f;       /* Subdued — fine print, disabled    */
   --color-text-inverse: #100f0e;     /* Text on orange/light backgrounds  */
   --color-text-accent: #e85d04;      /* Only for interactive text (links) */
 
   /* Status text — for messages only, not data                            */
   --color-text-success: #5cb85c;
   --color-text-warning: #e8a838;
-  --color-text-error: #d9534f;
+  --color-text-error: #e56b67;
 
   /* -----------------------------------------------------------------------
      BORDERS — Subtle warm whites
@@ -117,12 +117,12 @@
 
   /* Text labels for result segments (needs good contrast on dark bg)     */
   --color-result-white-text: #e8e4de;
-  --color-result-draw-text: #8a857e;
+  --color-result-draw-text: #9b958e;
   --color-result-black-text: #d4a050;
 
   /* Bar segment text (needs contrast ON the segment colour)              */
   --color-result-on-white: #1a1917;     /* Dark text on cream bar         */
-  --color-result-on-draw: #c8c3bc;      /* Light text on grey bar         */
+  --color-result-on-draw: #dcd8d1;      /* Light text on grey bar         */
   --color-result-on-black: #1a1917;     /* Dark text on amber bar         */
 
   /* -----------------------------------------------------------------------
@@ -138,6 +138,9 @@
   --space-3: 0.75rem;     /* 12px                                        */
   --space-4: 1rem;        /* 16px — default component padding            */
   --space-5: 1.25rem;     /* 20px                                        */
+
+  /* Mobile shell */
+  --bottom-tab-bar-height: 60px;
   --space-6: 1.5rem;      /* 24px — section spacing                      */
   --space-8: 2rem;        /* 32px — large section gaps                   */
   --space-10: 2.5rem;     /* 40px                                        */
@@ -300,7 +303,7 @@ body {
 /* Bottom tabs padding on mobile */
 @media (max-width: 639px) {
   .app-content {
-    padding-bottom: 56px;
+    padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
   }
 }
 
@@ -800,7 +803,7 @@ body {
 }
 
 .chessboard-fen-utilities .fen-utilities-label {
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2);
@@ -1532,7 +1535,7 @@ body {
 
 .card-games {
   font-size: var(--text-2xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   flex-shrink: 0;
 }
 
@@ -2748,14 +2751,17 @@ body {
   }
 
   .opening-card.has-board .card-board-wrapper {
-    width: 90px;
+    width: clamp(88px, 24vw, 104px);
     flex-shrink: 0;
+    align-self: center;
+    aspect-ratio: 1 / 1;
     border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    overflow: hidden;
   }
 
   .opening-card.has-board .card-board-wrapper > div {
-    width: 90px !important;
-    height: 90px !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .opening-card.has-board .card-info-column {

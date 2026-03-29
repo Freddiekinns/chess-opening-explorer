@@ -52,6 +52,7 @@
     align-items: center;
     text-align: center;
     padding: var(--space-6) var(--space-4);
+    margin-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
     gap: var(--space-3);
   }
 

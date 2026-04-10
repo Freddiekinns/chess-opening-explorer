@@ -1,4 +1,9 @@
-import { buildSiteUrl, LEGACY_VERCEL_HOST, SITE_NAME } from './packages/web/src/lib/siteConfig';
+import {
+  buildSiteUrl,
+  LEGACY_VERCEL_HOST,
+  SITE_NAME,
+  WWW_SITE_HOST,
+} from './packages/web/src/lib/siteConfig';
 
 type SeoEntry = [name: string, eco: string, moves: string];
 type SeoLookup = Record<string, SeoEntry>;
@@ -59,7 +64,7 @@ export default async function middleware(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const pathname = url.pathname;
 
-  if (url.host === LEGACY_VERCEL_HOST) {
+  if (url.host === LEGACY_VERCEL_HOST || url.host === WWW_SITE_HOST) {
     const redirectUrl = new URL(url.pathname, buildSiteUrl('/'));
     redirectUrl.search = url.search;
 

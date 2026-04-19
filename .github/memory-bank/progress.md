@@ -2,6 +2,11 @@
 
 ## What's Done (newest first)
 
+- **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Switched
+  two-column grid from `align-items: stretch` to `start` with sticky left column
+  so the board stays visible while scrolling. Removed navigator nested scroll.
+  FEN font: monospace → DM Sans at 13px (16px mobile). Build clean.
+
 - **Primary Domain Migration** (2026-03-29): Switched repo SEO outputs from
   mixed `openingbook.com` / `openingbook.vercel.app` values to
   `https://openingbook.xyz`. Added shared site config, updated canonical/OG/

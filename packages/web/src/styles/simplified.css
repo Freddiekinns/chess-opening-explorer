@@ -50,22 +50,22 @@
   --color-brand-orange-hover: #f17a2f;
 
   /* Accent opacity scale — for states that reference the accent subtly   */
-  --accent-a6: rgba(232, 93, 4, 0.06);   /* ghost tint on hover bg       */
-  --accent-a12: rgba(232, 93, 4, 0.12);  /* active row background        */
-  --accent-a20: rgba(232, 93, 4, 0.20);  /* pressed / focus ring fill    */
-  --accent-a30: rgba(232, 93, 4, 0.30);  /* border highlight, shadow     */
-  --accent-a50: rgba(232, 93, 4, 0.50);  /* strong border                */
+  --accent-a6: rgba(232, 93, 4, 0.06); /* ghost tint on hover bg       */
+  --accent-a12: rgba(232, 93, 4, 0.12); /* active row background        */
+  --accent-a20: rgba(232, 93, 4, 0.2); /* pressed / focus ring fill    */
+  --accent-a30: rgba(232, 93, 4, 0.3); /* border highlight, shadow     */
+  --accent-a50: rgba(232, 93, 4, 0.5); /* strong border                */
 
   /* -----------------------------------------------------------------------
      TEXT — Warm whites and greys
      Pure #fff is harsh on dark warm surfaces. Using warm off-whites
      creates a cohesive "printed page" feeling.
      ----------------------------------------------------------------------- */
-  --color-text-primary: #ece8e1;     /* Warm white — headings, body       */
-  --color-text-secondary: #9a958e;   /* Warm mid-grey — labels, metadata  */
-  --color-text-muted: #8e887f;       /* Subdued — fine print, disabled    */
-  --color-text-inverse: #100f0e;     /* Text on orange/light backgrounds  */
-  --color-text-accent: #e85d04;      /* Only for interactive text (links) */
+  --color-text-primary: #ece8e1; /* Warm white — headings, body       */
+  --color-text-secondary: #9a958e; /* Warm mid-grey — labels, metadata  */
+  --color-text-muted: #8e887f; /* Subdued — fine print, disabled    */
+  --color-text-inverse: #100f0e; /* Text on orange/light backgrounds  */
+  --color-text-accent: #e85d04; /* Only for interactive text (links) */
 
   /* Status text — for messages only, not data                            */
   --color-text-success: #5cb85c;
@@ -75,11 +75,11 @@
   /* -----------------------------------------------------------------------
      BORDERS — Subtle warm whites
      ----------------------------------------------------------------------- */
-  --color-border: #2a2724;              /* Default border on raised bg    */
-  --border-subtle: rgba(255, 255, 255, 0.06);  /* Very faint dividers    */
-  --border-default: rgba(255, 255, 255, 0.10); /* Standard borders       */
-  --border-hover: rgba(255, 255, 255, 0.18);   /* Hover state borders    */
-  --border-strong: rgba(255, 255, 255, 0.25);  /* Emphasized borders     */
+  --color-border: #2a2724; /* Default border on raised bg    */
+  --border-subtle: rgba(255, 255, 255, 0.06); /* Very faint dividers    */
+  --border-default: rgba(255, 255, 255, 0.1); /* Standard borders       */
+  --border-hover: rgba(255, 255, 255, 0.18); /* Hover state borders    */
+  --border-strong: rgba(255, 255, 255, 0.25); /* Emphasized borders     */
 
   /* Legacy aliases                                                       */
   --color-border-subtle: var(--border-default);
@@ -93,7 +93,7 @@
   --color-brand-shadow: var(--accent-a30);
   --color-brand-glow: rgba(232, 93, 4, 0.12);
   --color-shadow-default: rgba(0, 0, 0, 0.15);
-  --color-shadow-elevated: rgba(0, 0, 0, 0.30);
+  --color-shadow-elevated: rgba(0, 0, 0, 0.3);
 
   /* Shadow system — actually use these instead of hardcoding box-shadow  */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -111,9 +111,9 @@
      These MUST be used consistently everywhere win/draw/loss is shown.
      Never hardcode #4ECDC4, #FFA726, #FF7043, #00b5fc, #ff8c00 etc.
      ----------------------------------------------------------------------- */
-  --color-result-white: #d4cfc7;        /* Cream — white wins             */
-  --color-result-draw: #5a554e;         /* Warm grey — draws              */
-  --color-result-black: #c08840;        /* Amber — black wins             */
+  --color-result-white: #d4cfc7; /* Cream — white wins             */
+  --color-result-draw: #5a554e; /* Warm grey — draws              */
+  --color-result-black: #c08840; /* Amber — black wins             */
 
   /* Text labels for result segments (needs good contrast on dark bg)     */
   --color-result-white-text: #e8e4de;
@@ -121,31 +121,31 @@
   --color-result-black-text: #d4a050;
 
   /* Bar segment text (needs contrast ON the segment colour)              */
-  --color-result-on-white: #1a1917;     /* Dark text on cream bar         */
-  --color-result-on-draw: #dcd8d1;      /* Light text on grey bar         */
-  --color-result-on-black: #1a1917;     /* Dark text on amber bar         */
+  --color-result-on-white: #1a1917; /* Dark text on cream bar         */
+  --color-result-on-draw: #dcd8d1; /* Light text on grey bar         */
+  --color-result-on-black: #1a1917; /* Dark text on amber bar         */
 
   /* -----------------------------------------------------------------------
      SPACING — Extended scale for fine-tuning
      ----------------------------------------------------------------------- */
   --space-0: 0;
   --space-px: 1px;
-  --space-0-5: 0.125rem;  /*  2px — hairline gaps                        */
-  --space-1: 0.25rem;     /*  4px                                        */
-  --space-1-5: 0.375rem;  /*  6px — tight inner padding                  */
-  --space-2: 0.5rem;      /*  8px                                        */
-  --space-2-5: 0.625rem;  /* 10px                                        */
-  --space-3: 0.75rem;     /* 12px                                        */
-  --space-4: 1rem;        /* 16px — default component padding            */
-  --space-5: 1.25rem;     /* 20px                                        */
+  --space-0-5: 0.125rem; /*  2px — hairline gaps                        */
+  --space-1: 0.25rem; /*  4px                                        */
+  --space-1-5: 0.375rem; /*  6px — tight inner padding                  */
+  --space-2: 0.5rem; /*  8px                                        */
+  --space-2-5: 0.625rem; /* 10px                                        */
+  --space-3: 0.75rem; /* 12px                                        */
+  --space-4: 1rem; /* 16px — default component padding            */
+  --space-5: 1.25rem; /* 20px                                        */
 
   /* Mobile shell */
   --bottom-tab-bar-height: 60px;
-  --space-6: 1.5rem;      /* 24px — section spacing                      */
-  --space-8: 2rem;        /* 32px — large section gaps                   */
-  --space-10: 2.5rem;     /* 40px                                        */
-  --space-12: 3rem;       /* 48px — hero/page-level spacing              */
-  --space-16: 4rem;       /* 64px                                        */
+  --space-6: 1.5rem; /* 24px — section spacing                      */
+  --space-8: 2rem; /* 32px — large section gaps                   */
+  --space-10: 2.5rem; /* 40px                                        */
+  --space-12: 3rem; /* 48px — hero/page-level spacing              */
+  --space-16: 4rem; /* 64px                                        */
 
   /* -----------------------------------------------------------------------
      TYPOGRAPHY — Bricolage Grotesque + DM Sans
@@ -154,12 +154,10 @@
      ----------------------------------------------------------------------- */
 
   /* Font Families */
-  --font-family-primary: 'DM Sans', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', sans-serif;
-  --font-family-headline: 'Bricolage Grotesque', 'DM Sans', -apple-system,
-    sans-serif;
-  --font-family-mono: 'SFMono-Regular', 'Monaco', 'Consolas',
-    'Liberation Mono', 'Courier New', monospace;
+  --font-family-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-headline: 'Bricolage Grotesque', 'DM Sans', -apple-system, sans-serif;
+  --font-family-mono:
+    'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 
   /* Font Sizes — Complete scale covering every size actually used.
      The old 9-step scale had gaps at 10px, 11px, 13px.
@@ -167,18 +165,18 @@
 
      Naming: -3xs through -5xl mirrors Tailwind convention.
      Legacy aliases (--font-size-xs etc.) are preserved below.            */
-  --text-3xs: 0.625rem;   /* 10px — micro counters, tiny badges          */
-  --text-2xs: 0.6875rem;  /* 11px — small labels, move numbers           */
-  --text-xs: 0.75rem;     /* 12px — captions, metadata                   */
-  --text-sm: 0.8125rem;   /* 13px — breadcrumbs, compact UI text         */
-  --text-base: 0.875rem;  /* 14px — body text, list items                */
-  --text-md: 1rem;        /* 16px — inputs, buttons, emphasized body     */
-  --text-lg: 1.125rem;    /* 18px — lead text, large body                */
-  --text-xl: 1.25rem;     /* 20px — small section titles                 */
-  --text-2xl: 1.5rem;     /* 24px — section headings                     */
-  --text-3xl: 1.875rem;   /* 30px — large headings                       */
-  --text-4xl: 2.25rem;    /* 36px — page titles (mobile hero)            */
-  --text-5xl: 3rem;       /* 48px — hero titles                          */
+  --text-3xs: 0.625rem; /* 10px — micro counters, tiny badges          */
+  --text-2xs: 0.6875rem; /* 11px — small labels, move numbers           */
+  --text-xs: 0.75rem; /* 12px — captions, metadata                   */
+  --text-sm: 0.8125rem; /* 13px — breadcrumbs, compact UI text         */
+  --text-base: 0.875rem; /* 14px — body text, list items                */
+  --text-md: 1rem; /* 16px — inputs, buttons, emphasized body     */
+  --text-lg: 1.125rem; /* 18px — lead text, large body                */
+  --text-xl: 1.25rem; /* 20px — small section titles                 */
+  --text-2xl: 1.5rem; /* 24px — section headings                     */
+  --text-3xl: 1.875rem; /* 30px — large headings                       */
+  --text-4xl: 2.25rem; /* 36px — page titles (mobile hero)            */
+  --text-5xl: 3rem; /* 48px — hero titles                          */
 
   /* Legacy aliases — existing components use these names.
      Values unchanged so nothing breaks. Phase B may consolidate.         */
@@ -200,40 +198,40 @@
   --font-weight-extrabold: 800;
 
   /* Line Heights                                                         */
-  --line-height-tight: 1.2;     /* Headlines, hero titles                */
-  --line-height-snug: 1.35;     /* Large text, subheadings               */
-  --line-height-normal: 1.5;    /* Body text                             */
-  --line-height-relaxed: 1.65;  /* Long-form reading (overview text)     */
+  --line-height-tight: 1.2; /* Headlines, hero titles                */
+  --line-height-snug: 1.35; /* Large text, subheadings               */
+  --line-height-normal: 1.5; /* Body text                             */
+  --line-height-relaxed: 1.65; /* Long-form reading (overview text)     */
 
   /* Letter Spacing                                                       */
-  --letter-spacing-tight: -0.025em;  /* Headlines                        */
+  --letter-spacing-tight: -0.025em; /* Headlines                        */
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.025em;    /* Small caps, labels               */
-  --letter-spacing-wider: 0.06em;    /* Uppercase labels                 */
+  --letter-spacing-wide: 0.025em; /* Small caps, labels               */
+  --letter-spacing-wider: 0.06em; /* Uppercase labels                 */
 
   /* -----------------------------------------------------------------------
      HEADING HIERARCHY — Consistent across all pages
      Use these composite values so every page has the same visual rhythm.
      ----------------------------------------------------------------------- */
-  --heading-hero: var(--font-weight-extrabold) var(--text-5xl) /
-    var(--line-height-tight) var(--font-family-headline);
-  --heading-page: var(--font-weight-extrabold) var(--text-3xl) /
-    var(--line-height-tight) var(--font-family-headline);
-  --heading-section: var(--font-weight-bold) var(--text-2xl) /
-    var(--line-height-snug) var(--font-family-headline);
-  --heading-subsection: var(--font-weight-bold) var(--text-xl) /
-    var(--line-height-snug) var(--font-family-headline);
-  --heading-card: var(--font-weight-bold) var(--text-lg) /
-    var(--line-height-snug) var(--font-family-headline);
+  --heading-hero: var(--font-weight-extrabold) var(--text-5xl) / var(--line-height-tight)
+    var(--font-family-headline);
+  --heading-page: var(--font-weight-extrabold) var(--text-3xl) / var(--line-height-tight)
+    var(--font-family-headline);
+  --heading-section: var(--font-weight-bold) var(--text-2xl) / var(--line-height-snug)
+    var(--font-family-headline);
+  --heading-subsection: var(--font-weight-bold) var(--text-xl) / var(--line-height-snug)
+    var(--font-family-headline);
+  --heading-card: var(--font-weight-bold) var(--text-lg) / var(--line-height-snug)
+    var(--font-family-headline);
 
   /* -----------------------------------------------------------------------
      LAYOUT — Border radius & transitions
      ----------------------------------------------------------------------- */
-  --radius-sm: 4px;          /* Small pills, badges                      */
-  --radius-md: 8px;          /* Buttons, inputs, cards                   */
-  --radius-lg: 12px;         /* Large cards, panels                      */
-  --radius-xl: 16px;         /* Modals, popovers                         */
-  --radius-full: 9999px;     /* Pill buttons, toggles                    */
+  --radius-sm: 4px; /* Small pills, badges                      */
+  --radius-md: 8px; /* Buttons, inputs, cards                   */
+  --radius-lg: 12px; /* Large cards, panels                      */
+  --radius-xl: 16px; /* Modals, popovers                         */
+  --radius-full: 9999px; /* Pill buttons, toggles                    */
 
   /* Legacy aliases                                                       */
   --border-radius-small: var(--radius-sm);
@@ -322,7 +320,7 @@ body {
 .two-column-layout {
   display: grid;
   grid-template-columns: 7fr 5fr;
-  align-items: stretch;
+  align-items: start;
   gap: var(--space-6);
   max-width: 1400px;
   margin: 0 auto;
@@ -338,6 +336,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  position: sticky;
+  top: calc(60px + var(--space-4));
 }
 
 .right-column {
@@ -824,11 +824,19 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-base);
   padding: 0 var(--space-3);
-  font-size: var(--font-size-base); /* 16px - prevents iOS auto-zoom on focus */
-  font-family: var(--font-family-mono);
+  font-size: var(--text-sm); /* 13px — proportional to its label */
+  font-family: var(--font-family-primary);
+  letter-spacing: -0.01em;
   line-height: 1;
   height: 32px;
   box-sizing: border-box;
+}
+
+/* iOS auto-zooms inputs < 16px on focus */
+@media (max-width: 1023px) {
+  .chessboard-fen-utilities .fen-input {
+    font-size: var(--text-md); /* 16px */
+  }
 }
 
 .chessboard-fen-utilities .copy-btn,
@@ -1262,7 +1270,12 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-result-white), var(--color-result-draw), var(--color-result-black));
+  background: linear-gradient(
+    90deg,
+    var(--color-result-white),
+    var(--color-result-draw),
+    var(--color-result-black)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2172,7 +2185,6 @@ body {
   animation-delay: 200ms;
 }
 
-
 .section-header {
   text-align: left;
   margin-bottom: var(--space-6);
@@ -2565,6 +2577,10 @@ body {
     padding: var(--space-3);
   }
 
+  .left-column {
+    position: static;
+  }
+
   .related-teaser-grid-item {
     order: 99;
   }
@@ -2873,7 +2889,6 @@ body {
   .hero-title {
     font-size: 1.5rem;
   }
-
 }
 
 /* =================
@@ -3196,7 +3211,7 @@ body {
 /* Focus-visible for all interactive elements */
 a:focus-visible,
 button:focus-visible,
-[role="button"]:focus-visible {
+[role='button']:focus-visible {
   outline: 2px solid var(--color-brand-orange);
   outline-offset: 2px;
 }

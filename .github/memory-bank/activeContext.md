@@ -1,21 +1,15 @@
 # Active Context
 
-**Date:** 2026-03-29
+**Date:** 2026-04-19
 
-## Current Task: Primary Domain Migration to openingbook.xyz
+## Current Task: Opening Detail Layout — Sticky Board + FEN Polish
 
-**Status:** Complete. `.xyz` is now the repo's primary SEO/domain target; old
-`openingbook.vercel.app` host redirects in middleware. Production build clean.
+**Status:** Complete. Two-column layout switched from `align-items: stretch` to
+`start` with sticky left column (board). Navigator nested scroll removed in
+favour of natural page flow. FEN font changed from monospace to DM Sans at 13px
+(16px mobile for iOS zoom prevention). Build clean.
 
-**Done (this session):**
+## Previous Task: Primary Domain Migration to openingbook.xyz
 
-- Added shared site config for primary and legacy hosts
-- Updated landing, analyse, opening-detail, middleware, and base HTML
-  canonical/OG/JSON-LD URLs to `https://openingbook.xyz`
-- Updated `robots.txt`, `sitemap.xml`, and README to the new primary domain
-- Added legacy-host redirect in middleware to preserve path and query strings
-
-## Previous Task: Mobile Footer + Landing Card Polish
-
-Mobile footer/nav spacing aligned and popular opening thumbnails now render
-square without dark bars. Build clean.
+Switched repo SEO outputs to `https://openingbook.xyz`. Added shared site
+config, middleware redirect from legacy host. Build clean.

@@ -221,18 +221,25 @@ describe('CourseService', () => {
       const links = courseService.getSearchLinks('French Defense');
       expect(links).toEqual({
         lichess: 'https://lichess.org/study/search?q=French%20Defense',
-        chessable: 'https://www.chessable.com/courses/s/?q=French%20Defense',
+        chessable: 'https://www.chessable.com/courses/s/french',
       });
     });
 
     test('should encode special characters', () => {
       const links = courseService.getSearchLinks("King's Indian");
       expect(links.lichess).toContain("King's%20Indian");
+      expect(links.chessable).toBe("https://www.chessable.com/courses/s/king's%20indian");
     });
 
     test('should trim whitespace', () => {
       const links = courseService.getSearchLinks('  French Defense  ');
       expect(links.lichess).toBe('https://lichess.org/study/search?q=French%20Defense');
+      expect(links.chessable).toBe('https://www.chessable.com/courses/s/french');
+    });
+
+    test('should simplify opening names for Chessable', () => {
+      const links = courseService.getSearchLinks('Sicilian Defense: Najdorf Variation');
+      expect(links.chessable).toBe('https://www.chessable.com/courses/s/sicilian%20najdorf');
     });
 
     test('should return null for null/empty input', () => {

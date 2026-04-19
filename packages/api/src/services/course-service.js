@@ -80,10 +80,23 @@ class CourseService {
    */
   getSearchLinks(openingName) {
     if (!openingName || typeof openingName !== 'string') return null;
-    const encoded = encodeURIComponent(openingName.trim());
+    const trimmed = openingName.trim();
+    const lichessEncoded = encodeURIComponent(trimmed);
+
+    // Chessable search uses path-based URLs: /courses/s/{term}
+    // Simplify the name: strip classifier words and the colon separator
+    // to produce concise search terms like "sicilian najdorf"
+    const chessableTerm = trimmed
+      .replace(/:/g, '')
+      .replace(/\b(Defense|Defence|Variation|Opening|Game)\b/gi, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim()
+      .toLowerCase();
+    const chessableEncoded = encodeURIComponent(chessableTerm);
+
     return {
-      lichess: `https://lichess.org/study/search?q=${encoded}`,
-      chessable: `https://www.chessable.com/courses/s/?q=${encoded}`
+      lichess: `https://lichess.org/study/search?q=${lichessEncoded}`,
+      chessable: `https://www.chessable.com/courses/s/${chessableEncoded}`
     };
   }
 

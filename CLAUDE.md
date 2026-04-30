@@ -193,6 +193,14 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   re-fetch from YouTube. DB `view_count` and `thumbnail_url` will be stale/null.
   Run `node tools/video-pipeline/scripts/backfill-views.js` after rematch to
   restore them (costs ~35 API calls for ~1700 videos).
+- **Host-based redirects belong in `vercel.json`, not middleware**: Vercel's
+  edge resolves host-level redirects (www↔apex, custom domain redirects)
+  _before_ middleware runs, so any `if (url.host === ...)` branch in
+  `middleware.ts` is dead code for those hosts. Vercel's built-in www handling
+  also defaults to **307 Temporary**, which Google Search Console will not
+  consolidate as a canonical signal — causing recurring "Page with redirect"
+  validation failures. Configure permanent (308) host redirects via the
+  `redirects` array in `vercel.json` with `"permanent": true`.
 - **Memory bank bloat prevention**: `activeContext.md` must stay under **50
   lines** (current task + previous task only). `progress.md` must stay under
   **100 lines** (one-liner per completed task). When updating memory bank: move

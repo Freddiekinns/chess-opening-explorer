@@ -119,6 +119,14 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.openingbook.xyz" }],
+      "destination": "https://openingbook.xyz/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/openings/(.*)",

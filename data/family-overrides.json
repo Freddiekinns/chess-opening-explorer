@@ -1,0 +1,18 @@
+{
+  "overrides": [
+    { "match": { "name_prefix": "London System" }, "family_id": "london" },
+    { "match": { "name_prefix": "King's Indian Attack" }, "family_id": "kia" },
+    { "match": { "name_prefix": "Trompowsky" }, "family_id": "trompowsky" },
+    { "match": { "name_prefix": "Indian Game: King's Indian" }, "family_id": "kings-indian" },
+    { "match": { "name_prefix": "Indian Game: Nimzo" }, "family_id": "nimzo-indian" },
+    { "match": { "name_prefix": "Indian Game: Queen's Indian" }, "family_id": "queens-indian" },
+    { "match": { "name_prefix": "Indian Game: Grünfeld" }, "family_id": "grunfeld" },
+    { "match": { "name_prefix": "Indian Game: Anti-Grünfeld" }, "family_id": "grunfeld" },
+    { "match": { "name_prefix": "Modern Defense" }, "family_id": "pirc-modern" },
+    { "match": { "name_prefix": "Pirc Defense" }, "family_id": "pirc-modern" },
+    { "match": { "name_prefix": "Réti Opening" }, "family_id": "reti" },
+    { "match": { "name_prefix": "Reti Opening" }, "family_id": "reti" },
+    { "match": { "name_prefix": "Benko Gambit" }, "family_id": "benoni-benko" },
+    { "match": { "name_prefix": "Benoni" }, "family_id": "benoni-benko" }
+  ]
+}

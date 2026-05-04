@@ -208,23 +208,78 @@ All routes follow existing conventions (`packages/api/src/routes/`, plain JSON,
 
 ### 5.1 New routes
 
-- `GET /api/families` — list all families with opening counts. Static, long
-  cache (1 day).
-- `GET /api/families/:id` — single family with description, top variations, ECO
-  anchor, opening count. Long cache.
-- `GET /api/families/:id/openings` — paginated list of all openings in this
-  family, sorted by Lichess play count descending.
+- `GET /api/families` — list all families with id, display name, slug, ECO
+  anchor, colour, short description, opening count. One static payload, long
+  cache (1 day). Used to render both the chip system and the family page header.
+  No separate `/:id` endpoint — the list is small (~25 entries) and the
+  per-family editorial header carries no extra data beyond what the list already
+  returns.
+- `GET /api/openings?family=<id>&sort=popularity&page=<n>` — filtered opening
+  list. This is the data spine for the family page (it _is_ the page) and also
+  for any future "filter search by family" UI.
 
 ### 5.2 Modified routes
 
 - Existing opening detail responses gain `family_id` and `family_display_name`.
-- `/api/openings/search-index` gains a `families` section (see §4.4).
+- `/api/openings/search-index` gains a `families` section (see §4.4) so the
+  global search dropdown can show family rows alongside variation rows.
 - Personal stats endpoints (the ones Analyse uses) gain optional
   `?group_by=family` parameter that performs aggregation server-side.
 
 ## 6. UI design
 
-Phased to keep PRs reviewable. Each phase is independently shippable.
+### 6.0 Design philosophy: family as a lens, not a destination
+
+The first draft of this spec proposed a Wikipedia-style family overview page. A
+user-journey audit killed it. Walking the four candidate visitors:
+
+- **Sub-1800 player on Analyse.** Wants "why am I bad at Sicilians?". Solved by
+  the rollup row + expand. Doesn't visit a separate page.
+- **Curious learner.** Wants "what is the Sicilian?". Wikipedia and Lichess
+  Opening Explorer already do this better. We'd be shipping a worse copy.
+- **Search user typing "Sicilian".** Wants to _narrow_ to a specific opening,
+  not read an essay.
+- **Detail page user clicking the orange family header.** Wants to see siblings
+  of the current opening, not a description of the family in the abstract.
+
+Three of the four point at "filtered list of openings in this family", not
+"editorial wiki page". So family is a **lens**, not a destination:
+
+- The route `/family/<slug>` exists (clean URL, indexable, SSR-able).
+- Its content is **a list of openings filtered by family**, not an essay.
+  Editorial dressing (one-line description, ECO anchor, "your record" panel if
+  data) sits as a header above the list — closer to an Amazon category page than
+  a Wikipedia article.
+- Family appears as a **chip** wherever it links from (detail breadcrumb, search
+  dropdown, repertoire group header). One chip system, one visual treatment,
+  used everywhere family is referenced.
+
+This collapses the original Phase 2 from "build a new page template plus search
+card plus detail link" down to "build the filtered route + chip system". Less
+surface area, sharper journeys.
+
+### 6.0.1 Visual treatment (the chip system)
+
+Builds on the existing "Warm Editorial Dark" tokens and the orange family accent
+already used on the detail page header (`titleFamily` class,
+`OpeningDetailPage.tsx:760`).
+
+- **Family chip.** Pill, no fill, 1px family-orange border, family display name.
+  Used as the link form everywhere family appears as a navigable reference
+  (detail breadcrumb, search dropdown row, repertoire group header). Hover:
+  subtle orange-tinted fill.
+- **Family rollup row (Analyse).** 3px orange left border, family name in
+  display font, variation count in mono small (`· 5 variations`), expand chevron
+  rotates 90° on open. Inherits the detail page's family treatment for visual
+  continuity.
+- **Family page header.** Oversized family name in headline font, one-line
+  description in body sans, ECO anchor as small mono badge. "Your record" panel
+  (if user has imported games) appears below the header. Generous vertical
+  rhythm above; the list itself is dense. Reads as editorial-list, not essay.
+- **Search dropdown family row.** Same height as variation rows but with a small
+  `[FAMILY]` badge in family-orange and the variation count in mono on the
+  right. Visually distinct enough to read as a different result type without
+  breaking the dropdown's rhythm.
 
 ### 6.1 Phase 1 — Foundation + Analyse rollup
 
@@ -246,20 +301,26 @@ Phased to keep PRs reviewable. Each phase is independently shippable.
 8. Surface `uncategorised` as a final row labelled "Other" with the same expand
    behaviour. Don't hide it — visibility helps us spot taxonomy gaps.
 
-### 6.2 Phase 2 — Family overview page + search + detail link
+### 6.2 Phase 2 — Family lens (filtered route + chip system)
 
-1. New route: `/family/<slug>` (e.g. `/family/sicilian-defense`).
-2. Page contents: family name, short description, ECO anchor, opening count, top
-   10 variations sorted by Lichess play count, "explore all" link to the full
-   list.
-3. Wire the existing orange family header on `OpeningDetailPage` so the family
-   text becomes a link to `/family/<slug>`. Currently it's a `<span>`
+1. New route: `/family/<slug>` (e.g. `/family/sicilian-defense`). Content is the
+   **filtered opening list** — header (name + one-line description + ECO
+   anchor + colour) over a sortable list of all openings in the family,
+   defaulting to Lichess play-count descending. Pagination follows existing
+   list-page patterns. If the visitor has imported games, a "your record in this
+   family" strip appears between header and list (sums of W/L/D, link back to
+   Analyse). No essay, no editorial filler.
+2. Wire the existing orange family text on `OpeningDetailPage` so it renders as
+   a family chip linking to `/family/<slug>`. Currently a `<span>`
    (`OpeningDetailPage.tsx:760`).
-4. Update search results: when the query matches a family display name exactly
-   or as a prefix, prepend a family card to results ("Sicilian Defense — 1,247
-   variations") above the per-opening hits.
-5. SSR/SEO: family pages are pre-rendered with metadata + JSON-LD per the
-   existing TASK009 pattern.
+3. Search dropdown gets a family row type: when the query matches a family
+   display name exactly or as a prefix, the matching family appears as the top
+   row in the dropdown with a `[FAMILY]` badge and variation count. Clicking
+   navigates to `/family/<slug>`. No separate "family card" UI — it lives inside
+   the existing dropdown.
+4. SSR/SEO: family routes are pre-rendered with metadata + JSON-LD per the
+   existing TASK009 pattern. Title/description templates are derived from the
+   family record, not hand-written per family.
 
 ### 6.3 Phase 3 — Repertoire grouping (display-only)
 
@@ -273,14 +334,14 @@ Phased to keep PRs reviewable. Each phase is independently shippable.
 
 ### 6.4 Component changes (concrete)
 
-| Component                                           | Change                                                                                         |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `PersonalOpeningStats.tsx`                          | Replace inline colon-split with `family_display_name` field; add toggle + grouped render path. |
-| `OpeningDetailPage.tsx:760`                         | Replace `<span>` family text with `<Link to={"/family/" + slug}>`.                             |
-| `RepertoireSection`                                 | Add family-grouping render mode.                                                               |
-| `SearchResults`                                     | Add family-card variant.                                                                       |
-| New: `pages/FamilyPage.tsx`                         | Family overview route.                                                                         |
-| New: `components/family/FamilyCard.module.css` etc. | Shared styling for family chips and headers.                                                   |
+| Component                                        | Change                                                                                         |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `PersonalOpeningStats.tsx`                       | Replace inline colon-split with `family_display_name` field; add toggle + grouped render path. |
+| `OpeningDetailPage.tsx:760`                      | Replace `<span>` family text with `<Link to={"/family/" + slug}>`.                             |
+| `RepertoireSection`                              | Add family-grouping render mode.                                                               |
+| `SearchResults`                                  | Add family-card variant.                                                                       |
+| New: `pages/FamilyPage.tsx`                      | Filtered opening list with editorial header. Not an essay page.                                |
+| New: `components/family/FamilyChip.tsx` + module | Single chip component reused across detail breadcrumb, search dropdown, repertoire grouping.   |
 
 ## 7. Stats aggregation rules
 
@@ -348,11 +409,11 @@ per-variation rows are colour-scoped.
 
 ## 10. Phasing summary
 
-| Phase | Scope                                                   | Reviewable as |
-| ----- | ------------------------------------------------------- | ------------- |
-| 1     | Taxonomy + build pipeline + Analyse rollup              | One PR        |
-| 2     | Family overview page + search card + detail header link | One PR        |
-| 3     | Repertoire grouping                                     | One small PR  |
+| Phase | Scope                                                      | Reviewable as |
+| ----- | ---------------------------------------------------------- | ------------- |
+| 1     | Taxonomy + build pipeline + Analyse rollup                 | One PR        |
+| 2     | Family lens: `/family/<slug>` filtered route + chip system | One PR        |
+| 3     | Repertoire grouping                                        | One small PR  |
 
 Each phase ships independently. After Phase 1 the app is already more useful
 (Analyse stops being noise for any Sicilian player). Phase 2 and 3 are additive
@@ -375,6 +436,13 @@ polish.
 
 ## 12. Out of scope (revisit later)
 
+- **Wikipedia-style family hub page.** Explicitly rejected after the
+  user-journey audit (§6.0). If demand emerges (e.g. SEO data shows users
+  searching "what is the Sicilian"), the editorial header on the family page can
+  grow without changing the route.
+- **A new top-level tab for families.** Considered and dropped — family is a
+  lens applied to existing surfaces, not a section of the app alongside Discover
+  / Analyse.
 - Sub-families (e.g. `Sicilian: Najdorf` as its own grouping under Sicilian).
   Worth adding if v1 family rollups land well and users ask for finer
   aggregation.

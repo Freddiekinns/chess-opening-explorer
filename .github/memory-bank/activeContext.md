@@ -1,19 +1,38 @@
 # Active Context
 
-**Date:** 2026-05-20
+**Date:** 2026-05-04
 
-## Current Task: Fix GSC "Couldn't fetch" sitemap error
+## Current Task: Opening Family Rollups Phase 1 — Taxonomy module shipped
 
-**Status:** PR #32 open. Root cause: the 2026-03-29 SEO refactor broadened the
-`middleware.ts` matcher but dropped `sitemap.xml`/`robots.txt` from its
-exclusions, so the crawler hit the Edge `return fetch(request)` round-trip
-instead of the static file — GSC showed "Couldn't fetch / Type: Unknown" since
-the 30 Apr submission. Fix re-adds both files to the matcher's negative
-lookahead. Prior fixes failed because they targeted the www→apex redirect, not
-the sitemap path. Final confirmation needs deploy + re-submit in GSC.
+**Status:** In progress. Phase 1 Module 1 (taxonomy + build pipeline) complete.
 
-## Previous Task: Opening Detail Layout — Sticky Board + FEN Polish
+Hand-curated `data/families.json` (28 families) plus
+`data/family-overrides.json` (~140 rules covering all common ECO naming variants
+— `Sicilian:` vs `Sicilian Defense:`, `QGD/QGA` abbreviations, Gruenfeld
+no-umlaut, Spanish=Ruy Lopez aliases, Indian Game splits to
+KID/Nimzo/QID/Grünfeld) feed a pure resolver in
+`tools/family-taxonomy/resolve-family.js`. Build-time enrichment via
+`tools/family-taxonomy/build-family-index.js` (wired into
+`scripts/prepare-vercel-data.js`) writes `family_id` + `family_display_name`
+into every ECO record.
 
-Two-column layout switched from `align-items: stretch` to `start` with sticky
-left column (board). Navigator nested scroll removed. FEN font monospace → DM
-Sans at 13px (16px mobile). Build clean.
+**Coverage: 98.45%** (192 / 12,377 uncategorised). Coverage-gate Jest test
+asserts <2% uncategorised. 14 unit tests passing across the two test files
+(`tools/family-taxonomy/tests/`).
+
+**Scope deviation logged:** Plan estimated ~80% colon-prefix coverage; reality
+was 21% pre-backfill. Override file went from 14 → 140 rules. Mitigation: 5%
+threshold left as design lever in `build-family-index.js` if data drifts.
+
+**Branch:** `feature/opening-family-rollups`. Six commits since branch point
+(plan doc + 5 implementation commits).
+
+**Next:** Module 2 (`/api/families` endpoint, search-index family fields) and
+Module 3 (Analyse-page Variation/Family toggle with rollup rendering). Plan in
+`docs/superpowers/plans/2026-05-04-opening-family-rollups-phase-1.md`.
+
+## Previous Task: TASK008 Rewrite — Feature Roadmap & Exploration
+
+Replaced old competitive-analysis TASK008 with a UX-level roadmap of 12
+features. Top-three: family rollups, rating-contextualised stats, spaced
+repetition.

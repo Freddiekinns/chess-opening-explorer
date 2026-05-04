@@ -2,7 +2,12 @@
 
 ## In Progress
 
-_No tasks in progress._
+- **Opening Family Rollups (Phase 1)** — Added 2026-05-04, branch
+  `feature/opening-family-rollups`. Module 1 (taxonomy + build pipeline) shipped
+  at 98.45% coverage. Module 2 (`/api/families`, search-index family fields) and
+  Module 3 (Analyse rollup UI) still to land. Spec:
+  `.github/memory-bank/specs/2026-05-04-opening-family-rollups.md`. Plan:
+  `docs/superpowers/plans/2026-05-04-opening-family-rollups-phase-1.md`.
 
 ## Reference / Strategy
 

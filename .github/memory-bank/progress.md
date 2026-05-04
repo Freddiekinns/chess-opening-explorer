@@ -2,12 +2,23 @@
 
 ## What's Done (newest first)
 
-- **GSC Sitemap "Couldn't fetch" Fix** (2026-05-20, PR #32): Re-added
-  `sitemap.xml`/`robots.txt` to the `middleware.ts` matcher exclusions. The
-  2026-03-29 SEO refactor broadened the matcher and dropped them, routing the
-  static sitemap through the Edge `return fetch(request)` round-trip — GSC
-  reported "Couldn't fetch / Type: Unknown" from the 30 Apr submission. Needs
-  deploy + GSC re-submit to confirm.
+- **Opening Family Rollups — Taxonomy + Build Pipeline** (2026-05-04, branch
+  `feature/opening-family-rollups`): Phase 1 Module 1. Hand-curated
+  `data/families.json` (28 families) plus `data/family-overrides.json` (~140
+  rules) resolved at build time into `family_id` + `family_display_name` on
+  every ECO record. Coverage 98.45% (192/12,377 uncategorised), gated by Jest
+  test. Pure resolver in `tools/family-taxonomy/resolve-family.js` with 12 unit
+  tests. Build wired into `scripts/prepare-vercel-data.js`. Spec deviation: plan
+  estimated 80% colon-prefix coverage; reality was 21% pre-backfill (ECO data
+  uses `Sicilian:` not `Sicilian Defense:`, `QGA/QGD` abbreviations, `Spanish`
+  for Ruy Lopez, Gruenfeld no-umlaut). Module 2 (API surface) and Module 3
+  (Analyse rollup) still to come.
+
+- **TASK008 Rewrite — Feature Roadmap** (2026-05-04): Replaced old
+  competitive-analysis TASK008 with a UX-level roadmap of 12 features
+  (complexity/benefit/risks per item), dedicated monetisation section (tip jar +
+  affiliate only), and a prioritised top-three. Includes the user's three ideas:
+  master games tab, opening family rollups, community signal.
 
 - **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Switched
   two-column grid from `align-items: stretch` to `start` with sticky left column

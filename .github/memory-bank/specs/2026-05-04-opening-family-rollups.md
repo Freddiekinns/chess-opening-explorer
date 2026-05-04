@@ -26,8 +26,8 @@ This spec turns the implicit concept into stored, indexed, queryable data.
   win/loss/draw aggregates.
 - Search surfaces families as first-class results when a user types a family
   name.
-- Opening detail page links the existing orange family header to a family
-  overview page.
+- Opening detail page links the existing orange family header to the family lens
+  route (`/family/<slug>`) so a user can see siblings of the current opening.
 - Repertoire view groups starred openings by family for at-a-glance scanning.
 - The taxonomy is auditable, version-controlled, and easy to amend.
 
@@ -58,8 +58,8 @@ on `:` gets us a free family for the bulk of the dataset.
 `Caro-Kann Defense`, `London System`). The opening's own name _is_ the family
 name in these cases.
 
-**Override file: `data/family-overrides.json`.** A hand-curated map from opening
-identifier (ECO + name hash, or canonical slug) to `family_id`, used for:
+**Override file: `data/family-overrides.json`.** A hand-curated rule list
+mapping openings to a `family_id` (schema in §4.2), used for:
 
 - Transposition systems that don't follow the colon convention (e.g.
   `London System`, `King's Indian Attack`, `Colle System`).
@@ -286,8 +286,8 @@ already used on the detail page header (`titleFamily` class,
 1. Build the taxonomy: `families.json`, `family-overrides.json`, resolver
    script, build-pipeline integration.
 2. Wire `family_id` into opening payloads.
-3. New API: `/api/families` and `/api/families/:id` (description + counts; the
-   dedicated family page lives in Phase 2).
+3. New API: `/api/families` (single payload with all family records — see §5.1).
+   The family lens route lives in Phase 2.
 4. Personal stats endpoint gets `group_by=family` aggregation.
 5. **Analyse page UI:** add segmented toggle "Group by: variation / family"
    above the personal opening stats list. Default: variation (current behaviour)
@@ -339,7 +339,7 @@ already used on the detail page header (`titleFamily` class,
 | `PersonalOpeningStats.tsx`                       | Replace inline colon-split with `family_display_name` field; add toggle + grouped render path. |
 | `OpeningDetailPage.tsx:760`                      | Replace `<span>` family text with `<Link to={"/family/" + slug}>`.                             |
 | `RepertoireSection`                              | Add family-grouping render mode.                                                               |
-| `SearchResults`                                  | Add family-card variant.                                                                       |
+| Global search dropdown                           | Add family-row variant with `[FAMILY]` badge and variation count (§6.2 step 3).                |
 | New: `pages/FamilyPage.tsx`                      | Filtered opening list with editorial header. Not an essay page.                                |
 | New: `components/family/FamilyChip.tsx` + module | Single chip component reused across detail breadcrumb, search dropdown, repertoire grouping.   |
 
@@ -389,7 +389,7 @@ per-variation rows are colour-scoped.
   don't know the variation name. The family rollup is an affordance for them;
   the variation drill-down stays for those who do.
 - **Search ambiguity.** "Sicilian" matches the family AND every Sicilian
-  variation. Family card goes first in the result list; variations follow.
+  variation. The family row goes first in the dropdown; variations follow.
   Ranking rule: a family-name exact-or-prefix match outranks a per-variation hit
   on the same query.
 
@@ -403,7 +403,8 @@ per-variation rows are colour-scoped.
 - **API integration tests**: family endpoints, `group_by=family` on personal
   stats, search-index family section.
 - **Component tests**: PersonalOpeningStats grouped vs ungrouped render,
-  Repertoire family grouping with mixed counts, family-card search result.
+  Repertoire family grouping with mixed counts, FamilyChip rendering, family row
+  in the global search dropdown.
 - **E2E (Playwright)**: regression on the existing detail page header (family
   link works, navigates to family page, doesn't break the sticky board layout).
 
@@ -461,5 +462,5 @@ polish.
   the detail page vs. a top-level family entity). Should be reviewed and either
   merged with this spec or explicitly scoped against it before TASK015 starts.
 - **TASK011** — `/api/openings/search-index` is the integration point for the
-  family search-card.
+  family search-row in the global dropdown.
 - **TASK009** — SEO middleware pattern that family pages need to follow.

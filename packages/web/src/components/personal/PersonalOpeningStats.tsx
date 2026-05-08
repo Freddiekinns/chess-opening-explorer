@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src';
 import styles from './PersonalOpeningStats.module.css';
+import { groupByFamily, type FamilyRollupRow, type OpeningAggInput } from './familyAggregation';
 
 type Platform = 'lichess' | 'chess.com';
 
@@ -20,6 +21,17 @@ type OpeningAgg = {
   draw: number;
   loss: number;
 };
+
+const toAggInput = (o: OpeningAgg): OpeningAggInput => ({
+  key: o.fen,
+  name: o.name,
+  eco: o.eco,
+  family_id: o.family_id,
+  games: o.games,
+  wins: o.win,
+  draws: o.draw,
+  losses: o.loss,
+});
 
 type DashboardData = {
   totalGames: number;
@@ -326,6 +338,51 @@ const OpeningRow: React.FC<{
 };
 
 /* ==============================
+   FAMILY ROW COMPONENT
+   ============================== */
+const FamilyRow: React.FC<{
+  colour: 'white' | 'black';
+  row: FamilyRollupRow;
+  isExpanded: boolean;
+  onToggle: () => void;
+}> = ({ colour, row, isExpanded, onToggle }) => {
+  const variationsId = `variations-${colour}-${row.family_id}`;
+  return (
+    <div className={styles.familyRow}>
+      <button
+        type="button"
+        className={styles.familyHeader}
+        onClick={onToggle}
+        aria-expanded={isExpanded}
+        aria-controls={variationsId}
+      >
+        <span className={isExpanded ? styles.chevronOpen : styles.chevron} aria-hidden>
+          ›
+        </span>
+        <span className={styles.familyName}>{row.display_name}</span>
+        <span className={styles.familyMeta}>
+          {row.games} {row.games === 1 ? 'game' : 'games'} · {row.variation_count}{' '}
+          {row.variation_count === 1 ? 'variation' : 'variations'}
+        </span>
+      </button>
+      <DistributionBar win={row.wins} draw={row.draws} loss={row.losses} games={row.games} />
+      {isExpanded && (
+        <ul id={variationsId} className={styles.familyVariations}>
+          {row.variations.map((v) => (
+            <li key={v.key} className={styles.familyVariationItem}>
+              <span className={styles.variationName}>{v.name}</span>
+              <span className={styles.variationMeta}>
+                {v.games} · {v.wins}-{v.draws}-{v.losses}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+/* ==============================
    SORT BAR COMPONENT
    ============================== */
 const SortBar: React.FC<{
@@ -378,12 +435,17 @@ export const PersonalOpeningStats: React.FC<{
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const [showAllMobile, setShowAllMobile] = useState(false);
   const [groupBy, setGroupBy] = useState<'variation' | 'family'>('variation');
-  // familiesDict is consumed by the family render path in Task 10; reference
-  // below keeps TS noUnusedLocals happy until then.
   const [familiesDict, setFamiliesDict] = useState<
     Record<string, { id: string; display_name: string }>
   >({});
-  void familiesDict;
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const toggleExpanded = (key: string) =>
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
 
   // Displayed state: only updates when analysis completes (not while typing)
   const [displayedUsername, setDisplayedUsername] = useState('');
@@ -951,6 +1013,9 @@ export const PersonalOpeningStats: React.FC<{
           const sortedWhite = sortAgg(dashboard.asWhite, whiteSortMode);
           const sortedBlack = sortAgg(dashboard.asBlack, blackSortMode);
 
+          const familyRowsWhite = groupByFamily(dashboard.asWhite.map(toAggInput), familiesDict);
+          const familyRowsBlack = groupByFamily(dashboard.asBlack.map(toAggInput), familiesDict);
+
           const activeSortMode = activeTab === 'white' ? whiteSortMode : blackSortMode;
           const setActiveSortMode = activeTab === 'white' ? setWhiteSortMode : setBlackSortMode;
           const activeData =
@@ -1093,7 +1158,30 @@ export const PersonalOpeningStats: React.FC<{
                 </div>
 
                 {/* Opening cards */}
-                {activeData.openings.length === 0 ? (
+                {groupBy === 'family' ? (
+                  (() => {
+                    const rows = activeTab === 'white' ? familyRowsWhite : familyRowsBlack;
+                    if (rows.length === 0) {
+                      return <div className={styles.emptyList}>No classified openings.</div>;
+                    }
+                    return (
+                      <div className={styles.mobileOpeningList}>
+                        {rows.map((row) => {
+                          const key = `${activeTab}:${row.family_id}`;
+                          return (
+                            <FamilyRow
+                              key={key}
+                              colour={activeTab}
+                              row={row}
+                              isExpanded={expanded.has(key)}
+                              onToggle={() => toggleExpanded(key)}
+                            />
+                          );
+                        })}
+                      </div>
+                    );
+                  })()
+                ) : activeData.openings.length === 0 ? (
                   <div className={styles.emptyList}>No classified openings.</div>
                 ) : (
                   <div className={styles.mobileOpeningList}>
@@ -1315,7 +1403,26 @@ export const PersonalOpeningStats: React.FC<{
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
-                    {sortedWhite.length === 0 ? (
+                    {groupBy === 'family' ? (
+                      familyRowsWhite.length === 0 ? (
+                        <div className={styles.emptyList}>No classified openings.</div>
+                      ) : (
+                        <div className={styles.openingList}>
+                          {familyRowsWhite.map((row) => {
+                            const key = `white:${row.family_id}`;
+                            return (
+                              <FamilyRow
+                                key={key}
+                                colour="white"
+                                row={row}
+                                isExpanded={expanded.has(key)}
+                                onToggle={() => toggleExpanded(key)}
+                              />
+                            );
+                          })}
+                        </div>
+                      )
+                    ) : sortedWhite.length === 0 ? (
                       <div className={styles.emptyList}>No classified openings.</div>
                     ) : (
                       <div className={styles.openingList}>
@@ -1347,7 +1454,26 @@ export const PersonalOpeningStats: React.FC<{
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
-                    {sortedBlack.length === 0 ? (
+                    {groupBy === 'family' ? (
+                      familyRowsBlack.length === 0 ? (
+                        <div className={styles.emptyList}>No classified openings.</div>
+                      ) : (
+                        <div className={styles.openingList}>
+                          {familyRowsBlack.map((row) => {
+                            const key = `black:${row.family_id}`;
+                            return (
+                              <FamilyRow
+                                key={key}
+                                colour="black"
+                                row={row}
+                                isExpanded={expanded.has(key)}
+                                onToggle={() => toggleExpanded(key)}
+                              />
+                            );
+                          })}
+                        </div>
+                      )
+                    ) : sortedBlack.length === 0 ? (
                       <div className={styles.emptyList}>No classified openings.</div>
                     ) : (
                       <div className={styles.openingList}>

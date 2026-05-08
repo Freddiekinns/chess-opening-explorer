@@ -39,6 +39,7 @@ export interface OpeningForLookup {
   name: string;
   eco: string;
   moves?: string;
+  family_id?: string;
 }
 
 /**

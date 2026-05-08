@@ -524,6 +524,8 @@ router.get('/search-index', (req, res) => {
       ...(isLookupOnly ? {} : { moves: opening.moves || '' }),
       // Only include games_analyzed if available for sorting
       ...(isLookupOnly ? {} : opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
+      // family_id only on full search-index (lookup branch is FEN→name only)
+      ...(isLookupOnly ? {} : { family_id: opening.family_id }),
     }));
 
     // If limit specified, prioritize by games_analyzed and take top N

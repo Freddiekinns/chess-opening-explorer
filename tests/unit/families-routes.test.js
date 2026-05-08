@@ -36,7 +36,7 @@ jest.mock('fs', () => {
     },
     existsSync: (p) => {
       if (typeof p === 'string' && p.endsWith('families.json')) return true;
-      return require('fs').existsSync(p);
+      return real.existsSync(p);
     },
   };
 });

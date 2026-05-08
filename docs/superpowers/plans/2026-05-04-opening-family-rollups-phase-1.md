@@ -863,7 +863,16 @@ git commit -m "feat(taxonomy): backfill overrides to <2% uncategorised"
 
 ## Module 2 — API surface
 
-### Task 6: Pass `family_id`/`family_display_name` through the search-index
+### Task 6: Pass `family_id` through the search-index (bandwidth-conscious)
+
+**Bandwidth note (read first).** Search-index is currently ~1.6 MB raw and is
+the single largest cacheable payload after we eliminated `/all` (TASK011).
+Adding both `family_id` AND `family_display_name` per row would add ~870 KB raw
+(~54% bloat). We instead ship `family_id` only (~285 KB raw, 18% bloat — gzips
+to ~15–30 KB because there are only 28 distinct values). The display name is
+fetched once via `/api/families` (<5 KB, cached 24h CDN) and joined client-side
+in the aggregation helper. Do NOT add `family_display_name` to the search-index
+payload.
 
 **Files:**
 
@@ -882,7 +891,6 @@ export interface OpeningForLookup {
   eco: string;
   moves?: string;
   family_id?: string;
-  family_display_name?: string | null;
 }
 ```
 
@@ -910,7 +918,6 @@ For each mapping, add the two new fields, e.g.:
   eco: opening.eco,
   moves: opening.moves || '',
   family_id: opening.family_id,
-  family_display_name: opening.family_display_name || null,
   // ... existing fields
 }
 ```
@@ -918,8 +925,9 @@ For each mapping, add the two new fields, e.g.:
 - [ ] **Step 4: Update the search-index route**
 
 In `packages/api/src/routes/openings.routes.js` find the
-`searchIndex = allOpenings.map(...)` block (~line 519) and add the two fields.
-Keep the lookup-only branch unchanged (they're not needed when `fields=lookup`):
+`searchIndex = allOpenings.map(...)` block (~line 519) and add ONLY `family_id`.
+The lookup-only branch should also omit it (FEN→name lookup doesn't need family
+info; only the full search-index path is consumed by the Analyse rollup):
 
 ```js
 let searchIndex = allOpenings.map((opening) => ({
@@ -930,22 +938,52 @@ let searchIndex = allOpenings.map((opening) => ({
   ...(isLookupOnly
     ? {}
     : opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
-  family_id: opening.family_id,
-  family_display_name: opening.family_display_name || null,
+  ...(isLookupOnly ? {} : { family_id: opening.family_id }),
 }));
 ```
 
-- [ ] **Step 5: Smoke-test locally**
+- [ ] **Step 5: Bandwidth gate — measure before/after**
+
+Capture the search-index file size delta and FAIL if it grows by more than 20%.
+Run from repo root:
+
+```bash
+# Snapshot pre-change size (run this BEFORE rebuilding)
+BEFORE=$(stat -c%s api/data/search-index.json 2>/dev/null || stat -f%z api/data/search-index.json)
+echo "before: $BEFORE bytes"
+
+# Apply changes, then rebuild
+npm run build:vercel
+
+AFTER=$(stat -c%s api/data/search-index.json 2>/dev/null || stat -f%z api/data/search-index.json)
+echo "after:  $AFTER bytes"
+node -e "const b=$BEFORE,a=$AFTER;const pct=((a-b)/b*100).toFixed(2);console.log('growth:', pct+'%');if((a-b)/b>0.20){console.error('FAIL: search-index grew >20%'); process.exit(1)}"
+```
+
+Expected: growth between 15% and 20% (~270–320 KB). If it exceeds 20%, abort and
+investigate — likely cause is `family_display_name` accidentally included or
+`isLookupOnly` branch leaking the field.
+
+- [ ] **Step 6: Smoke-test locally**
 
 Run: `npm run dev:api` (background) Then in another terminal:
 `curl -s http://localhost:3010/api/openings/search-index?limit=3 | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);console.log(JSON.stringify(j.data[0],null,2))})"`
-Expected: first item has `family_id` and `family_display_name`.
+Expected: first item has `family_id` (string) and NO `family_display_name`.
 
-- [ ] **Step 6: Commit**
+Also verify the lookup-only branch is unaffected:
+`curl -s "http://localhost:3010/api/openings/search-index?fields=lookup&limit=3"`
+Expected: items have NO `family_id` and NO `moves`.
+
+- [ ] **Step 7: Verify Cache-Control still applied**
+
+Run: `grep -A3 search-index vercel.json` Expected: `s-maxage` ≥ 86400 already
+present (from TASK011). If missing, add it before merging.
+
+- [ ] **Step 8: Commit**
 
 ```bash
 git add packages/shared/src/utils/pgn-utils.ts packages/api/src/services/eco-service.js packages/api/src/routes/openings.routes.js
-git commit -m "feat(api): expose family_id and family_display_name on search-index"
+git commit -m "feat(api): expose family_id on search-index (display name joined client-side)"
 ```
 
 ---
@@ -1065,14 +1103,15 @@ const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 
-const FAMILIES_PATH = path.resolve(__dirname, '..', 'data', 'families.json');
-const FAMILIES_PATH_FALLBACK = path.resolve(
+// Source of truth: repo-root data/families.json (committed). Avoid the
+// dual-path dance documented in CLAUDE.md (video-index gotcha) — read directly
+// from data/ rather than relying on prepare-vercel-data.js to copy it.
+const FAMILIES_PATH = path.resolve(
   __dirname,
   '..',
   '..',
   '..',
   '..',
-  'api',
   'data',
   'families.json'
 );
@@ -1082,13 +1121,10 @@ let cacheTime = 0;
 const TTL_MS = 60 * 60 * 1000;
 
 function loadFamilies() {
-  const candidate = fs.existsSync(FAMILIES_PATH)
-    ? FAMILIES_PATH
-    : FAMILIES_PATH_FALLBACK;
-  if (!fs.existsSync(candidate)) {
-    throw new Error('families.json not found — run npm run build:vercel first');
+  if (!fs.existsSync(FAMILIES_PATH)) {
+    throw new Error(`families.json not found at ${FAMILIES_PATH}`);
   }
-  return JSON.parse(fs.readFileSync(candidate, 'utf8'));
+  return JSON.parse(fs.readFileSync(FAMILIES_PATH, 'utf8'));
 }
 
 function buildResponse() {
@@ -1167,7 +1203,7 @@ Add a new headers entry next to the existing `/api/openings/search-index` one:
   "headers": [
     {
       "key": "Cache-Control",
-      "value": "s-maxage=86400, stale-while-revalidate=86400"
+      "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400"
     }
   ]
 }
@@ -1545,7 +1581,8 @@ const entry = map.get(key) ?? {
   name: lookup.bestMatch.name,
   eco: lookup.bestMatch.eco,
   family_id: lookup.bestMatch.family_id,
-  family_display_name: lookup.bestMatch.family_display_name,
+  // NOTE: family_display_name is NOT carried per-row to keep search-index
+  // payload small. It is joined in groupByFamily() from the families dict.
   games: 0,
   wins: 0,
   draws: 0,
@@ -1554,8 +1591,9 @@ const entry = map.get(key) ?? {
 ```
 
 Update the corresponding TypeScript `OpeningAgg` type (defined near the top of
-the file) to include the optional
-`family_id?: string; family_display_name?: string | null;` fields.
+the file) to include the optional `family_id?: string` field. Do NOT add
+`family_display_name` here — display name comes from the families dict at render
+time.
 
 - [ ] **Step 3: Render the toggle pill**
 

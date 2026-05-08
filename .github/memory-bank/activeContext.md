@@ -40,9 +40,6 @@ helper. All green. `npm run build` clean.
 
 **Follow-ups (not blocking merge):**
 
-- `/api/openings/search-index` `s-maxage` is currently 3600 (1h); should be
-  bumped to 86400 (24h) to amortise the now-3.2 MB payload across edges.
-  Pre-existing; flagged for separate PR.
 - Phase 2 (family lens route + chip system) and Phase 3 (repertoire grouping) to
   be planned when their turn comes.
 

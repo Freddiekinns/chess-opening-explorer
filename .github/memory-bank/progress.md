@@ -14,6 +14,9 @@
   passing across taxonomy, route, helper, and component layers. Spec deviations:
   client-side aggregation (not server `?group_by=family`), `family_display_name`
   joined client-side from `/api/families` to halve search-index growth.
+  Post-review fixes: `/api/families` routed through `pathResolver` for Vercel
+  bundling; search-index `s-maxage` bumped 3600 → 86400 to absorb the +10.36%
+  payload growth.
 
 - **TASK008 Rewrite — Feature Roadmap** (2026-05-04): Replaced old
   competitive-analysis TASK008 with a UX-level roadmap of 12 features

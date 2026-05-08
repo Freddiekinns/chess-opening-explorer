@@ -127,7 +127,7 @@ Other surfaces:
 
 ## Code review findings (resolved before merge)
 
-Two issues caught during the cross-cutting review and fixed in commit
+Two issues caught during the first cross-cutting review and fixed in commit
 `48a36bfd2`:
 
 1. **Missing `vercel.json` rewrite for `/api/families`** — the route was defined
@@ -140,6 +140,24 @@ Two issues caught during the cross-cutting review and fixed in commit
    of `groupBy`; in family view, sort changes had no visible effect (family rows
    are pre-sorted by games desc inside `groupByFamily`). Wrapped all three
    `<SortBar>` callsites in `groupBy === 'variation' && …`.
+
+A second review pass surfaced two more issues, fixed before merge:
+
+3. **`/api/families` path resolution would 500 in Vercel production.** The route
+   hard-coded a four-up `__dirname` traversal to `data/families.json`, but
+   Vercel only bundles files reachable through `process.cwd()` or static
+   `require()` tracing. `prepare-vercel-data.js` already copies the file to
+   `api/data/families.json` (via `TARGET_DATA_DIR`), so the fix routes through
+   the existing `pathResolver.getDataPath()` helper with a fallback to the
+   repo-root source for `npm run dev:api` (where the prep script may not have
+   run). Test mock updated to use `real.existsSync` for non-families paths so
+   the candidate-resolution logic doesn't recurse.
+4. **Search-index `s-maxage` bumped from 3600 → 86400.** This PR is the one that
+   grew the search-index payload by 10.36% (now 3.2 MB raw). Leaving the edge
+   TTL at 1 hour while the payload jumped would have amplified bandwidth cost on
+   every cache miss across the global CDN footprint, exactly the regression the
+   TASK011 gotcha warns against. Aligned with other heavy read-mostly endpoints
+   (`/api/openings/all`, `/api/openings/eco/*`).
 
 Other checks passed: `isLookupOnly` branch correctly excludes `family_id`,
 override ordering preserves `King's Indian Attack` before `King's Indian`,
@@ -166,14 +184,10 @@ enrichment cleanly under the coverage gate.
 
 ## Follow-ups (not blocking merge)
 
-1. **Bump `/api/openings/search-index` `s-maxage` to 86400.** Currently `3600`
-   from TASK011. With the payload now at 3.2 MB raw, an hourly edge cache miss
-   across the global CDN footprint is more egress than the data warrants.
-   Pre-existing; flagged for a separate, focused PR.
-2. **Phase 2 — Family lens routes and chip system.** Standalone family pages
+1. **Phase 2 — Family lens routes and chip system.** Standalone family pages
    (`/family/:slug`), chip system on opening detail pages, family filtering in
    search. Will need its own spec/plan when prioritised.
-3. **Phase 3 — Repertoire grouping.** Extend "My Repertoire" to group starred
+2. **Phase 3 — Repertoire grouping.** Extend "My Repertoire" to group starred
    openings by family with the same rollup pattern. Will need its own spec/plan.
 
 ---

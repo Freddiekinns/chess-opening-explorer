@@ -3,30 +3,36 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const pathResolver = require('../utils/path-resolver');
 const router = express.Router();
 
-// Source of truth: repo-root data/families.json (committed). Avoid the
-// dual-path dance documented in CLAUDE.md (video-index gotcha) — read directly
-// from data/ rather than relying on prepare-vercel-data.js to copy it.
-const FAMILIES_PATH = path.resolve(
-  __dirname,
-  '..',
-  '..',
-  '..',
-  '..',
-  'data',
-  'families.json'
-);
+// Resolve families.json across environments:
+//  - Vercel: process.cwd()/api/data/families.json (copied by prepare-vercel-data.js)
+//  - Local dev: api/data/families.json if present, else repo-root data/families.json
+// We try candidates in order and pick the first that exists, falling back to
+// the repo-root source of truth so `npm run dev:api` works without a build step.
+function resolveFamiliesPath() {
+  const candidates = [
+    pathResolver.getDataPath('families.json'),
+    path.resolve(__dirname, '..', '..', '..', '..', 'data', 'families.json'),
+  ];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  // Return the first candidate so the error message points somewhere useful.
+  return candidates[0];
+}
 
 let cache = null;
 let cacheTime = 0;
 const TTL_MS = 60 * 60 * 1000;
 
 function loadFamilies() {
-  if (!fs.existsSync(FAMILIES_PATH)) {
-    throw new Error(`families.json not found at ${FAMILIES_PATH}`);
+  const familiesPath = resolveFamiliesPath();
+  if (!fs.existsSync(familiesPath)) {
+    throw new Error(`families.json not found at ${familiesPath}`);
   }
-  return JSON.parse(fs.readFileSync(FAMILIES_PATH, 'utf8'));
+  return JSON.parse(fs.readFileSync(familiesPath, 'utf8'));
 }
 
 function buildResponse() {

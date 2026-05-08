@@ -2,17 +2,18 @@
 
 ## What's Done (newest first)
 
-- **Opening Family Rollups — Taxonomy + Build Pipeline** (2026-05-04, branch
-  `feature/opening-family-rollups`): Phase 1 Module 1. Hand-curated
-  `data/families.json` (28 families) plus `data/family-overrides.json` (~140
-  rules) resolved at build time into `family_id` + `family_display_name` on
-  every ECO record. Coverage 98.45% (192/12,377 uncategorised), gated by Jest
-  test. Pure resolver in `tools/family-taxonomy/resolve-family.js` with 12 unit
-  tests. Build wired into `scripts/prepare-vercel-data.js`. Spec deviation: plan
-  estimated 80% colon-prefix coverage; reality was 21% pre-backfill (ECO data
-  uses `Sicilian:` not `Sicilian Defense:`, `QGA/QGD` abbreviations, `Spanish`
-  for Ruy Lopez, Gruenfeld no-umlaut). Module 2 (API surface) and Module 3
-  (Analyse rollup) still to come.
+- **Opening Family Rollups — Phase 1 Shipped** (2026-05-08, branch
+  `feature/opening-family-rollups`): 28-family taxonomy + ~140 override rules
+  drive build-time `family_id` enrichment on every ECO record (98.45% coverage).
+  `/api/openings/search-index` exposes `family_id` (full mode only);
+  search-index grew +10.36% raw, inside the 20% bandwidth gate. New
+  `GET /api/families` endpoint serves family list + per-family `opening_count`.
+  Analyse page gains a Variation/Family toggle backed by a pure
+  `groupByFamily()` helper; family rows expand to reveal per-variation breakdown
+  via standard disclosure pattern (`aria-expanded` / `aria-controls`). 33 tests
+  passing across taxonomy, route, helper, and component layers. Spec deviations:
+  client-side aggregation (not server `?group_by=family`), `family_display_name`
+  joined client-side from `/api/families` to halve search-index growth.
 
 - **TASK008 Rewrite — Feature Roadmap** (2026-05-04): Replaced old
   competitive-analysis TASK008 with a UX-level roadmap of 12 features

@@ -1,35 +1,53 @@
 # Active Context
 
-**Date:** 2026-05-04
+**Date:** 2026-05-08
 
-## Current Task: Opening Family Rollups Phase 1 — Taxonomy module shipped
+## Current Task: Opening Family Rollups Phase 1 — Shipped
 
-**Status:** In progress. Phase 1 Module 1 (taxonomy + build pipeline) complete.
+**Status:** Complete on branch `feature/opening-family-rollups`. All 12 tasks
+across Modules 1–4 landed. Ready for review/merge.
 
-Hand-curated `data/families.json` (28 families) plus
-`data/family-overrides.json` (~140 rules covering all common ECO naming variants
-— `Sicilian:` vs `Sicilian Defense:`, `QGD/QGA` abbreviations, Gruenfeld
-no-umlaut, Spanish=Ruy Lopez aliases, Indian Game splits to
-KID/Nimzo/QID/Grünfeld) feed a pure resolver in
-`tools/family-taxonomy/resolve-family.js`. Build-time enrichment via
-`tools/family-taxonomy/build-family-index.js` (wired into
-`scripts/prepare-vercel-data.js`) writes `family_id` + `family_display_name`
-into every ECO record.
+**What shipped:**
 
-**Coverage: 98.45%** (192 / 12,377 uncategorised). Coverage-gate Jest test
-asserts <2% uncategorised. 14 unit tests passing across the two test files
-(`tools/family-taxonomy/tests/`).
+- Hand-curated `data/families.json` (28 families) + `data/family-overrides.json`
+  (~140 rules) → resolver in `tools/family-taxonomy/resolve-family.js` enriches
+  every ECO record at build time. **Coverage 98.45%** (192/12,377
+  uncategorised), gated by Jest test.
+- `family_id` exposed on `/api/openings/search-index` (full mode only;
+  lookup-only branch unchanged). Search-index payload grew **+10.36%** — inside
+  the 20% bandwidth gate. Display name intentionally NOT shipped per-row; joined
+  client-side from `/api/families` to keep payload small.
+- New `GET /api/families` endpoint (28 entries, ~5 KB, includes `opening_count`
+  per family). Cache-Control
+  `public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400`.
+- Pure `groupByFamily()` aggregation helper + Variation/Family toggle on
+  `PersonalOpeningStats`. Family rows show display name, total games, variation
+  count, distribution bar; expand to reveal per-variation breakdown. Disclosure
+  pattern with `aria-expanded` + `aria-controls`.
 
-**Scope deviation logged:** Plan estimated ~80% colon-prefix coverage; reality
-was 21% pre-backfill. Override file went from 14 → 140 rules. Mitigation: 5%
-threshold left as design lever in `build-family-index.js` if data drifts.
+**Tests:** 14 backend (taxonomy + families route) + 14 frontend
+(PersonalOpeningStats including 3 new family-rollup tests) + 5 aggregation
+helper. All green. `npm run build` clean.
 
-**Branch:** `feature/opening-family-rollups`. Six commits since branch point
-(plan doc + 5 implementation commits).
+**Spec deviations logged:**
 
-**Next:** Module 2 (`/api/families` endpoint, search-index family fields) and
-Module 3 (Analyse-page Variation/Family toggle with rollup rendering). Plan in
-`docs/superpowers/plans/2026-05-04-opening-family-rollups-phase-1.md`.
+- Aggregation is client-side (not server-side `?group_by=family` per spec §5.2)
+  — kept payloads small.
+- `family_display_name` deliberately omitted from search-index to halve raw
+  payload growth.
+- Coverage came in at 21% pre-backfill (plan hypothesis 80%); ~140 override
+  rules added to reach 98.45%.
+
+**Follow-ups (not blocking merge):**
+
+- `/api/openings/search-index` `s-maxage` is currently 3600 (1h); should be
+  bumped to 86400 (24h) to amortise the now-3.2 MB payload across edges.
+  Pre-existing; flagged for separate PR.
+- Phase 2 (family lens route + chip system) and Phase 3 (repertoire grouping) to
+  be planned when their turn comes.
+
+**Branch:** `feature/opening-family-rollups`. 11 commits since branch point
+(plan doc + 10 implementation commits across Modules 1–4).
 
 ## Previous Task: TASK008 Rewrite — Feature Roadmap & Exploration
 

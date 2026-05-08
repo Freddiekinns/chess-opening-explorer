@@ -331,4 +331,153 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
       expect(analyseBtn).toBeDisabled();
     });
   });
+
+  describe('family rollup', () => {
+    const username = 'Magnus';
+    const platform = 'chess.com';
+    const limit = 500;
+    const cacheKey = buildCacheKey(username, platform, limit);
+
+    const mockDashboardWithFamily = {
+      ...mockDashboardData,
+      asWhite: [
+        {
+          fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2',
+          name: 'Sicilian Defense',
+          eco: 'B20',
+          moves: '1. e4 c5',
+          family_id: 'sicilian',
+          games: 4,
+          win: 2,
+          draw: 1,
+          loss: 1,
+        },
+        {
+          fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2',
+          name: 'Sicilian Defense: Open',
+          eco: 'B27',
+          moves: '1. e4 c5 2. Nf3',
+          family_id: 'sicilian',
+          games: 2,
+          win: 1,
+          draw: 0,
+          loss: 1,
+        },
+      ],
+    };
+
+    let originalFetch: typeof globalThis.fetch;
+
+    beforeEach(() => {
+      originalFetch = globalThis.fetch;
+      globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
+        const url = typeof input === 'string' ? input : input.toString();
+        if (url.includes('/api/families')) {
+          return new Response(
+            JSON.stringify({
+              success: true,
+              data: [
+                {
+                  id: 'sicilian',
+                  display_name: 'Sicilian Defense',
+                  slug: 'sicilian-defense',
+                },
+              ],
+            }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        return new Response('{}', { status: 200 });
+      }) as unknown as typeof globalThis.fetch;
+
+      sessionStorage.setItem(
+        FORM_STATE_KEY,
+        JSON.stringify({ username, platform, limit, activeTab: 'white' })
+      );
+      sessionStorage.setItem(
+        cacheKey,
+        JSON.stringify({ dashboard: mockDashboardWithFamily, cachedAt: Date.now() })
+      );
+    });
+
+    afterEach(() => {
+      globalThis.fetch = originalFetch;
+    });
+
+    it('renders both Variation and Family tabs with Variation selected by default', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      const variationTabs = screen.getAllByRole('tab', { name: /variation/i });
+      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
+
+      expect(variationTabs.length).toBeGreaterThan(0);
+      expect(familyTabs.length).toBeGreaterThan(0);
+      // Default groupBy is 'variation' — every variation tab is selected, no family tab is.
+      variationTabs.forEach((tab) => expect(tab.getAttribute('aria-selected')).toBe('true'));
+      familyTabs.forEach((tab) => expect(tab.getAttribute('aria-selected')).toBe('false'));
+    });
+
+    it('renders the family display name after toggling to Family view', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      // Wait for /api/families fetch to populate the dictionary.
+      await waitFor(() => {
+        expect(globalThis.fetch).toHaveBeenCalled();
+      });
+
+      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
+      await user.click(familyTabs[0]);
+
+      // After click, that tab is aria-selected.
+      await waitFor(() => {
+        expect(familyTabs[0].getAttribute('aria-selected')).toBe('true');
+      });
+
+      // Family display name appears at least once (mobile + desktop dashboards both render it).
+      await waitFor(() => {
+        expect(screen.getAllByText('Sicilian Defense').length).toBeGreaterThan(0);
+      });
+    });
+
+    it('expands a family row to reveal its variations', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(globalThis.fetch).toHaveBeenCalled();
+      });
+
+      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
+      await user.click(familyTabs[0]);
+
+      // Family header buttons (mobile + desktop). Find the ones whose aria-controls
+      // points at the white-side variations list.
+      const familyHeaders = await screen.findAllByRole('button', { expanded: false });
+      const sicilianHeader = familyHeaders.find((b) =>
+        (b.getAttribute('aria-controls') || '').includes('variations-white-sicilian')
+      );
+      expect(sicilianHeader).toBeTruthy();
+
+      await user.click(sicilianHeader!);
+
+      await waitFor(() => {
+        expect(sicilianHeader!.getAttribute('aria-expanded')).toBe('true');
+      });
+
+      // Variation list now visible — the second variation name appears.
+      expect(screen.getAllByText('Sicilian Defense: Open').length).toBeGreaterThan(0);
+    });
+  });
 });

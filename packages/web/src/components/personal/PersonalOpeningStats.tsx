@@ -14,6 +14,7 @@ type OpeningAgg = {
   name: string;
   eco: string;
   moves: string;
+  family_id?: string;
   games: number;
   win: number;
   draw: number;
@@ -91,7 +92,7 @@ function sortAgg(list: OpeningAgg[], mode: SortMode = 'frequency') {
 
 function upsertAgg(
   map: Map<string, OpeningAgg>,
-  opening: { fen: string; name: string; eco: string; moves?: string },
+  opening: { fen: string; name: string; eco: string; moves?: string; family_id?: string },
   result: Result
 ) {
   const existing = map.get(opening.fen) || {
@@ -99,6 +100,7 @@ function upsertAgg(
     name: opening.name,
     eco: opening.eco,
     moves: opening.moves || '',
+    family_id: opening.family_id,
     games: 0,
     win: 0,
     draw: 0,
@@ -375,6 +377,13 @@ export const PersonalOpeningStats: React.FC<{
   const [showSettings, setShowSettings] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const [showAllMobile, setShowAllMobile] = useState(false);
+  const [groupBy, setGroupBy] = useState<'variation' | 'family'>('variation');
+  // familiesDict is consumed by the family render path in Task 10; reference
+  // below keeps TS noUnusedLocals happy until then.
+  const [familiesDict, setFamiliesDict] = useState<
+    Record<string, { id: string; display_name: string }>
+  >({});
+  void familiesDict;
 
   // Displayed state: only updates when analysis completes (not while typing)
   const [displayedUsername, setDisplayedUsername] = useState('');
@@ -395,6 +404,22 @@ export const PersonalOpeningStats: React.FC<{
   useEffect(() => {
     return () => {
       abortRef.current?.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    let alive = true;
+    fetch('/api/families')
+      .then((r) => r.json())
+      .then((j) => {
+        if (!alive || !j?.success) return;
+        const dict: Record<string, { id: string; display_name: string }> = {};
+        for (const f of j.data) dict[f.id] = { id: f.id, display_name: f.display_name };
+        setFamiliesDict(dict);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
     };
   }, []);
 
@@ -1035,6 +1060,30 @@ export const PersonalOpeningStats: React.FC<{
                   </button>
                 </div>
 
+                {/* Group-by toggle */}
+                <div className={styles.groupByToggle} role="tablist" aria-label="Group openings">
+                  <button
+                    role="tab"
+                    type="button"
+                    aria-selected={groupBy === 'variation'}
+                    className={
+                      groupBy === 'variation' ? styles.groupByActive : styles.groupByOption
+                    }
+                    onClick={() => setGroupBy('variation')}
+                  >
+                    Variation
+                  </button>
+                  <button
+                    role="tab"
+                    type="button"
+                    aria-selected={groupBy === 'family'}
+                    className={groupBy === 'family' ? styles.groupByActive : styles.groupByOption}
+                    onClick={() => setGroupBy('family')}
+                  >
+                    Family
+                  </button>
+                </div>
+
                 {/* Section title + sort filters */}
                 <div className={styles.mobileSectionHead}>
                   <h3 className={styles.mobileSectionTitle}>
@@ -1223,6 +1272,30 @@ export const PersonalOpeningStats: React.FC<{
                       </div>
                     </Link>
                   )}
+                </div>
+
+                {/* Group-by toggle */}
+                <div className={styles.groupByToggle} role="tablist" aria-label="Group openings">
+                  <button
+                    role="tab"
+                    type="button"
+                    aria-selected={groupBy === 'variation'}
+                    className={
+                      groupBy === 'variation' ? styles.groupByActive : styles.groupByOption
+                    }
+                    onClick={() => setGroupBy('variation')}
+                  >
+                    Variation
+                  </button>
+                  <button
+                    role="tab"
+                    type="button"
+                    aria-selected={groupBy === 'family'}
+                    className={groupBy === 'family' ? styles.groupByActive : styles.groupByOption}
+                    onClick={() => setGroupBy('family')}
+                  >
+                    Family
+                  </button>
                 </div>
 
                 {/* Desktop: side-by-side opening lists */}

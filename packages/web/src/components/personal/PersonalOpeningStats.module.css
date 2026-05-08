@@ -623,8 +623,12 @@
 }
 
 @keyframes overlayFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .playerMeta {
@@ -716,7 +720,6 @@
 .cardLabelLoss {
   color: var(--color-text-muted);
 }
-
 
 .cardTitle {
   font-family: var(--font-family-headline);
@@ -819,8 +822,6 @@
 .winRateValueLoss {
   color: var(--color-text-primary);
 }
-
-
 
 .winRateLabel {
   font-size: var(--text-2xs);
@@ -1405,7 +1406,6 @@
   transition: width 0.4s ease-out;
 }
 
-
 /* ==============================
    MOBILE DASHBOARD
    ============================== */
@@ -1472,9 +1472,15 @@
   animation: cardIn 300ms ease-out both;
 }
 
-.triStat:nth-child(1) { animation-delay: 0ms; }
-.triStat:nth-child(2) { animation-delay: 80ms; }
-.triStat:nth-child(3) { animation-delay: 160ms; }
+.triStat:nth-child(1) {
+  animation-delay: 0ms;
+}
+.triStat:nth-child(2) {
+  animation-delay: 80ms;
+}
+.triStat:nth-child(3) {
+  animation-delay: 160ms;
+}
 
 .triStatWin {
   border-left: 3px solid var(--color-result-black);
@@ -2026,4 +2032,31 @@
   .mobileBarLoss {
     transition: none;
   }
+}
+
+.groupByToggle {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--surface-2, #1f1c1a);
+  margin-bottom: 12px;
+}
+.groupByOption,
+.groupByActive {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: inherit;
+  background: transparent;
+  color: var(--text-muted, #a8a29e);
+  cursor: pointer;
+}
+.groupByActive {
+  background: var(--surface-3, #2b2724);
+  color: var(--text, #f5f1ec);
+}
+.groupByOption:hover {
+  color: var(--text, #f5f1ec);
 }

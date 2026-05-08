@@ -1154,7 +1154,9 @@ export const PersonalOpeningStats: React.FC<{
                   <h3 className={styles.mobileSectionTitle}>
                     Performance as {activeTab === 'white' ? 'White' : 'Black'}
                   </h3>
-                  <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
+                  {groupBy === 'variation' && (
+                    <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
+                  )}
                 </div>
 
                 {/* Opening cards */}
@@ -1394,7 +1396,9 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as White
                         <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
                       </h3>
-                      <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
+                      {groupBy === 'variation' && (
+                        <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
+                      )}
                     </div>
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
@@ -1445,7 +1449,9 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as Black
                         <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
                       </h3>
-                      <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
+                      {groupBy === 'variation' && (
+                        <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
+                      )}
                     </div>
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>

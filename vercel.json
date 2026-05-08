@@ -158,6 +158,10 @@
       "destination": "/api/health"
     },
     {
+      "source": "/api/families",
+      "destination": "/api/families"
+    },
+    {
       "source": "/((?!api/|sitemaps/|sitemap\\.xml|sitemap-index\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }

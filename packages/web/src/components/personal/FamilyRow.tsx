@@ -38,35 +38,38 @@ const ChevronIcon: React.FC<{ open: boolean }> = ({ open }) => (
   </svg>
 );
 
+const VariationFragment: React.FC<{ label: string; v: FamilyVariationRow }> = ({ label, v }) => (
+  <span className={styles.subMetaPart}>
+    <span className={styles.subMetaLabel}>{label}</span>{' '}
+    <span className={styles.subMetaName}>{stripFamilyPrefix(v.name)}</span>
+    <span className={styles.subMetaDash}> — </span>
+    <span className={styles.subMetaPct}>{pct(v.games, v.wins, v.draws)}%</span>
+  </span>
+);
+
 const SubMeta: React.FC<{
   best: FamilyVariationRow | null;
   weak: FamilyVariationRow | null;
 }> = ({ best, weak }) => {
   if (!best && !weak) return null;
-  const showBoth = best && weak && best.key !== weak.key;
+  // When best and weak point to the same variation (only one qualifies),
+  // render only the best half.
+  const showWeak = best && weak && best.key !== weak.key;
   return (
     <div className={styles.subMeta}>
-      {best && (
-        <span className={styles.subMetaPart}>
-          <span className={styles.subMetaLabel}>Best</span>{' '}
-          <span className={styles.subMetaName}>{stripFamilyPrefix(best.name)}</span>
-          <span className={styles.subMetaDash}> — </span>
-          <span className={styles.subMetaPct}>{pct(best.games, best.wins, best.draws)}%</span>
-        </span>
-      )}
-      {showBoth && (
+      {best && <VariationFragment label="Best" v={best} />}
+      {showWeak && (
         <>
           <span className={styles.subMetaSep} aria-hidden="true">
             ·
           </span>
-          <span className={styles.subMetaPart}>
-            <span className={styles.subMetaLabel}>Needs work</span>{' '}
-            <span className={styles.subMetaName}>{stripFamilyPrefix(weak!.name)}</span>
-            <span className={styles.subMetaDash}> — </span>
-            <span className={styles.subMetaPct}>{pct(weak!.games, weak!.wins, weak!.draws)}%</span>
-          </span>
+          <VariationFragment label="Needs work" v={weak!} />
         </>
       )}
+      {/* Defensive: best===null && weak!==null cannot arise from groupByFamily
+          today, but if a future caller passes that asymmetry the weak entry
+          is still rendered rather than silently dropped. */}
+      {!best && weak && <VariationFragment label="Needs work" v={weak} />}
     </div>
   );
 };

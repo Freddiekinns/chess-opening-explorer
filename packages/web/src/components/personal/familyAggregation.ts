@@ -74,32 +74,28 @@ export function groupByFamily(
   sortMode: SortMode = 'frequency'
 ): GroupByFamilyResult {
   const buckets = new Map<string, FamilyRollupRow>();
-  let uncategorised: UncategorisedSummary | null = null;
-
-  const ensureUncategorised = (): UncategorisedSummary => {
-    if (!uncategorised) {
-      uncategorised = {
-        games: 0,
-        wins: 0,
-        draws: 0,
-        losses: 0,
-        variation_count: 0,
-        win_rate: 0,
-      };
-    }
-    return uncategorised;
+  // Always-non-null accumulator + presence flag — avoids the closure-mutation
+  // pattern that confuses TypeScript's control-flow narrowing.
+  const uncat: UncategorisedSummary = {
+    games: 0,
+    wins: 0,
+    draws: 0,
+    losses: 0,
+    variation_count: 0,
+    win_rate: 0,
   };
+  let hasUncategorised = false;
 
   for (const row of input) {
     const id = row.family_id && row.family_id.length > 0 ? row.family_id : UNCATEGORISED;
 
     if (id === UNCATEGORISED) {
-      const u = ensureUncategorised();
-      u.games += row.games;
-      u.wins += row.wins;
-      u.draws += row.draws;
-      u.losses += row.losses;
-      u.variation_count += 1;
+      hasUncategorised = true;
+      uncat.games += row.games;
+      uncat.wins += row.wins;
+      uncat.draws += row.draws;
+      uncat.losses += row.losses;
+      uncat.variation_count += 1;
       continue;
     }
 
@@ -158,13 +154,8 @@ export function groupByFamily(
     }
   }
 
-  // TypeScript's control-flow analysis cannot narrow a variable that is
-  // mutated inside a closure (`ensureUncategorised`), and after the loop it
-  // collapses `uncategorised` to `never`. Cast through `unknown` to restore
-  // the declared union type.
-  const u = uncategorised as unknown as UncategorisedSummary | null;
-  if (u) {
-    u.win_rate = winRate(u.games, u.wins, u.draws);
+  if (hasUncategorised) {
+    uncat.win_rate = winRate(uncat.games, uncat.wins, uncat.draws);
   }
 
   const rows = Array.from(buckets.values());
@@ -185,5 +176,5 @@ export function groupByFamily(
     return a.display_name.localeCompare(b.display_name);
   });
 
-  return { rows, uncategorised: u };
+  return { rows, uncategorised: hasUncategorised ? uncat : null };
 }

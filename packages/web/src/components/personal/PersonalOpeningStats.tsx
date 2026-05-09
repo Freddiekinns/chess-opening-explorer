@@ -7,6 +7,7 @@ import { AnalyseToolbar, type GroupBy } from './AnalyseToolbar';
 import { SectionToolbar } from './SectionToolbar';
 import { FamilyRow } from './FamilyRow';
 import { UncategorisedFootnote } from './UncategorisedFootnote';
+import { InlineLinkSwitch } from './InlineLinkSwitch';
 
 type Platform = 'lichess' | 'chess.com';
 
@@ -1040,37 +1041,24 @@ export const PersonalOpeningStats: React.FC<{
                   </Link>
                 )}
 
-                {/* Pill toggle */}
-                <div
-                  className={styles.pillToggle}
-                  role="tablist"
-                  aria-label="View openings by side"
-                >
-                  <button
-                    type="button"
-                    role="tab"
-                    className={`${styles.pillBtn} ${activeTab === 'white' ? styles.pillBtnActive : ''}`}
-                    onClick={() => {
-                      setActiveTab('white');
-                      setShowAllMobile(false);
-                    }}
-                    aria-selected={activeTab === 'white'}
-                  >
-                    As White
-                  </button>
-                  <button
-                    type="button"
-                    role="tab"
-                    className={`${styles.pillBtn} ${activeTab === 'black' ? styles.pillBtnActive : ''}`}
-                    onClick={() => {
-                      setActiveTab('black');
-                      setShowAllMobile(false);
-                    }}
-                    aria-selected={activeTab === 'black'}
-                  >
-                    As Black
-                  </button>
-                </div>
+                {/* Side switcher (mobile only) — InlineLinkSwitch primitive
+                    matches the redesign's editorial register and uses
+                    radiogroup/radio ARIA per spec ARIA-cleanup mandate. */}
+                <InlineLinkSwitch
+                  label="SIDE"
+                  options={
+                    [
+                      { value: 'white', label: 'As White' },
+                      { value: 'black', label: 'As Black' },
+                    ] as const
+                  }
+                  value={activeTab}
+                  onChange={(v) => {
+                    setActiveTab(v);
+                    setShowAllMobile(false);
+                  }}
+                  ariaLabel="View openings by side"
+                />
 
                 {/* VIEW switcher */}
                 <AnalyseToolbar value={groupBy} onChange={setGroupBy} />

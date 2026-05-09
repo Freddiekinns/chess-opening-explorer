@@ -1,0 +1,464 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Family Rollup — 3 directions</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:#0e0d0c;color:var(--color-text-primary);font-family:'DM Sans',sans-serif;padding:32px 0}
+  .stack{display:flex;flex-direction:column;align-items:center;gap:48px}
+  .stack > .group{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .stack .group-label{font:700 11px/1 'DM Sans',sans-serif;color:#8e887f;letter-spacing:.16em;text-transform:uppercase;padding-left:6px}
+  .frame{width:1280px;background:#1a1816;padding:48px 56px 56px;box-sizing:border-box;border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+
+  /* Full page mock */
+  .pageframe{width:1280px;background:#1a1816;padding:36px 56px 56px;box-sizing:border-box;border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+  .page-userhead{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .page-userhead h1{font:800 44px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#ece8e1;margin:0 0 6px}
+  .page-userhead .source{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#9a958e}
+  .page-userhead .source .platform{display:inline-flex;align-items:center;padding:3px 10px;border-radius:8px;background:#363330;border:1px solid rgba(255,255,255,.10);font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:11px;color:#ece8e1;letter-spacing:.5px}
+  .page-userhead .switch{font-size:13px;color:#9a958e;text-decoration:underline;background:none;border:none;cursor:pointer;font-family:'DM Sans'}
+  .page-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+  .page-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .page-col h2{font:800 24px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;margin:0 0 4px;color:#ece8e1}
+  .page-col .col-meta{font-size:13px;color:#9a958e;margin-bottom:14px}
+  .col-toolbar{display:flex;align-items:center;justify-content:flex-end;margin-bottom:14px}
+  .frame h2.section{font:800 30px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;margin:0}
+  .frame .games-tag{font-size:13px;color:#9a958e;display:inline-flex;align-items:center;padding:3px 10px;border-radius:8px;background:#363330;border:1px solid rgba(255,255,255,.10);margin-left:10px}
+  .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;gap:18px;flex-wrap:wrap}
+  .header-controls{display:flex;align-items:center;gap:18px}
+
+  /* Group label + segmented toggle (used by all variations) */
+  .ctrl-group{display:flex;align-items:center;gap:10px}
+  .ctrl-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8e887f;line-height:1}
+  .seg{display:inline-flex;background:#1a1816;border:1px solid rgba(255,255,255,.10);border-radius:8px;padding:2px;height:32px;box-sizing:border-box}
+  .seg button{background:transparent;border:none;color:#9a958e;font-family:'DM Sans';font-size:13px;font-weight:500;padding:0 14px;border-radius:6px;cursor:pointer;display:flex;align-items:center;height:100%}
+  .seg button.on{background:#363330;color:#ece8e1}
+  .seg-dropdown{display:inline-flex;align-items:center;gap:6px;background:#1a1816;border:1px solid rgba(255,255,255,.10);border-radius:8px;padding:6px 12px;color:#ece8e1;font-size:13px;height:32px;box-sizing:border-box;font-family:'DM Sans';cursor:pointer}
+  .seg-dropdown svg{color:#8e887f}
+
+  /* result-bar (shared) */
+  .resbar{display:flex;height:6px;border-radius:3px;overflow:hidden;background:#1a1816}
+  .resbar .w{background:#d4cfc7}
+  .resbar .d{background:#5a554e}
+  .resbar .b{background:#c08840}
+  .resbar.thin{height:4px}
+
+  /* Pills */
+  .eco{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:11px;font-weight:600;color:#9a958e;background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:6px;padding:2px 8px;letter-spacing:.5px}
+
+  /* Chevron */
+  .chev{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;color:#8e887f;transition:transform .15s ease;flex-shrink:0}
+  .chev.open{transform:rotate(90deg);color:#ece8e1}
+
+  /* SECTION DIVIDERS */
+  .scaffold-title{font:700 14px/1 'DM Sans',sans-serif;color:#8e887f;letter-spacing:.16em;text-transform:uppercase;margin:0 0 8px}
+  .scaffold-note{font-size:13px;color:#9a958e;margin:0 0 24px;max-width:64ch;line-height:1.5}
+
+  /* ============ VARIATION A: UNIFIED FLAT ROW ============ */
+  .vA-table{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.06)}
+  .vA-thead{display:grid;grid-template-columns:24px 1fr 130px 220px 140px;gap:18px;align-items:center;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8e887f}
+  .vA-row{display:grid;grid-template-columns:24px 1fr 130px 220px 140px;gap:18px;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s}
+  .vA-row:hover{background:rgba(255,255,255,.02)}
+  .vA-row.family{cursor:pointer}
+  .vA-row.family.expanded{background:rgba(255,255,255,.02)}
+  .vA-row.variation{background:transparent;border-bottom:1px solid rgba(255,255,255,.04);padding-left:60px;grid-template-columns:1fr 130px 220px 140px;gap:18px}
+  .vA-row.variation .name{color:#9a958e;font-size:13px}
+  .vA-row.variation:last-of-type{border-bottom:1px solid rgba(255,255,255,.06)}
+  .vA-row .name{font:600 15px/1.3 'DM Sans',sans-serif;color:#ece8e1;display:flex;align-items:center;gap:10px}
+  .vA-row .meta{font-size:13px;color:#9a958e}
+  .vA-row .winrate{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:13px;color:#ece8e1;font-weight:500;text-align:right;font-feature-settings:'tnum'}
+  .vA-row .resbar-wrap{display:flex;flex-direction:column;gap:4px}
+  .vA-row .pct-row{display:flex;justify-content:space-between;font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:10px;color:#8e887f;font-feature-settings:'tnum'}
+  .vA-row.other .name{color:#8e887f;font-style:italic}
+  .vA-row.other .name svg{opacity:.6}
+
+  /* ============ VARIATION B: HIGHLIGHTED ROW ============ */
+  .vB-table{display:flex;flex-direction:column;gap:6px}
+  .vB-row{background:rgba(255,255,255,.025);border-radius:8px;border:1px solid rgba(255,255,255,.06);transition:all .15s ease}
+  .vB-row:hover{border-color:rgba(255,255,255,.12)}
+  .vB-row.expanded{background:rgba(255,255,255,.04)}
+  .vB-head{display:grid;grid-template-columns:24px 1fr 100px 1fr 200px;gap:24px;align-items:center;padding:18px 20px;cursor:pointer}
+  .vB-head .title{font:700 18px/1.3 'Bricolage Grotesque',sans-serif;color:#ece8e1;display:flex;align-items:center;gap:10px}
+  .vB-head .title-meta{font-size:12px;color:#8e887f;margin-top:3px;font-weight:500;font-family:'DM Sans'}
+  .vB-head .winrate{font:800 32px/1 'Bricolage Grotesque',sans-serif;color:#ece8e1;font-feature-settings:'tnum';letter-spacing:-.01em}
+  .vB-head .winrate-sub{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8e887f;margin-top:4px}
+  .vB-head .submeta{font-size:13px;color:#9a958e;line-height:1.5}
+  .vB-head .submeta .label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8e887f;margin-right:8px}
+  .vB-head .submeta b.best{color:#ece8e1;font-weight:600}
+  .vB-head .submeta b.weak{color:#ece8e1;font-weight:600}
+  .vB-head .resbar-wrap{display:flex;flex-direction:column;gap:6px}
+  .vB-head .pct-row{display:flex;justify-content:space-between;font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:10px;color:#8e887f;font-feature-settings:'tnum'}
+  .vB-children{padding:0 20px 12px 56px;display:flex;flex-direction:column;gap:1px;border-top:1px solid rgba(255,255,255,.06);margin-top:-1px}
+  .vB-child{display:grid;grid-template-columns:1fr 100px 200px 80px;gap:24px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+  .vB-child:last-child{border-bottom:none}
+  .vB-child .vname{font-size:13px;color:#9a958e}
+  .vB-child .winrate{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:13px;color:#ece8e1;font-feature-settings:'tnum';font-weight:500}
+  .vB-child .gp{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:11px;color:#8e887f;text-align:right;font-feature-settings:'tnum'}
+  .vB-row.other{background:transparent;border:1px dashed rgba(255,255,255,.08)}
+  .vB-row.other .title{color:#8e887f;font-style:italic;font-weight:500;font-size:15px;font-family:'DM Sans'}
+  .vB-row.other .winrate{color:#9a958e;font-size:24px;font-weight:700}
+
+  /* ============ VARIATION C: EDITORIAL CARD ============ */
+  .vC-grid{display:flex;flex-direction:column;gap:10px}
+  .vC-card{background:#232120;border:1px solid #2a2724;border-radius:12px;overflow:hidden;transition:all .15s ease;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+  .vC-card:hover{border-color:rgba(232,93,4,.30);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .vC-card.expanded{border-color:rgba(232,93,4,.30)}
+  .vC-card.expanded .vC-head{border-bottom:1px solid rgba(255,255,255,.06)}
+  .vC-head{display:grid;grid-template-columns:24px 1.2fr 1fr 1.4fr;gap:32px;align-items:center;padding:22px 24px;cursor:pointer}
+  .vC-name{font:700 22px/1.2 'Bricolage Grotesque',sans-serif;color:#ece8e1;letter-spacing:-.005em;display:flex;align-items:center;gap:12px}
+  .vC-meta{font-size:12px;color:#8e887f;margin-top:6px;font-family:'DM Sans';font-weight:500}
+  .vC-stats{display:flex;align-items:baseline;gap:12px}
+  .vC-winrate{font:800 44px/1 'Bricolage Grotesque',sans-serif;color:#ece8e1;font-feature-settings:'tnum';letter-spacing:-.02em}
+  .vC-winrate-suffix{font-size:18px;font-weight:600;color:#8e887f}
+  .vC-record{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:12px;color:#9a958e;font-feature-settings:'tnum';margin-top:4px}
+  .vC-extras{display:flex;flex-direction:column;gap:8px}
+  .vC-extra-row{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;font-size:13px}
+  .vC-extra-row .lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8e887f}
+  .vC-extra-row .vname{color:#ece8e1;font-weight:500}
+  .vC-extra-row .v-pct{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:12px;color:#9a958e;font-feature-settings:'tnum'}
+  .vC-children{padding:14px 24px 22px 60px;display:flex;flex-direction:column;gap:1px}
+  .vC-child{display:grid;grid-template-columns:1fr 100px 200px 90px;gap:24px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+  .vC-child:last-child{border-bottom:none}
+  .vC-child .vname{color:#ece8e1;font-size:14px;font-weight:500}
+  .vC-child .winrate{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:13px;color:#ece8e1;font-feature-settings:'tnum'}
+  .vC-child .gp{font-family:'SFMono-Regular',Monaco,Consolas,monospace;font-size:11px;color:#8e887f;text-align:right;font-feature-settings:'tnum'}
+  .vC-card.other{background:transparent;border:1px solid rgba(255,255,255,.06);box-shadow:none}
+  .vC-card.other .vC-name{color:#8e887f;font-style:italic;font-size:18px;font-weight:600}
+  .vC-card.other .vC-winrate{color:#9a958e;font-size:32px}
+  .vC-card.other .vC-winrate-suffix{font-size:14px}
+
+  .resbar-tall{height:8px}
+</style></head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+
+<script type="text/babel">
+const FAMILIES = [
+  { id:'sicilian',  name:'Sicilian Defence',  winrate:56, games:42, vars:8, record:'24W 5D 13L',
+    best:{name:'Najdorf Variation', pct:67}, weak:{name:'Dragon Variation', pct:38},
+    children:[
+      { name:'Najdorf Variation',    pct:67, games:18, dist:[12,2,4]  },
+      { name:'Sveshnikov Variation', pct:54, games:13, dist:[7,0,6]   },
+      { name:'Dragon Variation',     pct:38, games:11, dist:[4,1,6]   },
+    ] },
+  { id:'french',    name:'French Defence',    winrate:61, games:18, vars:4, record:'11W 1D 6L',
+    best:{name:'Winawer Variation', pct:75}, weak:{name:'Exchange Variation', pct:43} },
+  { id:'caro-kann', name:'Caro–Kann Defence', winrate:49, games:12, vars:3, record:'5W 2D 5L',
+    best:{name:'Classical Variation', pct:60}, weak:{name:'Advance Variation', pct:33} },
+  { id:'vienna',    name:'Vienna Game',       winrate:38, games: 9, vars:2, record:'3W 1D 5L',
+    best:{name:'Vienna Gambit', pct:50},      weak:{name:'Mieses Variation', pct:25} },
+  { id:'other',     name:'Other',             winrate:50, games: 6, vars:4, record:'3W 0D 3L',
+    isOther:true, sub:'4 uncategorised lines · 6 games' }
+];
+
+const formatRecord = (dist) => `${dist[0]}W ${dist[1]}D ${dist[2]}L`;
+const pct = (dist) => {
+  const t = dist[0]+dist[1]+dist[2];
+  return [Math.round(dist[0]/t*100), Math.round(dist[1]/t*100), Math.round(dist[2]/t*100)];
+};
+
+function ResultBar({ pcts, height }){
+  const [w,d,b] = pcts;
+  const cls = height === 'tall' ? 'resbar resbar-tall' : (height === 'thin' ? 'resbar thin' : 'resbar');
+  return <div className={cls}>
+    <div className="w" style={{flex:w}}/>
+    <div className="d" style={{flex:d}}/>
+    <div className="b" style={{flex:b}}/>
+  </div>;
+}
+
+function Chevron({open}){
+  return <span className={'chev'+(open?' open':'')}>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+  </span>;
+}
+
+function SectionHeader({ user, viewMode, onView, sort, onSort }){
+  return <div className="header">
+    <div>
+      <h2 className="section">Performance as White</h2>
+      <span className="games-tag" style={{marginLeft:0,marginTop:6,display:'inline-block'}}>60 games · 5 families</span>
+    </div>
+    <div className="header-controls">
+      <div className="ctrl-group">
+        <span className="ctrl-label">View</span>
+        <div className="seg">
+          <button className={viewMode==='variation'?'on':''} onClick={()=>onView('variation')}>Variation</button>
+          <button className={viewMode==='family'?'on':''} onClick={()=>onView('family')}>Family</button>
+        </div>
+      </div>
+      <div className="ctrl-group">
+        <span className="ctrl-label">Sort</span>
+        <button className="seg-dropdown">
+          {sort}
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>;
+}
+
+/* ----- VARIATION A ----- */
+function VariationA({ expanded, toggle }){
+  return <div>
+    <div className="vA-table">
+      <div className="vA-thead">
+        <span></span>
+        <span>Opening</span>
+        <span style={{textAlign:'right'}}>Win rate</span>
+        <span>W / D / L distribution</span>
+        <span style={{textAlign:'right'}}>Games · Variations</span>
+      </div>
+      {FAMILIES.map(f => {
+        const isOpen = expanded === f.id;
+        const pcts = [f.winrate, Math.round((100-f.winrate)*0.18), 100-f.winrate-Math.round((100-f.winrate)*0.18)];
+        return <React.Fragment key={f.id}>
+          <div className={`vA-row family ${isOpen?'expanded':''} ${f.isOther?'other':''}`} onClick={()=>toggle(f.id)}>
+            <Chevron open={isOpen}/>
+            <span className="name">{f.name}</span>
+            <span className="winrate">{f.winrate}%</span>
+            <div className="resbar-wrap">
+              <ResultBar pcts={pcts}/>
+              <div className="pct-row"><span>{pcts[0]}%</span><span>{pcts[1]}%</span><span>{pcts[2]}%</span></div>
+            </div>
+            <span className="meta" style={{textAlign:'right'}}>{f.games} games · {f.vars} {f.vars===1?'variation':'variations'}</span>
+          </div>
+          {isOpen && f.children && f.children.map((c, i) => {
+            const cp = pct(c.dist);
+            return <div key={i} className="vA-row variation">
+              <span className="name">{c.name}</span>
+              <span className="winrate">{cp[0]}%</span>
+              <div className="resbar-wrap">
+                <ResultBar pcts={cp} height="thin"/>
+                <div className="pct-row"><span>{cp[0]}%</span><span>{cp[1]}%</span><span>{cp[2]}%</span></div>
+              </div>
+              <span className="meta" style={{textAlign:'right'}}>{c.games} games · {formatRecord(c.dist)}</span>
+            </div>;
+          })}
+        </React.Fragment>;
+      })}
+    </div>
+  </div>;
+}
+
+/* ----- VARIATION B ----- */
+function VariationB({ expanded, toggle }){
+  return <div className="vB-table">
+    {FAMILIES.map(f => {
+      const isOpen = expanded === f.id;
+      const pcts = [f.winrate, Math.round((100-f.winrate)*0.18), 100-f.winrate-Math.round((100-f.winrate)*0.18)];
+      return <div key={f.id} className={`vB-row ${isOpen?'expanded':''} ${f.isOther?'other':''}`}>
+        <div className="vB-head" onClick={()=>toggle(f.id)}>
+          <Chevron open={isOpen}/>
+          <div>
+            <div className="title">{f.name}</div>
+            <div className="title-meta">{f.games} games · {f.vars} {f.vars===1?'variation':'variations'} · {f.record}</div>
+          </div>
+          <div>
+            <div className="winrate">{f.winrate}%</div>
+            <div className="winrate-sub">Win rate</div>
+          </div>
+          {f.isOther
+            ? <div className="submeta" style={{fontStyle:'italic'}}>{f.sub}</div>
+            : <div className="submeta">
+                <div><span className="label">Best</span><b className="best">{f.best.name}</b> · {f.best.pct}%</div>
+                <div style={{marginTop:4}}><span className="label">Weak</span><b className="weak">{f.weak.name}</b> · {f.weak.pct}%</div>
+              </div>}
+          <div className="resbar-wrap">
+            <ResultBar pcts={pcts} height="tall"/>
+            <div className="pct-row"><span>{pcts[0]}%</span><span>{pcts[1]}%</span><span>{pcts[2]}%</span></div>
+          </div>
+        </div>
+        {isOpen && f.children && <div className="vB-children">
+          {f.children.map((c,i) => {
+            const cp = pct(c.dist);
+            return <div key={i} className="vB-child">
+              <span className="vname">{c.name}</span>
+              <span className="winrate">{cp[0]}%</span>
+              <ResultBar pcts={cp} height="thin"/>
+              <span className="gp">{c.games} games</span>
+            </div>;
+          })}
+        </div>}
+      </div>;
+    })}
+  </div>;
+}
+
+/* ----- VARIATION C ----- */
+function VariationC({ expanded, toggle }){
+  return <div className="vC-grid">
+    {FAMILIES.map(f => {
+      const isOpen = expanded === f.id;
+      const pcts = [f.winrate, Math.round((100-f.winrate)*0.18), 100-f.winrate-Math.round((100-f.winrate)*0.18)];
+      return <div key={f.id} className={`vC-card ${isOpen?'expanded':''} ${f.isOther?'other':''}`}>
+        <div className="vC-head" onClick={()=>toggle(f.id)}>
+          <Chevron open={isOpen}/>
+          <div>
+            <div className="vC-name">{f.name}</div>
+            <div className="vC-meta">{f.games} games · {f.vars} {f.vars===1?'variation':'variations'}</div>
+          </div>
+          <div>
+            <div className="vC-stats">
+              <span className="vC-winrate">{f.winrate}<span className="vC-winrate-suffix">%</span></span>
+            </div>
+            <div className="vC-record">{f.record}</div>
+          </div>
+          {f.isOther
+            ? <div style={{fontSize:13,color:'#8e887f',fontStyle:'italic',lineHeight:1.5}}>{f.sub}</div>
+            : <div className="vC-extras">
+                <div className="vC-extra-row">
+                  <span className="lbl">Best</span>
+                  <span className="vname">{f.best.name}</span>
+                  <span className="v-pct">{f.best.pct}%</span>
+                </div>
+                <div className="vC-extra-row">
+                  <span className="lbl">Weakest</span>
+                  <span className="vname">{f.weak.name}</span>
+                  <span className="v-pct">{f.weak.pct}%</span>
+                </div>
+                <ResultBar pcts={pcts} height="thin"/>
+              </div>}
+        </div>
+        {isOpen && f.children && <div className="vC-children">
+          {f.children.map((c,i) => {
+            const cp = pct(c.dist);
+            return <div key={i} className="vC-child">
+              <span className="vname">{c.name}</span>
+              <span className="winrate">{cp[0]}%</span>
+              <ResultBar pcts={cp} height="thin"/>
+              <span className="gp">{c.games} games</span>
+            </div>;
+          })}
+        </div>}
+      </div>;
+    })}
+  </div>;
+}
+
+/* ----- Frame wrapper ----- */
+function Frame({ children, sort='Most played' }){
+  const [expanded, setExpanded] = React.useState('sicilian');
+  const [view, setView] = React.useState('family');
+  const toggle = (id) => setExpanded(e => e === id ? null : id);
+  const cloned = React.cloneElement(children, { expanded, toggle });
+  return <div className="frame">
+    <SectionHeader viewMode={view} onView={setView} sort={sort} onSort={()=>{}}/>
+    {cloned}
+  </div>;
+}
+
+/* ----- Canvas ----- */
+function PageMock(){
+  const [exW, setExW] = React.useState('sicilian');
+  const [exB, setExB] = React.useState(null);
+  const [view, setView] = React.useState('family');
+  return <div className="pageframe">
+    <div className="page-userhead">
+      <div>
+        <h1>Plumthemaster</h1>
+        <div className="source"><span className="platform">Chess.com</span>120 games analysed (120 matched)</div>
+      </div>
+      <button className="switch">Analyse another player →</button>
+    </div>
+    <div className="page-toolbar">
+      <div className="ctrl-group">
+        <span className="ctrl-label">View</span>
+        <div className="seg">
+          <button className={view==='variation'?'on':''} onClick={()=>setView('variation')}>Variation</button>
+          <button className={view==='family'?'on':''} onClick={()=>setView('family')}>Family</button>
+        </div>
+      </div>
+      <div style={{fontSize:12,color:'#8e887f',fontStyle:'italic'}}>One global toggle — scaffold applies to both columns</div>
+    </div>
+    <div className="page-cols">
+      <div className="page-col">
+        <h2>Performance as White</h2>
+        <div className="col-meta">60 games · 5 families</div>
+        <div className="col-toolbar">
+          <div className="ctrl-group">
+            <span className="ctrl-label">Sort</span>
+            <button className="seg-dropdown">Most played
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </div>
+        </div>
+        <CompactColumn expanded={exW} toggle={(id)=>setExW(e=>e===id?null:id)}/>
+      </div>
+      <div className="page-col">
+        <h2>Performance as Black</h2>
+        <div className="col-meta">60 games · 4 families</div>
+        <div className="col-toolbar">
+          <div className="ctrl-group">
+            <span className="ctrl-label">Sort</span>
+            <button className="seg-dropdown">Lowest win rate
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </div>
+        </div>
+        <CompactColumn expanded={exB} toggle={(id)=>setExB(e=>e===id?null:id)} dataset="black"/>
+      </div>
+    </div>
+  </div>;
+}
+
+const FAMILIES_BLACK = [
+  { id:'vienna-b',  name:'Vienna Game',       winrate:38, games: 9, vars:2, record:'3W 1D 5L',
+    best:{name:'Vienna Gambit', pct:50},      weak:{name:'Mieses Variation', pct:25} },
+  { id:'caro-b',    name:'Caro–Kann Defence', winrate:49, games:12, vars:3, record:'5W 2D 5L',
+    best:{name:'Classical Variation', pct:60}, weak:{name:'Advance Variation', pct:33} },
+  { id:'sicilian-b',name:'Sicilian Defence',  winrate:56, games:42, vars:8, record:'24W 5D 13L',
+    best:{name:'Najdorf Variation', pct:67},  weak:{name:'Dragon Variation', pct:38} },
+  { id:'french-b',  name:'French Defence',    winrate:61, games:18, vars:4, record:'11W 1D 6L',
+    best:{name:'Winawer Variation', pct:75},  weak:{name:'Exchange Variation', pct:43} }
+];
+
+function CompactColumn({ expanded, toggle, dataset }){
+  const data = dataset === 'black' ? FAMILIES_BLACK : FAMILIES;
+  return <div className="vB-table">
+    {data.map(f => {
+      const isOpen = expanded === f.id;
+      const pcts = [f.winrate, Math.round((100-f.winrate)*0.18), 100-f.winrate-Math.round((100-f.winrate)*0.18)];
+      return <div key={f.id} className={`vB-row ${isOpen?'expanded':''} ${f.isOther?'other':''}`}>
+        <div className="vB-head" style={{gridTemplateColumns:'20px 1fr 80px',gap:14,padding:'14px 16px'}} onClick={()=>toggle(f.id)}>
+          <Chevron open={isOpen}/>
+          <div>
+            <div className="title" style={{fontSize:16}}>{f.name}</div>
+            <div className="title-meta" style={{marginTop:4}}>{f.games} games · {f.vars} {f.vars===1?'variation':'variations'} · Best {f.best.name.split(' ')[0]} {f.best.pct}% · Weak {f.weak.name.split(' ')[0]} {f.weak.pct}%</div>
+            <div style={{marginTop:8}}><ResultBar pcts={pcts}/></div>
+          </div>
+          <div style={{textAlign:'right'}}>
+            <div className="winrate" style={{fontSize:24}}>{f.winrate}%</div>
+            <div className="winrate-sub" style={{marginTop:2}}>Win rate</div>
+          </div>
+        </div>
+        {isOpen && f.children && <div className="vB-children" style={{paddingLeft:42}}>
+          {f.children.map((c,i) => {
+            const cp = pct(c.dist);
+            return <div key={i} className="vB-child" style={{gridTemplateColumns:'1fr 60px 120px',gap:14}}>
+              <span className="vname">{c.name}</span>
+              <span className="winrate">{cp[0]}%</span>
+              <ResultBar pcts={cp} height="thin"/>
+            </div>;
+          })}
+        </div>}
+      </div>;
+    })}
+  </div>;
+}
+
+function App(){
+  return <div className="stack">
+    <div className="group"><div className="group-label">Full page — recommended toolbar pattern (Variation B applied to both columns)</div><PageMock/></div>
+    <div className="group"><div className="group-label">A · Unified flat row — single column reference</div><Frame><VariationA/></Frame></div>
+    <div className="group"><div className="group-label">B · Highlighted row — single column reference</div><Frame><VariationB/></Frame></div>
+    <div className="group"><div className="group-label">C · Editorial card — single column reference</div><Frame><VariationC/></Frame></div>
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

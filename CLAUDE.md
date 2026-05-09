@@ -21,6 +21,27 @@
 
 ---
 
+## Design System
+
+`design-system/` at the repo root is the canonical reference for the Warm
+Editorial Dark brand. **Read `design-system/README.md` before any visual work.**
+The bundle contains tokens, type, components, preview cards, a React UI kit,
+chat transcripts from prior Claude Design sessions, and a `SKILL.md` (invocable
+as `/openingbook-design`).
+
+Tokens live in two places that **must stay in sync**:
+
+- `packages/web/src/styles/simplified.css` — runtime source (what production
+  imports).
+- `design-system/project/colors_and_type.css` — reference + Claude Design
+  handoff format.
+
+When updating tokens, update both in the same commit. When adding a new
+component or visual surface, update the bundle in lockstep — see the maintenance
+protocol in `design-system/README.md`.
+
+---
+
 ## Quick Start
 
 1. **First Time?** Read [context.md](.github/memory-bank/context.md)
@@ -162,6 +183,13 @@ relevant instructions from the table above. Update `activeContext.md` when done.
 
 ## Gotchas
 
+- **Design-system bundle lockstep**: When changing tokens, components, or visual
+  surfaces, update `design-system/` in the same PR as the production-code
+  change. Tokens in `packages/web/src/styles/simplified.css` and
+  `design-system/project/colors_and_type.css` must match. New components: add a
+  preview card under `design-system/project/preview/` (and a kit file under
+  `ui_kits/web/` if substantial). New Claude Design sessions: drop the
+  transcript into `design-system/chats/`.
 - **`tools/production/` scripts**: `enrich`, `course:enrich` etc. reference
   `tools/production/` in `package.json`, but this directory may not exist.
   Actual enrichment logic lives in `tools/llm-enrichment/`. Verify before

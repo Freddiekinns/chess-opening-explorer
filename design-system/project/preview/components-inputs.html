@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.row{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.col{flex:1;min-width:260px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+.field{position:relative;width:100%}
+.field input{width:100%;padding:9px 38px 9px 14px;background:#1a1816;border:1px solid rgba(255,255,255,.10);border-radius:8px;color:#ece8e1;font-size:14px;font-family:'DM Sans';outline:none;box-sizing:border-box}
+.field input::placeholder{color:#9a958e;opacity:.6}
+.field input.focus{border-color:#e85d04}
+.icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#9a958e}
+.lp{padding:14px 20px;font-size:16px;text-align:center;background:linear-gradient(145deg,rgba(232,93,4,.06),transparent);border:1px solid rgba(232,93,4,.20);border-radius:12px;color:#ece8e1}
+.lp::placeholder{color:#8e887f;text-align:center}
+</style></head><body>
+<div class="row">
+  <div class="col">
+    <span class="cap">Topbar input · default</span>
+    <div class="field"><input placeholder="Search openings"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+  </div>
+  <div class="col">
+    <span class="cap">Topbar input · focus</span>
+    <div class="field"><input class="focus" value="Caro–Kann"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+  </div>
+</div>
+<div style="margin-top:18px">
+  <span class="cap">Landing input</span>
+  <input class="lp" style="width:100%;box-sizing:border-box" placeholder="Search variations, ECO codes, or systems...">
+</div>
+</body></html>

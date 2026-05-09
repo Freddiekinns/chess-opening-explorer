@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.bar{display:flex;height:46px;border-radius:6px;overflow:hidden;margin-bottom:14px;border:1px solid var(--border-subtle)}
+.seg{display:flex;align-items:center;justify-content:center;font-family:var(--font-family-mono);font-size:13px;font-weight:600}
+.seg.w{background:#d4cfc7;color:#1a1917;flex:1.55}
+.seg.d{background:#5a554e;color:#dcd8d1;flex:1.95}
+.seg.b{background:#c08840;color:#1a1917;flex:1.5}
+.row{display:flex;gap:18px;font-size:11px;color:var(--color-text-secondary);font-family:var(--font-family-mono)}
+.row span{display:flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%}
+.note{margin-top:14px;font-size:12px;color:var(--color-text-muted);font-style:italic;line-height:1.4}
+</style></head><body>
+<div class="bar">
+  <div class="seg w">31%</div>
+  <div class="seg d">39%</div>
+  <div class="seg b">30%</div>
+</div>
+<div class="row">
+  <span><span class="dot" style="background:#d4cfc7"></span>--color-result-white · #d4cfc7 · <em style="font-family:'DM Sans'">cream</em></span>
+  <span><span class="dot" style="background:#5a554e"></span>--color-result-draw · #5a554e · <em style="font-family:'DM Sans'">warm grey</em></span>
+  <span><span class="dot" style="background:#c08840"></span>--color-result-black · #c08840 · <em style="font-family:'DM Sans'">amber</em></span>
+</div>
+<div class="note">Chess-thematic. Used everywhere win/draw/loss is shown. Never hardcode generic chart colours.</div>
+</body></html>

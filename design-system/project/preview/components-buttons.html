@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-family:'DM Sans';font-weight:600;font-size:14px;cursor:pointer;border:1px solid transparent;transition:all .2s ease}
+.primary{background:#e85d04;color:#100f0e;border-color:#e85d04}
+.primary.hover{background:#f17a2f;transform:translateY(-1px);box-shadow:0 4px 12px rgba(232,93,4,.3)}
+.secondary{background:#363330;color:#9a958e;border-color:#2a2724}
+.secondary.hover{background:#232120;color:#ece8e1;transform:translateY(-1px)}
+.disabled{opacity:.5;cursor:not-allowed}
+.icon-btn{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#9a958e;border:none;border-radius:8px;font-size:14px;font-weight:600}
+.icon-btn.hover{background:rgba(232,93,4,.06);color:#ece8e1}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+.col{display:flex;flex-direction:column;gap:10px}
+</style></head><body>
+<div class="row" style="gap:32px">
+  <div class="col">
+    <span class="cap">Primary · default / hover / disabled</span>
+    <div style="display:flex;gap:10px"><button class="btn primary">Surprise me</button><button class="btn primary hover">Surprise me</button><button class="btn primary disabled">Surprise me</button></div>
+  </div>
+  <div class="col">
+    <span class="cap">Secondary · default / hover</span>
+    <div style="display:flex;gap:10px"><button class="btn secondary">Save FEN</button><button class="btn secondary hover">Save FEN</button></div>
+  </div>
+  <div class="col">
+    <span class="cap">Icon · default / hover</span>
+    <div style="display:flex;gap:10px"><button class="icon-btn">‹</button><button class="icon-btn hover">›</button></div>
+  </div>
+</div>
+</body></html>

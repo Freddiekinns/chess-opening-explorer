@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { PersonalOpeningStats } from '../PersonalOpeningStats';
@@ -404,21 +404,23 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
       globalThis.fetch = originalFetch;
     });
 
-    it('renders both Variation and Family tabs with Variation selected by default', async () => {
+    it('renders VIEW switcher with Variation and Family options, Variation selected by default', async () => {
       renderComponent();
 
       await waitFor(() => {
         expect(getPlayerHeading('Magnus')).toBeTruthy();
       });
 
-      const variationTabs = screen.getAllByRole('tab', { name: /variation/i });
-      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
+      // VIEW label appears in both mobile + desktop dashboards.
+      expect(screen.getAllByText('VIEW').length).toBeGreaterThan(0);
 
-      expect(variationTabs.length).toBeGreaterThan(0);
-      expect(familyTabs.length).toBeGreaterThan(0);
-      // Default groupBy is 'variation' — every variation tab is selected, no family tab is.
-      variationTabs.forEach((tab) => expect(tab.getAttribute('aria-selected')).toBe('true'));
-      familyTabs.forEach((tab) => expect(tab.getAttribute('aria-selected')).toBe('false'));
+      const variationRadios = screen.getAllByRole('radio', { name: 'Variation' });
+      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
+
+      expect(variationRadios.length).toBeGreaterThan(0);
+      expect(familyRadios.length).toBeGreaterThan(0);
+      variationRadios.forEach((r) => expect(r.getAttribute('aria-checked')).toBe('true'));
+      familyRadios.forEach((r) => expect(r.getAttribute('aria-checked')).toBe('false'));
     });
 
     it('renders the family display name after toggling to Family view', async () => {
@@ -434,12 +436,12 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
         expect(globalThis.fetch).toHaveBeenCalled();
       });
 
-      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
-      await user.click(familyTabs[0]);
+      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
+      await user.click(familyRadios[0]);
 
-      // After click, that tab is aria-selected.
+      // After click, that radio is aria-checked.
       await waitFor(() => {
-        expect(familyTabs[0].getAttribute('aria-selected')).toBe('true');
+        expect(familyRadios[0].getAttribute('aria-checked')).toBe('true');
       });
 
       // Family display name appears at least once (mobile + desktop dashboards both render it).
@@ -459,8 +461,8 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
         expect(globalThis.fetch).toHaveBeenCalled();
       });
 
-      const familyTabs = screen.getAllByRole('tab', { name: /^family$/i });
-      await user.click(familyTabs[0]);
+      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
+      await user.click(familyRadios[0]);
 
       // Family header buttons (mobile + desktop). Find the ones whose aria-controls
       // points at the white-side variations list.
@@ -476,8 +478,37 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
         expect(sicilianHeader!.getAttribute('aria-expanded')).toBe('true');
       });
 
-      // Variation list now visible — the second variation name appears.
-      expect(screen.getAllByText('Sicilian Defense: Open').length).toBeGreaterThan(0);
+      // Variation list now visible — the second variation name appears (stripped of family prefix).
+      expect(screen.getAllByText('Open').length).toBeGreaterThan(0);
+    });
+
+    it('per-column sort: changing white ORDER does not affect black', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      // Mobile dashboard also renders a section toolbar for the active tab, so
+      // there can be more than one "Order white openings" radiogroup on screen.
+      // Pick the desktop (last) instance for both white and black.
+      const whiteGroups = screen.getAllByRole('radiogroup', { name: 'Order white openings' });
+      const whiteGroup = whiteGroups[whiteGroups.length - 1];
+      const blackGroups = screen.getAllByRole('radiogroup', { name: 'Order black openings' });
+      const blackGroup = blackGroups[blackGroups.length - 1];
+
+      // Click "Highest win rate" inside the white group only.
+      const whiteHigh = within(whiteGroup).getByRole('radio', { name: 'Highest win rate' });
+      await user.click(whiteHigh);
+
+      await waitFor(() => {
+        expect(whiteHigh.getAttribute('aria-checked')).toBe('true');
+      });
+
+      // Black still has Most played selected.
+      const blackChecked = within(blackGroup).getByRole('radio', { checked: true });
+      expect(blackChecked.textContent).toBe('Most played');
     });
   });
 });

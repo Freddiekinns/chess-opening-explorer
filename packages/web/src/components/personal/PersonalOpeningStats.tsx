@@ -2,7 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src';
 import styles from './PersonalOpeningStats.module.css';
-import { groupByFamily, type FamilyRollupRow, type OpeningAggInput } from './familyAggregation';
+import { groupByFamily, type OpeningAggInput, type SortMode } from './familyAggregation';
+import { AnalyseToolbar, type GroupBy } from './AnalyseToolbar';
+import { SectionToolbar } from './SectionToolbar';
+import { FamilyRow } from './FamilyRow';
+import { UncategorisedFootnote } from './UncategorisedFootnote';
 
 type Platform = 'lichess' | 'chess.com';
 
@@ -89,8 +93,6 @@ function getUserResult(headers: Record<string, string>, side: Side): Result | nu
   if (r === '0-1') return side === 'black' ? 'win' : 'loss';
   return null;
 }
-
-type SortMode = 'frequency' | 'best' | 'worst';
 
 function sortAgg(list: OpeningAgg[], mode: SortMode = 'frequency') {
   return [...list].sort((a, b) => {
@@ -180,12 +182,6 @@ function readSavedFormState(): {
     return null;
   }
 }
-
-const sortLabels: Record<SortMode, string> = {
-  frequency: 'Most played',
-  best: 'Highest win rate',
-  worst: 'Lowest win rate',
-};
 
 /* ==============================
    SVG Icons
@@ -338,72 +334,6 @@ const OpeningRow: React.FC<{
 };
 
 /* ==============================
-   FAMILY ROW COMPONENT
-   ============================== */
-const FamilyRow: React.FC<{
-  colour: 'white' | 'black';
-  row: FamilyRollupRow;
-  isExpanded: boolean;
-  onToggle: () => void;
-}> = ({ colour, row, isExpanded, onToggle }) => {
-  const variationsId = `variations-${colour}-${row.family_id}`;
-  return (
-    <div className={styles.familyRow}>
-      <button
-        type="button"
-        className={styles.familyHeader}
-        onClick={onToggle}
-        aria-expanded={isExpanded}
-        aria-controls={variationsId}
-      >
-        <span className={isExpanded ? styles.chevronOpen : styles.chevron} aria-hidden>
-          ›
-        </span>
-        <span className={styles.familyName}>{row.display_name}</span>
-        <span className={styles.familyMeta}>
-          {row.games} {row.games === 1 ? 'game' : 'games'} · {row.variation_count}{' '}
-          {row.variation_count === 1 ? 'variation' : 'variations'}
-        </span>
-      </button>
-      <DistributionBar win={row.wins} draw={row.draws} loss={row.losses} games={row.games} />
-      {isExpanded && (
-        <ul id={variationsId} className={styles.familyVariations}>
-          {row.variations.map((v) => (
-            <li key={v.key} className={styles.familyVariationItem}>
-              <span className={styles.variationName}>{v.name}</span>
-              <span className={styles.variationMeta}>
-                {v.games} · {v.wins}-{v.draws}-{v.losses}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
-
-/* ==============================
-   SORT BAR COMPONENT
-   ============================== */
-const SortBar: React.FC<{
-  sortMode: SortMode;
-  onSort: (mode: SortMode) => void;
-}> = ({ sortMode, onSort }) => (
-  <div className={styles.sortPills}>
-    {(['frequency', 'best', 'worst'] as SortMode[]).map((mode) => (
-      <button
-        key={mode}
-        type="button"
-        className={`${styles.sortPill} ${sortMode === mode ? styles.sortPillActive : ''}`}
-        onClick={() => onSort(mode)}
-      >
-        {sortLabels[mode]}
-      </button>
-    ))}
-  </div>
-);
-
-/* ==============================
    MAIN COMPONENT
    ============================== */
 export const PersonalOpeningStats: React.FC<{
@@ -434,7 +364,7 @@ export const PersonalOpeningStats: React.FC<{
   const [showSettings, setShowSettings] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const [showAllMobile, setShowAllMobile] = useState(false);
-  const [groupBy, setGroupBy] = useState<'variation' | 'family'>('variation');
+  const [groupBy, setGroupBy] = useState<GroupBy>('variation');
   const [familiesDict, setFamiliesDict] = useState<
     Record<string, { id: string; display_name: string }>
   >({});
@@ -1022,8 +952,16 @@ export const PersonalOpeningStats: React.FC<{
           const sortedWhite = sortAgg(dashboard.asWhite, whiteSortMode);
           const sortedBlack = sortAgg(dashboard.asBlack, blackSortMode);
 
-          const familyRowsWhite = groupByFamily(dashboard.asWhite.map(toAggInput), familiesDict);
-          const familyRowsBlack = groupByFamily(dashboard.asBlack.map(toAggInput), familiesDict);
+          const whiteFamily = groupByFamily(
+            dashboard.asWhite.map(toAggInput),
+            familiesDict,
+            whiteSortMode
+          );
+          const blackFamily = groupByFamily(
+            dashboard.asBlack.map(toAggInput),
+            familiesDict,
+            blackSortMode
+          );
 
           const activeSortMode = activeTab === 'white' ? whiteSortMode : blackSortMode;
           const setActiveSortMode = activeTab === 'white' ? setWhiteSortMode : setBlackSortMode;
@@ -1134,62 +1072,50 @@ export const PersonalOpeningStats: React.FC<{
                   </button>
                 </div>
 
-                {/* Group-by toggle */}
-                <div className={styles.groupByToggle} role="tablist" aria-label="Group openings">
-                  <button
-                    role="tab"
-                    type="button"
-                    aria-selected={groupBy === 'variation'}
-                    className={
-                      groupBy === 'variation' ? styles.groupByActive : styles.groupByOption
-                    }
-                    onClick={() => setGroupBy('variation')}
-                  >
-                    Variation
-                  </button>
-                  <button
-                    role="tab"
-                    type="button"
-                    aria-selected={groupBy === 'family'}
-                    className={groupBy === 'family' ? styles.groupByActive : styles.groupByOption}
-                    onClick={() => setGroupBy('family')}
-                  >
-                    Family
-                  </button>
-                </div>
+                {/* VIEW switcher */}
+                <AnalyseToolbar value={groupBy} onChange={setGroupBy} />
 
                 {/* Section title + sort filters */}
                 <div className={styles.mobileSectionHead}>
                   <h3 className={styles.mobileSectionTitle}>
                     Performance as {activeTab === 'white' ? 'White' : 'Black'}
                   </h3>
-                  {groupBy === 'variation' && (
-                    <SortBar sortMode={activeSortMode} onSort={setActiveSortMode} />
-                  )}
+                  <SectionToolbar
+                    value={activeSortMode}
+                    onChange={setActiveSortMode}
+                    ariaLabel={`Order ${activeTab} openings`}
+                  />
                 </div>
 
                 {/* Opening cards */}
                 {groupBy === 'family' ? (
                   (() => {
-                    const rows = activeTab === 'white' ? familyRowsWhite : familyRowsBlack;
-                    if (rows.length === 0) {
+                    const fam = activeTab === 'white' ? whiteFamily : blackFamily;
+                    if (fam.rows.length === 0 && !fam.uncategorised) {
                       return <div className={styles.emptyList}>No classified openings.</div>;
                     }
                     return (
-                      <div className={styles.mobileOpeningList}>
-                        {rows.map((row) => {
-                          const key = `${activeTab}:${row.family_id}`;
-                          return (
-                            <FamilyRow
-                              key={key}
-                              colour={activeTab}
-                              row={row}
-                              isExpanded={expanded.has(key)}
-                              onToggle={() => toggleExpanded(key)}
-                            />
-                          );
-                        })}
-                      </div>
+                      <>
+                        <div className={styles.mobileOpeningList}>
+                          {fam.rows.map((row, i) => {
+                            const key = `${activeTab}:${row.family_id}`;
+                            return (
+                              <FamilyRow
+                                key={key}
+                                colour={activeTab}
+                                row={row}
+                                rowIndex={i}
+                                isExpanded={expanded.has(key)}
+                                onToggle={() => toggleExpanded(key)}
+                                openingLink={(variationKey) =>
+                                  `/opening/${encodeURIComponent(variationKey)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`
+                                }
+                              />
+                            );
+                          })}
+                        </div>
+                        <UncategorisedFootnote summary={fam.uncategorised} />
+                      </>
                     );
                   })()
                 ) : activeData.openings.length === 0 ? (
@@ -1373,29 +1299,8 @@ export const PersonalOpeningStats: React.FC<{
                   )}
                 </div>
 
-                {/* Group-by toggle */}
-                <div className={styles.groupByToggle} role="tablist" aria-label="Group openings">
-                  <button
-                    role="tab"
-                    type="button"
-                    aria-selected={groupBy === 'variation'}
-                    className={
-                      groupBy === 'variation' ? styles.groupByActive : styles.groupByOption
-                    }
-                    onClick={() => setGroupBy('variation')}
-                  >
-                    Variation
-                  </button>
-                  <button
-                    role="tab"
-                    type="button"
-                    aria-selected={groupBy === 'family'}
-                    className={groupBy === 'family' ? styles.groupByActive : styles.groupByOption}
-                    onClick={() => setGroupBy('family')}
-                  >
-                    Family
-                  </button>
-                </div>
+                {/* VIEW switcher */}
+                <AnalyseToolbar value={groupBy} onChange={setGroupBy} />
 
                 {/* Desktop: side-by-side opening lists */}
                 <div className={styles.openingSections}>
@@ -1405,9 +1310,11 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as White
                         <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
                       </h3>
-                      {groupBy === 'variation' && (
-                        <SortBar sortMode={whiteSortMode} onSort={setWhiteSortMode} />
-                      )}
+                      <SectionToolbar
+                        value={whiteSortMode}
+                        onChange={setWhiteSortMode}
+                        ariaLabel="Order white openings"
+                      />
                     </div>
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
@@ -1417,23 +1324,30 @@ export const PersonalOpeningStats: React.FC<{
                       </div>
                     </div>
                     {groupBy === 'family' ? (
-                      familyRowsWhite.length === 0 ? (
+                      whiteFamily.rows.length === 0 && !whiteFamily.uncategorised ? (
                         <div className={styles.emptyList}>No classified openings.</div>
                       ) : (
-                        <div className={styles.openingList}>
-                          {familyRowsWhite.map((row) => {
-                            const key = `white:${row.family_id}`;
-                            return (
-                              <FamilyRow
-                                key={key}
-                                colour="white"
-                                row={row}
-                                isExpanded={expanded.has(key)}
-                                onToggle={() => toggleExpanded(key)}
-                              />
-                            );
-                          })}
-                        </div>
+                        <>
+                          <div className={styles.openingList}>
+                            {whiteFamily.rows.map((row, i) => {
+                              const key = `white:${row.family_id}`;
+                              return (
+                                <FamilyRow
+                                  key={key}
+                                  colour="white"
+                                  row={row}
+                                  rowIndex={i}
+                                  isExpanded={expanded.has(key)}
+                                  onToggle={() => toggleExpanded(key)}
+                                  openingLink={(variationKey) =>
+                                    `/opening/${encodeURIComponent(variationKey)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`
+                                  }
+                                />
+                              );
+                            })}
+                          </div>
+                          <UncategorisedFootnote summary={whiteFamily.uncategorised} />
+                        </>
                       )
                     ) : sortedWhite.length === 0 ? (
                       <div className={styles.emptyList}>No classified openings.</div>
@@ -1458,9 +1372,11 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as Black
                         <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
                       </h3>
-                      {groupBy === 'variation' && (
-                        <SortBar sortMode={blackSortMode} onSort={setBlackSortMode} />
-                      )}
+                      <SectionToolbar
+                        value={blackSortMode}
+                        onChange={setBlackSortMode}
+                        ariaLabel="Order black openings"
+                      />
                     </div>
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
@@ -1470,23 +1386,30 @@ export const PersonalOpeningStats: React.FC<{
                       </div>
                     </div>
                     {groupBy === 'family' ? (
-                      familyRowsBlack.length === 0 ? (
+                      blackFamily.rows.length === 0 && !blackFamily.uncategorised ? (
                         <div className={styles.emptyList}>No classified openings.</div>
                       ) : (
-                        <div className={styles.openingList}>
-                          {familyRowsBlack.map((row) => {
-                            const key = `black:${row.family_id}`;
-                            return (
-                              <FamilyRow
-                                key={key}
-                                colour="black"
-                                row={row}
-                                isExpanded={expanded.has(key)}
-                                onToggle={() => toggleExpanded(key)}
-                              />
-                            );
-                          })}
-                        </div>
+                        <>
+                          <div className={styles.openingList}>
+                            {blackFamily.rows.map((row, i) => {
+                              const key = `black:${row.family_id}`;
+                              return (
+                                <FamilyRow
+                                  key={key}
+                                  colour="black"
+                                  row={row}
+                                  rowIndex={i}
+                                  isExpanded={expanded.has(key)}
+                                  onToggle={() => toggleExpanded(key)}
+                                  openingLink={(variationKey) =>
+                                    `/opening/${encodeURIComponent(variationKey)}?ref=personal&platform=${displayedPlatform}&username=${encodeURIComponent(displayedUsername)}`
+                                  }
+                                />
+                              );
+                            })}
+                          </div>
+                          <UncategorisedFootnote summary={blackFamily.uncategorised} />
+                        </>
                       )
                     ) : sortedBlack.length === 0 ? (
                       <div className={styles.emptyList}>No classified openings.</div>

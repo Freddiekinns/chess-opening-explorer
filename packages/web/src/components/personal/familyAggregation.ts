@@ -158,8 +158,13 @@ export function groupByFamily(
     }
   }
 
-  if (uncategorised) {
-    uncategorised.win_rate = winRate(uncategorised.games, uncategorised.wins, uncategorised.draws);
+  // TypeScript's control-flow analysis cannot narrow a variable that is
+  // mutated inside a closure (`ensureUncategorised`), and after the loop it
+  // collapses `uncategorised` to `never`. Cast through `unknown` to restore
+  // the declared union type.
+  const u = uncategorised as unknown as UncategorisedSummary | null;
+  if (u) {
+    u.win_rate = winRate(u.games, u.wins, u.draws);
   }
 
   const rows = Array.from(buckets.values());
@@ -180,5 +185,5 @@ export function groupByFamily(
     return a.display_name.localeCompare(b.display_name);
   });
 
-  return { rows, uncategorised };
+  return { rows, uncategorised: u };
 }

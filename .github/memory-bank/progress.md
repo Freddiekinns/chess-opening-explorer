@@ -2,6 +2,24 @@
 
 ## What's Done (newest first)
 
+- **Family Rollup Redesign Shipped** (2026-05-09, branch
+  `feature/opening-family-rollups`): Phase 1's family-rollup UI replaced with
+  the editorial Warm-Editorial-Dark treatment — leader-dot rows with hairline
+  rules, dotted leader between family name and display-weight result-coloured
+  WR%, Best/Needs-work sub-meta beneath. New shared `InlineLinkSwitch` primitive
+  powers a page-global VIEW switcher and per-column ORDER switcher; the three
+  unlabelled segmented pills from Phase 1 are gone (and desktop As White/As
+  Black is dropped — both columns render side-by-side). `UncategorisedFootnote`
+  demotes "Other" to a single-line italic strip below the list. `useCountUp`
+  animates the WR% from 0 over 350ms on first render (skipped under
+  `prefers-reduced-motion`). `groupByFamily` now returns
+  `{ rows, uncategorised }` with derived best/weak variations and a `sortMode`
+  parameter so families respect the per-column ORDER switcher. Adopted
+  `design-system/` bundle (Claude Design handoff) at the repo root as the
+  canonical brand reference; tokens in `simplified.css` and
+  `design-system/project/colors_and_type.css` kept in lockstep. 203 frontend
+  tests (+40), 655 backend untouched, build + format clean.
+
 - **Opening Family Rollups — Phase 1 Shipped** (2026-05-08, branch
   `feature/opening-family-rollups`): 28-family taxonomy + ~140 override rules
   drive build-time `family_id` enrichment on every ECO record (98.45% coverage).

@@ -1,0 +1,211 @@
+.familyRow {
+  border-top: 1px solid var(--border-default);
+}
+.familyRow:last-child {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 24px 1fr auto auto auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  transition: background var(--transition-fast);
+}
+.header:hover {
+  background: var(--surface-overlay);
+}
+.header:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+.chevronCell {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-muted);
+}
+
+.chevron,
+.chevronOpen {
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.nameCol {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.familyName {
+  font-family: var(--font-family-headline);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subMeta {
+  margin-top: 2px;
+  font-family: var(--font-family-primary);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subMetaLabel {
+  color: var(--color-text-muted);
+}
+.subMetaName {
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+.subMetaDash {
+  color: var(--color-text-muted);
+}
+.subMetaPct {
+  font-family: var(--font-family-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+}
+.subMetaSep {
+  margin: 0 var(--space-2);
+  color: var(--color-text-muted);
+}
+.subMetaPart {
+  white-space: nowrap;
+}
+
+.leader {
+  align-self: end;
+  height: 1px;
+  border-bottom: 1px dotted var(--border-default);
+  transform: translateY(-6px);
+  min-width: var(--space-6);
+}
+
+.winRate {
+  font-family: var(--font-family-headline);
+  font-weight: 800;
+  font-size: clamp(28px, 2.4vw, 32px);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.winRateWhite {
+  color: var(--color-result-white-text);
+}
+.winRateBlack {
+  color: var(--color-result-black-text);
+}
+
+.gamesMeta {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  margin-left: var(--space-3);
+}
+
+.variations {
+  list-style: none;
+  margin: 0 0 var(--space-3) calc(24px + var(--space-3));
+  padding: 0 0 0 var(--space-4);
+  border-left: 1px solid var(--border-subtle);
+}
+
+.variationItem {
+  margin: 0;
+  padding: 0;
+}
+
+.variationLink {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-1-5) 0;
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+.variationLink:hover .variationName {
+  color: var(--color-text-primary);
+}
+
+.variationName {
+  font-family: var(--font-family-primary);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.variationLeader {
+  align-self: end;
+  height: 1px;
+  border-bottom: 1px dotted var(--border-subtle);
+  transform: translateY(-4px);
+  min-width: var(--space-4);
+}
+
+.variationPct {
+  font-family: var(--font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+}
+
+.variationGames {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+  text-align: right;
+}
+
+/* Row reveal — reuses the codebase-wide cardSlideIn keyframe declared in
+   packages/web/src/styles/simplified.css. The parent applies a custom
+   property --row-index so each row staggers 80ms behind the previous. */
+.familyRow {
+  animation: cardSlideIn 500ms ease-out backwards;
+  animation-delay: calc(var(--row-index, 0) * 80ms);
+}
+
+/* Variation children fade-in stagger when the family expands. Each <li>
+   consumes its own --child-index, so the parent can set it inline. */
+.variationItem {
+  animation: cardSlideIn 220ms ease-out backwards;
+  animation-delay: calc(var(--child-index, 0) * 60ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .chevronOpen,
+  .header,
+  .variationLink {
+    transition: none;
+  }
+  .familyRow,
+  .variationItem {
+    animation: none;
+  }
+}

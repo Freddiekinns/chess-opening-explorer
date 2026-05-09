@@ -55,6 +55,12 @@ export interface GroupByFamilyResult {
 
 export type SortMode = 'frequency' | 'best' | 'worst';
 
+/**
+ * Reserved sentinel for openings without a recognised family. Any input row
+ * with `family_id === UNCATEGORISED` (or with a missing/empty `family_id`) is
+ * routed into the `uncategorised` summary and never appears in `rows`. Real
+ * family taxonomies must not use this string as a family id.
+ */
 const UNCATEGORISED = 'uncategorised';
 const QUALIFY_THRESHOLD = 2;
 
@@ -144,8 +150,11 @@ export function groupByFamily(
         if (wrDiff !== 0) return wrDiff;
         return b.games - a.games;
       });
-      bucket.best_variation = ranked[0];
-      bucket.weak_variation = ranked[ranked.length - 1];
+      // Spread copies isolate best/weak from `bucket.variations` — downstream
+      // consumers (UI components) freely mutate UI-state alongside the data,
+      // so a shared object reference here would leak across the rollup row.
+      bucket.best_variation = { ...ranked[0] };
+      bucket.weak_variation = { ...ranked[ranked.length - 1] };
     }
   }
 
@@ -162,6 +171,10 @@ export function groupByFamily(
       const diff = a.score - b.score;
       if (diff !== 0) return diff;
     }
+    // Tie-break (and primary key for `'frequency'`): games desc, then
+    // display_name alphabetically. Same secondary key for all modes — when
+    // two families share an identical score in `'best'`/`'worst'` mode, we
+    // prefer the higher-volume family.
     const games = b.games - a.games;
     if (games !== 0) return games;
     return a.display_name.localeCompare(b.display_name);

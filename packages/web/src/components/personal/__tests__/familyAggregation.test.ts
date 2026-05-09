@@ -244,6 +244,28 @@ describe('groupByFamily', () => {
     expect(rows[0].weak_variation).toBeNull();
   });
 
+  test('sortMode "best" with identical scores tie-breaks by games desc', () => {
+    const input: OpeningAggInput[] = [
+      // Both score 50%; french has more games so it should win the tie-break.
+      ag({ key: 'a', family_id: 'sicilian', games: 4, wins: 2, draws: 0, losses: 2 }),
+      ag({ key: 'b', family_id: 'french', games: 10, wins: 5, draws: 0, losses: 5 }),
+    ];
+    const { rows } = groupByFamily(input, families, 'best' as SortMode);
+    expect(rows.map((r) => r.family_id)).toEqual(['french', 'sicilian']);
+  });
+
+  test('best/weak are isolated copies — mutating bucket.variations does not affect them', () => {
+    const input: OpeningAggInput[] = [
+      ag({ key: 'a', name: 'Sicilian: A', family_id: 'sicilian', games: 4, wins: 3 }),
+      ag({ key: 'b', name: 'Sicilian: B', family_id: 'sicilian', games: 4, wins: 1 }),
+    ];
+    const { rows } = groupByFamily(input, families);
+    const sicilian = rows[0];
+    const originalBest = { ...sicilian.best_variation! };
+    sicilian.variations[0].wins = 999;
+    expect(sicilian.best_variation).toEqual(originalBest);
+  });
+
   test('best/weak coincide when only one variation qualifies', () => {
     const input: OpeningAggInput[] = [
       ag({

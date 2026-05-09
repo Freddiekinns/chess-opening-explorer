@@ -460,7 +460,10 @@ export const PersonalOpeningStats: React.FC<{
 
   const cacheKey = useMemo(() => {
     const u = normalizeUsername(username).toLowerCase();
-    return `personal-openings:v2:${platform}:${u}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
+    // v3: OpeningAgg now carries family_id (Phase 1 family rollups). v2
+    // snapshots predate the field and would render every opening under
+    // "Other" in family view — bumping the version invalidates them.
+    return `personal-openings:v3:${platform}:${u}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
   }, [platform, username, limit]);
 
   useEffect(() => {

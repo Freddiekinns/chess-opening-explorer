@@ -9,7 +9,7 @@ const FORM_STATE_KEY = 'personal-openings:form-state';
 const LAST_ANALYSIS_SNAPSHOT_KEY = 'personal-openings:last-analysis-snapshot';
 
 const buildCacheKey = (username: string, platform: string, limit: number) =>
-  `personal-openings:v2:${platform}:${username.trim().toLowerCase()}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
+  `personal-openings:v3:${platform}:${username.trim().toLowerCase()}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
 
 const mockOpeningsData: OpeningForLookup[] = [
   {

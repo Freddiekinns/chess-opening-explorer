@@ -686,8 +686,15 @@ export const PersonalOpeningStats: React.FC<{
         }
 
         classified += 1;
-        const matchedMoves = openingsMap.get(lookup.bestMatch.fen)?.moves || '';
-        const openingWithMoves = { ...lookup.bestMatch, moves: matchedMoves };
+        // lookup.bestMatch only carries fen/name/eco/matchedAtMove — pull
+        // moves AND family_id back from the openings map (search-index
+        // payload includes family_id on every full-mode entry).
+        const matched = openingsMap.get(lookup.bestMatch.fen);
+        const openingWithMoves = {
+          ...lookup.bestMatch,
+          moves: matched?.moves || '',
+          family_id: matched?.family_id,
+        };
         if (side === 'white') {
           upsertAgg(asWhite, openingWithMoves, result);
           whiteGames += 1;

@@ -689,14 +689,13 @@ export const PersonalOpeningStats: React.FC<{
         }
 
         classified += 1;
-        // lookup.bestMatch only carries fen/name/eco/matchedAtMove — pull
-        // moves AND family_id back from the openings map (search-index
-        // payload includes family_id on every full-mode entry).
-        const matched = openingsMap.get(lookup.bestMatch.fen);
+        // bestMatch now carries moves + family_id directly (see pgn-utils
+        // OpeningMatch). The previous re-query against openingsMap was a
+        // 6-part FEN lookup against a 4-part-keyed map and silently
+        // returned undefined every time.
         const openingWithMoves = {
           ...lookup.bestMatch,
-          moves: matched?.moves || '',
-          family_id: matched?.family_id,
+          moves: lookup.bestMatch.moves || '',
         };
         if (side === 'white') {
           upsertAgg(asWhite, openingWithMoves, result);

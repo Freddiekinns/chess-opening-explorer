@@ -268,6 +268,30 @@ describe('findDeepestMatch', () => {
 
     expect(result.totalMoves).toBe(4);
   });
+
+  test('bestMatch carries family_id and moves through (regression: 4-vs-6-part FEN mismatch)', () => {
+    // Source openings are stored with full 6-part FENs but buildOpeningsMap
+    // keys entries on the 4-part normalised FEN. bestMatch.fen is the
+    // source 6-part fen, so any consumer that re-queries the map with
+    // bestMatch.fen will silently get undefined. To prevent that, the
+    // match must carry family_id and moves directly.
+    const enriched: OpeningForLookup[] = [
+      {
+        fen: 'rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2',
+        name: "King's Knight Opening",
+        eco: 'C40',
+        moves: '1. e4 e5 2. Nf3',
+        family_id: 'open-game',
+      },
+    ];
+    const fens = generateFENsFromPGN('1. e4 e5 2. Nf3');
+    const map = buildOpeningsMap(enriched);
+    const result = findDeepestMatch(fens, map);
+
+    expect(result.bestMatch?.family_id).toBe('open-game');
+    expect(result.bestMatch?.moves).toBe('1. e4 e5 2. Nf3');
+    expect(result.lastKnownOpening?.family_id).toBe('open-game');
+  });
 });
 
 describe('lookupOpeningFromPGN', () => {

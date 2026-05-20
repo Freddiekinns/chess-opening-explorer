@@ -52,7 +52,9 @@ function buildMetaTags(options: { title: string; description: string; url: strin
 }
 
 export const config = {
-  matcher: ['/((?!api/|assets/|sounds/|seo-lookup\.json|opening-book-icon\.png).*)'],
+  matcher: [
+    '/((?!api/|assets/|sounds/|sitemap\.xml|robots\.txt|seo-lookup\.json|opening-book-icon\.png).*)',
+  ],
 };
 
 export default async function middleware(request: Request): Promise<Response> {

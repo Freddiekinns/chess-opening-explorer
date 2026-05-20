@@ -2,6 +2,13 @@
 
 ## What's Done (newest first)
 
+- **GSC Sitemap "Couldn't fetch" Fix** (2026-05-20, PR #32): Re-added
+  `sitemap.xml`/`robots.txt` to the `middleware.ts` matcher exclusions. The
+  2026-03-29 SEO refactor broadened the matcher and dropped them, routing the
+  static sitemap through the Edge `return fetch(request)` round-trip — GSC
+  reported "Couldn't fetch / Type: Unknown" from the 30 Apr submission. Needs
+  deploy + GSC re-submit to confirm.
+
 - **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Switched
   two-column grid from `align-items: stretch` to `start` with sticky left column
   so the board stays visible while scrolling. Removed navigator nested scroll.

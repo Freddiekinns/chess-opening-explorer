@@ -201,6 +201,16 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   consolidate as a canonical signal — causing recurring "Page with redirect"
   validation failures. Configure permanent (308) host redirects via the
   `redirects` array in `vercel.json` with `"permanent": true`.
+- **Middleware matcher must exclude `sitemap.xml` & `robots.txt`**: The
+  `middleware.ts` matcher uses a broad negative-lookahead pattern
+  (`/((?!api/|assets/|...).*)`). Anything not in the exclusion list is routed
+  through the Edge function (`return fetch(request)`), including static SEO
+  files. When `sitemap.xml`/`robots.txt` are missing from the exclusions, Google
+  Search Console reports the sitemap as **"Couldn't fetch" / Type: Unknown**
+  because the crawler hits the edge round-trip instead of the static asset. Keep
+  both files in the matcher's negative lookahead so they're served statically.
+  (Regression history: the 2026-03-29 SEO refactor broadened the matcher and
+  dropped these exclusions.)
 - **Memory bank bloat prevention**: `activeContext.md` must stay under **50
   lines** (current task + previous task only). `progress.md` must stay under
   **100 lines** (one-liner per completed task). When updating memory bank: move

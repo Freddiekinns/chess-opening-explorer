@@ -53,7 +53,7 @@ function buildMetaTags(options: { title: string; description: string; url: strin
 
 export const config = {
   matcher: [
-    '/((?!api/|assets/|sounds/|sitemap\.xml|robots\.txt|seo-lookup\.json|opening-book-icon\.png).*)',
+    '/((?!api/|assets/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup\.json|opening-book-icon\.png).*)',
   ],
 };
 

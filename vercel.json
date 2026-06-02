@@ -149,7 +149,7 @@
       "destination": "/api/health"
     },
     {
-      "source": "/((?!api/|sitemap\\.xml|robots\\.txt).*)",
+      "source": "/((?!api/|sitemaps/|sitemap\\.xml|sitemap-index\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ],

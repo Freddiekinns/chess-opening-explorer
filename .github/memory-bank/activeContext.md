@@ -28,15 +28,14 @@ row, in both the family and all-openings views.
 
 **Pre-production hardening:**
 
-- **P0 (correctness):** removed the top-10 truncation — family rollups now
-  aggregate over the FULL classified set (cache key `v3`→`v4`). Previously
-  family totals/line-counts undercounted because grouping ran over only the 10
-  most-played openings.
-- **Win-rate consistency:** `groupByFamily` now uses pure `wins/games` (was
-  draw-weighted), matching the flat sort + highlight cards.
-- **Robustness/polish:** `/api/families` fetch retries (×2) and falls back to a
-  prettified slug; mobile filter pills bumped to a 34px tap target; unrecognised
-  game count surfaced in the header (desktop + mobile).
+- **Correctness (P0):** removed top-10 truncation — rollups aggregate the FULL
+  classified set (cache `v3`→`v4`); totals/line-counts no longer undercount.
+- **Win rate:** unified on pure `wins/games` (family sort, flat sort, cards).
+  Featured cards now need ≥4 games and pick "Needs work" by loss rate (was
+  lowest win rate, which contradicted the displayed %).
+- **Polish:** long lists scroll in-component (600px, like the opening tree);
+  `/api/families` retries + slug fallback; 34px mobile tap targets;
+  unrecognised-game count in the header.
 
 **Quality:** 195 frontend tests (`DistributionBar` + `FamilyRow` +
 `familyAggregation` at 100%); contrast AA-pass; pill heights matched (24.8px

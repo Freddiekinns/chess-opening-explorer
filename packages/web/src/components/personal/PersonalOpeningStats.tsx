@@ -132,23 +132,29 @@ function getWinRate(o: OpeningAgg): number {
   return Math.round((o.win / o.games) * 100);
 }
 
+// Featured cards need a few games behind them — a 2-game 100% line shouldn't
+// headline "Top-performing". (The opening list/sort have no such floor.)
+const MIN_CARD_GAMES = 4;
+
+function getLossRate(o: OpeningAgg): number {
+  if (o.games === 0) return 0;
+  return Math.round((o.loss / o.games) * 100);
+}
+
 function findBestOpening(list: OpeningAgg[]): OpeningAgg | null {
   if (list.length === 0) return null;
-  const qualified = list.filter((o) => o.games >= 2);
+  const qualified = list.filter((o) => o.games >= MIN_CARD_GAMES);
   if (qualified.length === 0) return list[0];
   return qualified.reduce((best, curr) => (getWinRate(curr) > getWinRate(best) ? curr : best));
 }
 
 function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
   if (list.length === 0) return null;
-  const qualified = list.filter((o) => o.games >= 2);
+  const qualified = list.filter((o) => o.games >= MIN_CARD_GAMES);
   if (qualified.length === 0) return null;
-  return qualified.reduce((worst, curr) => (getWinRate(curr) < getWinRate(worst) ? curr : worst));
-}
-
-function getLossRate(o: OpeningAgg): number {
-  if (o.games === 0) return 0;
-  return Math.round((o.loss / o.games) * 100);
+  // Select by highest loss rate so "Needs work" matches the loss rate the card
+  // displays (lowest win rate could flag a safe, drawish line as a weakness).
+  return qualified.reduce((worst, curr) => (getLossRate(curr) > getLossRate(worst) ? curr : worst));
 }
 
 function getOpeningMovesDisplay(moves: string): string {

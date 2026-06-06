@@ -1060,6 +1060,22 @@
 .openingList {
   display: flex;
   flex-direction: column;
+  /* Bound long lists (esp. "All openings") to an in-component scroll, matching
+     the opening-page tree. Column headers sit above this, so they stay fixed
+     while the rows scroll. Only kicks in when content exceeds the height. */
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hover) transparent;
+}
+
+.openingList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.openingList::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
 }
 
 .openingRow {

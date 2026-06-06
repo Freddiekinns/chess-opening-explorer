@@ -2,6 +2,13 @@
 
 ## What's Done (newest first)
 
+- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): fixed four pre-existing CI bugs
+  so `CI` + `Coverage` workflows pass on `main` — broken API lint script path,
+  ESLint/Prettier rule conflict (~110 spurious + 17 real errors), coverage job
+  missing `pull-requests: write`, and codecov badge failing tokenless on
+  protected `main`. Added `families.routes.js` branch tests (88.46% → 90.23%
+  global branches). The "format drift" was a Windows-CRLF mirage; `format:check`
+  was already green on CI.
 - **Opening Family Rollups** (2026-06-06, branch
   `feature/opening-family-rollups`): Analyse page groups a player's openings by
   family with an expandable W/D/L distribution-bar row — a shared

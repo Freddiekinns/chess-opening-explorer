@@ -66,7 +66,11 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           files: ./coverage/lcov.info
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          # Codecov v4 rejects tokenless uploads on protected branches; the
+          # repo has no CODECOV_TOKEN, so the upload is best-effort and must
+          # not fail the gate (matches ci.yml's backend codecov step).
+          fail_ci_if_error: false
 
       - name: Comment coverage on PR
         if: github.event_name == 'pull_request'

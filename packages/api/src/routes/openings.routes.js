@@ -1,11 +1,8 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const ECOService = require('../services/eco-service');
 const TreeService = require('../services/tree-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
-const pathResolver = require('../utils/path-resolver');
 
 const router = express.Router();
 const ecoService = new ECOService();

@@ -813,18 +813,15 @@ class SearchService {
       const normalizedName = nameWordsNormalized.join(' ');
 
       let nameMatchBoost = 0;
-      let matchType = 'none';
 
       // Exact normalized match
       if (normalizedName === normalizedQuery) {
         nameMatchBoost = 2.0;
-        matchType = 'exact';
       }
       // Name starts with query (only for multi-word queries that match full beginning)
       // Don't use for single-word queries to avoid "najdorf" matching "Najdorf Sicilian" over "Sicilian: Najdorf"
       else if (queryWordsNormalized.length > 1 && normalizedName.startsWith(normalizedQuery + ' ')) {
         nameMatchBoost = 1.5;
-        matchType = 'starts_with';
       }
       // Single word query
       else if (queryWordsNormalized.length === 1) {
@@ -835,13 +832,10 @@ class SearchService {
           // Exact word match anywhere - same base boost, let popularity differentiate
           // "Najdorf" in "Najdorf Sicilian" (1M) should NOT beat "Sicilian: Najdorf" (24M)
           nameMatchBoost = 0.6;
-          matchType = exactMatchIdx === 0 ? 'first_word' : 'contains_word';
         } else if (nameWordsNormalized.some(nw => nw.startsWith(queryWord))) {
           nameMatchBoost = 0.3;
-          matchType = 'word_starts_with';
         } else if (normalizedName.includes(queryWord)) {
           nameMatchBoost = 0.15;
-          matchType = 'partial';
         }
       }
       // Multi-word query - check normalized word matches
@@ -856,13 +850,10 @@ class SearchService {
         const exactRatio = exactMatches / queryWordsNormalized.length;
         if (exactRatio >= 0.9) {
           nameMatchBoost = 1.0;
-          matchType = 'all_words';
         } else if (exactRatio >= 0.5) {
           nameMatchBoost = exactRatio * 0.8;
-          matchType = 'most_words';
         } else if (exactRatio > 0) {
           nameMatchBoost = exactRatio * 0.4;
-          matchType = 'partial_words';
         }
       }
 
@@ -968,26 +959,22 @@ class SearchService {
 
     return results.map(result => {
       const name = result.name || '';
-      const nameLower = name.toLowerCase();
       // Get both raw and normalized name words for matching
       const nameWordsNormalized = this.normalizeWords(name);
 
       let nameMatchBoost = 0;
-      let matchType = 'none';
       let wordPrecisionScore = 0;
 
       // Check for exact normalized match (handles "King's Indian" == "kings indian")
       const normalizedName = nameWordsNormalized.join(' ');
       if (normalizedName === normalizedQuery) {
         nameMatchBoost = 2.0;
-        matchType = 'exact';
         wordPrecisionScore = 1.0;
       }
       // Name starts with query (only for multi-word queries that match full beginning)
       // Don't use for single-word queries to avoid "najdorf" matching "Najdorf Sicilian" over "Sicilian: Najdorf"
       else if (queryWordsNormalized.length > 1 && normalizedName.startsWith(normalizedQuery + ' ')) {
         nameMatchBoost = 1.5;
-        matchType = 'starts_with';
         wordPrecisionScore = 0.9;
       }
       // Single word query
@@ -1001,20 +988,17 @@ class SearchService {
           // Exact word match anywhere - give same base boost, let popularity differentiate
           // "Najdorf" in "Najdorf Sicilian" (1M) should NOT beat "Sicilian Defense: Najdorf" (24M)
           nameMatchBoost = 0.8;
-          matchType = exactMatchIdx === 0 ? 'first_word_exact' : 'contains_word_exact';
           // Both get high precision - we found the exact word
           wordPrecisionScore = 0.85;
         }
         // Check for word-start matches
         else if (nameWordsNormalized.some(nw => nw.startsWith(queryWord))) {
           nameMatchBoost = 0.4;
-          matchType = 'word_starts_with';
           wordPrecisionScore = 0.5;
         }
         // Substring match (lowest priority)
         else if (normalizedName.includes(queryWord)) {
           nameMatchBoost = 0.1;
-          matchType = 'partial_substring';
           wordPrecisionScore = 0.2;
         }
       }
@@ -1047,24 +1031,19 @@ class SearchService {
         // Require good word precision for multi-word queries
         if (exactWordRatio >= 0.9) { // 90%+ exact (handles "kings indian" with 2 words)
           nameMatchBoost = 1.5;
-          matchType = 'multi_word_excellent';
           wordPrecisionScore = 0.95;
         } else if (exactWordRatio >= 0.7) {
           nameMatchBoost = 1.2;
-          matchType = 'multi_word_precise';
           wordPrecisionScore = exactWordRatio * 0.9;
         } else if (exactWordRatio >= 0.5) {
           nameMatchBoost = 0.8 * exactWordRatio + 0.3 * partialWordRatio;
-          matchType = 'multi_word_good';
           wordPrecisionScore = exactWordRatio * 0.7 + partialWordRatio * 0.3;
         } else if (exactWordRatio + partialWordRatio >= 0.5) {
           nameMatchBoost = 0.4 * (exactWordRatio + partialWordRatio);
-          matchType = 'multi_word_partial';
           wordPrecisionScore = (exactWordRatio + partialWordRatio) * 0.4;
         } else if (substringRatio > 0) {
           // Very low boost for poor matches
           nameMatchBoost = 0.05 * substringRatio;
-          matchType = 'multi_word_poor';
           wordPrecisionScore = substringRatio * 0.05;
         }
       }

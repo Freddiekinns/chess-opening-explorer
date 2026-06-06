@@ -41,7 +41,7 @@ function createCourseRoutes(injectedService = null) {
     }
 
     // Validate each rank contains only valid FEN characters
-    const validFenChars = /^[a-zA-Z0-9\/\s\-]*$/;
+    const validFenChars = /^[a-zA-Z0-9/\s-]*$/;
     return validFenChars.test(fen);
   }
 

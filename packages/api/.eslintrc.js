@@ -12,11 +12,9 @@ module.exports = {
     sourceType: 'script',
   },
   rules: {
-    'indent': ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'always'],
-    'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+    // Formatting is owned by Prettier (.prettierrc); ESLint only enforces
+    // code-quality rules here to avoid conflicting with the formatter.
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-console': 'warn',
     'no-debugger': 'error',
   },

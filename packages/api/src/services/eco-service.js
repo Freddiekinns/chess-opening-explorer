@@ -140,7 +140,7 @@ class ECOService {
     const ecoData = this.loadECOData();
     
     // Find any opening with this ECO code to get analysis data
-    for (const [fen, opening] of Object.entries(ecoData)) {
+    for (const [, opening] of Object.entries(ecoData)) {
       if (opening.eco === ecoCode && opening.analysis_json) {
         const analysis = opening.analysis_json;
         
@@ -194,7 +194,7 @@ class ECOService {
     
     if (!opening) {
       // If FEN is not a direct key, search through all openings
-      for (const [key, openingData] of Object.entries(ecoData)) {
+      for (const [, openingData] of Object.entries(ecoData)) {
         if (openingData.fen === fen) {
           return this.parseAnalysisData(openingData, fen);
         }
@@ -282,7 +282,7 @@ class ECOService {
     if (!opening) {
       // If FEN is not a direct key, search through all openings
       let count = 0;
-      for (const [key, openingData] of Object.entries(ecoData)) {
+      for (const [, openingData] of Object.entries(ecoData)) {
         count++;
         if (openingData.fen === fen) {
           return this.formatOpeningData(openingData, fen);

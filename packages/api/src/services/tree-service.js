@@ -220,7 +220,7 @@ class TreeService {
     const ancestors = [];
     let walkMoves = currentMoves;
 
-    while (true) {
+    for (;;) {
       const parentMoves = this._getParentMovesNormalized(walkMoves);
       if (parentMoves === null) break;
 
@@ -267,7 +267,7 @@ class TreeService {
    * Get children of a given FEN (for lazy loading).
    */
   getChildren(fen) {
-    const { moveIndex, childrenMap, descendantCount, gamesByFen } = this._buildIndex();
+    const { childrenMap, descendantCount, gamesByFen } = this._buildIndex();
 
     const ecoData = this.ecoService.loadECOData();
     const opening = ecoData[fen];

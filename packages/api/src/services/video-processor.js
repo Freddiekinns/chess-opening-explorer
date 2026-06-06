@@ -246,7 +246,7 @@ class VideoProcessor {
     });
   }
 
-  rankByRelevance(videos, opening) {
+  rankByRelevance(videos, _opening) {
     const trustedChannelBoost = this.qualityFilters.quality_thresholds.trusted_channel_boost;
     
     return videos.sort((a, b) => {
@@ -338,7 +338,7 @@ class VideoProcessor {
   }
 
   // Utility methods for processing pipeline
-  async processBatch(openings, options = {}) {
+  async processBatch(openings, _options = {}) {
     const results = {
       processed: 0,
       errors: 0,

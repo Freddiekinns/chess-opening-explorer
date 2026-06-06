@@ -112,6 +112,17 @@ dirsToCopy.forEach((dirname) => {
   }
 });
 
+console.log('🧬 Resolving opening families...');
+const { run: runFamilyIndex } = require('../tools/family-taxonomy/build-family-index');
+runFamilyIndex({ failOnLowCoverage: false });
+
+const familiesSrc = path.join(ROOT_DIR, 'data', 'families.json');
+const familiesDst = path.join(TARGET_DATA_DIR, 'families.json');
+if (fs.existsSync(familiesSrc)) {
+  fs.copyFileSync(familiesSrc, familiesDst);
+  console.log('✅ Copied families.json');
+}
+
 // Note about Videos directory
 const videosSourcePath = path.join(SOURCE_DATA_DIR, 'Videos');
 if (fs.existsSync(videosSourcePath)) {

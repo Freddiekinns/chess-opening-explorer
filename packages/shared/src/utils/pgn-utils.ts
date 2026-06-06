@@ -5,13 +5,21 @@
 import { Chess } from 'chess.js';
 
 /**
- * Represents a matched opening from PGN lookup
+ * Represents a matched opening from PGN lookup.
+ *
+ * Includes optional `moves` and `family_id` so consumers don't have to
+ * re-query the openings map after lookup. (Re-querying is fragile because
+ * `bestMatch.fen` is the source opening's full 6-part FEN, while
+ * `buildOpeningsMap` keys entries on the 4-part normalised FEN — the
+ * round-trip lookup always misses.)
  */
 export interface OpeningMatch {
   fen: string;
   name: string;
   eco: string;
   matchedAtMove: number;
+  moves?: string;
+  family_id?: string;
 }
 
 /**
@@ -20,13 +28,11 @@ export interface OpeningMatch {
 export interface PGNLookupResult {
   success: boolean;
   error?: string;
-  bestMatch: {
-    fen: string;
-    name: string;
-    eco: string;
-    matchedAtMove: number;
-    isExactEndMatch: boolean;
-  } | null;
+  bestMatch:
+    | (OpeningMatch & {
+        isExactEndMatch: boolean;
+      })
+    | null;
   lastKnownOpening: OpeningMatch | null;
   totalMoves: number;
 }
@@ -39,6 +45,7 @@ export interface OpeningForLookup {
   name: string;
   eco: string;
   moves?: string;
+  family_id?: string;
 }
 
 /**
@@ -223,6 +230,8 @@ export function findDeepestMatch(
         name: opening.name,
         eco: opening.eco,
         matchedAtMove: i + 1,
+        moves: opening.moves,
+        family_id: opening.family_id,
       };
 
       if (!bestMatch) {

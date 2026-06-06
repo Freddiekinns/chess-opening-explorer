@@ -24,7 +24,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "s-maxage=3600, stale-while-revalidate=86400"
+          "value": "s-maxage=86400, stale-while-revalidate=86400"
         }
       ]
     },
@@ -117,6 +117,15 @@
           "value": "s-maxage=3600, stale-while-revalidate=86400"
         }
       ]
+    },
+    {
+      "source": "/api/families",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -147,6 +156,10 @@
     {
       "source": "/api/health",
       "destination": "/api/health"
+    },
+    {
+      "source": "/api/families",
+      "destination": "/api/families"
     },
     {
       "source": "/((?!api/|sitemaps/|sitemap\\.xml|sitemap-index\\.xml|robots\\.txt).*)",

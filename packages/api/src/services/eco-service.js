@@ -400,6 +400,7 @@ class ECOService {
       const enrichedOpening = {
         fen,
         ...opening,
+        family_id: opening.family_id,
         games_analyzed: popularity ? popularity.games_analyzed : 0,
         popularity_score: popularity ? popularity.popularity_score : 0,
         white_win_rate: popularity ? popularity.white_win_rate : null,

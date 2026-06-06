@@ -95,11 +95,18 @@ Connect your real-game performance with the opening database.
 ### Performance Insights
 
 - **Color-Based Performance**: Compare your winning percentages as White vs.
-  Black.
-- **Strengths & Weaknesses**: Identification of "Highest Win Rate" openings vs.
+  Black (side-by-side columns on desktop, an As White / As Black switch on
+  mobile).
+- **Family Rollups**: Group openings by family (e.g. Sicilian, Vienna, French)
+  to see an aggregate W/D/L distribution per family, then expand a family to its
+  per-variation breakdown. Each side has its own `Group by family` toggle
+  (default on) and `Sort` control (most played / highest / lowest win rate);
+  uncategorised openings collapse into a single footnote line.
+- **Strengths & Weaknesses**: Identification of "Top-performing" openings vs.
   those "Needing Work" (based on personal history).
-- **Traffic Analysis**: Breakdown of Top 10 most played openings to identify
-  your true "main lines."
+- **Distribution Bars**: Every row shows a win/draw/loss distribution bar with
+  counts and percentages — the same graph in both the family and all-openings
+  views.
 
 ### Improvement Loop
 

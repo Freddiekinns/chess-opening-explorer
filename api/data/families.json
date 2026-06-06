@@ -1,0 +1,254 @@
+{
+  "sicilian": {
+    "id": "sicilian",
+    "display_name": "Sicilian Defense",
+    "slug": "sicilian-defense",
+    "eco_anchor": "B20–B99",
+    "colour_for": "black",
+    "short_description": "Black's most-analysed answer to 1.e4, fighting for an asymmetric game from move one.",
+    "popular_variation_ecos": ["B90", "B30", "B22"]
+  },
+  "french": {
+    "id": "french",
+    "display_name": "French Defense",
+    "slug": "french-defense",
+    "eco_anchor": "C00–C19",
+    "colour_for": "black",
+    "short_description": "Solid and structural — Black accepts a cramped position for a fixed pawn chain and counterplay on the queenside.",
+    "popular_variation_ecos": ["C11", "C02", "C10"]
+  },
+  "caro-kann": {
+    "id": "caro-kann",
+    "display_name": "Caro-Kann Defense",
+    "slug": "caro-kann-defense",
+    "eco_anchor": "B10–B19",
+    "colour_for": "black",
+    "short_description": "A reputation for solidity at any level — Black supports …d5 with …c6 and aims for a clean structure.",
+    "popular_variation_ecos": ["B12", "B18", "B10"]
+  },
+  "pirc-modern": {
+    "id": "pirc-modern",
+    "display_name": "Pirc & Modern Defense",
+    "slug": "pirc-modern-defense",
+    "eco_anchor": "B06–B09",
+    "colour_for": "black",
+    "short_description": "Hypermodern systems where Black fianchettos and concedes the centre, then strikes back.",
+    "popular_variation_ecos": ["B07", "B06", "B08"]
+  },
+  "scandinavian": {
+    "id": "scandinavian",
+    "display_name": "Scandinavian Defense",
+    "slug": "scandinavian-defense",
+    "eco_anchor": "B01",
+    "colour_for": "black",
+    "short_description": "1…d5 immediately challenges the centre — direct and easy to learn at club level.",
+    "popular_variation_ecos": ["B01"]
+  },
+  "alekhine": {
+    "id": "alekhine",
+    "display_name": "Alekhine's Defense",
+    "slug": "alekhines-defense",
+    "eco_anchor": "B02–B05",
+    "colour_for": "black",
+    "short_description": "Provocative — Black invites White to chase the knight and overextend.",
+    "popular_variation_ecos": ["B03", "B04", "B05"]
+  },
+  "ruy-lopez": {
+    "id": "ruy-lopez",
+    "display_name": "Ruy Lopez",
+    "slug": "ruy-lopez",
+    "eco_anchor": "C60–C99",
+    "colour_for": "white",
+    "short_description": "The classical 1.e4 main line — deep theory, slow strategic battles.",
+    "popular_variation_ecos": ["C65", "C78", "C84"]
+  },
+  "italian": {
+    "id": "italian",
+    "display_name": "Italian Game",
+    "slug": "italian-game",
+    "eco_anchor": "C50–C59",
+    "colour_for": "white",
+    "short_description": "The oldest open game — quiet Giuoco Pianissimo or sharp Evans Gambit.",
+    "popular_variation_ecos": ["C50", "C53", "C55"]
+  },
+  "scotch": {
+    "id": "scotch",
+    "display_name": "Scotch Game",
+    "slug": "scotch-game",
+    "eco_anchor": "C44–C45",
+    "colour_for": "white",
+    "short_description": "White trades central tension for an open game and quick development.",
+    "popular_variation_ecos": ["C45", "C44"]
+  },
+  "kings-gambit": {
+    "id": "kings-gambit",
+    "display_name": "King's Gambit",
+    "slug": "kings-gambit",
+    "eco_anchor": "C30–C39",
+    "colour_for": "white",
+    "short_description": "Romantic and aggressive — White sacrifices a pawn for the centre and the f-file.",
+    "popular_variation_ecos": ["C33", "C37", "C30"]
+  },
+  "vienna": {
+    "id": "vienna",
+    "display_name": "Vienna Game",
+    "slug": "vienna-game",
+    "eco_anchor": "C25–C29",
+    "colour_for": "white",
+    "short_description": "A flexible 1.e4 e5 system that often transposes into King's Gambit positions.",
+    "popular_variation_ecos": ["C26", "C25", "C29"]
+  },
+  "petroff": {
+    "id": "petroff",
+    "display_name": "Petroff Defense",
+    "slug": "petroff-defense",
+    "eco_anchor": "C42–C43",
+    "colour_for": "black",
+    "short_description": "Symmetrical and rock-solid — Black mirrors White and aims for equality.",
+    "popular_variation_ecos": ["C42", "C43"]
+  },
+  "philidor": {
+    "id": "philidor",
+    "display_name": "Philidor Defense",
+    "slug": "philidor-defense",
+    "eco_anchor": "C41",
+    "colour_for": "black",
+    "short_description": "An old, passive-but-solid setup with …d6 and …Nf6.",
+    "popular_variation_ecos": ["C41"]
+  },
+  "queens-gambit": {
+    "id": "queens-gambit",
+    "display_name": "Queen's Gambit",
+    "slug": "queens-gambit",
+    "eco_anchor": "D06–D69",
+    "colour_for": "white",
+    "short_description": "1.d4 d5 2.c4 — strategic battles around the central pawn structure.",
+    "popular_variation_ecos": ["D37", "D30", "D45"]
+  },
+  "slav": {
+    "id": "slav",
+    "display_name": "Slav Defense",
+    "slug": "slav-defense",
+    "eco_anchor": "D10–D19",
+    "colour_for": "black",
+    "short_description": "Black supports …d5 with …c6 and avoids the typical Queen's Gambit problems with the c8 bishop.",
+    "popular_variation_ecos": ["D15", "D10", "D17"]
+  },
+  "kings-indian": {
+    "id": "kings-indian",
+    "display_name": "King's Indian Defense",
+    "slug": "kings-indian-defense",
+    "eco_anchor": "E60–E99",
+    "colour_for": "black",
+    "short_description": "Black fianchettos the king's bishop, lets White claim the centre, then breaks with …e5 or …c5.",
+    "popular_variation_ecos": ["E97", "E60", "E90"]
+  },
+  "nimzo-indian": {
+    "id": "nimzo-indian",
+    "display_name": "Nimzo-Indian Defense",
+    "slug": "nimzo-indian-defense",
+    "eco_anchor": "E20–E59",
+    "colour_for": "black",
+    "short_description": "3…Bb4 pins the c3-knight — flexible and structurally rich.",
+    "popular_variation_ecos": ["E32", "E20", "E40"]
+  },
+  "queens-indian": {
+    "id": "queens-indian",
+    "display_name": "Queen's Indian Defense",
+    "slug": "queens-indian-defense",
+    "eco_anchor": "E12–E19",
+    "colour_for": "black",
+    "short_description": "Black fianchettos to b7 and contests the long diagonal.",
+    "popular_variation_ecos": ["E15", "E12", "E17"]
+  },
+  "grunfeld": {
+    "id": "grunfeld",
+    "display_name": "Grünfeld Defense",
+    "slug": "grunfeld-defense",
+    "eco_anchor": "D70–D99",
+    "colour_for": "black",
+    "short_description": "Black gives up the centre temporarily, then dismantles it with active piece play.",
+    "popular_variation_ecos": ["D85", "D70", "D90"]
+  },
+  "catalan": {
+    "id": "catalan",
+    "display_name": "Catalan Opening",
+    "slug": "catalan-opening",
+    "eco_anchor": "E00–E09",
+    "colour_for": "white",
+    "short_description": "Queen's Gambit with a kingside fianchetto — long-term pressure on the long diagonal.",
+    "popular_variation_ecos": ["E05", "E01", "E08"]
+  },
+  "english": {
+    "id": "english",
+    "display_name": "English Opening",
+    "slug": "english-opening",
+    "eco_anchor": "A10–A39",
+    "colour_for": "white",
+    "short_description": "1.c4 — flexible, transpositional, often reaches reversed Sicilian structures.",
+    "popular_variation_ecos": ["A15", "A20", "A30"]
+  },
+  "reti": {
+    "id": "reti",
+    "display_name": "Réti Opening",
+    "slug": "reti-opening",
+    "eco_anchor": "A04–A09",
+    "colour_for": "white",
+    "short_description": "A hypermodern start — White develops without committing the central pawns.",
+    "popular_variation_ecos": ["A07", "A05", "A09"]
+  },
+  "london": {
+    "id": "london",
+    "display_name": "London System",
+    "slug": "london-system",
+    "eco_anchor": "transposition",
+    "colour_for": "white",
+    "short_description": "A solid, low-theory setup — White plays d4, Nf3, Bf4 in almost any move order.",
+    "popular_variation_ecos": ["A48", "D02"]
+  },
+  "kia": {
+    "id": "kia",
+    "display_name": "King's Indian Attack",
+    "slug": "kings-indian-attack",
+    "eco_anchor": "transposition",
+    "colour_for": "white",
+    "short_description": "King's Indian setup with colours reversed — system-style with kingside attacking ideas.",
+    "popular_variation_ecos": ["A07", "A08"]
+  },
+  "dutch": {
+    "id": "dutch",
+    "display_name": "Dutch Defense",
+    "slug": "dutch-defense",
+    "eco_anchor": "A80–A99",
+    "colour_for": "black",
+    "short_description": "1…f5 — Black takes space on the kingside and plays for an attack.",
+    "popular_variation_ecos": ["A87", "A80", "A90"]
+  },
+  "benoni-benko": {
+    "id": "benoni-benko",
+    "display_name": "Benoni & Benko",
+    "slug": "benoni-benko",
+    "eco_anchor": "A56–A79",
+    "colour_for": "black",
+    "short_description": "Asymmetric pawn structures — Benoni's central pawn chain or Benko's pawn sacrifice for queenside pressure.",
+    "popular_variation_ecos": ["A57", "A70", "A65"]
+  },
+  "trompowsky": {
+    "id": "trompowsky",
+    "display_name": "Trompowsky Attack",
+    "slug": "trompowsky-attack",
+    "eco_anchor": "A45",
+    "colour_for": "white",
+    "short_description": "An early Bg5 sidesteps the Indian defenses and provokes structural concessions.",
+    "popular_variation_ecos": ["A45"]
+  },
+  "irregular": {
+    "id": "irregular",
+    "display_name": "Irregular Openings",
+    "slug": "irregular-openings",
+    "eco_anchor": "A00–A03",
+    "colour_for": "both",
+    "short_description": "Off-beat first moves — gambits and surprises rarely seen at master level.",
+    "popular_variation_ecos": ["A00", "A01", "A02"]
+  }
+}

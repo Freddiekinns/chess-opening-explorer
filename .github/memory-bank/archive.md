@@ -5,6 +5,41 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Opening Family Rollups — Full Design History (branch `feature/opening-family-rollups`)
+
+Feature: group a player's analysed openings by family on the Analyse page, with
+per-family W/D/L and expandable per-variation breakdown. Shipped state lives in
+`activeContext.md` / `progress.md`; this records the iteration path.
+
+- **Phase 1 (2026-05-08):** 28-family taxonomy + ~140 override rules →
+  build-time `family_id` enrichment on every ECO record (98.45% coverage).
+  `GET /api/families` (routed via `pathResolver` for Vercel) serves family
+  list + `opening_count`; `family_id` exposed on `/api/openings/search-index`
+  (full mode, +10.36% raw, inside the 20% bandwidth gate; `s-maxage` bumped
+  3600→86400). Initial Variation/Family toggle + `groupByFamily()` helper;
+  client-side aggregation, `family_display_name` joined client-side.
+- **Leader-dot redesign (2026-05-09):** Replaced Phase-1 UI with editorial
+  leader-dot rows (dotted leader, display-weight result-coloured WR%,
+  Best/Needs-work sub-meta), an `InlineLinkSwitch` primitive driving page-global
+  VIEW + per-column ORDER switchers, `UncategorisedFootnote`, and a `useCountUp`
+  WR% animation. Adopted the `design-system/` bundle as canonical brand
+  reference. **Rejected on review** — unclear win/loss read, mismatched fonts,
+  confusing expand percentages.
+- **Distribution-bar redesign (2026-06-06):** Rebuilt `FamilyRow` around the
+  shared `DistributionBar` (the liked W/D/L graph), used in both family and
+  all-openings views. Dropped the WR% count-up + sub-meta.
+- **Controls evolution (2026-06-06):** Restored production pills over the
+  `InlineLinkSwitch` text links → then replaced the segmented family/all toggle
+  with a single `Group by family` chip (clashed visually) → then, after
+  measuring that 3 sort pills + chip wrap even at ~452px desktop columns,
+  replaced visible sort pills with a compact `SortMenu` dropdown on both
+  breakpoints. Final row: `[⊞ Group by family] [⇅ Sort ▾]`,
+  group-left/sort-right, per-column state, family default. Deleted
+  `AnalyseToolbar`, `SectionToolbar`, `InlineLinkSwitch`, `SortBar` and their
+  CSS/tests along the way.
+
+---
+
 ## TASK016: Design Overhaul — Chunks 1–5 (2026-03-21)
 
 ### Chunk 5: Search in TopBar on detail pages — DONE

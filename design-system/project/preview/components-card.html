@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.card{background:#232120;border:1px solid #2a2724;border-radius:8px;padding:16px;width:240px;box-shadow:0 1px 2px rgba(0,0,0,.2);position:relative;overflow:hidden;transition:all .15s ease}
+.card.hover{border-color:#e85d04;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25),0 0 0 1px rgba(232,93,4,.12);background:#2c2a27}
+.card.hover::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d4cfc7,#5a554e,#c08840)}
+.card h3{margin:0 0 6px;font:700 16px/1.3 'Bricolage Grotesque',sans-serif}
+.card .moves{font-family:var(--font-family-mono);font-size:11px;color:#8e887f;margin-bottom:10px}
+.card .meta{display:flex;gap:6px;margin-bottom:10px}
+.eco{display:inline-flex;padding:3px 8px;border-radius:6px;font-family:var(--font-family-mono);font-size:10px;font-weight:600;background:#363330;color:#9a958e;border:1px solid rgba(255,255,255,.10)}
+.cx{display:inline-flex;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:500;background:rgba(245,158,11,.15);color:rgba(245,158,11,.9);border:1px solid rgba(245,158,11,.25)}
+.bar{display:flex;height:6px;border-radius:3px;overflow:hidden}
+.bar .w{flex:31;background:#d4cfc7}.bar .d{flex:39;background:#5a554e}.bar .b{flex:30;background:#c08840}
+.lab{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-muted);margin-top:5px;font-family:var(--font-family-mono)}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+</style></head><body>
+<div class="row" style="gap:24px">
+  <div><span class="cap">Resting</span>
+    <div class="card"><h3>Caro–Kann Defence</h3><div class="moves">1.e4 c6 2.d4 d5</div><div class="meta"><span class="eco">B12</span><span class="cx">Intermediate</span></div><div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div><div class="lab"><span>31%</span><span>39%</span><span>30%</span></div></div>
+  </div>
+  <div><span class="cap">Hover</span>
+    <div class="card hover"><h3>Caro–Kann Defence</h3><div class="moves">1.e4 c6 2.d4 d5</div><div class="meta"><span class="eco">B12</span><span class="cx">Intermediate</span></div><div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div><div class="lab"><span>31%</span><span>39%</span><span>30%</span></div></div>
+  </div>
+</div>
+</body></html>

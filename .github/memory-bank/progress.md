@@ -2,92 +2,64 @@
 
 ## What's Done (newest first)
 
-- **GSC Sitemap "Couldn't fetch" Fix** (2026-05-20, PR #32): Re-added
-  `sitemap.xml`/`robots.txt` to the `middleware.ts` matcher exclusions. The
-  2026-03-29 SEO refactor broadened the matcher and dropped them, routing the
-  static sitemap through the Edge `return fetch(request)` round-trip — GSC
-  reported "Couldn't fetch / Type: Unknown" from the 30 Apr submission. Needs
-  deploy + GSC re-submit to confirm.
-
-- **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Switched
-  two-column grid from `align-items: stretch` to `start` with sticky left column
-  so the board stays visible while scrolling. Removed navigator nested scroll.
-  FEN font: monospace → DM Sans at 13px (16px mobile). Build clean.
-
-- **Primary Domain Migration** (2026-03-29): Switched repo SEO outputs from
-  mixed `openingbook.com` / `openingbook.vercel.app` values to
-  `https://openingbook.xyz`. Added shared site config, updated canonical/OG/
-  JSON-LD tags, updated `robots.txt` and committed sitemap URLs, added
-  middleware redirect from `openingbook.vercel.app` to `.xyz`, and refreshed
-  README live-site link. `npm run build:vercel` clean.
-
-- **Mobile Footer + Landing Card Polish** (2026-03-29): Fixed mobile footer
-  overlap with bottom tab bar by unifying nav height spacing and adding footer
-  clearance above the fixed tabs. Fixed popular opening card thumbnails on
-  mobile so the chessboard stays square and fills the thumbnail rail without
-  dark bars. Frontend build clean.
-
-- **TASK016 Phase B — Design Token Migration & Polish** (2026-03-28): "Warm
-  Editorial Dark" design system fully applied. Replaced ~80 hardcoded colours in
-  `simplified.css` with design tokens. Analyse page overhauled: distribution
-  bars now use chess-thematic result colours (amber/grey/cream), card labels
-  subdued, orange dominance removed. Surface elevation scale warmed (#1a1816 →
-  #363330). Nav bar height 60px, logo/nav items 16px. Detail page section
-  headers use headline font at 16–18px. Landing page staggered entrance
-  animations added. Repertoire section entrance animation added. 14 CSS module
-  files migrated to design tokens by background agents.
-- **Footer Standardisation** (2026-03-28): MIT LICENSE added to repo root;
-  footer consolidated with brand, copyright, MIT mention, and survey link;
-  `FeedbackSection` component removed from all pages.
-- **Backend Test Cleanup** (2026-03-22): Removed expected console noise from
-  route/service tests and fixed Jest worker teardown risk by unref'ing the
-  global cache cleanup interval. Backend suite clean at 43/43 suites.
-- **TASK016 — Test Suite Repair** (2026-03-22): Fixed 3 broken practice-mode
-  Vitest specs after practice controls moved to CSS Modules. Added
-  `aria-pressed` to color toggles and mocked audio asset fetches in tests.
-- **TASK016 — Design Overhaul** (2026-03-21, in progress): Top bar nav, sidebar,
-  bottom tabs, detail page restructure with OpeningNavigator, stacked sections
-  replacing tabs, plus home page redesign with MiniBoard thumbnails and Analyse
-  page mobile dashboard redesign. Chunks 1–8 done. Chunk 9 remaining (global
-  polish).
-- **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree
-  replacing flat related openings list. Backend tree-service + 2 routes,
-  frontend OpeningTree component with ARIA keyboard nav. 9 dead files deleted.
-- **User Journeys Doc** (2026-03-19): Created `user-journeys.md` as source of
-  truth for all main user flows.
-- **Video Overindexing Fix** (2026-03-16): 2-word alias minimum, cross-opening
-  title check, minMatchScore 40→60, sub-variation penalty.
-- **TASK012 — Video Pipeline Overhaul** (2026-03-15): Unified pipeline with 3
-  modes (incremental/full/rematch). Scorer fixes, 5 new channels, parallel RSS.
-  1,700+ videos indexed.
-- **TASK011 — Search Bandwidth & Vercel Limits** (2026-03-14): Eliminated 24.8
-  MB `/all` preload. Server-side search, CDN cache headers on all routes.
-- **TASK010 — Local Repertoire** (2026-03-13): Star openings,
-  localStorage-backed "My Repertoire" section. useSyncExternalStore, cross-tab
-  sync.
-- **Sort Controls** (2026-03-12): Segmented pill bar for personal opening stats
-  (Most played / Best / Worst).
-- **TASK009 — SEO** (2026-02-28): Vercel Edge Middleware + React 19 metadata +
-  JSON-LD for all 12,377 opening pages.
-- **TASK007 — Mobile Overflow Fix** (2026-02-23): CSS Grid `minmax(0, 1fr)` fix.
+- **Opening Family Rollups** (2026-06-06, branch
+  `feature/opening-family-rollups`): Analyse page groups a player's openings by
+  family with an expandable W/D/L distribution-bar row — a shared
+  `DistributionBar` powers both the family and all-openings views. Per-side
+  `Group by family` toggle (default on) + compact `Sort` dropdown; uncategorised
+  openings collapse to a footnote. Built on the Phase-1 28-family taxonomy,
+  build-time `family_id` enrichment (98.45%), and `GET /api/families`. Pre-prod
+  hardening: rollups aggregate over the full classified set (no top-10
+  truncation; cache `v3`→`v4`), unified pure `wins/games` win rate, in-component
+  scroll for long lists, featured cards gated to ≥4 games + "Needs work" by loss
+  rate, `/api/families` retry + slug fallback, 34px mobile tap targets,
+  unrecognised count surfaced. 195 frontend tests, build + format clean.
+  (History in `archive.md`.)
+- **TASK008 Rewrite — Feature Roadmap** (2026-05-04): UX roadmap of 12
+  features + monetisation section + prioritised top three.
+- **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Sticky
+  left column; FEN in DM Sans 13px.
+- **Primary Domain Migration** (2026-03-29): SEO outputs → `openingbook.xyz`;
+  shared site config, canonical/OG/JSON-LD, robots/sitemap, vercel.app→.xyz.
+- **Mobile Footer + Landing Card Polish** (2026-03-29): Fixed footer/tab-bar
+  overlap and square mobile card thumbnails.
+- **TASK016 Phase B — Design Token Migration** (2026-03-28): "Warm Editorial
+  Dark" applied; ~80 hardcoded colours → tokens; Analyse bars use result
+  colours.
+- **Footer Standardisation** (2026-03-28): MIT LICENSE added; footer
+  consolidated; FeedbackSection removed.
+- **Backend Test Cleanup** (2026-03-22): Removed console noise; fixed Jest
+  worker teardown. 43/43 suites.
+- **TASK016 — Test Suite Repair** (2026-03-22): Fixed 3 practice-mode specs;
+  aria-pressed on colour toggles.
+- **TASK016 — Design Overhaul** (2026-03-21): Top bar, bottom tabs, detail
+  restructure, home + Analyse mobile redesign. Chunk 9 (polish) remaining.
+- **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree;
+  backend tree-service + 2 routes; ARIA keyboard nav.
+- **User Journeys Doc** (2026-03-19): `user-journeys.md` as source of truth.
+- **Video Overindexing Fix** (2026-03-16): 2-word alias min, cross-opening title
+  check, minMatchScore 40→60.
+- **TASK012 — Video Pipeline Overhaul** (2026-03-15): Unified 3-mode pipeline;
+  1,700+ videos.
+- **TASK011 — Search Bandwidth & Vercel Limits** (2026-03-14): Removed 24.8 MB
+  `/all` preload; server-side search + CDN cache headers.
+- **TASK010 — Local Repertoire** (2026-03-13): localStorage "My Repertoire";
+  useSyncExternalStore cross-tab sync.
+- **Sort Controls** (2026-03-12): Segmented pill bar for personal stats.
+- **TASK009 — SEO** (2026-02-28): Edge Middleware + React 19 metadata + JSON-LD
+  for 12,377 pages.
+- **TASK007 — Mobile Overflow Fix** (2026-02-23): CSS Grid `minmax(0,1fr)`;
   Playwright regression test.
-- **Coverage Reporting** (2026-02-23): Vitest coverage enabled for frontend.
-- **State Persistence** (2026-02-23): sessionStorage for Analyse page form
-  inputs + dashboard results.
-- **TASK004 — Course Discovery Pipeline** (2026-02-18): Two-step Lichess study
-  import. 6,142 entries across 2,255 FENs from 440 studies.
-- **Practice Mode** (2026-01-30): Interactive move trainer with click + drag,
-  hints, audio, Lichess-style visual indicators.
-- **Personal Opening Explorer**: Chess.com + Lichess integration, insights
-  dashboard, sort controls, session cache.
-- **PGN Identification**: Modal for pasting PGN to identify openings. 36 unit +
-  28 integration tests.
+- **Coverage Reporting** (2026-02-23): Vitest coverage for frontend.
+- **State Persistence** (2026-02-23): sessionStorage for Analyse form + results.
+- Earlier work (Course Discovery, Practice Mode, Personal Explorer, PGN ID,
+  related-openings UI) — see `archive.md`.
 
 ## What's Left
 
 - **TASK016 chunk 9**: Global polish pass (broken tests, dead CSS, focus rings)
-- **Bottom nav investigation**: User flagged bottom nav may be missing on
-  Analyse page — needs verification
+- **Bottom nav investigation**: Bottom nav may be missing on Analyse page —
+  verify
 - **TASK006 — Coverage**: Backend 90%+, frontend 70%+ targets
 - **Advanced Filtering**: Filter by win rate, draw rate, etc.
 - **Tooltip Abstraction**: Central ARIA tooltip component
@@ -95,5 +67,4 @@
 ## Known Issues
 
 - **React 19 / Testing Library**: Compatibility area to watch during upgrades
-- **16 broken tests**: Deferred during TASK016 design overhaul (to be fixed at
-  end)
+- **16 broken tests**: Deferred during TASK016 design overhaul (to be fixed)

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { PersonalOpeningStats } from '../PersonalOpeningStats';
@@ -9,7 +9,7 @@ const FORM_STATE_KEY = 'personal-openings:form-state';
 const LAST_ANALYSIS_SNAPSHOT_KEY = 'personal-openings:last-analysis-snapshot';
 
 const buildCacheKey = (username: string, platform: string, limit: number) =>
-  `personal-openings:v2:${platform}:${username.trim().toLowerCase()}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
+  `personal-openings:v4:${platform}:${username.trim().toLowerCase()}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
 
 const mockOpeningsData: OpeningForLookup[] = [
   {
@@ -329,6 +329,218 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
 
       const analyseBtn = screen.getByRole('button', { name: /analyse/i });
       expect(analyseBtn).toBeDisabled();
+    });
+  });
+
+  describe('family rollup', () => {
+    const username = 'Magnus';
+    const platform = 'chess.com';
+    const limit = 500;
+    const cacheKey = buildCacheKey(username, platform, limit);
+
+    const mockDashboardWithFamily = {
+      ...mockDashboardData,
+      asWhite: [
+        {
+          fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2',
+          name: 'Sicilian Defense',
+          eco: 'B20',
+          moves: '1. e4 c5',
+          family_id: 'sicilian',
+          games: 4,
+          win: 2,
+          draw: 1,
+          loss: 1,
+        },
+        {
+          fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2',
+          name: 'Sicilian Defense: Open',
+          eco: 'B27',
+          moves: '1. e4 c5 2. Nf3',
+          family_id: 'sicilian',
+          games: 2,
+          win: 1,
+          draw: 0,
+          loss: 1,
+        },
+      ],
+    };
+
+    let originalFetch: typeof globalThis.fetch;
+
+    beforeEach(() => {
+      originalFetch = globalThis.fetch;
+      globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
+        const url = typeof input === 'string' ? input : input.toString();
+        if (url.includes('/api/families')) {
+          return new Response(
+            JSON.stringify({
+              success: true,
+              data: [
+                {
+                  id: 'sicilian',
+                  display_name: 'Sicilian Defense',
+                  slug: 'sicilian-defense',
+                },
+              ],
+            }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        return new Response('{}', { status: 200 });
+      }) as unknown as typeof globalThis.fetch;
+
+      sessionStorage.setItem(
+        FORM_STATE_KEY,
+        JSON.stringify({ username, platform, limit, activeTab: 'white' })
+      );
+      sessionStorage.setItem(
+        cacheKey,
+        JSON.stringify({ dashboard: mockDashboardWithFamily, cachedAt: Date.now() })
+      );
+    });
+
+    afterEach(() => {
+      globalThis.fetch = originalFetch;
+    });
+
+    it('renders the group-by-family toggle pressed by default', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      // Toggle appears in both mobile + desktop dashboards.
+      const toggles = screen.getAllByRole('button', { name: /Group by family/ });
+      expect(toggles.length).toBeGreaterThan(0);
+      toggles.forEach((b) => expect(b).toHaveAttribute('aria-pressed', 'true'));
+    });
+
+    it('grouping is per-column: flattening white leaves black grouped', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+      // Wait for /api/families fetch to populate the dictionary.
+      await waitFor(() => {
+        expect(globalThis.fetch).toHaveBeenCalled();
+      });
+
+      // Family view is the default — a family header for the white Sicilian
+      // rollup is present.
+      await waitFor(() => {
+        const headers = screen.getAllByRole('button', { expanded: false });
+        expect(
+          headers.some((b) =>
+            (b.getAttribute('aria-controls') || '').includes('variations-white-sicilian')
+          )
+        ).toBe(true);
+      });
+
+      // Turn off grouping for the white column only (desktop toggle = last).
+      const whiteToggles = screen.getAllByRole('button', { name: 'Group by family, White' });
+      await user.click(whiteToggles[whiteToggles.length - 1]);
+
+      // White is no longer grouped...
+      await waitFor(() => {
+        const whiteGrouped = screen
+          .queryAllByRole('button')
+          .filter((b) => (b.getAttribute('aria-controls') || '').includes('variations-white-'));
+        expect(whiteGrouped.length).toBe(0);
+      });
+
+      // ...the white toggle reads unpressed, but black is still grouped.
+      screen
+        .getAllByRole('button', { name: 'Group by family, White' })
+        .forEach((b) => expect(b).toHaveAttribute('aria-pressed', 'false'));
+      expect(screen.getByRole('button', { name: 'Group by family, Black' })).toHaveAttribute(
+        'aria-pressed',
+        'true'
+      );
+    });
+
+    it('expands a family row to reveal its variations', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(globalThis.fetch).toHaveBeenCalled();
+      });
+
+      // Family view is the default — find the white Sicilian family header.
+      const familyHeaders = await screen.findAllByRole('button', { expanded: false });
+      const sicilianHeader = familyHeaders.find((b) =>
+        (b.getAttribute('aria-controls') || '').includes('variations-white-sicilian')
+      );
+      expect(sicilianHeader).toBeTruthy();
+
+      await user.click(sicilianHeader!);
+
+      await waitFor(() => {
+        expect(sicilianHeader!.getAttribute('aria-expanded')).toBe('true');
+      });
+
+      // Variation list now visible — the second variation name appears (stripped of family prefix).
+      expect(screen.getAllByText('Open').length).toBeGreaterThan(0);
+    });
+
+    it('sort menu opens and selects a sort option', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      // Every column renders a compact "Sort: <current>" trigger (mobile active
+      // tab + both desktop columns), all reading "Most played" initially.
+      const triggers = screen.getAllByRole('button', { name: 'Sort: Most played' });
+      expect(triggers.length).toBeGreaterThan(0);
+      const trigger = triggers[0];
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      await user.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+      // Pick "Highest win rate" from the open menu.
+      const menu = screen.getByRole('menu', { name: 'Sort white openings' });
+      await user.click(within(menu).getByRole('menuitemradio', { name: 'Highest win rate' }));
+
+      // The trigger now reflects the new sort and the menu has closed.
+      await waitFor(() => {
+        expect(
+          screen.getAllByRole('button', { name: /Sort: Highest win rate/ }).length
+        ).toBeGreaterThan(0);
+      });
+      expect(screen.queryByRole('menu')).toBeNull();
+    });
+
+    it('per-column sort: changing white does not affect black', async () => {
+      const user = userEvent.setup();
+      renderComponent();
+
+      await waitFor(() => {
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
+      });
+
+      // All sort triggers start on "Most played" (2 white: mobile + desktop, and
+      // 1 black: desktop). Open a white one and switch it.
+      const whiteTrigger = screen.getAllByRole('button', { name: 'Sort: Most played' })[1];
+      await user.click(whiteTrigger);
+      const whiteMenu = screen.getByRole('menu', { name: 'Sort white openings' });
+      await user.click(within(whiteMenu).getByRole('menuitemradio', { name: 'Highest win rate' }));
+
+      await waitFor(() => {
+        // Both white triggers (mobile + desktop) now read "Highest win rate"...
+        expect(screen.getAllByRole('button', { name: 'Sort: Highest win rate' }).length).toBe(2);
+      });
+      // ...while the black column is untouched.
+      expect(screen.getAllByRole('button', { name: 'Sort: Most played' })).toHaveLength(1);
     });
   });
 });

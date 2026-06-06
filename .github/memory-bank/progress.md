@@ -8,8 +8,12 @@
   `DistributionBar` powers both the family and all-openings views. Per-side
   `Group by family` toggle (default on) + compact `Sort` dropdown; uncategorised
   openings collapse to a footnote. Built on the Phase-1 28-family taxonomy,
-  build-time `family_id` enrichment (98.45%), and `GET /api/families`. 195
-  frontend tests, build + format clean. (Full design history in `archive.md`.)
+  build-time `family_id` enrichment (98.45%), and `GET /api/families`. Pre-prod
+  hardening: rollups aggregate over the full classified set (no top-10
+  truncation; cache `v3`→`v4`), unified pure `wins/games` win rate,
+  `/api/families` retry + slug fallback, 34px mobile tap targets, unrecognised
+  count surfaced. 195 frontend tests, build + format clean. (History in
+  `archive.md`.)
 - **TASK008 Rewrite — Feature Roadmap** (2026-05-04): UX roadmap of 12
   features + monetisation section + prioritised top three.
 - **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Sticky

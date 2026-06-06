@@ -67,7 +67,7 @@ describe('groupByFamily', () => {
     expect(sicilian.draws).toBe(2);
     expect(sicilian.losses).toBe(2);
     expect(sicilian.variation_count).toBe(2);
-    expect(sicilian.score).toBeCloseTo((3 + 0.5 * 2) / 7);
+    expect(sicilian.score).toBeCloseTo(3 / 7); // pure win rate (wins / games)
   });
 
   test('separates uncategorised into its own field, never in rows', () => {
@@ -107,7 +107,7 @@ describe('groupByFamily', () => {
     expect(uncategorised!.draws).toBe(2);
     expect(uncategorised!.losses).toBe(2);
     expect(uncategorised!.variation_count).toBe(2);
-    expect(uncategorised!.win_rate).toBeCloseTo((1 + 0.5 * 2) / 5);
+    expect(uncategorised!.win_rate).toBeCloseTo(1 / 5); // pure win rate (wins / games)
   });
 
   test('uncategorised is null when no uncategorised openings present', () => {

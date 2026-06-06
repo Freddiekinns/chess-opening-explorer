@@ -1366,6 +1366,13 @@
   line-height: 1;
 }
 
+.mobileGamesMeta {
+  margin-top: var(--space-2);
+  font-family: var(--font-family-mono);
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+}
+
 /* 3 inline stat cards */
 .tripleStats {
   display: grid;
@@ -1968,15 +1975,18 @@
     margin-top: var(--space-3);
   }
 
-  /* Keep the grouping chip + sort trigger compact + matched on mobile. */
+  /* Keep the grouping chip + sort trigger compact + matched on mobile, with a
+     comfortable ~34px tap target (matches the As White/As Black switch). */
   .groupPill {
-    padding: 4px 10px 4px 8px;
+    min-height: 34px;
+    padding: 4px 12px 4px 10px;
     font-size: 11px;
     gap: var(--space-1);
   }
 
   .sortTrigger {
-    padding: 4px 10px;
+    min-height: 34px;
+    padding: 4px 12px;
     font-size: 11px;
     gap: var(--space-1);
   }

@@ -22,10 +22,21 @@ row, in both the family and all-openings views.
   `[⊞ Group by family] [⇅ Sort ▾]`, group-left / sort-right, on one line.
   `UncategorisedFootnote` collapses "Other".
 - Desktop shows As White / As Black side-by-side; mobile has an As White / As
-  Black segmented switch. Family grouping is the default.
-- Iterated through review: dropped the rejected leader-dot WR%,
-  `InlineLinkSwitch` text links, segmented view toggle, and visible sort pills
-  (components/CSS/tests removed each time). Design history → `archive.md`.
+  Black segmented switch. Family grouping is the default. (Rejected designs and
+  their components/CSS/tests were removed along the way; history in
+  `archive.md`.)
+
+**Pre-production hardening:**
+
+- **P0 (correctness):** removed the top-10 truncation — family rollups now
+  aggregate over the FULL classified set (cache key `v3`→`v4`). Previously
+  family totals/line-counts undercounted because grouping ran over only the 10
+  most-played openings.
+- **Win-rate consistency:** `groupByFamily` now uses pure `wins/games` (was
+  draw-weighted), matching the flat sort + highlight cards.
+- **Robustness/polish:** `/api/families` fetch retries (×2) and falls back to a
+  prettified slug; mobile filter pills bumped to a 34px tap target; unrecognised
+  game count surfaced in the header (desktop + mobile).
 
 **Quality:** 195 frontend tests (`DistributionBar` + `FamilyRow` +
 `familyAggregation` at 100%); contrast AA-pass; pill heights matched (24.8px
@@ -34,6 +45,5 @@ mobile (both views, expand/collapse, toggles, sort menu).
 
 ## Previous Task: Family Rollups Phase 1 (2026-05-08)
 
-28-family taxonomy + ~140 override rules → build-time `family_id` enrichment
-(98.45% coverage). New `GET /api/families` endpoint + `family_id` on the
-search-index (full mode). Redesign + control history in `archive.md`.
+28-family taxonomy + ~140 override rules → build-time `family_id` (98.45%). New
+`GET /api/families` + `family_id` on the search-index. History in `archive.md`.

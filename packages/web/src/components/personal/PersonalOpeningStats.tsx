@@ -592,10 +592,10 @@ export const PersonalOpeningStats: React.FC<{
 
   const cacheKey = useMemo(() => {
     const u = normalizeUsername(username).toLowerCase();
-    // v3: OpeningAgg now carries family_id (Phase 1 family rollups). v2
-    // snapshots predate the field and would render every opening under
-    // "Other" in family view — bumping the version invalidates them.
-    return `personal-openings:v3:${platform}:${u}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
+    // v4: store the FULL classified opening list (no top-10 truncation) so
+    // family rollups aggregate over every game, not just the most-played 10.
+    // v3 snapshots are pre-truncation and would undercount family totals.
+    return `personal-openings:v4:${platform}:${u}:limit=${limit}:rated=true:perf=rapid,blitz,classical`;
   }, [platform, username, limit]);
 
   useEffect(() => {
@@ -606,15 +606,23 @@ export const PersonalOpeningStats: React.FC<{
 
   useEffect(() => {
     let alive = true;
-    fetch('/api/families')
-      .then((r) => r.json())
-      .then((j) => {
-        if (!alive || !j?.success) return;
-        const dict: Record<string, { id: string; display_name: string }> = {};
-        for (const f of j.data) dict[f.id] = { id: f.id, display_name: f.display_name };
-        setFamiliesDict(dict);
-      })
-      .catch(() => {});
+    // Load family display names, retrying a couple of times on failure. If it
+    // never loads, groupByFamily falls back to a prettified slug, so rows are
+    // still readable — this just upgrades them to the canonical names.
+    const load = (attempt: number) => {
+      fetch('/api/families')
+        .then((r) => r.json())
+        .then((j) => {
+          if (!alive || !j?.success) throw new Error('families unavailable');
+          const dict: Record<string, { id: string; display_name: string }> = {};
+          for (const f of j.data) dict[f.id] = { id: f.id, display_name: f.display_name };
+          if (alive) setFamiliesDict(dict);
+        })
+        .catch(() => {
+          if (alive && attempt < 2) setTimeout(() => load(attempt + 1), 1500 * (attempt + 1));
+        });
+    };
+    load(0);
     return () => {
       alive = false;
     };
@@ -864,8 +872,10 @@ export const PersonalOpeningStats: React.FC<{
         blackWin,
         blackDraw,
         blackLoss,
-        asWhite: sortAgg(Array.from(asWhite.values())).slice(0, 10),
-        asBlack: sortAgg(Array.from(asBlack.values())).slice(0, 10),
+        // Full classified lists (no truncation) — family rollups aggregate over
+        // every opening. The flat "all openings" view caps its own display.
+        asWhite: sortAgg(Array.from(asWhite.values())),
+        asBlack: sortAgg(Array.from(asBlack.values())),
       };
 
       saveToCache(data);
@@ -1196,6 +1206,12 @@ export const PersonalOpeningStats: React.FC<{
                 <div className={styles.mobileHero}>
                   <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
                   <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
+                  <span className={styles.mobileGamesMeta}>
+                    {dashboard.totalGames} analysed &middot; {dashboard.classifiedGames} matched
+                    {dashboard.unclassifiedGames > 0
+                      ? ` · ${dashboard.unclassifiedGames} unrecognised`
+                      : ''}
+                  </span>
                 </div>
 
                 {/* 3 inline stat cards */}
@@ -1383,7 +1399,11 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={styles.playerMeta}>
                       <span className={styles.platformBadge}>{displayedPlatformLabel}</span>
                       <span className={styles.gamesAnalysed}>
-                        {dashboard.totalGames} games analysed ({dashboard.classifiedGames} matched)
+                        {dashboard.totalGames} games analysed &middot; {dashboard.classifiedGames}{' '}
+                        matched
+                        {dashboard.unclassifiedGames > 0
+                          ? ` · ${dashboard.unclassifiedGames} unrecognised`
+                          : ''}
                       </span>
                     </div>
                   </div>

@@ -64,8 +64,23 @@ export type SortMode = 'frequency' | 'best' | 'worst';
 const UNCATEGORISED = 'uncategorised';
 const QUALIFY_THRESHOLD = 2;
 
-function winRate(games: number, wins: number, draws: number): number {
-  return games === 0 ? 0 : (wins + 0.5 * draws) / games;
+/**
+ * Pure win rate (wins / games). Deliberately NOT draw-weighted: the label
+ * everywhere is "win rate", and the flat all-openings sort + highlight cards
+ * use the same wins/games definition — so family sorting matches them exactly.
+ */
+function winRate(games: number, wins: number): number {
+  return games === 0 ? 0 : wins / games;
+}
+
+/** Fallback display name when the families dict hasn't loaded: turn a slug like
+ *  "kings-indian" into "Kings Indian" so rows never show raw ids. */
+function prettifyFamilyId(id: string): string {
+  return id
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export function groupByFamily(
@@ -100,7 +115,7 @@ export function groupByFamily(
     }
 
     const fromDict = families[id]?.display_name;
-    const display = fromDict || row.family_display_name || id;
+    const display = fromDict || row.family_display_name || prettifyFamilyId(id);
 
     let bucket = buckets.get(id);
     if (!bucket) {
@@ -136,13 +151,13 @@ export function groupByFamily(
 
   for (const bucket of buckets.values()) {
     bucket.variation_count = bucket.variations.length;
-    bucket.score = winRate(bucket.games, bucket.wins, bucket.draws);
+    bucket.score = winRate(bucket.games, bucket.wins);
     bucket.variations.sort((a, b) => b.games - a.games || a.name.localeCompare(b.name));
 
     const qualified = bucket.variations.filter((v) => v.games >= QUALIFY_THRESHOLD);
     if (qualified.length > 0) {
       const ranked = [...qualified].sort((a, b) => {
-        const wrDiff = winRate(b.games, b.wins, b.draws) - winRate(a.games, a.wins, a.draws);
+        const wrDiff = winRate(b.games, b.wins) - winRate(a.games, a.wins);
         if (wrDiff !== 0) return wrDiff;
         return b.games - a.games;
       });
@@ -155,7 +170,7 @@ export function groupByFamily(
   }
 
   if (hasUncategorised) {
-    uncat.win_rate = winRate(uncat.games, uncat.wins, uncat.draws);
+    uncat.win_rate = winRate(uncat.games, uncat.wins);
   }
 
   const rows = Array.from(buckets.values());

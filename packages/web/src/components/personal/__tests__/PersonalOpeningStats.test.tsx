@@ -404,50 +404,62 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
       globalThis.fetch = originalFetch;
     });
 
-    it('renders VIEW switcher with Variation and Family options, Variation selected by default', async () => {
+    it('renders the group-by-family toggle pressed by default', async () => {
       renderComponent();
 
       await waitFor(() => {
         expect(getPlayerHeading('Magnus')).toBeTruthy();
       });
 
-      // VIEW label appears in both mobile + desktop dashboards.
-      expect(screen.getAllByText('VIEW').length).toBeGreaterThan(0);
-
-      const variationRadios = screen.getAllByRole('radio', { name: 'Variation' });
-      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
-
-      expect(variationRadios.length).toBeGreaterThan(0);
-      expect(familyRadios.length).toBeGreaterThan(0);
-      variationRadios.forEach((r) => expect(r.getAttribute('aria-checked')).toBe('true'));
-      familyRadios.forEach((r) => expect(r.getAttribute('aria-checked')).toBe('false'));
+      // Toggle appears in both mobile + desktop dashboards.
+      const toggles = screen.getAllByRole('button', { name: /Group by family/ });
+      expect(toggles.length).toBeGreaterThan(0);
+      toggles.forEach((b) => expect(b).toHaveAttribute('aria-pressed', 'true'));
     });
 
-    it('renders the family display name after toggling to Family view', async () => {
+    it('grouping is per-column: flattening white leaves black grouped', async () => {
       const user = userEvent.setup();
       renderComponent();
 
       await waitFor(() => {
         expect(getPlayerHeading('Magnus')).toBeTruthy();
       });
-
       // Wait for /api/families fetch to populate the dictionary.
       await waitFor(() => {
         expect(globalThis.fetch).toHaveBeenCalled();
       });
 
-      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
-      await user.click(familyRadios[0]);
-
-      // After click, that radio is aria-checked.
+      // Family view is the default — a family header for the white Sicilian
+      // rollup is present.
       await waitFor(() => {
-        expect(familyRadios[0].getAttribute('aria-checked')).toBe('true');
+        const headers = screen.getAllByRole('button', { expanded: false });
+        expect(
+          headers.some((b) =>
+            (b.getAttribute('aria-controls') || '').includes('variations-white-sicilian')
+          )
+        ).toBe(true);
       });
 
-      // Family display name appears at least once (mobile + desktop dashboards both render it).
+      // Turn off grouping for the white column only (desktop toggle = last).
+      const whiteToggles = screen.getAllByRole('button', { name: 'Group by family, White' });
+      await user.click(whiteToggles[whiteToggles.length - 1]);
+
+      // White is no longer grouped...
       await waitFor(() => {
-        expect(screen.getAllByText('Sicilian Defense').length).toBeGreaterThan(0);
+        const whiteGrouped = screen
+          .queryAllByRole('button')
+          .filter((b) => (b.getAttribute('aria-controls') || '').includes('variations-white-'));
+        expect(whiteGrouped.length).toBe(0);
       });
+
+      // ...the white toggle reads unpressed, but black is still grouped.
+      screen
+        .getAllByRole('button', { name: 'Group by family, White' })
+        .forEach((b) => expect(b).toHaveAttribute('aria-pressed', 'false'));
+      expect(screen.getByRole('button', { name: 'Group by family, Black' })).toHaveAttribute(
+        'aria-pressed',
+        'true'
+      );
     });
 
     it('expands a family row to reveal its variations', async () => {
@@ -461,11 +473,7 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
         expect(globalThis.fetch).toHaveBeenCalled();
       });
 
-      const familyRadios = screen.getAllByRole('radio', { name: 'Family' });
-      await user.click(familyRadios[0]);
-
-      // Family header buttons (mobile + desktop). Find the ones whose aria-controls
-      // points at the white-side variations list.
+      // Family view is the default — find the white Sicilian family header.
       const familyHeaders = await screen.findAllByRole('button', { expanded: false });
       const sicilianHeader = familyHeaders.find((b) =>
         (b.getAttribute('aria-controls') || '').includes('variations-white-sicilian')
@@ -482,7 +490,7 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
       expect(screen.getAllByText('Open').length).toBeGreaterThan(0);
     });
 
-    it('per-column sort: changing white ORDER does not affect black', async () => {
+    it('sort menu opens and selects a sort option', async () => {
       const user = userEvent.setup();
       renderComponent();
 
@@ -490,25 +498,49 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
         expect(getPlayerHeading('Magnus')).toBeTruthy();
       });
 
-      // Mobile dashboard also renders a section toolbar for the active tab, so
-      // there can be more than one "Order white openings" radiogroup on screen.
-      // Pick the desktop (last) instance for both white and black.
-      const whiteGroups = screen.getAllByRole('radiogroup', { name: 'Order white openings' });
-      const whiteGroup = whiteGroups[whiteGroups.length - 1];
-      const blackGroups = screen.getAllByRole('radiogroup', { name: 'Order black openings' });
-      const blackGroup = blackGroups[blackGroups.length - 1];
+      // Every column renders a compact "Sort: <current>" trigger (mobile active
+      // tab + both desktop columns), all reading "Most played" initially.
+      const triggers = screen.getAllByRole('button', { name: 'Sort: Most played' });
+      expect(triggers.length).toBeGreaterThan(0);
+      const trigger = triggers[0];
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      await user.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
 
-      // Click "Highest win rate" inside the white group only.
-      const whiteHigh = within(whiteGroup).getByRole('radio', { name: 'Highest win rate' });
-      await user.click(whiteHigh);
+      // Pick "Highest win rate" from the open menu.
+      const menu = screen.getByRole('menu', { name: 'Sort white openings' });
+      await user.click(within(menu).getByRole('menuitemradio', { name: 'Highest win rate' }));
+
+      // The trigger now reflects the new sort and the menu has closed.
+      await waitFor(() => {
+        expect(
+          screen.getAllByRole('button', { name: /Sort: Highest win rate/ }).length
+        ).toBeGreaterThan(0);
+      });
+      expect(screen.queryByRole('menu')).toBeNull();
+    });
+
+    it('per-column sort: changing white does not affect black', async () => {
+      const user = userEvent.setup();
+      renderComponent();
 
       await waitFor(() => {
-        expect(whiteHigh.getAttribute('aria-checked')).toBe('true');
+        expect(getPlayerHeading('Magnus')).toBeTruthy();
       });
 
-      // Black still has Most played selected.
-      const blackChecked = within(blackGroup).getByRole('radio', { checked: true });
-      expect(blackChecked.textContent).toBe('Most played');
+      // All sort triggers start on "Most played" (2 white: mobile + desktop, and
+      // 1 black: desktop). Open a white one and switch it.
+      const whiteTrigger = screen.getAllByRole('button', { name: 'Sort: Most played' })[1];
+      await user.click(whiteTrigger);
+      const whiteMenu = screen.getByRole('menu', { name: 'Sort white openings' });
+      await user.click(within(whiteMenu).getByRole('menuitemradio', { name: 'Highest win rate' }));
+
+      await waitFor(() => {
+        // Both white triggers (mobile + desktop) now read "Highest win rate"...
+        expect(screen.getAllByRole('button', { name: 'Sort: Highest win rate' }).length).toBe(2);
+      });
+      // ...while the black column is untouched.
+      expect(screen.getAllByRole('button', { name: 'Sort: Most played' })).toHaveLength(1);
     });
   });
 });

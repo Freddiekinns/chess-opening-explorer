@@ -1,23 +1,9 @@
-import { describe, expect, test, vi, beforeEach } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { FamilyRow } from '../FamilyRow';
 import type { FamilyRollupRow } from '../familyAggregation';
-
-beforeEach(() => {
-  // Force prefers-reduced-motion: reduce so the count-up returns the target immediately
-  window.matchMedia = vi.fn().mockImplementation((q: string) => ({
-    matches: q.includes('reduce'),
-    media: q,
-    onchange: null,
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  }));
-});
 
 const variation = (
   overrides: Partial<FamilyRollupRow['variations'][number]> = {}
@@ -42,39 +28,11 @@ const row = (overrides: Partial<FamilyRollupRow> = {}): FamilyRollupRow => ({
   score: (7 + 0.5) / 14,
   variation_count: 2,
   variations: [
-    variation({
-      key: 'v1',
-      name: 'Sicilian: Najdorf',
-      games: 6,
-      wins: 4,
-      draws: 1,
-      losses: 1,
-    }),
-    variation({
-      key: 'v2',
-      name: 'Sicilian: Dragon',
-      games: 8,
-      wins: 3,
-      draws: 0,
-      losses: 5,
-    }),
+    variation({ key: 'v1', name: 'Sicilian: Najdorf', games: 6, wins: 4, draws: 1, losses: 1 }),
+    variation({ key: 'v2', name: 'Sicilian: Dragon', games: 8, wins: 3, draws: 0, losses: 5 }),
   ],
-  best_variation: variation({
-    key: 'v1',
-    name: 'Sicilian: Najdorf',
-    games: 6,
-    wins: 4,
-    draws: 1,
-    losses: 1,
-  }),
-  weak_variation: variation({
-    key: 'v2',
-    name: 'Sicilian: Dragon',
-    games: 8,
-    wins: 3,
-    draws: 0,
-    losses: 5,
-  }),
+  best_variation: null,
+  weak_variation: null,
   ...overrides,
 });
 
@@ -98,41 +56,27 @@ describe('FamilyRow', () => {
     expect(screen.getByText('Sicilian Defence')).toBeInTheDocument();
   });
 
-  test('renders rounded win-rate percentage', () => {
+  test('renders the aggregate games count', () => {
     renderRow();
-    // (7 + 0.5) / 14 ≈ 0.5357 → 54%
-    expect(screen.getByText(/54%/)).toBeInTheDocument();
+    expect(screen.getByText('14')).toBeInTheDocument();
   });
 
-  test('renders games count', () => {
+  test('renders the line (variation) count in the meta line', () => {
     renderRow();
-    expect(screen.getByText('14 games')).toBeInTheDocument();
+    expect(screen.getByText(/2 lines/)).toBeInTheDocument();
   });
 
-  test('renders best and weak sub-meta when both exist', () => {
+  test('singularises the line count when there is one variation', () => {
+    renderRow({ row: row({ variation_count: 1 }) });
+    expect(screen.getByText(/1 line(?!s)/)).toBeInTheDocument();
+  });
+
+  test('renders the aggregate W/D/L distribution percentages', () => {
     renderRow();
-    expect(screen.getByText(/Best/)).toBeInTheDocument();
-    expect(screen.getByText(/Najdorf/)).toBeInTheDocument();
-    expect(screen.getByText(/75%/)).toBeInTheDocument();
-    expect(screen.getByText(/Needs work/)).toBeInTheDocument();
-    expect(screen.getByText(/Dragon/)).toBeInTheDocument();
-    expect(screen.getByText(/38%/)).toBeInTheDocument();
-  });
-
-  test('omits sub-meta entirely when both best and weak are null', () => {
-    renderRow({ row: row({ best_variation: null, weak_variation: null }) });
-    expect(screen.queryByText(/Best/)).toBeNull();
-    expect(screen.queryByText(/Needs work/)).toBeNull();
-  });
-
-  test('renders only best when weak is null', () => {
-    const r = row({
-      best_variation: variation({ name: 'Sicilian: A', games: 4, wins: 3 }),
-      weak_variation: null,
-    });
-    renderRow({ row: r });
-    expect(screen.getByText(/Best/)).toBeInTheDocument();
-    expect(screen.queryByText(/Needs work/)).toBeNull();
+    // 7/14 = 50%, 1/14 ≈ 7%, 6/14 ≈ 43%
+    expect(screen.getByText('50%')).toBeInTheDocument();
+    expect(screen.getByText('7%')).toBeInTheDocument();
+    expect(screen.getByText('43%')).toBeInTheDocument();
   });
 
   test('disclosure: aria-expanded reflects isExpanded prop', () => {
@@ -165,10 +109,12 @@ describe('FamilyRow', () => {
     expect(onToggle).toHaveBeenCalledTimes(1);
   });
 
-  test('expanded state renders variations with links', () => {
+  test('expanded state renders variations as links with stripped names', () => {
     renderRow({ isExpanded: true });
     expect(screen.getByRole('link', { name: /Najdorf/ })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Dragon/ })).toBeInTheDocument();
+    // Family prefix is stripped from variation names.
+    expect(screen.queryByText('Sicilian: Najdorf')).toBeNull();
   });
 
   test('collapsed state does not render variations', () => {
@@ -176,16 +122,17 @@ describe('FamilyRow', () => {
     expect(screen.queryByRole('link', { name: /Najdorf/ })).toBeNull();
   });
 
-  test('white-side row uses white result-colour token on win-rate', () => {
-    renderRow({ colour: 'white' });
-    const pct = screen.getByText(/54%/);
-    // We assert the class is applied; CSS resolves the variable.
-    expect(pct.className).toMatch(/winRateWhite/);
+  test('expanded variations render their own distribution percentages', () => {
+    renderRow({ isExpanded: true });
+    // Najdorf: 6g / 4w 1d 1l → 67% / 17% / 17%
+    expect(screen.getByText('67%')).toBeInTheDocument();
+    // Dragon: 8g / 3w 0d 5l → 38% / 0% / 63%
+    expect(screen.getByText('63%')).toBeInTheDocument();
   });
 
-  test('black-side row uses black result-colour token on win-rate', () => {
-    renderRow({ colour: 'black' });
-    const pct = screen.getByText(/54%/);
-    expect(pct.className).toMatch(/winRateBlack/);
+  test('variation links point at the opening route', () => {
+    renderRow({ isExpanded: true, openingLink: (key) => `/opening/${key}` });
+    expect(screen.getByRole('link', { name: /Najdorf/ })).toHaveAttribute('href', '/opening/v1');
+    expect(screen.getByRole('link', { name: /Dragon/ })).toHaveAttribute('href', '/opening/v2');
   });
 });

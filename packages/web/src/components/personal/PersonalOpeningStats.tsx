@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src';
 import styles from './PersonalOpeningStats.module.css';
 import { groupByFamily, type OpeningAggInput, type SortMode } from './familyAggregation';
-import { AnalyseToolbar, type GroupBy } from './AnalyseToolbar';
-import { SectionToolbar } from './SectionToolbar';
 import { FamilyRow } from './FamilyRow';
 import { UncategorisedFootnote } from './UncategorisedFootnote';
-import { InlineLinkSwitch } from './InlineLinkSwitch';
+import { DistributionBar } from './DistributionBar';
+
+type GroupBy = 'family' | 'variation';
 
 type Platform = 'lichess' | 'chess.com';
 
@@ -209,6 +209,244 @@ const GearIcon = () => (
 );
 
 /* ==============================
+   PILL CONTROLS (sort filters + segmented toggles)
+   ============================== */
+const SORT_LABELS: Record<SortMode, string> = {
+  frequency: 'Most played',
+  best: 'Highest win rate',
+  worst: 'Lowest win rate',
+};
+
+const SORT_ORDER: ReadonlyArray<SortMode> = ['frequency', 'best', 'worst'];
+
+/** Full-width segmented pill — used for the mobile As White / As Black switch
+    (a primary mode switch). aria-pressed buttons in a labelled group. */
+function SegmentedToggle<T extends string>({
+  options,
+  value,
+  onChange,
+  ariaLabel,
+}: {
+  options: ReadonlyArray<{ value: T; label: string }>;
+  value: T;
+  onChange: (value: T) => void;
+  ariaLabel: string;
+}) {
+  return (
+    <div className={styles.pillToggle} role="group" aria-label={ariaLabel}>
+      {options.map((opt) => {
+        const active = opt.value === value;
+        return (
+          <button
+            key={opt.value}
+            type="button"
+            className={`${styles.pillBtn} ${active ? styles.pillBtnActive : ''}`}
+            aria-pressed={active}
+            onClick={() => {
+              if (!active) onChange(opt.value);
+            }}
+          >
+            {opt.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Grouped-list mark — signals the "group by family" action without leaning on
+    the segmented-control idiom that clashed with the sort pills. */
+const GroupIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M2.5 3.5h11" />
+    <path d="M6 8h7.5" />
+    <path d="M6 12h7.5" />
+    <path d="M3 7.5v5" />
+  </svg>
+);
+
+/** Single toggle chip in the sort-pill style — grouping is binary (family vs
+    flat), so one filled-when-on chip is lighter and more consistent than a
+    segmented two-option control. The icon distinguishes it from sort pills. */
+const GroupToggle: React.FC<{
+  grouped: boolean;
+  onChange: (grouped: boolean) => void;
+  /** Side suffix keeps the accessible name unique while still containing the
+      visible "Group by family" text (WCAG 2.5.3 Label in Name). */
+  sideLabel: string;
+}> = ({ grouped, onChange, sideLabel }) => (
+  <button
+    type="button"
+    className={`${styles.groupPill} ${grouped ? styles.groupPillActive : ''}`}
+    aria-pressed={grouped}
+    aria-label={`Group by family, ${sideLabel}`}
+    onClick={() => onChange(!grouped)}
+  >
+    <GroupIcon />
+    <span>Group by family</span>
+  </button>
+);
+
+/** Descending-bars sort glyph. */
+const SortGlyph = () => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    aria-hidden="true"
+  >
+    <path d="M3 4.5h10" />
+    <path d="M3 8h6.5" />
+    <path d="M3 11.5h3.5" />
+  </svg>
+);
+
+/** Sort control — a compact "Sort: <current>" pill that opens a small
+    single-select menu. Used on both breakpoints so the filter row stays two
+    pills (group chip + sort) on one line; three visible sort pills wrapped even
+    at desktop column widths (~452px). */
+const SortMenu: React.FC<{
+  value: SortMode;
+  onChange: (mode: SortMode) => void;
+  ariaLabel: string;
+}> = ({ value, onChange, ariaLabel }) => {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const idx = Math.max(0, SORT_ORDER.indexOf(value));
+    optionRefs.current[idx]?.focus();
+  }, [open, value]);
+
+  const close = (returnFocus = true) => {
+    setOpen(false);
+    if (returnFocus) triggerRef.current?.focus();
+  };
+
+  const onOptionKeyDown = (e: React.KeyboardEvent, i: number) => {
+    const last = SORT_ORDER.length - 1;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      optionRefs.current[i === last ? 0 : i + 1]?.focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      optionRefs.current[i === 0 ? last : i - 1]?.focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      optionRefs.current[0]?.focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      optionRefs.current[last]?.focus();
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      close();
+    }
+  };
+
+  return (
+    <div className={styles.sortMenu} ref={rootRef}>
+      <button
+        ref={triggerRef}
+        type="button"
+        className={styles.sortTrigger}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowDown' && !open) {
+            e.preventDefault();
+            setOpen(true);
+          }
+        }}
+      >
+        <SortGlyph />
+        <span>Sort: {SORT_LABELS[value]}</span>
+        <svg
+          className={open ? styles.sortChevronOpen : styles.sortChevron}
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 6l4 4 4-4" />
+        </svg>
+      </button>
+      {open && (
+        <div className={styles.sortPopover} role="menu" aria-label={ariaLabel}>
+          {SORT_ORDER.map((mode, i) => {
+            const active = mode === value;
+            return (
+              <button
+                key={mode}
+                ref={(el) => {
+                  optionRefs.current[i] = el;
+                }}
+                type="button"
+                role="menuitemradio"
+                aria-checked={active}
+                className={`${styles.sortOption} ${active ? styles.sortOptionActive : ''}`}
+                onClick={() => {
+                  onChange(mode);
+                  close();
+                }}
+                onKeyDown={(e) => onOptionKeyDown(e, i)}
+              >
+                <span>{SORT_LABELS[mode]}</span>
+                {active && (
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SIDE_OPTIONS: ReadonlyArray<{ value: SideTab; label: string }> = [
+  { value: 'white', label: 'As White' },
+  { value: 'black', label: 'As Black' },
+];
+
+/* ==============================
    OPENING NAME SPLIT (family : variation)
    ============================== */
 const OpeningNameSplit: React.FC<{ name: string; className?: string }> = ({ name, className }) => {
@@ -226,48 +464,6 @@ const OpeningNameSplit: React.FC<{ name: string; className?: string }> = ({ name
 /* ==============================
    OPENING ROW COMPONENT
    ============================== */
-/* ==============================
-   DISTRIBUTION BAR COMPONENT
-   ============================== */
-const DistributionBar: React.FC<{
-  win: number;
-  draw: number;
-  loss: number;
-  games: number;
-}> = ({ win, draw, loss, games }) => {
-  if (games === 0) return null;
-  const wPct = (win / games) * 100;
-  const dPct = (draw / games) * 100;
-  const lPct = (loss / games) * 100;
-
-  return (
-    <div className={styles.distBar}>
-      <div className={styles.distSegments}>
-        {wPct > 0 && (
-          <div className={`${styles.distSegment} ${styles.distWin}`} style={{ width: `${wPct}%` }}>
-            {wPct >= 15 && <span className={styles.distCount}>{win}</span>}
-          </div>
-        )}
-        {dPct > 0 && (
-          <div className={`${styles.distSegment} ${styles.distDraw}`} style={{ width: `${dPct}%` }}>
-            {dPct >= 15 && <span className={styles.distCount}>{draw}</span>}
-          </div>
-        )}
-        {lPct > 0 && (
-          <div className={`${styles.distSegment} ${styles.distLoss}`} style={{ width: `${lPct}%` }}>
-            {lPct >= 15 && <span className={styles.distCount}>{loss}</span>}
-          </div>
-        )}
-      </div>
-      <div className={styles.distPcts}>
-        <span className={styles.distPctWin}>{Math.round(wPct)}%</span>
-        <span className={styles.distPctDraw}>{Math.round(dPct)}%</span>
-        <span className={styles.distPctLoss}>{Math.round(lPct)}%</span>
-      </div>
-    </div>
-  );
-};
-
 const OpeningRow: React.FC<{
   opening: OpeningAgg;
   platform: Platform;
@@ -294,12 +490,14 @@ const OpeningRow: React.FC<{
       {/* Desktop: inline GP + bar */}
       <div className={styles.openingRowRight}>
         <span className={styles.gamesCount}>{opening.games}</span>
-        <DistributionBar
-          win={opening.win}
-          draw={opening.draw}
-          loss={opening.loss}
-          games={opening.games}
-        />
+        <span className={styles.distBar}>
+          <DistributionBar
+            win={opening.win}
+            draw={opening.draw}
+            loss={opening.loss}
+            games={opening.games}
+          />
+        </span>
       </div>
 
       {/* Mobile: stat counters + accent bar */}
@@ -365,7 +563,10 @@ export const PersonalOpeningStats: React.FC<{
   const [showSettings, setShowSettings] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const [showAllMobile, setShowAllMobile] = useState(false);
-  const [groupBy, setGroupBy] = useState<GroupBy>('variation');
+  // Grouping is per-column (mirrors per-column sort) so the toggle can live
+  // inside each side's filter row. Family grouping is the default.
+  const [whiteGroupBy, setWhiteGroupBy] = useState<GroupBy>('family');
+  const [blackGroupBy, setBlackGroupBy] = useState<GroupBy>('family');
   const [familiesDict, setFamiliesDict] = useState<
     Record<string, { id: string; display_name: string }>
   >({});
@@ -966,6 +1167,8 @@ export const PersonalOpeningStats: React.FC<{
 
           const activeSortMode = activeTab === 'white' ? whiteSortMode : blackSortMode;
           const setActiveSortMode = activeTab === 'white' ? setWhiteSortMode : setBlackSortMode;
+          const activeGroupBy = activeTab === 'white' ? whiteGroupBy : blackGroupBy;
+          const setActiveGroupBy = activeTab === 'white' ? setWhiteGroupBy : setBlackGroupBy;
           const activeData =
             activeTab === 'white'
               ? { openings: sortedWhite, games: dashboard.whiteGames }
@@ -1041,17 +1244,9 @@ export const PersonalOpeningStats: React.FC<{
                   </Link>
                 )}
 
-                {/* Side switcher (mobile only) — InlineLinkSwitch primitive
-                    matches the redesign's editorial register and uses
-                    radiogroup/radio ARIA per spec ARIA-cleanup mandate. */}
-                <InlineLinkSwitch
-                  label="SIDE"
-                  options={
-                    [
-                      { value: 'white', label: 'As White' },
-                      { value: 'black', label: 'As Black' },
-                    ] as const
-                  }
+                {/* Side switcher (mobile) — full-width segmented pill */}
+                <SegmentedToggle
+                  options={SIDE_OPTIONS}
                   value={activeTab}
                   onChange={(v) => {
                     setActiveTab(v);
@@ -1060,23 +1255,27 @@ export const PersonalOpeningStats: React.FC<{
                   ariaLabel="View openings by side"
                 />
 
-                {/* VIEW switcher */}
-                <AnalyseToolbar value={groupBy} onChange={setGroupBy} />
-
-                {/* Section title + sort filters */}
+                {/* Section title + grouping / sort filters */}
                 <div className={styles.mobileSectionHead}>
                   <h3 className={styles.mobileSectionTitle}>
                     Performance as {activeTab === 'white' ? 'White' : 'Black'}
                   </h3>
-                  <SectionToolbar
-                    value={activeSortMode}
-                    onChange={setActiveSortMode}
-                    ariaLabel={`Order ${activeTab} openings`}
-                  />
+                  <div className={styles.mobileFilters}>
+                    <GroupToggle
+                      grouped={activeGroupBy === 'family'}
+                      onChange={(g) => setActiveGroupBy(g ? 'family' : 'variation')}
+                      sideLabel={activeTab === 'white' ? 'White' : 'Black'}
+                    />
+                    <SortMenu
+                      value={activeSortMode}
+                      onChange={setActiveSortMode}
+                      ariaLabel={`Sort ${activeTab} openings`}
+                    />
+                  </div>
                 </div>
 
                 {/* Opening cards */}
-                {groupBy === 'family' ? (
+                {activeGroupBy === 'family' ? (
                   (() => {
                     const fam = activeTab === 'white' ? whiteFamily : blackFamily;
                     if (fam.rows.length === 0 && !fam.uncategorised) {
@@ -1287,9 +1486,6 @@ export const PersonalOpeningStats: React.FC<{
                   )}
                 </div>
 
-                {/* VIEW switcher */}
-                <AnalyseToolbar value={groupBy} onChange={setGroupBy} />
-
                 {/* Desktop: side-by-side opening lists */}
                 <div className={styles.openingSections}>
                   <div className={styles.openingSection}>
@@ -1298,10 +1494,17 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as White
                         <span className={styles.sectionBadge}>{dashboard.whiteGames} games</span>
                       </h3>
-                      <SectionToolbar
+                    </div>
+                    <div className={styles.filterRow}>
+                      <GroupToggle
+                        grouped={whiteGroupBy === 'family'}
+                        onChange={(g) => setWhiteGroupBy(g ? 'family' : 'variation')}
+                        sideLabel="White"
+                      />
+                      <SortMenu
                         value={whiteSortMode}
                         onChange={setWhiteSortMode}
-                        ariaLabel="Order white openings"
+                        ariaLabel="Sort white openings"
                       />
                     </div>
                     <div className={styles.colHeaders}>
@@ -1311,7 +1514,7 @@ export const PersonalOpeningStats: React.FC<{
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
-                    {groupBy === 'family' ? (
+                    {whiteGroupBy === 'family' ? (
                       whiteFamily.rows.length === 0 && !whiteFamily.uncategorised ? (
                         <div className={styles.emptyList}>No classified openings.</div>
                       ) : (
@@ -1360,10 +1563,17 @@ export const PersonalOpeningStats: React.FC<{
                         Performance as Black
                         <span className={styles.sectionBadge}>{dashboard.blackGames} games</span>
                       </h3>
-                      <SectionToolbar
+                    </div>
+                    <div className={styles.filterRow}>
+                      <GroupToggle
+                        grouped={blackGroupBy === 'family'}
+                        onChange={(g) => setBlackGroupBy(g ? 'family' : 'variation')}
+                        sideLabel="Black"
+                      />
+                      <SortMenu
                         value={blackSortMode}
                         onChange={setBlackSortMode}
-                        ariaLabel="Order black openings"
+                        ariaLabel="Sort black openings"
                       />
                     </div>
                     <div className={styles.colHeaders}>
@@ -1373,7 +1583,7 @@ export const PersonalOpeningStats: React.FC<{
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
-                    {groupBy === 'family' ? (
+                    {blackGroupBy === 'family' ? (
                       blackFamily.rows.length === 0 && !blackFamily.uncategorised ? (
                         <div className={styles.emptyList}>No classified openings.</div>
                       ) : (

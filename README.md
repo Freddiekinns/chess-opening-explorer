@@ -11,8 +11,9 @@ curated Lichess studies, and interactive practice mode.
 - **Fast Search**: 1-5ms client-side filtering with popularity-weighted ranking
 - **Practice Mode**: Interactive move trainer with hints, feedback, and
   Lichess-style visual indicators
-- **Personal Opening Explorer**: Analyse your Chess.com/Lichess games to find
-  strengths and weaknesses
+- **Personal Opening Explorer**: Analyse your Chess.com/Lichess games — grouped
+  by opening family with win/draw/loss breakdowns — to find strengths and
+  weaknesses
 - **PGN Identification**: Paste any PGN to identify the opening
 - **AI Content**: Strategic analysis and complexity ratings via Google Vertex AI
 - **Video Integration**: Curated YouTube content from trusted chess channels

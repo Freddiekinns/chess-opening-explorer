@@ -1,0 +1,87 @@
+/* Shared win/draw/loss distribution bar. Width is governed by the parent cell
+   (140px in desktop rows, 100% when stacked on mobile) — the bar itself fills
+   whatever it is given. */
+.bar {
+  width: 100%;
+}
+
+.segments {
+  display: flex;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  gap: 1px;
+}
+
+.compact .segments {
+  height: 18px;
+}
+
+.segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.win {
+  background: var(--color-result-black); /* amber */
+}
+
+.draw {
+  background: var(--color-result-draw); /* warm grey */
+}
+
+.loss {
+  background: var(--color-result-white); /* cream */
+}
+
+.count {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.win .count {
+  color: var(--surface-base);
+}
+
+.draw .count {
+  color: var(--color-text-primary);
+}
+
+.loss .count {
+  color: var(--surface-base);
+}
+
+/* Percentages beneath, tinted to match their segment so the row reads fast. */
+.pcts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-1);
+  font-family: var(--font-family-mono);
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.pctWin {
+  color: var(--color-result-black-text); /* amber */
+}
+
+.pctDraw {
+  color: var(--color-result-draw-text);
+}
+
+.pctLoss {
+  color: var(--color-result-white-text); /* cream */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segment {
+    transition: none;
+  }
+}

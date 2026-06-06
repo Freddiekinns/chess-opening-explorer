@@ -2,47 +2,43 @@
 
 **Date:** 2026-06-06
 
-## Current Task: Opening Family Rollups — Shipped
+## Current Task: CI Green-Up — Lint + Coverage Gates Fixed
 
-**Status:** Complete on branch `feature/opening-family-rollups`. The Analyse
-page groups a player's openings by family with an expandable distribution-bar
-row, in both the family and all-openings views.
+**Status:** Complete and merged to `main` (PRs #35, #36, #37). Both the `CI` and
+`Coverage` workflows now pass on `main` for the first time.
 
-**What shipped:**
+Investigating "PR lint + coverage checks fail" surfaced **four pre-existing CI
+bugs**, none caused by feature work, all failing on every PR/merge:
 
-- Shared `DistributionBar` (amber win / grey draw / cream loss, counts + tinted
-  percentages) used by both `OpeningRow` (all-openings) and `FamilyRow`
-  (family).
-- `FamilyRow`: chevron + family name + "N lines" + GP + aggregate W/D/L bar;
-  expands to indented per-variation bars (family prefix stripped).
-  `groupByFamily` aggregates per family with a sortMode + uncategorised summary.
-- Controls are **per column / per side**: a `Group by family` toggle chip
-  (default on) and a compact `Sort` dropdown (`SortMenu` — role=menu /
-  menuitemradio, full keyboard + click-outside). Both breakpoints render
-  `[⊞ Group by family] [⇅ Sort ▾]`, group-left / sort-right, on one line.
-  `UncategorisedFootnote` collapses "Other".
-- Desktop shows As White / As Black side-by-side; mobile has an As White / As
-  Black segmented switch. Family grouping is the default. (Rejected designs and
-  their components/CSS/tests were removed along the way; history in
-  `archive.md`.)
+1. **API lint script** targeted a non-existent `packages/api/tests/` dir →
+   eslint exited 2 before linting. Fixed: `eslint src/`.
+2. **ESLint vs Prettier conflict** — `packages/api/.eslintrc.js` enforced
+   `indent`/`quotes`/`semi`/`linebreak-style` (Prettier owns these), producing
+   ~110 spurious errors. Fixed: dropped those rules (ESLint = code-quality only,
+   mirroring `packages/web`), then resolved the ~17 genuine errors (unused
+   imports/vars, dead `matchType` in search-service, `while(true)` → `for(;;)`,
+   redundant regex escape).
+3. **Coverage PR-comment step** lacked `pull-requests: write` → job failed even
+   when thresholds passed. Fixed: added `permissions:` + `continue-on-error`.
+4. **Codecov badge** upload failed tokenless on protected `main`
+   (`fail_ci_if_error: true`, no `CODECOV_TOKEN`). Fixed:
+   `fail_ci_if_error: false` + pass token if present.
 
-**Pre-production hardening:**
+Also added 3 tests for `families.routes.js` (68% → 100% branches; global
+branches 88.46% → 90.23%, clearing the 90% gate).
 
-- **Correctness (P0):** removed top-10 truncation — rollups aggregate the FULL
-  classified set (cache `v3`→`v4`); totals/line-counts no longer undercount.
-- **Win rate:** unified on pure `wins/games` (family sort, flat sort, cards).
-  Featured cards now need ≥4 games and pick "Needs work" by loss rate (was
-  lowest win rate, which contradicted the displayed %).
-- **Polish:** long lists scroll in-component (600px, like the opening tree);
-  `/api/families` retries + slug fallback; 34px mobile tap targets;
-  unrecognised-game count in the header.
+**Key finding:** the "linting" failure was never about formatting —
+`format:check` was already green on CI. The "79 drifted files" seen locally was
+a Windows CRLF artifact (`core.autocrlf=true`, no `.gitattributes`); on CI
+(Linux/LF) they're clean. See the CLAUDE.md gotcha.
 
-**Quality:** 195 frontend tests (`DistributionBar` + `FamilyRow` +
-`familyAggregation` at 100%); contrast AA-pass; pill heights matched (24.8px
-mobile / 28.2px desktop); build + format clean. Verified live on desktop and
-mobile (both views, expand/collapse, toggles, sort menu).
+**Optional follow-up (chip spawned):** remove the now-dead codecov badge step
+from `coverage.yml` (no-ops without a `CODECOV_TOKEN`).
 
-## Previous Task: Family Rollups Phase 1 (2026-05-08)
+## Previous Task: Opening Family Rollups — Shipped (2026-06-06)
 
-28-family taxonomy + ~140 override rules → build-time `family_id` (98.45%). New
-`GET /api/families` + `family_id` on the search-index. History in `archive.md`.
+Merged via PR #34. Analyse page groups a player's openings by family with an
+expandable W/D/L distribution-bar row (shared `DistributionBar`), per-side
+`Group by family` toggle + `Sort` dropdown, uncategorised footnote. Built on the
+Phase-1 28-family taxonomy + build-time `family_id` (98.45%) +
+`GET /api/families`. 195 frontend tests. Full detail in `archive.md`.

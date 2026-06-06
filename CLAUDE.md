@@ -197,6 +197,19 @@ relevant instructions from the table above. Update `activeContext.md` when done.
 - **CSS Modules migration ongoing**: Legacy global styles still in
   `packages/web/src/styles/simplified.css`. Migrate to `.module.css` when
   touching a component.
+- **Lint = code quality, Prettier = formatting**: ESLint configs
+  (`packages/api/.eslintrc.js`, `packages/web/.eslintrc.cjs`) enforce
+  code-quality rules only. **Do not re-add stylistic rules**
+  (`indent`/`quotes`/`semi`/`linebreak-style`) — Prettier (`.prettierrc`) owns
+  formatting, and those rules fight it. `packages/api`'s lint script is
+  `eslint src/` (backend tests live at the repo root, not
+  `packages/api/tests/`).
+- **`format:check` false-fails on Windows (CRLF)**: With `core.autocrlf=true`
+  and no `.gitattributes`, your working tree is CRLF but `.prettierrc` sets
+  `endOfLine: lf`, so `npm run format:check` flags dozens of files locally that
+  are **already clean on CI** (Linux/LF). Don't "fix" these with a repo-wide
+  `npm run format` — git normalises them to LF on commit, so the diff is empty.
+  Trust CI's result over local `format:check` for line-ending noise.
 - **Never fetch large payloads on mount**: `/api/openings/all` (24.8 MB) was
   removed from all client-side code (TASK011). Use `/api/openings/search-index`
   (1.6 MB) for client-side search data, or `/api/openings/semantic-search` for

@@ -6,16 +6,7 @@ _No tasks currently in progress._
 
 ## Awaiting Merge
 
-- **Opening Family Rollups** — Branch `feature/opening-family-rollups`, complete
-  2026-06-06. Full feature shipped: Phase-1 taxonomy + `family_id` enrichment +
-  `GET /api/families`, then the distribution-bar Analyse UI (shared
-  `DistributionBar`, expandable `FamilyRow`), per-side `Group by family`
-  toggle + `Sort` dropdown, and pre-production hardening (full-set aggregation,
-  pure win-rate, in-component scroll, trustworthy summary cards, retries, a11y
-  tap targets). 195 frontend tests, build + format clean. **Ready for PR.**
-  Phase 2 (family lens route) and Phase 3 (repertoire grouping) to be planned
-  separately. Design history: `.github/memory-bank/archive.md`. Spec:
-  `.github/memory-bank/specs/2026-05-04-opening-family-rollups.md`.
+_No tasks currently awaiting merge._
 
 ## Reference / Strategy
 
@@ -32,6 +23,15 @@ _No tasks currently in progress._
 
 ## Completed
 
+- **Opening Family Rollups** - Merged 2026-06-06 (PR #34). Family-grouped
+  Analyse view (shared `DistributionBar`, expandable `FamilyRow`, per-side
+  `Group by family` + `Sort`), built on the 28-family taxonomy +
+  `GET /api/families`. Phases 2 (family lens route) and 3 (repertoire grouping)
+  still to be planned. Spec:
+  `.github/memory-bank/specs/2026-05-04-opening-family-rollups.md`.
+- **CI Green-Up** - Merged 2026-06-06 (PRs #35/#36/#37). Fixed four pre-existing
+  CI bugs (API lint script, ESLint/Prettier conflict, coverage comment
+  permissions, codecov tokenless badge) + families route branch tests.
 - [TASK011] Optimize Search Bandwidth & Vercel Data Limits - Completed
   2026-03-14
 - [TASK010] Local Repertoire & Saved Openings - Completed 2026-03-13

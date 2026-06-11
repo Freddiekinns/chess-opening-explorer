@@ -252,6 +252,18 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   both files in the matcher's negative lookahead so they're served statically.
   (Regression history: the 2026-03-29 SEO refactor broadened the matcher and
   dropped these exclusions.)
+- **Never use `animation-fill-mode: both`/`forwards` with `transform`
+  keyframes**: a retained transform (even `translateY(0)`) keeps a permanent
+  stacking context on the element, so later DOM siblings paint over — and
+  click-block — overlays like the search suggestions dropdown. The
+  `sectionReveal` entrance animation must use `backwards` (visually identical;
+  the end state equals the base state). Regression history: the landing-page
+  reveal stagger shipped with `both` and broke the home-page search dropdown
+  (fixed 2026-06-11).
+- **Never render fabricated data**: if real stats are missing, omit the element
+  (or show an explicit "no stats" state) — never synthesise numbers that look
+  like real statistics. Regression history: `OpeningCard` invented W/D/L
+  percentages with `Math.random()` when rates were absent (fixed 2026-06-11).
 - **Memory bank bloat prevention**: `activeContext.md` must stay under **50
   lines** (current task + previous task only). `progress.md` must stay under
   **100 lines** (one-liner per completed task). When updating memory bank: move

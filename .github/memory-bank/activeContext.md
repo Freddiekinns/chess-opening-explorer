@@ -1,44 +1,39 @@
 # Active Context
 
-**Date:** 2026-06-06
+**Date:** 2026-06-11
 
-## Current Task: CI Green-Up — Lint + Coverage Gates Fixed
+## Current Task: Design-Review Fixes — Fake Stats + Search Dropdown
 
-**Status:** Complete and merged to `main` (PRs #35, #36, #37). Both the `CI` and
-`Coverage` workflows now pass on `main` for the first time.
+**Status:** PR raised from branch `claude/ecstatic-fermi-7c5e64`. Verified in
+browser (desktop + mobile), 195 frontend tests pass, tsc + ESLint clean.
 
-Investigating "PR lint + coverage checks fail" surfaced **four pre-existing CI
-bugs**, none caused by feature work, all failing on every PR/merge:
+Born from a full design critique of home / analyse / opening pages. Two critical
+fixes applied:
 
-1. **API lint script** targeted a non-existent `packages/api/tests/` dir →
-   eslint exited 2 before linting. Fixed: `eslint src/`.
-2. **ESLint vs Prettier conflict** — `packages/api/.eslintrc.js` enforced
-   `indent`/`quotes`/`semi`/`linebreak-style` (Prettier owns these), producing
-   ~110 spurious errors. Fixed: dropped those rules (ESLint = code-quality only,
-   mirroring `packages/web`), then resolved the ~17 genuine errors (unused
-   imports/vars, dead `matchType` in search-service, `while(true)` → `for(;;)`,
-   redundant regex escape).
-3. **Coverage PR-comment step** lacked `pull-requests: write` → job failed even
-   when thresholds passed. Fixed: added `permissions:` + `continue-on-error`.
-4. **Codecov badge** upload failed tokenless on protected `main`
-   (`fail_ci_if_error: true`, no `CODECOV_TOKEN`). Fixed:
-   `fail_ci_if_error: false` + pass token if present.
+1. **OpeningCard fabricated W/D/L stats** — when an opening had no
+   `white_win_rate`/`draw_rate`/`black_win_rate`, `getGameStats()` invented
+   percentages with `Math.random()` (changing every render). Now returns `null`
+   and both card variants render no win-rate bar instead. Never fabricate data.
+2. **Search dropdown stacking bug** — `sectionReveal` keyframes animate
+   `transform` and were applied with `animation-fill-mode: both`, so every
+   landing section retained `translateY(0)` forever → permanent stacking
+   contexts → "My repertoire" painted over (and click-blocked) the open
+   suggestions dropdown. Fixed by switching every `sectionReveal … both` to
+   `backwards` (visually identical; end state == base state). Guard comment
+   added at the canonical keyframes in `simplified.css`.
+3. **Search result disambiguation** — `formatMovesPreview` truncated to 6
+   tokens/25 chars, so all Najdorf variations displayed identically. Now shows
+   the full line up to 60 chars; longer lines keep the **tail** (the
+   distinguishing moves), cut at a move-number boundary with a leading "…".
 
-Also added 3 tests for `families.routes.js` (68% → 100% branches; global
-branches 88.46% → 90.23%, clearing the 90% gate).
+Remaining critique findings, recommendations, and accept/fix decisions are
+documented in `docs/reviews/2026-06-11-design-review.md`. Top of the queue:
+content-pipeline artifacts on detail pages (mismatched plans, wrong-opening
+studies, duplicated titles), card semantics/a11y, analyse hero-card naming.
 
-**Key finding:** the "linting" failure was never about formatting —
-`format:check` was already green on CI. The "79 drifted files" seen locally was
-a Windows CRLF artifact (`core.autocrlf=true`, no `.gitattributes`); on CI
-(Linux/LF) they're clean. See the CLAUDE.md gotcha.
+## Previous Task: CI Green-Up — Lint + Coverage Gates Fixed (2026-06-06)
 
-**Optional follow-up (chip spawned):** remove the now-dead codecov badge step
-from `coverage.yml` (no-ops without a `CODECOV_TOKEN`).
-
-## Previous Task: Opening Family Rollups — Shipped (2026-06-06)
-
-Merged via PR #34. Analyse page groups a player's openings by family with an
-expandable W/D/L distribution-bar row (shared `DistributionBar`), per-side
-`Group by family` toggle + `Sort` dropdown, uncategorised footnote. Built on the
-Phase-1 28-family taxonomy + build-time `family_id` (98.45%) +
-`GET /api/families`. 195 frontend tests. Full detail in `archive.md`.
+Complete and merged (PRs #35–#37). Four pre-existing CI bugs fixed (API lint
+path, ESLint-vs-Prettier rule conflict, coverage PR-comment permissions, codecov
+badge tokenless failure). Local `format:check` CRLF noise is a Windows artifact
+— trust CI. Full detail in `archive.md`.

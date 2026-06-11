@@ -6,7 +6,7 @@
   min-height: 60vh;
   text-align: center;
   padding: var(--space-8) var(--space-4);
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
 }
 
 .heading {

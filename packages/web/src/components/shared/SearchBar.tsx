@@ -184,13 +184,22 @@ function expandAbbreviations(query: string): string {
   return ABBREVIATION_MAP[lower] || query;
 }
 
-// Format moves for display (show first few moves)
+// Format moves for display. Similar variations share the same first moves,
+// so when the line is too long keep the tail — that's the distinguishing part.
 function formatMovesPreview(moves: string): string {
   if (!moves) return '';
-  // Show first 3-4 half-moves, trimmed for display
-  const parts = moves.split(' ').slice(0, 6);
-  const preview = parts.join(' ');
-  return preview.length > 25 ? preview.substring(0, 25) + '...' : preview;
+  const trimmed = moves.trim();
+  const MAX_LENGTH = 60;
+  if (trimmed.length <= MAX_LENGTH) return trimmed;
+
+  const tail = trimmed.slice(-MAX_LENGTH);
+  // Start at a move number ("4." / "12.") so we don't show half a move pair
+  const moveNumberMatch = tail.match(/\d+\.\s/);
+  if (moveNumberMatch && moveNumberMatch.index !== undefined) {
+    return '… ' + tail.slice(moveNumberMatch.index);
+  }
+  const firstSpace = tail.indexOf(' ');
+  return '… ' + (firstSpace > -1 ? tail.slice(firstSpace + 1) : tail);
 }
 
 // Client-side fallback search (kept for offline scenarios)

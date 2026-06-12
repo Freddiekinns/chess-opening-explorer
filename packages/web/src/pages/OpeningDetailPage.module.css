@@ -210,7 +210,7 @@
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   padding: var(--space-3) var(--space-4);
-  animation: sectionReveal 300ms ease-out both;
+  animation: sectionReveal 300ms ease-out backwards;
   animation-delay: 80ms;
 }
 
@@ -244,7 +244,7 @@
   border-top: 1px solid var(--border-default);
   padding-top: var(--space-6);
   margin-top: var(--space-6);
-  animation: sectionReveal 300ms ease-out both;
+  animation: sectionReveal 300ms ease-out backwards;
 }
 
 .stackedSection:nth-child(1) {

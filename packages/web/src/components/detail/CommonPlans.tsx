@@ -1,8 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styles from './CommonPlans.module.css';
 
 interface CommonPlansProps {
-  ecoCode: string;
+  /** The opening's own common_plans, from the /fen/:fen payload. Plans must
+   *  belong to the exact position being viewed — never fall back to ECO-bucket
+   *  data, which mixes in sibling openings' plans (see
+   *  docs/proposals/2026-06-12-common-plans-provenance.md). */
+  plans: string[];
   className?: string;
   /** 'stacked' (default) renders White/Black/General vertically.
    *  'sideBySide' puts White and Black in a 2-column grid with General below.
@@ -11,12 +15,6 @@ interface CommonPlansProps {
   layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured';
   /** When true, hides the built-in "Common Plans" heading (parent provides its own). */
   hideTitle?: boolean;
-}
-
-interface ECOAnalysis {
-  white_plans: string[];
-  black_plans: string[];
-  common_plans?: string[];
 }
 
 type PlanSide = 'white' | 'black' | 'general';
@@ -61,38 +59,12 @@ const SIDE_CONFIG: Record<PlanSide, { label: string; cardLabel: string; classNam
 };
 
 export const CommonPlans: React.FC<CommonPlansProps> = ({
-  ecoCode,
+  plans,
   className = '',
   layout = 'stacked',
   hideTitle = false,
 }) => {
-  const [ecoAnalysis, setEcoAnalysis] = useState<ECOAnalysis | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchECOAnalysis = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/openings/eco-analysis/${ecoCode}`);
-        const data = await response.json();
-
-        if (data.success) {
-          setEcoAnalysis(data.data);
-        }
-      } catch (error) {
-        // silently fail - empty state handles this
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (ecoCode) {
-      fetchECOAnalysis();
-    }
-  }, [ecoCode]);
-
   const grouped = useMemo(() => {
-    const plans = ecoAnalysis?.common_plans || [];
     const white: ClassifiedPlan[] = [];
     const black: ClassifiedPlan[] = [];
     const general: ClassifiedPlan[] = [];
@@ -107,16 +79,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     }
 
     return { white, black, general };
-  }, [ecoAnalysis]);
-
-  if (loading) {
-    return (
-      <div className={`content-panel-improved ${className}`}>
-        <h3 className="title-subsection">Common Plans</h3>
-        <div className="loading-state">Loading common plans...</div>
-      </div>
-    );
-  }
+  }, [plans]);
 
   const totalPlans = grouped.white.length + grouped.black.length + grouped.general.length;
 
@@ -124,15 +87,15 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     return null;
   }
 
-  const renderSection = (side: PlanSide, plans: ClassifiedPlan[]) => {
-    if (plans.length === 0) return null;
+  const renderSection = (side: PlanSide, sidePlans: ClassifiedPlan[]) => {
+    if (sidePlans.length === 0) return null;
     const config = SIDE_CONFIG[side];
 
     return (
       <div className={styles.section}>
         <div className={`${styles.sectionLabel} ${config.className}`}>{config.label}</div>
         <div className={styles.sectionPlans}>
-          {plans.map((plan, i) => (
+          {sidePlans.map((plan, i) => (
             <div key={i} className={`plan-item ${styles.planItem} ${config.className}`}>
               <p>{plan.text}</p>
             </div>
@@ -142,8 +105,8 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     );
   };
 
-  const renderCard = (side: PlanSide, plans: ClassifiedPlan[], index: number) => {
-    if (plans.length === 0) return null;
+  const renderCard = (side: PlanSide, sidePlans: ClassifiedPlan[], index: number) => {
+    if (sidePlans.length === 0) return null;
     const config = SIDE_CONFIG[side];
 
     return (
@@ -153,7 +116,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
       >
         <div className={styles.cardLabel}>{config.cardLabel}</div>
         <div className={styles.cardPlans}>
-          {plans.map((plan, i) => (
+          {sidePlans.map((plan, i) => (
             <p key={i} className={styles.cardPlanText}>
               {plan.text}
             </p>

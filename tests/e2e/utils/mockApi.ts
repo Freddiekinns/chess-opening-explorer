@@ -10,6 +10,7 @@ export type TestOpening = {
     popularity?: number;
     complexity?: string;
   };
+  common_plans?: string[];
   games_analyzed?: number;
 };
 
@@ -21,6 +22,10 @@ export const testOpenings: TestOpening[] = [
     moves: '1. e4 c5 2. Nf3 d6',
     src: 'mock',
     analysis_json: { popularity: 55, complexity: 'Intermediate' },
+    common_plans: [
+      'White: control the center and develop quickly',
+      'Black: counterattack on the queenside',
+    ],
     games_analyzed: 120000,
   },
   {
@@ -76,13 +81,6 @@ const testStats = {
   draw_rate: 0.3,
   black_win_rate: 0.25,
   avg_rating: 2200,
-};
-
-const testEcoAnalysis = {
-  common_plans: [
-    'White: control the center and develop quickly',
-    'Black: counterattack on the queenside',
-  ],
 };
 
 const personalGamesByPlatform: Record<string, string[]> = {
@@ -223,10 +221,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
 
     if (path.startsWith('/api/openings/videos/')) {
       return fulfillJson(route, { success: true, data: testVideos });
-    }
-
-    if (path.startsWith('/api/openings/eco-analysis/')) {
-      return fulfillJson(route, { success: true, data: testEcoAnalysis });
     }
 
     if (path.startsWith('/api/courses/')) {

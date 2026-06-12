@@ -7,6 +7,10 @@ with Ne2–g3 and Qh5" and hypothesised an LLM-enrichment quality problem. This
 investigation shows that hypothesis was wrong: **the enrichment data is fine —
 the serving logic shows the wrong record's plans on 96% of pages.**
 
+> **Status (2026-06-12):** Options A and B are implemented in PR #41 — the
+> detail page renders its own record's plans and the bucket-lookup route is
+> deleted. Tiers 1–2 of the evaluation and Option D remain open.
+
 ## Root cause
 
 The chain, traced end to end:
@@ -113,10 +117,12 @@ needs family-level copy.
 Three tiers, cheapest first; each tier gates the next:
 
 **Tier 0 — provenance (deterministic, automated).** The plans rendered on a page
-must come from the page's own FEN record. `scripts/audit-common-plans.js`
-measures this against the data and current serving logic; after Option A it must
-report 0 mismatches. Re-run it whenever the serving path or the data files
-change — it needs no API keys and runs in seconds.
+must come from the page's own FEN record. Option A satisfies this by
+construction — the component takes the page's own plans as a prop and cannot
+fetch anything else, guarded by a unit test. `scripts/audit-common-plans.js`
+keeps a simulation of the removed bucket lookup as the record of the bug and as
+a measure of what any reintroduced ECO-code-level lookup would serve — it needs
+no API keys and runs in seconds.
 
 **Tier 1 — content lint (deterministic, triage signal).** For each record's own
 plans, flag text that names a different opening family (the audit script's

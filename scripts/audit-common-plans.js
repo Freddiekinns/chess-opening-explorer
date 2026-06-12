@@ -3,16 +3,17 @@
 /**
  * Audit: Common Plans provenance and content checks
  *
- * The detail page's "Common plans" panel is served by
- * GET /api/openings/eco-analysis/:code, which returns the analysis of the
- * FIRST record in merged-object iteration order matching the ECO code
- * (see eco-service.js getECOAnalysis). This script models that serving logic
- * against the real data files and reports:
+ * Until PR #41, the detail page's "Common plans" panel was served by
+ * GET /api/openings/eco-analysis/:code, which returned the analysis of the
+ * FIRST record in merged-object iteration order matching the ECO code. PR #41
+ * removed that route — pages now render their own record's plans from the
+ * /fen/:fen payload, so provenance is correct by construction. This script
+ * reports:
  *
- *   Tier 0 (provenance): how many opening pages are served plans that belong
- *     to a different record than the page's own FEN. After the fix (plans
- *     keyed by FEN), this number must be 0 by construction — re-run this
- *     script to verify.
+ *   Tier 0 (provenance): a simulation of the removed bucket lookup against
+ *     the current data — the record of how bad the bug was, and a measure of
+ *     what any reintroduced ECO-code-level analysis lookup would serve.
+ *     Nothing in production serves these numbers anymore.
  *
  *   Tier 1 (content lint): for each record's OWN plans, flag text that
  *     mentions a different opening family's name. This is a triage signal,
@@ -78,7 +79,7 @@ function main() {
   const ecoData = loadMergedEcoData();
   const entries = Object.entries(ecoData);
 
-  // --- Model the current serving logic: first enriched record per ECO code ---
+  // --- Model the legacy serving logic: first enriched record per ECO code ---
   const served = {};
   for (const [fen, o] of entries) {
     if (o.eco && getAnalysis(o) && !served[o.eco]) {
@@ -182,7 +183,9 @@ function main() {
   console.log(`  with their own plans in data:      ${withOwnPlans} (${pct(withOwnPlans)})`);
   console.log(`ECO buckets serving plans:           ${Object.keys(served).length}`);
   console.log('');
-  console.log('Tier 0 — provenance (current /eco-analysis serving logic):');
+  console.log(
+    'Tier 0 — provenance (simulated legacy /eco-analysis bucket lookup, removed in PR #41):'
+  );
   console.log(
     `  pages served another record's plans: ${provenanceMismatch} (${pct(provenanceMismatch)})`
   );

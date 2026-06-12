@@ -4,8 +4,11 @@
 
 ## Current Task: Common Plans Mismatch — Root Cause + Fix Proposal
 
-**Status:** Investigation complete; proposal PR raised from branch
-`claude/common-plans-audit`.
+**Status:** Investigation complete (proposal PR #40); fix implemented in PR #41
+(`fix/common-plans-provenance`) — `CommonPlans` now takes the page's own plans
+as a prop and the `/eco-analysis/:code` route + `getECOAnalysis` are deleted.
+Remaining: Tier 1/2 content evaluation, Option D re-enrichment, and the separate
+course-pipeline data fixes.
 
 The design review (2026-06-11, PR #39) flagged detail pages showing plans for
 the wrong opening (King's Pawn Game describing "a primitive attack on f7").

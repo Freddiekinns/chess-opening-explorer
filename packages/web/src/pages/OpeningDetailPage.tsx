@@ -728,10 +728,11 @@ const OpeningDetailPage: React.FC = () => {
       }
     : null;
 
-  // This page's own enriched plans, from the /fen/:fen payload. Plans must
-  // come from the exact position — ECO-bucket lookups mixed in sibling
-  // openings' plans (docs/proposals/2026-06-12-common-plans-provenance.md).
-  const commonPlans = opening.common_plans ?? opening.analysis_json?.common_plans ?? [];
+  // This page's own enriched plans. /fen/:fen (formatOpeningData) returns
+  // common_plans top-level — the only source. Plans must come from the exact
+  // position; ECO-bucket lookups mixed in sibling openings' plans
+  // (docs/proposals/2026-06-12-common-plans-provenance.md).
+  const commonPlans = opening.common_plans ?? [];
 
   return (
     <div className="detail-page-body">

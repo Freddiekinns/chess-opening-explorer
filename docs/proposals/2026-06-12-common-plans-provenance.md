@@ -157,3 +157,11 @@ are **not** explained by this bug and need their own (smaller) investigations:
   verified in the same courses.json record: `course_title` already contains the
   "name – name: chapter" concatenation (plus emoji noise). Cheap render-time
   dedupe in `StudiesGallery`, or normalise at import.
+- **Orphaned `POST /api/openings/fen-analysis`** (surfaced by the PR #41
+  self-review) — the endpoint has no frontend consumer, and its
+  `parseAnalysisData` white/black plan split duplicates (more weakly) the
+  classifier in `CommonPlans`. Same trap shape as the deleted `eco-analysis`
+  route, but correct-by-FEN, and
+  `tests/integration/opening-data-consistency.test.js` exists specifically to
+  compare it against `/fen/:fen` — so retiring it (and the test) should be its
+  own small change, not a rider on PR #41.

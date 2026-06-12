@@ -1,44 +1,37 @@
 # Active Context
 
-**Date:** 2026-06-06
+**Date:** 2026-06-12
 
-## Current Task: CI Green-Up — Lint + Coverage Gates Fixed
+## Current Task: Common Plans Mismatch — Root Cause + Fix Proposal
 
-**Status:** Complete and merged to `main` (PRs #35, #36, #37). Both the `CI` and
-`Coverage` workflows now pass on `main` for the first time.
+**Status:** Investigation complete; proposal PR raised from branch
+`claude/common-plans-audit`.
 
-Investigating "PR lint + coverage checks fail" surfaced **four pre-existing CI
-bugs**, none caused by feature work, all failing on every PR/merge:
+The design review (2026-06-11, PR #39) flagged detail pages showing plans for
+the wrong opening (King's Pawn Game describing "a primitive attack on f7").
+Traced it: **not an LLM data-quality problem**. `CommonPlans` fetches
+`/api/openings/eco-analysis/:code`, and `getECOAnalysis` returns the **first
+record in the ECO bucket** (alphabetical) — so 11,871 of 12,377 pages (95.9%)
+show another record's plans; 8,923 (72.1%) show a different family's. All 12,377
+records have their own correct plans, already present in the `/fen/:fen` payload
+the page fetches.
 
-1. **API lint script** targeted a non-existent `packages/api/tests/` dir →
-   eslint exited 2 before linting. Fixed: `eslint src/`.
-2. **ESLint vs Prettier conflict** — `packages/api/.eslintrc.js` enforced
-   `indent`/`quotes`/`semi`/`linebreak-style` (Prettier owns these), producing
-   ~110 spurious errors. Fixed: dropped those rules (ESLint = code-quality only,
-   mirroring `packages/web`), then resolved the ~17 genuine errors (unused
-   imports/vars, dead `matchType` in search-service, `while(true)` → `for(;;)`,
-   redundant regex escape).
-3. **Coverage PR-comment step** lacked `pull-requests: write` → job failed even
-   when thresholds passed. Fixed: added `permissions:` + `continue-on-error`.
-4. **Codecov badge** upload failed tokenless on protected `main`
-   (`fail_ci_if_error: true`, no `CODECOV_TOKEN`). Fixed:
-   `fail_ci_if_error: false` + pass token if present.
+Deliverables:
 
-Also added 3 tests for `families.routes.js` (68% → 100% branches; global
-branches 88.46% → 90.23%, clearing the 90% gate).
+- `scripts/audit-common-plans.js` — models the serving logic, reports Tier-0
+  provenance mismatch + Tier-1 foreign-name lint (477 records, mostly benign).
+- `docs/proposals/2026-06-12-common-plans-provenance.md` — fix options (A: pass
+  own plans as prop — recommended; B: delete/fix the eco-analysis route; C:
+  deliberate family-level plans; D: re-enrich flagged records) and a 3-tier
+  evaluation framework with acceptance criteria.
 
-**Key finding:** the "linting" failure was never about formatting —
-`format:check` was already green on CI. The "79 drifted files" seen locally was
-a Windows CRLF artifact (`core.autocrlf=true`, no `.gitattributes`); on CI
-(Linux/LF) they're clean. See the CLAUDE.md gotcha.
+Also verified the sibling symptoms have separate root causes: courses.json maps
+a Semi-Slav study directly to the KPG FEN (course-pipeline matching), and
+`course_title` carries the duplicated-title concatenation in the data.
 
-**Optional follow-up (chip spawned):** remove the now-dead codecov badge step
-from `coverage.yml` (no-ops without a `CODECOV_TOKEN`).
+## Previous Task: Design-Review Fixes (2026-06-11)
 
-## Previous Task: Opening Family Rollups — Shipped (2026-06-06)
-
-Merged via PR #34. Analyse page groups a player's openings by family with an
-expandable W/D/L distribution-bar row (shared `DistributionBar`), per-side
-`Group by family` toggle + `Sort` dropdown, uncategorised footnote. Built on the
-Phase-1 28-family taxonomy + build-time `family_id` (98.45%) +
-`GET /api/families`. 195 frontend tests. Full detail in `archive.md`.
+PR #39: removed fabricated `Math.random()` card stats, fixed the search dropdown
+stacking bug (`animation-fill-mode: both` → `backwards`), made search results
+distinguishable (`formatMovesPreview` keeps the line's tail). Full review in
+`docs/reviews/2026-06-11-design-review.md`.

@@ -2,6 +2,12 @@
 
 ## What's Done (newest first)
 
+- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12): traced the
+  design-review "wrong plans" finding to `getECOAnalysis` serving the
+  alphabetically-first record per ECO bucket (95.9% of pages affected, not an
+  LLM-quality issue). Added `scripts/audit-common-plans.js` (provenance +
+  content lint) and `docs/proposals/2026-06-12-common-plans-provenance.md` (fix
+  options + 3-tier evaluation framework).
 - **CI Green-Up** (2026-06-06, PRs #35/#36/#37): fixed four pre-existing CI bugs
   so `CI` + `Coverage` workflows pass on `main` — broken API lint script path,
   ESLint/Prettier rule conflict (~110 spurious + 17 real errors), coverage job

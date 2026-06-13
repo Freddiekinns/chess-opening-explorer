@@ -18,6 +18,7 @@
 const path = require('path');
 const fs = require('fs').promises;
 const crypto = require('crypto');
+const { sanitizeFenKey } = require('../../../packages/api/src/utils/fen-sanitizer');
 
 class StaticFileGenerator {
   constructor(options = {}) {
@@ -176,12 +177,9 @@ class StaticFileGenerator {
    * @returns {string} Safe filename path
    */
   getStaticFilename(openingId) {
-    // Convert FEN to safe filename
-    const safeId = openingId
-      .replace(/\//g, '_') // Replace slashes
-      .replace(/\s+/g, '-') // Replace spaces with hyphens
-      .replace(/[^a-zA-Z0-9_-]/g, '') // Remove special characters
-      .toLowerCase();
+    // Case-preserving FEN key: plain lowercasing merged 4 pairs of distinct
+    // positions (White vs Black piece case), silently dropping their videos
+    const safeId = sanitizeFenKey(openingId).replace(/[^a-z0-9_-]/g, '');
 
     return path.join(this.outputDir, `${safeId}.json`);
   }

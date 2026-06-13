@@ -47,6 +47,8 @@ class DatabaseSchema {
           view_count INTEGER NOT NULL,
           published_at TEXT NOT NULL,
           thumbnail_url TEXT,         -- Cache thumbnail for frontend
+          description TEXT,           -- Persisted so rematch keeps content-match evidence
+          tags TEXT,                  -- JSON array, same reason
           created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
       `,
@@ -93,8 +95,35 @@ class DatabaseSchema {
       for (const indexSql of this.indexes) {
         await run(indexSql);
       }
+
+      await this._migrateVideoColumns();
     } catch (error) {
       throw error;
+    }
+  }
+
+  /**
+   * Add description/tags columns to databases created before they existed
+   * @private
+   */
+  async _migrateVideoColumns() {
+    const columns = await new Promise((resolve, reject) => {
+      this.db.all('PRAGMA table_info(videos)', (err, rows) => {
+        if (err) reject(err);
+        else resolve((rows || []).map((row) => row.name));
+      });
+    });
+
+    const run = (sql) =>
+      new Promise((resolve, reject) => {
+        this.db.run(sql, (err) => (err ? reject(err) : resolve()));
+      });
+
+    if (!columns.includes('description')) {
+      await run('ALTER TABLE videos ADD COLUMN description TEXT');
+    }
+    if (!columns.includes('tags')) {
+      await run('ALTER TABLE videos ADD COLUMN tags TEXT');
     }
   }
 
@@ -236,11 +265,11 @@ class DatabaseSchema {
   async getTopVideosForOpening(openingFen, limit = 10) {
     return new Promise((resolve, reject) => {
       const sql = `
-        SELECT v.*, ov.match_score 
-        FROM videos v 
-        JOIN opening_videos ov ON v.id = ov.video_id 
-        WHERE ov.opening_id = ? 
-        ORDER BY ov.match_score DESC 
+        SELECT v.*, ov.match_score
+        FROM videos v
+        JOIN opening_videos ov ON v.id = ov.video_id
+        WHERE ov.opening_id = ?
+        ORDER BY ov.match_score DESC, v.view_count DESC, v.published_at DESC
         LIMIT ?
       `;
 

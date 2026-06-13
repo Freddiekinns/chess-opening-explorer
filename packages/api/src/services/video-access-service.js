@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pathResolver = require('../utils/path-resolver');
+const { sanitizeFenKey, legacySanitizeFenKey } = require('../utils/fen-sanitizer');
 
 // Constants
 const VIDEO_FILE_EXTENSION = '.json';
@@ -53,29 +54,41 @@ class VideoAccessService {
   }
 
   /**
-   * Sanitize FEN string for use as filename
+   * Sanitize FEN string for use as filename (legacy lowercase scheme).
+   * Kept as the fallback for indexes generated before the case-collision fix
+   * — new lookups go through sanitizeFenKey first.
    * @param {string} fen - The FEN string
    * @returns {string} - Sanitized filename
    */
   sanitizeFEN(fen) {
-    if (!fen || typeof fen !== 'string') {
-      throw new Error('FEN must be a non-empty string');
-    }
-    
-    return fen.replace(/\//g, '_')
-              .replace(/\s+/g, '-')
-              .toLowerCase();
+    return legacySanitizeFenKey(fen);
   }
 
   /**
-   * Generate the full file path for a FEN position
+   * Generate the full file path for a FEN position (case-preserving scheme —
+   * used for writes; reads also try the legacy path via _getFenKeyCandidates)
    * @param {string} fen - The FEN string
    * @returns {string} - Full file path
    * @private
    */
   _getVideoFilePath(fen) {
-    const sanitizedFEN = this.sanitizeFEN(fen);
-    return path.join(this.videoDirectory, `${sanitizedFEN}${VIDEO_FILE_EXTENSION}`);
+    return path.join(this.videoDirectory, `${sanitizeFenKey(fen)}${VIDEO_FILE_EXTENSION}`);
+  }
+
+  /**
+   * Candidate index keys / filenames for a FEN, in lookup order:
+   * case-preserving key first, then the legacy lowercase key.
+   * @param {string} fen - The FEN string
+   * @returns {string[]} - Sanitized keys
+   * @private
+   */
+  _getFenKeyCandidates(fen) {
+    const keys = [sanitizeFenKey(fen)];
+    const legacyKey = legacySanitizeFenKey(fen);
+    if (legacyKey !== keys[0]) {
+      keys.push(legacyKey);
+    }
+    return keys;
   }
 
   /**
@@ -137,15 +150,15 @@ class VideoAccessService {
       return [];
     }
 
-    const sanitizedFEN = this.sanitizeFEN(fen);
-    const positionData = this.videoIndex.positions[sanitizedFEN];
-    
-    if (!positionData) {
-      return [];
+    for (const key of this._getFenKeyCandidates(fen)) {
+      const positionData = this.videoIndex.positions[key];
+      if (positionData) {
+        // Videos are stored directly in the position data, not inside opening
+        return positionData.videos || [];
+      }
     }
 
-    // Videos are stored directly in the position data, not inside opening
-    return positionData.videos || [];
+    return [];
   }
 
   /**
@@ -155,13 +168,14 @@ class VideoAccessService {
    * @private
    */
   async _getVideosFromFiles(fen) {
-    const videoFilePath = this._getVideoFilePath(fen);
-
-    if (!fs.existsSync(videoFilePath)) {
-      return [];
+    for (const key of this._getFenKeyCandidates(fen)) {
+      const videoFilePath = path.join(this.videoDirectory, `${key}${VIDEO_FILE_EXTENSION}`);
+      if (fs.existsSync(videoFilePath)) {
+        return await this._loadVideosFromFile(videoFilePath);
+      }
     }
 
-    return await this._loadVideosFromFile(videoFilePath);
+    return [];
   }
 
   /**

@@ -1,5 +1,11 @@
 # Video Pipeline Assessment — Quality & Effectiveness (2026-06-13)
 
+> **Status update (same day):** Tier 1 + Tier 2 fixes below are implemented on
+> this branch, plus the audit harness (`scripts/audit-video-matches.js`). See
+> "Implementation status" at the end of this document for verified before/after
+> metrics. Deferred: scheduling (owner runs the pipeline manually), hub-page
+> family fallbacks, channel expansion, LLM classification.
+
 Assessment of `tools/video-pipeline/` against its aim: **make high-quality
 educational YouTube content from trusted educators available to users, matched
 to the opening they are viewing.** Method: code review of the current pipeline
@@ -168,8 +174,9 @@ Hanging Pawns, and St. Louis uploads are currently absent.
   `config/youtube_channels.json`, but the scorer hardcodes its own
   `premiumEducators`/`goodEducators` arrays that disagree (config: Hanging
   Pawns + GingerGM = `standard`; code: premium).
-  `config/video_quality_filters.json` appears to be an unused stale duplicate (4
-  channels, different parameters, no references in pipeline code).
+  `config/video_quality_filters.json` is a stale near-duplicate (4 channels,
+  different parameters) referenced only by the legacy API-side
+  `packages/api/src/services/video-processor.js`, not by the pipeline.
 - **Threshold and weights are magic numbers** in code (`score >= 60`, all
   bonuses), so tuning requires code changes and a rematch (which is lossy, see
   #6).
@@ -248,3 +255,57 @@ popularity data, the four regression metrics measured here:
 Plus index age in days (alert >14). Any scorer change should be validated
 against these numbers before a rematch is committed — today there is no way to
 tell whether a "fix" helped or hurt.
+
+## Implementation status (2026-06-13, same branch)
+
+Tier 1 + Tier 2 implemented and verified end-to-end by rebuilding a database
+from the 917 videos in the live index and running the new matcher — i.e. a
+faithful simulation of `pipeline:rematch` (titles only; content matches will add
+more once descriptions are backfilled). Metrics from
+`scripts/audit-video-matches.js`, identical logic on both indexes:
+
+| Metric                                 | Before | After | Target  |
+| -------------------------------------- | ------ | ----- | ------- |
+| Cross-family matches                   | 7.9%¹  | 0%    | <1% ✅  |
+| Sub-variation pages with specific #1   | 36.9%  | 57.6% | >60% △  |
+| Ambiguous ordering in displayed top-4  | 85%²   | 0%    | <20% ✅ |
+| Top-200 played positions with ≥1 video | 75%    | 81.5% | >90% △  |
+| Openings with ≥1 video                 | 28.2%  | 71%   | —       |
+
+¹ 7.9% as measured by the final (finer-grained) family detector; 6.0% with the
+coarse 10-family detector quoted in finding 2. ² Score ties; ordering is now
+deterministic (score → views → recency), so ambiguity is 0 by construction.
+
+The two △ metrics are bounded by deferred work: the top-200 misses are almost
+entirely generic hub pages (King's Pawn Game, King's Knight Opening) that need
+the deliberate family-fallback (recommendation 9), and #1-specificity is limited
+by openings whose variations simply have no dedicated videos — the LLM
+classification (Tier 4) is the lever there.
+
+**What shipped** (see `tools/video-pipeline/README.md` for usage):
+
+- `lib/opening-families.js` — move-prefix family compatibility replacing the
+  enumerated pair list; multi-opening titles reject only when every named family
+  conflicts; compound detectors (Reversed Sicilian → English, Anglo-X → English)
+  mask their components.
+- Variation specificity ±65-point swing (+25 specific / −40 miss); generic
+  shared-variation aliases ("Exchange Variation") skipped outright.
+- Move-notation names ("Scandinavian: 2.exd5") match via their family part.
+- View-count → recency tiebreakers in the matcher and `getTopVideosForOpening`.
+- Pre-filter word boundaries + educational exemption ("Blitz Repertoire" now
+  passes; "Fundamentals"/"delivers"/"background" no longer rejected).
+- Weights/threshold in `config/video_matching.json`; channel tiers read from
+  `config/youtube_channels.json` (hardcoded code lists removed).
+- `videos` table persists `description`/`tags` (auto-migration);
+  `backfill-views.js` populates them — run it before the next rematch.
+- Case-preserving FEN keys via shared `packages/api/src/utils/fen-sanitizer.js`
+  with legacy-key fallback in `video-access-service` (no breakage before the
+  index is regenerated).
+
+**To ship the new index** (on a machine with the SQLite DB + API key):
+
+```bash
+node tools/video-pipeline/scripts/backfill-views.js   # views + descriptions/tags
+npm run pipeline:rematch                              # re-score, regenerate index
+node scripts/audit-video-matches.js                   # verify the metrics above
+```

@@ -73,9 +73,13 @@ describe('VideoMatcher', () => {
       expect(matcher.getEcoBasedFamily('C88')).toBe('spanish');
     });
 
-    it('should identify Queens Gambit family (D06-D69)', () => {
-      expect(matcher.getEcoBasedFamily('D30')).toBe('queens_gambit');
-      expect(matcher.getEcoBasedFamily('D63')).toBe('queens_gambit');
+    it('should identify Queens Gambit families at variation granularity', () => {
+      expect(matcher.getEcoBasedFamily('D06')).toBe('queens_gambit');
+      expect(matcher.getEcoBasedFamily('D15')).toBe('slav');
+      expect(matcher.getEcoBasedFamily('D25')).toBe('queens_gambit_accepted');
+      expect(matcher.getEcoBasedFamily('D30')).toBe('queens_gambit_declined');
+      expect(matcher.getEcoBasedFamily('D45')).toBe('semi_slav');
+      expect(matcher.getEcoBasedFamily('D63')).toBe('queens_gambit_declined');
     });
 
     it('should identify Kings Indian family (E60-E99)', () => {
@@ -106,9 +110,22 @@ describe('VideoMatcher', () => {
       expect(penalty).toBe(100);
     });
 
-    it('should return 30 for moderate mismatches', () => {
-      // A non-severe but different family
+    it('should return 100 when move prefixes diverge (english vs QGD)', () => {
+      // 1.c4 vs 1.d4 d5 2.c4 e6 — derived from move prefixes, not a pair list
       const penalty = matcher.getFamilyMismatchPenalty('english', 'D30');
+      expect(penalty).toBe(100);
+    });
+
+    it('should return 100 for shared variation names across 1.e4/1.d4', () => {
+      // "Caro-Kann Exchange" video vs QGD Chigorin Exchange page (D07)
+      expect(matcher.getFamilyMismatchPenalty('caro_kann', 'D07')).toBe(100);
+      // "French Steinitz" video vs Scotch Steinitz page (C45)
+      expect(matcher.getFamilyMismatchPenalty('french', 'C45')).toBe(100);
+    });
+
+    it('should return moderate penalty for related but distinct lines', () => {
+      // London (1.d4) vs QGD (1.d4 d5 2.c4 e6) — prefix-compatible
+      const penalty = matcher.getFamilyMismatchPenalty('london', 'D30');
       expect(penalty).toBe(30);
     });
   });
@@ -590,6 +607,147 @@ describe('VideoMatcher', () => {
 
       // Sub-variation should score lower than base opening for generic title
       expect(scoreSubVar).toBeLessThan(scoreBase);
+    });
+
+    it('should rank a variation-specific video above a generic family video', () => {
+      const opening = createOpening({
+        name: 'Sicilian Defense: Najdorf Variation',
+        eco: 'B90',
+      });
+
+      const specific = createVideo({ title: 'sicilian najdorf theory explained' });
+      const generic = createVideo({ title: 'sicilian defense theory explained' });
+
+      const specificScore = matcher.calculateMatchScore(specific, opening);
+      const genericScore = matcher.calculateMatchScore(generic, opening);
+
+      // The gap must exceed channel/educational bonuses so a premium generic
+      // video can't outrank an unknown-channel variation-specific one
+      expect(specificScore - genericScore).toBeGreaterThanOrEqual(45);
+    });
+
+    it('should reject "Caro-Kann Exchange" video on a QGD Exchange page', () => {
+      const video = createVideo({
+        title: 'Caro-Kann, Exchange Variation | Chess Openings Explained',
+      });
+      const opening = createOpening({
+        name: "Queen's Gambit Declined: Chigorin Defense, Exchange Variation",
+        eco: 'D07',
+        aliases: ['Exchange Variation'],
+      });
+      expect(matcher.calculateMatchScore(video, opening)).toBe(0);
+    });
+
+    it('should reject "Reversed Sicilian (English)" video on a Sicilian page', () => {
+      const video = createVideo({
+        title: 'The Reversed Sicilian: 1.c4 e5 · English Opening Theory',
+      });
+      const opening = createOpening({
+        name: 'Sicilian Defense: Najdorf Variation',
+        eco: 'B90',
+      });
+      expect(matcher.calculateMatchScore(video, opening)).toBe(0);
+    });
+
+    it('should keep "Four Knights: Scotch Variation" video on Four Knights pages', () => {
+      const video = createVideo({
+        title: 'Four Knights Game: Scotch Variation | Theory Explained',
+      });
+      const opening = createOpening({
+        name: 'Four Knights Game: Scotch Variation, Accepted',
+        eco: 'C47',
+      });
+      expect(matcher.calculateMatchScore(video, opening)).toBeGreaterThan(0);
+    });
+  });
+
+  describe('move-notation opening names', () => {
+    const createVideo = (overrides = {}) => ({
+      title: 'Test Video',
+      description: '',
+      channel_title: 'Test Channel',
+      duration: 1800,
+      tags: [],
+      ...overrides,
+    });
+
+    it('should extract family part only for move-notation variations', () => {
+      expect(matcher.getFamilyPartName('scandinavian: 2.exd5')).toBe('scandinavian');
+      expect(matcher.getFamilyPartName('caro-kann: 2.nf3')).toBe('caro-kann');
+      expect(matcher.getFamilyPartName('scandinavian: 2...qxd5 3.nc3')).toBe('scandinavian');
+      // Named variations must keep using the normal (stricter) match paths
+      expect(matcher.getFamilyPartName('sicilian defense: najdorf variation')).toBeNull();
+      expect(matcher.getFamilyPartName('sicilian defense')).toBeNull();
+    });
+
+    it('should match "Scandinavian: 2.exd5" via its family part', () => {
+      const video = createVideo({
+        title: 'The Scandinavian Defense | Complete Theory Guide',
+      });
+      const opening = {
+        name: 'Scandinavian: 2.exd5',
+        eco: 'B01',
+        aliases: [],
+      };
+      expect(matcher.calculateMatchScore(video, opening)).toBeGreaterThanOrEqual(60);
+    });
+  });
+
+  describe('word-boundary matching', () => {
+    const createVideo = (overrides = {}) => ({
+      title: 'Test Video',
+      description: '',
+      channel_title: 'Test Channel',
+      duration: 1800,
+      tags: [],
+      ...overrides,
+    });
+
+    it('should not match the KID abbreviation inside "kidding"', () => {
+      const video = createVideo({ title: 'no kidding, this opening is great' });
+      const opening = {
+        name: 'kings indian defense',
+        eco: 'E60',
+        aliases: [],
+      };
+      expect(matcher.calculateMatchScore(video, opening)).toBe(0);
+    });
+
+    it('should not apply the game-analysis penalty to "background"', () => {
+      const withBackground = createVideo({
+        title: 'sicilian defense theory and background',
+      });
+      const without = createVideo({ title: 'sicilian defense theory' });
+      const opening = { name: 'sicilian defense', eco: 'B20', aliases: [] };
+
+      expect(matcher.calculateMatchScore(withBackground, opening)).toBe(
+        matcher.calculateMatchScore(without, opening)
+      );
+    });
+  });
+
+  describe('channel tiers from config', () => {
+    it('should classify premium and standard channels from youtube_channels.json', () => {
+      expect(matcher.getChannelTier({ channel_title: 'Daniel Naroditsky' })).toBe('premium');
+      expect(matcher.getChannelTier({ channel_title: 'Hanging Pawns' })).toBe('premium');
+      expect(matcher.getChannelTier({ channel_title: 'GothamChess' })).toBe('standard');
+      expect(matcher.getChannelTier({ channel_title: 'agadmator Chess Channel' })).toBe('standard');
+      expect(matcher.getChannelTier({ channel_title: 'chess24' })).toBe('entertainment');
+      expect(matcher.getChannelTier({ channel_title: 'Random Uploader' })).toBeNull();
+    });
+
+    it('should match parenthesised config names against real channel titles', () => {
+      // Config name is "ChessExplained (Christof Sielecki)"
+      expect(matcher.getChannelTier({ channel_title: 'ChessExplained' })).toBe('premium');
+    });
+
+    it('should prefer channel_id over name matching', () => {
+      expect(
+        matcher.getChannelTier({
+          channel_id: 'UCHP9CdeguNUI-_nBv_UXBhw',
+          channel_title: 'Renamed Channel',
+        })
+      ).toBe('premium');
     });
   });
 });

@@ -1,0 +1,29 @@
+{
+  "min_match_score": 60,
+  "weights": {
+    "title_exact": 80,
+    "content_exact": 60,
+    "family": 50,
+    "partial_title": 45,
+    "abbreviation": 35,
+    "eco": 20,
+    "educational": 30,
+    "speedrun_premium": 25,
+    "speedrun": 15,
+    "no_educational_premium": -5,
+    "no_educational": -25,
+    "premium_channel": 40,
+    "standard_channel": 20,
+    "entertainment_channel": -30,
+    "duration_ideal": 15,
+    "duration_good": 10,
+    "duration_short": -25,
+    "game_analysis": -60,
+    "player_vs_player": -60,
+    "movie": -50,
+    "variation_specific": 25,
+    "sub_variation_miss": -40,
+    "family_mismatch_moderate": -30
+  },
+  "entertainment_channels": ["chess24", "world chess", "fide chess"]
+}

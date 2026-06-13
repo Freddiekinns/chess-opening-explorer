@@ -17,9 +17,13 @@ npm run pipeline
 npm run pipeline:full
 
 # Rematch: re-score existing videos with updated scorer (zero API cost)
-npm run pipeline:rematch
-# After rematch, restore view counts/thumbnails from YouTube API:
+# (run the backfill first on older databases — it populates views, thumbnails,
+# descriptions and tags, which the scorer's content checks use)
 node tools/video-pipeline/scripts/backfill-views.js
+npm run pipeline:rematch
+
+# Verify match quality after any scorer/data change
+node scripts/audit-video-matches.js
 ```
 
 ## Modes
@@ -30,8 +34,9 @@ node tools/video-pipeline/scripts/backfill-views.js
 | `full`        | `npm run pipeline:full`    | YouTube API    | High     | Historical catalogue rebuild   |
 | `rematch`     | `npm run pipeline:rematch` | None (DB only) | Zero\*   | Re-score after scorer changes  |
 
-\* Rematch itself is zero cost, but run `backfill-views.js` after to restore
-view counts/thumbnails (~35 API calls for ~1700 videos).
+\* Rematch itself is zero cost. Run `backfill-views.js` first (~35 API calls for
+~1700 videos) so views/thumbnails are fresh and descriptions/tags are available
+to the scorer's content checks.
 
 ## What It Does
 
@@ -140,34 +145,58 @@ const results = await matcher.runMatchingWithVideos(enrichedVideos, {
 
 ## Matching Algorithm
 
-Videos are scored (0-200) based on:
+All weights and the threshold live in `config/video_matching.json` — tune them
+there (no code change), then run `npm run pipeline:rematch`. Defaults:
 
-| Factor                    | Points | Description                                    |
-| ------------------------- | ------ | ---------------------------------------------- |
-| **Name Match**            | +80    | Opening name in video title                    |
-| **Content Match**         | +60    | Opening name in description/tags               |
-| **Family Match**          | +50    | Major opening family detected                  |
-| **Abbreviation**          | +35    | Known abbreviation (QGD, KID, etc.)            |
-| **Educational Keywords**  | +30    | "explained", "theory", "guide"                 |
-| **Premium Educator**      | +40    | Naroditsky, St. Louis, etc.                    |
-| **Good Duration**         | +15    | 20-60 minutes                                  |
-| **Player vs Player**      | -60    | "Magnus vs Hikaru" (capitalized)               |
-| **Game Analysis**         | -60    | "brilliant", "crushes", etc.                   |
-| **Short Video**           | -25    | Under 5 minutes                                |
-| **Sub-variation Penalty** | -15    | Generic family video vs specific sub-variation |
+| Factor                   | Points | Description                                      |
+| ------------------------ | ------ | ------------------------------------------------ |
+| **Name Match**           | +80    | Opening name in video title                      |
+| **Content Match**        | +60    | Opening name in description/tags                 |
+| **Family Match**         | +50    | Opening family in title (incl. move-notation     |
+|                          |        | names like "Scandinavian: 2.exd5")               |
+| **Abbreviation**         | +35    | Known abbreviation (QGD, KID, etc.)              |
+| **Educational Keywords** | +30    | "explained", "theory", "guide"                   |
+| **Premium Educator**     | +40    | `quality_tier: premium` in youtube_channels.json |
+| **Variation Specific**   | +25    | Title names the page's exact variation           |
+| **Good Duration**        | +15    | 20-60 minutes                                    |
+| **Player vs Player**     | -60    | "Magnus vs Hikaru" (capitalized)                 |
+| **Game Analysis**        | -60    | "brilliant", "crushes", etc.                     |
+| **Sub-variation Miss**   | -40    | Generic family video on a specific variation     |
+| **Short Video**          | -25    | Under 5 minutes                                  |
 
-Minimum threshold: **60 points**
+Minimum threshold: **60 points** (`min_match_score`).
+
+Per-opening ranking breaks score ties by **view count**, then **publish date**,
+so the displayed order is never arbitrary.
 
 ### Anti-Overindexing Protections
 
+- **Move-prefix family compatibility** (`lib/opening-families.js`): every family
+  maps to its defining moves (Caro-Kann = `1.e4 c6`, QGD = `1.d4 d5 2.c4 e6`); a
+  video is rejected when the families its title names all diverge from the
+  page's moves. This is what stops "Caro-Kann, Exchange Variation" landing on
+  QGD Exchange pages via the shared word "Exchange". Multi-opening titles
+  ("Owen's Defense + Ruy Lopez") stay eligible for every compatible family they
+  name.
 - **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
-  have 2+ words (prevents "Accepted" matching everything)
+  have 2+ words (prevents "Accepted" matching everything); bare shared variation
+  names ("Exchange Variation") are skipped entirely
 - **Cross-opening title check**: Content-only matches rejected if the video
   title names a different gambit/defense/attack
-- **Family mismatch protection**: Videos rejected if they discuss an
-  incompatible opening family (e.g., Sicilian video won't match French Defense)
-- **Sub-variation penalty**: Generic family videos score lower against specific
-  sub-variations (e.g., "Sicilian Defense" video vs "Sicilian Defense: Najdorf")
+- **Variation specificity**: a ±65-point swing (+25/−40) guarantees a
+  variation-specific video outranks a generic family video on sub-variation
+  pages, regardless of channel bonuses
+
+### Auditing match quality
+
+```bash
+node scripts/audit-video-matches.js          # human-readable report
+node scripts/audit-video-matches.js --json   # full report
+```
+
+Reports coverage (overall + top-200 most-played), variation specificity,
+cross-family contamination, ranking-tie ambiguity, and index age. Run before and
+after any scorer change to verify it helped.
 
 ## Utilities
 
@@ -251,8 +280,11 @@ cp api/data/video-index.json packages/api/src/data/video-index.json
 
 Location: `tools/video-pipeline/scripts/backfill-views.js`
 
-Restores view counts and thumbnails from YouTube API for all videos in the DB.
-Run after `pipeline:rematch` which does not re-fetch this metadata.
+Restores view counts, thumbnails, **descriptions and tags** from the YouTube API
+for all videos in the DB (~35 API calls for ~1700 videos). Descriptions and tags
+are persisted in the `videos` table and feed the matcher's content checks — run
+this once on a database created before those columns existed, then
+`npm run pipeline:rematch` re-scores with full evidence.
 
 ## Environment Variables
 

@@ -2,36 +2,44 @@
 
 **Date:** 2026-06-13
 
-## Current Task: Video Pipeline Assessment
+## Current Task: Video Pipeline Fixes (Tier 1 + Tier 2 of the assessment)
 
-**Status:** Assessment complete on branch
-`claude/video-pipeline-assessment-0gg422` (based on PR #41). Report:
-`docs/reviews/2026-06-13-video-pipeline-assessment.md`. No behaviour changes —
-measurement + prioritised recommendations only.
+**Status:** Implemented on `claude/video-pipeline-assessment-0gg422`, after the
+assessment in `docs/reviews/2026-06-13-video-pipeline-assessment.md`. All
+backend tests pass; verified end-to-end by simulating `pipeline:rematch` against
+the 917 live-index videos.
 
-Measured the live `video-index.json` (2026-03-15) against ECO + popularity data.
-Provenance is the pipeline's strength (16-channel allowlist, family-level
-accuracy 94%); variation-level matching is the weakness:
+- **Move-prefix family compatibility**
+  (`tools/video-pipeline/lib/opening-families.js`): families map to defining
+  moves; conflicts derived, not enumerated. Multi- opening titles reject only if
+  every named family conflicts. Cross-family contamination: 7.9% → **0%**.
+- **Variation specificity** (+25 specific / −40 miss) + view/recency tiebreakers
+  (matcher sort + `getTopVideosForOpening` ORDER BY). #1-video specificity 36.9%
+  → **57.6%**; displayed-order ambiguity → 0.
+- **Move-notation names** ("Scandinavian: 2.exd5") match via family part —
+  coverage 28.2% → **71%**, top-200 played 150 → 163.
+- **Pre-filter word boundaries** + educational exemption for casual terms;
+  `fun`/`live`/`round` no longer reject "Fundamentals"/"delivers"/"background".
+- **Config externalised**: weights/threshold in `config/video_matching.json`;
+  channel tiers solely from `config/youtube_channels.json` (Hanging Pawns,
+  GingerGM, Eric Rosen promoted to premium = old scorer behaviour).
+- **DB persists description/tags** (migration in schema-manager);
+  `backfill-views.js` now also fills them — run it BEFORE rematch on old DBs.
+- **FEN case collisions fixed**: shared
+  `packages/api/src/utils/fen-sanitizer.js` (uppercase → `0x` escape); API looks
+  up new key, falls back to legacy.
+- **Audit harness**: `node scripts/audit-video-matches.js` (+ `--json`).
 
-- Family-generic videos blanket sub-variation pages (one Alapin video on 383
-  pages); only 36.9% of sub-variation pages have a variation-specific #1 video.
-- 6.0% cross-family contamination via shared variation names (Tartakower,
-  Exchange, Steinitz…) — enumerated incompatibility pairs are incomplete.
-- Score saturation: 85% of pages have ties inside the displayed top-4; views/
-  recency/`boost_factor` unused in ranking.
-- Pre-filter regexes lack word boundaries: `fun` rejects "Fundamentals", `live`
-  rejects "delivers", `round` rejects "grounded" — verified.
-- Rematch is lossy (no description/tags persisted); index 3 months stale (RSS
-  15-video window makes gaps permanent); 4 FEN lowercase-collision pairs.
+**To ship the new index (user, locally):**
+`node tools/video-pipeline/scripts/backfill-views.js` →
+`npm run pipeline:rematch` → `node scripts/audit-video-matches.js`. Deferred by
+design: scheduling (user runs manually), hub-page family fallbacks (needs
+labelled-UI decision), channel-list expansion (IDs must be user-verified), LLM
+classification (T4).
 
-Recommendations tiered: serving-side tiebreakers + regex fixes (T1), moves-based
-family compatibility (T2), scheduled runs + hub-page fallbacks (T3), one-time
-LLM classification of the 917-video corpus (T4), plus an
-`audit-video-matches.js` regression harness with 4 target metrics.
+## Previous Task: Video Pipeline Assessment (2026-06-13)
 
-## Previous Task: Common Plans Provenance Fix (2026-06-12, PRs #40/#41)
-
-Root-caused the design-review "wrong plans" finding: `/eco-analysis/:code`
-served the alphabetically-first record per ECO bucket (95.9% of pages wrong).
-Fixed by passing the page's own plans as a prop and deleting the bucket route.
-Audit tool: `scripts/audit-common-plans.js`. Details in `archive.md`/PR #40.
+Measured the live index against ECO + popularity data; found family blanketing,
+6% cross-family contamination, 85% top-4 score ties, word-boundary pre-filter
+bugs, lossy rematch, staleness. Full report + metrics in
+`docs/reviews/2026-06-13-video-pipeline-assessment.md`.

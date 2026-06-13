@@ -2,6 +2,13 @@
 
 ## What's Done (newest first)
 
+- **Video Pipeline Assessment** (2026-06-13): measured live `video-index.json`
+  against ECO + popularity data
+  (`docs/reviews/2026-06-13-video-pipeline-assessment.md`) — provenance strong
+  (allowlist, 94% family accuracy), variation-level matching weak (37% specific
+  #1, 6% cross-family, 85% top-4 score ties, 3-month staleness, word-boundary
+  pre-filter bugs). Tiered fix plan + regression-metric harness proposed; no
+  code changes.
 - **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
   design critique of home/analyse/opening pages
   (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical

@@ -1,15 +1,157 @@
 const fs = require('fs');
 const path = require('path');
 const DatabaseSchema = require('../database/schema-manager.js');
+const {
+  getFamilyFromEco,
+  getFamilyFromTitle,
+  getFamiliesFromTitle,
+  compareFamilies,
+} = require('./opening-families');
+
+const CONFIG_DIR = path.join(__dirname, '../../../config');
+
+/**
+ * Default scoring weights — overridden by config/video_matching.json so the
+ * scorer can be tuned without code changes (followed by pipeline:rematch).
+ */
+const DEFAULT_MATCHING_CONFIG = {
+  min_match_score: 60,
+  weights: {
+    title_exact: 80,
+    content_exact: 60,
+    family: 50,
+    partial_title: 45,
+    abbreviation: 35,
+    eco: 20,
+    educational: 30,
+    speedrun_premium: 25,
+    speedrun: 15,
+    no_educational_premium: -5,
+    no_educational: -25,
+    premium_channel: 40,
+    standard_channel: 20,
+    entertainment_channel: -30,
+    duration_ideal: 15,
+    duration_good: 10,
+    duration_short: -25,
+    game_analysis: -60,
+    player_vs_player: -60,
+    movie: -50,
+    variation_specific: 25,
+    sub_variation_miss: -40,
+    family_mismatch_moderate: -30,
+  },
+  entertainment_channels: ['chess24', 'world chess', 'fide chess'],
+};
+
+/**
+ * Detects move notation in opening names, e.g. "Scandinavian: 2.exd5",
+ * "Caro-Kann: 2.Nf3", "Scandinavian: 2...Qxd5 3.Nc3".
+ */
+const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
 
 /**
  * New FEN-based Video Matching System
  * Implements the pipeline overhaul plan with weighted scoring
  */
 class VideoMatcher {
-  constructor(dbPath) {
+  constructor(dbPath, options = {}) {
     this.dbPath = dbPath;
     this.db = new DatabaseSchema(dbPath);
+    this.config = this.loadMatchingConfig(options.matchingConfigPath);
+    this.channelTiers = this.loadChannelTiers(options.channelsConfigPath);
+  }
+
+  /**
+   * Load scoring weights/threshold from config, falling back to defaults
+   */
+  loadMatchingConfig(configPath) {
+    const resolvedPath = configPath || path.join(CONFIG_DIR, 'video_matching.json');
+    try {
+      const fileConfig = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
+      return {
+        ...DEFAULT_MATCHING_CONFIG,
+        ...fileConfig,
+        weights: { ...DEFAULT_MATCHING_CONFIG.weights, ...(fileConfig.weights || {}) },
+      };
+    } catch (error) {
+      return DEFAULT_MATCHING_CONFIG;
+    }
+  }
+
+  /**
+   * Load channel quality tiers from config/youtube_channels.json — the single
+   * source of truth for which channels are premium vs standard educators.
+   */
+  loadChannelTiers(configPath) {
+    const resolvedPath = configPath || path.join(CONFIG_DIR, 'youtube_channels.json');
+    const tiers = { byId: new Map(), byName: [] };
+    try {
+      const channelsConfig = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
+      for (const channel of channelsConfig.trusted_channels || []) {
+        const tier = channel.quality_tier === 'premium' ? 'premium' : 'standard';
+        if (channel.channel_id) tiers.byId.set(channel.channel_id, tier);
+        // Strip parenthetical suffixes: "ChessExplained (Christof Sielecki)"
+        const name = channel.name
+          .replace(/\s*\(.*\)\s*$/, '')
+          .trim()
+          .toLowerCase();
+        if (name) tiers.byName.push({ name, tier });
+      }
+    } catch (error) {
+      // No channels config — every channel scores as unknown
+    }
+    return tiers;
+  }
+
+  /**
+   * Classify a video's channel: 'premium' | 'standard' | 'entertainment' | null
+   */
+  getChannelTier(video) {
+    const channelId = video.channel_id || video.channelId;
+    if (channelId && this.channelTiers.byId.has(channelId)) {
+      return this.channelTiers.byId.get(channelId);
+    }
+
+    const channelTitle = (video.channel_title || video.channelTitle || '').toLowerCase();
+    if (!channelTitle) return null;
+
+    for (const { name, tier } of this.channelTiers.byName) {
+      if (channelTitle.includes(name)) return tier;
+    }
+
+    if (this.config.entertainment_channels.some((name) => channelTitle.includes(name))) {
+      return 'entertainment';
+    }
+
+    return null;
+  }
+
+  /**
+   * Word-boundary term matching. Terms without word characters (e.g. '||')
+   * fall back to substring matching. Prevents 'round' matching 'background'
+   * or 'kid' matching 'kidding'.
+   */
+  matchesTerm(text, term) {
+    if (!/\w/.test(term)) return text.includes(term);
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${escaped}\\b`, 'i').test(text);
+  }
+
+  /**
+   * For opening names whose variation part is move notation (which can never
+   * appear in a video title), return the family part for name matching.
+   * "Scandinavian: 2.exd5" → "scandinavian"; "Sicilian: Najdorf" → null.
+   */
+  getFamilyPartName(openingName) {
+    const colonIndex = openingName.indexOf(':');
+    if (colonIndex === -1) return null;
+
+    const variationPart = openingName.slice(colonIndex + 1).trim();
+    if (!MOVE_NOTATION_PATTERN.test(variationPart)) return null;
+
+    const familyPart = openingName.slice(0, colonIndex).trim();
+    return familyPart.length >= 4 ? familyPart : null;
   }
 
   /**
@@ -157,6 +299,7 @@ class VideoMatcher {
       'marshall attack': ['marshall', 'marshall gambit'],
       'italian game': ['italian opening', 'italian', 'giuoco piano'],
       'scotch game': ['scotch opening', 'scotch'],
+      'four knights': ['four knights game', 'four knights'],
       'petrov defense': ['petroff', 'petrov', 'russian game', 'russian defense'],
       'vienna game': ['vienna', 'vienna opening'],
       'philidor defense': ['philidor defence', 'philidor'],
@@ -202,7 +345,8 @@ class VideoMatcher {
           )
           .map((word) => word[0])
           .join('');
-        if (initials.length >= 2) {
+        // 2-char initials ('sn', 'kg', …) collide with ordinary words too often
+        if (initials.length >= 3) {
           abbreviations.push(initials.toLowerCase());
         }
       }
@@ -215,184 +359,36 @@ class VideoMatcher {
    * Get ECO-based opening family from opening ECO code
    */
   getEcoBasedFamily(ecoCode) {
-    if (!ecoCode || ecoCode.length < 3) return null;
-
-    const code = ecoCode.toUpperCase();
-    const firstChar = code[0];
-    const numPart = parseInt(code.substring(1, 3));
-
-    // ECO family mappings based on standard chess opening classification
-    const ecoFamilies = {
-      // A00-A39: Irregular and flank openings
-      'A00-A09': 'irregular',
-      'A10-A39': 'english',
-      'A40-A44': 'queens_pawn',
-      'A45-A49': 'indian_systems',
-      'A50-A79': 'indian_defenses',
-      'A80-A99': 'dutch',
-
-      // B00-B99: Semi-open games (1.e4 without 1...e5)
-      'B00-B09': 'kings_pawn_misc',
-      'B10-B19': 'caro_kann',
-      'B20-B99': 'sicilian',
-
-      // C00-C99: Open games (1.e4 e5) and French
-      'C00-C19': 'french',
-      'C20-C29': 'kings_pawn_games',
-      'C30-C39': 'kings_gambit',
-      'C40-C49': 'kings_pawn_misc',
-      'C50-C59': 'italian',
-      'C60-C99': 'spanish', // Ruy Lopez
-
-      // D00-D99: Closed games (1.d4 d5)
-      'D00-D05': 'queens_pawn_misc',
-      'D06-D69': 'queens_gambit',
-      'D70-D99': 'grunfeld_neo_grunfeld',
-
-      // E00-E99: Indian defenses
-      'E00-E09': 'catalan',
-      'E10-E19': 'queens_indian',
-      'E20-E59': 'nimzo_indian',
-      'E60-E99': 'kings_indian',
-    };
-
-    // Find matching range
-    for (const [range, family] of Object.entries(ecoFamilies)) {
-      const [start, end] = range.split('-');
-      const startNum = parseInt(start.substring(1));
-      const endNum = parseInt(end.substring(1));
-      const startChar = start[0];
-
-      if (firstChar === startChar && numPart >= startNum && numPart <= endNum) {
-        return family;
-      }
-    }
-
-    return null;
+    return getFamilyFromEco(ecoCode);
   }
 
   /**
-   * Detect major conflicting families in video title (simplified)
+   * Detect which opening family a video title names (word-boundary matched)
    */
   getVideoConflictingFamily(title) {
-    const lowerTitle = title.toLowerCase();
-
-    // Only detect the most problematic mismatches - focus on major conflicts
-    const conflictDetectors = {
-      nimzo_indian: ['nimzo-indian', 'nimzo indian'],
-      queens_gambit: ["queen's gambit", 'queens gambit', 'qgd', 'qga'],
-      sicilian: ['sicilian defense', 'sicilian defence', 'sicilian'],
-      french: ['french defense', 'french defence', 'french'],
-      spanish: ['ruy lopez', 'spanish game', 'spanish opening'],
-      kings_indian: ["king's indian", 'kings indian', 'kid'],
-      caro_kann: ['caro-kann', 'caro kann'],
-      italian: ['italian game', 'italian opening'],
-      english: ['english opening', 'english'],
-      dutch: ['dutch defense', 'dutch defence'],
-    };
-
-    for (const [family, detectors] of Object.entries(conflictDetectors)) {
-      if (detectors.some((detector) => lowerTitle.includes(detector))) {
-        return family;
-      }
-    }
-
-    return null;
+    return getFamilyFromTitle(title);
   }
 
   /**
-   * Calculate penalty for family mismatches using ECO-based detection
+   * Calculate penalty for family mismatches.
+   *
+   * Compatibility is derived from each family's defining move prefix (see
+   * opening-families.js) instead of an enumerated pair list, so shared
+   * variation names ("Exchange", "Tartakower", "Steinitz") can never pull a
+   * video across a 1.e4/1.d4 divide.
+   *
+   * @returns 0 (same family), moderate penalty (related lines), or 100 (reject)
    */
   getFamilyMismatchPenalty(videoFamily, openingEco) {
     if (!videoFamily || !openingEco) return 0;
 
-    const openingFamily = this.getEcoBasedFamily(openingEco);
+    const openingFamily = getFamilyFromEco(openingEco);
     if (!openingFamily) return 0;
 
-    // Normalize family names for comparison
-    const normalizeFamily = (family) => {
-      const familyMap = {
-        queens_gambit: 'queens_gambit',
-        'queens gambit': 'queens_gambit',
-        queens_pawn_misc: 'queens_gambit', // Group similar D00 openings
-        nimzo_indian: 'nimzo_indian',
-        'nimzo indian': 'nimzo_indian',
-        kings_indian: 'kings_indian',
-        'kings indian': 'kings_indian',
-        caro_kann: 'caro_kann',
-        'caro kann': 'caro_kann',
-      };
-      return familyMap[family] || family;
-    };
-
-    const normalizedVideoFamily = normalizeFamily(videoFamily);
-    const normalizedOpeningFamily = normalizeFamily(openingFamily);
-
-    if (normalizedVideoFamily === normalizedOpeningFamily) {
-      return 0; // Perfect match
-    }
-
-    // Define severe incompatibilities (block completely)
-    // These are openings that cannot possibly be about the same game
-    const severeIncompatibilities = [
-      // Nimzo-Indian conflicts (1.d4 Nf6 2.c4 e6 3.Nc3 Bb4)
-      ['nimzo_indian', 'queens_gambit'],
-      ['nimzo_indian', 'sicilian'],
-      ['nimzo_indian', 'french'],
-      ['nimzo_indian', 'spanish'],
-      ['nimzo_indian', 'italian'],
-
-      // Queen's Gambit conflicts (1.d4 d5 2.c4)
-      ['queens_gambit', 'sicilian'],
-      ['queens_gambit', 'french'],
-      ['queens_gambit', 'kings_indian'],
-      ['queens_gambit', 'spanish'],
-      ['queens_gambit', 'italian'],
-
-      // Sicilian conflicts (1.e4 c5)
-      ['sicilian', 'french'],
-      ['sicilian', 'spanish'],
-      ['sicilian', 'italian'],
-      ['sicilian', 'kings_gambit'],
-      ['sicilian', 'dutch'],
-
-      // French conflicts (1.e4 e6)
-      ['french', 'spanish'],
-      ['french', 'italian'],
-      ['french', 'kings_gambit'],
-      ['french', 'dutch'],
-
-      // Caro-Kann conflicts (1.e4 c6)
-      ['caro_kann', 'sicilian'],
-      ['caro_kann', 'french'],
-      ['caro_kann', 'spanish'],
-      ['caro_kann', 'italian'],
-
-      // Spanish/Italian conflicts (require 1.e4 e5)
-      ['spanish', 'dutch'],
-      ['italian', 'dutch'],
-      ['italian', 'kings_indian'],
-      ['spanish', 'kings_indian'],
-
-      // Dutch conflicts (1.d4 f5)
-      ['dutch', 'kings_indian'],
-
-      // English vs closed game systems
-      ['english', 'sicilian'], // Can transpose but usually distinct
-    ];
-
-    // Check for severe incompatibility
-    for (const [family1, family2] of severeIncompatibilities) {
-      if (
-        (normalizedVideoFamily === family1 && normalizedOpeningFamily === family2) ||
-        (normalizedVideoFamily === family2 && normalizedOpeningFamily === family1)
-      ) {
-        return 100; // Complete rejection
-      }
-    }
-
-    // Moderate penalty for other mismatches
-    return 30;
+    const relation = compareFamilies(videoFamily, openingFamily);
+    if (relation === 'same') return 0;
+    if (relation === 'conflict') return 100;
+    return Math.abs(this.config.weights.family_mismatch_moderate);
   }
 
   /**
@@ -429,7 +425,7 @@ class VideoMatcher {
 
     // Fast rejection - check exclusions first (with educational exceptions)
     for (const keyword of excludeKeywords) {
-      if (title.includes(keyword) || description.includes(keyword)) {
+      if (this.matchesTerm(title, keyword) || this.matchesTerm(description, keyword)) {
         // Exception for educational speedrun content
         if (title.includes('speedrun') || title.includes('theory') || title.includes('mastering')) {
           continue; // Allow these educational videos through
@@ -495,7 +491,10 @@ class VideoMatcher {
     for (const name of allNames) {
       const cleanName = name.toLowerCase().trim();
 
-      // Skip very short or generic names to avoid false matches
+      // Skip very short or generic names to avoid false matches. Bare
+      // variation names shared across families ("Exchange Variation") would
+      // otherwise title-match foreign openings whose move prefixes are
+      // compatible (e.g. a Slav Exchange video on a QGD Exchange page).
       if (
         cleanName.length < 6 ||
         [
@@ -509,6 +508,18 @@ class VideoMatcher {
           'opening',
           'defense',
           'defence',
+          'exchange variation',
+          'advance variation',
+          'classical variation',
+          'modern variation',
+          'normal variation',
+          'closed variation',
+          'open variation',
+          'exchange',
+          'advance',
+          'classical',
+          'accepted',
+          'declined',
         ].includes(cleanName)
       ) {
         continue;
@@ -590,11 +601,21 @@ class VideoMatcher {
     if (!hasNameMatch) {
       const abbreviations = this.getOpeningAbbreviations(openingName);
       for (const abbrev of abbreviations) {
-        if (title.includes(abbrev)) {
+        if (this.matchesTerm(title, abbrev)) {
           hasNameMatch = true;
           matchType = 'abbreviation';
           break;
         }
+      }
+    }
+
+    // Openings named with move notation ("Scandinavian: 2.exd5") can never
+    // appear verbatim in a title — match on the family part instead
+    if (!hasNameMatch) {
+      const familyPart = this.getFamilyPartName(openingName);
+      if (familyPart && this.matchesTerm(title, familyPart)) {
+        hasNameMatch = true;
+        matchType = 'family';
       }
     }
 
@@ -613,13 +634,15 @@ class VideoMatcher {
       return 0; // No opening reference found
     }
 
-    // FAMILY-BASED NEGATIVE MATCHING - Prevent cross-family contamination
-    const videoConflictingFamily = this.getVideoConflictingFamily(title);
+    // FAMILY-BASED NEGATIVE MATCHING - Prevent cross-family contamination.
+    // A title may name several openings (speedruns, comparison videos), so a
+    // video is only rejected when EVERY family it names conflicts with the
+    // page; otherwise the most compatible one decides the penalty.
+    const videoFamilies = getFamiliesFromTitle(title);
 
-    if (videoConflictingFamily) {
-      const familyMismatchPenalty = this.getFamilyMismatchPenalty(
-        videoConflictingFamily,
-        opening.eco
+    if (videoFamilies.length > 0) {
+      const familyMismatchPenalty = Math.min(
+        ...videoFamilies.map((family) => this.getFamilyMismatchPenalty(family, opening.eco))
       );
       if (familyMismatchPenalty >= 100) {
         return 0; // Complete rejection for severe mismatches
@@ -628,14 +651,16 @@ class VideoMatcher {
       score -= familyMismatchPenalty;
     }
 
+    const weights = this.config.weights;
+
     // Much more conservative scoring
-    if (matchType === 'title_exact') score += 80;
-    else if (matchType === 'exact') score += 60;
+    if (matchType === 'title_exact') score += weights.title_exact;
+    else if (matchType === 'exact') score += weights.content_exact;
     else if (matchType === 'family')
-      score += 50; // Good for family matches
-    else if (matchType === 'partial_title') score += 45;
-    else if (matchType === 'abbreviation') score += 35;
-    else if (matchType === 'eco') score += 20;
+      score += weights.family; // Good for family matches
+    else if (matchType === 'partial_title') score += weights.partial_title;
+    else if (matchType === 'abbreviation') score += weights.abbreviation;
+    else if (matchType === 'eco') score += weights.eco;
 
     // Reject content-only matches where title clearly names a DIFFERENT opening
     if (matchType === 'exact') {
@@ -644,18 +669,23 @@ class VideoMatcher {
       }
     }
 
-    // Sub-variation penalty: generic family video is less relevant to specific sub-variation
-    if ((matchType === 'family' || matchType === 'exact') && openingName.includes(':')) {
+    // Variation specificity: on a sub-variation page, a video that names the
+    // variation must outrank a generic family video, so the bonus/penalty gap
+    // is deliberately larger than the channel/educational bonuses.
+    if (openingName.includes(':')) {
       const variationPart = openingName.split(':').slice(1).join(':').toLowerCase().trim();
-      const variationWords = variationPart
-        .split(/[\s,]+/)
-        .filter(
-          (w) =>
-            w.length > 5 &&
-            !['variation', 'defense', 'defence', 'attack', 'gambit', 'system', 'line'].includes(w)
-        );
-      if (variationWords.length > 0 && !variationWords.some((w) => title.includes(w))) {
-        score -= 15;
+      const variationWords = variationPart.split(/[\s,]+/).filter(
+        (w) =>
+          w.length > 5 &&
+          !/\d/.test(w) && // move notation ("2.exd5") never appears in titles
+          !['variation', 'defense', 'defence', 'attack', 'gambit', 'system', 'line'].includes(w)
+      );
+      if (variationWords.length > 0) {
+        if (variationWords.some((w) => title.includes(w))) {
+          score += weights.variation_specific;
+        } else {
+          score += weights.sub_variation_miss;
+        }
       }
     }
 
@@ -696,73 +726,43 @@ class VideoMatcher {
       'what a',
       'unbelievable',
     ];
-    if (gameAnalysisTerms.some((term) => title.includes(term))) {
-      score -= 60; // Even heavier penalty for game analysis
+    if (gameAnalysisTerms.some((term) => this.matchesTerm(title, term))) {
+      score += weights.game_analysis;
     }
 
     // 3. Player-vs-player pattern penalty (targeted replacement for generic 'vs')
     const rawTitle = video.title || '';
     const playerVsPattern = /\b[A-Z][a-z]+\s+vs\.?\s+[A-Z][a-z]+/;
     if (playerVsPattern.test(rawTitle)) {
-      score -= 60;
+      score += weights.player_vs_player;
     }
 
     // 4. Penalize movie/documentary content
     const movieTerms = ['movie', 'film', 'documentary', 'biopic', 'story of'];
-    if (movieTerms.some((term) => title.includes(term))) {
-      score -= 50;
+    if (movieTerms.some((term) => this.matchesTerm(title, term))) {
+      score += weights.movie;
     }
 
-    // 5. Enhanced Channel Quality System (PRIORITY: Maximize good creators)
-    const premiumEducators = [
-      'daniel naroditsky',
-      'naroditsky',
-      'hanging pawns',
-      'saint louis chess club',
-      'chess.com',
-      'chessnetwork',
-      'gingergm',
-      'eric rosen',
-      'chess network',
-      'john bartholomew',
-      'christof sielecki',
-      'chess club and scholastic center',
-    ];
-
-    const goodEducators = [
-      'gothamchess',
-      'chess.com',
-      'chessexplained',
-      'powerplaychess',
-      'remote chess academy',
-      'thechesswebsite',
-      'chessbrah',
-      'ben finegold',
-      'agadmator',
-    ];
-
-    const entertainmentChannels = ['chess24', 'world chess', 'fide chess'];
-
-    const channelTitle = (video.channel_title || '').toLowerCase();
-
-    if (premiumEducators.some((channel) => channelTitle.includes(channel))) {
-      score += 40; // Major bonus for premium educators
-    } else if (goodEducators.some((channel) => channelTitle.includes(channel))) {
-      score += 20; // Good bonus for solid educators
-    } else if (entertainmentChannels.some((channel) => channelTitle.includes(channel))) {
-      score -= 30; // Penalty for entertainment-focused channels
+    // 5. Channel quality from config/youtube_channels.json quality_tier
+    const channelTier = this.getChannelTier(video);
+    if (channelTier === 'premium') {
+      score += weights.premium_channel;
+    } else if (channelTier === 'standard') {
+      score += weights.standard_channel;
+    } else if (channelTier === 'entertainment') {
+      score += weights.entertainment_channel;
     }
 
     // 6. Duration requirements (favor substantial educational content)
     if (video.duration >= 1200 && video.duration <= 3600) {
       // 20-60 minutes ideal for detailed instruction
-      score += 15;
+      score += weights.duration_ideal;
     } else if (video.duration >= 600 && video.duration <= 1200) {
       // 10-20 minutes still good
-      score += 10;
+      score += weights.duration_good;
     } else if (video.duration < 300) {
       // Very short videos likely not instructional
-      score -= 25;
+      score += weights.duration_short;
     }
 
     // 7. Enhanced Educational Content Recognition (PRIORITY: Capture Naroditsky-style content)
@@ -794,19 +794,19 @@ class VideoMatcher {
 
     const hasStrongEducational = strongEducationalTerms.some((term) => title.includes(term));
     const hasSpeedrunEducational = speedrunEducationalTerms.some((term) => title.includes(term));
-    const isPremiumEducator = premiumEducators.some((channel) => channelTitle.includes(channel));
+    const isPremiumEducator = channelTier === 'premium';
 
     if (hasStrongEducational) {
-      score += 30; // Strong bonus for explicit educational content
+      score += weights.educational;
     } else if (hasSpeedrunEducational && isPremiumEducator) {
-      score += 25; // Special bonus for premium educator speedruns
+      score += weights.speedrun_premium;
     } else if (hasSpeedrunEducational) {
-      score += 15; // Moderate bonus for other speedruns
+      score += weights.speedrun;
     } else if (!hasStrongEducational && !hasSpeedrunEducational) {
       if (isPremiumEducator) {
-        score -= 5; // Small penalty for premium educators without clear educational markers
+        score += weights.no_educational_premium;
       } else {
-        score -= 25; // Larger penalty for other channels without educational content
+        score += weights.no_educational;
       }
     }
 
@@ -878,6 +878,12 @@ class VideoMatcher {
       const candidateOpenings = openings.filter((opening) => {
         const allNames = [opening.name, ...opening.aliases];
 
+        // Move-notation names match on their family part (mirrors the scorer)
+        const familyPart = this.getFamilyPartName(opening.name.toLowerCase());
+        if (familyPart && videoContent.includes(familyPart)) {
+          return true;
+        }
+
         // Check for any potential match (stricter than before)
         return allNames.some((name) => {
           const cleanName = name.toLowerCase().trim();
@@ -934,7 +940,7 @@ class VideoMatcher {
       for (const opening of candidateOpenings) {
         const score = this.calculateMatchScore(videoForMatching, opening);
         // Apply minimum score threshold to filter out weak matches
-        if (score >= 60) {
+        if (score >= this.config.min_match_score) {
           // Require substantial evidence
           matches.push({
             opening_id: opening.id,
@@ -968,8 +974,16 @@ class VideoMatcher {
     const uniqueVideos = new Set();
 
     Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
-      // Sort by score and take top 10
-      const topMatches = openingMatches.sort((a, b) => b.match_score - a.match_score).slice(0, 10);
+      // Sort by score, breaking ties by proven popularity then recency so the
+      // displayed order is never arbitrary
+      const topMatches = openingMatches
+        .sort(
+          (a, b) =>
+            b.match_score - a.match_score ||
+            (b.video.view_count || 0) - (a.video.view_count || 0) ||
+            String(b.video.published_at || '').localeCompare(String(a.video.published_at || ''))
+        )
+        .slice(0, 10);
 
       console.log(
         `   📝 Opening ${openingId}: ${openingMatches.length} matches → selected top ${topMatches.length}`
@@ -988,16 +1002,17 @@ class VideoMatcher {
     // Save results to database
     console.log('💾 Saving results to database...');
 
-    // Insert videos
+    // Insert videos — description/tags are persisted so rematch mode can
+    // re-score with the same evidence the original run had
     for (const match of finalMatches) {
       const video = match.video;
       await new Promise((resolve, reject) => {
         this.db.db.run(
           `
           INSERT OR REPLACE INTO videos (
-            id, title, channel_id, channel_title, duration, 
-            view_count, published_at, thumbnail_url, created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+            id, title, channel_id, channel_title, duration,
+            view_count, published_at, thumbnail_url, description, tags, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         `,
           [
             video.id,
@@ -1008,6 +1023,8 @@ class VideoMatcher {
             video.view_count,
             video.published_at,
             video.thumbnail_url,
+            video.description || '',
+            JSON.stringify(video.tags || []),
           ],
           function (err) {
             if (err) reject(err);
@@ -1187,6 +1204,8 @@ class VideoMatcher {
             view_count: video.statistics?.viewCount ? parseInt(video.statistics.viewCount) : 0,
             published_at: video.publishedAt,
             thumbnail_url: video.thumbnails?.default?.url,
+            description: video.description || '',
+            tags: JSON.stringify(video.tags || []),
           });
         }
       }
@@ -1200,9 +1219,9 @@ class VideoMatcher {
         this.db.db.run(
           `
           INSERT OR REPLACE INTO videos (
-            id, title, channel_id, channel_title, duration, 
-            view_count, published_at, thumbnail_url, created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+            id, title, channel_id, channel_title, duration,
+            view_count, published_at, thumbnail_url, description, tags, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         `,
           [
             videoData.id,
@@ -1213,6 +1232,8 @@ class VideoMatcher {
             videoData.view_count,
             videoData.published_at,
             videoData.thumbnail_url,
+            videoData.description,
+            videoData.tags,
           ],
           function (err) {
             if (err) reject(err);

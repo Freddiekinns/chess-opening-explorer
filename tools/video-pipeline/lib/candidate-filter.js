@@ -11,37 +11,49 @@
 
 class PreFilterVideos {
   constructor() {
-    // Exclusion patterns for different types of unwanted content
+    // Exclusion patterns for different types of unwanted content.
+    // All alternatives are word-boundary anchored: without \b, 'fun' rejected
+    // "Fundamentals", 'live' rejected "delivers" and 'round' rejected
+    // "background" — silently dropping prime educational content at discovery.
     this.exclusionPatterns = {
       // Tournament and live content
-      tournaments: /(?:live|stream|tournament|championship|match|round|game\s+\d+)/i,
+      tournaments: /\b(?:live|stream|tournament|championship|match|round)\b|\bgame\s+\d+/i,
 
       // Non-chess sports and entertainment
-      sports: /(?:nfl|nba|soccer|football|baseball|basketball|hockey|tennis|golf|mma|ufc)/i,
+      sports: /\b(?:nfl|nba|soccer|football|baseball|basketball|hockey|tennis|golf|mma|ufc)\b/i,
 
-      // Non-educational content types
-      casual: /(?:blitz|bullet|casual|just\s+playing|random|fun)/i,
+      // Non-educational content types ('fun' removed — it matched
+      // "fundamentals", which is a strong educational marker)
+      casual: /\b(?:blitz|bullet|casual|random)\b|\bjust\s+playing\b/i,
 
       // Reaction and commentary content
-      reactions: /(?:react|reaction|reacting|commentary|responds?|watching)/i,
+      reactions: /\b(?:react|reaction|reacting|commentary|responds?|watching)\b/i,
 
       // Highlights and result-focused content
-      highlights: /(?:wins?\s+in\s+\d+\s+moves?|loses?\s+in\s+\d+\s+moves?|match\s+highlights)/i,
+      highlights:
+        /\bwins?\s+in\s+\d+\s+moves?\b|\bloses?\s+in\s+\d+\s+moves?\b|\bmatch\s+highlights\b/i,
 
       // Podcasts and interviews
-      podcasts: /(?:podcast|interview|talks?|discussion|chat)/i,
+      podcasts: /\b(?:podcast|interview|talks?|discussion|chat)\b/i,
 
       // Non-chess content
       nonChess:
-        /(?:cooking|music|travel|news|politics|crypto|bitcoin|stock|movie|review|unboxing)/i,
+        /\b(?:cooking|music|travel|news|politics|crypto|bitcoin|stock|movie|review|unboxing)\b/i,
     };
+
+    // Titles with explicit teaching markers bypass the 'casual' exclusion so
+    // content like "Blitz Opening Repertoire" or a Naroditsky theory speedrun
+    // isn't dropped just for naming a fast time control.
+    this.casualExemptionPattern =
+      /\b(?:repertoire|explained|theory|guide|tutorial|lesson|masterclass|fundamentals|speedrun|how\s+to)\b/i;
 
     // Positive patterns for educational content
     this.educationalPatterns = {
       openings: /(?:opening|defense|attack|gambit|variation|system|setup)/i,
       tactics: /(?:tactic|puzzle|mate|checkmate|pin|fork|skewer|combination)/i,
       endgames: /(?:endgame|ending|pawn|rook|queen|king|opposition)/i,
-      analysis: /(?:analysis|annotated|explained|masterclass|lesson|guide|tutorial)/i,
+      analysis:
+        /(?:analysis|annotated|explained|masterclass|lesson|guide|tutorial|repertoire|theory)/i,
       strategy: /(?:strategy|plan|structure|weakness|strength|positional)/i,
     };
 
@@ -69,6 +81,9 @@ class PreFilterVideos {
 
     // Check for exclusion patterns
     for (const [category, pattern] of Object.entries(this.exclusionPatterns)) {
+      if (category === 'casual' && this.casualExemptionPattern.test(title)) {
+        continue;
+      }
       if (pattern.test(title)) {
         return false;
       }
@@ -136,7 +151,7 @@ class PreFilterVideos {
 
     if (qualityTier === 'standard') {
       // Stricter filtering for standard channels
-      const casualPattern = /(?:casual|random|just\s+playing|quick|short)/i;
+      const casualPattern = /\b(?:casual|random|quick|short)\b|\bjust\s+playing\b/i;
       if (casualPattern.test(video.title)) {
         return false;
       }

@@ -1,39 +1,45 @@
 # Active Context
 
-**Date:** 2026-06-11
+**Date:** 2026-06-13
 
-## Current Task: Design-Review Fixes — Fake Stats + Search Dropdown
+## Current Task: Video Pipeline Fixes (Tier 1 + Tier 2 of the assessment)
 
-**Status:** PR raised from branch `claude/ecstatic-fermi-7c5e64`. Verified in
-browser (desktop + mobile), 195 frontend tests pass, tsc + ESLint clean.
+**Status:** Implemented on `claude/video-pipeline-assessment-0gg422`, after the
+assessment in `docs/reviews/2026-06-13-video-pipeline-assessment.md`. All
+backend tests pass; verified end-to-end by simulating `pipeline:rematch` against
+the 917 live-index videos.
 
-Born from a full design critique of home / analyse / opening pages. Two critical
-fixes applied:
+- **Move-prefix family compatibility**
+  (`tools/video-pipeline/lib/opening-families.js`): families map to defining
+  moves; conflicts derived, not enumerated. Multi- opening titles reject only if
+  every named family conflicts. Cross-family contamination: 7.9% → **0%**.
+- **Variation specificity** (+25 specific / −40 miss) + view/recency tiebreakers
+  (matcher sort + `getTopVideosForOpening` ORDER BY). #1-video specificity 36.9%
+  → **57.6%**; displayed-order ambiguity → 0.
+- **Move-notation names** ("Scandinavian: 2.exd5") match via family part —
+  coverage 28.2% → **71%**, top-200 played 150 → 163.
+- **Pre-filter word boundaries** + educational exemption for casual terms;
+  `fun`/`live`/`round` no longer reject "Fundamentals"/"delivers"/"background".
+- **Config externalised**: weights/threshold in `config/video_matching.json`;
+  channel tiers solely from `config/youtube_channels.json` (Hanging Pawns,
+  GingerGM, Eric Rosen promoted to premium = old scorer behaviour).
+- **DB persists description/tags** (migration in schema-manager);
+  `backfill-views.js` now also fills them — run it BEFORE rematch on old DBs.
+- **FEN case collisions fixed**: shared
+  `packages/api/src/utils/fen-sanitizer.js` (uppercase → `0x` escape); API looks
+  up new key, falls back to legacy.
+- **Audit harness**: `node scripts/audit-video-matches.js` (+ `--json`).
 
-1. **OpeningCard fabricated W/D/L stats** — when an opening had no
-   `white_win_rate`/`draw_rate`/`black_win_rate`, `getGameStats()` invented
-   percentages with `Math.random()` (changing every render). Now returns `null`
-   and both card variants render no win-rate bar instead. Never fabricate data.
-2. **Search dropdown stacking bug** — `sectionReveal` keyframes animate
-   `transform` and were applied with `animation-fill-mode: both`, so every
-   landing section retained `translateY(0)` forever → permanent stacking
-   contexts → "My repertoire" painted over (and click-blocked) the open
-   suggestions dropdown. Fixed by switching every `sectionReveal … both` to
-   `backwards` (visually identical; end state == base state). Guard comment
-   added at the canonical keyframes in `simplified.css`.
-3. **Search result disambiguation** — `formatMovesPreview` truncated to 6
-   tokens/25 chars, so all Najdorf variations displayed identically. Now shows
-   the full line up to 60 chars; longer lines keep the **tail** (the
-   distinguishing moves), cut at a move-number boundary with a leading "…".
+**To ship the new index (user, locally):**
+`node tools/video-pipeline/scripts/backfill-views.js` →
+`npm run pipeline:rematch` → `node scripts/audit-video-matches.js`. Deferred by
+design: scheduling (user runs manually), hub-page family fallbacks (needs
+labelled-UI decision), channel-list expansion (IDs must be user-verified), LLM
+classification (T4).
 
-Remaining critique findings, recommendations, and accept/fix decisions are
-documented in `docs/reviews/2026-06-11-design-review.md`. Top of the queue:
-content-pipeline artifacts on detail pages (mismatched plans, wrong-opening
-studies, duplicated titles), card semantics/a11y, analyse hero-card naming.
+## Previous Task: Video Pipeline Assessment (2026-06-13)
 
-## Previous Task: CI Green-Up — Lint + Coverage Gates Fixed (2026-06-06)
-
-Complete and merged (PRs #35–#37). Four pre-existing CI bugs fixed (API lint
-path, ESLint-vs-Prettier rule conflict, coverage PR-comment permissions, codecov
-badge tokenless failure). Local `format:check` CRLF noise is a Windows artifact
-— trust CI. Full detail in `archive.md`.
+Measured the live index against ECO + popularity data; found family blanketing,
+6% cross-family contamination, 85% top-4 score ties, word-boundary pre-filter
+bugs, lossy rematch, staleness. Full report + metrics in
+`docs/reviews/2026-06-13-video-pipeline-assessment.md`.

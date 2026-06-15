@@ -2,6 +2,22 @@
 
 ## What's Done (newest first)
 
+- **Video Pipeline Fixes** (2026-06-13): implemented assessment Tiers 1+2 —
+  move-prefix family compatibility (`opening-families.js`, cross-family
+  7.9%→0%), variation-specificity scoring + view/recency tiebreakers (#1
+  specificity 36.9%→57.6%), move-notation name matching (coverage 28.2%→71%),
+  pre-filter word boundaries, weights in `config/video_matching.json`, channel
+  tiers from `youtube_channels.json`, DB persists description/tags, FEN
+  case-collision fix with legacy fallback, `scripts/audit-video-matches.js`
+  harness. Verified by simulated rematch over the 917 live videos. Ship via
+  backfill → rematch.
+- **Video Pipeline Assessment** (2026-06-13): measured live `video-index.json`
+  against ECO + popularity data
+  (`docs/reviews/2026-06-13-video-pipeline-assessment.md`) — provenance strong
+  (allowlist, 94% family accuracy), variation-level matching weak (37% specific
+  #1, 6% cross-family, 85% top-4 score ties, 3-month staleness, word-boundary
+  pre-filter bugs). Tiered fix plan + regression-metric harness proposed; no
+  code changes.
 - **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
   design critique of home/analyse/opening pages
   (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical

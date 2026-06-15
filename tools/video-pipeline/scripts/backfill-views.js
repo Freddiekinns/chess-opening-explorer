@@ -1,5 +1,8 @@
 /**
- * Backfill view counts and thumbnails for existing DB videos from YouTube API.
+ * Backfill view counts, thumbnails, descriptions and tags for existing DB
+ * videos from the YouTube API. Descriptions/tags feed the matcher's content
+ * checks, so running this once upgrades databases created before those
+ * columns existed — after which rematch re-scores with full evidence.
  * Uses batched requests (50 IDs per call) to minimize quota usage.
  */
 require('dotenv').config();
@@ -19,6 +22,7 @@ async function backfill() {
 
   const youtube = google.youtube({ version: 'v3', auth: apiKey });
   const db = new DatabaseSchema(DB_PATH);
+  await db.initializeSchema(); // Ensures description/tags columns exist
 
   // Get all video IDs from DB
   const videos = await new Promise((resolve, reject) => {
@@ -52,11 +56,13 @@ async function backfill() {
         for (const item of response.data.items) {
           const viewCount = parseInt(item.statistics?.viewCount || '0', 10);
           const thumbnail = item.snippet?.thumbnails?.default?.url || null;
+          const description = item.snippet?.description || '';
+          const tags = JSON.stringify(item.snippet?.tags || []);
 
           await new Promise((resolve, reject) => {
             db.db.run(
-              'UPDATE videos SET view_count = ?, thumbnail_url = ? WHERE id = ?',
-              [viewCount, thumbnail, item.id],
+              'UPDATE videos SET view_count = ?, thumbnail_url = ?, description = ?, tags = ? WHERE id = ?',
+              [viewCount, thumbnail, description, tags, item.id],
               (err) => (err ? reject(err) : resolve())
             );
           });

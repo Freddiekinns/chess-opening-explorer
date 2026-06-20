@@ -8,6 +8,16 @@
   LLM-quality issue). Added `scripts/audit-common-plans.js` (provenance +
   content lint) and `docs/proposals/2026-06-12-common-plans-provenance.md` (fix
   options + 3-tier evaluation framework).
+- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
+  design critique of home/analyse/opening pages
+  (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical
+  findings — `OpeningCard` no longer fabricates W/D/L stats with `Math.random()`
+  (renders no bar when data is missing), and the home-page search dropdown is no
+  longer painted over/click-blocked by "My repertoire" (`sectionReveal`
+  fill-mode `both` → `backwards`; retained transforms created permanent stacking
+  contexts). Search suggestions now show full distinguishing move lines
+  (tail-truncated) instead of identical 6-token prefixes. Remaining findings +
+  recommendations documented in the review doc.
 - **CI Green-Up** (2026-06-06, PRs #35/#36/#37): fixed four pre-existing CI bugs
   so `CI` + `Coverage` workflows pass on `main` — broken API lint script path,
   ESLint/Prettier rule conflict (~110 spurious + 17 real errors), coverage job

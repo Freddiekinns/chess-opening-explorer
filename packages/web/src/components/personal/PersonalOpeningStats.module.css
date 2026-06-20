@@ -70,7 +70,7 @@
   padding: var(--space-2-5) var(--space-2-5) var(--space-2-5) var(--space-4);
   width: 100%;
   max-width: 760px;
-  animation: sectionReveal 400ms ease-out 100ms both;
+  animation: sectionReveal 400ms ease-out 100ms backwards;
 }
 
 .inputFields {
@@ -100,7 +100,7 @@
 .idlePrompt {
   text-align: center;
   margin-top: var(--space-8);
-  animation: sectionReveal 500ms ease-out 200ms both;
+  animation: sectionReveal 500ms ease-out 200ms backwards;
 }
 
 .idlePromptIcon {
@@ -994,7 +994,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-6);
   margin-top: var(--space-8);
-  animation: sectionReveal 300ms ease-out 200ms both;
+  animation: sectionReveal 300ms ease-out 200ms backwards;
 }
 
 .openingSection {

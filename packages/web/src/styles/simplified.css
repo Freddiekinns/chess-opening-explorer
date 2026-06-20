@@ -2038,7 +2038,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   padding: var(--space-8) var(--space-4) var(--space-4) var(--space-4);
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
 }
 
 .hero-content {
@@ -2055,7 +2055,7 @@ body {
   line-height: 1.1;
   letter-spacing: var(--letter-spacing-tight);
   font-family: var(--font-family-headline);
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 50ms;
 }
 
@@ -2069,14 +2069,14 @@ body {
   margin: 0 auto var(--space-8) auto;
   line-height: 1.6;
   max-width: 600px;
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 100ms;
 }
 
 .hero-search-wrapper {
   max-width: 700px;
   margin: 0 auto;
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 150ms;
 }
 
@@ -2187,7 +2187,7 @@ body {
 .popular-openings-section {
   padding: var(--space-4) var(--space-4) var(--space-12) var(--space-4);
   position: relative;
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 200ms;
 }
 
@@ -2953,7 +2953,7 @@ body {
 .pgn-search-link-wrapper {
   text-align: center;
   margin-top: var(--space-3);
-  animation: sectionReveal 400ms ease-out both;
+  animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 200ms;
 }
 
@@ -3222,7 +3222,10 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* Staggered page section reveal */
+/* Staggered page section reveal.
+   Use fill-mode `backwards`, never `both`/`forwards`: a retained transform
+   keeps a permanent stacking context on every section, which paints later
+   siblings over overlays such as the search suggestions dropdown. */
 @keyframes sectionReveal {
   from {
     opacity: 0;
@@ -3235,12 +3238,12 @@ button:focus-visible,
 }
 
 .page-title-area {
-  animation: sectionReveal 300ms ease-out both;
+  animation: sectionReveal 300ms ease-out backwards;
   animation-delay: 0ms;
 }
 
 .two-column-layout {
-  animation: sectionReveal 300ms ease-out both;
+  animation: sectionReveal 300ms ease-out backwards;
   animation-delay: 80ms;
 }
 

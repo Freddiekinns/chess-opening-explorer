@@ -1,40 +1,45 @@
 # Active Context
 
-**Date:** 2026-06-12
+**Date:** 2026-06-13
 
-## Current Task: Common Plans Mismatch — Root Cause + Fix Proposal
+## Current Task: Video Pipeline Fixes (Tier 1 + Tier 2 of the assessment)
 
-**Status:** Investigation complete (proposal PR #40); fix implemented in PR #41
-(`fix/common-plans-provenance`) — `CommonPlans` now takes the page's own plans
-as a prop and the `/eco-analysis/:code` route + `getECOAnalysis` are deleted.
-Remaining: Tier 1/2 content evaluation, Option D re-enrichment, and the separate
-course-pipeline data fixes.
+**Status:** Implemented on `claude/video-pipeline-assessment-0gg422`, after the
+assessment in `docs/reviews/2026-06-13-video-pipeline-assessment.md`. All
+backend tests pass; verified end-to-end by simulating `pipeline:rematch` against
+the 917 live-index videos.
 
-The design review (2026-06-11, PR #39) flagged detail pages showing plans for
-the wrong opening (King's Pawn Game describing "a primitive attack on f7").
-Traced it: **not an LLM data-quality problem**. `CommonPlans` fetches
-`/api/openings/eco-analysis/:code`, and `getECOAnalysis` returns the **first
-record in the ECO bucket** (alphabetical) — so 11,871 of 12,377 pages (95.9%)
-show another record's plans; 8,923 (72.1%) show a different family's. All 12,377
-records have their own correct plans, already present in the `/fen/:fen` payload
-the page fetches.
+- **Move-prefix family compatibility**
+  (`tools/video-pipeline/lib/opening-families.js`): families map to defining
+  moves; conflicts derived, not enumerated. Multi- opening titles reject only if
+  every named family conflicts. Cross-family contamination: 7.9% → **0%**.
+- **Variation specificity** (+25 specific / −40 miss) + view/recency tiebreakers
+  (matcher sort + `getTopVideosForOpening` ORDER BY). #1-video specificity 36.9%
+  → **57.6%**; displayed-order ambiguity → 0.
+- **Move-notation names** ("Scandinavian: 2.exd5") match via family part —
+  coverage 28.2% → **71%**, top-200 played 150 → 163.
+- **Pre-filter word boundaries** + educational exemption for casual terms;
+  `fun`/`live`/`round` no longer reject "Fundamentals"/"delivers"/"background".
+- **Config externalised**: weights/threshold in `config/video_matching.json`;
+  channel tiers solely from `config/youtube_channels.json` (Hanging Pawns,
+  GingerGM, Eric Rosen promoted to premium = old scorer behaviour).
+- **DB persists description/tags** (migration in schema-manager);
+  `backfill-views.js` now also fills them — run it BEFORE rematch on old DBs.
+- **FEN case collisions fixed**: shared
+  `packages/api/src/utils/fen-sanitizer.js` (uppercase → `0x` escape); API looks
+  up new key, falls back to legacy.
+- **Audit harness**: `node scripts/audit-video-matches.js` (+ `--json`).
 
-Deliverables:
+**To ship the new index (user, locally):**
+`node tools/video-pipeline/scripts/backfill-views.js` →
+`npm run pipeline:rematch` → `node scripts/audit-video-matches.js`. Deferred by
+design: scheduling (user runs manually), hub-page family fallbacks (needs
+labelled-UI decision), channel-list expansion (IDs must be user-verified), LLM
+classification (T4).
 
-- `scripts/audit-common-plans.js` — models the serving logic, reports Tier-0
-  provenance mismatch + Tier-1 foreign-name lint (477 records, mostly benign).
-- `docs/proposals/2026-06-12-common-plans-provenance.md` — fix options (A: pass
-  own plans as prop — recommended; B: delete/fix the eco-analysis route; C:
-  deliberate family-level plans; D: re-enrich flagged records) and a 3-tier
-  evaluation framework with acceptance criteria.
+## Previous Task: Video Pipeline Assessment (2026-06-13)
 
-Also verified the sibling symptoms have separate root causes: courses.json maps
-a Semi-Slav study directly to the KPG FEN (course-pipeline matching), and
-`course_title` carries the duplicated-title concatenation in the data.
-
-## Previous Task: Design-Review Fixes (2026-06-11)
-
-PR #39: removed fabricated `Math.random()` card stats, fixed the search dropdown
-stacking bug (`animation-fill-mode: both` → `backwards`), made search results
-distinguishable (`formatMovesPreview` keeps the line's tail). Full review in
-`docs/reviews/2026-06-11-design-review.md`.
+Measured the live index against ECO + popularity data; found family blanketing,
+6% cross-family contamination, 85% top-4 score ties, word-boundary pre-filter
+bugs, lossy rematch, staleness. Full report + metrics in
+`docs/reviews/2026-06-13-video-pipeline-assessment.md`.

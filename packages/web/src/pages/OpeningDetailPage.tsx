@@ -728,6 +728,12 @@ const OpeningDetailPage: React.FC = () => {
       }
     : null;
 
+  // This page's own enriched plans. /fen/:fen (formatOpeningData) returns
+  // common_plans top-level — the only source. Plans must come from the exact
+  // position; ECO-bucket lookups mixed in sibling openings' plans
+  // (docs/proposals/2026-06-12-common-plans-provenance.md).
+  const commonPlans = opening.common_plans ?? [];
+
   return (
     <div className="detail-page-body">
       <title>{seoTitle}</title>
@@ -1156,10 +1162,10 @@ const OpeningDetailPage: React.FC = () => {
       {/* Full-width sections below two-column layout */}
       <div className={styles.fullWidthSections}>
         {/* Plans */}
-        {opening?.eco && (
+        {commonPlans.length > 0 && (
           <div className={styles.stackedSection}>
             <h3 className={styles.sectionHeading}>Common plans</h3>
-            <CommonPlans ecoCode={opening.eco} layout="structured" hideTitle />
+            <CommonPlans plans={commonPlans} layout="structured" hideTitle />
           </div>
         )}
 

@@ -52,6 +52,19 @@ describe('DatabaseSchema', () => {
         }
       }),
       all: jest.fn((sql, params, callback) => {
+        const cb = typeof params === 'function' ? params : callback;
+
+        // Column-migration check runs during initializeSchema
+        if (typeof sql === 'string' && sql.startsWith('PRAGMA table_info')) {
+          if (cb) {
+            cb(
+              null,
+              ['id', 'title', 'description', 'tags'].map((name) => ({ name }))
+            );
+          }
+          return;
+        }
+
         // Support both callback and mockResolvedValue patterns
         if (mockDb.all.mockResolvedValue) {
           // If using mockResolvedValue pattern, handle async

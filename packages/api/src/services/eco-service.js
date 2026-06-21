@@ -132,56 +132,11 @@ class ECOService {
     }, 3600000); // Cache for 1 hour
   }
 
-  /**
-   * Get ECO analysis data for a specific code
-   * Extracts analysis_json fields like description, plans, complexity
-   */
-  getECOAnalysis(ecoCode) {
-    const ecoData = this.loadECOData();
-    
-    // Find any opening with this ECO code to get analysis data
-    for (const [, opening] of Object.entries(ecoData)) {
-      if (opening.eco === ecoCode && opening.analysis_json) {
-        const analysis = opening.analysis_json;
-        
-        // Parse common_plans to separate white and black plans
-        const commonPlans = analysis.common_plans || [];
-        const whitePlans = [];
-        const blackPlans = [];
-        
-        // Split plans based on content - plans mentioning "White" go to white_plans, "Black" to black_plans
-        commonPlans.forEach(plan => {
-          const planLower = plan.toLowerCase();
-          if (planLower.includes("white's plan") || planLower.startsWith("white ")) {
-            whitePlans.push(plan);
-          } else if (planLower.includes("black's plan") || planLower.startsWith("black ")) {
-            blackPlans.push(plan);
-          } else {
-            // If unclear, add to both (generic plan)
-            whitePlans.push(plan);
-            blackPlans.push(plan);
-          }
-        });
-        
-        return {
-          eco: ecoCode,
-          description: analysis.description,
-          style_tags: analysis.style_tags || [],
-          tactical_tags: analysis.tactical_tags || [],
-          positional_tags: analysis.positional_tags || [],
-          strategic_themes: analysis.strategic_themes || [],
-          complexity: analysis.complexity || 'Unknown',
-          white_plans: analysis.white_plans || whitePlans,
-          black_plans: analysis.black_plans || blackPlans,
-          common_plans: commonPlans,
-          mainline_moves: analysis.mainline_moves,
-          last_enriched_at: analysis.last_enriched_at
-        };
-      }
-    }
-    
-    return null;
-  }
+  // NOTE: there is intentionally no ECO-code-level analysis lookup. ECO codes
+  // are coarse buckets (C20 alone holds 30+ named openings), and a bucket
+  // lookup served the wrong opening's plans on 96% of detail pages — see
+  // docs/proposals/2026-06-12-common-plans-provenance.md. Analysis must be
+  // fetched per FEN (getECOAnalysisByFEN / formatOpeningData).
 
   /**
    * Get ECO analysis data for a specific FEN position

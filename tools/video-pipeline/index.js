@@ -76,6 +76,33 @@ async function initDatabase(db) {
 }
 
 /**
+ * Convert a videos-table row to the candidate shape runMatchingWithVideos
+ * expects. Databases written before the description/tags columns existed
+ * (or before backfill-views was re-run) fall back to empty values.
+ */
+function dbRowToMatchInput(row) {
+  let tags = [];
+  try {
+    tags = row.tags ? JSON.parse(row.tags) : [];
+  } catch (error) {
+    tags = [];
+  }
+
+  return {
+    id: row.id,
+    title: row.title,
+    description: row.description || '',
+    channelId: row.channelId,
+    channelTitle: row.channelTitle,
+    duration: row.duration, // Already integer seconds from DB
+    statistics: { viewCount: String(row.view_count || 0) },
+    publishedAt: row.publishedAt,
+    thumbnails: { default: { url: row.thumbnail_url } },
+    tags,
+  };
+}
+
+/**
  * Get existing video IDs for deduplication
  */
 async function getExistingVideoIds(db) {
@@ -99,6 +126,13 @@ async function regenerateStaticFiles(dbPath) {
   });
   const staticResult = await staticGenerator.generateAllStaticFiles();
   console.log('   ✅ Static files generated:', staticResult);
+
+  // Remove files from previous runs whose key scheme/openings no longer match,
+  // so the consolidated index doesn't pick up stale duplicates
+  const cleanupResult = await staticGenerator.cleanupOrphanedFiles();
+  if (cleanupResult.deleted > 0) {
+    console.log(`   🧹 Removed ${cleanupResult.deleted} stale static files.`);
+  }
 
   console.log('\n📦 Consolidating Video Index...');
   const publicApiDir = path.join(__dirname, '../../public/api/openings');
@@ -246,10 +280,11 @@ async function runFull(db) {
   // Step 6: Re-match ALL videos (existing + new enriched)
   console.log('\n🎯 Re-matching ALL videos...');
 
-  // Load all existing videos from DB
+  // Load all existing videos from DB (description/tags are persisted so
+  // re-matching keeps the content-match evidence from the original run)
   const existingVideos = await new Promise((resolve, reject) => {
     db.db.all(
-      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url FROM videos',
+      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url, description, tags FROM videos',
       (err, rows) => {
         if (err) reject(err);
         else resolve(rows);
@@ -259,18 +294,7 @@ async function runFull(db) {
 
   // Merge existing videos (already enriched) with newly enriched
   const allVideosForMatching = [
-    ...existingVideos.map((v) => ({
-      id: v.id,
-      title: v.title,
-      description: '',
-      channelId: v.channelId,
-      channelTitle: v.channelTitle,
-      duration: v.duration,
-      statistics: { viewCount: String(v.view_count || 0) },
-      publishedAt: v.publishedAt,
-      thumbnails: { default: { url: v.thumbnail_url } },
-      tags: [],
-    })),
+    ...existingVideos.map((v) => dbRowToMatchInput(v)),
     ...validEnrichedVideos,
   ];
 
@@ -303,7 +327,7 @@ async function runRematch(db) {
   console.log('\n📊 Loading all videos from database...');
   const videos = await new Promise((resolve, reject) => {
     db.db.all(
-      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url FROM videos',
+      'SELECT id, title, channel_id as channelId, channel_title as channelTitle, duration, view_count, published_at as publishedAt, thumbnail_url, description, tags FROM videos',
       (err, rows) => {
         if (err) reject(err);
         else resolve(rows);
@@ -332,18 +356,7 @@ async function runRematch(db) {
   console.log('\n🎯 Re-matching all videos with updated scorer...');
 
   // Convert DB rows to format expected by runMatchingWithVideos
-  const videosForMatching = videos.map((v) => ({
-    id: v.id,
-    title: v.title,
-    description: '',
-    channelId: v.channelId,
-    channelTitle: v.channelTitle,
-    duration: v.duration, // Already integer seconds from DB
-    statistics: { viewCount: String(v.view_count || 0) },
-    publishedAt: v.publishedAt,
-    thumbnails: { default: { url: v.thumbnail_url } },
-    tags: [],
-  }));
+  const videosForMatching = videos.map((v) => dbRowToMatchInput(v));
 
   const matcher = new VideoMatcher(DB_PATH);
   const matchResults = await matcher.runMatchingWithVideos(videosForMatching, {

@@ -15,38 +15,6 @@ const CACHE_MAX_SIZE = 100;
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 /**
- * @route GET /api/openings/eco-analysis/:code
- * @desc Get ECO analysis data including descriptions, plans, and complexity
- * @param {string} code - ECO code (e.g., "A00", "B01")
- */
-router.get('/eco-analysis/:code', (req, res) => {
-  try {
-    const { code } = req.params;
-    const ecoCode = code.toUpperCase();
-
-    // Get analysis data from ECO service
-    const analysisData = ecoService.getECOAnalysis(ecoCode);
-
-    if (!analysisData) {
-      return res.status(404).json({
-        success: false,
-        error: `No analysis data found for ECO code ${ecoCode}`,
-      });
-    }
-
-    res.json({
-      success: true,
-      data: analysisData,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
  * @route POST /api/openings/fen-analysis
  * @desc Get ECO analysis data for a specific FEN position
  * @body {string} fen - FEN string of the position

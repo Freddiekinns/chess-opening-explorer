@@ -18,6 +18,12 @@
   #1, 6% cross-family, 85% top-4 score ties, 3-month staleness, word-boundary
   pre-filter bugs). Tiered fix plan + regression-metric harness proposed; no
   code changes.
+- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12): traced the
+  design-review "wrong plans" finding to `getECOAnalysis` serving the
+  alphabetically-first record per ECO bucket (95.9% of pages affected, not an
+  LLM-quality issue). Added `scripts/audit-common-plans.js` (provenance +
+  content lint) and `docs/proposals/2026-06-12-common-plans-provenance.md` (fix
+  options + 3-tier evaluation framework).
 - **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
   design critique of home/analyse/opening pages
   (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical

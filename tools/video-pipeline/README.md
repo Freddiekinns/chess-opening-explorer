@@ -186,6 +186,21 @@ so the displayed order is never arbitrary.
 - **Variation specificity**: a ±65-point swing (+25/−40) guarantees a
   variation-specific video outranks a generic family video on sub-variation
   pages, regardless of channel bonuses
+- **Intra-family variation guard**: a family match only proves the video and
+  page share an _opening family_ (both Sicilian), not the same variation. When a
+  title names a distinctive sub-variation (`config/video_matching.json` →
+  `specific_variation_keywords`: Najdorf, Dragon, Alapin, …) it is kept on a
+  sub-variation page only if it names _that_ page's variation — a Dragon lecture
+  is rejected from a Najdorf page. Pure move-notation pages ("Scandinavian:
+  2.exd5") keep only generic family overviews, since the variation can't be read
+  from the moves alone.
+
+  > **Known limitation:** `specific_variation_keywords` is a denylist, so it
+  > only catches named variations it lists. The long tail (Chekhover, Prins,
+  > apostrophe spelling variants, …) still lets _generic-looking_ titles blanket
+  > sibling pages at the family level. A complete fix needs variation-level
+  > classification of each video (a one-time taxonomy/LLM pass), not a longer
+  > list — see the assessment in `docs/reviews/`.
 
 ### Auditing match quality
 

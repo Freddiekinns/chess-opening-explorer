@@ -447,6 +447,59 @@ describe('VideoMatcher', () => {
       });
     });
 
+    describe('intra-family variation guard', () => {
+      it('detects distinctive sub-variation names in titles', () => {
+        expect(matcher.namesSpecificVariation('the sicilian dragon explained')).toBe(true);
+        expect(matcher.namesSpecificVariation('how to play the najdorf')).toBe(true);
+        expect(matcher.namesSpecificVariation('mastering the sicilian defense')).toBe(false);
+      });
+
+      it('rejects a sibling-variation video on a named sub-variation page', () => {
+        // A Dragon lecture must not be stamped onto a Najdorf page just because
+        // both are Sicilian (the cross-family guard cannot catch this).
+        const dragon = createVideo({
+          title: 'Ultra-Aggressive Sicilian Dragon, Yugoslav Attack Explained',
+        });
+        const najdorfPage = createOpening({
+          name: 'Sicilian Defense: Najdorf Variation',
+          eco: 'B90',
+        });
+        expect(matcher.calculateMatchScore(dragon, najdorfPage)).toBe(0);
+      });
+
+      it('keeps a variation-specific video on its own page', () => {
+        const najdorf = createVideo({ title: 'How to Play the Sicilian Najdorf Explained' });
+        const najdorfPage = createOpening({
+          name: 'Sicilian Defense: Najdorf Variation',
+          eco: 'B90',
+        });
+        expect(matcher.calculateMatchScore(najdorf, najdorfPage)).toBeGreaterThan(0);
+      });
+
+      it('keeps a generic family overview on a sub-variation page', () => {
+        const generic = createVideo({ title: 'Mastering the Sicilian Defense Complete Guide' });
+        const najdorfPage = createOpening({
+          name: 'Sicilian Defense: Najdorf Variation',
+          eco: 'B90',
+        });
+        expect(matcher.calculateMatchScore(generic, najdorfPage)).toBeGreaterThan(0);
+      });
+
+      it('matches a named-variation video on a page with a move-notation tail', () => {
+        // "Sicilian: Sozin-Najdorf, 7.Bb3" — named tokens drive the match, the
+        // move tail (7.Bb3) is ignored.
+        const najdorf = createVideo({ title: 'How to Play the Sicilian Najdorf Explained' });
+        const page = createOpening({ name: 'Sicilian: Sozin-Najdorf, 7.Bb3', eco: 'B86' });
+        expect(matcher.calculateMatchScore(najdorf, page)).toBeGreaterThan(0);
+      });
+
+      it('covers a pure move-notation page with a generic family overview', () => {
+        const generic = createVideo({ title: 'The Scandinavian Defense Explained' });
+        const page = createOpening({ name: 'Scandinavian: 2.exd5', eco: 'B01' });
+        expect(matcher.calculateMatchScore(generic, page)).toBeGreaterThan(0);
+      });
+    });
+
     describe('edge cases', () => {
       it('should handle videos with empty description', () => {
         const video = createVideo({

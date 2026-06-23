@@ -42,6 +42,38 @@ const DEFAULT_MATCHING_CONFIG = {
     family_mismatch_moderate: -30,
   },
   entertainment_channels: ['chess24', 'world chess', 'fide chess'],
+  // Distinctive sub-variation names. A title containing any of these is a
+  // specific-variation video, not a generic family overview, so it must not
+  // blanket sibling move-notation pages via the family-part fallback (a Dragon
+  // video has no business on a Najdorf transposition). Full, tunable list lives
+  // in config/video_matching.json; this default is the safety net.
+  specific_variation_keywords: [
+    'najdorf',
+    'dragon',
+    'scheveningen',
+    'sveshnikov',
+    'taimanov',
+    'rossolimo',
+    'rauzer',
+    'sozin',
+    'alapin',
+    'morra',
+    'grand prix',
+    'english attack',
+    'yugoslav',
+    'panov',
+    'fantasy',
+    'winawer',
+    'tarrasch',
+    'marshall',
+    'meran',
+    'grunfeld',
+    'benoni',
+    'benko',
+    'leningrad',
+    'moscow',
+    'smith-morra',
+  ],
 };
 
 /**
@@ -152,6 +184,17 @@ class VideoMatcher {
 
     const familyPart = openingName.slice(0, colonIndex).trim();
     return familyPart.length >= 4 ? familyPart : null;
+  }
+
+  /**
+   * True when a title names a distinctive sub-variation (Najdorf, Dragon,
+   * Alapin, …). Such videos are not generic family overviews, so they must not
+   * blanket sibling move-notation pages via the family-part fallback — we can't
+   * confirm a move-notation page IS that variation, so we don't guess.
+   */
+  namesSpecificVariation(title) {
+    const keywords = this.config.specific_variation_keywords || [];
+    return keywords.some((keyword) => this.matchesTerm(title, keyword));
   }
 
   /**
@@ -634,6 +677,48 @@ class VideoMatcher {
       return 0; // No opening reference found
     }
 
+    // INTRA-FAMILY VARIATION GUARD — prevent sibling-variation blanketing.
+    // A family-level match only proves the video and page share an opening
+    // family (both Sicilian), not the same variation. A specific-variation
+    // video (Dragon, Najdorf, Alapin, …) is only valid on a sub-variation page
+    // if it actually names THAT page's variation; otherwise it's a sibling
+    // (a Dragon lecture on a Najdorf page) and is rejected. On move-notation
+    // pages the variation can't be read from the name at all, so only generic
+    // family overviews are kept. This stops one Sicilian Dragon video
+    // blanketing every Sicilian page, which the cross-family guard (e4 vs d4)
+    // can't catch and the -40 specificity penalty is too weak to prevent once
+    // premium/educational bonuses are added.
+    if (matchType === 'family' && openingName.includes(':') && this.namesSpecificVariation(title)) {
+      // Named variation tokens only — move tokens ("7.Bb3", "exd5") carry digits
+      // and are dropped, so "Sozin-Najdorf, 7.Bb3" yields ['sozin', 'najdorf'].
+      const variationWords = openingName
+        .split(':')
+        .slice(1)
+        .join(':')
+        .split(/[\s,.\-]+/)
+        .filter(
+          (w) =>
+            w.length > 3 &&
+            !/\d/.test(w) &&
+            ![
+              'variation',
+              'defense',
+              'defence',
+              'attack',
+              'gambit',
+              'system',
+              'line',
+              'main',
+              'with',
+            ].includes(w)
+        );
+      // Keep only if the video names this page's variation. No named tokens
+      // (pure move-notation page) → variation unverifiable → generics only.
+      if (!variationWords.some((w) => title.includes(w))) {
+        return 0;
+      }
+    }
+
     // FAMILY-BASED NEGATIVE MATCHING - Prevent cross-family contamination.
     // A title may name several openings (speedruns, comparison videos), so a
     // video is only rejected when EVERY family it names conflicts with the
@@ -878,9 +963,14 @@ class VideoMatcher {
       const candidateOpenings = openings.filter((opening) => {
         const allNames = [opening.name, ...opening.aliases];
 
-        // Move-notation names match on their family part (mirrors the scorer)
+        // Move-notation names match on their family part (mirrors the scorer):
+        // only generic family videos, never specific-variation ones
         const familyPart = this.getFamilyPartName(opening.name.toLowerCase());
-        if (familyPart && videoContent.includes(familyPart)) {
+        if (
+          familyPart &&
+          videoContent.includes(familyPart) &&
+          !this.namesSpecificVariation(video.title.toLowerCase())
+        ) {
           return true;
         }
 
@@ -1065,214 +1155,6 @@ class VideoMatcher {
       openingsWithVideos: Object.keys(openingGroups).length,
       matchedCount: uniqueVideos.size,
       openingsCount: Object.keys(openingGroups).length,
-      matches: finalMatches,
-    };
-  }
-
-  /**
-   * Run complete re-matching with new system
-   */
-  async runNewMatching() {
-    console.log('🚀 Starting FEN-based Video Re-Matching...');
-
-    // Clear existing matches first
-    await this.clearExistingMatches();
-
-    // Load video data
-    console.log('📁 Loading video data...');
-    const videoDataPath = path.join(__dirname, '../../data/video_enrichment_cache.json');
-    const videoData = JSON.parse(fs.readFileSync(videoDataPath, 'utf8'));
-    const videoKeys = Object.keys(videoData).filter(
-      (key) => !['lastUpdated', 'version', 'entries'].includes(key)
-    );
-
-    // Pre-filter videos
-    console.log('🚫 Pre-filtering problematic content...');
-    const filteredVideos = [];
-    let filteredCount = 0;
-
-    for (const key of videoKeys) {
-      const video = videoData[key];
-      if (this.preFilterVideo(video)) {
-        filteredVideos.push({
-          id: video.id,
-          title: video.title,
-          description: video.description,
-          channel_title: video.channelTitle,
-          duration: video.duration,
-          view_count: video.viewCount,
-          published_at: video.publishedAt,
-          thumbnail_url: video.thumbnails?.default?.url,
-          tags: video.tags || [],
-        });
-      } else {
-        filteredCount++;
-      }
-    }
-
-    console.log(
-      `✅ Filtered ${filteredCount} problematic videos, ${filteredVideos.length} candidates remaining`
-    );
-
-    // Get all openings from database
-    console.log('🔍 Loading openings from database...');
-    const openings = await new Promise((resolve, reject) => {
-      this.db.db.all('SELECT id, name, eco, aliases FROM openings', (err, rows) => {
-        if (err) reject(err);
-        else resolve(rows);
-      });
-    });
-    console.log(`📚 Found ${openings.length} openings to match against`);
-
-    // Match videos to openings
-    console.log('🎯 Matching videos to specific openings...');
-    const matches = [];
-    let processedVideos = 0;
-
-    for (const video of filteredVideos) {
-      processedVideos++;
-      if (processedVideos % 100 === 0) {
-        console.log(`   Processed ${processedVideos}/${filteredVideos.length} videos...`);
-      }
-
-      for (const opening of openings) {
-        const score = this.calculateMatchScore(video, opening);
-        if (score > 0) {
-          matches.push({
-            opening_id: opening.id,
-            video_id: video.id,
-            match_score: score,
-            video: video,
-          });
-        }
-      }
-    }
-
-    console.log(`🎯 Created ${matches.length} video-opening matches`);
-
-    // Select top videos per opening
-    console.log('🔝 Selecting top videos per opening...');
-    const openingGroups = {};
-    matches.forEach((match) => {
-      if (!openingGroups[match.opening_id]) {
-        openingGroups[match.opening_id] = [];
-      }
-      openingGroups[match.opening_id].push(match);
-    });
-
-    const finalMatches = [];
-    const uniqueVideos = new Set();
-
-    Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
-      // Sort by score and take top 10
-      const topMatches = openingMatches.sort((a, b) => b.match_score - a.match_score).slice(0, 10);
-
-      topMatches.forEach((match) => {
-        finalMatches.push(match);
-        uniqueVideos.add(match.video_id);
-      });
-    });
-
-    console.log(
-      `✅ Final selection: ${finalMatches.length} matches, ${uniqueVideos.size} unique videos`
-    );
-
-    // Save results to database
-    console.log('💾 Saving results to database...');
-
-    // First, collect all unique videos to insert
-    const videosToInsert = new Map();
-    const enrichmentData = JSON.parse(fs.readFileSync('data/video_enrichment_cache.json', 'utf8'));
-
-    finalMatches.forEach((match) => {
-      if (!videosToInsert.has(match.video_id)) {
-        const video = enrichmentData[match.video_id];
-        if (video) {
-          // Parse duration from ISO 8601 format
-          const durationMatch = video.duration?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-          const hours = parseInt(durationMatch?.[1] || '0');
-          const minutes = parseInt(durationMatch?.[2] || '0');
-          const seconds = parseInt(durationMatch?.[3] || '0');
-          const durationSeconds = hours * 3600 + minutes * 60 + seconds;
-
-          videosToInsert.set(match.video_id, {
-            id: video.id,
-            title: video.title,
-            channel_id: video.channelId,
-            channel_title: video.channelTitle,
-            duration: durationSeconds,
-            view_count: video.statistics?.viewCount ? parseInt(video.statistics.viewCount) : 0,
-            published_at: video.publishedAt,
-            thumbnail_url: video.thumbnails?.default?.url,
-            description: video.description || '',
-            tags: JSON.stringify(video.tags || []),
-          });
-        }
-      }
-    });
-
-    console.log(`   📹 Inserting ${videosToInsert.size} unique videos...`);
-
-    // Insert videos
-    for (const [videoId, videoData] of videosToInsert) {
-      await new Promise((resolve, reject) => {
-        this.db.db.run(
-          `
-          INSERT OR REPLACE INTO videos (
-            id, title, channel_id, channel_title, duration,
-            view_count, published_at, thumbnail_url, description, tags, created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
-        `,
-          [
-            videoData.id,
-            videoData.title,
-            videoData.channel_id,
-            videoData.channel_title,
-            videoData.duration,
-            videoData.view_count,
-            videoData.published_at,
-            videoData.thumbnail_url,
-            videoData.description,
-            videoData.tags,
-          ],
-          function (err) {
-            if (err) reject(err);
-            else resolve();
-          }
-        );
-      });
-    }
-
-    console.log(`   🔗 Creating ${finalMatches.length} video-opening relationships...`);
-
-    // Insert relationships
-    for (const match of finalMatches) {
-      await new Promise((resolve, reject) => {
-        this.db.db.run(
-          `
-          INSERT OR REPLACE INTO opening_videos (
-            opening_id, video_id, match_score, created_at
-          ) VALUES (?, ?, ?, datetime('now'))
-        `,
-          [match.opening_id, match.video_id, match.match_score],
-          function (err) {
-            if (err) reject(err);
-            else resolve();
-          }
-        );
-      });
-    }
-
-    console.log('✅ Database save complete!');
-
-    return {
-      totalVideos: videoKeys.length,
-      filteredOut: filteredCount,
-      candidateVideos: filteredVideos.length,
-      totalMatches: matches.length,
-      finalMatches: finalMatches.length,
-      uniqueVideos: uniqueVideos.size,
-      openingsWithVideos: Object.keys(openingGroups).length,
       matches: finalMatches,
     };
   }

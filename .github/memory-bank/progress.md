@@ -2,6 +2,17 @@
 
 ## What's Done (newest first)
 
+- **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
+  the earlier 28%→71% coverage gain was mostly family-level blanketing (one
+  Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard
+  (`calculateMatchScore` + `specific_variation_keywords` in
+  `config/video_matching.json`): family matches on sub-variation pages are kept
+  only if the video names that page's variation; generics still cover pages;
+  move-tail pages match on named tokens. Deleted dead `runNewMatching()`.
+  Offline re-score of the 917 live videos: coverage 67%, top-200 81.5%,
+  #1-specificity 36.9%→61.9%, cross-family 0%. Denylist can't catch the long
+  tail — real fix is variation-level classification (taxonomy/LLM), the
+  recommended next project.
 - **Video Pipeline Fixes** (2026-06-13): implemented assessment Tiers 1+2 —
   move-prefix family compatibility (`opening-families.js`, cross-family
   7.9%→0%), variation-specificity scoring + view/recency tiebreakers (#1

@@ -18,17 +18,26 @@ Key findings (measured, not estimated):
   detail page across 4 functions; `/api/openings/all` (24.8 MB) still exposed
   with zero client users; `video-index.json` ×2 and a 2-byte
   `popularity_stats.json` in `packages/api/src/data/`.
-- **Trust leftovers**: staged video rematch not shipped; study title dupes +
-  wrong-family studies unfixed; practice audio files don't exist
-  (`public/sounds/` missing); OpeningCard still `div role="button"`.
+- **Trust leftovers**: **video rematch was NEVER run** — both index copies
+  byte-identical, stamped 2026-03-15; audit shows old baseline (28.2% coverage,
+  7.9% cross-family = 1,577 wrong-family matches live). ALL popularity stats
+  dated 2025-07-15 (~12 months stale). Study title dupes + wrong-family studies
+  unfixed; practice audio files don't exist; OpeningCard still
+  `div role="button"`.
+- **Ops**: 8 Playwright E2E specs never run in CI; no data-freshness automation
+  (doc §1.4 proposes monthly RSS-pipeline GitHub Action + audit auto-PR).
 - **Health**: both suites green (716 + 198) — progress.md's "16 broken tests"
   was stale, now corrected.
 - **Feature ranking (re-ranked from TASK008)**: book-deviation trainer first
   (Analyse already imports 500 games — cheap now), then rating-contextualised
-  stats, family hub pages, SRS, repertoire v2, middlegame bridge last.
+  stats + master games (one Lichess-explorer integration), family hub pages with
+  video shelves, SRS, repertoire v2, middlegame bridge last. Doc §6 adds the
+  video-experience plan: family fallback for empty galleries, embedded player +
+  watched state, chapter-level matching (deep-link `?t=` into survey videos).
 
-**Next step (user decision):** pick from the "Now" row of the sequencing table
-in the review doc.
+**Next step (user decision):** run the §6.2 ship checklist locally (backfill →
+pipeline → audit → copy → commit), then pick from the "Now" row of the
+sequencing table.
 
 ## Previous Task: Video Matching — Intra-Family Variation Guard (2026-06-23)
 

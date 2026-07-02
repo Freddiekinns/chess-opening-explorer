@@ -17,11 +17,12 @@ The foundation is genuinely strong: unique data assets (12,377 openings, 917
 matched videos, 6,100+ study chapters, LLM content), a distinctive brand, and —
 newly verified in this review — **a fully green test suite (716 backend + 198
 frontend, zero failures)**. The trust-critical bugs from the June reviews
-(fabricated stats, wrong common plans, cross-family videos) are fixed or have
-fixes staged.
+(fabricated stats, wrong common plans, cross-family videos) are fixed in code —
+but note the third one carefully: **the improved video index was never
+generated, so none of June's matching work has reached users** (verified in
+§6.1), and every popularity statistic on the site is dated 2025-07-15.
 
-The two gaps between "strong reference site" and "excellent learning resource"
-are unchanged in kind but sharper in focus:
+The gaps between "strong reference site" and "excellent learning resource":
 
 1. **Delivery performance is leaving easy wins on the table** — one unsplit JS
    bundle, redundant megabyte fetches, five API round-trips per opening page,
@@ -30,6 +31,9 @@ are unchanged in kind but sharper in focus:
    return-and-improve loop (what TASK008 called the reference→learning gap) has
    had no feature shipped against it since February. Meanwhile the Analyse page
    now has exactly the data needed to close it cheaply.
+3. **Shipped-but-not-delivered work and stale data have no owner** — merged
+   improvements sit unreleased and year-old statistics go unnoticed because no
+   process watches them (§1.4, §6).
 
 Recommended headline sequence: **(1) week-scale perf + trust fixes, (2) book-
 deviation trainer on the Analyse page, (3) rating-contextualised statistics, (4)
@@ -138,6 +142,37 @@ canonical location via `path-resolver` and delete the copy step; this removes a
 standing footgun (serving stale/empty data depending on path resolution) and
 shrinks the deployment.
 
+### 1.4 Structure & operations
+
+**S1 — Data freshness has no owner.** The three data assets learners actually
+see are all stale, and nothing detects it: popularity stats dated 2025-07-15 (12
+months), video index generated 2026-03-15 (109 days — and RSS discovery only
+sees each channel's ~15 latest uploads, so long gaps _permanently_ miss videos),
+courses last curated per its own pipeline. A scheduled GitHub Action (monthly:
+`npm run pipeline` in RSS mode — zero API cost — plus the audit script, opening
+a PR with the refreshed index and metric diff) turns freshness from a memory
+into a process. The popularity pipeline needs a machine with the Lichess dumps,
+so quarterly manual is acceptable — but put the date on a dashboard or README
+badge so staleness is visible.
+
+**S2 — Eight Playwright E2E specs exist and never run in CI.** `tests/e2e/`
+covers landing, detail, analyse, PGN, and mobile overflow, but `ci.yml` runs
+only Jest + Vitest + format. The specs rot silently (the TASK016-era "16 broken
+tests" confusion started exactly this way). Add a CI job that builds the app and
+runs Playwright against the preview build — headless Chromium is already pinned
+in `playwright.config.ts`.
+
+**S3 — `shared` package consumed via fragile relative paths.** Components import
+`../../../shared/src` (and even `../../../../shared/src/types/video.js`) instead
+of the workspace package name. It works until file moves or route-splitting (P1)
+reshuffle depths. Alias `@chess-trainer/shared` in `tsconfig`/Vite and sweep the
+imports — mechanical, ~30 minutes.
+
+**S4 — No error monitoring.** Vercel Analytics measures traffic, not failures;
+every `catch` in the frontend swallows errors into `console.warn`. A free-tier
+Sentry (or even a tiny `/api/log-error` beacon) would have surfaced the dead
+audio files and decode errors months ago. One afternoon, permanent visibility.
+
 ### Measured baseline (2026-07-02)
 
 | Metric                         | Value                                             |
@@ -164,11 +199,18 @@ class of issue:
 
 - ✅ Fabricated card stats — fixed (PR #39)
 - ✅ Wrong common plans (ECO-bucket lookup) — fixed (PRs #41/#42)
-- ✅ Cross-family video matches — fixed in code (PRs merged), **but the
-  regenerated index has not shipped**. The live site still serves the old
-  matches until someone runs `backfill-views.js` → `pipeline:rematch` →
-  `audit-video-matches.js` locally (needs DB + API key). **Do this first; it's
-  finished work that isn't delivering value yet.**
+- ⚠️ Cross-family video matches — fixed in code (PRs merged), **but verified
+  2026-07-02: the rematch was never run.** Both `video-index.json` copies are
+  byte-identical and stamped 2026-03-15; the audit harness run against the live
+  index reports the _old_ numbers (28.2% coverage, 36.9% specificity, 7.9%
+  cross-family contamination — 1,577 wrong-family matches still being served).
+  All of June's matcher work is invisible to users. Ship checklist in §6.2.
+- ⚠️ **Every popularity statistic is ~12 months stale.** All 12,377 positions in
+  `popularity_stats.json` carry `analysis_date: 2025-07-15`. Win rates and "Most
+  Popular" rankings drift slowly, so nothing is _wrong_ yet, but a data product
+  whose core numbers are a year old is accruing quiet trust debt — and nothing
+  in the repo re-runs the pipeline (`python tools/analysis/run_pipeline.py`) or
+  would notice the drift. See §1.4 on automation.
 - ❌ **Study title duplication** — `StudiesGallery` still renders raw
   `course_title` ("The Ponziani Guide: … – The Ponziani Guide: …"), the cheap
   render-time dedupe from design-review finding #1 was never applied.
@@ -234,6 +276,24 @@ rollups shipped, the Analyse page now imports and classifies 500 games per user,
 and the tree service exists. That reshuffles the build order — the deviation
 trainer got dramatically cheaper, so it moves up.
 
+**The learner-journey lens.** Every feature below is judged by where it sits in
+the loop a club player actually needs. Read the gaps column as the feature
+brief:
+
+| Stage          | What exists today                             | The gap                                                              |
+| -------------- | --------------------------------------------- | -------------------------------------------------------------------- |
+| **Discover**   | Search, semantic search, popular grid, PGN ID | "Where do I _start_?" has no answer (paths J5, hubs 3.4)             |
+| **Understand** | AI descriptions, plans, videos, studies       | No model games (M1), no per-move "why" (J1), no rating context (3.2) |
+| **Practice**   | Move trainer with hints                       | Shallow lines, no depth (M3), nothing brings you back (J4, 3.3)      |
+| **Play**       | — (happens on Chess.com/Lichess)              | No bridge back except manual Analyse visits                          |
+| **Review**     | Analyse page W/D/L by family                  | Shows _what_ underperforms, never _why_ or _where_ (3.1, J3)         |
+
+The strongest observation from walking this table: the product is dense on
+**Understand** and nearly empty on the return edges (**Play → Review →
+Practice**). That's why the deviation trainer leads the feature list — it's the
+only feature that creates a habitual reason to come back after every online
+session.
+
 ### 3.1 Book-deviation trainer (was TASK005/#3 — now the top feature bet)
 
 **Why first now:** the Analyse pipeline already fetches a user's last 500 games,
@@ -293,12 +353,12 @@ video classification builds the taxonomy/validation muscle.
 
 ## 4. Suggested sequencing
 
-| Horizon             | Work                                                                                                                                                                                                           |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Now (days)**      | Ship the staged video rematch. Study title dedupe + family guard. Delete `/api/openings/all`. Browser caching + `fields=lookup` on Analyse. Console.log sweep. Audio files in or out. Memory-bank corrections. |
-| **Next (1–2 wks)**  | Static MiniBoard renderer → route code splitting (P2→P1). Self-host fonts. `<a>` cards + aria-hidden boards. `PersonalOpeningStats` refactor. Shard the edge SEO lookup (P6).                                  |
-| **Then (features)** | Book-deviation trainer v1 (3.1) → rating-contextualised stats (3.2) → family hub pages (3.4).                                                                                                                  |
-| **Later (arch)**    | Static pre-render of opening pages (P7, absorbs P9). Practice-mode depth → SRS queue (3.3) → repertoire v2 (3.5). Variation-level video classification. Middlegame bridge (3.6).                               |
+| Horizon             | Work                                                                                                                                                                                                                                                                    |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Now (days)**      | Run the video pipeline + rematch and ship the index (§6.2 — it was never run). Refresh popularity stats. Study title dedupe + family guard. Delete `/api/openings/all`. Browser caching + `fields=lookup` on Analyse. Console.log sweep. Audio files in or out.         |
+| **Next (1–2 wks)**  | Static MiniBoard renderer → route code splitting (P2→P1). Self-host fonts. `<a>` cards + aria-hidden boards. `PersonalOpeningStats` refactor. Shard the edge SEO lookup (P6). Family fallback for empty video/study tabs (V1). E2E in CI + pipeline automation (S1/S2). |
+| **Then (features)** | Book-deviation trainer v1 (3.1) → rating-contextualised stats + master games (3.2 + M1/M2) → family hub pages with video libraries (3.4 + V4).                                                                                                                          |
+| **Later (arch)**    | Static pre-render of opening pages (P7, absorbs P9). Practice-mode depth → SRS queue (3.3) → repertoire v2 (3.5). Chapter-level video matching (V6) + variation-level classification. Middlegame bridge (3.6).                                                          |
 
 The "Now" row is roughly a week of work and closes every known trust-undermining
 defect plus the cheapest performance wins. The "Then" row is where the product
@@ -384,6 +444,13 @@ beginner. Natural companion content for family hubs (3.4).
 two detail summaries in one view. A real user question, but lower priority; the
 family hubs + style tags already partially answer it.
 
+**J7 — Installable PWA with offline practice.** The mobile UI is already
+app-shaped (bottom tab bar, tap-to-move); a manifest + service worker caching
+the app shell and the user's starred openings makes practice work on the train,
+and "add to home screen" is the cheapest possible retention surface for a
+product whose whole strategic gap is return visits. Pairs with J4/3.3 — practise
+your due openings offline, sync state on reconnect.
+
 ### 5.3 Where these slot into the §4 sequence
 
 - **M1/M2 join 3.2** — one Lichess-explorer integration ships both master games
@@ -394,3 +461,117 @@ family hubs + style tags already partially answer it.
 - **J1/J2** are enrichment-pipeline projects — schedule them after the
   variation-level video classification builds the validation tooling.
 - **J5** ships with or right after family hubs (3.4); **J6** stays parked.
+
+---
+
+## 6. Video experience deep-dive (2026-07-02)
+
+Videos are the product's richest learning asset and the most under-delivered
+one. This section covers the verified state of the index, how to ship the staged
+improvements, and how to make videos genuinely findable and explorable.
+
+### 6.1 Verified: the improved matching never shipped
+
+The user's belief that the pipeline was re-run is understandable but wrong —
+checked three ways today:
+
+1. Both index copies (`api/data/` and `packages/api/src/data/`) are
+   **byte-identical** (same md5) and stamped **2026-03-15** — generated three
+   months before either matcher PR merged.
+2. The audit harness against the live index reports the pre-fix baseline:
+   **28.2% coverage, 75% top-200 coverage, 36.9% #1-variation-specificity, 7.9%
+   cross-family contamination (1,577 wrong-family matches)** — e.g. Sicilian
+   pages still recommending "The Reversed Sicilian: 1.c4 e5" English videos.
+3. The matcher's SQLite database is not in the repo, so no environment except
+   the local one that owns `videos.db` _can_ have run it.
+
+June's offline re-score (recorded in `activeContext.md`) verified what shipping
+delivers: **coverage 28%→67%, top-200 75%→81.5%, #1-specificity 36.9%→61.9%,
+cross-family 7.9%→0%.** That value is sitting in merged code, invisible to every
+user.
+
+### 6.2 Ship checklist (user, locally — needs `videos.db` + YouTube API key)
+
+1. `node tools/video-pipeline/scripts/backfill-views.js` — one-time; populates
+   views/thumbnails/descriptions/tags (~35 API calls). **Must precede the
+   rematch** or content matches score from titles alone.
+2. `npm run pipeline` — the index is 109 days old and RSS discovery only sees
+   each channel's ~15 latest uploads, so run a discovery pass too, not just a
+   rematch; videos published in the gap are otherwise permanently missed. (If
+   the API key allows, `npm run pipeline:full` closes the gap completely.)
+3. `node scripts/audit-video-matches.js` — confirm the four metrics moved as
+   expected before committing.
+4. `cp api/data/video-index.json packages/api/src/data/video-index.json` — the
+   two-copies gotcha; the API serves the second path.
+5. Commit both copies. Then set up the S1 monthly automation so this never
+   silently rots again.
+
+### 6.3 Finding and exploring videos: the learner's view
+
+Today a video is only reachable if the learner already navigated to the exact
+FEN page it matched — and 72% of pages (post-ship: ~33%) have none, where the
+gallery renders nothing at all. The videos are curated from trusted educators;
+the discovery around them is where the experience falls short.
+
+**V1 — Family fallback for empty galleries (highest value, small).** When a page
+has no exact-position videos, `videos/:fen` should fall back to the page's
+`family_id` and return the family's best generic videos, labelled "Videos for
+the \<family\>" (and the same for studies). The family taxonomy and the
+matcher's family logic already exist. This converts every "dead tab" on ~4,000+
+post-ship pages into a useful shelf, honestly labelled.
+
+**V2 — Say why a video is here.** The index stores a match score but the UI
+gives no signal. A small badge — "covers this variation" vs "family overview"
+(derivable from the existing specificity check) — tells a learner whether
+they're getting exactly their line or background material. This also makes the
+V1 fallback self-explanatory.
+
+**V3 — Keep the learner on the board.** Cards deep-link to YouTube in a new tab,
+so watching a video means losing the position. An in-page embedded player
+(`youtube-nocookie.com` iframe, loaded on click — no bundle or privacy cost
+until played) beside the existing board turns "watch then try to remember" into
+"watch and follow along". Track watched state in localStorage and show it on the
+card ("✓ watched") — trivial, and it makes the gallery feel personal.
+
+**V4 — A video library per family (with 3.4).** There is no browse surface for
+the ~917-video corpus; it's locked behind knowing the opening first. Family hub
+pages should each carry a filterable video shelf (channel, duration, sort by
+views/recency) — "all Sicilian videos" is a page learners would land on from
+search, and it exercises the corpus far better than per-FEN slices.
+
+**V5 — Duration and level fit.** A 6-minute intro and a 90-minute theory deep
+dive currently rank side by side. One LLM pass over titles/descriptions
+classifying format (intro / deep dive / speedrun-explainer / trap-focused) and
+audience level, stored as index fields, enables both filtering on V4 shelves and
+smarter defaults on detail pages (short intro first for low-complexity
+openings). Cheap because it rides the planned variation-classification pass.
+
+**V6 — Chapter-level matching (the strategic one).** Most educator videos are
+multi-opening surveys with YouTube chapters in the description ("12:30 Najdorf,
+18:05 Dragon") — and the DB now persists descriptions precisely so content
+evidence survives rematches. Parsing chapter timestamps and matching chapter
+titles to openings turns the corpus's biggest weakness (one video blanketing ~82
+pages) into its biggest strength: the Dragon page deep-links to `?t=1085` — _the
+Dragon segment_ — of the survey video. It attacks the same problem as
+variation-level classification but from the content side, raises effective
+coverage without any new videos, and no competitor does it. Build it into the
+same taxonomy/LLM pipeline project.
+
+### 6.4 Pipeline: precision, coverage, freshness
+
+The June work fixed scoring; the remaining structural risks are:
+
+- **Precision ceiling**: denylist heuristics can't catch the long tail
+  (Chekhover, Prins, apostrophe variants) — variation-level classification
+  (already scoped) plus chapters (V6) is the real fix. Do them as one project.
+- **Coverage strategy**: post-ship coverage of ~67% is respectable; V1's family
+  fallback covers the rest _in the UI_ without polluting the index — prefer that
+  over loosening match thresholds ever again (the 28%→71% blanketing incident is
+  the cautionary tale).
+- **Freshness**: RSS mode's ~15-video window makes gaps permanent; the S1
+  monthly GitHub Action (RSS pipeline + audit + auto-PR with metric diff) is the
+  fix. The audit harness already prints exactly the numbers the PR description
+  needs.
+- **Curation input**: channel tiers live in `config/youtube_channels.json` —
+  when V4 shelves exist, watch-through behaviour (which videos users actually
+  click) becomes the first real feedback signal for tier and weight tuning.

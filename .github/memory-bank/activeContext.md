@@ -4,10 +4,11 @@
 
 ## Current Task: Project Review — Performance + Feature Assessment
 
-**Status:** Complete on `claude/chess-resource-review-xmdqkl`. Full review
-written to `docs/reviews/2026-07-02-project-review.md`, assessing the project
-against the goal of an excellent opening learning resource. No production code
-changed.
+**Status:** Complete on `claude/chess-resource-review-xmdqkl` (PR raised).
+Findings split across two docs: `docs/reviews/2026-07-02-project-review.md`
+(perf, ops, feature ranking) and
+`docs/reviews/2026-07-02-video-experience-review.md` (video pipeline state +
+discovery plan V1–V6). No production code changed.
 
 Key findings (measured, not estimated):
 
@@ -31,13 +32,14 @@ Key findings (measured, not estimated):
 - **Feature ranking (re-ranked from TASK008)**: book-deviation trainer first
   (Analyse already imports 500 games — cheap now), then rating-contextualised
   stats + master games (one Lichess-explorer integration), family hub pages with
-  video shelves, SRS, repertoire v2, middlegame bridge last. Doc §6 adds the
-  video-experience plan: family fallback for empty galleries, embedded player +
-  watched state, chapter-level matching (deep-link `?t=` into survey videos).
+  video shelves, SRS, repertoire v2, middlegame bridge last. The video review
+  adds the discovery plan: family fallback for empty galleries, embedded
+  player + watched state, chapter-level matching (deep-link `?t=` into survey
+  videos).
 
-**Next step (user decision):** run the §6.2 ship checklist locally (backfill →
-pipeline → audit → copy → commit), then pick from the "Now" row of the
-sequencing table.
+**Next step (user decision):** run the video review §2 ship checklist locally
+(backfill → pipeline → audit → copy → commit), then pick from the "Now" row of
+the sequencing table.
 
 ## Previous Task: Video Matching — Intra-Family Variation Guard (2026-06-23)
 

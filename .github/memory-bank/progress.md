@@ -2,13 +2,16 @@
 
 ## What's Done (newest first)
 
-- **Project Review — Perf + Features** (2026-07-02): full review vs the
-  learning-resource goal (`docs/reviews/2026-07-02-project-review.md`). Measured
-  baseline (409 kB unsplit bundle, 1.7 MB edge SEO lookup, 5 API calls/detail
-  page, `/all` 24.8 MB still exposed, both test suites green — the "16 broken
-  tests" note was stale). Ranked backlog: ship staged video rematch + trust
-  fixes first, then book-deviation trainer, rating-contextualised stats, family
-  hub pages.
+- **Project Review — Perf + Features + Video Experience** (2026-07-02): full
+  review vs the learning-resource goal, split across
+  `docs/reviews/2026-07-02-project-review.md` (perf P1–P11, ops S1–S4,
+  learner-journey feature ranking, master-games/journey addendum) and
+  `docs/reviews/2026-07-02-video-experience-review.md` (verified the improved
+  video index NEVER shipped — both copies stamped 2026-03-15, old 28.2%/7.9%
+  baseline still live; ship checklist + discovery plan V1–V6 incl. family
+  fallback, embedded player, chapter-level matching). Also found ALL popularity
+  stats dated 2025-07-15 and E2E specs absent from CI; the "16 broken tests"
+  note was stale (716+198 green).
 - **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
   the earlier 28%→71% coverage gain was mostly family-level blanketing (one
   Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard

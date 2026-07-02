@@ -2,6 +2,13 @@
 
 ## What's Done (newest first)
 
+- **Project Review — Perf + Features** (2026-07-02): full review vs the
+  learning-resource goal (`docs/reviews/2026-07-02-project-review.md`). Measured
+  baseline (409 kB unsplit bundle, 1.7 MB edge SEO lookup, 5 API calls/detail
+  page, `/all` 24.8 MB still exposed, both test suites green — the "16 broken
+  tests" note was stale). Ranked backlog: ship staged video rematch + trust
+  fixes first, then book-deviation trainer, rating-contextualised stats, family
+  hub pages.
 - **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
   the earlier 28%→71% coverage gain was mostly family-level blanketing (one
   Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard
@@ -117,4 +124,5 @@
 ## Known Issues
 
 - **React 19 / Testing Library**: Compatibility area to watch during upgrades
-- **16 broken tests**: Deferred during TASK016 design overhaul (to be fixed)
+- ~~16 broken tests~~ — verified stale 2026-07-02: 716 backend + 198 frontend
+  tests all pass

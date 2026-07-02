@@ -304,3 +304,93 @@ The "Now" row is roughly a week of work and closes every known trust-undermining
 defect plus the cheapest performance wins. The "Then" row is where the product
 identity advances: after it, OpeningBook is the only free tool that tells a
 player where their opening play breaks down and trains the fix at their level.
+
+---
+
+## 5. Addendum — master games and the rest of the learning journey
+
+### 5.1 Master games: the missing artefact
+
+Today the product holds **aggregate statistics only** — `popularity_stats.json`
+stores win rates, frequency counts and average rating per position. There is not
+a single actual game anywhere in the product: no game IDs, no player names,
+nothing a learner can replay. Every serious opening resource ends up answering
+"show me this opening played well" — OpeningBook currently can't.
+
+**M1 — Model games on the detail page (small effort, high value).** The free
+Lichess explorer API's masters endpoint (`explorer.lichess.ovh/masters?fen=...`)
+returns `topGames` for any position: game ID, both players with ratings, year,
+and result. Fetch client-side per FEN (same integration pattern, caching, and
+rate-limit budget as the rating-band stats feature 3.2 — build them together),
+render a "Notable games" list of 3–5 entries, and replay each one on the
+existing board (the Lichess game export API returns PGN by ID) or deep-link to
+Lichess. This is the cheapest possible bridge from "I memorised 8 moves" to "I
+watched a strong player convert this structure into a win" — and it complements
+the middlegame bridge (3.6) with zero LLM risk, because the content is real
+games.
+
+**M2 — Notable practitioners (nearly free, same API response).** The `topGames`
+payload names the players; surfacing "recently played by Caruana, Rapport, …" on
+major openings adds identity and credibility to a page (the one thing 365Chess
+does that OpeningBook doesn't). Render-only feature on top of M1's data.
+
+**M3 — Master continuations in practice mode.** When the book line ends, offer
+"continue like a master": play out the next N most common master moves from the
+same endpoint. This is the concrete mechanism for fixing the "Move 1 of 1"
+problem (§2.2) on popular lines, and it makes practice depth proportional to how
+much theory actually exists.
+
+### 5.2 Other learning-journey features worth adding to the backlog
+
+Ranked by impact for the sub-1800 learner against implementation cost:
+
+**J1 — Per-move "why" annotations.** Practice mode currently tests recall but
+never explains purpose — a learner can pass the drill without understanding why
+3.Bb5 attacks the knight that defends e5. One-line annotations per mainline move
+for the top ~500 openings by popularity (LLM-generated, human spot-checked —
+apply the provenance lessons before scaling) turn memorisation into
+comprehension. This is the single biggest content upgrade to the existing
+trainer.
+
+**J2 — Traps and typical tactics per opening.** Disproportionately loved by the
+target audience (trap videos dominate club-level chess YouTube — the matched
+video corpus proves it). A "Traps to know" section: the trap line replayable on
+the board, marked as "you can set this" vs "avoid falling into this". Candidate
+lines can be mined from existing ECO sub-variations whose names mark traps, plus
+engine-validated LLM suggestions. Medium content effort; very high engagement
+value.
+
+**J3 — Paste-a-game post-mortem.** PGN identification already exists on the
+landing page; extend it one step — after identifying the opening, walk the
+game's moves against the ECO index and show _where the player left book_, with a
+link to the correct line's page and practice mode. This is a single-game,
+no-account slice of the deviation trainer (3.1) — shippable earlier, a great
+shareable acquisition hook ("here's where your opening went wrong"), and it
+reuses the exact same book-walk logic, so building it first de-risks 3.1.
+
+**J4 — Progress tracking and streaks.** Mark openings as learning/learned, show
+last-practiced dates and a practice streak. Cheap localStorage state, and it's
+the retention mechanic the review's "open learning loop" finding needs _before_
+full SRS (3.3) exists — SRS then upgrades the same data model from "streak" to
+"due dates".
+
+**J5 — Guided learning paths.** "Your first White repertoire (under 1200)" —
+curated sequences of 8–10 existing opening pages with a progress checkbox per
+step (J4's data model). Mostly editorial work over existing pages; answers
+"where do I start?", which no amount of search quality answers for a genuine
+beginner. Natural companion content for family hubs (3.4).
+
+**J6 — Side-by-side opening comparison.** "Caro-Kann vs French for my style" —
+two detail summaries in one view. A real user question, but lower priority; the
+family hubs + style tags already partially answer it.
+
+### 5.3 Where these slot into the §4 sequence
+
+- **M1/M2 join 3.2** — one Lichess-explorer integration ships both master games
+  and rating-band stats; build them as a single feature.
+- **J3 precedes 3.1** as its thin end-to-end slice; **J4 precedes 3.3** the same
+  way.
+- **M3 merges into the practice-depth work** already listed in "Later".
+- **J1/J2** are enrichment-pipeline projects — schedule them after the
+  variation-level video classification builds the validation tooling.
+- **J5** ships with or right after family hubs (3.4); **J6** stays parked.

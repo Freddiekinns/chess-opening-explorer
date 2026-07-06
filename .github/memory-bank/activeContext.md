@@ -1,42 +1,51 @@
 # Active Context
 
-**Date:** 2026-06-23
+**Date:** 2026-07-02
 
-## Current Task: Video Matching — Intra-Family Variation Guard
+## Current Task: Project Review — Performance + Feature Assessment
 
-**Status:** On `claude/video-pipeline-assessment-0gg422`. Review of the earlier
-fixes found the 28%→71% coverage gain was mostly **family-level blanketing** of
-move-notation pages: one Sicilian video could attach to 1,400+ pages, and
-specific-variation videos (Dragon) landed on sibling pages (Najdorf) — an
-intra-family error the move-prefix guard (e4 vs d4) can't catch.
+**Status:** Complete on `claude/chess-resource-review-xmdqkl` (PR raised).
+Findings split across two docs: `docs/reviews/2026-07-02-project-review.md`
+(perf, ops, feature ranking) and
+`docs/reviews/2026-07-02-video-experience-review.md` (video pipeline state +
+discovery plan V1–V6). No production code changed.
 
-- Deleted dead `runNewMatching()` (unused, had a latent ISO-vs-seconds bug).
-- Added **intra-family variation guard** (`calculateMatchScore`): a family match
-  on a sub-variation page is kept only if the video names that page's variation;
-  generic overviews still cover pages, move-tail pages match on named tokens
-  (ignoring "7.Bb3"), pure move-notation pages keep generics only.
-  `specific_variation_keywords` in `config/video_matching.json`.
-- Verified by offline re-score of the 917 live videos (no DB/key in this env):
-  coverage 67%, top-200 81.5%, #1-specificity **61.9%** (was 36.9%),
-  cross-family **0%**. Strictly dominates the live index on every metric.
-- **Known limitation:** denylist can't catch the long tail (Chekhover, Prins,
-  apostrophe variants); mean fan-out still ~82/video. The real fix is
-  variation-level classification (one-time taxonomy/LLM pass) — recommended next
-  project, also fixes the title-keyword quality gap.
+Key findings (measured, not estimated):
 
-**Decision pending:** ship coverage-first (this guard) vs precision-first
-(disable family blanketing, ~26% coverage but every match exact). Leaning ship.
+- **Perf**: single 409 kB JS chunk (no route splitting; `MiniBoard` drags
+  react-chessboard into the landing bundle); Analyse re-downloads the full 1.6
+  MB search-index every mount (no browser `max-age`, ignores `fields=lookup`);
+  edge middleware fetches a 1.7 MB SEO lookup per cold start; 5 API calls per
+  detail page across 4 functions; `/api/openings/all` (24.8 MB) still exposed
+  with zero client users; `video-index.json` ×2 and a 2-byte
+  `popularity_stats.json` in `packages/api/src/data/`.
+- **Trust leftovers**: **video rematch was NEVER run** — both index copies
+  byte-identical, stamped 2026-03-15; audit shows old baseline (28.2% coverage,
+  7.9% cross-family = 1,577 wrong-family matches live). ALL popularity stats
+  dated 2025-07-15 (~12 months stale). Study title dupes + wrong-family studies
+  unfixed; practice audio files don't exist; OpeningCard still
+  `div role="button"`.
+- **Ops**: 8 Playwright E2E specs never run in CI; no data-freshness automation
+  (doc §1.4 proposes monthly RSS-pipeline GitHub Action + audit auto-PR).
+- **Health**: both suites green (716 + 198) — progress.md's "16 broken tests"
+  was stale, now corrected.
+- **Feature ranking (re-ranked from TASK008)**: book-deviation trainer first
+  (Analyse already imports 500 games — cheap now), then rating-contextualised
+  stats + master games (one Lichess-explorer integration), family hub pages with
+  video shelves, SRS, repertoire v2, middlegame bridge last. The video review
+  adds the discovery plan: family fallback for empty galleries, embedded
+  player + watched state, chapter-level matching (deep-link `?t=` into survey
+  videos).
 
-## Previous Task: Video Pipeline Fixes — Tiers 1 + 2 (2026-06-13)
+**Next step (user decision):** run the video review §2 ship checklist locally
+(backfill → pipeline → audit → copy → commit), then pick from the "Now" row of
+the sequencing table.
 
-Implemented after `docs/reviews/2026-06-13-video-pipeline-assessment.md`:
-move-prefix family compatibility (`opening-families.js`, cross-family 7.9%→0%),
-variation specificity + view/recency tiebreakers, move-notation name matching,
-pre-filter word boundaries, config externalised (`video_matching.json`, channel
-tiers from `youtube_channels.json`), DB persists description/tags
-(+`backfill-views.js`), FEN case-collision fix (`fen-sanitizer.js`), audit
-harness (`scripts/audit-video-matches.js`). Older history in `archive.md`.
+## Previous Task: Video Matching — Intra-Family Variation Guard (2026-06-23)
 
-**To ship the new index (user, locally):**
-`node tools/video-pipeline/scripts/backfill-views.js` →
-`npm run pipeline:rematch` → `node scripts/audit-video-matches.js`.
+On `claude/video-pipeline-assessment-0gg422` (merged as PR #43): intra-family
+variation guard in `calculateMatchScore` — family matches on sub-variation pages
+kept only if the video names that variation; offline re-score: coverage 67%,
+#1-specificity 61.9%, cross-family 0%. Ship via `backfill-views.js` →
+`pipeline:rematch` → `audit-video-matches.js` (user, locally — still pending).
+Older history in `archive.md`.

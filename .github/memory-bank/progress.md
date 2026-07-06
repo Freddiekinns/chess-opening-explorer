@@ -2,6 +2,16 @@
 
 ## What's Done (newest first)
 
+- **Project Review — Perf + Features + Video Experience** (2026-07-02): full
+  review vs the learning-resource goal, split across
+  `docs/reviews/2026-07-02-project-review.md` (perf P1–P11, ops S1–S4,
+  learner-journey feature ranking, master-games/journey addendum) and
+  `docs/reviews/2026-07-02-video-experience-review.md` (verified the improved
+  video index NEVER shipped — both copies stamped 2026-03-15, old 28.2%/7.9%
+  baseline still live; ship checklist + discovery plan V1–V6 incl. family
+  fallback, embedded player, chapter-level matching). Also found ALL popularity
+  stats dated 2025-07-15 and E2E specs absent from CI; the "16 broken tests"
+  note was stale (716+198 green).
 - **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
   the earlier 28%→71% coverage gain was mostly family-level blanketing (one
   Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard
@@ -117,4 +127,5 @@
 ## Known Issues
 
 - **React 19 / Testing Library**: Compatibility area to watch during upgrades
-- **16 broken tests**: Deferred during TASK016 design overhaul (to be fixed)
+- ~~16 broken tests~~ — verified stale 2026-07-02: 716 backend + 198 frontend
+  tests all pass

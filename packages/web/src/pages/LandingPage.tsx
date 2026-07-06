@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from '../components/shared/SearchBar';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
-import { PGNInputModal } from '../components/shared/PGNInputModal';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
+
+// Loaded on first open — the modal's PGN parsing pulls chess.js, which must
+// stay out of the landing bundle (see vite.config manualChunks).
+const PGNInputModal = lazy(() =>
+  import('../components/shared/PGNInputModal').then((m) => ({ default: m.PGNInputModal }))
+);
 
 interface Opening {
   fen: string;
@@ -192,12 +197,16 @@ const LandingPage: React.FC = () => {
         )}
       </div>
 
-      <PGNInputModal
-        isOpen={isPGNModalOpen}
-        onClose={() => setIsPGNModalOpen(false)}
-        onOpeningFound={handlePGNOpeningFound}
-        openingsData={openingsData}
-      />
+      {isPGNModalOpen && (
+        <Suspense fallback={null}>
+          <PGNInputModal
+            isOpen={isPGNModalOpen}
+            onClose={() => setIsPGNModalOpen(false)}
+            onOpeningFound={handlePGNOpeningFound}
+            openingsData={openingsData}
+          />
+        </Suspense>
+      )}
     </main>
   );
 };

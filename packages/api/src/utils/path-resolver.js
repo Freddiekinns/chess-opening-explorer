@@ -105,16 +105,14 @@ class PathResolver {
   }
 
   /**
-   * Get fallback path for API data files
+   * Get path for API data files. `api/data/` is the single canonical data
+   * location in every environment — the old `packages/api/src/data/` mirror
+   * (and its copy-after-regenerate gotcha) is gone.
    * @param {string} filename - Name of the data file
-   * @returns {string} - Path to fallback data file in API directory
+   * @returns {string} - Path to data file in api/data
    */
   getAPIDataPath(filename) {
-    if (this.isVercel) {
-      return joinFromBase(process.cwd(), 'api', 'data', filename);
-    } else {
-      return path.join(__dirname, '../data', filename);
-    }
+    return this.getDataPath(filename);
   }
 }
 

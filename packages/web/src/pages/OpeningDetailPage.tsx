@@ -62,13 +62,9 @@ type Opening = ChessOpening & {
   draw_rate?: number;
 };
 
-const API_ENDPOINTS = {
-  OPENING_BY_FEN: '/api/openings/fen/',
-  VIDEOS_BY_FEN: '/api/openings/videos/',
-  COURSES_BY_FEN: '/api/courses/',
-  STATS_BY_FEN: '/api/stats/',
-  RELATED_BY_FEN: '/api/openings/fen/',
-} as const;
+// Aggregate endpoint: opening + stats + videos + courses + tree in one
+// serverless invocation (was a 5-call fan-out across 4 functions).
+const PAGE_BY_FEN = '/api/openings/page/';
 
 interface PopularityStats {
   games_analyzed?: number;
@@ -83,10 +79,12 @@ type ApiResponse<T> = {
   data: T;
 };
 
-type CoursesResponse = {
-  success: boolean;
-  courses?: Study[];
-  searchLinks?: SearchLinks | null;
+type OpeningPageData = {
+  opening: Opening;
+  stats: PopularityStats | null;
+  videos: Video[];
+  courses: { courses: Study[]; searchLinks: SearchLinks | null } | null;
+  tree: TreeContext | null;
 };
 
 const OpeningDetailPage: React.FC = () => {
@@ -138,61 +136,6 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, []);
 
-  const loadPopularityStats = useCallback(
-    async (fenString: string) => {
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.STATS_BY_FEN}${encodeURIComponent(fenString)}`,
-        'Error loading popularity stats:'
-      )) as ApiResponse<PopularityStats> | null;
-
-      setPopularityStats(data?.data || null);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadVideos = useCallback(
-    async (fenString: string) => {
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
-        'Error loading videos:'
-      )) as ApiResponse<Video[]> | null;
-
-      setVideos(data?.data || []);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadStudies = useCallback(
-    async (fenString: string, openingName: string) => {
-      const encodedFen = encodeURIComponent(fenString);
-      const nameParam = openingName ? `?openingName=${encodeURIComponent(openingName)}` : '';
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.COURSES_BY_FEN}${encodedFen}${nameParam}`,
-        'Error loading studies:'
-      )) as CoursesResponse | null;
-
-      setStudies(data?.courses || []);
-      setSearchLinks(data?.searchLinks || null);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadTreeData = useCallback(
-    async (fenString: string) => {
-      setTreeLoading(true);
-      try {
-        const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/tree`,
-          'Error loading tree data:'
-        )) as ApiResponse<TreeContext> | null;
-        setTreeData(data?.data || null);
-      } finally {
-        setTreeLoading(false);
-      }
-    },
-    [fetchWithErrorHandling]
-  );
-
   const setupGame = useCallback((openingData: Opening) => {
     try {
       const newGame = new Chess();
@@ -237,24 +180,27 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, []);
 
-  const loadOpening = useCallback(
+  const loadPage = useCallback(
     async (fenString: string) => {
       try {
         setLoading(true);
+        setTreeLoading(true);
         setError(null);
 
         const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
-          'Error loading opening:'
-        )) as ApiResponse<Opening> | null;
+          `${PAGE_BY_FEN}${encodeURIComponent(fenString)}`,
+          'Error loading opening page:'
+        )) as ApiResponse<OpeningPageData> | null;
 
-        if (data) {
-          setOpening(data.data);
-          setupGame(data.data);
-          // Fetch additional data (related openings fetched in parallel from useEffect)
-          loadPopularityStats(fenString);
-          loadVideos(fenString);
-          loadStudies(fenString, data.data?.name || '');
+        if (data?.data?.opening) {
+          const page = data.data;
+          setOpening(page.opening);
+          setupGame(page.opening);
+          setPopularityStats(page.stats || null);
+          setVideos(page.videos || []);
+          setStudies(page.courses?.courses || []);
+          setSearchLinks(page.courses?.searchLinks || null);
+          setTreeData(page.tree || null);
         } else {
           setError('Opening not found');
         }
@@ -263,19 +209,17 @@ const OpeningDetailPage: React.FC = () => {
         setError('Failed to load opening');
       } finally {
         setLoading(false);
+        setTreeLoading(false);
       }
     },
-    [fetchWithErrorHandling, loadPopularityStats, loadStudies, loadVideos, setupGame]
+    [fetchWithErrorHandling, setupGame]
   );
 
   useEffect(() => {
     if (fen) {
-      const decodedFen = decodeURIComponent(fen);
-      // Start both fetches in parallel
-      loadOpening(decodedFen);
-      loadTreeData(decodedFen);
+      loadPage(decodeURIComponent(fen));
     }
-  }, [fen, loadOpening, loadTreeData]);
+  }, [fen, loadPage]);
 
   // Auto-scroll move strip to keep active move visible
   useEffect(() => {

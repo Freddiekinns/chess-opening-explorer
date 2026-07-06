@@ -62,18 +62,24 @@ describe('App Component', () => {
     test('should render opening detail page for valid route', async () => {
       // Mock specific API endpoint for opening detail page
       mockFetch.mockImplementation((url: string) => {
-        if (url.includes('/api/openings/fen/')) {
+        if (url.includes('/api/openings/page/')) {
           return Promise.resolve({
             ok: true,
             json: () =>
               Promise.resolve({
                 success: true,
                 data: {
-                  fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
-                  name: "King's Pawn Game",
-                  eco: 'B00',
-                  moves: '1.e4',
-                  src: 'test',
+                  opening: {
+                    fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
+                    name: "King's Pawn Game",
+                    eco: 'B00',
+                    moves: '1.e4',
+                    src: 'test',
+                  },
+                  stats: null,
+                  videos: [],
+                  courses: { courses: [], searchLinks: null },
+                  tree: null,
                 },
               }),
           });

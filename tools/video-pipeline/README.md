@@ -284,12 +284,9 @@ Each file contains the top 10 matched videos for that opening.
 
 Location: `api/data/video-index.json` (consolidated from static files)
 
-**Important:** The API reads from `packages/api/src/data/video-index.json`.
-After regeneration, copy:
-
-```bash
-cp api/data/video-index.json packages/api/src/data/video-index.json
-```
+`api/data/` is the single canonical data location — the API reads the index from
+there in every environment, so regenerating it is enough (the old
+copy-to-`packages/api/src/data/` step is gone).
 
 ### Backfill Views
 

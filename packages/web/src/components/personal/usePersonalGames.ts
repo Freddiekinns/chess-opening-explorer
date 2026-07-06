@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { buildOpeningsMap, lookupOpeningFromPGN, OpeningForLookup } from '../../../../shared/src';
+import type { OpeningForLookup } from '../../../../shared/src';
 import {
   clampInt,
   normalizeUsername,
@@ -185,11 +185,15 @@ export function usePersonalGames(
       const u = normalizeUsername(username);
       const url = `/api/personal/games?platform=${encodeURIComponent(platform)}&username=${encodeURIComponent(u)}&limit=${clamped}`;
 
-      // Games fetch and (first-run) openings-index fetch run in parallel.
-      const [response, openingsData] = await Promise.all([
-        fetch(url, { signal: controller.signal }),
-        getOpeningsData(),
-      ]);
+      // Games fetch, (first-run) openings-index fetch, and the PGN-lookup
+      // module (chess.js lives in its own chunk) all load in parallel — none
+      // of them is paid by visitors who never analyse.
+      const [response, openingsData, { buildOpeningsMap, lookupOpeningFromPGN }] =
+        await Promise.all([
+          fetch(url, { signal: controller.signal }),
+          getOpeningsData(),
+          import('../../../../shared/src'),
+        ]);
       const json = await response.json();
       if (!response.ok || !json?.success) {
         throw new Error(

@@ -34,11 +34,15 @@ class VideoAccessService {
     // Check for consolidated index first (production/Vercel environment)
     if (fs.existsSync(this.consolidatedIndexPath)) {
       try {
-        console.log('📦 Loading consolidated video index...');
+        const loadStart = Date.now();
         const indexContent = fs.readFileSync(this.consolidatedIndexPath, 'utf8');
         this.videoIndex = JSON.parse(indexContent);
         this.useConsolidatedIndex = true;
-        console.log(`✅ Loaded consolidated video index: ${this.videoIndex.totalPositions} positions`);
+        // Cold-start visibility (review P10): the 16 MB video index is a
+        // suspected first-hit cost — measure before optimising.
+        console.warn(
+          `[cold-start] video index parsed in ${Date.now() - loadStart}ms (${this.videoIndex.totalPositions} positions)`
+        );
         return;
       } catch (error) {
         console.warn('Failed to load consolidated video index, falling back to individual files:', error.message);

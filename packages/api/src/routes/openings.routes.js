@@ -3,11 +3,17 @@ const ECOService = require('../services/eco-service');
 const TreeService = require('../services/tree-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
+const CourseService = require('../services/course-service');
+const {
+  getStatsForFen,
+  validatePopularityStats,
+} = require('../services/popularity-stats-service');
 
 const router = express.Router();
 const ecoService = new ECOService();
 const treeService = new TreeService();
 const videoAccessService = new VideoAccessService();
+const courseService = new CourseService();
 
 // Simple in-memory cache for search results
 const searchCache = new Map();
@@ -208,6 +214,73 @@ router.get('/fen/:fen', (req, res) => {
     res.json({
       success: true,
       data: opening,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+});
+
+/**
+ * @route GET /api/openings/page/:fen
+ * @desc Aggregate payload for the opening detail page — opening, stats,
+ *       videos, courses and tree context in ONE serverless invocation.
+ *       Replaces the page's previous 5-call fan-out across 4 functions
+ *       (each with its own cold start); the services are all in-process.
+ * @param {string} fen - FEN string (URL encoded)
+ */
+router.get('/page/:fen', async (req, res) => {
+  try {
+    const { fen } = req.params;
+    const decodedFen = decodeURIComponent(fen);
+
+    const opening = ecoService.getOpeningByFEN(decodedFen);
+    if (!opening) {
+      return res.status(404).json({
+        success: false,
+        error: 'Opening not found for this position',
+      });
+    }
+
+    // Secondary sections are best-effort: a failure in one must not take the
+    // whole page down (mirrors the old behaviour, where each fetch failed
+    // independently on the client).
+    const safe = async (fn, fallback) => {
+      try {
+        const value = await fn();
+        return value === undefined ? fallback : value;
+      } catch {
+        return fallback;
+      }
+    };
+
+    const [stats, videos, courses, tree] = await Promise.all([
+      safe(() => {
+        const s = getStatsForFen(decodedFen);
+        return s && validatePopularityStats(s) ? s : null;
+      }, null),
+      safe(() => videoAccessService.getVideosForPosition(decodedFen), []),
+      safe(async () => {
+        const list = await courseService.getCoursesByFen(decodedFen);
+        return {
+          courses: list,
+          searchLinks: courseService.getSearchLinks(opening.name || null),
+        };
+      }, { courses: [], searchLinks: null }),
+      safe(() => treeService.getTreeContext(decodedFen), null),
+    ]);
+
+    res.json({
+      success: true,
+      data: {
+        opening,
+        stats,
+        videos,
+        courses,
+        tree,
+      },
     });
   } catch (error) {
     res.status(500).json({

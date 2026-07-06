@@ -38,6 +38,17 @@ const createMockAudioResponse = () =>
     arrayBuffer: () => Promise.resolve(new ArrayBuffer(8)),
   });
 
+// The detail page now makes ONE aggregate fetch (/api/openings/page/:fen).
+const createMockPageResponse = (
+  opening: typeof mockPracticeOpening,
+  stats: unknown = null,
+  videos: unknown[] = []
+) =>
+  createMockFetchResponse({
+    success: true,
+    data: { opening, stats, videos, courses: { courses: [], searchLinks: null }, tree: null },
+  });
+
 const renderOpeningDetailPage = (fen: string) => {
   return render(
     <MemoryRouter initialEntries={[`/opening/${encodeURIComponent(fen)}`]}>
@@ -58,29 +69,8 @@ describe('Practice Mode', () => {
       if (url.includes('/sounds/')) {
         return createMockAudioResponse();
       }
-      if (url.includes('/api/openings/fen/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockPracticeOpening,
-        });
-      }
-      if (url.includes('/api/stats/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockStatsData,
-        });
-      }
-      if (url.includes('/api/openings/videos/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockVideoData,
-        });
-      }
-      if (url.includes('/api/openings/search-index')) {
-        return createMockFetchResponse({
-          success: true,
-          data: [],
-        });
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening, mockStatsData, mockVideoData);
       }
       return createMockFetchResponse({ success: true, data: [] });
     });
@@ -288,29 +278,8 @@ describe('Practice Mode - Hint Functionality', () => {
       if (url.includes('/sounds/')) {
         return createMockAudioResponse();
       }
-      if (url.includes('/api/openings/fen/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockPracticeOpening,
-        });
-      }
-      if (url.includes('/api/stats/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockStatsData,
-        });
-      }
-      if (url.includes('/api/openings/videos/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: [],
-        });
-      }
-      if (url.includes('/api/openings/search-index')) {
-        return createMockFetchResponse({
-          success: true,
-          data: [],
-        });
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening, mockStatsData);
       }
       return createMockFetchResponse({ success: true, data: [] });
     });
@@ -350,11 +319,8 @@ describe('Practice Mode - Accessibility', () => {
       if (url.includes('/sounds/')) {
         return createMockAudioResponse();
       }
-      if (url.includes('/api/openings/fen/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockPracticeOpening,
-        });
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening);
       }
       return createMockFetchResponse({ success: true, data: [] });
     });
@@ -401,29 +367,8 @@ describe('Practice Mode - Click-to-Move', () => {
       if (url.includes('/sounds/')) {
         return createMockAudioResponse();
       }
-      if (url.includes('/api/openings/fen/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockPracticeOpening,
-        });
-      }
-      if (url.includes('/api/stats/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: mockStatsData,
-        });
-      }
-      if (url.includes('/api/openings/videos/')) {
-        return createMockFetchResponse({
-          success: true,
-          data: [],
-        });
-      }
-      if (url.includes('/api/openings/search-index')) {
-        return createMockFetchResponse({
-          success: true,
-          data: [],
-        });
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening, mockStatsData);
       }
       return createMockFetchResponse({ success: true, data: [] });
     });

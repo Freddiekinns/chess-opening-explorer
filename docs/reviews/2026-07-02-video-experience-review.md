@@ -63,10 +63,10 @@ That value is sitting in merged code, invisible to every user.
    the API key allows, `npm run pipeline:full` closes the gap completely.)
 3. `node scripts/audit-video-matches.js` — confirm the four metrics moved as
    expected before committing.
-4. `cp api/data/video-index.json packages/api/src/data/video-index.json` — the
-   two-copies gotcha; the API serves the second path.
-5. Commit both copies. Then set up the monthly automation (§4, Freshness) so
-   this never silently rots again.
+4. Commit the regenerated `api/data/video-index.json` (since 2026-07-06 it is
+   the single canonical copy — the old duplicate at `packages/api/src/data/` and
+   its copy step are gone). Then set up the monthly automation (§4, Freshness)
+   so this never silently rots again.
 
 ---
 

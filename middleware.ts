@@ -3,20 +3,36 @@ import { buildSiteUrl, LEGACY_VERCEL_HOST, SITE_NAME } from './packages/web/src/
 type SeoEntry = [name: string, eco: string, moves: string];
 type SeoLookup = Record<string, SeoEntry>;
 
-let seoLookupCache: SeoLookup | null = null;
+// The lookup is sharded into 16 files of ~100 KB by scripts/generate-seo-lookup.js
+// so a request fetches (and caches) only the shard holding its FEN, instead of
+// the full 1.7 MB dataset per edge cold start.
+const SHARD_COUNT = 16;
 
-async function getSeoLookup(origin: string): Promise<SeoLookup> {
-  if (seoLookupCache) return seoLookupCache;
-  try {
-    const res = await fetch(`${origin}/seo-lookup.json`);
-    if (res.ok) {
-      seoLookupCache = (await res.json()) as SeoLookup;
-      return seoLookupCache!;
-    }
-  } catch {
-    // Fall through to empty lookup
+/** djb2 string hash — MUST stay in sync with scripts/generate-seo-lookup.js. */
+function shardForFen(fen: string, shardCount = SHARD_COUNT): number {
+  let hash = 5381;
+  for (let i = 0; i < fen.length; i++) {
+    hash = ((hash << 5) + hash + fen.charCodeAt(i)) | 0;
   }
-  return {};
+  return (hash >>> 0) % shardCount;
+}
+
+const seoShardCache = new Map<number, SeoLookup>();
+
+async function getSeoEntry(origin: string, fen: string): Promise<SeoEntry | undefined> {
+  const shard = shardForFen(fen);
+  let lookup = seoShardCache.get(shard);
+  if (!lookup) {
+    try {
+      const res = await fetch(`${origin}/seo-lookup/${shard.toString(16)}.json`);
+      if (!res.ok) return undefined;
+      lookup = (await res.json()) as SeoLookup;
+      seoShardCache.set(shard, lookup);
+    } catch {
+      return undefined;
+    }
+  }
+  return lookup[fen];
 }
 
 function escapeHtml(str: string): string {
@@ -53,7 +69,7 @@ function buildMetaTags(options: { title: string; description: string; url: strin
 
 export const config = {
   matcher: [
-    '/((?!api/|assets/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup\.json|opening-book-icon\.png).*)',
+    '/((?!api/|assets/|fonts/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup/|opening-book-icon\.png).*)',
   ],
 };
 
@@ -86,8 +102,7 @@ export default async function middleware(request: Request): Promise<Response> {
     const fenEncoded = pathname.slice('/opening/'.length);
     try {
       const fen = decodeURIComponent(fenEncoded);
-      const lookup = await getSeoLookup(url.origin);
-      const entry = lookup[fen];
+      const entry = await getSeoEntry(url.origin, fen);
 
       if (entry) {
         const [name, eco, moves] = entry;

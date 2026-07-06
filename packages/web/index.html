@@ -7,32 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <meta name="google-site-verification" content="FlDgVJJGrvhGAyySulgVBiyqQ1Dg6V1T8sg8og-Aisc" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="google-site-verification" content="FlDgVJJGrvhGAyySulgVBiyqQ1Dg6V1T8sg8og-Aisc" />
     <title>Opening Book — Discover, explore and learn chess openings</title>
     <link rel="canonical" href="https://openingbook.xyz/" />
-    <meta name="description" content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style." />
+    <meta
+      name="description"
+      content="Explore 12,000+ chess openings with videos, studies, win rates, and practice tools. Find the perfect opening for your style."
+    />
     <meta property="og:url" content="https://openingbook.xyz/" />
     <meta property="og:site_name" content="Opening Book" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <style>
-      /* CSS Variables from original design */
+      /* Splash palette — Warm Editorial Dark tokens (mirror simplified.css) */
       :root {
-        --bg-dark: #1a1a1a;
-        --panel-dark: #282828;
-        --content-dark: #3a3a3a;
-        --text-primary: #e0e0e0;
-        --text-secondary: #999999;
-        --accent-blue: #007bff;
-        --accent-green: #28a745;
+        --surface-base: #1a1816;
+        --color-text-primary: #ece8e1;
+        --color-brand-orange: #e85d04;
       }
 
       body {
         margin: 0;
         font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--bg-dark);
-        color: var(--text-primary);
+        background-color: var(--surface-base);
+        color: var(--color-text-primary);
         line-height: 1.6;
       }
 
@@ -45,20 +47,22 @@
         display: inline-block;
         width: 40px;
         height: 40px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
+        border: 3px solid rgba(255, 255, 255, 0.15);
         border-radius: 50%;
-        border-top-color: var(--accent-blue);
+        border-top-color: var(--color-brand-orange);
         animation: spin 1s ease-in-out infinite;
       }
 
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
     <div id="root">
-      <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh">
         <div class="loading-spinner"></div>
       </div>
     </div>

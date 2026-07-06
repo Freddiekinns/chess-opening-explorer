@@ -47,10 +47,14 @@ const mockDashboardData = {
   asBlack: [],
 };
 
+// Lazy loader matching the AnalyseGamesPage contract — the component only
+// calls it when an analysis starts, never on mount.
+const getOpeningsData = async () => mockOpeningsData;
+
 const renderComponent = (prefillUsername = '') =>
   render(
     <MemoryRouter>
-      <PersonalOpeningStats openingsData={mockOpeningsData} prefillUsername={prefillUsername} />
+      <PersonalOpeningStats getOpeningsData={getOpeningsData} prefillUsername={prefillUsername} />
     </MemoryRouter>
   );
 

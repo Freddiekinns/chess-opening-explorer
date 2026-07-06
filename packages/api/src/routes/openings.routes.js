@@ -460,8 +460,9 @@ router.get('/search-index', (req, res) => {
     const { limit, fields } = req.query;
     const isLookupOnly = fields === 'lookup';
 
-    // Check cache first
-    const cacheKey = limit ? `limited_${limit}` : 'full';
+    // Check cache first (fields variant must not collide with the full payload)
+    const baseKey = limit ? `limited_${limit}` : 'full';
+    const cacheKey = isLookupOnly ? `${baseKey}_lookup` : baseKey;
     const now = Date.now();
 
     if (
@@ -531,26 +532,15 @@ router.get('/search-index', (req, res) => {
 
 /**
  * @route GET /api/openings/all
- * @desc Get all openings for client-side search
+ * @desc Retired (TASK011): the 24.8 MB full-dataset payload amplified crawler
+ *       traffic into origin-transfer bills. Use /search-index or /semantic-search.
  */
 router.get('/all', (req, res) => {
-  try {
-    const startTime = Date.now();
-    const allOpenings = ecoService.getAllOpenings();
-    const searchTime = Date.now() - startTime;
-
-    res.json({
-      success: true,
-      data: allOpenings,
-      count: allOpenings.length,
-      searchTime: `${searchTime}ms`,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
+  res.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+  res.status(410).json({
+    success: false,
+    error: 'Gone. Use /api/openings/search-index or /api/openings/semantic-search.',
+  });
 });
 
 /**

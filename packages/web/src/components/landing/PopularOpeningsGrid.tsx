@@ -67,10 +67,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   useEffect(() => {
     const loadFilteredData = async () => {
       try {
-        console.log(
-          `🔍 Loading openings for category: "${selectedCategory}", complexity: "${selectedComplexity || 'all levels'}"`
-        );
-
         // Strategy: Use popular-by-eco API for all scenarios to ensure good coverage
         const params = new URLSearchParams();
         if (selectedComplexity) {
@@ -117,16 +113,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           // Sort by games played (descending order - most popular first)
           deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0));
 
-          console.log(
-            `✅ ${selectedCategory === 'all' ? 'All categories' : `Category "${selectedCategory}"`}: ${deduplicated.length} openings`
-          );
-
           // If we get very few results for a specific category, try the search-index API as fallback
           if (selectedCategory !== 'all' && deduplicated.length < 5) {
-            console.log(
-              `⚠️ Low results for category "${selectedCategory}", trying search-index fallback...`
-            );
-
             const fallbackResponse = await fetch('/api/openings/search-index?limit=500');
             const fallbackData = await fallbackResponse.json();
 
@@ -158,9 +146,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
               );
 
               if (fallbackDeduplicated.length > deduplicated.length) {
-                console.log(
-                  `✅ Fallback successful: ${fallbackDeduplicated.length} openings for category "${selectedCategory}"`
-                );
                 setFilteredOpenings(fallbackDeduplicated);
                 setDisplayLimit(6);
                 return;
@@ -177,16 +162,11 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       }
 
       // Fallback to client-side filtering only if API fails
-      console.log(
-        `🔍 Fallback: Processing ${openings.length} total openings for category: "${selectedCategory}"`
-      );
-
       let filtered = openings;
       if (selectedCategory !== 'all') {
         filtered = openings.filter((opening) => {
           return opening.eco && opening.eco.startsWith(selectedCategory);
         });
-        console.log(`🎯 After filtering for "${selectedCategory}": ${filtered.length} openings`);
       }
 
       // Filter out any openings without valid FEN positions and openings with only 1 move
@@ -195,9 +175,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
         if (countMoves(opening.moves) <= 1) return false;
         return true;
       });
-      console.log(
-        `🎯 After filtering valid FEN positions and multi-move openings: ${filtered.length} openings`
-      );
 
       // Deduplicate openings by FEN
       const uniqueOpenings = filtered.reduce(
@@ -212,13 +189,9 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
       );
 
       const deduplicated = Object.values(uniqueOpenings);
-      console.log(`📊 After deduplication: ${deduplicated.length} unique openings`);
 
       // Sort by games played (descending order - most popular first)
       deduplicated.sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0));
-
-      // Show all valid openings instead of limiting to 6
-      console.log(`✅ Final results for "${selectedCategory}": ${deduplicated.length} openings`);
 
       setFilteredOpenings(deduplicated);
       setDisplayLimit(6); // Reset display limit when filters change

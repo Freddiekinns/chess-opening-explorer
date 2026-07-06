@@ -199,7 +199,7 @@ const OpeningDetailPage: React.FC = () => {
 
       // Check if moves exist and is a string
       if (!openingData.moves || typeof openingData.moves !== 'string') {
-        console.warn('No valid moves found in opening data:', openingData);
+        console.warn('No valid moves found in opening data');
         setGameHistory(['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1']);
         setGame(new Chess());
         setCurrentMoveIndex(0);
@@ -243,15 +243,12 @@ const OpeningDetailPage: React.FC = () => {
         setLoading(true);
         setError(null);
 
-        console.log('Loading opening for FEN:', fenString);
-
         const data = (await fetchWithErrorHandling(
           `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
           'Error loading opening:'
         )) as ApiResponse<Opening> | null;
 
         if (data) {
-          console.log('Opening data loaded from API:', data.data);
           setOpening(data.data);
           setupGame(data.data);
           // Fetch additional data (related openings fetched in parallel from useEffect)

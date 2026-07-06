@@ -183,10 +183,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
       return fulfillJson(route, { success: true, data: testOpenings });
     }
 
-    if (path === '/api/openings/all') {
-      return fulfillJson(route, { success: true, data: testOpenings });
-    }
-
     if (path === '/api/openings/semantic-search' || path === '/api/openings/search') {
       const query = (url.searchParams.get('q') || '').toLowerCase();
       const results = testOpenings.filter((opening) => opening.name.toLowerCase().includes(query));

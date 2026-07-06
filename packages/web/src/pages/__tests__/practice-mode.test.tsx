@@ -458,3 +458,108 @@ describe('Practice Mode - Click-to-Move', () => {
     });
   });
 });
+
+describe('Practice Mode - Popular-continuation extension', () => {
+  // Italian Game line is 5 plies; the tree offers a child two plies deeper
+  // (Giuoco Piano: 3...Bc5 4.c3) — practice should extend into it.
+  const treeWithContinuation = {
+    current: null,
+    ancestors: [],
+    siblings: [],
+    children: [
+      {
+        fen: 'r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
+        name: 'Italian Game: Giuoco Piano',
+        eco: 'C53',
+        move: 'Bc5',
+        moves: '1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3',
+        descendantCount: 10,
+        gamesPlayed: 5000,
+        hasChildren: false,
+      },
+      {
+        fen: 'r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
+        name: 'Italian Game: Two Knights Defense',
+        eco: 'C55',
+        move: 'Nf6',
+        moves: '1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6',
+        descendantCount: 8,
+        gamesPlayed: 3000,
+        hasChildren: false,
+      },
+    ],
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+
+    mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
+      if (url.includes('/api/openings/page/')) {
+        return createMockFetchResponse({
+          success: true,
+          data: {
+            opening: mockPracticeOpening,
+            stats: null,
+            videos: [],
+            courses: { courses: [], searchLinks: null },
+            tree: treeWithContinuation,
+          },
+        });
+      }
+      return createMockFetchResponse({ success: true, data: [] });
+    });
+  });
+
+  test('extends the drill with the most popular book continuation', async () => {
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen);
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument();
+    });
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('Practice'));
+    });
+
+    // Base line is 5 plies (3 white moves); the Giuoco Piano child adds
+    // 2 plies -> 7 plies -> "of 4" move pairs, tagged as a continuation.
+    await waitFor(() => {
+      expect(screen.getByText(/of 4/)).toBeInTheDocument();
+    });
+    expect(screen.getByText('incl. book continuation')).toBeInTheDocument();
+  });
+
+  test('keeps the plain counter when the tree has no children', async () => {
+    mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening);
+      }
+      return createMockFetchResponse({ success: true, data: [] });
+    });
+
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen);
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument();
+    });
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('Practice'));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/of 3/)).toBeInTheDocument();
+    });
+    expect(screen.queryByText('incl. book continuation')).not.toBeInTheDocument();
+  });
+});

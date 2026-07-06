@@ -26,13 +26,11 @@ interface Opening {
 
 interface PopularOpeningsGridProps {
   openings: Opening[];
-  onOpeningSelect: (opening: Opening) => void;
   className?: string;
 }
 
 export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   openings,
-  onOpeningSelect,
   className = '',
 }) => {
   const [filteredOpenings, setFilteredOpenings] = useState<Opening[]>([]);
@@ -287,7 +285,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
             opening={opening}
             showEco={true}
             showBoard={true}
-            onClick={onOpeningSelect}
             className="opening-grid-item"
           />
         ))}

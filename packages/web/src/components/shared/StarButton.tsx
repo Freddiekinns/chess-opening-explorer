@@ -19,6 +19,9 @@ export const StarButton: React.FC<StarButtonProps> = ({
   const px = size === 'sm' ? 16 : 24;
 
   const handleClick = (e: React.MouseEvent) => {
+    // Cards are real links now — a star click must neither bubble to the
+    // card's handler nor trigger the anchor's navigation.
+    e.preventDefault();
     e.stopPropagation();
     setAnimating(true);
     onClick(e);

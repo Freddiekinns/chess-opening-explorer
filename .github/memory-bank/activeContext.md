@@ -1,51 +1,52 @@
 # Active Context
 
-**Date:** 2026-07-02
+**Date:** 2026-07-06
 
-## Current Task: Project Review — Performance + Feature Assessment
+## Current Task: Review Remediation — Perf + Existing-Feature Fixes
 
-**Status:** Complete on `claude/chess-resource-review-xmdqkl` (PR raised).
-Findings split across two docs: `docs/reviews/2026-07-02-project-review.md`
-(perf, ops, feature ranking) and
-`docs/reviews/2026-07-02-video-experience-review.md` (video pipeline state +
-discovery plan V1–V6). No production code changed.
+**Status:** Complete on `claude/chess-resource-review-xmdqkl`. Implements the
+2026-07-02 project review's §1.1–1.3 and §2.2–2.4 (user-selected scope; §2.1
+studies/videos split out for later, §3 new features and §1.4 ops automation
+deliberately not done — §1.4 recommendation: monthly pipeline GitHub Action +
+E2E in CI still worth scheduling).
 
-Key findings (measured, not estimated):
+Shipped (all measured/tested):
 
-- **Perf**: single 409 kB JS chunk (no route splitting; `MiniBoard` drags
-  react-chessboard into the landing bundle); Analyse re-downloads the full 1.6
-  MB search-index every mount (no browser `max-age`, ignores `fields=lookup`);
-  edge middleware fetches a 1.7 MB SEO lookup per cold start; 5 API calls per
-  detail page across 4 functions; `/api/openings/all` (24.8 MB) still exposed
-  with zero client users; `video-index.json` ×2 and a 2-byte
-  `popularity_stats.json` in `packages/api/src/data/`.
-- **Trust leftovers**: **video rematch was NEVER run** — both index copies
-  byte-identical, stamped 2026-03-15; audit shows old baseline (28.2% coverage,
-  7.9% cross-family = 1,577 wrong-family matches live). ALL popularity stats
-  dated 2025-07-15 (~12 months stale). Study title dupes + wrong-family studies
-  unfixed; practice audio files don't exist; OpeningCard still
-  `div role="button"`.
-- **Ops**: 8 Playwright E2E specs never run in CI; no data-freshness automation
-  (doc §1.4 proposes monthly RSS-pipeline GitHub Action + audit auto-PR).
-- **Health**: both suites green (716 + 198) — progress.md's "16 broken tests"
-  was stale, now corrected.
-- **Feature ranking (re-ranked from TASK008)**: book-deviation trainer first
-  (Analyse already imports 500 games — cheap now), then rating-contextualised
-  stats + master games (one Lichess-explorer integration), family hub pages with
-  video shelves, SRS, repertoire v2, middlegame bridge last. The video review
-  adds the discovery plan: family fallback for empty galleries, embedded
-  player + watched state, chapter-level matching (deep-link `?t=` into survey
-  videos).
+- **P1/P2**: route-level code splitting + static MiniBoard (vendored piece SVGs
+  in `pieceSvgs.ts`) — main chunk 409→189 kB; chess stack (112 kB) loads only on
+  detail route / PGN modal / first analysis.
+- **P3**: Analyse loads the search-index lazily at first analysis (was every
+  mount); browser `max-age` on search-index; fixed `fields=lookup` cache-key
+  collision. Note: `fields=lookup` itself is NOT usable by Analyse — the page
+  renders moves + family_id.
+- **P4**: self-hosted variable-font woff2 (public/fonts/, immutable-cached,
+  middleware matcher excludes `fonts/`).
+- **P5/P8**: console.log sweep, on-brand splash; `/api/openings/all` → 410.
+- **P6**: seo-lookup sharded ×16 (~107 kB each); djb2 hash pinned by test in
+  both generator and middleware.
+- **P9**: `GET /api/openings/page/:fen` aggregates opening+stats+videos+
+  courses+tree; detail page makes ONE fetch (was 5 across 4 functions).
+- **P10**: cold-start timing logs (ECO parse, video-index parse).
+- **P11**: `api/data/` is the single canonical data location — removed dup
+  video-index (16 MB) + stub popularity_stats from packages/api/src/data, moved
+  courses.json, dropped pipeline/vercel-prepare copy steps. **The
+  copy-after-regenerate gotcha is gone** (CLAUDE.md updated).
+- **§2.2**: audio fetch path removed (oscillator tones only); hero-cards show
+  full distinguishing lines; family child rows labelled "Main line";
+  PersonalOpeningStats split (862 lines + usePersonalGames/useFamilyRollups/
+  personalStatsLib/OpeningRow/PersonalStatsControls); **practice depth** — short
+  lines extend up to +6 plies into the most popular book continuation via the
+  tree (tagged "incl. book continuation").
+- **§2.3**: OpeningCard/RepertoireSection cards are real `<a>` links (crawlable,
+  middle-click, Space); MiniBoard aria-hidden; detail section headings H3→H2.
+- **§2.4**: "Star any opening" copy, "1 game" pluralisation, mobile filter chips
+  scroll in one row. Footer links stay bundled with family hubs.
 
-**Next step (user decision):** run the video review §2 ship checklist locally
-(backfill → pipeline → audit → copy → commit), then pick from the "Now" row of
-the sequencing table.
+Suites: 52/724 backend, 17/200 frontend, build green.
 
-## Previous Task: Video Matching — Intra-Family Variation Guard (2026-06-23)
+## Previous Task: Project Review (2026-07-02, PR #44 merged)
 
-On `claude/video-pipeline-assessment-0gg422` (merged as PR #43): intra-family
-variation guard in `calculateMatchScore` — family matches on sub-variation pages
-kept only if the video names that variation; offline re-score: coverage 67%,
-#1-specificity 61.9%, cross-family 0%. Ship via `backfill-views.js` →
-`pipeline:rematch` → `audit-video-matches.js` (user, locally — still pending).
-Older history in `archive.md`.
+Two docs: `docs/reviews/2026-07-02-project-review.md` +
+`2026-07-02-video-experience-review.md`. Video rematch still NOT shipped — user
+must run the §2 ship checklist locally (backfill → pipeline → audit → commit; no
+copy step anymore). Older history in `archive.md`.

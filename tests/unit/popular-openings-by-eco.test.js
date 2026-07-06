@@ -30,6 +30,14 @@ jest.mock('../../packages/api/src/services/video-access-service', () => {
   }));
 });
 
+// Mock CourseService (instantiated by the routes module for /page/:fen)
+jest.mock('../../packages/api/src/services/course-service', () => {
+  return jest.fn().mockImplementation(() => ({
+    getCoursesByFen: jest.fn().mockResolvedValue([]),
+    getSearchLinks: jest.fn().mockReturnValue(null),
+  }));
+});
+
 // Now import the router after mocking the dependencies
 const openingsRouter = require('../../packages/api/src/routes/openings.routes');
 const fs = require('fs');

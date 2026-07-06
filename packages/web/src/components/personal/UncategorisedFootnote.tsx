@@ -11,9 +11,10 @@ export const UncategorisedFootnote: React.FC<Props> = ({ summary }) => {
   const pct = Math.round(summary.win_rate * 100);
   const count = summary.variation_count;
   const noun = count === 1 ? 'opening' : 'openings';
+  const gamesNoun = summary.games === 1 ? 'game' : 'games';
   return (
     <p className={styles.footnote}>
-      + {count} uncategorised {noun} · {summary.games} games · {pct}%
+      + {count} uncategorised {noun} · {summary.games} {gamesNoun} · {pct}%
     </p>
   );
 };

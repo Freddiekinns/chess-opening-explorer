@@ -180,16 +180,12 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      <RepertoireSection onOpeningSelect={handleOpeningSelect} />
+      <RepertoireSection />
 
       {/* Popular Openings Grid */}
       <div className="popular-openings-container">
         {dataLoaded && popularOpenings.length > 0 ? (
-          <PopularOpeningsGrid
-            openings={popularOpenings}
-            onOpeningSelect={handleOpeningSelect}
-            className="main-grid"
-          />
+          <PopularOpeningsGrid openings={popularOpenings} className="main-grid" />
         ) : (
           <div className="popular-openings-placeholder">
             {/* Reserved space for Popular Openings to prevent layout shift */}

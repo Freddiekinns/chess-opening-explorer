@@ -8,12 +8,87 @@ const {
   getStatsForFen,
   validatePopularityStats,
 } = require('../services/popularity-stats-service');
+const { FamilyResourceService } = require('../services/family-resource-service');
+const { getVariationWords, titleMentionsVariation } = require('../utils/variation-words');
 
 const router = express.Router();
 const ecoService = new ECOService();
 const treeService = new TreeService();
 const videoAccessService = new VideoAccessService();
 const courseService = new CourseService();
+const familyResourceService = new FamilyResourceService({
+  ecoService,
+  videoAccessService,
+  courseService,
+});
+
+/**
+ * Match-reason annotation (review V2): on sub-variation pages, badge each
+ * exact-position video "variation" (title mentions the variation) or
+ * "family" (background material). Family-root pages get no badge — there is
+ * no variation to cover.
+ */
+function annotateMatchReason(videos, openingName) {
+  const variationWords = getVariationWords(openingName || '');
+  if (variationWords.length === 0) return videos;
+  return videos.map((video) => ({
+    ...video,
+    matchReason: titleMentionsVariation(video.title, variationWords) ? 'variation' : 'family',
+  }));
+}
+
+/**
+ * Videos for a position with family fallback (review V1): exact-position
+ * matches when they exist, otherwise the family's best videos, honestly
+ * attributed via `source` + `family` so the UI can label the shelf.
+ */
+function getVideosWithFallback(fen, openingName) {
+  return videoAccessService.getVideosForPosition(fen).then((exact) => {
+    if (exact.length > 0) {
+      return {
+        videos: annotateMatchReason(exact, openingName),
+        source: 'position',
+        family: null,
+      };
+    }
+
+    const familyId = familyResourceService.getFamilyIdForFen(fen);
+    const familyVideos = familyResourceService.getFamilyVideos(familyId);
+    if (familyVideos.length === 0) {
+      return { videos: [], source: 'none', family: null };
+    }
+
+    const familyMeta = familyResourceService.getFamily(familyId);
+    return {
+      videos: familyVideos.map((video) => ({ ...video, matchReason: 'family' })),
+      source: 'family',
+      family: { id: familyId, name: (familyMeta && familyMeta.display_name) || familyId },
+    };
+  });
+}
+
+/**
+ * Studies for a position with the same family fallback as videos.
+ */
+async function getCoursesWithFallback(fen) {
+  const exact = await courseService.getCoursesByFen(fen);
+  if (exact.length > 0) {
+    return { courses: exact, source: 'position', family: null };
+  }
+
+  const familyId = familyResourceService.getFamilyIdForFen(fen);
+  const familyCourses = await familyResourceService.getFamilyCourses(familyId);
+  if (familyCourses.length === 0) {
+    return { courses: [], source: 'none', family: null };
+  }
+
+  const familyMeta = familyResourceService.getFamily(familyId);
+  return {
+    courses: familyCourses,
+    source: 'family',
+    family: { id: familyId, name: (familyMeta && familyMeta.display_name) || familyId },
+  };
+}
 
 // Simple in-memory cache for search results
 const searchCache = new Map();
@@ -256,19 +331,27 @@ router.get('/page/:fen', async (req, res) => {
       }
     };
 
-    const [stats, videos, courses, tree] = await Promise.all([
+    const [stats, videoResult, courses, tree] = await Promise.all([
       safe(() => {
         const s = getStatsForFen(decodedFen);
         return s && validatePopularityStats(s) ? s : null;
       }, null),
-      safe(() => videoAccessService.getVideosForPosition(decodedFen), []),
-      safe(async () => {
-        const list = await courseService.getCoursesByFen(decodedFen);
-        return {
-          courses: list,
-          searchLinks: courseService.getSearchLinks(opening.name || null),
-        };
-      }, { courses: [], searchLinks: null }),
+      safe(
+        () => getVideosWithFallback(decodedFen, opening.name),
+        { videos: [], source: 'none', family: null }
+      ),
+      safe(
+        async () => {
+          const courseResult = await getCoursesWithFallback(decodedFen);
+          return {
+            courses: courseResult.courses,
+            searchLinks: courseService.getSearchLinks(opening.name || null),
+            source: courseResult.source,
+            family: courseResult.family,
+          };
+        },
+        { courses: [], searchLinks: null, source: 'none', family: null }
+      ),
       safe(() => treeService.getTreeContext(decodedFen), null),
     ]);
 
@@ -277,7 +360,8 @@ router.get('/page/:fen', async (req, res) => {
       data: {
         opening,
         stats,
-        videos,
+        videos: videoResult.videos,
+        videoContext: { source: videoResult.source, family: videoResult.family },
         courses,
         tree,
       },
@@ -668,14 +752,16 @@ router.get('/videos/:fen', async (req, res) => {
     const { fen } = req.params;
     const decodedFen = decodeURIComponent(fen);
 
-    // Get videos for this FEN position
-    const videos = await videoAccessService.getVideosForPosition(decodedFen);
+    const opening = ecoService.getOpeningByFEN(decodedFen);
+    const result = await getVideosWithFallback(decodedFen, opening ? opening.name : '');
 
     res.json({
       success: true,
-      data: videos,
-      count: videos.length,
+      data: result.videos,
+      count: result.videos.length,
       fen: decodedFen,
+      source: result.source,
+      family: result.family,
     });
   } catch (error) {
     console.error('Error fetching videos:', error);

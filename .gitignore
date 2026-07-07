@@ -5,6 +5,10 @@ node_modules/
 *.db
 *.sqlite
 *.sqlite3
+# Exception: the video matcher's catalogue is committed so the monthly
+# video-refresh Action (and any non-local environment) can run the pipeline.
+# Rebuildable from scratch via `npm run pipeline:full`.
+!tools/data/videos.sqlite
 
 # Environment variables
 .env*

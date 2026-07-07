@@ -26,6 +26,31 @@ npm run pipeline:rematch
 node scripts/audit-video-matches.js
 ```
 
+## Monthly automation (`.github/workflows/video-refresh.yml`)
+
+A scheduled GitHub Action runs the incremental pipeline on the 1st of every
+month, audits before/after, and opens a PR carrying the metric diff (it refuses
+to open one if coverage collapses >20%). Two one-time steps enable it:
+
+1. **Commit the matcher database** — the pipeline needs its catalogue and CI has
+   no other way to get it. From the machine that owns it:
+
+   ```bash
+   git add tools/data/videos.sqlite   # .gitignore already carries the exception
+   git commit -m "chore(videos): commit matcher catalogue for CI refreshes"
+   ```
+
+   The DB is a rebuildable cache (`npm run pipeline:full` regenerates it from
+   the YouTube API). SQLite doesn't diff well, so monthly refreshes grow git
+   history by roughly the file size — move it to Git LFS if that becomes a
+   problem.
+
+2. **Add the `YOUTUBE_API_KEY` repository secret** (Settings → Secrets and
+   variables → Actions) so newly discovered videos can be enriched.
+
+Until both are in place the workflow fails fast at its guard steps with a
+message pointing here.
+
 ## Modes
 
 | Mode          | Command                    | Discovery      | API Cost | Use Case                       |

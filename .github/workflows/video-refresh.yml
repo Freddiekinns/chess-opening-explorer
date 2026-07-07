@@ -1,0 +1,124 @@
+name: Video Refresh
+
+# Monthly video-index freshness (video experience review §4 / project review
+# S1): RSS discovery + rematch, audited before/after, delivered as a PR whose
+# body carries the metric diff. RSS mode only sees each channel's ~15 latest
+# uploads, so skipping months turns gaps into permanent misses.
+#
+# Requirements (the run fails fast if either is missing):
+#   - tools/data/videos.sqlite committed to the repo (the matcher's catalogue;
+#     without it the pipeline would regenerate the index from an empty DB and
+#     wipe it). Rebuildable from scratch via `npm run pipeline:full`.
+#   - YOUTUBE_API_KEY repository secret (enrichment of newly discovered videos).
+
+on:
+  schedule:
+    # 06:00 UTC on the 1st of every month
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    name: RSS pipeline + audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Guard — matcher database present
+        run: |
+          if [ ! -f tools/data/videos.sqlite ]; then
+            echo "::error::tools/data/videos.sqlite is not in the repository. The pipeline cannot run in CI without the matcher's catalogue — commit it (see tools/video-pipeline/README.md) or run the refresh locally."
+            exit 1
+          fi
+
+      - name: Guard — YouTube API key configured
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "::error::YOUTUBE_API_KEY secret is not set. Add it in repo settings so newly discovered videos can be enriched."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit — before
+        run: node scripts/audit-video-matches.js --json > /tmp/audit-before.json
+
+      - name: Run incremental pipeline (RSS discovery + rematch)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: npm run pipeline
+
+      - name: Audit — after
+        run: node scripts/audit-video-matches.js --json > /tmp/audit-after.json
+
+      - name: Safety — refuse a collapsed index
+        run: |
+          node -e '
+            const before = require("/tmp/audit-before.json");
+            const after = require("/tmp/audit-after.json");
+            const b = before.coverage.openings_with_videos;
+            const a = after.coverage.openings_with_videos;
+            console.log(`openings with videos: ${b} -> ${a}`);
+            if (a < b * 0.8) {
+              console.error(`::error::Coverage collapsed (${b} -> ${a}); refusing to open a PR. Inspect the pipeline run.`);
+              process.exit(1);
+            }
+          '
+
+      - name: Build metric diff for the PR body
+        run: |
+          node -e '
+            const before = require("/tmp/audit-before.json");
+            const after = require("/tmp/audit-after.json");
+            const row = (label, b, a, suffix = "") =>
+              `| ${label} | ${b}${suffix} | ${a}${suffix} |`;
+            const lines = [
+              "Monthly automated refresh: RSS discovery + rematch (`npm run pipeline`), audited with `scripts/audit-video-matches.js`.",
+              "",
+              "| Metric | Before | After |",
+              "| --- | --- | --- |",
+              row("Openings with videos", before.coverage.openings_with_videos_pct, after.coverage.openings_with_videos_pct, "%"),
+              row("Top-200 played covered", before.coverage.top_played_covered_pct, after.coverage.top_played_covered_pct, "%"),
+              row("#1 video names variation", before.variation_specificity.top1_mentions_variation_pct, after.variation_specificity.top1_mentions_variation_pct, "%"),
+              row("Cross-family contamination", before.cross_family.cross_family_pct, after.cross_family.cross_family_pct, "%"),
+              row("Index age (days)", before.index_age_days, after.index_age_days),
+              "",
+              "Review the diff (especially `api/data/video-index.json` size and the metrics above) before merging.",
+            ];
+            require("fs").writeFileSync("/tmp/pr-body.md", lines.join("\n"));
+          '
+          cat /tmp/pr-body.md
+
+      - name: Open PR with the refreshed index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- api/data/video-index.json tools/data/videos.sqlite; then
+            echo "No index changes this month — nothing to PR."
+            exit 0
+          fi
+          BRANCH="chore/video-refresh-$(date -u +%Y-%m)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add api/data/video-index.json tools/data/videos.sqlite
+          git commit -m "chore(videos): monthly index refresh $(date -u +%Y-%m)"
+          git push -u origin "$BRANCH" --force
+          gh pr create \
+            --title "chore(videos): monthly index refresh $(date -u +%Y-%m)" \
+            --body-file /tmp/pr-body.md \
+            --base main \
+            --head "$BRANCH" || echo "PR already exists for $BRANCH"

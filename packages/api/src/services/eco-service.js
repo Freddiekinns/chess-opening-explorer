@@ -338,10 +338,13 @@ class ECOService {
       // Additional metadata
       src: opening.src,
       scid: opening.scid,
-      
+
       // ECO structure flags
       isEcoRoot: opening.isEcoRoot,
-      
+
+      // Family taxonomy (families.json id) — used for family-level fallbacks
+      family_id: opening.family_id,
+
       // Note: Stats (attribute 5) should be retrieved separately via stats API
       // to maintain separation of concerns
     };

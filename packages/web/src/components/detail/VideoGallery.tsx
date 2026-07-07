@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Video } from '../../../../shared/src/types/video.js';
+import { isVideoWatched, markVideoWatched } from '../../lib/watchedVideos';
 import styles from './VideoGallery.module.css';
 
 // Constants
@@ -14,6 +15,11 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
 } as const;
 
 const INITIAL_DISPLAY_COUNT = 4;
+
+const MATCH_REASON_LABELS: Record<NonNullable<Video['matchReason']>, string> = {
+  variation: 'Covers this variation',
+  family: 'Family overview',
+};
 
 // Types
 interface VideoGalleryProps {
@@ -39,12 +45,11 @@ const formatViews = (views: number): string => {
 };
 
 const formatDate = (dateString: string): string => {
-  try {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', DATE_FORMAT_OPTIONS);
-  } catch {
-    return '';
-  }
+  // An unparseable date doesn't throw — it yields "Invalid Date", which
+  // would render literally, so check validity explicitly.
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toLocaleDateString('en-US', DATE_FORMAT_OPTIONS);
 };
 
 const getHighQualityThumbnail = (thumbnailUrl: string): string => {
@@ -69,41 +74,117 @@ const handleThumbnailError = (event: React.SyntheticEvent<HTMLImageElement, Even
   }
 };
 
+const PlayIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M8 5.5v13l11-6.5z" />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M3 8.5l3.5 3.5L13 4.5" />
+  </svg>
+);
+
 // Components
 interface VideoCardProps {
   video: Video;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ video }) => (
-  <div className={styles.videoCard}>
-    <a href={video.url} target="_blank" rel="noopener noreferrer" className={styles.videoLink}>
-      <div className={styles.thumbnailContainer}>
-        <img
-          src={getHighQualityThumbnail(video.thumbnail)}
-          alt={video.title}
-          className={styles.thumbnail}
-          loading="lazy"
-          onError={handleThumbnailError}
-        />
-        <div className={styles.duration}>{formatDuration(video.duration)}</div>
-      </div>
+/**
+ * Video card with an in-place player (review V3): clicking the thumbnail
+ * swaps in a youtube-nocookie iframe so the learner keeps the board in view
+ * — nothing is loaded from YouTube until playback starts. The title stays an
+ * external link for anyone who prefers watching there. Watched state
+ * persists in localStorage.
+ */
+const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
+  const [playing, setPlaying] = useState(false);
+  const [watched, setWatched] = useState(() => isVideoWatched(video.id));
+
+  const handlePlay = () => {
+    setPlaying(true);
+    markVideoWatched(video.id);
+    setWatched(true);
+  };
+
+  return (
+    <div className={`${styles.videoCard} ${playing ? styles.videoCardPlaying : ''}`}>
+      {playing ? (
+        <div className={styles.playerContainer}>
+          <iframe
+            className={styles.player}
+            src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`}
+            title={video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      ) : (
+        <button
+          type="button"
+          className={styles.thumbnailButton}
+          onClick={handlePlay}
+          aria-label={`Play video: ${video.title}`}
+        >
+          <span className={styles.thumbnailContainer}>
+            <img
+              src={getHighQualityThumbnail(video.thumbnail)}
+              alt=""
+              className={styles.thumbnail}
+              loading="lazy"
+              onError={handleThumbnailError}
+            />
+            <span className={styles.playOverlay}>
+              <PlayIcon />
+            </span>
+            <span className={styles.duration}>{formatDuration(video.duration)}</span>
+          </span>
+        </button>
+      )}
 
       <div className={styles.info}>
-        <h4 className={styles.title} title={video.title}>
-          {video.title}
+        <h4 className={styles.title}>
+          <a
+            href={video.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.titleLink}
+            title={`${video.title} — watch on YouTube`}
+          >
+            {video.title}
+          </a>
         </h4>
         <p className={styles.channel}>{video.channel}</p>
-        <VideoMetadata video={video} />
+        <VideoMetadata video={video} watched={watched} />
+        {video.matchReason && (
+          <span
+            className={`${styles.matchBadge} ${
+              video.matchReason === 'variation' ? styles.matchBadgeVariation : ''
+            }`}
+          >
+            {MATCH_REASON_LABELS[video.matchReason]}
+          </span>
+        )}
       </div>
-    </a>
-  </div>
-);
+    </div>
+  );
+};
 
 interface VideoMetadataProps {
   video: Video;
+  watched: boolean;
 }
 
-const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
+const VideoMetadata: React.FC<VideoMetadataProps> = ({ video, watched }) => {
   const formattedDate = formatDate(video.published);
 
   return (
@@ -114,6 +195,12 @@ const VideoMetadata: React.FC<VideoMetadataProps> = ({ video }) => {
           <span className={styles.metaSeparator}>•</span>
           <span>{formattedDate}</span>
         </>
+      )}
+      {watched && (
+        <span className={styles.watchedChip}>
+          <CheckIcon />
+          Watched
+        </span>
       )}
     </div>
   );

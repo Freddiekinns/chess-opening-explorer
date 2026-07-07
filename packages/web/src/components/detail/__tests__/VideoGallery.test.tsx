@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import VideoGallery from '../../packages/web/src/components/detail/VideoGallery';
-import { Video } from '../../packages/shared/src/types/video';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, beforeEach } from 'vitest';
+import VideoGallery from '../VideoGallery';
+import { Video } from '../../../../../shared/src/types/video';
 
 const mockVideos: Video[] = [
   {
@@ -29,6 +29,10 @@ const mockVideos: Video[] = [
 ];
 
 describe('VideoGallery', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
   it('should render nothing when no videos provided', () => {
     const { container } = render(<VideoGallery videos={[]} />);
     expect(container.firstChild).toBeNull();
@@ -57,7 +61,7 @@ describe('VideoGallery', () => {
     expect(screen.getByText('2.5M views')).toBeInTheDocument();
   });
 
-  it('should create links with correct attributes', () => {
+  it('should keep the title as an external YouTube link', () => {
     render(<VideoGallery videos={mockVideos} />);
 
     const links = screen.getAllByRole('link');
@@ -87,5 +91,63 @@ describe('VideoGallery', () => {
 
     // Should render without the date separator
     expect(screen.queryByText('•')).not.toBeInTheDocument();
+  });
+
+  describe('match-reason badge (review V2)', () => {
+    it('renders "Covers this variation" and "Family overview" badges', () => {
+      const annotated: Video[] = [
+        { ...mockVideos[0], matchReason: 'variation' },
+        { ...mockVideos[1], matchReason: 'family' },
+      ];
+      render(<VideoGallery videos={annotated} />);
+
+      expect(screen.getByText('Covers this variation')).toBeInTheDocument();
+      expect(screen.getByText('Family overview')).toBeInTheDocument();
+    });
+
+    it('renders no badge when matchReason is absent', () => {
+      render(<VideoGallery videos={mockVideos} />);
+      expect(screen.queryByText('Covers this variation')).not.toBeInTheDocument();
+      expect(screen.queryByText('Family overview')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('in-place player + watched state (review V3)', () => {
+    it('swaps the thumbnail for a youtube-nocookie iframe on play', () => {
+      render(<VideoGallery videos={mockVideos} />);
+
+      fireEvent.click(screen.getByRole('button', { name: 'Play video: Test Chess Opening Video' }));
+
+      const iframe = screen.getByTitle('Test Chess Opening Video');
+      expect(iframe.tagName).toBe('IFRAME');
+      expect(iframe).toHaveAttribute(
+        'src',
+        'https://www.youtube-nocookie.com/embed/test-video-1?autoplay=1&rel=0'
+      );
+      // The other card keeps its thumbnail button
+      expect(
+        screen.getByRole('button', { name: 'Play video: Advanced Opening Strategies' })
+      ).toBeInTheDocument();
+    });
+
+    it('marks the video watched in localStorage and shows the chip', () => {
+      render(<VideoGallery videos={mockVideos} />);
+      expect(screen.queryByText('Watched')).not.toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole('button', { name: 'Play video: Test Chess Opening Video' }));
+      expect(screen.getByText('Watched')).toBeInTheDocument();
+
+      const stored = JSON.parse(localStorage.getItem('openingbook:watched-videos') || '{}');
+      expect(Object.keys(stored)).toContain('test-video-1');
+    });
+
+    it('shows the watched chip on mount for previously watched videos', () => {
+      localStorage.setItem(
+        'openingbook:watched-videos',
+        JSON.stringify({ 'test-video-2': Date.now() })
+      );
+      render(<VideoGallery videos={mockVideos} />);
+      expect(screen.getByText('Watched')).toBeInTheDocument();
+    });
   });
 });

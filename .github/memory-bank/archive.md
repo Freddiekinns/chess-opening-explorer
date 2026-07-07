@@ -242,3 +242,71 @@ across 35 suites.
   sessionStorage.
 - **AD-015:** Previous move highlighting (yellow-green) separate from selection
   (bright yellow).
+
+---
+
+## Progress detail trimmed 2026-07-07 (June 2026 entries)
+
+- **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
+  the earlier 28%→71% coverage gain was mostly family-level blanketing (one
+  Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard
+  (`calculateMatchScore` + `specific_variation_keywords` in
+  `config/video_matching.json`): family matches on sub-variation pages are kept
+  only if the video names that page's variation; generics still cover pages;
+  move-tail pages match on named tokens. Deleted dead `runNewMatching()`.
+  Offline re-score of the 917 live videos: coverage 67%, top-200 81.5%,
+  #1-specificity 36.9%→61.9%, cross-family 0%. Denylist can't catch the long
+  tail — real fix is variation-level classification (taxonomy/LLM), the
+  recommended next project.
+- **Video Pipeline Fixes** (2026-06-13): implemented assessment Tiers 1+2 —
+  move-prefix family compatibility (`opening-families.js`, cross-family
+  7.9%→0%), variation-specificity scoring + view/recency tiebreakers (#1
+  specificity 36.9%→57.6%), move-notation name matching (coverage 28.2%→71%),
+  pre-filter word boundaries, weights in `config/video_matching.json`, channel
+  tiers from `youtube_channels.json`, DB persists description/tags, FEN
+  case-collision fix with legacy fallback, `scripts/audit-video-matches.js`
+  harness. Verified by simulated rematch over the 917 live videos. Ship via
+  backfill → rematch.
+- **Video Pipeline Assessment** (2026-06-13): measured live `video-index.json`
+  against ECO + popularity data
+  (`docs/reviews/2026-06-13-video-pipeline-assessment.md`) — provenance strong
+  (allowlist, 94% family accuracy), variation-level matching weak (37% specific
+  #1, 6% cross-family, 85% top-4 score ties, 3-month staleness, word-boundary
+  pre-filter bugs). Tiered fix plan + regression-metric harness proposed; no
+  code changes.
+- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12): traced the
+  design-review "wrong plans" finding to `getECOAnalysis` serving the
+  alphabetically-first record per ECO bucket (95.9% of pages affected, not an
+  LLM-quality issue). Added `scripts/audit-common-plans.js` (provenance +
+  content lint) and `docs/proposals/2026-06-12-common-plans-provenance.md` (fix
+  options + 3-tier evaluation framework).
+- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
+  design critique of home/analyse/opening pages
+  (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical
+  findings — `OpeningCard` no longer fabricates W/D/L stats with `Math.random()`
+  (renders no bar when data is missing), and the home-page search dropdown is no
+  longer painted over/click-blocked by "My repertoire" (`sectionReveal`
+  fill-mode `both` → `backwards`; retained transforms created permanent stacking
+  contexts). Search suggestions now show full distinguishing move lines
+  (tail-truncated) instead of identical 6-token prefixes. Remaining findings +
+  recommendations documented in the review doc.
+- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): fixed four pre-existing CI bugs
+  so `CI` + `Coverage` workflows pass on `main` — broken API lint script path,
+  ESLint/Prettier rule conflict (~110 spurious + 17 real errors), coverage job
+  missing `pull-requests: write`, and codecov badge failing tokenless on
+  protected `main`. Added `families.routes.js` branch tests (88.46% → 90.23%
+  global branches). The "format drift" was a Windows-CRLF mirage; `format:check`
+  was already green on CI.
+- **Opening Family Rollups** (2026-06-06, branch
+  `feature/opening-family-rollups`): Analyse page groups a player's openings by
+  family with an expandable W/D/L distribution-bar row — a shared
+  `DistributionBar` powers both the family and all-openings views. Per-side
+  `Group by family` toggle (default on) + compact `Sort` dropdown; uncategorised
+  openings collapse to a footnote. Built on the Phase-1 28-family taxonomy,
+  build-time `family_id` enrichment (98.45%), and `GET /api/families`. Pre-prod
+  hardening: rollups aggregate over the full classified set (no top-10
+  truncation; cache `v3`→`v4`), unified pure `wins/games` win rate, in-component
+  scroll for long lists, featured cards gated to ≥4 games + "Needs work" by loss
+  rate, `/api/families` retry + slug fallback, 34px mobile tap targets,
+  unrecognised count surfaced. 195 frontend tests, build + format clean.
+  (History in `archive.md`.)

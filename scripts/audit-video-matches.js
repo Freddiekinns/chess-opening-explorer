@@ -30,37 +30,16 @@ const {
   compareFamilies,
 } = require('../tools/video-pipeline/lib/opening-families');
 const { sanitizeFenKey, legacySanitizeFenKey } = require('../packages/api/src/utils/fen-sanitizer');
+const {
+  getVariationWords,
+  titleMentionsVariation,
+} = require('../packages/api/src/utils/variation-words');
 
 const INDEX_PATH = path.join(__dirname, '..', 'api', 'data', 'video-index.json');
 const POPULARITY_PATH = path.join(__dirname, '..', 'api', 'data', 'popularity_stats.json');
 
 const TOP_PLAYED_SAMPLE = 200;
 const DISPLAYED_TOP_N = 4; // VideoGallery's INITIAL_DISPLAY_COUNT
-
-const VARIATION_STOP_WORDS = new Set([
-  'variation',
-  'defense',
-  'defence',
-  'attack',
-  'gambit',
-  'system',
-  'line',
-  'opening',
-  'game',
-  'accepted',
-  'declined',
-]);
-
-function getVariationWords(openingName) {
-  const colonIndex = openingName.indexOf(':');
-  if (colonIndex === -1) return [];
-
-  return openingName
-    .slice(colonIndex + 1)
-    .toLowerCase()
-    .split(/[\s,.-]+/)
-    .filter((word) => word.length > 4 && !/\d/.test(word) && !VARIATION_STOP_WORDS.has(word));
-}
 
 function audit(indexPath = INDEX_PATH) {
   const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
@@ -109,8 +88,7 @@ function audit(indexPath = INDEX_PATH) {
     const variationWords = getVariationWords(name);
     if (variationWords.length > 0) {
       subVariationPages++;
-      const mentions = (video) =>
-        variationWords.some((word) => (video.title || '').toLowerCase().includes(word));
+      const mentions = (video) => titleMentionsVariation(video.title, variationWords);
       if (mentions(videos[0])) top1Specific++;
       if (videos.slice(0, 3).some(mentions)) top3Specific++;
     }

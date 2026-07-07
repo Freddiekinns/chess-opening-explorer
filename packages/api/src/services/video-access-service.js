@@ -330,6 +330,25 @@ class VideoAccessService {
   }
 
   /**
+   * All indexed positions with their videos — used by the family-fallback
+   * aggregation (review V1). Only available in consolidated-index mode;
+   * returns [] in individual-files mode, where callers skip the fallback.
+   * @returns {Array<{fen: string, videos: Array}>}
+   */
+  getAllPositions() {
+    if (!this.useConsolidatedIndex || !this.videoIndex || !this.videoIndex.positions) {
+      return [];
+    }
+
+    return Object.values(this.videoIndex.positions)
+      .filter((position) => position && position.opening && position.opening.id)
+      .map((position) => ({
+        fen: position.opening.id,
+        videos: position.videos || [],
+      }));
+  }
+
+  /**
    * Clear the video cache (useful for testing or after updates)
    */
   clearCache() {

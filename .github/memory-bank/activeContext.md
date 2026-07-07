@@ -2,47 +2,60 @@
 
 **Date:** 2026-07-07
 
-## Current Task: Analyse Dashboard Visual Redesign (on `claude/chess-resource-review-xmdqkl`, PR #45)
+## Current Task: Video Experience V1–V3 (branch `claude/video-experience-v1-v3`)
 
-**Status:** Complete. The results view felt off-brand (flat black expanse, glary
-cream loss bars, mono overload). Fixes:
+**Status:** Complete. Implements the "Next/Then" horizon of
+`docs/reviews/2026-07-02-video-experience-review.md`:
 
-- **New personal-performance tokens** `--color-perf-win/draw/loss` (+`-text`
-  variants): sage / warm grey / muted brick for the player's OWN W/D/L. The
-  chess-thematic result tokens stay reserved for perspective-based stats (cream
-  = White won) — the dashboard had repurposed them as win=amber / loss=cream,
-  making losses the brightest element on the page. Tokens added to BOTH
-  `packages/web/src/styles/simplified.css` and
-  `design-system/project/colors_and_type.css`; SKILL.md hard rule amended;
-  preview card `design-system/project/preview/colors-perf.html` added.
-- **DistributionBar**: slim rounded pills (10px/8px compact, matches detail
-  WinRateBar), in-bar counts removed (tooltip `title` + `role="img"` aria-label
-  carry exact counts), pct row switched mono→DM Sans tabular-nums.
-- **Performance sections carded**: `--surface-raised` + `--border-default` +
-  radius-lg, matching the summary cards / detail containers. On mobile there is
-  no section wrapper, so each FamilyRow becomes a raised card itself (matches
-  the flat-view `.mobileCard` items) — first ship missed this and mobile family
-  rows sat bare on the page background.
-- Warm hovers (`--surface-overlay`/`--surface-elevated` instead of white rgba),
-  settings popover on `--surface-elevated` (was cold grey gradient), card
-  borders tokenised, numerals de-mono'd (mono stays for move sequences),
-  "Top-performing"/"Needs work" labels tinted sage/brick.
+- **V1 — family fallback** (`family-resource-service.js`): when a page has no
+  exact-position videos/studies, `/videos/:fen` and `/page/:fen` return the
+  family's best resources (deduped by video id / study URL, ranked by score then
+  views / likes, capped 8 videos / 6 studies). Response carries
+  `source: 'position'|'family'|'none'` + `family {id, name}`; the page labels
+  the shelf "Videos for the <family>" with a muted attribution note. Family
+  index builds lazily once per process (~0.5 s, then instant).
+- **V2 — match-reason badges**: `matchReason: 'variation'|'family'` per video on
+  sub-variation pages (family-root pages get no badge). Logic extracted to
+  `packages/api/src/utils/variation-words.js`, shared with
+  `scripts/audit-video-matches.js` (audit re-verified: same numbers).
+- **V3 — in-place player + watched**: thumbnail is a play button; clicking swaps
+  in a `youtube-nocookie.com` iframe (nothing loads from YouTube until play).
+  Watched state in localStorage (`lib/watchedVideos.ts`, capped 500); "Watched"
+  chip on cards. Title remains an external YouTube link.
 
-Final polish pass: sort-menu Tab-dismiss (APG) + 44px menu options on mobile;
-removed the dead mobile path in OpeningRow (only ever rendered inside the hidden
-desktop dashboard) and its CSS (`.mobileStats`/`.statCounters`/
-`.accentBar`/`.tabBar`/`.openingSectionMobile`), plus the unused `useCountUp`
-hook + test.
+Also: `tests/unit/VideoGallery.test.tsx` was an orphan (jest only runs
+`*.test.js`, web vitest only scans `packages/web`) — moved to
+`packages/web/src/components/detail/__tests__/` where it actually runs, which
+exposed and fixed a real `formatDate` invalid-date bug.
 
-Suites: 195 frontend (4 fewer = deleted dead-hook tests), lint
-(`--max-warnings 0`) + tsc green. Verified with Playwright screenshots
-(desktop + 390px mobile, mocked analysis, sort menu open).
+Suites: backend 55/739, frontend 17/207, e2e 9/9, lint + tsc + build green.
+Verified against the live index with Playwright (fallback shelf on an empty
+Sicilian page, badges on the Najdorf page, player expansion + watched chip).
 
-## Previous Task: Review Remediation — Perf + Existing-Feature Fixes
+Freshness Action shipped too (`.github/workflows/video-refresh.yml`): monthly
+RSS pipeline + audit + auto-PR with metric diff, guarded against a collapsed
+index. **PR #46 open**; a coverage-gate follow-up commit lifted global branches
+to 90.33%. Safe to merge before the enablement steps — the workflow only runs on
+schedule/dispatch and fails fast at its guards without touching anything.
 
-Complete on same branch (PR #45): review §1.1–1.3 + §2.2–2.4. Main chunk 409→189
-kB, detail page 5 fetches→1 (`/api/openings/page/:fen`), seo-lookup sharded ×16,
-self-hosted fonts, `/all`→410, `api/data/` single data location,
-PersonalOpeningStats split, practice-line extension, accessible card links. §2.1
-studies/videos and §1.4 ops automation deliberately deferred. Older history in
-`archive.md`.
+Note: this PR improves how existing studies are SURFACED (family fallback
+applies to studies too); the studies data itself (discovery runs, curation) is
+untouched.
+
+**What's left (video programme):**
+
+1. User, local: commit `tools/data/videos.sqlite` (gitignore exception is in the
+   PR) and confirm the `YOUTUBE_API_KEY` Actions secret exists — then the
+   monthly Action is live (verify via workflow_dispatch; guards report which
+   piece is missing).
+2. User, local: §2 ship checklist — backfill → `npm run pipeline` → audit →
+   commit index (the single biggest win: 28.2%→~67% coverage, 0% cross-family).
+3. Later: V4 family video shelves (needs family hub pages), V5+V6 taxonomy/
+   LLM + chapter matching (one project), studies data-quality work.
+
+## Previous Task: Analyse Dashboard Visual Redesign (PR #45, merged)
+
+Personal-performance tokens (sage/grey/brick) replacing the misapplied result
+colours, carded performance sections (desktop + mobile family cards), slim
+distribution bars, warm hovers/popovers, sort-menu a11y polish, dead mobile-row
+path removed. Older history in `archive.md`.

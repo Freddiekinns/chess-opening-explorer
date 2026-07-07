@@ -144,6 +144,17 @@ The June work fixed scoring; the remaining structural risks:
   once V4 shelves exist, watch-through behaviour (which videos users actually
   click) becomes the first real feedback signal for tier and weight tuning.
 
+> **Implementation status (2026-07-07):** V1 (family fallback for videos and
+> studies, API + UI), V2 (match-reason badges) and V3 (in-place youtube-nocookie
+> player + localStorage watched state) shipped on
+> `claude/video-experience-v1-v3`, along with the §4 freshness Action
+> (`.github/workflows/video-refresh.yml` — monthly RSS pipeline + audit +
+> auto-PR carrying the metric diff). The Action activates once the repo owner
+> commits `tools/data/videos.sqlite` and sets the `YOUTUBE_API_KEY` secret (see
+> `tools/video-pipeline/README.md`). The §2 ship checklist (backfill → pipeline
+> → audit → commit) still requires the local DB and remains with the repo owner.
+> V4–V6 not started.
+
 ## 5. Suggested sequencing
 
 | Horizon   | Work                                                                                              |

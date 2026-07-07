@@ -24,11 +24,11 @@ test.describe('mobile layout: no horizontal overflow', () => {
     const encodedFen = encodeURIComponent(testOpenings[0].fen);
     await page.goto(`/opening/${encodedFen}`);
 
-    // Wait for the page to fully render (opening name visible)
-    await expect(page.getByRole('heading', { name: testOpenings[0].name })).toBeVisible();
-
-    // Wait for related openings to load (they are the most likely overflow source)
-    await expect(page.getByRole('heading', { name: 'Related Openings' })).toBeVisible();
+    // Wait for the page to fully render (opening name + long-form sections)
+    await expect(
+      page.getByRole('heading', { level: 1, name: testOpenings[0].name, exact: true })
+    ).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Learning resources' })).toBeVisible();
 
     // The critical assertion: document should not be wider than viewport
     const overflow = await page.evaluate(() => {

@@ -13,6 +13,7 @@ import {
   getOpeningMovesDisplay,
   getWinRate,
   sortAgg,
+  readSavedFormState,
   type GroupBy,
   type OpeningAgg,
   type SideTab,
@@ -28,7 +29,6 @@ import {
   SortMenu,
   UserIcon,
 } from './PersonalStatsControls';
-import { readSavedFormState } from './personalStatsLib';
 
 /* ==============================
    MAIN COMPONENT

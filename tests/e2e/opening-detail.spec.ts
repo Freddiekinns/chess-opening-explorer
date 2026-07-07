@@ -6,30 +6,29 @@ test.describe('opening detail', () => {
     await mockApiRoutes(page);
   });
 
-  test('renders tabs, related openings, and practice mode', async ({ page }) => {
+  test('renders sections, tree navigator, and practice mode', async ({ page }) => {
     const encodedFen = encodeURIComponent(testOpenings[0].fen);
     await page.goto(`/opening/${encodedFen}`);
 
-    await expect(page.getByRole('heading', { name: testOpenings[0].name })).toBeVisible();
-
-    await page.getByRole('button', { name: 'Plans' }).click();
-    const activePanel = page.locator('.tab-content-panel.active');
-    await expect(activePanel.getByText('control the center and develop quickly')).toBeVisible();
-
-    await page.getByRole('button', { name: /Studies/ }).click();
-    await expect(activePanel.getByText('Sicilian Defense Essentials')).toBeVisible();
-
-    await page.getByRole('button', { name: /Videos/ }).click();
     await expect(
-      activePanel.getByRole('heading', { name: 'Sicilian Defense Basics' })
+      page.getByRole('heading', { level: 1, name: testOpenings[0].name, exact: true })
     ).toBeVisible();
 
-    const relatedTeaser = page.locator('.left-column .related-teaser').first();
-    await expect(relatedTeaser.getByRole('heading', { name: 'Related Openings' })).toBeVisible();
-    await expect(relatedTeaser.getByText('Sicilian Defense: Alapin')).toBeVisible();
+    // Full-width sections
+    await expect(page.getByRole('heading', { name: 'Common plans' })).toBeVisible();
+    await expect(page.getByText('control the center and develop quickly')).toBeVisible();
 
+    await expect(page.getByRole('heading', { name: 'Learning resources' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Sicilian Defense Basics' })).toBeVisible();
+    await expect(page.getByText('Sicilian Defense Essentials')).toBeVisible();
+
+    // Tree navigator shows sibling lines
+    await expect(page.getByText('Sicilian Defense: Alapin').first()).toBeVisible();
+
+    // Practice mode arms and exits
     await page.getByRole('button', { name: 'Practice' }).click();
-    const practiceControls = page.locator('.practice-controls');
-    await expect(practiceControls.getByRole('button', { name: 'Exit' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Exit' }).first()).toBeVisible();
+    await page.getByRole('button', { name: 'Exit' }).first().click();
+    await expect(page.getByRole('button', { name: 'Practice' })).toBeVisible();
   });
 });

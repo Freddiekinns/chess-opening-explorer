@@ -84,12 +84,9 @@ After running any mode:
 - **Static JSON files**: `public/api/openings/*.json` (one per opening position)
 - **Video Index**: `api/data/video-index.json` (consolidated lookup file)
 
-**Important:** The API reads from `packages/api/src/data/video-index.json`, not
-`api/data/`. After regeneration, copy the index:
-
-```bash
-cp api/data/video-index.json packages/api/src/data/video-index.json
-```
+`api/data/video-index.json` is the single canonical copy — the API reads it
+directly in every environment, so regeneration is enough (the old
+copy-to-`packages/api/src/data/` step was removed 2026-07-06).
 
 ## Channel Configuration
 

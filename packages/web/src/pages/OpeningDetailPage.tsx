@@ -275,7 +275,12 @@ const OpeningDetailPage: React.FC = () => {
     setPracticeLine(base);
 
     const children = treeData?.children;
-    if (base.length === 0 || !children || children.length === 0) return;
+    // Only short lines need depth (the "Move 1 of 1" problem) — longer named
+    // lines are real drills already, and skipping them keeps the tree-walk
+    // fetches off the vast majority of page views.
+    const SHORT_LINE_PLIES = 8;
+    if (base.length === 0 || base.length >= SHORT_LINE_PLIES || !children || children.length === 0)
+      return;
 
     const MAX_EXTENSION_PLIES = 6;
 

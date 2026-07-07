@@ -21,20 +21,22 @@ test.describe('landing page', () => {
 
     const encodedFen = encodeURIComponent(testOpenings[0].fen);
     await expect(page).toHaveURL(new RegExp(`/opening/${encodedFen}`));
-    await expect(page.getByRole('heading', { name: 'Sicilian Defense' })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 1, name: 'Sicilian Defense', exact: true })
+    ).toBeVisible();
   });
 
   test('surprise me selects a random opening', async ({ page }) => {
-    await page.addInitScript(() => {
-      Math.random = () => 0;
-    });
+    // The Surprise me! button lives in the TopBar search, shown on detail pages
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+    await expect(
+      page.getByRole('heading', { level: 1, name: 'Sicilian Defense', exact: true })
+    ).toBeVisible();
 
-    await page.goto('/');
+    await page.getByRole('button', { name: 'Surprise me!' }).click();
 
-    const surpriseButton = page.getByRole('button', { name: 'Surprise me!' });
-    await surpriseButton.click();
-
-    const encodedFen = encodeURIComponent(testOpenings[0].fen);
+    // mockApi's /random returns testOpenings[1]
+    const encodedFen = encodeURIComponent(testOpenings[1].fen);
     await expect(page).toHaveURL(new RegExp(`/opening/${encodedFen}`));
   });
 });

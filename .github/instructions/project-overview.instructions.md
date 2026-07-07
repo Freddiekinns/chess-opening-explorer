@@ -83,7 +83,7 @@ graph TD
 - **Python**: Data analysis, Lichess integration (`tools/analysis/`)
 - **Node.js**: Video discovery (`tools/video-pipeline/`), course discovery
   (`tools/course-discovery/`), LLM enrichment (`tools/llm-enrichment/`)
-- **Data Storage**: JSON files in `packages/api/src/data/`
+- **Data Storage**: JSON files in `api/data/` (single canonical location)
 
 ### External Services
 

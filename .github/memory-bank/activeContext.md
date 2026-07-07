@@ -19,7 +19,10 @@ cream loss bars, mono overload). Fixes:
   WinRateBar), in-bar counts removed (tooltip `title` + `role="img"` aria-label
   carry exact counts), pct row switched mono→DM Sans tabular-nums.
 - **Performance sections carded**: `--surface-raised` + `--border-default` +
-  radius-lg, matching the summary cards / detail containers.
+  radius-lg, matching the summary cards / detail containers. On mobile there is
+  no section wrapper, so each FamilyRow becomes a raised card itself (matches
+  the flat-view `.mobileCard` items) — first ship missed this and mobile family
+  rows sat bare on the page background.
 - Warm hovers (`--surface-overlay`/`--surface-elevated` instead of white rgba),
   settings popover on `--surface-elevated` (was cold grey gradient), card
   borders tokenised, numerals de-mono'd (mono stays for move sequences),

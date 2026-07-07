@@ -1,60 +1,37 @@
 /* Shared win/draw/loss distribution bar. Width is governed by the parent cell
    (140px in desktop rows, 100% when stacked on mobile) — the bar itself fills
-   whatever it is given. */
+   whatever it is given. Slim rounded segments mirror the detail-page stat
+   bars (WinRateBar) so both dashboards share one data-viz language. */
 .bar {
   width: 100%;
 }
 
 .segments {
   display: flex;
-  height: 22px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  gap: 1px;
+  height: 10px;
+  gap: 2px;
 }
 
 .compact .segments {
-  height: 18px;
+  height: 8px;
 }
 
 .segment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 3px;
+  border-radius: var(--radius-full);
+  min-width: var(--space-1);
   transition: width 0.4s ease-out;
 }
 
 .win {
-  background: var(--color-result-black); /* amber */
+  background: var(--color-perf-win); /* sage */
 }
 
 .draw {
-  background: var(--color-result-draw); /* warm grey */
+  background: var(--color-perf-draw); /* warm grey */
 }
 
 .loss {
-  background: var(--color-result-white); /* cream */
-}
-
-.count {
-  font-family: var(--font-family-mono);
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-semibold);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.win .count {
-  color: var(--surface-base);
-}
-
-.draw .count {
-  color: var(--color-text-primary);
-}
-
-.loss .count {
-  color: var(--surface-base);
+  background: var(--color-perf-loss); /* muted brick */
 }
 
 /* Percentages beneath, tinted to match their segment so the row reads fast. */
@@ -62,22 +39,22 @@
   display: flex;
   justify-content: space-between;
   margin-top: var(--space-1);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
   font-size: var(--text-3xs);
   font-weight: var(--font-weight-medium);
   font-variant-numeric: tabular-nums;
 }
 
 .pctWin {
-  color: var(--color-result-black-text); /* amber */
+  color: var(--color-perf-win-text);
 }
 
 .pctDraw {
-  color: var(--color-result-draw-text);
+  color: var(--color-perf-draw-text);
 }
 
 .pctLoss {
-  color: var(--color-result-white-text); /* cream */
+  color: var(--color-perf-loss-text);
 }
 
 @media (prefers-reduced-motion: reduce) {

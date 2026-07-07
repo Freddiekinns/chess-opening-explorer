@@ -131,6 +131,21 @@
   --color-result-on-draw: #dcd8d1; /* Light text on grey bar         */
   --color-result-on-black: #1a1917; /* Dark text on amber bar         */
 
+  /* Personal performance — the player's OWN win/draw/loss (Analyse page).
+     Unlike the perspective-based result colours above (cream = White won),
+     these encode good / neutral / bad: sage for wins, warm grey for draws,
+     muted brick for losses. Warm-tuned so they sit inside the editorial
+     palette — never substitute generic chart green/red. Loss is deliberately
+     dimmer than win so bad results recede rather than glare.               */
+  --color-perf-win: #85a663; /* Sage — your wins               */
+  --color-perf-draw: #5a554e; /* Warm grey — draws              */
+  --color-perf-loss: #a55c51; /* Muted brick — your losses      */
+
+  /* Text labels tinted to match their segment on dark backgrounds        */
+  --color-perf-win-text: #9dbd7c;
+  --color-perf-draw-text: #9b958e;
+  --color-perf-loss-text: #c98579;
+
   /* -----------------------------------------------------------------------
      SPACING — Extended scale for fine-tuning
      ----------------------------------------------------------------------- */

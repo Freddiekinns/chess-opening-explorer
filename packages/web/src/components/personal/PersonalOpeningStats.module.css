@@ -224,12 +224,11 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
-  background: linear-gradient(180deg, rgba(30, 30, 30, 0.98) 0%, rgba(21, 21, 21, 0.98) 100%);
+  background: var(--surface-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
   padding: var(--space-4);
   box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(12px);
   z-index: 20;
   min-width: 232px;
   animation: popoverIn 150ms ease-out;
@@ -243,7 +242,7 @@
   right: 22px;
   width: var(--space-3);
   height: var(--space-3);
-  background: rgba(26, 26, 26, 0.98);
+  background: var(--surface-elevated);
   border-top: 1px solid var(--border-default);
   border-left: 1px solid var(--border-default);
   transform: rotate(45deg);
@@ -714,11 +713,11 @@
 }
 
 .cardLabelWin {
-  color: var(--color-text-secondary);
+  color: var(--color-perf-win-text);
 }
 
 .cardLabelLoss {
-  color: var(--color-text-muted);
+  color: var(--color-perf-loss-text);
 }
 
 .cardTitle {
@@ -838,13 +837,13 @@
 }
 
 .winRateBarWin {
-  background: var(--accent-a12);
+  background: var(--border-subtle);
 }
 
 .winRateBarFillWin {
   height: 100%;
   border-radius: var(--radius-full);
-  background: var(--color-result-black);
+  background: var(--color-perf-win);
   transition: width 0.6s ease-out;
 }
 
@@ -855,7 +854,7 @@
 .winRateBarFillLoss {
   height: 100%;
   border-radius: var(--radius-full);
-  background: var(--border-strong);
+  background: var(--color-perf-loss);
   transition: width 0.6s ease-out;
 }
 
@@ -992,13 +991,20 @@
 .openingSections {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-  margin-top: var(--space-8);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
   animation: sectionReveal 300ms ease-out 200ms backwards;
 }
 
+/* Each performance table lives in a raised card, matching the summary cards
+   above and the detail page's stat containers — not naked rows on the page
+   background. */
 .openingSection {
   min-width: 0;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
 }
 
 .sectionHeader {
@@ -1091,7 +1097,7 @@
 }
 
 .openingRow:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-overlay);
 }
 
 /* Opening name family:variation color split */
@@ -1145,8 +1151,9 @@
 }
 
 .gamesCount {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
   font-size: var(--text-base);
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-secondary);
   min-width: 36px;
   text-align: right;
@@ -1165,7 +1172,8 @@
   align-items: center;
   background: var(--border-subtle);
   color: var(--color-text-muted);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
+  font-variant-numeric: tabular-nums;
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-sm);
@@ -1268,21 +1276,22 @@
 }
 
 .statDotWin {
-  background: var(--color-result-black);
+  background: var(--color-perf-win);
 }
 
 .statDotDraw {
-  background: var(--color-result-draw);
+  background: var(--color-perf-draw);
 }
 
 .statDotLoss {
-  background: var(--color-result-white);
+  background: var(--color-perf-loss);
 }
 
 .statNum {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
   font-size: 14px;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-primary);
   line-height: 1;
 }
@@ -1316,20 +1325,20 @@
 }
 
 .accentWin {
-  background: var(--color-result-black);
+  background: var(--color-perf-win);
   border-radius: 9999px 0 0 9999px;
   min-width: 2px;
   transition: width 0.4s ease-out;
 }
 
 .accentDraw {
-  background: var(--color-result-draw);
+  background: var(--color-perf-draw);
   min-width: 2px;
   transition: width 0.4s ease-out;
 }
 
 .accentLoss {
-  background: var(--color-result-white);
+  background: var(--color-perf-loss);
   border-radius: 0 9999px 9999px 0;
   min-width: 2px;
   transition: width 0.4s ease-out;
@@ -1384,7 +1393,8 @@
 
 .mobileGamesMeta {
   margin-top: var(--space-2);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
+  font-variant-numeric: tabular-nums;
   font-size: var(--text-2xs);
   color: var(--color-text-muted);
 }
@@ -1403,8 +1413,8 @@
   align-items: center;
   padding: var(--space-3) var(--space-2);
   background: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   animation: cardIn 300ms ease-out both;
 }
 
@@ -1419,7 +1429,7 @@
 }
 
 .triStatWin {
-  border-left: 3px solid var(--color-result-black);
+  border-left: 3px solid var(--color-perf-win);
 }
 
 .triStatLabel {
@@ -1448,8 +1458,8 @@
   gap: 4px;
   padding: var(--space-3) var(--space-4);
   background: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   margin-bottom: var(--space-3);
   text-decoration: none;
   color: inherit;
@@ -1474,13 +1484,13 @@
 }
 
 .highlightPillWin {
-  background: var(--accent-a12);
-  color: var(--color-text-secondary);
+  background: color-mix(in srgb, var(--color-perf-win) 15%, transparent);
+  color: var(--color-perf-win-text);
 }
 
 .highlightPillLoss {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--color-text-muted);
+  background: color-mix(in srgb, var(--color-perf-loss) 15%, transparent);
+  color: var(--color-perf-loss-text);
 }
 
 .highlightName {
@@ -1745,8 +1755,8 @@
   gap: var(--space-2);
   padding: var(--space-4);
   background: var(--color-bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
   text-decoration: none;
   color: inherit;
   transition: border-color 150ms ease;
@@ -1790,7 +1800,8 @@
 }
 
 .mobileCardGames {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
+  font-variant-numeric: tabular-nums;
   font-size: 12px;
   font-weight: 600;
   color: var(--color-text-secondary);
@@ -1809,7 +1820,7 @@
 }
 
 .mobileBarWin {
-  background: var(--color-result-black);
+  background: var(--color-perf-win);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
@@ -1819,13 +1830,13 @@
 }
 
 .mobileBarDraw {
-  background: var(--color-result-draw);
+  background: var(--color-perf-draw);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
 
 .mobileBarLoss {
-  background: var(--color-result-white);
+  background: var(--color-perf-loss);
   min-width: 3px;
   transition: width 0.4s ease-out;
 }
@@ -1843,15 +1854,15 @@
 }
 
 .mobileCardPctWin {
-  color: var(--color-text-secondary);
+  color: var(--color-perf-win-text);
 }
 
 .mobileCardPctDraw {
-  color: var(--color-text-muted);
+  color: var(--color-perf-draw-text);
 }
 
 .mobileCardPctLoss {
-  color: var(--color-text-secondary);
+  color: var(--color-perf-loss-text);
 }
 
 /* Show more button */

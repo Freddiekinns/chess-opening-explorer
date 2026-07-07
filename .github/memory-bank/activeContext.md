@@ -28,8 +28,15 @@ cream loss bars, mono overload). Fixes:
   borders tokenised, numerals de-mono'd (mono stays for move sequences),
   "Top-performing"/"Needs work" labels tinted sage/brick.
 
-Suites: 199 frontend, lint (`--max-warnings 0`) + tsc green. Verified with
-Playwright screenshots (desktop + 390px mobile, mocked analysis).
+Final polish pass: sort-menu Tab-dismiss (APG) + 44px menu options on mobile;
+removed the dead mobile path in OpeningRow (only ever rendered inside the hidden
+desktop dashboard) and its CSS (`.mobileStats`/`.statCounters`/
+`.accentBar`/`.tabBar`/`.openingSectionMobile`), plus the unused `useCountUp`
+hook + test.
+
+Suites: 195 frontend (4 fewer = deleted dead-hook tests), lint
+(`--max-warnings 0`) + tsc green. Verified with Playwright screenshots
+(desktop + 390px mobile, mocked analysis, sort menu open).
 
 ## Previous Task: Review Remediation — Perf + Existing-Feature Fixes
 

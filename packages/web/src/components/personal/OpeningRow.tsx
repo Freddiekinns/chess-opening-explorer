@@ -37,9 +37,6 @@ export const OpeningRow: React.FC<{
   index: number;
 }> = ({ opening, platform, username, index }) => {
   const delay = Math.min(index * 30, 300);
-  const wPct = opening.games > 0 ? (opening.win / opening.games) * 100 : 0;
-  const dPct = opening.games > 0 ? (opening.draw / opening.games) * 100 : 0;
-  const lPct = opening.games > 0 ? (opening.loss / opening.games) * 100 : 0;
   const openingMoves = getOpeningMovesDisplay(opening.moves);
 
   return (
@@ -53,7 +50,8 @@ export const OpeningRow: React.FC<{
         {openingMoves && <span className={styles.openingMoves}>{openingMoves}</span>}
       </div>
 
-      {/* Desktop: inline GP + bar */}
+      {/* Desktop: inline GP + bar (this row only renders in the desktop
+          dashboard — the mobile dashboard uses FamilyRow / .mobileCard) */}
       <div className={styles.openingRowRight}>
         <span className={styles.gamesCount}>{opening.games}</span>
         <span className={styles.distBar}>
@@ -64,35 +62,6 @@ export const OpeningRow: React.FC<{
             games={opening.games}
           />
         </span>
-      </div>
-
-      {/* Mobile: stat counters + accent bar */}
-      <div className={styles.mobileStats}>
-        <div className={styles.statCounters}>
-          <span className={styles.statChip}>
-            <span className={styles.statDot + ' ' + styles.statDotWin} />
-            <span className={styles.statNum}>{opening.win}</span>
-            <span className={styles.statLabel}>W</span>
-          </span>
-          <span className={styles.statChip}>
-            <span className={styles.statDot + ' ' + styles.statDotDraw} />
-            <span className={styles.statNum}>{opening.draw}</span>
-            <span className={styles.statLabel}>D</span>
-          </span>
-          <span className={styles.statChip}>
-            <span className={styles.statDot + ' ' + styles.statDotLoss} />
-            <span className={styles.statNum}>{opening.loss}</span>
-            <span className={styles.statLabel}>L</span>
-          </span>
-          <span className={styles.statGames}>{opening.games} games</span>
-        </div>
-        {opening.games > 0 && (
-          <div className={styles.accentBar}>
-            {wPct > 0 && <div className={styles.accentWin} style={{ width: `${wPct}%` }} />}
-            {dPct > 0 && <div className={styles.accentDraw} style={{ width: `${dPct}%` }} />}
-            {lPct > 0 && <div className={styles.accentLoss} style={{ width: `${lPct}%` }} />}
-          </div>
-        )}
       </div>
     </Link>
   );

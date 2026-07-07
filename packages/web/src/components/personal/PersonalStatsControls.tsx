@@ -175,6 +175,10 @@ export const SortMenu: React.FC<{
     } else if (e.key === 'Escape') {
       e.preventDefault();
       close();
+    } else if (e.key === 'Tab') {
+      // APG menu pattern: tabbing out dismisses the menu; let focus move on
+      // naturally rather than snapping back to the trigger.
+      close(false);
     }
   };
 

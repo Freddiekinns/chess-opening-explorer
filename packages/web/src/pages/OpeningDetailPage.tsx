@@ -18,7 +18,7 @@ import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lu
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
 import { StarButton } from '../components/shared/StarButton';
-import type { TreeContext } from '../hooks/useOpeningTree';
+import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildSiteUrl, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
 
 // Use ChessOpening type from shared
@@ -62,13 +62,9 @@ type Opening = ChessOpening & {
   draw_rate?: number;
 };
 
-const API_ENDPOINTS = {
-  OPENING_BY_FEN: '/api/openings/fen/',
-  VIDEOS_BY_FEN: '/api/openings/videos/',
-  COURSES_BY_FEN: '/api/courses/',
-  STATS_BY_FEN: '/api/stats/',
-  RELATED_BY_FEN: '/api/openings/fen/',
-} as const;
+// Aggregate endpoint: opening + stats + videos + courses + tree in one
+// serverless invocation (was a 5-call fan-out across 4 functions).
+const PAGE_BY_FEN = '/api/openings/page/';
 
 interface PopularityStats {
   games_analyzed?: number;
@@ -83,10 +79,12 @@ type ApiResponse<T> = {
   data: T;
 };
 
-type CoursesResponse = {
-  success: boolean;
-  courses?: Study[];
-  searchLinks?: SearchLinks | null;
+type OpeningPageData = {
+  opening: Opening;
+  stats: PopularityStats | null;
+  videos: Video[];
+  courses: { courses: Study[]; searchLinks: SearchLinks | null } | null;
+  tree: TreeContext | null;
 };
 
 const OpeningDetailPage: React.FC = () => {
@@ -138,68 +136,13 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, []);
 
-  const loadPopularityStats = useCallback(
-    async (fenString: string) => {
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.STATS_BY_FEN}${encodeURIComponent(fenString)}`,
-        'Error loading popularity stats:'
-      )) as ApiResponse<PopularityStats> | null;
-
-      setPopularityStats(data?.data || null);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadVideos = useCallback(
-    async (fenString: string) => {
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.VIDEOS_BY_FEN}${encodeURIComponent(fenString)}`,
-        'Error loading videos:'
-      )) as ApiResponse<Video[]> | null;
-
-      setVideos(data?.data || []);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadStudies = useCallback(
-    async (fenString: string, openingName: string) => {
-      const encodedFen = encodeURIComponent(fenString);
-      const nameParam = openingName ? `?openingName=${encodeURIComponent(openingName)}` : '';
-      const data = (await fetchWithErrorHandling(
-        `${API_ENDPOINTS.COURSES_BY_FEN}${encodedFen}${nameParam}`,
-        'Error loading studies:'
-      )) as CoursesResponse | null;
-
-      setStudies(data?.courses || []);
-      setSearchLinks(data?.searchLinks || null);
-    },
-    [fetchWithErrorHandling]
-  );
-
-  const loadTreeData = useCallback(
-    async (fenString: string) => {
-      setTreeLoading(true);
-      try {
-        const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.RELATED_BY_FEN}${encodeURIComponent(fenString)}/tree`,
-          'Error loading tree data:'
-        )) as ApiResponse<TreeContext> | null;
-        setTreeData(data?.data || null);
-      } finally {
-        setTreeLoading(false);
-      }
-    },
-    [fetchWithErrorHandling]
-  );
-
   const setupGame = useCallback((openingData: Opening) => {
     try {
       const newGame = new Chess();
 
       // Check if moves exist and is a string
       if (!openingData.moves || typeof openingData.moves !== 'string') {
-        console.warn('No valid moves found in opening data:', openingData);
+        console.warn('No valid moves found in opening data');
         setGameHistory(['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1']);
         setGame(new Chess());
         setCurrentMoveIndex(0);
@@ -237,27 +180,27 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, []);
 
-  const loadOpening = useCallback(
+  const loadPage = useCallback(
     async (fenString: string) => {
       try {
         setLoading(true);
+        setTreeLoading(true);
         setError(null);
 
-        console.log('Loading opening for FEN:', fenString);
-
         const data = (await fetchWithErrorHandling(
-          `${API_ENDPOINTS.OPENING_BY_FEN}${encodeURIComponent(fenString)}`,
-          'Error loading opening:'
-        )) as ApiResponse<Opening> | null;
+          `${PAGE_BY_FEN}${encodeURIComponent(fenString)}`,
+          'Error loading opening page:'
+        )) as ApiResponse<OpeningPageData> | null;
 
-        if (data) {
-          console.log('Opening data loaded from API:', data.data);
-          setOpening(data.data);
-          setupGame(data.data);
-          // Fetch additional data (related openings fetched in parallel from useEffect)
-          loadPopularityStats(fenString);
-          loadVideos(fenString);
-          loadStudies(fenString, data.data?.name || '');
+        if (data?.data?.opening) {
+          const page = data.data;
+          setOpening(page.opening);
+          setupGame(page.opening);
+          setPopularityStats(page.stats || null);
+          setVideos(page.videos || []);
+          setStudies(page.courses?.courses || []);
+          setSearchLinks(page.courses?.searchLinks || null);
+          setTreeData(page.tree || null);
         } else {
           setError('Opening not found');
         }
@@ -266,19 +209,17 @@ const OpeningDetailPage: React.FC = () => {
         setError('Failed to load opening');
       } finally {
         setLoading(false);
+        setTreeLoading(false);
       }
     },
-    [fetchWithErrorHandling, loadPopularityStats, loadStudies, loadVideos, setupGame]
+    [fetchWithErrorHandling, setupGame]
   );
 
   useEffect(() => {
     if (fen) {
-      const decodedFen = decodeURIComponent(fen);
-      // Start both fetches in parallel
-      loadOpening(decodedFen);
-      loadTreeData(decodedFen);
+      loadPage(decodeURIComponent(fen));
     }
-  }, [fen, loadOpening, loadTreeData]);
+  }, [fen, loadPage]);
 
   // Auto-scroll move strip to keep active move visible
   useEffect(() => {
@@ -320,8 +261,87 @@ const OpeningDetailPage: React.FC = () => {
       .filter((move) => move.trim() !== '' && !move.includes('.'));
   }, [opening]);
 
+  // ── Practice-line extension ──
+  // Short named lines ("Move 1 of 1") extend into the most popular book
+  // continuations from the opening tree, turning stub-depth pages into real
+  // training. The extended line is computed ahead of time and snapshotted at
+  // practice start, so a drill never changes underneath the learner.
+  const [practiceLine, setPracticeLine] = useState<string[]>([]);
+  const [activePracticeLine, setActivePracticeLine] = useState<string[]>([]);
+
+  useEffect(() => {
+    let alive = true;
+    const base = getMovesList();
+    setPracticeLine(base);
+
+    const children = treeData?.children;
+    // Only short lines need depth (the "Move 1 of 1" problem) — longer named
+    // lines are real drills already, and skipping them keeps the tree-walk
+    // fetches off the vast majority of page views.
+    const SHORT_LINE_PLIES = 8;
+    if (base.length === 0 || base.length >= SHORT_LINE_PLIES || !children || children.length === 0)
+      return;
+
+    const MAX_EXTENSION_PLIES = 6;
+
+    const parsePlies = (moves: string): string[] =>
+      moves
+        .replace(/\d+\./g, '')
+        .split(/\s+/)
+        .filter((m) => m.trim() !== '' && !m.includes('.'));
+
+    const pickBest = (nodes: TreeNode[]): TreeNode | undefined =>
+      [...nodes].sort(
+        (a, b) =>
+          (b.gamesPlayed || 0) - (a.gamesPlayed || 0) ||
+          (b.descendantCount || 0) - (a.descendantCount || 0)
+      )[0];
+
+    const isLegalLine = (plies: string[]): boolean => {
+      try {
+        const g = new Chess();
+        for (const ply of plies) {
+          if (!g.move(ply)) return false;
+        }
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    (async () => {
+      let line = base;
+      let candidates: TreeNode[] = children;
+      while (alive && line.length - base.length < MAX_EXTENSION_PLIES) {
+        const best = pickBest(candidates);
+        if (!best) break;
+        const childPlies = parsePlies(best.moves || '');
+        if (childPlies.length <= line.length || !isLegalLine(childPlies)) break;
+        line = childPlies;
+        if (line.length - base.length >= MAX_EXTENSION_PLIES || !best.hasChildren) break;
+        try {
+          const res = await fetch(
+            `/api/openings/fen/${encodeURIComponent(best.fen)}/tree/children`
+          );
+          const json = await res.json();
+          if (!json?.success || !json.data?.children?.length) break;
+          candidates = json.data.children as TreeNode[];
+        } catch {
+          break;
+        }
+      }
+      if (alive) setPracticeLine(line.slice(0, base.length + MAX_EXTENSION_PLIES));
+    })();
+
+    return () => {
+      alive = false;
+    };
+  }, [getMovesList, treeData]);
+
   // Practice mode functions
   const startPractice = useCallback(() => {
+    const line = practiceLine.length > 0 ? practiceLine : getMovesList();
+    setActivePracticeLine(line);
     const newGame = new Chess();
     setPracticeGame(newGame);
     setPracticeIndex(0);
@@ -337,11 +357,10 @@ const OpeningDetailPage: React.FC = () => {
 
     // If playing as black, auto-play white's first move
     if (practiceColor === 'black') {
-      const movesArray = getMovesList();
-      if (movesArray.length > 0) {
+      if (line.length > 0) {
         setTimeout(() => {
           const tempGame = new Chess();
-          const move = tempGame.move(movesArray[0]);
+          const move = tempGame.move(line[0]);
           if (move) {
             setPracticeGame(new Chess(tempGame.fen()));
             setPracticeIndex(1);
@@ -352,7 +371,7 @@ const OpeningDetailPage: React.FC = () => {
         }, 400);
       }
     }
-  }, [practiceColor, getMovesList, playAudio]);
+  }, [practiceColor, practiceLine, getMovesList, playAudio]);
 
   const exitPractice = useCallback(() => {
     if (autoPlayTimeoutRef.current) {
@@ -380,10 +399,9 @@ const OpeningDetailPage: React.FC = () => {
   }, [practiceGame, practiceColor]);
 
   const getExpectedMove = useCallback((): string | null => {
-    const movesArray = getMovesList();
-    if (practiceIndex >= movesArray.length) return null;
-    return movesArray[practiceIndex];
-  }, [getMovesList, practiceIndex]);
+    if (practiceIndex >= activePracticeLine.length) return null;
+    return activePracticeLine[practiceIndex];
+  }, [activePracticeLine, practiceIndex]);
 
   const getHintSquare = useCallback((): string | null => {
     if (!practiceGame) return null;
@@ -404,7 +422,7 @@ const OpeningDetailPage: React.FC = () => {
     (move: Move) => {
       if (!practiceGame) return;
 
-      const movesArray = getMovesList();
+      const movesArray = activePracticeLine;
       const newIndex = practiceIndex + 1;
 
       // Update game state with the move
@@ -454,7 +472,7 @@ const OpeningDetailPage: React.FC = () => {
         }
       }
     },
-    [practiceGame, practiceIndex, practiceColor, getMovesList, playAudio]
+    [practiceGame, practiceIndex, practiceColor, activePracticeLine, playAudio]
   );
 
   const handleIncorrectMove = useCallback(() => {
@@ -870,7 +888,8 @@ const OpeningDetailPage: React.FC = () => {
                             setPracticeColor('black');
                             if (practiceMode) {
                               const newGame = new Chess();
-                              const movesArray = getMovesList();
+                              const movesArray =
+                                activePracticeLine.length > 0 ? activePracticeLine : getMovesList();
                               if (movesArray.length > 0) {
                                 const move = newGame.move(movesArray[0]);
                                 if (move) {
@@ -897,7 +916,15 @@ const OpeningDetailPage: React.FC = () => {
                       ) : (
                         <span className={practiceStyles.counter}>
                           Move {Math.floor(practiceIndex / 2) + 1} of{' '}
-                          {Math.ceil(getMovesList().length / 2)}
+                          {Math.ceil(activePracticeLine.length / 2)}
+                          {activePracticeLine.length > getMovesList().length && (
+                            <span
+                              className={practiceStyles.extensionTag}
+                              title="The named line is extended with the most popular book continuation"
+                            >
+                              incl. book continuation
+                            </span>
+                          )}
                         </span>
                       )}
                     </div>
@@ -944,7 +971,8 @@ const OpeningDetailPage: React.FC = () => {
                         setPracticeColor('black');
                         if (practiceMode) {
                           const newGame = new Chess();
-                          const movesArray = getMovesList();
+                          const movesArray =
+                            activePracticeLine.length > 0 ? activePracticeLine : getMovesList();
                           if (movesArray.length > 0) {
                             const move = newGame.move(movesArray[0]);
                             if (move) {
@@ -971,7 +999,7 @@ const OpeningDetailPage: React.FC = () => {
                     ) : (
                       <span className={practiceStyles.mobileCounter}>
                         Move {Math.floor(practiceIndex / 2) + 1}/
-                        {Math.ceil(getMovesList().length / 2)}
+                        {Math.ceil(activePracticeLine.length / 2)}
                       </span>
                     )}
                   </div>
@@ -1164,7 +1192,7 @@ const OpeningDetailPage: React.FC = () => {
         {/* Plans */}
         {commonPlans.length > 0 && (
           <div className={styles.stackedSection}>
-            <h3 className={styles.sectionHeading}>Common plans</h3>
+            <h2 className={styles.sectionHeading}>Common plans</h2>
             <CommonPlans plans={commonPlans} layout="structured" hideTitle />
           </div>
         )}
@@ -1173,7 +1201,7 @@ const OpeningDetailPage: React.FC = () => {
         {(videos.length > 0 || studies.length > 0 || searchLinks) && (
           <div className={styles.stackedSection}>
             <div className={styles.sectionHeader}>
-              <h3 className={styles.sectionHeading}>Learning resources</h3>
+              <h2 className={styles.sectionHeading}>Learning resources</h2>
               {searchLinks && (
                 <div className={styles.searchPills}>
                   <a

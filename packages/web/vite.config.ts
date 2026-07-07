@@ -27,8 +27,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          // jsx-runtime listed explicitly — without it Rollup hoists it into
+          // whichever chunk loads first, chaining every route to that chunk.
+          vendor: ['react', 'react-dom', 'react/jsx-runtime'],
           router: ['react-router-dom'],
+          // Interactive board stack — only the opening detail route imports
+          // these (MiniBoard thumbnails use vendored SVGs, not this chunk).
+          chess: ['chess.js', 'react-chessboard'],
         },
       },
     },

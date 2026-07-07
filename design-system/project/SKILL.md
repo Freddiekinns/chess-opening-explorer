@@ -47,4 +47,8 @@ Hard rules:
 - Never colour-shift to orange on hover. Hover on cards: orange border + 1px
   ring + lift -2px. Hover on text: secondary → primary.
 - Result colours (`#d4cfc7` / `#5a554e` / `#c08840`) are mandatory for
-  win/draw/loss; do not substitute generic chart palettes.
+  perspective-based win/draw/loss (White wins / draw / Black wins — opening
+  statistics). For a player's _own_ results (the Analyse dashboard W/D/L), use
+  the personal-performance tokens `--color-perf-*` (sage win / warm-grey draw /
+  muted-brick loss) — loss is deliberately dimmer than win so bad results
+  recede. Never substitute generic chart palettes for either.

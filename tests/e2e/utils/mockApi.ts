@@ -172,18 +172,40 @@ function buildRelatedData(siblingCount: number) {
   };
 }
 
+/** Convert related-data entries into the tree-service node shape. */
+function toTreeNode(entry: {
+  fen: string;
+  name: string;
+  eco: string;
+  moves: string;
+  games_analyzed?: number;
+}) {
+  return {
+    fen: entry.fen,
+    name: entry.name,
+    eco: entry.eco,
+    move: entry.moves.split(' ').pop() || '',
+    moves: entry.moves,
+    descendantCount: 0,
+    gamesPlayed: entry.games_analyzed || 0,
+    hasChildren: false,
+  };
+}
+
 export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
   const { relatedSiblingCount = 1 } = options;
   const relatedData = buildRelatedData(relatedSiblingCount);
+  const treeContext = {
+    current: toTreeNode(relatedData.current),
+    ancestors: [],
+    siblings: relatedData.siblings.map(toTreeNode),
+    children: [],
+  };
   await page.route('**/api/**', async (route) => {
     const url = new URL(route.request().url());
     const path = url.pathname;
 
     if (path === '/api/openings/search-index') {
-      return fulfillJson(route, { success: true, data: testOpenings });
-    }
-
-    if (path === '/api/openings/all') {
       return fulfillJson(route, { success: true, data: testOpenings });
     }
 
@@ -198,12 +220,41 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
       });
     }
 
+    if (path === '/api/openings/random') {
+      return fulfillJson(route, { success: true, data: testOpenings[1] });
+    }
+
     if (path === '/api/openings/popular-by-eco') {
       const complexity = url.searchParams.get('complexity');
       const openings = complexity
         ? testOpenings.filter((opening) => opening.analysis_json?.complexity === complexity)
         : testOpenings;
       return fulfillJson(route, { success: true, data: buildPopularByEco(openings) });
+    }
+
+    // Aggregate detail-page payload (the page's single fetch since P9)
+    if (path.startsWith('/api/openings/page/')) {
+      const fen = decodeURIComponent(path.replace('/api/openings/page/', ''));
+      const opening = testOpenings.find((entry) => entry.fen === fen);
+      if (!opening) {
+        return fulfillJson(route, { success: false, error: 'Opening not found' }, 404);
+      }
+      return fulfillJson(route, {
+        success: true,
+        data: {
+          opening,
+          stats: testStats,
+          videos: testVideos,
+          courses: {
+            courses: testStudies,
+            searchLinks: {
+              lichess: 'https://lichess.org/study',
+              chessable: 'https://www.chessable.com',
+            },
+          },
+          tree: treeContext,
+        },
+      });
     }
 
     if (path.startsWith('/api/openings/fen/') && path.endsWith('/related')) {

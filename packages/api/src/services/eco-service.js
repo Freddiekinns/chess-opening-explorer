@@ -81,6 +81,7 @@ class ECOService {
         return this.mergedData;
       }
 
+      const loadStart = Date.now();
       const mergedData = {};
       
       for (const filename of this.ecoFiles) {
@@ -100,6 +101,11 @@ class ECOService {
       }
       
       this.mergedData = mergedData;
+      // Cold-start visibility (review P10): parsing ~30 MB of ECO JSON is the
+      // suspected dominant first-hit cost — measure before optimising.
+      console.warn(
+        `[cold-start] ECO data parsed in ${Date.now() - loadStart}ms (${Object.keys(mergedData).length} positions)`
+      );
       return mergedData;
     }, 3600000); // Cache for 1 hour
   }  /**

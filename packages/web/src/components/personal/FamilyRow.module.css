@@ -18,7 +18,7 @@
   transition: background 150ms ease;
 }
 .header:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-overlay);
 }
 .header:focus-visible {
   outline: 2px solid var(--color-brand-orange);
@@ -69,7 +69,8 @@
 }
 
 .familyMeta {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
+  font-variant-numeric: tabular-nums;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   white-space: nowrap;
@@ -92,7 +93,7 @@
 }
 
 .gamesCount {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   min-width: 36px;
@@ -129,7 +130,7 @@
   transition: background 150ms ease;
 }
 .variationLink:hover {
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-elevated);
 }
 
 .variationName {
@@ -147,7 +148,7 @@
 }
 
 .variationGames {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-primary);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   min-width: 36px;
@@ -167,6 +168,16 @@
 
 /* ===== Mobile: stack the bar full-width beneath the name ===== */
 @media (max-width: 768px) {
+  /* Each family becomes a raised card, matching the flat-view .mobileCard
+     items — on mobile there is no carded section wrapper, so bare rows would
+     sit directly on the page background. */
+  .familyRow {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
   .header {
     flex-direction: column;
     align-items: stretch;

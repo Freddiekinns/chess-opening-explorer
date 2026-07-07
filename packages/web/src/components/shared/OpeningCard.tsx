@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { StarButton } from './StarButton';
 import { MiniBoard } from './MiniBoard';
 
@@ -34,7 +35,6 @@ interface OpeningCardProps {
   showEco?: boolean;
   showBoard?: boolean;
   variant?: 'card' | 'list-item';
-  onClick?: (opening: Opening) => void;
   className?: string;
   showStar?: boolean;
   isStarred?: boolean;
@@ -46,17 +46,14 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   showEco = true,
   showBoard = false,
   variant = 'card',
-  onClick,
   className = '',
   showStar = false,
   isStarred = false,
   onStarClick,
 }) => {
-  const handleClick = () => {
-    if (onClick) {
-      onClick(opening);
-    }
-  };
+  // A real link (not div role="button"): Space/middle-click/new-tab work and
+  // every card grid contributes crawlable internal links (design review #2).
+  const openingHref = `/opening/${encodeURIComponent(opening.fen)}`;
 
   // Real Lichess stats or nothing — never fabricate numbers for a data product.
   const getGameStats = () => {
@@ -100,13 +97,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   // List-item variant (mobile layout)
   if (variant === 'list-item') {
     return (
-      <div
-        className={`opening-card-list-item ${className}`}
-        onClick={handleClick}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && handleClick()}
-      >
+      <Link to={openingHref} className={`opening-card-list-item ${className}`}>
         <MiniBoard fen={opening.fen} size={80} className="list-item-board" />
         <div className="list-item-info">
           <div className="list-item-header">
@@ -143,18 +134,15 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
             </div>
           )}
         </div>
-      </div>
+      </Link>
     );
   }
 
   // Card variant (default — desktop grid)
   return (
-    <div
+    <Link
+      to={openingHref}
       className={`opening-card compact ${showBoard ? 'has-board' : ''} ${className}`}
-      onClick={handleClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
       {showBoard && (
         <div className="card-board-wrapper">
@@ -214,6 +202,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

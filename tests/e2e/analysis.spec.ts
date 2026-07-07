@@ -18,6 +18,6 @@ test.describe('analysis page', () => {
 
     await page.getByRole('button', { name: 'Analyse' }).click();
 
-    await expect(page.getByText(/Analysed 2 games/)).toBeVisible();
+    await expect(page.getByText(/2 games analysed/)).toBeVisible();
   });
 });

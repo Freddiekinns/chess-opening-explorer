@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PersonalOpeningStats } from '../components/personal/PersonalOpeningStats';
 import type { OpeningForLookup } from '../../../shared/src';
@@ -6,7 +6,6 @@ import pageStyles from './AnalyseGamesPage.module.css';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
 
 const AnalyseGamesPage: React.FC = () => {
-  const [openingsData, setOpeningsData] = useState<OpeningForLookup[]>([]);
   const location = useLocation();
   const canonicalUrl = buildSiteUrl('/analyse');
   const seoTitle = `Analyse Your Games — ${SITE_NAME}`;
@@ -23,19 +22,24 @@ const AnalyseGamesPage: React.FC = () => {
   const params = new URLSearchParams(location.search);
   const prefillUsername = params.get('username') || '';
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetch('/api/openings/search-index');
-        const data = await response.json();
-        if (data.success) {
-          setOpeningsData(data.data);
-        }
-      } catch (error) {
-        console.warn('Failed to load openings data:', error);
-      }
-    };
-    loadData();
+  // The search-index is ~1.6 MB — fetch it lazily (first analysis only), and
+  // share one in-flight promise so parallel calls don't double-download.
+  const openingsPromiseRef = useRef<Promise<OpeningForLookup[]> | null>(null);
+  const getOpeningsData = useCallback(() => {
+    if (!openingsPromiseRef.current) {
+      openingsPromiseRef.current = fetch('/api/openings/search-index')
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.success) throw new Error('Openings data unavailable');
+          return data.data as OpeningForLookup[];
+        })
+        .catch((error) => {
+          // Reset so a later attempt can retry instead of caching the failure
+          openingsPromiseRef.current = null;
+          throw error;
+        });
+    }
+    return openingsPromiseRef.current;
   }, []);
 
   return (
@@ -52,7 +56,7 @@ const AnalyseGamesPage: React.FC = () => {
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />
 
-      <PersonalOpeningStats openingsData={openingsData} prefillUsername={prefillUsername} />
+      <PersonalOpeningStats getOpeningsData={getOpeningsData} prefillUsername={prefillUsername} />
     </div>
   );
 };

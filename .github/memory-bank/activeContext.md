@@ -1,51 +1,48 @@
 # Active Context
 
-**Date:** 2026-07-02
+**Date:** 2026-07-07
 
-## Current Task: Project Review — Performance + Feature Assessment
+## Current Task: Analyse Dashboard Visual Redesign (on `claude/chess-resource-review-xmdqkl`, PR #45)
 
-**Status:** Complete on `claude/chess-resource-review-xmdqkl` (PR raised).
-Findings split across two docs: `docs/reviews/2026-07-02-project-review.md`
-(perf, ops, feature ranking) and
-`docs/reviews/2026-07-02-video-experience-review.md` (video pipeline state +
-discovery plan V1–V6). No production code changed.
+**Status:** Complete. The results view felt off-brand (flat black expanse, glary
+cream loss bars, mono overload). Fixes:
 
-Key findings (measured, not estimated):
+- **New personal-performance tokens** `--color-perf-win/draw/loss` (+`-text`
+  variants): sage / warm grey / muted brick for the player's OWN W/D/L. The
+  chess-thematic result tokens stay reserved for perspective-based stats (cream
+  = White won) — the dashboard had repurposed them as win=amber / loss=cream,
+  making losses the brightest element on the page. Tokens added to BOTH
+  `packages/web/src/styles/simplified.css` and
+  `design-system/project/colors_and_type.css`; SKILL.md hard rule amended;
+  preview card `design-system/project/preview/colors-perf.html` added.
+- **DistributionBar**: slim rounded pills (10px/8px compact, matches detail
+  WinRateBar), in-bar counts removed (tooltip `title` + `role="img"` aria-label
+  carry exact counts), pct row switched mono→DM Sans tabular-nums.
+- **Performance sections carded**: `--surface-raised` + `--border-default` +
+  radius-lg, matching the summary cards / detail containers. On mobile there is
+  no section wrapper, so each FamilyRow becomes a raised card itself (matches
+  the flat-view `.mobileCard` items) — first ship missed this and mobile family
+  rows sat bare on the page background.
+- Warm hovers (`--surface-overlay`/`--surface-elevated` instead of white rgba),
+  settings popover on `--surface-elevated` (was cold grey gradient), card
+  borders tokenised, numerals de-mono'd (mono stays for move sequences),
+  "Top-performing"/"Needs work" labels tinted sage/brick.
 
-- **Perf**: single 409 kB JS chunk (no route splitting; `MiniBoard` drags
-  react-chessboard into the landing bundle); Analyse re-downloads the full 1.6
-  MB search-index every mount (no browser `max-age`, ignores `fields=lookup`);
-  edge middleware fetches a 1.7 MB SEO lookup per cold start; 5 API calls per
-  detail page across 4 functions; `/api/openings/all` (24.8 MB) still exposed
-  with zero client users; `video-index.json` ×2 and a 2-byte
-  `popularity_stats.json` in `packages/api/src/data/`.
-- **Trust leftovers**: **video rematch was NEVER run** — both index copies
-  byte-identical, stamped 2026-03-15; audit shows old baseline (28.2% coverage,
-  7.9% cross-family = 1,577 wrong-family matches live). ALL popularity stats
-  dated 2025-07-15 (~12 months stale). Study title dupes + wrong-family studies
-  unfixed; practice audio files don't exist; OpeningCard still
-  `div role="button"`.
-- **Ops**: 8 Playwright E2E specs never run in CI; no data-freshness automation
-  (doc §1.4 proposes monthly RSS-pipeline GitHub Action + audit auto-PR).
-- **Health**: both suites green (716 + 198) — progress.md's "16 broken tests"
-  was stale, now corrected.
-- **Feature ranking (re-ranked from TASK008)**: book-deviation trainer first
-  (Analyse already imports 500 games — cheap now), then rating-contextualised
-  stats + master games (one Lichess-explorer integration), family hub pages with
-  video shelves, SRS, repertoire v2, middlegame bridge last. The video review
-  adds the discovery plan: family fallback for empty galleries, embedded
-  player + watched state, chapter-level matching (deep-link `?t=` into survey
-  videos).
+Final polish pass: sort-menu Tab-dismiss (APG) + 44px menu options on mobile;
+removed the dead mobile path in OpeningRow (only ever rendered inside the hidden
+desktop dashboard) and its CSS (`.mobileStats`/`.statCounters`/
+`.accentBar`/`.tabBar`/`.openingSectionMobile`), plus the unused `useCountUp`
+hook + test.
 
-**Next step (user decision):** run the video review §2 ship checklist locally
-(backfill → pipeline → audit → copy → commit), then pick from the "Now" row of
-the sequencing table.
+Suites: 195 frontend (4 fewer = deleted dead-hook tests), lint
+(`--max-warnings 0`) + tsc green. Verified with Playwright screenshots
+(desktop + 390px mobile, mocked analysis, sort menu open).
 
-## Previous Task: Video Matching — Intra-Family Variation Guard (2026-06-23)
+## Previous Task: Review Remediation — Perf + Existing-Feature Fixes
 
-On `claude/video-pipeline-assessment-0gg422` (merged as PR #43): intra-family
-variation guard in `calculateMatchScore` — family matches on sub-variation pages
-kept only if the video names that variation; offline re-score: coverage 67%,
-#1-specificity 61.9%, cross-family 0%. Ship via `backfill-views.js` →
-`pipeline:rematch` → `audit-video-matches.js` (user, locally — still pending).
-Older history in `archive.md`.
+Complete on same branch (PR #45): review §1.1–1.3 + §2.2–2.4. Main chunk 409→189
+kB, detail page 5 fetches→1 (`/api/openings/page/:fen`), seo-lookup sharded ×16,
+self-hosted fonts, `/all`→410, `api/data/` single data location,
+PersonalOpeningStats split, practice-line extension, accessible card links. §2.1
+studies/videos and §1.4 ops automation deliberately deferred. Older history in
+`archive.md`.

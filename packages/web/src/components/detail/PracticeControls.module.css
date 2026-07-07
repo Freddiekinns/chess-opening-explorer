@@ -291,3 +291,12 @@
     transition: none;
   }
 }
+
+/* Tag shown when the drill extends past the named line into the most
+   popular book continuation. */
+.extensionTag {
+  margin-left: var(--space-2);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}

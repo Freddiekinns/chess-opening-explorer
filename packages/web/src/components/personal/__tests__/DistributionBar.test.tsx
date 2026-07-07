@@ -15,20 +15,10 @@ describe('DistributionBar', () => {
     expect(screen.getByText('43%')).toBeInTheDocument(); // 6/14 ≈ 42.86
   });
 
-  test('shows raw counts inside segments that are wide enough', () => {
-    render(<DistributionBar win={7} draw={1} loss={6} games={14} />);
-    // win 50% and loss 43% clear the 14% threshold → counts shown
-    expect(screen.getByText('7')).toBeInTheDocument();
-    expect(screen.getByText('6')).toBeInTheDocument();
-    // draw 7% is below the threshold → its count is suppressed
-    expect(screen.queryByText('1')).toBeNull();
-  });
-
-  test('omits all counts when showCounts is false but keeps percentages', () => {
-    render(<DistributionBar win={7} draw={1} loss={6} games={14} showCounts={false} />);
-    expect(screen.queryByText('7')).toBeNull();
-    expect(screen.queryByText('6')).toBeNull();
-    expect(screen.getByText('50%')).toBeInTheDocument();
+  test('exposes exact counts via the accessible label and tooltip', () => {
+    const { container } = render(<DistributionBar win={7} draw={1} loss={6} games={14} />);
+    expect(screen.getByRole('img', { name: '7 wins, 1 draw, 6 losses' })).toBeInTheDocument();
+    expect((container.firstChild as HTMLElement).title).toBe('7W · 1D · 6L');
   });
 
   test('omits a segment entirely when its value is zero', () => {

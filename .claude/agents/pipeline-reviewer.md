@@ -35,8 +35,8 @@ power the application.
 
 **Database**: SQLite (`data/videos.sqlite`)
 
-**Data path gotcha**: Pipeline writes `video-index.json` to `api/data/` but the
-API reads from `packages/api/src/data/`. Must copy after regeneration. Rematch
+**Data path**: `api/data/video-index.json` is the single canonical copy (the old
+`packages/api/src/data/` mirror and copy step were removed 2026-07-06). Rematch
 mode loses `view_count`/`thumbnail_url` — run `backfill-views.js` after.
 
 **API Limits**:

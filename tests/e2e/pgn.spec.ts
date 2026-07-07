@@ -9,7 +9,7 @@ test.describe('pgn modal', () => {
   test('pgn lookup navigates to opening details', async ({ page }) => {
     await page.goto('/');
 
-    await page.getByRole('button', { name: 'Or search by PGN' }).click();
+    await page.getByRole('button', { name: 'Search by pasting PGN' }).click();
 
     const pgnInput = page.getByLabel('PGN input');
     await pgnInput.fill('1. e4 c5 2. Nf3 d6');

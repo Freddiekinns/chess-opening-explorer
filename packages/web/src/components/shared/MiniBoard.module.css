@@ -1,7 +1,20 @@
 .miniBoard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   border-radius: var(--radius-md);
   overflow: hidden;
   pointer-events: none;
   flex-shrink: 0;
   line-height: 0;
+}
+
+/* Square colours mirror react-chessboard's defaults so thumbnails match the
+   interactive board on the detail page. */
+.lightSquare {
+  background-color: #f0d9b5;
+}
+
+.darkSquare {
+  background-color: #b58863;
 }

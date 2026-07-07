@@ -77,10 +77,10 @@ trusted channels configured in `config/youtube_channels.json`. RSS discovery
 parallelized with `Promise.allSettled`. Scorer uses channel tiers (premium +40,
 good +20, entertainment -30) and targeted player-vs-player penalty.
 Anti-overindexing: 2-word alias minimum, cross-opening title check,
-sub-variation penalty, minMatchScore=60. Two `video-index.json` copies exist:
-pipeline writes to `api/data/`, API reads from `packages/api/src/data/` — must
-copy after regeneration. Rematch loses view counts/thumbnails; run
-`backfill-views.js` after.
+sub-variation penalty, minMatchScore=60. `api/data/video-index.json` is the
+single canonical copy (the `packages/api/src/data/` mirror was removed
+2026-07-06); the pipeline writes it directly — no copy step. Rematch loses view
+counts/thumbnails; run `backfill-views.js` after.
 
 ### AD-005: Conservative AI Policy
 

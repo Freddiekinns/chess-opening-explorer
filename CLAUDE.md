@@ -210,12 +210,14 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   are **already clean on CI** (Linux/LF). Don't "fix" these with a repo-wide
   `npm run format` — git normalises them to LF on commit, so the diff is empty.
   Trust CI's result over local `format:check` for line-ending noise.
-- **Never fetch large payloads on mount**: `/api/openings/all` (24.8 MB) was
-  removed from all client-side code (TASK011). Use `/api/openings/search-index`
-  (1.6 MB) for client-side search data, or `/api/openings/semantic-search` for
-  server-side queries. Any new API route **must** have a `Cache-Control` entry
-  in `vercel.json` — crawlers index 12,000+ pages and will amplify unbounded
-  payloads into massive origin transfer bills.
+- **Never fetch large payloads on mount**: `/api/openings/all` (24.8 MB) now
+  returns a cacheable 410 (client usage removed in TASK011; route retired
+  2026-07-06). Use `/api/openings/search-index` (1.6 MB) for client-side search
+  data, or `/api/openings/semantic-search` for server-side queries. The opening
+  detail page uses the aggregate `/api/openings/page/:fen`. Any new API route
+  **must** have a `Cache-Control` entry in `vercel.json` — crawlers index
+  12,000+ pages and will amplify unbounded payloads into massive origin transfer
+  bills.
 - **Update docs with code changes**: When changing commands, modes, config, or
   architecture, update all related docs in the same PR: CLAUDE.md, README files,
   `.agent/workflows/`, `.claude/agents/`, `.github/memory-bank/`,
@@ -226,10 +228,11 @@ relevant instructions from the table above. Update `activeContext.md` when done.
 - **Worktree test noise**: `npm test` picks up `.worktrees/` tests that fail
   with module resolution errors. Use `--testPathIgnorePatterns='\.worktrees'`
   for clean results.
-- **Two `video-index.json` copies**: Pipeline writes to
-  `api/data/video-index.json` but the API reads from
-  `packages/api/src/data/video-index.json`. After regenerating the index, copy
-  it: `cp api/data/video-index.json packages/api/src/data/video-index.json`
+- **`api/data/` is the single canonical data location**: the API reads
+  video-index/courses/popularity data from `api/data/` in every environment (the
+  old `packages/api/src/data/` mirror and its copy-after-regenerate step were
+  removed 2026-07-06). The pipeline writes `api/data/video-index.json` directly
+  — no copy needed.
 - **`pipeline:rematch` re-scores from the DB only**: it does NOT re-fetch from
   YouTube, so `view_count`/`thumbnail_url` go stale and — on databases created
   before the `description`/`tags` columns existed — content matches are scored

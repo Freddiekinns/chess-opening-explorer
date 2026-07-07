@@ -1,15 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import { StarButton } from '../shared/StarButton';
 import { MiniBoard } from '../shared/MiniBoard';
 import styles from './RepertoireSection.module.css';
 
-interface RepertoireSectionProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onOpeningSelect: (opening: any) => void;
-}
-
-export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningSelect }) => {
+export const RepertoireSection: React.FC = () => {
   const { repertoire, count, remove } = useRepertoire();
 
   const getFirstMovesDisplay = (moves: string): string => {
@@ -42,17 +38,16 @@ export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningS
           </div>
           <p className={styles.emptyTitle}>No openings saved yet</p>
           <p className={styles.emptyHint}>
-            Tap the star on any opening to save it to your repertoire for quick access.
+            Star any opening to save it to your repertoire for quick access.
           </p>
         </div>
       ) : (
         <div className={styles.cardScroller}>
           {repertoire.map((entry) => (
-            <button
+            <Link
               key={entry.fen}
               className={styles.repCard}
-              onClick={() => onOpeningSelect({ fen: entry.fen })}
-              type="button"
+              to={`/opening/${encodeURIComponent(entry.fen)}`}
             >
               <div className={styles.repCardBoard}>
                 <MiniBoard fen={entry.fen} size={120} />
@@ -74,7 +69,7 @@ export const RepertoireSection: React.FC<RepertoireSectionProps> = ({ onOpeningS
                 </div>
                 <span className={styles.repCardMoves}>{getFirstMovesDisplay(entry.moves)}</span>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       )}

@@ -2,6 +2,14 @@
 
 ## What's Done (newest first)
 
+- **Review Remediation — Perf + Feature Fixes** (2026-07-06): implemented review
+  §1.1–1.3 + §2.2–2.4 — route splitting + static MiniBoard (main chunk 409→189
+  kB), lazy Analyse index fetch, self-hosted fonts, sharded edge SEO lookup
+  (16×~107 kB), `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`
+  (5 calls → 1), `api/data/` now the single canonical data home (copy gotcha
+  gone), PersonalOpeningStats refactor, practice lines extend into popular
+  continuations, cards are real links, audio fetch path removed, copy/chip nits.
+  724+200 tests green.
 - **Project Review — Perf + Features + Video Experience** (2026-07-02): full
   review vs the learning-resource goal, split across
   `docs/reviews/2026-07-02-project-review.md` (perf P1–P11, ops S1–S4,

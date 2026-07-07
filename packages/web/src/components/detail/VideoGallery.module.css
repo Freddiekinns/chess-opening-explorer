@@ -21,7 +21,9 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .videoCard:hover {
@@ -29,24 +31,81 @@
   border-color: var(--border-hover);
 }
 
-.videoLink {
-  display: flex;
-  width: 100%;
-  text-decoration: none;
-  color: inherit;
+/* When the in-place player is open the card stacks vertically so the
+   16:9 iframe gets the full card width. */
+.videoCardPlaying {
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* Thumbnail */
-.thumbnailContainer {
-  position: relative;
+.playerContainer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Thumbnail is a play button (review V3): loads nothing from YouTube until
+   clicked, then swaps in the youtube-nocookie iframe. */
+.thumbnailButton {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   flex: 0 0 140px;
   width: 140px;
+}
+
+.thumbnailButton:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: -2px;
+}
+
+.thumbnailContainer {
+  position: relative;
+  display: block;
+  width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--surface-overlay);
 }
 
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0.85;
+  transition:
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+.playOverlay svg {
+  width: 28px;
+  height: 28px;
+  padding: var(--space-1-5);
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.videoCard:hover .playOverlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.35);
+}
+
 .thumbnail {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -93,6 +152,16 @@
   overflow: hidden;
 }
 
+/* Title stays an external YouTube link for anyone who prefers watching there */
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.titleLink:hover {
+  text-decoration: underline;
+}
+
 .channel {
   font-size: var(--text-xs);
   color: var(--color-text-secondary);
@@ -112,6 +181,43 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* Watched chip (review V3) — persisted in localStorage */
+.watchedChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.watchedChip svg {
+  width: 0.9em;
+  height: 0.9em;
+  color: var(--color-text-success);
+}
+
+/* Match-reason badge (review V2): does this video cover the page's exact
+   variation, or is it family background material? */
+.matchBadge {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+  padding: 2px var(--space-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--border-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.matchBadgeVariation {
+  border-color: var(--accent-a30);
+  background: var(--accent-a6);
+  color: var(--color-text-secondary);
+}
+
 /* Show more button — matches StudiesGallery */
 .showMoreButton {
   align-self: center;
@@ -123,7 +229,10 @@
   font-size: var(--text-xs);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
 }
 
 .showMoreButton:hover {
@@ -134,7 +243,7 @@
 
 /* Small mobile: shrink thumbnail */
 @media (max-width: 480px) {
-  .thumbnailContainer {
+  .thumbnailButton {
     flex: 0 0 100px;
     width: 100px;
   }

@@ -12,6 +12,21 @@ export interface Video {
   thumbnail: string;
   url: string;
   score: number;
+  /**
+   * Why this video is on this page (present on sub-variation pages and
+   * family-fallback shelves): 'variation' = the title names this variation,
+   * 'family' = family-level background material.
+   */
+  matchReason?: 'variation' | 'family';
+}
+
+/**
+ * Attribution for a resource shelf: exact-position matches or the
+ * family-level fallback (video experience review V1).
+ */
+export interface ResourceContext {
+  source: 'position' | 'family' | 'none';
+  family: { id: string; name: string } | null;
 }
 
 export interface VideoResponse {

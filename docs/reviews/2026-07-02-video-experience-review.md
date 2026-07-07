@@ -144,6 +144,14 @@ The June work fixed scoring; the remaining structural risks:
   once V4 shelves exist, watch-through behaviour (which videos users actually
   click) becomes the first real feedback signal for tier and weight tuning.
 
+> **Implementation status (2026-07-07):** V1 (family fallback for videos and
+> studies, API + UI), V2 (match-reason badges) and V3 (in-place youtube-nocookie
+> player + localStorage watched state) shipped on
+> `claude/video-experience-v1-v3`. The §2 ship checklist (backfill → pipeline →
+> audit → commit) still requires the local `videos.db` and remains with the repo
+> owner, as does the freshness Action (§4) — blocked on deciding where CI gets
+> the SQLite DB from. V4–V6 not started.
+
 ## 5. Suggested sequencing
 
 | Horizon   | Work                                                                                              |

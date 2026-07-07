@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef, CSSProperties } from '
 import { useParams, Link } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
-import { ChessOpening, Video } from '../../../shared/src';
+import { ChessOpening, ResourceContext, Video } from '../../../shared/src';
 import {
   CommonPlans,
   VideoGallery,
@@ -83,7 +83,10 @@ type OpeningPageData = {
   opening: Opening;
   stats: PopularityStats | null;
   videos: Video[];
-  courses: { courses: Study[]; searchLinks: SearchLinks | null } | null;
+  videoContext?: ResourceContext | null;
+  courses:
+    | ({ courses: Study[]; searchLinks: SearchLinks | null } & Partial<ResourceContext>)
+    | null;
   tree: TreeContext | null;
 };
 
@@ -101,6 +104,9 @@ const OpeningDetailPage: React.FC = () => {
   const [treeLoading, setTreeLoading] = useState(false);
   const [studies, setStudies] = useState<Study[]>([]);
   const [searchLinks, setSearchLinks] = useState<SearchLinks | null>(null);
+  // Shelf attribution (review V1): exact-position matches vs family fallback
+  const [videoContext, setVideoContext] = useState<ResourceContext | null>(null);
+  const [studyContext, setStudyContext] = useState<ResourceContext | null>(null);
 
   const { isSaved, toggle: toggleRepertoire } = useRepertoire();
 
@@ -198,8 +204,14 @@ const OpeningDetailPage: React.FC = () => {
           setupGame(page.opening);
           setPopularityStats(page.stats || null);
           setVideos(page.videos || []);
+          setVideoContext(page.videoContext || null);
           setStudies(page.courses?.courses || []);
           setSearchLinks(page.courses?.searchLinks || null);
+          setStudyContext(
+            page.courses?.source
+              ? { source: page.courses.source, family: page.courses.family || null }
+              : null
+          );
           setTreeData(page.tree || null);
         } else {
           setError('Opening not found');
@@ -1239,7 +1251,16 @@ const OpeningDetailPage: React.FC = () => {
               >
                 {videos.length > 0 && (
                   <div>
-                    <div className={styles.resourceLabel}>Videos ({videos.length})</div>
+                    <div className={styles.resourceLabel}>
+                      {videoContext?.source === 'family' && videoContext.family
+                        ? `Videos for the ${videoContext.family.name} (${videos.length})`
+                        : `Videos (${videos.length})`}
+                    </div>
+                    {videoContext?.source === 'family' && (
+                      <p className={styles.resourceFallbackNote}>
+                        No videos match this exact position yet — these cover the wider family.
+                      </p>
+                    )}
                     <VideoErrorBoundary>
                       <VideoGallery videos={videos} hideTitle />
                     </VideoErrorBoundary>
@@ -1247,7 +1268,16 @@ const OpeningDetailPage: React.FC = () => {
                 )}
                 {studies.length > 0 && (
                   <div>
-                    <div className={styles.resourceLabel}>Studies ({studies.length})</div>
+                    <div className={styles.resourceLabel}>
+                      {studyContext?.source === 'family' && studyContext.family
+                        ? `Studies for the ${studyContext.family.name} (${studies.length})`
+                        : `Studies (${studies.length})`}
+                    </div>
+                    {studyContext?.source === 'family' && (
+                      <p className={styles.resourceFallbackNote}>
+                        No studies anchor on this exact position yet — these cover the wider family.
+                      </p>
+                    )}
                     <StudiesGallery studies={studies} openingName={opening?.name || ''} />
                   </div>
                 )}

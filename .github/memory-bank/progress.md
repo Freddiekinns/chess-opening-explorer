@@ -2,6 +2,18 @@
 
 ## What's Done (newest first)
 
+- **Video Experience V1–V3** (2026-07-07, branch
+  `claude/video-experience-v1-v3`): family fallback for empty video/study
+  galleries (`family-resource-service.js`; shelves labelled "Videos for the
+  <family>"), match-reason badges ("Covers this variation" / "Family overview",
+  shared `variation-words.js` with the audit script), in-place youtube-nocookie
+  player + localStorage watched state. Rescued the orphaned VideoGallery test
+  into vitest. 739+207+9 e2e green. Ship checklist + freshness Action still with
+  the user (needs local `videos.db`).
+- **Analyse Dashboard Redesign** (2026-07-07, PR #45): personal-performance
+  tokens (sage/grey/brick — losses no longer glare cream), carded performance
+  sections (desktop + mobile family cards), slim distribution bars, warm
+  hovers/popovers, sort-menu a11y polish, dead mobile-row path removed.
 - **Review Remediation — Perf + Feature Fixes** (2026-07-06): implemented review
   §1.1–1.3 + §2.2–2.4 — route splitting + static MiniBoard (main chunk 409→189
   kB), lazy Analyse index fetch, self-hosted fonts, sharded edge SEO lookup
@@ -20,69 +32,27 @@
   fallback, embedded player, chapter-level matching). Also found ALL popularity
   stats dated 2025-07-15 and E2E specs absent from CI; the "16 broken tests"
   note was stale (716+198 green).
-- **Video Matching — Intra-Family Variation Guard** (2026-06-23): review found
-  the earlier 28%→71% coverage gain was mostly family-level blanketing (one
-  Sicilian video on 1,400+ pages; Dragon videos on Najdorf pages). Added a guard
-  (`calculateMatchScore` + `specific_variation_keywords` in
-  `config/video_matching.json`): family matches on sub-variation pages are kept
-  only if the video names that page's variation; generics still cover pages;
-  move-tail pages match on named tokens. Deleted dead `runNewMatching()`.
-  Offline re-score of the 917 live videos: coverage 67%, top-200 81.5%,
-  #1-specificity 36.9%→61.9%, cross-family 0%. Denylist can't catch the long
-  tail — real fix is variation-level classification (taxonomy/LLM), the
-  recommended next project.
-- **Video Pipeline Fixes** (2026-06-13): implemented assessment Tiers 1+2 —
-  move-prefix family compatibility (`opening-families.js`, cross-family
-  7.9%→0%), variation-specificity scoring + view/recency tiebreakers (#1
-  specificity 36.9%→57.6%), move-notation name matching (coverage 28.2%→71%),
-  pre-filter word boundaries, weights in `config/video_matching.json`, channel
-  tiers from `youtube_channels.json`, DB persists description/tags, FEN
-  case-collision fix with legacy fallback, `scripts/audit-video-matches.js`
-  harness. Verified by simulated rematch over the 917 live videos. Ship via
-  backfill → rematch.
-- **Video Pipeline Assessment** (2026-06-13): measured live `video-index.json`
-  against ECO + popularity data
-  (`docs/reviews/2026-06-13-video-pipeline-assessment.md`) — provenance strong
-  (allowlist, 94% family accuracy), variation-level matching weak (37% specific
-  #1, 6% cross-family, 85% top-4 score ties, 3-month staleness, word-boundary
-  pre-filter bugs). Tiered fix plan + regression-metric harness proposed; no
-  code changes.
-- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12): traced the
-  design-review "wrong plans" finding to `getECOAnalysis` serving the
-  alphabetically-first record per ECO bucket (95.9% of pages affected, not an
-  LLM-quality issue). Added `scripts/audit-common-plans.js` (provenance +
-  content lint) and `docs/proposals/2026-06-12-common-plans-provenance.md` (fix
-  options + 3-tier evaluation framework).
-- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): full
-  design critique of home/analyse/opening pages
-  (`docs/reviews/2026-06-11-design-review.md`), then fixed the two critical
-  findings — `OpeningCard` no longer fabricates W/D/L stats with `Math.random()`
-  (renders no bar when data is missing), and the home-page search dropdown is no
-  longer painted over/click-blocked by "My repertoire" (`sectionReveal`
-  fill-mode `both` → `backwards`; retained transforms created permanent stacking
-  contexts). Search suggestions now show full distinguishing move lines
-  (tail-truncated) instead of identical 6-token prefixes. Remaining findings +
-  recommendations documented in the review doc.
-- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): fixed four pre-existing CI bugs
-  so `CI` + `Coverage` workflows pass on `main` — broken API lint script path,
-  ESLint/Prettier rule conflict (~110 spurious + 17 real errors), coverage job
-  missing `pull-requests: write`, and codecov badge failing tokenless on
-  protected `main`. Added `families.routes.js` branch tests (88.46% → 90.23%
-  global branches). The "format drift" was a Windows-CRLF mirage; `format:check`
-  was already green on CI.
-- **Opening Family Rollups** (2026-06-06, branch
-  `feature/opening-family-rollups`): Analyse page groups a player's openings by
-  family with an expandable W/D/L distribution-bar row — a shared
-  `DistributionBar` powers both the family and all-openings views. Per-side
-  `Group by family` toggle (default on) + compact `Sort` dropdown; uncategorised
-  openings collapse to a footnote. Built on the Phase-1 28-family taxonomy,
-  build-time `family_id` enrichment (98.45%), and `GET /api/families`. Pre-prod
-  hardening: rollups aggregate over the full classified set (no top-10
-  truncation; cache `v3`→`v4`), unified pure `wins/games` win rate, in-component
-  scroll for long lists, featured cards gated to ≥4 games + "Needs work" by loss
-  rate, `/api/families` retry + slug fallback, 34px mobile tap targets,
-  unrecognised count surfaced. 195 frontend tests, build + format clean.
-  (History in `archive.md`.)
+- **Video Matching — Intra-Family Variation Guard** (2026-06-23): family matches
+  on sub-variation pages kept only if the video names the variation
+  (`specific_variation_keywords`); offline re-score: coverage 67%, top-200
+  81.5%, #1-specificity 61.9%, cross-family 0%. (Details in `archive.md`.)
+- **Video Pipeline Fixes + Assessment** (2026-06-13): assessment doc + Tiers 1+2
+  — family compatibility, specificity scoring, tiebreakers, word-boundary
+  pre-filter, config-driven weights/tiers, DB persists description/tags,
+  `audit-video-matches.js` harness. Ship via backfill → rematch. (Details in
+  `archive.md`.)
+- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12):
+  `getECOAnalysis` serves the alphabetically-first record per ECO bucket (95.9%
+  of pages); audit script + provenance proposal added, no code fix yet.
+- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): killed
+  `Math.random()` W/D/L on OpeningCard; fixed dropdown stacking (fill-mode
+  `both` → `backwards`); suggestions show distinguishing move tails.
+- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): four pre-existing CI bugs fixed
+  (lint path, ESLint/Prettier conflict, coverage permissions, codecov badge);
+  branches coverage 90.23%.
+- **Opening Family Rollups** (2026-06-06): Analyse groups openings by family
+  with expandable W/D/L rows (shared `DistributionBar`), per-side group/sort
+  controls, 28-family taxonomy + `GET /api/families`. (History in `archive.md`.)
 - **TASK008 Rewrite — Feature Roadmap** (2026-05-04): UX roadmap of 12
   features + monetisation section + prioritised top three.
 - **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Sticky
@@ -94,12 +64,6 @@
 - **TASK016 Phase B — Design Token Migration** (2026-03-28): "Warm Editorial
   Dark" applied; ~80 hardcoded colours → tokens; Analyse bars use result
   colours.
-- **Footer Standardisation** (2026-03-28): MIT LICENSE added; footer
-  consolidated; FeedbackSection removed.
-- **Backend Test Cleanup** (2026-03-22): Removed console noise; fixed Jest
-  worker teardown. 43/43 suites.
-- **TASK016 — Test Suite Repair** (2026-03-22): Fixed 3 practice-mode specs;
-  aria-pressed on colour toggles.
 - **TASK016 — Design Overhaul** (2026-03-21): Top bar, bottom tabs, detail
   restructure, home + Analyse mobile redesign. Chunk 9 (polish) remaining.
 - **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree;
@@ -113,15 +77,13 @@
   `/all` preload; server-side search + CDN cache headers.
 - **TASK010 — Local Repertoire** (2026-03-13): localStorage "My Repertoire";
   useSyncExternalStore cross-tab sync.
-- **Sort Controls** (2026-03-12): Segmented pill bar for personal stats.
 - **TASK009 — SEO** (2026-02-28): Edge Middleware + React 19 metadata + JSON-LD
   for 12,377 pages.
 - **TASK007 — Mobile Overflow Fix** (2026-02-23): CSS Grid `minmax(0,1fr)`;
   Playwright regression test.
-- **Coverage Reporting** (2026-02-23): Vitest coverage for frontend.
-- **State Persistence** (2026-02-23): sessionStorage for Analyse form + results.
 - Earlier work (Course Discovery, Practice Mode, Personal Explorer, PGN ID,
-  related-openings UI) — see `archive.md`.
+  related-openings UI, footer standardisation, sort controls, coverage
+  reporting, state persistence, test cleanups) — see `archive.md`.
 
 ## What's Left
 
@@ -135,5 +97,3 @@
 ## Known Issues
 
 - **React 19 / Testing Library**: Compatibility area to watch during upgrades
-- ~~16 broken tests~~ — verified stale 2026-07-02: 716 backend + 198 frontend
-  tests all pass

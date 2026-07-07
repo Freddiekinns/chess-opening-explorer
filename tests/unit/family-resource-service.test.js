@@ -92,6 +92,52 @@ describe('FamilyResourceService', () => {
     });
   });
 
+  describe('resilience', () => {
+    it('treats a throwing or empty eco service as "no families"', () => {
+      const throwing = new FamilyResourceService({
+        ecoService: {
+          loadECOData: () => {
+            throw new Error('boom');
+          },
+        },
+        videoAccessService: { getAllPositions: () => [{ fen: 'fenA', videos: [video('v1', 1)] }] },
+        courseService: { loadCourseData: async () => ({}) },
+      });
+      expect(throwing.getFamilyIdForFen('fenA')).toBeNull();
+      expect(throwing.getFamilyVideos('sicilian')).toEqual([]);
+
+      const empty = buildService({ eco: undefined, positions: [], courses: {} });
+      expect(empty.getFamilyIdForFen('fenA')).toBeNull();
+    });
+
+    it('skips null items and items without a dedupe key', () => {
+      const svc = buildService({
+        eco,
+        positions: [{ fen: 'fenA', videos: [null, video('', 50), video('v1', 10)] }],
+        courses: {},
+      });
+      expect(svc.getFamilyVideos('sicilian').map((v) => v.id)).toEqual(['v1']);
+    });
+
+    it('resetCache discards the lazy indices so they rebuild', () => {
+      let positions = [{ fen: 'fenA', videos: [video('v1', 10)] }];
+      const svc = new FamilyResourceService({
+        ecoService: { loadECOData: () => eco },
+        videoAccessService: { getAllPositions: () => positions },
+        courseService: { loadCourseData: async () => ({}) },
+      });
+
+      expect(svc.getFamilyVideos('sicilian').map((v) => v.id)).toEqual(['v1']);
+
+      // Cached: changing the source alone does not change the result
+      positions = [{ fen: 'fenA', videos: [video('v2', 10)] }];
+      expect(svc.getFamilyVideos('sicilian').map((v) => v.id)).toEqual(['v1']);
+
+      svc.resetCache();
+      expect(svc.getFamilyVideos('sicilian').map((v) => v.id)).toEqual(['v2']);
+    });
+  });
+
   describe('getFamilyIdForFen / getFamily', () => {
     it('resolves the family for a FEN', () => {
       const svc = buildService({ eco, positions: [], courses: {} });

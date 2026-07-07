@@ -161,6 +161,12 @@ Legacy standalone steps (`pipeline:complete`, `pipeline:discover`,
 `pipeline:prefilter`, `pipeline:enrich`, `pipeline:match`) still work but are
 superseded by the unified modes above.
 
+A monthly GitHub Action (`.github/workflows/video-refresh.yml`) runs the
+incremental pipeline, audits before/after, and opens a PR with the metric diff.
+It fails fast at guard steps until `tools/data/videos.sqlite` is committed and
+the `YOUTUBE_API_KEY` repo secret is set — see `tools/video-pipeline/README.md`
+§ Monthly automation.
+
 **Course Discovery:**
 
 ```bash

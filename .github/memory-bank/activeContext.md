@@ -34,9 +34,24 @@ Sicilian page, badges on the Najdorf page, player expansion + watched chip).
 
 Freshness Action shipped too (`.github/workflows/video-refresh.yml`): monthly
 RSS pipeline + audit + auto-PR with metric diff, guarded against a collapsed
-index. **Left with the user:** commit `tools/data/videos.sqlite` (gitignore
-exception added) + set `YOUTUBE_API_KEY` secret to activate it; §2 ship
-checklist (local); V4–V6 later.
+index. **PR #46 open**; a coverage-gate follow-up commit lifted global branches
+to 90.33%. Safe to merge before the enablement steps — the workflow only runs on
+schedule/dispatch and fails fast at its guards without touching anything.
+
+Note: this PR improves how existing studies are SURFACED (family fallback
+applies to studies too); the studies data itself (discovery runs, curation) is
+untouched.
+
+**What's left (video programme):**
+
+1. User, local: commit `tools/data/videos.sqlite` (gitignore exception is in the
+   PR) and confirm the `YOUTUBE_API_KEY` Actions secret exists — then the
+   monthly Action is live (verify via workflow_dispatch; guards report which
+   piece is missing).
+2. User, local: §2 ship checklist — backfill → `npm run pipeline` → audit →
+   commit index (the single biggest win: 28.2%→~67% coverage, 0% cross-family).
+3. Later: V4 family video shelves (needs family hub pages), V5+V6 taxonomy/
+   LLM + chapter matching (one project), studies data-quality work.
 
 ## Previous Task: Analyse Dashboard Visual Redesign (PR #45, merged)
 

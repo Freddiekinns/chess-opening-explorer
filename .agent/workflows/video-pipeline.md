@@ -5,6 +5,12 @@ description: Run video pipeline to discover and match YouTube videos
 This workflow manages the YouTube video integration pipeline. The pipeline has
 three modes for different use cases.
 
+A monthly GitHub Action (`.github/workflows/video-refresh.yml`) automates the
+incremental mode: pipeline + before/after audit + auto-PR with the metric diff.
+It requires `tools/data/videos.sqlite` committed to the repo and the
+`YOUTUBE_API_KEY` repository secret (guard steps fail fast otherwise) — see
+`tools/video-pipeline/README.md` § Monthly automation.
+
 ## Prerequisites
 
 - Ensure `.env` file has `YOUTUBE_API_KEY` or `GOOGLE_AI_API_KEY` set

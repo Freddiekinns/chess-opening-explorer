@@ -7,9 +7,9 @@
   galleries (`family-resource-service.js`; shelves labelled "Videos for the
   <family>"), match-reason badges ("Covers this variation" / "Family overview",
   shared `variation-words.js` with the audit script), in-place youtube-nocookie
-  player + localStorage watched state. Rescued the orphaned VideoGallery test
-  into vitest. 739+207+9 e2e green. Ship checklist + freshness Action still with
-  the user (needs local `videos.db`).
+  player + localStorage watched state, monthly refresh Action (guarded; needs DB
+  commit + secret to activate). Rescued the orphaned VideoGallery test into
+  vitest. 745+207+9 e2e green (PR #46).
 - **Analyse Dashboard Redesign** (2026-07-07, PR #45): personal-performance
   tokens (sage/grey/brick — losses no longer glare cream), carded performance
   sections (desktop + mobile family cards), slim distribution bars, warm
@@ -87,6 +87,10 @@
 
 ## What's Left
 
+- **Video programme**: enable the monthly refresh Action (user: commit
+  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); run the §2
+  ship checklist locally (backfill → pipeline → audit → commit index); later V4
+  family shelves, V5/V6 taxonomy + chapter matching, studies data work
 - **TASK016 chunk 9**: Global polish pass (broken tests, dead CSS, focus rings)
 - **Bottom nav investigation**: Bottom nav may be missing on Analyse page —
   verify

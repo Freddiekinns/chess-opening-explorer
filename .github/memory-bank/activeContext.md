@@ -32,8 +32,11 @@ Suites: backend 55/739, frontend 17/207, e2e 9/9, lint + tsc + build green.
 Verified against the live index with Playwright (fallback shelf on an empty
 Sicilian page, badges on the Najdorf page, player expansion + watched chip).
 
-**Left with the user:** §2 ship checklist (needs local `videos.db` + YouTube
-key); freshness Action blocked on where CI gets the SQLite DB; V4–V6 later.
+Freshness Action shipped too (`.github/workflows/video-refresh.yml`): monthly
+RSS pipeline + audit + auto-PR with metric diff, guarded against a collapsed
+index. **Left with the user:** commit `tools/data/videos.sqlite` (gitignore
+exception added) + set `YOUTUBE_API_KEY` secret to activate it; §2 ship
+checklist (local); V4–V6 later.
 
 ## Previous Task: Analyse Dashboard Visual Redesign (PR #45, merged)
 

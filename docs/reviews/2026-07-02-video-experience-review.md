@@ -147,10 +147,13 @@ The June work fixed scoring; the remaining structural risks:
 > **Implementation status (2026-07-07):** V1 (family fallback for videos and
 > studies, API + UI), V2 (match-reason badges) and V3 (in-place youtube-nocookie
 > player + localStorage watched state) shipped on
-> `claude/video-experience-v1-v3`. The §2 ship checklist (backfill → pipeline →
-> audit → commit) still requires the local `videos.db` and remains with the repo
-> owner, as does the freshness Action (§4) — blocked on deciding where CI gets
-> the SQLite DB from. V4–V6 not started.
+> `claude/video-experience-v1-v3`, along with the §4 freshness Action
+> (`.github/workflows/video-refresh.yml` — monthly RSS pipeline + audit +
+> auto-PR carrying the metric diff). The Action activates once the repo owner
+> commits `tools/data/videos.sqlite` and sets the `YOUTUBE_API_KEY` secret (see
+> `tools/video-pipeline/README.md`). The §2 ship checklist (backfill → pipeline
+> → audit → commit) still requires the local DB and remains with the repo owner.
+> V4–V6 not started.
 
 ## 5. Suggested sequencing
 

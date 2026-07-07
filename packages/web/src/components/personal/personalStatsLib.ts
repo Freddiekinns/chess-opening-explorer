@@ -13,6 +13,24 @@ export type Result = 'win' | 'draw' | 'loss';
 
 export type SideTab = 'white' | 'black';
 
+/* ==============================
+   CONTROL OPTION CONSTANTS
+   (live here, not in PersonalStatsControls.tsx — mixing constant and
+   component exports breaks Vite fast refresh and the lint gate)
+   ============================== */
+export const SORT_LABELS: Record<SortMode, string> = {
+  frequency: 'Most played',
+  best: 'Highest win rate',
+  worst: 'Lowest win rate',
+};
+
+export const SORT_ORDER: ReadonlyArray<SortMode> = ['frequency', 'best', 'worst'];
+
+export const SIDE_OPTIONS: ReadonlyArray<{ value: SideTab; label: string }> = [
+  { value: 'white', label: 'As White' },
+  { value: 'black', label: 'As Black' },
+];
+
 export type OpeningAgg = {
   fen: string;
   name: string;

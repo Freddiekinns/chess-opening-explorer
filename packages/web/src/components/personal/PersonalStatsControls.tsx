@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { SortMode } from './familyAggregation';
-import type { SideTab } from './personalStatsLib';
+import { SORT_LABELS, SORT_ORDER } from './personalStatsLib';
 import styles from './PersonalOpeningStats.module.css';
 
 /* ==============================
@@ -30,14 +30,6 @@ export const GearIcon = () => (
 /* ==============================
    PILL CONTROLS (sort filters + segmented toggles)
    ============================== */
-export const SORT_LABELS: Record<SortMode, string> = {
-  frequency: 'Most played',
-  best: 'Highest win rate',
-  worst: 'Lowest win rate',
-};
-
-export const SORT_ORDER: ReadonlyArray<SortMode> = ['frequency', 'best', 'worst'];
-
 /** Full-width segmented pill — used for the mobile As White / As Black switch
     (a primary mode switch). aria-pressed buttons in a labelled group. */
 export function SegmentedToggle<T extends string>({
@@ -259,8 +251,3 @@ export const SortMenu: React.FC<{
     </div>
   );
 };
-
-export const SIDE_OPTIONS: ReadonlyArray<{ value: SideTab; label: string }> = [
-  { value: 'white', label: 'As White' },
-  { value: 'black', label: 'As Black' },
-];

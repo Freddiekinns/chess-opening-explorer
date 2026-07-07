@@ -14,6 +14,7 @@ import {
   getWinRate,
   sortAgg,
   readSavedFormState,
+  SIDE_OPTIONS,
   type GroupBy,
   type OpeningAgg,
   type SideTab,
@@ -25,7 +26,6 @@ import {
   GearIcon,
   GroupToggle,
   SegmentedToggle,
-  SIDE_OPTIONS,
   SortMenu,
   UserIcon,
 } from './PersonalStatsControls';

@@ -117,6 +117,9 @@ data/course_analysis/debug/
 data/channel_first_index.json
 channel_first_checkpoint.json
 data/channel_first_results.json
+# Per-position pipeline scratch; consolidated into api/data/video-index.json
+# (nothing deploys from the root public/ — Vercel serves packages/web/dist)
+public/api/openings/
 
 # Future large files to exclude
 data/backups/

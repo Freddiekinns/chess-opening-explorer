@@ -106,7 +106,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- api/data/video-index.json tools/data/videos.sqlite; then
+          if git diff --quiet -- api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json; then
             echo "No index changes this month — nothing to PR."
             exit 0
           fi
@@ -114,11 +114,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
-          git add api/data/video-index.json tools/data/videos.sqlite
+          git add api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json
           git commit -m "chore(videos): monthly index refresh $(date -u +%Y-%m)"
           git push -u origin "$BRANCH" --force
-          gh pr create \
+          if ! gh pr create \
             --title "chore(videos): monthly index refresh $(date -u +%Y-%m)" \
             --body-file /tmp/pr-body.md \
             --base main \
-            --head "$BRANCH" || echo "PR already exists for $BRANCH"
+            --head "$BRANCH"; then
+            # Reuse the open PR for this branch if one exists; otherwise the
+            # create failed for a real reason (e.g. the "Allow GitHub Actions
+            # to create and approve pull requests" repo setting is off).
+            EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq length)
+            if [ "$EXISTING" -ge 1 ]; then
+              echo "PR already exists for $BRANCH — branch updated in place."
+            else
+              echo "::error::gh pr create failed and no open PR exists for $BRANCH. Check the repo setting 'Allow GitHub Actions to create and approve pull requests'."
+              exit 1
+            fi
+          fi

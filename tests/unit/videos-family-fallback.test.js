@@ -82,10 +82,34 @@ const FAMILIES = {
 };
 
 const STUDY = {
-  course_title: 'Sicilian structures',
-  source_url: 'https://lichess.org/study/abc',
-  platform: 'lichess',
+  study_title: 'Sicilian structures',
+  chapter_title: 'Pawn breaks',
+  study_url: 'https://lichess.org/study/abc',
+  chapter_url: 'https://lichess.org/study/abc/ch1',
+  platform: 'Lichess',
   likes: 500,
+  chapters_matched: 3,
+  match: { score: 80, depth: 2, reason: 'covers-position' },
+};
+
+// Same study anchored on two pages with different scores, plus a lower-score
+// but far more liked study — match score must outrank likes, and the study
+// must appear once (best copy) in the family shelf.
+const STUDY_LOW_SCORE_HIGH_LIKES = {
+  study_title: 'Big popular study',
+  chapter_title: 'Intro',
+  study_url: 'https://lichess.org/study/bbb',
+  chapter_url: 'https://lichess.org/study/bbb/ch1',
+  platform: 'Lichess',
+  likes: 99999,
+  chapters_matched: 1,
+  match: { score: 40, depth: 1, reason: 'line-context' },
+};
+
+const STUDY_DUPLICATE_LOWER = {
+  ...STUDY,
+  chapter_url: 'https://lichess.org/study/abc/ch2',
+  match: { score: 60, depth: 1, reason: 'line-context' },
 };
 
 function buildApp() {
@@ -115,7 +139,11 @@ describe('family fallback for videos and studies (review V1/V2)', () => {
       if (p.includes('ecoB.json')) return JSON.stringify(ECO_DATA);
       if (p.includes('video-index.json')) return JSON.stringify(VIDEO_INDEX);
       if (p.includes('families.json')) return JSON.stringify(FAMILIES);
-      if (p.includes('courses.json')) return JSON.stringify({ [ROOT_FEN]: [STUDY] });
+      if (p.includes('courses.json'))
+        return JSON.stringify({
+          [ROOT_FEN]: [STUDY, STUDY_LOW_SCORE_HIGH_LIKES],
+          [VAR_FEN]: [STUDY_DUPLICATE_LOWER],
+        });
       return '{}';
     });
     path.join = jest.fn((...parts) => parts.join('/'));
@@ -169,10 +197,15 @@ describe('family fallback for videos and studies (review V1/V2)', () => {
       expect(videoContext.family.name).toBe('Sicilian Defense');
       expect(videos.length).toBeGreaterThan(0);
 
-      // Studies fall back the same way — the study anchors on ROOT_FEN only
+      // Studies fall back the same way — deduped by study_url (best-scored
+      // copy of /abc wins) and ranked by match score before likes.
       expect(courses.source).toBe('family');
       expect(courses.family.name).toBe('Sicilian Defense');
-      expect(courses.courses.map((c) => c.source_url)).toEqual([STUDY.source_url]);
+      expect(courses.courses.map((c) => c.study_url)).toEqual([
+        STUDY.study_url,
+        STUDY_LOW_SCORE_HIGH_LIKES.study_url,
+      ]);
+      expect(courses.courses[0].match.score).toBe(80);
     });
 
     it('keeps source "position" when exact resources exist', async () => {

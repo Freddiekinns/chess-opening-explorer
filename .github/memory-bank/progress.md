@@ -2,6 +2,16 @@
 
 ## What's Done (newest first)
 
+- **Study Matching V2** (2026-07-10, branch `feat/study-matching-v2`): cached
+  fetch + offline `course:rematch`, multi-anchor scored matcher with family
+  guard, schema v2 + study-level cards with badges, dual-schema audit script.
+  Coverage 18.2%→35.7% all / 62.5%→91.5% top-200; contamination 5.8%→0; dupes
+  1,329→0; title dupes→0. Also fixed path-resolver in git worktrees. Report:
+  `docs/reviews/2026-07-10-study-matching-v2.md`.
+- **Video Index Refresh — §2 Ship Checklist** (2026-07-08, PR #47): backfilled
+  descriptions/tags/views for all 1,708 videos, full rematch — coverage
+  28.2%→72.8%, top-200 91.5%, cross-family 0%. Monthly Action live (one repo
+  checkbox pending).
 - **Video Experience V1–V3** (2026-07-07, branch
   `claude/video-experience-v1-v3`): family fallback for empty video/study
   galleries (`family-resource-service.js`; shelves labelled "Videos for the

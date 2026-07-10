@@ -47,16 +47,24 @@ class PathResolver {
       ];
       dataPath = pickExisting(candidates);
     } else {
+      // Try cwd-relative locations first, then fall back to the repo root
+      // this file lives in — the cwd heuristics fail in git worktrees, whose
+      // checkout directory is not named `chess-opening-explorer`.
       const isRunningFromRoot = cwd.endsWith('chess-opening-explorer');
-      const candidates = isRunningFromRoot
+      const cwdCandidates = isRunningFromRoot
         ? [
             joinFromBase(cwd, 'api', 'data'),
             joinFromBase(cwd, '..', 'api', 'data')
           ]
         : [
+            joinFromBase(cwd, 'api', 'data'),
             joinFromBase(cwd, '..', '..', 'api', 'data'),
             joinFromBase(cwd, '..', 'api', 'data')
           ];
+      const candidates = [
+        ...cwdCandidates,
+        path.resolve(__dirname, '..', '..', '..', '..', 'api', 'data')
+      ];
       dataPath = pickExisting(candidates);
     }
 

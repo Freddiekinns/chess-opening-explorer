@@ -7,14 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DEFAULT_COURSES_PATH = path.join(
-  process.cwd(),
-  'packages',
-  'api',
-  'src',
-  'data',
-  'courses.json'
-);
+const DEFAULT_COURSES_PATH = path.join(process.cwd(), 'api', 'data', 'courses.json');
 
 /**
  * Load existing courses from JSON file

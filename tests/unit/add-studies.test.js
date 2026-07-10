@@ -1,15 +1,19 @@
 /**
  * Unit Tests for Add Studies Tool
- * Tests input parsing, deduplication, study ID extraction, and merge behavior
+ * Tests input parsing, deduplication, study ID extraction, and cache-driven
+ * index building (study matching v2).
  */
 
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 const {
   parseInputText,
   extractStudyId,
   StateManager,
+  buildIndexFromCache,
 } = require('../../tools/course-discovery/add-studies');
+const { saveStudy } = require('../../tools/course-discovery/lib/study-cache');
 
 describe('parseInputText', () => {
   test('should parse title + URL pairs', () => {
@@ -169,71 +173,24 @@ describe('StateManager', () => {
   });
 });
 
-describe('merge behavior', () => {
-  // These test the merge logic as implemented in the run() function
-  // by simulating the filter logic directly
-
-  test('curated entries survive when auto_discovered entries are cleared', () => {
-    const existing = {
-      fen1: [
-        { course_title: 'Auto Study', auto_discovered: true },
-        { course_title: 'Curated Study', curated: true },
-      ],
-    };
-
-    // Simulate the merge filter from add-studies.js
-    const merged = {};
-    for (const [fen, courses] of Object.entries(existing)) {
-      const kept = courses.filter((c) => c.auto_discovered !== true);
-      if (kept.length > 0) {
-        merged[fen] = kept;
-      }
-    }
-
-    expect(merged['fen1']).toHaveLength(1);
-    expect(merged['fen1'][0].course_title).toBe('Curated Study');
-  });
-
-  test('replaceCurated flag clears both auto and curated entries', () => {
-    const existing = {
-      fen1: [
-        { course_title: 'Auto Study', auto_discovered: true },
-        { course_title: 'Curated Study', curated: true },
-        { course_title: 'Manual Study' },
-      ],
-    };
-
-    const replaceCurated = true;
-    const merged = {};
-    for (const [fen, courses] of Object.entries(existing)) {
-      const kept = courses.filter((c) => {
-        if (c.auto_discovered === true) return false;
-        if (replaceCurated && c.curated === true) return false;
-        return true;
-      });
-      if (kept.length > 0) {
-        merged[fen] = kept;
-      }
-    }
-
-    expect(merged['fen1']).toHaveLength(1);
-    expect(merged['fen1'][0].course_title).toBe('Manual Study');
-  });
-
-  test('new curated entries are added to merged result', () => {
-    const merged = {};
-    const discovered = {
-      fen1: [{ course_title: 'New Study', curated: true }],
-      fen2: [{ course_title: 'Another Study', curated: true }],
-    };
-
-    for (const [fen, courses] of Object.entries(discovered)) {
-      if (!merged[fen]) merged[fen] = [];
-      merged[fen].push(...courses);
-    }
-
-    expect(Object.keys(merged)).toHaveLength(2);
-    expect(merged['fen1'][0].course_title).toBe('New Study');
+describe('buildIndexFromCache', () => {
+  test('builds a v2 index from cached studies using the real ECO index', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'add-studies-'));
+    saveStudy(dir, {
+      studyId: 'sic99',
+      name: 'Sicilian Defense Basics',
+      author: 'tester',
+      likes: 100,
+      pgn: '[Event "Sicilian Defense Basics: Intro"]\n[ChapterURL "https://lichess.org/study/sic99/c1"]\n\n1. e4 c5 *',
+      fetched_at: '2026-07-10T00:00:00.000Z',
+      source: 'curated',
+    });
+    const index = buildIndexFromCache(dir);
+    const allEntries = Object.values(index).flat();
+    expect(allEntries.length).toBeGreaterThan(0);
+    expect(allEntries[0].study_title).toBe('Sicilian Defense Basics');
+    expect(allEntries[0].match.score).toBeGreaterThanOrEqual(25);
+    fs.rmSync(dir, { recursive: true, force: true });
   });
 });
 

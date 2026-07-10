@@ -152,6 +152,17 @@ describe('fetchStudyPGN', () => {
     expect(result).toBeNull();
   });
 
+  test('should return null for 403 (private study)', async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 403,
+      statusText: 'Forbidden',
+    });
+
+    const result = await fetchStudyPGN('privateStudy');
+    expect(result).toBeNull();
+  });
+
   test('should throw on server error', async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,

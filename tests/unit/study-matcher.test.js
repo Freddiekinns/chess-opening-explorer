@@ -187,6 +187,11 @@ describe('cleanChapterTitle', () => {
   test('falls back to the full name when the strip would leave nothing', () => {
     expect(cleanChapterTitle('Caro-Kann Defense', 'Caro-Kann Defense')).toBe('Caro-Kann Defense');
   });
+  test('strips repeated study-name prefixes (real Lichess data)', () => {
+    expect(
+      cleanChapterTitle('Caro-Kann defence', 'Caro-Kann defence: Caro-Kann defence: Panov attack')
+    ).toBe('Panov attack');
+  });
 });
 
 describe('matchStudy', () => {

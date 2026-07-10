@@ -58,9 +58,12 @@ function entryDisplayTitle(entry) {
 
 function hasTitleDuplication(entry) {
   if (entry.study_title !== undefined) {
+    // v2 cards render study_title alone, so only an unstripped strict-prefix
+    // concatenation in chapter_title counts (a chapter legitimately named
+    // exactly like the study is not a display dupe).
     const study = (entry.study_title || '').trim().toLowerCase();
     const chapter = (entry.chapter_title || '').trim().toLowerCase();
-    return Boolean(study && chapter && chapter.startsWith(study));
+    return Boolean(study && chapter && chapter.length > study.length && chapter.startsWith(study));
   }
   const parts = (entry.course_title || '').split(' - ');
   return (

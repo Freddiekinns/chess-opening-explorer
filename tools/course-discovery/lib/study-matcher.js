@@ -92,18 +92,22 @@ function inferStudyFamilies(studyTitle, chapterAnchorSets) {
 }
 
 /**
- * Lichess chapter [Event] headers repeat the study name
- * ("Study: Chapter") — strip the repeat so cards read cleanly.
+ * Lichess chapter [Event] headers repeat the study name — sometimes more
+ * than once ("Study: Study: Chapter") — so strip the prefix repeatedly
+ * until only the chapter's own name remains.
  */
 function cleanChapterTitle(studyName, chapterName) {
-  const name = (chapterName || '').trim();
+  let name = (chapterName || '').trim();
   const study = (studyName || '').trim();
-  if (study && name.toLowerCase().startsWith(study.toLowerCase())) {
+  if (!study) return name;
+
+  while (name.length > study.length && name.toLowerCase().startsWith(study.toLowerCase())) {
     const rest = name
       .slice(study.length)
       .replace(/^\s*[:\-–—]\s*/, '')
       .trim();
-    return rest || name;
+    if (!rest || rest === name) break;
+    name = rest;
   }
   return name;
 }

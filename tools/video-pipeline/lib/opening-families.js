@@ -145,7 +145,7 @@ const TITLE_FAMILY_DETECTORS = [
   ['catalan', /\bcatalan\b/i],
   ['benko', /\bbenko\b/i],
   ['benoni', /\bbenoni\b/i],
-  ['london', /\blondon\s+system\b|\bjobava\b/i],
+  ['london', /\blondon\s+(?:system|opening)\b|\bjobava\b/i],
   ['trompowsky', /\btrompowsky\b|\btromp\b/i],
   ['english', /\benglish\s+opening\b/i],
 ];

@@ -1,0 +1,13 @@
+{
+  "min_match_score": 25,
+  "max_studies_per_page": 20,
+  "covers_position_ratio": 0.8,
+  "weights": {
+    "line_context_base": 10,
+    "specificity_scale": 60,
+    "family_same": 20,
+    "family_compatible": 5,
+    "likes_per_magnitude": 6,
+    "per_extra_chapter": 2
+  }
+}

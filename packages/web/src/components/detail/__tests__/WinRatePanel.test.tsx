@@ -108,7 +108,19 @@ describe('WinRatePanel', () => {
     expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1400' });
   });
 
-  it('falls back to the snapshot silently when the explorer fails', async () => {
+  it('stays silent when the passive level-check fetch fails', async () => {
+    const { ExplorerError } = await vi.importActual<typeof import('../../../lib/lichessExplorer')>(
+      '../../../lib/lichessExplorer'
+    );
+    fetchExplorerMock.mockRejectedValue(new ExplorerError('boom', 401));
+    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+
+    await waitFor(() => expect(trackEvent).toHaveBeenCalledWith('explorer_error', { status: 401 }));
+    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
+    expect(screen.queryByText(/isn't available right now/)).not.toBeInTheDocument();
+  });
+
+  it('shows the snapshot with an unavailable note when a band click fails', async () => {
     const { ExplorerError } = await vi.importActual<typeof import('../../../lib/lichessExplorer')>(
       '../../../lib/lichessExplorer'
     );
@@ -118,9 +130,8 @@ describe('WinRatePanel', () => {
 
     await user.click(screen.getByRole('button', { name: '2200+' }));
 
-    await waitFor(() =>
-      expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument()
-    );
+    expect(await screen.findByText(/isn't available right now/)).toBeInTheDocument();
+    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
     expect(trackEvent).toHaveBeenCalledWith('explorer_error', { status: 429 });
   });
 

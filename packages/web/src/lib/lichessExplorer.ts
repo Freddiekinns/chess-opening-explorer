@@ -20,11 +20,11 @@ const MAX_TOP_GAMES = 15;
 const NOTABLE_GAMES_CAP = 5;
 
 export const BANDS = [
-  { id: 'masters', label: 'Masters', ratings: null },
-  { id: '2200', label: '2200+', ratings: '2200,2500' },
-  { id: '1800', label: '1800–2200', ratings: '1800,2000' },
-  { id: '1400', label: '1400–1800', ratings: '1400,1600' },
   { id: 'u1400', label: 'Under 1400', ratings: '0,1000,1200' },
+  { id: '1400', label: '1400–1800', ratings: '1400,1600' },
+  { id: '1800', label: '1800–2200', ratings: '1800,2000' },
+  { id: '2200', label: '2200+', ratings: '2200,2500' },
+  { id: 'masters', label: 'Masters', ratings: null },
 ] as const;
 
 export type BandId = (typeof BANDS)[number]['id'];

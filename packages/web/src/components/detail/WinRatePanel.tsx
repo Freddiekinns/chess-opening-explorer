@@ -20,8 +20,9 @@ import { trackEvent } from '../../lib/analytics';
  * Lichess opening explorer, a zero-interaction "level check" comparison
  * (masters vs club band, rendered only when the gap is significant), and a
  * notable master games list. Explorer requests fire only once the panel is
- * in view; on any failure the panel silently reverts to the snapshot — the
- * page must never be worse than today's.
+ * in view. Passive failures (level check) are silent — the page must never
+ * be worse than today's — but a failure after an explicit band click shows
+ * a short unavailable note above the snapshot.
  */
 
 const MIN_LIVE_SAMPLE = 100;
@@ -225,34 +226,28 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
         </div>
       )}
 
-      <div className={styles.bandRow}>
-        <div className={styles.bandPills} role="group" aria-label="Rating band">
-          {BANDS.map((bandDef) => (
-            <button
-              key={bandDef.id}
-              type="button"
-              className={`${styles.bandPill} ${band === bandDef.id ? styles.bandPillActive : ''}`}
-              aria-pressed={band === bandDef.id}
-              onClick={() => selectBand(bandDef.id)}
-            >
-              {bandDef.label}
-            </button>
-          ))}
-          {band && (
-            <button
-              type="button"
-              className={`${styles.bandPill} ${styles.resetPill}`}
-              onClick={resetBand}
-              title="Clear my level and show the snapshot"
-            >
-              Reset
-            </button>
-          )}
-        </div>
-        <p className={styles.bandHint}>
-          Lichess ratings; chess.com players typically sit 1–2 bands lower than their number
-          suggests.
-        </p>
+      <div className={styles.bandPills} role="group" aria-label="Rating band">
+        {BANDS.map((bandDef) => (
+          <button
+            key={bandDef.id}
+            type="button"
+            className={`${styles.bandPill} ${band === bandDef.id ? styles.bandPillActive : ''}`}
+            aria-pressed={band === bandDef.id}
+            onClick={() => selectBand(bandDef.id)}
+          >
+            {bandDef.label}
+          </button>
+        ))}
+        {band && (
+          <button
+            type="button"
+            className={`${styles.bandPill} ${styles.resetPill}`}
+            onClick={resetBand}
+            title="Clear my level and show the snapshot"
+          >
+            Reset
+          </button>
+        )}
       </div>
 
       {showLive ? (
@@ -286,7 +281,14 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
           <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} />
         )
       ) : (
-        <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} />
+        <>
+          {band && liveFailed && (
+            <div className={styles.liveUnavailable} role="status">
+              Live Lichess data isn't available right now — showing the master games snapshot.
+            </div>
+          )}
+          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} />
+        </>
       )}
 
       {notableGames.length > 0 && (

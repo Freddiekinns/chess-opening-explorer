@@ -16,12 +16,6 @@
 }
 
 /* Band selector */
-.bandRow {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
 .bandPills {
   display: flex;
   flex-wrap: wrap;
@@ -63,13 +57,12 @@
   border-style: dashed;
 }
 
-.bandHint {
-  margin: 0;
+/* Live panel states */
+.liveUnavailable {
   font-size: var(--text-2xs);
   color: var(--color-text-muted);
 }
 
-/* Live panel states */
 .livePlaceholder {
   background-color: var(--surface-raised);
   border: 1px solid var(--border-default);

@@ -38,8 +38,14 @@
 unused `OpeningStats.tsx`); §9 beacon chosen over breadcrumbs; live
 continuations render inside the stats panel (Opening book navigator untouched).
 
-**Next**: Slice 2 (deviation detection in `usePersonalGames`, leak panel,
-practice-param CTA) per PRD §6.
+**Design review (2026-07-11)**: Fred's critique of the shipped panel led to
+`docs/proposals/2026-07-11-sidebar-unification.md` — one Elo lens for the
+column, Win rates = pure evidence, Opening book absorbs the move list (one "Next
+moves" list, W/D/L bars, "not in the book" rows). Phase A (panel polish) + Phase
+B (unification) awaiting go/no-go.
+
+**Next**: sidebar unification phases, then Slice 2 (deviation detection, leak
+panel, practice-param CTA) per PRD §6.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

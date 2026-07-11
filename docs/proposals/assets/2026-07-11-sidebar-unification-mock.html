@@ -1,0 +1,265 @@
+<title>Win rates panel — redesign</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --base:#1a1816; --raised:#232120; --elevated:#2c2a27; --overlay:#363330;
+    --orange:#e85d04; --a12:rgba(232,93,4,.12); --a30:rgba(232,93,4,.30);
+    --t1:#ece8e1; --t2:#9a958e; --t3:#8e887f; --inv:#100f0e;
+    --bsub:rgba(255,255,255,.06); --bdef:rgba(255,255,255,.10);
+    --rw:#d4cfc7; --rd:#5a554e; --rb:#c08840;
+    --disp:'Bricolage Grotesque',system-ui,sans-serif;
+    --body:'DM Sans',system-ui,sans-serif;
+    --mono:'SFMono-Regular',Monaco,Consolas,monospace;
+  }
+  html{background:#141210}
+  body{font-family:var(--body);color:var(--t1);background:#141210;margin:0;padding:40px 24px 64px;font-size:14px;line-height:1.5}
+  .wrap{max-width:1060px;margin:0 auto}
+  .eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t3)}
+  h1{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.015em;margin:6px 0 4px}
+  .sub{color:var(--t2);margin:0 0 32px;max-width:64ch}
+  h2{font-family:var(--disp);font-weight:800;font-size:18px;margin:48px 0 6px}
+  .secSub{color:var(--t2);margin:0 0 16px;font-size:13px;max-width:70ch}
+
+  /* role map */
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .role{background:var(--base);border:1px solid var(--bdef);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+  .role .tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t3)}
+  .role h3{font-family:var(--disp);font-weight:800;font-size:16px;margin:0}
+  .role .q{color:var(--t1);font-size:13px;font-style:italic}
+  .role p{margin:0;color:var(--t2);font-size:12.5px}
+  .rolenote{margin:14px 0 0;color:var(--t3);font-size:12.5px;max-width:70ch}
+
+  /* stage */
+  .grid{display:grid;grid-template-columns:440px 1fr;gap:40px;align-items:start}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  .stage{background:var(--base);border:1px solid var(--bdef);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:20px}
+  .panel{display:flex;flex-direction:column;gap:12px}
+  .ptitle{font-family:var(--disp);font-weight:800;font-size:16px;line-height:1;display:flex;align-items:center;gap:8px}
+
+  .filterRow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .eloTag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);flex-shrink:0}
+  .pill{background:var(--raised);border:1px solid var(--bdef);border-radius:9999px;padding:5px 10px;font-size:11px;font-weight:600;color:var(--t2);cursor:pointer;line-height:1}
+  .pill.on{background:var(--orange);border-color:var(--orange);color:var(--inv)}
+  .pill.reset{border-style:dashed;color:var(--t3)}
+  .src{font-size:11px;color:var(--t3)}
+
+  .card{background:var(--raised);border:1px solid var(--bsub);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+  .statRow{display:flex;justify-content:space-between}
+  .stat .lab{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:3px}
+  .stat .val{font-family:var(--disp);font-weight:800;font-size:22px;line-height:1}
+  .stat.right{text-align:right}
+  .bigbar{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px}
+  .bigbar span{display:block;height:100%}
+  .legend{display:flex;justify-content:space-between;font-size:11px;color:var(--t2);font-variant-numeric:tabular-nums}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+  .sw-w{background:var(--rw)} .sw-d{background:var(--rd)} .sw-b{background:var(--rb)}
+
+  .slabel{font-family:var(--disp);font-weight:800;font-size:14px;line-height:1;margin-top:6px;display:flex;align-items:center;gap:8px}
+  .rows{display:flex;flex-direction:column;gap:4px}
+  .mrow{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid var(--bsub);color:var(--t2)}
+  .mrow .san{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--t1);min-width:48px}
+  .mrow .name{font-size:11px;color:var(--t3);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mini{flex:0 0 84px;display:flex;height:4px;border-radius:2px;overflow:hidden;gap:1px}
+  .mini span{display:block;height:100%}
+  .mrow .n{font-family:var(--mono);font-size:11px;color:var(--t3);min-width:72px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  a.mrow{text-decoration:none;cursor:pointer;transition:border-color .15s ease,background-color .15s ease}
+  a.mrow:hover{border-color:var(--a30);background:rgba(0,0,0,.3)}
+  a.mrow:hover .san{color:var(--orange)}
+  .chev{color:var(--t3);font-size:12px;flex-shrink:0;width:8px;text-align:center}
+  .noChev{width:8px;flex-shrink:0}
+
+  .grow{display:flex;align-items:baseline;gap:8px;padding:6px 2px;border-bottom:1px solid var(--bsub)}
+  .grow:last-of-type{border-bottom:none}
+  .grow .players{font-size:12px;color:var(--t1);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .grow .res{font-family:var(--mono);font-size:11px;color:var(--t3);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .more{width:100%;margin-top:6px;padding:8px 0;background:var(--bsub);border:1px solid var(--bdef);border-radius:4px;color:var(--t3);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--body)}
+  .plink{font-size:12px;color:var(--t2);text-decoration:none;padding-top:4px}
+  .plink u{text-decoration-color:var(--bdef);text-underline-offset:3px}
+
+  .obook{background:var(--raised);border:1px solid var(--bsub);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+  .crumb{font-size:11px;color:var(--t3)}
+  .crumb b{color:var(--orange);font-weight:600}
+  .dim{opacity:.7}
+
+  .mk{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--elevated);border:1px solid var(--bdef);color:var(--t2);font-size:10px;font-weight:700;font-family:var(--body);flex-shrink:0}
+  .notes{display:flex;flex-direction:column;gap:18px}
+  .note{display:flex;gap:12px}
+  .note .mk{margin-top:2px}
+  .note h3{font-family:var(--disp);font-weight:700;font-size:14px;margin:0 0 3px}
+  .note p{margin:0;color:var(--t2);font-size:13px;max-width:52ch}
+  .note .was{color:var(--t3);font-size:12px;display:block;margin-top:4px}
+
+  .states{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .scard{background:var(--base);border:1px solid var(--bdef);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .scard .cap{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+  .strip{background:var(--raised);border:1px solid var(--orange);border-radius:8px;padding:9px 12px;font-size:12px;line-height:1.5}
+  .quiet{font-size:11px;color:var(--t3)}
+  .footer{margin-top:48px;color:var(--t3);font-size:12px;border-top:1px solid var(--bsub);padding-top:16px;max-width:70ch}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Design review · evidence engine · rev 2</div>
+  <h1>The sidebar, unified</h1>
+  <p class="sub">Rev 2 concedes the core critique: "most played" and the book's "continuations" are the same thing to a user. This version has <strong>one list of next moves</strong>, one Elo lens governing the whole column, and three panels with unmistakable jobs. Position shown: Slav 3.e3 Nf6, 1400–1800 selected.</p>
+
+  <!-- ═══ roles ═══ -->
+  <h2>One column, three roles</h2>
+  <div class="roles">
+    <div class="role">
+      <span class="tag">Lens</span>
+      <h3>Elo selector</h3>
+      <span class="q">"Show this opening at my level."</span>
+      <p>Moved out of the stats panel to the top of the column — it filters everything beneath it: the win rates <em>and</em> the book's move stats. Persists site-wide as "my level".</p>
+    </div>
+    <div class="role">
+      <span class="tag">Evidence</span>
+      <h3>Win rates</h3>
+      <span class="q">"What happens from this position?"</span>
+      <p>Outcomes, volume, notable games, and the level check. No move list any more — numbers about <em>this</em> position only.</p>
+    </div>
+    <div class="role">
+      <span class="tag">Navigation</span>
+      <h3>Opening book</h3>
+      <span class="q">"Where am I, and what's next?"</span>
+      <p>The single home of next moves: named lines link onward, popular unnamed moves appear as data rows, all scored at the selected level. Overview (meaning) sits between the two, unchanged.</p>
+    </div>
+  </div>
+
+  <!-- ═══ merged list ═══ -->
+  <h2>One list of next moves</h2>
+  <p class="secSub">The book's Continuations absorbs the explorer data instead of competing with it. The tree is the backbone — it always renders, even if Lichess is unreachable. Explorer data enriches it progressively: rows re-rank by what's actually played at the selected level, each gains a win/draw/win split, and popular moves that theory never named join the list as plain data rows.</p>
+  <div class="rows" style="max-width:440px">
+    <div class="mrow"><span class="san">Nc3</span><span class="name">no name in theory</span><span class="mini"><span class="sw-w" style="flex:49"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:46"></span></span><span class="n">662.3k</span><span class="noChev"></span></div>
+    <a class="mrow" href="#"><span class="san">Nf3</span><span class="name">Slav: Quiet Variation</span><span class="mini"><span class="sw-w" style="flex:49"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:46"></span></span><span class="n">601.9k</span><span class="chev">›</span></a>
+    <div class="mrow"><span class="san">cxd5</span><span class="name">no name in theory</span><span class="mini"><span class="sw-w" style="flex:48"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:47"></span></span><span class="n">194.9k</span><span class="noChev"></span></div>
+  </div>
+  <p class="rolenote">This example is real: at 1400–1800, the most played move here (Nc3, 662k games) has no name in opening theory — the old book panel simply couldn't show you the club main line. Named rows keep the full link affordance (hover ring, orange move, chevron); unnamed rows are visibly inert. The orange popularity bar retires — volume lives in the count, outcomes in the colours.</p>
+
+  <!-- ═══ the column, annotated ═══ -->
+  <h2>The column, annotated</h2>
+  <div class="grid">
+    <div class="stage">
+      <!-- Elo lens -->
+      <div class="filterRow">
+        <span class="eloTag">Elo</span><span class="mk">1</span>
+        <span class="pill">Under 1400</span>
+        <span class="pill on">1400–1800</span>
+        <span class="pill">1800–2200</span>
+        <span class="pill">2200+</span>
+        <span class="pill">Masters</span>
+        <span class="pill reset">Reset</span>
+      </div>
+
+      <!-- Win rates -->
+      <div class="panel">
+        <div class="ptitle">Win rates <span class="mk">2</span></div>
+        <div class="src">Lichess games, 1400–1800 · live <span class="mk">3</span></div>
+        <div class="card">
+          <div class="statRow">
+            <div class="stat"><span class="lab">Total games</span><span class="val">1.8M</span></div>
+            <div class="stat right"><span class="lab">Average Elo</span><span class="val">1,621</span></div>
+          </div>
+          <div class="bigbar">
+            <span class="sw-w" style="flex:48"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:47"></span>
+          </div>
+          <div class="legend">
+            <span><i class="sw-w"></i>White wins 48%</span>
+            <span><i class="sw-d"></i>Draws 5%</span>
+            <span><i class="sw-b"></i>Black wins 47%</span>
+            <span class="mk">4</span>
+          </div>
+        </div>
+
+        <div class="slabel">Notable games <span class="mk">5</span></div>
+        <div>
+          <div class="grow"><span class="players">Carlsen (2863) – Vachier-Lagrave (2778)</span><span class="res">1–0 · 2020</span></div>
+          <div class="grow"><span class="players">Carlsen (2830) – Firouzja (2763)</span><span class="res">0–1 · 2023</span></div>
+          <div class="grow"><span class="players">Radjabov (2751) – Grischuk (2719)</span><span class="res">0–1 · 2008</span></div>
+          <button class="more" type="button">Show 2 more</button>
+        </div>
+
+        <a class="plink" href="#">These are everyone's results — <u>analyse your own games in this opening</u> <span class="mk">6</span></a>
+      </div>
+
+      <!-- Overview -->
+      <div class="obook dim">
+        <div class="ptitle" style="font-size:15px">Overview</div>
+        <div class="quiet" style="font-size:12px;line-height:1.5">The 3.e3 Slav is a quiet and highly solid system, often called the 'Slow Slav'… <span style="opacity:.6">(unchanged)</span></div>
+      </div>
+
+      <!-- Opening book -->
+      <div class="obook">
+        <div class="ptitle" style="font-size:15px">Opening book</div>
+        <div class="crumb">Queen's Pawn Game › Queen's Gambit › Slav Defense › Slav: 3.e3 › <b>Slav: 3.e3 Nf6</b></div>
+
+        <div class="slabel" style="font-size:13px;margin-top:0">Next moves <span class="mk">7</span></div>
+        <div class="rows">
+          <div class="mrow"><span class="san">Nc3</span><span class="name">no name in theory</span><span class="mini"><span class="sw-w" style="flex:49"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:46"></span></span><span class="n">662.3k</span><span class="noChev"></span></div>
+          <a class="mrow" href="#"><span class="san">Nf3</span><span class="name">Slav: Quiet Variation</span><span class="mini"><span class="sw-w" style="flex:49"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:46"></span></span><span class="n">601.9k</span><span class="chev">›</span></a>
+          <div class="mrow"><span class="san">cxd5</span><span class="name">no name in theory</span><span class="mini"><span class="sw-w" style="flex:48"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:47"></span></span><span class="n">194.9k</span><span class="noChev"></span></div>
+        </div>
+
+        <div class="slabel" style="font-size:13px">Alternatives (move 3)</div>
+        <div class="rows">
+          <a class="mrow" href="#"><span class="san">3.Bf5</span><span class="name">Slav: 3.e3 Bf5</span><span class="mini"><span class="sw-w" style="flex:47"></span><span class="sw-d" style="flex:5"></span><span class="sw-b" style="flex:48"></span></span><span class="n">2M</span><span class="chev">›</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- findings -->
+    <aside class="notes">
+      <div class="note"><span class="mk">1</span><div>
+        <h3>The Elo selector becomes the column's lens</h3>
+        <p>Labelled "Elo", ordered lowest to highest, sitting above everything it filters — the win rates and the book's move stats change together, so choosing a band never feels like a dead switch. Persists as "my level" site-wide.</p>
+        <span class="was">Was: unlabelled pills inside the stats widget, affecting only part of the page.</span>
+      </div></div>
+      <div class="note"><span class="mk">2</span><div>
+        <h3>Win rates is pure evidence now</h3>
+        <p>Titled like its sibling panels, and it no longer carries a move list — that job moved to the book. What remains answers one question: how does this position score.</p>
+      </div></div>
+      <div class="note"><span class="mk">3</span><div>
+        <h3>One source line answers "what am I looking at"</h3>
+        <p>"Lichess games, 1400–1800 · live"; with no band selected it reads "Master games · updated Jul 2025".</p>
+      </div></div>
+      <div class="note"><span class="mk">4</span><div>
+        <h3>The legend decodes the bar explicitly</h3>
+        <p>Colour swatches tie each label to its segment and the labels get verbs: "White wins 48%". Sentence-case fixes throughout ("Total games", "Average Elo"). This legend teaches the encoding every mini bar below reuses.</p>
+      </div></div>
+      <div class="note"><span class="mk">5</span><div>
+        <h3>Notable games collapses to three</h3>
+        <p>Three visible, then the book's own "Show more" affordance.</p>
+      </div></div>
+      <div class="note"><span class="mk">6</span><div>
+        <h3>The bridge card becomes one honest sentence</h3>
+        <p>"These are everyone's results — analyse your own games in this opening." It closes the evidence panel's thought instead of interrupting the column.</p>
+        <span class="was">Was: a standalone dismissable card ("see how you actually play the Slav").</span>
+      </div></div>
+      <div class="note"><span class="mk">7</span><div>
+        <h3>The book absorbs the move stats — one list, not two</h3>
+        <p>Continuations becomes "Next moves": named lines stay links (hover ring, orange move, chevron); popular moves theory never named appear as inert data rows — like Nc3, the actual club main line here. Every row shows the win/draw/win split at the selected level plus the games count. Alternatives gets the same treatment from the parent position's data. The tree is the backbone: with no explorer data the list still renders, just without bars.</p>
+        <span class="was">Was: "most played" in one panel and "continuations" in another — the same subject twice with different clothes.</span>
+      </div></div>
+    </aside>
+  </div>
+
+  <h2>States</h2>
+  <div class="states">
+    <div class="scard">
+      <span class="cap">Level check (when the gap ≥ 8 points)</span>
+      <div class="strip">Level check: at club level (Lichess 1400–1800) White scores 56% here — at master level only 48%. This line works better in club play.</div>
+      <span class="quiet">Evidence — sits at the top of the Win rates panel.</span>
+    </div>
+    <div class="scard">
+      <span class="cap">No band selected (default)</span>
+      <div class="src" style="font-size:11px">Master games · updated Jul 2025</div>
+      <span class="quiet">Snapshot stats; the book shows named rows with counts only — exactly today's book, minus the orange bar.</span>
+    </div>
+    <div class="scard">
+      <span class="cap">Live data unavailable</span>
+      <div class="quiet" style="color:var(--t2)">Live Lichess data isn't available right now — showing the master games snapshot.</div>
+      <span class="quiet">Book keeps its named rows (tree data is local); only the bars and unnamed rows are missing.</span>
+    </div>
+  </div>
+
+  <div class="footer">Tokens verbatim from the Warm Editorial Dark system (simplified.css). Result colours #d4cfc7 / #5a554e / #c08840 are mandatory for win–draw–win data. The orange popularity bar retires; orange remains only on the active pill, the breadcrumb's current node, and link-hover moves. Bricolage Grotesque and DM Sans fall back to system faces if the font CDN is blocked in this preview.</div>
+</div>

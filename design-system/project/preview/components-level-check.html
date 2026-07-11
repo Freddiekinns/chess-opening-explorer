@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base);max-width:460px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin:18px 0 8px}
+.strip{background:#232120;border:1px solid #e85d04;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.5;color:var(--color-text-primary)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{background:#232120;border:1px solid #2a2724;border-radius:999px;padding:5px 10px;font-size:10px;font-weight:600;color:#9a958e;cursor:pointer}
+.pill.active{background:#e85d04;border-color:#e85d04;color:#1a1713}
+.pill.reset{border-style:dashed}
+.hint{font-size:10px;color:var(--color-text-muted);margin:6px 0 0}
+.meta{font-size:10px;color:var(--color-text-muted);margin:8px 0}
+.card{background:#232120;border:1px solid #2a2724;border-radius:12px;padding:12px 16px}
+.bar{display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px}
+.bar .w{flex:52;background:#d4cfc7}.bar .d{flex:26;background:#5a554e}.bar .b{flex:22;background:#c08840}
+.lab{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-muted);margin-top:5px;font-family:var(--font-family-mono)}
+.cont{background:#232120;border:1px solid #2a2724;border-radius:8px;padding:8px 14px;margin-top:8px;font-size:11px}
+.cont .r{display:flex;gap:10px;align-items:baseline;padding:2px 0}
+.cont .san{font:700 12px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);min-width:3.5em}
+.cont .g{color:var(--color-text-muted);flex:1}
+.cont .p{color:var(--color-text-muted);font-variant-numeric:tabular-nums}
+.notable{margin-top:8px}
+.notable .t{font-size:10px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.notable a{display:flex;justify-content:space-between;font-size:11px;color:var(--color-text-primary);text-decoration:none;padding:3px 0}
+.notable .res{color:var(--color-text-muted);font-variant-numeric:tabular-nums}
+.bridge{display:flex;align-items:center;gap:8px;background:#232120;border:1px dashed #2a2724;border-radius:8px;padding:8px 14px;margin-top:12px;font-size:11px}
+.bridge a{flex:1;color:var(--color-text-primary);text-decoration:none}
+.bridge .x{color:var(--color-text-muted);cursor:pointer}
+</style></head><body>
+
+<span class="cap">Level check strip (zero-interaction insight)</span>
+<div class="strip">Level check: at club level (Lichess 1400–1800) White scores 56% here — at master level only 48%. This line works better in club play.</div>
+
+<span class="cap">Rating-band selector + hint</span>
+<div class="pills">
+  <span class="pill">Masters</span><span class="pill">2200+</span><span class="pill">1800–2200</span><span class="pill active">1400–1800</span><span class="pill">Under 1400</span><span class="pill reset">Reset</span>
+</div>
+<p class="hint">Lichess ratings; chess.com players typically sit 1–2 bands lower than their number suggests.</p>
+
+<span class="cap">Live panel + explorer continuations</span>
+<div class="card">
+  <div class="meta">Lichess games, 1400–1800 · live</div>
+  <div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div>
+  <div class="lab"><span>White 52%</span><span>Draw 26%</span><span>Black 22%</span></div>
+</div>
+<div class="cont">
+  <div class="r"><span class="san">c5</span><span class="g">412k games</span><span class="p">51% / 5% / 44%</span></div>
+  <div class="r"><span class="san">e5</span><span class="g">388k games</span><span class="p">53% / 4% / 43%</span></div>
+  <div class="r"><span class="san">e6</span><span class="g">201k games</span><span class="p">52% / 5% / 43%</span></div>
+</div>
+
+<span class="cap">Notable games (masters, max one per player)</span>
+<div class="notable">
+  <div class="t">Notable games</div>
+  <a href="#"><span>Carlsen (2850) – Caruana (2800)</span><span class="res">1–0 · 2019</span></a>
+  <a href="#"><span>Nakamura (2790) – So (2770)</span><span class="res">½–½ · 2021</span></a>
+</div>
+
+<span class="cap">Analyse bridge card (≥1,000-game pages, session-dismissable)</span>
+<div class="bridge"><a href="#">See how you actually play the Sicilian Defense — free, no account.</a><span class="x">✕</span></div>
+
+</body></html>

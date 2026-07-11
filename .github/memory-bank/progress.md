@@ -2,6 +2,12 @@
 
 ## What's Done (newest first)
 
+- **Deviation Trainer Slice 1 — Evidence Engine** (2026-07-11, branch
+  `feat/evidence-engine-slice1`): Lichess explorer client (band mapping, TTL/LRU
+  cache), level-check strip (≥8 pp, ≥100 games), rating-band selector +
+  site-wide "my level", notable master games, Analyse bridge card, `/api/event`
+  beacon instrumentation (S4-lite). PRD:
+  `docs/proposals/2026-07-11-deviation-trainer-prd.md`.
 - **Ko-fi tip jar** (2026-07-11): site-wide footer support link
   (`ko-fi.com/wfred`) via a `KOFI_URL` constant in `Footer.tsx`; `.support`
   shares the `.contribute` link styling. Reworded the adjacent feedback link

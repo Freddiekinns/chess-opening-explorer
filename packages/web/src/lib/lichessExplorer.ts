@@ -7,7 +7,9 @@
  * LRU-capped at 200 entries). Only public FENs are ever sent to Lichess.
  */
 
-const EXPLORER_BASE = 'https://explorer.lichess.ovh';
+// Official host per the Lichess API spec (the legacy explorer.lichess.ovh
+// host now returns 401).
+const EXPLORER_BASE = 'https://explorer.lichess.org';
 const STORAGE_KEY = 'openingbook:explorer-cache';
 const MAX_CACHE_ENTRIES = 200;
 const MASTERS_TTL_MS = 7 * 24 * 60 * 60 * 1000;

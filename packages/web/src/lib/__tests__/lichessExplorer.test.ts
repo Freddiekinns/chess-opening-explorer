@@ -47,7 +47,7 @@ function okResponse(body: unknown) {
 describe('buildExplorerUrl', () => {
   it('uses the masters endpoint with no ratings param for the masters band', () => {
     const url = buildExplorerUrl(FEN, 'masters');
-    expect(url).toContain('explorer.lichess.ovh/masters');
+    expect(url).toContain('explorer.lichess.org/masters');
     expect(url).toContain(`fen=${encodeURIComponent(FEN)}`);
     expect(url).not.toContain('ratings=');
   });
@@ -59,7 +59,7 @@ describe('buildExplorerUrl', () => {
     ['u1400', '0,1000,1200'],
   ] as const)('maps band %s to ratings=%s on the lichess endpoint', (band, ratings) => {
     const url = buildExplorerUrl(FEN, band);
-    expect(url).toContain('explorer.lichess.ovh/lichess');
+    expect(url).toContain('explorer.lichess.org/lichess');
     expect(url).toContain(`ratings=${encodeURIComponent(ratings)}`);
     expect(url).toContain(`speeds=${encodeURIComponent('blitz,rapid,classical')}`);
   });

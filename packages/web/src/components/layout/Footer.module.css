@@ -33,7 +33,8 @@
   white-space: nowrap;
 }
 
-.contribute {
+.contribute,
+.support {
   font-size: var(--text-3xs);
   color: var(--color-text-muted);
   letter-spacing: var(--letter-spacing-wide);
@@ -42,7 +43,8 @@
   transition: color 0.15s ease;
 }
 
-.contribute:hover {
+.contribute:hover,
+.support:hover {
   color: var(--color-brand-orange);
 }
 

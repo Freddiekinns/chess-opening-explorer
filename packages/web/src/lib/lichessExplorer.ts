@@ -1,30 +1,29 @@
 /**
  * Lichess opening-explorer client (deviation-trainer PRD §5.3).
  *
- * Normalises the /masters and /lichess endpoints into one shape, with a
- * two-layer cache: an in-memory session map plus a localStorage map keyed
+ * Fetches through our own /api/explorer proxy — since March 2026 the Lichess
+ * explorer rejects anonymous requests, so the server attaches its API token
+ * (packages/api/src/routes/explorer.routes.js) and the CDN caches responses.
+ * Normalises masters and club-band payloads into one shape, with a two-layer
+ * cache: an in-memory session map plus a localStorage map keyed
  * `${band}|${fen}` (TTL 7 days for masters, 24 h for lichess bands;
- * LRU-capped at 200 entries). Only public FENs are ever sent to Lichess.
+ * LRU-capped at 200 entries). Only public FENs are ever sent.
  */
 
-// Official host per the Lichess API spec (the legacy explorer.lichess.ovh
-// host now returns 401).
-const EXPLORER_BASE = 'https://explorer.lichess.org';
 const STORAGE_KEY = 'openingbook:explorer-cache';
 const MAX_CACHE_ENTRIES = 200;
 const MASTERS_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const LICHESS_TTL_MS = 24 * 60 * 60 * 1000;
-const SPEEDS = 'blitz,rapid,classical';
 const MAX_MOVES = 12;
 const MAX_TOP_GAMES = 15;
 const NOTABLE_GAMES_CAP = 5;
 
 export const BANDS = [
-  { id: 'u1400', label: 'Under 1400', ratings: '0,1000,1200' },
-  { id: '1400', label: '1400–1800', ratings: '1400,1600' },
-  { id: '1800', label: '1800–2200', ratings: '1800,2000' },
-  { id: '2200', label: '2200+', ratings: '2200,2500' },
-  { id: 'masters', label: 'Masters', ratings: null },
+  { id: 'u1400', label: 'Under 1400' },
+  { id: '1400', label: '1400–1800' },
+  { id: '1800', label: '1800–2200' },
+  { id: '2200', label: '2200+' },
+  { id: 'masters', label: 'Masters' },
 ] as const;
 
 export type BandId = (typeof BANDS)[number]['id'];
@@ -65,17 +64,8 @@ export class ExplorerError extends Error {
 }
 
 export function buildExplorerUrl(fen: string, band: BandId): string {
-  const bandDef = BANDS.find((b) => b.id === band);
-  if (!bandDef) throw new ExplorerError(`Unknown band: ${band}`);
-  if (bandDef.ratings === null) {
-    return `${EXPLORER_BASE}/masters?fen=${encodeURIComponent(fen)}&moves=${MAX_MOVES}&topGames=${MAX_TOP_GAMES}`;
-  }
-  return (
-    `${EXPLORER_BASE}/lichess?variant=standard` +
-    `&speeds=${encodeURIComponent(SPEEDS)}` +
-    `&ratings=${encodeURIComponent(bandDef.ratings)}` +
-    `&fen=${encodeURIComponent(fen)}&moves=${MAX_MOVES}&topGames=0&recentGames=0`
-  );
+  if (!BANDS.some((b) => b.id === band)) throw new ExplorerError(`Unknown band: ${band}`);
+  return `/api/explorer?fen=${encodeURIComponent(fen)}&band=${encodeURIComponent(band)}`;
 }
 
 type CacheEntry = { t: number; u: number; d: ExplorerResult };

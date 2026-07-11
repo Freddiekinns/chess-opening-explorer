@@ -146,6 +146,15 @@
       ]
     },
     {
+      "source": "/api/explorer",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=86400, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
       "source": "/fonts/(.*)",
       "headers": [
         {
@@ -187,6 +196,10 @@
     {
       "source": "/api/event",
       "destination": "/api/event"
+    },
+    {
+      "source": "/api/explorer",
+      "destination": "/api/explorer"
     },
     {
       "source": "/api/families",

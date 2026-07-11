@@ -45,24 +45,20 @@ function okResponse(body: unknown) {
 }
 
 describe('buildExplorerUrl', () => {
-  it('uses the masters endpoint with no ratings param for the masters band', () => {
+  it('targets the same-origin proxy, never Lichess directly', () => {
     const url = buildExplorerUrl(FEN, 'masters');
-    expect(url).toContain('explorer.lichess.org/masters');
-    expect(url).toContain(`fen=${encodeURIComponent(FEN)}`);
-    expect(url).not.toContain('ratings=');
+    expect(url).toBe(`/api/explorer?fen=${encodeURIComponent(FEN)}&band=masters`);
+    expect(url).not.toContain('lichess.org');
   });
 
-  it.each([
-    ['2200', '2200,2500'],
-    ['1800', '1800,2000'],
-    ['1400', '1400,1600'],
-    ['u1400', '0,1000,1200'],
-  ] as const)('maps band %s to ratings=%s on the lichess endpoint', (band, ratings) => {
-    const url = buildExplorerUrl(FEN, band);
-    expect(url).toContain('explorer.lichess.org/lichess');
-    expect(url).toContain(`ratings=${encodeURIComponent(ratings)}`);
-    expect(url).toContain(`speeds=${encodeURIComponent('blitz,rapid,classical')}`);
-  });
+  it.each(['2200', '1800', '1400', 'u1400'] as const)(
+    'passes band %s through as a query param',
+    (band) => {
+      const url = buildExplorerUrl(FEN, band);
+      expect(url).toContain('/api/explorer?');
+      expect(url).toContain(`band=${band}`);
+    }
+  );
 });
 
 describe('BANDS', () => {

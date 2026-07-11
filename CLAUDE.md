@@ -59,6 +59,9 @@ protocol in `design-system/README.md`.
 
 - `YOUTUBE_API_KEY` - Required for video pipeline
 - `GOOGLE_AI_API_KEY` - Required for LLM enrichment (Vertex AI / Gemini)
+- `LICHESS_EXPLORER_TOKEN` - Required for live explorer stats (`/api/explorer`
+  proxy); a zero-scope Lichess personal access token. Must also be set in Vercel
+  project env for production.
 - Copy `.env.example` to `.env` and add keys as needed
 
 ## Essential Commands
@@ -263,6 +266,16 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   (`tools/video-pipeline/lib/opening-families.js`). After any matcher/weight
   change, verify with `node scripts/audit-study-matches.js` (coverage,
   contamination, duplication, ranking ties — reads both v1 and v2 schemas).
+- **Lichess opening explorer requires authentication (since 2026-03)**:
+  anonymous requests to `explorer.lichess.org` get 401 — this is Lichess-wide
+  DDoS defence, not an IP block or a code bug (their docs still claim public
+  access; trust the behaviour). Live explorer stats go through the
+  `/api/explorer` proxy (`packages/api/src/routes/explorer.routes.js`), which
+  attaches `LICHESS_EXPLORER_TOKEN` (zero-scope personal token; set in `.env`
+  and Vercel env). The token allows 25 requests/min, so CDN caching
+  (vercel.json + route headers) is load-bearing — never bypass the proxy or call
+  Lichess directly from the client. Without the token the route 503s and the Win
+  Rate panel falls back to snapshot stats.
 - **Host-based redirects belong in `vercel.json`, not middleware**: Vercel's
   edge resolves host-level redirects (www↔apex, custom domain redirects)
   _before_ middleware runs, so any `if (url.host === ...)` branch in

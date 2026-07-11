@@ -1,0 +1,164 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Level check strip — the zero-interaction insight */
+.levelCheck {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--color-brand-orange);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* Band selector */
+.bandRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.bandPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.bandPill {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.bandPill:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-brand-orange);
+}
+
+.bandPillActive {
+  background-color: var(--color-brand-orange);
+  border-color: var(--color-brand-orange);
+  color: var(--surface-base, #1a1713);
+}
+
+.bandPillActive:hover {
+  color: var(--surface-base, #1a1713);
+}
+
+.resetPill {
+  border-style: dashed;
+}
+
+.bandHint {
+  margin: 0;
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+}
+
+/* Live panel states */
+.livePlaceholder {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Explorer continuations under the live bar */
+.continuations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+}
+
+.continuationRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.continuationSan {
+  font-family: var(--font-family-headline);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  min-width: 3.5em;
+}
+
+.continuationGames {
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.continuationPcts {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Notable games */
+.notable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.notableTitle {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.notableList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.notableLink {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: var(--space-1) 0;
+}
+
+.notableLink:hover .notablePlayers {
+  color: var(--color-brand-orange);
+}
+
+.notablePlayers {
+  transition: color 0.15s ease;
+}
+
+.notableResult {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}

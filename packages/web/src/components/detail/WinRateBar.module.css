@@ -63,6 +63,12 @@
   color: var(--color-brand-orange);
 }
 
+.metaLine {
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+  margin: calc(var(--space-2) * -1) 0 var(--space-2);
+}
+
 .bar {
   display: flex;
   height: var(--space-2);

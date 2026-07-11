@@ -7,10 +7,13 @@ interface PopularityStats {
   black_win_rate?: number;
   draw_rate?: number;
   avg_rating?: number;
+  analysis_date?: string;
 }
 
 interface WinRateBarProps {
   popularityStats: PopularityStats | null;
+  /** Source/freshness line, e.g. "Master games · updated 2025-07-15" */
+  meta?: string;
 }
 
 function formatNumber(n: number): string {
@@ -19,7 +22,7 @@ function formatNumber(n: number): string {
   return String(n);
 }
 
-export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats }) => {
+export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats, meta }) => {
   const totalGames = popularityStats?.games_analyzed || 0;
   if (totalGames === 0) return null;
 
@@ -43,6 +46,8 @@ export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats }) => {
           </div>
         )}
       </div>
+
+      {meta && <div className={styles.metaLine}>{meta}</div>}
 
       <div className={styles.bar}>
         <div

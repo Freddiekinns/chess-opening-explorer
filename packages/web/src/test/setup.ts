@@ -7,6 +7,23 @@ global.ResizeObserver = class ResizeObserver {
   disconnect() {}
 };
 
+// IntersectionObserver that reports every observed element as immediately
+// visible — components under test behave as if scrolled into view.
+(global as any).IntersectionObserver = class IntersectionObserver {
+  private cb: (entries: { isIntersecting: boolean; target: Element }[], observer: this) => void;
+
+  constructor(
+    cb: (entries: { isIntersecting: boolean; target: Element }[], observer: any) => void
+  ) {
+    this.cb = cb;
+  }
+  observe(target: Element) {
+    this.cb([{ isIntersecting: true, target }], this);
+  }
+  unobserve() {}
+  disconnect() {}
+};
+
 // Provide consistent element sizing for react-chessboard in JSDOM.
 Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
   configurable: true,

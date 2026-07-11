@@ -79,6 +79,26 @@
   white-space: nowrap;
 }
 
+/* Match-reason badge — same treatment as VideoGallery's .matchBadge */
+.matchBadge {
+  align-self: flex-start;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--border-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.matchBadgeVariation {
+  border-color: var(--accent-a30);
+  background: var(--accent-a6);
+  color: var(--color-text-secondary);
+}
+
 /* Right side: open button */
 .openButton {
   display: inline-flex;

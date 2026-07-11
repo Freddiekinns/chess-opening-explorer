@@ -58,6 +58,11 @@ describe('opening-families', () => {
     it('should return null for titles naming no family', () => {
       expect(getFamilyFromTitle('Top 10 opening traps for beginners')).toBeNull();
     });
+
+    it('should detect the London under both common names', () => {
+      expect(getFamilyFromTitle('Crush with the London System')).toBe('london');
+      expect(getFamilyFromTitle('Deep Preparation in the London Opening')).toBe('london');
+    });
   });
 
   describe('compareFamilies', () => {

@@ -92,7 +92,9 @@ async function fetchStudyPGN(studyId) {
   const url = `${LICHESS_BASE}/api/study/${encodeURIComponent(studyId)}.pgn?comments=false&variations=false&clocks=false`;
   const response = await rateLimitedFetch(url);
 
-  if (response.status === 404) {
+  // 404 = deleted, 403 = private/unlisted — both mean "not available", which
+  // is expected across a large curated list and should not be an error.
+  if (response.status === 404 || response.status === 403) {
     return null;
   }
 
@@ -122,7 +124,8 @@ async function fetchStudyMetadata(studyId) {
     headers: { Accept: 'application/json' },
   });
 
-  if (response.status === 404) {
+  // 404 = deleted, 403 = private/unlisted — treated as "not available".
+  if (response.status === 404 || response.status === 403) {
     return null;
   }
 

@@ -83,7 +83,8 @@ npm run test:watch           # Watch mode
 npm run enrich               # LLM enrichment
 npm run course:enrich        # Enrich course data
 npm run course:discover      # Find popular Lichess studies
-npm run course:import        # Import studies into courses.json
+npm run course:import        # Fetch studies into cache + rebuild courses.json
+npm run course:rematch       # Re-score studies offline (zero API cost)
 npm run pipeline             # Video pipeline (see Data Pipeline Workflows)
 
 # Code Quality
@@ -167,11 +168,13 @@ It fails fast at guard steps until `tools/data/videos.sqlite` is committed and
 the `YOUTUBE_API_KEY` repo secret is set — see `tools/video-pipeline/README.md`
 § Monthly automation.
 
-**Course Discovery:**
+**Course Discovery (study matching v2):**
 
 ```bash
 npm run course:discover      # Find popular Lichess studies (500+ likes)
-npm run course:import        # Import curated studies into courses.json
+npm run course:import        # Fetch studies into the local cache + rebuild courses.json
+npm run course:rematch       # Rebuild courses.json from the cache only (offline, seconds)
+node scripts/audit-study-matches.js  # Verify coverage/contamination/dupes/ties
 # See tools/course-discovery/README.md for details
 ```
 
@@ -250,6 +253,16 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   After any scorer/data change, verify with
   `node scripts/audit-video-matches.js` (coverage, variation specificity,
   cross-family contamination, ranking ties).
+- **`course:rematch` rebuilds courses.json from the local study cache only**
+  (`tools/data/study-cache/`, gitignored): it makes zero Lichess API calls, so
+  `likes` go stale and newly curated studies are missing until a
+  `npm run course:import` run fetches them (cache hits are skipped; `--refetch`
+  forces). courses.json is a **full rebuild** each run — never hand-edit it.
+  Scoring weights live in `config/study_matching.json`; family compatibility is
+  shared with the video matcher
+  (`tools/video-pipeline/lib/opening-families.js`). After any matcher/weight
+  change, verify with `node scripts/audit-study-matches.js` (coverage,
+  contamination, duplication, ranking ties — reads both v1 and v2 schemas).
 - **Host-based redirects belong in `vercel.json`, not middleware**: Vercel's
   edge resolves host-level redirects (www↔apex, custom domain redirects)
   _before_ middleware runs, so any `if (url.host === ...)` branch in

@@ -23,24 +23,56 @@ describe('PathResolver - local environment', () => {
   });
 
   describe('getDataPath()', () => {
+    const mockExisting = (...existing) => {
+      const fs = require('fs');
+      jest.spyOn(fs, 'existsSync').mockImplementation((candidate) => existing.includes(candidate));
+    };
+
     test('returns correct base path when running from project root', () => {
       jest.spyOn(process, 'cwd').mockReturnValue('/home/user/chess-opening-explorer');
+      mockExisting('/home/user/chess-opening-explorer/api/data');
       const result = resolver.getDataPath();
       expect(result).toBe('/home/user/chess-opening-explorer/api/data');
     });
 
     test('appends subPath when provided', () => {
       jest.spyOn(process, 'cwd').mockReturnValue('/home/user/chess-opening-explorer');
+      mockExisting('/home/user/chess-opening-explorer/api/data');
       const result = resolver.getDataPath('eco');
       expect(result).toBe('/home/user/chess-opening-explorer/api/data/eco');
     });
 
     test('returns workspace-relative path when not running from root', () => {
       jest.spyOn(process, 'cwd').mockReturnValue('/home/user/chess-opening-explorer/packages/api');
+      mockExisting('/home/user/chess-opening-explorer/api/data');
       const result = resolver.getDataPath();
-      // Uses path.join(cwd, '../../api/data') so resolves up two levels
+      // Resolves up two levels from packages/api to the repo root
       expect(result).toContain('api/data');
       expect(result).not.toBe('/home/user/chess-opening-explorer/packages/api/api/data');
+    });
+
+    test('falls back to the resolver file repo root in a git worktree checkout', () => {
+      // Worktree checkouts are not named chess-opening-explorer and have no
+      // cwd-relative api/data — the __dirname-anchored candidate must win.
+      jest.spyOn(process, 'cwd').mockReturnValue('/somewhere/else/worktree-x');
+      const fs = require('fs');
+      const anchored = path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'packages',
+        'api',
+        'src',
+        'utils',
+        '..',
+        '..',
+        '..',
+        '..',
+        'api',
+        'data'
+      );
+      jest.spyOn(fs, 'existsSync').mockImplementation((candidate) => candidate === anchored);
+      expect(resolver.getDataPath()).toBe(anchored);
     });
   });
 

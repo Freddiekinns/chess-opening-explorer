@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import styles from './StudiesGallery.module.css';
 
-// Types matching the API response from /api/courses/:fen
+// Types matching the API response from /api/courses/:fen (schema v2)
 export interface Study {
-  course_title: string;
+  study_title: string;
+  chapter_title: string;
+  study_url: string;
+  chapter_url: string;
   author: string;
   platform: string;
-  source_url: string;
-  anchor_fens: string[];
-  curated: boolean;
   likes: number;
+  chapters_matched: number;
+  curated: boolean;
+  match: { score: number; depth: number; reason: 'covers-position' | 'line-context' };
   discovered_at: string;
 }
 
@@ -25,18 +28,36 @@ interface StudiesGalleryProps {
 
 const INITIAL_DISPLAY_COUNT = 5;
 
+const MATCH_REASON_LABELS: Record<Study['match']['reason'], string> = {
+  'covers-position': 'Covers this variation',
+  'line-context': 'Explores deeper lines',
+};
+
 const StudyCard: React.FC<{ study: Study }> = ({ study }) => (
   <div className={styles.studyCard}>
     <div className={styles.studyInfo}>
-      <h4 className={styles.studyTitle}>{study.course_title}</h4>
+      <h4 className={styles.studyTitle}>{study.study_title}</h4>
       <div className={styles.studyMeta}>
         <span className={styles.author}>by {study.author}</span>
         <span className={styles.metaSeparator}>·</span>
+        <span>
+          {study.chapters_matched} {study.chapters_matched === 1 ? 'chapter' : 'chapters'}
+        </span>
+        <span className={styles.metaSeparator}>·</span>
         <span className={styles.platformBadge}>{study.platform}</span>
       </div>
+      {study.match && (
+        <span
+          className={`${styles.matchBadge} ${
+            study.match.reason === 'covers-position' ? styles.matchBadgeVariation : ''
+          }`}
+        >
+          {MATCH_REASON_LABELS[study.match.reason]}
+        </span>
+      )}
     </div>
     <a
-      href={study.source_url}
+      href={study.chapter_url || study.study_url}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.openButton}
@@ -70,7 +91,7 @@ const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, openingName: _
     <div className={styles.gallery}>
       <div className={styles.studyList}>
         {displayedStudies.map((study, index) => (
-          <StudyCard key={`${study.source_url}-${index}`} study={study} />
+          <StudyCard key={`${study.study_url}-${index}`} study={study} />
         ))}
       </div>
 

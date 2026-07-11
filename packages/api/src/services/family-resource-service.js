@@ -121,7 +121,8 @@ class FamilyResourceService {
 
   /**
    * The family's studies across all its anchor positions — deduplicated by
-   * source URL, ranked by likes.
+   * study (v2 `study_url`, falling back to v1 `source_url`), keeping each
+   * study's best-scored copy, ranked by match score then likes.
    * @param {string} familyId
    * @param {number} limit
    * @returns {Promise<Array>} course objects
@@ -137,8 +138,10 @@ class FamilyResourceService {
       this.familyCourseIndex = this._buildFamilyIndex(
         entries,
         (entry) => entry.courses,
-        (course) => course.source_url || course.course_title,
-        (a, b) => (b.likes || 0) - (a.likes || 0)
+        (course) => course.study_url || course.source_url || course.course_title,
+        (a, b) =>
+          ((b.match && b.match.score) || 0) - ((a.match && a.match.score) || 0) ||
+          (b.likes || 0) - (a.likes || 0)
       );
     }
     return (this.familyCourseIndex.get(familyId) || []).slice(0, limit);

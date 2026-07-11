@@ -1,61 +1,48 @@
 # Active Context
 
-**Date:** 2026-07-07
+**Date:** 2026-07-11
 
-## Current Task: Video Experience V1–V3 (branch `claude/video-experience-v1-v3`)
+## Current Task: Study Matching V2 (branch `feat/study-matching-v2`)
 
-**Status:** Complete. Implements the "Next/Then" horizon of
-`docs/reviews/2026-07-02-video-experience-review.md`:
+**Status:** Complete, pending PR. Rebuilt Lichess study → opening matching with
+the video-pipeline lessons (spec
+`docs/superpowers/specs/2026-07-10-study-matching-v2-design.md`, report
+`docs/reviews/2026-07-10-study-matching-v2.md`):
 
-- **V1 — family fallback** (`family-resource-service.js`): when a page has no
-  exact-position videos/studies, `/videos/:fen` and `/page/:fen` return the
-  family's best resources (deduped by video id / study URL, ranked by score then
-  views / likes, capped 8 videos / 6 studies). Response carries
-  `source: 'position'|'family'|'none'` + `family {id, name}`; the page labels
-  the shelf "Videos for the <family>" with a muted attribution note. Family
-  index builds lazily once per process (~0.5 s, then instant).
-- **V2 — match-reason badges**: `matchReason: 'variation'|'family'` per video on
-  sub-variation pages (family-root pages get no badge). Logic extracted to
-  `packages/api/src/utils/variation-words.js`, shared with
-  `scripts/audit-video-matches.js` (audit re-verified: same numbers).
-- **V3 — in-place player + watched**: thumbnail is a play button; clicking swaps
-  in a `youtube-nocookie.com` iframe (nothing loads from YouTube until play).
-  Watched state in localStorage (`lib/watchedVideos.ts`, capped 500); "Watched"
-  chip on cards. Title remains an external YouTube link.
+- **Cache + offline rematch**: raw study PGN/metadata in
+  `tools/data/study-cache/` (gitignored); `npm run course:rematch` rebuilds
+  `api/data/courses.json` in seconds with zero API calls.
+- **Multi-anchor scored matcher** (`lib/study-matcher.js`): every ECO position
+  along a chapter's move path is a candidate anchor, guarded by move-prefix
+  family compatibility (shared `opening-families.js`), scored via
+  `config/study_matching.json` (specificity + family + log-likes + chapters),
+  aggregated to one entry per (study, page), capped 20/page.
+- **Schema v2 + UI**: `study_title`/`chapter_title` split, `match.score/reason`;
+  `StudiesGallery` renders one card per study with chapter count and "Covers
+  this variation" / "Explores deeper lines" badges.
+- **Audit** `scripts/audit-study-matches.js` (reads v1+v2). Results: coverage
+  18.2%→35.7% all, 62.5%→**91.5%** top-200, 45.2%→80.3% top-1000; contamination
+  5.8%→**0**; dupes 1,329→0; title dupes→0; max/page 103→20.
+- Extras: fixed path-resolver in git worktrees (ECO data unresolvable there),
+  "London Opening" title detector, 403 = private study (not an error), legacy
+  `course-discovery/index.js` + merge helpers deleted.
 
-Also: `tests/unit/VideoGallery.test.tsx` was an orphan (jest only runs
-`*.test.js`, web vitest only scans `packages/web`) — moved to
-`packages/web/src/components/detail/__tests__/` where it actually runs, which
-exposed and fixed a real `formatDate` invalid-date bug.
+Suites: backend 748, frontend 213, build green; verified in the running app
+(Sicilian + Caro-Kann Advance pages — no London studies on Caro pages).
 
-Suites: backend 55/739, frontend 17/207, e2e 9/9, lint + tsc + build green.
-Verified against the live index with Playwright (fallback shelf on an empty
-Sicilian page, badges on the Najdorf page, player expansion + watched chip).
+**2026-07-11 follow-up:** pruned 190 dead (403/404) studies from
+`curated-studies.txt` (695→440), then ran `course:discover` + `course:import
+--includeDiscovered` — 75 candidates found, 14 had a public PGN and were
+appended (curated list now 454, still 1:1 with the cache). Coverage 35.7%→36.4%
+all, 91.5%→92.0% top-200; contamination/dupes/title-dupes stayed at 0. Backend
+749 green. Addendum in `docs/reviews/2026-07-10-study-matching-v2.md`.
 
-Freshness Action shipped too (`.github/workflows/video-refresh.yml`): monthly
-RSS pipeline + audit + auto-PR with metric diff, guarded against a collapsed
-index. **PR #46 open**; a coverage-gate follow-up commit lifted global branches
-to 90.33%. Safe to merge before the enablement steps — the workflow only runs on
-schedule/dispatch and fails fast at its guards without touching anything.
+**Follow-ups:** monthly study-refresh Action mirroring `video-refresh.yml`;
+periodic `--refetch` for likes freshness.
 
-Note: this PR improves how existing studies are SURFACED (family fallback
-applies to studies too); the studies data itself (discovery runs, curation) is
-untouched.
+## Previous Task: Video Index Refresh — §2 Ship Checklist (PR #47, merged)
 
-**What's left (video programme):**
-
-1. User, local: commit `tools/data/videos.sqlite` (gitignore exception is in the
-   PR) and confirm the `YOUTUBE_API_KEY` Actions secret exists — then the
-   monthly Action is live (verify via workflow_dispatch; guards report which
-   piece is missing).
-2. User, local: §2 ship checklist — backfill → `npm run pipeline` → audit →
-   commit index (the single biggest win: 28.2%→~67% coverage, 0% cross-family).
-3. Later: V4 family video shelves (needs family hub pages), V5+V6 taxonomy/
-   LLM + chapter matching (one project), studies data-quality work.
-
-## Previous Task: Analyse Dashboard Visual Redesign (PR #45, merged)
-
-Personal-performance tokens (sage/grey/brick) replacing the misapplied result
-colours, carded performance sections (desktop + mobile family cards), slim
-distribution bars, warm hovers/popovers, sort-menu a11y polish, dead mobile-row
-path removed. Older history in `archive.md`.
+Backfilled views/thumbnails/descriptions/tags for 1,708 videos, full rematch:
+coverage 28.2%→72.8%, top-200 91.5%, cross-family 0%. Monthly Action live (one
+repo setting pending: "Allow GitHub Actions to create and approve pull
+requests"). Older history in `archive.md`.

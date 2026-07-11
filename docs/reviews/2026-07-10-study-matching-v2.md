@@ -79,9 +79,9 @@ duplication 0, title duplication 0, top-200 coverage well above 62.5% (achieved
   match is positionally exact (`covers-position`), so it is kept; the
   title-based audit no longer counts these because the detector and matcher use
   the same rules.
-- 190 curated studies are 403/404 on Lichess — pruning them from
-  `curated-studies.txt` (or a fresh `course:discover` run to replace them) is a
-  cheap follow-up.
+- 190 curated studies were 403/404 on Lichess; pruned from `curated-studies.txt`
+  on 2026-07-11 (440 remain, matching the cache). A fresh `course:discover` run
+  to replace them and grow the catalogue is still a follow-up.
 
 ## Reproducing
 
@@ -94,8 +94,8 @@ node scripts/audit-study-matches.js path/to/old-courses.json  # compare
 
 ## Follow-ups (not in this change)
 
-- Prune dead studies from `curated-studies.txt`; run `course:discover` for fresh
-  popular studies (500+ likes) to grow the 440-study catalogue.
+- Run `course:discover` for fresh popular studies (500+ likes) to grow the
+  440-study catalogue back up (dead entries are already pruned).
 - Monthly refresh Action mirroring `video-refresh.yml` (fetch new/changed
   studies, rematch, audited auto-PR) — the cache and offline rematch make this
   straightforward.

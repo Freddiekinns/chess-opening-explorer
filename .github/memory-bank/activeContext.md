@@ -1,6 +1,6 @@
 # Active Context
 
-**Date:** 2026-07-10
+**Date:** 2026-07-11
 
 ## Current Task: Study Matching V2 (branch `feat/study-matching-v2`)
 
@@ -30,9 +30,15 @@ the video-pipeline lessons (spec
 Suites: backend 748, frontend 213, build green; verified in the running app
 (Sicilian + Caro-Kann Advance pages — no London studies on Caro pages).
 
-**Follow-ups:** prune 190 dead studies from `curated-studies.txt` / fresh
-`course:discover` run; monthly study-refresh Action mirroring
-`video-refresh.yml`; periodic `--refetch` for likes freshness.
+**2026-07-11 follow-up:** pruned 190 dead (403/404) studies from
+`curated-studies.txt` (695→440), then ran `course:discover` + `course:import
+--includeDiscovered` — 75 candidates found, 14 had a public PGN and were
+appended (curated list now 454, still 1:1 with the cache). Coverage 35.7%→36.4%
+all, 91.5%→92.0% top-200; contamination/dupes/title-dupes stayed at 0. Backend
+749 green. Addendum in `docs/reviews/2026-07-10-study-matching-v2.md`.
+
+**Follow-ups:** monthly study-refresh Action mirroring `video-refresh.yml`;
+periodic `--refetch` for likes freshness.
 
 ## Previous Task: Video Index Refresh — §2 Ship Checklist (PR #47, merged)
 

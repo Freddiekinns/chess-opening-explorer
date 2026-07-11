@@ -94,10 +94,35 @@ node scripts/audit-study-matches.js path/to/old-courses.json  # compare
 
 ## Follow-ups (not in this change)
 
-- Run `course:discover` for fresh popular studies (500+ likes) to grow the
-  440-study catalogue back up (dead entries are already pruned).
 - Monthly refresh Action mirroring `video-refresh.yml` (fetch new/changed
   studies, rematch, audited auto-PR) — the cache and offline rematch make this
   straightforward.
 - Likes staleness: `course:rematch` reuses cached likes; a periodic `--refetch`
   pass would refresh them (documented in CLAUDE.md gotchas).
+
+## Addendum: discovery run (2026-07-11)
+
+Ran `npm run course:discover` (46 search terms against the Lichess study
+search API, 500+ likes threshold) to grow the catalogue back up after the
+dead-study prune. 75 new studies found not already in `curated-studies.txt`;
+appended and fetched via `npm run course:import -- --includeDiscovered
+--append`. 61 had no public PGN (private/unlisted), leaving **14 usable new
+studies** (cache: 440 → 454).
+
+| Metric                          | Before discovery | After discovery |
+| -------------------------------- | ----------------- | ---------------- |
+| Studies matched                  | 431                | 444               |
+| Entries / pages covered          | 16,503 / 4,424     | 17,079 / 4,500    |
+| Coverage — all 12,377 pages      | 35.7%              | 36.4%             |
+| Coverage — top-200 most-played   | 91.5%              | 92.0%             |
+| Coverage — top-1000 most-played  | 80.3%              | 80.7%             |
+| Cross-family contamination       | 0                  | 0                 |
+| Same-study duplicates on a page  | 0                  | 0                 |
+| Title duplication                | 0                  | 0                 |
+
+Small, genuine gains with zero regressions on quality gates. Of the 75
+discoveries, 14 had a public PGN and were appended to `curated-studies.txt`
+(now 454 entries, still matching the cache 1:1); the other 61 (private/no
+PGN) were dropped rather than kept as permanent dead weight —
+`discovered-studies.txt` is cleared and ready for the next `course:discover`
+run.

@@ -187,19 +187,23 @@ function normalise(raw: unknown): ExplorerResult {
 
   const topGames: ExplorerTopGame[] = (Array.isArray(payload.topGames) ? payload.topGames : [])
     .slice(0, MAX_TOP_GAMES)
-    .map((g) => ({
-      id: typeof g?.id === 'string' ? g.id : '',
-      white: {
-        name: typeof g?.white?.name === 'string' ? g.white.name : '',
-        rating: toCount(g?.white?.rating) || 0,
-      },
-      black: {
-        name: typeof g?.black?.name === 'string' ? g.black.name : '',
-        rating: toCount(g?.black?.rating) || 0,
-      },
-      winner: g?.winner === 'white' || g?.winner === 'black' ? g.winner : null,
-      year: typeof g?.year === 'number' ? g.year : null,
-    }))
+    .map((g) => {
+      const winner: 'white' | 'black' | null =
+        g?.winner === 'white' ? 'white' : g?.winner === 'black' ? 'black' : null;
+      return {
+        id: typeof g?.id === 'string' ? g.id : '',
+        white: {
+          name: typeof g?.white?.name === 'string' ? g.white.name : '',
+          rating: toCount(g?.white?.rating) || 0,
+        },
+        black: {
+          name: typeof g?.black?.name === 'string' ? g.black.name : '',
+          rating: toCount(g?.black?.rating) || 0,
+        },
+        winner,
+        year: typeof g?.year === 'number' ? g.year : null,
+      };
+    })
     .filter((g) => g.id !== '');
 
   return { totalGames: white + draws + black, white, draws, black, moves, topGames };

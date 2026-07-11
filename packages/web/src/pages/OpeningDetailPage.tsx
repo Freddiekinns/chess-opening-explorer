@@ -8,8 +8,9 @@ import {
   VideoGallery,
   StudiesGallery,
   OpeningNavigator,
-  WinRateBar,
+  WinRatePanel,
 } from '../components/detail';
+import { AnalyseBridgeCard } from '../components/detail/AnalyseBridgeCard';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
 import practiceStyles from '../components/detail/PracticeControls.module.css';
@@ -72,6 +73,7 @@ interface PopularityStats {
   black_win_rate?: number;
   draw_rate?: number;
   avg_rating?: number;
+  analysis_date?: string;
 }
 
 type ApiResponse<T> = {
@@ -1180,7 +1182,11 @@ const OpeningDetailPage: React.FC = () => {
 
         {/* Right Column - Stats + Overview + Navigator */}
         <div className={`right-column ${styles.rightColumn}`}>
-          <WinRateBar popularityStats={popularityStats} />
+          <WinRatePanel popularityStats={popularityStats} fen={opening.fen} />
+          <AnalyseBridgeCard
+            gamesAnalyzed={popularityStats?.games_analyzed || 0}
+            openingName={opening.name}
+          />
 
           {/* Overview — about this opening */}
           {opening?.eco && (

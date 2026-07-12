@@ -48,24 +48,6 @@
   line-height: 1;
 }
 
-/* Label + one-line role description */
-.sectionHeader {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  margin-bottom: var(--space-3);
-}
-
-.sectionHeader .sectionLabel {
-  margin-bottom: 0;
-}
-
-.sectionSub {
-  font-size: var(--text-2xs);
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
 /* Stagger animation for sections */
 .section:nth-child(2) {
   animation-delay: 0ms;
@@ -246,6 +228,23 @@
   overflow: hidden;
 }
 
+/* Taller when carrying W/D/L results — proportions need to be readable */
+.rowBarWrapStats {
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* White-win figure: the precise number the bar only approximates */
+.rowPct {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-2xs);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  min-width: 32px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .rowBar {
   display: block;
   height: 100%;
@@ -392,9 +391,14 @@
     padding: var(--space-1-5) var(--space-2-5);
   }
 
-  /* Hide bars on mobile — count alone conveys popularity */
+  /* Hide bars on mobile — the count and the win figure carry the data */
   .rowBarWrap {
     display: none;
+  }
+
+  .rowPct {
+    min-width: auto;
+    font-size: var(--text-3xs);
   }
 
   .rowCount {

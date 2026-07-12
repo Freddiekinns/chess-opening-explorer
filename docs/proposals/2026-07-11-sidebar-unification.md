@@ -28,15 +28,30 @@ adopted:
    siblings "2...Nc3" instead of "3.Nc3"): `ancestors.length` under-counts plies
    by one, so plies are now read from the FEN (side to move + fullmove number)
    with the ancestors count as fallback.
-4. **Every section says what it is for.** One-line muted subtitles: Win rates —
-   "How games end from this position"; Next moves — "What players do from here,
-   most played first"; Instead of X — "Other moves at the same point". Notable
-   games stay inside Win rates, collapsed to three with "Show N more" (cap five,
-   one game per player as before).
+4. **Every section says what it is for — but only where it has to.** Fred's
+   second-pass review ("copy is overused and doesn't read human") trimmed the
+   first pass: the book sections carry no subtitles ("Next moves" and "Instead
+   of 3.e3" explain themselves), Win rates keeps one — "Who wins from here".
+   Master games stay inside Win rates, collapsed to three with "Show N more"
+   (cap five, one game per player as before).
+5. **Copy pass (second review).** "Notable games" → **"Master games"** — the
+   data is Lichess `topGames` (highest-rated recent OTB games), not famous
+   games, and the label tells a club-lens user these examples are _not_ from
+   their level. Level-check strip loses its "Level check:" prefix and the
+   parenthetical Elo range, reading as one plain sentence ("At intermediate
+   level White scores 56% here — masters manage only 48%. This line works better
+   in club play."). The closing funnel link is just "Analyse your own games in
+   this opening".
+6. **Readable result bars.** A 4px tri-strip was illegible (risk 1
+   materialised). Each stats row now shows a mono **white-win percentage**
+   before the bar — same convention as the panel legend ("White wins 48%"), full
+   W/D/L in the row tooltip — and the bar itself is 8px when carrying results.
+   On mobile the bar hides and the figure stays.
 
 Win-rate emphasis over popularity (Fred's call, matching risk 1's trade-off):
-the W/D/L mini bar is the row's visual, the games count is small mono text, and
-the orange popularity bar renders only when no live data drives the list.
+the number + W/D/L mini bar are the row's visual, the games count is small mono
+text, and the orange popularity bar renders only when no live data drives the
+list.
 
 ## Context
 

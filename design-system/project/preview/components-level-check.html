@@ -29,7 +29,8 @@ body{padding:24px;background:var(--surface-base);max-width:460px}
 .row{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid #2a2724;margin-bottom:4px;font-size:11px}
 .row .mv{font-family:var(--font-family-mono);font-size:12px;font-weight:600;color:var(--color-text-primary);min-width:56px}
 .row .nm{flex:1;color:#9a958e;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.row .wdl{flex:0 0 84px;height:4px;border-radius:2px;overflow:hidden;display:flex}
+.row .pct{font-family:var(--font-family-mono);font-size:10px;color:#9a958e;min-width:30px;text-align:right}
+.row .wdl{flex:0 0 84px;height:8px;border-radius:4px;overflow:hidden;display:flex}
 .row .wdl .w{background:#d4cfc7}.row .wdl .d{background:#5a554e}.row .wdl .b{background:#c08840}
 .row .ct{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);min-width:70px;text-align:right}
 .row.off{cursor:default;background:rgba(0,0,0,.12)}
@@ -44,19 +45,19 @@ body{padding:24px;background:var(--surface-base);max-width:460px}
 
 <span class="cap">Win rates panel (evidence only — no move list)</span>
 <div class="panel">
-  <div><div class="title">Win rates</div><div class="sub">How games end from this position</div></div>
-  <div class="strip" style="margin-top:0">Level check: at intermediate level (Lichess 1400–1800) White scores 56% here — at master level only 48%. This line works better in club play.</div>
+  <div><div class="title">Win rates</div><div class="sub">Who wins from here</div></div>
+  <div class="strip" style="margin-top:0">At intermediate level White scores 56% here — masters manage only 48%. This line works better in club play.</div>
   <div>
     <div class="meta">Lichess games, 1400–1800 · live</div>
     <div class="bar" style="margin-top:6px"><div class="w"></div><div class="d"></div><div class="b"></div></div>
     <div class="lab"><span><i class="iw"></i>White wins 52%</span><span><i class="id"></i>Draws 26%</span><span><i class="ib"></i>Black wins 22%</span></div>
   </div>
   <div class="notable">
-    <div class="t">Notable games</div>
+    <div class="t">Master games</div>
     <a href="#"><span>Carlsen (2850) – Caruana (2800)</span><span class="res">1–0 · 2019</span></a>
     <a href="#"><span>Nakamura (2790) – So (2770)</span><span class="res">½–½ · 2021</span></a>
   </div>
-  <a class="alink" href="#">These are everyone's results — analyse your own games in this opening</a>
+  <a class="alink" href="#">Analyse your own games in this opening</a>
 </div>
 
 <span class="cap">Unavailable note (level set, explorer failed)</span>
@@ -66,13 +67,11 @@ body{padding:24px;background:var(--surface-base);max-width:460px}
 <div class="book">
   <div class="bt">Opening book</div>
   <div class="seclab">Next moves</div>
-  <div class="secsub">What players do from here, most played first</div>
-  <div class="row"><span class="mv">3...Nf6</span><span class="nm">Slav: 3.e3 Nf6</span><span class="wdl"><span class="w" style="width:48%"></span><span class="d" style="width:5%"></span><span class="b" style="width:47%"></span></span><span class="ct">1.3M games</span></div>
-  <div class="row"><span class="mv">3...Bf5</span><span class="nm">Slav: 3.e3 Bf5</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:5%"></span><span class="b" style="width:46%"></span></span><span class="ct">709k games</span></div>
-  <div class="row off"><span class="mv">3...e6</span><span class="nm"><span class="tag">off-book</span></span><span class="wdl"><span class="w" style="width:47%"></span><span class="d" style="width:5%"></span><span class="b" style="width:48%"></span></span><span class="ct">474k games</span></div>
+  <div class="row"><span class="mv">3...Nf6</span><span class="nm">Slav: 3.e3 Nf6</span><span class="pct">48%</span><span class="wdl"><span class="w" style="width:48%"></span><span class="d" style="width:5%"></span><span class="b" style="width:47%"></span></span><span class="ct">1.3M games</span></div>
+  <div class="row"><span class="mv">3...Bf5</span><span class="nm">Slav: 3.e3 Bf5</span><span class="pct">49%</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:5%"></span><span class="b" style="width:46%"></span></span><span class="ct">709k games</span></div>
+  <div class="row off"><span class="mv">3...e6</span><span class="nm"><span class="tag">off-book</span></span><span class="pct">47%</span><span class="wdl"><span class="w" style="width:47%"></span><span class="d" style="width:5%"></span><span class="b" style="width:48%"></span></span><span class="ct">474k games</span></div>
   <div class="seclab" style="margin-top:12px">Instead of 3.e3</div>
-  <div class="secsub">Other moves at the same point</div>
-  <div class="row"><span class="mv">3.Nc3</span><span class="nm">Slav Defense</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:4%"></span><span class="b" style="width:47%"></span></span><span class="ct">10.5M games</span></div>
+  <div class="row"><span class="mv">3.Nc3</span><span class="nm">Slav Defense</span><span class="pct">49%</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:4%"></span><span class="b" style="width:47%"></span></span><span class="ct">10.5M games</span></div>
 </div>
 
 </body></html>

@@ -54,18 +54,16 @@ function reportExplorerError(err: unknown): void {
 }
 
 function levelCheckCopy(check: LevelCheck): string {
-  const { label, range } = getBand(check.bandId);
-  const level = `${label.toLowerCase()} level (Lichess ${range ?? ''})`;
+  const level = getBand(check.bandId).label.toLowerCase();
   if (check.direction === 'band-better') {
     return (
-      `Level check: at ${level} ${check.side} scores ` +
-      `${check.bandPct}% here — at master level only ${check.mastersPct}%. ` +
-      `This line works better in club play.`
+      `At ${level} level ${check.side} scores ${check.bandPct}% here — ` +
+      `masters manage only ${check.mastersPct}%. This line works better in club play.`
     );
   }
   return (
-    `Level check: masters score ${check.mastersPct}% with ${check.side} here — ` +
-    `at ${level} only ${check.bandPct}%. It needs precision.`
+    `Masters score ${check.mastersPct}% with ${check.side} here — ` +
+    `at ${level} level only ${check.bandPct}%. It needs precision.`
   );
 }
 
@@ -206,7 +204,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
     <div ref={containerRef} className={styles.panel}>
       <div className={styles.panelHeader}>
         <div className={styles.panelTitle}>Win rates</div>
-        <div className={styles.panelSub}>How games end from this position</div>
+        <div className={styles.panelSub}>Who wins from here</div>
       </div>
 
       {levelCheck && (
@@ -240,7 +238,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
 
       {notableGames.length > 0 && (
         <div className={styles.notable}>
-          <div className={styles.notableTitle}>Notable games</div>
+          <div className={styles.notableTitle}>Master games</div>
           <ul className={styles.notableList}>
             {visibleNotable.map((game) => (
               <li key={game.id}>
@@ -275,7 +273,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
       )}
 
       <Link to="/analyse" className={styles.analyseLink} onClick={() => trackEvent('bridge_click')}>
-        These are everyone's results — analyse your own games in this opening
+        Analyse your own games in this opening
       </Link>
     </div>
   );

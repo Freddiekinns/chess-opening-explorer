@@ -94,24 +94,24 @@ describe('WinRatePanel', () => {
     expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
     expect(screen.getByText('54.3k')).toBeInTheDocument();
     // Let the level-check fetches settle so the update is act()-wrapped.
-    await screen.findByText(/Level check:/);
+    await screen.findByRole('note');
   });
 
   it('titles itself and explains its role', async () => {
     primeGapResults();
     renderPanel(null);
     expect(screen.getByText('Win rates')).toBeInTheDocument();
-    expect(screen.getByText(/How games end from this position/)).toBeInTheDocument();
-    await screen.findByText(/Level check:/);
+    expect(screen.getByText('Who wins from here')).toBeInTheDocument();
+    await screen.findByRole('note');
   });
 
-  it('shows the level check strip with the level name and Elo range', async () => {
+  it('shows the level check strip with the level name', async () => {
     primeGapResults();
     renderPanel(null);
-    const strip = await screen.findByText(/Level check:/);
+    const strip = await screen.findByRole('note');
     expect(strip.textContent).toContain('56%');
     expect(strip.textContent).toContain('48%');
-    expect(strip.textContent).toContain('intermediate level (Lichess 1400–1800)');
+    expect(strip.textContent).toContain('At intermediate level');
     await waitFor(() => expect(trackEvent).toHaveBeenCalledWith('level_check_view'));
   });
 
@@ -119,7 +119,7 @@ describe('WinRatePanel', () => {
     fetchExplorerMock.mockResolvedValue(explorerResult(500, 200, 300));
     renderPanel(null);
     await waitFor(() => expect(fetchExplorerMock).toHaveBeenCalled());
-    expect(screen.queryByText(/Level check:/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('note')).not.toBeInTheDocument();
   });
 
   it('shows live data with a source line for the active band', async () => {
@@ -197,11 +197,11 @@ describe('WinRatePanel', () => {
     expect(screen.getByRole('button', { name: 'Show fewer' })).toBeInTheDocument();
   });
 
-  it('omits the notable games section when topGames is empty', async () => {
+  it('omits the master games section when topGames is empty', async () => {
     primeGapResults([]);
     renderPanel(null);
-    await screen.findByText(/Level check:/);
-    expect(screen.queryByText(/Notable games/)).not.toBeInTheDocument();
+    await screen.findByRole('note');
+    expect(screen.queryByText('Master games')).not.toBeInTheDocument();
   });
 
   it('closes with the analyse funnel link', async () => {
@@ -209,7 +209,7 @@ describe('WinRatePanel', () => {
     renderPanel(null);
     const link = screen.getByRole('link', { name: /analyse your own games/i });
     expect(link).toHaveAttribute('href', '/analyse');
-    await screen.findByText(/Level check:/);
+    await screen.findByRole('note');
   });
 
   it('renders nothing at all with no snapshot and no fen', () => {

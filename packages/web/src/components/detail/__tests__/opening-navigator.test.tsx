@@ -173,9 +173,7 @@ describe('OpeningNavigator', () => {
     renderNavigator(treeData);
 
     expect(screen.getByText('Next moves')).toBeInTheDocument();
-    expect(screen.getByText(/What players do from here/)).toBeInTheDocument();
     expect(screen.getByText('Instead of 1...e6')).toBeInTheDocument();
-    expect(screen.getByText(/Other moves at the same point/)).toBeInTheDocument();
   });
 
   describe('with live explorer data', () => {
@@ -216,6 +214,8 @@ describe('OpeningNavigator', () => {
       const rubinstein = screen.getByRole('link', { name: /rubinstein variation/i });
       expect(classical.compareDocumentPosition(rubinstein)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
       expect(classical.textContent).toContain('50k games');
+      // The white-win figure anchors the W/D/L bar with a readable number.
+      expect(classical.textContent).toContain('48%');
     });
 
     test('shows popular unnamed moves as inert off-book rows', () => {

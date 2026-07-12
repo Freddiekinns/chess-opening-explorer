@@ -134,7 +134,8 @@ const MoveRows: React.FC<MoveRowsProps> = ({
               <span className={styles.offBookTag}>off-book</span>
             </span>
           )}
-          <span className={styles.rowBarWrap}>
+          {row.stats && <span className={styles.rowPct}>{Math.round(row.stats.whitePct)}%</span>}
+          <span className={`${styles.rowBarWrap} ${row.stats ? styles.rowBarWrapStats : ''}`}>
             {row.stats ? (
               <span className={styles.resultBar} aria-hidden="true">
                 <span className={styles.resultWhite} style={{ width: `${row.stats.whitePct}%` }} />
@@ -317,12 +318,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
             <div
               className={`${styles.section} ${breadcrumbAncestors.length === 0 ? styles.sectionFirst : ''}`}
             >
-              <div className={styles.sectionHeader}>
-                <div className={styles.sectionLabel}>Next moves</div>
-                <div className={styles.sectionSub}>
-                  What players do from here, most played first
-                </div>
-              </div>
+              <div className={styles.sectionLabel}>Next moves</div>
               <MoveRows
                 rows={visibleRows}
                 ply={pliesPlayed}
@@ -354,10 +350,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
 
           return (
             <div className={styles.section}>
-              <div className={styles.sectionHeader}>
-                <div className={styles.sectionLabel}>{alternativesLabel}</div>
-                <div className={styles.sectionSub}>Other moves at the same point</div>
-              </div>
+              <div className={styles.sectionLabel}>{alternativesLabel}</div>
               <MoveRows
                 rows={visibleRows}
                 ply={currentMoveIdx}

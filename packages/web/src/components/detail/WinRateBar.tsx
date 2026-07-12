@@ -14,6 +14,8 @@ interface WinRateBarProps {
   popularityStats: PopularityStats | null;
   /** Source/freshness line, e.g. "Master games · updated 2025-07-15" */
   meta?: string;
+  /** 'bare' drops the card chrome for embedding inside another card. */
+  variant?: 'card' | 'bare';
 }
 
 function formatNumber(n: number): string {
@@ -22,7 +24,11 @@ function formatNumber(n: number): string {
   return String(n);
 }
 
-export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats, meta }) => {
+export const WinRateBar: React.FC<WinRateBarProps> = ({
+  popularityStats,
+  meta,
+  variant = 'card',
+}) => {
   const totalGames = popularityStats?.games_analyzed || 0;
   if (totalGames === 0) return null;
 
@@ -31,15 +37,15 @@ export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats, meta })
   const blackPercent = Math.round((popularityStats?.black_win_rate || 0) * 100);
 
   return (
-    <div className={styles.statsCard}>
+    <div className={`${styles.statsCard} ${variant === 'bare' ? styles.bare : ''}`}>
       <div className={styles.statsHeader}>
         <div className={styles.statGroup}>
-          <span className={styles.statLabel}>Total Games</span>
+          <span className={styles.statLabel}>Total games</span>
           <span className={styles.statValue}>{formatNumber(totalGames)}</span>
         </div>
         {popularityStats?.avg_rating && (
           <div className={`${styles.statGroup} ${styles.statGroupRight}`}>
-            <span className={styles.statLabel}>Average Lichess Elo</span>
+            <span className={styles.statLabel}>Average Elo</span>
             <span className={`${styles.statValue} ${styles.statValueElo}`}>
               {popularityStats.avg_rating.toLocaleString()}
             </span>
@@ -65,9 +71,18 @@ export const WinRateBar: React.FC<WinRateBarProps> = ({ popularityStats, meta })
       </div>
 
       <div className={styles.barLegend}>
-        <span>White {whitePercent}%</span>
-        <span>Draw {drawPercent}%</span>
-        <span>Black {blackPercent}%</span>
+        <span className={styles.legendItem}>
+          <span className={`${styles.swatch} ${styles.swatchWhite}`} aria-hidden="true" />
+          White wins {whitePercent}%
+        </span>
+        <span className={styles.legendItem}>
+          <span className={`${styles.swatch} ${styles.swatchDraw}`} aria-hidden="true" />
+          Draws {drawPercent}%
+        </span>
+        <span className={styles.legendItem}>
+          <span className={`${styles.swatch} ${styles.swatchBlack}`} aria-hidden="true" />
+          Black wins {blackPercent}%
+        </span>
       </div>
     </div>
   );

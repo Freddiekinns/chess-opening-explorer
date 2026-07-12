@@ -48,6 +48,24 @@
   line-height: 1;
 }
 
+/* Label + one-line role description */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.sectionHeader .sectionLabel {
+  margin-bottom: 0;
+}
+
+.sectionSub {
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
 /* Stagger animation for sections */
 .section:nth-child(2) {
   animation-delay: 0ms;
@@ -158,6 +176,35 @@
   background: rgba(0, 0, 0, 0.22);
 }
 
+/* Off-book rows: popular in real games but no page in the book — data, not
+   a link. No hover state, no pointer; the tag says why. */
+.offBookRow {
+  cursor: default;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.offBookRow:hover {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: var(--border-subtle);
+  color: var(--color-text-secondary);
+}
+
+.offBookRow:hover .rowMove {
+  color: var(--color-text-primary);
+}
+
+.offBookTag {
+  display: inline-block;
+  font-size: var(--text-3xs, 0.625rem);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: 1px var(--space-1-5);
+}
+
 @keyframes rowIn {
   from {
     opacity: 0;
@@ -206,6 +253,34 @@
   background: linear-gradient(90deg, var(--color-brand-orange, #e85d04), #ff9d4d);
   transition: width 400ms ease-out;
   min-width: 2px;
+}
+
+/* W/D/L mini bar — mandatory result colours, replaces the popularity bar
+   whenever live explorer stats drive the list */
+.resultBar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.resultWhite {
+  height: 100%;
+  background-color: var(--color-result-white);
+  transition: width 400ms ease-out;
+}
+
+.resultDraw {
+  height: 100%;
+  background-color: var(--color-result-draw);
+  transition: width 400ms ease-out;
+}
+
+.resultBlack {
+  height: 100%;
+  background-color: var(--color-result-black);
+  transition: width 400ms ease-out;
 }
 
 .rowCount {

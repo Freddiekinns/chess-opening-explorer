@@ -1,62 +1,78 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
 body{padding:24px;background:var(--surface-base);max-width:460px}
 .cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin:18px 0 8px}
-.strip{background:#232120;border:1px solid #e85d04;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.5;color:var(--color-text-primary)}
+.lenslabel{font-size:10px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:6px}
 .pills{display:flex;flex-wrap:wrap;gap:6px}
 .pill{background:#232120;border:1px solid #2a2724;border-radius:999px;padding:5px 10px;font-size:10px;font-weight:600;color:#9a958e;cursor:pointer}
 .pill.active{background:#e85d04;border-color:#e85d04;color:#1a1713}
 .pill.reset{border-style:dashed}
+.strip{background:rgba(0,0,0,.2);border:1px solid #e85d04;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.5;color:var(--color-text-primary);margin-top:10px}
 .hint{font-size:10px;color:var(--color-text-muted);margin:6px 0 0}
-.meta{font-size:10px;color:var(--color-text-muted);margin:8px 0}
-.card{background:#232120;border:1px solid #2a2724;border-radius:12px;padding:12px 16px}
+.panel{background:#232120;border:1px solid #2a2724;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.panel .title{font:800 15px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary)}
+.panel .sub{font-size:10px;color:var(--color-text-muted);margin-top:3px}
+.meta{font-size:10px;color:var(--color-text-muted)}
 .bar{display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px}
 .bar .w{flex:52;background:#d4cfc7}.bar .d{flex:26;background:#5a554e}.bar .b{flex:22;background:#c08840}
-.lab{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-muted);margin-top:5px;font-family:var(--font-family-mono)}
-.cont{background:#232120;border:1px solid #2a2724;border-radius:8px;padding:8px 14px;margin-top:8px;font-size:11px}
-.cont .r{display:flex;gap:10px;align-items:baseline;padding:2px 0}
-.cont .san{font:700 12px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);min-width:3.5em}
-.cont .g{color:var(--color-text-muted);flex:1}
-.cont .p{color:var(--color-text-muted);font-variant-numeric:tabular-nums}
-.notable{margin-top:8px}
+.lab{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-muted);margin-top:5px}
+.lab i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:baseline}
+.lab .iw{background:#d4cfc7}.lab .id{background:#5a554e}.lab .ib{background:#c08840}
+.notable{border-top:1px solid #2a2724;padding-top:10px}
 .notable .t{font-size:10px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
 .notable a{display:flex;justify-content:space-between;font-size:11px;color:var(--color-text-primary);text-decoration:none;padding:3px 0}
 .notable .res{color:var(--color-text-muted);font-variant-numeric:tabular-nums}
-.bridge{display:flex;align-items:center;gap:8px;background:#232120;border:1px dashed #2a2724;border-radius:8px;padding:8px 14px;margin-top:12px;font-size:11px}
-.bridge a{flex:1;color:var(--color-text-primary);text-decoration:none}
-.bridge .x{color:var(--color-text-muted);cursor:pointer}
+.alink{border-top:1px solid #2a2724;padding-top:10px;font-size:11px;color:#9a958e;text-decoration:none;display:block}
+.book{background:#232120;border:1px solid #2a2724;border-radius:12px;padding:16px;margin-top:14px}
+.book .bt{font:800 15px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);margin-bottom:10px}
+.seclab{font:800 13px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary)}
+.secsub{font-size:10px;color:var(--color-text-muted);margin:3px 0 8px}
+.row{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid #2a2724;margin-bottom:4px;font-size:11px}
+.row .mv{font-family:var(--font-family-mono);font-size:12px;font-weight:600;color:var(--color-text-primary);min-width:56px}
+.row .nm{flex:1;color:#9a958e;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .wdl{flex:0 0 84px;height:4px;border-radius:2px;overflow:hidden;display:flex}
+.row .wdl .w{background:#d4cfc7}.row .wdl .d{background:#5a554e}.row .wdl .b{background:#c08840}
+.row .ct{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);min-width:70px;text-align:right}
+.row.off{cursor:default;background:rgba(0,0,0,.12)}
+.tag{display:inline-block;font-size:9px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.04em;border:1px solid #2a2724;border-radius:999px;padding:1px 7px}
 </style></head><body>
 
-<span class="cap">Level check strip (zero-interaction insight)</span>
-<div class="strip">Level check: at club level (Lichess 1400–1800) White scores 56% here — at master level only 48%. This line works better in club play.</div>
-
-<span class="cap">Rating-band selector (lowest → highest)</span>
+<span class="cap">Level lens (page-level; governs win rates + opening book)</span>
+<span class="lenslabel">Level</span>
 <div class="pills">
-  <span class="pill">Under 1400</span><span class="pill active">1400–1800</span><span class="pill">1800–2200</span><span class="pill">2200+</span><span class="pill">Masters</span><span class="pill reset">Reset</span>
+  <span class="pill" title="Lichess games, ratings under 1400">Beginner</span><span class="pill active" title="Lichess games, ratings 1400–1800">Intermediate</span><span class="pill" title="Lichess games, ratings 1800–2200">Advanced</span><span class="pill" title="Lichess games, ratings 2200+">Expert</span><span class="pill" title="Over-the-board master games">Masters</span><span class="pill reset">Reset</span>
 </div>
 
-<span class="cap">Unavailable note (band selected, explorer failed)</span>
+<span class="cap">Win rates panel (evidence only — no move list)</span>
+<div class="panel">
+  <div><div class="title">Win rates</div><div class="sub">How games end from this position</div></div>
+  <div class="strip" style="margin-top:0">Level check: at intermediate level (Lichess 1400–1800) White scores 56% here — at master level only 48%. This line works better in club play.</div>
+  <div>
+    <div class="meta">Lichess games, 1400–1800 · live</div>
+    <div class="bar" style="margin-top:6px"><div class="w"></div><div class="d"></div><div class="b"></div></div>
+    <div class="lab"><span><i class="iw"></i>White wins 52%</span><span><i class="id"></i>Draws 26%</span><span><i class="ib"></i>Black wins 22%</span></div>
+  </div>
+  <div class="notable">
+    <div class="t">Notable games</div>
+    <a href="#"><span>Carlsen (2850) – Caruana (2800)</span><span class="res">1–0 · 2019</span></a>
+    <a href="#"><span>Nakamura (2790) – So (2770)</span><span class="res">½–½ · 2021</span></a>
+  </div>
+  <a class="alink" href="#">These are everyone's results — analyse your own games in this opening</a>
+</div>
+
+<span class="cap">Unavailable note (level set, explorer failed)</span>
 <p class="hint">Live Lichess data isn't available right now — showing the master games snapshot.</p>
 
-<span class="cap">Live panel + explorer continuations</span>
-<div class="card">
-  <div class="meta">Lichess games, 1400–1800 · live</div>
-  <div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div>
-  <div class="lab"><span>White 52%</span><span>Draw 26%</span><span>Black 22%</span></div>
+<span class="cap">Opening book — one "Next moves" list (book + off-book, W/D/L bars)</span>
+<div class="book">
+  <div class="bt">Opening book</div>
+  <div class="seclab">Next moves</div>
+  <div class="secsub">What players do from here, most played first</div>
+  <div class="row"><span class="mv">3...Nf6</span><span class="nm">Slav: 3.e3 Nf6</span><span class="wdl"><span class="w" style="width:48%"></span><span class="d" style="width:5%"></span><span class="b" style="width:47%"></span></span><span class="ct">1.3M games</span></div>
+  <div class="row"><span class="mv">3...Bf5</span><span class="nm">Slav: 3.e3 Bf5</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:5%"></span><span class="b" style="width:46%"></span></span><span class="ct">709k games</span></div>
+  <div class="row off"><span class="mv">3...e6</span><span class="nm"><span class="tag">off-book</span></span><span class="wdl"><span class="w" style="width:47%"></span><span class="d" style="width:5%"></span><span class="b" style="width:48%"></span></span><span class="ct">474k games</span></div>
+  <div class="seclab" style="margin-top:12px">Instead of 3.e3</div>
+  <div class="secsub">Other moves at the same point</div>
+  <div class="row"><span class="mv">3.Nc3</span><span class="nm">Slav Defense</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:4%"></span><span class="b" style="width:47%"></span></span><span class="ct">10.5M games</span></div>
 </div>
-<div class="cont">
-  <div class="r"><span class="san">c5</span><span class="g">412k games</span><span class="p">51% / 5% / 44%</span></div>
-  <div class="r"><span class="san">e5</span><span class="g">388k games</span><span class="p">53% / 4% / 43%</span></div>
-  <div class="r"><span class="san">e6</span><span class="g">201k games</span><span class="p">52% / 5% / 43%</span></div>
-</div>
-
-<span class="cap">Notable games (masters, max one per player)</span>
-<div class="notable">
-  <div class="t">Notable games</div>
-  <a href="#"><span>Carlsen (2850) – Caruana (2800)</span><span class="res">1–0 · 2019</span></a>
-  <a href="#"><span>Nakamura (2790) – So (2770)</span><span class="res">½–½ · 2021</span></a>
-</div>
-
-<span class="cap">Analyse bridge card (≥1,000-game pages, session-dismissable)</span>
-<div class="bridge"><a href="#">See how you actually play the Sicilian Defense — free, no account.</a><span class="x">✕</span></div>
 
 </body></html>

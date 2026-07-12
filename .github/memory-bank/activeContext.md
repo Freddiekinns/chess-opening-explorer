@@ -38,14 +38,21 @@
 unused `OpeningStats.tsx`); §9 beacon chosen over breadcrumbs; live
 continuations render inside the stats panel (Opening book navigator untouched).
 
-**Design review (2026-07-11)**: Fred's critique of the shipped panel led to
-`docs/proposals/2026-07-11-sidebar-unification.md` — one Elo lens for the
-column, Win rates = pure evidence, Opening book absorbs the move list (one "Next
-moves" list, W/D/L bars, "not in the book" rows). Phase A (panel polish) + Phase
-B (unification) awaiting go/no-go.
+**Sidebar unification (2026-07-12, shipped)**: per
+`docs/proposals/2026-07-11-sidebar-unification.md` + Fred's learner-first
+amendments. `LevelLens` (named levels Beginner→Masters, Elo in tooltips) at the
+top of the column governs `WinRatePanel` (evidence only — card chrome, legend
+verbs, notable games ×3, closing analyse link; bridge card deleted) and
+`OpeningNavigator` ("Next moves" merged book+explorer rows with W/D/L mini bars,
+capped `off-book` rows, "Instead of 3.e3" alternatives via parent-FEN fetch).
+New: `lib/bookExplorerMerge.ts` (SAN-normalised merge, ≥20-game floor),
+`hooks/useExplorerResult.ts`. Fixed pre-existing move-number off-by-one (plies
+now read from FEN, ancestors fallback). Design-system preview
+`components-level-check.html` updated in lockstep. 284 frontend tests green.
 
-**Next**: sidebar unification phases, then Slice 2 (deviation detection, leak
-panel, practice-param CTA) per PRD §6.
+**Next**: Slice 2 (deviation detection, leak panel, practice-param CTA) per PRD
+§6. Watch beacons (`band_select`, `explorer_error`) post-deploy; set
+`LICHESS_EXPLORER_TOKEN` in Vercel env before deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

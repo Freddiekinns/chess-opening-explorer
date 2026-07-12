@@ -1,33 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import WinRateBar from './WinRateBar';
 import styles from './WinRatePanel.module.css';
 import {
-  BANDS,
   ExplorerError,
   fetchExplorer,
+  getBand,
   rankNotableGames,
   type BandId,
   type ExplorerResult,
 } from '../../lib/lichessExplorer';
 import { computeLevelCheck, type LevelCheck } from '../../lib/levelCheck';
-import { clearMyLevel, getMyLevel, setMyLevel } from '../../lib/myLevel';
 import { trackEvent } from '../../lib/analytics';
 
 /**
- * Level-aware Win Rate panel (deviation-trainer PRD §5).
- *
- * Wraps the snapshot WinRateBar with a rating-band selector backed by the
- * Lichess opening explorer, a zero-interaction "level check" comparison
- * (masters vs club band, rendered only when the gap is significant), and a
- * notable master games list. Explorer requests fire only once the panel is
- * in view. Passive failures (level check) are silent — the page must never
- * be worse than today's — but a failure after an explicit band click shows
+ * Win rates panel (deviation-trainer PRD §5, reworked per the 2026-07-11
+ * sidebar-unification decision record): pure evidence, no move list. Shows
+ * the W/D/L stats for the level selected in the page-level lens (falling
+ * back to the master-games snapshot), the zero-interaction "level check"
+ * comparison, notable master games (three, expandable), and a closing link
+ * to the analyse funnel. Explorer requests fire only once the panel is in
+ * view. Passive failures (level check) are silent — the page must never be
+ * worse than today's — but a failure after an explicit band selection shows
  * a short unavailable note above the snapshot.
  */
 
 const MIN_LIVE_SAMPLE = 100;
 const DEFAULT_COMPARISON_BAND: BandId = '1400';
-const LIVE_CONTINUATIONS = 5;
+const NOTABLE_COLLAPSED = 3;
 
 interface PopularityStats {
   games_analyzed?: number;
@@ -41,6 +41,8 @@ interface PopularityStats {
 interface WinRatePanelProps {
   popularityStats: PopularityStats | null;
   fen: string;
+  /** Active level from the page lens; null = master snapshot. */
+  band: BandId | null;
 }
 
 function reportExplorerError(err: unknown): void {
@@ -51,22 +53,19 @@ function reportExplorerError(err: unknown): void {
   }
 }
 
-function bandLabel(bandId: BandId): string {
-  return BANDS.find((band) => band.id === bandId)?.label ?? bandId;
-}
-
 function levelCheckCopy(check: LevelCheck): string {
-  const label = bandLabel(check.bandId);
+  const { label, range } = getBand(check.bandId);
+  const level = `${label.toLowerCase()} level (Lichess ${range ?? ''})`;
   if (check.direction === 'band-better') {
     return (
-      `Level check: at club level (Lichess ${label}) ${check.side} scores ` +
+      `Level check: at ${level} ${check.side} scores ` +
       `${check.bandPct}% here — at master level only ${check.mastersPct}%. ` +
       `This line works better in club play.`
     );
   }
   return (
     `Level check: masters score ${check.mastersPct}% with ${check.side} here — ` +
-    `at club level (Lichess ${label}) only ${check.bandPct}%. It needs precision.`
+    `at ${level} only ${check.bandPct}%. It needs precision.`
   );
 }
 
@@ -76,19 +75,13 @@ function resultText(winner: 'white' | 'black' | null): string {
   return '½–½';
 }
 
-function formatGames(n: number): string {
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(/\.0$/, '')}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(1).replace(/\.0$/, '')}k`;
-  return String(n);
-}
-
-export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen }) => {
-  const [band, setBand] = useState<BandId | null>(() => getMyLevel());
+export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen, band }) => {
   const [live, setLive] = useState<ExplorerResult | null>(null);
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveFailed, setLiveFailed] = useState(false);
   const [masters, setMasters] = useState<ExplorerResult | null>(null);
   const [levelCheck, setLevelCheck] = useState<LevelCheck | null>(null);
+  const [notableExpanded, setNotableExpanded] = useState(false);
   const [inView, setInView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const levelCheckTracked = useRef(false);
@@ -121,6 +114,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
     setLiveFailed(false);
     setMasters(null);
     setLevelCheck(null);
+    setNotableExpanded(false);
     levelCheckTracked.current = false;
   }, [fen]);
 
@@ -128,8 +122,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
   useEffect(() => {
     if (!inView || !fen) return;
     let alive = true;
-    const saved = getMyLevel();
-    const comparison: BandId = saved && saved !== 'masters' ? saved : DEFAULT_COMPARISON_BAND;
+    const comparison: BandId = band && band !== 'masters' ? band : DEFAULT_COMPARISON_BAND;
 
     (async () => {
       try {
@@ -147,7 +140,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
     return () => {
       alive = false;
     };
-  }, [inView, fen]);
+  }, [inView, fen, band]);
 
   useEffect(() => {
     if (levelCheck && !levelCheckTracked.current) {
@@ -185,24 +178,13 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
 
   if (!fen && !hasSnapshot) return null;
 
-  const selectBand = (id: BandId) => {
-    setBand(id);
-    setMyLevel(id);
-    trackEvent('band_select', { band: id });
-  };
-
-  const resetBand = () => {
-    setBand(null);
-    clearMyLevel();
-  };
-
   const snapshotMeta = popularityStats?.analysis_date
     ? `Master games · updated ${popularityStats.analysis_date}`
     : 'Master games';
   const liveMeta = band
     ? band === 'masters'
       ? 'Master games · live'
-      : `Lichess games, ${bandLabel(band)} · live`
+      : `Lichess games, ${getBand(band).range} · live`
     : '';
 
   const showLive = Boolean(band) && !liveFailed;
@@ -217,68 +199,33 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
       : null;
 
   const notableGames = masters ? rankNotableGames(masters.topGames) : [];
+  const visibleNotable = notableExpanded ? notableGames : notableGames.slice(0, NOTABLE_COLLAPSED);
+  const hiddenNotable = notableGames.length - NOTABLE_COLLAPSED;
 
   return (
     <div ref={containerRef} className={styles.panel}>
+      <div className={styles.panelHeader}>
+        <div className={styles.panelTitle}>Win rates</div>
+        <div className={styles.panelSub}>How games end from this position</div>
+      </div>
+
       {levelCheck && (
         <div className={styles.levelCheck} role="note">
           {levelCheckCopy(levelCheck)}
         </div>
       )}
 
-      <div className={styles.bandPills} role="group" aria-label="Rating band">
-        {BANDS.map((bandDef) => (
-          <button
-            key={bandDef.id}
-            type="button"
-            className={`${styles.bandPill} ${band === bandDef.id ? styles.bandPillActive : ''}`}
-            aria-pressed={band === bandDef.id}
-            onClick={() => selectBand(bandDef.id)}
-          >
-            {bandDef.label}
-          </button>
-        ))}
-        {band && (
-          <button
-            type="button"
-            className={`${styles.bandPill} ${styles.resetPill}`}
-            onClick={resetBand}
-            title="Clear my level and show the snapshot"
-          >
-            Reset
-          </button>
-        )}
-      </div>
-
       {showLive ? (
         liveLoading ? (
           <div className={styles.livePlaceholder}>Loading Lichess data…</div>
         ) : live && live.totalGames >= MIN_LIVE_SAMPLE && liveStats ? (
-          <>
-            <WinRateBar popularityStats={liveStats} meta={liveMeta} />
-            {live.moves.length > 0 && (
-              <div className={styles.continuations}>
-                {live.moves.slice(0, LIVE_CONTINUATIONS).map((move) => (
-                  <div key={move.san} className={styles.continuationRow}>
-                    <span className={styles.continuationSan}>{move.san}</span>
-                    <span className={styles.continuationGames}>
-                      {formatGames(move.games)} games
-                    </span>
-                    <span className={styles.continuationPcts}>
-                      {Math.round(move.whitePct)}% / {Math.round(move.drawPct)}% /{' '}
-                      {Math.round(move.blackPct)}%
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </>
+          <WinRateBar popularityStats={liveStats} meta={liveMeta} variant="bare" />
         ) : live ? (
           <div className={styles.livePlaceholder}>
             Not enough games at this level to show reliable numbers.
           </div>
         ) : (
-          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} />
+          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} variant="bare" />
         )
       ) : (
         <>
@@ -287,7 +234,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
               Live Lichess data isn't available right now — showing the master games snapshot.
             </div>
           )}
-          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} />
+          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} variant="bare" />
         </>
       )}
 
@@ -295,7 +242,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
         <div className={styles.notable}>
           <div className={styles.notableTitle}>Notable games</div>
           <ul className={styles.notableList}>
-            {notableGames.map((game) => (
+            {visibleNotable.map((game) => (
               <li key={game.id}>
                 <a
                   href={`https://lichess.org/${game.id}`}
@@ -315,8 +262,21 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
               </li>
             ))}
           </ul>
+          {hiddenNotable > 0 && (
+            <button
+              type="button"
+              className={styles.showMoreBtn}
+              onClick={() => setNotableExpanded(!notableExpanded)}
+            >
+              {notableExpanded ? 'Show fewer' : `Show ${hiddenNotable} more`}
+            </button>
+          )}
         </div>
       )}
+
+      <Link to="/analyse" className={styles.analyseLink} onClick={() => trackEvent('bridge_click')}>
+        These are everyone's results — analyse your own games in this opening
+      </Link>
     </div>
   );
 };

@@ -18,15 +18,32 @@ const MAX_MOVES = 12;
 const MAX_TOP_GAMES = 15;
 const NOTABLE_GAMES_CAP = 5;
 
+/**
+ * Level bands: learner-facing names first, Lichess Elo ranges as secondary
+ * detail (tooltips, source lines) — most visitors don't know what a Lichess
+ * 1400 means, but everyone knows what "Intermediate" means. Ids are stable
+ * (they key localStorage and the proxy's band→rating mapping); only labels
+ * are presentational.
+ */
 export const BANDS = [
-  { id: 'u1400', label: 'Under 1400' },
-  { id: '1400', label: '1400–1800' },
-  { id: '1800', label: '1800–2200' },
-  { id: '2200', label: '2200+' },
-  { id: 'masters', label: 'Masters' },
+  { id: 'u1400', label: 'Beginner', range: 'under 1400' },
+  { id: '1400', label: 'Intermediate', range: '1400–1800' },
+  { id: '1800', label: 'Advanced', range: '1800–2200' },
+  { id: '2200', label: 'Expert', range: '2200+' },
+  { id: 'masters', label: 'Masters', range: null },
 ] as const;
 
 export type BandId = (typeof BANDS)[number]['id'];
+export type Band = (typeof BANDS)[number];
+
+export function getBand(id: BandId): Band {
+  return BANDS.find((band) => band.id === id) ?? BANDS[0];
+}
+
+/** Hover/aria detail for a band pill — where the games come from. */
+export function bandTooltip(band: Band): string {
+  return band.range ? `Lichess games, ratings ${band.range}` : 'Over-the-board master games';
+}
 
 export interface ExplorerMove {
   san: string;

@@ -10,7 +10,7 @@ import {
   OpeningNavigator,
   WinRatePanel,
 } from '../components/detail';
-import { AnalyseBridgeCard } from '../components/detail/AnalyseBridgeCard';
+import { LevelLens } from '../components/detail/LevelLens';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
 import practiceStyles from '../components/detail/PracticeControls.module.css';
@@ -18,6 +18,9 @@ import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
 import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
+import { useExplorerResult } from '../hooks/useExplorerResult';
+import { getMyLevel } from '../lib/myLevel';
+import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildSiteUrl, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
@@ -111,6 +114,17 @@ const OpeningDetailPage: React.FC = () => {
   const [studyContext, setStudyContext] = useState<ResourceContext | null>(null);
 
   const { isSaved, toggle: toggleRepertoire } = useRepertoire();
+
+  // Level lens (sidebar unification): one band choice governs the Win rates
+  // panel and the Opening book's move stats. Persistence and analytics live
+  // in LevelLens; the page only holds the state and the explorer results.
+  const [band, setBand] = useState<BandId | null>(() => getMyLevel());
+  const explorer = useExplorerResult(opening?.fen ?? null, band);
+  const parentFen =
+    treeData?.ancestors && treeData.ancestors.length > 0
+      ? treeData.ancestors[treeData.ancestors.length - 1].fen
+      : null;
+  const parentExplorer = useExplorerResult(parentFen, band);
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -1180,13 +1194,10 @@ const OpeningDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Stats + Overview + Navigator */}
+        {/* Right Column - Level lens + Stats + Overview + Navigator */}
         <div className={`right-column ${styles.rightColumn}`}>
-          <WinRatePanel popularityStats={popularityStats} fen={opening.fen} />
-          <AnalyseBridgeCard
-            gamesAnalyzed={popularityStats?.games_analyzed || 0}
-            openingName={opening.name}
-          />
+          <LevelLens band={band} onChange={setBand} />
+          <WinRatePanel popularityStats={popularityStats} fen={opening.fen} band={band} />
 
           {/* Overview — about this opening */}
           {opening?.eco && (
@@ -1201,7 +1212,12 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           )}
 
-          <OpeningNavigator treeData={treeData} loading={treeLoading} />
+          <OpeningNavigator
+            treeData={treeData}
+            loading={treeLoading}
+            explorer={explorer}
+            parentExplorer={parentExplorer}
+          />
         </div>
       </div>
 

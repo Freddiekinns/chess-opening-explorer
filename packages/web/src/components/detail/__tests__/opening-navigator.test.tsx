@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { OpeningNavigator } from '../OpeningNavigator';
 import type { TreeContext, TreeNode, AncestorNode } from '../../../hooks/useOpeningTree';
+import type { ExplorerResult } from '../../../lib/lichessExplorer';
 
 function makeNode(overrides: Partial<TreeNode> = {}): TreeNode {
   return {
@@ -27,12 +28,37 @@ function makeAncestor(overrides: Partial<AncestorNode> = {}): AncestorNode {
   };
 }
 
-function renderNavigator(treeData: TreeContext) {
+function renderNavigator(
+  treeData: TreeContext,
+  explorer: ExplorerResult | null = null,
+  parentExplorer: ExplorerResult | null = null
+) {
   return render(
     <MemoryRouter>
-      <OpeningNavigator treeData={treeData} loading={false} />
+      <OpeningNavigator
+        treeData={treeData}
+        loading={false}
+        explorer={explorer}
+        parentExplorer={parentExplorer}
+      />
     </MemoryRouter>
   );
+}
+
+function explorerWithMoves(moves: ExplorerResult['moves']): ExplorerResult {
+  const totals = moves.reduce((sum, m) => sum + m.games, 0);
+  return {
+    totalGames: totals,
+    white: Math.round(totals * 0.48),
+    draws: Math.round(totals * 0.05),
+    black: Math.round(totals * 0.47),
+    moves,
+    topGames: [],
+  };
+}
+
+function explorerMove(san: string, games: number) {
+  return { san, games, whitePct: 48, drawPct: 5, blackPct: 47 };
 }
 
 describe('OpeningNavigator', () => {
@@ -134,5 +160,90 @@ describe('OpeningNavigator', () => {
     expect(screen.getByRole('link', { name: /variation 5/i })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /variation 6/i })).toBeNull();
     expect(screen.getByRole('button', { name: 'Show 2 more' })).toBeInTheDocument();
+  });
+
+  test('labels the sections with their roles', () => {
+    const treeData: TreeContext = {
+      current: makeNode({ fen: 'fen-current', name: 'French Defense', move: '1...e6' }),
+      ancestors: [makeAncestor({ fen: 'fen-e4', name: "King's Pawn Game", move: '1. e4' })],
+      children: [makeNode({ fen: 'fen-child', name: 'Advance Variation', move: '3. e5' })],
+      siblings: [makeNode({ fen: 'fen-sib', name: 'Caro-Kann Defense', move: '1...c6' })],
+    };
+
+    renderNavigator(treeData);
+
+    expect(screen.getByText('Next moves')).toBeInTheDocument();
+    expect(screen.getByText(/What players do from here/)).toBeInTheDocument();
+    expect(screen.getByText('Instead of 1...e6')).toBeInTheDocument();
+    expect(screen.getByText(/Other moves at the same point/)).toBeInTheDocument();
+  });
+
+  describe('with live explorer data', () => {
+    const treeData: TreeContext = {
+      current: makeNode({ fen: 'fen-current', name: 'French Defense', move: '1...e6' }),
+      ancestors: [makeAncestor({ fen: 'fen-e4', name: "King's Pawn Game", move: '1. e4' })],
+      children: [
+        makeNode({
+          fen: 'fen-rubinstein',
+          name: 'Rubinstein Variation',
+          move: '3...dxe4',
+          gamesPlayed: 900_000,
+        }),
+        makeNode({
+          fen: 'fen-classical',
+          name: 'Classical Variation',
+          move: '3...Nf6',
+          gamesPlayed: 400_000,
+        }),
+      ],
+      siblings: [
+        makeNode({
+          fen: 'fen-sicilian',
+          name: 'Sicilian Defense',
+          move: '1...c5',
+          gamesPlayed: 1_450_000,
+        }),
+      ],
+    };
+
+    test('re-ranks next moves by live play at the chosen level', () => {
+      renderNavigator(
+        treeData,
+        explorerWithMoves([explorerMove('Nf6', 50_000), explorerMove('dxe4', 20_000)])
+      );
+
+      const classical = screen.getByRole('link', { name: /classical variation/i });
+      const rubinstein = screen.getByRole('link', { name: /rubinstein variation/i });
+      expect(classical.compareDocumentPosition(rubinstein)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+      expect(classical.textContent).toContain('50k games');
+    });
+
+    test('shows popular unnamed moves as inert off-book rows', () => {
+      renderNavigator(
+        treeData,
+        explorerWithMoves([explorerMove('Nf6', 50_000), explorerMove('h6', 10_000)])
+      );
+
+      const tag = screen.getByText('off-book');
+      expect(tag).toBeInTheDocument();
+      // The off-book row is data, not navigation.
+      expect(tag.closest('a')).toBeNull();
+      expect(tag.closest('div')?.parentElement?.textContent).toContain('h6');
+    });
+
+    test('never shows the move just played as an off-book alternative', () => {
+      renderNavigator(
+        treeData,
+        null,
+        explorerWithMoves([explorerMove('e6', 800_000), explorerMove('c5', 1_000_000)])
+      );
+
+      // c5 matches the Sicilian book row; e6 is the current move and must not
+      // reappear as an off-book alternative to itself.
+      expect(screen.queryByText('off-book')).toBeNull();
+      expect(screen.getByRole('link', { name: /sicilian defense/i }).textContent).toContain(
+        '1M games'
+      );
+    });
   });
 });

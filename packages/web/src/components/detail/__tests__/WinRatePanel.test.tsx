@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import { WinRatePanel } from '../WinRatePanel';
 import type { BandId, ExplorerResult } from '../../../lib/lichessExplorer';
 
@@ -31,6 +32,14 @@ const SNAPSHOT = {
   analysis_date: '2025-07-15',
 };
 
+function renderPanel(band: BandId | null = null, popularityStats = SNAPSHOT, fen = FEN) {
+  return render(
+    <MemoryRouter>
+      <WinRatePanel popularityStats={popularityStats} fen={fen} band={band} />
+    </MemoryRouter>
+  );
+}
+
 function explorerResult(
   white: number,
   draws: number,
@@ -48,6 +57,16 @@ function explorerResult(
     ],
     topGames: [],
     ...extra,
+  };
+}
+
+function topGame(id: string, whiteName: string, blackName: string, rating = 2800) {
+  return {
+    id,
+    white: { name: whiteName, rating },
+    black: { name: blackName, rating },
+    winner: 'white' as const,
+    year: 2019,
   };
 }
 
@@ -69,43 +88,51 @@ describe('WinRatePanel', () => {
     vi.mocked(trackEvent).mockClear();
   });
 
-  it('renders the snapshot with its date label by default', async () => {
+  it('renders the snapshot with its date label when no level is set', async () => {
     primeGapResults();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    renderPanel(null);
     expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
     expect(screen.getByText('54.3k')).toBeInTheDocument();
     // Let the level-check fetches settle so the update is act()-wrapped.
     await screen.findByText(/Level check:/);
   });
 
-  it('shows the level check strip when the gap is significant', async () => {
+  it('titles itself and explains its role', async () => {
     primeGapResults();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    renderPanel(null);
+    expect(screen.getByText('Win rates')).toBeInTheDocument();
+    expect(screen.getByText(/How games end from this position/)).toBeInTheDocument();
+    await screen.findByText(/Level check:/);
+  });
+
+  it('shows the level check strip with the level name and Elo range', async () => {
+    primeGapResults();
+    renderPanel(null);
     const strip = await screen.findByText(/Level check:/);
     expect(strip.textContent).toContain('56%');
     expect(strip.textContent).toContain('48%');
-    expect(strip.textContent).toContain('1400–1800');
+    expect(strip.textContent).toContain('intermediate level (Lichess 1400–1800)');
     await waitFor(() => expect(trackEvent).toHaveBeenCalledWith('level_check_view'));
   });
 
   it('renders no strip when the gap is under the threshold', async () => {
     fetchExplorerMock.mockResolvedValue(explorerResult(500, 200, 300));
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    renderPanel(null);
     await waitFor(() => expect(fetchExplorerMock).toHaveBeenCalled());
     expect(screen.queryByText(/Level check:/)).not.toBeInTheDocument();
   });
 
-  it('swaps to live data with a source line when a band is selected', async () => {
+  it('shows live data with a source line for the active band', async () => {
     primeGapResults();
-    const user = userEvent.setup();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
-
-    await user.click(screen.getByRole('button', { name: '1400–1800' }));
-
+    renderPanel('1400');
     expect(await screen.findByText(/Lichess games, 1400–1800 · live/)).toBeInTheDocument();
-    expect(screen.getByText('c5')).toBeInTheDocument(); // continuations list
-    expect(localStorage.getItem('openingbook:my-level')).toBe('1400');
-    expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1400' });
+  });
+
+  it('no longer renders a move list — that lives in the opening book now', async () => {
+    primeGapResults();
+    renderPanel('1400');
+    await screen.findByText(/Lichess games, 1400–1800 · live/);
+    expect(screen.queryByText('c5')).not.toBeInTheDocument();
   });
 
   it('stays silent when the passive level-check fetch fails', async () => {
@@ -113,22 +140,19 @@ describe('WinRatePanel', () => {
       '../../../lib/lichessExplorer'
     );
     fetchExplorerMock.mockRejectedValue(new ExplorerError('boom', 401));
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    renderPanel(null);
 
     await waitFor(() => expect(trackEvent).toHaveBeenCalledWith('explorer_error', { status: 401 }));
     expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
     expect(screen.queryByText(/isn't available right now/)).not.toBeInTheDocument();
   });
 
-  it('shows the snapshot with an unavailable note when a band click fails', async () => {
+  it('shows the snapshot with an unavailable note when the band fetch fails', async () => {
     const { ExplorerError } = await vi.importActual<typeof import('../../../lib/lichessExplorer')>(
       '../../../lib/lichessExplorer'
     );
     fetchExplorerMock.mockRejectedValue(new ExplorerError('boom', 429));
-    const user = userEvent.setup();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
-
-    await user.click(screen.getByRole('button', { name: '2200+' }));
+    renderPanel('2200');
 
     expect(await screen.findByText(/isn't available right now/)).toBeInTheDocument();
     expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
@@ -141,60 +165,59 @@ describe('WinRatePanel', () => {
         band === 'masters' ? explorerResult(380, 200, 420) : explorerResult(20, 10, 15)
       )
     );
-    const user = userEvent.setup();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
-
-    await user.click(screen.getByRole('button', { name: 'Under 1400' }));
-
+    renderPanel('u1400');
     expect(await screen.findByText(/Not enough games at this level/)).toBeInTheDocument();
   });
 
   it('renders notable games from masters data and links to lichess', async () => {
-    primeGapResults([
-      {
-        id: 'game1',
-        white: { name: 'Carlsen', rating: 2850 },
-        black: { name: 'Caruana', rating: 2800 },
-        winner: 'white',
-        year: 2019,
-      },
-    ]);
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    primeGapResults([topGame('game1', 'Carlsen', 'Caruana', 2850)]);
+    renderPanel(null);
 
     const link = await screen.findByRole('link', { name: /Carlsen/ });
     expect(link).toHaveAttribute('href', 'https://lichess.org/game1');
     expect(link.textContent).toContain('1–0');
   });
 
+  it('collapses notable games to three with a show-more toggle', async () => {
+    primeGapResults([
+      topGame('g1', 'A1', 'B1', 2800),
+      topGame('g2', 'A2', 'B2', 2790),
+      topGame('g3', 'A3', 'B3', 2780),
+      topGame('g4', 'A4', 'B4', 2770),
+      topGame('g5', 'A5', 'B5', 2760),
+    ]);
+    const user = userEvent.setup();
+    renderPanel(null);
+
+    await screen.findByRole('link', { name: /A1/ });
+    expect(screen.queryByRole('link', { name: /A4/ })).toBeNull();
+
+    await user.click(screen.getByRole('button', { name: 'Show 2 more' }));
+    expect(screen.getByRole('link', { name: /A4/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Show fewer' })).toBeInTheDocument();
+  });
+
   it('omits the notable games section when topGames is empty', async () => {
     primeGapResults([]);
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
+    renderPanel(null);
     await screen.findByText(/Level check:/);
     expect(screen.queryByText(/Notable games/)).not.toBeInTheDocument();
   });
 
-  it('preselects the saved my-level band', async () => {
-    localStorage.setItem('openingbook:my-level', '1400');
+  it('closes with the analyse funnel link', async () => {
     primeGapResults();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
-    expect(await screen.findByText(/Lichess games, 1400–1800 · live/)).toBeInTheDocument();
-  });
-
-  it('clears the preference and returns to the snapshot on reset', async () => {
-    primeGapResults();
-    const user = userEvent.setup();
-    render(<WinRatePanel popularityStats={SNAPSHOT} fen={FEN} />);
-
-    await user.click(screen.getByRole('button', { name: '1400–1800' }));
-    await screen.findByText(/Lichess games, 1400–1800 · live/);
-    await user.click(screen.getByRole('button', { name: /reset/i }));
-
-    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
-    expect(localStorage.getItem('openingbook:my-level')).toBeNull();
+    renderPanel(null);
+    const link = screen.getByRole('link', { name: /analyse your own games/i });
+    expect(link).toHaveAttribute('href', '/analyse');
+    await screen.findByText(/Level check:/);
   });
 
   it('renders nothing at all with no snapshot and no fen', () => {
-    const { container } = render(<WinRatePanel popularityStats={null} fen="" />);
+    const { container } = render(
+      <MemoryRouter>
+        <WinRatePanel popularityStats={null} fen="" band={null} />
+      </MemoryRouter>
+    );
     expect(container).toBeEmptyDOMElement();
   });
 });

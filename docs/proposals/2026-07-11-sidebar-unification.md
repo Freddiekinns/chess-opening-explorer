@@ -1,10 +1,42 @@
 # Sidebar unification — design review and decision record
 
-**Date:** 2026-07-11 · **Status:** proposed (awaiting Fred's go/no-go per phase)
-**Amends:** `2026-07-11-deviation-trainer-prd.md` §5 (evidence engine UI)
-**Mock:**
+**Date:** 2026-07-11 · **Status:** implemented 2026-07-12 (Phases A + B
+together, with the amendments below) **Amends:**
+`2026-07-11-deviation-trainer-prd.md` §5 (evidence engine UI) **Mock:**
 [`assets/2026-07-11-sidebar-unification-mock.html`](assets/2026-07-11-sidebar-unification-mock.html)
-(rev 2, also published as a Claude artifact during the design session)
+(rev 2, also published as a Claude artifact during the design session; the mock
+predates the 2026-07-12 amendments — the shipped copy below wins)
+
+## Amendments (2026-07-12, from Fred's learner-first review)
+
+Fred assessed rev 2 against how a learner actually uses the page. All amendments
+adopted:
+
+1. **Named skill levels, not Elo numbers.** Most visitors don't know what a
+   Lichess 1400 means. Pills read **Beginner / Intermediate / Advanced / Expert
+   / Masters** (ids unchanged: `u1400/1400/1800/2200/masters`). The Elo range
+   survives in two places for the numerate: pill tooltips ("Lichess games,
+   ratings 1400–1800") and the stats source line ("Lichess games, 1400–1800 ·
+   live"). The lens label is "Level", not "Elo".
+2. **"Off-book", not "not in the book".** Unmatched popular moves carry a small
+   uppercase `off-book` tag pill; the copy decision in the original record is
+   superseded.
+3. **Alternatives anchored to the move played.** The section label is "Instead
+   of 3.e3" (dynamic, from the current move) — it can no longer be misread as
+   another list of next moves. Fixing this exposed a pre-existing off-by-one in
+   every move-number prefix (children rendered "3.Nf6" instead of "3...Nf6",
+   siblings "2...Nc3" instead of "3.Nc3"): `ancestors.length` under-counts plies
+   by one, so plies are now read from the FEN (side to move + fullmove number)
+   with the ancestors count as fallback.
+4. **Every section says what it is for.** One-line muted subtitles: Win rates —
+   "How games end from this position"; Next moves — "What players do from here,
+   most played first"; Instead of X — "Other moves at the same point". Notable
+   games stay inside Win rates, collapsed to three with "Show N more" (cap five,
+   one game per player as before).
+
+Win-rate emphasis over popularity (Fred's call, matching risk 1's trade-off):
+the W/D/L mini bar is the row's visual, the games count is small mono text, and
+the orange popularity bar renders only when no live data drives the list.
 
 ## Context
 
@@ -128,21 +160,25 @@ One column, distinct roles, one list of next moves:
 
 ## Phasing
 
-- **Phase A — panel polish (low risk, independently shippable).** Panel title
-  "Win rates", "Elo" tag on the pills (still inside the panel), source line,
-  legend swatches + verbs, sentence-case labels, notable games collapse to
-  three, bridge card → closing link. No `OpeningNavigator` changes. Rev 1's
-  useful subset, all inside components shipped this week.
-- **Phase B — unification (the structural change).** Lift band state to
-  `OpeningDetailPage`, move the lens above the panels, pass explorer results
-  into `OpeningNavigator` (optional prop), SAN-normalised merge + re-rank +
-  unnamed rows, Alternatives via parent-FEN fetch, retire the panel's move list
-  and the popularity bar. Ships with the audit script and a no-band DOM-parity
-  test.
+Both phases shipped together on 2026-07-12 (they touch the same components, and
+the owner's amendments applied to both).
 
-Copy decisions locked: "Next moves" (book section), "not in the book" (never "no
-name in theory" — our book's coverage is not the whole of theory), legend verbs
-("White wins 48%", "Draws 5%"), "Total games" / "Average Elo".
+- **Phase A — panel polish.** Panel title "Win rates" + role subtitle, card
+  chrome matching the rest of the column, legend swatches + verbs, sentence-case
+  labels ("Total games" / "Average Elo"), notable games collapsed to three,
+  bridge card deleted → closing analyse link inside the panel.
+- **Phase B — unification.** Band state lifted to `OpeningDetailPage`;
+  `LevelLens` component above the panels (owns persistence + `band_select`
+  beacon); `useExplorerResult` hook feeds `OpeningNavigator` via optional
+  `explorer`/`parentExplorer` props (silent failure — the book must render
+  without live data); SAN-normalised merge (`lib/bookExplorerMerge.ts`: strip
+  `+#!?`, unify castling glyphs, ≥20-game floor per move, off-book cap 3 at ≥2%
+  share, current move excluded from off-book alternatives); panel's move list
+  and the orange popularity bar retired in live mode.
+
+Copy decisions locked: "Next moves" (book section), "off-book" tag (amended from
+"not in the book"), legend verbs ("White wins 48%", "Draws 5%"), "Total games" /
+"Average Elo", "Instead of 3.e3".
 
 ## References
 

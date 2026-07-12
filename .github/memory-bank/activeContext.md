@@ -1,10 +1,12 @@
 # Active Context
 
-**Date:** 2026-07-11
+**Date:** 2026-07-12
 
 ## Current Task: Deviation Trainer — Slice 1 Evidence Engine (branch `feat/evidence-engine-slice1`)
 
-**Status:** Implemented, pending review/PR. PRD
+**Status:** Implemented; PR raised 2026-07-12. Fred is reviewing the sidebar
+design separately before further UI iteration — treat the current lens/panel/
+book layout as provisional until he signs it off. PRD
 `docs/proposals/2026-07-11-deviation-trainer-prd.md` §5; plan
 `docs/superpowers/plans/2026-07-11-slice1-evidence-engine.md`.
 
@@ -50,8 +52,9 @@ New: `lib/bookExplorerMerge.ts` (SAN-normalised merge, ≥20-game floor),
 now read from FEN, ancestors fallback). Design-system preview
 `components-level-check.html` updated in lockstep. 284 frontend tests green.
 
-**Next**: Slice 2 (deviation detection, leak panel, practice-param CTA) per PRD
-§6. Watch beacons (`band_select`, `explorer_error`) post-deploy; set
+**Next**: Fred's design review of the unified sidebar (may amend rev 2 + its
+amendments), then Slice 2 (deviation detection, leak panel, practice-param CTA)
+per PRD §6. Watch beacons (`band_select`, `explorer_error`) post-deploy; set
 `LICHESS_EXPLORER_TOKEN` in Vercel env before deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)

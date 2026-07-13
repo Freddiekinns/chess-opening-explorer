@@ -2,6 +2,21 @@
 
 ## What's Done (newest first)
 
+- **Sidebar Unification + Explorer Proxy** (2026-07-12, branch
+  `feat/evidence-engine-slice1`): `/api/explorer` proxy (Lichess gated the
+  explorer behind auth 2026-03; server token + CDN caching), then the sidebar
+  redesign per `docs/proposals/2026-07-11-sidebar-unification.md` + Fred's
+  amendments — LevelLens (named levels, Elo in tooltips) governs WinRatePanel
+  (evidence only, "Master games" ×3, analyse link; bridge card deleted) and the
+  Opening book ("Next moves" merges book + explorer rows: white-win % + W/D/L
+  bars, off-book tags, "Instead of 3.e3" alternatives). Fixed pre-existing
+  move-number off-by-one (plies from FEN). 284 frontend tests.
+- **Deviation Trainer Slice 1 — Evidence Engine** (2026-07-11, branch
+  `feat/evidence-engine-slice1`): Lichess explorer client (band mapping, TTL/LRU
+  cache), level-check strip (≥8 pp, ≥100 games), rating-band selector +
+  site-wide "my level", notable master games, Analyse bridge card, `/api/event`
+  beacon instrumentation (S4-lite). PRD:
+  `docs/proposals/2026-07-11-deviation-trainer-prd.md`.
 - **Ko-fi tip jar** (2026-07-11): site-wide footer support link
   (`ko-fi.com/wfred`) via a `KOFI_URL` constant in `Footer.tsx`; `.support`
   shares the `.contribute` link styling. Reworded the adjacent feedback link

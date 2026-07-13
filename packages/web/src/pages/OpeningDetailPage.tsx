@@ -8,7 +8,7 @@ import {
   VideoGallery,
   StudiesGallery,
   OpeningNavigator,
-  WinRateBar,
+  WinRatePanel,
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
@@ -17,6 +17,9 @@ import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
 import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
+import { useExplorerResult } from '../hooks/useExplorerResult';
+import { getMyLevel } from '../lib/myLevel';
+import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildSiteUrl, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
@@ -72,6 +75,7 @@ interface PopularityStats {
   black_win_rate?: number;
   draw_rate?: number;
   avg_rating?: number;
+  analysis_date?: string;
 }
 
 type ApiResponse<T> = {
@@ -109,6 +113,19 @@ const OpeningDetailPage: React.FC = () => {
   const [studyContext, setStudyContext] = useState<ResourceContext | null>(null);
 
   const { isSaved, toggle: toggleRepertoire } = useRepertoire();
+
+  // Level lens (sidebar unification): one band choice governs the Win rates
+  // panel and the Opening book's move stats. Persistence and analytics live
+  // in LevelLens; the page only holds the state and the explorer results.
+  // Default to the "All" level so the book shows live win rates + off-book
+  // moves on first load, without waiting for an explicit level choice.
+  const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
+  const explorer = useExplorerResult(opening?.fen ?? null, band);
+  const parentFen =
+    treeData?.ancestors && treeData.ancestors.length > 0
+      ? treeData.ancestors[treeData.ancestors.length - 1].fen
+      : null;
+  const parentExplorer = useExplorerResult(parentFen, band);
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -1178,9 +1195,14 @@ const OpeningDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Stats + Overview + Navigator */}
+        {/* Right Column - Level lens + Stats + Overview + Navigator */}
         <div className={`right-column ${styles.rightColumn}`}>
-          <WinRateBar popularityStats={popularityStats} />
+          <WinRatePanel
+            popularityStats={popularityStats}
+            fen={opening.fen}
+            band={band}
+            onBandChange={setBand}
+          />
 
           {/* Overview — about this opening */}
           {opening?.eco && (
@@ -1195,7 +1217,12 @@ const OpeningDetailPage: React.FC = () => {
             </div>
           )}
 
-          <OpeningNavigator treeData={treeData} loading={treeLoading} />
+          <OpeningNavigator
+            treeData={treeData}
+            loading={treeLoading}
+            explorer={explorer}
+            parentExplorer={parentExplorer}
+          />
         </div>
       </div>
 
@@ -1243,46 +1270,62 @@ const OpeningDetailPage: React.FC = () => {
                 </div>
               )}
             </div>
-            {(videos.length > 0 || studies.length > 0) && (
-              <div
-                className={`${styles.resourcesGrid} ${
-                  videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
-                }`}
-              >
-                {videos.length > 0 && (
-                  <div>
-                    <div className={styles.resourceLabel}>
-                      {videoContext?.source === 'family' && videoContext.family
-                        ? `Videos for the ${videoContext.family.name} (${videos.length})`
-                        : `Videos (${videos.length})`}
-                    </div>
-                    {videoContext?.source === 'family' && (
-                      <p className={styles.resourceFallbackNote}>
-                        No videos match this exact position yet — these cover the wider family.
-                      </p>
+            {(videos.length > 0 || studies.length > 0) &&
+              (() => {
+                // When one column falls back to the opening family, it gains an
+                // extra note line. Reserve that line in both columns so the two
+                // galleries stay aligned at the top on desktop (side-by-side).
+                const familyFallback =
+                  videoContext?.source === 'family' || studyContext?.source === 'family';
+                const noteSlot = (isFamily: boolean, text: string) => {
+                  if (!familyFallback) return null;
+                  return isFamily ? (
+                    <p className={styles.resourceFallbackNote}>{text}</p>
+                  ) : (
+                    <p className={styles.resourceFallbackNote} aria-hidden="true">
+                      &nbsp;
+                    </p>
+                  );
+                };
+                return (
+                  <div
+                    className={`${styles.resourcesGrid} ${
+                      videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
+                    }`}
+                  >
+                    {videos.length > 0 && (
+                      <div>
+                        <div className={styles.resourceLabel}>
+                          {videoContext?.source === 'family' && videoContext.family
+                            ? `Videos from the ${videoContext.family.name} family (${videos.length})`
+                            : `Videos (${videos.length})`}
+                        </div>
+                        {noteSlot(
+                          videoContext?.source === 'family',
+                          'No videos focus on this exact position yet.'
+                        )}
+                        <VideoErrorBoundary>
+                          <VideoGallery videos={videos} hideTitle />
+                        </VideoErrorBoundary>
+                      </div>
                     )}
-                    <VideoErrorBoundary>
-                      <VideoGallery videos={videos} hideTitle />
-                    </VideoErrorBoundary>
-                  </div>
-                )}
-                {studies.length > 0 && (
-                  <div>
-                    <div className={styles.resourceLabel}>
-                      {studyContext?.source === 'family' && studyContext.family
-                        ? `Studies for the ${studyContext.family.name} (${studies.length})`
-                        : `Studies (${studies.length})`}
-                    </div>
-                    {studyContext?.source === 'family' && (
-                      <p className={styles.resourceFallbackNote}>
-                        No studies anchor on this exact position yet — these cover the wider family.
-                      </p>
+                    {studies.length > 0 && (
+                      <div>
+                        <div className={styles.resourceLabel}>
+                          {studyContext?.source === 'family' && studyContext.family
+                            ? `Studies from the ${studyContext.family.name} family (${studies.length})`
+                            : `Studies (${studies.length})`}
+                        </div>
+                        {noteSlot(
+                          studyContext?.source === 'family',
+                          'No studies focus on this exact position yet.'
+                        )}
+                        <StudiesGallery studies={studies} openingName={opening?.name || ''} />
+                      </div>
                     )}
-                    <StudiesGallery studies={studies} openingName={opening?.name || ''} />
                   </div>
-                )}
-              </div>
-            )}
+                );
+              })()}
           </div>
         )}
       </div>

@@ -310,3 +310,28 @@ across 35 suites.
   rate, `/api/families` retry + slug fallback, 34px mobile tap targets,
   unrecognised count surfaced. 195 frontend tests, build + format clean.
   (History in `archive.md`.)
+
+## Slice 1 Evidence Engine — original sidebar (superseded 2026-07-13)
+
+Branch `feat/evidence-engine-slice1`; PRD
+`docs/proposals/2026-07-11-deviation-trainer-prd.md` §5. Original UI (before the
+2026-07-13 right-column redesign): `LevelLens` (named levels Beginner→Masters,
+Elo in tooltips) above `WinRatePanel` — a titled "Win rates / Who wins from
+here" card carrying a zero-interaction **level-check strip** (`levelCheck.ts`:
+≥8 pp gap, ≥100 games/sample, points % for side to move), the W/D/L bar, notable
+master games (×3, avg-rating ranked, one per player), and a closing "Analyse
+your own games" bridge link (`bridge_click`). `OpeningNavigator` below:
+single-row book/explorer merge (`bookExplorerMerge.ts`, ≥20-game floor),
+`off-book` rows, "Instead of 3.e3" alternatives via parent-FEN fetch.
+Design-system preview was `components-level-check.html`.
+
+**2026-07-13 redesign** (Claude Design "Opening Detail Right Column.dc.html",
+match-mock-exactly): merged `LevelLens` into `WinRatePanel` as one Stats card
+(pills → Total games / Average Elo stat pair → win bar → master games);
+**dropped** the level-check strip (+ `levelCheck.ts`), the analyse bridge link,
+and the card title. Added a games-weighted position `averageRating` to the
+explorer normaliser (from `moves[].averageRating`). Restyled `OpeningNavigator`
+rows to a two-line stacked layout (move+name / white% · bar · black% · count)
+with the result bar now visible on mobile. Preview replaced by
+`components-opening-detail-right-column.html`. Spec
+`docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`.

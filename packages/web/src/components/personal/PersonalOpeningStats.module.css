@@ -676,6 +676,12 @@
   animation: cardIn 300ms ease-out both;
   overflow: hidden;
   min-width: 0;
+  /* Flex column so the win-rate footer can be pinned to the bottom of every
+     card (margin-top:auto on .winRateRow). Grid already equalises card heights;
+     this keeps the win-rate bars aligned across the row no matter how many
+     lines the opening name/moves take. */
+  display: flex;
+  flex-direction: column;
 }
 
 .card:nth-child(1) {
@@ -691,7 +697,10 @@
 .cardClickable {
   cursor: pointer;
   text-decoration: none;
-  display: block;
+  /* Inherit the card's flex-column layout (this class would otherwise reset it
+     to block via source order). */
+  display: flex;
+  flex-direction: column;
   color: inherit;
   transition: border-color 150ms ease;
 }
@@ -738,8 +747,13 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
-  word-break: break-word;
   overflow-wrap: break-word;
+  /* Cap the name at two lines so one long variation can't balloon a card and
+     force big gaps in its siblings. Truncates with an ellipsis past two lines. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardMoves {
@@ -803,7 +817,11 @@
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
-  margin-top: var(--space-4);
+  /* Pin the win-rate value + bar to the bottom of the card; free space from
+     shorter cards collects here instead of below the bar. padding-top keeps a
+     minimum gap on the tallest card, where margin-top:auto collapses to 0. */
+  margin-top: auto;
+  padding-top: var(--space-4);
 }
 
 .winRateValue {

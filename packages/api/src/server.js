@@ -2,6 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 require('dotenv').config();
+// dev:api runs with cwd=packages/api; project-wide secrets (e.g.
+// LICHESS_EXPLORER_TOKEN) live in the repo-root .env. dotenv never
+// overrides already-set vars, so the local .env above still wins.
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 3010;
@@ -34,12 +38,14 @@ const statsRoutes = require('./routes/stats.routes');
 const courseRoutes = require('./routes/courses.routes');
 const personalRoutes = require('./routes/personal.routes');
 const familiesRoutes = require('./routes/families.routes');
+const explorerRoutes = require('./routes/explorer.routes');
 
 app.use('/api/openings', openingRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/courses', courseRoutes());
 app.use('/api/personal', personalRoutes());
 app.use('/api/families', familiesRoutes);
+app.use('/api/explorer', explorerRoutes);
 
 app.get('/api/status', (req, res) => {
   res.json({

@@ -453,6 +453,16 @@ and "add to home screen" is the cheapest possible retention surface for a
 product whose whole strategic gap is return visits. Pairs with J4/3.3 — practise
 your due openings offline, sync state on reconnect.
 
+\*\*J8 - stockfish analysis of deviations? would need to be very light weight to
+fit in hobby plan of vercel.
+
+**J9 - openingtree.com style visualisation of opening lines or as an ability to
+search, where users can move on a board to explore to find openings and be
+directed to the right page. (I don't know if this is a new feature or an
+enhancement to the existing tree, but it would be nice to have a visualisation
+of the opening lines and be able to explore them interactively.)** I also don't
+want to just rip off opening tree, implementation should justify its existence.
+
 ### 5.3 Where these slot into the §4 sequence
 
 - **M1/M2 join 3.2** — one Lichess-explorer integration ships both master games

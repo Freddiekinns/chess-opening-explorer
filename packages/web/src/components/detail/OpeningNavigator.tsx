@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { TreeContext } from '../../hooks/useOpeningTree';
+import type { ExplorerResult } from '../../lib/lichessExplorer';
+import { mergeExplorerMoves, type MergedMoveRow } from '../../lib/bookExplorerMerge';
 import styles from './OpeningNavigator.module.css';
 
 const CONTINUATIONS_COLLAPSED_LIMIT = 5;
@@ -9,6 +11,16 @@ const ALTERNATIVES_COLLAPSED_LIMIT = 5;
 interface OpeningNavigatorProps {
   treeData: TreeContext | null;
   loading: boolean;
+  /**
+   * Live explorer stats for the current position at the active level.
+   * Optional progressive enhancement (sidebar unification): when present,
+   * "Next moves" rows re-rank by actual play, gain W/D/L mini bars, and
+   * popular moves with no page in the book join as inert off-book rows.
+   * Absent or null, the book renders exactly as before.
+   */
+  explorer?: ExplorerResult | null;
+  /** Explorer stats for the parent position — the same treatment for Alternatives. */
+  parentExplorer?: ExplorerResult | null;
 }
 
 function formatCount(n: number): string {
@@ -27,6 +39,21 @@ function getMoveNumber(plyIndex: number): string {
   const moveNum = Math.floor(plyIndex / 2) + 1;
   const isBlack = plyIndex % 2 === 1;
   return isBlack ? `${moveNum}...` : `${moveNum}.`;
+}
+
+/**
+ * Plies played to reach a position, read straight from the FEN (side to move
+ * + fullmove number). The tree's ancestors array is one node per ply but has
+ * been observed one short of the true ply, so the FEN is the source of
+ * truth; callers fall back to the ancestors count for malformed FENs.
+ */
+function pliesFromFen(fen: string): number | null {
+  const parts = fen.trim().split(/\s+/);
+  if (parts.length < 6) return null;
+  const side = parts[1];
+  const fullmove = parseInt(parts[5], 10);
+  if (!Number.isFinite(fullmove) || fullmove < 1 || (side !== 'w' && side !== 'b')) return null;
+  return (fullmove - 1) * 2 + (side === 'b' ? 1 : 0);
 }
 
 function sortNodesByPopularity<
@@ -63,7 +90,121 @@ function deduplicateAncestors(
   return result;
 }
 
-export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({ treeData, loading }) => {
+function statsTitle(row: MergedMoveRow): string | undefined {
+  if (!row.stats) return undefined;
+  const { whitePct, drawPct, blackPct, games } = row.stats;
+  return (
+    `White wins ${Math.round(whitePct)}% · draws ${Math.round(drawPct)}% · ` +
+    `black wins ${Math.round(blackPct)}% (${formatCount(games)} games)`
+  );
+}
+
+interface MoveRowsProps {
+  rows: MergedMoveRow[];
+  ply: number;
+  maxCount: number;
+  countLabel: string;
+  /** True when explorer data drives this list — retires the orange popularity bar. */
+  hasStats: boolean;
+  alternatives?: boolean;
+}
+
+const MoveRows: React.FC<MoveRowsProps> = ({
+  rows,
+  ply,
+  maxCount,
+  countLabel,
+  hasStats,
+  alternatives,
+}) => (
+  <div className={styles.rows}>
+    {rows.map((row, i) => {
+      const movePrefix = getMoveNumber(ply);
+      const barPercent = maxCount > 0 ? Math.max((row.count / maxCount) * 100, 2) : 0;
+      const inner = (
+        <>
+          <span className={styles.rowTop}>
+            <span className={styles.rowMove}>
+              {movePrefix}
+              {row.san}
+            </span>
+            {row.name !== null ? (
+              <span className={styles.rowName}>{row.name}</span>
+            ) : (
+              <span className={styles.rowName}>
+                <span className={styles.offBookTag}>off-book</span>
+              </span>
+            )}
+          </span>
+          <span className={styles.rowBottom}>
+            {row.stats && (
+              <span className={styles.rowPctWhite}>{Math.round(row.stats.whitePct)}%</span>
+            )}
+            <span className={`${styles.rowBarWrap} ${row.stats ? styles.rowBarWrapStats : ''}`}>
+              {row.stats ? (
+                <span className={styles.resultBar} aria-hidden="true">
+                  <span
+                    className={styles.resultWhite}
+                    style={{ width: `${row.stats.whitePct}%` }}
+                  />
+                  <span className={styles.resultDraw} style={{ width: `${row.stats.drawPct}%` }} />
+                  <span
+                    className={styles.resultBlack}
+                    style={{ width: `${row.stats.blackPct}%` }}
+                  />
+                </span>
+              ) : !hasStats ? (
+                <span className={styles.rowBar} style={{ width: `${barPercent}%` }} />
+              ) : null}
+            </span>
+            {row.stats && (
+              <span className={styles.rowPctBlack}>{Math.round(row.stats.blackPct)}%</span>
+            )}
+            <span className={styles.rowCount}>
+              {row.stats
+                ? `${formatCount(row.stats.games)} games`
+                : row.count > 0
+                  ? `${formatCount(row.count)} ${countLabel}`
+                  : '—'}
+            </span>
+          </span>
+        </>
+      );
+
+      if (row.fen === null) {
+        return (
+          <div
+            key={row.key}
+            className={`${styles.contRow} ${styles.offBookRow}`}
+            style={{ animationDelay: `${i * 30}ms` }}
+            title={statsTitle(row)}
+          >
+            {inner}
+          </div>
+        );
+      }
+
+      return (
+        <Link
+          key={row.key}
+          to={`/opening/${encodeURIComponent(row.fen)}`}
+          className={`${styles.contRow} ${alternatives ? styles.altRow : ''}`}
+          style={{ animationDelay: `${i * 30}ms` }}
+          title={statsTitle(row)}
+        >
+          {inner}
+        </Link>
+      );
+    })}
+  </div>
+);
+
+export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
+  treeData,
+  loading,
+  explorer = null,
+  parentExplorer = null,
+}) => {
   const [continuationsExpanded, setContinuationsExpanded] = useState(false);
   const [alternativesExpanded, setAlternativesExpanded] = useState(false);
 
@@ -99,7 +240,10 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({ treeData, lo
   if (!treeData?.current) return null;
 
   const { current, ancestors = [], children = [], siblings = [] } = treeData;
-  const currentPly = ancestors.length;
+  // Plies played to reach this position; children sit at index pliesPlayed,
+  // the current move (and its alternatives) at pliesPlayed - 1.
+  const pliesPlayed = pliesFromFen(current.fen) ?? ancestors.length + 1;
+  const currentMoveIdx = pliesPlayed - 1;
 
   // Deduplicate ancestors for breadcrumb display
   const breadcrumbAncestors = deduplicateAncestors(ancestors);
@@ -116,8 +260,33 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({ treeData, lo
   // Find max count for relative bar widths
   const maxCount = Math.max(...allNodes.map(getCount), 1);
 
-  // Current move number for the "Alternatives" label
-  const currentMoveNum = Math.floor(currentPly / 2) + 1;
+  // Merge live explorer data into the book lists (no-op passthrough without it)
+  const childRows = mergeExplorerMoves(
+    sortedChildren.map((child) => ({
+      san: stripMoveNumber(child.move),
+      name: child.name,
+      fen: child.fen,
+      count: getCount(child),
+    })),
+    explorer?.moves ?? null
+  );
+  const currentSan = stripMoveNumber(current.move || '');
+  const siblingRows = mergeExplorerMoves(
+    sortedSiblings.map((sibling) => ({
+      san: stripMoveNumber(sibling.move),
+      name: sibling.name,
+      fen: sibling.fen,
+      count: getCount(sibling),
+    })),
+    parentExplorer?.moves ?? null,
+    { excludeSans: currentSan ? [currentSan] : [] }
+  );
+
+  // "Instead of 3.e3" — anchor the alternatives to the move actually played
+  const alternativesLabel =
+    currentSan && currentMoveIdx >= 0
+      ? `Instead of ${getMoveNumber(currentMoveIdx)}${currentSan}`
+      : 'Alternatives';
 
   return (
     <div className={styles.navigator}>
@@ -150,48 +319,28 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({ treeData, lo
         </div>
       )}
 
-      {/* Continuations — main lines with popularity bars */}
-      {sortedChildren.length > 0 &&
+      {/* Next moves — the one list of what gets played from here */}
+      {childRows.length > 0 &&
         (() => {
-          const canCollapse = sortedChildren.length > CONTINUATIONS_COLLAPSED_LIMIT;
-          const visibleChildren =
+          const canCollapse = childRows.length > CONTINUATIONS_COLLAPSED_LIMIT;
+          const visibleRows =
             canCollapse && !continuationsExpanded
-              ? sortedChildren.slice(0, CONTINUATIONS_COLLAPSED_LIMIT)
-              : sortedChildren;
-          const hiddenCount = sortedChildren.length - CONTINUATIONS_COLLAPSED_LIMIT;
+              ? childRows.slice(0, CONTINUATIONS_COLLAPSED_LIMIT)
+              : childRows;
+          const hiddenCount = childRows.length - CONTINUATIONS_COLLAPSED_LIMIT;
 
           return (
             <div
               className={`${styles.section} ${breadcrumbAncestors.length === 0 ? styles.sectionFirst : ''}`}
             >
-              <div className={styles.sectionLabel}>Continuations</div>
-              <div className={styles.rows}>
-                {visibleChildren.map((child, i) => {
-                  const count = getCount(child);
-                  const barPercent = maxCount > 0 ? Math.max((count / maxCount) * 100, 2) : 0;
-
-                  return (
-                    <Link
-                      key={child.fen}
-                      to={`/opening/${encodeURIComponent(child.fen)}`}
-                      className={styles.contRow}
-                      style={{ animationDelay: `${i * 30}ms` }}
-                    >
-                      <span className={styles.rowMove}>
-                        {getMoveNumber(currentPly)}
-                        {stripMoveNumber(child.move)}
-                      </span>
-                      <span className={styles.rowName}>{child.name}</span>
-                      <span className={styles.rowBarWrap}>
-                        <span className={styles.rowBar} style={{ width: `${barPercent}%` }} />
-                      </span>
-                      <span className={styles.rowCount}>
-                        {count > 0 ? `${formatCount(count)} ${countLabel}` : '—'}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
+              <div className={styles.sectionLabel}>Next moves</div>
+              <MoveRows
+                rows={visibleRows}
+                ply={pliesPlayed}
+                maxCount={maxCount}
+                countLabel={countLabel}
+                hasStats={Boolean(explorer?.moves?.length)}
+              />
               {canCollapse && (
                 <button
                   className={styles.showMoreBtn}
@@ -204,46 +353,27 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({ treeData, lo
           );
         })()}
 
-      {/* Alternatives at current ply */}
-      {sortedSiblings.length > 0 &&
+      {/* Alternatives to the move that reached this position */}
+      {siblingRows.length > 0 &&
         (() => {
-          const canCollapse = sortedSiblings.length > ALTERNATIVES_COLLAPSED_LIMIT;
-          const visibleSiblings =
+          const canCollapse = siblingRows.length > ALTERNATIVES_COLLAPSED_LIMIT;
+          const visibleRows =
             canCollapse && !alternativesExpanded
-              ? sortedSiblings.slice(0, ALTERNATIVES_COLLAPSED_LIMIT)
-              : sortedSiblings;
-          const hiddenCount = sortedSiblings.length - ALTERNATIVES_COLLAPSED_LIMIT;
+              ? siblingRows.slice(0, ALTERNATIVES_COLLAPSED_LIMIT)
+              : siblingRows;
+          const hiddenCount = siblingRows.length - ALTERNATIVES_COLLAPSED_LIMIT;
 
           return (
             <div className={styles.section}>
-              <div className={styles.sectionLabel}>Alternatives (move {currentMoveNum})</div>
-              <div className={styles.rows}>
-                {visibleSiblings.map((sibling, i) => {
-                  const count = getCount(sibling);
-                  const barPercent = maxCount > 0 ? Math.max((count / maxCount) * 100, 2) : 0;
-
-                  return (
-                    <Link
-                      key={sibling.fen}
-                      to={`/opening/${encodeURIComponent(sibling.fen)}`}
-                      className={`${styles.contRow} ${styles.altRow}`}
-                      style={{ animationDelay: `${i * 30}ms` }}
-                    >
-                      <span className={styles.rowMove}>
-                        {getMoveNumber(currentPly - 1)}
-                        {stripMoveNumber(sibling.move)}
-                      </span>
-                      <span className={styles.rowName}>{sibling.name}</span>
-                      <span className={styles.rowBarWrap}>
-                        <span className={styles.rowBar} style={{ width: `${barPercent}%` }} />
-                      </span>
-                      <span className={styles.rowCount}>
-                        {count > 0 ? `${formatCount(count)} ${countLabel}` : '—'}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
+              <div className={styles.sectionLabel}>{alternativesLabel}</div>
+              <MoveRows
+                rows={visibleRows}
+                ply={currentMoveIdx}
+                maxCount={maxCount}
+                countLabel={countLabel}
+                hasStats={Boolean(parentExplorer?.moves?.length)}
+                alternatives
+              />
               {canCollapse && (
                 <button
                   className={styles.showMoreBtn}

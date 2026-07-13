@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { OpeningForLookup } from '../../../../shared/src';
+import { trackEvent } from '../../lib/analytics';
 import {
   clampInt,
   normalizeUsername,
@@ -152,6 +153,7 @@ export function usePersonalGames(
 
   const handleAnalyse = async (opts?: { onDone?: () => void; onFreshResult?: () => void }) => {
     if (!canAnalyse) return;
+    trackEvent('analyse_run');
 
     const cached = loadFromCache();
     if (cached) {

@@ -51,6 +51,8 @@ export interface ExplorerMove {
   whitePct: number;
   drawPct: number;
   blackPct: number;
+  /** Average player Elo for this move, when the explorer reports it. */
+  averageRating?: number;
 }
 
 export interface ExplorerTopGame {
@@ -68,6 +70,12 @@ export interface ExplorerResult {
   black: number;
   moves: ExplorerMove[];
   topGames: ExplorerTopGame[];
+  /**
+   * Games-weighted average player Elo across the returned moves, or null when
+   * the explorer reports no ratings. A real position-level figure — the
+   * Lichess explorer has no top-level average, so we derive it from the moves.
+   */
+  averageRating: number | null;
 }
 
 export class ExplorerError extends Error {
@@ -152,6 +160,7 @@ interface RawMove {
   white?: unknown;
   draws?: unknown;
   black?: unknown;
+  averageRating?: unknown;
 }
 
 interface RawGame {
@@ -184,12 +193,14 @@ function normalise(raw: unknown): ExplorerResult {
       const d = toCount(m?.draws) || 0;
       const b = toCount(m?.black) || 0;
       const games = w + d + b;
+      const rating = toCount(m?.averageRating);
       return {
         san: typeof m?.san === 'string' ? m.san : '',
         games,
         whitePct: games ? (w / games) * 100 : 0,
         drawPct: games ? (d / games) * 100 : 0,
         blackPct: games ? (b / games) * 100 : 0,
+        ...(Number.isFinite(rating) ? { averageRating: rating } : {}),
       };
     })
     .filter((m) => m.san !== '');
@@ -215,7 +226,19 @@ function normalise(raw: unknown): ExplorerResult {
     })
     .filter((g) => g.id !== '');
 
-  return { totalGames: white + draws + black, white, draws, black, moves, topGames };
+  // Position-level average Elo: games-weighted mean over moves that carry a
+  // rating. The explorer gives no top-level average, so derive it here.
+  let ratingWeight = 0;
+  let ratingSum = 0;
+  for (const move of moves) {
+    if (move.averageRating !== undefined && move.games > 0) {
+      ratingWeight += move.games;
+      ratingSum += move.averageRating * move.games;
+    }
+  }
+  const averageRating = ratingWeight > 0 ? Math.round(ratingSum / ratingWeight) : null;
+
+  return { totalGames: white + draws + black, white, draws, black, moves, topGames, averageRating };
 }
 
 export async function fetchExplorer(fen: string, band: BandId): Promise<ExplorerResult> {

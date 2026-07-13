@@ -1,61 +1,44 @@
 # Active Context
 
-**Date:** 2026-07-12
+**Date:** 2026-07-13
 
-## Current Task: Deviation Trainer — Slice 1 Evidence Engine (branch `feat/evidence-engine-slice1`)
+## Current Task: Slice 1 Evidence Engine + right-column redesign (branch `feat/evidence-engine-slice1`)
 
-**Status:** Implemented; PR raised 2026-07-12. Fred is reviewing the sidebar
-design separately before further UI iteration — treat the current lens/panel/
-book layout as provisional until he signs it off. PRD
-`docs/proposals/2026-07-11-deviation-trainer-prd.md` §5; plan
-`docs/superpowers/plans/2026-07-11-slice1-evidence-engine.md`.
+**Status:** Slice 1 shipped (PR raised 2026-07-12); the 2026-07-13 right-column
+redesign is the outcome of Fred's separate design review and is committed onto
+the same branch/PR. PRD `docs/proposals/2026-07-11-deviation-trainer-prd.md` §5.
 
-- **Explorer proxy** `/api/explorer`
-  (`packages/api/src/routes/explorer.routes.js`
-  - `api/explorer.js` wrapper): Lichess gated the explorer behind auth in
-    2026-03 (DDoS defence), so the server attaches `LICHESS_EXPLORER_TOKEN`
-    (zero-scope, 25 req/min) and vercel.json CDN-caches responses (24h; masters
-    7d via route header). **Set the token in Vercel env before deploy.**
-- **Explorer client** `packages/web/src/lib/lichessExplorer.ts`: fetches via the
-  proxy, band mapping server-side (PRD table), normalised result, memory +
-  localStorage cache (TTL 7d/24h, LRU 200), in-flight dedupe, `ExplorerError`.
-- **Logic modules**: `levelCheck.ts` (≥8 pp gap, ≥100 games/sample, points
-  percentage for the side to move), `myLevel.ts` (site-wide band preference),
-  `analytics.ts` (sendBeacon → `/api/event`, anon id, no-throw).
-- **UI**: `WinRatePanel.tsx` wraps `WinRateBar` (new `meta` line) with band
-  pills (lowest→highest), level-check strip, live continuations, notable games
-  (avg-rating ranked, one game per player, cap 5), snapshot fallback (silent
-  when passive; visible note after an explicit band click);
-  `AnalyseBridgeCard.tsx` (≥1,000 games, session dismiss). Wired in
-  `OpeningDetailPage`; `analyse_run` tracked in `usePersonalGames`.
-- **Beacon route** `api/event.js`: 204/405, structured console line → Vercel
-  runtime logs (counts only, no PII); `vercel.json` no-store header + rewrite.
-  Doubles as S4-lite (`explorer_error` events).
-- **Tests**: 41 new frontend (explorer/levelCheck/myLevel/analytics/panel/
-  bridge) + 15 backend (event endpoint, explorer proxy). Design-system preview:
-  `components-level-check.html`. Verified live end-to-end in dev (band swap,
-  notable games, masters 34/48/19 vs club 48/5/47).
+**Evidence engine (unchanged):** `/api/explorer` proxy attaches
+`LICHESS_EXPLORER_TOKEN` (Lichess gated the explorer behind auth in 2026-03;
+zero-scope, 25 req/min; CDN-cached via vercel.json). **Set the token in Vercel
+env before deploy.** Client `lib/lichessExplorer.ts` normalises + caches (TTL
+7d/24h, LRU 200, in-flight dedupe). Beacon `api/event.js` (`band_select`,
+`explorer_error`, `analyse_run`) → runtime logs, counts only.
 
-**Deviations from PRD prose**: target component was `WinRateBar` (PRD named the
-unused `OpeningStats.tsx`); §9 beacon chosen over breadcrumbs; live
-continuations render inside the stats panel (Opening book navigator untouched).
+**Right-column redesign (2026-07-13, Claude Design mock, match-mock-exactly):**
+spec
+`docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`.
 
-**Sidebar unification (2026-07-12, shipped)**: per
-`docs/proposals/2026-07-11-sidebar-unification.md` + Fred's learner-first
-amendments. `LevelLens` (named levels Beginner→Masters, Elo in tooltips) at the
-top of the column governs `WinRatePanel` (evidence only — card chrome, legend
-verbs, notable games ×3, closing analyse link; bridge card deleted) and
-`OpeningNavigator` ("Next moves" merged book+explorer rows with W/D/L mini bars,
-capped `off-book` rows, "Instead of 3.e3" alternatives via parent-FEN fetch).
-New: `lib/bookExplorerMerge.ts` (SAN-normalised merge, ≥20-game floor),
-`hooks/useExplorerResult.ts`. Fixed pre-existing move-number off-by-one (plies
-now read from FEN, ancestors fallback). Design-system preview
-`components-level-check.html` updated in lockstep. 284 frontend tests green.
+- `WinRatePanel` is now one **Stats card**: level pills (`LevelLens`, label
+  dropped, aria kept) → `Total games` / `Average Elo` stat pair → win bar +
+  legend → master games. **Dropped** the level-check strip (+ `levelCheck.ts`,
+  deleted), the analyse bridge link, and the card title. `onBandChange` prop.
+- `lib/lichessExplorer.ts`: added games-weighted position `averageRating` (from
+  `moves[].averageRating`); `null` when absent — never fabricated.
+- `OpeningNavigator`: rows restyled to a two-line stacked layout (move+name /
+  white% · bar · black% · count); result bar now shown on mobile (the old
+  `display:none` is gone). Structure (breadcrumb / Next moves / "Instead of …")
+  unchanged.
+- Overview card unchanged. Design-system preview replaced:
+  `components-opening-detail-right-column.html` (old
+  `components-level-check.html` removed).
+- Verified: 46 targeted frontend tests green, `tsc`+`vite` build clean, no 375px
+  overflow (TASK007 guards hold), live band re-ranks Next moves in dev. Note:
+  the Stats-card live fetch is `IntersectionObserver`-gated and doesn't fire in
+  the Browser pane (known stall) — its logic is covered by unit tests.
 
-**Next**: Fred's design review of the unified sidebar (may amend rev 2 + its
-amendments), then Slice 2 (deviation detection, leak panel, practice-param CTA)
-per PRD §6. Watch beacons (`band_select`, `explorer_error`) post-deploy; set
-`LICHESS_EXPLORER_TOKEN` in Vercel env before deploy.
+**Next:** Fred to review the redesign; then Slice 2 (deviation detection, leak
+panel, practice-param CTA) per PRD §6. Watch beacons post-deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

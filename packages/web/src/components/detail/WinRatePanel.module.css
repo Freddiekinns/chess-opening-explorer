@@ -9,37 +9,6 @@
   gap: var(--space-3);
 }
 
-.panelHeader {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.panelTitle {
-  font-family: var(--font-family-headline);
-  font-size: var(--text-md);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text-primary);
-  line-height: 1;
-}
-
-.panelSub {
-  font-size: var(--text-2xs);
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
-/* Level check strip — the zero-interaction insight */
-.levelCheck {
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  line-height: 1.5;
-}
-
 /* Live panel states */
 .liveUnavailable {
   font-size: var(--text-2xs);
@@ -126,18 +95,4 @@
 .showMoreBtn:hover {
   border-color: var(--border-hover);
   color: var(--color-text-secondary);
-}
-
-/* Closing analyse funnel link — replaces the standalone bridge card */
-.analyseLink {
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: var(--space-3);
-  transition: color 0.15s ease;
-}
-
-.analyseLink:hover {
-  color: var(--color-text-primary);
 }

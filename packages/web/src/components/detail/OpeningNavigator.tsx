@@ -123,35 +123,50 @@ const MoveRows: React.FC<MoveRowsProps> = ({
       const barPercent = maxCount > 0 ? Math.max((row.count / maxCount) * 100, 2) : 0;
       const inner = (
         <>
-          <span className={styles.rowMove}>
-            {movePrefix}
-            {row.san}
-          </span>
-          {row.name !== null ? (
-            <span className={styles.rowName}>{row.name}</span>
-          ) : (
-            <span className={styles.rowName}>
-              <span className={styles.offBookTag}>off-book</span>
+          <span className={styles.rowTop}>
+            <span className={styles.rowMove}>
+              {movePrefix}
+              {row.san}
             </span>
-          )}
-          {row.stats && <span className={styles.rowPct}>{Math.round(row.stats.whitePct)}%</span>}
-          <span className={`${styles.rowBarWrap} ${row.stats ? styles.rowBarWrapStats : ''}`}>
-            {row.stats ? (
-              <span className={styles.resultBar} aria-hidden="true">
-                <span className={styles.resultWhite} style={{ width: `${row.stats.whitePct}%` }} />
-                <span className={styles.resultDraw} style={{ width: `${row.stats.drawPct}%` }} />
-                <span className={styles.resultBlack} style={{ width: `${row.stats.blackPct}%` }} />
+            {row.name !== null ? (
+              <span className={styles.rowName}>{row.name}</span>
+            ) : (
+              <span className={styles.rowName}>
+                <span className={styles.offBookTag}>off-book</span>
               </span>
-            ) : !hasStats ? (
-              <span className={styles.rowBar} style={{ width: `${barPercent}%` }} />
-            ) : null}
+            )}
           </span>
-          <span className={styles.rowCount}>
-            {row.stats
-              ? `${formatCount(row.stats.games)} games`
-              : row.count > 0
-                ? `${formatCount(row.count)} ${countLabel}`
-                : '—'}
+          <span className={styles.rowBottom}>
+            {row.stats && (
+              <span className={styles.rowPctWhite}>{Math.round(row.stats.whitePct)}%</span>
+            )}
+            <span className={`${styles.rowBarWrap} ${row.stats ? styles.rowBarWrapStats : ''}`}>
+              {row.stats ? (
+                <span className={styles.resultBar} aria-hidden="true">
+                  <span
+                    className={styles.resultWhite}
+                    style={{ width: `${row.stats.whitePct}%` }}
+                  />
+                  <span className={styles.resultDraw} style={{ width: `${row.stats.drawPct}%` }} />
+                  <span
+                    className={styles.resultBlack}
+                    style={{ width: `${row.stats.blackPct}%` }}
+                  />
+                </span>
+              ) : !hasStats ? (
+                <span className={styles.rowBar} style={{ width: `${barPercent}%` }} />
+              ) : null}
+            </span>
+            {row.stats && (
+              <span className={styles.rowPctBlack}>{Math.round(row.stats.blackPct)}%</span>
+            )}
+            <span className={styles.rowCount}>
+              {row.stats
+                ? `${formatCount(row.stats.games)} games`
+                : row.count > 0
+                  ? `${formatCount(row.count)} ${countLabel}`
+                  : '—'}
+            </span>
           </span>
         </>
       );

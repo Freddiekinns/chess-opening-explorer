@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import WinRateBar from './WinRateBar';
+import LevelLens from './LevelLens';
 import styles from './WinRatePanel.module.css';
 import {
   ExplorerError,
@@ -10,23 +10,18 @@ import {
   type BandId,
   type ExplorerResult,
 } from '../../lib/lichessExplorer';
-import { computeLevelCheck, type LevelCheck } from '../../lib/levelCheck';
 import { trackEvent } from '../../lib/analytics';
 
 /**
- * Win rates panel (deviation-trainer PRD §5, reworked per the 2026-07-11
- * sidebar-unification decision record): pure evidence, no move list. Shows
- * the W/D/L stats for the level selected in the page-level lens (falling
- * back to the master-games snapshot), the zero-interaction "level check"
- * comparison, notable master games (three, expandable), and a closing link
- * to the analyse funnel. Explorer requests fire only once the panel is in
- * view. Passive failures (level check) are silent — the page must never be
- * worse than today's — but a failure after an explicit band selection shows
- * a short unavailable note above the snapshot.
+ * Stats card (deviation-trainer PRD §5, reworked per the 2026-07-13 right-column
+ * redesign): the level pills, headline stats, W/D/L bar and notable master games
+ * in one card. The level lens at the top governs this card and the opening book
+ * below it. Live band stats replace the master-games snapshot when a band is
+ * selected; a failed band fetch degrades to the snapshot with a short note.
+ * Explorer requests fire only once the card is in view.
  */
 
 const MIN_LIVE_SAMPLE = 100;
-const DEFAULT_COMPARISON_BAND: BandId = '1400';
 const NOTABLE_COLLAPSED = 3;
 
 interface PopularityStats {
@@ -43,6 +38,8 @@ interface WinRatePanelProps {
   fen: string;
   /** Active level from the page lens; null = master snapshot. */
   band: BandId | null;
+  /** Level lens selection handler — owns "my level" persistence in LevelLens. */
+  onBandChange: (band: BandId | null) => void;
 }
 
 function reportExplorerError(err: unknown): void {
@@ -53,40 +50,29 @@ function reportExplorerError(err: unknown): void {
   }
 }
 
-function levelCheckCopy(check: LevelCheck): string {
-  const level = getBand(check.bandId).label.toLowerCase();
-  if (check.direction === 'band-better') {
-    return (
-      `At ${level} level ${check.side} scores ${check.bandPct}% here — ` +
-      `masters manage only ${check.mastersPct}%. This line works better in club play.`
-    );
-  }
-  return (
-    `Masters score ${check.mastersPct}% with ${check.side} here — ` +
-    `at ${level} level only ${check.bandPct}%. It needs precision.`
-  );
-}
-
 function resultText(winner: 'white' | 'black' | null): string {
   if (winner === 'white') return '1–0';
   if (winner === 'black') return '0–1';
   return '½–½';
 }
 
-export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen, band }) => {
+export const WinRatePanel: React.FC<WinRatePanelProps> = ({
+  popularityStats,
+  fen,
+  band,
+  onBandChange,
+}) => {
   const [live, setLive] = useState<ExplorerResult | null>(null);
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveFailed, setLiveFailed] = useState(false);
   const [masters, setMasters] = useState<ExplorerResult | null>(null);
-  const [levelCheck, setLevelCheck] = useState<LevelCheck | null>(null);
   const [notableExpanded, setNotableExpanded] = useState(false);
   const [inView, setInView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const levelCheckTracked = useRef(false);
 
   const hasSnapshot = (popularityStats?.games_analyzed || 0) > 0;
 
-  // Lazy trigger: no explorer request before the stats section is in view.
+  // Lazy trigger: no explorer request before the stats card is in view.
   useEffect(() => {
     const el = containerRef.current;
     if (!el || typeof IntersectionObserver === 'undefined') {
@@ -111,41 +97,25 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
     setLive(null);
     setLiveFailed(false);
     setMasters(null);
-    setLevelCheck(null);
     setNotableExpanded(false);
-    levelCheckTracked.current = false;
   }, [fen]);
 
-  // Level check: masters vs the comparison band, sequential and cached.
+  // Master games always come from the masters DB, regardless of the active band.
   useEffect(() => {
     if (!inView || !fen) return;
     let alive = true;
-    const comparison: BandId = band && band !== 'masters' ? band : DEFAULT_COMPARISON_BAND;
-
     (async () => {
       try {
         const mastersResult = await fetchExplorer(fen, 'masters');
-        if (!alive) return;
-        setMasters(mastersResult);
-        const bandResult = await fetchExplorer(fen, comparison);
-        if (!alive) return;
-        setLevelCheck(computeLevelCheck(mastersResult, bandResult, comparison, fen));
+        if (alive) setMasters(mastersResult);
       } catch (err) {
         if (alive) reportExplorerError(err);
       }
     })();
-
     return () => {
       alive = false;
     };
-  }, [inView, fen, band]);
-
-  useEffect(() => {
-    if (levelCheck && !levelCheckTracked.current) {
-      levelCheckTracked.current = true;
-      trackEvent('level_check_view');
-    }
-  }, [levelCheck]);
+  }, [inView, fen]);
 
   // Live band data for the selected band.
   useEffect(() => {
@@ -193,6 +163,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
           white_win_rate: live.white / live.totalGames,
           draw_rate: live.draws / live.totalGames,
           black_win_rate: live.black / live.totalGames,
+          avg_rating: live.averageRating ?? undefined,
         }
       : null;
 
@@ -202,16 +173,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
 
   return (
     <div ref={containerRef} className={styles.panel}>
-      <div className={styles.panelHeader}>
-        <div className={styles.panelTitle}>Win rates</div>
-        <div className={styles.panelSub}>Who wins from here</div>
-      </div>
-
-      {levelCheck && (
-        <div className={styles.levelCheck} role="note">
-          {levelCheckCopy(levelCheck)}
-        </div>
-      )}
+      <LevelLens band={band} onChange={onBandChange} />
 
       {showLive ? (
         liveLoading ? (
@@ -249,8 +211,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
                   className={styles.notableLink}
                 >
                   <span className={styles.notablePlayers}>
-                    {game.white.name} ({game.white.rating}) – {game.black.name} ({game.black.rating}
-                    )
+                    {game.white.name} – {game.black.name}
                   </span>
                   <span className={styles.notableResult}>
                     {resultText(game.winner)}
@@ -271,10 +232,6 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({ popularityStats, fen
           )}
         </div>
       )}
-
-      <Link to="/analyse" className={styles.analyseLink} onClick={() => trackEvent('bridge_click')}>
-        Analyse your own games in this opening
-      </Link>
     </div>
   );
 };

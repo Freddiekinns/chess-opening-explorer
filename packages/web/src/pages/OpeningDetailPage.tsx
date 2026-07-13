@@ -10,7 +10,6 @@ import {
   OpeningNavigator,
   WinRatePanel,
 } from '../components/detail';
-import { LevelLens } from '../components/detail/LevelLens';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import styles from './OpeningDetailPage.module.css';
 import practiceStyles from '../components/detail/PracticeControls.module.css';
@@ -1196,8 +1195,12 @@ const OpeningDetailPage: React.FC = () => {
 
         {/* Right Column - Level lens + Stats + Overview + Navigator */}
         <div className={`right-column ${styles.rightColumn}`}>
-          <LevelLens band={band} onChange={setBand} />
-          <WinRatePanel popularityStats={popularityStats} fen={opening.fen} band={band} />
+          <WinRatePanel
+            popularityStats={popularityStats}
+            fen={opening.fen}
+            band={band}
+            onBandChange={setBand}
+          />
 
           {/* Overview — about this opening */}
           {opening?.eco && (

@@ -31,7 +31,6 @@ export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange }) => {
 
   return (
     <div className={styles.lens} role="group" aria-label="Level">
-      <span className={styles.lensLabel}>Level</span>
       <div className={styles.pills}>
         {BANDS.map((def) => (
           <button

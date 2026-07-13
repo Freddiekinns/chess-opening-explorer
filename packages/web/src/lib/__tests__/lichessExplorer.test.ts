@@ -88,9 +88,30 @@ describe('fetchExplorer', () => {
       whitePct: 60,
       drawPct: 20,
       blackPct: 20,
+      averageRating: 2400,
     });
     expect(result.topGames).toHaveLength(1);
     expect(result.topGames[0].white.name).toBe('Carlsen');
+  });
+
+  it('derives a games-weighted position average Elo from the moves', async () => {
+    // c5: 500 games @ 2400, e5: 350 games @ 2350 → (1,200,000 + 822,500) / 850
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(okResponse(rawPayload())));
+    const result = await fetchExplorer(FEN, 'masters');
+    expect(result.averageRating).toBe(2379);
+  });
+
+  it('reports a null average Elo when no move carries a rating', async () => {
+    const noRatings = rawPayload({
+      moves: [
+        { uci: 'c7c5', san: 'c5', white: 300, draws: 100, black: 100 },
+        { uci: 'e7e5', san: 'e5', white: 200, draws: 80, black: 70 },
+      ],
+    });
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(okResponse(noRatings)));
+    const result = await fetchExplorer(FEN, 'masters');
+    expect(result.averageRating).toBeNull();
+    expect(result.moves[0].averageRating).toBeUndefined();
   });
 
   it('tolerates a missing topGames array (lichess endpoint)', async () => {
@@ -174,6 +195,7 @@ describe('sideScorePct', () => {
     black: 200,
     moves: [],
     topGames: [],
+    averageRating: null,
   };
 
   it('computes points percentage (wins + half draws)', () => {

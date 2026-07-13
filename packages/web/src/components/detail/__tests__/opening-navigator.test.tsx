@@ -54,6 +54,7 @@ function explorerWithMoves(moves: ExplorerResult['moves']): ExplorerResult {
     black: Math.round(totals * 0.47),
     moves,
     topGames: [],
+    averageRating: null,
   };
 }
 

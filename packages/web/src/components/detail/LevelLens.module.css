@@ -4,15 +4,6 @@
   gap: var(--space-1-5);
 }
 
-.lensLabel {
-  font-size: var(--text-2xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1;
-}
-
 .pills {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +11,7 @@
 }
 
 .pill {
-  background-color: var(--surface-raised);
+  background-color: var(--surface-overlay);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-full);
   padding: var(--space-1) var(--space-2);

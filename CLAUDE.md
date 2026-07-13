@@ -185,7 +185,8 @@ node scripts/audit-study-matches.js  # Verify coverage/contamination/dupes/ties
 
 ```bash
 python tools/analysis/run_pipeline.py
-# Updates Lichess statistics from master games
+# Updates opening statistics from the Lichess rated-games database
+# (ALL rated players, not master games — label UI surfaces accordingly)
 ```
 
 ## Workflow

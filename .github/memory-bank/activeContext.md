@@ -31,9 +31,16 @@ from vercel.json — the route owns per-band Cache-Control (config headers would
 override function headers); PRD §4/§5 + plan doc annotated as-built (level
 check + bridge card cut, `All` band default, dead metrics flagged).
 
-**Next:** Fred reviews PR #50, merges; confirm `LICHESS_EXPLORER_TOKEN` live in
-prod; then Slice 2 (deviation detection, leak panel, practice-param CTA) per PRD
-§6. Watch beacons post-deploy.
+**Snapshot fallback follow-up (branch `feat/snapshot-book-fallback`, on top of
+PR #50):** tree API ships per-node snapshot W/D/L; book rows keep the same bars
+when live data is absent (no off-book rows; sources never mixed in one list);
+stats card holds a loading state instead of flashing the snapshot; snapshot
+relabelled honestly — it is **all rated Lichess games**, not master games
+(pipeline reads the full rated DB; CLAUDE.md corrected).
+
+**Next:** Fred reviews + merges PR #50, then the follow-up PR; confirm
+`LICHESS_EXPLORER_TOKEN` live in prod; then Slice 2 per PRD §6. Watch beacons
+post-deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

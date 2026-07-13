@@ -17,9 +17,10 @@ import { trackEvent } from '../../lib/analytics';
  * redesign): the level pills, headline stats, W/D/L bar and notable master games
  * in one card. The level lens at the top governs this card and the opening book
  * below it. While a band is selected the card holds a loading state until the
- * live fetch resolves — the master-games snapshot must never flash first and
- * then get swapped out. Only a failed band fetch degrades to the snapshot,
- * with a short note. Explorer requests fire only once the card is in view.
+ * live fetch resolves — the snapshot must never flash first and then get
+ * swapped out. Only a failed band fetch degrades to the snapshot, with a
+ * short note. The snapshot is built from ALL rated Lichess games (the
+ * popularity pipeline), not master games — its label must say so. Explorer requests fire only once the card is in view.
  */
 
 const MIN_LIVE_SAMPLE = 100;
@@ -148,8 +149,8 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({
   if (!fen && !hasSnapshot) return null;
 
   const snapshotMeta = popularityStats?.analysis_date
-    ? `Master games · updated ${popularityStats.analysis_date}`
-    : 'Master games';
+    ? `All Lichess games · updated ${popularityStats.analysis_date}`
+    : 'All Lichess games';
   const liveMeta = band
     ? band === 'masters'
       ? 'Master games · live'
@@ -194,7 +195,7 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({
         <>
           {band && liveFailed && (
             <div className={styles.liveUnavailable} role="status">
-              Live Lichess data isn't available right now — showing the master games snapshot.
+              Live Lichess data isn't available right now — showing a saved snapshot instead.
             </div>
           )}
           <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} variant="bare" />

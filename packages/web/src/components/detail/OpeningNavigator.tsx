@@ -16,7 +16,8 @@ interface OpeningNavigatorProps {
    * Optional progressive enhancement (sidebar unification): when present,
    * "Next moves" rows re-rank by actual play, gain W/D/L mini bars, and
    * popular moves with no page in the book join as inert off-book rows.
-   * Absent or null, the book renders exactly as before.
+   * Absent or null, rows keep the same bars from their bundled snapshot
+   * stats (all rated Lichess games) — just no off-book rows.
    */
   explorer?: ExplorerResult | null;
   /** Explorer stats for the parent position — the same treatment for Alternatives. */
@@ -267,6 +268,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
       name: child.name,
       fen: child.fen,
       count: getCount(child),
+      snapshotStats: child.stats ?? null,
     })),
     explorer?.moves ?? null
   );
@@ -277,6 +279,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
       name: sibling.name,
       fen: sibling.fen,
       count: getCount(sibling),
+      snapshotStats: sibling.stats ?? null,
     })),
     parentExplorer?.moves ?? null,
     { excludeSans: currentSan ? [currentSan] : [] }
@@ -339,7 +342,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 ply={pliesPlayed}
                 maxCount={maxCount}
                 countLabel={countLabel}
-                hasStats={Boolean(explorer?.moves?.length)}
+                hasStats={childRows.some((row) => row.stats !== null)}
               />
               {canCollapse && (
                 <button
@@ -371,7 +374,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 ply={currentMoveIdx}
                 maxCount={maxCount}
                 countLabel={countLabel}
-                hasStats={Boolean(parentExplorer?.moves?.length)}
+                hasStats={siblingRows.some((row) => row.stats !== null)}
                 alternatives
               />
               {canCollapse && (

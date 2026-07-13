@@ -152,7 +152,9 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({
   const liveMeta = band
     ? band === 'masters'
       ? 'Master games · live'
-      : `Lichess games, ${getBand(band).range} · live`
+      : band === 'all'
+        ? 'All Lichess games · live'
+        : `Lichess games, ${getBand(band).range} · live`
     : '';
 
   const showLive = Boolean(band) && !liveFailed;

@@ -117,7 +117,9 @@ const OpeningDetailPage: React.FC = () => {
   // Level lens (sidebar unification): one band choice governs the Win rates
   // panel and the Opening book's move stats. Persistence and analytics live
   // in LevelLens; the page only holds the state and the explorer results.
-  const [band, setBand] = useState<BandId | null>(() => getMyLevel());
+  // Default to the "All" level so the book shows live win rates + off-book
+  // moves on first load, without waiting for an explicit level choice.
+  const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
   const explorer = useExplorerResult(opening?.fen ?? null, band);
   const parentFen =
     treeData?.ancestors && treeData.ancestors.length > 0

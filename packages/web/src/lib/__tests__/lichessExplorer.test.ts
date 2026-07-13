@@ -62,8 +62,8 @@ describe('buildExplorerUrl', () => {
 });
 
 describe('BANDS', () => {
-  it('exposes the five PRD bands lowest-to-highest', () => {
-    expect(BANDS.map((b) => b.id)).toEqual(['u1400', '1400', '1800', '2200', 'masters']);
+  it('exposes All plus the PRD bands lowest-to-highest', () => {
+    expect(BANDS.map((b) => b.id)).toEqual(['all', 'u1400', '1400', '1800', '2200', 'masters']);
   });
 });
 

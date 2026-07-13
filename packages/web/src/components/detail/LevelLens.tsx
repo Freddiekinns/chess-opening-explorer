@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LevelLens.module.css';
 import { BANDS, bandTooltip, type BandId } from '../../lib/lichessExplorer';
-import { clearMyLevel, setMyLevel } from '../../lib/myLevel';
+import { setMyLevel } from '../../lib/myLevel';
 import { trackEvent } from '../../lib/analytics';
 
 /**
@@ -9,7 +9,8 @@ import { trackEvent } from '../../lib/analytics';
  * selector at the top of the sidebar column governing every data panel below
  * it — the win-rate stats and the opening book's move stats change together.
  * Learner-facing level names on the pills; the Lichess Elo ranges live in
- * tooltips. Selection persists site-wide as "my level".
+ * tooltips. Selection persists site-wide as "my level". "All" is the broadest
+ * default (every rating), so there is always an active level — no reset pill.
  */
 
 interface LevelLensProps {
@@ -22,11 +23,6 @@ export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange }) => {
     setMyLevel(id);
     trackEvent('band_select', { band: id });
     onChange(id);
-  };
-
-  const reset = () => {
-    clearMyLevel();
-    onChange(null);
   };
 
   return (
@@ -44,16 +40,6 @@ export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange }) => {
             {def.label}
           </button>
         ))}
-        {band && (
-          <button
-            type="button"
-            className={`${styles.pill} ${styles.resetPill}`}
-            onClick={reset}
-            title="Clear my level and show the master games snapshot"
-          >
-            Reset
-          </button>
-        )}
       </div>
     </div>
   );

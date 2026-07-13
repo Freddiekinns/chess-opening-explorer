@@ -26,6 +26,7 @@ const NOTABLE_GAMES_CAP = 5;
  * are presentational.
  */
 export const BANDS = [
+  { id: 'all', label: 'All', range: 'all ratings' },
   { id: 'u1400', label: 'Beginner', range: 'under 1400' },
   { id: '1400', label: 'Intermediate', range: '1400–1800' },
   { id: '1800', label: 'Advanced', range: '1800–2200' },
@@ -42,7 +43,9 @@ export function getBand(id: BandId): Band {
 
 /** Hover/aria detail for a band pill — where the games come from. */
 export function bandTooltip(band: Band): string {
-  return band.range ? `Lichess games, ratings ${band.range}` : 'Over-the-board master games';
+  if (band.id === 'masters') return 'Over-the-board master games';
+  if (band.id === 'all') return 'All rated Lichess games, every level';
+  return `Lichess games, ratings ${band.range}`;
 }
 
 export interface ExplorerMove {

@@ -6,7 +6,6 @@ body{padding:24px;background:var(--surface-base);max-width:460px}
 .pills{display:flex;flex-wrap:wrap;gap:4px}
 .pill{background:#2c2a27;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:4px 8px;font-size:11px;font-weight:600;color:#9a958e;cursor:pointer}
 .pill.active{background:#e85d04;border-color:#e85d04;color:#100f0e}
-.pill.reset{border-style:dashed}
 .stats{display:flex;align-items:flex-start;justify-content:space-between}
 .stat .l{font-size:11px;font-weight:600;color:#8e887f;display:block;margin-bottom:4px}
 .stat .v{font:800 24px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);letter-spacing:-.02em}
@@ -54,7 +53,7 @@ body{padding:24px;background:var(--surface-base);max-width:460px}
 <span class="cap">Stats card — level pills → stat pair → win bar → master games</span>
 <div class="card">
   <div class="pills">
-    <span class="pill" title="Lichess games, ratings under 1400">Beginner</span><span class="pill active" title="Lichess games, ratings 1400–1800">Intermediate</span><span class="pill" title="Lichess games, ratings 1800–2200">Advanced</span><span class="pill" title="Lichess games, ratings 2200+">Expert</span><span class="pill" title="Over-the-board master games">Masters</span><span class="pill reset">Reset</span>
+    <span class="pill active" title="All rated Lichess games, every level">All</span><span class="pill" title="Lichess games, ratings under 1400">Beginner</span><span class="pill" title="Lichess games, ratings 1400–1800">Intermediate</span><span class="pill" title="Lichess games, ratings 1800–2200">Advanced</span><span class="pill" title="Lichess games, ratings 2200+">Expert</span><span class="pill" title="Over-the-board master games">Masters</span>
   </div>
   <div class="stats">
     <div class="stat"><span class="l">Total games</span><span class="v">8.9M</span></div>

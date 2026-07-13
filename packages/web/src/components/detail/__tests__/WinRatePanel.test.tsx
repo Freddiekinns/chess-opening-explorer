@@ -118,6 +118,12 @@ describe('WinRatePanel', () => {
     expect(await screen.findByText(/Lichess games, 1400–1800 · live/)).toBeInTheDocument();
   });
 
+  it('labels the All band as every level of Lichess play', async () => {
+    primeResults();
+    renderPanel('all');
+    expect(await screen.findByText(/All Lichess games · live/)).toBeInTheDocument();
+  });
+
   it('shows the games-weighted Average Elo for a live band', async () => {
     fetchExplorerMock.mockImplementation((_fen: string, band: BandId) =>
       Promise.resolve(

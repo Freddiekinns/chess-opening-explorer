@@ -16,10 +16,10 @@ describe('LevelLens', () => {
     vi.mocked(trackEvent).mockClear();
   });
 
-  it('renders the five named levels lowest to highest', () => {
+  it('renders All plus the named levels lowest to highest', () => {
     render(<LevelLens band={null} onChange={() => {}} />);
     const pills = screen.getAllByRole('button').map((b) => b.textContent);
-    expect(pills).toEqual(['Beginner', 'Intermediate', 'Advanced', 'Expert', 'Masters']);
+    expect(pills).toEqual(['All', 'Beginner', 'Intermediate', 'Advanced', 'Expert', 'Masters']);
   });
 
   it('keeps the Elo range discoverable via the pill tooltip', () => {
@@ -46,24 +46,22 @@ describe('LevelLens', () => {
     expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1400' });
   });
 
-  it('marks the active level and offers a reset that clears the preference', async () => {
-    localStorage.setItem('openingbook:my-level', '1800');
-    const onChange = vi.fn();
-    const user = userEvent.setup();
-    render(<LevelLens band="1800" onChange={onChange} />);
-
+  it('marks the active level via aria-pressed', () => {
+    render(<LevelLens band="1800" onChange={() => {}} />);
     expect(screen.getByRole('button', { name: 'Advanced' })).toHaveAttribute(
       'aria-pressed',
       'true'
     );
-
-    await user.click(screen.getByRole('button', { name: 'Reset' }));
-    expect(onChange).toHaveBeenCalledWith(null);
-    expect(localStorage.getItem('openingbook:my-level')).toBeNull();
+    expect(screen.getByRole('button', { name: 'All' })).toHaveAttribute('aria-pressed', 'false');
   });
 
-  it('shows no reset pill until a level is chosen', () => {
-    render(<LevelLens band={null} onChange={() => {}} />);
-    expect(screen.queryByRole('button', { name: 'Reset' })).toBeNull();
+  it('selecting All persists it as the broadest level', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+    render(<LevelLens band="1800" onChange={onChange} />);
+
+    await user.click(screen.getByRole('button', { name: 'All' }));
+    expect(onChange).toHaveBeenCalledWith('all');
+    expect(localStorage.getItem('openingbook:my-level')).toBe('all');
   });
 });

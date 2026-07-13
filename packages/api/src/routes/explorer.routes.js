@@ -25,7 +25,9 @@ const MASTERS_CACHE = 'public, s-maxage=604800, stale-while-revalidate=86400';
 const LICHESS_CACHE = 'public, s-maxage=86400, stale-while-revalidate=86400';
 
 // Band ids shared with the frontend BANDS list; ratings per the PRD table.
+// `all` spans every Lichess rating bucket — the default "any level" view.
 const BAND_RATINGS = {
+  all: '0,1000,1200,1400,1600,1800,2000,2200,2500',
   u1400: '0,1000,1200',
   1400: '1400,1600',
   1800: '1800,2000',

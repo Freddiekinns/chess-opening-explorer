@@ -29,6 +29,10 @@ spec
   white% · bar · black% · count); result bar now shown on mobile (the old
   `display:none` is gone). Structure (breadcrumb / Next moves / "Instead of …")
   unchanged.
+- **`All` band (2026-07-13):** new broadest band (every Lichess rating), now the
+  default when no level is saved, so the book shows live win rates + off-book on
+  first load. Reset pill removed (`All` is the reset-equivalent). Costs ~3
+  Lichess queries per uncached page view — see backlog rate-limit note.
 - Overview card unchanged. Design-system preview replaced:
   `components-opening-detail-right-column.html` (old
   `components-level-check.html` removed).

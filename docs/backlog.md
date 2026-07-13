@@ -223,6 +223,22 @@ heavily-theorised lines.
   can become a retention surface; measure it from slice 1.
 - **Error monitoring (S4)** — ship with slice 1 (first client-side external
   dependency; failures are otherwise invisible).
+- **Lichess explorer rate-limit monitoring (new, 2026-07-13)** — the
+  `/api/explorer` proxy uses a single personal token (`LICHESS_EXPLORER_TOKEN`),
+  rate-limited by Lichess to **25 req/min**. Only _cache misses_ hit Lichess
+  (CDN cache: 24h bands / 7d masters, plus client localStorage), so at today's
+  ~100 users/month (6–7/day) there is ample headroom — **no action needed now.**
+  The signal already exists: 429s surface as `explorer_error` `{status:429}`
+  beacons in Vercel runtime logs (`api/event.js`). **Investigate/solve when:**
+  sustained 429s appear, or the user base grows ~10×. **Quick win when it
+  matters:** add a structured log line in `explorer.routes.js` on every upstream
+  fetch (cache miss) + on 429 — server-side ground truth, since client beacons
+  are ad-blockable — then a Vercel log-drain alert on 429 count. **Watch:**
+  crawlers over the 12k+ FEN pages are the most likely budget-blower (near-100%
+  cache miss); mitigated today because the explorer call is
+  IntersectionObserver-gated client JS most bots don't run. **Solve ladder:**
+  request a higher Lichess limit → rotate multiple tokens → self-host a games
+  DB.
 - **E2E in CI (S2)** — add before slices touch Analyse and landing flows.
 - **Popularity stats refresh + freshness badge** — still `2025-07-15`; run
   quarterly, surface the date. Slice 1 mitigates but does not fix.

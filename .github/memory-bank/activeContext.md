@@ -38,9 +38,9 @@ stats card holds a loading state instead of flashing the snapshot; snapshot
 relabelled honestly — it is **all rated Lichess games**, not master games
 (pipeline reads the full rated DB; CLAUDE.md corrected).
 
-**Next:** Fred reviews + merges PR #50, then the follow-up PR; confirm
-`LICHESS_EXPLORER_TOKEN` live in prod; then Slice 2 per PRD §6. Watch beacons
-post-deploy.
+**Shipped (2026-07-13):** PR #50 and follow-up PR #51 both squash-merged to
+main; production verified — explorer CDN cache HITs with route-owned headers,
+crawler UAs 403. **Next:** Slice 2 per PRD §6. Watch beacons post-deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

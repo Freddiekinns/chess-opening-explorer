@@ -362,12 +362,16 @@
   margin-bottom: var(--space-3);
 }
 
-/* Honest attribution under a family-fallback shelf (review V1) */
+/* Honest attribution under a family-fallback shelf (review V1). Reserves one
+   line so a family-fallback column and an exact-match column keep their
+   galleries aligned side-by-side on desktop (the empty column renders an
+   aria-hidden placeholder note). */
 .resourceFallbackNote {
   margin: calc(-1 * var(--space-2)) 0 var(--space-3);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   line-height: 1.4;
+  min-height: 1.4em;
 }
 
 @media (max-width: 768px) {

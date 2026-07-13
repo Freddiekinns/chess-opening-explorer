@@ -1270,46 +1270,62 @@ const OpeningDetailPage: React.FC = () => {
                 </div>
               )}
             </div>
-            {(videos.length > 0 || studies.length > 0) && (
-              <div
-                className={`${styles.resourcesGrid} ${
-                  videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
-                }`}
-              >
-                {videos.length > 0 && (
-                  <div>
-                    <div className={styles.resourceLabel}>
-                      {videoContext?.source === 'family' && videoContext.family
-                        ? `Videos for the ${videoContext.family.name} (${videos.length})`
-                        : `Videos (${videos.length})`}
-                    </div>
-                    {videoContext?.source === 'family' && (
-                      <p className={styles.resourceFallbackNote}>
-                        No videos match this exact position yet — these cover the wider family.
-                      </p>
+            {(videos.length > 0 || studies.length > 0) &&
+              (() => {
+                // When one column falls back to the opening family, it gains an
+                // extra note line. Reserve that line in both columns so the two
+                // galleries stay aligned at the top on desktop (side-by-side).
+                const familyFallback =
+                  videoContext?.source === 'family' || studyContext?.source === 'family';
+                const noteSlot = (isFamily: boolean, text: string) => {
+                  if (!familyFallback) return null;
+                  return isFamily ? (
+                    <p className={styles.resourceFallbackNote}>{text}</p>
+                  ) : (
+                    <p className={styles.resourceFallbackNote} aria-hidden="true">
+                      &nbsp;
+                    </p>
+                  );
+                };
+                return (
+                  <div
+                    className={`${styles.resourcesGrid} ${
+                      videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
+                    }`}
+                  >
+                    {videos.length > 0 && (
+                      <div>
+                        <div className={styles.resourceLabel}>
+                          {videoContext?.source === 'family' && videoContext.family
+                            ? `Videos from the ${videoContext.family.name} family (${videos.length})`
+                            : `Videos (${videos.length})`}
+                        </div>
+                        {noteSlot(
+                          videoContext?.source === 'family',
+                          'No videos focus on this exact position yet.'
+                        )}
+                        <VideoErrorBoundary>
+                          <VideoGallery videos={videos} hideTitle />
+                        </VideoErrorBoundary>
+                      </div>
                     )}
-                    <VideoErrorBoundary>
-                      <VideoGallery videos={videos} hideTitle />
-                    </VideoErrorBoundary>
-                  </div>
-                )}
-                {studies.length > 0 && (
-                  <div>
-                    <div className={styles.resourceLabel}>
-                      {studyContext?.source === 'family' && studyContext.family
-                        ? `Studies for the ${studyContext.family.name} (${studies.length})`
-                        : `Studies (${studies.length})`}
-                    </div>
-                    {studyContext?.source === 'family' && (
-                      <p className={styles.resourceFallbackNote}>
-                        No studies anchor on this exact position yet — these cover the wider family.
-                      </p>
+                    {studies.length > 0 && (
+                      <div>
+                        <div className={styles.resourceLabel}>
+                          {studyContext?.source === 'family' && studyContext.family
+                            ? `Studies from the ${studyContext.family.name} family (${studies.length})`
+                            : `Studies (${studies.length})`}
+                        </div>
+                        {noteSlot(
+                          studyContext?.source === 'family',
+                          'No studies focus on this exact position yet.'
+                        )}
+                        <StudiesGallery studies={studies} openingName={opening?.name || ''} />
+                      </div>
                     )}
-                    <StudiesGallery studies={studies} openingName={opening?.name || ''} />
                   </div>
-                )}
-              </div>
-            )}
+                );
+              })()}
           </div>
         )}
       </div>

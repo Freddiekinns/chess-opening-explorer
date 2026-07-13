@@ -20,7 +20,8 @@ import { trackEvent } from '../../lib/analytics';
  * live fetch resolves — the snapshot must never flash first and then get
  * swapped out. Only a failed band fetch degrades to the snapshot, with a
  * short note. The snapshot is built from ALL rated Lichess games (the
- * popularity pipeline), not master games — its label must say so. Explorer requests fire only once the card is in view.
+ * popularity pipeline), not master games — its label must say so. Explorer
+ * requests fire only once the card is in view.
  */
 
 const MIN_LIVE_SAMPLE = 100;

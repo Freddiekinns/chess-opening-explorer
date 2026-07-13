@@ -155,6 +155,15 @@ describe('WinRatePanel', () => {
     expect(screen.queryByText(/isn't available right now/)).not.toBeInTheDocument();
   });
 
+  it('holds a loading state — never the snapshot — while the band fetch is pending', () => {
+    fetchExplorerMock.mockReturnValue(new Promise(() => {})); // never resolves
+    renderPanel('all');
+
+    expect(screen.getByRole('status')).toHaveTextContent('Loading Lichess data…');
+    expect(screen.queryByText(/Master games · updated 2025-07-15/)).not.toBeInTheDocument();
+    expect(screen.queryByText('54.3k')).not.toBeInTheDocument();
+  });
+
   it('shows the snapshot with an unavailable note when the band fetch fails', async () => {
     const { ExplorerError } = await vi.importActual<typeof import('../../../lib/lichessExplorer')>(
       '../../../lib/lichessExplorer'

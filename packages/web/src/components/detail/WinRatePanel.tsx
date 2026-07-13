@@ -16,9 +16,10 @@ import { trackEvent } from '../../lib/analytics';
  * Stats card (deviation-trainer PRD §5, reworked per the 2026-07-13 right-column
  * redesign): the level pills, headline stats, W/D/L bar and notable master games
  * in one card. The level lens at the top governs this card and the opening book
- * below it. Live band stats replace the master-games snapshot when a band is
- * selected; a failed band fetch degrades to the snapshot with a short note.
- * Explorer requests fire only once the card is in view.
+ * below it. While a band is selected the card holds a loading state until the
+ * live fetch resolves — the master-games snapshot must never flash first and
+ * then get swapped out. Only a failed band fetch degrades to the snapshot,
+ * with a short note. Explorer requests fire only once the card is in view.
  */
 
 const MIN_LIVE_SAMPLE = 100;
@@ -178,16 +179,16 @@ export const WinRatePanel: React.FC<WinRatePanelProps> = ({
       <LevelLens band={band} onChange={onBandChange} />
 
       {showLive ? (
-        liveLoading ? (
-          <div className={styles.livePlaceholder}>Loading Lichess data…</div>
-        ) : live && live.totalGames >= MIN_LIVE_SAMPLE && liveStats ? (
+        liveLoading || !live ? (
+          <div className={styles.livePlaceholder} role="status">
+            Loading Lichess data…
+          </div>
+        ) : live.totalGames >= MIN_LIVE_SAMPLE && liveStats ? (
           <WinRateBar popularityStats={liveStats} meta={liveMeta} variant="bare" />
-        ) : live ? (
+        ) : (
           <div className={styles.livePlaceholder}>
             Not enough games at this level to show reliable numbers.
           </div>
-        ) : (
-          <WinRateBar popularityStats={popularityStats} meta={snapshotMeta} variant="bare" />
         )
       ) : (
         <>

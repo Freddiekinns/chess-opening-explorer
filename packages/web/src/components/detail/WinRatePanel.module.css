@@ -23,6 +23,12 @@
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Approximates the bare WinRateBar block so swapping in live data
+     doesn't shift the notable-games list below. */
+  min-height: 104px;
 }
 
 /* Notable games */

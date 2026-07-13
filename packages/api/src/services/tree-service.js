@@ -24,14 +24,25 @@ class TreeService {
         const childrenMap = new Map();
         // descendantCount: moves → number of descendants
         const descendantCount = new Map();
-        // gamesByFen: fen → games_analyzed count
-        const gamesByFen = new Map();
+        // statsByFen: fen → { games, whitePct, drawPct, blackPct }
+        const statsByFen = new Map();
 
-        // Build games lookup from popularity data
+        // Build stats lookup from popularity data. Win rates ship only when
+        // all three are present — a partial entry must not become a bar.
         for (const [fen, stats] of Object.entries(popularityData)) {
-          if (stats.games_analyzed > 0) {
-            gamesByFen.set(fen, stats.games_analyzed);
-          }
+          if (!(stats.games_analyzed > 0)) continue;
+          const rates = [stats.white_win_rate, stats.draw_rate, stats.black_win_rate];
+          const hasRates = rates.every((rate) => Number.isFinite(rate));
+          statsByFen.set(fen, {
+            games: stats.games_analyzed,
+            ...(hasRates
+              ? {
+                  whitePct: stats.white_win_rate * 100,
+                  drawPct: stats.draw_rate * 100,
+                  blackPct: stats.black_win_rate * 100,
+                }
+              : {}),
+          });
         }
 
         // First pass: populate moveIndex
@@ -80,7 +91,7 @@ class TreeService {
           countDescendants(normalizedMoves);
         }
 
-        return { moveIndex, childrenMap, descendantCount, gamesByFen };
+        return { moveIndex, childrenMap, descendantCount, statsByFen };
       },
       3600000
     );
@@ -182,11 +193,13 @@ class TreeService {
    * @param {object} entry - opening entry from moveIndex
    * @param {Map} descendantCount - pre-computed descendant counts
    * @param {Map} childrenMap - pre-computed children map
-   * @param {Map} gamesByFen - pre-computed games_analyzed counts by FEN
+   * @param {Map} statsByFen - pre-computed popularity stats by FEN
    */
-  _formatNode(entry, descendantCount, childrenMap, gamesByFen) {
+  _formatNode(entry, descendantCount, childrenMap, statsByFen) {
     const normalizedMoves = this._normalizeMoves(entry.moves);
     const hasChildren = (childrenMap.get(normalizedMoves) || []).length > 0;
+    const snapshot = statsByFen.get(entry.fen);
+    const hasRates = snapshot !== undefined && Number.isFinite(snapshot.whitePct);
 
     return {
       fen: entry.fen,
@@ -195,7 +208,17 @@ class TreeService {
       move: this._getLastMoveDisplay(entry.moves),
       moves: entry.moves,
       descendantCount: descendantCount.get(normalizedMoves) || 0,
-      gamesPlayed: gamesByFen.get(entry.fen) || 0,
+      gamesPlayed: snapshot ? snapshot.games : 0,
+      // Snapshot W/D/L for the position after this move (all rated Lichess
+      // games) — the opening book's fallback bars when live data is absent.
+      stats: hasRates
+        ? {
+            games: snapshot.games,
+            whitePct: snapshot.whitePct,
+            drawPct: snapshot.drawPct,
+            blackPct: snapshot.blackPct,
+          }
+        : null,
       hasChildren,
     };
   }
@@ -205,7 +228,7 @@ class TreeService {
    * Returns ancestors (named openings only), siblings, children.
    */
   getTreeContext(fen) {
-    const { moveIndex, childrenMap, descendantCount, gamesByFen } = this._buildIndex();
+    const { moveIndex, childrenMap, descendantCount, statsByFen } = this._buildIndex();
 
     // Find current opening by FEN
     const ecoData = this.ecoService.loadECOData();
@@ -227,7 +250,7 @@ class TreeService {
       const parentEntry = moveIndex.get(parentMoves);
       if (parentEntry) {
         // This is a named opening — include it as an ancestor
-        const parentNode = this._formatNode(parentEntry, descendantCount, childrenMap, gamesByFen);
+        const parentNode = this._formatNode(parentEntry, descendantCount, childrenMap, statsByFen);
 
         // Get siblings of this ancestor (other children of its parent)
         const grandparentMoves = this._getParentMovesNormalized(parentMoves);
@@ -236,7 +259,7 @@ class TreeService {
 
         parentNode.siblings = siblingEntries
           .filter((s) => this._normalizeMoves(s.moves) !== parentMoves)
-          .map((s) => this._formatNode(s, descendantCount, childrenMap, gamesByFen));
+          .map((s) => this._formatNode(s, descendantCount, childrenMap, statsByFen));
 
         ancestors.unshift(parentNode); // prepend so root is first
       }
@@ -244,11 +267,11 @@ class TreeService {
     }
 
     // Current node
-    const current = this._formatNode(currentEntry, descendantCount, childrenMap, gamesByFen);
+    const current = this._formatNode(currentEntry, descendantCount, childrenMap, statsByFen);
 
     // Children of current
     const childEntries = childrenMap.get(currentMoves) || [];
-    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, gamesByFen));
+    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, statsByFen));
 
     // Siblings of current (other children of current's parent)
     const parentMoves = this._getParentMovesNormalized(currentMoves);
@@ -257,7 +280,7 @@ class TreeService {
       const siblingEntries = childrenMap.get(parentMoves) || [];
       siblings = siblingEntries
         .filter((s) => this._normalizeMoves(s.moves) !== currentMoves)
-        .map((s) => this._formatNode(s, descendantCount, childrenMap, gamesByFen));
+        .map((s) => this._formatNode(s, descendantCount, childrenMap, statsByFen));
     }
 
     return { current, ancestors, children, siblings };
@@ -267,7 +290,7 @@ class TreeService {
    * Get children of a given FEN (for lazy loading).
    */
   getChildren(fen) {
-    const { childrenMap, descendantCount, gamesByFen } = this._buildIndex();
+    const { childrenMap, descendantCount, statsByFen } = this._buildIndex();
 
     const ecoData = this.ecoService.loadECOData();
     const opening = ecoData[fen];
@@ -275,7 +298,7 @@ class TreeService {
 
     const normalizedMoves = this._normalizeMoves(opening.moves || '');
     const childEntries = childrenMap.get(normalizedMoves) || [];
-    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, gamesByFen));
+    const children = childEntries.map((c) => this._formatNode(c, descendantCount, childrenMap, statsByFen));
 
     return { children };
   }

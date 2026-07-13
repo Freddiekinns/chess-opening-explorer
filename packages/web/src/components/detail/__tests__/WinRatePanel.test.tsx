@@ -106,7 +106,7 @@ describe('WinRatePanel', () => {
   it('renders the snapshot with its date label when no level is set', async () => {
     primeResults();
     renderPanel(null);
-    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
+    expect(screen.getByText(/All Lichess games · updated 2025-07-15/)).toBeInTheDocument();
     expect(screen.getByText('54.3k')).toBeInTheDocument();
     // Let the masters fetch settle so the update is act()-wrapped.
     await waitFor(() => expect(fetchExplorerMock).toHaveBeenCalled());
@@ -151,7 +151,7 @@ describe('WinRatePanel', () => {
     renderPanel(null);
 
     await waitFor(() => expect(trackEvent).toHaveBeenCalledWith('explorer_error', { status: 401 }));
-    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
+    expect(screen.getByText(/All Lichess games · updated 2025-07-15/)).toBeInTheDocument();
     expect(screen.queryByText(/isn't available right now/)).not.toBeInTheDocument();
   });
 
@@ -160,7 +160,7 @@ describe('WinRatePanel', () => {
     renderPanel('all');
 
     expect(screen.getByRole('status')).toHaveTextContent('Loading Lichess data…');
-    expect(screen.queryByText(/Master games · updated 2025-07-15/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/All Lichess games · updated 2025-07-15/)).not.toBeInTheDocument();
     expect(screen.queryByText('54.3k')).not.toBeInTheDocument();
   });
 
@@ -172,7 +172,7 @@ describe('WinRatePanel', () => {
     renderPanel('2200');
 
     expect(await screen.findByText(/isn't available right now/)).toBeInTheDocument();
-    expect(screen.getByText(/Master games · updated 2025-07-15/)).toBeInTheDocument();
+    expect(screen.getByText(/All Lichess games · updated 2025-07-15/)).toBeInTheDocument();
     expect(trackEvent).toHaveBeenCalledWith('explorer_error', { status: 429 });
   });
 

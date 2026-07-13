@@ -8,6 +8,12 @@
  * popular moves with no page in the book join as inert "off-book" rows.
  * Explorer moves under MIN_MOVE_SAMPLE games are ignored outright — a result
  * bar over a handful of games looks like data but is noise.
+ *
+ * Without explorer data (still loading, or Lichess unavailable) book rows
+ * fall back to their bundled snapshot stats (all rated Lichess games), so the
+ * book keeps the same visual language either way — just no off-book rows.
+ * The two sources are never mixed within one list: snapshot bars next to
+ * band-specific live bars would silently compare different populations.
  */
 
 import type { ExplorerMove } from './lichessExplorer';
@@ -23,6 +29,8 @@ export interface BookMoveInput {
   fen: string;
   /** Book games (or lines) — the metric shown when no explorer data exists. */
   count: number;
+  /** Snapshot W/D/L for this move's position — fallback when live data is absent. */
+  snapshotStats?: MoveStats | null;
 }
 
 export interface MoveStats {
@@ -74,7 +82,16 @@ export function mergeExplorerMoves(
     stats: null,
   }));
 
-  if (!explorer || explorer.length === 0) return bookRows;
+  if (!explorer || explorer.length === 0) {
+    // No live data: fall back to snapshot stats, same sample floor.
+    for (let i = 0; i < bookRows.length; i++) {
+      const snapshot = book[i].snapshotStats;
+      if (snapshot && snapshot.games >= MIN_MOVE_SAMPLE) {
+        bookRows[i].stats = snapshot;
+      }
+    }
+    return bookRows;
+  }
 
   const totalGames = explorer.reduce((sum, move) => sum + move.games, 0);
   const unmatched = new Map<string, ExplorerMove>();

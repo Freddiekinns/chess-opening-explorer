@@ -7,8 +7,17 @@ import {
 } from '../bookExplorerMerge';
 import type { ExplorerMove } from '../lichessExplorer';
 
-function bookMove(san: string, name: string, count: number): BookMoveInput {
-  return { san, name, fen: `fen-${san}`, count };
+function bookMove(
+  san: string,
+  name: string,
+  count: number,
+  snapshotStats?: BookMoveInput['snapshotStats']
+): BookMoveInput {
+  return { san, name, fen: `fen-${san}`, count, snapshotStats };
+}
+
+function snapshot(games: number) {
+  return { games, whitePct: 50, drawPct: 5, blackPct: 45 };
 }
 
 function explorerMove(san: string, games: number, overrides: Partial<ExplorerMove> = {}) {
@@ -118,5 +127,38 @@ describe('mergeExplorerMoves', () => {
     expect(rows.map((r) => r.san)).toEqual(['g3', 'Nf3', 'Nc3']);
     expect(rows[1].stats).toBeNull();
     expect(rows[2].stats).toBeNull();
+  });
+
+  describe('snapshot fallback (no explorer data)', () => {
+    const bookWithSnapshots = [
+      bookMove('Nf3', 'Some Variation', 900, snapshot(900)),
+      bookMove('Nc3', 'Main Line', 5000, snapshot(5000)),
+      bookMove('g3', 'Fianchetto Line', 200, snapshot(MIN_MOVE_SAMPLE - 1)),
+    ];
+
+    it('seeds rows from snapshot stats, keeping book order — no off-book rows', () => {
+      const rows = mergeExplorerMoves(bookWithSnapshots, null);
+      expect(rows.map((r) => r.san)).toEqual(['Nf3', 'Nc3', 'g3']);
+      expect(rows[0].stats?.games).toBe(900);
+      expect(rows[1].stats?.games).toBe(5000);
+      expect(rows.filter((r) => r.fen === null)).toHaveLength(0);
+    });
+
+    it('applies the same minimum-sample floor to snapshot stats', () => {
+      const rows = mergeExplorerMoves(bookWithSnapshots, null);
+      expect(rows.find((r) => r.san === 'g3')?.stats).toBeNull();
+    });
+
+    it('also falls back when the explorer returns an empty move list', () => {
+      const rows = mergeExplorerMoves(bookWithSnapshots, []);
+      expect(rows[0].stats?.games).toBe(900);
+    });
+
+    it('never mixes snapshot stats into a live list — unmatched rows stay bare', () => {
+      const rows = mergeExplorerMoves(bookWithSnapshots, [explorerMove('Nc3', 10_000)]);
+      expect(rows.find((r) => r.san === 'Nc3')?.stats?.games).toBe(10_000);
+      expect(rows.find((r) => r.san === 'Nf3')?.stats).toBeNull();
+      expect(rows.find((r) => r.san === 'g3')?.stats).toBeNull();
+    });
   });
 });

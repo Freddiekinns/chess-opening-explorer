@@ -8,6 +8,16 @@ export interface TreeNode {
   moves: string;
   descendantCount: number;
   gamesPlayed: number;
+  /**
+   * Snapshot W/D/L for the position after this move (all rated Lichess
+   * games) — the book's fallback bars when live explorer data is absent.
+   */
+  stats?: {
+    games: number;
+    whitePct: number;
+    drawPct: number;
+    blackPct: number;
+  } | null;
   hasChildren: boolean;
 }
 

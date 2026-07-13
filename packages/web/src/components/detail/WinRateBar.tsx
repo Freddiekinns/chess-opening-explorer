@@ -12,7 +12,7 @@ interface PopularityStats {
 
 interface WinRateBarProps {
   popularityStats: PopularityStats | null;
-  /** Source/freshness line, e.g. "Master games · updated 2025-07-15" */
+  /** Source/freshness line, e.g. "All Lichess games · updated 2025-07-15" */
   meta?: string;
   /** 'bare' drops the card chrome for embedding inside another card. */
   variant?: 'card' | 'bare';

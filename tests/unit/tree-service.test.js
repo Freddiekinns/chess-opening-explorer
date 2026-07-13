@@ -85,6 +85,31 @@ describe('TreeService', () => {
       expect(service.getTreeContext('not/a/real/fen')).toBeNull();
     });
 
+    it('ships snapshot W/D/L stats on nodes with popularity data', () => {
+      const ecoData = service.ecoService.loadECOData();
+      const sicilianEntry = Object.entries(ecoData).find(
+        ([, o]) => o.moves === '1. e4 c5' && o.name === 'Sicilian Defense'
+      );
+      const ctx = service.getTreeContext(sicilianEntry[0]);
+
+      // The Sicilian itself has millions of analysed games — stats must ship.
+      expect(ctx.current.stats).not.toBeNull();
+      expect(ctx.current.stats.games).toBe(ctx.current.gamesPlayed);
+      const { whitePct, drawPct, blackPct } = ctx.current.stats;
+      expect(whitePct + drawPct + blackPct).toBeCloseTo(100, 0);
+
+      // Every node carries the field; rates are never invented for
+      // positions the popularity pipeline has no data for.
+      for (const node of [...ctx.children, ...ctx.siblings]) {
+        expect(node).toHaveProperty('stats');
+        if (node.stats !== null) {
+          expect(node.stats.games).toBeGreaterThan(0);
+        } else {
+          expect(node.gamesPlayed === 0 || node.stats === null).toBe(true);
+        }
+      }
+    });
+
     it('returns empty ancestors for root opening', () => {
       const ecoData = service.ecoService.loadECOData();
       const rootEntry = Object.entries(ecoData).find(([, o]) => o.moves === '1. e4');

@@ -39,6 +39,33 @@ describe('GET /api/explorer', () => {
     delete process.env.LICHESS_EXPLORER_TOKEN;
   });
 
+  test.each([
+    ['Googlebot', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'],
+    ['Bingbot', 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'],
+    ['GPTBot', 'Mozilla/5.0 AppleWebKit/537.36 (compatible; GPTBot/1.0)'],
+    [
+      'rendered Googlebot',
+      'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1) Chrome/120.0 Safari/537.36',
+    ],
+  ])('short-circuits %s with 403, no-store and no upstream call', async (_name, ua) => {
+    const res = await request(makeApp())
+      .get('/api/explorer')
+      .set('User-Agent', ua)
+      .query({ fen: FEN, band: 'masters' });
+    expect(res.status).toBe(403);
+    expect(res.headers['cache-control']).toBe('no-store');
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
+  test('does not mistake a real browser (or a Cubot phone) for a bot', async () => {
+    const phone = await request(makeApp())
+      .get('/api/explorer')
+      .set('User-Agent', 'Mozilla/5.0 (Linux; Android 11; CUBOT KINGKONG 5) Chrome/119.0 Mobile')
+      .query({ fen: FEN, band: 'masters' });
+    expect(phone.status).toBe(200);
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+
   test('rejects an unknown band with 400 and no upstream call', async () => {
     const res = await request(makeApp()).get('/api/explorer').query({ fen: FEN, band: 'gm' });
     expect(res.status).toBe(400);

@@ -79,9 +79,42 @@ directional; the requirement is trend visibility.
 | Drill-CTA clicks / leak-panel expansions            | 2     | Prescription lands                                      |
 | Same anonymous id re-running Analyse within 14 days | 2     | The retention bet — **and the accounts go/no-go input** |
 
+> **2026-07-13:** rows 1–2 are dead as specified — the level-check strip and
+> bridge card were cut in the right-column redesign (see §5 as-built note).
+> `band_select` still measures level engagement; the bridge/funnel metric needs
+> a replacement before slice 2.
+
 ---
 
 ## 5. Slice 1 — Evidence engine (Lichess explorer integration) `S–M`
+
+> **As built (2026-07-13, PR #50).** Slice 1 shipped with deliberate deltas from
+> this spec, locked during the right-column design review (spec:
+> `docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`):
+>
+> - **Level-check strip cut** (and `levelCheck.ts` deleted). The comparison is
+>   now manual — toggle bands and read the numbers. Superseding idea: a new
+>   **`All` band** (every Lichess rating) is the default when no level is saved,
+>   so live stats render on first paint with zero interaction; the reset control
+>   went with it (`All` is the reset-equivalent).
+> - **Analyse bridge card cut** (match-mock decision). Slice 2 needs a
+>   replacement funnel from detail pages — open item.
+> - The band selector grew into the sidebar-wide **level lens**: it also governs
+>   the opening book, whose Next moves / "Instead of …" rows re-rank by live
+>   play with W/D/L bars and gain inert **off-book** rows (sidebar unification,
+>   `docs/proposals/2026-07-11-sidebar-unification.md`). The in-panel
+>   continuations list from §5.3 moved there.
+> - Explorer calls go through a new **`/api/explorer` proxy** — Lichess gated
+>   the explorer behind auth in 2026-03, so "no key required" (§5.3) no longer
+>   holds. The proxy attaches `LICHESS_EXPLORER_TOKEN` (25 req/min), owns CDN
+>   cache headers, and short-circuits crawler user-agents so JS-rendering bots
+>   can't burn the budget across 12k+ indexed pages.
+> - Bands carry learner-facing labels (Beginner/Intermediate/Advanced/Expert);
+>   the Elo ranges moved to tooltips and source lines. A games-weighted position
+>   **Average Elo** stat was added (null when absent — never fabricated).
+>
+> Consequence for §4: the `level_check_view` and `bridge_click` metrics are
+> dead. `band_select`, `explorer_error` and `analyse_run` beacons shipped.
 
 ### 5.1 User stories
 

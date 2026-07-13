@@ -8,9 +8,18 @@
  * stays client-side (packages/web/src/lib/lichessExplorer.ts).
  *
  * The token is rate-limited to 25 requests/minute by Lichess, so success
- * responses carry long CDN cache headers (also mirrored in vercel.json) —
- * only cache misses ever reach Lichess. Failures are never cached and the
- * client degrades to the snapshot stats.
+ * responses carry long CDN cache headers — only cache misses ever reach
+ * Lichess. This route owns its Cache-Control entirely: do NOT add an
+ * /api/explorer entry to vercel.json's headers array, because config headers
+ * override function headers and would clobber both the masters 7-day TTL and
+ * the no-store on failures. Failures are never cached and the client degrades
+ * to the snapshot stats.
+ *
+ * Crawlers that render JavaScript (Googlebot etc.) would otherwise fire ~3
+ * explorer calls per page across 12k+ indexed pages, burning the token's
+ * budget on bots. Known bot user-agents get a cheap 403 before anything else;
+ * the client falls back to the snapshot stats, so bots still index the real
+ * master-games numbers.
  */
 
 const express = require('express');
@@ -23,6 +32,12 @@ const MAX_MOVES = 12;
 const MAX_TOP_GAMES = 15;
 const MASTERS_CACHE = 'public, s-maxage=604800, stale-while-revalidate=86400';
 const LICHESS_CACHE = 'public, s-maxage=86400, stale-while-revalidate=86400';
+
+// Known crawler user-agents (explicit names, not a bare /bot/i — real phone
+// UAs like "Cubot" would false-positive). Live stats are client-side
+// progressive enhancement, so bots lose nothing they could index.
+const BOT_UA =
+  /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex(bot)?|applebot|petalbot|bytespider|gptbot|ccbot|claudebot|amazonbot|ahrefsbot|semrushbot|mj12bot|dotbot|facebookexternalhit|crawler|spider|headlesschrome|lighthouse/i;
 
 // Band ids shared with the frontend BANDS list; ratings per the PRD table.
 // `all` spans every Lichess rating bucket — the default "any level" view.
@@ -56,6 +71,16 @@ function isPlausibleFen(fen) {
 
 router.get('/', async (req, res) => {
   const { fen, band } = req.query;
+
+  // Cheapest check first: never spend the Lichess budget on crawler renders.
+  // 403 (not an empty 200) so the client takes its error path and falls back
+  // to the snapshot stats — bots index real numbers, not a thin-sample note.
+  if (BOT_UA.test(req.get('user-agent') || '')) {
+    return res
+      .status(403)
+      .set('Cache-Control', 'no-store')
+      .json({ error: 'Live stats are not served to automated clients' });
+  }
 
   if (!isPlausibleFen(fen)) {
     return res.status(400).set('Cache-Control', 'no-store').json({ error: 'Invalid fen' });

@@ -1,5 +1,17 @@
 # Slice 1 — Evidence Engine (Lichess Explorer Integration) Implementation Plan
 
+> **Status (2026-07-13): executed and partially superseded.** All six tasks
+> shipped on PR #50, then the 2026-07-13 right-column redesign (spec:
+> `docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`)
+> revised the outcome on the same branch: Task 2's `levelCheck.ts` and Task 5's
+> bridge card were **removed**; the band selector became `LevelLens` with a new
+> default **`All`** band and no reset control; live continuations moved from the
+> panel into the opening book (`bookExplorerMerge.ts` + `OpeningNavigator`); and
+> explorer traffic now goes through the `/api/explorer` proxy (token + CDN
+> caching + crawler-UA gate) instead of calling Lichess directly. The **PRD §5
+> as-built note is the authoritative record** of what exists; read this plan as
+> history, not as a description of the code.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use
 > superpowers:subagent-driven-development (recommended) or
 > superpowers:executing-plans to implement this plan task-by-task. Steps use

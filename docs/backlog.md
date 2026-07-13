@@ -239,10 +239,14 @@ heavily-theorised lines.
   `explorer.routes.js` on every upstream fetch (cache miss) + on 429 —
   server-side ground truth, since client beacons are ad-blockable — then a
   Vercel log-drain alert on 429 count. **Watch:** crawlers over the 12k+ FEN
-  pages are the most likely budget-blower (near-100% cache miss); mitigated
-  today because the explorer call is IntersectionObserver-gated client JS most
-  bots don't run. **Solve ladder:** request a higher Lichess limit → rotate
-  multiple tokens → self-host a games DB.
+  pages were the most likely budget-blower (near-100% cache miss, and Googlebot
+  _does_ render JS) — **mitigated 2026-07-13**: the proxy 403s known crawler
+  user-agents before touching Lichess, so bots index the snapshot fallback and
+  spend nothing. Residual exposure: the proxy is an unauthenticated public
+  relay, so a hostile client hammering random FENs could still drain the budget
+  — accept at today's scale; revisit with the monitoring. **Solve ladder:**
+  request a higher Lichess limit → rotate multiple tokens → self-host a games
+  DB.
 - **E2E in CI (S2)** — add before slices touch Analyse and landing flows.
 - **Popularity stats refresh + freshness badge** — still `2025-07-15`; run
   quarterly, surface the date. Slice 1 mitigates but does not fix.

@@ -272,10 +272,17 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   access; trust the behaviour). Live explorer stats go through the
   `/api/explorer` proxy (`packages/api/src/routes/explorer.routes.js`), which
   attaches `LICHESS_EXPLORER_TOKEN` (zero-scope personal token; set in `.env`
-  and Vercel env). The token allows 25 requests/min, so CDN caching
-  (vercel.json + route headers) is load-bearing — never bypass the proxy or call
-  Lichess directly from the client. Without the token the route 503s and the Win
-  Rate panel falls back to snapshot stats.
+  and Vercel env). The token allows 25 requests/min, so CDN caching is
+  load-bearing — never bypass the proxy or call Lichess directly from the
+  client. **The route owns its Cache-Control headers** (7d masters / 24h bands /
+  no-store failures): do not add an `/api/explorer` entry to vercel.json's
+  headers array — config headers override function headers and would clobber the
+  per-band TTLs (entry removed 2026-07-13; the every-route-declares-caching rule
+  is satisfied by the route itself). The route also 403s known crawler
+  user-agents before touching Lichess — JS-rendering bots across 12k+ indexed
+  pages must not spend the token budget; they index the snapshot fallback
+  instead. Without the token the route 503s and the Win Rate panel falls back to
+  snapshot stats.
 - **Host-based redirects belong in `vercel.json`, not middleware**: Vercel's
   edge resolves host-level redirects (www↔apex, custom domain redirects)
   _before_ middleware runs, so any `if (url.host === ...)` branch in

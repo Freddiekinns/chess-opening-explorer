@@ -8,41 +8,32 @@
 redesign is the outcome of Fred's separate design review and is committed onto
 the same branch/PR. PRD `docs/proposals/2026-07-11-deviation-trainer-prd.md` §5.
 
-**Evidence engine (unchanged):** `/api/explorer` proxy attaches
-`LICHESS_EXPLORER_TOKEN` (Lichess gated the explorer behind auth in 2026-03;
-zero-scope, 25 req/min; CDN-cached via vercel.json). **Set the token in Vercel
-env before deploy.** Client `lib/lichessExplorer.ts` normalises + caches (TTL
-7d/24h, LRU 200, in-flight dedupe). Beacon `api/event.js` (`band_select`,
-`explorer_error`, `analyse_run`) → runtime logs, counts only.
+**Evidence engine:** `/api/explorer` proxy attaches `LICHESS_EXPLORER_TOKEN`
+(auth-gated since 2026-03; zero-scope, 25 req/min; the **route owns its CDN
+Cache-Control** — no vercel.json entry). **Token is set in Vercel env.** Client
+`lib/lichessExplorer.ts` normalises + caches (TTL 7d/24h, LRU 200, dedupe).
+Beacon `api/event.js` (`band_select`, `explorer_error`, `analyse_run`).
 
-**Right-column redesign (2026-07-13, Claude Design mock, match-mock-exactly):**
-spec
-`docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`.
+**Right-column redesign (2026-07-13):** the **PRD §5 as-built note is the
+authoritative record**. Summary: `WinRatePanel` = one Stats card (LevelLens
+pills → Total games / Average Elo → win bar → master games); level-check strip
+and bridge card cut; games-weighted `averageRating` (null when absent);
+`OpeningNavigator` rows two-line with W/D/L bars incl. mobile; new **`All`**
+band is the default (live stats + off-book on first load, ~3 Lichess queries per
+uncached page view — see backlog); design-system preview
+`components-opening-detail-right-column.html`. Verified: all suites green, build
+clean, no 375px overflow (TASK007 guards hold).
 
-- `WinRatePanel` is now one **Stats card**: level pills (`LevelLens`, label
-  dropped, aria kept) → `Total games` / `Average Elo` stat pair → win bar +
-  legend → master games. **Dropped** the level-check strip (+ `levelCheck.ts`,
-  deleted), the analyse bridge link, and the card title. `onBandChange` prop.
-- `lib/lichessExplorer.ts`: added games-weighted position `averageRating` (from
-  `moves[].averageRating`); `null` when absent — never fabricated.
-- `OpeningNavigator`: rows restyled to a two-line stacked layout (move+name /
-  white% · bar · black% · count); result bar now shown on mobile (the old
-  `display:none` is gone). Structure (breadcrumb / Next moves / "Instead of …")
-  unchanged.
-- **`All` band (2026-07-13):** new broadest band (every Lichess rating), now the
-  default when no level is saved, so the book shows live win rates + off-book on
-  first load. Reset pill removed (`All` is the reset-equivalent). Costs ~3
-  Lichess queries per uncached page view — see backlog rate-limit note.
-- Overview card unchanged. Design-system preview replaced:
-  `components-opening-detail-right-column.html` (old
-  `components-level-check.html` removed).
-- Verified: 46 targeted frontend tests green, `tsc`+`vite` build clean, no 375px
-  overflow (TASK007 guards hold), live band re-ranks Next moves in dev. Note:
-  the Stats-card live fetch is `IntersectionObserver`-gated and doesn't fire in
-  the Browser pane (known stall) — its logic is covered by unit tests.
+**Merge-readiness pass (2026-07-13):** proxy 403s known crawler UAs before
+touching Lichess (JS-rendering bots over 12k pages must not spend the 25/min
+token; bots index the snapshot fallback); `/api/explorer` header entry removed
+from vercel.json — the route owns per-band Cache-Control (config headers would
+override function headers); PRD §4/§5 + plan doc annotated as-built (level
+check + bridge card cut, `All` band default, dead metrics flagged).
 
-**Next:** Fred to review the redesign; then Slice 2 (deviation detection, leak
-panel, practice-param CTA) per PRD §6. Watch beacons post-deploy.
+**Next:** Fred reviews PR #50, merges; confirm `LICHESS_EXPLORER_TOKEN` live in
+prod; then Slice 2 (deviation detection, leak panel, practice-param CTA) per PRD
+§6. Watch beacons post-deploy.
 
 ## Previous Task: Study Matching V2 (PR #48, merged)
 

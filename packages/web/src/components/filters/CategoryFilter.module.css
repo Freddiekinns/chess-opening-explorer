@@ -1,0 +1,135 @@
+/* Mobile-only category dropdown. Hidden on desktop, where PopularOpeningsGrid
+   renders the wrapped ECO pill row instead. */
+.categoryFilter {
+  display: none;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .categoryFilter {
+    display: block;
+  }
+}
+
+/* Collapsed trigger button — mirrors the .category-btn pill language. */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Label truncates only as a last resort on ultra-narrow screens; the full
+   category name fits on one line at real phone widths. */
+.triggerLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trigger:hover {
+  border-color: var(--color-brand-orange);
+  color: var(--color-text-primary);
+}
+
+/* Active state — a category other than "All" is selected. */
+.triggerActive {
+  border-color: var(--color-brand-orange);
+  background: rgba(232, 93, 4, 0.12);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.filterIcon {
+  flex-shrink: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.triggerActive .chevron {
+  color: var(--color-brand-orange);
+}
+
+/* Invisible click-catcher so a tap outside the menu closes it. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+}
+
+/* Dropdown menu — full-size labels, no clipping. */
+.menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + var(--space-1) + 2px);
+  width: 260px;
+  max-width: calc(100vw - 2 * var(--space-4));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  overflow: hidden;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu li:last-child .item {
+  border-bottom: none;
+}
+
+.item:hover {
+  color: var(--color-text-primary);
+}
+
+.itemActive {
+  background: rgba(232, 93, 4, 0.1);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.check {
+  flex-shrink: 0;
+  color: var(--color-brand-orange);
+  opacity: 0;
+}
+
+.checkVisible {
+  opacity: 1;
+}

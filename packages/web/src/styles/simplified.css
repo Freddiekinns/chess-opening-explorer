@@ -2335,9 +2335,16 @@ body {
   flex-wrap: wrap;
 }
 
+/* Wrapper around a scrollable pill row — anchors the mobile right-edge fade. */
+.filter-scroll {
+  position: relative;
+}
+
 /* Mobile: chips stacked into ~7 rows at 375px and pushed the first card below
    the fold (design review #6) — keep each filter group to one horizontally
-   scrollable row instead. */
+   scrollable row instead. The long ECO category labels clipped illegibly in
+   that row, so the category filter collapses into a dropdown (CategoryFilter);
+   the level filter stays as a swipeable pill row with an edge fade. */
 @media (max-width: 767px) {
   .category-filters {
     flex-wrap: nowrap;
@@ -2349,6 +2356,30 @@ body {
 
   .category-filters::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Pills must keep their full width so the row overflows and scrolls — without
+     this they shrink to fit and clip their own labels ("Beginne…"), which is
+     the bug this row is meant to avoid. */
+  .category-filters .category-btn {
+    flex-shrink: 0;
+  }
+
+  /* Desktop-only wrapped category pills — the mobile dropdown replaces them. */
+  .category-filters--eco {
+    display: none;
+  }
+
+  /* Fade the right edge of the level pill row to hint at horizontal scroll. */
+  .filter-scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: var(--space-1);
+    width: 26px;
+    background: linear-gradient(90deg, transparent, var(--color-bg-main));
+    pointer-events: none;
   }
 }
 

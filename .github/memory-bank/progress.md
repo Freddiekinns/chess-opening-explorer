@@ -2,6 +2,14 @@
 
 ## What's Done (newest first)
 
+- **Mobile landing filter UI fix** (2026-07-15, branch
+  `claude/mobile-landing-filter-ui-mq5qjk`): the long ECO category labels
+  clipped illegibly in the mobile scroll-pill row. Per Claude Design handoff
+  (option 1e), the category filter now collapses into a `CategoryFilter`
+  dropdown at ≤767px (full labels, no clipping; trigger shows the full selected
+  name with an ellipsis safety net); level stays a swipeable pill row with a
+  right-edge fade. Desktop wrapped pills unchanged. New component + test +
+  design-system preview card. 288 frontend tests green.
 - **Sidebar Unification + Explorer Proxy** (2026-07-12, branch
   `feat/evidence-engine-slice1`): `/api/explorer` proxy (Lichess gated the
   explorer behind auth 2026-03; server token + CDN caching), then the sidebar

@@ -2358,6 +2358,13 @@ body {
     display: none;
   }
 
+  /* Pills must keep their full width so the row overflows and scrolls — without
+     this they shrink to fit and clip their own labels ("Beginne…"), which is
+     the bug this row is meant to avoid. */
+  .category-filters .category-btn {
+    flex-shrink: 0;
+  }
+
   /* Desktop-only wrapped category pills — the mobile dropdown replaces them. */
   .category-filters--eco {
     display: none;

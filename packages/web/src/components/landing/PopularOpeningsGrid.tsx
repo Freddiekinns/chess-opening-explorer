@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
 import { ComplexityFilters } from '../filters/ComplexityFilters';
+import { CategoryFilter } from '../filters/CategoryFilter';
 
 interface Opening {
   fen: string;
@@ -262,7 +263,9 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           className="complexity-filters"
         />
 
-        <div className="category-filters">
+        {/* Desktop: wrapped ECO category pills. Hidden on mobile, where the long
+            labels clip inside a scroll row — replaced there by the dropdown below. */}
+        <div className="category-filters category-filters--eco">
           {categories.slice(0, 6).map((category) => (
             <button
               key={category.id}
@@ -273,6 +276,13 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
             </button>
           ))}
         </div>
+
+        {/* Mobile: collapsed "Category" dropdown (shows full labels, no clipping). */}
+        <CategoryFilter
+          categories={categories.slice(0, 6)}
+          selectedCategory={selectedCategory}
+          onCategoryChange={handleCategoryChange}
+        />
       </div>
 
       <div

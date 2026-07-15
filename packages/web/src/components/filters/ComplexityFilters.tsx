@@ -18,22 +18,26 @@ export const ComplexityFilters: React.FC<ComplexityFiltersProps> = ({
   ];
 
   return (
-    <div className={`category-filters ${className}`}>
-      <button
-        className={`category-btn ${!selectedComplexity ? 'active' : ''}`}
-        onClick={() => onComplexityChange(null)}
-      >
-        All Levels
-      </button>
-      {complexityLevels.map((level) => (
+    // Wrapper carries the mobile right-edge fade (see .filter-scroll) that hints
+    // the pill row scrolls sideways; the inner row is the scroll container.
+    <div className="filter-scroll">
+      <div className={`category-filters ${className}`}>
         <button
-          key={level.id}
-          className={`category-btn ${selectedComplexity === level.id ? 'active' : ''}`}
-          onClick={() => onComplexityChange(level.id)}
+          className={`category-btn ${!selectedComplexity ? 'active' : ''}`}
+          onClick={() => onComplexityChange(null)}
         >
-          {level.label}
+          All levels
         </button>
-      ))}
+        {complexityLevels.map((level) => (
+          <button
+            key={level.id}
+            className={`category-btn ${selectedComplexity === level.id ? 'active' : ''}`}
+            onClick={() => onComplexityChange(level.id)}
+          >
+            {level.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

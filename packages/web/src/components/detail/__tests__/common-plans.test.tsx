@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CommonPlans } from '../CommonPlans';
 
@@ -23,6 +24,38 @@ describe('CommonPlans', () => {
     expect(screen.getByText('White')).toBeInTheDocument();
     expect(screen.getByText('Black')).toBeInTheDocument();
     expect(screen.getByText('Both')).toBeInTheDocument();
+  });
+
+  test('mobileGroups layout groups by side and collapses beyond three plans', async () => {
+    const user = userEvent.setup();
+    render(
+      <CommonPlans
+        layout="mobileGroups"
+        hideTitle
+        plans={[
+          'White: develop with tempo',
+          'White: build a broad centre',
+          'White: press the e-file',
+          'White: keep queens on the board',
+          'Black: reposition the queen safely',
+          'Both sides fight for the open files',
+        ]}
+      />
+    );
+
+    expect(screen.getByText('White')).toBeInTheDocument();
+    expect(screen.getByText('Black')).toBeInTheDocument();
+    expect(screen.getByText('Both sides')).toBeInTheDocument();
+
+    // Only three White plans visible until expanded
+    expect(screen.getByText('Develop with tempo')).toBeInTheDocument();
+    expect(screen.queryByText('Keep queens on the board')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show 1 more' }));
+    expect(screen.getByText('Keep queens on the board')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show less' }));
+    expect(screen.queryByText('Keep queens on the board')).not.toBeInTheDocument();
   });
 
   test('renders nothing when there are no plans', () => {

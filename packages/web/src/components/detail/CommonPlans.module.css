@@ -198,6 +198,87 @@
   }
 }
 
+/* ============================
+   MOBILE GROUPS LAYOUT (design 2a)
+   ============================ */
+.mobileGroupsLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobileGroup {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+
+.mobileGroup.white {
+  border-left-color: var(--border-strong);
+}
+
+.mobileGroup.black {
+  border-left-color: var(--border-default);
+}
+
+.mobileGroup.general {
+  border-left-color: var(--color-result-draw);
+}
+
+.mobileGroupLabel {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.mobileGroupPlans {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobilePlanRow {
+  display: flex;
+  gap: var(--space-2-5);
+  align-items: flex-start;
+}
+
+.mobilePlanDot {
+  flex: none;
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-result-draw);
+  margin-top: 8px;
+}
+
+.mobilePlanText {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0;
+  opacity: 0.78;
+}
+
+.mobileGroupToggle {
+  margin-top: var(--space-1);
+  padding: var(--space-2) 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.mobileGroupToggle:hover {
+  color: var(--color-text-primary);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card {
     animation: none;

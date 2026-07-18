@@ -2,50 +2,48 @@
 
 **Date:** 2026-07-18
 
-## Current Task: Opening detail mobile overhaul (branch `claude/mobile-ui-opening-details-ph33t8`)
+## Current Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
 
 Implemented Claude Design handoff **"Opening Details Mobile 2a — one data
-surface"** for the opening detail page at ≤767px. Desktop is untouched: a
-`useIsMobile()` matchMedia hook (`hooks/useMediaQuery.ts`, safe desktop default
-in jsdom/SSR) branches `OpeningDetailPage` into a mobile layout.
+surface"** at ≤767px. A `useIsMobile()` matchMedia hook (safe desktop default in
+jsdom/SSR) branches `OpeningDetailPage` into a mobile tree (AD-012 in
+context.md); desktop keeps its two-column layout.
 
 **Mobile layout (top → bottom):**
 
-- Compact left-aligned header (family cream / variation orange, 20px), swipeable
-  tag row, star with a "Saved to repertoire" toast.
-- Board card with one control row: `‹‹ ‹ ›` nav, inline scrollable move strip,
-  Practice button, and a `…` button opening **PositionSheet** (bottom sheet:
-  FEN + Copy + Analyse on Lichess — replaces the inline FEN block).
+- Compact left-aligned header, swipeable tag row, star + "Saved to repertoire"
+  toast; board card with one control row (`‹‹ ‹ ›`, inline move strip, Practice,
+  `…` → **PositionSheet** bottom sheet with FEN/Copy/Analyse).
 - Overview with 3-line clamp + Read more.
-- **MobileDataSurface** — merges WinRatePanel + OpeningNavigator into one card:
-  W/D/L gradient strip, sticky scrollable LevelLens pills (`scrollable` prop;
-  card uses `overflow: clip` so sticky works), level stats with loading dim +
-  snapshot fallback (via new `useExplorerQuery` exposing loading/failed),
-  collapsible one-line breadcrumb, Continuations + "Instead of X" stacked
-  two-line rows (shared move-list rules extracted to `lib/openingBook.ts`).
-- **MobileMasterGames** collapsed accordion (lazy masters fetch, shared cache).
-- CommonPlans new `mobileGroups` layout (White/Black/Both accent cards, 3
-  shown + toggle).
-- **MobileResources** accordion (Videos/Studies rows with match-specificity
-  subtitles → existing galleries) + swipeable external search pills.
-- **SearchOverlay** (`components/shared/`) replaces TopBar's bare mobile search:
-  empty state = Recent (new `lib/recentOpenings.ts`, recorded on detail-page
-  views) + My repertoire (cap 5) + Surprise me; typing shows live results with a
-  Searching…/no-results state. Legacy unused `MobileSearchOverlay` + its global
-  CSS removed.
+- **MobileDataSurface**: W/D/L gradient strip, sticky scrollable LevelLens pills
+  (card uses `overflow: clip` so sticky works), level stats with loading dim +
+  snapshot fallback (new `useExplorerQuery` exposes loading/failed), collapsible
+  breadcrumb, Continuations + "Instead of X" stacked rows (shared rules
+  extracted to `lib/openingBook.ts`).
+- **MobileMasterGames** collapsed accordion; CommonPlans `mobileGroups` layout;
+  **MobileResources** accordion + swipeable search pills.
+- **SearchOverlay** replaces TopBar's bare mobile search: empty state = Recent
+  (`lib/recentOpenings.ts`, recorded on detail views) + My repertoire (cap 5) +
+  Surprise me; live results with Searching…/no-results states. Legacy unused
+  `MobileSearchOverlay` + global CSS removed.
 
-**Files:** `components/detail/mobile/` (4 components + css + tests),
-`useMediaQuery.ts`, `useExplorerResult.ts` (adds `useExplorerQuery`),
-`lib/openingBook.ts`, `LevelLens` scrollable variant, `CommonPlans`
-mobileGroups, page + module css. Design-system lockstep: preview card
-`components-opening-detail-mobile.html`, mock in
-`project/explorations/opening-details-mobile-2a.dc.html`. No token changes.
+**Also in this PR:** desktop right column reordered Overview → stats → book
+(lens sits directly above the data it governs); scroll fix — `ScrollToTop` on
+route change + move strip scrolls its container horizontally only
+(`scrollIntoView` was pulling the page down to the board on load).
 
-**Verified:** 312 frontend tests green (24 new); ESLint/tsc/Prettier clean;
-Playwright at 390/320px (zero horizontal overflow, sticky pills, sheet, toast,
-breadcrumb, practice mode) and 1280px (desktop unchanged).
+**Files:** `components/detail/mobile/` (4 components), `SearchOverlay`,
+`useMediaQuery`, `useExplorerQuery`, `openingBook.ts`, `recentOpenings.ts`,
+LevelLens `scrollable`, CommonPlans `mobileGroups`, App `ScrollToTop`, page +
+css. Design-system lockstep: preview cards `components-opening-detail-mobile`
+(new) + right-column (reordered), 2a mock in `project/explorations/`. No token
+changes. Docs: user-journeys (mobile experience + search overlay), context.md
+AD-012.
+
+**Verified:** 323 frontend tests (35 new); tsc/ESLint/Prettier clean; Playwright
+at 390/320/1280px incl. search overlay states and scroll-to-top.
 
 ## Previous Task: Mobile landing filter UI fix (merged, PR #52)
 
 Category filter collapses into a `CategoryFilter` dropdown at ≤767px; level
-stays a swipeable pill row with a right-edge fade. Desktop unchanged.
+stays a swipeable pill row. Desktop unchanged.

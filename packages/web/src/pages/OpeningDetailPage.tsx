@@ -32,6 +32,7 @@ import { useRepertoire } from '../hooks/useRepertoire';
 import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult';
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
+import { recordRecentOpening } from '../lib/recentOpenings';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
@@ -242,6 +243,12 @@ const OpeningDetailPage: React.FC = () => {
           const page = data.data;
           setOpening(page.opening);
           setupGame(page.opening);
+          recordRecentOpening({
+            fen: page.opening.fen,
+            name: page.opening.name,
+            eco: page.opening.eco,
+            moves: page.opening.moves,
+          });
           setPopularityStats(page.stats || null);
           setVideos(page.videos || []);
           setVideoContext(page.videoContext || null);

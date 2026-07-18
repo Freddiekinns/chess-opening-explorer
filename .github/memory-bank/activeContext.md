@@ -28,6 +28,11 @@ in jsdom/SSR) branches `OpeningDetailPage` into a mobile layout.
   shown + toggle).
 - **MobileResources** accordion (Videos/Studies rows with match-specificity
   subtitles → existing galleries) + swipeable external search pills.
+- **SearchOverlay** (`components/shared/`) replaces TopBar's bare mobile search:
+  empty state = Recent (new `lib/recentOpenings.ts`, recorded on detail-page
+  views) + My repertoire (cap 5) + Surprise me; typing shows live results with a
+  Searching…/no-results state. Legacy unused `MobileSearchOverlay` + its global
+  CSS removed.
 
 **Files:** `components/detail/mobile/` (4 components + css + tests),
 `useMediaQuery.ts`, `useExplorerResult.ts` (adds `useExplorerQuery`),

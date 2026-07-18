@@ -285,15 +285,28 @@ const OpeningDetailPage: React.FC = () => {
     };
   }, []);
 
-  // Auto-scroll move strip to keep active move visible
+  // Auto-scroll move strip to keep active move visible. Scroll the strip
+  // container horizontally ONLY — scrollIntoView also scrolls the page
+  // vertically to reveal the strip, which made the detail page open
+  // scrolled down to the board on load.
   useEffect(() => {
-    if (!moveStripRef.current) return;
+    const container = moveStripRef.current;
+    if (!container) return;
     const pairIndex = currentMoveIndex === 0 ? 0 : Math.ceil(currentMoveIndex / 2);
-    const activeEl = moveStripRef.current.querySelector(
+    const activeEl = container.querySelector(
       currentMoveIndex === 0 ? `.${styles.startPosition}` : `[data-move-pair="${pairIndex}"]`
     ) as HTMLElement | null;
-    if (activeEl?.scrollIntoView) {
-      activeEl.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+    if (!activeEl) return;
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = activeEl.getBoundingClientRect();
+    const left =
+      container.scrollLeft +
+      (activeRect.left - containerRect.left) -
+      (containerRect.width - activeRect.width) / 2;
+    if (typeof container.scrollTo === 'function') {
+      container.scrollTo({ left, behavior: 'smooth' });
+    } else {
+      container.scrollLeft = left;
     }
   }, [currentMoveIndex]);
 

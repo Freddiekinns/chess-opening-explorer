@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import TopBar from './components/layout/TopBar';
@@ -20,6 +20,16 @@ const AnalyseRedirect = () => {
   return null;
 };
 
+/** SPA navigation keeps the previous page's scroll offset — reset to the top
+ *  whenever the route changes so every page opens at its heading. */
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 /** Mirrors the index.html splash so route transitions don't flash a bare page. */
 const RouteFallback = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -30,6 +40,7 @@ const RouteFallback = () => (
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <TopBar />
       <main className="app-content">
         <Suspense fallback={<RouteFallback />}>

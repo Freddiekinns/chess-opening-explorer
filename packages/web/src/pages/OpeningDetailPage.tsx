@@ -1353,15 +1353,10 @@ const OpeningDetailPage: React.FC = () => {
             />
           </div>
         ) : (
-          /* Right Column - Level lens + Stats + Overview + Navigator */
+          /* Right Column - Overview + Level lens + Stats + Navigator.
+             Overview leads so the level lens sits directly above both data
+             panels it governs (stats + book) — matching the mobile order. */
           <div className={`right-column ${styles.rightColumn}`}>
-            <WinRatePanel
-              popularityStats={popularityStats}
-              fen={opening.fen}
-              band={band}
-              onBandChange={setBand}
-            />
-
             {/* Overview — about this opening */}
             {opening?.eco && (
               <div className={styles.overviewCard}>
@@ -1369,6 +1364,13 @@ const OpeningDetailPage: React.FC = () => {
                 <p className={styles.overviewText}>{overviewText}</p>
               </div>
             )}
+
+            <WinRatePanel
+              popularityStats={popularityStats}
+              fen={opening.fen}
+              band={band}
+              onBandChange={setBand}
+            />
 
             <OpeningNavigator
               treeData={treeData}

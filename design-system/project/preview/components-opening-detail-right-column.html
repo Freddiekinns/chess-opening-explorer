@@ -1,99 +1,415 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
-body{padding:24px;background:var(--surface-base);max-width:460px}
-.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin:18px 0 8px}
-/* Stats card: pills → stat pair → win bar → master games (one card) */
-.card{background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,.25)}
-.pills{display:flex;flex-wrap:wrap;gap:4px}
-.pill{background:#2c2a27;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:4px 8px;font-size:11px;font-weight:600;color:#9a958e;cursor:pointer}
-.pill.active{background:#e85d04;border-color:#e85d04;color:#100f0e}
-.stats{display:flex;align-items:flex-start;justify-content:space-between}
-.stat .l{font-size:11px;font-weight:600;color:#8e887f;display:block;margin-bottom:4px}
-.stat .v{font:800 24px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);letter-spacing:-.02em}
-.stat.r{text-align:right}
-.stat.r .v{color:#e85d04}
-.meta{font-size:11px;color:#8e887f;margin-bottom:-4px}
-.bar{display:flex;height:8px;border-radius:999px;overflow:hidden;gap:2px}
-.bar>span{border-radius:999px}
-.bar .w{background:#d4cfc7}.bar .d{background:#5a554e}.bar .b{background:#c08840}
-.lab{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:#8e887f;margin-top:8px}
-.lab i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
-.lab .iw{background:#d4cfc7}.lab .id{background:#5a554e}.lab .ib{background:#c08840}
-.notable{border-top:1px solid rgba(255,255,255,.06);padding-top:12px}
-.notable .t{font-size:11px;font-weight:600;color:#8e887f;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.notable a{display:flex;justify-content:space-between;font-size:12px;color:var(--color-text-primary);text-decoration:none;padding:2px 0}
-.notable .res{color:#8e887f;font-variant-numeric:tabular-nums;white-space:nowrap}
-/* Overview */
-.ov{background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:12px 16px;margin-top:12px}
-.ov .t{font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);margin-bottom:8px}
-.ov p{font-size:14px;line-height:1.6;color:var(--color-text-primary);opacity:.78;margin:0}
-/* Opening book — stacked two-line rows */
-.book{background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px;margin-top:12px;box-shadow:0 4px 12px rgba(0,0,0,.25)}
-.book .bt{font:800 16px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);margin-bottom:12px}
-.crumb{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px;line-height:1.6;padding-bottom:12px;font-size:13px}
-.crumb a{color:#9a958e;text-decoration:none}
-.crumb .sep{color:#8e887f;opacity:.4;font-size:12px;margin:0 2px}
-.crumb .cur{font-weight:600;color:#e85d04}
-.sec{border-top:1px solid rgba(255,255,255,.06);padding-top:12px}
-.seclab{font:800 16px 'Bricolage Grotesque',sans-serif;color:var(--color-text-primary);margin-bottom:12px}
-.row{display:flex;flex-direction:column;gap:6px;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);text-decoration:none;margin-bottom:6px}
-.row.alt{background:rgba(0,0,0,.12)}
-.row .top{display:flex;align-items:baseline;gap:8px;min-width:0}
-.row .mv{font-family:var(--font-family-mono);font-size:13px;font-weight:600;color:var(--color-text-primary)}
-.row .nm{flex:1;min-width:0;color:#8e887f;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.row .bot{display:flex;align-items:center;gap:8px;min-width:0}
-.row .pw{font-family:var(--font-family-mono);font-size:11px;color:#d4cfc7;min-width:32px;font-variant-numeric:tabular-nums}
-.row .pb{font-family:var(--font-family-mono);font-size:11px;color:#c08840;min-width:32px;text-align:right;font-variant-numeric:tabular-nums}
-.row .wdl{flex:1;min-width:0;height:8px;border-radius:4px;overflow:hidden;display:flex}
-.row .wdl .w{background:#d4cfc7}.row .wdl .d{background:#5a554e}.row .wdl .b{background:#c08840}
-.row .ct{font-family:var(--font-family-mono);font-size:11px;color:#8e887f;min-width:52px;text-align:right;white-space:nowrap}
-</style></head><body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        padding: 24px;
+        background: var(--surface-base);
+        max-width: 460px;
+      }
+      .cap {
+        font-family: var(--font-family-mono);
+        font-size: 10px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        display: block;
+        margin: 18px 0 8px;
+      }
+      /* Stats card: pills → stat pair → win bar → master games (one card) */
+      .card {
+        background: #232120;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .pill {
+        background: #2c2a27;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #9a958e;
+        cursor: pointer;
+      }
+      .pill.active {
+        background: #e85d04;
+        border-color: #e85d04;
+        color: #100f0e;
+      }
+      .stats {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .stat .l {
+        font-size: 11px;
+        font-weight: 600;
+        color: #8e887f;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .stat .v {
+        font:
+          800 24px 'Bricolage Grotesque',
+          sans-serif;
+        color: var(--color-text-primary);
+        letter-spacing: -0.02em;
+      }
+      .stat.r {
+        text-align: right;
+      }
+      .stat.r .v {
+        color: #e85d04;
+      }
+      .meta {
+        font-size: 11px;
+        color: #8e887f;
+        margin-bottom: -4px;
+      }
+      .bar {
+        display: flex;
+        height: 8px;
+        border-radius: 999px;
+        overflow: hidden;
+        gap: 2px;
+      }
+      .bar > span {
+        border-radius: 999px;
+      }
+      .bar .w {
+        background: #d4cfc7;
+      }
+      .bar .d {
+        background: #5a554e;
+      }
+      .bar .b {
+        background: #c08840;
+      }
+      .lab {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        font-weight: 600;
+        color: #8e887f;
+        margin-top: 8px;
+      }
+      .lab i {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        margin-right: 4px;
+      }
+      .lab .iw {
+        background: #d4cfc7;
+      }
+      .lab .id {
+        background: #5a554e;
+      }
+      .lab .ib {
+        background: #c08840;
+      }
+      .notable {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 12px;
+      }
+      .notable .t {
+        font-size: 11px;
+        font-weight: 600;
+        color: #8e887f;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+      .notable a {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-primary);
+        text-decoration: none;
+        padding: 2px 0;
+      }
+      .notable .res {
+        color: #8e887f;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      /* Overview */
+      .ov {
+        background: #232120;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 12px 16px;
+        margin-top: 12px;
+      }
+      .ov .t {
+        font:
+          800 18px 'Bricolage Grotesque',
+          sans-serif;
+        color: var(--color-text-primary);
+        margin-bottom: 8px;
+      }
+      .ov p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--color-text-primary);
+        opacity: 0.78;
+        margin: 0;
+      }
+      /* Opening book — stacked two-line rows */
+      .book {
+        background: #232120;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .book .bt {
+        font:
+          800 16px 'Bricolage Grotesque',
+          sans-serif;
+        color: var(--color-text-primary);
+        margin-bottom: 12px;
+      }
+      .crumb {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 2px;
+        line-height: 1.6;
+        padding-bottom: 12px;
+        font-size: 13px;
+      }
+      .crumb a {
+        color: #9a958e;
+        text-decoration: none;
+      }
+      .crumb .sep {
+        color: #8e887f;
+        opacity: 0.4;
+        font-size: 12px;
+        margin: 0 2px;
+      }
+      .crumb .cur {
+        font-weight: 600;
+        color: #e85d04;
+      }
+      .sec {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 12px;
+      }
+      .seclab {
+        font:
+          800 16px 'Bricolage Grotesque',
+          sans-serif;
+        color: var(--color-text-primary);
+        margin-bottom: 12px;
+      }
+      .row {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        text-decoration: none;
+        margin-bottom: 6px;
+      }
+      .row.alt {
+        background: rgba(0, 0, 0, 0.12);
+      }
+      .row .top {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        min-width: 0;
+      }
+      .row .mv {
+        font-family: var(--font-family-mono);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-text-primary);
+      }
+      .row .nm {
+        flex: 1;
+        min-width: 0;
+        color: #8e887f;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .row .bot {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+      }
+      .row .pw {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #d4cfc7;
+        min-width: 32px;
+        font-variant-numeric: tabular-nums;
+      }
+      .row .pb {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #c08840;
+        min-width: 32px;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      .row .wdl {
+        flex: 1;
+        min-width: 0;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+      }
+      .row .wdl .w {
+        background: #d4cfc7;
+      }
+      .row .wdl .d {
+        background: #5a554e;
+      }
+      .row .wdl .b {
+        background: #c08840;
+      }
+      .row .ct {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #8e887f;
+        min-width: 52px;
+        text-align: right;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="cap">Opening detail — right column (overview + stats card + opening book)</span>
 
-<span class="cap">Opening detail — right column (stats card + overview + opening book)</span>
+    <span class="cap">Overview</span>
+    <div class="ov">
+      <div class="t">Overview</div>
+      <p>
+        The Giuoco Pianissimo is a highly strategic and solid variation of the Italian Game, with a
+        slow buildup and a long-term d4 break — a patient, positional plan for both sides.
+      </p>
+    </div>
 
-<span class="cap">Stats card — level pills → stat pair → win bar → master games</span>
-<div class="card">
-  <div class="pills">
-    <span class="pill active" title="All rated Lichess games, every level">All</span><span class="pill" title="Lichess games, ratings under 1400">Beginner</span><span class="pill" title="Lichess games, ratings 1400–1800">Intermediate</span><span class="pill" title="Lichess games, ratings 1800–2200">Advanced</span><span class="pill" title="Lichess games, ratings 2200+">Expert</span><span class="pill" title="Over-the-board master games">Masters</span>
-  </div>
-  <div class="stats">
-    <div class="stat"><span class="l">Total games</span><span class="v">8.9M</span></div>
-    <div class="stat r"><span class="l">Average Elo</span><span class="v">1,652</span></div>
-  </div>
-  <div>
-    <div class="meta">Lichess games, 1400–1800 · live</div>
-    <div class="bar" style="margin-top:6px"><span class="w" style="width:51%"></span><span class="d" style="width:4%"></span><span class="b" style="width:45%"></span></div>
-    <div class="lab"><span><i class="iw"></i>White wins 51%</span><span><i class="id"></i>Draws 4%</span><span><i class="ib"></i>Black wins 45%</span></div>
-  </div>
-  <div class="notable">
-    <div class="t">Master games</div>
-    <a href="#"><span>Caruana, F. – Carlsen, M.</span><span class="res">0–1 · 2020</span></a>
-    <a href="#"><span>Kramnik, V. – Carlsen, M.</span><span class="res">1–0 · 2017</span></a>
-    <a href="#"><span>Caruana, F. – Kramnik, V.</span><span class="res">½–½ · 2016</span></a>
-  </div>
-</div>
+    <span class="cap">Stats card — level pills → stat pair → win bar → master games</span>
+    <div class="card">
+      <div class="pills">
+        <span class="pill active" title="All rated Lichess games, every level">All</span
+        ><span class="pill" title="Lichess games, ratings under 1400">Beginner</span
+        ><span class="pill" title="Lichess games, ratings 1400–1800">Intermediate</span
+        ><span class="pill" title="Lichess games, ratings 1800–2200">Advanced</span
+        ><span class="pill" title="Lichess games, ratings 2200+">Expert</span
+        ><span class="pill" title="Over-the-board master games">Masters</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="l">Total games</span><span class="v">8.9M</span></div>
+        <div class="stat r"><span class="l">Average Elo</span><span class="v">1,652</span></div>
+      </div>
+      <div>
+        <div class="meta">Lichess games, 1400–1800 · live</div>
+        <div class="bar" style="margin-top: 6px">
+          <span class="w" style="width: 51%"></span><span class="d" style="width: 4%"></span
+          ><span class="b" style="width: 45%"></span>
+        </div>
+        <div class="lab">
+          <span><i class="iw"></i>White wins 51%</span><span><i class="id"></i>Draws 4%</span
+          ><span><i class="ib"></i>Black wins 45%</span>
+        </div>
+      </div>
+      <div class="notable">
+        <div class="t">Master games</div>
+        <a href="#"><span>Caruana, F. – Carlsen, M.</span><span class="res">0–1 · 2020</span></a>
+        <a href="#"><span>Kramnik, V. – Carlsen, M.</span><span class="res">1–0 · 2017</span></a>
+        <a href="#"><span>Caruana, F. – Kramnik, V.</span><span class="res">½–½ · 2016</span></a>
+      </div>
+    </div>
 
-<span class="cap">Overview</span>
-<div class="ov">
-  <div class="t">Overview</div>
-  <p>The Giuoco Pianissimo is a highly strategic and solid variation of the Italian Game, with a slow buildup and a long-term d4 break — a patient, positional plan for both sides.</p>
-</div>
-
-<span class="cap">Opening book — breadcrumb, "Next moves", "Instead of …" (stacked W/D/L rows)</span>
-<div class="book">
-  <div class="bt">Opening book</div>
-  <nav class="crumb">
-    <a href="#">King's Pawn Game</a><span class="sep">›</span><a href="#">Italian Game</a><span class="sep">›</span><a href="#">Classical Variation</a><span class="sep">›</span><span class="cur">Giuoco Pianissimo</span>
-  </nav>
-  <div class="sec">
-    <div class="seclab">Next moves</div>
-    <a class="row" href="#"><span class="top"><span class="mv">5...d6</span><span class="nm">Classical Variation, Giuoco Pianissimo</span></span><span class="bot"><span class="pw">49%</span><span class="wdl"><span class="w" style="width:49%"></span><span class="d" style="width:5%"></span><span class="b" style="width:46%"></span></span><span class="pb">46%</span><span class="ct">3.3M games</span></span></a>
-    <a class="row" href="#"><span class="top"><span class="mv">5...a6</span><span class="nm">Classical Variation, Giuoco Pianissimo</span></span><span class="bot"><span class="pw">52%</span><span class="wdl"><span class="w" style="width:52%"></span><span class="d" style="width:4%"></span><span class="b" style="width:44%"></span></span><span class="pb">44%</span><span class="ct">466.9k games</span></span></a>
-  </div>
-  <div class="sec">
-    <div class="seclab">Instead of 5.d3</div>
-    <a class="row alt" href="#"><span class="top"><span class="mv">5.d4</span><span class="nm">Classical Variation, Center Attack</span></span><span class="bot"><span class="pw">53%</span><span class="wdl"><span class="w" style="width:53%"></span><span class="d" style="width:4%"></span><span class="b" style="width:43%"></span></span><span class="pb">43%</span><span class="ct">8.6M games</span></span></a>
-    <a class="row alt" href="#"><span class="top"><span class="mv">5.O-O</span><span class="nm">Giuoco Piano: Albin Gambit</span></span><span class="bot"><span class="pw">50%</span><span class="wdl"><span class="w" style="width:50%"></span><span class="d" style="width:5%"></span><span class="b" style="width:45%"></span></span><span class="pb">45%</span><span class="ct">4.3M games</span></span></a>
-  </div>
-</div>
-
-</body></html>
+    <span class="cap"
+      >Opening book — breadcrumb, "Next moves", "Instead of …" (stacked W/D/L rows)</span
+    >
+    <div class="book">
+      <div class="bt">Opening book</div>
+      <nav class="crumb">
+        <a href="#">King's Pawn Game</a><span class="sep">›</span><a href="#">Italian Game</a
+        ><span class="sep">›</span><a href="#">Classical Variation</a><span class="sep">›</span
+        ><span class="cur">Giuoco Pianissimo</span>
+      </nav>
+      <div class="sec">
+        <div class="seclab">Next moves</div>
+        <a class="row" href="#"
+          ><span class="top"
+            ><span class="mv">5...d6</span
+            ><span class="nm">Classical Variation, Giuoco Pianissimo</span></span
+          ><span class="bot"
+            ><span class="pw">49%</span
+            ><span class="wdl"
+              ><span class="w" style="width: 49%"></span><span class="d" style="width: 5%"></span
+              ><span class="b" style="width: 46%"></span></span
+            ><span class="pb">46%</span><span class="ct">3.3M games</span></span
+          ></a
+        >
+        <a class="row" href="#"
+          ><span class="top"
+            ><span class="mv">5...a6</span
+            ><span class="nm">Classical Variation, Giuoco Pianissimo</span></span
+          ><span class="bot"
+            ><span class="pw">52%</span
+            ><span class="wdl"
+              ><span class="w" style="width: 52%"></span><span class="d" style="width: 4%"></span
+              ><span class="b" style="width: 44%"></span></span
+            ><span class="pb">44%</span><span class="ct">466.9k games</span></span
+          ></a
+        >
+      </div>
+      <div class="sec">
+        <div class="seclab">Instead of 5.d3</div>
+        <a class="row alt" href="#"
+          ><span class="top"
+            ><span class="mv">5.d4</span
+            ><span class="nm">Classical Variation, Center Attack</span></span
+          ><span class="bot"
+            ><span class="pw">53%</span
+            ><span class="wdl"
+              ><span class="w" style="width: 53%"></span><span class="d" style="width: 4%"></span
+              ><span class="b" style="width: 43%"></span></span
+            ><span class="pb">43%</span><span class="ct">8.6M games</span></span
+          ></a
+        >
+        <a class="row alt" href="#"
+          ><span class="top"
+            ><span class="mv">5.O-O</span><span class="nm">Giuoco Piano: Albin Gambit</span></span
+          ><span class="bot"
+            ><span class="pw">50%</span
+            ><span class="wdl"
+              ><span class="w" style="width: 50%"></span><span class="d" style="width: 5%"></span
+              ><span class="b" style="width: 45%"></span></span
+            ><span class="pb">45%</span><span class="ct">4.3M games</span></span
+          ></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

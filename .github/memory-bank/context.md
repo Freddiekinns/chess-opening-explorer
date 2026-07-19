@@ -106,6 +106,15 @@ Measure `scrollHeight` for expand/collapse instead of CSS max-height. Respect
 - Backend (Jest): `tests/` directory
 - Frontend (Vitest): `packages/web/src/**/__tests__/`
 
+### AD-012: Mobile Layout Branch (Opening Detail)
+
+At ≤767px `OpeningDetailPage` renders a distinct mobile tree (design 2a "one
+data surface") via `useIsMobile()` (`hooks/useMediaQuery.ts`, matchMedia with a
+safe desktop default where unavailable). Mobile components live in
+`components/detail/mobile/`; shared move-list rules in `lib/openingBook.ts` so
+mobile and desktop render from one source. Data hooks stay page-level and are
+shared by both trees — never duplicate fetches per layout.
+
 ## Project Structure
 
 ```

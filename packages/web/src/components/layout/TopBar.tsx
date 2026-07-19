@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, Loader2 } from 'lucide-react';
+import SearchOverlay from '../shared/SearchOverlay';
 import styles from './TopBar.module.css';
 
 interface SearchResult {
@@ -62,7 +63,6 @@ function TopBarSearch() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const mobileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -114,7 +114,6 @@ function TopBarSearch() {
     setQuery('');
     setShowDropdown(false);
     setResults([]);
-    setMobileOpen(false);
   };
 
   const handleSurpriseMe = async () => {
@@ -123,7 +122,6 @@ function TopBarSearch() {
       const data = await response.json();
       if (data.success && data.data) {
         navigate(`/opening/${encodeURIComponent(data.data.fen)}`);
-        setMobileOpen(false);
       }
     } catch {
       // Silent fail
@@ -147,7 +145,6 @@ function TopBarSearch() {
     } else if (e.key === 'Escape') {
       setShowDropdown(false);
       setActiveIndex(-1);
-      setMobileOpen(false);
     }
   };
 
@@ -201,50 +198,18 @@ function TopBarSearch() {
         </button>
       </div>
 
-      {/* Mobile: search icon only (surprise me moves into the overlay) */}
+      {/* Mobile: search icon opening the full-screen overlay (design 2a:
+          recents + repertoire + surprise me before typing, live results after) */}
       <button
         className={styles.searchMobileBtn}
-        onClick={() => {
-          setMobileOpen(true);
-          setTimeout(() => mobileInputRef.current?.focus(), 50);
-        }}
+        onClick={() => setMobileOpen(true)}
         aria-label="Search openings"
         title="Search openings"
       >
         <Search size={18} />
       </button>
 
-      {/* Mobile search overlay */}
-      {mobileOpen && (
-        <div className={styles.mobileOverlay}>
-          <div className={styles.mobileSearchBar}>
-            <input
-              ref={mobileInputRef}
-              type="text"
-              placeholder="Search openings..."
-              value={query}
-              onChange={handleChange}
-              onKeyDown={handleKeyDown}
-              className={styles.mobileSearchInput}
-            />
-            <button
-              className={styles.mobileCloseBtn}
-              onClick={() => {
-                setMobileOpen(false);
-                setShowDropdown(false);
-                setQuery('');
-                setResults([]);
-              }}
-            >
-              Cancel
-            </button>
-          </div>
-          {dropdownMarkup}
-          <button className={styles.mobileSurpriseBtn} onClick={handleSurpriseMe}>
-            Surprise me!
-          </button>
-        </div>
-      )}
+      <SearchOverlay open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 }

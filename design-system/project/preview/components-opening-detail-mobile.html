@@ -1,0 +1,683 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        padding: 24px;
+        background: var(--surface-base);
+        max-width: 438px;
+      }
+      .cap {
+        font-family: var(--font-family-mono);
+        font-size: 10px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        display: block;
+        margin: 18px 0 8px;
+      }
+      .frame {
+        width: 390px;
+        background: #1a1816;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 12px 8px;
+        box-sizing: border-box;
+      }
+      /* Header: compact left-aligned title, scrollable tags, star */
+      .hdr {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 0 8px 10px;
+      }
+      .hdr h1 {
+        font:
+          800 20px/1.15 'Bricolage Grotesque',
+          sans-serif;
+        letter-spacing: -0.02em;
+        color: #ece8e1;
+        margin: 0;
+      }
+      .hdr h1 .colon {
+        color: #8e887f;
+      }
+      .hdr h1 .var {
+        color: #e85d04;
+      }
+      .hdr .star {
+        color: #9a958e;
+        font-size: 20px;
+        line-height: 1;
+        padding: 4px;
+      }
+      .tags {
+        display: flex;
+        gap: 6px;
+        overflow: hidden;
+        padding: 0 8px 12px;
+      }
+      .tag {
+        background: rgba(255, 255, 255, 0.06);
+        color: #9a958e;
+        font-size: 11px;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 3px 8px;
+        white-space: nowrap;
+        flex: none;
+        text-transform: capitalize;
+      }
+      /* Board card: a control row (nav chevrons · Practice · …) above a
+         full-width move row — a horizontal carousel by default, expandable
+         to the whole line. */
+      .ctrl {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: #232120;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+        padding: 10px;
+      }
+      .moverow {
+        display: flex;
+        align-items: stretch;
+        gap: 4px;
+        margin: 8px 0 0;
+      }
+      .nav {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9a958e;
+        flex: none;
+      }
+      .nav.dis {
+        opacity: 0.3;
+      }
+      .strip {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .mv {
+        font-size: 12px;
+        font-weight: 500;
+        color: #9a958e;
+        white-space: nowrap;
+        /* taller padding = ≥40px touch target, type stays compact */
+        padding: 10px 6px;
+        flex: none;
+      }
+      .mv.act {
+        color: #e85d04;
+        background: rgba(232, 93, 4, 0.12);
+        border: 1px solid rgba(232, 93, 4, 0.3);
+        border-radius: 4px;
+      }
+      .prac {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        color: #e85d04;
+        border: 1px solid #e85d04;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font:
+          700 13px 'Bricolage Grotesque',
+          sans-serif;
+        flex: none;
+      }
+      /* Expand/collapse toggle for the move carousel */
+      .expand {
+        flex: none;
+        min-width: 36px;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9a958e;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+      }
+      /* Section heading — sentence case, shared by Overview + Common plans
+         (and Master games / Videos / Studies), never uppercase. */
+      .sh {
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        color: #ece8e1;
+        letter-spacing: -0.02em;
+        margin: 16px 0 10px;
+      }
+      /* Overview + Common plans form one editorial "reading zone": a
+         sentence-case heading over left-rule prose. The warm-grey margin rule
+         is the reading-zone signature — lighter than the single data surface
+         card, so that card stays the page's one "instrument". */
+      .ov {
+        padding: 0 8px 0 16px;
+        border-left: 2px solid #5a554e;
+      }
+      .ovp {
+        color: #ece8e1;
+        font-size: 14px;
+        line-height: 1.65;
+        margin: 0;
+        opacity: 0.82;
+      }
+      .read {
+        color: #e85d04;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 6px 0 0;
+      }
+      /* One data surface */
+      .surface {
+        background: #2c2a27;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .grad {
+        height: 3px;
+        background: linear-gradient(90deg, #d4cfc7, #5a554e, #c08840);
+      }
+      .pillrow {
+        display: flex;
+        gap: 4px;
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+      }
+      .pill {
+        background: #363330;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #8e887f;
+        white-space: nowrap;
+        flex: none;
+      }
+      .pill.active {
+        background: #e85d04;
+        border-color: #e85d04;
+        color: #100f0e;
+      }
+      .stats {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .stath {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .stat .l {
+        font-size: 11px;
+        font-weight: 600;
+        color: #9a958e;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .stat .v {
+        font:
+          800 22px 'Bricolage Grotesque',
+          sans-serif;
+        color: #ece8e1;
+      }
+      .stat.r {
+        text-align: right;
+      }
+      .stat.r .v {
+        color: #e85d04;
+      }
+      .bar {
+        display: flex;
+        height: 8px;
+        border-radius: 999px;
+        overflow: hidden;
+        gap: 2px;
+      }
+      .bar > span {
+        border-radius: 999px;
+      }
+      .bar .w {
+        background: #d4cfc7;
+      }
+      .bar .d {
+        background: #5a554e;
+      }
+      .bar .b {
+        background: #c08840;
+      }
+      .lab {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        font-weight: 600;
+        color: #9a958e;
+        margin-top: 8px;
+      }
+      .lab .lw {
+        color: #d4cfc7;
+      }
+      .lab .lb {
+        color: #c08840;
+      }
+      .meta {
+        font-size: 11px;
+        color: #9a958e;
+        margin-top: 8px;
+      }
+      .bookpad {
+        padding: 12px;
+      }
+      .crumb {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #9a958e;
+        margin-bottom: 12px;
+      }
+      .crumb .path {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .crumb .cur {
+        color: #e85d04;
+        font-weight: 600;
+      }
+      .bt {
+        font:
+          800 13px 'Bricolage Grotesque',
+          sans-serif;
+        color: #ece8e1;
+        margin-bottom: 8px;
+      }
+      .sub {
+        font-size: 11px;
+        color: #9a958e;
+        margin: -4px 0 8px;
+      }
+      .row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 4px;
+      }
+      .row .top {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        min-width: 0;
+      }
+      .row .san {
+        font-family: var(--font-family-mono);
+        font-size: 12px;
+        font-weight: 600;
+        color: #ece8e1;
+        flex: none;
+      }
+      .row .nm {
+        font-size: 11px;
+        font-weight: 500;
+        color: #8e887f;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .row .off {
+        font-size: 10px;
+        font-weight: 600;
+        color: #9a958e;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        padding: 1px 6px;
+        flex: none;
+      }
+      .row .bot {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .row .pw {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #d4cfc7;
+        min-width: 30px;
+      }
+      .row .pb {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #c08840;
+        min-width: 30px;
+        text-align: right;
+      }
+      .row .g {
+        font-family: var(--font-family-mono);
+        font-size: 11px;
+        color: #9a958e;
+        min-width: 48px;
+        text-align: right;
+        white-space: nowrap;
+      }
+      .row .mbar {
+        flex: 1;
+        min-width: 0;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .row .mbar span {
+        height: 100%;
+      }
+      /* Accordions: master games / videos / studies */
+      .acc {
+        background: #232120;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-top: 12px;
+      }
+      .acc .h {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+      }
+      .acc .t {
+        font:
+          800 14px 'Bricolage Grotesque',
+          sans-serif;
+        color: #ece8e1;
+      }
+      .acc .t small {
+        color: #8e887f;
+        font:
+          600 12px 'DM Sans',
+          sans-serif;
+      }
+      .acc .s {
+        display: block;
+        font:
+          400 11px 'DM Sans',
+          sans-serif;
+        color: #9a958e;
+        margin-top: 2px;
+      }
+      .acc .chev {
+        color: #8e887f;
+      }
+      .acc .h + .h {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      /* Plans: un-carded left-rule sub-sections matching the Overview, so the
+         reading zone is one voice and the data surface stays the one card. */
+      .plan {
+        border-left: 2px solid rgba(255, 255, 255, 0.25);
+        padding: 0 0 0 16px;
+        margin-top: 16px;
+      }
+      .plan.white {
+        border-left-color: rgba(255, 255, 255, 0.25);
+      }
+      .plan.black {
+        border-left-color: rgba(255, 255, 255, 0.1);
+      }
+      .plan .pl {
+        font-size: 12px;
+        font-weight: 700;
+        color: #9a958e;
+        margin-bottom: 8px;
+      }
+      .plan .li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .plan .dot {
+        flex: none;
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: #5a554e;
+        margin-top: 8px;
+      }
+      .plan p {
+        font-size: 14px;
+        line-height: 1.65;
+        color: #ece8e1;
+        margin: 0;
+        opacity: 0.82;
+      }
+      .plan .more {
+        font-size: 12px;
+        font-weight: 600;
+        color: #9a958e;
+        margin-top: 4px;
+      }
+      /* External search pills */
+      .ext {
+        display: flex;
+        gap: 8px;
+        overflow: hidden;
+        margin-top: 12px;
+      }
+      .epill {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        color: #9a958e;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 12px;
+        white-space: nowrap;
+        flex: none;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="cap">Opening detail · mobile (≤767px) — design 2a "one data surface"</span>
+    <div class="frame">
+      <div class="hdr">
+        <h1>
+          Alekhine<span class="colon">: </span
+          ><span class="var">Scandinavian, Exchange, 4.Nxd5</span>
+        </h1>
+        <span class="star">☆</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Intermediate</span><span class="tag">Strategic</span
+        ><span class="tag">Positional</span><span class="tag">Solid</span
+        ><span class="tag">Open Game</span>
+      </div>
+
+      <div class="ctrl">
+        <span class="nav">«</span><span class="nav">‹</span><span class="nav dis">›</span>
+        <span class="prac">▷ Practice</span>
+        <span class="nav">…</span>
+      </div>
+      <div class="moverow">
+        <span class="strip"
+          ><span class="mv">Start</span><span class="mv">1. e4 Nf6</span
+          ><span class="mv">2. Nc3 d5</span><span class="mv act">4. Nxd5</span></span
+        >
+        <span class="expand">⌄</span>
+      </div>
+
+      <div class="sh">Overview</div>
+      <div class="ov">
+        <p class="ovp">
+          This variation leads to a more strategic and less chaotic game than typical Alekhine's
+          Defense lines. By exchanging knights, White simplifies the position and…
+        </p>
+        <div class="read">Read more</div>
+      </div>
+
+      <div class="surface">
+        <div class="grad"></div>
+        <div class="pillrow">
+          <span class="pill active">All</span><span class="pill">Beginner</span
+          ><span class="pill">Intermediate</span><span class="pill">Advanced</span
+          ><span class="pill">Expert</span>
+        </div>
+        <div class="stats">
+          <div class="stath">
+            <span class="stat"
+              ><span class="l">Games at this level</span><span class="v">3.4M</span></span
+            >
+            <span class="stat r"
+              ><span class="l">Average Elo</span><span class="v">1,604</span></span
+            >
+          </div>
+          <div class="bar">
+            <span class="w" style="width: 43%"></span><span class="d" style="width: 5%"></span
+            ><span class="b" style="width: 52%"></span>
+          </div>
+          <div class="lab">
+            <span class="lw">White 43%</span><span>Draws 5%</span><span class="lb">Black 52%</span>
+          </div>
+          <div class="meta">Lichess games, 1400–1800 · live</div>
+        </div>
+        <div class="bookpad">
+          <div class="crumb">
+            <span class="path"
+              >King's Pawn Game › … › Alekhine: Scandinavian, Exchange ›
+              <span class="cur">4.Nxd5</span></span
+            ><span>▾</span>
+          </div>
+          <div class="bt">Continuations</div>
+          <div class="row">
+            <span class="top"
+              ><span class="san">4...Qxd5</span
+              ><span class="nm">Alekhine: Scandinavian, Exchange, 4.Nxd5 Qxd5</span></span
+            >
+            <span class="bot"
+              ><span class="pw">43%</span
+              ><span class="mbar"
+                ><span style="width: 43%; background: #d4cfc7"></span
+                ><span style="width: 5%; background: #5a554e"></span
+                ><span style="width: 52%; background: #c08840"></span></span
+              ><span class="pb">52%</span><span class="g">3.4M games</span></span
+            >
+          </div>
+          <div class="bt" style="margin-top: 12px">Instead of 4.Nxd5</div>
+          <div class="sub">Most popular alternatives</div>
+          <div class="row">
+            <span class="top"
+              ><span class="san">4.Bc4</span
+              ><span class="nm">Alekhine: Scandinavian, Exchange, 4.Bc4</span></span
+            >
+            <span class="bot"
+              ><span class="pw">50%</span
+              ><span class="mbar"
+                ><span style="width: 50%; background: #d4cfc7"></span
+                ><span style="width: 3%; background: #5a554e"></span
+                ><span style="width: 47%; background: #c08840"></span></span
+              ><span class="pb">47%</span><span class="g">760k games</span></span
+            >
+          </div>
+          <div class="row" style="background: rgba(0, 0, 0, 0.12)">
+            <span class="top"
+              ><span class="san">4.d4</span><span class="off">off-book</span><span class="nm"></span
+            ></span>
+            <span class="bot"
+              ><span class="pw">49%</span
+              ><span class="mbar"
+                ><span style="width: 49%; background: #d4cfc7"></span
+                ><span style="width: 5%; background: #5a554e"></span
+                ><span style="width: 46%; background: #c08840"></span></span
+              ><span class="pb">46%</span><span class="g">710k games</span></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="h">
+          <span class="t">Master games <small>(5)</small></span
+          ><span class="chev">▾</span>
+        </div>
+      </div>
+
+      <div class="sh">Common plans</div>
+      <div class="plan white">
+        <div class="pl">White</div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Develop with tempo by attacking the queen — Nf3, d4 and c4 all gain time.</p>
+        </div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Build a broad centre with d4 and c4, then castle before pressing forward.</p>
+        </div>
+        <div class="more">Show 2 more</div>
+      </div>
+      <div class="plan black">
+        <div class="pl">Black</div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Return the piece with …Qxd5 and develop naturally, aiming for easy equality.</p>
+        </div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Contest the centre with …e5 or …c5 before White consolidates the extra tempo.</p>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="h">
+          <span
+            ><span class="t">Videos (10)</span
+            ><span class="s">1 covers this exact variation</span></span
+          ><span class="chev">▾</span>
+        </div>
+        <div class="h">
+          <span
+            ><span class="t">Studies (6)</span
+            ><span class="s">From the wider Alekhine's Defense family</span></span
+          ><span class="chev">▾</span>
+        </div>
+      </div>
+
+      <div class="ext">
+        <span class="epill">Search YouTube ↗</span
+        ><span class="epill">Search Lichess Studies ↗</span
+        ><span class="epill">Search Chessable ↗</span>
+      </div>
+    </div>
+  </body>
+</html>

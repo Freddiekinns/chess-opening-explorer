@@ -16,9 +16,11 @@ import { trackEvent } from '../../lib/analytics';
 interface LevelLensProps {
   band: BandId | null;
   onChange: (band: BandId | null) => void;
+  /** Single-line swipeable pill row (mobile data surface) instead of wrapping. */
+  scrollable?: boolean;
 }
 
-export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange }) => {
+export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange, scrollable = false }) => {
   const select = (id: BandId) => {
     setMyLevel(id);
     trackEvent('band_select', { band: id });
@@ -27,7 +29,7 @@ export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange }) => {
 
   return (
     <div className={styles.lens} role="group" aria-label="Level">
-      <div className={styles.pills}>
+      <div className={`${styles.pills} ${scrollable ? styles.pillsScroll : ''}`}>
         {BANDS.map((def) => (
           <button
             key={def.id}

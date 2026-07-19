@@ -1,0 +1,203 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--surface-elevated);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.inputWrap {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-2-5) var(--space-3) var(--space-2-5) 36px;
+  background: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  /* 16px — anything smaller triggers iOS Safari's focus zoom */
+  font-size: var(--text-md);
+  font-family: inherit;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent-a30);
+}
+
+.cancelBtn {
+  background: none;
+  border: none;
+  color: var(--color-brand-orange);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  padding: var(--space-2) 0;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.sectionLabel {
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.rowList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+}
+
+.rowList:last-child {
+  margin-bottom: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  padding: var(--space-2-5) var(--space-3);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.row:hover {
+  border-color: var(--accent-a30);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rowIcon {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.rowIconStar {
+  color: var(--color-brand-orange);
+  fill: var(--color-brand-orange);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.rowName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowMeta {
+  font-size: var(--text-2xs);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowEco {
+  font-family: var(--font-family-mono);
+}
+
+.rowChevron {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.surpriseBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  background: var(--color-brand-orange);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--surface-base);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 150ms ease;
+}
+
+.surpriseBtn:hover {
+  background: var(--color-brand-orange-hover);
+}
+
+.searchingNote {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.noResults {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.noResultsTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.noResultsHint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}

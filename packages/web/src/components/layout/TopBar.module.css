@@ -219,78 +219,6 @@
   outline-offset: 2px;
 }
 
-/* Mobile search overlay */
-.mobileOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--surface-elevated);
-  z-index: 300;
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.mobileSearchBar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.mobileSearchInput {
-  flex: 1;
-  padding: var(--space-2-5) var(--space-3);
-  background-color: var(--surface-base);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  color: var(--color-text-primary);
-  font-size: var(--text-md);
-  outline: none;
-}
-
-.mobileSearchInput:focus {
-  border-color: var(--color-brand-orange);
-}
-
-.mobileSearchInput::placeholder {
-  color: var(--color-text-secondary);
-  opacity: 0.6;
-}
-
-.mobileCloseBtn {
-  background: none;
-  border: none;
-  color: var(--color-brand-orange);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  padding: var(--space-2);
-  white-space: nowrap;
-}
-
-/* Mobile surprise me — full-width orange button inside the overlay */
-.mobileSurpriseBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
-  padding: var(--space-3);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: opacity 150ms ease;
-}
-
-.mobileSurpriseBtn:hover {
-  opacity: 0.9;
-}
-
 /* Below 640px: hide nav + desktop search, show mobile search icon */
 @media (max-width: 639px) {
   .topBar {
@@ -308,12 +236,6 @@
 
   .searchMobileBtn {
     display: flex;
-  }
-
-  /* Dropdown inside overlay needs full width */
-  .mobileOverlay .dropdown {
-    position: relative;
-    top: 0;
   }
 }
 

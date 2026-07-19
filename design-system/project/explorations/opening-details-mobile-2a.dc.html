@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="pieces.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#131110; }
+  a { color:#ece8e1; } a:hover { color:#e85d04; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:32px 16px;font-family:'DM Sans',sans-serif">
+      <div data-screen-label="2a One data surface" style="position:relative;width:390px;height:800px;display:flex;flex-direction:column;background:#1a1816;border:1px solid rgba(255,255,255,0.1);border-radius:24px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.35);color:#ece8e1">
+        <div style="height:60px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;letter-spacing:-0.01em;color:#ece8e1"><img src="assets/opening-book-icon.png" alt="" style="width:22px;height:22px">Opening Book</span>
+          <button onClick="{{ openSearch2a }}" aria-label="Search openings" style="width:36px;height:36px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9a958e;cursor:pointer" style-hover="color:#ece8e1;border-color:rgba(255,255,255,0.18)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
+        </div>
+
+        <sc-if value="{{ search2a }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;z-index:60;background:#2c2a27;display:flex;flex-direction:column">
+            <div style="flex:none;display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <div style="flex:1;min-width:0;position:relative">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);pointer-events:none"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <input value="{{ query2a }}" onChange="{{ onQuery2a }}" placeholder="Search openings..." style="width:100%;box-sizing:border-box;padding:10px 12px 10px 36px;background:#1a1816;border:1px solid #2a2724;border-radius:8px;color:#ece8e1;font-size:16px;outline:none;font-family:'DM Sans',sans-serif"/>
+              </div>
+              <button onClick="{{ closeSearch2a }}" style="background:none;border:none;color:#e85d04;font-size:14px;font-weight:500;cursor:pointer;padding:8px 0;white-space:nowrap;font-family:'DM Sans',sans-serif">Cancel</button>
+            </div>
+            <div style="flex:1;min-height:0;overflow-y:auto;padding:16px">
+              <sc-if value="{{ searchEmpty2a }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:10px;font-weight:600;color:#8e887f;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Recent</div>
+                <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:20px">
+                  <sc-for list="{{ recents2a }}" as="r" hint-placeholder-count="2">
+                    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.06);cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3);background:rgba(0,0,0,0.3)">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round" style="flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+                      <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500;color:#ece8e1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span><span style="font-size:11px;color:#9a958e"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace">{{ r.eco }}</span> · {{ r.moves }}</span></span>
+                    </div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ hasRepertoire2a }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:10px;font-weight:600;color:#8e887f;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">My repertoire</div>
+                  <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:20px">
+                    <sc-for list="{{ repertoire2a }}" as="r" hint-placeholder-count="3">
+                      <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.06);cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3);background:rgba(0,0,0,0.3)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#e85d04" stroke="#e85d04" stroke-width="1.5" stroke-linejoin="round" style="flex:none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500;color:#ece8e1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span><span style="font-size:11px;color:#9a958e"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace">{{ r.eco }}</span> · {{ r.moves }}</span></span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <button style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 0;background:#e85d04;border:none;border-radius:8px;color:#100f0e;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif" style-hover="background:#f17a2f">Surprise me!</button>
+              </sc-if>
+              <sc-if value="{{ searchHasResults2a }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <sc-for list="{{ results2a }}" as="r" hint-placeholder-count="3">
+                    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.06);cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3);background:rgba(0,0,0,0.3)">
+                      <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500;color:#ece8e1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span><span style="font-size:11px;color:#9a958e"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace">{{ r.eco }}</span> · {{ r.moves }}</span></span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="m9 18 6-6-6-6"></path></svg>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ searchNoResults2a }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center;padding:32px 16px;display:flex;flex-direction:column;align-items:center;gap:8px">
+                  <span style="font-size:13px;font-weight:500;color:#9a958e">No openings match your search</span>
+                  <span style="font-size:12px;color:#8e887f">Try an ECO code (B02) or paste a PGN on the Analyse tab.</span>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+        <div style="flex:1;min-height:0;overflow-y:auto">
+          <div style="padding:12px 16px 10px;display:flex;align-items:flex-start;gap:12px">
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:#ece8e1">Alekhine<span style="color:#8e887f">: </span><span style="color:#e85d04">Scandinavian, Exchange, 4.Nxd5</span></div>
+              <div style="margin-top:8px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none">
+                <sc-for list="{{ tags }}" as="tg" hint-placeholder-count="7">
+                  <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.06);color:#9a958e;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:capitalize;border-radius:4px;padding:3px 8px;line-height:1;white-space:nowrap;flex:none">{{ tg }}</span>
+                </sc-for>
+              </div>
+            </div>
+            <button onClick="{{ toggleStar2a }}" aria-pressed="{{ starPressed2a }}" aria-label="Save to repertoire" style="flex:none;width:44px;height:44px;margin:-8px -12px 0 0;background:none;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="{{ starFill2a }}" stroke="{{ starStroke2a }}" stroke-width="1.5" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></button>
+          </div>
+          <div style="margin:0 8px;background:#232120;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:12px;box-shadow:0 8px 24px rgba(0,0,0,0.35)">
+            <div style="border-radius:8px;overflow:hidden;display:grid;grid-template-columns:repeat(8,1fr);user-select:none">
+              <sc-for list="{{ board }}" as="sq" hint-placeholder-count="64">
+                <div style="position:relative;aspect-ratio:1;background:{{ sq.bg }}"><sc-if value="{{ sq.has }}" hint-placeholder-val="{{ false }}"><img src="{{ sq.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;display:block"></sc-if></div>
+              </sc-for>
+            </div>
+            <div style="margin-top:8px;display:flex;align-items:center;gap:4px">
+              <button style="position:relative;width:36px;height:36px;background:transparent;border:none;border-radius:8px;color:#9a958e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="background:rgba(232,93,4,0.06);color:#ece8e1" style-before="content:'';position:absolute;inset:-4px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17-5-5 5-5"></path><path d="m18 17-5-5 5-5"></path></svg></button>
+              <button style="position:relative;width:36px;height:36px;background:transparent;border:none;border-radius:8px;color:#9a958e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="background:rgba(232,93,4,0.06);color:#ece8e1" style-before="content:'';position:absolute;inset:-4px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+              <button style="width:36px;height:36px;background:transparent;border:none;border-radius:8px;color:#8e887f;opacity:0.3;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;gap:4px;padding:4px 8px;margin:0 4px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow-x:auto;scrollbar-width:none">
+                <span style="padding:8px 6px;font-size:11px;font-weight:600;color:#9a958e;letter-spacing:0.04em;white-space:nowrap;flex:none;cursor:pointer">Start</span>
+                <sc-for list="{{ movePairs }}" as="mp" hint-placeholder-count="4">
+                  <span style="display:flex;align-items:baseline;gap:3px;padding:8px 7px;border-radius:4px;border:1px solid {{ mp.bc }};background:{{ mp.bg }};color:{{ mp.fg }};font-size:12px;font-weight:500;white-space:nowrap;flex:none;cursor:pointer"><span style="font-size:10px;font-weight:700;color:{{ mp.numFg }}">{{ mp.n }}</span><span>{{ mp.w }}</span><sc-if value="{{ mp.b }}" hint-placeholder-val="{{ false }}"><span>{{ mp.b }}</span></sc-if></span>
+                </sc-for>
+              </div>
+              <button style="display:flex;align-items:center;gap:6px;background:transparent;color:#e85d04;border:1px solid #e85d04;border-radius:8px;padding:8px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12px;cursor:pointer;flex:none" style-hover="background:rgba(232,93,4,0.12)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg>Practice</button>
+              <button onClick="{{ openFen2a }}" title="Position tools" style="position:relative;width:36px;height:36px;flex:none;background:transparent;border:none;border-radius:8px;color:#8e887f;display:flex;align-items:center;justify-content:center;cursor:pointer" style-before="content:'';position:absolute;inset:-4px" style-hover="background:rgba(232,93,4,0.06);color:#ece8e1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+            </div>
+          </div>
+
+          <sc-if value="{{ fen2a }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;z-index:50">
+              <button onClick="{{ closeFen2a }}" style="position:absolute;inset:0;background:rgba(0,0,0,0.55);border:none;cursor:pointer"></button>
+              <div style="position:absolute;left:0;right:0;bottom:0;background:#2c2a27;border-top:1px solid rgba(255,255,255,0.1);border-radius:16px 16px 0 0;padding:16px;box-shadow:0 -8px 24px rgba(0,0,0,0.35)">
+                <div style="width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,0.18);margin:0 auto 12px"></div>
+                <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:16px;font-weight:800;color:#ece8e1;margin-bottom:12px">Position</div>
+                <div style="background:#1a1816;border:1px solid #2a2724;border-radius:8px;padding:10px 12px;font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;line-height:1.5;color:#9a958e;word-break:break-all;margin-bottom:12px">rnbqkb1r/ppp1pppp/8/3N4/8/8/PPPP1PPP/R1BQKBNR b KQkq - 0 4</div>
+                <div style="display:flex;gap:8px">
+                  <button style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 0;background:rgba(232,93,4,0.12);border:1px solid rgba(232,93,4,0.2);border-radius:8px;color:#ece8e1;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif" style-hover="background:rgba(232,93,4,0.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>Copy FEN</button>
+                  <button style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 0;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#ece8e1;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif" style-hover="background:rgba(255,255,255,0.1)">Analyse on Lichess<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" opacity="0.7"><path d="M3.75 2a.75.75 0 0 0 0 1.5h6.69L2.72 11.22a.75.75 0 1 0 1.06 1.06L11.5 4.56v6.69a.75.75 0 0 0 1.5 0V2.75a.75.75 0 0 0-.75-.75H3.75Z"></path></svg></button>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <div style="padding:16px 16px 0">
+            <div style="font-size:10px;font-weight:600;color:#8e887f;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Overview</div>
+            <p style="color:#ece8e1;font-size:14px;line-height:1.65;margin:0;opacity:0.82;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ ovClamp2a }}">{{ overviewText }}</p>
+            <button onClick="{{ toggleOv2a }}" style="margin-top:0;background:none;border:none;padding:10px 0;color:#e85d04;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">{{ ovBtn2a }}</button>
+          </div>
+
+          <div style="margin:14px 8px 0;background:#2c2a27;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.25)">
+            <div style="height:3px;background:linear-gradient(90deg,#d4cfc7,#5a554e,#c08840)"></div>
+            <div style="position:sticky;top:0;z-index:9;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 12px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <div style="display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0">
+                  <sc-for list="{{ bands2a }}" as="b" hint-placeholder-count="6">
+                    <button onClick="{{ b.onPick }}" aria-pressed="{{ b.pressed }}" style="position:relative;flex:none;background:{{ b.bg }};border:1px solid {{ b.bc }};border-radius:9999px;padding:6px 12px;font-size:11px;font-weight:600;color:{{ b.fg }};cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif" style-hover="border-color:#e85d04" style-before="content:'';position:absolute;inset:-9px -2px">{{ b.id }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+            <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);opacity:{{ statsOp2a }};transition:opacity 0.25s ease">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px">
+                <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11px;font-weight:600;color:#9a958e;line-height:1">Games at this level</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;line-height:1;color:#ece8e1">{{ g2a }}</span></span>
+                <span style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><span style="font-size:11px;font-weight:600;color:#9a958e;line-height:1">Average Elo</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;line-height:1;color:#e85d04">{{ elo2a }}</span></span>
+              </div>
+              <div style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:2px">
+                <span style="border-radius:9999px;background:#d4cfc7;width:{{ w2a }};transition:width 400ms ease-out"></span><span style="border-radius:9999px;background:#5a554e;width:{{ d2a }};transition:width 400ms ease-out"></span><span style="border-radius:9999px;background:#c08840;width:{{ b2a }};transition:width 400ms ease-out"></span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;font-weight:600;color:#9a958e"><span style="color:#d4cfc7">White {{ w2a }}</span><span>Draws {{ d2a }}</span><span style="color:#c08840">Black {{ b2a }}</span></div>
+              <div style="font-size:11px;color:#9a958e;margin-top:8px">{{ meta2a }}</div>
+            </div>
+            <div style="padding:12px;opacity:{{ statsOp2a }};transition:opacity 0.25s ease">
+              <sc-if value="{{ crumbClosed2a }}" hint-placeholder-val="{{ true }}">
+                <button onClick="{{ openCrumb2a }}" style="display:flex;align-items:center;gap:6px;width:100%;background:none;border:none;padding:0 2px;margin-bottom:12px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif">
+                  <span style="flex:1;min-width:0;font-size:12px;color:#9a958e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">King's Pawn Game › … › Alekhine: Scandinavian, Exchange › <span style="color:#e85d04;font-weight:600">4.Nxd5</span></span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+              </sc-if>
+              <sc-if value="{{ crumbOpen2a }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ closeCrumb2a }}" style="display:block;width:100%;background:rgba(0,0,0,0.15);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;margin-bottom:12px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif">
+                  <span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px;line-height:1.7;font-size:12px">
+                    <sc-for list="{{ crumbs }}" as="c" hint-placeholder-count="5">
+                      <span style="display:inline-flex;align-items:baseline;gap:2px"><span style="color:#9a958e;padding:1px 2px;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.18);text-underline-offset:3px">{{ c }}</span><span style="color:#8e887f;opacity:0.4;font-size:11px;margin:0 2px">›</span></span>
+                    </sc-for>
+                    <span style="font-weight:600;color:#e85d04">Alekhine: Scandinavian, Exchange, 4.Nxd5</span>
+                  </span>
+                </button>
+              </sc-if>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:800;color:#ece8e1;margin-bottom:8px">Continuations</div>
+              <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px">
+                <sc-for list="{{ book2a }}" as="r" hint-placeholder-count="1">
+                  <div style="display:flex;flex-direction:column;gap:4px;padding:6px 8px;border-radius:8px;background:{{ r.rowBg }};border:1px solid rgba(255,255,255,0.06);cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3)">
+                    <span style="display:flex;align-items:baseline;gap:8px;min-width:0"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:12px;font-weight:600;color:#ece8e1;flex:none">{{ r.san }}</span><sc-if value="{{ r.off }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:600;color:#9a958e;text-transform:uppercase;letter-spacing:0.04em;border:1px solid rgba(255,255,255,0.1);border-radius:9999px;padding:1px 6px;flex:none">off-book</span></sc-if><span style="font-size:11px;font-weight:500;color:#8e887f;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span></span>
+                    <span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#d4cfc7;flex:none;min-width:30px;font-variant-numeric:tabular-nums">{{ r.wp }}</span><span style="flex:1;min-width:0;height:8px;border-radius:4px;overflow:hidden;display:flex;background:rgba(255,255,255,0.06)"><span style="height:100%;background:#d4cfc7;width:{{ r.wW }};transition:width 400ms ease-out"></span><span style="height:100%;background:#5a554e;width:{{ r.wD }};transition:width 400ms ease-out"></span><span style="height:100%;background:#c08840;width:{{ r.wB }};transition:width 400ms ease-out"></span></span><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#c08840;flex:none;min-width:30px;text-align:right;font-variant-numeric:tabular-nums">{{ r.bp }}</span><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#9a958e;flex:none;min-width:48px;text-align:right;white-space:nowrap">{{ r.g }}</span></span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:800;color:#ece8e1;margin-bottom:2px">Instead of 4.Nxd5</div>
+              <div style="font-size:11px;color:#9a958e;margin-bottom:8px">Most popular alternatives</div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <sc-for list="{{ alt2a }}" as="r" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;gap:4px;padding:6px 8px;border-radius:8px;background:{{ r.rowBg }};border:1px solid rgba(255,255,255,0.06);cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3)">
+                    <span style="display:flex;align-items:baseline;gap:8px;min-width:0"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:12px;font-weight:600;color:#ece8e1;flex:none">{{ r.san }}</span><sc-if value="{{ r.off }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:600;color:#9a958e;text-transform:uppercase;letter-spacing:0.04em;border:1px solid rgba(255,255,255,0.1);border-radius:9999px;padding:1px 6px;flex:none">off-book</span></sc-if><span style="font-size:11px;font-weight:500;color:#8e887f;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span></span>
+                    <span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#d4cfc7;flex:none;min-width:30px;font-variant-numeric:tabular-nums">{{ r.wp }}</span><span style="flex:1;min-width:0;height:8px;border-radius:4px;overflow:hidden;display:flex;background:rgba(255,255,255,0.06)"><span style="height:100%;background:#d4cfc7;width:{{ r.wW }};transition:width 400ms ease-out"></span><span style="height:100%;background:#5a554e;width:{{ r.wD }};transition:width 400ms ease-out"></span><span style="height:100%;background:#c08840;width:{{ r.wB }};transition:width 400ms ease-out"></span></span><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#c08840;flex:none;min-width:30px;text-align:right;font-variant-numeric:tabular-nums">{{ r.bp }}</span><span style="font-family:SFMono-Regular,Monaco,Consolas,monospace;font-size:11px;color:#9a958e;flex:none;min-width:48px;text-align:right;white-space:nowrap">{{ r.g }}</span></span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin:12px 8px 0;background:#232120;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden">
+            <button onClick="{{ toggleMg2a }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 16px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif">
+              <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:800;color:#ece8e1">Master games <span style="color:#8e887f;font-weight:600;font-family:'DM Sans',sans-serif;font-size:12px">(5)</span></span></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:{{ mgChev2a }};transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);flex:none"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <sc-if value="{{ mg2aOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 16px 12px;display:flex;flex-direction:column">
+                <sc-for list="{{ masterGames }}" as="g" hint-placeholder-count="5">
+                  <span style="display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:5px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="color:#ece8e1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ g.players }}</span><span style="color:#8e887f;white-space:nowrap">{{ g.result }}</span></span>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="margin:16px 8px 0">
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:16px;font-weight:800;color:#ece8e1;margin-bottom:10px">Common plans</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ planGroups2a }}" as="pg" hint-placeholder-count="3">
+                <div style="background:#232120;border:1px solid rgba(255,255,255,0.1);border-left:3px solid {{ pg.border }};border-radius:12px;padding:14px 16px">
+                  <div style="font-size:11px;font-weight:700;color:#9a958e;margin-bottom:8px">{{ pg.label }}</div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <sc-for list="{{ pg.shown }}" as="pl" hint-placeholder-count="2">
+                      <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:8px"></span><p style="font-size:13px;line-height:1.6;color:#ece8e1;margin:0;opacity:0.78">{{ pl.text }}</p></div>
+                    </sc-for>
+                  </div>
+                  <sc-if value="{{ pg.hasMore }}" hint-placeholder-val="{{ false }}">
+                    <button onClick="{{ pg.toggle }}" style="margin-top:4px;padding:8px 0;border:none;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:#9a958e" style-hover="color:#ece8e1">{{ pg.moreLabel }}</button>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="margin:16px 8px 24px;background:#232120;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden">
+            <button onClick="{{ toggleVid2a }}" style="width:100%;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;border:none;border-bottom:1px solid rgba(255,255,255,0.06);background:transparent;text-align:left;font-family:'DM Sans',sans-serif" style-hover="background:#363330">
+              <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600;color:#ece8e1">Videos (10)</span><span style="font-size:11px;color:#9a958e">1 covers this exact variation</span></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transform:{{ vidChev2a }};transition:transform 0.2s cubic-bezier(0.4,0,0.2,1)"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <sc-if value="{{ vid2aOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.15)">
+                <div style="font-size:10px;font-weight:600;color:#8e887f;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Top pick · covers this variation</div>
+                <div style="display:flex;align-items:stretch;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;cursor:pointer" style-hover="border-color:rgba(232,93,4,0.3)">
+                  <div style="flex:none;width:100px;position:relative;background:#100f0e;display:flex;align-items:center;justify-content:center;min-height:56px">
+                    <span style="width:28px;height:28px;border-radius:9999px;background:rgba(0,0,0,0.65);display:flex;align-items:center;justify-content:center;color:#ece8e1"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
+                    <span style="position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,0.9);color:#ece8e1;font-size:10px;font-weight:700;padding:2px 4px;border-radius:4px">31:44</span>
+                  </div>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:8px 10px">
+                    <div style="font-size:12px;font-weight:600;color:#ece8e1;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">Exchange Variation of the Alekhine Defense</div>
+                    <div style="font-size:11px;color:#9a958e">Hanging Pawns · 21.0K views · Mar 2019</div>
+                  </div>
+                </div>
+                <button style="display:block;margin:4px auto 0;background:none;border:none;padding:8px 12px;color:#e85d04;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">See all 10 videos</button>
+              </div>
+            </sc-if>
+            <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer" style-hover="background:#363330">
+              <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600;color:#ece8e1">Studies (6)</span><span style="font-size:11px;color:#9a958e">From the wider Alekhine's Defense family</span></span>
+              <span style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#8e887f">6</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8e887f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
+            </div>
+          </div>
+
+          <div style="margin:12px 8px 24px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid rgba(255,255,255,0.18);border-radius:9999px;color:#9a958e;font-size:12px;font-weight:500;white-space:nowrap;flex:none;cursor:pointer" style-hover="color:#ece8e1;border-color:rgba(255,255,255,0.25)">Search YouTube<svg viewBox="0 0 16 16" width="10" height="10" fill="currentColor" opacity="0.6"><path d="M3.75 2a.75.75 0 0 0 0 1.5h6.69L2.72 11.22a.75.75 0 1 0 1.06 1.06L11.5 4.56v6.69a.75.75 0 0 0 1.5 0V2.75a.75.75 0 0 0-.75-.75H3.75Z"></path></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid rgba(255,255,255,0.18);border-radius:9999px;color:#9a958e;font-size:12px;font-weight:500;white-space:nowrap;flex:none;cursor:pointer" style-hover="color:#ece8e1;border-color:rgba(255,255,255,0.25)">Search Lichess Studies<svg viewBox="0 0 16 16" width="10" height="10" fill="currentColor" opacity="0.6"><path d="M3.75 2a.75.75 0 0 0 0 1.5h6.69L2.72 11.22a.75.75 0 1 0 1.06 1.06L11.5 4.56v6.69a.75.75 0 0 0 1.5 0V2.75a.75.75 0 0 0-.75-.75H3.75Z"></path></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid rgba(255,255,255,0.18);border-radius:9999px;color:#9a958e;font-size:12px;font-weight:500;white-space:nowrap;flex:none;cursor:pointer" style-hover="color:#ece8e1;border-color:rgba(255,255,255,0.25)">Search Chessable<svg viewBox="0 0 16 16" width="10" height="10" fill="currentColor" opacity="0.6"><path d="M3.75 2a.75.75 0 0 0 0 1.5h6.69L2.72 11.22a.75.75 0 1 0 1.06 1.06L11.5 4.56v6.69a.75.75 0 0 0 1.5 0V2.75a.75.75 0 0 0-.75-.75H3.75Z"></path></svg></span>
+          </div>
+        </div>
+        <sc-if value="{{ toast2a }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:74px;z-index:70;display:flex;align-items:center;gap:8px;background:#363330;border:1px solid rgba(255,255,255,0.1);border-radius:9999px;padding:9px 16px;font-size:12px;font-weight:600;color:#ece8e1;box-shadow:0 4px 12px rgba(0,0,0,0.25);white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="#e85d04" stroke="#e85d04" stroke-width="1.5" stroke-linejoin="round" style="flex:none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>{{ toastMsg2a }}</div>
+        </sc-if>
+        <div style="height:60px;flex:none;display:flex;background:#2c2a27;border-top:1px solid rgba(255,255,255,0.06)">
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#9a958e;font-size:11px;font-weight:500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Discover</span>
+          <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#9a958e;font-size:11px;font-weight:500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>Analyse</span>
+        </div>
+      </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;level&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [
+      &quot;All&quot;,
+      &quot;Beginner&quot;,
+      &quot;Intermediate&quot;,
+      &quot;Advanced&quot;,
+      &quot;Expert&quot;,
+      &quot;Masters&quot;
+    ],
+    &quot;default&quot;: &quot;Intermediate&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Data lens&quot;
+  },
+  &quot;showOffBook&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Data lens&quot;
+  },
+  &quot;hasRepertoire&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Search overlay&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = {
+    lvl: null, ov: false, mg: false, vid: false, crumb: false,
+    fen: false, search: false, query: '', starred: false, toast: null, loading: false
+  };
+
+  componentDidMount() {
+    if (!window.PIECE_SVGS) {
+      this._poll = setInterval(() => {
+        if (window.PIECE_SVGS) { clearInterval(this._poll); this.forceUpdate(); }
+      }, 100);
+    }
+  }
+  componentWillUnmount() { if (this._poll) clearInterval(this._poll); clearTimeout(this._toastT); clearTimeout(this._loadT); }
+
+  board() {
+    const FEN = 'rnbqkb1r/ppp1pppp/8/3N4/8/8/PPPP1PPP/R1BQKBNR';
+    const squares = [];
+    for (const rank of FEN.split('/')) {
+      for (const ch of rank) {
+        if (ch >= '1' && ch <= '8') { for (let k = 0; k < +ch; k++) squares.push(null); }
+        else squares.push((ch === ch.toLowerCase() ? 'b' : 'w') + ch.toUpperCase());
+      }
+    }
+    const P = window.PIECE_SVGS || {};
+    return squares.slice(0, 64).map((pc, idx) => {
+      const dark = (Math.floor(idx / 8) + (idx % 8)) % 2 === 1;
+      const svg = pc && P[pc];
+      return { bg: dark ? '#b58863' : '#f0d9b5', has: !!svg, img: svg ? 'data:image/svg+xml;utf8,' + encodeURIComponent(svg) : '' };
+    });
+  }
+
+  // Level-dependent mock data: stats + alternative-move ranking per band.
+  levelData(lvl, row) {
+    const D = {
+      All:          { g: '8M',     elo: '1,659', w: 42, d: 6,  b: 52, next: [42, 6, 52, '8M'],
+        alts: [['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 49, 3, 48, '2M games', false],
+               ['4.d4', '', 48, 5, 47, '1.7M games', true],
+               ['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 48, 6, 46, '1.4M games', false],
+               ['4.Qf3', '', 48, 4, 48, '418.4k games', true]] },
+      Beginner:     { g: '3.1M',   elo: '1,182', w: 40, d: 3,  b: 57, next: [40, 3, 57, '3.1M'],
+        alts: [['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 47, 2, 51, '1.2M games', false],
+               ['4.Qf3', '', 46, 2, 52, '310k games', true],
+               ['4.d4', '', 46, 3, 51, '640k games', true],
+               ['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 46, 3, 51, '380k games', false]] },
+      Intermediate: { g: '3.4M',   elo: '1,604', w: 43, d: 5,  b: 52, next: [43, 5, 52, '3.4M'],
+        alts: [['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 50, 3, 47, '760k games', false],
+               ['4.d4', '', 49, 5, 46, '710k games', true],
+               ['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 48, 5, 47, '590k games', false],
+               ['4.Qf3', '', 48, 4, 48, '96k games', true]] },
+      Advanced:     { g: '1.2M',   elo: '1,987', w: 45, d: 9,  b: 46, next: [45, 9, 46, '1.2M'],
+        alts: [['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 49, 8, 43, '340k games', false],
+               ['4.d4', '', 49, 8, 43, '310k games', true],
+               ['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 48, 7, 45, '92k games', false],
+               ['4.Qf3', '', 47, 6, 47, '9.8k games', true]] },
+      Expert:       { g: '214k',   elo: '2,341', w: 46, d: 14, b: 40, next: [46, 14, 40, '214k'],
+        alts: [['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 48, 13, 39, '71k games', false],
+               ['4.d4', '', 48, 12, 40, '58k games', true],
+               ['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 46, 11, 43, '9.1k games', false],
+               ['4.Qf3', '', 44, 9, 47, '820 games', true]] },
+      Masters:      { g: '1,912',  elo: '2,446', w: 44, d: 27, b: 29, next: [44, 27, 29, '1,912'],
+        alts: [['4.Nf3', 'Alekhine: Scandinavian, Exchange, 4.Nf3', 45, 28, 27, '712 games', false],
+               ['4.d4', '', 46, 25, 29, '540 games', true],
+               ['4.Bc4', 'Alekhine: Scandinavian, Exchange, 4.Bc4', 42, 24, 34, '88 games', false],
+               ['4.Qf3', '', 40, 20, 40, '9 games', true]] }
+    };
+    const d = D[lvl] || D.All;
+    const n = d.next;
+    return {
+      g: d.g, elo: d.elo, w: d.w + '%', d: d.d + '%', b: d.b + '%',
+      book: [row('4...Qxd5', 'Alekhine: Scandinavian, Exchange, 4.Nxd5 Qxd5', n[0], n[1], n[2], n[3] + ' games')],
+      alts: d.alts.map(a => row(...a))
+    };
+  }
+
+  searchVals(s) {
+    const OPENINGS = [
+      { name: "Alekhine Defense: Scandinavian Variation", eco: 'B02', moves: '1.e4 Nf6 2.Nc3 d5' },
+      { name: 'Alekhine: Scandinavian, Exchange, 4.Nxd5', eco: 'B02', moves: '1.e4 Nf6 2.Nc3 d5 3.exd5' },
+      { name: 'Scandinavian Defense', eco: 'B01', moves: '1.e4 d5' },
+      { name: 'Caro-Kann Defence', eco: 'B12', moves: '1.e4 c6' },
+      { name: 'Sicilian Defense: Najdorf Variation', eco: 'B90', moves: '1.e4 c5 2.Nf3 d6' },
+      { name: 'London System', eco: 'D02', moves: '1.d4 d5 2.Bf4' },
+      { name: "King's Indian Defense", eco: 'E60', moves: '1.d4 Nf6 2.c4 g6' },
+      { name: 'Ruy Lopez: Berlin Defence', eco: 'C65', moves: '1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6' }
+    ];
+    const q = (s.query || '').trim().toLowerCase();
+    const results = q.length >= 2
+      ? OPENINGS.filter(o => o.name.toLowerCase().includes(q) || o.eco.toLowerCase().includes(q) || o.moves.toLowerCase().includes(q))
+      : [];
+    return {
+      search2a: s.search,
+      openSearch2a: () => this.setState({ search: true, query: '' }),
+      closeSearch2a: () => this.setState({ search: false, query: '' }),
+      query2a: s.query,
+      onQuery2a: (e) => this.setState({ query: e.target.value }),
+      searchEmpty2a: q.length < 2,
+      searchHasResults2a: q.length >= 2 && results.length > 0,
+      searchNoResults2a: q.length >= 2 && results.length === 0,
+      results2a: results,
+      recents2a: [
+        { name: 'Caro-Kann Defence', eco: 'B12', moves: '1.e4 c6' },
+        { name: 'Alekhine Defense: Scandinavian Variation', eco: 'B02', moves: '1.e4 Nf6 2.Nc3 d5' }
+      ],
+      hasRepertoire2a: this.props.hasRepertoire ?? true,
+      repertoire2a: [
+        { name: 'London System', eco: 'D02', moves: '1.d4 d5 2.Bf4' },
+        { name: 'Sicilian Defense: Najdorf Variation', eco: 'B90', moves: '1.e4 c5 2.Nf3 d6' },
+        { name: 'Ruy Lopez: Berlin Defence', eco: 'C65', moves: '1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6' }
+      ]
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const set = (patch) => () => this.setState(patch);
+    const chev = (open) => open ? 'rotate(180deg)' : 'rotate(0deg)';
+    const showOff = this.props.showOffBook ?? true;
+    const lvl = s.lvl ?? (this.props.level ?? 'Intermediate');
+
+    const BANDS = [
+      { id: 'All', range: 'all ratings' },
+      { id: 'Beginner', range: 'under 1400' },
+      { id: 'Intermediate', range: '1400\u20131800' },
+      { id: 'Advanced', range: '1800\u20132200' },
+      { id: 'Expert', range: '2200+' },
+      { id: 'Masters', range: 'over the board' }
+    ];
+    const meta = (l) => l === 'All' ? 'All Lichess games \u00b7 live'
+      : l === 'Masters' ? 'Master games \u00b7 live'
+      : 'Lichess games, ' + (BANDS.find(b => b.id === l) || {}).range + ' \u00b7 live';
+
+    const row = (san, name, w, d, b, g, off) => ({
+      san, name, off: !!off, g,
+      wp: w + '%', bp: b + '%', wW: w + '%', wD: d + '%', wB: b + '%',
+      rowBg: off ? 'rgba(0,0,0,0.12)' : 'rgba(0,0,0,0.2)'
+    });
+    const data = this.levelData(lvl, row);
+
+    const bands2a = BANDS.map(b => ({
+      id: b.id,
+      bg: b.id === lvl ? '#e85d04' : '#363330',
+      fg: b.id === lvl ? '#100f0e' : '#8e887f',
+      bc: b.id === lvl ? '#e85d04' : 'rgba(255,255,255,0.1)',
+      pressed: b.id === lvl ? 'true' : 'false',
+      onPick: () => {
+        if (b.id === lvl) return;
+        clearTimeout(this._loadT);
+        this.setState({ lvl: b.id, loading: true });
+        this._loadT = setTimeout(() => this.setState({ loading: false }), 320);
+      }
+    }));
+
+    const mk = (n, w, b, active) => ({
+      n, w, b,
+      bc: active ? 'rgba(232,93,4,0.3)' : 'transparent',
+      bg: active ? 'rgba(232,93,4,0.12)' : 'transparent',
+      fg: active ? '#e85d04' : '#9a958e',
+      numFg: active ? 'rgba(232,93,4,0.5)' : '#9a958e',
+      deco: active ? 'underline' : 'none'
+    });
+    const movePairs = [mk('1.', 'e4', 'Nf6'), mk('2.', 'Nc3', 'd5'), mk('3.', 'exd5', 'Nxd5'), mk('4.', 'Nxd5', null, true)];
+
+    const masterGames = [
+      { players: 'Smyslov, Vassily \u2013 Vaganian, Rafael A', result: '0\u20131 \u00b7 1987' },
+      { players: 'Kveinys, Aloyzas \u2013 Kengis, Edvins', result: '\u00bd\u2013\u00bd \u00b7 1996' },
+      { players: 'Lau, Ralf \u2013 Rausis, Igors', result: '0\u20131 \u00b7 1995' },
+      { players: 'Short, Nigel \u2013 Baburin, Alexander', result: '\u00bd\u2013\u00bd \u00b7 1994' },
+      { players: 'Adams, Michael \u2013 Agdestein, Simen', result: '1\u20130 \u00b7 1993' }
+    ];
+
+    return {
+      board: this.board(),
+      tags: ['Intermediate', 'Strategic', 'Positional', 'Solid', 'Open Game', 'System-Based', 'Developmental'],
+      movePairs, masterGames,
+      crumbs: ["King's Pawn Game", 'Alekhine Defense', 'Alekhine: Scandinavian Variation', 'Alekhine Defense: Scandinavian Variation', 'Alekhine: Scandinavian, Exchange'],
+      overviewText: "This variation leads to a more strategic and less chaotic game than typical Alekhine's Defense lines. By exchanging knights, White simplifies the position and aims to gain a tempo by developing pieces that harass Black's early-developed queen (after 4...Qxd5). The resulting positions are often open and require precise manoeuvring, suiting players who enjoy exploiting small developmental advantages and understanding the nuances of queen activity in the opening.",
+      planGroups2a: [
+        { key: 'pw', label: 'White', border: 'rgba(255,255,255,0.3)', plans: [
+          'Develop with tempo by attacking the queen \u2014 Nf3, d4 and c4 all gain time.',
+          'Build a broad centre with d4 and c4, then castle before pressing forward.',
+          'Convert the development lead into e-file pressure before Black consolidates.',
+          'Keep queens on the board; trades ease Black\u2019s cramped early game.'
+        ] },
+        { key: 'pb', label: 'Black', border: 'rgba(255,255,255,0.12)', plans: [
+          'Reposition the queen safely (\u2026Qa5 or \u2026Qd6) without losing further time.',
+          'Strike at the centre with \u2026c5 or \u2026e6 before falling behind in development.',
+          'Neutralise the initiative with solid development, then play against the centre.'
+        ] },
+        { key: 'ps', label: 'Both sides', border: '#5a554e', plans: [
+          'The open e- and d-files reward the side who finishes development first.',
+          'Central pawn breaks (d4\u2013d5 for White, \u2026c5 for Black) are the main levers.'
+        ] }
+      ].filter(g => g.plans.length > 0).map(g => {
+        const open = !!s[g.key];
+        return {
+          label: g.label, border: g.border,
+          shown: (open ? g.plans : g.plans.slice(0, 3)).map(text => ({ text })),
+          hasMore: g.plans.length > 3,
+          moreLabel: open ? 'Show less' : 'Show ' + (g.plans.length - 3) + ' more',
+          toggle: set({ [g.key]: !open })
+        };
+      }),
+      bands2a, meta2a: meta(lvl),
+      g2a: data.g, elo2a: data.elo, w2a: data.w, d2a: data.d, b2a: data.b,
+      book2a: data.book,
+      alt2a: data.alts.filter(r => showOff || !r.off),
+      ovClamp2a: s.ov ? 'none' : '3', ovBtn2a: s.ov ? 'Show less' : 'Read more',
+      toggleOv2a: set({ ov: !s.ov }),
+      mg2aOpen: s.mg, mgChev2a: chev(s.mg), toggleMg2a: set({ mg: !s.mg }),
+      vid2aOpen: !!s.vid, vidChev2a: chev(s.vid), toggleVid2a: set({ vid: !s.vid }),
+      crumbClosed2a: !s.crumb, crumbOpen2a: !!s.crumb,
+      openCrumb2a: set({ crumb: true }), closeCrumb2a: set({ crumb: false }),
+      fen2a: s.fen, openFen2a: set({ fen: true }), closeFen2a: set({ fen: false }),
+      statsOp2a: s.loading ? 0.35 : 1,
+      starPressed2a: s.starred ? 'true' : 'false',
+      starFill2a: s.starred ? '#e85d04' : 'none',
+      starStroke2a: s.starred ? '#e85d04' : '#9a958e',
+      toggleStar2a: () => {
+        const ns = !s.starred;
+        clearTimeout(this._toastT);
+        this.setState({ starred: ns, toast: ns ? 'Saved to repertoire' : 'Removed from repertoire' });
+        this._toastT = setTimeout(() => this.setState({ toast: null }), 2200);
+      },
+      toast2a: !!s.toast, toastMsg2a: s.toast,
+      ...this.searchVals(s)
+    };
+  }
+}
+</script>
+</body>
+</html>

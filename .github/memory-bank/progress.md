@@ -2,6 +2,15 @@
 
 ## What's Done (newest first)
 
+- **Opening detail mobile overhaul** (2026-07-18, PR #53): implemented Claude
+  Design 2a "one data surface" at ≤767px — compact header + save toast, single
+  board control row with inline move strip and a FEN bottom sheet, clamped
+  overview, one card merging sticky level pills + stats + breadcrumb +
+  continuations + alternatives, collapsed master-games accordion, grouped plans
+  cards, videos/studies accordion, and a full-screen search overlay (recents +
+  repertoire + surprise me). Plus: desktop right column reordered Overview →
+  stats → book, and a scroll fix (ScrollToTop on route change; move strip no
+  longer scrolls the page). 323 frontend tests green (35 new).
 - **Mobile landing filter UI fix** (2026-07-15, branch
   `claude/mobile-landing-filter-ui-mq5qjk`): the long ECO category labels
   clipped illegibly in the mobile scroll-pill row. Per Claude Design handoff

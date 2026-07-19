@@ -11,14 +11,29 @@ import {
   WinRatePanel,
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
+import MobileDataSurface from '../components/detail/mobile/MobileDataSurface';
+import MobileMasterGames from '../components/detail/mobile/MobileMasterGames';
+import MobileResources from '../components/detail/mobile/MobileResources';
+import PositionSheet from '../components/detail/mobile/PositionSheet';
 import styles from './OpeningDetailPage.module.css';
 import practiceStyles from '../components/detail/PracticeControls.module.css';
 import { VideoErrorBoundary } from '../components/shared/VideoErrorBoundary';
-import { ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight, Play } from 'lucide-react';
+import {
+  ChevronsLeft,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsRight,
+  ChevronDown,
+  MoreHorizontal,
+  Play,
+  Star,
+} from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoire } from '../hooks/useRepertoire';
-import { useExplorerResult } from '../hooks/useExplorerResult';
+import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult';
+import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
+import { recordRecentOpening } from '../lib/recentOpenings';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
@@ -120,12 +135,26 @@ const OpeningDetailPage: React.FC = () => {
   // Default to the "All" level so the book shows live win rates + off-book
   // moves on first load, without waiting for an explicit level choice.
   const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
-  const explorer = useExplorerResult(opening?.fen ?? null, band);
+  const explorerQuery = useExplorerQuery(opening?.fen ?? null, band);
+  const explorer = explorerQuery.result;
   const parentFen =
     treeData?.ancestors && treeData.ancestors.length > 0
       ? treeData.ancestors[treeData.ancestors.length - 1].fen
       : null;
   const parentExplorer = useExplorerResult(parentFen, band);
+
+  // Mobile overhaul (Opening Details Mobile 2a): ≤767px renders a
+  // single-column layout with its own board controls, position sheet and
+  // data surface. Desktop keeps the two-column tree untouched.
+  const isMobile = useIsMobile();
+  const [positionSheetOpen, setPositionSheetOpen] = useState(false);
+  const [moveListExpanded, setMoveListExpanded] = useState(false);
+  // Whether the collapsed carousel actually hides moves off its right edge —
+  // the expand toggle only appears when there's something more to reveal.
+  const [moveStripOverflows, setMoveStripOverflows] = useState(false);
+  const [overviewExpanded, setOverviewExpanded] = useState(false);
+  const [repertoireToast, setRepertoireToast] = useState<string | null>(null);
+  const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -219,6 +248,12 @@ const OpeningDetailPage: React.FC = () => {
           const page = data.data;
           setOpening(page.opening);
           setupGame(page.opening);
+          recordRecentOpening({
+            fen: page.opening.fen,
+            name: page.opening.name,
+            eco: page.opening.eco,
+            moves: page.opening.moves,
+          });
           setPopularityStats(page.stats || null);
           setVideos(page.videos || []);
           setVideoContext(page.videoContext || null);
@@ -250,17 +285,65 @@ const OpeningDetailPage: React.FC = () => {
     }
   }, [fen, loadPage]);
 
-  // Auto-scroll move strip to keep active move visible
+  // New position: close mobile overlays and re-collapse the overview.
   useEffect(() => {
-    if (!moveStripRef.current) return;
+    setPositionSheetOpen(false);
+    setOverviewExpanded(false);
+  }, [fen]);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
+  }, []);
+
+  // Auto-scroll move strip to keep active move visible. Scroll the strip
+  // container horizontally ONLY — scrollIntoView also scrolls the page
+  // vertically to reveal the strip, which made the detail page open
+  // scrolled down to the board on load.
+  useEffect(() => {
+    const container = moveStripRef.current;
+    if (!container) return;
     const pairIndex = currentMoveIndex === 0 ? 0 : Math.ceil(currentMoveIndex / 2);
-    const activeEl = moveStripRef.current.querySelector(
+    const activeEl = container.querySelector(
       currentMoveIndex === 0 ? `.${styles.startPosition}` : `[data-move-pair="${pairIndex}"]`
     ) as HTMLElement | null;
-    if (activeEl?.scrollIntoView) {
-      activeEl.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+    if (!activeEl) return;
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = activeEl.getBoundingClientRect();
+    const left =
+      container.scrollLeft +
+      (activeRect.left - containerRect.left) -
+      (containerRect.width - activeRect.width) / 2;
+    if (typeof container.scrollTo === 'function') {
+      container.scrollTo({ left, behavior: 'smooth' });
+    } else {
+      container.scrollLeft = left;
     }
-  }, [currentMoveIndex]);
+    // Re-run when the strip's width changes, not just the move: showing the
+    // expand toggle shrinks the strip after first paint, and collapsing the
+    // expanded grid brings the carousel back — both leave the old scroll
+    // offset stale (last moves clipped off the right edge) until we re-centre.
+  }, [currentMoveIndex, moveStripOverflows, moveListExpanded]);
+
+  // Show the expand toggle only when the collapsed carousel overflows (moves
+  // hidden off the right edge). A line that already fits has nothing to
+  // expand — offering the toggle there would just puff the box out. Re-measure
+  // on move changes and container resize.
+  useEffect(() => {
+    if (!isMobile || moveListExpanded) return;
+    const el = moveStripRef.current;
+    if (!el) return;
+    const measure = () => setMoveStripOverflows(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    ro?.observe(el);
+    window.addEventListener('resize', measure);
+    return () => {
+      ro?.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [isMobile, moveListExpanded, gameHistory]);
 
   const goToMove = (moveIndex: number) => {
     if (moveIndex >= 0 && moveIndex < gameHistory.length) {
@@ -781,6 +864,110 @@ const OpeningDetailPage: React.FC = () => {
   // (docs/proposals/2026-06-12-common-plans-provenance.md).
   const commonPlans = opening.common_plans ?? [];
 
+  const overviewText =
+    opening.description ||
+    opening.analysis?.description ||
+    opening.analysis_json?.description ||
+    `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`;
+  // Clamp heuristic: below this the text fits three lines at 390px anyway,
+  // so a Read-more toggle would be dead weight.
+  const overviewClampable = overviewText.length > 220;
+
+  // Move strip — position scrubber. Desktop renders it full-width under the
+  // nav buttons; mobile inlines it between the nav chevrons and the
+  // Practice button (design 2a's single control row).
+  // Shared move nodes (Start + numbered pairs) rendered by both the compact
+  // horizontal carousel and the expanded full-line grid, so the two views
+  // stay identical in behaviour.
+  const renderMoveNodes = (): React.ReactNode[] => {
+    const nodes: React.ReactNode[] = [
+      <span
+        key="start"
+        className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
+        onClick={() => goToMove(0)}
+      >
+        Start
+      </span>,
+    ];
+
+    getMovesList().forEach((move, i) => {
+      if (i % 2 !== 0) return; // only start a node on White's move
+      const moveNum = Math.floor(i / 2) + 1;
+      const moveIndex = i + 1; // gameHistory index (0 = start position)
+      const isActive = currentMoveIndex === moveIndex;
+      const blackMove = getMovesList()[i + 1];
+      const blackIndex = i + 2;
+      const blackActive = currentMoveIndex === blackIndex;
+      const pairActive = isActive || blackActive;
+      const pairFuture = !pairActive && currentMoveIndex < moveIndex;
+
+      nodes.push(
+        <span
+          key={moveNum}
+          className={`${styles.movePair} ${pairActive ? styles.movePairActive : ''} ${pairFuture ? styles.movePairFuture : ''}`}
+          data-move-pair={moveNum}
+          onClick={() => goToMove(isActive ? moveIndex : blackActive ? blackIndex : moveIndex)}
+        >
+          <span className={styles.moveNumber}>{moveNum}.</span>
+          <span
+            style={
+              isActive ? { textDecoration: 'underline', textUnderlineOffset: '3px' } : undefined
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              goToMove(moveIndex);
+            }}
+          >
+            {move}
+          </span>
+          {blackMove && (
+            <span
+              style={
+                blackActive
+                  ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
+                  : undefined
+              }
+              onClick={(e) => {
+                e.stopPropagation();
+                goToMove(blackIndex);
+              }}
+            >
+              {blackMove}
+            </span>
+          )}
+        </span>
+      );
+    });
+
+    return nodes;
+  };
+
+  const renderMoveStrip = (inline = false) => {
+    if (getMovesList().length === 0) return null;
+    return (
+      <div
+        className={`${styles.moveStrip} ${inline ? styles.moveStripInline : ''}`}
+        ref={moveStripRef}
+      >
+        {renderMoveNodes()}
+      </div>
+    );
+  };
+
+  const handleToggleRepertoire = () => {
+    const saved = isSaved(opening.fen);
+    toggleRepertoire({
+      fen: opening.fen,
+      name: opening.name,
+      eco: opening.eco,
+      moves: opening.moves,
+      complexity: opening.complexity,
+    });
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    setRepertoireToast(saved ? 'Removed from repertoire' : 'Saved to repertoire');
+    toastTimerRef.current = setTimeout(() => setRepertoireToast(null), 2200);
+  };
+
   return (
     <div className="detail-page-body">
       <title>{seoTitle}</title>
@@ -802,7 +989,7 @@ const OpeningDetailPage: React.FC = () => {
         />
       )}
       {/* Page Title Area */}
-      <div className="page-title-area centered">
+      <div className={`page-title-area centered ${styles.titleArea}`}>
         <div className={styles.titleWithStar}>
           <h1 className="opening-name">
             {(() => {
@@ -819,19 +1006,7 @@ const OpeningDetailPage: React.FC = () => {
               );
             })()}
           </h1>
-          <StarButton
-            filled={isSaved(opening.fen)}
-            onClick={() =>
-              toggleRepertoire({
-                fen: opening.fen,
-                name: opening.name,
-                eco: opening.eco,
-                moves: opening.moves,
-                complexity: opening.complexity,
-              })
-            }
-            size="md"
-          />
+          <StarButton filled={isSaved(opening.fen)} onClick={handleToggleRepertoire} size="md" />
         </div>
         <div className={styles.tagPillsRow}>
           {/* Complexity pill */}
@@ -1053,6 +1228,78 @@ const OpeningDetailPage: React.FC = () => {
                   </div>
                 </div>
               </>
+            ) : isMobile ? (
+              /* Mobile (design 2a): a compact control row (nav chevrons,
+                 Practice, "…" position sheet) above a full-width move row —
+                 a horizontal carousel by default, expandable to the whole
+                 line so long openings can be read at a glance. */
+              <div className={styles.mobileBoardControls}>
+                <div className={styles.mobileControls}>
+                  <button
+                    onClick={() => goToMove(0)}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex === 0}
+                    title="Go to start"
+                  >
+                    <ChevronsLeft size={18} />
+                  </button>
+                  <button
+                    onClick={previousMove}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex === 0}
+                    title="Previous move"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+                  <button
+                    onClick={nextMove}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex >= getMovesList().length}
+                    title="Next move"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                  <button
+                    className={styles.mobilePracticeBtn}
+                    onClick={startPractice}
+                    title="Practice this opening"
+                  >
+                    <Play size={12} />
+                    Practice
+                  </button>
+                  <button
+                    className={styles.mobileNavBtn}
+                    onClick={() => setPositionSheetOpen(true)}
+                    aria-label="Position tools"
+                    title="Position tools"
+                  >
+                    <MoreHorizontal size={16} />
+                  </button>
+                </div>
+                {getMovesList().length > 0 && (
+                  <div className={styles.mobileMoveRow}>
+                    {moveListExpanded ? (
+                      <div className={styles.moveListExpanded}>{renderMoveNodes()}</div>
+                    ) : (
+                      renderMoveStrip(true)
+                    )}
+                    {(moveStripOverflows || moveListExpanded) && (
+                      <button
+                        className={styles.moveExpandBtn}
+                        onClick={() => setMoveListExpanded((v) => !v)}
+                        aria-expanded={moveListExpanded}
+                        aria-label={moveListExpanded ? 'Collapse move list' : 'Show full line'}
+                        title={moveListExpanded ? 'Collapse moves' : 'Show full line'}
+                      >
+                        <ChevronDown
+                          size={18}
+                          className={`${styles.moveExpandChevron} ${moveListExpanded ? styles.moveExpandChevronOpen : ''}`}
+                        />
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
             ) : (
               /* Navigation Controls - Shown when not in practice mode */
               <div className="chessboard-navigation">
@@ -1099,78 +1346,11 @@ const OpeningDetailPage: React.FC = () => {
               </div>
             )}
 
-            {/* Move Strip - position scrubber (hidden during practice) */}
-            {!practiceMode && getMovesList().length > 0 && (
-              <div className={styles.moveStrip} ref={moveStripRef}>
-                <span
-                  className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
-                  onClick={() => goToMove(0)}
-                >
-                  Start
-                </span>
-                {getMovesList().reduce<React.ReactNode[]>((pairs, move, i) => {
-                  const moveNum = Math.floor(i / 2) + 1;
-                  const isWhite = i % 2 === 0;
-                  const moveIndex = i + 1; // gameHistory index (0 = start position)
-                  const isActive = currentMoveIndex === moveIndex;
-                  const isFuture = currentMoveIndex < moveIndex;
+            {/* Move Strip - position scrubber (desktop; mobile inlines it above) */}
+            {!practiceMode && !isMobile && renderMoveStrip()}
 
-                  if (isWhite) {
-                    // Start a new pair
-                    const blackMove = getMovesList()[i + 1];
-                    const blackIndex = i + 2;
-                    const blackActive = currentMoveIndex === blackIndex;
-                    const pairActive = isActive || blackActive;
-                    const pairFuture = !pairActive && isFuture;
-
-                    pairs.push(
-                      <span
-                        key={moveNum}
-                        className={`${styles.movePair} ${pairActive ? styles.movePairActive : ''} ${pairFuture ? styles.movePairFuture : ''}`}
-                        data-move-pair={moveNum}
-                        onClick={() =>
-                          goToMove(isActive ? moveIndex : blackActive ? blackIndex : moveIndex)
-                        }
-                      >
-                        <span className={styles.moveNumber}>{moveNum}.</span>
-                        <span
-                          style={
-                            isActive
-                              ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
-                              : undefined
-                          }
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            goToMove(moveIndex);
-                          }}
-                        >
-                          {move}
-                        </span>
-                        {blackMove && (
-                          <span
-                            style={
-                              blackActive
-                                ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
-                                : undefined
-                            }
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              goToMove(blackIndex);
-                            }}
-                          >
-                            {blackMove}
-                          </span>
-                        )}
-                      </span>
-                    );
-                  }
-                  return pairs;
-                }, [])}
-              </div>
-            )}
-
-            {/* FEN Utilities - Technical information (hidden during practice) */}
-            {!practiceMode && (
+            {/* FEN Utilities - desktop only; mobile moves these into the position sheet */}
+            {!practiceMode && !isMobile && (
               <div className="chessboard-fen-utilities">
                 <label className="fen-utilities-label">Position (FEN)</label>
                 <div className="fen-display">
@@ -1195,140 +1375,217 @@ const OpeningDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Level lens + Stats + Overview + Navigator */}
-        <div className={`right-column ${styles.rightColumn}`}>
-          <WinRatePanel
-            popularityStats={popularityStats}
-            fen={opening.fen}
-            band={band}
-            onBandChange={setBand}
-          />
+        {isMobile ? (
+          /* Mobile (design 2a): overview under the board, then the one data
+             surface, master games, plans and resources in a single stack */
+          <div className={styles.mobileStack}>
+            {opening?.eco && (
+              <div className={styles.mobileSection}>
+                <h2 className={styles.mobileSectionHeading}>Overview</h2>
+                <div className={styles.mobileOverview}>
+                  <p
+                    className={`${styles.mobileOverviewText} ${
+                      overviewClampable && !overviewExpanded ? styles.mobileOverviewClamped : ''
+                    }`}
+                  >
+                    {overviewText}
+                  </p>
+                  {overviewClampable && (
+                    <button
+                      type="button"
+                      className={styles.mobileOverviewToggle}
+                      onClick={() => setOverviewExpanded(!overviewExpanded)}
+                    >
+                      {overviewExpanded ? 'Show less' : 'Read more'}
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
 
-          {/* Overview — about this opening */}
-          {opening?.eco && (
-            <div className={styles.overviewCard}>
-              <div className={styles.overviewLabel}>Overview</div>
-              <p className={styles.overviewText}>
-                {opening.description ||
-                  opening.analysis?.description ||
-                  opening.analysis_json?.description ||
-                  `The ${opening?.name || 'opening'} is a chess opening classified under ECO code ${opening?.eco || 'unknown'}. This opening has been played in ${opening?.games_analyzed?.toLocaleString() || 'many'} games and offers strategic opportunities for both sides.`}
-              </p>
+            <MobileDataSurface
+              fen={opening.fen}
+              band={band}
+              onBandChange={setBand}
+              popularityStats={popularityStats}
+              explorer={explorerQuery}
+              parentExplorer={parentExplorer}
+              treeData={treeData}
+            />
+
+            <MobileMasterGames fen={opening.fen} />
+
+            {commonPlans.length > 0 && (
+              <div className={styles.mobileSection}>
+                <h2 className={styles.mobileSectionHeading}>Common plans</h2>
+                <CommonPlans plans={commonPlans} layout="mobileGroups" hideTitle />
+              </div>
+            )}
+
+            <MobileResources
+              videos={videos}
+              videoContext={videoContext}
+              studies={studies}
+              studyContext={studyContext}
+              searchLinks={searchLinks}
+              openingName={opening?.name || ''}
+            />
+          </div>
+        ) : (
+          /* Right Column - Overview + Level lens + Stats + Navigator.
+             Overview leads so the level lens sits directly above both data
+             panels it governs (stats + book) — matching the mobile order. */
+          <div className={`right-column ${styles.rightColumn}`}>
+            {/* Overview — about this opening */}
+            {opening?.eco && (
+              <div className={styles.overviewCard}>
+                <div className={styles.overviewLabel}>Overview</div>
+                <p className={styles.overviewText}>{overviewText}</p>
+              </div>
+            )}
+
+            <WinRatePanel
+              popularityStats={popularityStats}
+              fen={opening.fen}
+              band={band}
+              onBandChange={setBand}
+            />
+
+            <OpeningNavigator
+              treeData={treeData}
+              loading={treeLoading}
+              explorer={explorer}
+              parentExplorer={parentExplorer}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Mobile overlays: position tools sheet + repertoire toast */}
+      {isMobile && (
+        <>
+          <PositionSheet
+            fen={game.fen()}
+            open={positionSheetOpen}
+            onClose={() => setPositionSheetOpen(false)}
+          />
+          {repertoireToast && (
+            <div className={styles.toast} role="status">
+              <Star size={13} className={styles.toastStar} aria-hidden="true" />
+              {repertoireToast}
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Full-width sections below two-column layout (desktop only — the
+          mobile stack renders plans + resources itself) */}
+      {!isMobile && (
+        <div className={styles.fullWidthSections}>
+          {/* Plans */}
+          {commonPlans.length > 0 && (
+            <div className={styles.stackedSection}>
+              <h2 className={styles.sectionHeading}>Common plans</h2>
+              <CommonPlans plans={commonPlans} layout="structured" hideTitle />
             </div>
           )}
 
-          <OpeningNavigator
-            treeData={treeData}
-            loading={treeLoading}
-            explorer={explorer}
-            parentExplorer={parentExplorer}
-          />
-        </div>
-      </div>
-
-      {/* Full-width sections below two-column layout */}
-      <div className={styles.fullWidthSections}>
-        {/* Plans */}
-        {commonPlans.length > 0 && (
-          <div className={styles.stackedSection}>
-            <h2 className={styles.sectionHeading}>Common plans</h2>
-            <CommonPlans plans={commonPlans} layout="structured" hideTitle />
-          </div>
-        )}
-
-        {/* Learning Resources — combined videos + studies */}
-        {(videos.length > 0 || studies.length > 0 || searchLinks) && (
-          <div className={styles.stackedSection}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionHeading}>Learning resources</h2>
-              {searchLinks && (
-                <div className={styles.searchPills}>
-                  <a
-                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent((opening?.name || '') + ' chess opening')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.searchPill}
-                  >
-                    Search YouTube
-                  </a>
-                  <a
-                    href={searchLinks.lichess}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.searchPill}
-                  >
-                    Search Lichess Studies
-                  </a>
-                  <a
-                    href={searchLinks.chessable}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.searchPill}
-                  >
-                    Search Chessable
-                  </a>
-                </div>
-              )}
-            </div>
-            {(videos.length > 0 || studies.length > 0) &&
-              (() => {
-                // When one column falls back to the opening family, it gains an
-                // extra note line. Reserve that line in both columns so the two
-                // galleries stay aligned at the top on desktop (side-by-side).
-                const familyFallback =
-                  videoContext?.source === 'family' || studyContext?.source === 'family';
-                const noteSlot = (isFamily: boolean, text: string) => {
-                  if (!familyFallback) return null;
-                  return isFamily ? (
-                    <p className={styles.resourceFallbackNote}>{text}</p>
-                  ) : (
-                    <p className={styles.resourceFallbackNote} aria-hidden="true">
-                      &nbsp;
-                    </p>
-                  );
-                };
-                return (
-                  <div
-                    className={`${styles.resourcesGrid} ${
-                      videos.length === 0 || studies.length === 0 ? styles.resourcesGridSingle : ''
-                    }`}
-                  >
-                    {videos.length > 0 && (
-                      <div>
-                        <div className={styles.resourceLabel}>
-                          {videoContext?.source === 'family' && videoContext.family
-                            ? `Videos from the ${videoContext.family.name} family (${videos.length})`
-                            : `Videos (${videos.length})`}
-                        </div>
-                        {noteSlot(
-                          videoContext?.source === 'family',
-                          'No videos focus on this exact position yet.'
-                        )}
-                        <VideoErrorBoundary>
-                          <VideoGallery videos={videos} hideTitle />
-                        </VideoErrorBoundary>
-                      </div>
-                    )}
-                    {studies.length > 0 && (
-                      <div>
-                        <div className={styles.resourceLabel}>
-                          {studyContext?.source === 'family' && studyContext.family
-                            ? `Studies from the ${studyContext.family.name} family (${studies.length})`
-                            : `Studies (${studies.length})`}
-                        </div>
-                        {noteSlot(
-                          studyContext?.source === 'family',
-                          'No studies focus on this exact position yet.'
-                        )}
-                        <StudiesGallery studies={studies} openingName={opening?.name || ''} />
-                      </div>
-                    )}
+          {/* Learning Resources — combined videos + studies */}
+          {(videos.length > 0 || studies.length > 0 || searchLinks) && (
+            <div className={styles.stackedSection}>
+              <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionHeading}>Learning resources</h2>
+                {searchLinks && (
+                  <div className={styles.searchPills}>
+                    <a
+                      href={`https://www.youtube.com/results?search_query=${encodeURIComponent((opening?.name || '') + ' chess opening')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.searchPill}
+                    >
+                      Search YouTube
+                    </a>
+                    <a
+                      href={searchLinks.lichess}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.searchPill}
+                    >
+                      Search Lichess Studies
+                    </a>
+                    <a
+                      href={searchLinks.chessable}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.searchPill}
+                    >
+                      Search Chessable
+                    </a>
                   </div>
-                );
-              })()}
-          </div>
-        )}
-      </div>
+                )}
+              </div>
+              {(videos.length > 0 || studies.length > 0) &&
+                (() => {
+                  // When one column falls back to the opening family, it gains an
+                  // extra note line. Reserve that line in both columns so the two
+                  // galleries stay aligned at the top on desktop (side-by-side).
+                  const familyFallback =
+                    videoContext?.source === 'family' || studyContext?.source === 'family';
+                  const noteSlot = (isFamily: boolean, text: string) => {
+                    if (!familyFallback) return null;
+                    return isFamily ? (
+                      <p className={styles.resourceFallbackNote}>{text}</p>
+                    ) : (
+                      <p className={styles.resourceFallbackNote} aria-hidden="true">
+                        &nbsp;
+                      </p>
+                    );
+                  };
+                  return (
+                    <div
+                      className={`${styles.resourcesGrid} ${
+                        videos.length === 0 || studies.length === 0
+                          ? styles.resourcesGridSingle
+                          : ''
+                      }`}
+                    >
+                      {videos.length > 0 && (
+                        <div>
+                          <div className={styles.resourceLabel}>
+                            {videoContext?.source === 'family' && videoContext.family
+                              ? `Videos from the ${videoContext.family.name} family (${videos.length})`
+                              : `Videos (${videos.length})`}
+                          </div>
+                          {noteSlot(
+                            videoContext?.source === 'family',
+                            'No videos focus on this exact position yet.'
+                          )}
+                          <VideoErrorBoundary>
+                            <VideoGallery videos={videos} hideTitle />
+                          </VideoErrorBoundary>
+                        </div>
+                      )}
+                      {studies.length > 0 && (
+                        <div>
+                          <div className={styles.resourceLabel}>
+                            {studyContext?.source === 'family' && studyContext.family
+                              ? `Studies from the ${studyContext.family.name} family (${studies.length})`
+                              : `Studies (${studies.length})`}
+                          </div>
+                          {noteSlot(
+                            studyContext?.source === 'family',
+                            'No studies focus on this exact position yet.'
+                          )}
+                          <StudiesGallery studies={studies} openingName={opening?.name || ''} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

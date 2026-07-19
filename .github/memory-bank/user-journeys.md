@@ -15,6 +15,10 @@ The entry point for finding new openings and managing personal repertoire.
   `/api/openings/semantic-search`.
 - **Global Header Search**: Instant, debounced fuzzy search for specific opening
   names using a lightweight search index.
+- **Mobile Search Overlay**: On ≤767px the header search opens a full-screen
+  overlay whose empty state is a navigation hub — recently viewed openings, the
+  user's repertoire (capped at 5), and "Surprise Me" — switching to live results
+  once two characters are typed.
 - **PGN Identification**: Paste complete PGN move sequences to identify the
   deepest matching opening in the database.
 - **"Surprise Me"**: Navigate to a random, high-quality opening from the
@@ -61,14 +65,37 @@ The dedicated learning environment for mastering a specific position.
 - **Tags & Attributes**: Visualization of complexity, tactical nature, and
   typical player style suited for the opening.
 
-### Tabbed Resource Learning
+### Resource Learning
 
-- **Overview**: High-level win rate statistics and move progression.
+- **Overview**: High-level win rate statistics and move progression. On desktop
+  the Overview card leads the right column, ahead of the level lens and the data
+  panels it governs.
 - **Plans**: Deep dive into strategic themes and common goals for both sides.
 - **Studies Gallery**: Curated Lichess study chapters matched by FEN position
   (6,100+ chapters).
 - **Video Gallery**: Hand-picked YouTube videos from top educators matched to
   the exact position.
+
+### Mobile Experience (≤767px, design 2a "one data surface")
+
+- **Single data surface**: level pills (sticky while scrolling), win-rate stats,
+  breadcrumb, continuations and alternatives merge into one card so changing the
+  level visibly re-shades every number below it. It is the page's _one_ card — a
+  deliberate "instrument" amid the surrounding editorial content.
+- **Editorial reading zone**: Overview and Common plans share one voice —
+  sentence-case section headings over un-carded, left-rule prose (matched font
+  size), so they read as book-like commentary rather than competing data cards.
+  (Desktop keeps its carded two-column layout; the container treatment adapts
+  per breakpoint while the design language stays shared.)
+- **Compact board controls**: a control row (nav chevrons, Practice, and a "…"
+  button opening a Position bottom sheet with FEN/Copy/Analyse on Lichess) above
+  a full-width move row — a horizontal move carousel by default (auto-scrolled
+  to the current move) that expands to the whole line as a wrapped notation
+  grid, so long openings can be read at a glance.
+- **Collapsed by default**: master games, videos and studies live in accordions
+  with match-specificity subtitles; common plans group into White / Black /
+  Both-sides left-rule sub-sections showing three plans each.
+- **Save feedback**: starring an opening shows a "Saved to repertoire" toast.
 
 ### Navigation & Feedback
 

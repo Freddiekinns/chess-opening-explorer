@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './CommonPlans.module.css';
 
 interface CommonPlansProps {
@@ -11,8 +11,10 @@ interface CommonPlansProps {
   /** 'stacked' (default) renders White/Black/General vertically.
    *  'sideBySide' puts White and Black in a 2-column grid with General below.
    *  'cards' renders each side as a full-width card with left-border accent.
-   *  'structured' renders shared plans full-width, White/Black side-by-side below. */
-  layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured';
+   *  'structured' renders shared plans full-width, White/Black side-by-side below.
+   *  'mobileGroups' (design 2a) stacks White/Black/Both accent cards with
+   *  bullet rows, three visible per group and a Show-more toggle. */
+  layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured' | 'mobileGroups';
   /** When true, hides the built-in "Common Plans" heading (parent provides its own). */
   hideTitle?: boolean;
 }
@@ -56,6 +58,49 @@ const SIDE_CONFIG: Record<PlanSide, { label: string; cardLabel: string; classNam
   white: { label: 'White', cardLabel: 'White perspective', className: styles.white },
   black: { label: 'Black', cardLabel: 'Black perspective', className: styles.black },
   general: { label: 'Both', cardLabel: 'Shared objectives', className: styles.general },
+};
+
+const MOBILE_GROUP_LABELS: Record<PlanSide, string> = {
+  white: 'White',
+  black: 'Black',
+  general: 'Both sides',
+};
+
+const MOBILE_GROUP_COLLAPSED = 3;
+
+/** One accent card per side (mobile design 2a): bullets, 3 shown, toggle. */
+const MobilePlanGroup: React.FC<{ side: PlanSide; plans: ClassifiedPlan[] }> = ({
+  side,
+  plans,
+}) => {
+  const [expanded, setExpanded] = useState(false);
+  if (plans.length === 0) return null;
+
+  const hasMore = plans.length > MOBILE_GROUP_COLLAPSED;
+  const shown = expanded ? plans : plans.slice(0, MOBILE_GROUP_COLLAPSED);
+
+  return (
+    <div className={`${styles.mobileGroup} ${SIDE_CONFIG[side].className}`}>
+      <div className={styles.mobileGroupLabel}>{MOBILE_GROUP_LABELS[side]}</div>
+      <div className={styles.mobileGroupPlans}>
+        {shown.map((plan, i) => (
+          <div key={i} className={styles.mobilePlanRow}>
+            <span className={styles.mobilePlanDot} aria-hidden="true" />
+            <p className={styles.mobilePlanText}>{plan.text}</p>
+          </div>
+        ))}
+      </div>
+      {hasMore && (
+        <button
+          type="button"
+          className={styles.mobileGroupToggle}
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? 'Show less' : `Show ${plans.length - MOBILE_GROUP_COLLAPSED} more`}
+        </button>
+      )}
+    </div>
+  );
 };
 
 export const CommonPlans: React.FC<CommonPlansProps> = ({
@@ -125,6 +170,17 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
       </div>
     );
   };
+
+  if (layout === 'mobileGroups') {
+    return (
+      <div className={`${styles.mobileGroupsLayout} ${className}`}>
+        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+        <MobilePlanGroup side="white" plans={grouped.white} />
+        <MobilePlanGroup side="black" plans={grouped.black} />
+        <MobilePlanGroup side="general" plans={grouped.general} />
+      </div>
+    );
+  }
 
   if (layout === 'structured') {
     return (

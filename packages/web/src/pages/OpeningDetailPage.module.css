@@ -593,24 +593,13 @@
   background: var(--accent-a12);
 }
 
-/* Overview under the board: micro label, 3-line clamp, Read more */
-/* Overview is running prose, not a data module — so it stays lighter than
-   the carded surfaces around it. A thin warm-grey margin rule (echoing the
-   plans cards' left accent) marks it as editorial commentary and, with the
-   text aligned to the card content edge, reads as deliberate rather than an
-   unboxed block that lost its container. */
+/* Overview + Common plans form one editorial "reading zone": a sentence-case
+   headline (shared .mobileSectionHeading) over left-rule prose. The warm-grey
+   margin rule is the reading-zone signature — lighter than the single data
+   surface card, so that card stays the page's one "instrument". */
 .mobileOverview {
-  padding: var(--space-1) var(--space-2) 0 var(--space-4);
+  padding: 0 var(--space-2) 0 var(--space-4);
   border-left: 2px solid var(--color-result-draw);
-}
-
-.mobileOverviewLabel {
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-1-5);
 }
 
 .mobileOverviewText {
@@ -625,8 +614,8 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
 }
 
 .mobileOverviewToggle {

@@ -17,14 +17,17 @@ context.md); desktop keeps its two-column layout.
   row — a horizontal carousel (auto-scrolled to the current move) that expands
   to the whole line as a wrapped notation grid (`renderMoveNodes` shared by
   both).
-- Overview with 3-line clamp + Read more.
+- **Editorial reading zone**: Overview + Common plans share sentence-case
+  section headings over un-carded left-rule prose (matched font/voice); Overview
+  has a 4-line clamp + Read more. The data surface is the page's one card.
 - **MobileDataSurface**: W/D/L gradient strip, sticky scrollable LevelLens pills
   (card uses `overflow: clip` so sticky works), level stats with loading dim +
   snapshot fallback (new `useExplorerQuery` exposes loading/failed), collapsible
   breadcrumb, Continuations + "Instead of X" stacked rows (shared rules
   extracted to `lib/openingBook.ts`).
-- **MobileMasterGames** collapsed accordion; CommonPlans `mobileGroups` layout;
-  **MobileResources** accordion + swipeable search pills.
+- **MobileMasterGames** collapsed accordion; CommonPlans `mobileGroups` layout
+  (un-carded left-rule sub-sections); **MobileResources** accordion + swipeable
+  search pills.
 - **SearchOverlay** replaces TopBar's bare mobile search: empty state = Recent
   (`lib/recentOpenings.ts`, recorded on detail views) + My repertoire (cap 5) +
   Surprise me; live results with Searching…/no-results states. Legacy unused

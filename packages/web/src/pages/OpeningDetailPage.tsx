@@ -1380,24 +1380,26 @@ const OpeningDetailPage: React.FC = () => {
              surface, master games, plans and resources in a single stack */
           <div className={styles.mobileStack}>
             {opening?.eco && (
-              <div className={styles.mobileOverview}>
-                <div className={styles.mobileOverviewLabel}>Overview</div>
-                <p
-                  className={`${styles.mobileOverviewText} ${
-                    overviewClampable && !overviewExpanded ? styles.mobileOverviewClamped : ''
-                  }`}
-                >
-                  {overviewText}
-                </p>
-                {overviewClampable && (
-                  <button
-                    type="button"
-                    className={styles.mobileOverviewToggle}
-                    onClick={() => setOverviewExpanded(!overviewExpanded)}
+              <div className={styles.mobileSection}>
+                <h2 className={styles.mobileSectionHeading}>Overview</h2>
+                <div className={styles.mobileOverview}>
+                  <p
+                    className={`${styles.mobileOverviewText} ${
+                      overviewClampable && !overviewExpanded ? styles.mobileOverviewClamped : ''
+                    }`}
                   >
-                    {overviewExpanded ? 'Show less' : 'Read more'}
-                  </button>
-                )}
+                    {overviewText}
+                  </p>
+                  {overviewClampable && (
+                    <button
+                      type="button"
+                      className={styles.mobileOverviewToggle}
+                      onClick={() => setOverviewExpanded(!overviewExpanded)}
+                    >
+                      {overviewExpanded ? 'Show less' : 'Read more'}
+                    </button>
+                  )}
+                </div>
               </div>
             )}
 

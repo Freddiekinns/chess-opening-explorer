@@ -156,21 +156,23 @@
         border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 8px;
       }
-      /* Overview: editorial commentary, marked by a warm-grey margin rule
-         (echoes the plans cards' left accent), text aligned to the card
-         content edge — lighter than the carded surfaces, but deliberate. */
+      /* Section heading — sentence case, shared by Overview + Common plans
+         (and Master games / Videos / Studies), never uppercase. */
+      .sh {
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        color: #ece8e1;
+        letter-spacing: -0.02em;
+        margin: 16px 0 10px;
+      }
+      /* Overview + Common plans form one editorial "reading zone": a
+         sentence-case heading over left-rule prose. The warm-grey margin rule
+         is the reading-zone signature — lighter than the single data surface
+         card, so that card stays the page's one "instrument". */
       .ov {
-        margin: 14px 0 0;
         padding: 0 8px 0 16px;
         border-left: 2px solid #5a554e;
-      }
-      .ovl {
-        font-size: 10px;
-        font-weight: 600;
-        color: #8e887f;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 0 0 6px;
       }
       .ovp {
         color: #ece8e1;
@@ -442,17 +444,21 @@
       .acc .h + .h {
         border-top: 1px solid rgba(255, 255, 255, 0.06);
       }
-      /* Plans group card */
+      /* Plans: un-carded left-rule sub-sections matching the Overview, so the
+         reading zone is one voice and the data surface stays the one card. */
       .plan {
-        background: #232120;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-left: 3px solid rgba(255, 255, 255, 0.25);
-        border-radius: 12px;
-        padding: 14px 16px;
-        margin-top: 12px;
+        border-left: 2px solid rgba(255, 255, 255, 0.25);
+        padding: 0 0 0 16px;
+        margin-top: 16px;
+      }
+      .plan.white {
+        border-left-color: rgba(255, 255, 255, 0.25);
+      }
+      .plan.black {
+        border-left-color: rgba(255, 255, 255, 0.1);
       }
       .plan .pl {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         color: #9a958e;
         margin-bottom: 8px;
@@ -472,11 +478,11 @@
         margin-top: 8px;
       }
       .plan p {
-        font-size: 13px;
-        line-height: 1.6;
+        font-size: 14px;
+        line-height: 1.65;
         color: #ece8e1;
         margin: 0;
-        opacity: 0.78;
+        opacity: 0.82;
       }
       .plan .more {
         font-size: 12px;
@@ -532,8 +538,8 @@
         <span class="expand">⌄</span>
       </div>
 
+      <div class="sh">Overview</div>
       <div class="ov">
-        <div class="ovl">Overview</div>
         <p class="ovp">
           This variation leads to a more strategic and less chaotic game than typical Alekhine's
           Defense lines. By exchanging knights, White simplifies the position and…
@@ -627,7 +633,8 @@
         </div>
       </div>
 
-      <div class="plan">
+      <div class="sh">Common plans</div>
+      <div class="plan white">
         <div class="pl">White</div>
         <div class="li">
           <span class="dot"></span>
@@ -638,6 +645,17 @@
           <p>Build a broad centre with d4 and c4, then castle before pressing forward.</p>
         </div>
         <div class="more">Show 2 more</div>
+      </div>
+      <div class="plan black">
+        <div class="pl">Black</div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Return the piece with …Qxd5 and develop naturally, aiming for easy equality.</p>
+        </div>
+        <div class="li">
+          <span class="dot"></span>
+          <p>Contest the centre with …e5 or …c5 before White consolidates the extra tempo.</p>
+        </div>
       </div>
 
       <div class="acc">

@@ -80,7 +80,13 @@ The dedicated learning environment for mastering a specific position.
 
 - **Single data surface**: level pills (sticky while scrolling), win-rate stats,
   breadcrumb, continuations and alternatives merge into one card so changing the
-  level visibly re-shades every number below it.
+  level visibly re-shades every number below it. It is the page's _one_ card — a
+  deliberate "instrument" amid the surrounding editorial content.
+- **Editorial reading zone**: Overview and Common plans share one voice —
+  sentence-case section headings over un-carded, left-rule prose (matched font
+  size), so they read as book-like commentary rather than competing data cards.
+  (Desktop keeps its carded two-column layout; the container treatment adapts
+  per breakpoint while the design language stays shared.)
 - **Compact board controls**: a control row (nav chevrons, Practice, and a "…"
   button opening a Position bottom sheet with FEN/Copy/Analyse on Lichess) above
   a full-width move row — a horizontal move carousel by default (auto-scrolled
@@ -88,7 +94,7 @@ The dedicated learning environment for mastering a specific position.
   grid, so long openings can be read at a glance.
 - **Collapsed by default**: master games, videos and studies live in accordions
   with match-specificity subtitles; common plans group into White / Black /
-  Both-sides cards showing three plans each.
+  Both-sides left-rule sub-sections showing three plans each.
 - **Save feedback**: starring an opening shows a "Saved to repertoire" toast.
 
 ### Navigation & Feedback

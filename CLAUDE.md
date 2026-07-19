@@ -314,6 +314,25 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   (or show an explicit "no stats" state) — never synthesise numbers that look
   like real statistics. Regression history: `OpeningCard` invented W/D/L
   percentages with `Math.random()` when rates were absent (fixed 2026-06-11).
+- **`overflow: clip`, not `hidden`, on a card that contains a sticky child**:
+  `overflow: hidden` makes an element a scroll container, which becomes the
+  containing block for any `position: sticky` descendant — so the child sticks
+  to that box (or appears not to stick at all) instead of the viewport.
+  `overflow: clip` clips overflow **without** establishing a scroll container,
+  so sticky descendants still resolve against the viewport. Regression history:
+  the mobile data surface's sticky LevelLens pills wouldn't stick because the
+  card used `overflow: hidden` (fixed 2026-07-18 —
+  `MobileDataSurface.module.css` uses `overflow: clip`).
+- **SPA scroll traps — reset on route change, scroll strips by their own edge**:
+  React Router does not reset scroll on navigation, so a new page inherits the
+  previous page's scroll offset and "opens in the middle". A route-change
+  `ScrollToTop` (`useLocation` + `window.scrollTo(0,0)` in `App.tsx`) fixes it.
+  Separately, `element.scrollIntoView()` scrolls **every** scrollable ancestor
+  including the document, so calling it to reveal the active move in a
+  horizontal strip yanks the whole page down. Scroll horizontal strips by
+  setting the container's own `scrollLeft` instead. Regression history:
+  opening-detail pages opened mid-scroll from both causes at once (fixed
+  2026-07-18).
 - **Memory bank bloat prevention**: `activeContext.md` must stay under **50
   lines** (current task + previous task only). `progress.md` must stay under
   **100 lines** (one-liner per completed task). When updating memory bank: move

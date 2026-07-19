@@ -149,6 +149,9 @@ const OpeningDetailPage: React.FC = () => {
   const isMobile = useIsMobile();
   const [positionSheetOpen, setPositionSheetOpen] = useState(false);
   const [moveListExpanded, setMoveListExpanded] = useState(false);
+  // Whether the collapsed carousel actually hides moves off its right edge —
+  // the expand toggle only appears when there's something more to reveal.
+  const [moveStripOverflows, setMoveStripOverflows] = useState(false);
   const [overviewExpanded, setOverviewExpanded] = useState(false);
   const [repertoireToast, setRepertoireToast] = useState<string | null>(null);
   const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -318,6 +321,25 @@ const OpeningDetailPage: React.FC = () => {
       container.scrollLeft = left;
     }
   }, [currentMoveIndex]);
+
+  // Show the expand toggle only when the collapsed carousel overflows (moves
+  // hidden off the right edge). A line that already fits has nothing to
+  // expand — offering the toggle there would just puff the box out. Re-measure
+  // on move changes and container resize.
+  useEffect(() => {
+    if (!isMobile || moveListExpanded) return;
+    const el = moveStripRef.current;
+    if (!el) return;
+    const measure = () => setMoveStripOverflows(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    ro?.observe(el);
+    window.addEventListener('resize', measure);
+    return () => {
+      ro?.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [isMobile, moveListExpanded, gameHistory]);
 
   const goToMove = (moveIndex: number) => {
     if (moveIndex >= 0 && moveIndex < gameHistory.length) {
@@ -1257,7 +1279,7 @@ const OpeningDetailPage: React.FC = () => {
                     ) : (
                       renderMoveStrip(true)
                     )}
-                    {getMovesList().length > 4 && (
+                    {(moveStripOverflows || moveListExpanded) && (
                       <button
                         className={styles.moveExpandBtn}
                         onClick={() => setMoveListExpanded((v) => !v)}

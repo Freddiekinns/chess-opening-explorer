@@ -12,8 +12,11 @@ context.md); desktop keeps its two-column layout.
 **Mobile layout (top → bottom):**
 
 - Compact left-aligned header, swipeable tag row, star + "Saved to repertoire"
-  toast; board card with one control row (`‹‹ ‹ ›`, inline move strip, Practice,
-  `…` → **PositionSheet** bottom sheet with FEN/Copy/Analyse).
+  toast; board card with a control row (`‹‹ ‹ ›`, Practice, `…` →
+  **PositionSheet** bottom sheet with FEN/Copy/Analyse) above a full-width move
+  row — a horizontal carousel (auto-scrolled to the current move) that expands
+  to the whole line as a wrapped notation grid (`renderMoveNodes` shared by
+  both).
 - Overview with 3-line clamp + Read more.
 - **MobileDataSurface**: W/D/L gradient strip, sticky scrollable LevelLens pills
   (card uses `overflow: clip` so sticky works), level stats with loading dim +

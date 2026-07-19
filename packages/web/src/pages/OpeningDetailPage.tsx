@@ -23,6 +23,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronsRight,
+  ChevronDown,
   MoreHorizontal,
   Play,
   Star,
@@ -147,6 +148,7 @@ const OpeningDetailPage: React.FC = () => {
   // data surface. Desktop keeps the two-column tree untouched.
   const isMobile = useIsMobile();
   const [positionSheetOpen, setPositionSheetOpen] = useState(false);
+  const [moveListExpanded, setMoveListExpanded] = useState(false);
   const [overviewExpanded, setOverviewExpanded] = useState(false);
   const [repertoireToast, setRepertoireToast] = useState<string | null>(null);
   const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -848,6 +850,72 @@ const OpeningDetailPage: React.FC = () => {
   // Move strip — position scrubber. Desktop renders it full-width under the
   // nav buttons; mobile inlines it between the nav chevrons and the
   // Practice button (design 2a's single control row).
+  // Shared move nodes (Start + numbered pairs) rendered by both the compact
+  // horizontal carousel and the expanded full-line grid, so the two views
+  // stay identical in behaviour.
+  const renderMoveNodes = (): React.ReactNode[] => {
+    const nodes: React.ReactNode[] = [
+      <span
+        key="start"
+        className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
+        onClick={() => goToMove(0)}
+      >
+        Start
+      </span>,
+    ];
+
+    getMovesList().forEach((move, i) => {
+      if (i % 2 !== 0) return; // only start a node on White's move
+      const moveNum = Math.floor(i / 2) + 1;
+      const moveIndex = i + 1; // gameHistory index (0 = start position)
+      const isActive = currentMoveIndex === moveIndex;
+      const blackMove = getMovesList()[i + 1];
+      const blackIndex = i + 2;
+      const blackActive = currentMoveIndex === blackIndex;
+      const pairActive = isActive || blackActive;
+      const pairFuture = !pairActive && currentMoveIndex < moveIndex;
+
+      nodes.push(
+        <span
+          key={moveNum}
+          className={`${styles.movePair} ${pairActive ? styles.movePairActive : ''} ${pairFuture ? styles.movePairFuture : ''}`}
+          data-move-pair={moveNum}
+          onClick={() => goToMove(isActive ? moveIndex : blackActive ? blackIndex : moveIndex)}
+        >
+          <span className={styles.moveNumber}>{moveNum}.</span>
+          <span
+            style={
+              isActive ? { textDecoration: 'underline', textUnderlineOffset: '3px' } : undefined
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              goToMove(moveIndex);
+            }}
+          >
+            {move}
+          </span>
+          {blackMove && (
+            <span
+              style={
+                blackActive
+                  ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
+                  : undefined
+              }
+              onClick={(e) => {
+                e.stopPropagation();
+                goToMove(blackIndex);
+              }}
+            >
+              {blackMove}
+            </span>
+          )}
+        </span>
+      );
+    });
+
+    return nodes;
+  };
+
   const renderMoveStrip = (inline = false) => {
     if (getMovesList().length === 0) return null;
     return (
@@ -855,70 +923,7 @@ const OpeningDetailPage: React.FC = () => {
         className={`${styles.moveStrip} ${inline ? styles.moveStripInline : ''}`}
         ref={moveStripRef}
       >
-        <span
-          className={`${styles.startPosition} ${currentMoveIndex === 0 ? styles.startPositionActive : ''}`}
-          onClick={() => goToMove(0)}
-        >
-          Start
-        </span>
-        {getMovesList().reduce<React.ReactNode[]>((pairs, move, i) => {
-          const moveNum = Math.floor(i / 2) + 1;
-          const isWhite = i % 2 === 0;
-          const moveIndex = i + 1; // gameHistory index (0 = start position)
-          const isActive = currentMoveIndex === moveIndex;
-          const isFuture = currentMoveIndex < moveIndex;
-
-          if (isWhite) {
-            // Start a new pair
-            const blackMove = getMovesList()[i + 1];
-            const blackIndex = i + 2;
-            const blackActive = currentMoveIndex === blackIndex;
-            const pairActive = isActive || blackActive;
-            const pairFuture = !pairActive && isFuture;
-
-            pairs.push(
-              <span
-                key={moveNum}
-                className={`${styles.movePair} ${pairActive ? styles.movePairActive : ''} ${pairFuture ? styles.movePairFuture : ''}`}
-                data-move-pair={moveNum}
-                onClick={() =>
-                  goToMove(isActive ? moveIndex : blackActive ? blackIndex : moveIndex)
-                }
-              >
-                <span className={styles.moveNumber}>{moveNum}.</span>
-                <span
-                  style={
-                    isActive
-                      ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
-                      : undefined
-                  }
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToMove(moveIndex);
-                  }}
-                >
-                  {move}
-                </span>
-                {blackMove && (
-                  <span
-                    style={
-                      blackActive
-                        ? { textDecoration: 'underline', textUnderlineOffset: '3px' }
-                        : undefined
-                    }
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToMove(blackIndex);
-                    }}
-                  >
-                    {blackMove}
-                  </span>
-                )}
-              </span>
-            );
-          }
-          return pairs;
-        }, [])}
+        {renderMoveNodes()}
       </div>
     );
   };
@@ -1198,50 +1203,76 @@ const OpeningDetailPage: React.FC = () => {
                 </div>
               </>
             ) : isMobile ? (
-              /* Mobile (design 2a): one control row — nav chevrons, inline
-                 move strip, Practice, and "…" opening the position sheet */
-              <div className={styles.mobileControls}>
-                <button
-                  onClick={() => goToMove(0)}
-                  className={styles.mobileNavBtn}
-                  disabled={currentMoveIndex === 0}
-                  title="Go to start"
-                >
-                  <ChevronsLeft size={18} />
-                </button>
-                <button
-                  onClick={previousMove}
-                  className={styles.mobileNavBtn}
-                  disabled={currentMoveIndex === 0}
-                  title="Previous move"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={nextMove}
-                  className={styles.mobileNavBtn}
-                  disabled={currentMoveIndex >= getMovesList().length}
-                  title="Next move"
-                >
-                  <ChevronRight size={18} />
-                </button>
-                {renderMoveStrip(true)}
-                <button
-                  className={styles.mobilePracticeBtn}
-                  onClick={startPractice}
-                  title="Practice this opening"
-                >
-                  <Play size={12} />
-                  Practice
-                </button>
-                <button
-                  className={styles.mobileNavBtn}
-                  onClick={() => setPositionSheetOpen(true)}
-                  aria-label="Position tools"
-                  title="Position tools"
-                >
-                  <MoreHorizontal size={16} />
-                </button>
+              /* Mobile (design 2a): a compact control row (nav chevrons,
+                 Practice, "…" position sheet) above a full-width move row —
+                 a horizontal carousel by default, expandable to the whole
+                 line so long openings can be read at a glance. */
+              <div className={styles.mobileBoardControls}>
+                <div className={styles.mobileControls}>
+                  <button
+                    onClick={() => goToMove(0)}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex === 0}
+                    title="Go to start"
+                  >
+                    <ChevronsLeft size={18} />
+                  </button>
+                  <button
+                    onClick={previousMove}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex === 0}
+                    title="Previous move"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+                  <button
+                    onClick={nextMove}
+                    className={styles.mobileNavBtn}
+                    disabled={currentMoveIndex >= getMovesList().length}
+                    title="Next move"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                  <button
+                    className={styles.mobilePracticeBtn}
+                    onClick={startPractice}
+                    title="Practice this opening"
+                  >
+                    <Play size={12} />
+                    Practice
+                  </button>
+                  <button
+                    className={styles.mobileNavBtn}
+                    onClick={() => setPositionSheetOpen(true)}
+                    aria-label="Position tools"
+                    title="Position tools"
+                  >
+                    <MoreHorizontal size={16} />
+                  </button>
+                </div>
+                {getMovesList().length > 0 && (
+                  <div className={styles.mobileMoveRow}>
+                    {moveListExpanded ? (
+                      <div className={styles.moveListExpanded}>{renderMoveNodes()}</div>
+                    ) : (
+                      renderMoveStrip(true)
+                    )}
+                    {getMovesList().length > 4 && (
+                      <button
+                        className={styles.moveExpandBtn}
+                        onClick={() => setMoveListExpanded((v) => !v)}
+                        aria-expanded={moveListExpanded}
+                        aria-label={moveListExpanded ? 'Collapse move list' : 'Show full line'}
+                        title={moveListExpanded ? 'Collapse moves' : 'Show full line'}
+                      >
+                        <ChevronDown
+                          size={18}
+                          className={`${styles.moveExpandChevron} ${moveListExpanded ? styles.moveExpandChevronOpen : ''}`}
+                        />
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             ) : (
               /* Navigation Controls - Shown when not in practice mode */

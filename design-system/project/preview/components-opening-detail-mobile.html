@@ -71,7 +71,9 @@
         flex: none;
         text-transform: capitalize;
       }
-      /* Board card control row: nav chevrons · inline move strip · Practice · … */
+      /* Board card: a control row (nav chevrons · Practice · …) above a
+         full-width move row — a horizontal carousel by default, expandable
+         to the whole line. */
       .ctrl {
         display: flex;
         align-items: center;
@@ -80,6 +82,12 @@
         border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 12px;
         padding: 10px;
+      }
+      .moverow {
+        display: flex;
+        align-items: stretch;
+        gap: 4px;
+        margin: 8px 0 0;
       }
       .nav {
         width: 36px;
@@ -125,6 +133,7 @@
         display: flex;
         align-items: center;
         gap: 6px;
+        margin-left: auto;
         color: #e85d04;
         border: 1px solid #e85d04;
         border-radius: 8px;
@@ -133,6 +142,19 @@
           700 13px 'Bricolage Grotesque',
           sans-serif;
         flex: none;
+      }
+      /* Expand/collapse toggle for the move carousel */
+      .expand {
+        flex: none;
+        min-width: 36px;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9a958e;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
       }
       /* Overview: editorial commentary, marked by a warm-grey margin rule
          (echoes the plans cards' left accent), text aligned to the card
@@ -499,12 +521,15 @@
 
       <div class="ctrl">
         <span class="nav">«</span><span class="nav">‹</span><span class="nav dis">›</span>
+        <span class="prac">▷ Practice</span>
+        <span class="nav">…</span>
+      </div>
+      <div class="moverow">
         <span class="strip"
           ><span class="mv">Start</span><span class="mv">1. e4 Nf6</span
           ><span class="mv">2. Nc3 d5</span><span class="mv act">4. Nxd5</span></span
         >
-        <span class="prac">▷ Practice</span>
-        <span class="nav">…</span>
+        <span class="expand">⌄</span>
       </div>
 
       <div class="ov">

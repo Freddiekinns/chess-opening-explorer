@@ -449,9 +449,20 @@
 }
 
 /* One control row under the board: nav chevrons · move strip · Practice · … */
+.mobileBoardControls {
+  margin-top: var(--space-2);
+}
+
 .mobileControls {
   display: flex;
   align-items: center;
+  gap: var(--space-1);
+}
+
+/* Full-width move row: the carousel (or expanded grid) plus an expand toggle */
+.mobileMoveRow {
+  display: flex;
+  align-items: stretch;
   gap: var(--space-1);
   margin-top: var(--space-2);
 }
@@ -495,25 +506,76 @@
 .moveStripInline.moveStripInline {
   flex: 1;
   min-width: 0;
-  margin: 0 var(--space-1);
+  margin: 0;
   padding-top: var(--space-1);
   padding-bottom: var(--space-1);
+}
+
+/* Expanded full-line grid: same nodes as the carousel, wrapped so the whole
+   opening is visible at once (best for reading structure on long lines). */
+.moveListExpanded {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
 }
 
 /* Touch sizing: the strip is the scrubber, so each pair needs a ≥40px
    target — keep the type compact but grow the padding, not the font
    (an enlarging active move would shift layout while scrubbing). */
 .moveStripInline .movePair,
-.moveStripInline .startPosition {
+.moveStripInline .startPosition,
+.moveListExpanded .movePair,
+.moveListExpanded .startPosition {
   padding-top: var(--space-2-5);
   padding-bottom: var(--space-2-5);
 }
 
-/* Primary action of the board card — sized to match the 40px+ strip targets */
+/* Expand/collapse toggle — matches the strip height, rotates its chevron */
+.moveExpandBtn {
+  flex: none;
+  min-width: 36px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.moveExpandBtn:hover {
+  background: var(--accent-a12);
+  color: var(--color-text-primary);
+}
+
+.moveExpandChevron {
+  transition: transform 200ms ease;
+}
+
+.moveExpandChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Primary action of the board card — pushed to the right of the control row,
+   with the "…" position-tools button trailing it. */
 .mobilePracticeBtn {
   display: flex;
   align-items: center;
   gap: var(--space-1-5);
+  margin-left: auto;
   background: transparent;
   color: var(--color-brand-orange);
   border: 1px solid var(--color-brand-orange);

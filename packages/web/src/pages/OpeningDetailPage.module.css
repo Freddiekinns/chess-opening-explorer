@@ -532,8 +532,14 @@
 }
 
 /* Overview under the board: micro label, 3-line clamp, Read more */
+/* Overview is running prose, not a data module — so it stays lighter than
+   the carded surfaces around it. A thin warm-grey margin rule (echoing the
+   plans cards' left accent) marks it as editorial commentary and, with the
+   text aligned to the card content edge, reads as deliberate rather than an
+   unboxed block that lost its container. */
 .mobileOverview {
-  padding: var(--space-1) var(--space-2) 0;
+  padding: var(--space-1) var(--space-2) 0 var(--space-4);
+  border-left: 2px solid var(--color-result-draw);
 }
 
 .mobileOverviewLabel {

@@ -134,27 +134,34 @@
           sans-serif;
         flex: none;
       }
-      /* Overview clamp */
+      /* Overview: editorial commentary, marked by a warm-grey margin rule
+         (echoes the plans cards' left accent), text aligned to the card
+         content edge — lighter than the carded surfaces, but deliberate. */
+      .ov {
+        margin: 14px 0 0;
+        padding: 0 8px 0 16px;
+        border-left: 2px solid #5a554e;
+      }
       .ovl {
         font-size: 10px;
         font-weight: 600;
         color: #8e887f;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        margin: 14px 8px 6px;
+        margin: 0 0 6px;
       }
       .ovp {
         color: #ece8e1;
         font-size: 14px;
         line-height: 1.65;
-        margin: 0 8px;
+        margin: 0;
         opacity: 0.82;
       }
       .read {
         color: #e85d04;
         font-size: 12px;
         font-weight: 600;
-        margin: 6px 8px 0;
+        margin: 6px 0 0;
       }
       /* One data surface */
       .surface {
@@ -500,12 +507,14 @@
         <span class="nav">…</span>
       </div>
 
-      <div class="ovl">Overview</div>
-      <p class="ovp">
-        This variation leads to a more strategic and less chaotic game than typical Alekhine's
-        Defense lines. By exchanging knights, White simplifies the position and…
-      </p>
-      <div class="read">Read more</div>
+      <div class="ov">
+        <div class="ovl">Overview</div>
+        <p class="ovp">
+          This variation leads to a more strategic and less chaotic game than typical Alekhine's
+          Defense lines. By exchanging knights, White simplifies the position and…
+        </p>
+        <div class="read">Read more</div>
+      </div>
 
       <div class="surface">
         <div class="grad"></div>

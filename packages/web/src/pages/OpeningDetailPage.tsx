@@ -320,7 +320,11 @@ const OpeningDetailPage: React.FC = () => {
     } else {
       container.scrollLeft = left;
     }
-  }, [currentMoveIndex]);
+    // Re-run when the strip's width changes, not just the move: showing the
+    // expand toggle shrinks the strip after first paint, and collapsing the
+    // expanded grid brings the carousel back — both leave the old scroll
+    // offset stale (last moves clipped off the right edge) until we re-centre.
+  }, [currentMoveIndex, moveStripOverflows, moveListExpanded]);
 
   // Show the expand toggle only when the collapsed carousel overflows (moves
   // hidden off the right edge). A line that already fits has nothing to

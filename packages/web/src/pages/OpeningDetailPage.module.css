@@ -469,9 +469,17 @@
   justify-content: center;
   cursor: pointer;
   padding: 0;
+  position: relative;
   transition:
     background 150ms ease,
     color 150ms ease;
+}
+
+/* Invisible hit-area extension: 36px visual, 44px effective touch target */
+.mobileNavBtn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
 }
 
 .mobileNavBtn:hover:not(:disabled) {
@@ -488,8 +496,20 @@
   flex: 1;
   min-width: 0;
   margin: 0 var(--space-1);
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
 }
 
+/* Touch sizing: the strip is the scrubber, so each pair needs a ≥40px
+   target — keep the type compact but grow the padding, not the font
+   (an enlarging active move would shift layout while scrubbing). */
+.moveStripInline .movePair,
+.moveStripInline .startPosition {
+  padding-top: var(--space-2-5);
+  padding-bottom: var(--space-2-5);
+}
+
+/* Primary action of the board card — sized to match the 40px+ strip targets */
 .mobilePracticeBtn {
   display: flex;
   align-items: center;
@@ -498,10 +518,10 @@
   color: var(--color-brand-orange);
   border: 1px solid var(--color-brand-orange);
   border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2-5) var(--space-3);
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   cursor: pointer;
   flex: none;
   transition: background 150ms ease;

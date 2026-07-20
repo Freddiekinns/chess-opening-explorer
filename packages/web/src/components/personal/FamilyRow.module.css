@@ -270,10 +270,13 @@
   }
 }
 
-/* Match the flat card: the move list drops on the smallest screens. */
+/* Match the flat card at the smallest screens: the name steps down to 14px
+   (the `.mobileCardName` ≤480 size). The move line stays visible — it names
+   the opening and reads on its own row, truncating with an ellipsis. */
 @media (max-width: 480px) {
-  .variationMoves {
-    display: none;
+  .familyName,
+  .variationName {
+    font-size: 14px;
   }
 }
 

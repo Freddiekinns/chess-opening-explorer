@@ -1831,9 +1831,9 @@
     font-size: 14px;
   }
 
-  .mobileCardMoves {
-    display: none;
-  }
+  /* The move line stays visible on phones (truncates with an ellipsis) — it
+     names the opening and is the whole point of the card. It sits on its own
+     row below the name with the full card width, so there is room. */
 
   .pillBtn {
     font-size: 13px;

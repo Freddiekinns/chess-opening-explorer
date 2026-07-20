@@ -5,8 +5,10 @@
 - **Opening-detail & analyse UI tweaks** (2026-07-20, branch
   `claude/opening-details-ui-tweaks-9tddbh`): "Most popular next moves" caption
   under continuations (desktop + mobile, parallels "Most popular alternatives");
-  mobile show-more threshold 5 → 3; per-variation games count now shows on the
-  mobile Analyse family expansion. 325 frontend tests green.
+  mobile show-more threshold 5 → 3; and unified the mobile Analyse cards — the
+  family header + expanded variations now match the individual opening card
+  (name + "Games N" top-right + bar + worded legend) via a new shared `PerfBar`
+  component. 325 frontend tests green; verified with a Playwright screenshot.
 - **Opening detail mobile overhaul** (2026-07-18, PR #53): implemented Claude
   Design 2a "one data surface" at ≤767px — compact header + save toast, single
   board control row with inline move strip and a FEN bottom sheet, clamped

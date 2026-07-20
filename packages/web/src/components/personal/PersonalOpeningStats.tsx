@@ -22,6 +22,7 @@ import {
 import { usePersonalGames, useFormStatePersistence } from './usePersonalGames';
 import { useFamiliesDict, useFamilyRollups } from './useFamilyRollups';
 import { OpeningNameSplit, OpeningRow } from './OpeningRow';
+import { PerfBar } from './PerfBar';
 import {
   GearIcon,
   GroupToggle,
@@ -529,47 +530,27 @@ export const PersonalOpeningStats: React.FC<{
                 ) : (
                   <div className={styles.mobileOpeningList}>
                     {(showAllMobile ? activeData.openings : activeData.openings.slice(0, 5)).map(
-                      (o, i) => {
-                        const wP = o.games > 0 ? Math.round((o.win / o.games) * 100) : 0;
-                        const dP = o.games > 0 ? Math.round((o.draw / o.games) * 100) : 0;
-                        const lP = o.games > 0 ? Math.round((o.loss / o.games) * 100) : 0;
-                        return (
-                          <Link
-                            key={o.fen}
-                            className={styles.mobileCard}
-                            to={openingLink(o)}
-                            style={{ animationDelay: `${Math.min(i * 30, 300)}ms` }}
-                          >
-                            <div className={styles.mobileCardHead}>
-                              <div className={styles.mobileCardNameCol}>
-                                <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
-                                {getOpeningMovesDisplay(o.moves) && (
-                                  <span className={styles.mobileCardMoves}>
-                                    {getOpeningMovesDisplay(o.moves)}
-                                  </span>
-                                )}
-                              </div>
-                              <span className={styles.mobileCardGames}>Games {o.games}</span>
-                            </div>
-                            <div className={styles.mobileCardBar}>
-                              {wP > 0 && (
-                                <div className={styles.mobileBarWin} style={{ width: `${wP}%` }} />
-                              )}
-                              {dP > 0 && (
-                                <div className={styles.mobileBarDraw} style={{ width: `${dP}%` }} />
-                              )}
-                              {lP > 0 && (
-                                <div className={styles.mobileBarLoss} style={{ width: `${lP}%` }} />
+                      (o, i) => (
+                        <Link
+                          key={o.fen}
+                          className={styles.mobileCard}
+                          to={openingLink(o)}
+                          style={{ animationDelay: `${Math.min(i * 30, 300)}ms` }}
+                        >
+                          <div className={styles.mobileCardHead}>
+                            <div className={styles.mobileCardNameCol}>
+                              <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
+                              {getOpeningMovesDisplay(o.moves) && (
+                                <span className={styles.mobileCardMoves}>
+                                  {getOpeningMovesDisplay(o.moves)}
+                                </span>
                               )}
                             </div>
-                            <div className={styles.mobileCardPcts}>
-                              <span className={styles.mobileCardPctWin}>{wP}% win</span>
-                              <span className={styles.mobileCardPctDraw}>{dP}% draw</span>
-                              <span className={styles.mobileCardPctLoss}>{lP}% loss</span>
-                            </div>
-                          </Link>
-                        );
-                      }
+                            <span className={styles.mobileCardGames}>Games {o.games}</span>
+                          </div>
+                          <PerfBar win={o.win} draw={o.draw} loss={o.loss} games={o.games} />
+                        </Link>
+                      )
                     )}
                     {!showAllMobile && activeData.openings.length > 5 && (
                       <button

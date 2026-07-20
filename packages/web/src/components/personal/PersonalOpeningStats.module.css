@@ -1648,60 +1648,7 @@
   padding-top: 2px;
 }
 
-/* W/D/L bar */
-.mobileCardBar {
-  display: flex;
-  height: 8px;
-  border-radius: 9999px;
-  overflow: hidden;
-  gap: 1px;
-}
-
-.mobileBarWin {
-  background: var(--color-perf-win);
-  min-width: 3px;
-  transition: width 0.4s ease-out;
-}
-
-.mobileBarWin:first-child {
-  border-radius: 9999px 0 0 9999px;
-}
-
-.mobileBarDraw {
-  background: var(--color-perf-draw);
-  min-width: 3px;
-  transition: width 0.4s ease-out;
-}
-
-.mobileBarLoss {
-  background: var(--color-perf-loss);
-  min-width: 3px;
-  transition: width 0.4s ease-out;
-}
-
-.mobileBarLoss:last-child {
-  border-radius: 0 9999px 9999px 0;
-}
-
-/* Labeled percentages */
-.mobileCardPcts {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.mobileCardPctWin {
-  color: var(--color-perf-win-text);
-}
-
-.mobileCardPctDraw {
-  color: var(--color-perf-draw-text);
-}
-
-.mobileCardPctLoss {
-  color: var(--color-perf-loss-text);
-}
+/* The W/D/L bar + worded legend are the shared <PerfBar> component. */
 
 /* Show more button */
 .showMoreBtn {
@@ -1888,11 +1835,6 @@
     display: none;
   }
 
-  .mobileCardPcts {
-    gap: var(--space-3);
-    font-size: 11px;
-  }
-
   .pillBtn {
     font-size: 13px;
     padding: 8px 12px;
@@ -1963,10 +1905,7 @@
 
   .progressFill,
   .winRateBarFillWin,
-  .winRateBarFillLoss,
-  .mobileBarWin,
-  .mobileBarDraw,
-  .mobileBarLoss {
+  .winRateBarFillLoss {
     transition: none;
   }
 }

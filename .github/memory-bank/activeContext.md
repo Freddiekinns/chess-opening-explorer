@@ -15,15 +15,24 @@ Three small UX fixes:
 - **Mobile show-more threshold 5 → 3.** `MobileDataSurface`
   `ROWS_COLLAPSED_LIMIT` now 3 so continuations/alternatives collapse sooner
   (desktop `OpeningNavigator` limits unchanged at 5).
-- **Per-variation games count on mobile analyse.** Expanded `FamilyRow`
-  variations hid their games count at ≤768px (`.variationGames` display:none);
-  added a mobile-only `.variationMeta` line ("N games", singularised) mirroring
-  the family header's meta line.
+- **Consistent mobile Analyse cards.** The family header + expanded variation
+  rows now read as the same card as the individual (flat-view) opening cards:
+  name top-left, **"Games N"** top-right, full-width bar, worded legend ("50%
+  win · 0% draw · 50% loss"). Families keep the disclosure chevron + a "N lines"
+  sub-line (no move list). Extracted the card bar + worded legend into a shared
+  **`PerfBar`** component used by both the flat `.mobileCard` and `FamilyRow`,
+  so they can't drift. `FamilyRow` mobile hides the desktop `DistributionBar`/GP
+  number and shows `PerfBar` + a "Games N" label; desktop layout unchanged.
+  (Supersedes the earlier `.variationMeta` "N games" line.)
 
 **Files:** `OpeningNavigator.tsx`+css, `mobile/MobileDataSurface.tsx`+css,
-`personal/FamilyRow.tsx`+css, three test files (+4 tests). Design-system
-lockstep: preview cards `components-opening-detail-mobile` + `-right-column`
-gained the captions. No token changes. **Verified:** 325 frontend tests green.
+`personal/PerfBar.tsx`+css (new), `personal/FamilyRow.tsx`+css,
+`personal/PersonalOpeningStats.tsx`+css (mobileCard → PerfBar), four test files.
+Design-system lockstep: opening-detail preview cards
+`components-opening-detail-mobile` + `-right-column` gained the captions (the
+Analyse surfaces have no preview cards). No token changes. **Verified:** 325
+frontend tests green; tsc/ESLint/Prettier clean; Playwright screenshot of the
+mobile Analyse dashboard (family + variations) at 390px.
 
 ## Previous Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
 

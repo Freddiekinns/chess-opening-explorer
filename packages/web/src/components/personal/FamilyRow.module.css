@@ -76,9 +76,15 @@
   white-space: nowrap;
 }
 
-/* Games count lives in the GP column on desktop; surfaced in the meta line on
-   mobile where that column is hidden. */
-.metaGames {
+/* "Games" prefix on the count — desktop shows the bare number in the GP
+   column; mobile shows "Games N" top-right like the individual card. */
+.gamesLabel {
+  display: none;
+}
+
+/* The shared PerfBar (card bar + worded legend) is mobile-only; desktop uses
+   the compact DistributionBar in the distribution column. */
+.perfBarWrap {
   display: none;
 }
 
@@ -156,16 +162,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Games-played caption for each variation — surfaced only on mobile, where the
-   right-hand GP column (.variationGames) is hidden. Mirrors .familyMeta. */
-.variationMeta {
-  display: none;
-  font-family: var(--font-family-primary);
-  font-variant-numeric: tabular-nums;
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-}
-
 /* ===== Entrance animation (reuses cardSlideIn from simplified.css) ===== */
 .familyRow {
   animation: cardSlideIn 500ms ease-out backwards;
@@ -176,7 +172,8 @@
   animation-delay: calc(var(--child-index, 0) * 50ms);
 }
 
-/* ===== Mobile: stack the bar full-width beneath the name ===== */
+/* ===== Mobile: each family/variation reads as the individual opening card —
+   name + "Games N" on the top row, PerfBar (bar + worded legend) below ===== */
 @media (max-width: 768px) {
   /* Each family becomes a raised card, matching the flat-view .mobileCard
      items — on mobile there is no carded section wrapper, so bare rows would
@@ -189,43 +186,66 @@
   }
 
   .header {
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-3);
   }
   .left {
-    width: 100%;
-  }
-  .right {
-    width: 100%;
-    padding-left: calc(var(--space-2) + 24px);
-    gap: var(--space-3);
-  }
-  .gamesCount {
-    display: none;
-  }
-  .barCell {
-    width: 100%;
     flex: 1;
+    align-items: center;
+    min-width: 0;
   }
-  .familyMeta {
-    /* Surface games + line count on the meta line since GP is hidden. */
+  .familyName {
+    white-space: normal;
+  }
+
+  /* The right cluster dissolves so its children flow into the header's wrap
+     layout: the games label sits on the top row, the bar wraps full-width. */
+  .right {
+    display: contents;
+  }
+  .gamesCount,
+  .variationGames {
+    display: inline;
+    min-width: 0;
+    padding-top: 2px;
+    font-family: var(--font-family-primary);
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
     color: var(--color-text-secondary);
+    white-space: nowrap;
+    text-align: left;
+    flex-shrink: 0;
   }
-  .metaGames {
+  .gamesLabel {
     display: inline;
   }
-  .variationLink {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-2);
-  }
-  .variationGames {
+  /* Desktop's compact bar hides; PerfBar takes over as the full-width row. */
+  .barCell {
     display: none;
   }
-  .variationMeta {
+  .perfBarWrap {
     display: block;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  /* Variations are the same card, minus the move-list line, nested inside —
+     a hairline separates the header from its variations and each variation. */
+  .variations {
+    padding-bottom: 0;
+  }
+  .variationLink {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-3) var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .variationName {
+    flex: 1;
+    white-space: normal;
   }
 }
 

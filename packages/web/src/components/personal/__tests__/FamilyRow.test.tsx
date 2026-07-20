@@ -130,22 +130,22 @@ describe('FamilyRow', () => {
     expect(screen.getByText('63%')).toBeInTheDocument();
   });
 
-  test('expanded variations surface their games-played count', () => {
+  test('shows a "Games N" count on the family header and each expanded variation', () => {
     renderRow({ isExpanded: true });
-    // Mobile meta line (hidden on desktop via CSS) — Najdorf 6g, Dragon 8g.
-    expect(screen.getByText('6 games')).toBeInTheDocument();
-    expect(screen.getByText('8 games')).toBeInTheDocument();
+    // The "Games" label appears on the header + both variation rows (card style).
+    expect(screen.getAllByText('Games')).toHaveLength(3);
+    // Counts: family 14, Najdorf 6, Dragon 8.
+    expect(screen.getByText('6')).toBeInTheDocument();
+    expect(screen.getByText('8')).toBeInTheDocument();
   });
 
-  test('singularises the variation games count when there is one game', () => {
-    renderRow({
-      isExpanded: true,
-      row: row({
-        variations: [variation({ key: 'v1', name: 'Sicilian: Najdorf', games: 1 })],
-        variation_count: 1,
-      }),
-    });
-    expect(screen.getByText('1 game')).toBeInTheDocument();
+  test('renders a worded W/D/L legend on the family and variation cards', () => {
+    renderRow({ isExpanded: true });
+    // Family: 7W/1D/6L of 14 → 50% / 7% / 43%.
+    expect(screen.getByText('50% win')).toBeInTheDocument();
+    expect(screen.getByText('43% loss')).toBeInTheDocument();
+    // Najdorf variation: 4W/1D/1L of 6 → 67% win.
+    expect(screen.getByText('67% win')).toBeInTheDocument();
   });
 
   test('variation links point at the opening route', () => {

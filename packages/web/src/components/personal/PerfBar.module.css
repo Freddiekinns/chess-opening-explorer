@@ -1,0 +1,79 @@
+/* Shared Analyse-page card bar + worded legend. Values mirror the original
+   inline mobile-card bar so the individual, family, and variation cards are
+   visually identical. */
+.perfBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* W/D/L bar */
+.track {
+  display: flex;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+  gap: 1px;
+}
+
+.win {
+  background: var(--color-perf-win);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.win:first-child {
+  border-radius: 9999px 0 0 9999px;
+}
+
+.draw {
+  background: var(--color-perf-draw);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.loss {
+  background: var(--color-perf-loss);
+  min-width: 3px;
+  transition: width 0.4s ease-out;
+}
+
+.loss:last-child {
+  border-radius: 0 9999px 9999px 0;
+}
+
+/* Labeled percentages */
+.legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.pctWin {
+  color: var(--color-perf-win-text);
+}
+
+.pctDraw {
+  color: var(--color-perf-draw-text);
+}
+
+.pctLoss {
+  color: var(--color-perf-loss-text);
+}
+
+@media (max-width: 480px) {
+  .legend {
+    gap: var(--space-3);
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win,
+  .draw,
+  .loss {
+    transition: none;
+  }
+}

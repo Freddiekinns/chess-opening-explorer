@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import type { FamilyRollupRow } from './familyAggregation';
 import { DistributionBar } from './DistributionBar';
+import { PerfBar } from './PerfBar';
 import styles from './FamilyRow.module.css';
 
 interface Props {
@@ -78,16 +79,23 @@ export const FamilyRow: React.FC<Props> = ({
           <span className={styles.nameCol}>
             <span className={styles.familyName}>{row.display_name}</span>
             <span className={styles.familyMeta}>
-              <span className={styles.metaGames}>{row.games} games · </span>
               {row.variation_count} {lineNoun}
             </span>
           </span>
         </span>
         <span className={styles.right}>
-          <span className={styles.gamesCount}>{row.games}</span>
+          <span className={styles.gamesCount}>
+            <span className={styles.gamesLabel}>Games </span>
+            {row.games}
+          </span>
+          {/* Desktop: compact bar in the GP/distribution columns. */}
           <span className={styles.barCell}>
             <DistributionBar win={row.wins} draw={row.draws} loss={row.losses} games={row.games} />
           </span>
+        </span>
+        {/* Mobile: the shared card bar + worded legend, full-width below. */}
+        <span className={styles.perfBarWrap}>
+          <PerfBar win={row.wins} draw={row.draws} loss={row.losses} games={row.games} />
         </span>
       </button>
 
@@ -103,13 +111,11 @@ export const FamilyRow: React.FC<Props> = ({
                 <span className={styles.variationName}>
                   {variationLabel(v.name, row.display_name)}
                 </span>
-                {/* Mobile-only games count — the desktop GP column
-                    (.variationGames in .right) is hidden at ≤768px. */}
-                <span className={styles.variationMeta}>
-                  {v.games} {v.games === 1 ? 'game' : 'games'}
-                </span>
                 <span className={styles.right}>
-                  <span className={styles.variationGames}>{v.games}</span>
+                  <span className={styles.variationGames}>
+                    <span className={styles.gamesLabel}>Games </span>
+                    {v.games}
+                  </span>
                   <span className={styles.barCell}>
                     <DistributionBar
                       win={v.wins}
@@ -119,6 +125,10 @@ export const FamilyRow: React.FC<Props> = ({
                       compact
                     />
                   </span>
+                </span>
+                {/* Mobile: same card bar + worded legend as the family header. */}
+                <span className={styles.perfBarWrap}>
+                  <PerfBar win={v.wins} draw={v.draws} loss={v.losses} games={v.games} />
                 </span>
               </Link>
             </li>

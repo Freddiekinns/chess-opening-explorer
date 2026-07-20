@@ -139,18 +139,34 @@
   background: var(--surface-elevated);
 }
 
+/* Name + move-list stacked, matching the flat OpeningRow / individual card. */
+.variationNameCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  min-width: 0;
+  flex: 1;
+}
+
 .variationName {
   font-family: var(--font-family-primary);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  min-width: 0;
-  flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .variationLink:hover .variationName {
   color: var(--color-text-primary);
+}
+
+.variationMoves {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .variationGames {
@@ -244,8 +260,14 @@
     border-top: 1px solid var(--border-subtle);
   }
   .variationName {
-    flex: 1;
     white-space: normal;
+  }
+}
+
+/* Match the flat card: the move list drops on the smallest screens. */
+@media (max-width: 480px) {
+  .variationMoves {
+    display: none;
   }
 }
 

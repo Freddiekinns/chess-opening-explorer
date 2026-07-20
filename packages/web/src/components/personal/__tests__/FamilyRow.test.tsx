@@ -11,6 +11,7 @@ const variation = (
   key: 'v1',
   name: 'Sicilian: Najdorf',
   eco: 'B90',
+  moves: '1. e4 c5 2. Nf3 d6',
   games: 6,
   wins: 4,
   draws: 1,
@@ -28,8 +29,24 @@ const row = (overrides: Partial<FamilyRollupRow> = {}): FamilyRollupRow => ({
   score: (7 + 0.5) / 14,
   variation_count: 2,
   variations: [
-    variation({ key: 'v1', name: 'Sicilian: Najdorf', games: 6, wins: 4, draws: 1, losses: 1 }),
-    variation({ key: 'v2', name: 'Sicilian: Dragon', games: 8, wins: 3, draws: 0, losses: 5 }),
+    variation({
+      key: 'v1',
+      name: 'Sicilian: Najdorf',
+      moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6',
+      games: 6,
+      wins: 4,
+      draws: 1,
+      losses: 1,
+    }),
+    variation({
+      key: 'v2',
+      name: 'Sicilian: Dragon',
+      moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6',
+      games: 8,
+      wins: 3,
+      draws: 0,
+      losses: 5,
+    }),
   ],
   best_variation: null,
   weak_variation: null,
@@ -137,6 +154,18 @@ describe('FamilyRow', () => {
     // Counts: family 14, Najdorf 6, Dragon 8.
     expect(screen.getByText('6')).toBeInTheDocument();
     expect(screen.getByText('8')).toBeInTheDocument();
+  });
+
+  test('shows the distinguishing move list for each expanded variation', () => {
+    renderRow({ isExpanded: true });
+    // Sibling variations share their first moves, so the distinguishing tail
+    // (…a6 vs …g6) must be visible — not just the shared opening moves.
+    expect(
+      screen.getByText('1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6')
+    ).toBeInTheDocument();
   });
 
   test('renders a worded W/D/L legend on the family and variation cards', () => {

@@ -63,6 +63,7 @@ export const toAggInput = (o: OpeningAgg): OpeningAggInput => ({
   key: o.fen,
   name: o.name,
   eco: o.eco,
+  moves: o.moves,
   family_id: o.family_id,
   games: o.games,
   wins: o.win,

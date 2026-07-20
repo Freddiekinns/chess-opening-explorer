@@ -4,35 +4,36 @@
 
 ## Current Task: Opening-detail & analyse UI tweaks (branch `claude/opening-details-ui-tweaks-9tddbh`)
 
-Three small UX fixes:
+UX fixes:
 
-- **Popularity captions on both move lists.** The opening book's alternatives
-  list already had a "Most popular alternatives" caption; continuations had
-  none. Added a matching **"Most popular next moves"** sub-label under the
-  continuations heading, on **both** surfaces — desktop `OpeningNavigator`
-  (`.sectionSublabel`, new; both sections now captioned) and mobile
+- **Popularity captions on both move lists.** Added a **"Most popular next
+  moves"** sub-label under the continuations list to parallel the existing "Most
+  popular alternatives", on **both** desktop `OpeningNavigator`
+  (`.sectionSublabel`, new; both sections captioned) and mobile
   `MobileDataSurface` (`.bookSubheading`).
-- **Mobile show-more threshold 5 → 3.** `MobileDataSurface`
-  `ROWS_COLLAPSED_LIMIT` now 3 so continuations/alternatives collapse sooner
-  (desktop `OpeningNavigator` limits unchanged at 5).
-- **Consistent mobile Analyse cards.** The family header + expanded variation
-  rows now read as the same card as the individual (flat-view) opening cards:
-  name top-left, **"Games N"** top-right, full-width bar, worded legend ("50%
-  win · 0% draw · 50% loss"). Families keep the disclosure chevron + a "N lines"
-  sub-line (no move list). Extracted the card bar + worded legend into a shared
-  **`PerfBar`** component used by both the flat `.mobileCard` and `FamilyRow`,
-  so they can't drift. `FamilyRow` mobile hides the desktop `DistributionBar`/GP
-  number and shows `PerfBar` + a "Games N" label; desktop layout unchanged.
-  (Supersedes the earlier `.variationMeta` "N games" line.)
+- **Mobile show-more threshold 5 → 3**
+  (`MobileDataSurface ROWS_COLLAPSED_LIMIT`; desktop unchanged).
+- **Consistent mobile Analyse cards.** Family header + expanded variations now
+  read as the same card as the flat opening cards: name top-left, **"Games N"**
+  top-right, full-width bar, worded legend. Extracted a shared **`PerfBar`**
+  (bar + worded legend) used by both `.mobileCard` and `FamilyRow` so they can't
+  drift; `FamilyRow` mobile hides the desktop `DistributionBar`/GP number,
+  desktop unchanged.
+- **Move list on family variations.** Threaded `moves` through
+  `OpeningAggInput`/`FamilyVariationRow` (was dropped by `toAggInput`) and
+  render it via `formatDistinguishingMoves` (distinguishing tail, like the
+  featured cards) — sibling variations share opening moves, so the tail
+  distinguishes. Reads distinctly on mobile's wide column; the narrow desktop
+  2-col truncates to the shared prefix (name carries the distinction). Drops at
+  ≤480px like the flat card.
 
-**Files:** `OpeningNavigator.tsx`+css, `mobile/MobileDataSurface.tsx`+css,
-`personal/PerfBar.tsx`+css (new), `personal/FamilyRow.tsx`+css,
-`personal/PersonalOpeningStats.tsx`+css (mobileCard → PerfBar), four test files.
-Design-system lockstep: opening-detail preview cards
-`components-opening-detail-mobile` + `-right-column` gained the captions (the
-Analyse surfaces have no preview cards). No token changes. **Verified:** 325
-frontend tests green; tsc/ESLint/Prettier clean; Playwright screenshot of the
-mobile Analyse dashboard (family + variations) at 390px.
+**Files:** `OpeningNavigator`, `mobile/MobileDataSurface`, `personal/PerfBar`
+(new), `personal/FamilyRow`, `personal/PersonalOpeningStats` (mobileCard →
+PerfBar), `familyAggregation.ts` + `personalStatsLib.ts` (`moves`), four test
+files (+ css). Design-system lockstep: opening-detail preview cards gained the
+captions (Analyse surfaces have no preview cards). No token changes.
+**Verified:** 326 frontend tests green; tsc/ESLint/Prettier clean; Playwright
+screenshots of the Analyse dashboard on mobile + desktop.
 
 ## Previous Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
 

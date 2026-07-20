@@ -278,6 +278,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
               className={`${styles.section} ${breadcrumbAncestors.length === 0 ? styles.sectionFirst : ''}`}
             >
               <div className={styles.sectionLabel}>Next moves</div>
+              <div className={styles.sectionSublabel}>Most popular next moves</div>
               <MoveRows
                 rows={visibleRows}
                 ply={pliesPlayed}
@@ -310,6 +311,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
           return (
             <div className={styles.section}>
               <div className={styles.sectionLabel}>{alternativesLabel}</div>
+              <div className={styles.sectionSublabel}>Most popular alternatives</div>
               <MoveRows
                 rows={visibleRows}
                 ply={currentMoveIdx}

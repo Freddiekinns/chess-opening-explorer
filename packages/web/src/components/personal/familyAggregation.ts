@@ -2,6 +2,7 @@ export interface OpeningAggInput {
   key: string;
   name: string;
   eco: string;
+  moves?: string;
   family_id?: string;
   family_display_name?: string | null;
   games: number;
@@ -19,6 +20,7 @@ export interface FamilyVariationRow {
   key: string;
   name: string;
   eco: string;
+  moves?: string;
   games: number;
   wins: number;
   draws: number;
@@ -142,6 +144,7 @@ export function groupByFamily(
       key: row.key,
       name: row.name,
       eco: row.eco,
+      moves: row.moves,
       games: row.games,
       wins: row.wins,
       draws: row.draws,

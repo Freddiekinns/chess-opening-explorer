@@ -76,9 +76,15 @@
   white-space: nowrap;
 }
 
-/* Games count lives in the GP column on desktop; surfaced in the meta line on
-   mobile where that column is hidden. */
-.metaGames {
+/* "Games" prefix on the count — desktop shows the bare number in the GP
+   column; mobile shows "Games N" top-right like the individual card. */
+.gamesLabel {
+  display: none;
+}
+
+/* The shared PerfBar (card bar + worded legend) is mobile-only; desktop uses
+   the compact DistributionBar in the distribution column. */
+.perfBarWrap {
   display: none;
 }
 
@@ -133,23 +139,39 @@
   background: var(--surface-elevated);
 }
 
-.variationName {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+/* Name + move-list stacked, matching the flat OpeningRow / individual card. */
+.variationNameCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
   min-width: 0;
   flex: 1;
+}
+
+/* Matches the flat OpeningRow's .openingName (size/weight/colour) so the two
+   lists read as one system. OpeningNameSplit tints family/variation within. */
+.variationName {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.variationLink:hover .variationName {
-  color: var(--color-text-primary);
+
+.variationMoves {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .variationGames {
   font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
   min-width: 36px;
   text-align: right;
@@ -166,7 +188,8 @@
   animation-delay: calc(var(--child-index, 0) * 50ms);
 }
 
-/* ===== Mobile: stack the bar full-width beneath the name ===== */
+/* ===== Mobile: each family/variation reads as the individual opening card —
+   name + "Games N" on the top row, PerfBar (bar + worded legend) below ===== */
 @media (max-width: 768px) {
   /* Each family becomes a raised card, matching the flat-view .mobileCard
      items — on mobile there is no carded section wrapper, so bare rows would
@@ -179,39 +202,77 @@
   }
 
   .header {
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-3);
   }
   .left {
-    width: 100%;
-  }
-  .right {
-    width: 100%;
-    padding-left: calc(var(--space-2) + 24px);
-    gap: var(--space-3);
-  }
-  .gamesCount {
-    display: none;
-  }
-  .barCell {
-    width: 100%;
     flex: 1;
+    align-items: center;
+    min-width: 0;
   }
-  .familyMeta {
-    /* Surface games + line count on the meta line since GP is hidden. */
+  /* Match the flat individual card's name (.mobileCardName: 15px/600) so the
+     family header, variations, and flat cards read at one scale. */
+  .familyName {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: normal;
+  }
+
+  /* The right cluster dissolves so its children flow into the header's wrap
+     layout: the games label sits on the top row, the bar wraps full-width. */
+  .right {
+    display: contents;
+  }
+  .gamesCount,
+  .variationGames {
+    display: inline;
+    min-width: 0;
+    padding-top: 2px;
+    font-family: var(--font-family-primary);
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
     color: var(--color-text-secondary);
+    white-space: nowrap;
+    text-align: left;
+    flex-shrink: 0;
   }
-  .metaGames {
+  .gamesLabel {
     display: inline;
   }
-  .variationLink {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-2);
+  /* Desktop's compact bar hides; PerfBar takes over as the full-width row. */
+  .barCell {
+    display: none;
   }
-  .variationGames {
+  .perfBarWrap {
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  /* Variations are the same card, minus the move-list line, nested inside —
+     a hairline separates the header from its variations and each variation. */
+  .variations {
+    padding-bottom: 0;
+  }
+  .variationLink {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-3) var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .variationName {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: normal;
+  }
+}
+
+/* Match the flat card: the move list drops on the smallest screens. */
+@media (max-width: 480px) {
+  .variationMoves {
     display: none;
   }
 }

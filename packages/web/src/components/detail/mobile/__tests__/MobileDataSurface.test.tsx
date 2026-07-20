@@ -142,6 +142,7 @@ describe('MobileDataSurface', () => {
   test('renders continuations and anchored alternatives with book rows as links', () => {
     renderSurface();
     expect(screen.getByText('Continuations')).toBeInTheDocument();
+    expect(screen.getByText('Most popular next moves')).toBeInTheDocument();
     expect(screen.getByText('Instead of 4.Nxd5')).toBeInTheDocument();
     expect(screen.getByText('Most popular alternatives')).toBeInTheDocument();
 

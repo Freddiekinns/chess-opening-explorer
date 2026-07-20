@@ -63,6 +63,7 @@ export const toAggInput = (o: OpeningAgg): OpeningAggInput => ({
   key: o.fen,
   name: o.name,
   eco: o.eco,
+  moves: o.moves,
   family_id: o.family_id,
   games: o.games,
   wins: o.win,
@@ -194,20 +195,6 @@ export function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
   // Select by highest loss rate so "Needs work" matches the loss rate the card
   // displays (lowest win rate could flag a safe, drawish line as a weakness).
   return qualified.reduce((worst, curr) => (getLossRate(curr) > getLossRate(worst) ? curr : worst));
-}
-
-export function getOpeningMovesDisplay(moves: string): string {
-  const trimmedMoves = moves.trim();
-  if (!trimmedMoves) return '';
-
-  const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
-  const moveMatches = trimmedMoves.match(movePattern) || [];
-
-  if (moveMatches.length > 0) {
-    return moveMatches.slice(0, 2).join(' ');
-  }
-
-  return trimmedMoves;
 }
 
 // Featured cards must distinguish sibling variations ("Vienna Gambit: 3...d6"

@@ -11,6 +11,7 @@ const variation = (
   key: 'v1',
   name: 'Sicilian: Najdorf',
   eco: 'B90',
+  moves: '1. e4 c5 2. Nf3 d6',
   games: 6,
   wins: 4,
   draws: 1,
@@ -28,8 +29,24 @@ const row = (overrides: Partial<FamilyRollupRow> = {}): FamilyRollupRow => ({
   score: (7 + 0.5) / 14,
   variation_count: 2,
   variations: [
-    variation({ key: 'v1', name: 'Sicilian: Najdorf', games: 6, wins: 4, draws: 1, losses: 1 }),
-    variation({ key: 'v2', name: 'Sicilian: Dragon', games: 8, wins: 3, draws: 0, losses: 5 }),
+    variation({
+      key: 'v1',
+      name: 'Sicilian: Najdorf',
+      moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6',
+      games: 6,
+      wins: 4,
+      draws: 1,
+      losses: 1,
+    }),
+    variation({
+      key: 'v2',
+      name: 'Sicilian: Dragon',
+      moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6',
+      games: 8,
+      wins: 3,
+      draws: 0,
+      losses: 5,
+    }),
   ],
   best_variation: null,
   weak_variation: null,
@@ -128,6 +145,36 @@ describe('FamilyRow', () => {
     expect(screen.getByText('67%')).toBeInTheDocument();
     // Dragon: 8g / 3w 0d 5l → 38% / 0% / 63%
     expect(screen.getByText('63%')).toBeInTheDocument();
+  });
+
+  test('shows a "Games N" count on the family header and each expanded variation', () => {
+    renderRow({ isExpanded: true });
+    // The "Games" label appears on the header + both variation rows (card style).
+    expect(screen.getAllByText('Games')).toHaveLength(3);
+    // Counts: family 14, Najdorf 6, Dragon 8.
+    expect(screen.getByText('6')).toBeInTheDocument();
+    expect(screen.getByText('8')).toBeInTheDocument();
+  });
+
+  test('shows the distinguishing move list for each expanded variation', () => {
+    renderRow({ isExpanded: true });
+    // Sibling variations share their first moves, so the distinguishing tail
+    // (…a6 vs …g6) must be visible — not just the shared opening moves.
+    expect(
+      screen.getByText('1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6')
+    ).toBeInTheDocument();
+  });
+
+  test('renders a worded W/D/L legend on the family and variation cards', () => {
+    renderRow({ isExpanded: true });
+    // Family: 7W/1D/6L of 14 → 50% / 7% / 43%.
+    expect(screen.getByText('50% win')).toBeInTheDocument();
+    expect(screen.getByText('43% loss')).toBeInTheDocument();
+    // Najdorf variation: 4W/1D/1L of 6 → 67% win.
+    expect(screen.getByText('67% win')).toBeInTheDocument();
   });
 
   test('variation links point at the opening route', () => {

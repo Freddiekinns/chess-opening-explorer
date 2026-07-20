@@ -2,6 +2,18 @@
 
 ## What's Done (newest first)
 
+- **Opening-detail & analyse UI tweaks** (2026-07-20, branch
+  `claude/opening-details-ui-tweaks-9tddbh`): "Most popular next moves" caption
+  under continuations (desktop + mobile, parallels "Most popular alternatives");
+  mobile show-more threshold 5 → 3; and unified the mobile Analyse cards — the
+  family header + expanded variations now match the individual opening card
+  (name + "Games N" top-right + bar + worded legend) via a new shared `PerfBar`
+  component, and variation rows show their move list. Then aligned the grouped
+  list to the flat list's styling — variation names use the same
+  `OpeningNameSplit` treatment/size, and both lists render the full move line
+  (was first-two-pairs, which hid the move that names the opening; full line is
+  shown as space allows). 326 frontend tests green; verified with Playwright
+  screenshots (mobile + desktop).
 - **Opening detail mobile overhaul** (2026-07-18, PR #53): implemented Claude
   Design 2a "one data surface" at ≤767px — compact header + save toast, single
   board control row with inline move strip and a FEN bottom sheet, clamped
@@ -101,35 +113,12 @@
 - **Opening Family Rollups** (2026-06-06): Analyse groups openings by family
   with expandable W/D/L rows (shared `DistributionBar`), per-side group/sort
   controls, 28-family taxonomy + `GET /api/families`. (History in `archive.md`.)
-- **TASK008 Rewrite — Feature Roadmap** (2026-05-04): UX roadmap of 12
-  features + monetisation section + prioritised top three.
-- **Opening Detail Layout — Sticky Board + FEN Polish** (2026-04-19): Sticky
-  left column; FEN in DM Sans 13px.
-- **Primary Domain Migration** (2026-03-29): SEO outputs → `openingbook.xyz`;
-  shared site config, canonical/OG/JSON-LD, robots/sitemap, vercel.app→.xyz.
-- **Mobile Footer + Landing Card Polish** (2026-03-29): Fixed footer/tab-bar
-  overlap and square mobile card thumbnails.
-- **TASK016 Phase B — Design Token Migration** (2026-03-28): "Warm Editorial
-  Dark" applied; ~80 hardcoded colours → tokens; Analyse bars use result
-  colours.
-- **TASK016 — Design Overhaul** (2026-03-21): Top bar, bottom tabs, detail
-  restructure, home + Analyse mobile redesign. Chunk 9 (polish) remaining.
-- **TASK015 — Opening Tree Navigation** (2026-03-18): Vertical indented tree;
-  backend tree-service + 2 routes; ARIA keyboard nav.
-- **User Journeys Doc** (2026-03-19): `user-journeys.md` as source of truth.
-- **Video Overindexing Fix** (2026-03-16): 2-word alias min, cross-opening title
-  check, minMatchScore 40→60.
-- **TASK012 — Video Pipeline Overhaul** (2026-03-15): Unified 3-mode pipeline;
-  1,700+ videos.
-- **TASK011 — Search Bandwidth & Vercel Limits** (2026-03-14): Removed 24.8 MB
-  `/all` preload; server-side search + CDN cache headers.
-- **TASK010 — Local Repertoire** (2026-03-13): localStorage "My Repertoire";
-  useSyncExternalStore cross-tab sync.
-- **TASK009 — SEO** (2026-02-28): Edge Middleware + React 19 metadata + JSON-LD
-  for 12,377 pages.
-- **TASK007 — Mobile Overflow Fix** (2026-02-23): CSS Grid `minmax(0,1fr)`;
-  Playwright regression test.
-- Earlier work (Course Discovery, Practice Mode, Personal Explorer, PGN ID,
+- Older work through 2026-05 (TASK008 feature roadmap; sticky-board detail
+  layout; primary-domain migration to `openingbook.xyz`; mobile footer/card
+  polish; TASK016 design overhaul + token migration; TASK015 opening-tree nav;
+  user-journeys doc; video overindexing fix; TASK012 video pipeline; TASK011
+  search bandwidth; TASK010 local repertoire; TASK009 SEO; TASK007 mobile
+  overflow; plus Course Discovery, Practice Mode, Personal Explorer, PGN ID,
   related-openings UI, footer standardisation, sort controls, coverage
   reporting, state persistence, test cleanups) — see `archive.md`.
 

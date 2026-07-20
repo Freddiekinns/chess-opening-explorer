@@ -44,8 +44,19 @@
   font-size: var(--text-md);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
+  /* Sits directly above its .sectionSublabel — the sublabel owns the space
+     before the rows. */
+  margin-bottom: var(--space-1);
   line-height: 1;
+}
+
+/* Popularity caption under each section label ("Most popular next moves" /
+   "Most popular alternatives") — clarifies the rows are ordered by play. */
+.sectionSublabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  line-height: 1.2;
 }
 
 /* Stagger animation for sections */

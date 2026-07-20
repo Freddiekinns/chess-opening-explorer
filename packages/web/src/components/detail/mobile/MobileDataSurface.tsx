@@ -25,7 +25,7 @@ import styles from './MobileDataSurface.module.css';
  */
 
 const MIN_LIVE_SAMPLE = 100;
-const ROWS_COLLAPSED_LIMIT = 5;
+const ROWS_COLLAPSED_LIMIT = 3;
 
 interface PopularityStats {
   games_analyzed?: number;
@@ -388,6 +388,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
           {childRows.length > 0 && (
             <>
               <div className={styles.bookHeading}>Continuations</div>
+              <div className={styles.bookSubheading}>Most popular next moves</div>
               <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
             </>
           )}

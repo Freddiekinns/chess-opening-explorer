@@ -103,6 +103,11 @@ export const FamilyRow: React.FC<Props> = ({
                 <span className={styles.variationName}>
                   {variationLabel(v.name, row.display_name)}
                 </span>
+                {/* Mobile-only games count — the desktop GP column
+                    (.variationGames in .right) is hidden at ≤768px. */}
+                <span className={styles.variationMeta}>
+                  {v.games} {v.games === 1 ? 'game' : 'games'}
+                </span>
                 <span className={styles.right}>
                   <span className={styles.variationGames}>{v.games}</span>
                   <span className={styles.barCell}>

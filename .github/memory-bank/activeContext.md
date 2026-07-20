@@ -1,55 +1,39 @@
 # Active Context
 
-**Date:** 2026-07-18
+**Date:** 2026-07-20
 
-## Current Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
+## Current Task: Opening-detail & analyse UI tweaks (branch `claude/opening-details-ui-tweaks-9tddbh`)
 
-Implemented Claude Design handoff **"Opening Details Mobile 2a — one data
-surface"** at ≤767px. A `useIsMobile()` matchMedia hook (safe desktop default in
-jsdom/SSR) branches `OpeningDetailPage` into a mobile tree (AD-012 in
-context.md); desktop keeps its two-column layout.
+Three small UX fixes:
 
-**Mobile layout (top → bottom):**
+- **Popularity captions on both move lists.** The opening book's alternatives
+  list already had a "Most popular alternatives" caption; continuations had
+  none. Added a matching **"Most popular next moves"** sub-label under the
+  continuations heading, on **both** surfaces — desktop `OpeningNavigator`
+  (`.sectionSublabel`, new; both sections now captioned) and mobile
+  `MobileDataSurface` (`.bookSubheading`).
+- **Mobile show-more threshold 5 → 3.** `MobileDataSurface`
+  `ROWS_COLLAPSED_LIMIT` now 3 so continuations/alternatives collapse sooner
+  (desktop `OpeningNavigator` limits unchanged at 5).
+- **Per-variation games count on mobile analyse.** Expanded `FamilyRow`
+  variations hid their games count at ≤768px (`.variationGames` display:none);
+  added a mobile-only `.variationMeta` line ("N games", singularised) mirroring
+  the family header's meta line.
 
-- Compact left-aligned header, swipeable tag row, star + "Saved to repertoire"
-  toast; board card with a control row (`‹‹ ‹ ›`, Practice, `…` →
-  **PositionSheet** bottom sheet with FEN/Copy/Analyse) above a full-width move
-  row — a horizontal carousel (auto-scrolled to the current move) that expands
-  to the whole line as a wrapped notation grid (`renderMoveNodes` shared by
-  both).
-- **Editorial reading zone**: Overview + Common plans share sentence-case
-  section headings over un-carded left-rule prose (matched font/voice); Overview
-  has a 4-line clamp + Read more. The data surface is the page's one card.
-- **MobileDataSurface**: W/D/L gradient strip, sticky scrollable LevelLens pills
-  (card uses `overflow: clip` so sticky works), level stats with loading dim +
-  snapshot fallback (new `useExplorerQuery` exposes loading/failed), collapsible
-  breadcrumb, Continuations + "Instead of X" stacked rows (shared rules
-  extracted to `lib/openingBook.ts`).
-- **MobileMasterGames** collapsed accordion; CommonPlans `mobileGroups` layout
-  (un-carded left-rule sub-sections); **MobileResources** accordion + swipeable
-  search pills.
-- **SearchOverlay** replaces TopBar's bare mobile search: empty state = Recent
-  (`lib/recentOpenings.ts`, recorded on detail views) + My repertoire (cap 5) +
-  Surprise me; live results with Searching…/no-results states. Legacy unused
-  `MobileSearchOverlay` + global CSS removed.
+**Files:** `OpeningNavigator.tsx`+css, `mobile/MobileDataSurface.tsx`+css,
+`personal/FamilyRow.tsx`+css, three test files (+4 tests). Design-system
+lockstep: preview cards `components-opening-detail-mobile` + `-right-column`
+gained the captions. No token changes. **Verified:** 325 frontend tests green.
 
-**Also in this PR:** desktop right column reordered Overview → stats → book
-(lens sits directly above the data it governs); scroll fix — `ScrollToTop` on
-route change + move strip scrolls its container horizontally only
-(`scrollIntoView` was pulling the page down to the board on load).
+## Previous Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
 
-**Files:** `components/detail/mobile/` (4 components), `SearchOverlay`,
-`useMediaQuery`, `useExplorerQuery`, `openingBook.ts`, `recentOpenings.ts`,
-LevelLens `scrollable`, CommonPlans `mobileGroups`, App `ScrollToTop`, page +
-css. Design-system lockstep: preview cards `components-opening-detail-mobile`
-(new) + right-column (reordered), 2a mock in `project/explorations/`. No token
-changes. Docs: user-journeys (mobile experience + search overlay), context.md
-AD-012.
-
-**Verified:** 323 frontend tests (35 new); tsc/ESLint/Prettier clean; Playwright
-at 390/320/1280px incl. search overlay states and scroll-to-top.
-
-## Previous Task: Mobile landing filter UI fix (merged, PR #52)
-
-Category filter collapses into a `CategoryFilter` dropdown at ≤767px; level
-stays a swipeable pill row. Desktop unchanged.
+Claude Design "Opening Details Mobile 2a — one data surface" at ≤767px:
+`useIsMobile()` matchMedia hook branches `OpeningDetailPage` into a mobile tree
+(AD-012), desktop keeps its two columns. Mobile = compact header + save toast,
+board control row with inline move strip + **PositionSheet** FEN sheet, clamped
+editorial Overview/plans, one **MobileDataSurface** card (sticky level pills +
+stats + breadcrumb + Continuations/alternatives), master-games/resources
+accordions, and a full-screen **SearchOverlay** (recents + repertoire + surprise
+me). Also: desktop right column reordered Overview → stats → book; scroll fix
+(`ScrollToTop` + horizontal-only move-strip scroll). 323 frontend tests (35
+new). **Full detail in `archive.md`.**

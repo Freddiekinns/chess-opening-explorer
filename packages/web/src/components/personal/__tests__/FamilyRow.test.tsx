@@ -130,6 +130,24 @@ describe('FamilyRow', () => {
     expect(screen.getByText('63%')).toBeInTheDocument();
   });
 
+  test('expanded variations surface their games-played count', () => {
+    renderRow({ isExpanded: true });
+    // Mobile meta line (hidden on desktop via CSS) — Najdorf 6g, Dragon 8g.
+    expect(screen.getByText('6 games')).toBeInTheDocument();
+    expect(screen.getByText('8 games')).toBeInTheDocument();
+  });
+
+  test('singularises the variation games count when there is one game', () => {
+    renderRow({
+      isExpanded: true,
+      row: row({
+        variations: [variation({ key: 'v1', name: 'Sicilian: Najdorf', games: 1 })],
+        variation_count: 1,
+      }),
+    });
+    expect(screen.getByText('1 game')).toBeInTheDocument();
+  });
+
   test('variation links point at the opening route', () => {
     renderRow({ isExpanded: true, openingLink: (key) => `/opening/${key}` });
     expect(screen.getByRole('link', { name: /Najdorf/ })).toHaveAttribute('href', '/opening/v1');

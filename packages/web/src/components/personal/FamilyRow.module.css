@@ -156,6 +156,16 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Games-played caption for each variation — surfaced only on mobile, where the
+   right-hand GP column (.variationGames) is hidden. Mirrors .familyMeta. */
+.variationMeta {
+  display: none;
+  font-family: var(--font-family-primary);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
 /* ===== Entrance animation (reuses cardSlideIn from simplified.css) ===== */
 .familyRow {
   animation: cardSlideIn 500ms ease-out backwards;
@@ -213,6 +223,9 @@
   }
   .variationGames {
     display: none;
+  }
+  .variationMeta {
+    display: block;
   }
 }
 

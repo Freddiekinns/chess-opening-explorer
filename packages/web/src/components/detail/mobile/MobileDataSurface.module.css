@@ -253,12 +253,13 @@
   font-size: var(--text-sm);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-2);
+  /* Sits directly above its .bookSubheading — tight gap, subheading owns the
+     space before the rows. */
+  margin-bottom: 2px;
 }
 
 .bookHeadingAlt {
   margin-top: var(--space-4);
-  margin-bottom: 2px;
 }
 
 .bookSubheading {

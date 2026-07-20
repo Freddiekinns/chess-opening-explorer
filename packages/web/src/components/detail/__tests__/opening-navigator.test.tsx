@@ -175,6 +175,9 @@ describe('OpeningNavigator', () => {
 
     expect(screen.getByText('Next moves')).toBeInTheDocument();
     expect(screen.getByText('Instead of 1...e6')).toBeInTheDocument();
+    // Popularity captions clarify each list is ordered by how often moves are played.
+    expect(screen.getByText('Most popular next moves')).toBeInTheDocument();
+    expect(screen.getByText('Most popular alternatives')).toBeInTheDocument();
   });
 
   describe('with live explorer data', () => {

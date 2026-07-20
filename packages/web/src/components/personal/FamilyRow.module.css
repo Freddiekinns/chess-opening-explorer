@@ -171,7 +171,7 @@
 
 .variationGames {
   font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
   min-width: 36px;
   text-align: right;
@@ -212,7 +212,11 @@
     align-items: center;
     min-width: 0;
   }
+  /* Match the flat individual card's name (.mobileCardName: 15px/600) so the
+     family header, variations, and flat cards read at one scale. */
   .familyName {
+    font-size: 15px;
+    font-weight: 600;
     white-space: normal;
   }
 
@@ -260,6 +264,8 @@
     border-top: 1px solid var(--border-subtle);
   }
   .variationName {
+    font-size: 15px;
+    font-weight: 600;
     white-space: normal;
   }
 }

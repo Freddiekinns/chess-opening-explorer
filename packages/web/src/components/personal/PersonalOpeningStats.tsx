@@ -10,7 +10,6 @@ import {
   findWeakestOpening,
   formatDistinguishingMoves,
   getLossRate,
-  getOpeningMovesDisplay,
   getWinRate,
   sortAgg,
   readSavedFormState,
@@ -540,11 +539,7 @@ export const PersonalOpeningStats: React.FC<{
                           <div className={styles.mobileCardHead}>
                             <div className={styles.mobileCardNameCol}>
                               <OpeningNameSplit name={o.name} className={styles.mobileCardName} />
-                              {getOpeningMovesDisplay(o.moves) && (
-                                <span className={styles.mobileCardMoves}>
-                                  {getOpeningMovesDisplay(o.moves)}
-                                </span>
-                              )}
+                              {o.moves && <span className={styles.mobileCardMoves}>{o.moves}</span>}
                             </div>
                             <span className={styles.mobileCardGames}>Games {o.games}</span>
                           </div>

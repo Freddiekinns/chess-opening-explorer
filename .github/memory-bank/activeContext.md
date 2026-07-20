@@ -19,21 +19,22 @@ UX fixes:
   (bar + worded legend) used by both `.mobileCard` and `FamilyRow` so they can't
   drift; `FamilyRow` mobile hides the desktop `DistributionBar`/GP number,
   desktop unchanged.
-- **Move list on family variations.** Threaded `moves` through
-  `OpeningAggInput`/`FamilyVariationRow` (was dropped by `toAggInput`) and
-  render it via `formatDistinguishingMoves` (distinguishing tail, like the
-  featured cards) — sibling variations share opening moves, so the tail
-  distinguishes. Reads distinctly on mobile's wide column; the narrow desktop
-  2-col truncates to the shared prefix (name carries the distinction). Drops at
-  ≤480px like the flat card.
+- **Move list + name styling aligned across both lists.** Threaded `moves`
+  through `OpeningAggInput`/`FamilyVariationRow` (dropped by `toAggInput`) so
+  variations show a move list; aligned the grouped list to the flat rows —
+  variation names use the same `OpeningNameSplit` treatment/size (family
+  stripped, it's the header), and **both** lists render the **full** move line
+  (was first-two-pairs, which hid the naming move) shown as space allows. Deep
+  lines still truncate on the narrow desktop 2-col (width limit; mobile shows
+  them full). Removed dead `getOpeningMovesDisplay`; a `direction:rtl`
+  left-truncate was tried + reverted (mangled the notation).
 
 **Files:** `OpeningNavigator`, `mobile/MobileDataSurface`, `personal/PerfBar`
-(new), `personal/FamilyRow`, `personal/PersonalOpeningStats` (mobileCard →
-PerfBar), `familyAggregation.ts` + `personalStatsLib.ts` (`moves`), four test
-files (+ css). Design-system lockstep: opening-detail preview cards gained the
-captions (Analyse surfaces have no preview cards). No token changes.
-**Verified:** 326 frontend tests green; tsc/ESLint/Prettier clean; Playwright
-screenshots of the Analyse dashboard on mobile + desktop.
+(new), `FamilyRow`, `OpeningRow`, `PersonalOpeningStats`,
+`familyAggregation.ts` + `personalStatsLib.ts` + css/tests. Design-system
+lockstep: opening-detail preview cards gained the captions (Analyse surfaces
+have no preview cards). No token changes. **Verified:** 326 frontend tests
+green; tsc/ESLint/Prettier clean; Playwright screenshots (mobile + desktop).
 
 ## Previous Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
 

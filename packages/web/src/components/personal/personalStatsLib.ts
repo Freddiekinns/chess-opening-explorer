@@ -197,20 +197,6 @@ export function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
   return qualified.reduce((worst, curr) => (getLossRate(curr) > getLossRate(worst) ? curr : worst));
 }
 
-export function getOpeningMovesDisplay(moves: string): string {
-  const trimmedMoves = moves.trim();
-  if (!trimmedMoves) return '';
-
-  const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
-  const moveMatches = trimmedMoves.match(movePattern) || [];
-
-  if (moveMatches.length > 0) {
-    return moveMatches.slice(0, 2).join(' ');
-  }
-
-  return trimmedMoves;
-}
-
 // Featured cards must distinguish sibling variations ("Vienna Gambit: 3...d6"
 // vs "Vienna Game: Vienna Gambit"). Sibling lines share their first moves, so
 // when the line is too long keep the tail — that's the distinguishing part.

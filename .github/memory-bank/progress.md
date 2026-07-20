@@ -8,9 +8,12 @@
   mobile show-more threshold 5 → 3; and unified the mobile Analyse cards — the
   family header + expanded variations now match the individual opening card
   (name + "Games N" top-right + bar + worded legend) via a new shared `PerfBar`
-  component, and variation rows show their move list (distinguishing tail,
-  threaded `moves` through the family aggregation). 326 frontend tests green;
-  verified with Playwright screenshots (mobile + desktop).
+  component, and variation rows show their move list. Then aligned the grouped
+  list to the flat list's styling — variation names use the same
+  `OpeningNameSplit` treatment/size, and both lists render the full move line
+  (was first-two-pairs, which hid the move that names the opening; full line is
+  shown as space allows). 326 frontend tests green; verified with Playwright
+  screenshots (mobile + desktop).
 - **Opening detail mobile overhaul** (2026-07-18, PR #53): implemented Claude
   Design 2a "one data surface" at ≤767px — compact header + save toast, single
   board control row with inline move strip and a FEN bottom sheet, clamped

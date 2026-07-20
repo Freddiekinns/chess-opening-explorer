@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  getOpeningMovesDisplay,
-  normalizeUsername,
-  type OpeningAgg,
-  type Platform,
-} from './personalStatsLib';
+import { normalizeUsername, type OpeningAgg, type Platform } from './personalStatsLib';
 import { DistributionBar } from './DistributionBar';
 import styles from './PersonalOpeningStats.module.css';
 
@@ -37,7 +32,6 @@ export const OpeningRow: React.FC<{
   index: number;
 }> = ({ opening, platform, username, index }) => {
   const delay = Math.min(index * 30, 300);
-  const openingMoves = getOpeningMovesDisplay(opening.moves);
 
   return (
     <Link
@@ -47,7 +41,7 @@ export const OpeningRow: React.FC<{
     >
       <div className={styles.openingRowLeft}>
         <OpeningNameSplit name={opening.name} className={styles.openingName} />
-        {openingMoves && <span className={styles.openingMoves}>{openingMoves}</span>}
+        {opening.moves && <span className={styles.openingMoves}>{opening.moves}</span>}
       </div>
 
       {/* Desktop: inline GP + bar (this row only renders in the desktop

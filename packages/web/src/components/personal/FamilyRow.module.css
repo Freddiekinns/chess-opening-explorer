@@ -148,16 +148,16 @@
   flex: 1;
 }
 
+/* Matches the flat OpeningRow's .openingName (size/weight/colour) so the two
+   lists read as one system. OpeningNameSplit tints family/variation within. */
 .variationName {
   font-family: var(--font-family-primary);
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.variationLink:hover .variationName {
-  color: var(--color-text-primary);
 }
 
 .variationMoves {

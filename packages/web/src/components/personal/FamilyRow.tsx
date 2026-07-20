@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import type { FamilyRollupRow } from './familyAggregation';
 import { DistributionBar } from './DistributionBar';
 import { PerfBar } from './PerfBar';
-import { formatDistinguishingMoves } from './personalStatsLib';
+import { OpeningNameSplit } from './OpeningRow';
 import styles from './FamilyRow.module.css';
 
 interface Props {
@@ -110,17 +110,15 @@ export const FamilyRow: React.FC<Props> = ({
             >
               <Link className={styles.variationLink} to={openingLink(v.key)}>
                 <span className={styles.variationNameCol}>
-                  <span className={styles.variationName}>
-                    {variationLabel(v.name, row.display_name)}
-                  </span>
-                  {/* Distinguishing tail (not the shared first moves) so sibling
-                      variations in a family read differently — same formatter as
-                      the featured Top-performing / Needs-work cards. */}
-                  {v.moves && formatDistinguishingMoves(v.moves) && (
-                    <span className={styles.variationMoves}>
-                      {formatDistinguishingMoves(v.moves)}
-                    </span>
-                  )}
+                  {/* Same name treatment as the flat OpeningRow (family:variation
+                      colour split); the family is stripped — it's the header. */}
+                  <OpeningNameSplit
+                    name={variationLabel(v.name, row.display_name)}
+                    className={styles.variationName}
+                  />
+                  {/* Full line, left-truncated in CSS so the defining last move
+                      (the tail) stays visible instead of being cut off. */}
+                  {v.moves && <span className={styles.variationMoves}>{v.moves}</span>}
                 </span>
                 <span className={styles.right}>
                   <span className={styles.variationGames}>

@@ -203,6 +203,18 @@ so the displayed order is never arbitrary.
   QGD Exchange pages via the shared word "Exchange". Multi-opening titles
   ("Owen's Defense + Ruy Lopez") stay eligible for every compatible family they
   name.
+- **Boundary + modifier-aware name matching** (`findPhrase`): opening names only
+  match on word boundaries — "accelerated dragon" never matches inside
+  "Hyperaccelerated Dragon". Hyphenated compounds still expose their parts
+  ("smith" matches in "Smith-Morra"); sibling protection comes from the modifier
+  check: a variation word found only behind a foreign prefix modifier
+  (`config/video_matching.json` → `variation_modifiers`: accelerated,
+  hyperaccelerated, semi, anti, reversed, …) marks a **sibling variation** and
+  the match is rejected outright — "The Accelerated Dragon" is rejected from the
+  plain Dragon page, "Semi-Slav" titles from pure Slav pages, and vice versa.
+  Diacritics are normalized ("Maróczy" matches "maroczy"), a trailing s/d is
+  tolerated ("Advanced" counts for "Advance Variation" pages), and the "Acc."
+  title shorthand expands to "accelerated".
 - **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
   have 2+ words (prevents "Accepted" matching everything); bare shared variation
   names ("Exchange Variation") are skipped entirely
@@ -210,7 +222,10 @@ so the displayed order is never arbitrary.
   title names a different gambit/defense/attack
 - **Variation specificity**: a ±65-point swing (+25/−40) guarantees a
   variation-specific video outranks a generic family video on sub-variation
-  pages, regardless of channel bonuses
+  pages, regardless of channel bonuses. The +25 requires the title to name a
+  **full comma-segment** of the page's variation ("Accelerated Dragon" needs
+  both words; on "Accelerated Dragon, Maróczy Bind" either segment suffices) —
+  partial word overlap ("Dragon" alone) takes the −40 instead
 - **Intra-family variation guard**: a family match only proves the video and
   page share an _opening family_ (both Sicilian), not the same variation. When a
   title names a distinctive sub-variation (`config/video_matching.json` →

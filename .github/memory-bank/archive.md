@@ -375,3 +375,53 @@ css. Design-system lockstep: preview cards `components-opening-detail-mobile`
 (new) + right-column (reordered), 2a mock in `project/explorations/`. No token
 changes. Docs: user-journeys, context.md AD-012. Verified: 323 frontend tests
 (35 new); tsc/ESLint/Prettier clean; Playwright at 390/320/1280px.
+
+## Progress one-liners archived 2026-07-20 (June–early-July 2026)
+
+- **Ko-fi tip jar** (2026-07-11): site-wide footer support link
+  (`ko-fi.com/wfred`) via a `KOFI_URL` constant in `Footer.tsx`; `.support`
+  shares the `.contribute` link styling. Reworded the adjacent feedback link
+  "Help make Opening Book better" → "Send feedback". Added `.claude/launch.json`
+  (web dev-server preview config).
+- **Analyse Dashboard Redesign** (2026-07-07, PR #45): personal-performance
+  tokens (sage/grey/brick — losses no longer glare cream), carded performance
+  sections (desktop + mobile family cards), slim distribution bars, warm
+  hovers/popovers, sort-menu a11y polish, dead mobile-row path removed.
+- **Review Remediation — Perf + Feature Fixes** (2026-07-06): implemented review
+  §1.1–1.3 + §2.2–2.4 — route splitting + static MiniBoard (main chunk 409→189
+  kB), lazy Analyse index fetch, self-hosted fonts, sharded edge SEO lookup
+  (16×~107 kB), `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`
+  (5 calls → 1), `api/data/` now the single canonical data home (copy gotcha
+  gone), PersonalOpeningStats refactor, practice lines extend into popular
+  continuations, cards are real links, audio fetch path removed, copy/chip nits.
+  724+200 tests green.
+- **Project Review — Perf + Features + Video Experience** (2026-07-02): full
+  review vs the learning-resource goal, split across
+  `docs/reviews/2026-07-02-project-review.md` (perf P1–P11, ops S1–S4,
+  learner-journey feature ranking, master-games/journey addendum) and
+  `docs/reviews/2026-07-02-video-experience-review.md` (verified the improved
+  video index NEVER shipped — both copies stamped 2026-03-15, old 28.2%/7.9%
+  baseline still live; ship checklist + discovery plan V1–V6 incl. family
+  fallback, embedded player, chapter-level matching). Also found ALL popularity
+  stats dated 2025-07-15 and E2E specs absent from CI; the "16 broken tests"
+  note was stale (716+198 green).
+- **Video Matching — Intra-Family Variation Guard** (2026-06-23): family matches
+  on sub-variation pages kept only if the video names the variation
+  (`specific_variation_keywords`); offline re-score: coverage 67%, top-200
+  81.5%, #1-specificity 61.9%, cross-family 0%.
+- **Video Pipeline Fixes + Assessment** (2026-06-13): assessment doc + Tiers 1+2
+  — family compatibility, specificity scoring, tiebreakers, word-boundary
+  pre-filter, config-driven weights/tiers, DB persists description/tags,
+  `audit-video-matches.js` harness. Ship via backfill → rematch.
+- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12):
+  `getECOAnalysis` serves the alphabetically-first record per ECO bucket (95.9%
+  of pages); audit script + provenance proposal added, no code fix yet.
+- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): killed
+  `Math.random()` W/D/L on OpeningCard; fixed dropdown stacking (fill-mode
+  `both` → `backwards`); suggestions show distinguishing move tails.
+- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): four pre-existing CI bugs fixed
+  (lint path, ESLint/Prettier conflict, coverage permissions, codecov badge);
+  branches coverage 90.23%.
+- **Opening Family Rollups** (2026-06-06): Analyse groups openings by family
+  with expandable W/D/L rows (shared `DistributionBar`), per-side group/sort
+  controls, 28-family taxonomy + `GET /api/families`.

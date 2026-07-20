@@ -251,11 +251,12 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   before the `description`/`tags` columns existed — content matches are scored
   from titles alone. Run `node tools/video-pipeline/scripts/backfill-views.js`
   **once before** a rematch to populate views, thumbnails, descriptions and tags
-  (~35 API calls for ~1700 videos). Scoring weights live in
-  `config/video_matching.json`; channel tiers in `config/youtube_channels.json`
-  (single source of truth — do not hardcode channel lists in matcher code).
-  After any scorer/data change, verify with
-  `node scripts/audit-video-matches.js` (coverage, variation specificity,
+  (~35 API calls for ~1700 videos). Scoring weights, sibling-variation
+  `variation_modifiers` (accelerated/semi/anti/…) and
+  `specific_variation_keywords` live in `config/video_matching.json`; channel
+  tiers in `config/youtube_channels.json` (single source of truth — do not
+  hardcode channel lists in matcher code). After any scorer/data change, verify
+  with `node scripts/audit-video-matches.js` (coverage, variation specificity,
   cross-family contamination, ranking ties).
 - **`course:rematch` rebuilds courses.json from the local study cache only**
   (`tools/data/study-cache/`, gitignored): it makes zero Lichess API calls, so

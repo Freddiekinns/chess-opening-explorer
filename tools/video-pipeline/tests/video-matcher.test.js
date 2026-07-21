@@ -779,6 +779,206 @@ describe('VideoMatcher', () => {
     });
   });
 
+  describe('findPhrase boundary + modifier matching', () => {
+    it('does not find a phrase inside a longer word (hyperaccelerated ⊅ accelerated)', () => {
+      expect(
+        matcher.findPhrase('hyperaccelerated dragon theory', 'accelerated dragon', 'Sicilian')
+      ).toBeNull();
+    });
+
+    it('flags a hyphen-joined foreign modifier as modified (semi-slav vs slav page)', () => {
+      // 'slav defense' does occur on \b boundaries inside "semi-slav defense",
+      // but only behind the foreign 'semi' modifier — a sibling, not a match
+      expect(matcher.findPhrase('the semi-slav defense', 'slav defense', 'Slav Defense')).toBe(
+        'modified'
+      );
+    });
+
+    it('exposes hyphenated compound parts to their own pages (smith-morra)', () => {
+      // 'smith' and 'morra' are not modifiers, so a Smith-Morra title matches
+      // Smith-Morra page words split across the hyphen
+      expect(
+        matcher.findPhrase(
+          'smith-morra gambit accepted speedrun',
+          'morra',
+          'Sicilian Defense: Smith-Morra Gambit Accepted'
+        )
+      ).toBe('match');
+    });
+
+    it('expands the "Acc." title shorthand to accelerated', () => {
+      expect(
+        matcher.findPhrase(
+          "You Can't Handle the Tactics! | Alapin, Glek, Acc. Dragon",
+          'accelerated dragon',
+          'Sicilian Defense: Accelerated Dragon'
+        )
+      ).toBe('match');
+      // …and the shorthand still marks a sibling on the plain Dragon page
+      expect(
+        matcher.findPhrase(
+          'Chess Openings: How to Play the Acc. Dragon!',
+          'dragon',
+          'Sicilian Defense: Dragon Variation'
+        )
+      ).toBe('modified');
+    });
+
+    it('tolerates a trailing s/d suffix (advance ≈ advanced)', () => {
+      expect(
+        matcher.findPhrase(
+          'french defense advanced variation lesson',
+          'advance',
+          'French Defense: Advance Variation'
+        )
+      ).toBe('match');
+    });
+
+    it('flags a modifier-qualified occurrence as modified (accelerated dragon vs dragon page)', () => {
+      expect(
+        matcher.findPhrase(
+          'the accelerated dragon explained',
+          'dragon',
+          'Sicilian Defense: Dragon Variation'
+        )
+      ).toBe('modified');
+    });
+
+    it('allows a modifier that belongs to the page name itself', () => {
+      expect(
+        matcher.findPhrase(
+          'the accelerated dragon explained',
+          'dragon',
+          'Sicilian Defense: Accelerated Dragon'
+        )
+      ).toBe('match');
+    });
+
+    it('flags hyphenated modifiers (hyper-accelerated dragon vs accelerated dragon page)', () => {
+      expect(
+        matcher.findPhrase(
+          'the hyper-accelerated dragon explained',
+          'dragon',
+          'Sicilian Defense: Accelerated Dragon'
+        )
+      ).toBe('modified');
+    });
+
+    it('matches diacritic names against plain-ascii text', () => {
+      expect(
+        matcher.findPhrase(
+          'the maroczy bind explained',
+          'maróczy',
+          'Sicilian Defense: Accelerated Dragon, Maróczy Bind'
+        )
+      ).toBe('match');
+    });
+  });
+
+  describe('modifier-aware sibling variation handling (Dragon complex)', () => {
+    const createVideo = (overrides = {}) => ({
+      title: 'Test Video',
+      description: '',
+      channel_title: 'Test Channel',
+      duration: 1800,
+      tags: [],
+      ...overrides,
+    });
+
+    const acceleratedPage = {
+      name: 'Sicilian Defense: Accelerated Dragon',
+      eco: 'B32',
+      aliases: ['Accelerated Dragon', 'Sicilian: Accelerated Fianchetto'],
+    };
+    const dragonPage = {
+      name: 'Sicilian Defense: Dragon Variation',
+      eco: 'B70',
+      aliases: ['Dragon Variation', 'Sicilian: Dragon'],
+    };
+    const hyperPage = {
+      name: 'Sicilian Defense: Hyperaccelerated Dragon',
+      eco: 'B27',
+      aliases: ['Hyperaccelerated Dragon'],
+    };
+
+    it('rejects a Hyperaccelerated Dragon video on the Accelerated Dragon page', () => {
+      const hyperVideo = createVideo({
+        title: 'Hyperaccelerated Dragon (2...g6) | Sicilian Defense Theory',
+      });
+      expect(matcher.calculateMatchScore(hyperVideo, acceleratedPage)).toBe(0);
+    });
+
+    it('rejects an Accelerated Dragon video on the plain Dragon page', () => {
+      const accelVideo = createVideo({
+        title: 'The Accelerated Dragon | Sicilian Defense Theory',
+      });
+      expect(matcher.calculateMatchScore(accelVideo, dragonPage)).toBe(0);
+    });
+
+    it('rejects an Accelerated Dragon video on the Hyperaccelerated Dragon page', () => {
+      const accelVideo = createVideo({
+        title: 'The Accelerated Dragon | Sicilian Defense Theory',
+      });
+      expect(matcher.calculateMatchScore(accelVideo, hyperPage)).toBe(0);
+    });
+
+    it('keeps each video on its own page', () => {
+      const accelVideo = createVideo({
+        title: 'The Accelerated Dragon | Sicilian Defense Theory',
+      });
+      const hyperVideo = createVideo({
+        title: 'Hyperaccelerated Dragon (2...g6) | Sicilian Defense Theory',
+      });
+      expect(matcher.calculateMatchScore(accelVideo, acceleratedPage)).toBeGreaterThan(0);
+      expect(matcher.calculateMatchScore(hyperVideo, hyperPage)).toBeGreaterThan(0);
+    });
+
+    it('ranks the true Accelerated Dragon video above a generic Dragon video on the Accelerated Dragon page', () => {
+      const accelVideo = createVideo({
+        title: 'The Accelerated Dragon | Sicilian Defense Theory',
+      });
+      // Description mentions the accelerated dragon (repertoire overviews do),
+      // but the title names only the plain Dragon complex
+      const dragonVideo = createVideo({
+        title:
+          'Sicilian Dragon (part 2), Levenfish, Fianchetto, Classical | Sicilian Defense Theory',
+        description: 'We also cover accelerated dragon move orders.',
+      });
+      const accelScore = matcher.calculateMatchScore(accelVideo, acceleratedPage);
+      const dragonScore = matcher.calculateMatchScore(dragonVideo, acceleratedPage);
+      expect(accelScore).toBeGreaterThan(dragonScore);
+    });
+
+    it('does not match Semi-Slav titles onto the Slav page', () => {
+      const semiSlav = createVideo({ title: 'The Semi-Slav Defense | Complete Guide' });
+      const slavPage = { name: 'Slav Defense', eco: 'D10', aliases: ['Slav Defence', 'Slav'] };
+      expect(matcher.calculateMatchScore(semiSlav, slavPage)).toBe(0);
+    });
+
+    it('applies no specificity swing on short-word variation pages (Lolli, Sozin)', () => {
+      // 'lolli' (≤5 chars) is below the bonus granularity — a generic Scotch
+      // video must keep its family-level score so niche pages stay covered
+      const genericScotch = createVideo({ title: 'A Shot of Scotch: Gambit Lines Explained' });
+      // Same ECO for both pages to isolate the variation swing from the
+      // (orthogonal) ECO-family moderate penalty
+      const lolliPage = { name: 'Scotch Game: Lolli Variation', eco: 'C45', aliases: [] };
+      const scotchFamilyPage = { name: 'Scotch Game', eco: 'C45', aliases: [] };
+      expect(matcher.calculateMatchScore(genericScotch, lolliPage)).toBe(
+        matcher.calculateMatchScore(genericScotch, scotchFamilyPage)
+      );
+    });
+
+    it('requires the full variation segment for the specificity bonus', () => {
+      // 'dragon' alone must not earn the accelerated-dragon bonus
+      const dragonOnly = createVideo({ title: 'Sicilian Dragon theory explained' });
+      const fullMatch = createVideo({ title: 'Accelerated Dragon theory explained' });
+      const dragonOnlyScore = matcher.calculateMatchScore(dragonOnly, acceleratedPage);
+      const fullMatchScore = matcher.calculateMatchScore(fullMatch, acceleratedPage);
+      // Gap must exceed channel/educational bonuses (see variation_specific rationale)
+      expect(fullMatchScore - dragonOnlyScore).toBeGreaterThanOrEqual(45);
+    });
+  });
+
   describe('channel tiers from config', () => {
     it('should classify premium and standard channels from youtube_channels.json', () => {
       expect(matcher.getChannelTier({ channel_title: 'Daniel Naroditsky' })).toBe('premium');

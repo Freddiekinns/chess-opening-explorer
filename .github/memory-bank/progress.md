@@ -2,6 +2,14 @@
 
 ## What's Done (newest first)
 
+- **Video matcher: modifier-aware sibling-variation fix** (2026-07-20):
+  boundary-safe + diacritic-normalized name matching (`findPhrase`), config
+  `variation_modifiers` (accelerated/semi/anti/…) reject sibling-variation
+  videos (Hyper/Accelerated/plain Dragon no longer cross-contaminate), variation
+  bonus requires a full segment, "Acc." → "accelerated" expansion, bogus
+  abbreviation aliases removed. Strict audit: sibling matches 301→0, top1
+  full-segment specificity 40.8%→42.1%; top-200 coverage held 183/200;
+  contamination 0. 15 new tests; rematched index.
 - **Opening-detail & analyse UI tweaks** (2026-07-20, branch
   `claude/opening-details-ui-tweaks-9tddbh`): "Most popular next moves" caption
   under continuations (desktop + mobile, parallels "Most popular alternatives");
@@ -46,11 +54,6 @@
   site-wide "my level", notable master games, Analyse bridge card, `/api/event`
   beacon instrumentation (S4-lite). PRD:
   `docs/proposals/2026-07-11-deviation-trainer-prd.md`.
-- **Ko-fi tip jar** (2026-07-11): site-wide footer support link
-  (`ko-fi.com/wfred`) via a `KOFI_URL` constant in `Footer.tsx`; `.support`
-  shares the `.contribute` link styling. Reworded the adjacent feedback link
-  "Help make Opening Book better" → "Send feedback" so the two no longer read as
-  competing. Added `.claude/launch.json` (web dev-server preview config).
 - **Study Matching V2** (2026-07-10/11, branch `feat/study-matching-v2`): cached
   fetch + offline `course:rematch`, multi-anchor scored matcher with family
   guard, schema v2 + study-level cards with badges, dual-schema audit script.
@@ -70,49 +73,11 @@
   player + localStorage watched state, monthly refresh Action (guarded; needs DB
   commit + secret to activate). Rescued the orphaned VideoGallery test into
   vitest. 745+207+9 e2e green (PR #46).
-- **Analyse Dashboard Redesign** (2026-07-07, PR #45): personal-performance
-  tokens (sage/grey/brick — losses no longer glare cream), carded performance
-  sections (desktop + mobile family cards), slim distribution bars, warm
-  hovers/popovers, sort-menu a11y polish, dead mobile-row path removed.
-- **Review Remediation — Perf + Feature Fixes** (2026-07-06): implemented review
-  §1.1–1.3 + §2.2–2.4 — route splitting + static MiniBoard (main chunk 409→189
-  kB), lazy Analyse index fetch, self-hosted fonts, sharded edge SEO lookup
-  (16×~107 kB), `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`
-  (5 calls → 1), `api/data/` now the single canonical data home (copy gotcha
-  gone), PersonalOpeningStats refactor, practice lines extend into popular
-  continuations, cards are real links, audio fetch path removed, copy/chip nits.
-  724+200 tests green.
-- **Project Review — Perf + Features + Video Experience** (2026-07-02): full
-  review vs the learning-resource goal, split across
-  `docs/reviews/2026-07-02-project-review.md` (perf P1–P11, ops S1–S4,
-  learner-journey feature ranking, master-games/journey addendum) and
-  `docs/reviews/2026-07-02-video-experience-review.md` (verified the improved
-  video index NEVER shipped — both copies stamped 2026-03-15, old 28.2%/7.9%
-  baseline still live; ship checklist + discovery plan V1–V6 incl. family
-  fallback, embedded player, chapter-level matching). Also found ALL popularity
-  stats dated 2025-07-15 and E2E specs absent from CI; the "16 broken tests"
-  note was stale (716+198 green).
-- **Video Matching — Intra-Family Variation Guard** (2026-06-23): family matches
-  on sub-variation pages kept only if the video names the variation
-  (`specific_variation_keywords`); offline re-score: coverage 67%, top-200
-  81.5%, #1-specificity 61.9%, cross-family 0%. (Details in `archive.md`.)
-- **Video Pipeline Fixes + Assessment** (2026-06-13): assessment doc + Tiers 1+2
-  — family compatibility, specificity scoring, tiebreakers, word-boundary
-  pre-filter, config-driven weights/tiers, DB persists description/tags,
-  `audit-video-matches.js` harness. Ship via backfill → rematch. (Details in
-  `archive.md`.)
-- **Common Plans Mismatch — Investigation + Proposal** (2026-06-12):
-  `getECOAnalysis` serves the alphabetically-first record per ECO bucket (95.9%
-  of pages); audit script + provenance proposal added, no code fix yet.
-- **Design Review Fixes — Fake Stats + Search Dropdown** (2026-06-11): killed
-  `Math.random()` W/D/L on OpeningCard; fixed dropdown stacking (fill-mode
-  `both` → `backwards`); suggestions show distinguishing move tails.
-- **CI Green-Up** (2026-06-06, PRs #35/#36/#37): four pre-existing CI bugs fixed
-  (lint path, ESLint/Prettier conflict, coverage permissions, codecov badge);
-  branches coverage 90.23%.
-- **Opening Family Rollups** (2026-06-06): Analyse groups openings by family
-  with expandable W/D/L rows (shared `DistributionBar`), per-side group/sort
-  controls, 28-family taxonomy + `GET /api/families`. (History in `archive.md`.)
+- Work through 2026-07-11 (Ko-fi tip jar; Analyse dashboard redesign, PR #45;
+  review remediation §1.1–1.3/§2.2–2.4 + the 2026-07-02 project/video-experience
+  reviews; June's intra-family variation guard + pipeline fixes/assessment;
+  Common Plans investigation; fake-stats + search-dropdown fixes; CI green-up;
+  opening family rollups) — see `archive.md`.
 - Older work through 2026-05 (TASK008 feature roadmap; sticky-board detail
   layout; primary-domain migration to `openingbook.xyz`; mobile footer/card
   polish; TASK016 design overhaul + token migration; TASK015 opening-tree nav;

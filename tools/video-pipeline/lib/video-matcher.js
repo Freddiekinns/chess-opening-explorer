@@ -74,6 +74,24 @@ const DEFAULT_MATCHING_CONFIG = {
     'moscow',
     'smith-morra',
   ],
+  // Prefix modifiers that turn a variation name into a DIFFERENT variation:
+  // "Accelerated Dragon" is not the Dragon, "Semi-Slav" is not the Slav,
+  // "Reversed Sicilian" is not the Sicilian. A variation word found in a title
+  // only ever behind one of these (when the page's own name lacks it) is
+  // evidence for a sibling opening, not this page. Tunable copy lives in
+  // config/video_matching.json.
+  variation_modifiers: [
+    'accelerated',
+    'hyperaccelerated',
+    'hyper-accelerated',
+    'hyper',
+    'semi',
+    'anti',
+    'neo',
+    'pseudo',
+    'reversed',
+    'delayed',
+  ],
 };
 
 /**
@@ -168,6 +186,160 @@ class VideoMatcher {
     if (!/\w/.test(term)) return text.includes(term);
     const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     return new RegExp(`\\b${escaped}\\b`, 'i').test(text);
+  }
+
+  /**
+   * Lowercase + strip diacritics so "Maróczy" matches "maroczy" in titles,
+   * and expand the common "Acc."/"Acc" title shorthand to "accelerated"
+   * ("Alapin, Glek, Acc. Dragon" must count on Accelerated Dragon pages).
+   */
+  normalizeForMatch(text) {
+    return (text || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/\bacc\.?(?=\s|$)/g, 'accelerated');
+  }
+
+  /**
+   * Boundary-safe, modifier-aware phrase search.
+   *
+   * A phrase only counts inside `text` on word boundaries — "accelerated
+   * dragon" is NOT inside "hyperaccelerated dragon". Plain \b, so hyphenated
+   * compounds still expose their parts ("smith" matches in "smith-morra");
+   * sibling protection comes from the modifier check instead: an occurrence
+   * whose immediately preceding word (across hyphens) is a variation modifier
+   * (accelerated, semi, anti, reversed, …) foreign to `openingName` names a
+   * SIBLING variation ("semi-slav" is not the Slav, "anti-berlin" is not the
+   * Berlin). A trailing s/d is tolerated ("advance" matches "advanced").
+   *
+   * @returns 'match'    — at least one clean occurrence
+   *          'modified' — only modifier-qualified occurrences (sibling)
+   *          null       — no boundary occurrence at all
+   */
+  findPhrase(text, phrase, openingName) {
+    const normText = this.normalizeForMatch(text);
+    const normPhrase = this.normalizeForMatch(phrase).trim();
+    if (!normPhrase) return null;
+
+    const escaped = normPhrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(`(?<!\\w)${escaped}(?:s|d)?(?!\\w)`, 'g');
+    const normOpening = this.normalizeForMatch(openingName);
+    const modifiers = this.config.variation_modifiers || [];
+
+    let occurrence;
+    let sawModified = false;
+    while ((occurrence = pattern.exec(normText)) !== null) {
+      const before = normText.slice(0, occurrence.index);
+      // Preceding word incl. hyphen-joined prefixes ("semi-" and
+      // "hyper-accelerated " both yield their modifier)
+      const prevWord = (before.match(/([a-z]+(?:-[a-z]+)*)[-\s,:;.]*$/) || [])[1] || '';
+      const isForeignModifier =
+        prevWord &&
+        modifiers.includes(prevWord) &&
+        // The page's own name may legitimately carry the modifier
+        // ("Semi-Slav" pages allow "semi"; plain-Slav pages don't)
+        !new RegExp(`\\b${prevWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(normOpening);
+      if (!isForeignModifier) return 'match';
+      sawModified = true;
+    }
+    return sawModified ? 'modified' : null;
+  }
+
+  /**
+   * True when the phrase has a clean (non-sibling) occurrence in the text.
+   */
+  phraseMatches(text, phrase, openingName) {
+    return this.findPhrase(text, phrase, openingName) === 'match';
+  }
+
+  /**
+   * Split an opening name's variation part into comma segments of significant
+   * words. "Accelerated Dragon, Maróczy Bind" → [['accelerated','dragon'],
+   * ['maroczy']]. Move tokens (digits), short words and generic classifiers
+   * are dropped; segments that end up empty are removed.
+   */
+  getVariationSegments(openingName) {
+    const colonIndex = (openingName || '').indexOf(':');
+    if (colonIndex === -1) return [];
+
+    // NB: 'accepted'/'declined' are NOT stop words — they distinguish real
+    // sibling pages ("Smith-Morra Gambit Accepted" vs "…Declined")
+    const stopWords = [
+      'variation',
+      'defense',
+      'defence',
+      'attack',
+      'gambit',
+      'system',
+      'line',
+      'opening',
+    ];
+    // >3 chars: guard/sibling granularity (all distinguishing words)
+    return openingName
+      .slice(colonIndex + 1)
+      .split(',')
+      .map((segment) =>
+        segment
+          .split(/[\s.\-]+/)
+          .map((word) => this.normalizeForMatch(word))
+          .filter((word) => word.length > 3 && !/\d/.test(word) && !stopWords.includes(word))
+      )
+      .filter((words) => words.length > 0);
+  }
+
+  /**
+   * How well a title covers the page's variation name.
+   *
+   * Two granularities, mirroring the historical guard (>3-char words) and
+   * bonus (>5-char words) filters so short variation names (Lolli, Sozin,
+   * Glek) don't trigger the ±bonus swing that would drop generic family
+   * videos below the match threshold and empty their pages:
+   *
+   * - segmentMatched: every >5-char word of at least one comma segment occurs
+   *   cleanly in the title — the video names THIS variation (bonus scope).
+   * - hasBonusWords: some segment has >5-char words at all — only then does
+   *   the ±bonus swing apply.
+   * - anyCleanWord: some variation word (>3) occurs cleanly — enough for the
+   *   intra-family guard to keep the video.
+   * - siblingOnly: variation words occur, but only ever behind a foreign
+   *   modifier ("Accelerated Dragon" title on the plain Dragon page) — the
+   *   video affirmatively names a different sibling variation.
+   */
+  analyzeVariationMatch(title, opening) {
+    const segments = this.getVariationSegments(opening.name);
+    if (segments.length === 0) {
+      return {
+        hasVariation: false,
+        hasBonusWords: false,
+        segmentMatched: false,
+        anyCleanWord: false,
+        siblingOnly: false,
+      };
+    }
+
+    let hasBonusWords = false;
+    let segmentMatched = false;
+    let sawClean = false;
+    let sawModified = false;
+    for (const segmentWords of segments) {
+      const results = segmentWords.map((word) => this.findPhrase(title, word, opening.name));
+      if (results.includes('match')) sawClean = true;
+      if (results.includes('modified')) sawModified = true;
+
+      const bonusResults = results.filter((_, i) => segmentWords[i].length > 5);
+      if (bonusResults.length > 0) {
+        hasBonusWords = true;
+        if (bonusResults.every((result) => result === 'match')) segmentMatched = true;
+      }
+    }
+    return {
+      hasVariation: true,
+      hasBonusWords,
+      segmentMatched,
+      anyCleanWord: sawClean,
+      siblingOnly: sawModified && !sawClean,
+    };
   }
 
   /**
@@ -313,7 +485,9 @@ class VideoMatcher {
     const abbrevMap = {
       // Queen's pawn openings
       'queens gambit': ['qgd', 'qga', 'queens pawn'],
-      'slav defense': ['slav defence', 'slav', 'semi-slav', 'semi slav'],
+      // NB: no 'semi-slav' here — the Semi-Slav is a different defense, not an
+      // alias of the Slav (findPhrase's modifier handling relies on this too)
+      'slav defense': ['slav defence', 'slav'],
       'london system': ['london', 'london opening'],
       trompowsky: ['tromp', 'trompowsky attack'],
       'catalan opening': ['catalan'],
@@ -334,7 +508,9 @@ class VideoMatcher {
       'caro kann': ['caro-kann', 'caro kann defense'],
       'sicilian defense': ['sicilian defence', 'sicilian'],
       'sicilian najdorf': ['najdorf', 'najdorf variation'],
-      'sicilian dragon': ['dragon', 'dragon variation', 'accelerated dragon'],
+      // NB: no 'accelerated dragon' here — the Accelerated Dragon is a
+      // sibling variation of the Dragon, not an alias of it
+      'sicilian dragon': ['dragon', 'dragon variation'],
       'sicilian sveshnikov': ['sveshnikov', 'sveshnikov variation'],
       'sicilian kalashnikov': ['kalashnikov'],
       'ruy lopez': ['spanish opening', 'spanish game', 'spanish'],
@@ -568,15 +744,17 @@ class VideoMatcher {
         continue;
       }
 
-      // Exact match in title (highest priority)
-      if (title.includes(cleanName)) {
+      // Exact match in title (highest priority). Boundary + modifier aware:
+      // "accelerated dragon" never matches inside "hyperaccelerated dragon",
+      // and "dragon variation" behind a foreign "accelerated" doesn't count.
+      if (this.phraseMatches(title, cleanName, opening.name)) {
         hasNameMatch = true;
         matchType = 'title_exact';
         break;
       }
 
       // Exact match in content (still good)
-      if (videoContent.includes(cleanName)) {
+      if (this.phraseMatches(videoContent, cleanName, opening.name)) {
         hasNameMatch = true;
         matchType = 'exact';
         break;
@@ -602,7 +780,9 @@ class VideoMatcher {
           );
         if (words.length >= 3) {
           // Require at least 75% of significant words to be present, AND they must appear in title
-          const matchedWordsInTitle = words.filter((word) => title.includes(word));
+          const matchedWordsInTitle = words.filter((word) =>
+            this.phraseMatches(title, word, opening.name)
+          );
           if (matchedWordsInTitle.length >= Math.ceil(words.length * 0.75)) {
             hasNameMatch = true;
             matchType = 'partial_title';
@@ -629,7 +809,7 @@ class VideoMatcher {
       for (const [openingKey, familyTerms] of Object.entries(simpleFamilies)) {
         if (openingName.includes(openingKey)) {
           for (const familyTerm of familyTerms) {
-            if (title.includes(familyTerm)) {
+            if (this.phraseMatches(title, familyTerm, opening.name)) {
               hasNameMatch = true;
               matchType = 'family';
               break;
@@ -644,7 +824,7 @@ class VideoMatcher {
     if (!hasNameMatch) {
       const abbreviations = this.getOpeningAbbreviations(openingName);
       for (const abbrev of abbreviations) {
-        if (this.matchesTerm(title, abbrev)) {
+        if (this.phraseMatches(title, abbrev, opening.name)) {
           hasNameMatch = true;
           matchType = 'abbreviation';
           break;
@@ -656,7 +836,7 @@ class VideoMatcher {
     // appear verbatim in a title — match on the family part instead
     if (!hasNameMatch) {
       const familyPart = this.getFamilyPartName(openingName);
-      if (familyPart && this.matchesTerm(title, familyPart)) {
+      if (familyPart && this.phraseMatches(title, familyPart, opening.name)) {
         hasNameMatch = true;
         matchType = 'family';
       }
@@ -677,6 +857,20 @@ class VideoMatcher {
       return 0; // No opening reference found
     }
 
+    // VARIATION ANALYSIS — how the title relates to this page's variation.
+    // Computed once and used by the sibling guard below and the
+    // specificity bonus/penalty further down.
+    const variationMatch = this.analyzeVariationMatch(title, opening);
+
+    // SIBLING-MODIFIER GUARD — the title's only mentions of this page's
+    // variation words sit behind a foreign modifier ("The Accelerated Dragon"
+    // on the plain Dragon page, "Hyperaccelerated Dragon" on the Accelerated
+    // Dragon page). That affirmatively names a DIFFERENT opening, so reject
+    // regardless of how the name match was found.
+    if (variationMatch.siblingOnly) {
+      return 0;
+    }
+
     // INTRA-FAMILY VARIATION GUARD — prevent sibling-variation blanketing.
     // A family-level match only proves the video and page share an opening
     // family (both Sicilian), not the same variation. A specific-variation
@@ -688,35 +882,13 @@ class VideoMatcher {
     // blanketing every Sicilian page, which the cross-family guard (e4 vs d4)
     // can't catch and the -40 specificity penalty is too weak to prevent once
     // premium/educational bonuses are added.
-    if (matchType === 'family' && openingName.includes(':') && this.namesSpecificVariation(title)) {
-      // Named variation tokens only — move tokens ("7.Bb3", "exd5") carry digits
-      // and are dropped, so "Sozin-Najdorf, 7.Bb3" yields ['sozin', 'najdorf'].
-      const variationWords = openingName
-        .split(':')
-        .slice(1)
-        .join(':')
-        .split(/[\s,.\-]+/)
-        .filter(
-          (w) =>
-            w.length > 3 &&
-            !/\d/.test(w) &&
-            ![
-              'variation',
-              'defense',
-              'defence',
-              'attack',
-              'gambit',
-              'system',
-              'line',
-              'main',
-              'with',
-            ].includes(w)
-        );
-      // Keep only if the video names this page's variation. No named tokens
-      // (pure move-notation page) → variation unverifiable → generics only.
-      if (!variationWords.some((w) => title.includes(w))) {
-        return 0;
-      }
+    if (
+      matchType === 'family' &&
+      openingName.includes(':') &&
+      this.namesSpecificVariation(title) &&
+      !variationMatch.anyCleanWord
+    ) {
+      return 0;
     }
 
     // FAMILY-BASED NEGATIVE MATCHING - Prevent cross-family contamination.
@@ -756,21 +928,17 @@ class VideoMatcher {
 
     // Variation specificity: on a sub-variation page, a video that names the
     // variation must outrank a generic family video, so the bonus/penalty gap
-    // is deliberately larger than the channel/educational bonuses.
-    if (openingName.includes(':')) {
-      const variationPart = openingName.split(':').slice(1).join(':').toLowerCase().trim();
-      const variationWords = variationPart.split(/[\s,]+/).filter(
-        (w) =>
-          w.length > 5 &&
-          !/\d/.test(w) && // move notation ("2.exd5") never appears in titles
-          !['variation', 'defense', 'defence', 'attack', 'gambit', 'system', 'line'].includes(w)
-      );
-      if (variationWords.length > 0) {
-        if (variationWords.some((w) => title.includes(w))) {
-          score += weights.variation_specific;
-        } else {
-          score += weights.sub_variation_miss;
-        }
+    // is deliberately larger than the channel/educational bonuses. The bonus
+    // requires a FULL segment of the variation name ("Accelerated Dragon"
+    // needs both words) — partial word overlap ("Dragon" alone) is generic
+    // coverage and takes the miss penalty instead. Short variation names
+    // (Lolli, Sozin — no >5-char words) apply no swing at all, so generic
+    // family videos keep covering those niche pages.
+    if (variationMatch.hasBonusWords) {
+      if (variationMatch.segmentMatched) {
+        score += weights.variation_specific;
+      } else {
+        score += weights.sub_variation_miss;
       }
     }
 
@@ -956,8 +1124,11 @@ class VideoMatcher {
         tags: video.tags || [],
       };
 
-      const videoContent =
-        `${video.title} ${video.description || ''} ${(video.tags || []).join(' ')}`.toLowerCase();
+      // Diacritic-normalized so the loose pre-filter stays a superset of the
+      // scorer's normalized matching ("Maróczy" page vs "maroczy" title)
+      const videoContent = this.normalizeForMatch(
+        `${video.title} ${video.description || ''} ${(video.tags || []).join(' ')}`
+      );
 
       // Smart pre-filtering: only check openings that might match (more restrictive)
       const candidateOpenings = openings.filter((opening) => {
@@ -968,7 +1139,7 @@ class VideoMatcher {
         const familyPart = this.getFamilyPartName(opening.name.toLowerCase());
         if (
           familyPart &&
-          videoContent.includes(familyPart) &&
+          videoContent.includes(this.normalizeForMatch(familyPart)) &&
           !this.namesSpecificVariation(video.title.toLowerCase())
         ) {
           return true;
@@ -976,7 +1147,7 @@ class VideoMatcher {
 
         // Check for any potential match (stricter than before)
         return allNames.some((name) => {
-          const cleanName = name.toLowerCase().trim();
+          const cleanName = this.normalizeForMatch(name).trim();
 
           // Skip very short names or generic terms
           if (

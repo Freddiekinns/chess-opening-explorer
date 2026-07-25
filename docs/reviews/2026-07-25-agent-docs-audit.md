@@ -96,8 +96,11 @@ Three structural problems, in order of cost:
 1. **Roughly a third of the agent-facing docs are dead plumbing** — files
    pointing at scripts, directories and conventions that aren't there. They cost
    tokens and mislead.
-2. **`CLAUDE.md` has become a bug-regression logbook.** 147 of its 343 lines
-   (43%) are the Gotchas list — 20 entries, most of them one-off post-mortems.
+2. **`CLAUDE.md` spends its tokens on the wrong half.** The Gotchas list (147 of
+   343 lines) is the part worth keeping — it's what the post says CLAUDE.md is
+   _for_. The other 196 lines mostly restate `package.json` and the directory
+   tree, and list the same commands twice. See C1; this reverses my first-pass
+   read.
 3. **The whole structure is Copilot-shaped, not Claude-shaped.** The
    `.github/instructions/*.instructions.md` + `applyTo:` frontmatter pattern is
    GitHub Copilot's convention. Claude Code ignores `applyTo` entirely; those

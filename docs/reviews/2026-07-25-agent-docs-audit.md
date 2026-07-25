@@ -29,44 +29,58 @@ Excluded per your instruction: `docs/superpowers/`, `docs/proposals/`,
 
 ## The guidance we're auditing against
 
-The blog post you linked
-(`claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models`)
-is blocked by this session's egress proxy, so I worked from the same material as
-published on `platform.claude.com` plus the post's indexed summary. The
-load-bearing points:
+From Anthropic's 2026-07-24 post (Thariq Shihipar), which removed **80%+ of
+Claude Code's system prompt** for Opus 5 / Fable 5 with no measurable loss on
+coding evals. The six reversals it names, and what each one implies for this
+repo:
 
-1. **Anthropic removed 80%+ of Claude Code's own system prompt** for Claude 5
-   models. The stated reason: Claude was being _over-constrained_ by system
-   prompts, CLAUDE.md files and skills together.
-2. **Conflicting instructions are the top failure mode.** Their own example: a
-   CLAUDE.md saying "leave documentation as appropriate" while the system prompt
-   said "DO NOT add comments" — the model receives both in one request.
-3. **Defensive blanket rules are now wrong more often than right.** Rules like
-   "default to writing no comments" or "never write multi-paragraph docstrings"
-   were worst-case guards; on Claude 5 they override legitimate user intent.
-4. **Drop verification/self-check scaffolding.** Opus 5 verifies its own work
-   unprompted; instructions like "add a final verification step" or
-   "double-check your answer" cause over-verification and burn tokens with no
-   quality gain.
-5. **Dial back emphasis.** "CRITICAL: You MUST…" now over-triggers; plain "Use X
-   when Y" is the correct register.
-6. **Positive framing beats prohibition.** Describing the behaviour you want
-   outperforms lists of what not to do.
-7. **Constrain scope, not method.** The recommended lever is a short
-   scope-and-judgement paragraph, not a rulebook.
-8. **Context is a token budget with a signal-to-noise ratio** — the smallest set
-   of high-signal tokens that gets the outcome. Every stale or duplicated line
-   is a net negative, not a neutral.
+| Then                 | Now                      | Implication here                                          |
+| -------------------- | ------------------------ | --------------------------------------------------------- |
+| Give Claude rules    | Let Claude use judgement | Blanket defensive rules now override legitimate intent    |
+| Give Claude examples | Design interfaces        | Examples **constrain** the model to an exploration space  |
+| Put it all upfront   | Progressive disclosure   | A tree of files loaded when relevant beats one big file   |
+| Repeat yourself      | Simple tool descriptions | Duplication across files is cost, not insurance           |
+| Memory in CLAUDE.md  | Auto-memory              | Claude now saves relevant memories itself                 |
+| Simple specs         | Rich references          | HTML mockups / code / test suites beat prose descriptions |
 
-Claude Code ships a `/doctor` command to right-size skills and CLAUDE.md; worth
-running after we act on this.
+The failure mode it diagnoses is **conflicting instructions arriving in one
+request** — their own example was a system prompt saying "DO NOT add comments"
+while a CLAUDE.md said "leave documentation as appropriate." Claude can usually
+resolve the conflict, but has to spend reasoning doing it.
+
+Its concrete prescription for CLAUDE.md is the part that matters most for us,
+and it is not what I assumed on the first pass:
+
+> Keep your CLAUDE.md lightweight and briefly describe what your repo is for,
+> but **spend most of the tokens on gotchas inside of the codebase.** […] Avoid
+> stating 'the obvious' things Claude should know by looking at your file system
+> or your repo.
+
+And for skills: "lightweight guides to let Claude find information when needed…
+best when skills encode particular opinions, knowledge, or best practices that
+are particular to you, your team, or product." Long skills should be split
+across files.
+
+The
+[Fable 5 guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
+adds a blunter version: _"Skills developed for prior models are often too
+prescriptive… and can degrade output quality. Review and consider removing older
+instructions if default performance is better."_
+
+**On `claude doctor`:** it exists (v2.1.220) and I ran it. The CLI form only
+does installation health — it reported 3 install warnings, none related to docs.
+The context-engineering right-sizing lives behind the interactive `/doctor`
+slash command, which can't be invoked from a remote session. Worth you running
+locally after we act on this, as a second opinion on the result.
 
 Sources:
+[The new rules of context engineering](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)
+·
 [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
 ·
-[Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
+[Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 ·
-[The new rules of context engineering](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)
+[Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
 
 ---
 
@@ -281,30 +295,72 @@ of migration state every time it loads.
 
 ## C. Over-constraint and conflicts (the Claude 5 problem)
 
-### C1. `CLAUDE.md` is 43% regression logbook 🟠
+### C1. `CLAUDE.md`'s problem is the other 196 lines, not the Gotchas 🟠
 
-147 of 343 lines are Gotchas — 20 bullets, several of them 15+ lines with
-"Regression history:" narration. They load on **every single turn** of **every
-session**, regardless of task.
+**This reverses my first-pass read.** I initially flagged the Gotchas section
+(147 of 343 lines, 43%) as bloat to cut hard. The blog says the opposite:
+gotchas are precisely what CLAUDE.md tokens should be spent on. The instruction
+is to "spend most of the tokens on gotchas inside of the codebase" and to "avoid
+stating the obvious things Claude should know by looking at your file system or
+your repo."
 
-They aren't equivalent. Three categories:
+By that standard the Gotchas section is the **best** part of the file, and the
+other 196 lines are the problem. Roughly 145 of them restate what I can read
+directly:
 
-- **Genuinely load-bearing, non-obvious, still true** — keep in `CLAUDE.md`:
-  Lichess explorer auth + proxy + no-vercel.json-header rule; `api/data/` is
-  canonical; every route needs `Cache-Control`; never fetch large payloads on
-  mount; never render fabricated data; host redirects belong in `vercel.json`;
-  middleware matcher must exclude `sitemap.xml`/`robots.txt`.
-- **Real but narrow** — belongs next to the code, as a comment or a scoped doc:
-  `animation-fill-mode` stacking contexts, `overflow: clip` vs `hidden`, SPA
-  scroll traps. These are CSS/React facts; they should live in
-  `reactjs.instructions.md` or in the CSS file itself, not in the global
-  preamble.
-- **Should not exist** — the `tools/production/` gotcha (fix the code), the
-  `.worktrees` gotcha (no such directory), the CRLF `format:check` gotcha (fix
-  with a `.gitattributes` file, one line, permanently).
+| Section                 | Lines | Where I'd get it anyway                            |
+| ----------------------- | ----- | -------------------------------------------------- |
+| Essential Commands      | 34    | `package.json` scripts                             |
+| Data Pipeline Workflows | 46    | `package.json` again — and it duplicates the above |
+| Project Structure tree  | 18    | `ls`                                               |
+| Environment Setup       | 16    | `.env.example`, `package.json` engines             |
+| Memory Bank tree        | 13    | `ls .github/memory-bank/`                          |
+| Instructions table      | 12    | Replaceable by skill descriptions                  |
+| Quick Start / Workflow  | 11    | Restates the memory-bank rules                     |
 
-The rule of thumb worth adopting: **if a gotcha can be fixed in code or config,
-fix it there instead of documenting it forever.** Three of the twenty qualify.
+Worse, Essential Commands and Data Pipeline Workflows list overlapping commands
+**twice in the same file** — the "repeat yourself" pattern the post retires
+explicitly.
+
+So the revised recommendation is a swap, not a cut:
+
+- **Keep** the gotchas, including the CSS/React ones I'd earlier suggested
+  relocating (`overflow: clip` vs `hidden`, `animation-fill-mode`, SPA scroll
+  traps). These are genuine codebase gotchas with real regression history —
+  exactly the category the post says to spend tokens on.
+- **Cut** the derivable scaffolding above. If a command list is wanted, one
+  short "commands live in `package.json`; the non-obvious ones are…" line covers
+  it.
+- **Fix in code, then delete** the three gotchas that are workarounds rather
+  than facts: `tools/production/` (fix `package.json`), `.worktrees` (directory
+  doesn't exist), CRLF `format:check` (one-line `.gitattributes`).
+- **Trim the narration only** — several gotchas run 15+ lines with "Regression
+  history:" prose. The fact is load-bearing; the story is in git. Halving the
+  prose keeps every fact.
+
+Net: ~343 → ~200 lines, with the gotcha share rising from 43% to roughly 70%.
+
+### C1b. Quick Rules 1–11 are the "then" column 🟠
+
+The 11 numbered rules at the top are blanket directives of exactly the kind the
+post removed. Several are also things I'd infer from the codebase in one look
+(TypeScript for React components; tests alongside source; named exports for
+utilities). Rule 8 — "No console.log in production code" — is enforced by ESLint
+already.
+
+The post's own worked example is the replacement pattern. They swapped:
+
+> In code: default to writing no comments. Never write multi-paragraph
+> docstrings…
+
+for:
+
+> Write code that reads like the surrounding code: match its comment density,
+> naming, and idiom.
+
+`code-standards.md`'s "Write code that speaks for itself. Comment only to
+explain WHY, not WHAT" is the same shape as the retired version, and should get
+the same treatment.
 
 ### C2. Direct contradictions across files 🟠
 
@@ -349,21 +405,31 @@ verification. **Keep the project-specific parts** (YouTube quota is 10,000
 units/day; rematch mode costs zero API calls; idempotency is required; Lichess
 explorer is 25 req/min) and **cut the generic parts.**
 
-### C5. Instruction files are 60% code examples the model doesn't need 🟡
+### C5. Instruction files are 60% code examples — and examples now hurt 🟠
+
+Upgraded from 🟡 after reading the post. I'd assumed the generic examples were
+merely wasted tokens. The post is stronger than that:
+
+> The number one rule for tool usage was to give Claude examples on how to use
+> them. With our newest models, we've found that giving examples actually
+> **constrains them to a certain exploration space.**
 
 `javascript.instructions.md` is a `RateLimiter` class, a `retry()` function, a
-progress-bar loop and a dotenv config block — generic patterns, none of them
-project-specific. `python.instructions.md` is the same shape. `testing.md` is
-framework boilerplate.
+progress-bar loop and a dotenv config block. `python.instructions.md` is a
+`@dataclass`, a pathlib helper, a retry decorator and a logging block.
+`testing.instructions.md` is Jest/Vitest/pytest boilerplate. None are
+project-specific; all of them pin me to one shape of solution for problems where
+the codebase may already have a better local idiom.
 
 The genuinely valuable lines in those files are the small project-specific ones:
 "relative imports for the shared package, not `@chess-trainer/shared`, because
 package-name imports fail in Vercel builds" — that one line is worth the other
 three hundred.
 
-**Action:** compress each instruction file to its project-specific content. My
-estimate is `javascript` → ~20 lines, `python` → ~15, `testing` → ~30,
-`code-standards` → ~40. Roughly 1,000 lines out.
+**Action:** delete the generic examples outright rather than trimming them.
+Compress each file to its project-specific content: `javascript` → ~20 lines,
+`python` → ~15, `testing` → ~30, `code-standards` → ~40. Roughly 1,000 lines
+out.
 
 ---
 
@@ -390,21 +456,64 @@ Claude-facing content should live in `.claude/`. Right now one set of files is
 trying to serve two agents with different loading models, and serving neither
 well.
 
-### D2. The memory bank is the strongest part of the system ✅
+### D2. The memory bank is the strongest part of the system — but it's now a hand-rolled auto-memory ✅🟠
 
 `activeContext.md` (34 lines), `progress.md` (105), `context.md` (162),
 `archive.md` (427, never auto-loaded) with enforced size caps and an explicit
-"never append, replace" rule — this is good context engineering and predates the
-guidance that now endorses it. The 2026-07-20 `activeContext.md` entry is a
+"never append, replace" rule. This is good context engineering, and it predates
+the guidance that now endorses it. The 2026-07-20 `activeContext.md` entry is a
 model of a useful handoff: what broke, why, what changed, measured before/after,
 what's left.
 
-Two small notes:
+The complication is the post's fifth reversal:
 
-- `progress.md` is at 105 lines against a 100-line cap, and its top entries run
-  10+ lines against a "one-liner per task" rule. Mild drift.
-- The size caps appear in **three** places (`CLAUDE.md` Gotchas, `CLAUDE.md`
-  Memory Bank section, `workflow.instructions.md`). One should own it.
+> **Then: Memory in CLAUDE.md files. Now: Auto-memory.** We used to encourage
+> users to save things to Claude's memory… Instead, Claude now automatically
+> saves memories that are relevant to the work and to you.
+
+The memory bank is a manual implementation of that, with a maintenance tax:
+`CLAUDE.md` Quick Rule 10 ("Update activeContext.md after significant changes"),
+three separate statements of the size caps, and a documented trim-and-archive
+ritual.
+
+I'd argue **against** dissolving it, for reasons the post doesn't cover:
+
+- It's checked into git and reviewable in PRs. Auto-memory isn't.
+- It's tool-agnostic — it works for Copilot, for you reading it directly, and
+  for any future agent.
+- `context.md` and `user-journeys.md` aren't memory at all; they're reference
+  docs that happen to live in that folder.
+
+But the _ritual_ around it should shrink. Concretely: state the size caps once
+(not three times), drop Quick Rule 10 in favour of letting the archive rule in
+`workflow.instructions.md` own it, and let auto-memory handle the
+session-to-session continuity that `activeContext.md` currently carries by hand.
+`progress.md` is already at 105 lines against its 100-line cap with 10-line
+entries against a "one-liner per task" rule — the tax is visibly not being paid.
+
+### D2b. The design-system bundle is a "rich reference" and should be treated as one ✅
+
+The post's sixth reversal is the one this repo is best positioned to exploit:
+
+> Instead of simple markdown files, Claude can reference HTML artifacts… A HTML
+> mockup of a design will generally produce better results than a description of
+> the design or a screenshot.
+
+`design-system/project/` already contains exactly that: HTML prototypes, token
+CSS, preview cards per token group, and pixel-fidelity React recreations of the
+live landing app under `ui_kits/web/`. This is a higher-fidelity reference than
+any prose style guide, and it's already committed.
+
+It is currently unreachable for the reasons in A2 and A3 — the skill isn't
+registered and the README's paths all 404. Fixing that wiring is the single
+highest-leverage change in this audit: it converts a well-built reference asset
+from inert into loadable.
+
+Worth adding while we're there: the post mentions **rubrics** as a reference
+form ("what does a good API design look like") that verifier agents can check
+against. The design system's hard rules — British English, sentence case, no
+emoji, orange only as a bookmark ribbon, mandatory result colours — are already
+written as a rubric. They just need to be reachable.
 
 ### D3. `user-journeys.md` ✅
 
@@ -457,41 +566,52 @@ Ordered by value per unit of effort. **Nothing below is done yet.**
 
 **Effect:** ~600 lines of wrong or dead instruction gone; two real bugs fixed.
 
-### Phase 2 — Revive what's broken
+### Phase 2 — Revive what's broken (highest leverage)
 
 7. Create `.claude/skills/openingbook-design/SKILL.md` so `/openingbook-design`
-   actually works.
+   actually works, pointing at the HTML prototypes and `ui_kits/web/` as
+   references (per D2b — this is the repo's best rich reference and it's
+   currently unreachable).
 8. Add frontmatter to `.claude/agents/pipeline-reviewer.md`; strip the emoji
    format and the generic half of the checklist. Delete `test-writer.md`.
 9. Rewrite `design-system/README.md` with correct paths.
 10. Rewrite `tools/README.md` as a 30-line index.
 
-### Phase 3 — Right-size `CLAUDE.md`
+### Phase 3 — Rebalance `CLAUDE.md` (revised — see C1)
 
-11. Cut Gotchas from 20 to ~8, keeping only the always-true, non-obvious,
-    cross-cutting ones. Move CSS/React-specific ones into the React
-    instructions, strip the "Regression history" narration (git has it).
-12. Replace Quick Rule 11 with the scope/judgement paragraph from C3.
-13. Deduplicate: memory-bank size caps stated once; commands listed once.
-14. Target ~150 lines from 343.
+11. **Cut the derivable scaffolding**, not the gotchas: Essential Commands, Data
+    Pipeline Workflows (which duplicates it), Project Structure tree,
+    Environment Setup, Memory Bank tree, Quick Start. ~145 lines.
+12. **Keep all substantive gotchas**, including the CSS/React ones. Halve the
+    "Regression history:" narration; keep every fact.
+13. Drop the three gotchas that become obsolete once Phase 1 lands.
+14. Replace Quick Rule 11 ("Ask rather than assume") with the scope/judgement
+    paragraph from C3; replace `code-standards.md`'s blanket comment rule with
+    "write code that reads like the surrounding code."
+15. Deduplicate: memory-bank size caps stated once.
+16. Target ~200 lines from 343, with gotchas rising from 43% to ~70% of the
+    file.
 
 ### Phase 4 — Compress the instruction files
 
-15. Strip generic code examples from `javascript` / `python` / `testing` /
-    `code-standards`; keep project-specific rules only.
-16. Replace `reactjs.instructions.md`'s stale migration checklist with a
+17. **Delete** the generic code examples in `javascript` / `python` / `testing`
+    / `code-standards` — per C5 they actively constrain, so trimming isn't
+    enough. Keep project-specific rules only.
+18. Replace `reactjs.instructions.md`'s stale migration checklist with a
     generated count, or drop the checklist and keep the "modularize when you
     touch" rule.
 
 ### Phase 5 — Structural (needs your decision — see below)
 
-17. Decide the `.github/instructions/` vs `.claude/skills/` question.
-18. Decide `.agent/workflows/` — promote to skills, or fold into READMEs.
-19. Run `/doctor` afterwards to check the result against Anthropic's own
-    tooling.
+19. Decide the `.github/instructions/` vs `.claude/skills/` question.
+20. Decide `.agent/workflows/` — promote to skills, or fold into READMEs.
+21. Run `/doctor` **locally** afterwards (it can't run from a remote session) as
+    a second opinion on the result.
 
-**Projected end state:** ~5,700 lines → ~2,600, with the removed material being
-either wrong, duplicated, or generic. Nothing project-specific is lost.
+**Projected end state:** ~5,700 lines → ~2,600. Everything removed is wrong,
+duplicated, derivable from the repo, or a generic example. Nothing
+project-specific is lost, and the surviving `CLAUDE.md` is proportionally more
+gotcha than it is today.
 
 ---
 
@@ -508,3 +628,8 @@ either wrong, duplicated, or generic. Nothing project-specific is lost.
    list over time, or keep the nominal bar and note the exclusions in the docs?
 4. **`design-system/chats/`** — keep the transcripts as historical reference
    (they're never auto-loaded, so they cost nothing), or archive them out?
+5. **The memory bank vs auto-memory** (D2) — keep the manual bank for its
+   git-reviewable, tool-agnostic properties and just shrink the ritual around
+   it, or lean on auto-memory for session continuity and keep only `context.md`
+   / `user-journeys.md` as reference docs? My recommendation is the former, but
+   it's a preference call about how you want to read your own project history.

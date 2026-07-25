@@ -101,13 +101,14 @@ Three structural problems, in order of cost:
    _for_. The other 196 lines mostly restate `package.json` and the directory
    tree, and list the same commands twice. See C1; this reverses my first-pass
    read.
-3. **The whole structure is Copilot-shaped, not Claude-shaped.** The
+3. **The structure is Copilot-shaped, and serves neither tool well.** The
    `.github/instructions/*.instructions.md` + `applyTo:` frontmatter pattern is
    GitHub Copilot's convention. Claude Code ignores `applyTo` entirely; those
-   files only ever load because `CLAUDE.md` contains a hand-maintained table
-   telling me to go read them. Claude Code's native mechanisms (skills,
-   subagents with frontmatter, `@` imports, nested `CLAUDE.md`) are almost
-   entirely unused.
+   files only ever load because `CLAUDE.md` contains a hand-maintained routing
+   table. Two mechanisms that would replace it outright — `.claude/rules/` with
+   `paths:` frontmatter, and skills (an open standard across ~40 clients) — are
+   unused. See D1 and D1c: the portable option and the Claude-native option are
+   the same option here, so there's no trade-off to make.
 
 ---
 
@@ -343,6 +344,24 @@ So the revised recommendation is a swap, not a cut:
 
 Net: ~343 → ~200 lines, with the gotcha share rising from 43% to roughly 70%.
 
+Two independent confirmations of this from Claude Code's own documentation:
+
+> **Size**: target under 200 lines per CLAUDE.md file. Longer files consume more
+> context and reduce adherence.
+
+> The `/doctor` checkup proposes trims for a checked-in CLAUDE.md: it **cuts
+> content Claude can derive from the codebase, such as directory layouts,
+> dependency lists, and architecture overviews**, and **keeps pitfalls,
+> rationale, and conventions that differ from tool defaults.**
+
+That is the swap described above, stated as a shipped feature. It also means
+`/doctor` will likely propose roughly this change unprompted when you run it.
+
+One free win while editing: block-level HTML comments (`<!-- … -->`) in
+CLAUDE.md are stripped before the content reaches context. Maintainer notes cost
+nothing — useful for recording _why_ a gotcha exists without spending tokens on
+it every session.
+
 ### C1b. Quick Rules 1–11 are the "then" column 🟠
 
 The 11 numbered rules at the top are blanket directives of exactly the kind the
@@ -438,26 +457,104 @@ out.
 
 ## D. Structural fit for Claude 5 / current Claude Code
 
-### D1. The `.github/instructions/` mechanism is Copilot's, not Claude's 🟠
+### D1. The `.github/instructions/` mechanism is Copilot's, and Claude has a direct equivalent 🟠
 
 `applyTo: '**/*.jsx, **/*.tsx'` frontmatter is GitHub Copilot's
 instruction-scoping mechanism. Claude Code doesn't read it. In practice, loading
-happens because `CLAUDE.md` has a manually maintained routing table. That table
-is a hand-rolled version of features Claude Code now has natively:
+happens because `CLAUDE.md` has a manually maintained routing table.
 
-| Need                            | Current (manual)                | Native option                          |
+The important find: Claude Code shipped **`.claude/rules/` with `paths:`
+frontmatter**, which is a near-exact analogue of Copilot's `applyTo:`.
+
+```markdown
+---
+paths:
+  - 'packages/web/src/**/*.{ts,tsx}'
+---
+
+# React rules
+
+- Extract component CSS into `.module.css` when you modify styles
+- Relative imports for the shared package — `@chess-trainer/shared` fails on
+  Vercel
+```
+
+Rules with `paths:` load **only when Claude reads a matching file**. Rules
+without `paths:` load every session at the same priority as `CLAUDE.md`. That is
+exactly the loading model `.github/instructions/` was reaching for, and it works
+without a routing table.
+
+So the mapping is now one-to-one:
+
+| Need                            | Current (manual)                | Native mechanism                       |
 | ------------------------------- | ------------------------------- | -------------------------------------- |
-| Load React rules for React work | Table in `CLAUDE.md` → I choose | Skill with a triggering `description`  |
-| Always-on facts                 | Inline in `CLAUDE.md`           | `CLAUDE.md` + `@path/to/file` imports  |
-| Package-scoped rules            | One global table                | Nested `packages/web/CLAUDE.md`        |
+| React rules when touching React | Table in `CLAUDE.md` → I choose | `.claude/rules/react.md` with `paths:` |
+| Always-on facts                 | Inline in `CLAUDE.md`           | `CLAUDE.md` (keep it under 200 lines)  |
 | Runbooks (pipelines)            | `.agent/workflows/`             | `.claude/skills/`                      |
+| Design reference                | `design-system/…/SKILL.md`      | `.claude/skills/openingbook-design/`   |
 | Specialist reviewers            | `.claude/agents/` (broken)      | `.claude/agents/` **with frontmatter** |
 
-If you keep `.github/instructions/` for Copilot compatibility, that's a
-legitimate reason — but then it should be _only_ what Copilot needs, and
-Claude-facing content should live in `.claude/`. Right now one set of files is
-trying to serve two agents with different loading models, and serving neither
-well.
+The distinction between rules and skills is worth getting right: **rules fire on
+file paths** (good for "when you touch a component, use CSS Modules"); **skills
+fire on task intent** (good for "run the video pipeline", "design a new
+surface").
+
+### D1b. Portability: AGENTS.md does _not_ work everywhere 🟠
+
+Worth stating plainly, because most write-ups get it wrong. **Claude Code does
+not read `AGENTS.md`.** From the official docs:
+
+> Claude Code reads `CLAUDE.md`, not `AGENTS.md`. If your repository already
+> uses `AGENTS.md` for other coding agents, create a `CLAUDE.md` that imports it
+> so both tools read the same instructions without duplicating them.
+
+The feature request (issue #6235) has thousands of upvotes; Anthropic marked it
+"not planned for now" in May 2026. So adopting `AGENTS.md` alone would make the
+repo _less_ legible to your primary tool, not more.
+
+The portable strategy that does work is a two-file split, which the docs endorse
+explicitly:
+
+```markdown
+<!-- CLAUDE.md -->
+
+@AGENTS.md
+
+## Claude Code
+
+Use plan mode for changes under `packages/api/src/routes/`.
+```
+
+`AGENTS.md` carries the tool-agnostic baseline — what the repo is, and the
+gotchas. `CLAUDE.md` imports it and adds only Claude-specific content. Codex,
+Cursor, Gemini CLI, Jules and friends read `AGENTS.md` natively; Claude gets it
+via the import.
+
+A symlink (`ln -s AGENTS.md CLAUDE.md`) also works, but **not for you** — you
+develop on Windows, where symlinks need Administrator or Developer Mode. Use the
+`@AGENTS.md` import.
+
+**Where the gotchas should live:** in `AGENTS.md`. They're facts about the
+codebase, not facts about Claude. Every tool benefits.
+
+### D1c. Skills are the genuinely cross-tool standard ✅
+
+This is the part that resolves the generic-vs-Claude-specific tension. Agent
+Skills became an **open standard (agentskills.io) in December 2025** and is
+implemented by GitHub Copilot, VS Code, Cursor, OpenAI Codex, Gemini CLI, Goose,
+OpenCode and ~40 other clients. The `SKILL.md` format — YAML frontmatter with
+`name` + `description`, progressive disclosure into supporting files — is the
+same everywhere.
+
+So converting `.github/instructions/` content into skills is **both** the
+Claude-native move **and** the portable move. There's no trade-off to make here:
+skills are more portable than the Copilot-flavoured `.instructions.md` files
+they'd replace.
+
+`.claude/rules/` is the one Claude-specific piece in the proposed structure.
+That is a deliberate, contained exception — it's the only mechanism that gives
+automatic path-scoped loading, and the content inside a rule file is plain
+markdown that ports by copy-paste if you ever need it elsewhere.
 
 ### D2. The memory bank is the strongest part of the system — but it's now a hand-rolled auto-memory ✅🟠
 
@@ -479,7 +576,16 @@ The memory bank is a manual implementation of that, with a maintenance tax:
 three separate statements of the size caps, and a documented trim-and-archive
 ritual.
 
-I'd argue **against** dissolving it, for reasons the post doesn't cover:
+I'd argue **against** dissolving it, and the docs give a harder reason than I
+first had:
+
+> Auto memory is **machine-local**. All worktrees and subdirectories within the
+> same git repository share one auto memory directory. Files are **not shared
+> across machines or cloud environments.**
+
+You work across a Windows laptop and remote/web sessions. Auto-memory written in
+one never reaches the other, so it cannot carry project continuity for you the
+way the committed memory bank does. Plus:
 
 - It's checked into git and reviewable in PRs. Auto-memory isn't.
 - It's tool-agnostic — it works for Copilot, for you reading it directly, and
@@ -532,13 +638,18 @@ right. Keep as-is. The only issue is `tools/README.md` above them being wrong.
 
 ### D5. `feedback_update_docs.md` under `.claude/projects/…/memory/` 🟡
 
-A machine-specific path (`C--Users-fred--chess-opening-explorer`) committed to
-the repo. Its content — "update all related docs in the same PR" — is already
-duplicated verbatim as a `CLAUDE.md` gotcha. Its list of directories to grep
-includes two (`.agent/workflows/`, `.claude/agents/`) that don't function.
+Now identifiable: this is a stray **auto-memory** file. Auto-memory belongs at
+`~/.claude/projects/<project>/memory/` and is machine-local by design; this copy
+sits at `.claude/projects/C--Users-fred--chess-opening-explorer/memory/` inside
+the repo and got committed. The path fragment is your Windows home directory.
 
-**Action:** delete the file; the rule already lives in `CLAUDE.md`. If you keep
-it, fix the list of targets.
+Its content — "update all related docs in the same PR" — is already duplicated
+verbatim as a `CLAUDE.md` gotcha, and its list of directories to grep includes
+two (`.agent/workflows/`, `.claude/agents/`) that don't function.
+
+**Action:** delete the file and add `.claude/projects/` to `.gitignore` so
+machine-local auto-memory doesn't get committed again. The rule itself already
+lives in `CLAUDE.md`.
 
 ### D6. `.claude/settings.local.json` 🟡
 
@@ -550,7 +661,49 @@ list cleanly.
 
 ---
 
-## E. Recommended plan
+## E. Proposed target structure
+
+Portable where a standard exists, Claude-specific only where nothing else
+provides the mechanism.
+
+```
+AGENTS.md                       # Portable baseline: what the repo is + all gotchas
+                                #   Read natively by Codex, Cursor, Gemini CLI, Jules…
+CLAUDE.md                       # @AGENTS.md import + Claude-only additions (~20 lines)
+.github/copilot-instructions.md # Only if Copilot is still in use — /init reads this
+
+.claude/
+├── rules/                      # Path-scoped, auto-loading (Claude-specific)
+│   ├── react.md                #   paths: packages/web/src/**/*.{ts,tsx}
+│   ├── api.md                  #   paths: packages/api/**/*.js, api/**/*.js
+│   └── python.md               #   paths: tools/analysis/**/*.py
+├── skills/                     # Open standard — portable across ~40 clients
+│   ├── openingbook-design/     #   design system + HTML/React references
+│   ├── video-pipeline/         #   from .agent/workflows/
+│   ├── course-discovery/       #   from .agent/workflows/
+│   └── popularity-stats/       #   from .agent/workflows/
+└── agents/
+    └── pipeline-reviewer.md    # with frontmatter this time
+
+.github/memory-bank/            # Unchanged — git-tracked project state
+tools/*/README.md               # Unchanged — on-demand deep reference
+design-system/                   # Unchanged — the rich reference the skill points at
+```
+
+Retired: `.github/instructions/` (→ rules + skills), `.agent/workflows/` (→
+skills), `.claude/SETUP.md`, `.claude/projects/`.
+
+The only Claude-specific piece is `.claude/rules/`, and that's a deliberate
+trade: nothing else offers automatic path-scoped loading, and the file contents
+are plain markdown that ports by copy-paste.
+
+**One caveat on `AGENTS.md`:** it only earns its place if a second tool actually
+reads it. If Claude Code is the only agent you use here, the same content in
+`CLAUDE.md` is simpler and one file fewer. See open question 1.
+
+---
+
+## F. Recommended plan
 
 Ordered by value per unit of effort. **Nothing below is done yet.**
 
@@ -604,12 +757,19 @@ Ordered by value per unit of effort. **Nothing below is done yet.**
     generated count, or drop the checklist and keep the "modularize when you
     touch" rule.
 
-### Phase 5 — Structural (needs your decision — see below)
+### Phase 5 — Restructure (needs your decision on Q1 — see below)
 
-19. Decide the `.github/instructions/` vs `.claude/skills/` question.
-20. Decide `.agent/workflows/` — promote to skills, or fold into READMEs.
-21. Run `/doctor` **locally** afterwards (it can't run from a remote session) as
-    a second opinion on the result.
+19. Convert `.github/instructions/` → `.claude/rules/` with `paths:` frontmatter
+    (react, api, python), carrying only the compressed content from Phase 4.
+20. Convert `.agent/workflows/` → `.claude/skills/` (video-pipeline,
+    course-discovery, popularity-stats). Delete `.agent/`.
+21. **If a second tool is in play:** split `CLAUDE.md` into `AGENTS.md` (repo
+    summary + gotchas) plus a thin `CLAUDE.md` that does `@AGENTS.md` and adds
+    Claude-only content. Use the import, not a symlink — you're on Windows. If
+    Claude Code is the only agent, skip this and keep one `CLAUDE.md`.
+22. Add `.claude/projects/` to `.gitignore`.
+23. Run `/doctor` **locally** afterwards (it can't run from a remote session) as
+    a second opinion. Expect it to propose trims in the same direction as C1.
 
 **Projected end state:** ~5,700 lines → ~2,600. Everything removed is wrong,
 duplicated, derivable from the repo, or a generic example. Nothing
@@ -620,10 +780,13 @@ gotcha than it is today.
 
 ## Open questions
 
-1. **Do you still use GitHub Copilot on this repo?** This determines whether
-   `.github/instructions/` keeps its Copilot-shaped format or gets converted to
-   Claude skills. If Copilot is gone, the whole directory can collapse into
-   `.claude/`.
+1. **Which agents besides Claude Code actually touch this repo?** This is now
+   the load-bearing question. If the answer is "only Claude Code", skip
+   `AGENTS.md` entirely — one `CLAUDE.md` is simpler, and `AGENTS.md` would be a
+   file nothing reads. If Copilot, Codex or Cursor are in the mix, the
+   `AGENTS.md` + `@AGENTS.md` split in section E is the right shape, and
+   `.github/copilot-instructions.md` should be a stub pointing at `AGENTS.md`
+   rather than a third copy of the rules.
 2. **Is `.agent/workflows/` used by another tool?** The `// turbo` markers
    suggest it was written for one. If nothing reads it, the content should
    become skills.

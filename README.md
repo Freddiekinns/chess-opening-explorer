@@ -2,9 +2,9 @@
 
 **Live at [openingbook.xyz](https://openingbook.xyz)**
 
-A chess learning platform for exploring and practising openings. Features
-12,377+ openings with AI-enhanced content, Lichess statistics, curated videos,
-curated Lichess studies, and interactive practice mode.
+A chess learning platform for exploring and practising openings. Features 12,377
+openings with AI-enhanced content, Lichess statistics, curated videos, curated
+Lichess studies, and interactive practice mode.
 
 ## Features
 
@@ -18,8 +18,8 @@ curated Lichess studies, and interactive practice mode.
 - **PGN Identification**: Paste any PGN to identify the opening
 - **AI Content**: Strategic analysis and complexity ratings via Google Vertex AI
 - **Video Integration**: Curated YouTube content from trusted chess channels
-- **Curated Studies**: 6,100+ Lichess study chapters matched to openings by FEN,
-  sorted by popularity (likes)
+- **Curated Studies**: 17,000+ Lichess study chapters from 444 curated studies,
+  matched to 4,500 positions by FEN and sorted by popularity (likes)
 - **Popularity Stats**: Win/draw/loss rates from 40M+ Lichess games (all rated
   players, not master games)
 
@@ -145,4 +145,5 @@ fast client-side search.
 react-chessboard **Backend**: Node.js, Express, SQLite, JSON  
 **Pipelines**: Python (Lichess), Node.js (YouTube, LLM)  
 **External**: Google Vertex AI, YouTube Data API, Lichess API  
-**Data**: 12,377+ openings, 1,000+ videos, 6,100+ study chapters (2,255 FENs)
+**Data**: 12,377 openings, 1,236 videos (72.7% position coverage), 17,079 study
+chapters across 4,500 positions

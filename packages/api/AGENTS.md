@@ -1,9 +1,13 @@
 # API rules
 
-Node.js + Express. Vercel functions in `api/` are thin wrappers (~40 lines) that
-import from here, so development and production run identical business logic.
-Backend tests are Jest and live at the **repo root** in `tests/`, not in this
-package.
+Node.js + Express. Vercel functions in `api/` are thin wrappers (18–72 lines)
+that import from here, so development and production run identical business
+logic.
+
+Backend tests are Jest. `testMatch` in the root `package.json` covers
+`tests/**/*.test.js` and `tools/**/tests/**/*.test.js`; `packages/*/tests/` is in
+`testPathIgnorePatterns`, so a test placed inside this package will silently
+never run. Put API tests in the root `tests/` directory.
 
 ## Caching is mandatory
 

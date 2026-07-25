@@ -8,7 +8,8 @@ curated Lichess studies, and interactive practice mode.
 
 ## Features
 
-- **Fast Search**: 1-5ms client-side filtering with popularity-weighted ranking
+- **Fast Search**: server-side search with popularity-weighted ranking, backed
+  by a lightweight client-side index for instant name matching
 - **Practice Mode**: Interactive move trainer with hints, feedback, and
   Lichess-style visual indicators
 - **Personal Opening Explorer**: Analyse your Chess.com/Lichess games — grouped
@@ -19,7 +20,8 @@ curated Lichess studies, and interactive practice mode.
 - **Video Integration**: Curated YouTube content from trusted chess channels
 - **Curated Studies**: 6,100+ Lichess study chapters matched to openings by FEN,
   sorted by popularity (likes)
-- **Popularity Stats**: Win/draw/loss rates from 40M+ Lichess games
+- **Popularity Stats**: Win/draw/loss rates from 40M+ Lichess games (all rated
+  players, not master games)
 
 ## Quick Start
 
@@ -53,7 +55,6 @@ chess-opening-explorer/
 │   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/                # Backend tests (Jest)
 └── .github/
-    ├── instructions/     # Coding standards
     └── memory-bank/      # Project context & state
 ```
 
@@ -77,7 +78,7 @@ Coverage reports:
 ### LLM Enrichment
 
 ```bash
-node tools/llm-enrichment/enrich_openings_llm.js
+npm run enrich
 ```
 
 Generates strategic descriptions via Google Vertex AI. Supports batch
@@ -86,7 +87,7 @@ processing, dry-run, and resumable runs.
 ### Popularity Stats
 
 ```bash
-cd tools/analysis && python run_pipeline.py
+python tools/analysis/run_pipeline.py --incremental
 ```
 
 Processes Lichess game data to calculate opening statistics.
@@ -114,7 +115,7 @@ Imports Lichess studies matched to openings by FEN. See
 ### Video Pipeline
 
 ```bash
-node tools/video-pipeline/index.js
+npm run pipeline
 ```
 
 Discovers and matches YouTube videos from trusted channels.
@@ -135,9 +136,8 @@ fast client-side search.
 
 - **[.github/memory-bank/](/.github/memory-bank/)**: Project context, current
   state, and progress
-- **[.github/instructions/](/.github/instructions/)**: Coding standards and
-  workflows
-- **[CLAUDE.md](/CLAUDE.md)**: AI assistant guide
+- **[AGENTS.md](/AGENTS.md)**: Conventions and codebase gotchas (imported by
+  `CLAUDE.md`; scoped rules in `packages/*/AGENTS.md`)
 
 ## Tech Stack
 

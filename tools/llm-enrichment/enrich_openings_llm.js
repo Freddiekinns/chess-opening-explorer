@@ -3,7 +3,7 @@
 /**
  * LLM Enrichment Script
  * Enriches chess opening data with AI-generated analysis
- * Usage: node tools/production/enrich_openings_llm.js --batchSize=25
+ * Usage: node tools/llm-enrichment/enrich_openings_llm.js --batchSize=25
  */
 
 require('dotenv').config();

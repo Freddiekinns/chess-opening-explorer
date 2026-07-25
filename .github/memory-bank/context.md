@@ -13,8 +13,8 @@ guidance; advanced players for quick reference.
 
 1. **Opening Database** - 12,377+ openings with ECO codes, move sequences,
    variations
-2. **Popularity Stats** - Real-time data from Lichess master games
-   (win/draw/loss rates)
+2. **Popularity Stats** - Win/draw/loss rates from the Lichess rated-games
+   database (all rated players, not master games)
 3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas
 4. **Video Integration** - Curated YouTube videos matched to openings
 5. **Curated Studies** - 6,100+ Lichess study chapters matched to openings by
@@ -132,7 +132,6 @@ chess-opening-explorer/
 │   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/            # Backend tests (Jest)
 └── .github/
-    ├── instructions/ # Coding standards
     └── memory-bank/  # Project context
 ```
 
@@ -157,6 +156,5 @@ All search is server-side. All API routes have `Cache-Control` headers in
 - **YouTube API**: Daily quota limits
 - **Gemini API**: Token limits and costs
 - **Static Data**: Updates require rebuild/redeploy
-- **Vercel Hobby Tier**: 10 GB Fast Origin Transfer, 100 GB Fast Data Transfer.
-  All API routes must have `Cache-Control` headers. Never fetch large payloads
-  on component mount — crawlers will amplify across all 12,000+ pages.
+- **Vercel Hobby Tier**: 10 GB Fast Origin Transfer, 100 GB Fast Data Transfer —
+  see the caching rules in `AGENTS.md`

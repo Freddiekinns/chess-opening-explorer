@@ -84,7 +84,7 @@
 
 .searchField {
   position: relative;
-  width: 220px;
+  width: 240px;
 }
 
 .searchInput {
@@ -117,35 +117,11 @@
   pointer-events: none;
 }
 
-/* Surprise me — orange label button */
-.surpriseBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
-  padding: var(--space-1-5) var(--space-4);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  white-space: nowrap;
-  cursor: pointer;
-  transition:
-    background-color 150ms ease,
-    opacity 150ms ease;
-}
+/* Surprise me is a browse-y action, not navigation — it lives in the search
+   hub now, so the bar holds search and nothing else on every page. */
 
-.surpriseBtn:hover {
-  opacity: 0.9;
-}
-
-.surpriseBtn:focus-visible {
-  outline: 2px solid var(--color-brand-orange);
-  outline-offset: 2px;
-}
-
-/* Dropdown */
+/* Dropdown — a <div> wrapper so it can hold either the hub or the results
+   list; list styling moved onto .results. */
 .dropdown {
   position: absolute;
   top: calc(100% + var(--space-1));
@@ -158,9 +134,16 @@
   overflow-y: auto;
   z-index: 200;
   box-shadow: var(--shadow-lg);
+}
+
+.results {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.hubWrap {
+  padding: var(--space-3);
 }
 
 .dropdownItem {

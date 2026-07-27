@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Clock, Search, Sparkles, Star } from 'lucide-react';
-import { useRepertoire } from '../../hooks/useRepertoire';
-import { getRecentOpenings, type RecentOpening } from '../../lib/recentOpenings';
+import { ChevronRight, Search } from 'lucide-react';
+import { SearchHub } from './SearchHub';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -11,9 +10,6 @@ import styles from './SearchOverlay.module.css';
  * and typing two or more characters switches to live results. Replaces the
  * bare input-plus-dropdown overlay that TopBar used to render inline.
  */
-
-const REPERTOIRE_LIMIT = 5;
-const RECENTS_LIMIT = 4;
 
 interface SearchResult {
   fen: string;
@@ -53,11 +49,9 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [searching, setSearching] = useState(false);
-  const [recents, setRecents] = useState<RecentOpening[]>([]);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
-  const { repertoire } = useRepertoire();
 
   const close = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -67,10 +61,10 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     onClose();
   }, [onClose]);
 
-  // Fresh recents + focus each time the overlay opens; Escape closes.
+  // Focus each time the overlay opens; Escape closes. SearchHub reads its own
+  // recents when it mounts, which is on every open.
   useEffect(() => {
     if (!open) return;
-    setRecents(getRecentOpenings().slice(0, RECENTS_LIMIT));
     const focusTimer = setTimeout(() => inputRef.current?.focus(), 50);
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') close();
@@ -159,50 +153,13 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
       <div className={styles.body}>
         {showEmptyState && (
-          <>
-            {recents.length > 0 && (
-              <>
-                <div className={styles.sectionLabel}>Recent</div>
-                <div className={styles.rowList}>
-                  {recents.map((opening) => (
-                    <OpeningRow
-                      key={opening.fen}
-                      opening={opening}
-                      icon={<Clock size={14} className={styles.rowIcon} aria-hidden="true" />}
-                      onSelect={select}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            {repertoire.length > 0 && (
-              <>
-                <div className={styles.sectionLabel}>Your repertoire</div>
-                <div className={styles.rowList}>
-                  {repertoire.slice(0, REPERTOIRE_LIMIT).map((opening) => (
-                    <OpeningRow
-                      key={opening.fen}
-                      opening={opening}
-                      icon={
-                        <Star
-                          size={14}
-                          className={`${styles.rowIcon} ${styles.rowIconStar}`}
-                          aria-hidden="true"
-                        />
-                      }
-                      onSelect={select}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            <button type="button" className={styles.surpriseBtn} onClick={surpriseMe}>
-              <Sparkles size={14} aria-hidden="true" />
-              Surprise me!
-            </button>
-          </>
+          <SearchHub
+            onSelect={(fen) => {
+              close();
+              navigate(`/opening/${encodeURIComponent(fen)}`);
+            }}
+            onSurprise={surpriseMe}
+          />
         )}
 
         {hasQuery && searching && results.length === 0 && (

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, Loader2 } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
+import { SearchHub } from '../shared/SearchHub';
 import styles from './TopBar.module.css';
 
 interface SearchResult {
@@ -47,13 +48,17 @@ export default function TopBar() {
         ))}
       </nav>
 
-      {/* Always render right column to keep grid stable */}
-      <div className={styles.rightSlot}>{isDetailPage && <TopBarSearch />}</div>
+      {/* Search is the product's core action — it lives in the bar on every
+          page, not only on detail pages. Scrolling into the grid used to put
+          the core action out of reach (UX review change 01). */}
+      <div className={styles.rightSlot}>
+        <TopBarSearch />
+      </div>
     </header>
   );
 }
 
-/** Compact search bar shown in the TopBar on detail pages only */
+/** Compact search bar shown in the TopBar on every page */
 function TopBarSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -148,22 +153,46 @@ function TopBarSearch() {
     }
   };
 
-  const dropdownMarkup = showDropdown && results.length > 0 && (
-    <ul className={styles.dropdown}>
-      {results.map((r, i) => (
-        <li
-          key={`${r.fen}-${i}`}
-          className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
-          onMouseDown={() => selectResult(r)}
-          onMouseEnter={() => setActiveIndex(i)}
-        >
-          <span className={styles.dropdownName}>{r.name}</span>
-          <span className={styles.dropdownMeta}>
-            {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
-          </span>
-        </li>
-      ))}
-    </ul>
+  // Before typing, desktop showed nothing at all. It now gets the same hub the
+  // mobile overlay has: recents, repertoire and Surprise me (UX review #09).
+  const showHub = query.trim().length < 2;
+
+  const dropdownMarkup = showDropdown && (
+    <div className={styles.dropdown}>
+      {showHub ? (
+        // The input's blur handler tears the dropdown down after 150ms, but
+        // hub rows fire on click — a slow press would land on nothing. Keep
+        // focus on the input so the row survives to receive the click.
+        <div className={styles.hubWrap} onMouseDown={(e) => e.preventDefault()}>
+          <SearchHub
+            onSelect={(fen) => {
+              navigate(`/opening/${encodeURIComponent(fen)}`);
+              setQuery('');
+              setShowDropdown(false);
+            }}
+            onSurprise={handleSurpriseMe}
+          />
+        </div>
+      ) : (
+        results.length > 0 && (
+          <ul className={styles.results}>
+            {results.map((r, i) => (
+              <li
+                key={`${r.fen}-${i}`}
+                className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
+                onMouseDown={() => selectResult(r)}
+                onMouseEnter={() => setActiveIndex(i)}
+              >
+                <span className={styles.dropdownName}>{r.name}</span>
+                <span className={styles.dropdownMeta}>
+                  {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )
+      )}
+    </div>
   );
 
   return (
@@ -178,7 +207,7 @@ function TopBarSearch() {
             value={query}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            onFocus={() => query.length >= 2 && results.length > 0 && setShowDropdown(true)}
+            onFocus={() => setShowDropdown(true)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
             className={styles.searchInput}
           />
@@ -193,9 +222,6 @@ function TopBarSearch() {
           )}
           {dropdownMarkup}
         </div>
-        <button className={styles.surpriseBtn} onClick={handleSurpriseMe}>
-          Surprise me!
-        </button>
       </div>
 
       {/* Mobile: search icon opening the full-screen overlay (design 2a:

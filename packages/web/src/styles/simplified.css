@@ -2148,39 +2148,9 @@ body {
   padding: 0 var(--space-4);
 }
 
-.section-title {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-2) 0;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-brand-orange) 0%, var(--accent-a30) 100%);
-  border-radius: 2px;
-}
-
-/* Sub (in-card) section title modifier: reduced scale, no underline */
-.section-title--sub {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-1);
-  letter-spacing: normal;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-.section-title--sub::after {
-  content: none;
-}
+/* The .section-title family (and its orange gradient underline) was removed in
+   UX phase 0: no component referenced it, and orange is for action, not
+   decoration. */
 
 /* ECO pill spacing refinement when paired with sub title */
 .related-teaser__header.card-header {
@@ -2215,21 +2185,6 @@ body {
   align-items: center;
   gap: var(--space-2);
 }
-.card-header__title--accent {
-  position: relative;
-  padding-left: var(--space-3);
-}
-.card-header__title--accent::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 3px;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--color-brand-orange), var(--accent-a20));
-}
-
 /* Map legacy title-subsection to new system for gradual migration */
 .title-subsection {
   font-size: var(--font-size-lg);

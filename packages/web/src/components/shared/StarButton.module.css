@@ -12,8 +12,10 @@
 
 /* The sm star renders a 16px icon; the button still needs a thumb-sized
    target. Grow the padding, not the icon — negative margins keep the larger
-   hit area from pushing the card header around. */
-@media (pointer: coarse) {
+   hit area from pushing the card header around. Gated on either signal: a
+   touch pointer anywhere, or a phone-width viewport (which emulators report
+   as a fine pointer). */
+@media (pointer: coarse), (max-width: 767px) {
   .starButton {
     min-width: 44px;
     min-height: 44px;

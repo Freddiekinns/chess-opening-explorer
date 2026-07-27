@@ -26,10 +26,10 @@ import {
   ChevronDown,
   MoreHorizontal,
   Play,
-  Star,
 } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
-import { useRepertoire } from '../hooks/useRepertoire';
+import { useRepertoireToast } from '../hooks/useRepertoireToast';
+import { Toast } from '../components/shared/Toast';
 import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult';
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
@@ -127,7 +127,7 @@ const OpeningDetailPage: React.FC = () => {
   const [videoContext, setVideoContext] = useState<ResourceContext | null>(null);
   const [studyContext, setStudyContext] = useState<ResourceContext | null>(null);
 
-  const { isSaved, toggle: toggleRepertoire } = useRepertoire();
+  const { isSaved, toggleWithToast, toast } = useRepertoireToast();
 
   // Level lens (sidebar unification): one band choice governs the Win rates
   // panel and the Opening book's move stats. Persistence and analytics live
@@ -153,8 +153,6 @@ const OpeningDetailPage: React.FC = () => {
   // the expand toggle only appears when there's something more to reveal.
   const [moveStripOverflows, setMoveStripOverflows] = useState(false);
   const [overviewExpanded, setOverviewExpanded] = useState(false);
-  const [repertoireToast, setRepertoireToast] = useState<string | null>(null);
-  const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -290,12 +288,6 @@ const OpeningDetailPage: React.FC = () => {
     setPositionSheetOpen(false);
     setOverviewExpanded(false);
   }, [fen]);
-
-  useEffect(() => {
-    return () => {
-      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    };
-  }, []);
 
   // Auto-scroll move strip to keep active move visible. Scroll the strip
   // container horizontally ONLY — scrollIntoView also scrolls the page
@@ -955,17 +947,13 @@ const OpeningDetailPage: React.FC = () => {
   };
 
   const handleToggleRepertoire = () => {
-    const saved = isSaved(opening.fen);
-    toggleRepertoire({
+    toggleWithToast({
       fen: opening.fen,
       name: opening.name,
       eco: opening.eco,
       moves: opening.moves,
       complexity: opening.complexity,
     });
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    setRepertoireToast(saved ? 'Removed from your repertoire' : 'Added to your repertoire');
-    toastTimerRef.current = setTimeout(() => setRepertoireToast(null), 2200);
   };
 
   return (
@@ -1461,22 +1449,17 @@ const OpeningDetailPage: React.FC = () => {
         )}
       </div>
 
-      {/* Mobile overlays: position tools sheet + repertoire toast */}
+      {/* Mobile overlay: position tools sheet */}
       {isMobile && (
-        <>
-          <PositionSheet
-            fen={game.fen()}
-            open={positionSheetOpen}
-            onClose={() => setPositionSheetOpen(false)}
-          />
-          {repertoireToast && (
-            <div className={styles.toast} role="status">
-              <Star size={13} className={styles.toastStar} aria-hidden="true" />
-              {repertoireToast}
-            </div>
-          )}
-        </>
+        <PositionSheet
+          fen={game.fen()}
+          open={positionSheetOpen}
+          onClose={() => setPositionSheetOpen(false)}
+        />
       )}
+
+      {/* Not gated on isMobile: the star deserves the same undo at every width. */}
+      {toast && <Toast message={toast.message} onUndo={toast.onUndo} />}
 
       {/* Full-width sections below two-column layout (desktop only — the
           mobile stack renders plans + resources itself) */}

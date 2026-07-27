@@ -1,0 +1,319 @@
+# Opening Book UX review — implementation design
+
+**Date:** 2026-07-27 **Source:** `design-system/handoffs/2026-07-27-ux-review/`
+(29 changes, 22 screens, 14 audit findings) **Status:** approved for planning
+
+---
+
+## 1. What this document is
+
+The UX review proposes 29 changes across Discover, Opening detail and Analyse.
+This spec records which of them we are building, which are already built, which
+we are rejecting, and in what order — so that any agent can pick up a single
+phase and deliver it without re-reading the review.
+
+The handoff bundle is the visual reference. Open
+`design-system/handoffs/2026-07-27-ux-review/Opening Book - Proposed.dc.html` in
+a browser; every screen has a stable anchor id (`#detail-desktop`) that the
+change log links to. `support.js` must stay alongside the HTML files.
+
+**The mocks are references, not code.** They are single-file HTML with inline
+styles. Map every value to the existing token in
+`packages/web/src/styles/simplified.css` — never port a hex value.
+
+---
+
+## 2. The baseline correction
+
+The review's `Opening Book - Current.dc.html` recreates production as it was
+before PRs #53–#55 (the mobile opening-detail overhaul). Seven proposed changes
+are already shipped. Building to the mocks literally would undo them.
+
+| Change                                        | Actual state in `main`                                                                                                                                                                                                     |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 11 — "Opening explorer" merged card           | **Mobile already does this.** `MobileDataSurface` = sticky level pills + stats + breadcrumb + continuations, one card. Desktop is unfixed.                                                                                 |
+| 12 — master games outside the filtered border | **Mobile already does this** (`MobileMasterGames` is a separate card). Desktop is _worse_ than the review states: master games render **inside** `WinRatePanel`, the same card that owns the filter they don't respond to. |
+| 21 — analysing / error states "undrawn"       | Built: progress bar with step text and `processed/total`, Cancel, inline error, Enter-to-submit, platform persistence. This is a styling and copy pass.                                                                    |
+| 09 — mobile search hub                        | `SearchOverlay` ships recents + repertoire + Surprise me + live results. It is only reachable from detail pages.                                                                                                           |
+| 25 — chrome drift, 52px vs 56px app bar       | Mock artefact. One `TopBar` component, 60px, every page. Real gap is narrower: search renders only on `/opening/*`, and "Surprise me!" sits in the bar there.                                                              |
+| 16 — board pinned while rail scrolls          | Already the desktop behaviour.                                                                                                                                                                                             |
+| 15 — ECO code in mono                         | `.eco-pill` is already mono on `--surface-overlay`.                                                                                                                                                                        |
+| 29 — remove dead links                        | "View repertoire", "View all" and "Edit" do not exist in production. No-op.                                                                                                                                                |
+
+Two further corrections to the handoff README:
+
+- **`lucide-react` is already a dependency.** The README states it is not. It is
+  imported by `TopBar`, `BottomTabBar`, `SearchOverlay` and the detail page. Use
+  it; do not hand-draw replacements.
+- **The change log contradicts itself on "View all"** (kept at row 10, removed
+  at row 29). Resolved: **removed**. There is no desktop repertoire page.
+
+---
+
+## 3. Decisions taken
+
+| Question                                  | Decision                                                         | Rationale                                                                                                                                                                                                            |
+| ----------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faceted filter bar data                   | **Build a new browse endpoint**                                  | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                            |
+| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                         | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                              |
+| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                       | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                              |
+| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                  | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                           |
+| Desktop explorer card structure           | **Wrap the existing desktop parts**                              | New `ExplorerCard` shell composes `WinRatePanel` and `OpeningNavigator`. Avoids refactoring freshly-shipped mobile code and its 35 tests. Convergence of the two breakpoints is logged as a follow-up, not done now. |
+| Sample report (change 19)                 | **Pre-baked cached fixtures**                                    | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                         |
+| Delivery                                  | **Six phased PRs, one per theme**                                | Each independently shippable and revertable, each with its own verification checkpoint. Matches how #53–#55 were run.                                                                                                |
+| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                        | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                               |
+| Repertoire persistence                    | **Accept `localStorage`, record the risk**                       | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                       |
+| Master games position, mobile detail      | **Hold current position** (after the data surface, before plans) | The proposal moves it below Learning resources. Sound reasoning, modest gain, but it reorders screenshot-verified work shipped three weeks ago.                                                                      |
+
+---
+
+## 4. Additions not in the review
+
+1. **Snapshot-fallback labelling on the explorer card.** When
+   `LICHESS_EXPLORER_TOKEN` is absent the `/api/explorer` proxy 503s and the
+   panel falls back to bundled snapshot stats. A card headed "Opening explorer /
+   Lichess · all ratings" must not claim live data while serving the fallback.
+   The mocks draw only the happy path.
+2. **`aria-pressed` on `StarButton`.** The review asks for it and it is
+   genuinely missing. The anchor-navigation guard (`preventDefault` +
+   `stopPropagation`) is already correct.
+3. **`aria-live` on the filter result count.** Otherwise the new filter bar is
+   silent to screen readers.
+4. **Filter state in URL search params, not component state.** The only way
+   "filter state survives back-navigation" works, and it keeps grid cards as
+   real crawlable `<a>` links across 12,000+ indexed pages.
+5. **Shared `ResultBar` component.** The win/draw/loss bar markup is currently
+   duplicated across `OpeningCard`'s two variants and elsewhere. Change 05
+   touches every copy, so extract it rather than edit four.
+
+---
+
+## 5. Phases
+
+Each phase is one PR, independently shippable and revertable.
+
+### Phase 0 — Systemic pass
+
+No behaviour change. Lands first because every later phase inherits it.
+
+**Button spec.** Primary = filled `--color-brand-orange`, text
+`--color-text-inverse`, `--radius-md`. Secondary = transparent + neutral border.
+Tertiary = neutral surface, neutral text, no orange.
+
+- `.load-more-btn` (`simplified.css:2446`) — currently orange text, orange
+  border, `999px` radius. Becomes tertiary.
+- Analyse CTA — pill radius to `--radius-md`. Pill shape survives only on the
+  platform toggle.
+- Dashboard mobile CTA — `#fff` to `--color-text-inverse`.
+- Practice — to primary.
+
+**Naming.** "My repertoire" → "Your repertoire" (headings), "Repertoire" (tab
+and app bar), "Added to your repertoire" (toast).
+
+**Copy.** "Analyse Your Games" → "Analyse your games" — both the `h1`
+(`PersonalOpeningStats.tsx:254`) and the SEO title (`AnalyseGamesPage.tsx:11`).
+"Search by pasting PGN" → "Paste a game". Sentence case sweep.
+
+**Decoration.** Remove the orange gradient rule under mobile section headings —
+the last use of orange as decoration rather than action.
+
+**Result bars.** Extract `ResultBar`; labels become "White 31% · Draw 39% ·
+Black 30%". Result colours stay `--color-result-white` / `-draw` / `-black`.
+
+**Accessibility.** `aria-pressed` on `StarButton`; orange focus outline
+(`outline: 2px solid var(--color-brand-orange); outline-offset: 2px`) audited
+across controls; mobile hit targets ≥44px.
+
+**Lockstep.** Update `design-system/project/colors_and_type.css` and any
+affected preview card in the same PR.
+
+_Checkpoint:_ no functional change. Full test suite green, `npm run build`
+clean, Playwright screenshots at 1360 and 390 for Discover, detail and Analyse
+showing only the intended visual deltas.
+
+---
+
+### Phase 1 — Discover: close the loop
+
+The change that justifies the review. Today the page promotes building a
+repertoire and provides no way to do it.
+
+- **Star on every card.** `OpeningCard` already accepts `showStar` / `isStarred`
+  / `onStarClick` and nothing passes them. Wire them in `PopularOpeningsGrid`
+  from `useRepertoire`.
+- **Toast with Undo.** Extract the detail page's toast into a shared component;
+  add Undo. Required because the star is now a single tap on a scrolling list
+  where mis-taps are likely.
+- **First run leads with content.** `RepertoireSection`'s empty state (dashed
+  box, icon, two lines) becomes a one-line prompt: "Star openings to build your
+  repertoire." No link — there is nothing to link to when empty.
+- **Persistent search.** `TopBar` renders its search field on every page, not
+  only `/opening/*`. Field width 240px. Remove "Surprise me!" from the bar.
+- **Hero.** Search is the only prominent element. "Surprise me · Paste a game"
+  become quiet links beneath it, Surprise first.
+- **Mobile tab bar.** Discover · Repertoire · Analyse. New `/repertoire` route
+  with populated and empty states. Count badge on the tab.
+- **Search everywhere on mobile.** The app-bar search icon opens the existing
+  `SearchOverlay` on all pages.
+- **Desktop search hub.** The landing `SearchBar`'s focused dropdown gains
+  Recent (`lib/recentOpenings`) + Your repertoire + Surprise me.
+
+_Checkpoint:_ a user can complete find → save → revisit entirely from Discover,
+on both breakpoints, without opening a detail page.
+
+---
+
+### Phase 2 — Browse API
+
+No UI change. Lands before the filter bar so the bar is never built on numbers
+that do not reconcile.
+
+`GET /api/openings/browse` with `level`, `style`, `family`, `sort`, `page`,
+returning:
+
+```
+{ items: [...], total: <filtered total>, facets: { level: [...], style: [...], family: [...] } }
+```
+
+Facet counts are computed server-side over the full corpus. The rule, stated
+once: **the count is always the filtered total; the Load more button is always
+the difference.**
+
+Requirements:
+
+- A `Cache-Control` entry in `vercel.json` — mandatory for every new route
+  (CLAUDE.md). Crawlers index 12,000+ pages and amplify unbounded payloads into
+  origin-transfer bills.
+- Page size capped; no unbounded response.
+- Backend tests (Jest) including an assertion that
+  `total === shown + remaining`.
+
+_Checkpoint:_ the endpoint's arithmetic is provably true under test. This is the
+bug the review found in the mock and which production also has — today the
+category counts come from the landing page's popular list while the grid
+contents come from a separate `popular-by-eco` fetch, so they cannot agree.
+
+---
+
+### Phase 3 — Faceted filter bar
+
+Replaces two unlabelled pill rows (`ComplexityFilters` + `CategoryFilter`) that
+read as one row of ten, with raw ECO letters as jargon.
+
+- **Desktop:** four facet buttons each showing its current value — Level · Style
+  · Family · Sort — plus a result count and Clear.
+- **Mobile:** one Filters control with an active count, opening a sheet per
+  facet. The Family sheet has a search field and groups by first move.
+- **Family replaces ECO categories.** `family_id` is already on the full
+  search-index and `/api/families` already serves display names.
+- State lives in URL search params. Cards stay real `<a>` links.
+- `aria-live` on the count.
+- "Load more (N remaining)" with an honest N. The button already renders on both
+  breakpoints — change 27's "mobile gained the Load more it was missing" is a
+  mock artefact. Only the arithmetic is wrong today.
+
+_Checkpoint:_ counts reconcile on screen; navigating to a detail page and back
+restores the active facets; cards remain crawlable links.
+
+---
+
+### Phase 4 — Opening detail (desktop)
+
+Mobile gets copy-only changes in this phase.
+
+- **New `ExplorerCard` shell.** Raised header band carrying the title "Opening
+  explorer", the source line, and the `LevelLens` pills. Body: stats,
+  breadcrumb, Next moves, Alternatives. Everything the filter governs sits
+  inside that border; nothing outside it moves.
+- **`WinRatePanel` gives up its pills and its master-games block.**
+- **Master games become their own rail card**, titled "Master games" with a
+  "2,400+ Elo" source line and an "All 47 master games" reveal. It is the one
+  list the level filter does not apply to.
+- **Labelled reveals.** "Show 4 more moves", "Show 3 more videos", "All 47
+  master games". Five identical grey "Show more" buttons told the user nothing.
+- **Practice** to primary filled, under the board.
+- **Level echoes in sub-labels** — "Most popular at 1400–1800", "Games ·
+  intermediate" — on both breakpoints, because the filter header scrolls out of
+  view on a tall mobile card.
+- **Snapshot-fallback labelling** (addition 1 above).
+- Rename "opening book" to "Opening explorer" throughout, matching Lichess.
+
+_Checkpoint:_ the sticky board still releases when the rail ends. Watch the
+`overflow: clip` rule — `overflow: hidden` on a card containing a sticky child
+makes that card the containing block and breaks the stick.
+
+_Degradation:_ each block is independent. An empty block is **omitted, not shown
+empty**, and the remaining blocks close up. Do not add empty-state cards for
+missing sections — most of the 12,377 openings are sparse, so that is the common
+case, not an edge case.
+
+---
+
+### Phase 5 — Analyse
+
+- **One header.** The duplicate "Ready to analyse your openings?" block goes;
+  the hero carries the payoff subtitle: "See which openings you actually play,
+  and how they score — from your recent rated games."
+- **Scope and privacy line.** "Reads your public rated games — rapid, blitz &
+  classical. Bullet excluded. Nothing is stored."
+- **Gear relocated** from the blank state to the dashboard header. `limit` stays
+  in persisted form state.
+- **Sample report.** "See a sample report — Magnus · Hikaru", served from
+  committed fixtures. Needs a regeneration script and an "as of \<date\>" line,
+  since the fixtures are a snapshot of real games and will go stale.
+- **Accessibility.** Platform toggle becomes a radio group (currently two
+  buttons). Real `<label>` on the username input, not placeholder-only.
+- **Dashboard honesty.** "Career Totals / Overall performance" → "Your record"
+  under a "This analysis" eyebrow. The old label claimed a lifetime record for
+  numbers describing only the games in this run — the clearest factual error on
+  the screen. Wins tinted sage, losses brick, draws neutral — "sage" and "brick"
+  are the mock's words, not existing tokens. Resolve them against the
+  result-colour scale (`--color-result-white` / `-draw` / `-black`) or add named
+  tokens in the same PR; never introduce raw hex values.
+- **"GP" → "Games"** in the desktop column header, matching mobile.
+- **Transient states restyled** to spec: Analyse becomes Cancel with a spinner,
+  inputs dim, progress bar shows step and game count; the error is a quiet
+  inline message on a neutral surface, username retained, button back to
+  Analyse.
+
+---
+
+## 6. Verification, every phase
+
+- `npm run test:frontend` (Vitest), `npm test` (Jest, with
+  `--testPathIgnorePatterns='\.worktrees'`), `npm run build`, `npm run format`.
+- Playwright screenshots at 1360 and 390 for every touched screen — the method
+  used to verify #53–#55.
+- Trust CI over local `npm run format:check`: with `core.autocrlf=true` the
+  local working tree is CRLF and `.prettierrc` sets `endOfLine: lf`, so dozens
+  of files false-fail locally while being clean on CI.
+- Design-system bundle updated in the same PR as any token, component or visual
+  surface change.
+- `activeContext.md` (<50 lines) and `progress.md` (<100 lines) updated; detail
+  to `archive.md`.
+
+---
+
+## 7. Non-goals
+
+Stated explicitly so no agent invents them: tablet breakpoints, the
+practice-mode flow itself, sign-in, a desktop repertoire page, manual repertoire
+reordering, empty-state cards for sparse openings, and the desktop
+typed-and-submitted search results state.
+
+There is **no separate repertoire page on desktop** — the row on Discover _is_
+the repertoire. Mobile keeps its Repertoire tab. Sort is fixed at most recently
+saved first. Revisit both if saved counts grow past what one row can hold.
+
+---
+
+## 8. Risks
+
+| Risk                                                                                                                            | Mitigation                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Repertoire is `localStorage` only — no sync, cleared with site data — and Phase 1 builds a tab, a badge and an Undo toast on it | Accepted. Recorded here. Revisit if sign-in lands.                                  |
+| Sample-report fixtures go stale                                                                                                 | Regeneration script + visible "as of \<date\>".                                     |
+| Browse endpoint payload size amplified by crawlers                                                                              | Capped page size + `Cache-Control` in `vercel.json`.                                |
+| Phase 4 rail grows taller and breaks the sticky board                                                                           | Explicit checkpoint; `overflow: clip` not `hidden` on any card with a sticky child. |
+| Phase 3 filter refactor silently drops crawlable card links                                                                     | Cards stay `<a>`; URL-param state; SEO check in the phase checkpoint.               |
+| Desktop and mobile explorer cards diverge (wrap now, unify later)                                                               | Logged as a follow-up. Both must show the same labels and the same filter scope.    |

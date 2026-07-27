@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<meta name="design_doc_mode" content="canvas">
+<style>
+  html,body{margin:0;background:#151311;font-family:'DM Sans',sans-serif;color:#ece8e1}
+  *{box-sizing:border-box}
+  a{color:#e85d04;text-decoration:none}
+  a:hover{color:#f17a2f}
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-thumb{background:#2a2724;border-radius:4px}
+</style>
+</helmet>
+<div style="padding:56px 56px 80px;min-width:2560px">
+
+  <div style="max-width:1040px;margin-bottom:56px">
+    <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:14px">Opening Book</div>
+    <h1 style="font:800 44px/1.05 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 16px;color:#ece8e1">Current state — all screens</h1>
+    <p style="font:400 17px/1.55 'DM Sans';color:#9a958e;margin:0;max-width:860px">Faithful recreations of the live product, in journey order, at both breakpoints. Reference only: no proposed changes appear here. Every screen id matches the same screen in <strong style="color:#ece8e1;font-weight:600">Opening Book — Proposed</strong>, so the two files can be read side by side.</p>
+  </div>
+  <div style="max-width:1040px;margin:0 0 28px">
+    <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:10px">01 · Discover</div>
+    <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 10px;color:#ece8e1">Discover</h2>
+    <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0;max-width:820px">The landing and browse page. Hero search, repertoire row, popular openings grid with two unlabelled filter rows.</p>
+  </div>
+  <div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap;margin-bottom:72px">
+    <div id="discover-desktop" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Discover</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Desktop 1360×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="position:relative;width:1360px;border-radius:12px;overflow:hidden;border:1px solid #2a2724;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+  <div style="height:38px;background:#0f0e0d;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #2a2724">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e56b67"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#e8a838"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#85a663"></span>
+    <div style="margin-left:16px;flex:1;max-width:420px;height:22px;background:#1a1816;border-radius:6px;display:flex;align-items:center;padding:0 12px;font:400 12px/1 'DM Sans';color:#8e887f">openingbook.xyz</div>
+  </div>
+
+  <div style="background:#1a1816">
+    <div style="height:60px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px;gap:16px">
+      <div style="justify-self:start;font:600 16px/1 'DM Sans';letter-spacing:-.01em;color:#ece8e1">Opening Book</div>
+      <div style="justify-self:center;display:flex;gap:16px;height:100%;align-items:stretch">
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#e85d04;box-shadow:inset 0 -2px 0 #e85d04">Discover</div>
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#9a958e">Analyse</div>
+      </div>
+      <div style="justify-self:end"></div>
+    </div>
+
+    <div style="padding:32px 16px 16px;text-align:center">
+      <h1 style="font:700 58px/1.1 'Bricolage Grotesque';letter-spacing:-.025em;margin:0 0 16px;color:#ece8e1">Opening <span style="color:#e85d04">Book</span></h1>
+      <p style="font:400 20px/1.6 'DM Sans';color:#9a958e;margin:0 auto 32px;max-width:600px">Discover, explore and learn chess openings.</p>
+      <div style="max-width:700px;margin:0 auto;display:flex;gap:12px">
+        <input placeholder="Search variations, ECO codes, or systems..." style="flex:1;background:linear-gradient(145deg,rgba(232,93,4,.06),transparent);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:24px 32px;font:400 20px/1 'DM Sans';color:#ece8e1;text-align:center;outline:none">
+        <button style="background:#363330;color:#ece8e1;border:1px solid #2a2724;border-radius:12px;padding:16px 24px;font:600 16px/1 'DM Sans';cursor:pointer;white-space:nowrap">Surprise me</button>
+      </div>
+      <div style="margin-top:12px"><span style="font:400 13px/1 'DM Sans';color:#9a958e;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.18)">Search by pasting PGN</span></div>
+    </div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:16px 32px 8px">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px">
+        <h2 style="font:700 24px/1.35 'Bricolage Grotesque';margin:0;color:#ece8e1">My repertoire</h2>
+      </div>
+      <div style="padding:32px 24px;background:#232120;border:1px dashed rgba(255,255,255,.10);border-radius:8px;text-align:center">
+        <div style="display:flex;justify-content:center;margin-bottom:8px;color:#5a554e"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+        <p style="font:600 15px/1.4 'DM Sans';color:#ece8e1;margin:0 0 4px">No openings saved yet</p>
+        <p style="font:400 14px/1.5 'DM Sans';color:#9a958e;margin:0">Star any opening to save it to your repertoire for quick access.</p>
+      </div>
+    </div>
+
+    <div style="padding:16px 16px 48px">
+      <div style="max-width:1200px;margin:0 auto 24px;padding:0 16px">
+        <h2 style="font:700 30px/1.2 'Bricolage Grotesque';margin:0 0 8px;color:#ece8e1;display:inline-block;position:relative">Popular openings<span style="position:absolute;bottom:-4px;left:0;width:60px;height:3px;background:linear-gradient(90deg,#e85d04,rgba(232,93,4,.3));border-radius:2px"></span></h2>
+        <p style="font:400 20px/1.5 'DM Sans';color:#9a958e;margin:12px 0 0;max-width:640px">The most popular openings for every style of play, from classic variations to hypermodern</p>
+      </div>
+      <div style="max-width:1200px;margin:0 auto 24px;padding:0 16px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:#e85d04;color:#100f0e;border:1px solid #e85d04;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">All levels</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Beginner</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Intermediate</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Advanced</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:#e85d04;color:#100f0e;border:1px solid #e85d04;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">All Openings</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Irregular Openings (A)</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Semi-Open Games (B)</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Open Games (C)</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Closed and Semi-Closed Games (D)</span>
+          <span style="background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Indian Defences (E)</span>
+        </div>
+      </div>
+      <div style="max-width:1200px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <sc-for list="{{ openings }}" as="o" hint-placeholder-count="6">
+          <a style="background:#232120;border:1px solid #2a2724;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.2);cursor:pointer;text-decoration:none;color:inherit">
+            <div style="width:100%;aspect-ratio:1;background:#1a1816">{{ o.board }}</div>
+            <div style="padding:12px 16px 4px">
+              <h3 style="font:700 18px/1.3 'Bricolage Grotesque';margin:0;color:#ece8e1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em">{{ o.name }}</h3>
+            </div>
+            <div style="padding:0 16px;display:flex;gap:8px;margin-bottom:8px">
+              <span style="{{ o.cxStyle }}">{{ o.complexity }}</span>
+              <span style="font:500 11px/1.4 'DM Sans';padding:2px 6px;border-radius:4px;background:#363330;color:#9a958e;border:1px solid #2a2724">{{ o.eco }}</span>
+            </div>
+            <div style="padding:0 16px 16px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px">
+                <span style="font:500 12px/1 monospace;color:#e85d04">{{ o.moves }}</span>
+                <span style="font:400 11px/1 'DM Sans';color:#9a958e">{{ o.games }}</span>
+              </div>
+              <div style="display:flex;height:8px;gap:2px;background:#363330;border-radius:4px;overflow:hidden;margin-bottom:4px">
+                <div style="{{ o.wBar }}"></div>
+                <div style="{{ o.dBar }}"></div>
+                <div style="{{ o.bBar }}"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font:500 10px/1 'DM Sans';color:#9a958e">
+                <span>W {{ o.w }}%</span><span>D {{ o.d }}%</span><span>B {{ o.b }}%</span>
+              </div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+      <div style="text-align:center;margin-top:24px">
+        <span style="background:#363330;color:#e85d04;border:1px solid #e85d04;border-radius:999px;padding:12px 32px;font:600 13px/1 'DM Sans'">Load more (14 remaining)</span>
+      </div>
+    </div>
+
+    <div style="background:#1a1816;border-top:1px solid rgba(255,255,255,.06);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="font:800 13px/1 'Bricolage Grotesque';color:#e85d04;opacity:.5;letter-spacing:-.02em">Opening Book</span>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font:400 10px/1 'DM Sans';color:#8e887f;letter-spacing:.025em">© 2026 Opening Book · MIT License</span>
+        <span style="font:400 10px/1 'DM Sans';color:#8e887f">Support Opening Book ☕</span>
+        <span style="font:400 10px/1 'DM Sans';color:#8e887f">Send feedback</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+
+    <div id="discover-mobile" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Discover</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Mobile 390×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="position:relative;width:414px;padding:14px;background:#0b0a09;border-radius:52px;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid #2a2724">
+  <div style="position:relative;width:386px;border-radius:40px;overflow:hidden;background:#1a1816">
+    <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#2c2a27">
+      <span style="font:600 13px/1 'DM Sans';color:#ece8e1">9:41</span>
+      <div style="display:flex;gap:5px;align-items:center;color:#ece8e1"><span style="font:600 11px/1 'DM Sans'">5G</span><span style="width:22px;height:11px;border:1px solid #ece8e1;border-radius:3px;display:inline-block"></span></div>
+    </div>
+    <div style="height:56px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;padding:0 16px">
+      <span style="font:600 16px/1 'DM Sans';color:#ece8e1">Opening Book</span>
+      <div style="width:36px;height:36px;border:1px solid rgba(255,255,255,.10);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9a958e"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div>
+    </div>
+    <div style="padding:24px 16px 16px;text-align:center">
+      <h1 style="font:700 30px/1.1 'Bricolage Grotesque';letter-spacing:-.025em;margin:0 0 16px;color:#ece8e1">Opening <span style="color:#e85d04">Book</span></h1>
+      <p style="font:400 15px/1.5 'DM Sans';color:#9a958e;margin:0 0 24px">Discover, explore and learn chess openings.</p>
+      <input placeholder="Search variations, ECO codes..." style="width:100%;background:linear-gradient(145deg,rgba(232,93,4,.06),transparent);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px;font:400 15px/1 'DM Sans';color:#ece8e1;text-align:center;outline:none;margin-bottom:12px">
+      <button style="width:100%;background:#363330;color:#ece8e1;border:1px solid #2a2724;border-radius:12px;padding:12px;font:600 14px/1 'DM Sans';cursor:pointer">Surprise me</button>
+      <div style="margin-top:12px"><span style="font:400 13px/1 'DM Sans';color:#9a958e;text-decoration:underline;text-underline-offset:3px">Search by pasting PGN</span></div>
+    </div>
+    <div style="padding:8px 16px">
+      <h2 style="font:700 20px/1.35 'Bricolage Grotesque';margin:0 0 12px;color:#ece8e1">My repertoire</h2>
+      <div style="padding:24px 16px;background:#232120;border:1px dashed rgba(255,255,255,.10);border-radius:8px;text-align:center">
+        <div style="display:flex;justify-content:center;margin-bottom:8px;color:#5a554e"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+        <p style="font:600 14px/1.4 'DM Sans';color:#ece8e1;margin:0 0 4px">No openings saved yet</p>
+        <p style="font:400 13px/1.5 'DM Sans';color:#9a958e;margin:0">Star any opening to save it to your repertoire.</p>
+      </div>
+    </div>
+    <div style="padding:20px 16px 8px">
+      <h2 style="font:700 22px/1.2 'Bricolage Grotesque';margin:0 0 8px;color:#ece8e1;display:inline-block;position:relative">Popular openings<span style="position:absolute;bottom:-4px;left:0;width:50px;height:3px;background:linear-gradient(90deg,#e85d04,rgba(232,93,4,.3));border-radius:2px"></span></h2>
+      <p style="font:400 15px/1.5 'DM Sans';color:#9a958e;margin:12px 0 16px">The most popular openings for every style of play, from classic variations to hypermodern</p>
+      <div style="position:relative;margin-bottom:12px">
+        <div style="display:flex;gap:8px;overflow:hidden">
+          <span style="flex-shrink:0;background:#e85d04;color:#100f0e;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">All levels</span>
+          <span style="flex-shrink:0;background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Beginner</span>
+          <span style="flex-shrink:0;background:transparent;color:#9a958e;border:1px solid #2a2724;border-radius:999px;padding:8px 16px;font:500 13px/1 'DM Sans'">Intermed…</span>
+        </div>
+        <div style="position:absolute;top:0;right:0;bottom:0;width:26px;background:linear-gradient(90deg,transparent,#1a1816)"></div>
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid #2a2724;border-radius:8px;padding:9px 12px;font:500 13px/1 'DM Sans';color:#9a958e;margin-bottom:16px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
+        Category
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ mobileOpenings }}" as="o" hint-placeholder-count="3">
+          <a style="display:flex;gap:16px;padding:12px;background:#232120;border:1px solid #2a2724;border-radius:8px;align-items:center;text-decoration:none;color:inherit">
+            <div style="width:96px;height:96px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#1a1816">{{ o.board }}</div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+              <h3 style="font:600 14px/1.3 'DM Sans';margin:0;color:#ece8e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ o.name }}</h3>
+              <div style="display:flex;gap:6px">
+                <span style="{{ o.cxStyleSm }}">{{ o.complexity }}</span>
+                <span style="font:500 10px/1.4 'DM Sans';padding:2px 6px;border-radius:4px;background:#363330;color:#9a958e;border:1px solid #2a2724">{{ o.eco }}</span>
+              </div>
+              <span style="font:500 11px/1 monospace;color:#9a958e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ o.moves }}</span>
+              <div style="display:flex;height:5px;gap:2px;background:#363330;border-radius:3px;overflow:hidden;margin-top:2px">
+                <div style="{{ o.wBar }}"></div>
+                <div style="{{ o.dBar }}"></div>
+                <div style="{{ o.bBar }}"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font:500 10px/1 'DM Sans';color:#9a958e">
+                <span>W {{ o.w }}%</span><span>D {{ o.d }}%</span><span>B {{ o.b }}%</span>
+              </div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+    <div style="height:60px;background:#2c2a27;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;margin-top:8px">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#e85d04"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg><span style="font:500 11px/1 'DM Sans'">Discover</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg><span style="font:500 11px/1 'DM Sans'">Analyse</span></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </div>
+  <div style="height:1px;background:#2a2724;max-width:3200px;margin:0 0 56px"></div>
+
+  <div style="max-width:1040px;margin:0 0 28px">
+    <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:10px">02 · Opening detail</div>
+    <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 10px;color:#ece8e1">Opening detail</h2>
+    <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0;max-width:820px">A single opening. Board, level lens, win rates, opening book, master games, plans, videos, studies. Shown fully populated — the maximal case.</p>
+  </div>
+  <div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap;margin-bottom:72px">
+    <div id="detail-desktop" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Opening detail</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Desktop 1360×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:1360px;border-radius:12px;overflow:hidden;border:1px solid #2a2724;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+  <div style="height:38px;background:#0f0e0d;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #2a2724">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e56b67"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#e8a838"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#85a663"></span>
+    <div style="margin-left:16px;flex:1;max-width:560px;height:22px;background:#1a1816;border-radius:6px;display:flex;align-items:center;padding:0 12px;font:400 12px/1 'DM Sans';color:#8e887f">openingbook.xyz/opening/Sicilian-Defence-Najdorf-Variation</div>
+  </div>
+
+  <div style="background:#1a1816">
+    <!-- topbar -->
+    <div style="height:60px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px;gap:16px">
+      <div style="justify-self:start;font:600 16px/1 'DM Sans';letter-spacing:-.01em;color:#ece8e1">Opening Book</div>
+      <div style="justify-self:center;display:flex;gap:16px;height:100%;align-items:stretch">
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#e85d04;box-shadow:inset 0 -2px 0 #e85d04">Discover</div>
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#9a958e">Analyse</div>
+      </div>
+      <div style="justify-self:end;display:flex;align-items:center;gap:10px">
+        <div style="position:relative;width:220px"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#8e887f;display:flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></span><div style="width:100%;background:#1a1816;border:1px solid rgba(255,255,255,.10);border-radius:8px;padding:8px 12px 8px 32px;font:400 13px/1 'DM Sans';color:#8e887f">Search openings…</div></div>
+        <span style="display:inline-flex;align-items:center;background:#e85d04;color:#100f0e;font:600 13px/1 'DM Sans';border-radius:8px;padding:9px 16px;white-space:nowrap">Surprise me!</span>
+      </div>
+    </div>
+
+    <!-- title area -->
+    <div style="text-align:center;padding:28px 32px 20px">
+      <div style="display:flex;align-items:baseline;justify-content:center;gap:12px">
+        <h1 style="font:800 36px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0"><span style="color:#ece8e1">Sicilian Defence</span><span style="color:#8e887f;margin:0 .15em">:</span><span style="color:#e85d04">Najdorf Variation</span></h1>
+        <span style="color:#e85d04;display:inline-flex"><svg width="26" height="26" viewBox="0 0 24 24" fill="#e85d04" stroke="#e85d04" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#9a958e;font:600 11px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:5px 12px">advanced</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#9a958e;font:600 11px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:5px 12px">aggressive</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#9a958e;font:600 11px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:5px 12px">dynamic</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#9a958e;font:600 11px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:5px 12px">theoretical</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#9a958e;font:600 11px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:5px 12px">sharp</span>
+      </div>
+    </div>
+
+    <!-- two column -->
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:24px;max-width:1300px;margin:0 auto;padding:0 24px">
+
+      <!-- LEFT: board -->
+      <div>
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)">
+          <div style="max-width:460px;margin:0 auto">{{ boardDesktop }}</div>
+          <!-- nav + practice -->
+          <div style="display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;gap:2px">
+              <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#8e887f"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg></span>
+              <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#9a958e"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>
+              <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#9a958e"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+              <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#8e887f"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></span>
+            </div>
+            <span style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#e85d04;border:1px solid #e85d04;border-radius:8px;padding:8px 16px;font:700 14px/1 'Bricolage Grotesque'"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg>Practice</span>
+          </div>
+          <!-- move strip -->
+          <div style="display:flex;align-items:center;gap:4px;margin-top:10px;padding:6px 8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:8px;overflow-x:auto">
+            <span style="padding:4px 8px;border-radius:4px;font:600 11px/1 'DM Sans';color:#9a958e;letter-spacing:.04em;flex-shrink:0">Start</span>
+            <span style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font:500 13px/1 'DM Sans';color:#9a958e;flex-shrink:0"><span style="font:700 11px/1 'DM Sans';color:#8e887f">1.</span>e4 c5</span>
+            <span style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font:500 13px/1 'DM Sans';color:#9a958e;flex-shrink:0"><span style="font:700 11px/1 'DM Sans';color:#8e887f">2.</span>Nf3 d6</span>
+            <span style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font:500 13px/1 'DM Sans';color:#9a958e;flex-shrink:0"><span style="font:700 11px/1 'DM Sans';color:#8e887f">3.</span>d4 cxd4</span>
+            <span style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font:500 13px/1 'DM Sans';color:#9a958e;flex-shrink:0"><span style="font:700 11px/1 'DM Sans';color:#8e887f">4.</span>Nxd4 Nf6</span>
+            <span style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font:500 13px/1 'DM Sans';color:#e85d04;background:rgba(232,93,4,.12);border:1px solid rgba(232,93,4,.3);flex-shrink:0"><span style="font:700 11px/1 'DM Sans';color:rgba(232,93,4,.5)">5.</span>Nc3 a6</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT column -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+
+        <!-- overview -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:12px 16px">
+          <div style="font:800 18px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:8px">Overview</div>
+          <p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">The Najdorf is the most storied of the Open Sicilians. With 5…a6 Black denies White's pieces the b5 square and prepares …e5 or …e6, keeping the centre flexible. It leads to the sharpest theory in chess — the English Attack, the Poisoned Pawn, the Fischer–Sozin — and rewards deep preparation and fearless play on both wings.</p>
+        </div>
+
+        <!-- win rate panel -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:12px">
+          <!-- level lens -->
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            <span style="background:#e85d04;border:1px solid #e85d04;border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#1a1713">All</span>
+            <span style="background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#8e887f">Beginner</span>
+            <span style="background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#8e887f">Intermediate</span>
+            <span style="background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#8e887f">Advanced</span>
+            <span style="background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#8e887f">Expert</span>
+            <span style="background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:4px 8px;font:600 11px/1 'DM Sans';color:#8e887f">Masters</span>
+          </div>
+          <!-- win rate bar -->
+          <div>
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px">
+              <div style="display:flex;flex-direction:column;gap:4px"><span style="font:600 11px/1 'DM Sans';color:#8e887f">Total games</span><span style="font:800 24px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">1.9M</span></div>
+              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><span style="font:600 11px/1 'DM Sans';color:#8e887f">Average Elo</span><span style="font:800 24px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#e85d04">1,847</span></div>
+            </div>
+            <div style="font:400 11px/1 'DM Sans';color:#8e887f;margin:-4px 0 8px">All Lichess games · live</div>
+            <div style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:2px">
+              <div style="height:100%;border-radius:9999px;background:#d4cfc7;width:47%"></div>
+              <div style="height:100%;border-radius:9999px;background:#5a554e;width:20%"></div>
+              <div style="height:100%;border-radius:9999px;background:#c08840;width:33%"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;font:600 11px/1 'DM Sans';color:#8e887f">
+              <span style="display:inline-flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#d4cfc7"></span>White wins 47%</span>
+              <span style="display:inline-flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#5a554e"></span>Draws 20%</span>
+              <span style="display:inline-flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#c08840"></span>Black wins 33%</span>
+            </div>
+          </div>
+          <!-- master games -->
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:12px;display:flex;flex-direction:column;gap:4px">
+            <div style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Master games</div>
+            <div style="display:flex;justify-content:space-between;gap:8px;font:400 12px/1 'DM Sans';color:#ece8e1;padding:4px 0"><span>Kasparov, G. – Karpov, A.</span><span style="color:#8e887f;font-variant-numeric:tabular-nums;white-space:nowrap">1–0 · 1985</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;font:400 12px/1 'DM Sans';color:#ece8e1;padding:4px 0"><span>Topalov, V. – Anand, V.</span><span style="color:#8e887f;font-variant-numeric:tabular-nums;white-space:nowrap">½–½ · 2005</span></div>
+            <div style="display:flex;justify-content:space-between;gap:8px;font:400 12px/1 'DM Sans';color:#ece8e1;padding:4px 0"><span>Carlsen, M. – Nakamura, H.</span><span style="color:#8e887f;font-variant-numeric:tabular-nums;white-space:nowrap">0–1 · 2019</span></div>
+            <span style="margin-top:4px;padding:6px 0;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:4px;font:600 12px/1 'DM Sans';color:#8e887f">Show 5 more</span>
+          </div>
+        </div>
+
+        <!-- opening book -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.25)">
+          <div style="font:800 16px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:12px">Opening book</div>
+          <!-- breadcrumb -->
+          <nav style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px;line-height:1.6;padding-bottom:12px">
+            <span style="font:400 13px/1 'DM Sans';color:#9a958e">Sicilian Defence</span>
+            <span style="color:#8e887f;opacity:.4;margin:0 2px">›</span>
+            <span style="font:400 13px/1 'DM Sans';color:#9a958e">Open Sicilian</span>
+            <span style="color:#8e887f;opacity:.4;margin:0 2px">›</span>
+            <span style="font:600 13px/1 'DM Sans';color:#e85d04">Najdorf Variation</span>
+          </nav>
+          <!-- next moves -->
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:12px">
+            <div style="font:800 16px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:2px">Next moves</div>
+            <div style="font:400 12px/1.2 'DM Sans';color:#9a958e;margin-bottom:12px">Most popular next moves</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              {{ nextMoves }}
+            </div>
+            <span style="display:block;margin-top:8px;padding:8px 0;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:4px;font:600 12px/1 'DM Sans';color:#8e887f">Show 4 more</span>
+          </div>
+          <!-- alternatives -->
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:12px;margin-top:12px">
+            <div style="font:800 16px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:2px">Instead of 5…a6</div>
+            <div style="font:400 12px/1.2 'DM Sans';color:#9a958e;margin-bottom:12px">Most popular alternatives</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              {{ altMoves }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- full width sections -->
+    <div style="max-width:1300px;margin:0 auto;padding:0 24px 40px">
+      <!-- common plans -->
+      <div style="border-top:1px solid rgba(255,255,255,.10);padding-top:24px;margin-top:24px">
+        <h2 style="font:800 24px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0 0 16px">Common plans</h2>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div>
+            <div style="font:700 16px/1 'DM Sans';color:#9a958e;margin-bottom:12px">Shared</div>
+            <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-left:3px solid #e85d04;border-radius:12px;padding:16px"><p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">Play revolves around the d5 square and the e4 pawn. The kings typically castle on opposite wings, and the game becomes a race — each side storming pawns toward the enemy king, tempo for tempo.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div>
+              <div style="font:700 16px/1 'DM Sans';color:#9a958e;margin-bottom:12px">White</div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(255,255,255,.18);border-radius:12px;padding:16px"><p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">Launch a kingside pawn storm with f3, g4 and h4 after Be3 and Qd2 — the English Attack.</p></div>
+                <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(255,255,255,.18);border-radius:12px;padding:16px"><p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">Contest the d5 square and prepare a Nd5 sacrifice to shatter Black's structure.</p></div>
+              </div>
+            </div>
+            <div>
+              <div style="font:700 16px/1 'DM Sans';color:#9a958e;margin-bottom:12px">Black</div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(255,255,255,.10);border-radius:12px;padding:16px"><p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">Counterattack on the queenside with …b5, …Bb7 and pressure down the half-open c-file.</p></div>
+                <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(255,255,255,.10);border-radius:12px;padding:16px"><p style="font:400 14px/1.6 'DM Sans';color:#ece8e1;opacity:.78;margin:0">Time an …e5 or …d5 break to free the position when White over-extends on the kingside.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- learning resources -->
+      <div style="border-top:1px solid rgba(255,255,255,.10);padding-top:24px;margin-top:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+          <h2 style="font:800 24px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0">Learning resources</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="display:inline-flex;align-items:center;padding:6px 16px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;color:#9a958e;font:500 13px/1 'DM Sans'">Search Lichess studies</span>
+            <span style="display:inline-flex;align-items:center;padding:6px 16px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;color:#9a958e;font:500 13px/1 'DM Sans'">Browse on Chessable</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <!-- videos -->
+          <div style="min-width:0">
+            <div style="font:800 18px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:12px">Video lessons</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              {{ videos }}
+            </div>
+            <span style="display:block;margin-top:12px;text-align:center;padding:8px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:4px;font:600 12px/1 'DM Sans';color:#8e887f;align-self:center;width:fit-content;margin-left:auto;margin-right:auto">Show 3 more ▾</span>
+          </div>
+          <!-- studies -->
+          <div style="min-width:0">
+            <div style="font:800 18px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:12px">Studies</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              {{ studies }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+
+    <div id="detail-mobile" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Opening detail</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Mobile 390×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:414px;padding:14px;background:#0b0a09;border-radius:52px;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid #2a2724">
+  <div style="width:386px;border-radius:40px;overflow:hidden;background:#1a1816">
+    <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#2c2a27">
+      <span style="font:600 13px/1 'DM Sans';color:#ece8e1">9:41</span>
+      <div style="display:flex;gap:5px;align-items:center;color:#ece8e1"><span style="font:600 11px/1 'DM Sans'">5G</span><span style="width:22px;height:11px;border:1px solid #ece8e1;border-radius:3px;display:inline-block"></span></div>
+    </div>
+    <div style="height:52px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;padding:0 16px"><span style="font:600 16px/1 'DM Sans';color:#ece8e1">Opening Book</span><span style="color:#8e887f;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></span></div>
+
+    <div style="padding:14px 12px 24px">
+      <!-- title (left aligned mobile) -->
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+        <h1 style="font:800 20px/1.15 'Bricolage Grotesque';letter-spacing:-.02em;margin:0;flex:1"><span style="color:#ece8e1">Sicilian Defence</span><span style="color:#8e887f;margin:0 .12em">:</span><span style="color:#e85d04">Najdorf Variation</span></h1>
+        <span style="color:#e85d04;display:inline-flex;flex-shrink:0;margin-top:2px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#e85d04" stroke="#e85d04" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:10px;overflow-x:auto">
+        <span style="flex:none;background:rgba(255,255,255,.06);color:#9a958e;font:600 10px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:4px 10px">advanced</span>
+        <span style="flex:none;background:rgba(255,255,255,.06);color:#9a958e;font:600 10px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:4px 10px">aggressive</span>
+        <span style="flex:none;background:rgba(255,255,255,.06);color:#9a958e;font:600 10px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:4px 10px">dynamic</span>
+        <span style="flex:none;background:rgba(255,255,255,.06);color:#9a958e;font:600 10px/1 'DM Sans';letter-spacing:.04em;text-transform:capitalize;border-radius:4px;padding:4px 10px">sharp</span>
+      </div>
+
+      <!-- board -->
+      <div style="margin-top:14px">{{ boardMobile }}</div>
+      <!-- control row -->
+      <div style="display:flex;align-items:center;gap:6px;margin-top:12px">
+        <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#8e887f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg></span>
+        <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#9a958e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>
+        <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#9a958e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;color:#e85d04;border:1px solid #e85d04;border-radius:8px;padding:7px 12px;font:700 13px/1 'Bricolage Grotesque'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg>Practice</span>
+        <span style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#8e887f"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="19" cy="12" r="1.6"></circle></svg></span>
+      </div>
+      <!-- move strip mobile -->
+      <div style="display:flex;align-items:center;gap:4px;margin-top:10px;padding:6px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:8px;overflow-x:auto">
+        <span style="flex:none;padding:6px 8px;font:600 10px/1 'DM Sans';color:#9a958e;letter-spacing:.04em">Start</span>
+        <span style="flex:none;padding:6px 8px;font:500 12px/1 'DM Sans';color:#9a958e"><span style="font:700 10px/1 'DM Sans';color:#8e887f">1.</span>e4 c5</span>
+        <span style="flex:none;padding:6px 8px;font:500 12px/1 'DM Sans';color:#9a958e"><span style="font:700 10px/1 'DM Sans';color:#8e887f">2.</span>Nf3 d6</span>
+        <span style="flex:none;padding:6px 8px;font:500 12px/1 'DM Sans';color:#9a958e"><span style="font:700 10px/1 'DM Sans';color:#8e887f">3.</span>d4 cxd4</span>
+        <span style="flex:none;padding:6px 8px;font:500 12px/1 'DM Sans';color:#e85d04;background:rgba(232,93,4,.12);border:1px solid rgba(232,93,4,.3);border-radius:4px">…a6</span>
+        <span style="flex:none;width:30px;display:flex;align-items:center;justify-content:center;color:#8e887f;border-left:1px solid rgba(255,255,255,.06)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+      </div>
+
+      <!-- 1. Overview (reading zone, clamped) -->
+      <div style="margin-top:20px;padding:0 8px 0 16px;border-left:2px solid #5a554e">
+        <div style="font:800 18px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:10px">Overview</div>
+        <p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">The Najdorf is the most storied of the Open Sicilians. With 5…a6 Black denies White's pieces the b5 square and prepares …e5 or …e6, keeping the centre flexible — leading to the sharpest theory in chess: the English Attack, the Poisoned Pawn, the Fischer–Sozin.</p>
+        <span style="display:inline-block;padding:8px 0;color:#e85d04;font:600 12px/1 'DM Sans'">Read more</span>
+      </div>
+
+      <!-- 2. Data surface — one card: lens + stats + book -->
+      <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;margin-top:16px;box-shadow:0 4px 12px rgba(0,0,0,.25);overflow:hidden">
+        <div style="height:3px;background:linear-gradient(90deg,#d4cfc7,#5a554e,#c08840)"></div>
+        <!-- lens (inside, sticky header) -->
+        <div style="display:flex;gap:4px;overflow-x:auto;padding:12px 12px 0">
+          <span style="flex:none;background:#e85d04;border:1px solid #e85d04;border-radius:9999px;padding:6px 12px;font:600 11px/1 'DM Sans';color:#1a1713">All</span>
+          <span style="flex:none;background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:6px 12px;font:600 11px/1 'DM Sans';color:#8e887f">Beginner</span>
+          <span style="flex:none;background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:6px 12px;font:600 11px/1 'DM Sans';color:#8e887f">Intermediate</span>
+          <span style="flex:none;background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:6px 12px;font:600 11px/1 'DM Sans';color:#8e887f">Advanced</span>
+          <span style="flex:none;background:#363330;border:1px solid rgba(255,255,255,.10);border-radius:9999px;padding:6px 12px;font:600 11px/1 'DM Sans';color:#8e887f">Masters</span>
+        </div>
+        <!-- stats -->
+        <div style="padding:12px 14px 14px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px">
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:600 11px/1 'DM Sans';color:#8e887f">Games at this level</span><span style="font:800 22px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">1.9M</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><span style="font:600 11px/1 'DM Sans';color:#8e887f">Average Elo</span><span style="font:800 22px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#e85d04">1,847</span></div>
+          </div>
+          <div style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:2px"><div style="height:100%;border-radius:9999px;background:#d4cfc7;width:47%"></div><div style="height:100%;border-radius:9999px;background:#5a554e;width:20%"></div><div style="height:100%;border-radius:9999px;background:#c08840;width:33%"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font:600 10px/1 'DM Sans';color:#8e887f"><span style="color:#d4cfc7">White 47%</span><span>Draws 20%</span><span style="color:#c08840">Black 33%</span></div>
+          <div style="font:400 11px/1 'DM Sans';color:#8e887f;margin-top:8px">All Lichess games · live</div>
+        </div>
+        <!-- book -->
+        <div style="border-top:1px solid rgba(255,255,255,.06);padding:12px 14px 14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:10px">
+            <span style="font:400 12px/1.4 'DM Sans';color:#9a958e;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Sicilian Defence <span style="color:#8e887f;opacity:.5">›</span> Open Sicilian <span style="color:#8e887f;opacity:.5">›</span> <span style="color:#e85d04;font-weight:600">5…a6</span></span>
+            <span style="flex:none;color:#8e887f;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </div>
+          <div style="font:800 15px/1 'Bricolage Grotesque';color:#ece8e1;margin:2px 0 2px">Continuations</div>
+          <div style="font:400 12px/1.2 'DM Sans';color:#9a958e;margin-bottom:10px">Most popular next moves</div>
+          <div style="display:flex;flex-direction:column;gap:4px">{{ nextMovesMobile }}</div>
+          <span style="display:block;margin-top:8px;padding:8px 0;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:4px;font:600 12px/1 'DM Sans';color:#8e887f">Show 2 more</span>
+          <div style="font:800 15px/1 'Bricolage Grotesque';color:#ece8e1;margin:16px 0 2px">Instead of 5…a6</div>
+          <div style="font:400 12px/1.2 'DM Sans';color:#9a958e;margin-bottom:10px">Most popular alternatives</div>
+          <div style="display:flex;flex-direction:column;gap:4px">{{ altMovesMobile }}</div>
+        </div>
+      </div>
+
+      <!-- 3. Master games accordion (collapsed) -->
+      <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;margin-top:12px">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px">
+          <span style="font:700 14px/1 'DM Sans';color:#ece8e1">Master games <span style="color:#8e887f;font-weight:400">(8)</span></span>
+          <span style="color:#8e887f;display:flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </div>
+      </div>
+
+      <!-- 4. Common plans (mobileGroups) -->
+      <div style="margin-top:24px">
+        <h2 style="font:800 18px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0 0 12px">Common plans</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="padding-left:16px;border-left:2px solid rgba(255,255,255,.25)">
+            <div style="font:700 12px/1 'DM Sans';color:#9a958e;margin-bottom:8px">White</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:9px"></span><p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">Launch a kingside pawn storm with f3, g4 and h4 — the English Attack.</p></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:9px"></span><p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">Contest d5 and prepare a Nd5 sacrifice to shatter Black's structure.</p></div>
+            </div>
+          </div>
+          <div style="padding-left:16px;border-left:2px solid rgba(255,255,255,.10)">
+            <div style="font:700 12px/1 'DM Sans';color:#9a958e;margin-bottom:8px">Black</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:9px"></span><p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">Counterattack on the queenside with …b5, …Bb7 and the half-open c-file.</p></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:9px"></span><p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">Time an …e5 or …d5 break when White over-extends on the kingside.</p></div>
+            </div>
+          </div>
+          <div style="padding-left:16px;border-left:2px solid #5a554e">
+            <div style="font:700 12px/1 'DM Sans';color:#9a958e;margin-bottom:8px">Both sides</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:4px;height:4px;border-radius:9999px;background:#5a554e;margin-top:9px"></span><p style="font:400 14px/1.65 'DM Sans';color:#ece8e1;opacity:.82;margin:0">Castle on opposite wings and race pawns toward the enemy king, tempo for tempo.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Resources accordion + search pills -->
+      <div style="margin-top:24px">
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <span style="display:flex;flex-direction:column;gap:3px"><span style="font:700 14px/1 'DM Sans';color:#ece8e1">Videos (4)</span><span style="font:400 12px/1 'DM Sans';color:#8e887f">2 cover this exact variation</span></span>
+            <span style="flex:none;color:#8e887f;display:flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px">
+            <span style="display:flex;flex-direction:column;gap:3px"><span style="font:700 14px/1 'DM Sans';color:#ece8e1">Studies (3)</span><span style="font:400 12px/1 'DM Sans';color:#8e887f">1 covers this exact variation</span></span>
+            <span style="flex:none;color:#8e887f;display:flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;overflow-x:auto">
+          <span style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;color:#9a958e;font:500 12px/1 'DM Sans'">Search YouTube <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+          <span style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;color:#9a958e;font:500 12px/1 'DM Sans'">Search Lichess Studies <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+          <span style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;color:#9a958e;font:500 12px/1 'DM Sans'">Search Chessable <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:64px;background:#2c2a27;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg><span style="font:500 11px/1 'DM Sans'">Discover</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg><span style="font:500 11px/1 'DM Sans'">Search</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font:500 11px/1 'DM Sans'">Saved</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg><span style="font:500 11px/1 'DM Sans'">Analyse</span></div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div style="height:1px;background:#2a2724;max-width:3200px;margin:0 0 56px"></div>
+
+  <div style="max-width:1040px;margin:0 0 28px">
+    <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:10px">03 · Analyse — blank</div>
+    <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 10px;color:#ece8e1">Analyse (blank state)</h2>
+    <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0;max-width:820px">Before a player connects an account: hero, platform picker, username field.</p>
+  </div>
+  <div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap;margin-bottom:72px">
+    <div id="analyse-desktop" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Analyse · blank</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Desktop 1360×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:1360px;border-radius:12px;overflow:hidden;border:1px solid #2a2724;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+  <div style="height:38px;background:#0f0e0d;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #2a2724">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e56b67"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#e8a838"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#85a663"></span>
+    <div style="margin-left:16px;flex:1;max-width:420px;height:22px;background:#1a1816;border-radius:6px;display:flex;align-items:center;padding:0 12px;font:400 12px/1 'DM Sans';color:#8e887f">openingbook.xyz/analyse</div>
+  </div>
+
+  <div style="background:#1a1816">
+    <!-- topbar -->
+    <div style="height:60px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px;gap:16px">
+      <div style="justify-self:start;font:600 16px/1 'DM Sans';letter-spacing:-.01em;color:#ece8e1">Opening Book</div>
+      <div style="justify-self:center;display:flex;gap:16px;height:100%;align-items:stretch">
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#9a958e">Discover</div>
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#e85d04;box-shadow:inset 0 -2px 0 #e85d04">Analyse</div>
+      </div>
+      <div style="justify-self:end"></div>
+    </div>
+
+    <!-- landing, centred -->
+    <div style="min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 16px 56px">
+      <!-- hero -->
+      <div style="text-align:center;padding:0 0 24px">
+        <h1 style="font:800 48px/1.1 'Bricolage Grotesque';letter-spacing:-.03em;margin:0 0 12px;color:#ece8e1">Analyse Your Games</h1>
+        <p style="font:400 17px/1.6 'DM Sans';color:#9a958e;margin:0 auto;max-width:500px">Review your performance and improve your openings by connecting your chess account.</p>
+      </div>
+
+      <!-- input bar -->
+      <div style="width:100%;max-width:760px;display:flex;align-items:center;gap:12px;background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:10px 10px 10px 16px">
+        <div style="display:flex;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:9999px;padding:3px;flex-shrink:0">
+          <span style="padding:8px 16px;border-radius:9999px;font:600 16px/1 'DM Sans';background:#e85d04;color:#100f0e;box-shadow:0 4px 12px rgba(232,93,4,.30)">Chess.com</span>
+          <span style="padding:8px 16px;border-radius:9999px;font:600 16px/1 'DM Sans';color:#9a958e">Lichess</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
+          <span style="flex-shrink:0;color:#8e887f;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+          <span style="flex:1;font:400 16px/1 'DM Sans';color:#8e887f;padding:4px 0">Enter username…</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+          <span style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8e887f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
+          <span style="padding:12px 32px;border-radius:9999px;background:#e85d04;color:#100f0e;font:700 16px/1 'DM Sans';box-shadow:0 4px 12px rgba(232,93,4,.30);opacity:.5">Analyse</span>
+        </div>
+      </div>
+      <p style="font:400 13px/1.4 'DM Sans';color:#8e887f;text-align:center;margin:12px 0 0;max-width:760px">Includes rated rapid, blitz, and classical games only (up to 100). Bullet is excluded.</p>
+
+      <!-- idle prompt -->
+      <div style="text-align:center;margin-top:44px">
+        <span style="display:block;margin:0 auto 12px;color:rgba(255,255,255,.10);display:flex;justify-content:center"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></span>
+        <h2 style="font:800 18px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#9a958e;margin:0 0 8px">Ready to analyse your openings?</h2>
+        <p style="font:400 14px/1.5 'DM Sans';color:#8e887f;max-width:380px;margin:0 auto">Enter your username to explore a detailed breakdown of your performance by opening.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="analyse-mobile" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Analyse · blank</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Mobile 390×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:414px;padding:14px;background:#0b0a09;border-radius:52px;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid #2a2724">
+  <div style="width:386px;border-radius:40px;overflow:hidden;background:#1a1816">
+    <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#2c2a27">
+      <span style="font:600 13px/1 'DM Sans';color:#ece8e1">9:41</span>
+      <div style="display:flex;gap:5px;align-items:center;color:#ece8e1"><span style="font:600 11px/1 'DM Sans'">5G</span><span style="width:22px;height:11px;border:1px solid #ece8e1;border-radius:3px;display:inline-block"></span></div>
+    </div>
+    <div style="height:56px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 16px">
+      <span style="font:600 16px/1 'DM Sans';color:#ece8e1">Opening Book</span>
+    </div>
+
+    <!-- landing, centred -->
+    <div style="padding:40px 16px 28px;display:flex;flex-direction:column;align-items:center">
+      <div style="text-align:center;padding:0 8px 20px">
+        <h1 style="font:800 36px/1.1 'Bricolage Grotesque';letter-spacing:-.03em;margin:0 0 12px;color:#ece8e1">Analyse Your Games</h1>
+        <p style="font:400 16px/1.6 'DM Sans';color:#9a958e;margin:0 auto;max-width:320px">Review your performance and improve your openings by connecting your chess account.</p>
+      </div>
+
+      <!-- input bar (stacked) -->
+      <div style="width:100%;display:flex;flex-direction:column;gap:12px;background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px">
+        <div style="align-self:center;display:flex;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:9999px;padding:3px">
+          <span style="padding:8px 16px;border-radius:9999px;font:600 16px/1 'DM Sans';background:#e85d04;color:#100f0e;box-shadow:0 4px 12px rgba(232,93,4,.30)">Chess.com</span>
+          <span style="padding:8px 16px;border-radius:9999px;font:600 16px/1 'DM Sans';color:#9a958e">Lichess</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;width:100%;border-bottom:1px solid rgba(255,255,255,.10);padding-bottom:12px">
+          <span style="flex-shrink:0;color:#8e887f;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+          <span style="flex:1;font:400 16px/1 'DM Sans';color:#8e887f;padding:4px 0">Enter username…</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;width:100%">
+          <span style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
+          <span style="flex:1;text-align:center;padding:14px 20px;border-radius:9999px;background:#e85d04;color:#100f0e;font:700 16px/1 'DM Sans';box-shadow:0 4px 12px rgba(232,93,4,.30);opacity:.5">Analyse</span>
+        </div>
+      </div>
+      <p style="font:400 13px/1.4 'DM Sans';color:#8e887f;text-align:center;margin:12px 0 0">Includes rated rapid, blitz, and classical games only (up to 100). Bullet is excluded.</p>
+
+      <!-- idle prompt -->
+      <div style="text-align:center;margin-top:32px">
+        <span style="margin:0 auto 12px;color:rgba(255,255,255,.10);display:flex;justify-content:center"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></span>
+        <h2 style="font:800 18px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#9a958e;margin:0 0 8px">Ready to analyse your openings?</h2>
+        <p style="font:400 14px/1.5 'DM Sans';color:#8e887f;max-width:300px;margin:0 auto">Enter your username to explore a detailed breakdown of your performance by opening.</p>
+      </div>
+    </div>
+
+    <!-- bottom tab bar -->
+    <div style="height:60px;background:#2c2a27;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg><span style="font:500 10px/1 'DM Sans'">Discover</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#e85d04"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"></path><rect x="7" y="12" width="3" height="6"></rect><rect x="12" y="8" width="3" height="10"></rect><rect x="17" y="4" width="3" height="14"></rect></svg><span style="font:500 10px/1 'DM Sans'">Analyse</span></div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div style="height:1px;background:#2a2724;max-width:3200px;margin:0 0 56px"></div>
+
+  <div style="max-width:1040px;margin:0 0 28px">
+    <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:10px">04 · Analyse — dashboard</div>
+    <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 10px;color:#ece8e1">Analyse (dashboard)</h2>
+    <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0;max-width:820px">After analysis: summary cards, repertoire breakdown, per-opening results.</p>
+  </div>
+  <div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap;margin-bottom:72px">
+    <div id="dashboard-desktop" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Analyse · dashboard</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Desktop 1360×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:1360px;border-radius:12px;overflow:hidden;border:1px solid #2a2724;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+  <!-- browser chrome -->
+  <div style="height:38px;background:#0f0e0d;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #2a2724">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e56b67"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#e8a838"></span>
+    <span style="width:11px;height:11px;border-radius:50%;background:#85a663"></span>
+    <div style="margin-left:16px;flex:1;max-width:520px;height:22px;background:#1a1816;border-radius:6px;display:flex;align-items:center;padding:0 12px;font:400 12px/1 'DM Sans';color:#8e887f">openingbook.xyz/analyse?platform=chess.com&amp;username=chess_student</div>
+  </div>
+
+  <div style="background:#1a1816">
+    <!-- topbar (faithful to current live state) -->
+    <div style="height:60px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px;gap:16px">
+      <div style="justify-self:start;font:600 16px/1 'DM Sans';letter-spacing:-.01em;color:#ece8e1">Opening Book</div>
+      <div style="justify-self:center;display:flex;gap:16px;height:100%;align-items:stretch">
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#9a958e">Discover</div>
+        <div style="display:flex;align-items:center;padding:0 16px;font:500 16px/1 'DM Sans';color:#e85d04;box-shadow:inset 0 -2px 0 #e85d04">Analyse</div>
+      </div>
+      <div style="justify-self:end"></div>
+    </div>
+
+    <div style="padding:8px 32px 40px">
+
+      <!-- dashboard hero -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-top:24px">
+        <div style="flex:1;min-width:0">
+          <h2 style="font:800 44px/1.05 'Bricolage Grotesque';letter-spacing:-.03em;margin:0 0 8px;color:#ece8e1">chess_student</h2>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#8e887f;font:600 11px/1 'DM Sans';letter-spacing:.04em;border-radius:4px;padding:4px 10px">Chess.com</span>
+            <span style="font:400 13px/1 'DM Sans';color:#8e887f">100 games analysed &middot; 94 matched · 6 unrecognised</span>
+          </div>
+        </div>
+        <div style="font:500 13px/1 'DM Sans';color:#9a958e;padding:8px 0;margin-top:8px;white-space:nowrap">Analyse another player <span style="color:#8e887f">&rarr;</span></div>
+      </div>
+
+      <!-- summary cards -->
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px">
+        <!-- career totals -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:20px;display:flex;flex-direction:column">
+          <div style="font:600 11px/1 'DM Sans';letter-spacing:.03em;color:#9a958e;margin-bottom:12px">Overall performance</div>
+          <h3 style="font:800 22px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0">Career Totals</h3>
+          <div style="margin-top:16px;display:flex;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">47</span><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Total wins</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">11</span><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Total draws</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">42</span><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Total losses</span></div>
+          </div>
+        </div>
+        <!-- top-performing -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:20px;display:flex;flex-direction:column;cursor:pointer">
+          <div style="font:600 11px/1 'DM Sans';letter-spacing:.03em;color:#9dbd7c;margin-bottom:12px">Top-performing opening</div>
+          <div style="font:800 20px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1"><span style="color:#ece8e1">Italian Game</span><span style="color:#8e887f;margin:0 .15em">:</span><span style="color:#9a958e">Giuoco Piano</span></div>
+          <div style="font:400 12px/1.4 monospace;color:#8e887f;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5</div>
+          <div style="font:400 15px/1 'DM Sans';color:#9a958e;margin-top:8px">8 games</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:16px"><span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">75%</span><span style="font:600 11px/1 'DM Sans';color:#8e887f">win rate</span></div>
+          <div style="height:6px;border-radius:9999px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:12px"><div style="height:100%;border-radius:9999px;background:#85a663;width:75%"></div></div>
+        </div>
+        <!-- needs work -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:20px;display:flex;flex-direction:column;cursor:pointer">
+          <div style="font:600 11px/1 'DM Sans';letter-spacing:.03em;color:#c98579;margin-bottom:12px">Needs work</div>
+          <div style="font:800 20px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1"><span style="color:#ece8e1">Sicilian Defence</span><span style="color:#8e887f;margin:0 .15em">:</span><span style="color:#9a958e">Najdorf</span></div>
+          <div style="font:400 12px/1.4 monospace;color:#8e887f;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6</div>
+          <div style="font:400 15px/1 'DM Sans';color:#9a958e;margin-top:8px">10 games</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:16px"><span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1">50%</span><span style="font:600 11px/1 'DM Sans';color:#8e887f">loss rate</span></div>
+          <div style="height:6px;border-radius:9999px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:12px"><div style="height:100%;border-radius:9999px;background:#a55c51;width:50%"></div></div>
+        </div>
+      </div>
+
+      <!-- opening sections -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px">
+
+        <!-- WHITE -->
+        <div style="min-width:0;background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:20px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px">
+            <h3 style="font:800 20px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0">Performance as White <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#8e887f;font:600 11px/1 'DM Sans';border-radius:4px;padding:3px 8px;margin-left:8px;vertical-align:middle;font-variant-numeric:tabular-nums">52 games</span></h3>
+          </div>
+          <!-- filter row -->
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px 5px 12px;border:1px solid rgba(255,255,255,.3);border-radius:9999px;background:rgba(255,255,255,.12);color:#ece8e1;font:500 12px/1.3 'DM Sans';white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ece8e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h11"></path><path d="M6 8h7.5"></path><path d="M6 12h7.5"></path><path d="M3 7.5v5"></path></svg>Group by family</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;background:transparent;color:#9a958e;font:500 12px/1.3 'DM Sans';white-space:nowrap"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round"><path d="M3 4.5h10"></path><path d="M3 8h6.5"></path><path d="M3 11.5h3.5"></path></svg>Sort: Most played<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></span>
+          </div>
+          <!-- col headers -->
+          <div style="display:flex;align-items:baseline;padding:0 8px 8px;border-bottom:1px solid rgba(255,255,255,.10)">
+            <span style="flex:1;font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em">Opening name</span>
+            <div style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+              <span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em;min-width:36px;text-align:right">GP</span>
+              <span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em;width:140px;text-align:center">W / D / L distribution</span>
+            </div>
+          </div>
+
+          <!-- family rows -->
+          <!-- Italian Game (expanded) -->
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16" style="transform:rotate(90deg)"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Italian Game</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">4 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">18</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:61%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:11%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:28%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">61%</span><span style="color:#9b958e">11%</span><span style="color:#c98579">28%</span></span></span>
+              </span>
+            </div>
+            <ul style="list-style:none;margin:0;padding:0 0 8px">
+              <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 8px 8px 32px">
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1"><span style="font:500 15px/1.25 'DM Sans';color:#ece8e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Giuoco Piano</span><span style="font:400 12px/1.4 monospace;color:#8e887f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">3.Bc4 Bc5 4.c3 Nf6</span></span>
+                <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px"><span style="font:400 15px/1 'DM Sans';color:#8e887f;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">8</span><span style="width:140px;flex-shrink:0"><span style="display:flex;height:8px;gap:2px"><span style="width:75%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:13%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:12%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">75%</span><span style="color:#9b958e">13%</span><span style="color:#c98579">12%</span></span></span></span>
+              </li>
+              <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 8px 8px 32px">
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1"><span style="font:500 15px/1.25 'DM Sans';color:#ece8e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Two Knights Defence</span><span style="font:400 12px/1.4 monospace;color:#8e887f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">3.Bc4 Nf6 4.Ng5</span></span>
+                <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px"><span style="font:400 15px/1 'DM Sans';color:#8e887f;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">5</span><span style="width:140px;flex-shrink:0"><span style="display:flex;height:8px;gap:2px"><span style="width:60%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:40%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">60%</span><span style="color:#9b958e">0%</span><span style="color:#c98579">40%</span></span></span></span>
+              </li>
+              <li style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 8px 8px 32px">
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1"><span style="font:500 15px/1.25 'DM Sans';color:#ece8e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Evans Gambit</span><span style="font:400 12px/1.4 monospace;color:#8e887f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">4.b4 Bxb4 5.c3</span></span>
+                <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px"><span style="font:400 15px/1 'DM Sans';color:#8e887f;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">3</span><span style="width:140px;flex-shrink:0"><span style="display:flex;height:8px;gap:2px"><span style="width:67%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:33%;background:#5a554e;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">67%</span><span style="color:#9b958e">33%</span><span style="color:#c98579">0%</span></span></span></span>
+              </li>
+            </ul>
+          </div>
+          <!-- Ruy Lopez -->
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Ruy López</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">3 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">13</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:54%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:15%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:31%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">54%</span><span style="color:#9b958e">15%</span><span style="color:#c98579">31%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <!-- Queen's Pawn -->
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Queen's Pawn Game</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">2 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">11</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:45%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:10%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:45%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">45%</span><span style="color:#9b958e">10%</span><span style="color:#c98579">45%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <!-- London -->
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">London System</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">2 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">7</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:57%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:14%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:29%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">57%</span><span style="color:#9b958e">14%</span><span style="color:#c98579">29%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <p style="font:400 12px/1.4 'DM Sans';color:#5a554e;margin:12px 4px 0">+ 3 uncategorised openings · 3 games · 44%</p>
+        </div>
+
+        <!-- BLACK -->
+        <div style="min-width:0;background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:20px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px">
+            <h3 style="font:800 20px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0">Performance as Black <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.06);color:#8e887f;font:600 11px/1 'DM Sans';border-radius:4px;padding:3px 8px;margin-left:8px;vertical-align:middle;font-variant-numeric:tabular-nums">48 games</span></h3>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px 5px 12px;border:1px solid rgba(255,255,255,.3);border-radius:9999px;background:rgba(255,255,255,.12);color:#ece8e1;font:500 12px/1.3 'DM Sans';white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ece8e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h11"></path><path d="M6 8h7.5"></path><path d="M6 12h7.5"></path><path d="M3 7.5v5"></path></svg>Group by family</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;background:transparent;color:#9a958e;font:500 12px/1.3 'DM Sans';white-space:nowrap"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round"><path d="M3 4.5h10"></path><path d="M3 8h6.5"></path><path d="M3 11.5h3.5"></path></svg>Sort: Most played<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></span>
+          </div>
+          <div style="display:flex;align-items:baseline;padding:0 8px 8px;border-bottom:1px solid rgba(255,255,255,.10)">
+            <span style="flex:1;font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em">Opening name</span>
+            <div style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+              <span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em;min-width:36px;text-align:right">GP</span>
+              <span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.05em;width:140px;text-align:center">W / D / L distribution</span>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Sicilian Defence</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">5 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">20</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:40%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:10%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:50%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">40%</span><span style="color:#9b958e">10%</span><span style="color:#c98579">50%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Caro–Kann Defence</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">3 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">12</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:58%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:17%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:25%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">58%</span><span style="color:#9b958e">17%</span><span style="color:#c98579">25%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">French Defence</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">2 lines</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">9</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:44%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:22%;background:#5a554e;border-radius:9999px;min-width:4px"></span><span style="width:34%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">44%</span><span style="color:#9b958e">22%</span><span style="color:#c98579">34%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px">
+              <span style="display:flex;align-items:baseline;gap:8px;min-width:0;flex:1">
+                <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font:600 15px/1.25 'DM Sans';color:#ece8e1">Pirc Defence</span><span style="font:400 12px/1 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">1 line</span></span>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:24px;flex-shrink:0;padding-left:12px">
+                <span style="font:400 15px/1 'DM Sans';color:#9a958e;min-width:36px;text-align:right;font-variant-numeric:tabular-nums">4</span>
+                <span style="width:140px;flex-shrink:0"><span style="display:flex;height:10px;gap:2px"><span style="width:25%;background:#85a663;border-radius:9999px;min-width:4px"></span><span style="width:75%;background:#a55c51;border-radius:9999px;min-width:4px"></span></span><span style="display:flex;justify-content:space-between;margin-top:4px;font:500 9px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">25%</span><span style="color:#9b958e">0%</span><span style="color:#c98579">75%</span></span></span>
+              </span>
+            </div>
+          </div>
+          <p style="font:400 12px/1.4 'DM Sans';color:#5a554e;margin:12px 4px 0">+ 2 uncategorised openings · 3 games · 33%</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="dashboard-mobile" style="flex:0 0 auto">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font:600 15px/1 'DM Sans';color:#ece8e1">Analyse · dashboard</span>
+        <span style="font:400 13px/1 'DM Sans';color:#5a554e">Mobile 390×</span>
+        <span style="display:inline-flex;align-items:center;background:#232120;border:1px solid #2a2724;color:#5a554e;font:600 10px/1 'DM Sans';letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 9px">current</span>
+      </div>
+      <div style="width:414px;padding:14px;background:#0b0a09;border-radius:52px;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid #2a2724">
+  <div style="width:386px;border-radius:40px;overflow:hidden;background:#1a1816">
+    <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#2c2a27">
+      <span style="font:600 13px/1 'DM Sans';color:#ece8e1">9:41</span>
+      <div style="display:flex;gap:5px;align-items:center;color:#ece8e1"><span style="font:600 11px/1 'DM Sans'">5G</span><span style="width:22px;height:11px;border:1px solid #ece8e1;border-radius:3px;display:inline-block"></span></div>
+    </div>
+    <div style="height:56px;background:#2c2a27;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 16px"><span style="font:600 16px/1 'DM Sans';color:#ece8e1">Opening Book</span></div>
+
+    <div style="padding:16px 16px 24px">
+      <!-- mobile hero -->
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 0 16px">
+        <h2 style="font:800 28px/1.1 'Bricolage Grotesque';letter-spacing:-.03em;color:#ece8e1;margin:0">chess_student</h2>
+        <span style="display:inline-flex;align-items:center;margin-top:8px;background:rgba(255,255,255,.08);color:#8e887f;font:600 11px/1 'DM Sans';letter-spacing:.04em;border-radius:4px;padding:4px 10px">Chess.com</span>
+        <span style="margin-top:8px;font:400 11px/1.3 'DM Sans';color:#8e887f;font-variant-numeric:tabular-nums">100 analysed · 94 matched · 6 unrecognised</span>
+      </div>
+
+      <!-- triple stats -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
+        <div style="display:flex;flex-direction:column;align-items:center;padding:12px 8px;background:#201e1c;border:1px solid rgba(255,255,255,.10);border-left:3px solid #85a663;border-radius:12px"><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Wins</span><span style="font:800 26px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin-top:4px">47</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding:12px 8px;background:#201e1c;border:1px solid rgba(255,255,255,.10);border-radius:12px"><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Draws</span><span style="font:800 26px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin-top:4px">11</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding:12px 8px;background:#201e1c;border:1px solid rgba(255,255,255,.10);border-radius:12px"><span style="font:600 11px/1 'DM Sans';color:#8e887f;text-transform:uppercase;letter-spacing:.04em">Losses</span><span style="font:800 26px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin-top:4px">42</span></div>
+      </div>
+
+      <!-- highlight cards -->
+      <div style="display:flex;flex-direction:column;gap:4px;padding:12px 16px;background:#201e1c;border:1px solid rgba(255,255,255,.10);border-radius:12px;margin-bottom:12px">
+        <span style="align-self:flex-start;font:700 10px/1 'DM Sans';text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:4px;background:rgba(133,166,99,.15);color:#9dbd7c">Top-performing</span>
+        <span style="font:800 16px/1.2 'Bricolage Grotesque';letter-spacing:-.01em;color:#ece8e1;margin-top:2px"><span style="color:#ece8e1">Italian Game</span><span style="color:#8e887f;margin:0 .15em">:</span><span style="color:#9a958e">Giuoco Piano</span></span>
+        <span style="font:400 12px/1.4 monospace;color:#8e887f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5</span>
+        <span style="font:400 13px/1 'DM Sans';color:#9a958e">75% win rate · 8 games</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;padding:12px 16px;background:#201e1c;border:1px solid rgba(255,255,255,.10);border-radius:12px;margin-bottom:12px">
+        <span style="align-self:flex-start;font:700 10px/1 'DM Sans';text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:4px;background:rgba(165,92,81,.15);color:#c98579">Needs work</span>
+        <span style="font:800 16px/1.2 'Bricolage Grotesque';letter-spacing:-.01em;color:#ece8e1;margin-top:2px"><span style="color:#ece8e1">Sicilian Defence</span><span style="color:#8e887f;margin:0 .15em">:</span><span style="color:#9a958e">Najdorf</span></span>
+        <span style="font:400 12px/1.4 monospace;color:#8e887f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6</span>
+        <span style="font:400 13px/1 'DM Sans';color:#9a958e">50% loss rate · 10 games</span>
+      </div>
+
+      <!-- side switcher -->
+      <div style="display:flex;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:3px;margin:16px 0">
+        <span style="flex:1;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#ece8e1;font:600 14px/1 'DM Sans';text-align:center">As White</span>
+        <span style="flex:1;padding:10px 16px;border-radius:999px;color:#9a958e;font:600 14px/1 'DM Sans';text-align:center">As Black</span>
+      </div>
+
+      <!-- section head -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)">
+        <h3 style="font:800 18px/1 'Bricolage Grotesque';letter-spacing:-.02em;color:#ece8e1;margin:0">Performance as White</h3>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;width:100%">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px 4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:9999px;background:rgba(255,255,255,.12);color:#ece8e1;font:500 11px/1.3 'DM Sans'"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#ece8e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h11"></path><path d="M6 8h7.5"></path><path d="M6 12h7.5"></path><path d="M3 7.5v5"></path></svg>Group by family</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid rgba(255,255,255,.18);border-radius:9999px;background:transparent;color:#9a958e;font:500 11px/1.3 'DM Sans'"><svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round"><path d="M3 4.5h10"></path><path d="M3 8h6.5"></path><path d="M3 11.5h3.5"></path></svg>Sort: Most played<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#8e887f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></span>
+        </div>
+      </div>
+
+      <!-- mobile family cards -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <!-- Italian (expanded) -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;overflow:hidden">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;padding:16px 12px">
+            <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16" style="transform:rotate(90deg)"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font:600 15px/1.3 'DM Sans';color:#ece8e1">Italian Game</span><span style="font:400 12px/1 'DM Sans';color:#8e887f">4 lines</span></span>
+            <span style="font:600 12px/1 'DM Sans';color:#9a958e;padding-top:2px;font-variant-numeric:tabular-nums">Games 18</span>
+            <span style="flex-basis:100%;width:100%;display:flex;flex-direction:column;gap:8px">
+              <span style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:1px"><span style="width:61%;background:#85a663;min-width:3px"></span><span style="width:11%;background:#5a554e;min-width:3px"></span><span style="width:28%;background:#a55c51;min-width:3px"></span></span>
+              <span style="display:flex;justify-content:space-between;font:500 12px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">61% win</span><span style="color:#9b958e">11% draw</span><span style="color:#c98579">28% loss</span></span>
+            </span>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding:12px 12px 16px 12px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="flex:1;min-width:0;font:600 14px/1.3 'DM Sans';color:#ece8e1">Giuoco Piano</span><span style="font:600 12px/1 'DM Sans';color:#9a958e;font-variant-numeric:tabular-nums">Games 8</span><span style="flex-basis:100%;width:100%;display:flex;flex-direction:column;gap:6px;margin-top:2px"><span style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:1px"><span style="width:75%;background:#85a663;min-width:3px"></span><span style="width:13%;background:#5a554e;min-width:3px"></span><span style="width:12%;background:#a55c51;min-width:3px"></span></span><span style="display:flex;justify-content:space-between;font:500 11px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">75% win</span><span style="color:#9b958e">13% draw</span><span style="color:#c98579">12% loss</span></span></span></div>
+          </div>
+        </div>
+        <!-- Ruy Lopez -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 12px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px">
+          <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font:600 15px/1.3 'DM Sans';color:#ece8e1">Ruy López</span><span style="font:400 12px/1 'DM Sans';color:#8e887f">3 lines</span></span>
+          <span style="font:600 12px/1 'DM Sans';color:#9a958e;padding-top:2px;font-variant-numeric:tabular-nums">Games 13</span>
+          <span style="flex-basis:100%;width:100%;display:flex;flex-direction:column;gap:8px"><span style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:1px"><span style="width:54%;background:#85a663;min-width:3px"></span><span style="width:15%;background:#5a554e;min-width:3px"></span><span style="width:31%;background:#a55c51;min-width:3px"></span></span><span style="display:flex;justify-content:space-between;font:500 12px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">54% win</span><span style="color:#9b958e">15% draw</span><span style="color:#c98579">31% loss</span></span></span>
+        </div>
+        <!-- Queen's Pawn -->
+        <div style="background:#232120;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 12px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px">
+          <span style="display:inline-flex;align-self:center;color:#8e887f;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M 6 4 L 10 8 L 6 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font:600 15px/1.3 'DM Sans';color:#ece8e1">Queen's Pawn Game</span><span style="font:400 12px/1 'DM Sans';color:#8e887f">2 lines</span></span>
+          <span style="font:600 12px/1 'DM Sans';color:#9a958e;padding-top:2px;font-variant-numeric:tabular-nums">Games 11</span>
+          <span style="flex-basis:100%;width:100%;display:flex;flex-direction:column;gap:8px"><span style="display:flex;height:8px;border-radius:9999px;overflow:hidden;gap:1px"><span style="width:45%;background:#85a663;min-width:3px"></span><span style="width:10%;background:#5a554e;min-width:3px"></span><span style="width:45%;background:#a55c51;min-width:3px"></span></span><span style="display:flex;justify-content:space-between;font:500 12px/1 'DM Sans';font-variant-numeric:tabular-nums"><span style="color:#9dbd7c">45% win</span><span style="color:#9b958e">10% draw</span><span style="color:#c98579">45% loss</span></span></span>
+        </div>
+      </div>
+      <p style="font:400 12px/1.4 'DM Sans';color:#5a554e;margin:12px 4px 0;text-align:center">+ 3 uncategorised openings · 3 games · 44%</p>
+
+      <!-- bottom cta -->
+      <div style="margin-top:24px;padding:14px;border-radius:12px;background:#e85d04;color:#fff;font:600 16px/1 'DM Sans';text-align:center">Analyse another player</div>
+    </div>
+
+    <div style="height:64px;background:#2c2a27;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg><span style="font:500 11px/1 'DM Sans'">Discover</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg><span style="font:500 11px/1 'DM Sans'">Search</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9a958e"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font:500 11px/1 'DM Sans'">Saved</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#e85d04"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg><span style="font:500 11px/1 'DM Sans'">Analyse</span></div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div style="height:1px;background:#2a2724;max-width:3200px;margin:0 0 56px"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { saved: ['Caro\u2013Kann Defence'] };
+
+  buildBoard(position) {
+    const POS = {
+      'caro-kann':    ['rnbqkbnr','pp..pppp','..p.....','...p....','....P...','........','PPPP.PPP','RNBQKBNR'],
+      'sicilian':     ['rnbqkbnr','pp.ppppp','........','..p.....','....P...','........','PPPP.PPP','RNBQKBNR'],
+      'london':       ['rnbqkbnr','pppppppp','........','........','...P....','.....N..','PPP.PPPP','RNBQKB.R'],
+      'queens-gambit':['rnbqkbnr','ppp.pppp','........','...p....','..PP....','........','PP..PPPP','RNBQKBNR'],
+      'french':       ['rnbqkbnr','ppp..ppp','....p...','...p....','...PP...','........','PPP..PPP','RNBQKBNR'],
+      'kings-indian': ['rnbqk..r','ppp.ppbp','...p..p.','........','..PPP...','..N..N..','PP...PPP','R.BQKB.R']
+    };
+    const GLYPH = {p:'\u265F',r:'\u265C',n:'\u265E',b:'\u265D',q:'\u265B',k:'\u265A',P:'\u2659',R:'\u2656',N:'\u2658',B:'\u2657',Q:'\u2655',K:'\u2654'};
+    const rows = POS[position] || POS['caro-kann'];
+    const squares = [];
+    for (let r=0;r<8;r++) for (let f=0;f<8;f++){
+      const isLight=(r+f)%2===0, ch=rows[r][f];
+      const isWhite=ch!=='.'&&ch===ch.toUpperCase();
+      squares.push(React.createElement('div',{key:r+'-'+f,style:{
+        background:isLight?'#d4cfc7':'#665e54',display:'flex',alignItems:'center',justifyContent:'center',
+        color:isWhite?'#fafafa':'#1a1816',textShadow:isWhite?'0 1px 0 rgba(0,0,0,.25)':'none',lineHeight:1,
+        fontSize:'62%',fontFamily:'"DejaVu Sans","Noto Sans Symbols","Segoe UI Symbol",sans-serif'
+      }}, ch!=='.'?GLYPH[ch]:''));
+    }
+    return React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(8,1fr)',gridTemplateRows:'repeat(8,1fr)',width:'100%',height:'100%',aspectRatio:'1',background:'#1a1816'}},squares);
+  }
+
+  cxStyle(c,px){
+    const map={Beginner:{background:'rgba(16,185,129,.15)',color:'rgba(16,185,129,.9)'},
+      Intermediate:{background:'rgba(232,93,4,.12)',color:'#e85d04'},
+      Advanced:{background:'rgba(239,68,68,.15)',color:'rgba(239,68,68,.9)'}};
+    const t=map[c]||map.Beginner;
+    return {fontFamily:"'DM Sans',sans-serif",fontWeight:600,fontSize:px+'px',lineHeight:1.4,padding:'2px 8px',borderRadius:'4px',background:t.background,color:t.color};
+  }
+
+
+  obVals(){
+    const raw=[
+      {name:'Caro\u2013Kann Defence',eco:'B12',complexity:'Intermediate',position:'caro-kann',moves:'1. e4 c6',games:'2.1M games',w:31,d:39,b:30},
+      {name:'Sicilian Defence',eco:'B20',complexity:'Advanced',position:'sicilian',moves:'1. e4 c5',games:'3.4M games',w:33,d:30,b:37},
+      {name:'London System',eco:'A48',complexity:'Beginner',position:'london',moves:'1. d4 d5 2. Bf4',games:'890K games',w:36,d:42,b:22},
+      {name:"Queen's Gambit",eco:'D06',complexity:'Intermediate',position:'queens-gambit',moves:'1. d4 d5 2. c4',games:'1.2M games',w:37,d:35,b:28},
+      {name:'French Defence',eco:'C00',complexity:'Intermediate',position:'french',moves:'1. e4 e6',games:'760K games',w:34,d:33,b:33},
+      {name:"King's Indian Defence",eco:'E60',complexity:'Advanced',position:'kings-indian',moves:'1. d4 Nf6 2. c4 g6',games:'540K games',w:37,d:29,b:34}
+    ];
+    const dec=o=>{const saved=this.state.saved.includes(o.name);return {...o,board:this.buildBoard(o.position),
+      cxStyle:this.cxStyle(o.complexity,11),cxStyleSm:this.cxStyle(o.complexity,10),
+      wBar:{background:'#d4cfc7',width:o.w+'%'},dBar:{background:'#5a554e',width:o.d+'%'},bBar:{background:'#c08840',width:o.b+'%'},
+      saved,starFill:saved?'#e85d04':'none',starStroke:saved?'#e85d04':'#5a554e',starStrokeHover:saved?'#e85d04':'#ece8e1',
+      toggle:(e)=>{if(e){e.preventDefault&&e.preventDefault();e.stopPropagation&&e.stopPropagation();}this.setState(s=>({saved:s.saved.includes(o.name)?s.saved.filter(n=>n!==o.name):[...s.saved,o.name]}));}};};
+    const openings=raw.map(dec);
+
+
+
+    const recents=[openings[1],openings[4],openings[5]];
+    const repRows=openings.filter(o=>o.saved);
+    const results=[openings[2],openings[3],openings[5]];
+    return {openings,mobileOpenings:openings.slice(0,3),
+      recents,repRows,results,popular:openings.slice(0,3),searchQuery:'d4'};
+  }
+
+
+  buildDetailBoard(cellFont) {
+    const fen = 'rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R';
+    const glyph = { k:'\u265A', q:'\u265B', r:'\u265C', b:'\u265D', n:'\u265E', p:'\u265F' };
+    const light = '#d4cfc7', dark = '#665e54';
+    const cells = [];
+    fen.split('/').forEach((row) => {
+      for (const ch of row) {
+        if (/\d/.test(ch)) { const n = +ch; for (let i=0;i<n;i++) cells.push(null); }
+        else cells.push(ch);
+      }
+    });
+    const lastMove = { 26: true, 48: true }; // f6 (Nf6) & a6 highlight approximations
+    return React.createElement('div', {
+      style: { display:'grid', gridTemplateColumns:'repeat(8,1fr)', width:'100%', aspectRatio:'1/1', borderRadius:'8px', overflow:'hidden', boxShadow:'0 8px 24px rgba(0,0,0,.35)' }
+    }, cells.map((piece, i) => {
+      const r = Math.floor(i/8), f = i%8;
+      const isLight = (r+f)%2===0;
+      const isWhite = piece && piece === piece.toUpperCase();
+      return React.createElement('div', {
+        key: i,
+        style: { background: isLight?light:dark, display:'flex', alignItems:'center', justifyContent:'center' }
+      }, piece ? React.createElement('span', {
+        style: { fontSize: cellFont+'px', lineHeight:1, color: isWhite?'#f7f4ee':'#26231f', textShadow: isWhite?'0 1px 2px rgba(0,0,0,.4)':'0 1px 1px rgba(0,0,0,.3)' }
+      }, glyph[piece.toLowerCase()]) : null);
+    }));
+  }
+
+  moveRow(move, name, w, d, b, games, opts) {
+    opts = opts || {};
+    const off = opts.offBook;
+    return React.createElement('div', {
+      style: { display:'flex', flexDirection:'column', gap:'6px', padding:'8px 10px', borderRadius:'8px', background: off?'rgba(0,0,0,.12)':'rgba(0,0,0,.2)', border:'1px solid rgba(255,255,255,.06)', cursor: off?'default':'pointer' }
+    }, [
+      React.createElement('div', { key:'t', style:{ display:'flex', alignItems:'baseline', gap:'8px', minWidth:0 } }, [
+        React.createElement('span', { key:'m', style:{ fontFamily:"'SFMono-Regular',Monaco,Consolas,monospace", fontSize:'13px', fontWeight:600, color:'#ece8e1', flexShrink:0 } }, move),
+        off
+          ? React.createElement('span', { key:'n', style:{ display:'inline-block', fontSize:'10px', fontWeight:600, color:'#8e887f', textTransform:'uppercase', letterSpacing:'.04em', border:'1px solid rgba(255,255,255,.10)', borderRadius:'9999px', padding:'1px 6px' } }, 'off-book')
+          : React.createElement('span', { key:'n', style:{ fontSize:'12px', fontWeight:500, color:'#8e887f', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' } }, name)
+      ]),
+      React.createElement('div', { key:'b', style:{ display:'flex', alignItems:'center', gap:'8px', minWidth:0 } }, [
+        React.createElement('span', { key:'wp', style:{ fontFamily:'monospace', fontSize:'11px', color:'#d4cfc7', minWidth:'30px', fontVariantNumeric:'tabular-nums' } }, w+'%'),
+        React.createElement('span', { key:'bar', style:{ display:'flex', flex:'1 1 auto', minWidth:0, height:'8px', borderRadius:'4px', overflow:'hidden' } }, [
+          React.createElement('span', { key:1, style:{ background:'#d4cfc7', width:w+'%' } }),
+          React.createElement('span', { key:2, style:{ background:'#5a554e', width:d+'%' } }),
+          React.createElement('span', { key:3, style:{ background:'#c08840', width:b+'%' } })
+        ]),
+        React.createElement('span', { key:'bp', style:{ fontFamily:'monospace', fontSize:'11px', color:'#c08840', minWidth:'30px', textAlign:'right', fontVariantNumeric:'tabular-nums' } }, b+'%'),
+        React.createElement('span', { key:'g', style:{ fontFamily:'monospace', fontSize:'11px', color:'#8e887f', minWidth:'56px', textAlign:'right', whiteSpace:'nowrap' } }, games)
+      ])
+    ]);
+  }
+
+  video(title, channel, meta, dur, badge, variation) {
+    return React.createElement('div', {
+      style: { display:'flex', background:'#1f1d1b', border:'1px solid rgba(255,255,255,.06)', borderRadius:'8px', overflow:'hidden' }
+    }, [
+      React.createElement('div', { key:'th', style:{ flex:'0 0 132px', width:'132px', aspectRatio:'16/9', background:'#363330', position:'relative', display:'flex', alignItems:'center', justifyContent:'center' } }, [
+        React.createElement('span', { key:'p', style:{ width:'34px', height:'34px', borderRadius:'9999px', background:'rgba(0,0,0,.65)', display:'flex', alignItems:'center', justifyContent:'center', color:'#ece8e1' } },
+          React.createElement('span', { style:{ fontSize:'16px', marginLeft:'2px' } }, '\u25B6')),
+        React.createElement('span', { key:'d', style:{ position:'absolute', bottom:'4px', right:'4px', background:'rgba(0,0,0,.9)', color:'#ece8e1', fontSize:'11px', fontWeight:700, padding:'2px 4px', borderRadius:'4px' } }, dur)
+      ]),
+      React.createElement('div', { key:'i', style:{ flex:1, minWidth:0, display:'flex', flexDirection:'column', justifyContent:'center', gap:'3px', padding:'10px 12px' } }, [
+        React.createElement('div', { key:'t', style:{ fontSize:'14px', fontWeight:600, color:'#ece8e1', lineHeight:1.35, display:'-webkit-box', WebkitLineClamp:2, WebkitBoxOrient:'vertical', overflow:'hidden' } }, title),
+        React.createElement('div', { key:'c', style:{ fontSize:'12px', fontWeight:600, color:'#9a958e' } }, channel),
+        React.createElement('div', { key:'m', style:{ fontSize:'12px', color:'#8e887f' } }, meta),
+        React.createElement('span', { key:'b', style:{ alignSelf:'flex-start', marginTop:'2px', padding:'2px 8px', border:'1px solid '+(variation?'rgba(232,93,4,.3)':'rgba(255,255,255,.10)'), background:variation?'rgba(232,93,4,.06)':'rgba(255,255,255,.06)', color:variation?'#9a958e':'#8e887f', fontSize:'11px', fontWeight:600, borderRadius:'4px' } }, badge)
+      ])
+    ]);
+  }
+
+  study(title, author, chapters, platform, badge, variation) {
+    return React.createElement('div', {
+      style: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', padding:'12px 16px', background:'#1f1d1b', border:'1px solid rgba(255,255,255,.06)', borderRadius:'8px' }
+    }, [
+      React.createElement('div', { key:'i', style:{ display:'flex', flexDirection:'column', gap:'8px', minWidth:0, flex:1 } }, [
+        React.createElement('div', { key:'t', style:{ fontSize:'14px', fontWeight:600, color:'#ece8e1', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' } }, title),
+        React.createElement('div', { key:'m', style:{ display:'flex', alignItems:'center', gap:'8px', fontSize:'12px', color:'#9a958e', flexWrap:'wrap' } }, [
+          React.createElement('span', { key:1 }, 'by '+author),
+          React.createElement('span', { key:2, style:{ color:'#8e887f' } }, '\u00B7'),
+          React.createElement('span', { key:3 }, chapters+' chapters'),
+          React.createElement('span', { key:4, style:{ color:'#8e887f' } }, '\u00B7'),
+          React.createElement('span', { key:5, style:{ padding:'2px 8px', background:'rgba(255,255,255,.18)', borderRadius:'4px', fontSize:'12px', fontWeight:600, color:'#ece8e1', textTransform:'capitalize' } }, platform)
+        ]),
+        React.createElement('span', { key:'b', style:{ alignSelf:'flex-start', padding:'2px 8px', border:'1px solid '+(variation?'rgba(232,93,4,.3)':'rgba(255,255,255,.10)'), background:variation?'rgba(232,93,4,.06)':'rgba(255,255,255,.06)', color:variation?'#9a958e':'#8e887f', fontSize:'11px', fontWeight:600, borderRadius:'4px' } }, badge)
+      ]),
+      React.createElement('span', { key:'o', style:{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'8px 16px', background:'rgba(255,255,255,.10)', border:'1px solid rgba(255,255,255,.18)', borderRadius:'4px', color:'#ece8e1', fontSize:'13px', fontWeight:600, flexShrink:0 } }, 'Open')
+    ]);
+  }
+
+  masterRow(w, we, b, be, res, event, year, moves) {
+    const col = res === '1\u20130' ? '#d4cfc7' : (res === '0\u20131' ? '#c08840' : '#9a958e');
+    const cell = (v, extra) => Object.assign({ fontSize:'13px', color:'#9a958e', fontVariantNumeric:'tabular-nums', minWidth:0, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }, extra||{});
+    return React.createElement('div', {
+      style: { display:'grid', gridTemplateColumns:'minmax(0,1.9fr) 66px minmax(0,1.2fr) 58px 74px 74px', alignItems:'center', gap:'12px', padding:'11px 14px', borderTop:'1px solid rgba(255,255,255,.06)' }
+    }, [
+      React.createElement('div', { key:'p', style:{ minWidth:0, display:'flex', flexDirection:'column', gap:'2px' } }, [
+        React.createElement('span', { key:1, style:{ fontSize:'14px', fontWeight:600, color:'#ece8e1', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' } }, w + '  \u2013  ' + b),
+        React.createElement('span', { key:2, style:{ fontFamily:'monospace', fontSize:'11px', color:'#8e887f' } }, we + ' vs ' + be)
+      ]),
+      React.createElement('span', { key:'r', style:{ justifySelf:'start', fontFamily:'monospace', fontSize:'12px', fontWeight:700, color:col, background:'rgba(255,255,255,.06)', border:'1px solid rgba(255,255,255,.10)', borderRadius:'4px', padding:'3px 8px' } }, res),
+      React.createElement('span', { key:'e', style:cell() }, event),
+      React.createElement('span', { key:'y', style:cell() }, year),
+      React.createElement('span', { key:'m', style:cell({ textAlign:'right' }) }, moves + ' moves'),
+      React.createElement('span', { key:'o', style:{ justifySelf:'end', fontSize:'12px', fontWeight:600, color:'#8e887f', border:'1px solid rgba(255,255,255,.10)', borderRadius:'4px', padding:'5px 10px' } }, 'Replay')
+    ]);
+  }
+
+  detailVals() {
+    const next = [
+      this.moveRow('6.Be3', 'English Attack', 38, 30, 32, '48k games'),
+      this.moveRow('6.Bg5', 'Main Line, Poisoned Pawn', 41, 28, 31, '32k games'),
+      this.moveRow('6.Be2', 'Classical Variation', 36, 34, 30, '21k games'),
+      this.moveRow('6.Bc4', 'Fischer\u2013Sozin Attack', 40, 26, 34, '14k games'),
+      this.moveRow('6.a4', null, 35, 31, 34, '2.1k games', { offBook:true })
+    ];
+    const alt = [
+      this.moveRow('5\u2026g6', 'Dragon Variation', 43, 24, 33, '61k games'),
+      this.moveRow('5\u2026Nc6', 'Classical Variation', 40, 29, 31, '44k games'),
+      this.moveRow('5\u2026e6', 'Scheveningen', 39, 30, 31, '38k games')
+    ];
+    const vids = [
+      this.video('The Najdorf Sicilian, Explained', 'Hanging Pawns', '1.2M views \u00B7 Mar 2021', '18:42', 'Covers this variation', true),
+      this.video('Crushing with the English Attack', 'GothamChess', '890K views \u00B7 Jan 2023', '12:07', 'Covers this variation', true),
+      this.video('Sicilian Najdorf: Complete Guide', 'Saint Louis Chess Club', '420K views \u00B7 Nov 2019', '1:02:15', 'Family overview', false)
+    ];
+    const studies = [
+      this.study('Najdorf English Attack Repertoire', 'IM_Silman', 8, 'lichess', 'Covers this variation', true),
+      this.study('Understanding the Najdorf', 'ChessNetwork', 5, 'lichess', 'Explores deeper lines', false),
+      this.study('Sicilian Defence: Complete Family', 'D. Naroditsky', 12, 'chessable', 'Family overview', false)
+    ];
+    return {
+      boardDesktop: this.buildDetailBoard(38),
+      boardMobile: this.buildDetailBoard(28),
+      nextMoves: next,
+      altMoves: alt,
+      nextMovesMobile: next.slice(0, 3),
+      altMovesMobile: [
+        this.moveRow('5\u2026g6', 'Dragon Variation', 43, 24, 33, '61k games'),
+        this.moveRow('5\u2026Nc6', 'Classical Variation', 40, 29, 31, '44k games')
+      ],
+      videos: vids,
+      studies: studies
+    };
+  }
+
+  renderVals(){ return Object.assign({}, this.obVals(), this.detailVals()); }
+}
+</script>
+</body>
+</html>

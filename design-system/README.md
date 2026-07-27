@@ -1,45 +1,52 @@
-# CODING AGENTS: READ THIS FIRST
+# Opening Book design system
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Canonical reference for the **Warm Editorial Dark** brand. Originally exported
+from [Claude Design](https://claude.ai/design); maintained here as the source of
+truth for visual work.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported
-this bundle so a coding agent can implement the designs for real.
+**Start with the `openingbook-design` skill**
+(`.claude/skills/openingbook-design/`) — it carries the hard rules and points
+back into this bundle. This README describes what's in the bundle and how to
+keep it current.
 
-## What you should do — IMPORTANT
+## Contents
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in
-`opening-book-design-system/chats/`. The transcripts show the full
-back-and-forth between the user and the design assistant — they tell you **what
-the user actually wants** and **where they landed** after iterating. Don't skip
-them. The final HTML files are the output, but the chat is where the intent
-lives.
+| Path                          | What it is                                                                                                     |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `project/colors_and_type.css` | The token system — surfaces, accent scale, text, result colours, type, spacing, radii, shadows                 |
+| `project/ui_kits/web/`        | Pixel-fidelity React recreations of the live landing app (TopBar, Hero, OpeningCard, RepertoireRow, MiniBoard) |
+| `project/preview/`            | Small HTML reference cards, one per token group                                                                |
+| `project/assets/`             | Brand assets, including the pawn-on-an-open-book mark                                                          |
+| `project/explorations/`       | Design alternatives that weren't shipped                                                                       |
+| `project/uploads/`            | Source material from design sessions                                                                           |
+| `chats/`                      | Transcripts of the Claude Design sessions that produced the system                                             |
 
-**Find the primary design file under `opening-book-design-system/project/` and
-read it top to bottom.** The chat transcripts will tell you which file the user
-was last iterating on. Then **follow its imports**: open every file it pulls in
-(shared components, CSS, scripts) so you understand how the pieces fit together
-before you start implementing.
+The HTML and React files are **prototypes, not production code**. Match their
+visual output; don't copy their internal structure unless it happens to fit.
+They are higher fidelity than any written description — read them before
+inventing a layout.
 
-**If anything is ambiguous, ask the user to confirm before you start
-implementing.** It's much cheaper to clarify scope up front than to build the
-wrong thing.
+The transcripts are useful when you need to know _why_ a decision was made. They
+are not required reading before routine visual work.
 
-## About the design files
+## Token sync
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production
-code. Your job is to **recreate them pixel-perfectly** in whatever technology
-makes sense for the target codebase (React, Vue, native, whatever fits). Match
-the visual output; don't copy the prototype's internal structure unless it
-happens to fit.
+Tokens exist in two places that must stay identical:
 
-**Don't render these files in a browser or take screenshots unless the user asks
-you to.** Everything you need — dimensions, colors, layout rules — is spelled
-out in the source. Read the HTML and CSS directly; a screenshot won't tell you
-anything they don't.
+- `packages/web/src/styles/simplified.css` — the runtime source, what production
+  imports
+- `design-system/project/colors_and_type.css` — the reference and Claude Design
+  handoff format
 
-## Bundle contents
+Change both in the same commit. A drift between them is invisible until
+something renders the wrong colour.
 
-- `opening-book-design-system/README.md` — this file
-- `opening-book-design-system/chats/` — conversation transcripts (read these!)
-- `opening-book-design-system/project/` — the `Opening Book Design System`
-  project files (HTML prototypes, assets, components)
+## Maintenance
+
+When you add a component or visual surface:
+
+1. Add a preview card under `project/preview/`
+2. Add a kit file under `project/ui_kits/web/` if it's substantial
+3. Update the skill if a hard rule changed
+
+New Claude Design session: drop the transcript into `chats/`.

@@ -52,18 +52,50 @@ Two further corrections to the handoff README:
 
 ## 3. Decisions taken
 
-| Question                                  | Decision                                                         | Rationale                                                                                                                                                                                                            |
-| ----------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Faceted filter bar data                   | **Build a new browse endpoint**                                  | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                            |
-| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                         | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                              |
-| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                       | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                              |
-| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                  | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                           |
-| Desktop explorer card structure           | **Wrap the existing desktop parts**                              | New `ExplorerCard` shell composes `WinRatePanel` and `OpeningNavigator`. Avoids refactoring freshly-shipped mobile code and its 35 tests. Convergence of the two breakpoints is logged as a follow-up, not done now. |
-| Sample report (change 19)                 | **Pre-baked cached fixtures**                                    | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                         |
-| Delivery                                  | **Six phased PRs, one per theme**                                | Each independently shippable and revertable, each with its own verification checkpoint. Matches how #53–#55 were run.                                                                                                |
-| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                        | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                               |
-| Repertoire persistence                    | **Accept `localStorage`, record the risk**                       | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                       |
-| Master games position, mobile detail      | **Hold current position** (after the data surface, before plans) | The proposal moves it below Learning resources. Sound reasoning, modest gain, but it reorders screenshot-verified work shipped three weeks ago.                                                                      |
+| Question                                  | Decision                                                          | Rationale                                                                                                                                                                                                              |
+| ----------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faceted filter bar data                   | **Build a new browse endpoint**                                   | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
+| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                          | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
+| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                        | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                                |
+| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                   | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
+| Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**        | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
+| Sample report (change 19)                 | **Pre-baked cached fixtures**                                     | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
+| Delivery                                  | **Integration branch; phases are PRs into it; one merge to main** | Sequential merges to `main` mid-programme have broken things before. Each phase PR still gets its own Vercel preview, so review stays incremental — but `main` is touched once, at the end. See §9.                    |
+| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                         | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                                 |
+| Repertoire persistence                    | **Accept `localStorage`, record the risk**                        | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                         |
+| Master games position, mobile detail      | **Move below Learning resources, as proposed**                    | Master games are browse content and should not outrank learning content. Also makes both breakpoints agree on block order, which the desktop change (§3.1) depends on.                                                 |
+
+### 3.1 Superseding the 2026-07-13 right-column spec
+
+`docs/superpowers/specs/2026-07-13-opening-detail-right-column-redesign-design.md`
+decided to merge `LevelLens` **into** `WinRatePanel` and to **keep master games
+inside** that card. This spec overrides that one decision. Nothing else in the
+July spec changes.
+
+The reason is a scope defect, not a difference of taste. On desktop today:
+
+- the level pills live inside `WinRatePanel`;
+- `WinRatePanel` also contains master games, which **ignore** the level filter;
+- the pills silently drive `OpeningNavigator`, a **separate card outside their
+  border**.
+
+The filter therefore under-reaches inside its own card and over-reaches into one
+it does not visually own. There is no way to learn what it governs by using it.
+July's spec was a styling consolidation and never examined this.
+
+What survives from July, unchanged: the stat pair (`Total games` /
+`Average Elo`), the win bar and legend, the two-line stacked move rows, the
+Overview card restyle, and the `averageRating` wiring in
+`lib/lichessExplorer.ts`. **Phase 4 is re-parenting, not restyling.**
+
+A rejected cheaper option, recorded so it is not re-proposed: move master games
+out and caption the navigator with the active band, leaving two cards. That
+fixes both lies but states the filter's reach in copy rather than showing it as
+a border — and it forgoes the shared-component win below.
+
+Bonus in scope: `WinRatePanel` and `MobileMasterGames` each fetch the masters
+band independently today. Extracting one `MasterGamesCard` serves both
+breakpoints and retires the duplicate fetch.
 
 ---
 
@@ -219,7 +251,9 @@ restores the active facets; cards remain crawlable links.
 
 ### Phase 4 — Opening detail (desktop)
 
-Mobile gets copy-only changes in this phase.
+Mobile gets copy changes plus one structural change: **master games moves below
+Learning resources**, matching the proposed mobile screen and the new desktop
+order. `MobileMasterGames` is replaced by the shared `MasterGamesCard`.
 
 - **New `ExplorerCard` shell.** Raised header band carrying the title "Opening
   explorer", the source line, and the `LevelLens` pills. Body: stats,
@@ -291,6 +325,9 @@ case, not an edge case.
   surface change.
 - `activeContext.md` (<50 lines) and `progress.md` (<100 lines) updated; detail
   to `archive.md`.
+- **Merge `main` into the integration branch** at the start of each phase. Cheap
+  when there is nothing to take; catches drift early rather than at the final
+  merge.
 
 ---
 
@@ -309,11 +346,49 @@ saved first. Revisit both if saved counts grow past what one row can hold.
 
 ## 8. Risks
 
-| Risk                                                                                                                            | Mitigation                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Repertoire is `localStorage` only — no sync, cleared with site data — and Phase 1 builds a tab, a badge and an Undo toast on it | Accepted. Recorded here. Revisit if sign-in lands.                                  |
-| Sample-report fixtures go stale                                                                                                 | Regeneration script + visible "as of \<date\>".                                     |
-| Browse endpoint payload size amplified by crawlers                                                                              | Capped page size + `Cache-Control` in `vercel.json`.                                |
-| Phase 4 rail grows taller and breaks the sticky board                                                                           | Explicit checkpoint; `overflow: clip` not `hidden` on any card with a sticky child. |
-| Phase 3 filter refactor silently drops crawlable card links                                                                     | Cards stay `<a>`; URL-param state; SEO check in the phase checkpoint.               |
-| Desktop and mobile explorer cards diverge (wrap now, unify later)                                                               | Logged as a follow-up. Both must show the same labels and the same filter scope.    |
+| Risk                                                                                                                            | Mitigation                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Repertoire is `localStorage` only — no sync, cleared with site data — and Phase 1 builds a tab, a badge and an Undo toast on it | Accepted. Recorded here. Revisit if sign-in lands.                                                                      |
+| Sample-report fixtures go stale                                                                                                 | Regeneration script + visible "as of \<date\>".                                                                         |
+| Browse endpoint payload size amplified by crawlers                                                                              | Capped page size + `Cache-Control` in `vercel.json`.                                                                    |
+| Phase 4 rail grows taller and breaks the sticky board                                                                           | Explicit checkpoint; `overflow: clip` not `hidden` on any card with a sticky child.                                     |
+| Phase 3 filter refactor silently drops crawlable card links                                                                     | Cards stay `<a>`; URL-param state; SEO check in the phase checkpoint.                                                   |
+| Desktop and mobile explorer cards diverge (separate shells, shared master-games card)                                           | Both must show the same labels, the same block order and the same filter scope. Full convergence logged as a follow-up. |
+| Integration branch drifts from `main`                                                                                           | `main` merged into the branch at the start of every phase (§6).                                                         |
+
+---
+
+## 9. Delivery
+
+One integration branch. Phases are PRs **into that branch**, not into `main`.
+
+```
+main
+ └─ feat/ux-review                 ← one PR to main, at the end
+     ├─ ux/phase-0-systemic        ← PR into feat/ux-review (own preview)
+     ├─ ux/phase-1-discover        ← PR into feat/ux-review (own preview)
+     ├─ ux/phase-2-browse-api
+     ├─ ux/phase-3-filter-bar
+     ├─ ux/phase-4-detail-desktop
+     └─ ux/phase-5-analyse
+```
+
+Why this shape:
+
+- **`main` is touched once.** Sequential merges to `main` mid-programme have
+  broken production before; this removes the opportunity.
+- **Every phase still gets its own Vercel preview URL**, so review stays
+  incremental and diffs stay readable. Vercel builds a preview per branch, so
+  the integration branch also has one showing cumulative state.
+- **A bad phase is revertable inside the branch** without touching production.
+
+Rules:
+
+- Never merge a phase branch into `main` directly.
+- Merge `main` into `feat/ux-review` at the start of each phase, then the phase
+  branch off that (§6).
+- The final `feat/ux-review` → `main` PR is the production gate: full suite,
+  screenshots at both breakpoints for all touched screens, and a manual pass
+  over the integration preview.
+- Phases 0–1 are independently valuable and low-risk. If the programme stalls,
+  the branch can be cut to `main` after Phase 1 rather than abandoned.

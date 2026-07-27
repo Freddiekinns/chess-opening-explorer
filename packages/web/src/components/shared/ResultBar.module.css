@@ -1,0 +1,61 @@
+.resultBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  height: 6px;
+  gap: 2px;
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.white,
+.draw,
+.black {
+  height: 100%;
+  min-width: 4px;
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease-out;
+}
+
+.white {
+  background-color: var(--color-result-white);
+}
+
+.draw {
+  background-color: var(--color-result-draw);
+}
+
+.black {
+  background-color: var(--color-result-black);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+/* The -text tokens are the readable variants of the segment colours: the fill
+   tokens are tuned for a 6px bar on a dark surface and are too low-contrast
+   as type. */
+.labelWhite {
+  color: var(--color-result-white-text);
+}
+
+.labelDraw {
+  color: var(--color-result-draw-text);
+}
+
+.labelBlack {
+  color: var(--color-result-black-text);
+}

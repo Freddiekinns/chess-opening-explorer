@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { StarButton } from './StarButton';
 import { MiniBoard } from './MiniBoard';
+import { ResultBar } from './ResultBar';
 
 interface Opening {
   fen: string;
@@ -110,29 +111,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
             {showEco && <span className="eco-pill">{opening.eco}</span>}
           </div>
           <span className="list-item-moves">{firstMoves}</span>
-          {gameStats && (
-            <div className="list-item-stats">
-              <div className="segmented-bar">
-                <div
-                  className="bar-segment white-segment"
-                  style={{ width: `${gameStats.white}%` }}
-                ></div>
-                <div
-                  className="bar-segment draw-segment"
-                  style={{ width: `${gameStats.draw}%` }}
-                ></div>
-                <div
-                  className="bar-segment black-segment"
-                  style={{ width: `${gameStats.black}%` }}
-                ></div>
-              </div>
-              <div className="list-item-stat-labels">
-                <span className="white-label">W {gameStats.white}%</span>
-                <span className="draw-label">D {gameStats.draw}%</span>
-                <span className="black-label">B {gameStats.black}%</span>
-              </div>
-            </div>
-          )}
+          <ResultBar stats={gameStats} />
         </div>
       </Link>
     );
@@ -177,29 +156,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           </div>
 
           {/* 4. Win rate bar — anchored to bottom, only when real stats exist */}
-          {gameStats && (
-            <div className="card-winrate">
-              <div className="segmented-bar">
-                <div
-                  className="bar-segment white-segment"
-                  style={{ width: `${gameStats.white}%` }}
-                ></div>
-                <div
-                  className="bar-segment draw-segment"
-                  style={{ width: `${gameStats.draw}%` }}
-                ></div>
-                <div
-                  className="bar-segment black-segment"
-                  style={{ width: `${gameStats.black}%` }}
-                ></div>
-              </div>
-              <div className="winrate-labels">
-                <span className="white-label">W {gameStats.white}%</span>
-                <span className="draw-label">D {gameStats.draw}%</span>
-                <span className="black-label">B {gameStats.black}%</span>
-              </div>
-            </div>
-          )}
+          <ResultBar stats={gameStats} className="card-winrate" />
         </div>
       </div>
     </Link>

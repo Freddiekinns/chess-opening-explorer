@@ -1085,33 +1085,8 @@ body {
   color: var(--color-text-secondary);
 }
 
-.segmented-bar {
-  display: flex;
-  height: 8px;
-  gap: 2px;
-  background-color: var(--color-bg-alt);
-  border-radius: var(--border-radius-small);
-  overflow: hidden;
-}
-
-.bar-segment {
-  height: 100%;
-  border-radius: 9999px;
-  transition: width 0.6s ease-out;
-  min-width: 4px;
-}
-
-.bar-segment.white-segment {
-  background-color: var(--color-result-white);
-}
-
-.bar-segment.draw-segment {
-  background-color: var(--color-result-draw);
-}
-
-.bar-segment.black-segment {
-  background-color: var(--color-result-black);
-}
+/* Result-bar markup now lives in ResultBar.module.css — see
+   components/shared/ResultBar.tsx. */
 
 .stat-value {
   font-size: var(--font-size-sm);
@@ -1578,31 +1553,9 @@ body {
 }
 
 /* --- Win rate bar --- */
+/* Bar and labels are ResultBar's; this only pins it to the card's bottom. */
 .card-winrate {
   margin-top: auto;
-}
-
-.card-winrate .segmented-bar {
-  margin-bottom: var(--space-1);
-}
-
-.winrate-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-medium);
-}
-
-.winrate-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .black-label {
-  color: var(--color-text-secondary);
 }
 
 /* =================
@@ -1669,33 +1622,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.list-item-stats {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.list-item-stats .segmented-bar {
-  height: 6px;
-}
-
-.list-item-stat-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-2xs);
-}
-
-.list-item-stat-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .black-label {
-  color: var(--color-text-secondary);
-}
+/* The list-item's result bar is ResultBar with no wrapper class. */
 
 /* =================
    SEARCH COMPONENTS
@@ -2809,14 +2736,6 @@ body {
 
   .opening-card.has-board .card-games {
     display: none;
-  }
-
-  .opening-card.has-board .segmented-bar {
-    height: 5px;
-  }
-
-  .opening-card.has-board .winrate-labels {
-    font-size: var(--text-3xs);
   }
 
   .opening-card {

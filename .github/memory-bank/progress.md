@@ -4,6 +4,14 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review phase 1 — Discover closes the loop** (2026-07-27,
+  `ux/phase-1-discover`, stacked on phase 0): shared `Toast` with Undo +
+  `useRepertoireToast` (one place decides wording and timing), star on every
+  grid card, slim empty prompt so content leads a first visit, persistent
+  top-bar search on every page, shared `SearchHub` for desktop dropdown and
+  mobile overlay, `/repertoire` route (noindex), three mobile tabs with a count
+  badge. Find → save → revisit no longer needs a detail page. 372 frontend tests
+  green.
 - **UX review phase 0 — systemic pass** (2026-07-27, `ux/phase-0-systemic` →
   `feat/ux-review`): one button spec (Practice primary, Load more tertiary),
   self-labelling `ResultBar` adopted by both `OpeningCard` variants, decorative
@@ -65,9 +73,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **UX review phases 1–5**: Discover loop (1), browse API (2), filter bar (3),
-  desktop detail shell (4), Analyse (5) — all land on `feat/ux-review`, which
-  merges to `main` as a single PR. Plans for 2–5 written when reached.
+- **UX review phases 2–5**: browse API (2), filter bar (3), desktop detail shell
+  (4), Analyse (5) — all land on `feat/ux-review`, which merges to `main` as a
+  single PR. Plans written when reached; the browse API's shape informs phase 3.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work

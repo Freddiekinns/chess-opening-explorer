@@ -139,6 +139,18 @@ const LandingPage: React.FC = () => {
     navigate(`/opening/${encodedFen}`);
   };
 
+  const handleSurpriseMe = async () => {
+    try {
+      const response = await fetch('/api/openings/random');
+      const data = await response.json();
+      if (data.success && data.data) {
+        navigate(`/opening/${encodeURIComponent(data.data.fen)}`);
+      }
+    } catch {
+      // A failed surprise is not worth an error state — the search is right there.
+    }
+  };
+
   return (
     <main className="landing-page">
       <title>{seoTitle}</title>
@@ -171,8 +183,17 @@ const LandingPage: React.FC = () => {
               onExpandSearch={handleExpandSearch}
               className="hero-search"
             />
-            <div className="pgn-search-link-wrapper">
-              <button className="pgn-search-link" onClick={() => setIsPGNModalOpen(true)}>
+            {/* Three unequal actions used to compete at the same level. Search
+                is now the only prominent element; these drop beneath it as
+                quiet links, Surprise first (UX review change 02). */}
+            <div className="hero-secondary-links">
+              <button className="hero-quiet-link" onClick={handleSurpriseMe}>
+                Surprise me
+              </button>
+              <span className="hero-link-separator" aria-hidden="true">
+                ·
+              </span>
+              <button className="hero-quiet-link" onClick={() => setIsPGNModalOpen(true)}>
                 Paste a game
               </button>
             </div>

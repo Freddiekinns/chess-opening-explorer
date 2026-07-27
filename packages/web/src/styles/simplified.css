@@ -273,6 +273,21 @@
   box-sizing: border-box;
 }
 
+/* Every interactive control gets the brand focus ring, never the browser
+   default. Element-level specificity, so a component may refine the ring —
+   but a component that removes it without a replacement is a bug. Text
+   inputs opt out deliberately: they signal focus with an orange border and
+   glow instead, which reads better inside a field. */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   padding: 0;

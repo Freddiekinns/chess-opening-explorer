@@ -251,7 +251,7 @@ export const PersonalOpeningStats: React.FC<{
         <div className={`${styles.landing} ${showHero ? styles.landingCentered : ''}`}>
           {showHero && (
             <div className={styles.hero}>
-              <h1 className={styles.heroTitle}>Analyse Your Games</h1>
+              <h1 className={styles.heroTitle}>Analyse your games</h1>
               <p className={styles.heroSubtitle}>
                 Review your performance and improve your openings by connecting your chess account.
               </p>
@@ -601,7 +601,7 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
                       Overall performance
                     </div>
-                    <h3 className={styles.cardTitle}>Career Totals</h3>
+                    <h3 className={styles.cardTitle}>Career totals</h3>
                     <div className={styles.statsRows}>
                       <div className={styles.statsRow}>
                         <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>

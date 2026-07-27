@@ -61,7 +61,7 @@ describe('PGNInputModal Component', () => {
       render(<PGNInputModal {...defaultProps} />);
 
       expect(screen.getByRole('dialog')).toBeInTheDocument();
-      expect(screen.getByText('Find Opening from PGN')).toBeInTheDocument();
+      expect(screen.getByText('Find opening from PGN')).toBeInTheDocument();
     });
 
     it('should render textarea for PGN input', () => {

@@ -54,7 +54,7 @@ describe('SearchOverlay', () => {
 
     expect(screen.getByText('Recent')).toBeInTheDocument();
     expect(screen.getByText('Caro-Kann Defence')).toBeInTheDocument();
-    expect(screen.getByText('My repertoire')).toBeInTheDocument();
+    expect(screen.getByText('Your repertoire')).toBeInTheDocument();
     expect(screen.getAllByText(/Repertoire Opening/)).toHaveLength(5);
     expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
   });
@@ -62,7 +62,7 @@ describe('SearchOverlay', () => {
   test('hides empty sections when there is nothing to show', () => {
     renderOverlay();
     expect(screen.queryByText('Recent')).not.toBeInTheDocument();
-    expect(screen.queryByText('My repertoire')).not.toBeInTheDocument();
+    expect(screen.queryByText('Your repertoire')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
   });
 

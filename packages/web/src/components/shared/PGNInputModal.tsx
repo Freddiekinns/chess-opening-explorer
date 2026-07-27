@@ -142,7 +142,7 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
         tabIndex={-1}
       >
         <div className="pgn-modal-header">
-          <h2 id="pgn-modal-title">Find Opening from PGN</h2>
+          <h2 id="pgn-modal-title">Find opening from PGN</h2>
           <button onClick={onClose} className="pgn-modal-close-btn" aria-label="Close modal">
             ×
           </button>

@@ -173,7 +173,7 @@ const LandingPage: React.FC = () => {
             />
             <div className="pgn-search-link-wrapper">
               <button className="pgn-search-link" onClick={() => setIsPGNModalOpen(true)}>
-                Search by pasting PGN
+                Paste a game
               </button>
             </div>
           </div>

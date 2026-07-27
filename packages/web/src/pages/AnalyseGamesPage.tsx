@@ -8,7 +8,7 @@ import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
 const AnalyseGamesPage: React.FC = () => {
   const location = useLocation();
   const canonicalUrl = buildSiteUrl('/analyse');
-  const seoTitle = `Analyse Your Games — ${SITE_NAME}`;
+  const seoTitle = `Analyse your games — ${SITE_NAME}`;
   const seoDescription =
     'Analyse your Chess.com and Lichess games to discover which openings you play and track your performance.';
 

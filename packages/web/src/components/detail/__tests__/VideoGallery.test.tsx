@@ -41,7 +41,7 @@ describe('VideoGallery', () => {
   it('should render video gallery with videos', () => {
     render(<VideoGallery videos={mockVideos} />);
 
-    expect(screen.getByText('Video Lessons')).toBeInTheDocument();
+    expect(screen.getByText('Video lessons')).toBeInTheDocument();
     expect(screen.queryByText('Learn')).not.toBeInTheDocument();
     expect(screen.getByText('Test Chess Opening Video')).toBeInTheDocument();
     expect(screen.getByText('Advanced Opening Strategies')).toBeInTheDocument();

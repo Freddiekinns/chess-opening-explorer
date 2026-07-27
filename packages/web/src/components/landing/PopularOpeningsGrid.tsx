@@ -54,7 +54,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
 
   // Available categories based on ECO codes
   const [categories, setCategories] = useState([
-    { id: 'all', label: 'All Openings', count: 0 },
+    { id: 'all', label: 'All openings', count: 0 },
     { id: 'A', label: 'Flank Openings (A)', count: 0 },
     { id: 'B', label: 'Semi-Open Games (B)', count: 0 },
     { id: 'C', label: 'French & Others (C)', count: 0 },
@@ -204,7 +204,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
     const ecoCategories = ['A', 'B', 'C', 'D', 'E'];
 
     const updatedCategories = [
-      { id: 'all', label: 'All Openings', count: openings.length },
+      { id: 'all', label: 'All openings', count: openings.length },
       ...ecoCategories.map((ecoLetter) => {
         // Filter by ECO family first, then deduplicate within that category
         const categoryOpenings = openings.filter(
@@ -312,7 +312,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
         <div className="empty-state">
           <p>No openings found in the selected ECO category.</p>
           <button onClick={() => setSelectedCategory('all')} className="reset-filter-btn">
-            Show All Openings
+            Show all openings
           </button>
         </div>
       )}

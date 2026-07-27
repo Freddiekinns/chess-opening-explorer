@@ -2370,11 +2370,12 @@ body {
   padding: var(--space-4);
 }
 
+/* Tertiary: pagination must not out-rank the page's real actions. */
 .load-more-btn {
-  background-color: var(--color-bg-alt);
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 999px;
+  background-color: var(--surface-raised);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-8);
   cursor: pointer;
   transition: var(--transition-base);
@@ -2383,17 +2384,18 @@ body {
 }
 
 .load-more-btn:hover {
-  background-color: var(--accent-a12);
+  background-color: var(--surface-overlay);
   transform: translateY(-1px);
+}
+
+.load-more-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 @media (max-width: 767px) {
   .load-more-btn {
     width: 100%;
-    border-radius: var(--border-radius-base);
-    background-color: var(--color-bg-surface);
-    border-color: var(--color-border);
-    color: var(--color-text-primary);
   }
 }
 
@@ -2821,11 +2823,12 @@ body {
 
 /* Empty state for no videos */
 
+/* Primary: the most valuable action on the detail page, drawn as such. */
 .practice-toggle-btn {
-  background-color: transparent;
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 8px;
+  background-color: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
   padding: 10px 24px;
   margin-left: auto;
   font-family: var(--font-family-headline);
@@ -2840,14 +2843,19 @@ body {
 }
 
 .practice-toggle-btn:hover:not(:disabled) {
-  background-color: var(--accent-a12);
-  color: var(--color-brand-orange);
-  transform: scale(1.02);
-  box-shadow: none;
+  background-color: var(--color-brand-orange-hover);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
 }
 
 .practice-toggle-btn:active:not(:disabled) {
   transform: scale(0.98);
+}
+
+.practice-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 /* =================

@@ -350,7 +350,7 @@
 .analyseBtn {
   padding: var(--space-3) var(--space-8);
   border: none;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   background: var(--color-brand-orange);
   color: var(--color-text-inverse);
   font-family: var(--font-family-primary);
@@ -374,6 +374,11 @@
 .analyseBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.analyseBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 .spinner {
@@ -1680,9 +1685,9 @@
   margin-top: var(--space-6);
   padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--color-brand-orange);
-  color: #fff;
+  color: var(--color-text-inverse);
   font-family: var(--font-family-primary);
   font-size: 16px;
   font-weight: 600;
@@ -1693,6 +1698,11 @@
 
 .bottomCta:hover {
   opacity: 0.9;
+}
+
+.bottomCta:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 /* Mobile: show mobile dashboard, hide desktop */

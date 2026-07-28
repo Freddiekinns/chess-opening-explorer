@@ -2,43 +2,44 @@
 
 **Date:** 2026-07-28
 
-## Current Task: UX review phase 4 — opening detail desktop (`ux/phase-4-detail-desktop`)
+## Current Task: UX review phase 5 — Analyse (`ux/phase-5-analyse`)
 
-Fifth of six phases implementing the 2026-07 UX review. Stacked on
-`ux/phase-3-filter-bar` (PRs #58–#61 still open into `feat/ux-review`).
+Last of six phases implementing the 2026-07 UX review. Stacked on
+`ux/phase-4-detail-desktop` (PRs #58–#62 still open into `feat/ux-review`).
 
-The level filter sat inside the stats card, did **not** reach the master games
-in that same card, and silently drove a separate card outside it. There was no
-way to learn what it governed by using it. Phase 4 draws the answer as a border.
+The page had two headers, a record card claiming a lifetime for numbers
+describing one run, and no way to see what a report looks like before typing a
+username.
 
-- **New `ExplorerCard`**: raised header band (title "Opening explorer", source
-  line, `LevelLens`) over stats + breadcrumb + next moves + alternatives.
-  Everything the pills govern is inside; nothing outside moves.
-- **`WinRatePanel` is now presentational** — no pills, no master games, and no
-  fetch of its own. It takes the page's `ExplorerQuery`, which was already
-  requesting the same fen/band pair for the book. `WinRateBar` retired with it.
-- **Shared `MasterGamesCard`** (card + accordion variants) replaces
-  `MobileMasterGames` and the duplicate masters fetch. On mobile it moves below
-  Learning resources, so both breakpoints share one block order.
-- **One labelling module** (`lib/explorerStats.ts`) — source line, "Games ·
-  1400–1800", "Most popular at 1400–1800" — imported by both breakpoints so they
-  cannot drift. Snapshot fallback says "Saved snapshot", never "Lichess".
-- **Every reveal names its payload**: moves / games / videos / studies / plans.
-- **The explorer error beacon moved into `useExplorerQuery`.** It lived in
-  `WinRatePanel`, which never renders on mobile — every mobile band failure was
-  invisible to analytics.
+- **One header** carrying the payoff; the "Ready to analyse your openings?"
+  block is gone. Scope stated once: "Reads your public rated games — rapid,
+  blitz & classical. Bullet excluded. Nothing is stored."
+- **"Career totals / Overall performance" → "This analysis / Your record"**,
+  wins sage and losses brick via the existing `--color-perf-*` tokens (the
+  mock's hexes already _are_ those tokens). "GP" → "Games".
+- **Sample reports.** "See a sample report — Magnus · Hikaru", served from
+  committed fixtures (`packages/web/src/data/sample-reports/`, 100 games each,
+  code-split). `npm run sample:generate` rebuilds them; the dashboard prints the
+  generated date, so staleness is visible. Loading one **never** writes the
+  session cache — a sample must not return as "your" saved result.
+- **The reduction moved to `packages/shared/src/utils/personal-analysis.ts`** so
+  the generator and the page compute a report with one implementation.
+- **Accessibility**: platform choice is a real radio group; the username field
+  has a real label, not just a placeholder.
+- **Progress and errors moved inside the centred column** — rendered after a
+  65vh block, both landed a third of a viewport below the input they describe.
+- **Gear off the blank state**, into the dashboard-side search overlay.
 
-**Copy deviates from the mock twice, both because we lack the data:** master
-games are sourced "Over-the-board masters" (the proxy applies no rating filter,
-so "2,400+ Elo" would be invented) and the reveal is "Show N more games" (we
-hold ≤15 top games, deduped, so "All 47" is unstatable).
+**Deviation from the mock:** the gear goes to the overlay, not the dashboard
+header. The header's only control _opens_ that overlay, so a gear beside it
+would set a value consumed two clicks away.
 
-**Verified:** 441 frontend, 833 backend, clean build; live at 1360 and 390 —
-filter scope, source line and captions all track the pills; the board sticks and
-releases at the rail's end. **Spec/plans:** `docs/superpowers/{specs,plans}/`
+**Verified:** 462 frontend, 833 backend, clean build; sage/brick confirmed
+rendering at 1360 (`rgb(157,189,124)` / `rgb(201,133,121)`). **Spec/plans:**
+`docs/superpowers/{specs,plans}/`
 
-## Previous Task: UX review phase 3 — faceted filter bar (PR #61)
+## Previous Task: UX review phase 4 — opening detail desktop (PR #62)
 
-Level · Style · Family · Sort replacing two unlabelled pill rows; one
-`/api/openings/browse` request feeds grid, count and facets; URL-param state;
-mobile sheet portalled to `<body>`. **Detail in `archive.md`.**
+`ExplorerCard` draws one border around the level filter and everything it
+governs; master games move outside it into a shared `MasterGamesCard`. **Detail
+in `archive.md`.**

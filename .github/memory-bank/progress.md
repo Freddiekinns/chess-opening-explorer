@@ -4,61 +4,51 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`, stacked on
+  phase 4): one header instead of two; "Career totals / Overall performance"
+  becomes "This analysis / Your record" (it claimed a lifetime for one run's
+  numbers), wins sage / losses brick from the existing `--color-perf-*` tokens,
+  "GP" → "Games". Sample reports — "Magnus · Hikaru" from committed fixtures,
+  rebuilt by `npm run sample:generate`, dated on screen so staleness shows, and
+  never written to the session cache. The PGN reduction moved to
+  `packages/shared/src/utils/personal-analysis.ts` so generator and page share
+  one implementation. Platform choice is a real radio group; username has a real
+  label. Progress and errors moved inside the centred column — they were
+  rendering a third of a viewport below the input they describe. Gear off the
+  blank state into the search overlay. 462 frontend + 833 backend green.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
-  `ux/phase-4-detail-desktop`, stacked on phase 3): new `ExplorerCard` draws one
-  border around the level filter and everything it governs (stats + book);
-  master games move outside it into a shared `MasterGamesCard` serving both
-  breakpoints, below Learning resources on mobile. `WinRatePanel` is now
-  presentational — no pills, no masters, no fetch (it takes the page's
-  `ExplorerQuery`); `WinRateBar` and `MobileMasterGames` deleted. One
+  `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
+  level filter and everything it governs; master games move outside it into a
+  shared `MasterGamesCard` serving both breakpoints. `WinRatePanel` is now
+  presentational; `WinRateBar` and `MobileMasterGames` deleted. One
   `explorerStats` module owns every level-scoped label so the breakpoints cannot
-  drift; snapshot fallback never claims live data. Every reveal names its
-  payload. Explorer error beacon moved into `useExplorerQuery` — it was in a
-  desktop-only component, so mobile failures went unreported. 441 frontend + 833
-  backend green.
-- **UX review phase 3 — faceted filter bar** (2026-07-28,
-  `ux/phase-3-filter-bar`, stacked on phase 2): two unlabelled pill rows become
-  Level · Style · Family · Sort, each stating its own value; grid, count and
-  facet counts come from one `/api/openings/browse` request, so the count
-  mismatch on the landing page is gone. Filter state in URL params (back
-  restores the facets); cards stay crawlable `<Link>`s; families grouped by
-  first move, with the 2 grab-bag families in "Other openings" rather than filed
-  under a move that is not theirs. One mobile sheet, all four facets, applied
-  live, portalled to `<body>` (a transformed ancestor was capturing its
-  `position: fixed`). `ComplexityFilters` and `CategoryFilter` deleted. 833
-  backend + 413 frontend green.
-- **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`,
-  stacked on phase 1): `GET /api/openings/browse` returns items, `total`,
-  `remaining` and facet counts from one index in one request, so the count on
-  screen and the grid contents cannot disagree. One primary style per opening
-  (raw `style_tags` are ~7 per opening and would give every bucket half the
-  corpus); facets exclude their own dimension; unknown values 400; page size
-  capped at 48. No UI change. 829 backend tests green.
-- **UX review phase 1 — Discover closes the loop** (2026-07-27,
-  `ux/phase-1-discover`, stacked on phase 0): shared `Toast` with Undo +
-  `useRepertoireToast` (one place decides wording and timing), star on every
-  grid card, slim empty prompt so content leads a first visit, persistent
-  top-bar search on every page, shared `SearchHub` for desktop dropdown and
-  mobile overlay, `/repertoire` route (noindex), three mobile tabs with a count
-  badge. Find → save → revisit no longer needs a detail page. 372 frontend tests
+  drift. Every reveal names its payload. Explorer error beacon moved into the
+  hook — it was desktop-only, so mobile failures went unreported. 441 + 833
   green.
+- **UX review phase 3 — faceted filter bar** (2026-07-28,
+  `ux/phase-3-filter-bar`): two unlabelled pill rows become Level · Style ·
+  Family · Sort, each stating its value; grid, count and facets from one browse
+  request, so the landing-page count mismatch is gone. URL-param state, cards
+  stay crawlable, mobile sheet portalled to `<body>`. 833 + 413 green.
+- **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`):
+  `GET /api/openings/browse` returns items, `total`, `remaining` and facet
+  counts from one index in one request, so the count on screen and the grid
+  cannot disagree. One primary style per opening; page size capped at 48. No UI
+  change. 829 backend green.
+- **UX review phase 1 — Discover closes the loop** (2026-07-27,
+  `ux/phase-1-discover`): shared `Toast` with Undo, star on every grid card,
+  persistent top-bar search, shared `SearchHub`, `/repertoire` route, three
+  mobile tabs with a count badge. Find → save → revisit no longer needs a detail
+  page. 372 frontend green.
 - **UX review phase 0 — systemic pass** (2026-07-27, `ux/phase-0-systemic` →
-  `feat/ux-review`): one button spec (Practice primary, Load more tertiary),
-  self-labelling `ResultBar` adopted by both `OpeningCard` variants, decorative
-  orange removed, one repertoire name, sentence case, global focus ring, 44px
-  star target. No behaviour change. 336 frontend + 784 backend green.
-- **Opening-detail & analyse UI tweaks** (2026-07-20): "Most popular next moves"
-  caption, mobile show-more 5→3, unified mobile Analyse cards via a shared
-  `PerfBar`, full move lines in both lists. 326 frontend green.
-- **Opening detail mobile overhaul** (2026-07-18, PR #53): Claude Design 2a "one
-  data surface" at ≤767px — compact header, board control row + FEN sheet, one
-  merged data card with sticky level pills, accordions, search overlay; desktop
-  right column reordered; `ScrollToTop` fix. 323 green.
-- **Mobile landing filter UI fix** (2026-07-15): long ECO labels clipped in the
-  mobile pill row → `CategoryFilter` dropdown at ≤767px. 288 green.
-- **Sidebar unification + explorer proxy** (2026-07-12): `/api/explorer` proxy
-  (Lichess gated the explorer behind auth 2026-03), then LevelLens governs
-  WinRatePanel and the Opening book; fixed move-number off-by-one. 284 green.
+  `feat/ux-review`): one button spec, self-labelling `ResultBar`, decorative
+  orange removed, sentence case, global focus ring, 44px star target. No
+  behaviour change. 336 + 784 green.
+- Work 2026-07-12..07-20 (opening-detail & analyse UI tweaks — shared `PerfBar`,
+  full move lines; opening-detail mobile overhaul PR #53 — one data surface at
+  ≤767px, sticky level pills, `ScrollToTop` fix; mobile landing filter dropdown;
+  sidebar unification + the `/api/explorer` proxy after Lichess gated the
+  explorer behind auth) — see `archive.md`.
 - Work through 2026-07-11 (Deviation Trainer slice 1 — explorer client,
   level-check strip, rating-band selector, master games, `/api/event` beacon;
   Ko-fi tip jar; Study matching V2 — cached fetch + offline rematch, scored
@@ -86,8 +76,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **UX review phase 5**: Analyse — lands on `feat/ux-review`, which merges to
-  `main` as a single PR. Plan written when reached.
+- **Merge `feat/ux-review` to `main`**: all six phases are done. PRs #58–#63
+  merge in order into the integration branch, then one PR to `main`. `main` has
+  moved (AGENTS.md restructure), so expect conflicts in CLAUDE.md,
+  `activeContext.md` and `progress.md`.
+- **`packages/shared` has two latent defects** found in phase 5: its `tests/`
+  directory runs in no CI suite (excluded by root Jest, outside web Vitest), so
+  shared-module tests live in the web suite; and its barrels re-export without
+  file extensions, so `dist/index.js` is unimportable from Node ESM — scripts
+  import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work

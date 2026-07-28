@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { OpeningForLookup } from '../../../../shared/src';
 import { trackEvent } from '../../lib/analytics';
+import { loadSampleReport, type SampleId, type SampleReport } from './sampleReports';
 import {
   clampInt,
   normalizeUsername,
@@ -41,6 +42,9 @@ export function usePersonalGames(
   const [total, setTotal] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
+  // Non-null only while a committed sample report is on screen, so the page can
+  // say whose games these are and how old they are.
+  const [sample, setSample] = useState<SampleReport | null>(null);
 
   // Displayed state: only updates when analysis completes (not while typing)
   const [displayedUsername, setDisplayedUsername] = useState('');
@@ -127,6 +131,7 @@ export function usePersonalGames(
     }
 
     if (cached) {
+      setSample(null);
       setDashboard(cached);
       setDisplayedUsername(restoredUsername);
       setDisplayedPlatform(restoredPlatform);
@@ -148,6 +153,8 @@ export function usePersonalGames(
   const handleAnalyse = async (opts?: { onDone?: () => void; onFreshResult?: () => void }) => {
     if (!canAnalyse) return;
     trackEvent('analyse_run');
+    // A real analysis replaces any sample on screen.
+    setSample(null);
 
     const cached = loadFromCache();
     if (cached) {
@@ -244,6 +251,37 @@ export function usePersonalGames(
     setStepText('');
   };
 
+  /**
+   * Loads a committed sample report. Deliberately does not call `saveToCache`
+   * and does not touch LAST_ANALYSIS_SNAPSHOT_KEY: a sample must not come back
+   * on the next visit presented as the visitor's own saved result.
+   */
+  const loadSample = async (id: SampleId) => {
+    abortRef.current?.abort();
+    setError(null);
+    setStep('fetching');
+    setStepText('Loading the sample report...');
+    setProgress(30);
+
+    try {
+      const report = await loadSampleReport(id);
+      setSample(report);
+      setDashboard(report.dashboard);
+      setDisplayedUsername(report.username);
+      setDisplayedPlatform(report.platform);
+      setStep('done');
+      setStepText('Sample report');
+      setProgress(100);
+      setProcessed(report.dashboard.totalGames);
+      setTotal(report.dashboard.totalGames);
+    } catch {
+      setError("We couldn't load the sample report. Please try again.");
+      setStep('error');
+      setStepText('');
+      setProgress(0);
+    }
+  };
+
   return {
     // form fields
     platform,
@@ -266,6 +304,9 @@ export function usePersonalGames(
     isBusy,
     handleAnalyse,
     handleCancel,
+    // sample reports
+    sample,
+    loadSample,
   };
 }
 

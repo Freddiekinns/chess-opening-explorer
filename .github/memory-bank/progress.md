@@ -4,6 +4,18 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review phase 4 — opening detail desktop** (2026-07-28,
+  `ux/phase-4-detail-desktop`, stacked on phase 3): new `ExplorerCard` draws one
+  border around the level filter and everything it governs (stats + book);
+  master games move outside it into a shared `MasterGamesCard` serving both
+  breakpoints, below Learning resources on mobile. `WinRatePanel` is now
+  presentational — no pills, no masters, no fetch (it takes the page's
+  `ExplorerQuery`); `WinRateBar` and `MobileMasterGames` deleted. One
+  `explorerStats` module owns every level-scoped label so the breakpoints cannot
+  drift; snapshot fallback never claims live data. Every reveal names its
+  payload. Explorer error beacon moved into `useExplorerQuery` — it was in a
+  desktop-only component, so mobile failures went unreported. 441 frontend + 833
+  backend green.
 - **UX review phase 3 — faceted filter bar** (2026-07-28,
   `ux/phase-3-filter-bar`, stacked on phase 2): two unlabelled pill rows become
   Level · Style · Family · Sort, each stating its own value; grid, count and
@@ -47,21 +59,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Sidebar unification + explorer proxy** (2026-07-12): `/api/explorer` proxy
   (Lichess gated the explorer behind auth 2026-03), then LevelLens governs
   WinRatePanel and the Opening book; fixed move-number off-by-one. 284 green.
-- **Deviation Trainer slice 1 — evidence engine** (2026-07-11): Lichess explorer
-  client, level-check strip, rating-band selector, master games, Analyse bridge
-  card, `/api/event` beacon.
-- **Ko-fi tip jar** (2026-07-11): footer support link; "Send feedback" reword;
-  added `.claude/launch.json`.
-- **Study matching V2** (2026-07-10/11): cached fetch + offline rematch,
-  multi-anchor scored matcher, schema v2, dual-schema audit. Coverage
-  18.2%→35.7% all / 62.5%→91.5% top-200; contamination and dupes → 0.
-- **Video index refresh — §2 ship checklist** (2026-07-08, PR #47): backfilled
-  all 1,708 videos, full rematch — coverage 28.2%→72.8%, cross-family 0%.
-- **Video experience V1–V3** (2026-07-07, PR #46): family fallback for empty
-  galleries, match-reason badges, in-place youtube-nocookie player + watched
-  state, monthly refresh Action (guarded).
-- **Analyse dashboard redesign** (2026-07-07, PR #45): personal-performance
-  tokens (sage/grey/brick), carded sections, slim distribution bars.
+- Work through 2026-07-11 (Deviation Trainer slice 1 — explorer client,
+  level-check strip, rating-band selector, master games, `/api/event` beacon;
+  Ko-fi tip jar; Study matching V2 — cached fetch + offline rematch, scored
+  matcher, coverage 18.2%→35.7% all / 62.5%→91.5% top-200; video index refresh
+  PR #47, coverage 28.2%→72.8%; video experience V1–V3 PR #46; Analyse dashboard
+  redesign PR #45) — see `archive.md`.
 - **Review remediation — perf + features** (2026-07-06): route splitting +
   static MiniBoard (main chunk 409→189 kB), self-hosted fonts, sharded edge SEO
   lookup, `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`,
@@ -83,9 +86,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **UX review phases 4–5**: desktop detail shell (4), Analyse (5) — both land on
-  `feat/ux-review`, which merges to `main` as a single PR. Plans written when
-  reached.
+- **UX review phase 5**: Analyse — lands on `feat/ux-review`, which merges to
+  `main` as a single PR. Plan written when reached.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work
@@ -93,6 +95,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)
+- **`rankNotableGames` dedupes by exact player name**, so Lichess name variants
+  ("Caruana, F." vs "Caruana, Fabiano") slip through as separate players.
 
 ## Known Issues
 

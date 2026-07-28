@@ -2,48 +2,43 @@
 
 **Date:** 2026-07-28
 
-## Current Task: UX review phase 3 — faceted filter bar (`ux/phase-3-filter-bar`)
+## Current Task: UX review phase 4 — opening detail desktop (`ux/phase-4-detail-desktop`)
 
-Fourth of six phases implementing the 2026-07 UX review. Stacked on
-`ux/phase-2-browse-api` (PRs #58, #59 and #60 still open into `feat/ux-review`).
+Fifth of six phases implementing the 2026-07 UX review. Stacked on
+`ux/phase-3-filter-bar` (PRs #58–#61 still open into `feat/ux-review`).
 
-Two unlabelled pill rows — level plus raw ECO letters, reading as one row of ten
-— become four facet buttons that each state what they filter and what they are
-set to: **Level · Style · Family · Sort**. Grid, result count and facet counts
-now come from **one** `/api/openings/browse` request, so the number on screen
-and the cards under it cannot disagree — the bug the review found and phase 2
-built the endpoint to fix.
+The level filter sat inside the stats card, did **not** reach the master games
+in that same card, and silently drove a separate card outside it. There was no
+way to learn what it governed by using it. Phase 4 draws the answer as a border.
 
-- **Filter state in URL search params** (`replace`, not `push` — four facet taps
-  must not cost four Back presses). Cards stay real `<Link>`s; facet controls
-  are `<button>`s, so no crawlable filter URLs and canonical stays `/`. "Load
-  more" depth is deliberately NOT in the URL.
-- **Family replaces ECO categories**, grouped by first move derived server-side
-  (`BrowseService.familyFirstMoves`). Under 60% modal share reports `null` and
-  lands in "Other openings" — Irregular Openings is 32% 1.d4, not a fact. 27 of
-  29 families have a first move.
-- **The applied facet value survives at count 0** in its own facet list, or the
-  bar cannot label the user's own selection and an empty grid has no visible
-  cause.
-- **The mobile sheet must be portalled to `<body>`.** `position: fixed` resolves
-  against the nearest transformed ancestor, and `.popular-openings-section`
-  animates `sectionReveal`, whose keyframes carry `translateY` — rendered in
-  place the sheet landed ~1,000px down the page. New variant of the documented
-  transform gotcha; caught in the browser, regression-tested.
-- One sheet holds all four facets (the mock draws one per facet = three taps to
-  set a level); choices apply live so the footer count is never stale.
-- `ComplexityFilters`, `CategoryFilter` and their CSS are deleted.
+- **New `ExplorerCard`**: raised header band (title "Opening explorer", source
+  line, `LevelLens`) over stats + breadcrumb + next moves + alternatives.
+  Everything the pills govern is inside; nothing outside moves.
+- **`WinRatePanel` is now presentational** — no pills, no master games, and no
+  fetch of its own. It takes the page's `ExplorerQuery`, which was already
+  requesting the same fen/band pair for the book. `WinRateBar` retired with it.
+- **Shared `MasterGamesCard`** (card + accordion variants) replaces
+  `MobileMasterGames` and the duplicate masters fetch. On mobile it moves below
+  Learning resources, so both breakpoints share one block order.
+- **One labelling module** (`lib/explorerStats.ts`) — source line, "Games ·
+  1400–1800", "Most popular at 1400–1800" — imported by both breakpoints so they
+  cannot drift. Snapshot fallback says "Saved snapshot", never "Lichess".
+- **Every reveal names its payload**: moves / games / videos / studies / plans.
+- **The explorer error beacon moved into `useExplorerQuery`.** It lived in
+  `WinRatePanel`, which never renders on mobile — every mobile band failure was
+  invisible to analytics.
 
-**Known:** level is 61% Advanced, 1.4% Beginner — now that the facet is on
-screen, measure usage before deciding whether to re-enrich or drop it.
+**Copy deviates from the mock twice, both because we lack the data:** master
+games are sourced "Over-the-board masters" (the proxy applies no rating filter,
+so "2,400+ Elo" would be invented) and the reveal is "Show N more games" (we
+hold ≤15 top games, deduped, so "All 47" is unstatable).
 
-**Verified:** 833 backend, 413 frontend, clean build, exercised live at 1360 and
-390 (facet counts reconcile to the total on real data; back restores facets).
-**Spec/plans:** `docs/superpowers/{specs,plans}/2026-07-2*-ux-*`
+**Verified:** 441 frontend, 833 backend, clean build; live at 1360 and 390 —
+filter scope, source line and captions all track the pills; the board sticks and
+releases at the rail's end. **Spec/plans:** `docs/superpowers/{specs,plans}/`
 
-## Previous Task: UX review phase 2 — browse API (PR #60)
+## Previous Task: UX review phase 3 — faceted filter bar (PR #61)
 
-`GET /api/openings/browse` returning items, `total`, `remaining` and facet
-counts from one index in one request. One primary style per opening; facets
-exclude their own dimension; unknown values 400; page size capped at 48. No UI
-change. **Detail in `archive.md`.**
+Level · Style · Family · Sort replacing two unlabelled pill rows; one
+`/api/openings/browse` request feeds grid, count and facets; URL-param state;
+mobile sheet portalled to `<body>`. **Detail in `archive.md`.**

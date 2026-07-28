@@ -181,6 +181,13 @@ node scripts/audit-study-matches.js  # Verify coverage/contamination/dupes/ties
 # See tools/course-discovery/README.md for details
 ```
 
+**Sample reports (Analyse blank state):**
+
+```bash
+npm run sample:generate      # Rebuild the committed sample-report fixtures
+# See tools/sample-reports/README.md for details
+```
+
 **Popularity Stats:**
 
 ```bash
@@ -333,6 +340,20 @@ relevant instructions from the table above. Update `activeContext.md` when done.
   setting the container's own `scrollLeft` instead. Regression history:
   opening-detail pages opened mid-scroll from both causes at once (fixed
   2026-07-18).
+- **Sample reports are committed fixtures of real public games**: they go stale.
+  `packages/web/src/data/sample-reports/*.json` are regenerated with
+  `npm run sample:generate` (which builds `packages/shared` first — its `dist/`
+  is not committed). The Analyse page prints each fixture's `generatedAt` date
+  beside the report so staleness is visible rather than silent. The generator
+  and the page share one `analyseGames` in
+  `packages/shared/src/utils/personal-analysis.ts` — **never reimplement the
+  reduction in the script**, or the fixtures drift from what the page shows and
+  nothing catches it. Two traps: `packages/shared/tests/` is run by **neither**
+  Jest nor Vitest, so tests for shared modules belong in the web Vitest suite;
+  and the shared package's top-level barrels re-export without file extensions,
+  so `dist/index.js` is unimportable from Node ESM — import
+  `dist/utils/<module>.js` directly (Vite rewrites the extensions for the web
+  build, which is why this only bites in scripts).
 - **Memory bank bloat prevention**: `activeContext.md` must stay under **50
   lines** (current task + previous task only). `progress.md` must stay under
   **100 lines** (one-liner per completed task). When updating memory bank: move

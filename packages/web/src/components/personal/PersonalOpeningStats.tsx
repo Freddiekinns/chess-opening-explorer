@@ -22,6 +22,7 @@ import { usePersonalGames, useFormStatePersistence } from './usePersonalGames';
 import { useFamiliesDict, useFamilyRollups } from './useFamilyRollups';
 import { OpeningNameSplit, OpeningRow } from './OpeningRow';
 import { PerfBar } from './PerfBar';
+import { formatSampleDate, SAMPLE_REPORTS } from './sampleReports';
 import {
   GearIcon,
   GroupToggle,
@@ -60,6 +61,8 @@ export const PersonalOpeningStats: React.FC<{
     isBusy,
     handleAnalyse,
     handleCancel,
+    sample,
+    loadSample,
   } = usePersonalGames(getOpeningsData, prefillUsername);
 
   const [whiteSortMode, setWhiteSortMode] = useState<SortMode>('frequency');
@@ -288,6 +291,27 @@ export const PersonalOpeningStats: React.FC<{
           {renderSearchForm({ showGear: false })}
           {renderProgress()}
           {renderError()}
+
+          {/* The payoff, before you have to type anything. Buttons, not links:
+              they load committed data in place rather than navigating. */}
+          {showHero && (
+            <p className={styles.sampleOffer}>
+              See a sample report —{' '}
+              {SAMPLE_REPORTS.map((entry, i) => (
+                <React.Fragment key={entry.id}>
+                  {i > 0 && <span className={styles.sampleSep}> · </span>}
+                  <button
+                    type="button"
+                    className={styles.sampleLink}
+                    onClick={() => void loadSample(entry.id)}
+                    disabled={isBusy}
+                  >
+                    {entry.label}
+                  </button>
+                </React.Fragment>
+              ))}
+            </p>
+          )}
         </div>
       )}
 
@@ -355,6 +379,15 @@ export const PersonalOpeningStats: React.FC<{
             ? formatDistinguishingMoves(weakestOpening.moves)
             : '';
 
+          // A snapshot of real games goes stale, so the date is part of the
+          // claim, not decoration.
+          const sampleBanner = sample ? (
+            <p className={styles.sampleBanner}>
+              Sample report · {sample.username}&rsquo;s {sample.dashboard.totalGames} most recent
+              rated games, as of {formatSampleDate(sample.generatedAt)}.
+            </p>
+          ) : null;
+
           const totalWins = dashboard.whiteWin + dashboard.blackWin;
           const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
@@ -374,6 +407,8 @@ export const PersonalOpeningStats: React.FC<{
                       : ''}
                   </span>
                 </div>
+
+                {sampleBanner}
 
                 {/* 3 inline stat cards */}
                 <div className={styles.tripleStats}>
@@ -552,6 +587,8 @@ export const PersonalOpeningStats: React.FC<{
                     Analyse another player <span aria-hidden="true">&rarr;</span>
                   </button>
                 </div>
+
+                {sampleBanner}
 
                 {/* Summary cards */}
                 <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>

@@ -115,6 +115,58 @@
   transition: opacity 150ms ease;
 }
 
+/* Sample offer — quiet, below the scope note. */
+.sampleOffer {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: var(--space-8) 0 0;
+  text-align: center;
+}
+
+.sampleSep {
+  color: var(--border-default);
+}
+
+.sampleLink {
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border-hover, rgba(255, 255, 255, 0.18));
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.sampleLink:hover:not(:disabled) {
+  color: var(--color-brand-orange);
+}
+
+.sampleLink:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sampleLink:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Says whose games these are and how old they are. The fixtures are a snapshot
+   of real games, so the date is part of the claim. */
+.sampleBanner {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-brand-orange);
+  background: var(--accent-a12);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
 .platformToggle {
   display: flex;
   background: rgba(0, 0, 0, 0.25);
@@ -157,7 +209,9 @@
   pointer-events: none;
 }
 
-.platformBtn:focus-within {
+/* :has(:focus-visible), not :focus-within — the latter also fires on a mouse
+   click, which puts a keyboard affordance on every tap of the pill. */
+.platformBtn:has(:focus-visible) {
   outline: 2px solid var(--color-brand-orange);
   outline-offset: 2px;
 }
@@ -799,16 +853,6 @@
   order: 2;
 }
 
-/* Wins sage, losses brick, draws neutral — the same encoding the perf bars
-   below use, so the card and the distributions agree. */
-.statsValueWin {
-  color: var(--color-perf-win-text);
-}
-
-.statsValueLoss {
-  color: var(--color-perf-loss-text);
-}
-
 .statsValue {
   font-family: var(--font-family-headline);
   font-size: 28px;
@@ -816,6 +860,17 @@
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
   order: 1;
+}
+
+/* Wins sage, losses brick, draws neutral — the same encoding the perf bars
+   below use, so the card and the distributions agree. Must follow .statsValue:
+   same specificity, so source order decides which colour wins. */
+.statsValueWin {
+  color: var(--color-perf-win-text);
+}
+
+.statsValueLoss {
+  color: var(--color-perf-loss-text);
 }
 
 /* Win rate in opening cards */

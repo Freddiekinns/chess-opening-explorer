@@ -681,3 +681,24 @@ describe('PersonalOpeningStats - dashboard honesty', () => {
     expect(screen.getAllByText('Games').length).toBeGreaterThan(0);
   });
 });
+
+// Vitest does not apply CSS modules, so no render-based test can see a colour.
+// This ordering bug shipped once already: `.statsValueWin` sat *before*
+// `.statsValue`, and at equal specificity the base rule won — the tints simply
+// did not appear, with every unit test green.
+describe('PersonalOpeningStats - stylesheet ordering', () => {
+  it('declares the win/loss tints after the base value rule that would override them', async () => {
+    // Read from disk, not via import: Vitest stubs CSS-module imports with a
+    // class-name proxy, and `?raw` is stubbed the same way.
+    const { readFileSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    const css = readFileSync(
+      join(process.cwd(), 'src/components/personal/PersonalOpeningStats.module.css'),
+      'utf8'
+    );
+
+    expect(css.indexOf('.statsValue {')).toBeGreaterThan(-1);
+    expect(css.indexOf('.statsValueWin {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+    expect(css.indexOf('.statsValueLoss {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+  });
+});

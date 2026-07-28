@@ -12,7 +12,6 @@ import {
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import MobileDataSurface from '../components/detail/mobile/MobileDataSurface';
-import MobileMasterGames from '../components/detail/mobile/MobileMasterGames';
 import MobileResources from '../components/detail/mobile/MobileResources';
 import PositionSheet from '../components/detail/mobile/PositionSheet';
 import styles from './OpeningDetailPage.module.css';
@@ -1400,8 +1399,6 @@ const OpeningDetailPage: React.FC = () => {
               treeData={treeData}
             />
 
-            <MobileMasterGames fen={opening.fen} />
-
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
                 <h2 className={styles.mobileSectionHeading}>Common plans</h2>
@@ -1417,6 +1414,10 @@ const OpeningDetailPage: React.FC = () => {
               searchLinks={searchLinks}
               openingName={opening?.name || ''}
             />
+
+            {/* Last: master games are browse content and must not outrank the
+                learning resources. Same block order as desktop. */}
+            <MasterGamesCard fen={opening.fen} variant="accordion" />
           </div>
         ) : (
           /* Right column — Overview, then one bordered explorer card holding

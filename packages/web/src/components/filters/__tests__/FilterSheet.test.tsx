@@ -98,6 +98,30 @@ describe('FilterSheet', () => {
     expect(screen.queryByRole('dialog', { name: 'Filters' })).not.toBeInTheDocument();
   });
 
+  it('renders the sheet outside the grid, not inside it', async () => {
+    // `position: fixed` resolves against the nearest transformed ancestor, and
+    // the grid's parent (.popular-openings-section) animates `sectionReveal`,
+    // whose keyframes carry translateY. Rendered in place the sheet is
+    // positioned relative to that section and lands ~1000px down the page.
+    const { container } = render(
+      <FilterSheet
+        facets={facets}
+        filters={noFilters}
+        total={30}
+        activeCount={0}
+        loading={false}
+        onFacetChange={vi.fn()}
+        onClear={vi.fn()}
+      />
+    );
+
+    await userEvent.click(screen.getAllByRole('button', { name: 'Filters' })[0]);
+
+    const sheet = screen.getByRole('dialog', { name: 'Filters' });
+    expect(container.contains(sheet)).toBe(false);
+    expect(document.body.contains(sheet)).toBe(true);
+  });
+
   it('locks the page behind the sheet and releases it on close', async () => {
     setup();
 

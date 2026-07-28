@@ -27,6 +27,25 @@ describe('LandingPage Component', () => {
 
     // Mock successful fetch responses with proper data structure
     mockFetch.mockImplementation((url: string) => {
+      // The grid moved to the browse endpoint in UX phase 3 — one request now
+      // yields the items, the total and the facet counts together.
+      if (url.includes('/api/openings/browse')) {
+        return Promise.resolve({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              success: true,
+              items: mockOpeningsList,
+              total: mockOpeningsList.length,
+              page: 1,
+              pageSize: 12,
+              offset: 0,
+              remaining: 0,
+              facets: { level: [], style: [], family: [] },
+              applied: { level: null, style: null, family: null, sort: 'popular' },
+            }),
+        });
+      }
       if (url.includes('/api/openings/popular-by-eco')) {
         return Promise.resolve({
           ok: true,
@@ -82,7 +101,7 @@ describe('LandingPage Component', () => {
       // Wait for data to load
       await waitFor(() => {
         // The actual text includes the variation name
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
     });
   });
@@ -107,7 +126,7 @@ describe('LandingPage Component', () => {
 
       // Wait for data to load first
       await waitFor(() => {
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
 
       const searchInput = screen.getByRole('textbox');
@@ -124,7 +143,7 @@ describe('LandingPage Component', () => {
 
       // Wait for data to load
       await waitFor(() => {
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
 
       expect(screen.getByText('C20')).toBeInTheDocument();
@@ -135,10 +154,10 @@ describe('LandingPage Component', () => {
 
       // Wait for data to load
       await waitFor(() => {
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
 
-      const openingCard = screen.getByText(/King's Pawn Game/i);
+      const openingCard = screen.getAllByText(/King's Pawn Game/i)[0];
       expect(openingCard).toBeInTheDocument();
     });
 
@@ -173,7 +192,7 @@ describe('LandingPage Component', () => {
 
       // Wait for content to load
       await waitFor(() => {
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
 
       // Component should render properly
@@ -289,7 +308,7 @@ describe('LandingPage Component', () => {
 
       // Wait for data to load
       await waitFor(() => {
-        expect(screen.getByText(/King's Pawn Game/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/King's Pawn Game/i).length).toBeGreaterThan(0);
       });
 
       // Should have clickable elements

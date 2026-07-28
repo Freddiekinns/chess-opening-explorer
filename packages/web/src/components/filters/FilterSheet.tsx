@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { SlidersHorizontal } from 'lucide-react';
 import { FamilyPicker } from './FamilyPicker';
 import { resultCountLabel } from './resultCount';
@@ -128,60 +129,69 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
         </span>
       </div>
 
-      {open && (
-        <div className={styles.overlay}>
-          <div className={styles.backdrop} aria-hidden="true" onClick={() => setOpen(false)} />
-          <div className={styles.sheet} role="dialog" aria-modal="true" aria-label="Filters">
-            <div className={styles.grabber} aria-hidden="true" />
+      {/* Portalled to <body> deliberately. `position: fixed` resolves against
+          the nearest ancestor carrying a transform, and the grid's parent
+          (.popular-openings-section) animates `sectionReveal`, whose keyframes
+          include translateY. Rendered in place, the sheet is positioned
+          relative to that section instead of the viewport and lands roughly a
+          thousand pixels down the page. A portal makes the sheet immune to
+          whatever any ancestor does with transforms, now or later. */}
+      {open &&
+        createPortal(
+          <div className={styles.overlay}>
+            <div className={styles.backdrop} aria-hidden="true" onClick={() => setOpen(false)} />
+            <div className={styles.sheet} role="dialog" aria-modal="true" aria-label="Filters">
+              <div className={styles.grabber} aria-hidden="true" />
 
-            <div className={styles.header}>
-              <h2 className={styles.title}>Filters</h2>
-              {activeCount > 0 && (
-                <button type="button" className={styles.clear} onClick={onClear}>
-                  Clear
-                </button>
-              )}
-            </div>
-
-            <div className={styles.body}>
-              <PillRow
-                legend="Level"
-                options={facets.level}
-                value={filters.level}
-                anyLabel="All levels"
-                onSelect={(value) => onFacetChange('level', value)}
-              />
-              <PillRow
-                legend="Style"
-                options={facets.style}
-                value={filters.style}
-                anyLabel="Any style"
-                onSelect={(value) => onFacetChange('style', value)}
-              />
-              <PillRow
-                legend="Sort"
-                options={SORT_OPTIONS}
-                value={filters.sort}
-                anyLabel={null}
-                onSelect={(value) => onFacetChange('sort', value)}
-              />
-
-              <div className={styles.section}>
-                <p className={styles.sectionLabel}>Family</p>
-                <FamilyPicker
-                  families={facets.family}
-                  value={filters.family}
-                  onSelect={(value) => onFacetChange('family', value)}
-                />
+              <div className={styles.header}>
+                <h2 className={styles.title}>Filters</h2>
+                {activeCount > 0 && (
+                  <button type="button" className={styles.clear} onClick={onClear}>
+                    Clear
+                  </button>
+                )}
               </div>
-            </div>
 
-            <button type="button" className={styles.done} onClick={() => setOpen(false)}>
-              {total === 0 ? 'No openings match' : `Show ${resultCountLabel(total)}`}
-            </button>
-          </div>
-        </div>
-      )}
+              <div className={styles.body}>
+                <PillRow
+                  legend="Level"
+                  options={facets.level}
+                  value={filters.level}
+                  anyLabel="All levels"
+                  onSelect={(value) => onFacetChange('level', value)}
+                />
+                <PillRow
+                  legend="Style"
+                  options={facets.style}
+                  value={filters.style}
+                  anyLabel="Any style"
+                  onSelect={(value) => onFacetChange('style', value)}
+                />
+                <PillRow
+                  legend="Sort"
+                  options={SORT_OPTIONS}
+                  value={filters.sort}
+                  anyLabel={null}
+                  onSelect={(value) => onFacetChange('sort', value)}
+                />
+
+                <div className={styles.section}>
+                  <p className={styles.sectionLabel}>Family</p>
+                  <FamilyPicker
+                    families={facets.family}
+                    value={filters.family}
+                    onSelect={(value) => onFacetChange('family', value)}
+                  />
+                </div>
+              </div>
+
+              <button type="button" className={styles.done} onClick={() => setOpen(false)}>
+                {total === 0 ? 'No openings match' : `Show ${resultCountLabel(total)}`}
+              </button>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

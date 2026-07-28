@@ -25,6 +25,7 @@ import { PerfBar } from './PerfBar';
 import {
   GearIcon,
   GroupToggle,
+  PlatformRadioGroup,
   SegmentedToggle,
   SortMenu,
   UserIcon,
@@ -126,34 +127,19 @@ export const PersonalOpeningStats: React.FC<{
 
   const showHero = !dashboard && step !== 'done';
 
-  const renderSearchForm = () => (
+  const renderSearchForm = ({ showGear }: { showGear: boolean }) => (
     <>
       <div className={styles.inputBar}>
-        <div className={styles.platformToggle}>
-          <button
-            type="button"
-            className={`${styles.platformBtn} ${platform === 'chess.com' ? styles.platformBtnActive : ''}`}
-            onClick={() => setPlatform('chess.com')}
-            disabled={isBusy}
-          >
-            Chess.com
-          </button>
-          <button
-            type="button"
-            className={`${styles.platformBtn} ${platform === 'lichess' ? styles.platformBtnActive : ''}`}
-            onClick={() => setPlatform('lichess')}
-            disabled={isBusy}
-          >
-            Lichess
-          </button>
-        </div>
+        <PlatformRadioGroup value={platform} onChange={setPlatform} disabled={isBusy} />
 
-        <div className={styles.inputFields}>
-          <span className={styles.userIcon}>
+        <div className={`${styles.inputFields} ${isBusy ? styles.fieldsDim : ''}`}>
+          <label className={styles.userIcon} htmlFor="analyse-username">
             <UserIcon />
-          </span>
+            <span className={styles.srOnly}>Username</span>
+          </label>
 
           <input
+            id="analyse-username"
             className={styles.usernameInput}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -166,66 +152,71 @@ export const PersonalOpeningStats: React.FC<{
         </div>
 
         <div className={styles.inputActions}>
-          {/* Gear / settings */}
-          <div ref={settingsRef} className={styles.settingsAnchor}>
-            <button
-              type="button"
-              className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
-              onClick={() => setShowSettings(!showSettings)}
-              aria-label="Settings"
-              title={`Analysing last ${limit} games`}
-            >
-              <GearIcon />
-            </button>
-            {showSettings && (
-              <div
-                className={styles.settingsPopover}
-                role="dialog"
-                aria-label="Games to analyse settings"
+          {/* Games-count control. Off the blank screen entirely — it lives with
+              the dashboard-side form, beside the Analyse button that reads it. */}
+          {showGear && (
+            <div ref={settingsRef} className={styles.settingsAnchor}>
+              <button
+                type="button"
+                className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
+                onClick={() => setShowSettings(!showSettings)}
+                aria-label="Settings"
+                title={`Analysing last ${limit} games`}
               >
-                <div className={styles.settingsLabel}>Games to analyse</div>
+                <GearIcon />
+              </button>
+              {showSettings && (
                 <div
-                  className={styles.stepper}
-                  role="group"
-                  aria-label="Number of games to analyse"
+                  className={styles.settingsPopover}
+                  role="dialog"
+                  aria-label="Games to analyse settings"
                 >
-                  <button
-                    type="button"
-                    className={styles.stepperBtn}
-                    onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
-                    disabled={isBusy || limit <= 1}
-                    aria-label="Decrease games"
-                    title="Hold Shift for -10"
+                  <div className={styles.settingsLabel}>Games to analyse</div>
+                  <div
+                    className={styles.stepper}
+                    role="group"
+                    aria-label="Number of games to analyse"
                   >
-                    -
-                  </button>
-                  <input
-                    className={styles.stepperInput}
-                    type="number"
-                    min={1}
-                    max={500}
-                    step={1}
-                    aria-label="Games to analyse"
-                    value={limit}
-                    onChange={(e) => setLimitSafe(Number(e.target.value))}
-                    onKeyDown={handleEnterToAnalyse}
-                    disabled={isBusy}
-                  />
-                  <button
-                    type="button"
-                    className={styles.stepperBtn}
-                    onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
-                    disabled={isBusy || limit >= 500}
-                    aria-label="Increase games"
-                    title="Hold Shift for +10"
-                  >
-                    +
-                  </button>
+                    <button
+                      type="button"
+                      className={styles.stepperBtn}
+                      onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
+                      disabled={isBusy || limit <= 1}
+                      aria-label="Decrease games"
+                      title="Hold Shift for -10"
+                    >
+                      -
+                    </button>
+                    <input
+                      className={styles.stepperInput}
+                      type="number"
+                      min={1}
+                      max={500}
+                      step={1}
+                      aria-label="Games to analyse"
+                      value={limit}
+                      onChange={(e) => setLimitSafe(Number(e.target.value))}
+                      onKeyDown={handleEnterToAnalyse}
+                      disabled={isBusy}
+                    />
+                    <button
+                      type="button"
+                      className={styles.stepperBtn}
+                      onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
+                      disabled={isBusy || limit >= 500}
+                      aria-label="Increase games"
+                      title="Hold Shift for +10"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className={styles.settingsHint}>
+                    Choose between 1 and 500 recent rated games.
+                  </p>
                 </div>
-                <p className={styles.settingsHint}>Choose between 1 and 500 recent rated games.</p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
 
           <button
             className={styles.analyseBtn}
@@ -239,7 +230,8 @@ export const PersonalOpeningStats: React.FC<{
       </div>
 
       <p className={styles.inputNote}>
-        Includes rated rapid, blitz, and classical games only (up to {limit}). Bullet is excluded.
+        Reads your public rated games — rapid, blitz &amp; classical. Bullet excluded. Nothing is
+        stored.
       </p>
     </>
   );
@@ -253,34 +245,13 @@ export const PersonalOpeningStats: React.FC<{
             <div className={styles.hero}>
               <h1 className={styles.heroTitle}>Analyse your games</h1>
               <p className={styles.heroSubtitle}>
-                Review your performance and improve your openings by connecting your chess account.
+                See which openings you actually play, and how they score — from your recent rated
+                games.
               </p>
             </div>
           )}
 
-          {renderSearchForm()}
-
-          {/* Secondary idle prompt */}
-          {showHero && step === 'idle' && (
-            <div className={styles.idlePrompt}>
-              <svg
-                className={styles.idlePromptIcon}
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-              <h2 className={styles.idlePromptTitle}>Ready to analyse your openings?</h2>
-              <p className={styles.idlePromptText}>
-                Enter your username to explore a detailed breakdown of your performance by opening.
-              </p>
-            </div>
-          )}
+          {renderSearchForm({ showGear: false })}
         </div>
       )}
 
@@ -304,7 +275,7 @@ export const PersonalOpeningStats: React.FC<{
               &times;
             </button>
             <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
-            {renderSearchForm()}
+            {renderSearchForm({ showGear: true })}
             {(step === 'fetching' || step === 'analysing') && (
               <div className={styles.overlayProgress}>
                 <div className={styles.progressBar}>

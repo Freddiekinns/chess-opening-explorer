@@ -96,35 +96,23 @@
   line-height: 1.4;
 }
 
-/* Secondary prompt below search when idle */
-.idlePrompt {
-  text-align: center;
-  margin-top: var(--space-8);
-  animation: sectionReveal 500ms ease-out 200ms backwards;
+/* Visually hidden but announced — the username field's real label. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.idlePromptIcon {
-  display: block;
-  margin: 0 auto var(--space-3);
-  color: var(--border-default);
-}
-
-.idlePromptTitle {
-  font-family: var(--font-family-headline);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text-secondary);
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-2);
-}
-
-.idlePromptText {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-base);
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  max-width: 380px;
-  margin: 0 auto;
+/* Analysing: the fields recede, the Cancel button does not. */
+.fieldsDim {
+  opacity: 0.55;
+  transition: opacity 150ms ease;
 }
 
 .platformToggle {
@@ -136,7 +124,11 @@
   flex-shrink: 0;
 }
 
+/* A <label> wrapping a hidden radio, not a <button> — the choice is one-of-two
+   and mutually exclusive, so the semantics should say so. */
 .platformBtn {
+  display: inline-flex;
+  align-items: center;
   padding: var(--space-2) var(--space-4);
   border: none;
   border-radius: var(--radius-full);
@@ -152,6 +144,22 @@
 
 .platformBtn:hover:not(.platformBtnActive) {
   color: var(--color-text-primary);
+}
+
+/* The input is hidden; its label carries the pill. Focus lands on the input,
+   so the ring has to be drawn on the label that the eye actually sees. */
+.platformInput {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.platformBtn:focus-within {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 .platformBtnActive {
@@ -457,9 +465,6 @@
     left: 22px;
   }
 
-  .idlePrompt {
-    margin-top: var(--space-6);
-  }
 }
 
 /* ==============================

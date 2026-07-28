@@ -548,3 +548,61 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
     });
   });
 });
+
+describe('PersonalOpeningStats - blank state', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  it('carries the payoff in one header, with no second prompt beneath it', () => {
+    renderComponent();
+
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Analyse your games' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'See which openings you actually play, and how they score — from your recent rated games.'
+      )
+    ).toBeInTheDocument();
+    expect(screen.queryByText('Ready to analyse your openings?')).not.toBeInTheDocument();
+  });
+
+  it('states its scope and that it keeps nothing', () => {
+    renderComponent();
+
+    expect(
+      screen.getByText(
+        'Reads your public rated games — rapid, blitz & classical. Bullet excluded. Nothing is stored.'
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('offers the platform choice as a radio group, not two unlabelled buttons', async () => {
+    const user = userEvent.setup();
+    renderComponent();
+
+    const group = screen.getByRole('radiogroup', { name: 'Platform' });
+    const chesscom = within(group).getByRole('radio', { name: 'Chess.com' });
+    const lichess = within(group).getByRole('radio', { name: 'Lichess' });
+
+    expect(chesscom).toBeChecked();
+    await user.click(lichess);
+    expect(lichess).toBeChecked();
+    expect(chesscom).not.toBeChecked();
+  });
+
+  it('gives the username field a real label, not just a placeholder', () => {
+    renderComponent();
+
+    expect(screen.getByLabelText('Username')).toBe(
+      screen.getByPlaceholderText('Enter username...')
+    );
+  });
+
+  it('does not put the games-count control on the blank screen', () => {
+    renderComponent();
+
+    expect(screen.queryByRole('button', { name: 'Settings' })).not.toBeInTheDocument();
+  });
+});

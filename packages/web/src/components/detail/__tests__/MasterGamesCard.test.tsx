@@ -1,5 +1,5 @@
 import { describe, expect, test, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import MasterGamesCard from '../MasterGamesCard';
@@ -122,6 +122,44 @@ describe('MasterGamesCard', () => {
     await user.click(header);
     expect(screen.getByRole('link', { name: /A1/ })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /A5/ })).toBeInTheDocument();
+  });
+
+  // jsdom has no IntersectionObserver, so every test above takes the
+  // "observer unavailable" fallback and the gate itself goes unexercised.
+  // It is the gate that decides whether the card ever loads in a real
+  // browser: point it at a hidden or zero-area element and the fetch never
+  // fires. This stubs the observer to pin that contract.
+  test('gates the fetch on a sentinel that a real observer can actually see', async () => {
+    const observed: Element[] = [];
+    let fire: (() => void) | undefined;
+    class FakeIO {
+      constructor(private cb: (entries: { isIntersecting: boolean }[], obs: FakeIO) => void) {}
+      observe(el: Element) {
+        observed.push(el);
+        fire = () => this.cb([{ isIntersecting: true }], this);
+      }
+      disconnect() {}
+    }
+    vi.stubGlobal('IntersectionObserver', FakeIO);
+    fetchExplorerMock.mockResolvedValue(masters([game('g1', 'Tal', 'Botvinnik', 2700)]));
+
+    try {
+      render(<MasterGamesCard fen={FEN} />);
+
+      // Nothing fetched until the sentinel is seen.
+      expect(fetchExplorerMock).not.toHaveBeenCalled();
+
+      const sentinel = observed[0] as HTMLElement;
+      expect(sentinel).toBeInTheDocument();
+      // A hidden sentinel never intersects, so the card would never load.
+      expect(sentinel.hidden).toBe(false);
+      expect(sentinel.style.display).not.toBe('none');
+
+      act(() => fire?.());
+      expect(await screen.findByRole('link', { name: /Tal/ })).toBeInTheDocument();
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 
   test('drops the previous position’s games when the fen changes', async () => {

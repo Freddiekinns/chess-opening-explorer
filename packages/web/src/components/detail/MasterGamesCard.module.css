@@ -1,3 +1,12 @@
+/* Sentinel for the in-view fetch gate while the card has nothing to show.
+   It must have a real box: a zero-area target is an unreliable
+   IntersectionObserver sentinel, and a `display: none`/`hidden` one never
+   intersects at all — either way the masters fetch would never fire and the
+   card would never appear. 1px at the end of a column is not visible. */
+.probe {
+  min-height: 1px;
+}
+
 /* Master games — outside the explorer card's border, because the level
    filter does not reach it. */
 .card {

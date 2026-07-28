@@ -108,9 +108,10 @@ export const MasterGamesCard: React.FC<MasterGamesCardProps> = ({ fen, variant =
     };
   }, [inView, fen]);
 
-  // The probe div keeps the observer alive on a position with no games, so
-  // scrolling to a later opening still triggers the fetch.
-  if (games.length === 0) return <div ref={containerRef} aria-hidden="true" />;
+  // Nothing to show yet — but the observer still needs a target, or the
+  // fetch it gates can never fire. The sentinel carries a 1px box for that
+  // reason (see .probe).
+  if (games.length === 0) return <div ref={containerRef} className={styles.probe} aria-hidden />;
 
   if (variant === 'accordion') {
     return (

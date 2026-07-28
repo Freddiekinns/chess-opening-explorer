@@ -4,6 +4,17 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review phase 3 — faceted filter bar** (2026-07-28,
+  `ux/phase-3-filter-bar`, stacked on phase 2): two unlabelled pill rows become
+  Level · Style · Family · Sort, each stating its own value; grid, count and
+  facet counts come from one `/api/openings/browse` request, so the count
+  mismatch on the landing page is gone. Filter state in URL params (back
+  restores the facets); cards stay crawlable `<Link>`s; families grouped by
+  first move, with the 2 grab-bag families in "Other openings" rather than filed
+  under a move that is not theirs. One mobile sheet, all four facets, applied
+  live, portalled to `<body>` (a transformed ancestor was capturing its
+  `position: fixed`). `ComplexityFilters` and `CategoryFilter` deleted. 833
+  backend + 413 frontend green.
 - **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`,
   stacked on phase 1): `GET /api/openings/browse` returns items, `total`,
   `remaining` and facet counts from one index in one request, so the count on
@@ -55,43 +66,33 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   static MiniBoard (main chunk 409→189 kB), self-hosted fonts, sharded edge SEO
   lookup, `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`,
   `api/data/` now the single canonical data home. 724+200 green.
-- **Project review — perf + features + video experience** (2026-07-02): two
-  review docs; found the improved video index never shipped and all popularity
-  stats dated 2025-07-15.
-- **Video matching + pipeline hardening** (2026-06-13/23): intra-family
-  variation guard plus family compatibility, specificity scoring, config-driven
-  weights, `audit-video-matches.js`. Coverage 67%, cross-family 0%.
-- **Common plans mismatch — investigation** (2026-06-12): `getECOAnalysis`
-  serves the alphabetically-first record per ECO bucket (95.9% of pages); audit
-  script + proposal added, no code fix yet.
-- **Design review fixes** (2026-06-11): killed `Math.random()` W/D/L on
-  OpeningCard; fixed dropdown stacking (fill-mode `both` → `backwards`).
-- **CI green-up + family rollups** (2026-06-06, PRs #35/#36/#37): four CI bugs
-  fixed (branches coverage 90.23%); Analyse groups openings by family with
-  expandable W/D/L rows, 28-family taxonomy + `GET /api/families`.
-- Older work through 2026-05 (TASK008 feature roadmap; sticky-board detail
-  layout; primary-domain migration to `openingbook.xyz`; mobile footer/card
-  polish; TASK016 design overhaul + token migration; TASK015 opening-tree nav;
-  user-journeys doc; video overindexing fix; TASK012 video pipeline; TASK011
-  search bandwidth; TASK010 local repertoire; TASK009 SEO; TASK007 mobile
-  overflow; plus Course Discovery, Practice Mode, Personal Explorer, PGN ID,
-  related-openings UI, footer standardisation, sort controls, coverage
-  reporting, state persistence, test cleanups) — see `archive.md`.
+- Older work through 2026-07-02 (project review — two review docs, found the
+  improved video index never shipped and popularity stats stale since
+  2025-07-15; video matching + pipeline hardening — intra-family variation
+  guard, specificity scoring, `audit-video-matches.js`, 67% coverage;
+  common-plans ECO-bucket investigation — still no code fix; design review fixes
+  killing `Math.random()` W/D/L and the dropdown stacking bug; CI green-up +
+  28-family taxonomy and `GET /api/families`; TASK008 feature roadmap;
+  sticky-board detail layout; primary-domain migration to `openingbook.xyz`;
+  mobile footer/card polish; TASK016 design overhaul + token migration; TASK015
+  opening-tree nav; user-journeys doc; video overindexing fix; TASK012 video
+  pipeline; TASK011 search bandwidth; TASK010 local repertoire; TASK009 SEO;
+  TASK007 mobile overflow; plus Course Discovery, Practice Mode, Personal
+  Explorer, PGN ID, related-openings UI, footer standardisation, sort controls,
+  coverage reporting, state persistence, test cleanups) — see `archive.md`.
 
 ## What's Left
 
-- **UX review phases 3–5**: filter bar (3), desktop detail shell (4), Analyse
-  (5) — all land on `feat/ux-review`, which merges to `main` as a single PR.
-  Plans written when reached. Phase 3 consumes `/api/openings/browse`; the
-  landing grid still uses `popular-by-eco`, so the count mismatch is on screen
-  until phase 3 moves it over.
+- **UX review phases 4–5**: desktop detail shell (4), Analyse (5) — both land on
+  `feat/ux-review`, which merges to `main` as a single PR. Plans written when
+  reached.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work
 - **Bottom nav investigation**: may be missing on Analyse page — verify
-- **TASK006 — Coverage**: Backend 90%+, frontend 70%+ targets
-- **Advanced Filtering**: Filter by win rate, draw rate, etc.
-- **Tooltip Abstraction**: Central ARIA tooltip component
+- **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
+- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
+  rejected: a min-sample floor makes `total` depend on `sort`.)
 
 ## Known Issues
 

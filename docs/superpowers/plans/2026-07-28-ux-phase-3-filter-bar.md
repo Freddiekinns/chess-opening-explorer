@@ -3790,3 +3790,35 @@ Recorded because each would have cost an implementer a debugging cycle.
 - `PillRow` typed its options as a union of two array types, which makes
   `options.map` unresolvable in TypeScript — a clean `npm run build` would have
   failed at the last step of Task 6.
+
+**5. Found during implementation, after the plan was written.** Both are fixed
+in the delivered code; recorded here so the plan matches what shipped.
+
+- **The mobile sheet had to be portalled to `<body>`.** `position: fixed`
+  resolves against the nearest ancestor carrying a transform, and
+  `.popular-openings-section` animates `sectionReveal`, whose keyframes carry
+  `translateY(12px)`. Rendered in place, the sheet was positioned relative to
+  that section: measured at `top: 1819px` in a 844px-tall viewport, with its
+  footer button ~1,000px below the fold. This is a third variant of the
+  transform gotcha CLAUDE.md documents (the first was `animation-fill-mode` on a
+  stacking context, the second `overflow: hidden` and sticky children) — caught
+  only by measuring geometry in a real browser, since jsdom has no layout.
+  `createPortal` makes the sheet immune to any ancestor's transform, now or
+  later. Regression-tested by asserting the dialog is not inside the component's
+  own container.
+- **The empty state must not say "Clear filters".** The plan gave the empty
+  state and the filter bar the same button label, and they render at the same
+  time — a genuine ambiguity for a screen-reader user, not just a failing
+  `getByRole`. The empty state now reads "Show all openings", which states the
+  outcome rather than the mechanism.
+
+**6. Behaviour change worth knowing about.** The old grid filtered out openings
+with one move (`countMoves(moves) <= 1`) client-side. The browse endpoint does
+not, so root openings such as "King's Pawn Game" (1.e4) now appear in the grid.
+That filter was a workaround for a grid fed by a different endpoint; the root
+openings are real pages in the product and beginner-relevant. Excluding them
+server-side would also change `total` and break the phase 2 reconciliation
+tests. Two cards can also show the same name at different positions (e.g. two
+"Sicilian Defense: Smith-Morra Gambit" rows with different FENs, ECOs and moves)
+— a pre-existing characteristic of the ECO naming data, not a duplicate row and
+not this phase's to fix.

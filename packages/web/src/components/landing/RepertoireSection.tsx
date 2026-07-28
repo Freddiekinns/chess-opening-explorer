@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRepertoire } from '../../hooks/useRepertoire';
+import { useRepertoireToast } from '../../hooks/useRepertoireToast';
 import { StarButton } from '../shared/StarButton';
 import { MiniBoard } from '../shared/MiniBoard';
+import { Toast } from '../shared/Toast';
 import styles from './RepertoireSection.module.css';
 
 export const RepertoireSection: React.FC = () => {
-  const { repertoire, count, remove } = useRepertoire();
+  const { repertoire, count } = useRepertoire();
+  // Undo matters more here than anywhere: every other star adds, this one
+  // removes something the user built, one tap, inside a scroller.
+  const { toggleWithToast, toast } = useRepertoireToast();
 
   const getFirstMovesDisplay = (moves: string): string => {
     const trimmed = moves.trim();
@@ -22,6 +27,9 @@ export const RepertoireSection: React.FC = () => {
     return (
       <section className={styles.repertoireSection}>
         <p className={styles.emptyPrompt}>Star openings to build your repertoire.</p>
+        {/* Unstarring the last opening lands here. Without this the toast —
+            and with it the only way back — would vanish on the way. */}
+        {toast && <Toast message={toast.message} onUndo={toast.onUndo} />}
       </section>
     );
   }
@@ -48,7 +56,19 @@ export const RepertoireSection: React.FC = () => {
             <div className={styles.repCardInfo}>
               <div className={styles.repCardHeader}>
                 <h3 className={styles.repCardName}>{entry.name}</h3>
-                <StarButton filled onClick={() => remove(entry.fen)} size="sm" />
+                <StarButton
+                  filled
+                  size="sm"
+                  onClick={() =>
+                    toggleWithToast({
+                      fen: entry.fen,
+                      name: entry.name,
+                      eco: entry.eco,
+                      moves: entry.moves,
+                      complexity: entry.complexity,
+                    })
+                  }
+                />
               </div>
               <div className={styles.repCardMeta}>
                 {entry.complexity && (
@@ -63,6 +83,8 @@ export const RepertoireSection: React.FC = () => {
           </Link>
         ))}
       </div>
+
+      {toast && <Toast message={toast.message} onUndo={toast.onUndo} />}
     </section>
   );
 };

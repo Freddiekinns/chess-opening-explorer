@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { RepertoireSection } from '../RepertoireSection';
 
@@ -47,6 +48,31 @@ describe('RepertoireSection populated', () => {
 
     expect(screen.getByRole('heading', { name: 'Your repertoire' })).toBeInTheDocument();
     expect(screen.getByText('1 opening')).toBeInTheDocument();
+  });
+
+  // This row is the only place in the product where one tap destroys
+  // something the user built. It removed silently while the grid, the detail
+  // page and the mobile Repertoire tab all confirmed with an Undo.
+  it('confirms a removal and offers Undo', async () => {
+    const user = userEvent.setup();
+    renderSection();
+
+    await user.click(screen.getByRole('button', { name: /repertoire/i }));
+
+    expect(screen.getByText('Removed from your repertoire')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Undo' })).toBeInTheDocument();
+  });
+
+  it('puts the opening back when Undo is pressed', async () => {
+    const user = userEvent.setup();
+    renderSection();
+
+    await user.click(screen.getByRole('button', { name: /repertoire/i }));
+    expect(screen.queryByText('Sicilian Defence')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Undo' }));
+
+    expect(screen.getByText('Sicilian Defence')).toBeInTheDocument();
   });
 
   it('pluralises the count', () => {

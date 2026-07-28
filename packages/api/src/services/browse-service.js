@@ -13,6 +13,12 @@ const INDEX_CACHE_KEY = 'browse-index';
 const INDEX_TTL_MS = 60 * 60 * 1000;
 const UNCATEGORISED_LABEL = 'Other';
 
+// A family whose commonest first move covers less than this share of it does
+// not have a first move. Measured 2026-07-28: 26 of 29 families are >=93% pure;
+// Irregular Openings (32%) and uncategorised (48%) are grab bags, and labelling
+// them "1. d4" would state a fact the data does not support.
+const FIRST_MOVE_PURITY = 0.6;
+
 class BrowseService {
   constructor() {
     this.ecoDir = pathResolver.getECODataPath();
@@ -149,16 +155,64 @@ class BrowseService {
       counts.set(value, (counts.get(value) || 0) + 1);
     }
 
-    return values
-      .filter((v) => counts.get(v.value) > 0)
-      .map((v) => ({ value: v.value, label: v.label, count: counts.get(v.value) }));
+    const applied = filters[dimension];
+    return (
+      values
+        // The applied value is kept even at zero. Dropping it would strip the
+        // label the filter bar shows for the user's own selection, and a
+        // visible "Beginner 0" explains an empty grid that a missing row does
+        // not.
+        .filter((v) => counts.get(v.value) > 0 || v.value === applied)
+        // Fields are copied explicitly, never spread: the style buckets in
+        // config/browse_facets.json carry a `tags` array that must not ship in
+        // every response.
+        .map((v) => ({
+          value: v.value,
+          label: v.label,
+          count: counts.get(v.value) || 0,
+          ...(v.first_move !== undefined ? { first_move: v.first_move } : {}),
+        }))
+    );
+  }
+
+  /** family_id -> commonest first move, or null when no move dominates. */
+  familyFirstMoves(index) {
+    const countsByFamily = new Map();
+    for (const entry of index) {
+      const match = /^1\.\s*(\S+)/.exec(entry.moves || '');
+      if (!match) continue;
+      if (!countsByFamily.has(entry.family_id)) countsByFamily.set(entry.family_id, new Map());
+      const counts = countsByFamily.get(entry.family_id);
+      counts.set(match[1], (counts.get(match[1]) || 0) + 1);
+    }
+
+    const firstMoves = new Map();
+    for (const [familyId, counts] of countsByFamily) {
+      let top = null;
+      let topCount = 0;
+      let total = 0;
+      for (const [move, count] of counts) {
+        total += count;
+        if (count > topCount) {
+          topCount = count;
+          top = move;
+        }
+      }
+      firstMoves.set(familyId, topCount / total >= FIRST_MOVE_PURITY ? top : null);
+    }
+    return firstMoves;
   }
 
   familyFacetValues(index) {
+    const firstMoves = this.familyFirstMoves(index);
     const seen = new Map();
     for (const entry of index) {
       if (!seen.has(entry.family_id)) {
-        seen.set(entry.family_id, { value: entry.family_id, label: entry.family_name });
+        seen.set(entry.family_id, {
+          value: entry.family_id,
+          label: entry.family_name,
+          first_move: firstMoves.get(entry.family_id) || null,
+        });
       }
     }
     return [...seen.values()].sort((a, b) => a.label.localeCompare(b.label));

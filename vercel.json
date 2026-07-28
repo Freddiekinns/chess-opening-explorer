@@ -47,6 +47,15 @@
       ]
     },
     {
+      "source": "/api/openings/browse",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1800, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
       "source": "/api/openings/semantic-search",
       "headers": [
         {

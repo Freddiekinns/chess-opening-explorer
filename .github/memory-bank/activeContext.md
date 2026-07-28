@@ -1,45 +1,50 @@
 # Active Context
 
-**Date:** 2026-07-27
+**Date:** 2026-07-28
 
-## Current Task: UX review phase 1 — Discover closes the loop (`ux/phase-1-discover`)
+## Current Task: UX review phase 2 — browse API (`ux/phase-2-browse-api`)
 
-Second of six phases implementing the 2026-07 UX review. **Delivery topology:**
-every phase PRs into the long-lived `feat/ux-review`, which merges to `main` as
-a **single** PR at the end. Phase 1 is stacked on `ux/phase-0-systemic` (PR #58)
-rather than branched from a merged base — merge #58 first, and phase 1's diff
-resolves to its own commits.
+Third of six phases implementing the 2026-07 UX review. **No UI change.** Lands
+before the filter bar so the bar is never built on numbers that do not
+reconcile. Stacked on `ux/phase-1-discover` (PRs #58 and #59 still open into
+`feat/ux-review`).
 
-The goal: find → save → revisit, completable without opening a detail page.
+`GET /api/openings/browse?level&style&family&sort&page&pageSize` returns items,
+`total`, `remaining` and facet counts from **one index in one request** — today
+the landing page's category counts come from one fetch and its grid from
+another, so they cannot agree.
 
-- **Shared `Toast` + `useRepertoireToast`.** One hook decides wording and timing
-  everywhere (grid, detail page, repertoire page), so they cannot drift. Undo
-  matters because the star is now a single tap on a scrolling list. **Gotcha:**
-  `useRepertoire.toggle` closes over its own render's array, so the undo closure
-  must call through a ref — capturing `toggle` re-adds the opening instead of
-  removing it. The plan had this bug; two tests pin it.
-- **Star on every card** — `OpeningCard` already accepted the props and nothing
-  passed them. 44px target, never navigates the card (cards stay real links).
-- **Slim empty prompt** replaces the dashed panel; Popular openings is now above
-  the fold at both 390 and 1360 on a first visit.
-- **Persistent top-bar search** on every page (was detail-only). "Surprise me!"
-  left the bar for the hub. **Gotcha:** the hub wrapper cancels `mousedown` so
-  the field keeps focus — rows fire on click and the input's 150ms blur teardown
-  would otherwise unmount the row under a slow press.
-- **Shared `SearchHub`** — desktop's dropdown showed nothing until you typed.
-- **`/repertoire`** (noindex, not in the sitemap) + three mobile tabs (Discover
-  · Repertoire · Analyse) with a count badge. No Search tab; no desktop
-  repertoire page — the Discover row is the repertoire.
+- **The invariant:** `total === offset + items.length + remaining`. Asserted per
+  page on a synthetic corpus and by walking all 1,710 Sicilian openings for
+  real.
+- **Facets exclude their own dimension** (standard faceted search) — otherwise
+  picking a level zeroes every other level and the bar becomes a dead end.
+- **One primary style per opening.** Raw `style_tags` cannot be a facet: ~7 tags
+  each, and "Strategic" alone is on 8,501 of 12,377, so multi-membership buckets
+  each match ~50% of the corpus. The rule (gambit override → highest tag-match
+  count → config order) partitions it: positional 3,585 · aggressive 3,168 ·
+  gambit 2,182 · solid 1,271 · tactical 1,100 · system 1,068 · 3 unstyled.
+- **Vocabulary lives in `config/browse_facets.json`**, loaded by a literal
+  `require` — a computed path is invisible to Vercel's file tracer and the file
+  would be missing from the deployed function.
+- **Unknown facet values 400.** A silent empty result is indistinguishable from
+  a genuine empty filter.
+- Page size capped at 48; `Cache-Control` in `vercel.json` (mandatory per
+  route).
 
-**Verified:** 372 frontend tests, clean build, loop walked at 390 and 1360.
+**Known:** the level facet is 61% Advanced, 1.4% Beginner — the enrichment's
+judgement, shown honestly rather than hidden. Measure usage after phase 3 before
+deciding whether to re-enrich or drop the dimension.
+
+**Verified:** 829 backend tests (63 suites), 372 frontend unchanged, clean
+build, endpoint exercised live on :3010.
 
 **Spec:** `docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md`
-**Plans:** `docs/superpowers/plans/2026-07-27-ux-phase-{0,1}-*.md`. Phases 2–5
-unplanned by design — the browse API's shape informs phase 3.
+**Plans:** `docs/superpowers/plans/2026-07-2{7,8}-ux-phase-{0,1,2}-*.md`
 
-## Previous Task: UX review phase 0 — systemic pass (PR #58)
+## Previous Task: UX review phase 1 — Discover closes the loop (PR #59)
 
-One button spec (Practice primary, Load more tertiary), self-labelling
-`ResultBar` in both `OpeningCard` variants, decorative orange removed, one
-repertoire name, sentence case, global `:focus-visible` ring, `aria-pressed` on
-the star. No behaviour change. **Detail in `archive.md`.**
+Shared `Toast` + `useRepertoireToast` (undo must call `toggle` through a ref —
+capturing it re-adds instead of removing), star on every card, persistent
+top-bar search, shared `SearchHub`, `/repertoire` route, three mobile tabs.
+Phase 0 (PR #58) was the systemic pass. **Detail in `archive.md`.**

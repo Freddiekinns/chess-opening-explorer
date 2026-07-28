@@ -690,12 +690,8 @@ describe('PersonalOpeningStats - stylesheet ordering', () => {
   it('declares the win/loss tints after the base value rule that would override them', async () => {
     // Read from disk, not via import: Vitest stubs CSS-module imports with a
     // class-name proxy, and `?raw` is stubbed the same way.
-    const { readFileSync } = await import('node:fs');
-    const { join } = await import('node:path');
-    const css = readFileSync(
-      join(process.cwd(), 'src/components/personal/PersonalOpeningStats.module.css'),
-      'utf8'
-    );
+    const { readWebSource } = await import('../../../test/readSource');
+    const css = readWebSource('src/components/personal/PersonalOpeningStats.module.css');
 
     expect(css.indexOf('.statsValue {')).toBeGreaterThan(-1);
     expect(css.indexOf('.statsValueWin {')).toBeGreaterThan(css.indexOf('.statsValue {'));

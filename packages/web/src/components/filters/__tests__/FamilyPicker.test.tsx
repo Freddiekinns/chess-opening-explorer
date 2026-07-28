@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { readWebSource } from '../../../test/readSource';
 import { FamilyPicker } from '../FamilyPicker';
 
 const families = [
@@ -25,6 +26,17 @@ describe('FamilyPicker', () => {
     // 1. e4 leads on 2,241 openings, then 1. d4 on 70 — and the catch-all is
     // last however big it gets, because it is not a first move.
     expect(headings).toEqual(['1. e4', '1. d4', 'Other openings']);
+  });
+
+  // Vitest does not apply CSS modules, so a render-based test reads "1. Nf3"
+  // whatever the stylesheet does to it. Case is semantic in algebraic
+  // notation — uppercased, the knight move Nf3 became NF3, which is not a
+  // move at all — so the stylesheet is the only place this can be caught.
+  it('does not uppercase the headings, because they carry chess notation', () => {
+    const css = readWebSource('src/components/filters/FamilyPicker.module.css');
+    const heading = css.slice(css.indexOf('.groupHeading {'));
+
+    expect(heading.slice(0, heading.indexOf('}'))).not.toMatch(/text-transform:\s*uppercase/);
   });
 
   it('shows each family count', () => {

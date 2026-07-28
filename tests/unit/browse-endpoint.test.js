@@ -77,6 +77,25 @@ describe('GET /api/openings/browse', () => {
     });
   });
 
+  // Filter state lives in the URL, so these values get shared, bookmarked and
+  // retyped — and the required casing differs per facet (Beginner, but
+  // aggressive). A case slip used to 400 and blank the whole grid.
+  test('matches facet values without regard to case', async () => {
+    const res = await request(app).get(
+      '/api/openings/browse?level=beginner&style=AGGRESSIVE&family=Sicilian&sort=NAME'
+    );
+
+    expect(res.status).toBe(200);
+    expect(mockBrowse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        level: 'Beginner',
+        style: 'aggressive',
+        family: 'sicilian',
+        sort: 'name',
+      })
+    );
+  });
+
   test('an unknown level is a 400, not a silent empty result', async () => {
     const res = await request(app).get('/api/openings/browse?level=Expert');
     expect(res.status).toBe(400);

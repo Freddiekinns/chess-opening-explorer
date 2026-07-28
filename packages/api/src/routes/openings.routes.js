@@ -636,20 +636,31 @@ router.get('/browse', (req, res) => {
         error: `Unknown ${field}: ${value}`,
       });
 
-    if (level && !config.levels.some((l) => l.value === level)) return reject('level', level);
+    // Matched case-insensitively, then canonicalised. These values live in the
+    // URL — shared, bookmarked, retyped — and the casing the corpus happens to
+    // use differs per facet ("Beginner", but "aggressive"). A case slip is a
+    // typo, not an unknown filter, and used to blank the whole grid.
+    const canonical = (values, value) =>
+      values.find((candidate) => candidate.toLowerCase() === value.toLowerCase());
+
+    const levelValue = level && canonical(config.levels.map((l) => l.value), level);
+    if (level && !levelValue) return reject('level', level);
 
     const styleValues = [config.gambitOverride, ...config.styles].map((s) => s.value);
-    if (style && !styleValues.includes(style)) return reject('style', style);
+    const styleValue = style && canonical(styleValues, style);
+    if (style && !styleValue) return reject('style', style);
 
-    if (sort && !config.sorts.some((s) => s.value === sort)) return reject('sort', sort);
+    const sortValue = sort && canonical(config.sorts.map((s) => s.value), sort);
+    if (sort && !sortValue) return reject('sort', sort);
 
-    if (family && !browseService.familyIds().has(family)) return reject('family', family);
+    const familyValue = family && canonical([...browseService.familyIds()], family);
+    if (family && !familyValue) return reject('family', family);
 
     const result = browseService.browse({
-      level: level || null,
-      style: style || null,
-      family: family || null,
-      sort: sort || config.defaultSort,
+      level: levelValue || null,
+      style: styleValue || null,
+      family: familyValue || null,
+      sort: sortValue || config.defaultSort,
       page,
       pageSize,
     });

@@ -649,3 +649,35 @@ describe('PersonalOpeningStats - transient states', () => {
     expect(screen.getByLabelText('Username')).toHaveValue('chessstudnt99');
   });
 });
+
+describe('PersonalOpeningStats - dashboard honesty', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+    sessionStorage.setItem(
+      FORM_STATE_KEY,
+      JSON.stringify({ username: 'tester', platform: 'chess.com', limit: 500, activeTab: 'white' })
+    );
+    sessionStorage.setItem(
+      buildCacheKey('tester', 'chess.com', 500),
+      JSON.stringify({ dashboard: mockDashboardData, cachedAt: Date.now() })
+    );
+  });
+
+  it('scopes the record to this run rather than a lifetime', async () => {
+    renderComponent();
+
+    expect(await screen.findByText('This analysis')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Your record' })).toBeInTheDocument();
+    expect(screen.queryByText('Career totals')).not.toBeInTheDocument();
+    expect(screen.queryByText('Overall performance')).not.toBeInTheDocument();
+    expect(screen.queryByText('Total wins')).not.toBeInTheDocument();
+  });
+
+  it('names the games column in full, matching mobile', async () => {
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    expect(screen.queryByText('GP')).not.toBeInTheDocument();
+    expect(screen.getAllByText('Games').length).toBeGreaterThan(0);
+  });
+});

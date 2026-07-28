@@ -555,27 +555,29 @@ export const PersonalOpeningStats: React.FC<{
 
                 {/* Summary cards */}
                 <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
+                  {/* "Career totals / Overall performance" claimed a lifetime
+                      record for numbers describing only the games in this run. */}
                   <div className={styles.card}>
                     <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
-                      Overall performance
+                      This analysis
                     </div>
-                    <h3 className={styles.cardTitle}>Career totals</h3>
+                    <h3 className={styles.cardTitle}>Your record</h3>
                     <div className={styles.statsRows}>
                       <div className={styles.statsRow}>
-                        <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>
-                          Total wins
+                        <span className={styles.statsLabel}>Wins</span>
+                        <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
+                          {totalWins.toLocaleString()}
                         </span>
-                        <span className={styles.statsValue}>{totalWins.toLocaleString()}</span>
                       </div>
                       <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Total draws</span>
+                        <span className={styles.statsLabel}>Draws</span>
                         <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
                       </div>
                       <div className={styles.statsRow}>
-                        <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>
-                          Total losses
+                        <span className={styles.statsLabel}>Losses</span>
+                        <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
+                          {totalLosses.toLocaleString()}
                         </span>
-                        <span className={styles.statsValue}>{totalLosses.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
@@ -667,7 +669,7 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
                       <div className={styles.colHeaderRight}>
-                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderGp}>Games</span>
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
@@ -736,7 +738,7 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
                       <div className={styles.colHeaderRight}>
-                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderGp}>Games</span>
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>

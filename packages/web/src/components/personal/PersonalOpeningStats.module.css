@@ -799,12 +799,14 @@
   order: 2;
 }
 
-.statsLabelWin {
-  color: var(--color-text-muted);
+/* Wins sage, losses brick, draws neutral — the same encoding the perf bars
+   below use, so the card and the distributions agree. */
+.statsValueWin {
+  color: var(--color-perf-win-text);
 }
 
-.statsLabelLoss {
-  color: var(--color-text-muted);
+.statsValueLoss {
+  color: var(--color-perf-loss-text);
 }
 
 .statsValue {
@@ -1156,6 +1158,8 @@
   letter-spacing: 0.05em;
 }
 
+/* "Games", not "GP" — wider than the abbreviation it replaced, so the column
+   needs the room or it wraps against the distribution header. */
 .colHeaderGp {
   font-family: var(--font-family-primary);
   font-size: var(--text-2xs);
@@ -1163,8 +1167,9 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  min-width: 36px;
+  min-width: 48px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .colHeaderDist {

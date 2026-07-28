@@ -4,16 +4,10 @@ import { trackEvent } from '../../lib/analytics';
 import {
   clampInt,
   normalizeUsername,
-  parsePgnHeaders,
-  getUserSide,
-  getUserResult,
-  sortAgg,
-  upsertAgg,
   readSavedFormState,
   FORM_STATE_KEY,
   LAST_ANALYSIS_SNAPSHOT_KEY,
   type DashboardData,
-  type OpeningAgg,
   type Platform,
   type SideTab,
 } from './personalStatsLib';
@@ -190,12 +184,11 @@ export function usePersonalGames(
       // Games fetch, (first-run) openings-index fetch, and the PGN-lookup
       // module (chess.js lives in its own chunk) all load in parallel — none
       // of them is paid by visitors who never analyse.
-      const [response, openingsData, { buildOpeningsMap, lookupOpeningFromPGN }] =
-        await Promise.all([
-          fetch(url, { signal: controller.signal }),
-          getOpeningsData(),
-          import('../../../../shared/src'),
-        ]);
+      const [response, openingsData, { buildOpeningsMap, analyseGames }] = await Promise.all([
+        fetch(url, { signal: controller.signal }),
+        getOpeningsData(),
+        import('../../../../shared/src'),
+      ]);
       const json = await response.json();
       if (!response.ok || !json?.success) {
         throw new Error(
@@ -212,96 +205,17 @@ export function usePersonalGames(
       setStep('analysing');
       setStepText('Analysing your games...');
 
-      const asWhite = new Map<string, OpeningAgg>();
-      const asBlack = new Map<string, OpeningAgg>();
-      let classified = 0;
-      let unclassified = 0;
+      const data = await analyseGames(gamesPgn, u, openingsMap, {
+        onProgress: (done, count) => {
+          setProcessed(done);
+          setStepText(`Analysing your games... (${done}/${count})`);
+          setProgress(15 + Math.round((done / Math.max(1, count)) * 85));
+        },
+        shouldAbort: () => controller.signal.aborted,
+      });
 
-      let whiteGames = 0;
-      let whiteWin = 0;
-      let whiteDraw = 0;
-      let whiteLoss = 0;
-      let blackGames = 0;
-      let blackWin = 0;
-      let blackDraw = 0;
-      let blackLoss = 0;
-
-      const tickProgress = (i: number) => {
-        setProcessed(i + 1);
-        setStepText(`Analysing your games... (${i + 1}/${gamesPgn.length})`);
-        setProgress(15 + Math.round(((i + 1) / Math.max(1, gamesPgn.length)) * 85));
-      };
-
-      for (let i = 0; i < gamesPgn.length; i++) {
-        if (controller.signal.aborted) return;
-        const pgn = gamesPgn[i];
-        const headers = parsePgnHeaders(pgn);
-        const side = getUserSide(headers, u);
-        if (!side) {
-          unclassified += 1;
-          tickProgress(i);
-          continue;
-        }
-
-        const result = getUserResult(headers, side);
-        if (!result) {
-          unclassified += 1;
-          tickProgress(i);
-          continue;
-        }
-
-        const lookup = lookupOpeningFromPGN(pgn, openingsMap);
-        if (!lookup.success || !lookup.bestMatch) {
-          unclassified += 1;
-          tickProgress(i);
-          continue;
-        }
-
-        classified += 1;
-        // bestMatch carries moves + family_id directly (see pgn-utils
-        // OpeningMatch).
-        const openingWithMoves = {
-          ...lookup.bestMatch,
-          moves: lookup.bestMatch.moves || '',
-        };
-        if (side === 'white') {
-          upsertAgg(asWhite, openingWithMoves, result);
-          whiteGames += 1;
-          if (result === 'win') whiteWin += 1;
-          if (result === 'draw') whiteDraw += 1;
-          if (result === 'loss') whiteLoss += 1;
-        } else {
-          upsertAgg(asBlack, openingWithMoves, result);
-          blackGames += 1;
-          if (result === 'win') blackWin += 1;
-          if (result === 'draw') blackDraw += 1;
-          if (result === 'loss') blackLoss += 1;
-        }
-
-        tickProgress(i);
-
-        if ((i + 1) % 10 === 0) {
-          await new Promise((r) => setTimeout(r, 0));
-        }
-      }
-
-      const data: DashboardData = {
-        totalGames: gamesPgn.length,
-        classifiedGames: classified,
-        unclassifiedGames: unclassified,
-        whiteGames,
-        whiteWin,
-        whiteDraw,
-        whiteLoss,
-        blackGames,
-        blackWin,
-        blackDraw,
-        blackLoss,
-        // Full classified lists (no truncation) — family rollups aggregate over
-        // every opening. The flat "all openings" view caps its own display.
-        asWhite: sortAgg(Array.from(asWhite.values())),
-        asBlack: sortAgg(Array.from(asBlack.values())),
-      };
+      // Aborted mid-run: handleCancel already reset the step, so leave it be.
+      if (!data) return;
 
       saveToCache(data);
       setDashboard(data);

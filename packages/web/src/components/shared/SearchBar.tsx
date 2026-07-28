@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { SearchHub } from './SearchHub';
 
 export interface Opening {
   fen: string;
@@ -31,6 +32,13 @@ interface SearchBarProps {
   openingsData: Opening[];
   className?: string;
   onExpandSearch?: () => void; // Callback to load more search data if needed
+  /**
+   * Landing variant only. Supplied, the focused field opens the search hub
+   * and this backs its Surprise me row. The caller owns the randomisation
+   * because it can reach the whole corpus; this component only ever holds
+   * the first slice of the search index.
+   */
+  onSurprise?: () => void;
 }
 
 // Enhanced search function with semantic search as primary
@@ -351,6 +359,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   openingsData,
   className = '',
   onExpandSearch,
+  onSurprise,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Opening[]>([]);
@@ -358,6 +367,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false);
   const [noResults, setNoResults] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
 
   // Enhanced search with server-side semantic search
@@ -481,19 +491,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
-  const handleSurpriseMe = () => {
-    if (openingsData.length > 0) {
-      const randomIndex = Math.floor(Math.random() * openingsData.length);
-      const randomOpening = openingsData[randomIndex];
-      selectOpening(randomOpening);
-    }
-  };
-
   const handleSuggestionClick = (opening: Opening) => {
     selectOpening(opening);
   };
 
   const handleFocus = () => {
+    setIsFocused(true);
     if (suggestions.length > 0) {
       setShowSuggestions(true);
     }
@@ -502,10 +505,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const handleBlur = () => {
     // Delay hiding suggestions to allow for click events
     setTimeout(() => {
+      setIsFocused(false);
       setShowSuggestions(false);
       setActiveSuggestion(-1);
     }, 150);
   };
+
+  // Change 02: focusing the hero field opens the hub. Before typing, this
+  // field showed nothing at all — the same gap the mobile overlay had fixed.
+  const showHub = variant === 'landing' && isFocused && searchTerm.trim().length < 2;
 
   return (
     <div className={`search-bar-container ${variant} ${className}`}>
@@ -524,19 +532,33 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           autoFocus={autoFocus}
         />
 
-        {variant === 'landing' && (
-          <button
-            className="search-surprise-btn"
-            onClick={handleSurpriseMe}
-            disabled={disabled || loading}
-          >
-            {loading ? 'Loading...' : 'Surprise me'}
-          </button>
-        )}
-
         {loading && (
           <div className="loading-indicator">
             <span className="loading-spinner">⟳</span>
+          </div>
+        )}
+
+        {showHub && onSurprise && (
+          // The blur handler tears the dropdown down after 150ms and hub rows
+          // fire on click — a slow press would land on nothing. Holding focus
+          // on the input keeps the row alive to receive it.
+          <div className="search-hub-dropdown" onMouseDown={(e) => e.preventDefault()}>
+            <SearchHub
+              onSelect={(fen) => {
+                setIsFocused(false);
+                setShowSuggestions(false);
+                // Hub rows come from history and the repertoire, so the
+                // opening may not be in the loaded index slice. Consumers
+                // navigate by FEN; the rest of the record is only carried
+                // through when we happen to have it.
+                const match = openingsData.find((entry) => entry.fen === fen);
+                onSelect(match ?? { fen, name: '', eco: '', moves: '', src: 'hub' });
+              }}
+              onSurprise={() => {
+                setIsFocused(false);
+                onSurprise();
+              }}
+            />
           </div>
         )}
 

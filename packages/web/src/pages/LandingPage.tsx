@@ -134,6 +134,7 @@ const LandingPage: React.FC = () => {
               loading={loading}
               openingsData={openingsData}
               onExpandSearch={handleExpandSearch}
+              onSurprise={handleSurpriseMe}
               className="hero-search"
             />
             {/* Three unequal actions used to compete at the same level. Search

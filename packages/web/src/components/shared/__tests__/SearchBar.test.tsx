@@ -48,10 +48,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveAttribute('placeholder', 'Find your opening');
     });
 
-    it('should render surprise me button for landing variant', () => {
+    // UX review change 02: search is the only prominent element in the hero.
+    // Surprise me used to sit beside the field as a filled button, competing
+    // with it; it now lives in the hub and as a quiet link under the hero.
+    it('renders no inline Surprise button on the landing variant', () => {
       render(<SearchBar {...defaultProps} variant="landing" />);
 
-      expect(screen.getByText('Surprise me')).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
     });
 
     it('should not render surprise me button for header variant', () => {
@@ -63,8 +66,6 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should show loading state when loading prop is true', () => {
       render(<SearchBar {...defaultProps} loading={true} />);
 
-      // Check for the actual loading text that appears in the component
-      expect(screen.getByText('Loading...')).toBeInTheDocument();
       expect(screen.getByPlaceholderText('Loading openings...')).toBeInTheDocument();
       expect(screen.getByText('⟳')).toBeInTheDocument();
     });
@@ -396,20 +397,46 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveValue('');
     });
 
-    it('should handle surprise me button click', async () => {
+    // Change 02: "Focusing the field opens a hub of recents and repertoire."
+    // The hero field is the one this was drawn for — it showed nothing at all
+    // until you had typed two characters.
+    it('opens the search hub when the landing field is focused', async () => {
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} variant="landing" />);
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
 
-      const surpriseButton = screen.getByText('Surprise me');
-      await user.click(surpriseButton);
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
 
-      // Should call onSelect with a random opening
-      expect(mockOnSelect).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: expect.any(String),
-          eco: expect.any(String),
-        })
-      );
+      await user.click(screen.getByRole('textbox'));
+
+      expect(screen.getByRole('button', { name: /surprise me/i })).toBeInTheDocument();
+    });
+
+    it('routes the hub Surprise me to the caller, not to loaded openings', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      await user.click(screen.getByRole('textbox'));
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      // The caller randomises over the full corpus; SearchBar only ever holds
+      // the first slice of the search index.
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('replaces the hub with results once a query is typed', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
+
+      const input = screen.getByRole('textbox');
+      await user.click(input);
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
     });
 
     it('should handle focus and blur events', async () => {

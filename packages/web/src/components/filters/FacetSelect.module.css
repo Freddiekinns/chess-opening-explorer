@@ -1,0 +1,134 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.trigger:hover {
+  border-color: var(--border-hover);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Active = an orange border only. The pill row it replaces filled the whole
+   chip orange, which made a filter state look like a call to action. */
+.triggerActive {
+  border-color: var(--accent-a50);
+}
+
+.label {
+  color: var(--color-text-muted);
+}
+
+.value {
+  color: var(--color-text-secondary);
+}
+
+.valueActive {
+  color: var(--color-text-primary);
+}
+
+.chevron {
+  flex: none;
+  color: var(--color-text-secondary);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  z-index: 20;
+  min-width: 240px;
+  max-width: 320px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.menuEnd {
+  left: auto;
+  right: 0;
+}
+
+.optionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover {
+  background: var(--color-overlay-light);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: -2px;
+}
+
+.optionActive {
+  background: var(--accent-a12);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.optionCount {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.check {
+  flex: none;
+  color: var(--color-brand-orange);
+}

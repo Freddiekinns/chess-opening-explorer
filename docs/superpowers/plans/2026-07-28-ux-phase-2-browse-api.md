@@ -1300,11 +1300,11 @@ const BROWSE_RESULT = {
   applied: { level: null, style: null, family: null, sort: 'popular' },
 };
 
-const browseMock = jest.fn(() => BROWSE_RESULT);
+const mockBrowse = jest.fn(() => BROWSE_RESULT);
 
 jest.mock('../../packages/api/src/services/browse-service', () =>
   jest.fn().mockImplementation(() => ({
-    browse: browseMock,
+    browse: mockBrowse,
     getConfig: () => ({
       pageSize: { default: 24, max: 48 },
       levels: [{ value: 'Beginner', label: 'Beginner' }],
@@ -1355,7 +1355,7 @@ describe('GET /api/openings/browse', () => {
     await request(app).get(
       '/api/openings/browse?level=Beginner&style=aggressive&family=sicilian&sort=name&page=2&pageSize=12'
     );
-    expect(browseMock).toHaveBeenCalledWith({
+    expect(mockBrowse).toHaveBeenCalledWith({
       level: 'Beginner',
       style: 'aggressive',
       family: 'sicilian',
@@ -1370,7 +1370,7 @@ describe('GET /api/openings/browse', () => {
     expect(res.status).toBe(400);
     expect(res.body.success).toBe(false);
     expect(res.body.error).toMatch(/level/i);
-    expect(browseMock).not.toHaveBeenCalled();
+    expect(mockBrowse).not.toHaveBeenCalled();
   });
 
   test('an unknown style is a 400', async () => {
@@ -1399,7 +1399,7 @@ describe('GET /api/openings/browse', () => {
   });
 
   test('a service failure is a 500 with no stack in the body', async () => {
-    browseMock.mockImplementationOnce(() => {
+    mockBrowse.mockImplementationOnce(() => {
       throw new Error('index blew up');
     });
     const res = await request(app).get('/api/openings/browse');

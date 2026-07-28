@@ -96,7 +96,11 @@ const MobilePlanGroup: React.FC<{ side: PlanSide; plans: ClassifiedPlan[] }> = (
           className={styles.mobileGroupToggle}
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? 'Show less' : `Show ${plans.length - MOBILE_GROUP_COLLAPSED} more`}
+          {expanded
+            ? 'Show less'
+            : `Show ${plans.length - MOBILE_GROUP_COLLAPSED} more ${
+                plans.length - MOBILE_GROUP_COLLAPSED === 1 ? 'plan' : 'plans'
+              }`}
         </button>
       )}
     </div>

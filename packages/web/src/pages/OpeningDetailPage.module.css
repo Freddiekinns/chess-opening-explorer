@@ -570,17 +570,20 @@
 }
 
 /* Primary action of the board card — pushed to the right of the control row,
-   with the "…" position-tools button trailing it. */
+   with the "…" position-tools button trailing it. Filled, per the one button
+   spec: transparent-with-an-orange-outline is the secondary treatment, and
+   drawing the page's most valuable action that way is the inverted priority
+   the review set out to fix. Desktop's .practice-toggle-btn matches. */
 .mobilePracticeBtn {
   display: flex;
   align-items: center;
   gap: var(--space-1-5);
   margin-left: auto;
-  background: transparent;
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
+  background: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
   border-radius: var(--radius-md);
-  padding: var(--space-2-5) var(--space-3);
+  padding: var(--space-2-5) var(--space-4);
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
@@ -590,7 +593,12 @@
 }
 
 .mobilePracticeBtn:hover {
-  background: var(--accent-a12);
+  background: var(--color-brand-orange-hover);
+}
+
+.mobilePracticeBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 /* Overview + Common plans form one editorial "reading zone": a sentence-case

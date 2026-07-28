@@ -236,6 +236,40 @@ export const PersonalOpeningStats: React.FC<{
     </>
   );
 
+  // Progress and error belong directly under the form they describe. The
+  // landing column is centred at 65vh, so rendering them after it stranded both
+  // a third of a viewport below the input bar.
+  const renderProgress = () =>
+    step === 'fetching' || step === 'analysing' ? (
+      <div className={styles.progress} aria-live="polite">
+        <div className={styles.progressBar}>
+          <div
+            className={styles.progressFill}
+            role="progressbar"
+            aria-valuenow={progress}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+        <div className={styles.progressMeta}>
+          <span>{stepText}</span>
+          {total > 0 && (
+            <span>
+              {processed}/{total}
+            </span>
+          )}
+        </div>
+      </div>
+    ) : null;
+
+  const renderError = () =>
+    step === 'error' && error ? (
+      <div className={styles.error} role="alert">
+        {error}
+      </div>
+    ) : null;
+
   return (
     <div>
       {/* ===== LANDING (hero + search, centred in viewport when no results) ===== */}
@@ -252,6 +286,8 @@ export const PersonalOpeningStats: React.FC<{
           )}
 
           {renderSearchForm({ showGear: false })}
+          {renderProgress()}
+          {renderError()}
         </div>
       )}
 
@@ -276,60 +312,11 @@ export const PersonalOpeningStats: React.FC<{
             </button>
             <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
             {renderSearchForm({ showGear: true })}
-            {(step === 'fetching' || step === 'analysing') && (
-              <div className={styles.overlayProgress}>
-                <div className={styles.progressBar}>
-                  <div
-                    className={styles.progressFill}
-                    role="progressbar"
-                    aria-valuenow={progress}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-                <div className={styles.progressMeta}>
-                  <span>{stepText}</span>
-                  {total > 0 && (
-                    <span>
-                      {processed}/{total}
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
+            {/* The overlay carries its own copy: it sits above the dashboard, so
+                a failure reported outside it would be hidden behind it. */}
+            {renderProgress()}
+            {renderError()}
           </div>
-        </div>
-      )}
-
-      {/* ===== PROGRESS ===== */}
-      {(step === 'fetching' || step === 'analysing') && (
-        <div className={styles.progress} aria-live="polite">
-          <div className={styles.progressBar}>
-            <div
-              className={styles.progressFill}
-              role="progressbar"
-              aria-valuenow={progress}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <div className={styles.progressMeta}>
-            <span>{stepText}</span>
-            {total > 0 && (
-              <span>
-                {processed}/{total}
-              </span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ===== ERROR ===== */}
-      {step === 'error' && error && (
-        <div className={styles.error} role="alert">
-          {error}
         </div>
       )}
 

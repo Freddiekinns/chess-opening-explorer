@@ -606,3 +606,46 @@ describe('PersonalOpeningStats - blank state', () => {
     expect(screen.queryByRole('button', { name: 'Settings' })).not.toBeInTheDocument();
   });
 });
+
+describe('PersonalOpeningStats - transient states', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  const failTheFetch = () =>
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: false,
+      json: async () => ({ success: false, message: 'We could not load your games.' }),
+    } as Response);
+
+  it('keeps the error in the centred column, under the input it describes', async () => {
+    const user = userEvent.setup();
+    failTheFetch();
+
+    renderComponent();
+    await user.type(screen.getByLabelText('Username'), 'someone');
+    await user.click(screen.getByRole('button', { name: 'Analyse' }));
+
+    const alert = await screen.findByRole('alert');
+    const note = screen.getByText(/Reads your public rated games/);
+    // Same column as the note it follows — not stranded below a 65vh block.
+    expect(note.parentElement).toBe(alert.parentElement);
+  });
+
+  it('returns the button to Analyse after a failure and keeps what was typed', async () => {
+    const user = userEvent.setup();
+    failTheFetch();
+
+    renderComponent();
+    await user.type(screen.getByLabelText('Username'), 'chessstudnt99');
+    await user.click(screen.getByRole('button', { name: 'Analyse' }));
+
+    await screen.findByRole('alert');
+    expect(screen.getByRole('button', { name: 'Analyse' })).toBeEnabled();
+    expect(screen.getByLabelText('Username')).toHaveValue('chessstudnt99');
+  });
+});

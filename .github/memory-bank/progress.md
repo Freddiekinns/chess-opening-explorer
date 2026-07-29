@@ -4,6 +4,14 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
+  six phases read back against the handoff bundle. Six defects, all half-applied
+  changes: the hero kept its filled Surprise button _and_ never got the hub; the
+  Discover repertoire row removed without Undo; family group headings uppercased
+  `1. Nf3` into `1. NF3`; mobile Practice stayed outlined because phase 0 only
+  changed the desktop rule; a filter URL 400d on a change of case and blanked
+  the grid; the Analyse gear announced itself as "Settings". Guards added for
+  the two stylesheet-only rules. 472 + 834 green.
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`, stacked on
   phase 4): one header instead of two; "Career totals / Overall performance"
   becomes "This analysis / Your record" (it claimed a lifetime for one run's
@@ -21,29 +29,18 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   level filter and everything it governs; master games move outside it into a
   shared `MasterGamesCard` serving both breakpoints. `WinRatePanel` is now
   presentational; `WinRateBar` and `MobileMasterGames` deleted. One
-  `explorerStats` module owns every level-scoped label so the breakpoints cannot
-  drift. Every reveal names its payload. Explorer error beacon moved into the
-  hook — it was desktop-only, so mobile failures went unreported. 441 + 833
-  green.
-- **UX review phase 3 — faceted filter bar** (2026-07-28,
-  `ux/phase-3-filter-bar`): two unlabelled pill rows become Level · Style ·
-  Family · Sort, each stating its value; grid, count and facets from one browse
-  request, so the landing-page count mismatch is gone. URL-param state, cards
-  stay crawlable, mobile sheet portalled to `<body>`. 833 + 413 green.
-- **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`):
-  `GET /api/openings/browse` returns items, `total`, `remaining` and facet
-  counts from one index in one request, so the count on screen and the grid
-  cannot disagree. One primary style per opening; page size capped at 48. No UI
-  change. 829 backend green.
-- **UX review phase 1 — Discover closes the loop** (2026-07-27,
-  `ux/phase-1-discover`): shared `Toast` with Undo, star on every grid card,
-  persistent top-bar search, shared `SearchHub`, `/repertoire` route, three
-  mobile tabs with a count badge. Find → save → revisit no longer needs a detail
-  page. 372 frontend green.
-- **UX review phase 0 — systemic pass** (2026-07-27, `ux/phase-0-systemic` →
-  `feat/ux-review`): one button spec, self-labelling `ResultBar`, decorative
-  orange removed, sentence case, global focus ring, 44px star target. No
-  behaviour change. 336 + 784 green.
+  `explorerStats` module owns every level-scoped label. Every reveal names its
+  payload. Explorer error beacon moved into the hook — it was desktop-only, so
+  mobile failures went unreported.
+- **UX review phases 0–3** (2026-07-27..28): **0** systemic — one button spec,
+  self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
+  44px star. **1** Discover closes the loop — shared `Toast` with Undo, star on
+  every card, persistent top-bar search, `SearchHub`, `/repertoire`, three
+  mobile tabs with a badge. **2** `GET /api/openings/browse` — items, `total`,
+  `remaining` and facet counts from one index in one request, so the count and
+  the grid cannot disagree; page size capped at 48. **3** the faceted bar —
+  Level · Style · Family · Sort, each stating its value, URL-param state, cards
+  stay crawlable, mobile sheet portalled to `<body>`.
 - Work 2026-07-12..07-20 (opening-detail & analyse UI tweaks — shared `PerfBar`,
   full move lines; opening-detail mobile overhaul PR #53 — one data surface at
   ≤767px, sticky level pills, `ScrollToTop` fix; mobile landing filter dropdown;
@@ -88,7 +85,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work
-- **Bottom nav investigation**: may be missing on Analyse page — verify
+- **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
+  which filters are active is only legible inside the sheet. Desktop states each
+  value on its button. Change 07 drew chips; the spec simplified to one control
+  and a count.
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)

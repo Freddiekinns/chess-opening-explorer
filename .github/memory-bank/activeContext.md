@@ -1,45 +1,41 @@
 # Active Context
 
-**Date:** 2026-07-28
+**Date:** 2026-07-29
 
-## Current Task: UX review phase 5 — Analyse (`ux/phase-5-analyse`)
+## Current Task: UX review — implementation audit (`ux/phase-5-analyse`)
 
-Last of six phases implementing the 2026-07 UX review. Stacked on
-`ux/phase-4-detail-desktop` (PRs #58–#62 still open into `feat/ux-review`).
+All six phases read back against the handoff bundle
+(`design-system/handoffs/2026-07-27-ux-review/`, 29 changes) and the spec. Six
+defects found and fixed on the phase-5 branch. Every one was a change
+half-applied, not a decision taken wrongly.
 
-The page had two headers, a record card claiming a lifetime for numbers
-describing one run, and no way to see what a report looks like before typing a
-username.
+- **Two Surprise me controls in the hero.** Phase 1 added the quiet links but
+  left `SearchBar`'s filled landing button — on mobile a full-width filled
+  button above a 99px quiet link. The hub was wired into the top bar and the
+  mobile overlay but **not the hero field** the change was drawn for.
+- **The Discover repertoire row removed silently.** It called `remove()` while
+  every other star goes through `useRepertoireToast`. The one tap that destroys
+  something the user built had no Undo.
+- **Family group headings uppercased chess notation** — `1. Nf3` reached the
+  screen as `1. NF3`, which is not a move.
+- **Practice was still outlined on mobile.** Phase 0 changed the global
+  `.practice-toggle-btn`; the mobile button lives in the page module and kept
+  the pre-review styling — the inverted priority change 24 exists to fix, on the
+  breakpoint it mattered most on.
+- **A filter URL 400d on a change of case.** `level=Beginner` but
+  `style=aggressive`; one wrong capital blanked the whole grid.
+- **The Analyse gear announced itself as "Settings"**, saying nothing about what
+  it sets.
 
-- **One header** carrying the payoff; the "Ready to analyse your openings?"
-  block is gone. Scope stated once: "Reads your public rated games — rapid,
-  blitz & classical. Bullet excluded. Nothing is stored."
-- **"Career totals / Overall performance" → "This analysis / Your record"**,
-  wins sage and losses brick via the existing `--color-perf-*` tokens (the
-  mock's hexes already _are_ those tokens). "GP" → "Games".
-- **Sample reports.** "See a sample report — Magnus · Hikaru", served from
-  committed fixtures (`packages/web/src/data/sample-reports/`, 100 games each,
-  code-split). `npm run sample:generate` rebuilds them; the dashboard prints the
-  generated date, so staleness is visible. Loading one **never** writes the
-  session cache — a sample must not return as "your" saved result.
-- **The reduction moved to `packages/shared/src/utils/personal-analysis.ts`** so
-  the generator and the page compute a report with one implementation.
-- **Accessibility**: platform choice is a real radio group; the username field
-  has a real label, not just a placeholder.
-- **Progress and errors moved inside the centred column** — rendered after a
-  65vh block, both landed a third of a viewport below the input they describe.
-- **Gear off the blank state**, into the dashboard-side search overlay.
+**Deviations reviewed and kept:** three mobile tabs (not four), 60px chrome (not
+56/64), pre-baked sample fixtures, "Over-the-board masters" rather than the
+mock's invented "2,400+ Elo", the gear in the search overlay.
 
-**Deviation from the mock:** the gear goes to the overlay, not the dashboard
-header. The header's only control _opens_ that overlay, so a gear beside it
-would set a value consumed two clicks away.
+**Left open:** mobile shows no facet chips, so the active filters are only
+legible inside the sheet. **Verified:** 472 frontend, 834 backend, clean build.
+**Spec/plans:** `docs/superpowers/{specs,plans}/`
 
-**Verified:** 462 frontend, 833 backend, clean build; sage/brick confirmed
-rendering at 1360 (`rgb(157,189,124)` / `rgb(201,133,121)`). **Spec/plans:**
-`docs/superpowers/{specs,plans}/`
+## Previous Task: UX review phase 5 — Analyse (PR #63)
 
-## Previous Task: UX review phase 4 — opening detail desktop (PR #62)
-
-`ExplorerCard` draws one border around the level filter and everything it
-governs; master games move outside it into a shared `MasterGamesCard`. **Detail
-in `archive.md`.**
+One header, "This analysis / Your record", sample reports from committed
+fixtures, the reduction shared with the generator. **Detail in `archive.md`.**

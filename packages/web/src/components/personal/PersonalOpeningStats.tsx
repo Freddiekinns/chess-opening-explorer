@@ -163,7 +163,8 @@ export const PersonalOpeningStats: React.FC<{
                 type="button"
                 className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
                 onClick={() => setShowSettings(!showSettings)}
-                aria-label="Settings"
+                aria-label={`Games to analyse: ${limit}`}
+                aria-expanded={showSettings}
                 title={`Analysing last ${limit} games`}
               >
                 <GearIcon />

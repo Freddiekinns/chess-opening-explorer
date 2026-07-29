@@ -70,4 +70,13 @@ body{padding:24px;background:var(--surface-base)}
   reordering and no Edit affordance. The empty state's CTA is the one primary
   action on the screen, so it takes the filled-orange spec.
 </p>
+<p class="note">
+  Every star in the product goes through <code>useRepertoireToast</code>, and
+  that includes the filled stars on this row and on the Discover repertoire
+  scroller. They are the only taps that <em>remove</em> something the user
+  built, so they need the Undo more than the ones that add — the Discover row
+  shipped calling <code>remove()</code> directly, with no confirmation and no
+  way back. Removing the last opening collapses the row into its one-line
+  prompt, so the toast has to survive that transition too.
+</p>
 </body></html>

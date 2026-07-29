@@ -129,15 +129,22 @@
         border: 1px solid rgba(232, 93, 4, 0.3);
         border-radius: 4px;
       }
+      /* Primary, per the one button spec — filled, not outlined. This card
+         drew the outlined version for six phases because that is what the
+         pre-review build had; phase 0 changed only the desktop rule, and the
+         mobile button lives in a different file. Outlined orange is the
+         secondary treatment, and Practice is the page's most valuable
+         action. */
       .prac {
         display: flex;
         align-items: center;
         gap: 6px;
         margin-left: auto;
-        color: #e85d04;
-        border: 1px solid #e85d04;
+        background: #e85d04;
+        color: #100f0e;
+        border: none;
         border-radius: 8px;
-        padding: 10px 12px;
+        padding: 10px 16px;
         font:
           700 13px 'Bricolage Grotesque',
           sans-serif;

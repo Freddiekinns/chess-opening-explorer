@@ -6,17 +6,25 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
-  and the repertoire were swapped out wholesale, so Surprise me now survives as
-  a footer outside the scroller and "Saved" rides on matching rows (a count line
+  and the repertoire were swapped out wholesale, so Surprise me survives as a
+  footer outside the scroller and "Saved" rides on matching rows (a count line
   was built then cut: the search scores every record above zero, 4,269 for
   "sicilian"). Then _how_ — three result-row implementations and two hub rows
   across two type scales, so typing redrew each opening at a different size,
-  weight and layout. `shared/SearchRow.tsx` is now the one row. Fell out of it:
-  the hero hub panel had zero padding ("Recent" read as clipped), the top-bar
-  dropdown was pinned to its 240px field so Surprise me lost its hint there, the
-  results list showed under four of twenty, leading icons put the name 26px
-  right of where results put it, and mobile ran two search models on one screen.
-  Spec §3.3; guard at `shared/__tests__/search-row-parity.test.tsx`.
+  weight and layout; `shared/SearchRow.tsx` is now the one row. Fell out of it:
+  the hero hub panel had zero padding, the top-bar dropdown was pinned to its
+  240px field so Surprise me lost its hint, the list showed under four of
+  twenty, leading icons put the name 26px right of where results put it, and
+  mobile ran two search models on one screen. Spec §3.3; guard at
+  `shared/__tests__/search-row-parity.test.tsx`.
+- **Practice demoted to accent-outline** (2026-07-30, on `ux/phase-5-analyse`):
+  filled orange → orange border + orange label, both breakpoints. **A spec
+  decision reversed on the owner's call** — §3 argued from implementation
+  completeness, not the question that decides button weight. Names the third
+  button tier (the bundle had two while the guard called an orange outline
+  "secondary", never true of the grey `.btn--secondary`). Proportion fixed:
+  desktop 11px in 24px padding vs mobile 13px → both 13px, mobile min 44px. Spec
+  §3.4; guard now asserts the breakpoints agree.
 - **Master games moved up the mobile stack** (2026-07-30, on
   `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
   table sent it below videos, studies and the search pills to "make both
@@ -26,46 +34,38 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `pages/__tests__/mobile-stack-order.test.tsx`.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, every one a
-  change half-applied — a silent repertoire removal, `1. NF3`, mobile Practice
-  still outlined, a filter URL 400ing on case. **Detail in `archive.md`.**
+  change half-applied — a silent repertoire removal, `1. NF3`, a filter URL
+  400ing on case. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals / Overall performance" → "This analysis / Your record"
   (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
   → "Games". Sample reports from committed fixtures, dated on screen. PGN
-  reduction moved to `packages/shared/src/utils/personal-analysis.ts` so
-  generator and page share one implementation. Gear into the overlay.
+  reduction moved to `packages/shared/src/utils/personal-analysis.ts`; gear into
+  overlay.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
   `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
   level filter and everything it governs; master games move outside it into a
-  shared `MasterGamesCard` serving both breakpoints. `WinRateBar` and
-  `MobileMasterGames` deleted; one `explorerStats` module owns every
-  level-scoped label. Explorer error beacon moved into the hook — it was
-  desktop-only, so mobile failures went unreported.
-- **UX review phases 0–3** (2026-07-27..28): **0** systemic — one button spec,
+  shared `MasterGamesCard`. `WinRateBar` and `MobileMasterGames` deleted; one
+  `explorerStats` module owns every level-scoped label. Explorer error beacon
+  moved into the hook (was desktop-only, so mobile failures went unreported).
+- **UX review phases 0–3** (2026-07-27..28): **0** systemic — button tiers,
   self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
   44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
   card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
   **2** `GET /api/openings/browse` — items, `total`, `remaining` and facet
-  counts from one index in one request, so the count and the grid cannot
-  disagree. **3** the faceted bar — Level · Style · Family · Sort.
-- Work 2026-07-12..07-20 (shared `PerfBar`; opening-detail mobile overhaul PR
-  #53 — one data surface at ≤767px, sticky level pills, `ScrollToTop` fix;
-  mobile landing filter dropdown; `/api/explorer` proxy) — see `archive.md`.
-- Work through 2026-07-11 (Deviation Trainer slice 1; Ko-fi tip jar; Study
-  matching V2, coverage 18.2%→35.7%; video index refresh PR #47, 28.2%→72.8%;
-  video experience V1–V3 PR #46; Analyse redesign PR #45) — see `archive.md`.
-- **Review remediation — perf + features** (2026-07-06): route splitting +
-  static MiniBoard (main chunk 409→189 kB), self-hosted fonts, sharded edge SEO
-  lookup, `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`,
-  `api/data/` the single canonical data home.
-- Older work through 2026-07-02 (project review; video matching + pipeline
-  hardening; common-plans ECO-bucket investigation, still no code fix; design
-  review fixes killing `Math.random()` W/D/L and the dropdown stacking bug; CI
-  green-up + 28-family taxonomy; TASK008 roadmap; sticky-board detail layout;
-  domain migration; TASK016 design overhaul; TASK015 opening-tree nav; TASK012
-  video pipeline; TASK011 search bandwidth; TASK010 repertoire; TASK009 SEO;
-  TASK007 mobile overflow; Course Discovery, Practice Mode, Personal Explorer,
-  PGN ID, related-openings UI, sort controls) — see `archive.md`.
+  counts from one request, so count and grid cannot disagree. **3** the faceted
+  bar.
+- Everything before the UX review — **all detail in `archive.md`**.
+  2026-07-12..20 (shared `PerfBar`; opening-detail mobile overhaul PR #53;
+  `/api/explorer` proxy after Lichess gated the explorer). Through 07-11
+  (Deviation Trainer slice 1; Study matching V2, 18.2%→35.7%; video index PR
+  #47, 28.2%→72.8%; Analyse redesign PR #45). 07-06 review remediation (route
+  splitting, 409→189 kB; `/api/openings/all` → 410). Through 07-02 (video
+  matching + pipeline hardening; the `Math.random()` W/D/L and dropdown-stacking
+  fixes; 28-family taxonomy; domain migration; TASK006–016; Course Discovery;
+  Practice Mode).
+- **Still true and not fixed**: the common-plans ECO-bucket investigation found
+  a real defect and shipped no code change for it.
 
 ## What's Left
 

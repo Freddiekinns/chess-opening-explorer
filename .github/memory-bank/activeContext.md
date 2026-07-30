@@ -2,50 +2,40 @@
 
 **Date:** 2026-07-30
 
-## Current Task: One search row for all three surfaces (`ux/phase-5-analyse`)
+## Current Task: Practice drops to accent-outline (`ux/phase-5-analyse`)
 
-Typing changed how an opening was **drawn**, not just which openings were
-listed. There were **three** result-row implementations (hero, top bar, mobile)
-and **two** hub rows, across two type scales — hub on `--text-*` (13px medium,
-ECO inline in a meta line), hero results on the `--font-size-*` legacy aliases
-(16px semibold, ECO pill, 135° gradient + half-pixel lift on hover). Not a
-decision: what happens when four surfaces are built in four phases and the row
-is never named as a component.
+Filled orange → orange border + orange label, both breakpoints. **A spec
+decision reversed on the owner's call.** §3 argued from implementation
+completeness — "fully implemented, so it can carry primary weight" — which is a
+different question from how much of the page's attention a feature has earned.
+Practice is a good action that is not yet what the detail page is _for_.
 
-- **`SearchRow` + `SurpriseRow`** (`shared/SearchRow.tsx` + `.module.css`) now
-  serve every surface and both states. Kept from the hub: the bounded card,
-  section headings, quiet Surprise me. Kept from the results: 14px semibold
-  name, ECO pill, mono moves on their own line. Dropped: the gradient, the
-  sub-pixel lift, the ECO pill recolouring on hover.
-- **Three fixes fell out of it.** The hero hub panel had _zero_ padding, so
-  "Recent" read as clipped and rows touched the sides. The top-bar dropdown was
-  pinned to its 240px field, which is why Surprise me dropped its visible hint
-  there — panel now sizes to content (≤380px), hint restored, `title`-only
-  exception gone. Results list was capped at 280px against 71px rows (under four
-  of twenty visible) → `min(60vh, 480px)`.
-- **No leading icons at all.** The hub's clock/star and the mobile chevron put
-  the name at 39px before typing and 13px after — the marker meant to say
-  nothing changed was causing the most visible change. Icons also just repeated
-  the section heading above them. Surprise me lost its glyph too: Sparkles reads
-  as AI, Shuffle/dice as a mode or a gamble, a gift or mystery box as a reward
-  with loot-box overtones. Its hint line says it in words.
-- **Mobile hero hands off to the overlay.** Below 767px the landing page ran two
-  search models on one screen; the hero field is now `readOnly` and opens the
-  same full-screen overlay the magnifier does. Desktop unchanged.
-- **Guard:** `shared/__tests__/search-row-parity.test.tsx` compares a hub row
-  against a results row and fails if they diverge.
+- **Names the third button tier.** The bundle documented two (filled primary,
+  grey `.btn--secondary`) while `buttonSpec.test.ts` called an orange outline
+  "secondary" — never true of `.btn--secondary`. Now: primary · accent-outline ·
+  secondary · tertiary, in `components-buttons`.
+- **Proportion fixed with it** — the other half of the complaint. Desktop was
+  11px inside 24px padding (a swatch with a word in it) while mobile said 13px
+  for the same control. Both 13px now, padding brought in, mobile min-height
+  44px because it is a thumb target.
+- **Guard rewritten, not deleted.** Its durable purpose was never "keep Practice
+  filled": the button is drawn twice in two files and has drifted across
+  breakpoints twice — once on fill, once on type size. It now asserts the halves
+  _agree_, plus pagination carries no brand colour. Verified failing on the old
+  CSS. Spec §3.4.
 
-**Bundle:** new `components-search-row.html` is canonical; the hub and results
-cards now own their panels only. Spec §3.3. **Verified:** 498 frontend, 834
-backend, clean build; all three surfaces checked live in both states, name
-offset 13px everywhere.
+## Previous Task: One search row for all three surfaces
 
-## Previous Task: Master games moves up the mobile stack
-
-It rendered **last** on mobile, after videos, studies and the search pills. Not
-a defect — the spec's decision table put it there and phase 4 built it
-faithfully. **A spec decision reversed, not a bug fixed**: its reason ("makes
-both breakpoints agree") was false, since desktop always rendered it in the rail
-under the explorer card. Now Overview · explorer · master games · plans ·
-resources · search. Spec §3.2 rewritten; order guard at
-`pages/__tests__/mobile-stack-order.test.tsx`. **Detail in git.**
+Typing changed how an opening was **drawn**, not just which were listed — three
+result-row implementations and two hub rows across two type scales.
+`shared/SearchRow.tsx` now serves every surface and both states. Fell out of it:
+the hero hub panel had _zero_ padding ("Recent" read as clipped); the top-bar
+dropdown was pinned to its 240px field, which is why Surprise me dropped its
+visible hint there; the results list showed under four of twenty. Leading icons
+dropped entirely — they put the name at 39px before typing and 13px after, and
+only repeated the section heading. Surprise me keeps an orange label (an action
+among destinations, the rule `.cancelBtn`/`.back-link` already follow) but no
+icon: Sparkles reads as AI, shuffle/dice as a mode or a gamble, a gift or
+mystery box as a reward. Mobile's hero now hands off to the full-screen overlay
+instead of running a second search model on one screen. Spec §3.3; parity guard
+at `shared/__tests__/search-row-parity.test.tsx`.

@@ -2609,17 +2609,32 @@ body {
 
 /* Empty state for no videos */
 
-/* Primary: the most valuable action on the detail page, drawn as such. */
+/* Accent-outline — the third button tier, between filled primary and the grey
+   secondary. An action worth drawing in the brand colour, but not a claim that
+   it is what the page is for.
+
+   Practice was filled primary until 2026-07-30. The spec's argument for that
+   was implementation completeness ("Practice mode is fully implemented in
+   production"), which is not the same question as how much of the page's
+   attention it deserves — that one is the product owner's, and the answer is
+   that the feature is not yet as developed as it needs to be to ask for the
+   page's loudest control. Demoted deliberately; see §3.4 of the UX-review spec
+   before promoting it back.
+
+   The proportion changed with it. The label was 11px inside 24px of horizontal
+   padding, which reads as a colour swatch with a word in it rather than a
+   button — and desktop said 11px while mobile said 13px for the same control.
+   Both are 13px now, with the padding brought in to match. */
 .practice-toggle-btn {
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  border: 1px solid var(--accent-a50);
   border-radius: var(--radius-md);
-  padding: 10px 24px;
+  padding: var(--space-2) var(--space-4);
   margin-left: auto;
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.04em;
   width: auto;
   height: auto;
@@ -2628,11 +2643,13 @@ body {
   transition: all 150ms ease;
 }
 
+/* Fills on hover rather than deepening: an outlined control that only shifts
+   its border on hover gives almost no feedback at this size. No lift and no
+   brand shadow — those belonged to the primary treatment. */
 .practice-toggle-btn:hover:not(:disabled) {
-  background-color: var(--color-brand-orange-hover);
-  color: var(--color-text-inverse);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-brand);
+  background-color: var(--accent-a12);
+  border-color: var(--color-brand-orange);
+  color: var(--color-brand-orange);
 }
 
 .practice-toggle-btn:active:not(:disabled) {

@@ -56,7 +56,7 @@ Two further corrections to the handoff README:
 | ----------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Faceted filter bar data                   | **Build a new browse endpoint**                                        | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
 | Games-count gear (change 17)              | **Move to the dashboard, do not delete**                               | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
-| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                             | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                                |
+| Practice CTA weight (change 24 vs README) | ~~Primary, filled orange~~ → **reversed 2026-07-30, see §3.4**         | Original rationale: Practice is fully implemented, so it can carry primary weight. Implementation completeness is not the same question as how much of the page's attention a feature has earned. See §3.4.            |
 | Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                        | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
 | Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**             | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
 | Sample report (change 19)                 | **Pre-baked cached fixtures**                                          | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
@@ -211,6 +211,40 @@ Guarded by `components/shared/__tests__/search-row-parity.test.tsx`, which
 compares a hub row against a results row and fails if they diverge. Canonical
 reference: `design-system/project/preview/components-search-row.html`; the hub
 and results cards own their panels and explicitly do not restyle the row.
+
+### 3.4 Practice drops to accent-outline (2026-07-30)
+
+The table above made Practice the filled primary action on the opening detail
+page, and the implementation audit later found mobile still drawing it outlined
+and "fixed" it to match. Both were reasoning from the same premise: the feature
+is fully built, therefore it can carry primary weight.
+
+That premise answers the wrong question. Whether a feature is _finished_ and
+whether it deserves the loudest control on the page are different things, and
+only the second one decides button weight. On the product owner's call, Practice
+is a good action but not yet as developed as it needs to be to be what the
+opening detail page is _for_. It drops to accent-outline: transparent, orange
+border, orange label.
+
+This introduces the third button tier explicitly. The bundle previously
+documented two — filled orange primary and the grey `.btn--secondary` — while
+`buttonSpec.test.ts` described "transparent with an orange outline" as the
+secondary treatment, which was never true of `.btn--secondary`. The three tiers
+are now named in `components-buttons`: **primary** (filled orange, inverse
+text), **accent-outline** (transparent, orange border, orange label) and
+**secondary** (grey). Practice is the accent-outline tier's first user.
+
+The proportion changed with it, which was the other half of the complaint. The
+desktop label was 11px inside 24px of horizontal padding — a colour swatch with
+a word in it rather than a button — while mobile said 13px for the same control.
+Both are 13px now with padding brought in to match, and mobile carries a 44px
+minimum because it is a thumb target.
+
+The guard is rewritten rather than deleted. Its durable purpose was never "keep
+Practice filled" — it was that Practice is drawn twice, in two files, and has
+drifted across breakpoints twice: once on fill, once on type size. The tests now
+assert the two halves _agree_, and that pagination still carries no brand
+colour. Verified failing against the old styling before landing.
 
 ---
 

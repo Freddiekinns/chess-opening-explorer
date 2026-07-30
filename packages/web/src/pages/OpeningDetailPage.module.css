@@ -569,31 +569,39 @@
   transform: rotate(180deg);
 }
 
-/* Primary action of the board card — pushed to the right of the control row,
-   with the "…" position-tools button trailing it. Filled, per the one button
-   spec: transparent-with-an-orange-outline is the secondary treatment, and
-   drawing the page's most valuable action that way is the inverted priority
-   the review set out to fix. Desktop's .practice-toggle-btn matches. */
+/* Accent-outline, matching desktop's .practice-toggle-btn — an action in the
+   brand colour, not a claim that it is what the page is for. It was filled
+   primary until 2026-07-30; the demotion is a product call about how developed
+   the feature is, recorded in §3.4 of the UX-review spec. Keep both breakpoints
+   on the same treatment: this button has drifted across them twice now, once on
+   fill and once on type size. */
 .mobilePracticeBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-1-5);
   margin-left: auto;
-  background: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
+  background: transparent;
+  color: var(--color-brand-orange);
+  border: 1px solid var(--accent-a50);
   border-radius: var(--radius-md);
-  padding: var(--space-2-5) var(--space-4);
+  /* 44px, because this one is a thumb target. Desktop's is a cursor target and
+     sizes to its text. */
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
   cursor: pointer;
   flex: none;
-  transition: background 150ms ease;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
 }
 
 .mobilePracticeBtn:hover {
-  background: var(--color-brand-orange-hover);
+  background: var(--accent-a12);
+  border-color: var(--color-brand-orange);
 }
 
 .mobilePracticeBtn:focus-visible {

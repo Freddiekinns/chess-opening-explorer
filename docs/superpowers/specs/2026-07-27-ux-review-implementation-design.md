@@ -52,18 +52,18 @@ Two further corrections to the handoff README:
 
 ## 3. Decisions taken
 
-| Question                                  | Decision                                                          | Rationale                                                                                                                                                                                                              |
-| ----------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Faceted filter bar data                   | **Build a new browse endpoint**                                   | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
-| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                          | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
-| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                        | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                                |
-| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                   | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
-| Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**        | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
-| Sample report (change 19)                 | **Pre-baked cached fixtures**                                     | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
-| Delivery                                  | **Integration branch; phases are PRs into it; one merge to main** | Sequential merges to `main` mid-programme have broken things before. Each phase PR still gets its own Vercel preview, so review stays incremental — but `main` is touched once, at the end. See §9.                    |
-| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                         | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                                 |
-| Repertoire persistence                    | **Accept `localStorage`, record the risk**                        | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                         |
-| Master games position, mobile detail      | **Move below Learning resources, as proposed**                    | Master games are browse content and should not outrank learning content. Also makes both breakpoints agree on block order, which the desktop change (§3.1) depends on.                                                 |
+| Question                                  | Decision                                                               | Rationale                                                                                                                                                                                                              |
+| ----------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faceted filter bar data                   | **Build a new browse endpoint**                                        | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
+| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                               | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
+| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                             | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                                |
+| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                        | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
+| Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**             | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
+| Sample report (change 19)                 | **Pre-baked cached fixtures**                                          | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
+| Delivery                                  | **Integration branch; phases are PRs into it; one merge to main**      | Sequential merges to `main` mid-programme have broken things before. Each phase PR still gets its own Vercel preview, so review stays incremental — but `main` is touched once, at the end. See §9.                    |
+| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                              | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                                 |
+| Repertoire persistence                    | **Accept `localStorage`, record the risk**                             | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                         |
+| Master games position, mobile detail      | ~~Move below Learning resources~~ → **reversed 2026-07-30, see below** | Original rationale: browse content should not outrank learning content, and it makes both breakpoints agree. The second half was simply false, and the first was the wrong axis. See §3.2.                             |
 
 ### 3.1 Superseding the 2026-07-13 right-column spec
 
@@ -96,6 +96,43 @@ a border — and it forgoes the shared-component win below.
 Bonus in scope: `WinRatePanel` and `MobileMasterGames` each fetch the masters
 band independently today. Extracting one `MasterGamesCard` serves both
 breakpoints and retires the duplicate fetch.
+
+### 3.2 Reversing the mobile master-games position (2026-07-30)
+
+The table above sent master games to the **bottom** of the mobile stack. Phase 4
+implemented that faithfully — below videos, studies and even the search pills —
+and the code carried a comment repeating the spec's second reason. Both reasons
+were wrong.
+
+"Makes both breakpoints agree on block order" is false as written. Desktop puts
+`MasterGamesCard` in the right rail directly beneath `ExplorerCard`, and
+Learning resources is a full-width section _below the whole grid_. In reading
+order, desktop has always had master games **before** the resources. Sending
+mobile to the bottom made the breakpoints disagree, not agree. The design bundle
+said so too:
+`design-system/project/preview/components-opening-detail-mobile.html` and the
+original 2a exploration both draw it above Common plans.
+
+"Browse content should not outrank learning content" ranks the wrong axis. The
+stack is not a merit order, it is a distance order: Overview and the explorer
+surface describe the position, and everything after them leads away from the
+page — how to play it, then go watch someone explain it, then go search for
+yourself. Master games ("who played this, and how did it go") is more of the
+first kind. It also costs one collapsed row, so placing it above Common plans
+barely moves anything down, whereas the reverse strands a data row behind a
+screen of scrolling.
+
+New order, live since 2026-07-30: **Overview · explorer surface · master games ·
+common plans · videos and studies · search pills.** Guarded by
+`packages/web/src/pages/__tests__/mobile-stack-order.test.tsx`, which asserts
+document order across every block — reordering a JSX stack is a one-line change
+no other test notices. Do not "restore" the table's original decision.
+
+Accepted cost: the card's `IntersectionObserver` gate now trips after a swipe or
+two instead of a full scroll, so the masters band is fetched on more sessions.
+The route's 7-day CDN cache absorbs it and it 403s crawlers. No reserved height
+— plenty of deep positions have no master games at all, and a placeholder that
+later vanished would shift content _upward_ under a finger.
 
 ---
 

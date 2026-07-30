@@ -13,19 +13,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   across two type scales, so typing redrew each opening at a different size,
   weight and layout. `shared/SearchRow.tsx` is now the one row. Fell out of it:
   the hero hub panel had zero padding ("Recent" read as clipped), the top-bar
-  dropdown was pinned to its 240px field so Surprise me lost its visible hint
-  there, the results list showed under four of twenty. Leading icons dropped
-  entirely (they put the name 26px right of where results put it, and only
-  repeated the section heading); mobile's hero now hands off to the full-screen
-  overlay rather than running a second search model on the same screen. Spec
-  §3.3; parity guard at `shared/__tests__/search-row-parity.test.tsx`.
+  dropdown was pinned to its 240px field so Surprise me lost its hint there, the
+  results list showed under four of twenty, leading icons put the name 26px
+  right of where results put it, and mobile ran two search models on one screen.
+  Spec §3.3; guard at `shared/__tests__/search-row-parity.test.tsx`.
 - **Master games moved up the mobile stack** (2026-07-30, on
   `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
   table sent it below videos, studies and the search pills to "make both
-  breakpoints agree", which was false: desktop renders it in the rail under the
-  explorer card, resources full-width below. Now Overview · explorer · master
-  games · plans · resources · search: position data first, then a gradient away
-  from the page. Spec §3.2 rewritten; order guard at
+  breakpoints agree", which was false: desktop always rendered it in the rail
+  under the explorer card. Now Overview · explorer · master games · plans ·
+  resources · search. Spec §3.2 rewritten; order guard at
   `pages/__tests__/mobile-stack-order.test.tsx`.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, every one a
@@ -34,38 +31,33 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals / Overall performance" → "This analysis / Your record"
   (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
-  → "Games". Sample reports from committed fixtures (`npm run sample:generate`),
-  dated on screen. PGN reduction moved to
-  `packages/shared/src/utils/personal-analysis.ts` so generator and page share
-  one implementation. Platform a real radio group; gear into the overlay.
+  → "Games". Sample reports from committed fixtures, dated on screen. PGN
+  reduction moved to `packages/shared/src/utils/personal-analysis.ts` so
+  generator and page share one implementation. Gear into the overlay.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
   `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
   level filter and everything it governs; master games move outside it into a
-  shared `MasterGamesCard` serving both breakpoints. `WinRatePanel` now
-  presentational; `WinRateBar` and `MobileMasterGames` deleted. One
-  `explorerStats` module owns every level-scoped label. Explorer error beacon
-  moved into the hook — it was desktop-only, so mobile failures went unreported.
+  shared `MasterGamesCard` serving both breakpoints. `WinRateBar` and
+  `MobileMasterGames` deleted; one `explorerStats` module owns every
+  level-scoped label. Explorer error beacon moved into the hook — it was
+  desktop-only, so mobile failures went unreported.
 - **UX review phases 0–3** (2026-07-27..28): **0** systemic — one button spec,
   self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
-  44px star. **1** Discover closes the loop — shared `Toast` with Undo, star on
-  every card, persistent top-bar search, `SearchHub`, `/repertoire`, three
-  mobile tabs with a badge. **2** `GET /api/openings/browse` — items, `total`,
-  `remaining` and facet counts from one index in one request, so the count and
-  the grid cannot disagree. **3** the faceted bar — Level · Style · Family ·
-  Sort, each stating its value, URL-param state, mobile sheet portalled.
-- Work 2026-07-12..07-20 (shared `PerfBar` + full move lines; opening-detail
-  mobile overhaul PR #53 — one data surface at ≤767px, sticky level pills,
-  `ScrollToTop` fix; mobile landing filter dropdown; sidebar unification +
-  `/api/explorer` proxy after Lichess gated it) — see `archive.md`.
-- Work through 2026-07-11 (Deviation Trainer slice 1 — explorer client, rating
-  bands, master games, `/api/event` beacon; Ko-fi tip jar; Study matching V2,
-  coverage 18.2%→35.7% all / 62.5%→91.5% top-200; video index refresh PR #47,
-  28.2%→72.8%; video experience V1–V3 PR #46; Analyse dashboard redesign PR #45)
-  — see `archive.md`.
+  44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
+  card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
+  **2** `GET /api/openings/browse` — items, `total`, `remaining` and facet
+  counts from one index in one request, so the count and the grid cannot
+  disagree. **3** the faceted bar — Level · Style · Family · Sort.
+- Work 2026-07-12..07-20 (shared `PerfBar`; opening-detail mobile overhaul PR
+  #53 — one data surface at ≤767px, sticky level pills, `ScrollToTop` fix;
+  mobile landing filter dropdown; `/api/explorer` proxy) — see `archive.md`.
+- Work through 2026-07-11 (Deviation Trainer slice 1; Ko-fi tip jar; Study
+  matching V2, coverage 18.2%→35.7%; video index refresh PR #47, 28.2%→72.8%;
+  video experience V1–V3 PR #46; Analyse redesign PR #45) — see `archive.md`.
 - **Review remediation — perf + features** (2026-07-06): route splitting +
   static MiniBoard (main chunk 409→189 kB), self-hosted fonts, sharded edge SEO
   lookup, `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`,
-  `api/data/` now the single canonical data home. 724+200 green.
+  `api/data/` the single canonical data home.
 - Older work through 2026-07-02 (project review; video matching + pipeline
   hardening; common-plans ECO-bucket investigation, still no code fix; design
   review fixes killing `Math.random()` W/D/L and the dropdown stacking bug; CI
@@ -85,8 +77,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   re-export without extensions, so `dist/index.js` is unimportable from Node ESM
   — scripts import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
-  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4 family
+  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
   shelves, V5/V6 taxonomy + chapter matching, studies data work
+- **Search is not a real combobox** — the biggest remaining gap in it. No
+  `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
+  region, so a screen-reader user gets no signal when results arrive (dropping
+  the count line removed the only `role="status"`). The keyboard cursor rides a
+  `data-active` hook `aria-activedescendant` should replace. One change, three
+  surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+- **Search returns near-duplicate names**: "najdorf" gives four rows reading
+  "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
   which are active is legible only inside the sheet (desktop states each value).
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets

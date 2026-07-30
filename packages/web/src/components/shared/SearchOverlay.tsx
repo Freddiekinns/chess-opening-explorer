@@ -158,12 +158,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           <ul className={styles.rowList}>
             {results.map((opening, i) => (
               <li key={`${opening.fen}-${i}`}>
-                <SearchRow
-                  opening={opening}
-                  saved={isSaved(opening.fen)}
-                  showChevron
-                  onSelect={select}
-                />
+                <SearchRow opening={opening} saved={isSaved(opening.fen)} onSelect={select} />
               </li>
             ))}
           </ul>

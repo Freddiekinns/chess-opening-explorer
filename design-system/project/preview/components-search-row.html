@@ -11,8 +11,6 @@ body{padding:24px;background:var(--surface-base)}
 .row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border-radius:8px;background:transparent;border:1px solid var(--border-subtle);cursor:pointer;text-align:left;font-family:'DM Sans';color:var(--color-text-primary)}
 .row.hover,.row.active{background:var(--surface-overlay);border-color:var(--color-border)}
 .row.focus{outline:2px solid var(--color-brand-orange);outline-offset:2px}
-.icon{flex:none;color:var(--color-text-muted)}
-.iconStar{color:var(--color-brand-orange);fill:var(--color-brand-orange)}
 .text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .name{font-size:14px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .moves{font-family:var(--font-family-mono);font-size:12px;color:var(--color-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -20,7 +18,6 @@ body{padding:24px;background:var(--surface-base)}
 .trailing{flex:none;display:flex;align-items:center;gap:8px}
 .eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
 .saved{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid rgba(232,93,4,.3);border-radius:4px;background:rgba(232,93,4,.12);color:var(--color-brand-orange);font-family:'DM Sans';font-size:11px;font-weight:600;white-space:nowrap}
-.chevron{flex:none;color:var(--color-text-muted)}
 
 .note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
 .note code{font-family:var(--font-family-mono);font-size:11px}
@@ -40,35 +37,32 @@ body{padding:24px;background:var(--surface-base)}
   </div>
 
   <div class="col">
-    <span class="cap">Search row · slots</span>
+    <span class="cap">Search row · trailing slots</span>
     <div class="panel">
       <ul class="rowList">
         <li><button class="row">
-          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span class="text"><span class="name">Recent — clock</span><span class="moves">1. e4 e6</span></span><span class="trailing"><span class="eco">C00</span></span>
+          <span class="text"><span class="name">Recent</span><span class="moves">1. e4 e6</span></span><span class="trailing"><span class="eco">C00</span></span>
         </button></li>
         <li><button class="row">
-          <svg class="icon iconStar" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span class="text"><span class="name">Repertoire — star</span><span class="moves">1. e4 c5</span></span><span class="trailing"><span class="eco">B20</span></span>
+          <span class="text"><span class="name">In your repertoire</span><span class="moves">1. e4 c5</span></span><span class="trailing"><span class="eco">B20</span></span>
         </button></li>
         <li><button class="row">
-          <span class="text"><span class="name">Result — no icon</span><span class="moves">1. e4 c5 2. Nf3 d6 3. d4</span></span>
+          <span class="text"><span class="name">Result, saved</span><span class="moves">1. e4 c5 2. Nf3 d6 3. d4</span></span>
           <span class="trailing"><span class="saved">Saved</span><span class="eco">B50</span></span>
         </button></li>
         <li><button class="row">
-          <span class="text"><span class="name">Mobile result — chevron</span><span class="moves">1. e4 c5 2. Bc4</span></span>
-          <span class="trailing"><span class="eco">B20</span><svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+          <span class="text"><span class="name">Result, not saved</span><span class="moves">1. e4 c5 2. Bc4</span></span>
+          <span class="trailing"><span class="eco">B20</span></span>
         </button></li>
       </ul>
     </div>
   </div>
 
   <div class="col">
-    <span class="cap">Surprise me · the one variant</span>
+    <span class="cap">Surprise me · one variant, everywhere</span>
     <div class="panel">
       <ul class="rowList">
         <li><button class="row">
-          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
           <span class="text"><span class="name">Surprise me</span><span class="hint">Jump to a random opening</span></span>
         </button></li>
       </ul>
@@ -89,12 +83,16 @@ body{padding:24px;background:var(--surface-base)}
   <code>components/shared/__tests__/search-row-parity.test.tsx</code>.
 </p>
 <p class="note">
-  <strong>Where a row came from is carried by the icon, never by the shape.</strong>
-  A clock means recently viewed, a star means it is in your repertoire, and a
-  result carries no icon at all — in a ranked list every row is the same kind of
-  thing, so an icon on each is twenty repetitions of one fact. The chevron is
-  mobile-only: a full-screen list wants "this navigates" spelled out, a dropdown
-  anchored to the field does not.
+  <strong>No leading icon on any row.</strong> Hub rows led with a clock or a
+  star and result rows led with nothing, which put the opening's name 26px
+  further right before you typed than after (13px vs 39px, measured). The name's
+  left edge moving is the most visible drift there is, and it was being caused by
+  the very marker meant to reassure you nothing had changed. The clock and the
+  star also only repeated the section heading immediately above them — "Recent",
+  "Your repertoire" — once per row. The heading says it once, which is enough.
+  The mobile chevron went the same way: it appeared on mobile <em>results</em>
+  and not on mobile <em>hub</em> rows, so it was drift wearing an affordance's
+  clothes. Nothing leads a row now, on any surface, in either state.
 </p>
 <p class="note">
   <strong>Bounded by border and radius, not by a fill.</strong> The hub's rows
@@ -111,13 +109,21 @@ body{padding:24px;background:var(--surface-base)}
   label look pressable.
 </p>
 <p class="note">
-  <strong>Surprise me is quiet, and it is Shuffle rather than Sparkles.</strong>
-  The results list used to paint it brand orange and semibold with its hint
-  flung to the right margin — the escape hatch drawn louder than the twenty real
-  answers above it, which its own source comment said it must not be. It is now
-  the same row as everything else. The glyph changed because Sparkles is the
-  industry's AI icon; on a control that picks a random opening it promises
-  intelligence that is not there, and Shuffle already means "one at random from
-  a set".
+  <strong>Surprise me is quiet, and it has no icon either.</strong> The results
+  list used to paint it brand orange and semibold with its hint flung to the
+  right margin — the escape hatch drawn louder than the twenty real answers above
+  it, which its own source comment said it must not be. It is now the same row as
+  everything else.
+</p>
+<p class="note">
+  The glyph question is the reason it ended up with none. <em>Sparkles</em> is
+  the industry's AI mark and promises intelligence that is not there.
+  <em>Shuffle</em> and <em>dice</em> both name chance rather than a destination,
+  and shuffle specifically reads as a mode you switch on rather than a jump you
+  take once. A <em>gift</em> or an <em>opening box</em> reads as a reward, and
+  mystery-box imagery carries a loot-box association this has no business
+  borrowing. The payoff here is a chess opening, chosen at random — a smaller and
+  more honest promise than any of those pictures make. The second line says
+  exactly that in words, and words were what the row needed.
 </p>
 </body></html>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChevronRight, Shuffle } from 'lucide-react';
 import { formatMovesPreview } from '../../lib/searchQuery';
 import styles from './SearchRow.module.css';
 
@@ -8,10 +7,15 @@ import styles from './SearchRow.module.css';
  *
  * The blank state and the typing state used to be two separate implementations
  * on two separate type scales, so the same opening changed size, weight,
- * layout and hover behaviour the moment a second character arrived. Whether a
- * row came from your history, your repertoire or a query is a fact about where
- * it came from, not about what it is, so it is carried by the leading icon and
- * the section heading above it — never by the row's shape.
+ * layout and hover behaviour the moment a second character arrived.
+ *
+ * No leading icon, deliberately. Hub rows carried a clock or a star and result
+ * rows carried nothing, which pushed the opening's name 26px further right
+ * before you typed than after — the name's left edge moving is the most visible
+ * drift there is, and it was being caused by the marker meant to reassure you
+ * nothing had changed. The clock and the star also only repeated the section
+ * heading directly above them ("Recent", "Your repertoire"), one repetition per
+ * row. The headings say it once, which is enough.
  */
 
 export interface SearchRowOpening {
@@ -24,27 +28,18 @@ export interface SearchRowOpening {
 export interface SearchRowProps {
   opening: SearchRowOpening;
   onSelect: (opening: SearchRowOpening) => void;
-  /** Clock for recents, star for the repertoire. Results carry none: in a
-      ranked list every row is the same kind of thing, so an icon per row is
-      twenty repetitions of one fact. */
-  icon?: React.ReactNode;
   saved?: boolean;
   /** Keyboard cursor. Styled identically to hover — arrowing and pointing are
       the same act. */
   active?: boolean;
-  /** The mobile overlay is a full-screen list, where a chevron reads as
-      "this navigates". A dropdown anchored to the field does not need it. */
-  showChevron?: boolean;
   onMouseEnter?: () => void;
 }
 
 export const SearchRow: React.FC<SearchRowProps> = ({
   opening,
   onSelect,
-  icon,
   saved = false,
   active = false,
-  showChevron = false,
   onMouseEnter,
 }) => (
   <button
@@ -57,7 +52,6 @@ export const SearchRow: React.FC<SearchRowProps> = ({
     onClick={() => onSelect(opening)}
     onMouseEnter={onMouseEnter}
   >
-    {icon}
     <span className={styles.rowText}>
       <span className={styles.rowName}>{opening.name}</span>
       {opening.moves && (
@@ -67,7 +61,6 @@ export const SearchRow: React.FC<SearchRowProps> = ({
     <span className={styles.rowTrailing}>
       {saved && <span className={styles.rowSaved}>Saved</span>}
       {opening.eco && <span className={styles.rowEco}>{opening.eco}</span>}
-      {showChevron && <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />}
     </span>
   </button>
 );
@@ -86,10 +79,15 @@ export interface SurpriseRowProps {
  * and semibold, which made the escape hatch the loudest thing under a list of
  * twenty real answers.
  *
- * The glyph is Shuffle, not Sparkles. Sparkles is the industry's AI icon; on a
- * control that picks a random opening it promises intelligence that is not
- * there. Shuffle means "one at random from a set", which is exactly the
- * behaviour.
+ * No icon either, and the glyph question is the reason why: nothing available
+ * was honest. Sparkles is the industry's AI mark and promises intelligence that
+ * is not there. Shuffle and dice both name chance rather than a destination, and
+ * shuffle specifically reads as a mode you switch on, not a jump you take once.
+ * A gift or an opening box reads as a reward, and mystery-box imagery carries a
+ * loot-box association this has no business borrowing — the payoff here is a
+ * chess opening, chosen at random, which is a smaller and more honest promise
+ * than any of those pictures make. The second line says exactly that in words,
+ * and words are what the row needed.
  */
 export const SurpriseRow: React.FC<SurpriseRowProps> = ({
   onSurprise,
@@ -106,7 +104,6 @@ export const SurpriseRow: React.FC<SurpriseRowProps> = ({
     onClick={onSurprise}
     onMouseEnter={onMouseEnter}
   >
-    <Shuffle size={14} className={styles.rowIcon} aria-hidden="true" />
     <span className={styles.rowText}>
       <span className={styles.rowName}>Surprise me</span>
       <span className={styles.rowHint}>Jump to a random opening</span>

@@ -110,16 +110,27 @@ describe('search row parity between the blank and typing states', () => {
     expect(resultsSurprise?.className).toBe(hubSurprise?.className);
   });
 
-  it('uses Shuffle rather than the industry AI sparkle for Surprise me', async () => {
+  it('carries no leading icon, so the name starts in the same place in both states', async () => {
     const user = userEvent.setup();
     renderBar();
 
-    await user.click(screen.getByRole('textbox'));
+    const input = screen.getByRole('textbox');
+    await user.click(input);
 
-    const surprise = (await screen.findByText('Surprise me')).closest('button');
-    const icon = surprise?.querySelector('svg');
-    // lucide stamps the icon name into the class list.
-    expect(icon?.getAttribute('class')).toContain('shuffle');
-    expect(icon?.getAttribute('class')).not.toContain('sparkles');
+    // Hub rows used to lead with a clock or a star and results with nothing,
+    // which put the opening's name 26px further right before you typed than
+    // after. The name being the first child is what keeps the two aligned; an
+    // icon reintroduced on one side and not the other would break it silently.
+    const hubRow = (await screen.findByText('Sicilian Defense')).closest('button');
+    const surprise = screen.getByText('Surprise me').closest('button');
+    expect(hubRow?.querySelector('svg')).toBeNull();
+    expect(surprise?.querySelector('svg')).toBeNull();
+
+    await user.type(input, 'pawn');
+    await waitFor(() => expect(screen.getByText("King's Pawn Game")).toBeInTheDocument());
+
+    const resultRow = screen.getByText("King's Pawn Game").closest('button');
+    expect(resultRow?.querySelector('svg')).toBeNull();
+    expect(resultRow?.firstElementChild?.className).toBe(hubRow?.firstElementChild?.className);
   });
 });

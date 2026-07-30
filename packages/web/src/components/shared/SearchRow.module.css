@@ -46,16 +46,6 @@
   outline-offset: 2px;
 }
 
-.rowIcon {
-  flex: none;
-  color: var(--color-text-muted);
-}
-
-.rowIconStar {
-  color: var(--color-brand-orange);
-  fill: var(--color-brand-orange);
-}
-
 .rowText {
   flex: 1;
   min-width: 0;
@@ -138,7 +128,3 @@
   white-space: nowrap;
 }
 
-.rowChevron {
-  flex: none;
-  color: var(--color-text-muted);
-}

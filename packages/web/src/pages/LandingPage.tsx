@@ -1,6 +1,8 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from '../components/shared/SearchBar';
+import SearchOverlay from '../components/shared/SearchOverlay';
+import { useIsMobile } from '../hooks/useMediaQuery';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
@@ -36,6 +38,8 @@ const LandingPage: React.FC = () => {
   const [openingsData, setOpeningsData] = useState<Opening[]>([]);
   const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false);
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
   const canonicalUrl = buildSiteUrl('/');
   const seoTitle = `${SITE_NAME} — Discover, explore and learn chess openings`;
@@ -135,6 +139,12 @@ const LandingPage: React.FC = () => {
               openingsData={openingsData}
               onExpandSearch={handleExpandSearch}
               onSurprise={handleSurpriseMe}
+              /* Below 767px the hero hands off to the full-screen overlay
+                 rather than opening its own dropdown. The landing page
+                 otherwise ran two search models on one screen — the top bar's
+                 magnifier opened the overlay while the hero opened an inline
+                 panel that the on-screen keyboard covers. */
+              onActivate={isMobile ? () => setMobileSearchOpen(true) : undefined}
               className="hero-search"
             />
             {/* Three unequal actions used to compete at the same level. Search
@@ -172,6 +182,10 @@ const LandingPage: React.FC = () => {
           />
         </Suspense>
       )}
+
+      {/* The hero's search on mobile. Same component the top bar's magnifier
+          opens, so there is one search surface per screen rather than two. */}
+      <SearchOverlay open={mobileSearchOpen} onClose={() => setMobileSearchOpen(false)} />
     </main>
   );
 };

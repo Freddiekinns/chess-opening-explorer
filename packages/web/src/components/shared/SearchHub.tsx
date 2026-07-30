@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, Star } from 'lucide-react';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import { getRecentOpenings, type RecentOpening } from '../../lib/recentOpenings';
 import { SearchRow, SurpriseRow, type SearchRowOpening } from './SearchRow';
-import rowStyles from './SearchRow.module.css';
 import styles from './SearchHub.module.css';
 
 export interface SearchHubProps {
@@ -39,9 +37,12 @@ export const SearchHub: React.FC<SearchHubProps> = ({
 
   const saved = repertoire.slice(0, repertoireLimit);
 
-  const renderRow = (entry: SearchRowOpening, icon: React.ReactNode) => (
+  // No per-row icon: the section heading above already says which group this
+  // is, and a leading icon pushed the name 26px right of where the results
+  // list puts it — the drift this component exists to remove.
+  const renderRow = (entry: SearchRowOpening) => (
     <li key={entry.fen}>
-      <SearchRow opening={entry} icon={icon} onSelect={(opening) => onSelect(opening.fen)} />
+      <SearchRow opening={entry} onSelect={(opening) => onSelect(opening.fen)} />
     </li>
   );
 
@@ -50,29 +51,14 @@ export const SearchHub: React.FC<SearchHubProps> = ({
       {recents.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Recent</h3>
-          <ul className={styles.rowList}>
-            {recents.map((entry) =>
-              renderRow(entry, <Clock size={14} className={rowStyles.rowIcon} aria-hidden="true" />)
-            )}
-          </ul>
+          <ul className={styles.rowList}>{recents.map((entry) => renderRow(entry))}</ul>
         </section>
       )}
 
       {saved.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Your repertoire</h3>
-          <ul className={styles.rowList}>
-            {saved.map((entry) =>
-              renderRow(
-                entry,
-                <Star
-                  size={14}
-                  className={`${rowStyles.rowIcon} ${rowStyles.rowIconStar}`}
-                  aria-hidden="true"
-                />
-              )
-            )}
-          </ul>
+          <ul className={styles.rowList}>{saved.map((entry) => renderRow(entry))}</ul>
         </section>
       )}
 

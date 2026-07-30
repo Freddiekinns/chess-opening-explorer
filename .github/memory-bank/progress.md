@@ -14,9 +14,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   weight and layout. `shared/SearchRow.tsx` is now the one row. Fell out of it:
   the hero hub panel had zero padding ("Recent" read as clipped), the top-bar
   dropdown was pinned to its 240px field so Surprise me lost its visible hint
-  there, the results list showed under four of twenty, and Sparkles → Shuffle
-  (Sparkles is the AI glyph). Spec §3.3; parity guard at
-  `shared/__tests__/search-row-parity.test.tsx`.
+  there, the results list showed under four of twenty. Leading icons dropped
+  entirely (they put the name 26px right of where results put it, and only
+  repeated the section heading); mobile's hero now hands off to the full-screen
+  overlay rather than running a second search model on the same screen. Spec
+  §3.3; parity guard at `shared/__tests__/search-row-parity.test.tsx`.
 - **Master games moved up the mobile stack** (2026-07-30, on
   `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
   table sent it below videos, studies and the search pills to "make both
@@ -27,9 +29,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `pages/__tests__/mobile-stack-order.test.tsx`.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, every one a
-  change half-applied — two Surprise me controls in the hero, a silent
-  repertoire removal, `1. NF3`, mobile Practice still outlined, a filter URL
-  400ing on case, the gear announcing "Settings". **Detail in `archive.md`.**
+  change half-applied — a silent repertoire removal, `1. NF3`, mobile Practice
+  still outlined, a filter URL 400ing on case. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals / Overall performance" → "This analysis / Your record"
   (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
@@ -54,8 +55,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   Sort, each stating its value, URL-param state, mobile sheet portalled.
 - Work 2026-07-12..07-20 (shared `PerfBar` + full move lines; opening-detail
   mobile overhaul PR #53 — one data surface at ≤767px, sticky level pills,
-  `ScrollToTop` fix; mobile landing filter dropdown; sidebar unification + the
-  `/api/explorer` proxy after Lichess gated the explorer) — see `archive.md`.
+  `ScrollToTop` fix; mobile landing filter dropdown; sidebar unification +
+  `/api/explorer` proxy after Lichess gated it) — see `archive.md`.
 - Work through 2026-07-11 (Deviation Trainer slice 1 — explorer client, rating
   bands, master games, `/api/event` beacon; Ko-fi tip jar; Study matching V2,
   coverage 18.2%→35.7% all / 62.5%→91.5% top-200; video index refresh PR #47,
@@ -69,11 +70,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   hardening; common-plans ECO-bucket investigation, still no code fix; design
   review fixes killing `Math.random()` W/D/L and the dropdown stacking bug; CI
   green-up + 28-family taxonomy; TASK008 roadmap; sticky-board detail layout;
-  domain migration to `openingbook.xyz`; TASK016 design overhaul + token
-  migration; TASK015 opening-tree nav; TASK012 video pipeline; TASK011 search
-  bandwidth; TASK010 local repertoire; TASK009 SEO; TASK007 mobile overflow;
-  plus Course Discovery, Practice Mode, Personal Explorer, PGN ID,
-  related-openings UI, sort controls) — see `archive.md`.
+  domain migration; TASK016 design overhaul; TASK015 opening-tree nav; TASK012
+  video pipeline; TASK011 search bandwidth; TASK010 repertoire; TASK009 SEO;
+  TASK007 mobile overflow; Course Discovery, Practice Mode, Personal Explorer,
+  PGN ID, related-openings UI, sort controls) — see `archive.md`.
 
 ## What's Left
 

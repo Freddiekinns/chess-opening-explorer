@@ -155,13 +155,34 @@ four phases and the row is never named as a component.
 `components/shared/SearchRow.tsx` is now that component — `SearchRow` and
 `SurpriseRow`, styled by `SearchRow.module.css`, on the `--text-*` scale. The
 hero dropdown, the top-bar dropdown and the mobile overlay all draw it, before
-and after typing. Where a row came from is carried by its leading icon (clock =
-recent, star = repertoire, no icon = a result) and by the section heading above
-it, never by its shape. `formatMovesPreview` moved to `lib/searchQuery` so the
-preview cannot differ between surfaces either — two of them used a blunt
-first-six-plies preview, which renders every Sicilian variation as "1. e4 c5".
+and after typing. `formatMovesPreview` moved to `lib/searchQuery` so the preview
+cannot differ between surfaces either — two of them used a blunt first-six-plies
+preview, which renders every Sicilian variation as "1. e4 c5".
 
-Three consequences worth recording, because each reverses something earlier:
+**No row leads with an icon.** The first cut kept the hub's clock and star and
+gave results none, which is defensible in the abstract and wrong in fact: it put
+the opening's name at 39px before you typed and 13px after. A 26px jump in the
+name's left edge is the most visible drift on the surface, and it was being
+caused by the marker meant to say nothing had changed. The clock and the star
+also only repeated the section heading directly above them, once per row. The
+mobile chevron went the same way — it was on mobile _results_ and not on mobile
+_hub_ rows, so it was drift wearing an affordance's clothes.
+
+Surprise me has no icon either, and the glyph search is why. Sparkles is the
+industry's AI mark; Shuffle and dice name chance rather than a destination, and
+shuffle reads as a mode you switch on; a gift or an opening box reads as a
+reward, and mystery-box imagery borrows a loot-box association this has no
+business borrowing. The payoff is a chess opening chosen at random, a smaller
+promise than any of those pictures makes. The hint line says it in words.
+
+**Mobile's hero hands off to the overlay.** Below 767px the landing page ran two
+search models on one screen: the top bar's magnifier opened the full-screen
+`SearchOverlay` while the hero opened an inline dropdown that a real on-screen
+keyboard covers. The hero field is now `readOnly` there and opens the same
+overlay, so there is one search surface per screen. Desktop is unchanged.
+
+Three more consequences worth recording, because each reverses something
+earlier:
 
 - **The top-bar dropdown is no longer pinned to its field.** Phase 1 fixed the
   field at 240px (unchanged), and the dropdown inherited that width, which is

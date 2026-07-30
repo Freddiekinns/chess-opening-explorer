@@ -42,6 +42,14 @@ interface SearchBarProps {
    * the first slice of the search index.
    */
   onSurprise?: () => void;
+  /**
+   * Supplied, the field stops being a field: touching it hands off to whatever
+   * this opens and nothing is typed here. Mobile passes it so the hero routes
+   * into the full-screen overlay, the same place the top bar's magnifier goes.
+   * The landing page otherwise had two search models on one screen, and the
+   * inline dropdown was the one that sits under the on-screen keyboard.
+   */
+  onActivate?: () => void;
 }
 
 // Enhanced search function with semantic search as primary
@@ -341,6 +349,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   className = '',
   onExpandSearch,
   onSurprise,
+  onActivate,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Opening[]>([]);
@@ -497,7 +506,20 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     selectOpening(opening);
   };
 
+  // Handing off, not searching here. Blur immediately so the on-screen keyboard
+  // does not open behind the surface we are about to show, and so returning
+  // from it does not land back on a focused field that reopens it.
+  const handleActivate = () => {
+    if (!onActivate) return;
+    searchRef.current?.blur();
+    onActivate();
+  };
+
   const handleFocus = () => {
+    if (onActivate) {
+      handleActivate();
+      return;
+    }
     setIsFocused(true);
     if (suggestions.length > 0) {
       setShowSuggestions(true);
@@ -530,6 +552,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           onKeyDown={handleKeyDown}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onClick={onActivate ? handleActivate : undefined}
+          /* readOnly, not disabled: the field must stay reachable by tab and
+             announce itself, it just is not where the typing happens. iOS
+             raises no keyboard for a readOnly input, so the handoff is clean. */
+          readOnly={Boolean(onActivate)}
           disabled={disabled || loading}
           autoFocus={autoFocus}
         />

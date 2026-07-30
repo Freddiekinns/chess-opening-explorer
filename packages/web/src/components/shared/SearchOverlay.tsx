@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Search, Sparkles } from 'lucide-react';
 import { SearchHub } from './SearchHub';
 import { useRepertoire } from '../../hooks/useRepertoire';
-import { summariseResults } from '../../lib/searchResultsSummary';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -50,7 +49,6 @@ const OpeningRow: React.FC<OpeningRowProps> = ({ opening, icon, trailing, onSele
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [searching, setSearching] = useState(false);
   const { isSaved } = useRepertoire();
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -61,7 +59,6 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setQuery('');
     setResults([]);
-    setTotalMatches(undefined);
     setSearching(false);
     onClose();
   }, [onClose]);
@@ -94,7 +91,6 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
     if (value.trim().length < 2) {
       setResults([]);
-      setTotalMatches(undefined);
       setSearching(false);
       return;
     }
@@ -109,7 +105,6 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           const data = await res.json();
           if (data.success && data.data) {
             setResults(data.data);
-            setTotalMatches(data.totalResults || data.data.length);
           }
         }
       } catch {
@@ -178,27 +173,24 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
 
+        {/* No count line: the openings appearing are the feedback, the same
+            reason there is no "did you mean". */}
         {showResults && (
-          <>
-            <div className={styles.resultsCount} role="status">
-              {summariseResults({ query, results, total: totalMatches })}
-            </div>
-            <div className={styles.rowList}>
-              {results.map((opening, i) => (
-                <OpeningRow
-                  key={`${opening.fen}-${i}`}
-                  opening={opening}
-                  trailing={
-                    <>
-                      {isSaved(opening.fen) && <span className={styles.rowSaved}>Saved</span>}
-                      <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
-                    </>
-                  }
-                  onSelect={select}
-                />
-              ))}
-            </div>
-          </>
+          <div className={styles.rowList}>
+            {results.map((opening, i) => (
+              <OpeningRow
+                key={`${opening.fen}-${i}`}
+                opening={opening}
+                trailing={
+                  <>
+                    {isSaved(opening.fen) && <span className={styles.rowSaved}>Saved</span>}
+                    <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
+                  </>
+                }
+                onSelect={select}
+              />
+            ))}
+          </div>
         )}
 
         {noResults && (

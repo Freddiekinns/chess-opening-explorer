@@ -7,10 +7,6 @@ body{padding:24px;background:var(--surface-base)}
 /* --- the component --- */
 .dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);overflow:hidden}
 
-/* The count line. The whole of the feedback — there is no "did you mean" and
-   no correction notice — so it is a live region, not just text. */
-.count{padding:10px 16px;border-bottom:1px solid var(--border-subtle);font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
-
 /* The list scrolls; the panel does not. */
 .list{list-style:none;margin:0;padding:0;max-height:224px;overflow-y:auto}
 .item{padding:12px 0;border-bottom:1px solid var(--border-subtle);cursor:pointer}
@@ -33,9 +29,8 @@ body{padding:24px;background:var(--surface-base)}
 
 <div class="row">
   <div class="col">
-    <span class="cap">Search results · exact count</span>
+    <span class="cap">Search results · two matches</span>
     <div class="dropdown">
-      <div class="count">2 openings match</div>
       <ul class="list">
         <li class="item">
           <div class="main">
@@ -61,9 +56,8 @@ body{padding:24px;background:var(--surface-base)}
   </div>
 
   <div class="col">
-    <span class="cap">Search results · capped list, top slice</span>
+    <span class="cap">Search results · capped list, scrolls</span>
     <div class="dropdown">
-      <div class="count">Top 20 matches</div>
       <ul class="list">
         <li class="item">
           <div class="main"><span class="name">Sicilian</span><span class="tags"><span class="eco">B30</span></span></div>
@@ -93,7 +87,6 @@ body{padding:24px;background:var(--surface-base)}
   <div class="col">
     <span class="cap">Search results · move query</span>
     <div class="dropdown">
-      <div class="count">3 openings begin with 1. Nf3</div>
       <ul class="list">
         <li class="item">
           <div class="main"><span class="name">Zukertort Opening</span><span class="tags"><span class="eco">A04</span></span></div>
@@ -127,33 +120,34 @@ body{padding:24px;background:var(--surface-base)}
   changes the ranking, not the layout.
 </p>
 <p class="note">
-  <strong>The count line must be checkable against the list under it.</strong>
-  "14 openings match" printed above eight rows is the same class of fabrication
-  as an invented win rate. Four phrasings, each true: exact
-  (<code>14 openings match</code>), singular
-  (<code>1 opening matches</code>), truncated (<code>Top 20 matches</code>) and
-  the move variant (<code>3 openings begin with 1. Nf3</code>). It carries
-  <code>role="status"</code>, because a count that is the whole of the feedback
-  has to reach people who cannot see the list appear.
-</p>
-<p class="note">
-  Two traps in that copy. The truncated form deliberately does <em>not</em>
-  name a total: the search reports every record scoring above zero, which for
-  "sicilian" is 4,269 against a family of roughly 1,710 — arithmetic anyone
-  would read as a claim about how many Sicilians exist. And the move variant
-  only appears when <em>every</em> row opens with that move (the scorer also
-  matches moves later in a line), and it prints the move as the data spells it,
-  never as the user typed it: case is semantic in algebraic notation, so
-  echoing a typed "nf3" back would print a move that does not exist.
+  <strong>No count line, and no number anywhere.</strong> An earlier draft put
+  "14 openings match" above the list. It was cut once the number turned out to
+  be unusable: the search counts every record scoring above zero, which for
+  "sicilian" is 4,269 against a family of roughly 1,710. Anyone reads that as a
+  claim about how many Sicilians exist. Counting only the rendered rows instead
+  would have been true but useless — it always says twenty. A count that cannot
+  be trusted and a count that never varies are both worse than the silence the
+  page already had, and the design's own argument covers it: the openings
+  appearing are the feedback.
 </p>
 <p class="note">
   <strong>Surprise me sits outside the scroller.</strong> It used to vanish on
   the second keystroke — the way out of a search that is not working
   disappearing exactly when the user is flailing. Twenty results deep is where
   someone gives up, so that is where it has to still be on screen. It is
-  reachable by arrowing one past the last result, not only by clicking. The
-  narrow top-bar dropdown drops the "Jump to a random opening" hint, which at
-  that width only wraps the label onto two lines.
+  reachable by arrowing one past the last result, not only by clicking.
+</p>
+<p class="note">
+  The icon and the label stay on every surface. Only the <em>hint</em> varies:
+  the top-bar dropdown is a fixed 238px and the label plus hint need ~265px, so
+  there the hint would wrap "Surprise me" onto two lines. It moves to
+  <code>title</code> and to an <code>aria-label</code> of "Surprise me — jump to
+  a random opening" rather than being dropped — the row still explains itself on
+  hover and to a screen reader, and the accessible name begins with the visible
+  text, which WCAG 2.5.3 requires. A shorter visible hint was the obvious
+  alternative and was rejected: "Surprise me · Random" reads as two words for
+  one idea, and renaming the row to fit would fragment a label that is identical
+  on four surfaces.
 </p>
 <p class="note">
   <strong>"Saved", not a star.</strong> Repertoire membership rides on the

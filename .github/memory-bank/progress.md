@@ -6,15 +6,14 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **Search hub and results merged** (2026-07-30, on `ux/phase-5-analyse`):
   typing swapped the hub out wholesale, taking Surprise me and any sight of the
-  repertoire with it. Surprise me now survives as a footer outside the scroller
-  (arrow-reachable); a `role="status"` count line above the list is the whole of
-  the feedback — no "did you mean"; "Saved" badges ride on matching rows rather
-  than a section that would draw a saved match twice. Phrasing rules live in
-  `lib/searchResultsSummary.ts`: the truncated form names no total (the search
-  counts everything above zero — 4,269 for "sicilian" vs a family of ~1,710),
-  and the move variant only fires when every row opens with it, spelled as the
-  data spells it. All three surfaces. Fixed en route: the overlay's last result
-  was clipped by the bottom tab bar. 506 + 834 green.
+  repertoire with it. Surprise me now survives as a footer outside the scroller,
+  reachable by arrowing one past the last result; "Saved" badges ride on the
+  matching rows rather than a section that would draw a saved match twice. A
+  count line was built and then cut — the search counts every record scoring
+  above zero (4,269 for "sicilian" vs a family of ~1,710), and counting only
+  rendered rows always says twenty; the openings appearing are the feedback, the
+  same reason there is no "did you mean". All three surfaces. Fixed en route:
+  the overlay's last result was clipped by the bottom tab bar. 493 + 834 green.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, all half-applied
   changes: the hero kept its filled Surprise button _and_ never got the hub; the

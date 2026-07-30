@@ -508,19 +508,22 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     });
   });
 
-  // The design replaced "did you mean" and every correction notice with a
-  // count line, so the count carries the whole of the feedback.
-  describe('Result summary and repertoire badges', () => {
-    it('counts the results above the list', async () => {
+  describe('Results list', () => {
+    // No count, no "did you mean", no correction notice: the openings
+    // appearing are the feedback. A number would only raise the question of
+    // what it counted — the search scores every record above zero, 4,269 for
+    // "sicilian" against a family of roughly 1,710.
+    it('states no result count', async () => {
       const user = userEvent.setup();
       render(<SearchBar {...defaultProps} />);
 
       await user.type(screen.getByRole('textbox'), 'pawn');
 
       await waitFor(() => {
-        const count = screen.getAllByRole('listitem').length;
-        expect(screen.getByRole('status')).toHaveTextContent(`${count} openings match`);
+        expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
       });
+      expect(screen.queryByRole('status')).not.toBeInTheDocument();
+      expect(screen.queryByText(/openings match/i)).not.toBeInTheDocument();
     });
 
     it('marks results already in the repertoire', async () => {

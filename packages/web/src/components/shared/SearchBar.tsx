@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
 import { SearchHub } from './SearchHub';
 import { useRepertoire } from '../../hooks/useRepertoire';
-import { isChessMove, summariseResults } from '../../lib/searchResultsSummary';
+import { isChessMove } from '../../lib/searchQuery';
 
 export interface Opening {
   fen: string;
@@ -359,7 +359,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Opening[]>([]);
-  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false);
@@ -372,7 +371,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   useEffect(() => {
     if (searchTerm.length < 2) {
       setSuggestions([]);
-      setTotalMatches(undefined);
       setShowSuggestions(false);
       setNoResults(false);
       return;
@@ -386,9 +384,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     const instantResults = findAndRankOpenings(queryToUse, openingsData);
     if (instantResults.length > 0) {
       setSuggestions(instantResults.slice(0, RENDER_LIMIT));
-      // The client-side scorer ranks everything it holds, so its own length is
-      // the true match count for the loaded slice of the index.
-      setTotalMatches(instantResults.length);
       setShowSuggestions(true);
       setNoResults(false);
     }
@@ -409,7 +404,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
         if (searchResults.results.length > 0) {
           setSuggestions(searchResults.results.slice(0, RENDER_LIMIT));
-          setTotalMatches(searchResults.totalResults || searchResults.results.length);
           setShowSuggestions(true);
           setNoResults(false);
           return;
@@ -587,13 +581,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
         {showSuggestions && suggestions.length > 0 && (
           <div className="search-results-dropdown" onMouseDown={(e) => e.preventDefault()}>
-            {/* The count is the whole of the feedback — there is no "did you
-                mean" and no correction notice — so it is announced, not just
-                drawn. */}
-            <div className="search-results-count" role="status">
-              {summariseResults({ query: searchTerm, results: suggestions, total: totalMatches })}
-            </div>
-
+            {/* No count line. There is no "did you mean" and no correction
+                notice either: fuzzy matching absorbs the typo, so the right
+                openings appearing is the whole of the feedback. A number
+                would only invite the question of what it counted — the search
+                scores every record above zero, which is 4,269 for "sicilian"
+                against a family of roughly 1,710. */}
             <ul className="search-suggestions">
               {suggestions.map((opening, index) => (
                 <li

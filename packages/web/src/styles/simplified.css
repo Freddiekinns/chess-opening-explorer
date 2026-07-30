@@ -1812,14 +1812,6 @@ body {
   text-align: left;
 }
 
-.search-results-count {
-  padding: var(--space-2-5) var(--space-4);
-  border-bottom: 1px solid var(--border-subtle);
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  font-variant-numeric: tabular-nums;
-}
-
 .search-suggestions {
   max-height: 280px;
   overflow-y: auto;

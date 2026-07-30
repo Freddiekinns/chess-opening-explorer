@@ -83,7 +83,7 @@ describe('TopBar search', () => {
 
   // All three search surfaces used to drop the hub — and Surprise me with it —
   // the moment a second character arrived.
-  it('keeps Surprise me and counts the results once typing starts', async () => {
+  it('keeps Surprise me once typing starts, and states no count', async () => {
     const user = userEvent.setup();
     stubSearch([
       { fen: 'fen-a', name: 'Sicilian Defence', eco: 'B20', moves: '1. e4 c5' },
@@ -96,7 +96,7 @@ describe('TopBar search', () => {
     await waitFor(() => expect(screen.getByText('Sicilian Najdorf')).toBeInTheDocument());
     expect(screen.queryByText('Your repertoire')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /surprise me/i })).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent('2 openings match');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
   });
 
   it('badges a result that is already saved', async () => {

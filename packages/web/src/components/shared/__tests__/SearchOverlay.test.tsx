@@ -96,7 +96,8 @@ describe('SearchOverlay', () => {
     expect(screen.queryByText('Recent')).not.toBeInTheDocument();
     // ...but the way out of a search that is not working stays put.
     expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent('1 opening matches');
+    // No count line — the openings appearing are the feedback.
+    expect(screen.queryByText(/opening[s]? match(es)?$/i)).not.toBeInTheDocument();
   });
 
   test('marks a result that is already in the repertoire', async () => {

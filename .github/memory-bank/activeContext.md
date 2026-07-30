@@ -11,16 +11,11 @@ give way, its way out does not.
 - **Surprise me survives into the results**, as a footer outside the scroller —
   it used to vanish on the second keystroke, i.e. exactly when someone is
   flailing. Reachable by arrowing one past the last result, not only by click.
-- **A count line above the list** carries the whole of the feedback: no "did you
-  mean", no correction notice. `role="status"`, so it reaches people who cannot
-  watch results appear. Four phrasings in `lib/searchResultsSummary.ts`, each
-  checkable against the rows under it.
-- **The truncated form names no total.** The search counts everything scoring
-  above zero — 4,269 for "sicilian" against a family of ~1,710 — which reads as
-  a claim about how many Sicilians exist. It says `Top 20 matches`.
-- **The move variant** (`3 openings begin with 1. Nf3`) only fires when every
-  row opens with that move, and prints the move as the **data** spells it: case
-  is semantic in algebraic notation.
+- **No count line and no number.** A "14 openings match" line was built, then
+  cut: the search counts every record scoring above zero — 4,269 for "sicilian"
+  against a family of ~1,710 — which reads as a claim about how many Sicilians
+  exist, and counting only rendered rows always says twenty. No "did you mean"
+  either; the openings appearing are the feedback.
 - **"Saved" badges on matching rows**, not a repertoire section (which would
   draw a saved match twice, at two ranks) and not a star (everywhere else a star
   is a control you press; these rows navigate).
@@ -31,10 +26,13 @@ duplicated-UI seam that produced four of the six audit defects. Two bugs found
 on the way: the overlay's last result was clipped by the bottom tab bar, and
 `.surpriseBtn` was dead CSS.
 
-**Deviations from the mock:** no bracketed ECO (the pill separates it); "Saved"
-in sentence case, not "SAVED"; the narrow top-bar dropdown drops the hint.
-**Verified:** 506 frontend, 834 backend, clean build, all three live.
-**Bundle:** new `components-search-results.html`. **Spec/plans:**
+**Deviations from the mock:** no count line at all; no bracketed ECO (the pill
+separates it); "Saved" in sentence case, not "SAVED". The narrow top-bar
+dropdown drops the visible hint — it moves to `title` + `aria-label` ("Surprise
+me — jump to a random opening"), so the name still starts with the visible text
+(WCAG 2.5.3). Icon and label stay on every surface. **Verified:** 493 frontend,
+834 backend, clean build, all three live. **Bundle:** new
+`components-search-results.html`. **Spec/plans:**
 `docs/superpowers/{specs,plans}/`
 
 ## Previous Task: UX review implementation audit

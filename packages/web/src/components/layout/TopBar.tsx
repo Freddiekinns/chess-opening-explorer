@@ -4,7 +4,6 @@ import { Search, Loader2, Sparkles } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
 import { SearchHub } from '../shared/SearchHub';
 import { useRepertoire } from '../../hooks/useRepertoire';
-import { summariseResults } from '../../lib/searchResultsSummary';
 import styles from './TopBar.module.css';
 
 interface SearchResult {
@@ -64,7 +63,6 @@ export default function TopBar() {
 function TopBarSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -85,7 +83,6 @@ function TopBarSearch() {
 
     if (value.trim().length < 2) {
       setResults([]);
-      setTotalMatches(undefined);
       setIsSearching(false);
       return;
     }
@@ -100,7 +97,6 @@ function TopBarSearch() {
           const data = await res.json();
           if (data.success && data.data) {
             setResults(data.data);
-            setTotalMatches(data.totalResults || data.data.length);
             setShowDropdown(data.data.length > 0);
           }
         }
@@ -184,9 +180,7 @@ function TopBarSearch() {
       ) : (
         results.length > 0 && (
           <div onMouseDown={(e) => e.preventDefault()}>
-            <div className={styles.resultsCount} role="status">
-              {summariseResults({ query, results, total: totalMatches })}
-            </div>
+            {/* No count line: the openings appearing are the feedback. */}
             <ul className={styles.results}>
               {results.map((r, i) => (
                 <li
@@ -214,11 +208,16 @@ function TopBarSearch() {
               }`}
               onClick={handleSurpriseMe}
               onMouseEnter={() => setActiveIndex(results.length)}
+              /* This dropdown is a fixed 238px, and the label plus the hint
+                 need ~265px — visibly, the hint only ever wrapped "Surprise
+                 me" onto two lines. So it moves to the accessible name and
+                 the tooltip instead of being dropped: the row still explains
+                 itself on hover and to a screen reader, and the name starts
+                 with the visible text (WCAG 2.5.3). */
+              aria-label="Surprise me — jump to a random opening"
+              title="Jump to a random opening"
             >
               <Sparkles size={14} aria-hidden="true" />
-              {/* No "Jump to a random opening" hint here — this field is a
-                  fixed narrow width, so the hint only ever wraps the label
-                  onto two lines. The label says it. */}
               <span>Surprise me</span>
             </button>
           </div>

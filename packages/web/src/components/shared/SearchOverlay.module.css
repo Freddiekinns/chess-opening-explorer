@@ -172,14 +172,6 @@
   white-space: nowrap;
 }
 
-/* The count line: the whole of the feedback, so it is announced too. */
-.resultsCount {
-  padding-bottom: var(--space-3);
-  font-size: var(--text-2xs);
-  color: var(--color-text-muted);
-  font-variant-numeric: tabular-nums;
-}
-
 /* Surprise me survives into the results. Quiet, because the results are the
    answer and this is the way out when they are not. */
 .surpriseRow {

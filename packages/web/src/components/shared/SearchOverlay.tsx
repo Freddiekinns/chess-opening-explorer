@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Search, Sparkles } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { SearchHub } from './SearchHub';
+import { SearchRow, SurpriseRow } from './SearchRow';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import styles from './SearchOverlay.module.css';
 
@@ -23,28 +24,6 @@ interface SearchOverlayProps {
   open: boolean;
   onClose: () => void;
 }
-
-const movesPreview = (moves: string) => moves?.split(' ').slice(0, 6).join(' ') ?? '';
-
-interface OpeningRowProps {
-  opening: SearchResult;
-  icon?: React.ReactNode;
-  trailing?: React.ReactNode;
-  onSelect: (opening: SearchResult) => void;
-}
-
-const OpeningRow: React.FC<OpeningRowProps> = ({ opening, icon, trailing, onSelect }) => (
-  <button type="button" className={styles.row} onClick={() => onSelect(opening)}>
-    {icon}
-    <span className={styles.rowText}>
-      <span className={styles.rowName}>{opening.name}</span>
-      <span className={styles.rowMeta}>
-        <span className={styles.rowEco}>{opening.eco}</span> · {movesPreview(opening.moves)}
-      </span>
-    </span>
-    {trailing}
-  </button>
-);
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
   const [query, setQuery] = useState('');
@@ -176,21 +155,18 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
         {/* No count line: the openings appearing are the feedback, the same
             reason there is no "did you mean". */}
         {showResults && (
-          <div className={styles.rowList}>
+          <ul className={styles.rowList}>
             {results.map((opening, i) => (
-              <OpeningRow
-                key={`${opening.fen}-${i}`}
-                opening={opening}
-                trailing={
-                  <>
-                    {isSaved(opening.fen) && <span className={styles.rowSaved}>Saved</span>}
-                    <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
-                  </>
-                }
-                onSelect={select}
-              />
+              <li key={`${opening.fen}-${i}`}>
+                <SearchRow
+                  opening={opening}
+                  saved={isSaved(opening.fen)}
+                  showChevron
+                  onSelect={select}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         )}
 
         {noResults && (
@@ -207,11 +183,9 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           deep is exactly where someone gives up, and that is where this has to
           still be on screen. */}
       {showResults && (
-        <button type="button" className={styles.surpriseRow} onClick={surpriseMe}>
-          <Sparkles size={14} aria-hidden="true" />
-          <span>Surprise me</span>
-          <span className={styles.surpriseHint}>Jump to a random opening</span>
-        </button>
+        <div className={styles.surpriseFooter}>
+          <SurpriseRow onSurprise={surpriseMe} />
+        </div>
       )}
     </div>
   );

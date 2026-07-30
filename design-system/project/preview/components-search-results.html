@@ -1,86 +1,58 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
 body{padding:24px;background:var(--surface-base)}
-.row{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
-.col{display:flex;flex-direction:column;gap:10px;width:360px}
+.wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:380px}
 .cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
-
-/* --- the component --- */
 .dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);overflow:hidden}
 
-/* The list scrolls; the panel does not. */
-.list{list-style:none;margin:0;padding:0;max-height:224px;overflow-y:auto}
-.item{padding:12px 0;border-bottom:1px solid var(--border-subtle);cursor:pointer}
-.item:last-child{border-bottom:none}
-.item.active{background:linear-gradient(135deg,rgba(232,93,4,.06) 0%,transparent 100%)}
-.main{display:flex;justify-content:space-between;align-items:center}
-.name{font-family:'DM Sans';font-size:14px;font-weight:600;color:var(--color-text-primary);margin:0 16px}
-.tags{display:flex;align-items:center;gap:8px;margin-right:16px;flex:none}
+/* --- panel layout only. The row below is components-search-row, copied
+       verbatim; do not restyle it here. --- */
+.list{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:4px;max-height:300px;overflow-y:auto}
+.footer{padding:12px;border-top:1px solid var(--border-subtle)}
+
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border-radius:8px;background:transparent;border:1px solid var(--border-subtle);cursor:pointer;text-align:left;font-family:'DM Sans';color:var(--color-text-primary)}
+.row.active{background:var(--surface-overlay);border-color:var(--color-border)}
+.icon{flex:none;color:var(--color-text-muted)}
+.text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.name{font-size:14px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.moves{font-family:var(--font-family-mono);font-size:12px;color:var(--color-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:12px;color:var(--color-text-muted)}
+.trailing{flex:none;display:flex;align-items:center;gap:8px}
+.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
 .saved{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid rgba(232,93,4,.3);border-radius:4px;background:rgba(232,93,4,.12);color:var(--color-brand-orange);font-family:'DM Sans';font-size:11px;font-weight:600;white-space:nowrap}
-.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600}
-.moves{font-family:var(--font-family-mono);font-size:11px;color:var(--color-text-muted);margin:4px 16px 0;opacity:.7}
 
-/* Surprise me, outside the scroller. */
-.surprise{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:12px 16px;background:none;border:none;border-top:1px solid var(--border-subtle);color:var(--color-brand-orange);font-family:'DM Sans';font-size:13px;font-weight:600;text-align:left;cursor:pointer}
-.surpriseHint{margin-left:auto;color:var(--color-text-muted);font-size:12px;font-weight:400}
-
-.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:600px;margin-top:24px}
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
 .note code{font-family:var(--font-family-mono);font-size:11px}
 </style></head><body>
 
-<div class="row">
+<div class="wrap">
   <div class="col">
-    <span class="cap">Search results · two matches</span>
+    <span class="cap">Search results · name query</span>
     <div class="dropdown">
       <ul class="list">
-        <li class="item">
-          <div class="main">
-            <span class="name">Sicilian Defense: Najdorf</span>
-            <span class="tags"><span class="saved">Saved</span><span class="eco">B90</span></span>
-          </div>
-          <div class="moves">1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6</div>
-        </li>
-        <li class="item active">
-          <div class="main">
-            <span class="name">Sicilian Defense: Najdorf, English Attack</span>
-            <span class="tags"><span class="eco">B90</span></span>
-          </div>
-          <div class="moves">… 6. Be3 e5 7. Nb3</div>
-        </li>
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Najdorf</span><span class="moves">1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6</span></span>
+          <span class="trailing"><span class="saved">Saved</span><span class="eco">B90</span></span>
+        </button></li>
+        <li><button class="row active">
+          <span class="text"><span class="name">Sicilian Defense: Najdorf, English Attack</span><span class="moves">… 6. Be3 e5 7. Nb3</span></span>
+          <span class="trailing"><span class="eco">B90</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Bowdler Attack</span><span class="moves">1. e4 c5 2. Bc4</span></span>
+          <span class="trailing"><span class="eco">B20</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Old Sicilian</span><span class="moves">1. e4 c5 2. Nf3 Nc6</span></span>
+          <span class="trailing"><span class="eco">B30</span></span>
+        </button></li>
       </ul>
-      <button class="surprise">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
-        <span>Surprise me</span>
-        <span class="surpriseHint">Jump to a random opening</span>
-      </button>
-    </div>
-  </div>
-
-  <div class="col">
-    <span class="cap">Search results · capped list, scrolls</span>
-    <div class="dropdown">
-      <ul class="list">
-        <li class="item">
-          <div class="main"><span class="name">Sicilian</span><span class="tags"><span class="eco">B30</span></span></div>
-          <div class="moves">1. e4 c5 2. Nf3 Nc6 3. Nc3 d6</div>
-        </li>
-        <li class="item">
-          <div class="main"><span class="name">Sicilian Defense</span><span class="tags"><span class="saved">Saved</span><span class="eco">B20</span></span></div>
-          <div class="moves">1. e4 c5</div>
-        </li>
-        <li class="item">
-          <div class="main"><span class="name">Sicilian Defense: Bowdler Attack</span><span class="tags"><span class="eco">B20</span></span></div>
-          <div class="moves">1. e4 c5 2. Bc4</div>
-        </li>
-        <li class="item">
-          <div class="main"><span class="name">Sicilian Defense: Old Sicilian</span><span class="tags"><span class="eco">B30</span></span></div>
-          <div class="moves">1. e4 c5 2. Nf3 Nc6</div>
-        </li>
-      </ul>
-      <button class="surprise">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
-        <span>Surprise me</span>
-        <span class="surpriseHint">Jump to a random opening</span>
-      </button>
+      <div class="footer">
+        <button class="row">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          <span class="text"><span class="name">Surprise me</span><span class="hint">Jump to a random opening</span></span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -88,36 +60,51 @@ body{padding:24px;background:var(--surface-base)}
     <span class="cap">Search results · move query</span>
     <div class="dropdown">
       <ul class="list">
-        <li class="item">
-          <div class="main"><span class="name">Zukertort Opening</span><span class="tags"><span class="eco">A04</span></span></div>
-          <div class="moves">1. Nf3</div>
-        </li>
-        <li class="item">
-          <div class="main"><span class="name">Réti Opening</span><span class="tags"><span class="eco">A09</span></span></div>
-          <div class="moves">1. Nf3 d5 2. c4</div>
-        </li>
-        <li class="item">
-          <div class="main"><span class="name">King's Indian Attack</span><span class="tags"><span class="eco">A07</span></span></div>
-          <div class="moves">1. Nf3 d5 2. g3</div>
-        </li>
+        <li><button class="row">
+          <span class="text"><span class="name">Zukertort Opening</span><span class="moves">1. Nf3</span></span>
+          <span class="trailing"><span class="eco">A04</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Réti Opening</span><span class="moves">1. Nf3 d5 2. c4</span></span>
+          <span class="trailing"><span class="eco">A09</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">King's Indian Attack</span><span class="moves">1. Nf3 d5 2. g3</span></span>
+          <span class="trailing"><span class="eco">A07</span></span>
+        </button></li>
       </ul>
-      <button class="surprise">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
-        <span>Surprise me</span>
-        <span class="surpriseHint">Jump to a random opening</span>
-      </button>
+      <div class="footer">
+        <button class="row">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          <span class="text"><span class="name">Surprise me</span><span class="hint">Jump to a random opening</span></span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
 <p class="note">
   What replaces <code>components-search-hub</code> once two characters are
-  typed — on all three surfaces. One ranked list that scrolls, no reveal
-  button. Fuzzy matching already absorbs typos, so there is no "did you mean",
-  no correction notice and no explanation of what was understood: the right
+  typed — on all three surfaces. One ranked list that scrolls, no reveal button.
+  Fuzzy matching already absorbs typos, so there is no "did you mean", no
+  correction notice and no explanation of what was understood: the right
   openings appearing <em>is</em> the feedback. Natural-language queries
   ("aggressive openings") land in this same list — the server's style intent
   changes the ranking, not the layout.
+</p>
+<p class="note">
+  <strong>This card owns the panel, not the rows.</strong> Rows come from
+  <code>components-search-row</code>, the same row the hub draws. They were two
+  separate implementations until 2026-07-30 — on two different type scales — so
+  typing a second character redrew every opening at a different size, weight and
+  layout. There was a third in the top bar. Do not restyle a row here to suit
+  the results.
+</p>
+<p class="note">
+  <strong>The list scrolls further than it used to.</strong> It was capped at
+  280px against rows of 71px, so under four of twenty results were visible and
+  the panel read as a peephole. It now scales with the viewport
+  (<code>min(60vh, 480px)</code>), which is around nine rows on a laptop.
 </p>
 <p class="note">
   <strong>No count line, and no number anywhere.</strong> An earlier draft put
@@ -127,34 +114,26 @@ body{padding:24px;background:var(--surface-base)}
   claim about how many Sicilians exist. Counting only the rendered rows instead
   would have been true but useless — it always says twenty. A count that cannot
   be trusted and a count that never varies are both worse than the silence the
-  page already had, and the design's own argument covers it: the openings
-  appearing are the feedback.
+  page already had.
 </p>
 <p class="note">
-  <strong>Surprise me sits outside the scroller.</strong> It used to vanish on
-  the second keystroke — the way out of a search that is not working
-  disappearing exactly when the user is flailing. Twenty results deep is where
-  someone gives up, so that is where it has to still be on screen. It is
-  reachable by arrowing one past the last result, not only by clicking.
-</p>
-<p class="note">
-  The icon and the label stay on every surface. Only the <em>hint</em> varies:
-  the top-bar dropdown is a fixed 238px and the label plus hint need ~265px, so
-  there the hint would wrap "Surprise me" onto two lines. It moves to
-  <code>title</code> and to an <code>aria-label</code> of "Surprise me — jump to
-  a random opening" rather than being dropped — the row still explains itself on
-  hover and to a screen reader, and the accessible name begins with the visible
-  text, which WCAG 2.5.3 requires. A shorter visible hint was the obvious
-  alternative and was rejected: "Surprise me · Random" reads as two words for
-  one idea, and renaming the row to fit would fragment a label that is identical
-  on four surfaces.
+  <strong>Surprise me sits outside the scroller, and keeps its hint on every
+  surface.</strong> It used to vanish on the second keystroke — the way out of a
+  search that is not working disappearing exactly when the user is flailing.
+  Twenty results deep is where someone gives up, so that is where it has to
+  still be on screen; it is reachable by arrowing one past the last result, not
+  only by clicking. The top-bar dropdown used to drop the visible hint for want
+  of ~25px and keep it only in a <code>title</code> and an
+  <code>aria-label</code> — invisible to a sighted user arrowing through the
+  list. That panel now sizes to its contents instead: the row explains itself,
+  and the exception is gone.
 </p>
 <p class="note">
   <strong>"Saved", not a star.</strong> Repertoire membership rides on the
   result row rather than sitting in a section of its own — a saved opening that
-  also matched the query would otherwise be drawn twice, at two different
-  ranks. It is a text badge because everywhere else in the app a star is a
-  control you press to add or remove; on a row whose whole job is to navigate,
-  the same star would invite a tap that does something else entirely.
+  also matched the query would otherwise be drawn twice, at two different ranks.
+  It is a text badge because everywhere else in the app a star is a control you
+  press to add or remove; on a row whose whole job is to navigate, the same star
+  would invite a tap that does something else entirely.
 </p>
 </body></html>

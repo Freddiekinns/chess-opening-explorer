@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, Sparkles, Star } from 'lucide-react';
+import { Clock, Star } from 'lucide-react';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import { getRecentOpenings, type RecentOpening } from '../../lib/recentOpenings';
+import { SearchRow, SurpriseRow, type SearchRowOpening } from './SearchRow';
+import rowStyles from './SearchRow.module.css';
 import styles from './SearchHub.module.css';
 
 export interface SearchHubProps {
@@ -13,20 +15,14 @@ export interface SearchHubProps {
   repertoireLimit?: number;
 }
 
-const movesPreview = (moves: string) => moves?.split(' ').slice(0, 6).join(' ') ?? '';
-
-interface HubRow {
-  fen: string;
-  name: string;
-  eco: string;
-  moves: string;
-}
-
 /**
  * The pre-typing state of every search surface: recently viewed, the user's
  * repertoire, and a way out to a random opening. Shared so the desktop
  * dropdown and the mobile overlay cannot drift — desktop previously showed
  * nothing at all until you typed.
+ *
+ * Rows come from `SearchRow`, the same component the results lists use, so
+ * typing changes which openings are listed and nothing else about them.
  */
 export const SearchHub: React.FC<SearchHubProps> = ({
   onSelect,
@@ -43,21 +39,10 @@ export const SearchHub: React.FC<SearchHubProps> = ({
 
   const saved = repertoire.slice(0, repertoireLimit);
 
-  const renderRow = (entry: HubRow, icon: React.ReactNode) => (
-    <button
-      key={entry.fen}
-      type="button"
-      className={styles.row}
-      onClick={() => onSelect(entry.fen)}
-    >
-      {icon}
-      <span className={styles.rowText}>
-        <span className={styles.rowName}>{entry.name}</span>
-        <span className={styles.rowMeta}>
-          <span className={styles.rowEco}>{entry.eco}</span> · {movesPreview(entry.moves)}
-        </span>
-      </span>
-    </button>
+  const renderRow = (entry: SearchRowOpening, icon: React.ReactNode) => (
+    <li key={entry.fen}>
+      <SearchRow opening={entry} icon={icon} onSelect={(opening) => onSelect(opening.fen)} />
+    </li>
   );
 
   return (
@@ -65,39 +50,33 @@ export const SearchHub: React.FC<SearchHubProps> = ({
       {recents.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Recent</h3>
-          <div className={styles.rowList}>
+          <ul className={styles.rowList}>
             {recents.map((entry) =>
-              renderRow(entry, <Clock size={14} className={styles.rowIcon} aria-hidden="true" />)
+              renderRow(entry, <Clock size={14} className={rowStyles.rowIcon} aria-hidden="true" />)
             )}
-          </div>
+          </ul>
         </section>
       )}
 
       {saved.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Your repertoire</h3>
-          <div className={styles.rowList}>
+          <ul className={styles.rowList}>
             {saved.map((entry) =>
               renderRow(
                 entry,
                 <Star
                   size={14}
-                  className={`${styles.rowIcon} ${styles.rowIconStar}`}
+                  className={`${rowStyles.rowIcon} ${rowStyles.rowIconStar}`}
                   aria-hidden="true"
                 />
               )
             )}
-          </div>
+          </ul>
         </section>
       )}
 
-      <button type="button" className={styles.surprise} onClick={onSurprise}>
-        <Sparkles size={14} aria-hidden="true" />
-        <span className={styles.rowText}>
-          <span className={styles.rowName}>Surprise me</span>
-          <span className={styles.rowMeta}>Jump to a random opening</span>
-        </span>
-      </button>
+      <SurpriseRow onSurprise={onSurprise} />
     </div>
   );
 };

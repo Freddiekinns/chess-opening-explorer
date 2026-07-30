@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Loader2, Sparkles } from 'lucide-react';
+import { Search, Loader2 } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
 import { SearchHub } from '../shared/SearchHub';
+import { SearchRow, SurpriseRow } from '../shared/SearchRow';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import styles from './TopBar.module.css';
 
@@ -183,43 +184,31 @@ function TopBarSearch() {
             {/* No count line: the openings appearing are the feedback. */}
             <ul className={styles.results}>
               {results.map((r, i) => (
-                <li
-                  key={`${r.fen}-${i}`}
-                  className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
-                  onMouseDown={() => selectResult(r)}
-                  onMouseEnter={() => setActiveIndex(i)}
-                >
-                  <span className={styles.dropdownRow}>
-                    <span className={styles.dropdownName}>{r.name}</span>
-                    {isSaved(r.fen) && <span className={styles.dropdownSaved}>Saved</span>}
-                  </span>
-                  <span className={styles.dropdownMeta}>
-                    {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
-                  </span>
+                <li key={`${r.fen}-${i}`}>
+                  <SearchRow
+                    opening={r}
+                    saved={isSaved(r.fen)}
+                    active={i === activeIndex}
+                    onSelect={() => selectResult(r)}
+                    onMouseEnter={() => setActiveIndex(i)}
+                  />
                 </li>
               ))}
             </ul>
             {/* Outside the scrolling list, so it stays reachable however long
-                the results run. */}
-            <button
-              type="button"
-              className={`${styles.surpriseRow} ${
-                activeIndex === results.length ? styles.surpriseRowActive : ''
-              }`}
-              onClick={handleSurpriseMe}
-              onMouseEnter={() => setActiveIndex(results.length)}
-              /* This dropdown is a fixed 238px, and the label plus the hint
-                 need ~265px — visibly, the hint only ever wrapped "Surprise
-                 me" onto two lines. So it moves to the accessible name and
-                 the tooltip instead of being dropped: the row still explains
-                 itself on hover and to a screen reader, and the name starts
-                 with the visible text (WCAG 2.5.3). */
-              aria-label="Surprise me — jump to a random opening"
-              title="Jump to a random opening"
-            >
-              <Sparkles size={14} aria-hidden="true" />
-              <span>Surprise me</span>
-            </button>
+                the results run. The hint used to be dropped here — the panel
+                was pinned to the 240px field and the label plus hint need
+                ~265px, so it survived only in a title and an aria-label, which
+                a sighted user navigating by keyboard never sees. The panel now
+                sizes to its contents instead, so the row explains itself here
+                exactly as it does everywhere else. */}
+            <div className={styles.surpriseFooter}>
+              <SurpriseRow
+                onSurprise={handleSurpriseMe}
+                active={activeIndex === results.length}
+                onMouseEnter={() => setActiveIndex(results.length)}
+              />
+            </div>
           </div>
         )
       )}

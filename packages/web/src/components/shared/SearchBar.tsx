@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles } from 'lucide-react';
 import { SearchHub } from './SearchHub';
+import { SearchRow, SurpriseRow } from './SearchRow';
 import { useRepertoire } from '../../hooks/useRepertoire';
 import { isChessMove } from '../../lib/searchQuery';
 
@@ -181,23 +181,8 @@ function expandAbbreviations(query: string): string {
   return ABBREVIATION_MAP[lower] || query;
 }
 
-// Format moves for display. Similar variations share the same first moves,
-// so when the line is too long keep the tail — that's the distinguishing part.
-function formatMovesPreview(moves: string): string {
-  if (!moves) return '';
-  const trimmed = moves.trim();
-  const MAX_LENGTH = 60;
-  if (trimmed.length <= MAX_LENGTH) return trimmed;
-
-  const tail = trimmed.slice(-MAX_LENGTH);
-  // Start at a move number ("4." / "12.") so we don't show half a move pair
-  const moveNumberMatch = tail.match(/\d+\.\s/);
-  if (moveNumberMatch && moveNumberMatch.index !== undefined) {
-    return '… ' + tail.slice(moveNumberMatch.index);
-  }
-  const firstSpace = tail.indexOf(' ');
-  return '… ' + (firstSpace > -1 ? tail.slice(firstSpace + 1) : tail);
-}
+// formatMovesPreview now lives in lib/searchQuery beside isChessMove — every
+// search surface draws the same row, so they must draw the same preview.
 
 // Client-side fallback search (kept for offline scenarios)
 function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
@@ -587,29 +572,22 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 would only invite the question of what it counted — the search
                 scores every record above zero, which is 4,269 for "sicilian"
                 against a family of roughly 1,710. */}
+            {/* A real <ul>: twenty ranked results are a list, and assistive
+                technology should be told how many there are. */}
             <ul className="search-suggestions">
               {suggestions.map((opening, index) => (
-                <li
-                  key={`${opening.fen}-${index}`}
-                  className={`suggestion-item ${index === activeSuggestion ? 'active' : ''}`}
-                  onClick={() => handleSuggestionClick(opening)}
-                  onMouseEnter={() => setActiveSuggestion(index)}
-                >
-                  <div className="suggestion-main">
-                    <strong className="opening-name">{opening.name}</strong>
-                    <span className="suggestion-tags">
-                      {/* Repertoire membership travels with the result rather
-                          than sitting in a section of its own: a saved opening
-                          that also matches the query would otherwise be drawn
-                          twice, in two different ranks. */}
-                      {isSaved(opening.fen) && <span className="suggestion-saved">Saved</span>}
-                      {/* No brackets: the pill already separates it. */}
-                      <span className="opening-eco eco-code">{opening.eco}</span>
-                    </span>
-                  </div>
-                  {opening.moves && (
-                    <div className="suggestion-moves">{formatMovesPreview(opening.moves)}</div>
-                  )}
+                <li key={`${opening.fen}-${index}`}>
+                  <SearchRow
+                    opening={opening}
+                    active={index === activeSuggestion}
+                    /* Repertoire membership travels with the result rather
+                       than sitting in a section of its own: a saved opening
+                       that also matches the query would otherwise be drawn
+                       twice, in two different ranks. */
+                    saved={isSaved(opening.fen)}
+                    onSelect={() => handleSuggestionClick(opening)}
+                    onMouseEnter={() => setActiveSuggestion(index)}
+                  />
                 </li>
               ))}
             </ul>
@@ -617,18 +595,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             {showSurpriseFooter && (
               // Outside the scroller on purpose: an escape hatch that scrolls
               // away is not one.
-              <button
-                type="button"
-                className={`search-results-surprise ${
-                  activeSuggestion === suggestions.length ? 'active' : ''
-                }`}
-                onClick={triggerSurprise}
-                onMouseEnter={() => setActiveSuggestion(suggestions.length)}
-              >
-                <Sparkles size={14} aria-hidden="true" />
-                <span>Surprise me</span>
-                <span className="search-results-surprise-hint">Jump to a random opening</span>
-              </button>
+              <div className="search-results-footer">
+                <SurpriseRow
+                  onSurprise={triggerSurprise}
+                  active={activeSuggestion === suggestions.length}
+                  onMouseEnter={() => setActiveSuggestion(suggestions.length)}
+                />
+              </div>
             )}
           </div>
         )}

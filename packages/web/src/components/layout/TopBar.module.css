@@ -128,8 +128,15 @@
 .dropdown {
   position: absolute;
   top: calc(100% + var(--space-1));
-  left: 0;
+  /* Anchored to the field's right edge and free to grow leftwards, rather
+     than pinned to both edges of a 240px field. It was that 240px that forced
+     Surprise me to drop its hint here and nowhere else — the panel is the
+     thing that should give, not the row. */
   right: 0;
+  left: auto;
+  width: max-content;
+  min-width: 100%;
+  max-width: min(380px, calc(100vw - var(--space-8)));
   background-color: var(--surface-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
@@ -140,90 +147,29 @@
 
 .results {
   list-style: none;
-  padding: 0;
   margin: 0;
-  max-height: 320px;
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: 360px;
   overflow-y: auto;
 }
 
+/* Pinned under the scroller. The separator belongs to the panel, so the row
+   inside stays the row it is on every other surface. */
+.surpriseFooter {
+  padding: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Rows come from SearchRow.module.css. This file owns the panel only — it
+   used to carry a third implementation of a result row, different again from
+   the hero's and the overlay's. */
 .hubWrap {
   padding: var(--space-3);
   max-height: 420px;
   overflow-y: auto;
-}
-
-.dropdownRow {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-/* "Saved", not a star — a star on a navigating row would read as a toggle. */
-.dropdownSaved {
-  flex: none;
-  margin-left: auto;
-  padding: 1px var(--space-1-5);
-  border: 1px solid var(--accent-a30);
-  border-radius: var(--radius-sm);
-  background: var(--accent-a12);
-  color: var(--color-brand-orange);
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-semibold);
-  white-space: nowrap;
-}
-
-.surpriseRow {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  width: 100%;
-  min-height: 44px;
-  padding: var(--space-2) var(--space-3);
-  background: none;
-  border: none;
-  border-top: 1px solid var(--border-subtle);
-  color: var(--color-brand-orange);
-  font-family: inherit;
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  text-align: left;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background-color 150ms ease;
-}
-
-.surpriseRow:hover,
-.surpriseRowActive {
-  background-color: var(--surface-overlay);
-}
-
-.dropdownItem {
-  padding: var(--space-2) var(--space-3);
-  cursor: pointer;
-  transition: background-color 150ms ease;
-}
-
-.dropdownItem:not(:last-child) {
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.dropdownItem:hover,
-.dropdownItemActive {
-  background-color: var(--surface-overlay);
-}
-
-.dropdownName {
-  display: block;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-}
-
-.dropdownMeta {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-0-5);
 }
 
 /* Mobile search icon — hidden on desktop */

@@ -1793,9 +1793,9 @@ body {
 
 /* Regular search buttons for non-landing variants */
 
-/* The results dropdown. Three parts: a count line, one ranked list that
-   scrolls, and the Surprise me footer — which sits outside the scroller so it
-   cannot scroll out of reach. */
+/* The results dropdown. Two parts: one ranked list that scrolls, and the
+   Surprise me footer — which sits outside the scroller so it cannot scroll out
+   of reach. Rows come from SearchRow.module.css, the same rows the hub draws. */
 .search-results-dropdown {
   position: absolute;
   top: 100%;
@@ -1813,12 +1813,25 @@ body {
 }
 
 .search-suggestions {
-  max-height: 280px;
+  /* Was a fixed 280px, which showed under four of twenty results and made the
+     panel feel like a peephole. Scaling with the viewport keeps the whole
+     ranked list reachable on a laptop without the dropdown running off a short
+     screen. */
+  max-height: min(60vh, 480px);
   overflow-y: auto;
-  /* Reset default ul styling */
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
   margin: 0;
   list-style: none;
+}
+
+/* Pinned under the scroller. The separator is the panel's, not the row's, so
+   the row inside stays the same row it is everywhere else. */
+.search-results-footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
 }
 
 @keyframes slideDown {
@@ -1843,44 +1856,6 @@ body {
   z-index: 1001;
 }
 
-/* Surprise me, kept alive through typing. It reads as a row rather than a
-   button: a filled control here would out-shout the results it sits under. */
-.search-results-surprise {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2-5);
-  width: 100%;
-  min-height: 44px;
-  padding: var(--space-3) var(--space-4);
-  background: none;
-  border: none;
-  border-top: 1px solid var(--border-subtle);
-  color: var(--color-brand-orange);
-  font-family: inherit;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  text-align: left;
-  cursor: pointer;
-  transition: background 150ms ease;
-}
-
-.search-results-surprise:hover,
-.search-results-surprise.active {
-  background: var(--accent-a12);
-}
-
-.search-results-surprise:focus-visible {
-  outline: 2px solid var(--color-brand-orange);
-  outline-offset: -2px;
-}
-
-.search-results-surprise-hint {
-  margin-left: auto;
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-normal);
-}
-
 /* The hub the focused hero field opens: recents, repertoire, Surprise me.
    Same anchor as .search-suggestions — one replaces the other. */
 .search-hub-dropdown {
@@ -1897,133 +1872,19 @@ body {
   backdrop-filter: blur(12px);
   overflow: hidden;
   text-align: left;
+  /* This panel had no interior padding at all, so "Recent" sat one pixel from
+     the top border and read as clipped, and every row touched the sides. The
+     mobile overlay never showed it because its scroll body supplies the inset. */
+  padding: var(--space-3);
+  box-sizing: border-box;
 }
 
-.suggestion-item {
-  padding: var(--space-3) 0;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  border-bottom: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  min-height: 48px;
-  position: relative;
-}
-
-.suggestion-item:hover,
-.suggestion-item.active {
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-  transform: translateY(-0.5px);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Add subtle focus state for keyboard navigation */
-.suggestion-item:focus {
-  outline: 2px solid var(--accent-a50);
-  outline-offset: -2px;
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-}
-
-/* No corner radii on the end rows any more: the count line and the Surprise
-   footer own the dropdown's edges, so a rounded first or last row would cut a
-   notch out of the middle of the panel. */
-.suggestion-item:last-child {
-  border-bottom: none;
-}
-
-.suggestion-item .opening-name {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
-  flex: 1;
-  /* Override global .opening-name styles */
-  text-align: left;
-  line-height: var(--line-height-normal);
-  margin: 0 var(--space-4) 0 var(--space-4);
-  letter-spacing: var(--letter-spacing-normal);
-  position: static;
-}
-
-/* Trailing metadata on a result row: the repertoire badge, then the ECO code. */
-.suggestion-tags {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-right: var(--space-4);
-  flex: none;
-}
-
-.suggestion-tags .eco-code {
-  margin-right: 0;
-}
-
-/* "Saved", not a star. Everywhere else in the app a star is a control you
-   press to add or remove; on a row whose whole job is to navigate, the same
-   star would invite a tap that does something else entirely. */
-.suggestion-saved {
-  display: flex;
-  align-items: center;
-  height: 22px;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--accent-a30);
-  border-radius: var(--radius-sm);
-  background: var(--accent-a12);
-  color: var(--color-brand-orange);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  white-space: nowrap;
-}
-
-.suggestion-item .eco-code {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  font-family: var(--font-family-mono);
-  letter-spacing: 0.5px;
-  background: var(--accent-a6);
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-default);
-  margin-right: var(--space-4);
-  transition: all 0.15s ease;
-}
-
-.suggestion-item:hover .eco-code {
-  background: var(--accent-a12);
-  border-color: var(--accent-a30);
-  color: var(--color-brand-orange);
-}
-
-/* Suggestion item layout with moves preview */
-.suggestion-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.suggestion-moves {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  font-family: var(--font-family-mono);
-  margin: var(--space-1) var(--space-4) 0 var(--space-4);
-  opacity: 0.7;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: left;
-}
-
-.suggestion-item:hover .suggestion-moves {
-  opacity: 1;
-  color: var(--color-text-secondary);
-}
+/* The .suggestion-* rules that used to live here are gone. They were a second
+   implementation of a search row — 16px semibold names on the legacy
+   --font-size-* scale, a 135deg gradient and a half-pixel lift on hover, an
+   ECO pill that turned orange as if it were pressable — sitting beside the
+   hub's rows on the --text-* scale. One row now serves both, in
+   SearchRow.module.css. */
 
 /* No results message */
 .search-no-results {
@@ -2711,25 +2572,9 @@ body {
     margin: 0 auto;
   }
 
-  .suggestion-item .opening-name {
-    font-size: var(--font-size-sm);
-    margin: 0 var(--space-3) 0 var(--space-3);
-  }
-
-  .suggestion-item .eco-code {
-    margin-right: var(--space-3);
-    font-size: var(--font-size-xs);
-  }
-
-  .suggestion-tags {
-    margin-right: var(--space-3);
-  }
-
-  /* The label and the count line already say what this does; at this width
-     the hint would push one of them onto a second line. */
-  .search-results-surprise-hint {
-    display: none;
-  }
+  /* The narrow-width overrides for search rows are gone with the rules they
+     overrode. SearchRow sizes itself the same at every width: the name
+     ellipses and the moves line ellipses, so nothing needs to shrink. */
 }
 
 /* Small mobile breakpoint (up to 480px) */

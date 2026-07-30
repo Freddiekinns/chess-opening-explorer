@@ -134,6 +134,53 @@ The route's 7-day CDN cache absorbs it and it 403s crawlers. No reserved height
 — plenty of deep positions have no master games at all, and a placeholder that
 later vanished would shift content _upward_ under a finger.
 
+### 3.3 One search row for all three surfaces (2026-07-30)
+
+Phases 1 and 5 added a pre-typing hub to each search surface and kept Surprise
+me alive through typing, but each surface built its own rows. By the end there
+were **three** implementations of a search result row and **two** of the hub
+row, and the two states were on different type scales — the hub on `--text-*`
+(13px medium name, ECO as inline mono text in a meta line), the hero's results
+on the `--font-size-*` legacy aliases (16px semibold name, ECO as a bordered
+pill, moves on their own line, a 135° gradient and a half-pixel lift on hover),
+and the top bar on a third mix again. Typing a second character therefore
+changed an opening's size, weight, layout and hover behaviour, and Surprise me
+went from a muted two-line row to brand orange semibold with its hint flung to
+the right margin — louder than the twenty real answers above it, which its own
+source comment said it must not be.
+
+None of that was a decision. It is what happens when four surfaces are built in
+four phases and the row is never named as a component.
+
+`components/shared/SearchRow.tsx` is now that component — `SearchRow` and
+`SurpriseRow`, styled by `SearchRow.module.css`, on the `--text-*` scale. The
+hero dropdown, the top-bar dropdown and the mobile overlay all draw it, before
+and after typing. Where a row came from is carried by its leading icon (clock =
+recent, star = repertoire, no icon = a result) and by the section heading above
+it, never by its shape. `formatMovesPreview` moved to `lib/searchQuery` so the
+preview cannot differ between surfaces either — two of them used a blunt
+first-six-plies preview, which renders every Sicilian variation as "1. e4 c5".
+
+Three consequences worth recording, because each reverses something earlier:
+
+- **The top-bar dropdown is no longer pinned to its field.** Phase 1 fixed the
+  field at 240px (unchanged), and the dropdown inherited that width, which is
+  why Surprise me dropped its visible hint there and kept it only in a `title`
+  and an `aria-label`. That is invisible to a sighted user arrowing through the
+  list. The panel now sizes to its contents up to 380px, so the row explains
+  itself on every surface and the exception is gone.
+- **The hero hub dropdown had no interior padding at all.** "Recent" sat one
+  pixel below the top border and read as clipped; every row touched the sides.
+  The mobile overlay never showed the fault because its scrolling body supplies
+  the inset.
+- **The results list was capped at 280px** against rows of 71px — under four of
+  twenty visible. Now `min(60vh, 480px)`.
+
+Guarded by `components/shared/__tests__/search-row-parity.test.tsx`, which
+compares a hub row against a results row and fails if they diverge. Canonical
+reference: `design-system/project/preview/components-search-row.html`; the hub
+and results cards own their panels and explicitly do not restyle the row.
+
 ---
 
 ## 4. Additions not in the review

@@ -1,93 +1,95 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
 body{padding:24px;background:var(--surface-base)}
-.row{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
-.col{display:flex;flex-direction:column;gap:10px;width:320px}
+.wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:340px}
 .cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
 .dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);padding:12px}
 
-/* --- the component --- */
+/* --- hub layout only. The row below is components-search-row, copied
+       verbatim; do not restyle it here. --- */
 .section{margin-bottom:16px}
 .sectionLabel{font-family:'DM Sans';font-size:10px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px}
-.rowList{display:flex;flex-direction:column;gap:4px}
-.hubRow{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid var(--color-border);cursor:pointer;text-align:left;font-family:'DM Sans'}
-.hubRow.hover{background:var(--surface-overlay)}
-.hubRow.focus{outline:2px solid var(--color-brand-orange);outline-offset:2px}
+.rowList{display:flex;flex-direction:column;gap:4px;list-style:none;margin:0;padding:0}
+
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border-radius:8px;background:transparent;border:1px solid var(--border-subtle);cursor:pointer;text-align:left;font-family:'DM Sans';color:var(--color-text-primary)}
+.row.hover{background:var(--surface-overlay);border-color:var(--color-border)}
 .icon{flex:none;color:var(--color-text-muted)}
 .iconStar{color:var(--color-brand-orange);fill:var(--color-brand-orange)}
 .text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.name{font-size:13px;font-weight:500;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.meta{font-size:11px;color:var(--color-text-secondary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.eco{font-family:var(--font-family-mono)}
-.surprise{color:var(--color-text-muted)}
-.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:560px;margin-top:24px}
+.name{font-size:14px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.moves{font-family:var(--font-family-mono);font-size:12px;color:var(--color-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:12px;color:var(--color-text-muted)}
+.trailing{flex:none;display:flex;align-items:center;gap:8px}
+.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
+
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
+.note code{font-family:var(--font-family-mono);font-size:11px}
 </style></head><body>
-<div class="row">
+<div class="wrap">
   <div class="col">
     <span class="cap">Search hub · desktop dropdown & mobile overlay</span>
     <div class="dropdown">
       <div class="section">
         <p class="sectionLabel">Recent</p>
-        <div class="rowList">
-          <button class="hubRow">
+        <ul class="rowList">
+          <li><button class="row">
             <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span class="text"><span class="name">French Defence</span><span class="meta"><span class="eco">C00</span> · 1. e4 e6</span></span>
-          </button>
-          <button class="hubRow hover">
+            <span class="text"><span class="name">French Defence</span><span class="moves">1. e4 e6</span></span>
+            <span class="trailing"><span class="eco">C00</span></span>
+          </button></li>
+          <li><button class="row hover">
             <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span class="text"><span class="name">Caro-Kann Defence</span><span class="meta"><span class="eco">B10</span> · 1. e4 c6</span></span>
-          </button>
-        </div>
+            <span class="text"><span class="name">Caro-Kann Defence</span><span class="moves">1. e4 c6</span></span>
+            <span class="trailing"><span class="eco">B10</span></span>
+          </button></li>
+        </ul>
       </div>
 
       <div class="section">
         <p class="sectionLabel">Your repertoire</p>
-        <div class="rowList">
-          <button class="hubRow">
+        <ul class="rowList">
+          <li><button class="row">
             <svg class="icon iconStar" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span class="text"><span class="name">Sicilian Defence</span><span class="meta"><span class="eco">B20</span> · 1. e4 c5</span></span>
-          </button>
-        </div>
+            <span class="text"><span class="name">Sicilian Defence</span><span class="moves">1. e4 c5</span></span>
+            <span class="trailing"><span class="eco">B20</span></span>
+          </button></li>
+        </ul>
       </div>
 
-      <button class="hubRow surprise">
-        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
-        <span class="text"><span class="name">Surprise me</span><span class="meta">Jump to a random opening</span></span>
+      <button class="row">
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+        <span class="text"><span class="name">Surprise me</span><span class="hint">Jump to a random opening</span></span>
       </button>
-    </div>
-  </div>
-
-  <div class="col">
-    <span class="cap">Row states · rest / hover / focus</span>
-    <div class="dropdown">
-      <div class="rowList">
-        <button class="hubRow"><svg class="icon iconStar" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="text"><span class="name">Rest</span><span class="meta"><span class="eco">B20</span> · 1. e4 c5</span></span></button>
-        <button class="hubRow hover"><svg class="icon iconStar" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="text"><span class="name">Hover</span><span class="meta"><span class="eco">B20</span> · 1. e4 c5</span></span></button>
-        <button class="hubRow focus"><svg class="icon iconStar" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="text"><span class="name">Focus</span><span class="meta"><span class="eco">B20</span> · 1. e4 c5</span></span></button>
-      </div>
     </div>
   </div>
 </div>
 
 <p class="note">
   The pre-typing state of every search surface — desktop's dropdown previously
-  showed nothing at all until you typed. Surprise me is a hub row, not a filled
-  orange button: it is a browse-y action and must not read as the primary thing
-  on the surface. Rows are 44px minimum and carry the standard focus ring.
+  showed nothing at all until you typed. All three surfaces render this: the
+  top-bar dropdown, the mobile overlay, and the Discover hero field. If a search
+  surface gains a pre-typing state, it uses this hub; do not draw a second one.
 </p>
 <p class="note">
-  All three surfaces render this: the top-bar dropdown, the mobile overlay, and
-  the Discover hero field. The hero shipped for six phases without it, and with
-  the old filled Surprise button still beside the input — two Surprise me
-  controls on the one screen whose change was "search is the only prominent
-  element". If a search surface gains a pre-typing state, it uses this hub;
-  do not draw a second one.
+  <strong>This card owns the sections, not the rows.</strong> Rows come from
+  <code>components-search-row</code> — the same row the results list draws, so
+  typing changes which openings are listed and nothing else about them. The two
+  used to diverge on ten counts including the type scale itself. Do not restyle
+  a row here to suit the hub.
 </p>
 <p class="note">
-  Typing two characters replaces this with the ranked list in
+  <strong>The panel needs its own padding.</strong> This dropdown shipped with
+  none at all, so "Recent" sat one pixel below the top border and read as
+  clipped, and every row touched the sides. The mobile overlay never showed the
+  fault because its scrolling body supplies the inset — a reminder that a shared
+  component can still be broken by exactly one of its containers.
+</p>
+<p class="note">
+  Typing two characters replaces the sections with the ranked list in
   <code>components-search-results</code>. The two states are continuous rather
   than exclusive: the hub's sections give way, but Surprise me carries through
-  as a footer, and repertoire membership carries through as a badge on the
-  matching rows. Nothing the hub offers should be reachable <em>only</em>
+  as a footer, and repertoire membership carries through as a "Saved" badge on
+  the matching rows. Nothing the hub offers should be reachable <em>only</em>
   before you type.
 </p>
 </body></html>

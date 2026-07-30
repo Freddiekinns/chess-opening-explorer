@@ -215,8 +215,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await user.keyboard('{ArrowDown}');
 
       // First suggestion should be active
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
 
     it('should select suggestion with Enter key', async () => {
@@ -275,8 +277,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
 
       // Then down to second
       await user.keyboard('{ArrowDown}');
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
   });
 

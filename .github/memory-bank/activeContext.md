@@ -2,41 +2,45 @@
 
 **Date:** 2026-07-30
 
-## Current Task: Master games moves up the mobile stack (`ux/phase-5-analyse`)
+## Current Task: One search row for all three surfaces (`ux/phase-5-analyse`)
 
-It was rendering **last** — after videos, studies and even the search pills. Not
-a defect: the UX-review spec's decision table put it there, and phase 4 built it
-faithfully. **A spec decision reversed, not a bug fixed.** Its stated reason —
-"makes both breakpoints agree on block order" — was false: desktop renders
-master games in the rail under the explorer card with resources full-width
-below, so desktop always had this order, as did the bundle's preview card and
-the 2a handoff. Spec updated in place (§3.2) so nobody restores the table's
-decision.
+Typing changed how an opening was **drawn**, not just which openings were
+listed. There were **three** result-row implementations (hero, top bar, mobile)
+and **two** hub rows, across two type scales — hub on `--text-*` (13px medium,
+ECO inline in a meta line), hero results on the `--font-size-*` legacy aliases
+(16px semibold, ECO pill, 135° gradient + half-pixel lift on hover). Not a
+decision: what happens when four surfaces are built in four phases and the row
+is never named as a component.
 
-- **Now: Overview · explorer surface · master games · plans · videos+studies ·
-  search pills.** The first three are data about the position; everything after
-  leads away from the page. Collapsed it costs one row, so plans barely moves;
-  the reverse isn't true — a tall section in front strands a data row behind a
-  screen of scrolling.
-- **No component change** — it was already `variant="accordion"` (collapsed,
-  counted, "Over-the-board masters"). Only the JSX position moved.
-- **Order guard** at `pages/__tests__/mobile-stack-order.test.tsx`: asserts
-  document order across all six blocks and that the disclosure stays collapsed.
-  Verified to fail on the old order before landing.
-- Accepted cost: the `IntersectionObserver` gate now trips after a swipe or two
-  rather than a full scroll, so more masters requests — absorbed by the route's
-  7-day CDN cache, and it 403s crawlers. No reserved height: plenty of deep
-  positions have zero master games and a vanishing placeholder would shift
-  content _upward_.
+- **`SearchRow` + `SurpriseRow`** (`shared/SearchRow.tsx` + `.module.css`) now
+  serve every surface and both states. Kept from the hub: the bounded card,
+  section headings, quiet Surprise me. Kept from the results: 14px semibold
+  name, ECO pill, mono moves on their own line. Dropped: the gradient, the
+  sub-pixel lift, the ECO pill recolouring on hover.
+- **Three fixes fell out of it.** The hero hub panel had _zero_ padding, so
+  "Recent" read as clipped and rows touched the sides. The top-bar dropdown was
+  pinned to its 240px field, which is why Surprise me dropped its visible hint
+  there — panel now sizes to content (≤380px), hint restored, `title`-only
+  exception gone. Results list was capped at 280px against 71px rows (under four
+  of twenty visible) → `min(60vh, 480px)`.
+- **Sparkles → Shuffle.** Sparkles is the industry's AI glyph; on a random-jump
+  control it promises intelligence that isn't there.
+- **Guard:** `shared/__tests__/search-row-parity.test.tsx` compares a hub row
+  against a results row and fails if they diverge.
 
-**Bundle:** notes added to `components-opening-detail-mobile.html` (the card
-already drew the right order). **Verified:** 495 frontend, clean build.
+**Bundle:** new `components-search-row.html` is canonical; the hub and results
+cards now own their panels only. Spec §3.3. **Verified:** 498 frontend, clean
+build, all three surfaces checked live.
 
-## Previous Task: Search hub and results merged into one surface
+## Previous Task: Master games moves up the mobile stack
 
-Typing swapped the hub out wholesale, taking Surprise me and any sight of the
-repertoire with it. Surprise me now survives as a footer outside the scroller,
-reachable by arrowing one past the last result; "Saved" badges ride on matching
-rows rather than a section that would draw a saved match twice. A count line was
-built then cut — the search counts every record scoring above zero (4,269 for
-"sicilian" vs a family of ~1,710). All three surfaces. **Detail in git.**
+It rendered **last** on mobile — after videos, studies and the search pills. Not
+a defect: the UX-review spec's decision table put it there and phase 4 built it
+faithfully. **A spec decision reversed, not a bug fixed** — its stated reason
+("makes both breakpoints agree") was false, since desktop renders it in the rail
+under the explorer card with resources full-width below. Now Overview · explorer
+· master games · plans · videos+studies · search pills: position data first,
+then a gradient away from the page. No component change (already a collapsed
+accordion). Spec §3.2 rewritten so nobody restores the table's decision; order
+guard at `pages/__tests__/mobile-stack-order.test.tsx`, verified to fail on the
+old order before landing. **Detail in git.**

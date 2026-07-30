@@ -168,12 +168,22 @@ also only repeated the section heading directly above them, once per row. The
 mobile chevron went the same way — it was on mobile _results_ and not on mobile
 _hub_ rows, so it was drift wearing an affordance's clothes.
 
-Surprise me has no icon either, and the glyph search is why. Sparkles is the
-industry's AI mark; Shuffle and dice name chance rather than a destination, and
-shuffle reads as a mode you switch on; a gift or an opening box reads as a
-reward, and mystery-box imagery borrows a loot-box association this has no
-business borrowing. The payoff is a chess opening chosen at random, a smaller
-promise than any of those pictures makes. The hint line says it in words.
+Surprise me carries one mark and one only: an orange label. It is the single row
+that is not an opening — every other row goes to a named position, this one
+takes an action — and orange text is already how the app says "action"
+(`.cancelBtn`, `.back-link`, `.reset-filter-btn`) against white for a
+destination. Colour only: same size, same weight, same box, same hover, muted
+hint. The results list used to make it orange _and_ heavier _and_ filled on
+hover with the hint flung right, which put the escape hatch above the twenty
+real answers it sits under. Its kind differs from the rows around it; its rank
+does not.
+
+It has no icon, and the glyph search is why. Sparkles is the industry's AI mark;
+Shuffle and dice name chance rather than a destination, and shuffle reads as a
+mode you switch on; a gift or an opening box reads as a reward, and mystery-box
+imagery borrows a loot-box association this has no business borrowing. The
+payoff is a chess opening chosen at random, a smaller promise than any of those
+pictures makes. The hint line says it in words.
 
 **Mobile's hero hands off to the overlay.** Below 767px the landing page ran two
 search models on one screen: the top bar's magnifier opened the full-screen

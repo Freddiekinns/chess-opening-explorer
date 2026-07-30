@@ -88,6 +88,13 @@ export interface SurpriseRowProps {
  * chess opening, chosen at random, which is a smaller and more honest promise
  * than any of those pictures make. The second line says exactly that in words,
  * and words are what the row needed.
+ *
+ * What it does carry is an orange label, because this is the one row that is not
+ * an opening — every other row goes to a named position, this one takes an
+ * action — and orange text is already how the app says "action" (.cancelBtn,
+ * .back-link, .reset-filter-btn) against white for a destination. Colour only:
+ * same size, same weight, same box, muted hint. Its kind differs from the rows
+ * around it; its rank does not.
  */
 export const SurpriseRow: React.FC<SurpriseRowProps> = ({
   onSurprise,
@@ -105,7 +112,7 @@ export const SurpriseRow: React.FC<SurpriseRowProps> = ({
     onMouseEnter={onMouseEnter}
   >
     <span className={styles.rowText}>
-      <span className={styles.rowName}>Surprise me</span>
+      <span className={`${styles.rowName} ${styles.rowNameAction}`}>Surprise me</span>
       <span className={styles.rowHint}>Jump to a random opening</span>
     </span>
   </button>

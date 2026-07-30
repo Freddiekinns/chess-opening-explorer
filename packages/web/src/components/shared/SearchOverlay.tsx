@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Search } from 'lucide-react';
+import { ChevronRight, Search, Sparkles } from 'lucide-react';
 import { SearchHub } from './SearchHub';
+import { useRepertoire } from '../../hooks/useRepertoire';
+import { summariseResults } from '../../lib/searchResultsSummary';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -48,7 +50,9 @@ const OpeningRow: React.FC<OpeningRowProps> = ({ opening, icon, trailing, onSele
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [searching, setSearching] = useState(false);
+  const { isSaved } = useRepertoire();
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -57,6 +61,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setQuery('');
     setResults([]);
+    setTotalMatches(undefined);
     setSearching(false);
     onClose();
   }, [onClose]);
@@ -89,6 +94,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
     if (value.trim().length < 2) {
       setResults([]);
+      setTotalMatches(undefined);
       setSearching(false);
       return;
     }
@@ -97,11 +103,14 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     timeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=8`
+          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
         );
         if (res.ok) {
           const data = await res.json();
-          if (data.success && data.data) setResults(data.data);
+          if (data.success && data.data) {
+            setResults(data.data);
+            setTotalMatches(data.totalResults || data.data.length);
+          }
         }
       } catch {
         // Silent fail — the no-results state carries the hint text.
@@ -130,6 +139,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
   const hasQuery = query.trim().length >= 2;
   const showEmptyState = !hasQuery;
+  const showResults = hasQuery && results.length > 0;
   const noResults = hasQuery && !searching && results.length === 0;
 
   return (
@@ -168,19 +178,27 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
 
-        {hasQuery && results.length > 0 && (
-          <div className={styles.rowList}>
-            {results.map((opening, i) => (
-              <OpeningRow
-                key={`${opening.fen}-${i}`}
-                opening={opening}
-                trailing={
-                  <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
-                }
-                onSelect={select}
-              />
-            ))}
-          </div>
+        {showResults && (
+          <>
+            <div className={styles.resultsCount} role="status">
+              {summariseResults({ query, results, total: totalMatches })}
+            </div>
+            <div className={styles.rowList}>
+              {results.map((opening, i) => (
+                <OpeningRow
+                  key={`${opening.fen}-${i}`}
+                  opening={opening}
+                  trailing={
+                    <>
+                      {isSaved(opening.fen) && <span className={styles.rowSaved}>Saved</span>}
+                      <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
+                    </>
+                  }
+                  onSelect={select}
+                />
+              ))}
+            </div>
+          </>
         )}
 
         {noResults && (
@@ -192,6 +210,17 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
       </div>
+
+      {/* Outside the scrolling body, same as the hero dropdown: twenty results
+          deep is exactly where someone gives up, and that is where this has to
+          still be on screen. */}
+      {showResults && (
+        <button type="button" className={styles.surpriseRow} onClick={surpriseMe}>
+          <Sparkles size={14} aria-hidden="true" />
+          <span>Surprise me</span>
+          <span className={styles.surpriseHint}>Jump to a random opening</span>
+        </button>
+      )}
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Loader2 } from 'lucide-react';
+import { Search, Loader2, Sparkles } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
 import { SearchHub } from '../shared/SearchHub';
+import { useRepertoire } from '../../hooks/useRepertoire';
+import { summariseResults } from '../../lib/searchResultsSummary';
 import styles from './TopBar.module.css';
 
 interface SearchResult {
@@ -62,6 +64,7 @@ export default function TopBar() {
 function TopBarSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -69,6 +72,7 @@ function TopBarSearch() {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { isSaved } = useRepertoire();
 
   useEffect(() => {
     return () => {
@@ -81,7 +85,7 @@ function TopBarSearch() {
 
     if (value.trim().length < 2) {
       setResults([]);
-      setShowDropdown(false);
+      setTotalMatches(undefined);
       setIsSearching(false);
       return;
     }
@@ -90,12 +94,13 @@ function TopBarSearch() {
     timeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=8`
+          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
         );
         if (res.ok) {
           const data = await res.json();
           if (data.success && data.data) {
             setResults(data.data);
+            setTotalMatches(data.totalResults || data.data.length);
             setShowDropdown(data.data.length > 0);
           }
         }
@@ -134,15 +139,18 @@ function TopBarSearch() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    // Surprise me is the row one past the last result, so arrowing reaches it.
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+      setActiveIndex((prev) => (prev < results.length ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (activeIndex >= 0) {
+      if (activeIndex === results.length && results.length > 0) {
+        handleSurpriseMe();
+      } else if (activeIndex >= 0) {
         selectResult(results[activeIndex]);
       } else if (results.length > 0) {
         selectResult(results[0]);
@@ -175,21 +183,45 @@ function TopBarSearch() {
         </div>
       ) : (
         results.length > 0 && (
-          <ul className={styles.results}>
-            {results.map((r, i) => (
-              <li
-                key={`${r.fen}-${i}`}
-                className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
-                onMouseDown={() => selectResult(r)}
-                onMouseEnter={() => setActiveIndex(i)}
-              >
-                <span className={styles.dropdownName}>{r.name}</span>
-                <span className={styles.dropdownMeta}>
-                  {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div onMouseDown={(e) => e.preventDefault()}>
+            <div className={styles.resultsCount} role="status">
+              {summariseResults({ query, results, total: totalMatches })}
+            </div>
+            <ul className={styles.results}>
+              {results.map((r, i) => (
+                <li
+                  key={`${r.fen}-${i}`}
+                  className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
+                  onMouseDown={() => selectResult(r)}
+                  onMouseEnter={() => setActiveIndex(i)}
+                >
+                  <span className={styles.dropdownRow}>
+                    <span className={styles.dropdownName}>{r.name}</span>
+                    {isSaved(r.fen) && <span className={styles.dropdownSaved}>Saved</span>}
+                  </span>
+                  <span className={styles.dropdownMeta}>
+                    {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {/* Outside the scrolling list, so it stays reachable however long
+                the results run. */}
+            <button
+              type="button"
+              className={`${styles.surpriseRow} ${
+                activeIndex === results.length ? styles.surpriseRowActive : ''
+              }`}
+              onClick={handleSurpriseMe}
+              onMouseEnter={() => setActiveIndex(results.length)}
+            >
+              <Sparkles size={14} aria-hidden="true" />
+              {/* No "Jump to a random opening" hint here — this field is a
+                  fixed narrow width, so the hint only ever wraps the label
+                  onto two lines. The label says it. */}
+              <span>Surprise me</span>
+            </button>
+          </div>
         )
       )}
     </div>

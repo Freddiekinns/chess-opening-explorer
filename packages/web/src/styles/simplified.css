@@ -1793,7 +1793,10 @@ body {
 
 /* Regular search buttons for non-landing variants */
 
-.search-suggestions {
+/* The results dropdown. Three parts: a count line, one ranked list that
+   scrolls, and the Surprise me footer — which sits outside the scroller so it
+   cannot scroll out of reach. */
+.search-results-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1803,14 +1806,26 @@ body {
   border-radius: var(--border-radius-base);
   margin-top: var(--space-1);
   z-index: 1000;
-  max-height: 280px;
-  overflow-y: auto;
   box-shadow: var(--shadow-lg);
   animation: slideDown 0.2s ease-out;
+  overflow: hidden;
+  text-align: left;
+}
+
+.search-results-count {
+  padding: var(--space-2-5) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.search-suggestions {
+  max-height: 280px;
+  overflow-y: auto;
   /* Reset default ul styling */
   padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -1826,15 +1841,52 @@ body {
 }
 
 /* Suggestions for landing page variant */
-.search-bar-container.landing .search-suggestions {
+.search-bar-container.landing .search-results-dropdown {
   border-radius: var(--border-radius-large);
   margin-top: var(--space-2);
   background-color: var(--surface-elevated);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
-  /* Position above the surprise button when it would overlap */
   z-index: 1001;
+}
+
+/* Surprise me, kept alive through typing. It reads as a row rather than a
+   button: a filled control here would out-shout the results it sits under. */
+.search-results-surprise {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--color-brand-orange);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.search-results-surprise:hover,
+.search-results-surprise.active {
+  background: var(--accent-a12);
+}
+
+.search-results-surprise:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: -2px;
+}
+
+.search-results-surprise-hint {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
 }
 
 /* The hub the focused hero field opens: recents, repertoire, Surprise me.
@@ -1882,15 +1934,11 @@ body {
   background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
 }
 
+/* No corner radii on the end rows any more: the count line and the Surprise
+   footer own the dropdown's edges, so a rounded first or last row would cut a
+   notch out of the middle of the panel. */
 .suggestion-item:last-child {
   border-bottom: none;
-  border-bottom-left-radius: var(--border-radius-large);
-  border-bottom-right-radius: var(--border-radius-large);
-}
-
-.suggestion-item:first-child {
-  border-top-left-radius: var(--border-radius-large);
-  border-top-right-radius: var(--border-radius-large);
 }
 
 .suggestion-item .opening-name {
@@ -1904,6 +1952,36 @@ body {
   margin: 0 var(--space-4) 0 var(--space-4);
   letter-spacing: var(--letter-spacing-normal);
   position: static;
+}
+
+/* Trailing metadata on a result row: the repertoire badge, then the ECO code. */
+.suggestion-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: var(--space-4);
+  flex: none;
+}
+
+.suggestion-tags .eco-code {
+  margin-right: 0;
+}
+
+/* "Saved", not a star. Everywhere else in the app a star is a control you
+   press to add or remove; on a row whose whole job is to navigate, the same
+   star would invite a tap that does something else entirely. */
+.suggestion-saved {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--accent-a30);
+  border-radius: var(--radius-sm);
+  background: var(--accent-a12);
+  color: var(--color-brand-orange);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
 }
 
 .suggestion-item .eco-code {
@@ -2649,6 +2727,16 @@ body {
   .suggestion-item .eco-code {
     margin-right: var(--space-3);
     font-size: var(--font-size-xs);
+  }
+
+  .suggestion-tags {
+    margin-right: var(--space-3);
+  }
+
+  /* The label and the count line already say what this does; at this width
+     the hint would push one of them onto a second line. */
+  .search-results-surprise-hint {
+    display: none;
   }
 }
 

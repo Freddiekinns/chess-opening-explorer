@@ -82,4 +82,12 @@ body{padding:24px;background:var(--surface-base)}
   element". If a search surface gains a pre-typing state, it uses this hub;
   do not draw a second one.
 </p>
+<p class="note">
+  Typing two characters replaces this with the ranked list in
+  <code>components-search-results</code>. The two states are continuous rather
+  than exclusive: the hub's sections give way, but Surprise me carries through
+  as a footer, and repertoire membership carries through as a badge on the
+  matching rows. Nothing the hub offers should be reachable <em>only</em>
+  before you type.
+</p>
 </body></html>

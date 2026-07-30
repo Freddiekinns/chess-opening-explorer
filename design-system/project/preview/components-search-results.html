@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.row{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:360px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+
+/* --- the component --- */
+.dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);overflow:hidden}
+
+/* The count line. The whole of the feedback — there is no "did you mean" and
+   no correction notice — so it is a live region, not just text. */
+.count{padding:10px 16px;border-bottom:1px solid var(--border-subtle);font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
+
+/* The list scrolls; the panel does not. */
+.list{list-style:none;margin:0;padding:0;max-height:224px;overflow-y:auto}
+.item{padding:12px 0;border-bottom:1px solid var(--border-subtle);cursor:pointer}
+.item:last-child{border-bottom:none}
+.item.active{background:linear-gradient(135deg,rgba(232,93,4,.06) 0%,transparent 100%)}
+.main{display:flex;justify-content:space-between;align-items:center}
+.name{font-family:'DM Sans';font-size:14px;font-weight:600;color:var(--color-text-primary);margin:0 16px}
+.tags{display:flex;align-items:center;gap:8px;margin-right:16px;flex:none}
+.saved{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid rgba(232,93,4,.3);border-radius:4px;background:rgba(232,93,4,.12);color:var(--color-brand-orange);font-family:'DM Sans';font-size:11px;font-weight:600;white-space:nowrap}
+.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600}
+.moves{font-family:var(--font-family-mono);font-size:11px;color:var(--color-text-muted);margin:4px 16px 0;opacity:.7}
+
+/* Surprise me, outside the scroller. */
+.surprise{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:12px 16px;background:none;border:none;border-top:1px solid var(--border-subtle);color:var(--color-brand-orange);font-family:'DM Sans';font-size:13px;font-weight:600;text-align:left;cursor:pointer}
+.surpriseHint{margin-left:auto;color:var(--color-text-muted);font-size:12px;font-weight:400}
+
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:600px;margin-top:24px}
+.note code{font-family:var(--font-family-mono);font-size:11px}
+</style></head><body>
+
+<div class="row">
+  <div class="col">
+    <span class="cap">Search results · exact count</span>
+    <div class="dropdown">
+      <div class="count">2 openings match</div>
+      <ul class="list">
+        <li class="item">
+          <div class="main">
+            <span class="name">Sicilian Defense: Najdorf</span>
+            <span class="tags"><span class="saved">Saved</span><span class="eco">B90</span></span>
+          </div>
+          <div class="moves">1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6</div>
+        </li>
+        <li class="item active">
+          <div class="main">
+            <span class="name">Sicilian Defense: Najdorf, English Attack</span>
+            <span class="tags"><span class="eco">B90</span></span>
+          </div>
+          <div class="moves">… 6. Be3 e5 7. Nb3</div>
+        </li>
+      </ul>
+      <button class="surprise">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
+        <span>Surprise me</span>
+        <span class="surpriseHint">Jump to a random opening</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="col">
+    <span class="cap">Search results · capped list, top slice</span>
+    <div class="dropdown">
+      <div class="count">Top 20 matches</div>
+      <ul class="list">
+        <li class="item">
+          <div class="main"><span class="name">Sicilian</span><span class="tags"><span class="eco">B30</span></span></div>
+          <div class="moves">1. e4 c5 2. Nf3 Nc6 3. Nc3 d6</div>
+        </li>
+        <li class="item">
+          <div class="main"><span class="name">Sicilian Defense</span><span class="tags"><span class="saved">Saved</span><span class="eco">B20</span></span></div>
+          <div class="moves">1. e4 c5</div>
+        </li>
+        <li class="item">
+          <div class="main"><span class="name">Sicilian Defense: Bowdler Attack</span><span class="tags"><span class="eco">B20</span></span></div>
+          <div class="moves">1. e4 c5 2. Bc4</div>
+        </li>
+        <li class="item">
+          <div class="main"><span class="name">Sicilian Defense: Old Sicilian</span><span class="tags"><span class="eco">B30</span></span></div>
+          <div class="moves">1. e4 c5 2. Nf3 Nc6</div>
+        </li>
+      </ul>
+      <button class="surprise">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
+        <span>Surprise me</span>
+        <span class="surpriseHint">Jump to a random opening</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="col">
+    <span class="cap">Search results · move query</span>
+    <div class="dropdown">
+      <div class="count">3 openings begin with 1. Nf3</div>
+      <ul class="list">
+        <li class="item">
+          <div class="main"><span class="name">Zukertort Opening</span><span class="tags"><span class="eco">A04</span></span></div>
+          <div class="moves">1. Nf3</div>
+        </li>
+        <li class="item">
+          <div class="main"><span class="name">Réti Opening</span><span class="tags"><span class="eco">A09</span></span></div>
+          <div class="moves">1. Nf3 d5 2. c4</div>
+        </li>
+        <li class="item">
+          <div class="main"><span class="name">King's Indian Attack</span><span class="tags"><span class="eco">A07</span></span></div>
+          <div class="moves">1. Nf3 d5 2. g3</div>
+        </li>
+      </ul>
+      <button class="surprise">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg>
+        <span>Surprise me</span>
+        <span class="surpriseHint">Jump to a random opening</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<p class="note">
+  What replaces <code>components-search-hub</code> once two characters are
+  typed — on all three surfaces. One ranked list that scrolls, no reveal
+  button. Fuzzy matching already absorbs typos, so there is no "did you mean",
+  no correction notice and no explanation of what was understood: the right
+  openings appearing <em>is</em> the feedback. Natural-language queries
+  ("aggressive openings") land in this same list — the server's style intent
+  changes the ranking, not the layout.
+</p>
+<p class="note">
+  <strong>The count line must be checkable against the list under it.</strong>
+  "14 openings match" printed above eight rows is the same class of fabrication
+  as an invented win rate. Four phrasings, each true: exact
+  (<code>14 openings match</code>), singular
+  (<code>1 opening matches</code>), truncated (<code>Top 20 matches</code>) and
+  the move variant (<code>3 openings begin with 1. Nf3</code>). It carries
+  <code>role="status"</code>, because a count that is the whole of the feedback
+  has to reach people who cannot see the list appear.
+</p>
+<p class="note">
+  Two traps in that copy. The truncated form deliberately does <em>not</em>
+  name a total: the search reports every record scoring above zero, which for
+  "sicilian" is 4,269 against a family of roughly 1,710 — arithmetic anyone
+  would read as a claim about how many Sicilians exist. And the move variant
+  only appears when <em>every</em> row opens with that move (the scorer also
+  matches moves later in a line), and it prints the move as the data spells it,
+  never as the user typed it: case is semantic in algebraic notation, so
+  echoing a typed "nf3" back would print a move that does not exist.
+</p>
+<p class="note">
+  <strong>Surprise me sits outside the scroller.</strong> It used to vanish on
+  the second keystroke — the way out of a search that is not working
+  disappearing exactly when the user is flailing. Twenty results deep is where
+  someone gives up, so that is where it has to still be on screen. It is
+  reachable by arrowing one past the last result, not only by clicking. The
+  narrow top-bar dropdown drops the "Jump to a random opening" hint, which at
+  that width only wraps the label onto two lines.
+</p>
+<p class="note">
+  <strong>"Saved", not a star.</strong> Repertoire membership rides on the
+  result row rather than sitting in a section of its own — a saved opening that
+  also matched the query would otherwise be drawn twice, at two different
+  ranks. It is a text badge because everywhere else in the app a star is a
+  control you press to add or remove; on a row whose whole job is to navigate,
+  the same star would invite a tap that does something else entirely.
+</p>
+</body></html>

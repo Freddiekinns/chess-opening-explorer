@@ -5,6 +5,11 @@
   background: var(--surface-elevated);
   display: flex;
   flex-direction: column;
+  /* The bottom tab bar paints over this overlay, so the last row of results
+     was being clipped by it. Reserve its height and the pinned Surprise me
+     row clears it too. Same 639px breakpoint governs both. */
+  padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 .header {
@@ -153,26 +158,54 @@
   color: var(--color-text-muted);
 }
 
-.surpriseBtn {
+/* "Saved", not a star: on this row a star would read as a control to press,
+   and the row navigates. Matches the hero dropdown's badge. */
+.rowSaved {
+  flex: none;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--accent-a30);
+  border-radius: var(--radius-sm);
+  background: var(--accent-a12);
+  color: var(--color-brand-orange);
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+/* The count line: the whole of the feedback, so it is announced too. */
+.resultsCount {
+  padding-bottom: var(--space-3);
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Surprise me survives into the results. Quiet, because the results are the
+   answer and this is the way out when they are not. */
+.surpriseRow {
+  flex: none;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) 0;
-  background: var(--color-brand-orange);
+  gap: var(--space-2-5);
+  min-height: 44px;
+  padding: var(--space-3);
+  background: none;
   border: none;
-  border-radius: var(--radius-md);
-  color: var(--surface-base);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--color-brand-orange);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
+  text-align: left;
   cursor: pointer;
   font-family: inherit;
-  transition: background 150ms ease;
 }
 
-.surpriseBtn:hover {
-  background: var(--color-brand-orange-hover);
+.surpriseHint {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-normal);
 }
 
 .searchingNote {

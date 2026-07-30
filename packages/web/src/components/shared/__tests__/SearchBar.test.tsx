@@ -436,7 +436,53 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await waitFor(() => {
         expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
       });
-      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
+      // The hub's own rows go, but its way out does not.
+      expect(screen.queryByText('Recent')).not.toBeInTheDocument();
+    });
+
+    // The escape hatch for "I don't know what I'm looking for" used to vanish
+    // on the second keystroke — exactly when a user is most likely flailing.
+    it('keeps Surprise me reachable while typing', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('reaches Surprise me by arrowing past the last result', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(
+        <SearchBar
+          {...defaultProps}
+          variant="landing"
+          onSurprise={onSurprise}
+          openingsData={mockOpeningsList.slice(0, 1)}
+        />
+      );
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem')).toHaveLength(1);
+      });
+
+      // One result, so two downs land on the footer.
+      await user.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
     });
 
     it('should handle focus and blur events', async () => {
@@ -459,6 +505,54 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
         },
         { timeout: 200 }
       );
+    });
+  });
+
+  // The design replaced "did you mean" and every correction notice with a
+  // count line, so the count carries the whole of the feedback.
+  describe('Result summary and repertoire badges', () => {
+    it('counts the results above the list', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'pawn');
+
+      await waitFor(() => {
+        const count = screen.getAllByRole('listitem').length;
+        expect(screen.getByRole('status')).toHaveTextContent(`${count} openings match`);
+      });
+    });
+
+    it('marks results already in the repertoire', async () => {
+      const saved = mockOpeningsList[0];
+      localStorage.setItem(
+        'chess-repertoire',
+        JSON.stringify([
+          {
+            fen: saved.fen,
+            name: saved.name,
+            eco: saved.eco,
+            moves: saved.moves,
+            savedAt: Date.now(),
+          },
+        ])
+      );
+
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText(saved.name)).toBeInTheDocument();
+      });
+
+      const row = screen.getByText(saved.name).closest('li');
+      expect(row).toHaveTextContent('Saved');
+
+      // Only the saved one is badged.
+      expect(screen.getAllByText('Saved')).toHaveLength(1);
+      localStorage.clear();
     });
   });
 

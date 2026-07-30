@@ -4,6 +4,17 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Search hub and results merged** (2026-07-30, on `ux/phase-5-analyse`):
+  typing swapped the hub out wholesale, taking Surprise me and any sight of the
+  repertoire with it. Surprise me now survives as a footer outside the scroller
+  (arrow-reachable); a `role="status"` count line above the list is the whole of
+  the feedback — no "did you mean"; "Saved" badges ride on matching rows rather
+  than a section that would draw a saved match twice. Phrasing rules live in
+  `lib/searchResultsSummary.ts`: the truncated form names no total (the search
+  counts everything above zero — 4,269 for "sicilian" vs a family of ~1,710),
+  and the move variant only fires when every row opens with it, spelled as the
+  data spells it. All three surfaces. Fixed en route: the overlay's last result
+  was clipped by the bottom tab bar. 506 + 834 green.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, all half-applied
   changes: the hero kept its filled Surprise button _and_ never got the hub; the
@@ -12,18 +23,14 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   changed the desktop rule; a filter URL 400d on a change of case and blanked
   the grid; the Analyse gear announced itself as "Settings". Guards added for
   the two stylesheet-only rules. 472 + 834 green.
-- **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`, stacked on
-  phase 4): one header instead of two; "Career totals / Overall performance"
-  becomes "This analysis / Your record" (it claimed a lifetime for one run's
-  numbers), wins sage / losses brick from the existing `--color-perf-*` tokens,
-  "GP" → "Games". Sample reports — "Magnus · Hikaru" from committed fixtures,
-  rebuilt by `npm run sample:generate`, dated on screen so staleness shows, and
-  never written to the session cache. The PGN reduction moved to
-  `packages/shared/src/utils/personal-analysis.ts` so generator and page share
-  one implementation. Platform choice is a real radio group; username has a real
-  label. Progress and errors moved inside the centred column — they were
-  rendering a third of a viewport below the input they describe. Gear off the
-  blank state into the search overlay. 462 frontend + 833 backend green.
+- **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
+  header; "Career totals / Overall performance" → "This analysis / Your record"
+  (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
+  → "Games". Sample reports "Magnus · Hikaru" from committed fixtures
+  (`npm run sample:generate`), dated on screen, never cached. PGN reduction
+  moved to `packages/shared/src/utils/personal-analysis.ts` so generator and
+  page share one implementation. Platform a real radio group; progress/errors
+  moved inside the centred column; gear off the blank state into the overlay.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
   `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
   level filter and everything it governs; master games move outside it into a
@@ -73,22 +80,19 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **Merge `feat/ux-review` to `main`**: all six phases are done. PRs #58–#63
-  merge in order into the integration branch, then one PR to `main`. `main` has
-  moved (AGENTS.md restructure), so expect conflicts in CLAUDE.md,
-  `activeContext.md` and `progress.md`.
-- **`packages/shared` has two latent defects** found in phase 5: its `tests/`
-  directory runs in no CI suite (excluded by root Jest, outside web Vitest), so
-  shared-module tests live in the web suite; and its barrels re-export without
-  file extensions, so `dist/index.js` is unimportable from Node ESM — scripts
-  import `dist/utils/<module>.js` directly.
+- **Merge `feat/ux-review` to `main`**: all six phases done. PRs #58–#63 merge
+  in order into the integration branch, then one PR to `main`. `main` has moved
+  (AGENTS.md restructure) — expect conflicts in CLAUDE.md and the memory bank.
+- **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
+  no CI suite, so shared-module tests live in the web suite; and its barrels
+  re-export without file extensions, so `dist/index.js` is unimportable from
+  Node ESM — scripts import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
-  which filters are active is only legible inside the sheet. Desktop states each
-  value on its button. Change 07 drew chips; the spec simplified to one control
-  and a count.
+  which filters are active is legible only inside the sheet (desktop states each
+  value). Change 07 drew chips; the spec simplified to one control and a count.
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)

@@ -122,6 +122,9 @@
 
 /* Dropdown — a <div> wrapper so it can hold either the hub or the results
    list; list styling moved onto .results. */
+/* The panel clips; the list inside it scrolls. The scroll used to live here,
+   which would have carried the Surprise me footer off the bottom with it.
+   `clip` rather than `hidden` so this never becomes a scroll container. */
 .dropdown {
   position: absolute;
   top: calc(100% + var(--space-1));
@@ -130,8 +133,7 @@
   background-color: var(--surface-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
-  max-height: 320px;
-  overflow-y: auto;
+  overflow: clip;
   z-index: 200;
   box-shadow: var(--shadow-lg);
 }
@@ -140,10 +142,67 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 320px;
+  overflow-y: auto;
 }
 
 .hubWrap {
   padding: var(--space-3);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.resultsCount {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dropdownRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* "Saved", not a star — a star on a navigating row would read as a toggle. */
+.dropdownSaved {
+  flex: none;
+  margin-left: auto;
+  padding: 1px var(--space-1-5);
+  border: 1px solid var(--accent-a30);
+  border-radius: var(--radius-sm);
+  background: var(--accent-a12);
+  color: var(--color-brand-orange);
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.surpriseRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--color-brand-orange);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.surpriseRow:hover,
+.surpriseRowActive {
+  background-color: var(--surface-overlay);
 }
 
 .dropdownItem {

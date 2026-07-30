@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Sparkles } from 'lucide-react';
 import { SearchHub } from './SearchHub';
+import { useRepertoire } from '../../hooks/useRepertoire';
+import { isChessMove, summariseResults } from '../../lib/searchResultsSummary';
 
 export interface Opening {
   fen: string;
@@ -117,22 +120,8 @@ async function getSearchSuggestions(query: string): Promise<string[]> {
 }
 */
 
-// Helper function to detect if a query looks like a chess move
-function isChessMove(query: string): boolean {
-  const trimmed = query.trim().toLowerCase();
-
-  // Common chess moves: d4, e4, nf3, etc.
-  const movePatterns = [
-    /^[a-h][1-8]$/, // Pawn moves: e4, d4, etc.
-    /^[nbrqk][a-h][1-8]$/, // Piece moves: nf3, bb5, etc.
-    /^o-o-o$/, // Long castling
-    /^o-o$/, // Short castling
-    /^[a-h]x[a-h][1-8]$/, // Captures: exd5, etc.
-    /^[nbrqk]x[a-h][1-8]$/, // Piece captures: nxe5, etc.
-  ];
-
-  return movePatterns.some((pattern) => pattern.test(trimmed));
-}
+// isChessMove now lives beside the count-line phrasing that also needs it —
+// one copy, so scoring and the summary can never disagree about what a move is.
 
 // Helper function to detect if a query is an ECO code
 function isEcoCode(query: string): boolean {
@@ -349,6 +338,13 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
 // Default placeholder with helpful hints
 const DEFAULT_PLACEHOLDER = "Try: Sicilian, d4, QGD, B90, or 'aggressive openings'";
 
+/**
+ * One ranked list that scrolls — no reveal button. The server already returns
+ * this many, so rendering fewer only threw matches away and made the count
+ * line describe a slice of a slice.
+ */
+const RENDER_LIMIT = 20;
+
 export const SearchBar: React.FC<SearchBarProps> = ({
   variant = 'landing',
   onSelect,
@@ -363,17 +359,20 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Opening[]>([]);
+  const [totalMatches, setTotalMatches] = useState<number | undefined>(undefined);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false);
   const [noResults, setNoResults] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
+  const { isSaved } = useRepertoire();
 
   // Enhanced search with server-side semantic search
   useEffect(() => {
     if (searchTerm.length < 2) {
       setSuggestions([]);
+      setTotalMatches(undefined);
       setShowSuggestions(false);
       setNoResults(false);
       return;
@@ -386,7 +385,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     // INSTANT: Show client-side results immediately for responsive UX
     const instantResults = findAndRankOpenings(queryToUse, openingsData);
     if (instantResults.length > 0) {
-      setSuggestions(instantResults.slice(0, 8));
+      setSuggestions(instantResults.slice(0, RENDER_LIMIT));
+      // The client-side scorer ranks everything it holds, so its own length is
+      // the true match count for the loaded slice of the index.
+      setTotalMatches(instantResults.length);
       setShowSuggestions(true);
       setNoResults(false);
     }
@@ -406,7 +408,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         const searchResults = await searchOpenings(queryToUse, true);
 
         if (searchResults.results.length > 0) {
-          setSuggestions(searchResults.results.slice(0, 8));
+          setSuggestions(searchResults.results.slice(0, RENDER_LIMIT));
+          setTotalMatches(searchResults.totalResults || searchResults.results.length);
           setShowSuggestions(true);
           setNoResults(false);
           return;
@@ -441,21 +444,41 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     return () => clearTimeout(searchTimeout);
   }, [searchTerm, openingsData, hasRequestedExpansion, onExpandSearch]);
 
+  // Surprise me used to vanish on the second keystroke — the escape hatch for
+  // "I don't know what I'm looking for" disappearing exactly when the user is
+  // flailing. It now survives into the results list as a footer.
+  const showSurpriseFooter = Boolean(onSurprise);
+
+  const triggerSurprise = () => {
+    if (!onSurprise) return;
+    setIsFocused(false);
+    setShowSuggestions(false);
+    setActiveSuggestion(-1);
+    onSurprise();
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setActiveSuggestion(-1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    // Surprise me sits one past the last result. It is a real destination in
+    // the list, so arrowing has to reach it — a footer you can only click is
+    // an escape hatch half the users cannot open.
+    const lastIndex = showSurpriseFooter ? suggestions.length : suggestions.length - 1;
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveSuggestion((prev) => (prev < suggestions.length - 1 ? prev + 1 : prev));
+      setActiveSuggestion((prev) => (prev < lastIndex ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveSuggestion((prev) => (prev > 0 ? prev - 1 : prev));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (activeSuggestion >= 0) {
+      if (showSurpriseFooter && activeSuggestion === suggestions.length) {
+        triggerSurprise();
+      } else if (activeSuggestion >= 0) {
         selectOpening(suggestions[activeSuggestion]);
       } else if (searchTerm.trim()) {
         handleGo();
@@ -563,24 +586,58 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         )}
 
         {showSuggestions && suggestions.length > 0 && (
-          <ul className="search-suggestions">
-            {suggestions.map((opening, index) => (
-              <li
-                key={`${opening.fen}-${index}`}
-                className={`suggestion-item ${index === activeSuggestion ? 'active' : ''}`}
-                onClick={() => handleSuggestionClick(opening)}
-                onMouseEnter={() => setActiveSuggestion(index)}
+          <div className="search-results-dropdown" onMouseDown={(e) => e.preventDefault()}>
+            {/* The count is the whole of the feedback — there is no "did you
+                mean" and no correction notice — so it is announced, not just
+                drawn. */}
+            <div className="search-results-count" role="status">
+              {summariseResults({ query: searchTerm, results: suggestions, total: totalMatches })}
+            </div>
+
+            <ul className="search-suggestions">
+              {suggestions.map((opening, index) => (
+                <li
+                  key={`${opening.fen}-${index}`}
+                  className={`suggestion-item ${index === activeSuggestion ? 'active' : ''}`}
+                  onClick={() => handleSuggestionClick(opening)}
+                  onMouseEnter={() => setActiveSuggestion(index)}
+                >
+                  <div className="suggestion-main">
+                    <strong className="opening-name">{opening.name}</strong>
+                    <span className="suggestion-tags">
+                      {/* Repertoire membership travels with the result rather
+                          than sitting in a section of its own: a saved opening
+                          that also matches the query would otherwise be drawn
+                          twice, in two different ranks. */}
+                      {isSaved(opening.fen) && <span className="suggestion-saved">Saved</span>}
+                      {/* No brackets: the pill already separates it. */}
+                      <span className="opening-eco eco-code">{opening.eco}</span>
+                    </span>
+                  </div>
+                  {opening.moves && (
+                    <div className="suggestion-moves">{formatMovesPreview(opening.moves)}</div>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            {showSurpriseFooter && (
+              // Outside the scroller on purpose: an escape hatch that scrolls
+              // away is not one.
+              <button
+                type="button"
+                className={`search-results-surprise ${
+                  activeSuggestion === suggestions.length ? 'active' : ''
+                }`}
+                onClick={triggerSurprise}
+                onMouseEnter={() => setActiveSuggestion(suggestions.length)}
               >
-                <div className="suggestion-main">
-                  <strong className="opening-name">{opening.name}</strong>
-                  <span className="opening-eco eco-code">({opening.eco})</span>
-                </div>
-                {opening.moves && (
-                  <div className="suggestion-moves">{formatMovesPreview(opening.moves)}</div>
-                )}
-              </li>
-            ))}
-          </ul>
+                <Sparkles size={14} aria-hidden="true" />
+                <span>Surprise me</span>
+                <span className="search-results-surprise-hint">Jump to a random opening</span>
+              </button>
+            )}
+          </div>
         )}
 
         {noResults && searchTerm.length >= 2 && !showSuggestions && (

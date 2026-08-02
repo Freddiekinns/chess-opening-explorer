@@ -4,6 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Discover's empty repertoire slot gets its box back** (2026-08-02, on
+  `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star; the
+  build shipped bare text. Change 03 bought height (a ~180px dashed panel →
+  ~40px), not chrome — "one-line prompt" was read as "one line of text" at plan
+  step, undocumented, then frozen by a test asserting "not a panel". Empty and
+  populated are the same slot, so the first save should fill a container rather
+  than summon one. Prompt now drawn in `components-repertoire-row`.
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
   and the repertoire were swapped out wholesale, so Surprise me survives as a
@@ -11,11 +18,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   was built then cut: the search scores every record above zero, 4,269 for
   "sicilian"). Then _how_ — three result-row implementations and two hub rows
   across two type scales, so typing redrew each opening at a different size,
-  weight and layout; `shared/SearchRow.tsx` is now the one row. Fell out of it:
-  the hero hub panel had zero padding, the top-bar dropdown was pinned to its
-  240px field so Surprise me lost its hint, the list showed under four of
-  twenty, leading icons put the name 26px right of where results put it, and
-  mobile ran two search models on one screen. Spec §3.3; guard at
+  weight and layout; `shared/SearchRow.tsx` is now the one row. Five defects
+  fell out of it — **detail in `archive.md`**. Spec §3.3; guard at
   `shared/__tests__/search-row-parity.test.tsx`.
 - **Practice demoted to accent-outline** (2026-07-30, on `ux/phase-5-analyse`):
   filled orange → orange border + orange label, both breakpoints. **A spec
@@ -27,11 +31,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   §3.4; guard now asserts the breakpoints agree.
 - **Master games moved up the mobile stack** (2026-07-30, on
   `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
-  table sent it below videos, studies and the search pills to "make both
-  breakpoints agree", which was false: desktop always rendered it in the rail
-  under the explorer card. Now Overview · explorer · master games · plans ·
-  resources · search. Spec §3.2 rewritten; order guard at
-  `pages/__tests__/mobile-stack-order.test.tsx`.
+  table sent it below videos and studies to "make both breakpoints agree", which
+  was false. Now Overview · explorer · master games · plans · resources ·
+  search. Spec §3.2 rewritten; guard at `pages/__tests__/mobile-stack-order`.
 - **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
   six phases read back against the handoff bundle. Six defects, every one a
   change half-applied — a silent repertoire removal, `1. NF3`, a filter URL
@@ -40,8 +42,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   header; "Career totals / Overall performance" → "This analysis / Your record"
   (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
   → "Games". Sample reports from committed fixtures, dated on screen. PGN
-  reduction moved to `packages/shared/src/utils/personal-analysis.ts`; gear into
-  overlay.
+  reduction moved to `packages/shared/src/utils/personal-analysis.ts`.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
   `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
   level filter and everything it governs; master games move outside it into a
@@ -55,17 +56,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   **2** `GET /api/openings/browse` — items, `total`, `remaining` and facet
   counts from one request, so count and grid cannot disagree. **3** the faceted
   bar.
-- Everything before the UX review — **all detail in `archive.md`**.
-  2026-07-12..20 (shared `PerfBar`; opening-detail mobile overhaul PR #53;
-  `/api/explorer` proxy after Lichess gated the explorer). Through 07-11
-  (Deviation Trainer slice 1; Study matching V2, 18.2%→35.7%; video index PR
-  #47, 28.2%→72.8%; Analyse redesign PR #45). 07-06 review remediation (route
-  splitting, 409→189 kB; `/api/openings/all` → 410). Through 07-02 (video
-  matching + pipeline hardening; the `Math.random()` W/D/L and dropdown-stacking
-  fixes; 28-family taxonomy; domain migration; TASK006–016; Course Discovery;
-  Practice Mode).
+- Everything before the UX review — **all detail in `archive.md`**: 07-12..20
+  (`PerfBar`; detail-mobile PR #53; `/api/explorer` proxy); through 07-11
+  (Deviation Trainer 1; Study matching V2 18.2%→35.7%; video index PR #47
+  28.2%→72.8%; Analyse PR #45); 07-06 remediation (routes 409→189 kB;
+  `/api/openings/all` → 410); through 07-02 (video pipeline; `Math.random()`
+  W/D/L and dropdown-stacking fixes; 28-family taxonomy; domain migration;
+  TASK006–016; Course Discovery; Practice Mode).
 - **Still true and not fixed**: the common-plans ECO-bucket investigation found
-  a real defect and shipped no code change for it.
+  a real defect and shipped no code change.
 
 ## What's Left
 

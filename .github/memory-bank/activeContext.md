@@ -1,8 +1,33 @@
 # Active Context
 
-**Date:** 2026-07-30
+**Date:** 2026-08-02
 
-## Current Task: Practice drops to accent-outline (`ux/phase-5-analyse`)
+## Current Task: The empty repertoire slot gets its box back (`ux/phase-5-analyse`)
+
+**A handoff divergence with no recorded reason.** The Proposed mock draws the
+Discover empty state as a bordered one-line bar — `--surface-raised`,
+`--color-border`, 8px radius, a 16px outline star — on both breakpoints. The
+build shipped a bare sentence: no surface, no border, no star.
+
+- **The recorded rationale doesn't cover it.** Change 03 justified _height_: a
+  dashed panel with icon, title and hint pushed Popular openings below the fold.
+  The mock's answer was ~180px → ~40px while keeping the container. "One-line
+  prompt" got read as "one line of text" at plan step
+  (`2026-07-27-ux-phase-1-discover.md:781` hands over the bare CSS with no
+  note), and the design review's own audit of this element (finding 11) touched
+  only the link — it left the box alone.
+- **Why the box is right.** Empty and populated are the same slot: with no
+  surface the first save doesn't fill a container, it conjures a section out of
+  bare text. The star was the one word doing instructional work, tying the
+  sentence to the glyphs in every card header below.
+- **The test had frozen the drift.** "is a single line of guidance, not a panel"
+  asserted more than anyone decided. Now: not a _titled empty-state_ panel — no
+  "Nothing saved yet", no CTA — which is what change 03 actually bought.
+- **Bundle lockstep.** `components-repertoire-row` drew the `/repertoire` tab's
+  empty state but never the Discover prompt its own note referred to; both are
+  drawn now, with why they're different shapes.
+
+## Previous Task: Practice drops to accent-outline (`ux/phase-5-analyse`)
 
 Filled orange → orange border + orange label, both breakpoints. **A spec
 decision reversed on the owner's call.** §3 argued from implementation
@@ -19,23 +44,5 @@ Practice is a good action that is not yet what the detail page is _for_.
   for the same control. Both 13px now, padding brought in, mobile min-height
   44px because it is a thumb target.
 - **Guard rewritten, not deleted.** Its durable purpose was never "keep Practice
-  filled": the button is drawn twice in two files and has drifted across
-  breakpoints twice — once on fill, once on type size. It now asserts the halves
-  _agree_, plus pagination carries no brand colour. Verified failing on the old
-  CSS. Spec §3.4.
-
-## Previous Task: One search row for all three surfaces
-
-Typing changed how an opening was **drawn**, not just which were listed — three
-result-row implementations and two hub rows across two type scales.
-`shared/SearchRow.tsx` now serves every surface and both states. Fell out of it:
-the hero hub panel had _zero_ padding ("Recent" read as clipped); the top-bar
-dropdown was pinned to its 240px field, which is why Surprise me dropped its
-visible hint there; the results list showed under four of twenty. Leading icons
-dropped entirely — they put the name at 39px before typing and 13px after, and
-only repeated the section heading. Surprise me keeps an orange label (an action
-among destinations, the rule `.cancelBtn`/`.back-link` already follow) but no
-icon: Sparkles reads as AI, shuffle/dice as a mode or a gamble, a gift or
-mystery box as a reward. Mobile's hero now hands off to the full-screen overlay
-instead of running a second search model on one screen. Spec §3.3; parity guard
-at `shared/__tests__/search-row-parity.test.tsx`.
+  filled": the button is drawn twice and has drifted across breakpoints twice —
+  on fill, then on type size. It now asserts the halves _agree_. Spec §3.4.

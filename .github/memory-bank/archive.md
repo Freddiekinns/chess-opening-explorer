@@ -375,3 +375,19 @@ css. Design-system lockstep: preview cards `components-opening-detail-mobile`
 (new) + right-column (reordered), 2a mock in `project/explorations/`. No token
 changes. Docs: user-journeys, context.md AD-012. Verified: 323 frontend tests
 (35 new); tsc/ESLint/Prettier clean; Playwright at 390/320/1280px.
+
+## 2026-07-30 — One search row for all three surfaces (`ux/phase-5-analyse`)
+
+Typing changed how an opening was **drawn**, not just which were listed — three
+result-row implementations and two hub rows across two type scales.
+`shared/SearchRow.tsx` now serves every surface and both states. Fell out of it:
+the hero hub panel had _zero_ padding ("Recent" read as clipped); the top-bar
+dropdown was pinned to its 240px field, which is why Surprise me dropped its
+visible hint there; the results list showed under four of twenty. Leading icons
+dropped entirely — they put the name at 39px before typing and 13px after, and
+only repeated the section heading. Surprise me keeps an orange label (an action
+among destinations, the rule `.cancelBtn`/`.back-link` already follow) but no
+icon: Sparkles reads as AI, shuffle/dice as a mode or a gamble, a gift or
+mystery box as a reward. Mobile's hero now hands off to the full-screen overlay
+instead of running a second search model on one screen. Spec §3.3; parity guard
+at `shared/__tests__/search-row-parity.test.tsx`.

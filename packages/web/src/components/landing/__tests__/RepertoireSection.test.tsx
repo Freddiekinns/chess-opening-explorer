@@ -14,10 +14,20 @@ const renderSection = () =>
   );
 
 describe('RepertoireSection empty state', () => {
-  it('is a single line of guidance, not a panel', () => {
+  // What change 03 bought was height: no title, no hint, no CTA — one line
+  // where a dashed panel used to stand. The container is not what it dropped,
+  // so nothing here asserts its absence.
+  it('is one line of guidance, not a titled empty-state panel', () => {
     renderSection();
 
-    expect(screen.getByText('Star openings to build your repertoire.')).toBeInTheDocument();
+    expect(screen.getByText(/Star openings to build your repertoire\./)).toBeInTheDocument();
+    expect(screen.queryByText('Nothing saved yet')).not.toBeInTheDocument();
+  });
+
+  it('carries the star it is naming', () => {
+    const { container } = renderSection();
+
+    expect(container.querySelector('svg[aria-hidden="true"]')).toBeInTheDocument();
   });
 
   it('offers no link, because there is nowhere to go yet', () => {

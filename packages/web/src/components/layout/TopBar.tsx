@@ -197,11 +197,11 @@ function TopBarSearch() {
             </ul>
             {/* Outside the scrolling list, so it stays reachable however long
                 the results run. The hint used to be dropped here — the panel
-                was pinned to the 240px field and the label plus hint need
+                was pinned to a 240px field and the label plus hint need
                 ~265px, so it survived only in a title and an aria-label, which
-                a sighted user navigating by keyboard never sees. The panel now
-                sizes to its contents instead, so the row explains itself here
-                exactly as it does everywhere else. */}
+                a sighted user navigating by keyboard never sees. The field is
+                now sized to hold a row (see .searchField), so the row explains
+                itself here exactly as it does everywhere else. */}
             <div className={styles.surpriseFooter}>
               <SurpriseRow
                 onSurprise={handleSurpriseMe}

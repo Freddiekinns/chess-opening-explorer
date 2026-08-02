@@ -4,6 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **TopBar search field sized to its own panel** (2026-08-02): the 380px
+  dropdown flared past a 240px field; field now `clamp(300px, 30vw, 380px)`,
+  panel flush at `left/right: 0` (tablet keeps the grow-leftwards panel).
 - **Discover's empty repertoire slot gets its box back** (2026-08-02, on
   `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star; the
   build shipped bare text. Change 03 bought height (a ~180px dashed panel →
@@ -53,9 +56,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
   44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
   card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
-  **2** `GET /api/openings/browse` — items, `total`, `remaining` and facet
-  counts from one request, so count and grid cannot disagree. **3** the faceted
-  bar.
+  **2** `GET /api/openings/browse` — one request for items, `total`, `remaining`
+  and facet counts, so count and grid cannot disagree. **3** the faceted bar.
 - Everything before the UX review — **all detail in `archive.md`**: 07-12..20
   (`PerfBar`; detail-mobile PR #53; `/api/explorer` proxy); through 07-11
   (Deviation Trainer 1; Study matching V2 18.2%→35.7%; video index PR #47
@@ -64,13 +66,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   W/D/L and dropdown-stacking fixes; 28-family taxonomy; domain migration;
   TASK006–016; Course Discovery; Practice Mode).
 - **Still true and not fixed**: the common-plans ECO-bucket investigation found
-  a real defect and shipped no code change.
+  a real defect and shipped no code change (see `archive.md`).
 
 ## What's Left
 
 - **Merge `feat/ux-review` to `main`**: PRs #58–#63 in order into the
-  integration branch, then one PR to `main`. Expect conflicts in CLAUDE.md +
-  memory bank.
+  integration branch, then one PR to `main`. Conflicts expected in CLAUDE.md.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, so shared-module tests live in the web suite; and its barrels
   re-export without extensions, so `dist/index.js` is unimportable from Node ESM
@@ -82,8 +83,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
   region, so a screen-reader user gets no signal when results arrive (dropping
   the count line removed the only `role="status"`). The keyboard cursor rides a
-  `data-active` hook `aria-activedescendant` should replace. One change, three
-  surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+  `data-active` hook `aria-activedescendant` should replace. Three surfaces:
+  `SearchBar`, `TopBar`, `SearchOverlay`.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so

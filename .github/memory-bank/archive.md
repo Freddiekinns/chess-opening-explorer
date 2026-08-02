@@ -5,6 +5,28 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Practice drops to accent-outline (`ux/phase-5-analyse`)
+
+Filled orange → orange border + orange label, both breakpoints. **A spec
+decision reversed on the owner's call.** §3 argued from implementation
+completeness — "fully implemented, so it can carry primary weight" — which is a
+different question from how much of the page's attention a feature has earned.
+Practice is a good action that is not yet what the detail page is _for_.
+
+- **Names the third button tier.** The bundle documented two (filled primary,
+  grey `.btn--secondary`) while `buttonSpec.test.ts` called an orange outline
+  "secondary" — never true of `.btn--secondary`. Now: primary · accent-outline ·
+  secondary · tertiary, in `components-buttons`.
+- **Proportion fixed with it** — the other half of the complaint. Desktop was
+  11px inside 24px padding (a swatch with a word in it) while mobile said 13px
+  for the same control. Both 13px now, padding brought in, mobile min-height
+  44px because it is a thumb target.
+- **Guard rewritten, not deleted.** Its durable purpose was never "keep Practice
+  filled": the button is drawn twice and has drifted across breakpoints twice —
+  on fill, then on type size. It now asserts the halves _agree_. Spec §3.4.
+
+---
+
 ## Opening Family Rollups — Full Design History (branch `feature/opening-family-rollups`)
 
 Feature: group a player's analysed openings by family on the Analyse page, with

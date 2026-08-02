@@ -2,7 +2,25 @@
 
 **Date:** 2026-08-02
 
-## Current Task: The empty repertoire slot gets its box back (`ux/phase-5-analyse`)
+## Current Task: TopBar search field sized to its own panel (`claude/desktop-search-bar-width-ovwyg0`)
+
+**The dropdown was 140px wider than the control that opened it.** The field was
+a fixed 240px; the panel took `width: max-content` capped at 380px, anchored
+right, so focusing the input flared a box out past the field's left edge.
+
+- **The field gives, not the panel.** `width: clamp(300px, 30vw, 380px)`, and
+  the panel is now `left: 0; right: 0` — flush both edges. Fluid because the bar
+  is a `1fr auto 1fr` grid: a fixed 380px right column exceeds its fr share
+  below ~1045px and drags the nav off centre. Measured at 901/950/1100/1280/1440
+  — nav stays centred, no overflow.
+- **300px floor is the Surprise me row.** Label plus hint needs ~265px of row;
+  below that the hint would ellipsize, which is the thing the panel-sizing
+  change bought in the first place.
+- **Tablet (640–900px) keeps the old flare.** The 160px field there has no bar
+  room to grow into, and 160px-wide rows are worse than a panel that overhangs.
+  The grow-leftwards rule now lives only in that media query.
+
+## Previous Task: The empty repertoire slot gets its box back (`ux/phase-5-analyse`)
 
 **A handoff divergence with no recorded reason.** The Proposed mock draws the
 Discover empty state as a bordered one-line bar — `--surface-raised`,
@@ -26,23 +44,3 @@ build shipped a bare sentence: no surface, no border, no star.
 - **Bundle lockstep.** `components-repertoire-row` drew the `/repertoire` tab's
   empty state but never the Discover prompt its own note referred to; both are
   drawn now, with why they're different shapes.
-
-## Previous Task: Practice drops to accent-outline (`ux/phase-5-analyse`)
-
-Filled orange → orange border + orange label, both breakpoints. **A spec
-decision reversed on the owner's call.** §3 argued from implementation
-completeness — "fully implemented, so it can carry primary weight" — which is a
-different question from how much of the page's attention a feature has earned.
-Practice is a good action that is not yet what the detail page is _for_.
-
-- **Names the third button tier.** The bundle documented two (filled primary,
-  grey `.btn--secondary`) while `buttonSpec.test.ts` called an orange outline
-  "secondary" — never true of `.btn--secondary`. Now: primary · accent-outline ·
-  secondary · tertiary, in `components-buttons`.
-- **Proportion fixed with it** — the other half of the complaint. Desktop was
-  11px inside 24px padding (a swatch with a word in it) while mobile said 13px
-  for the same control. Both 13px now, padding brought in, mobile min-height
-  44px because it is a thumb target.
-- **Guard rewritten, not deleted.** Its durable purpose was never "keep Practice
-  filled": the button is drawn twice and has drifted across breakpoints twice —
-  on fill, then on type size. It now asserts the halves _agree_. Spec §3.4.

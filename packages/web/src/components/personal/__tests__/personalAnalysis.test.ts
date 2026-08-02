@@ -54,6 +54,27 @@ describe('analyseGames', () => {
     expect(data!.whiteGames + data!.blackGames).toBe(0);
   });
 
+  it('keeps a result the user actually got when it cannot recognise the opening', async () => {
+    // 1. h4 matches nothing in the fixture map, so the game is unclassified —
+    // but alice still won it, and "Your record" is hers, not ours. Tallied
+    // inside the classified branch (as it was), real results vanished from the
+    // record while the header went on counting the game as analysed.
+    const data = await analyseGames(
+      [game('alice', 'bob', '1-0', '1. h4 h5'), game('alice', 'bob', '1-0', '1. e4 e5')],
+      'alice',
+      openingsMap
+    );
+
+    expect(data!.totalGames).toBe(2);
+    expect(data!.unclassifiedGames).toBe(1);
+    // The record covers both wins...
+    expect(data!.whiteWin).toBe(2);
+    // ...while the opening list, and the badge that labels it, cover the one
+    // opening we could name.
+    expect(data!.whiteGames).toBe(1);
+    expect(data!.asWhite).toHaveLength(1);
+  });
+
   it('reports progress for every game, including the ones it cannot classify', async () => {
     const onProgress = vi.fn();
     await analyseGames(

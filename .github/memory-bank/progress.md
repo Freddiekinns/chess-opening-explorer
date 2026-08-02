@@ -12,7 +12,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   columns (win left / draw centre / loss right) over the shared PerfBar track.
   Fell out of it: bar height 6 vs 8px, headline 22 vs 20px, tracked-uppercase
   "WINS" vs sentence-case "win rate", a sage border on the mobile Wins tile
-  alone. Guards in `PersonalOpeningStats.test.tsx`.
+  alone. Then the slack it exposed: a third line, the overall win rate, which
+  turned up a latent defect — W/D/L were tallied inside the classified branch,
+  so a real result with an unrecognised opening vanished from "Your record".
+  Guards in `PersonalOpeningStats.test.tsx` + `personalAnalysis.test.ts`.
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
   and the repertoire were swapped out wholesale, so Surprise me survives as a
@@ -55,15 +58,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   moved into the hook (was desktop-only, so mobile failures went unreported).
 - **UX review phases 0–3** (2026-07-27..28): systemic pass, Discover's star/undo
   loop, `GET /api/openings/browse`, the faceted bar. See `archive.md`.
-- Everything before the UX review — **all detail in `archive.md`**.
-  2026-07-12..20 (shared `PerfBar`; opening-detail mobile overhaul PR #53;
-  `/api/explorer` proxy after Lichess gated the explorer). Through 07-11
-  (Deviation Trainer slice 1; Study matching V2, 18.2%→35.7%; video index PR
-  #47, 28.2%→72.8%; Analyse redesign PR #45). 07-06 review remediation (route
-  splitting, 409→189 kB; `/api/openings/all` → 410). Through 07-02 (video
-  matching + pipeline hardening; the `Math.random()` W/D/L and dropdown-stacking
-  fixes; 28-family taxonomy; domain migration; TASK006–016; Course Discovery;
-  Practice Mode).
+- Everything before the UX review — **all detail in `archive.md`**: shared
+  `PerfBar` and the opening-detail mobile overhaul; the `/api/explorer` proxy;
+  Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
+  (28.2%→72.8%); route splitting (409→189 kB) and `/api/openings/all` → 410;
+  28-family taxonomy; domain migration; TASK006–016; Practice Mode.
 - **Still true, not fixed**: the common-plans ECO-bucket investigation found a
   real defect and shipped no code change.
 
@@ -78,17 +77,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   — scripts import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
-  shelves, V5/V6 taxonomy + chapter matching, studies data work
+  shelves, V5/V6 taxonomy + chapters, studies data
 - **Search is not a real combobox** — the biggest remaining gap in it. No
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
   region, so a screen-reader user gets no signal when results arrive (dropping
-  the count line removed the only `role="status"`). The keyboard cursor rides a
-  `data-active` hook `aria-activedescendant` should replace. One change, three
-  surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+  the count line removed the only `role="status"`). Three surfaces: `SearchBar`,
+  `TopBar`, `SearchOverlay`.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
-  which are active is legible only inside the sheet (desktop states each value).
+  which are active is legible only in the sheet (desktop states each value).
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)

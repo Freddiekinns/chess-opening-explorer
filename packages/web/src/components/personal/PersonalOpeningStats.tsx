@@ -449,11 +449,22 @@ export const PersonalOpeningStats: React.FC<{
                 <div className={styles.mobileHero}>
                   <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
                   <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
+                  {/* The overall win rate rides the scope line rather than the
+                      tiles: it is a fact about the run, and mobile has no room
+                      to spare above the fold. Desktop states it in the record
+                      card's context slot — mobile keeps its three tiles, but
+                      the number has to be reachable on both. */}
                   <span className={styles.mobileGamesMeta}>
                     {dashboard.totalGames} analysed &middot; {dashboard.classifiedGames} matched
                     {dashboard.unclassifiedGames > 0
                       ? ` · ${dashboard.unclassifiedGames} unrecognised`
                       : ''}
+                    {overallWinRate !== null && (
+                      <>
+                        {' · '}
+                        <span className={styles.mobileWinRate}>{overallWinRate}% win rate</span>
+                      </>
+                    )}
                   </span>
                 </div>
 

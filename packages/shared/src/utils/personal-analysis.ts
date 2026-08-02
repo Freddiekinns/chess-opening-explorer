@@ -31,6 +31,16 @@ export interface DashboardData {
   totalGames: number;
   classifiedGames: number;
   unclassifiedGames: number;
+  /**
+   * `whiteGames` / `blackGames` count games whose opening was *matched* — they
+   * label the opening lists, so they equal the sum of the rows beneath them.
+   *
+   * `whiteWin`/`Draw`/`Loss` (and the black pair) count every game whose result
+   * we could read, matched or not. They feed the record card, and an opening we
+   * failed to recognise is a gap in our data, not a game the player didn't
+   * play. The two therefore diverge whenever `unclassifiedGames > 0`, which is
+   * intended: the record is the player's, the lists are ours.
+   */
   whiteGames: number;
   whiteWin: number;
   whiteDraw: number;
@@ -149,6 +159,22 @@ export async function analyseGames(
     const result = side ? getUserResult(headers, side) : null;
     const lookup = side && result ? lookupOpeningFromPGN(pgn, openingsMap) : null;
 
+    // The record counts every game we could read a result for, whether or not
+    // we recognised its opening. Tallying inside the classified branch made
+    // "Your record" quietly drop real results — a player with 17 unrecognised
+    // games saw a record over the other 138 under a header stating 155.
+    if (side && result) {
+      if (side === 'white') {
+        if (result === 'win') whiteWin += 1;
+        if (result === 'draw') whiteDraw += 1;
+        if (result === 'loss') whiteLoss += 1;
+      } else {
+        if (result === 'win') blackWin += 1;
+        if (result === 'draw') blackDraw += 1;
+        if (result === 'loss') blackLoss += 1;
+      }
+    }
+
     if (!side || !result || !lookup?.success || !lookup.bestMatch) {
       unclassified += 1;
     } else {
@@ -157,15 +183,9 @@ export async function analyseGames(
       if (side === 'white') {
         upsertAgg(asWhite, opening, result);
         whiteGames += 1;
-        if (result === 'win') whiteWin += 1;
-        if (result === 'draw') whiteDraw += 1;
-        if (result === 'loss') whiteLoss += 1;
       } else {
         upsertAgg(asBlack, opening, result);
         blackGames += 1;
-        if (result === 'win') blackWin += 1;
-        if (result === 'draw') blackDraw += 1;
-        if (result === 'loss') blackLoss += 1;
       }
     }
 

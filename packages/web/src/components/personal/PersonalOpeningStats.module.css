@@ -1328,6 +1328,15 @@
   color: var(--color-text-muted);
 }
 
+/* The one figure on this line that is a result rather than a count of what we
+   could read, so it carries the page's text colour while its neighbours stay
+   muted. Without it the run's headline number is the quietest thing in the
+   header. */
+.mobileWinRate {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
 /* 3 inline stat cards */
 .tripleStats {
   display: grid;

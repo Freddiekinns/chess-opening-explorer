@@ -397,7 +397,20 @@
          never gives you — the headline cards state 100% off four games, so
          this is the only rate on screen with a sample behind it. Note this is
          one overall rate, not a percentage per count: that would be seven
-         numbers in a card whose bar is already the proportion. -->
+         numbers in a card whose bar is already the proportion.
+
+         Two things the rate line forced, both outside this card:
+         - The record now counts every game whose result we could read, matched
+           or not (`personal-analysis.ts`). Tallied inside the classified
+           branch, as it was, a player with 17 unrecognised games saw a record
+           over the other 138 under a header stating 155 — and a *stated rate*
+           makes that mismatch checkable in a way three bare counts did not.
+           `whiteGames`/`blackGames` stay matched-only: they label the opening
+           lists, so they must equal the sum of the rows beneath them.
+         - Mobile keeps its three tiles, but carries the same rate on the hero's
+           scope line ("100 analysed · 100 matched · 80% win rate"), emphasised
+           against its muted neighbours. Parity of information, not of layout —
+           mobile has no vertical room to spare above the fold. -->
 
     <div class="row">
       <div>

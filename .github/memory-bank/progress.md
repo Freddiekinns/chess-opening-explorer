@@ -16,6 +16,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   turned up a latent defect — W/D/L were tallied inside the classified branch,
   so a real result with an unrecognised opening vanished from "Your record".
   Guards in `PersonalOpeningStats.test.tsx` + `personalAnalysis.test.ts`.
+- **Discover's empty repertoire slot gets its box back** (2026-08-02, on
+  `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star; the
+  build shipped bare text. Change 03 bought height (a ~180px dashed panel →
+  ~40px), not chrome — "one-line prompt" was read as "one line of text" at plan
+  step, undocumented, then frozen by a test asserting "not a panel". Empty and
+  populated are the same slot, so the first save should fill a container rather
+  than summon one. Prompt now drawn in `components-repertoire-row`.
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
   and the repertoire were swapped out wholesale, so Surprise me survives as a
@@ -23,11 +30,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   was built then cut: the search scores every record above zero, 4,269 for
   "sicilian"). Then _how_ — three result-row implementations and two hub rows
   across two type scales, so typing redrew each opening at a different size,
-  weight and layout; `shared/SearchRow.tsx` is now the one row. Fell out of it:
-  the hero hub panel had zero padding, the top-bar dropdown was pinned to its
-  240px field so Surprise me lost its hint, the list showed under four of
-  twenty, leading icons put the name 26px right of where results put it, and
-  mobile ran two search models on one screen. Spec §3.3; guard at
+  weight and layout; `shared/SearchRow.tsx` is now the one row. Five defects
+  fell out of it — **detail in `archive.md`**. Spec §3.3; guard at
   `shared/__tests__/search-row-parity.test.tsx`.
 - **Practice demoted to accent-outline** (2026-07-30, on `ux/phase-5-analyse`):
   filled orange → orange border + orange label, both breakpoints. **A spec
@@ -37,13 +41,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   "secondary", never true of the grey `.btn--secondary`). Proportion fixed:
   desktop 11px in 24px padding vs mobile 13px → both 13px, mobile min 44px. Spec
   §3.4; guard now asserts the breakpoints agree.
-- **Master games moved up the mobile stack** (2026-07-30, on
-  `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
-  table sent it below videos, studies and the search pills to "make both
-  breakpoints agree", which was false: desktop always rendered it in the rail
-  under the explorer card. Now Overview · explorer · master games · plans ·
-  resources · search. Spec §3.2 rewritten; order guard at
-  `pages/__tests__/mobile-stack-order.test.tsx`.
+- **Master games moved up the mobile stack** (2026-07-30): a **spec decision
+  reversed**, not a bug — the review table sent it below videos and studies to
+  "make both breakpoints agree", which was false. Now Overview · explorer ·
+  master games · plans · resources · search. Guard at
+  `pages/__tests__/mobile-stack-order`.
 - **UX review implementation audit** (2026-07-29): six phases read back against
   the handoff bundle; six half-applied changes. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
@@ -63,8 +65,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
   (28.2%→72.8%); route splitting (409→189 kB) and `/api/openings/all` → 410;
   28-family taxonomy; domain migration; TASK006–016; Practice Mode.
-- **Still true, not fixed**: the common-plans ECO-bucket investigation found a
-  real defect and shipped no code change.
+- **Still true and not fixed**: the common-plans ECO-bucket investigation found
+  a real defect and shipped no code change.
 
 ## What's Left
 
@@ -77,16 +79,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   — scripts import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
-  shelves, V5/V6 taxonomy + chapters, studies data
+  shelves, V5/V6 taxonomy + chapter matching, studies data work
 - **Search is not a real combobox** — the biggest remaining gap in it. No
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
-  region, so a screen-reader user gets no signal when results arrive (dropping
-  the count line removed the only `role="status"`). Three surfaces: `SearchBar`,
-  `TopBar`, `SearchOverlay`.
+  region, so a screen-reader user gets no signal when results arrive. Three
+  surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
-  which are active is legible only in the sheet (desktop states each value).
+  which are active is legible only inside the sheet (desktop states each value).
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)

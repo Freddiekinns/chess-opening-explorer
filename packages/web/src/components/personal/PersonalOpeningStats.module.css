@@ -571,11 +571,19 @@
 /* ==============================
    DASHBOARD HERO
    ============================== */
+/* `baseline` puts "Analyse another player" on the player name's own baseline.
+   With `flex-start` + a nudge margin it landed mid-cap of a 48px name — an
+   alignment to nothing, which is most of why the header read as floating. The
+   hairline underneath ties the block to the page instead of leaving the name
+   hanging in space above the cards. */
 .dashboardHero {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
+  gap: var(--space-4);
   margin-top: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
   animation: sectionReveal 300ms ease-out;
 }
 
@@ -608,7 +616,6 @@
   white-space: nowrap;
   padding: var(--space-2) 0;
   flex-shrink: 0;
-  margin-top: var(--space-2);
 }
 
 .analyseAnotherBtn:hover {
@@ -786,9 +793,12 @@
   color: var(--color-perf-loss-text);
 }
 
+/* One headline tier across the card row: matches .cardOpeningName, which was
+   20px against this rule's 22px — close enough to read as a mistake rather
+   than a distinction. */
 .cardTitle {
   font-family: var(--font-family-headline);
-  font-size: 22px;
+  font-size: var(--text-xl);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
@@ -830,26 +840,50 @@
   margin-top: var(--space-2);
 }
 
-/* Stats rows in overall card — horizontal on desktop */
+/* Record card stats — three equal columns spanning the full card width.
+   A left-hugging flex row left the numbers clustered in the card's first third
+   with a void beside and below them; the grid plus `margin-top: auto` turns the
+   card into a deliberate top (identity) / bottom (figures) composition, and
+   drops its bar onto the same baseline as the two cards beside it. */
 .statsRows {
-  margin-top: var(--space-4);
-  display: flex;
-  gap: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-5);
 }
 
 .statsRow {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-1-5);
+  min-width: 0;
 }
 
+/* Win left, draw centre, loss right — the same geometry as the bar underneath
+   and as PerfBar's own legend, so the triplet reads at a glance in the order
+   the segments run. Three left-aligned columns left the numbers stopping at
+   about two-thirds of a card whose bar spanned all of it. */
+.statsRow:nth-child(2) {
+  align-items: center;
+  text-align: center;
+}
+
+.statsRow:nth-child(3) {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Tracked uppercase micro-label — the same treatment as the opening-list column
+   headers (.colHeaderName et al) and .winRateLabel, so every small data label
+   on the page is one style. */
 .statsLabel {
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  order: 2;
+  letter-spacing: 0.05em;
+  line-height: 1;
 }
 
 .statsValue {
@@ -858,14 +892,21 @@
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
-  order: 1;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Wins sage, losses brick, draws neutral — the same encoding the perf bars
-   below use, so the card and the distributions agree. Must follow .statsValue:
-   same specificity, so source order decides which colour wins. */
+/* Wins sage, draws warm grey, losses brick — the same encoding as the bar
+   directly below. The tint is load-bearing, not decoration: three equal-width
+   columns cannot line up with three proportional bar segments, so colour is the
+   only thing tying a count to its band. Must follow .statsValue: same
+   specificity, so source order decides which colour wins. */
 .statsValueWin {
   color: var(--color-perf-win-text);
+}
+
+.statsValueDraw {
+  color: var(--color-perf-draw-text);
 }
 
 .statsValueLoss {
@@ -900,22 +941,34 @@
   color: var(--color-text-primary);
 }
 
+/* Matches .statsLabel and the list column headers — this label was the odd one
+   out (sentence case, untracked) in a card row where every other small label
+   was tracked uppercase. */
 .winRateLabel {
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.winRateBar {
-  height: var(--space-1-5);
-  border-radius: var(--radius-full);
-  background: var(--border-default);
-  overflow: hidden;
+/* The record card's W/D/L bar. The two opening cards keep their single-fill
+   bars below — those read fine as-is: one stated rate, one bar filled to it.
+   This card had no bar at all, which is what broke the row's bottom edge.
+   Height and radius come from the shared PerfBar track, so all three bars are
+   the same object at the same weight. */
+.cardBar {
   margin-top: var(--space-3);
 }
 
-.winRateBarWin {
+/* Single-fill rate bar — the "top-performing" / "needs work" cards. Track
+   height matches PerfBar's 8px so the three cards' bottom edges agree. */
+.winRateBar {
+  height: 8px;
+  border-radius: var(--radius-full);
   background: var(--border-subtle);
+  overflow: hidden;
+  margin-top: var(--space-3);
 }
 
 .winRateBarFillWin {
@@ -923,10 +976,6 @@
   border-radius: var(--radius-full);
   background: var(--color-perf-win);
   transition: width 0.6s ease-out;
-}
-
-.winRateBarLoss {
-  background: var(--border-subtle);
 }
 
 .winRateBarFillLoss {
@@ -977,33 +1026,12 @@
     font-size: 17px;
   }
 
-  /* Career totals: revert to vertical on mobile */
-  .statsRows {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .statsRow {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .statsLabel {
-    order: 1;
-  }
-
-  .statsValue {
-    order: 2;
-    font-size: var(--text-xl);
-  }
-
-  .winRateValue {
-    font-size: 24px;
-  }
-
-  /* No per-row overrides here: the desktop opening lists never render at
-     this width (.desktopDashboard is hidden below 768px). */
+  /* No record-card or win-rate overrides here. `.desktopDashboard` is
+     display:none below 768px, so these only ever contradicted the desktop
+     layout on paper — and a stack of them (flex-direction, order swaps, a
+     second type scale) is how the card drifted out of step with its siblings
+     in the first place. Same reason there are no per-row overrides: the
+     desktop opening lists never render at this width. */
   .sectionHeader {
     flex-direction: column;
     gap: var(--space-3);
@@ -1329,16 +1357,12 @@
   animation-delay: 160ms;
 }
 
-.triStatWin {
-  border-left: 3px solid var(--color-perf-win);
-}
-
 .triStatLabel {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   line-height: 1;
 }
 
@@ -1350,6 +1374,23 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The W/D/L colour key, same as the desktop record card and every bar on the
+   page. Replaces a 3px sage border that sat on the Wins tile alone — draws and
+   losses had no equivalent, so it read as an accident rather than an encoding.
+   Must follow .triStatValue: same specificity, source order decides. */
+.triStatValueWin {
+  color: var(--color-perf-win-text);
+}
+
+.triStatValueDraw {
+  color: var(--color-perf-draw-text);
+}
+
+.triStatValueLoss {
+  color: var(--color-perf-loss-text);
 }
 
 /* Highlight cards */
@@ -1825,34 +1866,11 @@
     border-radius: var(--radius-lg);
   }
 
-  .card {
-    padding: var(--space-3);
-  }
-
-  .cardOpeningName {
-    font-size: 16px;
-  }
-
-  .cardTitle {
-    font-size: 17px;
-  }
-
-  .cardLabel {
-    font-size: 10px;
-    margin-bottom: var(--space-2);
-  }
-
-  .statsValue {
-    font-size: 18px;
-  }
-
-  .winRateValue {
-    font-size: 22px;
-  }
-
-  .winRateRow {
-    margin-top: var(--space-3);
-  }
+  /* Summary-card overrides deleted, not ported: `.desktopDashboard` is
+     display:none below 768px, so this block was a second, drifting type scale
+     for cards that never render here (it had .cardTitle at 17px against
+     .cardOpeningName's 16px — the same one-pixel mismatch as the desktop
+     rules). Mobile's summary is `.tripleStats` / `.highlightCard`. */
 
   /* Keep the grouping chip + sort trigger compact + matched on mobile, with a
      comfortable ~34px tap target (matches the As White/As Black switch). */
@@ -1971,6 +1989,8 @@
     animation: none;
   }
 
+  /* The record card's bar is PerfBar, which honours reduced motion in its own
+     module. */
   .progressFill,
   .winRateBarFillWin,
   .winRateBarFillLoss {

@@ -392,6 +392,45 @@ export const PersonalOpeningStats: React.FC<{
           const totalWins = dashboard.whiteWin + dashboard.blackWin;
           const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
+          const totalDecided = totalWins + totalDraws + totalLosses;
+
+          // Counts, then the same split bar every other card on the page ends
+          // with. No percentage per count: the bar *is* the proportion, and the
+          // two opening cards beside this one already own the "%" register.
+          // The tints are the key — equal-width columns can't line up with
+          // proportional segments, so colour is what ties a number to its band.
+          const recordStats = (
+            <>
+              <div className={styles.statsRows}>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Wins</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
+                    {totalWins.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Draws</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueDraw}`}>
+                    {totalDraws.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Losses</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
+                    {totalLosses.toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              <PerfBar
+                win={totalWins}
+                draw={totalDraws}
+                loss={totalLosses}
+                games={totalDecided}
+                legend={false}
+                className={styles.cardBar}
+              />
+            </>
+          );
 
           return (
             <>
@@ -411,19 +450,29 @@ export const PersonalOpeningStats: React.FC<{
 
                 {sampleBanner}
 
-                {/* 3 inline stat cards */}
+                {/* 3 inline stat tiles. Deliberately NOT the desktop record
+                    card: on a phone the tiles read faster and cost two fewer
+                    lines above the fold than an eyebrow + title would. They
+                    carry the same W/D/L colour key, which is what actually
+                    needed fixing. */}
                 <div className={styles.tripleStats}>
-                  <div className={`${styles.triStat} ${styles.triStatWin}`}>
+                  <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Wins</span>
-                    <span className={styles.triStatValue}>{totalWins}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueWin}`}>
+                      {totalWins}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Draws</span>
-                    <span className={styles.triStatValue}>{totalDraws}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueDraw}`}>
+                      {totalDraws}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Losses</span>
-                    <span className={styles.triStatValue}>{totalLosses}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueLoss}`}>
+                      {totalLosses}
+                    </span>
                   </div>
                 </div>
 
@@ -600,24 +649,7 @@ export const PersonalOpeningStats: React.FC<{
                       This analysis
                     </div>
                     <h3 className={styles.cardTitle}>Your record</h3>
-                    <div className={styles.statsRows}>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Wins</span>
-                        <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
-                          {totalWins.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Draws</span>
-                        <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Losses</span>
-                        <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
-                          {totalLosses.toLocaleString()}
-                        </span>
-                      </div>
-                    </div>
+                    {recordStats}
                   </div>
 
                   {bestOpening && (
@@ -642,7 +674,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>win rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillWin}
                           style={{ width: `${getWinRate(bestOpening)}%` }}
@@ -673,7 +705,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>loss rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillLoss}
                           style={{ width: `${getLossRate(weakestOpening)}%` }}

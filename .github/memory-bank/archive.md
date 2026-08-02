@@ -375,3 +375,24 @@ css. Design-system lockstep: preview cards `components-opening-detail-mobile`
 (new) + right-column (reordered), 2a mock in `project/explorations/`. No token
 changes. Docs: user-journeys, context.md AD-012. Verified: 323 frontend tests
 (35 new); tsc/ESLint/Prettier clean; Playwright at 390/320/1280px.
+
+## UX review phases 0–3 (2026-07-27..28)
+
+Moved out of `progress.md` on 2026-08-02 to keep it under 100 lines.
+
+- **0 — systemic.** Button tiers, self-labelling `ResultBar`, decorative orange
+  removed, sentence case throughout, focus ring, 44px star target.
+- **1 — Discover closes the loop.** `Toast` with Undo, star on every card,
+  persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
+- **2 — `GET /api/openings/browse`.** Items, `total`, `remaining` and facet
+  counts from one request, so the count and the grid cannot disagree.
+- **3 — the faceted filter bar.**
+
+## Analyse summary card row (2026-08-02)
+
+Full rationale lives in the maintainer notes at
+`design-system/project/preview/components-analyse.html`, which record what the
+three cards now agree on (bottom-anchored figures, one 8px bar height, one 20px
+headline tier, one micro-label style) and what was deliberately left alone (the
+two opening cards keep their single-fill rate bars; mobile keeps its three stat
+tiles rather than adopting the desktop record card).

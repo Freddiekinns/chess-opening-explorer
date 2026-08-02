@@ -4,6 +4,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Analyse summary cards rebuilt into one row** (2026-08-02, on
+  `claude/player-details-layout-qxa1mo`). Reverses phase 5 §3 ("the record card
+  keeps its existing layout"): structure was never the problem, composition was
+  — figures hugging the top-left of an equal-height cell ~40% empty, and the
+  only card in the row with no bar. Now bottom-anchored across three full-width
+  columns (win left / draw centre / loss right) over the shared PerfBar track.
+  Fell out of it: bar height 6 vs 8px, headline 22 vs 20px, tracked-uppercase
+  "WINS" vs sentence-case "win rate", a sage border on the mobile Wins tile
+  alone. Guards in `PersonalOpeningStats.test.tsx`.
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
   and the repertoire were swapped out wholesale, so Surprise me survives as a
@@ -32,29 +41,20 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   under the explorer card. Now Overview · explorer · master games · plans ·
   resources · search. Spec §3.2 rewritten; order guard at
   `pages/__tests__/mobile-stack-order.test.tsx`.
-- **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): all
-  six phases read back against the handoff bundle. Six defects, every one a
-  change half-applied — a silent repertoire removal, `1. NF3`, a filter URL
-  400ing on case. **Detail in `archive.md`.**
+- **UX review implementation audit** (2026-07-29): six phases read back against
+  the handoff bundle; six half-applied changes. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
-  header; "Career totals / Overall performance" → "This analysis / Your record"
-  (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
-  → "Games". Sample reports from committed fixtures, dated on screen. PGN
-  reduction moved to `packages/shared/src/utils/personal-analysis.ts`; gear into
-  overlay.
+  header; "Career totals" → "This analysis / Your record" (it claimed a lifetime
+  for one run); wins sage / losses brick; "GP" → "Games"; dated sample fixtures;
+  PGN reduction into `packages/shared`; gear to overlay.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
   `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
   level filter and everything it governs; master games move outside it into a
   shared `MasterGamesCard`. `WinRateBar` and `MobileMasterGames` deleted; one
   `explorerStats` module owns every level-scoped label. Explorer error beacon
   moved into the hook (was desktop-only, so mobile failures went unreported).
-- **UX review phases 0–3** (2026-07-27..28): **0** systemic — button tiers,
-  self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
-  44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
-  card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
-  **2** `GET /api/openings/browse` — items, `total`, `remaining` and facet
-  counts from one request, so count and grid cannot disagree. **3** the faceted
-  bar.
+- **UX review phases 0–3** (2026-07-27..28): systemic pass, Discover's star/undo
+  loop, `GET /api/openings/browse`, the faceted bar. See `archive.md`.
 - Everything before the UX review — **all detail in `archive.md`**.
   2026-07-12..20 (shared `PerfBar`; opening-detail mobile overhaul PR #53;
   `/api/explorer` proxy after Lichess gated the explorer). Through 07-11
@@ -64,8 +64,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   matching + pipeline hardening; the `Math.random()` W/D/L and dropdown-stacking
   fixes; 28-family taxonomy; domain migration; TASK006–016; Course Discovery;
   Practice Mode).
-- **Still true and not fixed**: the common-plans ECO-bucket investigation found
-  a real defect and shipped no code change for it.
+- **Still true, not fixed**: the common-plans ECO-bucket investigation found a
+  real defect and shipped no code change.
 
 ## What's Left
 

@@ -695,6 +695,64 @@ describe('PersonalOpeningStats - stylesheet ordering', () => {
 
     expect(css.indexOf('.statsValue {')).toBeGreaterThan(-1);
     expect(css.indexOf('.statsValueWin {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+    expect(css.indexOf('.statsValueDraw {')).toBeGreaterThan(css.indexOf('.statsValue {'));
     expect(css.indexOf('.statsValueLoss {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+  });
+
+  it('tints the mobile stat tiles after the base value rule, for the same reason', async () => {
+    const { readWebSource } = await import('../../../test/readSource');
+    const css = readWebSource('src/components/personal/PersonalOpeningStats.module.css');
+
+    expect(css.indexOf('.triStatValue {')).toBeGreaterThan(-1);
+    for (const modifier of ['.triStatValueWin {', '.triStatValueDraw {', '.triStatValueLoss {']) {
+      expect(css.indexOf(modifier)).toBeGreaterThan(css.indexOf('.triStatValue {'));
+    }
+  });
+});
+
+// The summary cards are three cards drawn by two rules in two files, and every
+// complaint about them has been about the pieces disagreeing rather than about
+// any one piece. These assert the agreements, not the values.
+describe('PersonalOpeningStats - summary card row', () => {
+  const readCss = async (path: string) => {
+    const { readWebSource } = await import('../../../test/readSource');
+    return readWebSource(path);
+  };
+
+  const blockOf = (css: string, selector: string) => {
+    const start = css.indexOf(`${selector} {`);
+    expect(start, `${selector} missing`).toBeGreaterThan(-1);
+    return css.slice(start, css.indexOf('}', start));
+  };
+
+  it('draws every summary-card bar at one height', async () => {
+    // The record card's bar is PerfBar; the two opening cards keep their own
+    // single-fill bar. Different components, one row — so the heights have to
+    // be stated the same. `.winRateBar` was 6px against PerfBar's 8px.
+    const cardCss = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    const perfCss = await readCss('src/components/personal/PerfBar.module.css');
+
+    const height = /height:\s*([^;]+);/;
+    expect(blockOf(cardCss, '.winRateBar').match(height)?.[1].trim()).toBe(
+      blockOf(perfCss, '.track').match(height)?.[1].trim()
+    );
+  });
+
+  it('anchors the record card figures to the bottom so the bars share a baseline', async () => {
+    // Without this the record card's shorter content floats at the top of an
+    // equal-height grid cell, leaving its bar above its siblings' and a void
+    // under it — the original complaint.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(blockOf(css, '.statsRows')).toMatch(/margin-top:\s*auto/);
+  });
+
+  it('gives every small data label in the row the same treatment', async () => {
+    // "WINS/DRAWS/LOSSES" were tracked uppercase while the neighbouring card
+    // said "win rate" in sentence case, one card width apart.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    for (const selector of ['.statsLabel', '.winRateLabel', '.triStatLabel']) {
+      expect(blockOf(css, selector)).toMatch(/text-transform:\s*uppercase/);
+      expect(blockOf(css, selector)).toMatch(/letter-spacing:\s*0\.05em/);
+    }
   });
 });

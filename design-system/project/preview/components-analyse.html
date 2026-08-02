@@ -169,13 +169,19 @@
         font-size: 14px;
         line-height: 1.5;
       }
-      /* ── Record card ── */
+      /* ── Summary card row ── */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        gap: 16px;
+      }
       .card {
-        width: 320px;
         background: var(--surface-raised);
         border: 1px solid var(--color-border);
         border-radius: var(--radius-lg);
         padding: 20px;
+        display: flex;
+        flex-direction: column;
       }
       .eyebrow {
         font-size: 11px;
@@ -184,43 +190,134 @@
         color: var(--color-text-secondary);
         margin-bottom: 12px;
       }
+      .eyebrowWin {
+        color: var(--color-perf-win-text);
+      }
+      /* 20px, matching .openingName — one headline tier across the row. */
       .cardTitle {
         font-family: var(--font-family-headline);
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 800;
         letter-spacing: -0.02em;
         color: var(--color-text-primary);
         margin: 0;
       }
+      .openingName {
+        font-family: var(--font-family-headline);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--color-text-primary);
+        margin: 0;
+      }
+      .openingMoves {
+        font-family: var(--font-family-mono);
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+      .openingCtx {
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        margin-top: 8px;
+      }
+      /* Three equal columns spanning the card, pushed to the bottom so the
+         card's bar lands on the same baseline as its siblings'. */
       .stats {
-        margin-top: 16px;
-        display: flex;
-        gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 20px;
       }
       .stat {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 6px;
+        min-width: 0;
+      }
+      /* Win left, draw centre, loss right — the bar's own geometry, and the
+         same arrangement as the PerfBar legend. */
+      .stat:nth-child(2) {
+        align-items: center;
+        text-align: center;
+      }
+      .stat:nth-child(3) {
+        align-items: flex-end;
+        text-align: right;
       }
       .statValue {
         font-family: var(--font-family-headline);
         font-size: 28px;
         font-weight: 800;
         letter-spacing: -0.02em;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
         color: var(--color-text-primary);
       }
       .statWin {
         color: var(--color-perf-win-text);
       }
+      .statDraw {
+        color: var(--color-perf-draw-text);
+      }
       .statLoss {
         color: var(--color-perf-loss-text);
       }
+      /* One micro-label style for every small data label on the page: the stat
+         columns, "win rate", and the opening-list column headers. */
       .statLabel {
         font-size: 11px;
         font-weight: 600;
         color: var(--color-text-muted);
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
+        line-height: 1;
+      }
+      .rateRow {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 16px;
+      }
+      .rateValue {
+        font-family: var(--font-family-headline);
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: var(--color-text-primary);
+      }
+      /* ── Card bars — 8px on every card in the row ── */
+      .splitBar {
+        display: flex;
+        height: 8px;
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        gap: 1px;
+        margin-top: 12px;
+      }
+      .segWin {
+        background: var(--color-perf-win);
+      }
+      .segDraw {
+        background: var(--color-perf-draw);
+      }
+      .segLoss {
+        background: var(--color-perf-loss);
+      }
+      .rateBar {
+        height: 8px;
+        border-radius: var(--radius-full);
+        background: rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+        margin-top: 12px;
+      }
+      .rateFillWin {
+        height: 100%;
+        border-radius: var(--radius-full);
+        background: var(--color-perf-win);
       }
       /* ── Sample banner ── */
       .banner {
@@ -251,9 +348,44 @@
          #9dbd7c and "brick" #c98579 are exactly --color-perf-win-text and
          --color-perf-loss-text. No new tokens were needed.
 
-         Ordering note for maintainers: .statsValueWin / .statsValueLoss must
-         be declared AFTER .statsValue in the module. Same specificity, so
-         source order decides — declared before, the tints silently vanish. -->
+         Ordering note for maintainers: .statsValueWin / .statsValueDraw /
+         .statsValueLoss must be declared AFTER .statsValue in the module. Same
+         specificity, so source order decides — declared before, the tints
+         silently vanish. Same for the mobile .triStatValue* tiles.
+
+         ── Summary card row, revised 2026-08-02 ──
+         Phase 5 decided the record card "keeps its existing layout", arguing
+         .statsRows was already the mock's structure. Structure was not the
+         problem: the card sat in an equal-height grid with its content at the
+         top-left and roughly 40% of it empty, and it was the only card in the
+         row with no bar, so the row had no bottom edge. Reversed on review.
+
+         What the row now agrees on:
+         - Bottom-anchored figures (margin-top: auto), so every card's bar is
+           its last child and the three bars self-align on the padding box.
+         - One bar height, 8px, whether the card draws PerfBar's split track
+           (record) or a single-fill rate bar (top-performing / needs work).
+           .winRateBar was 6px against PerfBar's 8px.
+         - One headline tier at 20px. .cardTitle was 22px against
+           .cardOpeningName's 20px — a mismatch small enough to read as a slip.
+         - One micro-label style: 11px / 600 / uppercase / 0.05em, matching the
+           opening-list column headers. "win rate" was sentence case and
+           untracked, one card width from tracked-uppercase "WINS".
+
+         The two opening cards keep their single-fill bars deliberately: one
+         stated rate with one bar filled to it reads clearly, and swapping in a
+         W/D/L split there changed something that was not broken.
+
+         Tints are load-bearing on the record card, not decoration — three
+         equal-width columns cannot line up with three proportional segments,
+         so colour is the only thing tying a count to its band. Draws take
+         --color-perf-draw-text rather than primary cream: as the brightest
+         number in the trio, draws were pulling the eye first.
+
+         Columns run win-left / draw-centre / loss-right, matching both the bar
+         underneath and PerfBar's own legend. Three left-aligned columns left
+         the numbers stopping around two-thirds of a card whose bar spanned all
+         of it. -->
 
     <div class="row">
       <div>
@@ -288,7 +420,9 @@
 
     <div class="row">
       <div>
-        <span class="cap">analysing — fields dim, Cancel replaces Analyse, progress under the bar</span>
+        <span class="cap"
+          >analysing — fields dim, Cancel replaces Analyse, progress under the bar</span
+        >
         <div class="screen">
           <h1 class="heroTitle">Analyse your games</h1>
           <p class="heroSub">
@@ -341,27 +475,48 @@
 
     <div class="row">
       <div>
-        <span class="cap">record card — scoped to this run, wins sage, losses brick</span>
-        <div class="card">
-          <div class="eyebrow">This analysis</div>
-          <h3 class="cardTitle">Your record</h3>
-          <div class="stats">
-            <span class="stat">
-              <span class="statValue statWin">47</span>
-              <span class="statLabel">Wins</span>
-            </span>
-            <span class="stat">
-              <span class="statValue">11</span>
-              <span class="statLabel">Draws</span>
-            </span>
-            <span class="stat">
-              <span class="statValue statLoss">42</span>
-              <span class="statLabel">Losses</span>
-            </span>
+        <span class="cap">summary card row — one anatomy, one bar height, one bottom edge</span>
+        <div class="cards">
+          <div class="card">
+            <div class="eyebrow">This analysis</div>
+            <h3 class="cardTitle">Your record</h3>
+            <div class="stats">
+              <span class="stat">
+                <span class="statLabel">Wins</span>
+                <span class="statValue statWin">47</span>
+              </span>
+              <span class="stat">
+                <span class="statLabel">Draws</span>
+                <span class="statValue statDraw">11</span>
+              </span>
+              <span class="stat">
+                <span class="statLabel">Losses</span>
+                <span class="statValue statLoss">42</span>
+              </span>
+            </div>
+            <div class="splitBar">
+              <span class="segWin" style="width: 47%"></span>
+              <span class="segDraw" style="width: 11%"></span>
+              <span class="segLoss" style="width: 42%"></span>
+            </div>
           </div>
+
+          <a class="card" style="text-decoration: none">
+            <div class="eyebrow eyebrowWin">Top-performing opening</div>
+            <h3 class="openingName">Vienna Gambit</h3>
+            <div class="openingMoves">1. e4 e5 2. Nc3 Nf6 3. f4 d6</div>
+            <div class="openingCtx">6 games</div>
+            <div class="rateRow">
+              <span class="rateValue">83%</span>
+              <span class="statLabel">win rate</span>
+            </div>
+            <div class="rateBar"><div class="rateFillWin" style="width: 83%"></div></div>
+          </a>
         </div>
       </div>
+    </div>
 
+    <div class="row">
       <div>
         <span class="cap">sample banner — names the player, the count and the date</span>
         <div class="banner">

@@ -4,25 +4,27 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Mobile filter sheet: the grabber works, the family list is opt-in**
+  (2026-08-02, on `claude/player-details-layout-qxa1mo`). A decorative 36×4 pill
+  promised a drag the sheet could not do, leaving a ~100px backdrop strip and a
+  footer button as the only exits on a device with no Escape key. Now drags (25%
+  / 120px, or a 0.5px/ms flick) and closes on tap. Separately, 29 families
+  expanded by default opened every visit 2,000px deep; collapsed behind a row
+  stating the applied family, the 13 level/style/sort pills fit one screen.
+  Guards in `FilterSheet.test.tsx` — jsdom has no `PointerEvent`, so the drag
+  tests dispatch MouseEvents or pass vacuously.
 - **Analyse summary cards rebuilt into one row** (2026-08-02, on
-  `claude/player-details-layout-qxa1mo`). Reverses phase 5 §3 ("the record card
-  keeps its existing layout"): structure was never the problem, composition was
-  — figures hugging the top-left of an equal-height cell ~40% empty, and the
-  only card in the row with no bar. Now bottom-anchored across three full-width
-  columns (win left / draw centre / loss right) over the shared PerfBar track.
-  Fell out of it: bar height 6 vs 8px, headline 22 vs 20px, tracked-uppercase
-  "WINS" vs sentence-case "win rate", a sage border on the mobile Wins tile
-  alone. Then the slack it exposed: a third line, the overall win rate, which
-  turned up a latent defect — W/D/L were tallied inside the classified branch,
-  so a real result with an unrecognised opening vanished from "Your record".
-  Guards in `PersonalOpeningStats.test.tsx` + `personalAnalysis.test.ts`.
+  `claude/player-details-layout-qxa1mo`). Reverses phase 5 §3: composition, not
+  structure — figures hugging the top-left of a cell ~40% empty, and the only
+  card in the row with no bar. Now bottom-anchored across three columns over the
+  shared PerfBar track, plus a third line (the overall win rate) that exposed a
+  latent defect: W/D/L were tallied inside the classified branch, so a real
+  result with an unrecognised opening vanished from "Your record". Guards in
+  `PersonalOpeningStats.test.tsx` + `personalAnalysis.test.ts`.
 - **Discover's empty repertoire slot gets its box back** (2026-08-02, on
   `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star; the
-  build shipped bare text. Change 03 bought height (a ~180px dashed panel →
-  ~40px), not chrome — "one-line prompt" was read as "one line of text" at plan
-  step, undocumented, then frozen by a test asserting "not a panel". Empty and
-  populated are the same slot, so the first save should fill a container rather
-  than summon one. Prompt now drawn in `components-repertoire-row`.
+  build shipped bare text — a handoff divergence frozen by a test asserting "not
+  a panel". **Detail in `archive.md`.**
 - **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
   `ux/phase-5-analyse`). Two passes: first _what_ typing showed — Surprise me
   and the repertoire were swapped out wholesale, so Surprise me survives as a

@@ -5,6 +5,19 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## The empty repertoire slot gets its box back (2026-08-02, `ux/phase-5-analyse`)
+
+A handoff divergence with no recorded reason. The mock draws Discover's empty
+state as a bordered one-line bar with a 16px outline star; the build shipped a
+bare sentence. Change 03 justified _height_ (a ~180px dashed panel → ~40px)
+while keeping the container — "one-line prompt" got read as "one line of text".
+Empty and populated are the same slot: with no surface, the first save conjures
+a section out of bare text rather than filling a container. The test had frozen
+the drift ("not a panel" asserted more than anyone decided); it now says not a
+_titled empty-state_ panel. `components-repertoire-row` draws both.
+
+---
+
 ## Opening Family Rollups — Full Design History (branch `feature/opening-family-rollups`)
 
 Feature: group a player's analysed openings by family on the Analyse page, with

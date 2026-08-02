@@ -85,24 +85,75 @@
   flex-direction: column;
   width: 100%;
   max-height: 88vh;
-  padding: var(--space-3) var(--space-5) var(--space-6);
+  padding: var(--space-2) var(--space-5) var(--space-6);
   background: var(--surface-raised);
   border-top: 1px solid var(--color-border);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   box-shadow: 0 -12px 40px var(--color-shadow-elevated);
+  /* Keep in step with CLOSE_MS in FilterSheet.tsx. The transform is applied
+     inline only while a drag is in flight or a dismissal is finishing, so the
+     sheet carries no containing block at rest — nothing inside it is fixed or
+     sticky today, and this keeps it that way if something ever is. */
+  transition: transform 200ms cubic-bezier(0.32, 0.72, 0, 1);
+  animation: sheetIn 260ms cubic-bezier(0.32, 0.72, 0, 1) backwards;
 }
 
-.grabber {
+/* While the finger is down the sheet tracks it exactly: a transition here
+   would make the sheet lag behind the drag. */
+.sheetDragging {
+  transition: none;
+}
+
+@keyframes sheetIn {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* The grabber and the title row are the drag surface. `touch-action: none`
+   hands the vertical gesture to the pointer handlers instead of letting the
+   browser treat it as a scroll. */
+.dragZone {
   flex: none;
+  touch-action: none;
+}
+
+/* A 4px pill is the affordance; the button around it is the 44px target, and
+   it closes on tap for anyone who taps what looks draggable. */
+.grabber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 32px;
+  padding: var(--space-3) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.grabber:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+.grabberBar {
+  display: block;
   width: 36px;
   height: 4px;
-  margin: 0 auto var(--space-4);
   background: var(--surface-overlay);
   border-radius: var(--radius-full);
 }
 
 .header {
-  flex: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -129,9 +180,12 @@
 }
 
 .body {
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
+  /* Without this, a flick at either end of the list carries on into whatever
+     is behind the sheet. */
+  overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -186,6 +240,73 @@
   color: var(--color-text-muted);
   font-size: var(--text-xs);
   font-variant-numeric: tabular-nums;
+}
+
+/* Twenty-nine families behind a row that states the current one. Shaped like
+   the desktop facet trigger — same job, same anatomy: value on the left,
+   affordance on the right. */
+.disclosure {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+}
+
+.disclosure:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* A set filter is a state, not a call to action: border and text, no fill —
+   the same distinction the desktop bar draws. */
+.disclosureActive {
+  border-color: var(--accent-a50);
+  color: var(--color-text-primary);
+}
+
+.disclosureValue {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex: none;
+  color: var(--color-text-muted);
+  transition: transform 160ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+/* The picker carries the desktop dropdown's own inset. Inside the sheet that
+   is a third edge, beside the disclosure above it and the footer below.
+   Descendant-qualified on purpose: this and FamilyPicker's own `.picker` sit
+   on the same element, so at equal specificity the winner would be whichever
+   module the bundler happened to emit last. */
+.body .familyPicker {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* Primary per the Phase 0 button spec: filled orange, --radius-md. */

@@ -150,6 +150,69 @@
         font-size: 16px;
         font-weight: 600;
       }
+      /* Mobile sheet — the object, not the facets inside it. */
+      .sheet {
+        width: 300px;
+        background: var(--surface-raised);
+        border-top: 1px solid var(--color-border);
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+        padding: 8px 20px 24px;
+      }
+      /* The grabber is the drag surface, and it is a 44px button, not a 4px
+         pill: it drags the sheet down and closes it on tap. Drawn as an
+         affordance with nothing behind it, it promises a gesture the sheet
+         cannot perform, and a phone has no Escape key to fall back on. */
+      .grab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 12px 0;
+      }
+      .grab i {
+        display: block;
+        width: 36px;
+        height: 4px;
+        background: var(--surface-overlay);
+        border-radius: var(--radius-full);
+      }
+      .sheettitle {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        margin-bottom: 12px;
+      }
+      /* Collapsed facet row: same anatomy as the desktop trigger — value
+         left, affordance right — sized for touch. */
+      .disclose {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 8px 16px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        color: var(--color-text-secondary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .disclose--active {
+        border-color: rgba(232, 93, 4, 0.5);
+        color: var(--color-text-primary);
+      }
+      .disclose .chev {
+        margin-left: auto;
+        color: var(--color-text-muted);
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
   <body>
@@ -217,6 +280,45 @@
       <div>
         <span class="cap">mobile sheet footer — primary, reveals the result</span>
         <div class="done">Show 2,182 openings</div>
+      </div>
+    </div>
+
+    <!-- The sheet as an object. Two rules, both learned the hard way:
+
+         1. Anything drawn as a handle must behave as one. The first cut shipped
+            a decorative 36×4 pill, so the only exits from a sheet that filled
+            88% of the screen were a ~100px strip of backdrop above it and the
+            Escape key. Pulling it down — the thing it looked like it did —
+            did nothing.
+         2. A facet with 29 options collapses; a facet with 4 does not. Level,
+            style and sort are 13 pills and fit on one screen. The family list
+            expanded by default made every visit open 2,000px deep for a facet
+            most visits never touch, and buried the applied family somewhere in
+            the scroll. Collapsed, the row states it. -->
+    <div class="row">
+      <div>
+        <span class="cap">mobile sheet — collapsed family, whole sheet on one screen</span>
+        <div class="sheet">
+          <div class="grab"><i></i></div>
+          <div class="sheettitle">Filters</div>
+          <div class="eyebrow">Level</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px">
+            <span class="facet facet--active" style="border-radius: 999px">All levels</span>
+            <span class="facet" style="border-radius: 999px">Beginner</span>
+          </div>
+          <div class="eyebrow">Family</div>
+          <div class="disclose"><span>Any family</span><span class="chev">⌄</span></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">collapsed family row — default, and with one applied</span>
+        <div style="display: grid; gap: 10px; width: 260px">
+          <div class="disclose"><span>Any family</span><span class="chev">⌄</span></div>
+          <div class="disclose disclose--active">
+            <span>Sicilian Defense</span><span class="chev">⌄</span>
+          </div>
+        </div>
       </div>
     </div>
   </body>

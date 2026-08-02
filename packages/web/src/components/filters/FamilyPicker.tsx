@@ -54,9 +54,16 @@ interface FamilyPickerProps {
   families: FacetValue[];
   value: string | null;
   onSelect: (value: string | null) => void;
+  /** The sheet uses this to drop the dropdown's inset so rows sit on its grid. */
+  className?: string;
 }
 
-export const FamilyPicker: React.FC<FamilyPickerProps> = ({ families, value, onSelect }) => {
+export const FamilyPicker: React.FC<FamilyPickerProps> = ({
+  families,
+  value,
+  onSelect,
+  className = '',
+}) => {
   const [query, setQuery] = useState('');
 
   const groups = useMemo(() => {
@@ -68,7 +75,7 @@ export const FamilyPicker: React.FC<FamilyPickerProps> = ({ families, value, onS
   }, [families, query]);
 
   return (
-    <div className={styles.picker}>
+    <div className={`${styles.picker} ${className}`.trim()}>
       <div className={styles.searchWrap}>
         <Search size={15} className={styles.searchIcon} aria-hidden="true" />
         <input

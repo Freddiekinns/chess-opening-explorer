@@ -19,8 +19,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   card in the row with no bar. Now bottom-anchored across three columns over the
   shared PerfBar track, plus a third line (the overall win rate) that exposed a
   latent defect: W/D/L were tallied inside the classified branch, so a real
-  result with an unrecognised opening vanished from "Your record". Guards in
-  `PersonalOpeningStats.test.tsx` + `personalAnalysis.test.ts`. **Detail in
+  result with an unrecognised opening vanished from "Your record". Second pass:
+  `.cardIdentity` reserves the name block at its two-line cap, so a wrapping
+  name stops putting the two opening cards' lines 24px apart; figure padding
+  unified. A games count on the record card was declined. **Detail in
   `archive.md`.**
 - **TopBar search field sized to its own panel** (2026-08-02): the 380px
   dropdown flared past a 240px field; field now `clamp(300px, 30vw, 380px)`,
@@ -43,11 +45,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   asserts the halves agree. Spec §3.4. **Detail in `archive.md`.**
 - **Master games moved up the mobile stack** (2026-07-30): a **spec decision
   reversed**, not a bug — the review table sent it below videos and studies to
-  "make both breakpoints agree", which was false. Now Overview · explorer ·
-  master games · plans · resources · search. Guard at
+  "make both breakpoints agree", which was false. Guard at
   `pages/__tests__/mobile-stack-order`.
-- **UX review implementation audit** (2026-07-29): six phases read back against
-  the handoff bundle; six half-applied changes. **Detail in `archive.md`.**
+- **UX review implementation audit** (2026-07-29): six phases read back; six
+  half-applied changes. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals" → "This analysis / Your record" (it claimed a lifetime
   for one run); wins sage / losses brick; "GP" → "Games"; dated fixtures; PGN

@@ -680,13 +680,19 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
                         Top-performing opening
                       </div>
-                      <OpeningNameSplit
-                        name={bestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {bestOpeningMoves && (
-                        <div className={styles.cardMoves}>{bestOpeningMoves}</div>
-                      )}
+                      {/* Name and moves share one fixed-height block — see
+                          .cardIdentity. The moves are a caption of the name, so
+                          the reserved slack has to sit below the pair, not
+                          between them. */}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={bestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {bestOpeningMoves && (
+                          <div className={styles.cardMoves}>{bestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{bestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
@@ -711,13 +717,15 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>
                         Needs work
                       </div>
-                      <OpeningNameSplit
-                        name={weakestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {weakestOpeningMoves && (
-                        <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
-                      )}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={weakestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {weakestOpeningMoves && (
+                          <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{weakestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>

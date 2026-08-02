@@ -172,8 +172,18 @@
       /* ── Summary card row ── */
       .cards {
         display: grid;
-        grid-template-columns: repeat(2, 300px);
+        grid-template-columns: repeat(3, 260px);
         gap: 16px;
+      }
+      /* Name + moves as one block of reserved height: two name lines (20px at
+         line-height 1.2, which is where the name truncates) plus the moves line
+         and its 4px offset. Without it the two opening cards put their "N
+         games" lines 24px apart whenever one name wraps and the other does not
+         — side-by-side cards of identical shape disagreeing, which is the
+         misalignment a reader actually catches. The slack sits below the pair,
+         never between them: the moves are a caption of the name. */
+      .identity {
+        min-height: 70px;
       }
       .card {
         background: var(--surface-raised);
@@ -193,6 +203,9 @@
       .eyebrowWin {
         color: var(--color-perf-win-text);
       }
+      .eyebrowLoss {
+        color: var(--color-perf-loss-text);
+      }
       /* 20px, matching .openingName — one headline tier across the row. */
       .cardTitle {
         font-family: var(--font-family-headline);
@@ -202,13 +215,21 @@
         color: var(--color-text-primary);
         margin: 0;
       }
+      /* Capped at two lines, which is what makes .identity's reserved height
+         arithmetic rather than a guess: the box holds exactly what the name is
+         allowed to fill. */
       .openingName {
         font-family: var(--font-family-headline);
         font-size: 20px;
         font-weight: 800;
         letter-spacing: -0.02em;
+        line-height: 1.2;
         color: var(--color-text-primary);
         margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       .openingMoves {
         font-family: var(--font-family-mono);
@@ -319,6 +340,11 @@
         border-radius: var(--radius-full);
         background: var(--color-perf-win);
       }
+      .rateFillLoss {
+        height: 100%;
+        border-radius: var(--radius-full);
+        background: var(--color-perf-loss);
+      }
       /* ── Sample banner ── */
       .banner {
         width: 320px;
@@ -371,6 +397,24 @@
          - One micro-label style: 11px / 600 / uppercase / 0.05em, matching the
            opening-list column headers. "win rate" was sentence case and
            untracked, one card width from tracked-uppercase "WINS".
+         - One gap above the figures, 20px. .stats and .rateRow do the identical
+           job — the minimum air between a card's identity block and its figures
+           on whichever card is tallest, where margin-top:auto has no slack left
+           to give — and were stated as 20px and 16px.
+         - One reserved height for the name block (.identity, 70px = two 24px
+           name lines + the 18px moves line + its 4px offset). Two cards of the
+           same shape sit side by side, so a name that wraps in one and not the
+           other put their "N games" lines 24px apart. Reserving costs a
+           permanently 24px-taller row when both names are short; predictable
+           slack beats slack that appears and disappears per player.
+
+         What the row does NOT agree on, and should not be forced to: the
+         record card's middle. It has no moves line, so it is structurally a
+         block short of the opening cards and no amount of reserving aligns it.
+         The row agrees where agreement reads — top edge, headline baseline,
+         bar baseline — and that is enough. Inventing a fourth line for the
+         record card to fill the moves slot would be alignment for its own
+         sake.
 
          The two opening cards keep their single-fill bars deliberately: one
          stated rate with one bar filled to it reads clearly, and swapping in a
@@ -529,14 +573,33 @@
 
           <a class="card" style="text-decoration: none">
             <div class="eyebrow eyebrowWin">Top-performing opening</div>
-            <h3 class="openingName">Vienna Gambit</h3>
-            <div class="openingMoves">1. e4 e5 2. Nc3 Nf6 3. f4 d6</div>
+            <div class="identity">
+              <h3 class="openingName">Vienna Gambit</h3>
+              <div class="openingMoves">1. e4 e5 2. Nc3 Nf6 3. f4 d6</div>
+            </div>
             <div class="openingCtx">6 games</div>
             <div class="rateRow">
               <span class="rateValue">83%</span>
               <span class="statLabel">win rate</span>
             </div>
             <div class="rateBar"><div class="rateFillWin" style="width: 83%"></div></div>
+          </a>
+
+          <!-- A two-line name beside a one-line one: the case the reserved
+               identity block exists for. Every line below it stays on the
+               baseline its neighbour uses. -->
+          <a class="card" style="text-decoration: none">
+            <div class="eyebrow eyebrowLoss">Needs work</div>
+            <div class="identity">
+              <h3 class="openingName">Sicilian Defense: Najdorf, English Attack</h3>
+              <div class="openingMoves">1. e4 c5 2. Nf3 d6 3. d4 cxd4</div>
+            </div>
+            <div class="openingCtx">9 games</div>
+            <div class="rateRow">
+              <span class="rateValue">67%</span>
+              <span class="statLabel">loss rate</span>
+            </div>
+            <div class="rateBar"><div class="rateFillLoss" style="width: 67%"></div></div>
           </a>
         </div>
       </div>

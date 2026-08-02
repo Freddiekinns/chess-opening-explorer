@@ -806,6 +806,22 @@
   margin: 0;
 }
 
+/* Name + moves as one block of reserved height, so the two opening cards agree
+   whatever their names do. Without it the block is 46px with a one-line name
+   and 70px with two, which lands the two cards' "N games" lines 24px apart on
+   cards that are otherwise the same shape — the one misalignment a reader
+   actually catches, because the cards sit side by side.
+   70px = two name lines (20px x 1.2) + the moves line (18px) + its 4px offset;
+   two, because .cardOpeningName clamps there. Reserving costs a permanently
+   24px-taller row in the both-names-short case, which is the right trade:
+   the slack is predictable instead of appearing and disappearing per player.
+   It does NOT align the opening cards with the record card — that one has no
+   moves line, so its middle is structurally a block short. Top edge, headline
+   baseline and bar baseline are where the row agrees. */
+.cardIdentity {
+  min-height: 70px;
+}
+
 .cardOpeningName {
   font-family: var(--font-family-headline);
   font-size: var(--text-xl);
@@ -920,9 +936,11 @@
   gap: var(--space-2);
   /* Pin the win-rate value + bar to the bottom of the card; free space from
      shorter cards collects here instead of below the bar. padding-top keeps a
-     minimum gap on the tallest card, where margin-top:auto collapses to 0. */
+     minimum gap on the tallest card, where margin-top:auto collapses to 0 —
+     var(--space-5) to match .statsRows, which does the identical job on the
+     record card. The two were 16 and 20px: one role, two numbers. */
   margin-top: auto;
-  padding-top: var(--space-4);
+  padding-top: var(--space-5);
 }
 
 .winRateValue {
@@ -1018,20 +1036,15 @@
     padding: var(--space-4);
   }
 
-  .cardTitle {
-    font-size: 19px;
-  }
-
-  .cardOpeningName {
-    font-size: 17px;
-  }
-
-  /* No record-card or win-rate overrides here. `.desktopDashboard` is
-     display:none below 768px, so these only ever contradicted the desktop
+  /* No record-card, win-rate or card-type overrides here. `.desktopDashboard`
+     is display:none below 768px, so these only ever contradicted the desktop
      layout on paper — and a stack of them (flex-direction, order swaps, a
      second type scale) is how the card drifted out of step with its siblings
-     in the first place. Same reason there are no per-row overrides: the
-     desktop opening lists never render at this width. */
+     in the first place. The headline pair went last: `.cardTitle` 19px /
+     `.cardOpeningName` 17px would have read as the live size and made
+     `.cardIdentity`'s reserved height look wrong, since that is two lines of
+     the real 20px. Same reason there are no per-row overrides: the desktop
+     opening lists never render at this width. */
   .sectionHeader {
     flex-direction: column;
     gap: var(--space-3);

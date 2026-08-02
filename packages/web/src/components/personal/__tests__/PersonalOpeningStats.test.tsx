@@ -767,4 +767,37 @@ describe('PersonalOpeningStats - summary card row', () => {
       expect(blockOf(css, selector)).toMatch(/letter-spacing:\s*0\.05em/);
     }
   });
+
+  it('leaves the same gap above the figures on both kinds of card', async () => {
+    // `.statsRows` and `.winRateRow` do one job — the minimum gap between a
+    // card's identity block and its figures, on whichever card is tallest and
+    // therefore has no `margin-top: auto` slack to give. They were stated as
+    // 20px and 16px.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    const padding = /padding-top:\s*([^;]+);/;
+    expect(blockOf(css, '.winRateRow').match(padding)?.[1].trim()).toBe(
+      blockOf(css, '.statsRows').match(padding)?.[1].trim()
+    );
+  });
+
+  it('reserves the name block at the height the name is capped to', async () => {
+    // The reserve and the clamp are the same decision written twice: the block
+    // holds two name lines because the name truncates after two. Raise one
+    // without the other and either a legal name overflows its box or the box
+    // reserves space nothing can ever fill.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(blockOf(css, '.cardIdentity')).toMatch(/min-height:\s*70px/);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/-webkit-line-clamp:\s*2/);
+  });
+
+  it('states the opening headline size once, so the reserve can be arithmetic', async () => {
+    // 70px is two lines of --text-xl at line-height 1.2 plus the moves line. A
+    // second `.cardOpeningName` font-size anywhere in the file makes that sum
+    // false at some width. The old @media (max-width: 768px) pair said 17px —
+    // dead, since `.desktopDashboard` is display:none there, but it read live.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(css.match(/\.cardOpeningName\s*\{/g)).toHaveLength(1);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/font-size:\s*var\(--text-xl\)/);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/line-height:\s*1\.2/);
+  });
 });

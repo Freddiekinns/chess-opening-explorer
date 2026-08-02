@@ -29,6 +29,24 @@ bar, so the row had no bottom edge.
   classified branch, so a real result with an unrecognised opening vanished from
   the record while the header still counted it. `whiteGames`/`blackGames` stay
   matched-only — they label the lists, so they must equal the rows beneath.
+- **Second pass — "should every card be the same height and layout?"** Measured
+  first: they already are where alignment reads (equal heights via the grid,
+  label at y=21, headline at y=44, bar at y=175/199). The middle disagrees
+  _structurally_ — the opening card has five blocks to the record card's four,
+  because only it has a moves line. So `.cardIdentity` reserves 70px (two 24px
+  name lines, where the name clamps, + the 18px moves line + its 4px offset) and
+  fixes the two _opening_ cards against each other: a wrapping name in one and
+  not the other put their "N games" lines 24px apart on cards of identical
+  shape. Invisible in both fixtures, because neither player has a qualifying
+  weak opening, so only one opening card renders. Cost: the row is permanently
+  24px taller when both names are short — predictable slack beats slack that
+  appears per player. The record card is deliberately **not** forced into line;
+  that would mean inventing a fourth line for it to fill.
+- **A games count on the record card was declined.** The header states it twice
+  ("100 games analysed · 100 matched") and the card's own counts sum to it; a
+  fourth statement 40px below the third earns nothing. The context slot's job on
+  an opening card is a sample size unavailable elsewhere (3 of 100); on the
+  record card the sample is the page's scope, already established.
 - **Left alone on the owner's call**: opening cards keep single-fill rate bars;
   mobile keeps three tiles (but carries the rate on its scope line — parity of
   information, not layout); `MIN_CARD_GAMES` stays 4, since at variation level a

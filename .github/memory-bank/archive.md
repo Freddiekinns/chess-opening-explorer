@@ -5,6 +5,38 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Analyse summary cards read as one row (2026-08-02, `claude/player-details-layout-qxa1mo`)
+
+Phase 5 §3 reversed ("the record card keeps its existing layout"). Structure was
+never the complaint: the card sat in an equal-height grid with its figures at
+the top-left over ~40% dead space, and it was the only card in the row with no
+bar, so the row had no bottom edge.
+
+- **Composition.** Figures bottom-anchored (`margin-top: auto`) across three
+  full-width columns, win left / draw centre / loss right — the bar's own
+  geometry, and PerfBar's legend arrangement.
+- **The dead space, measured.** 54px of a 228px card — but the opening cards
+  carry 51px in the same band, so it was never unique to the record card. Its
+  upper block was two lines against their four, so a third line closes it: the
+  overall win rate, the only rate on the panel with a sample behind it.
+- **The tints are load-bearing.** Equal-width columns cannot align with
+  proportional segments, so colour is the only thing tying a count to its band.
+  Draws move off primary cream — brightest number, least interesting fact.
+- **Four disagreements between rules drawn in different places** (what "the
+  fonts are all off" meant): bar height 6 vs 8px, headline 22 vs 20px, tracked
+  "WINS" beside sentence-case "win rate", a sage border on the Wins tile alone.
+- **"Your record" now counts every decided game.** W/D/L were tallied inside the
+  classified branch, so a real result with an unrecognised opening vanished from
+  the record while the header still counted it. `whiteGames`/`blackGames` stay
+  matched-only — they label the lists, so they must equal the rows beneath.
+- **Left alone on the owner's call**: opening cards keep single-fill rate bars;
+  mobile keeps three tiles (but carries the rate on its scope line — parity of
+  information, not layout); `MIN_CARD_GAMES` stays 4, since at variation level a
+  floor of 8 often qualifies nothing and `findBestOpening` then falls back to an
+  unfiltered `list[0]`.
+
+---
+
 ## The empty repertoire slot gets its box back (2026-08-02, `ux/phase-5-analyse`)
 
 A handoff divergence with no recorded reason. The mock draws Discover's empty
@@ -15,6 +47,28 @@ Empty and populated are the same slot: with no surface, the first save conjures
 a section out of bare text rather than filling a container. The test had frozen
 the drift ("not a panel" asserted more than anyone decided); it now says not a
 _titled empty-state_ panel. `components-repertoire-row` draws both.
+
+---
+
+## Practice drops to accent-outline (`ux/phase-5-analyse`)
+
+Filled orange → orange border + orange label, both breakpoints. **A spec
+decision reversed on the owner's call.** §3 argued from implementation
+completeness — "fully implemented, so it can carry primary weight" — which is a
+different question from how much of the page's attention a feature has earned.
+Practice is a good action that is not yet what the detail page is _for_.
+
+- **Names the third button tier.** The bundle documented two (filled primary,
+  grey `.btn--secondary`) while `buttonSpec.test.ts` called an orange outline
+  "secondary" — never true of `.btn--secondary`. Now: primary · accent-outline ·
+  secondary · tertiary, in `components-buttons`.
+- **Proportion fixed with it** — the other half of the complaint. Desktop was
+  11px inside 24px padding (a swatch with a word in it) while mobile said 13px
+  for the same control. Both 13px now, padding brought in, mobile min-height
+  44px because it is a thumb target.
+- **Guard rewritten, not deleted.** Its durable purpose was never "keep Practice
+  filled": the button is drawn twice and has drifted across breakpoints twice —
+  on fill, then on type size. It now asserts the halves _agree_. Spec §3.4.
 
 ---
 

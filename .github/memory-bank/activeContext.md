@@ -22,18 +22,23 @@ phone does not have. Pulling it down did nothing.
   as the desktop dropdown does.
 - **Left alone**: one sheet holding every facet (a sheet per facet is three taps
   to set a level); live apply; the footer's true count. The IA was right.
-- Also: `overscroll-behavior: contain` so a flick at the list's end stops there;
-  a slide-up entrance, `backwards` per the transform-fill-mode rule.
 - Guards in `FilterSheet.test.tsx`, each verified failing first. jsdom has no
   `PointerEvent`, so `fireEvent.pointerDown` silently drops `clientY` — the drag
   tests dispatch MouseEvents with a `pointerId` or they pass vacuously.
 
-## Previous Task: Analyse summary cards read as one row (`claude/player-details-layout-qxa1mo`)
+Earlier on this branch: the Analyse summary cards, reversing phase 5 §3 — see
+`progress.md`, detail in `archive.md`.
 
-Phase 5 §3 reversed. Figures bottom-anchored across three columns (win left /
-draw centre / loss right — the bar's own geometry) with a third line, the
-overall win rate, closing the slack. Four disagreements between rules drawn in
-different places fell out of it (6 vs 8px bars, 22 vs 20px headline, tracked vs
-sentence case, a sage border on one tile). It also exposed a real defect: "Your
-record" tallied W/D/L inside the classified branch, so a real result with an
-unrecognised opening vanished from the record the header still counted.
+## Previous Task: TopBar search field sized to its own panel (`claude/desktop-search-bar-width-ovwyg0`)
+
+**The dropdown was 140px wider than the control that opened it.** The field was
+a fixed 240px; the panel took `width: max-content` capped at 380px, anchored
+right, so focusing the input flared a box out past the field's left edge.
+
+- **The field gives, not the panel.** `width: clamp(300px, 30vw, 380px)`, and
+  the panel is now `left: 0; right: 0` — flush both edges. Fluid because the bar
+  is a `1fr auto 1fr` grid: a fixed 380px right column exceeds its fr share
+  below ~1045px and drags the nav off centre.
+- **300px floor is the Surprise me row.** Label plus hint needs ~265px of row.
+- **Tablet (640–900px) keeps the old flare.** The 160px field there has no bar
+  room to grow into; the grow-leftwards rule now lives only in that query.

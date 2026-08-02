@@ -394,13 +394,22 @@ export const PersonalOpeningStats: React.FC<{
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
           const totalDecided = totalWins + totalDraws + totalLosses;
 
-          // Counts, then the same split bar every other card on the page ends
-          // with. No percentage per count: the bar *is* the proportion, and the
-          // two opening cards beside this one already own the "%" register.
+          // The overall win rate goes in the context slot the two opening cards
+          // use for "4 games", so the record card's upper block has their
+          // density instead of two lines above a hole. It is also the figure
+          // the panel never gave you: the headline cards state 100% off four
+          // games, while this one is the only rate on screen with a sample
+          // behind it. Still no percentage *per count* — that would be seven
+          // numbers in one small card, and the bar already is the proportion.
+          const overallWinRate = totalDecided ? Math.round((totalWins / totalDecided) * 100) : null;
+
           // The tints are the key — equal-width columns can't line up with
           // proportional segments, so colour is what ties a number to its band.
           const recordStats = (
             <>
+              {overallWinRate !== null && (
+                <div className={styles.cardContext}>{overallWinRate}% win rate</div>
+              )}
               <div className={styles.statsRows}>
                 <div className={styles.statsRow}>
                   <span className={styles.statsLabel}>Wins</span>

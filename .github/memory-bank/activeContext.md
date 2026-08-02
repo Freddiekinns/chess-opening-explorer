@@ -10,6 +10,13 @@ structure was never the complaint. The card sat in an equal-height grid with its
 figures clustered at the top-left and roughly 40% of it empty, and it was the
 only card in the row with no bar, so the row had no bottom edge at all.
 
+- **The dead space was the follow-up.** Cards are as tall as the tallest, so
+  slack pools where `margin-top: auto` puts it. Measured: 54px of a 228px card
+  beside a two-line opening name — but the opening cards carry 51px in the same
+  band, so the gap was never unique to the record card. Its upper block was two
+  lines against their four. Closed with a third line stating the overall win
+  rate: the headline cards read 100% off four games, so this is the only rate on
+  the panel with a sample behind it.
 - **Composition, not decoration.** Figures bottom-anchored (`margin-top: auto`)
   in three full-width columns, win left / draw centre / loss right — the bar's
   own geometry, and PerfBar's legend arrangement. Left-aligned columns stopped

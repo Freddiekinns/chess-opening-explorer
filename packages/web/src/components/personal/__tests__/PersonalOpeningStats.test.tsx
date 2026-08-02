@@ -673,6 +673,18 @@ describe('PersonalOpeningStats - dashboard honesty', () => {
     expect(screen.queryByText('Total wins')).not.toBeInTheDocument();
   });
 
+  it('states an overall win rate, the only rate on the panel with a sample behind it', async () => {
+    // The headline cards read 100% off four games. This one covers the run.
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    const { whiteWin, blackWin, whiteDraw, blackDraw, whiteLoss, blackLoss } = mockDashboardData;
+    const wins = whiteWin + blackWin;
+    const decided = wins + whiteDraw + blackDraw + whiteLoss + blackLoss;
+    const expected = `${Math.round((wins / decided) * 100)}% win rate`;
+    expect(screen.getAllByText(expected).length).toBeGreaterThan(0);
+  });
+
   it('names the games column in full, matching mobile', async () => {
     renderComponent();
 

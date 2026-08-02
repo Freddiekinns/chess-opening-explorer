@@ -385,7 +385,19 @@
          Columns run win-left / draw-centre / loss-right, matching both the bar
          underneath and PerfBar's own legend. Three left-aligned columns left
          the numbers stopping around two-thirds of a card whose bar spanned all
-         of it. -->
+         of it.
+
+         The overall win rate sits in the context slot the opening cards use
+         for "4 games". Cards in this row are as tall as the tallest, so slack
+         pools wherever margin-top:auto puts it; with a two-line opening name
+         beside it the record card's upper block was two lines against their
+         four, and 54px of the 228px card read as a hole rather than as the
+         row's shared breathing band (the opening cards carry 51px in the same
+         place). A third line closes it with the figure the panel otherwise
+         never gives you — the headline cards state 100% off four games, so
+         this is the only rate on screen with a sample behind it. Note this is
+         one overall rate, not a percentage per count: that would be seven
+         numbers in a card whose bar is already the proportion. -->
 
     <div class="row">
       <div>
@@ -480,6 +492,7 @@
           <div class="card">
             <div class="eyebrow">This analysis</div>
             <h3 class="cardTitle">Your record</h3>
+            <div class="openingCtx">53% win rate</div>
             <div class="stats">
               <span class="stat">
                 <span class="statLabel">Wins</span>

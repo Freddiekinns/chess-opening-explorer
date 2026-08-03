@@ -1,14 +1,20 @@
 # Test Organization Guide
 
-## 🏗️ Dual Testing Architecture
+## Dual Testing Architecture
 
 This project uses **two testing approaches** optimized for different components:
 
 ### **Backend Testing** (Jest - Root Level)
 
-- **Location**: `tests/unit/` and `tests/integration/`
+- **Location**: `tests/unit/`, `tests/integration/`, `tests/setup/`, and
+  `tools/**/tests/`
 - **Engine**: Jest with Node.js environment
-- **Purpose**: API services, data processing, backend logic
+- **Purpose**: API services, data processing, pipeline logic
+
+> **Where tests must not go:** `testPathIgnorePatterns` in the root
+> `package.json` excludes `packages/*/tests/`. A Jest test placed inside a
+> package is silently skipped — it never runs and never fails. Put backend tests
+> in root `tests/`, and pipeline tests in `tools/<pipeline>/tests/`.
 
 ### **Frontend Testing** (Vitest - Workspace Level)
 
@@ -18,7 +24,7 @@ This project uses **two testing approaches** optimized for different components:
 
 ---
 
-## 📂 Directory Structure
+## Directory Structure
 
 ### Backend Tests (Root Level)
 
@@ -27,8 +33,13 @@ tests/
 ├── setup/           # Environment & configuration tests
 ├── unit/            # Backend services, utilities, API logic
 ├── integration/     # Cross-component workflows, API endpoints
+├── e2e/             # Playwright end-to-end specs (npm run test:e2e)
 ├── fixtures/        # Shared test data and mocks
-└── README.md       # This file
+└── README.md        # This file
+
+tools/
+├── video-pipeline/tests/    # also collected by Jest
+└── family-taxonomy/tests/   # also collected by Jest
 ```
 
 ### Frontend Tests (Workspace Level)

@@ -1,83 +1,34 @@
-# Tools Directory
+# Tools
 
-This directory contains the operational tools for the Chess Trainer project.
+Four data pipelines. Each has its own README with full documentation; the
+`.claude/skills/` entries carry the runbooks.
 
-## Directory Structure
+| Directory           | Purpose                                            | Language | Skill              |
+| ------------------- | -------------------------------------------------- | -------- | ------------------ |
+| `video-pipeline/`   | YouTube discovery and matching to openings         | Node     | `video-pipeline`   |
+| `course-discovery/` | Lichess study import, matched to openings by FEN   | Node     | `course-discovery` |
+| `llm-enrichment/`   | Opening descriptions via Google Vertex AI          | Node     | —                  |
+| `analysis/`         | Opening statistics from the Lichess rated database | Python   | `popularity-stats` |
 
-```
-tools/
-├── analysis/             # F02: Data Analysis & Statistics
-├── course-discovery/     # Lichess study import pipeline
-├── llm-enrichment/       # F01: LLM Content Enrichment (formerly 'production')
-├── video-pipeline/       # F04: YouTube Video Integration Pipeline
-├── data/                 # Shared data storage (SQLite DB, cache files)
-└── packages/             # Shared internal packages
-```
+`data/` holds the persistent stores: `videos.sqlite` (video database),
+`study-cache/` (gitignored Lichess study cache), and API response caches.
+`packages/` holds shared internal modules.
 
-## 📹 Video Pipeline (`tools/video-pipeline/`)
+## Where output goes
 
-Handles the discovery, enrichment, and matching of YouTube videos to chess
-openings.
+All pipelines write to `api/data/`, which is the canonical data location in
+every environment. Nothing copies to `packages/api/src/data/` — that mirror was
+removed in July 2026 and holds only `seed.sql`.
 
-### **How to Run**
+## Commands
 
-**1. Backfill Historical Videos (Recommended for fresh DB)** If the database is
-empty or you need to find videos for specific openings immediately:
+See `package.json`. The non-obvious ones:
 
-```bash
-node tools/video-pipeline/backfill-videos.js
-```
-
-_This searches YouTube for major openings and populates the database._
-
-**2. Run the Main Pipeline** To process RSS feeds, match videos, and generate
-static JSON files:
-
-```bash
-node tools/video-pipeline/index.js
-```
-
-_This will:_
-
-- _Fetch new videos from configured RSS feeds._
-- _Match them against the opening database._
-- _Generate/Update static JSON files in `public/api/openings/`._
-
----
-
-## 🧠 LLM Enrichment (`tools/llm-enrichment/`)
-
-Enriches opening PGNs with textual explanations using an LLM.
-
-### **How to Run**
-
-```bash
-node tools/llm-enrichment/enrich_openings_llm.js --help
-```
-
-_Common usage:_
-
-```bash
-node tools/llm-enrichment/enrich_openings_llm.js --batchSize=10
-```
-
----
-
-## 📊 Analysis (`tools/analysis/`)
-
-Tools for analyzing opening popularity and statistics.
-
-### **How to Run**
-
-```bash
-node tools/analysis/analyze_top_openings.js
-```
-
----
-
-## 💾 Data (`tools/data/`)
-
-Contains the persistent data stores:
-
-- `videos.sqlite`: The main video database.
-- `video_enrichment_cache.json`: Cache for YouTube API responses.
+- `npm run pipeline:rematch` re-scores videos from the database with zero API
+  calls — but run `tools/video-pipeline/scripts/backfill-views.js` first, or
+  view counts and thumbnails go stale.
+- `npm run course:rematch` rebuilds `courses.json` from the local cache with
+  zero API calls — `likes` go stale and newly curated studies are missing until
+  a `course:import` run.
+- `python tools/analysis/run_pipeline.py --incremental` processes only new
+  months, which is much faster than a full re-run.

@@ -54,7 +54,7 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON='{"type":"service_account","project_id":"you
 
 ### 3. (Optional) Create Configuration File
 
-Create a `.enrichrc.json` file in the `tools/production` directory:
+Create a `.enrichrc.json` file in the `tools/llm-enrichment` directory:
 
 ```json
 {
@@ -78,7 +78,7 @@ npm run enrich
 Or directly:
 
 ```bash
-node tools/production/enrich_openings_llm.js
+node tools/llm-enrichment/enrich_openings_llm.js
 ```
 
 ### With Custom Batch Size
@@ -90,7 +90,7 @@ npm run enrich -- --batchSize=25
 Or:
 
 ```bash
-node tools/production/enrich_openings_llm.js --batchSize=25
+node tools/llm-enrichment/enrich_openings_llm.js --batchSize=25
 ```
 
 ### Dry-Run Mode
@@ -98,7 +98,7 @@ node tools/production/enrich_openings_llm.js --batchSize=25
 Preview which openings would be enriched without making changes:
 
 ```bash
-node tools/production/enrich_openings_llm.js --dryRun --batchSize=10
+node tools/llm-enrichment/enrich_openings_llm.js --dryRun --batchSize=10
 ```
 
 ### Filter by ECO Code
@@ -107,10 +107,10 @@ Enrich only specific ECO codes:
 
 ```bash
 # Enrich only A00 openings
-node tools/production/enrich_openings_llm.js --ecoCode=A00 --batchSize=20
+node tools/llm-enrichment/enrich_openings_llm.js --ecoCode=A00 --batchSize=20
 
 # Enrich all A-series openings
-node tools/production/enrich_openings_llm.js --ecoCode=A --batchSize=50
+node tools/llm-enrichment/enrich_openings_llm.js --ecoCode=A --batchSize=50
 ```
 
 ### Exclude ECO Codes
@@ -118,7 +118,7 @@ node tools/production/enrich_openings_llm.js --ecoCode=A --batchSize=50
 Skip specific ECO codes:
 
 ```bash
-node tools/production/enrich_openings_llm.js --excludeEco=A00,B00 --batchSize=30
+node tools/llm-enrichment/enrich_openings_llm.js --excludeEco=A00,B00 --batchSize=30
 ```
 
 ### Resume from Previous Run
@@ -126,26 +126,26 @@ node tools/production/enrich_openings_llm.js --excludeEco=A00,B00 --batchSize=30
 Continue enrichment from where you left off:
 
 ```bash
-node tools/production/enrich_openings_llm.js --resume --stateFile=enrich-state.json --batchSize=25
+node tools/llm-enrichment/enrich_openings_llm.js --resume --stateFile=enrich-state.json --batchSize=25
 ```
 
 ### With Enhanced Logging
 
 ```bash
 # Log to file
-node tools/production/enrich_openings_llm.js --logFile=enrich.log --batchSize=20
+node tools/llm-enrichment/enrich_openings_llm.js --logFile=enrich.log --batchSize=20
 
 # Verbose output
-node tools/production/enrich_openings_llm.js --verbose --batchSize=15
+node tools/llm-enrichment/enrich_openings_llm.js --verbose --batchSize=15
 
 # Quiet mode (minimal output)
-node tools/production/enrich_openings_llm.js --quiet --batchSize=30
+node tools/llm-enrichment/enrich_openings_llm.js --quiet --batchSize=30
 ```
 
 ### Using Configuration File
 
 ```bash
-node tools/production/enrich_openings_llm.js --config=.enrichrc.json
+node tools/llm-enrichment/enrich_openings_llm.js --config=.enrichrc.json
 ```
 
 Configuration files are automatically loaded from `.enrichrc.json` in the
@@ -207,14 +207,14 @@ Create a `.enrichrc.json` file:
 Test with a small batch first:
 
 ```bash
-node tools/production/enrich_openings_llm.js --dryRun --batchSize=5
-node tools/production/enrich_openings_llm.js --batchSize=5 --logFile=test.log
+node tools/llm-enrichment/enrich_openings_llm.js --dryRun --batchSize=5
+node tools/llm-enrichment/enrich_openings_llm.js --batchSize=5 --logFile=test.log
 ```
 
 ### Enrich All A-Series Openings
 
 ```bash
-node tools/production/enrich_openings_llm.js \
+node tools/llm-enrichment/enrich_openings_llm.js \
   --ecoCode=A \
   --batchSize=50 \
   --stateFile=enrich-a-series.json \
@@ -225,7 +225,7 @@ node tools/production/enrich_openings_llm.js \
 If interrupted, resume with:
 
 ```bash
-node tools/production/enrich_openings_llm.js \
+node tools/llm-enrichment/enrich_openings_llm.js \
   --resume \
   --stateFile=enrich-a-series.json \
   --batchSize=50 \
@@ -238,7 +238,7 @@ Process all openings in manageable batches:
 
 ```bash
 # Run multiple times until complete
-node tools/production/enrich_openings_llm.js --batchSize=100 --logFile=enrich.log
+node tools/llm-enrichment/enrich_openings_llm.js --batchSize=100 --logFile=enrich.log
 ```
 
 The script will automatically report when all openings are enriched.

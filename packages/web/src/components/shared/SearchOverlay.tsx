@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
@@ -33,6 +33,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const close = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -56,6 +57,17 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [open, close]);
+
+  // The bottom tab bar paints above this overlay and stays tappable, so a tab
+  // can navigate while search is open. Close on that navigation, or the overlay
+  // sits over the page that just loaded and the tabs read as dead. Keyed on the
+  // path alone: re-running when `open` flips would close the overlay on open.
+  const pathRef = useRef(pathname);
+  useEffect(() => {
+    if (pathRef.current === pathname) return;
+    pathRef.current = pathname;
+    if (open) close();
+  }, [pathname, open, close]);
 
   useEffect(() => {
     return () => {

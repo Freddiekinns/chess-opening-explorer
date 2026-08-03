@@ -1,13 +1,34 @@
 # Active Context
 
-**Date:** 2026-08-02
+**Date:** 2026-08-03
 
-## Current Task: The mobile filter sheet closes the way it looks like it does
+## Current Task: The mobile search overlay steps aside when a tab navigates (`ux/phase-5-analyse`)
 
-The grabber was decoration. A 36×4 pill on a bottom sheet promises a drag and
-nothing was behind it — so on a phone the exits from a sheet filling 88% of the
-screen were a ~100px strip of backdrop, the footer button, and Escape, which a
-phone does not have.
+**The tabs weren't dead — the overlay outlived the navigation.** With search
+open on mobile, tapping Discover / Repertoire / Analyse did change route; the
+overlay stayed on top of the page that had just loaded.
+
+- **Why the tabs are tappable at all.** `SearchOverlay` renders inside the
+  sticky `TopBar` (`z-index: 100`), a stacking context — so its `z-index: 300`
+  is trapped there, and `BottomTabBar` (later root sibling, also 100) paints
+  _and hit-tests_ above the "modal". Deliberate: the overlay reserves
+  `padding-bottom` for the bar.
+- **The fix is the missing half of that.** Close on `pathname` change, routed
+  through `close()` so the stale query goes too. Keyed on the path via a ref — a
+  plain `[pathname, open]` dep would shut the overlay the instant it opened.
+- **Placement assessed, left alone.** Search stays top-right: a mode over the
+  page, not a destination. A 4th tab wins the thumb zone but wants a real
+  `/search` route and a portal out of `TopBar`.
+- **Known gap, not fixed:** the overlay declares `aria-modal="true"` while the
+  tab bar above it is intentionally interactive.
+
+`main` is now merged into the stack tip. Merge order for the seven PRs is in
+`progress.md` → What's Left; do not squash inside the stack.
+
+## Previous Task: The mobile filter sheet closes the way it looks (`claude/player-details-layout-qxa1mo`)
+
+The grabber was decoration. On a phone the exits from a sheet filling 88% of the
+screen were a ~100px strip of backdrop, the footer button, and Escape.
 
 - **The gesture is real.** Pointer handlers on the grabber + title row: past 25%
   of the sheet (capped 120px) or a flick over 0.5px/ms dismisses, otherwise it
@@ -16,36 +37,9 @@ phone does not have.
   "close" steals either a filter tap or a scroll.
 - **Twenty-nine families are now opt-in.** Expanded by default, every visit
   opened 2,000px deep for the one facet most visits never touch. Collapsed
-  behind a row that states the applied family, the common case — 13 level /
-  style / sort pills — fits one screen. Selecting collapses it again.
-- **Left alone**: one sheet holding every facet; live apply; the footer's true
-  count. The IA was right. Guards in `FilterSheet.test.tsx` — jsdom has no
-  `PointerEvent`, so `fireEvent.pointerDown` drops `clientY`; the drag tests
-  dispatch MouseEvents with a `pointerId` or they pass vacuously.
-
-### Also on this branch: the Analyse summary-card row
-
-Phase 5 §3 reversed (detail in `archive.md`), then one more pass answering
-"should every card be the same height and layout?". They already are where it
-reads — equal heights, label / headline / bar baselines. So the change is
-`.cardIdentity`, a 70px reserve on name+moves: it fixes the two _opening_ cards
-against each other, where a wrapping name put their "N games" lines 24px apart
-on cards of identical shape (invisible in both fixtures — neither player has a
-qualifying weak opening). It cannot align them with the record card, which has
-no moves line; that middle is structurally a block short and forcing it would
-mean inventing a line. Also `.winRateRow`/`.statsRows` padding-top unified (16
-vs 20px, one role) and the dead ≤768px headline overrides deleted, since 17px
-read as live against a reserve computed from 20px. **A games count on the record
-card was declined**: the header states it twice and the counts sum to it.
-
-## Previous Task: TopBar search field sized to its own panel (`claude/desktop-search-bar-width-ovwyg0`)
-
-**The dropdown was 140px wider than the control that opened it.** The field was
-a fixed 240px; the panel took `width: max-content` capped at 380px, anchored
-right, so focusing the input flared a box out past the field's left edge.
-
-- **The field gives, not the panel.** `width: clamp(300px, 30vw, 380px)`, panel
-  now `left: 0; right: 0`. Fluid because the bar is a `1fr auto 1fr` grid: a
-  fixed 380px right column exceeds its fr share below ~1045px.
-- **300px floor is the Surprise me row** — label plus hint needs ~265px.
-- **Tablet (640–900px) keeps the old flare**; that field has no room to grow.
+  behind a row stating the applied family, the common case fits one screen.
+- **Also on this branch: the Analyse summary-card row.** Phase 5 §3 reversed,
+  then `.cardIdentity` reserves 70px on name+moves so a wrapping name stops
+  putting the two _opening_ cards' lines 24px apart. The record card is
+  deliberately not forced into line — it has no moves row to fill. **Detail in
+  `archive.md`.**

@@ -1,8 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import TopBar from '../TopBar';
+import BottomTabBar from '../BottomTabBar';
 
 beforeEach(() => localStorage.clear());
 afterEach(() => {
@@ -118,5 +119,50 @@ describe('TopBar search', () => {
     await waitFor(() => expect(screen.getByText('Sicilian Najdorf')).toBeInTheDocument());
     expect(screen.getAllByText('Saved')).toHaveLength(1);
     expect(screen.getByText('Sicilian Defence').closest('li')).toHaveTextContent('Saved');
+  });
+});
+
+// The overlay lives inside the sticky TopBar's stacking context, so the bottom
+// tab bar paints — and hit-tests — above it. A tab therefore navigates while
+// search is open, and the overlay has to get out of the way or the new page is
+// invisible under it and the tabs read as broken.
+describe('mobile search overlay', () => {
+  const renderWithTabs = () =>
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <TopBar />
+        <BottomTabBar />
+      </MemoryRouter>
+    );
+
+  it('closes when a bottom tab navigates away', async () => {
+    const user = userEvent.setup();
+    renderWithTabs();
+    await user.click(screen.getByRole('button', { name: 'Search openings' }));
+    expect(screen.getByRole('dialog', { name: 'Search openings' })).toBeInTheDocument();
+
+    await user.click(screen.getByRole('link', { name: /repertoire/i }));
+
+    await waitFor(() =>
+      expect(screen.queryByRole('dialog', { name: 'Search openings' })).not.toBeInTheDocument()
+    );
+  });
+
+  it('reopens empty after navigating away mid-search', async () => {
+    const user = userEvent.setup();
+    stubSearch([{ fen: 'fen-a', name: 'Sicilian Defence', eco: 'B20', moves: '1. e4 c5' }]);
+    renderWithTabs();
+    await user.click(screen.getByRole('button', { name: 'Search openings' }));
+    const overlayInput = () =>
+      within(screen.getByRole('dialog', { name: 'Search openings' })).getByPlaceholderText(
+        'Search openings...'
+      );
+    await user.type(overlayInput(), 'sic');
+    await waitFor(() => expect(screen.getByText('Sicilian Defence')).toBeInTheDocument());
+
+    await user.click(screen.getByRole('link', { name: /repertoire/i }));
+    await user.click(screen.getByRole('button', { name: 'Search openings' }));
+
+    expect(overlayInput()).toHaveValue('');
   });
 });

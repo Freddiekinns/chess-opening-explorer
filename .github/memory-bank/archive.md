@@ -5,6 +5,96 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## One search, not three (2026-08-03, `claude/player-details-layout-qxa1mo`)
+
+Design review of the shipped UX raised three search items. All three were taken.
+Implementing the first exposed a defect that had been live for as long as the
+top bar and the mobile overlay have existed.
+
+### A — three implementations, one hook
+
+`SearchBar` (hero), `TopBarSearch` and `SearchOverlay` each owned a fetch, a
+debounce and a no-results string. Rows (`SearchRow`) and the blank state
+(`SearchHub`) were already shared; the query behaviour was not.
+
+- Only the hero expanded abbreviations. "qgd" → "Queen's Gambit Declined" there
+  and the literal three characters everywhere else. Measured against the real
+  index: **"kid" unexpanded returns 12,093 results led by "King's Pawn Game:
+  Wayward Queen Attack, Kiddie Countergambit" and "Reti: KIA"**; expanded it
+  returns the King's Indian. Two boxes, two products.
+- Debounce was 300ms on the hero and 250ms elsewhere, for no stated reason.
+- `useOpeningSearch` now owns expansion, the debounce constant, the fetch, the
+  legacy `/api/openings/search` fallback (which only the hero had), the ranking
+  and the no-results decision. `findAndRankOpenings` moved out of the component
+  into `lib/localSearch.ts` so the hook can reach it without importing a
+  component.
+- **The local index is now a paint, not an answer.** The hero holds a 1,000-row
+  slice of the search index and used to short-circuit on it for abbreviations,
+  ECO codes and moves — never asking the server at all. It now paints instantly
+  and is _always_ replaced by the server's list. That is what makes the three
+  surfaces converge; the top bar and the overlay deliberately pull no index (1.6
+  MB on every page for one keystroke).
+- What stayed per-surface is what genuinely differs: focus/teardown, the
+  keyboard cursor, and where a chosen result goes (a callback on the hero, a
+  route on the other two).
+
+### The defect underneath it
+
+`FUSE_OPTIONS.keys` is name/moves/style*tags/description. **`eco` is not among
+them**, so an ECO code fell through to fuzzy matching and `B90` returned **0
+results** against the 31 openings carrying it. The hero hid this behind its
+client-side ECO filter; the top bar and the overlay had nothing, so ECO search
+was dead on both — while the overlay's own no-results copy read "Try an ECO code
+(B02)". `searchByEcoCode` added to `search-service.js`, mirroring
+`searchByMove`: exact code match, popularity order, flat `searchScore` (the
+results \_are* ties). `.trim()` on the code because the real ECO data contains
+`"E80 "`.
+
+### B — the saved boost
+
+The Saved pill shipped; the ranking behind it did not. `promoteSaved`
+(`lib/searchRanking.ts`) stable-sorts saved openings ahead of unsaved ones
+**within a tie band only**.
+
+- The band is **relative** (within 2% of the leader), not absolute: scores are
+  ~1.5 on a move search, ~5.4 on a name search and ~0.41 on a semantic one, so a
+  fixed epsilon would mean "identical" on one path and "anything" on another.
+- Measured from the band leader, not the previous row, so a gentle decay cannot
+  chain a whole list into one band.
+- A list with no `searchScore` is returned untouched — nothing in it says which
+  pairs are close, and inventing that is the fabricated-data trap in costume.
+- Deliberately not "all saved first": a weak match you happen to have saved is
+  still a weak match, and floating it would make search worst for the users most
+  invested in the product.
+
+### C — one no-results voice
+
+Two strings and a silence, not two strings. The hero said "Try a different
+spelling, ECO code (e.g., B90), or abbreviation (e.g., QGD)"; the overlay said
+"Try an ECO code (B02) or paste a PGN on the Analyse tab."; **the top bar said
+nothing** — it closed its dropdown, so a failed search on desktop was
+indistinguishable from not having typed. Shared `SearchNoResults` component,
+overlay copy, on all three. It points somewhere, and it does not teach the user
+the word "abbreviation" at the moment they have failed.
+
+### Two things found while building it
+
+- **A regression I introduced and caught in the live app**: when a query came
+  back empty the hook left the previous query's openings on screen, so neither
+  the list cleared nor the dead end appeared. Fixed, and pinned by a test on all
+  three surfaces.
+- **CI lint was red from phase 3 upward.** `facetDisplay` exported from
+  `FilterBar.tsx` fails `react-refresh/only-export-components`, and
+  `packages/web`'s lint runs `--max-warnings 0`. Nothing caught it because CI
+  only triggers on PRs targeting `main`/`develop` and the whole stack targets
+  itself. Moved to `resultCount.ts` beside `resultCountLabel`.
+
+Verified live against the dev server: `B90` returns 20 Najdorf rows in the top
+bar (previously an empty panel), "kid" returns King's Indian lines on the
+Analyse page's top bar, and a failed search clears and shows the shared copy.
+
+---
+
 ## Analyse summary cards read as one row (2026-08-02, `claude/player-details-layout-qxa1mo`)
 
 Phase 5 §3 reversed ("the record card keeps its existing layout"). Structure was

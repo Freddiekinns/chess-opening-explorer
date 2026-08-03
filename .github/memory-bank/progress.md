@@ -4,6 +4,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **One search behaviour, not three — and ECO codes actually work** (2026-08-03,
+  on `claude/player-details-layout-qxa1mo`): review items A/B/C. Three fetches,
+  two debounces and two no-results strings became `useOpeningSearch`; only the
+  hero had expanded abbreviations. Exposed that `eco` is not a Fuse key, so
+  `B90` gave 0 results on the two surfaces with no local index while the copy
+  told users to try one. Saved openings now win ties. CI lint unblocked too.
 - **Mobile search overlay closes on tab navigation** (2026-08-03, on
   `ux/phase-5-analyse`): the footer tabs did navigate, but the overlay outlived
   it and sat over the new page. It renders inside the sticky TopBar's stacking
@@ -81,19 +87,18 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
   region, so a screen-reader user gets no signal when results arrive; the
   keyboard cursor rides a `data-active` hook `aria-activedescendant` should
-  replace. Three surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+  replace. Still three rendering surfaces, but one query hook to announce from.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
   which are active is legible only inside the sheet (desktop states each value).
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
   `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
-- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
-  rejected: a min-sample floor makes `total` depend on `sort`.)
+- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_
+  rejected: a min-sample floor makes `total` depend on `sort`.) **Agent docs**:
+  run `/doctor` locally on the 2026-07-25 restructure — not from a remote.
 - **`rankNotableGames` dedupes by exact player name**, so Lichess name variants
   ("Caruana, F." vs "Caruana, Fabiano") slip through as separate players.
-- **Agent docs**: run `/doctor` locally as a second opinion on the 2026-07-25
-  restructure — it can't run from a remote session.
 
 ## Known Issues
 

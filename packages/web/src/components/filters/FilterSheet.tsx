@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { FamilyPicker } from './FamilyPicker';
-import { facetDisplay } from './FilterBar';
+import { facetDisplay } from './resultCount';
 import { resultCountLabel } from './resultCount';
 import { SORT_OPTIONS } from '../../hooks/useBrowse';
 import type { BrowseFacets, BrowseFilters, FacetKey, FacetValue } from '../../hooks/useBrowse';

@@ -83,6 +83,11 @@ const FUSE_OPTIONS = {
   ]
 };
 
+// An ECO code, the shape the user types it: one family letter, two digits.
+// Codes are exactly three characters, so this is a whole code and never a
+// prefix — `B9` is not a search anyone means.
+const ECO_CODE_PATTERN = /^[a-e]\d{2}$/;
+
 // Chess move patterns for move detection
 const CHESS_MOVE_PATTERNS = [
   /^[a-h][1-8]$/, // Pawn moves: e4, d4, etc.
@@ -134,6 +139,7 @@ module.exports = {
   STYLE_CATEGORIES,
   QUERY_PATTERNS,
   FUSE_OPTIONS,
+  ECO_CODE_PATTERN,
   CHESS_MOVE_PATTERNS,
   OPENING_NAME_PATTERNS,
   AMBIGUOUS_TERMS

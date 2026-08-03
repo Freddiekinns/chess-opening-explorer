@@ -2,11 +2,12 @@
  * Query Utilities - Helper functions for query analysis and parsing
  */
 
-const { 
-  CHESS_MOVE_PATTERNS, 
-  OPENING_NAME_PATTERNS, 
+const {
+  CHESS_MOVE_PATTERNS,
+  ECO_CODE_PATTERN,
+  OPENING_NAME_PATTERNS,
   AMBIGUOUS_TERMS,
-  SEMANTIC_MAPPINGS 
+  SEMANTIC_MAPPINGS
 } = require('./SearchConstants');
 
 class QueryUtils {
@@ -17,6 +18,15 @@ class QueryUtils {
    */
   static isChessMove(query) {
     return CHESS_MOVE_PATTERNS.some(pattern => pattern.test(query));
+  }
+
+  /**
+   * Check if query is an ECO code
+   * @param {string} query - Normalized query
+   * @returns {boolean}
+   */
+  static isEcoCode(query) {
+    return ECO_CODE_PATTERN.test(query);
   }
 
   /**

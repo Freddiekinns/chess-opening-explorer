@@ -115,22 +115,5 @@
   color: var(--color-text-muted);
 }
 
-.noResults {
-  text-align: center;
-  padding: var(--space-8) var(--space-4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.noResultsTitle {
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-}
-
-.noResultsHint {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-}
+/* The no-results block moved to `SearchNoResults`, shared with the hero and
+   the top bar — one dead end, one voice. */

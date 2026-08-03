@@ -55,6 +55,23 @@ load-bearing.
   The route also 403s known crawler user-agents before touching Lichess. Without
   the token the route 503s and the Win Rate panel falls back to snapshot stats.
 
+- **Search query shape is decided on the client, ranking on the server.**
+  `packages/web/src/lib/searchQuery.ts` owns abbreviation expansion ("qgd" →
+  "Queen's Gambit Declined"), the ECO-code and chess-move tests, and the one
+  debounce constant; `hooks/useOpeningSearch.ts` owns the fetch. All three
+  search surfaces (hero `SearchBar`, `TopBarSearch`, mobile `SearchOverlay`)
+  call that hook — **do not add a fetch or a debounce to a search component.**
+  They each had their own until 2026-08-03, and only the hero expanded
+  abbreviations, so "kid" gave the King's Indian in one box and the Kiddie
+  Countergambit in another.
+
+- **`eco` is not a Fuse key, so ECO codes need `searchByEcoCode`.**
+  `FUSE_OPTIONS.keys` covers name/moves/style_tags/description only. Before the
+  explicit branch in `search-service.js`, `B90` returned **0** results against
+  31 openings carrying the code — while the UI told users to "try an ECO code".
+  If you add a query shape the fuzzy index cannot see, it needs its own branch,
+  not a hope that Fuse copes.
+
 - **Popularity stats cover all rated Lichess players, not master games.** Label
   UI surfaces accordingly.
 

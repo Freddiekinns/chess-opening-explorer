@@ -116,6 +116,14 @@ class SearchService {
         return this.searchByMove(normalizedQuery, sanitizedOptions);
       }
 
+      // ECO codes need their own branch: `eco` is not one of FUSE_OPTIONS.keys,
+      // so a code fell through to fuzzy matching on name/moves/style/description
+      // and returned nothing at all. Every surface that told the user to "try an
+      // ECO code" was pointing them at a guaranteed dead end.
+      if (QueryUtils.isEcoCode(normalizedQuery)) {
+        return this.searchByEcoCode(normalizedQuery, sanitizedOptions);
+      }
+
       // Check for style + move patterns FIRST (e.g., "attacking d4", "solid e4")
       // These should use semantic search even if they contain ambiguous terms
       const hasStyleAndMove = this.hasStyleWithMovePattern(normalizedQuery);
@@ -239,6 +247,39 @@ class SearchService {
       hasMore: offset + limit < totalResults,
       searchType,
       queryIntent
+    };
+  }
+
+  /**
+   * Specialized search for ECO codes
+   *
+   * A code is an exact label, not a fuzzy one, so there is no scoring to do —
+   * every opening carrying the code is equally a match and popularity decides
+   * the order, which is the same rule the client used when it filtered its own
+   * index. searchScore is flat by design: it says these results are ties, which
+   * is what lets the caller promote a saved opening among them.
+   *
+   * @param {string} code - ECO code, already lowercased (e.g., "b90")
+   * @param {Object} options - Search options
+   * @returns {Object} Search results with metadata
+   */
+  async searchByEcoCode(code, options = {}) {
+    await this.initialize();
+
+    const target = code.toUpperCase();
+    const results = this.openings
+      .filter(opening => (opening.eco || '').trim().toUpperCase() === target)
+      .map(opening => ({ ...opening, searchScore: 1 }))
+      .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0));
+
+    const { limit = 50, offset = 0 } = options;
+    const totalResults = results.length;
+
+    return {
+      results: results.slice(offset, offset + limit),
+      totalResults,
+      hasMore: offset + limit < totalResults,
+      searchType: 'eco_search'
     };
   }
 

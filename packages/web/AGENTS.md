@@ -20,6 +20,20 @@ can mix global and module classes: ``className={`eco-pill ${styles.badge}`}``.
 When removing rules from `simplified.css`, watch for comma-separated selectors
 shared with other components — only remove the selectors you're migrating.
 
+## Search
+
+All three search surfaces — the landing hero (`SearchBar`), `TopBarSearch` and
+the mobile `SearchOverlay` — call `hooks/useOpeningSearch.ts`. **Do not add a
+fetch, a debounce or a no-results string to a search component.** Query shape
+(abbreviations, ECO codes, moves, the debounce constant) lives in
+`lib/searchQuery.ts`; local ranking in `lib/localSearch.ts`; the saved-opening
+tie-break in `lib/searchRanking.ts`. Rows come from `SearchRow`, the blank state
+from `SearchHub`, the dead end from `SearchNoResults`.
+
+Each surface keeps only what genuinely differs: focus and teardown, the keyboard
+cursor, and where a chosen result goes. `search-surface-parity.test.tsx` pins
+that the three ask the same question and give the same answer.
+
 ## Imports
 
 **Use relative imports for the shared package, not the package name.**

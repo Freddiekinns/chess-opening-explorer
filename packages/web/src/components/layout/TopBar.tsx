@@ -1,18 +1,12 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, Loader2 } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
 import { SearchHub } from '../shared/SearchHub';
 import { SearchRow, SurpriseRow } from '../shared/SearchRow';
-import { useRepertoire } from '../../hooks/useRepertoire';
+import { SearchNoResults } from '../shared/SearchNoResults';
+import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
 import styles from './TopBar.module.css';
-
-interface SearchResult {
-  fen: string;
-  name: string;
-  eco: string;
-  moves: string;
-}
 
 const navItems = [
   { to: '/', label: 'Discover' },
@@ -62,65 +56,26 @@ export default function TopBar() {
 
 /** Compact search bar shown in the TopBar on every page */
 function TopBarSearch() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
+  // Same hook as the hero and the mobile overlay: same expansion, same
+  // debounce, same ranking. This component decides only how a dropdown pinned
+  // to a 240px field behaves.
+  const { query, setQuery, results, searching, noResults, hasQuery, reset } = useOpeningSearch();
   const [showDropdown, setShowDropdown] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
-  const { isSaved } = useRepertoire();
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  const doSearch = useCallback((value: string) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    if (value.trim().length < 2) {
-      setResults([]);
-      setIsSearching(false);
-      return;
-    }
-
-    setIsSearching(true);
-    timeoutRef.current = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success && data.data) {
-            setResults(data.data);
-            setShowDropdown(data.data.length > 0);
-          }
-        }
-      } catch {
-        // Silent fail
-      } finally {
-        setIsSearching(false);
-      }
-    }, 250);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setQuery(value);
+    setQuery(e.target.value);
     setActiveIndex(-1);
-    doSearch(value);
+    setShowDropdown(true);
   };
 
   const selectResult = (result: SearchResult) => {
     navigate(`/opening/${encodeURIComponent(result.fen)}`);
-    setQuery('');
+    reset();
     setShowDropdown(false);
-    setResults([]);
   };
 
   const handleSurpriseMe = async () => {
@@ -160,9 +115,13 @@ function TopBarSearch() {
 
   // Before typing, desktop showed nothing at all. It now gets the same hub the
   // mobile overlay has: recents, repertoire and Surprise me (UX review #09).
-  const showHub = query.trim().length < 2;
+  const showHub = !hasQuery;
 
-  const dropdownMarkup = showDropdown && (
+  // An empty panel is worse than no panel: between the second keystroke and the
+  // response there is nothing to put in it, and the bordered box would blink.
+  const hasSomethingToShow = showHub || results.length > 0 || noResults;
+
+  const dropdownMarkup = showDropdown && hasSomethingToShow && (
     <div className={styles.dropdown}>
       {showHub ? (
         // The input's blur handler tears the dropdown down after 150ms, but
@@ -172,45 +131,51 @@ function TopBarSearch() {
           <SearchHub
             onSelect={(fen) => {
               navigate(`/opening/${encodeURIComponent(fen)}`);
-              setQuery('');
+              reset();
               setShowDropdown(false);
             }}
             onSurprise={handleSurpriseMe}
           />
         </div>
       ) : (
-        results.length > 0 && (
-          <div onMouseDown={(e) => e.preventDefault()}>
-            {/* No count line: the openings appearing are the feedback. */}
-            <ul className={styles.results}>
-              {results.map((r, i) => (
-                <li key={`${r.fen}-${i}`}>
-                  <SearchRow
-                    opening={r}
-                    saved={isSaved(r.fen)}
-                    active={i === activeIndex}
-                    onSelect={() => selectResult(r)}
-                    onMouseEnter={() => setActiveIndex(i)}
-                  />
-                </li>
-              ))}
-            </ul>
-            {/* Outside the scrolling list, so it stays reachable however long
-                the results run. The hint used to be dropped here — the panel
-                was pinned to a 240px field and the label plus hint need
-                ~265px, so it survived only in a title and an aria-label, which
-                a sighted user navigating by keyboard never sees. The field is
-                now sized to hold a row (see .searchField), so the row explains
-                itself here exactly as it does everywhere else. */}
-            <div className={styles.surpriseFooter}>
-              <SurpriseRow
-                onSurprise={handleSurpriseMe}
-                active={activeIndex === results.length}
-                onMouseEnter={() => setActiveIndex(results.length)}
-              />
-            </div>
-          </div>
-        )
+        <div onMouseDown={(e) => e.preventDefault()}>
+          {/* A failed search used to close this panel, so on desktop it looked
+              exactly like not having typed. It now says the same thing the
+              overlay says. */}
+          {noResults && <SearchNoResults />}
+          {results.length > 0 && (
+            <>
+              {/* No count line: the openings appearing are the feedback. */}
+              <ul className={styles.results}>
+                {results.map((r, i) => (
+                  <li key={`${r.fen}-${i}`}>
+                    <SearchRow
+                      opening={r}
+                      saved={r.saved}
+                      active={i === activeIndex}
+                      onSelect={() => selectResult(r)}
+                      onMouseEnter={() => setActiveIndex(i)}
+                    />
+                  </li>
+                ))}
+              </ul>
+              {/* Outside the scrolling list, so it stays reachable however long
+                  the results run. The hint used to be dropped here — the panel
+                  was pinned to a 240px field and the label plus hint need
+                  ~265px, so it survived only in a title and an aria-label, which
+                  a sighted user navigating by keyboard never sees. The field is
+                  now sized to hold a row (see .searchField), so the row explains
+                  itself here exactly as it does everywhere else. */}
+              <div className={styles.surpriseFooter}>
+                <SurpriseRow
+                  onSurprise={handleSurpriseMe}
+                  active={activeIndex === results.length}
+                  onMouseEnter={() => setActiveIndex(results.length)}
+                />
+              </div>
+            </>
+          )}
+        </div>
       )}
     </div>
   );
@@ -231,7 +196,7 @@ function TopBarSearch() {
             onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
             className={styles.searchInput}
           />
-          {isSearching ? (
+          {searching ? (
             <Loader2
               size={16}
               className={styles.searchIcon}

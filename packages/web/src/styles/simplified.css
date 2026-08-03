@@ -1887,6 +1887,8 @@ body {
    SearchRow.module.css. */
 
 /* No results message */
+/* The panel only. What it says is `SearchNoResults`, shared with the top bar
+   and the mobile overlay, and it brings its own padding and type. */
 .search-no-results {
   position: absolute;
   top: 100%;
@@ -1896,23 +1898,8 @@ body {
   border: 1px solid var(--color-border);
   border-top: none;
   border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
-  padding: var(--space-4);
-  text-align: center;
   z-index: 100;
   box-shadow: var(--shadow-large);
-}
-
-.search-no-results p {
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-}
-
-.search-no-results-hint {
-  margin-top: var(--space-2) !important;
-  font-size: var(--font-size-xs) !important;
-  color: var(--color-text-muted) !important;
-  opacity: 0.8;
 }
 
 /* Scrollbar styling for search suggestions */

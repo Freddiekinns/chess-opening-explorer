@@ -11,15 +11,16 @@ guidance; advanced players for quick reference.
 
 ## Core Features
 
-1. **Opening Database** - 12,377+ openings with ECO codes, move sequences,
+1. **Opening Database** - 12,377 openings with ECO codes, move sequences,
    variations
-2. **Popularity Stats** - Real-time data from Lichess master games
-   (win/draw/loss rates)
+2. **Popularity Stats** - Win/draw/loss rates from the Lichess rated-games
+   database (all rated players, not master games)
 3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas
 4. **Video Integration** - Curated YouTube videos matched to openings
-5. **Curated Studies** - 6,100+ Lichess study chapters matched to openings by
-   FEN position, sorted by popularity (likes). Two-step pipeline: discover
-   popular studies (500+ likes) → import chapters matched to ECO database.
+5. **Curated Studies** - 17,079 study chapters from 444 curated Lichess studies,
+   matched to 4,500 positions by FEN and sorted by likes. Two-step pipeline:
+   discover popular studies (500+ likes) → import chapters matched to the ECO
+   database.
 6. **Practice Mode** - Interactive move trainer with feedback and hints
 7. **Personal Opening Explorer** - Analyse Chess.com/Lichess game history for
    opening strengths and weaknesses
@@ -40,13 +41,13 @@ guidance; advanced players for quick reference.
 - **Data**: JSON files as production database (pre-processed)
 - **API**: Thin Vercel serverless wrappers in `api/` importing from
   `packages/api`
-- **Testing**: Jest (in root `tests/`)
+- **Testing**: Jest (root `tests/` and `tools/**/tests/`)
 
 ### Data Pipelines
 
-- **Python**: LLM enrichment, Lichess integration, analysis (`tools/analysis/`)
-- **Node.js**: Video discovery pipeline (`tools/video-pipeline/`), Course/study
-  import pipeline (`tools/course-discovery/`)
+- **Python**: Lichess popularity analysis only (`tools/analysis/`)
+- **Node.js**: Video discovery (`tools/video-pipeline/`), study import
+  (`tools/course-discovery/`), LLM enrichment (`tools/llm-enrichment/`)
 - **External APIs**: Lichess, YouTube Data API, Google Gemini
 
 ## Key Architecture Decisions
@@ -103,7 +104,8 @@ Measure `scrollHeight` for expand/collapse instead of CSS max-height. Respect
 
 ### AD-011: Test Runner Separation
 
-- Backend (Jest): `tests/` directory
+- Backend (Jest): root `tests/` plus `tools/**/tests/`. `packages/*/tests/` is
+  in `testPathIgnorePatterns` — tests placed there never run.
 - Frontend (Vitest): `packages/web/src/**/__tests__/`
 
 ### AD-012: Mobile Layout Branch (Opening Detail)
@@ -132,7 +134,6 @@ chess-opening-explorer/
 │   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/            # Backend tests (Jest)
 └── .github/
-    ├── instructions/ # Coding standards
     └── memory-bank/  # Project context
 ```
 
@@ -148,15 +149,12 @@ All JSON → Frontend (static, pre-generated)
 
 ### AD-016: Server-Side Search & Edge Caching
 
-All search is server-side. All API routes have `Cache-Control` headers in
-`vercel.json` for Vercel CDN edge caching.
+All search is server-side. Every API route declares edge caching — most via
+`vercel.json`, except `/api/explorer`, which sets its own per-band headers in
+the route (config headers would override and clobber them).
 
 ## Known Constraints
 
-- **Lichess API**: Rate limited
-- **YouTube API**: Daily quota limits
-- **Gemini API**: Token limits and costs
-- **Static Data**: Updates require rebuild/redeploy
-- **Vercel Hobby Tier**: 10 GB Fast Origin Transfer, 100 GB Fast Data Transfer.
-  All API routes must have `Cache-Control` headers. Never fetch large payloads
-  on component mount — crawlers will amplify across all 12,000+ pages.
+Lichess (rate limited; explorer needs a token), YouTube (daily quota), Gemini
+(token cost), static data (updates need a rebuild), and the Vercel Hobby tier
+(10 GB fast origin transfer) — see the caching rules in `AGENTS.md`.

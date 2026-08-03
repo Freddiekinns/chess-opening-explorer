@@ -27,8 +27,9 @@ the mobile `SearchOverlay` — call `hooks/useOpeningSearch.ts`. **Do not add a
 fetch, a debounce or a no-results string to a search component.** Query shape
 (abbreviations, ECO codes, moves, the debounce constant) lives in
 `lib/searchQuery.ts`; local ranking in `lib/localSearch.ts`; the saved-opening
-tie-break in `lib/searchRanking.ts`. Rows come from `SearchRow`, the blank state
-from `SearchHub`, the dead end from `SearchNoResults`.
+tie-break in `lib/searchRanking.ts`; Surprise me in `lib/randomOpening.ts`. Rows
+come from `SearchRow`, the blank state from `SearchHub`, the dead end from
+`SearchNoResults`.
 
 Each surface keeps only what genuinely differs: focus and teardown, the keyboard
 cursor, and where a chosen result goes. `search-surface-parity.test.tsx` pins

@@ -63,7 +63,8 @@ load-bearing.
   call that hook — **do not add a fetch or a debounce to a search component.**
   They each had their own until 2026-08-03, and only the hero expanded
   abbreviations, so "kid" gave the King's Indian in one box and the Kiddie
-  Countergambit in another.
+  Countergambit in another. Surprise me is `lib/randomOpening.ts`, shared the
+  same way by the same three plus the landing page.
 
 - **`eco` is not a Fuse key, so ECO codes need `searchByEcoCode`.**
   `FUSE_OPTIONS.keys` covers name/moves/style_tags/description only. Before the

@@ -5,6 +5,7 @@ import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
 import { SearchNoResults } from './SearchNoResults';
 import { useOpeningSearch } from '../../hooks/useOpeningSearch';
+import { fetchRandomOpening } from '../../lib/randomOpening';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -62,13 +63,8 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
   };
 
   const surpriseMe = async () => {
-    try {
-      const res = await fetch('/api/openings/random');
-      const data = await res.json();
-      if (data.success && data.data) select(data.data);
-    } catch {
-      // Silent fail
-    }
+    const opening = await fetchRandomOpening();
+    if (opening) select(opening);
   };
 
   if (!open) return null;

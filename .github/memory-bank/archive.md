@@ -89,9 +89,24 @@ the word "abbreviation" at the moment they have failed.
   only triggers on PRs targeting `main`/`develop` and the whole stack targets
   itself. Moved to `resultCount.ts` beside `resultCountLabel`.
 
+### Surprise me, on the same argument
+
+Four copies of one fetch — `LandingPage`, `TopBarSearch`, `SearchOverlay`, and
+the row itself is already shared. Unlike the query, **nothing diverged**: same
+endpoint, same response check, same navigation. Done anyway because the rot had
+started in the comments — the reasoning for the swallow survived in one copy of
+four ("a failed surprise is not worth an error state"), the others said "silent
+fail" — and because anything this gains next (a loading state, skipping the
+opening you are already on, analytics) would have to be added four times or it
+becomes four behaviours. `lib/randomOpening.ts` returns `null` rather than
+throwing; callers keep only what differs, which is that the overlay closes
+itself before navigating.
+
 Verified live against the dev server: `B90` returns 20 Najdorf rows in the top
 bar (previously an empty panel), "kid" returns King's Indian lines on the
-Analyse page's top bar, and a failed search clears and shows the shared copy.
+Analyse page's top bar, a failed search clears and shows the shared copy, and
+all three Surprise me entry points still navigate — with the overlay's still
+closing first.
 
 ---
 

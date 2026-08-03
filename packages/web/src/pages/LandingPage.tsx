@@ -6,6 +6,7 @@ import { useIsMobile } from '../hooks/useMediaQuery';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
+import { fetchRandomOpening } from '../lib/randomOpening';
 
 // Loaded on first open — the modal's PGN parsing pulls chess.js, which must
 // stay out of the landing bundle (see vite.config manualChunks).
@@ -97,15 +98,8 @@ const LandingPage: React.FC = () => {
   };
 
   const handleSurpriseMe = async () => {
-    try {
-      const response = await fetch('/api/openings/random');
-      const data = await response.json();
-      if (data.success && data.data) {
-        navigate(`/opening/${encodeURIComponent(data.data.fen)}`);
-      }
-    } catch {
-      // A failed surprise is not worth an error state — the search is right there.
-    }
+    const opening = await fetchRandomOpening();
+    if (opening) navigate(`/opening/${encodeURIComponent(opening.fen)}`);
   };
 
   return (

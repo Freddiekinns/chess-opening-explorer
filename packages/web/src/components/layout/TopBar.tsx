@@ -6,6 +6,7 @@ import { SearchHub } from '../shared/SearchHub';
 import { SearchRow, SurpriseRow } from '../shared/SearchRow';
 import { SearchNoResults } from '../shared/SearchNoResults';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
+import { fetchRandomOpening } from '../../lib/randomOpening';
 import styles from './TopBar.module.css';
 
 const navItems = [
@@ -79,15 +80,8 @@ function TopBarSearch() {
   };
 
   const handleSurpriseMe = async () => {
-    try {
-      const response = await fetch('/api/openings/random');
-      const data = await response.json();
-      if (data.success && data.data) {
-        navigate(`/opening/${encodeURIComponent(data.data.fen)}`);
-      }
-    } catch {
-      // Silent fail
-    }
+    const opening = await fetchRandomOpening();
+    if (opening) navigate(`/opening/${encodeURIComponent(opening.fen)}`);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

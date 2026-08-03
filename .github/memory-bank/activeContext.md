@@ -21,6 +21,9 @@ one of them turned out to be sitting on a defect nobody had noticed.
   types. Never floats a weak match just because it is saved.
 - **C — one no-results voice.** Shared `SearchNoResults` on all three; the top
   bar had none at all and simply closed its panel.
+- **Surprise me followed**, on the same argument: four identical copies of one
+  fetch in `lib/randomOpening.ts`. No divergence yet — but the reasoning for the
+  swallowed error survived in one copy of four, which is how search drifted.
 - **Also fixed, blocking the stack:** `facetDisplay` exported from
   `FilterBar.tsx` failed `react-refresh/only-export-components`, so CI lint was
   red from phase 3 up. Moved to `resultCount.ts`.

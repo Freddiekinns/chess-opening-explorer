@@ -4,6 +4,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Mobile search overlay closes on tab navigation** (2026-08-03, on
+  `ux/phase-5-analyse`): the footer tabs did navigate, but the overlay stayed
+  over the new page so they read as dead. It renders inside the sticky TopBar's
+  stacking context, so the tab bar paints and hit-tests above it by design; the
+  missing half was closing on `pathname` change (via `close()`, so the stale
+  query goes too). Search stays top-right — a mode, not a destination.
 - **TopBar search field sized to its own panel** (2026-08-02): the 380px
   dropdown flared past a 240px field; field now `clamp(300px, 30vw, 380px)`,
   panel flush at `left/right: 0` (tablet keeps the grow-leftwards panel).

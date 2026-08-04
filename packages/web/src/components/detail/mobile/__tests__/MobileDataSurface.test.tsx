@@ -115,6 +115,17 @@ describe('MobileDataSurface', () => {
     expect(screen.getByText('Black 52%')).toBeInTheDocument();
   });
 
+  /* live=false (the fetch failed) with no snapshot behind it satisfied neither
+     the stats branch nor tooFewGames, so the block fell through to the loading
+     placeholder and sat there for good. Desktop's WinRatePanel returns null in
+     the same state; mobile still has the book to draw, so it says so instead. */
+  test('says live data is unavailable rather than loading forever', () => {
+    renderSurface({ explorer: query({ failed: true }), popularityStats: null });
+
+    expect(screen.queryByText('Loading Lichess data…')).not.toBeInTheDocument();
+    expect(screen.getByText(/no saved snapshot for this position/i)).toBeInTheDocument();
+  });
+
   test('level pills call onBandChange', async () => {
     const user = userEvent.setup();
     const { onBandChange } = renderSurface();

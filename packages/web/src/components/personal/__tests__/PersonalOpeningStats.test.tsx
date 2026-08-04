@@ -673,6 +673,18 @@ describe('PersonalOpeningStats - dashboard honesty', () => {
     expect(screen.queryByText('Total wins')).not.toBeInTheDocument();
   });
 
+  it('states an overall win rate, the only rate on the panel with a sample behind it', async () => {
+    // The headline cards read 100% off four games. This one covers the run.
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    const { whiteWin, blackWin, whiteDraw, blackDraw, whiteLoss, blackLoss } = mockDashboardData;
+    const wins = whiteWin + blackWin;
+    const decided = wins + whiteDraw + blackDraw + whiteLoss + blackLoss;
+    const expected = `${Math.round((wins / decided) * 100)}% win rate`;
+    expect(screen.getAllByText(expected).length).toBeGreaterThan(0);
+  });
+
   it('names the games column in full, matching mobile', async () => {
     renderComponent();
 
@@ -695,6 +707,97 @@ describe('PersonalOpeningStats - stylesheet ordering', () => {
 
     expect(css.indexOf('.statsValue {')).toBeGreaterThan(-1);
     expect(css.indexOf('.statsValueWin {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+    expect(css.indexOf('.statsValueDraw {')).toBeGreaterThan(css.indexOf('.statsValue {'));
     expect(css.indexOf('.statsValueLoss {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+  });
+
+  it('tints the mobile stat tiles after the base value rule, for the same reason', async () => {
+    const { readWebSource } = await import('../../../test/readSource');
+    const css = readWebSource('src/components/personal/PersonalOpeningStats.module.css');
+
+    expect(css.indexOf('.triStatValue {')).toBeGreaterThan(-1);
+    for (const modifier of ['.triStatValueWin {', '.triStatValueDraw {', '.triStatValueLoss {']) {
+      expect(css.indexOf(modifier)).toBeGreaterThan(css.indexOf('.triStatValue {'));
+    }
+  });
+});
+
+// The summary cards are three cards drawn by two rules in two files, and every
+// complaint about them has been about the pieces disagreeing rather than about
+// any one piece. These assert the agreements, not the values.
+describe('PersonalOpeningStats - summary card row', () => {
+  const readCss = async (path: string) => {
+    const { readWebSource } = await import('../../../test/readSource');
+    return readWebSource(path);
+  };
+
+  const blockOf = (css: string, selector: string) => {
+    const start = css.indexOf(`${selector} {`);
+    expect(start, `${selector} missing`).toBeGreaterThan(-1);
+    return css.slice(start, css.indexOf('}', start));
+  };
+
+  it('draws every summary-card bar at one height', async () => {
+    // The record card's bar is PerfBar; the two opening cards keep their own
+    // single-fill bar. Different components, one row — so the heights have to
+    // be stated the same. `.winRateBar` was 6px against PerfBar's 8px.
+    const cardCss = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    const perfCss = await readCss('src/components/personal/PerfBar.module.css');
+
+    const height = /height:\s*([^;]+);/;
+    expect(blockOf(cardCss, '.winRateBar').match(height)?.[1].trim()).toBe(
+      blockOf(perfCss, '.track').match(height)?.[1].trim()
+    );
+  });
+
+  it('anchors the record card figures to the bottom so the bars share a baseline', async () => {
+    // Without this the record card's shorter content floats at the top of an
+    // equal-height grid cell, leaving its bar above its siblings' and a void
+    // under it — the original complaint.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(blockOf(css, '.statsRows')).toMatch(/margin-top:\s*auto/);
+  });
+
+  it('gives every small data label in the row the same treatment', async () => {
+    // "WINS/DRAWS/LOSSES" were tracked uppercase while the neighbouring card
+    // said "win rate" in sentence case, one card width apart.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    for (const selector of ['.statsLabel', '.winRateLabel', '.triStatLabel']) {
+      expect(blockOf(css, selector)).toMatch(/text-transform:\s*uppercase/);
+      expect(blockOf(css, selector)).toMatch(/letter-spacing:\s*0\.05em/);
+    }
+  });
+
+  it('leaves the same gap above the figures on both kinds of card', async () => {
+    // `.statsRows` and `.winRateRow` do one job — the minimum gap between a
+    // card's identity block and its figures, on whichever card is tallest and
+    // therefore has no `margin-top: auto` slack to give. They were stated as
+    // 20px and 16px.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    const padding = /padding-top:\s*([^;]+);/;
+    expect(blockOf(css, '.winRateRow').match(padding)?.[1].trim()).toBe(
+      blockOf(css, '.statsRows').match(padding)?.[1].trim()
+    );
+  });
+
+  it('reserves the name block at the height the name is capped to', async () => {
+    // The reserve and the clamp are the same decision written twice: the block
+    // holds two name lines because the name truncates after two. Raise one
+    // without the other and either a legal name overflows its box or the box
+    // reserves space nothing can ever fill.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(blockOf(css, '.cardIdentity')).toMatch(/min-height:\s*70px/);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/-webkit-line-clamp:\s*2/);
+  });
+
+  it('states the opening headline size once, so the reserve can be arithmetic', async () => {
+    // 70px is two lines of --text-xl at line-height 1.2 plus the moves line. A
+    // second `.cardOpeningName` font-size anywhere in the file makes that sum
+    // false at some width. The old @media (max-width: 768px) pair said 17px —
+    // dead, since `.desktopDashboard` is display:none there, but it read live.
+    const css = await readCss('src/components/personal/PersonalOpeningStats.module.css');
+    expect(css.match(/\.cardOpeningName\s*\{/g)).toHaveLength(1);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/font-size:\s*var\(--text-xl\)/);
+    expect(blockOf(css, '.cardOpeningName')).toMatch(/line-height:\s*1\.2/);
   });
 });

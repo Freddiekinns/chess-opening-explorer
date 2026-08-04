@@ -126,6 +126,39 @@ describe('TopBar search', () => {
 // tab bar paints — and hit-tests — above it. A tab therefore navigates while
 // search is open, and the overlay has to get out of the way or the new page is
 // invisible under it and the tabs read as broken.
+describe('TopBar search keyboard', () => {
+  /* ArrowDown used to move the cursor to 0 even with nothing in the list, and
+     Enter then read results[0] off an empty array — `encodeURIComponent(
+     undefined.fen)` threw and took the handler with it. Reachable two ways:
+     before typing (the hub is showing) and after a query that matched
+     nothing. */
+  it('does not act on Enter when the list is empty', async () => {
+    const user = userEvent.setup();
+    stubSearch([]);
+    renderAt('/');
+
+    const input = screen.getByPlaceholderText('Search openings...');
+    await user.click(input);
+    await user.keyboard('{ArrowDown}{Enter}');
+
+    expect(screen.getByPlaceholderText('Search openings...')).toBeInTheDocument();
+  });
+
+  it('still reaches Surprise me by keyboard once there are results', async () => {
+    const user = userEvent.setup();
+    stubSearch([{ fen: 'fen-a', name: 'Sicilian Defence', eco: 'B20', moves: '1. e4 c5' }]);
+    renderAt('/');
+
+    const input = screen.getByPlaceholderText('Search openings...');
+    await user.type(input, 'sic');
+    await waitFor(() => expect(screen.getByText('Sicilian Defence')).toBeInTheDocument());
+
+    // One past the single result is the Surprise me row.
+    await user.keyboard('{ArrowDown}{ArrowDown}');
+    expect(screen.getByText('Surprise me').closest('button')).toHaveAttribute('data-active');
+  });
+});
+
 describe('mobile search overlay', () => {
   const renderWithTabs = () =>
     render(

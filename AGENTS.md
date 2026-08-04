@@ -36,11 +36,25 @@ load-bearing.
   removed 2026-07-06; the pipeline writes `api/data/video-index.json` directly.
 
 - **Never fetch large payloads on mount.** `/api/openings/all` (24.8 MB) returns
-  a cacheable 410. Use `/api/openings/search-index` (1.6 MB) for client-side
-  search data, `/api/openings/semantic-search` for server-side queries, and the
-  aggregate `/api/openings/page/:fen` for the detail page. Crawlers index
-  12,000+ pages and will amplify any unbounded payload into a large
-  origin-transfer bill.
+  a cacheable 410. Use `/api/openings/search-index` for client-side search data,
+  `/api/openings/semantic-search` for server-side queries, and the aggregate
+  `/api/openings/page/:fen` for the detail page. Crawlers index 12,000+ pages
+  and will amplify any unbounded payload into a large origin-transfer bill.
+
+  The search index has two sizes and both are earned by a user action, never by
+  a page load. `?limit=1000` (207 KB) is the slice every search surface ranks
+  against; `lib/searchIndex.ts` fetches it once, on the first character typed
+  into any search box. The full index (3.0 MB) has exactly one caller — the PGN
+  lookup behind "Paste a game", which cannot identify a position outside the
+  popular thousand. The landing page used to pull the slice on mount for the
+  hero alone, so every visitor paid for a search most of them never ran.
+
+  Search responses are projected down to the fields a row draws by
+  `toSearchResult` in `openings.routes.js` — fen, name, eco, moves,
+  games_analyzed, searchScore. Twenty whole opening records was 55 KB, mostly
+  `analysis_json` descriptions, to draw twenty lines of name and ECO code — on
+  every keystroke, mostly on phones. It is now 4.4 KB. **Do not return raw
+  service results from a search route.**
 
 - **Lichess opening explorer requires authentication** (since 2026-03).
   Anonymous requests to `explorer.lichess.org` get 401 — this is Lichess-wide
@@ -55,6 +69,60 @@ load-bearing.
   The route also 403s known crawler user-agents before touching Lichess. Without
   the token the route 503s and the Win Rate panel falls back to snapshot stats.
 
+- **Search query shape is decided on the client, ranking on the server.**
+  `packages/web/src/lib/searchQuery.ts` owns abbreviation expansion ("qgd" →
+  "Queen's Gambit Declined"), the ECO-code and chess-move tests, and the one
+  debounce constant; `hooks/useOpeningSearch.ts` owns the fetch and the local
+  index. All three search surfaces (hero `SearchBar`, `TopBarSearch`, mobile
+  `SearchOverlay`) call that hook — **do not add a fetch, a debounce or a local
+  index to a search component.** They each had their own until 2026-08-03, and
+  only the hero expanded abbreviations, so "kid" gave the King's Indian in one
+  box and the Kiddie Countergambit in another. Surprise me is
+  `lib/randomOpening.ts`, shared the same way by the same three plus the landing
+  page.
+
+- **Search matches names literally before it does anything fuzzy.**
+  `search/NameIndex.js` bands a query against normalised opening names (exact
+  phrase → whole words → last word still being typed → substring) and orders
+  each band by `games_analyzed`. `search()` runs move, ECO, name, meaning,
+  spelling in that order and returns the first pass with anything to say. Fuse
+  is the typo net only. Until 2026-08-04 every text query went through Fuse over
+  name/moves/style_tags/**description**, which cost 850–2,800ms and scored a
+  third of the corpus as matches — "sicilian" hit 4,269 of 12,377 openings, and
+  every re-ranking pass downstream existed to undo that. Literal matching
+  answers the same queries in 2–5ms. **Do not put `description` back in
+  `FUSE_OPTIONS.keys`**, and do not add routing heuristics that guess what a
+  query is before trying to match it: the deleted `looksLikeOpeningName` and
+  `isAmbiguousSemanticTerm` sent "aggressive openings" to a 2.4s fuzzy name
+  search that returned the Andersspike.
+
+- **Both halves of the search rank by the same bands, and a test says so.**
+  `lib/localSearch.ts` (client, paints on the keystroke from the shared index
+  slice) and `search/NameIndex.js` + `searchByMove` (server, replaces it a
+  moment later) implement one rule twice. `local-server-parity.test.ts` imports
+  the server module directly and runs both over the same openings. If they
+  drift, the results reshuffle under the cursor mid-read.
+
+- **A band plus `log10(games)/10` is the score shape.** It keeps the popularity
+  term under 1 so a result can never climb a band, and gives `promoteSaved` a
+  tie band that means something. Flat multipliers do not: the semantic path's
+  `Math.min(0.1, games / 10000)` saturated at a thousand games, so style
+  searches fell back to corpus order and "aggressive openings" led with the Amar
+  Gambit.
+
+- **Clearing a debounce timer does not cancel a request that already left.**
+  Anything that fetches per keystroke needs a monotonic request id checked
+  before every `setState`, the way `useBrowse` and `useOpeningSearch` do it.
+  Without one, a slow query resolves after the query that replaced it and
+  repaints the older list under the newer one. Clearing the field must bump the
+  id too, or the list comes back a moment after the user emptied it.
+
+- **`eco` is not a Fuse key, so ECO codes need `searchByEcoCode`.** Before the
+  explicit branch in `search-service.js`, `B90` returned **0** results against
+  31 openings carrying the code — while the UI told users to "try an ECO code".
+  If you add a query shape the fuzzy index cannot see, it needs its own branch,
+  not a hope that Fuse copes.
+
 - **Popularity stats cover all rated Lichess players, not master games.** Label
   UI surfaces accordingly.
 
@@ -62,6 +130,14 @@ load-bearing.
   or show an explicit "no stats" state. Never synthesise numbers that look like
   real statistics. (`OpeningCard` once invented W/D/L percentages with
   `Math.random()`.)
+
+- **Missing stats are `null`, not `undefined` — guard with `!= null`.**
+  `popularity_stats.json` carries an entry for all 12,377 positions, but 16 of
+  them hold `"white_win_rate": null, "games_analyzed": 0`, and
+  `BrowseService.toItem` passes those nulls through rather than omitting the
+  keys. A `!== undefined` guard lets them past and `Math.round(null * 100)` is
+  `0`, so `OpeningCard` drew "White 0% · Draw 0% · Black 0%" for openings with
+  no data at all — the fabricated-data trap wearing a type coercion.
 
 ### Deployment and SEO
 

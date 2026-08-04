@@ -2,11 +2,10 @@
  * Query Utilities - Helper functions for query analysis and parsing
  */
 
-const { 
-  CHESS_MOVE_PATTERNS, 
-  OPENING_NAME_PATTERNS, 
-  AMBIGUOUS_TERMS,
-  SEMANTIC_MAPPINGS 
+const {
+  CHESS_MOVE_PATTERNS,
+  ECO_CODE_PATTERN,
+  SEMANTIC_MAPPINGS
 } = require('./SearchConstants');
 
 class QueryUtils {
@@ -20,21 +19,12 @@ class QueryUtils {
   }
 
   /**
-   * Check if query looks like an opening name rather than a natural language query
+   * Check if query is an ECO code
    * @param {string} query - Normalized query
    * @returns {boolean}
    */
-  static looksLikeOpeningName(query) {
-    return OPENING_NAME_PATTERNS.some(pattern => pattern.test(query));
-  }
-
-  /**
-   * Check if a term is ambiguous between semantic and name search
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  static isAmbiguousSemanticTerm(query) {
-    return AMBIGUOUS_TERMS.some(term => query.includes(term));
+  static isEcoCode(query) {
+    return ECO_CODE_PATTERN.test(query);
   }
 
   /**

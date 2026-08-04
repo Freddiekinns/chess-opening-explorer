@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SearchBar } from '../SearchBar';
 import { mockOpeningsList, mockSearchResponse } from '../../../test/fixtures/openingData';
+import { resetSearchIndex } from '../../../test/searchIndexStub';
 
 // Mock fetch globally
 const mockFetch = vi.fn();
@@ -14,18 +15,36 @@ const mockOnSelect = vi.fn();
 // Default props for SearchBar
 const defaultProps = {
   onSelect: mockOnSelect,
-  openingsData: mockOpeningsList,
   placeholder: 'Search openings...',
+};
+
+/**
+ * The locally held slice now arrives over the wire rather than as a prop, so
+ * every fetch stub has to answer the index route as well as the search route.
+ */
+const indexRoute = (openings: unknown[] = mockOpeningsList) => ({
+  ok: true,
+  json: () => Promise.resolve({ success: true, data: openings }),
+});
+
+const respond = (
+  search: unknown,
+  openings: unknown[] = mockOpeningsList
+): ((url: string) => Promise<unknown>) => {
+  return (url: string) =>
+    Promise.resolve(
+      String(url).includes('/api/openings/search-index') ? indexRoute(openings) : search
+    );
 };
 
 describe('SearchBar Component - Comprehensive Coverage', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    resetSearchIndex();
     // Reset fetch mock to successful semantic search by default
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(mockSearchResponse),
-    });
+    mockFetch.mockImplementation(
+      respond({ ok: true, json: () => Promise.resolve(mockSearchResponse) })
+    );
   });
 
   afterEach(() => {
@@ -97,37 +116,32 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       );
     });
 
-    it('should fallback to legacy search when semantic search fails', async () => {
-      // Mock semantic search failure, then legacy search success
-      mockFetch
-        .mockResolvedValueOnce({
-          ok: false,
-          status: 500,
-        })
-        .mockResolvedValueOnce({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockOpeningsList.slice(0, 1),
-              searchType: 'server_fallback',
-            }),
-        });
+    // One request, not two. The plain-search fallback that used to follow an
+    // empty semantic search is gone: the route matches names literally before
+    // anything else now, and across 389 sampled queries the plain search found
+    // nothing it missed — so the second round trip only ever delayed the dead
+    // end. A failed request leaves whatever the local slice found standing.
+    it('does not follow a failed search with a second request', async () => {
+      mockFetch.mockImplementation(respond({ ok: false, status: 500 }));
 
       const user = userEvent.setup();
       render(<SearchBar {...defaultProps} />);
 
-      const input = screen.getByRole('textbox');
-      await user.type(input, 'king');
+      await user.type(screen.getByRole('textbox'), 'king');
 
       await waitFor(
         () => {
-          expect(mockFetch).toHaveBeenCalledWith(
-            expect.stringContaining('/api/openings/search?q=king&limit=20')
-          );
+          expect(
+            mockFetch.mock.calls.filter(([url]) =>
+              String(url).includes('/api/openings/semantic-search')
+            )
+          ).toHaveLength(1);
         },
         { timeout: 500 }
       );
+      expect(
+        mockFetch.mock.calls.filter(([url]) => /\/api\/openings\/search\?/.test(String(url)))
+      ).toHaveLength(0);
     });
 
     it('should handle API timeout gracefully', async () => {
@@ -467,14 +481,12 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('reaches Surprise me by arrowing past the last result', async () => {
       const user = userEvent.setup();
       const onSurprise = vi.fn();
-      render(
-        <SearchBar
-          {...defaultProps}
-          variant="landing"
-          onSurprise={onSurprise}
-          openingsData={mockOpeningsList.slice(0, 1)}
-        />
+      // One result on both halves of the search, so the footer sits at index 1.
+      const single = mockOpeningsList.slice(0, 1);
+      mockFetch.mockImplementation(
+        respond({ ok: true, json: () => Promise.resolve({ success: true, data: single }) }, single)
       );
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
 
       const input = screen.getByRole('textbox');
       await user.type(input, 'king');
@@ -640,9 +652,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       );
     });
 
-    it('should handle empty openings data gracefully', async () => {
+    it('should handle an empty local index gracefully', async () => {
+      mockFetch.mockImplementation(
+        respond({ ok: true, json: () => Promise.resolve({ success: true, data: [] }) }, [])
+      );
+
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} openingsData={[]} />);
+      render(<SearchBar {...defaultProps} />);
 
       const input = screen.getByRole('textbox');
       await user.type(input, 'king');
@@ -651,7 +667,7 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await waitFor(
         () => {
           expect(input).toHaveValue('king');
-          // With empty data, should not show suggestions
+          // Nothing to draw from either half of the search
           expect(screen.queryByRole('listitem')).not.toBeInTheDocument();
         },
         { timeout: 1000 }
@@ -661,12 +677,17 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should handle malformed opening data', async () => {
       const malformedData = [
         { name: 'Valid Opening', eco: 'A00', fen: '', moves: '', src: '' }, // Valid but minimal
-        null, // Null entry
         { fen: 'invalid', name: '', eco: '' }, // Empty fields
-      ].filter(Boolean); // Remove null entries
+      ];
+      mockFetch.mockImplementation(
+        respond(
+          { ok: true, json: () => Promise.resolve({ success: true, data: [] }) },
+          malformedData
+        )
+      );
 
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} openingsData={malformedData as any} />);
+      render(<SearchBar {...defaultProps} />);
 
       const input = screen.getByRole('textbox');
       await user.type(input, 'valid');

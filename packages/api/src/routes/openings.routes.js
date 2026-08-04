@@ -25,6 +25,27 @@ const familyResourceService = new FamilyResourceService({
 });
 
 /**
+ * A search result, cut to what a search row is made of.
+ *
+ * The service returns whole opening records — `analysis_json` and all — so
+ * twenty results were 55 KB of JSON to draw twenty lines of name, ECO code and
+ * moves. A dropdown repaints on every keystroke and most of these are read on a
+ * phone, so the description nobody rendered was the largest part of the cost of
+ * searching. `games_analyzed` stays because the client ranks with it;
+ * `searchScore` because the client promotes saved openings within a tie.
+ */
+function toSearchResult(opening) {
+  return {
+    fen: opening.fen,
+    name: opening.name,
+    eco: opening.eco,
+    moves: opening.moves || '',
+    games_analyzed: opening.games_analyzed,
+    searchScore: opening.searchScore,
+  };
+}
+
+/**
  * Match-reason annotation (review V2): on sub-variation pages, badge each
  * exact-position video "variation" (title mentions the variation) or
  * "family" (background material). Family-root pages get no badge — there is
@@ -873,7 +894,7 @@ router.get('/semantic-search', async (req, res) => {
 
     res.json({
       success: true,
-      data: searchResults.results,
+      data: searchResults.results.map(toSearchResult),
       count: searchResults.results.length,
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,

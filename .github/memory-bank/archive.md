@@ -5,30 +5,173 @@ loaded into context automatically** — read on demand only.
 
 ---
 
-## The empty repertoire slot gets its box back (`ux/phase-5-analyse`)
+## One search, not three (2026-08-03, `claude/player-details-layout-qxa1mo`)
 
-**A handoff divergence with no recorded reason.** The Proposed mock draws the
-Discover empty state as a bordered one-line bar — `--surface-raised`,
-`--color-border`, 8px radius, a 16px outline star — on both breakpoints. The
-build shipped a bare sentence: no surface, no border, no star.
+Design review of the shipped UX raised three search items. All three were taken.
+Implementing the first exposed a defect that had been live for as long as the
+top bar and the mobile overlay have existed.
 
-- **The recorded rationale doesn't cover it.** Change 03 justified _height_: a
-  dashed panel with icon, title and hint pushed Popular openings below the fold.
-  The mock's answer was ~180px → ~40px while keeping the container. "One-line
-  prompt" got read as "one line of text" at plan step
-  (`2026-07-27-ux-phase-1-discover.md:781` hands over the bare CSS with no
-  note), and the design review's own audit of this element (finding 11) touched
-  only the link — it left the box alone.
-- **Why the box is right.** Empty and populated are the same slot: with no
-  surface the first save doesn't fill a container, it conjures a section out of
-  bare text. The star was the one word doing instructional work, tying the
-  sentence to the glyphs in every card header below.
-- **The test had frozen the drift.** "is a single line of guidance, not a panel"
-  asserted more than anyone decided. Now: not a _titled empty-state_ panel — no
-  "Nothing saved yet", no CTA — which is what change 03 actually bought.
-- **Bundle lockstep.** `components-repertoire-row` drew the `/repertoire` tab's
-  empty state but never the Discover prompt its own note referred to; both are
-  drawn now, with why they're different shapes.
+### A — three implementations, one hook
+
+`SearchBar` (hero), `TopBarSearch` and `SearchOverlay` each owned a fetch, a
+debounce and a no-results string. Rows (`SearchRow`) and the blank state
+(`SearchHub`) were already shared; the query behaviour was not.
+
+- Only the hero expanded abbreviations. "qgd" → "Queen's Gambit Declined" there
+  and the literal three characters everywhere else. Measured against the real
+  index: **"kid" unexpanded returns 12,093 results led by "King's Pawn Game:
+  Wayward Queen Attack, Kiddie Countergambit" and "Reti: KIA"**; expanded it
+  returns the King's Indian. Two boxes, two products.
+- Debounce was 300ms on the hero and 250ms elsewhere, for no stated reason.
+- `useOpeningSearch` now owns expansion, the debounce constant, the fetch, the
+  legacy `/api/openings/search` fallback (which only the hero had), the ranking
+  and the no-results decision. `findAndRankOpenings` moved out of the component
+  into `lib/localSearch.ts` so the hook can reach it without importing a
+  component.
+- **The local index is now a paint, not an answer.** The hero holds a 1,000-row
+  slice of the search index and used to short-circuit on it for abbreviations,
+  ECO codes and moves — never asking the server at all. It now paints instantly
+  and is _always_ replaced by the server's list. That is what makes the three
+  surfaces converge; the top bar and the overlay deliberately pull no index (1.6
+  MB on every page for one keystroke).
+- What stayed per-surface is what genuinely differs: focus/teardown, the
+  keyboard cursor, and where a chosen result goes (a callback on the hero, a
+  route on the other two).
+
+### The defect underneath it
+
+`FUSE_OPTIONS.keys` is name/moves/style*tags/description. **`eco` is not among
+them**, so an ECO code fell through to fuzzy matching and `B90` returned **0
+results** against the 31 openings carrying it. The hero hid this behind its
+client-side ECO filter; the top bar and the overlay had nothing, so ECO search
+was dead on both — while the overlay's own no-results copy read "Try an ECO code
+(B02)". `searchByEcoCode` added to `search-service.js`, mirroring
+`searchByMove`: exact code match, popularity order, flat `searchScore` (the
+results \_are* ties). `.trim()` on the code because the real ECO data contains
+`"E80 "`.
+
+### B — the saved boost
+
+The Saved pill shipped; the ranking behind it did not. `promoteSaved`
+(`lib/searchRanking.ts`) stable-sorts saved openings ahead of unsaved ones
+**within a tie band only**.
+
+- The band is **relative** (within 2% of the leader), not absolute: scores are
+  ~1.5 on a move search, ~5.4 on a name search and ~0.41 on a semantic one, so a
+  fixed epsilon would mean "identical" on one path and "anything" on another.
+- Measured from the band leader, not the previous row, so a gentle decay cannot
+  chain a whole list into one band.
+- A list with no `searchScore` is returned untouched — nothing in it says which
+  pairs are close, and inventing that is the fabricated-data trap in costume.
+- Deliberately not "all saved first": a weak match you happen to have saved is
+  still a weak match, and floating it would make search worst for the users most
+  invested in the product.
+
+### C — one no-results voice
+
+Two strings and a silence, not two strings. The hero said "Try a different
+spelling, ECO code (e.g., B90), or abbreviation (e.g., QGD)"; the overlay said
+"Try an ECO code (B02) or paste a PGN on the Analyse tab."; **the top bar said
+nothing** — it closed its dropdown, so a failed search on desktop was
+indistinguishable from not having typed. Shared `SearchNoResults` component,
+overlay copy, on all three. It points somewhere, and it does not teach the user
+the word "abbreviation" at the moment they have failed.
+
+### Two things found while building it
+
+- **A regression I introduced and caught in the live app**: when a query came
+  back empty the hook left the previous query's openings on screen, so neither
+  the list cleared nor the dead end appeared. Fixed, and pinned by a test on all
+  three surfaces.
+- **CI lint was red from phase 3 upward.** `facetDisplay` exported from
+  `FilterBar.tsx` fails `react-refresh/only-export-components`, and
+  `packages/web`'s lint runs `--max-warnings 0`. Nothing caught it because CI
+  only triggers on PRs targeting `main`/`develop` and the whole stack targets
+  itself. Moved to `resultCount.ts` beside `resultCountLabel`.
+
+### Surprise me, on the same argument
+
+Four copies of one fetch — `LandingPage`, `TopBarSearch`, `SearchOverlay`, and
+the row itself is already shared. Unlike the query, **nothing diverged**: same
+endpoint, same response check, same navigation. Done anyway because the rot had
+started in the comments — the reasoning for the swallow survived in one copy of
+four ("a failed surprise is not worth an error state"), the others said "silent
+fail" — and because anything this gains next (a loading state, skipping the
+opening you are already on, analytics) would have to be added four times or it
+becomes four behaviours. `lib/randomOpening.ts` returns `null` rather than
+throwing; callers keep only what differs, which is that the overlay closes
+itself before navigating.
+
+Verified live against the dev server: `B90` returns 20 Najdorf rows in the top
+bar (previously an empty panel), "kid" returns King's Indian lines on the
+Analyse page's top bar, a failed search clears and shows the shared copy, and
+all three Surprise me entry points still navigate — with the overlay's still
+closing first.
+
+---
+
+## Analyse summary cards read as one row (2026-08-02, `claude/player-details-layout-qxa1mo`)
+
+Phase 5 §3 reversed ("the record card keeps its existing layout"). Structure was
+never the complaint: the card sat in an equal-height grid with its figures at
+the top-left over ~40% dead space, and it was the only card in the row with no
+bar, so the row had no bottom edge.
+
+- **Composition.** Figures bottom-anchored (`margin-top: auto`) across three
+  full-width columns, win left / draw centre / loss right — the bar's own
+  geometry, and PerfBar's legend arrangement.
+- **The dead space, measured.** 54px of a 228px card — but the opening cards
+  carry 51px in the same band, so it was never unique to the record card. Its
+  upper block was two lines against their four, so a third line closes it: the
+  overall win rate, the only rate on the panel with a sample behind it.
+- **The tints are load-bearing.** Equal-width columns cannot align with
+  proportional segments, so colour is the only thing tying a count to its band.
+  Draws move off primary cream — brightest number, least interesting fact.
+- **Four disagreements between rules drawn in different places** (what "the
+  fonts are all off" meant): bar height 6 vs 8px, headline 22 vs 20px, tracked
+  "WINS" beside sentence-case "win rate", a sage border on the Wins tile alone.
+- **"Your record" now counts every decided game.** W/D/L were tallied inside the
+  classified branch, so a real result with an unrecognised opening vanished from
+  the record while the header still counted it. `whiteGames`/`blackGames` stay
+  matched-only — they label the lists, so they must equal the rows beneath.
+- **Second pass — "should every card be the same height and layout?"** Measured
+  first: they already are where alignment reads (equal heights via the grid,
+  label at y=21, headline at y=44, bar at y=175/199). The middle disagrees
+  _structurally_ — the opening card has five blocks to the record card's four,
+  because only it has a moves line. So `.cardIdentity` reserves 70px (two 24px
+  name lines, where the name clamps, + the 18px moves line + its 4px offset) and
+  fixes the two _opening_ cards against each other: a wrapping name in one and
+  not the other put their "N games" lines 24px apart on cards of identical
+  shape. Invisible in both fixtures, because neither player has a qualifying
+  weak opening, so only one opening card renders. Cost: the row is permanently
+  24px taller when both names are short — predictable slack beats slack that
+  appears per player. The record card is deliberately **not** forced into line;
+  that would mean inventing a fourth line for it to fill.
+- **A games count on the record card was declined.** The header states it twice
+  ("100 games analysed · 100 matched") and the card's own counts sum to it; a
+  fourth statement 40px below the third earns nothing. The context slot's job on
+  an opening card is a sample size unavailable elsewhere (3 of 100); on the
+  record card the sample is the page's scope, already established.
+- **Left alone on the owner's call**: opening cards keep single-fill rate bars;
+  mobile keeps three tiles (but carries the rate on its scope line — parity of
+  information, not layout); `MIN_CARD_GAMES` stays 4, since at variation level a
+  floor of 8 often qualifies nothing and `findBestOpening` then falls back to an
+  unfiltered `list[0]`.
+
+---
+
+## The empty repertoire slot gets its box back (2026-08-02, `ux/phase-5-analyse`)
+
+A handoff divergence with no recorded reason. The mock draws Discover's empty
+state as a bordered one-line bar with a 16px outline star; the build shipped a
+bare sentence. Change 03 justified _height_ (a ~180px dashed panel → ~40px)
+while keeping the container — "one-line prompt" got read as "one line of text".
+Empty and populated are the same slot: with no surface, the first save conjures
+a section out of bare text rather than filling a container. The test had frozen
+the drift ("not a panel" asserted more than anyone decided); it now says not a
+_titled empty-state_ panel. `components-repertoire-row` draws both.
+
+---
 
 ## Practice drops to accent-outline (`ux/phase-5-analyse`)
 
@@ -537,6 +680,27 @@ icon: Sparkles reads as AI, shuffle/dice as a mode or a gamble, a gift or
 mystery box as a reward. Mobile's hero now hands off to the full-screen overlay
 instead of running a second search model on one screen. Spec §3.3; parity guard
 at `shared/__tests__/search-row-parity.test.tsx`.
+
+## UX review phases 0–3 (2026-07-27..28)
+
+Moved out of `progress.md` on 2026-08-02 to keep it under 100 lines.
+
+- **0 — systemic.** Button tiers, self-labelling `ResultBar`, decorative orange
+  removed, sentence case throughout, focus ring, 44px star target.
+- **1 — Discover closes the loop.** `Toast` with Undo, star on every card,
+  persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
+- **2 — `GET /api/openings/browse`.** Items, `total`, `remaining` and facet
+  counts from one request, so the count and the grid cannot disagree.
+- **3 — the faceted filter bar.**
+
+## Analyse summary card row (2026-08-02)
+
+Full rationale lives in the maintainer notes at
+`design-system/project/preview/components-analyse.html`, which record what the
+three cards now agree on (bottom-anchored figures, one 8px bar height, one 20px
+headline tier, one micro-label style) and what was deliberately left alone (the
+two opening cards keep their single-fill rate bars; mobile keeps its three stat
+tiles rather than adopting the desktop record card).
 
 ## Progress one-liners archived 2026-07-20 (June–early-July 2026)
 

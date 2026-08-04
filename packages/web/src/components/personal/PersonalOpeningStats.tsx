@@ -392,6 +392,54 @@ export const PersonalOpeningStats: React.FC<{
           const totalWins = dashboard.whiteWin + dashboard.blackWin;
           const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
+          const totalDecided = totalWins + totalDraws + totalLosses;
+
+          // The overall win rate goes in the context slot the two opening cards
+          // use for "4 games", so the record card's upper block has their
+          // density instead of two lines above a hole. It is also the figure
+          // the panel never gave you: the headline cards state 100% off four
+          // games, while this one is the only rate on screen with a sample
+          // behind it. Still no percentage *per count* — that would be seven
+          // numbers in one small card, and the bar already is the proportion.
+          const overallWinRate = totalDecided ? Math.round((totalWins / totalDecided) * 100) : null;
+
+          // The tints are the key — equal-width columns can't line up with
+          // proportional segments, so colour is what ties a number to its band.
+          const recordStats = (
+            <>
+              {overallWinRate !== null && (
+                <div className={styles.cardContext}>{overallWinRate}% win rate</div>
+              )}
+              <div className={styles.statsRows}>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Wins</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
+                    {totalWins.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Draws</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueDraw}`}>
+                    {totalDraws.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Losses</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
+                    {totalLosses.toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              <PerfBar
+                win={totalWins}
+                draw={totalDraws}
+                loss={totalLosses}
+                games={totalDecided}
+                legend={false}
+                className={styles.cardBar}
+              />
+            </>
+          );
 
           return (
             <>
@@ -401,29 +449,50 @@ export const PersonalOpeningStats: React.FC<{
                 <div className={styles.mobileHero}>
                   <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
                   <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
+                  {/* The overall win rate rides the scope line rather than the
+                      tiles: it is a fact about the run, and mobile has no room
+                      to spare above the fold. Desktop states it in the record
+                      card's context slot — mobile keeps its three tiles, but
+                      the number has to be reachable on both. */}
                   <span className={styles.mobileGamesMeta}>
                     {dashboard.totalGames} analysed &middot; {dashboard.classifiedGames} matched
                     {dashboard.unclassifiedGames > 0
                       ? ` · ${dashboard.unclassifiedGames} unrecognised`
                       : ''}
+                    {overallWinRate !== null && (
+                      <>
+                        {' · '}
+                        <span className={styles.mobileWinRate}>{overallWinRate}% win rate</span>
+                      </>
+                    )}
                   </span>
                 </div>
 
                 {sampleBanner}
 
-                {/* 3 inline stat cards */}
+                {/* 3 inline stat tiles. Deliberately NOT the desktop record
+                    card: on a phone the tiles read faster and cost two fewer
+                    lines above the fold than an eyebrow + title would. They
+                    carry the same W/D/L colour key, which is what actually
+                    needed fixing. */}
                 <div className={styles.tripleStats}>
-                  <div className={`${styles.triStat} ${styles.triStatWin}`}>
+                  <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Wins</span>
-                    <span className={styles.triStatValue}>{totalWins}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueWin}`}>
+                      {totalWins}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Draws</span>
-                    <span className={styles.triStatValue}>{totalDraws}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueDraw}`}>
+                      {totalDraws}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Losses</span>
-                    <span className={styles.triStatValue}>{totalLosses}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueLoss}`}>
+                      {totalLosses}
+                    </span>
                   </div>
                 </div>
 
@@ -600,24 +669,7 @@ export const PersonalOpeningStats: React.FC<{
                       This analysis
                     </div>
                     <h3 className={styles.cardTitle}>Your record</h3>
-                    <div className={styles.statsRows}>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Wins</span>
-                        <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
-                          {totalWins.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Draws</span>
-                        <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Losses</span>
-                        <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
-                          {totalLosses.toLocaleString()}
-                        </span>
-                      </div>
-                    </div>
+                    {recordStats}
                   </div>
 
                   {bestOpening && (
@@ -628,13 +680,19 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
                         Top-performing opening
                       </div>
-                      <OpeningNameSplit
-                        name={bestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {bestOpeningMoves && (
-                        <div className={styles.cardMoves}>{bestOpeningMoves}</div>
-                      )}
+                      {/* Name and moves share one fixed-height block — see
+                          .cardIdentity. The moves are a caption of the name, so
+                          the reserved slack has to sit below the pair, not
+                          between them. */}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={bestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {bestOpeningMoves && (
+                          <div className={styles.cardMoves}>{bestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{bestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
@@ -642,7 +700,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>win rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillWin}
                           style={{ width: `${getWinRate(bestOpening)}%` }}
@@ -659,13 +717,15 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>
                         Needs work
                       </div>
-                      <OpeningNameSplit
-                        name={weakestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {weakestOpeningMoves && (
-                        <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
-                      )}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={weakestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {weakestOpeningMoves && (
+                          <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{weakestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>
@@ -673,7 +733,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>loss rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillLoss}
                           style={{ width: `${getLossRate(weakestOpening)}%` }}

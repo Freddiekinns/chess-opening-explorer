@@ -4,96 +4,95 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **Mobile search overlay closes on tab navigation** (2026-08-03, on
-  `ux/phase-5-analyse`): the footer tabs did navigate, but the overlay outlived
-  it and sat over the new page. It renders inside the sticky TopBar's stacking
-  context, so the tab bar hit-tests above it by design; the missing half was
-  closing on `pathname` change. Search stays top-right — a mode, not a place.
-- **TopBar search field sized to its own panel** (2026-08-02): the 380px
-  dropdown flared past a 240px field; field now `clamp(300px, 30vw, 380px)`,
-  panel flush at `left/right: 0` (tablet keeps the grow-leftwards panel).
-- **Discover's empty repertoire slot gets its box back** (2026-08-02, on
-  `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star, the
-  build shipped bare text — "one-line prompt" read as "one line of text", then
-  frozen by a test asserting "not a panel". **Detail in `archive.md`**.
-- **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
-  `ux/phase-5-analyse`): typing changed _what_ was listed and _how_ each opening
-  was drawn; `shared/SearchRow.tsx` is now the one row for all three surfaces.
-  Five defects fell out. Spec §3.3, guard `search-row-parity.test.tsx`; **detail
-  in `archive.md`**.
-- **Practice demoted to accent-outline** (2026-07-30, on `ux/phase-5-analyse`):
-  filled orange → orange border + orange label, and 13px on both breakpoints.
-  **A spec decision reversed on the owner's call**; names the third button tier.
-  Spec §3.4; **detail in `archive.md`**.
-- **Master games moved up the mobile stack** (2026-07-30, on
-  `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
-  table sent it below videos and studies to "make both breakpoints agree", which
-  was false. Spec §3.2; guard at `pages/__tests__/mobile-stack-order`.
-- **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): six
-  phases read back against the handoff bundle; six defects, every one a change
-  half-applied. **Detail in `archive.md`.**
+- **Search answers in milliseconds, identically on all three surfaces**
+  (2026-08-04, on `claude/player-details-layout-qxa1mo`): the top bar "hung"
+  because the server took 1–3s to fuzzy-match a name over 12,377 descriptions
+  and only the hero held an index to hide it behind. Literal name matching
+  (`search/NameIndex.js`) answers in 2–5ms; the routing heuristics that guessed
+  a query's shape are gone; Fuse is the typo net only; the index slice is shared
+  by all three surfaces and fetched on the first keystroke, not on mount. One
+  request per query, responses 55 KB → 4.4 KB, and PGN lookup finally sees the
+  whole corpus.
+- **Review pass over the seven-PR UX stack** (2026-08-04, on
+  `claude/player-details-layout-qxa1mo`): read `feat/ux-review...HEAD`, then CSS
+  on its own. Fixed a TopBar keyboard crash on an empty list, a stale-response
+  race in `useOpeningSearch`, an `AbortError` shown as an error on Cancel, a
+  0%/0%/0% bar for `null` stats, "Loading Lichess data…" forever on mobile, and
+  an invisible Discover grid under reduced motion.
+- **One search behaviour, not three — and ECO codes actually work** (2026-08-03,
+  on `claude/player-details-layout-qxa1mo`): three fetches, two debounces and
+  two no-results strings became `useOpeningSearch`; only the hero had expanded
+  abbreviations. Exposed that `eco` is not a Fuse key, so `B90` gave 0 results
+  wherever there was no local index. Saved openings now win ties.
+- **Mobile search overlay closes on tab navigation** (2026-08-03): the tabs did
+  navigate, but the overlay outlived it and sat over the new page. It renders
+  inside the sticky TopBar's stacking context, so the tab bar hit-tests above it
+  by design; the missing half was closing on `pathname` change.
+- **Mobile filter sheet: the grabber works, the family list is opt-in**
+  (2026-08-02): a decorative 36×4 pill promised a drag the sheet could not do,
+  on a device with no Escape key. Guards in `FilterSheet.test.tsx`.
+- **Analyse summary cards rebuilt into one row** (2026-08-02): reverses phase 5
+  §3 on composition. Exposed a latent defect — W/D/L were tallied inside the
+  classified branch, so a real result with an unrecognised opening vanished.
+- **TopBar search field sized to its own panel**, **Discover's empty repertoire
+  slot got its box back** (2026-08-02). **Detail in `archive.md`.**
+- **Search rows unified across the three surfaces** (2026-07-30): typing changed
+  _what_ was listed and _how_ each opening was drawn; `shared/SearchRow.tsx` is
+  the one row. Spec §3.3, guard `search-row-parity.test.tsx`; **`archive.md`**.
+- **Practice demoted to accent-outline**, **master games moved up the mobile
+  stack** (2026-07-30): two **spec decisions reversed**, not bugs. Spec §3.4.
+- **UX review implementation audit** (2026-07-29): six phases read back, six
+  half-applied changes. **`archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
-  header; "Career totals / Overall performance" → "This analysis / Your record"
-  (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
-  → "Games". Sample reports from committed fixtures, dated on screen. PGN
-  reduction moved to `packages/shared/src/utils/personal-analysis.ts`.
-- **UX review phase 4 — opening detail desktop** (2026-07-28,
-  `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
-  level filter and everything it governs; master games move outside it into a
-  shared `MasterGamesCard`. `WinRateBar` and `MobileMasterGames` deleted; one
-  `explorerStats` module owns every level-scoped label. Explorer error beacon
-  moved into the hook (was desktop-only, so mobile failures went unreported).
-- **UX review phases 0–3** (2026-07-27..28): **0** systemic — button tiers,
-  self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
-  44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
-  card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
-  **2** `GET /api/openings/browse` — one request for items, `total`, `remaining`
-  and facet counts, so count and grid cannot disagree. **3** the faceted bar.
+  header; "Career totals" → "This analysis / Your record" (it claimed a lifetime
+  for one run); dated fixtures; PGN reduction into `packages/shared`.
+- **UX review phase 4 — opening detail desktop** (2026-07-28): `ExplorerCard`
+  draws one border around the level filter and everything it governs; master
+  games move to a shared `MasterGamesCard`; one `explorerStats` owns the labels.
+- **UX review phases 0–3** (2026-07-27..28): systemic pass, Discover's star/undo
+  loop, `GET /api/openings/browse`, the faceted bar. See `archive.md`.
 - **Agent docs restructure** (2026-07-25, on `main`): portable `AGENTS.md` plus
   scoped `packages/*/AGENTS.md` imported by a thin `CLAUDE.md`; workflows and
   the design system became `.claude/skills/`. **Detail in `archive.md`**.
-- Everything before the UX review — **all detail in `archive.md`**: 07-12..20
-  (`PerfBar`; detail-mobile PR #53; `/api/explorer` proxy); through 07-11
-  (Deviation Trainer 1; Study matching V2 18.2%→35.7%; video index PR #47
-  28.2%→72.8%; Analyse PR #45); 07-06 remediation (routes 409→189 kB;
-  `/api/openings/all` → 410); through 07-02 (video pipeline; `Math.random()`
-  W/D/L and dropdown-stacking fixes; 28-family taxonomy; domain migration;
-  TASK006–016; Course Discovery; Practice Mode).
-- **Still true and not fixed**: the common-plans ECO-bucket investigation found
-  a real defect and shipped no code change (see `archive.md`).
+- Everything before the UX review — **all detail in `archive.md`**: shared
+  `PerfBar` and the opening-detail mobile overhaul; the `/api/explorer` proxy;
+  Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
+  (28.2%→72.8%); route splitting (409→189 kB) and `/api/openings/all` → 410;
+  28-family taxonomy; domain migration; TASK006–016; Practice Mode. **Still true
+  and not fixed**: the common-plans ECO-bucket investigation found a real defect
+  and shipped no code change (see `archive.md`).
 
 ## What's Left
 
 - **Merge the UX review to `main`** — order matters. Merge PRs #58 → #59 → #60 →
   #61 → #62 → #63 → #65 with **"Create a merge commit"**, deleting each head
-  branch so the next PR retargets onto `feat/ux-review`; all are fast-forwards.
+  branch so the next retargets onto `feat/ux-review`; all are fast-forwards.
   **Never squash or rebase-merge inside the stack** — new SHAs make the child
-  conflict everywhere. `main` is already merged into the tip, so the final
-  `feat/ux-review` → `main` PR is clean.
+  conflict everywhere. `main` is already merged into the tip.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, so shared-module tests live in the web suite; and its barrels
-  export without file extensions, so `dist/index.js` is unimportable from Node
-  ESM — scripts import `dist/utils/<module>.js` directly.
+  export without extensions, so `dist/index.js` is unimportable from Node ESM.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
-  shelves, V5/V6 taxonomy + chapter matching, studies data work
+  shelves, V5/V6 taxonomy + chapter matching, studies data work.
 - **Search is not a real combobox** — its biggest remaining gap. No
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
   region, so a screen-reader user gets no signal when results arrive; the
-  keyboard cursor rides a `data-active` hook `aria-activedescendant` should
-  replace. Three surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+  keyboard cursor rides a `data-active` hook. One query hook to announce from.
+- **Toasts need one host, not one per component.** Every `useRepertoireToast`
+  caller renders its own `.toast` at the same fixed slot, so two within 4s stack
+  and cover an Undo. Found 2026-08-04; a shared host is the fix.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
-  "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
+  "Sicilian Defense: Najdorf Variation", separated only by ECO — a data problem,
+  untouched by the 2026-08-04 ranking work.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
-  which are active is legible only inside the sheet (desktop states each value).
+  which are active is legible only inside the sheet.
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
   `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
-- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
-  rejected: a min-sample floor makes `total` depend on `sort`.)
-- **`rankNotableGames` dedupes by exact player name**, so Lichess name variants
-  ("Caruana, F." vs "Caruana, Fabiano") slip through as separate players.
-- **Agent docs**: run `/doctor` locally as a second opinion on the 2026-07-25
-  restructure — it can't run from a remote session.
+- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_
+  rejected: a min-sample floor makes `total` depend on `sort`.) **Agent docs**:
+  run `/doctor` locally. **`rankNotableGames` dedupes by exact player name**, so
+  "Caruana, F." and "Caruana, Fabiano" slip through as two players.
 
 ## Known Issues
 

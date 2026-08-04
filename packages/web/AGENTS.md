@@ -20,6 +20,45 @@ can mix global and module classes: ``className={`eco-pill ${styles.badge}`}``.
 When removing rules from `simplified.css`, watch for comma-separated selectors
 shared with other components — only remove the selectors you're migrating.
 
+## Search
+
+All three search surfaces — the landing hero (`SearchBar`), `TopBarSearch` and
+the mobile `SearchOverlay` — call `hooks/useOpeningSearch.ts`. **Do not add a
+fetch, a debounce, a local index or a no-results string to a search component.**
+Query shape (abbreviations, ECO codes, moves, the debounce constant) lives in
+`lib/searchQuery.ts`; the shared index slice in `lib/searchIndex.ts`; local
+ranking in `lib/localSearch.ts`; the saved-opening tie-break in
+`lib/searchRanking.ts`; Surprise me in `lib/randomOpening.ts`. Rows come from
+`SearchRow`, the blank state from `SearchHub`, the dead end from
+`SearchNoResults`.
+
+Each surface keeps only what genuinely differs: focus and teardown, the keyboard
+cursor, and where a chosen result goes. `search-surface-parity.test.tsx` pins
+that the three ask the same question, give the same answer, and take the same
+time to do it.
+
+### The two halves, and why they have to agree
+
+A query paints twice. `useOpeningSearch` ranks the locally held slice on the
+keystroke, then replaces that list with the server's a few hundred milliseconds
+later. The slice is fetched once per page from
+`/api/openings/search-index?limit=1000` on the first character typed anywhere —
+never on mount, and never per surface. It used to be a prop only the landing
+page supplied, which is the whole reason the hero felt instant and the top bar
+felt broken.
+
+`lib/localSearch.ts` implements the server's bands
+(`packages/api/src/services/search/NameIndex.js`) deliberately, and
+`lib/__tests__/local-server-parity.test.ts` imports that CommonJS module and
+runs both over the same openings. If the two rankings drift the results
+reshuffle under the cursor while the user is reading them, which is worse than
+the wait it replaced. **Change one ranking and you change both.**
+
+The local pass is paint-ahead and never the final answer — the server sees all
+12,377 openings against the slice's popular thousand, and it can read a
+misspelling. One request per query: the plain-search fallback that used to
+follow an empty semantic search is gone (see the root `AGENTS.md`).
+
 ## Imports
 
 **Use relative imports for the shared package, not the package name.**
@@ -36,6 +75,14 @@ import { SomeType } from '@chess-trainer/shared'; // fails the Vercel build
   stacking context, so later DOM siblings paint over — and click-block —
   overlays like the search dropdown. The `sectionReveal` entrance animation must
   use `backwards`; the end state equals the base state, so it looks identical.
+
+- **Never let an entrance animation be the only thing that makes an element
+  visible.** `.opening-card` sets `opacity: 0` and relies on
+  `cardSlideIn … forwards` to bring it back, while the `prefers-reduced-motion`
+  block sets `animation: none` on the same selector — so the whole Discover grid
+  rendered invisible for anyone with reduced motion on. Fixed by restoring
+  `opacity: 1` in that block, but the rule is: if you animate `opacity` from 0,
+  either the base value is visible or the reduced-motion branch restores it.
 
 - **Use `overflow: clip`, not `hidden`, on a card containing a sticky child.**
   `hidden` makes the element a scroll container, which becomes the containing
@@ -73,6 +120,14 @@ The generator and the page share one `analyseGames` in
 `packages/shared/src/utils/personal-analysis.ts`. **Never reimplement the
 reduction in the script** — the fixtures would drift from what the page renders
 and nothing would catch it.
+
+**An abort is not an error.** `usePersonalGames` aborts its `AbortController`
+both on Cancel and when a second run supersedes the first, and the games fetch
+then rejects with an `AbortError`. Reporting that put "signal is aborted without
+reason" in front of the user under a red alert. Check
+`controller.signal.aborted` at the top of the catch and return; the
+`if (!data) return` guard after `analyseGames` only covers the classification
+phase, not the fetch that Cancel usually interrupts.
 
 Two traps in `packages/shared`: its `tests/` directory is run by **neither**
 Jest nor Vitest, so tests for shared modules belong in the web Vitest suite; and

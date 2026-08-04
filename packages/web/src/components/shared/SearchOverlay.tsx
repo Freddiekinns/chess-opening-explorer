@@ -1,9 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
-import { useRepertoire } from '../../hooks/useRepertoire';
+import { SearchNoResults } from './SearchNoResults';
+import { useOpeningSearch } from '../../hooks/useOpeningSearch';
+import { fetchRandomOpening } from '../../lib/randomOpening';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -13,35 +15,21 @@ import styles from './SearchOverlay.module.css';
  * bare input-plus-dropdown overlay that TopBar used to render inline.
  */
 
-interface SearchResult {
-  fen: string;
-  name: string;
-  eco: string;
-  moves: string;
-}
-
 interface SearchOverlayProps {
   open: boolean;
   onClose: () => void;
 }
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [searching, setSearching] = useState(false);
-  const { isSaved } = useRepertoire();
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { query, setQuery, results, searching, noResults, hasQuery, reset } = useOpeningSearch();
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const close = useCallback(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setQuery('');
-    setResults([]);
-    setSearching(false);
+    reset();
     onClose();
-  }, [onClose]);
+  }, [onClose, reset]);
 
   // Focus each time the overlay opens; Escape closes. SearchHub reads its own
   // recents when it mounts, which is on every open.
@@ -69,64 +57,19 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     if (open) close();
   }, [pathname, open, close]);
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setQuery(value);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    if (value.trim().length < 2) {
-      setResults([]);
-      setSearching(false);
-      return;
-    }
-
-    setSearching(true);
-    timeoutRef.current = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success && data.data) {
-            setResults(data.data);
-          }
-        }
-      } catch {
-        // Silent fail — the no-results state carries the hint text.
-      } finally {
-        setSearching(false);
-      }
-    }, 250);
-  };
-
-  const select = (opening: SearchResult) => {
+  const select = (opening: { fen: string }) => {
     close();
     navigate(`/opening/${encodeURIComponent(opening.fen)}`);
   };
 
   const surpriseMe = async () => {
-    try {
-      const res = await fetch('/api/openings/random');
-      const data = await res.json();
-      if (data.success && data.data) select(data.data as SearchResult);
-    } catch {
-      // Silent fail
-    }
+    const opening = await fetchRandomOpening();
+    if (opening) select(opening);
   };
 
   if (!open) return null;
 
-  const hasQuery = query.trim().length >= 2;
-  const showEmptyState = !hasQuery;
   const showResults = hasQuery && results.length > 0;
-  const noResults = hasQuery && !searching && results.length === 0;
 
   return (
     <div className={styles.overlay} role="dialog" aria-modal="true" aria-label="Search openings">
@@ -137,7 +80,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
             ref={inputRef}
             type="text"
             value={query}
-            onChange={handleChange}
+            onChange={(event) => setQuery(event.target.value)}
             placeholder="Search openings..."
             className={styles.input}
           />
@@ -148,7 +91,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
       </div>
 
       <div className={styles.body}>
-        {showEmptyState && (
+        {!hasQuery && (
           <SearchHub
             onSelect={(fen) => {
               close();
@@ -170,20 +113,13 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           <ul className={styles.rowList}>
             {results.map((opening, i) => (
               <li key={`${opening.fen}-${i}`}>
-                <SearchRow opening={opening} saved={isSaved(opening.fen)} onSelect={select} />
+                <SearchRow opening={opening} saved={opening.saved} onSelect={select} />
               </li>
             ))}
           </ul>
         )}
 
-        {noResults && (
-          <div className={styles.noResults}>
-            <span className={styles.noResultsTitle}>No openings match your search</span>
-            <span className={styles.noResultsHint}>
-              Try an ECO code (B02) or paste a PGN on the Analyse tab.
-            </span>
-          </div>
-        )}
+        {noResults && <SearchNoResults />}
       </div>
 
       {/* Outside the scrolling body, same as the hero dropdown: twenty results

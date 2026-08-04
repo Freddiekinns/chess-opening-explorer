@@ -1,9 +1,9 @@
 import React from 'react';
 import { FacetSelect, FacetOptionList } from './FacetSelect';
 import { FamilyPicker } from './FamilyPicker';
-import { resultCountLabel } from './resultCount';
+import { facetDisplay, resultCountLabel } from './resultCount';
 import { SORT_OPTIONS } from '../../hooks/useBrowse';
-import type { BrowseFacets, BrowseFilters, FacetKey, FacetValue } from '../../hooks/useBrowse';
+import type { BrowseFacets, BrowseFilters, FacetKey } from '../../hooks/useBrowse';
 import styles from './FilterBar.module.css';
 
 /**
@@ -15,20 +15,6 @@ import styles from './FilterBar.module.css';
  * grid — the whole point of the browse endpoint. It cannot disagree with what
  * is on screen the way the old two-fetch arrangement could.
  */
-
-/**
- * The label for the current value. The API guarantees an applied value stays
- * in its own facet list even at count 0, so this only falls back to the
- * placeholder when nothing is applied.
- */
-export const facetDisplay = (
-  options: FacetValue[],
-  value: string | null,
-  placeholder: string
-): string => {
-  if (!value) return placeholder;
-  return options.find((option) => option.value === value)?.label ?? value;
-};
 
 interface FilterBarProps {
   facets: BrowseFacets;

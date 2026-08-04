@@ -21,6 +21,10 @@ body{padding:24px;background:var(--surface-base)}
 .eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
 .saved{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid rgba(232,93,4,.3);border-radius:4px;background:rgba(232,93,4,.12);color:var(--color-brand-orange);font-family:'DM Sans';font-size:11px;font-weight:600;white-space:nowrap}
 
+.empty{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 16px;text-align:center}
+.emptyTitle{font-family:'DM Sans';font-size:14px;font-weight:500;color:var(--color-text-secondary)}
+.emptyHint{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted)}
+
 .note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
 .note code{font-family:var(--font-family-mono);font-size:11px}
 </style></head><body>
@@ -79,6 +83,16 @@ body{padding:24px;background:var(--surface-base)}
       </div>
     </div>
   </div>
+
+  <div class="col">
+    <span class="cap">Search results · no match</span>
+    <div class="dropdown">
+      <div class="empty">
+        <span class="emptyTitle">No openings match your search</span>
+        <span class="emptyHint">Try an ECO code (B02) or paste a PGN on the Analyse tab.</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <p class="note">
@@ -133,5 +147,27 @@ body{padding:24px;background:var(--surface-base)}
   It is a text badge because everywhere else in the app a star is a control you
   press to add or remove; on a row whose whole job is to navigate, the same star
   would invite a tap that does something else entirely.
+</p>
+<p class="note">
+  <strong>Saved openings also win ties.</strong> The badge was the visible half
+  of the idea; the ranking is the useful half. Between two matches the search
+  cannot separate — a move query returns dozens on an identical score — the
+  opening already in the repertoire goes first. Only within a tie: a weak match
+  you happen to have saved is still a weak match, and floating it over twenty
+  better ones would make search worst for the people most invested in it. The
+  band is <em>relative</em> (within 2% of the leader) because score scales
+  differ by an order of magnitude between search types.
+</p>
+<p class="note">
+  <strong>One dead end, one voice.</strong> There were two strings and a
+  silence: the hero said "Try a different spelling, ECO code (e.g., B90), or
+  abbreviation (e.g., QGD)", the mobile overlay said the copy above, and the
+  top-bar dropdown simply closed — so a failed search on desktop looked
+  identical to not having typed. The overlay's survived: it points somewhere
+  the user can go, and it does not teach them the word "abbreviation" at the
+  moment they have just failed. Two example ECO codes for the same advice was
+  the other half of the tell. Note the hint is only true because the server
+  gained an ECO branch at the same time — before that, "try an ECO code"
+  returned nothing on any surface without a local index.
 </p>
 </body></html>

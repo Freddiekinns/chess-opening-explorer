@@ -178,7 +178,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
             {repertoire.length > 0 && (
               <>
-                <div className={styles.sectionLabel}>My repertoire</div>
+                <div className={styles.sectionLabel}>Your repertoire</div>
                 <div className={styles.rowList}>
                   {repertoire.slice(0, REPERTOIRE_LIMIT).map((opening) => (
                     <OpeningRow

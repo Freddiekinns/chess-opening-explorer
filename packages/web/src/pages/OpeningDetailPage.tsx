@@ -964,7 +964,7 @@ const OpeningDetailPage: React.FC = () => {
       complexity: opening.complexity,
     });
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    setRepertoireToast(saved ? 'Removed from repertoire' : 'Saved to repertoire');
+    setRepertoireToast(saved ? 'Removed from your repertoire' : 'Added to your repertoire');
     toastTimerRef.current = setTimeout(() => setRepertoireToast(null), 2200);
   };
 

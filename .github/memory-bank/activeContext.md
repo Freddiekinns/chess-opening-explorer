@@ -1,37 +1,45 @@
 # Active Context
 
-**Date:** 2026-07-20
+**Date:** 2026-07-27
 
-## Current Task: Opening-detail & analyse UI tweaks (branch `claude/opening-details-ui-tweaks-9tddbh`)
+## Current Task: UX review phase 0 — systemic pass (branch `ux/phase-0-systemic`)
 
-**Follow-up (post-#54-merge):** move lists weren't showing under opening names
-on phones — `.mobileCardMoves` (since May) and `.variationMoves` (added by #54)
-were both `display:none` at ≤480px, so real phones saw name+bar only while the
-highlight cards still showed moves. Removed both hides (moves stay on their own
-row, ellipsis-truncated). Also stepped family/variation names down to 14px at
-≤480 to match `.mobileCardName`, completing the font-scale unification on small
-screens. Branch restarted from `main` (PR #54 already merged) → new PR.
+First of six phases implementing the 2026-07 UX review. **Delivery topology:**
+every phase branches from and PRs into the long-lived `feat/ux-review`
+integration branch, which merges to `main` as a **single** PR at the end — each
+phase still gets its own Vercel preview, but `main` is touched once.
 
-**Shipped in #54 (merged):** "Most popular next moves" caption under
-continuations (desktop + mobile); mobile show-more 5→3; unified mobile Analyse
-cards (family header + variations match the flat card via a shared `PerfBar`);
-move-list + name styling aligned across grouped/flat lists (full move line, not
-first-two-pairs); mobile font-size sweep (names 15px/600, desktop variation
-"Games N" 13→14px). Files: `OpeningNavigator`, `MobileDataSurface`, `PerfBar`
-(new), `FamilyRow`, `OpeningRow`, `PersonalOpeningStats`,
-`familyAggregation.ts`, `personalStatsLib.ts` + css/tests. **Verified:**
-frontend tests green; Prettier clean; Playwright screenshots (both mobile
-views).
+Phase 0 is the no-behaviour-change base every later phase inherits:
 
-## Previous Task: Opening detail mobile overhaul (PR #53, branch `claude/mobile-ui-opening-details-ph33t8`)
+- **One button spec.** Primary = orange / `--color-text-inverse` / `--radius-md`
+  (Practice is now primary — it was the weakest-looking button in the product);
+  tertiary = neutral surface, no orange (Load more, which used to out-rank it);
+  Analyse CTA de-pilled. Pill shape now survives only on the platform toggle.
+- **`ResultBar` extracted** (`components/shared/`) and adopted by both
+  `OpeningCard` variants. Bars self-label — "White 31% · Draw 39% · Black 30%"
+  replaces "W/D/B", so no legend is needed. Uses the previously-unused
+  `--color-result-*-text` tokens; the fill tokens are too low-contrast as type.
+  Returns `null` when stats are absent — callers never guard, nothing is faked.
+- **Decorative orange gone**: the dead `.section-title` family (orange gradient
+  underline, zero consumers) and the Win rate card's orange accent bar.
+- **Copy**: "Your repertoire" everywhere, "Added to your repertoire" toast,
+  sentence case throughout, "Paste a game" replaces "Search by pasting PGN".
+- **A11y**: global `:focus-visible` orange ring for every control (text inputs
+  keep their border+glow), `aria-pressed` on `StarButton`, 44px star target on
+  touch pointers or ≤767px.
 
-Claude Design "Opening Details Mobile 2a — one data surface" at ≤767px:
-`useIsMobile()` matchMedia hook branches `OpeningDetailPage` into a mobile tree
-(AD-012), desktop keeps its two columns. Mobile = compact header + save toast,
-board control row with inline move strip + **PositionSheet** FEN sheet, clamped
-editorial Overview/plans, one **MobileDataSurface** card (sticky level pills +
-stats + breadcrumb + Continuations/alternatives), master-games/resources
-accordions, and a full-screen **SearchOverlay** (recents + repertoire + surprise
-me). Also: desktop right column reordered Overview → stats → book; scroll fix
-(`ScrollToTop` + horizontal-only move-strip scroll). 323 frontend tests (35
-new). **Full detail in `archive.md`.**
+**Verified:** 336 frontend + 784 backend tests green, clean build, and checked
+live at 390/1360 — labels don't clip, no horizontal overflow, Practice renders
+`rgb(232,93,4)` on `rgb(16,15,14)`, Load more carries no orange.
+
+**Spec:** `docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md`
+**Plans:** `docs/superpowers/plans/2026-07-27-ux-phase-{0,1}-*.md`
+
+## Previous Task: Opening-detail & analyse UI tweaks (PR #55)
+
+Move lists weren't showing under opening names on phones — `.mobileCardMoves`
+and `.variationMoves` were both `display:none` at ≤480px, so real phones saw
+name+bar only. Removed both hides; stepped family/variation names down to 14px
+at ≤480 to complete the small-screen font-scale unification. Shipped in #54
+before it: "Most popular next moves" caption, mobile show-more 5→3, unified
+mobile Analyse cards via a shared `PerfBar`. **Detail in `archive.md`.**

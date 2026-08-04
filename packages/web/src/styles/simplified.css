@@ -273,6 +273,21 @@
   box-sizing: border-box;
 }
 
+/* Every interactive control gets the brand focus ring, never the browser
+   default. Element-level specificity, so a component may refine the ring —
+   but a component that removes it without a replacement is a bug. Text
+   inputs opt out deliberately: they signal focus with an orange border and
+   glow instead, which reads better inside a field. */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1085,33 +1100,8 @@ body {
   color: var(--color-text-secondary);
 }
 
-.segmented-bar {
-  display: flex;
-  height: 8px;
-  gap: 2px;
-  background-color: var(--color-bg-alt);
-  border-radius: var(--border-radius-small);
-  overflow: hidden;
-}
-
-.bar-segment {
-  height: 100%;
-  border-radius: 9999px;
-  transition: width 0.6s ease-out;
-  min-width: 4px;
-}
-
-.bar-segment.white-segment {
-  background-color: var(--color-result-white);
-}
-
-.bar-segment.draw-segment {
-  background-color: var(--color-result-draw);
-}
-
-.bar-segment.black-segment {
-  background-color: var(--color-result-black);
-}
+/* Result-bar markup now lives in ResultBar.module.css — see
+   components/shared/ResultBar.tsx. */
 
 .stat-value {
   font-size: var(--font-size-sm);
@@ -1578,31 +1568,9 @@ body {
 }
 
 /* --- Win rate bar --- */
+/* Bar and labels are ResultBar's; this only pins it to the card's bottom. */
 .card-winrate {
   margin-top: auto;
-}
-
-.card-winrate .segmented-bar {
-  margin-bottom: var(--space-1);
-}
-
-.winrate-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-medium);
-}
-
-.winrate-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .black-label {
-  color: var(--color-text-secondary);
 }
 
 /* =================
@@ -1669,33 +1637,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.list-item-stats {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.list-item-stats .segmented-bar {
-  height: 6px;
-}
-
-.list-item-stat-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-2xs);
-}
-
-.list-item-stat-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .black-label {
-  color: var(--color-text-secondary);
-}
+/* The list-item's result bar is ResultBar with no wrapper class. */
 
 /* =================
    SEARCH COMPONENTS
@@ -2221,39 +2163,9 @@ body {
   padding: 0 var(--space-4);
 }
 
-.section-title {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-2) 0;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-brand-orange) 0%, var(--accent-a30) 100%);
-  border-radius: 2px;
-}
-
-/* Sub (in-card) section title modifier: reduced scale, no underline */
-.section-title--sub {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-1);
-  letter-spacing: normal;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-.section-title--sub::after {
-  content: none;
-}
+/* The .section-title family (and its orange gradient underline) was removed in
+   UX phase 0: no component referenced it, and orange is for action, not
+   decoration. */
 
 /* ECO pill spacing refinement when paired with sub title */
 .related-teaser__header.card-header {
@@ -2288,21 +2200,6 @@ body {
   align-items: center;
   gap: var(--space-2);
 }
-.card-header__title--accent {
-  position: relative;
-  padding-left: var(--space-3);
-}
-.card-header__title--accent::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 3px;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--color-brand-orange), var(--accent-a20));
-}
-
 /* Map legacy title-subsection to new system for gradual migration */
 .title-subsection {
   font-size: var(--font-size-lg);
@@ -2443,11 +2340,12 @@ body {
   padding: var(--space-4);
 }
 
+/* Tertiary: pagination must not out-rank the page's real actions. */
 .load-more-btn {
-  background-color: var(--color-bg-alt);
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 999px;
+  background-color: var(--surface-raised);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-8);
   cursor: pointer;
   transition: var(--transition-base);
@@ -2456,17 +2354,18 @@ body {
 }
 
 .load-more-btn:hover {
-  background-color: var(--accent-a12);
+  background-color: var(--surface-overlay);
   transform: translateY(-1px);
+}
+
+.load-more-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 @media (max-width: 767px) {
   .load-more-btn {
     width: 100%;
-    border-radius: var(--border-radius-base);
-    background-color: var(--color-bg-surface);
-    border-color: var(--color-border);
-    color: var(--color-text-primary);
   }
 }
 
@@ -2811,14 +2710,6 @@ body {
     display: none;
   }
 
-  .opening-card.has-board .segmented-bar {
-    height: 5px;
-  }
-
-  .opening-card.has-board .winrate-labels {
-    font-size: var(--text-3xs);
-  }
-
   .opening-card {
     padding: var(--space-4);
     min-height: auto;
@@ -2902,11 +2793,12 @@ body {
 
 /* Empty state for no videos */
 
+/* Primary: the most valuable action on the detail page, drawn as such. */
 .practice-toggle-btn {
-  background-color: transparent;
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 8px;
+  background-color: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
   padding: 10px 24px;
   margin-left: auto;
   font-family: var(--font-family-headline);
@@ -2921,14 +2813,19 @@ body {
 }
 
 .practice-toggle-btn:hover:not(:disabled) {
-  background-color: var(--accent-a12);
-  color: var(--color-brand-orange);
-  transform: scale(1.02);
-  box-shadow: none;
+  background-color: var(--color-brand-orange-hover);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
 }
 
 .practice-toggle-btn:active:not(:disabled) {
   transform: scale(0.98);
+}
+
+.practice-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 /* =================

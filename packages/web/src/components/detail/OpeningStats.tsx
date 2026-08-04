@@ -24,7 +24,7 @@ export const OpeningStats: React.FC<OpeningStatsProps> = ({
   return (
     <div className={styles.container}>
       <div className={`card-header ${styles.headerRow}`}>
-        <h3 className="card-header__title card-header__title--accent">Win Rate</h3>
+        <h3 className="card-header__title">Win rate</h3>
         <div className={styles.metaRow}>
           <span className={styles.metaItem}>{gamesAnalyzed.toLocaleString()} games</span>
           {averageRating && (

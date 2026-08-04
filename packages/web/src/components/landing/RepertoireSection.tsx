@@ -18,7 +18,7 @@ export const RepertoireSection: React.FC = () => {
   return (
     <section className={`${styles.repertoireSection}${count > 0 ? ` ${styles.hasOpenings}` : ''}`}>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>My repertoire</h2>
+        <h2 className={styles.sectionTitle}>Your repertoire</h2>
         {count > 0 && <span className={styles.count}>({count})</span>}
       </div>
 

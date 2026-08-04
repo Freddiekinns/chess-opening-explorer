@@ -81,8 +81,18 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
   const onExhaustedRef = useRef(onExhausted);
   onExhaustedRef.current = onExhausted;
 
+  // Monotonic request id. Clearing the debounce timer only cancels a request
+  // that has not left yet; one already in flight still resolves, and without
+  // this its `setServed` would land under a query the field no longer asks.
+  // "kings ind" takes two round trips when semantic search comes back empty,
+  // so it can easily outlive the "kings indian" that replaced it.
+  const requestRef = useRef(0);
+
   useEffect(() => {
     if (!hasQuery) {
+      // Bump too: clearing the field while a request is in flight must not let
+      // that request repopulate the list a moment later.
+      requestRef.current += 1;
       setServed([]);
       setSearching(false);
       setCameBackEmpty(false);
@@ -100,9 +110,13 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
     }
 
     setSearching(true);
+    const requestId = ++requestRef.current;
+    const isCurrent = () => requestId === requestRef.current;
+
     const timer = setTimeout(async () => {
       try {
         const fromServer = await search(expanded);
+        if (!isCurrent()) return;
 
         if (fromServer.length > 0) {
           // The server's list wins even where the local one had something. The
@@ -131,12 +145,13 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
       } catch {
         // Offline or the route is down. Whatever the local index found stands;
         // if it found nothing, the dead end is the honest thing to show.
-        if (instant.length === 0) {
+        if (isCurrent() && instant.length === 0) {
           setServed([]);
           setCameBackEmpty(true);
         }
       } finally {
-        setSearching(false);
+        // A superseded request must not clear the spinner the live one raised.
+        if (isCurrent()) setSearching(false);
       }
     }, SEARCH_DEBOUNCE_MS);
 

@@ -2351,6 +2351,17 @@ body {
     transition: none;
     will-change: auto;
   }
+
+  /* `.opening-card` sets `opacity: 0` and relies on `cardSlideIn ... forwards`
+     to bring it back. Cancelling the animation above therefore left the base
+     value standing and the whole Discover grid rendered invisible for anyone
+     with reduced motion on. Restore the end state the animation would have
+     held. (The `forwards` + `translateY(0)` pairing is itself the retained-
+     transform hazard this file warns about below; leaving it as the only way a
+     card becomes visible is what made a motion preference hide the page.) */
+  .opening-card {
+    opacity: 1;
+  }
 }
 
 /* =================

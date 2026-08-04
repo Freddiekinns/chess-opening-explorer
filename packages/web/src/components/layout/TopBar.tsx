@@ -85,20 +85,26 @@ function TopBarSearch() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    // Surprise me is the row one past the last result, so arrowing reaches it.
+    // Surprise me is the row one past the last result, so arrowing reaches it —
+    // but only when there are results to be one past. With an empty list the
+    // cursor has nowhere to go, and letting it reach 0 meant Enter selected
+    // results[0] on an empty array.
+    const lastIndex = results.length > 0 ? results.length : -1;
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((prev) => (prev < results.length ? prev + 1 : prev));
+      setActiveIndex((prev) => (prev < lastIndex ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (activeIndex === results.length && results.length > 0) {
+      if (results.length === 0) return;
+      if (activeIndex === results.length) {
         handleSurpriseMe();
       } else if (activeIndex >= 0) {
         selectResult(results[activeIndex]);
-      } else if (results.length > 0) {
+      } else {
         selectResult(results[0]);
       }
     } else if (e.key === 'Escape') {

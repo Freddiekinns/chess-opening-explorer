@@ -234,6 +234,14 @@ export function usePersonalGames(
       setProgress(100);
       opts?.onDone?.();
     } catch (e) {
+      // An abort is not a failure. Cancelling during the fetch rejects it with
+      // an AbortError, and reporting that put "signal is aborted without
+      // reason" in front of the user under a red alert — for a button they
+      // pressed on purpose. handleCancel has already reset the step; a run
+      // superseded by a newer one has had its state taken over. Either way
+      // there is nothing to say.
+      if (controller.signal.aborted) return;
+
       const msg =
         e instanceof Error
           ? e.message

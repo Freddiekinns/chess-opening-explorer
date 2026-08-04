@@ -173,6 +173,12 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   const statsView = live ? liveView : snapshotView;
   const loadingDim = explorer.loading;
   const tooFewGames = live && !explorer.loading && heldResult !== null && liveView === null;
+  // Nothing left to wait for: the fetch failed and there is no snapshot behind
+  // it. Without this the block fell through to the "Loading Lichess data…"
+  // placeholder and stayed there for good, and the "showing a saved snapshot"
+  // note is unreachable because it lives inside the statsView branch. Desktop's
+  // WinRatePanel returns null in the same state.
+  const noStatsAtAll = Boolean(band) && explorer.failed && snapshotView === null;
 
   // ── Opening book lists (same rules as the desktop OpeningNavigator) ──
   const current = treeData?.current ?? null;
@@ -228,7 +234,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
     : (current?.name ?? '');
 
   const hasBook = current !== null && (childRows.length > 0 || siblingRows.length > 0);
-  if (!statsView && !loadingDim && !tooFewGames && !hasBook) return null;
+  if (!statsView && !loadingDim && !tooFewGames && !noStatsAtAll && !hasBook) return null;
 
   return (
     <div className={styles.surface}>
@@ -283,6 +289,11 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
         ) : tooFewGames ? (
           <div className={styles.statsPlaceholder}>
             Not enough games at this level to show reliable numbers.
+          </div>
+        ) : noStatsAtAll ? (
+          <div className={styles.statsPlaceholder} role="status">
+            Live Lichess data isn&rsquo;t available right now, and there is no saved snapshot for
+            this position.
           </div>
         ) : (
           <div className={styles.statsPlaceholder} role="status">

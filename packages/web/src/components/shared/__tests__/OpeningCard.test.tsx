@@ -52,4 +52,21 @@ describe('OpeningCard result bars', () => {
 
     expect(screen.queryByText(/White \d+%/)).not.toBeInTheDocument();
   });
+
+  /* /api/openings/browse reports a position with no games as an explicit null
+     rather than omitting the key. `!== undefined` let those through and
+     `Math.round(null * 100)` printed a "White 0% · Draw 0% · Black 0%" bar —
+     numbers for openings we have no data on. */
+  it('omits the bar when the rates are null, not just undefined', () => {
+    render(
+      <MemoryRouter>
+        <OpeningCard
+          opening={{ ...opening, white_win_rate: null, draw_rate: null, black_win_rate: null }}
+        />
+      </MemoryRouter>
+    );
+
+    expect(screen.queryByText(/White \d+%/)).not.toBeInTheDocument();
+    expect(screen.queryByText('White 0%')).not.toBeInTheDocument();
+  });
 });

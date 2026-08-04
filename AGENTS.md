@@ -66,6 +66,15 @@ load-bearing.
   Countergambit in another. Surprise me is `lib/randomOpening.ts`, shared the
   same way by the same three plus the landing page.
 
+- **Clearing a debounce timer does not cancel a request that already left.**
+  Anything that fetches per keystroke needs a monotonic request id checked
+  before every `setState`, the way `useBrowse` and `useOpeningSearch` do it.
+  Without one, "kings ind" — which costs two round trips whenever semantic
+  search returns nothing and the plain-search fallback runs — resolves after the
+  "kings indian" that replaced it and repaints the older list under the newer
+  query. Clearing the field must bump the id too, or the list comes back a
+  moment after the user emptied it.
+
 - **`eco` is not a Fuse key, so ECO codes need `searchByEcoCode`.**
   `FUSE_OPTIONS.keys` covers name/moves/style_tags/description only. Before the
   explicit branch in `search-service.js`, `B90` returned **0** results against
@@ -80,6 +89,14 @@ load-bearing.
   or show an explicit "no stats" state. Never synthesise numbers that look like
   real statistics. (`OpeningCard` once invented W/D/L percentages with
   `Math.random()`.)
+
+- **Missing stats are `null`, not `undefined` — guard with `!= null`.**
+  `popularity_stats.json` carries an entry for all 12,377 positions, but 16 of
+  them hold `"white_win_rate": null, "games_analyzed": 0`, and
+  `BrowseService.toItem` passes those nulls through rather than omitting the
+  keys. A `!== undefined` guard lets them past and `Math.round(null * 100)` is
+  `0`, so `OpeningCard` drew "White 0% · Draw 0% · Black 0%" for openings with
+  no data at all — the fabricated-data trap wearing a type coercion.
 
 ### Deployment and SEO
 

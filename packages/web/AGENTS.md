@@ -52,6 +52,14 @@ import { SomeType } from '@chess-trainer/shared'; // fails the Vercel build
   overlays like the search dropdown. The `sectionReveal` entrance animation must
   use `backwards`; the end state equals the base state, so it looks identical.
 
+- **Never let an entrance animation be the only thing that makes an element
+  visible.** `.opening-card` sets `opacity: 0` and relies on
+  `cardSlideIn … forwards` to bring it back, while the `prefers-reduced-motion`
+  block sets `animation: none` on the same selector — so the whole Discover grid
+  rendered invisible for anyone with reduced motion on. Fixed by restoring
+  `opacity: 1` in that block, but the rule is: if you animate `opacity` from 0,
+  either the base value is visible or the reduced-motion branch restores it.
+
 - **Use `overflow: clip`, not `hidden`, on a card containing a sticky child.**
   `hidden` makes the element a scroll container, which becomes the containing
   block for any `position: sticky` descendant, so the child sticks to that box
@@ -88,6 +96,14 @@ The generator and the page share one `analyseGames` in
 `packages/shared/src/utils/personal-analysis.ts`. **Never reimplement the
 reduction in the script** — the fixtures would drift from what the page renders
 and nothing would catch it.
+
+**An abort is not an error.** `usePersonalGames` aborts its `AbortController`
+both on Cancel and when a second run supersedes the first, and the games fetch
+then rejects with an `AbortError`. Reporting that put "signal is aborted without
+reason" in front of the user under a red alert. Check
+`controller.signal.aborted` at the top of the catch and return; the
+`if (!data) return` guard after `analyseGames` only covers the classification
+phase, not the fetch that Cancel usually interrupts.
 
 Two traps in `packages/shared`: its `tests/` directory is run by **neither**
 Jest nor Vitest, so tests for shared modules belong in the web Vitest suite; and

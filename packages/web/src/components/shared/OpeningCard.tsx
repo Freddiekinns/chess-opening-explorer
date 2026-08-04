@@ -26,9 +26,11 @@ interface Opening {
   };
   games_analyzed?: number;
   popularity_rank?: number;
-  white_win_rate?: number;
-  black_win_rate?: number;
-  draw_rate?: number;
+  /* Nullable, because /api/openings/browse says `null` rather than omitting the
+     key when a position has no games behind it. */
+  white_win_rate?: number | null;
+  black_win_rate?: number | null;
+  draw_rate?: number | null;
 }
 
 interface OpeningCardProps {
@@ -57,11 +59,15 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   const openingHref = `/opening/${encodeURIComponent(opening.fen)}`;
 
   // Real Lichess stats or nothing — never fabricate numbers for a data product.
+  // `!= null`, not `!== undefined`: /api/openings/browse reports a position with
+  // no games as an explicit `null` rate, and `Math.round(null * 100)` is 0 — so
+  // the strict check drew a "White 0% · Draw 0% · Black 0%" bar for openings we
+  // have no data on at all.
   const getGameStats = () => {
     if (
-      opening.white_win_rate !== undefined &&
-      opening.black_win_rate !== undefined &&
-      opening.draw_rate !== undefined
+      opening.white_win_rate != null &&
+      opening.black_win_rate != null &&
+      opening.draw_rate != null
     ) {
       return {
         white: Math.round(opening.white_win_rate * 100),

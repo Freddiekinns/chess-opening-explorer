@@ -17,8 +17,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `claude/player-details-layout-qxa1mo`): read `feat/ux-review...HEAD`, then CSS
   on its own. Fixed a TopBar keyboard crash on an empty list, a stale-response
   race in `useOpeningSearch`, an `AbortError` shown as an error on Cancel, a
-  0%/0%/0% bar for `null` stats from `/browse`, a permanent "Loading Lichess
-  data…" on mobile, and an invisible Discover grid under reduced motion.
+  0%/0%/0% bar for `null` stats, "Loading Lichess data…" forever on mobile, and
+  an invisible Discover grid under reduced motion.
 - **One search behaviour, not three — and ECO codes actually work** (2026-08-03,
   on `claude/player-details-layout-qxa1mo`): three fetches, two debounces and
   two no-results strings became `useOpeningSearch`; only the hero had expanded
@@ -41,8 +41,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   the one row. Spec §3.3, guard `search-row-parity.test.tsx`; **`archive.md`**.
 - **Practice demoted to accent-outline**, **master games moved up the mobile
   stack** (2026-07-30): two **spec decisions reversed**, not bugs. Spec §3.4.
-- **UX review implementation audit** (2026-07-29): six phases read back; six
-  half-applied changes. **Detail in `archive.md`.**
+- **UX review implementation audit** (2026-07-29): six phases read back, six
+  half-applied changes. **`archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals" → "This analysis / Your record" (it claimed a lifetime
   for one run); dated fixtures; PGN reduction into `packages/shared`.
@@ -66,7 +66,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **Merge the UX review to `main`** — order matters. Merge PRs #58 → #59 → #60 →
   #61 → #62 → #63 → #65 with **"Create a merge commit"**, deleting each head
-  branch so the next PR retargets onto `feat/ux-review`; all are fast-forwards.
+  branch so the next retargets onto `feat/ux-review`; all are fast-forwards.
   **Never squash or rebase-merge inside the stack** — new SHAs make the child
   conflict everywhere. `main` is already merged into the tip.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
@@ -78,23 +78,21 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Search is not a real combobox** — its biggest remaining gap. No
   `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
   region, so a screen-reader user gets no signal when results arrive; the
-  keyboard cursor rides a `data-active` hook `aria-activedescendant` should
-  replace. One query hook to announce from.
+  keyboard cursor rides a `data-active` hook. One query hook to announce from.
 - **Toasts need one host, not one per component.** Every `useRepertoireToast`
-  caller renders its own `.toast` at the same fixed slot, so a star on the
-  Discover grid and an unstar in the repertoire row within 4s of each other
-  stack and cover an Undo. Found 2026-08-04; a shared host is the fix.
+  caller renders its own `.toast` at the same fixed slot, so two within 4s stack
+  and cover an Undo. Found 2026-08-04; a shared host is the fix.
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
-  "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
+  "Sicilian Defense: Najdorf Variation", separated only by ECO — a data problem,
+  untouched by the 2026-08-04 ranking work.
 - **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
-  which are active is legible only inside the sheet (desktop states each value).
+  which are active is legible only inside the sheet.
 - **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
   `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_
   rejected: a min-sample floor makes `total` depend on `sort`.) **Agent docs**:
-  run `/doctor` locally on the 2026-07-25 restructure — not from a remote.
-  **`rankNotableGames` dedupes by exact player name**, so Lichess variants
-  ("Caruana, F." vs "Caruana, Fabiano") slip through as separate players.
+  run `/doctor` locally. **`rankNotableGames` dedupes by exact player name**, so
+  "Caruana, F." and "Caruana, Fabiano" slip through as two players.
 
 ## Known Issues
 

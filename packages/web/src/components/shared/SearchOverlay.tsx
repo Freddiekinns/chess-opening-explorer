@@ -1,8 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Clock, Search, Sparkles, Star } from 'lucide-react';
-import { useRepertoire } from '../../hooks/useRepertoire';
-import { getRecentOpenings, type RecentOpening } from '../../lib/recentOpenings';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Search } from 'lucide-react';
+import { SearchHub } from './SearchHub';
+import { SearchRow, SurpriseRow } from './SearchRow';
+import { SearchNoResults } from './SearchNoResults';
+import { useOpeningSearch } from '../../hooks/useOpeningSearch';
+import { fetchRandomOpening } from '../../lib/randomOpening';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -12,65 +15,26 @@ import styles from './SearchOverlay.module.css';
  * bare input-plus-dropdown overlay that TopBar used to render inline.
  */
 
-const REPERTOIRE_LIMIT = 5;
-const RECENTS_LIMIT = 4;
-
-interface SearchResult {
-  fen: string;
-  name: string;
-  eco: string;
-  moves: string;
-}
-
 interface SearchOverlayProps {
   open: boolean;
   onClose: () => void;
 }
 
-const movesPreview = (moves: string) => moves?.split(' ').slice(0, 6).join(' ') ?? '';
-
-interface OpeningRowProps {
-  opening: SearchResult;
-  icon?: React.ReactNode;
-  trailing?: React.ReactNode;
-  onSelect: (opening: SearchResult) => void;
-}
-
-const OpeningRow: React.FC<OpeningRowProps> = ({ opening, icon, trailing, onSelect }) => (
-  <button type="button" className={styles.row} onClick={() => onSelect(opening)}>
-    {icon}
-    <span className={styles.rowText}>
-      <span className={styles.rowName}>{opening.name}</span>
-      <span className={styles.rowMeta}>
-        <span className={styles.rowEco}>{opening.eco}</span> · {movesPreview(opening.moves)}
-      </span>
-    </span>
-    {trailing}
-  </button>
-);
-
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [searching, setSearching] = useState(false);
-  const [recents, setRecents] = useState<RecentOpening[]>([]);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { query, setQuery, results, searching, noResults, hasQuery, reset } = useOpeningSearch();
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
-  const { repertoire } = useRepertoire();
+  const { pathname } = useLocation();
 
   const close = useCallback(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setQuery('');
-    setResults([]);
-    setSearching(false);
+    reset();
     onClose();
-  }, [onClose]);
+  }, [onClose, reset]);
 
-  // Fresh recents + focus each time the overlay opens; Escape closes.
+  // Focus each time the overlay opens; Escape closes. SearchHub reads its own
+  // recents when it mounts, which is on every open.
   useEffect(() => {
     if (!open) return;
-    setRecents(getRecentOpenings().slice(0, RECENTS_LIMIT));
     const focusTimer = setTimeout(() => inputRef.current?.focus(), 50);
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') close();
@@ -82,61 +46,30 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     };
   }, [open, close]);
 
+  // The bottom tab bar paints above this overlay and stays tappable, so a tab
+  // can navigate while search is open. Close on that navigation, or the overlay
+  // sits over the page that just loaded and the tabs read as dead. Keyed on the
+  // path alone: re-running when `open` flips would close the overlay on open.
+  const pathRef = useRef(pathname);
   useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+    if (pathRef.current === pathname) return;
+    pathRef.current = pathname;
+    if (open) close();
+  }, [pathname, open, close]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setQuery(value);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    if (value.trim().length < 2) {
-      setResults([]);
-      setSearching(false);
-      return;
-    }
-
-    setSearching(true);
-    timeoutRef.current = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=8`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success && data.data) setResults(data.data);
-        }
-      } catch {
-        // Silent fail — the no-results state carries the hint text.
-      } finally {
-        setSearching(false);
-      }
-    }, 250);
-  };
-
-  const select = (opening: SearchResult) => {
+  const select = (opening: { fen: string }) => {
     close();
     navigate(`/opening/${encodeURIComponent(opening.fen)}`);
   };
 
   const surpriseMe = async () => {
-    try {
-      const res = await fetch('/api/openings/random');
-      const data = await res.json();
-      if (data.success && data.data) select(data.data as SearchResult);
-    } catch {
-      // Silent fail
-    }
+    const opening = await fetchRandomOpening();
+    if (opening) select(opening);
   };
 
   if (!open) return null;
 
-  const hasQuery = query.trim().length >= 2;
-  const showEmptyState = !hasQuery;
-  const noResults = hasQuery && !searching && results.length === 0;
+  const showResults = hasQuery && results.length > 0;
 
   return (
     <div className={styles.overlay} role="dialog" aria-modal="true" aria-label="Search openings">
@@ -147,7 +80,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
             ref={inputRef}
             type="text"
             value={query}
-            onChange={handleChange}
+            onChange={(event) => setQuery(event.target.value)}
             placeholder="Search openings..."
             className={styles.input}
           />
@@ -158,51 +91,14 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
       </div>
 
       <div className={styles.body}>
-        {showEmptyState && (
-          <>
-            {recents.length > 0 && (
-              <>
-                <div className={styles.sectionLabel}>Recent</div>
-                <div className={styles.rowList}>
-                  {recents.map((opening) => (
-                    <OpeningRow
-                      key={opening.fen}
-                      opening={opening}
-                      icon={<Clock size={14} className={styles.rowIcon} aria-hidden="true" />}
-                      onSelect={select}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            {repertoire.length > 0 && (
-              <>
-                <div className={styles.sectionLabel}>My repertoire</div>
-                <div className={styles.rowList}>
-                  {repertoire.slice(0, REPERTOIRE_LIMIT).map((opening) => (
-                    <OpeningRow
-                      key={opening.fen}
-                      opening={opening}
-                      icon={
-                        <Star
-                          size={14}
-                          className={`${styles.rowIcon} ${styles.rowIconStar}`}
-                          aria-hidden="true"
-                        />
-                      }
-                      onSelect={select}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            <button type="button" className={styles.surpriseBtn} onClick={surpriseMe}>
-              <Sparkles size={14} aria-hidden="true" />
-              Surprise me!
-            </button>
-          </>
+        {!hasQuery && (
+          <SearchHub
+            onSelect={(fen) => {
+              close();
+              navigate(`/opening/${encodeURIComponent(fen)}`);
+            }}
+            onSurprise={surpriseMe}
+          />
         )}
 
         {hasQuery && searching && results.length === 0 && (
@@ -211,30 +107,29 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
 
-        {hasQuery && results.length > 0 && (
-          <div className={styles.rowList}>
+        {/* No count line: the openings appearing are the feedback, the same
+            reason there is no "did you mean". */}
+        {showResults && (
+          <ul className={styles.rowList}>
             {results.map((opening, i) => (
-              <OpeningRow
-                key={`${opening.fen}-${i}`}
-                opening={opening}
-                trailing={
-                  <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
-                }
-                onSelect={select}
-              />
+              <li key={`${opening.fen}-${i}`}>
+                <SearchRow opening={opening} saved={opening.saved} onSelect={select} />
+              </li>
             ))}
-          </div>
+          </ul>
         )}
 
-        {noResults && (
-          <div className={styles.noResults}>
-            <span className={styles.noResultsTitle}>No openings match your search</span>
-            <span className={styles.noResultsHint}>
-              Try an ECO code (B02) or paste a PGN on the Analyse tab.
-            </span>
-          </div>
-        )}
+        {noResults && <SearchNoResults />}
       </div>
+
+      {/* Outside the scrolling body, same as the hero dropdown: twenty results
+          deep is exactly where someone gives up, and that is where this has to
+          still be on screen. */}
+      {showResults && (
+        <div className={styles.surpriseFooter}>
+          <SurpriseRow onSurprise={surpriseMe} />
+        </div>
+      )}
     </div>
   );
 };

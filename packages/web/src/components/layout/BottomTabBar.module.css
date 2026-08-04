@@ -48,4 +48,31 @@
   .tabLabel {
     line-height: 1;
   }
+
+  .tab:focus-visible {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: -2px;
+  }
+
+  .iconWrap {
+    position: relative;
+    display: inline-flex;
+  }
+
+  /* Orange is right here — the star and its count are a reserved use. */
+  .badge {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 var(--space-1);
+    border-radius: var(--radius-full);
+    background: var(--color-brand-orange);
+    color: var(--color-text-inverse);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    line-height: 16px;
+    text-align: center;
+  }
 }

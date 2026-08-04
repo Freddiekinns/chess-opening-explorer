@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:340px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+.dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);padding:12px}
+
+/* --- hub layout only. The row below is components-search-row, copied
+       verbatim; do not restyle it here. --- */
+.section{margin-bottom:16px}
+.sectionLabel{font-family:'DM Sans';font-size:10px;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px}
+.rowList{display:flex;flex-direction:column;gap:4px;list-style:none;margin:0;padding:0}
+
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border-radius:8px;background:transparent;border:1px solid var(--border-subtle);cursor:pointer;text-align:left;font-family:'DM Sans';color:var(--color-text-primary)}
+.row.hover{background:var(--surface-overlay);border-color:var(--color-border)}
+.text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.name{font-size:14px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.moves{font-family:var(--font-family-mono);font-size:12px;color:var(--color-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:12px;color:var(--color-text-muted)}
+.nameAction{color:var(--color-brand-orange)}
+.trailing{flex:none;display:flex;align-items:center;gap:8px}
+.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
+
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
+.note code{font-family:var(--font-family-mono);font-size:11px}
+</style></head><body>
+<div class="wrap">
+  <div class="col">
+    <span class="cap">Search hub · desktop dropdown & mobile overlay</span>
+    <div class="dropdown">
+      <div class="section">
+        <p class="sectionLabel">Recent</p>
+        <ul class="rowList">
+          <li><button class="row">
+            <span class="text"><span class="name">French Defence</span><span class="moves">1. e4 e6</span></span>
+            <span class="trailing"><span class="eco">C00</span></span>
+          </button></li>
+          <li><button class="row hover">
+            <span class="text"><span class="name">Caro-Kann Defence</span><span class="moves">1. e4 c6</span></span>
+            <span class="trailing"><span class="eco">B10</span></span>
+          </button></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <p class="sectionLabel">Your repertoire</p>
+        <ul class="rowList">
+          <li><button class="row">
+            <span class="text"><span class="name">Sicilian Defence</span><span class="moves">1. e4 c5</span></span>
+            <span class="trailing"><span class="eco">B20</span></span>
+          </button></li>
+        </ul>
+      </div>
+
+      <button class="row">
+        <span class="text"><span class="name nameAction">Surprise me</span><span class="hint">Jump to a random opening</span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<p class="note">
+  The pre-typing state of every search surface — desktop's dropdown previously
+  showed nothing at all until you typed. All three surfaces render this: the
+  top-bar dropdown, the mobile overlay, and the Discover hero field. If a search
+  surface gains a pre-typing state, it uses this hub; do not draw a second one.
+</p>
+<p class="note">
+  <strong>This card owns the sections, not the rows.</strong> Rows come from
+  <code>components-search-row</code> — the same row the results list draws, so
+  typing changes which openings are listed and nothing else about them. The two
+  used to diverge on ten counts including the type scale itself. Do not restyle
+  a row here to suit the hub.
+</p>
+<p class="note">
+  <strong>The panel needs its own padding.</strong> This dropdown shipped with
+  none at all, so "Recent" sat one pixel below the top border and read as
+  clipped, and every row touched the sides. The mobile overlay never showed the
+  fault because its scrolling body supplies the inset — a reminder that a shared
+  component can still be broken by exactly one of its containers.
+</p>
+<p class="note">
+  Typing two characters replaces the sections with the ranked list in
+  <code>components-search-results</code>. The two states are continuous rather
+  than exclusive: the hub's sections give way, but Surprise me carries through
+  as a footer, and repertoire membership carries through as a "Saved" badge on
+  the matching rows. Nothing the hub offers should be reachable <em>only</em>
+  before you type.
+</p>
+</body></html>

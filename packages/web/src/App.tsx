@@ -12,6 +12,7 @@ import { Footer } from './components/layout/Footer';
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const AnalyseGamesPage = lazy(() => import('./pages/AnalyseGamesPage'));
 const OpeningDetailPage = lazy(() => import('./pages/OpeningDetailPage'));
+const RepertoirePage = lazy(() => import('./pages/RepertoirePage'));
 
 const AnalyseRedirect = () => {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
             <Route path="/analyse" element={<AnalyseGamesPage />} />
             <Route path="/personal-explorer" element={<AnalyseRedirect />} />
             <Route path="/opening/:fen" element={<OpeningDetailPage />} />
+            <Route path="/repertoire" element={<RepertoirePage />} />
             <Route path="*" element={<LandingPage />} />
           </Routes>
         </Suspense>

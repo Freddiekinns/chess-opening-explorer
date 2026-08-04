@@ -1,0 +1,51 @@
+/* The filter's territory drawn as a border. Everything inside responds to the
+   level pills in the header band; nothing outside does. */
+.card {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  /* clip, not hidden — hidden makes this a scroll container and would capture
+     any sticky descendant. */
+  overflow: clip;
+}
+
+/* Raised band: the filter sits at the edge of the surface it controls. */
+.headerBand {
+  background-color: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-default);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+}
+
+.headerTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-family-headline);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.source {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.body {
+  padding: var(--space-4);
+}
+
+.bookBlock {
+  border-top: 1px solid var(--border-subtle);
+}

@@ -58,7 +58,7 @@ export const StatisticsShowcase: React.FC<StatisticsShowcaseProps> = ({
   return (
     <section className={`statistics-showcase ${className}`}>
       <div className="showcase-header">
-        <h2>Comprehensive Chess Opening Database</h2>
+        <h2>Comprehensive chess opening database</h2>
         <p className="showcase-subtitle">
           Powered by advanced AI analysis and real game statistics
         </p>

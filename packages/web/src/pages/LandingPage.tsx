@@ -1,9 +1,13 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from '../components/shared/SearchBar';
+import SearchOverlay from '../components/shared/SearchOverlay';
+import { useIsMobile } from '../hooks/useMediaQuery';
 import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
+import { fetchRandomOpening } from '../lib/randomOpening';
+import { loadFullSearchIndex } from '../lib/searchIndex';
 
 // Loaded on first open — the modal's PGN parsing pulls chess.js, which must
 // stay out of the landing bundle (see vite.config manualChunks).
@@ -32,12 +36,10 @@ interface Opening {
 }
 
 const LandingPage: React.FC = () => {
-  const [loading, setLoading] = useState(false);
   const [openingsData, setOpeningsData] = useState<Opening[]>([]);
-  const [dataLoaded, setDataLoaded] = useState(false);
-  const [popularOpenings, setPopularOpenings] = useState<Opening[]>([]);
-  const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false);
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
   const canonicalUrl = buildSiteUrl('/');
   const seoTitle = `${SITE_NAME} — Discover, explore and learn chess openings`;
@@ -52,82 +54,21 @@ const LandingPage: React.FC = () => {
     };
   }, []);
 
-  // Progressive search expansion function
-  const handleExpandSearch = async () => {
-    if (expandedSearchLoaded) return;
-
-    try {
-      const response = await fetch('/api/openings/search-index');
-      const data = await response.json();
-
-      if (data.success) {
-        setOpeningsData(data.data);
-        setExpandedSearchLoaded(true);
-      }
-    } catch (error) {
-      console.warn('Failed to expand search index:', error);
-    }
-  };
-
-  // Load openings data and popular openings
+  // Search no longer needs anything from this page: the slice it ranks against
+  // is shared by every surface and loaded by the hook (lib/searchIndex.ts). The
+  // full index is fetched only for the PGN lookup, which is the one thing that
+  // genuinely needs all 12,377 positions — identifying a pasted game against
+  // the popular thousand mostly fails.
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-
-        // Load popular openings first (most critical for UX)
-        const popularResponse = await fetch('/api/openings/popular-by-eco?limit=6');
-        const popularData = await popularResponse.json();
-
-        if (popularData.success && popularData.data) {
-          const flattenedPopular = Object.values(popularData.data).flat() as Opening[];
-          setPopularOpenings(flattenedPopular);
-          setDataLoaded(true);
-        }
-
-        // Load search index in parallel
-        fetch('/api/openings/search-index?limit=1000')
-          .then((response) => response.json())
-          .then((searchData) => {
-            if (searchData.success) {
-              setOpeningsData(searchData.data);
-
-              if (!popularData.success || !popularData.data) {
-                const fallbackPopular = searchData.data
-                  .filter(
-                    (opening: Opening) =>
-                      opening.games_analyzed || opening.analysis_json?.popularity
-                  )
-                  .sort((a: Opening, b: Opening) => {
-                    const gamesA = a.games_analyzed || 0;
-                    const gamesB = b.games_analyzed || 0;
-                    if (gamesA !== gamesB) return gamesB - gamesA;
-                    return (b.analysis_json?.popularity || 0) - (a.analysis_json?.popularity || 0);
-                  })
-                  .slice(0, 30);
-
-                setPopularOpenings(fallbackPopular);
-                setDataLoaded(true);
-              }
-            }
-          })
-          .catch((error) => {
-            console.warn('Search index loading failed:', error);
-            if (popularData.success && popularData.data) {
-              const flattenedPopular = Object.values(popularData.data).flat() as Opening[];
-              setOpeningsData(flattenedPopular);
-            }
-          });
-      } catch (error) {
-        console.error('Error loading data:', error);
-        setDataLoaded(true);
-      } finally {
-        setLoading(false);
-      }
+    if (!isPGNModalOpen || openingsData.length > 0) return;
+    let live = true;
+    loadFullSearchIndex().then((openings) => {
+      if (live) setOpeningsData(openings);
+    });
+    return () => {
+      live = false;
     };
-
-    loadData();
-  }, []);
+  }, [isPGNModalOpen, openingsData.length]);
 
   const handleOpeningSelect = (opening: Opening) => {
     const encodedFen = encodeURIComponent(opening.fen);
@@ -137,6 +78,11 @@ const LandingPage: React.FC = () => {
   const handlePGNOpeningFound = (fen: string) => {
     const encodedFen = encodeURIComponent(fen);
     navigate(`/opening/${encodedFen}`);
+  };
+
+  const handleSurpriseMe = async () => {
+    const opening = await fetchRandomOpening();
+    if (opening) navigate(`/opening/${encodeURIComponent(opening.fen)}`);
   };
 
   return (
@@ -165,15 +111,27 @@ const LandingPage: React.FC = () => {
               variant="landing"
               onSelect={handleOpeningSelect}
               placeholder="Search variations, ECO codes, or systems..."
-              disabled={loading}
-              loading={loading}
-              openingsData={openingsData}
-              onExpandSearch={handleExpandSearch}
+              onSurprise={handleSurpriseMe}
+              /* Below 767px the hero hands off to the full-screen overlay
+                 rather than opening its own dropdown. The landing page
+                 otherwise ran two search models on one screen — the top bar's
+                 magnifier opened the overlay while the hero opened an inline
+                 panel that the on-screen keyboard covers. */
+              onActivate={isMobile ? () => setMobileSearchOpen(true) : undefined}
               className="hero-search"
             />
-            <div className="pgn-search-link-wrapper">
-              <button className="pgn-search-link" onClick={() => setIsPGNModalOpen(true)}>
-                Search by pasting PGN
+            {/* Three unequal actions used to compete at the same level. Search
+                is now the only prominent element; these drop beneath it as
+                quiet links, Surprise first (UX review change 02). */}
+            <div className="hero-secondary-links">
+              <button className="hero-quiet-link" onClick={handleSurpriseMe}>
+                Surprise me
+              </button>
+              <span className="hero-link-separator" aria-hidden="true">
+                ·
+              </span>
+              <button className="hero-quiet-link" onClick={() => setIsPGNModalOpen(true)}>
+                Paste a game
               </button>
             </div>
           </div>
@@ -184,13 +142,7 @@ const LandingPage: React.FC = () => {
 
       {/* Popular Openings Grid */}
       <div className="popular-openings-container">
-        {dataLoaded && popularOpenings.length > 0 ? (
-          <PopularOpeningsGrid openings={popularOpenings} className="main-grid" />
-        ) : (
-          <div className="popular-openings-placeholder">
-            {/* Reserved space for Popular Openings to prevent layout shift */}
-          </div>
-        )}
+        <PopularOpeningsGrid className="main-grid" />
       </div>
 
       {isPGNModalOpen && (
@@ -203,6 +155,10 @@ const LandingPage: React.FC = () => {
           />
         </Suspense>
       )}
+
+      {/* The hero's search on mobile. Same component the top bar's magnifier
+          opens, so there is one search surface per screen rather than two. */}
+      <SearchOverlay open={mobileSearchOpen} onClose={() => setMobileSearchOpen(false)} />
     </main>
   );
 };

@@ -22,9 +22,11 @@ import { usePersonalGames, useFormStatePersistence } from './usePersonalGames';
 import { useFamiliesDict, useFamilyRollups } from './useFamilyRollups';
 import { OpeningNameSplit, OpeningRow } from './OpeningRow';
 import { PerfBar } from './PerfBar';
+import { formatSampleDate, SAMPLE_REPORTS } from './sampleReports';
 import {
   GearIcon,
   GroupToggle,
+  PlatformRadioGroup,
   SegmentedToggle,
   SortMenu,
   UserIcon,
@@ -59,6 +61,8 @@ export const PersonalOpeningStats: React.FC<{
     isBusy,
     handleAnalyse,
     handleCancel,
+    sample,
+    loadSample,
   } = usePersonalGames(getOpeningsData, prefillUsername);
 
   const [whiteSortMode, setWhiteSortMode] = useState<SortMode>('frequency');
@@ -126,34 +130,19 @@ export const PersonalOpeningStats: React.FC<{
 
   const showHero = !dashboard && step !== 'done';
 
-  const renderSearchForm = () => (
+  const renderSearchForm = ({ showGear }: { showGear: boolean }) => (
     <>
       <div className={styles.inputBar}>
-        <div className={styles.platformToggle}>
-          <button
-            type="button"
-            className={`${styles.platformBtn} ${platform === 'chess.com' ? styles.platformBtnActive : ''}`}
-            onClick={() => setPlatform('chess.com')}
-            disabled={isBusy}
-          >
-            Chess.com
-          </button>
-          <button
-            type="button"
-            className={`${styles.platformBtn} ${platform === 'lichess' ? styles.platformBtnActive : ''}`}
-            onClick={() => setPlatform('lichess')}
-            disabled={isBusy}
-          >
-            Lichess
-          </button>
-        </div>
+        <PlatformRadioGroup value={platform} onChange={setPlatform} disabled={isBusy} />
 
-        <div className={styles.inputFields}>
-          <span className={styles.userIcon}>
+        <div className={`${styles.inputFields} ${isBusy ? styles.fieldsDim : ''}`}>
+          <label className={styles.userIcon} htmlFor="analyse-username">
             <UserIcon />
-          </span>
+            <span className={styles.srOnly}>Username</span>
+          </label>
 
           <input
+            id="analyse-username"
             className={styles.usernameInput}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -166,66 +155,72 @@ export const PersonalOpeningStats: React.FC<{
         </div>
 
         <div className={styles.inputActions}>
-          {/* Gear / settings */}
-          <div ref={settingsRef} className={styles.settingsAnchor}>
-            <button
-              type="button"
-              className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
-              onClick={() => setShowSettings(!showSettings)}
-              aria-label="Settings"
-              title={`Analysing last ${limit} games`}
-            >
-              <GearIcon />
-            </button>
-            {showSettings && (
-              <div
-                className={styles.settingsPopover}
-                role="dialog"
-                aria-label="Games to analyse settings"
+          {/* Games-count control. Off the blank screen entirely — it lives with
+              the dashboard-side form, beside the Analyse button that reads it. */}
+          {showGear && (
+            <div ref={settingsRef} className={styles.settingsAnchor}>
+              <button
+                type="button"
+                className={`${styles.gearBtn} ${showSettings ? styles.gearBtnActive : ''}`}
+                onClick={() => setShowSettings(!showSettings)}
+                aria-label={`Games to analyse: ${limit}`}
+                aria-expanded={showSettings}
+                title={`Analysing last ${limit} games`}
               >
-                <div className={styles.settingsLabel}>Games to analyse</div>
+                <GearIcon />
+              </button>
+              {showSettings && (
                 <div
-                  className={styles.stepper}
-                  role="group"
-                  aria-label="Number of games to analyse"
+                  className={styles.settingsPopover}
+                  role="dialog"
+                  aria-label="Games to analyse settings"
                 >
-                  <button
-                    type="button"
-                    className={styles.stepperBtn}
-                    onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
-                    disabled={isBusy || limit <= 1}
-                    aria-label="Decrease games"
-                    title="Hold Shift for -10"
+                  <div className={styles.settingsLabel}>Games to analyse</div>
+                  <div
+                    className={styles.stepper}
+                    role="group"
+                    aria-label="Number of games to analyse"
                   >
-                    -
-                  </button>
-                  <input
-                    className={styles.stepperInput}
-                    type="number"
-                    min={1}
-                    max={500}
-                    step={1}
-                    aria-label="Games to analyse"
-                    value={limit}
-                    onChange={(e) => setLimitSafe(Number(e.target.value))}
-                    onKeyDown={handleEnterToAnalyse}
-                    disabled={isBusy}
-                  />
-                  <button
-                    type="button"
-                    className={styles.stepperBtn}
-                    onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
-                    disabled={isBusy || limit >= 500}
-                    aria-label="Increase games"
-                    title="Hold Shift for +10"
-                  >
-                    +
-                  </button>
+                    <button
+                      type="button"
+                      className={styles.stepperBtn}
+                      onClick={(e) => setLimitSafe(limit - (e.shiftKey ? 10 : 1))}
+                      disabled={isBusy || limit <= 1}
+                      aria-label="Decrease games"
+                      title="Hold Shift for -10"
+                    >
+                      -
+                    </button>
+                    <input
+                      className={styles.stepperInput}
+                      type="number"
+                      min={1}
+                      max={500}
+                      step={1}
+                      aria-label="Games to analyse"
+                      value={limit}
+                      onChange={(e) => setLimitSafe(Number(e.target.value))}
+                      onKeyDown={handleEnterToAnalyse}
+                      disabled={isBusy}
+                    />
+                    <button
+                      type="button"
+                      className={styles.stepperBtn}
+                      onClick={(e) => setLimitSafe(limit + (e.shiftKey ? 10 : 1))}
+                      disabled={isBusy || limit >= 500}
+                      aria-label="Increase games"
+                      title="Hold Shift for +10"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className={styles.settingsHint}>
+                    Choose between 1 and 500 recent rated games.
+                  </p>
                 </div>
-                <p className={styles.settingsHint}>Choose between 1 and 500 recent rated games.</p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
 
           <button
             className={styles.analyseBtn}
@@ -239,10 +234,45 @@ export const PersonalOpeningStats: React.FC<{
       </div>
 
       <p className={styles.inputNote}>
-        Includes rated rapid, blitz, and classical games only (up to {limit}). Bullet is excluded.
+        Reads your public rated games — rapid, blitz &amp; classical. Bullet excluded. Nothing is
+        stored.
       </p>
     </>
   );
+
+  // Progress and error belong directly under the form they describe. The
+  // landing column is centred at 65vh, so rendering them after it stranded both
+  // a third of a viewport below the input bar.
+  const renderProgress = () =>
+    step === 'fetching' || step === 'analysing' ? (
+      <div className={styles.progress} aria-live="polite">
+        <div className={styles.progressBar}>
+          <div
+            className={styles.progressFill}
+            role="progressbar"
+            aria-valuenow={progress}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+        <div className={styles.progressMeta}>
+          <span>{stepText}</span>
+          {total > 0 && (
+            <span>
+              {processed}/{total}
+            </span>
+          )}
+        </div>
+      </div>
+    ) : null;
+
+  const renderError = () =>
+    step === 'error' && error ? (
+      <div className={styles.error} role="alert">
+        {error}
+      </div>
+    ) : null;
 
   return (
     <div>
@@ -251,35 +281,37 @@ export const PersonalOpeningStats: React.FC<{
         <div className={`${styles.landing} ${showHero ? styles.landingCentered : ''}`}>
           {showHero && (
             <div className={styles.hero}>
-              <h1 className={styles.heroTitle}>Analyse Your Games</h1>
+              <h1 className={styles.heroTitle}>Analyse your games</h1>
               <p className={styles.heroSubtitle}>
-                Review your performance and improve your openings by connecting your chess account.
+                See which openings you actually play, and how they score — from your recent rated
+                games.
               </p>
             </div>
           )}
 
-          {renderSearchForm()}
+          {renderSearchForm({ showGear: false })}
+          {renderProgress()}
+          {renderError()}
 
-          {/* Secondary idle prompt */}
-          {showHero && step === 'idle' && (
-            <div className={styles.idlePrompt}>
-              <svg
-                className={styles.idlePromptIcon}
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-              <h2 className={styles.idlePromptTitle}>Ready to analyse your openings?</h2>
-              <p className={styles.idlePromptText}>
-                Enter your username to explore a detailed breakdown of your performance by opening.
-              </p>
-            </div>
+          {/* The payoff, before you have to type anything. Buttons, not links:
+              they load committed data in place rather than navigating. */}
+          {showHero && (
+            <p className={styles.sampleOffer}>
+              See a sample report —{' '}
+              {SAMPLE_REPORTS.map((entry, i) => (
+                <React.Fragment key={entry.id}>
+                  {i > 0 && <span className={styles.sampleSep}> · </span>}
+                  <button
+                    type="button"
+                    className={styles.sampleLink}
+                    onClick={() => void loadSample(entry.id)}
+                    disabled={isBusy}
+                  >
+                    {entry.label}
+                  </button>
+                </React.Fragment>
+              ))}
+            </p>
           )}
         </div>
       )}
@@ -304,61 +336,12 @@ export const PersonalOpeningStats: React.FC<{
               &times;
             </button>
             <h3 className={styles.searchOverlayTitle}>Analyse another player</h3>
-            {renderSearchForm()}
-            {(step === 'fetching' || step === 'analysing') && (
-              <div className={styles.overlayProgress}>
-                <div className={styles.progressBar}>
-                  <div
-                    className={styles.progressFill}
-                    role="progressbar"
-                    aria-valuenow={progress}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-                <div className={styles.progressMeta}>
-                  <span>{stepText}</span>
-                  {total > 0 && (
-                    <span>
-                      {processed}/{total}
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
+            {renderSearchForm({ showGear: true })}
+            {/* The overlay carries its own copy: it sits above the dashboard, so
+                a failure reported outside it would be hidden behind it. */}
+            {renderProgress()}
+            {renderError()}
           </div>
-        </div>
-      )}
-
-      {/* ===== PROGRESS ===== */}
-      {(step === 'fetching' || step === 'analysing') && (
-        <div className={styles.progress} aria-live="polite">
-          <div className={styles.progressBar}>
-            <div
-              className={styles.progressFill}
-              role="progressbar"
-              aria-valuenow={progress}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <div className={styles.progressMeta}>
-            <span>{stepText}</span>
-            {total > 0 && (
-              <span>
-                {processed}/{total}
-              </span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ===== ERROR ===== */}
-      {step === 'error' && error && (
-        <div className={styles.error} role="alert">
-          {error}
         </div>
       )}
 
@@ -397,9 +380,66 @@ export const PersonalOpeningStats: React.FC<{
             ? formatDistinguishingMoves(weakestOpening.moves)
             : '';
 
+          // A snapshot of real games goes stale, so the date is part of the
+          // claim, not decoration.
+          const sampleBanner = sample ? (
+            <p className={styles.sampleBanner}>
+              Sample report · {sample.username}&rsquo;s {sample.dashboard.totalGames} most recent
+              rated games, as of {formatSampleDate(sample.generatedAt)}.
+            </p>
+          ) : null;
+
           const totalWins = dashboard.whiteWin + dashboard.blackWin;
           const totalDraws = dashboard.whiteDraw + dashboard.blackDraw;
           const totalLosses = dashboard.whiteLoss + dashboard.blackLoss;
+          const totalDecided = totalWins + totalDraws + totalLosses;
+
+          // The overall win rate goes in the context slot the two opening cards
+          // use for "4 games", so the record card's upper block has their
+          // density instead of two lines above a hole. It is also the figure
+          // the panel never gave you: the headline cards state 100% off four
+          // games, while this one is the only rate on screen with a sample
+          // behind it. Still no percentage *per count* — that would be seven
+          // numbers in one small card, and the bar already is the proportion.
+          const overallWinRate = totalDecided ? Math.round((totalWins / totalDecided) * 100) : null;
+
+          // The tints are the key — equal-width columns can't line up with
+          // proportional segments, so colour is what ties a number to its band.
+          const recordStats = (
+            <>
+              {overallWinRate !== null && (
+                <div className={styles.cardContext}>{overallWinRate}% win rate</div>
+              )}
+              <div className={styles.statsRows}>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Wins</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueWin}`}>
+                    {totalWins.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Draws</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueDraw}`}>
+                    {totalDraws.toLocaleString()}
+                  </span>
+                </div>
+                <div className={styles.statsRow}>
+                  <span className={styles.statsLabel}>Losses</span>
+                  <span className={`${styles.statsValue} ${styles.statsValueLoss}`}>
+                    {totalLosses.toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              <PerfBar
+                win={totalWins}
+                draw={totalDraws}
+                loss={totalLosses}
+                games={totalDecided}
+                legend={false}
+                className={styles.cardBar}
+              />
+            </>
+          );
 
           return (
             <>
@@ -409,27 +449,50 @@ export const PersonalOpeningStats: React.FC<{
                 <div className={styles.mobileHero}>
                   <h2 className={styles.mobilePlayerName}>{displayedUsername}</h2>
                   <span className={styles.mobilePlatform}>{displayedPlatformLabel}</span>
+                  {/* The overall win rate rides the scope line rather than the
+                      tiles: it is a fact about the run, and mobile has no room
+                      to spare above the fold. Desktop states it in the record
+                      card's context slot — mobile keeps its three tiles, but
+                      the number has to be reachable on both. */}
                   <span className={styles.mobileGamesMeta}>
                     {dashboard.totalGames} analysed &middot; {dashboard.classifiedGames} matched
                     {dashboard.unclassifiedGames > 0
                       ? ` · ${dashboard.unclassifiedGames} unrecognised`
                       : ''}
+                    {overallWinRate !== null && (
+                      <>
+                        {' · '}
+                        <span className={styles.mobileWinRate}>{overallWinRate}% win rate</span>
+                      </>
+                    )}
                   </span>
                 </div>
 
-                {/* 3 inline stat cards */}
+                {sampleBanner}
+
+                {/* 3 inline stat tiles. Deliberately NOT the desktop record
+                    card: on a phone the tiles read faster and cost two fewer
+                    lines above the fold than an eyebrow + title would. They
+                    carry the same W/D/L colour key, which is what actually
+                    needed fixing. */}
                 <div className={styles.tripleStats}>
-                  <div className={`${styles.triStat} ${styles.triStatWin}`}>
+                  <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Wins</span>
-                    <span className={styles.triStatValue}>{totalWins}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueWin}`}>
+                      {totalWins}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Draws</span>
-                    <span className={styles.triStatValue}>{totalDraws}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueDraw}`}>
+                      {totalDraws}
+                    </span>
                   </div>
                   <div className={styles.triStat}>
                     <span className={styles.triStatLabel}>Losses</span>
-                    <span className={styles.triStatValue}>{totalLosses}</span>
+                    <span className={`${styles.triStatValue} ${styles.triStatValueLoss}`}>
+                      {totalLosses}
+                    </span>
                   </div>
                 </div>
 
@@ -595,31 +658,18 @@ export const PersonalOpeningStats: React.FC<{
                   </button>
                 </div>
 
+                {sampleBanner}
+
                 {/* Summary cards */}
                 <div className={`${styles.cardsGrid} ${!showWeakest ? styles.cardsGridTwo : ''}`}>
+                  {/* "Career totals / Overall performance" claimed a lifetime
+                      record for numbers describing only the games in this run. */}
                   <div className={styles.card}>
                     <div className={`${styles.cardLabel} ${styles.cardLabelAccent}`}>
-                      Overall performance
+                      This analysis
                     </div>
-                    <h3 className={styles.cardTitle}>Career Totals</h3>
-                    <div className={styles.statsRows}>
-                      <div className={styles.statsRow}>
-                        <span className={`${styles.statsLabel} ${styles.statsLabelWin}`}>
-                          Total wins
-                        </span>
-                        <span className={styles.statsValue}>{totalWins.toLocaleString()}</span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={styles.statsLabel}>Total draws</span>
-                        <span className={styles.statsValue}>{totalDraws.toLocaleString()}</span>
-                      </div>
-                      <div className={styles.statsRow}>
-                        <span className={`${styles.statsLabel} ${styles.statsLabelLoss}`}>
-                          Total losses
-                        </span>
-                        <span className={styles.statsValue}>{totalLosses.toLocaleString()}</span>
-                      </div>
-                    </div>
+                    <h3 className={styles.cardTitle}>Your record</h3>
+                    {recordStats}
                   </div>
 
                   {bestOpening && (
@@ -630,13 +680,19 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelWin}`}>
                         Top-performing opening
                       </div>
-                      <OpeningNameSplit
-                        name={bestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {bestOpeningMoves && (
-                        <div className={styles.cardMoves}>{bestOpeningMoves}</div>
-                      )}
+                      {/* Name and moves share one fixed-height block — see
+                          .cardIdentity. The moves are a caption of the name, so
+                          the reserved slack has to sit below the pair, not
+                          between them. */}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={bestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {bestOpeningMoves && (
+                          <div className={styles.cardMoves}>{bestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{bestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
@@ -644,7 +700,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>win rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarWin}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillWin}
                           style={{ width: `${getWinRate(bestOpening)}%` }}
@@ -661,13 +717,15 @@ export const PersonalOpeningStats: React.FC<{
                       <div className={`${styles.cardLabel} ${styles.cardLabelLoss}`}>
                         Needs work
                       </div>
-                      <OpeningNameSplit
-                        name={weakestOpening.name}
-                        className={styles.cardOpeningName}
-                      />
-                      {weakestOpeningMoves && (
-                        <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
-                      )}
+                      <div className={styles.cardIdentity}>
+                        <OpeningNameSplit
+                          name={weakestOpening.name}
+                          className={styles.cardOpeningName}
+                        />
+                        {weakestOpeningMoves && (
+                          <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
+                        )}
+                      </div>
                       <div className={styles.cardContext}>{weakestOpening.games} games</div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>
@@ -675,7 +733,7 @@ export const PersonalOpeningStats: React.FC<{
                         </span>
                         <span className={styles.winRateLabel}>loss rate</span>
                       </div>
-                      <div className={`${styles.winRateBar} ${styles.winRateBarLoss}`}>
+                      <div className={styles.winRateBar}>
                         <div
                           className={styles.winRateBarFillLoss}
                           style={{ width: `${getLossRate(weakestOpening)}%` }}
@@ -709,7 +767,7 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
                       <div className={styles.colHeaderRight}>
-                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderGp}>Games</span>
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>
@@ -778,7 +836,7 @@ export const PersonalOpeningStats: React.FC<{
                     <div className={styles.colHeaders}>
                       <span className={styles.colHeaderName}>Opening name</span>
                       <div className={styles.colHeaderRight}>
-                        <span className={styles.colHeaderGp}>GP</span>
+                        <span className={styles.colHeaderGp}>Games</span>
                         <span className={styles.colHeaderDist}>W / D / L distribution</span>
                       </div>
                     </div>

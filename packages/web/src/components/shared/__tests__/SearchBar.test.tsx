@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SearchBar } from '../SearchBar';
 import { mockOpeningsList, mockSearchResponse } from '../../../test/fixtures/openingData';
+import { resetSearchIndex } from '../../../test/searchIndexStub';
 
 // Mock fetch globally
 const mockFetch = vi.fn();
@@ -14,18 +15,36 @@ const mockOnSelect = vi.fn();
 // Default props for SearchBar
 const defaultProps = {
   onSelect: mockOnSelect,
-  openingsData: mockOpeningsList,
   placeholder: 'Search openings...',
+};
+
+/**
+ * The locally held slice now arrives over the wire rather than as a prop, so
+ * every fetch stub has to answer the index route as well as the search route.
+ */
+const indexRoute = (openings: unknown[] = mockOpeningsList) => ({
+  ok: true,
+  json: () => Promise.resolve({ success: true, data: openings }),
+});
+
+const respond = (
+  search: unknown,
+  openings: unknown[] = mockOpeningsList
+): ((url: string) => Promise<unknown>) => {
+  return (url: string) =>
+    Promise.resolve(
+      String(url).includes('/api/openings/search-index') ? indexRoute(openings) : search
+    );
 };
 
 describe('SearchBar Component - Comprehensive Coverage', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    resetSearchIndex();
     // Reset fetch mock to successful semantic search by default
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(mockSearchResponse),
-    });
+    mockFetch.mockImplementation(
+      respond({ ok: true, json: () => Promise.resolve(mockSearchResponse) })
+    );
   });
 
   afterEach(() => {
@@ -48,10 +67,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveAttribute('placeholder', 'Find your opening');
     });
 
-    it('should render surprise me button for landing variant', () => {
+    // UX review change 02: search is the only prominent element in the hero.
+    // Surprise me used to sit beside the field as a filled button, competing
+    // with it; it now lives in the hub and as a quiet link under the hero.
+    it('renders no inline Surprise button on the landing variant', () => {
       render(<SearchBar {...defaultProps} variant="landing" />);
 
-      expect(screen.getByText('Surprise me')).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
     });
 
     it('should not render surprise me button for header variant', () => {
@@ -63,8 +85,6 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should show loading state when loading prop is true', () => {
       render(<SearchBar {...defaultProps} loading={true} />);
 
-      // Check for the actual loading text that appears in the component
-      expect(screen.getByText('Loading...')).toBeInTheDocument();
       expect(screen.getByPlaceholderText('Loading openings...')).toBeInTheDocument();
       expect(screen.getByText('⟳')).toBeInTheDocument();
     });
@@ -96,37 +116,32 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       );
     });
 
-    it('should fallback to legacy search when semantic search fails', async () => {
-      // Mock semantic search failure, then legacy search success
-      mockFetch
-        .mockResolvedValueOnce({
-          ok: false,
-          status: 500,
-        })
-        .mockResolvedValueOnce({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockOpeningsList.slice(0, 1),
-              searchType: 'server_fallback',
-            }),
-        });
+    // One request, not two. The plain-search fallback that used to follow an
+    // empty semantic search is gone: the route matches names literally before
+    // anything else now, and across 389 sampled queries the plain search found
+    // nothing it missed — so the second round trip only ever delayed the dead
+    // end. A failed request leaves whatever the local slice found standing.
+    it('does not follow a failed search with a second request', async () => {
+      mockFetch.mockImplementation(respond({ ok: false, status: 500 }));
 
       const user = userEvent.setup();
       render(<SearchBar {...defaultProps} />);
 
-      const input = screen.getByRole('textbox');
-      await user.type(input, 'king');
+      await user.type(screen.getByRole('textbox'), 'king');
 
       await waitFor(
         () => {
-          expect(mockFetch).toHaveBeenCalledWith(
-            expect.stringContaining('/api/openings/search?q=king&limit=20')
-          );
+          expect(
+            mockFetch.mock.calls.filter(([url]) =>
+              String(url).includes('/api/openings/semantic-search')
+            )
+          ).toHaveLength(1);
         },
         { timeout: 500 }
       );
+      expect(
+        mockFetch.mock.calls.filter(([url]) => /\/api\/openings\/search\?/.test(String(url)))
+      ).toHaveLength(0);
     });
 
     it('should handle API timeout gracefully', async () => {
@@ -214,8 +229,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await user.keyboard('{ArrowDown}');
 
       // First suggestion should be active
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
 
     it('should select suggestion with Enter key', async () => {
@@ -274,8 +291,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
 
       // Then down to second
       await user.keyboard('{ArrowDown}');
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
   });
 
@@ -396,20 +415,90 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveValue('');
     });
 
-    it('should handle surprise me button click', async () => {
+    // Change 02: "Focusing the field opens a hub of recents and repertoire."
+    // The hero field is the one this was drawn for — it showed nothing at all
+    // until you had typed two characters.
+    it('opens the search hub when the landing field is focused', async () => {
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} variant="landing" />);
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
 
-      const surpriseButton = screen.getByText('Surprise me');
-      await user.click(surpriseButton);
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
 
-      // Should call onSelect with a random opening
-      expect(mockOnSelect).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: expect.any(String),
-          eco: expect.any(String),
-        })
+      await user.click(screen.getByRole('textbox'));
+
+      expect(screen.getByRole('button', { name: /surprise me/i })).toBeInTheDocument();
+    });
+
+    it('routes the hub Surprise me to the caller, not to loaded openings', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      await user.click(screen.getByRole('textbox'));
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      // The caller randomises over the full corpus; SearchBar only ever holds
+      // the first slice of the search index.
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('replaces the hub with results once a query is typed', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
+
+      const input = screen.getByRole('textbox');
+      await user.click(input);
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+      // The hub's own rows go, but its way out does not.
+      expect(screen.queryByText('Recent')).not.toBeInTheDocument();
+    });
+
+    // The escape hatch for "I don't know what I'm looking for" used to vanish
+    // on the second keystroke — exactly when a user is most likely flailing.
+    it('keeps Surprise me reachable while typing', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('reaches Surprise me by arrowing past the last result', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      // One result on both halves of the search, so the footer sits at index 1.
+      const single = mockOpeningsList.slice(0, 1);
+      mockFetch.mockImplementation(
+        respond({ ok: true, json: () => Promise.resolve({ success: true, data: single }) }, single)
       );
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem')).toHaveLength(1);
+      });
+
+      // One result, so two downs land on the footer.
+      await user.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
     });
 
     it('should handle focus and blur events', async () => {
@@ -432,6 +521,57 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
         },
         { timeout: 200 }
       );
+    });
+  });
+
+  describe('Results list', () => {
+    // No count, no "did you mean", no correction notice: the openings
+    // appearing are the feedback. A number would only raise the question of
+    // what it counted — the search scores every record above zero, 4,269 for
+    // "sicilian" against a family of roughly 1,710.
+    it('states no result count', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'pawn');
+
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
+      });
+      expect(screen.queryByRole('status')).not.toBeInTheDocument();
+      expect(screen.queryByText(/openings match/i)).not.toBeInTheDocument();
+    });
+
+    it('marks results already in the repertoire', async () => {
+      const saved = mockOpeningsList[0];
+      localStorage.setItem(
+        'chess-repertoire',
+        JSON.stringify([
+          {
+            fen: saved.fen,
+            name: saved.name,
+            eco: saved.eco,
+            moves: saved.moves,
+            savedAt: Date.now(),
+          },
+        ])
+      );
+
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText(saved.name)).toBeInTheDocument();
+      });
+
+      const row = screen.getByText(saved.name).closest('li');
+      expect(row).toHaveTextContent('Saved');
+
+      // Only the saved one is badged.
+      expect(screen.getAllByText('Saved')).toHaveLength(1);
+      localStorage.clear();
     });
   });
 
@@ -512,9 +652,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       );
     });
 
-    it('should handle empty openings data gracefully', async () => {
+    it('should handle an empty local index gracefully', async () => {
+      mockFetch.mockImplementation(
+        respond({ ok: true, json: () => Promise.resolve({ success: true, data: [] }) }, [])
+      );
+
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} openingsData={[]} />);
+      render(<SearchBar {...defaultProps} />);
 
       const input = screen.getByRole('textbox');
       await user.type(input, 'king');
@@ -523,7 +667,7 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await waitFor(
         () => {
           expect(input).toHaveValue('king');
-          // With empty data, should not show suggestions
+          // Nothing to draw from either half of the search
           expect(screen.queryByRole('listitem')).not.toBeInTheDocument();
         },
         { timeout: 1000 }
@@ -533,12 +677,17 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should handle malformed opening data', async () => {
       const malformedData = [
         { name: 'Valid Opening', eco: 'A00', fen: '', moves: '', src: '' }, // Valid but minimal
-        null, // Null entry
         { fen: 'invalid', name: '', eco: '' }, // Empty fields
-      ].filter(Boolean); // Remove null entries
+      ];
+      mockFetch.mockImplementation(
+        respond(
+          { ok: true, json: () => Promise.resolve({ success: true, data: [] }) },
+          malformedData
+        )
+      );
 
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} openingsData={malformedData as any} />);
+      render(<SearchBar {...defaultProps} />);
 
       const input = screen.getByRole('textbox');
       await user.type(input, 'valid');

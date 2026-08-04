@@ -273,6 +273,21 @@
   box-sizing: border-box;
 }
 
+/* Every interactive control gets the brand focus ring, never the browser
+   default. Element-level specificity, so a component may refine the ring —
+   but a component that removes it without a replacement is a bug. Text
+   inputs opt out deliberately: they signal focus with an orange border and
+   glow instead, which reads better inside a field. */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1085,33 +1100,8 @@ body {
   color: var(--color-text-secondary);
 }
 
-.segmented-bar {
-  display: flex;
-  height: 8px;
-  gap: 2px;
-  background-color: var(--color-bg-alt);
-  border-radius: var(--border-radius-small);
-  overflow: hidden;
-}
-
-.bar-segment {
-  height: 100%;
-  border-radius: 9999px;
-  transition: width 0.6s ease-out;
-  min-width: 4px;
-}
-
-.bar-segment.white-segment {
-  background-color: var(--color-result-white);
-}
-
-.bar-segment.draw-segment {
-  background-color: var(--color-result-draw);
-}
-
-.bar-segment.black-segment {
-  background-color: var(--color-result-black);
-}
+/* Result-bar markup now lives in ResultBar.module.css — see
+   components/shared/ResultBar.tsx. */
 
 .stat-value {
   font-size: var(--font-size-sm);
@@ -1578,31 +1568,9 @@ body {
 }
 
 /* --- Win rate bar --- */
+/* Bar and labels are ResultBar's; this only pins it to the card's bottom. */
 .card-winrate {
   margin-top: auto;
-}
-
-.card-winrate .segmented-bar {
-  margin-bottom: var(--space-1);
-}
-
-.winrate-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-3xs);
-  font-weight: var(--font-weight-medium);
-}
-
-.winrate-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.winrate-labels .black-label {
-  color: var(--color-text-secondary);
 }
 
 /* =================
@@ -1669,33 +1637,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.list-item-stats {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.list-item-stats .segmented-bar {
-  height: 6px;
-}
-
-.list-item-stat-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-2xs);
-}
-
-.list-item-stat-labels .white-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .draw-label {
-  color: var(--color-text-secondary);
-}
-
-.list-item-stat-labels .black-label {
-  color: var(--color-text-secondary);
-}
+/* The list-item's result bar is ResultBar with no wrapper class. */
 
 /* =================
    SEARCH COMPONENTS
@@ -1851,7 +1793,10 @@ body {
 
 /* Regular search buttons for non-landing variants */
 
-.search-suggestions {
+/* The results dropdown. Two parts: one ranked list that scrolls, and the
+   Surprise me footer — which sits outside the scroller so it cannot scroll out
+   of reach. Rows come from SearchRow.module.css, the same rows the hub draws. */
+.search-results-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1861,15 +1806,32 @@ body {
   border-radius: var(--border-radius-base);
   margin-top: var(--space-1);
   z-index: 1000;
-  max-height: 280px;
-  overflow-y: auto;
   box-shadow: var(--shadow-lg);
   animation: slideDown 0.2s ease-out;
-  /* Reset default ul styling */
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.search-suggestions {
+  /* Was a fixed 280px, which showed under four of twenty results and made the
+     panel feel like a peephole. Scaling with the viewport keeps the whole
+     ranked list reachable on a laptop without the dropdown running off a short
+     screen. */
+  max-height: min(60vh, 480px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  margin: 0;
   list-style: none;
+}
+
+/* Pinned under the scroller. The separator is the panel's, not the row's, so
+   the row inside stays the same row it is everywhere else. */
+.search-results-footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
 }
 
 @keyframes slideDown {
@@ -1884,124 +1846,49 @@ body {
 }
 
 /* Suggestions for landing page variant */
-.search-bar-container.landing .search-suggestions {
+.search-bar-container.landing .search-results-dropdown {
   border-radius: var(--border-radius-large);
   margin-top: var(--space-2);
   background-color: var(--surface-elevated);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
-  /* Position above the surprise button when it would overlap */
   z-index: 1001;
 }
 
-/* When search is active, slightly dim the surprise button */
-.search-bar-container.landing:focus-within .search-surprise-btn {
-  opacity: 0.7;
-  transform: scale(0.98);
-}
-
-.suggestion-item {
-  padding: var(--space-3) 0;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  border-bottom: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  min-height: 48px;
-  position: relative;
-}
-
-.suggestion-item:hover,
-.suggestion-item.active {
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-  transform: translateY(-0.5px);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Add subtle focus state for keyboard navigation */
-.suggestion-item:focus {
-  outline: 2px solid var(--accent-a50);
-  outline-offset: -2px;
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-  border-bottom-left-radius: var(--border-radius-large);
-  border-bottom-right-radius: var(--border-radius-large);
-}
-
-.suggestion-item:first-child {
-  border-top-left-radius: var(--border-radius-large);
-  border-top-right-radius: var(--border-radius-large);
-}
-
-.suggestion-item .opening-name {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
-  flex: 1;
-  /* Override global .opening-name styles */
-  text-align: left;
-  line-height: var(--line-height-normal);
-  margin: 0 var(--space-4) 0 var(--space-4);
-  letter-spacing: var(--letter-spacing-normal);
-  position: static;
-}
-
-.suggestion-item .eco-code {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  font-family: var(--font-family-mono);
-  letter-spacing: 0.5px;
-  background: var(--accent-a6);
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* The hub the focused hero field opens: recents, repertoire, Surprise me.
+   Same anchor as .search-suggestions — one replaces the other. */
+.search-hub-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--space-2);
+  z-index: 1001;
+  background-color: var(--surface-elevated);
   border: 1px solid var(--border-default);
-  margin-right: var(--space-4);
-  transition: all 0.15s ease;
-}
-
-.suggestion-item:hover .eco-code {
-  background: var(--accent-a12);
-  border-color: var(--accent-a30);
-  color: var(--color-brand-orange);
-}
-
-/* Suggestion item layout with moves preview */
-.suggestion-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.suggestion-moves {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  font-family: var(--font-family-mono);
-  margin: var(--space-1) var(--space-4) 0 var(--space-4);
-  opacity: 0.7;
-  white-space: nowrap;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
   overflow: hidden;
-  text-overflow: ellipsis;
   text-align: left;
+  /* This panel had no interior padding at all, so "Recent" sat one pixel from
+     the top border and read as clipped, and every row touched the sides. The
+     mobile overlay never showed it because its scroll body supplies the inset. */
+  padding: var(--space-3);
+  box-sizing: border-box;
 }
 
-.suggestion-item:hover .suggestion-moves {
-  opacity: 1;
-  color: var(--color-text-secondary);
-}
+/* The .suggestion-* rules that used to live here are gone. They were a second
+   implementation of a search row — 16px semibold names on the legacy
+   --font-size-* scale, a 135deg gradient and a half-pixel lift on hover, an
+   ECO pill that turned orange as if it were pressable — sitting beside the
+   hub's rows on the --text-* scale. One row now serves both, in
+   SearchRow.module.css. */
 
 /* No results message */
+/* The panel only. What it says is `SearchNoResults`, shared with the top bar
+   and the mobile overlay, and it brings its own padding and type. */
 .search-no-results {
   position: absolute;
   top: 100%;
@@ -2011,23 +1898,8 @@ body {
   border: 1px solid var(--color-border);
   border-top: none;
   border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
-  padding: var(--space-4);
-  text-align: center;
   z-index: 100;
   box-shadow: var(--shadow-large);
-}
-
-.search-no-results p {
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-}
-
-.search-no-results-hint {
-  margin-top: var(--space-2) !important;
-  font-size: var(--font-size-xs) !important;
-  color: var(--color-text-muted) !important;
-  opacity: 0.8;
 }
 
 /* Scrollbar styling for search suggestions */
@@ -2155,54 +2027,12 @@ body {
   box-shadow: 0 4px 20px var(--accent-a12);
 }
 
-.search-surprise-btn {
-  background: var(--color-bg-alt);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-large);
-  padding: var(--space-4) var(--space-6);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  white-space: nowrap;
-  z-index: 5;
-}
-
-.search-surprise-btn:hover:not(:disabled) {
-  border-color: var(--color-brand-orange);
-  background: var(--accent-a12);
-}
-
-.search-surprise-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-@media (max-width: 767px) {
-  .search-surprise-btn {
-    width: 100%;
-  }
-}
-
 /* =================
    POPULAR OPENINGS GRID
    ================= */
 .popular-openings-container {
   /* Ensure consistent layout regardless of loading state */
   min-height: 600px; /* Reserve space to prevent layout shift */
-}
-
-.popular-openings-placeholder {
-  min-height: 600px; /* Match the approximate height of the loaded grid */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0; /* Invisible but still takes up space */
 }
 
 .popular-openings-section {
@@ -2221,39 +2051,9 @@ body {
   padding: 0 var(--space-4);
 }
 
-.section-title {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-2) 0;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-brand-orange) 0%, var(--accent-a30) 100%);
-  border-radius: 2px;
-}
-
-/* Sub (in-card) section title modifier: reduced scale, no underline */
-.section-title--sub {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-1);
-  letter-spacing: normal;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-.section-title--sub::after {
-  content: none;
-}
+/* The .section-title family (and its orange gradient underline) was removed in
+   UX phase 0: no component referenced it, and orange is for action, not
+   decoration. */
 
 /* ECO pill spacing refinement when paired with sub title */
 .related-teaser__header.card-header {
@@ -2288,21 +2088,6 @@ body {
   align-items: center;
   gap: var(--space-2);
 }
-.card-header__title--accent {
-  position: relative;
-  padding-left: var(--space-3);
-}
-.card-header__title--accent::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 3px;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--color-brand-orange), var(--accent-a20));
-}
-
 /* Map legacy title-subsection to new system for gradual migration */
 .title-subsection {
   font-size: var(--font-size-lg);
@@ -2328,86 +2113,12 @@ body {
   margin-bottom: var(--space-6);
 }
 
-.category-filters {
-  display: flex;
-  justify-content: flex-start;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
-
-/* Wrapper around a scrollable pill row — anchors the mobile right-edge fade. */
-.filter-scroll {
-  position: relative;
-}
-
-/* Mobile: chips stacked into ~7 rows at 375px and pushed the first card below
-   the fold (design review #6) — keep each filter group to one horizontally
-   scrollable row instead. The long ECO category labels clipped illegibly in
-   that row, so the category filter collapses into a dropdown (CategoryFilter);
-   the level filter stays as a swipeable pill row with an edge fade. */
-@media (max-width: 767px) {
-  .category-filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: var(--space-1);
-  }
-
-  .category-filters::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Pills must keep their full width so the row overflows and scrolls — without
-     this they shrink to fit and clip their own labels ("Beginne…"), which is
-     the bug this row is meant to avoid. */
-  .category-filters .category-btn {
-    flex-shrink: 0;
-  }
-
-  /* Desktop-only wrapped category pills — the mobile dropdown replaces them. */
-  .category-filters--eco {
-    display: none;
-  }
-
-  /* Fade the right edge of the level pill row to hint at horizontal scroll. */
-  .filter-scroll::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: var(--space-1);
-    width: 26px;
-    background: linear-gradient(90deg, transparent, var(--color-bg-main));
-    pointer-events: none;
-  }
-}
-
-.category-btn {
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: var(--space-2) var(--space-4);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-sm);
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-btn:hover {
-  border-color: var(--color-brand-orange);
-  color: var(--color-text-primary);
-}
-
-.category-btn.active {
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border-color: var(--color-brand-orange);
-}
+/* The level and ECO-category pill rows that used to live here (`.category-btn`,
+   `.category-filters`, `.filter-scroll`) were removed in UX phase 3. They read
+   as one undifferentiated row of ten, and raw ECO letters are jargon. The
+   faceted filter bar replaced them and owns its styles as CSS Modules
+   (components/filters/*.module.css). `.filters-container` above is still the
+   wrapper for whichever control renders. */
 
 .empty-state {
   text-align: center;
@@ -2443,11 +2154,12 @@ body {
   padding: var(--space-4);
 }
 
+/* Tertiary: pagination must not out-rank the page's real actions. */
 .load-more-btn {
-  background-color: var(--color-bg-alt);
-  color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 999px;
+  background-color: var(--surface-raised);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-8);
   cursor: pointer;
   transition: var(--transition-base);
@@ -2456,17 +2168,18 @@ body {
 }
 
 .load-more-btn:hover {
-  background-color: var(--accent-a12);
+  background-color: var(--surface-overlay);
   transform: translateY(-1px);
+}
+
+.load-more-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 @media (max-width: 767px) {
   .load-more-btn {
     width: 100%;
-    border-radius: var(--border-radius-base);
-    background-color: var(--color-bg-surface);
-    border-color: var(--color-border);
-    color: var(--color-text-primary);
   }
 }
 
@@ -2637,6 +2350,17 @@ body {
     animation: none;
     transition: none;
     will-change: auto;
+  }
+
+  /* `.opening-card` sets `opacity: 0` and relies on `cardSlideIn ... forwards`
+     to bring it back. Cancelling the animation above therefore left the base
+     value standing and the whole Discover grid rendered invisible for anyone
+     with reduced motion on. Restore the end state the animation would have
+     held. (The `forwards` + `translateY(0)` pairing is itself the retained-
+     transform hazard this file warns about below; leaving it as the only way a
+     card becomes visible is what made a motion preference hide the page.) */
+  .opening-card {
+    opacity: 1;
   }
 }
 
@@ -2811,14 +2535,6 @@ body {
     display: none;
   }
 
-  .opening-card.has-board .segmented-bar {
-    height: 5px;
-  }
-
-  .opening-card.has-board .winrate-labels {
-    font-size: var(--text-3xs);
-  }
-
   .opening-card {
     padding: var(--space-4);
     min-height: auto;
@@ -2848,26 +2564,15 @@ body {
     font-size: var(--font-size-base);
   }
 
-  .search-surprise-btn {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--font-size-sm);
-  }
-
   .chessboard-container {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  .suggestion-item .opening-name {
-    font-size: var(--font-size-sm);
-    margin: 0 var(--space-3) 0 var(--space-3);
-  }
-
-  .suggestion-item .eco-code {
-    margin-right: var(--space-3);
-    font-size: var(--font-size-xs);
-  }
+  /* The narrow-width overrides for search rows are gone with the rules they
+     overrode. SearchRow sizes itself the same at every width: the name
+     ellipses and the moves line ellipses, so nothing needs to shrink. */
 }
 
 /* Small mobile breakpoint (up to 480px) */
@@ -2902,16 +2607,32 @@ body {
 
 /* Empty state for no videos */
 
+/* Accent-outline — the third button tier, between filled primary and the grey
+   secondary. An action worth drawing in the brand colour, but not a claim that
+   it is what the page is for.
+
+   Practice was filled primary until 2026-07-30. The spec's argument for that
+   was implementation completeness ("Practice mode is fully implemented in
+   production"), which is not the same question as how much of the page's
+   attention it deserves — that one is the product owner's, and the answer is
+   that the feature is not yet as developed as it needs to be to ask for the
+   page's loudest control. Demoted deliberately; see §3.4 of the UX-review spec
+   before promoting it back.
+
+   The proportion changed with it. The label was 11px inside 24px of horizontal
+   padding, which reads as a colour swatch with a word in it rather than a
+   button — and desktop said 11px while mobile said 13px for the same control.
+   Both are 13px now, with the padding brought in to match. */
 .practice-toggle-btn {
   background-color: transparent;
   color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
-  border-radius: 8px;
-  padding: 10px 24px;
+  border: 1px solid var(--accent-a50);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
   margin-left: auto;
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.04em;
   width: auto;
   height: auto;
@@ -2920,44 +2641,68 @@ body {
   transition: all 150ms ease;
 }
 
+/* Fills on hover rather than deepening: an outlined control that only shifts
+   its border on hover gives almost no feedback at this size. No lift and no
+   brand shadow — those belonged to the primary treatment. */
 .practice-toggle-btn:hover:not(:disabled) {
   background-color: var(--accent-a12);
+  border-color: var(--color-brand-orange);
   color: var(--color-brand-orange);
-  transform: scale(1.02);
-  box-shadow: none;
 }
 
 .practice-toggle-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
 
+.practice-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
 /* =================
    PGN INPUT MODAL
    ================= */
 
-/* Link below search bar */
-.pgn-search-link-wrapper {
-  text-align: center;
+/* Quiet links below the hero search. Neither may be orange or filled — search
+   is the only prominent element in the hero. `backwards`, never `both`: a
+   retained transform keeps a stacking context and click-blocks the search
+   dropdown (this exact regression shipped once). */
+.hero-secondary-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
   margin-top: var(--space-3);
   animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 200ms;
 }
 
-.pgn-search-link {
+.hero-quiet-link {
   background: none;
   border: none;
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   cursor: pointer;
   padding: var(--space-2) var(--space-3);
+  min-height: 44px;
   transition: var(--transition-base);
   text-decoration: underline;
   text-decoration-color: var(--border-hover);
   text-underline-offset: 3px;
 }
 
-.pgn-search-link:hover {
-  color: var(--color-brand-orange);
+.hero-quiet-link:hover {
+  color: var(--color-text-primary);
+  text-decoration-color: var(--color-text-secondary);
+}
+
+.hero-quiet-link:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+.hero-link-separator {
+  color: var(--color-text-muted);
 }
 
 /* Modal overlay with glassmorphism */
@@ -3241,7 +2986,7 @@ button:focus-visible,
   .hero-title,
   .hero-subtitle,
   .hero-search-wrapper,
-  .pgn-search-link-wrapper,
+  .hero-secondary-links,
   .popular-openings-section,
   .not-found-page {
     animation: none;

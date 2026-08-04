@@ -7,12 +7,11 @@ import {
   CommonPlans,
   VideoGallery,
   StudiesGallery,
-  OpeningNavigator,
-  WinRatePanel,
+  ExplorerCard,
+  MasterGamesCard,
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import MobileDataSurface from '../components/detail/mobile/MobileDataSurface';
-import MobileMasterGames from '../components/detail/mobile/MobileMasterGames';
 import MobileResources from '../components/detail/mobile/MobileResources';
 import PositionSheet from '../components/detail/mobile/PositionSheet';
 import styles from './OpeningDetailPage.module.css';
@@ -26,10 +25,10 @@ import {
   ChevronDown,
   MoreHorizontal,
   Play,
-  Star,
 } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
-import { useRepertoire } from '../hooks/useRepertoire';
+import { useRepertoireToast } from '../hooks/useRepertoireToast';
+import { Toast } from '../components/shared/Toast';
 import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult';
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
@@ -127,7 +126,7 @@ const OpeningDetailPage: React.FC = () => {
   const [videoContext, setVideoContext] = useState<ResourceContext | null>(null);
   const [studyContext, setStudyContext] = useState<ResourceContext | null>(null);
 
-  const { isSaved, toggle: toggleRepertoire } = useRepertoire();
+  const { isSaved, toggleWithToast, toast } = useRepertoireToast();
 
   // Level lens (sidebar unification): one band choice governs the Win rates
   // panel and the Opening book's move stats. Persistence and analytics live
@@ -136,7 +135,6 @@ const OpeningDetailPage: React.FC = () => {
   // moves on first load, without waiting for an explicit level choice.
   const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
   const explorerQuery = useExplorerQuery(opening?.fen ?? null, band);
-  const explorer = explorerQuery.result;
   const parentFen =
     treeData?.ancestors && treeData.ancestors.length > 0
       ? treeData.ancestors[treeData.ancestors.length - 1].fen
@@ -153,8 +151,6 @@ const OpeningDetailPage: React.FC = () => {
   // the expand toggle only appears when there's something more to reveal.
   const [moveStripOverflows, setMoveStripOverflows] = useState(false);
   const [overviewExpanded, setOverviewExpanded] = useState(false);
-  const [repertoireToast, setRepertoireToast] = useState<string | null>(null);
-  const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState(false);
@@ -290,12 +286,6 @@ const OpeningDetailPage: React.FC = () => {
     setPositionSheetOpen(false);
     setOverviewExpanded(false);
   }, [fen]);
-
-  useEffect(() => {
-    return () => {
-      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    };
-  }, []);
 
   // Auto-scroll move strip to keep active move visible. Scroll the strip
   // container horizontally ONLY — scrollIntoView also scrolls the page
@@ -955,17 +945,13 @@ const OpeningDetailPage: React.FC = () => {
   };
 
   const handleToggleRepertoire = () => {
-    const saved = isSaved(opening.fen);
-    toggleRepertoire({
+    toggleWithToast({
       fen: opening.fen,
       name: opening.name,
       eco: opening.eco,
       moves: opening.moves,
       complexity: opening.complexity,
     });
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    setRepertoireToast(saved ? 'Removed from repertoire' : 'Saved to repertoire');
-    toastTimerRef.current = setTimeout(() => setRepertoireToast(null), 2200);
   };
 
   return (
@@ -1413,7 +1399,25 @@ const OpeningDetailPage: React.FC = () => {
               treeData={treeData}
             />
 
-            <MobileMasterGames fen={opening.fen} />
+            {/* Straight after the explorer surface, because this is more of the
+                same thing: who played the position and how it went. What follows
+                is a gradient away from the page — how to play it, then go watch
+                someone explain it, then go search for yourself — and master
+                games sits on the data side of that line. Collapsed it costs one
+                row, so it barely moves Common plans down; the reverse is not
+                true, and putting a tall section in front strands a data row
+                behind a screen of scrolling.
+
+                This REVERSES the UX-review spec's decision table, which sent it
+                below Learning resources on the grounds that doing so "makes both
+                breakpoints agree on block order". It does the opposite: desktop
+                renders master games in the right rail under the explorer card,
+                with Learning resources full-width below the grid, so desktop has
+                always had this order. So does the bundle's preview card. See
+                §3.2 of docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md
+                before moving it back, and the order guard in
+                pages/__tests__/mobile-stack-order.test.tsx. */}
+            <MasterGamesCard fen={opening.fen} variant="accordion" />
 
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
@@ -1432,9 +1436,9 @@ const OpeningDetailPage: React.FC = () => {
             />
           </div>
         ) : (
-          /* Right Column - Overview + Level lens + Stats + Navigator.
-             Overview leads so the level lens sits directly above both data
-             panels it governs (stats + book) — matching the mobile order. */
+          /* Right column — Overview, then one bordered explorer card holding
+             the level filter and everything it governs, then master games
+             outside that border because the filter does not reach them. */
           <div className={`right-column ${styles.rightColumn}`}>
             {/* Overview — about this opening */}
             {opening?.eco && (
@@ -1444,39 +1448,33 @@ const OpeningDetailPage: React.FC = () => {
               </div>
             )}
 
-            <WinRatePanel
-              popularityStats={popularityStats}
+            <ExplorerCard
               fen={opening.fen}
               band={band}
               onBandChange={setBand}
+              popularityStats={popularityStats}
+              explorer={explorerQuery}
+              parentExplorer={parentExplorer}
+              treeData={treeData}
+              treeLoading={treeLoading}
             />
 
-            <OpeningNavigator
-              treeData={treeData}
-              loading={treeLoading}
-              explorer={explorer}
-              parentExplorer={parentExplorer}
-            />
+            <MasterGamesCard fen={opening.fen} />
           </div>
         )}
       </div>
 
-      {/* Mobile overlays: position tools sheet + repertoire toast */}
+      {/* Mobile overlay: position tools sheet */}
       {isMobile && (
-        <>
-          <PositionSheet
-            fen={game.fen()}
-            open={positionSheetOpen}
-            onClose={() => setPositionSheetOpen(false)}
-          />
-          {repertoireToast && (
-            <div className={styles.toast} role="status">
-              <Star size={13} className={styles.toastStar} aria-hidden="true" />
-              {repertoireToast}
-            </div>
-          )}
-        </>
+        <PositionSheet
+          fen={game.fen()}
+          open={positionSheetOpen}
+          onClose={() => setPositionSheetOpen(false)}
+        />
       )}
+
+      {/* Not gated on isMobile: the star deserves the same undo at every width. */}
+      {toast && <Toast message={toast.message} onUndo={toast.onUndo} />}
 
       {/* Full-width sections below two-column layout (desktop only — the
           mobile stack renders plans + resources itself) */}

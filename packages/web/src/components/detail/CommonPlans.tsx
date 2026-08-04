@@ -96,7 +96,11 @@ const MobilePlanGroup: React.FC<{ side: PlanSide; plans: ClassifiedPlan[] }> = (
           className={styles.mobileGroupToggle}
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? 'Show less' : `Show ${plans.length - MOBILE_GROUP_COLLAPSED} more`}
+          {expanded
+            ? 'Show less'
+            : `Show ${plans.length - MOBILE_GROUP_COLLAPSED} more ${
+                plans.length - MOBILE_GROUP_COLLAPSED === 1 ? 'plan' : 'plans'
+              }`}
         </button>
       )}
     </div>
@@ -174,7 +178,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   if (layout === 'mobileGroups') {
     return (
       <div className={`${styles.mobileGroupsLayout} ${className}`}>
-        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+        {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
         <MobilePlanGroup side="white" plans={grouped.white} />
         <MobilePlanGroup side="black" plans={grouped.black} />
         <MobilePlanGroup side="general" plans={grouped.general} />
@@ -185,7 +189,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   if (layout === 'structured') {
     return (
       <div className={`${styles.structuredLayout} ${className}`}>
-        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+        {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
 
         {/* Shared/general plans — full width */}
         {grouped.general.length > 0 && (
@@ -231,7 +235,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   if (layout === 'cards') {
     return (
       <div className={className}>
-        {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+        {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
         <div className={styles.cardsGrid}>
           {renderCard('white', grouped.white, 0)}
           {renderCard('black', grouped.black, 1)}
@@ -245,7 +249,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
 
   return (
     <div className={`content-panel-improved ${className}`}>
-      {!hideTitle && <h3 className="title-subsection">Common Plans</h3>}
+      {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
       {isSideBySide ? (
         <>
           <div className={styles.plansGrid}>

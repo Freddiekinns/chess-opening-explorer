@@ -1,25 +1,13 @@
 /* ============================
-   Opening Book — Navigator
+   Opening explorer — move lists
    ============================ */
-.navigator {
-  background-color: var(--surface-raised);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
+
+/* No border, no shadow, no radius, no padding — ExplorerCard supplies all
+   four. This block is only a flow container for the sections. */
+.book {
   display: flex;
   flex-direction: column;
   gap: 0;
-  box-shadow: var(--shadow-md);
-}
-
-/* ── Title ── */
-.navigatorTitle {
-  font-family: var(--font-family-headline);
-  font-size: var(--text-md);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
-  line-height: 1;
 }
 
 /* ── Sections ── */
@@ -413,17 +401,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .navigator {
-    padding: var(--space-4);
-  }
-}
-
 @media (max-width: 768px) {
-  .navigator {
-    padding: var(--space-3);
-  }
-
   .contRow {
     padding: var(--space-1-5) var(--space-2-5);
   }
@@ -454,10 +432,6 @@
 }
 
 @media (max-width: 640px) {
-  .navigator {
-    border-radius: var(--radius-md);
-  }
-
   .contRow {
     padding: var(--space-1-5) var(--space-2);
     gap: var(--space-1);

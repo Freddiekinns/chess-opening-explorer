@@ -201,36 +201,38 @@
   }
 }
 
-/* Empty state */
-.emptyState {
+/* Empty state — one line tall, so Popular openings stays above the fold on a
+   first visit. The dashed panel it replaced cost roughly a screen of dead
+   space; this costs ~40px. It keeps the container because the empty and
+   populated states are the same slot, and a bare sentence with no surface
+   reads as a stray caption rather than a row waiting to fill. */
+.repertoireSection.isEmpty {
+  padding: var(--space-3) var(--space-4) var(--space-2);
+}
+
+.emptyPrompt {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-8) var(--space-4);
-  text-align: center;
-  color: var(--color-text-secondary);
-  border: 1px dashed var(--border-default);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.emptyIcon {
-  font-size: var(--text-3xl);
-  margin-bottom: var(--space-3);
-  opacity: 0.5;
-}
-
-.emptyTitle {
-  font-size: var(--text-md);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-2);
-}
-
-.emptyHint {
-  font-size: var(--text-base);
+  gap: var(--space-2);
   margin: 0;
-  max-width: 300px;
-  line-height: var(--line-height-normal);
+  padding: 10px var(--space-4);
+  background: var(--surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Dimmer than the text it sits beside — it labels the action, it isn't the
+   message. The mock's #5a554e has no text token; muted is the same step down. */
+.emptyPromptIcon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 767px) {
+  .emptyPrompt {
+    padding: 10px var(--space-3);
+    font-size: var(--text-sm);
+  }
 }

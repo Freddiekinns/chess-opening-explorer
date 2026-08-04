@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        padding: 24px;
+        background: var(--surface-base);
+        font-family: var(--font-family-primary), sans-serif;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+      .cap {
+        display: block;
+        font-family: var(--font-family-mono);
+        font-size: 10px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      /* Facet trigger — states what it filters and what it is set to. */
+      .facet {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 8px 13px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      /* Active is a border, not a fill: a filter state must not read as a CTA. */
+      .facet--active {
+        border-color: rgba(232, 93, 4, 0.5);
+      }
+      .facet .k {
+        color: var(--color-text-muted);
+      }
+      .facet .v {
+        color: var(--color-text-secondary);
+      }
+      .facet--active .v {
+        color: var(--color-text-primary);
+      }
+      .menu {
+        width: 260px;
+        background: var(--surface-overlay);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 12px 16px;
+        font-size: 13px;
+        color: var(--color-text-secondary);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .item:last-child {
+        border-bottom: none;
+      }
+      .item--active {
+        background: rgba(232, 93, 4, 0.12);
+        color: var(--color-text-primary);
+        font-weight: 600;
+      }
+      .item .n {
+        margin-left: auto;
+        color: var(--color-text-muted);
+        font-variant-numeric: tabular-nums;
+      }
+      /* No text-transform: these headings are moves, and case is semantic in
+         algebraic notation — uppercased, "1. Nf3" reached the screen as
+         "1. NF3", which is not a move. Any eyebrow carrying notation keeps
+         its case; size, weight and colour do the work instead. */
+      .grouphead {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--color-text-muted);
+        margin: 12px 0 4px;
+      }
+      .famrow {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 10px 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        border-radius: var(--radius-sm);
+      }
+      .famrow .n {
+        margin-left: auto;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      .trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 8px 16px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        color: var(--color-text-primary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 18px;
+        padding: 2px 6px;
+        background: var(--color-brand-orange);
+        border-radius: var(--radius-full);
+        color: var(--color-text-inverse);
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .count {
+        color: var(--color-text-muted);
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+      }
+      .done {
+        width: 260px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-brand-orange);
+        border-radius: var(--radius-md);
+        color: var(--color-text-inverse);
+        font-size: 16px;
+        font-weight: 600;
+      }
+      /* Mobile sheet — the object, not the facets inside it. */
+      .sheet {
+        width: 300px;
+        background: var(--surface-raised);
+        border-top: 1px solid var(--color-border);
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+        padding: 8px 20px 24px;
+      }
+      /* The grabber is the drag surface, and it is a 44px button, not a 4px
+         pill: it drags the sheet down and closes it on tap. Drawn as an
+         affordance with nothing behind it, it promises a gesture the sheet
+         cannot perform, and a phone has no Escape key to fall back on. */
+      .grab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 12px 0;
+      }
+      .grab i {
+        display: block;
+        width: 36px;
+        height: 4px;
+        background: var(--surface-overlay);
+        border-radius: var(--radius-full);
+      }
+      .sheettitle {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        margin-bottom: 12px;
+      }
+      /* Collapsed facet row: same anatomy as the desktop trigger — value
+         left, affordance right — sized for touch. */
+      .disclose {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 8px 16px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        color: var(--color-text-secondary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .disclose--active {
+        border-color: rgba(232, 93, 4, 0.5);
+        color: var(--color-text-primary);
+      }
+      .disclose .chev {
+        margin-left: auto;
+        color: var(--color-text-muted);
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Discover's faceted filter bar. Replaces the two unlabelled pill rows
+         (level + ECO category) that read as one row of ten. Every control
+         states what it filters and what it is currently set to; counts come
+         from the same /api/openings/browse request that fills the grid, so the
+         number on screen cannot disagree with the cards under it.
+
+         Implementation note: the mobile sheet must be portalled to <body>.
+         `position: fixed` resolves against the nearest transformed ancestor,
+         and .popular-openings-section animates `sectionReveal`, whose
+         keyframes carry translateY. -->
+
+    <div class="row">
+      <div>
+        <span class="cap">facet triggers — desktop, default and active</span>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <span class="facet"><span class="k">Level</span><span class="v">All</span></span>
+          <span class="facet facet--active"
+            ><span class="k">Style</span><span class="v">Gambit</span></span
+          >
+          <span class="facet"><span class="k">Family</span><span class="v">Any</span></span>
+          <span class="facet"><span class="k">Sort</span><span class="v">Most played</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">option menu — counts exclude the facet's own filter</span>
+        <div class="menu">
+          <div class="item item--active"><span>All levels</span></div>
+          <div class="item"><span>Beginner</span><span class="n">179</span></div>
+          <div class="item"><span>Intermediate</span><span class="n">4,587</span></div>
+          <div class="item"><span>Advanced</span><span class="n">7,611</span></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">family picker — grouped by first move</span>
+        <div class="menu" style="padding: 12px">
+          <div class="grouphead">1. e4</div>
+          <div class="famrow"><span>Sicilian Defense</span><span class="n">1,710</span></div>
+          <div class="famrow"><span>Ruy Lopez</span><span class="n">805</span></div>
+          <div class="grouphead">1. d4</div>
+          <div class="famrow"><span>Queen's Gambit</span><span class="n">1,041</span></div>
+          <!-- Families with no dominant first move are not filed under one:
+               Irregular Openings is 32% 1.d4, which is not a fact. -->
+          <div class="grouphead">Other openings</div>
+          <div class="famrow"><span>Irregular Openings</span><span class="n">940</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">mobile — one control, badge counts active facets</span>
+        <div style="display: flex; align-items: center; gap: 12px; width: 320px">
+          <span class="trigger">Filters<span class="badge">2</span></span>
+          <span class="count" style="margin-left: auto">2,182 openings</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">mobile sheet footer — primary, reveals the result</span>
+        <div class="done">Show 2,182 openings</div>
+      </div>
+    </div>
+
+    <!-- The sheet as an object. Two rules, both learned the hard way:
+
+         1. Anything drawn as a handle must behave as one. The first cut shipped
+            a decorative 36×4 pill, so the only exits from a sheet that filled
+            88% of the screen were a ~100px strip of backdrop above it and the
+            Escape key. Pulling it down — the thing it looked like it did —
+            did nothing.
+         2. A facet with 29 options collapses; a facet with 4 does not. Level,
+            style and sort are 13 pills and fit on one screen. The family list
+            expanded by default made every visit open 2,000px deep for a facet
+            most visits never touch, and buried the applied family somewhere in
+            the scroll. Collapsed, the row states it. -->
+    <div class="row">
+      <div>
+        <span class="cap">mobile sheet — collapsed family, whole sheet on one screen</span>
+        <div class="sheet">
+          <div class="grab"><i></i></div>
+          <div class="sheettitle">Filters</div>
+          <div class="eyebrow">Level</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px">
+            <span class="facet facet--active" style="border-radius: 999px">All levels</span>
+            <span class="facet" style="border-radius: 999px">Beginner</span>
+          </div>
+          <div class="eyebrow">Family</div>
+          <div class="disclose"><span>Any family</span><span class="chev">⌄</span></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">collapsed family row — default, and with one applied</span>
+        <div style="display: grid; gap: 10px; width: 260px">
+          <div class="disclose"><span>Any family</span><span class="chev">⌄</span></div>
+          <div class="disclose disclose--active">
+            <span>Sicilian Defense</span><span class="chev">⌄</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

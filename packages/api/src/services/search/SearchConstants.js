@@ -70,18 +70,31 @@ const QUERY_PATTERNS = {
   OPENING_WITH_MODIFIER: /^(aggressive|solid|tactical|positional|sharp|quiet)\s+(.+)$/i
 };
 
-// Fuse.js configuration for fuzzy search
+// Fuse.js configuration for fuzzy search.
+//
+// Fuse is the typo net and nothing else now: names are matched literally in
+// search/NameIndex.js, moves and ECO codes have exact branches, and style
+// queries are parsed for intent. What is left for a fuzzy pass is a misspelling.
+//
+// `description` used to be a key. Bitap across 12,377 half-page descriptions
+// with ignoreLocation cost 850–2,800ms a query and matched almost anything —
+// "sicilian" scored 4,269 of 12,377 openings, a third of the corpus, and every
+// re-ranking pass downstream existed to undo that. Dropping it and `moves`
+// changed the result set by four openings in 1,753 and made the pass 5x faster.
 const FUSE_OPTIONS = {
   includeScore: true,
   threshold: 0.4, // Lower = more strict matching
   ignoreLocation: true,
   keys: [
-    { name: 'name', weight: 0.4 },
-    { name: 'moves', weight: 0.3 },
-    { name: 'style_tags', weight: 0.2 },
-    { name: 'description', weight: 0.1 }
+    { name: 'name', weight: 0.7 },
+    { name: 'style_tags', weight: 0.3 }
   ]
 };
+
+// An ECO code, the shape the user types it: one family letter, two digits.
+// Codes are exactly three characters, so this is a whole code and never a
+// prefix — `B9` is not a search anyone means.
+const ECO_CODE_PATTERN = /^[a-e]\d{2}$/;
 
 // Chess move patterns for move detection
 const CHESS_MOVE_PATTERNS = [
@@ -93,48 +106,11 @@ const CHESS_MOVE_PATTERNS = [
   /^[nbrqk]x[a-h][1-8]$/, // Piece captures: nxe5, etc.
 ];
 
-// Opening name patterns that shouldn't trigger semantic search
-const OPENING_NAME_PATTERNS = [
-  /\b(queen'?s?\s+gambit|queens?\s+gambit)\b/i,
-  /\b(king'?s?\s+indian|kings?\s+indian)\b/i,
-  /\b(french\s+defense|french\s+defence)\b/i,
-  /\b(sicilian\s+defense|sicilian\s+defence)\b/i,
-  /\b(caro\s*-?\s*kann)\b/i,
-  /\b(english\s+opening)\b/i,
-  /\b(ruy\s+lopez)\b/i,
-  /\b(italian\s+game)\b/i,
-  /\b(vienna\s+game)\b/i,
-  /\b(scotch\s+game)\b/i,
-  /\b(alekhine'?s?\s+defense|alekhines?\s+defense)\b/i,
-  /\b(scandinavian\s+defense)\b/i,
-  /\b(pirc\s+defense)\b/i,
-  /\b(modern\s+defense)\b/i,
-  /\b(bird'?s?\s+opening|birds?\s+opening)\b/i,
-  /\b(nimzo\s*-?\s*indian)\b/i,
-  /\b(gr[üu]nfeld\s+defense)\b/i,
-  /\b(benoni\s+defense)\b/i,
-  /\b(catalan\s+opening)\b/i,
-  /\b(dutch\s+defense)\b/i,
-  /\b(london\s+system)\b/i,
-  /\b(torre\s+attack)\b/i,
-  /\b(colle\s+system)\b/i
-];
-
-// Terms that could be both semantic descriptors and parts of opening names
-const AMBIGUOUS_TERMS = [
-  'attacking', 'aggressive', 'tactical', 'sharp', 'solid', 'defensive',
-  'gambit', 'defense', 'defence', 'opening', 'variation', 'system',
-  'classical', 'modern', 'hypermodern', 'dynamic', 'positional',
-  // Add specific opening name patterns that need popularity-first search
-  'indian', 'kings', 'queens'  // These cause cross-contamination issues
-];
-
 module.exports = {
   SEMANTIC_MAPPINGS,
   STYLE_CATEGORIES,
   QUERY_PATTERNS,
   FUSE_OPTIONS,
-  CHESS_MOVE_PATTERNS,
-  OPENING_NAME_PATTERNS,
-  AMBIGUOUS_TERMS
+  ECO_CODE_PATTERN,
+  CHESS_MOVE_PATTERNS
 };

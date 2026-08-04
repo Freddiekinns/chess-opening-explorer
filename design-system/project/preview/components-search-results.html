@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:380px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+.dropdown{background:var(--surface-elevated);border:1px solid var(--color-border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);overflow:hidden}
+
+/* --- panel layout only. The row below is components-search-row, copied
+       verbatim; do not restyle it here. --- */
+.list{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:4px;max-height:300px;overflow-y:auto}
+.footer{padding:12px;border-top:1px solid var(--border-subtle)}
+
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border-radius:8px;background:transparent;border:1px solid var(--border-subtle);cursor:pointer;text-align:left;font-family:'DM Sans';color:var(--color-text-primary)}
+.row.active{background:var(--surface-overlay);border-color:var(--color-border)}
+.text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.name{font-size:14px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.moves{font-family:var(--font-family-mono);font-size:12px;color:var(--color-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:12px;color:var(--color-text-muted)}
+.nameAction{color:var(--color-brand-orange)}
+.trailing{flex:none;display:flex;align-items:center;gap:8px}
+.eco{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid var(--color-border);border-radius:4px;background:rgba(232,93,4,.06);color:var(--color-text-muted);font-family:var(--font-family-mono);font-size:11px;font-weight:600;letter-spacing:.5px}
+.saved{display:flex;align-items:center;height:22px;padding:2px 8px;border:1px solid rgba(232,93,4,.3);border-radius:4px;background:rgba(232,93,4,.12);color:var(--color-brand-orange);font-family:'DM Sans';font-size:11px;font-weight:600;white-space:nowrap}
+
+.empty{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 16px;text-align:center}
+.emptyTitle{font-family:'DM Sans';font-size:14px;font-weight:500;color:var(--color-text-secondary)}
+.emptyHint{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted)}
+
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
+.note code{font-family:var(--font-family-mono);font-size:11px}
+</style></head><body>
+
+<div class="wrap">
+  <div class="col">
+    <span class="cap">Search results · name query</span>
+    <div class="dropdown">
+      <ul class="list">
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Najdorf</span><span class="moves">1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6</span></span>
+          <span class="trailing"><span class="saved">Saved</span><span class="eco">B90</span></span>
+        </button></li>
+        <li><button class="row active">
+          <span class="text"><span class="name">Sicilian Defense: Najdorf, English Attack</span><span class="moves">… 6. Be3 e5 7. Nb3</span></span>
+          <span class="trailing"><span class="eco">B90</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Bowdler Attack</span><span class="moves">1. e4 c5 2. Bc4</span></span>
+          <span class="trailing"><span class="eco">B20</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Sicilian Defense: Old Sicilian</span><span class="moves">1. e4 c5 2. Nf3 Nc6</span></span>
+          <span class="trailing"><span class="eco">B30</span></span>
+        </button></li>
+      </ul>
+      <div class="footer">
+        <button class="row">
+          <span class="text"><span class="name nameAction">Surprise me</span><span class="hint">Jump to a random opening</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <span class="cap">Search results · move query</span>
+    <div class="dropdown">
+      <ul class="list">
+        <li><button class="row">
+          <span class="text"><span class="name">Zukertort Opening</span><span class="moves">1. Nf3</span></span>
+          <span class="trailing"><span class="eco">A04</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">Réti Opening</span><span class="moves">1. Nf3 d5 2. c4</span></span>
+          <span class="trailing"><span class="eco">A09</span></span>
+        </button></li>
+        <li><button class="row">
+          <span class="text"><span class="name">King's Indian Attack</span><span class="moves">1. Nf3 d5 2. g3</span></span>
+          <span class="trailing"><span class="eco">A07</span></span>
+        </button></li>
+      </ul>
+      <div class="footer">
+        <button class="row">
+          <span class="text"><span class="name nameAction">Surprise me</span><span class="hint">Jump to a random opening</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <span class="cap">Search results · no match</span>
+    <div class="dropdown">
+      <div class="empty">
+        <span class="emptyTitle">No openings match your search</span>
+        <span class="emptyHint">Try an ECO code (B02) or paste a PGN on the Analyse tab.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="note">
+  What replaces <code>components-search-hub</code> once two characters are
+  typed — on all three surfaces. One ranked list that scrolls, no reveal button.
+  Fuzzy matching already absorbs typos, so there is no "did you mean", no
+  correction notice and no explanation of what was understood: the right
+  openings appearing <em>is</em> the feedback. Natural-language queries
+  ("aggressive openings") land in this same list — the server's style intent
+  changes the ranking, not the layout.
+</p>
+<p class="note">
+  <strong>This card owns the panel, not the rows.</strong> Rows come from
+  <code>components-search-row</code>, the same row the hub draws. They were two
+  separate implementations until 2026-07-30 — on two different type scales — so
+  typing a second character redrew every opening at a different size, weight and
+  layout. There was a third in the top bar. Do not restyle a row here to suit
+  the results.
+</p>
+<p class="note">
+  <strong>The list scrolls further than it used to.</strong> It was capped at
+  280px against rows of 71px, so under four of twenty results were visible and
+  the panel read as a peephole. It now scales with the viewport
+  (<code>min(60vh, 480px)</code>), which is around nine rows on a laptop.
+</p>
+<p class="note">
+  <strong>No count line, and no number anywhere.</strong> An earlier draft put
+  "14 openings match" above the list. It was cut once the number turned out to
+  be unusable: the search counts every record scoring above zero, which for
+  "sicilian" is 4,269 against a family of roughly 1,710. Anyone reads that as a
+  claim about how many Sicilians exist. Counting only the rendered rows instead
+  would have been true but useless — it always says twenty. A count that cannot
+  be trusted and a count that never varies are both worse than the silence the
+  page already had.
+</p>
+<p class="note">
+  <strong>Surprise me sits outside the scroller, and keeps its hint on every
+  surface.</strong> It used to vanish on the second keystroke — the way out of a
+  search that is not working disappearing exactly when the user is flailing.
+  Twenty results deep is where someone gives up, so that is where it has to
+  still be on screen; it is reachable by arrowing one past the last result, not
+  only by clicking. The top-bar dropdown used to drop the visible hint for want
+  of ~25px and keep it only in a <code>title</code> and an
+  <code>aria-label</code> — invisible to a sighted user arrowing through the
+  list. That panel now sizes to its contents instead: the row explains itself,
+  and the exception is gone.
+</p>
+<p class="note">
+  <strong>"Saved", not a star.</strong> Repertoire membership rides on the
+  result row rather than sitting in a section of its own — a saved opening that
+  also matched the query would otherwise be drawn twice, at two different ranks.
+  It is a text badge because everywhere else in the app a star is a control you
+  press to add or remove; on a row whose whole job is to navigate, the same star
+  would invite a tap that does something else entirely.
+</p>
+<p class="note">
+  <strong>Saved openings also win ties.</strong> The badge was the visible half
+  of the idea; the ranking is the useful half. Between two matches the search
+  cannot separate — a move query returns dozens on an identical score — the
+  opening already in the repertoire goes first. Only within a tie: a weak match
+  you happen to have saved is still a weak match, and floating it over twenty
+  better ones would make search worst for the people most invested in it. The
+  band is <em>relative</em> (within 2% of the leader) because score scales
+  differ by an order of magnitude between search types.
+</p>
+<p class="note">
+  <strong>One dead end, one voice.</strong> There were two strings and a
+  silence: the hero said "Try a different spelling, ECO code (e.g., B90), or
+  abbreviation (e.g., QGD)", the mobile overlay said the copy above, and the
+  top-bar dropdown simply closed — so a failed search on desktop looked
+  identical to not having typed. The overlay's survived: it points somewhere
+  the user can go, and it does not teach them the word "abbreviation" at the
+  moment they have just failed. Two example ECO codes for the same advice was
+  the other half of the tell. Note the hint is only true because the server
+  gained an ECO branch at the same time — before that, "try an ECO code"
+  returned nothing on any surface without a local index.
+</p>
+</body></html>

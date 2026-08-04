@@ -1,0 +1,100 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base)}
+.wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.col{display:flex;flex-direction:column;gap:10px;width:360px}
+.cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.itemLink{display:flex;align-items:center;gap:12px;min-height:44px;padding:12px;border:1px solid var(--color-border);border-radius:8px;background:var(--surface-raised);text-decoration:none}
+.itemLink.hover{background:var(--surface-overlay)}
+.board{width:72px;height:72px;flex:none;border-radius:4px;background:
+  conic-gradient(var(--surface-overlay) 0 25%, var(--color-result-white) 0 50%, var(--surface-overlay) 0 75%, var(--color-result-white) 0);
+  background-size:18px 18px}
+.info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.name{margin:0;font-family:'DM Sans';font-size:13px;font-weight:600;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta{display:flex;gap:8px;align-items:center}
+.pill{font-family:'DM Sans';font-size:10px;padding:2px 8px;border-radius:9999px;background:var(--surface-overlay);color:var(--color-text-secondary)}
+.ecoPill{font-family:var(--font-family-mono);font-size:10px;padding:2px 8px;border-radius:4px;background:var(--surface-overlay);color:var(--color-text-secondary)}
+.moves{font-family:'DM Sans';font-size:11px;color:var(--color-text-secondary)}
+.star{color:var(--color-brand-orange);fill:var(--color-brand-orange);flex:none}
+
+.empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 16px}
+.emptyTitle{font-family:'Instrument Serif',serif;font-size:24px;color:var(--color-text-primary);margin:0 0 8px}
+.emptyText{font-family:'DM Sans';font-size:13px;color:var(--color-text-secondary);margin:0 0 24px;max-width:32ch;line-height:1.5}
+.emptyCta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 32px;border-radius:8px;background:var(--color-brand-orange);color:var(--color-text-inverse);font-family:'DM Sans';font-size:13px;font-weight:700;text-decoration:none}
+.prompt{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--surface-raised);border:1px solid var(--color-border);border-radius:8px;font-family:'DM Sans';font-size:14px;color:var(--color-text-secondary)}
+.promptIcon{flex:none;color:var(--color-text-muted)}
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:560px;margin-top:24px}
+</style></head><body>
+<div class="wrap">
+  <div class="col">
+    <span class="cap">Repertoire row · rest / hover</span>
+    <ul class="list">
+      <li>
+        <a class="itemLink">
+          <span class="board"></span>
+          <span class="info">
+            <h3 class="name">Sicilian Defence</h3>
+            <span class="meta"><span class="pill">Intermediate</span><span class="ecoPill">B20</span></span>
+            <span class="moves">1. e4 c5</span>
+          </span>
+          <svg class="star" width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="itemLink hover">
+          <span class="board"></span>
+          <span class="info">
+            <h3 class="name">French Defence</h3>
+            <span class="meta"><span class="pill">Beginner</span><span class="ecoPill">C00</span></span>
+            <span class="moves">1. e4 e6</span>
+          </span>
+          <svg class="star" width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <span class="cap">Repertoire · empty state</span>
+    <div class="empty">
+      <h1 class="emptyTitle">Nothing saved yet</h1>
+      <p class="emptyText">Star an opening anywhere in the app and it lands here for quick access.</p>
+      <a class="emptyCta">Browse openings</a>
+    </div>
+
+    <span class="cap" style="margin-top:24px">Discover · repertoire slot, empty</span>
+    <p class="prompt">
+      <svg class="promptIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Star openings to build your repertoire.
+    </p>
+  </div>
+</div>
+
+<p class="note">
+  The mobile Repertoire tab. Desktop has no equivalent page by design — the row
+  on Discover <em>is</em> the repertoire, which is why there is no "View all"
+  link. Sort is fixed at most recently saved first; there is no manual
+  reordering and no Edit affordance. The empty state's CTA is the one primary
+  action on the screen, so it takes the filled-orange spec.
+</p>
+<p class="note">
+  Every star in the product goes through <code>useRepertoireToast</code>, and
+  that includes the filled stars on this row and on the Discover repertoire
+  scroller. They are the only taps that <em>remove</em> something the user
+  built, so they need the Undo more than the ones that add — the Discover row
+  shipped calling <code>remove()</code> directly, with no confirmation and no
+  way back. Removing the last opening collapses the row into its one-line
+  prompt, so the toast has to survive that transition too.
+</p>
+<p class="note">
+  The two empty states are not the same shape and shouldn't be. The Repertoire
+  tab is a whole screen with nothing on it, so it gets a title and a way out.
+  The Discover slot is one row inside a page full of content, so it gets one
+  line — but it keeps the bordered surface, because empty and populated are the
+  same slot and the first save should fill a container, not summon one. UX
+  review change 03 bought height, not chrome; the build read "one-line prompt"
+  as bare text and dropped the box and the star with it. Drawn here so the next
+  reading has something to check against. Mobile is the same box at 13px.
+</p>
+</body></html>

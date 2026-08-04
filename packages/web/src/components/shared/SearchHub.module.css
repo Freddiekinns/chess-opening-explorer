@@ -1,0 +1,29 @@
+/* Layout only. Every row inside comes from SearchRow.module.css — this file
+   owns the sections and the gaps between them, nothing about a row. */
+
+.hub {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-bottom: var(--space-4);
+}
+
+.sectionLabel {
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 var(--space-2);
+}
+
+.rowList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

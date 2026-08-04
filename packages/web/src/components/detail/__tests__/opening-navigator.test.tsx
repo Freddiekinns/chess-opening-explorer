@@ -31,7 +31,8 @@ function makeAncestor(overrides: Partial<AncestorNode> = {}): AncestorNode {
 function renderNavigator(
   treeData: TreeContext,
   explorer: ExplorerResult | null = null,
-  parentExplorer: ExplorerResult | null = null
+  parentExplorer: ExplorerResult | null = null,
+  extra: Partial<React.ComponentProps<typeof OpeningNavigator>> = {}
 ) {
   return render(
     <MemoryRouter>
@@ -40,9 +41,19 @@ function renderNavigator(
         loading={false}
         explorer={explorer}
         parentExplorer={parentExplorer}
+        {...extra}
       />
     </MemoryRouter>
   );
+}
+
+function simpleTree(): TreeContext {
+  return {
+    current: makeNode({ fen: 'fen-current', name: 'French Defense', move: '1...e6' }),
+    ancestors: [makeAncestor({ fen: 'fen-e4', name: "King's Pawn Game", move: '1. e4' })],
+    children: [makeNode({ fen: 'fen-child', name: 'Advance Variation', move: '3. e5' })],
+    siblings: [makeNode({ fen: 'fen-sib', name: 'Caro-Kann Defense', move: '1...c6' })],
+  };
 }
 
 function explorerWithMoves(moves: ExplorerResult['moves']): ExplorerResult {
@@ -160,7 +171,24 @@ describe('OpeningNavigator', () => {
     expect(screen.getByRole('link', { name: /variation 1/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /variation 5/i })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /variation 6/i })).toBeNull();
-    expect(screen.getByRole('button', { name: 'Show 2 more' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Show 2 more moves' })).toBeInTheDocument();
+  });
+
+  test('echoes the active level in both captions when live data drives the lists', () => {
+    renderNavigator(simpleTree(), null, null, { band: '1400', live: true });
+    expect(screen.getByText('Most popular at 1400–1800')).toBeInTheDocument();
+    expect(screen.getByText('Most popular alternatives at 1400–1800')).toBeInTheDocument();
+  });
+
+  test('claims no level when the rows come from the snapshot', () => {
+    renderNavigator(simpleTree(), null, null, { band: '1400', live: false });
+    expect(screen.getByText('Most popular next moves')).toBeInTheDocument();
+    expect(screen.getByText('Most popular alternatives')).toBeInTheDocument();
+  });
+
+  test('carries no card chrome or title of its own — the explorer card owns both', () => {
+    renderNavigator(simpleTree());
+    expect(screen.queryByText('Opening book')).toBeNull();
   });
 
   test('labels the sections with their roles', () => {

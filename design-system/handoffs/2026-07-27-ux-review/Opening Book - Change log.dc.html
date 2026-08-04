@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#151311;font-family:'DM Sans',sans-serif;color:#ece8e1}
+  *{box-sizing:border-box}
+  a{color:#e85d04;text-decoration:none}
+  a:hover{color:#f17a2f}
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-thumb{background:#2a2724;border-radius:4px}
+</style>
+</helmet>
+
+<div style="max-width:1080px;margin:0 auto;padding:64px 48px 120px">
+
+  <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:14px">Opening Book</div>
+  <h1 style="font:800 46px/1.05 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 18px;color:#ece8e1">Change log</h1>
+  <p style="font:400 18px/1.6 'DM Sans';color:#9a958e;margin:0 0 28px;max-width:760px">Every change agreed across the review, in journey order, with the reason it was made. Screens live in <a href="Opening Book - Proposed.dc.html">Proposed</a>; the build being replaced is in <a href="Opening Book - Current.dc.html">Current</a>. Ids match across both files.</p>
+
+  <div style="display:flex;gap:0;border:1px solid #2a2724;border-radius:10px;overflow:hidden;margin-bottom:56px">
+    <div style="flex:1;padding:18px 22px;background:#232120;border-right:1px solid #2a2724">
+      <div style="font:800 30px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:6px">26</div>
+      <div style="font:400 13px/1.3 'DM Sans';color:#8e887f">changes to existing screens</div>
+    </div>
+    <div style="flex:1;padding:18px 22px;background:#232120;border-right:1px solid #2a2724">
+      <div style="font:800 30px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:6px">11</div>
+      <div style="font:400 13px/1.3 'DM Sans';color:#8e887f">states that don't exist today</div>
+    </div>
+    <div style="flex:1;padding:18px 22px;background:#232120;border-right:1px solid #2a2724">
+      <div style="font:800 30px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:6px">4</div>
+      <div style="font:400 13px/1.3 'DM Sans';color:#8e887f">screen areas touched</div>
+    </div>
+    <div style="flex:1;padding:18px 22px;background:#232120">
+      <div style="font:800 30px/1 'Bricolage Grotesque';color:#ece8e1;margin-bottom:6px">1</div>
+      <div style="font:400 13px/1.3 'DM Sans';color:#8e887f">screen deliberately unchanged</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px">
+    <span style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04">01 · Discover</span>
+  </div>
+  <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 8px;color:#ece8e1">Discover</h2>
+  <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0 0 22px;max-width:820px">Eight findings from the heuristic audit, all resolved. <a href="Opening Book - Proposed.dc.html#discover-desktop">Proposed desktop</a> · <a href="Opening Book - Proposed.dc.html#discover-mobile">mobile</a> · <a href="Opening Book - Current.dc.html#discover-desktop">current</a>.</p>
+
+  <div style="border-top:1px solid #2a2724">
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">01</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Persistent search in the top bar</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">A compact search field sits in the top bar on every page, mirroring the pattern detail pages already ship. Desktop and mobile.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Search only existed in the hero. Scroll into the grid and the product's core action was gone — you had to scroll back up to look anything up.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">02</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One primary action in the hero</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Search is the only prominent element. "Surprise me" and "Search by pasting PGN" drop beneath it as quiet links, Surprise first. Focusing the field opens a hub of recents and repertoire.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Three unequal actions competed at the same level. A beginner couldn't tell which was primary, and "PGN" means nothing to most players.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">03</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">First run leads with content</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The empty repertoire box becomes a one-line prompt, so popular openings sit above the fold from the first visit.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">On every first visit a dashed empty box occupied prime space and pushed the actual content below the fold — the page led with something the user hadn't done yet.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">04</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One faceted filter bar</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Level · Style · Family · Sort, each a button showing its current value, with a result count and Clear. Inline on desktop, a sheet per facet on mobile. Family replaces raw ECO categories.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Two unlabelled pill rows read as one row of ten. Nothing said they were independent filters, and the ECO category names were jargon.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">05</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Result bars label themselves</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Each card reads White 31% · Draw 39% · Black 30%, tinted to its segment colour.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">"W / D / B" plus three unfamiliar colours assumed the reader already knew the convention. Naming the segments removes the need for a legend entirely.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">06</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Search and Saved in the mobile tab bar</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Four tabs: Discover · Search · Saved · Analyse.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The bar offered only Discover and Analyse, so the primary task and the repertoire were both several taps deep once the hero scrolled away.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">07</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One mobile filter pattern</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">A single Filters control with an active count, opening a sheet. Facet chips scroll horizontally showing their values.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Two adjacent filters used two different interaction models — a scrolling pill row and a dropdown — and pill labels truncated to "Intermed…".</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">08</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Save from any card</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">A star in every card header — quiet at rest, orange when saved. Live in the mock: it updates both breakpoints at once.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The page promoted building a repertoire but gave no way to do it. Saving required opening a detail page first, so the loop the page pushed wasn't reachable from the page.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">09</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Five search and filter states drawn</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Focused search (desktop), search hub, results, no results, filters sheet (mobile). All in <a href="Opening Book - Proposed.dc.html#discover-search-desktop">Proposed · Discover states</a>.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">None of these existed as designs. Search behaviour was the biggest unspecified area of the page, and the build needs the empty and results cases as much as the happy path.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">10</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Repertoire populated, and the Saved tab behind it</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The slim prompt becomes a horizontal card scroller with mini boards once anything is saved — the design system's repertoire card, count in the header, "View all" to the right. A toast with Undo confirms the save on mobile, and the Saved tab gains a real screen in both populated and empty form. Four states in <a href="Opening Book - Proposed.dc.html#repertoire-desktop">Proposed · Repertoire</a>.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The prompt and the star both promised a repertoire, and the tab bar pointed at a screen that had never been drawn — three entry points into one undesigned destination. Undo matters because the star is now a single tap on a scrolling list, where mis-taps are likely.</p>
+    </div>
+  </div>
+
+  <div style="height:56px"></div>
+
+  <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:6px">02 · Opening detail</div>
+  <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 8px;color:#ece8e1">Opening detail</h2>
+  <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0 0 22px;max-width:820px">The page kept its shape; the fixes are about what the level filter governs. <a href="Opening Book - Proposed.dc.html#detail-desktop">Proposed desktop</a> · <a href="Opening Book - Proposed.dc.html#detail-mobile">mobile</a> · <a href="Opening Book - Current.dc.html#detail-desktop">current</a>.</p>
+
+  <div style="border-top:1px solid #2a2724">
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">11</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Win rates and the opening book merge into "Opening explorer"</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">One card, with the level filter in a raised header band. Everything the filter governs is inside that border; nothing outside it moves.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The filter sat in one card but silently drove a second, so its reach was invisible. A page-level bar was rejected: it would promise that overview, plans and resources respond too, and they don't.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">12</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Master games sits outside that border, labelled by source</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Stays compact in the right rail with a "2,400+ Elo" source line. On mobile it moves last, below the learning resources, as a collapsed row.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">It is the one list the level filter does not apply to. A full-width table was tried and dropped: it out-ranked the learning resources and spent a screen of height on browse content.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">13</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Reveals name their payload</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"Show 4 more moves", "All 47 master games", "Show 3 more videos" — same number of controls, each stating what it holds.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Five identical grey "Show more" buttons on one page told you nothing about the cost or reward of pressing any of them. Consolidating them was rejected — expanding everything would be unusable, especially on mobile.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">14</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">The active level echoes in sub-labels</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"Games · intermediate", "Most popular at 1400–1800". Mobile especially.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">On a tall mobile card the filter header scrolls out of view, leaving numbers on screen with no indication of scope.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">15</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">ECO code set in mono</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">B90 uses the system's ECO pill treatment — mono, on the overlay surface — beside the character tags.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">A technical identifier and flavour words ("aggressive", "sharp") were styled identically, reading as one undifferentiated row. Colour-coding complexity was considered and rejected: it's the only element that would need a legend.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">16</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Board pinned while the rail scrolls</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Confirmed as intended behaviour and demonstrated live in the proposed desktop screen — scroll it. The board releases when the rail ends and the full-width sections begin.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Already the design-system rule for this two-column layout, but never shown in a mock — which made the taller rail look like a balance problem when it isn't one.</p>
+    </div>
+  </div>
+
+  <div style="height:56px"></div>
+
+  <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:6px">03 · Analyse</div>
+  <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 8px;color:#ece8e1">Analyse — blank state</h2>
+  <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0 0 22px;max-width:820px"><a href="Opening Book - Proposed.dc.html#analyse-desktop">Proposed desktop</a> · <a href="Opening Book - Proposed.dc.html#analyse-mobile">mobile</a> · <a href="Opening Book - Current.dc.html#analyse-desktop">current</a>.</p>
+
+  <div style="border-top:1px solid #2a2724">
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">17</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Gear and game-count selector removed</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The count is defaulted, not configurable. A one-line note carries the scope. The setting can resurface in the dashboard if it's ever needed.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Almost nobody approaches the cap, so it was a control earning its space from a fraction of a percent of users while adding a decision for everyone else.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">18</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One header, not two</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The duplicate "Ready to analyse?" prompt is gone; the hero carries a payoff-led subtitle. <strong style="color:#ece8e1;font-weight:600">New string:</strong> "See which openings you actually play, and how they score — from your recent rated games."</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Two headings competed on a screen with one job, and neither said what the player would get out of it.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">19</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Sample player and a privacy line</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">One tap runs a real analysis for Magnus or Hikaru. One quiet line: "Nothing is stored." Both optional — drop either.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The screen asked for a username before showing any value in return. The sample runs the same code path as any analysis, so there's no demo data to maintain.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">20</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Brought in line with Discover</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Persistent header search on desktop; mobile tab bar matches Discover · Search · Saved · Analyse.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Chrome has to be identical across pages or the fixes to Discover create a new inconsistency instead of removing one.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">21</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Analysing and error states drawn</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Analysing: button becomes Cancel with a spinner, inputs dim, a progress bar shows the step and games count. Error: quiet inline message under the input, username kept, button back to Analyse.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Neither state was specified. Both keep the hero and form in place so there's no layout jump, and the error uses a neutral surface rather than an alarming red block.</p>
+    </div>
+  </div>
+
+  <div style="height:56px"></div>
+
+  <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:6px">04 · Analyse dashboard</div>
+  <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 8px;color:#ece8e1">Analyse — dashboard</h2>
+  <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0 0 22px;max-width:820px">Two changes, desktop only. <a href="Opening Book - Proposed.dc.html#dashboard-desktop">Proposed desktop</a> · <a href="Opening Book - Proposed.dc.html#dashboard-mobile">mobile (unchanged)</a> · <a href="Opening Book - Current.dc.html#dashboard-desktop">current</a>.</p>
+
+  <div style="border-top:1px solid #2a2724">
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">22</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Honest scope on the first card</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"Career Totals / Overall performance" becomes <strong style="color:#ece8e1;font-weight:600">"Your record"</strong> under a <strong style="color:#ece8e1;font-weight:600">"This analysis"</strong> eyebrow. Wins tinted sage, losses brick, draws neutral.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The old label claimed a lifetime record for numbers that only describe the games in this run — the single clearest factual error on the screen.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">23</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">"Games", not "GP"</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The desktop column header spells it out, matching the label mobile already uses. Column widened so header and numbers stay right-aligned.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">An abbreviation borrowed from sports statistics, used nowhere else in the product, and already written in full on the mobile screen.</p>
+    </div>
+  </div>
+
+  <div style="height:56px"></div>
+
+  <div style="font:700 11px/1 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:#e85d04;margin-bottom:6px">05 · Systemic</div>
+  <h2 style="font:800 30px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 8px;color:#ece8e1">Consistency pass</h2>
+  <p style="font:400 15px/1.6 'DM Sans';color:#9a958e;margin:0 0 22px;max-width:820px">Applied across all 22 screens after a full review. Detail per finding in <a href="Opening Book - Design review.dc.html">Design review</a>.</p>
+
+  <div style="border-top:1px solid #2a2724">
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">24</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One button spec</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Primary is filled <span style="font:600 12px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#ece8e1">#e85d04</span> with <span style="font:600 12px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#ece8e1">#100f0e</span> text at 8px radius, everywhere. Practice this opening became primary; Load more became tertiary — neutral surface, neutral text, no orange. Pill radii on the Analyse CTAs are gone; pill shape is now only used for the platform toggle, as the system intends.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The same action was drawn five ways across the set, and the effect was inverted priority: the most valuable action in the product (Practice) looked weaker than pagination.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">25</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Chrome is now identical on every page</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Desktop top bar: 60px, centred nav, 240px search, nothing else — the "Surprise me!" button came out of the detail page's bar and lives in the search hub. Mobile app bar: 56px everywhere (detail was 52px). Tab bar: 64px.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Chrome that shifts between pages is the same defect the review set out to remove, and a 4px app-bar jump is visible on navigation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">26</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">One name: repertoire</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"Your repertoire" for headings, "Repertoire" for the tab and app bar, "Added to your repertoire" for the toast. "My repertoire" and "Saved" are gone.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Four names for one feature, twice on a single screen. Second person throughout matches the system's voice note for personal features.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">27</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Counts add up, and mobile can page</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Desktop reads "24 openings" with 6 shown and "Load more (18 remaining)". The filtered component detail reads 3, matching its 3 cards and the sheet's "Show 3 openings". Mobile Discover gained the same Load more it was missing.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">The rule is now unambiguous: the count is the filtered total, the button is the difference. A spec that contradicts itself gets resolved by whoever is nearest the keyboard.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">28</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Copy and token corrections</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"Analyse your games" in sentence case on all six Analyse screens. "Search by pasting PGN" became <strong style="color:#ece8e1;font-weight:600">"Paste a game"</strong>. The dashboard's mobile CTA uses the inverse token instead of <span style="font:600 12px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#ece8e1">#fff</span>. The orange gradient rule under "Popular openings" is removed — it was the last use of orange as decoration.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">All four were rules the system already states; three were inherited from the current build rather than introduced by the redesign.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #2a2724">
+      <span style="font:600 13px/1.5 'SFMono-Regular',Monaco,Consolas,monospace;color:#5a554e">29</span>
+      <div>
+        <div style="font:700 16px/1.35 'DM Sans';color:#ece8e1;margin-bottom:6px">Links with no destination removed</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">"View repertoire" (pointed at an empty page), "View all" on the desktop repertoire row (no desktop page exists) and "Edit" on the Saved tab (undefined behaviour) are all out.</p>
+      </div>
+      <p style="font:400 14px/1.6 'DM Sans';color:#8e887f;margin:0">Each implied a screen that was never designed. Both decisions have since been settled: desktop has no repertoire page — the row is the repertoire — and there is no manual reordering, only a fixed most-recently-saved sort.</p>
+    </div>
+  </div>
+
+  <div style="height:56px"></div>
+
+  <h2 style="font:800 26px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 16px;color:#ece8e1">Considered and rejected</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:56px">
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Page-level filter bar on opening detail</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Promises the whole page responds to the level filter. Only two components do.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Master games as a full-width table</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Out-ranks the learning resources and costs a screen of height for browse content.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Colour-coded complexity pills</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">The only element on the page that would need a legend. A calm grey row reads better.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Board-driven common plans</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Tapping a plan to set the board isn't supported by the current data.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Consolidating the five "Show more" controls</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Decoupled reveals are correct; expanding everything at once would be unusable on mobile.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">A "Start here" onboarding trio on Discover</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Duplicated the filters. The faceted bar is the guided entry point instead.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Splitting the dashboard's two tables</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">They read fine side by side on desktop. Left as-is by decision.</p>
+    </div>
+    <div style="background:#232120;border:1px solid #2a2724;border-radius:10px;padding:16px 18px">
+      <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:6px">Low-confidence treatment for small samples</div>
+      <p style="font:400 13px/1.55 'DM Sans';color:#9a958e;margin:0">Sample size stays implicit in the Games count.</p>
+    </div>
+  </div>
+
+  <sc-if value="{{ showBuildNotes }}" hint-placeholder-val="{{ true }}">
+    <h2 style="font:800 26px/1.1 'Bricolage Grotesque';letter-spacing:-.02em;margin:0 0 16px;color:#ece8e1">For the build</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:56px">
+      <div style="background:#1f1d1b;border:1px solid #2a2724;border-radius:10px;padding:18px 20px">
+        <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:8px">Accessibility</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Real labels on the username input, not placeholder-only. Platform toggle as a radio group. Star buttons need an accessible name and pressed state. Orange focus outline on every control, offset 2px — never the browser default.</p>
+      </div>
+      <div style="background:#1f1d1b;border:1px solid #2a2724;border-radius:10px;padding:18px 20px">
+        <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:8px">Behaviour</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">Enter submits the analyse form; platform defaults to Chess.com and persists from last visit; Analyse stays disabled until a username is entered. Filter state should survive back-navigation from a detail page. The level filter on opening detail governs the explorer card only — never the master games list.</p>
+      </div>
+      <div style="background:#1f1d1b;border:1px solid #2a2724;border-radius:10px;padding:18px 20px">
+        <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:8px">Repertoire</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">There is no separate repertoire page on desktop — the row on Discover is the repertoire, which is why "View all" was removed. Mobile keeps its Repertoire tab. Sort is fixed at most recently saved first; no manual reordering. Revisit both if saved counts grow past what one row can hold.</p>
+      </div>
+      <div style="background:#1f1d1b;border:1px solid #2a2724;border-radius:10px;padding:18px 20px">
+        <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:8px">New strings</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The Analyse hero subtitle, "Nothing is stored.", "Your record" / "This analysis", "Opening explorer", the labelled reveal buttons, and the facet labels Level · Style · Family · Sort are copy to ship, not just layout.</p>
+      </div>
+      <div style="background:#1f1d1b;border:1px solid #2a2724;border-radius:10px;padding:18px 20px">
+        <div style="font:700 14px/1.3 'DM Sans';color:#ece8e1;margin-bottom:8px">Not covered by this review</div>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0 0 10px">Tablet breakpoints, the practice-mode flow, sign-in, the desktop search-results state, and save confirmation on the detail-page star. Every proposed screen shows the maximal case.</p>
+        <p style="font:400 14px/1.6 'DM Sans';color:#9a958e;margin:0">The sparse opening — no videos, no studies, few master games — is deliberately not drawn. The layout degrades gracefully: each block is independent, so an empty one is omitted rather than shown empty, and the remaining blocks close up. Do not add empty-state cards for missing sections.</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="border-top:1px solid #2a2724;padding-top:24px;font:400 13px/1.6 'DM Sans';color:#5a554e">Opening Book UX review · <a href="Opening Book - Proposed.dc.html">Proposed screens</a> · <a href="Opening Book - Current.dc.html">Current screens</a> · <a href="Opening Book - Design review.dc.html">Design review</a></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showBuildNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Change log&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { showBuildNotes: this.props.showBuildNotes ?? true };
+  }
+}
+</script>
+</body>
+</html>

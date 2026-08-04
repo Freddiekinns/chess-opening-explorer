@@ -82,9 +82,16 @@
   gap: var(--space-3);
 }
 
+/* The panel below is sized by its rows — ~380px once a result carries an ECO
+   pill and a Saved badge. The field was a fixed 240px, so focusing it opened a
+   dropdown 140px wider than the control that opened it, hanging off its left
+   edge. The field now tracks the panel's width instead, and gives way as the
+   bar runs out of room, so the two edges always agree. Fluid rather than a
+   fixed 380px because the top bar is a `1fr auto 1fr` grid: a right column
+   wider than its share drags the nav off centre. */
 .searchField {
   position: relative;
-  width: 220px;
+  width: clamp(300px, 30vw, 380px);
 }
 
 .searchInput {
@@ -117,79 +124,55 @@
   pointer-events: none;
 }
 
-/* Surprise me — orange label button */
-.surpriseBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
-  padding: var(--space-1-5) var(--space-4);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  white-space: nowrap;
-  cursor: pointer;
-  transition:
-    background-color 150ms ease,
-    opacity 150ms ease;
-}
+/* Surprise me is a browse-y action, not navigation — it lives in the search
+   hub now, so the bar holds search and nothing else on every page. */
 
-.surpriseBtn:hover {
-  opacity: 0.9;
-}
-
-.surpriseBtn:focus-visible {
-  outline: 2px solid var(--color-brand-orange);
-  outline-offset: 2px;
-}
-
-/* Dropdown */
+/* Dropdown — a <div> wrapper so it can hold either the hub or the results
+   list; list styling moved onto .results. */
+/* The panel clips; the list inside it scrolls. The scroll used to live here,
+   which would have carried the Surprise me footer off the bottom with it.
+   `clip` rather than `hidden` so this never becomes a scroll container. */
 .dropdown {
   position: absolute;
   top: calc(100% + var(--space-1));
+  /* Flush with the field on both edges. The panel used to be anchored right
+     and grow leftwards to fit its rows, which is what made it flare wider than
+     the field; the field is the thing that widened instead. */
   left: 0;
   right: 0;
   background-color: var(--surface-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
-  max-height: 320px;
-  overflow-y: auto;
+  overflow: clip;
   z-index: 200;
   box-shadow: var(--shadow-lg);
+}
+
+.results {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: 360px;
+  overflow-y: auto;
 }
 
-.dropdownItem {
-  padding: var(--space-2) var(--space-3);
-  cursor: pointer;
-  transition: background-color 150ms ease;
+/* Pinned under the scroller. The separator belongs to the panel, so the row
+   inside stays the row it is on every other surface. */
+.surpriseFooter {
+  padding: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
 }
 
-.dropdownItem:not(:last-child) {
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.dropdownItem:hover,
-.dropdownItemActive {
-  background-color: var(--surface-overlay);
-}
-
-.dropdownName {
-  display: block;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-}
-
-.dropdownMeta {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-0-5);
+/* Rows come from SearchRow.module.css. This file owns the panel only — it
+   used to carry a third implementation of a result row, different again from
+   the hero's and the overlay's. */
+.hubWrap {
+  padding: var(--space-3);
+  max-height: 420px;
+  overflow-y: auto;
 }
 
 /* Mobile search icon — hidden on desktop */
@@ -239,9 +222,18 @@
   }
 }
 
-/* Tablet: narrower search */
+/* Tablet: the bar has no room left to widen the field, so here — and only
+   here — the panel keeps growing leftwards rather than squashing its rows into
+   160px. */
 @media (min-width: 640px) and (max-width: 900px) {
   .searchField {
     width: 160px;
+  }
+
+  .dropdown {
+    left: auto;
+    width: max-content;
+    min-width: 100%;
+    max-width: min(380px, calc(100vw - var(--space-8)));
   }
 }

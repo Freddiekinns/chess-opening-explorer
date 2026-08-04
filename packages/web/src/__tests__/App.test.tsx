@@ -137,7 +137,10 @@ describe('App Component', () => {
         </MemoryRouter>
       );
 
-      expect(mockFetch).toHaveBeenCalledWith('/api/openings/popular-by-eco?limit=6');
+      // The grid moved from popular-by-eco to the browse endpoint in UX phase
+      // 3, so its items, total and facet counts arrive together.
+      const urls = mockFetch.mock.calls.map((call) => String(call[0]));
+      expect(urls.some((url) => url.startsWith('/api/openings/browse?'))).toBe(true);
     });
 
     test('should handle fetch errors gracefully', async () => {

@@ -4,26 +4,83 @@ body{padding:24px;background:var(--surface-base)}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-family:'DM Sans';font-weight:600;font-size:14px;cursor:pointer;border:1px solid transparent;transition:all .2s ease}
 .primary{background:#e85d04;color:#100f0e;border-color:#e85d04}
 .primary.hover{background:#f17a2f;transform:translateY(-1px);box-shadow:0 4px 12px rgba(232,93,4,.3)}
+/* Accent-outline — between primary and secondary. Fills on hover rather than
+   deepening: an outline that only shifts its border gives almost no feedback. */
+.accent{background:transparent;color:#e85d04;border-color:rgba(232,93,4,.5)}
+.accent.hover{background:rgba(232,93,4,.12);border-color:#e85d04}
 .secondary{background:#363330;color:#9a958e;border-color:#2a2724}
 .secondary.hover{background:#232120;color:#ece8e1;transform:translateY(-1px)}
+.tertiary{background:#232120;color:#ece8e1;border-color:#2a2724}
+.tertiary.hover{background:#363330;transform:translateY(-1px)}
+.focus{outline:2px solid #e85d04;outline-offset:2px}
 .disabled{opacity:.5;cursor:not-allowed}
 .icon-btn{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#9a958e;border:none;border-radius:8px;font-size:14px;font-weight:600}
 .icon-btn.hover{background:rgba(232,93,4,.06);color:#ece8e1}
 .cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
 .col{display:flex;flex-direction:column;gap:10px}
+.note{font-family:'DM Sans';font-size:12px;color:var(--color-text-muted);line-height:1.5;max-width:620px;margin-top:24px}
+.note code{font-family:var(--font-family-mono);font-size:11px}
 </style></head><body>
 <div class="row" style="gap:32px">
   <div class="col">
     <span class="cap">Primary · default / hover / disabled</span>
-    <div style="display:flex;gap:10px"><button class="btn primary">Surprise me</button><button class="btn primary hover">Surprise me</button><button class="btn primary disabled">Surprise me</button></div>
+    <div style="display:flex;gap:10px"><button class="btn primary">Analyse</button><button class="btn primary hover">Analyse</button><button class="btn primary disabled">Analyse</button></div>
+  </div>
+  <div class="col">
+    <span class="cap">Accent-outline · default / hover</span>
+    <div style="display:flex;gap:10px"><button class="btn accent">Practice</button><button class="btn accent hover">Practice</button></div>
   </div>
   <div class="col">
     <span class="cap">Secondary · default / hover</span>
     <div style="display:flex;gap:10px"><button class="btn secondary">Save FEN</button><button class="btn secondary hover">Save FEN</button></div>
   </div>
   <div class="col">
+    <span class="cap">Tertiary · default / hover — no orange</span>
+    <div style="display:flex;gap:10px"><button class="btn tertiary">Load more</button><button class="btn tertiary hover">Load more</button></div>
+  </div>
+  <div class="col">
     <span class="cap">Icon · default / hover</span>
     <div style="display:flex;gap:10px"><button class="icon-btn">‹</button><button class="icon-btn hover">›</button></div>
   </div>
+  <div class="col">
+    <span class="cap">Focus ring · every control, offset 2px</span>
+    <div style="display:flex;gap:10px"><button class="btn primary focus">Analyse</button><button class="btn tertiary focus">Load more</button></div>
+  </div>
 </div>
+
+<p class="note">
+  Four tiers, one job each. <strong>Primary</strong> is the single most valuable
+  action on a screen, and there should be exactly one.
+  <strong>Accent-outline</strong> is an action worth drawing in the brand colour
+  without claiming to be what the screen is for. <strong>Secondary</strong> is
+  grey and unremarkable. <strong>Tertiary</strong> carries pagination and other
+  low-stakes controls — no orange at all, so it can never out-rank the action
+  beside it.
+</p>
+<p class="note">
+  <strong>Accent-outline was added 2026-07-30, when Practice moved into it.</strong>
+  Practice shipped as filled primary because the spec reasoned from
+  implementation completeness — the feature is fully built, so it can carry
+  primary weight. That answers the wrong question: whether a feature is finished
+  and whether it deserves the loudest control on the page are different things,
+  and only the second decides button weight. Practice is a good action that is
+  not yet what the opening detail page is <em>for</em>. See §3.4 of the UX-review
+  spec before promoting it back, and the guard at
+  <code>styles/__tests__/buttonSpec.test.ts</code>.
+</p>
+<p class="note">
+  Before this the bundle documented two tiers while
+  <code>buttonSpec.test.ts</code> described "transparent with an orange outline"
+  as the <em>secondary</em> treatment — which was never true of
+  <code>.btn--secondary</code>, which is grey. Naming the third tier resolves
+  that: an orange outline is its own rank, not a weaker way of drawing grey.
+</p>
+<p class="note">
+  <strong>Fill-to-text ratio is part of the spec, not a detail.</strong>
+  Practice's desktop label was 11px inside 24px of horizontal padding, which
+  reads as a colour swatch with a word in it rather than a button — and desktop
+  said 11px while mobile said 13px for the same control. Both are 13px now with
+  the padding brought in to match. Mobile carries a 44px minimum because it is a
+  thumb target; desktop sizes to its text because it is a cursor target.
+</p>
 </body></html>

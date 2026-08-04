@@ -569,28 +569,44 @@
   transform: rotate(180deg);
 }
 
-/* Primary action of the board card — pushed to the right of the control row,
-   with the "…" position-tools button trailing it. */
+/* Accent-outline, matching desktop's .practice-toggle-btn — an action in the
+   brand colour, not a claim that it is what the page is for. It was filled
+   primary until 2026-07-30; the demotion is a product call about how developed
+   the feature is, recorded in §3.4 of the UX-review spec. Keep both breakpoints
+   on the same treatment: this button has drifted across them twice now, once on
+   fill and once on type size. */
 .mobilePracticeBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-1-5);
   margin-left: auto;
   background: transparent;
   color: var(--color-brand-orange);
-  border: 1px solid var(--color-brand-orange);
+  border: 1px solid var(--accent-a50);
   border-radius: var(--radius-md);
-  padding: var(--space-2-5) var(--space-3);
+  /* 44px, because this one is a thumb target. Desktop's is a cursor target and
+     sizes to its text. */
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
   cursor: pointer;
   flex: none;
-  transition: background 150ms ease;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
 }
 
 .mobilePracticeBtn:hover {
   background: var(--accent-a12);
+  border-color: var(--color-brand-orange);
+}
+
+.mobilePracticeBtn:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 /* Overview + Common plans form one editorial "reading zone": a sentence-case
@@ -638,44 +654,7 @@
   margin: var(--space-1) 0 var(--space-2-5) 0;
 }
 
-/* Repertoire toast — floats above the bottom tab bar */
-.toast {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom) + var(--space-3));
-  z-index: 150;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: var(--surface-overlay);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-full);
-  padding: var(--space-2) var(--space-4);
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  box-shadow: var(--shadow-md);
-  white-space: nowrap;
-  animation: toastIn 200ms ease-out;
-}
-
-.toastStar {
-  color: var(--color-brand-orange);
-  fill: var(--color-brand-orange);
-  flex: none;
-}
-
-@keyframes toastIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 6px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
+/* The repertoire toast now lives in components/shared/Toast. */
 
 /* Compact left-aligned header (design 2a) — CSS-only reflow of the shared DOM */
 @media (max-width: 767px) {
@@ -719,8 +698,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .stackedSection,
-  .overviewCard,
-  .toast {
+  .overviewCard {
     animation: none;
   }
 }

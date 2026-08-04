@@ -13,7 +13,16 @@ import {
   sortNodesByPopularity,
   stripMoveNumber,
 } from '../../../lib/openingBook';
-import { getBand, type BandId, type ExplorerResult } from '../../../lib/lichessExplorer';
+import type { BandId, ExplorerResult } from '../../../lib/lichessExplorer';
+import {
+  alternativesCaption,
+  explorerSourceLine,
+  gamesStatLabel,
+  liveStatsView,
+  movesCaption,
+  snapshotStatsView,
+  type PopularityStats,
+} from '../../../lib/explorerStats';
 import styles from './MobileDataSurface.module.css';
 
 /**
@@ -24,17 +33,7 @@ import styles from './MobileDataSurface.module.css';
  * OpeningNavigator cards on ≤767px only — desktop keeps both.
  */
 
-const MIN_LIVE_SAMPLE = 100;
 const ROWS_COLLAPSED_LIMIT = 3;
-
-interface PopularityStats {
-  games_analyzed?: number;
-  white_win_rate?: number;
-  black_win_rate?: number;
-  draw_rate?: number;
-  avg_rating?: number;
-  analysis_date?: string;
-}
 
 interface MobileDataSurfaceProps {
   fen: string;
@@ -47,47 +46,6 @@ interface MobileDataSurfaceProps {
   /** Explorer stats for the parent position — powers the alternatives rows. */
   parentExplorer: ExplorerResult | null;
   treeData: TreeContext | null;
-}
-
-interface StatsView {
-  games: string;
-  elo: string | null;
-  whitePct: number;
-  drawPct: number;
-  blackPct: number;
-  meta: string;
-}
-
-function bandMeta(band: BandId): string {
-  if (band === 'masters') return 'Master games · live';
-  if (band === 'all') return 'All Lichess games · live';
-  return `Lichess games, ${getBand(band).range} · live`;
-}
-
-function liveStatsView(result: ExplorerResult, band: BandId): StatsView | null {
-  if (result.totalGames < MIN_LIVE_SAMPLE) return null;
-  return {
-    games: formatCount(result.totalGames),
-    elo: result.averageRating ? Math.round(result.averageRating).toLocaleString() : null,
-    whitePct: Math.round((result.white / result.totalGames) * 100),
-    drawPct: Math.round((result.draws / result.totalGames) * 100),
-    blackPct: Math.round((result.black / result.totalGames) * 100),
-    meta: bandMeta(band),
-  };
-}
-
-function snapshotStatsView(stats: PopularityStats | null): StatsView | null {
-  if (!stats?.games_analyzed) return null;
-  return {
-    games: formatCount(stats.games_analyzed),
-    elo: stats.avg_rating ? Math.round(stats.avg_rating).toLocaleString() : null,
-    whitePct: Math.round((stats.white_win_rate || 0) * 100),
-    drawPct: Math.round((stats.draw_rate || 0) * 100),
-    blackPct: Math.round((stats.black_win_rate || 0) * 100),
-    meta: stats.analysis_date
-      ? `All Lichess games · updated ${stats.analysis_date}`
-      : 'All Lichess games',
-  };
 }
 
 function rowStatsTitle(row: MergedMoveRow): string | undefined {
@@ -171,7 +129,7 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
       </div>
       {canCollapse && (
         <button type="button" className={styles.showMoreBtn} onClick={() => setExpanded(!expanded)}>
-          {expanded ? 'Show less' : `Show ${rows.length - ROWS_COLLAPSED_LIMIT} more`}
+          {expanded ? 'Show less' : `Show ${rows.length - ROWS_COLLAPSED_LIMIT} more moves`}
         </button>
       )}
     </>
@@ -208,14 +166,19 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
 
   const heldResult =
     explorer.result ?? (lastResultRef.current?.fen === fen ? lastResultRef.current.result : null);
-  const heldBand = explorer.result ? band : (lastResultRef.current?.band ?? band);
 
+  const live = Boolean(band) && !explorer.failed;
   const snapshotView = snapshotStatsView(popularityStats);
-  const liveView = band && heldResult && heldBand ? liveStatsView(heldResult, heldBand) : null;
-  const statsView = band && !explorer.failed ? liveView : snapshotView;
+  const liveView = heldResult ? liveStatsView(heldResult) : null;
+  const statsView = live ? liveView : snapshotView;
   const loadingDim = explorer.loading;
-  const tooFewGames =
-    Boolean(band) && !explorer.loading && !explorer.failed && heldResult !== null && !liveView;
+  const tooFewGames = live && !explorer.loading && heldResult !== null && liveView === null;
+  // Nothing left to wait for: the fetch failed and there is no snapshot behind
+  // it. Without this the block fell through to the "Loading Lichess data…"
+  // placeholder and stayed there for good, and the "showing a saved snapshot"
+  // note is unreachable because it lives inside the statsView branch. Desktop's
+  // WinRatePanel returns null in the same state.
+  const noStatsAtAll = Boolean(band) && explorer.failed && snapshotView === null;
 
   // ── Opening book lists (same rules as the desktop OpeningNavigator) ──
   const current = treeData?.current ?? null;
@@ -271,13 +234,19 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
     : (current?.name ?? '');
 
   const hasBook = current !== null && (childRows.length > 0 || siblingRows.length > 0);
-  if (!statsView && !loadingDim && !tooFewGames && !hasBook) return null;
+  if (!statsView && !loadingDim && !tooFewGames && !noStatsAtAll && !hasBook) return null;
 
   return (
     <div className={styles.surface}>
       <div className={styles.gradientStrip} aria-hidden="true" />
 
       <div className={styles.stickyHeader}>
+        <div className={styles.headerTop}>
+          <h2 className={styles.headerTitle}>Opening explorer</h2>
+          <span className={styles.headerSource}>
+            {explorerSourceLine(band, live, popularityStats?.analysis_date)}
+          </span>
+        </div>
         <LevelLens band={band} onChange={onBandChange} scrollable />
       </div>
 
@@ -289,9 +258,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
           <>
             <div className={styles.statsHeader}>
               <span className={styles.statGroup}>
-                <span className={styles.statLabel}>
-                  {band && !explorer.failed ? 'Games at this level' : 'Total games'}
-                </span>
+                <span className={styles.statLabel}>{gamesStatLabel(band, live)}</span>
                 <span className={styles.statValue}>{statsView.games}</span>
               </span>
               {statsView.elo && (
@@ -318,11 +285,15 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                 Live Lichess data isn't available right now — showing a saved snapshot instead.
               </div>
             )}
-            <div className={styles.statsMeta}>{statsView.meta}</div>
           </>
         ) : tooFewGames ? (
           <div className={styles.statsPlaceholder}>
             Not enough games at this level to show reliable numbers.
+          </div>
+        ) : noStatsAtAll ? (
+          <div className={styles.statsPlaceholder} role="status">
+            Live Lichess data isn&rsquo;t available right now, and there is no saved snapshot for
+            this position.
           </div>
         ) : (
           <div className={styles.statsPlaceholder} role="status">
@@ -387,8 +358,8 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
 
           {childRows.length > 0 && (
             <>
-              <div className={styles.bookHeading}>Continuations</div>
-              <div className={styles.bookSubheading}>Most popular next moves</div>
+              <div className={styles.bookHeading}>Next moves</div>
+              <div className={styles.bookSubheading}>{movesCaption(band, live)}</div>
               <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
             </>
           )}
@@ -398,7 +369,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
               <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
                 {alternativesLabel}
               </div>
-              <div className={styles.bookSubheading}>Most popular alternatives</div>
+              <div className={styles.bookSubheading}>{alternativesCaption(band, live)}</div>
               <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
             </>
           )}

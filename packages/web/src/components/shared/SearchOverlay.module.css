@@ -5,6 +5,11 @@
   background: var(--surface-elevated);
   display: flex;
   flex-direction: column;
+  /* The bottom tab bar paints over this overlay, so the last row of results
+     was being clipped by it. Reserve its height and the pinned Surprise me
+     row clears it too. Same 639px breakpoint governs both. */
+  padding-bottom: calc(var(--bottom-tab-bar-height) + env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 .header {
@@ -82,97 +87,25 @@
   flex-direction: column;
   gap: var(--space-1);
   margin-bottom: var(--space-5);
+  padding: 0;
+  list-style: none;
 }
 
 .rowList:last-child {
   margin-bottom: 0;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2-5);
-  padding: var(--space-2-5) var(--space-3);
-  border-radius: var(--radius-md);
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border-subtle);
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  transition:
-    border-color 150ms ease,
-    background 150ms ease;
-}
+/* Rows themselves live in SearchRow.module.css — this overlay used to carry
+   its own copy, which is how the mobile blank state and the mobile results
+   drifted apart from each other and from desktop. */
 
-.row:hover {
-  border-color: var(--accent-a30);
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.rowIcon {
+/* Surprise me survives into the results, pinned outside the scrolling body:
+   twenty results deep is exactly where someone gives up, and that is where
+   this has to still be on screen. */
+.surpriseFooter {
   flex: none;
-  color: var(--color-text-muted);
-}
-
-.rowIconStar {
-  color: var(--color-brand-orange);
-  fill: var(--color-brand-orange);
-}
-
-.rowText {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-0-5);
-}
-
-.rowName {
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.rowMeta {
-  font-size: var(--text-2xs);
-  color: var(--color-text-secondary);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.rowEco {
-  font-family: var(--font-family-mono);
-}
-
-.rowChevron {
-  flex: none;
-  color: var(--color-text-muted);
-}
-
-.surpriseBtn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) 0;
-  background: var(--color-brand-orange);
-  border: none;
-  border-radius: var(--radius-md);
-  color: var(--surface-base);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 150ms ease;
-}
-
-.surpriseBtn:hover {
-  background: var(--color-brand-orange-hover);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .searchingNote {
@@ -182,22 +115,5 @@
   color: var(--color-text-muted);
 }
 
-.noResults {
-  text-align: center;
-  padding: var(--space-8) var(--space-4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.noResultsTitle {
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-}
-
-.noResultsHint {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-}
+/* The no-results block moved to `SearchNoResults`, shared with the hero and
+   the top bar — one dead end, one voice. */

@@ -4,6 +4,7 @@ const TreeService = require('../services/tree-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
 const CourseService = require('../services/course-service');
+const BrowseService = require('../services/browse-service');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -16,11 +17,33 @@ const ecoService = new ECOService();
 const treeService = new TreeService();
 const videoAccessService = new VideoAccessService();
 const courseService = new CourseService();
+const browseService = new BrowseService();
 const familyResourceService = new FamilyResourceService({
   ecoService,
   videoAccessService,
   courseService,
 });
+
+/**
+ * A search result, cut to what a search row is made of.
+ *
+ * The service returns whole opening records — `analysis_json` and all — so
+ * twenty results were 55 KB of JSON to draw twenty lines of name, ECO code and
+ * moves. A dropdown repaints on every keystroke and most of these are read on a
+ * phone, so the description nobody rendered was the largest part of the cost of
+ * searching. `games_analyzed` stays because the client ranks with it;
+ * `searchScore` because the client promotes saved openings within a tie.
+ */
+function toSearchResult(opening) {
+  return {
+    fen: opening.fen,
+    name: opening.name,
+    eco: opening.eco,
+    moves: opening.moves || '',
+    games_analyzed: opening.games_analyzed,
+    searchScore: opening.searchScore,
+  };
+}
 
 /**
  * Match-reason annotation (review V2): on sub-variation pages, badge each
@@ -607,6 +630,73 @@ router.get('/popular-by-eco', (req, res) => {
 });
 
 /**
+ * @route GET /api/openings/browse
+ * @desc  Filtered, sorted, paginated openings PLUS the facet counts for the
+ *        filter bar — computed over the same corpus in the same request, so
+ *        the count on screen and the grid contents cannot disagree. Today's
+ *        landing page takes its category counts from one fetch and its grid
+ *        from another, which is why they never reconcile.
+ * @param {string} level  - Beginner | Intermediate | Advanced
+ * @param {string} style  - gambit | aggressive | tactical | positional | solid | system
+ * @param {string} family - family_id from families.json (or `uncategorised`)
+ * @param {string} sort   - popular (default) | name
+ * @param {number} page     - 1-based, default 1
+ * @param {number} pageSize - default 24, hard max 48
+ */
+router.get('/browse', (req, res) => {
+  try {
+    const config = browseService.getConfig();
+    const { level, style, family, sort, page, pageSize } = req.query;
+
+    // Unknown values are rejected rather than ignored: a silent empty result is
+    // indistinguishable from a genuine empty filter and sends the client
+    // hunting for a data bug.
+    const reject = (field, value) =>
+      res.status(400).json({
+        success: false,
+        error: `Unknown ${field}: ${value}`,
+      });
+
+    // Matched case-insensitively, then canonicalised. These values live in the
+    // URL — shared, bookmarked, retyped — and the casing the corpus happens to
+    // use differs per facet ("Beginner", but "aggressive"). A case slip is a
+    // typo, not an unknown filter, and used to blank the whole grid.
+    const canonical = (values, value) =>
+      values.find((candidate) => candidate.toLowerCase() === value.toLowerCase());
+
+    const levelValue = level && canonical(config.levels.map((l) => l.value), level);
+    if (level && !levelValue) return reject('level', level);
+
+    const styleValues = [config.gambitOverride, ...config.styles].map((s) => s.value);
+    const styleValue = style && canonical(styleValues, style);
+    if (style && !styleValue) return reject('style', style);
+
+    const sortValue = sort && canonical(config.sorts.map((s) => s.value), sort);
+    if (sort && !sortValue) return reject('sort', sort);
+
+    const familyValue = family && canonical([...browseService.familyIds()], family);
+    if (family && !familyValue) return reject('family', family);
+
+    const result = browseService.browse({
+      level: levelValue || null,
+      style: styleValue || null,
+      family: familyValue || null,
+      sort: sortValue || config.defaultSort,
+      page,
+      pageSize,
+    });
+
+    res.json({ success: true, ...result });
+  } catch (error) {
+    console.error('Browse error:', error.message);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to browse openings',
+    });
+  }
+});
+
+/**
  * @route GET /api/openings/search-index
  * @desc Get lightweight search index for client-side search (names and ECO codes only)
  * @param {number} limit - Max results to return (default: all, can limit for faster initial load)
@@ -804,7 +894,7 @@ router.get('/semantic-search', async (req, res) => {
 
     res.json({
       success: true,
-      data: searchResults.results,
+      data: searchResults.results.map(toSearchResult),
       count: searchResults.results.length,
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,

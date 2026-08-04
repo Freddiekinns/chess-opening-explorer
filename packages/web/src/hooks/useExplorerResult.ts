@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
-import { fetchExplorer, type BandId, type ExplorerResult } from '../lib/lichessExplorer';
+import {
+  ExplorerError,
+  fetchExplorer,
+  type BandId,
+  type ExplorerResult,
+} from '../lib/lichessExplorer';
+import { trackEvent } from '../lib/analytics';
 
 export interface ExplorerQuery {
   result: ExplorerResult | null;
@@ -15,11 +21,23 @@ export interface ExplorerQuery {
  * surface's stats block. Result is null until a band is chosen and the
  * fetch resolves. Errors resolve to a null result (the book must render
  * fine without live stats), but `failed` is exposed so the mobile stats
- * block can fall back to the snapshot instead of loading forever
- * (WinRatePanel owns the explorer_error beacon for the shared
- * current-position fetch; the cache/in-flight dedupe in fetchExplorer
- * means this adds no extra request for it).
+ * block can fall back to the snapshot instead of loading forever. A failed
+ * fetch is reported to analytics here, once, for every breakpoint.
  */
+/**
+ * Band-fetch failures are reported here, not by a consumer: this hook is the
+ * one place every breakpoint's band fetch goes through. While the beacon sat
+ * in WinRatePanel — a desktop-only component — every mobile explorer failure
+ * was invisible.
+ */
+function reportExplorerError(err: unknown): void {
+  if (err instanceof ExplorerError && err.status !== undefined) {
+    trackEvent('explorer_error', { status: err.status });
+  } else {
+    trackEvent('explorer_error');
+  }
+}
+
 export function useExplorerQuery(
   fen: string | null | undefined,
   band: BandId | null
@@ -42,8 +60,9 @@ export function useExplorerQuery(
       try {
         const fetched = await fetchExplorer(fen, band);
         if (alive) setQuery({ result: fetched, loading: false, failed: false });
-      } catch {
+      } catch (err) {
         // Progressive enhancement only — callers degrade to snapshot data.
+        reportExplorerError(err);
         if (alive) setQuery({ result: null, loading: false, failed: true });
       }
     })();

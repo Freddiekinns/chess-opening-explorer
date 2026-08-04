@@ -102,16 +102,28 @@ function renderSurface(props: Partial<React.ComponentProps<typeof MobileDataSurf
 }
 
 describe('MobileDataSurface', () => {
-  test('renders live level stats with W/D/L legend and live meta', () => {
+  test('renders live level stats scoped and sourced to the active level', () => {
     renderSurface();
-    expect(screen.getByText('Games at this level')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Opening explorer' })).toBeInTheDocument();
+    expect(screen.getByText('Lichess · 1400–1800')).toBeInTheDocument();
+    expect(screen.getByText('Games · 1400–1800')).toBeInTheDocument();
     expect(screen.getByText('1k')).toBeInTheDocument();
     expect(screen.getByText('Average Elo')).toBeInTheDocument();
     expect(screen.getByText('1,604')).toBeInTheDocument();
     expect(screen.getByText('White 42%')).toBeInTheDocument();
     expect(screen.getByText('Draws 6%')).toBeInTheDocument();
     expect(screen.getByText('Black 52%')).toBeInTheDocument();
-    expect(screen.getByText('Lichess games, 1400–1800 · live')).toBeInTheDocument();
+  });
+
+  /* live=false (the fetch failed) with no snapshot behind it satisfied neither
+     the stats branch nor tooFewGames, so the block fell through to the loading
+     placeholder and sat there for good. Desktop's WinRatePanel returns null in
+     the same state; mobile still has the book to draw, so it says so instead. */
+  test('says live data is unavailable rather than loading forever', () => {
+    renderSurface({ explorer: query({ failed: true }), popularityStats: null });
+
+    expect(screen.queryByText('Loading Lichess data…')).not.toBeInTheDocument();
+    expect(screen.getByText(/no saved snapshot for this position/i)).toBeInTheDocument();
   });
 
   test('level pills call onBandChange', async () => {
@@ -126,7 +138,7 @@ describe('MobileDataSurface', () => {
     expect(screen.getByText('Total games')).toBeInTheDocument();
     expect(screen.getByText('54.3k')).toBeInTheDocument();
     expect(screen.getByText(/showing a saved snapshot/)).toBeInTheDocument();
-    expect(screen.getByText('All Lichess games · updated 2025-07-15')).toBeInTheDocument();
+    expect(screen.getByText('Saved snapshot · updated 2025-07-15')).toBeInTheDocument();
   });
 
   test('says so when the level has too few games for reliable numbers', () => {
@@ -141,10 +153,10 @@ describe('MobileDataSurface', () => {
 
   test('renders continuations and anchored alternatives with book rows as links', () => {
     renderSurface();
-    expect(screen.getByText('Continuations')).toBeInTheDocument();
-    expect(screen.getByText('Most popular next moves')).toBeInTheDocument();
+    expect(screen.getByText('Next moves')).toBeInTheDocument();
+    expect(screen.getByText('Most popular at 1400–1800')).toBeInTheDocument();
     expect(screen.getByText('Instead of 4.Nxd5')).toBeInTheDocument();
-    expect(screen.getByText('Most popular alternatives')).toBeInTheDocument();
+    expect(screen.getByText('Most popular alternatives at 1400–1800')).toBeInTheDocument();
 
     const contLink = screen.getByRole('link', { name: /4\.\.\.Qxd5/ });
     expect(contLink).toHaveAttribute('href', `/opening/${encodeURIComponent('fen-child')}`);
@@ -181,6 +193,19 @@ describe('MobileDataSurface', () => {
 
     await user.click(screen.getByRole('button', { name: 'Collapse opening hierarchy' }));
     expect(screen.getByRole('button', { name: 'Show opening hierarchy' })).toBeInTheDocument();
+  });
+
+  test('names the payload of the move reveal', () => {
+    const tree = makeTree();
+    tree.children = [
+      makeNode({ fen: 'c1', name: 'A', move: '4...a', gamesPlayed: 900 }),
+      makeNode({ fen: 'c2', name: 'B', move: '4...b', gamesPlayed: 800 }),
+      makeNode({ fen: 'c3', name: 'C', move: '4...c', gamesPlayed: 700 }),
+      makeNode({ fen: 'c4', name: 'D', move: '4...d', gamesPlayed: 600 }),
+      makeNode({ fen: 'c5', name: 'E', move: '4...e', gamesPlayed: 500 }),
+    ];
+    renderSurface({ treeData: tree });
+    expect(screen.getByRole('button', { name: 'Show 2 more moves' })).toBeInTheDocument();
   });
 
   test('renders nothing without stats or book data', () => {

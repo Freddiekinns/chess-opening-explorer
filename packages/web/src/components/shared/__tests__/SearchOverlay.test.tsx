@@ -54,16 +54,16 @@ describe('SearchOverlay', () => {
 
     expect(screen.getByText('Recent')).toBeInTheDocument();
     expect(screen.getByText('Caro-Kann Defence')).toBeInTheDocument();
-    expect(screen.getByText('My repertoire')).toBeInTheDocument();
+    expect(screen.getByText('Your repertoire')).toBeInTheDocument();
     expect(screen.getAllByText(/Repertoire Opening/)).toHaveLength(5);
-    expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
   });
 
   test('hides empty sections when there is nothing to show', () => {
     renderOverlay();
     expect(screen.queryByText('Recent')).not.toBeInTheDocument();
-    expect(screen.queryByText('My repertoire')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
+    expect(screen.queryByText('Your repertoire')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
   });
 
   test('tapping a repertoire row navigates to the opening and closes', async () => {
@@ -92,8 +92,39 @@ describe('SearchOverlay', () => {
 
     await user.type(screen.getByPlaceholderText('Search openings...'), 'al');
     await waitFor(() => expect(screen.getByText('Alekhine Defense')).toBeInTheDocument());
-    // Empty-state sections give way to results
-    expect(screen.queryByRole('button', { name: /Surprise me!/ })).not.toBeInTheDocument();
+    // Empty-state sections give way to results...
+    expect(screen.queryByText('Recent')).not.toBeInTheDocument();
+    // ...but the way out of a search that is not working stays put.
+    expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
+    // No count line — the openings appearing are the feedback.
+    expect(screen.queryByText(/opening[s]? match(es)?$/i)).not.toBeInTheDocument();
+  });
+
+  test('marks a result that is already in the repertoire', async () => {
+    const user = userEvent.setup();
+    seedRepertoire(1);
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({
+          success: true,
+          data: [
+            { fen: 'rep-fen-0', name: 'Repertoire Opening 0', eco: 'C00', moves: '1. e4 e6' },
+            { fen: 'other-fen', name: 'French Defence', eco: 'C01', moves: '1. e4 e6 2. d4' },
+          ],
+        }),
+      }))
+    );
+    renderOverlay();
+
+    await user.type(screen.getByPlaceholderText('Search openings...'), 'fr');
+    // Waiting on the marker, not on the row: the locally held index draws
+    // matching openings on the keystroke, so "French Defence" is on screen
+    // before the server's list — which is the one carrying the repertoire
+    // opening that "fr" does not match — has replaced it.
+    await waitFor(() => expect(screen.getAllByText('Saved')).toHaveLength(1));
+    expect(screen.getByRole('button', { name: /Repertoire Opening 0/ })).toHaveTextContent('Saved');
   });
 
   test('shows the no-results hint when the search comes back empty', async () => {

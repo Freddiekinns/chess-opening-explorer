@@ -32,6 +32,7 @@ export const StarButton: React.FC<StarButtonProps> = ({
       className={`${styles.starButton} ${className}`}
       onClick={handleClick}
       aria-label={filled ? 'Remove from repertoire' : 'Save to repertoire'}
+      aria-pressed={filled}
       type="button"
     >
       <svg

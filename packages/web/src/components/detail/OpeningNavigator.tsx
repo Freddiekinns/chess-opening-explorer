@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import type { TreeContext } from '../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../lib/lichessExplorer';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../lib/bookExplorerMerge';
+import { alternativesCaption, movesCaption } from '../../lib/explorerStats';
+import type { BandId } from '../../lib/lichessExplorer';
 import {
   deduplicateAncestors,
   formatCount,
@@ -30,6 +32,10 @@ interface OpeningNavigatorProps {
   explorer?: ExplorerResult | null;
   /** Explorer stats for the parent position — the same treatment for Alternatives. */
   parentExplorer?: ExplorerResult | null;
+  /** Active level, for the captions. */
+  band?: BandId | null;
+  /** True when live explorer data drives the rows — gates the level echo. */
+  live?: boolean;
 }
 
 function statsTitle(row: MergedMoveRow): string | undefined {
@@ -141,11 +147,19 @@ const MoveRows: React.FC<MoveRowsProps> = ({
   </div>
 );
 
+/**
+ * The move lists inside the ExplorerCard: breadcrumb, next moves and the
+ * alternatives to the move that reached this position. It renders as a plain
+ * section — the card owns the border, the shadow and the "Opening explorer"
+ * heading, because the level pills in that header govern these rows.
+ */
 export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
   treeData,
   loading,
   explorer = null,
   parentExplorer = null,
+  band = null,
+  live = false,
 }) => {
   const [continuationsExpanded, setContinuationsExpanded] = useState(false);
   const [alternativesExpanded, setAlternativesExpanded] = useState(false);
@@ -159,8 +173,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
 
   if (loading) {
     return (
-      <div className={styles.navigator}>
-        <div className={styles.navigatorTitle}>Opening book</div>
+      <div className={styles.book}>
         <div className={styles.skeleton}>
           <div className={styles.skeletonStrip} />
           <div className={styles.skeletonActive} />
@@ -233,9 +246,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
       : 'Alternatives';
 
   return (
-    <div className={styles.navigator}>
-      <div className={styles.navigatorTitle}>Opening book</div>
-
+    <div className={styles.book}>
       {/* Opening hierarchy breadcrumb */}
       {breadcrumbAncestors.length > 0 && (
         <div className={`${styles.section} ${styles.sectionFirst}`}>
@@ -278,7 +289,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
               className={`${styles.section} ${breadcrumbAncestors.length === 0 ? styles.sectionFirst : ''}`}
             >
               <div className={styles.sectionLabel}>Next moves</div>
-              <div className={styles.sectionSublabel}>Most popular next moves</div>
+              <div className={styles.sectionSublabel}>{movesCaption(band, live)}</div>
               <MoveRows
                 rows={visibleRows}
                 ply={pliesPlayed}
@@ -291,7 +302,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                   className={styles.showMoreBtn}
                   onClick={() => setContinuationsExpanded(!continuationsExpanded)}
                 >
-                  {continuationsExpanded ? 'Show less' : `Show ${hiddenCount} more`}
+                  {continuationsExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
                 </button>
               )}
             </div>
@@ -311,7 +322,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
           return (
             <div className={styles.section}>
               <div className={styles.sectionLabel}>{alternativesLabel}</div>
-              <div className={styles.sectionSublabel}>Most popular alternatives</div>
+              <div className={styles.sectionSublabel}>{alternativesCaption(band, live)}</div>
               <MoveRows
                 rows={visibleRows}
                 ply={currentMoveIdx}
@@ -325,7 +336,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                   className={styles.showMoreBtn}
                   onClick={() => setAlternativesExpanded(!alternativesExpanded)}
                 >
-                  {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more`}
+                  {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
                 </button>
               )}
             </div>

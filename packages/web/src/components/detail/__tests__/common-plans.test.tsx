@@ -51,7 +51,7 @@ describe('CommonPlans', () => {
     expect(screen.getByText('Develop with tempo')).toBeInTheDocument();
     expect(screen.queryByText('Keep queens on the board')).not.toBeInTheDocument();
 
-    await user.click(screen.getByRole('button', { name: 'Show 1 more' }));
+    await user.click(screen.getByRole('button', { name: 'Show 1 more plan' }));
     expect(screen.getByText('Keep queens on the board')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Show less' }));

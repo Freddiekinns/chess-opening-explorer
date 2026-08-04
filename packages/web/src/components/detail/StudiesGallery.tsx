@@ -97,7 +97,7 @@ const StudiesGallery: React.FC<StudiesGalleryProps> = ({ studies, openingName: _
 
       {hasMore && !showAll && (
         <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
-          Show {remainingCount} more ▾
+          Show {remainingCount} more {remainingCount === 1 ? 'study' : 'studies'} ▾
         </button>
       )}
     </div>

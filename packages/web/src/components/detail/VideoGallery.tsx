@@ -230,7 +230,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, hideTitle = false }
 
       {hasMore && !showAll && (
         <button className={styles.showMoreButton} onClick={() => setShowAll(true)}>
-          Show {remainingCount} more ▾
+          Show {remainingCount} more {remainingCount === 1 ? 'video' : 'videos'} ▾
         </button>
       )}
     </div>

@@ -7,12 +7,11 @@ import {
   CommonPlans,
   VideoGallery,
   StudiesGallery,
-  OpeningNavigator,
-  WinRatePanel,
+  ExplorerCard,
+  MasterGamesCard,
 } from '../components/detail';
 import type { Study, SearchLinks } from '../components/detail/StudiesGallery';
 import MobileDataSurface from '../components/detail/mobile/MobileDataSurface';
-import MobileMasterGames from '../components/detail/mobile/MobileMasterGames';
 import MobileResources from '../components/detail/mobile/MobileResources';
 import PositionSheet from '../components/detail/mobile/PositionSheet';
 import styles from './OpeningDetailPage.module.css';
@@ -136,7 +135,6 @@ const OpeningDetailPage: React.FC = () => {
   // moves on first load, without waiting for an explicit level choice.
   const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
   const explorerQuery = useExplorerQuery(opening?.fen ?? null, band);
-  const explorer = explorerQuery.result;
   const parentFen =
     treeData?.ancestors && treeData.ancestors.length > 0
       ? treeData.ancestors[treeData.ancestors.length - 1].fen
@@ -1401,8 +1399,6 @@ const OpeningDetailPage: React.FC = () => {
               treeData={treeData}
             />
 
-            <MobileMasterGames fen={opening.fen} />
-
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
                 <h2 className={styles.mobileSectionHeading}>Common plans</h2>
@@ -1418,11 +1414,15 @@ const OpeningDetailPage: React.FC = () => {
               searchLinks={searchLinks}
               openingName={opening?.name || ''}
             />
+
+            {/* Last: master games are browse content and must not outrank the
+                learning resources. Same block order as desktop. */}
+            <MasterGamesCard fen={opening.fen} variant="accordion" />
           </div>
         ) : (
-          /* Right Column - Overview + Level lens + Stats + Navigator.
-             Overview leads so the level lens sits directly above both data
-             panels it governs (stats + book) — matching the mobile order. */
+          /* Right column — Overview, then one bordered explorer card holding
+             the level filter and everything it governs, then master games
+             outside that border because the filter does not reach them. */
           <div className={`right-column ${styles.rightColumn}`}>
             {/* Overview — about this opening */}
             {opening?.eco && (
@@ -1432,19 +1432,18 @@ const OpeningDetailPage: React.FC = () => {
               </div>
             )}
 
-            <WinRatePanel
-              popularityStats={popularityStats}
+            <ExplorerCard
               fen={opening.fen}
               band={band}
               onBandChange={setBand}
+              popularityStats={popularityStats}
+              explorer={explorerQuery}
+              parentExplorer={parentExplorer}
+              treeData={treeData}
+              treeLoading={treeLoading}
             />
 
-            <OpeningNavigator
-              treeData={treeData}
-              loading={treeLoading}
-              explorer={explorer}
-              parentExplorer={parentExplorer}
-            />
+            <MasterGamesCard fen={opening.fen} />
           </div>
         )}
       </div>

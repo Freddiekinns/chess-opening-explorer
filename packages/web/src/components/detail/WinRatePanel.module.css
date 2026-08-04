@@ -1,15 +1,11 @@
+/* Stats block inside the ExplorerCard. No card chrome of its own — the card
+   owns the border, the shadow and the radius. */
 .panel {
-  background-color: var(--surface-raised);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
-/* Live panel states */
 .liveUnavailable {
   font-size: var(--text-2xs);
   color: var(--color-text-muted);
@@ -26,79 +22,115 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Approximates the bare WinRateBar block so swapping in live data
-     doesn't shift the notable-games list below. */
+  /* Approximates the stats block so resolving live data doesn't shift the
+     opening book below it. */
   min-height: 104px;
 }
 
-/* Notable games */
-.notable {
+/* ── Stat pair (July's right-column spec, unchanged) ── */
+.statsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.statGroup {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  border-top: 1px solid var(--border-subtle);
-  padding-top: var(--space-3);
+  min-width: 0;
 }
 
-.notableTitle {
+.statGroupRight {
+  align-items: flex-end;
+}
+
+.statLabel {
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
-.notableList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.notableLink {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-2);
-  font-size: var(--text-xs);
+.statValue {
+  font-family: var(--font-family-headline);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: -0.02em;
   color: var(--color-text-primary);
-  text-decoration: none;
-  padding: var(--space-1) 0;
-}
-
-.notableLink:hover .notablePlayers {
-  color: var(--color-brand-orange);
-}
-
-.notablePlayers {
-  transition: color 0.15s ease;
-}
-
-.notableResult {
-  color: var(--color-text-muted);
-  white-space: nowrap;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 
-.showMoreBtn {
-  display: block;
-  width: 100%;
-  margin-top: var(--space-1);
-  padding: var(--space-1-5) 0;
-  background: var(--border-subtle);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-muted);
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition:
-    color 150ms ease,
-    border-color 150ms ease;
+.statValueElo {
+  color: var(--color-brand-orange);
 }
 
-.showMoreBtn:hover {
-  border-color: var(--border-hover);
-  color: var(--color-text-secondary);
+/* ── Result bar ── */
+.bar {
+  display: flex;
+  height: 8px;
+  gap: 2px;
+  margin-top: var(--space-1);
+}
+
+.barWhite,
+.barDraw,
+.barBlack {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 400ms ease-out;
+}
+
+.barWhite {
+  background-color: var(--color-result-white);
+}
+
+.barDraw {
+  background-color: var(--color-result-draw);
+}
+
+.barBlack {
+  background-color: var(--color-result-black);
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.swatchWhite {
+  background-color: var(--color-result-white);
+}
+
+.swatchDraw {
+  background-color: var(--color-result-draw);
+}
+
+.swatchBlack {
+  background-color: var(--color-result-black);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barWhite,
+  .barDraw,
+  .barBlack {
+    transition: none;
+  }
 }

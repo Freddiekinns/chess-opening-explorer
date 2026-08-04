@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        padding: 24px;
+        background: var(--surface-base);
+        font-family: var(--font-family-primary), sans-serif;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .cap {
+        display: block;
+        font-family: var(--font-family-mono);
+        font-size: 10px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      /* The card: one border around the filter and everything it governs. */
+      .card {
+        width: 380px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        /* clip, not hidden — hidden would capture a sticky descendant. */
+        overflow: clip;
+      }
+      /* Raised band = the filter's territory, stated as a surface change. */
+      .band {
+        background: var(--surface-elevated);
+        border-bottom: 1px solid var(--color-border);
+        padding: 12px 16px;
+      }
+      .bandTop {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-family: var(--font-family-headline);
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--color-text-primary);
+        margin: 0;
+      }
+      .source {
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .pill {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-full);
+        padding: 5px 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+      .pillActive {
+        background: var(--color-brand-orange);
+        border-color: var(--color-brand-orange);
+        color: var(--color-text-inverse);
+      }
+      .body {
+        padding: 16px;
+      }
+      .bookBlock {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .stats {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .statGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .statRight {
+        align-items: flex-end;
+      }
+      .statLabel {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+      .statValue {
+        font-family: var(--font-family-headline);
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--color-text-primary);
+      }
+      .statElo {
+        color: var(--color-brand-orange);
+      }
+      .bar {
+        display: flex;
+        height: 8px;
+        gap: 2px;
+        margin-top: 12px;
+      }
+      .bar span {
+        height: 100%;
+        border-radius: var(--radius-full);
+      }
+      .legend {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+      .swatch {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        margin-right: 4px;
+      }
+      .sectionLabel {
+        font-family: var(--font-family-headline);
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--color-text-primary);
+        margin-bottom: 2px;
+      }
+      .sectionSub {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-bottom: 12px;
+      }
+      .reveal {
+        display: block;
+        margin-top: 8px;
+        padding: 8px 0;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+      /* Master games: same rail, deliberately its own border. */
+      .mg {
+        width: 380px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        overflow: clip;
+      }
+      .mgHead {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 16px 8px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        white-space: nowrap;
+      }
+      .game {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 12px;
+        color: var(--color-text-primary);
+      }
+      .result {
+        font-family: var(--font-family-mono);
+        color: var(--color-text-muted);
+      }
+      .mgReveal {
+        display: block;
+        margin: 8px 16px 16px;
+        padding: 8px 0;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Opening detail, right rail (UX review phase 4). One border around the
+         level filter and everything it governs; master games sit outside it
+         because the filter does not reach them. Before this the pills sat in
+         the stats card, did not reach the master games in that same card, and
+         silently drove a separate card outside it.
+
+         Deviations from the 2026-07-27 mock, both for the same reason — we do
+         not hold the data:
+         · Source line is "Over-the-board masters", not "2,400+ Elo". The
+           /api/explorer proxy applies no rating filter to the masters band.
+         · The reveal reads "Show N more games", not "All 47 master games".
+           The explorer returns at most 15 top games and we dedupe by player,
+           so we never hold all of them and cannot state a total.
+         Master games also carry no event name in the payload, so rows are
+         players · result · year only — never the mock's "World Championship". -->
+
+    <div class="row">
+      <div>
+        <span class="cap">explorer card — the filter and its territory, one border</span>
+        <div class="card">
+          <div class="band">
+            <div class="bandTop">
+              <h2 class="title">Opening explorer</h2>
+              <span class="source">Lichess · 1400–1800</span>
+            </div>
+            <div class="pills">
+              <span class="pill">All</span>
+              <span class="pill">Beginner</span>
+              <span class="pill pillActive">Intermediate</span>
+              <span class="pill">Advanced</span>
+              <span class="pill">Expert</span>
+              <span class="pill">Masters</span>
+            </div>
+          </div>
+
+          <div class="body">
+            <div class="stats">
+              <span class="statGroup">
+                <span class="statLabel">Games · 1400–1800</span>
+                <span class="statValue">612k</span>
+              </span>
+              <span class="statGroup statRight">
+                <span class="statLabel">Average Elo</span>
+                <span class="statValue statElo">1,612</span>
+              </span>
+            </div>
+            <div class="bar">
+              <span style="width: 45%; background: var(--color-result-white)"></span>
+              <span style="width: 13%; background: var(--color-result-draw)"></span>
+              <span style="width: 42%; background: var(--color-result-black)"></span>
+            </div>
+            <div class="legend">
+              <span
+                ><span class="swatch" style="background: var(--color-result-white)"></span>White
+                wins 45%</span
+              >
+              <span
+                ><span class="swatch" style="background: var(--color-result-draw)"></span>Draws
+                13%</span
+              >
+              <span
+                ><span class="swatch" style="background: var(--color-result-black)"></span>Black
+                wins 42%</span
+              >
+            </div>
+          </div>
+
+          <div class="body bookBlock">
+            <div class="sectionLabel">Next moves</div>
+            <!-- The level echoes here because the header scrolls out of view
+                 on a tall card, especially on mobile. -->
+            <div class="sectionSub">Most popular at 1400–1800</div>
+            <span class="reveal">Show 4 more moves</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">header, snapshot fallback — never claims live data</span>
+        <div class="card">
+          <div class="band">
+            <div class="bandTop">
+              <h2 class="title">Opening explorer</h2>
+              <span class="source">Saved snapshot · updated 2025-07-15</span>
+            </div>
+            <div class="pills">
+              <span class="pill">All</span>
+              <span class="pill">Beginner</span>
+              <span class="pill pillActive">Intermediate</span>
+              <span class="pill">Advanced</span>
+              <span class="pill">Expert</span>
+              <span class="pill">Masters</span>
+            </div>
+          </div>
+          <div class="body">
+            <div class="stats">
+              <span class="statGroup">
+                <span class="statLabel">Total games</span>
+                <span class="statValue">54.3k</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">master games — outside the border, own source line</span>
+        <div class="mg">
+          <div class="mgHead">
+            <h2 class="title">Master games</h2>
+            <span class="eyebrow">Over-the-board masters</span>
+          </div>
+          <div class="game">
+            <span>Caruana, F. – Carlsen, M.</span><span class="result">1–0 · 2019</span>
+          </div>
+          <div class="game">
+            <span>Topalov, V. – Anand, V.</span><span class="result">½–½ · 2005</span>
+          </div>
+          <div class="game">
+            <span>Carlsen, M. – Nakamura, H.</span><span class="result">0–1 · 2019</span>
+          </div>
+          <span class="mgReveal">Show 2 more games</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

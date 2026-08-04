@@ -32,6 +32,31 @@
   padding: var(--space-2) var(--space-3);
 }
 
+/* Title + source line above the pills. The header is sticky, so this is what
+   keeps the scope of the numbers on screen as the card scrolls. */
+.headerTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
+.headerTitle {
+  font-family: var(--font-family-headline);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.headerSource {
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+}
+
 .statsBlock {
   padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--border-subtle);
@@ -123,12 +148,6 @@
 
 .legendBlack {
   color: var(--color-result-black);
-}
-
-.statsMeta {
-  font-size: var(--text-2xs);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-2);
 }
 
 .statsNote {

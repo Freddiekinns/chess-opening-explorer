@@ -1,0 +1,71 @@
+{
+  "_comment": "Facet vocabulary for GET /api/openings/browse. Single source of truth — the browse service reads it, nothing hardcodes these lists. Style buckets are evaluated by the rule in browse-service.js: gambitOverride first, then highest tag-match count, ties broken by array order here.",
+  "pageSize": {
+    "default": 24,
+    "max": 48
+  },
+  "levels": [
+    { "value": "Beginner", "label": "Beginner" },
+    { "value": "Intermediate", "label": "Intermediate" },
+    { "value": "Advanced", "label": "Advanced" }
+  ],
+  "gambitOverride": {
+    "value": "gambit",
+    "label": "Gambit",
+    "tags": ["Gambit", "Sacrificial"]
+  },
+  "styles": [
+    {
+      "value": "aggressive",
+      "label": "Aggressive",
+      "tags": [
+        "Aggressive",
+        "Attacking",
+        "Sharp",
+        "Double-edged",
+        "Unbalanced",
+        "Imbalanced",
+        "Unbalanced Position"
+      ]
+    },
+    {
+      "value": "tactical",
+      "label": "Tactical",
+      "tags": [
+        "Tactical",
+        "Counter-attacking",
+        "Counterattacking",
+        "Initiative",
+        "Provocative"
+      ]
+    },
+    {
+      "value": "positional",
+      "label": "Positional",
+      "tags": [
+        "Positional",
+        "Maneuvering",
+        "Prophylactic",
+        "Closed Position",
+        "Closed Game",
+        "Closed",
+        "Space Advantage"
+      ]
+    },
+    {
+      "value": "solid",
+      "label": "Solid",
+      "tags": ["Solid", "Quiet", "Classical"]
+    },
+    {
+      "value": "system",
+      "label": "System",
+      "tags": ["System-based", "Flexible", "Transpositional", "Hypermodern"]
+    }
+  ],
+  "sorts": [
+    { "value": "popular", "label": "Most played" },
+    { "value": "name", "label": "A–Z" }
+  ],
+  "defaultSort": "popular"
+}

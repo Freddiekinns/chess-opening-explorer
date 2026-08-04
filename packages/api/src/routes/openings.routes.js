@@ -4,6 +4,7 @@ const TreeService = require('../services/tree-service');
 const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
 const CourseService = require('../services/course-service');
+const BrowseService = require('../services/browse-service');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -16,6 +17,7 @@ const ecoService = new ECOService();
 const treeService = new TreeService();
 const videoAccessService = new VideoAccessService();
 const courseService = new CourseService();
+const browseService = new BrowseService();
 const familyResourceService = new FamilyResourceService({
   ecoService,
   videoAccessService,
@@ -602,6 +604,62 @@ router.get('/popular-by-eco', (req, res) => {
     res.status(500).json({
       success: false,
       error: error.message,
+    });
+  }
+});
+
+/**
+ * @route GET /api/openings/browse
+ * @desc  Filtered, sorted, paginated openings PLUS the facet counts for the
+ *        filter bar — computed over the same corpus in the same request, so
+ *        the count on screen and the grid contents cannot disagree. Today's
+ *        landing page takes its category counts from one fetch and its grid
+ *        from another, which is why they never reconcile.
+ * @param {string} level  - Beginner | Intermediate | Advanced
+ * @param {string} style  - gambit | aggressive | tactical | positional | solid | system
+ * @param {string} family - family_id from families.json (or `uncategorised`)
+ * @param {string} sort   - popular (default) | name
+ * @param {number} page     - 1-based, default 1
+ * @param {number} pageSize - default 24, hard max 48
+ */
+router.get('/browse', (req, res) => {
+  try {
+    const config = browseService.getConfig();
+    const { level, style, family, sort, page, pageSize } = req.query;
+
+    // Unknown values are rejected rather than ignored: a silent empty result is
+    // indistinguishable from a genuine empty filter and sends the client
+    // hunting for a data bug.
+    const reject = (field, value) =>
+      res.status(400).json({
+        success: false,
+        error: `Unknown ${field}: ${value}`,
+      });
+
+    if (level && !config.levels.some((l) => l.value === level)) return reject('level', level);
+
+    const styleValues = [config.gambitOverride, ...config.styles].map((s) => s.value);
+    if (style && !styleValues.includes(style)) return reject('style', style);
+
+    if (sort && !config.sorts.some((s) => s.value === sort)) return reject('sort', sort);
+
+    if (family && !browseService.familyIds().has(family)) return reject('family', family);
+
+    const result = browseService.browse({
+      level: level || null,
+      style: style || null,
+      family: family || null,
+      sort: sort || config.defaultSort,
+      page,
+      pageSize,
+    });
+
+    res.json({ success: true, ...result });
+  } catch (error) {
+    console.error('Browse error:', error.message);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to browse openings',
     });
   }
 });

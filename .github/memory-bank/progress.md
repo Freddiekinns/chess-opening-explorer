@@ -4,6 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`,
+  stacked on phase 1): `GET /api/openings/browse` returns items, `total`,
+  `remaining` and facet counts from one index in one request, so the count on
+  screen and the grid contents cannot disagree. One primary style per opening
+  (raw `style_tags` are ~7 per opening and would give every bucket half the
+  corpus); facets exclude their own dimension; unknown values 400; page size
+  capped at 48. No UI change. 829 backend tests green.
 - **UX review phase 1 — Discover closes the loop** (2026-07-27,
   `ux/phase-1-discover`, stacked on phase 0): shared `Toast` with Undo +
   `useRepertoireToast` (one place decides wording and timing), star on every
@@ -73,9 +80,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **UX review phases 2–5**: browse API (2), filter bar (3), desktop detail shell
-  (4), Analyse (5) — all land on `feat/ux-review`, which merges to `main` as a
-  single PR. Plans written when reached; the browse API's shape informs phase 3.
+- **UX review phases 3–5**: filter bar (3), desktop detail shell (4), Analyse
+  (5) — all land on `feat/ux-review`, which merges to `main` as a single PR.
+  Plans written when reached. Phase 3 consumes `/api/openings/browse`; the
+  landing grid still uses `popular-by-eco`, so the count mismatch is on screen
+  until phase 3 moves it over.
 - **Video programme**: enable the monthly refresh Action (user: commit
   `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
   family shelves, V5/V6 taxonomy + chapter matching, studies data work

@@ -1793,7 +1793,10 @@ body {
 
 /* Regular search buttons for non-landing variants */
 
-.search-suggestions {
+/* The results dropdown. Two parts: one ranked list that scrolls, and the
+   Surprise me footer — which sits outside the scroller so it cannot scroll out
+   of reach. Rows come from SearchRow.module.css, the same rows the hub draws. */
+.search-results-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1803,15 +1806,32 @@ body {
   border-radius: var(--border-radius-base);
   margin-top: var(--space-1);
   z-index: 1000;
-  max-height: 280px;
-  overflow-y: auto;
   box-shadow: var(--shadow-lg);
   animation: slideDown 0.2s ease-out;
-  /* Reset default ul styling */
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.search-suggestions {
+  /* Was a fixed 280px, which showed under four of twenty results and made the
+     panel feel like a peephole. Scaling with the viewport keeps the whole
+     ranked list reachable on a laptop without the dropdown running off a short
+     screen. */
+  max-height: min(60vh, 480px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  margin: 0;
   list-style: none;
+}
+
+/* Pinned under the scroller. The separator is the panel's, not the row's, so
+   the row inside stays the same row it is everywhere else. */
+.search-results-footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
 }
 
 @keyframes slideDown {
@@ -1826,122 +1846,45 @@ body {
 }
 
 /* Suggestions for landing page variant */
-.search-bar-container.landing .search-suggestions {
+.search-bar-container.landing .search-results-dropdown {
   border-radius: var(--border-radius-large);
   margin-top: var(--space-2);
   background-color: var(--surface-elevated);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
-  /* Position above the surprise button when it would overlap */
   z-index: 1001;
 }
 
-/* When search is active, slightly dim the surprise button */
-.search-bar-container.landing:focus-within .search-surprise-btn {
-  opacity: 0.7;
-  transform: scale(0.98);
-}
-
-.suggestion-item {
-  padding: var(--space-3) 0;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  border-bottom: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  min-height: 48px;
-  position: relative;
-}
-
-.suggestion-item:hover,
-.suggestion-item.active {
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-  transform: translateY(-0.5px);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Add subtle focus state for keyboard navigation */
-.suggestion-item:focus {
-  outline: 2px solid var(--accent-a50);
-  outline-offset: -2px;
-  background: linear-gradient(135deg, var(--accent-a6) 0%, transparent 100%);
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-  border-bottom-left-radius: var(--border-radius-large);
-  border-bottom-right-radius: var(--border-radius-large);
-}
-
-.suggestion-item:first-child {
-  border-top-left-radius: var(--border-radius-large);
-  border-top-right-radius: var(--border-radius-large);
-}
-
-.suggestion-item .opening-name {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
-  flex: 1;
-  /* Override global .opening-name styles */
-  text-align: left;
-  line-height: var(--line-height-normal);
-  margin: 0 var(--space-4) 0 var(--space-4);
-  letter-spacing: var(--letter-spacing-normal);
-  position: static;
-}
-
-.suggestion-item .eco-code {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  font-family: var(--font-family-mono);
-  letter-spacing: 0.5px;
-  background: var(--accent-a6);
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* The hub the focused hero field opens: recents, repertoire, Surprise me.
+   Same anchor as .search-suggestions — one replaces the other. */
+.search-hub-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--space-2);
+  z-index: 1001;
+  background-color: var(--surface-elevated);
   border: 1px solid var(--border-default);
-  margin-right: var(--space-4);
-  transition: all 0.15s ease;
-}
-
-.suggestion-item:hover .eco-code {
-  background: var(--accent-a12);
-  border-color: var(--accent-a30);
-  color: var(--color-brand-orange);
-}
-
-/* Suggestion item layout with moves preview */
-.suggestion-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.suggestion-moves {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  font-family: var(--font-family-mono);
-  margin: var(--space-1) var(--space-4) 0 var(--space-4);
-  opacity: 0.7;
-  white-space: nowrap;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
   overflow: hidden;
-  text-overflow: ellipsis;
   text-align: left;
+  /* This panel had no interior padding at all, so "Recent" sat one pixel from
+     the top border and read as clipped, and every row touched the sides. The
+     mobile overlay never showed it because its scroll body supplies the inset. */
+  padding: var(--space-3);
+  box-sizing: border-box;
 }
 
-.suggestion-item:hover .suggestion-moves {
-  opacity: 1;
-  color: var(--color-text-secondary);
-}
+/* The .suggestion-* rules that used to live here are gone. They were a second
+   implementation of a search row — 16px semibold names on the legacy
+   --font-size-* scale, a 135deg gradient and a half-pixel lift on hover, an
+   ECO pill that turned orange as if it were pressable — sitting beside the
+   hub's rows on the --text-* scale. One row now serves both, in
+   SearchRow.module.css. */
 
 /* No results message */
 .search-no-results {
@@ -2095,40 +2038,6 @@ body {
   border-color: var(--color-brand-orange);
   background: linear-gradient(145deg, var(--accent-a12) 0%, var(--accent-a6) 100%);
   box-shadow: 0 4px 20px var(--accent-a12);
-}
-
-.search-surprise-btn {
-  background: var(--color-bg-alt);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-large);
-  padding: var(--space-4) var(--space-6);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  white-space: nowrap;
-  z-index: 5;
-}
-
-.search-surprise-btn:hover:not(:disabled) {
-  border-color: var(--color-brand-orange);
-  background: var(--accent-a12);
-}
-
-.search-surprise-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-@media (max-width: 767px) {
-  .search-surprise-btn {
-    width: 100%;
-  }
 }
 
 /* =================
@@ -2657,26 +2566,15 @@ body {
     font-size: var(--font-size-base);
   }
 
-  .search-surprise-btn {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--font-size-sm);
-  }
-
   .chessboard-container {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  .suggestion-item .opening-name {
-    font-size: var(--font-size-sm);
-    margin: 0 var(--space-3) 0 var(--space-3);
-  }
-
-  .suggestion-item .eco-code {
-    margin-right: var(--space-3);
-    font-size: var(--font-size-xs);
-  }
+  /* The narrow-width overrides for search rows are gone with the rules they
+     overrode. SearchRow sizes itself the same at every width: the name
+     ellipses and the moves line ellipses, so nothing needs to shrink. */
 }
 
 /* Small mobile breakpoint (up to 480px) */
@@ -2711,17 +2609,32 @@ body {
 
 /* Empty state for no videos */
 
-/* Primary: the most valuable action on the detail page, drawn as such. */
+/* Accent-outline — the third button tier, between filled primary and the grey
+   secondary. An action worth drawing in the brand colour, but not a claim that
+   it is what the page is for.
+
+   Practice was filled primary until 2026-07-30. The spec's argument for that
+   was implementation completeness ("Practice mode is fully implemented in
+   production"), which is not the same question as how much of the page's
+   attention it deserves — that one is the product owner's, and the answer is
+   that the feature is not yet as developed as it needs to be to ask for the
+   page's loudest control. Demoted deliberately; see §3.4 of the UX-review spec
+   before promoting it back.
+
+   The proportion changed with it. The label was 11px inside 24px of horizontal
+   padding, which reads as a colour swatch with a word in it rather than a
+   button — and desktop said 11px while mobile said 13px for the same control.
+   Both are 13px now, with the padding brought in to match. */
 .practice-toggle-btn {
-  background-color: var(--color-brand-orange);
-  color: var(--color-text-inverse);
-  border: none;
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  border: 1px solid var(--accent-a50);
   border-radius: var(--radius-md);
-  padding: 10px 24px;
+  padding: var(--space-2) var(--space-4);
   margin-left: auto;
   font-family: var(--font-family-headline);
   font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xs);
+  font-size: var(--text-sm);
   letter-spacing: 0.04em;
   width: auto;
   height: auto;
@@ -2730,11 +2643,13 @@ body {
   transition: all 150ms ease;
 }
 
+/* Fills on hover rather than deepening: an outlined control that only shifts
+   its border on hover gives almost no feedback at this size. No lift and no
+   brand shadow — those belonged to the primary treatment. */
 .practice-toggle-btn:hover:not(:disabled) {
-  background-color: var(--color-brand-orange-hover);
-  color: var(--color-text-inverse);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-brand);
+  background-color: var(--accent-a12);
+  border-color: var(--color-brand-orange);
+  color: var(--color-brand-orange);
 }
 
 .practice-toggle-btn:active:not(:disabled) {

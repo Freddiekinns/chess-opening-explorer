@@ -41,12 +41,14 @@
   flex-direction: column;
 }
 
+/* No text-transform: these headings are moves ("1. e4", "1. Nf3"), and case
+   is semantic in algebraic notation — uppercased, Nf3 read as NF3, which is
+   not a move. Size, weight and colour carry the eyebrow on their own. */
 .groupHeading {
   margin: var(--space-3) 0 var(--space-1);
   font-size: var(--text-3xs);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--color-text-muted);
 }
 

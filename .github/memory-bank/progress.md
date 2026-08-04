@@ -4,99 +4,96 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Mobile search overlay closes on tab navigation** (2026-08-03, on
+  `ux/phase-5-analyse`): the footer tabs did navigate, but the overlay outlived
+  it and sat over the new page. It renders inside the sticky TopBar's stacking
+  context, so the tab bar hit-tests above it by design; the missing half was
+  closing on `pathname` change. Search stays top-right — a mode, not a place.
+- **TopBar search field sized to its own panel** (2026-08-02): the 380px
+  dropdown flared past a 240px field; field now `clamp(300px, 30vw, 380px)`,
+  panel flush at `left/right: 0` (tablet keeps the grow-leftwards panel).
+- **Discover's empty repertoire slot gets its box back** (2026-08-02, on
+  `ux/phase-5-analyse`): the mock draws a bordered one-line bar with a star, the
+  build shipped bare text — "one-line prompt" read as "one line of text", then
+  frozen by a test asserting "not a panel". **Detail in `archive.md`**.
+- **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
+  `ux/phase-5-analyse`): typing changed _what_ was listed and _how_ each opening
+  was drawn; `shared/SearchRow.tsx` is now the one row for all three surfaces.
+  Five defects fell out. Spec §3.3, guard `search-row-parity.test.tsx`; **detail
+  in `archive.md`**.
+- **Practice demoted to accent-outline** (2026-07-30, on `ux/phase-5-analyse`):
+  filled orange → orange border + orange label, and 13px on both breakpoints.
+  **A spec decision reversed on the owner's call**; names the third button tier.
+  Spec §3.4; **detail in `archive.md`**.
+- **Master games moved up the mobile stack** (2026-07-30, on
+  `ux/phase-5-analyse`): a **spec decision reversed**, not a bug — the UX-review
+  table sent it below videos and studies to "make both breakpoints agree", which
+  was false. Spec §3.2; guard at `pages/__tests__/mobile-stack-order`.
+- **UX review implementation audit** (2026-07-29, on `ux/phase-5-analyse`): six
+  phases read back against the handoff bundle; six defects, every one a change
+  half-applied. **Detail in `archive.md`.**
+- **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
+  header; "Career totals / Overall performance" → "This analysis / Your record"
+  (it claimed a lifetime for one run's numbers); wins sage / losses brick; "GP"
+  → "Games". Sample reports from committed fixtures, dated on screen. PGN
+  reduction moved to `packages/shared/src/utils/personal-analysis.ts`.
 - **UX review phase 4 — opening detail desktop** (2026-07-28,
-  `ux/phase-4-detail-desktop`, stacked on phase 3): new `ExplorerCard` draws one
-  border around the level filter and everything it governs (stats + book);
-  master games move outside it into a shared `MasterGamesCard` serving both
-  breakpoints, below Learning resources on mobile. `WinRatePanel` is now
-  presentational — no pills, no masters, no fetch (it takes the page's
-  `ExplorerQuery`); `WinRateBar` and `MobileMasterGames` deleted. One
-  `explorerStats` module owns every level-scoped label so the breakpoints cannot
-  drift; snapshot fallback never claims live data. Every reveal names its
-  payload. Explorer error beacon moved into `useExplorerQuery` — it was in a
-  desktop-only component, so mobile failures went unreported. 441 frontend + 833
-  backend green.
-- **UX review phase 3 — faceted filter bar** (2026-07-28,
-  `ux/phase-3-filter-bar`, stacked on phase 2): two unlabelled pill rows become
-  Level · Style · Family · Sort, each stating its own value; grid, count and
-  facet counts come from one `/api/openings/browse` request, so the count
-  mismatch on the landing page is gone. Filter state in URL params (back
-  restores the facets); cards stay crawlable `<Link>`s; families grouped by
-  first move, with the 2 grab-bag families in "Other openings" rather than filed
-  under a move that is not theirs. One mobile sheet, all four facets, applied
-  live, portalled to `<body>` (a transformed ancestor was capturing its
-  `position: fixed`). `ComplexityFilters` and `CategoryFilter` deleted. 833
-  backend + 413 frontend green.
-- **UX review phase 2 — browse API** (2026-07-28, `ux/phase-2-browse-api`,
-  stacked on phase 1): `GET /api/openings/browse` returns items, `total`,
-  `remaining` and facet counts from one index in one request, so the count on
-  screen and the grid contents cannot disagree. One primary style per opening
-  (raw `style_tags` are ~7 per opening and would give every bucket half the
-  corpus); facets exclude their own dimension; unknown values 400; page size
-  capped at 48. No UI change. 829 backend tests green.
-- **UX review phase 1 — Discover closes the loop** (2026-07-27,
-  `ux/phase-1-discover`, stacked on phase 0): shared `Toast` with Undo +
-  `useRepertoireToast` (one place decides wording and timing), star on every
-  grid card, slim empty prompt so content leads a first visit, persistent
-  top-bar search on every page, shared `SearchHub` for desktop dropdown and
-  mobile overlay, `/repertoire` route (noindex), three mobile tabs with a count
-  badge. Find → save → revisit no longer needs a detail page. 372 frontend tests
-  green.
-- **UX review phase 0 — systemic pass** (2026-07-27, `ux/phase-0-systemic` →
-  `feat/ux-review`): one button spec (Practice primary, Load more tertiary),
-  self-labelling `ResultBar` adopted by both `OpeningCard` variants, decorative
-  orange removed, one repertoire name, sentence case, global focus ring, 44px
-  star target. No behaviour change. 336 frontend + 784 backend green.
-- **Opening-detail & analyse UI tweaks** (2026-07-20): "Most popular next moves"
-  caption, mobile show-more 5→3, unified mobile Analyse cards via a shared
-  `PerfBar`, full move lines in both lists. 326 frontend green.
-- **Opening detail mobile overhaul** (2026-07-18, PR #53): Claude Design 2a "one
-  data surface" at ≤767px — compact header, board control row + FEN sheet, one
-  merged data card with sticky level pills, accordions, search overlay; desktop
-  right column reordered; `ScrollToTop` fix. 323 green.
-- **Mobile landing filter UI fix** (2026-07-15): long ECO labels clipped in the
-  mobile pill row → `CategoryFilter` dropdown at ≤767px. 288 green.
-- **Sidebar unification + explorer proxy** (2026-07-12): `/api/explorer` proxy
-  (Lichess gated the explorer behind auth 2026-03), then LevelLens governs
-  WinRatePanel and the Opening book; fixed move-number off-by-one. 284 green.
-- Work through 2026-07-11 (Deviation Trainer slice 1 — explorer client,
-  level-check strip, rating-band selector, master games, `/api/event` beacon;
-  Ko-fi tip jar; Study matching V2 — cached fetch + offline rematch, scored
-  matcher, coverage 18.2%→35.7% all / 62.5%→91.5% top-200; video index refresh
-  PR #47, coverage 28.2%→72.8%; video experience V1–V3 PR #46; Analyse dashboard
-  redesign PR #45) — see `archive.md`.
-- **Review remediation — perf + features** (2026-07-06): route splitting +
-  static MiniBoard (main chunk 409→189 kB), self-hosted fonts, sharded edge SEO
-  lookup, `/api/openings/all` → 410, aggregate `/api/openings/page/:fen`,
-  `api/data/` now the single canonical data home. 724+200 green.
-- Older work through 2026-07-02 (project review — two review docs, found the
-  improved video index never shipped and popularity stats stale since
-  2025-07-15; video matching + pipeline hardening — intra-family variation
-  guard, specificity scoring, `audit-video-matches.js`, 67% coverage;
-  common-plans ECO-bucket investigation — still no code fix; design review fixes
-  killing `Math.random()` W/D/L and the dropdown stacking bug; CI green-up +
-  28-family taxonomy and `GET /api/families`; TASK008 feature roadmap;
-  sticky-board detail layout; primary-domain migration to `openingbook.xyz`;
-  mobile footer/card polish; TASK016 design overhaul + token migration; TASK015
-  opening-tree nav; user-journeys doc; video overindexing fix; TASK012 video
-  pipeline; TASK011 search bandwidth; TASK010 local repertoire; TASK009 SEO;
-  TASK007 mobile overflow; plus Course Discovery, Practice Mode, Personal
-  Explorer, PGN ID, related-openings UI, footer standardisation, sort controls,
-  coverage reporting, state persistence, test cleanups) — see `archive.md`.
+  `ux/phase-4-detail-desktop`): new `ExplorerCard` draws one border around the
+  level filter and everything it governs; master games move outside it into a
+  shared `MasterGamesCard`. `WinRateBar` and `MobileMasterGames` deleted; one
+  `explorerStats` module owns every level-scoped label. Explorer error beacon
+  moved into the hook (was desktop-only, so mobile failures went unreported).
+- **UX review phases 0–3** (2026-07-27..28): **0** systemic — button tiers,
+  self-labelling `ResultBar`, decorative orange out, sentence case, focus ring,
+  44px star. **1** Discover closes the loop — `Toast` with Undo, star on every
+  card, persistent top-bar search, `SearchHub`, `/repertoire`, mobile tabs.
+  **2** `GET /api/openings/browse` — one request for items, `total`, `remaining`
+  and facet counts, so count and grid cannot disagree. **3** the faceted bar.
+- **Agent docs restructure** (2026-07-25, on `main`): portable `AGENTS.md` plus
+  scoped `packages/*/AGENTS.md` imported by a thin `CLAUDE.md`; workflows and
+  the design system became `.claude/skills/`. **Detail in `archive.md`**.
+- Everything before the UX review — **all detail in `archive.md`**: 07-12..20
+  (`PerfBar`; detail-mobile PR #53; `/api/explorer` proxy); through 07-11
+  (Deviation Trainer 1; Study matching V2 18.2%→35.7%; video index PR #47
+  28.2%→72.8%; Analyse PR #45); 07-06 remediation (routes 409→189 kB;
+  `/api/openings/all` → 410); through 07-02 (video pipeline; `Math.random()`
+  W/D/L and dropdown-stacking fixes; 28-family taxonomy; domain migration;
+  TASK006–016; Course Discovery; Practice Mode).
+- **Still true and not fixed**: the common-plans ECO-bucket investigation found
+  a real defect and shipped no code change (see `archive.md`).
 
 ## What's Left
 
-- **UX review phase 5**: Analyse — lands on `feat/ux-review`, which merges to
-  `main` as a single PR. Plan written when reached.
+- **Merge the UX review to `main`** — order matters. Merge PRs #58 → #59 → #60 →
+  #61 → #62 → #63 → #65 with **"Create a merge commit"**, deleting each head
+  branch so the next PR retargets onto `feat/ux-review`; all are fast-forwards.
+  **Never squash or rebase-merge inside the stack** — new SHAs make the child
+  conflict everywhere. `main` is already merged into the tip, so the final
+  `feat/ux-review` → `main` PR is clean.
+- **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
+  no CI suite, so shared-module tests live in the web suite; and its barrels
+  export without file extensions, so `dist/index.js` is unimportable from Node
+  ESM — scripts import `dist/utils/<module>.js` directly.
 - **Video programme**: enable the monthly refresh Action (user: commit
-  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); later V4
-  family shelves, V5/V6 taxonomy + chapter matching, studies data work
-- **Bottom nav investigation**: may be missing on Analyse page — verify
-- **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets
+  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
+  shelves, V5/V6 taxonomy + chapter matching, studies data work
+- **Search is not a real combobox** — its biggest remaining gap. No
+  `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
+  region, so a screen-reader user gets no signal when results arrive; the
+  keyboard cursor rides a `data-active` hook `aria-activedescendant` should
+  replace. Three surfaces: `SearchBar`, `TopBar`, `SearchOverlay`.
+- **Search returns near-duplicate names**: "najdorf" gives four rows reading
+  "Sicilian Defense: Najdorf Variation", separated only by ECO. Ranking/data.
+- **Mobile Discover shows no facet chips**: the trigger reads "Filters (2)", so
+  which are active is legible only inside the sheet (desktop states each value).
+- **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
+  `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
 - **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_ was
   rejected: a min-sample floor makes `total` depend on `sort`.)
 - **`rankNotableGames` dedupes by exact player name**, so Lichess name variants
   ("Caruana, F." vs "Caruana, Fabiano") slip through as separate players.
+- **Agent docs**: run `/doctor` locally as a second opinion on the 2026-07-25
+  restructure — it can't run from a remote session.
 
 ## Known Issues
 

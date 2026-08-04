@@ -48,10 +48,13 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveAttribute('placeholder', 'Find your opening');
     });
 
-    it('should render surprise me button for landing variant', () => {
+    // UX review change 02: search is the only prominent element in the hero.
+    // Surprise me used to sit beside the field as a filled button, competing
+    // with it; it now lives in the hub and as a quiet link under the hero.
+    it('renders no inline Surprise button on the landing variant', () => {
       render(<SearchBar {...defaultProps} variant="landing" />);
 
-      expect(screen.getByText('Surprise me')).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
     });
 
     it('should not render surprise me button for header variant', () => {
@@ -63,8 +66,6 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
     it('should show loading state when loading prop is true', () => {
       render(<SearchBar {...defaultProps} loading={true} />);
 
-      // Check for the actual loading text that appears in the component
-      expect(screen.getByText('Loading...')).toBeInTheDocument();
       expect(screen.getByPlaceholderText('Loading openings...')).toBeInTheDocument();
       expect(screen.getByText('⟳')).toBeInTheDocument();
     });
@@ -214,8 +215,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       await user.keyboard('{ArrowDown}');
 
       // First suggestion should be active
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
 
     it('should select suggestion with Enter key', async () => {
@@ -274,8 +277,10 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
 
       // Then down to second
       await user.keyboard('{ArrowDown}');
-      const firstSuggestion = screen.getByText("King's Pawn Game").closest('li');
-      expect(firstSuggestion).toHaveClass('active');
+      // The row carries the keyboard cursor, not the <li> wrapping it, and its
+      // styling class is hashed by CSS Modules — assert the stable data hook.
+      const firstSuggestion = screen.getByText("King's Pawn Game").closest('button');
+      expect(firstSuggestion).toHaveAttribute('data-active', 'true');
     });
   });
 
@@ -396,20 +401,92 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
       expect(input).toHaveValue('');
     });
 
-    it('should handle surprise me button click', async () => {
+    // Change 02: "Focusing the field opens a hub of recents and repertoire."
+    // The hero field is the one this was drawn for — it showed nothing at all
+    // until you had typed two characters.
+    it('opens the search hub when the landing field is focused', async () => {
       const user = userEvent.setup();
-      render(<SearchBar {...defaultProps} variant="landing" />);
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
 
-      const surpriseButton = screen.getByText('Surprise me');
-      await user.click(surpriseButton);
+      expect(screen.queryByRole('button', { name: /surprise me/i })).not.toBeInTheDocument();
 
-      // Should call onSelect with a random opening
-      expect(mockOnSelect).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: expect.any(String),
-          eco: expect.any(String),
-        })
+      await user.click(screen.getByRole('textbox'));
+
+      expect(screen.getByRole('button', { name: /surprise me/i })).toBeInTheDocument();
+    });
+
+    it('routes the hub Surprise me to the caller, not to loaded openings', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      await user.click(screen.getByRole('textbox'));
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      // The caller randomises over the full corpus; SearchBar only ever holds
+      // the first slice of the search index.
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('replaces the hub with results once a query is typed', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={vi.fn()} />);
+
+      const input = screen.getByRole('textbox');
+      await user.click(input);
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+      // The hub's own rows go, but its way out does not.
+      expect(screen.queryByText('Recent')).not.toBeInTheDocument();
+    });
+
+    // The escape hatch for "I don't know what I'm looking for" used to vanish
+    // on the second keystroke — exactly when a user is most likely flailing.
+    it('keeps Surprise me reachable while typing', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(<SearchBar {...defaultProps} variant="landing" onSurprise={onSurprise} />);
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText("King's Pawn Game")).toBeInTheDocument();
+      });
+
+      await user.click(screen.getByRole('button', { name: /surprise me/i }));
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
+      expect(mockOnSelect).not.toHaveBeenCalled();
+    });
+
+    it('reaches Surprise me by arrowing past the last result', async () => {
+      const user = userEvent.setup();
+      const onSurprise = vi.fn();
+      render(
+        <SearchBar
+          {...defaultProps}
+          variant="landing"
+          onSurprise={onSurprise}
+          openingsData={mockOpeningsList.slice(0, 1)}
+        />
       );
+
+      const input = screen.getByRole('textbox');
+      await user.type(input, 'king');
+
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem')).toHaveLength(1);
+      });
+
+      // One result, so two downs land on the footer.
+      await user.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+
+      expect(onSurprise).toHaveBeenCalledTimes(1);
     });
 
     it('should handle focus and blur events', async () => {
@@ -432,6 +509,57 @@ describe('SearchBar Component - Comprehensive Coverage', () => {
         },
         { timeout: 200 }
       );
+    });
+  });
+
+  describe('Results list', () => {
+    // No count, no "did you mean", no correction notice: the openings
+    // appearing are the feedback. A number would only raise the question of
+    // what it counted — the search scores every record above zero, 4,269 for
+    // "sicilian" against a family of roughly 1,710.
+    it('states no result count', async () => {
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'pawn');
+
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
+      });
+      expect(screen.queryByRole('status')).not.toBeInTheDocument();
+      expect(screen.queryByText(/openings match/i)).not.toBeInTheDocument();
+    });
+
+    it('marks results already in the repertoire', async () => {
+      const saved = mockOpeningsList[0];
+      localStorage.setItem(
+        'chess-repertoire',
+        JSON.stringify([
+          {
+            fen: saved.fen,
+            name: saved.name,
+            eco: saved.eco,
+            moves: saved.moves,
+            savedAt: Date.now(),
+          },
+        ])
+      );
+
+      const user = userEvent.setup();
+      render(<SearchBar {...defaultProps} />);
+
+      await user.type(screen.getByRole('textbox'), 'king');
+
+      await waitFor(() => {
+        expect(screen.getByText(saved.name)).toBeInTheDocument();
+      });
+
+      const row = screen.getByText(saved.name).closest('li');
+      expect(row).toHaveTextContent('Saved');
+
+      // Only the saved one is badged.
+      expect(screen.getAllByText('Saved')).toHaveLength(1);
+      localStorage.clear();
     });
   });
 

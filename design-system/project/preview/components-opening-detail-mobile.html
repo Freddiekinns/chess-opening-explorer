@@ -129,15 +129,22 @@
         border: 1px solid rgba(232, 93, 4, 0.3);
         border-radius: 4px;
       }
+      /* Primary, per the one button spec — filled, not outlined. This card
+         drew the outlined version for six phases because that is what the
+         pre-review build had; phase 0 changed only the desktop rule, and the
+         mobile button lives in a different file. Outlined orange is the
+         secondary treatment, and Practice is the page's most valuable
+         action. */
       .prac {
         display: flex;
         align-items: center;
         gap: 6px;
         margin-left: auto;
-        color: #e85d04;
-        border: 1px solid #e85d04;
+        background: #e85d04;
+        color: #100f0e;
+        border: none;
         border-radius: 8px;
-        padding: 10px 12px;
+        padding: 10px 16px;
         font:
           700 13px 'Bricolage Grotesque',
           sans-serif;
@@ -507,6 +514,21 @@
         white-space: nowrap;
         flex: none;
       }
+      .note {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 12px;
+        color: #9a958e;
+        line-height: 1.5;
+        max-width: 600px;
+        margin-top: 24px;
+      }
+      .note code {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+      }
+      .note strong {
+        color: #ece8e1;
+      }
     </style>
   </head>
   <body>
@@ -680,5 +702,32 @@
         ><span class="epill">Search Chessable ↗</span>
       </div>
     </div>
+
+    <p class="note">
+      <strong>The block order is load-bearing.</strong> Overview · explorer surface · master games ·
+      common plans · videos and studies · search pills. The first three are all data about the
+      position — what happens here, and who played it. Everything after them leads away from the
+      page: how to play it, then go watch someone explain it, then go search for yourself. Master
+      games belongs on the data side of that line, and collapsed it costs one row, so it barely
+      moves common plans down — where the reverse is not true, and a tall section in front would
+      strand a data row behind a screen of scrolling.
+    </p>
+    <p class="note">
+      This is also the desktop relationship: master games in the right rail directly under the
+      explorer card, learning resources full-width below the grid.
+      <strong>It was decided the other way once.</strong> The UX-review spec's decision table sent
+      master games to the bottom of this stack — below videos, studies and even the search pills —
+      reasoning that it would make both breakpoints agree on block order. It did the opposite, and
+      it contradicted this card. Reversed 2026-07-30, with the reasoning recorded in §3.2 of
+      <code>docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md</code> and an order
+      guard at <code>packages/web/src/pages/__tests__/mobile-stack-order.test.tsx</code>, because
+      reordering a JSX stack is a one-line change no other test notices.
+    </p>
+    <p class="note">
+      <strong>Master games is a disclosure at this width, not a card.</strong> Header, count, and
+      <code>Over-the-board masters</code> — the source line is not decoration: sitting directly
+      beneath the level pills, it is the only thing telling you the level filter does not reach this
+      list. The pills govern everything inside the surface above and nothing below it.
+    </p>
   </body>
 </html>

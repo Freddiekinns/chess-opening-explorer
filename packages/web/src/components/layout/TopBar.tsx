@@ -3,6 +3,8 @@ import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, Loader2 } from 'lucide-react';
 import SearchOverlay from '../shared/SearchOverlay';
 import { SearchHub } from '../shared/SearchHub';
+import { SearchRow, SurpriseRow } from '../shared/SearchRow';
+import { useRepertoire } from '../../hooks/useRepertoire';
 import styles from './TopBar.module.css';
 
 interface SearchResult {
@@ -69,6 +71,7 @@ function TopBarSearch() {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { isSaved } = useRepertoire();
 
   useEffect(() => {
     return () => {
@@ -81,7 +84,6 @@ function TopBarSearch() {
 
     if (value.trim().length < 2) {
       setResults([]);
-      setShowDropdown(false);
       setIsSearching(false);
       return;
     }
@@ -90,7 +92,7 @@ function TopBarSearch() {
     timeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=8`
+          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
         );
         if (res.ok) {
           const data = await res.json();
@@ -134,15 +136,18 @@ function TopBarSearch() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    // Surprise me is the row one past the last result, so arrowing reaches it.
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+      setActiveIndex((prev) => (prev < results.length ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (activeIndex >= 0) {
+      if (activeIndex === results.length && results.length > 0) {
+        handleSurpriseMe();
+      } else if (activeIndex >= 0) {
         selectResult(results[activeIndex]);
       } else if (results.length > 0) {
         selectResult(results[0]);
@@ -175,21 +180,36 @@ function TopBarSearch() {
         </div>
       ) : (
         results.length > 0 && (
-          <ul className={styles.results}>
-            {results.map((r, i) => (
-              <li
-                key={`${r.fen}-${i}`}
-                className={`${styles.dropdownItem} ${i === activeIndex ? styles.dropdownItemActive : ''}`}
-                onMouseDown={() => selectResult(r)}
-                onMouseEnter={() => setActiveIndex(i)}
-              >
-                <span className={styles.dropdownName}>{r.name}</span>
-                <span className={styles.dropdownMeta}>
-                  {r.eco} &middot; {r.moves?.split(' ').slice(0, 6).join(' ')}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div onMouseDown={(e) => e.preventDefault()}>
+            {/* No count line: the openings appearing are the feedback. */}
+            <ul className={styles.results}>
+              {results.map((r, i) => (
+                <li key={`${r.fen}-${i}`}>
+                  <SearchRow
+                    opening={r}
+                    saved={isSaved(r.fen)}
+                    active={i === activeIndex}
+                    onSelect={() => selectResult(r)}
+                    onMouseEnter={() => setActiveIndex(i)}
+                  />
+                </li>
+              ))}
+            </ul>
+            {/* Outside the scrolling list, so it stays reachable however long
+                the results run. The hint used to be dropped here — the panel
+                was pinned to a 240px field and the label plus hint need
+                ~265px, so it survived only in a title and an aria-label, which
+                a sighted user navigating by keyboard never sees. The field is
+                now sized to hold a row (see .searchField), so the row explains
+                itself here exactly as it does everywhere else. */}
+            <div className={styles.surpriseFooter}>
+              <SurpriseRow
+                onSurprise={handleSurpriseMe}
+                active={activeIndex === results.length}
+                onMouseEnter={() => setActiveIndex(results.length)}
+              />
+            </div>
+          </div>
         )
       )}
     </div>

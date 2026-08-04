@@ -255,3 +255,40 @@ export const SortMenu: React.FC<{
     </div>
   );
 };
+
+/** Platform choice is one-of-two and mutually exclusive — a radio group, not
+    two buttons. Native inputs sit visually hidden behind their labels so the
+    pill styling survives while keyboard and screen-reader semantics are real. */
+export const PlatformRadioGroup: React.FC<{
+  value: 'chess.com' | 'lichess';
+  onChange: (value: 'chess.com' | 'lichess') => void;
+  disabled?: boolean;
+}> = ({ value, onChange, disabled }) => (
+  <div
+    className={`${styles.platformToggle} ${disabled ? styles.fieldsDim : ''}`}
+    role="radiogroup"
+    aria-label="Platform"
+  >
+    {(['chess.com', 'lichess'] as const).map((option) => {
+      const label = option === 'lichess' ? 'Lichess' : 'Chess.com';
+      const active = value === option;
+      return (
+        <label
+          key={option}
+          className={`${styles.platformBtn} ${active ? styles.platformBtnActive : ''}`}
+        >
+          <input
+            type="radio"
+            className={styles.platformInput}
+            name="analyse-platform"
+            value={option}
+            checked={active}
+            disabled={disabled}
+            onChange={() => onChange(option)}
+          />
+          {label}
+        </label>
+      );
+    })}
+  </div>
+);

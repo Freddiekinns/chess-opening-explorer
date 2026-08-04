@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Search } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import { SearchHub } from './SearchHub';
+import { SearchRow, SurpriseRow } from './SearchRow';
+import { useRepertoire } from '../../hooks/useRepertoire';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -23,35 +25,15 @@ interface SearchOverlayProps {
   onClose: () => void;
 }
 
-const movesPreview = (moves: string) => moves?.split(' ').slice(0, 6).join(' ') ?? '';
-
-interface OpeningRowProps {
-  opening: SearchResult;
-  icon?: React.ReactNode;
-  trailing?: React.ReactNode;
-  onSelect: (opening: SearchResult) => void;
-}
-
-const OpeningRow: React.FC<OpeningRowProps> = ({ opening, icon, trailing, onSelect }) => (
-  <button type="button" className={styles.row} onClick={() => onSelect(opening)}>
-    {icon}
-    <span className={styles.rowText}>
-      <span className={styles.rowName}>{opening.name}</span>
-      <span className={styles.rowMeta}>
-        <span className={styles.rowEco}>{opening.eco}</span> · {movesPreview(opening.moves)}
-      </span>
-    </span>
-    {trailing}
-  </button>
-);
-
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [searching, setSearching] = useState(false);
+  const { isSaved } = useRepertoire();
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const close = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -76,6 +58,17 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     };
   }, [open, close]);
 
+  // The bottom tab bar paints above this overlay and stays tappable, so a tab
+  // can navigate while search is open. Close on that navigation, or the overlay
+  // sits over the page that just loaded and the tabs read as dead. Keyed on the
+  // path alone: re-running when `open` flips would close the overlay on open.
+  const pathRef = useRef(pathname);
+  useEffect(() => {
+    if (pathRef.current === pathname) return;
+    pathRef.current = pathname;
+    if (open) close();
+  }, [pathname, open, close]);
+
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -97,11 +90,13 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
     timeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=8`
+          `/api/openings/semantic-search?q=${encodeURIComponent(value)}&limit=20`
         );
         if (res.ok) {
           const data = await res.json();
-          if (data.success && data.data) setResults(data.data);
+          if (data.success && data.data) {
+            setResults(data.data);
+          }
         }
       } catch {
         // Silent fail — the no-results state carries the hint text.
@@ -130,6 +125,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
   const hasQuery = query.trim().length >= 2;
   const showEmptyState = !hasQuery;
+  const showResults = hasQuery && results.length > 0;
   const noResults = hasQuery && !searching && results.length === 0;
 
   return (
@@ -168,19 +164,16 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
 
-        {hasQuery && results.length > 0 && (
-          <div className={styles.rowList}>
+        {/* No count line: the openings appearing are the feedback, the same
+            reason there is no "did you mean". */}
+        {showResults && (
+          <ul className={styles.rowList}>
             {results.map((opening, i) => (
-              <OpeningRow
-                key={`${opening.fen}-${i}`}
-                opening={opening}
-                trailing={
-                  <ChevronRight size={14} className={styles.rowChevron} aria-hidden="true" />
-                }
-                onSelect={select}
-              />
+              <li key={`${opening.fen}-${i}`}>
+                <SearchRow opening={opening} saved={isSaved(opening.fen)} onSelect={select} />
+              </li>
             ))}
-          </div>
+          </ul>
         )}
 
         {noResults && (
@@ -192,6 +185,15 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
           </div>
         )}
       </div>
+
+      {/* Outside the scrolling body, same as the hero dropdown: twenty results
+          deep is exactly where someone gives up, and that is where this has to
+          still be on screen. */}
+      {showResults && (
+        <div className={styles.surpriseFooter}>
+          <SurpriseRow onSurprise={surpriseMe} />
+        </div>
+      )}
     </div>
   );
 };

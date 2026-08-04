@@ -26,10 +26,7 @@
     "vercel:prepare": "node scripts/prepare-vercel-data.js",
     "build:vercel": "npm run vercel:prepare && node scripts/generate-seo-lookup.js && npm run build:web",
     "eco:import": "node packages/api/src/scripts/download-eco-data.js",
-    "enrich": "node ./tools/production/enrich_openings_llm.js",
-    "course:enrich": "node ./tools/production/enrich_course_data.js",
-    "course:integrate": "node ./tools/production/integrate_course_data.js",
-    "videos:verify-channels": "node tools/production/verify_youtube_channels.js",
+    "enrich": "node ./tools/llm-enrichment/enrich_openings_llm.js",
     "pipeline": "node tools/video-pipeline/index.js",
     "pipeline:full": "node tools/video-pipeline/index.js --mode=full",
     "pipeline:rematch": "node tools/video-pipeline/index.js --mode=rematch",
@@ -41,6 +38,7 @@
     "course:discover": "node tools/course-discovery/discover-popular.js",
     "course:import": "node tools/course-discovery/add-studies.js",
     "course:rematch": "node tools/course-discovery/add-studies.js --fromCache",
+    "sample:generate": "npm run build --workspace=packages/shared && node tools/sample-reports/generate-sample-reports.js",
     "test": "jest",
     "eco:fix-analysis": "node scripts/fix-analysis-json.js",
     "eco:validate-analysis": "node scripts/validate-analysis-json.js",
@@ -59,7 +57,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,json,md}": "prettier --write",
+    "packages/**/*.{js,jsx,ts,tsx}": "eslint"
   },
   "keywords": [
     "chess",

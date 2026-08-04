@@ -548,3 +548,153 @@ describe('PersonalOpeningStats - Player Name Persistence', () => {
     });
   });
 });
+
+describe('PersonalOpeningStats - blank state', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  it('carries the payoff in one header, with no second prompt beneath it', () => {
+    renderComponent();
+
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Analyse your games' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'See which openings you actually play, and how they score — from your recent rated games.'
+      )
+    ).toBeInTheDocument();
+    expect(screen.queryByText('Ready to analyse your openings?')).not.toBeInTheDocument();
+  });
+
+  it('states its scope and that it keeps nothing', () => {
+    renderComponent();
+
+    expect(
+      screen.getByText(
+        'Reads your public rated games — rapid, blitz & classical. Bullet excluded. Nothing is stored.'
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('offers the platform choice as a radio group, not two unlabelled buttons', async () => {
+    const user = userEvent.setup();
+    renderComponent();
+
+    const group = screen.getByRole('radiogroup', { name: 'Platform' });
+    const chesscom = within(group).getByRole('radio', { name: 'Chess.com' });
+    const lichess = within(group).getByRole('radio', { name: 'Lichess' });
+
+    expect(chesscom).toBeChecked();
+    await user.click(lichess);
+    expect(lichess).toBeChecked();
+    expect(chesscom).not.toBeChecked();
+  });
+
+  it('gives the username field a real label, not just a placeholder', () => {
+    renderComponent();
+
+    expect(screen.getByLabelText('Username')).toBe(
+      screen.getByPlaceholderText('Enter username...')
+    );
+  });
+
+  it('does not put the games-count control on the blank screen', () => {
+    renderComponent();
+
+    expect(screen.queryByRole('button', { name: 'Settings' })).not.toBeInTheDocument();
+  });
+});
+
+describe('PersonalOpeningStats - transient states', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  const failTheFetch = () =>
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: false,
+      json: async () => ({ success: false, message: 'We could not load your games.' }),
+    } as Response);
+
+  it('keeps the error in the centred column, under the input it describes', async () => {
+    const user = userEvent.setup();
+    failTheFetch();
+
+    renderComponent();
+    await user.type(screen.getByLabelText('Username'), 'someone');
+    await user.click(screen.getByRole('button', { name: 'Analyse' }));
+
+    const alert = await screen.findByRole('alert');
+    const note = screen.getByText(/Reads your public rated games/);
+    // Same column as the note it follows — not stranded below a 65vh block.
+    expect(note.parentElement).toBe(alert.parentElement);
+  });
+
+  it('returns the button to Analyse after a failure and keeps what was typed', async () => {
+    const user = userEvent.setup();
+    failTheFetch();
+
+    renderComponent();
+    await user.type(screen.getByLabelText('Username'), 'chessstudnt99');
+    await user.click(screen.getByRole('button', { name: 'Analyse' }));
+
+    await screen.findByRole('alert');
+    expect(screen.getByRole('button', { name: 'Analyse' })).toBeEnabled();
+    expect(screen.getByLabelText('Username')).toHaveValue('chessstudnt99');
+  });
+});
+
+describe('PersonalOpeningStats - dashboard honesty', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+    sessionStorage.setItem(
+      FORM_STATE_KEY,
+      JSON.stringify({ username: 'tester', platform: 'chess.com', limit: 500, activeTab: 'white' })
+    );
+    sessionStorage.setItem(
+      buildCacheKey('tester', 'chess.com', 500),
+      JSON.stringify({ dashboard: mockDashboardData, cachedAt: Date.now() })
+    );
+  });
+
+  it('scopes the record to this run rather than a lifetime', async () => {
+    renderComponent();
+
+    expect(await screen.findByText('This analysis')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Your record' })).toBeInTheDocument();
+    expect(screen.queryByText('Career totals')).not.toBeInTheDocument();
+    expect(screen.queryByText('Overall performance')).not.toBeInTheDocument();
+    expect(screen.queryByText('Total wins')).not.toBeInTheDocument();
+  });
+
+  it('names the games column in full, matching mobile', async () => {
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    expect(screen.queryByText('GP')).not.toBeInTheDocument();
+    expect(screen.getAllByText('Games').length).toBeGreaterThan(0);
+  });
+});
+
+// Vitest does not apply CSS modules, so no render-based test can see a colour.
+// This ordering bug shipped once already: `.statsValueWin` sat *before*
+// `.statsValue`, and at equal specificity the base rule won — the tints simply
+// did not appear, with every unit test green.
+describe('PersonalOpeningStats - stylesheet ordering', () => {
+  it('declares the win/loss tints after the base value rule that would override them', async () => {
+    // Read from disk, not via import: Vitest stubs CSS-module imports with a
+    // class-name proxy, and `?raw` is stubbed the same way.
+    const { readWebSource } = await import('../../../test/readSource');
+    const css = readWebSource('src/components/personal/PersonalOpeningStats.module.css');
+
+    expect(css.indexOf('.statsValue {')).toBeGreaterThan(-1);
+    expect(css.indexOf('.statsValueWin {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+    expect(css.indexOf('.statsValueLoss {')).toBeGreaterThan(css.indexOf('.statsValue {'));
+  });
+});

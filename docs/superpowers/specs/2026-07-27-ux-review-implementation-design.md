@@ -52,18 +52,18 @@ Two further corrections to the handoff README:
 
 ## 3. Decisions taken
 
-| Question                                  | Decision                                                          | Rationale                                                                                                                                                                                                              |
-| ----------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Faceted filter bar data                   | **Build a new browse endpoint**                                   | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
-| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                          | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
-| Practice CTA weight (change 24 vs README) | **Primary, filled orange**                                        | Practice mode is fully implemented in production — colour choice, hints, progress counter, line extension. It can carry primary weight.                                                                                |
-| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                   | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
-| Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**        | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
-| Sample report (change 19)                 | **Pre-baked cached fixtures**                                     | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
-| Delivery                                  | **Integration branch; phases are PRs into it; one merge to main** | Sequential merges to `main` mid-programme have broken things before. Each phase PR still gets its own Vercel preview, so review stays incremental — but `main` is touched once, at the end. See §9.                    |
-| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                         | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                                 |
-| Repertoire persistence                    | **Accept `localStorage`, record the risk**                        | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                         |
-| Master games position, mobile detail      | **Move below Learning resources, as proposed**                    | Master games are browse content and should not outrank learning content. Also makes both breakpoints agree on block order, which the desktop change (§3.1) depends on.                                                 |
+| Question                                  | Decision                                                               | Rationale                                                                                                                                                                                                              |
+| ----------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faceted filter bar data                   | **Build a new browse endpoint**                                        | Cannot be done client-side. `search-index` lacks complexity, style tags and win rates; `popular-by-eco` supports complexity and category only; facet counts need a full-corpus aggregate.                              |
+| Games-count gear (change 17)              | **Move to the dashboard, do not delete**                               | The control works and persists today. "Almost nobody approaches the cap" is asserted, not measured, and we have no analytics to check it. The change log explicitly permits relocation.                                |
+| Practice CTA weight (change 24 vs README) | ~~Primary, filled orange~~ → **reversed 2026-07-30, see §3.4**         | Original rationale: Practice is fully implemented, so it can carry primary weight. Implementation completeness is not the same question as how much of the page's attention a feature has earned. See §3.4.            |
+| Mobile tab bar (change 06)                | **Three tabs: Discover · Repertoire · Analyse**                        | Once persistent app-bar search ships, a Search tab is a nav item that does not navigate. Three tabs give bigger targets and no redundancy.                                                                             |
+| Desktop explorer card structure           | **Full `ExplorerCard` shell — re-parenting, not redesign**             | Supersedes the 2026-07-13 right-column spec on one point (see §3.1). July's styling survives intact; only the block parentage changes. Also extracts a shared `MasterGamesCard`, retiring the duplicate masters fetch. |
+| Sample report (change 19)                 | **Pre-baked cached fixtures**                                          | A live third-party call on a landing screen means rate-limit exposure, slow first paint and a support burden. Fixtures are instant and safe.                                                                           |
+| Delivery                                  | **Integration branch; phases are PRs into it; one merge to main**      | Sequential merges to `main` mid-programme have broken things before. Each phase PR still gets its own Vercel preview, so review stays incremental — but `main` is touched once, at the end. See §9.                    |
+| Mobile tab bar height                     | **Keep 60px** (`--bottom-tab-bar-height`)                              | The mocks say 64px. The token is already correct and consistent; `Footer` and page padding offset against it. 4px of churn across three files for no perceptible gain.                                                 |
+| Repertoire persistence                    | **Accept `localStorage`, record the risk**                             | Saved openings do not sync across devices and vanish with site data. Revisit if sign-in lands.                                                                                                                         |
+| Master games position, mobile detail      | ~~Move below Learning resources~~ → **reversed 2026-07-30, see below** | Original rationale: browse content should not outrank learning content, and it makes both breakpoints agree. The second half was simply false, and the first was the wrong axis. See §3.2.                             |
 
 ### 3.1 Superseding the 2026-07-13 right-column spec
 
@@ -96,6 +96,155 @@ a border — and it forgoes the shared-component win below.
 Bonus in scope: `WinRatePanel` and `MobileMasterGames` each fetch the masters
 band independently today. Extracting one `MasterGamesCard` serves both
 breakpoints and retires the duplicate fetch.
+
+### 3.2 Reversing the mobile master-games position (2026-07-30)
+
+The table above sent master games to the **bottom** of the mobile stack. Phase 4
+implemented that faithfully — below videos, studies and even the search pills —
+and the code carried a comment repeating the spec's second reason. Both reasons
+were wrong.
+
+"Makes both breakpoints agree on block order" is false as written. Desktop puts
+`MasterGamesCard` in the right rail directly beneath `ExplorerCard`, and
+Learning resources is a full-width section _below the whole grid_. In reading
+order, desktop has always had master games **before** the resources. Sending
+mobile to the bottom made the breakpoints disagree, not agree. The design bundle
+said so too:
+`design-system/project/preview/components-opening-detail-mobile.html` and the
+original 2a exploration both draw it above Common plans.
+
+"Browse content should not outrank learning content" ranks the wrong axis. The
+stack is not a merit order, it is a distance order: Overview and the explorer
+surface describe the position, and everything after them leads away from the
+page — how to play it, then go watch someone explain it, then go search for
+yourself. Master games ("who played this, and how did it go") is more of the
+first kind. It also costs one collapsed row, so placing it above Common plans
+barely moves anything down, whereas the reverse strands a data row behind a
+screen of scrolling.
+
+New order, live since 2026-07-30: **Overview · explorer surface · master games ·
+common plans · videos and studies · search pills.** Guarded by
+`packages/web/src/pages/__tests__/mobile-stack-order.test.tsx`, which asserts
+document order across every block — reordering a JSX stack is a one-line change
+no other test notices. Do not "restore" the table's original decision.
+
+Accepted cost: the card's `IntersectionObserver` gate now trips after a swipe or
+two instead of a full scroll, so the masters band is fetched on more sessions.
+The route's 7-day CDN cache absorbs it and it 403s crawlers. No reserved height
+— plenty of deep positions have no master games at all, and a placeholder that
+later vanished would shift content _upward_ under a finger.
+
+### 3.3 One search row for all three surfaces (2026-07-30)
+
+Phases 1 and 5 added a pre-typing hub to each search surface and kept Surprise
+me alive through typing, but each surface built its own rows. By the end there
+were **three** implementations of a search result row and **two** of the hub
+row, and the two states were on different type scales — the hub on `--text-*`
+(13px medium name, ECO as inline mono text in a meta line), the hero's results
+on the `--font-size-*` legacy aliases (16px semibold name, ECO as a bordered
+pill, moves on their own line, a 135° gradient and a half-pixel lift on hover),
+and the top bar on a third mix again. Typing a second character therefore
+changed an opening's size, weight, layout and hover behaviour, and Surprise me
+went from a muted two-line row to brand orange semibold with its hint flung to
+the right margin — louder than the twenty real answers above it, which its own
+source comment said it must not be.
+
+None of that was a decision. It is what happens when four surfaces are built in
+four phases and the row is never named as a component.
+
+`components/shared/SearchRow.tsx` is now that component — `SearchRow` and
+`SurpriseRow`, styled by `SearchRow.module.css`, on the `--text-*` scale. The
+hero dropdown, the top-bar dropdown and the mobile overlay all draw it, before
+and after typing. `formatMovesPreview` moved to `lib/searchQuery` so the preview
+cannot differ between surfaces either — two of them used a blunt first-six-plies
+preview, which renders every Sicilian variation as "1. e4 c5".
+
+**No row leads with an icon.** The first cut kept the hub's clock and star and
+gave results none, which is defensible in the abstract and wrong in fact: it put
+the opening's name at 39px before you typed and 13px after. A 26px jump in the
+name's left edge is the most visible drift on the surface, and it was being
+caused by the marker meant to say nothing had changed. The clock and the star
+also only repeated the section heading directly above them, once per row. The
+mobile chevron went the same way — it was on mobile _results_ and not on mobile
+_hub_ rows, so it was drift wearing an affordance's clothes.
+
+Surprise me carries one mark and one only: an orange label. It is the single row
+that is not an opening — every other row goes to a named position, this one
+takes an action — and orange text is already how the app says "action"
+(`.cancelBtn`, `.back-link`, `.reset-filter-btn`) against white for a
+destination. Colour only: same size, same weight, same box, same hover, muted
+hint. The results list used to make it orange _and_ heavier _and_ filled on
+hover with the hint flung right, which put the escape hatch above the twenty
+real answers it sits under. Its kind differs from the rows around it; its rank
+does not.
+
+It has no icon, and the glyph search is why. Sparkles is the industry's AI mark;
+Shuffle and dice name chance rather than a destination, and shuffle reads as a
+mode you switch on; a gift or an opening box reads as a reward, and mystery-box
+imagery borrows a loot-box association this has no business borrowing. The
+payoff is a chess opening chosen at random, a smaller promise than any of those
+pictures makes. The hint line says it in words.
+
+**Mobile's hero hands off to the overlay.** Below 767px the landing page ran two
+search models on one screen: the top bar's magnifier opened the full-screen
+`SearchOverlay` while the hero opened an inline dropdown that a real on-screen
+keyboard covers. The hero field is now `readOnly` there and opens the same
+overlay, so there is one search surface per screen. Desktop is unchanged.
+
+Three more consequences worth recording, because each reverses something
+earlier:
+
+- **The top-bar dropdown is no longer pinned to its field.** Phase 1 fixed the
+  field at 240px (unchanged), and the dropdown inherited that width, which is
+  why Surprise me dropped its visible hint there and kept it only in a `title`
+  and an `aria-label`. That is invisible to a sighted user arrowing through the
+  list. The panel now sizes to its contents up to 380px, so the row explains
+  itself on every surface and the exception is gone.
+- **The hero hub dropdown had no interior padding at all.** "Recent" sat one
+  pixel below the top border and read as clipped; every row touched the sides.
+  The mobile overlay never showed the fault because its scrolling body supplies
+  the inset.
+- **The results list was capped at 280px** against rows of 71px — under four of
+  twenty visible. Now `min(60vh, 480px)`.
+
+Guarded by `components/shared/__tests__/search-row-parity.test.tsx`, which
+compares a hub row against a results row and fails if they diverge. Canonical
+reference: `design-system/project/preview/components-search-row.html`; the hub
+and results cards own their panels and explicitly do not restyle the row.
+
+### 3.4 Practice drops to accent-outline (2026-07-30)
+
+The table above made Practice the filled primary action on the opening detail
+page, and the implementation audit later found mobile still drawing it outlined
+and "fixed" it to match. Both were reasoning from the same premise: the feature
+is fully built, therefore it can carry primary weight.
+
+That premise answers the wrong question. Whether a feature is _finished_ and
+whether it deserves the loudest control on the page are different things, and
+only the second one decides button weight. On the product owner's call, Practice
+is a good action but not yet as developed as it needs to be to be what the
+opening detail page is _for_. It drops to accent-outline: transparent, orange
+border, orange label.
+
+This introduces the third button tier explicitly. The bundle previously
+documented two — filled orange primary and the grey `.btn--secondary` — while
+`buttonSpec.test.ts` described "transparent with an orange outline" as the
+secondary treatment, which was never true of `.btn--secondary`. The three tiers
+are now named in `components-buttons`: **primary** (filled orange, inverse
+text), **accent-outline** (transparent, orange border, orange label) and
+**secondary** (grey). Practice is the accent-outline tier's first user.
+
+The proportion changed with it, which was the other half of the complaint. The
+desktop label was 11px inside 24px of horizontal padding — a colour swatch with
+a word in it rather than a button — while mobile said 13px for the same control.
+Both are 13px now with padding brought in to match, and mobile carries a 44px
+minimum because it is a thumb target.
+
+The guard is rewritten rather than deleted. Its durable purpose was never "keep
+Practice filled" — it was that Practice is drawn twice, in two files, and has
+drifted across breakpoints twice: once on fill, once on type size. The tests now
+assert the two halves _agree_, and that pagination still carries no brand
+colour. Verified failing against the old styling before landing.
 
 ---
 

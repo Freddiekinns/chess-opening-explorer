@@ -1399,6 +1399,26 @@ const OpeningDetailPage: React.FC = () => {
               treeData={treeData}
             />
 
+            {/* Straight after the explorer surface, because this is more of the
+                same thing: who played the position and how it went. What follows
+                is a gradient away from the page — how to play it, then go watch
+                someone explain it, then go search for yourself — and master
+                games sits on the data side of that line. Collapsed it costs one
+                row, so it barely moves Common plans down; the reverse is not
+                true, and putting a tall section in front strands a data row
+                behind a screen of scrolling.
+
+                This REVERSES the UX-review spec's decision table, which sent it
+                below Learning resources on the grounds that doing so "makes both
+                breakpoints agree on block order". It does the opposite: desktop
+                renders master games in the right rail under the explorer card,
+                with Learning resources full-width below the grid, so desktop has
+                always had this order. So does the bundle's preview card. See
+                §3.2 of docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md
+                before moving it back, and the order guard in
+                pages/__tests__/mobile-stack-order.test.tsx. */}
+            <MasterGamesCard fen={opening.fen} variant="accordion" />
+
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
                 <h2 className={styles.mobileSectionHeading}>Common plans</h2>
@@ -1414,10 +1434,6 @@ const OpeningDetailPage: React.FC = () => {
               searchLinks={searchLinks}
               openingName={opening?.name || ''}
             />
-
-            {/* Last: master games are browse content and must not outrank the
-                learning resources. Same block order as desktop. */}
-            <MasterGamesCard fen={opening.fen} variant="accordion" />
           </div>
         ) : (
           /* Right column — Overview, then one bordered explorer card holding

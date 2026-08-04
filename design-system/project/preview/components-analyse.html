@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../colors_and_type.css" />
+    <style>
+      body {
+        padding: 24px;
+        background: var(--surface-base);
+        font-family: var(--font-family-primary), sans-serif;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+      .cap {
+        display: block;
+        font-family: var(--font-family-mono);
+        font-size: 10px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .screen {
+        width: 620px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--surface-base);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 32px 20px 28px;
+      }
+      /* ── Hero ── */
+      .heroTitle {
+        font-family: var(--font-family-headline);
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--color-text-primary);
+        margin: 0 0 10px;
+        text-align: center;
+      }
+      .heroSub {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--color-text-secondary);
+        margin: 0 auto 24px;
+        max-width: 460px;
+        text-align: center;
+      }
+      /* ── Input bar ── */
+      .bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        padding: 10px 10px 10px 16px;
+      }
+      .pills {
+        display: flex;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-full);
+        padding: 3px;
+        flex-shrink: 0;
+      }
+      .pill {
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+      .pillActive {
+        background: var(--color-brand-orange);
+        color: var(--color-text-inverse);
+      }
+      /* Keyboard focus lands on the hidden radio; the ring is drawn on the
+         visible pill via .platformBtn:has(:focus-visible). */
+      .pillFocus {
+        outline: 2px solid var(--color-brand-orange);
+        outline-offset: 2px;
+      }
+      .field {
+        flex: 1;
+        min-width: 0;
+        font-size: 15px;
+        color: var(--color-text-muted);
+      }
+      .cta {
+        padding: 12px 28px;
+        border-radius: var(--radius-md);
+        background: var(--color-brand-orange);
+        color: var(--color-text-inverse);
+        font-size: 15px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .ctaIdle {
+        opacity: 0.5;
+      }
+      .dim {
+        opacity: 0.55;
+      }
+      .note {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        text-align: center;
+        margin: 12px 0 0;
+      }
+      /* ── Sample offer ── */
+      .sampleOffer {
+        font-size: 14px;
+        color: var(--color-text-muted);
+        margin: 28px 0 0;
+        text-align: center;
+      }
+      .sampleLink {
+        color: var(--color-text-secondary);
+        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.18);
+        text-underline-offset: 3px;
+      }
+      .sampleSep {
+        color: var(--color-border);
+      }
+      /* ── Progress ── */
+      .progress {
+        width: 100%;
+        margin-top: 16px;
+      }
+      .track {
+        height: 8px;
+        border-radius: var(--radius-full);
+        background: var(--color-border);
+        overflow: hidden;
+      }
+      .fill {
+        height: 100%;
+        border-radius: var(--radius-full);
+        background: var(--color-brand-orange);
+        width: 40%;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-text-muted);
+      }
+      /* ── Error ── */
+      .error {
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px 16px;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      /* ── Record card ── */
+      .card {
+        width: 320px;
+        background: var(--surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: var(--color-text-secondary);
+        margin-bottom: 12px;
+      }
+      .cardTitle {
+        font-family: var(--font-family-headline);
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--color-text-primary);
+        margin: 0;
+      }
+      .stats {
+        margin-top: 16px;
+        display: flex;
+        gap: 24px;
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .statValue {
+        font-family: var(--font-family-headline);
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--color-text-primary);
+      }
+      .statWin {
+        color: var(--color-perf-win-text);
+      }
+      .statLoss {
+        color: var(--color-perf-loss-text);
+      }
+      .statLabel {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      /* ── Sample banner ── */
+      .banner {
+        width: 320px;
+        padding: 8px 12px;
+        border-left: 3px solid var(--color-brand-orange);
+        background: rgba(232, 93, 4, 0.12);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--color-text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Analyse (UX review phase 5). One header instead of two; the record card
+         scoped to this run; a sample report so the payoff is visible before you
+         type a username.
+
+         Deviation from the 2026-07-27 mock: the games-count gear moves to the
+         search overlay rather than the dashboard header. The header's only
+         control opens that overlay, so a gear beside it would set a value
+         consumed two clicks away; in the overlay it sits next to the Analyse
+         button that reads it. Either way it leaves the blank state, which is
+         the point of the change.
+
+         Colours are the existing --color-perf-* family: the mock's "sage"
+         #9dbd7c and "brick" #c98579 are exactly --color-perf-win-text and
+         --color-perf-loss-text. No new tokens were needed.
+
+         Ordering note for maintainers: .statsValueWin / .statsValueLoss must
+         be declared AFTER .statsValue in the module. Same specificity, so
+         source order decides — declared before, the tints silently vanish. -->
+
+    <div class="row">
+      <div>
+        <span class="cap">analyse · blank — one header, stated scope, sample offer</span>
+        <div class="screen">
+          <h1 class="heroTitle">Analyse your games</h1>
+          <p class="heroSub">
+            See which openings you actually play, and how they score — from your recent rated games.
+          </p>
+
+          <div class="bar">
+            <div class="pills">
+              <span class="pill pillActive">Chess.com</span>
+              <span class="pill">Lichess</span>
+            </div>
+            <span class="field">Enter username…</span>
+            <span class="cta ctaIdle">Analyse</span>
+          </div>
+
+          <p class="note">
+            Reads your public rated games — rapid, blitz &amp; classical. Bullet excluded. Nothing
+            is stored.
+          </p>
+
+          <p class="sampleOffer">
+            See a sample report — <span class="sampleLink">Magnus</span>
+            <span class="sampleSep">·</span> <span class="sampleLink">Hikaru</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">analysing — fields dim, Cancel replaces Analyse, progress under the bar</span>
+        <div class="screen">
+          <h1 class="heroTitle">Analyse your games</h1>
+          <p class="heroSub">
+            See which openings you actually play, and how they score — from your recent rated games.
+          </p>
+
+          <div class="bar">
+            <div class="pills dim">
+              <span class="pill pillActive">Chess.com</span>
+              <span class="pill">Lichess</span>
+            </div>
+            <span class="field dim">chess_student</span>
+            <span class="cta">Cancel</span>
+          </div>
+
+          <!-- Inside the centred column, not after it: rendered outside, both
+               this bar and the error below landed a third of a viewport down. -->
+          <div class="progress">
+            <div class="track"><div class="fill"></div></div>
+            <div class="meta">
+              <span>Finding your games from Chess.com…</span><span>40/100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">error — quiet, neutral, username retained, button back to Analyse</span>
+        <div class="screen">
+          <div class="bar">
+            <div class="pills">
+              <span class="pill pillActive">Chess.com</span>
+              <span class="pill pillFocus">Lichess</span>
+            </div>
+            <span class="field" style="color: var(--color-text-primary)">chessstudnt99</span>
+            <span class="cta">Analyse</span>
+          </div>
+          <p class="note">
+            Reads your public rated games — rapid, blitz &amp; classical. Bullet excluded. Nothing
+            is stored.
+          </p>
+          <div class="error">
+            We couldn't load your games. Please check the username and try again.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="cap">record card — scoped to this run, wins sage, losses brick</span>
+        <div class="card">
+          <div class="eyebrow">This analysis</div>
+          <h3 class="cardTitle">Your record</h3>
+          <div class="stats">
+            <span class="stat">
+              <span class="statValue statWin">47</span>
+              <span class="statLabel">Wins</span>
+            </span>
+            <span class="stat">
+              <span class="statValue">11</span>
+              <span class="statLabel">Draws</span>
+            </span>
+            <span class="stat">
+              <span class="statValue statLoss">42</span>
+              <span class="statLabel">Losses</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="cap">sample banner — names the player, the count and the date</span>
+        <div class="banner">
+          Sample report · DrNykterstein’s 100 most recent rated games, as of 28 July 2026.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

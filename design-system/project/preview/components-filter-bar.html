@@ -82,11 +82,14 @@
         color: var(--color-text-muted);
         font-variant-numeric: tabular-nums;
       }
+      /* No text-transform: these headings are moves, and case is semantic in
+         algebraic notation — uppercased, "1. Nf3" reached the screen as
+         "1. NF3", which is not a move. Any eyebrow carrying notation keeps
+         its case; size, weight and colour do the work instead. */
       .grouphead {
         font-size: 10px;
         font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        letter-spacing: 0.06em;
         color: var(--color-text-muted);
         margin: 12px 0 4px;
       }

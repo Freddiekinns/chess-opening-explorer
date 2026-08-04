@@ -1,44 +1,45 @@
 # Active Context
 
-**Date:** 2026-07-28
+**Date:** 2026-08-03
 
-## Current Task: UX review phase 4 — opening detail desktop (`ux/phase-4-detail-desktop`)
+## Current Task: The mobile search overlay steps aside when a tab navigates (`ux/phase-5-analyse`)
 
-Fifth of six phases implementing the 2026-07 UX review. Stacked on
-`ux/phase-3-filter-bar` (PRs #58–#61 still open into `feat/ux-review`).
+**The tabs weren't dead — the overlay outlived the navigation.** With search
+open on mobile, tapping Discover / Repertoire / Analyse did change route; the
+overlay stayed on top of the page that had just loaded, so nothing appeared to
+happen.
 
-The level filter sat inside the stats card, did **not** reach the master games
-in that same card, and silently drove a separate card outside it. There was no
-way to learn what it governed by using it. Phase 4 draws the answer as a border.
+- **Why the tabs are tappable at all.** `SearchOverlay` renders inside the
+  sticky `TopBar` (`z-index: 100`), which is a stacking context — so its
+  `z-index: 300` is trapped there, and `BottomTabBar` (later root sibling,
+  also 100) paints _and hit-tests_ above the "modal". That's deliberate: the
+  overlay reserves `padding-bottom` for the bar.
+- **Fix is the missing half of that decision.** Close on `pathname` change,
+  routed through `close()` so the stale query and results go too. Keyed on the
+  path via a ref — a plain `[pathname, open]` dep would shut the overlay the
+  instant it opened.
+- **Placement assessed, left alone.** Search stays top-right: it's a mode over
+  the page, not a destination, it matches the desktop bar, and the tab bar keeps
+  three destinations plus a legible Repertoire badge at 320px. A 4th tab wins
+  the thumb zone but wants a real `/search` route and a portal out of `TopBar`.
+- **Known gap, not fixed:** the overlay declares `aria-modal="true"` while the
+  tab bar above it is intentionally interactive, so AT users get Cancel but not
+  the tabs.
 
-- **New `ExplorerCard`**: raised header band (title "Opening explorer", source
-  line, `LevelLens`) over stats + breadcrumb + next moves + alternatives.
-  Everything the pills govern is inside; nothing outside moves.
-- **`WinRatePanel` is now presentational** — no pills, no master games, and no
-  fetch of its own. It takes the page's `ExplorerQuery`, which was already
-  requesting the same fen/band pair for the book. `WinRateBar` retired with it.
-- **Shared `MasterGamesCard`** (card + accordion variants) replaces
-  `MobileMasterGames` and the duplicate masters fetch. On mobile it moves below
-  Learning resources, so both breakpoints share one block order.
-- **One labelling module** (`lib/explorerStats.ts`) — source line, "Games ·
-  1400–1800", "Most popular at 1400–1800" — imported by both breakpoints so they
-  cannot drift. Snapshot fallback says "Saved snapshot", never "Lichess".
-- **Every reveal names its payload**: moves / games / videos / studies / plans.
-- **The explorer error beacon moved into `useExplorerQuery`.** It lived in
-  `WinRatePanel`, which never renders on mobile — every mobile band failure was
-  invisible to analytics.
+## Previous Task: TopBar search field sized to its own panel (`claude/desktop-search-bar-width-ovwyg0`)
 
-**Copy deviates from the mock twice, both because we lack the data:** master
-games are sourced "Over-the-board masters" (the proxy applies no rating filter,
-so "2,400+ Elo" would be invented) and the reveal is "Show N more games" (we
-hold ≤15 top games, deduped, so "All 47" is unstatable).
+**The dropdown was 140px wider than the control that opened it.** The field was
+a fixed 240px; the panel took `width: max-content` capped at 380px, anchored
+right, so focusing the input flared a box out past the field's left edge.
 
-**Verified:** 441 frontend, 833 backend, clean build; live at 1360 and 390 —
-filter scope, source line and captions all track the pills; the board sticks and
-releases at the rail's end. **Spec/plans:** `docs/superpowers/{specs,plans}/`
-
-## Previous Task: UX review phase 3 — faceted filter bar (PR #61)
-
-Level · Style · Family · Sort replacing two unlabelled pill rows; one
-`/api/openings/browse` request feeds grid, count and facets; URL-param state;
-mobile sheet portalled to `<body>`. **Detail in `archive.md`.**
+- **The field gives, not the panel.** `width: clamp(300px, 30vw, 380px)`, and
+  the panel is now `left: 0; right: 0` — flush both edges. Fluid because the bar
+  is a `1fr auto 1fr` grid: a fixed 380px right column exceeds its fr share
+  below ~1045px and drags the nav off centre. Measured at 901/950/1100/1280/1440
+  — nav stays centred, no overflow.
+- **300px floor is the Surprise me row.** Label plus hint needs ~265px of row;
+  below that the hint would ellipsize, which is the thing the panel-sizing
+  change bought in the first place.
+- **Tablet (640–900px) keeps the old flare.** The 160px field there has no bar
+  room to grow into, and 160px-wide rows are worse than a panel that overhangs.
+  The grow-leftwards rule now lives only in that media query.

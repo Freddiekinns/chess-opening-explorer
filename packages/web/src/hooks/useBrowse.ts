@@ -67,6 +67,19 @@ const PAGE_SIZE = 12;
 
 const EMPTY_FACETS: BrowseFacets = { level: [], style: [], family: [] };
 
+/**
+ * The facet-list spelling of a URL value. Falls through to the value itself
+ * when no option matches — before the first response there are no options,
+ * and a genuinely unknown value should be shown as given rather than
+ * silently swapped for something the user did not ask for.
+ */
+const canonicalise = (options: { value: string }[], value: string | null): string | null => {
+  if (!value) return null;
+  return (
+    options.find((option) => option.value.toLowerCase() === value.toLowerCase())?.value ?? value
+  );
+};
+
 export function useBrowse() {
   const [searchParams, setSearchParams] = useSearchParams();
   const level = searchParams.get('level');
@@ -173,7 +186,16 @@ export function useBrowse() {
     loading,
     loadingMore,
     error,
-    filters: { level, style, family, sort } as BrowseFilters,
+    // Canonicalised once, here, so every downstream `===` against a facet
+    // value holds. The endpoint matches these case-insensitively, so a
+    // lowercased shared link filters correctly — without this the button
+    // would go on reading "beginner" where the label says "Beginner".
+    filters: {
+      level: canonicalise(facets.level, level),
+      style: canonicalise(facets.style, style),
+      family: canonicalise(facets.family, family),
+      sort: canonicalise(SORT_OPTIONS, sort) ?? sort,
+    } as BrowseFilters,
     // Sort is excluded: it is always set, so counting it would mean the
     // "Filters" badge never read zero.
     activeCount: [level, style, family].filter(Boolean).length,

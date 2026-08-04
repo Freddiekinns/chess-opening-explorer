@@ -96,35 +96,75 @@
   line-height: 1.4;
 }
 
-/* Secondary prompt below search when idle */
-.idlePrompt {
-  text-align: center;
-  margin-top: var(--space-8);
-  animation: sectionReveal 500ms ease-out 200ms backwards;
+/* Visually hidden but announced — the username field's real label. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.idlePromptIcon {
-  display: block;
-  margin: 0 auto var(--space-3);
+/* Analysing: the fields recede, the Cancel button does not. */
+.fieldsDim {
+  opacity: 0.55;
+  transition: opacity 150ms ease;
+}
+
+/* Sample offer — quiet, below the scope note. */
+.sampleOffer {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: var(--space-8) 0 0;
+  text-align: center;
+}
+
+.sampleSep {
   color: var(--border-default);
 }
 
-.idlePromptTitle {
-  font-family: var(--font-family-headline);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-extrabold);
+.sampleLink {
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  font-family: inherit;
+  font-size: inherit;
   color: var(--color-text-secondary);
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-2);
+  text-decoration: underline;
+  text-decoration-color: var(--border-hover, rgba(255, 255, 255, 0.18));
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
-.idlePromptText {
-  font-family: var(--font-family-primary);
-  font-size: var(--text-base);
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  max-width: 380px;
-  margin: 0 auto;
+.sampleLink:hover:not(:disabled) {
+  color: var(--color-brand-orange);
+}
+
+.sampleLink:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sampleLink:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Says whose games these are and how old they are. The fixtures are a snapshot
+   of real games, so the date is part of the claim. */
+.sampleBanner {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-brand-orange);
+  background: var(--accent-a12);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
 }
 
 .platformToggle {
@@ -136,7 +176,11 @@
   flex-shrink: 0;
 }
 
+/* A <label> wrapping a hidden radio, not a <button> — the choice is one-of-two
+   and mutually exclusive, so the semantics should say so. */
 .platformBtn {
+  display: inline-flex;
+  align-items: center;
   padding: var(--space-2) var(--space-4);
   border: none;
   border-radius: var(--radius-full);
@@ -152,6 +196,24 @@
 
 .platformBtn:hover:not(.platformBtnActive) {
   color: var(--color-text-primary);
+}
+
+/* The input is hidden; its label carries the pill. Focus lands on the input,
+   so the ring has to be drawn on the label that the eye actually sees. */
+.platformInput {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* :has(:focus-visible), not :focus-within — the latter also fires on a mouse
+   click, which puts a keyboard affordance on every tap of the pill. */
+.platformBtn:has(:focus-visible) {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
 
 .platformBtnActive {
@@ -456,10 +518,6 @@
     right: auto;
     left: 22px;
   }
-
-  .idlePrompt {
-    margin-top: var(--space-6);
-  }
 }
 
 /* ==============================
@@ -618,12 +676,6 @@
   letter-spacing: -0.02em;
   margin: 0 0 var(--space-5) 0;
   text-align: center;
-}
-
-.overlayProgress {
-  width: 100%;
-  margin-top: var(--space-4);
-  animation: cardIn 200ms ease-out;
 }
 
 @keyframes overlayFadeIn {
@@ -800,14 +852,6 @@
   order: 2;
 }
 
-.statsLabelWin {
-  color: var(--color-text-muted);
-}
-
-.statsLabelLoss {
-  color: var(--color-text-muted);
-}
-
 .statsValue {
   font-family: var(--font-family-headline);
   font-size: 28px;
@@ -815,6 +859,17 @@
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
   order: 1;
+}
+
+/* Wins sage, losses brick, draws neutral — the same encoding the perf bars
+   below use, so the card and the distributions agree. Must follow .statsValue:
+   same specificity, so source order decides which colour wins. */
+.statsValueWin {
+  color: var(--color-perf-win-text);
+}
+
+.statsValueLoss {
+  color: var(--color-perf-loss-text);
 }
 
 /* Win rate in opening cards */
@@ -1157,6 +1212,8 @@
   letter-spacing: 0.05em;
 }
 
+/* "Games", not "GP" — wider than the abbreviation it replaced, so the column
+   needs the room or it wraps against the distribution header. */
 .colHeaderGp {
   font-family: var(--font-family-primary);
   font-size: var(--text-2xs);
@@ -1164,8 +1221,9 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  min-width: 36px;
+  min-width: 48px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .colHeaderDist {

@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { SearchHub } from './SearchHub';
+import { SearchRow, SurpriseRow } from './SearchRow';
+import { useRepertoire } from '../../hooks/useRepertoire';
+import { isChessMove } from '../../lib/searchQuery';
 
 export interface Opening {
   fen: string;
@@ -31,6 +35,21 @@ interface SearchBarProps {
   openingsData: Opening[];
   className?: string;
   onExpandSearch?: () => void; // Callback to load more search data if needed
+  /**
+   * Landing variant only. Supplied, the focused field opens the search hub
+   * and this backs its Surprise me row. The caller owns the randomisation
+   * because it can reach the whole corpus; this component only ever holds
+   * the first slice of the search index.
+   */
+  onSurprise?: () => void;
+  /**
+   * Supplied, the field stops being a field: touching it hands off to whatever
+   * this opens and nothing is typed here. Mobile passes it so the hero routes
+   * into the full-screen overlay, the same place the top bar's magnifier goes.
+   * The landing page otherwise had two search models on one screen, and the
+   * inline dropdown was the one that sits under the on-screen keyboard.
+   */
+  onActivate?: () => void;
 }
 
 // Enhanced search function with semantic search as primary
@@ -109,22 +128,8 @@ async function getSearchSuggestions(query: string): Promise<string[]> {
 }
 */
 
-// Helper function to detect if a query looks like a chess move
-function isChessMove(query: string): boolean {
-  const trimmed = query.trim().toLowerCase();
-
-  // Common chess moves: d4, e4, nf3, etc.
-  const movePatterns = [
-    /^[a-h][1-8]$/, // Pawn moves: e4, d4, etc.
-    /^[nbrqk][a-h][1-8]$/, // Piece moves: nf3, bb5, etc.
-    /^o-o-o$/, // Long castling
-    /^o-o$/, // Short castling
-    /^[a-h]x[a-h][1-8]$/, // Captures: exd5, etc.
-    /^[nbrqk]x[a-h][1-8]$/, // Piece captures: nxe5, etc.
-  ];
-
-  return movePatterns.some((pattern) => pattern.test(trimmed));
-}
+// isChessMove now lives beside the count-line phrasing that also needs it —
+// one copy, so scoring and the summary can never disagree about what a move is.
 
 // Helper function to detect if a query is an ECO code
 function isEcoCode(query: string): boolean {
@@ -184,23 +189,8 @@ function expandAbbreviations(query: string): string {
   return ABBREVIATION_MAP[lower] || query;
 }
 
-// Format moves for display. Similar variations share the same first moves,
-// so when the line is too long keep the tail — that's the distinguishing part.
-function formatMovesPreview(moves: string): string {
-  if (!moves) return '';
-  const trimmed = moves.trim();
-  const MAX_LENGTH = 60;
-  if (trimmed.length <= MAX_LENGTH) return trimmed;
-
-  const tail = trimmed.slice(-MAX_LENGTH);
-  // Start at a move number ("4." / "12.") so we don't show half a move pair
-  const moveNumberMatch = tail.match(/\d+\.\s/);
-  if (moveNumberMatch && moveNumberMatch.index !== undefined) {
-    return '… ' + tail.slice(moveNumberMatch.index);
-  }
-  const firstSpace = tail.indexOf(' ');
-  return '… ' + (firstSpace > -1 ? tail.slice(firstSpace + 1) : tail);
-}
+// formatMovesPreview now lives in lib/searchQuery beside isChessMove — every
+// search surface draws the same row, so they must draw the same preview.
 
 // Client-side fallback search (kept for offline scenarios)
 function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] {
@@ -341,6 +331,13 @@ function findAndRankOpenings(query: string, openingsData: Opening[]): Opening[] 
 // Default placeholder with helpful hints
 const DEFAULT_PLACEHOLDER = "Try: Sicilian, d4, QGD, B90, or 'aggressive openings'";
 
+/**
+ * One ranked list that scrolls — no reveal button. The server already returns
+ * this many, so rendering fewer only threw matches away and made the count
+ * line describe a slice of a slice.
+ */
+const RENDER_LIMIT = 20;
+
 export const SearchBar: React.FC<SearchBarProps> = ({
   variant = 'landing',
   onSelect,
@@ -351,6 +348,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   openingsData,
   className = '',
   onExpandSearch,
+  onSurprise,
+  onActivate,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Opening[]>([]);
@@ -358,7 +357,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
   const [hasRequestedExpansion, setHasRequestedExpansion] = useState(false);
   const [noResults, setNoResults] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
+  const { isSaved } = useRepertoire();
 
   // Enhanced search with server-side semantic search
   useEffect(() => {
@@ -376,7 +377,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     // INSTANT: Show client-side results immediately for responsive UX
     const instantResults = findAndRankOpenings(queryToUse, openingsData);
     if (instantResults.length > 0) {
-      setSuggestions(instantResults.slice(0, 8));
+      setSuggestions(instantResults.slice(0, RENDER_LIMIT));
       setShowSuggestions(true);
       setNoResults(false);
     }
@@ -396,7 +397,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         const searchResults = await searchOpenings(queryToUse, true);
 
         if (searchResults.results.length > 0) {
-          setSuggestions(searchResults.results.slice(0, 8));
+          setSuggestions(searchResults.results.slice(0, RENDER_LIMIT));
           setShowSuggestions(true);
           setNoResults(false);
           return;
@@ -431,21 +432,41 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     return () => clearTimeout(searchTimeout);
   }, [searchTerm, openingsData, hasRequestedExpansion, onExpandSearch]);
 
+  // Surprise me used to vanish on the second keystroke — the escape hatch for
+  // "I don't know what I'm looking for" disappearing exactly when the user is
+  // flailing. It now survives into the results list as a footer.
+  const showSurpriseFooter = Boolean(onSurprise);
+
+  const triggerSurprise = () => {
+    if (!onSurprise) return;
+    setIsFocused(false);
+    setShowSuggestions(false);
+    setActiveSuggestion(-1);
+    onSurprise();
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setActiveSuggestion(-1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    // Surprise me sits one past the last result. It is a real destination in
+    // the list, so arrowing has to reach it — a footer you can only click is
+    // an escape hatch half the users cannot open.
+    const lastIndex = showSurpriseFooter ? suggestions.length : suggestions.length - 1;
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setActiveSuggestion((prev) => (prev < suggestions.length - 1 ? prev + 1 : prev));
+      setActiveSuggestion((prev) => (prev < lastIndex ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveSuggestion((prev) => (prev > 0 ? prev - 1 : prev));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (activeSuggestion >= 0) {
+      if (showSurpriseFooter && activeSuggestion === suggestions.length) {
+        triggerSurprise();
+      } else if (activeSuggestion >= 0) {
         selectOpening(suggestions[activeSuggestion]);
       } else if (searchTerm.trim()) {
         handleGo();
@@ -481,19 +502,25 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
-  const handleSurpriseMe = () => {
-    if (openingsData.length > 0) {
-      const randomIndex = Math.floor(Math.random() * openingsData.length);
-      const randomOpening = openingsData[randomIndex];
-      selectOpening(randomOpening);
-    }
-  };
-
   const handleSuggestionClick = (opening: Opening) => {
     selectOpening(opening);
   };
 
+  // Handing off, not searching here. Blur immediately so the on-screen keyboard
+  // does not open behind the surface we are about to show, and so returning
+  // from it does not land back on a focused field that reopens it.
+  const handleActivate = () => {
+    if (!onActivate) return;
+    searchRef.current?.blur();
+    onActivate();
+  };
+
   const handleFocus = () => {
+    if (onActivate) {
+      handleActivate();
+      return;
+    }
+    setIsFocused(true);
     if (suggestions.length > 0) {
       setShowSuggestions(true);
     }
@@ -502,10 +529,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const handleBlur = () => {
     // Delay hiding suggestions to allow for click events
     setTimeout(() => {
+      setIsFocused(false);
       setShowSuggestions(false);
       setActiveSuggestion(-1);
     }, 150);
   };
+
+  // Change 02: focusing the hero field opens the hub. Before typing, this
+  // field showed nothing at all — the same gap the mobile overlay had fixed.
+  const showHub = variant === 'landing' && isFocused && searchTerm.trim().length < 2;
 
   return (
     <div className={`search-bar-container ${variant} ${className}`}>
@@ -520,19 +552,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           onKeyDown={handleKeyDown}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onClick={onActivate ? handleActivate : undefined}
+          /* readOnly, not disabled: the field must stay reachable by tab and
+             announce itself, it just is not where the typing happens. iOS
+             raises no keyboard for a readOnly input, so the handoff is clean. */
+          readOnly={Boolean(onActivate)}
           disabled={disabled || loading}
           autoFocus={autoFocus}
         />
-
-        {variant === 'landing' && (
-          <button
-            className="search-surprise-btn"
-            onClick={handleSurpriseMe}
-            disabled={disabled || loading}
-          >
-            {loading ? 'Loading...' : 'Surprise me'}
-          </button>
-        )}
 
         {loading && (
           <div className="loading-indicator">
@@ -540,25 +567,70 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           </div>
         )}
 
+        {showHub && onSurprise && (
+          // The blur handler tears the dropdown down after 150ms and hub rows
+          // fire on click — a slow press would land on nothing. Holding focus
+          // on the input keeps the row alive to receive it.
+          <div className="search-hub-dropdown" onMouseDown={(e) => e.preventDefault()}>
+            <SearchHub
+              onSelect={(fen) => {
+                setIsFocused(false);
+                setShowSuggestions(false);
+                // Hub rows come from history and the repertoire, so the
+                // opening may not be in the loaded index slice. Consumers
+                // navigate by FEN; the rest of the record is only carried
+                // through when we happen to have it.
+                const match = openingsData.find((entry) => entry.fen === fen);
+                onSelect(match ?? { fen, name: '', eco: '', moves: '', src: 'hub' });
+              }}
+              onSurprise={() => {
+                setIsFocused(false);
+                onSurprise();
+              }}
+            />
+          </div>
+        )}
+
         {showSuggestions && suggestions.length > 0 && (
-          <ul className="search-suggestions">
-            {suggestions.map((opening, index) => (
-              <li
-                key={`${opening.fen}-${index}`}
-                className={`suggestion-item ${index === activeSuggestion ? 'active' : ''}`}
-                onClick={() => handleSuggestionClick(opening)}
-                onMouseEnter={() => setActiveSuggestion(index)}
-              >
-                <div className="suggestion-main">
-                  <strong className="opening-name">{opening.name}</strong>
-                  <span className="opening-eco eco-code">({opening.eco})</span>
-                </div>
-                {opening.moves && (
-                  <div className="suggestion-moves">{formatMovesPreview(opening.moves)}</div>
-                )}
-              </li>
-            ))}
-          </ul>
+          <div className="search-results-dropdown" onMouseDown={(e) => e.preventDefault()}>
+            {/* No count line. There is no "did you mean" and no correction
+                notice either: fuzzy matching absorbs the typo, so the right
+                openings appearing is the whole of the feedback. A number
+                would only invite the question of what it counted — the search
+                scores every record above zero, which is 4,269 for "sicilian"
+                against a family of roughly 1,710. */}
+            {/* A real <ul>: twenty ranked results are a list, and assistive
+                technology should be told how many there are. */}
+            <ul className="search-suggestions">
+              {suggestions.map((opening, index) => (
+                <li key={`${opening.fen}-${index}`}>
+                  <SearchRow
+                    opening={opening}
+                    active={index === activeSuggestion}
+                    /* Repertoire membership travels with the result rather
+                       than sitting in a section of its own: a saved opening
+                       that also matches the query would otherwise be drawn
+                       twice, in two different ranks. */
+                    saved={isSaved(opening.fen)}
+                    onSelect={() => handleSuggestionClick(opening)}
+                    onMouseEnter={() => setActiveSuggestion(index)}
+                  />
+                </li>
+              ))}
+            </ul>
+
+            {showSurpriseFooter && (
+              // Outside the scroller on purpose: an escape hatch that scrolls
+              // away is not one.
+              <div className="search-results-footer">
+                <SurpriseRow
+                  onSurprise={triggerSurprise}
+                  active={activeSuggestion === suggestions.length}
+                  onMouseEnter={() => setActiveSuggestion(suggestions.length)}
+                />
+              </div>
+            )}
+          </div>
         )}
 
         {noResults && searchTerm.length >= 2 && !showSuggestions && (

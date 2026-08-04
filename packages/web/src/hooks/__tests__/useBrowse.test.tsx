@@ -52,6 +52,33 @@ describe('useBrowse', () => {
     expect(url).toContain('family=london');
   });
 
+  // The URL is the shareable copy of this state, and the casing the corpus
+  // uses differs per facet ("Beginner", but "aggressive"). A lowercased link
+  // still filters correctly server-side, so the buttons must not go on
+  // showing the raw slug where a label belongs.
+  it('reports filters in the corpus casing, whatever the URL was written in', async () => {
+    const { result } = renderHook(() => useBrowse(), {
+      wrapper: wrapper('/?level=beginner&style=AGGRESSIVE&family=London'),
+    });
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.filters).toEqual({
+      level: 'Beginner',
+      style: 'aggressive',
+      family: 'london',
+      sort: 'popular',
+    });
+  });
+
+  it('leaves a value it cannot place alone rather than inventing one', async () => {
+    const { result } = renderHook(() => useBrowse(), {
+      wrapper: wrapper('/?family=nonesuch'),
+    });
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.filters.family).toBe('nonesuch');
+  });
+
   it('setFacet writes the URL and refetches from page 1', async () => {
     const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
     await waitFor(() => expect(result.current.loading).toBe(false));

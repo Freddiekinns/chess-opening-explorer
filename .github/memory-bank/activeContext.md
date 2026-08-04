@@ -2,49 +2,48 @@
 
 **Date:** 2026-07-28
 
-## Current Task: UX review phase 2 — browse API (`ux/phase-2-browse-api`)
+## Current Task: UX review phase 3 — faceted filter bar (`ux/phase-3-filter-bar`)
 
-Third of six phases implementing the 2026-07 UX review. **No UI change.** Lands
-before the filter bar so the bar is never built on numbers that do not
-reconcile. Stacked on `ux/phase-1-discover` (PRs #58 and #59 still open into
-`feat/ux-review`).
+Fourth of six phases implementing the 2026-07 UX review. Stacked on
+`ux/phase-2-browse-api` (PRs #58, #59 and #60 still open into `feat/ux-review`).
 
-`GET /api/openings/browse?level&style&family&sort&page&pageSize` returns items,
-`total`, `remaining` and facet counts from **one index in one request** — today
-the landing page's category counts come from one fetch and its grid from
-another, so they cannot agree.
+Two unlabelled pill rows — level plus raw ECO letters, reading as one row of ten
+— become four facet buttons that each state what they filter and what they are
+set to: **Level · Style · Family · Sort**. Grid, result count and facet counts
+now come from **one** `/api/openings/browse` request, so the number on screen
+and the cards under it cannot disagree — the bug the review found and phase 2
+built the endpoint to fix.
 
-- **The invariant:** `total === offset + items.length + remaining`. Asserted per
-  page on a synthetic corpus and by walking all 1,710 Sicilian openings for
-  real.
-- **Facets exclude their own dimension** (standard faceted search) — otherwise
-  picking a level zeroes every other level and the bar becomes a dead end.
-- **One primary style per opening.** Raw `style_tags` cannot be a facet: ~7 tags
-  each, and "Strategic" alone is on 8,501 of 12,377, so multi-membership buckets
-  each match ~50% of the corpus. The rule (gambit override → highest tag-match
-  count → config order) partitions it: positional 3,585 · aggressive 3,168 ·
-  gambit 2,182 · solid 1,271 · tactical 1,100 · system 1,068 · 3 unstyled.
-- **Vocabulary lives in `config/browse_facets.json`**, loaded by a literal
-  `require` — a computed path is invisible to Vercel's file tracer and the file
-  would be missing from the deployed function.
-- **Unknown facet values 400.** A silent empty result is indistinguishable from
-  a genuine empty filter.
-- Page size capped at 48; `Cache-Control` in `vercel.json` (mandatory per
-  route).
+- **Filter state in URL search params** (`replace`, not `push` — four facet taps
+  must not cost four Back presses). Cards stay real `<Link>`s; facet controls
+  are `<button>`s, so no crawlable filter URLs and canonical stays `/`. "Load
+  more" depth is deliberately NOT in the URL.
+- **Family replaces ECO categories**, grouped by first move derived server-side
+  (`BrowseService.familyFirstMoves`). Under 60% modal share reports `null` and
+  lands in "Other openings" — Irregular Openings is 32% 1.d4, not a fact. 27 of
+  29 families have a first move.
+- **The applied facet value survives at count 0** in its own facet list, or the
+  bar cannot label the user's own selection and an empty grid has no visible
+  cause.
+- **The mobile sheet must be portalled to `<body>`.** `position: fixed` resolves
+  against the nearest transformed ancestor, and `.popular-openings-section`
+  animates `sectionReveal`, whose keyframes carry `translateY` — rendered in
+  place the sheet landed ~1,000px down the page. New variant of the documented
+  transform gotcha; caught in the browser, regression-tested.
+- One sheet holds all four facets (the mock draws one per facet = three taps to
+  set a level); choices apply live so the footer count is never stale.
+- `ComplexityFilters`, `CategoryFilter` and their CSS are deleted.
 
-**Known:** the level facet is 61% Advanced, 1.4% Beginner — the enrichment's
-judgement, shown honestly rather than hidden. Measure usage after phase 3 before
-deciding whether to re-enrich or drop the dimension.
+**Known:** level is 61% Advanced, 1.4% Beginner — now that the facet is on
+screen, measure usage before deciding whether to re-enrich or drop it.
 
-**Verified:** 829 backend tests (63 suites), 372 frontend unchanged, clean
-build, endpoint exercised live on :3010.
+**Verified:** 833 backend, 413 frontend, clean build, exercised live at 1360 and
+390 (facet counts reconcile to the total on real data; back restores facets).
+**Spec/plans:** `docs/superpowers/{specs,plans}/2026-07-2*-ux-*`
 
-**Spec:** `docs/superpowers/specs/2026-07-27-ux-review-implementation-design.md`
-**Plans:** `docs/superpowers/plans/2026-07-2{7,8}-ux-phase-{0,1,2}-*.md`
+## Previous Task: UX review phase 2 — browse API (PR #60)
 
-## Previous Task: UX review phase 1 — Discover closes the loop (PR #59)
-
-Shared `Toast` + `useRepertoireToast` (undo must call `toggle` through a ref —
-capturing it re-adds instead of removing), star on every card, persistent
-top-bar search, shared `SearchHub`, `/repertoire` route, three mobile tabs.
-Phase 0 (PR #58) was the systemic pass. **Detail in `archive.md`.**
+`GET /api/openings/browse` returning items, `total`, `remaining` and facet
+counts from one index in one request. One primary style per opening; facets
+exclude their own dimension; unknown values 400; page size capped at 48. No UI
+change. **Detail in `archive.md`.**

@@ -34,8 +34,6 @@ interface Opening {
 const LandingPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [openingsData, setOpeningsData] = useState<Opening[]>([]);
-  const [dataLoaded, setDataLoaded] = useState(false);
-  const [popularOpenings, setPopularOpenings] = useState<Opening[]>([]);
   const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false);
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -69,64 +67,19 @@ const LandingPage: React.FC = () => {
     }
   };
 
-  // Load openings data and popular openings
+  // Only the search index now — the grid fetches its own data from
+  // /api/openings/browse, which is what makes its count and its contents agree.
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-
-        // Load popular openings first (most critical for UX)
-        const popularResponse = await fetch('/api/openings/popular-by-eco?limit=6');
-        const popularData = await popularResponse.json();
-
-        if (popularData.success && popularData.data) {
-          const flattenedPopular = Object.values(popularData.data).flat() as Opening[];
-          setPopularOpenings(flattenedPopular);
-          setDataLoaded(true);
-        }
-
-        // Load search index in parallel
-        fetch('/api/openings/search-index?limit=1000')
-          .then((response) => response.json())
-          .then((searchData) => {
-            if (searchData.success) {
-              setOpeningsData(searchData.data);
-
-              if (!popularData.success || !popularData.data) {
-                const fallbackPopular = searchData.data
-                  .filter(
-                    (opening: Opening) =>
-                      opening.games_analyzed || opening.analysis_json?.popularity
-                  )
-                  .sort((a: Opening, b: Opening) => {
-                    const gamesA = a.games_analyzed || 0;
-                    const gamesB = b.games_analyzed || 0;
-                    if (gamesA !== gamesB) return gamesB - gamesA;
-                    return (b.analysis_json?.popularity || 0) - (a.analysis_json?.popularity || 0);
-                  })
-                  .slice(0, 30);
-
-                setPopularOpenings(fallbackPopular);
-                setDataLoaded(true);
-              }
-            }
-          })
-          .catch((error) => {
-            console.warn('Search index loading failed:', error);
-            if (popularData.success && popularData.data) {
-              const flattenedPopular = Object.values(popularData.data).flat() as Opening[];
-              setOpeningsData(flattenedPopular);
-            }
-          });
-      } catch (error) {
-        console.error('Error loading data:', error);
-        setDataLoaded(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
+    setLoading(true);
+    fetch('/api/openings/search-index?limit=1000')
+      .then((response) => response.json())
+      .then((searchData) => {
+        if (searchData.success) setOpeningsData(searchData.data);
+      })
+      .catch((error) => {
+        console.warn('Search index loading failed:', error);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const handleOpeningSelect = (opening: Opening) => {
@@ -205,13 +158,7 @@ const LandingPage: React.FC = () => {
 
       {/* Popular Openings Grid */}
       <div className="popular-openings-container">
-        {dataLoaded && popularOpenings.length > 0 ? (
-          <PopularOpeningsGrid openings={popularOpenings} className="main-grid" />
-        ) : (
-          <div className="popular-openings-placeholder">
-            {/* Reserved space for Popular Openings to prevent layout shift */}
-          </div>
-        )}
+        <PopularOpeningsGrid className="main-grid" />
       </div>
 
       {isPGNModalOpen && (

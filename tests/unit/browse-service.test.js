@@ -366,11 +366,48 @@ describe('BrowseService.browse — facet semantics', () => {
     expect(facets.family.find((f) => f.value === 'london').label).toBe('London System');
     expect(facets.family.find((f) => f.value === 'uncategorised').label).toBe('Other');
   });
+});
 
-  test('zero-count facet values are omitted, not sent as zeroes', () => {
+describe('BrowseService.browse — facet zero handling', () => {
+  test('zero-count values are omitted from dimensions the user has not chosen', () => {
     const { facets } = service.browse({ family: 'london', pageSize: 48 });
     expect(facets.level.every((f) => f.count > 0)).toBe(true);
     expect(facets.style.every((f) => f.count > 0)).toBe(true);
+  });
+
+  test('the applied value survives at zero so the bar can still label it', () => {
+    // No Beginner opening in the english family, but the user chose Beginner:
+    // dropping it would leave the trigger unable to name its own selection.
+    const { facets, total } = service.browse({
+      level: 'Beginner',
+      family: 'english',
+      pageSize: 48,
+    });
+    expect(total).toBe(0);
+    expect(facets.level.find((f) => f.value === 'Beginner')).toMatchObject({
+      label: 'Beginner',
+      count: 0,
+    });
+  });
+
+  test('style facets do not leak the raw tag lists from config', () => {
+    const { facets } = service.browse({ pageSize: 48 });
+    expect(facets.style.every((f) => f.tags === undefined)).toBe(true);
+  });
+});
+
+describe('BrowseService.browse — family first moves', () => {
+  test('a family whose openings share a first move reports it', () => {
+    const { facets } = service.browse({ pageSize: 48 });
+    expect(facets.family.find((f) => f.value === 'sicilian').first_move).toBe('e4');
+    expect(facets.family.find((f) => f.value === 'london').first_move).toBe('d4');
+  });
+
+  test('a family with no dominant first move reports null, not a guess', () => {
+    // The three english fixture rows are 1. c4, 1. Nf3 and 1. g3 — a 33% modal
+    // share is not a first move, and asserting one would be an invented fact.
+    const { facets } = service.browse({ pageSize: 48 });
+    expect(facets.family.find((f) => f.value === 'english').first_move).toBeNull();
   });
 });
 

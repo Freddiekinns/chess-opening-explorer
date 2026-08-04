@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
 import { ComplexityFilters } from '../filters/ComplexityFilters';
 import { CategoryFilter } from '../filters/CategoryFilter';
+import { Toast } from '../shared/Toast';
+import { useRepertoireToast } from '../../hooks/useRepertoireToast';
 
 interface Opening {
   fen: string;
@@ -38,6 +40,10 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedComplexity, setSelectedComplexity] = useState<string | null>(null);
   const [displayLimit, setDisplayLimit] = useState(6); // Show 6 initially, then load more
+
+  // The page promoted building a repertoire but gave no way to do it — saving
+  // required opening a detail page first (UX review change 08).
+  const { isSaved, toggleWithToast, toast } = useRepertoireToast();
 
   // Helper function to count the number of moves in a moves string
   const countMoves = (moves: string): number => {
@@ -295,6 +301,17 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
             opening={opening}
             showEco={true}
             showBoard={true}
+            showStar={true}
+            isStarred={isSaved(opening.fen)}
+            onStarClick={() =>
+              toggleWithToast({
+                fen: opening.fen,
+                name: opening.name,
+                eco: opening.eco,
+                moves: opening.moves,
+                complexity: opening.analysis_json?.complexity,
+              })
+            }
             className="opening-grid-item"
           />
         ))}
@@ -316,6 +333,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({
           </button>
         </div>
       )}
+
+      {toast && <Toast message={toast.message} onUndo={toast.onUndo} />}
     </section>
   );
 };

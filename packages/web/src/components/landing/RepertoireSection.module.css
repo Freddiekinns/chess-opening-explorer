@@ -201,36 +201,11 @@
   }
 }
 
-/* Empty state */
-.emptyState {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-8) var(--space-4);
-  text-align: center;
-  color: var(--color-text-secondary);
-  border: 1px dashed var(--border-default);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.emptyIcon {
-  font-size: var(--text-3xl);
-  margin-bottom: var(--space-3);
-  opacity: 0.5;
-}
-
-.emptyTitle {
-  font-size: var(--text-md);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  margin: 0 0 var(--space-2);
-}
-
-.emptyHint {
-  font-size: var(--text-base);
+/* Empty state — one line, so Popular openings stays above the fold on a first
+   visit. The dashed panel it replaced cost roughly a screen of dead space. */
+.emptyPrompt {
   margin: 0;
-  max-width: 300px;
-  line-height: var(--line-height-normal);
+  padding: var(--space-3) 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }

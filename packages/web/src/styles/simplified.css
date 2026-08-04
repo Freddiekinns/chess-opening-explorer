@@ -2832,29 +2832,46 @@ body {
    PGN INPUT MODAL
    ================= */
 
-/* Link below search bar */
-.pgn-search-link-wrapper {
-  text-align: center;
+/* Quiet links below the hero search. Neither may be orange or filled — search
+   is the only prominent element in the hero. `backwards`, never `both`: a
+   retained transform keeps a stacking context and click-blocks the search
+   dropdown (this exact regression shipped once). */
+.hero-secondary-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
   margin-top: var(--space-3);
   animation: sectionReveal 400ms ease-out backwards;
   animation-delay: 200ms;
 }
 
-.pgn-search-link {
+.hero-quiet-link {
   background: none;
   border: none;
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   cursor: pointer;
   padding: var(--space-2) var(--space-3);
+  min-height: 44px;
   transition: var(--transition-base);
   text-decoration: underline;
   text-decoration-color: var(--border-hover);
   text-underline-offset: 3px;
 }
 
-.pgn-search-link:hover {
-  color: var(--color-brand-orange);
+.hero-quiet-link:hover {
+  color: var(--color-text-primary);
+  text-decoration-color: var(--color-text-secondary);
+}
+
+.hero-quiet-link:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+.hero-link-separator {
+  color: var(--color-text-muted);
 }
 
 /* Modal overlay with glassmorphism */
@@ -3138,7 +3155,7 @@ button:focus-visible,
   .hero-title,
   .hero-subtitle,
   .hero-search-wrapper,
-  .pgn-search-link-wrapper,
+  .hero-secondary-links,
   .popular-openings-section,
   .not-found-page {
     animation: none;

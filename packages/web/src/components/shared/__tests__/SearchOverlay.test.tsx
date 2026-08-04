@@ -56,14 +56,14 @@ describe('SearchOverlay', () => {
     expect(screen.getByText('Caro-Kann Defence')).toBeInTheDocument();
     expect(screen.getByText('Your repertoire')).toBeInTheDocument();
     expect(screen.getAllByText(/Repertoire Opening/)).toHaveLength(5);
-    expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
   });
 
   test('hides empty sections when there is nothing to show', () => {
     renderOverlay();
     expect(screen.queryByText('Recent')).not.toBeInTheDocument();
     expect(screen.queryByText('Your repertoire')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Surprise me!/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Surprise me/ })).toBeInTheDocument();
   });
 
   test('tapping a repertoire row navigates to the opening and closes', async () => {
@@ -93,7 +93,7 @@ describe('SearchOverlay', () => {
     await user.type(screen.getByPlaceholderText('Search openings...'), 'al');
     await waitFor(() => expect(screen.getByText('Alekhine Defense')).toBeInTheDocument());
     // Empty-state sections give way to results
-    expect(screen.queryByRole('button', { name: /Surprise me!/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Surprise me/ })).not.toBeInTheDocument();
   });
 
   test('shows the no-results hint when the search comes back empty', async () => {

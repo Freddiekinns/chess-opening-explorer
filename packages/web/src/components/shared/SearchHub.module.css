@@ -1,0 +1,99 @@
+.hub {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-bottom: var(--space-4);
+}
+
+.sectionLabel {
+  font-size: var(--text-3xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 var(--space-2);
+}
+
+.rowList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.row,
+.surprise {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2-5) var(--space-3);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.row:hover,
+.surprise:hover {
+  background: var(--surface-overlay);
+  border-color: var(--border-default);
+}
+
+.row:focus-visible,
+.surprise:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Surprise me is a hub row, not a filled orange button: it is a browse-y
+   action and must not read as the primary thing on the surface. */
+.surprise {
+  color: var(--color-text-muted);
+}
+
+.rowIcon {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.rowIconStar {
+  color: var(--color-brand-orange);
+  fill: var(--color-brand-orange);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.rowName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowMeta {
+  font-size: var(--text-2xs);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowEco {
+  font-family: var(--font-family-mono);
+}

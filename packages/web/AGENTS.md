@@ -24,16 +24,40 @@ shared with other components — only remove the selectors you're migrating.
 
 All three search surfaces — the landing hero (`SearchBar`), `TopBarSearch` and
 the mobile `SearchOverlay` — call `hooks/useOpeningSearch.ts`. **Do not add a
-fetch, a debounce or a no-results string to a search component.** Query shape
-(abbreviations, ECO codes, moves, the debounce constant) lives in
-`lib/searchQuery.ts`; local ranking in `lib/localSearch.ts`; the saved-opening
-tie-break in `lib/searchRanking.ts`; Surprise me in `lib/randomOpening.ts`. Rows
-come from `SearchRow`, the blank state from `SearchHub`, the dead end from
+fetch, a debounce, a local index or a no-results string to a search component.**
+Query shape (abbreviations, ECO codes, moves, the debounce constant) lives in
+`lib/searchQuery.ts`; the shared index slice in `lib/searchIndex.ts`; local
+ranking in `lib/localSearch.ts`; the saved-opening tie-break in
+`lib/searchRanking.ts`; Surprise me in `lib/randomOpening.ts`. Rows come from
+`SearchRow`, the blank state from `SearchHub`, the dead end from
 `SearchNoResults`.
 
 Each surface keeps only what genuinely differs: focus and teardown, the keyboard
 cursor, and where a chosen result goes. `search-surface-parity.test.tsx` pins
-that the three ask the same question and give the same answer.
+that the three ask the same question, give the same answer, and take the same
+time to do it.
+
+### The two halves, and why they have to agree
+
+A query paints twice. `useOpeningSearch` ranks the locally held slice on the
+keystroke, then replaces that list with the server's a few hundred milliseconds
+later. The slice is fetched once per page from
+`/api/openings/search-index?limit=1000` on the first character typed anywhere —
+never on mount, and never per surface. It used to be a prop only the landing
+page supplied, which is the whole reason the hero felt instant and the top bar
+felt broken.
+
+`lib/localSearch.ts` implements the server's bands
+(`packages/api/src/services/search/NameIndex.js`) deliberately, and
+`lib/__tests__/local-server-parity.test.ts` imports that CommonJS module and
+runs both over the same openings. If the two rankings drift the results
+reshuffle under the cursor while the user is reading them, which is worse than
+the wait it replaced. **Change one ranking and you change both.**
+
+The local pass is paint-ahead and never the final answer — the server sees all
+12,377 openings against the slice's popular thousand, and it can read a
+misspelling. One request per query: the plain-search fallback that used to
+follow an empty semantic search is gone (see the root `AGENTS.md`).
 
 ## Imports
 

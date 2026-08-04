@@ -7,6 +7,7 @@ import { PopularOpeningsGrid } from '../components/landing/PopularOpeningsGrid';
 import { RepertoireSection } from '../components/landing/RepertoireSection';
 import { buildSiteUrl, SITE_NAME } from '../lib/siteConfig';
 import { fetchRandomOpening } from '../lib/randomOpening';
+import { loadFullSearchIndex } from '../lib/searchIndex';
 
 // Loaded on first open — the modal's PGN parsing pulls chess.js, which must
 // stay out of the landing bundle (see vite.config manualChunks).
@@ -35,9 +36,7 @@ interface Opening {
 }
 
 const LandingPage: React.FC = () => {
-  const [loading, setLoading] = useState(false);
   const [openingsData, setOpeningsData] = useState<Opening[]>([]);
-  const [expandedSearchLoaded, setExpandedSearchLoaded] = useState(false);
   const [isPGNModalOpen, setIsPGNModalOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -55,37 +54,21 @@ const LandingPage: React.FC = () => {
     };
   }, []);
 
-  // Progressive search expansion function
-  const handleExpandSearch = async () => {
-    if (expandedSearchLoaded) return;
-
-    try {
-      const response = await fetch('/api/openings/search-index');
-      const data = await response.json();
-
-      if (data.success) {
-        setOpeningsData(data.data);
-        setExpandedSearchLoaded(true);
-      }
-    } catch (error) {
-      console.warn('Failed to expand search index:', error);
-    }
-  };
-
-  // Only the search index now — the grid fetches its own data from
-  // /api/openings/browse, which is what makes its count and its contents agree.
+  // Search no longer needs anything from this page: the slice it ranks against
+  // is shared by every surface and loaded by the hook (lib/searchIndex.ts). The
+  // full index is fetched only for the PGN lookup, which is the one thing that
+  // genuinely needs all 12,377 positions — identifying a pasted game against
+  // the popular thousand mostly fails.
   useEffect(() => {
-    setLoading(true);
-    fetch('/api/openings/search-index?limit=1000')
-      .then((response) => response.json())
-      .then((searchData) => {
-        if (searchData.success) setOpeningsData(searchData.data);
-      })
-      .catch((error) => {
-        console.warn('Search index loading failed:', error);
-      })
-      .finally(() => setLoading(false));
-  }, []);
+    if (!isPGNModalOpen || openingsData.length > 0) return;
+    let live = true;
+    loadFullSearchIndex().then((openings) => {
+      if (live) setOpeningsData(openings);
+    });
+    return () => {
+      live = false;
+    };
+  }, [isPGNModalOpen, openingsData.length]);
 
   const handleOpeningSelect = (opening: Opening) => {
     const encodedFen = encodeURIComponent(opening.fen);
@@ -128,10 +111,6 @@ const LandingPage: React.FC = () => {
               variant="landing"
               onSelect={handleOpeningSelect}
               placeholder="Search variations, ECO codes, or systems..."
-              disabled={loading}
-              loading={loading}
-              openingsData={openingsData}
-              onExpandSearch={handleExpandSearch}
               onSurprise={handleSurpriseMe}
               /* Below 767px the hero hands off to the full-screen overlay
                  rather than opening its own dropdown. The landing page

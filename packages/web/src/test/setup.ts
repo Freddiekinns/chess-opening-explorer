@@ -1,4 +1,14 @@
 import '@testing-library/jest-dom';
+import { beforeEach } from 'vitest';
+import { __resetSearchIndexForTests } from '../lib/searchIndex';
+
+// The search index is cached for the lifetime of the page, which in a test file
+// is the lifetime of the file. Left alone, the first test's fixture answers
+// every later test's search — and silently, because the surfaces are meant to
+// work whether or not the index has loaded.
+beforeEach(() => {
+  __resetSearchIndexForTests();
+});
 
 // Setup for tests
 global.ResizeObserver = class ResizeObserver {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRepertoire } from './useRepertoire';
 import { findAndRankOpenings, type Opening } from '../lib/localSearch';
 import { promoteSaved } from '../lib/searchRanking';
+import { useSearchIndex } from '../lib/searchIndex';
 import { MIN_QUERY_LENGTH, SEARCH_DEBOUNCE_MS, expandAbbreviations } from '../lib/searchQuery';
 
 /**
@@ -9,15 +10,17 @@ import { MIN_QUERY_LENGTH, SEARCH_DEBOUNCE_MS, expandAbbreviations } from '../li
  *
  * The hero, the top bar and the mobile overlay each used to own a fetch, a
  * debounce and a set of shortcuts, and only the hero's knew what an abbreviation
- * or an ECO code was. Typing "qgd" in the hero resolved instantly to the Queen's
- * Gambit Declined off the local index; typing it in the top bar waited 250ms and
- * came back with a different list. Nothing about which box you typed into should
- * change which openings exist.
+ * or an ECO code was. That was fixed; what was left was worse, because it was
+ * invisible. The hero held a slice of the search index and the other two did
+ * not, so the hero answered on the keystroke and the top bar sat waiting on a
+ * server that took 1–3 seconds to fuzzy-match a name. Same question, same
+ * ranking, wildly different product.
  *
- * What stays with each surface is what genuinely differs: where a chosen result
- * goes (a callback on the hero, a route everywhere else), how the panel is drawn
- * and torn down, and what the keyboard does. This owns the query and nothing
- * else.
+ * Both halves are now shared: the index comes from `searchIndex.ts`, one copy
+ * for every surface, and the server answers a name in single-digit milliseconds
+ * (see `search/NameIndex.js`). What stays with each surface is what genuinely
+ * differs: where a chosen result goes, how the panel is drawn and torn down,
+ * and what the keyboard does. This owns the query and nothing else.
  */
 
 export interface SearchResult extends Partial<Opening> {
@@ -29,46 +32,29 @@ export interface SearchResult extends Partial<Opening> {
   saved: boolean;
 }
 
-export interface UseOpeningSearchOptions {
-  /**
-   * A locally held slice of the search index, if this surface has one. Used
-   * only to paint something before the network answers; the server's list
-   * replaces it. The top bar and the overlay pass nothing rather than pull a
-   * 1.6 MB index onto every page for the sake of one keystroke.
-   */
-  localIndex?: Opening[];
-  /**
-   * Called once when the local index looks too thin to be answering with. The
-   * hero uses it to fetch more of the index.
-   */
-  onExhausted?: () => void;
-}
-
-/** Below this many local hits, the loaded slice is probably not the problem's size. */
-const LOCAL_INDEX_THIN = 3;
-
 const RESULT_LIMIT = 20;
 
-async function fetchResults(url: string): Promise<Partial<Opening>[]> {
-  const response = await fetch(url);
+/**
+ * One request per query.
+ *
+ * There used to be two: semantic search, then a plain name search if the first
+ * came back empty. That fallback existed because the search route could not see
+ * ECO codes and fuzzy-matched everything else, so it missed things a plain name
+ * scan caught — and a miss cost the user two round trips before the dead end
+ * appeared. The route now matches names literally before it does anything else;
+ * across 389 sampled queries the plain search found nothing the search route
+ * missed, so the second trip is gone.
+ */
+async function search(query: string): Promise<Partial<Opening>[]> {
+  const response = await fetch(
+    `/api/openings/semantic-search?q=${encodeURIComponent(query)}&limit=${RESULT_LIMIT}`
+  );
   if (!response.ok) return [];
   const data = await response.json();
   return data?.success && Array.isArray(data.data) ? data.data : [];
 }
 
-/**
- * Semantic search, then plain name search if it 500s or comes back with
- * nothing. Only the hero used to carry this fallback; the other two surfaces
- * simply showed a dead end when the search route was unwell.
- */
-async function search(query: string): Promise<Partial<Opening>[]> {
-  const q = encodeURIComponent(query);
-  const semantic = await fetchResults(`/api/openings/semantic-search?q=${q}&limit=${RESULT_LIMIT}`);
-  if (semantic.length > 0) return semantic;
-  return fetchResults(`/api/openings/search?q=${q}&limit=${RESULT_LIMIT}`);
-}
-
-export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOptions = {}) {
+export function useOpeningSearch() {
   const [query, setQuery] = useState('');
   const [served, setServed] = useState<Partial<Opening>[]>([]);
   const [searching, setSearching] = useState(false);
@@ -77,15 +63,14 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
 
   const hasQuery = query.trim().length >= MIN_QUERY_LENGTH;
 
-  const requestedExpansion = useRef(false);
-  const onExhaustedRef = useRef(onExhausted);
-  onExhaustedRef.current = onExhausted;
+  // Loaded on the first character rather than on mount, so a page nobody
+  // searches from never pays for it — and it is in hand by the second, which is
+  // the first that draws anything.
+  const localIndex = useSearchIndex(query.trim().length > 0);
 
   // Monotonic request id. Clearing the debounce timer only cancels a request
   // that has not left yet; one already in flight still resolves, and without
   // this its `setServed` would land under a query the field no longer asks.
-  // "kings ind" takes two round trips when semantic search comes back empty,
-  // so it can easily outlive the "kings indian" that replaced it.
   const requestRef = useRef(0);
 
   useEffect(() => {
@@ -103,7 +88,7 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
     // must be asking the same question.
     const expanded = expandAbbreviations(query);
 
-    const instant = localIndex?.length ? findAndRankOpenings(expanded, localIndex) : [];
+    const instant = localIndex.length ? findAndRankOpenings(expanded, localIndex) : [];
     if (instant.length > 0) {
       setServed(instant.slice(0, RESULT_LIMIT));
       setCameBackEmpty(false);
@@ -119,9 +104,10 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
         if (!isCurrent()) return;
 
         if (fromServer.length > 0) {
-          // The server's list wins even where the local one had something. The
-          // point of this hook is that every surface ends up at the same
-          // openings, and only one of them holds an index to disagree with.
+          // The server's list wins even where the local one had something. It
+          // sees all 12,377 openings, the slice sees the popular thousand, and
+          // it can read a misspelling. The two rank by the same bands, so this
+          // usually replaces the list with itself.
           setServed(fromServer.slice(0, RESULT_LIMIT));
           setCameBackEmpty(false);
         } else if (instant.length === 0) {
@@ -132,15 +118,6 @@ export function useOpeningSearch({ localIndex, onExhausted }: UseOpeningSearchOp
           setCameBackEmpty(true);
         } else {
           setCameBackEmpty(false);
-        }
-
-        if (
-          instant.length < LOCAL_INDEX_THIN &&
-          !requestedExpansion.current &&
-          onExhaustedRef.current
-        ) {
-          requestedExpansion.current = true;
-          onExhaustedRef.current();
         }
       } catch {
         // Offline or the route is down. Whatever the local index found stands;

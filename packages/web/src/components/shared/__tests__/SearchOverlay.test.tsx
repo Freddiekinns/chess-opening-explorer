@@ -119,9 +119,11 @@ describe('SearchOverlay', () => {
     renderOverlay();
 
     await user.type(screen.getByPlaceholderText('Search openings...'), 'fr');
-    await waitFor(() => expect(screen.getByText('French Defence')).toBeInTheDocument());
-
-    expect(screen.getAllByText('Saved')).toHaveLength(1);
+    // Waiting on the marker, not on the row: the locally held index draws
+    // matching openings on the keystroke, so "French Defence" is on screen
+    // before the server's list — which is the one carrying the repertoire
+    // opening that "fr" does not match — has replaced it.
+    await waitFor(() => expect(screen.getAllByText('Saved')).toHaveLength(1));
     expect(screen.getByRole('button', { name: /Repertoire Opening 0/ })).toHaveTextContent('Saved');
   });
 

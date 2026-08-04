@@ -1,6 +1,6 @@
 /**
  * Guard: the three search surfaces ask the same question and give the same
- * answer.
+ * answer, in the same time.
  *
  * They did not. `SearchBar` (hero), `TopBarSearch` and `SearchOverlay` each
  * owned a fetch, a debounce and a no-results string. Only the hero expanded
@@ -9,8 +9,12 @@
  * and "kid" returned 12,093 results led by the Kiddie Countergambit. The
  * debounces were 300ms and 250ms for no stated reason.
  *
- * This test compares the request each surface issues and the copy each shows
- * when the search fails, which is the pair that silently drifted.
+ * Sharing the hook fixed the question and the answer, and left the timing: the
+ * hero held a slice of the search index and the other two did not, so it drew
+ * openings on the keystroke while they waited on the network. That is the
+ * difference a user actually reports. The slice is now shared too, so this
+ * pins all three: the request, the copy when it fails, and drawing something
+ * before the server has said anything.
  */
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -20,6 +24,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { SearchBar } from '../SearchBar';
 import SearchOverlay from '../SearchOverlay';
 import TopBar from '../../layout/TopBar';
+import { resetSearchIndex } from '../../../test/searchIndexStub';
 
 const { navigateMock } = vi.hoisted(() => ({ navigateMock: vi.fn() }));
 
@@ -28,7 +33,7 @@ vi.mock('react-router-dom', async (importOriginal) => {
   return { ...actual, useNavigate: () => navigateMock };
 });
 
-/** The hero holds a local index slice; the other two surfaces never do. */
+/** The slice every surface now ranks against while the server is still thinking. */
 const LOCAL_INDEX = [
   {
     fen: 'fen-qgd-local',
@@ -50,16 +55,20 @@ const SERVED = [
   },
 ];
 
-const createFetchMock = (data: unknown[]) =>
+const createFetchMock = (data: unknown[], onSearch?: () => void) =>
   vi.fn(async (url: string) => {
-    void url;
+    if (String(url).includes('/api/openings/search-index')) {
+      return { ok: true, json: async () => ({ success: true, data: LOCAL_INDEX }) };
+    }
+    onSearch?.();
     return { ok: true, json: async () => ({ success: true, data }) };
   });
 
 let fetchMock: ReturnType<typeof createFetchMock>;
 
-function stubSearch(data: unknown[]) {
-  fetchMock = createFetchMock(data);
+function stubSearch(data: unknown[], onSearch?: () => void) {
+  resetSearchIndex();
+  fetchMock = createFetchMock(data, onSearch);
   vi.stubGlobal('fetch', fetchMock);
 }
 
@@ -70,7 +79,7 @@ const surfaces = [
     render: () =>
       render(
         <MemoryRouter>
-          <SearchBar onSelect={vi.fn()} openingsData={LOCAL_INDEX} onSurprise={vi.fn()} />
+          <SearchBar onSelect={vi.fn()} onSurprise={vi.fn()} />
         </MemoryRouter>
       ),
     field: () => screen.getByRole('textbox'),
@@ -105,6 +114,7 @@ const searchRequests = () =>
 beforeEach(() => {
   localStorage.clear();
   navigateMock.mockReset();
+  resetSearchIndex();
   vi.unstubAllGlobals();
 });
 
@@ -119,6 +129,49 @@ describe('search surface parity', () => {
 
       await waitFor(() => expect(searchRequests().length).toBeGreaterThan(0));
       expect(searchRequests()[0]).toContain(`q=${encodeURIComponent("Queen's Gambit Declined")}`);
+    });
+
+    // The complaint that started this: "the hero returns immediately, the top
+    // bar hangs and loads". Both drew from the same hook and the same ranking;
+    // only the hero had an index to answer from while the request was in the
+    // air. Held open here — the search route never resolves — so the assertion
+    // is specifically that openings appear without the server.
+    it('draws openings before the server has answered', async () => {
+      const user = userEvent.setup();
+      resetSearchIndex();
+      vi.stubGlobal(
+        'fetch',
+        vi.fn(async (url: string) => {
+          if (String(url).includes('/api/openings/search-index')) {
+            return { ok: true, json: async () => ({ success: true, data: LOCAL_INDEX }) };
+          }
+          return new Promise(() => {});
+        })
+      );
+      surface.render();
+
+      await user.type(surface.field(), 'qgd');
+
+      await waitFor(() => expect(screen.getByText("Queen's Gambit Declined")).toBeInTheDocument());
+    });
+
+    // One request per query. Semantic search used to be followed by a plain
+    // name search whenever the first came back empty, so a miss cost two round
+    // trips before the dead end appeared. The route matches names literally
+    // now and the plain search found nothing it misses across 389 sampled
+    // queries, so the second trip is gone.
+    it('asks the server once', async () => {
+      const user = userEvent.setup();
+      const searchCalls = vi.fn();
+      stubSearch([], searchCalls);
+      surface.render();
+
+      await user.type(surface.field(), 'zzzz');
+
+      await waitFor(() =>
+        expect(screen.getByText('No openings match your search')).toBeInTheDocument()
+      );
+      expect(searchCalls).toHaveBeenCalledTimes(1);
     });
 
     it("shows the server's openings, not a local guess", async () => {

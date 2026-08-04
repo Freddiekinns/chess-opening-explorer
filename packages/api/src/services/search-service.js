@@ -9,10 +9,12 @@ const {
 } = require('./search/SearchConstants');
 const QueryUtils = require('./search/QueryUtils');
 const QueryIntentParser = require('./search/QueryIntentParser');
+const { NameIndex } = require('./search/NameIndex');
 
 class SearchService {
   constructor() {
     this.fuse = null;
+    this.nameIndex = null;
     this.openings = null;
     this.popularitySorted = null;
     this.initialized = false;
@@ -84,6 +86,11 @@ class SearchService {
       }));
       
       this.fuse = new Fuse(searchIndex, FUSE_OPTIONS);
+
+      // Names normalised once, since the corpus does not change between
+      // requests and normalising is the expensive half of matching one.
+      this.nameIndex = new NameIndex(this.openings);
+
       this.initialized = true;
     } catch (error) {
       console.error('Failed to initialize search service:', error);
@@ -92,7 +99,20 @@ class SearchService {
   }
 
   /**
-   * Main search method supporting various query types
+   * Main search method supporting various query types.
+   *
+   * Five passes, each cheaper and more certain than the one after it, and the
+   * first with anything to say wins: move, ECO code, name, meaning, spelling.
+   *
+   * It used to route on guesses about the query instead — `looksLikeOpeningName`
+   * held a hand-written list of two dozen openings, `isAmbiguousSemanticTerm`
+   * held a list of words that might be either. Both fed Fuse, which was the slow
+   * path, so guessing wrong cost seconds. "aggressive openings" contains
+   * "aggressive", so it was ruled ambiguous, sent to a fuzzy name search, and
+   * came back in 2.4s with the Andersspike. Matching names literally first
+   * removes the need to guess: if the query names an opening we know it, and if
+   * it does not, meaning is the right next question.
+   *
    * @param {string} query - The search query
    * @param {Object} options - Search options
    * @returns {Object} Search results with metadata
@@ -116,52 +136,32 @@ class SearchService {
         return this.searchByMove(normalizedQuery, sanitizedOptions);
       }
 
-      // ECO codes need their own branch: `eco` is not one of FUSE_OPTIONS.keys,
-      // so a code fell through to fuzzy matching on name/moves/style/description
-      // and returned nothing at all. Every surface that told the user to "try an
-      // ECO code" was pointing them at a guaranteed dead end.
+      // ECO codes need their own branch: `eco` is not one of FUSE_OPTIONS.keys
+      // and a code is not a word in any opening's name, so before this existed
+      // `B90` returned nothing at all against the 31 openings carrying it. Every
+      // surface told the user to "try an ECO code" and pointed at a dead end.
       if (QueryUtils.isEcoCode(normalizedQuery)) {
         return this.searchByEcoCode(normalizedQuery, sanitizedOptions);
       }
 
-      // Check for style + move patterns FIRST (e.g., "attacking d4", "solid e4")
-      // These should use semantic search even if they contain ambiguous terms
-      const hasStyleAndMove = this.hasStyleWithMovePattern(normalizedQuery);
-      if (hasStyleAndMove) {
-        const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
-        if (semanticResults.results.length > 0) {
-          return semanticResults;
-        }
+      // Names, matched literally. Almost every search is one, and this answers
+      // in single-digit milliseconds where the fuzzy path below took one to
+      // three seconds — the whole of the gap between the landing hero (which
+      // hid the wait behind a local index) and the top bar (which could not).
+      const byName = this.searchByName(normalizedQuery, sanitizedOptions);
+      if (byName.results.length > 0) {
+        return byName;
       }
 
-      // Enhanced search routing: for ambiguous terms like "attacking" or "gambit"
-      // try popularity-based name search first, then semantic search if poor results
-      const looksLikeOpeningName = QueryUtils.looksLikeOpeningName(normalizedQuery);
-      const isAmbiguousTerm = QueryUtils.isAmbiguousSemanticTerm(normalizedQuery);
-
-      // For ambiguous terms, ALWAYS try name search first with word-precision matching
-      // This ensures queries like "kings indian" get proper name matching instead of fuzzy
-      if (isAmbiguousTerm) {
-        const nameSearchResults = await this.tryNameSearchFirst(normalizedQuery, sanitizedOptions);
-        if (nameSearchResults && nameSearchResults.results.length > 0) {
-          // Always return name search results for ambiguous terms to get word-precision matching
-          // This fixes "kings indian" and other similar routing issues
-          return {
-            ...nameSearchResults,
-            searchType: 'popularity_first'
-          };
-        }
+      // Nothing is named this, so the query is describing rather than naming:
+      // "aggressive openings", "solid defence for black", "attacking d4".
+      const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
+      if (semanticResults.results.length > 0) {
+        return semanticResults;
       }
 
-      // Use semantic search for clear natural language queries
-      if (!looksLikeOpeningName && !isAmbiguousTerm) {
-        const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
-        if (semanticResults.results.length > 0) {
-          return semanticResults;
-        }
-      }
-      
-      // Use fuzzy search with enhanced name matching for opening names
+      // Not a name and not a description. The remaining honest guess is that it
+      // is a name spelled wrong, which is the one thing fuzzy matching is for.
       const fuzzyResults = this.fuse.search(normalizedQuery);
       
       // Extract openings from fuzzy results and enhance with name-based scoring
@@ -284,6 +284,31 @@ class SearchService {
   }
 
   /**
+   * Literal name search — the one nearly every query turns out to be.
+   *
+   * Ranking lives in `search/NameIndex.js`, which bands matches by how
+   * completely the name answers the query and orders each band by how often the
+   * opening is played. Synchronous on purpose: it runs on `initialize()`d state
+   * and callers are already past the await.
+   *
+   * @param {string} query - Normalized query
+   * @param {Object} options - Search options
+   * @returns {Object} Search results with metadata
+   */
+  searchByName(query, options = {}) {
+    const results = this.nameIndex ? this.nameIndex.search(query) : [];
+    const { limit = 50, offset = 0 } = options;
+    const totalResults = results.length;
+
+    return {
+      results: results.slice(offset, offset + limit),
+      totalResults,
+      hasMore: offset + limit < totalResults,
+      searchType: 'name_search',
+    };
+  }
+
+  /**
    * Specialized search for chess moves
    * @param {string} move - Chess move (e.g., "d4", "nf3")
    * @param {Object} options - Search options
@@ -292,47 +317,48 @@ class SearchService {
   async searchByMove(move, options = {}) {
     await this.initialize();
     
+    // Bands by where the move falls in the line, popularity ordering each band —
+    // the same shape as the name search, so one score means one thing across
+    // both. The bands used to be 10000/9000/…/3000 with a popularity term of
+    // `Math.min(5000, games / 100000)`, which saturates at 500M games: every
+    // opening starting 1.e4 scored an identical 15000 and "e4" was answered in
+    // corpus order, with the 693M-game Sicilian above the 1.5B-game King's Pawn.
     const results = this.openings.map(opening => {
-      let score = 0;
       const moves = opening.moves?.toLowerCase() || '';
       const moveLower = move.toLowerCase();
-      
-      // Exact opening move (highest priority) - check for exact match at start
-      if (moves === `1. ${moveLower}` || moves.startsWith(`1. ${moveLower} `) || 
+      let band = 0;
+
+      // White's first move
+      if (moves === `1. ${moveLower}` || moves.startsWith(`1. ${moveLower} `) ||
           moves === `1.${moveLower}` || moves.startsWith(`1.${moveLower} `)) {
-        score = 10000; // Much higher base score for exact opening moves
+        band = 6;
       }
-      // Second move for white
-      else if (moves.includes(`2. ${moveLower}`) || moves.includes(`2.${moveLower}`)) {
-        score = 8000;
-      }
-      // Black's first response
+      // Black's reply to it
       else if (moves.includes(`1... ${moveLower}`) || moves.includes(`1...${moveLower}`)) {
-        score = 9000;
+        band = 5;
       }
-      // Black's second move
+      // White's second
+      else if (moves.includes(`2. ${moveLower}`) || moves.includes(`2.${moveLower}`)) {
+        band = 4;
+      }
+      // Black's second
       else if (moves.includes(`2... ${moveLower}`) || moves.includes(`2...${moveLower}`)) {
-        score = 7000;
+        band = 3;
       }
-      // Move appears anywhere in sequence
+      // Played later in the line
       else if (moves.includes(` ${moveLower} `) || moves.includes(` ${moveLower}.`) || moves.includes(`${moveLower} `)) {
-        score = 5000;
+        band = 2;
       }
-      // Partial match
+      // Appears somewhere in the notation
       else if (moves.includes(moveLower)) {
-        score = 3000;
+        band = 1;
       }
-      
-      // Significant popularity boost for move searches - popularity is crucial for moves
-      if (score > 0) {
-        const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
-        // Much larger popularity boost - popularity should be primary ranking factor
-        score += Math.min(5000, popularity / 100000); // Scale popularity properly
-      }
-      
+
+      const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
+
       return {
         ...opening,
-        searchScore: score / 10000 // Normalize to 0-1+ range
+        searchScore: band === 0 ? 0 : band + Math.log10(Math.max(popularity, 0) + 1) / 10
       };
     })
     .filter(opening => opening.searchScore > 0)
@@ -612,9 +638,17 @@ class SearchService {
         }
       }
       
-      // Popularity boost
+      // Popularity, on a log scale, as the tiebreak.
+      //
+      // It was `Math.min(0.1, popularity / 10000)`, which saturates at a
+      // thousand games — so every opening above that threshold scored
+      // identically and a style search fell back to corpus order. "aggressive
+      // openings" led with the Amar Gambit and the Andersspike; the openings
+      // people actually play aggressively were thousands of rows down. The
+      // divisor keeps the whole spread under 0.2, which is what one style match
+      // is worth, so popularity orders equals without outranking a better match.
       const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
-      score += Math.min(0.1, popularity / 10000); // Small popularity boost
+      score += Math.log10(Math.max(popularity, 0) + 1) / 50;
       
       return {
         ...opening,
@@ -801,42 +835,6 @@ class SearchService {
   }
 
   /**
-   * Check if query looks like an opening name rather than a natural language query
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  looksLikeOpeningName(query) {
-    // Common opening name patterns that shouldn't trigger semantic search
-    const openingNamePatterns = [
-      /\b(queen'?s?\s+gambit|queens?\s+gambit)\b/i,
-      /\b(king'?s?\s+indian|kings?\s+indian)\b/i,
-      /\b(french\s+defense|french\s+defence)\b/i,
-      /\b(sicilian\s+defense|sicilian\s+defence)\b/i,
-      /\b(caro\s*-?\s*kann)\b/i,
-      /\b(english\s+opening)\b/i,
-      /\b(ruy\s+lopez)\b/i,
-      /\b(italian\s+game)\b/i,
-      /\b(vienna\s+game)\b/i,
-      /\b(scotch\s+game)\b/i,
-      /\b(alekhine'?s?\s+defense|alekhines?\s+defense)\b/i,
-      /\b(scandinavian\s+defense)\b/i,
-      /\b(pirc\s+defense)\b/i,
-      /\b(modern\s+defense)\b/i,
-      /\b(bird'?s?\s+opening|birds?\s+opening)\b/i,
-      /\b(nimzo\s*-?\s*indian)\b/i,
-      /\b(gr[üu]nfeld\s+defense)\b/i,
-      /\b(benoni\s+defense)\b/i,
-      /\b(catalan\s+opening)\b/i,
-      /\b(dutch\s+defense)\b/i,
-      /\b(london\s+system)\b/i,
-      /\b(torre\s+attack)\b/i,
-      /\b(colle\s+system)\b/i
-    ];
-    
-    return openingNamePatterns.some(pattern => pattern.test(query));
-  }
-
-  /**
    * Apply enhanced name matching boost for better opening name search
    * Uses normalized word comparison to handle apostrophes and spelling variants
    * @param {Array} results - Search results to enhance
@@ -907,215 +905,6 @@ class SearchService {
       }
 
       result.searchScore = Math.min(5, result.searchScore + nameMatchBoost);
-      return result;
-    }).sort((a, b) => b.searchScore - a.searchScore);
-  }
-
-  /**
-   * Check if query contains a style + move pattern (e.g., "attacking d4", "solid e4")
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  hasStyleWithMovePattern(query) {
-    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
-    const queryParts = query.split(/\s+/);
-    const hasStyle = styleWords.some(s => queryParts.includes(s));
-    const hasMovePattern = QueryUtils.extractMoves(query).length > 0;
-    return hasStyle && hasMovePattern;
-  }
-
-  /**
-   * Check if a term is ambiguous between semantic and name search
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  isAmbiguousSemanticTerm(query) {
-    // Terms that could be both semantic descriptors and parts of opening names
-    const ambiguousTerms = [
-      'attacking', 'aggressive', 'tactical', 'sharp', 'solid', 'defensive',
-      'gambit', 'defense', 'defence', 'opening', 'variation', 'system',
-      'classical', 'modern', 'hypermodern', 'dynamic', 'positional',
-      // Add specific opening name patterns that need popularity-first search
-      'indian', 'kings', 'queens'  // These cause cross-contamination issues
-    ];
-
-    return ambiguousTerms.some(term => query.includes(term));
-  }
-
-  /**
-   * Try name search first for ambiguous terms, prioritizing popularity
-   * @param {string} query - Search query  
-   * @param {Object} options - Search options
-   * @returns {Object} Search results or null if poor results
-   */
-  async tryNameSearchFirst(query, options = {}) {
-    // Use fuzzy search with enhanced name matching
-    const fuzzyResults = this.fuse.search(query);
-    
-    if (fuzzyResults.length === 0) {
-      return null;
-    }
-    
-    // Extract openings from fuzzy results and enhance with name-based scoring
-    let results = fuzzyResults.map(result => ({
-      ...result.item,
-      searchScore: 1 - result.score // Convert to positive score
-    }));
-
-    // Apply enhanced name matching boost with extra popularity emphasis
-    results = this.applyNameMatchingBoostWithPopularityEmphasis(results, query);
-
-    // Apply multi-pass filtering for enhanced results
-    results = this.applyMultiPassFiltering(results, query);
-    
-    // Apply additional filters
-    if (options.category) {
-      results = this.filterByCategory(results, options.category);
-    }
-    
-    // Apply pagination
-    const { limit = 50, offset = 0 } = options;
-    const totalResults = results.length;
-    results = results.slice(offset, offset + limit);
-    
-    return {
-      results,
-      totalResults,
-      hasMore: offset + limit < totalResults,
-      searchType: 'name_search_first'
-    };
-  }
-
-  /**
-   * Enhanced name matching with extra popularity emphasis for ambiguous terms
-   * Uses normalized word comparison to handle apostrophes, hyphens, and spelling variants
-   * @param {Array} results - Search results to enhance
-   * @param {string} query - Original search query
-   * @returns {Array} Enhanced results with popularity-first ranking
-   */
-  applyNameMatchingBoostWithPopularityEmphasis(results, query) {
-    // Normalize query words once
-    const queryWordsNormalized = this.normalizeWords(query).filter(w => w.length > 2);
-    const normalizedQuery = queryWordsNormalized.join(' ');
-
-    return results.map(result => {
-      const name = result.name || '';
-      // Get both raw and normalized name words for matching
-      const nameWordsNormalized = this.normalizeWords(name);
-
-      let nameMatchBoost = 0;
-      let wordPrecisionScore = 0;
-
-      // Check for exact normalized match (handles "King's Indian" == "kings indian")
-      const normalizedName = nameWordsNormalized.join(' ');
-      if (normalizedName === normalizedQuery) {
-        nameMatchBoost = 2.0;
-        wordPrecisionScore = 1.0;
-      }
-      // Name starts with query (only for multi-word queries that match full beginning)
-      // Don't use for single-word queries to avoid "najdorf" matching "Najdorf Sicilian" over "Sicilian: Najdorf"
-      else if (queryWordsNormalized.length > 1 && normalizedName.startsWith(normalizedQuery + ' ')) {
-        nameMatchBoost = 1.5;
-        wordPrecisionScore = 0.9;
-      }
-      // Single word query
-      else if (queryWordsNormalized.length === 1) {
-        const queryWord = queryWordsNormalized[0];
-
-        // Check for exact word match at different positions
-        const exactMatchIdx = nameWordsNormalized.findIndex(nw => nw === queryWord);
-
-        if (exactMatchIdx >= 0) {
-          // Exact word match anywhere - give same base boost, let popularity differentiate
-          // "Najdorf" in "Najdorf Sicilian" (1M) should NOT beat "Sicilian Defense: Najdorf" (24M)
-          nameMatchBoost = 0.8;
-          // Both get high precision - we found the exact word
-          wordPrecisionScore = 0.85;
-        }
-        // Check for word-start matches
-        else if (nameWordsNormalized.some(nw => nw.startsWith(queryWord))) {
-          nameMatchBoost = 0.4;
-          wordPrecisionScore = 0.5;
-        }
-        // Substring match (lowest priority)
-        else if (normalizedName.includes(queryWord)) {
-          nameMatchBoost = 0.1;
-          wordPrecisionScore = 0.2;
-        }
-      }
-      // Multi-word queries with normalized matching
-      else if (queryWordsNormalized.length > 1) {
-        let exactWordMatches = 0;
-        let partialWordMatches = 0;
-        let substringMatches = 0;
-
-        queryWordsNormalized.forEach(qw => {
-          // Check for exact word match (normalized)
-          if (nameWordsNormalized.includes(qw)) {
-            exactWordMatches++;
-          }
-          // Check for word-start match
-          else if (nameWordsNormalized.some(nw => nw.startsWith(qw))) {
-            partialWordMatches++;
-          }
-          // Check for substring match
-          else if (normalizedName.includes(qw)) {
-            substringMatches++;
-          }
-        });
-
-        const totalQueryWords = queryWordsNormalized.length;
-        const exactWordRatio = exactWordMatches / totalQueryWords;
-        const partialWordRatio = partialWordMatches / totalQueryWords;
-        const substringRatio = substringMatches / totalQueryWords;
-
-        // Require good word precision for multi-word queries
-        if (exactWordRatio >= 0.9) { // 90%+ exact (handles "kings indian" with 2 words)
-          nameMatchBoost = 1.5;
-          wordPrecisionScore = 0.95;
-        } else if (exactWordRatio >= 0.7) {
-          nameMatchBoost = 1.2;
-          wordPrecisionScore = exactWordRatio * 0.9;
-        } else if (exactWordRatio >= 0.5) {
-          nameMatchBoost = 0.8 * exactWordRatio + 0.3 * partialWordRatio;
-          wordPrecisionScore = exactWordRatio * 0.7 + partialWordRatio * 0.3;
-        } else if (exactWordRatio + partialWordRatio >= 0.5) {
-          nameMatchBoost = 0.4 * (exactWordRatio + partialWordRatio);
-          wordPrecisionScore = (exactWordRatio + partialWordRatio) * 0.4;
-        } else if (substringRatio > 0) {
-          // Very low boost for poor matches
-          nameMatchBoost = 0.05 * substringRatio;
-          wordPrecisionScore = substringRatio * 0.05;
-        }
-      }
-
-      // Apply popularity boost - stronger weighting for high-precision matches
-      if (nameMatchBoost > 0) {
-        const popularity = result.games_analyzed || 0;
-
-        // Calculate popularity boost with continuous scaling
-        // High precision matches get stronger popularity boost
-        let popularityBoost = 0;
-
-        if (wordPrecisionScore >= 0.7) {
-          // High precision: popularity is major factor
-          // Use log scale to prevent extreme dominance but still differentiate
-          // 34.7M vs 6.2M games should result in clear ranking difference
-          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.3 * wordPrecisionScore;
-        } else if (wordPrecisionScore >= 0.4) {
-          // Medium precision: moderate popularity boost
-          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.15 * wordPrecisionScore;
-        } else {
-          // Low precision: minimal popularity boost
-          popularityBoost = Math.log10(Math.max(popularity, 1)) * 0.05 * wordPrecisionScore;
-        }
-
-        nameMatchBoost += popularityBoost;
-      }
-
-      // Apply the boost to search score
-      result.searchScore = Math.min(10, result.searchScore + nameMatchBoost);
-
       return result;
     }).sort((a, b) => b.searchScore - a.searchScore);
   }

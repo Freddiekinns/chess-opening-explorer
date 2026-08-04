@@ -40,54 +40,6 @@ describe('QueryUtils', () => {
     });
   });
 
-  describe('looksLikeOpeningName()', () => {
-    test('returns true for "queen\'s gambit"', () => {
-      expect(QueryUtils.looksLikeOpeningName("queen's gambit")).toBe(true);
-    });
-
-    test('returns true for "sicilian defense"', () => {
-      expect(QueryUtils.looksLikeOpeningName('sicilian defense')).toBe(true);
-    });
-
-    test('returns true for "ruy lopez"', () => {
-      expect(QueryUtils.looksLikeOpeningName('ruy lopez')).toBe(true);
-    });
-
-    test('returns true for "london system"', () => {
-      expect(QueryUtils.looksLikeOpeningName('london system')).toBe(true);
-    });
-
-    test('returns false for a generic style query', () => {
-      expect(QueryUtils.looksLikeOpeningName('aggressive')).toBe(false);
-    });
-
-    test('returns false for a chess move', () => {
-      expect(QueryUtils.looksLikeOpeningName('e4')).toBe(false);
-    });
-  });
-
-  describe('isAmbiguousSemanticTerm()', () => {
-    test('returns true for "attacking"', () => {
-      expect(QueryUtils.isAmbiguousSemanticTerm('attacking')).toBe(true);
-    });
-
-    test('returns true for "gambit"', () => {
-      expect(QueryUtils.isAmbiguousSemanticTerm('gambit')).toBe(true);
-    });
-
-    test('returns true for "defense"', () => {
-      expect(QueryUtils.isAmbiguousSemanticTerm('defense')).toBe(true);
-    });
-
-    test('returns false for "e4"', () => {
-      expect(QueryUtils.isAmbiguousSemanticTerm('e4')).toBe(false);
-    });
-
-    test('returns false for an unrelated word', () => {
-      expect(QueryUtils.isAmbiguousSemanticTerm('hello')).toBe(false);
-    });
-  });
-
   describe('extractMoves()', () => {
     test('extracts algebraic notation pawn move', () => {
       expect(QueryUtils.extractMoves('play d4 then Nf3')).toContain('d4');

@@ -3,6 +3,7 @@ import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
 import { SearchNoResults } from './SearchNoResults';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
+import { useSearchIndex } from '../../lib/searchIndex';
 import type { Opening } from '../../lib/localSearch';
 
 export type { Opening };
@@ -14,9 +15,7 @@ interface SearchBarProps {
   autoFocus?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  openingsData: Opening[];
   className?: string;
-  onExpandSearch?: () => void; // Callback to load more search data if needed
   /**
    * Landing variant only. Supplied, the focused field opens the search hub
    * and this backs its Surprise me row. The caller owns the randomisation
@@ -44,9 +43,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   autoFocus = false,
   disabled = false,
   loading = false,
-  openingsData,
   className = '',
-  onExpandSearch,
   onSurprise,
   onActivate,
 }) => {
@@ -58,10 +55,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // The query itself belongs to the hook every surface shares. This component
   // owns only the parts a dropdown under a hero field needs: focus, the
   // keyboard cursor, and what happens to a chosen result.
-  const { query, setQuery, results, noResults, hasQuery, reset } = useOpeningSearch({
-    localIndex: openingsData,
-    onExhausted: onExpandSearch,
-  });
+  const { query, setQuery, results, noResults, hasQuery, reset } = useOpeningSearch();
+
+  // Only to name a hub row's opening on the way out — see the select handler.
+  // The hook loads the same slice for searching; this is the one copy of it.
+  const openingsData = useSearchIndex(isFocused);
 
   const showSuggestions = !dismissed && hasQuery && results.length > 0;
 

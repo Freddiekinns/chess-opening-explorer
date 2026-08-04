@@ -18,6 +18,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { SearchBar } from '../SearchBar';
+import { resetSearchIndex } from '../../../test/searchIndexStub';
 
 const OPENINGS = [
   {
@@ -50,21 +51,23 @@ describe('search row parity between the blank and typing states', () => {
   beforeEach(() => {
     localStorage.clear();
     localStorage.setItem('chess-recent-openings', JSON.stringify([RECENT]));
+    resetSearchIndex();
+    // The search route stays down on purpose: the results row under test has to
+    // come from the locally held index, which is what the hub row also draws on.
     vi.stubGlobal(
       'fetch',
-      vi.fn(() => Promise.resolve({ ok: false, json: () => Promise.resolve({}) }))
+      vi.fn((url: string) =>
+        Promise.resolve(
+          String(url).includes('/api/openings/search-index')
+            ? { ok: true, json: () => Promise.resolve({ success: true, data: OPENINGS }) }
+            : { ok: false, json: () => Promise.resolve({}) }
+        )
+      )
     );
   });
 
   const renderBar = () =>
-    render(
-      <SearchBar
-        variant="landing"
-        onSelect={() => {}}
-        onSurprise={() => {}}
-        openingsData={OPENINGS}
-      />
-    );
+    render(<SearchBar variant="landing" onSelect={() => {}} onSurprise={() => {}} />);
 
   it('renders the same row structure before and after typing', async () => {
     const user = userEvent.setup();

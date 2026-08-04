@@ -4,6 +4,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Search answers in milliseconds, identically on all three surfaces**
+  (2026-08-04, on `claude/player-details-layout-qxa1mo`): the top bar "hung"
+  because the server took 1–3s to fuzzy-match a name over 12,377 descriptions
+  and only the hero held an index to hide it behind. Literal name matching
+  (`search/NameIndex.js`) answers in 2–5ms; the routing heuristics that guessed
+  a query's shape are gone; Fuse is the typo net only; the index slice is shared
+  by all three surfaces and fetched on the first keystroke, not on mount. One
+  request per query, responses 55 KB → 4.4 KB, and PGN lookup finally sees the
+  whole corpus.
 - **Review pass over the seven-PR UX stack** (2026-08-04, on
   `claude/player-details-layout-qxa1mo`): read `feat/ux-review...HEAD`, then CSS
   on its own. Fixed a TopBar keyboard crash on an empty list, a stale-response
@@ -15,39 +24,31 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   two no-results strings became `useOpeningSearch`; only the hero had expanded
   abbreviations. Exposed that `eco` is not a Fuse key, so `B90` gave 0 results
   wherever there was no local index. Saved openings now win ties.
-- **Mobile search overlay closes on tab navigation** (2026-08-03, on
-  `ux/phase-5-analyse`): the footer tabs did navigate, but the overlay outlived
-  it and sat over the new page. It renders inside the sticky TopBar's stacking
-  context, so the tab bar hit-tests above it by design; the missing half was
-  closing on `pathname` change. Search stays top-right — a mode, not a place.
+- **Mobile search overlay closes on tab navigation** (2026-08-03): the tabs did
+  navigate, but the overlay outlived it and sat over the new page. It renders
+  inside the sticky TopBar's stacking context, so the tab bar hit-tests above it
+  by design; the missing half was closing on `pathname` change.
 - **Mobile filter sheet: the grabber works, the family list is opt-in**
-  (2026-08-02, on `claude/player-details-layout-qxa1mo`): a decorative 36×4 pill
-  promised a drag the sheet could not do, on a device with no Escape key. Guards
-  in `FilterSheet.test.tsx` — jsdom has no `PointerEvent`.
-- **Analyse summary cards rebuilt into one row** (2026-08-02, on
-  `claude/player-details-layout-qxa1mo`): reverses phase 5 §3 on composition.
-  Exposed a latent defect — W/D/L were tallied inside the classified branch, so
-  a real result with an unrecognised opening vanished from "Your record".
-- **TopBar search field sized to its own panel**, and **Discover's empty
-  repertoire slot got its box back** (2026-08-02): a 380px dropdown on a 240px
-  field; a handoff divergence frozen by a test. **Detail in `archive.md`.**
-- **Search unified across the hero, top bar and mobile overlay** (2026-07-30, on
-  `ux/phase-5-analyse`): typing changed _what_ was listed and _how_ each opening
-  was drawn; `shared/SearchRow.tsx` is now the one row. Five defects fell out.
-  Spec §3.3, guard `search-row-parity.test.tsx`; **detail in `archive.md`**.
-- **Practice demoted to accent-outline** and **master games moved up the mobile
-  stack** (2026-07-30, on `ux/phase-5-analyse`): two **spec decisions
-  reversed**, not bugs. Spec §3.4; guard `pages/__tests__/mobile-stack-order`.
-  **Detail in `archive.md`.**
+  (2026-08-02): a decorative 36×4 pill promised a drag the sheet could not do,
+  on a device with no Escape key. Guards in `FilterSheet.test.tsx`.
+- **Analyse summary cards rebuilt into one row** (2026-08-02): reverses phase 5
+  §3 on composition. Exposed a latent defect — W/D/L were tallied inside the
+  classified branch, so a real result with an unrecognised opening vanished.
+- **TopBar search field sized to its own panel**, **Discover's empty repertoire
+  slot got its box back** (2026-08-02). **Detail in `archive.md`.**
+- **Search rows unified across the three surfaces** (2026-07-30): typing changed
+  _what_ was listed and _how_ each opening was drawn; `shared/SearchRow.tsx` is
+  the one row. Spec §3.3, guard `search-row-parity.test.tsx`; **`archive.md`**.
+- **Practice demoted to accent-outline**, **master games moved up the mobile
+  stack** (2026-07-30): two **spec decisions reversed**, not bugs. Spec §3.4.
 - **UX review implementation audit** (2026-07-29): six phases read back; six
   half-applied changes. **Detail in `archive.md`.**
 - **UX review phase 5 — Analyse** (2026-07-28, `ux/phase-5-analyse`): one
   header; "Career totals" → "This analysis / Your record" (it claimed a lifetime
   for one run); dated fixtures; PGN reduction into `packages/shared`.
-- **UX review phase 4 — opening detail desktop** (2026-07-28,
-  `ux/phase-4-detail-desktop`): `ExplorerCard` draws one border around the level
-  filter and everything it governs; master games move out into a shared
-  `MasterGamesCard`. One `explorerStats` module owns every level-scoped label.
+- **UX review phase 4 — opening detail desktop** (2026-07-28): `ExplorerCard`
+  draws one border around the level filter and everything it governs; master
+  games move to a shared `MasterGamesCard`; one `explorerStats` owns the labels.
 - **UX review phases 0–3** (2026-07-27..28): systemic pass, Discover's star/undo
   loop, `GET /api/openings/browse`, the faceted bar. See `archive.md`.
 - **Agent docs restructure** (2026-07-25, on `main`): portable `AGENTS.md` plus

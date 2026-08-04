@@ -5,8 +5,6 @@
 const {
   CHESS_MOVE_PATTERNS,
   ECO_CODE_PATTERN,
-  OPENING_NAME_PATTERNS,
-  AMBIGUOUS_TERMS,
   SEMANTIC_MAPPINGS
 } = require('./SearchConstants');
 
@@ -27,24 +25,6 @@ class QueryUtils {
    */
   static isEcoCode(query) {
     return ECO_CODE_PATTERN.test(query);
-  }
-
-  /**
-   * Check if query looks like an opening name rather than a natural language query
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  static looksLikeOpeningName(query) {
-    return OPENING_NAME_PATTERNS.some(pattern => pattern.test(query));
-  }
-
-  /**
-   * Check if a term is ambiguous between semantic and name search
-   * @param {string} query - Normalized query
-   * @returns {boolean}
-   */
-  static isAmbiguousSemanticTerm(query) {
-    return AMBIGUOUS_TERMS.some(term => query.includes(term));
   }
 
   /**

@@ -30,7 +30,30 @@ function bundle(entry) {
 const loadMiddleware = () => bundle('middleware.ts').default;
 const loadSiteConfig = () => bundle('packages/web/src/lib/siteConfig.ts');
 
-const INDEX_HTML = path.join(ROOT, 'packages', 'web', 'dist', 'index.html');
+const SOURCE_INDEX = path.join(ROOT, 'packages', 'web', 'index.html');
+
+/**
+ * Vite lifts the module script out of <body> and into <head>, and production
+ * middleware only ever sees that built shape — but only the source is
+ * committed, and the backend CI job runs no build. Reading `dist/index.html`
+ * therefore passed locally and ENOENT'd every test in this file on CI.
+ *
+ * So the built shape is derived from the committed source, and both shapes are
+ * exercised: the `#root` swap has to survive a script before `</body>` and a
+ * body that ends at `</div>`.
+ */
+function builtShape(source) {
+  const built = source
+    .replace(/\n\s*<script type="module" src="\/src\/main\.tsx"><\/script>/, '')
+    .replace(
+      '</head>',
+      '  <script type="module" crossorigin src="/assets/index-B87xrc7G.js"></script>\n' +
+        '    <link rel="stylesheet" crossorigin href="/assets/index-CJb08JiK.css">\n  </head>'
+    );
+  const body = built.slice(built.indexOf('<body>'));
+  if (body.includes('<script')) throw new Error('builtShape left a script in <body>');
+  return built;
+}
 
 const AMAR_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1';
 const DUPLICATE_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 9';
@@ -47,11 +70,18 @@ const SHARD = {
 };
 
 let middleware;
+let sourceHtml;
 let indexHtml;
 
 beforeAll(() => {
   middleware = loadMiddleware();
-  indexHtml = fs.readFileSync(INDEX_HTML, 'utf-8');
+  sourceHtml = fs.readFileSync(SOURCE_INDEX, 'utf-8');
+});
+
+// Default to the shape production actually serves; the swap is re-checked
+// against the source shape in its own test below.
+beforeEach(() => {
+  indexHtml = builtShape(sourceHtml);
 });
 
 beforeEach(() => {
@@ -106,14 +136,24 @@ describe('SEO middleware — content in the HTML', () => {
     expect(withoutStats).not.toMatch(/White wins 0%/);
   });
 
-  it('leaves no stray markup when it swaps out the spinner', async () => {
+  it.each([
+    ['built (script hoisted to head)', (src) => builtShape(src)],
+    ['source (script before </body>)', (src) => src],
+  ])('leaves no stray markup when it swaps out the spinner — %s', async (_label, shape) => {
+    indexHtml = shape(sourceHtml);
     const html = await (await get(openingUrl(AMAR_FEN))).text();
 
+    expect(html).toContain('Amar Opening');
     expect(html).not.toContain('loading-spinner"></div>');
     // One #root, and every div it contains is closed exactly once.
     expect(html.match(/<div id="root">/g)).toHaveLength(1);
     const body = html.slice(html.indexOf('<body>'), html.indexOf('</body>'));
     expect((body.match(/<div/g) || []).length).toBe((body.match(/<\/div>/g) || []).length);
+  });
+
+  it('keeps the app script that boots React', async () => {
+    const html = await (await get(openingUrl(AMAR_FEN))).text();
+    expect(html).toMatch(/<script type="module"[^>]*src="\/assets\//);
   });
 });
 

@@ -1,50 +1,49 @@
 # Active Context
 
-**Date:** 2026-08-04
+**Date:** 2026-08-07
 
-## Current Task: Search that answers in milliseconds, on all three surfaces
+## Current Task: Google deindexed the opening pages — put content in the HTML
 
-Reported: the hero returns instantly, the top bar "hangs and loads", and the two
-give different answers. Both halves were real.
+Impressions fell 111 → 4 between 30 and 31 July and did not recover. No deploy
+that day: production ran one docs-only commit (`8dcf63bf`) from 27 July to 2
+August. Site verified healthy end to end — robots, sitemaps, canonicals, meta,
+DNS, content API all correct. No manual action in Search Console.
 
-**The server was slow; the hero was hiding it.** Every text query ran through
-Fuse over name/moves/style_tags/**description** — bitap across 12,377 half-page
-descriptions. Warm: "sicilian" 1,046ms, "king's indian defense" 2,489ms,
-"queen's gambit declined" 2,829ms. It bought nothing either — "sicilian" matched
-4,269 of 12,377 openings, and the re-ranking downstream existed to undo that.
+**It was a quality purge, not a break.** Search Console still lists 5.01k
+indexed but URL Inspection says otherwise on the same URLs — the Pages report
+lags (examples read "Last crawled 25 Jul"), so those pages were dropped after
+its last data point. Google had already refused 3,074 more (2,807 "Discovered –
+currently not indexed", 267 crawled-and-declined). Post-drop only brand queries
+survive.
 
-- `search/NameIndex.js`: literal name matching, banded (exact phrase → whole
-  words → last word being typed → substring), each band ordered by
-  `games_analyzed`. **2–6ms.**
-- `search()` is five passes, first to speak wins: move, ECO, name, meaning,
-  spelling. Deleted the heuristics that guessed instead (`looksLikeOpeningName`,
-  `isAmbiguousSemanticTerm`, `tryNameSearchFirst`) — "aggressive openings" was
-  ruled ambiguous and sent to fuzzy name search, returning the Andersspike in
-  2.4s. Now 62ms, semantic.
-- Fuse keeps `name` + `style_tags` only: typos 850–1,400ms → 100–270ms, and the
-  dropped keys changed the result set by 4 openings in 1,753.
-- Two saturating popularity terms → `log10(games)/N`: semantic capped at 1,000
-  games (style searches ran in corpus order), move search at 500M ("e4" too).
-- Search responses projected to what a row draws: **55 KB → 4.4 KB**.
+The cause is legible in the CTR: 0.5–2.9% at position ~11 for a month, against
+2–3% expected. Every one of 12,377 pages advertised itself with the same
+sentence — "Explore the {name} ({eco}). Played after {moves}. Learn key ideas…"
+— over an empty `#root`. The real asset (a ~470-char description, win rates over
+millions of Lichess games) existed only after JS ran.
 
-**The client difference was one prop.** `lib/searchIndex.ts` holds one slice for
-all three surfaces, fetched on the first character rather than on mount — the
-landing page no longer spends 207 KB on every visitor. Client and server rank by
-the same bands, pinned by `local-server-parity.test.ts`, which imports the
-server's CommonJS module directly. One request per query: the plain-search
-fallback found nothing semantic search missed across 389 sampled queries. PGN
-lookup now loads the full index when its modal opens, so it identifies openings
-outside the popular thousand — it could not before. Verified in the browser on
-all three surfaces; 590 frontend + 844 backend tests pass.
+TASK009 predicted this exact escalation: "if indexing remains poor 4–6 weeks
+after deploying Option B, pre-render". Done for all 12,377 via middleware rather
+than the top 200, because the payload is small text.
 
-## Previous Task: Review pass over the seven-PR UX stack
+- `seo-lookup` shards carry description + win rates + canonical FEN; 16 → 64
+  shards, ~180 KB each.
+- `middleware.ts` renders `<h1>`, ECO, moves, description and real win rates
+  into `#root` — React replaces it on mount, so it is the page's pre-hydration
+  state. Meta description is now the opening's own, truncated on a sentence
+  boundary.
+- Unknown FEN → **404**, not the landing page at 200 (30 soft 404s reported).
+- 1,677 duplicate-name and "<parent>, <move>" pages canonicalise to the page
+  that owns the name; sitemaps carry the 10,700 canonical pages, ordered by game
+  volume so crawl budget lands on the openings people search for.
+- `scripts/generate-sitemaps.js` is new — sitemaps had no generator and had said
+  `lastmod 2026-06-02` since June. The redundant flat `sitemap.xml` is gone.
 
-Six defects fixed on the stack tip: a TopBar keyboard crash on an empty list, a
-stale-response race in `useOpeningSearch`, an `AbortError` shown as an error, a
-0%/0%/0% bar for `null` stats, a permanent "Loading Lichess data…" on mobile,
-and an invisible Discover grid under reduced motion. Left deliberately: two
-`useRepertoireToast` instances overlap at one fixed slot. Detail in
-`archive.md`.
+858 backend + 590 frontend tests pass; type-check and `build:vercel` clean.
 
-`main` is merged into the stack tip. Merge order for the seven PRs is in
-`progress.md` → What's Left; do not squash inside the stack.
+## Previous Task: Search that answers in milliseconds, on all three surfaces
+
+Fuse over 12,377 descriptions cost 1–2.8s and matched a third of the corpus;
+`search/NameIndex.js` matches names literally in 2–6ms, banded and ordered by
+`games_analyzed`. One shared index slice for all three surfaces, fetched on the
+first keystroke rather than on mount. Detail in `archive.md`.

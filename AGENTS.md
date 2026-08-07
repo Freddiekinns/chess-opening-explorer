@@ -141,6 +141,39 @@ load-bearing.
 
 ### Deployment and SEO
 
+- **The opening page's content must stay in the HTML `middleware.ts` returns.**
+  Google indexed 5,010 opening pages over June–July 2026 and dropped them on
+  30/31 July. No deploy that day, no manual action, nothing broken — a quality
+  purge. All 12,377 pages had a unique `<title>` but shipped an empty `#root`
+  and the same mail-merge description ("Explore the {name} ({eco}). Played after
+  {moves}. Learn key ideas…"), so a month of impressions earned 0.5–2.9% CTR at
+  position ~11 and Google stopped serving them. The middleware now renders the
+  opening's own description and win rates into `#root` — React replaces it on
+  mount, so it is the page's pre-hydration state, not a second copy. **Do not
+  return the meta description to a template, and do not put content back behind
+  the JS render.** TASK009 chose meta-only injection deliberately in Feb 2026
+  and named this exact escalation as its follow-up; the escalation has happened.
+
+- **An unknown FEN must 404.** `App.tsx`'s `<Route path="*">` renders the
+  landing page, so before the middleware branched on a missing lookup entry,
+  every malformed or stale `/opening/` URL returned 200 with the landing page
+  behind it. Search Console was reporting them as soft 404s.
+
+- **The `seo-lookup` shards and `middleware.ts` share a djb2 hash and a payload
+  shape.** Change either and both must change together, plus the golden values
+  in `seo-lookup-shards.test.js`. `seo-middleware.test.js` bundles the real
+  middleware with esbuild and runs it against the real built `index.html`, so it
+  catches a drift the unit tests cannot.
+
+- **Sitemaps are generated, not hand-written.** `scripts/generate-sitemaps.js`
+  emits only pages that own their canonical URL (10,700 of 12,377 — 1,677 are
+  duplicate names or "<parent>, <move>" captions pointing at the page that owns
+  the name), ordered by game volume so a young domain's crawl budget lands on
+  the openings people actually search for. There was no generator until
+  2026-08-07, which is why the index sat at `lastmod 2026-06-02` for two months.
+  The flat `sitemap.xml` is gone — it carried a byte-identical URL set to the
+  shards and robots.txt declared both, submitting the same 12,379 URLs twice.
+
 - **Host-based redirects belong in `vercel.json`, not `middleware.ts`.**
   Vercel's edge resolves host-level redirects (www↔apex, custom domains)
   _before_ middleware runs, so any `if (url.host === …)` branch in middleware is

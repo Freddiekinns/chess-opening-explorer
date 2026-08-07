@@ -25,8 +25,21 @@ describe('seo-lookup sharding', () => {
   });
 
   it('pins djb2 outputs so generator and middleware cannot silently diverge', () => {
-    // Golden values — computed once from the djb2 implementation. If these
-    // change, regenerate the shards AND update middleware.ts in the same PR.
-    expect(FENS.map((fen) => shardForFen(fen))).toEqual([11, 8, 12, 13]);
+    // Golden values — computed once from the djb2 implementation, at a fixed
+    // count so raising SHARD_COUNT does not churn them. If these change,
+    // regenerate the shards AND update middleware.ts in the same PR.
+    expect(FENS.map((fen) => shardForFen(fen, 16))).toEqual([11, 8, 12, 13]);
+  });
+
+  it('spreads the corpus evenly enough that no shard dominates', () => {
+    // The middleware fetches one whole shard per edge cold start, so a badly
+    // skewed hash would be a latency problem, not just an untidy one.
+    const { readOpenings } = require('../../scripts/generate-seo-lookup');
+    const counts = new Array(SHARD_COUNT).fill(0);
+    for (const row of readOpenings()) counts[shardForFen(row.fen)]++;
+
+    const mean = counts.reduce((a, b) => a + b, 0) / SHARD_COUNT;
+    expect(Math.max(...counts)).toBeLessThan(mean * 1.5);
+    expect(Math.min(...counts)).toBeGreaterThan(mean * 0.5);
   });
 });

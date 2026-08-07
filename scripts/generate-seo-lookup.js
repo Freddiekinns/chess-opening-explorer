@@ -12,10 +12,15 @@ const ECO_FILES = ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.jso
 // real content in the HTML instead of a spinner — see TASK009's follow-up.
 const SHARD_COUNT = 64;
 
-// A label of the form "<parent>, <move>" — "Bird: From Gambit, 2...d6" — is a
-// generated variation caption. Nobody searches for it, and it duplicates the
-// parent's description almost word for word, so it canonicalises to the parent.
-const MOVE_SUFFIX = /,\s*\d+\s*(\.\.\.|…|\.)\s*[A-Za-z0-9+#=x-]+\s*$/;
+/**
+ * The first four FEN fields are the position proper; the last two are move
+ * counters. Two rows agreeing on those four are the same board reached by
+ * different move orders — genuinely one page under two URLs, and the only
+ * duplicate content in this corpus.
+ */
+function positionKey(fen) {
+  return fen.split(' ').slice(0, 4).join(' ');
+}
 
 /**
  * djb2 string hash — MUST stay in sync with the copy in middleware.ts.
@@ -29,11 +34,17 @@ function shardForFen(fen, shardCount = SHARD_COUNT) {
   return (hash >>> 0) % shardCount;
 }
 
-/** The parent opening a "<parent>, <move>" caption belongs to, or null. */
-function parentName(name) {
-  if (!MOVE_SUFFIX.test(name)) return null;
-  const parent = name.replace(MOVE_SUFFIX, '').trim();
-  return parent && parent !== name ? parent : null;
+/** Deterministic pick among rows describing the same thing. */
+function preferred(group) {
+  return group.reduce((best, row) => {
+    if ((row.games || 0) !== (best.games || 0)) {
+      return (row.games || 0) > (best.games || 0) ? row : best;
+    }
+    if (row.moves.length !== best.moves.length) {
+      return row.moves.length < best.moves.length ? row : best;
+    }
+    return row.fen < best.fen ? row : best;
+  });
 }
 
 function readOpenings() {
@@ -76,54 +87,61 @@ function readOpenings() {
 }
 
 /**
- * One indexable page per distinct opening name. 12,377 FENs carry only 10,983
- * names — 2,071 pages sat on a name another page already had, so Google saw
- * duplicate titles and near-identical descriptions across the set. The busiest
- * position wins the name; everything else points its canonical at that URL.
+ * Two things that look alike and are not.
+ *
+ * **A shared name is not a duplicate page.** 2,071 rows carry a name another
+ * row already has, but every one of them is a different position with its own
+ * moves, description and win rates: `King's Pawn Game` is both 1.e4 and
+ * 1.e4 e5, and `Danish Gambit: Accepted, 4.Bc4` (11.4M games) is not the
+ * `Danish Gambit: Accepted` it is named after. Canonicalising on the name
+ * de-indexed 1,677 real pages carrying 6.65 billion games. What the name
+ * collision actually breaks is the *title*, so those rows are flagged and the
+ * middleware disambiguates them by move list — which separates all 677 shared
+ * names with none left ambiguous.
+ *
+ * **The same board under two URLs is a duplicate.** 271 rows differ from
+ * another only in the FEN's move counters. Those get a canonical.
  */
 function resolveCanonicals(rows) {
+  const byPosition = new Map();
   const byName = new Map();
   for (const row of rows) {
-    const group = byName.get(row.name);
-    if (group) group.push(row);
+    const key = positionKey(row.fen);
+    const position = byPosition.get(key);
+    if (position) position.push(row);
+    else byPosition.set(key, [row]);
+
+    const named = byName.get(row.name);
+    if (named) named.push(row);
     else byName.set(row.name, [row]);
   }
 
-  const winnerOf = new Map();
-  for (const [name, group] of byName) {
-    const winner = group.reduce((best, row) => {
-      if ((row.games || 0) !== (best.games || 0))
-        return (row.games || 0) > (best.games || 0) ? row : best;
-      if (row.moves.length !== best.moves.length)
-        return row.moves.length < best.moves.length ? row : best;
-      return row.fen < best.fen ? row : best;
-    });
-    winnerOf.set(name, winner);
-  }
-
-  // Follow "<parent>, <move>" up to its parent, guarding against a cycle.
-  const targetOf = (name) => {
-    let current = name;
-    for (let hops = 0; hops < 8; hops++) {
-      const parent = parentName(current);
-      if (!parent || !byName.has(parent)) break;
-      current = parent;
-    }
-    return winnerOf.get(current);
-  };
-
   let canonicalCount = 0;
-  for (const row of rows) {
-    const target = targetOf(row.name);
-    row.canonical = target && target.fen !== row.fen ? target.fen : null;
-    if (!row.canonical) canonicalCount++;
+  for (const group of byPosition.values()) {
+    const winner = preferred(group);
+    for (const row of group) {
+      row.canonical = row.fen === winner.fen ? null : winner.fen;
+      if (!row.canonical) canonicalCount++;
+    }
   }
-  return canonicalCount;
+
+  let ambiguousCount = 0;
+  for (const group of byName.values()) {
+    if (group.length < 2) continue;
+    for (const row of group) {
+      // Only worth disambiguating a page that is going to be indexed.
+      if (row.canonical) continue;
+      row.sharesName = true;
+      ambiguousCount++;
+    }
+  }
+
+  return { canonicalCount, ambiguousCount };
 }
 
 function generateSeoLookup() {
   const rows = readOpenings();
-  const canonicalCount = resolveCanonicals(rows);
+  const { canonicalCount, ambiguousCount } = resolveCanonicals(rows);
 
   const shards = Array.from({ length: SHARD_COUNT }, () => ({}));
   for (const row of rows) {
@@ -138,6 +156,7 @@ function generateSeoLookup() {
       row.draw,
       row.black,
       row.canonical,
+      row.sharesName ? 1 : null,
     ];
     while (entry.length > 4 && entry[entry.length - 1] == null) entry.pop();
     shards[shardForFen(row.fen)][row.fen] = entry;
@@ -159,8 +178,11 @@ function generateSeoLookup() {
   console.log(`\nGenerated seo-lookup shards:`);
   console.log(`  Entries: ${rows.length} across ${SHARD_COUNT} shards`);
   console.log(`  Canonical (indexable) pages: ${canonicalCount}`);
-  console.log(`  Canonicalised away: ${rows.length - canonicalCount}`);
-  console.log(`  Total: ${totalKB.toFixed(1)} KB, largest shard: ${maxKB.toFixed(1)} KB`);
+  console.log(`  Duplicate positions canonicalised: ${rows.length - canonicalCount}`);
+  console.log(`  Titles disambiguated by move list: ${ambiguousCount}`);
+  console.log(
+    `  Total: ${totalKB.toFixed(1)} KB, mean ${(totalKB / SHARD_COUNT).toFixed(1)} KB, largest ${maxKB.toFixed(1)} KB`
+  );
 
   if (maxKB > 300) {
     console.warn(`  WARNING: largest shard exceeds 300 KB — raise SHARD_COUNT`);
@@ -171,4 +193,4 @@ if (require.main === module) {
   generateSeoLookup();
 }
 
-module.exports = { shardForFen, parentName, resolveCanonicals, readOpenings, SHARD_COUNT };
+module.exports = { shardForFen, positionKey, resolveCanonicals, readOpenings, SHARD_COUNT };

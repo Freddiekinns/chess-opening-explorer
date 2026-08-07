@@ -10,9 +10,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   themselves with the same template sentence over an empty `#root`, earning
   0.5–2.9% CTR at position ~11. The middleware now renders the opening's own
   description and real win rates into `#root` and uses that description as the
-  meta; unknown FENs 404 rather than serving the landing page at 200; 1,677
-  duplicate-name pages canonicalise to the page that owns the name; and sitemaps
-  got their first generator, ordered by game volume.
+  meta; unknown FENs 404 rather than serving the landing page at 200; only the
+  271 same-board URLs canonicalise, while a shared name gets its move list in
+  the title; and sitemaps got their first generator, ordered by game volume.
 - **Search answers in milliseconds, identically on all three surfaces**
   (2026-08-04, on `claude/player-details-layout-qxa1mo`): the top bar "hung"
   because the server took 1–3s to fuzzy-match a name over 12,377 descriptions

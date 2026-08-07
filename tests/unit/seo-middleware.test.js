@@ -8,18 +8,35 @@ const { shardForFen } = require('../../scripts/generate-seo-lookup');
 // middleware.ts is TypeScript and imports siteConfig.ts, so it is bundled the
 // way Vercel bundles it rather than stubbed — these tests then run the real
 // edge handler against the real built index.html.
+const compiled = new Map();
+
+/**
+ * Compile once, instantiate per call.
+ *
+ * middleware.ts keeps `seoShardCache` at module scope, so a single shared
+ * instance carries a warm cache between tests — which silently voided the
+ * fail-open tests: the FEN's shard was already resident, `fetch` was never
+ * reached, and flipping `unavailable` to `missing` (the regression AGENTS.md
+ * warns is catastrophic) left the whole file green. Every test gets its own
+ * module, and therefore its own empty cache.
+ */
 function bundle(entry) {
-  const result = esbuild.buildSync({
-    entryPoints: [path.join(ROOT, entry)],
-    bundle: true,
-    format: 'cjs',
-    platform: 'node',
-    target: 'node18',
-    write: false,
-  });
+  if (!compiled.has(entry)) {
+    compiled.set(
+      entry,
+      esbuild.buildSync({
+        entryPoints: [path.join(ROOT, entry)],
+        bundle: true,
+        format: 'cjs',
+        platform: 'node',
+        target: 'node18',
+        write: false,
+      }).outputFiles[0].text
+    );
+  }
   const module = { exports: {} };
   // eslint-disable-next-line no-new-func
-  new Function('module', 'exports', 'require', result.outputFiles[0].text)(
+  new Function('module', 'exports', 'require', compiled.get(entry))(
     module,
     module.exports,
     require
@@ -56,8 +73,13 @@ function builtShape(source) {
 }
 
 const AMAR_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1';
-const DUPLICATE_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 9';
+// Same first four FEN fields as AMAR_FEN — the same board, reached by a
+// different move order. This is the only kind of duplicate in the corpus.
+const DUPLICATE_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 3 2';
 const NO_STATS_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 8';
+// Two different positions that share a name, as 2,071 real pages do.
+const SHARED_A = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1';
+const SHARED_B = 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
 
 const DESCRIPTION =
   'The Amar Opening is a highly unorthodox and provocative flank move, immediately placing a knight on the rim of the board. ' +
@@ -66,7 +88,9 @@ const DESCRIPTION =
 const SHARD = {
   [AMAR_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 1533432, 0.4284, 0.0498, 0.5216],
   [NO_STATS_FEN]: ['Quiet Line', 'A00', '1. Nh3 e5', 'A sideline with no recorded games.'],
-  [DUPLICATE_FEN]: ['Amar Opening', 'A00', '1. Nh3 d5', DESCRIPTION, 12, 0.5, 0.1, 0.4, AMAR_FEN],
+  [DUPLICATE_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 12, 0.5, 0.1, 0.4, AMAR_FEN],
+  [SHARED_A]: ["King's Pawn Game", 'C20', '1. e4', 'The most played first move.', 3778178876, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
+  [SHARED_B]: ["King's Pawn Game", 'C20', '1. e4 e5', 'Black answers in kind.', 1501326875, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
 };
 
 let middleware;
@@ -74,13 +98,14 @@ let sourceHtml;
 let indexHtml;
 
 beforeAll(() => {
-  middleware = loadMiddleware();
   sourceHtml = fs.readFileSync(SOURCE_INDEX, 'utf-8');
 });
 
-// Default to the shape production actually serves; the swap is re-checked
-// against the source shape in its own test below.
 beforeEach(() => {
+  // Fresh module per test, so no test inherits another's warm shard cache.
+  middleware = loadMiddleware();
+  // Default to the shape production actually serves; the swap is re-checked
+  // against the source shape in its own test below.
   indexHtml = builtShape(sourceHtml);
 });
 
@@ -179,7 +204,7 @@ describe('SEO middleware — meta and canonicals', () => {
     expect(canonical).toBe(`https://openingbook.xyz${openingUrl(AMAR_FEN)}`);
   });
 
-  it('points a duplicate-name page at the page that owns the name', async () => {
+  it('points a duplicate position at the URL that owns the board', async () => {
     const html = await (await get(openingUrl(DUPLICATE_FEN))).text();
     const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)[1];
     const ogUrl = html.match(/<meta property="og:url" content="([^"]*)"/)[1];
@@ -187,6 +212,33 @@ describe('SEO middleware — meta and canonicals', () => {
     expect(canonical).toBe(`https://openingbook.xyz${openingUrl(AMAR_FEN)}`);
     // og:url still describes the page that was requested.
     expect(ogUrl).toBe(`https://openingbook.xyz${openingUrl(DUPLICATE_FEN)}`);
+  });
+
+  // Two pages sharing a name are different positions, not duplicates. Folding
+  // them onto one URL de-indexed 1,677 real pages carrying 6.65 billion games,
+  // including King's Pawn Game at 1.e4 e5 (1.5B). They keep their URLs; it is
+  // the title that has to tell them apart.
+  it('keeps both pages that share a name, and separates them by title', async () => {
+    const a = await (await get(openingUrl(SHARED_A))).text();
+    const b = await (await get(openingUrl(SHARED_B))).text();
+
+    const titleOf = (html) => html.match(/<title>([^<]*)<\/title>/)[1];
+    const canonicalOf = (html) => html.match(/<link rel="canonical" href="([^"]*)"/)[1];
+
+    // An apostrophe needs no escaping in text content or a double-quoted
+    // attribute, so it survives verbatim.
+    expect(titleOf(a)).toBe("King's Pawn Game: 1. e4 (C20) — Opening Book");
+    expect(titleOf(b)).toBe("King's Pawn Game: 1. e4 e5 (C20) — Opening Book");
+    expect(titleOf(a)).not.toBe(titleOf(b));
+
+    // Neither is canonicalised away.
+    expect(canonicalOf(a)).toBe(`https://openingbook.xyz${openingUrl(SHARED_A)}`);
+    expect(canonicalOf(b)).toBe(`https://openingbook.xyz${openingUrl(SHARED_B)}`);
+  });
+
+  it('leaves an unshared name alone in the title', async () => {
+    const html = await (await get(openingUrl(AMAR_FEN))).text();
+    expect(html).toContain('<title>Amar Opening (A00) — Opening Book</title>');
   });
 
   it('emits structured data naming the opening', async () => {
@@ -229,39 +281,64 @@ describe('SEO middleware — unknown positions', () => {
 });
 
 describe('SEO middleware — shard failure must fail open', () => {
-  // 404ing on a transient CDN miss would take all 12,377 opening pages out of
-  // the index, which is the failure this whole change exists to undo.
+  // 404ing on a transient CDN miss would take every opening page in the shard
+  // out of the index, which is the failure this whole change exists to undo.
+  let shardRequests;
+
   const failShardWith = (shardResponse) => {
+    shardRequests = 0;
     global.fetch = jest.fn(async (input) => {
       const url = input instanceof Request ? input.url : String(input);
-      if (url.includes('/seo-lookup/')) return shardResponse();
+      if (url.includes('/seo-lookup/')) {
+        shardRequests++;
+        return shardResponse();
+      }
       return new Response(indexHtml, { status: 200 });
     });
   };
 
-  it('serves 200 with site defaults when the shard 404s', async () => {
-    failShardWith(() => new Response('', { status: 404 }));
+  // Each of these asserts the shard was actually requested. Without it the
+  // suite passed against a middleware whose fail-open branch had been deleted,
+  // because a warm module-level cache meant fetch was never called.
+  it.each([
+    ['404s', () => new Response('', { status: 404 })],
+    [
+      'throws',
+      () => {
+        throw new Error('network');
+      },
+    ],
+    ['is not valid JSON', () => new Response('<html>oops</html>', { status: 200 })],
+    ['is JSON but not an object', () => new Response('null', { status: 200 })],
+  ])('serves 200, not 404, when the shard %s', async (_label, response) => {
+    failShardWith(response);
+    const res = await get(openingUrl(AMAR_FEN));
+    const html = await res.text();
+
+    expect(shardRequests).toBeGreaterThan(0);
+    expect(res.status).toBe(200);
+    expect(html).not.toContain('Opening not found');
+  });
+
+  it('holds a degraded response for a minute, not a day', async () => {
+    failShardWith(() => new Response('', { status: 500 }));
     const res = await get(openingUrl(AMAR_FEN));
 
-    expect(res.status).toBe(200);
-    expect(await res.text()).not.toContain('Opening not found');
-  });
-
-  it('serves 200 when the shard fetch throws', async () => {
-    failShardWith(() => {
-      throw new Error('network');
-    });
-    expect((await get(openingUrl(AMAR_FEN))).status).toBe(200);
-  });
-
-  it('serves 200 when the shard is not valid JSON', async () => {
-    failShardWith(() => new Response('<html>oops</html>', { status: 200 }));
-    expect((await get(openingUrl(AMAR_FEN))).status).toBe(200);
+    expect(shardRequests).toBeGreaterThan(0);
+    // The body carries the landing page's boilerplate; caching that for a day
+    // would pin identical metadata onto every URL in the shard.
+    expect(res.headers.get('cache-control')).toBe('s-maxage=60, stale-while-revalidate=60');
   });
 
   it('still 404s when the shard loads and the FEN is genuinely absent', async () => {
     const res = await get(openingUrl('8/8/8/8/8/8/8/8 w - - 0 1'));
     expect(res.status).toBe(404);
+    expect(res.headers.get('cache-control')).toContain('s-maxage=3600');
+  });
+
+  it('caches a good page for a day', async () => {
+    const res = await get(openingUrl(AMAR_FEN));
+    expect(res.headers.get('cache-control')).toBe('s-maxage=86400, stale-while-revalidate=604800');
   });
 });
 

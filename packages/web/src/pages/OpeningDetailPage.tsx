@@ -36,7 +36,7 @@ import { recordRecentOpening } from '../lib/recentOpenings';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
-import { buildOpeningDescription, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
+import { buildOpeningDescription, SITE_NAME } from '../lib/siteConfig';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -836,8 +836,11 @@ const OpeningDetailPage: React.FC = () => {
   // Must match what middleware.ts already wrote into <head>: React 19 hoists
   // these tags beside the existing ones rather than replacing them, so a
   // divergence leaves the crawler's rendered DOM holding both versions.
-  // Canonical and og:url are deliberately not re-rendered here — only the
-  // middleware knows which page owns a shared opening name.
+  //
+  // Canonical, og:url and the JSON-LD block are deliberately not re-rendered
+  // here. The middleware emits all three and is the only side that knows which
+  // FEN owns a duplicated position; a second WebPage entity disagreeing on
+  // name and url is worse than none.
   const seoDescription = opening
     ? buildOpeningDescription({
         name: opening.name,
@@ -849,15 +852,6 @@ const OpeningDetailPage: React.FC = () => {
           opening.analysis_json?.description,
       })
     : 'Explore this chess opening. Learn key ideas, watch videos, and practise.';
-  const jsonLd = opening
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        name: seoTitle,
-        description: seoDescription,
-        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: PRIMARY_SITE_URL },
-      }
-    : null;
 
   // This page's own enriched plans. /fen/:fen (formatOpeningData) returns
   // common_plans top-level — the only source. Plans must come from the exact
@@ -976,13 +970,6 @@ const OpeningDetailPage: React.FC = () => {
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          // Content is from our own ECO data files, not user input — safe for JSON-LD
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
       {/* Page Title Area */}
       <div className={`page-title-area centered ${styles.titleArea}`}>
         <div className={styles.titleWithStar}>

@@ -6,7 +6,8 @@ import {
 } from './packages/web/src/lib/siteConfig';
 
 /**
- * [name, eco, moves, description, games, white, draw, black, canonicalFen]
+ * [name, eco, moves, description, games, white, draw, black, canonicalFen,
+ *  sharesName]
  * Trailing nulls are trimmed by the generator, so read defensively.
  */
 type SeoEntry = [
@@ -19,12 +20,16 @@ type SeoEntry = [
   draw?: number | null,
   black?: number | null,
   canonical?: string | null,
+  sharesName?: 1 | null,
 ];
 type SeoLookup = Record<string, SeoEntry>;
 
-// The lookup is sharded into 64 files of ~120 KB by scripts/generate-seo-lookup.js
-// so a request fetches (and caches) only the shard holding its FEN, instead of
-// the full 8.9 MB dataset per edge cold start.
+// The lookup is sharded into 64 files (mean 138 KB, largest 179 KB) by
+// scripts/generate-seo-lookup.js so a request fetches — and this isolate then
+// holds — only the shard containing its FEN, rather than the full 8.8 MB.
+// A crawler sweeping every opening will eventually pull all 64 into one
+// isolate; that is the deliberate ceiling, and it is well inside the edge
+// memory limit.
 const SHARD_COUNT = 64;
 
 /** djb2 string hash — MUST stay in sync with scripts/generate-seo-lookup.js. */
@@ -57,7 +62,15 @@ async function getSeoEntry(origin: string, fen: string): Promise<LookupResult> {
     try {
       const res = await fetch(`${origin}/seo-lookup/${shard.toString(16)}.json`);
       if (!res.ok) return { status: 'unavailable' };
-      lookup = (await res.json()) as SeoLookup;
+      const parsed = await res.json();
+      // Valid JSON that is not an object — `null`, an array, a truncated body
+      // reassembled into a scalar — must not reach the lookup below, where
+      // indexing it throws and the caller's catch reads that as "no such
+      // opening" and 404s a page that exists.
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return { status: 'unavailable' };
+      }
+      lookup = parsed as SeoLookup;
       seoShardCache.set(shard, lookup);
     } catch {
       return { status: 'unavailable' };
@@ -204,6 +217,7 @@ export default async function middleware(request: Request): Promise<Response> {
   let body = '';
   let jsonLd: string | undefined;
   let status = 200;
+  let degraded = false;
 
   if (pathname === '/analyse') {
     title = `Analyse Your Games — ${SITE_NAME}`;
@@ -222,23 +236,24 @@ export default async function middleware(request: Request): Promise<Response> {
 
     if (result.status === 'found') {
       const entry = result.entry;
-      const [name, eco, , entryDescription, , , , , canonical] = entry;
+      const [name, eco, moves, entryDescription, , , , , canonical, sharesName] = entry;
       const ecoLabel = eco ? ` (${eco})` : '';
-      title = `${name}${ecoLabel} — ${SITE_NAME}`;
+
+      // 2,071 pages carry a name another page also has — different positions,
+      // same ECO label. They are not duplicates and keep their own URL, but two
+      // identical <title>s in a SERP are indistinguishable, so the sharers name
+      // the line that reaches them. Every shared name separates this way.
+      const disambiguator = sharesName && moves ? `: ${moves}` : '';
+      title = `${name}${disambiguator}${ecoLabel} — ${SITE_NAME}`;
 
       // The opening's own writing, not a mail-merge sentence — and built by the
       // same helper the React page uses, because React 19 hoists its <meta> to
       // <head> beside this one instead of replacing it.
-      description = buildOpeningDescription({
-        name,
-        eco,
-        moves: entry[2],
-        description: entryDescription,
-      });
+      description = buildOpeningDescription({ name, eco, moves, description: entryDescription });
 
-      // 2,071 pages shared a name with another and more were generated
-      // "<parent>, <move>" captions. They point at the page that owns the name
-      // rather than competing with it for the same query.
+      // Only a genuine duplicate gets a canonical: 271 URLs whose FEN differs
+      // from another's in nothing but the move counters, so both address the
+      // same board.
       if (canonical) {
         canonicalUrl = buildSiteUrl(`/opening/${encodeURIComponent(canonical)}`);
       }
@@ -256,10 +271,16 @@ export default async function middleware(request: Request): Promise<Response> {
         `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">Opening not found</h1>` +
         `<p style="color:var(--color-text-secondary)">We could not find that position. <a href="/" style="color:var(--color-brand-orange)">Search the openings</a>.</p>` +
         `</main>`;
+    } else {
+      // 'unavailable': the shard did not load, which is not evidence the page
+      // does not exist. Serve 200 and let the app render the position client
+      // side — but this response carries the *landing page's* title and
+      // description, so caching it for a day the way a good one is cached would
+      // pin identical boilerplate onto every opening URL in the shard. That is
+      // the duplicate-metadata failure this file exists to undo, so a degraded
+      // response is held only long enough to absorb the incident.
+      degraded = true;
     }
-    // status === 'unavailable' falls through with the site defaults and a 200:
-    // the app still renders the position client-side, and a shard that failed
-    // to load is not evidence the page does not exist.
   }
 
   // Fetch index.html directly (not the original URL) to avoid middleware loop
@@ -309,8 +330,13 @@ export default async function middleware(request: Request): Promise<Response> {
     status,
     headers: {
       'content-type': 'text/html; charset=utf-8',
-      'cache-control':
-        status === 404
+      // A good page is worth a day at the edge and a week stale. A 404 and a
+      // degraded fallback are both provisional answers, so they get minutes,
+      // not days — long enough to shield the origin through an incident,
+      // short enough that recovery is not stuck behind a stale entry.
+      'cache-control': degraded
+        ? 's-maxage=60, stale-while-revalidate=60'
+        : status === 404
           ? 's-maxage=3600, stale-while-revalidate=86400'
           : 's-maxage=86400, stale-while-revalidate=604800',
     },

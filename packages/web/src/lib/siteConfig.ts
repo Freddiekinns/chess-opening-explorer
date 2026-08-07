@@ -47,6 +47,12 @@ export function buildOpeningDescription(opening: {
 
   const name = opening.name || 'this chess opening';
   const ecoLabel = opening.eco ? ` (${opening.eco})` : '';
-  const moves = opening.moves ? ` Played after ${opening.moves}.` : '';
-  return `Explore the ${name}${ecoLabel}.${moves} Learn key ideas, watch videos, and practise this opening.`;
+  // Only the opening moves, and truncated like any other description: the
+  // lookup carries the full line now, and interpolating twenty plies raw would
+  // push this well past the ~155 characters Google shows.
+  const opening7 = opening.moves ? opening.moves.split(/\s+/).slice(0, 7).join(' ') : '';
+  const moves = opening7 ? ` Played after ${opening7}.` : '';
+  return truncateForMeta(
+    `Explore the ${name}${ecoLabel}.${moves} Learn key ideas, watch videos, and practise this opening.`
+  );
 }

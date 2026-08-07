@@ -179,14 +179,34 @@ load-bearing.
   middleware with esbuild and runs it against the real built `index.html`, so it
   catches a drift the unit tests cannot.
 
+- **Give each test in `seo-middleware.test.js` a fresh middleware instance.**
+  `seoShardCache` lives at module scope, so one shared instance carries a warm
+  cache between tests — which silently voided the fail-open tests: the shard was
+  already resident, `fetch` was never reached, and flipping `unavailable` to
+  `missing` left all 21 green. They now assert the shard was actually requested.
+  When you touch this file, mutate the branch you believe you are covering and
+  confirm the suite goes red.
+
+- **A shared opening name is not a duplicate page; a shared board is.** 2,071
+  rows carry a name another row also has, and every one is a different position
+  with its own moves, description and win rates — `King's Pawn Game` is both
+  1.e4 (3.8B games) and 1.e4 e5 (1.5B), and `Danish Gambit: Accepted, 4.Bc4`
+  (11.4M) is not the `Danish Gambit: Accepted` it is named after. Canonicalising
+  on the name de-indexed 1,677 real pages carrying 6.65 billion games before
+  review caught it. What a name collision breaks is the **title**, so those rows
+  carry `sharesName` and the middleware appends their move list — which
+  separates all 677 shared names with none left ambiguous. The only true
+  duplicates are the **271 rows whose FEN differs from another's in nothing but
+  the move counters** (`positionKey` compares the first four fields); those, and
+  only those, get a canonical.
+
 - **Sitemaps are generated, not hand-written.** `scripts/generate-sitemaps.js`
-  emits only pages that own their canonical URL (10,700 of 12,377 — 1,677 are
-  duplicate names or "<parent>, <move>" captions pointing at the page that owns
-  the name), ordered by game volume so a young domain's crawl budget lands on
-  the openings people actually search for. There was no generator until
-  2026-08-07, which is why the index sat at `lastmod 2026-06-02` for two months.
-  The flat `sitemap.xml` is gone — it carried a byte-identical URL set to the
-  shards and robots.txt declared both, submitting the same 12,379 URLs twice.
+  emits the 12,106 pages that own their canonical URL, ordered by game volume so
+  a young domain's crawl budget lands on the openings people actually search
+  for. There was no generator until 2026-08-07, which is why the index sat at
+  `lastmod 2026-06-02` for two months. The flat `sitemap.xml` is gone — it
+  carried a byte-identical URL set to the shards and robots.txt declared both,
+  submitting the same 12,379 URLs twice.
 
 - **Host-based redirects belong in `vercel.json`, not `middleware.ts`.**
   Vercel's edge resolves host-level redirects (www↔apex, custom domains)

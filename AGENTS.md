@@ -23,6 +23,25 @@ Deep pipeline documentation is in each `tools/*/README.md`.
 - Write code that reads like the surrounding code: match its comment density,
   naming, and idiom
 
+### Background wake-ups cost a full turn
+
+A scheduled check-in or a webhook event replays the whole conversation and bills
+the owner for it. "Staying silent" is not free — a check-in printing one line
+costs what one printing a page costs.
+
+- **Never schedule a recurring check-in on a pull request.** A PR that is green
+  and conflict-free is waiting on a human; nothing changes without them, and the
+  merge arrives as a webhook anyway.
+- **Unsubscribe (`unsubscribe_pr_activity`) once CI is green** with no
+  outstanding review. The window worth waking for is the few minutes between a
+  push and the checks settling; after that every event is a `vercel[bot]` deploy
+  notice or a coverage table.
+- **Never relay bot status comments to the owner.** They can see them.
+
+Recorded because it has happened twice: ~14 unsolicited turns on PR #67, five of
+them self-scheduled hourly polls of a PR that was green throughout, and 14+ the
+same on PR #63 the week before.
+
 ## Gotchas
 
 Non-obvious things that have caused real regressions. Every entry here is

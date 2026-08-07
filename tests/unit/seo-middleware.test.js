@@ -8,9 +8,9 @@ const { shardForFen } = require('../../scripts/generate-seo-lookup');
 // middleware.ts is TypeScript and imports siteConfig.ts, so it is bundled the
 // way Vercel bundles it rather than stubbed — these tests then run the real
 // edge handler against the real built index.html.
-function loadMiddleware() {
+function bundle(entry) {
   const result = esbuild.buildSync({
-    entryPoints: [path.join(ROOT, 'middleware.ts')],
+    entryPoints: [path.join(ROOT, entry)],
     bundle: true,
     format: 'cjs',
     platform: 'node',
@@ -24,8 +24,11 @@ function loadMiddleware() {
     module.exports,
     require
   );
-  return module.exports.default;
+  return module.exports;
 }
+
+const loadMiddleware = () => bundle('middleware.ts').default;
+const loadSiteConfig = () => bundle('packages/web/src/lib/siteConfig.ts');
 
 const INDEX_HTML = path.join(ROOT, 'packages', 'web', 'dist', 'index.html');
 
@@ -182,6 +185,72 @@ describe('SEO middleware — unknown positions', () => {
   it('404s a malformed FEN encoding rather than throwing', async () => {
     const res = await get('/opening/%E0%A4%A');
     expect(res.status).toBe(404);
+  });
+});
+
+describe('SEO middleware — shard failure must fail open', () => {
+  // 404ing on a transient CDN miss would take all 12,377 opening pages out of
+  // the index, which is the failure this whole change exists to undo.
+  const failShardWith = (shardResponse) => {
+    global.fetch = jest.fn(async (input) => {
+      const url = input instanceof Request ? input.url : String(input);
+      if (url.includes('/seo-lookup/')) return shardResponse();
+      return new Response(indexHtml, { status: 200 });
+    });
+  };
+
+  it('serves 200 with site defaults when the shard 404s', async () => {
+    failShardWith(() => new Response('', { status: 404 }));
+    const res = await get(openingUrl(AMAR_FEN));
+
+    expect(res.status).toBe(200);
+    expect(await res.text()).not.toContain('Opening not found');
+  });
+
+  it('serves 200 when the shard fetch throws', async () => {
+    failShardWith(() => {
+      throw new Error('network');
+    });
+    expect((await get(openingUrl(AMAR_FEN))).status).toBe(200);
+  });
+
+  it('serves 200 when the shard is not valid JSON', async () => {
+    failShardWith(() => new Response('<html>oops</html>', { status: 200 }));
+    expect((await get(openingUrl(AMAR_FEN))).status).toBe(200);
+  });
+
+  it('still 404s when the shard loads and the FEN is genuinely absent', async () => {
+    const res = await get(openingUrl('8/8/8/8/8/8/8/8 w - - 0 1'));
+    expect(res.status).toBe(404);
+  });
+});
+
+describe('SEO middleware — agrees with the React page', () => {
+  // React 19 hoists OpeningDetailPage's <meta> into <head> beside the one the
+  // middleware wrote, so the two descriptions have to be the same string.
+  const { buildOpeningDescription } = loadSiteConfig();
+
+  it('builds its description with the shared helper', async () => {
+    const html = await (await get(openingUrl(AMAR_FEN))).text();
+    const rendered = html.match(/<meta name="description" content="([^"]*)"/)[1];
+
+    expect(rendered).toBe(
+      buildOpeningDescription({
+        name: 'Amar Opening',
+        eco: 'A00',
+        moves: '1. Nh3',
+        description: DESCRIPTION,
+      })
+    );
+  });
+
+  it('emits exactly one canonical, because the page no longer renders one', async () => {
+    const page = fs.readFileSync(
+      path.join(ROOT, 'packages', 'web', 'src', 'pages', 'OpeningDetailPage.tsx'),
+      'utf-8'
+    );
+    expect(page).not.toMatch(/rel="canonical"/);
+    expect(page).not.toMatch(/property="og:url"/);
   });
 });
 

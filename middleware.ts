@@ -1,4 +1,9 @@
-import { buildSiteUrl, LEGACY_VERCEL_HOST, SITE_NAME } from './packages/web/src/lib/siteConfig';
+import {
+  buildOpeningDescription,
+  buildSiteUrl,
+  LEGACY_VERCEL_HOST,
+  SITE_NAME,
+} from './packages/web/src/lib/siteConfig';
 
 /**
  * [name, eco, moves, description, games, white, draw, black, canonicalFen]
@@ -33,20 +38,33 @@ function shardForFen(fen: string, shardCount = SHARD_COUNT): number {
 
 const seoShardCache = new Map<number, SeoLookup>();
 
-async function getSeoEntry(origin: string, fen: string): Promise<SeoEntry | undefined> {
+/**
+ * "The shard says this FEN does not exist" and "the shard did not load" are
+ * different answers and must stay that way. The first is a real 404; the second
+ * has to fail open, because 404ing on a transient CDN miss would take all
+ * 12,377 opening pages out of the index — the failure this change exists to
+ * undo, inflicted faster.
+ */
+type LookupResult =
+  | { status: 'found'; entry: SeoEntry }
+  | { status: 'missing' }
+  | { status: 'unavailable' };
+
+async function getSeoEntry(origin: string, fen: string): Promise<LookupResult> {
   const shard = shardForFen(fen);
   let lookup = seoShardCache.get(shard);
   if (!lookup) {
     try {
       const res = await fetch(`${origin}/seo-lookup/${shard.toString(16)}.json`);
-      if (!res.ok) return undefined;
+      if (!res.ok) return { status: 'unavailable' };
       lookup = (await res.json()) as SeoLookup;
       seoShardCache.set(shard, lookup);
     } catch {
-      return undefined;
+      return { status: 'unavailable' };
     }
   }
-  return lookup[fen];
+  const entry = lookup[fen];
+  return entry ? { status: 'found', entry } : { status: 'missing' };
 }
 
 function escapeHtml(str: string): string {
@@ -55,23 +73,6 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
-}
-
-/**
- * Google shows roughly 155 characters. Cut on a sentence boundary where one
- * lands in range, otherwise on a word — never mid-word, and never with the
- * ellipsis dangling after a comma.
- */
-function truncateForMeta(text: string, limit = 155): string {
-  const clean = text.replace(/\s+/g, ' ').trim();
-  if (clean.length <= limit) return clean;
-
-  const window = clean.slice(0, limit + 1);
-  const sentenceEnd = Math.max(window.lastIndexOf('. '), window.lastIndexOf('? '));
-  if (sentenceEnd > limit * 0.55) return clean.slice(0, sentenceEnd + 1);
-
-  const wordEnd = window.lastIndexOf(' ');
-  return clean.slice(0, wordEnd > 0 ? wordEnd : limit).replace(/[,;:]$/, '') + '…';
 }
 
 function pct(rate: number): string {
@@ -133,7 +134,7 @@ function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
     .filter(Boolean)
     .join(' · ');
   if (meta) {
-    parts.push(`<p style="color:#a8a29e;margin:0 0 1.5rem">${meta}</p>`);
+    parts.push(`<p style="color:var(--color-text-secondary);margin:0 0 1.5rem">${meta}</p>`);
   }
 
   if (description) {
@@ -145,7 +146,7 @@ function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
   if (games != null && white != null && draw != null && black != null) {
     parts.push(
       `<h2 style="font-size:1.1rem;margin:0 0 .5rem">Win rate over ${games.toLocaleString('en-GB')} Lichess games</h2>`,
-      `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;color:#a8a29e">` +
+      `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;color:var(--color-text-secondary)">` +
         `<li>White wins ${pct(white)}</li>` +
         `<li>Draw ${pct(draw)}</li>` +
         `<li>Black wins ${pct(black)}</li>` +
@@ -210,28 +211,32 @@ export default async function middleware(request: Request): Promise<Response> {
       'Analyse your Chess.com and Lichess games to discover which openings you play and track your performance.';
   } else if (pathname.startsWith('/opening/')) {
     const fenEncoded = pathname.slice('/opening/'.length);
-    let entry: SeoEntry | undefined;
+    let result: LookupResult;
 
     try {
-      const fen = decodeURIComponent(fenEncoded);
-      entry = await getSeoEntry(url.origin, fen);
+      result = await getSeoEntry(url.origin, decodeURIComponent(fenEncoded));
     } catch {
-      // Bad FEN encoding — falls through to the not-found branch below.
+      // Malformed percent-encoding: no position can exist at this URL.
+      result = { status: 'missing' };
     }
 
-    if (entry) {
-      const [name, eco, moves, entryDescription, , , , , canonical] = entry;
+    if (result.status === 'found') {
+      const entry = result.entry;
+      const [name, eco, , entryDescription, , , , , canonical] = entry;
       const ecoLabel = eco ? ` (${eco})` : '';
       title = `${name}${ecoLabel} — ${SITE_NAME}`;
 
-      // The opening's own description, not a mail-merge sentence. Every page
-      // used to advertise itself with the same template, which is a large part
-      // of why a month of impressions earned a ~1% CTR.
-      description = entryDescription
-        ? truncateForMeta(entryDescription)
-        : `Explore the ${name}${ecoLabel}.${moves ? ` Played after ${moves}.` : ''} Learn key ideas, watch videos, and practise this opening.`;
+      // The opening's own writing, not a mail-merge sentence — and built by the
+      // same helper the React page uses, because React 19 hoists its <meta> to
+      // <head> beside this one instead of replacing it.
+      description = buildOpeningDescription({
+        name,
+        eco,
+        moves: entry[2],
+        description: entryDescription,
+      });
 
-      // 2,071 pages shared a name with another and 1,490 more were generated
+      // 2,071 pages shared a name with another and more were generated
       // "<parent>, <move>" captions. They point at the page that owns the name
       // rather than competing with it for the same query.
       if (canonical) {
@@ -240,7 +245,7 @@ export default async function middleware(request: Request): Promise<Response> {
 
       body = buildOpeningBody(entry, name, eco);
       jsonLd = buildOpeningJsonLd(name, description, canonicalUrl);
-    } else {
+    } else if (result.status === 'missing') {
       // An unknown FEN used to return 200 with the landing page behind it —
       // a soft 404, and Search Console had started reporting them as such.
       status = 404;
@@ -249,9 +254,12 @@ export default async function middleware(request: Request): Promise<Response> {
       body =
         `<main style="max-width:44rem;margin:0 auto;padding:3rem 1.25rem">` +
         `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">Opening not found</h1>` +
-        `<p style="color:#a8a29e">We could not find that position. <a href="/" style="color:#e85d04">Search the openings</a>.</p>` +
+        `<p style="color:var(--color-text-secondary)">We could not find that position. <a href="/" style="color:var(--color-brand-orange)">Search the openings</a>.</p>` +
         `</main>`;
     }
+    // status === 'unavailable' falls through with the site defaults and a 200:
+    // the app still renders the position client-side, and a shard that failed
+    // to load is not evidence the page does not exist.
   }
 
   // Fetch index.html directly (not the original URL) to avoid middleware loop

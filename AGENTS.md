@@ -154,10 +154,24 @@ load-bearing.
   the JS render.** TASK009 chose meta-only injection deliberately in Feb 2026
   and named this exact escalation as its follow-up; the escalation has happened.
 
-- **An unknown FEN must 404.** `App.tsx`'s `<Route path="*">` renders the
-  landing page, so before the middleware branched on a missing lookup entry,
-  every malformed or stale `/opening/` URL returned 200 with the landing page
-  behind it. Search Console was reporting them as soft 404s.
+- **An unknown FEN must 404 — but a failed shard lookup must not.** `App.tsx`'s
+  `<Route path="*">` renders the landing page, so before the middleware branched
+  on a missing lookup entry, every malformed or stale `/opening/` URL returned
+  200 with the landing page behind it, and Search Console was reporting them as
+  soft 404s. `getSeoEntry` therefore returns `found` / `missing` / `unavailable`
+  and **only `missing` 404s**: collapsing the last two back into `undefined`
+  means one transient CDN miss on a shard 404s every opening page that shard
+  holds. Fail open — the app still renders the position client-side.
+
+- **`middleware.ts` and `OpeningDetailPage` must agree on the description.**
+  React 19 hoists a component's `<meta>` into `<head>` **beside** the one the
+  middleware already wrote rather than replacing it, so any divergence leaves
+  the crawler's rendered DOM holding both — including the boilerplate the page
+  was de-indexed for. Both call `buildOpeningDescription` in
+  `lib/siteConfig.ts`, the one place the template fallback lives. The page
+  deliberately renders **no** `<link rel="canonical">` and no `og:url`: only the
+  middleware knows which page owns a shared opening name, so a second
+  self-canonical would contradict it on 1,677 pages.
 
 - **The `seo-lookup` shards and `middleware.ts` share a djb2 hash and a payload
   shape.** Change either and both must change together, plus the golden values

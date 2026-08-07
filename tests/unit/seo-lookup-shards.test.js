@@ -31,6 +31,18 @@ describe('seo-lookup sharding', () => {
     expect(FENS.map((fen) => shardForFen(fen, 16))).toEqual([11, 8, 12, 13]);
   });
 
+  it('agrees with middleware.ts on how many shards there are', () => {
+    // The hash is pinned above, but a mismatched modulus sends the middleware
+    // to a shard the generator never wrote — every opening page would 404.
+    const source = require('fs').readFileSync(
+      require('path').join(__dirname, '..', '..', 'middleware.ts'),
+      'utf-8'
+    );
+    const declared = source.match(/const SHARD_COUNT = (\d+)/);
+    expect(declared).not.toBeNull();
+    expect(Number(declared[1])).toBe(SHARD_COUNT);
+  });
+
   it('spreads the corpus evenly enough that no shard dominates', () => {
     // The middleware fetches one whole shard per edge cold start, so a badly
     // skewed hash would be a latency problem, not just an untidy one.

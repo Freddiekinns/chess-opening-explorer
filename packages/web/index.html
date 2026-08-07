@@ -28,10 +28,13 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <style>
-      /* Splash palette — Warm Editorial Dark tokens (mirror simplified.css) */
+      /* Splash palette — Warm Editorial Dark tokens (mirror simplified.css).
+         middleware.ts styles its pre-hydration content from these, so a token
+         it references has to exist here as well as in simplified.css. */
       :root {
         --surface-base: #1a1816;
         --color-text-primary: #ece8e1;
+        --color-text-secondary: #9a958e;
         --color-brand-orange: #e85d04;
       }
 

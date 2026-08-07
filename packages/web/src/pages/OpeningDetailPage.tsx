@@ -36,7 +36,7 @@ import { recordRecentOpening } from '../lib/recentOpenings';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
-import { buildSiteUrl, PRIMARY_SITE_URL, SITE_NAME } from '../lib/siteConfig';
+import { buildOpeningDescription, SITE_NAME } from '../lib/siteConfig';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -833,20 +833,25 @@ const OpeningDetailPage: React.FC = () => {
   const seoTitle = opening
     ? `${opening.name}${opening.eco ? ` (${opening.eco})` : ''} — ${SITE_NAME}`
     : `Chess Opening — ${SITE_NAME}`;
+  // Must match what middleware.ts already wrote into <head>: React 19 hoists
+  // these tags beside the existing ones rather than replacing them, so a
+  // divergence leaves the crawler's rendered DOM holding both versions.
+  //
+  // Canonical, og:url and the JSON-LD block are deliberately not re-rendered
+  // here. The middleware emits all three and is the only side that knows which
+  // FEN owns a duplicated position; a second WebPage entity disagreeing on
+  // name and url is worse than none.
   const seoDescription = opening
-    ? `Explore the ${opening.name}${opening.eco ? ` (${opening.eco})` : ''}.${opening.moves ? ` Played after ${opening.moves.split(/\s+/).slice(0, 7).join(' ')}.` : ''} Learn key ideas, watch videos, and practice this opening.`
-    : 'Explore this chess opening. Learn key ideas, watch videos, and practice.';
-  const canonicalUrl = buildSiteUrl(`/opening/${fen ? encodeURIComponent(fen) : ''}`);
-  const jsonLd = opening
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        name: seoTitle,
-        description: seoDescription,
-        url: canonicalUrl,
-        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: PRIMARY_SITE_URL },
-      }
-    : null;
+    ? buildOpeningDescription({
+        name: opening.name,
+        eco: opening.eco,
+        moves: opening.moves,
+        description:
+          opening.description ||
+          opening.analysis?.description ||
+          opening.analysis_json?.description,
+      })
+    : 'Explore this chess opening. Learn key ideas, watch videos, and practise.';
 
   // This page's own enriched plans. /fen/:fen (formatOpeningData) returns
   // common_plans top-level — the only source. Plans must come from the exact
@@ -958,22 +963,13 @@ const OpeningDetailPage: React.FC = () => {
     <div className="detail-page-body">
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
-      <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
-      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          // Content is from our own ECO data files, not user input — safe for JSON-LD
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
       {/* Page Title Area */}
       <div className={`page-title-area centered ${styles.titleArea}`}>
         <div className={styles.titleWithStar}>

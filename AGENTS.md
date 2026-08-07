@@ -141,6 +141,73 @@ load-bearing.
 
 ### Deployment and SEO
 
+- **The opening page's content must stay in the HTML `middleware.ts` returns.**
+  Google indexed 5,010 opening pages over June–July 2026 and dropped them on
+  30/31 July. No deploy that day, no manual action, nothing broken — a quality
+  purge. All 12,377 pages had a unique `<title>` but shipped an empty `#root`
+  and the same mail-merge description ("Explore the {name} ({eco}). Played after
+  {moves}. Learn key ideas…"), so a month of impressions earned 0.5–2.9% CTR at
+  position ~11 and Google stopped serving them. The middleware now renders the
+  opening's own description and win rates into `#root` — React replaces it on
+  mount, so it is the page's pre-hydration state, not a second copy. **Do not
+  return the meta description to a template, and do not put content back behind
+  the JS render.** TASK009 chose meta-only injection deliberately in Feb 2026
+  and named this exact escalation as its follow-up; the escalation has happened.
+
+- **An unknown FEN must 404 — but a failed shard lookup must not.** `App.tsx`'s
+  `<Route path="*">` renders the landing page, so before the middleware branched
+  on a missing lookup entry, every malformed or stale `/opening/` URL returned
+  200 with the landing page behind it, and Search Console was reporting them as
+  soft 404s. `getSeoEntry` therefore returns `found` / `missing` / `unavailable`
+  and **only `missing` 404s**: collapsing the last two back into `undefined`
+  means one transient CDN miss on a shard 404s every opening page that shard
+  holds. Fail open — the app still renders the position client-side.
+
+- **`middleware.ts` and `OpeningDetailPage` must agree on the description.**
+  React 19 hoists a component's `<meta>` into `<head>` **beside** the one the
+  middleware already wrote rather than replacing it, so any divergence leaves
+  the crawler's rendered DOM holding both — including the boilerplate the page
+  was de-indexed for. Both call `buildOpeningDescription` in
+  `lib/siteConfig.ts`, the one place the template fallback lives. The page
+  deliberately renders **no** `<link rel="canonical">` and no `og:url`: only the
+  middleware knows which page owns a shared opening name, so a second
+  self-canonical would contradict it on 1,677 pages.
+
+- **The `seo-lookup` shards and `middleware.ts` share a djb2 hash and a payload
+  shape.** Change either and both must change together, plus the golden values
+  in `seo-lookup-shards.test.js`. `seo-middleware.test.js` bundles the real
+  middleware with esbuild and runs it against the real built `index.html`, so it
+  catches a drift the unit tests cannot.
+
+- **Give each test in `seo-middleware.test.js` a fresh middleware instance.**
+  `seoShardCache` lives at module scope, so one shared instance carries a warm
+  cache between tests — which silently voided the fail-open tests: the shard was
+  already resident, `fetch` was never reached, and flipping `unavailable` to
+  `missing` left all 21 green. They now assert the shard was actually requested.
+  When you touch this file, mutate the branch you believe you are covering and
+  confirm the suite goes red.
+
+- **A shared opening name is not a duplicate page; a shared board is.** 2,071
+  rows carry a name another row also has, and every one is a different position
+  with its own moves, description and win rates — `King's Pawn Game` is both
+  1.e4 (3.8B games) and 1.e4 e5 (1.5B), and `Danish Gambit: Accepted, 4.Bc4`
+  (11.4M) is not the `Danish Gambit: Accepted` it is named after. Canonicalising
+  on the name de-indexed 1,677 real pages carrying 6.65 billion games before
+  review caught it. What a name collision breaks is the **title**, so those rows
+  carry `sharesName` and the middleware appends their move list — which
+  separates all 677 shared names with none left ambiguous. The only true
+  duplicates are the **271 rows whose FEN differs from another's in nothing but
+  the move counters** (`positionKey` compares the first four fields); those, and
+  only those, get a canonical.
+
+- **Sitemaps are generated, not hand-written.** `scripts/generate-sitemaps.js`
+  emits the 12,106 pages that own their canonical URL, ordered by game volume so
+  a young domain's crawl budget lands on the openings people actually search
+  for. There was no generator until 2026-08-07, which is why the index sat at
+  `lastmod 2026-06-02` for two months. The flat `sitemap.xml` is gone — it
+  carried a byte-identical URL set to the shards and robots.txt declared both,
+  submitting the same 12,379 URLs twice.
+
 - **Host-based redirects belong in `vercel.json`, not `middleware.ts`.**
   Vercel's edge resolves host-level redirects (www↔apex, custom domains)
   _before_ middleware runs, so any `if (url.host === …)` branch in middleware is

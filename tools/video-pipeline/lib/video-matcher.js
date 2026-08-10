@@ -343,6 +343,45 @@ class VideoMatcher {
   }
 
   /**
+   * How much of the page's variation a title actually names: 2 = a full
+   * segment ("Accelerated Dragon"), 1 = some variation word ("Dragon"),
+   * 0 = none. Used to break score ties — see `compareMatches`.
+   */
+  variationEvidenceRank(title, opening) {
+    const variationMatch = this.analyzeVariationMatch((title || '').toLowerCase(), opening);
+    if (variationMatch.segmentMatched) return 2;
+    if (variationMatch.anyCleanWord) return 1;
+    return 0;
+  }
+
+  /**
+   * Rank order within one opening: score, then how much of the variation the
+   * title names, then proven popularity, then recency.
+   *
+   * The variation term matters because the ±65 specificity swing only applies
+   * to variation names with a >5-char word. Short ones (Smith-Morra, Prins,
+   * O'Kelly, Lolli) deliberately get no swing, so every candidate on those
+   * pages ties on score and the order fell to view count alone — which is how
+   * a Maróczy Bind lecture came to lead the Smith-Morra page over a Naroditsky
+   * Smith-Morra speedrun.
+   *
+   * NB: this rule is implemented twice. This sort picks the top 10 per
+   * opening; `getTopVideosForOpening` in database/schema-manager.js re-derives
+   * the DISPLAYED order in SQL from the persisted `variation_rank`. Change one
+   * and you must change the other, or the ranking chosen here is silently
+   * discarded on the way to the JSON — which is exactly what happened when the
+   * tie-break existed only here.
+   */
+  compareMatches(a, b) {
+    return (
+      b.match_score - a.match_score ||
+      (b.variation_rank || 0) - (a.variation_rank || 0) ||
+      (b.video.view_count || 0) - (a.video.view_count || 0) ||
+      String(b.video.published_at || '').localeCompare(String(a.video.published_at || ''))
+    );
+  }
+
+  /**
    * For opening names whose variation part is move notation (which can never
    * appear in a video title), return the family part for name matching.
    * "Scandinavian: 2.exd5" → "scandinavian"; "Sicilian: Najdorf" → null.
@@ -706,6 +745,9 @@ class VideoMatcher {
     const allNames = [openingName, ...opening.aliases];
     let matchType = null;
     let hasNameMatch = false;
+    // A hit in the description/tags is held back rather than accepted on the
+    // spot: see the corroboration rule below.
+    let contentOnlyName = null;
 
     for (const name of allNames) {
       const cleanName = name.toLowerCase().trim();
@@ -753,11 +795,10 @@ class VideoMatcher {
         break;
       }
 
-      // Exact match in content (still good)
-      if (this.phraseMatches(videoContent, cleanName, opening.name)) {
-        hasNameMatch = true;
-        matchType = 'exact';
-        break;
+      // Exact match in content — recorded, not accepted yet, so a later
+      // alias's title match still wins and the corroboration rule can run
+      if (!contentOnlyName && this.phraseMatches(videoContent, cleanName, opening.name)) {
+        contentOnlyName = cleanName;
       }
 
       // Partial word matching for long opening names (much more restrictive)
@@ -789,6 +830,29 @@ class VideoMatcher {
             break;
           }
         }
+      }
+    }
+
+    // VARIATION ANALYSIS — how the title relates to this page's variation.
+    // Computed once and used by the corroboration rule here, the sibling guard
+    // and the specificity bonus/penalty further down.
+    const variationMatch = this.analyzeVariationMatch(title, opening);
+
+    // DESCRIPTION CORROBORATION — a hit in the description or tags is weak
+    // evidence on a sub-variation page. Series descriptions cross-link their
+    // sibling episodes ("The theory of the Accelerated Dragon: https://…"), so
+    // every Sicilian lecture in a playlist mentions every other one; taken at
+    // face value that seated Alapin, Scheveningen and Prins videos on the
+    // Accelerated Dragon page at 100+, above genuine Accelerated Dragon
+    // lectures. The mention only counts when the title corroborates it by
+    // naming the variation too; otherwise the video is judged as if the
+    // description hit had not happened and must earn its place through the
+    // family path, where the intra-family guard polices it. Family-level pages
+    // have no variation to corroborate, so their content matches stand.
+    if (!hasNameMatch && contentOnlyName) {
+      if (!variationMatch.hasVariation || variationMatch.anyCleanWord) {
+        hasNameMatch = true;
+        matchType = 'exact';
       }
     }
 
@@ -856,11 +920,6 @@ class VideoMatcher {
     if (!hasNameMatch) {
       return 0; // No opening reference found
     }
-
-    // VARIATION ANALYSIS — how the title relates to this page's variation.
-    // Computed once and used by the sibling guard below and the
-    // specificity bonus/penalty further down.
-    const variationMatch = this.analyzeVariationMatch(title, opening);
 
     // SIBLING-MODIFIER GUARD — the title's only mentions of this page's
     // variation words sit behind a foreign modifier ("The Accelerated Dragon"
@@ -1207,6 +1266,7 @@ class VideoMatcher {
             opening_id: opening.id,
             video_id: video.id,
             match_score: score,
+            variation_rank: this.variationEvidenceRank(video.title, opening),
             video: videoForMatching,
           });
           actualMatches++;
@@ -1235,16 +1295,7 @@ class VideoMatcher {
     const uniqueVideos = new Set();
 
     Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
-      // Sort by score, breaking ties by proven popularity then recency so the
-      // displayed order is never arbitrary
-      const topMatches = openingMatches
-        .sort(
-          (a, b) =>
-            b.match_score - a.match_score ||
-            (b.video.view_count || 0) - (a.video.view_count || 0) ||
-            String(b.video.published_at || '').localeCompare(String(a.video.published_at || ''))
-        )
-        .slice(0, 10);
+      const topMatches = openingMatches.sort((a, b) => this.compareMatches(a, b)).slice(0, 10);
 
       console.log(
         `   📝 Opening ${openingId}: ${openingMatches.length} matches → selected top ${topMatches.length}`
@@ -1263,6 +1314,10 @@ class VideoMatcher {
     // Save results to database
     console.log('💾 Saving results to database...');
 
+    // Channel ids by video id — a linear scan per match was ~440M string
+    // comparisons once rematch started scoring the whole enrichment corpus
+    const channelIdsByVideo = new Map(candidateVideos.map((v) => [v.id, v.channelId || '']));
+
     // Insert videos — description/tags are persisted so rematch mode can
     // re-score with the same evidence the original run had
     for (const match of finalMatches) {
@@ -1278,7 +1333,7 @@ class VideoMatcher {
           [
             video.id,
             video.title,
-            candidateVideos.find((v) => v.id === video.id)?.channelId || '',
+            channelIdsByVideo.get(video.id) || '',
             video.channel_title,
             video.duration,
             video.view_count,
@@ -1303,10 +1358,10 @@ class VideoMatcher {
         this.db.db.run(
           `
           INSERT OR REPLACE INTO opening_videos (
-            opening_id, video_id, match_score, created_at
-          ) VALUES (?, ?, ?, datetime('now'))
+            opening_id, video_id, match_score, variation_rank, created_at
+          ) VALUES (?, ?, ?, ?, datetime('now'))
         `,
-          [match.opening_id, match.video_id, match.match_score],
+          [match.opening_id, match.video_id, match.match_score, match.variation_rank || 0],
           function (err) {
             if (err) reject(err);
             else resolve();

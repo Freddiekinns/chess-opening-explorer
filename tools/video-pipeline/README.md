@@ -53,15 +53,33 @@ message pointing here.
 
 ## Modes
 
-| Mode          | Command                    | Discovery      | API Cost | Use Case                       |
-| ------------- | -------------------------- | -------------- | -------- | ------------------------------ |
-| `incremental` | `npm run pipeline`         | RSS feeds      | Low      | Regular updates (daily/weekly) |
-| `full`        | `npm run pipeline:full`    | YouTube API    | High     | Historical catalogue rebuild   |
-| `rematch`     | `npm run pipeline:rematch` | None (DB only) | Zero\*   | Re-score after scorer changes  |
+| Mode          | Command                    | Discovery     | API Cost | Use Case                       |
+| ------------- | -------------------------- | ------------- | -------- | ------------------------------ |
+| `incremental` | `npm run pipeline`         | RSS feeds     | Low      | Regular updates (daily/weekly) |
+| `full`        | `npm run pipeline:full`    | YouTube API   | High     | Historical catalogue rebuild   |
+| `rematch`     | `npm run pipeline:rematch` | None (corpus) | Zero\*   | Re-score after scorer changes  |
 
 \* Rematch itself is zero cost. Run `backfill-views.js` first (~35 API calls for
 ~1700 videos) so views/thumbnails are fresh and descriptions/tags are available
 to the scorer's content checks.
+
+### The matching corpus
+
+Rematch scores the `videos` table **plus everything else in
+`tools/data/video_enrichment_cache.json`** (`lib/enrichment-corpus.js`).
+
+That second half is load-bearing. Matching only writes back the videos that won
+a top-10 slot on some opening, so the table holds ~1,700 of the ~10,200 videos
+the pipeline has fetched. Re-scoring the table alone is a ratchet: a better
+scorer can only reshuffle the winners of the worse one, and a video an early
+scorer rejected is gone for good. That is what emptied the Accelerated Dragon
+page of its best lectures — Seirawan's 455k-view lecture and two Naroditsky
+theory speedruns score 155–175 under today's scorer but had been dropped by an
+older one and were never reconsidered.
+
+Recovered candidates go through the same pre-filter discovery uses, so nothing
+enters that discovery would have rejected. Their view counts are as stale as the
+cache; run `backfill-views.js` after a recovery-heavy rematch.
 
 ## What It Does
 
@@ -82,12 +100,14 @@ index.js                    # Main orchestrator (mode-based dispatch)
 │   ├── channel-discovery.js # YouTube API full-catalogue discovery (full mode)
 │   ├── candidate-filter.js # Pre-filtering
 │   ├── video-enricher.js   # YouTube API enrichment
+│   ├── enrichment-corpus.js # Cache → matcher input (rematch corpus recovery)
 │   └── video-matcher.js    # Matching algorithm + scorer
 ├── database/
 │   ├── schema-manager.js   # SQLite schema and queries
 │   └── static-file-generator.js  # JSON export
 └── tests/
     ├── rss-discovery.test.js
+    ├── enrichment-corpus.test.js
     ├── video-matcher.test.js
     ├── channel-discovery.test.js
     └── pipeline-modes.test.js
@@ -191,8 +211,14 @@ there (no code change), then run `npm run pipeline:rematch`. Defaults:
 
 Minimum threshold: **60 points** (`min_match_score`).
 
-Per-opening ranking breaks score ties by **view count**, then **publish date**,
-so the displayed order is never arbitrary.
+Per-opening ranking breaks score ties by **how much of the variation the title
+names** (full segment → some word → none), then **view count**, then **publish
+date**, so the displayed order is never arbitrary. That first term matters
+because the ±65 specificity swing only applies to variation names carrying a
+word of six characters or more: short ones (Smith-Morra, Prins, O'Kelly, Lolli)
+get no swing by design, so their whole candidate list ties on score and view
+count alone decided it — which is how a Maróczy Bind lecture came to lead the
+Smith-Morra page over a Naroditsky Smith-Morra speedrun.
 
 ### Anti-Overindexing Protections
 
@@ -220,6 +246,15 @@ so the displayed order is never arbitrary.
   names ("Exchange Variation") are skipped entirely
 - **Cross-opening title check**: Content-only matches rejected if the video
   title names a different gambit/defense/attack
+- **Description corroboration**: a hit in the description or tags only counts on
+  a sub-variation page when the **title** names the variation too. Series
+  descriptions cross-link their sibling episodes ("The theory of the Accelerated
+  Dragon: https://youtu.be/…"), so every Sicilian lecture in a playlist mentions
+  every other one; at face value that is +60, above a family match, and it
+  bypassed the intra-family guard. It put the Alapin, Scheveningen and Prins
+  lectures on the Accelerated Dragon page at 100+. An uncorroborated mention now
+  falls through to the family path, where the guard polices it. Family-level
+  pages have no variation to corroborate, so their content matches stand.
 - **Variation specificity**: a ±65-point swing (+25/−40) guarantees a
   variation-specific video outranks a generic family video on sub-variation
   pages, regardless of channel bonuses. The +25 requires the title to name a

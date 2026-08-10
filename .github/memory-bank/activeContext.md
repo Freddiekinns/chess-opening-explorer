@@ -1,50 +1,50 @@
 # Active Context
 
-**Date:** 2026-08-07
+**Date:** 2026-08-10
 
-## Current Task: Google deindexed the opening pages — put content in the HTML
+## Current Task: The Accelerated Dragon page had the wrong videos, twice over
 
-Impressions fell 111 → 4 between 30 and 31 July and did not recover. No deploy
-that day (production ran one docs-only commit, `8dcf63bf`, from 27 July to 2
-August), no manual action, and the site verified healthy end to end — robots,
-sitemaps, canonicals, meta, DNS and the content API are all correct.
+Reported: the page led with a Naroditsky speedrun that does cover it, then
+Alapin, Scheveningen, Prins and a Yugoslav Attack Dragon — while the obvious
+YouTube results for "accelerated dragon" (Naroditsky, six figures of views each)
+were nowhere. Two independent causes, both confirmed against the real corpus
+before anything changed.
 
-**A quality purge, not a break.** Search Console still lists 5.01k indexed while
-URL Inspection says otherwise on the same URLs — the Pages report lags ("Last
-crawled 25 Jul"), so they went after its last data point. Google had already
-refused 3,074 others (2,807 "Discovered – currently not indexed", 267
-crawled-and-declined). Only brand queries survive. The cause is in the CTR:
-0.5–2.9% at position ~11 for a month against 2–3% expected, because all 12,377
-pages advertised themselves with one template sentence over an empty `#root`.
-The asset that earns the click — a ~470-char description, win rates over
-millions of games — existed only after JS ran.
+**Over-matching: a description is not a subject.** Series descriptions
+cross-link their sibling episodes ("The theory of the Accelerated Dragon:
+https://youtu.be/…"), so every Hanging Pawns Sicilian lecture name-matched every
+other Sicilian page at `content_exact` +60 — above a family match, and it
+bypassed the intra-family variation guard, which only fired for
+`matchType === 'family'`. Five of the page's ten videos came from that one link.
+A description hit now counts on a sub-variation page only when the **title**
+names the variation too; otherwise the video must earn its place on the family
+path, where the guard applies.
 
-TASK009 named this escalation itself; done for all 12,377, not the top 200.
+**Under-matching: the corpus was a ratchet.** Matching writes back only the top
+10 per opening, so `videos` held 1,733 of the 10,190 videos ever fetched, and
+`pipeline:rematch` re-scored that table — a better scorer could only reshuffle a
+worse one's survivors. Seirawan's 455k-view lecture and two Naroditsky theory
+speedruns score 155–175 today and had simply left the corpus.
+`lib/enrichment-corpus.js` reads `video_enrichment_cache.json` back as matcher
+input, taking the matching corpus from 1,733 videos to 6,834 at zero API cost.
 
-- `seo-lookup` shards carry description + win rates + canonical FEN; 16 → 64
-  shards (mean 138 KB).
-- `middleware.ts` renders `<h1>`, ECO, moves, description and real win rates
-  into `#root`; React replaces it on mount, so it is the pre-hydration state.
-- Unknown FEN → **404**; a _failed_ shard fetch fails open at 200. Review caught
-  that collapsing the two de-indexes every page on a CDN blip.
-- `buildOpeningDescription` (`lib/siteConfig.ts`) is shared with
-  `OpeningDetailPage`, whose `<meta>` React 19 hoists _beside_ the middleware's
-  rather than replacing it; the page stopped emitting its own canonical,
-  `og:url` and JSON-LD, all of which contradicted the middleware's.
-- Canonicals go **only** to the 271 URLs addressing the same board (FEN
-  differing in move counters alone). Review caught that folding on the opening
-  _name_ de-indexed 1,677 real pages carrying 6.65B games — `King's Pawn Game`
-  at 1.e4 e5 (1.5B) into 1.e4. A shared name breaks the title, not the page, so
-  1,997 titles carry their move list. Sitemaps: 12,106, volume-ordered.
-- `scripts/generate-sitemaps.js` is new — no generator existed, hence
-  `lastmod 2026-06-02`. The redundant flat `sitemap.xml` is gone.
+**Ranking: ties fell to view count alone.** The ±65 specificity swing needs a
+variation word of six characters or more, so short names (Smith-Morra, Prins,
+O'Kelly) tie their whole candidate list — a Maróczy Bind lecture led the
+Smith-Morra page. Ties now break on how much of the variation the title names.
+The rule lives in two places — `compareMatches` picks the top 10, SQL re-derives
+the displayed order — so the rank is persisted on `opening_videos`. Fixing only
+the JS half changed nothing: the SQL re-sorted by views on the way to the JSON.
 
-872 backend + 590 frontend pass; type-check and `build:vercel` clean. The
-fail-open branches are mutation-checked — flipping one turns the suite red.
+Not local to one opening: **6,010 of 12,377 pages** changed their list. #1 names
+the variation on 47.7% → **52.7%** of sub-variation pages, top-3 49.5% → 53.2%,
+contamination stays 0%, blanketing fell (median pages-per-video 11 → 6, distinct
+videos 1,242 → 1,518). Coverage 72.7% → 71.3%, top-200 183 → 180: 195 pages lost
+matches that were only ever a cross-link; the family fallback covers them.
 
-## Previous Task: Search that answers in milliseconds, on all three surfaces
+## Previous Task: Google deindexed the opening pages — put content in the HTML
 
-Fuse over 12,377 descriptions cost 1–2.8s and matched a third of the corpus;
-`search/NameIndex.js` matches names literally in 2–6ms, banded and ordered by
-`games_analyzed`. One shared index slice for all three surfaces, fetched on the
-first keystroke rather than on mount. Detail in `archive.md`.
+All 12,377 pages advertised one template sentence over an empty `#root`, so
+Google purged them on quality (impressions 111 → 4). `middleware.ts` now renders
+h1, ECO, moves, description and real win rates into `#root` from 64 `seo-lookup`
+shards; canonicals fold only the 271 same-board FENs. Detail in `archive.md`.

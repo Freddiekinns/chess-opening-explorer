@@ -250,6 +250,34 @@ load-bearing.
 
 - **`courses.json` is a full rebuild each run.** Never hand-edit it.
 
+- **The video matching corpus is the enrichment cache, not the `videos` table.**
+  Matching writes back only the top 10 per opening, so the table holds ~1,700 of
+  the ~10,200 videos ever fetched. `pipeline:rematch` reads
+  `tools/data/video_enrichment_cache.json` as well (`lib/enrichment-corpus.js`)
+  — without it, re-scoring is a ratchet where a better scorer can only reshuffle
+  a worse one's survivors, and a video dropped once is gone for good. That is
+  what cost the Accelerated Dragon page Seirawan's 455k-view lecture and two
+  Naroditsky theory speedruns: they score 155–175 today and had simply left the
+  corpus.
+
+- **Per-opening video order is decided twice.** `compareMatches`
+  (`lib/video-matcher.js`) picks the top 10; `getTopVideosForOpening`
+  (`database/schema-manager.js`) re-derives the **displayed** order in SQL. They
+  must break ties identically, which is why `variation_rank` is persisted on
+  `opening_videos` rather than kept in memory. Adding the tie-break to the JS
+  half alone changed nothing — the SQL re-sorted by view count on the way to the
+  JSON, and the symptom looked exactly like the fix not working.
+
+- **A video's description is not its subject.** Series descriptions cross-link
+  their sibling episodes ("The theory of the Accelerated Dragon:
+  https://youtu.be/…"), so every Sicilian lecture in a playlist name-matches
+  every other Sicilian page. The scorer only counts a description/tags hit on a
+  sub-variation page when the **title** names the variation too; otherwise the
+  video falls through to the family path where the intra-family guard applies.
+  Until 2026-08-10 an uncorroborated mention scored +60 — above a family match —
+  and bypassed that guard, which is how Alapin, Scheveningen and Prins lectures
+  sat on the Accelerated Dragon page at 100+.
+
 Pipeline-specific caveats (rematch modes, cache staleness, audit scripts) live
 in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
 

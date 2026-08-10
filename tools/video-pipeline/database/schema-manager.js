@@ -58,6 +58,7 @@ class DatabaseSchema {
           opening_id TEXT,           -- Links to specific FEN, not generic ECO
           video_id TEXT,
           match_score REAL NOT NULL, -- Weighted score from calculateMatchScore()
+          variation_rank INTEGER DEFAULT 0, -- variationEvidenceRank(): breaks score ties
           created_at TEXT DEFAULT CURRENT_TIMESTAMP,
           PRIMARY KEY (opening_id, video_id),
           FOREIGN KEY(opening_id) REFERENCES openings(id),
@@ -97,6 +98,7 @@ class DatabaseSchema {
       }
 
       await this._migrateVideoColumns();
+      await this._migrateMatchColumns();
     } catch (error) {
       throw error;
     }
@@ -107,13 +109,7 @@ class DatabaseSchema {
    * @private
    */
   async _migrateVideoColumns() {
-    const columns = await new Promise((resolve, reject) => {
-      this.db.all('PRAGMA table_info(videos)', (err, rows) => {
-        if (err) reject(err);
-        else resolve((rows || []).map((row) => row.name));
-      });
-    });
-
+    const columns = await this._columnsOf('videos');
     const run = (sql) =>
       new Promise((resolve, reject) => {
         this.db.run(sql, (err) => (err ? reject(err) : resolve()));
@@ -125,6 +121,37 @@ class DatabaseSchema {
     if (!columns.includes('tags')) {
       await run('ALTER TABLE videos ADD COLUMN tags TEXT');
     }
+  }
+
+  /**
+   * Add variation_rank to databases written before the ranking tie-break
+   * existed. Existing rows default to 0, so they order exactly as before
+   * until the next rematch fills the column in.
+   * @private
+   */
+  async _migrateMatchColumns() {
+    const columns = await this._columnsOf('opening_videos');
+    if (columns.includes('variation_rank')) return;
+
+    await new Promise((resolve, reject) => {
+      this.db.run(
+        'ALTER TABLE opening_videos ADD COLUMN variation_rank INTEGER DEFAULT 0',
+        (err) => (err ? reject(err) : resolve())
+      );
+    });
+  }
+
+  /**
+   * Column names of a table, for additive migrations
+   * @private
+   */
+  async _columnsOf(table) {
+    return new Promise((resolve, reject) => {
+      this.db.all(`PRAGMA table_info(${table})`, (err, rows) => {
+        if (err) reject(err);
+        else resolve((rows || []).map((row) => row.name));
+      });
+    });
   }
 
   /**
@@ -257,7 +284,12 @@ class DatabaseSchema {
   }
 
   /**
-   * Get top videos for specific opening
+   * Get top videos for specific opening.
+   *
+   * NB: this ORDER BY is the DISPLAYED order — it must stay in step with
+   * `compareMatches` in lib/video-matcher.js, which picks the top 10. When the
+   * two disagreed, the matcher's ranking was silently discarded here.
+   *
    * @param {string} openingFen - Opening FEN identifier
    * @param {number} limit - Maximum number of videos to return
    * @returns {Promise<Array>} Top videos with scores
@@ -269,7 +301,7 @@ class DatabaseSchema {
         FROM videos v
         JOIN opening_videos ov ON v.id = ov.video_id
         WHERE ov.opening_id = ?
-        ORDER BY ov.match_score DESC, v.view_count DESC, v.published_at DESC
+        ORDER BY ov.match_score DESC, ov.variation_rank DESC, v.view_count DESC, v.published_at DESC
         LIMIT ?
       `;
 

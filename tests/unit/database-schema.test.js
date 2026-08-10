@@ -296,6 +296,20 @@ describe('DatabaseSchema', () => {
       expect(result).toEqual(mockVideos);
     });
 
+    it('should order ties by variation evidence before view count', async () => {
+      // The displayed order comes from this query, not from the matcher's
+      // in-memory sort — the two must break ties the same way or the ranking
+      // the matcher chose is silently discarded on the way to the JSON.
+      mockDb.all.mockImplementation((sql, params, callback) => callback(null, []));
+
+      await schemaManager.getTopVideosForOpening('test_fen', 10);
+
+      const sql = mockDb.all.mock.calls[0][0];
+      expect(sql).toMatch(
+        /ORDER BY\s+ov\.match_score DESC,\s*ov\.variation_rank DESC,\s*v\.view_count DESC/
+      );
+    });
+
     it('should get database statistics', async () => {
       let callCount = 0;
       mockDb.get.mockImplementation((sql, callback) => {

@@ -949,6 +949,74 @@ describe('VideoMatcher', () => {
       expect(accelScore).toBeGreaterThan(dragonScore);
     });
 
+    it('rejects a sibling-variation video whose only evidence is a description cross-link', () => {
+      // Every episode of a series description-links its siblings ("The
+      // Accelerated Dragon: https://youtu.be/…"). That is a cross-reference,
+      // not subject matter — and the title names a different variation.
+      const alapin = createVideo({
+        title: 'The Alapin (c3) ⎸Sicilian Defense Theory',
+        description:
+          'Sicilian theory playlist. The theory of the Accelerated Dragon: https://youtu.be/rd1eKLJ3DGQ',
+      });
+      expect(matcher.calculateMatchScore(alapin, acceleratedPage)).toBe(0);
+    });
+
+    it('rejects a description cross-link when the title names no variation at all', () => {
+      // A chapter list is not a lecture: "ATTACK!!! | Speedrun Episode 66"
+      // tells a reader on the Accelerated Dragon page nothing.
+      const speedrun = createVideo({
+        title: 'ATTACK!!! | Speedrun Episode 66',
+        description: '17:23 Attacking with the Sicilian Accelerated Dragon 33:15 Reti Opening',
+      });
+      expect(matcher.calculateMatchScore(speedrun, acceleratedPage)).toBe(0);
+    });
+
+    it('still accepts a description match on a family-level page', () => {
+      // The corroboration rule is for variation pages only — a family page has
+      // no variation for the title to corroborate.
+      const video = createVideo({
+        title: 'A Complete Repertoire Explained',
+        description: 'This is a full sicilian defense repertoire for club players.',
+      });
+      const familyPage = { name: 'Sicilian Defense', eco: 'B20', aliases: [] };
+      expect(matcher.calculateMatchScore(video, familyPage)).toBeGreaterThan(0);
+    });
+
+    it('ranks a video by how much of the variation its title names', () => {
+      expect(
+        matcher.variationEvidenceRank('The Accelerated Dragon | Sicilian Defense Theory', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(2);
+      expect(
+        matcher.variationEvidenceRank('Sicilian Dragon (part 2), Levenfish | Theory', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(1);
+      expect(
+        matcher.variationEvidenceRank('Mastering the Maróczy Bind | Sicilian Defense', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(0);
+    });
+
+    it('breaks a score tie on naming the variation, not on view count', () => {
+      // Short variation names (Smith-Morra, Prins, O'Kelly) get no specificity
+      // swing, so a whole page of candidates ties and the most-viewed generic
+      // Sicilian video used to lead a Smith-Morra page.
+      const namesIt = {
+        match_score: 135,
+        variation_rank: 1,
+        video: { view_count: 50000, published_at: '2020-01-01' },
+      };
+      const generic = {
+        match_score: 135,
+        variation_rank: 0,
+        video: { view_count: 237112, published_at: '2021-01-01' },
+      };
+      expect([generic, namesIt].sort(matcher.compareMatches)[0]).toBe(namesIt);
+    });
+
     it('does not match Semi-Slav titles onto the Slav page', () => {
       const semiSlav = createVideo({ title: 'The Semi-Slav Defense | Complete Guide' });
       const slavPage = { name: 'Slav Defense', eco: 'D10', aliases: ['Slav Defence', 'Slav'] };

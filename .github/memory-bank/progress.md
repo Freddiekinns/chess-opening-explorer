@@ -8,7 +8,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   (2026-08-10): a "watch my other video" link scored +60 and bypassed the
   variation guard; rematch re-scored only past winners, so a better scorer could
   never recover a dropped one; ties fell to view count. 6,010 of 12,377 pages
-  changed, specificity 47.7% → 52.7%, corpus 1,733 → 6,834 at zero API cost.
+  changed, specificity 47.7% → 54.2%, corpus 1,733 → 6,903 at zero API cost.
 - **Opening pages carry their content in the HTML** (2026-08-07): Google indexed
   5,010 pages through June–July then dropped them on 30/31 July — no deploy that
   day, no manual action, site healthy. A quality purge: all 12,377 advertised

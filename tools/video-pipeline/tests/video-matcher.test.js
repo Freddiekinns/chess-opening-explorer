@@ -971,6 +971,81 @@ describe('VideoMatcher', () => {
       expect(matcher.calculateMatchScore(speedrun, acceleratedPage)).toBe(0);
     });
 
+    it('does not let a partial title match outrank the description match it defers', () => {
+      // Deferring the content hit must not hand the decision to a weaker
+      // match type: content_exact is 60, partial_title 45, so naming the
+      // opening exactly in the description can only ever help.
+      const opening = {
+        name: 'Nimzowitsch Larsen Attack Modern Variation',
+        eco: 'A01',
+        aliases: [],
+      };
+      const withDescription = createVideo({
+        title: 'Nimzowitsch Larsen Modern Ideas',
+        description: 'a guide to the nimzowitsch larsen attack modern variation',
+        channel_title: 'Chess.com',
+      });
+      const withoutDescription = createVideo({
+        title: 'Nimzowitsch Larsen Modern Ideas',
+        channel_title: 'Chess.com',
+      });
+      expect(matcher.calculateMatchScore(withDescription, opening)).toBeGreaterThan(
+        matcher.calculateMatchScore(withoutDescription, opening)
+      );
+    });
+
+    it('ignores an alias that is only the page’s own family name', () => {
+      // parseAliases splits "Sicilian Defense, O'Kelly Variation" on the comma
+      // and hands the Kan page a bare "Sicilian Defense" alias. Treating that
+      // as a title match scored every generic Sicilian video 80 on a specific
+      // sub-variation page, bypassing every guard.
+      const kanPage = {
+        name: 'Sicilian Defense: Kan Variation',
+        eco: 'B41',
+        aliases: ['Sicilian Defense', "O'Kelly Variation", 'Kan Line'],
+      };
+      const najdorf = createVideo({
+        title: 'The Najdorf (part 1) | Sicilian Defense Theory',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(najdorf, kanPage)).toBe(0);
+
+      // A generic family overview still covers the page — but at family
+      // strength, i.e. scoring exactly as it would if the alias weren't there
+      const generic = createVideo({
+        title: 'Mastering the Sicilian Defense | Complete Guide',
+        channel_title: 'Hanging Pawns',
+      });
+      const withoutAlias = { ...kanPage, aliases: ["O'Kelly Variation", 'Kan Line'] };
+      expect(matcher.calculateMatchScore(generic, kanPage)).toBeGreaterThan(0);
+      expect(matcher.calculateMatchScore(generic, kanPage)).toBe(
+        matcher.calculateMatchScore(generic, withoutAlias)
+      );
+    });
+
+    it('requires corroboration on variation pages whose words are all short', () => {
+      // 'Kan' is three characters, so it yields no variation segments — the
+      // page is still a variation page and a cross-link is still not evidence.
+      const kanPage = {
+        name: 'Sicilian Defense: Kan Variation',
+        eco: 'B41',
+        aliases: ['Kan Variation'],
+      };
+      const najdorf = createVideo({
+        title: 'The Najdorf (part 1) | Sicilian Defense Theory',
+        description: 'More Sicilian theory — Kan Variation: https://youtu.be/abc',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(najdorf, kanPage)).toBe(0);
+
+      // …while a video that actually names it in the title still matches
+      const kan = createVideo({
+        title: 'The Kan Variation | Sicilian Defense Theory',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(kan, kanPage)).toBeGreaterThan(0);
+    });
+
     it('still accepts a description match on a family-level page', () => {
       // The corroboration rule is for variation pages only — a family page has
       // no variation for the title to corroborate.

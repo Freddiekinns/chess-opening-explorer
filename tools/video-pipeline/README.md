@@ -101,6 +101,7 @@ index.js                    # Main orchestrator (mode-based dispatch)
 │   ├── candidate-filter.js # Pre-filtering
 │   ├── video-enricher.js   # YouTube API enrichment
 │   ├── enrichment-corpus.js # Cache → matcher input (rematch corpus recovery)
+│   ├── channel-tiers.js    # Config → premium/standard, by id or title
 │   └── video-matcher.js    # Matching algorithm + scorer
 ├── database/
 │   ├── schema-manager.js   # SQLite schema and queries
@@ -108,6 +109,7 @@ index.js                    # Main orchestrator (mode-based dispatch)
 └── tests/
     ├── rss-discovery.test.js
     ├── enrichment-corpus.test.js
+    ├── channel-tiers.test.js
     ├── video-matcher.test.js
     ├── channel-discovery.test.js
     └── pipeline-modes.test.js
@@ -141,6 +143,16 @@ Trusted channels are configured in `config/youtube_channels.json`:
 
 Entertainment-focused channels (chess24, World Chess, FIDE Chess) receive a -30
 penalty instead.
+
+`lib/channel-tiers.js` resolves the tier — by `channel_id` when one is known,
+otherwise by channel title. **The title comparison is normalised to letters and
+digits**, because a channel's config display name and its YouTube title differ
+in spacing and punctuation: the config says "Chess Network", the channel calls
+itself "ChessNetwork". Comparing the raw strings dropped that premium channel to
+the unknown tier — worth 60 points in the scorer (+40 not awarded, -25 instead
+of -5) and the stricter 8-minute gate in the pre-filter, which alone withheld
+183 of its videos from corpus recovery. The enrichment cache never stored
+channel ids, so every recovered candidate depends on this path.
 
 ## Using Components Independently
 
@@ -244,6 +256,14 @@ Smith-Morra page over a Naroditsky Smith-Morra speedrun.
 - **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
   have 2+ words (prevents "Accepted" matching everything); bare shared variation
   names ("Exchange Variation") are skipped entirely
+- **An alias equal to the page's own family name is skipped.** The same comma
+  splitting turns `"Sicilian Defense, O'Kelly Variation"` into a bare
+  `"Sicilian Defense"` alias on the **Kan** page, and that title-matched every
+  generic Sicilian video at 80 points — above any real variation match, and
+  clear of both the intra-family guard (family matches only) and the
+  description-corroboration rule (content matches only). The Kan page led with a
+  Najdorf lecture at 165 because of it. Family-level evidence has its own path
+  further down the cascade; it must not enter as a name match
 - **Cross-opening title check**: Content-only matches rejected if the video
   title names a different gambit/defense/attack
 - **Description corroboration**: a hit in the description or tags only counts on

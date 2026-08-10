@@ -246,7 +246,12 @@ load-bearing.
   feed (`https://www.youtube.com/feeds/videos.xml?channel_id={ID}`).
 
 - **Channel tiers live in `config/youtube_channels.json`** — the single source
-  of truth. Do not hardcode channel lists in matcher code.
+  of truth. Do not hardcode channel lists in matcher code. Resolve them through
+  `lib/channel-tiers.js`, which normalises titles to letters and digits before
+  comparing: the config's display name is not the YouTube channel title ("Chess
+  Network" vs `ChessNetwork`), and a raw string compare silently demoted that
+  premium channel to the unknown tier — 60 scoring points and a stricter
+  duration gate that withheld 183 of its videos from the corpus.
 
 - **`courses.json` is a full rebuild each run.** Never hand-edit it.
 
@@ -267,6 +272,15 @@ load-bearing.
   `opening_videos` rather than kept in memory. Adding the tie-break to the JS
   half alone changed nothing — the SQL re-sorted by view count on the way to the
   JSON, and the symptom looked exactly like the fix not working.
+
+- **An opening's alias list can contain its own family name.** `parseAliases`
+  splits ECO alias strings on commas, so `"Sicilian Defense, O'Kelly Variation"`
+  gives the **Kan** page a bare `"Sicilian Defense"` alias. Matched as a name,
+  that scored every generic Sicilian video 80 on a specific sub-variation page —
+  above any real variation match, and past both guards, because the intra-family
+  guard only fires for family matches and the corroboration rule only for
+  content matches. Aliases equal to the page's family prefix are skipped; the
+  video can still qualify through the family path, which is policed.
 
 - **A video's description is not its subject.** Series descriptions cross-link
   their sibling episodes ("The theory of the Accelerated Dragon:

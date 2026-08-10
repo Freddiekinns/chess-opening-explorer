@@ -20,29 +20,9 @@
 const fs = require('fs');
 const path = require('path');
 const PreFilterVideos = require('./candidate-filter');
+const { loadChannelTiers, resolveTier, CHANNELS_CONFIG_PATH } = require('./channel-tiers');
 
 const CACHE_PATH = path.join(__dirname, '../../data/video_enrichment_cache.json');
-const CHANNELS_CONFIG_PATH = path.join(__dirname, '../../../config/youtube_channels.json');
-
-/** channel title → quality tier, from the single source of truth */
-function loadChannelTiers(configPath) {
-  const tiers = [];
-  try {
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    for (const channel of config.trusted_channels || []) {
-      // Strip parenthetical suffixes: "ChessExplained (Christof Sielecki)"
-      const name = channel.name
-        .replace(/\s*\(.*\)\s*$/, '')
-        .trim()
-        .toLowerCase();
-      if (name)
-        tiers.push({ name, tier: channel.quality_tier === 'premium' ? 'premium' : 'standard' });
-    }
-  } catch (error) {
-    // No config — every channel is treated as standard
-  }
-  return tiers;
-}
 
 /**
  * Convert a cache entry to the enriched-candidate shape
@@ -50,11 +30,12 @@ function loadChannelTiers(configPath) {
  *
  * Two fields the cache never stored are reconstructed: the thumbnail URL,
  * which YouTube derives from the video id, and the channel quality tier, which
- * the pre-filter needs for its duration threshold.
+ * the pre-filter needs for its duration threshold. The tier has to come from
+ * the title — the cache has no channel id — so it goes through the shared
+ * resolver rather than a second, looser copy of the matching rule.
  */
-function cacheEntryToCandidate(entry, channelTiers = loadChannelTiers(CHANNELS_CONFIG_PATH)) {
-  const channelTitle = (entry.channelTitle || '').toLowerCase();
-  const matched = channelTiers.find(({ name }) => channelTitle.includes(name));
+function cacheEntryToCandidate(entry, channelTiers = loadChannelTiers()) {
+  const tier = resolveTier(channelTiers, { channelTitle: entry.channelTitle });
 
   return {
     id: entry.id,
@@ -67,7 +48,7 @@ function cacheEntryToCandidate(entry, channelTiers = loadChannelTiers(CHANNELS_C
     publishedAt: entry.publishedAt,
     thumbnails: { default: { url: `https://i.ytimg.com/vi/${entry.id}/default.jpg` } },
     tags: entry.tags || [],
-    qualityTier: matched ? matched.tier : 'standard',
+    qualityTier: tier || 'standard',
   };
 }
 

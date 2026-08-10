@@ -7,6 +7,7 @@ const {
   getFamiliesFromTitle,
   compareFamilies,
 } = require('./opening-families');
+const { loadChannelTiers, resolveTier } = require('./channel-tiers');
 
 const CONFIG_DIR = path.join(__dirname, '../../../config');
 
@@ -134,41 +135,21 @@ class VideoMatcher {
    * source of truth for which channels are premium vs standard educators.
    */
   loadChannelTiers(configPath) {
-    const resolvedPath = configPath || path.join(CONFIG_DIR, 'youtube_channels.json');
-    const tiers = { byId: new Map(), byName: [] };
-    try {
-      const channelsConfig = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
-      for (const channel of channelsConfig.trusted_channels || []) {
-        const tier = channel.quality_tier === 'premium' ? 'premium' : 'standard';
-        if (channel.channel_id) tiers.byId.set(channel.channel_id, tier);
-        // Strip parenthetical suffixes: "ChessExplained (Christof Sielecki)"
-        const name = channel.name
-          .replace(/\s*\(.*\)\s*$/, '')
-          .trim()
-          .toLowerCase();
-        if (name) tiers.byName.push({ name, tier });
-      }
-    } catch (error) {
-      // No channels config — every channel scores as unknown
-    }
-    return tiers;
+    return loadChannelTiers(configPath || path.join(CONFIG_DIR, 'youtube_channels.json'));
   }
 
   /**
    * Classify a video's channel: 'premium' | 'standard' | 'entertainment' | null
    */
   getChannelTier(video) {
-    const channelId = video.channel_id || video.channelId;
-    if (channelId && this.channelTiers.byId.has(channelId)) {
-      return this.channelTiers.byId.get(channelId);
-    }
+    const tier = resolveTier(this.channelTiers, {
+      channelId: video.channel_id || video.channelId,
+      channelTitle: video.channel_title || video.channelTitle,
+    });
+    if (tier) return tier;
 
     const channelTitle = (video.channel_title || video.channelTitle || '').toLowerCase();
     if (!channelTitle) return null;
-
-    for (const { name, tier } of this.channelTiers.byName) {
-      if (channelTitle.includes(name)) return tier;
-    }
 
     if (this.config.entertainment_channels.some((name) => channelTitle.includes(name))) {
       return 'entertainment';
@@ -745,9 +726,15 @@ class VideoMatcher {
     const allNames = [openingName, ...opening.aliases];
     let matchType = null;
     let hasNameMatch = false;
-    // A hit in the description/tags is held back rather than accepted on the
-    // spot: see the corroboration rule below.
+    // Both weaker-than-title matches are held back rather than accepted on the
+    // spot, and resolved after the loop: see the corroboration rule below.
     let contentOnlyName = null;
+    let hasPartialTitleMatch = false;
+    // "Sicilian Defense" for "Sicilian Defense: Kan Variation" — see the alias
+    // skip in the loop
+    const colonIndex = openingName.indexOf(':');
+    const familyPrefix =
+      colonIndex === -1 ? null : this.normalizeForMatch(openingName.slice(0, colonIndex)).trim();
 
     for (const name of allNames) {
       const cleanName = name.toLowerCase().trim();
@@ -783,6 +770,18 @@ class VideoMatcher {
           'declined',
         ].includes(cleanName)
       ) {
+        continue;
+      }
+
+      // Skip an alias that is only this page's own family name. parseAliases
+      // splits alias strings on commas, so "Sicilian Defense, O'Kelly
+      // Variation" hands the Kan page a bare "Sicilian Defense" alias — which
+      // title-matched every generic Sicilian video at 80 points on a specific
+      // sub-variation page, above any real variation match and bypassing both
+      // the intra-family guard (family matches only) and the description
+      // corroboration rule (content matches only). Family-level evidence has a
+      // path of its own further down; it must not enter as a name match.
+      if (familyPrefix && this.normalizeForMatch(cleanName).trim() === familyPrefix) {
         continue;
       }
 
@@ -825,9 +824,10 @@ class VideoMatcher {
             this.phraseMatches(title, word, opening.name)
           );
           if (matchedWordsInTitle.length >= Math.ceil(words.length * 0.75)) {
-            hasNameMatch = true;
-            matchType = 'partial_title';
-            break;
+            // Recorded, not accepted: a partial title match is worth less than
+            // the content match it would otherwise pre-empt, and a later
+            // alias may still match the title outright
+            hasPartialTitleMatch = true;
           }
         }
       }
@@ -847,13 +847,25 @@ class VideoMatcher {
     // lectures. The mention only counts when the title corroborates it by
     // naming the variation too; otherwise the video is judged as if the
     // description hit had not happened and must earn its place through the
-    // family path, where the intra-family guard polices it. Family-level pages
-    // have no variation to corroborate, so their content matches stand.
-    if (!hasNameMatch && contentOnlyName) {
-      if (!variationMatch.hasVariation || variationMatch.anyCleanWord) {
-        hasNameMatch = true;
-        matchType = 'exact';
-      }
+    // partial-title or family paths, where the intra-family guard polices it.
+    //
+    // "Is this a variation page" is the colon in the name, NOT whether
+    // `analyzeVariationMatch` found segments: a page whose variation is one
+    // short word ("Sicilian Defense: Kan Variation" — 'kan' is below the
+    // 3-char floor) yields no segments at all, and treating that as a
+    // family-level page let the very cross-links this rule exists to stop
+    // straight back onto those pages.
+    const isVariationPage = openingName.includes(':');
+    if (!hasNameMatch && contentOnlyName && (!isVariationPage || variationMatch.anyCleanWord)) {
+      hasNameMatch = true;
+      matchType = 'exact';
+    }
+
+    // A partial title match is the weaker of the two deferred signals (45 vs
+    // 60), so it only applies once the content match has had its chance
+    if (!hasNameMatch && hasPartialTitleMatch) {
+      hasNameMatch = true;
+      matchType = 'partial_title';
     }
 
     // Check opening family using simplified ECO-based approach

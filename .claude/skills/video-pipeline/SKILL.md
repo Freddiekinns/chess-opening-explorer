@@ -28,12 +28,32 @@ superseded by the modes above.
 `YOUTUBE_API_KEY` in `.env` is required for `full`. YouTube allows 10,000 quota
 units/day; RSS is free.
 
+## The corpus is the cache, not the database
+
+`pipeline:rematch` scores the `videos` table **plus every other video in
+`tools/data/video_enrichment_cache.json`** (`lib/enrichment-corpus.js`).
+
+The table only holds past winners — matching writes back the top 10 per opening
+and nothing else, so it carries ~1,700 of the ~10,200 videos ever fetched.
+Scoring it alone is a ratchet: a better scorer can only reshuffle the previous
+one's survivors. Never "simplify" rematch back to a DB-only read.
+
+## Two things the scorer deliberately distrusts
+
+- **A description mention is not a subject.** Series descriptions cross-link
+  their sibling episodes, so on a sub-variation page a description/tags hit only
+  counts when the title names the variation as well.
+- **A score tie is not a coin toss.** Short variation names (Smith-Morra, Prins,
+  O'Kelly) get no specificity swing by design, so their candidates all tie;
+  `compareMatches` breaks that on how much of the variation the title names,
+  before view count. Do not reduce it to popularity again.
+
 ## Before a rematch, backfill
 
-`pipeline:rematch` re-scores **from the database only** — it does not re-fetch
-from YouTube. So `view_count` and `thumbnail_url` go stale, and on databases
-created before the `description`/`tags` columns existed, content matches are
-scored from titles alone.
+Rematch does not re-fetch from YouTube. So `view_count` and `thumbnail_url` go
+stale (recovered cache videos most of all), and on databases created before the
+`description`/`tags` columns existed, content matches are scored from titles
+alone.
 
 ```bash
 node tools/video-pipeline/scripts/backfill-views.js   # ~35 API calls for ~1700 videos

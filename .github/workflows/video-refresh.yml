@@ -1,9 +1,15 @@
 name: Video Refresh
 
 # Monthly video-index freshness (video experience review §4 / project review
-# S1): RSS discovery + rematch, audited before/after, delivered as a PR whose
-# body carries the metric diff. RSS mode only sees each channel's ~15 latest
+# S1): RSS discovery, audited before/after, delivered as a PR whose body
+# carries the metric diff. RSS mode only sees each channel's ~15 latest
 # uploads, so skipping months turns gaps into permanent misses.
+#
+# This is incremental mode — it scores the newly discovered videos and leaves
+# every existing match alone. It does NOT rematch: re-scoring the corpus after
+# a scorer change is `npm run pipeline:rematch`, run by hand, and it is the
+# only mode that recovers videos from the enrichment cache. Worth automating
+# here once the save phase stops committing row by row (~30 min a run).
 #
 # Requirements (the run fails fast if either is missing):
 #   - tools/data/videos.sqlite committed to the repo (the matcher's catalogue;
@@ -56,7 +62,7 @@ jobs:
       - name: Audit — before
         run: node scripts/audit-video-matches.js --json > /tmp/audit-before.json
 
-      - name: Run incremental pipeline (RSS discovery + rematch)
+      - name: Run incremental pipeline (RSS discovery, new videos only)
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: npm run pipeline
@@ -86,7 +92,7 @@ jobs:
             const row = (label, b, a, suffix = "") =>
               `| ${label} | ${b}${suffix} | ${a}${suffix} |`;
             const lines = [
-              "Monthly automated refresh: RSS discovery + rematch (`npm run pipeline`), audited with `scripts/audit-video-matches.js`.",
+              "Monthly automated refresh: RSS discovery of new videos (`npm run pipeline`), audited with `scripts/audit-video-matches.js`. Existing matches are untouched — re-scoring the corpus is `npm run pipeline:rematch`, by hand.",
               "",
               "| Metric | Before | After |",
               "| --- | --- | --- |",

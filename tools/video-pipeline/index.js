@@ -6,6 +6,7 @@ const PreFilterVideos = require('./lib/candidate-filter');
 const VideoEnrichment = require('./lib/video-enricher');
 const VideoMatcher = require('./lib/video-matcher');
 const ChannelDiscovery = require('./lib/channel-discovery');
+const { loadEnrichmentCorpus } = require('./lib/enrichment-corpus');
 const DatabaseSchema = require('./database/schema-manager');
 const StaticFileGenerator = require('./database/static-file-generator');
 const { consolidateVideoIndex } = require('../../scripts/consolidate-video-index');
@@ -329,12 +330,21 @@ async function runRematch(db) {
     );
   });
 
-  if (videos.length === 0) {
+  // Step 1b: Recover everything else ever enriched. The videos table only
+  // holds past top-10 winners, so without this a scorer improvement can only
+  // reshuffle the previous scorer's survivors — see lib/enrichment-corpus.js.
+  console.log('\n♻️  Recovering videos from the enrichment cache...');
+  const corpus = loadEnrichmentCorpus({ excludeIds: new Set(videos.map((v) => v.id)) });
+  console.log(
+    `   Cache holds ${corpus.total} videos; ${corpus.rejected} rejected by the pre-filter, ${corpus.recovered} recovered.`
+  );
+
+  if (videos.length === 0 && corpus.recovered === 0) {
     console.log('   ⚠️  No videos in database. Run incremental or full mode first.');
     return;
   }
 
-  console.log(`   Found ${videos.length} videos to re-score.`);
+  console.log(`   Found ${videos.length + corpus.recovered} videos to re-score.`);
 
   // Step 2: Clear only opening_videos table (keep videos intact)
   console.log('\n🗑️  Clearing opening_videos table only...');
@@ -350,7 +360,7 @@ async function runRematch(db) {
   console.log('\n🎯 Re-matching all videos with updated scorer...');
 
   // Convert DB rows to format expected by runMatchingWithVideos
-  const videosForMatching = videos.map((v) => dbRowToMatchInput(v));
+  const videosForMatching = [...videos.map((v) => dbRowToMatchInput(v)), ...corpus.videos];
 
   const matcher = new VideoMatcher(DB_PATH);
   const matchResults = await matcher.runMatchingWithVideos(videosForMatching, {

@@ -949,6 +949,149 @@ describe('VideoMatcher', () => {
       expect(accelScore).toBeGreaterThan(dragonScore);
     });
 
+    it('rejects a sibling-variation video whose only evidence is a description cross-link', () => {
+      // Every episode of a series description-links its siblings ("The
+      // Accelerated Dragon: https://youtu.be/…"). That is a cross-reference,
+      // not subject matter — and the title names a different variation.
+      const alapin = createVideo({
+        title: 'The Alapin (c3) ⎸Sicilian Defense Theory',
+        description:
+          'Sicilian theory playlist. The theory of the Accelerated Dragon: https://youtu.be/rd1eKLJ3DGQ',
+      });
+      expect(matcher.calculateMatchScore(alapin, acceleratedPage)).toBe(0);
+    });
+
+    it('rejects a description cross-link when the title names no variation at all', () => {
+      // A chapter list is not a lecture: "ATTACK!!! | Speedrun Episode 66"
+      // tells a reader on the Accelerated Dragon page nothing.
+      const speedrun = createVideo({
+        title: 'ATTACK!!! | Speedrun Episode 66',
+        description: '17:23 Attacking with the Sicilian Accelerated Dragon 33:15 Reti Opening',
+      });
+      expect(matcher.calculateMatchScore(speedrun, acceleratedPage)).toBe(0);
+    });
+
+    it('does not let a partial title match outrank the description match it defers', () => {
+      // Deferring the content hit must not hand the decision to a weaker
+      // match type: content_exact is 60, partial_title 45, so naming the
+      // opening exactly in the description can only ever help.
+      const opening = {
+        name: 'Nimzowitsch Larsen Attack Modern Variation',
+        eco: 'A01',
+        aliases: [],
+      };
+      const withDescription = createVideo({
+        title: 'Nimzowitsch Larsen Modern Ideas',
+        description: 'a guide to the nimzowitsch larsen attack modern variation',
+        channel_title: 'Chess.com',
+      });
+      const withoutDescription = createVideo({
+        title: 'Nimzowitsch Larsen Modern Ideas',
+        channel_title: 'Chess.com',
+      });
+      expect(matcher.calculateMatchScore(withDescription, opening)).toBeGreaterThan(
+        matcher.calculateMatchScore(withoutDescription, opening)
+      );
+    });
+
+    it('ignores an alias that is only the page’s own family name', () => {
+      // parseAliases splits "Sicilian Defense, O'Kelly Variation" on the comma
+      // and hands the Kan page a bare "Sicilian Defense" alias. Treating that
+      // as a title match scored every generic Sicilian video 80 on a specific
+      // sub-variation page, bypassing every guard.
+      const kanPage = {
+        name: 'Sicilian Defense: Kan Variation',
+        eco: 'B41',
+        aliases: ['Sicilian Defense', "O'Kelly Variation", 'Kan Line'],
+      };
+      const najdorf = createVideo({
+        title: 'The Najdorf (part 1) | Sicilian Defense Theory',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(najdorf, kanPage)).toBe(0);
+
+      // A generic family overview still covers the page — but at family
+      // strength, i.e. scoring exactly as it would if the alias weren't there
+      const generic = createVideo({
+        title: 'Mastering the Sicilian Defense | Complete Guide',
+        channel_title: 'Hanging Pawns',
+      });
+      const withoutAlias = { ...kanPage, aliases: ["O'Kelly Variation", 'Kan Line'] };
+      expect(matcher.calculateMatchScore(generic, kanPage)).toBeGreaterThan(0);
+      expect(matcher.calculateMatchScore(generic, kanPage)).toBe(
+        matcher.calculateMatchScore(generic, withoutAlias)
+      );
+    });
+
+    it('requires corroboration on variation pages whose words are all short', () => {
+      // 'Kan' is three characters, so it yields no variation segments — the
+      // page is still a variation page and a cross-link is still not evidence.
+      const kanPage = {
+        name: 'Sicilian Defense: Kan Variation',
+        eco: 'B41',
+        aliases: ['Kan Variation'],
+      };
+      const najdorf = createVideo({
+        title: 'The Najdorf (part 1) | Sicilian Defense Theory',
+        description: 'More Sicilian theory — Kan Variation: https://youtu.be/abc',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(najdorf, kanPage)).toBe(0);
+
+      // …while a video that actually names it in the title still matches
+      const kan = createVideo({
+        title: 'The Kan Variation | Sicilian Defense Theory',
+        channel_title: 'Hanging Pawns',
+      });
+      expect(matcher.calculateMatchScore(kan, kanPage)).toBeGreaterThan(0);
+    });
+
+    it('still accepts a description match on a family-level page', () => {
+      // The corroboration rule is for variation pages only — a family page has
+      // no variation for the title to corroborate.
+      const video = createVideo({
+        title: 'A Complete Repertoire Explained',
+        description: 'This is a full sicilian defense repertoire for club players.',
+      });
+      const familyPage = { name: 'Sicilian Defense', eco: 'B20', aliases: [] };
+      expect(matcher.calculateMatchScore(video, familyPage)).toBeGreaterThan(0);
+    });
+
+    it('ranks a video by how much of the variation its title names', () => {
+      expect(
+        matcher.variationEvidenceRank('The Accelerated Dragon | Sicilian Defense Theory', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(2);
+      expect(
+        matcher.variationEvidenceRank('Sicilian Dragon (part 2), Levenfish | Theory', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(1);
+      expect(
+        matcher.variationEvidenceRank('Mastering the Maróczy Bind | Sicilian Defense', {
+          name: 'Sicilian Defense: Accelerated Dragon',
+        })
+      ).toBe(0);
+    });
+
+    it('breaks a score tie on naming the variation, not on view count', () => {
+      // Short variation names (Smith-Morra, Prins, O'Kelly) get no specificity
+      // swing, so a whole page of candidates ties and the most-viewed generic
+      // Sicilian video used to lead a Smith-Morra page.
+      const namesIt = {
+        match_score: 135,
+        variation_rank: 1,
+        video: { view_count: 50000, published_at: '2020-01-01' },
+      };
+      const generic = {
+        match_score: 135,
+        variation_rank: 0,
+        video: { view_count: 237112, published_at: '2021-01-01' },
+      };
+      expect([generic, namesIt].sort(matcher.compareMatches)[0]).toBe(namesIt);
+    });
+
     it('does not match Semi-Slav titles onto the Slav page', () => {
       const semiSlav = createVideo({ title: 'The Semi-Slav Defense | Complete Guide' });
       const slavPage = { name: 'Slav Defense', eco: 'D10', aliases: ['Slav Defence', 'Slav'] };

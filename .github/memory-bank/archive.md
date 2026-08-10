@@ -5,6 +5,57 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Google deindexed the opening pages (2026-08-07, `claude/google-search-impressions-drop-ji30o0`)
+
+Impressions fell 111 → 4 between 30 and 31 July and did not recover, with no
+deploy that day and the site healthy end to end — robots, sitemaps, canonicals,
+meta, DNS and the content API all correct. A quality purge, not a break: Search
+Console still listed 5.01k indexed while URL Inspection said otherwise on the
+same URLs (the Pages report lags), and Google had already refused 3,074 others.
+The cause was in the CTR — 0.5–2.9% at position ~11 for a month against 2–3%
+expected — because all 12,377 pages advertised themselves with one template
+sentence over an empty `#root`; the asset that earns the click (a ~470-char
+description, win rates over millions of games) existed only after JS ran.
+
+- `seo-lookup` shards carry description + win rates + canonical FEN; 16 → 64
+  shards (mean 138 KB).
+- `middleware.ts` renders `<h1>`, ECO, moves, description and real win rates
+  into `#root`; React replaces it on mount, so it is the pre-hydration state.
+- Unknown FEN → **404**; a _failed_ shard fetch fails open at 200. Review caught
+  that collapsing the two de-indexes every page on a CDN blip.
+- `buildOpeningDescription` (`lib/siteConfig.ts`) is shared with
+  `OpeningDetailPage`, whose `<meta>` React 19 hoists _beside_ the middleware's
+  rather than replacing it; the page stopped emitting its own canonical,
+  `og:url` and JSON-LD, all of which contradicted the middleware's.
+- Canonicals go **only** to the 271 URLs addressing the same board (FEN
+  differing in move counters alone). Review caught that folding on the opening
+  _name_ de-indexed 1,677 real pages carrying 6.65B games. A shared name breaks
+  the title, not the page, so 1,997 titles carry their move list.
+- `scripts/generate-sitemaps.js` is new — no generator existed, hence
+  `lastmod 2026-06-02`. The redundant flat `sitemap.xml` is gone.
+
+872 backend + 590 frontend pass; type-check and `build:vercel` clean. The
+fail-open branches are mutation-checked — flipping one turns the suite red.
+
+## Search that answers in milliseconds (2026-08-04, `claude/player-details-layout-qxa1mo`)
+
+The hero returned instantly, the top bar "hung and loaded", and the two gave
+different answers. Both halves were real. The server was slow — every text query
+ran Fuse over name/moves/style_tags/**description**, a bitap across 12,377
+half-page descriptions ("sicilian" 1,046ms, "queen's gambit declined" 2,829ms),
+which also matched 4,269 of 12,377 openings so the downstream re-ranking existed
+only to undo it. `search/NameIndex.js` replaced it with banded literal matching
+(exact phrase → whole words → last word being typed → substring, each ordered by
+`games_analyzed`) at 2–6ms; `search()` became five passes, first to speak wins.
+The guessing heuristics went (`looksLikeOpeningName`, `isAmbiguousSemanticTerm`,
+`tryNameSearchFirst`) — they had sent "aggressive openings" to a 2.4s fuzzy name
+search that returned the Andersspike. Fuse kept `name` + `style_tags` only:
+typos 850–1,400ms → 100–270ms, result set changed by 4 openings in 1,753.
+Saturating popularity terms became `log10(games)/N`. Responses projected to what
+a row draws: 55 KB → 4.4 KB. The client difference was one prop: one index slice
+for all three surfaces, fetched on the first keystroke rather than on mount,
+with client/server ranking pinned by `local-server-parity.test.ts`.
+
 ## One search, not three (2026-08-03, `claude/player-details-layout-qxa1mo`)
 
 Design review of the shipped UX raised three search items. All three were taken.

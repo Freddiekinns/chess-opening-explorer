@@ -165,9 +165,15 @@ function buildLinkRow(
 
   // The generator keeps the family root and the two nearest ancestors; chains
   // average 8.5 and run to 33. Say so rather than implying the trail is whole.
-  const trail = leadingEllipsis
-    ? [anchors[0], '…', ...anchors.slice(1)].join(separator)
-    : anchors.join(separator);
+  //
+  // The length guard is not currently reachable — an elided trail is always
+  // three entries — but the generator's cap and this renderer live in separate
+  // files, and a one-item trail would otherwise render "Root › …" trailing off
+  // into nothing, in the HTML a crawler reads.
+  const trail =
+    leadingEllipsis && anchors.length > 1
+      ? [anchors[0], '…', ...anchors.slice(1)].join(separator)
+      : anchors.join(separator);
 
   return `<p style="color:var(--color-text-secondary);margin:0 0 .5rem">${label} ${trail}</p>`;
 }
@@ -315,6 +321,17 @@ export default async function middleware(request: Request): Promise<Response> {
     redirectUrl.search = url.search;
 
     return Response.redirect(redirectUrl.toString(), 308);
+  }
+
+  // One URL per page. React Router treats `/analyse/` and `/analyse` as the
+  // same route, so the branch below — which compares the pathname to
+  // STATIC_ROUTES as a string — would 404 a live page on the slashed form.
+  // Redirecting rather than serving both keeps a single indexable URL, the way
+  // the www rule in vercel.json does for the host.
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    const canonical = new URL(url.toString());
+    canonical.pathname = pathname.replace(/\/+$/, '');
+    return Response.redirect(canonical.toString(), 308);
   }
 
   // Only opening pages and /analyse get their head rewritten. Everything else

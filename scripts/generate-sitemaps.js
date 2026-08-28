@@ -28,6 +28,14 @@ const SITEMAP_DIR = path.join(PUBLIC_DIR, 'sitemaps');
 
 const DATA_PATHS = ['api/data/eco', 'api/data/popularity_stats.json'];
 
+function git(args) {
+  return execFileSync('git', args, {
+    cwd: path.join(__dirname, '..'),
+    encoding: 'utf-8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  }).trim();
+}
+
 /**
  * The date the openings last changed, or nothing at all.
  *
@@ -45,18 +53,34 @@ const DATA_PATHS = ['api/data/eco', 'api/data/popularity_stats.json'];
  * Returns null when git cannot answer: on a shallow clone whose window contains
  * no commit touching these paths, `git log` is silent. **Omitting `lastmod` is
  * the correct answer there.** An absent date is neutral; an invented one is the
- * fabricated-data trap in sitemap form.
+ * fabricated-data trap in sitemap form. `lastmodOmissionReason` says which case
+ * fired, so the build log distinguishes "no date" from "feature not working".
  */
 function dataLastModified() {
   try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...DATA_PATHS], {
-      cwd: path.join(__dirname, '..'),
-      encoding: 'utf-8',
-      stdio: ['ignore', 'pipe', 'ignore'],
-    }).trim();
+    const out = git(['log', '-1', '--format=%cs', '--', ...DATA_PATHS]);
     return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null;
   } catch {
     return null;
+  }
+}
+
+/**
+ * Why the date is missing, for the build log.
+ *
+ * A silent omission is indistinguishable from the feature working, and the
+ * likeliest cause on a build machine is a clone too shallow to contain the
+ * commit that last touched the data — the openings change rarely, so that
+ * commit can be a long way back. Naming the cause is what makes the first
+ * deploy's log answer the question.
+ */
+function lastmodOmissionReason() {
+  try {
+    return git(['rev-parse', '--is-shallow-repository']) === 'true'
+      ? 'shallow clone — no commit touching api/data in its window'
+      : 'git found no commit touching api/data';
+  } catch {
+    return 'git unavailable';
   }
 }
 
@@ -172,11 +196,17 @@ function generateSitemaps() {
   console.log(`  Indexable opening pages: ${indexable.length}`);
   console.log(`  Canonicalised away:      ${rows.length - indexable.length}`);
   console.log(`  Files:                   ${files.length} (+ sitemap-index.xml)`);
-  console.log(`  lastmod:                 ${lastmod || '(omitted — git could not date the data)'}`);
+  console.log(`  lastmod:                 ${lastmod || `(omitted — ${lastmodOmissionReason()})`}`);
 }
 
 if (require.main === module) {
   generateSitemaps();
 }
 
-module.exports = { generateSitemaps, dataLastModified, tierFor, URLS_PER_SITEMAP };
+module.exports = {
+  generateSitemaps,
+  dataLastModified,
+  lastmodOmissionReason,
+  tierFor,
+  URLS_PER_SITEMAP,
+};

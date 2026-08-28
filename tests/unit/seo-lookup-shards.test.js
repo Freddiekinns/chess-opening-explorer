@@ -99,6 +99,41 @@ describe('seo-lookup link payload', () => {
     expect(related[7]).toEqual(['s12', 'Line 12']);
   });
 
+  it('never links to a page that canonicalises elsewhere', () => {
+    // generateSitemaps refuses to list these for a stated reason: asking Google
+    // to crawl a page whose canonical points elsewhere spends budget the rest
+    // of the set needs. Linking to them from 12,000 pages contradicts that.
+    const canonicalOf = new Map([['dupe', 'winner']]);
+    const { ancestors, related } = buildLinks(
+      {
+        ancestors: [node('dupe', 'Duplicate board')],
+        siblings: [node('dupe', 'Duplicate board', 5)],
+        children: [],
+      },
+      canonicalOf
+    );
+    expect(ancestors).toEqual([['winner', 'Duplicate board']]);
+    expect(related).toEqual([['winner', 'Duplicate board']]);
+  });
+
+  it('drops a related line that collapses onto one already listed', () => {
+    // Two duplicates of the same board would otherwise become the same link
+    // twice in one row.
+    const canonicalOf = new Map([
+      ['dupeA', 'winner'],
+      ['dupeB', 'winner'],
+    ]);
+    const { related } = buildLinks(
+      {
+        ancestors: [],
+        siblings: [node('dupeA', 'Board', 9), node('dupeB', 'Board', 8)],
+        children: [],
+      },
+      canonicalOf
+    );
+    expect(related).toEqual([['winner', 'Board']]);
+  });
+
   it('treats a missing tree context as no links rather than throwing', () => {
     expect(buildLinks(null)).toEqual({ ancestors: [], related: [], elided: false });
   });

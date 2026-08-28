@@ -168,8 +168,15 @@ const MAX_ANCESTORS = 3;
  * line nobody plays ahead of one they do. A node with no recorded games sorts
  * last rather than first — `|| 0` is doing real work here.
  */
-function buildLinks(treeContext) {
+function buildLinks(treeContext, canonicalOf = new Map()) {
   if (!treeContext) return { ancestors: [], related: [], elided: false };
+
+  // 271 FENs differ from another only in the move counters and carry a
+  // canonical pointing at the row that owns the board. `generateSitemaps`
+  // excludes them for a stated reason — crawling a page whose canonical points
+  // elsewhere spends budget the rest of the set needs — so linking to them
+  // from every page would contradict the sitemap on the same 1,385 links.
+  const target = (fen) => canonicalOf.get(fen) || fen;
 
   // Deduplicated by *consecutive name*, keeping the deeper position — the same
   // rule `deduplicateAncestors` in lib/openingBook.ts applies to the breadcrumb
@@ -182,18 +189,27 @@ function buildLinks(treeContext) {
   for (const node of treeContext.ancestors || []) {
     if (!node || !node.fen) continue;
     const name = node.name || 'Unknown Opening';
+    const fen = target(node.fen);
     if (ancestors.length > 0 && ancestors[ancestors.length - 1][1] === name) {
-      ancestors[ancestors.length - 1] = [node.fen, name];
+      ancestors[ancestors.length - 1] = [fen, name];
     } else {
-      ancestors.push([node.fen, name]);
+      ancestors.push([fen, name]);
     }
   }
 
-  const related = [...(treeContext.siblings || []), ...(treeContext.children || [])]
-    .filter((node) => node && node.fen)
-    .sort((a, b) => (b.games || 0) - (a.games || 0))
-    .slice(0, MAX_RELATED)
-    .map((node) => [node.fen, node.name || 'Unknown Opening']);
+  const seenRelated = new Set();
+  const related = [];
+  for (const node of [...(treeContext.siblings || []), ...(treeContext.children || [])]
+    .filter((n) => n && n.fen)
+    .sort((a, b) => (b.games || 0) - (a.games || 0))) {
+    // Mapped before the cap, so two duplicates of one board do not consume two
+    // of the eight slots and render the same link twice.
+    const fen = target(node.fen);
+    if (seenRelated.has(fen)) continue;
+    seenRelated.add(fen);
+    related.push([fen, node.name || 'Unknown Opening']);
+    if (related.length === MAX_RELATED) break;
+  }
 
   // Root, then the two nearest. `elided` tells the middleware to draw an
   // ellipsis rather than implying the trail is complete.
@@ -240,9 +256,13 @@ function generateSeoLookup() {
   const { canonicalCount, ambiguousCount } = resolveCanonicals(rows);
 
   const treeService = new TreeService();
+  // fen -> the fen that owns the board, for the 271 canonicalised duplicates.
+  const canonicalOf = new Map(
+    rows.filter((row) => row.canonical).map((row) => [row.fen, row.canonical])
+  );
   const shards = Array.from({ length: SHARD_COUNT }, () => ({}));
   for (const row of rows) {
-    const links = buildLinks(treeService.getTreeContext(row.fen));
+    const links = buildLinks(treeService.getTreeContext(row.fen), canonicalOf);
     shards[shardForFen(row.fen)][row.fen] = buildEntry(row, links);
   }
 

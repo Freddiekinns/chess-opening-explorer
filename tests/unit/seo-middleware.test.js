@@ -85,6 +85,10 @@ const SHARED_B = 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
 const XSS_FEN = 'rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq h3 0 1';
 // A page whose breadcrumb was cut to root plus the nearest two.
 const ELIDED_FEN = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+// Flagged elided with a single ancestor. The generator caps at three so it
+// cannot currently produce this, but the cap and the renderer live in separate
+// files and only this fixture stops them drifting apart silently.
+const LONE_ELIDED_FEN = 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1';
 
 const DESCRIPTION =
   'The Amar Opening is a highly unorthodox and provocative flank move, immediately placing a knight on the rim of the board. ' +
@@ -98,6 +102,7 @@ const SHARD = {
   [SHARED_B]: ["King's Pawn Game", 'C20', '1. e4 e5', 'Black answers in kind.', 1501326875, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
   [XSS_FEN]: ['Nasty Line', 'A00', '1. h4', 'A sideline.', 5, 0.5, 0.1, 0.4, null, null, [], [['f', '<script>alert(1)</script>']]], // prettier-ignore
   [ELIDED_FEN]: ['Deep Line', 'B90', '1. e4 c5', 'A deep line.', 99, 0.5, 0.1, 0.4, null, null, [[SHARED_A, 'Root'], [SHARED_B, 'Parent']], [], 1], // prettier-ignore
+  [LONE_ELIDED_FEN]: ['Lone Line', 'A04', '1. Nf3', 'One ancestor.', 7, 0.5, 0.1, 0.4, null, null, [[SHARED_A, 'Only Root']], [], 1], // prettier-ignore
 };
 
 let middleware;
@@ -433,6 +438,49 @@ describe('SEO middleware — paths that are not pages', () => {
   });
 });
 
+describe('SEO middleware — trailing slashes', () => {
+  /**
+   * React Router treats `/analyse/` and `/analyse` as one route, so a bare
+   * string compare against STATIC_ROUTES 404s a live page. The first version
+   * of the not-found branch did exactly that: `/analyse/` and `/repertoire/`
+   * went from 200 to a hard 404, on a change whose whole purpose is indexing.
+   *
+   * Redirected rather than served, so each page keeps one URL.
+   */
+  it.each([['/analyse/'], ['/repertoire/'], ['/personal-explorer/']])(
+    'redirects %s to its canonical form instead of 404ing it',
+    async (pathname) => {
+      const res = await get(pathname);
+      expect(res.status).toBe(308);
+      expect(res.headers.get('location')).toBe(`https://openingbook.xyz${pathname.slice(0, -1)}`);
+    }
+  );
+
+  it('keeps the query string when it redirects', async () => {
+    const res = await middleware(new Request('https://openingbook.xyz/analyse/?user=fred'));
+    expect(res.status).toBe(308);
+    expect(res.headers.get('location')).toBe('https://openingbook.xyz/analyse?user=fred');
+  });
+
+  it('leaves the root alone — / is not a trailing slash', async () => {
+    const res = await get('/');
+    expect(res.status).toBe(200);
+  });
+
+  it('still 404s an unknown path that happens to end in a slash', async () => {
+    const res = await get('/no-such-page/');
+    expect(res.status).toBe(308);
+    const followed = await get('/no-such-page');
+    expect(followed.status).toBe(404);
+  });
+
+  it('redirects a slashed opening URL rather than 404ing the position', async () => {
+    const res = await get(`${openingUrl(AMAR_FEN)}/`);
+    expect(res.status).toBe(308);
+    expect(res.headers.get('location')).toBe(`https://openingbook.xyz${openingUrl(AMAR_FEN)}`);
+  });
+});
+
 describe('SEO middleware — internal links in the pre-render', () => {
   /**
    * The navigator links exist only in the React render, so the pre-hydration
@@ -468,6 +516,15 @@ describe('SEO middleware — internal links in the pre-render', () => {
     const body = rootOf(await (await get(openingUrl(ELIDED_FEN))).text());
     expect(body).toContain('Part of:');
     expect(body).toContain('…');
+  });
+
+  it('does not dangle an ellipsis off a one-item trail', async () => {
+    // "Part of: Only Root › …" trailing off into nothing, in the HTML a
+    // crawler reads. Unreachable from today's generator, which is exactly why
+    // it needs a fixture rather than a comment.
+    const body = rootOf(await (await get(openingUrl(LONE_ELIDED_FEN))).text());
+    expect(body).toContain('Only Root');
+    expect(body).not.toContain('…');
   });
 
   it('does not draw an ellipsis on a complete trail', async () => {

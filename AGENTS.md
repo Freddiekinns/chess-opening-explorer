@@ -347,8 +347,12 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   is what forced the upgrade rather than letting the list sit there, and without
   it the gate quietly becomes decorative. Entries are keyed by package name, not
   advisory id, because node-tar accrues new GHSA ids faster than a list would
-  stay current. Reasoning and the full triage:
-  `docs/reviews/2026-08-28-dependency-security-scanning.md`.
+  stay current. **It fails closed**: `npm audit` answers a registry or proxy
+  failure with a JSON error object and no `vulnerabilities` key, and reading
+  that as an empty result made the gate report "no blocking advisories" and exit
+  0 at the one moment it had checked nothing. A missing `vulnerabilities`/
+  `metadata` pair is an error, never a clean tree. Reasoning and the full
+  triage: `docs/reviews/2026-08-28-dependency-security-scanning.md`.
 
 ### Design system
 

@@ -236,6 +236,45 @@ verified. The script reads `package-lock.json` directly, so the job needs no
 Verified green today, and verified red both ways — an unallowlisted critical
 blocks, and a stale allowlist entry blocks.
 
+### 3b. Two things review caught afterwards
+
+**The gate failed open, which is the one bug it could not afford.** `npm audit`
+answers a registry failure with a JSON error object carrying no
+`vulnerabilities` key, exits non-zero, and the first version of the script read
+that as an empty result: it printed "0 critical, 0 high… No blocking advisories"
+and exited 0. A gate that goes green precisely when it has checked nothing is
+worse than no gate, because it also reports success.
+
+`parseReport` now treats a missing `vulnerabilities`/`metadata` pair, a
+top-level `error`, a top-level `message` and unparseable output as failures. A
+clean audit still returns `vulnerabilities: {}` **and** `metadata`, so an empty
+object is always distinguishable from an absent one. Verified against a dead
+registry (now exits 1 with the 403 quoted) and against all four malformed
+shapes. npm splits the reason across `error.summary` and a top-level `message`
+and leaves the former empty on a registry rejection, so both are read before the
+message falls back to "unknown".
+
+**CI ran Node 18 while `sqlite3@6` asks for `>=20.17.0`.** Worth being precise
+about, because the alarming version of this is wrong: `npm ci` does **not**
+fail. Tested on a real Node 18.20.8 — the napi prebuild installs and an
+in-memory database round-trips fine. npm's engine check on a dependency is a
+warning, not an error.
+
+What was true is that CI pinned a runtime that went end-of-life in April 2025,
+and **29 packages in the tree already declared Node 20+** before `sqlite3`
+became the thirtieth — `lint-staged`, `glob`, `commander`, `cliui` among them.
+So the mismatch was pre-existing and `sqlite3` only made it visible.
+
+CI moves to Node 20 across `ci.yml`, `coverage.yml` and `video-refresh.yml`,
+which takes the EBADENGINE warning count from many to zero. Verified on a real
+Node 20.20.2: 932 backend and 590 frontend tests, type-check, build and the gate
+all pass.
+
+`engines.node` in `package.json` is deliberately left at `>=18.0.0`. Vercel
+reads it to pick the runtime for the deployed functions, so tightening it is a
+production change and belongs to whoever can see the Vercel project settings —
+not a side effect of a CI tidy-up.
+
 ### 4. Secret scanning and push protection — outstanding, needs the maintainer
 
 Repository settings, not a workflow, so it cannot be done from here. Free on

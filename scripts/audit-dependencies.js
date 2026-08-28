@@ -60,9 +60,44 @@ function runAudit() {
   }
 }
 
+/**
+ * A registry or proxy failure makes `npm audit` exit non-zero with a JSON error
+ * object and no `vulnerabilities` key — the same shape, to a careless reader, as
+ * a clean tree. Treating that as "nothing found" makes the gate pass at exactly
+ * the moment it has checked nothing, which is the one failure mode a security
+ * gate must not have. So the absence of the key is an error, never an empty
+ * result: a clean audit still returns `vulnerabilities: {}` and `metadata`.
+ */
+function parseReport(raw) {
+  let report;
+  try {
+    report = JSON.parse(raw);
+  } catch {
+    throw new Error(`npm audit did not return JSON:\n${raw.slice(0, 500)}`);
+  }
+
+  // npm is inconsistent about where the reason lands: a registry rejection sets
+  // a top-level `message` and leaves `error.summary` an empty string, so read
+  // both before giving up and calling it unknown.
+  if (report.error || report.message) {
+    const { code, summary, detail } = report.error || {};
+    const reason = summary || detail || report.message || 'unknown error';
+    throw new Error(`npm audit failed${code ? ` (${code})` : ''}: ${reason}`);
+  }
+
+  if (!report.vulnerabilities || !report.metadata) {
+    throw new Error(
+      'npm audit returned no vulnerabilities/metadata. Treating as a failed audit, ' +
+        'not a clean one.'
+    );
+  }
+
+  return report;
+}
+
 function main() {
-  const report = JSON.parse(runAudit());
-  const found = report.vulnerabilities || {};
+  const report = parseReport(runAudit());
+  const found = report.vulnerabilities;
 
   const blocking = [];
   const allowed = [];
@@ -122,4 +157,10 @@ function main() {
   console.log('\nNo blocking advisories.');
 }
 
-main();
+try {
+  main();
+} catch (error) {
+  console.error(`\nDependency audit could not be completed: ${error.message}`);
+  console.error('Failing rather than passing — an audit that did not run is not a clean audit.');
+  process.exit(1);
+}

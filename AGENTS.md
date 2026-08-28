@@ -229,12 +229,19 @@ load-bearing.
   carried a byte-identical URL set to the shards and robots.txt declared both,
   submitting the same 12,379 URLs twice.
 
-- **Sitemap `lastmod` is the data's mtime, not the build's clock.** It comes
-  from the newest mtime across `api/data/eco/*.json` and `popularity_stats.json`
-  via `dataLastModified()`. Stamping the deploy date on 12,106 URLs every push
-  is false for almost all of them, and a `lastmod` that always says now is one
-  Google stops reading. `generate-sitemaps.test.js` fails if `new Date()` comes
-  back.
+- **Sitemap `lastmod` comes from git, not from mtime and not from the clock.**
+  `dataLastModified()` reads the commit date of `api/data/eco` and
+  `popularity_stats.json`. Stamping the deploy date on 12,106 URLs every push is
+  false for almost all of them, and a `lastmod` that always says now is one
+  Google stops reading. **Do not switch this back to `statSync().mtime`**: a
+  fresh clone stamps every file with the checkout time and `vercel:prepare`
+  rewrites the data files before the generator runs, so the mtime version
+  reported the build date on every deploy while passing its own unit tests —
+  only running `npm run build:vercel` exposed it. When git cannot answer (a
+  shallow clone with no commit touching those paths in its window) the tag is
+  **omitted**, never guessed. `popularity_stats.json`'s embedded
+  `metadata.analysis_timestamp` is not an alternative: it reads 2025-07-15 and
+  nothing maintains it.
 
 - **`STATIC_ROUTES` is the one list of what is a page.** `App.tsx` builds its
   route table from it as a `Record<StaticRoute, ReactElement>`, so adding a

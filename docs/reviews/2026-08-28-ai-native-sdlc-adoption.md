@@ -55,7 +55,7 @@ in the PR-handling section and nothing enforces it. `.claude/settings.json`
 currently holds a deny list for `.env*` and no hooks at all. A `PreToolUse`
 matcher over `tests/**` and `packages/web/src/**/*.test.*` is the whole change.
 
-### 3. `REVIEW.md`
+### 3. `REVIEW.md` — done
 
 Most code here is agent-authored and the review bar is project-specific:
 fabricated stats, unbounded payloads, middleware/page description parity,
@@ -113,8 +113,7 @@ it shipped.
 
 ## Order
 
-1 and 2 shipped together. 3 is half a page whenever. 4 is its own piece of work
-and should get a task file first.
+1, 2 and 3 shipped. 4 is its own piece of work and should get a task file first.
 
 ## What shipping 1 and 2 turned up
 

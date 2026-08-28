@@ -20,10 +20,25 @@ describe('vercel.json does not own the explorer route s headers', () => {
    * bands, no-store on failure. Vercel config headers override what a function
    * sends, so a single entry here would flatten all three to one TTL and
    * silently burn the 25 req/min Lichess token allowance.
+   *
+   * Matched as patterns rather than compared as prefixes: a broad
+   * `/api/(.*)` entry is the likelier regression and would not start with
+   * `/api/explorer`.
    */
+  const covers = (source, pathname) => {
+    const pattern = source.replace(/:[A-Za-z0-9_]+\*/g, '.*').replace(/:[A-Za-z0-9_]+/g, '[^/]+');
+    return new RegExp(`^${pattern}$`).test(pathname);
+  };
+
   test('no headers entry matches /api/explorer', () => {
-    const sources = (vercel.headers || []).map((h) => h.source);
-    expect(sources.filter((s) => s.startsWith('/api/explorer'))).toEqual([]);
+    const matching = (vercel.headers || [])
+      .map((h) => h.source)
+      .filter((source) => covers(source, '/api/explorer'));
+    expect(matching).toEqual([]);
+  });
+
+  test('the guard above would catch a broad /api entry', () => {
+    expect(covers('/api/(.*)', '/api/explorer')).toBe(true);
   });
 
   // Guards the test above against being satisfied by deleting the route.
@@ -44,13 +59,16 @@ describe('the middleware matcher lets the static SEO files through', () => {
    * that keeps the exclusions but reshapes the regex still passes.
    */
   const source = read('middleware.ts');
-  const matcher = source.match(/matcher:\s*\[\s*'([^']+)'/);
+  const block = source.match(/matcher:\s*\[([\s\S]*?)\]/);
+  const entries = block ? [...block[1].matchAll(/'([^']+)'/g)].map((m) => m[1]) : [];
 
   test('the matcher is where this test expects to find it', () => {
-    expect(matcher).not.toBeNull();
+    expect(entries.length).toBeGreaterThan(0);
   });
 
-  const matches = (pathname) => new RegExp(`^${matcher[1]}$`).test(pathname);
+  // Every entry, not just the first: a second entry is what would re-admit
+  // the static files while a first-entry-only check stayed green.
+  const matches = (pathname) => entries.some((e) => new RegExp(`^${e}$`).test(pathname));
 
   test.each([
     ['/robots.txt'],

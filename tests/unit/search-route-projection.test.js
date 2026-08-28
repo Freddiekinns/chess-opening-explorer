@@ -14,6 +14,10 @@ const express = require('express');
 
 jest.mock('fs');
 jest.mock('path');
+jest.mock('../../packages/api/src/services/search-service', () => ({
+  search: jest.fn(),
+  searchByCategory: jest.fn(),
+}));
 jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getECODataPath: jest.fn(() => '/mock/data/eco'),
   getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json'),
@@ -92,5 +96,22 @@ describe('search routes return the projected shape', () => {
 
     expect(cached.body.cached).toBe(true);
     expect(Object.keys(cached.body.data[0]).sort()).toEqual(Object.keys(fresh.body.data[0]).sort());
+  });
+
+  test('GET /search-by-category drops them too', async () => {
+    const searchService = require('../../packages/api/src/services/search-service');
+    searchService.searchByCategory.mockResolvedValue({
+      results: [{ fen: 'x', searchScore: 1, ...OPENING }],
+      totalResults: 1,
+      hasMore: false,
+      category: 'aggressive',
+    });
+
+    const res = await request(app).get('/api/openings/search-by-category?category=aggressive');
+
+    expect(res.status).toBe(200);
+    expect(res.body.data).toHaveLength(1);
+    expect(Object.keys(res.body.data[0]).sort()).toEqual([...PROJECTED].sort());
+    FAT_FIELDS.forEach((field) => expect(res.body.data[0]).not.toHaveProperty(field));
   });
 });

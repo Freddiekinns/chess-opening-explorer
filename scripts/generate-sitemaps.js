@@ -25,6 +25,32 @@ function readPrimarySiteUrl() {
 const PRIMARY_SITE_URL = readPrimarySiteUrl();
 const SITEMAP_DIR = path.join(PUBLIC_DIR, 'sitemaps');
 
+const DATA_DIR = path.join(__dirname, '..', 'api', 'data');
+const DATA_SOURCES = [
+  ...['ecoA', 'ecoB', 'ecoC', 'ecoD', 'ecoE'].map((name) =>
+    path.join(DATA_DIR, 'eco', `${name}.json`)
+  ),
+  path.join(DATA_DIR, 'popularity_stats.json'),
+];
+
+/**
+ * The date the openings last changed, not the date we last deployed.
+ *
+ * These files are rewritten wholesale by their pipelines rather than per
+ * opening, so one date covers every URL. Stamping today on 12,106 URLs every
+ * deploy is a claim that is false for almost all of them, and a lastmod that
+ * always says now is one Google stops reading.
+ */
+function dataLastModified() {
+  const times = DATA_SOURCES.filter((file) => fs.existsSync(file)).map(
+    (file) => fs.statSync(file).mtimeMs
+  );
+  if (times.length === 0) {
+    throw new Error('Could not stat any opening data file to derive lastmod');
+  }
+  return new Date(Math.max(...times)).toISOString().slice(0, 10);
+}
+
 const URLS_PER_SITEMAP = 2000;
 
 // Google crawls a sitemap index roughly in order and a new domain does not get
@@ -50,9 +76,10 @@ function xmlEscape(str) {
     .replace(/'/g, '&apos;');
 }
 
-function urlEntry({ loc, priority, changefreq }) {
+function urlEntry({ loc, priority, changefreq, lastmod }) {
   return (
     `<url><loc>${xmlEscape(PRIMARY_SITE_URL + loc)}</loc>` +
+    `<lastmod>${lastmod}</lastmod>` +
     `<changefreq>${changefreq}</changefreq>` +
     `<priority>${priority}</priority></url>`
   );
@@ -78,13 +105,16 @@ function generateSitemaps() {
     .filter((row) => !row.canonical)
     .sort((a, b) => (b.games || 0) - (a.games || 0));
 
-  const entries = STATIC_PAGES.map(urlEntry).concat(
+  const lastmod = dataLastModified();
+
+  const entries = STATIC_PAGES.map((page) => urlEntry({ ...page, lastmod })).concat(
     indexable.map((row, rank) => {
       const tier = tierFor(rank);
       return urlEntry({
         loc: `/opening/${encodeURIComponent(row.fen)}`,
         priority: tier.priority,
         changefreq: tier.changefreq,
+        lastmod,
       });
     })
   );
@@ -92,7 +122,6 @@ function generateSitemaps() {
   fs.rmSync(SITEMAP_DIR, { recursive: true, force: true });
   fs.mkdirSync(SITEMAP_DIR, { recursive: true });
 
-  const lastmod = new Date().toISOString().slice(0, 10);
   const files = [];
   for (let i = 0; i < entries.length; i += URLS_PER_SITEMAP) {
     const chunk = entries.slice(i, i + URLS_PER_SITEMAP);
@@ -138,4 +167,4 @@ if (require.main === module) {
   generateSitemaps();
 }
 
-module.exports = { generateSitemaps, tierFor, URLS_PER_SITEMAP };
+module.exports = { generateSitemaps, dataLastModified, tierFor, URLS_PER_SITEMAP };

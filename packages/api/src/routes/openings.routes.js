@@ -217,7 +217,9 @@ router.get('/search', (req, res) => {
     }
 
     const startTime = Date.now();
-    const openings = ecoService.searchOpeningsByName(q, maxResults);
+    // Projected before caching so the cached and fresh paths return the same
+    // shape. The service hands back whole records, `analysis_json` and all.
+    const openings = ecoService.searchOpeningsByName(q, maxResults).map(toSearchResult);
     const searchTime = Date.now() - startTime;
 
     // Cache the result
@@ -1011,7 +1013,7 @@ router.get('/search-by-category', async (req, res) => {
 
     res.json({
       success: true,
-      data: searchResults.results,
+      data: searchResults.results.map(toSearchResult),
       count: searchResults.results.length,
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,

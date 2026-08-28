@@ -297,6 +297,22 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
 
 ### Tooling
 
+- **A failing test comes first, and a hook stops it being unwritten.** For a bug
+  fix: reproduce it as a test, confirm it fails for the reason you expect,
+  commit that test, then fix the code without touching it.
+  `.claude/hooks/test-integrity.js` runs as a `PreToolUse` hook and blocks an
+  edit that adds `.skip` / `.only` / `xit` to a test file, or a shell command
+  that deletes one. `ALLOW_TEST_SKIP=1` is the deliberate exception, and using
+  it belongs in the commit message.
+
+- **The two kinds of hook bind at different times.** The Claude Code hook above
+  is read from `.claude/settings.json` and works in any clone. The husky git
+  hooks (`pre-commit` runs prettier + eslint, `pre-push` runs type-check and
+  `test:all`) only bind once `npm install` has run, because `prepare: husky` is
+  what sets `core.hooksPath`. A fresh remote session therefore commits with **no
+  git hooks at all** until you install — run `npm ci` before committing, or rely
+  on CI, which runs lint and `format:check` on every PR regardless.
+
 - **Lint is code quality, Prettier is formatting.** ESLint configs enforce
   code-quality rules only. Do not re-add stylistic rules
   (`indent`/`quotes`/`semi`/`linebreak-style`) — they fight Prettier.

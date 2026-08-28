@@ -20,7 +20,7 @@ This records only what actually changes.
 
 ## The delta
 
-### 1. Guard tests for the load-bearing gotchas
+### 1. Guard tests for the load-bearing gotchas — done
 
 `AGENTS.md` carries ~30 rules earned from real regressions, and enforcement is
 uneven. These are asserted nowhere and each is a handful of lines:
@@ -43,7 +43,7 @@ Why this first: it is the playbook's core argument applied to us. Prose in
 shrinks towards the playbook's "keep it under a page" without losing anything —
 the rule moves into the check that enforces it.
 
-### 2. Test integrity: failing test first, and a hook that means it
+### 2. Test integrity: failing test first, and a hook that means it — done
 
 The playbook's rule for bug fixes: reproduce the bug as a test, confirm it fails
 for the reason you expect, commit that test, then fix the code without editing
@@ -113,5 +113,18 @@ it shipped.
 
 ## Order
 
-1 and 2 together in one commit — an afternoon, no runtime risk. 3 is half a page
-whenever. 4 is its own piece of work and should get a task file first.
+1 and 2 shipped together. 3 is half a page whenever. 4 is its own piece of work
+and should get a task file first.
+
+## What shipping 1 and 2 turned up
+
+- `/api/openings/search` and `/api/openings/search-by-category` were returning
+  whole opening records. The rule was written down; nothing asserted it, and two
+  routes had drifted. Both now project through `toSearchResult`. Neither has a
+  caller in `packages/web`, so this is a payload reduction rather than a
+  behaviour change any surface will notice.
+- Git hooks do not exist in a fresh clone. `prepare: husky` sets
+  `core.hooksPath` during `npm install`, so a remote session that has not
+  installed commits with no prettier, no eslint and no pre-push test run. CI
+  catches the formatting; nothing local does. Recorded in `AGENTS.md`, and the
+  proper fix is a SessionStart hook that installs — not in this change.

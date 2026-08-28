@@ -371,6 +371,15 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   the machine running it, which is the check that would have caught this
   originally.
 
+- **A path computed _for_ a platform must use that platform's path module** —
+  `path.win32` or `path.posix`, never the ambient `path`. On Linux `path` is
+  `path.posix`, which does not treat a backslash as a separator, so
+  `path.dirname('C:\\a\\b')` is `'.'` there. `bundledNpmCli` got this wrong and
+  took CI red: its Windows branch returned a bare relative path on Linux. A test
+  that builds its expected value with the host's `path.join` agrees with the bug
+  on Windows and fails on CI, so **expectations for another platform are written
+  as literal strings**, not composed with `path.join`.
+
 ### Design system
 
 - **`design-system/` is the canonical reference for the Warm Editorial Dark

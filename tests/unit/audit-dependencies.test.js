@@ -35,20 +35,28 @@ const only = (...present) => {
 const none = () => false;
 
 describe('npm is located the same way regardless of the host running the test', () => {
+  // Literal expectations, never path.join. Composing the expected value with
+  // the *host's* path module is exactly how the first version of this file
+  // passed here and failed on CI: path.posix does not treat a backslash as a
+  // separator, so on Linux both sides quietly agreed on a bare relative path.
   it('puts npm-cli.js beside node.exe on Windows', () => {
     expect(bundledNpmCli(WIN_NODE, 'win32')).toBe(
-      path.join('C:\\Program Files\\nodejs', 'node_modules', 'npm', 'bin', 'npm-cli.js')
+      'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js'
     );
   });
 
   it('puts npm-cli.js under ../lib on POSIX, which is where it actually lives', () => {
-    // The original bug: a Windows-shaped join resolves to
+    // The other half of the original bug: a Windows-shaped join resolves to
     // /usr/local/bin/node_modules/... which never exists, so the fallback was
     // dead code on every Linux machine while looking perfectly healthy.
-    expect(bundledNpmCli(NIX_NODE, 'linux')).toBe(
-      path.join('/usr/local/bin', '..', 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js')
-    );
-    expect(bundledNpmCli(NIX_NODE, 'linux')).not.toContain(path.join('bin', 'node_modules', 'npm'));
+    expect(bundledNpmCli(NIX_NODE, 'linux')).toBe('/usr/local/lib/node_modules/npm/bin/npm-cli.js');
+  });
+
+  it('answers for the target platform, not the host it runs on', () => {
+    // Both results are fully determined by the arguments, so this file asserts
+    // the same thing on Windows, Linux and macOS.
+    expect(bundledNpmCli(WIN_NODE, 'win32')).toContain('\\');
+    expect(bundledNpmCli(NIX_NODE, 'linux')).not.toContain('\\');
   });
 });
 

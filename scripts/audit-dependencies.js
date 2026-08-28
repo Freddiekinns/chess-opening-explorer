@@ -57,9 +57,15 @@ const AUDIT_ARGS = ['audit', '--omit=dev', '--json'];
  * looks present and does nothing.
  */
 function bundledNpmCli(execPath, platform) {
-  const dir = path.dirname(execPath);
+  // The target platform's path module, not the host's. `path` on Linux is
+  // path.posix, which does not treat a backslash as a separator, so
+  // path.dirname('C:\\Program Files\\nodejs\\node.exe') returns '.' there and
+  // this returned a bare relative path. That is what took CI red: the function
+  // claimed to compute a path *for* a platform while using the host's rules.
+  const p = platform === 'win32' ? path.win32 : path.posix;
+  const dir = p.dirname(execPath);
   const tail = ['node_modules', 'npm', 'bin', 'npm-cli.js'];
-  return platform === 'win32' ? path.join(dir, ...tail) : path.join(dir, '..', 'lib', ...tail);
+  return platform === 'win32' ? p.join(dir, ...tail) : p.join(dir, '..', 'lib', ...tail);
 }
 
 /**

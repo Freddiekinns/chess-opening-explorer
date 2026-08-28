@@ -13,7 +13,7 @@
 const fs = require('fs').promises;
 const https = require('https');
 const path = require('path');
-const { DOMParser } = require('xmldom');
+const { DOMParser } = require('@xmldom/xmldom');
 
 /**
  * Default configuration for RSS discovery

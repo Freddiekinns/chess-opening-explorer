@@ -229,6 +229,43 @@ load-bearing.
   carried a byte-identical URL set to the shards and robots.txt declared both,
   submitting the same 12,379 URLs twice.
 
+- **Sitemap `lastmod` is the data's mtime, not the build's clock.** It comes
+  from the newest mtime across `api/data/eco/*.json` and `popularity_stats.json`
+  via `dataLastModified()`. Stamping the deploy date on 12,106 URLs every push
+  is false for almost all of them, and a `lastmod` that always says now is one
+  Google stops reading. `generate-sitemaps.test.js` fails if `new Date()` comes
+  back.
+
+- **`STATIC_ROUTES` is the one list of what is a page.** `App.tsx` builds its
+  route table from it as a `Record<StaticRoute, ReactElement>`, so adding a
+  route without listing it does not compile; `middleware.ts` decides what to 404
+  from the same constant, and `repo-invariants.test.js` asserts it still reads
+  it. Before this, the middleware passed everything it did not recognise through
+  to `index.html` and `<Route path="*">` rendered the landing page at 200 — 42
+  soft 404s in Search Console. A path containing `.` is handed to the origin
+  untouched: the matcher already excludes the build's static files, but a 404
+  over a real asset is worse than the bug this fixes.
+
+- **The pre-render carries links, and that is the point.** Slots `[10]`–`[12]`
+  of the `SeoEntry` tuple hold ancestor links, related-opening links, and a flag
+  saying the breadcrumb was cut — computed at build time by `TreeService` and
+  rendered into `#root` by `buildOpeningBody`. `OpeningNavigator` and
+  `OpeningTree` draw the same links after hydration; before 2026-08-28 that was
+  the **only** place they existed, so a crawler that did not run the JS found
+  12,106 dead ends and the sitemap was Google's sole route in — 3,615 pages sat
+  in "Discovered — currently not indexed" while 5,750 indexed pages earned 4,810
+  impressions in 90 days. **Do not take the links back out.** Empty arrays are
+  trimmed like trailing nulls, so read all three slots defensively.
+
+- **The breadcrumb is deduplicated by consecutive _name_, then capped at
+  three.** `deduplicateAncestors` in `lib/openingBook.ts` is the rule React
+  applies and the generator now matches it, because the two have to show the
+  same trail. Deduplicating by FEN instead removes almost nothing — a chain
+  repeats names, not positions — and leaves an 8.5-entry average with a 33-deep
+  worst case, which is not a breadcrumb and made the largest shard 485 KB. Root
+  plus the two nearest, and slot `[12]` tells the middleware to draw an ellipsis
+  rather than imply the trail is whole.
+
 - **Host-based redirects belong in `vercel.json`, not `middleware.ts`.**
   Vercel's edge resolves host-level redirects (www↔apex, custom domains)
   _before_ middleware runs, so any `if (url.host === …)` branch in middleware is

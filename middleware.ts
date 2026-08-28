@@ -3,6 +3,7 @@ import {
   buildSiteUrl,
   LEGACY_VERCEL_HOST,
   SITE_NAME,
+  STATIC_ROUTES,
 } from './packages/web/src/lib/siteConfig';
 
 /**
@@ -10,6 +11,8 @@ import {
  *  sharesName]
  * Trailing nulls are trimmed by the generator, so read defensively.
  */
+type SeoLink = [fen: string, name: string];
+
 type SeoEntry = [
   name: string,
   eco: string,
@@ -21,16 +24,21 @@ type SeoEntry = [
   black?: number | null,
   canonical?: string | null,
   sharesName?: 1 | null,
+  ancestors?: SeoLink[] | null,
+  related?: SeoLink[] | null,
+  ancestorsElided?: 1 | null,
 ];
 type SeoLookup = Record<string, SeoEntry>;
 
-// The lookup is sharded into 64 files (mean 138 KB, largest 179 KB) by
+// The lookup is sharded into 96 files (mean 162 KB, largest 224 KB) by
 // scripts/generate-seo-lookup.js so a request fetches — and this isolate then
-// holds — only the shard containing its FEN, rather than the full 8.8 MB.
-// A crawler sweeping every opening will eventually pull all 64 into one
+// holds — only the shard containing its FEN, rather than the full 15.6 MB.
+// A crawler sweeping every opening will eventually pull all 96 into one
 // isolate; that is the deliberate ceiling, and it is well inside the edge
-// memory limit.
-const SHARD_COUNT = 64;
+// memory limit. It was 64 until the ancestor and related-opening links landed
+// and pushed the largest shard to 322 KB — the split changes what one request
+// pays for, not what a full sweep costs.
+const SHARD_COUNT = 96;
 
 /** djb2 string hash — MUST stay in sync with scripts/generate-seo-lookup.js. */
 function shardForFen(fen: string, shardCount = SHARD_COUNT): number {
@@ -136,8 +144,42 @@ function buildMetaTags(options: {
  * React replaces #root on mount, so this is the pre-hydration state of the
  * same page — not a second copy of it, and not hidden text.
  */
+/**
+ * A row of links, or nothing at all.
+ *
+ * An empty row would be a label with no content — worse than its absence for
+ * both a reader and a crawler.
+ */
+function buildLinkRow(
+  label: string,
+  links: SeoLink[] | null | undefined,
+  separator: string,
+  leadingEllipsis = false
+): string {
+  if (!links || links.length === 0) return '';
+
+  const anchors = links.map(
+    ([fen, linkName]) =>
+      `<a href="/opening/${encodeURIComponent(fen)}" style="color:var(--color-brand-orange)">${escapeHtml(linkName)}</a>`
+  );
+
+  // The generator keeps the family root and the two nearest ancestors; chains
+  // average 8.5 and run to 33. Say so rather than implying the trail is whole.
+  //
+  // The length guard is not currently reachable — an elided trail is always
+  // three entries — but the generator's cap and this renderer live in separate
+  // files, and a one-item trail would otherwise render "Root › …" trailing off
+  // into nothing, in the HTML a crawler reads.
+  const trail =
+    leadingEllipsis && anchors.length > 1
+      ? [anchors[0], '…', ...anchors.slice(1)].join(separator)
+      : anchors.join(separator);
+
+  return `<p style="color:var(--color-text-secondary);margin:0 0 .5rem">${label} ${trail}</p>`;
+}
+
 function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
-  const [, , moves, description, games, white, draw, black] = entry;
+  const [, , moves, description, games, white, draw, black, , , ancestors, related, elided] = entry;
 
   const parts = [
     `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">${escapeHtml(name)}</h1>`,
@@ -167,6 +209,12 @@ function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
     );
   }
 
+  // The links OpeningNavigator and OpeningTree already draw after hydration, in
+  // the HTML a crawler reads without it. Ancestors use › because they are a
+  // path; related lines use · because they are a set.
+  parts.push(buildLinkRow('Part of:', ancestors, ' › ', elided === 1));
+  parts.push(buildLinkRow('Related lines:', related, ' · '));
+
   return `<main style="max-width:44rem;margin:0 auto;padding:3rem 1.25rem">${parts.join('')}</main>`;
 }
 
@@ -187,6 +235,77 @@ function buildOpeningJsonLd(name: string, description: string, canonical: string
     .replace(/&/g, '\\u0026');
 }
 
+const NOT_FOUND_BODY =
+  `<main style="max-width:44rem;margin:0 auto;padding:3rem 1.25rem">` +
+  `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">Page not found</h1>` +
+  `<p style="color:var(--color-text-secondary)">We could not find that page. <a href="/" style="color:var(--color-brand-orange)">Search the openings</a>.</p>` +
+  `</main>`;
+
+async function fetchIndexHtml(origin: string): Promise<string> {
+  // Fetch index.html directly (not the original URL) to avoid a middleware loop.
+  const res = await fetch(new URL('/index.html', origin));
+  return res.text();
+}
+
+/**
+ * Swap the base document's placeholder head and spinner for this page's own.
+ *
+ * Both the good path and the not-found path go through here, so the two cannot
+ * drift on which tags get removed — a stale og: tag left behind on one of them
+ * is the duplicate-metadata failure this file exists to undo.
+ */
+function injectIntoHtml(html: string, metaTags: string, body: string): string {
+  let out = html;
+
+  // Replace <title>...</title>
+  out = out.replace(/<title>[^<]*<\/title>/, '');
+  // Remove existing meta description
+  out = out.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '');
+  // Remove existing canonical tag from base HTML to avoid duplicates
+  out = out.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '');
+  // Remove existing og/twitter tags from base HTML to avoid duplicates
+  out = out.replace(/<meta\s+(?:property="og:|name="twitter:)[^>]*\/?>/g, '');
+  // Inject all meta tags before </head>
+  out = out.replace('</head>', `    ${metaTags}\n  </head>`);
+
+  // Swap the loading spinner for the page's own content. React replaces #root
+  // on mount, so this is what a crawler reads and what a reader sees first.
+  // Greedy to the last </div> that closes the block, so the nested spinner
+  // markup goes with it — a non-greedy match stops at the spinner's own
+  // closing tag and leaves a stray </div> behind.
+  if (body) {
+    out = out.replace(
+      /<div id="root">[\s\S]*<\/div>(?=\s*(?:<script|<\/body>))/,
+      `<div id="root">${body}</div>`
+    );
+  }
+
+  return out;
+}
+
+/**
+ * A path that is neither an opening nor a page is not a page.
+ *
+ * `App.tsx` renders LandingPage for `*`, so without this every typo and every
+ * stale URL answered 200 with the landing page behind it — Search Console was
+ * reporting 42 of them as soft 404s.
+ */
+function notFoundResponse(html: string): Response {
+  const metaTags = buildMetaTags({
+    title: `Page not found — ${SITE_NAME}`,
+    description: 'This page could not be found.',
+    url: buildSiteUrl('/'),
+    canonical: buildSiteUrl('/'),
+  });
+  return new Response(injectIntoHtml(html, metaTags, NOT_FOUND_BODY), {
+    status: 404,
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 's-maxage=3600, stale-while-revalidate=86400',
+    },
+  });
+}
+
 export const config = {
   matcher: [
     '/((?!api/|assets/|fonts/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup/|opening-book-icon\.png).*)',
@@ -204,9 +323,29 @@ export default async function middleware(request: Request): Promise<Response> {
     return Response.redirect(redirectUrl.toString(), 308);
   }
 
-  // Only process opening and analyse routes
+  // One URL per page. React Router treats `/analyse/` and `/analyse` as the
+  // same route, so the branch below — which compares the pathname to
+  // STATIC_ROUTES as a string — would 404 a live page on the slashed form.
+  // Redirecting rather than serving both keeps a single indexable URL, the way
+  // the www rule in vercel.json does for the host.
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    const canonical = new URL(url.toString());
+    canonical.pathname = pathname.replace(/\/+$/, '');
+    return Response.redirect(canonical.toString(), 308);
+  }
+
+  // Only opening pages and /analyse get their head rewritten. Everything else
+  // either belongs to the origin untouched or does not exist at all.
   if (!pathname.startsWith('/opening/') && pathname !== '/analyse') {
-    return fetch(request);
+    // A real page the middleware has no metadata for, or anything that looks
+    // like a file. The matcher already excludes every static file the build
+    // emits, but a 404 served over a real asset is a worse failure than the
+    // soft 404 this branch exists to fix, so the extension check earns its
+    // line.
+    if ((STATIC_ROUTES as readonly string[]).includes(pathname) || pathname.includes('.')) {
+      return fetch(request);
+    }
+    return notFoundResponse(await fetchIndexHtml(url.origin));
   }
 
   let title = `${SITE_NAME} — Discover, explore and learn chess openings`;
@@ -283,12 +422,8 @@ export default async function middleware(request: Request): Promise<Response> {
     }
   }
 
-  // Fetch index.html directly (not the original URL) to avoid middleware loop
-  const indexUrl = new URL('/index.html', url.origin);
-  const originResponse = await fetch(indexUrl);
-  const html = await originResponse.text();
+  const html = await fetchIndexHtml(url.origin);
 
-  // Replace existing title and meta description, inject new tags
   const metaTags = buildMetaTags({
     title,
     description,
@@ -297,36 +432,7 @@ export default async function middleware(request: Request): Promise<Response> {
     jsonLd,
   });
 
-  let modifiedHtml = html;
-
-  // Replace <title>...</title>
-  modifiedHtml = modifiedHtml.replace(/<title>[^<]*<\/title>/, '');
-
-  // Remove existing meta description
-  modifiedHtml = modifiedHtml.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '');
-
-  // Remove existing canonical tag from base HTML to avoid duplicates
-  modifiedHtml = modifiedHtml.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '');
-
-  // Remove existing og/twitter tags from base HTML to avoid duplicates
-  modifiedHtml = modifiedHtml.replace(/<meta\s+(?:property="og:|name="twitter:)[^>]*\/?>/g, '');
-
-  // Inject all meta tags before </head>
-  modifiedHtml = modifiedHtml.replace('</head>', `    ${metaTags}\n  </head>`);
-
-  // Swap the loading spinner for the page's own content. React replaces #root
-  // on mount, so this is what a crawler reads and what a reader sees first.
-  // Greedy to the last </div> that closes the block, so the nested spinner
-  // markup goes with it — a non-greedy match stops at the spinner's own
-  // closing tag and leaves a stray </div> behind.
-  if (body) {
-    modifiedHtml = modifiedHtml.replace(
-      /<div id="root">[\s\S]*<\/div>(?=\s*(?:<script|<\/body>))/,
-      `<div id="root">${body}</div>`
-    );
-  }
-
-  return new Response(modifiedHtml, {
+  return new Response(injectIntoHtml(html, metaTags, body), {
     status,
     headers: {
       'content-type': 'text/html; charset=utf-8',

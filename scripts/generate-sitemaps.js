@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const { readOpenings, resolveCanonicals } = require('./generate-seo-lookup');
 
@@ -24,6 +25,64 @@ function readPrimarySiteUrl() {
 
 const PRIMARY_SITE_URL = readPrimarySiteUrl();
 const SITEMAP_DIR = path.join(PUBLIC_DIR, 'sitemaps');
+
+const DATA_PATHS = ['api/data/eco', 'api/data/popularity_stats.json'];
+
+function git(args) {
+  return execFileSync('git', args, {
+    cwd: path.join(__dirname, '..'),
+    encoding: 'utf-8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  }).trim();
+}
+
+/**
+ * The date the openings last changed, or nothing at all.
+ *
+ * These files are rewritten wholesale by their pipelines rather than per
+ * opening, so one date covers every URL. Stamping today on 12,106 URLs every
+ * deploy is a claim that is false for almost all of them, and a `lastmod` that
+ * always says now is one Google stops reading.
+ *
+ * It comes from git rather than the filesystem because **mtime does not survive
+ * CI**. A fresh clone stamps every file with the checkout time, and
+ * `vercel:prepare` rewrites the data files before this script runs, so an
+ * mtime-based version reported the build date on every deploy — passing its own
+ * tests locally while doing exactly the thing it was written to stop.
+ *
+ * Returns null when git cannot answer: on a shallow clone whose window contains
+ * no commit touching these paths, `git log` is silent. **Omitting `lastmod` is
+ * the correct answer there.** An absent date is neutral; an invented one is the
+ * fabricated-data trap in sitemap form. `lastmodOmissionReason` says which case
+ * fired, so the build log distinguishes "no date" from "feature not working".
+ */
+function dataLastModified() {
+  try {
+    const out = git(['log', '-1', '--format=%cs', '--', ...DATA_PATHS]);
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Why the date is missing, for the build log.
+ *
+ * A silent omission is indistinguishable from the feature working, and the
+ * likeliest cause on a build machine is a clone too shallow to contain the
+ * commit that last touched the data — the openings change rarely, so that
+ * commit can be a long way back. Naming the cause is what makes the first
+ * deploy's log answer the question.
+ */
+function lastmodOmissionReason() {
+  try {
+    return git(['rev-parse', '--is-shallow-repository']) === 'true'
+      ? 'shallow clone — no commit touching api/data in its window'
+      : 'git found no commit touching api/data';
+  } catch {
+    return 'git unavailable';
+  }
+}
 
 const URLS_PER_SITEMAP = 2000;
 
@@ -50,9 +109,11 @@ function xmlEscape(str) {
     .replace(/'/g, '&apos;');
 }
 
-function urlEntry({ loc, priority, changefreq }) {
+function urlEntry({ loc, priority, changefreq, lastmod }) {
   return (
     `<url><loc>${xmlEscape(PRIMARY_SITE_URL + loc)}</loc>` +
+    // No date at all rather than a wrong one — see dataLastModified.
+    (lastmod ? `<lastmod>${lastmod}</lastmod>` : '') +
     `<changefreq>${changefreq}</changefreq>` +
     `<priority>${priority}</priority></url>`
   );
@@ -78,13 +139,16 @@ function generateSitemaps() {
     .filter((row) => !row.canonical)
     .sort((a, b) => (b.games || 0) - (a.games || 0));
 
-  const entries = STATIC_PAGES.map(urlEntry).concat(
+  const lastmod = dataLastModified();
+
+  const entries = STATIC_PAGES.map((page) => urlEntry({ ...page, lastmod })).concat(
     indexable.map((row, rank) => {
       const tier = tierFor(rank);
       return urlEntry({
         loc: `/opening/${encodeURIComponent(row.fen)}`,
         priority: tier.priority,
         changefreq: tier.changefreq,
+        lastmod,
       });
     })
   );
@@ -92,7 +156,6 @@ function generateSitemaps() {
   fs.rmSync(SITEMAP_DIR, { recursive: true, force: true });
   fs.mkdirSync(SITEMAP_DIR, { recursive: true });
 
-  const lastmod = new Date().toISOString().slice(0, 10);
   const files = [];
   for (let i = 0; i < entries.length; i += URLS_PER_SITEMAP) {
     const chunk = entries.slice(i, i + URLS_PER_SITEMAP);
@@ -115,7 +178,9 @@ function generateSitemaps() {
       files
         .map(
           (name) =>
-            `<sitemap><loc>${PRIMARY_SITE_URL}/sitemaps/${name}</loc><lastmod>${lastmod}</lastmod></sitemap>`
+            `<sitemap><loc>${PRIMARY_SITE_URL}/sitemaps/${name}</loc>` +
+            (lastmod ? `<lastmod>${lastmod}</lastmod>` : '') +
+            `</sitemap>`
         )
         .join('\n') +
       '\n</sitemapindex>\n',
@@ -131,11 +196,17 @@ function generateSitemaps() {
   console.log(`  Indexable opening pages: ${indexable.length}`);
   console.log(`  Canonicalised away:      ${rows.length - indexable.length}`);
   console.log(`  Files:                   ${files.length} (+ sitemap-index.xml)`);
-  console.log(`  lastmod:                 ${lastmod}`);
+  console.log(`  lastmod:                 ${lastmod || `(omitted — ${lastmodOmissionReason()})`}`);
 }
 
 if (require.main === module) {
   generateSitemaps();
 }
 
-module.exports = { generateSitemaps, tierFor, URLS_PER_SITEMAP };
+module.exports = {
+  generateSitemaps,
+  dataLastModified,
+  lastmodOmissionReason,
+  tierFor,
+  URLS_PER_SITEMAP,
+};

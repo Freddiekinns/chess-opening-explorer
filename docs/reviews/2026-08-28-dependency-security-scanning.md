@@ -124,43 +124,74 @@ minutes of the maintainer's attention before the scanning work lands.
 
 Ordered by value per unit of effort, not by severity number.
 
-### 1. Clear the noise — dependency cleanup
+### 1. Clear the noise — dependency cleanup — done
 
-Remove `axios` from `packages/web`. Swap `xmldom` for `@xmldom/xmldom` in
-`tools/video-pipeline/lib/rss-discovery.js`. Run non-breaking `npm audit fix` to
-pick up `react-router-dom`, `express` and the transitive patches.
+`axios` moved from `packages/web` to `packages/api` and bumped past the advisory
+range; `xmldom` swapped for `@xmldom/xmldom` in
+`tools/video-pipeline/lib/rss-discovery.js`; non-breaking `npm audit fix` for
+the rest, which took `react-router-dom` to 6.30.6 and `express` to 4.22.2 along
+with `path-to-regexp`, `qs`, `body-parser` and `brace-expansion`.
 
-Explicitly out of scope: `sqlite3@6` and anything else semver-major. Those are a
-separate change with a separate test burden.
+Outcome: **production tree 26 → 11, whole tree 49 → 22.** Everything remaining
+needs a semver-major — `sqlite3@6` for the build chain, `react-router@7` — and
+was deliberately left alone.
 
-Verification is the whole point of doing this first. The full suite is **932
-backend and 590 frontend tests**, green before the change; both must stay green
-after, plus `tsc --noEmit` and a real `npm run build:web`. The RSS parser swap
-gets direct exercise rather than trusting the suite, since a drop-in fork is
-exactly the kind of change that passes tests and breaks at runtime.
+Verified against the pre-change baseline: 932 backend and 590 frontend tests
+still pass, `tsc --noEmit` and both lint runs clean, `npm run build:web`
+succeeds. The parser swap was exercised directly against a namespaced YouTube
+feed rather than trusted to the suite — `yt:videoId` resolution, entity
+decoding, author extraction and the missing-node skip all unchanged.
 
-### 2. Dependabot
+One behavioural difference worth knowing: malformed XML now throws from the
+parser itself rather than reaching the `parsererror` branch, so the error
+message differs. The caller already catches and returns `videos: []`, so a bad
+feed still degrades to an empty result instead of failing a pipeline run. That
+`parsererror` check is now unreachable — a browser-`DOMParser` idiom that
+neither parser ever produced — and is left in place rather than bundled into a
+security change.
 
-`.github/dependabot.yml`, weekly, grouped so we get a couple of PRs a week
-rather than twenty. Security updates ungrouped so they arrive on their own and
-are obvious. This is the highest-value item on the list and there is no config
-today.
+### 2. Dependabot — done
 
-### 3. The CI gate
+`.github/dependabot.yml`: npm weekly, pip and github-actions monthly. Routine
+version bumps grouped into two PRs per ecosystem; security updates left out of
+the groups so they arrive on their own and read as urgent.
 
-An `npm audit` job in `ci.yml`, scoped `--omit=dev --audit-level=high`.
+Majors are **not** ignored. `sqlite3@6` and `react-router@7` are the two known
+outstanding ones, they need real work rather than a merge, and a PR each is how
+they stay visible.
 
-The scoping is the design decision. Unscoped, the gate fails today over `tar` in
-sqlite3's build chain — a finding that is real, unfixable without a major bump,
-and irrelevant to anything we serve. A gate that must be routinely overridden is
-worse than no gate, because it trains the override.
+### 3. The CI gate — done
 
-### 4. Secret scanning and push protection
+`scripts/audit-dependencies.js`, wrapped as `npm run security:audit` and run by
+a Security Audit job in `ci.yml`.
 
-Repository settings, not a workflow. Free on public repos, one click, and it
-covers the `.env.production` class of problem going forward.
+A plain `--audit-level=high` would be red today over `tar` in sqlite3's build
+chain, so the gate is scoped: production dependencies only, high and critical
+only, with a named allowlist. Every allowlist entry carries a reason and the
+condition that removes it, and **a stale entry fails the run in its own right**
+— without that, an allowlist accumulates and quietly becomes no gate at all. It
+caught two entries during development that had never needed allowlisting.
 
-### 5. CodeQL — optional
+Keyed by package name rather than advisory id, because the allowlisted packages
+earn their place by being unreachable from production, not by which advisory
+happens to be open — and node-tar accrues new GHSA ids faster than a list would
+stay current.
+
+Left out of the `build` job's `needs` deliberately: an advisory published
+upstream overnight should surface as a red check, not stop the build being
+verified. The script reads `package-lock.json` directly, so the job needs no
+`npm ci`.
+
+Verified green today, and verified red both ways — an unallowlisted critical
+blocks, and a stale allowlist entry blocks.
+
+### 4. Secret scanning and push protection — outstanding, needs the maintainer
+
+Repository settings, not a workflow, so it cannot be done from here. Free on
+public repos, one click, and it covers the `.env.production` class of problem
+going forward. Pair it with a look at what that file actually contains.
+
+### 5. CodeQL — optional, not done
 
 Free SAST, native, if we want static analysis. Steps 1–4 carry most of the risk
 reduction; this is the one to add only if it earns its place.

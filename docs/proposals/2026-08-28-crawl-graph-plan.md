@@ -1,5 +1,12 @@
 # Crawl Graph Implementation Plan
 
+> **Executed and superseded, 2026-08-28.** Shipped as #80, #81 and #82. Four
+> things in this plan turned out wrong once run — ancestor depth, `lastmod`
+> (twice), and two defects review caught. **The plan's `lastmod` steps describe
+> mtime, which was wrong; production now omits the tag.** What actually shipped,
+> and why each differs, is in `docs/proposals/2026-08-28-crawl-graph-design.md`
+> §9. Read that first.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use
 > superpowers:subagent-driven-development (recommended) or
 > superpowers:executing-plans to implement this plan task-by-task. Steps use

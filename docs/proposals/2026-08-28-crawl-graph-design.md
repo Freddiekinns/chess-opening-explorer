@@ -177,11 +177,12 @@ inside the edge memory limit.
 
 ## 5. Per-URL `lastmod`
 
-`scripts/generate-sitemaps.js` emits `<lastmod>` per URL, derived from the
-newest mtime across the `api/data/eco/*.json` shards and
-`api/data/popularity_stats.json` — not the build date. One date for every
-opening URL, since those files are rewritten wholesale by their pipelines rather
-than per opening.
+`scripts/generate-sitemaps.js` emits `<lastmod>` per URL rather than only on the
+index, and never the build date. One date covers every opening URL, since the
+data files are rewritten wholesale by their pipelines rather than per opening.
+
+**This section was written against mtime and shipped against neither mtime nor
+git.** Both were wrong; see §9.
 
 Stamping today's date on 12,106 URLs on every deploy is a claim that is false
 for almost all of them, and Google learns to discount a `lastmod` that always
@@ -247,3 +248,41 @@ traffic follows it or does not.
 
 If that number does not fall, the hypothesis was wrong and hub pages are the
 next lever — not more of this.
+
+---
+
+## 9. What implementation changed
+
+Recorded because the design was wrong in ways only running it exposed. Anyone
+reading this for the reasoning should read this section too.
+
+**Ancestor depth was measured on a biased sample.** §4 claimed 2.6 ancestors per
+opening, from the first 300 rows of `ecoA` — all shallow root positions. Across
+the corpus the raw chains average **9.7** and run to 33, which is not a
+breadcrumb and made the largest shard 485 KB. Deduplicating by FEN barely helped
+(9.7 → 8.5) because chains repeat names, not positions. The generator now
+applies the same consecutive-name rule as `deduplicateAncestors`, then keeps the
+family root plus the two nearest, with slot `[12]` flagging a cut trail so the
+row can draw an ellipsis. `SHARD_COUNT` went 64 → 96 to hold the mean at 162 KB.
+
+**`lastmod` was wrong twice.** mtime does not survive CI — a fresh clone stamps
+every file with the checkout time and `vercel:prepare` rewrites the data files
+before the generator runs, so it reported the build date on every deploy while
+passing its own unit tests. Switching to `git log` then shipped a _different_
+wrong date: a shallow clone's oldest commit appears to introduce every file, so
+git returns the graft boundary. Vercel clones ~10 deep, and production served
+`2026-07-27` on all 12,108 URLs where the truth is `2026-06-06`, drifting
+forward with every deploy. `lastmodFromGit` now checks the commit against
+`.git/shallow` and **omits the tag** when it matches. Consequence: production
+carries no `lastmod` at all until a build has full history. No date beats a
+wrong one.
+
+**Two defects found by reviewing the branch.** The `STATIC_ROUTES` comparison
+was a string equality, so `/analyse/` and `/repertoire/` went from 200 to a hard
+404 — live pages, broken by the change meant to improve indexing. Trailing
+slashes now 308 to the canonical form. And 1,385 of 64,853 generated links
+pointed at pages that canonicalise elsewhere, contradicting the sitemap's own
+exclusion rule; link targets now map through the canonical.
+
+**Out of scope §7 stands unchanged.** Slug URLs and hub pages are still the
+larger levers, and still deferred.

@@ -4,12 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **The opening corpus got a crawl graph** (2026-08-28): the July fix worked but
-  impressions did not recover — 5,750 indexed pages earned 4,810 impressions in
-  90 days because nothing linked into the corpus. Ancestor and related-opening
-  links now render before hydration; unknown paths 404 instead of serving the
-  landing page at 200; sitemap `lastmod` comes from the data's mtime.
-  `SHARD_COUNT` 64 → 96. Watch "Discovered — currently not indexed" (3,615).
+- **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
+  indexed pages earned 4,810 impressions in 90 days because nothing linked into
+  the corpus. Ancestor and related-opening links now render before hydration;
+  non-pages 404 and trailing slashes 308 via a shared `STATIC_ROUTES`;
+  `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
+  twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
+  Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
 - **Video matching stopped trusting descriptions and stopped losing its corpus**
   (2026-08-10): a "watch my other video" link scored +60 and bypassed the
   variation guard; rematch re-scored only past winners, so a better scorer could
@@ -87,14 +88,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   export without extensions, so `dist/index.js` is unimportable from Node ESM.
 - **Video programme**: enable the monthly refresh Action (commit
   `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`); then V4-V6, studies.
-- **Search is not a real combobox** — no `role="combobox"`/`listbox`,
+- **Search is not a real combobox** — no combobox/listbox roles,
   `aria-expanded`, `aria-activedescendant` or live region. Biggest a11y gap.
 - **Toasts need one host, not one per component**: two within 4s cover an Undo
   (2026-08-04).
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO — a data problem.
 - **Mobile Discover shows no facet chips**: "Filters (2)" hides which.
-- **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
-  `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
-- **Win-rate filtering**, ARIA tooltip component, `rankNotableGames` name
-  dedupe, React 19 / Testing Library compatibility. Detail in `archive.md`.
+- **TASK006 — Coverage**: backend 90%+, frontend 70%+; shrink
+  `collectCoverageFrom`, which gates 90% on a backend subset.
+- **Win-rate filtering**, ARIA tooltips, name dedupe. See `archive.md`.

@@ -243,6 +243,17 @@ load-bearing.
   `metadata.analysis_timestamp` is not an alternative: it reads 2025-07-15 and
   nothing maintains it.
 
+  **A shallow clone does not say "I don't know" — it lies plausibly.** Its
+  oldest commit appears to introduce every file, so `git log -1 -- api/data`
+  returns that graft boundary. Vercel clones ~10 deep, and the first version of
+  this shipped 2026-07-27 on all 12,108 URLs where the truth was 2026-06-06 — a
+  believable date that slides forward on every deploy, which is the drifting
+  `lastmod` the function exists to prevent. `lastmodFromGit` therefore checks
+  the commit against `.git/shallow` and omits the tag when it matches.
+  Consequence worth knowing: **production emits no `lastmod` at all** until the
+  build gets full history. That is the intended trade — no date beats a wrong
+  one.
+
 - **`STATIC_ROUTES` is the one list of what is a page.** `App.tsx` builds its
   route table from it as a `Record<StaticRoute, ReactElement>`, so adding a
   route without listing it does not compile; `middleware.ts` decides what to 404

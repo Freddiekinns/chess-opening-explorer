@@ -14,13 +14,6 @@ const AnalyseGamesPage = lazy(() => import('./pages/AnalyseGamesPage'));
 const OpeningDetailPage = lazy(() => import('./pages/OpeningDetailPage'));
 const RepertoirePage = lazy(() => import('./pages/RepertoirePage'));
 
-const AnalyseRedirect = () => {
-  useEffect(() => {
-    window.location.replace('/analyse');
-  }, []);
-  return null;
-};
-
 /** SPA navigation keeps the previous page's scroll offset — reset to the top
  *  whenever the route changes so every page opens at its heading. */
 const ScrollToTop = () => {
@@ -48,7 +41,6 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/analyse" element={<AnalyseGamesPage />} />
-            <Route path="/personal-explorer" element={<AnalyseRedirect />} />
             <Route path="/opening/:fen" element={<OpeningDetailPage />} />
             <Route path="/repertoire" element={<RepertoirePage />} />
             <Route path="*" element={<LandingPage />} />

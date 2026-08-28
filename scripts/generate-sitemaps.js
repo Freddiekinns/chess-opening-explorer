@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const { readOpenings, resolveCanonicals } = require('./generate-seo-lookup');
 
@@ -25,30 +26,38 @@ function readPrimarySiteUrl() {
 const PRIMARY_SITE_URL = readPrimarySiteUrl();
 const SITEMAP_DIR = path.join(PUBLIC_DIR, 'sitemaps');
 
-const DATA_DIR = path.join(__dirname, '..', 'api', 'data');
-const DATA_SOURCES = [
-  ...['ecoA', 'ecoB', 'ecoC', 'ecoD', 'ecoE'].map((name) =>
-    path.join(DATA_DIR, 'eco', `${name}.json`)
-  ),
-  path.join(DATA_DIR, 'popularity_stats.json'),
-];
+const DATA_PATHS = ['api/data/eco', 'api/data/popularity_stats.json'];
 
 /**
- * The date the openings last changed, not the date we last deployed.
+ * The date the openings last changed, or nothing at all.
  *
  * These files are rewritten wholesale by their pipelines rather than per
  * opening, so one date covers every URL. Stamping today on 12,106 URLs every
- * deploy is a claim that is false for almost all of them, and a lastmod that
+ * deploy is a claim that is false for almost all of them, and a `lastmod` that
  * always says now is one Google stops reading.
+ *
+ * It comes from git rather than the filesystem because **mtime does not survive
+ * CI**. A fresh clone stamps every file with the checkout time, and
+ * `vercel:prepare` rewrites the data files before this script runs, so an
+ * mtime-based version reported the build date on every deploy — passing its own
+ * tests locally while doing exactly the thing it was written to stop.
+ *
+ * Returns null when git cannot answer: on a shallow clone whose window contains
+ * no commit touching these paths, `git log` is silent. **Omitting `lastmod` is
+ * the correct answer there.** An absent date is neutral; an invented one is the
+ * fabricated-data trap in sitemap form.
  */
 function dataLastModified() {
-  const times = DATA_SOURCES.filter((file) => fs.existsSync(file)).map(
-    (file) => fs.statSync(file).mtimeMs
-  );
-  if (times.length === 0) {
-    throw new Error('Could not stat any opening data file to derive lastmod');
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...DATA_PATHS], {
+      cwd: path.join(__dirname, '..'),
+      encoding: 'utf-8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null;
+  } catch {
+    return null;
   }
-  return new Date(Math.max(...times)).toISOString().slice(0, 10);
 }
 
 const URLS_PER_SITEMAP = 2000;
@@ -79,7 +88,8 @@ function xmlEscape(str) {
 function urlEntry({ loc, priority, changefreq, lastmod }) {
   return (
     `<url><loc>${xmlEscape(PRIMARY_SITE_URL + loc)}</loc>` +
-    `<lastmod>${lastmod}</lastmod>` +
+    // No date at all rather than a wrong one — see dataLastModified.
+    (lastmod ? `<lastmod>${lastmod}</lastmod>` : '') +
     `<changefreq>${changefreq}</changefreq>` +
     `<priority>${priority}</priority></url>`
   );
@@ -144,7 +154,9 @@ function generateSitemaps() {
       files
         .map(
           (name) =>
-            `<sitemap><loc>${PRIMARY_SITE_URL}/sitemaps/${name}</loc><lastmod>${lastmod}</lastmod></sitemap>`
+            `<sitemap><loc>${PRIMARY_SITE_URL}/sitemaps/${name}</loc>` +
+            (lastmod ? `<lastmod>${lastmod}</lastmod>` : '') +
+            `</sitemap>`
         )
         .join('\n') +
       '\n</sitemapindex>\n',
@@ -160,7 +172,7 @@ function generateSitemaps() {
   console.log(`  Indexable opening pages: ${indexable.length}`);
   console.log(`  Canonicalised away:      ${rows.length - indexable.length}`);
   console.log(`  Files:                   ${files.length} (+ sitemap-index.xml)`);
-  console.log(`  lastmod:                 ${lastmod}`);
+  console.log(`  lastmod:                 ${lastmod || '(omitted — git could not date the data)'}`);
 }
 
 if (require.main === module) {

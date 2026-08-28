@@ -6,6 +6,8 @@ and four data pipelines (video, study, LLM enrichment, popularity stats).
 
 Commands live in `package.json`. Architecture and current state live in
 `.github/memory-bank/` — read `activeContext.md` and `progress.md` first.
+`REVIEW.md` is the review policy: what a pass over a diff looks for here, and
+what to leave alone because CI already covers it.
 
 Scoped rules load automatically when you work in these directories:
 
@@ -296,6 +298,33 @@ Pipeline-specific caveats (rematch modes, cache staleness, audit scripts) live
 in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
 
 ### Tooling
+
+- **A failing test comes first, and a hook stops it being unwritten.** For a bug
+  fix: reproduce it as a test, confirm it fails for the reason you expect,
+  commit that test, then fix the code without touching it.
+  `.claude/hooks/test-integrity.js` runs as a `PreToolUse` hook and blocks an
+  edit that adds `.skip` / `.only` / `xit` to a test file, and a shell command
+  that removes a test path or writes a disabled test into one. It is a fence,
+  not a wall — a shell is too expressive to police completely, and the wall is
+  the PR diff. Its patterns are anchored to the start of a line so a disabler
+  quoted inside a string is not mistaken for one being introduced.
+
+  The deliberate exception is `ALLOW_TEST_SKIP=1`, and using it belongs in the
+  commit message. Hooks inherit the environment of the process Claude Code runs
+  in, so for `Edit` and `Write` it has to be exported **before** starting Claude
+  Code — there is no per-call environment. A `Bash` command can carry it inline,
+  as a prefix, which is also the way out of the fence's one real false positive:
+  a heredoc whose body quotes a command the fence would block. Writing about
+  this hook in a shell heredoc trips it, twice so far. Use `Edit` or `Write` for
+  those files.
+
+- **The two kinds of hook bind at different times.** The Claude Code hook above
+  is read from `.claude/settings.json` and works in any clone. The husky git
+  hooks (`pre-commit` runs prettier + eslint, `pre-push` runs type-check and
+  `test:all`) only bind once `npm install` has run, because `prepare: husky` is
+  what sets `core.hooksPath`. A fresh remote session therefore commits with **no
+  git hooks at all** until you install — run `npm ci` before committing, or rely
+  on CI, which runs lint and `format:check` on every PR regardless.
 
 - **Lint is code quality, Prettier is formatting.** ESLint configs enforce
   code-quality rules only. Do not re-add stylistic rules

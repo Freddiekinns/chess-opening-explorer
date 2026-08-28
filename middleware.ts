@@ -3,6 +3,7 @@ import {
   buildSiteUrl,
   LEGACY_VERCEL_HOST,
   SITE_NAME,
+  STATIC_ROUTES,
 } from './packages/web/src/lib/siteConfig';
 
 /**
@@ -187,6 +188,77 @@ function buildOpeningJsonLd(name: string, description: string, canonical: string
     .replace(/&/g, '\\u0026');
 }
 
+const NOT_FOUND_BODY =
+  `<main style="max-width:44rem;margin:0 auto;padding:3rem 1.25rem">` +
+  `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">Page not found</h1>` +
+  `<p style="color:var(--color-text-secondary)">We could not find that page. <a href="/" style="color:var(--color-brand-orange)">Search the openings</a>.</p>` +
+  `</main>`;
+
+async function fetchIndexHtml(origin: string): Promise<string> {
+  // Fetch index.html directly (not the original URL) to avoid a middleware loop.
+  const res = await fetch(new URL('/index.html', origin));
+  return res.text();
+}
+
+/**
+ * Swap the base document's placeholder head and spinner for this page's own.
+ *
+ * Both the good path and the not-found path go through here, so the two cannot
+ * drift on which tags get removed — a stale og: tag left behind on one of them
+ * is the duplicate-metadata failure this file exists to undo.
+ */
+function injectIntoHtml(html: string, metaTags: string, body: string): string {
+  let out = html;
+
+  // Replace <title>...</title>
+  out = out.replace(/<title>[^<]*<\/title>/, '');
+  // Remove existing meta description
+  out = out.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '');
+  // Remove existing canonical tag from base HTML to avoid duplicates
+  out = out.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '');
+  // Remove existing og/twitter tags from base HTML to avoid duplicates
+  out = out.replace(/<meta\s+(?:property="og:|name="twitter:)[^>]*\/?>/g, '');
+  // Inject all meta tags before </head>
+  out = out.replace('</head>', `    ${metaTags}\n  </head>`);
+
+  // Swap the loading spinner for the page's own content. React replaces #root
+  // on mount, so this is what a crawler reads and what a reader sees first.
+  // Greedy to the last </div> that closes the block, so the nested spinner
+  // markup goes with it — a non-greedy match stops at the spinner's own
+  // closing tag and leaves a stray </div> behind.
+  if (body) {
+    out = out.replace(
+      /<div id="root">[\s\S]*<\/div>(?=\s*(?:<script|<\/body>))/,
+      `<div id="root">${body}</div>`
+    );
+  }
+
+  return out;
+}
+
+/**
+ * A path that is neither an opening nor a page is not a page.
+ *
+ * `App.tsx` renders LandingPage for `*`, so without this every typo and every
+ * stale URL answered 200 with the landing page behind it — Search Console was
+ * reporting 42 of them as soft 404s.
+ */
+function notFoundResponse(html: string): Response {
+  const metaTags = buildMetaTags({
+    title: `Page not found — ${SITE_NAME}`,
+    description: 'This page could not be found.',
+    url: buildSiteUrl('/'),
+    canonical: buildSiteUrl('/'),
+  });
+  return new Response(injectIntoHtml(html, metaTags, NOT_FOUND_BODY), {
+    status: 404,
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 's-maxage=3600, stale-while-revalidate=86400',
+    },
+  });
+}
+
 export const config = {
   matcher: [
     '/((?!api/|assets/|fonts/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup/|opening-book-icon\.png).*)',
@@ -204,9 +276,18 @@ export default async function middleware(request: Request): Promise<Response> {
     return Response.redirect(redirectUrl.toString(), 308);
   }
 
-  // Only process opening and analyse routes
+  // Only opening pages and /analyse get their head rewritten. Everything else
+  // either belongs to the origin untouched or does not exist at all.
   if (!pathname.startsWith('/opening/') && pathname !== '/analyse') {
-    return fetch(request);
+    // A real page the middleware has no metadata for, or anything that looks
+    // like a file. The matcher already excludes every static file the build
+    // emits, but a 404 served over a real asset is a worse failure than the
+    // soft 404 this branch exists to fix, so the extension check earns its
+    // line.
+    if ((STATIC_ROUTES as readonly string[]).includes(pathname) || pathname.includes('.')) {
+      return fetch(request);
+    }
+    return notFoundResponse(await fetchIndexHtml(url.origin));
   }
 
   let title = `${SITE_NAME} — Discover, explore and learn chess openings`;
@@ -283,12 +364,8 @@ export default async function middleware(request: Request): Promise<Response> {
     }
   }
 
-  // Fetch index.html directly (not the original URL) to avoid middleware loop
-  const indexUrl = new URL('/index.html', url.origin);
-  const originResponse = await fetch(indexUrl);
-  const html = await originResponse.text();
+  const html = await fetchIndexHtml(url.origin);
 
-  // Replace existing title and meta description, inject new tags
   const metaTags = buildMetaTags({
     title,
     description,
@@ -297,36 +374,7 @@ export default async function middleware(request: Request): Promise<Response> {
     jsonLd,
   });
 
-  let modifiedHtml = html;
-
-  // Replace <title>...</title>
-  modifiedHtml = modifiedHtml.replace(/<title>[^<]*<\/title>/, '');
-
-  // Remove existing meta description
-  modifiedHtml = modifiedHtml.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '');
-
-  // Remove existing canonical tag from base HTML to avoid duplicates
-  modifiedHtml = modifiedHtml.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '');
-
-  // Remove existing og/twitter tags from base HTML to avoid duplicates
-  modifiedHtml = modifiedHtml.replace(/<meta\s+(?:property="og:|name="twitter:)[^>]*\/?>/g, '');
-
-  // Inject all meta tags before </head>
-  modifiedHtml = modifiedHtml.replace('</head>', `    ${metaTags}\n  </head>`);
-
-  // Swap the loading spinner for the page's own content. React replaces #root
-  // on mount, so this is what a crawler reads and what a reader sees first.
-  // Greedy to the last </div> that closes the block, so the nested spinner
-  // markup goes with it — a non-greedy match stops at the spinner's own
-  // closing tag and leaves a stray </div> behind.
-  if (body) {
-    modifiedHtml = modifiedHtml.replace(
-      /<div id="root">[\s\S]*<\/div>(?=\s*(?:<script|<\/body>))/,
-      `<div id="root">${body}</div>`
-    );
-  }
-
-  return new Response(modifiedHtml, {
+  return new Response(injectIntoHtml(html, metaTags, body), {
     status,
     headers: {
       'content-type': 'text/html; charset=utf-8',

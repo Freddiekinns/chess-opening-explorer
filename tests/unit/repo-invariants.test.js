@@ -101,6 +101,25 @@ describe('description is not a fuzzy search key', () => {
   });
 });
 
+describe('the middleware reads the shared route list', () => {
+  /**
+   * The Record<StaticRoute, ReactElement> in App.tsx stops the app and the
+   * constant drifting. Nothing but this stops the *middleware* quietly going
+   * back to a hardcoded list, which is how it would start 404ing a real page.
+   */
+  const source = read('middleware.ts');
+
+  test('middleware.ts imports STATIC_ROUTES from siteConfig', () => {
+    expect(source).toMatch(
+      /import\s*{[^}]*STATIC_ROUTES[^}]*}\s*from\s*'\.\/packages\/web\/src\/lib\/siteConfig'/s
+    );
+  });
+
+  test('middleware.ts does not keep its own literal route list', () => {
+    expect(source).not.toMatch(/\[\s*'\/'\s*,\s*'\/analyse'/);
+  });
+});
+
 describe('/personal-explorer redirects at the edge, not in the browser', () => {
   /**
    * It used to render a component that called window.location.replace, so the

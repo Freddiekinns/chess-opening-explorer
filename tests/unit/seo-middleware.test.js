@@ -122,10 +122,11 @@ beforeEach(() => {
       );
       return new Response(JSON.stringify(subset), { status: 200 });
     }
-    if (url.includes('/index.html')) {
-      return new Response(indexHtml, { status: 200 });
-    }
-    return new Response('', { status: 404 });
+    // Everything else is a pass-through to the origin. vercel.json rewrites
+    // every path that is not an API route or a static SEO file to index.html,
+    // so the origin answers 200 here — a mock that 404d instead would make a
+    // working pass-through look like a broken one.
+    return new Response(indexHtml, { status: 200 });
   });
 });
 
@@ -385,5 +386,42 @@ describe('SEO middleware — untouched routes', () => {
     const res = await middleware(new Request('https://openingbook.vercel.app/opening/anything'));
     expect(res.status).toBe(308);
     expect(res.headers.get('location')).toContain('https://openingbook.xyz/');
+  });
+});
+
+describe('SEO middleware — paths that are not pages', () => {
+  /**
+   * App.tsx renders LandingPage for `*`, so before this branch every typo and
+   * every stale URL answered 200 with the landing page behind it. Search
+   * Console was reporting 42 of them as soft 404s.
+   */
+  it('404s a path that is not a route instead of serving the landing page', async () => {
+    const res = await get('/some-random-page');
+    expect(res.status).toBe(404);
+    const html = await res.text();
+    expect(html).toContain('Page not found');
+  });
+
+  it.each([['/'], ['/analyse'], ['/repertoire']])('still serves %s at 200', async (pathname) => {
+    const res = await get(pathname);
+    expect(res.status).toBe(200);
+  });
+
+  /**
+   * The matcher already excludes every static file the build emits, but a 404
+   * served over a real asset is a worse failure than a soft 404 — so anything
+   * that looks like a file is handed straight to the origin.
+   */
+  it('passes a path with a file extension through to the origin', async () => {
+    const res = await get('/manifest.webmanifest');
+    expect(res.status).not.toBe(404);
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.objectContaining({ url: 'https://openingbook.xyz/manifest.webmanifest' })
+    );
+  });
+
+  it('does not 404 an opening that exists', async () => {
+    const res = await get(openingUrl(AMAR_FEN));
+    expect(res.status).toBe(200);
   });
 });

@@ -31,24 +31,19 @@ const path = require('path');
 const FAIL_ON = new Set(['high', 'critical']);
 
 /**
- * `sqlite3` is a root production dependency, so `--omit=dev` still reports it
- * and its entire native-build toolchain. Nothing in that chain is deployed:
- * the only consumer is the video pipeline's local SQLite database, which runs
- * on a laptop and in the pipeline workflow. Clearing it means sqlite3 6, a
- * semver-major with a native rebuild — worth doing, on its own schedule.
+ * Empty, and worth keeping that way.
  *
- * See docs/reviews/2026-08-28-dependency-security-scanning.md.
+ * It briefly held sqlite3's native build chain (tar, node-gyp, cacache,
+ * make-fetch-happen) on the grounds that none of it is deployed. That was true
+ * and still a worse answer than upgrading: sqlite3 6 cleared all of it,
+ * including the only critical in the tree, and the stale check above is what
+ * made the point by failing the moment the upgrade landed.
+ *
+ * Reach for an entry only when an advisory genuinely cannot touch production
+ * and no upgrade exists. Format: package name -> reason, ending in the
+ * condition that removes it.
  */
-const SQLITE_BUILD_CHAIN_REASON =
-  'sqlite3 native build toolchain; used only by tools/, never deployed. Clears with sqlite3@6.';
-
-const ALLOWLIST = {
-  sqlite3: SQLITE_BUILD_CHAIN_REASON,
-  tar: SQLITE_BUILD_CHAIN_REASON,
-  'node-gyp': SQLITE_BUILD_CHAIN_REASON,
-  cacache: SQLITE_BUILD_CHAIN_REASON,
-  'make-fetch-happen': SQLITE_BUILD_CHAIN_REASON,
-};
+const ALLOWLIST = {};
 
 function runAudit() {
   // npm audit exits non-zero whenever it finds anything, so a throw here is

@@ -337,15 +337,17 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   high and critical advisories in **production** dependencies only. Dev-only
   findings — the vitest/vite/esbuild dev-server class — are Dependabot's job,
   not a merge blocker, because a gate that must be overridden every PR teaches
-  the override. The allowlist exists for the same reason: `sqlite3`'s native
-  build chain (`tar`, `node-gyp`, `cacache`, `make-fetch-happen`) is reported by
-  `--omit=dev` but never deployed, and clearing it needs `sqlite3@6`. Every
-  entry carries a reason and the condition that removes it, and **an entry whose
-  advisory has gone fails the run** — otherwise the list accumulates and the
-  gate quietly becomes decorative. Entries are keyed by package name, not
-  advisory id: they earn their place by being unreachable from production, and
-  node-tar accrues new GHSA ids faster than a list would stay current. Reasoning
-  and the full triage:
+  the override. **The allowlist is empty, and the bar for adding to it is
+  "unreachable from production _and_ no upgrade exists".** It briefly held
+  `sqlite3`'s native build chain (`tar`, `node-gyp`, `cacache`,
+  `make-fetch-happen`) on the unreachability argument alone, which was true and
+  still the wrong answer — `sqlite3@6` cleared all five including the only
+  critical in the tree. Every entry carries a reason and the condition that
+  removes it, and **an entry whose advisory has gone fails the run**: that check
+  is what forced the upgrade rather than letting the list sit there, and without
+  it the gate quietly becomes decorative. Entries are keyed by package name, not
+  advisory id, because node-tar accrues new GHSA ids faster than a list would
+  stay current. Reasoning and the full triage:
   `docs/reviews/2026-08-28-dependency-security-scanning.md`.
 
 ### Design system

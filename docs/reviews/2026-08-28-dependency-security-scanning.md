@@ -133,8 +133,8 @@ the rest, which took `react-router-dom` to 6.30.6 and `express` to 4.22.2 along
 with `path-to-regexp`, `qs`, `body-parser` and `brace-expansion`.
 
 Outcome: **production tree 26 → 11, whole tree 49 → 22.** Everything remaining
-needs a semver-major — `sqlite3@6` for the build chain, `react-router@7` — and
-was deliberately left alone.
+needed a semver-major, and was left alone in this pass — then triaged properly
+in step 1b below, because "allowlisted" is not the same as "fine".
 
 Verified against the pre-change baseline: 932 backend and 590 frontend tests
 still pass, `tsc --noEmit` and both lint runs clean, `npm run build:web`
@@ -149,6 +149,51 @@ feed still degrades to an empty result instead of failing a pipeline run. That
 `parsererror` check is now unreachable — a browser-`DOMParser` idiom that
 neither parser ever produced — and is left in place rather than bundled into a
 security change.
+
+### 1b. The eleven that were left — triaged — done
+
+Being on an allowlist is a claim that something is unreachable, not that it is
+acceptable. Working through the remainder individually:
+
+**`sqlite3` and its build chain (7 findings, including the only critical) —
+upgraded.** The unreachability argument was sound: `tar`'s path traversal fires
+when extracting an archive, and the only extraction here is node-gyp pulling
+Node headers during a native build, which an attacker can only influence by
+compromising a package we install — at which point install scripts already give
+them far more. But sound is not the same as best, and `sqlite3@6` turned out to
+be a clean drop-in: 932 backend and 590 frontend tests pass, the two
+sqlite-touching suites (49 tests) pass, and a real in-memory database round-trip
+works against the rebuilt native module.
+
+**Production tree 11 → 4, with zero high and zero critical.** The allowlist is
+now empty, and the gate's stale-entry check is what forced it — it failed the
+moment the upgrade landed, exactly as intended.
+
+**`react-router` (2, moderate) — not reachable, left until v7.** These are the
+only remaining findings in browser-shipped code, so they had the strongest claim
+on attention, and both fail on inspection:
+
+- _Arbitrary Constructor Injection via `deserializeErrors()`_ is in the data
+  router's SSR hydration path. The app mounts a plain `<BrowserRouter>` in
+  `main.tsx` — no `createBrowserRouter`, no `RouterProvider`, no router SSR. The
+  code does not exist in the bundle.
+- _Open redirect via backslash in `<Link>` and `useNavigate`_ needs an
+  attacker-controlled path. Every navigation target in the app is either a
+  hardcoded literal (`/`, `/analyse`, `/repertoire`) or a fixed `/opening/`
+  prefix with the dynamic half wrapped in `encodeURIComponent`, which turns a
+  backslash into `%5C`.
+
+The fix is `react-router-dom@7`, a semver-major. Worth taking when there is
+appetite for the migration, not as a security errand.
+
+**`gaxios` and `uuid` (2, moderate) — blocked upstream, pipeline-only.** Both
+are nested inside `@google-cloud/vertexai`'s own dependency tree, which pins an
+old `google-auth-library`. The root already resolves `gaxios@7`; only the
+vertexai copy is affected. Bumping vertexai to 1.12.0 (tried, reverted) does not
+move them. The consumer is `llm-service.js`, reached only by
+`tools/llm-enrichment/`, and no deployed route imports it. Clearing them means
+migrating off the deprecated vertexai SDK — a real piece of work with no
+security urgency behind it.
 
 ### 2. Dependabot — done
 
@@ -165,12 +210,18 @@ they stay visible.
 `scripts/audit-dependencies.js`, wrapped as `npm run security:audit` and run by
 a Security Audit job in `ci.yml`.
 
-A plain `--audit-level=high` would be red today over `tar` in sqlite3's build
+A plain `--audit-level=high` would have been red over `tar` in sqlite3's build
 chain, so the gate is scoped: production dependencies only, high and critical
 only, with a named allowlist. Every allowlist entry carries a reason and the
 condition that removes it, and **a stale entry fails the run in its own right**
-— without that, an allowlist accumulates and quietly becomes no gate at all. It
-caught two entries during development that had never needed allowlisting.
+— without that, an allowlist accumulates and quietly becomes no gate at all.
+
+That check earned its place immediately. It caught two entries during
+development that had never needed allowlisting, then failed the build the moment
+`sqlite3@6` landed, which is how the allowlist ended up empty. The bar for
+adding to it is now "unreachable from production **and** no upgrade exists" —
+unreachability alone was what justified the sqlite3 chain, and an upgrade
+existed the whole time.
 
 Keyed by package name rather than advisory id, because the allowlisted packages
 earn their place by being unreachable from production, not by which advisory

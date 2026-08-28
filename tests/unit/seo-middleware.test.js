@@ -81,16 +81,23 @@ const NO_STATS_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 8'
 const SHARED_A = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1';
 const SHARED_B = 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
 
+// A name carrying markup, so the escaping test has something to bite on.
+const XSS_FEN = 'rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq h3 0 1';
+// A page whose breadcrumb was cut to root plus the nearest two.
+const ELIDED_FEN = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+
 const DESCRIPTION =
   'The Amar Opening is a highly unorthodox and provocative flank move, immediately placing a knight on the rim of the board. ' +
   'It cedes central control to Black in exchange for surprise value, aiming to steer the game into unusual channels.';
 
 const SHARD = {
-  [AMAR_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 1533432, 0.4284, 0.0498, 0.5216],
+  [AMAR_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 1533432, 0.4284, 0.0498, 0.5216, null, null, [[SHARED_A, "King's Pawn Game"]], [[SHARED_B, 'Paris Gambit'], [DUPLICATE_FEN, 'Amar Gambit']]], // prettier-ignore
   [NO_STATS_FEN]: ['Quiet Line', 'A00', '1. Nh3 e5', 'A sideline with no recorded games.'],
   [DUPLICATE_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 12, 0.5, 0.1, 0.4, AMAR_FEN],
   [SHARED_A]: ["King's Pawn Game", 'C20', '1. e4', 'The most played first move.', 3778178876, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
   [SHARED_B]: ["King's Pawn Game", 'C20', '1. e4 e5', 'Black answers in kind.', 1501326875, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
+  [XSS_FEN]: ['Nasty Line', 'A00', '1. h4', 'A sideline.', 5, 0.5, 0.1, 0.4, null, null, [], [['f', '<script>alert(1)</script>']]], // prettier-ignore
+  [ELIDED_FEN]: ['Deep Line', 'B90', '1. e4 c5', 'A deep line.', 99, 0.5, 0.1, 0.4, null, null, [[SHARED_A, 'Root'], [SHARED_B, 'Parent']], [], 1], // prettier-ignore
 };
 
 let middleware;
@@ -423,5 +430,64 @@ describe('SEO middleware — paths that are not pages', () => {
   it('does not 404 an opening that exists', async () => {
     const res = await get(openingUrl(AMAR_FEN));
     expect(res.status).toBe(200);
+  });
+});
+
+describe('SEO middleware — internal links in the pre-render', () => {
+  /**
+   * The navigator links exist only in the React render, so the pre-hydration
+   * body was a dead end and the sitemap was Google's only route into the
+   * corpus. 3,615 pages sat in "Discovered - currently not indexed".
+   */
+  const rootOf = (html) => html.slice(html.indexOf('<div id="root">'), html.indexOf('</body>'));
+
+  it('renders the ancestor breadcrumb as real anchors', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+
+    expect(body).toContain('Part of:');
+    expect(body).toContain(`href="/opening/${encodeURIComponent(SHARED_A)}"`);
+    expect(body).toContain("King's Pawn Game");
+  });
+
+  it('renders the related lines as real anchors', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+
+    expect(body).toContain('Related lines:');
+    expect(body).toContain(`href="/opening/${encodeURIComponent(SHARED_B)}"`);
+    expect(body).toContain('Paris Gambit');
+    expect(body).toContain('Amar Gambit');
+  });
+
+  it('escapes a name that contains markup rather than injecting it', async () => {
+    const html = await (await get(openingUrl(XSS_FEN))).text();
+    expect(html).not.toContain('<script>alert');
+    expect(html).toContain('&lt;script&gt;');
+  });
+
+  it('marks a cut trail with an ellipsis rather than implying it is complete', async () => {
+    const body = rootOf(await (await get(openingUrl(ELIDED_FEN))).text());
+    expect(body).toContain('Part of:');
+    expect(body).toContain('…');
+  });
+
+  it('does not draw an ellipsis on a complete trail', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+    const partOf = body.slice(body.indexOf('Part of:'), body.indexOf('Related lines:'));
+    expect(partOf).not.toContain('…');
+  });
+
+  it('omits both rows entirely for an opening with no links', async () => {
+    const body = rootOf(await (await get(openingUrl(NO_STATS_FEN))).text());
+
+    expect(body).toContain('Quiet Line');
+    expect(body).not.toContain('Part of:');
+    expect(body).not.toContain('Related lines:');
+  });
+
+  it('leaves the body well-formed with the link rows present', async () => {
+    const html = await (await get(openingUrl(AMAR_FEN))).text();
+    const body = html.slice(html.indexOf('<body>'), html.indexOf('</body>'));
+    expect((body.match(/<div/g) || []).length).toBe((body.match(/<\/div>/g) || []).length);
+    expect((body.match(/<a /g) || []).length).toBe((body.match(/<\/a>/g) || []).length);
   });
 });

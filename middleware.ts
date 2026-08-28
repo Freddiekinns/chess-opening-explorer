@@ -11,6 +11,8 @@ import {
  *  sharesName]
  * Trailing nulls are trimmed by the generator, so read defensively.
  */
+type SeoLink = [fen: string, name: string];
+
 type SeoEntry = [
   name: string,
   eco: string,
@@ -22,6 +24,9 @@ type SeoEntry = [
   black?: number | null,
   canonical?: string | null,
   sharesName?: 1 | null,
+  ancestors?: SeoLink[] | null,
+  related?: SeoLink[] | null,
+  ancestorsElided?: 1 | null,
 ];
 type SeoLookup = Record<string, SeoEntry>;
 
@@ -139,8 +144,36 @@ function buildMetaTags(options: {
  * React replaces #root on mount, so this is the pre-hydration state of the
  * same page — not a second copy of it, and not hidden text.
  */
+/**
+ * A row of links, or nothing at all.
+ *
+ * An empty row would be a label with no content — worse than its absence for
+ * both a reader and a crawler.
+ */
+function buildLinkRow(
+  label: string,
+  links: SeoLink[] | null | undefined,
+  separator: string,
+  leadingEllipsis = false
+): string {
+  if (!links || links.length === 0) return '';
+
+  const anchors = links.map(
+    ([fen, linkName]) =>
+      `<a href="/opening/${encodeURIComponent(fen)}" style="color:var(--color-brand-orange)">${escapeHtml(linkName)}</a>`
+  );
+
+  // The generator keeps the family root and the two nearest ancestors; chains
+  // average 8.5 and run to 33. Say so rather than implying the trail is whole.
+  const trail = leadingEllipsis
+    ? [anchors[0], '…', ...anchors.slice(1)].join(separator)
+    : anchors.join(separator);
+
+  return `<p style="color:var(--color-text-secondary);margin:0 0 .5rem">${label} ${trail}</p>`;
+}
+
 function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
-  const [, , moves, description, games, white, draw, black] = entry;
+  const [, , moves, description, games, white, draw, black, , , ancestors, related, elided] = entry;
 
   const parts = [
     `<h1 style="font-family:'Bricolage Grotesque',serif;font-size:2rem;margin:0 0 .5rem">${escapeHtml(name)}</h1>`,
@@ -169,6 +202,12 @@ function buildOpeningBody(entry: SeoEntry, name: string, eco: string): string {
         `</ul>`
     );
   }
+
+  // The links OpeningNavigator and OpeningTree already draw after hydration, in
+  // the HTML a crawler reads without it. Ancestors use › because they are a
+  // path; related lines use · because they are a set.
+  parts.push(buildLinkRow('Part of:', ancestors, ' › ', elided === 1));
+  parts.push(buildLinkRow('Related lines:', related, ' · '));
 
   return `<main style="max-width:44rem;margin:0 auto;padding:3rem 1.25rem">${parts.join('')}</main>`;
 }

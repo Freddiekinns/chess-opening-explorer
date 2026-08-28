@@ -7,6 +7,7 @@ import { render, screen, waitFor, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { vi, describe, test, expect, beforeEach } from 'vitest';
 import App from '../App';
+import { STATIC_ROUTES } from '../lib/siteConfig';
 
 // Mock the fetch for openings data
 const mockFetch = vi.fn();
@@ -200,5 +201,16 @@ describe('App Component', () => {
         expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i);
       });
     });
+  });
+});
+
+describe('STATIC_ROUTES is the route table', () => {
+  test('lists every static page and nothing that is not one', () => {
+    expect([...STATIC_ROUTES]).toEqual(['/', '/analyse', '/repertoire']);
+  });
+
+  test('does not list the dynamic opening route, which middleware handles by prefix', () => {
+    expect(STATIC_ROUTES.some((route) => route.includes(':'))).toBe(false);
+    expect([...STATIC_ROUTES]).not.toContain('/opening');
   });
 });

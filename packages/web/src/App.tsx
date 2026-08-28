@@ -1,5 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
+import type { ReactElement } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { STATIC_ROUTES, type StaticRoute } from './lib/siteConfig';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import TopBar from './components/layout/TopBar';
@@ -31,6 +33,15 @@ const RouteFallback = () => (
   </div>
 );
 
+/** Keyed by StaticRoute, so a route added to one and not the other does not
+ *  compile. The catch-all and the opening route are not static pages and are
+ *  declared separately below. */
+const STATIC_ROUTE_ELEMENTS: Record<StaticRoute, ReactElement> = {
+  '/': <LandingPage />,
+  '/analyse': <AnalyseGamesPage />,
+  '/repertoire': <RepertoirePage />,
+};
+
 function App() {
   return (
     <div className="app">
@@ -39,10 +50,10 @@ function App() {
       <main className="app-content">
         <Suspense fallback={<RouteFallback />}>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/analyse" element={<AnalyseGamesPage />} />
+            {STATIC_ROUTES.map((path) => (
+              <Route key={path} path={path} element={STATIC_ROUTE_ELEMENTS[path]} />
+            ))}
             <Route path="/opening/:fen" element={<OpeningDetailPage />} />
-            <Route path="/repertoire" element={<RepertoirePage />} />
             <Route path="*" element={<LandingPage />} />
           </Routes>
         </Suspense>

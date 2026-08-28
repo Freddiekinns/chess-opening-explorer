@@ -194,9 +194,11 @@ says now. The date the openings last actually changed is the one worth sending.
 Test-first throughout, per the rule added in #69: reproduce as a failing test,
 confirm it fails for the reason expected, commit the test, then write the code.
 
-- `seo-lookup-shards.test.js` — golden values change for the two new slots. New
-  cases for ancestor ordering (root first, deduplicated) and the 8-item cap on
-  `related`.
+- `seo-lookup-shards.test.js` — the existing golden values pin the djb2 hash and
+  the shard distribution, not the tuple, so nothing there changes. New cases for
+  the two slots: ancestor ordering (root first, deduplicated), the 8-item cap on
+  `related`, and trailing-null trimming still applying to an opening with
+  neither.
 - `seo-middleware.test.js` — a fresh middleware instance per test, per the
   existing rule about `seoShardCache` at module scope. New cases: an unknown
   path 404s; every `STATIC_ROUTES` entry 200s; a path with an extension passes

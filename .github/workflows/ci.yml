@@ -31,6 +31,21 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Reads package-lock.json directly, so no install is needed.
+      - name: Audit production dependencies
+        run: npm run security:audit
+
   type-check:
     name: Type Check
     runs-on: ubuntu-latest

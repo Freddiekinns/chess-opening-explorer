@@ -49,6 +49,20 @@ const ALLOWLIST = {};
 const AUDIT_ARGS = ['audit', '--omit=dev', '--json'];
 
 /**
+ * Where npm's own entry point sits relative to the node binary.
+ *
+ * The platforms disagree and getting it wrong is silent: Windows keeps
+ * `node_modules/` beside `node.exe`, POSIX keeps it in `../lib`. A
+ * Windows-shaped join simply never resolves on Linux, so the fallback below
+ * looks present and does nothing.
+ */
+function bundledNpmCli(execPath, platform) {
+  const dir = path.dirname(execPath);
+  const tail = ['node_modules', 'npm', 'bin', 'npm-cli.js'];
+  return platform === 'win32' ? path.join(dir, ...tail) : path.join(dir, '..', 'lib', ...tail);
+}
+
+/**
  * How to run npm without going near a shell.
  *
  * On Windows npm is `npm.cmd`, a batch shim. Spawning a bare `npm` throws
@@ -64,24 +78,36 @@ const AUDIT_ARGS = ['audit', '--omit=dev', '--json'];
  * entry point with the Node binary already executing this file. No shim, no
  * shell, identical on every platform.
  *
- * `npm_execpath` is set by `npm run`, which is how CI and the package script
- * invoke this. The bundled path covers a direct `node scripts/...` run.
+ * **Everything the answer depends on is a parameter.** The first version took
+ * `platform` but resolved the bundled path against the real `process.execPath`
+ * and the real filesystem, so asking it for Windows behaviour on Linux gave
+ * neither — it threw, from a branch the host chose. Four tests passed on
+ * Windows and would have gone red on CI.
  */
-function npmInvocation(env = process.env, platform = process.platform) {
+function npmInvocation(options = {}) {
+  const {
+    env = process.env,
+    platform = process.platform,
+    execPath = process.execPath,
+    exists = fs.existsSync,
+  } = options;
+
+  // `npm run` sets npm_execpath to npm's own JS entry point, which is how CI
+  // and the package script get here. Checked for existence like the path
+  // below it: a stale value from a shell that outlived an npm upgrade would
+  // otherwise surface as "Cannot find module" wearing an audit failure.
+  //
+  // The basename test rejects yarn and pnpm, which set the same variable to
+  // their own entry point — running those with npm's arguments fails in a way
+  // that reads like a broken audit rather than the wrong package manager.
   const fromNpm = env.npm_execpath;
-  if (fromNpm && fromNpm.endsWith('.js')) {
-    return { command: process.execPath, args: [fromNpm, ...AUDIT_ARGS] };
+  if (fromNpm && path.basename(fromNpm) === 'npm-cli.js' && exists(fromNpm)) {
+    return { command: execPath, args: [fromNpm, ...AUDIT_ARGS] };
   }
 
-  const bundled = path.join(
-    path.dirname(process.execPath),
-    'node_modules',
-    'npm',
-    'bin',
-    'npm-cli.js'
-  );
-  if (fs.existsSync(bundled)) {
-    return { command: process.execPath, args: [bundled, ...AUDIT_ARGS] };
+  const bundled = bundledNpmCli(execPath, platform);
+  if (exists(bundled)) {
+    return { command: execPath, args: [bundled, ...AUDIT_ARGS] };
   }
 
   // Nothing left to invoke by path. A POSIX shell resolves `npm` from PATH on
@@ -93,7 +119,7 @@ function npmInvocation(env = process.env, platform = process.platform) {
         'Run this through `npm run security:audit` rather than invoking the script directly.'
     );
   }
-  return { command: 'npm', args: AUDIT_ARGS };
+  return { command: 'npm', args: [...AUDIT_ARGS] };
 }
 
 function runAudit() {
@@ -221,4 +247,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { npmInvocation, parseReport, AUDIT_ARGS, ALLOWLIST, FAIL_ON };
+module.exports = { npmInvocation, bundledNpmCli, parseReport, AUDIT_ARGS, ALLOWLIST, FAIL_ON };

@@ -5,7 +5,7 @@ const { execFileSync } = require('child_process');
 const ROOT = path.join(__dirname, '..', '..');
 const SCRIPT = path.join(ROOT, 'scripts', 'audit-dependencies.js');
 
-const { npmInvocation, AUDIT_ARGS } = require('../../scripts/audit-dependencies');
+const { npmInvocation, bundledNpmCli, AUDIT_ARGS } = require('../../scripts/audit-dependencies');
 
 /**
  * The gate could not run on Windows at all.
@@ -17,53 +17,167 @@ const { npmInvocation, AUDIT_ARGS } = require('../../scripts/audit-dependencies'
  * "Dependency audit could not be completed", which reads exactly like a real
  * finding. CI runs on Linux, which is why it survived PR #70.
  *
- * The fix runs npm's own JS entry point with the Node binary already executing
- * this file, so no shim and no shell is involved on any platform.
+ * Every case below injects `execPath`, `platform` and `exists`, so it asserts
+ * the same thing whichever machine runs it. The first version of these tests
+ * did not: they passed `platform: 'win32'` while the bundled lookup consulted
+ * the host filesystem, so four of them passed on Windows and would have thrown
+ * on CI.
  */
-describe('the audit invokes npm without a shell or a shim', () => {
-  const NODE = process.execPath;
+const WIN_NODE = 'C:\\Program Files\\nodejs\\node.exe';
+const NIX_NODE = '/usr/local/bin/node';
 
-  it('runs npm-cli.js with the current node binary when npm run told it where npm is', () => {
-    const { command, args } = npmInvocation(
-      { npm_execpath: '/somewhere/npm/bin/npm-cli.js' },
-      'win32'
+/** Filesystem stub: only the listed paths exist. */
+const only = (...present) => {
+  const set = new Set(present);
+  return (candidate) => set.has(candidate);
+};
+
+const none = () => false;
+
+describe('npm is located the same way regardless of the host running the test', () => {
+  it('puts npm-cli.js beside node.exe on Windows', () => {
+    expect(bundledNpmCli(WIN_NODE, 'win32')).toBe(
+      path.join('C:\\Program Files\\nodejs', 'node_modules', 'npm', 'bin', 'npm-cli.js')
     );
-    expect(command).toBe(NODE);
-    expect(args).toEqual(['/somewhere/npm/bin/npm-cli.js', ...AUDIT_ARGS]);
+  });
+
+  it('puts npm-cli.js under ../lib on POSIX, which is where it actually lives', () => {
+    // The original bug: a Windows-shaped join resolves to
+    // /usr/local/bin/node_modules/... which never exists, so the fallback was
+    // dead code on every Linux machine while looking perfectly healthy.
+    expect(bundledNpmCli(NIX_NODE, 'linux')).toBe(
+      path.join('/usr/local/bin', '..', 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js')
+    );
+    expect(bundledNpmCli(NIX_NODE, 'linux')).not.toContain(path.join('bin', 'node_modules', 'npm'));
+  });
+});
+
+describe('the audit invokes npm without a shell or a shim', () => {
+  it('runs npm-cli.js with the given node binary when npm run said where npm is', () => {
+    const execpath = '/somewhere/npm/bin/npm-cli.js';
+    const { command, args } = npmInvocation({
+      env: { npm_execpath: execpath },
+      platform: 'win32',
+      execPath: WIN_NODE,
+      exists: only(execpath),
+    });
+    expect(command).toBe(WIN_NODE);
+    expect(args).toEqual([execpath, ...AUDIT_ARGS]);
+  });
+
+  it('falls back to the bundled npm-cli.js when npm_execpath is unset', () => {
+    const bundled = bundledNpmCli(WIN_NODE, 'win32');
+    const { command, args } = npmInvocation({
+      env: {},
+      platform: 'win32',
+      execPath: WIN_NODE,
+      exists: only(bundled),
+    });
+    expect(command).toBe(WIN_NODE);
+    expect(args).toEqual([bundled, ...AUDIT_ARGS]);
   });
 
   it('never returns a .cmd, which node cannot execFile at all', () => {
-    const { command, args } = npmInvocation({}, 'win32');
+    const bundled = bundledNpmCli(WIN_NODE, 'win32');
+    const { command, args } = npmInvocation({
+      env: {},
+      platform: 'win32',
+      execPath: WIN_NODE,
+      exists: only(bundled),
+    });
     expect(command).not.toMatch(/\.cmd$/i);
     expect(args.some((a) => /\.cmd$/i.test(a))).toBe(false);
   });
 
-  it('never returns a bare npm on Windows, where PATH lookup finds only the shim', () => {
-    const { command } = npmInvocation({}, 'win32');
+  it('never returns a bare npm on Windows, where PATH finds only the shim', () => {
+    const bundled = bundledNpmCli(WIN_NODE, 'win32');
+    const { command } = npmInvocation({
+      env: {},
+      platform: 'win32',
+      execPath: WIN_NODE,
+      exists: only(bundled),
+    });
     expect(command).not.toBe('npm');
   });
 
-  it('ignores an npm_execpath that is not a JS entry point', () => {
-    // npm sets this to the .cmd shim in some older setups; running that under
-    // node would fail exactly the way this bug did.
-    const { command, args } = npmInvocation({ npm_execpath: 'C:\\npm\\npm.cmd' }, 'win32');
-    expect(args[0]).not.toMatch(/\.cmd$/i);
-    expect(command).toBe(NODE);
+  it('ignores an npm_execpath that is not npm-cli.js', () => {
+    // npm sets this to the .cmd shim in some older setups, and yarn and pnpm
+    // set it to their own entry point. Running any of those under node with
+    // npm's arguments fails in a way that reads like a broken audit rather
+    // than the wrong package manager.
+    const bundled = bundledNpmCli(WIN_NODE, 'win32');
+    for (const wrong of ['C:\\npm\\npm.cmd', '/usr/lib/yarn/bin/yarn.js', '/pnpm/pnpm.cjs']) {
+      const { args } = npmInvocation({
+        env: { npm_execpath: wrong },
+        platform: 'win32',
+        execPath: WIN_NODE,
+        exists: only(wrong, bundled),
+      });
+      expect(args[0]).toBe(bundled);
+    }
+  });
+
+  it('ignores an npm_execpath that no longer exists', () => {
+    // A shell that outlived an npm upgrade still exports the old path. Left
+    // untested, that surfaces as "Cannot find module" wearing an audit failure
+    // — the exact confusion this script exists to remove.
+    const stale = '/old/npm/bin/npm-cli.js';
+    const bundled = bundledNpmCli(NIX_NODE, 'linux');
+    const { args } = npmInvocation({
+      env: { npm_execpath: stale },
+      platform: 'linux',
+      execPath: NIX_NODE,
+      exists: only(bundled),
+    });
+    expect(args[0]).toBe(bundled);
+  });
+
+  it('falls back to npm on PATH on POSIX when nothing is on disk', () => {
+    const { command, args } = npmInvocation({
+      env: {},
+      platform: 'linux',
+      execPath: NIX_NODE,
+      exists: none,
+    });
+    expect(command).toBe('npm');
+    expect(args).toEqual(AUDIT_ARGS);
+  });
+
+  it('explains itself on Windows when nothing is on disk, rather than throwing ENOENT', () => {
+    expect(() =>
+      npmInvocation({ env: {}, platform: 'win32', execPath: WIN_NODE, exists: none })
+    ).toThrow(/npm run security:audit/);
+  });
+
+  it('hands back a fresh args array, never the shared constant', () => {
+    const { args } = npmInvocation({
+      env: {},
+      platform: 'linux',
+      execPath: NIX_NODE,
+      exists: none,
+    });
+    expect(args).not.toBe(AUDIT_ARGS);
+    args.push('--mutated');
+    expect(AUDIT_ARGS).toEqual(['audit', '--omit=dev', '--json']);
   });
 
   it('always carries the audit arguments, whichever route it takes', () => {
-    for (const env of [{ npm_execpath: '/x/npm-cli.js' }, {}]) {
-      for (const platform of ['win32', 'linux']) {
-        const { args } = npmInvocation(env, platform);
-        expect(args.slice(-AUDIT_ARGS.length)).toEqual(AUDIT_ARGS);
-      }
+    const cases = [
+      { env: { npm_execpath: '/x/npm-cli.js' }, platform: 'win32', execPath: WIN_NODE, exists: only('/x/npm-cli.js') }, // prettier-ignore
+      { env: {}, platform: 'win32', execPath: WIN_NODE, exists: only(bundledNpmCli(WIN_NODE, 'win32')) }, // prettier-ignore
+      { env: {}, platform: 'linux', execPath: NIX_NODE, exists: none },
+    ];
+    for (const options of cases) {
+      const { args } = npmInvocation(options);
+      expect(args.slice(-AUDIT_ARGS.length)).toEqual(AUDIT_ARGS);
     }
   });
 
   /**
-   * The assertion that would have caught this originally: not what the strings
-   * are, but whether the process can actually be spawned here. `--version`
-   * costs nothing and touches no network.
+   * The assertion that would have caught the original bug: not what the
+   * strings are, but whether the process can actually be spawned here. Uses
+   * the real environment, and `--version` so it costs nothing and touches no
+   * network.
    */
   it('names something this machine can actually execute', () => {
     const { command, args } = npmInvocation();

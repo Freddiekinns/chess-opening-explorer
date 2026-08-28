@@ -23,7 +23,24 @@ describe('sitemap lastmod tells the truth about the data', () => {
     if (value !== null) expect(value).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 
-  it('is the commit date of the last change to the opening data', () => {
+  it('is the commit date of the last change — but only where history can prove it', () => {
+    // This test used to assert the raw `git log` answer unconditionally, which
+    // is the *buggy* contract: on CI, which checks out at depth 1, that answer
+    // is today's date. It failed the moment the shallow guard started working,
+    // which is the guard doing its job rather than a regression.
+    const shallow =
+      execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
+        cwd: ROOT,
+        encoding: 'utf-8',
+      }).trim() === 'true';
+
+    if (shallow) {
+      // A shallow clone cannot distinguish the graft boundary from a real last
+      // change, so the only honest answer is none.
+      expect(dataLastModified()).toBeNull();
+      return;
+    }
+
     const expected = execFileSync(
       'git',
       ['log', '-1', '--format=%cs', '--', 'api/data/eco', 'api/data/popularity_stats.json'],

@@ -354,6 +354,23 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   `metadata` pair is an error, never a clean tree. Reasoning and the full
   triage: `docs/reviews/2026-08-28-dependency-security-scanning.md`.
 
+- **Never spawn `npm` by name from a build script.** npm is `npm.cmd` on
+  Windows, a batch shim: `execFileSync('npm', …)` throws ENOENT, and naming
+  `npm.cmd` explicitly is no better because Node refuses to `execFile` a `.cmd`
+  at all since the fix for CVE-2024-27980 and throws EINVAL. The audit gate did
+  the first of those and so exited 1 before auditing anything, printing
+  "Dependency audit could not be completed" — which reads like a real finding —
+  for every Windows contributor, while Linux CI stayed green.
+
+  `npmInvocation()` in `scripts/audit-dependencies.js` is the pattern: run npm's
+  own `npm-cli.js` with `process.execPath`, taking the path from `npm_execpath`
+  (which `npm run` sets) and falling back to the copy bundled beside the node
+  binary. **Not `shell: true`** — the argv is fixed today, but a shell turns any
+  later interpolation into an injection, and a security gate is the wrong place
+  for that. `audit-dependencies.test.js` asserts the invocation is spawnable on
+  the machine running it, which is the check that would have caught this
+  originally.
+
 ### Design system
 
 - **`design-system/` is the canonical reference for the Warm Editorial Dark

@@ -25,13 +25,15 @@ type SeoEntry = [
 ];
 type SeoLookup = Record<string, SeoEntry>;
 
-// The lookup is sharded into 64 files (mean 138 KB, largest 179 KB) by
+// The lookup is sharded into 96 files (mean 162 KB, largest 224 KB) by
 // scripts/generate-seo-lookup.js so a request fetches — and this isolate then
-// holds — only the shard containing its FEN, rather than the full 8.8 MB.
-// A crawler sweeping every opening will eventually pull all 64 into one
+// holds — only the shard containing its FEN, rather than the full 15.6 MB.
+// A crawler sweeping every opening will eventually pull all 96 into one
 // isolate; that is the deliberate ceiling, and it is well inside the edge
-// memory limit.
-const SHARD_COUNT = 64;
+// memory limit. It was 64 until the ancestor and related-opening links landed
+// and pushed the largest shard to 322 KB — the split changes what one request
+// pays for, not what a full sweep costs.
+const SHARD_COUNT = 96;
 
 /** djb2 string hash — MUST stay in sync with scripts/generate-seo-lookup.js. */
 function shardForFen(fen: string, shardCount = SHARD_COUNT): number {

@@ -1,16 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
+const TreeService = require('../packages/api/src/services/tree-service');
+
 const DATA_DIR = path.join(__dirname, '..', 'api', 'data');
 const ECO_DIR = path.join(DATA_DIR, 'eco');
 const OUTPUT_DIR = path.join(__dirname, '..', 'packages', 'web', 'public', 'seo-lookup');
 
 const ECO_FILES = ['ecoA.json', 'ecoB.json', 'ecoC.json', 'ecoD.json', 'ecoE.json'];
 
-// 64 shards keep each file ~120 KB. The payload carries the opening's own
-// description and win rates now, not just its name, so the middleware can put
-// real content in the HTML instead of a spinner — see TASK009's follow-up.
-const SHARD_COUNT = 64;
+// 96 shards keep each file ~160 KB. The payload carries the opening's own
+// description, win rates and now its ancestor and related-opening links, so
+// the middleware can put real content and real links in the HTML instead of a
+// spinner. It was 64 until the links landed and pushed the largest shard to
+// 322 KB; the total bytes an isolate holds are unchanged by the split.
+const SHARD_COUNT = 96;
 
 /**
  * The first four FEN fields are the position proper; the last two are move
@@ -139,27 +143,107 @@ function resolveCanonicals(rows) {
   return { canonicalCount, ambiguousCount };
 }
 
+// Eight is what fits one readable line in the pre-render.
+const MAX_RELATED = 8;
+
+// The breadcrumb keeps the family root and the two nearest ancestors.
+//
+// Uncapped it is not a breadcrumb: even deduplicated by name the chains average
+// 8.5 entries and run to 33, which is an unreadable row and a 454 KB shard. The
+// root is the link worth having — it is where family authority accumulates —
+// and the nearest two are the ones that give a reader their bearings. The rungs
+// in between cost bytes and say nothing.
+const MAX_ANCESTORS = 3;
+
+/**
+ * The links the pre-rendered page carries.
+ *
+ * `OpeningNavigator` and `OpeningTree` draw the same links after hydration.
+ * Until now that was the *only* place they existed, so a crawler that did not
+ * run the JS found 12,106 dead ends and the sitemap was Google's sole route
+ * into the corpus.
+ *
+ * Siblings and children go into one list rather than two, ordered by games:
+ * the row renders as a single sentence, so grouping siblings first would put a
+ * line nobody plays ahead of one they do. A node with no recorded games sorts
+ * last rather than first — `|| 0` is doing real work here.
+ */
+function buildLinks(treeContext) {
+  if (!treeContext) return { ancestors: [], related: [], elided: false };
+
+  // Deduplicated by *consecutive name*, keeping the deeper position — the same
+  // rule `deduplicateAncestors` in lib/openingBook.ts applies to the breadcrumb
+  // React draws, because these two have to show the same trail.
+  //
+  // Deduplicating by FEN instead removes almost nothing: a chain repeats names,
+  // not positions, so the raw list averages 9.7 entries and the first attempt
+  // at this shipped a ten-deep breadcrumb and a 485 KB shard.
+  const ancestors = [];
+  for (const node of treeContext.ancestors || []) {
+    if (!node || !node.fen) continue;
+    const name = node.name || 'Unknown Opening';
+    if (ancestors.length > 0 && ancestors[ancestors.length - 1][1] === name) {
+      ancestors[ancestors.length - 1] = [node.fen, name];
+    } else {
+      ancestors.push([node.fen, name]);
+    }
+  }
+
+  const related = [...(treeContext.siblings || []), ...(treeContext.children || [])]
+    .filter((node) => node && node.fen)
+    .sort((a, b) => (b.games || 0) - (a.games || 0))
+    .slice(0, MAX_RELATED)
+    .map((node) => [node.fen, node.name || 'Unknown Opening']);
+
+  // Root, then the two nearest. `elided` tells the middleware to draw an
+  // ellipsis rather than implying the trail is complete.
+  const elided = ancestors.length > MAX_ANCESTORS;
+  const trail = elided ? [ancestors[0], ...ancestors.slice(-(MAX_ANCESTORS - 1))] : ancestors;
+
+  return { ancestors: trail, related, elided };
+}
+
+function isEmptyArray(value) {
+  return Array.isArray(value) && value.length === 0;
+}
+
+/** The compact positional payload, with trailing nulls trimmed off the end. */
+function buildEntry(row, links) {
+  const entry = [
+    row.name,
+    row.eco,
+    row.moves,
+    row.description,
+    row.games,
+    row.white,
+    row.draw,
+    row.black,
+    row.canonical,
+    row.sharesName ? 1 : null,
+    links.ancestors,
+    links.related,
+    links.elided ? 1 : null,
+  ];
+  // An empty array is not null, so a page with ancestors but no related lines
+  // keeps slot 10 and drops slot 11 — the indices below 10 never shift.
+  while (
+    entry.length > 4 &&
+    (entry[entry.length - 1] == null || isEmptyArray(entry[entry.length - 1]))
+  ) {
+    entry.pop();
+  }
+  return entry;
+}
+
 function generateSeoLookup() {
   const rows = readOpenings();
   const { canonicalCount, ambiguousCount } = resolveCanonicals(rows);
 
+  const treeService = new TreeService();
   const shards = Array.from({ length: SHARD_COUNT }, () => ({}));
   for (const row of rows) {
-    // Compact positional payload; trailing nulls are trimmed off the end.
-    const entry = [
-      row.name,
-      row.eco,
-      row.moves,
-      row.description,
-      row.games,
-      row.white,
-      row.draw,
-      row.black,
-      row.canonical,
-      row.sharesName ? 1 : null,
-    ];
-    while (entry.length > 4 && entry[entry.length - 1] == null) entry.pop();
-    shards[shardForFen(row.fen)][row.fen] = entry;
+    const links = buildLinks(treeService.getTreeContext(row.fen));
+    shards[shardForFen(row.fen)][row.fen] = buildEntry(row, links);
   }
 
   fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
@@ -180,6 +264,8 @@ function generateSeoLookup() {
   console.log(`  Canonical (indexable) pages: ${canonicalCount}`);
   console.log(`  Duplicate positions canonicalised: ${rows.length - canonicalCount}`);
   console.log(`  Titles disambiguated by move list: ${ambiguousCount}`);
+  const linked = rows.filter((row) => shards[shardForFen(row.fen)][row.fen].length > 10).length;
+  console.log(`  Pages carrying internal links: ${linked}`);
   console.log(
     `  Total: ${totalKB.toFixed(1)} KB, mean ${(totalKB / SHARD_COUNT).toFixed(1)} KB, largest ${maxKB.toFixed(1)} KB`
   );
@@ -193,4 +279,14 @@ if (require.main === module) {
   generateSeoLookup();
 }
 
-module.exports = { shardForFen, positionKey, resolveCanonicals, readOpenings, SHARD_COUNT };
+module.exports = {
+  shardForFen,
+  positionKey,
+  resolveCanonicals,
+  readOpenings,
+  buildLinks,
+  buildEntry,
+  MAX_RELATED,
+  MAX_ANCESTORS,
+  SHARD_COUNT,
+};

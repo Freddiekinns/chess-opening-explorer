@@ -45,24 +45,50 @@ function git(args) {
  * always says now is one Google stops reading.
  *
  * It comes from git rather than the filesystem because **mtime does not survive
- * CI**. A fresh clone stamps every file with the checkout time, and
- * `vercel:prepare` rewrites the data files before this script runs, so an
- * mtime-based version reported the build date on every deploy — passing its own
- * tests locally while doing exactly the thing it was written to stop.
+ * CI**: a fresh clone stamps every file with the checkout time, and
+ * `vercel:prepare` rewrites the data files before this script runs.
  *
- * Returns null when git cannot answer: on a shallow clone whose window contains
- * no commit touching these paths, `git log` is silent. **Omitting `lastmod` is
- * the correct answer there.** An absent date is neutral; an invented one is the
- * fabricated-data trap in sitemap form. `lastmodOmissionReason` says which case
- * fired, so the build log distinguishes "no date" from "feature not working".
+ * And git only answers when the history is long enough to know. In a shallow
+ * clone the oldest available commit appears to introduce every file, so
+ * `git log -1 -- api/data` returns that graft boundary rather than the real
+ * last change. Vercel clones about ten commits deep, and production duly
+ * shipped 2026-07-27 on all 12,108 URLs where the truth is 2026-06-06 — a
+ * plausible wrong date that slides forward with every deploy, which is the
+ * drifting `lastmod` this function exists to prevent. Reproduced by cloning
+ * this repo at increasing depths: depth 1 returns today, depth 10 returns
+ * 2026-07-27, depth 30 returns the truth.
+ *
+ * So the commit is checked against `.git/shallow`. If git's answer *is* a
+ * boundary, the history cannot support it and the tag is omitted — an absent
+ * date is neutral, an invented one is the fabricated-data trap in sitemap form.
+ * `lastmodOmissionReason` names the cause in the build log, so "no date" is
+ * distinguishable from "feature not working". Every dependency is injected so
+ * the branches are testable without a real clone.
  */
-function dataLastModified() {
+function lastmodFromGit(io = {}) {
+  const {
+    commitSha = () => git(['rev-list', '--max-count=1', 'HEAD', '--', ...DATA_PATHS]),
+    commitDate = (sha) => git(['log', '-1', '--format=%cs', sha]),
+    shallowBoundaries = () => {
+      const file = path.join(__dirname, '..', '.git', 'shallow');
+      return fs.existsSync(file) ? fs.readFileSync(file, 'utf-8').split('\n').filter(Boolean) : [];
+    },
+  } = io;
+
   try {
-    const out = git(['log', '-1', '--format=%cs', '--', ...DATA_PATHS]);
-    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null;
+    const sha = (commitSha() || '').trim();
+    if (!sha) return null;
+    if (shallowBoundaries().some((boundary) => boundary.trim() === sha)) return null;
+
+    const date = (commitDate(sha) || '').trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null;
   } catch {
     return null;
   }
+}
+
+function dataLastModified() {
+  return lastmodFromGit();
 }
 
 /**
@@ -77,7 +103,7 @@ function dataLastModified() {
 function lastmodOmissionReason() {
   try {
     return git(['rev-parse', '--is-shallow-repository']) === 'true'
-      ? 'shallow clone — no commit touching api/data in its window'
+      ? 'shallow clone — its history cannot date api/data, so no date is claimed'
       : 'git found no commit touching api/data';
   } catch {
     return 'git unavailable';
@@ -206,6 +232,7 @@ if (require.main === module) {
 module.exports = {
   generateSitemaps,
   dataLastModified,
+  lastmodFromGit,
   lastmodOmissionReason,
   tierFor,
   URLS_PER_SITEMAP,

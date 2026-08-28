@@ -54,6 +54,7 @@
     "test:unit": "jest tests/unit",
     "test:integration": "jest tests/integration",
     "test:setup": "jest tests/setup",
+    "security:audit": "node scripts/audit-dependencies.js",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky"
@@ -146,12 +147,12 @@
     "@google-cloud/vertexai": "^1.10.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@xmldom/xmldom": "^0.9.12",
     "dotenv": "^17.2.0",
     "google-auth-library": "^10.1.0",
     "googleapis": "^153.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "sqlite3": "^5.1.7",
-    "xmldom": "^0.6.0"
+    "sqlite3": "^6.0.1"
   }
 }

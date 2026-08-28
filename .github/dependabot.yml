@@ -1,0 +1,72 @@
+version: 2
+
+# Grouping is the whole point here. Ungrouped, a workspace this size opens
+# twenty PRs a week and they get ignored as a block; the security updates that
+# matter then arrive looking exactly like the noise. So routine version bumps
+# are batched into two PRs per ecosystem, and security updates are left
+# deliberately ungrouped so they show up on their own and read as urgent.
+#
+# Majors are not ignored. sqlite3 6 (which clears the tar/node-gyp build chain)
+# and react-router 7 are both known outstanding majors — see
+# docs/reviews/2026-08-28-dependency-security-scanning.md. They need real work
+# rather than a merge, and a PR each is how they stay visible.
+
+updates:
+  # One lockfile at the root covers every workspace, so a single npm entry
+  # picks up packages/web, packages/api, packages/shared and the tools.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/London
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      npm-production:
+        applies-to: version-updates
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      npm-development:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+
+  # tools/analysis is the Lichess popularity pipeline.
+  - package-ecosystem: pip
+    directory: /tools/analysis
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      python:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+
+  # Pinned action majors go stale quietly and are a supply-chain surface in
+  # their own right. Monthly, all in one PR.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns:
+          - '*'

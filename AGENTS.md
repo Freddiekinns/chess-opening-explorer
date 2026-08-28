@@ -332,6 +332,28 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   `packages/api`'s lint script is `eslint src/`; backend tests live at the repo
   root, not `packages/api/tests/`.
 
+- **The dependency gate is scoped on purpose, and its allowlist expires.**
+  `npm run security:audit` (`scripts/audit-dependencies.js`, run by CI) fails on
+  high and critical advisories in **production** dependencies only. Dev-only
+  findings — the vitest/vite/esbuild dev-server class — are Dependabot's job,
+  not a merge blocker, because a gate that must be overridden every PR teaches
+  the override. **The allowlist is empty, and the bar for adding to it is
+  "unreachable from production _and_ no upgrade exists".** It briefly held
+  `sqlite3`'s native build chain (`tar`, `node-gyp`, `cacache`,
+  `make-fetch-happen`) on the unreachability argument alone, which was true and
+  still the wrong answer — `sqlite3@6` cleared all five including the only
+  critical in the tree. Every entry carries a reason and the condition that
+  removes it, and **an entry whose advisory has gone fails the run**: that check
+  is what forced the upgrade rather than letting the list sit there, and without
+  it the gate quietly becomes decorative. Entries are keyed by package name, not
+  advisory id, because node-tar accrues new GHSA ids faster than a list would
+  stay current. **It fails closed**: `npm audit` answers a registry or proxy
+  failure with a JSON error object and no `vulnerabilities` key, and reading
+  that as an empty result made the gate report "no blocking advisories" and exit
+  0 at the one moment it had checked nothing. A missing `vulnerabilities`/
+  `metadata` pair is an error, never a clean tree. Reasoning and the full
+  triage: `docs/reviews/2026-08-28-dependency-security-scanning.md`.
+
 ### Design system
 
 - **`design-system/` is the canonical reference for the Warm Editorial Dark

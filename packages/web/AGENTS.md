@@ -57,7 +57,7 @@ the wait it replaced. **Change one ranking and you change both.**
 The local pass is paint-ahead and never the final answer — the server sees all
 12,377 openings against the slice's popular thousand, and it can read a
 misspelling. One request per query: the plain-search fallback that used to
-follow an empty semantic search is gone (see the root `AGENTS.md`).
+follow an empty semantic search is gone (see the `search-ranking` skill).
 
 ## Imports
 

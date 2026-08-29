@@ -81,16 +81,28 @@ const NO_STATS_FEN = 'rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 8'
 const SHARED_A = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1';
 const SHARED_B = 'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2';
 
+// A name carrying markup, so the escaping test has something to bite on.
+const XSS_FEN = 'rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq h3 0 1';
+// A page whose breadcrumb was cut to root plus the nearest two.
+const ELIDED_FEN = 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2';
+// Flagged elided with a single ancestor. The generator caps at three so it
+// cannot currently produce this, but the cap and the renderer live in separate
+// files and only this fixture stops them drifting apart silently.
+const LONE_ELIDED_FEN = 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1';
+
 const DESCRIPTION =
   'The Amar Opening is a highly unorthodox and provocative flank move, immediately placing a knight on the rim of the board. ' +
   'It cedes central control to Black in exchange for surprise value, aiming to steer the game into unusual channels.';
 
 const SHARD = {
-  [AMAR_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 1533432, 0.4284, 0.0498, 0.5216],
+  [AMAR_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 1533432, 0.4284, 0.0498, 0.5216, null, null, [[SHARED_A, "King's Pawn Game"]], [[SHARED_B, 'Paris Gambit'], [DUPLICATE_FEN, 'Amar Gambit']]], // prettier-ignore
   [NO_STATS_FEN]: ['Quiet Line', 'A00', '1. Nh3 e5', 'A sideline with no recorded games.'],
   [DUPLICATE_FEN]: ['Amar Opening', 'A00', '1. Nh3', DESCRIPTION, 12, 0.5, 0.1, 0.4, AMAR_FEN],
   [SHARED_A]: ["King's Pawn Game", 'C20', '1. e4', 'The most played first move.', 3778178876, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
   [SHARED_B]: ["King's Pawn Game", 'C20', '1. e4 e5', 'Black answers in kind.', 1501326875, 0.5, 0.05, 0.45, null, 1], // prettier-ignore
+  [XSS_FEN]: ['Nasty Line', 'A00', '1. h4', 'A sideline.', 5, 0.5, 0.1, 0.4, null, null, [], [['f', '<script>alert(1)</script>']]], // prettier-ignore
+  [ELIDED_FEN]: ['Deep Line', 'B90', '1. e4 c5', 'A deep line.', 99, 0.5, 0.1, 0.4, null, null, [[SHARED_A, 'Root'], [SHARED_B, 'Parent']], [], 1], // prettier-ignore
+  [LONE_ELIDED_FEN]: ['Lone Line', 'A04', '1. Nf3', 'One ancestor.', 7, 0.5, 0.1, 0.4, null, null, [[SHARED_A, 'Only Root']], [], 1], // prettier-ignore
 };
 
 let middleware;
@@ -122,10 +134,11 @@ beforeEach(() => {
       );
       return new Response(JSON.stringify(subset), { status: 200 });
     }
-    if (url.includes('/index.html')) {
-      return new Response(indexHtml, { status: 200 });
-    }
-    return new Response('', { status: 404 });
+    // Everything else is a pass-through to the origin. vercel.json rewrites
+    // every path that is not an API route or a static SEO file to index.html,
+    // so the origin answers 200 here — a mock that 404d instead would make a
+    // working pass-through look like a broken one.
+    return new Response(indexHtml, { status: 200 });
   });
 });
 
@@ -385,5 +398,153 @@ describe('SEO middleware — untouched routes', () => {
     const res = await middleware(new Request('https://openingbook.vercel.app/opening/anything'));
     expect(res.status).toBe(308);
     expect(res.headers.get('location')).toContain('https://openingbook.xyz/');
+  });
+});
+
+describe('SEO middleware — paths that are not pages', () => {
+  /**
+   * App.tsx renders LandingPage for `*`, so before this branch every typo and
+   * every stale URL answered 200 with the landing page behind it. Search
+   * Console was reporting 42 of them as soft 404s.
+   */
+  it('404s a path that is not a route instead of serving the landing page', async () => {
+    const res = await get('/some-random-page');
+    expect(res.status).toBe(404);
+    const html = await res.text();
+    expect(html).toContain('Page not found');
+  });
+
+  it.each([['/'], ['/analyse'], ['/repertoire']])('still serves %s at 200', async (pathname) => {
+    const res = await get(pathname);
+    expect(res.status).toBe(200);
+  });
+
+  /**
+   * The matcher already excludes every static file the build emits, but a 404
+   * served over a real asset is a worse failure than a soft 404 — so anything
+   * that looks like a file is handed straight to the origin.
+   */
+  it('passes a path with a file extension through to the origin', async () => {
+    const res = await get('/manifest.webmanifest');
+    expect(res.status).not.toBe(404);
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.objectContaining({ url: 'https://openingbook.xyz/manifest.webmanifest' })
+    );
+  });
+
+  it('does not 404 an opening that exists', async () => {
+    const res = await get(openingUrl(AMAR_FEN));
+    expect(res.status).toBe(200);
+  });
+});
+
+describe('SEO middleware — trailing slashes', () => {
+  /**
+   * React Router treats `/analyse/` and `/analyse` as one route, so a bare
+   * string compare against STATIC_ROUTES 404s a live page. The first version
+   * of the not-found branch did exactly that: `/analyse/` and `/repertoire/`
+   * went from 200 to a hard 404, on a change whose whole purpose is indexing.
+   *
+   * Redirected rather than served, so each page keeps one URL.
+   */
+  it.each([['/analyse/'], ['/repertoire/'], ['/personal-explorer/']])(
+    'redirects %s to its canonical form instead of 404ing it',
+    async (pathname) => {
+      const res = await get(pathname);
+      expect(res.status).toBe(308);
+      expect(res.headers.get('location')).toBe(`https://openingbook.xyz${pathname.slice(0, -1)}`);
+    }
+  );
+
+  it('keeps the query string when it redirects', async () => {
+    const res = await middleware(new Request('https://openingbook.xyz/analyse/?user=fred'));
+    expect(res.status).toBe(308);
+    expect(res.headers.get('location')).toBe('https://openingbook.xyz/analyse?user=fred');
+  });
+
+  it('leaves the root alone — / is not a trailing slash', async () => {
+    const res = await get('/');
+    expect(res.status).toBe(200);
+  });
+
+  it('still 404s an unknown path that happens to end in a slash', async () => {
+    const res = await get('/no-such-page/');
+    expect(res.status).toBe(308);
+    const followed = await get('/no-such-page');
+    expect(followed.status).toBe(404);
+  });
+
+  it('redirects a slashed opening URL rather than 404ing the position', async () => {
+    const res = await get(`${openingUrl(AMAR_FEN)}/`);
+    expect(res.status).toBe(308);
+    expect(res.headers.get('location')).toBe(`https://openingbook.xyz${openingUrl(AMAR_FEN)}`);
+  });
+});
+
+describe('SEO middleware — internal links in the pre-render', () => {
+  /**
+   * The navigator links exist only in the React render, so the pre-hydration
+   * body was a dead end and the sitemap was Google's only route into the
+   * corpus. 3,615 pages sat in "Discovered - currently not indexed".
+   */
+  const rootOf = (html) => html.slice(html.indexOf('<div id="root">'), html.indexOf('</body>'));
+
+  it('renders the ancestor breadcrumb as real anchors', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+
+    expect(body).toContain('Part of:');
+    expect(body).toContain(`href="/opening/${encodeURIComponent(SHARED_A)}"`);
+    expect(body).toContain("King's Pawn Game");
+  });
+
+  it('renders the related lines as real anchors', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+
+    expect(body).toContain('Related lines:');
+    expect(body).toContain(`href="/opening/${encodeURIComponent(SHARED_B)}"`);
+    expect(body).toContain('Paris Gambit');
+    expect(body).toContain('Amar Gambit');
+  });
+
+  it('escapes a name that contains markup rather than injecting it', async () => {
+    const html = await (await get(openingUrl(XSS_FEN))).text();
+    expect(html).not.toContain('<script>alert');
+    expect(html).toContain('&lt;script&gt;');
+  });
+
+  it('marks a cut trail with an ellipsis rather than implying it is complete', async () => {
+    const body = rootOf(await (await get(openingUrl(ELIDED_FEN))).text());
+    expect(body).toContain('Part of:');
+    expect(body).toContain('…');
+  });
+
+  it('does not dangle an ellipsis off a one-item trail', async () => {
+    // "Part of: Only Root › …" trailing off into nothing, in the HTML a
+    // crawler reads. Unreachable from today's generator, which is exactly why
+    // it needs a fixture rather than a comment.
+    const body = rootOf(await (await get(openingUrl(LONE_ELIDED_FEN))).text());
+    expect(body).toContain('Only Root');
+    expect(body).not.toContain('…');
+  });
+
+  it('does not draw an ellipsis on a complete trail', async () => {
+    const body = rootOf(await (await get(openingUrl(AMAR_FEN))).text());
+    const partOf = body.slice(body.indexOf('Part of:'), body.indexOf('Related lines:'));
+    expect(partOf).not.toContain('…');
+  });
+
+  it('omits both rows entirely for an opening with no links', async () => {
+    const body = rootOf(await (await get(openingUrl(NO_STATS_FEN))).text());
+
+    expect(body).toContain('Quiet Line');
+    expect(body).not.toContain('Part of:');
+    expect(body).not.toContain('Related lines:');
+  });
+
+  it('leaves the body well-formed with the link rows present', async () => {
+    const html = await (await get(openingUrl(AMAR_FEN))).text();
+    const body = html.slice(html.indexOf('<body>'), html.indexOf('</body>'));
+    expect((body.match(/<div/g) || []).length).toBe((body.match(/<\/div>/g) || []).length);
+    expect((body.match(/<a /g) || []).length).toBe((body.match(/<\/a>/g) || []).length);
   });
 });

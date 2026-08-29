@@ -100,3 +100,51 @@ describe('description is not a fuzzy search key', () => {
     expect(keys.sort()).toEqual(['name', 'style_tags']);
   });
 });
+
+describe('the middleware reads the shared route list', () => {
+  /**
+   * The Record<StaticRoute, ReactElement> in App.tsx stops the app and the
+   * constant drifting. Nothing but this stops the *middleware* quietly going
+   * back to a hardcoded list, which is how it would start 404ing a real page.
+   */
+  const source = read('middleware.ts');
+
+  test('middleware.ts imports STATIC_ROUTES from siteConfig', () => {
+    expect(source).toMatch(
+      /import\s*{[^}]*STATIC_ROUTES[^}]*}\s*from\s*'\.\/packages\/web\/src\/lib\/siteConfig'/s
+    );
+  });
+
+  test('middleware.ts does not keep its own literal route list', () => {
+    expect(source).not.toMatch(/\[\s*'\/'\s*,\s*'\/analyse'/);
+  });
+});
+
+describe('/personal-explorer redirects at the edge, not in the browser', () => {
+  /**
+   * It used to render a component that called window.location.replace, so the
+   * URL answered 200 and then moved — the same "status that lies about what
+   * this URL is" failure as a soft 404, and Google reads a 200-then-client-
+   * redirect as a weak signal where a 301 is unambiguous. Vercel resolves
+   * redirects before middleware, so config is the right home for it.
+   */
+  const vercel = JSON.parse(read('vercel.json'));
+  const app = read('packages/web/src/App.tsx');
+
+  test('vercel.json redirects it permanently to /analyse', () => {
+    const rule = (vercel.redirects || []).find((r) => r.source === '/personal-explorer');
+    expect(rule).toBeDefined();
+    expect(rule.destination).toBe('/analyse');
+    expect(rule.permanent).toBe(true);
+  });
+
+  test('the www redirect it was modelled on is still there', () => {
+    const sources = (vercel.redirects || []).map((r) => r.source);
+    expect(sources).toContain('/:path*');
+  });
+
+  test('App.tsx no longer routes it', () => {
+    expect(app).not.toContain('/personal-explorer');
+    expect(app).not.toContain('AnalyseRedirect');
+  });
+});

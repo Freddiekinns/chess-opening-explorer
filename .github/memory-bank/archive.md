@@ -856,3 +856,52 @@ the JS sort changed nothing at all.
 6,010 of 12,377 pages changed; #1 names the variation on 47.7% → 54.2% of
 sub-variation pages, top-3 49.5% → 55.7%, contamination 0%, median
 pages-per-video 11 → 6. Coverage 72.7% → 72.1%, top-200 183 → 178.
+
+## The corpus had no crawl graph — full activeContext text (2026-08-28)
+
+The July de-indexing fix worked — production serves real pre-hydration content
+and all 12,377 openings have their own description — but impressions did not
+recover. Search Console, 90 days to 2026-08-26: 5,750 pages indexed earning
+4,810 impressions at average position 12. **Indexed and not served.** Nothing
+linked into the corpus: the navigator links existed only in the React render, so
+the sitemap was Google's sole route in and 3,615 pages sat in "Discovered —
+currently not indexed".
+
+**Shipped and verified live** (PRs #80, #81, #82): ancestor and related-opening
+links in the pre-render (`SeoEntry` slots 10-12, built by `TreeService`);
+unknown paths 404 via a shared `STATIC_ROUTES` constant `App.tsx` type-checks
+against, with trailing slashes 308ing to the canonical form;
+`/personal-explorer` a `vercel.json` 301; link targets mapped through
+canonicals; `SHARD_COUNT` 64 → 96. The audit gate now runs on Windows.
+
+**Four corrections the design missed, all found by running it, all recorded in
+`docs/proposals/2026-08-28-crawl-graph-design.md` §9.** Ancestor chains average
+9.7 not 2.6 (the sample was ecoA's shallow head), so the breadcrumb dedupes by
+consecutive name like `deduplicateAncestors` and caps at root plus two.
+`lastmod` was wrong twice — mtime does not survive CI, then `git log` returned
+the shallow-clone graft boundary, shipping 2026-07-27 where the truth is
+2026-06-06. **Production now emits no `lastmod` at all**, deliberately.
+
+The recurring failure was verifying on the machine at hand: a Windows-only green
+suite, a Linux-only wrong path, a shallow-clone-only wrong date. Both rules are
+in `AGENTS.md` now.
+
+Success metric: "Discovered — currently not indexed", 3,615 on 2026-08-28,
+re-checked in four to eight weeks. Not impressions.
+
+## Compressed out of progress.md (2026-08-29)
+
+- **One search behaviour, not three — and ECO codes actually work** (2026-08-03,
+  on `claude/player-details-layout-qxa1mo`): three fetches, two debounces and
+  two no-results strings became `useOpeningSearch`; only the hero had expanded
+  abbreviations. Exposed that `eco` is not a Fuse key, so `B90` gave 0 results
+  wherever there was no local index. Saved openings now win ties.
+- **Mobile search overlay closes on tab navigation** (2026-08-03) and **the
+  filter sheet's grabber actually drags** (2026-08-02): both were affordances
+  that looked real and did nothing — the overlay outlived the tab that
+  navigated, and a 36×4 pill promised a drag on a device with no Escape key.
+- **Analyse summary cards rebuilt into one row** (2026-08-02): reverses phase 5
+  §3 on composition. Exposed a latent defect — W/D/L were tallied inside the
+  classified branch, so a real result with an unrecognised opening vanished.
+- **TopBar search field sized to its own panel**, **Discover's empty repertoire
+  slot got its box back** (2026-08-02).

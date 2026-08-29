@@ -284,6 +284,29 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   the machine running it, which is the check that would have caught this
   originally.
 
+- **Regenerate `package-lock.json` with npm 10, not whatever npm you have.** CI
+  pins Node 20, so the lockfile has to satisfy that npm. A local npm 11 drops
+  nested `node_modules/<pkg>/node_modules/*` entries when it rewrites the file,
+  and CI's `npm ci` then refuses it outright —
+  `Missing: picomatch@4.0.7 from lock file`, every job dead at install in about
+  sixteen seconds. The local tree is wrong too, not just the lockfile:
+  `npm ls picomatch --all` says `invalid: picomatch@2.3.2` against tinyglobby's
+  `^4.0.4`, which reaches the tree through `sqlite3` → `node-gyp`.
+
+  Restore the lockfile from `origin/main` first, then
+  `npx -y npm@10.8.2 install`, and confirm with `npx -y npm@10.8.2 ci` before
+  pushing. **Never `npm install --package-lock-only`** — it drops nested entries
+  even on npm 10, which is what caused this in the first place. If you install
+  with `--ignore-scripts`, follow it with `npm rebuild sqlite3` or the native
+  binding is missing and `tools/video-pipeline` tests fail to run.
+
+- **A Dependabot PR is tested against the `main` of the day it opened.** Run
+  `gh pr update-branch` before believing its CI. #75 went green having silently
+  lost two tests — its branch predated the commit that added them, and a test
+  that vanishes is not a test that fails. Compare per-file test counts against
+  `main`, not the total. Full triage:
+  `docs/reviews/2026-08-29-dependabot-triage.md`.
+
 - **A path computed _for_ a platform must use that platform's path module** —
   `path.win32` or `path.posix`, never the ambient `path`. On Linux `path` is
   `path.posix`, which does not treat a backslash as a separator, so

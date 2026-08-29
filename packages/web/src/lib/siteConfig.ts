@@ -3,6 +3,21 @@ export const PRIMARY_SITE_URL = 'https://openingbook.xyz';
 export const PRIMARY_SITE_HOST = 'openingbook.xyz';
 export const LEGACY_VERCEL_HOST = 'openingbook.vercel.app';
 
+/**
+ * Every path that is a real page and is not an opening.
+ *
+ * `App.tsx` builds its route table from this and `middleware.ts` decides what
+ * to 404 from it, so the two cannot drift: the `Record<StaticRoute, ...>` in
+ * App.tsx makes adding a route without listing it here a compile error, and
+ * `repo-invariants.test.js` asserts the middleware still reads it.
+ *
+ * `/opening/:fen` is deliberately absent — the middleware matches it by prefix
+ * and answers from the seo-lookup shard, which is the only thing that knows
+ * whether a given position exists.
+ */
+export const STATIC_ROUTES = ['/', '/analyse', '/repertoire'] as const;
+export type StaticRoute = (typeof STATIC_ROUTES)[number];
+
 export function buildSiteUrl(pathname = '/'): string {
   return new URL(pathname, PRIMARY_SITE_URL).toString();
 }

@@ -4,6 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
+  indexed pages earned 4,810 impressions in 90 days because nothing linked into
+  the corpus. Ancestor and related-opening links now render before hydration;
+  non-pages 404 and trailing slashes 308 via a shared `STATIC_ROUTES`;
+  `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
+  twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
+  Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
 - **Video matching stopped trusting descriptions and stopped losing its corpus**
   (2026-08-10): a "watch my other video" link scored +60 and bypassed the
   variation guard; rematch re-scored only past winners, so a better scorer could
@@ -79,22 +86,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, so shared-module tests live in the web suite; and its barrels
   export without extensions, so `dist/index.js` is unimportable from Node ESM.
-- **Video programme**: enable the monthly refresh Action (user: commit
-  `tools/data/videos.sqlite` + confirm `YOUTUBE_API_KEY` secret); then V4
-  shelves, V5/V6 taxonomy + chapter matching, studies data work.
-- **Search is not a real combobox** — its biggest remaining gap. No
-  `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
-  region, so a screen-reader user gets no signal when results arrive.
-- **Toasts need one host, not one per component.** Every `useRepertoireToast`
-  caller renders its own `.toast` at one fixed slot, so two within 4s cover an
-  Undo (2026-08-04).
+- **Video programme**: enable the monthly refresh Action (commit
+  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`); then V4-V6, studies.
+- **Search is not a real combobox** — no combobox/listbox roles,
+  `aria-expanded`, `aria-activedescendant` or live region. Biggest a11y gap.
+- **Toasts need one host, not one per component**: two within 4s cover an Undo
+  (2026-08-04).
 - **Search returns near-duplicate names**: "najdorf" gives four rows reading
   "Sicilian Defense: Najdorf Variation", separated only by ECO — a data problem.
-- **Mobile Discover shows no facet chips**: "Filters (2)" hides which are on.
-- **TASK006 — Coverage**: backend 90%+, frontend 70%+ targets; shrink
-  `collectCoverageFrom` in `package.json`, which gates 90% on a backend subset.
-- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_
-  rejected: a min-sample floor makes `total` depend on `sort`.)
-  **`rankNotableGames` dedupes by exact player name**, so "Caruana, F." and
-  "Caruana, Fabiano" are two. **React 19 / Testing Library** compatibility is
-  the standing thing to watch during upgrades.
+- **Mobile Discover shows no facet chips**: "Filters (2)" hides which.
+- **TASK006 — Coverage**: backend 90%+, frontend 70%+; shrink
+  `collectCoverageFrom`, which gates 90% on a backend subset.
+- **Win-rate filtering**, ARIA tooltips, name dedupe. See `archive.md`.

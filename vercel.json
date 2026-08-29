@@ -166,6 +166,11 @@
   ],
   "redirects": [
     {
+      "source": "/personal-explorer",
+      "destination": "/analyse",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.openingbook.xyz" }],
       "destination": "https://openingbook.xyz/:path*",

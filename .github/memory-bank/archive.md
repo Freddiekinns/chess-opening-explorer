@@ -802,3 +802,57 @@ tiles rather than adopting the desktop record card).
 - **Opening Family Rollups** (2026-06-06): Analyse groups openings by family
   with expandable W/D/L rows (shared `DistributionBar`), per-side group/sort
   controls, 28-family taxonomy + `GET /api/families`.
+
+## Compressed out of progress.md (2026-08-28)
+
+Trimmed to keep `progress.md` inside its 100-line cap when the crawl-graph entry
+was added. Full text as it stood:
+
+- **Win-rate filtering**; central ARIA tooltip component. (Win-rate _sort_
+  rejected: a min-sample floor makes `total` depend on `sort`.)
+  **`rankNotableGames` dedupes by exact player name**, so "Caruana, F." and
+  "Caruana, Fabiano" are two. **React 19 / Testing Library** compatibility is
+  the standing thing to watch during upgrades.
+- **Search is not a real combobox** — its biggest remaining gap. No
+  `role="combobox"`/`listbox`, `aria-expanded`, `aria-activedescendant` or live
+  region, so a screen-reader user gets no signal when results arrive.
+- **Toasts need one host, not one per component.** Every `useRepertoireToast`
+  caller renders its own `.toast` at one fixed slot, so two within 4s cover an
+  Undo (2026-08-04).
+
+## Accelerated Dragon video matching — full activeContext text (2026-08-10)
+
+Displaced from `activeContext.md` on 2026-08-28 when the crawl-graph task became
+current. The four causes, each confirmed against the real corpus:
+
+**A description is not a subject.** Series descriptions cross-link their sibling
+episodes, so every Hanging Pawns Sicilian lecture name-matched every other
+Sicilian page at `content_exact` +60 — above a family match, and past the
+intra-family guard, which only fires for `matchType === 'family'`. Five of that
+page's ten videos came from one link. A description hit now counts on a
+variation page only when the title names it too. "Variation page" is the colon
+in the name, not whether `analyzeVariationMatch` found segments — a one-short-
+word variation ("Kan") yields none, and calling that a family page let the
+cross-links back in.
+
+**An alias can be the page's own family name.** `parseAliases` splits on commas,
+so `"Sicilian Defense, O'Kelly Variation"` gave the Kan page a bare
+`"Sicilian Defense"` alias — a title match worth 80 on every generic Sicilian
+video, past both guards. The Kan page led with a Najdorf lecture at 165.
+
+**The corpus was a ratchet.** Matching writes back only the top 10 per opening,
+so `videos` held 1,733 of the 10,190 ever fetched and `pipeline:rematch`
+re-scored that table. `lib/enrichment-corpus.js` reads the cache back as matcher
+input: 1,733 → 6,903 videos, zero API calls. Tiers go through
+`lib/channel-tiers.js`, normalised to letters and digits — the config says
+"Chess Network", the channel is `ChessNetwork`, and a raw compare cost it 60
+points and 183 videos.
+
+**Ties fell to view count.** Ties now break on how much of the variation the
+title names — persisted as `opening_videos.variation_rank`, because
+`getTopVideosForOpening` re-derives the displayed order in SQL and fixing only
+the JS sort changed nothing at all.
+
+6,010 of 12,377 pages changed; #1 names the variation on 47.7% → 54.2% of
+sub-variation pages, top-3 49.5% → 55.7%, contamination 0%, median
+pages-per-video 11 → 6. Coverage 72.7% → 72.1%, top-200 183 → 178.

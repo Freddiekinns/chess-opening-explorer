@@ -26,6 +26,7 @@
  */
 
 const { execFileSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
 const FAIL_ON = new Set(['high', 'critical']);
@@ -45,11 +46,94 @@ const FAIL_ON = new Set(['high', 'critical']);
  */
 const ALLOWLIST = {};
 
+const AUDIT_ARGS = ['audit', '--omit=dev', '--json'];
+
+/**
+ * Where npm's own entry point sits relative to the node binary.
+ *
+ * The platforms disagree and getting it wrong is silent: Windows keeps
+ * `node_modules/` beside `node.exe`, POSIX keeps it in `../lib`. A
+ * Windows-shaped join simply never resolves on Linux, so the fallback below
+ * looks present and does nothing.
+ */
+function bundledNpmCli(execPath, platform) {
+  // The target platform's path module, not the host's. `path` on Linux is
+  // path.posix, which does not treat a backslash as a separator, so
+  // path.dirname('C:\\Program Files\\nodejs\\node.exe') returns '.' there and
+  // this returned a bare relative path. That is what took CI red: the function
+  // claimed to compute a path *for* a platform while using the host's rules.
+  const p = platform === 'win32' ? path.win32 : path.posix;
+  const dir = p.dirname(execPath);
+  const tail = ['node_modules', 'npm', 'bin', 'npm-cli.js'];
+  return platform === 'win32' ? p.join(dir, ...tail) : p.join(dir, '..', 'lib', ...tail);
+}
+
+/**
+ * How to run npm without going near a shell.
+ *
+ * On Windows npm is `npm.cmd`, a batch shim. Spawning a bare `npm` throws
+ * ENOENT, and naming `npm.cmd` explicitly is no better — since the fix for
+ * CVE-2024-27980, Node refuses to `execFile` a `.cmd` at all and throws
+ * EINVAL. So the gate exited 1 before auditing anything, printing "could not
+ * be completed", which reads exactly like a real finding. Linux CI never saw
+ * it, so it survived PR #70.
+ *
+ * The way out is not `shell: true` — the argv here is fixed today, but a shell
+ * turns any later interpolation into an injection, and a security gate is the
+ * wrong place to leave that lying around. Instead run npm's own JavaScript
+ * entry point with the Node binary already executing this file. No shim, no
+ * shell, identical on every platform.
+ *
+ * **Everything the answer depends on is a parameter.** The first version took
+ * `platform` but resolved the bundled path against the real `process.execPath`
+ * and the real filesystem, so asking it for Windows behaviour on Linux gave
+ * neither — it threw, from a branch the host chose. Four tests passed on
+ * Windows and would have gone red on CI.
+ */
+function npmInvocation(options = {}) {
+  const {
+    env = process.env,
+    platform = process.platform,
+    execPath = process.execPath,
+    exists = fs.existsSync,
+  } = options;
+
+  // `npm run` sets npm_execpath to npm's own JS entry point, which is how CI
+  // and the package script get here. Checked for existence like the path
+  // below it: a stale value from a shell that outlived an npm upgrade would
+  // otherwise surface as "Cannot find module" wearing an audit failure.
+  //
+  // The basename test rejects yarn and pnpm, which set the same variable to
+  // their own entry point — running those with npm's arguments fails in a way
+  // that reads like a broken audit rather than the wrong package manager.
+  const fromNpm = env.npm_execpath;
+  if (fromNpm && path.basename(fromNpm) === 'npm-cli.js' && exists(fromNpm)) {
+    return { command: execPath, args: [fromNpm, ...AUDIT_ARGS] };
+  }
+
+  const bundled = bundledNpmCli(execPath, platform);
+  if (exists(bundled)) {
+    return { command: execPath, args: [bundled, ...AUDIT_ARGS] };
+  }
+
+  // Nothing left to invoke by path. A POSIX shell resolves `npm` from PATH on
+  // its own; Windows cannot, so say so rather than throwing ENOENT/EINVAL and
+  // letting it read as an audit finding.
+  if (platform === 'win32') {
+    throw new Error(
+      'could not locate npm-cli.js (npm_execpath unset and none bundled beside node). ' +
+        'Run this through `npm run security:audit` rather than invoking the script directly.'
+    );
+  }
+  return { command: 'npm', args: [...AUDIT_ARGS] };
+}
+
 function runAudit() {
+  const { command, args } = npmInvocation();
   // npm audit exits non-zero whenever it finds anything, so a throw here is
   // the normal path and the payload still comes back on stdout.
   try {
-    return execFileSync('npm', ['audit', '--omit=dev', '--json'], {
+    return execFileSync(command, args, {
       cwd: path.join(__dirname, '..'),
       encoding: 'utf-8',
       maxBuffer: 32 * 1024 * 1024,
@@ -157,10 +241,16 @@ function main() {
   console.log('\nNo blocking advisories.');
 }
 
-try {
-  main();
-} catch (error) {
-  console.error(`\nDependency audit could not be completed: ${error.message}`);
-  console.error('Failing rather than passing — an audit that did not run is not a clean audit.');
-  process.exit(1);
+// Guarded so the module can be required without shelling out to npm audit and
+// exiting the caller's process — the other build scripts here do the same.
+if (require.main === module) {
+  try {
+    main();
+  } catch (error) {
+    console.error(`\nDependency audit could not be completed: ${error.message}`);
+    console.error('Failing rather than passing — an audit that did not run is not a clean audit.');
+    process.exit(1);
+  }
 }
+
+module.exports = { npmInvocation, bundledNpmCli, parseReport, AUDIT_ARGS, ALLOWLIST, FAIL_ON };

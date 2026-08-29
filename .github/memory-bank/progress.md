@@ -4,6 +4,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **First pass through the Dependabot backlog** (2026-08-29, #71–#75/#79/#85):
+  nine PRs — six merged, #76 split to drop `eslint-plugin-react-refresh` 0.5,
+  #77/#78 left open blocked on #86. Two false greens found: a Dependabot branch
+  is tested against the `main` of the day it opened (#75 silently lost two
+  tests), and local npm 11 writes a lockfile CI's npm 10 rejects. Both rules now
+  in `AGENTS.md`. `docs/reviews/2026-08-29-dependabot-triage.md`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;
@@ -40,21 +46,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   race in `useOpeningSearch`, an `AbortError` shown as an error on Cancel, a
   0%/0%/0% bar for `null` stats, "Loading Lichess data…" forever on mobile, and
   an invisible Discover grid under reduced motion.
-- **One search behaviour, not three — and ECO codes actually work** (2026-08-03,
-  on `claude/player-details-layout-qxa1mo`): three fetches, two debounces and
-  two no-results strings became `useOpeningSearch`; only the hero had expanded
-  abbreviations. Exposed that `eco` is not a Fuse key, so `B90` gave 0 results
-  wherever there was no local index. Saved openings now win ties.
-- **Mobile search overlay closes on tab navigation** (2026-08-03) and **the
-  filter sheet's grabber actually drags** (2026-08-02): both were affordances
-  that looked real and did nothing — the overlay outlived the tab that
-  navigated, and a 36×4 pill promised a drag on a device with no Escape key.
+- **Search consolidated, its affordances fixed, Analyse's cards rebuilt**
+  (2026-08-02..03): three fetches and two debounces became `useOpeningSearch`,
+  exposing that `eco` is not a Fuse key; the mobile overlay outlived the tab
+  that navigated; the filter grabber promised a drag it never did; W/D/L were
+  tallied inside the classified branch, so unrecognised openings vanished.
   **`archive.md`.**
-- **Analyse summary cards rebuilt into one row** (2026-08-02): reverses phase 5
-  §3 on composition. Exposed a latent defect — W/D/L were tallied inside the
-  classified branch, so a real result with an unrecognised opening vanished.
-- **TopBar search field sized to its own panel**, **Discover's empty repertoire
-  slot got its box back** (2026-08-02). **Detail in `archive.md`.**
 - **Search rows unified across the three surfaces** (2026-07-30): typing changed
   _what_ was listed and _how_ each opening was drawn; `shared/SearchRow.tsx` is
   the one row. Spec §3.3, guard `search-row-parity.test.tsx`. **Practice demoted
@@ -78,6 +75,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
+- **ESLint flat-config migration (#86)** — carries eslint 10 (#77), react-hooks
+  7 (#78) and react-refresh 0.5. #78 is the real work: v7's compiler rules flag
+  ~20 sites, `useOpeningSearch` among them. Land them at `warn` first.
+  `react-router@7` also still outstanding (`react-router-dom` is ^6.20.1).
 - **Watch the SEO recovery** (from 2026-08-07). Indexed count and "Discovered –
   currently not indexed" in Search Console, weekly. Crawl stats too: if requests
   fell around 30 July it is crawl, not quality. Next levers if it stalls — slug

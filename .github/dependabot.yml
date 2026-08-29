@@ -6,10 +6,18 @@ version: 2
 # are batched into two PRs per ecosystem, and security updates are left
 # deliberately ungrouped so they show up on their own and read as urgent.
 #
-# Majors are not ignored. sqlite3 6 (which clears the tar/node-gyp build chain)
-# and react-router 7 are both known outstanding majors — see
-# docs/reviews/2026-08-28-dependency-security-scanning.md. They need real work
-# rather than a merge, and a PR each is how they stay visible.
+# Majors are not ignored. They need real work rather than a merge, and a PR each
+# is how they stay visible — which also means never closing one to tidy the
+# list, because a closed Dependabot PR stops being re-proposed at that version.
+#
+# Outstanding as of 2026-08-29:
+#   - eslint 10 (#77) and eslint-plugin-react-hooks 7 (#78), both blocked on the
+#     flat-config migration in #86, which also carries react-refresh 0.5
+#   - react-router 7 (react-router-dom is still ^6.20.1)
+# sqlite3 6 was on this list and has landed. See
+# docs/reviews/2026-08-28-dependency-security-scanning.md for the original
+# reasoning and docs/reviews/2026-08-29-dependabot-triage.md for the first pass
+# through the backlog.
 
 updates:
   # One lockfile at the root covers every workspace, so a single npm entry

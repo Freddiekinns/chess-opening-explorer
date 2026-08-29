@@ -59,9 +59,7 @@ const seoShardCache = new Map<number, SeoLookup>();
  * undo, inflicted faster.
  */
 type LookupResult =
-  | { status: 'found'; entry: SeoEntry }
-  | { status: 'missing' }
-  | { status: 'unavailable' };
+  { status: 'found'; entry: SeoEntry } | { status: 'missing' } | { status: 'unavailable' };
 
 async function getSeoEntry(origin: string, fen: string): Promise<LookupResult> {
   const shard = shardForFen(fen);

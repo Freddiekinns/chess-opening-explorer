@@ -103,8 +103,7 @@ type OpeningPageData = {
   videos: Video[];
   videoContext?: ResourceContext | null;
   courses:
-    | ({ courses: Study[]; searchLinks: SearchLinks | null } & Partial<ResourceContext>)
-    | null;
+    ({ courses: Study[]; searchLinks: SearchLinks | null } & Partial<ResourceContext>) | null;
   tree: TreeContext | null;
 };
 

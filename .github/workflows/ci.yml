@@ -28,6 +28,12 @@ jobs:
       - name: Lint Web
         run: npm run lint --workspace=packages/web
 
+      # packages/shared was never linted here, and its .eslintrc.js sat broken
+      # for long enough that nobody noticed: it used module.exports under a
+      # package declaring "type": "module", so ESLint could not read it at all.
+      - name: Lint Shared
+        run: npm run lint --workspace=packages/shared
+
       - name: Check formatting
         run: npm run format:check
 

@@ -186,7 +186,7 @@ class VideoProcessor {
     try {
       const results = await this.youtubeService.searchVideos(queries[0], channel.channel_id);
       videos.push(...results);
-    } catch (error) {
+    } catch {
       console.warn(`Search failed for primary query in channel ${channel.name}`);
     }
     
@@ -200,7 +200,7 @@ class VideoProcessor {
     try {
       const results = await this.youtubeService.searchVideos(queries[0]);
       videos.push(...results);
-    } catch (error) {
+    } catch {
       console.warn(`General search failed for query "${queries[0]}"`);
     }
     

@@ -211,7 +211,7 @@ const OpeningDetailPage: React.FC = () => {
           if (result) {
             history.push(newGame.fen());
           }
-        } catch (error) {
+        } catch {
           console.warn('Invalid move:', move);
           break;
         }

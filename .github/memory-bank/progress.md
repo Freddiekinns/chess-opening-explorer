@@ -5,16 +5,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 ## What's Done (newest first)
 
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
-  #79, #85, #88, #90, #91, #92): thirteen PRs across two passes — nine merged,
-  #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left blocked
-  on #86. Three false greens: a Dependabot branch is tested against the `main`
-  of the day it opened (#75 silently lost two tests); local npm 11 writes a
-  lockfile CI's npm 10 rejects; and `tools/analysis` has no CI, so the Python
-  PRs' green checks were an unrelated suite. Closing a PR suppresses only that
-  version — #76 returned as #89 — and a `0.x` minor is grouped rather than filed
-  as a major, so `dependabot.yml` gained its first `ignore` entry to stop one
-  package reddening `npm-development` weekly. All rules now in `AGENTS.md`.
-  `docs/reviews/2026-08-29-dependabot-triage.md`.
+  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
+  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
+  blocked on #86. Four false greens, every one a bump no workflow covered: a
+  Dependabot branch is tested against the `main` of the day it opened (#75
+  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
+  `tools/analysis` has no CI; and nothing runs `concurrently`, so #95 was
+  verified against the real `dev` scripts. Closing a PR suppresses only that
+  version — #76 returned as #89 — so `dependabot.yml` gained its first `ignore`
+  entry, and #94 was answered by deleting the dead dependency (with `cross-env`)
+  rather than bumping it. `docs/reviews/2026-08-29-dependabot-triage.md`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;

@@ -57,7 +57,7 @@ router.get('/stats', async (req, res) => {
       success: true,
       statistics: statistics
     });
-  } catch (error) {
+  } catch {
     res.status(500).json({
       success: false,
       error: 'Internal server error',
@@ -93,7 +93,7 @@ router.get('/:fen', async (req, res) => {
       count: courses.length,
       searchLinks: searchLinks
     });
-  } catch (error) {
+  } catch {
     res.status(500).json({
       success: false,
       error: 'Internal server error',
@@ -115,7 +115,7 @@ router.get('/', async (req, res) => {
       courses: courses,
       count: courses.length
     });
-  } catch (error) {
+  } catch {
     res.status(500).json({
       success: false,
       error: 'Internal server error',

@@ -245,6 +245,23 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   `packages/api`'s lint script is `eslint src/`; backend tests live at the repo
   root, not `packages/api/tests/`.
 
+- **ESLint is flat config, and the file set lives in the config, not the CLI.**
+  Each package has an `eslint.config.js` — CommonJS in `packages/api`, ESM in
+  `packages/web` and `packages/shared`, matching each package's `type`. There is
+  no `--ext` flag in ESLint 9+, so `files:` and `ignores:` decide what gets
+  linted; `eslint .` in `packages/web` will otherwise reach `coverage/` and
+  report its generated disable directives. `packages/shared`'s config was
+  unreadable for months — `module.exports` under `"type": "module"` — because CI
+  linted only api and web. It lints all three now; keep it that way.
+
+- **react-hooks 7 is installed but its `recommended` preset is not.** The
+  package enables the React Compiler rules through that preset, and the codebase
+  violates them in ~20 places. `packages/web` enables `rules-of-hooks` and
+  `exhaustive-deps` explicitly instead, which is what it has always enforced.
+  Adopting the preset is #86's remaining half: land the rules at `warn`, clear
+  the sites in batches, then promote to `error`. Do not add the preset without
+  doing that work.
+
 - **The dependency gate is scoped on purpose, and its allowlist expires.**
   `npm run security:audit` (`scripts/audit-dependencies.js`, run by CI) fails on
   high and critical advisories in **production** dependencies only. Dev-only

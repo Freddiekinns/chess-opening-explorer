@@ -17,7 +17,7 @@ class LLMService {
     let credentials;
     try {
       credentials = JSON.parse(credentialsJson);
-    } catch (error) {
+    } catch {
       throw new Error('Invalid JSON in GOOGLE_APPLICATION_CREDENTIALS_JSON');
     }
     

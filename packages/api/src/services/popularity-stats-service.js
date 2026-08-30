@@ -29,7 +29,7 @@ function loadPopularityStats() {
             statsPath = realStatsPath;
             useRealStats = true;
           }
-        } catch (realParseError) {
+        } catch {
           // Real stats file is invalid, fall back to mock
         }
       }

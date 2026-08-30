@@ -12,13 +12,13 @@ version: 2
 # Closing suppresses only the version closed, so a package that is blocked on
 # tracked work comes straight back on its next release: #76 was closed at 08:01
 # on 2026-08-29 and returned as #89 twenty-two minutes later, same change, same
-# failure. There is exactly one `ignore` below and it exists for that reason.
+# failure.
 #
 # Outstanding as of 2026-08-30:
-#   - eslint 10 (#77) and eslint-plugin-react-hooks 7 (#78), both blocked on the
-#     flat-config migration in #86, which also carries react-refresh 0.5
 #   - react-router 7 (react-router-dom is still ^6.20.1)
-# sqlite3 6 was on this list and has landed. See
+# eslint 10 (#77), eslint-plugin-react-hooks 7 (#78) and react-refresh 0.5 were
+# on this list and landed together with the flat-config migration; so did
+# sqlite3 6. See
 # docs/reviews/2026-08-28-dependency-security-scanning.md for the original
 # reasoning and docs/reviews/2026-08-29-dependabot-triage.md for the first pass
 # through the backlog.
@@ -37,23 +37,13 @@ updates:
     commit-message:
       prefix: chore
       include: scope
-    # eslint-plugin-react-refresh 0.5 drops eslintrc support, and all three
-    # packages still configure ESLint through .eslintrc.*, so the rule stops
-    # registering and every linted file fails with "Definition for rule
-    # 'react-refresh/only-export-components' was not found". 149 of them.
-    #
-    # It is ignored rather than left open because 0.4 → 0.5 is a 0.x *minor*,
-    # so Dependabot batches it into npm-development rather than filing it as a
-    # standalone major. Left alone it rides along with every future dev bump and
-    # takes the whole group red — which is what forced #76 to be split into #85,
-    # and then happened again in #89. Grouping is the point of this file; one
-    # package should not be able to poison the batch weekly.
-    #
-    # Remove this entry when #86 lands the flat-config migration. #86 carries
-    # react-refresh 0.5 explicitly, so the work stays visible without the PR.
-    ignore:
-      - dependency-name: eslint-plugin-react-refresh
-        versions: ['>=0.5.0']
+    # The `ignore` list is empty and the bar for adding to it is the same as
+    # the security:audit allowlist: a reason, and the condition that deletes
+    # the entry. Its one entry held eslint-plugin-react-refresh below 0.5,
+    # because 0.5 drops eslintrc support and a 0.x minor rides along with every
+    # future dev bump rather than being filed as a standalone major — one
+    # package taking the whole group red, weekly. Flat config landed, so it is
+    # gone.
     groups:
       npm-production:
         applies-to: version-updates

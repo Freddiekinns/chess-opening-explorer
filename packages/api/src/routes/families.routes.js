@@ -54,7 +54,7 @@ function buildResponse() {
     for (const o of all) {
       if (o.family_id) counts[o.family_id] = (counts[o.family_id] || 0) + 1;
     }
-  } catch (_) {
+  } catch {
     // eco-service may be unavailable in test contexts
   }
 

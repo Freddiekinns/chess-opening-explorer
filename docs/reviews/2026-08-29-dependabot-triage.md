@@ -284,11 +284,23 @@ comments, so it is a decision rather than a tidy-up.
 - **`react-router@7`** — still outstanding from the 2026-08-28 pass;
   `react-router-dom` is at `^6.20.1`. `sqlite3@6` from that same list has since
   landed.
-- **Root `engines` says `node >=18.0.0`** and is now wrong in two directions:
-  concurrently 10 declares `node >=22`, and CI has pinned 20 throughout. Nothing
-  enforces it — no `.npmrc`, so no `engine-strict`, and neither `dev` nor
-  `start` runs in CI or on Vercel — but the declaration should either become
-  `>=20` with `npm run dev` unsupported on 20, or `>=22` with CI moved to match.
+- **Root `engines.node` is `>=20.19.0`**, raised from `>=18.0.0`, which had
+  stopped being true: ESLint 10 needs `^20.19.0 || ^22.13.0 || >=24` and CI has
+  pinned 20 throughout. It is deliberately **not** `>=22`, which is what
+  concurrently 10 asks for — CI runs Node 20, and a manifest that declares its
+  own CI unsupported is worse than one that is generous to `npm run dev`.
+  Nothing enforces the field either way: there is no `.npmrc`, so no
+  `engine-strict`, and neither `dev` nor `start` runs in CI or on Vercel. It is
+  also the only Node declaration in the repo — no `.nvmrc`, no `nodeVersion` in
+  `vercel.json` — and being a `>=` range rather than a pin, raising the floor
+  does not change the version Vercel picks for the functions. Moving CI to 22 or
+  24 and matching the field is a deliberate runtime upgrade, with its own PR and
+  its own production check.
+- **`open-pull-requests-limit` stays at 5.** Raising it was on this list while
+  #77 and #78 held two npm slots indefinitely; the flat-config migration closed
+  both, so the cap is no longer suppressing anything. Revisit only if long-lived
+  blocked majors accumulate again — the cap's job is capping noise, and grouping
+  already holds routine bumps to two PRs.
 - **`tools/analysis` has no CI at all.** Three Python PRs have now been merged
   on hand-verification alone. A workflow that installs `requirements.txt` and
   imports the modules would turn that judgement call into a check.

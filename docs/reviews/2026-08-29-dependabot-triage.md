@@ -209,6 +209,74 @@ avoidance.
 
 ---
 
+## Third pass — 2026-08-30, evening
+
+Merging #92 moved `main` again, and Dependabot filed three more. All three were
+cut from `fc1a43c9`, the tip at the time, so the stale-branch trap did not apply
+— checked with the base SHA rather than assumed. Two merged, one was answered by
+deleting the dependency instead.
+
+| PR  | Change                                        | Verification beyond CI                             |
+| --- | --------------------------------------------- | -------------------------------------------------- |
+| #93 | `eslint-plugin-react-refresh` 0.4.20 → 0.4.26 | Lint green is the check — see below                |
+| #95 | `concurrently` 8.2.2 → 10.0.5                 | Ran concurrently 10 against the real `dev` scripts |
+
+**#93 is the `ignore` entry working.** It pins `>=0.5.0`, so the 0.4 line still
+flows and 0.4.26 arrived as an ordinary `npm-development` bump. 0.4 keeps
+eslintrc support, and Lint passing is the direct evidence: this is the check
+that produced 149
+`Definition for rule 'react-refresh/only-export-components' was not found` on
+#76 and again on #89.
+
+**#95's green checks did not cover it.** `concurrently` is named only by `dev`
+and `start`, and no workflow runs either, so the nine checks were the rest of
+the suite passing on an untouched file — the same shape as #88. The actual check
+was concurrently 10 installed in a scratch directory and pointed at the real
+commands: `npm run dev:api` and `npm run dev:web` both came up, Vite on 3000 and
+nodemon plus the API on 3010, prefixed and cleanly killed. Its bin also moved
+from `dist/bin/concurrently.js` to `dist/bin/index.js`, which matters only if
+something ever invokes it by path rather than through npm.
+
+The loose end #95 leaves is the `engines` declaration, below: concurrently 10
+declares `node >=22`, and the root still says `>=18.0.0` while CI pins 20.
+
+### The one that was deleted rather than merged: #94
+
+`jest-environment-jsdom` 29.7.0 → 30.4.1, for a package nothing uses. Root Jest
+is `testEnvironment: "node"`, `packages/api` likewise, there is not one
+`@jest-environment` pragma in the tree, and `packages/web` runs Vitest against
+its own `jsdom@23`. Its only two mentions were `package.json` and
+`tests/setup/root-package-json.test.js:58` — the same assertion that was holding
+`cross-env` in place.
+
+Merging it would have been worse than inert: `jest-environment-jsdom@30`
+alongside `jest@29` is a mismatch that would surface the first time anyone
+wanted a jsdom suite.
+
+So both packages were dropped and the assertion narrowed to
+`['concurrently', 'jest']`. **Deleting the dependency is the only thing that
+stops Dependabot proposing it** — closing #94 would have suppressed 30.4.1 and
+nothing else, per #76 → #89. That also clears the `cross-env` item this
+document's second pass left open.
+
+Root `node_modules/jsdom` survives the removal at 20.0.3, now satisfying
+`vitest`'s `jsdom: *` peer for `packages/shared` rather than
+`jest-environment-jsdom`'s direct dependency. Left alone.
+
+### #77 and #78 cost two PR slots
+
+Nothing about either has changed — #86 still holds the flat-config migration,
+`@typescript-eslint` 6 still cannot run on ESLint 9+, and react-hooks 7 still
+lights up ~20 sites. Leaving them open remains right.
+
+The cost is worth stating, though: `open-pull-requests-limit` is 5 and counts
+open PRs per ecosystem, so those two hold two npm slots for as long as #86 is
+open. `react-router@7` has still not been filed. Raising the limit and ignoring
+them both work; ignoring them contradicts the rule the config states in its own
+comments, so it is a decision rather than a tidy-up.
+
+---
+
 ## What is left
 
 - **#86** — the flat-config migration, carrying #77, #78 and react-refresh 0.5.
@@ -216,10 +284,11 @@ avoidance.
 - **`react-router@7`** — still outstanding from the 2026-08-28 pass;
   `react-router-dom` is at `^6.20.1`. `sqlite3@6` from that same list has since
   landed.
-- **`cross-env` is unused** — drop it from `devDependencies` and drop the
-  assertion in `tests/setup/root-package-json.test.js:58` that pins it there.
-- **Root `engines` says `node >=18.0.0`** and is no longer true: cross-env 10
-  needs 20, and CI has pinned 20 throughout.
+- **Root `engines` says `node >=18.0.0`** and is now wrong in two directions:
+  concurrently 10 declares `node >=22`, and CI has pinned 20 throughout. Nothing
+  enforces it — no `.npmrc`, so no `engine-strict`, and neither `dev` nor
+  `start` runs in CI or on Vercel — but the declaration should either become
+  `>=20` with `npm run dev` unsupported on 20, or `>=22` with CI moved to match.
 - **`tools/analysis` has no CI at all.** Three Python PRs have now been merged
   on hand-verification alone. A workflow that installs `requirements.txt` and
   imports the modules would turn that judgement call into a check.

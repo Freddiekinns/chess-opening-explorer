@@ -1,11 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-require('dotenv').config();
+// quiet silences dotenv 17's startup banner, which is an advert with a rotating
+// tip in it and prints the resolved .env path. Two lines per dev:api start.
+require('dotenv').config({ quiet: true });
 // dev:api runs with cwd=packages/api; project-wide secrets (e.g.
 // LICHESS_EXPLORER_TOKEN) live in the repo-root .env. dotenv never
 // overrides already-set vars, so the local .env above still wins.
-require('dotenv').config({ path: require('path').resolve(__dirname, '../../../.env') });
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../../../.env'),
+  quiet: true,
+});
 
 const app = express();
 const PORT = process.env.PORT || 3010;

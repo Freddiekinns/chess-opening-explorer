@@ -307,6 +307,15 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   `main`, not the total. Full triage:
   `docs/reviews/2026-08-29-dependabot-triage.md`.
 
+- **Closing a Dependabot PR suppresses only the version you closed**, so a
+  package blocked on tracked work returns on its next release — #76 came back as
+  #89 twenty-two minutes later. Worse, a `0.x` minor is grouped rather than
+  filed as a major, so it rides along with every future batch and takes the
+  group red. That is why `.github/dependabot.yml` carries exactly one `ignore`
+  entry (`eslint-plugin-react-refresh >=0.5.0`, removed when #86 lands). Like
+  the `security:audit` allowlist, every entry states its reason and the
+  condition that deletes it.
+
 - **A path computed _for_ a platform must use that platform's path module** —
   `path.win32` or `path.posix`, never the ambient `path`. On Linux `path` is
   `path.posix`, which does not treat a backslash as a separator, so

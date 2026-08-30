@@ -4,12 +4,17 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **First pass through the Dependabot backlog** (2026-08-29, #71–#75/#79/#85):
-  nine PRs — six merged, #76 split to drop `eslint-plugin-react-refresh` 0.5,
-  #77/#78 left open blocked on #86. Two false greens found: a Dependabot branch
-  is tested against the `main` of the day it opened (#75 silently lost two
-  tests), and local npm 11 writes a lockfile CI's npm 10 rejects. Both rules now
-  in `AGENTS.md`. `docs/reviews/2026-08-29-dependabot-triage.md`.
+- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
+  #79, #85, #88, #90, #91, #92): thirteen PRs across two passes — nine merged,
+  #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left blocked
+  on #86. Three false greens: a Dependabot branch is tested against the `main`
+  of the day it opened (#75 silently lost two tests); local npm 11 writes a
+  lockfile CI's npm 10 rejects; and `tools/analysis` has no CI, so the Python
+  PRs' green checks were an unrelated suite. Closing a PR suppresses only that
+  version — #76 returned as #89 — and a `0.x` minor is grouped rather than filed
+  as a major, so `dependabot.yml` gained its first `ignore` entry to stop one
+  package reddening `npm-development` weekly. All rules now in `AGENTS.md`.
+  `docs/reviews/2026-08-29-dependabot-triage.md`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;
@@ -52,20 +57,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   that navigated; the filter grabber promised a drag it never did; W/D/L were
   tallied inside the classified branch, so unrecognised openings vanished.
   **`archive.md`.**
-- **Search rows unified across the three surfaces** (2026-07-30): typing changed
-  _what_ was listed and _how_ each opening was drawn; `shared/SearchRow.tsx` is
-  the one row. Spec §3.3, guard `search-row-parity.test.tsx`. **Practice demoted
-  to accent-outline**, **master games moved up the mobile stack** (2026-07-30):
-  two **spec decisions reversed**, not bugs. **UX review implementation audit**
-  (2026-07-29): six phases read back, six half-applied. All in **`archive.md`**.
-- **UX review phases 0–5** (2026-07-27..28): systemic pass, Discover's star/undo
-  loop, `GET /api/openings/browse`, the faceted bar, `ExplorerCard`'s single
-  border round the level filter, and Analyse's honest "This analysis / Your
-  record" in place of a "Career totals" that claimed a lifetime.
-  **`archive.md`.**
-- **Agent docs restructure** (2026-07-25, `main`): portable `AGENTS.md` plus
-  scoped `packages/*/AGENTS.md` under a thin `CLAUDE.md`; workflows and the
-  design system became `.claude/skills/`. **`archive.md`**.
+- **The UX review programme** (2026-07-25..30): phases 0–5, the implementation
+  audit that found six of six half-applied, `shared/SearchRow.tsx` unifying the
+  three search surfaces (guard `search-row-parity.test.tsx`),
+  `GET /api/openings/browse`, two spec decisions reversed, and the agent-docs
+  restructure into `AGENTS.md` + `.claude/skills/`. All in **`archive.md`**.
 - Everything before the UX review — **all detail in `archive.md`**: shared
   `PerfBar`; the opening-detail mobile overhaul; the `/api/explorer` proxy;
   Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
@@ -79,6 +75,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   7 (#78) and react-refresh 0.5. #78 is the real work: v7's compiler rules flag
   ~20 sites, `useOpeningSearch` among them. Land them at `warn` first.
   `react-router@7` also still outstanding (`react-router-dom` is ^6.20.1).
+- **Dependency loose ends**: `cross-env` is used by no script — drop it and the
+  assertion pinning it (`root-package-json.test.js:58`); root `engines` claims
+  node `>=18` but cross-env 10 needs 20; `tools/analysis` has no CI at all.
 - **Watch the SEO recovery** (from 2026-08-07). Indexed count and "Discovered –
   currently not indexed" in Search Console, weekly. Crawl stats too: if requests
   fell around 30 July it is crawl, not quality. Next levers if it stalls — slug

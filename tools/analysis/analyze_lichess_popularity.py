@@ -6,11 +6,12 @@ Feature 1.6: Game Data Popularity Analysis with Parallel Downloading
 This script analyzes Lichess game data to generate popularity statistics 
 for chess openings. It's designed to run in Google Colab with checkpoint/resume capability.
 
-Requirements:
+Requirements (requirements.txt is the source of truth; this list mirrors it):
+- requests>=2.34.2
 - python-chess>=1.999
-- requests>=2.28.0
-- zstandard>=0.18.0
-- tqdm>=4.62.0
+- zstandard>=0.25.0
+- tqdm>=4.70.0
+- python-dateutil>=2.9.0.post0
 
 Usage:
 1. Upload this script to Google Colab

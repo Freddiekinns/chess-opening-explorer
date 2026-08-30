@@ -9,8 +9,12 @@ version: 2
 # Majors are not ignored. They need real work rather than a merge, and a PR each
 # is how they stay visible — which also means never closing one to tidy the
 # list, because a closed Dependabot PR stops being re-proposed at that version.
+# Closing suppresses only the version closed, so a package that is blocked on
+# tracked work comes straight back on its next release: #76 was closed at 08:01
+# on 2026-08-29 and returned as #89 twenty-two minutes later, same change, same
+# failure. There is exactly one `ignore` below and it exists for that reason.
 #
-# Outstanding as of 2026-08-29:
+# Outstanding as of 2026-08-30:
 #   - eslint 10 (#77) and eslint-plugin-react-hooks 7 (#78), both blocked on the
 #     flat-config migration in #86, which also carries react-refresh 0.5
 #   - react-router 7 (react-router-dom is still ^6.20.1)
@@ -33,6 +37,23 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    # eslint-plugin-react-refresh 0.5 drops eslintrc support, and all three
+    # packages still configure ESLint through .eslintrc.*, so the rule stops
+    # registering and every linted file fails with "Definition for rule
+    # 'react-refresh/only-export-components' was not found". 149 of them.
+    #
+    # It is ignored rather than left open because 0.4 → 0.5 is a 0.x *minor*,
+    # so Dependabot batches it into npm-development rather than filing it as a
+    # standalone major. Left alone it rides along with every future dev bump and
+    # takes the whole group red — which is what forced #76 to be split into #85,
+    # and then happened again in #89. Grouping is the point of this file; one
+    # package should not be able to poison the batch weekly.
+    #
+    # Remove this entry when #86 lands the flat-config migration. #86 carries
+    # react-refresh 0.5 explicitly, so the work stays visible without the PR.
+    ignore:
+      - dependency-name: eslint-plugin-react-refresh
+        versions: ['>=0.5.0']
     groups:
       npm-production:
         applies-to: version-updates

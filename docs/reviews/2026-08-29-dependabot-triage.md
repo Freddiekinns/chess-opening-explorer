@@ -128,11 +128,100 @@ time. The rule is now in `AGENTS.md`.
 
 ---
 
+## Second pass — 2026-08-30
+
+Merging the first pass changed `main`, so Dependabot re-evaluated and opened
+four more PRs one minute after #87 landed. Three merged, one was the same
+rejection wearing a new version number.
+
+All four were cut from `a354ab474`, the tip at the time, so the stale-branch
+trap below did not apply to any of them — checked with `git merge-base` rather
+than assumed. Frontend tests stayed at 592, matching `main`.
+
+| PR  | Change                     | Verification beyond CI                                                                  |
+| --- | -------------------------- | --------------------------------------------------------------------------------------- |
+| #88 | `tqdm` ≥4.66.0 → ≥4.70.0   | Still no CI under `tools/analysis`. Venv on 3.13, every call site exercised — see below |
+| #90 | `dotenv` 16.6.1 → 17.4.2   | Merged locally with #88/#91, full gate set, plus a stdout capture of the v17 banner     |
+| #91 | `cross-env` 7.0.3 → 10.1.0 | Inert — see below                                                                       |
+
+**#88's green checks were meaningless and the merge was still safe.** Nothing
+under `tools/analysis` is covered by a workflow, so the nine green checks were
+the JS suite passing on an unrelated file. The actual check was a venv on Python
+3.13 running the full constructor kwarg set the pipeline uses (`unit_scale`,
+`unit_divisor`, `ncols`, `mininterval`/`maxinterval`, `position`,
+`dynamic_ncols`, `file`), plus `tqdm.write()`, `tqdm.set_lock(RLock())` and the
+`-> tqdm` return annotation on `create_progress_bar`.
+
+**#90 is not a production path, which is why a major dotenv bump was cheap.**
+Vercel serves `api/*.js`; none of those require dotenv and `api/package.json`
+does not list it. Nothing requires `packages/api/src/server.js` at all — it is
+the `dev:api` server. The bump also collapsed a duplicate: the root was already
+on `^17.2.0` while `packages/api` held a nested `dotenv@16.6.1`, and both now
+resolve to one hoisted 17.4.2.
+
+dotenv 17 does have a real behaviour change. `config()` prints a banner to
+**stdout** — an advert with a rotating tip, carrying the resolved `.env` path —
+and it prints even when no `.env` exists. `server.js` calls `config()` twice, so
+`dev:api` gained two lines of it. Both calls now pass `{ quiet: true }`.
+
+The four pipeline call sites (`tools/video-pipeline/index.js`,
+`backfill-videos.js`, `scripts/backfill-views.js`,
+`tools/llm-enrichment/enrich_openings_llm.js`) have the same banner and were
+left alone — the root was already on dotenv 17, so that is pre-existing noise
+rather than something #90 introduced.
+
+**#91 changes nothing.** `cross-env` is referenced by no npm script in the root
+or in any workspace. Its only mention in the tree is
+`tests/setup/root-package-json.test.js:58`, which asserts it is present in
+`devDependencies` — a test holding an unused dependency in place. Removing both
+is a real cleanup and deliberately not this PR's job. One loose end: cross-env
+10 declares `node >=20` while the root `engines` still says `>=18.0.0`. CI pins
+20 and npm does not enforce engines by default, so nothing breaks, but the
+declaration is now wrong.
+
+### The one that came back: #89, and why it is now ignored
+
+#76 was closed at 08:01. Dependabot reopened the identical change as #89 at
+08:23, because 0.5.5 is a different version to the one closed. The CI log is the
+same line 149 times:
+`Definition for rule 'react-refresh/only-export-components' was not found`.
+
+**A close only suppresses the version closed.** That is a correction to the
+first pass's reasoning, which treated closing as the thing that removes a PR
+permanently. For a package blocked on tracked work, the next release brings it
+straight back.
+
+The sharper problem is which PR it comes back in. `eslint-plugin-react-refresh`
+0.4 → 0.5 is a 0.x **minor**, so Dependabot batches it into `npm-development`
+rather than filing it as a standalone major. Left open it rides along with every
+future dev bump and takes the whole group red — which is exactly what forced #76
+to be split into #85, and then happened again. Grouping is the point of
+`dependabot.yml`; one package should not be able to poison the batch weekly.
+
+So `.github/dependabot.yml` now carries **one** `ignore` entry, for
+`eslint-plugin-react-refresh >=0.5.0`, with its reason and its removal condition
+written next to it — the discipline already applied to the `security:audit`
+allowlist. It does not hide the work: #86 names react-refresh explicitly.
+
+This is not a hole in "majors are not ignored". Dependabot does not classify
+this as a major, and the reason for the entry is group contamination rather than
+avoidance.
+
+---
+
 ## What is left
 
 - **#86** — the flat-config migration, carrying #77, #78 and react-refresh 0.5.
+  Delete the `ignore` entry in `.github/dependabot.yml` when it lands.
 - **`react-router@7`** — still outstanding from the 2026-08-28 pass;
   `react-router-dom` is at `^6.20.1`. `sqlite3@6` from that same list has since
   landed.
+- **`cross-env` is unused** — drop it from `devDependencies` and drop the
+  assertion in `tests/setup/root-package-json.test.js:58` that pins it there.
+- **Root `engines` says `node >=18.0.0`** and is no longer true: cross-env 10
+  needs 20, and CI has pinned 20 throughout.
+- **`tools/analysis` has no CI at all.** Three Python PRs have now been merged
+  on hand-verification alone. A workflow that installs `requirements.txt` and
+  imports the modules would turn that judgement call into a check.
 - Four moderate advisories remain in the production tree. The gate blocks on
   high and critical only, deliberately, and the allowlist is still empty.

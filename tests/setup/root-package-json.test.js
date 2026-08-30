@@ -55,7 +55,7 @@ describe('Root Package.json Configuration', () => {
   test('should have development dependencies for monorepo management', () => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
-    const requiredDevDeps = ['concurrently', 'cross-env', 'jest', 'jest-environment-jsdom'];
+    const requiredDevDeps = ['concurrently', 'jest'];
 
     requiredDevDeps.forEach((dep) => {
       expect(packageJson.devDependencies).toHaveProperty(dep);

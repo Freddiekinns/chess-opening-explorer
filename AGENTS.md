@@ -317,6 +317,17 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   with `--ignore-scripts`, follow it with `npm rebuild sqlite3` or the native
   binding is missing and `tools/video-pipeline` tests fail to run.
 
+- **`jsdom` is a root devDependency because vitest hoists and jsdom did not.**
+  `vitest` lands in the root `node_modules`, so its `import('jsdom')` resolves
+  from the root and never sees `packages/web/node_modules/jsdom`. That worked
+  for months only because npm auto-installed vitest's _optional peer_ `jsdom` at
+  the root — an unversioned 20.0.3 nobody asked for. Any lockfile regeneration
+  is free to drop an optional peer, and the first one that did (#100) took the
+  whole frontend suite from 592 passing to `no tests` and 61
+  `Cannot find package 'jsdom'` errors, on a PR that touched only `googleapis`.
+  The root entry is the declaration that makes the resolution deliberate; keep
+  it pinned to the same range as `packages/web`.
+
 - **A Dependabot PR is tested against the `main` of the day it opened.** Run
   `gh pr update-branch` before believing its CI. #75 went green having silently
   lost two tests — its branch predated the commit that added them, and a test

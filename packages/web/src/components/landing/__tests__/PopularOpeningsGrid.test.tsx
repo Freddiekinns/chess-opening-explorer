@@ -87,7 +87,14 @@ describe('PopularOpeningsGrid', () => {
   it('cards stay real links so 12,000 pages keep their internal links', async () => {
     renderGrid();
 
-    const link = await screen.findByRole('link', { name: /Sicilian Defence/ });
+    // The only query in this file that goes through the accessibility tree,
+    // and it costs about 2.3x what the findByText ones do — it recomputes
+    // every element's accessible name on each 50ms poll. That fits inside the
+    // 5000ms default locally and does not on a loaded CI runner, where this
+    // file takes ~28s rather than ~11s: the single test that failed the
+    // 2026-08-31 dependency batch, three runs out of seven, was this one and
+    // only this one. The assertion is the point, not the deadline.
+    const link = await screen.findByRole('link', { name: /Sicilian Defence/ }, { timeout: 15000 });
     expect(link).toHaveAttribute('href', '/opening/fen-1');
   });
 

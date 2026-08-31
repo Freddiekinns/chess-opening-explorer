@@ -9,6 +9,15 @@ Backend tests are Jest. `testMatch` in the root `package.json` covers
 `testPathIgnorePatterns`, so a test placed inside this package will silently
 never run. Put API tests in the root `tests/` directory.
 
+**Every other backend test builds its own `express()` and mounts a router**, so
+nothing but `tests/unit/server-entrypoints.test.js` ever executes `server.js` or
+`api/index.js` — the files carrying the app-level middleware, the 404 handler
+and the error handler. A change that stops either constructing is otherwise
+invisible: 1004 tests pass and the Vercel build succeeds, because a serverless
+function is only required on its first invocation. Express 5 demonstrated this
+on #109, where `app.all('*')` throws under path-to-regexp 8 and every check was
+green. Keep that test loading both entry points.
+
 ## Caching is mandatory
 
 **Every new API route must declare its caching.** Either add a `Cache-Control`

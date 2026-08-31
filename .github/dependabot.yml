@@ -42,10 +42,12 @@ version: 2
 # still declaring `^1.0.4` — the same silently-wrong tree that cost the whole
 # frontend suite in #100.
 #
-# Two majors were answered by a PR rather than merged, which is the shape to
+# Three majors were answered by a PR rather than merged, which is the shape to
 # reach for when the bump alone is wrong. google-auth-library 11 (#101): the
 # root declared it without importing it, so #104 dropped the dependency and the
-# PR went with it. express 5 (#109): green on every check for a change that
+# PR went with it. glob 13 (#125) was the same story — nothing in the repo has
+# ever imported it, and removing the declaration takes it out of the tree
+# entirely rather than leaving a transitive copy. express 5 (#109): green on every check for a change that
 # throws at require time, so #114 carried the bump together with the route fix
 # and #113 added the guard that catches it. Neither suppresses a version, which
 # is why neither is an `ignore` entry. See

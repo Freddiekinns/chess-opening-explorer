@@ -13,7 +13,22 @@
  * `Missing parameter name at index 1` under Express 5's path-to-regexp 8.
  */
 
+const fs = require('fs');
+const path = require('path');
 const request = require('supertest');
+
+const API_DIR = path.join(__dirname, '..', '..', 'api');
+
+// Nine Vercel functions, not one. Each builds its own app at module load, so
+// requiring the file is the whole test: a route pattern the router refuses is
+// thrown before any request arrives.
+describe.each(fs.readdirSync(API_DIR).filter((f) => f.endsWith('.js')))('api/%s', (file) => {
+  it('constructs when required', () => {
+    const exported = require(path.join(API_DIR, file));
+
+    expect(typeof exported).toBe('function');
+  });
+});
 
 describe.each([
   ['packages/api/src/server.js', '../../packages/api/src/server', '/health'],

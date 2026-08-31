@@ -47,8 +47,10 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-// 404 handler
-app.all('*', (req, res) => {
+// 404 handler. `'*'` on its own is an Express 4 spelling: under Express 5's
+// path-to-regexp 8 it throws `Missing parameter name at index 1` at require
+// time, taking the whole function down before it serves a request.
+app.all('/{*splat}', (req, res) => {
   res.status(404).json({
     error: 'Not Found',
     message: `Route ${req.originalUrl} not found`

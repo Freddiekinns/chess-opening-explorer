@@ -55,12 +55,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
-    // Three LandingPage tests have run between 5s and 9.5s since long before
-    // this was raised; vitest 1 never enforced the 5s default against them and
-    // vitest 4 does. The suite is the same speed under both (41.2s vs 41.9s
-    // for that file), so this restores the behaviour rather than hiding a
-    // regression. Making those tests fast is tracked separately.
-    testTimeout: 20000,
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'json-summary'],

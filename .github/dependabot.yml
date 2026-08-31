@@ -62,19 +62,16 @@ updates:
       day: monday
       time: '06:00'
       timezone: Europe/London
-    # Raised from 5 to 10 on 2026-08-31 to drain the major backlog, and the
-    # reason is coupling rather than throughput. The limit only ever gates
-    # majors — routine minor and patch bumps are already batched by the two
-    # groups below — and majors are exactly the PRs that turn out to peer one
-    # another. vite 8 (#99), @vitest/coverage-v8 4 (#106) and
+    # Back to 5 on 2026-08-31, the condition the 10 was raised under: the major
+    # backlog is drained, and ten open PRs is ten CI runs and ten preview
+    # deploys every time main moves. Raise it again to drain a backlog, not to
+    # run one — the reason to is coupling, because majors are the PRs that turn
+    # out to peer one another and only the ones open at the same time can be
+    # seen to. vite 8 (#99), @vitest/coverage-v8 4 (#106) and
     # @vitejs/plugin-react 6 (#116) were diagnosable as one change only because
-    # all three happened to be open at once; had the limit hidden #116, #106
-    # would have landed a tree npm could not satisfy. jsdom (root and
-    # packages/web) and supertest (root and packages/api) carry the same split
-    # declaration today. Put it back to 5 once the majors are gone: ten open
-    # PRs is ten CI runs and ten preview deploys every time main moves, which is
-    # worth it while draining a backlog and not at steady state.
-    open-pull-requests-limit: 10
+    # all three were open at once; had the limit hidden #116, #106 would have
+    # landed a tree npm could not satisfy.
+    open-pull-requests-limit: 5
     commit-message:
       prefix: chore
       include: scope

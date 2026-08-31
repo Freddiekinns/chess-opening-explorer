@@ -84,19 +84,21 @@ describe('PopularOpeningsGrid', () => {
     expect(screen.queryByRole('button', { name: /Load more/ })).not.toBeInTheDocument();
   });
 
+  // The extra time belongs on the test, not on the query: vitest's own 5000ms
+  // per-test deadline fires first, so a longer `findBy` timeout inside a 5s
+  // test never gets to run. This is the file's only accessibility-tree query
+  // and it costs ~2066ms locally against ~900ms for the findByText ones —
+  // `findByRole` with a `name` recomputes every accessible name on each 50ms
+  // poll. A loaded CI runner takes the file from ~11s to ~28s and 2s becomes
+  // ~6s, which is why this one test, and only this one, went red across the
+  // 2026-08-31 dependency batch. Left on the test alone so a genuinely hung
+  // render in the other nine still fails in five seconds.
   it('cards stay real links so 12,000 pages keep their internal links', async () => {
     renderGrid();
 
-    // The only query in this file that goes through the accessibility tree,
-    // and it costs about 2.3x what the findByText ones do — it recomputes
-    // every element's accessible name on each 50ms poll. That fits inside the
-    // 5000ms default locally and does not on a loaded CI runner, where this
-    // file takes ~28s rather than ~11s: the single test that failed the
-    // 2026-08-31 dependency batch, three runs out of seven, was this one and
-    // only this one. The assertion is the point, not the deadline.
-    const link = await screen.findByRole('link', { name: /Sicilian Defence/ }, { timeout: 15000 });
+    const link = await screen.findByRole('link', { name: /Sicilian Defence/ });
     expect(link).toHaveAttribute('href', '/opening/fen-1');
-  });
+  }, 15000);
 
   it('applies a filter from the URL without the user touching a control', async () => {
     renderGrid('/?level=Beginner');

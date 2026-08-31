@@ -14,11 +14,18 @@ version: 2
 # on 2026-08-29 and returned as #89 twenty-two minutes later, same change, same
 # failure.
 #
-# Outstanding as of 2026-08-30:
-#   - react-router 7 (react-router-dom is still ^6.20.1)
-# eslint 10 (#77), eslint-plugin-react-hooks 7 (#78) and react-refresh 0.5 were
-# on this list and landed together with the flat-config migration; so did
-# sqlite3 6. See
+# Outstanding as of 2026-08-31:
+#   - vite 8 (#99), the rolldown release. `manualChunks` has to be rewritten as
+#     `advancedChunks.groups`, and vitest@1 peers vite@^5, so vitest and
+#     @vitest/coverage-v8 move with it. Triage is on the PR.
+# react-router 7 (#102) was on this list and landed, along with helmet 8 (#98)
+# and googleapis 176 (#100); eslint 10 (#77), eslint-plugin-react-hooks 7 (#78)
+# and react-refresh 0.5 landed together with the flat-config migration, and so
+# did sqlite3 6.
+#
+# google-auth-library 11 (#101) is neither outstanding nor ignored: the root
+# declared it without importing it anywhere, so the dependency was dropped and
+# the PR went with it. googleapis carries its own. See
 # docs/reviews/2026-08-28-dependency-security-scanning.md for the original
 # reasoning and docs/reviews/2026-08-29-dependabot-triage.md for the first pass
 # through the backlog.

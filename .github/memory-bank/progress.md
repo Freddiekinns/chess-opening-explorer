@@ -4,18 +4,21 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **The vite/vitest cluster and jest 30 landed** (2026-08-31, #99/#106/#116/
+  #117): jest 30 merged alone on identical per-file counts; the other four went
+  in as one branch because none was mergeable apart — #106 was green only by
+  hoisting vitest 4 to the root over `^1.0.4` declarations it left in place.
+  `manualChunks` became `codeSplitting.groups`, exposing that the vendor split
+  had been inoperative under vite 5 (102-byte chunk, react-dom in two chunks);
+  JS 373 → 361 kB. The three LandingPage timeouts were no regression — the
+  slowest already took 9420ms against a 5000ms default that vitest 1 ignored.
 - **Nine dependency majors triaged, five merged** (2026-08-31, #98-#114): helmet
   8, googleapis 176, react-router 7, lucide-react 1 and express 5 in;
   google-auth-library 11 answered by deleting the unused root declaration
-  (#104); vite 8, coverage-v8 4 and typescript 7 left open as trackers. **Green
-  checks lied three times.** #100/#101 could not find jsdom — vitest hoists to
-  the root and had been resolving an **optional peer** copy a lockfile
-  regeneration dropped (#103). #106's board is green because nothing runs
-  `vitest --coverage`, while its lockfile installs vitest 4 and vite 8 at the
-  root. And #109 passed every check for a change that takes the API down:
-  `app.all('*')` throws under Express 5, and no test had ever loaded `server.js`
-  or `api/index.js` — #113 is the guard, #114 the fix. react-router 7 was driven
-  against a running server and clears the open-redirect advisory.
+  (#104). **Green checks lied three times** — the jsdom optional-peer drop
+  (#103), #106's coverage board, and #109, which passed everything for an
+  `app.all('*')` that throws under Express 5 with no test loading `server.js`
+  (#113 the guard, #114 the fix). **`archive.md`.**
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
   #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
   merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
@@ -37,15 +40,12 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   variation guard; rematch re-scored only past winners, so a better scorer could
   never recover a dropped one; ties fell to view count. 6,010 of 12,377 pages
   changed, specificity 47.7% → 54.2%, corpus 1,733 → 6,903 at zero API cost.
-- **Opening pages carry their content in the HTML** (2026-08-07): Google indexed
-  5,010 pages through June–July then dropped them on 30/31 July — no deploy that
-  day, no manual action, site healthy. A quality purge: all 12,377 advertised
-  themselves with the same template sentence over an empty `#root`, earning
-  0.5–2.9% CTR at position ~11. The middleware now renders the opening's own
-  description and real win rates into `#root` and uses that description as the
-  meta; unknown FENs 404 rather than serving the landing page at 200; only the
-  271 same-board URLs canonicalise, while a shared name gets its move list in
-  the title; and sitemaps got their first generator, ordered by game volume.
+- **Opening pages carry their content in the HTML** (2026-08-07): Google dropped
+  5,010 indexed pages on 30/31 July with no deploy and a healthy site — a
+  quality purge, all 12,377 advertising the same template sentence over an empty
+  `#root`. The middleware now renders each opening's own description and real
+  win rates, unknown FENs 404, only the 271 same-board URLs canonicalise, and
+  sitemaps got their first generator. **`archive.md`.**
 - **Search answers in milliseconds, identically on all three surfaces**
   (2026-08-04, on `claude/player-details-layout-qxa1mo`): the top bar "hung"
   because the server took 1–3s to fuzzy-match a name over 12,377 descriptions

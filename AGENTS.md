@@ -301,21 +301,20 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   the machine running it, which is the check that would have caught this
   originally.
 
-- **Regenerate `package-lock.json` with npm 10, not whatever npm you have.** CI
-  pins Node 20, so the lockfile has to satisfy that npm. A local npm 11 drops
-  nested `node_modules/<pkg>/node_modules/*` entries when it rewrites the file,
-  and CI's `npm ci` then refuses it outright —
-  `Missing: picomatch@4.0.7 from lock file`, every job dead at install in about
-  sixteen seconds. The local tree is wrong too, not just the lockfile:
-  `npm ls picomatch --all` says `invalid: picomatch@2.3.2` against tinyglobby's
-  `^4.0.4`, which reaches the tree through `sqlite3` → `node-gyp`.
+- **Regenerate `package-lock.json` with the npm that CI runs.** That is now npm
+  11, because CI moved to Node 24 on 2026-08-31; until then it was npm 10 and
+  regenerating with anything newer broke the build. The rule has not changed,
+  only which npm satisfies it: a lockfile has to be readable by CI's `npm ci`,
+  and the two majors disagree about nested `node_modules/<pkg>/node_modules/*`
+  entries. npm 11 drops them when it rewrites the file and npm 10's `ci` then
+  refuses it outright — `Missing: picomatch@4.0.7 from lock file`, every job
+  dead at install in about sixteen seconds. The reverse is fine: npm 11 reads an
+  npm 10 lockfile, which is why the Node bump did not need a regeneration.
 
-  Restore the lockfile from `origin/main` first, then
-  `npx -y npm@10.8.2 install`, and confirm with `npx -y npm@10.8.2 ci` before
-  pushing. **Never `npm install --package-lock-only`** — it drops nested entries
-  even on npm 10, which is what caused this in the first place. If you install
-  with `--ignore-scripts`, follow it with `npm rebuild sqlite3` or the native
-  binding is missing and `tools/video-pipeline` tests fail to run.
+  **Never `npm install --package-lock-only`** — it drops nested entries on
+  either major, and is what caused this in the first place. If you install with
+  `--ignore-scripts`, follow it with `npm rebuild sqlite3` or the native binding
+  is missing and `tools/video-pipeline` tests fail to run.
 
 - **`jsdom` is a root devDependency because vitest hoists and jsdom did not.**
   `vitest` lands in the root `node_modules`, so its `import('jsdom')` resolves

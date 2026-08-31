@@ -26,14 +26,27 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // jsx-runtime listed explicitly — without it Rollup hoists it into
-          // whichever chunk loads first, chaining every route to that chunk.
-          vendor: ['react', 'react-dom', 'react/jsx-runtime'],
-          router: ['react-router-dom'],
-          // Interactive board stack — only the opening detail route imports
-          // these (MiniBoard thumbnails use vendored SVGs, not this chunk).
-          chess: ['chess.js', 'react-chessboard'],
+        // Rolldown (vite 8) dropped the object form of `manualChunks`; the
+        // same split is expressed as `codeSplitting.groups`, matched on module
+        // id and evaluated in order, first match winning. (`advancedChunks`
+        // takes the identical shape and is already deprecated in 8.2.2.)
+        codeSplitting: {
+          groups: [
+            {
+              // The `react/` prefix covers react/jsx-runtime as well, which has
+              // to land here: left out, it is hoisted into whichever chunk
+              // loads first, chaining every route to that chunk.
+              name: 'vendor',
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            },
+            { name: 'router', test: /[\\/]node_modules[\\/]react-router/ },
+            {
+              // Interactive board stack — only the opening detail route imports
+              // these (MiniBoard thumbnails use vendored SVGs, not this chunk).
+              name: 'chess',
+              test: /[\\/]node_modules[\\/](chess\.js|react-chessboard)[\\/]/,
+            },
+          ],
         },
       },
     },
@@ -42,6 +55,12 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    // Three LandingPage tests have run between 5s and 9.5s since long before
+    // this was raised; vitest 1 never enforced the 5s default against them and
+    // vitest 4 does. The suite is the same speed under both (41.2s vs 41.9s
+    // for that file), so this restores the behaviour rather than hiding a
+    // regression. Making those tests fast is tracked separately.
+    testTimeout: 20000,
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'json-summary'],

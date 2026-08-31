@@ -2,48 +2,42 @@
 
 **Date:** 2026-08-31
 
-## Current Task: The Dependabot backlog, fourth pass
+## Current Task: The Dependabot backlog, fifth pass
+
+Five PRs left over from the fourth pass, plus two that opened this morning. jest
+30 (#117) merged on its own — per-file test counts identical, 1019/1019. The
+vite/vitest cluster went in as one branch because no part of it was mergeable
+alone: vite 8 (#99), `@vitejs/plugin-react` 6 (#116), `@vitest/coverage-v8` 4
+(#106) and vitest 4, with `packages/shared` taken off vitest 1 at the same time.
+typescript 7 (#107) stays open as a tracker.
+
+**A green board hid an unsatisfiable tree again.** #106 alone let npm hoist
+vitest 4 to the root while `packages/web` and `packages/shared` still declared
+`^1.0.4`, and stacked a second vite under `node_modules/vitest`. Bumping all
+four declarations together resolves to one vite 8 and one vitest 4 per
+workspace, no nested copies.
+
+**The `manualChunks` rewrite fixed a duplication nobody had noticed.** Under
+vite 5 the `vendor` group produced a 102-byte chunk, react-dom was emitted into
+`index` _and_ `router`, and jsx-runtime landed in `chess` — the split had been
+quietly inoperative. As `codeSplitting.groups` (`advancedChunks` takes the same
+shape and is already deprecated in 8.2.2) it does what the comment always
+claimed: one 189.6 kB `vendor`, total JS 373 → 361 kB.
+
+**The LandingPage timeouts were never a vitest 4 regression.** Three tests fail
+at the 5000ms default under vitest 4; on `main` the slowest of them already took
+9420ms and passed, because vitest 1 was not enforcing the deadline. The file
+costs the same under both (41.2s vs 41.9s), so `testTimeout: 20000` restores the
+behaviour rather than hiding a regression — and it generalises the per-file
+patches #105, #111 and #112 each reached for. Making those tests fast is still
+open.
+
+## Previous Task: The Dependabot backlog, fourth pass
 
 Nine PRs in two waves, every one a major. Merged: helmet 8 (#98), googleapis 176
 (#100), react-router 7 (#102), lucide-react 1 (#108) and express 5 (#114).
-Answered by deleting the dependency: google-auth-library 11 (#101 → #104). Still
-open as trackers: vite 8 (#99), `@vitest/coverage-v8` 4 (#106) and typescript 7
-(#107), each with its triage on the PR. Five supporting PRs of my own: #103,
-#105, #111, #112, #113.
-
-**Green checks lied three times today, each in a different way.** #100 and #101
-showed `Cannot find package 'jsdom'` because vitest hoists to the root and had
-been resolving an unversioned 20.0.3 npm installed as its **optional peer** —
-which a lockfile regeneration is free to drop (#103 declares it). #106's board
-was green because no workflow runs `vitest --coverage` at all; its lockfile
-quietly installs vitest 4 and vite 8 at the root beside `packages/web`'s 1.6.1.
-And #109 passed every check for a change that takes the API down completely.
-
-**#109 is the one to remember.** `app.all('*')` throws under Express 5's
-path-to-regexp 8, and both entry points used it. No backend test ever loaded
-`server.js` or `api/index.js` — they all build their own `express()` — and a
-Vercel build succeeds because a function is only required on first invocation.
-#113 added the guard (now covering all nine `api/*.js`), #114 landed the bump
-with `'/{*splat}'` and the dev stack driven route by route.
-
-**react-router 7 is the smallest migration a routing major will ever give this
-repo.** No data router, no loaders, every navigation target absolute — so
-`v7_relativeSplatPath` cannot bite despite the `path="*"` catch-all. Exercised
-against a running server: `%2F`-encoded FEN deep links, param-only changes,
-back, and `useNavigate` from search. Clears the open-redirect advisory the
-2026-08-28 review said needed exactly this bump. `router` chunk 12.28 → 17.52 kB
-gzip; entry chunk unchanged.
-
-**One flake, three attempts.** `PopularOpeningsGrid.test.tsx` timed out at
-5000ms on branches byte-identical to a green `main`. #105 raised the `findBy`
-timeout, which vitest's per-test deadline pre-empts; #111 moved it onto the
-test, and the next-slowest one failed instead; #112 widened the file. Three of
-its ten tests are over 1.5s locally, so the file was always the right scope.
-Also found, not fixed: `test:e2e` fails 8 of 9 specs on `main`, selectors stale.
-
-## Previous Task: The Dependabot backlog, third pass
-
-Three PRs after #92, cut from `fc1a43c9`. #93 and #95 merged, #94 answered by
-deleting the dependency (#96). `open-pull-requests-limit` stays at 5 and root
-`engines.node` became `>=20.19.0`. Full detail in `archive.md`; triage in
-`docs/reviews/2026-08-29-dependabot-triage.md`.
+Answered by deleting the dependency: google-auth-library 11 (#101 → #104). Five
+supporting PRs of my own: #103, #105, #111, #112, #113. Green checks lied three
+times: the jsdom optional-peer drop (#103), #106's coverage board, and #109 —
+`app.all('*')` throws under Express 5 and no test loaded `server.js`, so #113
+added the guard and #114 the `'/{*splat}'` fix. Full detail in `archive.md`.

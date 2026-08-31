@@ -16,7 +16,18 @@ version: 2
 #
 # Outstanding as of 2026-08-31, triage on each PR:
 #   - typescript 7 (#107), the native port. `baseUrl` is gone and `paths` must
-#     be relative, and typescript-eslint peers typescript <6.1.0.
+#     be relative, and typescript-eslint peers typescript <6.1.0 (8.68.0 is
+#     latest and still does), so the bump cannot land before that moves.
+#   - jsdom 30 (#121), which is blocked on the runtime rather than on us: it
+#     needs node ^22.22.2 || ^24.15.0 || >=26 and CI pins node 20, so every one
+#     of the 61 vitest workers dies with
+#     `webidl.util.markAsUncloneable is not a function`. jsdom 29 does support
+#     node ^20.19.0 and is worth its own PR — it takes the frontend suite from
+#     163s to 69s of summed test time — but it costs 14 tests whose accessible
+#     names ("Level All") depend on flex blockification that jsdom cannot see,
+#     because the CSS Modules stylesheet is never applied in the test env. A
+#     real browser computes the spaced name, so the tests are right and jsdom
+#     is merely uninformed; the fix belongs in the markup, not the assertions.
 #
 # react-router 7 (#102) was on this list and landed, along with helmet 8 (#98),
 # googleapis 176 (#100), lucide-react 1 (#108), express 5 (#114) and jest 30

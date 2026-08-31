@@ -24,13 +24,19 @@ quietly inoperative. As `codeSplitting.groups` (`advancedChunks` takes the same
 shape and is already deprecated in 8.2.2) it does what the comment always
 claimed: one 189.6 kB `vendor`, total JS 373 → 361 kB.
 
-**The LandingPage timeouts were never a vitest 4 regression.** Three tests fail
-at the 5000ms default under vitest 4; on `main` the slowest of them already took
-9420ms and passed, because vitest 1 was not enforcing the deadline. The file
-costs the same under both (41.2s vs 41.9s), so `testTimeout: 20000` restores the
-behaviour rather than hiding a regression — and it generalises the per-file
-patches #105, #111 and #112 each reached for. Making those tests fast is still
-open.
+Also merged: supertest 7 (#120), which converged a root/api split that had sat
+at `^7.1.3` and `^6.3.3`; `@testing-library/jest-dom` 7 (#119); and
+`@vercel/speed-insights` 2 (#122), checked on its own preview deploy — script
+200, beacon posting, no console errors. `open-pull-requests-limit` went 5 → 10
+(#123) to drain the majors, with the condition to revert it in the file.
+
+**The slow LandingPage tests are jsdom 23, and that is now measured.** Under
+vitest 4 three of them fail the 5000ms default; on `main` the slowest already
+took 9420ms and passed, because vitest 1 never enforced the deadline — hence
+`testTimeout: 20000`. On jsdom 29 that same file goes 41,226ms → 2,981ms and the
+whole frontend suite 163s → 69s of summed test time. **When jsdom moves, put
+`testTimeout` back.** In a real browser the page mounts in 17ms and paints at
+72ms, so none of this was ever production behaviour.
 
 ## Previous Task: The Dependabot backlog, fourth pass
 

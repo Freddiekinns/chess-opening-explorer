@@ -4,21 +4,22 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **The vite/vitest cluster and jest 30 landed** (2026-08-31, #99/#106/#116/
-  #117): jest 30 merged alone on identical per-file counts; the other four went
-  in as one branch because none was mergeable apart — #106 was green only by
-  hoisting vitest 4 to the root over `^1.0.4` declarations it left in place.
-  `manualChunks` became `codeSplitting.groups`, exposing that the vendor split
-  had been inoperative under vite 5 (102-byte chunk, react-dom in two chunks);
-  JS 373 → 361 kB. The three LandingPage timeouts were no regression — the
-  slowest already took 9420ms against a 5000ms default that vitest 1 ignored.
-- **Nine dependency majors triaged, five merged** (2026-08-31, #98-#114): helmet
-  8, googleapis 176, react-router 7, lucide-react 1 and express 5 in;
-  google-auth-library 11 answered by deleting the unused root declaration
-  (#104). **Green checks lied three times** — the jsdom optional-peer drop
-  (#103), #106's coverage board, and #109, which passed everything for an
-  `app.all('*')` that throws under Express 5 with no test loading `server.js`
-  (#113 the guard, #114 the fix). **`archive.md`.**
+- **Fifth Dependabot pass, seven merged** (2026-08-31, #99/#106/#116-#123): jest
+  30 alone on identical per-file counts; vite 8, vitest 4, coverage-v8 4 and
+  plugin-react 6 as one branch because none was mergeable apart — #106 was green
+  only by hoisting vitest 4 to the root over `^1.0.4` declarations it left in
+  place. `manualChunks` became `codeSplitting.groups`, exposing a vendor split
+  inoperative under vite 5 (102-byte chunk, react-dom in two chunks); JS 373 →
+  361 kB, builds 4.7s → 0.8s. Then supertest 7, jest-dom 7, speed-insights 2, PR
+  limit 5 → 10. **The slow LandingPage tests are jsdom 23** — on jsdom 29 that
+  file goes 41.2s → 3.0s and the suite 163s → 69s, so restore `testTimeout` when
+  jsdom moves; jsdom 30 needs node 22+ and CI pins 20.
+- **Fourth pass: nine majors triaged, five merged** (2026-08-31, #98-#114):
+  helmet 8, googleapis 176, react-router 7, lucide-react 1, express 5 in;
+  google-auth-library 11 answered by deleting the unused root declaration.
+  **Green checks lied three times** — the jsdom optional-peer drop, #106's
+  coverage board, and #109's `app.all('*')`, which throws under Express 5 with
+  no test loading `server.js`. **`archive.md`.**
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
   #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
   merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left

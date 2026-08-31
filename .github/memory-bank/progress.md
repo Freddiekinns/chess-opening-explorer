@@ -4,16 +4,18 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **Five dependency majors triaged, three merged** (2026-08-31, #98-#105):
-  helmet 8, googleapis 176 and react-router 7 in; google-auth-library 11
-  answered by deleting the unused root declaration; vite 8 left open on
-  rolldown's `manualChunks` and vitest@1's `vite@^5` peer. Two red suites were
-  one bug in neither bump — vitest hoists to the root and had been resolving an
-  **optional peer** jsdom a lockfile regeneration dropped, now declared (#103).
-  react-router 7 was exercised against a running dev server, not just green
-  checks, and clears the open-redirect advisory. The intermittent red after it
-  was the file's only accessibility-tree query timing out at the 5000ms default
-  on a loaded runner — a per-test deadline, not the query's (#105/#111/#112).
+- **Nine dependency majors triaged, five merged** (2026-08-31, #98-#114): helmet
+  8, googleapis 176, react-router 7, lucide-react 1 and express 5 in;
+  google-auth-library 11 answered by deleting the unused root declaration
+  (#104); vite 8, coverage-v8 4 and typescript 7 left open as trackers. **Green
+  checks lied three times.** #100/#101 could not find jsdom — vitest hoists to
+  the root and had been resolving an **optional peer** copy a lockfile
+  regeneration dropped (#103). #106's board is green because nothing runs
+  `vitest --coverage`, while its lockfile installs vitest 4 and vite 8 at the
+  root. And #109 passed every check for a change that takes the API down:
+  `app.all('*')` throws under Express 5, and no test had ever loaded `server.js`
+  or `api/index.js` — #113 is the guard, #114 the fix. react-router 7 was driven
+  against a running server and clears the open-redirect advisory.
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
   #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
   merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
@@ -75,26 +77,24 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
-- **vite 8 (#99)** — rolldown rejects the object form of `manualChunks`, which
-  is load-bearing here, and vitest@1 peers `vite@^5`, so vitest and coverage-v8
-  move with it. `tools/analysis` still has no CI at all.
-- **`npm run test:e2e` fails 8 of 9 specs on `main`** — Playwright selectors
-  gone stale against the current copy ("Search by pasting PGN" against a button
-  now reading "Paste a game"). Nothing in CI runs them, which is why.
-- **Watch the SEO recovery** (from 2026-08-07). Indexed count and "Discovered –
-  currently not indexed" in Search Console, weekly; crawl stats too, since a
-  requests drop around 30 July would mean crawl, not quality. Next levers if it
-  stalls — slug URLs with 301s from the FEN form, and related-opening links.
+- **vite 8 (#99), coverage-v8 4 (#106), typescript 7 (#107)** — rolldown rejects
+  the object form of `manualChunks`; vitest@1 peers `vite@^5`, so #106 rides
+  with it; TS 7 needs `baseUrl` gone and a typescript-eslint that declares
+  support. `tools/analysis` still has no CI at all.
+- **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
+  ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
+- **Watch the SEO recovery** (from 2026-08-07): indexed count, "Discovered – not
+  indexed" and crawl stats in Search Console, weekly. Next levers if it stalls —
+  slug URLs with 301s from the FEN form, related-opening links.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
-  no CI suite, and its barrels export without extensions, so `dist/index.js` is
-  unimportable from Node ESM.
-- **Video programme**: enable the monthly refresh Action — commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY` — then V4-V6.
-- **Search is not a real combobox** — no roles, no `aria-activedescendant`, no
-  live region. Biggest a11y gap.
-- **Search returns near-duplicate names**: "najdorf" gives four identical rows
+  no CI suite, and its barrels export without extensions.
+- **Video programme**: enable the monthly refresh Action (commit
+  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`), then V4-V6.
+- **Search is not a real combobox** — no roles, no live region. Biggest a11y
+  gap.
+- **Search returns near-duplicate names**: four identical "najdorf" rows
   separated only by ECO — a data problem.
 - **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
-- **Mobile Discover shows no facet chips**; win-rate filtering, ARIA tooltips
-  and name dedupe all still open. See `archive.md`.
+- **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
+  dedupe. See `archive.md`.

@@ -14,18 +14,25 @@ version: 2
 # on 2026-08-29 and returned as #89 twenty-two minutes later, same change, same
 # failure.
 #
-# Outstanding as of 2026-08-31:
+# Outstanding as of 2026-08-31, triage on each PR:
 #   - vite 8 (#99), the rolldown release. `manualChunks` has to be rewritten as
-#     `advancedChunks.groups`, and vitest@1 peers vite@^5, so vitest and
-#     @vitest/coverage-v8 move with it. Triage is on the PR.
-# react-router 7 (#102) was on this list and landed, along with helmet 8 (#98)
-# and googleapis 176 (#100); eslint 10 (#77), eslint-plugin-react-hooks 7 (#78)
-# and react-refresh 0.5 landed together with the flat-config migration, and so
-# did sqlite3 6.
+#     `advancedChunks.groups`, and vitest@1 peers vite@^5.
+#   - @vitest/coverage-v8 4 (#106), which peers vitest at exactly 4.1.11 and so
+#     drags vitest 4 and vite 8 into the root tree. It rides with #99.
+#   - typescript 7 (#107), the native port. `baseUrl` is gone and `paths` must
+#     be relative, and typescript-eslint peers typescript <6.1.0.
+# react-router 7 (#102) was on this list and landed, along with helmet 8 (#98),
+# googleapis 176 (#100), lucide-react 1 (#108) and express 5 (#114); eslint 10
+# (#77), eslint-plugin-react-hooks 7 (#78) and react-refresh 0.5 landed with the
+# flat-config migration, and so did sqlite3 6.
 #
-# google-auth-library 11 (#101) is neither outstanding nor ignored: the root
-# declared it without importing it anywhere, so the dependency was dropped and
-# the PR went with it. googleapis carries its own. See
+# Two majors were answered by a PR rather than merged, which is the shape to
+# reach for when the bump alone is wrong. google-auth-library 11 (#101): the
+# root declared it without importing it, so #104 dropped the dependency and the
+# PR went with it. express 5 (#109): green on every check for a change that
+# throws at require time, so #114 carried the bump together with the route fix
+# and #113 added the guard that catches it. Neither suppresses a version, which
+# is why neither is an `ignore` entry. See
 # docs/reviews/2026-08-28-dependency-security-scanning.md for the original
 # reasoning and docs/reviews/2026-08-29-dependabot-triage.md for the first pass
 # through the backlog.

@@ -5,6 +5,16 @@ import { MemoryRouter } from 'react-router-dom';
 import { PopularOpeningsGrid } from '../PopularOpeningsGrid';
 import { browseResponse, browseItem } from '../../../test/fixtures/browseResponse';
 
+// Every test here renders the whole grid, and three of the ten cost more than
+// 1.5s locally — 2653ms for Load more, 2066ms for the accessibility-tree query
+// in `cards stay real links`, 1642ms for the save flow. A loaded CI runner
+// takes the file from ~11s to ~28s, which puts those three over the 5000ms
+// per-test default: across the 2026-08-31 dependency batch it went red four
+// times, on two different tests, on branches whose installed tree was
+// byte-identical to a green `main`. Widened for this file and nowhere else,
+// because the deadline is the wrong size here, not in the suite.
+vi.setConfig({ testTimeout: 15000 });
+
 const renderGrid = (initialEntry = '/') =>
   render(
     <MemoryRouter initialEntries={[initialEntry]}>
@@ -84,21 +94,12 @@ describe('PopularOpeningsGrid', () => {
     expect(screen.queryByRole('button', { name: /Load more/ })).not.toBeInTheDocument();
   });
 
-  // The extra time belongs on the test, not on the query: vitest's own 5000ms
-  // per-test deadline fires first, so a longer `findBy` timeout inside a 5s
-  // test never gets to run. This is the file's only accessibility-tree query
-  // and it costs ~2066ms locally against ~900ms for the findByText ones —
-  // `findByRole` with a `name` recomputes every accessible name on each 50ms
-  // poll. A loaded CI runner takes the file from ~11s to ~28s and 2s becomes
-  // ~6s, which is why this one test, and only this one, went red across the
-  // 2026-08-31 dependency batch. Left on the test alone so a genuinely hung
-  // render in the other nine still fails in five seconds.
   it('cards stay real links so 12,000 pages keep their internal links', async () => {
     renderGrid();
 
     const link = await screen.findByRole('link', { name: /Sicilian Defence/ });
     expect(link).toHaveAttribute('href', '/opening/fen-1');
-  }, 15000);
+  });
 
   it('applies a filter from the URL without the user touching a control', async () => {
     renderGrid('/?level=Beginner');

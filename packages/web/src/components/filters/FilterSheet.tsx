@@ -250,11 +250,18 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
           onClick={() => setOpen(true)}
         >
           <SlidersHorizontal size={15} aria-hidden="true" />
-          <span>Filters</span>
+          {/* See FacetSelect: the space keeps the accessible name spaced
+              without relying on flex blockification. */}
+          <span>Filters</span>{' '}
           {activeCount > 0 && (
             <span className={styles.badge}>
-              {activeCount}
-              <span className={styles.srOnly}> active</span>
+              {activeCount}{' '}
+              {/* The space sits outside the visually-hidden span rather than
+                  inside it. `position: absolute` blockifies the span, so a
+                  browser joins the name as "2 active" on its own — but the
+                  test environment has no CSS, treats it as inline, and trims
+                  the leading space to give "2active". */}
+              <span className={styles.srOnly}>active</span>
             </span>
           )}
         </button>

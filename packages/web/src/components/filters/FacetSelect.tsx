@@ -57,7 +57,13 @@ export const FacetSelect: React.FC<FacetSelectProps> = ({
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span className={styles.label}>{label}</span>
+        {/* The explicit space is load-bearing for the accessible name. These
+            spans are flex items, so a browser blockifies them and joins the
+            name with a space — but that depends on CSS the test environment
+            never loads, where the two run together as "LevelAll". A real space
+            makes the name the same either way, and flex layout does not render
+            whitespace between items, so nothing moves. */}
+        <span className={styles.label}>{label}</span>{' '}
         <span className={active ? styles.valueActive : styles.value}>{display}</span>
         <ChevronDown size={13} className={styles.chevron} aria-hidden="true" />
       </button>

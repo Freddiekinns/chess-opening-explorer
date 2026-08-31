@@ -4,17 +4,25 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Five dependency majors triaged, three merged** (2026-08-31, #98-#105):
+  helmet 8, googleapis 176 and react-router 7 in; google-auth-library 11
+  answered by deleting the unused root declaration; vite 8 left open on
+  rolldown's `manualChunks` and vitest@1's `vite@^5` peer. Two red suites were
+  one bug in neither bump — vitest hoists to the root and had been resolving an
+  **optional peer** jsdom a lockfile regeneration dropped, now declared (#103).
+  react-router 7 was exercised against a running dev server, not just green
+  checks, and clears the open-redirect advisory. The intermittent red after it
+  was the file's only accessibility-tree query timing out at the 5000ms default
+  on a loaded runner — a per-test deadline, not the query's (#105/#111/#112).
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
   #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
   merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
   blocked on #86. Four false greens, every one a bump no workflow covered: a
   Dependabot branch is tested against the `main` of the day it opened (#75
   silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
-  `tools/analysis` has no CI; and nothing runs `concurrently`, so #95 was
-  verified against the real `dev` scripts. Closing a PR suppresses only that
-  version — #76 returned as #89 — so `dependabot.yml` gained its first `ignore`
-  entry, and #94 was answered by deleting the dead dependency (with `cross-env`)
-  rather than bumping it. `docs/reviews/2026-08-29-dependabot-triage.md`.
+  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
+  suppresses only that version — #76 returned as #89 — so #94 was answered by
+  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;
@@ -45,23 +53,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   by all three surfaces and fetched on the first keystroke, not on mount. One
   request per query, responses 55 KB → 4.4 KB, and PGN lookup finally sees the
   whole corpus.
-- **Review pass over the seven-PR UX stack** (2026-08-04, on
-  `claude/player-details-layout-qxa1mo`): read `feat/ux-review...HEAD`, then CSS
-  on its own. Fixed a TopBar keyboard crash on an empty list, a stale-response
-  race in `useOpeningSearch`, an `AbortError` shown as an error on Cancel, a
-  0%/0%/0% bar for `null` stats, "Loading Lichess data…" forever on mobile, and
-  an invisible Discover grid under reduced motion.
-- **Search consolidated, its affordances fixed, Analyse's cards rebuilt**
-  (2026-08-02..03): three fetches and two debounces became `useOpeningSearch`,
-  exposing that `eco` is not a Fuse key; the mobile overlay outlived the tab
-  that navigated; the filter grabber promised a drag it never did; W/D/L were
-  tallied inside the classified branch, so unrecognised openings vanished.
-  **`archive.md`.**
-- **The UX review programme** (2026-07-25..30): phases 0–5, the implementation
-  audit that found six of six half-applied, `shared/SearchRow.tsx` unifying the
-  three search surfaces (guard `search-row-parity.test.tsx`),
-  `GET /api/openings/browse`, two spec decisions reversed, and the agent-docs
-  restructure into `AGENTS.md` + `.claude/skills/`. All in **`archive.md`**.
+- **Review pass over the seven-PR UX stack** (2026-08-04): a TopBar keyboard
+  crash on an empty list, a stale-response race in `useOpeningSearch`, an
+  `AbortError` shown as an error on Cancel, a 0%/0%/0% bar for `null` stats,
+  "Loading Lichess data…" forever on mobile, an invisible Discover grid under
+  reduced motion. **`archive.md`.**
+- **Search consolidated, Analyse's cards rebuilt** (2026-08-02..03): three
+  fetches and two debounces became `useOpeningSearch`, exposing that `eco` is
+  not a Fuse key. **`archive.md`.**
+- **The UX review programme** (2026-07-25..30): phases 0–5, `shared/SearchRow`,
+  `GET /api/openings/browse`, the agent-docs restructure. **`archive.md`**.
 - Everything before the UX review — **all detail in `archive.md`**: shared
   `PerfBar`; the opening-detail mobile overhaul; the `/api/explorer` proxy;
   Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
@@ -71,30 +72,29 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **ESLint flat-config migration (#86)** — carries eslint 10 (#77), react-hooks
-  7 (#78) and react-refresh 0.5. #78 is the real work: v7's compiler rules flag
-  ~20 sites, `useOpeningSearch` among them. Land them at `warn` first.
-  `react-router@7` also still outstanding (`react-router-dom` is ^6.20.1).
-- **Dependency loose ends**: `cross-env` is used by no script — drop it and the
-  assertion pinning it (`root-package-json.test.js:58`); root `engines` claims
-  node `>=18` but cross-env 10 needs 20; `tools/analysis` has no CI at all.
+- **#86's remaining half** — flat config and eslint 10 landed (#97); the
+  react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
+  `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
+- **vite 8 (#99)** — rolldown rejects the object form of `manualChunks`, which
+  is load-bearing here, and vitest@1 peers `vite@^5`, so vitest and coverage-v8
+  move with it. `tools/analysis` still has no CI at all.
+- **`npm run test:e2e` fails 8 of 9 specs on `main`** — Playwright selectors
+  gone stale against the current copy ("Search by pasting PGN" against a button
+  now reading "Paste a game"). Nothing in CI runs them, which is why.
 - **Watch the SEO recovery** (from 2026-08-07). Indexed count and "Discovered –
-  currently not indexed" in Search Console, weekly. Crawl stats too: if requests
-  fell around 30 July it is crawl, not quality. Next levers if it stalls — slug
-  URLs (`/opening/vienna-game-anderssen-defence`) with 301s from the FEN form,
-  and internal linking between related openings. Both are bigger jobs.
+  currently not indexed" in Search Console, weekly; crawl stats too, since a
+  requests drop around 30 July would mean crawl, not quality. Next levers if it
+  stalls — slug URLs with 301s from the FEN form, and related-opening links.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
-  no CI suite, so shared-module tests live in the web suite; and its barrels
-  export without extensions, so `dist/index.js` is unimportable from Node ESM.
-- **Video programme**: enable the monthly refresh Action (commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`); then V4-V6, studies.
-- **Search is not a real combobox** — no combobox/listbox roles,
-  `aria-expanded`, `aria-activedescendant` or live region. Biggest a11y gap.
-- **Toasts need one host, not one per component**: two within 4s cover an Undo
-  (2026-08-04).
-- **Search returns near-duplicate names**: "najdorf" gives four rows reading
-  "Sicilian Defense: Najdorf Variation", separated only by ECO — a data problem.
-- **Mobile Discover shows no facet chips**: "Filters (2)" hides which.
-- **TASK006 — Coverage**: backend 90%+, frontend 70%+; shrink
-  `collectCoverageFrom`, which gates 90% on a backend subset.
-- **Win-rate filtering**, ARIA tooltips, name dedupe. See `archive.md`.
+  no CI suite, and its barrels export without extensions, so `dist/index.js` is
+  unimportable from Node ESM.
+- **Video programme**: enable the monthly refresh Action — commit
+  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY` — then V4-V6.
+- **Search is not a real combobox** — no roles, no `aria-activedescendant`, no
+  live region. Biggest a11y gap.
+- **Search returns near-duplicate names**: "najdorf" gives four identical rows
+  separated only by ECO — a data problem.
+- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
+  Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
+- **Mobile Discover shows no facet chips**; win-rate filtering, ARIA tooltips
+  and name dedupe all still open. See `archive.md`.

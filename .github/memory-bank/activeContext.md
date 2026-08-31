@@ -1,50 +1,50 @@
 # Active Context
 
-**Date:** 2026-08-30
+**Date:** 2026-08-31
 
-## Current Task: The Dependabot backlog, third pass
+## Current Task: The Dependabot backlog, fourth pass
 
-Three more PRs after #92, all cut from the tip `fc1a43c9` — base SHAs checked,
-so the stale-branch trap did not apply. #93 (react-refresh 0.4.26) and #95
-(concurrently 10.0.5) merged; #94 was answered by deleting the dependency, #96.
+Five PRs (#98-#102), every one a major, all cut from the tip `738d3d3c`. #98
+helmet 8, #100 googleapis 176 and #102 react-router 7 merged; #101 was answered
+by deleting the dependency (#104); #99 vite 8 stays open with its triage on the
+PR. Two supporting PRs of my own landed alongside, #103 and #105.
 
-**#93 is the `ignore` entry behaving.** It pins `>=0.5.0`, so the 0.4 line still
-flows as an ordinary `npm-development` bump and Lint stays green — the check
-that produced 149 errors on #76 and #89.
+**The two red frontend suites were one bug, and it was in neither bump.** #100
+and #101 reported `Cannot find package 'jsdom'` 61 times and collected
+`no tests`. vitest hoists to the root, so its `import('jsdom')` never reaches
+`packages/web/node_modules/jsdom`; it had been resolving an unversioned 20.0.3
+that npm auto-installed as vitest's **optional peer**, and a lockfile
+regeneration is free to drop one. #103 declares jsdom at the root at
+`packages/web`'s own range; the suite runs on 23 now, same 592 passes.
 
-**#95's green checks did not cover the thing being changed.** No workflow runs
-`concurrently`; it is named only by `dev` and `start`. Verified by installing
-v10 in a scratch directory and pointing it at the real commands — Vite on 3000,
-nodemon plus the API on 3010. Same shape as #88's `tqdm` bump.
+**react-router 7 is the smallest migration a routing major will ever give this
+repo.** No data router, no loaders, no `json()`/`defer()`, and every navigation
+target is absolute — so `v7_relativeSplatPath` cannot bite despite the
+`path="*"` catch-all. Exercised against a running dev server rather than
+trusting green checks: `%2F`-encoded FEN deep links, detail-to-detail param
+changes, the catch-all, back, and `useNavigate` from search. It also clears the
+open-redirect advisory the 2026-08-28 review said needed exactly this bump. The
+`router` chunk goes 12.28 → 17.52 kB gzip; the entry chunk is unchanged.
 
-**#94 bumped a package nothing uses.** Root Jest is `testEnvironment: "node"`,
-so is `packages/api`, no `@jest-environment` pragma exists, and `packages/web`
-runs Vitest against its own `jsdom@23`; `jest-environment-jsdom@30` beside
-`jest@29` would have been a live mismatch. Dropped with `cross-env` in #96,
-because **deleting the dependency is the only thing that stops Dependabot
-proposing it** — closing suppresses one version, per #76 → #89.
+**The intermittent red afterwards was a slow query, not a flake.** One test in
+`PopularOpeningsGrid.test.tsx` failed three of seven runs, always
+`Test timed out in 5000ms`, on branches whose installed tree was byte-identical
+to a green `main`. It is the file's only accessibility-tree query — 2066ms
+locally against ~900ms for the `findByText` ones, and a loaded runner takes the
+file from ~11s to ~28s. Fixing it took three goes: #105 raised the `findBy`
+timeout, which vitest's per-test deadline pre-empts; #111 moved it onto that
+test, and the next-slowest one failed instead; #112 widened the file. Three of
+its ten tests are over 1.5s locally, so the file was always the right scope.
 
-**Both open decisions are now made.** `open-pull-requests-limit` stays at 5:
-raising it mattered only while #77 and #78 held two npm slots, and the
-flat-config migration closes both. Root `engines.node` is `>=20.19.0`, the floor
-ESLint 10 actually needs, rather than concurrently 10's `>=22` — CI runs Node 20
-and a manifest that declares its own CI unsupported is the worse error. It is
-the only Node declaration in the repo and it is a range, not a pin, so Vercel's
-function runtime is unaffected.
+**#101 and #99 are opposite shapes.** google-auth-library was imported nowhere,
+so #104 deleted the declaration and the installed tree did not move — 903
+lockfile entries either side. vite 8 is real work: rolldown rejects the object
+form of `manualChunks`, and vitest@1 peers vite@^5. Also found, not fixed:
+`npm run test:e2e` fails 8 of 9 specs on `main`, its selectors gone stale.
 
-Full triage: `docs/reviews/2026-08-29-dependabot-triage.md`.
+## Previous Task: The Dependabot backlog, third pass
 
-## Previous Task: The Dependabot backlog, second pass
-
-Four PRs a minute after #87 landed. #88 `tqdm` ≥4.70, #90 `dotenv` 17.4.2 and
-#91 `cross-env` 10.1.0 merged; #89 was #76 wearing a new version number.
-
-dotenv 17 was the only real behaviour change and cannot reach production —
-Vercel serves `api/*.js`, none of which require it. v17 prints a banner to
-stdout on every `config()`, so `dev:api` gained two lines of advertising; both
-calls now pass `{ quiet: true }`.
-
-#89 is why `.github/dependabot.yml` carries one `ignore` entry (#92): closing a
-Dependabot PR suppresses only the version closed, and react-refresh 0.4 → 0.5 is
-a `0.x` minor, so it rides along with every future dev bump and takes the group
-red. **Delete the entry when #86 lands.**
+Three PRs after #92, cut from `fc1a43c9`. #93 and #95 merged, #94 answered by
+deleting the dependency (#96). `open-pull-requests-limit` stays at 5 and root
+`engines.node` became `>=20.19.0`. Full detail in `archive.md`; triage in
+`docs/reviews/2026-08-29-dependabot-triage.md`.

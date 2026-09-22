@@ -1,49 +1,41 @@
 # Active Context
 
-**Date:** 2026-08-31
+**Date:** 2026-09-22
 
-## Current Task: The Dependabot backlog, fifth pass
+## Current Task: SEO check-up, Vercel usage, and the Dependabot queue
 
-Everything open bar typescript 7 (#107), which is blocked on typescript-eslint
-peering `<6.1.0`. Merged: jest 30, the vite 8 / vitest 4 / coverage-v8 4 /
-plugin-react 6 cluster as one branch, supertest 7 (converging a root/api split
-at `^7.1.3` and `^6.3.3`), jest-dom 7, speed-insights 2 (checked on its own
-preview deploy), jsdom 30, and `glob` deleted rather than bumped because nothing
-imports it. `open-pull-requests-limit` went 5 → 10 to drain the majors, with the
-condition to revert it in the file.
+**Search Console: indexing recovered, serving has not.** 7,174 indexed (was
+5,750), "Discovered – not indexed" 3,615 → 2,038, average position 40–60 in
+August → 10–20 in September. Impressions are still 3–40/day against 100–250 in
+mid-July: Google indexes the pages and declines to show them. Sitemaps 5–7 (the
+least-played openings) have never been read; they serve fine.
 
-**A green board hid an unsatisfiable tree again.** #106 alone let npm hoist
-vitest 4 to the root while `packages/web` and `packages/shared` still declared
-`^1.0.4`, and stacked a second vite under `node_modules/vitest`. Bumping all
-four declarations together resolves to one vite 8 and one vitest 4 per
-workspace. The lesson is the PR limit: those three were diagnosable only because
-all three were open at once.
+**81 soft 404s were our own error copy.** `loadPage` rendered "Opening not
+found" for any failed fetch, painted over the pre-rendered `#root`. Live-tested
+pages rendered fully. #142: only an API 404 says not found; a failed load says
+"This opening didn't load" with a retry. Run "Validate fix" in Search Console.
 
-**The `manualChunks` rewrite fixed a duplication nobody had noticed.** Under
-vite 5 the `vendor` group produced a 102-byte chunk, react-dom was emitted into
-`index` _and_ `router`, and jsx-runtime landed in `chess` — quietly inoperative.
-As `codeSplitting.groups` it does what the comment always claimed: one 189.6 kB
-`vendor`, total JS 373 → 361 kB, and React now survives a deploy in cache
-instead of riding in the entry chunk. Builds went 4.7s → 0.8s.
+**Vercel: not more traffic, costlier requests.** Edge requests flat at 28–36k a
+week; Active CPU per invocation ~3× since mid-August — crawlers hit distinct
+FENs sparsely, half land cold, and each `/api/openings` cold start parses ~78 MB
+of JSON (3.1s cold vs 0.3s warm). 1h55m of Hobby's 4h. Parked: lazy-load
+`video-index.json` if it climbs. The Aug 30–31 pass cut ~100 deployments and
+took Functions Storage to 7.98/10 GB — #141 stops `dependabot/**` deploying.
 
-**The slow LandingPage tests were jsdom 23.** CI moved off Node 20 (EOL since
-2026-03-24) to 24, which unblocked jsdom 30; `testTimeout` is back at the 5000ms
-default and the slowest test in the suite is 3.0s. LandingPage 41.2s → 12.3s,
-CI's frontend job 2m01s → 1m16s. Never production behaviour — that page mounts
-in 17ms and paints at 72ms in a real browser.
+**Page weight was the site icon.** `opening-book-icon.png` was a 919×794, 568 KB
+favicon — two-thirds of every first page load. Now 512 px, 46 KB (#143); the
+full-resolution master stays in `design-system/project/assets/`. Mobile
+Lighthouse LCP swung 2.3–5.1s with it; JS is ~135 KB gz and fine.
 
-**Three filter triggers were naming themselves out of CSS.** `.trigger` is
-`inline-flex` and `.srOnly` is `position: absolute`, both of which blockify
-children, so a browser joins the accessible name with a space and a CSS-less
-consumer gets "LevelAll". Chrome confirmed the spaced name is correct, so the
-assertions were right and the markup was the weak link; the space is in the
-content now and the triggers measure the same to the pixel.
+**Dependabot:** #140, #138 merged (test counts matched `main`); #133 needed its
+bot-triggered CI approved. **vitest 5 is blocked upstream**: combined with
+coverage-v8 5 it installs and tests clean but fails type-check — jest-dom 7.0.1
+augments `Assertion<T>`, vitest 5 declares `Assertion<T, E>`. #136's green was
+false (vitest 4 still nested). TS 7 (#107) still waits on typescript-eslint.
 
-## Previous Task: The Dependabot backlog, fourth pass
+## Previous Task: The Dependabot backlog, fifth pass
 
-Nine PRs, every one a major. Merged helmet 8, googleapis 176, react-router 7,
-lucide-react 1, express 5; google-auth-library 11 answered by deleting the
-dependency. Green checks lied three times: the jsdom optional-peer drop, #106's
-coverage board, and #109 — `app.all('*')` throws under Express 5 and no test
-loaded `server.js`, so #113 added the guard and #114 the `'/{*splat}'` fix. Full
-detail in `archive.md`.
+Everything bar typescript 7: jest 30, the vite 8 / vitest 4 cluster as one
+branch, supertest 7, jest-dom 7, speed-insights 2, jsdom 30; CI off Node 20.
+`codeSplitting.groups` fixed a vendor split vite 5 had made inoperative. Three
+filter triggers' accessible names depended on CSS. Detail in `archive.md`.

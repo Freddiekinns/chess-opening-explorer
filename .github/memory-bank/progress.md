@@ -4,6 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **SEO check-up, Vercel usage, and the Dependabot queue** (2026-09-22,
+  #133/#138/#140-#143): indexed 5,750 → 7,174 but impressions still ~8/day
+  against 100–250 in July — the purge has not lifted. Vercel Active CPU per
+  invocation ~3× since mid-August (crawler cold starts loading 78 MB of JSON);
+  ~100 Dependabot deployments filled Functions Storage to 7.98/10 GB, so
+  `dependabot/**` no longer deploys. 81 soft 404s were "Opening not found"
+  painted on any failed fetch; the 568 KB site icon is 46 KB. **`archive.md`.**
 - **Fifth Dependabot pass: all but typescript 7** (2026-08-31, #99-#129). jest
   30; vite 8 / vitest 4 / coverage-v8 4 / plugin-react 6 as one branch, #106
   being green only by hoisting vitest 4 to the root over `^1.0.4` declarations
@@ -55,37 +62,29 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   by all three surfaces and fetched on the first keystroke, not on mount. One
   request per query, responses 55 KB → 4.4 KB, and PGN lookup finally sees the
   whole corpus.
-- **Review pass over the seven-PR UX stack** (2026-08-04): a TopBar keyboard
-  crash on an empty list, a stale-response race in `useOpeningSearch`, an
-  `AbortError` shown as an error on Cancel, a 0%/0%/0% bar for `null` stats,
-  "Loading Lichess data…" forever on mobile, an invisible Discover grid under
-  reduced motion. **`archive.md`.**
-- **Search consolidated, Analyse's cards rebuilt** (2026-08-02..03): three
-  fetches and two debounces became `useOpeningSearch`, exposing that `eco` is
-  not a Fuse key. **`archive.md`.**
-- **The UX review programme** (2026-07-25..30): phases 0–5, `shared/SearchRow`,
-  `GET /api/openings/browse`, the agent-docs restructure. **`archive.md`**.
-- Everything before the UX review — **all detail in `archive.md`**: shared
-  `PerfBar`; the opening-detail mobile overhaul; the `/api/explorer` proxy;
-  Deviation Trainer slice 1; Study matching V2 (18.2%→35.7%); the video index
-  (28.2%→72.8%); route splitting (409→189 kB) and `/api/openings/all` → 410;
-  28-family taxonomy; domain migration; TASK006–016; Practice Mode. **Still true
-  and not fixed**: the common-plans ECO-bucket defect shipped no code change.
+- Everything before 2026-08-04 — **all detail in `archive.md`**: the UX-stack
+  review pass; search consolidated into `useOpeningSearch`; the UX review
+  programme (phases 0–5, `GET /api/openings/browse`); shared `PerfBar`; the
+  opening-detail mobile overhaul; the `/api/explorer` proxy; Deviation Trainer
+  slice 1; Study matching V2 (18.2%→35.7%); the video index (28.2%→72.8%); route
+  splitting (409→189 kB) and `/api/openings/all` → 410; 28-family taxonomy;
+  domain migration; TASK006–016; Practice Mode. **Still true and not fixed**:
+  the common-plans ECO-bucket defect shipped no code change.
 
 ## What's Left
 
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
-- **vite 8 (#99), coverage-v8 4 (#106), typescript 7 (#107)** — rolldown rejects
-  the object form of `manualChunks`; vitest@1 peers `vite@^5`, so #106 rides
-  with it; TS 7 needs `baseUrl` gone and a typescript-eslint that declares
-  support. `tools/analysis` still has no CI at all.
+- **Blocked upstream**: vitest 5 (#135/#136, together) on jest-dom's types; TS 7
+  (#107) on typescript-eslint. `tools/analysis` still has no CI at all.
 - **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
   ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
-- **Watch the SEO recovery** (from 2026-08-07): indexed count, "Discovered – not
-  indexed" and crawl stats in Search Console, weekly. Next levers if it stalls —
-  slug URLs with 301s from the FEN form, related-opening links.
+- **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-
+  indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
+  301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical
+  duplicate.
+- **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, and its barrels export without extensions.
 - **Video programme**: enable the monthly refresh Action (commit

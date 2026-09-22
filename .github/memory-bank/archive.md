@@ -5,6 +5,57 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## SEO check-up, Vercel usage, and the Dependabot queue (2026-09-22, #133/#138/#140-#143)
+
+Search Console: 7,174 indexed (was 5,750), "Discovered – not indexed" 3,615 →
+2,038, position 40–60 → 10–20, but impressions 3–40/day against 100–250 in
+mid-July. Sitemap index read, children 1–4 only (8,000 of 12,108 URLs).
+
+Soft 404 (81): URL Inspection on a flagged `%2F` URL showed "Page fetch:
+Successful" and a live test "available to Google" rendering the full page.
+`loadPage` mapped every failure to "Opening not found" via
+`fetchWithErrorHandling`, which also hid the status code; React paints that over
+the pre-rendered `#root`. Fixed in #142 (test-first); the invariant is in the
+`seo-crawl-graph` skill. Found in passing, not fixed: an unencoded
+`/opening/a/b/…` path serves 200 with a self-canonical, a duplicate URL space
+Google has not discovered.
+
+Vercel (Hobby, 90 days): edge requests 28–36k/week, flat; invocations ~15k/week
+now vs 37k in late June; Active CPU ~35 min/week vs ~22. No deploy between Aug
+31 and the Sep 7 CPU step. Observability keeps 12h on Hobby, so the per-route
+split was sampled, not proven: `/api/openings` 18 invocations = 7s CPU, cold
+start 50.8%. Functions Storage 7.98/10 GB and build CPU 14h48m came from ~100
+deployments on Aug 30–31 (23 production) — #141.
+
+Page weight: mobile Lighthouse 80 (detail) / 77 (landing), FCP 1.4s, CLS 0, LCP
+2.3–5.1s across runs. The favicon/apple-touch/og image was 919×794, 568 KB;
+downsized in place to 512 px, 46 KB (#143). JS ~135 KB gz.
+
+vitest 5 + coverage-v8 5 on one branch: single vitest 5.0.1, `npm ci` clean,
+tests pass, `npm run build` fails TS2339 on every jest-dom matcher. A full
+`npm install` over an existing tree also dropped nested `@emnapi/*` entries that
+npm 11's own `npm ci` then rejected; a targeted
+`npm install -D vitest@^5 -w <pkg>` from `main`'s lockfile did not.
+
+---
+
+## The Dependabot backlog, fifth pass (2026-08-31)
+
+Everything open bar typescript 7 (#107), blocked on typescript-eslint peering
+`<6.1.0`. Merged jest 30, the vite 8 / vitest 4 / coverage-v8 4 / plugin-react 6
+cluster as one branch, supertest 7, jest-dom 7, speed-insights 2 (checked on its
+own preview deploy), jsdom 30, and `glob` deleted rather than bumped. #106 alone
+let npm hoist vitest 4 to the root while `packages/web` and `packages/shared`
+still declared `^1.0.4` — diagnosable only because all three PRs were open at
+once. The `manualChunks` rewrite fixed a duplication nobody had noticed: under
+vite 5 `vendor` was a 102-byte chunk and react-dom was emitted twice; as
+`codeSplitting.groups` it is one 189.6 kB `vendor`, JS 373 → 361 kB, builds 4.7s
+→ 0.8s. The slow LandingPage tests were jsdom 23 (41.2s → 12.3s on jsdom 30).
+Three filter triggers joined their accessible name as "LevelAll" without CSS;
+the space is in the content now.
+
+---
+
 ## Google deindexed the opening pages (2026-08-07, `claude/google-search-impressions-drop-ji30o0`)
 
 Impressions fell 111 → 4 between 30 and 31 July and did not recover, with no

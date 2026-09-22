@@ -343,6 +343,15 @@ in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
   the `security:audit` allowlist, every entry states its reason and the
   condition that deletes it.
 
+- **Dependabot branches do not deploy to Vercel.** `vercel.json` sets
+  `git.deploymentEnabled` to `false` for `dependabot/**` (minimatch, so the `**`
+  is what reaches `dependabot/npm_and_yarn/…`). Every deployment stores its own
+  copy of the ~78 MB `api/data` in each function, and the Aug 30–31 pass shipped
+  ~100 of them — Functions Storage reached 7.98 of Hobby's 10 GB and build CPU
+  14h48m in a month. CI never read the previews. When a production dependency
+  does want a preview (speed-insights 2 did), push the commit to a
+  non-Dependabot branch: `git push origin <sha>:refs/heads/preview/<name>`.
+
 - **A path computed _for_ a platform must use that platform's path module** —
   `path.win32` or `path.posix`, never the ambient `path`. On Linux `path` is
   `path.posix`, which does not treat a backslash as a separator, so

@@ -4,6 +4,11 @@
   "outputDirectory": "packages/web/dist",
   "devCommand": "npm run dev:web",
   "installCommand": "npm install && npm run install:all",
+  "git": {
+    "deploymentEnabled": {
+      "dependabot/**": false
+    }
+  },
   "functions": {
     "api/*.js": {
       "maxDuration": 30

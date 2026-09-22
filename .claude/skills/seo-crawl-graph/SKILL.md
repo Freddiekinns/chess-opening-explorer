@@ -41,6 +41,14 @@ putting them back. The moving parts are `middleware.ts` (repo root),
   means one transient CDN miss on a shard 404s every opening page that shard
   holds. Fail open — the app still renders the position client-side.
 
+- **Only the API's 404 may render "Opening not found".** React replaces the
+  pre-rendered `#root` on mount, so whatever `OpeningDetailPage` shows after a
+  failed fetch is what Googlebot's renderer keeps. It used to say "not found"
+  for any failure — a cold-start timeout, a 5xx, the renderer declining the
+  request — and 81 real opening pages sat in Search Console as soft 404s while
+  fetching and live-testing fine. A failed load says "This opening didn't load"
+  with a retry; `detail-load-failure.test.tsx` pins the split.
+
 - **`middleware.ts` and `OpeningDetailPage` must agree on the description.**
   React 19 hoists a component's `<meta>` into `<head>` **beside** the one the
   middleware already wrote rather than replacing it, so any divergence leaves

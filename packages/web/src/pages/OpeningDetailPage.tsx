@@ -115,7 +115,7 @@ const OpeningDetailPage: React.FC = () => {
   const [gameHistory, setGameHistory] = useState<string[]>([]);
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loadFailure, setLoadFailure] = useState<'not-found' | 'failed' | null>(null);
   const [popularityStats, setPopularityStats] = useState<PopularityStats | null>(null);
   const [treeData, setTreeData] = useState<TreeContext | null>(null);
   const [treeLoading, setTreeLoading] = useState(false);
@@ -171,18 +171,6 @@ const OpeningDetailPage: React.FC = () => {
   const [lastMoveSquares, setLastMoveSquares] = useState<{ from: string; to: string } | null>(null);
   const { playAudio } = useAudio();
 
-  // API Helper Functions
-  const fetchWithErrorHandling = useCallback(async (url: string, errorMessage: string) => {
-    try {
-      const response = await fetch(url);
-      const data = (await response.json()) as { success?: boolean };
-      return data?.success ? data : null;
-    } catch (err) {
-      console.error(errorMessage, err);
-      return null;
-    }
-  }, []);
-
   const setupGame = useCallback((openingData: Opening) => {
     try {
       const newGame = new Chess();
@@ -232,14 +220,22 @@ const OpeningDetailPage: React.FC = () => {
       try {
         setLoading(true);
         setTreeLoading(true);
-        setError(null);
+        setLoadFailure(null);
 
-        const data = (await fetchWithErrorHandling(
-          `${PAGE_BY_FEN}${encodeURIComponent(fenString)}`,
-          'Error loading opening page:'
-        )) as ApiResponse<OpeningPageData> | null;
+        const response = await fetch(`${PAGE_BY_FEN}${encodeURIComponent(fenString)}`);
 
-        if (data?.data?.opening) {
+        // Only the API's own 404 means the position does not exist. A timeout,
+        // a 5xx or a crawler's renderer declining the request is a failed load,
+        // and "not found" painted over the middleware's pre-rendered content is
+        // what Search Console reads as a soft 404.
+        if (response.status === 404) {
+          setLoadFailure('not-found');
+          return;
+        }
+
+        const data = (await response.json()) as ApiResponse<OpeningPageData> | null;
+
+        if (data?.success && data.data?.opening) {
           const page = data.data;
           setOpening(page.opening);
           setupGame(page.opening);
@@ -261,17 +257,17 @@ const OpeningDetailPage: React.FC = () => {
           );
           setTreeData(page.tree || null);
         } else {
-          setError('Opening not found');
+          setLoadFailure('failed');
         }
       } catch (err) {
         console.error('Error loading opening:', err);
-        setError('Failed to load opening');
+        setLoadFailure('failed');
       } finally {
         setLoading(false);
         setTreeLoading(false);
       }
     },
-    [fetchWithErrorHandling, setupGame]
+    [setupGame]
   );
 
   useEffect(() => {
@@ -816,11 +812,28 @@ const OpeningDetailPage: React.FC = () => {
     );
   }
 
-  if (error || !opening) {
+  if (loadFailure === 'failed') {
     return (
       <div className="detail-page-body">
         <div className="error-state">
-          <h2>{error || 'Opening not found'}</h2>
+          <h2>This opening didn't load</h2>
+          <button
+            type="button"
+            className="btn btn--secondary"
+            onClick={() => fen && loadPage(decodeURIComponent(fen))}
+          >
+            Try again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (loadFailure || !opening) {
+    return (
+      <div className="detail-page-body">
+        <div className="error-state">
+          <h2>Opening not found</h2>
           <Link to="/" className="back-link">
             ← Back to search results
           </Link>

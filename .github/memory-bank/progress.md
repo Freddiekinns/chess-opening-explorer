@@ -7,6 +7,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Behavioural analytics on PostHog** (2026-09-24): `trackEvent` sends to
   PostHog EU (lazy slim SDK, production host only, cookieless, anonymous id);
   five new events; `/api/event` deleted. Vercel Web Analytics was on all along.
+  #146 added `$pageview` (slim build has no history autocapture).
 - **Feature review and backlog rev 4** (2026-09-24): every proposal re-checked
   against `main`. Trainer slice 2 was never started and the August audit's P0s
   are all still open; beacons are unreadable (1h log retention on Hobby).

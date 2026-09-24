@@ -1,6 +1,7 @@
 # [TASK015] - Opening Tree Navigation
 
-**Status:** Pending **Added:** 2026-03-17 **Updated:** 2026-03-18
+**Status:** Completed 2026-09-24 (shipped; see `docs/backlog.md` rev 4 Archive)
+**Added:** 2026-03-17 **Updated:** 2026-03-18
 
 ## 1. Problem
 

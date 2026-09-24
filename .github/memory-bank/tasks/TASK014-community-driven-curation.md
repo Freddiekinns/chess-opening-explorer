@@ -1,6 +1,6 @@
 # [TASK014] - Community-Driven Curation & Upvotes (Supabase Integration)
 
-**Status:** Pending  
+**Status:** Abandoned 2026-09-24 — see `docs/backlog.md` rev 4 Archive  
 **Added:** 2026-03-17  
 **Updated:** 2026-03-17
 

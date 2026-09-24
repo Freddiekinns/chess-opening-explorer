@@ -229,7 +229,9 @@ describe('Page views', () => {
     await act(async () => {
       navigate('/repertoire');
     });
-    expect(pageviews()).toHaveLength(2);
+    // Navigation is a transition held open by the lazy page, so the new
+    // path commits once its chunk loads.
+    await waitFor(() => expect(pageviews()).toHaveLength(2));
 
     trackEvent.mockRestore();
   });

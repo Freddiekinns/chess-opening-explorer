@@ -8,7 +8,8 @@
  *
  * Cookieless: PostHog persists to localStorage under our own anonymous random
  * id — no PII, per-device, clearable with site data. Autocapture and session
- * replay are off; only page views and the named `trackEvent` calls are sent.
+ * replay are off; only the named `trackEvent` calls are sent, including the
+ * `$pageview` App reports on each route change.
  * The SDK is loaded lazily and only on the production host, so dev, tests and
  * preview deployments never send anything. Never throws; losing an event is
  * fine.
@@ -59,7 +60,9 @@ function loadPostHog(): Promise<PostHog | null> {
                 persistence: 'localStorage',
                 autocapture: false,
                 disable_session_recording: true,
-                capture_pageview: 'history_change',
+                // The slim build has no history autocapture, so it would see
+                // only the first page of a visit; App reports page views.
+                capture_pageview: false,
                 bootstrap: { distinctID: getAnonId() },
               });
               return posthog;
@@ -69,15 +72,13 @@ function loadPostHog(): Promise<PostHog | null> {
   return client;
 }
 
-/** Start PostHog so page views are recorded before any event fires. */
-export function initAnalytics(): void {
-  void loadPostHog();
-}
-
 export function trackEvent(event: string, data?: Record<string, string | number>): void {
   try {
+    // Read now: callers often navigate straight after tracking, and PostHog is
+    // reached a microtask later, when the URL is already the next page's.
+    const properties = { $current_url: location.href, ...data };
     void loadPostHog()
-      .then((posthog) => posthog?.capture(event, data))
+      .then((posthog) => posthog?.capture(event, properties))
       .catch(() => {});
   } catch {
     // Instrumentation must never break the page.

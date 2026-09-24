@@ -44,10 +44,7 @@ describe('trackEvent on openingbook.xyz', () => {
     trackEvent('band_select', { band: '1400' });
     await flush();
 
-    expect(capture).toHaveBeenCalledWith(
-      'band_select',
-      expect.objectContaining({ band: '1400' })
-    );
+    expect(capture).toHaveBeenCalledWith('band_select', expect.objectContaining({ band: '1400' }));
   });
 
   // search_select fires and then navigates in the same handler; PostHog is

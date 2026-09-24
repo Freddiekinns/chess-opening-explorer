@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import TopBar from './components/layout/TopBar';
 import BottomTabBar from './components/layout/BottomTabBar';
 import { Footer } from './components/layout/Footer';
+import { initAnalytics } from './lib/analytics';
 
 // Route-level code splitting: each page loads on demand, so the landing
 // bundle no longer carries the Analyse page or the detail page's chess stack
@@ -43,6 +44,10 @@ const STATIC_ROUTE_ELEMENTS: Record<StaticRoute, ReactElement> = {
 };
 
 function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <div className="app">
       <ScrollToTop />

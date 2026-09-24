@@ -7,6 +7,7 @@ import { SearchRow, SurpriseRow } from '../shared/SearchRow';
 import { SearchNoResults } from '../shared/SearchNoResults';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
 import { fetchRandomOpening } from '../../lib/randomOpening';
+import { trackEvent } from '../../lib/analytics';
 import styles from './TopBar.module.css';
 
 const navItems = [
@@ -73,7 +74,8 @@ function TopBarSearch() {
     setShowDropdown(true);
   };
 
-  const selectResult = (result: SearchResult) => {
+  const selectResult = (result: SearchResult, rank: number) => {
+    trackEvent('search_select', { surface: 'topbar', rank });
     navigate(`/opening/${encodeURIComponent(result.fen)}`);
     reset();
     setShowDropdown(false);
@@ -103,9 +105,9 @@ function TopBarSearch() {
       if (activeIndex === results.length) {
         handleSurpriseMe();
       } else if (activeIndex >= 0) {
-        selectResult(results[activeIndex]);
+        selectResult(results[activeIndex], activeIndex);
       } else {
-        selectResult(results[0]);
+        selectResult(results[0], 0);
       }
     } else if (e.key === 'Escape') {
       setShowDropdown(false);
@@ -153,7 +155,7 @@ function TopBarSearch() {
                       opening={r}
                       saved={r.saved}
                       active={i === activeIndex}
-                      onSelect={() => selectResult(r)}
+                      onSelect={() => selectResult(r, i)}
                       onMouseEnter={() => setActiveIndex(i)}
                     />
                   </li>

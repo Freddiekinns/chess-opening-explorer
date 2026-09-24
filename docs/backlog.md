@@ -31,9 +31,10 @@ and drill for it.
    detail page ignores `?ref=personal`, every explorer move resets scroll,
    unnamed continuations are dead ends, "Level" means two things, and the
    popularity snapshot is 14 months old.
-3. **We cannot see our users.** `/api/event` beacons land in runtime logs that
-   Hobby keeps for one hour, and Web Analytics reports as not enabled.
-   Impressions are 3–40/day. The accounts go/no-go input does not exist.
+3. **We could not see our users.** `/api/event` beacons landed in runtime logs
+   that Hobby keeps for one hour. Impressions are 3–40/day. _Fixed 2026-09-24:_
+   events now go to PostHog, and Vercel Web Analytics turned out to have been
+   recording page views all along (the API's "not found" was wrong).
 4. **So the order is: credibility, then sight, then the loop in its cheapest
    real form.** Do not add a fourth surface while the first three are
    unfinished.
@@ -52,8 +53,8 @@ and drill for it.
   bare percentages on move rows. _(audit #4, #6, #10, E3)_
 - **Explorer scroll:** no `ScrollToTop` reset when the new route is a move step
   from the current position. _(audit E1)_
-- **Measurement:** see Enablers — this is the gate for every retention decision
-  below.
+- ~~**Measurement**~~ — done 2026-09-24; see Enablers. What remains is building
+  the funnels and the `analyse_run` retention insight once data arrives.
 - **Popularity stats refresh:** run the pipeline, and date both game counts on
   screen. _(audit #5)_
 
@@ -129,20 +130,19 @@ and drill for it.
 
 ## Enablers (sequence alongside)
 
-- **Measurement** _(pending decision 5)_ — enable Web Analytics page views in
-  the Vercel dashboard ("does anyone reach `/analyse`?" needs no code). If event
-  counts are needed, send beacons somewhere that outlives an hour; a daily
-  counter in a free-tier Marketplace store is the smallest option, and a new
-  dependency.
+- **Measurement** _(done 2026-09-24)_ — page views in Vercel Web Analytics
+  (already on; custom events there are Pro-only). Events go to PostHog EU Cloud
+  free tier through `trackEvent` (`packages/web/src/lib/analytics.ts`), keyed by
+  the anonymous id, so funnels and the accounts gate's 14-day retention are
+  readable. `/api/event` is deleted.
 - **Lichess explorer rate-limit monitoring** — carried over from rev 3. The
   `/api/explorer` proxy uses one token at 25 req/min; only cache misses reach
   Lichess (CDN 24h bands / 7d masters), and crawler user-agents are 403'd before
   the upstream call. Each uncached detail view costs ~3 queries. **Act when**
   sustained 429s appear or traffic grows ~10×. The signal meant for this, the
-  `explorer_error` `{status:429}` beacon, has the same one-hour visibility as
-  every other beacon until **Measurement** is fixed. Then add a structured log
-  line per upstream fetch and per 429. Solve ladder: request a higher limit,
-  rotate tokens, then self-host a games DB.
+  `explorer_error` `{status:429}` event, is now readable in PostHog. If it shows
+  429s, add a structured log line per upstream fetch and per 429. Solve ladder:
+  request a higher limit, rotate tokens, then self-host a games DB.
 - **Popularity stats refresh** — in **Now**, and the source for position facts'
   club-move shares. Check the pipeline's mode first: the current snapshot's
   metadata says it was built "API-based".
@@ -158,13 +158,13 @@ and drill for it.
    Discover.
 4. **Position facts:** approve an offline Stockfish run and a sharded
    per-position store.
-5. **Measurement:** Web Analytics page views, and whether event counts justify a
-   store.
+5. ~~Measurement~~ — **decided 2026-09-24**: Vercel page views plus PostHog
+   events.
 
 ## Build order
 
 ```
-Now:      Analyse floors · copy fixes · explorer scroll · measurement · stats refresh
+Now:      Analyse floors · copy fixes · explorer scroll · stats refresh
 Next:     personal strip + ?practice= · practice memory · divergence callout
           · bridge line · Start here shelf · E2E in CI
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games

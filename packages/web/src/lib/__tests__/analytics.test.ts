@@ -1,12 +1,23 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { getAnonId, trackEvent } from '../analytics';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+const init = vi.fn();
+const capture = vi.fn();
+vi.mock('posthog-js/dist/module.slim', () => ({ default: { init, capture } }));
+
+async function loadAnalytics() {
+  vi.resetModules();
+  return import('../analytics');
+}
+
+const flush = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 describe('getAnonId', () => {
   beforeEach(() => {
     localStorage.clear();
   });
 
-  it('generates an id and keeps it stable across calls', () => {
+  it('generates an id and keeps it stable across calls', async () => {
+    const { getAnonId } = await loadAnalytics();
     const id = getAnonId();
     expect(id.length).toBeGreaterThan(7);
     expect(getAnonId()).toBe(id);
@@ -14,56 +25,27 @@ describe('getAnonId', () => {
   });
 });
 
-describe('trackEvent', () => {
+// jsdom serves this file from localhost: dev, tests and preview deployments
+// must never reach PostHog.
+describe('trackEvent off the production host', () => {
   beforeEach(() => {
     localStorage.clear();
+    init.mockClear();
+    capture.mockClear();
   });
 
-  afterEach(() => {
-    vi.unstubAllGlobals();
-    // @ts-expect-error test cleanup of the jsdom navigator stub
-    delete navigator.sendBeacon;
-  });
-
-  it('sends a beacon with event, page and anon id', () => {
-    const sendBeacon = vi.fn().mockReturnValue(true);
-    Object.defineProperty(navigator, 'sendBeacon', {
-      value: sendBeacon,
-      configurable: true,
-      writable: true,
-    });
-
+  it('does not load or call PostHog', async () => {
+    const { trackEvent, initAnalytics } = await loadAnalytics();
+    initAnalytics();
     trackEvent('band_select', { band: '1400' });
+    await flush();
 
-    expect(sendBeacon).toHaveBeenCalledTimes(1);
-    const [url, payload] = sendBeacon.mock.calls[0];
-    expect(url).toBe('/api/event');
-    const parsed = JSON.parse(payload as string);
-    expect(parsed.event).toBe('band_select');
-    expect(parsed.band).toBe('1400');
-    expect(typeof parsed.page).toBe('string');
-    expect(parsed.id).toBe(getAnonId());
+    expect(init).not.toHaveBeenCalled();
+    expect(capture).not.toHaveBeenCalled();
   });
 
-  it('falls back to fetch keepalive when sendBeacon is unavailable', () => {
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
-    vi.stubGlobal('fetch', fetchMock);
-
-    trackEvent('bridge_click');
-
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-    const [url, init] = fetchMock.mock.calls[0];
-    expect(url).toBe('/api/event');
-    expect(init).toMatchObject({ method: 'POST', keepalive: true });
-  });
-
-  it('never throws even when both transports fail', () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(() => {
-        throw new Error('offline');
-      })
-    );
-    expect(() => trackEvent('level_check_view')).not.toThrow();
+  it('never throws', async () => {
+    const { trackEvent } = await loadAnalytics();
+    expect(() => trackEvent('analyse_run')).not.toThrow();
   });
 });

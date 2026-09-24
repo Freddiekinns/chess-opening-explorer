@@ -1,6 +1,6 @@
 # [TASK005] - Stockfish Game Analysis & Blunder Detection
 
-**Status:** Pending  
+**Status:** Abandoned 2026-09-24 — see `docs/backlog.md` rev 4 Archive  
 **Added:** 2026-02-10  
 **Updated:** 2026-02-10
 

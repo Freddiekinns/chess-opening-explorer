@@ -1,271 +1,196 @@
-# Feature Backlog — assessed and ranked (2026-07-11, rev 3)
+# Feature Backlog — assessed and ranked (2026-09-24, rev 4)
 
-Assessment of every feature candidate from
-`docs/reviews/2026-07-02-project-review.md` (§3 main list, §5 M/J addendum,
-including the later J8/J9 additions), re-ranked against what has **actually
-shipped** since that review, then stress-tested across three revisions:
+Rev 4 re-assesses rev 3 against what has actually shipped since July, and what
+has not. The full reasoning, per-surface assessment and the viability note
+behind every item is in `docs/reviews/2026-09-24-feature-review.md`. This file
+is the ranked list that review produced.
 
-- **rev 1** — re-rank against shipped foundations (PRs #45–#48).
-- **rev 2** — three lenses: _substitution_ (does chess.com/Lichess/Chessable/
-  YouTube do this one click from where the user already is? — killed J3),
-  _internal duplication_ (does our own site already do it?), _behavioural
-  realism_ (does a sub-1800 club player actually act this way?).
-- **rev 3** — three more: _funnel reality_ (where do visitors actually land?),
-  _evidence_ (can we prove a deviation matters without an engine?), _risk
-  laddering_ (what does a solo dev ship first to de-risk the rest?).
+- **rev 1–3** (2026-07-11) — ranked the 2026-07-02 project review's candidates
+  through the substitution, duplication, behavioural-realism, funnel, evidence
+  and risk-laddering lenses. They produced the deviation-trainer PRD
+  (`docs/proposals/2026-07-11-deviation-trainer-prd.md`).
+- **rev 4** (2026-09-24) — re-checked every item against the code, folded in the
+  2026-08-11 product/UX audit and the board-search PRD, added new ideas, and
+  archived what no longer earns a place (owner-agreed; see **Archive**).
 
 ## The unifying principle
 
-The substitution test exposed one pattern: **the only durable moat is connecting
-a user's own games to learning content.** Lichess has better raw stats,
-Chessable has better drilling, YouTube has better explanations — each one click
-away. No free tool walks _your_ games, finds _your_ recurring leak, and hands
-you the page + video + drill for it. Features that exploit that connection
-survive; features that don't turned out to be worse versions of something that
-already exists.
+Unchanged from rev 3: **the only durable moat is connecting a user's own games
+to learning content.** Lichess has better raw stats, Chessable has better
+drilling, and YouTube has better explanations, each one click away. No free tool
+walks _your_ games, finds _your_ recurring leak, and hands you the page, video
+and drill for it.
 
-## Rev 3 findings (change the build order, not the destination)
+## Rev 4 findings
 
-1. **Funnel reality.** This is an SEO product: nearly all visitors land once on
-   one of 12k detail pages from Google. The deviation trainer lives on Analyse,
-   which requires knowing the site, navigating there, and typing a username — an
-   audience that is currently unmeasured and probably small. Retention features
-   need users to retain: the trainer needs a **bridge from the detail pages**
-   (where traffic actually is) and **instrumentation** to know if Analyse
-   engagement is real. Neither was in the backlog.
-2. **The evidence synthesis.** The trainer's weakest point was proving a
-   deviation _matters_ without Stockfish (J8 was parked for that). The explorer
-   bundle solves it with zero compute: rating-band stats can price the leak —
-   _"at your level, the book move 6.d4 scores 56%; your 6.Nf3 scores 44%."_ The
-   explorer integration is therefore **not garnish on the trainer — it is the
-   trainer's evidence engine**, which inverts the build order.
-3. **Risk laddering.** The bundle is the smaller, self-contained slice: it ships
-   visible value to today's actual visitors, forces the caching/
-   rate-limit/error-handling questions to be answered once, and everything the
-   trainer needs then already exists. Build the foundation that is also a
-   feature.
-
-## What changed since the 2026-07-02 review
-
-- **Foundations shipped** (PRs #45–#48): route splitting + static MiniBoard,
-  aggregate `/api/openings/page/:fen`, sharded edge lookup, canonical
-  `api/data/`, **`PersonalOpeningStats` refactor** (3.1's blocker — gone),
-  **practice mode extended into popular continuations** (3.3's blocker — mostly
-  gone), video rematch shipped (coverage 72.8%, contamination 0%), family
-  fallback shelves + `family-resource-service` (makes 3.4 much cheaper), study
-  matching v2 (top-200 coverage 92%).
-- **Still open from the review** (not features, but they gate trust): popularity
-  stats remain dated **2025-07-15** (12 months stale); E2E specs still absent
-  from CI (S2); no error monitoring (S4).
+1. **The destination is half-built.** Slice 1 (the evidence engine) shipped
+   2026-07-13. Slice 2, the trainer itself, was never started: no detection
+   code, no `?practice=` parameter. Nothing merged since mid-July moved the
+   learning loop.
+2. **The August audit's P0s are still open.** Analyse headlines noise, the
+   detail page ignores `?ref=personal`, every explorer move resets scroll,
+   unnamed continuations are dead ends, "Level" means two things, and the
+   popularity snapshot is 14 months old.
+3. **We cannot see our users.** `/api/event` beacons land in runtime logs that
+   Hobby keeps for one hour, and Web Analytics reports as not enabled.
+   Impressions are 3–40/day. The accounts go/no-go input does not exist.
+4. **So the order is: credibility, then sight, then the loop in its cheapest
+   real form.** Do not add a fourth surface while the first three are
+   unfinished.
 
 ---
 
-## Tier 1 — the recommendation: one pursuit, three shippable slices
+## Now — credibility and sight `days`
 
-**The destination is the book-deviation trainer.** It is built in slices that
-each ship standalone value, ordered by the rev 3 findings.
+- **Analyse statistics:** drop the `list[0]` fallback in `findBestOpening`
+  (`personalStatsLib.ts:115`), raise the floors (≥10 games for a variation card,
+  ≥20 for a family card), print sample sizes inside the percentage, and rank
+  "needs work" by games lost. _(audit #2)_
+- **Copy and formatting:** add the billions branch to `formatGamesPlayed`
+  (`OpeningCard.tsx`); rename the Discover facet to **Difficulty** so **Level**
+  means only the rating band; give "off-book" a learner's wording; label the two
+  bare percentages on move rows. _(audit #4, #6, #10, E3)_
+- **Explorer scroll:** no `ScrollToTop` reset when the new route is a move step
+  from the current position. _(audit E1)_
+- **Measurement:** see Enablers — this is the gate for every retention decision
+  below.
+- **Popularity stats refresh:** run the pipeline, and date both game counts on
+  screen. _(audit #5)_
 
-### Slice 1 — Lichess explorer bundle (3.2 + M1 + M2) `S–M`
+## Next — close the loop cheaply `1–2 weeks`
 
-One client-side integration (`explorer.lichess.ovh`), three renderings on the
-detail page:
+- **Personal strip + "Drill this line"** — read `?ref=personal` on the detail
+  page ("You: 8 games as Black, 2 wins, 5 losses"), and add a public
+  `?practice=white|black` that arms practice mode. Slice 2's CTA needs the same
+  parameter. _(review §4.2, audit #1)_
+- **Practice memory** — persist attempts in localStorage
+  (`{fen, colour, attempts, misses, missedAtPly, lastSeen}`) and surface a
+  "Lines to review" shelf. No due dates and no streaks: this is not the parked
+  SRS. _(review §4.1)_
+- **Divergence callout** — one line when a move's _share_ differs sharply
+  between the selected band and masters. Both bands are fetched already, so it
+  costs no extra Lichess requests. Replaces the cut level-check strip. _(review
+  §4.3, audit E4)_
+- **Analyse bridge, rebuilt small** — one line near Practice: "How do you score
+  in this line? Check your games." Replaces the card cut on 2026-07-13.
+- **"Start here" shelf** — 20–30 hand-picked learnable openings leading
+  Discover, split by colour. The cheap half of J5. _(review §4.8, audit #3)_
+- **E2E specs green and in CI** — 8 of 9 fail on `main`; a prerequisite for
+  slice 2.
 
-- **3.2** — rating-band selector on the stats/continuations panel: "what people
-  at _your_ level play".
-- **M1** — "Notable games" (3–5 `topGames` entries), deep-linked to Lichess in
-  v1, replayable on the existing board in v1.1. The product currently contains
-  **zero actual games**.
-- **M2** — practitioner names from the same payload, render-only.
+## Then — the differentiator `M each`
 
-**Substitution honesty:** Lichess's own analysis board has rating bands and top
-games — this is **integration value, not unique data**. The case: our reader is
-mid-learning-context, not mid-analysis, and (rev 3) this same client is the
-trainer's evidence engine.
+- **Slice 2 — deviation trainer v1**, as specified in the PRD §6. **J3,
+  paste-a-game post-mortem, ships as its public face**: the same book-walk code,
+  no username needed, and it lives where "Paste a game" already is.
+- **Repertoire from your games** _(pending decision 3)_ — a move tree of what
+  you actually play, which fills Repertoire by colour, flags inconsistent move
+  orders, shows coverage gaps against what opponents really play, and exports
+  PGN. It absorbs rev 3's #4 "My openings v2" (J4 + 3.5). _(review §4.4, audit
+  #9)_
+- **Run-over-run progress on Analyse** — the change since your last run, plus a
+  time-control and date split. _(review §4.7)_
 
-**Design constraints:** one stats panel, one source at a time — live explorer
-numbers _replace_ the 2025-07-15 snapshot when a band is selected, clearly
-labelled. Cache per FEN+band (localStorage TTL: ~1 week masters, ~1 day lichess
-DB); fetch lazily; degrade silently to snapshot on failure/429. Ship error
-monitoring (S4) in the same PR — this is the first client-side external
-dependency.
+## Platform — depth `M each`, pending decisions
 
-**Ship with it (rev 3):** the **Analyse bridge** — a small prompt on detail
-pages ("See how _you_ actually play the Najdorf — free, no account") — and
-**minimal usage instrumentation** (Analyse visits, username submissions, panel
-interactions; a lightweight beacon or Vercel Analytics events within hobby-plan
-limits). This measures whether the retention bet is landing _before_ the biggest
-slice is built.
+- **Position graph, then the detail page on it** _(pending decision 2)_ — board-
+  search PRD slice 1. It makes all 12,106 named boards reachable (37% are not
+  today) and gives unnamed continuations a destination, fixing audit E2.
+- **Position facts** _(pending decision 4)_ — an offline Stockfish and club-play
+  batch over ~15.5k boards, served per FEN, never whole. It absorbs TASK013. It
+  unlocks, in order:
+  - **J2 traps + common mistakes** — re-scoped. Only ~14 distinct trap-named ECO
+    lines exist, so traps are found mechanically instead: a popular club move
+    with a large engine swing. Any LLM prose must be engine-confirmed and replay
+    legally. Absorbs audit #8.
+  - **Sparring mode** — practice where the opponent replies as your band
+    actually does. Never built on live explorer calls.
 
-### Slice 2 — Book-deviation trainer v1 (3.1) `M`
+## Later
 
-Per opening row on Analyse: "you left known theory at move 6 in 4 of 7 games",
-with the position, the book continuations, **the leak priced by slice 1's band
-stats** ("book move scores 56% at your level; yours 44%"), and a link to the
-deepest matching page with practice mode pre-armed. A second pass over the 500
-games the browser already holds — zero new endpoints.
+- **J1 — per-move "why" annotations.** `courses.json` holds study links only, so
+  mining study comments needs a pipeline change plus a licence and attribution
+  check.
+- **Family hubs (3.4)** — read the `seo-crawl-graph` skill first; 28 new URLs
+  compete with each family's root page.
+- **`/board`** — board-search PRD slices 2–3, if its "reached only via the
+  board" metric can be measured.
+- **Shareable opening report card** — an acquisition experiment, gated on the
+  Analyse statistics fix.
 
-**Substitution honesty:** the _diagnosis_ has partial substitutes (Lichess
-personal explorer, openingtree.com let a motivated user find divergence
-manually). The **prescription** — automatic cross-game leak detection wired to
-the fix — exists nowhere free. The prescription is the feature.
+## Parked
 
-**Design constraints:**
-
-- **Filter to user-deviations.** At club level most games leave book because the
-  _opponent_ plays junk; flag only positions where the user's move left book
-  while book moves were available. (Opponent-deviation data — "opponents leave
-  book here; how to punish" — is its own v2.)
-- **"Book" = ECO index + popular tree continuations** (the same extension
-  practice mode uses), or shallow named lines produce false flags.
-- Copy says "left known theory", never "mistake" — the explorer evidence carries
-  the "it matters"; engine eval-deltas stay parked (J8).
-- Suppress single-occurrence deviations; recurrence is the signal. v1 scope: top
-  leak per colour per opening with ≥3 games, one expandable panel + CTA.
-
-Milestone 1 (internal): the single-game book-walk — formerly standalone J3,
-demoted 2026-07-11 (the motivated moment lives on chess.com/Lichess where
-one-click engine review exists).
-
-### Slice 3 — "drill your leaks" SRS — **parked pending accounts (owner decision 2026-07-11)**
-
-A drill queue is only really useful with cross-device state — i.e. an account —
-and accounts aren't justified until slices 1–2 prove the product has earned the
-signup. Slice 2's returning-user metric is the accounts go/no-go input; the SRS
-queue (seeded by leaks, the thing Chessable cannot build), streaks, and synced
-state all revisit with that decision. Until then the drill loop is leak panel →
-practice mode, stateless. See the PRD
-(`docs/proposals/2026-07-11-deviation-trainer-prd.md` §7).
-
----
-
-## Tier 2 — supporting structure
-
-### 4. "My openings" v2 — merged J4 + 3.5 `S–M`
-
-Progress tracking (J4) and repertoire v2 (3.5) were two overlapping localStorage
-stores over one concept. One model: opening + colour + priority
-
-- status (learning/learned) + last-practiced + (later) due-date. Status controls
-  on pages and repertoire, "add this line" from any tree node, PGN export.
-  localStorage = no cross-device sync; say so in the UI ("saved on this
-  device"). Prerequisite for slice 3.
-
-### 5. 3.4 — Family hub pages, absorbing J5's guided paths `M` _(parallel editorial track)_
-
-A hub that re-shelves the family's videos/studies/tree duplicates the family's
-_root opening page_. The hub earns its URL through what J5 was: **guidance** —
-"new to the Sicilian? start with these 5 lines in this order", "what to play
-against it at your level" (slice 1 data), per-step checkboxes (#4's model).
-Composition is cheap (`GET /api/families`, `family-resource-service` exist); the
-editorial guidance is the real cost. 28 quality SEO pages for queries people
-actually search. Independent of the trainer track — run in parallel when
-editorial energy exists.
-
----
-
-## Tier 3 — content depth (after the loop closes)
-
-### 6. J2 — Traps and typical tactics per opening `M content`
-
-Survives all lenses: trap demand is proven by the matched video corpus, and
-nothing lets you _replay and drill_ the trap on the page you're studying. Cheap
-v1: mine trap-named ECO sub-variations, tagged "you can set this" / "avoid
-this". **Pre-commit check: audit how many trap-named ECO lines exist before
-scoping.** LLM+engine expansion waits for validation tooling.
-
-### 7. J1 — Per-move "why" annotations `L content`
-
-Biggest content upgrade to the trainer (recall → comprehension). **Creative
-sourcing:** mine the 6,100+ matched study chapters first — Lichess study PGNs
-carry _human_ per-move comments, already linked to our pages by study matching
-v2. Grounding/attributing annotations to human commentary cuts the
-common-plans-style fabrication risk. After validation tooling exists.
-
-### 8. J9 — Board-input search `S–M` _(demoted from feature to enhancement)_
-
-"Move pieces, see named openings + stats" is precisely the Lichess analysis
-board with explorer open; internally the detail-page tree already navigates
-lines. What survives: a **board input mode on search** — play moves, see which
-named openings you're in or can reach, click through. Build as a search
-enhancement, not a destination.
-
-### 9. M3 — Master continuations in practice mode `S`
-
-Fold into slice 1's integration if trivial. Mostly superseded by the shipped
-popular-continuations work; the increment is master-quality depth on
-heavily-theorised lines.
-
----
-
-## Tier 4 — parked or cut
-
-- **J7 — PWA with offline practice `M` — parked.** Worth it once slices 2–3 give
-  a daily reason to open the app; a PWA _worsens_ the cross-device localStorage
-  gap (the moment to consider optional sync).
-- **J8 — Stockfish deviation analysis `M` — parked.** Natural v3 of the trainer;
-  client-side WASM keeps it off Vercel. Rev 3 note: the explorer evidence covers
-  most of its value ("book move scores better at your level") without the
-  mobile-CPU cost — park harder.
-- **3.6 — Middlegame bridge — cut.** Matched videos already explain middlegame
-  plans, common plans covers page-level "what now", M1 shows real structures.
-  The residual gap doesn't justify the riskiest LLM content project on the list.
-  Revisit only with user evidence.
-- **J6 — Side-by-side comparison — cut.** "Caro-Kann or French for my style?" is
-  now a chatbot question, answered better there than any static two-column view.
-  Hubs cover the residual need.
+- **Slice 3 — "drill your leaks" SRS** — pending accounts (owner decision
+  2026-07-11, unchanged). Practice memory is the stateless interim.
+- **J7 — PWA with offline practice** — only once there is a daily reason to open
+  the app.
 
 ---
 
 ## Enablers (sequence alongside)
 
-- **Usage instrumentation (new, rev 3)** — Analyse visits, username submissions,
-  explorer-panel and trainer interactions. The whole Tier-1 bet assumes Analyse
-  can become a retention surface; measure it from slice 1.
-- **Error monitoring (S4)** — ship with slice 1 (first client-side external
-  dependency; failures are otherwise invisible).
-- **Lichess explorer rate-limit monitoring (new, 2026-07-13)** — the
-  `/api/explorer` proxy uses a single personal token (`LICHESS_EXPLORER_TOKEN`),
-  rate-limited by Lichess to **25 req/min**. Only _cache misses_ hit Lichess
-  (CDN cache: 24h bands / 7d masters, plus client localStorage), so at today's
-  ~100 users/month (6–7/day) there is ample headroom — **no action needed now.**
-  Note: since 2026-07-13 the detail page defaults to the **`All`** band and
-  fetches on load, so each _uncached_ page view now costs ~3 Lichess queries
-  (current+`all`, current+`masters`, parent+`all`) instead of 1 — CDN caching
-  still absorbs repeat views, but this raises the baseline the ceiling is
-  measured against. The signal already exists: 429s surface as `explorer_error`
-  `{status:429}` beacons in Vercel runtime logs (`api/event.js`).
-  **Investigate/solve when:** sustained 429s appear, or the user base grows
-  ~10×. **Quick win when it matters:** add a structured log line in
-  `explorer.routes.js` on every upstream fetch (cache miss) + on 429 —
-  server-side ground truth, since client beacons are ad-blockable — then a
-  Vercel log-drain alert on 429 count. **Watch:** crawlers over the 12k+ FEN
-  pages were the most likely budget-blower (near-100% cache miss, and Googlebot
-  _does_ render JS) — **mitigated 2026-07-13**: the proxy 403s known crawler
-  user-agents before touching Lichess, so bots index the snapshot fallback and
-  spend nothing. Residual exposure: the proxy is an unauthenticated public
-  relay, so a hostile client hammering random FENs could still drain the budget
-  — accept at today's scale; revisit with the monitoring. **Solve ladder:**
-  request a higher Lichess limit → rotate multiple tokens → self-host a games
-  DB.
-- **E2E in CI (S2)** — add before slices touch Analyse and landing flows.
-- **Popularity stats refresh + freshness badge** — still `2025-07-15`; run
-  quarterly, surface the date. Slice 1 mitigates but does not fix.
-- **Variation-level video classification** — endorsed pipeline project; also
-  builds the validation tooling gating J1/J2.
+- **Measurement** _(pending decision 5)_ — enable Web Analytics page views in
+  the Vercel dashboard ("does anyone reach `/analyse`?" needs no code). If event
+  counts are needed, send beacons somewhere that outlives an hour; a daily
+  counter in a free-tier Marketplace store is the smallest option, and a new
+  dependency.
+- **Lichess explorer rate-limit monitoring** — carried over from rev 3. The
+  `/api/explorer` proxy uses one token at 25 req/min; only cache misses reach
+  Lichess (CDN 24h bands / 7d masters), and crawler user-agents are 403'd before
+  the upstream call. Each uncached detail view costs ~3 queries. **Act when**
+  sustained 429s appear or traffic grows ~10×. The signal meant for this, the
+  `explorer_error` `{status:429}` beacon, has the same one-hour visibility as
+  every other beacon until **Measurement** is fixed. Then add a structured log
+  line per upstream fetch and per 429. Solve ladder: request a higher limit,
+  rotate tokens, then self-host a games DB.
+- **Popularity stats refresh** — in **Now**, and the source for position facts'
+  club-move shares. Check the pipeline's mode first: the current snapshot's
+  metadata says it was built "API-based".
+- **Variation-level video classification** — carried over unassessed from rev 3:
+  an endorsed pipeline project that also builds validation tooling for J1/J2.
+
+## Open decisions
+
+1. ~~Archive list~~ — **agreed 2026-09-24**, applied below.
+2. **Board search:** graph now and `/board` later (recommended), or the PRD's
+   own plan.
+3. **Repertoire:** promote it (repertoire from your games) or fold it into
+   Discover.
+4. **Position facts:** approve an offline Stockfish run and a sharded
+   per-position store.
+5. **Measurement:** Web Analytics page views, and whether event counts justify a
+   store.
 
 ## Build order
 
 ```
-Slice 1: explorer bundle + Analyse bridge + instrumentation + S4  (S–M)
-Slice 2: deviation trainer v1, evidence-priced                    (M)
-   #4:   My-openings v2                                           (S–M)
-Slice 3: drill-your-leaks SRS + streaks                           (M)
-   #5:   family hubs + guided paths — parallel editorial track
-then: J2 → J1 → J9-as-search-enhancement → M3
-parked: J7, J8 · cut: 3.6, J6
+Now:      Analyse floors · copy fixes · explorer scroll · measurement · stats refresh
+Next:     personal strip + ?practice= · practice memory · divergence callout
+          · bridge line · Start here shelf · E2E in CI
+Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
+          · run-over-run progress
+Platform: position graph → detail page on it · position facts → J2 → sparring
+Later:    J1 · family hubs · /board · report card
+Parked:   slice 3 SRS · J7
 ```
 
-After slices 1–3, OpeningBook is the only free tool that finds where your
-opening play breaks down in your own games, proves it matters at your level, and
-drills exactly that. That sentence is the product; everything above either
-serves it or got cut.
+---
+
+## Archive
+
+Agreed by the owner on 2026-09-24. The reasoning is in the feature review §3.
+
+| Item                                                    | Outcome  | Why                                                                                                                                                 |
+| ------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Slice 1 — explorer bundle (3.2 bands, M1 notable games) | Shipped  | 2026-07-13, PR #50. M2 practitioners were cut as redundant; the level-check strip and bridge card were cut and return in **Next** in cheaper forms. |
+| TASK015 — opening tree navigation                       | Shipped  | Breadcrumbs, next moves, "Instead of…" rows and ancestor links. The remaining reachability gap is the position graph.                               |
+| TASK005 — Stockfish game analysis and blunder detection | Archived | Whole-game blunder review is one click on chess.com and Lichess. The opening-scoped part lives in the trainer.                                      |
+| TASK014 — community curation and upvotes (Supabase)     | Archived | A database, abuse handling and moderation, for an audience of a few people a day. Revisit at ~100× traffic.                                         |
+| M3 — master continuations in practice                   | Archived | Superseded by popular-continuation practice and the level lens; sparring mode is the better version.                                                |
+| J8 — Stockfish deviation analysis (client WASM)         | Archived | The mobile CPU and Vercel cost objections go away when the engine runs offline (position facts).                                                    |
+| 3.6 — middlegame bridge                                 | Archived | Cut in rev 3; still holds.                                                                                                                          |
+| J6 — side-by-side comparison                            | Archived | Cut in rev 3; still a chatbot question.                                                                                                             |
+
+**Merged, not archived:** the level-check strip → divergence callout · #4 My
+openings v2 → repertoire from your games · TASK013 → position facts · audit #8
+common mistakes → J2 · J5 guided paths → "Start here" shelf, then family hubs.

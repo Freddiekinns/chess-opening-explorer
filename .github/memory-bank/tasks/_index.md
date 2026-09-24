@@ -14,15 +14,15 @@ _No tasks currently awaiting merge._
 
 ## Pending
 
-- [TASK015] Hierarchical Family Tree Navigation (Opening Breadcrumbs) - Added
-  2026-03-17
-- [TASK014] Community-Driven Curation & Upvotes (Supabase) - Added 2026-03-17
-- [TASK013] Engine-Validated Practical Blunder Analysis - Added 2026-03-17
+- [TASK013] Engine-Validated Practical Blunder Analysis - Added 2026-03-17.
+  Merged into "position facts" in `docs/backlog.md` rev 4 (2026-09-24)
 - [TASK012] Video Pipeline Overhaul - Added 2026-03-15
-- [TASK005] Stockfish Game Analysis & Blunder Detection - Added 2026-02-10
 
 ## Completed
 
+- [TASK015] Hierarchical Family Tree Navigation (Opening Breadcrumbs) - Closed
+  2026-09-24 as shipped (breadcrumbs, next moves, "Instead of…" rows, ancestor
+  links); the reachability gap moved to the position graph, `docs/backlog.md`
 - **Opening Family Rollups** - Merged 2026-06-06 (PR #34). Family-grouped
   Analyse view (shared `DistributionBar`, expandable `FamilyRow`, per-side
   `Group by family` + `Sort`), built on the 28-family taxonomy +
@@ -47,4 +47,11 @@ _No tasks currently awaiting merge._
 
 ## Abandoned
 
-_No abandoned tasks._
+Archived 2026-09-24 with `docs/backlog.md` rev 4; reasons in
+`docs/reviews/2026-09-24-feature-review.md` §3.
+
+- [TASK014] Community-Driven Curation & Upvotes (Supabase) - no audience to vote
+  yet; revisit at ~100× traffic
+- [TASK005] Stockfish Game Analysis & Blunder Detection - whole-game review is
+  one click on chess.com/Lichess; the opening-scoped part is the deviation
+  trainer

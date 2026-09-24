@@ -4,6 +4,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Feature review and backlog rev 4** (2026-09-24): every proposal re-checked
+  against `main`. Trainer slice 2 was never started and the August audit's P0s
+  are all still open; beacons are unreadable (1h log retention on Hobby).
+  Backlog re-sequenced: credibility → loop → trainer → platform, with an
+  owner-agreed archive. `docs/reviews/2026-09-24-feature-review.md`.
 - **SEO check-up, Vercel usage, and the Dependabot queue** (2026-09-22,
   #133/#138/#140-#143): indexed 5,750 → 7,174 but impressions still ~8/day
   against 100–250 in July — the purge has not lifted. Vercel Active CPU per
@@ -53,23 +58,15 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `#root`. The middleware now renders each opening's own description and real
   win rates, unknown FENs 404, only the 271 same-board URLs canonicalise, and
   sitemaps got their first generator. **`archive.md`.**
-- **Search answers in milliseconds, identically on all three surfaces**
-  (2026-08-04, on `claude/player-details-layout-qxa1mo`): the top bar "hung"
-  because the server took 1–3s to fuzzy-match a name over 12,377 descriptions
-  and only the hero held an index to hide it behind. Literal name matching
-  (`search/NameIndex.js`) answers in 2–5ms; the routing heuristics that guessed
-  a query's shape are gone; Fuse is the typo net only; the index slice is shared
-  by all three surfaces and fetched on the first keystroke, not on mount. One
-  request per query, responses 55 KB → 4.4 KB, and PGN lookup finally sees the
-  whole corpus.
-- Everything before 2026-08-04 — **all detail in `archive.md`**: the UX-stack
-  review pass; search consolidated into `useOpeningSearch`; the UX review
-  programme (phases 0–5, `GET /api/openings/browse`); shared `PerfBar`; the
-  opening-detail mobile overhaul; the `/api/explorer` proxy; Deviation Trainer
-  slice 1; Study matching V2 (18.2%→35.7%); the video index (28.2%→72.8%); route
-  splitting (409→189 kB) and `/api/openings/all` → 410; 28-family taxonomy;
-  domain migration; TASK006–016; Practice Mode. **Still true and not fixed**:
-  the common-plans ECO-bucket defect shipped no code change.
+- Everything up to 2026-08-04 — **all detail in `archive.md`**: search answers
+  in milliseconds via `NameIndex` (2026-08-04); the UX-stack review pass; search
+  consolidated into `useOpeningSearch`; the UX review programme (phases 0–5,
+  `GET /api/openings/browse`); shared `PerfBar`; the opening-detail mobile
+  overhaul; the `/api/explorer` proxy; Deviation Trainer slice 1; Study matching
+  V2 (18.2%→35.7%); the video index (28.2%→72.8%); route splitting (409→189 kB)
+  and `/api/openings/all` → 410; 28-family taxonomy; domain migration;
+  TASK006–016; Practice Mode. **Still true and not fixed**: the common-plans
+  ECO-bucket defect shipped no code change.
 
 ## What's Left
 

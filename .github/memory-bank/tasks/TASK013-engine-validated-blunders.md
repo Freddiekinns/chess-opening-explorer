@@ -1,6 +1,6 @@
 # [TASK013] - Engine-Validated Practical Blunder Analysis
 
-**Status:** Pending  
+**Status:** Merged 2026-09-24 into "position facts", `docs/backlog.md` rev 4  
 **Added:** 2026-03-17  
 **Updated:** 2026-03-17
 

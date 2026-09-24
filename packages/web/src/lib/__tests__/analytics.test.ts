@@ -35,8 +35,8 @@ describe('trackEvent off the production host', () => {
   });
 
   it('does not load or call PostHog', async () => {
-    const { trackEvent, initAnalytics } = await loadAnalytics();
-    initAnalytics();
+    const { trackEvent } = await loadAnalytics();
+    trackEvent('$pageview');
     trackEvent('band_select', { band: '1400' });
     await flush();
 

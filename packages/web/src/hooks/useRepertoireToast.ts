@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRepertoire } from './useRepertoire';
+import { trackEvent } from '../lib/analytics';
 
 /** Long enough to read and reach the Undo button one-handed. */
 const TOAST_DURATION_MS = 4000;
@@ -55,6 +56,7 @@ export function useRepertoireToast(): UseRepertoireToastReturn {
     (opening: OpeningInput) => {
       const wasSaved = isSaved(opening.fen);
       toggleRef.current(opening);
+      trackEvent('repertoire_toggle', { action: wasSaved ? 'remove' : 'add' });
 
       clearTimer();
       setToast({

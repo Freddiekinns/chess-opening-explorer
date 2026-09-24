@@ -2,35 +2,33 @@
 
 **Date:** 2026-09-24
 
-## Current Task: Feature review and backlog rev 4
+## Current Task: Behavioural analytics on PostHog
 
-**Every feature idea since February was re-checked against `main`.** The
-deviation trainer's slice 2 was never started (no detection code, no
-`?practice=`), and the 2026-08-11 audit's P0s are all still open: Analyse's
-`list[0]` fallback, the unread `?ref=personal`, the explorer's scroll reset,
-inert off-book rows, two meanings of "Level", and a 14-month-old popularity
-snapshot. Review: `docs/reviews/2026-09-24-feature-review.md`.
+**Measurement (backlog decision 5) is decided: page views on Vercel, events on
+PostHog.** Vercel Web Analytics was never off — the dashboard shows visitors,
+routes, referrers and devices. The API's "Web Analytics not found", which the
+feature review repeated, is wrong. Custom events are Pro-only on Vercel, and the
+`/api/event` beacons went to runtime logs that Hobby keeps for one hour.
 
-**We cannot see our users.** `/api/event` beacons go to runtime logs, which
-Hobby keeps for one hour, and the Vercel API reports Web Analytics as not
-enabled even though `<Analytics />` is mounted. The PRD's accounts gate has no
-data behind it.
+`trackEvent` in `packages/web/src/lib/analytics.ts` now sends to PostHog EU
+Cloud (free tier, project 283180). It loads `posthog-js/dist/module.slim` lazily
+(49 KB gz) and **only when the hostname is `openingbook.xyz`**, so dev, tests
+and previews send nothing. It is cookieless (localStorage), bootstrapped with
+our existing anonymous id, with autocapture and session replay off; page views
+on route change. The project token is public by design and lives in the source.
+`/api/event` and its test are deleted.
 
-**`docs/backlog.md` rev 4:** Now (credibility + measurement) → Next (personal
-strip + `?practice=`, practice memory, divergence callout, Start here shelf) →
-Then (the trainer with paste-a-game as its public face, repertoire from your
-games) → Platform (position graph, offline "position facts"). The archive was
-owner-agreed: TASK005, TASK014 abandoned; TASK015 and slice 1 shipped; M3, J8,
-3.6, J6 archived; TASK013 merged. **Decisions 2–5 are still open** (board-search
-split, Repertoire, the offline engine run, measurement).
+Events: `analyse_run`, `band_select`, `explorer_error` (existing) plus
+`search_select {surface, rank}`, `practice_start`, `video_click {via}`,
+`pgn_lookup {found}`, `repertoire_toggle {action}`.
 
-The corpus checks for this review: only ~14 distinct trap-named ECO lines;
-`courses.json` holds study links, not PGNs; the board-search PRD's 7,794/12,377
-reachability figures reproduce exactly.
+No `/ingest` reverse proxy: the middleware matcher would catch it and invoke
+middleware per event. Ad blockers therefore drop some events. Next: build the
+funnels and the `analyse_run` retention insight in PostHog once data arrives.
 
-## Previous Task: SEO check-up, Vercel usage, and the Dependabot queue
+## Previous Task: Feature review and backlog rev 4
 
-Indexed 7,174 pages, but impressions are still 3–40/day. 81 soft 404s were our
-own "Opening not found" copy (#142). Active CPU per invocation is ~3× from cold
-starts parsing ~78 MB of JSON. `dependabot/**` no longer deploys (#141). The
-site icon went from 568 KB to 46 KB (#143). Detail in `archive.md`.
+Every feature idea since February re-checked against `main`. Slice 2 of the
+deviation trainer was never started and the August audit's P0s are still open.
+`docs/backlog.md` rev 4 sequences credibility → loop → trainer → platform.
+Review: `docs/reviews/2026-09-24-feature-review.md`. Detail in `archive.md`.

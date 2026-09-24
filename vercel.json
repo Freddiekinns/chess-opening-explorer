@@ -151,15 +151,6 @@
       ]
     },
     {
-      "source": "/api/event",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store"
-        }
-      ]
-    },
-    {
       "source": "/fonts/(.*)",
       "headers": [
         {
@@ -202,10 +193,6 @@
     {
       "source": "/api/health",
       "destination": "/api/health"
-    },
-    {
-      "source": "/api/event",
-      "destination": "/api/event"
     },
     {
       "source": "/api/explorer",

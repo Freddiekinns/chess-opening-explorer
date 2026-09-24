@@ -52,6 +52,11 @@ Analytics API returns "Web Analytics not found" for the project, even though
 anonymous id re-running Analyse within 14 days") was set against data nobody can
 read.
 
+> **Correction (2026-09-24, later the same day):** Web Analytics _was_ enabled.
+> The dashboard shows page views, routes, referrers and devices; only the API
+> answered "not found". Custom events remain Pro-only, so events now go to
+> PostHog — see the backlog's **Measurement** entry.
+
 **4. The substitution argument still holds.** Lichess has better statistics,
 Chessable better drilling, YouTube better explanations. What nobody offers free
 is the connection between _your_ games and the content for them. The July

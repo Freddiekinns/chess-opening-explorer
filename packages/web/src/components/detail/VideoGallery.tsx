@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Video } from '../../../../shared/src/types/video.js';
 import { isVideoWatched, markVideoWatched } from '../../lib/watchedVideos';
+import { trackEvent } from '../../lib/analytics';
 import styles from './VideoGallery.module.css';
 
 // Constants
@@ -111,6 +112,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
   const [watched, setWatched] = useState(() => isVideoWatched(video.id));
 
   const handlePlay = () => {
+    trackEvent('video_click', { via: 'play' });
     setPlaying(true);
     markVideoWatched(video.id);
     setWatched(true);
@@ -158,6 +160,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.titleLink}
+            onClick={() => trackEvent('video_click', { via: 'youtube' })}
             title={`${video.title} — watch on YouTube`}
           >
             {video.title}

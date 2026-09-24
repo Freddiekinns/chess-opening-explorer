@@ -37,6 +37,7 @@ import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildOpeningDescription, SITE_NAME } from '../lib/siteConfig';
+import { trackEvent } from '../lib/analytics';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -469,6 +470,12 @@ const OpeningDetailPage: React.FC = () => {
       }
     }
   }, [practiceColor, practiceLine, getMovesList, playAudio]);
+
+  // Only the Practice button counts as a start; restarts also call startPractice.
+  const handlePracticeClick = useCallback(() => {
+    trackEvent('practice_start');
+    startPractice();
+  }, [startPractice]);
 
   const exitPractice = useCallback(() => {
     if (autoPlayTimeoutRef.current) {
@@ -1255,7 +1262,7 @@ const OpeningDetailPage: React.FC = () => {
                   </button>
                   <button
                     className={styles.mobilePracticeBtn}
-                    onClick={startPractice}
+                    onClick={handlePracticeClick}
                     title="Practice this opening"
                   >
                     <Play size={12} />
@@ -1331,7 +1338,7 @@ const OpeningDetailPage: React.FC = () => {
                 </button>
                 <button
                   className="chessboard-nav-btn practice-toggle-btn"
-                  onClick={startPractice}
+                  onClick={handlePracticeClick}
                   title="Practice this opening"
                 >
                   <Play size={14} />

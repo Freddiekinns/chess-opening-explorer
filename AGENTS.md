@@ -134,6 +134,16 @@ load-bearing.
 - **Popularity stats cover all rated Lichess players, not master games.** Label
   UI surfaces accordingly.
 
+- **Page views are Vercel's, events are PostHog's.** Vercel Web Analytics is on
+  (dashboard → Analytics) even though its API answers "Web Analytics not found"
+  — a review once reported it disabled on that evidence. Custom events are
+  Pro-only there, so `trackEvent` (`lib/analytics.ts`) sends to PostHog EU,
+  lazily and **only on the `openingbook.xyz` host**: dev, tests and previews
+  send nothing, which is why nothing arrives from a local run. No `/ingest`
+  proxy — the middleware matcher would catch it and bill a middleware invocation
+  per event. Never send PII or search text; properties are small enums and
+  ranks.
+
 - **Never render fabricated data.** If real stats are missing, omit the element
   or show an explicit "no stats" state. Never synthesise numbers that look like
   real statistics. (`OpeningCard` once invented W/D/L percentages with

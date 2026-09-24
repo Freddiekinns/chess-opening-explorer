@@ -5,6 +5,7 @@ import {
   OpeningForLookup,
   PGNLookupResult,
 } from '../../../../shared/src';
+import { trackEvent } from '../../lib/analytics';
 
 interface PGNInputModalProps {
   isOpen: boolean;
@@ -101,6 +102,7 @@ export const PGNInputModal: React.FC<PGNInputModalProps> = ({
     setTimeout(() => {
       const lookupResult = lookupOpeningFromPGN(pgnText, openingsMap);
       setResult(lookupResult);
+      trackEvent('pgn_lookup', { found: lookupResult.bestMatch ? 1 : 0 });
       setIsSearching(false);
     }, 10);
   }, [pgnText, openingsMap]);

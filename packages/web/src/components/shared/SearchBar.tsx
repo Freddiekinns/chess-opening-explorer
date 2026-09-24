@@ -5,6 +5,7 @@ import { SearchNoResults } from './SearchNoResults';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
 import { useSearchIndex } from '../../lib/searchIndex';
 import type { Opening } from '../../lib/localSearch';
+import { trackEvent } from '../../lib/analytics';
 
 export type { Opening };
 
@@ -99,9 +100,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       if (showSurpriseFooter && activeSuggestion === results.length) {
         triggerSurprise();
       } else if (activeSuggestion >= 0) {
-        selectOpening(results[activeSuggestion]);
+        selectOpening(results[activeSuggestion], activeSuggestion);
       } else if (results.length > 0) {
-        selectOpening(results[0]);
+        selectOpening(results[0], 0);
       }
     } else if (e.key === 'Escape') {
       setDismissed(true);
@@ -109,7 +110,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
-  const selectOpening = (opening: SearchResult) => {
+  const selectOpening = (opening: SearchResult, rank: number) => {
+    trackEvent('search_select', { surface: 'hero', rank });
     reset();
     setDismissed(false);
     setActiveSuggestion(-1);
@@ -220,7 +222,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                        that also matches the query would otherwise be drawn
                        twice, in two different ranks. */
                     saved={opening.saved}
-                    onSelect={() => selectOpening(opening)}
+                    onSelect={() => selectOpening(opening, index)}
                     onMouseEnter={() => setActiveSuggestion(index)}
                   />
                 </li>

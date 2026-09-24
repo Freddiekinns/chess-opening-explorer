@@ -53,8 +53,9 @@ and drill for it.
   bare percentages on move rows. _(audit #4, #6, #10, E3)_
 - **Explorer scroll:** no `ScrollToTop` reset when the new route is a move step
   from the current position. _(audit E1)_
-- ~~**Measurement**~~ — done 2026-09-24; see Enablers. What remains is building
-  the funnels and the `analyse_run` retention insight once data arrives.
+- ~~**Measurement**~~ — done 2026-09-24; see Enablers. The funnels and the
+  `analyse_run` retention insight are saved in PostHog; what remains is reading
+  them once real traffic has accrued.
 - **Popularity stats refresh:** run the pipeline, and date both game counts on
   screen. _(audit #5)_
 

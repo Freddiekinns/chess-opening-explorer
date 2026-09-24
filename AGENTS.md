@@ -146,7 +146,11 @@ load-bearing.
   autocapture**: `capture_pageview` silently recorded nothing but `$pageleave`
   on the first deploy. `App` reports `$pageview` from the router instead, and
   `trackEvent` reads the URL synchronously because callers navigate straight
-  after tracking.
+  after tracking. Testing it on production: PostHog can take ~5 minutes to show
+  events, so a missing event is not yet a lost one — check the browser's
+  requests to `eu.i.posthog.com` for a 200 first. Test traffic is excluded by
+  the project's test-user filter, keyed on Device ID (= `openingbook:anon-id` in
+  localStorage); add a new test browser's id there.
 
 - **Never render fabricated data.** If real stats are missing, omit the element
   or show an explicit "no stats" state. Never synthesise numbers that look like

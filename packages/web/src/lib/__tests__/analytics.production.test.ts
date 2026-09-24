@@ -33,7 +33,8 @@ describe('trackEvent on openingbook.xyz', () => {
       persistence: 'localStorage',
       autocapture: false,
       disable_session_recording: true,
-      capture_pageview: 'history_change',
+      // The slim build cannot see route changes; App reports page views.
+      capture_pageview: false,
       bootstrap: { distinctID: getAnonId() },
     });
   });
@@ -43,16 +44,22 @@ describe('trackEvent on openingbook.xyz', () => {
     trackEvent('band_select', { band: '1400' });
     await flush();
 
-    expect(capture).toHaveBeenCalledWith('band_select', { band: '1400' });
+    expect(capture).toHaveBeenCalledWith('band_select', expect.objectContaining({ band: '1400' }));
   });
 
-  it('initAnalytics starts PostHog without capturing anything', async () => {
-    const { initAnalytics } = await loadAnalytics();
-    initAnalytics();
+  // search_select fires and then navigates in the same handler; PostHog is
+  // reached a microtask later, so it stamped the destination page's URL.
+  it('stamps the URL the event fired on, not the one navigated to', async () => {
+    const { trackEvent } = await loadAnalytics();
+    trackEvent('search_select', { surface: 'hero', rank: 0 });
+    history.pushState({}, '', '/opening/elsewhere');
     await flush();
 
-    expect(init).toHaveBeenCalledTimes(1);
-    expect(capture).not.toHaveBeenCalled();
+    expect(capture).toHaveBeenCalledWith(
+      'search_select',
+      expect.objectContaining({ $current_url: 'https://openingbook.xyz/opening/abc' })
+    );
+    history.pushState({}, '', '/opening/abc');
   });
 
   it('swallows a PostHog failure', async () => {

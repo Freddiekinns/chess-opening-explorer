@@ -142,7 +142,11 @@ load-bearing.
   send nothing, which is why nothing arrives from a local run. No `/ingest`
   proxy — the middleware matcher would catch it and bill a middleware invocation
   per event. Never send PII or search text; properties are small enums and
-  ranks.
+  ranks. The SDK is `posthog-js/dist/module.slim`, which has **no history
+  autocapture**: `capture_pageview` silently recorded nothing but `$pageleave`
+  on the first deploy. `App` reports `$pageview` from the router instead, and
+  `trackEvent` reads the URL synchronously because callers navigate straight
+  after tracking.
 
 - **Never render fabricated data.** If real stats are missing, omit the element
   or show an explicit "no stats" state. Never synthesise numbers that look like

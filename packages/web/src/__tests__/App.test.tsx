@@ -4,9 +4,10 @@
  */
 
 import { render, screen, waitFor, act } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { vi, describe, test, expect, beforeEach } from 'vitest';
 import App from '../App';
+import * as analytics from '../lib/analytics';
 import { STATIC_ROUTES } from '../lib/siteConfig';
 
 // Mock the fetch for openings data
@@ -201,6 +202,38 @@ describe('App Component', () => {
         expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Opening Book/i);
       });
     });
+  });
+});
+
+// posthog-js's slim build has no history autocapture, so `capture_pageview`
+// recorded nothing on openingbook.xyz — the router has to report page views.
+describe('Page views', () => {
+  test('reports a $pageview on load and on every route change', async () => {
+    const trackEvent = vi.spyOn(analytics, 'trackEvent').mockImplementation(() => {});
+    let navigate: ReturnType<typeof useNavigate> = () => {};
+    const CaptureNavigate = () => {
+      navigate = useNavigate();
+      return null;
+    };
+
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <CaptureNavigate />
+        <App />
+      </MemoryRouter>
+    );
+
+    const pageviews = () => trackEvent.mock.calls.filter(([event]) => event === '$pageview');
+    expect(pageviews()).toHaveLength(1);
+
+    await act(async () => {
+      navigate('/repertoire');
+    });
+    // Navigation is a transition held open by the lazy page, so the new
+    // path commits once its chunk loads.
+    await waitFor(() => expect(pageviews()).toHaveLength(2));
+
+    trackEvent.mockRestore();
   });
 });
 

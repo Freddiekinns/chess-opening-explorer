@@ -14,3 +14,8 @@ positions, where orange is the bookmark ribbon.
   `f-board-book-small` (one light page, one dark page) is its 16–24px cut.
 
 `concepts.png` compares both with the current mark.
+
+**Chosen: B.** Before shipping, its base was reseated. It is now one shallow arc
+that follows the page curve with rounded corners, which fixed the floating gap
+and the sharp corner slivers that showed at large sizes. The shipped files are
+in `assets/`, not here.

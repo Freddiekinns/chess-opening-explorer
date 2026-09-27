@@ -9,7 +9,7 @@ function TopBar({ active, onNav, query, onQuery, onSurprise }) {
           onNav('explore');
         }}
       >
-        <img src="../../assets/logo-favicon.svg" alt="" />
+        <img src="../../assets/logo-mark.svg" alt="" />
         Opening Book
       </a>
       <nav className="nav">

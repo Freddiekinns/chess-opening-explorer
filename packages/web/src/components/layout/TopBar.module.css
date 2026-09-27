@@ -27,12 +27,20 @@
   border-radius: var(--radius-sm);
 }
 
-/* The ribbon pawn: the brand mark (design-system/project/assets/logo-mark.svg) */
+/* The brand mark (design-system/project/assets/logo-mark.svg) */
 .logoMark {
-  height: 22px;
+  height: 24px;
   width: auto;
-  fill: var(--color-brand-orange);
   flex-shrink: 0;
+}
+
+.logoPawn {
+  fill: var(--color-brand-orange);
+}
+
+/* Board cream — the light-square colour the boards use */
+.logoPages {
+  fill: var(--color-result-white);
 }
 
 .logo:focus-visible {

@@ -202,7 +202,7 @@ A defined elevation system — never hardcode `box-shadow`:
 - Landing-variant search input has a near-invisible orange wash:
   `linear-gradient(145deg, var(--accent-a6) 0%, transparent 100%)`.
 - No images, patterns, textures, or full-bleed photography. The single brand
-  image is the ribbon-pawn logo (`assets/logo-mark.svg`).
+  image is the pawn-on-a-book logo (`assets/logo-mark.svg`).
 
 ### Cards
 
@@ -264,22 +264,25 @@ that needs it.
 **Filled vs stroke:** stroke is the default; filled is reserved for state-on
 (e.g. `StarButton` filled = saved to repertoire, in brand orange).
 
-**Logo:** the ribbon pawn — a flat pawn whose base ends in the V-notched tail of
-a bookmark ribbon, so the book is implied rather than drawn. It is the system's
-"orange is a bookmark ribbon" rule made into a mark. One colour, one path, on a
-256 grid (notch at 30°). Masters in `assets/`:
+**Logo:** an orange Staunton pawn seated in an open book, the original
+pawn-on-a-book idea redrawn flat. The pawn's base is a shallow arc that follows
+the curve of the pages, so it sits in the book rather than floating above it.
+Two colours: brand-orange pawn, board-cream (`#d4cfc7`) pages. Two paths on a
+256 grid. Masters in `assets/`:
 
-- `logo-mark.svg` (brand orange), `logo-mark-black.svg`, `logo-mark-white.svg`
-- `logo-favicon.svg` — tight square crop for 16–48px
+- `logo-mark.svg` (colour), `logo-mark-black.svg`, `logo-mark-white.svg`
+- `logo-favicon.svg` — tight square crop; the pages switch to board-dark
+  `#665e54` under `prefers-color-scheme: light` so they hold on a light tab
 - `logo-tile.svg` — mark on `--surface-base`, for app icons and the social image
 
-In production: `favicon.ico` (16/32/48) and `public/brand/` (SVG favicon,
-apple-touch-icon, 192/512 icons, webmanifest; `icon-512.png` is `og:image`). The
-TopBar draws the mark inline at 22px high, 8px from the wordmark. Minimum size
-16px high. Only ever orange, black or white — never cream, never on orange. The
-concepts it was chosen from are in `explorations/logo-refresh/`.
-`opening-book-icon.png` is the retired illustration, kept only so old cached
-social previews still resolve.
+In production: `favicon.ico` (16/32/48, mid-grey pages because an ICO cannot
+adapt) and `public/brand/` (SVG favicon, apple-touch-icon, 192/512 icons,
+webmanifest; `icon-512.png` is `og:image`). The TopBar draws the mark inline at
+24px high, 8px from the wordmark. Minimum size 16px. In one colour both parts
+take the same colour and the gap separates them. The pawn is only ever orange,
+black or white. The explorations it was chosen from are in
+`explorations/logo-refresh/`. `opening-book-icon.png` is the retired
+illustration, kept only so old cached social previews still resolve.
 
 **Emoji / unicode glyphs:** none. Use SVG or text. The one allowed glyph is `★`
 inside the `StarButton`, but even that is rendered via SVG in the source.

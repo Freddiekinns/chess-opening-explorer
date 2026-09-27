@@ -7,9 +7,10 @@ for the book. They sit on a 256 × 256 canvas as flat SVG paths, with no text,
 rasters, gradients or filters. `concepts.png` compares them with the current
 mark at 200/64/32/16px, in a browser tab and in the TopBar.
 
-- **A: Ribbon pawn** (recommended). The pawn's base is a bookmark tail with a
-  V-notch, taken from the system rule that "orange is a bookmark ribbon". One
-  colour, one shape.
+- **A: Ribbon pawn** (rejected — reads as a person, and a lone pawn is
+  chess.com's mark). The pawn's base is a bookmark tail with a V-notch, taken
+  from the system rule that "orange is a bookmark ribbon". One colour, one
+  shape.
 - **B: Pawn on the page.** Today's idea redrawn flat: the closest evolution of
   the current mark.
 - **C: Pawn in the book.** An open book with the pawn set into it. The best app

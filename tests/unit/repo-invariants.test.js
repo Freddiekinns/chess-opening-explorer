@@ -75,6 +75,9 @@ describe('the middleware matcher lets the static SEO files through', () => {
     ['/sitemap.xml'],
     ['/sitemap-index.xml'],
     ['/sitemaps/openings-0.xml'],
+    ['/favicon.ico'],
+    ['/brand/icon-512.png'],
+    ['/brand/site.webmanifest'],
   ])('the middleware does not intercept %s', (pathname) => {
     expect(matches(pathname)).toBe(false);
   });

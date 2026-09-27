@@ -41,7 +41,7 @@ Key files referenced:
 - `packages/web/src/pages/LandingPage.tsx` — hero with
   `Opening <span>Book</span>` accent
 - `packages/web/index.html` — Bricolage Grotesque + DM Sans loaded from Google
-  Fonts; favicon at `opening-book-icon.png`
+  Fonts; favicon at `favicon.ico` and `brand/favicon.svg`
 
 The design tokens here are taken **verbatim** from `simplified.css` so anything
 built with this system stays drift-free with the live product.
@@ -96,9 +96,9 @@ Avoid taglines, sub-subtitles, or marketing prose around components.
 
 The system has one rule that governs everything: **orange is a bookmark ribbon,
 not wallpaper.** It is reserved for primary CTAs, the active nav state, the star
-icon, and the single word "Book" in the hero — and that's it. Hover states,
-emphasised text, data values, decorative borders, and section accents all use
-neutral warm tones.
+icon, the logo mark, and the single word "Book" in the hero — and that's it.
+Hover states, emphasised text, data values, decorative borders, and section
+accents all use neutral warm tones.
 
 ### Foundation
 
@@ -202,7 +202,7 @@ A defined elevation system — never hardcode `box-shadow`:
 - Landing-variant search input has a near-invisible orange wash:
   `linear-gradient(145deg, var(--accent-a6) 0%, transparent 100%)`.
 - No images, patterns, textures, or full-bleed photography. The single brand
-  image is the pawn-on-an-open-book logo (`assets/opening-book-icon.png`).
+  image is the ribbon-pawn logo (`assets/logo-mark.svg`).
 
 ### Cards
 
@@ -264,10 +264,22 @@ that needs it.
 **Filled vs stroke:** stroke is the default; filled is reserved for state-on
 (e.g. `StarButton` filled = saved to repertoire, in brand orange).
 
-**Logo:** `assets/opening-book-icon.png` — a stylised orange pawn standing on an
-open book, on the warm-dark background. Used as favicon, apple-touch-icon, and
-as the social card image. There is no SVG version in the repo; the PNG is the
-canonical asset.
+**Logo:** the ribbon pawn — a flat pawn whose base ends in the V-notched tail of
+a bookmark ribbon, so the book is implied rather than drawn. It is the system's
+"orange is a bookmark ribbon" rule made into a mark. One colour, one path, on a
+256 grid (notch at 30°). Masters in `assets/`:
+
+- `logo-mark.svg` (brand orange), `logo-mark-black.svg`, `logo-mark-white.svg`
+- `logo-favicon.svg` — tight square crop for 16–48px
+- `logo-tile.svg` — mark on `--surface-base`, for app icons and the social image
+
+In production: `favicon.ico` (16/32/48) and `public/brand/` (SVG favicon,
+apple-touch-icon, 192/512 icons, webmanifest; `icon-512.png` is `og:image`). The
+TopBar draws the mark inline at 22px high, 8px from the wordmark. Minimum size
+16px high. Only ever orange, black or white — never cream, never on orange. The
+concepts it was chosen from are in `explorations/logo-refresh/`.
+`opening-book-icon.png` is the retired illustration, kept only so old cached
+social previews still resolve.
 
 **Emoji / unicode glyphs:** none. Use SVG or text. The one allowed glyph is `★`
 inside the `StarButton`, but even that is rendered via SVG in the source.

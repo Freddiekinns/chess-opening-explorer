@@ -2,10 +2,10 @@
 
 Three directions for replacing the raster pawn-on-a-book illustration
 (`assets/opening-book-icon.png`), which becomes unreadable below 32px. Each has
-a black master and a colour version: brand orange `#e85d04`, and cream
-`#d4cfc7` for the book. They sit on a 256 × 256 canvas as flat SVG paths, with
-no text, rasters, gradients or filters. `concepts.png` compares them with the
-current mark at 200/64/32/16px, in a browser tab and in the TopBar.
+a black master and a colour version: brand orange `#e85d04`, and cream `#d4cfc7`
+for the book. They sit on a 256 × 256 canvas as flat SVG paths, with no text,
+rasters, gradients or filters. `concepts.png` compares them with the current
+mark at 200/64/32/16px, in a browser tab and in the TopBar.
 
 - **A: Ribbon pawn** (recommended). The pawn's base is a bookmark tail with a
   V-notch, taken from the system rule that "orange is a bookmark ribbon". One

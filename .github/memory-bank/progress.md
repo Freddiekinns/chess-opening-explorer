@@ -4,6 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of
+  the same idea — pawn seated in curved pages; favicon set, `og:image`, TopBar
+  mark, design-system masters. Two rejected rounds in `explorations/`.
 - **Behavioural analytics on PostHog** (2026-09-24): `trackEvent` sends to
   PostHog EU (lazy slim SDK, production host only, cookieless, anonymous id);
   five new events; `/api/event` deleted. Vercel Web Analytics was on all along.
@@ -51,20 +54,16 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
   twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
   Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
-- **Video matching stopped trusting descriptions and stopped losing its corpus**
-  (2026-08-10): a "watch my other video" link scored +60 and bypassed the
-  variation guard; rematch re-scored only past winners, so a better scorer could
-  never recover a dropped one; ties fell to view count. 6,010 of 12,377 pages
-  changed, specificity 47.7% → 54.2%, corpus 1,733 → 6,903 at zero API cost.
 - **Opening pages carry their content in the HTML** (2026-08-07): Google dropped
   5,010 indexed pages on 30/31 July with no deploy and a healthy site — a
   quality purge, all 12,377 advertising the same template sentence over an empty
   `#root`. The middleware now renders each opening's own description and real
   win rates, unknown FENs 404, only the 271 same-board URLs canonicalise, and
   sitemaps got their first generator. **`archive.md`.**
-- Everything up to 2026-08-04 — **all detail in `archive.md`**: search answers
-  in milliseconds via `NameIndex` (2026-08-04); the UX-stack review pass; search
-  consolidated into `useOpeningSearch`; the UX review programme (phases 0–5,
+- Everything up to 2026-08-10 — **all detail in `archive.md`**: video matching
+  stopped trusting descriptions (2026-08-10); search answers in milliseconds via
+  `NameIndex` (2026-08-04); the UX-stack review pass; search consolidated into
+  `useOpeningSearch`; the UX review programme (phases 0–5,
   `GET /api/openings/browse`); shared `PerfBar`; the opening-detail mobile
   overhaul; the `/api/explorer` proxy; Deviation Trainer slice 1; Study matching
   V2 (18.2%→35.7%); the video index (28.2%→72.8%); route splitting (409→189 kB)

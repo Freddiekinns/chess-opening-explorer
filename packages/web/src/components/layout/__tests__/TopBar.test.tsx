@@ -26,6 +26,15 @@ const renderAt = (path: string) =>
     </MemoryRouter>
   );
 
+describe('TopBar logo', () => {
+  it('draws the mark without changing the link name', () => {
+    renderAt('/');
+
+    const home = screen.getByRole('link', { name: 'Opening Book' });
+    expect(home.querySelector('svg[aria-hidden="true"]')).not.toBeNull();
+  });
+});
+
 describe('TopBar search', () => {
   it('is available on Discover', () => {
     renderAt('/');

@@ -15,6 +15,9 @@
 
 .logo {
   justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   text-decoration: none;
   color: var(--color-text-primary);
   font-size: var(--text-md);
@@ -22,6 +25,22 @@
   letter-spacing: var(--letter-spacing-tight);
   white-space: nowrap;
   border-radius: var(--radius-sm);
+}
+
+/* The brand mark (design-system/project/assets/logo-mark.svg) */
+.logoMark {
+  height: 24px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.logoPawn {
+  fill: var(--color-brand-orange);
+}
+
+/* Board cream — the light-square colour the boards use */
+.logoPages {
+  fill: var(--color-result-white);
 }
 
 .logo:focus-visible {

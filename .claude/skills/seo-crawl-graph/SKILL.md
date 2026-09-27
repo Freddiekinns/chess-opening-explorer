@@ -160,4 +160,8 @@ putting them back. The moving parts are `middleware.ts` (repo root),
   matcher is a broad negative lookahead; anything not excluded goes through the
   Edge function, including static SEO files. When these are missing from the
   exclusions, Search Console reports the sitemap as "Couldn't fetch / Type:
-  Unknown". (Broke in the 2026-03-29 SEO refactor.)
+  Unknown". (Broke in the 2026-03-29 SEO refactor.) Brand icons live under
+  `public/brand/` so one `brand/` exclusion covers them; `favicon.ico` stays at
+  the root because browsers request it there unprompted. Add any new static file
+  at the root to the exclusions, or it costs a middleware invocation per
+  request.

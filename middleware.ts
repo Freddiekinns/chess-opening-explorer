@@ -122,7 +122,7 @@ function buildMetaTags(options: {
     `<meta property="og:url" content="${escaped.url}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="${SITE_NAME}" />`,
-    `<meta property="og:image" content="${buildSiteUrl('/opening-book-icon.png')}" />`,
+    `<meta property="og:image" content="${buildSiteUrl('/brand/icon-512.png')}" />`,
     `<meta name="twitter:card" content="summary" />`,
     `<meta name="twitter:title" content="${escaped.title}" />`,
     `<meta name="twitter:description" content="${escaped.description}" />`,
@@ -306,7 +306,7 @@ function notFoundResponse(html: string): Response {
 
 export const config = {
   matcher: [
-    '/((?!api/|assets/|fonts/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup/|opening-book-icon\.png).*)',
+    '/((?!api/|assets/|fonts/|sounds/|sitemaps/|sitemap\.xml|sitemap-index\.xml|robots\.txt|seo-lookup/|brand/|favicon\.ico|opening-book-icon\.png).*)',
   ],
 };
 

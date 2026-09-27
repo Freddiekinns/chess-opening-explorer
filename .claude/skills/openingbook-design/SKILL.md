@@ -12,8 +12,8 @@ description:
 
 "Warm Editorial Dark" — a chess reference book viewed under warm lamplight, not
 a cold SaaS dashboard. Orange is a bookmark ribbon: CTAs, the active nav state,
-the star icon, and the single word "Book" in the hero. Never use it for
-emphasis, hover, decoration, or backgrounds.
+the star icon, the logo mark, and the single word "Book" in the hero. Never use
+it for emphasis, hover, decoration, or backgrounds.
 
 ## References, in order of fidelity
 
@@ -28,8 +28,8 @@ inventing a layout.
   live landing app (TopBar, Hero, OpeningCard, RepertoireRow, MiniBoard).
 - `design-system/project/preview/*.html` — reference cards for every token
   group.
-- `design-system/project/assets/opening-book-icon.png` — the
-  pawn-on-an-open-book mark.
+- `design-system/project/assets/logo-mark.svg` — the pawn-on-a-book mark (orange
+  pawn seated in an open book); variants beside it, rules in the README.
 - `design-system/chats/` — transcripts from the Claude Design sessions that
   produced the system. Useful when you need to know _why_ something is the way
   it is; not required reading for routine work.

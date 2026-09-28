@@ -1,4 +1,7 @@
-import '@testing-library/jest-dom';
+// The vitest entry, not the bare one: the bare entry types its matchers onto
+// the global `jest.Matchers`, which vitest 4's Assertion extended and vitest 5
+// does not, so every jest-dom matcher stopped type-checking (558 errors).
+import '@testing-library/jest-dom/vitest';
 import { beforeEach } from 'vitest';
 import { __resetSearchIndexForTests } from '../lib/searchIndex';
 

@@ -81,6 +81,20 @@ tests pass, `npm run build` fails TS2339 on every jest-dom matcher. A full
 npm 11's own `npm ci` then rejected; a targeted
 `npm install -D vitest@^5 -w <pkg>` from `main`'s lockfile did not.
 
+**Correction, 2026-09-28: it was never blocked upstream.** `test/setup.ts`
+imported jest-dom's bare entry, which types its matchers onto the global
+`jest.Matchers`; vitest 4's `Assertion` extended that namespace for Jest
+compatibility and vitest 5 does not. jest-dom 7 already ships
+`@testing-library/jest-dom/vitest`, which augments `vitest`'s own `Assertion`
+and registers the same matchers — one import, 558 errors to 0. Landed with
+vitest 5.0.2 and coverage-v8 5.0.2 in one PR, superseding #151 and #152, whose
+Dependabot lockfiles `npm ci` rejected outright
+(`vitest@5.0.1 does not satisfy 5.0.2`) and each left a nested vitest 4 under
+`packages/web`. That regeneration used a full `npm install` on npm 11.19 and
+dropped nothing outside the vitest 4 subtree; `@emnapi/*` intact. CI runs
+neither vitest coverage nor `packages/shared`'s tests, so both were run by hand:
+601 web tests with v8 coverage, 37 shared.
+
 ---
 
 ## The Dependabot backlog, fifth pass (2026-08-31)

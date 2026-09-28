@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Sixth Dependabot pass** (2026-09-28, #149-#152): both groups; vitest 5 pair
+  as one PR, unblocked by importing `@testing-library/jest-dom/vitest`.
 - **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of
   the same idea — pawn seated in curved pages; favicon set, `og:image`, TopBar
   mark, design-system masters. Two rejected rounds in `explorations/`.
@@ -27,11 +29,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   30; vite 8 / vitest 4 / coverage-v8 4 / plugin-react 6 as one branch, #106
   being green only by hoisting vitest 4 to the root over `^1.0.4` declarations
   it left in place; supertest 7, jest-dom 7, speed-insights 2, jsdom 30; `glob`
-  deleted not bumped; PR limit 5 → 10. `manualChunks` → `codeSplitting.groups`
-  exposed a vendor split inoperative under vite 5 — JS 373 → 361 kB, builds 4.7s
-  → 0.8s, React cached across deploys. **Node 20 had been EOL since March**; CI
-  moved to 24, unblocking jsdom 30 — frontend job 2m01s → 1m16s, `testTimeout`
-  restored, its 14 blocking tests right all along.
+  deleted not bumped. `manualChunks` → `codeSplitting.groups` exposed a vendor
+  split inoperative under vite 5 — JS 373 → 361 kB, builds 4.7s → 0.8s. **Node
+  20 had been EOL since March**; CI moved to 24, unblocking jsdom 30 — frontend
+  job 2m01s → 1m16s, `testTimeout` restored.
 - **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
   googleapis 176, react-router 7, lucide-react 1, express 5 in;
   google-auth-library 11 answered by deleting the unused declaration. **Green
@@ -76,8 +77,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
-- **Blocked upstream**: vitest 5 (#135/#136, together) on jest-dom's types; TS 7
-  (#107) on typescript-eslint. `tools/analysis` still has no CI at all.
+- **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
+  `typescript <6.1.0`. `tools/analysis` still has no CI at all.
 - **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
   ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-

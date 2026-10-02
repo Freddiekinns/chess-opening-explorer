@@ -36,9 +36,30 @@ describe('sitemap lastmod tells the truth about the data', () => {
 
     if (shallow) {
       // A shallow clone cannot distinguish the graft boundary from a real last
-      // change, so the only honest answer is none.
-      expect(dataLastModified()).toBeNull();
-      return;
+      // change, so when git's answer *is* the boundary the only honest answer
+      // is none. A data commit inside the clone's window is a real change and
+      // keeps its date — asserting null for every shallow clone held only until
+      // the first such commit (the family split, 2026-10-02).
+      const sha = execFileSync(
+        'git',
+        [
+          'rev-list',
+          '--max-count=1',
+          'HEAD',
+          '--',
+          'api/data/eco',
+          'api/data/popularity_stats.json',
+        ],
+        { cwd: ROOT, encoding: 'utf-8' }
+      ).trim();
+      const shallowFile = path.join(ROOT, '.git', 'shallow');
+      const boundaries = fs.existsSync(shallowFile)
+        ? fs.readFileSync(shallowFile, 'utf-8').split('\n').filter(Boolean)
+        : [];
+      if (!sha || boundaries.includes(sha)) {
+        expect(dataLastModified()).toBeNull();
+        return;
+      }
     }
 
     const expected = execFileSync(

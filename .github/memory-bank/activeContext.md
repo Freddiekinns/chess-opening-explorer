@@ -2,25 +2,21 @@
 
 **Date:** 2026-09-28
 
-## Current Task: Sixth Dependabot pass
+## Current Task: Style tags and the Jev experiment
 
-Five open PRs. Both groups merged after a combined local run of every CI gate on
-Node 24 / npm 11: #149 (lucide-react 1.48, posthog-js patch — replay only, which
-the slim SDK does not load) and #150 (eight dev minors and patches).
+The LLM style tags barely tell openings apart — "Initiative" on 99% of
+positions, the "solid" filter passes 84% — because the model copied the prompt's
+examples. Two proposals, both in the backlog:
 
-vitest 5 and @vitest/coverage-v8 5 (#151, #152) went in as one PR, as the vitest
-4 pair did, because coverage-v8 peers vitest exactly. Each Dependabot lockfile
-was rejected by `npm ci`. The "blocked upstream" note from the last pass was
-wrong: `test/setup.ts` now imports `@testing-library/jest-dom/vitest`, and the
-558 matcher type errors are gone. CI runs neither vitest coverage nor
-`packages/shared`'s tests; both were run by hand.
+- `docs/proposals/2026-10-02-opening-style-classification.md` — exclusive axes
+  of named values per variation, validated by script, no hand-labelling. Gated
+  on `query_shape` (now on `search_select`): wait ~2 weeks of PostHog data.
+- `docs/proposals/2026-10-02-jev-video-experiment.md` — Jev (TypeSafe's typed
+  decision model) as a judge of video matches, $5 budget. Waiting on the owner's
+  API key and docs.
 
-typescript 7 (#107) stays open: typescript-eslint 8.70.1 still peers
-`typescript <6.1.0`. Detail in `archive.md`.
+## Previous Task: Sixth Dependabot pass
 
-## Previous Task: Logo refresh
-
-The raster pawn-on-a-book became a flat SVG of the same idea — pawn seated in an
-open book. Icons in `packages/web/public/brand/` plus `favicon.ico`;
-`icon-512.png` is `og:image`; the middleware matcher excludes both. Rules:
-`design-system/project/README.md` → Logo. Detail in `archive.md`.
+#149–#152 merged; vitest 5 pair as one PR. typescript 7 (#107) stays open:
+typescript-eslint 8.70.1 still peers `typescript <6.1.0`. Detail in
+`archive.md`.

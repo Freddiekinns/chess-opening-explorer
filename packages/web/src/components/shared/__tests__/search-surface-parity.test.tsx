@@ -25,6 +25,9 @@ import { SearchBar } from '../SearchBar';
 import SearchOverlay from '../SearchOverlay';
 import TopBar from '../../layout/TopBar';
 import { resetSearchIndex } from '../../../test/searchIndexStub';
+import { trackEvent } from '../../../lib/analytics';
+
+vi.mock('../../../lib/analytics', () => ({ trackEvent: vi.fn() }));
 
 const { navigateMock } = vi.hoisted(() => ({ navigateMock: vi.fn() }));
 
@@ -114,6 +117,7 @@ const searchRequests = () =>
 beforeEach(() => {
   localStorage.clear();
   navigateMock.mockReset();
+  vi.mocked(trackEvent).mockClear();
   resetSearchIndex();
   vi.unstubAllGlobals();
 });
@@ -184,6 +188,25 @@ describe('search surface parity', () => {
       await waitFor(() =>
         expect(screen.getByText("Queen's Gambit Declined: Normal Defense")).toBeInTheDocument()
       );
+    });
+
+    // The search text is never sent, so the shape is how we learn whether
+    // anyone searches by style. All three surfaces have to report it, or the
+    // count depends on which box people happened to use.
+    it('reports the shape of the query, never its text, when a result is chosen', async () => {
+      const user = userEvent.setup();
+      stubSearch(SERVED);
+      surface.render();
+
+      await user.type(surface.field(), 'solid openings');
+      await user.click(await screen.findByText("Queen's Gambit Declined: Normal Defense"));
+
+      expect(trackEvent).toHaveBeenCalledWith(
+        'search_select',
+        expect.objectContaining({ rank: 0, query_shape: 'style' })
+      );
+      const sent = JSON.stringify(vi.mocked(trackEvent).mock.calls);
+      expect(sent).not.toContain('solid openings');
     });
 
     it('says the same thing when the search fails', async () => {

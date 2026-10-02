@@ -6,6 +6,7 @@ import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearc
 import { useSearchIndex } from '../../lib/searchIndex';
 import type { Opening } from '../../lib/localSearch';
 import { trackEvent } from '../../lib/analytics';
+import { queryShape } from '../../lib/searchQuery';
 
 export type { Opening };
 
@@ -111,7 +112,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const selectOpening = (opening: SearchResult, rank: number) => {
-    trackEvent('search_select', { surface: 'hero', rank });
+    trackEvent('search_select', { surface: 'hero', rank, query_shape: queryShape(query) });
     reset();
     setDismissed(false);
     setActiveSuggestion(-1);

@@ -91,6 +91,55 @@ export function expandAbbreviations(query: string): string {
 }
 
 /**
+ * What kind of search a query was, for analytics only — never for routing.
+ *
+ * The search text itself is never sent anywhere, so this small enum is how we
+ * learn whether anyone searches by style. Style words exclude anything that is
+ * also part of an opening name ("Classical Variation", "Grand Prix Attack",
+ * "Queen's Gambit", "London System"), so a name search is not counted as one.
+ */
+export type QueryShape = 'move' | 'eco' | 'style' | 'name';
+
+const STYLE_WORDS = new Set([
+  'aggressive',
+  'attacking',
+  'solid',
+  'defensive',
+  'positional',
+  'tactical',
+  'dynamic',
+  'sharp',
+  'quiet',
+  'safe',
+  'risky',
+  'tricky',
+  'trappy',
+  'beginner',
+  'beginners',
+  'easy',
+  'simple',
+  'advanced',
+]);
+
+function isMoveSequence(query: string): boolean {
+  const tokens = query
+    .replace(/\d+\.+/g, ' ')
+    .replace(/[+#]/g, '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  return tokens.length > 0 && tokens.every(isChessMove);
+}
+
+export function queryShape(query: string): QueryShape {
+  if (isEcoCode(query)) return 'eco';
+  if (isMoveSequence(query)) return 'move';
+  const words = query.toLowerCase().split(/[^a-z]+/);
+  if (words.some((word) => STYLE_WORDS.has(word))) return 'style';
+  return 'name';
+}
+
+/**
  * The moves line on a search row.
  *
  * Similar variations share their opening moves, so a preview taken from the

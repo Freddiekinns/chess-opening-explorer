@@ -1,9 +1,10 @@
 # Splitting the `irregular` family — so popular pages get a shelf that fits
 
-**Status (2026-10-02):** proposed and awaiting the owner's approval. No data or
-code has changed. The counts below come from `main` at `34d8143`, with the video
-lists from PR #157's branch (`feat/jev-video-filter` at `ad2718b`), because that
-is the index this proposal would ship against.
+**Status (2026-10-02):** proposed; the open questions are decided (see
+**Decisions**). Implementation awaits the owner's go-ahead. No data or code has
+changed. The counts below come from `main` at `34d8143`, with the video lists
+from PR #157's branch (`feat/jev-video-filter` at `ad2718b`), because that is
+the index this proposal would ship against.
 
 ## The problem
 
@@ -172,7 +173,7 @@ Moving them into `italian` would leave Italian's shelf alone, because its videos
 outscore them. But the moved pages would then show Urusov and Halloween Gambit
 videos, which is no better than the grab-bag.
 
-**C. Recommended:** three new families for groups that hang together, and five
+**C. Recommended:** three new families for groups that hang together, and six
 narrow re-routes where an existing family already owns the opening by name.
 
 ## Recommendation
@@ -181,7 +182,7 @@ narrow re-routes where an existing family already owns the opening by name.
 
 | id            | Display name             | Slug                       | Pages | No own videos | Σ games on those |
 | ------------- | ------------------------ | -------------------------- | ----: | ------------: | ---------------: |
-| `queens-pawn` | Queen's Pawn Game        | `queens-pawn-game`         |   216 |            85 |             512M |
+| `queens-pawn` | Queen's Pawn Game        | `queens-pawn-game`         |   210 |            82 |             483M |
 | `kings-pawn`  | King's Pawn Game         | `kings-pawn-game`          |   157 |            96 |             210M |
 | `uncommon-e4` | Uncommon Replies to 1.e4 | `uncommon-replies-to-1-e4` |   110 |            99 |             209M |
 
@@ -190,12 +191,12 @@ and 1.e4 that way, and both roots move with their family. The B00 name avoids
 the Defense/Defence question (see open questions).
 
 - **`queens-pawn`** — 1.d4 without the Queen's Gambit: 1.d4 and 1.d4 d5 roots,
-  Zukertort, Symmetrical, Chigorin, Veresov (D00), Colle, Stonewall, Levitsky,
-  Krause, Blackmar–Diemer, Rubinstein Opening, and Black's first-move
-  alternatives such as Horwitz (1…e6), 1…c6 and 1…d6.
+  Zukertort, Symmetrical, Chigorin, Colle, Stonewall, Levitsky, Krause,
+  Blackmar–Diemer, Rubinstein Opening, and Black's first-move alternatives such
+  as Horwitz (1…e6), 1…c6 and 1…d6.
   - Shelf: Colle System ×4 (Naroditsky speedruns), Torre Attack, Queen's Pawn
     Master Class, Lemberger Countergambit, Levitsky Attack.
-  - Chigorin, Horwitz, Symmetrical and Veresov all get this shelf.
+  - Chigorin, Horwitz and Symmetrical all get this shelf.
 - **`kings-pawn`** — 1.e4 and 1.e4 e5 off the main roads: Leonardis, Napoleon,
   Wayward Queen/Parham, MacLeod, Busch-Gass, McConnell, Tayler, Centre Game,
   Danish, Latvian, Elephant, Portuguese.
@@ -205,7 +206,7 @@ the Defense/Defence question (see open questions).
   - Shelf: Nimzowitsch ×2, Owen ×3, then three 1.e4 overviews ("Top 10 responses
     to 1.e4" and two repertoire videos).
 
-### Five narrow re-routes into existing families
+### Six narrow re-routes into existing families
 
 | Names                                                                                        | To             | Pages | No own videos | Effect on that family's top 8                                                                                        |
 | -------------------------------------------------------------------------------------------- | -------------- | ----: | ------------: | -------------------------------------------------------------------------------------------------------------------- |
@@ -213,6 +214,7 @@ the Defense/Defence question (see open questions).
 | `Queen's Pawn Game: Accelerated London`, `Queen's Pawn Game: London`, `Queen's Pawn: London` | `london`       |    16 |       9 (46M) | improves: five generic repertoire and speedrun videos give way to four London videos and a Morris Countergambit game |
 | `Queen's Pawn Game: Modern`, `Queen's Pawn: Modern` (1.d4 g6)                                | `pirc-modern`  |    10 |      9 (111M) | unchanged                                                                                                            |
 | `Queen's Pawn: Neo-Indian`, `Queen's Pawn: Anti-Nimzo-Indian` (1.d4 Nf6 2.c4 e6)             | `nimzo-indian` |     7 |       2 (37M) | unchanged                                                                                                            |
+| `Queen's Pawn: Veresov`, `Queen's Pawn Game: Veresov` (added in Decisions)                   | `trompowsky`   |     6 |       3 (29M) | same eight; one Veresov video moves up a place                                                                       |
 | `Queen's Pawn Game` with ECO B01 — a mislabelled 1.e4 d5 2.Nc3                               | `scandinavian` |     1 |             0 | unchanged                                                                                                            |
 
 "Unchanged" means the same eight videos, in the same order, as today.
@@ -296,6 +298,7 @@ Tests first, per `AGENTS.md`:
    - `Horwitz Defense`, `Queen's Pawn Game: Chigorin Variation`, `Colle: 3...c6`
      and `Blackmar-Diemer Gambit` → `queens-pawn`
    - `Queen's Pawn: London` → `london`
+   - `Queen's Pawn: Veresov Attack` → `trompowsky`
    - `King's Knight Opening: Normal Variation` → `italian`
    - `King's Pawn Game: Leonardis Variation` and `Danish Gambit Accepted` →
      `kings-pawn`
@@ -311,7 +314,8 @@ Tests first, per `AGENTS.md`:
    - Add a new `Nimzowitsch Defen` rule. Do not retarget the bare `Nimzowitsch`
      rule: if it ever lands above `Nimzowitsch-Larsen`, it takes four 1.b3 pages
      with it (this happened in the simulation).
-   - The London, Modern and Neo-Indian rules must sit above `Queen's Pawn`.
+   - The London, Modern, Neo-Indian and Veresov rules must sit above
+     `Queen's Pawn`.
    - The two `King's Knight Opening: …` → `italian` rules must sit above
      `King's Knight Opening`.
 3. **Add the three entries to `data/families.json` and its copy
@@ -333,31 +337,54 @@ Tests first, per `AGENTS.md`:
 6. **Docs:** a line in `tools/family-taxonomy` (there is no README yet) or
    `packages/api/AGENTS.md`, and a `progress.md` entry.
 
-## Open questions for the owner
+## Decisions
 
-1. **Names.** Every existing family uses Lichess's "Defense", but site copy is
-   British English. I sidestepped this with "Uncommon Replies to 1.e4". Do you
-   prefer that, "Unusual 1.e4 Defences", or keeping "Defense" for consistency
-   with the family list?
-2. **Two 1.e4 families, or one?** Two give coherent shelves (option C). One
-   costs a family less, but Owen and Leonardis pages would share Danish and
-   Nimzowitsch videos (option A).
-3. **1.e4 e5 2.Nf3 Nc6 → `italian`.** Its shelf would read "Videos from the
-   Italian Game family": Urusov and Halloween gambits, Two Knights and Four
-   Knights. 3.Bc4 is the commonest reply on Lichess, so I think this is
-   defensible. The alternative is `kings-pawn`, which would show Danish and
-   Latvian videos on that page. Is Italian acceptable?
-4. **Neo-Indian (1.d4 Nf6 2.c4 e6) → `nimzo-indian`**, because 3.Nc3 is the
-   Nimzo. The alternatives are `catalan` (its ECO band is E00–E09) or
-   `queens-pawn` (a Colle shelf on a c4 position).
-5. **`Queen's Pawn: Modern` (1.d4 g6 2.c4) → `pirc-modern`.** It follows the
-   existing `Modern Defense` rule. The alternative is `kings-indian`, which many
-   of these transpose to.
-6. **Out of scope, but noticed:**
-   - The 192 `uncategorised` positions get no shelf at all.
-   - KIA's own shelf is contaminated.
-   - The existing overrides send the Torre Attack to `london` and the Veresov to
-     `trompowsky`. This proposal leaves all of that as it is.
+The owner left the open questions to judgement (2026-10-02). Each decision below
+follows the site's own Lichess data, which is where the move shares come from.
+
+1. **Name: "Uncommon Replies to 1.e4".** Every family in the picker says
+   "Defense", following Lichess, and site copy is British English. Writing
+   "Defences" in one entry would look like a typo beside the others, and writing
+   "Defense" breaks the copy rule. "Replies" avoids both and is how coaches
+   describe these moves.
+2. **Two 1.e4 families, not one.** In chess terms they are different things. The
+   Owen, Nimzowitsch and St George are Black declining 1…e5 and 1…c5 on move
+   one. The Danish, Latvian, Centre Game and Leonardis come after 1.e4 e5. A
+   Danish video does nothing for an Owen player. The extra family is what gives
+   each shelf a single subject.
+3. **1.e4 e5 2.Nf3 Nc6 → `italian`.** After 2…Nc6, Lichess games go 3.Bc4 42%,
+   3.Bb5 21%, 3.d4 17% and 3.Nc3 13%. The repo's `italian` family already holds
+   the Two Knights, Three Knights, Four Knights, Ponziani and "Open Game", so
+   60% of the games from this position stay inside the family whose shelf it
+   gets.
+4. **Neo-Indian → `nimzo-indian`.** After 1.d4 Nf6 2.c4 e6, 3.Nc3 is 64%, and
+   after 3.Nc3, 3…Bb4 is 81%. The Catalan (3.g3) is 3%. Its E00 ECO band is a
+   catalogue accident, not a reason.
+5. **1.d4 g6 → `pirc-modern`.** After 1.d4 g6 2.c4 Bg7 3.Nc3, 3…d6 is 81%, and
+   Lichess already names that position "Modern Defense" and files it in
+   `pirc-modern`. That family's top 8 includes "The Averbakh System | Modern
+   Defense", which is exactly this structure once White plays e4. Routing these
+   lines to `kings-indian` would split one opening across two families.
+6. **Added on review: Veresov → `trompowsky`.** The overrides already send
+   `Richter-Veresov` to `trompowsky`, but the six `Queen's Pawn: Veresov…` and
+   `Queen's Pawn Game: Veresov…` names would have gone to `queens-pawn`,
+   splitting one opening across two families. On the Veresov Attack page (#192,
+   1.d4 d5 2.Nc3 Nf6, 27M games, no own videos), Trompowsky's shelf carries four
+   Veresov videos where the `queens-pawn` shelf carries none. Both families' top
+   8 lists are otherwise unchanged. This takes `queens-pawn` to 210 positions;
+   the result table is unchanged.
+
+**The weakest fit that remains is the Horwitz.** After 1.d4 e6, 2.c4 is 64%, and
+it leads to the QGD, Dutch, Nimzo-Indian or a French by transposition, none of
+which the Colle-heavy `queens-pawn` shelf covers. It stays there anyway: no
+single family fits a move whose point is to keep every option open, and Black's
+other first-move alternatives (1…c6, 1…d6) sit in the same family.
+
+**Still out of scope:**
+
+- The 192 `uncategorised` positions get no shelf at all.
+- KIA's own shelf is contaminated, which is why 1.g3 stays in `irregular`.
+- The Torre Attack still goes to `london`.
 
 ## How the counts were made
 

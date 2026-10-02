@@ -1,8 +1,7 @@
 # Splitting the `irregular` family — so popular pages get a shelf that fits
 
-**Status (2026-10-02):** proposed; the open questions are decided (see
-**Decisions**). Implementation awaits the owner's go-ahead. No data or code has
-changed.
+**Status (2026-10-02):** implemented as proposed, with the decisions below. The
+tests are in `tools/family-taxonomy/tests/family-taxonomy-data.test.js`.
 
 The counts come from `main` at `34d8143`, with the video lists from PR #157's
 branch (`feat/jev-video-filter` at `ad2718b`). **Against PR #158** re-checks the

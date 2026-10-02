@@ -165,6 +165,20 @@ load-bearing.
   `0`, so `OpeningCard` drew "White 0% · Draw 0% · Black 0%" for openings with
   no data at all — the fabricated-data trap wearing a type coercion.
 
+- **A family is a video shelf, not just a label.** A page with no videos of its
+  own shows its family's best videos, pooled from every position in the family
+  (`family-resource-service.js`). So moving positions into a family also pours
+  their videos into its shelf: filing the Danish under `scotch` would have put
+  five Danish and Latvian videos in the Scotch top 8. Families come from
+  `data/family-overrides.json` by name prefix, **first match wins**. A bare
+  `Nimzowitsch` rule above `Nimzowitsch-Larsen` takes the 1.b3 lines with it.
+  After any rule change, run `node tools/family-taxonomy/build-family-index.js`
+  and commit the rewritten ECO files: the deploy re-resolves anyway, so a
+  skipped rebuild leaves dev and tests on the old taxonomy, and
+  `family-taxonomy-data.test.js` fails on that drift. `irregular` was a
+  940-position grab-bag until 2026-10-02 —
+  `docs/proposals/2026-10-02-irregular-family-split.md`.
+
 ### Deployment and SEO
 
 The crawl graph is a subsystem with its own invariants — the middleware

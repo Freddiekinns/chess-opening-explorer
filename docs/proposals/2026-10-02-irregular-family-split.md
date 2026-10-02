@@ -2,9 +2,12 @@
 
 **Status (2026-10-02):** proposed; the open questions are decided (see
 **Decisions**). Implementation awaits the owner's go-ahead. No data or code has
-changed. The counts below come from `main` at `34d8143`, with the video lists
-from PR #157's branch (`feat/jev-video-filter` at `ad2718b`), because that is
-the index this proposal would ship against.
+changed.
+
+The counts come from `main` at `34d8143`, with the video lists from PR #157's
+branch (`feat/jev-video-filter` at `ad2718b`). **Against PR #158** re-checks the
+result on the stacked pins branch, which is where the implementation should
+start.
 
 ## The problem
 
@@ -229,6 +232,32 @@ and 1.e4 that way, and both roots move with their family. The B00 name uses
 | Families                                 |    28 |       31 |
 | `uncategorised` positions                |   192 |      192 |
 
+### Against PR #158 (video pins)
+
+PR #158 (`feat/video-pins`, stacked on #157) puts 18 verified videos first on
+the pages of nine named openings, applied after the Jev filter. Four of those
+pages were on the `irregular` shelf: Owen Defence: 2.d4 Bb7 (#168), Nimzo-Larsen
+Attack: Modern Variation (#186), King's Pawn Game: Busch-Gass Gambit (#189) and
+Queen's Pawn: Veresov Attack (#192). They now have videos of their own, so they
+no longer show any shelf.
+
+Re-running the proposal against #158's index (`3c993df`):
+
+| Measure                                         | Today | Proposed |
+| ----------------------------------------------- | ----: | -------: |
+| Top-200 pages on the `irregular` shelf          |    16 |        4 |
+| Top-1,000 pages on the `irregular` shelf        |    87 |       33 |
+| Top-200 pages on any family shelf, all families |    19 |       19 |
+
+So with both PRs merged, **16 of the 19 top-200 pages that still fall back to a
+family shelf fall back to `irregular`**. Every proposed family's top 8 is the
+same as on #157's index. Pins carry score 0, so they rank below every scored
+video on a family shelf.
+
+This proposal does not touch `api/data/video-index.json`. Both #157 and #158
+rewrite it, so the implementation branch should start from `feat/video-pins` (or
+`main` once both merge) and leave that file alone.
+
 ### What stays in `irregular`, and why
 
 What is left is mostly flank openings: Bird (89 pages), Polish, Van Geet, Grob,
@@ -368,11 +397,14 @@ follows the site's own Lichess data, which is where the move shares come from.
 6. **Added on review: Veresov → `trompowsky`.** The overrides already send
    `Richter-Veresov` to `trompowsky`, but the six `Queen's Pawn: Veresov…` and
    `Queen's Pawn Game: Veresov…` names would have gone to `queens-pawn`,
-   splitting one opening across two families. On the Veresov Attack page (#192,
-   1.d4 d5 2.Nc3 Nf6, 27M games, no own videos), Trompowsky's shelf carries four
-   Veresov videos where the `queens-pawn` shelf carries none. Trompowsky's top 8
-   keeps the same videos, and `queens-pawn` loses none of its own. This takes
-   `queens-pawn` to 210 positions; the result table is unchanged.
+   splitting one opening across two families. On #157's index, the Veresov
+   Attack page (#192, 1.d4 d5 2.Nc3 Nf6, 27M games, no own videos) would have
+   got four Veresov videos from Trompowsky's shelf and none from
+   `queens-pawn`'s. PR #158 pins videos on that page, so its shelf no longer
+   shows. The move still keeps one opening in one family, and the two small
+   Veresov pages that still have no videos get the Veresov shelf. Trompowsky's
+   top 8 keeps the same videos, and `queens-pawn` loses none of its own. This
+   takes `queens-pawn` to 210 positions; the result table is unchanged.
 
 **The weakest fit that remains is the Horwitz.** After 1.d4 e6, 2.c4 is 64%, and
 it leads to the QGD, Dutch, Nimzo-Indian or a French by transposition, none of

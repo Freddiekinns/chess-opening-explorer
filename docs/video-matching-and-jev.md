@@ -100,6 +100,26 @@ Yes. The gain is real but narrower than "videos are now good":
 
 ## What's next
 
+**Start with a measured baseline (not started; parked 2026-10-02).** "Excellent
+learning videos" has never been measured, only "is it about this opening".
+
+- **Rubric.** For each of the top-200 pages, judge its top 3 videos (~600
+  items): is it this line (not a sibling or later line)? Does it teach (ideas,
+  plans, move orders), not just show a game or trap? Is it a sensible format and
+  level (a lesson, not a 45-second short)? The judge sees only the video's text,
+  so "teaches well" is inferred from the description, channel and length.
+- **Judge set-up.** Define it once as `.claude/agents/video-judge.md` with
+  `model: opus`, `effort: high`, `tools: Read, Write` (no search or shell, so it
+  can't find the key or the scorer's choices), `omitClaudeMd: true`, and the
+  rubric as its body. Opus matches the experiment's judge, so results compare.
+  Sonnet is cheaper: try it on experiment batch 1 first, and switch only above
+  ~90% agreement on sibling-line and same-name items.
+- **Run it** as in the experiment: blind batch files of ~100 items (video text
+  plus the opening's name and moves), five or six background helpers, answers
+  scored against a separate key. Then the owner spot-checks ~20 items to
+  calibrate the new rubric.
+- **Use the result** to rank the fixes below.
+
 - **The scorer gives 0** to some videos whose titles do name the opening
   (Veresov, Owen, Nimzo-Larsen). Fixing that beats adding more pins.
 - **A move-order check** on the top few hundred pages: the remaining quality

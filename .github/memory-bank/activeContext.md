@@ -24,7 +24,9 @@ is set.
 Open: the scorer scores 0 for Veresov, Owen and Nimzo-Larsen videos whose titles
 do name the opening; worth a look before adding more pins. The `irregular`
 family shelf is a grab-bag (a cloud task is giving Queen's Pawn systems a
-family).
+family). Parked next step: a rubric-scored blind judge baseline of the top-200
+pages' top 3 videos; plan and judge set-up are in
+`docs/video-matching-and-jev.md`, "What's next".
 
 ## Previous Task: Style tags and the Jev experiment
 

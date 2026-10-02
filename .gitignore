@@ -137,3 +137,12 @@ tools/course-discovery/.state.json
 .worktrees/
 tools/data/study-cache/
 .claude/projects/
+
+# Jev video experiment: raw answer logs (37 MB), rebuilt by
+# scripts/experiments/jev-video/ for about $1.60. Judge batches are slices of
+# jev-judging-items.json.
+tools/data/experiments/jev-run1.jsonl
+tools/data/experiments/jev-run2.jsonl
+tools/data/experiments/jev-recall.jsonl
+tools/data/experiments/jev-run1.plan.json
+tools/data/experiments/judge-batch-[123].json

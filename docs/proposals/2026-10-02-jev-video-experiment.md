@@ -1,7 +1,8 @@
 # Jev video experiment — can a decision model judge video matches better?
 
-**Status (2026-10-02):** planned, not started. Budget: $5 of Jev credits, bought
-by the owner. No production code or data changes until the decision step.
+**Status (2026-10-02):** run and judged; results and decision under
+[Results](#results-2026-10-02). Spent $1.60 of TypeSafe credit. No production
+code or data changed.
 
 ## The question
 
@@ -147,6 +148,145 @@ before the full runs.**
 2. Write the scripts and run the 100-call pilot; check billed usage.
 3. Run 1 and run 2 in full.
 4. Judge the strata in a session; write the results and the decision here.
+
+## Results (2026-10-02)
+
+Scripts: `scripts/experiments/jev-video/` (`pilot`, `run1`, `run2`, `recall`,
+`sample`, `sample-recall`, `score`, `spotcheck`). Inputs frozen at
+`video-index.json` from `a0e1e77c8`; model pinned to `jev-1.13.0`.
+
+### What changed from the design
+
+- **Pairs are asked per named opening, not per position.** A trailing move list
+  (", 11.d3") is stripped, giving 32,005 video × named-opening pairs instead of
+  72,283 position pairs. Names that _are_ move orders ("Nimzo-Indian: 4.Bd2")
+  keep them, and 10,790 such pairs are flagged and sampled separately.
+- **Stratum E needed its own pass.** Run 2's family answer cannot place a video
+  on a specific page, so 2,827 candidate videos were each asked about all 19
+  uncovered top-200 openings (`recall.js`).
+- **Stratum F was added:** on top-200 pages where dropping Jev's rejections
+  changes the #1 video, the judge picks the better #1 blind.
+- **Four blind judge agents** read only their batch file (video text plus the
+  question). The owner then blind-labelled 20 judged items.
+
+### Cost and speed
+
+| Run               | Calls  | Input tokens | Cost  |
+| ----------------- | ------ | ------------ | ----- |
+| Pilot             | 106    | 0.21M        | $0.01 |
+| Run 1 (relations) | 2,017  | 8.76M        | $0.37 |
+| Run 2 (families)  | 10,239 | 16.44M       | $0.69 |
+| Recall (E)        | 2,827  | 12.64M       | $0.53 |
+
+Pricing matched the docs ($0.042/M input, output free, state billed once per
+call). p50 latency 235 ms; no call failed. About 640 tokens per call plus ~218
+per relation question.
+
+### Pilot
+
+21/21 known pairs right in both wordings: the AGENTS.md regressions (Alapin,
+Scheveningen and Prins rejected on the Accelerated Dragon page; Seirawan's
+lecture kept), live errors (O'Kelly, Chekhover and Maróczy videos on the Kan
+page) and name traps (Kan the player; Max Lange Attack vs Defense). Wording
+mattered only when Jev was unsure: the two wordings agreed 98% at confidence ≥
+0.7 and 74% below 0.45.
+
+### Decision criteria
+
+Pool-weighted, "can't tell" excluded:
+
+| Criterion                             | Needed  | Result                     |
+| ------------------------------------- | ------- | -------------------------- |
+| Jev's rejections are real bad matches | ≥ 70%   | **99.0%** (n = 92)         |
+| Good matches Jev wrongly rejects      | ≤ 5%    | **1.8%**                   |
+| Jev's P(good) separates good from bad | clearly | **0.93 vs 0.31**, AUC 0.94 |
+
+All three pass.
+
+### What it says about today's matches
+
+| Filter                | Pairs kept | Kept pairs judged good | Good pairs kept |
+| --------------------- | ---------- | ---------------------- | --------------- |
+| None (today's scorer) | 32,005     | 26%                    | 100%            |
+| Jev accepts           | 55%        | 47%                    | 98%             |
+| Jev P(good) ≥ 0.8     | 38%        | 63%                    | 91%             |
+| Jev P(good) ≥ 0.9     | 28%        | 74%                    | 78%             |
+
+The 26% is dominated by deep, obscure sub-lines that inherit their family's
+videos. Where traffic is, the gain is smaller. On the 23 top-200 pages where Jev
+changes the #1, the judge preferred Jev's #1 on 10 and today's on 6, with 7
+equal. The owner's notes show why: on most of those pages, neither video covers
+the line.
+
+- **Families (C, D).** Where Jev's family differs from every family the matcher
+  showed the video under, the judge sided with Jev 67% of the time and the
+  matcher 13%. On displayed videos Jev calls "not an opening video", the judge
+  agreed 90%.
+- **Recall (E).** Half of Jev's strongest candidates for uncovered top-200
+  openings are good. 10 of the 17 sampled openings get at least one, for example
+  the Busch-Gass, Owen 2.d4 Bb7, Veresov, QGD Normal Defense and Four Knights
+  Italian.
+
+### Where Jev is weak
+
+Jev knows the family but does not check the move order. It keeps a sibling
+variation (an f3 Nimzo video on a 4.e3 page, a Classical King's Indian on the
+Fianchetto page). It also calls a downstream named line the "main subject" of a
+crossroads position: Italian and Ruy Lopez videos on the King's Knight Opening,
+Tarrasch videos on QGD Three Knights. 14 of its 26 "main subject" recall picks
+were this. As a filter it removes most of the bad matches but keeps about half.
+
+The 28 families in `families.json` have no home for D00–D05 (Colle, Torre,
+Blackmar–Diemer), B00 or C20–C21. Jev and the judges both forced these into a
+nearest family, which blurs strata C and D.
+
+### Checking the judge
+
+The owner blind-labelled 20 judged items:
+
+- **Facts:** no disagreement with the judge on what a video covers.
+- **Labels:** on the 12 relation items both decided, they agreed on good vs bad
+  9 times. The 3 differences were all a same-family video on the wrong
+  variation. The judge called it bad; the owner called it "partly" ("this is
+  Botvinnik", "Tartakower not Rauzer", "covers Bc4 not Bb5").
+- **The judge's "can't tell":** it gave this on 46 of 192 relation items, 38 of
+  them in stratum A, mostly Naroditsky speedruns with no moves in the
+  description. The owner decided all 4 such items, 3 of them as good. So stratum
+  A's 47% is likely an underestimate.
+- **Jev against the owner:** Jev was right on 13 of 16 by the owner's facts. All
+  3 misses were false accepts.
+
+### Decision
+
+**Adopt Jev as a rejection filter, not as a judge of fit.** Its rejections are
+trustworthy and cheap: a full re-check of every displayed pair costs about
+$0.40. Its acceptances are not good enough to rank by, because the
+sibling-variation blind spot is exactly the matcher's own blind spot.
+
+The owner's "partly" verdicts point to a softer form than deletion. A
+same-family video Jev rejects for a specific page belongs on the family shelf
+the site already has (match-reason badges, family fallback). A cross-family or
+"not an opening" rejection is dropped. Adoption is a separate PR through the
+`video-pipeline` skill, with the audit run before and after, and should start
+from P(good) as a threshold rather than the top choice.
+
+Recall is a second, independent case: Jev-nominated candidates for uncovered
+top-200 pages, filtered by a human or a second check, would fill about half of
+them.
+
+### Notes on Jev for other uses
+
+- **What it is good at:** "is this text about X?" with a fixed answer list.
+  Cheap enough to run over everything, fast, and calibrated: its confidence
+  tracks when wording changes its answer.
+- **What it is weak at:** distinctions that need domain reasoning the text does
+  not spell out, such as move orders. It does not reason; it reads.
+- **Put the evidence in the state.** It read a PGN header buried in a
+  description ("Vienna Game: Anderssen Defense (C25)") and used it correctly.
+- **Use the probabilities, not the choice.** Thresholds on P(good) gave a usable
+  precision/recall curve; the top choice alone did not.
+- **Buy keys from console.typesafe.ai.** `jevtypesafeai.com` is an unaffiliated
+  reseller at ten times the price, on a different endpoint.
 
 ## Out of scope
 

@@ -16,9 +16,15 @@ own-page coverage fell from 178 to 172; those pages show the family shelf. The
 0.4 cut-off spares parent-variation lectures on their own sub-lines (~0.47),
 which the owner counts as useful.
 
-Open: add the `JEV_API_KEY` repo secret. Four of the emptied top-200 pages land
-on the `irregular` family shelf, which is a grab-bag (Queen's Pawn Game, Owen
-and Horwitz have no family of their own).
+Then `config/video_pins.json` (`lib/video-pins.js`) adds 18 videos Jev nominated
+(P(main) >= 0.85) and the blind judge confirmed, across 9 named openings the
+scorer cannot reach. Top-200 coverage 172 -> 181. The `JEV_API_KEY` repo secret
+is set.
+
+Open: the scorer scores 0 for Veresov, Owen and Nimzo-Larsen videos whose titles
+do name the opening; worth a look before adding more pins. The `irregular`
+family shelf is a grab-bag (a cloud task is giving Queen's Pawn systems a
+family).
 
 ## Previous Task: Style tags and the Jev experiment
 

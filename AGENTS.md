@@ -233,7 +233,9 @@ Google de-indexed 5,010 pages once already, after a change that looked safe.
   family shelf. Only rejections with P(good) < 0.4 act. Jev's acceptances proved
   unreliable on sibling variations, so they never rank anything. It fails open
   without `JEV_API_KEY`. The key comes from console.typesafe.ai;
-  `jevtypesafeai.com` is an unaffiliated reseller.
+  `jevtypesafeai.com` is an unaffiliated reseller. After the filter,
+  `config/video_pins.json` puts hand-verified videos first on pages the scorer
+  cannot reach, so a page can also show a video SQLite never matched to it.
 
 Pipeline-specific caveats (rematch modes, cache staleness, audit scripts) live
 in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.

@@ -372,4 +372,24 @@ describe('applyJevFilter', () => {
       (fs.statSync(indexPath).size / (1024 * 1024)).toFixed(2)
     );
   });
+
+  test('applies pins after the filter, so a pinned video Jev rejects still shows', async () => {
+    writeFixtures();
+    fs.writeFileSync(path.join(dir, 'corpus.json'), JSON.stringify(corpus));
+    fs.writeFileSync(
+      path.join(dir, 'pins.json'),
+      JSON.stringify({ openings: { 'Sicilian Defense: Kan Variation': [{ id: 'okelly' }] } })
+    );
+    await applyJevFilter({
+      indexPath: path.join(dir, 'video-index.json'),
+      ecoDir: dir,
+      corpusPath: path.join(dir, 'corpus.json'),
+      cachePath: path.join(dir, 'cache.json'),
+      pinsPath: path.join(dir, 'pins.json'),
+      apiKey: undefined,
+    });
+
+    const index = JSON.parse(fs.readFileSync(path.join(dir, 'video-index.json'), 'utf8'));
+    expect(ids(index, FEN_KAN)).toEqual(['okelly', 'good', 'mention']);
+  });
 });

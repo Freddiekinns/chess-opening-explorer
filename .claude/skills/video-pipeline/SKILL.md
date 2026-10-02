@@ -85,6 +85,10 @@ video the matcher kept can still be missing from the page** — check
   variations, so never use them to rank.
 - Answers are cached per video and named opening and committed; only new pairs
   are paid for. It fails open without `JEV_API_KEY`.
+- Then `config/video_pins.json` puts hand-verified videos first on their named
+  opening's pages (`lib/video-pins.js`). A video on a page that the scorer never
+  matched is probably a pin. Pin only what Jev and the judge agree on, never on
+  Jev's word alone.
 - After a scorer change, the audit's "#1 names the variation" dips slightly
   under the filter. That metric is a keyword test, and most of what Jev removes
   there is a keyword false positive. Sample the changed pages before treating it

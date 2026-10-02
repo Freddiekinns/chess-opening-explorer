@@ -370,9 +370,9 @@ follows the site's own Lichess data, which is where the move shares come from.
    `Queen's Pawn Game: Veresov…` names would have gone to `queens-pawn`,
    splitting one opening across two families. On the Veresov Attack page (#192,
    1.d4 d5 2.Nc3 Nf6, 27M games, no own videos), Trompowsky's shelf carries four
-   Veresov videos where the `queens-pawn` shelf carries none. Both families' top
-   8 lists are otherwise unchanged. This takes `queens-pawn` to 210 positions;
-   the result table is unchanged.
+   Veresov videos where the `queens-pawn` shelf carries none. Trompowsky's top 8
+   keeps the same videos, and `queens-pawn` loses none of its own. This takes
+   `queens-pawn` to 210 positions; the result table is unchanged.
 
 **The weakest fit that remains is the Horwitz.** After 1.d4 e6, 2.c4 is 64%, and
 it leads to the QGD, Dutch, Nimzo-Indian or a French by transposition, none of

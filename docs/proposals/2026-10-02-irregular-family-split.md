@@ -6,8 +6,8 @@ changed.
 
 The counts come from `main` at `34d8143`, with the video lists from PR #157's
 branch (`feat/jev-video-filter` at `ad2718b`). **Against PR #158** re-checks the
-result on the stacked pins branch, which is where the implementation should
-start.
+result on the pins branch. Both PRs merged as `afcc371`, whose video index is
+identical to the one measured there, so those figures are the current ones.
 
 ## The problem
 

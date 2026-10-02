@@ -298,11 +298,16 @@ change does not touch the crawl graph:
   with fewer results.
 
 **One indirect SEO effect: sitemap `lastmod`.** `dataLastModified()` takes the
-date of the last commit touching `api/data/eco`. Committing the rebuilt ECO
-files would therefore stamp all 12,106 sitemap URLs as modified on that day,
-although no page's pre-rendered content changes. This is harmless today, because
-production omits `lastmod` (shallow clone). It becomes a false signal once the
-build gets full history. Worth knowing; not a reason to block this.
+date of the last commit touching `api/data/eco`, and omits it only when that
+commit is the shallow clone's graft boundary. Vercel clones about ten commits
+deep, so for roughly the next ten commits after this merges, production sitemaps
+carry `lastmod 2026-10-02` on all 12,106 URLs, and then omit it again. The date
+is true of the data files and of the ~500 pages whose video shelf changes, but
+no page's pre-rendered content changes. A one-off; not a reason to block this.
+(This proposal first said production would omit `lastmod` throughout. The
+implementation's push hook showed otherwise: `generate-sitemaps.test.js`
+asserted "shallow ⇒ no date" unconditionally, which held only while no commit in
+the clone's window touched the data.)
 
 Other places that read `family_id`:
 

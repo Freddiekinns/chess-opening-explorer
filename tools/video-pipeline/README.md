@@ -90,6 +90,7 @@ cache; run `backfill-views.js` after a recovery-heavy rematch.
 5. **Matches** videos to openings using weighted scoring
 6. **Saves** results to SQLite database
 7. **Generates** static JSON files for the frontend
+8. **Removes** pairs Jev confidently says are not about their page (below)
 
 ## Architecture
 
@@ -102,6 +103,7 @@ index.js                    # Main orchestrator (mode-based dispatch)
 │   ├── video-enricher.js   # YouTube API enrichment
 │   ├── enrichment-corpus.js # Cache → matcher input (rematch corpus recovery)
 │   ├── channel-tiers.js    # Config → premium/standard, by id or title
+│   ├── jev-filter.js       # Drops pairs Jev rejects from the consolidated index
 │   └── video-matcher.js    # Matching algorithm + scorer
 ├── database/
 │   ├── schema-manager.js   # SQLite schema and queries
@@ -112,6 +114,7 @@ index.js                    # Main orchestrator (mode-based dispatch)
     ├── channel-tiers.test.js
     ├── video-matcher.test.js
     ├── channel-discovery.test.js
+    ├── jev-filter.test.js
     └── pipeline-modes.test.js
 ```
 
@@ -383,6 +386,47 @@ Location: `api/data/video-index.json` (consolidated from static files)
 there in every environment, so regenerating it is enough (the old
 copy-to-`packages/api/src/data/` step is gone).
 
+### Jev rejection filter
+
+After consolidation, `scripts/apply-jev-filter.js` removes a video from a page
+when Jev (TypeSafe's typed decision model) reads the video's title, description
+and tags and says it is `mentioned_only` or `not_about` that page's named
+opening with P(main subject + covered) below 0.4. Only confident rejections act:
+in the 2026-10-02 experiment
+(`docs/proposals/2026-10-02-jev-video-experiment.md`) they were 99–100% right,
+while half of what Jev accepted was still wrong, so it never ranks. A page left
+empty falls back to the API's labelled family shelf.
+
+Answers are cached in `tools/data/jev-relation-cache.json`, keyed by video and
+named opening (page name minus a trailing move list, so one answer covers every
+position sharing it), with a hash of the full question and the model. Changing
+the wording or bumping `MODEL` therefore re-asks every pair (about $1.60 for the
+current index) rather than trusting old answers. Only new pairs cost a call, at
+$0.042 per million input tokens. Everything fails open: no `JEV_API_KEY`, an
+outage, a missing answer or a video absent from the enrichment cache keeps
+today's video. A hung API is given up on within minutes: timeouts are retried
+once, and eight failed calls in a row stop the asking. Re-filter the current
+index by hand with `node tools/video-pipeline/scripts/apply-jev-filter.js`.
+
+If a video is missing from a page and the matcher scored it, look here first.
+
+### Video pins
+
+The same script then adds `config/video_pins.json` (`lib/video-pins.js`): per
+named opening, videos put first on every page of that opening. They are for
+pages the scorer leaves empty because no title names the line ("New Stafford
+Gambit" for the Busch-Gass, a general QGD lecture for the Normal Defense). Pins
+come after the filter, so nothing removes them. The served entry is built from
+the enrichment cache with score 0, so pins never outrank scored videos on family
+shelves; a pin whose video has left the cache is skipped with a warning.
+
+The first 18 were nominated by Jev in the experiment's recall pass (P(main
+subject) ≥ 0.85) and confirmed by the blind judge. Jev alone was about 80% right
+at that threshold. Its confident misses are name collisions (Chigorin _Defence_
+videos for the Chigorin _Variation_) and later lines (a Tarrasch video for the
+QGD Queen's Knight), so never pin on Jev's word alone. Prefer fixing the scorer
+when a title does name the line.
+
 ### Backfill Views
 
 Location: `tools/video-pipeline/scripts/backfill-views.js`
@@ -395,10 +439,11 @@ this once on a database created before those columns existed, then
 
 ## Environment Variables
 
-| Variable          | Required | Description                  |
-| ----------------- | -------- | ---------------------------- |
-| `YOUTUBE_API_KEY` | Yes      | YouTube Data API v3 key      |
-| `NODE_ENV`        | No       | Set to `test` to skip delays |
+| Variable          | Required | Description                                                                   |
+| ----------------- | -------- | ----------------------------------------------------------------------------- |
+| `YOUTUBE_API_KEY` | Yes      | YouTube Data API v3 key                                                       |
+| `JEV_API_KEY`     | No       | TypeSafe Jev key (console.typesafe.ai); without it only cached answers filter |
+| `NODE_ENV`        | No       | Set to `test` to skip delays                                                  |
 
 ## Troubleshooting
 

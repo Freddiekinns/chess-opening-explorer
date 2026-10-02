@@ -43,6 +43,12 @@ async function applyJevFilter({
     ask: apiKey ? createJevAsk(apiKey) : undefined,
   });
 
+  // Consolidation recorded the unfiltered file's size; record this one's.
+  const meta = index.metadata;
+  const sizeMB = Buffer.byteLength(JSON.stringify(index, null, 2)) / (1024 * 1024);
+  if (meta.consolidatedSizeMB != null) meta.consolidatedSizeMB = sizeMB.toFixed(2);
+  if (meta.originalSizeMB != null)
+    meta.compressionRatio = `${(meta.originalSizeMB / sizeMB).toFixed(1)}x`;
   fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));
   saveCache(cachePath, cache);
 

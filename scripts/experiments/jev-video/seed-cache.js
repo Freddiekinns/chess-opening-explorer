@@ -11,7 +11,7 @@ const path = require('path');
 const { ROOT, outPath, readJsonl } = require('./lib');
 const {
   MODEL,
-  labelHash,
+  questionHash,
   loadCache,
   saveCache,
 } = require('../../../tools/video-pipeline/lib/jev-filter');
@@ -29,7 +29,7 @@ function main() {
       cache.entries[`${r.video_id}|${m.opening}`] = {
         c: a.choice,
         p: Math.round(p * 100) / 100,
-        l: labelHash(m.label),
+        l: questionHash(m.label),
       };
       added++;
     }

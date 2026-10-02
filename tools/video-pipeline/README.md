@@ -399,11 +399,14 @@ empty falls back to the API's labelled family shelf.
 
 Answers are cached in `tools/data/jev-relation-cache.json`, keyed by video and
 named opening (page name minus a trailing move list, so one answer covers every
-position sharing it), with a hash of the question asked. Only new pairs cost a
-call, at $0.042 per million input tokens. Everything fails open: no
-`JEV_API_KEY`, an outage, a missing answer or a video absent from the enrichment
-cache keeps today's video. Re-filter the current index by hand with
-`node tools/video-pipeline/scripts/apply-jev-filter.js`.
+position sharing it), with a hash of the full question and the model. Changing
+the wording or bumping `MODEL` therefore re-asks every pair (about $1.60 for the
+current index) rather than trusting old answers. Only new pairs cost a call, at
+$0.042 per million input tokens. Everything fails open: no `JEV_API_KEY`, an
+outage, a missing answer or a video absent from the enrichment cache keeps
+today's video. A hung API is given up on within minutes: timeouts are retried
+once, and eight failed calls in a row stop the asking. Re-filter the current
+index by hand with `node tools/video-pipeline/scripts/apply-jev-filter.js`.
 
 If a video is missing from a page and the matcher scored it, look here first.
 

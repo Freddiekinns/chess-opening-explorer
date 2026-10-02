@@ -27,7 +27,10 @@ const REJECT = new Set(['mentioned_only', 'not_about']);
 const REJECT_BELOW = 0.4;
 // Keeps a call near 9k tokens, well inside Jev's 64k request limit.
 const QUESTIONS_PER_CALL = 40;
-const MAX_CONSECUTIVE_FAILURES = 20;
+// Counted after a call's own retries, so a few in a row is already an outage:
+// at 4 in flight, 8 hung calls stop asking within about six minutes.
+const MAX_CONSECUTIVE_FAILURES = 8;
+const MAX_RETRY_AFTER_MS = 60000;
 
 /** A failure no retry can fix: stop asking rather than repeat it per call. */
 class FatalJevError extends Error {}
@@ -57,12 +60,19 @@ function questionLabels(index, eco) {
   return labels;
 }
 
-/** Short fingerprint of the question asked, so a changed question is re-asked. */
-function labelHash(label) {
-  return crypto.createHash('sha1').update(label).digest('hex').slice(0, 8);
+/**
+ * Short fingerprint of the whole question and the model that answered it, so a
+ * changed label, wording or model is re-asked rather than trusted.
+ */
+function questionHash(label, model = MODEL) {
+  return crypto
+    .createHash('sha1')
+    .update(`${model}\n${JSON.stringify(relationQuestion(label))}`)
+    .digest('hex')
+    .slice(0, 8);
 }
 
-/** The experiment's wording A. Changing it invalidates the cache's meaning. */
+/** The experiment's wording A. Changing it re-asks every cached pair (questionHash). */
 function relationQuestion(label) {
   return {
     type: 'choice',
@@ -101,8 +111,15 @@ function videoState(video) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** An `ask(state, questions)` that calls Jev, retrying overload with backoff. */
-function createJevAsk(apiKey, { retries = 6, timeoutMs = 90000 } = {}) {
+/**
+ * An `ask(state, questions)` that calls Jev, retrying overload with backoff. A
+ * network failure or timeout is retried once only: an API that hangs would
+ * otherwise hold each call for minutes before the run gives up on it.
+ */
+function createJevAsk(
+  apiKey,
+  { retries = 6, networkRetries = 1, timeoutMs = 90000, baseDelayMs = 1000 } = {}
+) {
   return async function ask(state, questions) {
     for (let attempt = 0; ; attempt++) {
       let res;
@@ -114,8 +131,8 @@ function createJevAsk(apiKey, { retries = 6, timeoutMs = 90000 } = {}) {
           signal: AbortSignal.timeout(timeoutMs),
         });
       } catch (err) {
-        if (attempt >= retries) throw err;
-        await sleep(1000 * 2 ** attempt);
+        if (attempt >= networkRetries) throw err;
+        await sleep(baseDelayMs * 2 ** attempt);
         continue;
       }
       const body = await res.text();
@@ -127,7 +144,11 @@ function createJevAsk(apiKey, { retries = 6, timeoutMs = 90000 } = {}) {
       if (!retryable || attempt >= retries)
         throw new Error(`Jev ${res.status}: ${body.slice(0, 300)}`);
       const retryAfter = Number(res.headers.get('retry-after'));
-      await sleep(retryAfter > 0 ? retryAfter * 1000 : 1000 * 2 ** attempt + Math.random() * 500);
+      await sleep(
+        retryAfter > 0
+          ? Math.min(retryAfter * 1000, MAX_RETRY_AFTER_MS)
+          : baseDelayMs * 2 ** attempt + Math.random() * baseDelayMs * 0.5
+      );
     }
   };
 }
@@ -163,9 +184,10 @@ async function filterVideoIndex(index, { eco, corpus, cache, ask, concurrency = 
     stoppedEarly: null,
   };
 
+  const hashes = new Map([...labels].map(([base, label]) => [base, questionHash(label)]));
   const current = (videoId, base) => {
     const entry = cache.entries[`${videoId}|${base}`];
-    return entry && entry.l === labelHash(labels.get(base)) ? entry : null;
+    return entry && entry.l === hashes.get(base) ? entry : null;
   };
 
   // Unanswered named openings, grouped per video so each video is one state.
@@ -204,7 +226,7 @@ async function filterVideoIndex(index, { eco, corpus, cache, ask, concurrency = 
           cache.entries[`${videoId}|${base}`] = {
             c: a.choice,
             p: Math.round(p * 100) / 100,
-            l: labelHash(labels.get(base)),
+            l: hashes.get(base),
           };
         });
         consecutive = 0;
@@ -234,13 +256,22 @@ async function filterVideoIndex(index, { eco, corpus, cache, ask, concurrency = 
       }
       return true;
     });
+    if (pos.metadata) pos.metadata.total_videos = pos.videos.length;
     total += pos.videos.length;
   }
 
+  // Filtering an already filtered index (a re-run by hand) removes nothing new,
+  // so the total counts from the consolidated index, not from this run alone.
+  const removedBefore =
+    (index.metadata && index.metadata.jevFilter && index.metadata.jevFilter.removed) || 0;
   index.metadata = {
     ...index.metadata,
     totalVideos: total,
-    jevFilter: { model: MODEL, removed: stats.removed, unanswered: stats.unanswered },
+    jevFilter: {
+      model: MODEL,
+      removed: removedBefore + stats.removed,
+      unanswered: stats.unanswered,
+    },
   };
   return { index, stats };
 }
@@ -265,7 +296,7 @@ module.exports = {
   FatalJevError,
   baseName,
   questionLabels,
-  labelHash,
+  questionHash,
   relationQuestion,
   videoState,
   createJevAsk,

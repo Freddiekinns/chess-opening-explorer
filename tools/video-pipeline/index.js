@@ -142,7 +142,7 @@ async function regenerateStaticFiles(dbPath) {
   await consolidateVideoIndex(publicApiDir, apiDataDir);
   console.log('   ✅ Video index consolidated.');
 
-  console.log('\n🧹 Removing videos Jev says are not about their page...');
+  console.log('\n🧹 Removing videos Jev says are not about their page, adding pinned ones...');
   await applyJevFilter();
 }
 

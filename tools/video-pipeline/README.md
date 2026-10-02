@@ -410,6 +410,23 @@ index by hand with `node tools/video-pipeline/scripts/apply-jev-filter.js`.
 
 If a video is missing from a page and the matcher scored it, look here first.
 
+### Video pins
+
+The same script then adds `config/video_pins.json` (`lib/video-pins.js`): per
+named opening, videos put first on every page of that opening. They are for
+pages the scorer leaves empty because no title names the line ("New Stafford
+Gambit" for the Busch-Gass, a general QGD lecture for the Normal Defense). Pins
+come after the filter, so nothing removes them. The served entry is built from
+the enrichment cache with score 0, so pins never outrank scored videos on family
+shelves; a pin whose video has left the cache is skipped with a warning.
+
+The first 18 were nominated by Jev in the experiment's recall pass (P(main
+subject) ≥ 0.85) and confirmed by the blind judge. Jev alone was about 80% right
+at that threshold. Its confident misses are name collisions (Chigorin _Defence_
+videos for the Chigorin _Variation_) and later lines (a Tarrasch video for the
+QGD Queen's Knight), so never pin on Jev's word alone. Prefer fixing the scorer
+when a title does name the line.
+
 ### Backfill Views
 
 Location: `tools/video-pipeline/scripts/backfill-views.js`

@@ -296,6 +296,19 @@ pages, a Bogo-Indian "Wade-Smyslov" on the Grünfeld Smyslov page. Four emptied
 top-200 pages fall to the `irregular` family shelf, which is a grab-bag. That is
 a gap in the family list, not in the filter.
 
+**Recall became pins.** Raising Jev's bar on its recall picks helps but
+plateaus. At P(main subject) ≥ 0.85, 82% were judged good (22 picks), and 92% at
+0.95 with half the openings lost. The confident misses are systematic: Chigorin
+_Defence_ videos for the Chigorin _Variation_ at 0.96, and a Tarrasch video for
+the QGD Queen's Knight at 0.90. So a pick needs Jev at 0.85 or above **and** the
+judge's agreement. Those 18 videos, across 9 named openings, are in
+`config/video_pins.json`, applied after the filter. They replace an unrelated or
+generic family shelf (five of the pages showed the `irregular` grab-bag), and
+top-200 own-page coverage goes from 172 to 181. The scorer gives most of them 0,
+because the titles never name the line ("New Stafford Gambit", "Beat 1.e4 in 7
+moves"). It also gives 0 to Veresov, Owen and Nimzo-Larsen videos that do name
+their opening, which is worth a look before adding more pins.
+
 ### Notes on Jev for other uses
 
 - **What it is good at:** "is this text about X?" with a fixed answer list.

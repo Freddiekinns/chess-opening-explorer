@@ -6,7 +6,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **Jev video experiment and filter** (2026-10-02): Jev rejections 99% right,
   acceptances half wrong; pipeline now drops confident rejections (31,605 of
-  72,283 pairs). Style tags proposal gated on `query_shape` data.
+  72,283 pairs), then pins 18 Jev-and-judge-agreed videos (top-200 own-page
+  coverage 181). Style tags proposal gated on `query_shape` data.
 - **Sixth Dependabot pass** (2026-09-28, #149-#152): both groups; vitest 5 pair
   as one PR, unblocked by importing `@testing-library/jest-dom/vitest`.
 - **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of

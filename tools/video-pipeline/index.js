@@ -10,6 +10,7 @@ const { loadEnrichmentCorpus } = require('./lib/enrichment-corpus');
 const DatabaseSchema = require('./database/schema-manager');
 const StaticFileGenerator = require('./database/static-file-generator');
 const { consolidateVideoIndex } = require('../../scripts/consolidate-video-index');
+const { applyJevFilter } = require('./scripts/apply-jev-filter');
 
 /**
  * Video Pipeline — Mode-based dispatch
@@ -140,6 +141,9 @@ async function regenerateStaticFiles(dbPath) {
   const apiDataDir = path.join(__dirname, '../../api/data');
   await consolidateVideoIndex(publicApiDir, apiDataDir);
   console.log('   ✅ Video index consolidated.');
+
+  console.log('\n🧹 Removing videos Jev says are not about their page...');
+  await applyJevFilter();
 }
 
 // ─── Mode: Incremental (RSS) ─────────────────────────────────

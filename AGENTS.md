@@ -225,6 +225,16 @@ Google de-indexed 5,010 pages once already, after a change that looked safe.
   and bypassed that guard, which is how Alapin, Scheveningen and Prins lectures
   sat on the Accelerated Dragon page at 100+.
 
+- **The displayed index is filtered after the scorer.** Every pipeline mode ends
+  by removing pairs that Jev (TypeSafe) confidently says are not about their
+  page (`tools/video-pipeline/lib/jev-filter.js`, answers cached in
+  `tools/data/jev-relation-cache.json`). So `video-index.json` holds fewer
+  videos than SQLite's `opening_videos`, and a page the filter empties shows the
+  family shelf. Only rejections with P(good) < 0.4 act. Jev's acceptances proved
+  unreliable on sibling variations, so they never rank anything. It fails open
+  without `JEV_API_KEY`. The key comes from console.typesafe.ai;
+  `jevtypesafeai.com` is an unaffiliated reseller.
+
 Pipeline-specific caveats (rematch modes, cache staleness, audit scripts) live
 in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
 

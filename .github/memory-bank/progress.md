@@ -4,9 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **Style tags and Jev assessed** (2026-10-02): tags barely discriminate
-  ("Initiative" on 99%); two proposals in `docs/proposals/2026-10-02-*`;
-  `search_select` now carries `query_shape`, the gate for the style work.
+- **Jev video experiment and filter** (2026-10-02): Jev rejections 99% right,
+  acceptances half wrong; pipeline now drops confident rejections (31,605 of
+  72,283 pairs). Style tags proposal gated on `query_shape` data.
 - **Sixth Dependabot pass** (2026-09-28, #149-#152): both groups; vitest 5 pair
   as one PR, unblocked by importing `@testing-library/jest-dom/vitest`.
 - **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of
@@ -87,7 +87,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, and its barrels export without extensions.
 - **Video programme**: enable the monthly refresh Action (commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`), then V4-V6.
+  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
+  then V4-V6.
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows

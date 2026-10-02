@@ -73,6 +73,23 @@ Checks coverage, variation specificity, cross-family contamination, and ranking
 ties. Treat a rise in contamination or a fall in top-200 coverage as a
 regression.
 
+## Jev filters the index after the scorer
+
+Every mode ends with `scripts/apply-jev-filter.js`, which removes a pair from
+`video-index.json` when Jev says the video is `mentioned_only` or `not_about`
+that page with P(good) < 0.4. The scorer's output in SQLite is untouched, so **a
+video the matcher kept can still be missing from the page** — check
+`tools/data/jev-relation-cache.json` before debugging the scorer.
+
+- Only confident rejections act. Jev's acceptances are unreliable on sibling
+  variations, so never use them to rank.
+- Answers are cached per video and named opening and committed; only new pairs
+  are paid for. It fails open without `JEV_API_KEY`.
+- After a scorer change, the audit's "#1 names the variation" dips slightly
+  under the filter. That metric is a keyword test, and most of what Jev removes
+  there is a keyword false positive. Sample the changed pages before treating it
+  as a regression.
+
 ## Configuration
 
 - `config/video_matching.json` — scoring weights, `variation_modifiers`
@@ -88,7 +105,8 @@ Never guess a YouTube channel ID. Verify with the user, or test the RSS feed at
 `.github/workflows/video-refresh.yml` runs the incremental pipeline monthly,
 audits before and after, and opens a PR with the metric diff. It fails fast at
 guard steps until `tools/data/videos.sqlite` is committed and the
-`YOUTUBE_API_KEY` repo secret is set.
+`YOUTUBE_API_KEY` repo secret is set. The `JEV_API_KEY` secret is optional:
+without it, new pairs go unfiltered.
 
 Full architecture, matcher internals and troubleshooting:
 `tools/video-pipeline/README.md`.

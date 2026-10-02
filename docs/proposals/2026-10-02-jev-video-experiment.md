@@ -274,6 +274,28 @@ Recall is a second, independent case: Jev-nominated candidates for uncovered
 top-200 pages, filtered by a human or a second check, would fill about half of
 them.
 
+### Implemented (2026-10-02)
+
+`tools/video-pipeline/lib/jev-filter.js` runs after every consolidation. Two
+refinements came from applying it to the real index:
+
+- **Only confident rejections act: P(good) < 0.4.** Removing every rejection
+  also dropped parent-variation lectures from their own deep sub-lines (the
+  Scheveningen lecture on the Scheveningen Fianchetto page scores 0.49). The
+  owner's spot-check counts those as useful. In the judged sample, every good
+  match Jev rejected sat at or above 0.4. Removals below it were 100% right, and
+  they still cover 87% of Jev's rejections.
+- **No new shelves were needed.** A page with no videos already gets the API's
+  labelled family shelf.
+
+Applied to the index from `a0e1e77c8`, it removed 31,605 of 72,283 position
+pairs. Top-200 own-page coverage fell from 178 to 172. The audit's "#1 names the
+variation" fell from 54.2% to 52.7%, but a random sample of the 550 changed
+pages showed keyword false positives being removed: a Pilnik video on Chigorin
+pages, a Bogo-Indian "Wade-Smyslov" on the Grünfeld Smyslov page. Four emptied
+top-200 pages fall to the `irregular` family shelf, which is a grab-bag. That is
+a gap in the family list, not in the filter.
+
 ### Notes on Jev for other uses
 
 - **What it is good at:** "is this text about X?" with a fixed answer list.

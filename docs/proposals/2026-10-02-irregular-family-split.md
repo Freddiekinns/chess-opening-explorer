@@ -180,15 +180,15 @@ narrow re-routes where an existing family already owns the opening by name.
 
 ### Three new families
 
-| id            | Display name             | Slug                       | Pages | No own videos | Σ games on those |
-| ------------- | ------------------------ | -------------------------- | ----: | ------------: | ---------------: |
-| `queens-pawn` | Queen's Pawn Game        | `queens-pawn-game`         |   210 |            82 |             483M |
-| `kings-pawn`  | King's Pawn Game         | `kings-pawn-game`          |   157 |            96 |             210M |
-| `uncommon-e4` | Uncommon Replies to 1.e4 | `uncommon-replies-to-1-e4` |   110 |            99 |             209M |
+| id            | Display name          | Slug                    | Pages | No own videos | Σ games on those |
+| ------------- | --------------------- | ----------------------- | ----: | ------------: | ---------------: |
+| `queens-pawn` | Queen's Pawn Game     | `queens-pawn-game`      |   210 |            82 |             483M |
+| `kings-pawn`  | King's Pawn Game      | `kings-pawn-game`       |   157 |            96 |             210M |
+| `offbeat-e4`  | Offbeat 1.e4 Defenses | `offbeat-1-e4-defenses` |   110 |            99 |             209M |
 
 The two "Pawn Game" names follow Lichess, which names the root positions 1.d4
-and 1.e4 that way, and both roots move with their family. The B00 name avoids
-the Defense/Defence question (see open questions).
+and 1.e4 that way, and both roots move with their family. The B00 name uses
+"Defense" to match the rest of the family list (see Decisions).
 
 - **`queens-pawn`** — 1.d4 without the Queen's Gambit: 1.d4 and 1.d4 d5 roots,
   Zukertort, Symmetrical, Chigorin, Colle, Stonewall, Levitsky, Krause,
@@ -202,7 +202,7 @@ the Defense/Defence question (see open questions).
   Danish, Latvian, Elephant, Portuguese.
   - Shelf: Danish ×4, Latvian ×2, Elephant ×2.
   - Gambit-heavy, but every video is about a 1.e4 e5 sideline.
-- **`uncommon-e4`** — Owen (1…b6), Nimzowitsch (1…Nc6), St George (1…a6).
+- **`offbeat-e4`** — Owen (1…b6), Nimzowitsch (1…Nc6), St George (1…a6).
   - Shelf: Nimzowitsch ×2, Owen ×3, then three 1.e4 overviews ("Top 10 responses
     to 1.e4" and two repertoire videos).
 
@@ -302,7 +302,7 @@ Tests first, per `AGENTS.md`:
    - `King's Knight Opening: Normal Variation` → `italian`
    - `King's Pawn Game: Leonardis Variation` and `Danish Gambit Accepted` →
      `kings-pawn`
-   - `Owen Defence` and `Nimzowitsch Defense` → `uncommon-e4`
+   - `Owen Defence` and `Nimzowitsch Defense` → `offbeat-e4`
    - `Nimzowitsch-Larsen: 1...e5 2.Bb2` and `Bird Opening` stay `irregular`
    - `Queen's Pawn Game` with ECO B01 → `scandinavian`
 
@@ -324,8 +324,8 @@ Tests first, per `AGENTS.md`:
      Chigorin and Blackmar–Diemer systems, and Black's first-move alternatives."
    - `kings-pawn`: "1.e4 e5 off the main roads — the Centre Game, Danish and
      Latvian gambits, and early queen sorties."
-   - `uncommon-e4`: "Black sidesteps the main defences with 1…b6, 1…Nc6 or 1…a6
-     — the Owen, Nimzowitsch and St George."
+   - `offbeat-e4`: "Black sidesteps the main defences with 1…b6, 1…Nc6 or 1…a6 —
+     the Owen, Nimzowitsch and St George."
 4. **Rebuild and commit the generated files.** Run
    `node tools/family-taxonomy/build-family-index.js`, and commit the rewritten
    `api/data/eco/*.json` and `family-coverage-report.json`. Then regenerate the
@@ -342,11 +342,11 @@ Tests first, per `AGENTS.md`:
 The owner left the open questions to judgement (2026-10-02). Each decision below
 follows the site's own Lichess data, which is where the move shares come from.
 
-1. **Name: "Uncommon Replies to 1.e4".** Every family in the picker says
-   "Defense", following Lichess, and site copy is British English. Writing
-   "Defences" in one entry would look like a typo beside the others, and writing
-   "Defense" breaks the copy rule. "Replies" avoids both and is how coaches
-   describe these moves.
+1. **Name: "Offbeat 1.e4 Defenses".** Opening names keep the spelling they are
+   commonly known by, so "Defense" is right here, as it is for every other
+   family in the picker ("Sicilian Defense", "French Defense"). British English
+   still applies to prose, such as the family descriptions. "Offbeat" is how
+   coaches and repertoire books describe 1…b6, 1…Nc6 and 1…a6.
 2. **Two 1.e4 families, not one.** In chess terms they are different things. The
    Owen, Nimzowitsch and St George are Black declining 1…e5 and 1…c5 on move
    one. The Danish, Latvian, Centre Game and Leonardis come after 1.e4 e5. A

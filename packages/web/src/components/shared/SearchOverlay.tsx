@@ -7,6 +7,7 @@ import { SearchNoResults } from './SearchNoResults';
 import { useOpeningSearch } from '../../hooks/useOpeningSearch';
 import { fetchRandomOpening } from '../../lib/randomOpening';
 import { trackEvent } from '../../lib/analytics';
+import { queryShape } from '../../lib/searchQuery';
 import styles from './SearchOverlay.module.css';
 
 /**
@@ -118,7 +119,11 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
                   opening={opening}
                   saved={opening.saved}
                   onSelect={() => {
-                    trackEvent('search_select', { surface: 'overlay', rank: i });
+                    trackEvent('search_select', {
+                      surface: 'overlay',
+                      rank: i,
+                      query_shape: queryShape(query),
+                    });
                     select(opening);
                   }}
                 />

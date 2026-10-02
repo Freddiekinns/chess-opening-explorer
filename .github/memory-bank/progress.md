@@ -4,6 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Style tags and Jev assessed** (2026-10-02): tags barely discriminate
+  ("Initiative" on 99%); two proposals in `docs/proposals/2026-10-02-*`;
+  `search_select` now carries `query_shape`, the gate for the style work.
 - **Sixth Dependabot pass** (2026-09-28, #149-#152): both groups; vitest 5 pair
   as one PR, unblocked by importing `@testing-library/jest-dom/vitest`.
 - **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of
@@ -55,15 +58,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
   twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
   Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
-- **Opening pages carry their content in the HTML** (2026-08-07): Google dropped
-  5,010 indexed pages on 30/31 July with no deploy and a healthy site — a
-  quality purge, all 12,377 advertising the same template sentence over an empty
-  `#root`. The middleware now renders each opening's own description and real
-  win rates, unknown FENs 404, only the 271 same-board URLs canonicalise, and
-  sitemaps got their first generator. **`archive.md`.**
-- Everything up to 2026-08-10 — **all detail in `archive.md`**: video matching
-  stopped trusting descriptions (2026-08-10); search answers in milliseconds via
-  `NameIndex` (2026-08-04); the UX-stack review pass; search consolidated into
+- Everything up to 2026-08-10 — **all detail in `archive.md`**: opening pages
+  carry their content in the HTML (2026-08-07); video matching stopped trusting
+  descriptions (2026-08-10); search answers in milliseconds via `NameIndex`
+  (2026-08-04); the UX-stack review pass; search consolidated into
   `useOpeningSearch`; the UX review programme (phases 0–5,
   `GET /api/openings/browse`); shared `PerfBar`; the opening-detail mobile
   overhaul; the `/api/explorer` proxy; Deviation Trainer slice 1; Study matching

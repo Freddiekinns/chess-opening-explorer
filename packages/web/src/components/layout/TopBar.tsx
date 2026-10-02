@@ -8,6 +8,7 @@ import { SearchNoResults } from '../shared/SearchNoResults';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
 import { fetchRandomOpening } from '../../lib/randomOpening';
 import { trackEvent } from '../../lib/analytics';
+import { queryShape } from '../../lib/searchQuery';
 import styles from './TopBar.module.css';
 
 const navItems = [
@@ -87,7 +88,7 @@ function TopBarSearch() {
   };
 
   const selectResult = (result: SearchResult, rank: number) => {
-    trackEvent('search_select', { surface: 'topbar', rank });
+    trackEvent('search_select', { surface: 'topbar', rank, query_shape: queryShape(query) });
     navigate(`/opening/${encodeURIComponent(result.fen)}`);
     reset();
     setShowDropdown(false);

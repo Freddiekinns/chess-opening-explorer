@@ -70,19 +70,31 @@ A new classification has to reach all of these together:
 
 ## Proposal
 
-1. **A fixed taxonomy of scored axes instead of tag bags.** For example:
-   - quiet ↔ sharp (1–5)
-   - sound ↔ risky (1–5)
-   - structure: open / semi-open / closed
-   - theory load (1–5)
-   - gambit: yes / no
-   - approach: system / principled main line / offbeat
-   - plans: up to three from a list of about 30 named themes (minority attack,
-     IQP, kingside pawn storm, …)
+1. **A fixed taxonomy of a few axes, each with a small set of named values.**
+   Users see words, never numbers: a page says "Sharp", not "sharpness 4/5".
 
-   Each axis has written definitions with anchor openings, such as "sharp 5 =
-   Najdorf main line, sharp 1 = Exchange Slav". Scores let search _rank_ ("most
-   aggressive replies to 1.e4"), not just pass or reject.
+   | Axis      | Values                               | Shown?                   |
+   | --------- | ------------------------------------ | ------------------------ |
+   | Character | Quiet / Balanced / Sharp             | not when Balanced        |
+   | Risk      | Sound / Speculative                  | only when Speculative    |
+   | Gambit    | yes / no                             | "Gambit" when yes        |
+   | Structure | Open / Semi-open / Closed            | yes                      |
+   | Approach  | System / Main line / Offbeat         | yes                      |
+   | Theory    | Light / Moderate / Heavy             | only when Light or Heavy |
+   | Plans     | up to 3 of ~30 named themes (IQP, …) | yes                      |
+
+   An opening shows two to four words, and each word means something because the
+   axes are exclusive: an opening cannot be both Quiet and Sharp, so today's
+   state, where 154 of the top 300 are both aggressive and solid, cannot recur.
+
+   The values are ordered, and the classifier's confidence is stored with each
+   value but never displayed. That lets search _rank_ ("most aggressive replies
+   to 1.e4" = Sharp, ordered by confidence then popularity) without showing a
+   scale. Each value has a written definition and anchor openings, e.g. "Sharp:
+   Najdorf main line, King's Gambit. Quiet: Exchange Slav, London System."
+
+   Gambit and Structure are mostly computable from the position (step 5), so
+   they are checked, not just judged.
 
 2. **Classify named variations, not positions.** Child positions inherit their
    variation's classification and override it only when they genuinely differ.
@@ -94,32 +106,64 @@ A new classification has to reach all of these together:
    name, moves and the parent's brief.
 4. **Classify against the taxonomy with structured output,** keeping a
    confidence per axis and sending low-confidence results to a review queue.
-5. **Use the stats we already have as a check.** `popularity_stats.json` carries
-   `draw_rate`. Among positions with ≥20k games, the mean draw rate is 3.8% for
-   "Gambit", 4.5% for "Sharp" and 5.4% for "Solid". The extremes run from
-   Stafford Gambit at ~0% to queenless QGA lines at ~15%. It is a sanity check
-   and a ranking input, never a number shown as a style statistic.
+5. **Use what the data can measure as a check.** Two signals need no model:
+   - **Draw rate** (`popularity_stats.json`). Among positions with ≥20k games
+     the mean is 3.8% for today's "Gambit", 4.5% for "Sharp" and 5.4% for
+     "Solid". The extremes run from Stafford Gambit at ~0% to queenless QGA
+     lines at ~15%.
+   - **Material balance** from the FEN. 67% of positions tagged "Gambit" today
+     are a pawn or more out of balance, against 11% of the rest. Positions
+     caught mid-exchange confound it, so it is a check, not the answer.
+
+   Both are sanity checks and ranking inputs, never numbers shown as style
+   statistics.
+
 6. **Store it beside `analysis_json`, not over it.** The descriptions are live
    page content; changing them is a separate decision.
 
-## Experiment before building
+## Validating it without hand-labelling
 
-1. Hand-label a reference set of ~100 openings on the taxonomy, spread across
-   families and popularity.
-2. Run four arms against it:
-   - (a) today's tags, mapped to the taxonomy
-   - (b) a frontier model with structured output, from name and moves
-   - (c) a decision model (Jev) on the existing descriptions
-   - (d) (b) or (c) on web-researched briefs
-3. Measure each arm on:
-   - agreement with the reference set
-   - consistency within a variation
-   - filter selectivity: each style value should hold a minority of the top
-     1,000, not most of it
-   - the top ten results for a fixed set of style queries
+Nobody hand-labels a reference set: the owner has neither the time nor
+expert-level knowledge of a hundred openings. Validation is procedural, and each
+check below runs as a script with a pass mark.
 
-This shows whether the gain comes from the taxonomy, the evidence or the model.
-The expectation is that the taxonomy does most of the work.
+1. **Anchors.** The taxonomy's written definitions name 3–5 anchor openings per
+   value. These are textbook cases (King's Gambit is Sharp, Speculative and a
+   Gambit; the London is Quiet and a System), so ~40 anchors cover every value.
+   An arm that misclassifies an anchor fails outright. The owner reviews the
+   anchor list once, which is a few minutes, not a labelling job.
+2. **Agreement between independent runs.** Classify the variations covering the
+   top 1,000 positions twice, with two different models. Where they agree,
+   accept the answer. The disagreements are the review queue, and its size is a
+   metric.
+3. **Agreement with what the data measures.** Character must follow draw rate,
+   and Gambit must follow material balance, at the population level (step 5). A
+   classification whose Sharp group draws more than its Quiet group is wrong
+   somewhere.
+4. **Consistency.** Within a variation, children may override their parent only
+   with a stated reason; the rate of overrides is reported.
+5. **Selectivity.** No displayed value may hold more than ~40% of the top 1,000
+   positions, so every filter actually filters.
+6. **Search sanity.** A fixed list of ~15 style queries ("aggressive openings
+   for black", "solid reply to e4", "beginner openings") is run before and
+   after. A strong model with web search judges each top-ten list blind, without
+   knowing which version produced it.
+7. **The disagreement queue goes to a judge, not a person.** A strong model with
+   web search reviews each disputed variation against its sources and records
+   the evidence. The owner sees only a short summary of the most popular
+   disputed openings.
+
+The arms to compare:
+
+- (a) today's tags, mapped to the taxonomy
+- (b) a frontier model with structured output, from name and moves alone
+- (c) the same model on web-researched briefs
+- (d) Jev on those briefs, if the video experiment
+  (`docs/proposals/2026-10-02-jev-video-experiment.md`) shows it is reliable
+
+The difference between (b) and (c) tells us whether the web research earns its
+cost. (a) against (b) tells us how much comes from the taxonomy alone; the
+expectation is most of it.
 
 ## Where Jev fits
 
@@ -138,12 +182,15 @@ sources, because the primary docs were unreachable when this was written.
 
 ## Gate — step 0
 
-Today nothing measures whether anyone searches by style. `search_select` sends
-only `surface` and `rank`, and search text is never sent. Step 0:
+Until 2026-10-02 nothing measured whether anyone searches by style:
+`search_select` sent only `surface` and `rank`, and search text is never sent.
+Step 0:
 
-- Add a `query_shape` enum (`name` / `eco` / `moves` / `style` / `other`) to
-  `search_select`. It is a small enum, within the analytics rules in
-  `AGENTS.md`.
+- **Done 2026-10-02:** `search_select` carries `query_shape` (`move` / `eco` /
+  `style` / `name`), from `queryShape` in `packages/web/src/lib/searchQuery.ts`.
+  It is a small enum, within the analytics rules in `AGENTS.md`. It counts only
+  searches that end in a click, so a style search that finds nothing worth
+  clicking is invisible. If that matters, add a separate event later.
 - Count Discover `?style=` and `?level=` page views in PostHog.
 
 After about two weeks of traffic, schedule this work only if style queries and

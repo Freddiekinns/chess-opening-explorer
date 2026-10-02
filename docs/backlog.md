@@ -121,10 +121,12 @@ and drill for it.
   Analyse statistics fix.
 - **Opening style classification** _(added 2026-10-02)_ — the LLM style tags
   barely distinguish one opening from another: "Initiative" is on 99% of
-  positions, and the "solid" filter passes 84%. Replace them with a fixed
-  taxonomy of scored axes, classified per named variation, after an experiment
-  against a hand-labelled reference set. Gated on measuring whether anyone
-  searches by style (`query_shape` on `search_select`). Proposal:
+  positions, and the "solid" filter passes 84%. Replace them with a few
+  exclusive axes of named values (Quiet / Balanced / Sharp, …), classified per
+  named variation and validated by script (anchors, cross-model agreement, draw
+  rate and material checks, a blind judge), with no hand-labelling. Gated on
+  measuring whether anyone searches by style (`query_shape` on `search_select`,
+  added 2026-10-02). Proposal:
   `docs/proposals/2026-10-02-opening-style-classification.md`.
 
 ## Parked
@@ -156,6 +158,10 @@ and drill for it.
   metadata says it was built "API-based".
 - **Variation-level video classification** — carried over unassessed from rev 3:
   an endorsed pipeline project that also builds validation tooling for J1/J2.
+  - **Jev video experiment** _(added 2026-10-02, $5 budget)_ — test whether a
+    decision model reading each video's own text catches bad matches the scorer
+    keeps, judged blind. Plan:
+    `docs/proposals/2026-10-02-jev-video-experiment.md`.
 
 ## Open decisions
 

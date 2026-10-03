@@ -124,5 +124,8 @@ learning videos" has never been measured, only "is it about this opening".
   (Veresov, Owen, Nimzo-Larsen). Fixing that beats adding more pins.
 - **A move-order check** on the top few hundred pages: the remaining quality
   problem where traffic is.
-- **The `irregular` family is a grab-bag.** Queen's Pawn systems, the Owen and
-  the Horwitz have no family of their own.
+- **Done: the `irregular` grab-bag.** Queen's Pawn systems, the 1.e4 e5
+  sidelines and the Owen, Nimzowitsch and St George now have families of their
+  own, and 1.e4 e5 2.Nf3 Nc6 joins the Italian. Top-200 pages on the `irregular`
+  shelf went from 16 to 4; the rest are 1.g3 and 1.e3 lines.
+  `docs/proposals/2026-10-02-irregular-family-split.md`.

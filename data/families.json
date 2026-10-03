@@ -242,6 +242,33 @@
     "short_description": "An early Bg5 sidesteps the Indian defenses and provokes structural concessions.",
     "popular_variation_ecos": ["A45"]
   },
+  "queens-pawn": {
+    "id": "queens-pawn",
+    "display_name": "Queen's Pawn Game",
+    "slug": "queens-pawn-game",
+    "eco_anchor": "A40–A41, D00–D05",
+    "colour_for": "white",
+    "short_description": "1.d4 without the Queen's Gambit — Colle, Zukertort, Chigorin and Blackmar–Diemer systems, and Black's first-move alternatives.",
+    "popular_variation_ecos": ["D02", "D00", "D04"]
+  },
+  "kings-pawn": {
+    "id": "kings-pawn",
+    "display_name": "King's Pawn Game",
+    "slug": "kings-pawn-game",
+    "eco_anchor": "C20–C22, C40",
+    "colour_for": "both",
+    "short_description": "1.e4 e5 off the main roads — the Centre Game, Danish and Latvian gambits, and early queen sorties.",
+    "popular_variation_ecos": ["C20", "C21", "C40"]
+  },
+  "offbeat-e4": {
+    "id": "offbeat-e4",
+    "display_name": "Offbeat 1.e4 Defenses",
+    "slug": "offbeat-1-e4-defenses",
+    "eco_anchor": "B00",
+    "colour_for": "black",
+    "short_description": "Black sidesteps the main defences with 1…b6, 1…Nc6 or 1…a6 — the Owen, Nimzowitsch and St George.",
+    "popular_variation_ecos": ["B00"]
+  },
   "irregular": {
     "id": "irregular",
     "display_name": "Irregular Openings",

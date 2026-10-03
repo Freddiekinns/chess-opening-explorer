@@ -238,7 +238,9 @@ were this. As a filter it removes most of the bad matches but keeps about half.
 
 The 28 families in `families.json` have no home for D00–D05 (Colle, Torre,
 Blackmar–Diemer), B00 or C20–C21. Jev and the judges both forced these into a
-nearest family, which blurs strata C and D.
+nearest family, which blurs strata C and D. (Since fixed: the `irregular` split
+added `queens-pawn`, `kings-pawn` and `offbeat-e4` —
+`docs/proposals/2026-10-02-irregular-family-split.md`.)
 
 ### Checking the judge
 
@@ -294,7 +296,9 @@ variation" fell from 54.2% to 52.7%, but a random sample of the 550 changed
 pages showed keyword false positives being removed: a Pilnik video on Chigorin
 pages, a Bogo-Indian "Wade-Smyslov" on the Grünfeld Smyslov page. Four emptied
 top-200 pages fall to the `irregular` family shelf, which is a grab-bag. That is
-a gap in the family list, not in the filter.
+a gap in the family list, not in the filter. The `irregular` split has since
+closed it: those Queen's Pawn and Owen pages now fall to `queens-pawn`,
+`nimzo-indian` or `offbeat-e4`.
 
 **Recall became pins.** Raising Jev's bar on its recall picks helps but
 plateaus. At P(main subject) ≥ 0.85, 82% were judged good (22 picks), and 92% at

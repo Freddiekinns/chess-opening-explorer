@@ -175,9 +175,8 @@ load-bearing.
   After any rule change, run `node tools/family-taxonomy/build-family-index.js`
   and commit the rewritten ECO files: the deploy re-resolves anyway, so a
   skipped rebuild leaves dev and tests on the old taxonomy, and
-  `family-taxonomy-data.test.js` fails on that drift. `irregular` was a
-  940-position grab-bag until 2026-10-02 —
-  `docs/proposals/2026-10-02-irregular-family-split.md`.
+  `family-taxonomy-data.test.js` fails on that drift. Runbook:
+  `tools/family-taxonomy/README.md`.
 
 ### Deployment and SEO
 

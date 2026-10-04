@@ -1,0 +1,44 @@
+{
+  "slug": "canard-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Canard Opening",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. f4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/3P1P2/8/PPP1P1PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays a Stonewall or reversed-Dutch style set-up, putting pawns on d4 and f4 and aiming for e3, Nf3 and Bd3 with a kingside focus. Black can take the centre with ...d5 and ...e6 or ...c5 and play on the weakened e1-h4 diagonal and e4. I am unsure of the theory and judge it from the moves.",
+  "white_ideas": [
+    { "idea": "Stonewall-style set-up with e3, Nf3, Bd3 and a kingside attack" },
+    { "idea": "Control e5 with f4 and keep a solid pawn wall" }
+  ],
+  "black_ideas": [
+    { "idea": "Claim the centre with ...d5, ...e6 and ...c5, and attack d4" },
+    { "idea": "Use the weakened e1-h4 diagonal and e4 square, ...Ne4 ideas" }
+  ],
+  "typical_structures": [
+    { "structure": "White Stonewall pawns c3/d4/e3/f4 against Black's ...d5/...e6 centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A slightly eccentric but steady pawn wall; neither side forced into tactics early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable but loosens the kingside; not refuted." },
+    "structure": { "notes": "Stonewall-like pawn wall, but centre not locked early." },
+    "approach": { "notes": "Strong players hardly ever choose 2.f4 against the Indian." },
+    "level": { "reason": "neither", "notes": "Few concrete lines but plans are not trivial." }
+  },
+  "plan_phrases": ["Stonewall", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Quirky but steady play with neither side forced into sharp lines." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.65, "reason": "Loosens the king but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre stays undecided early." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose 2.f4." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few lines but the kingside weakness takes care." },
+    "plans": { "value": ["stonewall"], "reason": "White sets up f4 with d4 and e3." }
+  }
+}

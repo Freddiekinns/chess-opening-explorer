@@ -1,0 +1,95 @@
+{
+  "slug": "benko-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6",
+    "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 5"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black has given a pawn and now offers a second on a6 for open a- and b-files. The main line is 5.bxa6 Bxa6 6.Nc3 d6 7.e4 Bxf1 8.Kxf1 g6 9.g3 Bg7 10.Kg2 O-O 11.Nf3, where White has an extra pawn and a slight centre but a displaced king, and Black has rooks on the open files, a fianchetto bishop on g7 and long-term pressure. White can also decline with 5.Nc3.",
+  "white_ideas": [
+    { "idea": "Keep the extra pawn, consolidate with Nc3, e4 and g3, and exploit the central majority." },
+    { "idea": "Return the pawn at the right moment to neutralise Black's pressure." }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure the queenside on the a- and b-files with rooks and the g7 bishop." },
+    { "idea": "Play ...Nbd7, ...Qa5 and ...Rb8; trade the light bishops." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawn majority on the kingside and centre against Black's pressure on the open a- and b-files." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Long-term compensation rather than short tactics; White is a pawn up but Black has a stable game with few ways to lose quickly."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black has sacrificed a pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "A respected gambit; fully sound with correct play."
+    },
+    "structure": {
+      "notes": "Half-open a- and b-files for Black against a White centre."
+    },
+    "approach": {
+      "notes": "A recognised choice at every level, though it is a specific gambit rather than a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear (rooks on files), moderate theory."
+    }
+  },
+  "plan_phrases": ["queenside pressure", "fianchetto", "half-open files"],
+  "sublines_that_differ": [
+    {
+      "name": "5.Nc3",
+      "moves": "5.Nc3 axb5 6.e4 b4",
+      "how": "White declines to take on a6 and offers a different structure."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A long-term strategic plan, neither forcing nor especially hard to crack."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.98,
+      "reason": "Black sacrifices a pawn White can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A recognised sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Half-open a- and b-files for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream gambit choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Clear plans with moderate theory; the compensation takes feel."
+    },
+    "plans": {
+      "value": ["queenside_expansion", "fianchetto"],
+      "reason": "Pressure on the queenside with a long diagonal bishop."
+    }
+  }
+}

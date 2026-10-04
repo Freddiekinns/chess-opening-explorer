@@ -1,0 +1,51 @@
+{
+  "slug": "kings-gambit-accepted-schallopp-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Schallopp Defense",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Nf6",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the knight to f6 and meets 4.e5 with ...Qe7 or ...Nh5, while White goes for a space and development lead (5.Qe2, 5.d4 or the Tashkent 5.g4). Black has an extra pawn but White has a big centre and open lines on the kingside. Both kings are exposed and the play is sharp.",
+  "white_ideas": [
+    { "idea": "Kick the knight with e5, then d4 and Qe2 or the g4 pawn push to win time." },
+    { "idea": "Regain the f4 pawn and use the open f-file and the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn with ...Nh5 or ...Qe7 and ...Nd5, then ...d6 to break the White centre." },
+    { "idea": "Keep the king safe and return the pawn if needed." }
+  ],
+  "typical_structures": [
+    { "structure": "White e5 pawn chain against Black's d6 break, with Black's f4 pawn kept or returned." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "King's Gambit Accepted lines with both kings exposed and forcing play from move 4; one slip can be decisive." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black has taken f4 and White has no immediate recapture; Black may keep it for a long time."
+    },
+    "soundness": { "notes": "Considered sound for both sides; the Schallopp is a recognised defence." },
+    "structure": { "notes": "The centre opens with e5 and d4 breaks and pieces play on open lines." },
+    "approach": { "notes": "The King's Gambit is not often chosen by strong players but is a respectable weapon; standard." },
+    "level": { "reason": "memory", "notes": "Tashkent and other sharp lines need some theory, though plans are clear; I judge it intermediate." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "central break"],
+  "sublines_that_differ": [
+    { "name": "4.Nc3 or 4.d4", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Nf6 4. Nc3", "how": "A quieter White try without e5, giving a normal development game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "King's Gambit play with exposed kings and forcing lines." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gave the f-pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "A recognised, playable line for both sides." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "The centre opens quickly and pieces play on open lines." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "The King's Gambit is a respectable if less common weapon." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Some sharp lines are worth knowing but plans are clear." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for time and an attack on the kingside." }
+  }
+}

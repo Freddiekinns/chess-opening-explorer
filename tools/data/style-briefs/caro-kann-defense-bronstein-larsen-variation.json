@@ -1,0 +1,39 @@
+{
+  "slug": "caro-kann-defense-bronstein-larsen-variation",
+  "tier": "unsourced",
+  "root": { "name": "Caro-Kann Defense: Bronstein-Larsen Variation", "eco": "B16", "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Nxf6+ gxf6", "fen": "rnbqkb1r/pp2pp1p/2p2p2/8/3P4/8/PPP2PPP/R1BQKBNR w KQkq - 0 6" },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black recaptures with the g-pawn, accepting doubled f-pawns for the half-open g-file, the bishop pair and active piece play. White aims at the weakened pawn structure with Nf3, Bc4 or c3 and Qe2, while Black develops ...Bf5 or ...Bg4 and may castle long. The position is unbalanced: Black's structure is damaged but the position is sound and Black has dynamic counterplay.",
+  "white_ideas": [
+    { "idea": "Target the doubled f-pawns with Nf3, Bc4, Qe2 and c3." },
+    { "idea": "Keep a lead in development and use the open centre to attack the black king, which may castle on either side." }
+  ],
+  "black_ideas": [
+    { "idea": "Use the bishop pair and the half-open g-file, developing ...Bf5 or ...Bg4 and ...e6." },
+    { "idea": "Castle long and aim at the kingside with ...Qd5 or ...h5 and ...Bg7-style pressure." }
+  ],
+  "typical_structures": [
+    { "structure": "Black doubled f-pawns (f7/f6) with a half-open g-file and bishop pair, White with a slight lead in structure." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced structure with dynamic piece play for doubled pawns; double-edged but sound." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; the pawn structure is damaged instead." },
+    "soundness": { "notes": "Sound; played by Bronstein, Larsen and many strong players." },
+    "structure": { "notes": "Caro-Kann with the e-pawn gone leaves a half-open file, semi-open." },
+    "approach": { "notes": "Standard Caro-Kann variation." },
+    "level": { "reason": "understanding", "notes": "Needs good judgement of the doubled pawns and bishop pair; theory is moderate." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "half-open g-file"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Unbalanced structure and dynamic piece play for both sides." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respected line played by strong players." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Caro-Kann structure after the d5 pawn is exchanged leaves a half-open file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream Caro-Kann variation." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear but the pawn structure needs judgement." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "Black accepts doubled pawns for the bishop pair." }
+  }
+}

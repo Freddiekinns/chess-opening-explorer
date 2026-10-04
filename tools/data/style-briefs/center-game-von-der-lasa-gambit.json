@@ -1,0 +1,48 @@
+{
+  "slug": "center-game-von-der-lasa-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: von der Lasa Gambit",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. Bc4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/2BpP3/8/PPP2PPP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "center-game-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the d-pawn, developing the bishop to c4 at once to aim at f7 and prepare Nf3 and castling. Black can keep the pawn with ...Nf6 or ...c5 and ...Bb4+; the main line 3...Nf6 4.e5 d5 5.Bb5+ Nc6 6.Nf3 Ne4 7.Nxd4 leads to rapid piece play with Black safe. White gets quick development and a central majority; Black has an extra pawn and good defences.",
+  "white_ideas": [
+    { "idea": "Lead in development with Bc4, Nf3 and quick castling" },
+    { "idea": "Regain the d4 pawn with Nf3 and Nxd4 or c3" },
+    { "idea": "Pressure on f7 along the a2-g8 diagonal" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn with ...Nf6, ...Bb4+ or ...c5" },
+    { "idea": "Strike with ...d5 to blunt the bishop and free the game" },
+    { "idea": "Develop quickly and return material if needed to neutralise attack" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White e-pawn advanced and Black d4 pawn extra" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A forcing gambit with early piece play and tactics, risk for White." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the d4 pawn with 3...c5 or 3...Nf6 4.e5 d5; White regains it only if Black allows." },
+    "soundness": { "notes": "Considered dubious: Black has several good ways to hold the pawn." },
+    "structure": { "notes": "Open lines and pieces developed quickly." },
+    "approach": { "notes": "Rarely used; a rare gambit chosen for surprise." },
+    "level": { "reason": "memory", "notes": "Line-based gambit; not for beginners and it needs known refutations to answer." }
+  },
+  "plan_phrases": ["rapid development for a pawn", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "Scotch Gambit-type transposition", "moves": "1. e4 e5 2. d4 exd4 3. Bc4 Nf6 4. Nf3 Nxe4", "how": "Black grabs a second pawn; White needs concrete compensation." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Early gambit with tactics and quick development." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives the d-pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "Black has good ways to hold the pawn; compensation is unclear." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Open centre and quick piece play." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players seldom choose this gambit." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A rare gambit; dubious so never Beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Bc4 and quick development aim at f7." }
+  }
+}

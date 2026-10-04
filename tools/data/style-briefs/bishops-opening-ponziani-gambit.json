@@ -1,0 +1,52 @@
+{
+  "slug": "bishops-opening-ponziani-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Ponziani Gambit",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. d4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2BPP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "bishops-opening-berlin-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White strikes in the centre at once with 3.d4. After 3...exd4 White either plays 4.e5 d5 5.Bb5+ (the Urusov Gambit) or 4.Nf3 Nxe4 5.Qxd4, giving a pawn for rapid development and open lines against the black king. Black can keep the pawn if he finds the right defensive moves; White gets lines and tempi in return. Positions are open and tactical.",
+  "white_ideas": [
+    { "idea": "Give a pawn for development and open lines, with Bb5+, Nf3 and Bg5 or Qxd4." },
+    { "idea": "Use the c4 bishop and the d-file to harass the black king before it castles." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn on d4, then ...d5 or ...Nxe4 and complete development." },
+    { "idea": "Neutralise the initiative, castle, and rely on the extra pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...exd4 with White ahead in development and Black a pawn up." },
+    { "structure": "After 4.e5 d5 5.Bb5+ the e5 pawn cramps Black while the c8 bishop and knights get active squares." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A gambit with early central tension, forcing piece play and attacking chances for White. Both sides take risks." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3...exd4 White has no immediate way to regain d4; Black can keep the extra pawn (4.Nf3 Nxe4 5.Qxd4 Nf6)." },
+    "soundness": { "notes": "Believed to be acceptable but not best; Black gets adequate counterplay with accurate play. Consider it close to equal at club level, a bit risky at top level." },
+    "structure": { "notes": "Open centre with d-file and diagonals for the pieces." },
+    "approach": { "notes": "Very rare among strong players; mostly played for surprise. 3.d3 and 3.Nc3 are the normal moves." },
+    "level": { "reason": "memory", "notes": "A sharp gambit whose follow-ups need to be learned; not a good first choice." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7", "pawn sacrifice for initiative"],
+  "sublines_that_differ": [
+    { "name": "Urusov Gambit", "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3", "how": "White pins the e4 knight tactics with Qxd4 after ...Nxe4; very similar to the Ponziani-Urusov structures." },
+    { "name": "Declined 3...Nxe4", "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 Nxe4", "how": "Black grabs the e-pawn and 4.dxe5 is a different, quieter game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Early central break, gambit, open lines and attacking chances." },
+    "gambit": { "value": "white", "confidence": 0.8, "reason": "White gives a pawn for development that Black can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Black has several adequate defences and White gets real activity, though risky." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "The centre opens straight away after ...exd4." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players seldom choose 3.d4 here; it is mostly a surprise weapon." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Gambit needs memorised sharp lines, but ideas are clear for the player with White." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Material is sacrificed for tempo and attacking lines against f7." }
+  }
+}

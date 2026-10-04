@@ -1,0 +1,95 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-ryder-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Ryder Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Qxf3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2Q2/PPP3PP/R1B1KBNR b KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White recaptures on f3 with the queen and leaves the d4 pawn en prise: after 5...Qxd4 6.Be3 Qg4 the queens may be swapped and White hopes for development and attack for a pawn or two. Black can grab d4 and reach a comfortable extra pawn after careful play, or decline with ...e6 or ...Nc6. It is a rare, speculative gambit.",
+  "white_ideas": [
+    { "idea": "Lead in development with Be3, O-O-O and Bd3 after Black takes d4." },
+    { "idea": "Put pressure on f7 and the kingside with Qf3 and Bc4." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the d4 pawn and bring the queen back to safety." },
+    { "idea": "Develop with ...e6, ...Be7 and return material for a safe position." }
+  ],
+  "typical_structures": [
+    { "structure": "White gets open e- and f-files with Black's queen sometimes exposed in the centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn or two down for development; early tactics against the Black queen decide."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "Black can keep material, and taking d4 as well leaves two extra pawns."
+    },
+    "soundness": {
+      "notes": "The Blackmar-Diemer family is considered unsound at the top, and this branch with d4 hanging is worse."
+    },
+    "structure": {
+      "notes": "Open centre with e- and d-file lines."
+    },
+    "approach": {
+      "notes": "Strong players almost never choose the BDG, the Ryder even less."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Relies on knowing the traps; unsound lines are not a good first repertoire."
+    }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    {
+      "name": "Tejler Gambit line",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Qxf3 Qxd4 6. Be3 Qg4 7. Qf2 Ne4",
+      "how": "Black grabs d4 and offers a queen trade; it is the critical test."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A gambit with an exposed Black queen and early tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider the BDG, and especially this branch, unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre opens quickly and pieces play on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never beginner, and it relies on known traps."
+    },
+    "plans": {
+      "value": ["lead_in_development", "kingside_attack"],
+      "reason": "White's compensation is pieces out and open lines against the Black king."
+    }
+  }
+}

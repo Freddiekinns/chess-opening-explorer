@@ -1,0 +1,39 @@
+{
+  "slug": "kings-indian-attack-yugoslav-variation",
+  "tier": "unsourced",
+  "root": { "name": "King's Indian Attack: Yugoslav Variation", "eco": "A07", "moves": "1. Nf3 Nf6 2. g3 d5 3. Bg2 c6 4. O-O Bg4", "fen": "rn1qkb1r/pp2pppp/2p2n2/3p4/6b1/5NP1/PPPPPPBP/RNBQ1RK1 w kq - 2 5" },
+  "parent": "kings-indian-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the c8 bishop outside the pawn chain with ...Bg4 before ...e6, then plays ...Nbd7 and ...e5. White keeps the KIA set-up with d3, Nbd2 and e4, and the game is a slow centre fight in which both sides build pawn chains and manoeuvre. Play is sound and theory is modest.",
+  "white_ideas": [
+    { "idea": "Play d3, Nbd2 and e4 to gain central space, then expand with h3 and kingside pawns." },
+    { "idea": "Use the long diagonal with Bg2 and aim at a kingside attack once e4-e5 is possible." }
+  ],
+  "black_ideas": [
+    { "idea": "Establish ...Nbd7, ...e5 and ...Bc5 or ...Be7 for a Philidor-like centre." },
+    { "idea": "Pressure e4 and play ...Qc7 and ...O-O-O or ...O-O with queenside counterplay." }
+  ],
+  "typical_structures": [
+    { "structure": "White d3/e4 against Black d5/e5 or e6 with c6; centre kept in tension." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet KIA manoeuvring with no forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Flank set-up with an undecided centre." },
+    "approach": { "notes": "KIA is a set-up White can play against nearly anything; here it meets the ...Bg4 Black set-up." },
+    "level": { "reason": "understanding", "notes": "Clear plans, little theory, but must handle the move orders." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet pawn chains and few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Flank set-up with an undecided centre." },
+    "approach": { "value": "system", "confidence": 0.65, "reason": "KIA can be played against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Modest theory but this Black set-up needs care." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "White's Bg2 and eventual e4-e5 push." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "dutch-defense-raphael-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Raphael Variation",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Nc3",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops with 2.Nc3 instead of the fianchetto and often follows 2...Nf6 with 3.Bg5, hitting the f6 knight and preparing e4. Black answers ...d5 (when Bxf6 exf6 gives doubled f-pawns but the bishop pair) or ...e6 and ...Be7. White tries e4 with a lead in development; Black can reach a Stonewall or Classical set-up.",
+  "white_ideas": [
+    { "idea": "Pin with Bg5, Bxf6 and play e4 or e3 and Bd3 for development and central play." },
+    { "idea": "Keep options of e4 breaks and Nf3 without committing to the fianchetto." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...d5 and ...e6 or ...c6 with a Stonewall-type set-up." },
+    { "idea": "Accept doubled f-pawns after Bxf6 for the bishop pair and open lines." }
+  ],
+  "typical_structures": [
+    { "structure": "Dutch Stonewall or Classical with Black's f5/e6/d5 chain; doubled f-pawns after Bxf6 exf6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch positions are unbalanced; here White's e4 break and Black's weak king side make play double-edged, though quieter lines exist. Not sure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A sound if unambitious White try; Black has no problems." },
+    "structure": { "notes": "Centre undecided: Black chooses Stonewall, Classical or ...d5 structures." },
+    "approach": { "notes": "A sideline against the Dutch that strong players use occasionally." },
+    "level": { "reason": "understanding", "notes": "Handling Dutch structures; moderate theory." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair"],
+  "sublines_that_differ": [
+    { "name": "3.Bg5 e6", "moves": "3... e6 4. Nf3 Be7", "how": "Black avoids doubled pawns; White can follow with Bxf6 and e4." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.4, "reason": "Dutch positions are unbalanced and the e4 break is risky; uncertain." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable White try; Black is fine." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre undecided at the root." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans over memory." },
+    "plans": { "value": ["doubled_pawns"], "reason": "Bxf6 exf6 doubles Black's f-pawns in the main line." }
+  }
+}

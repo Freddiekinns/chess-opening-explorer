@@ -5,42 +5,108 @@
     "name": "French Defense: Queen's Knight",
     "eco": "C00",
     "moves": "1. e4 e6 2. Nc3",
-    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/2N5/PPPP1PPP/R1BQKB1R b KQkq - 1 2"
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2"
   },
   "parent": "french-defense",
   "written_at": "2026-10-04",
   "confidence": "medium",
   "overview": "White develops the knight before playing d4. After 2...d5 White usually plays 3.d4 and the game transposes to the Winawer, Classical or Rubinstein, so the structures are those of the normal French. Black has the extra option of 2...d5 3.Nf3 d4, and White can avoid the main lines with 3.f4 or 3.Nf3.",
   "white_ideas": [
-    { "idea": "Play d4 next and head for the normal French centre with e5 space." },
-    { "idea": "Use the Winawer pawn structure with a3 and bxc3 for a kingside attack." }
+    {
+      "idea": "Play d4 next and head for the normal French centre with e5 space."
+    },
+    {
+      "idea": "Use the Winawer pawn structure with a3 and bxc3 for a kingside attack."
+    }
   ],
   "black_ideas": [
-    { "idea": "Hit the e4 pawn with ...d5 and then the d4 base with ...c5." },
-    { "idea": "Pin with ...Bb4 and trade on c3 to damage White's pawns." }
+    {
+      "idea": "Hit the e4 pawn with ...d5 and then the d4 base with ...c5."
+    },
+    {
+      "idea": "Pin with ...Bb4 and trade on c3 to damage White's pawns."
+    }
   ],
   "typical_structures": [
-    { "structure": "Locked French chain with e5 against d5 and e6." }
+    {
+      "structure": "Locked French chain with e5 against d5 and e6."
+    }
   ],
   "axis_evidence": {
-    "character": { "notes": "Mostly transposes to the French, where Black is solid but the Winawer is sharp. Balanced with low confidence." },
-    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
-    "soundness": { "notes": "Sound." },
-    "structure": { "notes": "Transposes to French chains after e5 locks the centre." },
-    "approach": { "notes": "Standard, a move-order choice." },
-    "level": { "reason": "understanding", "notes": "Plans transfer from the French. Intermediate." }
+    "character": {
+      "notes": "Mostly transposes to the French, where Black is solid but the Winawer is sharp. Balanced with low confidence."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Transposes to French chains after e5 locks the centre."
+    },
+    "approach": {
+      "notes": "Standard, a move-order choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans transfer from the French. Intermediate."
+    }
   },
-  "plan_phrases": ["space advantage", "bad bishop", "attack the pawn chain base"],
+  "plan_phrases": [
+    "space advantage",
+    "bad bishop",
+    "attack the pawn chain base"
+  ],
   "sublines_that_differ": [
-    { "name": "Winawer", "moves": "1. e4 e6 2. Nc3 d5 3. d4 Bb4", "how": "Sharper, doubled c-pawns and a kingside pawn race." }
+    {
+      "name": "Winawer",
+      "moves": "1. e4 e6 2. Nc3 d5 3. d4 Bb4",
+      "how": "Sharper, doubled c-pawns and a kingside pawn race."
+    }
   ],
   "tags": {
-    "character": { "value": "balanced", "confidence": 0.4, "reason": "Transposes into French branches, from solid to sharp." },
-    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
-    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Normal French move order." },
-    "structure": { "value": "closed", "confidence": 0.45, "reason": "Typically locked chains after e5, as in the French." },
-    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal move order." },
-    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Same plans as the French." },
-    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White gains space and Black's c8 bishop is hemmed in." }
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Transposes into French branches, from solid to sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Normal French move order."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "Typically locked chains after e5, as in the French."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal move order."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Same plans as the French."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White gains space and Black's c8 bishop is hemmed in."
+    }
   }
 }

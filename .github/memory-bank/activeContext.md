@@ -1,43 +1,35 @@
 # Active Context
 
-**Date:** 2026-10-03
+**Date:** 2026-10-04
 
-## Current Task: Style tags — pilot
+## Current Task: Style tags — unsourced tail
 
-Branch `feat/style-taxonomy`. Replacing the LLM style tags with a fixed
-taxonomy: `docs/style-taxonomy.md` (rubric, glossary, anchors, search words).
-Plan and calibration results:
-`docs/proposals/2026-10-02-opening-style-classification.md`, "Execution plan".
-Owner chose not to wait for the `query_shape` gate.
+Branch `feat/style-taxonomy`, PR #160. Fixed taxonomy (`docs/style-taxonomy.md`)
+replacing the LLM style tags; pipeline in `tools/style-tags/` (README has the
+steps). Pilot: 105 researched variations, owner-reviewed 2026-10-04.
 
-Pipeline (`tools/style-tags/`): `select-roots.js` groups positions by move order
-into 1,429 variations (12 hubs skipped) and writes researcher inputs; Sonnet
-subagents follow `RESEARCHER.md` and write sourced briefs to
-`tools/data/style-briefs/<slug>.json`, including a claim-by-claim audit of the
-current description; `jev-classify.js` (classifier B, Jev) and a Sonnet subagent
-on `CLASSIFIER.md` (classifier A, reads `_classify/states.json`) tag them
-independently.
+The other 1,308 variations get **unsourced briefs** (`UNSOURCED.md`): Sonnet
+writes evidence and its own tags from memory, no web, in waves of 4 agents × 20
+from `_inputs/tail-NN.json` (most-played first). Then `jev-classify.js --new`,
+`collect-unsourced.js`, `validate.js`. Blind test and the rules it forced (0.65
+confidence floor, gambit check for the judge): proposal, "Unsourced tier".
 
-Pilot done 2026-10-04: 105 variations (top 100 plus calibration), all validation
-checks pass (`node tools/style-tags/validate.js`). Results and the rules it
-forced (Flexible structure, disputes take classifier A's answer) are in the
-proposal, "Pilot results". The owner is on Pro: research runs in waves sized to
-the 5-hour window, ~1.3–2% of it per brief.
+**Done 2026-10-04: tail-01 to tail-23** (~460 variations). **Next:** tail-24
+onwards, one wave ≈ 25% of a 5-hour window and 4% of the week. Then:
 
-Owner reviewed the pilot table 2026-10-04 and is happy. Committed on
-`feat/style-taxonomy`, PR open. Coverage: 49% of games, 28% of pages (hubs 34%
-of games, no tags by design).
+1. Judge (`JUDGE.md`, Opus): the "unresolved" and "Unsourced gambits the name
+   does not mention" lists in `validate.js`.
+2. Consistency pass: one opening split over several names gets different tags
+   (Veresov: `richter-veresov-attack`, `queens-pawn-game-veresov`,
+   `queens-pawn-game-veresov-attack`). Merge with `shared-briefs.json`.
+3. Export into `api/data` and wire the detail page, `OpeningCard`, Discover
+   facets and both halves of search, via the `seo-crawl-graph` and
+   `search-ranking` skills. Ship all at once.
 
-**Next (decided): extend with the cheap tier, then ship everything at once**,
-because new tags on 28% of pages would make Discover filters ignore most of the
-site, and mixing old and new tags brings back the clash. Cheap tier = briefs
-from model knowledge plus the parent brief, no web, marked unsourced, tags only.
-Then the export into `api/data` and the UI/search/Discover wiring, through the
-`seo-crawl-graph` and `search-ranking` skills. Follow-ups: split the Maróczy
-Bind (5.c4) out of the Accelerated Dragon as its own root (owner plays the
-Dragon side and finds it Intermediate; the Bind is the Advanced part); fix the
-Dragon page description, which describes the Accelerated Dragon. Start in a
-fresh session; this one ran to ~900k tokens.
+Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon (Bind
+Advanced, the rest Intermediate); fix the Dragon page description, which
+describes the Accelerated Dragon. Commits of 100+ briefs exceed the Windows
+command line in the prettier pre-commit hook; commit them in chunks of ~100.
 
 ## Previous Task: Jev rejection filter for videos
 

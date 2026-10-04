@@ -1077,3 +1077,14 @@ pairs Jev confidently rejects (`mentioned_only`/`not_about`, P(good) < 0.4):
 a rubric-scored blind judge baseline of the top-200 pages' top 3 videos
 (`docs/video-matching-and-jev.md`, "What's next"). Full results:
 `docs/proposals/2026-10-02-jev-video-experiment.md`.
+
+## Style tags — pilot (2026-10-03 to 2026-10-04)
+
+Fixed six-axis taxonomy with hidden middle values (`docs/style-taxonomy.md`),
+replacing 265 sprawling LLM tags. 105 variations researched with sources by
+Sonnet subagents, tagged independently by Sonnet (compact states) and Jev, with
+an Opus judge for clashes between shown words. 42/42 anchors, 84% agreement;
+Closed narrowed to a locked centre after it took 42% of games; middle-value
+disputes take Sonnet's answer after a blind audit (13 of 14). Owner reviewed the
+table and set the Old Sicilian to Intermediate (`overrides.json`). Full results:
+`docs/proposals/2026-10-02-opening-style-classification.md`.

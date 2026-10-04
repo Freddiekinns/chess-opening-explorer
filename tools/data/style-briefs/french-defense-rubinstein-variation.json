@@ -5,42 +5,104 @@
     "name": "French Defense: Rubinstein Variation",
     "eco": "C10",
     "moves": "1. e4 e6 2. d4 d5 3. Nc3 dxe4",
-    "fen": "rnbqkbnr/ppp2ppp/4p3/8/3Pp3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 4"
+    "fen": "rnbqkbnr/ppp2ppp/4p3/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
   },
   "parent": "french-defense-paulsen-variation",
   "written_at": "2026-10-04",
   "confidence": "high",
   "overview": "Black releases the central tension with 3...dxe4 4.Nxe4 and then develops with ...Nd7 and ...Ngf6 (or ...Nf6, ...Be7). Black avoids the cramped French structures and gets an easy game with ...c5 or ...b6 and ...Bb7 coming. White has a space edge but few attacking chances, and Black is solid.",
   "white_ideas": [
-    { "idea": "Nf3, Bd3 and Qe2 with O-O or Bf4 to keep a small space edge" },
-    { "idea": "Use the open e-file and kingside play, or exchange on f6 to damage structure" }
+    {
+      "idea": "Nf3, Bd3 and Qe2 with O-O or Bf4 to keep a small space edge"
+    },
+    {
+      "idea": "Use the open e-file and kingside play, or exchange on f6 to damage structure"
+    }
   ],
   "black_ideas": [
-    { "idea": "Trade the knight on e4, develop with ...Nd7, ...Ngf6, ...Be7 and ...O-O" },
-    { "idea": "Free the c8 bishop with ...b6 or ...c5 and ...Bb7" }
+    {
+      "idea": "Trade the knight on e4, develop with ...Nd7, ...Ngf6, ...Be7 and ...O-O"
+    },
+    {
+      "idea": "Free the c8 bishop with ...b6 or ...c5 and ...Bb7"
+    }
   ],
   "typical_structures": [
-    { "structure": "White d4 against Black e6/c7 with no d-pawn for Black; half-open d-file" }
+    {
+      "structure": "White d4 against Black e6/c7 with no d-pawn for Black; half-open d-file"
+    }
   ],
   "axis_evidence": {
-    "character": { "notes": "Safe, quiet play; Black is hard to attack." },
-    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
-    "soundness": { "notes": "Fully sound." },
-    "structure": { "notes": "Asymmetric d4 against e6, half-open files." },
-    "approach": { "notes": "Standard." },
-    "level": { "reason": "understanding", "notes": "Clear plans, modest theory." }
+    "character": {
+      "notes": "Safe, quiet play; Black is hard to attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Asymmetric d4 against e6, half-open files."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans, modest theory."
+    }
   },
-  "plan_phrases": ["solid centre", "free the light bishop"],
+  "plan_phrases": [
+    "solid centre",
+    "free the light bishop"
+  ],
   "sublines_that_differ": [
-    { "name": "Fort Knox", "moves": "4.Nxe4 Bd7", "how": "Even more solid and passive." }
+    {
+      "name": "Fort Knox",
+      "moves": "4.Nxe4 Bd7",
+      "how": "Even more solid and passive."
+    }
   ],
   "tags": {
-    "character": { "value": "solid", "confidence": 0.75, "reason": "Black gets a sound position with few weaknesses." },
-    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
-    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A respected French line." },
-    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Asymmetric structure with an open d-file." },
-    "approach": { "value": "standard", "confidence": 0.95, "reason": "A mainline French option." },
-    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Clear plans, little forced theory." },
-    "plans": { "value": [], "reason": "No single characteristic plan." }
+    "character": {
+      "value": "solid",
+      "confidence": 0.75,
+      "reason": "Black gets a sound position with few weaknesses."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "A respected French line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Asymmetric structure with an open d-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.95,
+      "reason": "A mainline French option."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Clear plans, little forced theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single characteristic plan."
+    }
   }
 }

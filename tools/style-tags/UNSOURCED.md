@@ -19,6 +19,8 @@ Each variation in your input file
 
 ## Rules
 
+- Copy `root` from the input exactly. Never correct its FEN or moves: four
+  briefs "fixed" a FEN that was right and broke it.
 - Do not search the web or read pages. Do not read the site's data
   (`api/data/`), other briefs, or anything under `_classify/`.
 - **Write each brief as soon as it is finished**, before starting the next, and

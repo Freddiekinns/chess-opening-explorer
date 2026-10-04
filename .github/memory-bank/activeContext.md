@@ -24,10 +24,20 @@ forced (Flexible structure, disputes take classifier A's answer) are in the
 proposal, "Pilot results". The owner is on Pro: research runs in waves sized to
 the 5-hour window, ~1.3–2% of it per brief.
 
-Next: owner review of `_classify/pilot-tags.md` and the plans list (his
-openings: Vienna, Jobava, Alapin as White; Accelerated Dragon, King's Indian,
-Nimzo as Black), then extend (two tiers) or ship the pilot tags. Nothing is
-committed yet.
+Owner reviewed the pilot table 2026-10-04 and is happy. Committed on
+`feat/style-taxonomy`, PR open. Coverage: 49% of games, 28% of pages (hubs 34%
+of games, no tags by design).
+
+**Next (decided): extend with the cheap tier, then ship everything at once**,
+because new tags on 28% of pages would make Discover filters ignore most of the
+site, and mixing old and new tags brings back the clash. Cheap tier = briefs
+from model knowledge plus the parent brief, no web, marked unsourced, tags only.
+Then the export into `api/data` and the UI/search/Discover wiring, through the
+`seo-crawl-graph` and `search-ranking` skills. Follow-ups: split the Maróczy
+Bind (5.c4) out of the Accelerated Dragon as its own root (owner plays the
+Dragon side and finds it Intermediate; the Bind is the Advanced part); fix the
+Dragon page description, which describes the Accelerated Dragon. Start in a
+fresh session; this one ran to ~900k tokens.
 
 ## Previous Task: Jev rejection filter for videos
 

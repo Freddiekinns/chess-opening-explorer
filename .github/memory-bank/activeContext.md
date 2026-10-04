@@ -14,8 +14,12 @@ from `_inputs/tail-NN.json` (most-played first). Then `jev-classify.js --new`,
 `collect-unsourced.js`, `validate.js`. Blind test and the rules it forced (0.65
 confidence floor, gambit check for the judge): proposal, "Unsourced tier".
 
-**Done 2026-10-04: tail-01 to tail-23** (~460 variations). **Next:** tail-24
-onwards, one wave ≈ 25% of a 5-hour window and 4% of the week. Then:
+**Done 2026-10-04: tail-01 to tail-23** (458 variations). Tagged now: 80% of
+pages and 65% of games; hubs (no tags by design) hold another 34% of games. The
+rest, tail-24 to tail-66 (~850 variations), is ~16% of pages and ~1% of games;
+one wave of 80 costs ~25% of a 5-hour window and 4% of the week. Recommended
+order, pending the owner's call: ship first, with untagged pages showing no tags
+rather than old ones, and fill the tail in over the following weeks.
 
 1. Judge (`JUDGE.md`, Opus): the "unresolved" and "Unsourced gambits the name
    does not mention" lists in `validate.js`.

@@ -1,0 +1,47 @@
+{
+  "slug": "kings-indian-defense-samisch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Sämisch Variation",
+    "eco": "E80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White supports e4 with f3 and plans Be3, Qd2 and long castling with a kingside pawn storm (g4, h4). Black castles and strikes with ...e5 (locking the centre after d5, then ...f5) or ...c5 and ...Nc6 (Panno/Sämisch Gambit lines). The usual game is opposite-side castling where both sides attack, so timing matters.",
+  "white_ideas": [
+    { "idea": "Be3, Qd2, O-O-O and a g4/h4 pawn storm." },
+    { "idea": "Gain space with d5 and shut Black's bishop on g7." }
+  ],
+  "black_ideas": [
+    { "idea": "...e5 and ...Nh5/...f5 for kingside play, or ...c5 to hit the centre." },
+    { "idea": "Break with ...b5 or ...a6 and queenside play while White attacks." }
+  ],
+  "typical_structures": [
+    { "structure": "Closed centre with White c4/d5/e4/f3 against Black e5/d6 chain." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Opposite-side castling races and pawn storms, forced timing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit in main lines; the Sämisch Gambit ...c5 is a sub-line." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "After d5 and ...e5 the centre locks." },
+    "approach": { "notes": "A standard anti-KID system." },
+    "level": { "reason": "understanding", "notes": "Like the KID, Black needs to understand the timing of breaks; theory is long too." }
+  },
+  "plan_phrases": ["pawn storm", "opposite-side castling", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Panno", "moves": "6... Nc6", "how": "Black attacks the centre quickly with ...a6 and ...Rb8." },
+    { "name": "Sämisch Gambit", "moves": "6. Be3 c5", "how": "Black offers a pawn for activity." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Opposite-side castling races where one slow move can lose." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main-line system." },
+    "structure": { "value": "closed", "confidence": 0.6, "reason": "The centre locks after d5 and ...e5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A mainstream line, not universal." },
+    "level": { "value": "advanced", "why": "understanding", "confidence": 0.45, "reason": "Like the KID, plans and timing are hard to get right." },
+    "plans": { "value": ["opposite_side_castling", "pawn_storm", "space_advantage"], "reason": "White castles long and storms the kingside." }
+  }
+}

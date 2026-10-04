@@ -1,0 +1,42 @@
+{
+  "slug": "kings-gambit-accepted-macleod-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: MacLeod Defense",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Nc6",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black develops the queenside knight instead of the usual ...g5 or ...d6, keeping the f4 pawn for now. White typically plays 4.d4 to build the centre with a free hand against a delayed Black plan, and the game is open and tactical. I am not sure of the exact main line, but it is a rare King's Gambit Accepted sideline.",
+  "white_ideas": [
+    { "idea": "Build the centre with d4 and Bc4 or Nc3, then regain the f4 pawn or attack on the f-file" },
+    { "idea": "Use the open f-file and development lead to attack f7" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the knight and hit the centre with ...d5 or ...g5 depending on White's move" },
+    { "idea": "Keep the extra pawn if possible and return it when needed to complete development" }
+  ],
+  "typical_structures": [{ "structure": "Open centre with the f-file half-open and Black f4 pawn under pressure" }],
+  "axis_evidence": {
+    "character": { "notes": "King's Gambit lines are open with exposed kings; the MacLeod is double-edged." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black has the f4 pawn and can try to keep it with ...g5 or ...d6 and ...Be7." },
+    "soundness": { "notes": "Probably sound, but I am not certain about the main line." },
+    "structure": { "notes": "Open centre and open f-file." },
+    "approach": { "notes": "Strong players play King's Gambit rarely, MacLeod a sideline of it; but not unknown." },
+    "level": { "reason": "memory", "notes": "King's Gambit lines require knowing the theory and tactics; I am unsure about this branch." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "A King's Gambit with exposed kings and open lines." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives the f-pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable for both sides as far as I know." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open centre and f-file." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A sideline of an accepted gambit that strong players sometimes play." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Some theory is needed, but it is not a deep forcing tree." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for development and the attack on the king." }
+  }
+}

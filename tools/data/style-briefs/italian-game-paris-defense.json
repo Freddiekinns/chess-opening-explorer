@@ -1,0 +1,48 @@
+{
+  "slug": "italian-game-paris-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Paris Defense",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 d6",
+    "fen": "r1bqkbnr/ppp2ppp/2np4/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "italian-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black defends e5 with ...d6, a Philidor-like set-up that is solid but passive and hems in the c8 bishop. White usually takes the centre with 4.d4 exd4 5.Nxd4 or plays c3 and d4 with a space edge. Black aims for ...Nf6, ...Be7 and castling, waiting to equalise with ...Bd7 and ...O-O or a later ...d5.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and gain space" },
+    { "idea": "Develop with c3, Nbd2 or O-O, then d4 when ready" },
+    { "idea": "Avoid early simplification and keep pressure on f7" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 solidly and develop with ...Nf6 and ...Be7" },
+    { "idea": "...Bd7 and ...O-O, then a ...d5 break later" },
+    { "idea": "Wait for White to over-extend" }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor-style: Black pawns d6 and e5 against White centre pawns on e4 and d4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive and hard to attack, but gives White a space edge; few tactics for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound but slightly passive; White is a bit more comfortable." },
+    "structure": { "notes": "Tension in the centre that may open after d4; not locked." },
+    "approach": { "notes": "Standard but uncommon; a respectable solid choice." },
+    "level": { "reason": "understanding", "notes": "Straightforward development; some understanding of Philidor structures." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "4.d4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 d6 4. d4 exd4 5. Nxd4", "how": "Open centre with a lead for White in space." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Black's compact set-up is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Passive but playable." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre stays in tension and often opens after d4." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Less common but a respectable line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Simple moves but Philidor-like plans need understanding." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space in the centre while Black stays compact." }
+  }
+}

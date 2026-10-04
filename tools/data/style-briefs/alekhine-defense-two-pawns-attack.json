@@ -1,0 +1,49 @@
+{
+  "slug": "alekhine-defense-two-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Two Pawns Attack",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. c4",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/2P5/8/PP1P1PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "alekhine-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White kicks the knight again with 3.c4 Nb6, and 4.c5 Nd5 5.Bc4 or 4.a4 gains still more space. White has a huge pawn centre and a lead in space; Black aims to undermine it with ...d6, ...e6 and ...b6 or ...Nxc3 and ...f6 breaks, using the fact that White's pieces are slightly overextended. Black's position is cramped but flexible, and the play is double-edged.",
+  "white_ideas": [
+    { "idea": "Gain space with c5 and e5, push Black's pieces back" },
+    { "idea": "Play Bc4, Nc3 and d4 to build a dominating centre" },
+    { "idea": "Use the cramped Black position to attack the kingside" }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine the centre with ...d6, ...e6 and ...f6" },
+    { "idea": "Trade pieces to ease the cramped position, ...Nxc3 or ...Nb6-d5" },
+    { "idea": "Attack c5 and d4 with ...b6 or ...d6 after developing" }
+  ],
+  "typical_structures": [
+    { "structure": "White space edge with pawns on c5 and e5 and Black counterattacks on the base of the chain" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Double-edged: White's advanced pawns give attacking chances and are also targets; Black tries to break the centre. Concrete play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawns given, despite the name 'Hunt Gambit' in older sources." },
+    "soundness": { "notes": "Sound for Black, playable for White." },
+    "structure": { "notes": "White big centre of advanced pawns; centre not locked." },
+    "approach": { "notes": "Standard: less common but respectable at club and master level." },
+    "level": { "reason": "understanding", "notes": "Needs good judgement of when to undermine; not memory-heavy." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Lasker Variation", "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. c5 Nd5", "how": "White gains more space; Black plays ...e6 and ...b6." },
+    { "name": "Tate Variation", "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. a4", "how": "Kicks the knight with a4 and a5 rather than c5." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Double-edged, with both sides taking risks." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected lines for both." },
+    "structure": { "value": "flexible", "confidence": 0.35, "reason": "White's centre is advanced and Black will attack it; not locked or open yet." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A respectable choice though less common." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans matter more than long lines." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White gains space and Black undermines the centre." }
+  }
+}

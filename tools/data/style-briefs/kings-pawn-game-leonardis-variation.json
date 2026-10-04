@@ -1,0 +1,46 @@
+{
+  "slug": "kings-pawn-game-leonardis-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Leonardis Variation",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/3P4/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White supports e4 with 2.d3 instead of developing the knight, a slow King's Indian Attack or reversed Philidor set-up. After 2...d5 White usually plays Nd2, Ngf3 and g3 or Be2, and Black has an easy game with the centre. Neither side takes risks early; White rarely gets an edge.",
+  "white_ideas": [
+    { "idea": "Build the e4-d3 centre with Nd2, Ngf3, g3 and Bg2 and keep a flexible game." },
+    { "idea": "Wait for Black to commit before striking with c4 or exd5." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...d5 and ...e5, then develop naturally." },
+    { "idea": "Equalise easily, using the extra tempo in a reversed Philidor." }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor-like with colours reversed: White pawns e4-d3, Black d5-e5 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, low-risk development; few ways to lose quickly. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound but passive; Black equalises easily." },
+    "structure": { "notes": "Centre tension left unresolved, flexible." },
+    "approach": { "notes": "Rare at the top. 2.d3 is seldom chosen by strong players, though it is a respectable set-up. Offbeat with low confidence." },
+    "level": { "reason": "neither", "notes": "Easy to play; no theory, but not a repertoire anyone relies on. Intermediate." }
+  },
+  "plan_phrases": ["fianchetto", "flexible centre"],
+  "sublines_that_differ": [
+    { "name": "Philidor transposition", "moves": "1. e4 e5 2. d3 d6", "how": "Reversed set-up leading to a Philidor-like game." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Slow and passive with few early tactics." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Passive but safe." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre tension undecided for a long time." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Strong players seldom choose 2.d3 against 1...e5." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple to play but not a recommended first repertoire." },
+    "plans": { "value": [], "reason": "No plan is characteristic enough to name." }
+  }
+}

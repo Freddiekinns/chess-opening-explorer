@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black hits the centre at once with 2...c5. The main line is 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6, the Modern Benoni: White has a space and central pawn majority, Black has a queenside majority and an active fianchettoed bishop and plays ...a6, ...b5 and ...Nbd7 against White's e4-e5 break. White attacks with e5 and Bd3 or f4, and Black counters on the queenside and the long diagonal. Both sides have clear targets and the play is unbalanced and sharp, with sharp theory in the Taimanov and Flick-Knife attacks.",
+  "white_ideas": [
+    { "idea": "Play e4-e5 to open the centre, using the space advantage and the d5 pawn" },
+    { "idea": "Restrain ...b5 with a4 and Nd2-c4 or attack with f4 and Bb5+" }
+  ],
+  "black_ideas": [
+    { "idea": "Queenside majority advance with ...a6 and ...b5, plus counterplay down the e- and c-files" },
+    { "idea": "Fianchetto the bishop to g7 and place knights on e5 and d7 and c4 as outposts" }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni: White d5/e4 against Black c- and d-pawns with e-file and c-file play" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced pawn structure, Black risks a space deficit for dynamic counterplay and White has direct attacks. Sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line; the Benko is a separate root." },
+    "soundness": { "notes": "Sound but double-edged; played by top players such as Tal and Kasparov." },
+    "structure": { "notes": "Asymmetric centre with a space advantage for White and open c-file and e-file; Semi-open." },
+    "approach": { "notes": "A main defence against 1.d4." },
+    "level": { "reason": "both", "notes": "Needs concrete theory against the Taimanov/Flick-Knife attacks and strategy; Advanced." }
+  },
+  "plan_phrases": ["space advantage", "queenside expansion", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "3.e3 or 3.Nf3 transpositions", "moves": "1. d4 Nf6 2. c4 c5 3. e3", "how": "Quieter, Black gets a Hedgehog-like or symmetric set-up." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Unbalanced structure with attack against counterplay." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Played by top players though risky." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Asymmetric centre with Black pressing on the half-open c- and e-files." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A recognised main defence." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.65, "reason": "Concrete theory and tricky strategy for Black." },
+    "plans": { "value": ["space_advantage", "queenside_expansion", "fianchetto"], "reason": "White space against Black's queenside majority and g7 bishop." }
+  }
+}

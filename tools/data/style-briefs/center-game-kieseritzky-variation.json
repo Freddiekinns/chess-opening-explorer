@@ -1,0 +1,44 @@
+{
+  "slug": "center-game-kieseritzky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Kieseritzky Variation",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. Nf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "center-game-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White declines to recapture with the queen and develops, offering the d4 pawn, and Black can hold it with 3...c5 and then ...Nc6 or ...b5 ideas after 4.Bc4. White plays for rapid development and the open e-file, while Black holds the extra pawn with careful play. It is a rare gambit-style sideline.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bc4, c3 or O-O and use the open e-file and f7 pressure" },
+    { "idea": "Regain the pawn through Nxd4 or Bxf7 tricks if Black errs" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the d4 pawn with ...c5 and ...Nc6, develop calmly and neutralise White's lead" },
+    { "idea": "Return the pawn at the right moment to reach a comfortable position" }
+  ],
+  "typical_structures": [{ "structure": "Black pawn chain d4/c5 against White's e4; open e-file and lines for White's pieces" }],
+  "axis_evidence": {
+    "character": { "notes": "Open, tactical play with White chasing development against an extra pawn." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 3...c5 Black holds the pawn; White does not regain by force." },
+    "soundness": { "notes": "Probably sound, but Black's extra pawn gives a small edge; not refuted." },
+    "structure": { "notes": "The game opens quickly along the e-file and diagonals." },
+    "approach": { "notes": "Less common than Qxd4 lines but playable at all levels." },
+    "level": { "reason": "memory", "notes": "Knowing the tactics against 3...c5 matters for White; Black's plans are clearer." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "3...c5 4.Bc4 b5", "moves": "3...c5 4. Bc4 b5", "how": "Black counters with a pawn push to hit the bishop and keep the d4 pawn." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A pawn is offered for open lines and development, with tactics near f7." },
+    "gambit": { "value": "white", "confidence": 0.6, "reason": "Black can keep the d4 pawn after 3...c5." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Compensation is enough for a practical try; unsure whether engines agree." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open e-file and diagonals matter from the start." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players now and then as a sideline of a standard Centre Game." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Needs knowing the tactics, but there is no long forcing tree." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White gambits a pawn for development and aims at f7." }
+  }
+}

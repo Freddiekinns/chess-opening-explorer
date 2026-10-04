@@ -1,0 +1,44 @@
+{
+  "slug": "english-opening-anglo-dutch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Anglo-Dutch Defense",
+    "eco": "A10",
+    "moves": "1. c4 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black answers 1.c4 with a Dutch-style ...f5, intending ...Nf6, ...e6 and ...g6 or a Stonewall; White usually plays g3, Bg2, Nc3 and Nf3 and often e4 or d4. Black gets kingside space and attacking chances, but the king is weakened and the e8-h5 diagonal and e5 square need care. Play is flexible and often transposes to Dutch structures.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, pressure on e5 and the long diagonal" },
+    { "idea": "Take the centre with d4 or e4 and use Qb3 and the e6 weakness against ...f5" }
+  ],
+  "black_ideas": [
+    { "idea": "Dutch structure with ...Nf6, ...e6, ...d5 (Stonewall) or ...d6 and ...e5 (Leningrad) for kingside play" },
+    { "idea": "Control e4 and play for a kingside attack with ...Ne4 and ...g5 ideas" }
+  ],
+  "typical_structures": [{ "structure": "Dutch Stonewall or Leningrad structure with a White fianchetto" }],
+  "axis_evidence": {
+    "character": { "notes": "Dutch-style play with a weakened kingside is known for imbalance and attacks for Black, riskier than most replies to 1.c4." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound but double-edged." },
+    "structure": { "notes": "Not decided; Stonewall or Leningrad pawn structures depend on later moves." },
+    "approach": { "notes": "Chosen by strong players in the Dutch family and regular; not a system." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of Dutch pawn structures; moderate theory." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack", "stonewall"],
+  "sublines_that_differ": [
+    { "name": "2.Nc3 Nf6 3.g3", "moves": "2. Nc3 Nf6 3. g3 d6", "how": "Leningrad-type with a fianchetto on both sides." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Dutch lines tend to be unbalanced with a weakened king and mutual attacks." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A recognised if double-edged defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Pawn structure is not fixed after two moves and may become Stonewall or Leningrad." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A recognised way to meet 1.c4 though less common." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans need understanding of Dutch structures." },
+    "plans": { "value": ["kingside_attack", "fianchetto"], "reason": "Black aims at the kingside and both sides fianchetto." }
+  }
+}

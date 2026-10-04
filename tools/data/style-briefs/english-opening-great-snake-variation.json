@@ -1,0 +1,46 @@
+{
+  "slug": "english-opening-great-snake-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Great Snake Variation",
+    "eco": "A10",
+    "moves": "1. c4 g6",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black fianchettoes at once and keeps options between ...c5, ...e5 and ...d6/...Nf6 for a King's Indian or Modern set-up. White develops with Nc3 and g3 or e4, aiming to build a centre or play in the English way. Often transposes to the Symmetrical English, King's Indian or Modern Defence.",
+  "white_ideas": [
+    { "idea": "Nc3, e4 and d4 for a big centre, or g3 and Bg2 English style" },
+    { "idea": "Keep options of Nf3 and a Réti or Maróczy set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "...Bg7, ...d6, ...e5 or ...c5 with a hypermodern attack on the centre" },
+    { "idea": "Wait to see White's set-up before choosing" }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian-type or Symmetrical English with both bishops on long diagonals" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Flank opening, slow and strategic with transposition possibilities." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "English anchor is Flexible." },
+    "approach": { "notes": "Standard reply to 1.c4." },
+    "level": { "reason": "understanding", "notes": "Hypermodern plans need some feel." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "2.e4", "moves": "1. c4 g6 2. e4", "how": "Transposes to a Modern Defence with White's big centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible hypermodern play without forced lines." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Flank opening, centre still undecided, like the English anchor." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A normal reply to 1.c4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans depend on White's set-up." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Black fianchettoes and attacks the centre afterwards." }
+  }
+}

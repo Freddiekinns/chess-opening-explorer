@@ -1,0 +1,48 @@
+{
+  "slug": "dutch-defense-queens-knight-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Queen's Knight Variation",
+    "eco": "A85",
+    "moves": "1. d4 f5 2. c4 Nf6 3. Nc3",
+    "fen": "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 2 3"
+  },
+  "parent": "dutch-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the queen's knight and keeps Nf3 or Bg5 flexible. Black usually plays 3...e6, then ...d5 (Stonewall) or ...Bb4 (Nimzo-Dutch), or 3...g6 for the Leningrad. Black fights for e4 and a kingside attack with ...f5 and pieces; White aims for e4 and a queenside edge.",
+  "white_ideas": [
+    { "idea": "Nf3, g3 and Bg2 fianchetto, aiming for e4." },
+    { "idea": "4.Bg5 or 4.e3 to stop the Nimzo-Dutch ...Bb4 ideas or exploit the e5 square." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...f5 and ...Nf6, then a kingside attack after ...Qe8-h5." },
+    { "idea": "Stonewall set-up with ...d5, ...c6 and ...Bd6, or Leningrad ...g6 and ...Bg7." }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall: pawns c6, d5, e6, f5 with a bishop on d6." },
+    { "structure": "Leningrad: ...g6, ...Bg7, ...d6 and ...e5 or ...c6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch reputation: unbalanced, weakened e8-h5 diagonal and e5, mutual kingside tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound at all levels, though White keeps a small edge in theory." },
+    "structure": { "notes": "Stonewall or Leningrad pawn chains lock the centre; play moves to the wings." },
+    "approach": { "notes": "Played by strong players, standard." },
+    "level": { "reason": "understanding", "notes": "Weak squares and plans need understanding; not forcing theory." }
+  },
+  "plan_phrases": ["kingside attack", "Stonewall", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Leningrad", "moves": "1. d4 f5 2. c4 Nf6 3. Nc3 g6", "how": "Fianchetto structure with ...d6 and ...e5 breaks." },
+    { "name": "Nimzo-Dutch", "moves": "1. d4 f5 2. c4 Nf6 3. Nc3 e6 4. Nf3 Bb4", "how": "Pins the knight, fights for e4." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Dutch positions are unbalanced with mutual kingside risks." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A fully playable defence." },
+    "structure": { "value": "closed", "confidence": 0.45, "reason": "Stonewall and Leningrad lock the centre; play is on the wings." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised defence played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans and weak squares matter more than memory." },
+    "plans": { "value": ["kingside_attack", "stonewall"], "reason": "Black plays for a kingside attack, often with a Stonewall." }
+  }
+}

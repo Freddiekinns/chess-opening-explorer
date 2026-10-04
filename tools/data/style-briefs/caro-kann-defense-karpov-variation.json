@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-karpov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Karpov Variation",
+    "eco": "B17",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Nd7",
+    "fen": "r1bqkbnr/pp1npppp/2p5/8/3PN3/8/PPP2PPP/R1BQKB1R w KQkq - 1 5"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black recaptures dxe4 and plays ...Nd7 so that ...Ngf6 can trade off White's active knight without doubling pawns. White continues 5.Nf3 Ngf6 6.Nxf6+ or 6.Ng3 with ...e6 and ...Bd6 (Kasparov Attack). Black reaches a sound, compact set-up with ...Bf5 or ...e6 and few weaknesses.",
+  "white_ideas": [
+    { "idea": "Nf3, Ng3 and Bd3 with the bishop pair-free space edge, aiming at kingside play" },
+    { "idea": "Nxf6+ and Bc4 or Qe2, keeping a small initiative" }
+  ],
+  "black_ideas": [
+    { "idea": "...Ngf6, ...Bf5 or ...e6 and ...Bd6, trading pieces" },
+    { "idea": "Solid ...c6/...e6 set-up with ...h6 and ...Be7" }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann c6/e6 structure against d4, with the d-file half-open" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Classic solid Caro-Kann set-up; a few sharper sub-lines such as Ng3 attacks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound; one of the main Caro-Kann lines." },
+    "structure": { "notes": "Half-open d-file but centre more fluid than the Exchange." },
+    "approach": { "notes": "A standard choice, not a universal system." },
+    "level": { "reason": "understanding", "notes": "Plans are clear; some theory in the Kasparov Attack." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Kasparov Attack 6.Ng3 e6", "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Nf3 Ngf6 6. Ng3", "how": "Sharper kingside play with 7.Bd3 and Qe2." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Caro-Kann with few weaknesses and steady play." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main line." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Caro-Kann with a half-open d-file; could read as flexible." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear, theory moderate." },
+    "plans": { "value": [], "reason": "No plan on the list fits clearly." }
+  }
+}

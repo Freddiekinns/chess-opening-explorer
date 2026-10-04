@@ -1,0 +1,47 @@
+{
+  "slug": "french-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Classical Variation",
+    "eco": "C11",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "french-defense-paulsen-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black attacks e4 with 3...Nf6. White usually locks the centre with 4.e5 Nfd7 5.f4 c5 6.Nf3 (the Steinitz), or pins with 4.Bg5 Be7 and then plays e5 after all. White gets space and a kingside attack with f4, Black attacks the d4 base with ...c5 and ...Nc6 and has the bad light bishop to solve.",
+  "white_ideas": [
+    { "idea": "Hold the e5 spearhead with f4 and Nf3, gain space and aim at the kingside." },
+    { "idea": "Support d4 against ...c5 and ...Nc6 pressure." }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine d4 with ...c5 and ...Nc6, sometimes ...f6 to hit e5." },
+    { "idea": "Solve the bad light bishop by exchanging it or rerouting it." }
+  ],
+  "typical_structures": [
+    { "structure": "Locked chain d4-e5 against d5-e6, with Black's counterplay against d4 and e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Cramped but sound for Black; White's f4-f5 attack gives some risk to both. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands in the main lines." },
+    "soundness": { "notes": "Sound, long-standing main line." },
+    "structure": { "notes": "Closed: locked central pawn chain after e5." },
+    "approach": { "notes": "Standard branch of the French." },
+    "level": { "reason": "understanding", "notes": "Black's plans are clear but takes feel for the locked structure. Intermediate." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop", "attack the pawn chain base", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Normal Variation", "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7", "how": "White pins first and trades on e7 or plays e5 later; more tactical." },
+    { "name": "Burn Variation", "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4", "how": "Black takes on e4 and the position opens." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Locked chains with attack and counterplay but not especially forcing." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Main-line French." },
+    "structure": { "value": "closed", "confidence": 0.65, "reason": "After 4.e5 the d4-e5 chain against d5-e6 locks the centre." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are known but need practice." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White gains space and Black's c8 bishop is boxed in." }
+  }
+}

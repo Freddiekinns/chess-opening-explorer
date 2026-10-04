@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-budapest-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Budapest Defense",
+    "eco": "A51",
+    "moves": "1. d4 Nf6 2. c4 e5",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counter-attacks the d4 pawn at once. After 3.dxe5 Ng4 Black develops quickly and usually regains the e5 pawn with ...Nc6 and ...Bb4+ or ...Ngxe5. The play is open and forcing, with Black accepting a slightly worse structure for activity. 3.d5 and 3.e3 avoid the complications.",
+  "white_ideas": [
+    { "idea": "Hold the extra pawn with Bf4, Nf3 and Nbd2 or e3, then play for a small edge" },
+    { "idea": "Avoid complications with 3.d5 or 3.e3" }
+  ],
+  "black_ideas": [
+    { "idea": "Regain e5 with ...Nc6, ...Bb4+ and ...Qe7, then use the knight pair and development" },
+    { "idea": "Trap White with early tactics against Bf4 or e5" }
+  ],
+  "typical_structures": [
+    { "structure": "White c4/e3 centre against Black pieces active on e5 and c5, open centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete and forcing in the Adler and Fajarowicz lines; Black has to know the traps." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "false", "notes": "Black normally regains e5 by force after 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+, so it is not a true gambit." },
+    "soundness": { "notes": "A rarely used reply but not refuted, small White edge." },
+    "structure": { "notes": "Centre opens after dxe5 with active pieces; Open." },
+    "approach": { "notes": "Strong players seldom pick it, though it is not an offbeat joke; standard." },
+    "level": { "reason": "memory", "notes": "Needs knowing the traps and Adler/Rubinstein lines but plans are clear." }
+  },
+  "plan_phrases": ["lead in development", "regain the pawn"],
+  "sublines_that_differ": [
+    { "name": "Fajarowicz", "moves": "3.dxe5 Ne4", "how": "Black gambits a pawn, more speculative." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Open, forcing play with early traps." },
+    "gambit": { "value": "none", "confidence": 0.5, "reason": "Black usually regains the pawn by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable though White keeps a small edge." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "e5 and centre pawns come off, giving open lines." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Rare but still an occasional choice for strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Traps and the Adler line need learning." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black seeks active pieces for the e5 pawn." }
+  }
+}

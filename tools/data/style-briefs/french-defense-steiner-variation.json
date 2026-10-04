@@ -1,0 +1,44 @@
+{
+  "slug": "french-defense-steiner-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Steiner Variation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. c4",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays the English-style 2.c4 instead of 2.d4, an Anglo-French set-up. Black answers 2...d5 and usually reaches an Exchange French or Tarrasch-like structure by transposition after d4, or White plays 3.exd5 exd5 4.d4. It is a rare sideline; I am working from the moves, not from detailed theory.",
+  "white_ideas": [
+    { "idea": "Take space with c4 and e4, then d4 to transpose to a French or Queen's Gambit-type structure." },
+    { "idea": "Hit d5 and aim for a small space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at once with ...d5 and develop with ...Nf6 or ...Nc6." },
+    { "idea": "Use the freed c8-bishop and symmetrical structure to equalise." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawn structure after exd5 exd5 with a half-open e-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet sideline with symmetrical structures and no forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; 3.cxd5 exd5 4.exd5 Qxd5 trades pawns evenly." },
+    "soundness": { "notes": "Sound; Black equalises easily with ...d5." },
+    "structure": { "notes": "Typical outcome is a symmetrical exchange structure with one open file." },
+    "approach": { "notes": "Strong players seldom choose 2.c4 in the French, so it is chosen mainly for surprise." },
+    "level": { "reason": "neither", "notes": "No heavy theory and plans are simple; intermediate." }
+  },
+  "plan_phrases": ["symmetrical structure", "central pawn tension"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but not especially hard to break; unsure so low confidence." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Equal after 2...d5." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "Symmetrical exchange structure with one open file." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Seldom chosen by strong players against the French." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Simple ideas, little theory." },
+    "plans": { "value": ["symmetrical_structure"], "reason": "Exchange structure after exd5 exd5." }
+  }
+}

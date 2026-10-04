@@ -1,0 +1,47 @@
+{
+  "slug": "dutch-defense-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Normal Variation",
+    "eco": "A84",
+    "moves": "1. d4 f5 2. c4 Nf6",
+    "fen": "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "The main-line Dutch move order after 1.d4 f5 2.c4 Nf6, usually 3.g3 or 3.Nf3 and then the Leningrad, Classical or Stonewall set-up. White fianchettoes and presses on the centre and queenside; Black fights for e4 and aims for ...e5 or kingside play at the price of a loosened king position.",
+  "white_ideas": [
+    { "idea": "g3, Bg2, Nf3, O-O, then Nc3 and d5 or e4 to challenge Black's centre." },
+    { "idea": "Pressure the long diagonal and the e6/e5 squares; sometimes Qc2 and b3." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...f5 and ...Nf6, then ...e6/...d5 (Stonewall) or ...d6/...e5 (Classical, Leningrad)." },
+    { "idea": "Kingside space and attacking chances, with ...Ne4 outpost." }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall: pawns on c6, d5, e6, f5 with a knight on e4." },
+    { "structure": "Leningrad: ...g6, ...Bg7, ...d6 and an ...e5 break." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch positions are unbalanced, with a weakened e8-h5 diagonal and e6, and both sides can attack; known as double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line." },
+    "soundness": { "notes": "Sound but double-edged; played by strong players occasionally." },
+    "structure": { "notes": "Centre is tense and undecided at this stage; Stonewall closes it, Leningrad opens it with ...e5." },
+    "approach": { "notes": "A standard defence to 1.d4, chosen by strong players now and then." },
+    "level": { "reason": "both", "notes": "Needs knowledge of several set-ups and the kingside weaknesses." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Stonewall", "moves": "3.g3 e6 4.Bg2 d5", "how": "Locked centre, closed, slower." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Dutch is unbalancing, with kingside weaknesses and mutual attacking chances." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No pawn is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected by strong players and engines." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre tension is not resolved this early; branches go either way." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players now and then as a real defence." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.6, "reason": "Plans are clear for Black but each set-up needs study." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "Both sides fianchetto and Black aims at the kingside." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Classical Variation",
+    "eco": "B18",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5",
+    "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes on e4 and develops the light bishop outside the pawn chain before playing ...e6. The main line is 5.Ng3 Bg6 6.h4 h6 7.Nf3 Nd7 8.h5 Bh7 9.Bd3 Bxd3 10.Qxd3, where White has a small space edge and Black has a sound, compact position. White often castles long and attacks the h-pawn, while Black plays ...e6 and ...Ngf6 and aims for ...c5.",
+  "white_ideas": [
+    { "idea": "Harass the bishop with h4-h5 and gain space on the kingside." },
+    { "idea": "Develop quickly with Nf3, Bd3 and consider queenside castling." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade the light bishop and play ...e6 and ...Ngf6 for a compact structure." },
+    { "idea": "Break with ...c5 or ...e5 once developed." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn against Black c6-e6 pawns and the d-file half open." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Anchor-type Solid. The h4 lines have tactics but Black's position is safe." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "e4 pawn is won back by force." },
+    "soundness": { "notes": "Sound, a main line." },
+    "structure": { "notes": "Asymmetric centre with a half-open d-file." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Anchored Intermediate." }
+  },
+  "plan_phrases": ["good light bishop outside the chain", "kingside space"],
+  "sublines_that_differ": [
+    { "name": "Bronstein-Larsen", "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6", "how": "Not the Classical; Black accepts doubled f-pawns for activity." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.9, "reason": "Named anchor: Caro-Kann Classical is Solid." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Main-line Caro-Kann." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "Fixed asymmetric centre with a half-open d-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Mainstream." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.8, "reason": "Anchor says Caro-Kann Classical is Intermediate." },
+    "plans": { "value": [], "reason": "No plan from the list stands out." }
+  }
+}

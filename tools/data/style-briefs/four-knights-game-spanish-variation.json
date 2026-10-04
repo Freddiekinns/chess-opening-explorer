@@ -1,0 +1,47 @@
+{
+  "slug": "four-knights-game-spanish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Four Knights Game: Spanish Variation",
+    "eco": "C48",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4"
+  },
+  "parent": "four-knights-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins the c6 knight, a symmetrical Spanish. Black replies 4...Nd4 (Rubinstein, 5.Nxd4 exd4 6.e5 dxc3 7.exf6 Qxf6 8.dxc3 for an equal queenless-leaning middlegame) or 4...Bb4 (Double Spanish, 5.O-O O-O 6.d3 d6 7.Bg5 Bxc3 8.bxc3 Qe7). The play is slow and balanced; White gets doubled c-pawns or a small initiative but the draw margin is wide.",
+  "white_ideas": [
+    { "idea": "Develop with d3, Bg5 and Nd5, keep everything protected, and wait for errors." },
+    { "idea": "Trade on c6 or c3 to damage Black's structure." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror White with ...Bb4 and ...O-O and trade down." },
+    { "idea": "Play the Rubinstein with ...Nd4 for a different pawn structure." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical e4 against e5 with doubled c-pawns after Bxc3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Symmetrical and hard to break; drawish reputation. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Central tension left in place; flexible." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Popular at club level because it needs little theory; I judge Intermediate, Beginner is possible." }
+  },
+  "plan_phrases": ["doubled pawns", "symmetrical structure", "bishop pair"],
+  "sublines_that_differ": [
+    { "name": "Rubinstein", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Nd4", "how": "Black seeks a more unbalanced structure." },
+    { "name": "Ranken", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 a6 5. Bxc6", "how": "White doubles Black's pawns at once." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Symmetrical with a drawish reputation." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Sound for both." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Little theory but plans need care." },
+    "plans": { "value": ["doubled_pawns", "symmetrical_structure"], "reason": "Bxc3 and the symmetrical centre dominate." }
+  }
+}

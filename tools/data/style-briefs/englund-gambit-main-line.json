@@ -1,0 +1,44 @@
+{
+  "slug": "englund-gambit-main-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Main Line",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7",
+    "fen": "r1b1kbnr/ppppqppp/2n5/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black sacrifices the e-pawn and, after 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3, grabs the b2 pawn to regain material. White develops with tempo against the queen and keeps an edge, while Black relies on traps like 6.Bc3? Bb4!. Strong players consider it unsound.",
+  "white_ideas": [
+    { "idea": "Develop with tempo: Bf4, Bd2 and Nc3 against the exposed queen on b2" },
+    { "idea": "Avoid the Bb4 trap and keep the extra pawn or the initiative with Rb1 and Nb5" }
+  ],
+  "black_ideas": [
+    { "idea": "Win back a pawn on b2 and set the Bb4 trick if White errs with Bc3" },
+    { "idea": "Create tactical problems against an unprepared opponent and hope for a quick attack on c1/b2" }
+  ],
+  "typical_structures": [{ "structure": "White extra e5 pawn and sound centre; Black queen forward on b2 with undeveloped kingside" }],
+  "axis_evidence": {
+    "character": { "notes": "Forcing queen raid, traps and early tactics; one slip loses fast for either side." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can hold the e5 pawn with accurate development; Black takes b2 for part of it." },
+    "soundness": { "notes": "Engines and strong players call it unsound; it scores on surprise and traps." },
+    "structure": { "notes": "Open lines with e5 pawn, queenside open after Qxb2; the b-file opens." },
+    "approach": { "notes": "Strong players almost never choose it; a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Traps and move orders need to be known; dubious so not a beginner choice." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Bc3 trap", "moves": "6. Bc3?? Bb4", "how": "Black wins; the main reason the line scores." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Early queen raid with forcing tactics and quick punishments." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives the e-pawn and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "Considered unsound by strong players." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "The b-file and diagonals open quickly after the queen grabs b2." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Top players almost never choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "Needs the traps and sub-lines; a dubious line is never beginner." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black plays an early queen for quick activity; White develops with tempo." }
+  }
+}

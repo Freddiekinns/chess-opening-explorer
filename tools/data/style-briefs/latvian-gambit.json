@@ -1,0 +1,44 @@
+{
+  "slug": "latvian-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black counterattacks with 2...f5, and after 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 6.Nc3 Qg6 White keeps the extra pawn and a sound centre while Black has open f-file and quick development hoping for traps. White is better with accurate play, and 3.d3 is a calmer try. Strong players consider it unsound.",
+  "white_ideas": [
+    { "idea": "Take the pawn with 3.Nxe5, answer ...Qf6 with d4 and Nc4, then consolidate with Nc3" },
+    { "idea": "Avoid the traps (3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 6.Nc3 Qg6 7.Ne3) and keep the extra pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Use the open f-file and quick development for an attack against the white king" },
+    { "idea": "Set tactical traps with ...Qf6 and ...Qxe5-type tactics or ...Bc5 and ...Nf6" }
+  ],
+  "typical_structures": [{ "structure": "White extra pawn in the centre; Black weakened kingside with an open f-file" }],
+  "axis_evidence": {
+    "character": { "notes": "Counter-gambit with early queen sorties and traps; one slip loses quickly." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the e5 pawn." },
+    "soundness": { "notes": "Considered unsound by strong players; scores on surprise." },
+    "structure": { "notes": "Open centre with the f-file and e-file in play." },
+    "approach": { "notes": "Strong players hardly ever play it." },
+    "level": { "reason": "memory", "notes": "Black needs to know the traps; a dubious line is never beginner." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "3.d3", "moves": "3. d3", "how": "Declines the pawn and plays a quiet Philidor-type game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Counter-gambit with early queen play and mutual attacks." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives the e5 pawn and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "Strong players consider it unsound." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "e- and f-files open early." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Knowing the traps matters; dubious so not beginner." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black uses the queen early and develops quickly for the pawn." }
+  }
+}

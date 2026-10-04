@@ -1,0 +1,51 @@
+{
+  "slug": "elephant-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Elephant Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black counterattacks in the centre with 2...d5, leaving e5 en prise. After 3.exd5 e4 or 3.Nxe5 Black is a pawn down and has to prove compensation by development and open lines; White usually just takes the pawn and develops sensibly. Considered dubious: White keeps a clear extra pawn with simple play.",
+  "white_ideas": [
+    { "idea": "3.exd5 e4 4.Qe2 or 4.Nfd2 and keep the extra pawn while developing" },
+    { "idea": "3.Nxe5 dxe4 4.Bc4 or 4.Nc3, taking the pawn and getting ahead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Use the open e- and d-files and quick development to compensate for the pawn" },
+    { "idea": "Hope for ...Qxd5 or ...Bd6 ideas and traps against a careless White" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre where Black has traded a central pawn for lines and tempi" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gambits a pawn for open lines; White's main risk is a few early traps, and play is forcing from Black's side." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.exd5 e4 or 3.Nxe5 dxe4 White can simply hold the pawn."
+    },
+    "soundness": { "notes": "Considered dubious: a clean extra pawn for White with easy development." },
+    "structure": { "notes": "Central pawns are exchanged early and lines open; Open." },
+    "approach": { "notes": "Strong players seldom use it; anchor Offbeat." },
+    "level": { "reason": "memory", "notes": "Dubious lines are never Beginner; Intermediate for Black." }
+  },
+  "plan_phrases": ["lead in development", "early queen"],
+  "sublines_that_differ": [
+    { "name": "3.Nxe5", "moves": "1. e4 e5 2. Nf3 d5 3. Nxe5 dxe4 4. Bc4", "how": "Black's e4 pawn is lost or White gets a lead, with traps like ...Qg5." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "A counter-gambit with open lines and early forcing tactics." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "White gets a clean extra pawn with easy play." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Early central exchanges open the position straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.7, "reason": "A dubious line cannot be Beginner; the traps need to be known." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for development and open lines in return for the pawn." }
+  }
+}

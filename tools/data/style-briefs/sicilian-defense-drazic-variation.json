@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-drazic-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Drazic Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 a6",
+    "fen": "rnbqkbnr/1p1p1ppp/p3p3/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays a Kan-style ...a6 before taking on d4, so White can avoid the open Sicilian with 4.c4 (a Maroczy-type bind) or 4.Bd3, or transpose with 4.dxc5. If White takes on c5 or plays 4.c4, Black has ...Nf6 and ...Nc6 or ...d6 and a Hedgehog-like set-up. I am unsure of the name and judge it from the moves.",
+  "white_ideas": [
+    { "idea": "4.c4 to clamp d5 with a Maroczy bind, then Nc3 and Be2" },
+    { "idea": "Or 4.dxc5 / 4.Bd3 to steer into a quieter game than the open Sicilian" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold ...a6 flexibility, ...Nf6, ...Nc6, ...d6, and break with ...d5 or ...b5" },
+    { "idea": "Transpose to Kan or Taimanov structures after 4.Nc3 cxd4" }
+  ],
+  "typical_structures": [
+    { "structure": "Maroczy-type bind after c4, or a Kan/Taimanov Sicilian with ...e6/...d6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Flexible, move-order Sicilian; positions range from quiet bind to normal Kan play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; just a Kan move order that allows 4.c4." },
+    "structure": { "notes": "Fixed asymmetric centre with a half-open c-file for Black." },
+    "approach": { "notes": "A move-order twist within the Sicilian, played now and then." },
+    "level": { "reason": "understanding", "notes": "Black needs to know the Kan and Taimanov ideas but the plans are clear." }
+  },
+  "plan_phrases": ["Maroczy bind", "queenside expansion", "flexible Sicilian"],
+  "sublines_that_differ": [
+    { "name": "Open Sicilian transposition", "moves": "4.Nc3 cxd4 5.Nxd4", "how": "Goes into the Kan with the usual sharp theory" }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible Kan-style Sicilian, neither especially solid nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A Kan move order, fully playable." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Sicilian asymmetric centre with a half-open file." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A recognised Sicilian move order, not a rarity strong players avoid." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Needs the Kan and Maroczy ideas but not long forcing lines." },
+    "plans": { "value": ["maroczy_bind", "queenside_expansion"], "reason": "White's 4.c4 bind and Black's ...b5 expansion." }
+  }
+}

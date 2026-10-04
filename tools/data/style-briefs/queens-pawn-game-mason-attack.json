@@ -1,0 +1,44 @@
+{
+  "slug": "queens-pawn-game-mason-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Mason Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. f4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1P2/8/PPP1P1PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays a reversed Dutch with 2.f4, aiming for e3, Nf3, Bd3 and a Stonewall or Colle-style set-up with the f4 pawn controlling e5. Black can develop with ...Nf6, ...Bf5 or ...c5 and gets a comfortable game; the bishop on c1 is blocked behind e3 and White has weakened the king's side.",
+  "white_ideas": [
+    { "idea": "Set up a Stonewall with e3, Nf3, Bd3 and control e5 with f4." },
+    { "idea": "Aim for kingside attack ideas after Ne5 and Qf3." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop naturally with ...Nf6, ...Bf5 or ...Bg4 and attack the centre with ...c5." },
+    { "idea": "Exploit the weakened e1-h4 diagonal and the loose king side." }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall pawns on d4/e3/f4 for White, a reversed Dutch." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow and non-forcing; White's bad bishop and kingside weaknesses balance the space on e5." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A harmless sideline; White may be slightly worse but is not refuted." },
+    "structure": { "notes": "Stonewall pawns with the centre not fully locked." },
+    "approach": { "notes": "A rare system-like try that strong players hardly choose against 1...d5." },
+    "level": { "reason": "neither", "notes": "Simple plans but a weak first repertoire choice." }
+  },
+  "plan_phrases": ["Stonewall", "control e5"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Slow reversed-Dutch structure with risk on neither side." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable though not ambitious." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not yet locked." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Plans are clear but the line is not a recommended base." },
+    "plans": { "value": ["stonewall"], "reason": "White builds the f4/e3/d4 Stonewall shape." }
+  }
+}

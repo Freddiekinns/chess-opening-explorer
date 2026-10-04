@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-accepted-rosenthal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Rosenthal Variation",
+    "eco": "D21",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black supports the c4 pawn with ...e6 instead of ...Nf6, and White plays 4.e3 and Bxc4 (or 4.e4), usually reaching a standard QGA structure after ...c5, ...a6 and ...Nf6. White gets a lead in the centre and open lines; Black usually aims for ...c5 and ...cxd4 and an isolated queen's pawn or hanging pawns, and the game is balanced. The 4.Qa4+ and 4.e4 lines are sharper side branches.",
+  "white_ideas": [
+    { "idea": "Regain c4 with Bxc4 and develop quickly with Nc3, O-O and Qe2." },
+    { "idea": "Use the central space and lines against Black's isolated pawn structures." }
+  ],
+  "black_ideas": [
+    { "idea": "Equalise with ...c5, ...a6 and ...Nf6, trading pieces after ...cxd4." },
+    { "idea": "Play ...b5 to push the bishop and gain queenside space." }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn or hanging pawns after ...c5 and exchanges on d4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Steady and hard to lose for Black; few early tactics in the 4.e3 main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black can keep the pawn only briefly; White regains it with Bxc4. QGA is not a gambit." },
+    "soundness": { "notes": "A mainstream QGA line." },
+    "structure": { "notes": "QGA anchor is Open: lines open after cxd4 and exchanges on d4." },
+    "approach": { "notes": "A normal Queen's Gambit Accepted line." },
+    "level": { "reason": "understanding", "notes": "Handling IQP or hanging-pawn structures; moderate theory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "4.e4", "moves": "4. e4", "how": "White takes the centre at once; Black can strike with ...c5." },
+    { "name": "4.Qa4+", "moves": "4. Qa4+", "how": "An early queen check leading to sharper tactics." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Steady structure that is hard for White to break; low risk for Black." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The pawn comes back by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream QGA line." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "QGA structures open the d-file and long diagonals early." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A normal main-line QGA branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans over memory." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns"], "reason": "Black or White often reaches IQP or hanging-pawn structures." }
+  }
+}

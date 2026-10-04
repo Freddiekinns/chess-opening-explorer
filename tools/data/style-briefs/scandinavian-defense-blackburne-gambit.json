@@ -1,0 +1,46 @@
+{
+  "slug": "scandinavian-defense-blackburne-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Blackburne Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 c6 3. dxc6 Nxc6",
+    "fen": "r1bqkbnr/pp2pppp/2n5/8/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-blackburne-kloosterboer-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black gives a pawn with 2...c6 3.dxc6 Nxc6 to get a lead in development, with ...e5, ...Bg4, ...Bc5 and queen-side castling pressure against d4 and f2. White keeps the pawn by developing sensibly with Nf3, Bc4 or d4, and then consolidates. Black scores on surprise rather than on soundness.",
+  "white_ideas": [
+    { "idea": "Develop with Nf3, d4, Bc4 or Be2 and Nc3, then castle and keep the extra pawn." },
+    { "idea": "Avoid early queen moves and trade pieces to cash in the pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...e5, ...Bf5 or ...Bg4, ...Bc5 and ...Qd7 and attack the centre." },
+    { "idea": "Hit the white centre and f2 before White consolidates." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, White a pawn up with Black pieces more active." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black plays for active pieces at once, but White can simplify. Positions are open with tactical chances." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the pawn with accurate development." },
+    "soundness": { "notes": "Generally considered insufficient; White's development is easy and the pawn stays." },
+    "structure": { "notes": "Open lines after the exchange of the d- and c-pawns, with both centres cleared." },
+    "approach": { "notes": "A rare gambit, seldom seen among strong players." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of specific traps; not a good first choice since unsound." }
+  },
+  "plan_phrases": ["lead in development", "attack the centre", "surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "2...c6 3.c4", "moves": "2... c6 3. c4", "how": "White declines the gambit and holds the extra pawn in a different structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "A pawn down for a lead in development with open lines." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.6, "reason": "White's extra pawn is hard to challenge." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "The centre pawns are gone and the pieces use open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Dubious lines are not for beginners; the traps need memorising." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for quick development for the pawn." }
+  }
+}

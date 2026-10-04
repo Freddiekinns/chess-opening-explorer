@@ -1,0 +1,95 @@
+{
+  "slug": "lion-defense-lions-jaw",
+  "tier": "unsourced",
+  "root": {
+    "name": "Lion Defense: Lion's Jaw",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. d4 Nf6 3. f3",
+    "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White supports e4 with f3 for a Sämisch-style set-up and avoids the main Pirc theory. After 3...g6 4.c4 Bg7 5.Nc3 O-O 6.Be3 it resembles a King's Indian Sämisch, with Black striking at the centre with ...e5 or ...c5. 3...e5 is the other main branch.",
+  "white_ideas": [
+    { "idea": "Build a solid centre with c4, Nc3 and Be3, then Qd2 and kingside play." },
+    { "idea": "Use the space and consider castling queenside for a pawn storm." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...e5 or ...c5." },
+    { "idea": "Fianchetto and castle quickly, with counterplay on the queenside." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Sämisch-like chain with ...e5 against d4/f3/e4." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Opposite-side castling and counter-strikes are common; White has space but a loosened kingside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "Centre tension; may become closed after d5 and ...e5 or open after dxe5."
+    },
+    "approach": {
+      "notes": "A rare anti-Pirc idea from White, seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Like the Sämisch KID: clear ideas but needs feel."
+    }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "opposite-side castling"],
+  "sublines_that_differ": [
+    {
+      "name": "Queenswap",
+      "moves": "3...e5 4.dxe5 dxe5 5.Qxd8+",
+      "how": "An early queen trade for a quiet position."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Sämisch-style play with opposite-side castling and counterstrikes."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A playable anti-Pirc."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre could close or open depending on ...e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom picked by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Clear Sämisch-style plans."
+    },
+    "plans": {
+      "value": ["space_advantage", "hypermodern_centre"],
+      "reason": "White's central space against Black's breaks."
+    }
+  }
+}

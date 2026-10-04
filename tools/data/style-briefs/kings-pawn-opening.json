@@ -1,0 +1,89 @@
+{
+  "slug": "kings-pawn-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. b3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the queen's bishop to b2 against the e5 pawn before committing the knights, a Nimzowitsch-Larsen style flank move on an e-pawn game. After 2...Nc6 3.Bb2 d6 4.Nf3 Black has an easy game, and White aims for a Hypermodern set-up with Nc3 and a slow plan against e5.",
+  "white_ideas": [
+    { "idea": "Fianchetto the queen's bishop and press e5." },
+    { "idea": "Play Nf3 and Bb5 or Nc3 and f4 depending on Black's set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop naturally with ...Nc6 and ...d5 for a good centre." },
+    { "idea": "Attack the b2 bishop's diagonal with ...f6 or ...Bd6." }
+  ],
+  "typical_structures": [
+    { "structure": "Black e5/d5 centre against a b2 bishop and flexible White pawns." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, undemanding development; White has no direct threats."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material at stake."
+    },
+    "soundness": {
+      "notes": "Sound but not testing; Black can take space."
+    },
+    "structure": {
+      "notes": "Fluid centre with flank play; not decided."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players; mostly a surprise choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory; plans aren't obvious."
+    }
+  },
+  "plan_phrases": ["queen's bishop fianchetto", "pressure on e5"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Unforced, flexible play with no known sharp lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A slow but sound set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Flank-style development with the centre left open to change."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Little theory but few forcing plans."
+    },
+    "plans": {
+      "value": ["fianchetto"],
+      "reason": "The b2 bishop is the whole idea."
+    }
+  }
+}

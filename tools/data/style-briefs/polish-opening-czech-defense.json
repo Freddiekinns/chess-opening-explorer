@@ -1,0 +1,95 @@
+{
+  "slug": "polish-opening-czech-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Czech Defense",
+    "eco": "A00",
+    "moves": "1. b4 e5 2. Bb2 d6",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 0 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 1.b4 e5 2.Bb2 by supporting the e5 pawn with ...d6 instead of capturing on b4 or playing ...f6. White usually plays 3.e3 and Nf3, Bb5+ or a3, with queenside space and a fianchetto bishop aimed at e5. Black builds a Philidor-like centre with ...Nf6 and ...g6 or ...Be7. Play is slow and manoeuvring.",
+  "white_ideas": [
+    { "idea": "Play e3, Nf3 and a3, keeping the Bb2 on the long diagonal." },
+    { "idea": "Gain queenside space with b4 and later a4 or c4." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 with ...d6 and ...Nd7 or ...Nf6, a solid centre." },
+    { "idea": "Strike at b4 with ...a5 or ...c5 to undermine White's space." }
+  ],
+  "typical_structures": [
+    { "structure": "Black e5/d6 chain against White b4 pawn and bishop on b2, flank-oriented." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, flank-based play with few forcing lines; Black's centre is sturdy."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The b4 pawn is not hanging after ...d6, nothing is sacrificed."
+    },
+    "soundness": {
+      "notes": "Both sides are playable; White's b4 is mildly loosening but not refuted."
+    },
+    "structure": {
+      "notes": "A mobile centre not yet committed: Black e5/d6 against White's flank play."
+    },
+    "approach": {
+      "notes": "The Polish itself is a surprise weapon for strong players, and this branch is rarer still."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little to memorise; plans are flank manoeuvres that need positional feel."
+    }
+  },
+  "plan_phrases": ["fianchetto", "queenside expansion", "space advantage"],
+  "sublines_that_differ": [
+    {
+      "name": "Exchange Variation",
+      "moves": "1. b4 e5 2. Bb2 Bxb4 3. Bxe5",
+      "how": "Parent's main line; Black wins a pawn that White regains with Bxe5 and equalises."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's e5/d6 centre is sturdy and the play is slow and positional."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Both sides have healthy set-ups."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is not fixed and White plays on the flank."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "1.b4 is a surprise weapon and this reply is a rarity within it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Not much theory, but flank strategy needs judgement."
+    },
+    "plans": {
+      "value": ["fianchetto", "queenside_expansion"],
+      "reason": "White's Bb2 and b4 push define the game."
+    }
+  }
+}

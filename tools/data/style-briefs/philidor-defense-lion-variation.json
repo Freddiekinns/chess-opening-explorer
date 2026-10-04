@@ -1,0 +1,46 @@
+{
+  "slug": "philidor-defense-lion-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Lion Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7",
+    "fen": "r1bqkb1r/pppn1ppp/3p1n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 3 5"
+  },
+  "parent": "philidor-defense-nimzowitsch-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black builds the Philidor set-up with ...Nbd7, ...Be7, ...O-O and ...c6, keeping the e5 pawn and the d6 pawn in a compact chain. White has more space and can choose 5.Bc4 with quick castling, aiming at f7, or exchange on e5, and play for central pressure. The game is a slow manoeuvring fight where Black waits for a ...exd4 or ...d5 break.",
+  "white_ideas": [
+    { "idea": "Develop with Bc4, O-O, Re1, a4 and keep the centre tension, aiming at Ng5 or d5." },
+    { "idea": "Exchange on e5 to reach open lines and use the space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 with ...c6, ...Be7 and ...O-O, then break with ...exd4 or ...d5." },
+    { "idea": "Keep a compact position and use the Lion set-up's flexibility with ...Qc7." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on e5/d6 with c6 support, White with e4/d4 and more space." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Compact Black set-up, few quick tactics, hard to break down; Black may be slightly passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A recognised Philidor set-up; sound though slightly passive." },
+    "structure": { "notes": "d4/e5 tension is held or resolved later; undecided centre." },
+    "approach": { "notes": "A recognised Philidor line, played at all levels, less common than e5 main lines." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of when to break; moderate memory." }
+  },
+  "plan_phrases": ["space advantage", "compact centre"],
+  "sublines_that_differ": [
+    { "name": "6.dxe5 dxe5", "moves": "6. dxe5 dxe5 7. Ng5", "how": "Opens the position and leads to tactics around f7." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Compact, hard-to-break Black structure." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable, respected Philidor set-up." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The d4/e5 tension is undecided." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Less common but played by strong players; not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans matter more than long theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's central space against Black's compact set-up." }
+  }
+}

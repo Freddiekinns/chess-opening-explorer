@@ -1,0 +1,46 @@
+{
+  "slug": "queens-indian-accelerated",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Accelerated",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 b6",
+    "fen": "rnbqkb1r/p1pppppp/1p3n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black fianchettoes the queen's bishop before committing the kingside, keeping options of ...e6 for a Queen's Indian, ...Bb4 for a Nimzo hybrid or ...g6 for something else. White can play 3.Nc3 Bb7 4.Qc2 (Sämisch-style) or 4.Nf3 transposing to main lines, or grab space with e4. The game is flexible and positional, with Black controlling e4 from a distance.",
+  "white_ideas": [
+    { "idea": "Nc3 and e4 to take the centre, or Nf3 to transpose to the Queen's Indian." },
+    { "idea": "Qc2 and a3 or e3 for a solid centre that keeps ...Bb4 under control." }
+  ],
+  "black_ideas": [
+    { "idea": "...Bb7, ...e6 and ...Bb4 or ...Be7 with control of e4." },
+    { "idea": "...c5 or ...d5 to challenge the centre once developed." }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Indian structures with ...e6/...d5 or ...d6, a fianchettoed bishop on b7 and a flexible centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional, hard to break down, few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound and mainstream." },
+    "structure": { "notes": "Centre not settled, flexible Indian-type structures." },
+    "approach": { "notes": "Standard; reaches Queen's Indian or Nimzo set-ups at strong level." },
+    "level": { "reason": "understanding", "notes": "Plans depend on White's choice but theory is moderate." }
+  },
+  "plan_phrases": ["Fianchetto", "Hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "3.e4", "moves": "3.e4 Bb7 4.Nc3", "how": "White takes a big pawn centre and Black attacks it." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Queen's Indian set-ups are sound and hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream Indian set-up." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre tension and fianchetto set-ups leave it undecided." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by strong players, not a surprise-only line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear fianchetto plans, moderate theory." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Black's b7 bishop and control of e4 define play." }
+  }
+}

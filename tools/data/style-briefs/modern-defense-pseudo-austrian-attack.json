@@ -1,0 +1,95 @@
+{
+  "slug": "modern-defense-pseudo-austrian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Pseudo-Austrian Attack",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4",
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PPP2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "modern-defense-standard-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White builds the full e4-d4-f4 pawn centre against a Modern set-up, the Pirc's Austrian Attack minus ...Nf6. Black usually plays 4...c6 or 4...Nc6 and 5.Nf3, then meets the centre with ...c5 or ...e5 and often transposes to the Pirc with ...Nf6. White aims for e5 and a kingside attack, Black for counterplay against the broad centre.",
+  "white_ideas": [
+    { "idea": "Nf3 and Bd3 or Be2, then e5 to gain space." },
+    { "idea": "Kingside attack with f5 and Qe1 or Qd3 behind the big centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...c5, ...Nc6 or ...e5 once developed." },
+    { "idea": "Keep the fianchettoed bishop and aim at d4 and the long diagonal." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4/f4 centre against a fianchettoed Black king." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A big White centre, with e5 and f5 kingside pushes against Black counterplay; the Austrian family is known for risk on both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Both set-ups are respectable; White's centre may become a target but is not unsound."
+    },
+    "structure": {
+      "notes": "Tension in the centre: White's pawns face ...c5 or ...e5 breaks."
+    },
+    "approach": {
+      "notes": "A recognised branch of the Pirc/Modern family, tried by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to time the breaks well; White's attacks are known."
+    }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage", "kingside attack"],
+  "sublines_that_differ": [
+    {
+      "name": "Transposition to Pirc Austrian",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 Nf6",
+      "how": "Reaches the normal Austrian Attack, usually sharper than the ...c6 lines."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A big White centre and f4-f5 attack against ...c5/...e5 counterplay makes it double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Both set-ups are respected."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is in tension before Black's ...c5 or ...e5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A mainstream branch of the Pirc and Modern family."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": ["hypermodern_centre", "space_advantage", "kingside_attack"],
+      "reason": "Black attacks a big centre while White pushes e5 and f5."
+    }
+  }
+}

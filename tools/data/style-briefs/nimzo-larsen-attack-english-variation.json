@@ -1,0 +1,48 @@
+{
+  "slug": "nimzo-larsen-attack-english-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: English Variation",
+    "eco": "A01",
+    "moves": "1. b3 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "nimzo-larsen-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black mirrors with ...c5, an English-style response, and White plays Bb2, e3 and Nf3 with flexible pawn play (c4, d4 or f4) and long-diagonal pressure. The position is a Sicilian-like structure with colours reversed, and Black usually follows with ...Nc6, ...Nf6, ...e6 and ...d5 or ...g6. The play is quiet and manoeuvring, usually equal, with tactics if the diagonals open.",
+  "white_ideas": [
+    { "idea": "Bb2, e3, Nf3 and Bb5 to pressure e5 and the long diagonal" },
+    { "idea": "Choose between c4, d4 and f4 after seeing Black's set-up" },
+    { "idea": "Trade the dark-squared bishop or play for a small endgame edge" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nc6, ...e6, ...Nf6 and hit the centre with ...d5" },
+    { "idea": "Fianchetto with ...g6 and ...Bg7 to meet the long diagonal" },
+    { "idea": "Equalise with a solid centre and counter on the queenside" }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian / English with ...c5 against b3 and e3, flexible pawn structure" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and flexible, low theory; sharpens only if the long diagonal opens." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound; used by super-GMs as a surprise weapon." },
+    "structure": { "notes": "Flank opening with centre not fixed; flexible." },
+    "approach": { "notes": "A b3/Bb2 set-up White can use against almost anything." },
+    "level": { "reason": "understanding", "notes": "Plans are clear but the flexible pawn play needs judgement." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "2.Bb2 Nc6 3.e3 d5", "moves": "1. b3 c5 2. Bb2 Nc6 3. e3 d5", "how": "Black takes a classical centre and the game becomes a Reversed Sicilian with White's bishop on b2." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet manoeuvring with some tactics, neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Equal and respectable." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening with an undecided centre." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "A b3/Bb2 set-up White can play against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear, but flexible play needs judgement." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Bb2 on the long diagonal and a delayed pawn centre." }
+  }
+}

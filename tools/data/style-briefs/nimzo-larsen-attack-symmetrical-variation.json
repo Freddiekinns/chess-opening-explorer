@@ -1,0 +1,44 @@
+{
+  "slug": "nimzo-larsen-attack-symmetrical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Symmetrical Variation",
+    "eco": "A01",
+    "moves": "1. b3 b6",
+    "fen": "rnbqkbnr/p1pppppp/1p6/8/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "nimzo-larsen-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black mirrors White's fianchetto with 1...b6, so both sides plan Bb2/Bb7 and slowly build a centre. White usually plays 2.Bb2 Bb7 3.e3 Nf6 and then Nf3, d4 or c4 depending on Black's set-up. The game is a quiet manoeuvring battle where small differences in centre control decide.",
+  "white_ideas": [
+    { "idea": "Bb2, e3, Nf3 and a choice of d4 or c4 to build a centre." },
+    { "idea": "Use the long diagonal and trade the opposing bishop to gain space." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror the set-up with ...Bb7, ...e6 and ...Nf6, contesting the centre by ...c5 or ...d5." },
+    { "idea": "Challenge the b2 bishop with ...Bxg2 trades or pawn breaks." }
+  ],
+  "typical_structures": [
+    { "structure": "Mirror-image fianchetto structures with a flexible centre and bishops facing each other." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Symmetrical manoeuvring; few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Flank opening with an undecided centre." },
+    "approach": { "notes": "Played by strong players now and then; standard, though more of a set-up than a theory line." },
+    "level": { "reason": "understanding", "notes": "Fianchetto plans are easy to follow; little theory." }
+  },
+  "plan_phrases": ["Fianchetto", "Symmetrical structure"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Symmetrical, quiet, neither forcing nor a fortress." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A reputable symmetrical set-up." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Flank opening with the centre left undecided." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Respectable at strong level, used less than main lines." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans-based, little memory." },
+    "plans": { "value": ["fianchetto", "symmetrical_structure"], "reason": "Both sides fianchetto and fight for small edges." }
+  }
+}

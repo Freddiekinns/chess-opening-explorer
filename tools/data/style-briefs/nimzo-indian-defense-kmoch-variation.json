@@ -1,0 +1,44 @@
+{
+  "slug": "nimzo-indian-defense-kmoch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Kmoch Variation",
+    "eco": "E20",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. f3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White supports e4 and avoids the doubled c-pawns, aiming for a big e4-d4-c4 centre. Black answers 4...d5 or 4...c5, challenging the centre before it forms. White plays for e4, a3 and a kingside attack, while Black counterattacks the centre and can pin or capture on c3.",
+  "white_ideas": [
+    { "idea": "Build the e4-d4-c4 centre with e4, a3 and Bd3, aiming for a space advantage and attack." },
+    { "idea": "Avoid doubled c-pawns and keep the bishop pair." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...d5 or ...c5, and use ...Nc6 and ...Qa5." },
+    { "idea": "Trade the dark-squared bishop on c3 when favourable and attack White's overextended centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White's wide e4/d4/c4 centre against Black's ...c5 and ...d5 breaks." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Big-centre play where both sides attack the other's pawns; double-edged and unbalanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Playable but Black gets good counterplay." },
+    "structure": { "notes": "Centre tension with pawn breaks and an unsettled structure." },
+    "approach": { "notes": "A recognised anti-Nimzo line played by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs judgement about the centre; theory is moderate." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Big-centre clash with early pawn breaks and unbalanced play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable for both." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre in tension, pawn breaks decide." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Moderate theory, central judgement." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White builds a big centre that Black attacks." }
+  }
+}

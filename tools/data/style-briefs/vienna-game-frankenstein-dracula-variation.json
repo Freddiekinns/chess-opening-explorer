@@ -1,0 +1,46 @@
+{
+  "slug": "vienna-game-frankenstein-dracula-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Frankenstein-Dracula Variation",
+    "eco": "C27",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4",
+    "fen": "rnbqkb1r/pppp1ppp/8/4p3/2B1n3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 0 4"
+  },
+  "parent": "vienna-game-stanley-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black grabs the e4 pawn at once. White either recaptures with 4.Nxe4 d5 5.Bd3 dxe4 6.Bxe4 for an open game with a lead in development, or plays 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 g6 7.Qf3 f5 8.Qd5 Qe7 9.Nxc7+ Kd8 10.Nxa8 b6, a famously wild sequence with queens, knights and kings all exposed. Both sides take large risks and the theory is forcing.",
+  "white_ideas": [
+    { "idea": "Hit f7 and the e5 pawn with Qh5, Bb3 and Nb5, driving the Black knight about." },
+    { "idea": "In 4.Nxe4 d5 lines, use open lines and a lead in development against the Black king." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn and the e5 pawn with ...Nd6 and ...Nc6, then counterattack with ...g6 and ...f5." },
+    { "idea": "Trade down and consolidate with ...d5 to neutralise White's development lead." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with exposed kings after Qh5 lines; trapped rook on a8 and loose pawns on c7 and e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 is a forcing mutual-attack line where both kings are exposed; one slip loses fast." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black takes e4, but White regains the pawn or equal material by force in the main lines, so no gambit." },
+    "soundness": { "notes": "Both sides can hold; theory leads to roughly equal or unclear positions." },
+    "structure": { "notes": "Pawns come off the e-file early and pieces fight over open lines." },
+    "approach": { "notes": "3...Nxe4 is a normal choice against 3.Bc4 and the lines are played by strong players now and then; not a set-up." },
+    "level": { "reason": "memory", "notes": "The Qh5 line is a long forcing sequence that must be known; a memory-heavy line for both sides." }
+  },
+  "plan_phrases": ["early queen", "lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Quiet recapture", "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Nxe4 d5 5. Bd3 dxe4 6. Bxe4", "how": "Calmer open game, balanced and less forcing than the Qh5 lines." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "4.Qh5 lines are forcing with both kings exposed." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "Material is level after the main-line exchanges." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Both sides hold the theoretical lines." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open e-file and diagonals decide the game from the start." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A normal, respectable branch of the Vienna and Bishop's Opening." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "The Qh5 Nb5 line is a long forcing sequence needing preparation." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "White's queen comes out at once and White leads in development." }
+  }
+}

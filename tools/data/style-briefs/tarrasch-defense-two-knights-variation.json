@@ -1,0 +1,46 @@
+{
+  "slug": "tarrasch-defense-two-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Two Knights Variation",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "queens-gambit-declined-tarrasch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black accepts an isolated d-pawn after cxd5 exd5 for active pieces. After 5.Nf3 Nc6 6.g3 or 6.e3 Nf6, White trades on c5 or d5 to leave Black with an isolated queen's pawn or hanging pawns, and aims at the d5 square. Black plays for piece activity and a kingside attack with ...Bg4 and ...Qd6.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, castle and attack the d5 pawn; play dxc5 and Bg5 pins." },
+    { "idea": "Block the isolated pawn with Nd4 or Bb5 and head for an endgame." }
+  ],
+  "black_ideas": [
+    { "idea": "Use the active pieces with ...Nf6, ...Be7 and ...O-O and push ...c4 or ...d4 at the right time." },
+    { "idea": "Attack with the bishops on the open diagonals against the white king." }
+  ],
+  "typical_structures": [
+    { "structure": "Black isolated queen's pawn on d5, or hanging pawns on c5 and d5 after White exchanges." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dynamic play with active pieces against a long-term weakness, but not a mutual attack in the main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "A respected line of the Tarrasch used by strong players." },
+    "structure": { "notes": "After the exchange on d5 and c5 pawns Black has an isolated pawn and an open c-file; semi-open." },
+    "approach": { "notes": "A main line of the Tarrasch Defence." },
+    "level": { "reason": "understanding", "notes": "Black needs to understand IQP play; theory is moderate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "active pieces for structure", "knight outpost on d4"],
+  "sublines_that_differ": [
+    { "name": "Rubinstein Variation", "moves": "6. g3 Nf6 7. Bg2 Be7 8. O-O O-O 9. Bg5", "how": "A slower fianchetto version where White presses against the IQP." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Dynamic but strategic play around an isolated pawn." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respected main line." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Isolated pawn with open c- and e-files." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A mainstream Tarrasch line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "IQP play is a skill, with moderate theory." },
+    "plans": { "value": ["isolated_queens_pawn", "knight_outpost"], "reason": "Play centres on the isolated d-pawn and the d4 square." }
+  }
+}

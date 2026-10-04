@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-marshall-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Marshall Counterattack",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 d5",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black strikes at the centre at once with ...d5. After 4.exd5 exd5 5.Nc3 or 5.Bb5+ White gets a small plus: Black's d5 pawn can become isolated after dxc5 or d4xc5, and play reaches IQP-type positions. White's easiest plan is to simplify, and Black defends with piece activity.",
+  "white_ideas": [
+    { "idea": "Capture on d5 and open the centre, then play Bb5+ or Nc3 and dxc5, leaving Black with an isolated pawn." },
+    { "idea": "Trade pieces and use the better structure." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre at once with ...d5 and recapture with ...exd5 to get active pieces." },
+    { "idea": "Use the isolated d5 pawn as a source of piece activity with ...Nf6, ...Nc6 and ...Be7." }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn on d5 for Black, with open files and symmetrical-ish play." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Simplifying, fairly even play; Black can be pressed slowly but is not in danger." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is given; 4.exd5 exd5 and the c5 pawn is recaptured." },
+    "soundness": { "notes": "Sound but a little worse for Black; slightly inferior, not refuted." },
+    "structure": { "notes": "After the exchanges there is an isolated d-pawn with open files; I read it as semi-open with low confidence." },
+    "approach": { "notes": "Strong players seldom choose it as Black; a minor sideline." },
+    "level": { "reason": "understanding", "notes": "IQP plans for the defender; not much theory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "open centre", "trade pieces"],
+  "sublines_that_differ": [
+    { "name": "4.Nxc5? or 4.Bb5+", "moves": "1. e4 c5 2. Nf3 e6 3. d4 d5 4. exd5 exd5 5. Bb5+", "how": "Standard White reply with a pin and early simplification." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Open, simplified play neither sharp nor particularly solid." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Slightly inferior for Black but not refuted." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "An isolated d5 pawn and open files, with one side pressing along a file." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Strong players seldom choose this line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "IQP plans with little theory." },
+    "plans": { "value": ["isolated_queens_pawn"], "reason": "Black's d5 pawn becomes isolated after the exchanges." }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-smith-morra-gambit-deferred",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Smith-Morra Gambit Deferred",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. c3",
+    "fen": "rnbqkbnr/pp1p1ppp/4p3/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the c3 gambit after 2...e6, hoping for a Smith-Morra with Black's ...e6 inserted. Black can accept with 4...dxc3 5.Nxc3 or decline with 4...d5 or 4...Nf6, reaching equal and comfortable positions. If Black accepts, White gets quick development and open c- and d-files for the pawn.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Nxc3, Bc4 and O-O against the accepted pawn" },
+    { "idea": "Use the open c- and d-files for pressure on Black's queenside" },
+    { "idea": "Meet declines with e5 or exd5 and a comfortable centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Decline with ...d5 or ...Nf6 and reach an easy game" },
+    { "idea": "Accept and consolidate with ...Nc6, ...a6 and ...Qc7" },
+    { "idea": "Return the pawn if needed to complete development" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian with White centre pawns e4 against Black ...e6/...d6 and open c-file" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Gambit lines have open files and fast development; declined lines are calmer." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 4...dxc3 5.Nxc3 Black keeps the pawn with sound development; declines such as 4...d5 and 4...Nf6 5.e5 Nd5 6.cxd4 regain it at once." },
+    "soundness": { "notes": "Playable; Black has easy declines so the deferred version is less effective." },
+    "structure": { "notes": "Sicilian asymmetric structure with half-open c-file." },
+    "approach": { "notes": "A rare deferred version; strong players seldom choose it." },
+    "level": { "reason": "memory", "notes": "Known traps and development ideas; Intermediate." }
+  },
+  "plan_phrases": ["rapid development for a pawn", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Black declines", "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. c3 d5", "how": "Black declines and gets an easy game; White has no gambit." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A gambit with open files and quick development when accepted." },
+    "gambit": { "value": "white", "confidence": 0.55, "reason": "White gives the c-pawn; Black can keep it, though declines are common." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Playable though not objectively stronger than the main line." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "Sicilian asymmetric structure with half-open files." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose the deferred version." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Known development ideas and traps." },
+    "plans": { "value": ["lead_in_development", "half_open_c_file"], "reason": "Quick development and pressure on the c-file for the pawn." }
+  }
+}

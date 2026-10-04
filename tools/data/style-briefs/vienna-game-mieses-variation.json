@@ -1,0 +1,46 @@
+{
+  "slug": "vienna-game-mieses-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Mieses Variation",
+    "eco": "C26",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. g3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N3P1/PPPP1P1P/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "vienna-game-falkbeer-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop instead of playing f4, aiming for a quiet game with pressure on the centre and e5. Black usually replies 3...d5 or 3...Bc5 and 3...Nc6, developing naturally. White follows with Bg2, Nge2 and d3 or d4, keeping a flexible set-up with kingside play on f4 later.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, support e4 with d3 and Nge2, and play for f4 later." },
+    { "idea": "Pressure the centre and queenside from the long diagonal." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike in the centre with ...d5 or ...Bc5 and develop naturally." },
+    { "idea": "Play ...Nc6 and ...Bc5 and aim for equality." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game e4/e5 with White's fianchetto and a flexible centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development without forcing lines; mostly a manoeuvring game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is sacrificed." },
+    "soundness": { "notes": "Sound and solid, though not the sharpest try for an edge." },
+    "structure": { "notes": "Centre not fixed; e4/e5 with tension and d3/d4 options." },
+    "approach": { "notes": "A respectable quieter Vienna set-up." },
+    "level": { "reason": "understanding", "notes": "Few lines to learn, but positional plans need understanding; Intermediate." }
+  },
+  "plan_phrases": ["fianchetto"],
+  "sublines_that_differ": [
+    { "name": "3...d5", "moves": "1. e4 e5 2. Nc3 Nf6 3. g3 d5", "how": "Black strikes at once; 4.exd5 Nxd5 5.Bg2 gives a more open game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet development with no forcing play, neither a fortress nor a tactical race." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound fianchetto Vienna line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The e4/e5 centre is in tension with d3/d4 undecided." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal branch of the Vienna, which is itself standard." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but the position needs a feel for centre play." },
+    "plans": { "value": ["fianchetto"], "reason": "White's g2 bishop is the characteristic piece." }
+  }
+}

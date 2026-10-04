@@ -1,0 +1,44 @@
+{
+  "slug": "sicilian-defense-paulsen-basman-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Paulsen-Basman Defense",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Bc5",
+    "fen": "rnbqk1nr/pp1p1ppp/4p3/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black develops the bishop to c5 early, hitting the d4 knight, and White usually plays Nb3, Bb6 or Be3, gaining time against the bishop. Black gets a slightly passive but solid ...e6 Sicilian set-up with quick castling, while White has space and extra development. I am unsure of the details of this line.",
+  "white_ideas": [
+    { "idea": "Chase the bishop with Nb3, then develop Nc3, Bf4 or Bg5 and castle." },
+    { "idea": "Use the lead in development and the space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Retreat ...Bb6, develop ...Nc6 and ...Nf6, then castle." },
+    { "idea": "Use the half-open c-file and aim for ...d5 or ...Qb6 counterplay." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian asymmetry with White's e4 and d4 pieces, Black's ...e6 chain and half-open c-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black is slightly passive but solid; White's lead in development gives chances." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Playable and not refuted." },
+    "structure": { "notes": "Sicilian pawn asymmetry with a half-open c-file." },
+    "approach": { "notes": "Rarely chosen by strong players; a surprise-oriented move order." },
+    "level": { "reason": "neither", "notes": "Little theory and simple plans." }
+  },
+  "plan_phrases": ["half-open c-file"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Early bishop development but not especially solid or sharp." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable, if slightly worse for Black." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Sicilian with a half-open c-file." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Modest theory." },
+    "plans": { "value": ["half_open_c_file"], "reason": "Black uses the c-file." }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "vienna-game-omaha-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Omaha Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 d6 3. f4",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "vienna-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays a delayed King's Gambit after Black's quiet 2...d6. Black can take on f4, sometimes with a g5 push, or hold the centre with ...Nf6 or ...Nc6. White aims for the open f-file and quick development, while Black's d6 pawn gives a solid base. I am unsure of the details, so I describe it as a fairly rare, King's Gambit-style gambit.",
+  "white_ideas": [
+    { "idea": "Play f4 to open the f-file and push d4, developing quickly with Nf3 and Bc4." },
+    { "idea": "Use the extra central space and lead in development after exf4." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on f4 and keep the pawn with ...g5 or ...Nf6, or decline with ...Nf6 and ...Nc6." },
+    { "idea": "Use ...d6 as a solid base and counterattack in the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Gambit-like open f-file with White's e4/d4 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A gambit with open lines and kingside exposure for both sides." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "If Black takes exf4 the pawn can be kept in many lines." },
+    "soundness": { "notes": "Probably playable but rare; the quiet ...d6 helps Black." },
+    "structure": { "notes": "Open f-file and central tension." },
+    "approach": { "notes": "Very rare; a surprise gambit." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of gambit tactics." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "King's Gambit-style open play." },
+    "gambit": { "value": "white", "confidence": 0.65, "reason": "White offers the f-pawn after 3.f4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Playable but unsure; rare." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Open f-file and central breaks." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Very rare among strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Gambit tactics must be known." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White opens the f-file and develops quickly." }
+  }
+}

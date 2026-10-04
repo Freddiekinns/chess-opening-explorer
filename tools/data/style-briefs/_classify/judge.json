@@ -1,0 +1,160 @@
+{
+  "alekhine-defense-scandinavian-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The main line 3.exd5 Nxd5 trades White's e-pawn for Black's d-pawn and gives the Scandinavian structure, which both classifiers tag Semi-open on every Scandinavian line; the 3.e5 branches are French-like or locked, which pulls further away from Open, not towards it.",
+      "sources": ["s1"],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The main-line structure is the Exchange French one: e-pawns gone, d4 and d5 fixed against each other, one open file (s1, s3). That matches the Slav Exchange anchor (symmetrical d4/d5 with one file open) and the French Exchange, which both classifiers tag Semi-open, rather than the Scotch, where no central pawns stay in contact.",
+      "sources": ["s1", "s3"],
+      "taxonomy_note": "The Semi-open glossary says 'one side gets a half-open file', but the Slav Exchange anchor and the Petrov/French Exchange have a fully open file in a symmetrical structure. Worth a line saying symmetrical exchange structures with fixed d-pawns are Semi-open."
+    }
+  },
+  "queens-gambit-declined-exchange-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "A named Semi-open anchor: the Carlsbad structure with White's half-open c-file (s1, s2). The d4/d5 pawns face each other but are not a locked chain; the minority attack and ...c5 are pawn exchanges, so Closed contradicts both the anchor and the definition.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "scandinavian-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The main line 2.exd5 Qxd5 reaches a Caro-Kann-like c6/e6 against d4 with half-open d- and e-files (s1, s2). Both classifiers tag the main line, Mieses-Kotroc and Modern sub-roots Semi-open, and a root describes its main line.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": "The Scotch (Open anchor) has the mirror-image pawn count of the Scandinavian: each side has traded one central pawn and each has a half-open file. The anchors do not say where Open ends and Semi-open begins for one-for-one central trades; a sentence on why the Scotch is Open would settle the five structure disputes in this batch."
+    }
+  },
+  "sicilian-defense-smith-morra-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Accepted, the centre is e4 against Black's d- and e-pawns (Scheveningen-like); declined with 3...Nf6 it is an Alapin (s1, s2). Both are the Sicilian centre that the Najdorf and Dragon anchors call Semi-open; the open lines are the gambit's compensation, not a further central exchange.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-smith-morra-gambit-accepted": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 4.Nxc3 White's e4 faces Black's d- and e-pawns, exactly the Open Sicilian centre of the Najdorf/Dragon Semi-open anchors; the only extra open file is the c-file, on the wing (s1, s2). The sources' 'open game' describes open lines for the pieces, not the central pawns.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": "Gambit briefs say 'open game' to mean open lines. The structure axis is about the centre; the glossary's 'open files and diagonals for the pieces' invites the looser reading."
+    }
+  },
+  "slav-defense-exchange-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "A named Semi-open anchor: symmetrical d4/d5 with the c-file open and rook trades on it (s1, s3). Flexible is not available against an anchor.",
+      "sources": ["s1", "s3"],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense": {
+    "character": {
+      "value": "balanced",
+      "reason": "Black cedes the centre and White gets real attacking chances with f4 or the Monkey's Bum (s1), with a risk of being overrun (s2), so it is not Solid's 'hard to break down'. Play is slow and plan-based rather than forcing, so not Sharp either; Chessiverse's 'solid and balanced' is a generated label.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "italian-game-two-knights-defense": {
+    "structure": {
+      "value": "open",
+      "reason": "The theoretical main line 4.Ng5 d5 5.exd5 and the 4.d4 Open Variation both trade central pawns early and open lines (s1); only 4.d3 keeps a Pianissimo-style tension (s2). The classifiers agreed Sharp for character on the same reading of the main line, so the structure should follow it.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": "Crossroads roots where White's next move splits roughly evenly between a quiet and a sharp branch (Two Knights, Vienna, Old Sicilian) have no rule for which branch is 'the main line'. Character and structure should at least be read from the same branch."
+    }
+  },
+  "english-opening": {
+    "approach": {
+      "value": "standard",
+      "reason": "System means one set-up against almost anything, but the English's play is decided by Black's reply (Reversed Sicilian, Symmetrical, transpositions to the QGD or King's Indian) and is 'not a single fixed set-up' (s1, s2). It is a first-rank elite opening, and the taxonomy already files it with mainstream flank openings.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-closed": {
+    "character": {
+      "value": "balanced",
+      "reason": "Closest to the Ruy Lopez: Closed (Balanced anchor): a slow build-up that turns into an opposite-wing race, f4-f5 against ...b5 (s1, s2). White plays for a kingside attack, so it is not Solid in the sense of the Caro-Kann or London anchors.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    },
+    "approach": {
+      "value": "standard",
+      "reason": "The set-up is played only against 1...c5, which makes it an anti-Sicilian like the Alapin (standard anchor), not a set-up against almost anything like the London or the KIA. Spassky and Smyslov played it as a serious main weapon (s3), so it is not Offbeat either.",
+      "sources": ["s2", "s3"],
+      "taxonomy_note": "'Against almost anything' should say it means across the opponent's defences, not across their replies within one defence. Otherwise every fixed anti-Sicilian reads as a System, against the Alapin anchor."
+    }
+  },
+  "queens-pawn-game-chigorin-variation": {
+    "structure": {
+      "value": "flexible",
+      "reason": "d4 against d5 with no early exchange, and White's f3-e4 and Black's ...c5 breaks still to come, is a centre in tension like the London anchor (s2). Closed needs locked chains (French Advance, King's Indian after d5), and none form here. s4's 'closed positions' uses the textbook sense the taxonomy sets aside.",
+      "sources": ["s2", "s4"],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-old-sicilian": {
+    "character": {
+      "value": "balanced",
+      "reason": "The positions filed under this root are the quiet third moves (s2). Of the main continuations, the 3.Bb5 Rossolimo is positional, and Black's Accelerated Dragon and Taimanov are not Sharp by both classifiers; only the Sveshnikov-type lines are. Chessiverse's sharpness index (s1) covers the whole 2...Nc6 family, so Sharp is not established.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "vienna-game": {
+    "structure": {
+      "value": "flexible",
+      "reason": "The Vienna Gambit (3.f4) is its own root, so this root's main line is 3.Bc4 or 3.g3, where White holds e4 and the centre stays in tension until ...d5 or f4 (s1, s2). That is the Giuoco Pianissimo Flexible anchor's shape. The brief says only that most lines are 'not locked', which rules out Closed, not that the centre opens early.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-french-variation": {
+    "level": {
+      "value": "intermediate",
+      "reason": "Black heads for the Kan or Taimanov, which reward understanding the plans (s3) and which both classifiers rate Intermediate (Taimanov). The move order lets Black postpone commitment. The '80% theory' figure (s1) is a generic Sicilian statistic and does not carry Najdorf-level memory.",
+      "sources": ["s1", "s3"],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-knight-variation": {
+    "approach": {
+      "value": "standard",
+      "reason": "Most of the volume transposes to the Advance French (s2), a main line. The King's Indian Attack branch is a system (s1), but it has its own root with its own tag; 2.Nf3 itself is a move-order choice against one defence.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "vant-kruijs-opening": {
+    "level": {
+      "value": "intermediate",
+      "reason": "Little to memorise (s1), but 1.e3 has no plan of its own: White plays the English, Queen's Pawn or Larsen structures it transposes into and must free the c1-bishop (s1, s2). That is unlike the London and Colle Beginner anchors, which give one fixed set-up. Chessiverse's 'beginner' label is generic, and no source recommends it as a first repertoire.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  },
+  "queens-pawn-game-modern-defense": {
+    "character": {
+      "value": "balanced",
+      "reason": "The sources disagree: s3 calls the Modern 'extremely sharp and risky', s2 balanced, s4 sound. s3 and s2 describe 1.e4 g6, while the most-played 1.d4 branch, 2.c4 Bg7 3.Nc3, heads into slower King's Indian/Averbakh structures. Sharp is not established; consistent with the 1.e4 g6 ruling.",
+      "sources": ["s2", "s3", "s4"],
+      "taxonomy_note": null
+    }
+  },
+  "slav-defense": {
+    "character": {
+      "value": "solid",
+      "reason": "The Slav's own lines (Pure Slav, Chebanenko, Exchange) are described as solid with counterplay (s1, s2), and the sharp Semi-Slav is a separate root (Botvinnik anchor). Like the Caro-Kann, it is Solid even where lines have real tactics, and the Slav Exchange is a Solid anchor.",
+      "sources": ["s1", "s2"],
+      "taxonomy_note": null
+    }
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "slug": "rapport-jobava-system",
+  "root": {
+    "name": "Rapport-Jobava System",
+    "eco": "D01",
+    "moves": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Opening prep 3.2: The Rapport-Jobava London Basics",
+      "publisher": "Chess.com (blog, linearcat)",
+      "url": "https://www.chess.com/blog/linearcat/the-rapport-jobava-london-basics",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "The Jobava London - Top-Level Repertoire for White",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/course/the-jobava-london-top-level-repertoire-for-white/89906/",
+      "kind": "course"
+    },
+    {
+      "id": "s3",
+      "title": "Jobava London System Adviser & Replay Lab",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/jobava-london-system.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "5 Reasons to Love the Jobava London",
+      "publisher": "USCF Sales",
+      "url": "https://www.uscfsales.com/pages/5-reasons-to-love-the-jobava-london",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "London System",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/London_System",
+      "kind": "reference"
+    },
+    {
+      "id": "s6",
+      "title": "Baadur Jobava",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Baadur_Jobava",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White plays Bf4 together with Nc3, where the standard London would use c3 and Nbd2. The knight on c3 creates threats against c7 (Nb5), prepares e4 and supports pawn storms with f3, g4 and h4, often with queenside castling; against a ...g6 fianchetto White plays Qd2 and Bh6. The root here is 1.d4 d5 2.Nc3 Nf6 3.Bf4; it is also commonly reached by 1.d4 Nf6 2.Nc3 d5 3.Bf4, and the site files it under the Veresov name as an alternative. Black's main replies are 3...e6 (the most popular and solid), 3...c5, 3...Bf5, 3...g6 and 3...a6, and an early ...Nc6 is a mistake because of Nb5. Sources call it sharp and attacking with relatively little theory; both sides tend to castle late, and the difficulty is timing the plan.",
+  "white_ideas": [
+    {
+      "idea": "Nb5 jump against c7, forcing awkward development such as ...Na6.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Kingside pawn storm f3 then g4 and h4 (or h4-g4), usually with queenside castling, especially against ...Bf5 or ...e6.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Qd2 and Bh6 against a ...g6 fianchetto; Nc3 also makes c7 weak when the g7-bishop cannot defend it.",
+      "sources": [
+        "s1",
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Central expansion with e4 (after f3) when conditions allow; a fantasy Caro-Kann-like set-up via f3 and e4.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Delay castling: both sides castle late in this system.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "3...e6 as the solid, most popular reply, though White gets Nb5 pressure.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "3...c5 to challenge the d4 centre before White consolidates.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "3...Bf5 mirrors White's development but can be vulnerable to f3, g4 and h4.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "idea": "3...g6 fianchetto, weak on dark squares after Bh6 and c7 pressure.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "3...a6 to stop Nb5 and seek queenside counterplay; ...Ne4 for tactical counterplay if the timing is right.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "d4/e3 (or f3 and e4) pawns against ...d5/...e6 with the Bf4 outside the chain; central tension until ...c5 or e4, and flank pawn storms on the kingside.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "structure": "Open or semi-open centre after ...c5 and dxc5 or e4 breaks; the queenside is where White often castles and Black counterattacks.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp. Chess.com blog: sharp and tactical at elite levels, with both sides castling late (s1). Chessworld rates initiative 8/10 and theory load 4/10, notably sharper than the normal London because Nc3 creates immediate tactical threats (s3). USCF Sales: moderately sharp with concrete attacking variations, positional approaches also possible (s4). Wikipedia: considerable attacking value compared with the standard London's positional approach (s5). The 'low theory, high results' framing (s2) refers to memory, not to sharpness.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given; pawn storms and Nb5 tactics but no gambit. Early ...Nc6 can lose material to Nb5, which is Black's error rather than a gambit.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "soundness": {
+      "notes": "Sound and playable. Used by elite grandmasters (s3); played successfully by players rated 2300-2800+ including Jobava, Rapport and Berkes (s4); Jobava beat Topalov and Ponomariov with it and used it against Yu Yangyi, Dubov and Mamedyarov (s6). 'More committal than the normal London'; pawn storms launched too early are punished (s3). One source calls 3...c5 'the refutation' (s1); this is rhetorical, since the line remains in elite use. Treat as sound with some risk of overextension.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4",
+        "s6"
+      ]
+    },
+    "structure": {
+      "notes": "Varied: d4/e3 and ...d5/...e6 with tension, then ...c5 or e4 breaks open the centre; the characteristic pawn storms are on the flanks. Not a locked centre. Evidence is thin on a single dominant structure; it is closest to a flexible, partly closed or semi-open centre.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "approach": {
+      "notes": "A set-up (Bf4, Nc3, f3, e4 or h4-g4, long castling) used against most Black set-ups; sources advise focusing on plans, not memorised lines, and give recommendations against about eight to fifteen Black replies (s2, s4). Played by elite players (Jobava, Rapport, Niemann, Aronian, Van Foreest, s1), but it is a niche choice: named a modern variation of the London (s5) and a minority move at master level. First played by James Mason in 1882 (s6). Own understanding, flagged: calling it Offbeat is arguable; calling it a System is the sources' framing.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Theory load is low (4/10 in s3; 'low theory, high results' in s2; 'ease of learning is unmatched' in s4), so little memory is required. The difficulty is in recognising which plan works: premature pawn storms allow Black's counterplay (s3), and the c7 tricks and Black's ...c5 or ...Ne4 need accurate handling. Reasonable for club players but not trivial; the sources market it as accessible to all levels.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "Nb5 against c7",
+    "f3, g4, h4 pawn storm",
+    "queenside castling",
+    "Qd2 and Bh6 against the fianchetto",
+    "e4 break",
+    "late castling",
+    "low-theory attacking system"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...g6",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bf4 g6",
+      "how": "Fianchetto set-up where Qd2 and Bh6 plus Nb5 targets c7 play a bigger role; slightly different plans from the 3...e6 main line (1.1M games versus 6.6M)."
+    },
+    {
+      "name": "3...c5",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bf4 c5",
+      "how": "Direct central challenge, more open; described as Black's critical answer. Not in the site's subtree (only 3...e6 and 3...g6 appear), so it may be missing."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Rapport-Jobava System is a modern, aggressive approach against classical d5 set-ups.",
+        "verdict": "supported",
+        "note": "A modern variation of the London with considerable attacking value.",
+        "sources": [
+          "s1",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "claim": "Its rapid, flexible piece development sidesteps mainstream theory.",
+        "verdict": "supported",
+        "note": "Low theory load; plans over memorisation.",
+        "sources": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It aims to create immediate imbalances and provoke a complex, non-standard middlegame.",
+        "verdict": "supported",
+        "note": "Initiative rated high; the tactical threats come from Nc3. 'Immediate imbalances' is a loose phrase.",
+        "sources": [
+          "s3",
+          "s5"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "For White, launch a kingside pawn storm (f3, g4, h4), often after castling long.",
+        "verdict": "supported",
+        "note": "",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "For White, manoeuvre the c3-knight to b5 to exert pressure and create tactical possibilities.",
+        "verdict": "supported",
+        "note": "Nb5 against c7 is the signature idea.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "For White, manoeuvre the c3-knight to e4.",
+        "verdict": "unverifiable",
+        "note": "No source gives Ne4 for the c3-knight; sources say e4 is a pawn break (after f3).",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "For Black, challenge the f4-bishop or neutralise it with ...c5 and ...Bf5.",
+        "verdict": "supported",
+        "note": "...c5 and ...Bf5 are named replies. Note ...Bf5 can be met by f3, g4, h4.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "For Black, challenge the f4-bishop with ...h6-g5.",
+        "verdict": "unverifiable",
+        "note": "No source lists ...h6/...g5 as a plan against the Jobava bishop.",
+        "sources": []
+      },
+      {
+        "claim": "For Black, solidify the centre with ...e6 and ...c5, aiming to exploit positional concessions made by White.",
+        "verdict": "supported",
+        "note": "3...e6 is the most popular and solid reply; ...c5 is the main central challenge.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 6
+  }
+}

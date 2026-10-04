@@ -1,0 +1,144 @@
+{
+  "slug": "scandinavian-defense-valencian-variation",
+  "root": {
+    "name": "Scandinavian Defense: Valencian Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scandinavian 3...Qd8 Replay Lab & Adviser",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/scandinavian-defense-qd8-variation.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Scandinavian Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "New: Robert Ris - The smooth Scandinavian Defence with 3...Qd8",
+      "publisher": "ChessBase",
+      "url": "https://en.chessbase.com/post/new-robert-ris-the-smooth-scandinavian-defence-with-3-qd8-2",
+      "kind": "course"
+    },
+    {
+      "id": "s4",
+      "title": "Scandinavian 3...Qd8 searches (Karsten Muller and Daniel Lowinger book 'The 3...Qd8 Scandinavian: Simple and Strong', Chess for Sharks; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.everand.com/book/257786265/The-3-Qd8-Scandinavian-Simple-and-Strong",
+      "kind": "book"
+    }
+  ],
+  "overview": "Black takes on d5, loses time with the queen, and retreats it all the way home to d8, spending two tempi so that the structure is defined and a clear development plan exists. White gets a smooth lead in development and space, usually 4.d4 Nf6 and then 5.Nf3, 5.Bg5 or Bc4. Black aims for a rock-solid set-up: ...Nf6, ...c6 and ...e6, the light-squared bishop out to g4 (possibly exchanging on f3 to blunt White's attack), then ...Be7 or ...Bd6 and castling, with pressure on d4 and use of the d5 outpost. Sources call it the most passive and most solid of the third moves, playable but cramped, and requiring discipline in defence more than memorisation. White's task is not to drift: with active development (Bg5, Qe2, Bd3, castling either side) White keeps a small edge; Black has to complete development urgently.",
+  "white_ideas": [
+    { "idea": "Use the development lead and space: 4.d4 Nf6 5.Nf3 (or 5.Bg5, 5.Bc4), then Bd3, Qe2 and castling, often long.", "sources": ["s1", "s4"] },
+    { "idea": "Open the centre before Black has coordinated; avoid passive play, which lets Black's position solidify.", "sources": ["s1"] },
+    { "idea": "Bg5 to develop actively, preparing Qe2, Bd3 and queenside castling.", "sources": ["s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop urgently: ...Nf6, ...c6, ...Bg4 and ...e6, then ...Be7 or ...Bd6 and castling.", "sources": ["s1", "s3", "s4"] },
+    { "idea": "...Bg4 and ...Bxf3 to reduce White's attacking potential once a solid follow-up exists.", "sources": ["s1"] },
+    { "idea": "Compact ...c6 structure resembling a Caro-Kann; pressure the d4 pawn and use d5 as an outpost.", "sources": ["s1", "s3"] },
+    { "idea": "Build resilient structures rather than rely on tactical surprises.", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann-like ...c6/...e6 set-up with the bishop on g4 or e7/d6 against White's d4 pawn, with the d5 square as an outpost.", "sources": ["s1", "s3"] },
+    { "structure": "White d4/e-pawn exchanged: White has a central d-pawn and space; Black has a compact structure without a central pawn on e5/d5, so the centre is partly open.", "sources": ["s1", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as the most passive and the most solid Scandinavian third move; 'rock-solid set-up' and 'very solid type position'. Few early tactics; the danger is passive development ('Fischer miniatures showed how dangerous passive development can be'). Plans are steady, not forcing.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level after 2...Qxd5; no pawn is given.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Playable and sound but 'somewhat passive'; historically considered best, then superseded by 3...Qa5 and damaged by Fischer's wins, but revived (Bronstein, later Carlsen and Caruana). ChessBase course says it gives Black good chances. White keeps a development lead and space, a small edge in the sources' view.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Partly open: White gets the d4 pawn and space; Black forms ...c6/...e6 with the bishop on g4. Neither a locked centre nor a fully open one; compare with the Caro-Kann. Black's pieces are cramped but the centre is not closed.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "A third-move option within the Scandinavian, not a universal system. Never mainstream popular but played at the top: Carlsen (won against Caruana), Caruana, Kasparov, Djukic, Lutz. Larsen beat Karpov in 1979 with the Scandinavian generally and Anand has also used it. Quoted as 'one of the oldest Scandinavian ideas' and 'one of the most practical anti-theory retreats'.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessworld: requires discipline and structural understanding rather than memorisation. ChessBase/Ris: 'simple, easy-to-learn' repertoire against 1.e4 for those preferring solid positions. Muller and Lowinger book title: 'Simple and Strong'. Black must defend a slightly passive position correctly, without forcing lines to memorise.",
+      "sources": ["s1", "s3", "s4"]
+    }
+  },
+  "plan_phrases": [
+    "development lead",
+    "Caro-Kann-like ...c6 set-up",
+    "...Bg4 and ...Bxf3",
+    "pressure on d4",
+    "d5 outpost",
+    "slightly passive but solid",
+    "castling on either side"
+  ],
+  "sublines_that_differ": [
+    { "name": "Main Line (5.Nf3 Bg4)", "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 Nf6 5. Nf3 Bg4", "how": "Pins the knight; Black exchanges on f3 later and builds ...e6/...c6; the most-played branch." },
+    { "name": "Ilundain Variation (5...c6)", "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 Nf6 5. Nf3 c6", "how": "Compact ...c6 structure; the Caro-Kann-like set-up, then ...Bf5 or ...Bg4 later." },
+    { "name": "5.Bg5 / 5.Bc4 attacking tries", "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 Nf6 5. Bg5", "how": "Active development preparing Qe2, Bd3 and long castling; sharper for Black to meet." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Valencian Variation is a highly solid and safe, albeit somewhat passive, approach to the Scandinavian.",
+        "verdict": "supported",
+        "note": "'The most passive and the most solid'; Wikipedia 'somewhat passive'.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "By retreating the queen to its starting square, Black avoids further tempo losses and aims for a robust, if slightly cramped, set-up.",
+        "verdict": "wrong",
+        "note": "The queen's retreat itself costs two tempi (it moved to d5 and back) and gives White a development lead. Black avoids later attacks on the queen, not further tempo loss. Robust and slightly cramped is supported.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "It is ideal for patient, strategic players who are comfortable defending with less space, aiming to neutralise White's early initiative and outplay them in a long middlegame.",
+        "verdict": "supported",
+        "note": "Chessworld: suits players comfortable defending slightly passive positions; ChessBase: simple solid positions.",
+        "sources": ["s1", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: use the space advantage with natural development (Nf3, d4, Bc4), control the centre, and prepare a kingside attack or central expansion.",
+        "verdict": "supported",
+        "note": "Development lead and a central d4; Bg5, Qe2, Bd3 and long castling are the more usual attacking set-ups.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Black: adopt a solid structure (often ...c6 and ...e6), complete development, and challenge White's centre with a timely ...c5 or ...e5.",
+        "verdict": "supported",
+        "note": "...c6 and ...e6 are the standard structure; ...c5 and ...e5 breaks are not specifically named in the sources read, which stress pressure on d4 and the d5 outpost.",
+        "sources": ["s1", "s3", "s4"]
+      },
+      {
+        "claim": "Black: an alternative plan is to fianchetto the dark-squared bishop with ...g6 and ...Bg7.",
+        "verdict": "unverifiable",
+        "note": "No source read mentions a ...g6 fianchetto here; the usual set-up is ...Nf6, ...c6, ...Bg4, ...e6, ...Be7/...Bd6.",
+        "sources": ["s1", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 3 }
+}

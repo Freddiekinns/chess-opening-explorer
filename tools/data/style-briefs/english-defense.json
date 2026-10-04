@@ -1,0 +1,197 @@
+{
+  "slug": "english-defense",
+  "root": {
+    "name": "English Defense",
+    "eco": "A40",
+    "moves": "1. d4 b6",
+    "fen": "rnbqkbnr/p1pppppp/1p6/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "English Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/English_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Opening Repertoire: English Defense against 1.d4",
+      "publisher": "Chess.com blog (maafernan)",
+      "url": "https://www.chess.com/blog/maafernan/opening-repertoire-english-defense-against-1-d4",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippets: English Defense Hartlaub and Poli gambits, Polugaevsky-Korchnoi 1977 (chess.fandom.com, chessclub.com Alterman)",
+      "publisher": "Various (search snippets only)",
+      "url": "https://chess.fandom.com/wiki/English_Defense:_Hartlaub_Gambit_Accepted",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black plays 1...b6 (or 1...e6 2.c4 b6) intending ...Bb7, a hypermodern set-up in which the bishop on b7 pressures e4 and the centre rather than occupying it. After 3.e4 Bb7 White builds a broad pawn centre (Bd3, f3, Nc3) and Black undermines it with ...Bb4(+), ...f5 and sometimes ...Qh4, as in Polugaevsky-Korchnoi 1977 (4.Qc2 Qh4 5.Nd2 Bb4). The play is double-edged: Black gives White space and a strong centre, then goes for counterplay and tactics against it. Gambit versions (Hartlaub 4...f5, Polli 4.f3 f5) and 3.Nc3 Bb4 transpositions to a ...b6 Nimzo-Indian are the main branches. It was a surprise weapon of Speelman, Short, Miles and Keene in the 1980s and is rare in elite play, although some club players use 1...b6/2...Bb7 as a universal system.",
+  "white_ideas": [
+    {
+      "idea": "Build a strong pawn centre with c4 and e4, supported by f3 and pieces (Bd3, Nc3, Nd2), to take space and blunt the b7 bishop.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Use central space to launch a kingside attack, being careful of Black's long-range counterattack against e4.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Steer away from the English Defense: 2.e4 (Owen-type), 2.Nf3, 2.Bf4 or 2.g3 force Black to know alternatives.",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine White's centre from the flank with ...Bb7 (pressure on e4), ...Bb4, and sometimes ...Qh4 and/or ...f5.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Hypermodern approach: let White build a centre, then attack it. Black can also transpose to a French (2...d5) or a b6 Nimzo-Indian.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Gambit lines: Hartlaub (...f5 after 4.e4) and Polli (4.f3 f5) give a pawn for rapid piece play; an engine rates the Hartlaub at about +2.1 for White.",
+      "sources": ["s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c4/d4/e4 (with f3 or Bd3) against Black's b6/e6 and a bishop on b7 hitting e4, with ...Bb4 pins and possible ...f5 breaks: a big White centre under flank attack.",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "3.Nc3 Bb4 transposes to a b6 Nimzo-Indian Queen's Indian-like structure with a more classical centre.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Double-edged. Chess.com blog: 'theoretically sound and sharp'. Black gives White a strong centre and counterattacks with ...Bb4, ...f5 and ...Qh4, and both sides take risks. The Hartlaub and Polli gambits are even sharper.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Root and main lines give no material. The Hartlaub Gambit (1.d4 e6 2.c4 b6 3.Nc3 Bb7 4.e4 f5 5.exf5 Nf6) and Polli Gambit (4.f3 f5) are Black gambit sublines, and White may keep the pawn; the engine rates Hartlaub about +2.1 for White.",
+      "sources": ["s3"]
+    },
+    "soundness": {
+      "notes": "Described as theoretically sound but sharp (Chess.com blog). Used by Short, Speelman, Miles and Keene at elite level as a surprise weapon. A real risk is move order: White can avoid it with 2.e4 and other deviations. The Hartlaub Gambit is judged better for White.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "White builds a broad e4/d4/c4 centre; Black's b7 bishop and ...f5/...Bb4 provoke contact. The centre is under tension rather than locked, with chances of it opening when ...f5 or ...Bxe4 ideas land. Partly open.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "Rare in grandmaster play and used often as a surprise weapon (Wikipedia). Wikipedia also says that at club level some players adopt 1...b6/2...Bb7 as a universal system, though it is not always playable against every White set-up (2.e4 etc.). Historically linked to the 1980s English chess boom (Miles, Keene, Speelman, Short).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chess.com blog: the opening demands substantial study and is best suited to experienced players; beginners and intermediates should avoid it. Move-order tricks (2.e4, 2.Nf3, 2.Bf4, 2.g3) require a second repertoire, and the Black gambits require concrete knowledge.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern",
+    "undermine the centre",
+    "queen's bishop on b7",
+    "pressure on e4",
+    "...Bb4 pin",
+    "...f5 break",
+    "...Qh4 counterplay",
+    "space for White",
+    "central pawn mass"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Hartlaub Gambit",
+      "moves": "1. d4 b6 2. c4 Bb7 3. Nc3 e6 4. e4 f5",
+      "how": "Black gambit; Black sacrifices a pawn for rapid development and kingside attack."
+    },
+    {
+      "name": "Polli Gambit",
+      "moves": "1. d4 b6 2. c4 e6 3. e4 Bb7 4. f3 f5",
+      "how": "Black gambit: counterattacks White's centre instead of accepting passivity."
+    },
+    {
+      "name": "3.Nc3 Bb4 (b6 Nimzo-Indian)",
+      "moves": "1. d4 e6 2. c4 b6 3. Nc3 Bb7 4. Nf3 Bb4",
+      "how": "More classical and solid, transposing to a Nimzo/Queen's Indian structure."
+    },
+    {
+      "name": "Blumenfeld-Hiva Gambit",
+      "moves": "1. d4 b6 2. c4 c5 3. d5 e6 4. e4 b5 5. cxb5 f5",
+      "how": "Extremely rare (3 games in the data); a speculative Black gambit."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The English Defense is a hypermodern and flexible response to 1.d4.",
+        "verdict": "supported",
+        "note": "Wikipedia describes hypermodern principles of undermining White's centre.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black prepares to fianchetto the queen's bishop to b7.",
+        "verdict": "supported",
+        "note": "...b6 and ...Bb7 are the opening's defining moves.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Instead of directly occupying the centre, Black controls it from the flank and creates long-term pressure on White's central pawns.",
+        "verdict": "supported",
+        "note": "Black 'undermines' the centre with ...Bb7, ...Bb4, ...f5, sometimes ...Qh4.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "The opening is less travelled and suited to creative, strategic players.",
+        "verdict": "supported",
+        "note": "Rare in GM play and used as a surprise weapon; whether it suits strategic players is the writer's judgement, but sources also stress it is sharp.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black fianchettoes the queen's bishop to b7 to pressure the centre, then plays ...e6 and ...Nf6.",
+        "verdict": "supported",
+        "note": "...e6, ...Bb7 and ...Nf6 are the standard developing moves.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black prepares to challenge White's central pawn mass with breaks like ...c5 or ...d5.",
+        "verdict": "unverifiable",
+        "note": "The characteristic undermining moves in the sources are ...Bb4, ...f5 and ...Qh4. ...d5 appears only as a French transposition; ...c5 is not mentioned.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White seizes a space advantage by establishing a strong pawn centre (e4 and c4), developing to consolidate and restrict the b7 bishop.",
+        "verdict": "supported",
+        "note": "White's goal is maintaining central space with e4, supported by f3 and piece development.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black creates counterplay on the queenside or by directly attacking White's central pawns.",
+        "verdict": "supported",
+        "note": "Direct attacks on the centre are the main plan. Queenside counterplay is not mentioned in sources, but attack on the centre is.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White uses central space to organise an attack, often on the kingside, while watching for Black's counter-attack.",
+        "verdict": "unverifiable",
+        "note": "Plausible; Wikipedia's emphasis is on maintaining central space rather than a kingside attack.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 2 }
+}

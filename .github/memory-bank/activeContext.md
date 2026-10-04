@@ -1,36 +1,36 @@
 # Active Context
 
-**Date:** 2026-10-02
+**Date:** 2026-10-03
 
-## Current Task: Jev rejection filter for videos
+## Current Task: Style tags — pilot
 
-Branch `feat/jev-video-filter`. The pipeline now ends by removing pairs Jev
-confidently rejects (`mentioned_only`/`not_about`, P(good) < 0.4) from
-`video-index.json`: `tools/video-pipeline/lib/jev-filter.js`, run by
-`scripts/apply-jev-filter.js`. Answers are cached in
-`tools/data/jev-relation-cache.json`, seeded from the experiment's 32,005
-answers. It fails open without `JEV_API_KEY`.
+Branch `feat/style-taxonomy`. Replacing the LLM style tags with a fixed
+taxonomy: `docs/style-taxonomy.md` (rubric, glossary, anchors, search words).
+Plan and calibration results:
+`docs/proposals/2026-10-02-opening-style-classification.md`, "Execution plan".
+Owner chose not to wait for the `query_shape` gate.
 
-Applied to the current index: 31,605 of 72,283 position pairs removed. Top-200
-own-page coverage fell from 178 to 172; those pages show the family shelf. The
-0.4 cut-off spares parent-variation lectures on their own sub-lines (~0.47),
-which the owner counts as useful.
+Pipeline (`tools/style-tags/`): `select-roots.js` groups positions by move order
+into 1,429 variations (12 hubs skipped) and writes researcher inputs; Sonnet
+subagents follow `RESEARCHER.md` and write sourced briefs to
+`tools/data/style-briefs/<slug>.json`, including a claim-by-claim audit of the
+current description; `jev-classify.js` (classifier B, Jev) and a Sonnet subagent
+on `CLASSIFIER.md` (classifier A, reads `_classify/states.json`) tag them
+independently.
 
-Then `config/video_pins.json` (`lib/video-pins.js`) adds 18 videos Jev nominated
-(P(main) >= 0.85) and the blind judge confirmed, across 9 named openings the
-scorer cannot reach. Top-200 coverage 172 -> 181. The `JEV_API_KEY` repo secret
-is set.
+Pilot done 2026-10-04: 105 variations (top 100 plus calibration), all validation
+checks pass (`node tools/style-tags/validate.js`). Results and the rules it
+forced (Flexible structure, disputes take classifier A's answer) are in the
+proposal, "Pilot results". The owner is on Pro: research runs in waves sized to
+the 5-hour window, ~1.3–2% of it per brief.
 
-Open: the scorer scores 0 for Veresov, Owen and Nimzo-Larsen videos whose titles
-do name the opening; worth a look before adding more pins. The `irregular`
-family shelf is a grab-bag (a cloud task is giving Queen's Pawn systems a
-family). Parked next step: a rubric-scored blind judge baseline of the top-200
-pages' top 3 videos; plan and judge set-up are in
-`docs/video-matching-and-jev.md`, "What's next".
+Next: owner review of `_classify/pilot-tags.md` and the plans list (his
+openings: Vienna, Jobava, Alapin as White; Accelerated Dragon, King's Indian,
+Nimzo as Black), then extend (two tiers) or ship the pilot tags. Nothing is
+committed yet.
 
-## Previous Task: Style tags and the Jev experiment
+## Previous Task: Jev rejection filter for videos
 
-Style tags barely discriminate; the classification proposal is gated on ~2 weeks
-of `query_shape` data. The Jev experiment ran on 2026-10-02 for $1.60: its
-rejections were 99% right and its acceptances half wrong. Results are in
-`docs/proposals/2026-10-02-jev-video-experiment.md`.
+Merged as #157. The pipeline drops pairs Jev confidently rejects (P(good) < 0.4)
+and `config/video_pins.json` adds 18 verified videos. Open: the scorer gives 0
+to Veresov, Owen and Nimzo-Larsen videos that name their opening.

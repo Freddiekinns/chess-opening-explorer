@@ -1,0 +1,12 @@
+{
+  "_comment": "Owner-reviewed corrections, applied over every classifier and the judge (see final.js). Each one states why. Use for a classification that is wrong on the evidence, not to settle taste.",
+  "overrides": {
+    "sicilian-defense-old-sicilian": {
+      "level": {
+        "value": "intermediate",
+        "reason": "This root holds only White's quiet third moves after 2...Nc6; 3.d4 and 3.Bb5 are their own roots. Both classifiers judged it from evidence about the Open Sicilian with ...Nc6, which belongs to those other roots.",
+        "date": "2026-10-04"
+      }
+    }
+  }
+}

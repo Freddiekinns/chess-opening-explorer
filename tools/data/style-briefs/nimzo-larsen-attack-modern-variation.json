@@ -1,0 +1,162 @@
+{
+  "slug": "nimzo-larsen-attack-modern-variation",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Modern Variation",
+    "eco": "A01",
+    "moves": "1. b3 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Nimzowitsch–Larsen Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nimzowitsch%E2%80%93Larsen_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Nimzowitsch-Larsen Attack (1.b3): Lines, Traps & Defense",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/flank/nimzowitsch-larsen-attack/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Rack up Wins With the Nimzowitsch-Larsen Attack",
+      "publisher": "USCF Sales",
+      "url": "https://www.uscfsales.com/blogs/chess-strategies/rack-up-wins-with-the-nimzowitsch-larsen-attack",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippet: Nimzo-Larsen 1.b3 e5 2.Bb2 Nc6 3.e3 results (Wikipedia, Chess.com forums, TheChessWorld, KingSights)",
+      "publisher": "Web search snippets",
+      "url": "https://thechessworld.com/articles/openings/larsens-opening-complete-1-b3-guide-for-chess-players/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White plays 1.b3 and, after 1...e5 2.Bb2 Nc6 3.e3, lets Black build a classical e5/d5 centre and aims to undermine it with the Bb2 on the long diagonal plus Bb5, Nf3, f4, c4 and a knight on e5 or d4. The main line runs 3...d5 4.Bb5 Bd6, where White holds the dark squares and presses on e5. Wikipedia calls this true hypermodern style; opening theory generally rates many 1.b3 lines only equal, but White often gains practical chances because Black does not know the reversed-colour positions. Play is usually quiet and manoeuvring with a broad Black pawn centre to be targeted, though f4 and kingside pawn storms can give an attacking flavour. It is used by Bent Larsen, Nakamura and Carlsen mostly as a surprise weapon in blitz.",
+  "white_ideas": [
+    { "idea": "Fianchetto Bb2 to press e5/long diagonal, then e3 and Bb5 to pin/pressure the c6 knight and d4 square", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Dark-square strategy with Bb2, e3, Bb5, f4, Nf3 and Ne5", "sources": ["s2", "s4"] },
+    { "idea": "Counterattack the broad Black pawn centre with c4 and f4 breaks, attacking its defenders", "sources": ["s3"] },
+    { "idea": "Optionally castle queenside combined with g4-h4 pawn storms", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Establish a classical e5/d5 pawn centre and develop comfortably (Nc6, Nf6, Bd6)", "sources": ["s1", "s3"] },
+    { "idea": "Guard g7 and the long diagonal against Bb2; keep central control", "sources": ["s2"] },
+    { "idea": "Equalise with accurate play; vary with 2...d6 (English-like) or 2...f5 (Ringelbach)", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on e5 and d5 against a flank-developed White: Bb2, pawn e3 and c-pawn possibly c4, the Larsen 'reversed' set-up", "sources": ["s1", "s3"] },
+    { "structure": "English-type structures after 2...d6 and c4", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as 'true hypermodern': White allows a classical Black centre and undermines it; USCF Sales calls it positionally sound and giving calm, principled middlegames. Not forcing; plans are manoeuvring (Bb5, c4, f4). Occasional f4/g4 pawn storms add some attacking potential. Black can meet it comfortably and equalise.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main line. Sideline: Ringelbach Gambit (1.b3 e5 2.Bb2 f5 3.e4), a rare Black gambit-like line in the subtree.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Wikipedia: many 1.b3 lines are rated only equal by theory, but practitioners gain practical advantages at shorter time controls because of Black's unfamiliarity. Chess Doctrine: White may not exert enough pressure on the centre, so Black equalises with accurate play. USCF Sales: positionally sound, viable at elite level (2021 master games). Sound for White, with at most a small concession in objective terms.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Black's e5/d5 pawn centre faces a flank-based White; White's plan is to attack it with pieces and c4/f4. The centre is therefore in tension with pawns staying on until White breaks; roughly closed to semi-closed but can open after c4 or f4.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A flank opening: White plays b3 and Bb2 against nearly any reply (1...e5, 1...d5, 1...Nf6). Wikipedia says it is used by Larsen (its principal advocate), Nakamura and Carlsen as a surprise weapon in online blitz; Chess Doctrine says it is not played frequently at top level in classical chess but is used to avoid revealing repertoires. Respectable but a minority choice.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Minimal theory: Chess Doctrine says it prioritises themes over strict lines; USCF Sales says confidence is possible after a weekend of study. Understanding reversed structures and when to play f4 or c4 is the demanding part.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern undermining of Black's centre",
+    "long-diagonal bishop",
+    "Bb5 pressure on c6",
+    "dark-square strategy",
+    "f4 and c4 breaks",
+    "queenside castling with kingside pawn storm",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    { "name": "Main line 3...d5 4.Bb5 Bd6", "moves": "1. b3 e5 2. Bb2 Nc6 3. e3 d5 4. Bb5 Bd6", "how": "The standard hypermodern structure; White plans to undermine Black's centre." },
+    { "name": "2...d6", "moves": "1. b3 e5 2. Bb2 d6", "how": "Black keeps a solid pawn structure; White may follow with e3, Ne2 and d4/f4 or transpose to English with c4." },
+    { "name": "Ringelbach Gambit", "moves": "1. b3 e5 2. Bb2 f5 3. e4", "how": "Black attacks with ...f5; a sharp, rare line." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "White immediately cedes central pawn control to fight for it with pieces from the flank",
+        "verdict": "supported",
+        "note": "Wikipedia: White allows a classical e5/d5 centre then undermines it.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White's strategy revolves around the fianchettoed bishop on b2, aiming to undermine Black's central foothold",
+        "verdict": "supported",
+        "note": "Bb2 on the long diagonal and the e5 pawn.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "The opening leads to strategically complex and unbalanced positions",
+        "verdict": "unverifiable",
+        "note": "Sources describe calm middlegames; 'unbalanced' is not borne out. Black can equalise.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is a hypermodern opening",
+        "verdict": "supported",
+        "note": "Wikipedia: 'true hypermodern style'.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: fianchetto Bb2, control the e5 pawn, and challenge Black's centre with c4 or f4",
+        "verdict": "supported",
+        "note": "c4 and f4 breaks named by USCF Sales.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "White: develop the kingside (Nf3, e3, Be2) and castle",
+        "verdict": "unverifiable",
+        "note": "Nf3 and e3 appear; Be2 does not (Bb5 is the usual bishop move in the main line).",
+        "sources": ["s2", "s4"]
+      },
+      {
+        "claim": "Black: solidify the centre with d5 and develop quickly (Nc6, Nf6)",
+        "verdict": "supported",
+        "note": "Classical e5/d5 centre, Nc6, Bd6.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: use the space advantage to launch an attack or restrict White's pieces",
+        "verdict": "unverifiable",
+        "note": "Black seeks comfortable development and central control; no source describes a Black attack plan.",
+        "sources": []
+      },
+      {
+        "claim": "Black: challenge the fianchetto set-up by controlling the long diagonal or a kingside pawn storm",
+        "verdict": "unverifiable",
+        "note": "Guarding g7 and the long diagonal appears in Chess Doctrine; a Black pawn storm was not found.",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

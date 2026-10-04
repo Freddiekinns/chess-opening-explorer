@@ -1,0 +1,107 @@
+{
+  "slug": "owen-defense",
+  "root": {
+    "name": "Owen Defense",
+    "eco": "B00",
+    "moves": "1. e4 b6",
+    "fen": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Owen's Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Owen%27s_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Offbeat Owen's: 1.e4 b6",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/owens-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Owen's Defense search snippets (365chess, chess.com forums, lichess forum)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.365chess.com/chess-openings/Owens-Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black plays 1...b6 to fianchetto the queen's bishop on b7 and attack e4 from a distance, letting White take the centre with 2.d4 and then undermining it with ...e6, ...Nf6, ...Bb4 and the breaks ...c5 or ...d5. The main line is 2.d4 Bb7 3.Bd3 e6 4.Nf3 c5 5.c3, with 3.Nc3 (French-like) and 3.Nf3 also played. Black's kingside is a little loose and White is described as getting a space advantage and, with sensible play, a slight edge (Bauer) or around 60% wins in practice. Theory calls it slightly unsound but not refuted; it is rare at top level in classical play, although Carlsen, Nakamura and Firouzja have used it in online blitz. The 3...f5 Matovinsky Gambit is described as suicidal by Bauer.",
+  "white_ideas": [
+    { "idea": "Occupy the centre with the e4-d4 duo and gain space", "sources": ["s1", "s2"] },
+    { "idea": "3.Bd3 (most popular) to defend e4, then Nf3, c3 and O-O; or 3.Nc3, 3.c3, 3.Qe2", "sources": ["s1", "s2"] },
+    { "idea": "Restrict the b7 bishop and keep a pawn duo against ...c5/...d5 undermining", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the queen's bishop to b7 and pressure e4 from a distance", "sources": ["s1", "s2"] },
+    { "idea": "Develop with ...e6, ...Nf6 or ...Bb4 and strike with ...c5 or ...d5", "sources": ["s1", "s2"] },
+    { "idea": "Undermine the centre with pieces rather than pawns; hypermodern approach", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 duo against Black pieces on b7/f6; French-type structures if 3.Nc3 e6", "sources": ["s1", "s2"] },
+    { "structure": "...c5 or ...d5 break leads to exchanged centre with possible damaged pawns for either side", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Hypermodern, slow. White has more space and Black's kingside is a little exposed. Most lines are strategic manoeuvring; the Matovinsky Gambit 3...f5 is wild and tactical. Not a rock-solid defence: Black is a bit cramped and often has to defend patiently.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main lines involve no sacrifice. The Matovinsky Gambit 3...f5 4.exf5 Bxg2 is a Black pawn sacrifice but a sideline described as suicidal.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Wikipedia: dubious reputation, considered unreliable by modern theory; Kasparov noted more accurate lines for White were found and it is insufficient; Bauer: White cannot get more than a slight advantage with reasonable preparation. Chessable: slightly unsound though not refuted, White scores about 60 percent. Risk is on Black's side.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Centre is partly open: White keeps e4/d4 pawns, Black challenges with ...c5/...d5 and often ends in French-type or exchanged-centre positions.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Described as fundamentally offbeat and unconventional. Rarely seen in classical top-level play; used by Blatny, Minasian, Gaprindashvili, Miles, Kengis, Miezis, and by Carlsen, Nakamura, Firouzja in online blitz. Not universal system.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little established theory; Chessable says best suited to lower-rated players seeking surprise value and master players generally avoid it. Black faces practical difficulties because White has an inherent advantage.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "queen's bishop fianchetto",
+    "...c5 break",
+    "...d5 break",
+    "undermine the centre with pieces",
+    "space advantage for White",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    { "name": "Matovinsky Gambit", "moves": "1. e4 b6 2. d4 Bb7 3. Bd3 f5", "how": "Black pawn sacrifice; Bauer calls it simply suicidal." },
+    { "name": "French Variation", "moves": "1. e4 b6 2. d4 e6", "how": "Transposes to a French-like structure without Bb7 first." },
+    { "name": "3.Nc3 French-type", "moves": "1. e4 b6 2. d4 Bb7 3. Nc3 e6", "how": "French-type structure." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Owen Defense is a hypermodern and flexible response to 1.e4", "verdict": "supported", "note": "Hypermodern approach per Chessable.", "sources": ["s2"] },
+      { "claim": "Black immediately prepares to fianchetto the queen's bishop to challenge the centre from the flank", "verdict": "supported", "note": "Core idea of 1...b6.", "sources": ["s1", "s2"] },
+      { "claim": "It leads to unique and less theoretical positions where Black concedes central space early", "verdict": "supported", "note": "Limited established theory; White gets central dominance.", "sources": ["s1", "s2"] },
+      { "claim": "It suits creative and patient players who excel at counter-attacking from a solid, albeit sometimes passive, set-up", "verdict": "unverifiable", "note": "Sources call it slightly unsound and best for surprise value; 'solid' is questionable (Black is cramped and objectively worse by Wikipedia and Chessable).", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Fianchetto the queen's bishop and prepare to undermine the centre, often with ...e6 followed by ...d5", "verdict": "supported", "note": "...e6, ...c5 or ...d5 are named.", "sources": ["s1", "s2"] },
+      { "claim": "White: Seize a large pawn centre with d4, develop quickly to exploit space, restrict the b7 bishop", "verdict": "supported", "note": "Central dominance with 3.Bd3.", "sources": ["s2"] },
+      { "claim": "Black: Create pressure along the long a8-h1 diagonal, often targeting e4 and White's kingside after castling", "verdict": "supported", "note": "Bb7 pressures e4; the kingside target after castling is not mentioned in sources.", "sources": ["s2"] },
+      { "claim": "White: Use the space advantage to launch a kingside attack or cramp Black", "verdict": "unverifiable", "note": "Space advantage is stated; a kingside attack is not specifically named in the sources read.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 2 }
+}

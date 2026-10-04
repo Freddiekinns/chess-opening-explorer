@@ -1,0 +1,242 @@
+{
+  "slug": "sicilian-defense-bowdler-attack",
+  "root": {
+    "name": "Sicilian Defense: Bowdler Attack",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Bc4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "The Bowlder Attack: Bold move or beginner's folly?",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/bowlder-attack/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Defense: Bowdler Attack (B20)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/bowdler-attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Sicilian Defense: Bowdler attack",
+      "publisher": "Alberto Chueca (Editorial Chess Books)",
+      "url": "https://www.albertochueca.com/blog/sicilian-defense-bowdler-attack/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White puts the bishop on c4 in Italian Game style, eyeing f7, before establishing d4 or a centre. Black's standard answer is 2...e6 to blunt the bishop, then ...Nc6, ...Nf6 and a quick ...d5 that gains a tempo on the bishop, or ...a6 and ...b5. Sources agree Black equalises easily and often gets a slight edge, because the c4 bishop is exposed to hits and White has not used the move to fight for the centre. The line is practically harmless but not refuted: it is mostly seen at club level, with a small group of masters using it as a sideline. After 3.Qe2 Black plays 4...a6 threatening ...b5 to trap the bishop, and Black has to be careful with ...d5 before ...Nc6 because of the a4-e8 check.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nf3 and castle, aim the bishop at f7 for a kingside attack with Ng5 or f4.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "3.Qe2 to prevent ...d5 (a pin on the e-pawn/diagonal), though Black still has ...a6 and ...b5.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Sidestep main-line Sicilian theory; the opening is simple to play with no heavy theory.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "2...e6 to block the diagonal and prepare ...d5, usually after ...Nc6 and ...Nf6 (3.Nc3 Nc6 4.Nf3 Nf6 5.O-O d5).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Hit the bishop with ...d5 or ...b5 to win time and take the centre; play ...a6 first to prepare ...b5.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Develop ...Nc6 before ...d5 so the king is not exposed to Bb5+ or a check along a4-e8.",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "idea": "2...a6 or 2...Nc6 as alternatives, engine-endorsed.",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has ...d5 and ...e6 central pawns against e4 (with Black c5 pawn), often a French-like or Open-Sicilian-like set-up with Black comfortable and White's bishop on c4 or b3 misplaced.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "structure": "Positions where White plays d3 or d4 with a quiet development and Black's queenside expansion with ...a6 and ...b5.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Intended as direct (pressure on f7), but sources say Black's central breaks neutralise it and play is straightforward; not much theory. It is not a forcing or high-risk line for either side with correct play; risk falls on White if Black is accurate. Few sharp tactics beyond the f7 pressure and the ...b5 bishop trap.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed. Some lines (2...e6 3.Nf3 d5 4.exd5) reach pawn exchanges, but nothing is offered on purpose.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "soundness": {
+      "notes": "Described as 'a little dubious' and 'considered no good' (Chueca), inaccurate (Chessiverse: Black scores well), and 'not immediately losing' but a wasted opening advantage (Chessable). Chessiverse database over 54.6M games: White 45.5%, Black 50.7%, with Black's performance improving at higher ratings and longer time controls. The risk lies with White.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Moves to a normal Sicilian-style centre: Black gets ...d5/...e6 against e4 or, if White plays d4, an Open Sicilian-type structure. Centre is generally partly open (c-file for Black) with a Black c-pawn exchange possible. Sources do not describe a locked centre.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "approach": {
+      "notes": "A specific anti-Sicilian sideline, not a set-up used against everything. 'Almost never seen at the top chess level' and 'rarely played by strong players' (s3, s1), but Chessiverse lists prolific master users (Jansa 661 games and Westerinen 641 games as White; Van Wely 738 and Cebalo 592 as Black) and says it fell from 1.76% of games (2013) to 1.02% (2025).",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Chessable: beginner-friendly for White to attempt, straightforward for experienced Black players to neutralise. Chueca: relatively straightforward, no great complication; Black should study it to 'crush it right away'. Chessiverse calls it Intermediate and 'theoretician-style', which is at odds with the other two. Little theory to memorise; the Black traps are simple.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "gain a tempo on the bishop with ...d5",
+    "...b5 bishop trap",
+    "queenside expansion",
+    "early bishop development"
+  ],
+  "sublines_that_differ": [],
+  "audit": {
+    "description": [
+      {
+        "claim": "It is a direct and somewhat primitive attempt to challenge the Sicilian, sidestepping the main theoretical lines.",
+        "verdict": "supported",
+        "note": "Sources describe a simple, low-theory anti-Sicilian that develops quickly and avoids the Open Sicilian.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "White's bishop on c4 eyes the f7 pawn and aims at a quick kingside attack.",
+        "verdict": "supported",
+        "note": "f7 pressure is the stated White idea.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black can usually neutralise the threat with ...e6, leaving the bishop misplaced and a strategically favourable position for Black.",
+        "verdict": "supported",
+        "note": "...e6 then ...d5 is the standard answer; Black is slightly better in the Chessable line and scores 50.7% against 45.5%.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "It suits aggressive players who want to avoid complex theory, even at the cost of objective soundness.",
+        "verdict": "supported",
+        "note": "Described as inaccurate/a little dubious and light on theory; whether it suits 'aggressive' players is the author's framing.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: develop with Nf3 and O-O, aiming for a kingside attack with Ng5 or f4 against f7.",
+        "verdict": "supported",
+        "note": "Nf3, O-O and f7 pressure appear in the sources; Ng5 and f4 are not specifically named.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black: neutralise the bishop with ...e6, develop with ...Nf6 and ...d5 to seize the centre and make the bishop a target.",
+        "verdict": "supported",
+        "note": "Matches the 3.Nc3 Nc6 4.Nf3 Nf6 5.O-O d5 line.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "White: create tactical complications before Black completes development.",
+        "verdict": "unverifiable",
+        "note": "Sources say White lacks clear direction and Black's breaks neutralise tactics; no concrete tactical plan is given.",
+        "sources": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "Black: after stabilising, expand on the queenside with ...a6 and ...b5, kicking the bishop.",
+        "verdict": "supported",
+        "note": "...a6 and ...b5 is named, including as a trap against the c4 bishop.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 3
+  }
+}

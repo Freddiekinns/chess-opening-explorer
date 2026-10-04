@@ -1,0 +1,143 @@
+{
+  "slug": "kings-gambit",
+  "root": {
+    "name": "King's Gambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King's_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Play the Exciting, Fighting King's Gambit Now",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/kings-gambit/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "King's Gambit search summary (365chess, chess.com blog, Wikipedia; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.365chess.com/chess-openings/Kings-Gambit",
+      "kind": "reference"
+    }
+  ],
+  "overview": "2.f4 offers a pawn at once to deflect Black's e-pawn, build a big centre with d4, develop quickly and use the half-open f-file against f7 (Bc4, Nf3, castling). The root covers both the Accepted lines (2...exf4: Kieseritzky 3.Nf3 g5 4.h4 g4 5.Ne5, Muzio, Bishop's Gambit 3.Bc4) and Declined lines (Falkbeer 2...d5, Classical 2...Bc5, and 2...d6 which is the most played move in the database). Accepted lines are sharp and tactically dense; Black tries to hold the pawn with ...g5 or return it with ...d5/...d6 to ease development. Declined lines are more solid and are chosen by stronger players who want to avoid the chaos. Play is open and double-edged for White's king as well.",
+  "white_ideas": [
+    { "idea": "Take control of the centre with d4 and develop quickly.", "sources": ["s2", "s1"] },
+    { "idea": "Exploit the half-open f-file and the weak f7 square with Bc4, Nf3 and castling.", "sources": ["s2", "s1"] },
+    { "idea": "Thematic h4 against Black's ...g5 chain to force the g-pawn forward and create weaknesses (Kieseritzky).", "sources": ["s2", "s1"] },
+    { "idea": "Muzio Gambit (4.Bc4 g4 5.O-O): sacrifice a knight for three pieces bearing on f7, wildly sharp.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Accept with 2...exf4 and hold the pawn with ...g5 and defensive chains; Classical Defence 3...g5.", "sources": ["s2", "s1"] },
+    { "idea": "Return the pawn with ...d5 or ...d6 (Fischer Defence 3...d6, a high-class waiting move; Modern Defence 3...d5) to ease development and take the initiative.", "sources": ["s1", "s2"] },
+    { "idea": "Decline: Falkbeer Countergambit 2...d5 or Classical 2...Bc5, challenging White's initiative immediately.", "sources": ["s1", "s2"] },
+    { "idea": "Counterattack White's exposed king (the f-pawn has left, weakening e1-h4).", "sources": ["s1", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open game: White pawn on e4 with f4 pawn exchanged (Accepted) leaving an open f-file; centre opened quickly.", "sources": ["s1", "s2"] },
+    { "structure": "Kieseritzky: Black pawn chain g5/g4 with White knight on e5 and the h-file/kingside opened.", "sources": ["s1"] },
+    { "structure": "Falkbeer: central pawn exchanges on d5 leaving Black a pawn or lead in development for activity.", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Very sharp. Wikipedia: 'extremely sharp and unusual positions', epitome of Romantic chess; Chessable: positionally sound but requires tactical awareness. Muzio is wildly sharp. The Classical Declined (2...Bc5) is more solid and piece-oriented, which is where stronger players go.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2...exf4 Black may keep the pawn (with ...g5, ...Bg7 and so on) but the modern defences usually return it early for development. Black may also decline by 2...d5, 2...Bc5 or 2...d6, in which case no material changes hands. The data's most played continuation is 2...d6, a decline.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Chessable: positionally sound and not refuted; White achieves equality or better against all defences. Wikipedia: Fischer's 1960s article claimed it 'loses by force', but modern engines and GMs reassess it as not objectively winning for White yet offering good attacking chances, with the opening sharp and complex. Search summary: modern GMs are sceptical of soundness because computers found defensive resources; positionally sound and a danger if the opponent errs. Sources disagree on whether it is good for White objectively; the safest summary is playable but gives no edge.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Open: Accepted lines open the f-file and the centre early, tactics on the kingside; the Declined 2...d5 Falkbeer lines also open the centre. The Classical Declined (2...Bc5) can become a normal open-game structure.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A specific gambit but a respectable choice: Wikipedia and Chessable say popular at amateur level, rare at elite competition, with fashion rather than merit as the reason (modern GMs prefer the Scotch). Notable practitioners include Gallagher, the Polgar sisters and occasionally Carlsen. Search summary: top-level players use it occasionally as a surprise weapon in rapid/online events.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessable: medium-to-high difficulty, requires tactical awareness and theoretical knowledge, significant study needed (critical moves like 6...d5 in the Kieseritzky, 3.exd5 not 3.fxe5 in the Falkbeer). Wikipedia: requires precise knowledge and carries practical risks. For White's side, long forcing lines (Kieseritzky, Muzio) must be known and the attack must be handled accurately.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "pawn sacrifice for the initiative",
+    "use of the f-file",
+    "attack on f7",
+    "central control with d4",
+    "h4 against the g5 chain",
+    "return the pawn for development",
+    "Falkbeer countergambit",
+    "exposed king"
+  ],
+  "sublines_that_differ": [
+    { "name": "Kieseritzky Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5", "how": "The main line of the Accepted; forces 5...Nf6 and complex play; Black's pawn chain on the kingside." },
+    { "name": "Muzio Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O", "how": "White sacrifices a knight for three pieces on f7; wildly sharp." },
+    { "name": "Falkbeer Countergambit", "moves": "1. e4 e5 2. f4 d5", "how": "Black counterattacks at once; declined, so no material changes hands initially; open and tactical." },
+    { "name": "Classical Defence (Declined)", "moves": "1. e4 e5 2. f4 Bc5", "how": "Solid, piece-oriented; not a gambit." },
+    { "name": "Fischer Defence / 2...d6", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6", "how": "Black waits and returns the pawn when needed; high-class waiting move." },
+    { "name": "Bishop's Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Bc4", "how": "Alternative to 3.Nf3; sharp." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The King's Gambit is one of the most romantic and aggressive openings, challenging Black with a pawn sacrifice on the second move.",
+        "verdict": "supported",
+        "note": "Wikipedia calls it the epitome of Romantic chess. The pawn is given only if Black accepts.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It is designed to seize the initiative, open lines for a swift kingside attack (especially along the f-file) and create a dynamic tactical battle.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is suited to daring, creative players in sharp, complex positions willing to take calculated risks for a direct assault on the king.",
+        "verdict": "supported",
+        "note": "Matches club-level popularity, though it is rarer at elite level.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Develop quickly with Nf3 and Bc4, castle, use the open f-file to attack f7, with a timely d4 to dominate the centre.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black (Accepted): Try to consolidate the extra pawn with ...g5, develop pieces to defend the kingside, and launch a counterattack against White's exposed king.",
+        "verdict": "supported",
+        "note": "Chessable says Black cannot reliably maintain the extra pawn and most modern defences return it early, so consolidating with ...g5 is one option, not the whole picture.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black (Declined): Challenge White's setup immediately with 2...Bc5 or 2...d5, to neutralise the initiative and exploit the weaknesses created by f4.",
+        "verdict": "supported",
+        "note": "Falkbeer and Classical Defence.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

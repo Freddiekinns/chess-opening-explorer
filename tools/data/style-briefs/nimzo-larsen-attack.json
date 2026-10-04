@@ -1,0 +1,89 @@
+{
+  "slug": "nimzo-larsen-attack",
+  "root": {
+    "name": "Nimzo-Larsen Attack",
+    "eco": "A01",
+    "moves": "1. b3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Nimzowitsch-Larsen Attack", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Nimzowitsch%E2%80%93Larsen_Attack", "kind": "reference" },
+    { "id": "s2", "title": "Nimzowitsch Larsen Attack: 1.b3 Plans & Games", "publisher": "ChessWorld", "url": "https://www.chessworld.net/nimzo-larsen.asp", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Nimzo-Larsen results (Chessable, Canberra Academy of Chess)", "publisher": "Web search results", "url": "https://www.chessable.com/blog/larsens-opening/", "kind": "article" }
+  ],
+  "overview": "1.b3 prepares Bb2 on the long diagonal, a hypermodern way to control the centre and pressure Black's kingside from the flank. Black's two main replies are 1...e5 (2.Bb2 Nc6 3.e3, the most common) and 1...d5 (2.Bb2 Nf6 3.e3, often a reversed Nimzo-Indian). White's usual set-up is e3, Nf3, Bb2 with flexible pawn play (f4, c4, d3, a kingside fianchetto), choosing a central plan after seeing Black's set-up. Black may take a big d5/e5 centre for White to undermine, contest d5 with ...c5/c4 English-style, or play London-like set-ups. Theory is light, most lines are rated roughly equal, and the play can turn tactical once the long diagonal and central files open. It is used as a surprise weapon by super-GMs, especially in online blitz.",
+  "white_ideas": [
+    { "idea": "Fianchetto the queen's bishop to b2 and amplify the long diagonal through exchanges and pawn breaks.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Standard set-up with e3, Nf3, Bb2, then pawn breaks f4 (against a central pawn on e5) or c4 (control d5).", "sources": ["s1", "s2"] },
+    { "idea": "Delay the central decision until Black commits; transpose into reversed Nimzo-Indian, English or Reti structures.", "sources": ["s1", "s2"] },
+    { "idea": "Add a kingside fianchetto with d3, g3 as an alternative.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre with ...e5 and/or ...d5 to gain space before White commits.", "sources": ["s2", "s3"] },
+    { "idea": "Contest d5 with ...c5, or adopt London-like structures with ...Bf5 and solid development.", "sources": ["s1"] },
+    { "idea": "Undermine the b2 bishop and attack White's flank advance with a classical pawn centre.", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Fianchettoed Bb2 against a classical Black d5/e5 pawn centre, tension on the long diagonal", "sources": ["s1", "s2"] },
+    { "structure": "Reversed Nimzo-Indian / English-type structures after 1...d5 2.Bb2 Nf6 3.e3", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as moderately flexible: begins quietly but 'can become tactical very quickly once lines open'; avoids razor-sharp forcing lines in favour of practical imbalance. Most lines roughly equal. Not a Najdorf-type forcing opening.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Most lines rated roughly equal. Vladimir Bagirov scored around 54% wins and 38% draws over about 100 games with it, and super-GMs use it, so it is viable at high level.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Flank opening: the centre is initially not occupied by White; Black builds a d5/e5 centre which White then undermines. Many lines keep the central tension, with the Bb2 aimed at the centre and kingside. Typically a partly closed or tense centre rather than an early pawn exchange.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A genuine system, flexible against most Black set-ups, with transpositions into English and Reti structures. Played mostly as a surprise weapon by super-GMs (Carlsen, Nakamura, Jobava) in online blitz, and by specialists such as Larsen and Bagirov; not a main-line choice at classical top level.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Minimal theory; plans and move-order understanding matter more than memorised lines. Described as especially good for club players, since opponents rarely know the resulting middlegames. Judged for White, who plays it.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "long diagonal pressure",
+    "fianchettoed queen's bishop",
+    "undermine the centre with f4 or c4",
+    "reversed Nimzo-Indian",
+    "hypermodern centre control",
+    "transposing to English or Reti"
+  ],
+  "sublines_that_differ": [
+    { "name": "Nimzo-Larsen Attack: 1...d5 reversed Nimzo", "moves": "1. b3 d5 2. Bb2 Nf6 3. e3", "how": "Often a reversed Nimzo-Indian or Queen's Indian with an extra tempo; strategic, closed or tense centre." },
+    { "name": "Nimzo-Larsen Attack: 1...e5", "moves": "1. b3 e5 2. Bb2 Nc6 3. e3", "how": "Classical Black centre; White undermines it with f4 or c4, positions with more imbalance." },
+    { "name": "The Scientist's Method (named in data)", "moves": "1. b3 e5 2. Bb2 Nc6 3. d4", "how": "White strikes at once in the centre with 3.d4, contrasting with the slower 3.e3 (name not found in sources; own note)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A hypermodern flank opening where White prepares to fianchetto the queen's bishop to b2.", "verdict": "supported", "note": "Wikipedia uses the same hypermodern wording.", "sources": ["s1"] },
+      { "claim": "Controls the long diagonal and influences the centre from afar.", "verdict": "supported", "note": "Bishop on b2 controls the central squares.", "sources": ["s1", "s2"] },
+      { "claim": "A highly flexible, system-based approach that sidesteps heavy opening theory.", "verdict": "supported", "note": "Theory load minimal; a genuine system playable against most set-ups.", "sources": ["s2", "s3"] },
+      { "claim": "Leads to unique and strategically complex positions; best for creative and positional players.", "verdict": "unverifiable", "note": "Evaluative; the sources say it can become tactical once lines open.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Control the centre from the flank with the b2 bishop; undermine Black's centre (often e5) with f4 or c4; stay flexible.", "verdict": "supported", "note": "f4 and c4 are named as pawn breaks.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Occupy the centre with pawns, typically ...e5 and ...d5, to gain space.", "verdict": "supported", "note": "Black's main first replies; one chooses d5 or e5.", "sources": ["s2", "s3"] },
+      { "claim": "Black: Develop rapidly to challenge White's flank strategy and target queenside weaknesses.", "verdict": "unverifiable", "note": "No source names a queenside target; general development advice.", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

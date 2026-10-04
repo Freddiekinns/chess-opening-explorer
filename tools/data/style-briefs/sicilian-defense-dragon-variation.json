@@ -1,0 +1,265 @@
+{
+  "slug": "sicilian-defense-dragon-variation",
+  "root": {
+    "name": "Sicilian Defense: Dragon Variation, Accelerated Dragon",
+    "eco": "B54",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 g6",
+    "fen": "rnbqkbnr/pp2pp1p/3p2p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence, Accelerated Dragon",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Accelerated_Dragon",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Accelerated Dragon: Adviser & Replay Lab",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/sicilian-accelerated-dragon.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Sicilian Defence, Dragon Variation",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Dragon_Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Sicilian Defense: Accelerated Dragon, Maroczy Bind (5...Bg7)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/sicilian-defence-1-e4-c5-2-nf3-nc6-3-d4-cxd4-4-nxd4-g6-5-c4-bg7",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "Sicilian move-order searches (Wikipedia Maroczy Bind / Accelerated Dragon / Dragon; ChessBase Hyper-Accelerated Dragon: Against the Maroczy Bind; snippet only)",
+      "publisher": "Web search",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%B3czy_Bind",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Important: the root moves are 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 g6, with ...d6 already played and the knight still on b8, but the input labels it \"Accelerated Dragon\". The true Accelerated Dragon is 2...Nc6 ... 4...g6 (omitting ...d6 so that ...d5 takes one move). This position is the Dragon move order with 4...g6 before ...Nf6: it usually transposes to the Dragon after 5.Nc3 Nf6, and the subtree (148 positions, 59.8M games) is dominated by the regular Dragon and the Yugoslav Attack, which plays very differently from the Accelerated Dragon. In the Dragon proper Black fianchettoes on g7, castles short and counterattacks on the c-file; against the Yugoslav (Be3, f3, Qd2, O-O-O, h4-h5, g4) both sides race with opposite-side castling, a very sharp and heavily analysed line that is sound for Black but demands precise knowledge. White can also play 5.c4 (Maroczy Bind), a squeeze that Black meets with ...Bg7, ...Nf6, ...O-O, ...Nc6 and ...Nxd4, which is the quieter, positional branch. Where a source speaks about the Accelerated Dragon it is marked as such in the notes.",
+  "white_ideas": [
+    {
+      "idea": "Yugoslav Attack against the Dragon: Be3, f3, Qd2, castle queenside, then h4-h5 and g4 to open the h-file against the black king.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "idea": "Maroczy Bind with 5.c4 (possible because Nc3 has not been played): clamp d5, take space and squeeze Black with calm development.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Accelerated Dragon branch only (2...Nc6): 5.Nc3 Bg7 6.Be3 Nf6 7.Bc4 to restrain ...d5 and meet ...Qa5.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto on g7 with ...Nf6, ...g6 and ...O-O, then counterattack on the c-file against the Yugoslav Attack.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "idea": "Against the Bind: ...Bg7, ...Nf6, ...O-O, ...Nxd4 to ease the cramp, ...Bd7-c6, and breaks with ...b5, ...d5 or ...f5.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Accelerated Dragon branch only: reach ...d5 in one move; ...Qa5 pinning c3 and hitting d4/e4 after 7.Bc4.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Yugoslav-type position: White castled queenside, Black kingside behind a g7 bishop, c-file and h-file attacks on opposite wings.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "structure": "Maroczy Bind: White pawns on c4 and e4 against Black d6 and g6, static centre, Black cramped with a half-open c-file until knight trades or a ...b5/...d5 break.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The regular Dragon with the Yugoslav Attack is described as \"one of the sharpest of all chess openings\" with a race-to-mate (Fischer: \"White's attack almost plays itself\"), extremely tactical and double-edged. The Maroczy Bind branch, and the Accelerated Dragon generally, are described as more positional (\"more positional than the regular Dragon\"). The root's subtree is mostly the Yugoslav, so the sharp character dominates by games played.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material sacrificed in the main lines. Sacrifices on d4 or h-file in the Yugoslav Attack are tactical, not gambits.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "soundness": {
+      "notes": "Sound. Accelerated Dragon 'fully playable for both sides'; Black specialists (Malakhov, Tiviakov, Korchnoi) have winning chances; positions are about equal (Chessiverse: White 50.1%, Black 43.2%, from 1.56M games, which suggests White has a small edge against the Bind). The regular Dragon is 'theoretically sound for Black, though requiring precise knowledge'.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "structure": {
+      "notes": "Semi-open Sicilian: Black has the half-open c-file against White's e4 pawn and the g7 bishop; in the Yugoslav, both sides castle opposite and the centre stays semi-open. The Bind branch gives a static centre with White clamping d5. Not locked or fully open.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "approach": {
+      "notes": "A named main-line variation of the Open Sicilian, not a set-up played against everything. The regular Dragon is used by Kasparov (1995 match) and Topalov and is less popular than the Najdorf; Accelerated Dragon specialists include Larsen, Velimirovic, Malakhov, Tiviakov and Korchnoi. Chessiverse puts the Bind line at 0.03% of games in 2025.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Regular Dragon: heavily analysed with numerous named variations and a sharp attack where \"move order matters a great deal\", so there is a real memory burden. Chessiverse rates the Bind line \"Expert\" and a \"theoretician\" opening with 99.5% theory adherence at 2500; Chessworld says the Bind needs strategic understanding rather than memorisation. Memory and understanding both appear.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "Maroczy Bind",
+    "freeing ...d5 break",
+    "fianchettoed bishop on g7",
+    "...Nxd4 to ease cramp",
+    "...Qa5 pin on c3",
+    "Yugoslav Attack",
+    "opposite-side castling",
+    "c-file counterplay"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Dragon proper: Yugoslav Attack",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6",
+      "how": "Opposite-side castling race with h4-h5 and g4 against c-file counterplay; far sharper and more theoretical than the Bind; most of the subtree."
+    },
+    {
+      "name": "Maroczy Bind via this move order",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 g6 5. c4",
+      "how": "Static squeeze for White; Black plays ...Bg7, ...Nf6, ...O-O, ...Nc6 and ...Nxd4."
+    },
+    {
+      "name": "True Accelerated Dragon (2...Nc6)",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 Qa5",
+      "how": "Different root: ...d6 is omitted so ...d5 comes in one move; tactical 7...Qa5 line; avoids the Yugoslav."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Accelerated Dragon is a flexible, dynamic response to the Open Sicilian where Black fianchettoes the dark-squared bishop at the first opportunity.",
+        "verdict": "wrong",
+        "note": "The root position has ...d6 played and no ...Nc6, so it is the Dragon move order, not the Accelerated Dragon (which is 2...Nc6). The fianchetto is supported, but the Accelerated Dragon label does not fit these moves.",
+        "sources": [
+          "s1",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "claim": "It aims at the ...d5 break in a single move.",
+        "verdict": "wrong",
+        "note": "One-move ...d5 is the point of omitting ...d6 in the Accelerated Dragon. With ...d6 already played, ...d5 takes two moves, as the Dragon article says.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "It sidesteps the ultra-sharp Yugoslav Attack common in the main-line Dragon.",
+        "verdict": "wrong",
+        "note": "This root can and usually does reach the Yugoslav Attack after 5.Nc3 Nf6 6.Be3; the subtree is mostly Yugoslav lines.",
+        "sources": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "claim": "It is ideal for strategic players who enjoy dynamic, double-edged positions and counterplay against White's central space advantage.",
+        "verdict": "unverifiable",
+        "note": "Double-edged is supported for the Dragon; the player-type framing is not sourced.",
+        "sources": [
+          "s3"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: develop the g7 bishop, prepare the ...b5 break for queenside counterplay, and challenge White's central control, often with a timely ...d5.",
+        "verdict": "supported",
+        "note": "...b5 and ...d5 are named breaks against the Bind; in the Yugoslav the plan is c-file counterplay.",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White: establish the Maroczy Bind with c4 to restrict Black and control d5, then slowly build pressure.",
+        "verdict": "supported",
+        "note": "5.c4 is available in this move order, though the main White plan by games played is the Yugoslav Attack.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "claim": "White: avoid the Maroczy Bind, develop naturally, and exploit temporary weaknesses in Black's kingside structure.",
+        "verdict": "unverifiable",
+        "note": "No source names a kingside-structure target; the actual non-Bind plan is the Yugoslav Attack against the black king.",
+        "sources": [
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 2,
+    "pages_read": 4
+  }
+}

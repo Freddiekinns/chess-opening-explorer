@@ -1,0 +1,156 @@
+{
+  "slug": "slav-defense-exchange-variation",
+  "root": {
+    "name": "Slav Defense: Exchange Variation",
+    "eco": "D10",
+    "moves": "1. d4 d5 2. c4 c6 3. cxd5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Slav Defense (Exchange Variation section)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Slav_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Slav Defense: Exchange, Symmetrical Line",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Slav-Defense-Exchange-Symmetrical-Line",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Slav Defense: Exchange Variation (1.d4 d5 2.c4 c6 3.cxd5 cxd5), annotated study",
+      "publisher": "Lichess study",
+      "url": "https://lichess.org/study/embed/YhpQhrG9/IAfMTuMP",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Exchange Slav; search summary (Chessable, Semi-Slav Wikipedia, Exeter Chess Club, TheChessWorld; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.chessable.com/blog/slav-defense/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White captures on d5 and Black recaptures with the c-pawn, giving a symmetrical pawn structure (d4 against d5) with the c-file open to both sides. Both players develop quickly and rooks often come to the c-file, where a trade is common. White tries for a small edge with the extra tempo, usually with 4.Nc3 Nf6 5.Bf4 (or 4.Bf4 first to stop ...e5) and a later Qb3 hitting b7. Black develops the light-squared bishop with ...Bf5 before ...e6, and answers Qb3 with ...Na5, then plays ...e6 and ...Bd6 or ...a5/...b5 queenside expansion. The reputation is drawish and static ('the system that takes the fun out of playing the Slav'), and it is used by top players as a drawing weapon, though the Qb3 ideas are described as a modern attempt to keep the tension. Neither side has long forcing theory in the main lines.",
+  "white_ideas": [
+    { "idea": "Develop quickly: Nc3, Nf3, Bf4 with the dark-squared bishop outside the pawn chain, e3, Bd3, and castle.", "sources": ["s1", "s3"] },
+    { "idea": "4.Bf4 first to prevent ...e5, or 4.Nc3 as the standard, less drawish move.", "sources": ["s1", "s3"] },
+    { "idea": "Qb3 to target b7 (a recent idea), forcing ...Na5 and then Qa4+ so that Black's light-squared bishop goes to d7, inside the pawn chain.", "sources": ["s3"] },
+    { "idea": "Pressure down the c-file with Rc1 and use the first-move tempo for a small, lasting edge.", "sources": ["s3", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Bring the light-squared bishop out with ...Bf5 before playing ...e6, which is the main equalising idea.", "sources": ["s3", "s4"] },
+    { "idea": "Answer Qb3 with ...Na5, attacking the queen and covering b7.", "sources": ["s3"] },
+    { "idea": "Play ...e6 and ...Bd6, challenge the c-file with ...Rc8, and expand on the queenside with ...a5 and ...b5 for counterplay.", "sources": ["s3"] },
+    { "idea": "Sit tight: the line offers solid defensive resources with limited winning chances for either side unless White overextends.", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical d4/d5 structure with e-pawns on e3/e6 (or e-file pawns still to be played) and the c-file open to both sides; rook trades on c1/c8 are common.", "sources": ["s1", "s3"] },
+    { "structure": "Neither side has a c-pawn. A queenside minority attack does not arise from this structure: Black's c-pawn is gone (it recaptured on d5), and the typical queenside play is Qb3 against b7 or ...a5/...b5 by Black.", "sources": ["s3", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and symmetrical; 'super solid' (search-result summary), 'the system that takes the fun out of playing the Slav' (Wikipedia). Few forcing lines or sharp tactics; the Qb3 line has some concrete play (Na5, Qa4+). Mostly drawish in practice.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given. The c-pawn exchange (cxd5 cxd5) restores material at once.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound for both sides. Wikipedia: gives White minimal advantage beyond the first-move edge. Search snippet: 'in recent years' considered a viable approach for an edge with White (4.Nc3 and Qb3 ideas), but Black has sufficient play (Bf5, Na5).",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Symmetrical centre with d4/d5 pawns facing each other and the c-file open; the pawns stay in tension and the centre rarely opens quickly. Could be read as a tense/closed centre with open c-file; sources stress 'static' and 'symmetrical' rather than open or locked.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "Standard branch of the Slav against the Queen's Gambit, not a set-up played against everything. Wikipedia says it is primarily a drawing weapon used by top players to neutralise Black's counterplay. Black can avoid it with the Triangle System (2...e6 3...c6). Chess.com: popular at all levels.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess.com: relatively straightforward to learn, both sides reach balanced positions, popular at all levels as it avoids unnecessary complications. Little forced theory; the difficulty is knowing the piece placement (Bf5 before e6, Na5 against Qb3) and handling symmetrical positions without a clear pawn break.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "symmetrical pawn structure",
+    "open c-file",
+    "rook trade on the c-file",
+    "dark-squared bishop outside the pawn chain",
+    "Bf5 before e6",
+    "Qb3 against b7",
+    "first-move tempo"
+  ],
+  "sublines_that_differ": [
+    { "name": "Qb3 with Na5 and Qa4+", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. cxd5 cxd5 5. Nc3 Nc6 6. Bf4 Bf5 7. Qb3", "how": "More concrete: queen manoeuvres against b7 and the black bishop, with ...Na5 and Qa4+." },
+    { "name": "4.Bf4 first", "moves": "1. d4 d5 2. c4 c6 3. cxd5 cxd5 4. Bf4", "how": "Prevents ...e5 lines and keeps a choice of knight development." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Exchange Variation leads to a symmetrical pawn structure, often a quiet, strategic game.",
+        "verdict": "supported",
+        "note": "Symmetrical and static; Wikipedia and the study both describe it that way.",
+        "sources": ["s1", "s3", "s4"]
+      },
+      {
+        "claim": "It has a drawish reputation.",
+        "verdict": "supported",
+        "note": "'Drawish' and 'a drawing weapon' appear in the sources.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White aims to leverage the first-move advantage for subtle pressure, often through a queenside minority attack.",
+        "verdict": "wrong",
+        "note": "The first-move edge is mentioned, but no source describes a minority attack here. Black's c-pawn has gone (cxd5 cxd5), so there is no minority attack against c6; the known White ideas are Bf4, Qb3 against b7 and Rc1.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "It suits patient, strategic players who enjoy manoeuvring and exploiting small imbalances.",
+        "verdict": "unverifiable",
+        "note": "Chess.com says it is straightforward and popular at all levels; no source frames it as suiting a particular player type.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: execute a queenside minority attack with b4-b5 to create a weakness on Black's c6 pawn.",
+        "verdict": "wrong",
+        "note": "Black has no c6 pawn after cxd5 cxd5 (the pawn recaptured on d5). Own understanding (unsourced): this is the Carlsbad-structure plan from the QGD Exchange, not the Slav Exchange.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "Black: counter the minority attack (...a6 and ...b5) and seek counterplay in the centre or on the kingside.",
+        "verdict": "wrong",
+        "note": "There is no minority attack to counter. Black's real queenside play is ...a5/...b5 and ...Rc8, plus ...Na5 against Qb3.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Both sides: manoeuvre pieces to control the open c-file and prepare a favourable endgame transition.",
+        "verdict": "supported",
+        "note": "c-file control (Rc1, ...Rc8) and rook trades are typical; 'endgame transition' is the author's framing.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White: develop harmoniously and patiently, using the extra tempo to create a small but lasting advantage.",
+        "verdict": "supported",
+        "note": "Matches the 'minimal advantage beyond the first-move edge' description.",
+        "sources": ["s1", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 3 }
+}

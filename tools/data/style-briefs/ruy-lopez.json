@@ -1,0 +1,151 @@
+{
+  "slug": "ruy-lopez",
+  "root": {
+    "name": "Ruy Lopez",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Ruy Lopez",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ruy_Lopez",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Ruy Lopez Opening: How to Play It as White and Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/the-ruy-lopez-opening-how-to-play-it-as-white-and-black/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Ruy Lopez search summary (chessatlas, chess.com, RagChess; snippet only)",
+      "publisher": "Web search",
+      "url": "https://chessatlas.net/openings/ruy-lopez",
+      "kind": "article"
+    }
+  ],
+  "overview": "The Ruy Lopez is the most extensively developed Open Game. 3.Bb5 attacks the knight that defends e5, building indirect pressure on the e5 pawn without the Italian's vulnerability to ...d5. This root (3.Bb5) is a crossroads: after the most common 3...a6 (about two-thirds of games) the Closed Spanish (4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3) leads to a slow, locked-centre manoeuvring game; the Berlin (3...Nf6 4.O-O Nxe4) gives a solid, drawish endgame-flavoured structure; the Marshall Attack is a sharp Black pawn sacrifice. White's central plan is c3 and d4 plus the Nbd2-f1-g3 knight route, while Black counterattacks on the queenside (...b5, ...Na5, ...c5) or breaks with ...d5. Theory is the deepest of any 1.e4 opening.",
+  "white_ideas": [
+    { "idea": "Build the centre with c3 and d4 to press e5; 9.h3 stops ...Bg4 in the Closed Ruy.", "sources": ["s1", "s3"] },
+    { "idea": "Reroute the queen's knight Nbd2-f1-g3 to reinforce e4 and eye f5; kingside play.", "sources": ["s1", "s2"] },
+    { "idea": "Keep long-term pressure on Black ('Spanish Torture'): Black is slightly cramped and must defend patiently.", "sources": ["s1"] },
+    { "idea": "Lever a4 against Black's ...b5 pawn; Exchange Variation 4.Bxc6 dxc6 for a pawn-structure advantage (own understanding from standard knowledge, not stated in sources read).", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...d6 and ...Be7, then counterattack on the queenside with ...a6, ...b5, ...Na5 and ...c5.", "sources": ["s2", "s3"] },
+    { "idea": "Closed Ruy systems: Chigorin (9...Na5), Breyer (9...Nb8-d7), Zaitsev (9...Bb7), Karpov and others.", "sources": ["s3", "s1"] },
+    { "idea": "Berlin Defence (3...Nf6) as a solid drawing weapon, popularised by Kramnik against Kasparov in 2000.", "sources": ["s1", "s3"] },
+    { "idea": "Marshall Attack (...d5 on move 8) for a pawn sacrifice and kingside initiative, rewards preparation.", "sources": ["s1", "s3"] },
+    { "idea": "Open Ruy Lopez with 5...Nxe4 to avoid the slow Closed system.", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Closed Ruy Lopez: locked or tense centre (pawns e4/d4 vs e5/d6), play unfolds on the wings.", "sources": ["s2", "s1"] },
+    { "structure": "Berlin: queens off after ...Nxe4, d4, Bxc6 dxc6 dxe5, endgame-like with Black's king on d8 and doubled c-pawns.", "sources": ["s3"] },
+    { "structure": "Open Spanish: central pawn tension with open lines after 5...Nxe4.", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: generally positional rather than tactically sharp, though the Marshall Attack offers tactical counterplay; Chessable says closed variations lock the centre and play unfolds on the wings with tension rather than immediate tactical clarity, but also 'complex, dynamic play with good chances for both sides'. Berlin is solid and drawish; Chigorin is the most heavily analysed and aggressive Closed line. Mixed overall.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the main lines. Gambit sub-lines exist: Marshall Attack (Black pawn), Schliemann (3...f5, Black pawn), Open Ruy 5...Nxe4 (pawn regained).",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Fully sound for both sides, a top-level main line; Chessable: completely sound, White scoring about 40% wins vs Black 30%. It has stood for centuries, and Berlin is a drawing weapon at the highest level.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "In the Closed Ruy the centre locks or stays in tension with pawns on e4/d4 vs e5/d6; play is on the wings. Berlin and Exchange Variation lead to semi-open structures. Wikipedia lists the Closed Defence (5...Be7) as dominating modern play.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A main-line standard opening, not a system. Wikipedia: regularly played in top-level competition and long regarded as the most important Open Game at master level. Chessable: over 64,000 games, more than 33,000 after 2000 (in its dataset).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Wikipedia: the most extensively developed of all Open Games, analysed beyond move thirty. Chessable: immensely complex, takes years to master, more difficult to learn than other openings, though instructive. The snippet source says it has the deepest theory of any 1.e4 opening and that Closed Spanish requires memorising dozens of slow set-ups; also needs strategic understanding of manoeuvring plans (Nbd2-f1-g3, a4 lever). Black's defences (Berlin, Marshall, Closed, Breyer) each need separate preparation.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pressure on e5",
+    "c3 and d4 central break",
+    "Nbd2-f1-g3 rerouting",
+    "Spanish Torture (slow cramping pressure)",
+    "queenside counterplay with ...b5 and ...Na5",
+    "central break with ...d5",
+    "kingside attack",
+    "bishop pair",
+    "locked centre manoeuvring"
+  ],
+  "sublines_that_differ": [
+    { "name": "Berlin Defence", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6", "how": "Solid and drawish; reaches an endgame-like structure with queens off after 4.O-O Nxe4 5.d4 Nd6 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8." },
+    { "name": "Marshall Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5", "how": "Black sacrifices a pawn for a kingside attack; sharp and theory-heavy." },
+    { "name": "Schliemann Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 f5", "how": "Aggressive Black gambit; sharp." },
+    { "name": "Open Spanish", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4", "how": "Open lines and tension in the centre; tactical." },
+    { "name": "Exchange Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6", "how": "Different structures; reaches endgame-oriented positions with a structural plan for White." },
+    { "name": "Closed Ruy Lopez (Chigorin, Breyer, Zaitsev)", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O 9. h3", "how": "Slow manoeuvring over a locked centre; the Chigorin (9...Na5) is the most aggressive." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Ruy Lopez is a cornerstone of classical chess with a deep strategic approach.",
+        "verdict": "supported",
+        "note": "Most important Open Game at master level (Wikipedia).",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "3.Bb5 puts long-term pressure on e5 by pinning the defending Nc6.",
+        "verdict": "wrong",
+        "note": "It is not a true pin (the knight is not pinned to the king or queen) and e5 pressure is indirect: Bb5 attacks the knight that defends e5, and Black's tactical resources, such as ...Qd4, matter. 'Pinning' is loose language but the idea of indirect pressure on e5 is right.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It leads to a vast and complex tapestry of variations.",
+        "verdict": "supported",
+        "note": "ECO C60–C99; Chigorin, Breyer, Zaitsev, Karpov, Smyslov, Kholmov and more.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Prepare c3-d4, reroute the knight (Nf3-d2-f1-g3), and apply sustained pressure, often called the 'Spanish Torture'.",
+        "verdict": "supported",
+        "note": "Knight route is Nbd2-f1-g3 (the b1 knight, not the Nf3 knight); the Nf3 route given in the claim is wrong.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: Relieve the pin with ...a6, develop harmoniously and prepare to counter-strike in the centre, often with a timely ...d5.",
+        "verdict": "supported",
+        "note": "...a6 asks the bishop a question rather than relieving a pin; ...d5 appears as a break (Marshall). Black's usual central stance is ...d6 with queenside counterplay.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: In many lines White castles and prepares to use the h-pawn to launch a kingside attack.",
+        "verdict": "unverifiable",
+        "note": "Sources mention kingside attacking chances and knights heading to the kingside, not an h-pawn advance; 9.h3 is a prophylactic move against ...Bg4.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: Create counterplay on the queenside, challenge White's bishop on b5, and aim for a favourable pawn structure in the endgame.",
+        "verdict": "supported",
+        "note": "Queenside counterplay with ...b5, ...Na5, ...c5 supported; endgame structure plans fit the Berlin.",
+        "sources": ["s2", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

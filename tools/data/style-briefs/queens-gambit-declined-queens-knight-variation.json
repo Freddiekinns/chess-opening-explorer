@@ -1,0 +1,136 @@
+{
+  "slug": "queens-gambit-declined-queens-knight-variation",
+  "root": {
+    "name": "Queen's Gambit Declined: Queen's Knight Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Gambit Declined",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Gambit_Declined",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Queen's Gambit Declined: Complete Guide",
+      "publisher": "Chess Lab Academy",
+      "url": "https://www.chesslab.academy/openings/queens-gambit-declined/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "QGD 4.Bg5 / Cambridge Springs / minority attack search summary (Chessiverse, Wikipedia, thechessworld; snippet only)",
+      "publisher": "Web search",
+      "url": "https://chessiverse.com/resources/openings/queens-gambit-declined-1-d4-d5-2-c4-e6-3-nc3-nf6-4-bg5",
+      "kind": "reference"
+    }
+  ],
+  "overview": "The QGD with 3.Nc3 develops the knight and adds pressure on d5. The usual continuation is 3...Nf6, after which White chooses 4.Bg5 (pin; Black replies Orthodox 4...Be7, Cambridge Springs, Tartakower ...b6 or Lasker ...Ne4), 4.Nf3 or the Exchange 4.cxd5. Black holds d5 with ...e6, which gives a bulletproof centre but locks the c8 bishop; Black frees the game with ...c5 or ...e5, or ...b6 and ...Bb7. White's main plans are the minority attack (b4-b5 against c6) in Exchange structures, or central play with e4. Play is slow and technical rather than tactical, with a strong reputation for soundness, and the Cambridge Springs is the one trappy tactical sub-line.",
+  "white_ideas": [
+    { "idea": "Pressure d5 with Bg5 (pinning the f6 knight) and decide whether to exchange on d5 or keep tension.", "sources": ["s1", "s3"] },
+    { "idea": "Minority attack: b4-b5 after cxd5 to weaken Black's c6 pawn (a Carlsbad structure).", "sources": ["s2", "s3"] },
+    { "idea": "Develop naturally (Nf3, e3, Bd3, O-O) and prepare the e2-e4 central push at the right moment, or a kingside assault with the centre held.", "sources": ["s3", "s2"] },
+    { "idea": "Exchange Variation (4.cxd5) gains central space and an imbalanced structure; Black gets a queenside majority.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Support d5 with ...e6, then solve the light-squared bishop problem via ...dxc4 and ...c5 or ...b6 with ...Bb7.", "sources": ["s2", "s1"] },
+    { "idea": "Free break with ...c5 (possibly isolated or hanging pawns) or ...e5, which need dynamic compensation.", "sources": ["s1"] },
+    { "idea": "Tartakower (...b6, ...Bb7) is one of the most solid continuations; Lasker (...Ne4) trades pieces to relieve cramp.", "sources": ["s1", "s3"] },
+    { "idea": "Cambridge Springs (...Nbd7, ...c6, ...Qa5) for pressure along the a5-e1 diagonal and a trap on d5.", "sources": ["s1", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad structure (Exchange Variation: White d4+e3, Black d5+e6 with c6; White queenside pawns versus Black's three).", "sources": ["s2", "s3"] },
+    { "structure": "Classical QGD pawn centre (d5/e6 against c4/d4) with Black's c8 bishop hemmed in; possible isolated queen's pawn or hanging pawns after ...c5.", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow and technical rather than tactical (Chess Lab Academy). Wikipedia: reputation as one of Black's most reliable defences to 1.d4; Tartakower is one of the most solid continuations. Cambridge Springs and Lasker add tactics. Play is normally steady.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black declines the pawn; no material changes hands. In the Queen's Gambit proper the pawn comes back (QGA).",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Very sound: Wikipedia says it has the reputation of being one of Black's most reliable defences to 1.d4; Chess Lab Academy: one of the soundest defences to 1.d4 ever devised, backed by a century of world champions (Lasker, Capablanca, Tartakower, Carlsen).",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Centre pawns stay on d4/d5, locked or in tension; the typical middlegame is a closed or tense centre, resolved by ...c5 or e4 later. Exchange variation creates an imbalanced pawn structure with the minority attack. Black's c8 bishop is temporarily locked behind e6.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A main-line standard opening played at the top level for a century, a world championship workhorse. Not a system against everything; 3.Nc3 is the principal line.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess Lab Academy: suited to improvers and above, slow and technical rather than tactical. The strategic concepts matter more than forcing theory: minority attack, bad bishop, ...c5 timing. Theory exists in 4.Bg5 (Cambridge Springs, Lasker, Tartakower) but is manageable compared with sharp openings. Studying Black's side.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "minority attack",
+    "Carlsbad structure",
+    "bad light-squared bishop",
+    "freeing break with ...c5",
+    "isolated queen's pawn",
+    "hanging pawns",
+    "pin on the f6 knight with Bg5",
+    "central break with e4",
+    "queenside majority"
+  ],
+  "sublines_that_differ": [
+    { "name": "Cambridge Springs Defence", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5", "how": "Tactical counter with a trap on d5; much more forcing than the QGD norm." },
+    { "name": "Lasker Defence", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 Ne4", "how": "Solid with tactical exchanges." },
+    { "name": "Tartakower Variation", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6", "how": "Solid fianchetto of the light-squared bishop." },
+    { "name": "Exchange Variation", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5", "how": "Imbalanced structure; minority attack for White; slow manoeuvring." },
+    { "name": "3...Bb4 and 3...Nc6", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Bb4 / 3...Nc6", "how": "Less common Black set-ups reached in the database (4.7M and 1.5M games); different structures (Vienna/Ragozin-like and Chigorin-like) from the main 3...Nf6." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The QGD with 3.Nc3 is one of the most classical and respected continuations, setting the stage for a rich, strategic battle.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White develops a key piece, controls the centre and keeps all options open, from pressure on d5 to various pawn structures.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It suits strategic players who enjoy manoeuvring and building up pressure over the long term.",
+        "verdict": "supported",
+        "note": "Chess Lab Academy: slow and technical rather than tactical.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Exert pressure on d5, often with Bg5, and decide whether to exchange on d5 to initiate a minority attack or maintain central tension.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "Black: Solidify d5, solve the problem of the light-squared bishop (e.g. via ...b6-Bb7), and prepare counterplay with ...c5 or ...e5.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

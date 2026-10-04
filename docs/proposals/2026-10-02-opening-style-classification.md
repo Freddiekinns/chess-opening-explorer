@@ -1,7 +1,9 @@
 # Opening style classification — diagnosis and proposal
 
-**Status (2026-10-02):** proposed, not scheduled. Gated on step 0 below. Listed
-under **Later** in `docs/backlog.md`.
+**Status (2026-10-03):** piloting. The owner chose to go ahead without waiting
+for the step 0 gate, because the at-a-glance purpose of tags applies on every
+page whether or not anyone searches by style. Rubric: `docs/style-taxonomy.md`.
+Plan: [Execution plan](#execution-plan-2026-10-03).
 
 ## The problem, measured
 
@@ -82,6 +84,13 @@ A new classification has to reach all of these together:
    | Approach  | System / Main line / Offbeat         | yes                      |
    | Theory    | Light / Moderate / Heavy             | only when Light or Heavy |
    | Plans     | up to 3 of ~30 named themes (IQP, …) | yes                      |
+
+   _Superseded 2026-10-03 by `docs/style-taxonomy.md`:_ Theory became Level
+   (Beginner / Intermediate / Advanced), the site's existing labels, because
+   "light theory" is not how players talk and theory load is one of two reasons
+   an opening is hard. Character became Solid / Balanced / Sharp and Speculative
+   became Dubious, the words players actually use. Gambit and Dubious carry a
+   side, and Plans are not shown in the first release.
 
    An opening shows two to four words, and each word means something because the
    axes are exclusive: an opening cannot be both Quiet and Sharp, so today's
@@ -196,7 +205,130 @@ Step 0:
 After about two weeks of traffic, schedule this work only if style queries and
 facets are a meaningful share of use.
 
+## Execution plan (2026-10-03)
+
+There is no Anthropic API key, so the work runs as Claude Code sessions and
+subagents on the owner's Claude plan. The owner does not hand-label or write
+chess content; they skim the anchors, sanity-check openings they play, and read
+copy for whether it sounds human.
+
+### Research once, use it twice
+
+Each variation gets one sourced **brief**, written from web research and kept as
+internal data (one JSON file per variation). Tags are classified from the briefs
+now. Descriptions and plans are rewritten from the same briefs later. The
+researcher also checks the current `analysis_json` description and
+`common_plans` against its sources, claim by claim (supported / wrong /
+unverifiable). The existing text came from Gemini 2.5 Pro and much of it may be
+fine, so the later step fixes what the audit marks wrong instead of rewriting
+everything.
+
+### Grouping by move order, not name
+
+The name strings in `api/data/eco/` come from several sources and disagree: the
+Najdorf appears as "Sicilian Defense: Najdorf Variation" and "Sicilian:
+Najdorf", the Stafford under three spellings of Petrov. Grouping on the name
+string splits one variation into several, which is itself a cause of sibling
+disagreement. A variation is therefore a **root position**, and every position
+reached from it inherits its classification unless a child brief overrides it
+with a stated reason. Counts quoted earlier (707 variations behind the top 1,000
+positions) were by name and overstate the real number.
+
+`tools/style-tags/select-roots.js` implements it. Only the standard `eco_tsv`
+names (3,545 of 12,377 positions) define variations: a variation is "Family:
+first variation" of such a name, its root is the shallowest position carrying
+it, and every position belongs to the variation of its nearest `eco_tsv`-named
+ancestor. That gives **1,429 variations** in all. Twelve of them are crossroads
+such as 1.e4 and 1.d4 Nf6 (`tools/style-tags/hubs.json`); they get no tags.
+Transpositions are not merged: the London by 2.Nf3 and by 2.Bf4 are two roots.
+
+### Roles
+
+| Role         | Runs as                                  | Model      | Why                                                                                                             |
+| ------------ | ---------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| Orchestrator | the main session                         | Opus       | Owns the rubric, batching, merging and validation scripts. Never holds research text.                           |
+| Researcher   | general-purpose subagent, ~10 variations | Sonnet     | Web search and summarising sources. Writes briefs and the description audit to files.                           |
+| Classifier A | subagent, on the compact states file     | Sonnet     | Picks one value per axis from the rubric, with confidence and a one-line reason.                                |
+| Classifier B | Jev on the briefs; Opus if no Jev key    | Jev / Opus | A different model family is a real second opinion. Briefs spell the evidence out, which is what Jev reads well. |
+| Judge        | subagent with web search, disputes only  | Opus       | The hardest calls, at small volume.                                                                             |
+| Copy editor  | later phase, never the writer            | Sonnet     | Applies the prose guide. An editor that did not write the text catches AI-isms better.                          |
+
+Agents write to separate files, so they run in parallel without worktrees.
+
+### Order
+
+1. **Calibration.** One researcher on ~10 variations, mostly anchors. Tune the
+   brief schema and prompt, and measure credit use per brief. The owner reads
+   two or three briefs for openings they play.
+2. **Pilot.** Briefs for the 100 most-played variations, ranked by games across
+   all their positions, plus the calibration set. Classify with A and B, judge
+   the disagreements, run the validation checks above, and derive the plans list
+   from the briefs' `plan_phrases`. Arm (a), today's tags mapped to the
+   taxonomy, runs alongside as the baseline.
+3. **Extend** in two tiers if the pilot passes. Full web research for the next
+   ~50 variations. The rest of the 1,429 get briefs from model knowledge and the
+   parent's brief, marked unsourced, used for tags only and never for page text.
+4. **Ship tags.** Detail page, `OpeningCard`, Discover facets and both halves of
+   search ranking together, through the `seo-crawl-graph` and `search-ranking`
+   skills.
+5. **Later, separately: descriptions and plans** from the briefs, under a prose
+   guide (house style plus an AI-ism blacklist with before/after examples), most
+   popular pages first and in stages, watching Search Console between batches.
+
+### Calibration results (2026-10-03)
+
+Twelve variations: six the owner plays and six anchors. Briefs are in
+`tools/data/style-briefs/`; the two classifiers' answers are in
+`_classify/calibration-{claude,jev}.json`.
+
+- **Agreement:** Sonnet (classifier A) and Jev agreed on 69 of 72 axis
+  decisions, and both got every anchor right. The three disagreements were all
+  low-confidence Jev answers or a Level call on the Stafford Gambit.
+- **Taxonomy changes it forced:** Offbeat had been "rarely played at a high
+  level", which both classifiers applied to the Vienna; it is now "seldom played
+  by strong players", with the Vienna as a standard anchor. Closed now covers a
+  tense centre as well as a locked one (London, QGD). Level names the side it is
+  judged for, and a Dubious line is never Beginner. Plans are shown, because
+  hiding middle values left the Nimzo-Indian with only "Semi-open".
+- **Description audit:** 6 wrong claims in 4 of the 12 current descriptions,
+  e.g. the King's Indian's "…e5 frees the g7 bishop" (after d5 it blocks it) and
+  the Nimzo-Indian's recapture on c3 "with the e-pawn". The other 8 had none.
+- **Cost, on the owner's Pro plan:** the 12 briefs took about 28% of a 5-hour
+  window and ~4% of the weekly limit, roughly 32k tokens each. Classifier A on
+  the full briefs took another 8% of the window; it now reads the compact states
+  file Jev reads. Jev cost a fraction of a penny. Research is the cost, so it
+  runs in waves sized to the 5-hour window, and each brief is written as soon as
+  it is finished so an interrupted wave resumes cleanly.
+
 ## Out of scope
 
-Rewriting descriptions; cleaning up `strategic_themes`; the video and study
-pipelines.
+Cleaning up `strategic_themes`; the video and study pipelines. Rewriting
+descriptions is step 5 above, a separate decision.
+
+### Pilot results (2026-10-04)
+
+105 variations: the 100 most played (hubs excluded) plus the calibration set.
+Briefs in `tools/data/style-briefs/`, answers in `_classify/`, and what each
+page would show in `_classify/pilot-tags.md`.
+`node tools/style-tags/validate.js` passes every check.
+
+- **Anchors:** 42 of 42 right.
+- **Agreement:** Sonnet and Jev agreed on 532 of 630 axis decisions (84%).
+  Almost every disagreement was one of them choosing the hidden middle value,
+  and in all but a few cases that was Sonnet. A blind Opus audit of 14 such
+  disputes sided with Sonnet in 13, so a dispute involving a middle value now
+  takes Sonnet's answer. Only 6 disputes were between two shown words; the judge
+  settled all 6.
+- **Closed was too broad.** Letting it cover a tense centre put 42% of games
+  under Closed, including the Italian, the Ruy Lopez and the Exchange
+  variations. Structure now has a hidden middle value, Flexible, and Closed
+  means a locked centre: 8% of games.
+- **Selectivity:** Advanced fell from 61% of positions to 21% of games. No plan
+  exceeds 18%.
+- **Gaps:** 3 of 105 show nothing at all (Vienna Game, Italian Classical,
+  Queen's Pawn Chigorin) and 14 show plans only.
+- **Description audit:** about a quarter of the current descriptions contain at
+  least one wrong claim, e.g. the Dragon page describing the Accelerated Dragon.
+- **Cost:** about 105 briefs over three 5-hour windows on the Pro plan, roughly
+  1.3–2% of a window each, and about a quarter of a week's allowance in all. Jev
+  cost a few pence of TypeSafe credit.

@@ -1,0 +1,226 @@
+{
+  "slug": "caro-kann-defense",
+  "root": {
+    "name": "Caro-Kann Defense",
+    "eco": "B10",
+    "moves": "1. e4 c6",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Caro-Kann Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Caro-Kann Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Caro-Kann-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Caro-Kann Defense: Complete Opening Guide and other guides (search snippets only)",
+      "publisher": "TheChessWorld / ChessKlub / ChessDoctrine",
+      "url": "https://thechessworld.com/articles/openings/caro-kann-defense-complete-opening-guide/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays ...c6 to support ...d5 and so challenges the e4 pawn with a sound pawn structure, while keeping the light-squared bishop free to come out to f5 or g4 before ...e6 (the French Defence's main drawback, at the cost of a tempo). Black accepts less space early and tends to get a resilient, hard-to-break structure with few weaknesses and good endgame prospects. Play is mostly positional and manoeuvring; it is called more solid and less dynamic than the Sicilian (s1). The Advance (3.e5 Bf5) and Panov-Botvinnik (3.exd5 cxd5 4.c4) lines are more combative, and the Advance became the most popular White try in the 21st century. Main branches: Classical (4...Bf5), Advance, Exchange, Panov, 4...Nf6 lines, Gurgenidze (...g6), Two Knights (2.Nc3 d5 3.Nf3) and Fantasy (3.f3). This is a crossroads root after 1...c6; the pawn structures differ by branch.",
+  "white_ideas": [
+    {
+      "idea": "Take space with the Advance Variation (3.e5 Bf5) and the Bayonet Attack with g4, or play Short System with Nf3/Be2/c3 and a space edge.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Play for central pressure and an isolated queen's pawn structure against it with the Panov-Botvinnik Attack (4.c4), seeking dynamic play in the centre and on the kingside.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Exchange Variation (3.exd5 cxd5 4.Bd3) for a positional middlegame and a slightly better game; resembles a Carlsbad structure with colours reversed.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Use the quicker development against Black's slower set-up and look for a kingside initiative (my own understanding, from the current text; not specifically sourced).",
+      "sources": []
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5, and develop the light-squared bishop to f5 or g4 before playing ...e6.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Contest d4 with ...c5 at a good moment; solid structure and later piece coordination rather than tactics.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Aim for a sound structure that survives to an endgame where Black's resilience and pawn health tell.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Against the Advance, play ...Bf5 and ...e6 then ...c5, undermining the e5 and d4 chain.",
+      "sources": ["s1", "s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Classical 4...Bf5: Black pawns on c6/d5-structure traded off, so pawns on c6, e6 and d-pawn gone; solid with a good bishop and no weaknesses.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Advance Variation: White pawns on e5 and d4 gain space; Black bishop outside the chain on f5, c6/e6 structure, ...c5 break.",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Exchange Variation: symmetrical-ish, resembling a reversed Queen's Gambit Declined Carlsbad structure; Panov 4.c4 gives an isolated queen's pawn for one side.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Doubled f-pawns for Black arise after knight exchanges on f6 in some lines.",
+      "sources": ["s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Fundamentally solid and positional rather than tactical (s2). Wikipedia: 'solid defence' that is more solid and less dynamic than the Sicilian (s1). Structure has few weaknesses and is hard to attack. Caveat: the Advance (Bayonet Attack with g4), Panov and Fantasy have sharper moments, but even those are not high-risk for Black; the structure stays sound. This matches the taxonomy anchor, which says the Caro-Kann is Solid even where there are real tactics.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root. A few sidelines exist (Fantasy 3.f3 dxe4 4.fxe4 e5 is not a material gambit; Hillbilly Attack, Blackmar-style 2.Nc3 d5 3.f3 ideas) but none are central.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound for Black. Wikipedia calls it a solid defence reflecting classical principles. Advance Variation, once dismissed, is now White's most popular try but is regarded as fine for Black. The Advance scores best for White at 43% on Chess.com (s2), a database score for all ratings, not an engine verdict. Used by Capablanca, Karpov, Carlsen, Firouzja and Ding Liren (s1, s2).",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Typically semi-open: central tension around d5/e4 is resolved by exchanges, usually leaving Black with an intact c-/e- or c-/d-pawn structure and no pawn-centre fight. Advance lines are closed-ish (e5/d4 chain vs ...c5 break), while Classical and Exchange lines are open or partly open with a clean structure. Wikipedia classifies it as a Semi-Open Game by first move; for the middlegame centre, it is mixed and depends on the branch.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A recognised defence to 1.e4 at all levels, not a system played against everything. Wikipedia lists Firouzja, Artemiev and Ding as current elite users; Chess.com adds Capablanca, Karpov, Carlsen. Standard.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for Black. Wikipedia: demands solid understanding rather than memorisation-heavy preparation, with fewer tactical complications. Chess.com: beginners can grasp the idea, but multiple respected variations need distinct preparation, and understanding pawn structures matters more than rote memorisation (s2). That suggests accessible at entry level, moderate overall: Intermediate for the root rather than Beginner or Advanced.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "light-squared bishop outside the pawn chain",
+    "...c5 pawn break",
+    "solid pawn structure",
+    "endgame edge",
+    "minority attack (from the current text, unsourced)",
+    "isolated queen's pawn (Panov)",
+    "Carlsbad structure reversed",
+    "space advantage (Advance)"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Advance Variation",
+      "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5",
+      "how": "Space-gaining chain structure, sharper in the Bayonet Attack (4.g4); most popular line of the 21st century."
+    },
+    {
+      "name": "Panov-Botvinnik Attack",
+      "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4",
+      "how": "Isolated queen's pawn positions with central pressure; more dynamic."
+    },
+    {
+      "name": "Classical Variation",
+      "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5",
+      "how": "Most popular and the textbook solid branch; the taxonomy anchor for Solid."
+    },
+    {
+      "name": "Exchange Variation",
+      "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. Bd3",
+      "how": "Carlsbad-like, quiet positional play."
+    },
+    {
+      "name": "Gurgenidze / Fantasy / Two Knights",
+      "moves": "3.Nc3 g6 / 3.f3 / 2.Nc3 d5 3.Nf3",
+      "how": "Sidelines: Gurgenidze is a fianchetto system, Fantasy sharp at club level, Two Knights a transposing line."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Caro-Kann is a highly respected and solid response to 1.e4, renowned for structural integrity and reliability.",
+        "verdict": "supported",
+        "note": "Called a solid defence with a sound pawn structure; used by world champions.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black stakes a claim in the centre with ...c6, preparing to challenge e4 with ...d5.",
+        "verdict": "supported",
+        "note": "That is the purpose of ...c6.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "...c6 avoids the structural weaknesses of the French Defense.",
+        "verdict": "supported",
+        "note": "Mainly that the light-squared bishop is not blocked in, though it costs a tempo; Wikipedia frames it this way.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is perfect for the strategic player who enjoys a resilient position and understanding pawn breaks.",
+        "verdict": "supported",
+        "note": "Understanding of structures is rated above rote memorisation.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black is comfortable absorbing early pressure and counterattacking in the middlegame and excelling in the endgame.",
+        "verdict": "supported",
+        "note": "Sources stress endgame prospects and solidity; the counterattack framing is the current page's own, as Black's play is mostly positional.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: challenge the centre with ...d5, develop the light-squared bishop to f5 or g4 before ...e6.",
+        "verdict": "supported",
+        "note": "A core plan.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "Black: create a queenside minority attack with ...b5-b4.",
+        "verdict": "unverifiable",
+        "note": "Minority attacks arise in Exchange Variation structures (Carlsbad reversed) but the sources read do not describe it as a general Caro-Kann plan; the Caro-Kann lacks a universal minority attack. Own understanding, unsourced.",
+        "sources": []
+      },
+      {
+        "claim": "Black: aim for a favourable endgame.",
+        "verdict": "supported",
+        "note": "Solid structure suits endgames.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: seize a space advantage, control the centre (e.g. Advance Variation e5).",
+        "verdict": "supported",
+        "note": "Space is the Advance Variation's idea.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White: develop quickly to punish Black's slower set-up, and often launch a kingside attack to exploit Black's passive structure.",
+        "verdict": "unverifiable",
+        "note": "Black's structure is called solid, not passive, and a kingside attack is typical of the Advance (g4 Bayonet) only; the general claim is unsupported. Black accepts less space but sources do not describe a typical kingside attack.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

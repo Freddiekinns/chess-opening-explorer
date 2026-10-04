@@ -1,0 +1,320 @@
+{
+  "slug": "nimzo-indian-defense-rubinstein-system",
+  "root": {
+    "name": "Nimzo-Indian Defense: Rubinstein System",
+    "eco": "E40",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N1P3/PP3PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Nimzo-Indian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nimzo-Indian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Nimzo-Indian Defense: Play, Attack, and Counter as White & Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/nimzo-indian-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Nimzo-Indian, Rubinstein 4.e3 (E40)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/nimzo-indian-defence-1-d4-nf6-2-c4-e6-3-nc3-bb4-4-e3",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Nimzo-Indian Defence: Adviser, Plans & Model Games",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/nimzo-indian-defense.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Nimzo-Indian Defense: Hübner, Rubinstein Variation",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Nimzo-Indian-Defense-Hubner-Rubinstein-Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s6",
+      "title": "Nimzo-Indian Defense - Must-Know Structures in the Rubinstein Variation (search extract only, page not opened)",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/course/nimzo-indian-defense-must-know-structures-in-the-rubinstein-variation/99379/",
+      "kind": "course"
+    }
+  ],
+  "overview": "White ignores the pin and the threat of ...Bxc3+ and develops with Bd3, Nf3, O-O (or Ne2), accepting that doubled c-pawns may arise and banking on the bishop pair and central space; the e4 square is the recurring battleground. Black chooses between 4...O-O (flexible; 5.Bd3 d5 6.Nf3 c5 is the main line), 4...c5 (immediate pressure on d4; Hübner-style 5.Ne2 lines where White avoids doubled pawns) and 4...b6 (St. Petersburg, controlling e4 with ...Bb7). Typical middlegames feature central tension and a pawn-structure battle: hanging pawns on c3/d4 which Black blockades with knights on c4/d5, an isolated d4-pawn for White after ...cxd4 exd4, or a closed knight-versus-bishops game in the Hübner. Play is positional and manoeuvring, with understanding of the structures more important than memorised sequences.",
+  "white_ideas": [
+    {
+      "idea": "Develop first and settle the centre later: Bd3 to fight for e4 and eye the kingside, then Nf3 and O-O.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Accept doubled c-pawns after ...Bxc3+ bxc3 in return for the bishop pair, central space and the half-open b-file.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Nge2 (5.Nge2 or Hübner 5.Ne2) to recapture on c3 with the knight and keep the pawn structure intact, at the cost of blocking the f1-bishop.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    {
+      "idea": "With an isolated d4-pawn, either play for the initiative and a kingside attack or prepare d4-d5 to dissolve it.",
+      "sources": [
+        "s6"
+      ]
+    },
+    {
+      "idea": "Hold the centre with d4 and e3 and aim for a slow edge from the bishop pair.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin c3 and restrain e4, then choose the central break: ...c5 and/or ...d5.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "4...c5 to challenge d4 directly; White typically avoids recapturing with the b-pawn after ...Bxc3 here because of the risk of tripled c-pawns.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "...b6 and ...Bb7 (or ...Ba6) to control e4 and the long diagonal; the b7-bishop becomes very strong in the middlegame.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Blockade White's hanging pawns on c3/d4 with knights on c4 and d5, queen to c7, rooks to the c- or d-files.",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "idea": "Against an isolated d4-pawn, fianchetto the bishop to b7 (Karpov-style ...b6) and play on the queenside majority or via ...Na5-c4.",
+      "sources": [
+        "s6"
+      ]
+    },
+    {
+      "idea": "Hübner: trade ...Bxc3 voluntarily, close the position with ...d6 and ...e5 and use knights against White's doubled pawns.",
+      "sources": [
+        "s5"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hanging pawns on c3 and d4 (after ...Bxc3 bxc3 and ...dxc4 Bxc4), targets for Black's blockading knights.",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "structure": "Isolated queen's pawn on d4 after ...c5, ...d5, ...dxc4 and ...cxd4 exd4; piece activity versus a long-term weakness.",
+      "sources": [
+        "s6"
+      ]
+    },
+    {
+      "structure": "Doubled c-pawns for White after ...Bxc3+ bxc3; 'not always bad' for White as they give space and open lines, but weak if blockaded.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    {
+      "structure": "Hübner-style closed centre: White's e3/d4/c4 against Black's d6/e5, with the knight-versus-bishop battle.",
+      "sources": [
+        "s5"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chessable: solid rather than sharp, Black gets 'fine' positions in all lines (s2). Chessworld: broad practical main line, flexible development, 'more solid and flexible than 4.Qc2' (s4). Chess.com calls the Hübner a closed positional system with a strategically rich middlegame decided by manoeuvring, not tactics (s5). The 4...O-O 5.Bd3 d5 6.Nf3 c5 lines can reach IQP or hanging pawn positions with more dynamic piece play. Overall: Balanced, not Quiet as in a London, not Sharp.",
+      "sources": [
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose. Any pawn grabs (e.g. ...dxc4) are recaptured by force.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "soundness": {
+      "notes": "Fully sound for both sides. Wikipedia: Black achieves full equality in the sound variations, and the Nimzo has been played by every world champion since Capablanca (s1). Chessiverse figures show White 49.5%, draws 5.7%, Black 44.9% over 1.97M games, and White 48.3% / draws 9.6% / Black 42.2% at 2500 Elo (s3).",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Central tension is typical and the structure depends on Black's choice: 4...O-O/...d5/...c5 gives hanging pawns or an IQP (open, with tension, piece play); 4...b6 keeps the centre fluid; the Hübner is closed. The most-played subtree branches (Ragozin-type ...d5 after 5.Nf3, Panov-type IQP) point to a partly open centre with tension rather than a locked one. A classifier will have to pick one value for a variable structure.",
+      "sources": [
+        "s2",
+        "s3",
+        "s5",
+        "s6"
+      ]
+    },
+    "approach": {
+      "notes": "A main line, not a set-up played against anything: it depends on the Nimzo move order 3...Bb4. Mainstream at elite level (Chessiverse lists Gligoric, Aleksandrov, Donner as White practitioners and Korchnoi, Kholmov, Matanovic as Black); top-move adherence rises from 28% at 400 Elo to 65.3% at 2500, i.e. theory matters most at the top (s3). Wikipedia: Rubinstein 4.e3 is White's most popular approach alongside 4.Qc2 (s1).",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable: Black's opening moves are easy to understand and theory is easier to learn than many openings, but the variation rewards understanding of pawn structures and piece coordination (s2). Chessworld: suits players who prefer strategic plans over memorisation, though mastering central tension and structure assessment is essential (s4). Own understanding, flagged: the many structures (IQP, hanging pawns, doubled c-pawns, Hübner) each need a different plan, so the hard part is judgement, not move memory.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "bishop pair",
+    "doubled c-pawns",
+    "hanging pawns",
+    "isolated queen's pawn",
+    "blockade the hanging pawns",
+    "control of e4",
+    "...c5 and ...d5 breaks",
+    "...b6 and ...Bb7",
+    "Nge2 to avoid doubled pawns",
+    "Hübner closed centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Hübner Variation (4...c5 5.Ne2 ... 6.a3 Bxc3+ 7.Nxc3)",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Ne2",
+      "how": "Closed, positional, knight-versus-bishop play; White recaptures with the knight and avoids doubled pawns. Differs from the main line's dynamic structures."
+    },
+    {
+      "name": "St. Petersburg / ...b6 lines",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 b6",
+      "how": "Black fianchettoes and fights for e4 with ...Bb7; central tension is maintained and the play is more flexible."
+    },
+    {
+      "name": "Panov-type IQP lines",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Nf3 cxd4 6. exd4 d5",
+      "how": "White gets an isolated d4-pawn with open files and piece activity, a structure for IQP play rather than a manoeuvring game."
+    },
+    {
+      "name": "4...O-O 5.Bd3 d5 6.Nf3 c5 (hanging pawns)",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 c5",
+      "how": "The most played main line; leads to hanging pawns or an IQP depending on the exchanges."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Rubinstein System is a classical, highly respected line aiming for a solid central set-up and a strategically complex game.",
+        "verdict": "supported",
+        "note": "Named after Rubinstein; the sources describe it as solid, flexible and the practical main line. (It is White's system within the Nimzo, rather than a 'response to the Nimzo-Indian'.)",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "By playing 4.e3, White prepares to recapture on c3 with the e-pawn, avoiding the doubled pawns common in other lines.",
+        "verdict": "wrong",
+        "note": "4.e3 does not prepare an e-pawn recapture; on ...Bxc3+ White recaptures with the b-pawn (bxc3), giving doubled c-pawns, which the sources say White accepts. Doubled pawns are avoided only in the Hübner/Nge2 version, by recapturing with the knight.",
+        "sources": [
+          "s2",
+          "s3",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "claim": "The play is a slow, manoeuvring battle.",
+        "verdict": "supported",
+        "note": "True of the main and Hübner lines; the IQP lines are more dynamic.",
+        "sources": [
+          "s2",
+          "s5"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: develop with Bd3, Nf3, 0-0 and a3, aiming to use the bishop pair and central space for a long-term advantage or a kingside attack.",
+        "verdict": "supported",
+        "note": "Bd3, Nf3 and O-O are the standard development; the bishop pair and central space are cited. a3 appears to force a decision on the bishop; a kingside attack is the softer element.",
+        "sources": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black: challenge the centre with ...c5 and/or ...d5, often trading the bishop on c3 to create structural weaknesses and counterplay against the c4-pawn.",
+        "verdict": "supported",
+        "note": "",
+        "sources": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White: in lines with ...d5, White can play cxd5 to create an isolated queen's pawn position with open files.",
+        "verdict": "wrong",
+        "note": "The IQP arises from ...c5, ...d5, ...dxc4 and ...cxd4 exd4 (an isolated d4-pawn), not from cxd5, which leads to a different, symmetrical-type structure (own understanding, flagged). Sources describe the IQP via exchanges on d4 and c4.",
+        "sources": [
+          "s6"
+        ]
+      },
+      {
+        "claim": "Black: blockade White's centre after ...Bxc3 bxc3 by controlling d5 and e4 and reroute the f6-knight to support the queenside.",
+        "verdict": "supported",
+        "note": "Knight blockade on c4/d5 and control of e4 are cited; knight to c4 via a5 is cited for the IQP structure.",
+        "sources": [
+          "s2",
+          "s6"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 2,
+    "pages_read": 5
+  }
+}

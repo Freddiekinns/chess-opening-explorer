@@ -1,0 +1,93 @@
+{
+  "slug": "sicilian-defense-mcdonnell-attack",
+  "root": {
+    "name": "Sicilian Defense: McDonnell Attack",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. f4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Chess Opening Theory/1. e4/1...c5/2. f4", "publisher": "Wikibooks", "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c5/2._f4", "kind": "reference" },
+    { "id": "s2", "title": "Grand Prix Attack Adviser & Replay Lab", "publisher": "ChessWorld", "url": "https://www.chessworld.net/grand-prix-attack.asp", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: McDonnell / Tal Gambit results (Chessable Grand Prix blog, Chess.com and Lichess forums, Jeremy Silman quoted)", "publisher": "Web search results", "url": "https://www.chessable.com/blog/grand-prix-attack/", "kind": "article" }
+  ],
+  "overview": "2.f4 (the McDonnell Attack, an 'accelerated' Grand Prix) is an Anti-Sicilian that starts a kingside attack at once: White follows with Nf3, Bc4 (or Bb5 against ...Nc6), O-O and d3, with f4-f5 and Qe1-h4 ideas, avoiding the Open Sicilian's theory. The immediate 2.f4 has an answer, 2...d5 (the Tal Gambit): 3.e5 gives Black a good French-type structure, and 3.exd5 Nf6 gives Black a development lead for the pawn. Because of this, the modern path is 2.Nc3 and 3.f4 (the conventional Grand Prix). Other Black replies (2...Nc6, 2...e6, 2...d6, 2...g6) are very playable. The result is attacking, sometimes loosening White's own king, and club-friendly because patterns matter more than memorised lines.",
+  "white_ideas": [
+    { "idea": "Quick kingside attack: Nf3, Bc4, O-O, with f4-f5 and Qe1-h4.", "sources": ["s2"] },
+    { "idea": "Bb5 set-ups against ...Nc6 to squeeze c6; Bc4 for direct pressure on f7.", "sources": ["s2"] },
+    { "idea": "Control the centre with d3 (or c3 and d4 for a big centre) while avoiding the theory of the Open Sicilian.", "sources": ["s2"] },
+    { "idea": "Prefer the move order 2.Nc3 and 3.f4 so that the Tal Gambit and ...Nc6/...e5 ideas are less effective.", "sources": ["s1", "s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "2...d5 Tal Gambit: strike the centre at once; after 3.e5 reach a favourable French structure (...Bf5, ...e6); after 3.exd5 Nf6 gain development for the pawn.", "sources": ["s1", "s3"] },
+    { "idea": "Quieter replies 2...Nc6, 2...e6, 2...d6, 2...g6 with ...Bg7: very playable though less ambitious.", "sources": ["s1", "s2"] },
+    { "idea": "Avoid passive defence, which is dangerous against the attacking formation.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "White f4/e4 duo with space on the kingside and Bc4/Bb5 pressure; Black c5/d6 or e6 Sicilian structure", "sources": ["s2"] },
+    { "structure": "After 2...d5 3.e5: French-like structure (Black Bf5 and e6) with White's f4 pawn already placed", "sources": ["s1", "s3"] },
+    { "structure": "After 2...d5 3.exd5 Nf6: open centre with Black developing ahead", "sources": ["s1", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Rated high on sharpness, particularly after 2...d5. White's aim is a quick kingside attack, at the cost of a weakened king-side (the e1-h4 diagonal). Black has the 2...d5 central counter. Overall aggressive and tactical, but sources also say it is club-friendly pattern-based play.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "2.f4 is not a pawn sacrifice at the root. The Tal Gambit (2...d5) is a Black pawn gambit side-branch (3.exd5 Nf6), and Black gets a development lead; White can retain the pawn with care but Black gets excellent compensation.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Playable but move-order dependent; the immediate 2.f4 demands precise knowledge. According to Silman and others, 2...d5 3.exd5 Nf6 is Black's best reply, and it has caused the immediate 2.f4 to decline in popularity. The conventional 2.Nc3 and 3.f4 route is regarded as more reliable.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Sicilian structure with the c-pawn exchanged for White's d-pawn only in some lines; in the main lines (2...Nc6, 2...e6) the centre stays semi-open as in a Sicilian with White not playing d4; Black has a half-open c-file. After 2...d5 it opens into French- or Scandinavian-like structures.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "An Anti-Sicilian set-up played against 1...c5 only. Described as an aggressive but somewhat offbeat approach to the Sicilian; elite players have used the Grand Prix (2.Nc3, 3.f4) successfully, but the immediate 2.f4 has declined in popularity.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Moderate theory; patterns matter more than memorisation (ChessWorld rates difficulty as club-friendly). Understanding of the move order (2.f4 vs 2.Nc3) and the king safety issues is the demand. Judged for White, who plays it.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "f4-f5 push",
+    "Qe1-h4 manoeuvre",
+    "bishop to c4 aiming at f7",
+    "Bb5 squeeze on c6",
+    "Tal Gambit ...d5 counter",
+    "avoiding Open Sicilian theory"
+  ],
+  "sublines_that_differ": [
+    { "name": "Sicilian: Grand Prix, Tal Defence (2...d5)", "moves": "1. e4 c5 2. f4 d5", "how": "Black gambit; 3.exd5 Nf6 gives Black a development lead, 3.e5 leads to a French-like structure; plays very differently from the 2...Nc6 lines." },
+    { "name": "Sicilian: Grand Prix, 2...Nc6 3.Nf3", "moves": "1. e4 c5 2. f4 Nc6 3. Nf3", "how": "The main Grand Prix development with Bc4 or Bb5 and castling; slower, positional attack." },
+    { "name": "Sicilian: Grand Prix, 2...e6", "moves": "1. e4 c5 2. f4 e6", "how": "Black plays a flexible Sicilian set-up; White often continues Nf3 and Bb5 or Bc4." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The McDonnell Attack is an aggressive and somewhat unorthodox response to the Sicilian, characterised by the early f4 push.", "verdict": "supported", "note": "Wikibooks uses almost the same description: aggressive and somewhat offbeat.", "sources": ["s1"] },
+      { "claim": "White aims to seize the initiative, control the centre, and launch a quick kingside attack.", "verdict": "supported", "note": "A fast kingside attack is the main idea.", "sources": ["s1", "s2"] },
+      { "claim": "Often at the cost of weakening their own king's safety.", "verdict": "supported", "note": "The f4 push weakens the e1-h4 diagonal; sources note the direct 2.f4 gives Black counterplay.", "sources": ["s1", "s2"] },
+      { "claim": "Prefers to sidestep the mountains of theory of the Open Sicilian.", "verdict": "supported", "note": "Avoids heavy Open Sicilian theory.", "sources": ["s2"] },
+      { "claim": "Sharp, unbalanced positions.", "verdict": "supported", "note": "Sharpness high, particularly after 2...d5.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Launch a swift kingside attack with Nf3, Bc4 and O-O, aiming to open the f-file for the rook.", "verdict": "supported", "note": "Nf3, Bc4, O-O are the set-up; the f4-f5 advance and Qe1-h4 are named.", "sources": ["s2"] },
+      { "claim": "Black: Immediately challenge White's central control with a ...d5 pawn break to exploit the weakened king.", "verdict": "supported", "note": "The Tal Gambit is Black's most critical reply, though the idea is to disrupt the attack rather than exploit the king directly.", "sources": ["s1", "s3"] },
+      { "claim": "White: Control the centre with a timely d4 push, sometimes prepared by c3, to create a 'big center'.", "verdict": "unverifiable", "note": "Not found in sources; typical sources mention d3 rather than a d4 push. Own understanding: possible after c3.", "sources": ["s2"] },
+      { "claim": "Black: Develop pieces to target the e4-pawn and the vulnerable king with ...Nc6, ...d6, ...Nf6.", "verdict": "supported", "note": "2...Nc6 and 2...d6 are named as playable replies; ...e5 hitting f4 is a related idea.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

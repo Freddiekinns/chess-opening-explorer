@@ -1,0 +1,144 @@
+{
+  "slug": "polish-opening",
+  "root": {
+    "name": "Polish Opening",
+    "eco": "A00",
+    "moves": "1. b4",
+    "fen": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sokolsky Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sokolsky_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Polish Opening",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/polish-opening/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippets: 365chess 'A00 Polish (Sokolsky) 1.b4 e5 2.Bb2 Bxb4 3.Bxe5', Chess.com Exchange Variation blog and forum threads",
+      "publisher": "Web search snippets",
+      "url": "https://www.365chess.com/opening.php?m=6&n=2186&ms=b4.e5.Bb2.Bxb4.Bxe5&ns=97.320.230.529.2186",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White plays 1.b4 to grab queenside space and fianchetto the bishop to b2, putting long-diagonal pressure on e5, f6 and g7. It is an irregular flank opening: Black chooses the set-up with 1...e5 (2.Bb2 Bxb4 3.Bxe5, the Exchange Variation, which equalises), 1...d5 (the German Defence 2...Qd6 etc.), or 1...Nf6 and 1...e6 reaching Indian-like or Queen's Gambit-like set-ups. The opening is sound and not refuted but gives Black no real problems, so it is rarely seen at elite level and chosen as a surprise weapon (Carlsen used it against Nakamura and So in 2021). Theory is small and the play is flank-oriented, with unbalanced pawn structures but typically no early forced tactics. Alekhine's complaint was that it reveals White's intentions before knowing Black's.",
+  "white_ideas": [
+    { "idea": "Fianchetto Bb2 to control the long diagonal, aim at e5, f6 and g7", "sources": ["s1", "s2"] },
+    { "idea": "Gain queenside space (b4, a3, sometimes b5) and play flank operations", "sources": ["s1", "s2"] },
+    { "idea": "In the Exchange Variation 3.Bxe5, win a central pawn for a wing pawn though behind in development", "sources": ["s3"] },
+    { "idea": "Use surprise value; steer into unfamiliar structures", "sources": ["s1", "s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre naturally with 1...e5 or 1...d5 and develop", "sources": ["s2"] },
+    { "idea": "Take b4 with 2...Bxb4 3.Bxe5 and equalise immediately (Black scores very well)", "sources": ["s3"] },
+    { "idea": "Meet 1...d5 with 2...Qd6 (German Defence) or choose transposing Indian/Queen's Gambit set-ups with 1...Nf6 and 1...e6", "sources": ["s1", "s2"] },
+    { "idea": "Challenge the bishop on the long diagonal and exploit b4 being undefended", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "White queenside space with b4 and Bb2 against Black's central pawns (e5/d5); flank-based asymmetrical structure", "sources": ["s1", "s2"] },
+    { "structure": "Endgames with White kingside pawn majorities after wing pawns come off", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as playable, not refuted, usually equal; typical games are quiet flank manoeuvring with an unbalanced structure. Chessable says main lines of 1...e5 give balanced play, usually drawing. It does not set concrete problems, so risk is low for both sides; tactical traps exist (2...Nc6 3.b5 is a known trap for Black).",
+      "sources": ["s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "1.b4 is not a true gambit: after 1...e5 2.Bb2 Bxb4 3.Bxe5 White wins a central pawn for the wing pawn. Sub-gambit ideas appear (e.g. 1.b4 e5 2.Bb2 Bxb4 or 2...f6 3.e4), but the root has no material imbalance.",
+      "sources": ["s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Sound but slightly offbeat; 'not refuted and very playable by both sides' (Chessable); the Exchange Variation fully equalises for Black immediately (365chess snippet). Wikipedia: remains sound but unconventional, practical chances through surprise value. Alekhine's criticism: reveals intentions before Black's are known. Sokolsky wrote a 1963 monograph defending its viability at high levels.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Flank opening: White avoids early central pawn occupation. After 1...e5 2.Bb2 the centre typically stays unresolved or Black builds an e5/d5 centre; the position stays semi-closed to open depending on Black's reply; the Exchange Variation opens things (3.Bxe5).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A set-up (Bb2, b4, a3) used against many replies, but rare at elite level and largely a surprise weapon. Ranked ninth in popularity among White's first moves (Wikipedia). Carlsen used it vs Nakamura and So in 2021; Tartakower (1924) and Sokolsky are the historical advocates. Respected as playable, but not mainstream.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable: an excellent choice for intermediate players seeking an offbeat weapon; concepts are straightforward, minimal theory, only key variations to remember. The tough part is handling unusual structures; Black has easy equality.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "long-diagonal bishop on b2",
+    "queenside space",
+    "flank opening",
+    "surprise weapon",
+    "pressure on e5 and g7",
+    "unbalanced pawn structure"
+  ],
+  "sublines_that_differ": [
+    { "name": "Exchange Variation", "moves": "1. b4 e5 2. Bb2 Bxb4 3. Bxe5", "how": "White wins a central pawn for a wing pawn but lags in development; equal; Black scores very well." },
+    { "name": "German Defence", "moves": "1. b4 d5 2. Bb2 Qd6", "how": "Black develops with an early queen move and equal play." },
+    { "name": "1...Nf6 / 1...e6", "moves": "1. b4 Nf6 2. Bb2 e6", "how": "Transposes to Indian-type or Queen's Gambit set-ups." },
+    { "name": "2...Nc6 3.b5 trap", "moves": "1. b4 e5 2. Bb2 Nc6 3. b5", "how": "A known trap giving White an advantage if Black blunders." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Polish Opening is also known as the Sokolsky or Orangutan",
+        "verdict": "supported",
+        "note": "Wikipedia confirms the three names (Orangutan from Tartakower, 1924).",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It is a flank opening that stakes a claim on the queenside and prepares to fianchetto the light-squared bishop",
+        "verdict": "supported",
+        "note": "Bb2 and queenside space.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It sidesteps mainstream theory and leads to strategically complex positions",
+        "verdict": "supported",
+        "note": "Minimal theory and unorthodox structures; 'complex' is loose because Black gets easy equality.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: fianchetto the bishop to b2 to exert pressure on the long diagonal, often followed by queenside expansion with a3",
+        "verdict": "supported",
+        "note": "Matches the sources; a3 is own understanding.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: immediately challenge the flank pawn by striking in the centre, typically with 1...e5",
+        "verdict": "supported",
+        "note": "1...e5 and 1...d5 are the most natural replies.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White: control the c5-square and use the queenside space advantage as a launchpad",
+        "verdict": "unverifiable",
+        "note": "Queenside space is cited; control of c5 specifically was not found.",
+        "sources": []
+      },
+      {
+        "claim": "Black: develop pieces to control the centre and aim to open lines to neutralise White's fianchettoed bishop",
+        "verdict": "supported",
+        "note": "Consistent with Black's natural development and e5/d5 central play.",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

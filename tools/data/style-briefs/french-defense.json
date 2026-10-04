@@ -1,0 +1,214 @@
+{
+  "slug": "french-defense",
+  "root": {
+    "name": "French Defense",
+    "eco": "C00",
+    "moves": "1. e4 e6",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "French Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/French_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "French Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/French-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "French Defense overview and variations (search snippets only)",
+      "publisher": "Chessable blog / 365Chess",
+      "url": "https://www.chessable.com/blog/french-defense/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays ...e6 and ...d5, accepting a pawn chain and a space deficit in return for a sound position, and then hits White's pawn centre at its base with ...c5. The fight is over the dark squares d4 and e5. Black's problem piece is the light-squared bishop on c8, hemmed in by the e6 pawn; Black solves it by exchanging it or rerouting it (...b6 and ...Ba6, or ...Bd7 with ...Bb5/a4). White typically uses extra space for a kingside attack (f4-f5, and in the Advance the g4/h4 ideas) or expands on the queenside with a3-b4. Play is slower and manoeuvring, with a lot of pawn-break play. It has a reputation for solidity but a cramped early game for Black. The Winawer (3.Nc3 Bb4) is the sharpest branch, the Advance is the main fight in a locked centre, and the Tarrasch, Classical and Exchange are quieter. The root is one position after 1...e6 2.d4 d5; the structures differ strongly by branch.",
+  "white_ideas": [
+    {
+      "idea": "Use the extra space for a kingside attack, supported by the f4-f5 push; in the Advance Variation, the e5 pawn cramps Black and White attacks on the kingside.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Expand on the queenside with a3-b4 to restrict Black's pieces.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Maintain the d4 pawn and central control; in the Tarrasch (3.Nd2) keep a flexible, solid centre aiming for a slight but safe edge.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "In the Exchange Variation (3.exd5 exd5), White gets a symmetrical structure; Black has easy equality, so it is rarely played.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...c5 at the base of White's chain to undermine d4 and gain queenside space and counterplay on the c-file.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Solve the 'French bishop' on c8 by exchanging it or reactivating it, for example ...Bd7-a4 or via b6.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Queenside counterplay with a and b pawn advances, while being comfortable with a temporary space deficit.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Winawer: 3.Nc3 Bb4 pins the knight, aggressively targets e4 and offers to trade the bishop pair for a double-edged fight.",
+      "sources": ["s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French pawn chain: White d4/e5 against Black d5/e6, with White's wedge on e5 (Advance) giving a closed centre and play on opposite wings.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Classical/Tarrasch structure with tension on d4/e4 vs d5, resolved by ...c5 breaks and sometimes e4xd5 exchanges leading to an isolated queen's pawn.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Exchange Variation: nearly symmetrical pawn structure with no central tension.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Winawer: doubled c-pawns for White after Bxc3+, White bishop pair against Black's grip on the dark squares (own understanding, partly in s3).",
+      "sources": ["s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia and Chess.com both call it solid and resilient with 'sharp counterattacking possibilities' (s1, s2); Winawer lines can reach sharp complications (s1). Typical play: slower, positional battles with manoeuvring and pawn breaks (s2). The main risk for Black is being cramped, not a quick loss. My reading: the root is solid with a sharp Winawer branch.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root. Winawer Poisoned Pawn lines (Qxg7) and the Milner-Barry Gambit in the Advance (White gives a pawn on d4) are sub-lines only.",
+      "sources": ["s3"]
+    },
+    "soundness": {
+      "notes": "Sound for Black: a reputation for solidity confirmed by modern practice; among the top three replies to 1.e4 (s1). Black's early game is 'often somewhat cramped', which requires accurate play, but no source suggests a refutation.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Closed or partly closed. Chess.com: primarily closed positions with White's central wedge against Black's queenside counterplay (s2), most obviously in the Advance, where the centre is locked on e5/d4 versus d5/e6. Classical and Tarrasch lines keep tension. Wikipedia suggests dynamic tension rather than a static centre, as Black strikes with ...c5 (s1). So Closed for the main Advance and Classical middlegames, tension in Tarrasch; overall closed-leaning.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A recognised defence to 1.e4, not a system. Historically favoured by Rubinstein, Botvinnik and Petrosian; modern users Bareev, Morozevich, Radjabov (s1, s2). Mainstream and standard.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Judged for Black. Chess.com: 'easy to learn' in its ideas, but 'a lot of theory' across five main variations with distinct strategic themes (s2). Wikipedia: substantial theory in the Classical and Winawer, but rewards understanding over pure memorisation (s1). The bad bishop and ...c5 timing demand strategic understanding, and the Winawer needs memorised lines. So Intermediate to Advanced; both reasons apply.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "...c5 break",
+    "French bishop problem",
+    "kingside attack with f4-f5",
+    "pawn chain base attack",
+    "queenside space with a3-b4",
+    "dark-square fight on d4 and e5",
+    "locked centre",
+    "opposite wings"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Winawer Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Bb4",
+      "how": "Sharpest branch: pin, doubled pawns and double-edged play; heavy theory."
+    },
+    {
+      "name": "Advance Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. e5",
+      "how": "Locked centre, White's kingside attack against Black's ...c5 break."
+    },
+    {
+      "name": "Tarrasch Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2",
+      "how": "Flexible, solid for White, aiming for a small safe edge."
+    },
+    {
+      "name": "Classical Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
+      "how": "Solid structure with clear plans; solid or sharp depending on the line."
+    },
+    {
+      "name": "Exchange Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. exd5 exd5",
+      "how": "Symmetrical, quiet, rarely played, easy for Black."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The French Defense is a highly respected and solid response to 1.e4.",
+        "verdict": "supported",
+        "note": "Reputation for solidity; among the top three replies to 1.e4.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is characterised by its closed or semi-closed nature.",
+        "verdict": "supported",
+        "note": "Primarily closed positions, though the Winawer is more open and sharp and the Exchange is symmetrical.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black aims for a strategically complex game with rich counter-attacking possibilities, often on the queenside.",
+        "verdict": "supported",
+        "note": "Queenside counterplay via ...c5 and a/b-pawn advances.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It suits players who are comfortable with a temporary space disadvantage and excel at manoeuvring and well-timed pawn breaks.",
+        "verdict": "supported",
+        "note": "Black is cramped early and relies on ...c5; manoeuvring and pawn breaks dominate.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: use the space advantage to launch a kingside attack, often supported by the f4-f5 pawn push, and maintain the central pawn on d4.",
+        "verdict": "supported",
+        "note": "Kingside space and f4-f5 are explicitly named.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: challenge White's centre with the ...c5 pawn break, generating counterplay on the queenside and the c-file.",
+        "verdict": "supported",
+        "note": "The defining Black plan.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "Black: solve the problem of the bad light-squared bishop, often by exchanging it or activating it via ...b6-Ba6.",
+        "verdict": "supported",
+        "note": "The French bishop is the key structural problem; exchanges and rerouting (the sources name ...Bd7-a4; ...b6-Ba6 is a standard route, own understanding).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: in variations like the Tarrasch (3.Nd2), maintain a flexible and solid centre, ready to meet Black's plans without over-committing.",
+        "verdict": "supported",
+        "note": "The Tarrasch avoids the Winawer pin and aims for a small safe edge.",
+        "sources": ["s2", "s3"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

@@ -20,6 +20,13 @@ Nothing here reaches the site yet. The export into `api/data` is the next step.
 | 6. Check                                                  | `node tools/style-tags/validate.js [--verbose]`                           | —                                                     |
 | 7. Review table                                           | `node tools/style-tags/report.js`                                         | `_classify/pilot-tags.md`                             |
 
+The long tail past the pilot uses the **unsourced tier** in place of steps 2 and
+4: `select-roots.js --unsourced --name tail --batch 20` writes the inputs,
+Sonnet subagents follow `UNSOURCED.md` (no web, own knowledge, tags included),
+and `node tools/style-tags/collect-unsourced.js` copies those tags into
+`_classify/claude.json` as classifier A. Jev, the judge and the checks run as
+before.
+
 `_inputs/variation-map.json` and `_classify/states.json` are generated and not
 committed: `select-roots.js --top 0` rebuilds the map, `--states` the other.
 
@@ -35,11 +42,17 @@ committed: `select-roots.js --top 0` rebuilds the map, `--states` the other.
   the same opening (the London by 2.Bf4 and by 2.Nf3).
 - **`final.js` is the only place the final answer is decided.** Precedence:
   override, judge, agreement, then classifier A where either side chose the
-  hidden middle value. **`overrides.json`** holds owner-reviewed corrections,
-  each with a reason.
+  hidden middle value; for an unsourced brief that last step needs A's
+  confidence of at least 0.65 on a shown word, or the middle value stands.
+  **`overrides.json`** holds owner-reviewed corrections, each with a reason.
 - **The taxonomy doc is parsed** (`taxonomy.js`) for the anchors and the plans
   list. Editing those tables changes what the scripts check and ask.
+- **Unsourced briefs carry `"tier": "unsourced"`** and no audit, so they can tag
+  a page but are not evidence for rewriting its description. A blind test on 32
+  researched variations (proposal, "Unsourced tier") found no tag that
+  contradicted the research; the misses drop a word, mostly Sharp or a Level.
 - **Usage.** On the owner's Pro plan a brief costs roughly 1.3–2% of a 5-hour
   window, so research runs in waves sized to it. Briefs are written one at a
-  time and existing ones are skipped, so an interrupted wave resumes cleanly.
-  Jev costs pence and runs over everything.
+  time and existing ones are skipped, so an interrupted wave resumes cleanly. An
+  unsourced brief costs about 0.4% of a window and 0.06% of the week. Jev costs
+  pence and runs over everything.

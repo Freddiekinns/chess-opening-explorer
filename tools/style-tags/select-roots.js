@@ -4,6 +4,12 @@
  * writes the researcher inputs for them, in batches.
  *
  *   node tools/style-tags/select-roots.js --top 100 --batch 10 --name pilot
+ *   node tools/style-tags/select-roots.js --top 2000 --batch 20 --name tail --unsourced
+ *
+ * --unsourced writes inputs for UNSOURCED.md instead of RESEARCHER.md: no
+ * current text (it is not audited, and the old tags would anchor the answer),
+ * plus the nearest briefed parent variation for context. --slugs a,b,… writes
+ * inputs for exactly those variations, briefed or not (for calibration).
  *
  * Names in api/data/eco come from several sources and disagree ("Sicilian
  * Defense: Najdorf Variation" vs "Sicilian: Najdorf"), so grouping is by move
@@ -65,10 +71,31 @@ function slugify(s) {
     .replace(/^-|-$/g, '');
 }
 
+/**
+ * The variation the root branches from (its nearest standard-named ancestor in
+ * another variation), with that variation's overview when it has been briefed.
+ */
+function parentOf(root, key, named, existing) {
+  const boards = replay(root.tokens);
+  for (let n = boards.length - 2; n >= 0; n--) {
+    const anc = named.get(boards[n]);
+    if (!anc || variationKey(anc.name) === key) continue;
+    const slug = slugify(variationKey(anc.name));
+    const file = path.join(BRIEFS, `${slug}.json`);
+    const overview = existing.has(`${slug}.json`)
+      ? JSON.parse(fs.readFileSync(file, 'utf8')).overview
+      : null;
+    return { slug, name: variationKey(anc.name), moves: anc.moves, overview };
+  }
+  return null;
+}
+
 function main() {
   const top = Number(arg('top', 200));
   const batchSize = Number(arg('batch', 10));
   const runName = arg('name', `top${top}`);
+  const unsourced = process.argv.includes('--unsourced');
+  const only = arg('slugs', '') ? new Set(arg('slugs').split(',')) : null;
 
   const pop = JSON.parse(fs.readFileSync(path.join(DATA, 'popularity_stats.json'), 'utf8'));
   const stats = pop.positions || pop;
@@ -115,9 +142,9 @@ function main() {
   const hubSet = new Set(hubs);
   const ranked = [...members]
     .map(([key, ps]) => [key, ps.reduce((s, p) => s + p.games, 0)])
-    .filter(([key]) => !hubSet.has(key))
+    .filter(([key]) => !hubSet.has(key) && (!only || only.has(slugify(key))))
     .sort((a, b) => b[1] - a[1])
-    .slice(0, top);
+    .slice(0, only ? Infinity : top);
 
   const { shared } = JSON.parse(
     fs.readFileSync(path.join(__dirname, 'shared-briefs.json'), 'utf8')
@@ -128,12 +155,26 @@ function main() {
   for (const [i, [key, totalGames]] of ranked.entries()) {
     const root = roots.get(key);
     const slug = slugify(key);
-    if (shared[slug] || existing.has(`${slug}.json`)) {
+    if (!only && (shared[slug] || existing.has(`${slug}.json`))) {
       reused.push(slug);
       continue;
     }
     const sub = members.get(key).filter((p) => p.fen !== root.fen);
     const a = root.analysis_json || {};
+    if (unsourced) {
+      inputs.push({
+        slug,
+        rank: i + 1,
+        root: { name: root.name, eco: root.eco, moves: root.moves, fen: root.fen },
+        alternative_names: Object.values(root.aliases || {}),
+        subtree_most_played: sub
+          .sort((x, y) => y.games - x.games)
+          .slice(0, 6)
+          .map((p) => ({ name: p.name, moves: p.moves })),
+        parent: parentOf(root, key, named, existing),
+      });
+      continue;
+    }
     inputs.push({
       slug,
       rank: i + 1,

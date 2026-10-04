@@ -9,7 +9,12 @@ anchors and the notes under each axis.
 ## Input
 
 `node tools/style-tags/validate.js` lists the disputed `slug.axis` pairs under
-"unresolved (for the judge)". For each one, read:
+"unresolved (for the judge)", and the gambit axis of each slug under "Unsourced
+gambits the name does not mention". The second list is agreed but suspect: an
+unsourced brief (`"tier": "unsourced"`, written from memory without sources) may
+have judged a rare gambit branch as the main line, and Jev reads the same
+evidence. For those, search the web for the main line and rule on gambit and on
+any other axis that depended on the same mistake. For each one, read:
 
 - the full brief, `tools/data/style-briefs/<slug>.json`, sources included
 - both answers: `_classify/claude.json` (value, confidence, reason) and

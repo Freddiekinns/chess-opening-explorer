@@ -7,7 +7,9 @@
  *   3. A and Jev where they agree
  *   4. A's answer where either chose the hidden middle value: a blind audit of
  *      14 such disputes found A right in 13 (A reads the taxonomy's notes and
- *      anchors; Jev sees only the criteria and seldom picks a middle value)
+ *      anchors; Jev sees only the criteria and seldom picks a middle value).
+ *      For an unsourced brief A's shown word needs UNSOURCED_MIN confidence
+ *      here, or the middle value stands instead
  *   5. otherwise unresolved, for the judge
  *
  * Plans are A's picks that are also among Jev's three most probable, in A's
@@ -54,6 +56,21 @@ function loadOverrides() {
   return overrides;
 }
 
+/**
+ * An unsourced brief's shown word that Jev does not share, given with less than
+ * UNSOURCED_MIN confidence. In the blind test of unsourced briefs, shown words
+ * at 0.65 or above matched the research in 36 of 37 cases and those below in 15
+ * of 25, so below it the hidden middle value is safer than the word.
+ */
+const UNSOURCED_MIN = 0.65;
+function unsure(a, axis) {
+  return (
+    a.tier === 'unsourced' &&
+    a[axis].value !== MIDDLE[axis] &&
+    !(a[axis].confidence >= UNSOURCED_MIN)
+  );
+}
+
 function finalPlans(a, b) {
   const picked = (a && a.plans && a.plans.value) || [];
   const probs = (b && b.answers && b.answers.plans && b.answers.plans.probabilities) || {};
@@ -88,7 +105,7 @@ function finalAnswers({
       const o = O[slug] && O[slug][axis] && O[slug][axis].value;
       if (o || j || (a && a === b)) final[slug][axis] = o || j || a;
       else if (a && b && (a === MIDDLE[axis] || b === MIDDLE[axis])) {
-        final[slug][axis] = a;
+        final[slug][axis] = unsure(A[slug], axis) ? MIDDLE[axis] : a;
         byRule.push(`${slug}.${axis} (A ${a}, Jev ${b})`);
       } else final[slug][axis] = null;
     }

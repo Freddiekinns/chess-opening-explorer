@@ -332,3 +332,38 @@ page would show in `_classify/pilot-tags.md`.
 - **Cost:** about 105 briefs over three 5-hour windows on the Pro plan, roughly
   1.3–2% of a window each, and about a quarter of a week's allowance in all. Jev
   cost a few pence of TypeSafe credit.
+
+### Unsourced tier (2026-10-04)
+
+The 1,308 variations past the pilot hold about 8,400 pages, and full research
+for all of them would cost several weeks of the Pro allowance. They get an
+unsourced brief instead (`tools/style-tags/UNSOURCED.md`): Sonnet writes the
+evidence and its own tags from memory, without the web, given the parent
+variation's researched overview for context. The writer stands as classifier A,
+because a second Sonnet pass over the same model's knowledge adds cost without
+independence; Jev still reads the evidence alone. Unsourced briefs carry no
+audit and are not used to rewrite descriptions.
+
+A blind test wrote unsourced briefs for 32 researched variations and compared
+the tags with the researched answer:
+
+- **No contradictions.** No axis came out with the opposite shown word (Sharp
+  for Solid, Open for Closed) in any of the 32.
+- **First 16:** 6 showed the same words; 80 of 96 axis decisions agreed. The
+  misses were Balanced used as a hedge for Sharp lines (Dutch, English Defence,
+  Chigorin), Offbeat for lines that are only less common, and Level read from
+  the parent's reputation.
+- **Second 16, after guidance on those three:** 8 showed the same words; 86 of
+  96 agreed. The test set was changed so the guidance could not name its
+  answers. The remaining misses are mostly a dropped Advanced or an extra
+  Beginner, and the Beginner guidance was tightened after it.
+- **Cost:** about 0.4% of a 5-hour window per brief, and about 1% of the week
+  per 16.
+- **Confidence matters more without sources.** Shown words the writer gave at
+  0.65 or above matched the research in 36 of 37 cases; below that, 15 of 25. So
+  for an unsourced brief, a dispute with Jev over a middle value takes A's shown
+  word only at 0.65 or above, and otherwise the middle value.
+- **What the pipeline cannot catch.** Jev reads the writer's evidence, so a rare
+  branch mistaken for the main line convinces both (the La Bourdonnais came back
+  as a dubious White gambit from the Reuter Gambit 3.Nf3 dxe4 4.Ng5).
+  `validate.js` sends unsourced gambits the name does not mention to the judge.

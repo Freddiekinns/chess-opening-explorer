@@ -3,6 +3,7 @@
  * Classifier B: asks Jev to tag each opening brief against the style taxonomy.
  *
  *   node tools/style-tags/jev-classify.js [slug ...]
+ *   node tools/style-tags/jev-classify.js --new   (only briefs Jev has not answered)
  *   node tools/style-tags/jev-classify.js --states [slug ...]   (classifier A's input)
  *
  * Jev reads the brief's evidence only, never the site's current tags, so its
@@ -94,14 +95,17 @@ function briefState(brief) {
 async function main() {
   const args = process.argv.slice(2);
   const statesOnly = args.includes('--states');
+  const onlyNew = args.includes('--new');
   // --only structure,plans re-asks just those questions and keeps the rest.
   const onlyAt = args.indexOf('--only');
   const only = onlyAt > -1 ? args[onlyAt + 1].split(',') : null;
   const wanted = args.filter((a, i) => !a.startsWith('--') && i !== onlyAt + 1);
-  const files = fs
+  let files = fs
     .readdirSync(BRIEFS)
     .filter((f) => f.endsWith('.json'))
     .filter((f) => !wanted.length || wanted.includes(f.replace(/\.json$/, '')));
+  const answered = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+  if (onlyNew) files = files.filter((f) => !answered[f.replace(/\.json$/, '')]);
 
   // Classifier A reads exactly what Jev reads, which keeps the two comparable
   // and spares it the sources and audit it is told to ignore anyway.
@@ -122,7 +126,7 @@ async function main() {
   if (!apiKey) throw new Error('JEV_API_KEY is not set');
 
   const ask = createJevAsk(apiKey);
-  const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+  const out = answered;
   const questions = {};
   for (const [axis, criteria] of Object.entries(AXES)) questions[axis] = question(axis, criteria);
   // One choice over the plans list; its three most probable answers are what
@@ -155,9 +159,10 @@ async function main() {
       )
       .join(' ');
     console.log(brief.slug.padEnd(28), summary);
+    // Saved after every answer so a long run that fails part-way keeps its work.
+    fs.mkdirSync(path.dirname(OUT), { recursive: true });
+    fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
   }
-  fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
   console.log(`\n${files.length} briefs, ${inputTokens} input tokens`);
 }
 

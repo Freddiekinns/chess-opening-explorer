@@ -1,0 +1,47 @@
+{
+  "slug": "rat-defense-english-rat",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: English Rat",
+    "eco": "A41",
+    "moves": "1. d4 d6 2. c4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "old-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets the queen's pawn with ...d6 and ...e5, a Philidor/Old Indian type pawn structure reached by a flexible move order. White can play 3.d5 for space, 3.Nf3 e4 4.Nfd2, or 3.dxe5 dxe5 4.Qxd8+ Kxd8 for a queenless middlegame; the Lisbon Gambit (3.dxe5 Nc6) is a sideline.",
+  "white_ideas": [
+    { "idea": "Gain space with d5 and then Nc3, e4 and a queenside expansion." },
+    { "idea": "Exchange queens with dxe5 and use the lead in development and Black's lost castling." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5, develop ...Nf6, ...Nbd7, ...Be7 as in the Old Indian." },
+    { "idea": "Counter on the kingside with ...f5 or ...g6 and ...Bg7." }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor/Old Indian: pawns on d6 and e5 against c4 and d4 or d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive but sound, with a cramped Black game; neither forcing nor particularly risky." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The Lisbon Gambit is a sideline only." },
+    "soundness": { "notes": "Sound, though White often keeps a slight edge." },
+    "structure": { "notes": "Centre unresolved after 3.Nf3; 3.d5 closes it, 3.dxe5 opens." },
+    "approach": { "notes": "Seldom chosen by strong players as a main defence." },
+    "level": { "reason": "understanding", "notes": "Plans are simple but Black must handle space." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "Lisbon Gambit", "moves": "3.dxe5 Nc6", "how": "Black gives a pawn for development." },
+    { "name": "Queenswap", "moves": "3.dxe5 dxe5 4.Qxd8+ Kxd8", "how": "Queenless, Black loses castling." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Cramped but sound, with no forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.93, "reason": "No pawn is given in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable, if slightly worse." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre can close with d5 or open after dxe5." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose this move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are not hard but there is no theory guide." },
+    "plans": { "value": ["space_advantage"], "reason": "White's space against Black's cramped game." }
+  }
+}

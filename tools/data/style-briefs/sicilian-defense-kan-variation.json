@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-kan-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kan Variation",
+    "eco": "B41",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+    "fen": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays ...a6 and ...e6 to keep a flexible set-up, aiming for ...Qc7, ...b5, ...Bb7 or ...Nc6 and ...d6, delaying committing the king's knight. White usually plays 5.Nc3 Qc7 6.Bd3 or 6.Be2, or 5.c4 for the Maróczy bind. Black hits the centre via ...b5-b4 and ...d5, with queenside counterplay and a hidden attacking potential.",
+  "white_ideas": [
+    { "idea": "Bd3, O-O and Qe2 or f4 for a kingside attack against the Kan set-up" },
+    { "idea": "5.c4 Maróczy bind to restrict ...d5 and ...b5" }
+  ],
+  "black_ideas": [
+    { "idea": "...Qc7, ...Nc6 and ...b5 with ...Bb7 for queenside play" },
+    { "idea": "...Nf6, ...Bb4 pins and ...d5 breaks" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian with e6/d6 or a6/b5 against White e4/d4 or c4/e4 bind" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Sicilian with rich tactical chances, flexible, with attacks on both wings; a miss lets either side get hit." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Every Sicilian is semi-open: c-file for Black." },
+    "approach": { "notes": "Standard Sicilian line." },
+    "level": { "reason": "understanding", "notes": "Flexible; plans are subtle but there is less long theory than Najdorf." }
+  },
+  "plan_phrases": ["half-open c-file", "queenside expansion", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "Maróczy Bind", "moves": "5.c4", "how": "Positional squeeze, quieter." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Open Sicilian with opposite plans and attacking chances for both." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respected Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.85, "reason": "Every Sicilian is semi-open per the rubric." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Respectable main Sicilian line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Flexible move order but modest forced theory." },
+    "plans": { "value": ["half_open_c_file", "queenside_expansion"], "reason": "Black plays on the c-file and expands with ...b5." }
+  }
+}

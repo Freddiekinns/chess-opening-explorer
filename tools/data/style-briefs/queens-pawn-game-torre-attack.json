@@ -1,0 +1,49 @@
+{
+  "slug": "queens-pawn-game-torre-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Torre Attack",
+    "eco": "D03",
+    "moves": "1. d4 d5 2. Nf3 Nf6 3. Bg5",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 3 3"
+  },
+  "parent": "queens-pawn-game-symmetrical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins or threatens the f6 knight with Bg5 and then plays e3, Nbd2, c3 and Bd3 (or c4) in a flexible pyramid-like set-up. Black usually answers 3...e6 and ...c5 or ...Nbd7, or 3...Ne4 (Gossip Variation) trading the bishop. White's plans are simple: build a solid centre, castle, and aim for e4 or a kingside initiative. It is an easy-to-learn system against 1...d5 that is playable against most Black set-ups.",
+  "white_ideas": [
+    { "idea": "e3, Nbd2, c3 and Bd3, a solid pyramid set-up against any defence" },
+    { "idea": "Prepare e4 or a kingside attack with Ne5, Qf3 and h4 in some lines" },
+    { "idea": "Trade on f6 to damage Black's pawns or take the bishop pair against ...Ne4" }
+  ],
+  "black_ideas": [
+    { "idea": "...e6, ...c5 and ...Nc6 to challenge the d4 pawn" },
+    { "idea": "...Ne4 to trade the bishop and relieve the pin (Gossip Variation)" },
+    { "idea": "...h6 and ...Bf5 or a Grünfeld-style ...g6 set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "White pyramid d4/e3/c3 against ...e6/...c5, flexible centre tension" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid structure for White like the London and Colle; Black can create tactics with ...Ne4 or ...c5 but the usual game is steady." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in main lines." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension, White keeps c4 or e4 in reserve, so Flexible like the London." },
+    "approach": { "notes": "A system set-up playable against nearly any defence to the queen's pawn." },
+    "level": { "reason": "neither", "notes": "Clear plans, little to memorise, like the London and Colle." }
+  },
+  "plan_phrases": ["solid set-up", "pin on f6", "e4 break"],
+  "sublines_that_differ": [
+    { "name": "Gossip Variation", "moves": "3...Ne4 4.Bf4", "how": "Black trades the bishop and plays for easy equality, a more open game." },
+    { "name": "Grünfeld Variation", "moves": "3...g6", "how": "Black sets up a fianchetto and avoids ...e6, leading to a London-like game." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Like the London, a steady structure with few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A normal equal position." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Pawn centre in tension with c4 or e4 in reserve." },
+    "approach": { "value": "system", "confidence": 0.85, "reason": "A Bg5, e3, Nbd2 set-up playable against most defences." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.5, "reason": "Clear plans, little to memorise, like the London and Colle." },
+    "plans": { "value": [], "reason": "No plan from the closed list is clearly characteristic." }
+  }
+}

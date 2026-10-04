@@ -1,0 +1,47 @@
+{
+  "slug": "nimzowitsch-defense-kennedy-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Kennedy Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 e5",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black meets 2.d4 with 2...e5, challenging the centre at once. After 3.dxe5 Nxe5 4.Nf3 Nxf3+ 5.Qxf3 White has the better development and a small edge, while 3.d5 Nce7 locks the centre with a spatial advantage for White. I am unsure of the finer theory, so confidence is low.",
+  "white_ideas": [
+    { "idea": "Take on e5 and trade knights, then develop with Bd3 or Be3 for a slight lead." },
+    { "idea": "Advance d5 to gain space and misplace Black's knight." }
+  ],
+  "black_ideas": [
+    { "idea": "Get a playable position with ...d6 and ...Nf6 and trade a few pieces." },
+    { "idea": "Surprise a White player who does not know the line." }
+  ],
+  "typical_structures": [
+    { "structure": "After 3.dxe5 Nxe5 4.Nf3, Black's d- and e-pawns are traded for White's and the centre is a fixed e4 pawn against Black's d-pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White gets a small edge in simple play; not especially forcing. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "3.dxe5 Nxe5 recovers the pawn at once; de Smet 3...d6 is a minor pawn offer." },
+    "soundness": { "notes": "Sound but a bit worse for Black." },
+    "structure": { "notes": "Fixed asymmetric centre; semi-open with low confidence." },
+    "approach": { "notes": "Strong players seldom choose 1...Nc6; chosen for surprise." },
+    "level": { "reason": "understanding", "notes": "Few forced lines. Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Linksspringer", "moves": "1. e4 Nc6 2. d4 e5 3. d5 Nce7", "how": "Closed centre with White space." },
+    { "name": "de Smet Gambit", "moves": "1. e4 Nc6 2. d4 e5 3. dxe5 d6", "how": "Black offers a pawn for development." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Neither especially forcing nor hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The e5 pawn is regained at once in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Slightly worse but not close to refuted." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "Fixed asymmetric centre after the exchanges." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "The Nimzowitsch Defence is seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Little theory to know." },
+    "plans": { "value": [], "reason": "Not enough evidence for a plan." }
+  }
+}

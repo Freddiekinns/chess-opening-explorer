@@ -1,0 +1,42 @@
+{
+  "slug": "zukertort-opening-black-mustang-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Black Mustang Defense",
+    "eco": "A04",
+    "moves": "1. Nf3 Nc6",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black answers 1.Nf3 with a developing knight move that does not stake a claim to the centre. White usually plays 2.d4 or 2.e4 and gets a comfortable space edge, or transposes into a Chigorin Defence-like position with ...d5 and ...Nc6. Black aims for a solid development and decent play, but has no theory to rely on.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and e4 and develop naturally" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...e5 or ...d5 and meet central expansion with solid pawn moves" }
+  ],
+  "typical_structures": [
+    { "structure": "Varies; usually transposes to d4 or e4 games with Black's knight early on c6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Not enough theory to say; I would expect quiet, transposing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable but gives White an easy centre; not refuted." },
+    "structure": { "notes": "Depends on the transposition; centre undecided." },
+    "approach": { "notes": "Strong players hardly ever play 1...Nc6 against 1.Nf3." },
+    "level": { "reason": "neither", "notes": "Transposition knowledge more than memory; intermediate by default." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Unfamiliar line; reasoning from the moves it looks quiet and transposing." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable, only slightly inferior." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not yet decided." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Nothing to memorise but plans need understanding." },
+    "plans": { "value": [], "reason": "No clear characteristic plan." }
+  }
+}

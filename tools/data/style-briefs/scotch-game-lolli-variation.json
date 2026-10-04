@@ -1,0 +1,46 @@
+{
+  "slug": "scotch-game-lolli-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Lolli Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 Nxd4",
+    "fen": "r1bqkbnr/pppp1ppp/8/4p3/3nP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black takes the d4 pawn with the knight instead of 3...exd4. After 4.Nxd4 exd4 5.Qxd4 White has the queen on the centre and a small lead in development, and Black has to untangle with ...Nf6 and ...Bb4 or ...Qf6. 4.Nxe5 is the alternative, aiming for tricks around f7 with Cochrane-style ideas. The structure is open, and White has an easy, slightly better game.",
+  "white_ideas": [
+    { "idea": "Regain the pawn with Qxd4, then Nc3 and Bd2 with a central queen and development lead" },
+    { "idea": "Nxe5 and Bc4 tricks against f7 if Black is careless" }
+  ],
+  "black_ideas": [
+    { "idea": "Meet Qxd4 with ...Nf6 and ...Be7 or ...Bb4 and trade queens or develop with tempo" },
+    { "idea": "Accept the slightly worse position and aim for ...d5 or ...c5 to free the game" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and d-files with White's queen on d4 and Black's e-pawn gone" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet after the trades, with an early queen but no forced race; Balanced, low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pieces and pawns are traded and White regains d4 at once." },
+    "soundness": { "notes": "Playable but slightly inferior for Black; I say sound with low confidence." },
+    "structure": { "notes": "The e- and d-pawns are exchanged and the position is open." },
+    "approach": { "notes": "A rare line that strong players seldom choose as Black; Offbeat, low confidence." },
+    "level": { "reason": "understanding", "notes": "Plain play and clear plans; Intermediate." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Cochrane 4.Nxe5", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 Nxd4 4. Nxe5 Ne6 5. Bc4 c6 6. O-O Nf6 7. Nxf7", "how": "Sharper, with a knight sacrifice on f7 to attack the king." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Open and quiet after trades, neither fortress nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "White regains the d4 pawn at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable for both sides, Black slightly worse." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "The central pawns are exchanged and pieces use open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose 3...Nxd4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Clear plans and light theory." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "White's queen comes to d4 and develops with tempo." }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "pirc-defense-austrian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Austrian Attack",
+    "eco": "B09",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4",
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PPP2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White builds the full e4-d4-f4 centre and aims at the kingside with Nf3, Bd3 and e5 or Qe1. Black fianchettoes, castles and strikes back with ...c5 or ...Na6 and ...c5, often hitting d4 and e5. If White pushes e5 too soon Black's ...Nfd7 and ...c5 undermine it; if White waits Black gets time for ...c5. The play is sharp and theoretical with real attacking chances on both sides.",
+  "white_ideas": [
+    { "idea": "Nf3, Bd3, O-O and Qe1-h4 or e5 to attack the kingside" },
+    { "idea": "Push e5 at the right moment (Unzicker) to gain space and cramp Black" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...c5 or ...Nc6 and ...e5, using the g7 bishop" },
+    { "idea": "...Na6 and ...c5 or ...Nc6 to hit d4 before White consolidates" }
+  ],
+  "typical_structures": [
+    { "structure": "White's e4/d4/f4 pawns against ...d6/...g6 and a fianchettoed bishop, Black breaking with ...c5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides attack; one wrong move can lose to a kingside storm or a central collapse." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material given in the main lines." },
+    "soundness": { "notes": "Sound; Black's counter against the big centre works with correct play." },
+    "structure": { "notes": "Centre not decided until ...c5 or e5, so flexible; not locked." },
+    "approach": { "notes": "A main White try against the Pirc, standard." },
+    "level": { "reason": "both", "notes": "Black must know theory and judge the centre plans; intermediate to advanced." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Austrian Attack: Dragon Formation", "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4 Bg7 5. Nf3 c5", "how": "Black strikes with ...c5 at once; sharp with dxc5 or d5 choices." },
+    { "name": "Austrian Attack: Unzicker Attack", "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4 Bg7 5. Nf3 O-O 6. e5", "how": "White pushes e5 immediately for a space grab; Black counters on e5 and d4." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Mutual attacks, big centre against counterstrikes." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Respected main line against the Pirc." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre tension with ...c5 or e5 decides; could be semi-open." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A main-line White set-up against the Pirc." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Theory matters for Black, but plans are clear." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre", "kingside_attack"], "reason": "White's big centre and kingside play against Black's flank counter." }
+  }
+}

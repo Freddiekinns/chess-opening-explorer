@@ -1,0 +1,46 @@
+{
+  "slug": "philidor-defense-nimzowitsch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Nimzowitsch Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6",
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counterattacks e4 with 3...Nf6 and White chooses between 4.Nc3 (the main line, with ...Nbd7 and the Hanham set-up) and 4.dxe5 Nxe4 (Sokolsky, Rellstab). In the main line White holds a small space edge and Black builds ...Nbd7, ...Be7, ...c6 and ...O-O, then plays ...exd4 or ...d5 when ready. Positions are solid and slightly cramped for Black, with some tactical traps.",
+  "white_ideas": [
+    { "idea": "Play Nc3 and Bc4 with a space advantage and a pawn centre." },
+    { "idea": "Use dxe5 and Qd5 ideas to tempt Black into traps." }
+  ],
+  "black_ideas": [
+    { "idea": "Set up the Hanham with ...Nbd7, ...Be7, ...c6 and ...O-O." },
+    { "idea": "Free the position with ...exd4 or ...d5 at the right moment." }
+  ],
+  "typical_structures": [
+    { "structure": "Hanham: Black pawns on d6/e5/c6 against White's d4/e4 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Compact, passive but hard-to-break Black structure in the 4.Nc3 main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered in the main line." },
+    "soundness": { "notes": "Sound; White keeps a small edge." },
+    "structure": { "notes": "Centre in tension (d4 vs e5), unresolved." },
+    "approach": { "notes": "Rarely played by top players but a recognised defence." },
+    "level": { "reason": "understanding", "notes": "Plans clear for Black but cramped; moderate move-order knowledge." }
+  },
+  "plan_phrases": ["space advantage", "Hanham set-up"],
+  "sublines_that_differ": [
+    { "name": "Rellstab Variation", "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Qd5", "how": "Sharper, with queen sorties and quick tactics." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Compact Black set-up in the main line, passive but hard to break." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.93, "reason": "Sound." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Respectable defence even if less common at the top." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Clear plans, modest theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's central space against Black's cramped set-up." }
+  }
+}

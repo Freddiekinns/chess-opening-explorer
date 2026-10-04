@@ -1,0 +1,46 @@
+{
+  "slug": "ware-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening",
+    "eco": "A00",
+    "moves": "1. a4",
+    "fen": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the a-pawn a move, with no central claim; the idea is to gain queenside space and perhaps a rook lift (Ra3) while keeping options open. Black simply occupies the centre with ...e5 or ...d5 and gets a comfortable game. Play usually transposes into a reversed or flank opening.",
+  "white_ideas": [
+    { "idea": "Ra3 or a5 for queenside space" },
+    { "idea": "Transpose into a regular d4, c4 or Nf3 set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...e5 or ...d5" },
+    { "idea": "Develop and punish the wasted tempo" }
+  ],
+  "typical_structures": [
+    { "structure": "Any reversed or regular set-up; no fixed structure" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow flank move; unforced and roughly equal." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn offered; 2.Ra3 is a trap not a gambit." },
+    "soundness": { "notes": "Not refuted, only a wasted tempo." },
+    "structure": { "notes": "Centre is undecided; flank opening." },
+    "approach": { "notes": "Strong players almost never choose it." },
+    "level": { "reason": "neither", "notes": "Few lines and plans are vague; not a good first repertoire." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Meadow Hay Trap", "moves": "1. a4 e5 2. Ra3 Bxa3", "how": "A joke trap line, not a main line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow and unforcing, neither especially solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Loses a tempo, not a refutation." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening with the centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play 1.a4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "No theory but no clear plan either." },
+    "plans": { "value": [], "reason": "No well-defined plan from the flank pawn." }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "vienna-game-anderssen-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Anderssen Defense",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Bc5",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3"
+  },
+  "parent": "vienna-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the bishop to c5 against f2 and the usual reply is 3.Nf3 d6 or 3.Bc4 Nf6 (Italian-style transposition) with Qg4 tricks in some lines. White chooses between a quiet Italian-style development and the Vienna's f4 break. Play is open but not forcing, with White often building a centre with d3 or f4 and Black equalising with ...d6 and ...Nf6.",
+  "white_ideas": [
+    { "idea": "Nf3 and Na4 or Bc4 to hit f7 and the c5 bishop" },
+    { "idea": "Delayed f4 or d3/Be3 for a flexible centre" },
+    { "idea": "Qg4 raids against g7 when Black's knight is on f6 or the pieces are undeveloped" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop normally with ...Nf6, ...d6 and ...O-O" },
+    { "idea": "Pressure f2 with the c5 bishop, and break with ...d5" },
+    { "idea": "Trade off White's active pieces and equalise" }
+  ],
+  "typical_structures": [
+    { "structure": "Italian-like with d3/e4 against d6/e5, Giuoco Pianissimo shape" },
+    { "structure": "Vienna with f4 after Nf3 d6 and f-pawn tension" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly open but quiet play, with tactical tricks like Qg4 and Nxe5 if either side errs, otherwise balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is sacrificed in the main lines." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Italian-style, centre in tension with d3, so flexible." },
+    "approach": { "notes": "A recognised, if less common, line, consistent with the Vienna being a standard if rare choice." },
+    "level": { "reason": "neither", "notes": "Straightforward development and tricks to know, not heavy theory." }
+  },
+  "plan_phrases": ["attack on f7", "Qg4 tricks"],
+  "sublines_that_differ": [
+    { "name": "3.Bc4 Nf6 4.d3", "moves": "3.Bc4 Nf6 4.d3", "how": "Becomes an Italian Giuoco Pianissimo with a quiet manoeuvring game." },
+    { "name": "3.Qg4", "moves": "3.Qg4 Qf6 4.Nd5", "how": "Sharp tactical Qg4 lines targeting g7." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.65, "reason": "Open development game without strong forcing play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Equal and unremarkable." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Italian-style centre in tension with d3." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by respectable players as a sideline." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "Simple plans with some move-order care." },
+    "plans": { "value": ["pressure_on_f7"], "reason": "White bishops and knights usually target f7." }
+  }
+}

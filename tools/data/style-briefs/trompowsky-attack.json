@@ -1,0 +1,48 @@
+{
+  "slug": "trompowsky-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5",
+    "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins or attacks the f6 knight at once, aiming to saddle Black with doubled f-pawns (2...d5 3.Bxf6 exf6) or to chase the knight after 2...Ne4 3.Bf4. White avoids main-line Indian and Queen's Gambit theory and gets a simple development scheme with e3, Nd2 and c3. Black has easy equality with accurate play but a clear plan to attack the centre with ...c5.",
+  "white_ideas": [
+    { "idea": "Bxf6 to double Black's pawns, then e3, Bd3 and c4 or Nf3-e5" },
+    { "idea": "After 2...Ne4, Bf4 and Nd2 or h4 ideas, avoiding theory" }
+  ],
+  "black_ideas": [
+    { "idea": "2...d5 and ...c5 to hit the centre with the bishop pair" },
+    { "idea": "2...Ne4 3.Bf4 c5 4.f3 Qa5+ for counterplay against d4" },
+    { "idea": "2...g6 and ...Bg7 putting the bishop on the long diagonal" }
+  ],
+  "typical_structures": [
+    { "structure": "Black doubled f-pawns with open e-file and bishop pair for White or Black" },
+    { "structure": "d4/e3 White pyramid against ...c5 and ...d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mixed: the 2...d5 3.Bxf6 exf6 line is quiet; 2...Ne4 lines can get tactical." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The h4 and Bf4 gambit ideas are rare; main lines keep material." },
+    "soundness": { "notes": "Sound; White gets a safe small edge or equality." },
+    "structure": { "notes": "Centre pawn d4 against ...d5/...c5; flexible." },
+    "approach": { "notes": "A choice against 1...Nf6 only, played by strong players like Hodgson; standard." },
+    "level": { "reason": "understanding", "notes": "Aggressive but plans are readable; it needs theory against ...Ne4 and ...c5." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "avoiding theory"],
+  "sublines_that_differ": [
+    { "name": "Vaganian Gambit", "moves": "2...Ne4 3.Bf4 d5 4.e3 c5 5.Bd3 Nc6 6.c3", "how": "Sharper and Black pushes for the centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet main lines with occasional tactical branches." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Main lines do not give up material." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Played at every level without refutation." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Pawns not yet locked, centre decided later." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players, though it avoids main-line theory." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans clear but must know the ...Ne4 and ...c5 responses." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "Bxf6 leaves doubled f-pawns for the bishop pair." }
+  }
+}

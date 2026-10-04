@@ -1,0 +1,44 @@
+{
+  "slug": "scotch-game-haxo-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Haxo Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/2BpP3/5N2/PPP2PPP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White leaves the d4 pawn with Black and develops with 5.c3 or 5.O-O, intending a lead in development and e5 or a break against the Black centre. After 5.c3 the pawn on d4 can be kept, so White needs tactics; lines such as 5.c3 Nf6 6.e5 d5 7.Bb5 Ne4 8.cxd4 recover it with open play. The game is open and tactical for both sides.",
+  "white_ideas": [
+    { "idea": "Play c3 or O-O to open lines, then e5 against ...Nf6 and regain the pawn with cxd4 or Nxd4" },
+    { "idea": "Use the c4 bishop and quick development against f7" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn with ...d6 and ...Nf6, solid development" },
+    { "idea": "Return it at the right moment with ...d5 for an equal open game" }
+  ],
+  "typical_structures": [{ "structure": "Open centre with Black pawn on d4 or returned to d5; fast development, open e-file" }],
+  "axis_evidence": {
+    "character": { "notes": "Open, concrete play with early tactics around e5 and d5; known for double-edged play." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 5.c3 or 5.O-O Black can keep the d-pawn; White needs ...dxc3 or d3 tactics." },
+    "soundness": { "notes": "Sound; Black has safe equalising ways and the Scotch Gambit is well regarded." },
+    "structure": { "notes": "The centre opens quickly with e-file and diagonals active, as in other Scotch lines." },
+    "approach": { "notes": "Played by strong players at times; respectable." },
+    "level": { "reason": "memory", "notes": "Needs knowing the lines (c3, e5 d5 Bb5 Ne4) for White; Black's tries are less forcing." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "5.O-O", "moves": "5. O-O d6 6. c3", "how": "Slower; White gets a Max Lange-type development lead without immediate tactics." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "A pawn is offered for open lines and quick tactics." },
+    "gambit": { "value": "white", "confidence": 0.65, "reason": "Black can keep the d4 pawn and White has to regain it by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Accepted as equal with correct play." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Pawns come off in the centre early and the pieces use open lines." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "A regular part of the Scotch repertoire." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Some theory is needed but not an advanced tree." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White develops quickly with the bishop on c4." }
+  }
+}

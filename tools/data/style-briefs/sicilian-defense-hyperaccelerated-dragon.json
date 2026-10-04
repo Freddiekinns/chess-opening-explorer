@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-hyperaccelerated-dragon",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Hyperaccelerated Dragon",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6",
+    "fen": "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black fianchettoes at once and delays ...Nc6 so that after 3.d4 cxd4 4.Nxd4 Bg7 he can answer 5.c4 (Maroczy) with ...Nc6 or ...Qb6, or reach Accelerated Dragon positions. The usual test is 3.c3 Bg7 4.d4 cxd4 5.cxd4 d5, where Black strikes at the centre immediately. White tries for a Maroczy bind or a big centre; Black counters with the g7 bishop and c-file pressure.",
+  "white_ideas": [
+    { "idea": "3.d4 cxd4 4.Nxd4 Bg7 5.c4, the Maroczy Bind clamping d5." },
+    { "idea": "3.c3 and 4.d4 for a broad centre; after ...d5, e5 and a space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "...Bg7 pressure on the long diagonal and ...Nc6 to hit d4." },
+    { "idea": "...d5 break against 3.c3, or ...Qb6 to harass the d4 knight." }
+  ],
+  "typical_structures": [
+    { "structure": "Maroczy Bind with pawns on c4 and e4." },
+    { "structure": "Panov-like or Caro-style centre after 3.c3 Bg7 4.d4 cxd4 5.cxd4 d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Neither forcing like the Dragon nor passive; mixed set-ups, not known as extremely sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound; White's best try is the Maroczy and Black holds with accuracy." },
+    "structure": { "notes": "Sicilian asymmetry, semi-open c-file; Maroczy lines are semi-open too." },
+    "approach": { "notes": "Played by strong players as a Dragon move order, standard." },
+    "level": { "reason": "understanding", "notes": "Maroczy structures and move-order traps need care but not long forcing lines." }
+  },
+  "plan_phrases": ["fianchetto", "Maroczy Bind", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Hungarian 3.c3", "moves": "1. e4 c5 2. Nf3 g6 3. c3 Bg7 4. d4 cxd4 5. cxd4 d5", "how": "Central break leads to an open, symmetrical-ish centre." },
+    { "name": "3.c4", "moves": "1. e4 c5 2. Nf3 g6 3. c4", "how": "Immediate Maroczy-style set-up." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible Dragon move order with Maroczy or Panov-like play, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A fully respectable Sicilian move order." },
+    "structure": { "value": "semi_open", "confidence": 0.75, "reason": "Asymmetric Sicilian centre with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Strong players choose it as a Dragon move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Maroczy structures need understanding, little forced memory." },
+    "plans": { "value": ["fianchetto", "maroczy_bind"], "reason": "Black fianchettoes and White aims for the c4/e4 bind." }
+  }
+}

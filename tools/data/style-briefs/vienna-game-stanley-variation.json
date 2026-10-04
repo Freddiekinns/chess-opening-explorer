@@ -1,0 +1,47 @@
+{
+  "slug": "vienna-game-stanley-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Stanley Variation",
+    "eco": "C26",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR b KQkq - 3 3"
+  },
+  "parent": "vienna-game-falkbeer-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops the bishop to c4 and aims at f7, keeping f4 and Nf3 in reserve. Black chooses between 3...Nxe4 (the wild Frankenstein-Dracula after 4.Qh5), 3...Bc5, which is an Italian-like game after Nf3, and 3...Nc6, which transposes to the Three Knights type. I am unsure which branch strong players choose most, so I read the quiet 3...Bc5 4.Nf3 d6 line.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Nf3, d3 and O-O, aiming at f7 and keeping f4 for later." },
+    { "idea": "Strike in the centre with f4 or d4 if Black allows." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror White with ...Bc5 and ...d6 and equalise comfortably." },
+    { "idea": "Hit e4 early with ...Nxe4 for sharp play." }
+  ],
+  "typical_structures": [
+    { "structure": "Italian-style centre with e4 and d3 against e5 and d6, flexible." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet main lines, with a sharp wildcard in the Frankenstein-Dracula. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Main lines do not give material; 3...Nxe4 sacrifices are in a sub-branch." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Italian-like tension in the centre." },
+    "approach": { "notes": "Vienna Game is standard per the anchors." },
+    "level": { "reason": "understanding", "notes": "Clear development; Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Frankenstein-Dracula", "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Qh5 Nd6 5. Bb3 Nc6 6. Nb5 g6", "how": "Extremely sharp with mutual sacrifices." },
+    { "name": "Reversed Spanish", "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Bb4", "how": "Closer to a Four Knights Spanish." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet Italian-like main lines but sharp side lines exist." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material is offered in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable at all levels." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Italian-type centre in tension." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Vienna is a normal choice for strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Familiar plans with some theory." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Bc4 and quick development aim at f7." }
+  }
+}

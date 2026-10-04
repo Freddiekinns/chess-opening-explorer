@@ -1,0 +1,44 @@
+{
+  "slug": "nimzowitsch-defense-williams-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Williams Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3 d6",
+    "fen": "r1bqkbnr/ppp1pppp/2np4/8/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense-declined-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 2.Nf3 with ...d6, a Philidor- or Pirc-like set-up in which the knight on c6 and the d6 pawn control the centre. White plays 3.d4 and Black chooses between 3...Nf6 4.Nc3 Bg4 or ...g6 and 3...Bg4 pinning the knight. White has more space, while Black has a compact position and tries to undermine the centre with ...e5, ...e6 or ...Bg4 pressure.",
+  "white_ideas": [
+    { "idea": "Take space with d4, Nc3 and Be3 or Be2, castle and keep the central pawns." },
+    { "idea": "Push d5 or e5 at the right moment to gain space and a kingside initiative." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...Bg4 or ...g6 and challenge the centre with ...e5 or ...e6." },
+    { "idea": "Keep the position compact and wait for White to overextend." }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor/Pirc-like: White d4/e4 against Black d6, ...e5 or ...e6 and fianchetto in some lines." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Compact Black set-up, unambitious, hard to break with few early tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; White keeps a small edge." },
+    "structure": { "notes": "Centre not locked; White gains space and Black waits to strike." },
+    "approach": { "notes": "Strong players seldom choose it, though Nimzowitsch Defence is occasionally used as a surprise." },
+    "level": { "reason": "understanding", "notes": "Fine move orders but clear plans, no long forcing lines." }
+  },
+  "plan_phrases": ["space advantage", "undermine the centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Compact but passive set-up; unsure between solid and balanced." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Sound." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre undecided, pinned knight and pawn tension." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plain plans, little forcing theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's central space against Black's compact set-up." }
+  }
+}

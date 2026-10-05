@@ -1125,3 +1125,18 @@ Closed narrowed to a locked centre after it took 42% of games; middle-value
 disputes take Sonnet's answer after a blind audit (13 of 14). Owner reviewed the
 table and set the Old Sicilian to Intermediate (`overrides.json`). Full results:
 `docs/proposals/2026-10-02-opening-style-classification.md`.
+
+## Compressed out of progress.md (2026-10-05)
+
+- **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
+  googleapis 176, react-router 7, lucide-react 1, express 5; green checks lied
+  three times. **`archive.md`.**
+- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
+  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
+  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
+  blocked on #86. Four false greens, every one a bump no workflow covered: a
+  Dependabot branch is tested against the `main` of the day it opened (#75
+  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
+  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
+  suppresses only that version — #76 returned as #89 — so #94 was answered by
+  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.

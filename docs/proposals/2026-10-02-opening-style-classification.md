@@ -1,11 +1,11 @@
 # Opening style classification — diagnosis and proposal
 
-**Status (2026-10-05):** wired into the site (step 4) on PR #160, with the long
-tail still being classified; see [Shipping](#shipping-2026-10-05). Earlier:
-piloting. The owner chose to go ahead without waiting for the step 0 gate,
-because the at-a-glance purpose of tags applies on every page whether or not
-anyone searches by style. Rubric: `docs/style-taxonomy.md`. Plan:
-[Execution plan](#execution-plan-2026-10-03).
+**Status (2026-10-05):** merged and live (step 4) as #160, with the long tail
+(848 variations, 0.8% of games) still to classify; see
+[Shipping](#shipping-2026-10-05). Earlier: piloting. The owner chose to go ahead
+without waiting for the step 0 gate, because the at-a-glance purpose of tags
+applies on every page whether or not anyone searches by style. Rubric:
+`docs/style-taxonomy.md`. Plan: [Execution plan](#execution-plan-2026-10-03).
 
 ## The problem, measured
 

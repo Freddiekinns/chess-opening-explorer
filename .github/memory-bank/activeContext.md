@@ -2,32 +2,34 @@
 
 **Date:** 2026-10-05
 
-## Current Task: Style tags — shipped to the site, tail still filling
+## Current Task: Style tags — merged, tail still to classify
 
-Branch `feat/style-taxonomy`, PR #160. Fixed taxonomy (`docs/style-taxonomy.md`)
-replacing the LLM style tags; pipeline in `tools/style-tags/` (README has the
-steps). 105 researched variations plus 458 unsourced (`UNSOURCED.md`, tail-01 to
-tail-23). Judge pass done 2026-10-05: 0 unresolved.
+Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing
+the LLM style tags; pipeline in `tools/style-tags/` (README has the steps). 105
+researched variations plus 458 unsourced (`UNSOURCED.md`, tail-01 to tail-23);
+judge pass done, 0 unresolved.
 
-**Wired 2026-10-05.** `export.js` writes `api/data/style-tags.json` (80% of
-pages, 65% of games; hubs hold another 34%). `style-tags-service.js` serves it:
-detail page and `OpeningCard` draw `StyleTags` from `style_profile`; Discover's
-level and style facets read the axes (styles: solid, sharp, gambit, dubious,
-system, offbeat; old values aliased in `browse_facets.json`); style search maps
-words to axes through `STYLE_AXES`. Untagged pages show no tags, not old ones.
-The middleware pre-render carries no tags, as before.
+`export.js` writes `api/data/style-tags.json`; `style-tags-service.js` serves it
+as `style_profile` to the detail page, `OpeningCard`, Discover's level and style
+facets (solid, sharp, gambit, dubious, system, offbeat; old values aliased in
+`browse_facets.json`) and style search (`STYLE_AXES`). Coverage by position:
+tagged 80% of pages / 64.8% of games, hubs 4% / 34.5% (no tags by design),
+untagged 16% / 0.8%. Untagged pages and the middleware pre-render show none.
 
-Next: the owner decides whether to merge now. Then the tail, tail-24 to tail-66
-(~850 variations, ~16% of pages, ~1% of games): waves of 4 agents × 20, then
-`jev-classify.js --new`, `collect-unsourced.js`, `validate.js`, judge any new
-lists, `export.js`. One wave costs ~25% of a 5-hour window and 4% of the week.
+Next: the tail, tail-24 to tail-66 — 848 variations, each under 1.6M games
+(median ~100k). Owner plans to run it late in the week on leftover usage. Waves
+of 4 agents × 20 (~11 waves), each ~25% of a 5-hour window and ~4% of the week,
+so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
+`collect-unsourced.js`, `validate.js`, judge any new lists, `export.js`; commit
+briefs in chunks of ~100. Work on a new branch off `main`.
 
 Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
 Dragon description (describes the Accelerated Dragon); "solid response to e4"
 returns nothing (`filterByResponseToMoves` excludes lines starting 1.e4);
 `search-by-category` and `search-categories` still read the old tags and have no
-caller; saved repertoire entries keep the old level they were saved with. Commit
-briefs in chunks of ~100 (the prettier hook's command line).
+caller; saved repertoire entries keep their old level. On protected previews a
+direct `/opening/` load shows Vercel's login page (middleware fetches
+`/index.html` unauthenticated); click through from `/` instead.
 
 ## Previous Task: Splitting the `irregular` family (#159)
 

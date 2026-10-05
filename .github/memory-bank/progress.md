@@ -4,6 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **`irregular` family split** (2026-10-02): 519 positions to three new families
+  and six re-routes; top-200 pages on the `irregular` shelf 16 → 4. A test now
+  fails when the ECO files drift from the resolver.
 - **Jev video experiment and filter** (2026-10-02): Jev rejections 99% right,
   acceptances half wrong; pipeline now drops confident rejections (31,605 of
   72,283 pairs), then pins 18 Jev-and-judge-agreed videos (top-200 own-page
@@ -38,11 +41,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   20 had been EOL since March**; CI moved to 24, unblocking jsdom 30 — frontend
   job 2m01s → 1m16s, `testTimeout` restored.
 - **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
-  googleapis 176, react-router 7, lucide-react 1, express 5 in;
-  google-auth-library 11 answered by deleting the unused declaration. **Green
-  checks lied three times** — the jsdom optional-peer drop, #106's coverage
-  board, and #109's `app.all('*')`, which throws under Express 5 with no test
-  loading `server.js`. **`archive.md`.**
+  googleapis 176, react-router 7, lucide-react 1, express 5; green checks lied
+  three times. **`archive.md`.**
 - **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
   #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
   merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left

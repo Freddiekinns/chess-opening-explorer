@@ -115,9 +115,12 @@ putting them back. The moving parts are `middleware.ts` (repo root),
   believable date that slides forward on every deploy, which is the drifting
   `lastmod` the function exists to prevent. `lastmodFromGit` therefore checks
   the commit against `.git/shallow` and omits the tag when it matches.
-  Consequence worth knowing: **production emits no `lastmod` at all** until the
+  Consequence worth knowing: **production usually emits no `lastmod`** until the
   build gets full history. That is the intended trade — no date beats a wrong
-  one.
+  one. The exception is a data commit inside Vercel's ~10-commit window: that
+  commit is not a boundary, so its real date ships until later commits push it
+  out. The family split (2026-10-02) was the first, and it exposed
+  `generate-sitemaps.test.js` asserting null for every shallow clone.
 
 - **`STATIC_ROUTES` is the one list of what is a page.** `App.tsx` builds its
   route table from it as a `Record<StaticRoute, ReactElement>`, so adding a

@@ -138,10 +138,14 @@ and drill for it.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
 - **Style tags tail** — style classification shipped in #160 (see **Archive**).
-  848 variations remain untagged: 16% of pages, 0.8% of games. Plan in
-  `.github/memory-bank/activeContext.md`, runbook in
-  `tools/style-tags/README.md`. Needs the gambit rule in **Now** first. Other
-  leftovers from #160:
+  848 variations remain untagged: 16% of pages, 0.8% of games, each under 1.6M
+  games (median ~100k). Needs the gambit rule in **Now** first. Runs on leftover
+  usage, on a new branch off `main`. The plan: lists tail-24 to tail-66, in
+  waves of 4 agents × 20 (~11 waves). Each wave costs ~25% of a 5-hour window
+  and ~4% of the week, so the tail needs at least three 5-hour windows. Per
+  wave: `jev-classify.js --new`, `collect-unsourced.js`, `validate.js`, judge
+  any new lists, `export.js`; commit briefs in chunks of ~100. Runbook:
+  `tools/style-tags/README.md`. Other leftovers from #160:
   - **Split the Maróczy Bind (5.c4) out of the Accelerated Dragon.**
   - **Saved repertoire entries keep their old level** after the taxonomy change.
   - **Delete `search-by-category` and `search-categories`** — they read the old

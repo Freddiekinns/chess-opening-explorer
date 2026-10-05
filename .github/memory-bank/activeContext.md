@@ -24,12 +24,12 @@ so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
 briefs in chunks of ~100. Work on a new branch off `main`.
 
 Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
-Dragon description (describes the Accelerated Dragon); "solid response to e4"
-returns nothing (`filterByResponseToMoves` excludes lines starting 1.e4);
-`search-by-category` and `search-categories` still read the old tags and have no
-caller; saved repertoire entries keep their old level. On protected previews a
-direct `/opening/` load shows Vercel's login page (middleware fetches
-`/index.html` unauthenticated); click through from `/` instead.
+Dragon description (describes the Accelerated Dragon); the intent parser
+misreads "solid response to e4", "solid e4 openings", "… for white" and
+"advanced sicilian defence" (all older than the tags); `search-by-category` and
+`search-categories` still read the old tags and have no caller; saved repertoire
+entries keep their old level. A protected preview shows Vercel's login on a
+direct `/opening/` load (middleware fetches `/index.html`).
 
 ## Previous Task: Splitting the `irregular` family (#159)
 

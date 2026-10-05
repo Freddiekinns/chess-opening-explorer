@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { StarButton } from './StarButton';
 import { MiniBoard } from './MiniBoard';
 import { ResultBar } from './ResultBar';
+import { StyleTags, type StyleProfile } from './StyleTags';
 
 interface Opening {
   fen: string;
@@ -31,6 +32,7 @@ interface Opening {
   white_win_rate?: number | null;
   black_win_rate?: number | null;
   draw_rate?: number | null;
+  style_profile?: StyleProfile | null;
 }
 
 interface OpeningCardProps {
@@ -86,10 +88,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
     return moveMatches.slice(0, 2).join(' ');
   };
 
-  const getComplexity = (): string => {
-    return opening.analysis?.complexity || opening.analysis_json?.complexity || 'Beginner';
-  };
-
   const formatGamesPlayed = (count: number): string => {
     if (count >= 1_000_000) return `${(count / 1_000_000).toFixed(1)}M`;
     if (count >= 1_000) return `${(count / 1_000).toFixed(0)}K`;
@@ -98,7 +96,6 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
 
   const gameStats = getGameStats();
   const firstMoves = getFirstMovesDisplay();
-  const complexity = getComplexity();
   const gamesPlayed = opening.games_analyzed;
 
   // List-item variant (mobile layout)
@@ -111,9 +108,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
             <h3 className="list-item-name">{opening.name}</h3>
           </div>
           <div className="list-item-meta">
-            <span className={`complexity-pill complexity-${complexity.toLowerCase()}`}>
-              {complexity}
-            </span>
+            <StyleTags profile={opening.style_profile} maxWords={2} size="sm" />
             {showEco && <span className="eco-pill">{opening.eco}</span>}
           </div>
           <span className="list-item-moves">{firstMoves}</span>
@@ -144,11 +139,11 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           )}
         </div>
 
-        {/* 2. Metadata row — complexity + ECO code */}
+        {/* 2. Metadata row — the first three style words + ECO code. No words for
+            positions with no tags: the level pill used to default to
+            "Beginner" there, which stated something nobody had judged. */}
         <div className="card-meta-row">
-          <span className={`complexity-pill complexity-${complexity.toLowerCase()}`}>
-            {complexity}
-          </span>
+          <StyleTags profile={opening.style_profile} maxWords={3} size="sm" />
           {showEco && <span className="eco-pill">{opening.eco}</span>}
         </div>
 

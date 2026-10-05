@@ -1,39 +1,33 @@
 # Active Context
 
-**Date:** 2026-10-04
+**Date:** 2026-10-05
 
-## Current Task: Style tags — unsourced tail
+## Current Task: Style tags — shipped to the site, tail still filling
 
 Branch `feat/style-taxonomy`, PR #160. Fixed taxonomy (`docs/style-taxonomy.md`)
 replacing the LLM style tags; pipeline in `tools/style-tags/` (README has the
-steps). Pilot: 105 researched variations, owner-reviewed 2026-10-04.
+steps). 105 researched variations plus 458 unsourced (`UNSOURCED.md`, tail-01 to
+tail-23). Judge pass done 2026-10-05: 0 unresolved.
 
-The other 1,308 variations get **unsourced briefs** (`UNSOURCED.md`): Sonnet
-writes evidence and its own tags from memory, no web, in waves of 4 agents × 20
-from `_inputs/tail-NN.json` (most-played first). Then `jev-classify.js --new`,
-`collect-unsourced.js`, `validate.js`. Blind test and the rules it forced (0.65
-confidence floor, gambit check for the judge): proposal, "Unsourced tier".
+**Wired 2026-10-05.** `export.js` writes `api/data/style-tags.json` (80% of
+pages, 65% of games; hubs hold another 34%). `style-tags-service.js` serves it:
+detail page and `OpeningCard` draw `StyleTags` from `style_profile`; Discover's
+level and style facets read the axes (styles: solid, sharp, gambit, dubious,
+system, offbeat; old values aliased in `browse_facets.json`); style search maps
+words to axes through `STYLE_AXES`. Untagged pages show no tags, not old ones.
+The middleware pre-render carries no tags, as before.
 
-**Done 2026-10-04: tail-01 to tail-23** (458 variations). Tagged now: 80% of
-pages and 65% of games; hubs (no tags by design) hold another 34% of games. The
-rest, tail-24 to tail-66 (~850 variations), is ~16% of pages and ~1% of games;
-one wave of 80 costs ~25% of a 5-hour window and 4% of the week. Recommended
-order, pending the owner's call: ship first, with untagged pages showing no tags
-rather than old ones, and fill the tail in over the following weeks.
+Next: the owner decides whether to merge now. Then the tail, tail-24 to tail-66
+(~850 variations, ~16% of pages, ~1% of games): waves of 4 agents × 20, then
+`jev-classify.js --new`, `collect-unsourced.js`, `validate.js`, judge any new
+lists, `export.js`. One wave costs ~25% of a 5-hour window and 4% of the week.
 
-1. Judge (`JUDGE.md`, Opus): the "unresolved" and "Unsourced gambits the name
-   does not mention" lists in `validate.js`.
-2. Consistency pass: one opening split over several names gets different tags
-   (Veresov: `richter-veresov-attack`, `queens-pawn-game-veresov`,
-   `queens-pawn-game-veresov-attack`). Merge with `shared-briefs.json`.
-3. Export into `api/data` and wire the detail page, `OpeningCard`, Discover
-   facets and both halves of search, via the `seo-crawl-graph` and
-   `search-ranking` skills. Ship all at once.
-
-Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon (Bind
-Advanced, the rest Intermediate); fix the Dragon page description, which
-describes the Accelerated Dragon. Commits of 100+ briefs exceed the Windows
-command line in the prettier pre-commit hook; commit them in chunks of ~100.
+Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
+Dragon description (describes the Accelerated Dragon); "solid response to e4"
+returns nothing (`filterByResponseToMoves` excludes lines starting 1.e4);
+`search-by-category` and `search-categories` still read the old tags and have no
+caller; saved repertoire entries keep the old level they were saved with. Commit
+briefs in chunks of ~100 (the prettier hook's command line).
 
 ## Previous Task: Jev rejection filter for videos
 

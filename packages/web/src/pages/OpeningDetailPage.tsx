@@ -35,6 +35,7 @@ import { getMyLevel } from '../lib/myLevel';
 import { recordRecentOpening } from '../lib/recentOpenings';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
+import { StyleTags, levelLabel, type StyleProfile } from '../components/shared/StyleTags';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildOpeningDescription, SITE_NAME } from '../lib/siteConfig';
 import { trackEvent } from '../lib/analytics';
@@ -78,6 +79,7 @@ type Opening = ChessOpening & {
   white_win_rate?: number;
   black_win_rate?: number;
   draw_rate?: number;
+  style_profile?: StyleProfile | null;
 };
 
 // Aggregate endpoint: opening + stats + videos + courses + tree in one
@@ -974,7 +976,7 @@ const OpeningDetailPage: React.FC = () => {
       name: opening.name,
       eco: opening.eco,
       moves: opening.moves,
-      complexity: opening.complexity,
+      complexity: levelLabel(opening.style_profile),
     });
   };
 
@@ -1009,26 +1011,7 @@ const OpeningDetailPage: React.FC = () => {
           </h1>
           <StarButton filled={isSaved(opening.fen)} onClick={handleToggleRepertoire} size="md" />
         </div>
-        <div className={styles.tagPillsRow}>
-          {/* Complexity pill */}
-          {opening.complexity && <span className={styles.tagPill}>{opening.complexity}</span>}
-
-          {/* Style tags pills */}
-          {(() => {
-            const styleTags =
-              opening.analysis_json?.style_tags ||
-              opening.analysis?.style_tags ||
-              opening.style_tags ||
-              [];
-            return styleTags && styleTags.length > 0
-              ? styleTags.map((tag: string, index: number) => (
-                  <span key={`style-${index}`} className={styles.tagPill}>
-                    {tag}
-                  </span>
-                ))
-              : null;
-          })()}
-        </div>
+        <StyleTags profile={opening.style_profile} showPlans centred />
       </div>
 
       {/* Two-Column Layout */}

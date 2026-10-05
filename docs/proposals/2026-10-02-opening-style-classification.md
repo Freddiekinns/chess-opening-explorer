@@ -1,9 +1,11 @@
 # Opening style classification — diagnosis and proposal
 
-**Status (2026-10-03):** piloting. The owner chose to go ahead without waiting
-for the step 0 gate, because the at-a-glance purpose of tags applies on every
-page whether or not anyone searches by style. Rubric: `docs/style-taxonomy.md`.
-Plan: [Execution plan](#execution-plan-2026-10-03).
+**Status (2026-10-05):** wired into the site (step 4) on PR #160, with the long
+tail still being classified; see [Shipping](#shipping-2026-10-05). Earlier:
+piloting. The owner chose to go ahead without waiting for the step 0 gate,
+because the at-a-glance purpose of tags applies on every page whether or not
+anyone searches by style. Rubric: `docs/style-taxonomy.md`. Plan:
+[Execution plan](#execution-plan-2026-10-03).
 
 ## The problem, measured
 
@@ -367,3 +369,28 @@ the tags with the researched answer:
   branch mistaken for the main line convinces both (the La Bourdonnais came back
   as a dubious White gambit from the Reuter Gambit 3.Nf3 dxe4 4.Ng5).
   `validate.js` sends unsourced gambits the name does not mention to the judge.
+
+## Shipping (2026-10-05)
+
+Step 4 shipped before the tail was finished, because by then tags covered 80% of
+pages and 65% of games (hubs, which get none by design, hold another 34%). The
+rest is ~16% of pages and ~1% of games, and fills in wave by wave: each run of
+`tools/style-tags/export.js` reaches the site with no code change.
+
+- **Stored beside `analysis_json`** as `api/data/style-tags.json` (1.1 MB:
+  variations, a position-to-variation map, and the labels and glossary lines
+  from the taxonomy). Read through `style-tags-service.js`.
+- **A page with no tags shows none,** rather than the old ones: mixing the two
+  vocabularies on one site would be worse than a missing chip.
+- **Discover's styles stop partitioning the corpus.** The old `primaryStyle`
+  picked exactly one bucket per opening because the LLM tags matched everything;
+  each new style holds well under half of what is tagged, so an opening sits
+  under every style it has (Sharp and a Gambit).
+- **The judge's last pass** (15 items) turned all 8 suspect unsourced gambits
+  bar the Damiano Variation and the Schliemann back to none. The La Bourdonnais
+  was the predicted failure exactly: every axis rested on the Reuter Gambit
+  reading. It also found the King's Gambit Accepted lines where Black returns
+  the pawn with ...d5 (Abbazia, Modern) are not gambits under the taxonomy's own
+  rule, which the gambit section does not yet spell out.
+- **Not done in this step:** the crawler-visible pre-render carries no tags, as
+  before; tags reach Googlebot only through the rendered page.

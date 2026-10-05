@@ -5,6 +5,7 @@ const VideoAccessService = require('../services/video-access-service');
 const searchService = require('../services/search-service');
 const CourseService = require('../services/course-service');
 const BrowseService = require('../services/browse-service');
+const styleTags = require('../services/style-tags-service');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -383,7 +384,7 @@ router.get('/page/:fen', async (req, res) => {
     res.json({
       success: true,
       data: {
-        opening,
+        opening: { ...opening, style_profile: styleTags.profileFor(decodedFen) },
         stats,
         videos: videoResult.videos,
         videoContext: { source: videoResult.source, family: videoResult.family },
@@ -639,7 +640,7 @@ router.get('/popular-by-eco', (req, res) => {
  *        landing page takes its category counts from one fetch and its grid
  *        from another, which is why they never reconcile.
  * @param {string} level  - Beginner | Intermediate | Advanced
- * @param {string} style  - gambit | aggressive | tactical | positional | solid | system
+ * @param {string} style  - solid | sharp | gambit | dubious | system | offbeat
  * @param {string} family - family_id from families.json (or `uncategorised`)
  * @param {string} sort   - popular (default) | name
  * @param {number} page     - 1-based, default 1
@@ -669,8 +670,10 @@ router.get('/browse', (req, res) => {
     const levelValue = level && canonical(config.levels.map((l) => l.value), level);
     if (level && !levelValue) return reject('level', level);
 
-    const styleValues = [config.gambitOverride, ...config.styles].map((s) => s.value);
-    const styleValue = style && canonical(styleValues, style);
+    // A style from before the taxonomy still filters, on its nearest value.
+    const retired = config.retiredStyles || {};
+    const styleKey = style && (retired[style.toLowerCase()] || style);
+    const styleValue = styleKey && canonical(config.styles.map((s) => s.value), styleKey);
     if (style && !styleValue) return reject('style', style);
 
     const sortValue = sort && canonical(config.sorts.map((s) => s.value), sort);

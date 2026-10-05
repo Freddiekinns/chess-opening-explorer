@@ -1,5 +1,6 @@
 import React from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
+import { levelLabel } from '../shared/StyleTags';
 import { FilterBar } from '../filters/FilterBar';
 import { FilterSheet } from '../filters/FilterSheet';
 import { Toast } from '../shared/Toast';
@@ -87,7 +88,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
                     name: opening.name,
                     eco: opening.eco,
                     moves: opening.moves,
-                    complexity: opening.level ?? undefined,
+                    complexity: levelLabel(opening.style_profile),
                   })
                 }
                 className="opening-grid-item"

@@ -7,13 +7,19 @@ export const browseItem = (name: string, fen: string) => ({
   family_id: 'sicilian',
   family_name: 'Sicilian Defense',
   level: 'Advanced',
-  style: 'aggressive',
+  styles: ['sharp'],
   games_analyzed: 1200,
   white_win_rate: 0.5,
   draw_rate: 0.1,
   black_win_rate: 0.4,
   avg_rating: 1600,
-  analysis_json: { complexity: 'Advanced', style_tags: ['Aggressive'] },
+  style_profile: {
+    words: [
+      { axis: 'character', value: 'sharp', label: 'Sharp', glossary: 'Forcing play.' },
+      { axis: 'level', value: 'advanced', label: 'Advanced', glossary: 'Hard to play.' },
+    ],
+    plans: [],
+  },
 });
 
 export const browseResponse = (overrides: Record<string, unknown> = {}) => ({
@@ -32,7 +38,7 @@ export const browseResponse = (overrides: Record<string, unknown> = {}) => ({
     ],
     style: [
       { value: 'gambit', label: 'Gambit', count: 12 },
-      { value: 'aggressive', label: 'Aggressive', count: 18 },
+      { value: 'sharp', label: 'Sharp', count: 18 },
     ],
     family: [
       { value: 'sicilian', label: 'Sicilian Defense', count: 20, first_move: 'e4' },

@@ -1012,7 +1012,12 @@ const OpeningDetailPage: React.FC = () => {
           </h1>
           <StarButton filled={isSaved(opening.fen)} onClick={handleToggleRepertoire} size="md" />
         </div>
-        <StyleTags profile={opening.style_profile} showPlans centred />
+        <StyleTags
+          profile={opening.style_profile}
+          showPlans
+          centred
+          className={styles.tagPillsRow}
+        />
       </div>
 
       {/* Two-Column Layout */}

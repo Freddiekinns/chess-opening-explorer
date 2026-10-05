@@ -5,7 +5,8 @@
 const {
   CHESS_MOVE_PATTERNS,
   ECO_CODE_PATTERN,
-  SEMANTIC_MAPPINGS
+  SEMANTIC_MAPPINGS,
+  STYLE_AXES
 } = require('./SearchConstants');
 
 class QueryUtils {
@@ -72,7 +73,9 @@ class QueryUtils {
     const words = text.toLowerCase().split(/\s+/);
     
     for (const word of words) {
-      if (SEMANTIC_MAPPINGS[word]) {
+      // STYLE_AXES too: it is what matching reads, and words such as "sharp"
+      // have no SEMANTIC_MAPPINGS entry.
+      if (Object.hasOwn(SEMANTIC_MAPPINGS, word) || Object.hasOwn(STYLE_AXES, word)) {
         styles.push(word);
       }
     }

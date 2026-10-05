@@ -639,20 +639,22 @@
     min-width: 0;
   }
 
-  .tagPillsRow {
+  /* The style tags sit on one scrolling line under the left-aligned title.
+     Two classes, to win over StyleTags' own centred, wrapping row whatever
+     order the two modules load in. */
+  .titleArea .tagPillsRow {
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    margin-top: var(--space-2);
   }
 
-  .tagPillsRow::-webkit-scrollbar {
+  .titleArea .tagPillsRow::-webkit-scrollbar {
     display: none;
   }
 
-  .tagPill {
+  .tagPillsRow > * {
     flex: none;
     white-space: nowrap;
   }

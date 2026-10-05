@@ -671,8 +671,10 @@ router.get('/browse', (req, res) => {
     if (level && !levelValue) return reject('level', level);
 
     // A style from before the taxonomy still filters, on its nearest value.
+    // Own keys only: an inherited name ("constructor") is not an alias.
     const retired = config.retiredStyles || {};
-    const styleKey = style && (retired[style.toLowerCase()] || style);
+    const lower = style && style.toLowerCase();
+    const styleKey = style && (Object.hasOwn(retired, lower) ? retired[lower] : style);
     const styleValue = styleKey && canonical(config.styles.map((s) => s.value), styleKey);
     if (style && !styleValue) return reject('style', style);
 

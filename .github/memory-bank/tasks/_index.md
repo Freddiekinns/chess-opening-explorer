@@ -14,11 +14,19 @@ _No tasks currently awaiting merge._
 
 ## Pending
 
+_None. Open work lives in `docs/backlog.md` only; a task file is a design
+record, not a to-do list._
+
+## Merged into the backlog
+
 - [TASK013] Engine-Validated Practical Blunder Analysis - Added 2026-03-17.
   Merged into "position facts" in `docs/backlog.md` rev 4 (2026-09-24)
-- [TASK012] Video Pipeline Overhaul - Added 2026-03-15
 
 ## Completed
+
+- [TASK012] Video Pipeline Overhaul - Closed 2026-10-05; every step shipped in
+  later video work. The one half-done part (the "vs" penalty) is in
+  `docs/backlog.md`
 
 - [TASK015] Hierarchical Family Tree Navigation (Opening Breadcrumbs) - Closed
   2026-09-24 as shipped (breadcrumbs, next moves, "Instead of…" rows, ancestor

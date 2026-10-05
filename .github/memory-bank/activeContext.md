@@ -2,7 +2,19 @@
 
 **Date:** 2026-10-05
 
-## Current Task: Style tags — merged, tail still to classify
+## Current Task: Backlog rev 5 — one list of open work
+
+Branch `claude/sleepy-bell-ehukrm` (merges #165's branch). Follow-ups had been
+left in this file, `progress.md`'s "What's Left", proposals and older reviews;
+all now sit in `docs/backlog.md`, and `AGENTS.md` ("Keeping docs current")
+requires every follow-up to go there. TASK012 closed. Next: owner picks the next
+task; recommended the Analyse statistics fix (top of **Now**).
+
+Act before 1 November: #154, the October video refresh, was built before the Jev
+filter (#157) and the family split (#159). Close it and re-run the workflow on
+current `main` once `JEV_API_KEY` is confirmed as a repository secret.
+
+## Previous Task: Style tags — merged, tail still to classify
 
 Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing
 the LLM style tags; pipeline in `tools/style-tags/` (README has the steps). 105
@@ -27,21 +39,3 @@ Before the tail runs, spell out the gambit rule (KGA …d5 lines are not gambits
 Every follow-up is in `docs/backlog.md` (rev 5): the gambit rule, Dragon
 description and intent parser under **Now**; the rest under **Later**,
 **Enablers** and **Engineering health**.
-
-## Previous Task: Splitting the `irregular` family (#159)
-
-`irregular` held 940 positions, from 1.e4 to the Grob, so its family shelf (the
-video fallback for pages with no videos of their own) was a grab-bag. It was 16
-of the 19 top-200 pages that fall back to a shelf. Three new families in
-`data/families.json`: `queens-pawn` (Queen's Pawn Game, 210 positions),
-`kings-pawn` (King's Pawn Game, 157) and `offbeat-e4` (Offbeat 1.e4 Defenses,
-110). Six narrow re-routes in `data/family-overrides.json`: 2…Nc6 → `italian`,
-London-named → `london`, 1.d4 g6 → `pirc-modern`, Neo-Indian → `nimzo-indian`,
-Veresov → `trompowsky`, and a mislabelled B01 → `scandinavian`. `irregular`
-keeps 421 flank and offbeat positions; top-200 pages on its shelf 16 → 4.
-
-`tools/family-taxonomy/tests/family-taxonomy-data.test.js` pins the real
-taxonomy and fails when the committed ECO files drift from the resolver.
-Analysis and decisions: `docs/proposals/2026-10-02-irregular-family-split.md`.
-Left open: 1.g3 (Hungarian, Benko Opening) stays in `irregular` because KIA's
-own shelf is contaminated; the 192 `uncategorised` positions get no shelf.

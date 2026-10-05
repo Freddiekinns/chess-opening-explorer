@@ -207,6 +207,11 @@ and drill for it.
     re-run the workflow (`workflow_dispatch`) on current `main`. Check the
     `JEV_API_KEY` repository secret is set first — the filter fails open without
     it, so new pairs Jev would reject get through.
+  - **The "vs" penalty fires on opening comparisons.** `playerVsPattern` in
+    `video-matcher.js` matches any two capitalised words around "vs", so
+    "Sicilian vs French Defense" and "Attack vs Defense" take the
+    player-vs-player penalty. Its test uses a lowercase title and passes anyway.
+    Left over from TASK012; fix test-first.
   - **The scorer gives 0** to some videos whose titles name the opening
     (Veresov, Owen, Nimzo-Larsen). Fixing it beats adding more pins.
   - **A move-order check** on the top few hundred pages: most covered top pages
@@ -275,8 +280,12 @@ alongside.
   separated only by ECO — a data problem.
 - **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
-- **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
-  dedupe. See `.github/memory-bank/archive.md`.
+- **Smaller UX gaps** (2026-08-28 list, `.github/memory-bank/archive.md`):
+  mobile Discover shows no chips for active filters (they sit inside the sheet);
+  no win-rate filter on Discover (sort was rejected: a minimum-sample floor
+  makes `total` depend on `sort`); no shared ARIA tooltip component;
+  `rankNotableGames` dedupes by exact player name, so "Caruana, F." and
+  "Caruana, Fabiano" count as two players.
 - **Run `/doctor` locally** _(open since 2026-07-25)_ — it cannot run from a
   remote session, and it proposes `CLAUDE.md` trims.
 
@@ -304,7 +313,7 @@ Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
 Platform: position graph → detail page on it · position facts → J2 → sparring
 Later:    J1 · family hubs · /board · report card · style tags tail
           · family taxonomy leftovers · family rollups phases 2–3
-Enablers: redo the #154 refresh → scorer zeros → move-order check
+Enablers: redo the #154 refresh → "vs" penalty · scorer zeros → move-order check
           · wrong descriptions · Jev families · study refresh
 Parked:   slice 3 SRS · J7
 ```

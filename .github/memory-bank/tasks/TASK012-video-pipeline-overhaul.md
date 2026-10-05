@@ -1,6 +1,15 @@
 # Task 012: Video Pipeline Overhaul
 
-**Status:** Pending **Added:** 2026-03-15
+**Status:** Completed — closed 2026-10-05 **Added:** 2026-03-15
+
+> **Closed 2026-10-05.** Every step shipped in later work: the channel-first
+> pipeline is deleted, `lib/channel-discovery.js` and the `--mode=full` /
+> `--mode=rematch` modes exist, channel tiers come from
+> `config/youtube_channels.json` through `lib/channel-tiers.js` (no hard-coded
+> lists; agadmator is `standard`), and RSS fetches run in parallel. One part is
+> only half done: the targeted "vs" pattern still penalises Title Case opening
+> comparisons such as "Sicilian vs French Defense", and its test passes only
+> because it uses a lowercase title. That is in `docs/backlog.md` (Enablers).
 
 ---
 

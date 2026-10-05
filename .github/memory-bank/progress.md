@@ -4,6 +4,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Backlog rev 5: one list of open work** (2026-10-05): follow-ups scattered
+  across `activeContext.md`, `progress.md`, proposals and older reviews folded
+  into `docs/backlog.md`; `AGENTS.md` now requires every follow-up to go there.
+  TASK012 closed. Found: #154 (October video refresh) predates the Jev filter.
 - **Style tags** (2026-10-05, #160): a fixed six-axis taxonomy replaces the LLM
   tags on the detail page, cards, Discover facets and style search. 563
   variations cover 80% of pages and 65% of games; 848 tail variations remain.
@@ -61,8 +65,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   overhaul; the `/api/explorer` proxy; Deviation Trainer slice 1; Study matching
   V2 (18.2%→35.7%); the video index (28.2%→72.8%); route splitting (409→189 kB)
   and `/api/openings/all` → 410; 28-family taxonomy; domain migration;
-  TASK006–016; Practice Mode. **Still true and not fixed**: the common-plans
-  ECO-bucket defect shipped no code change.
+  TASK006–016; Practice Mode. The common-plans ECO-bucket defect is fixed (plans
+  are served per FEN); its content checks are in `docs/backlog.md`.
 
 ## What's Left
 

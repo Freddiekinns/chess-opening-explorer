@@ -12,10 +12,14 @@ is the ranked list that review produced.
 - **rev 4** (2026-09-24) — re-checked every item against the code, folded in the
   2026-08-11 product/UX audit and the board-search PRD, added new ideas, and
   archived what no longer earns a place (owner-agreed; see **Archive**).
-- **rev 5** (2026-10-05) — folded in the follow-ups the style-tags, Jev video
-  and `irregular` work (#156–#160) left in `activeContext.md` and the proposal
-  docs, and `progress.md`'s "What's Left" list, which is now gone. **This file
-  is the only list of open work**; see "Keeping docs current" in `AGENTS.md`.
+- **rev 4.1** (2026-10-05) — the Jev video filter (#157) and style tags (#160)
+  shipped; added two Jev follow-ups under Enablers.
+- **rev 5** (2026-10-05) — folded in every follow-up that lived outside this
+  file: what the style-tags, Jev video and `irregular` work (#156–#160) left in
+  `activeContext.md` and the proposal docs, `progress.md`'s "What's Left" list
+  (now gone), and open items in older reviews that rev 4 did not carry over.
+  **This file is the only list of open work**; see "Keeping docs current" in
+  `AGENTS.md`.
 
 ## The unifying principle
 
@@ -66,7 +70,8 @@ and drill for it.
   King's Gambit Accepted lines where Black returns the pawn with …d5 (Abbazia,
   Modern) are not gambits under the taxonomy's own rule, which
   `docs/style-taxonomy.md` does not yet state. The tail would repeat the error.
-- **Dragon description** describes the Accelerated Dragon. Fix the text.
+- **Dragon description** describes the Accelerated Dragon. One of the 43 wrong
+  claims under Enablers; it leads because it is on a top page.
 - **Style search intent parser** misreads "solid response to e4", "solid e4
   openings", "… for white" and "advanced sicilian defence" (all older than the
   tags). It also skews the `query_shape` measurement that gates style work. Read
@@ -132,19 +137,11 @@ and drill for it.
   board" metric can be measured.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
-- **Opening style classification** _(added 2026-10-02)_ — the LLM style tags
-  barely distinguish one opening from another: "Initiative" is on 99% of
-  positions, and the "solid" filter passes 84%. Replace them with a few
-  exclusive axes of named values (Quiet / Balanced / Sharp, …), classified per
-  named variation and validated by script (anchors, cross-model agreement, draw
-  rate and material checks, a blind judge), with no hand-labelling. Gated on
-  measuring whether anyone searches by style (`query_shape` on `search_select`,
-  added 2026-10-02). Proposal:
-  `docs/proposals/2026-10-02-opening-style-classification.md`. _Shipped for 80%
-  of pages 2026-10-05 (#160), ahead of its gate._ What remains:
-  - **The tail** — 848 variations (16% of pages, 0.8% of games), on leftover
-    usage. Plan in `activeContext.md`, runbook in `tools/style-tags/README.md`.
-    Needs the gambit rule in **Now** first.
+- **Style tags tail** — style classification shipped in #160 (see **Archive**).
+  848 variations remain untagged: 16% of pages, 0.8% of games. Plan in
+  `.github/memory-bank/activeContext.md`, runbook in
+  `tools/style-tags/README.md`. Needs the gambit rule in **Now** first. Other
+  leftovers from #160:
   - **Split the Maróczy Bind (5.c4) out of the Accelerated Dragon.**
   - **Saved repertoire entries keep their old level** after the taxonomy change.
   - **Delete `search-by-category` and `search-categories`** — they read the old
@@ -155,6 +152,12 @@ and drill for it.
   (`docs/proposals/2026-10-02-irregular-family-split.md`): the Torre Attack
   still goes to `london`; 1.g3 stays in `irregular` because KIA's own shelf is
   contaminated; the 192 `uncategorised` positions get no shelf.
+- **Family rollups phases 2 and 3** _(unassessed; carried over from 2026-06-06)_
+  — a family lens route with a chip system, and display-only repertoire grouping
+  (`.github/memory-bank/specs/2026-05-04-opening-family-rollups.md` §6.2–6.3).
+  Phase 1 shipped in #34. Rev 4 never assessed them: phase 2 overlaps **family
+  hubs** and phase 3 overlaps open decision 3, so decide them there rather than
+  separately.
 
 ## Parked
 
@@ -185,15 +188,25 @@ and drill for it.
   metadata says it was built "API-based".
 - **Variation-level video classification** — carried over unassessed from rev 3:
   an endorsed pipeline project that also builds validation tooling for J1/J2.
-  - **Jev video experiment** _(added 2026-10-02, $5 budget)_ — test whether a
-    decision model reading each video's own text catches bad matches the scorer
-    keeps, judged blind. Plan:
-    `docs/proposals/2026-10-02-jev-video-experiment.md`. _Done 2026-10-02; the
-    rejection filter shipped in #157._
-  - **Enable the monthly refresh Action** — commit `tools/data/videos.sqlite`,
-    confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`. Until then the index only
-    moves when someone runs it by hand. Then V4–V6
-    (`docs/reviews/2026-07-02-video-experience-review.md`).
+  - ~~**Jev video experiment**~~ — shipped 2026-10-02 as a rejection filter plus
+    18 pinned videos (#157), $1.60 spent. Next steps (a rubric baseline, then a
+    move-order check) are in `docs/video-matching-and-jev.md`.
+  - **Use Jev's video families** _(added 2026-10-05)_ — the experiment's run 2
+    put all 10,239 corpus videos in a family. Where it disagreed with every
+    family the matcher had shown a video under, the blind judge sided with Jev
+    67% and the matcher 13%, and on displayed videos Jev called "not an opening
+    video" it agreed 90%. Nothing reads these answers yet. They feed the family
+    shelves pages without their own videos fall back to. Answers are in
+    `tools/data/experiments/jev-run2.jsonl`, gitignored and on the owner's
+    machine only; re-asking costs about $0.70. Results:
+    `docs/proposals/2026-10-02-jev-video-experiment.md`.
+  - **The October refresh, #154, predates the Jev filter.** The monthly Action
+    (`video-refresh.yml`, 06:00 on the 1st) is live and opened #154 on
+    2026-10-01 from a `main` without #157 or #159, and both rewrote
+    `api/data/video-index.json`. Do not merge it as it stands: close it and
+    re-run the workflow (`workflow_dispatch`) on current `main`. Check the
+    `JEV_API_KEY` repository secret is set first — the filter fails open without
+    it, so new pairs Jev would reject get through.
   - **The scorer gives 0** to some videos whose titles name the opening
     (Veresov, Owen, Nimzo-Larsen). Fixing it beats adding more pins.
   - **A move-order check** on the top few hundred pages: most covered top pages
@@ -201,12 +214,34 @@ and drill for it.
   - **Measured baseline** _(parked 2026-10-02)_ — a blind judge of the top-200
     pages' top 3 videos against a teaching rubric, to rank the two fixes above.
     Set-up in `docs/video-matching-and-jev.md`, "What's next".
+  - **V4–V6** — a video library per family, duration and level fit, and
+    chapter-level matching
+    (`docs/reviews/2026-07-02-video-experience-review.md`).
   - **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
+- **Fix the descriptions the briefs proved wrong** _(added 2026-10-05)_ — the
+  105 researched style briefs audited each current description and
+  `common_plans` claim by claim and marked 43 claims wrong, in 32 briefs (e.g.
+  the Dragon page describes the Accelerated Dragon). None are fixed yet. Correct
+  those from the briefs' sources first, then consider Jev as a cheap first pass
+  over the rest: for each claim, supported / wrong / unverifiable against its
+  brief, with only "wrong" going to a Claude fix. Unsourced briefs carry no
+  audit, so the tail needs evidence before Jev can check it. Plan: step 5 and
+  "Research once, use it twice" in
+  `docs/proposals/2026-10-02-opening-style-classification.md`. This is also the
+  unfinished half of the June common-plans work: the serving bug was fixed in
+  #41, but its Tier 1–2 content checks and Option D (re-enrich records that
+  fail) never ran (`docs/proposals/2026-06-12-common-plans-provenance.md`).
+- **Study refresh** _(open since 2026-07-10)_ — a monthly Action for studies
+  mirroring `video-refresh.yml` (fetch, `course:rematch`, audited auto-PR), and
+  a periodic `--refetch` so cached likes do not go stale. `courses.json` has not
+  been rebuilt by anything automatic.
+  `docs/reviews/2026-07-10-study-matching-v2.md`, "Follow-ups".
 
 ## Engineering health
 
-Moved from `progress.md`'s "What's Left" (2026-10-05). Not features, so not
-ranked against them; pick up alongside.
+Moved from `progress.md`'s "What's Left" (2026-10-05), plus older review items
+rev 4 did not carry. Not features, so not ranked against them; pick up
+alongside.
 
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
@@ -220,6 +255,16 @@ ranked against them; pick up alongside.
   indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
   301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical
   duplicate.
+- **Detection bands** _(open since 2026-08-28)_ — a deterministic script on a
+  rolling baseline that files an issue on a breach, with no model and no session
+  woken. First two metrics: the video audit's figures against a committed
+  baseline, and a synthetic fetch of a few `/opening/` URLs asserting a
+  non-empty `#root` and a real description. The second would have caught the
+  de-indexing on the day it shipped. Wants a task file first.
+  `docs/reviews/2026-08-28-ai-native-sdlc-adoption.md` §4.
+- **A SessionStart hook that runs `npm ci`** in remote sessions, so husky's git
+  hooks bind. Today a fresh session commits with no pre-commit or pre-push
+  checks (same review, "What shipping 1 and 2 turned up").
 - **A protected preview shows Vercel's login** on a direct `/opening/` load: the
   middleware fetches `/index.html`.
 - **`packages/shared` has two latent defects**: its `tests/` runs in no CI
@@ -232,6 +277,8 @@ ranked against them; pick up alongside.
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `.github/memory-bank/archive.md`.
+- **Run `/doctor` locally** _(open since 2026-07-25)_ — it cannot run from a
+  remote session, and it proposes `CLAUDE.md` trims.
 
 ## Open decisions
 
@@ -255,9 +302,10 @@ Next:     personal strip + ?practice= · practice memory · divergence callout
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    J1 · family hubs · /board · report card · style tail and leftovers
-          · family taxonomy leftovers
-Enablers: video refresh Action → scorer zeros → move-order check
+Later:    J1 · family hubs · /board · report card · style tags tail
+          · family taxonomy leftovers · family rollups phases 2–3
+Enablers: redo the #154 refresh → scorer zeros → move-order check
+          · wrong descriptions · Jev families · study refresh
 Parked:   slice 3 SRS · J7
 ```
 
@@ -277,6 +325,7 @@ Agreed by the owner on 2026-09-24. The reasoning is in the feature review §3.
 | J8 — Stockfish deviation analysis (client WASM)         | Archived | The mobile CPU and Vercel cost objections go away when the engine runs offline (position facts).                                                    |
 | 3.6 — middlegame bridge                                 | Archived | Cut in rev 3; still holds.                                                                                                                          |
 | J6 — side-by-side comparison                            | Archived | Cut in rev 3; still a chatbot question.                                                                                                             |
+| Opening style classification                            | Shipped  | 2026-10-05, PR #160. A fixed taxonomy (`docs/style-taxonomy.md`) replaces the LLM tags; the tail is in **Later**.                                   |
 
 **Merged, not archived:** the level-check strip → divergence callout · #4 My
 openings v2 → repertoire from your games · TASK013 → position facts · audit #8

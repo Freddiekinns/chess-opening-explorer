@@ -34,6 +34,15 @@ function plans() {
     .map((c) => ({ key: c[1], label: c[2], glossary: c[3] }));
 }
 
+/** Each shown value's glossary line, keyed by its label: { "Sharp": "Concrete, …" }. */
+function glossaries() {
+  const section = doc().split('## Axes')[1].split('\n## ')[0];
+  const out = {};
+  for (const c of section.split('\n').map(cells))
+    if (c.length >= 5 && c[2] === 'yes') out[c[1]] = c[3];
+  return out;
+}
+
 /** The anchors table: [{ axis, value, name, slug }]. */
 function anchors() {
   const section = doc().split('## Anchors')[1].split('\n## ')[0];
@@ -48,4 +57,4 @@ function anchors() {
   return out;
 }
 
-module.exports = { AXES, plans, anchors, variationSlug };
+module.exports = { AXES, plans, glossaries, anchors, variationSlug };

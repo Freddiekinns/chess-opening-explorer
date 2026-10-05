@@ -6,7 +6,10 @@ from the opening's name. The rubric is `docs/style-taxonomy.md`; the plan and
 the pilot's results are in
 `docs/proposals/2026-10-02-opening-style-classification.md`.
 
-Nothing here reaches the site yet. The export into `api/data` is the next step.
+The site reads the result from `api/data/style-tags.json`, written by step 8.
+`packages/api/src/services/style-tags-service.js` serves it to the detail page,
+the opening cards, Discover's level and style filters, and style search. The old
+`analysis_json` tags are still in the data; nothing user-facing reads them.
 
 ## Pipeline
 
@@ -19,6 +22,7 @@ Nothing here reaches the site yet. The export into `api/data` is the next step.
 | 5. Judge (Opus subagent) the disputes `validate.js` lists | `JUDGE.md`                                                                | `_classify/judge.json`                                |
 | 6. Check                                                  | `node tools/style-tags/validate.js [--verbose]`                           | —                                                     |
 | 7. Review table                                           | `node tools/style-tags/report.js`                                         | `_classify/pilot-tags.md`                             |
+| 8. Export for the site                                    | `node tools/style-tags/export.js`                                         | `api/data/style-tags.json`                            |
 
 The long tail past the pilot uses the **unsourced tier** in place of steps 2 and
 4: `select-roots.js --unsourced --name tail --batch 20` writes the inputs,
@@ -44,7 +48,14 @@ committed: `select-roots.js --top 0` rebuilds the map, `--states` the other.
   override, judge, agreement, then classifier A where either side chose the
   hidden middle value; for an unsourced brief that last step needs A's
   confidence of at least 0.65 on a shown word, or the middle value stands.
-  **`overrides.json`** holds owner-reviewed corrections, each with a reason.
+  **`overrides.json`** holds owner-reviewed corrections, each with a reason; an
+  override can replace a variation's plans too, which the judge does not rule
+  on.
+- **The export leaves out what is not decided.** Hubs and variations not yet
+  classified get no entry, so their pages show no tags rather than the old ones.
+  An axis still unresolved exports as its hidden middle value. Labels and
+  glossary lines come from the taxonomy doc, so a renamed value reaches the site
+  through the export, not through code. Re-run it after every wave.
 - **The taxonomy doc is parsed** (`taxonomy.js`) for the anchors and the plans
   list. Editing those tables changes what the scripts check and ask.
 - **Unsourced briefs carry `"tier": "unsourced"`** and no audit, so they can tag

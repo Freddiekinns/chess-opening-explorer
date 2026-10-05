@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { StyleTags, levelLabel, type StyleProfile } from '../StyleTags';
+import { StyleTags } from '../StyleTags';
+import { levelLabel, type StyleProfile } from '../../../lib/styleProfile';
 import { OpeningCard } from '../OpeningCard';
 
 const dragon: StyleProfile = {

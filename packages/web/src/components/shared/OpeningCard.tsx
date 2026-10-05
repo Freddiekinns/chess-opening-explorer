@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { StarButton } from './StarButton';
 import { MiniBoard } from './MiniBoard';
 import { ResultBar } from './ResultBar';
-import { StyleTags, type StyleProfile } from './StyleTags';
+import { StyleTags } from './StyleTags';
+import type { StyleProfile } from '../../lib/styleProfile';
 
 interface Opening {
   fen: string;

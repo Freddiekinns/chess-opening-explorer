@@ -1,6 +1,6 @@
 import React from 'react';
 import { OpeningCard } from '../shared/OpeningCard';
-import { levelLabel } from '../shared/StyleTags';
+import { levelLabel } from '../../lib/styleProfile';
 import { FilterBar } from '../filters/FilterBar';
 import { FilterSheet } from '../filters/FilterSheet';
 import { Toast } from '../shared/Toast';

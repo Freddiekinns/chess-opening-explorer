@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import type { StyleProfile } from '../components/shared/StyleTags';
+import type { StyleProfile } from '../lib/styleProfile';
 
 /**
  * Everything the Discover grid knows about browsing. Filter state lives in the

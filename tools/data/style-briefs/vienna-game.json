@@ -1,0 +1,218 @@
+{
+  "slug": "vienna-game",
+  "root": {
+    "name": "Vienna Game",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Vienna Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vienna_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Vienna Game - A How to Play Guide for White and Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/vienna-game/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Introduction to the Vienna Game & Gambit",
+      "publisher": "Chess.com (blog, RussBell)",
+      "url": "https://www.chess.com/blog/RussBell/introduction-to-the-vienna-game-gambit",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Vienna Game - Chess Openings",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Vienna-Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "Vienna Game: Learn & Train It Free",
+      "publisher": "ChessReps",
+      "url": "https://www.chessreps.com/opening/vienna-game",
+      "kind": "article"
+    },
+    {
+      "id": "s6",
+      "title": "The Vienna Game: A Strategic Opening for Ambitious Players",
+      "publisher": "365Chess",
+      "url": "https://www.365chess.com/chess-openings/Vienna-Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s7",
+      "title": "Vienna Game for White - Top-Level Repertoire (search extract only, page not opened)",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/course/vienna-game-for-white-top-level-repertoire/30435/",
+      "kind": "course"
+    }
+  ],
+  "overview": "White develops the queen's knight before the king's knight, protecting e4 and adding a second guard of d5, and keeps the f-pawn free. That flexibility is the point: White can later play f4 for a delayed King's Gambit (the Vienna Gambit), develop the bishop with 3.Bc4 for an Italian or Bishop's Opening structure (with the Qg4 raid against ...Bc5 and the Frankenstein-Dracula after ...Nxe4), or fianchetto with 3.g3 for a quieter game. Black usually answers 2...Nf6 (the Falkbeer, about 60 percent in one source) or 2...Nc6, and the standard equaliser is a timely ...d5. Theory leaves the opening objectively equal, with little elite use but a lot of club use; it is a surprise weapon that avoids the heavily prepared Spanish and Italian lines. The root is a family, so its character depends on White's third move.",
+  "white_ideas": [
+    {
+      "idea": "Support e4 and control d5 with the knight, then choose the plan: f2-f4 for a King's Gambit structure.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "3.Bc4 and a quick Italian-style set-up, with the Qg4 raid against ...Bc5 and Nd5 jumps or Nxc7 forks as recurring tactics.",
+      "sources": ["s5", "s7"]
+    },
+    {
+      "idea": "3.g3 (Mieses/Paulsen-type) fianchetto for a slower game, preparing a timely f4.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Surprise value: sidestep Ruy Lopez and Italian theory; Black has little Vienna preparation at club level.",
+      "sources": ["s7", "s4"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "2...Nf6 (Falkbeer) to hit e4, then the ...d5 central strike as the thematic equaliser.",
+      "sources": ["s1", "s2", "s5"]
+    },
+    {
+      "idea": "2...Nc6 (Max Lange Defense) with a symmetrical development; Black must avoid the 3.Bc4 Bc5 4.Qg4 lines unless prepared (4...Qf6? loses to 5.Nd5).",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "2...Bc5 (Anderssen Defense): sound but rare; roughly equal after 3.Nf3 d6 4.d4.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Develop quickly and counterattack in the centre, especially if White overextends with an early f4.",
+      "sources": ["s5"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game: e4/e5 pawns with Nc3 in front of the c-pawn, so White cannot build a c3-d4 centre; play centres on f4, ...d5 or Bc4 development.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "King's Gambit-like structure after f4 (open f-file, central tension, pawn on e4 or exchanged).",
+      "sources": ["s3", "s5"]
+    },
+    {
+      "structure": "3.g3 / Bg2 set-up: a flexible semi-closed centre with White preparing f4 later.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The root is not uniform. After 3.f4 or 3.Bc4 lines it is sharp (Frankenstein-Dracula, Qg4 'opposite intentions', King's Gambit-style f4). After 2...Nf6 and a calm 3rd move (Bc4 with d3, or 3.g3) it turns quiet: 'the attack must be earned slowly' (s5). Chessable: appears to start out quiet but becomes aggressive fast (s2). Chess.com blog: aggressive kingside attacks with less theory (s3). Reading: Balanced overall with sharp branches; the choice is White's.",
+      "sources": ["s1", "s2", "s3", "s5"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root does not give material. The Vienna Gambit (3.f4) is a separate branch; its Hamppe-Muzio and Frankenstein-Dracula lines are gambits only after specific later moves. ChessReps describes f4 as a 'King's Gambit structure at zero material cost' in the root (s5).",
+      "sources": ["s1", "s5"]
+    },
+    "soundness": {
+      "notes": "Sound. Nick de Firmian: the opening leads to equality with best play by both sides, contradicting Weaver Adams's claim of a forced White win (s1). ChessReps calls it 'completely' sound, Black equalising with accurate play (s5). Chess.com: much less common but theoretically sound (s4).",
+      "sources": ["s1", "s4", "s5"]
+    },
+    "structure": {
+      "notes": "A classic 1.e4 e5 open game: centre typically open or semi-open after ...d5 and exchanges, f-file open after f4; less so with 3.g3 where tension remains. Most sublines are not locked.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "Not a system set-up; it is a specific second move with several plans. Rare at elite level: 'played in only a small number of high-level matches' (s6), declined after the 1930s and rarely seen in elite tournaments (s4), though popular at club level. Used for surprise value by Larsen and others (s6). By the numbers on the site the subtree is huge (270M games), so it is not unusual in practice.",
+      "sources": ["s1", "s4", "s6"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Chessable: moderate theory, suitable for all levels, understanding over memorisation (s2). ChessReps: beginner-friendly, far less theory than the Ruy Lopez or Italian, but the Qg4 lines 'demand precise memory' (s5). Judged as the root, neither heavy memory nor deep understanding is required; the sharp sublines (Qg4 raid, Frankenstein-Dracula, Vienna Gambit) are memory-heavy.",
+      "sources": ["s2", "s5"]
+    }
+  },
+  "plan_phrases": [
+    "delayed King's Gambit",
+    "f2-f4 break",
+    "Qg4 raid",
+    "...d5 central strike",
+    "Mieses fianchetto set-up",
+    "Nd5 jump",
+    "surprise weapon",
+    "avoid Ruy Lopez and Italian theory"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Vienna Gambit",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4",
+      "how": "Sharp King's Gambit-style play with a pawn offered; a separate root (vienna-gambit)."
+    },
+    {
+      "name": "Stanley / Frankenstein-Dracula",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Qh5 Nd6 5. Bb3 Nc6 6. Nb5",
+      "how": "Wild tactical complications; very different from the quiet 3.g3 or 3.Bc4 d3 lines."
+    },
+    {
+      "name": "Max Lange Defense with Bc4 and Qg4",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4",
+      "how": "Symmetrical but concrete, with real traps for Black (4...Qf6? 5.Nd5); a memory-heavy sharp line."
+    },
+    {
+      "name": "Mieses / 3.g3 set-up",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. g3",
+      "how": "Quiet, manoeuvring, with f4 prepared; the opposite character to the gambit lines."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Vienna Game is a flexible, romantic 1.e4 opening that lets White sidestep the Ruy Lopez and Italian Game.",
+        "verdict": "supported",
+        "note": "Surprise value and avoiding heavily prepared lines is cited repeatedly.",
+        "sources": ["s2", "s5", "s7"]
+      },
+      {
+        "claim": "It can lead to a sharp, aggressive kingside attack with an early f2-f4, or a quieter, more positional game.",
+        "verdict": "supported",
+        "note": "f4 for the gambit, 3.g3 or 3.Bc4 with d3 for the quiet versions.",
+        "sources": ["s1", "s2", "s5"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: prepare and execute the f2-f4 push to open the f-file for a kingside attack.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: adopt a fianchetto set-up with g3 and Bg2 for a positional game, preparing a slow expansion.",
+        "verdict": "supported",
+        "note": "The Mieses 3.g3 line; Smyslov played it; White prepares a timely f4.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: challenge White's central influence with ...Nf6 and an eventual ...d5 break.",
+        "verdict": "supported",
+        "note": "...d5 is the thematic equaliser.",
+        "sources": ["s2", "s5"]
+      },
+      {
+        "claim": "Black: develop quickly and counterattack in the centre, especially if White overextends with an early f4.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s5", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 8 }
+}

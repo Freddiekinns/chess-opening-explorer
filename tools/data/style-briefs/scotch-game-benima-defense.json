@@ -1,0 +1,44 @@
+{
+  "slug": "scotch-game-benima-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Benima Defense",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7 4. d4 exd4",
+    "fen": "r1bqk1nr/ppppbppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "italian-game-hungarian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays the passive Hungarian ...Be7 and answers White's d4 by taking the pawn. White regains it with 5.Nxd4 (or 5.O-O) and gets a comfortable lead in development and more space. Black plays ...Nf6, ...O-O and ...d6, aiming for a solid but slightly passive position without weaknesses.",
+  "white_ideas": [
+    { "idea": "Recapture on d4, develop with Nc3, O-O, and keep a small space edge." },
+    { "idea": "Use the c4 bishop and d4 knight for central pressure and a possible kingside initiative." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop Nf6, castle, ...d6 and ...Bf6 or ...Nxd4 trades, keeping the position solid." },
+    { "idea": "Neutralise the centre with ...d5 or trade knights to free the game." }
+  ],
+  "typical_structures": [
+    { "structure": "Scotch-style open centre with White knight on d4 against Black's e7 bishop and a compact set-up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive but sturdy defensive set-up for Black; few forcing tactics and not easy to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black's pawn on d4 is recaptured at once." },
+    "soundness": { "notes": "Sound; White gets a small edge only." },
+    "structure": { "notes": "The d-pawns trade, giving open lines like the Scotch." },
+    "approach": { "notes": "A quiet defence strong players use sometimes; a recognised sound line." },
+    "level": { "reason": "understanding", "notes": "Plans are clear; little theory for Black." }
+  },
+  "plan_phrases": ["space advantage", "lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Black's Be7 set-up is passive and hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The d4 pawn is simply recaptured." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A sound if slightly passive defence." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "The d-pawn exchange opens the centre for the pieces, like the Scotch." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A rare but respectable defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Clear Black plans but a sound grasp of the passive set-up is needed." },
+    "plans": { "value": ["space_advantage", "lead_in_development"], "reason": "White gets extra space and quicker development against Black's passive set-up." }
+  }
+}

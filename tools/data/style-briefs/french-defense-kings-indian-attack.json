@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-kings-indian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: King's Indian Attack",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d3",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/3P4/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White sets up the King's Indian Attack: d3, Nd2, Ngf3, g3, Bg2, O-O and Re1, then e5 and a kingside attack. Black meets it with ...d5, ...Nf6 and ...c5 for a reversed Philidor or a quick queenside expansion. The play is a slow manoeuvring game in which White aims for a kingside attack and Black has easy development.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop, castle, and play e5 with Nh4/f4 and a kingside attack" },
+    { "idea": "Keep the set-up the same whatever Black plays" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...d5, ...Nf6, ...c5 and ...Nc6, aiming for ...b5 or ...d4" },
+    { "idea": "Break with ...c5 and ...d4 to gain space and cramp White's set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "White d3/e4 with g3 fianchetto against Black's e6/d5/c5 centre (reversed Philidor)" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, plan-driven, few forcing lines early; sound and hard to refute. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre not yet decided; White keeps tension and can play e5 later. Flexible." },
+    "approach": { "notes": "The King's Indian Attack is a System set-up used against many defences; anchor System." },
+    "level": { "reason": "understanding", "notes": "Same set-up every game with clear plans and little theory; Beginner or Intermediate for White." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "3.Qe2", "moves": "1. e4 e6 2. d3 d5 3. Qe2", "how": "A more restrained set-up with Nd2 and g3 later." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Slow, sound, hard to refute and not forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A reliable set-up." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The centre stays undecided with e5 or exd5 later." },
+    "approach": { "value": "system", "confidence": 0.9, "reason": "A king's Indian Attack set-up played against almost any defence." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.5, "reason": "Clear plans with little to memorise and a sound set-up." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "A g2 fianchetto followed by a kingside attack." }
+  }
+}

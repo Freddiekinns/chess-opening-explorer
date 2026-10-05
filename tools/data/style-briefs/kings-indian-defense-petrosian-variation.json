@@ -1,0 +1,44 @@
+{
+  "slug": "kings-indian-defense-petrosian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Petrosian Variation",
+    "eco": "E92",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5",
+    "fen": "rnbq1rk1/ppp2pbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQK2R b KQ - 0 7"
+  },
+  "parent": "kings-indian-defense-orthodox-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White locks the centre at once with d5 and plays for a space edge, Bg5 and queenside play, avoiding the Mar del Plata race. Black usually plays 7...a5 (Stein Defense) or 7...Nbd7 and reorganises with ...Na6, ...Nc5 or ...Qe8, aiming for the ...f5 break. The game is a slow, manoeuvring fight in a closed centre where White tries to cramp Black and Black waits for ...f5.",
+  "white_ideas": [
+    { "idea": "Bg5 and Nd2 or O-O, then queenside play with a4, c5 or Be3" },
+    { "idea": "Keep the position closed and use the space edge on the queenside" }
+  ],
+  "black_ideas": [
+    { "idea": "...a5, ...Na6, ...Nc5 and a timely ...f5 break" },
+    { "idea": "Neutralise Bg5 with ...h6 and ...Qe8, regroup the knights and attack on the kingside" }
+  ],
+  "typical_structures": [
+    { "structure": "Locked centre with White pawns c4/d5/e4 against Black's d6/e5, Black's f5 break pending" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow manoeuvring in a closed centre; less forcing than the Mar del Plata, but Black must find the right regrouping and can be squeezed." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound; a recognised KID branch." },
+    "structure": { "notes": "d5 locks the centre; the pawn chain is closed and play moves to the wings." },
+    "approach": { "notes": "A standard line of the King's Indian played by strong players." },
+    "level": { "reason": "understanding", "notes": "Black must find the right regrouping and the right moment for ...f5; plans are subtle, not memorised." }
+  },
+  "plan_phrases": ["space advantage", "knight outpost on c5", "queenside expansion"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Slower and less forcing than the Mar del Plata but not a hard-to-crack fortress." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main-line King's Indian branch." },
+    "structure": { "value": "closed", "confidence": 0.9, "reason": "d5 locks the pawn chain and play moves to the wings." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Played by strong players as a main KID line." },
+    "level": { "value": "advanced", "why": "understanding", "confidence": 0.5, "reason": "Subtle regrouping and timing of ...f5 are hard to get right." },
+    "plans": { "value": ["space_advantage", "knight_outpost"], "reason": "White cramps with space, Black's knight heads to c5." }
+  }
+}

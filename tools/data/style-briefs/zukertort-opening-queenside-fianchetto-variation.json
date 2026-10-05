@@ -1,0 +1,48 @@
+{
+  "slug": "zukertort-opening-queenside-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Queenside Fianchetto Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 b6",
+    "fen": "rnbqkbnr/p1pppppp/1p6/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays ...b6 and ...Bb7 against the Réti, a hypermodern set-up meeting White's flank play with pieces on the long diagonal. White usually plays 2.e4 Bb7 3.Nc3, 2.g3 Bb7 3.Bg2 or 2.d4, taking space, and Black follows with ...e6 and ...Nf6 and chooses a plan later. The play is flexible and manoeuvring with little forced theory, and White often gets a comfortable centre.",
+  "white_ideas": [
+    { "idea": "Take the centre with e4 and d4 and play Nc3, Bd3" },
+    { "idea": "Fianchetto with g3 and Bg2 and fight for the long diagonal" },
+    { "idea": "Exploit the delay of Black's central pawns with c4 and d4" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the c8-bishop to b7 and hit e4 and the long diagonal" },
+    { "idea": "Develop ...e6, ...Nf6, ...Be7 and castle, then choose a ...c5 or ...d5 break" },
+    { "idea": "Challenge the centre with pieces, hypermodern style" }
+  ],
+  "typical_structures": [
+    { "structure": "Black queenside fianchetto with ...e6 against White's flexible centre pawns" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and flexible, with Black hard to break down early but a little passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound, if a little passive." },
+    "structure": { "notes": "Centre undecided; flank fianchetto set-up." },
+    "approach": { "notes": "Black's ...b6/...Bb7 set-up works against almost anything, a hypermodern system, though seldom seen at the top." },
+    "level": { "reason": "understanding", "notes": "Few forcing lines; the plan is clear but Black must handle White's centre." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "2.e4 Bb7 3.Nc3 e6 4.d4", "moves": "1. Nf3 b6 2. e4 Bb7 3. Nc3 e6 4. d4", "how": "Becomes a Owen's or Nimzowitsch-type structure with White's centre, sharper than the quiet lines." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.45, "reason": "Quiet and not easily broken, but passive." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A playable set-up." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Flank opening with an undecided centre." },
+    "approach": { "value": "system", "confidence": 0.45, "reason": "...b6, ...Bb7, ...e6, ...Nf6 can be played against most White set-ups; could be offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but the set-up needs good handling of the centre." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Bb7 on the long diagonal and play against White's centre." }
+  }
+}

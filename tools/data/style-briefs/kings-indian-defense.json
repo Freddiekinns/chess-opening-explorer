@@ -1,0 +1,116 @@
+{
+  "slug": "kings-indian-defense",
+  "root": {
+    "name": "King's Indian Defense",
+    "eco": "E61",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Indian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King%27s_Indian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Crush Them With The King's Indian Defense",
+      "publisher": "House of Staunton",
+      "url": "https://www.houseofstaunton.com/blogs/chess-openings/kings-indian-defense",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "King's Indian Defense search snippets (Take Take Take, Chess Compass and others)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.chesscompass.com/openings/kings-indian-defense/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black fianchettoes the dark-squared bishop, castles and lets White build a big pawn centre (c4, d4, e4), then attacks it with ...e5 or ...c5 while preparing kingside play. In the main Classical/Mar del Plata structure the centre locks after d5 and the game becomes a race: White expands on the queenside with c4-c5 while Black storms the kingside with ...f5-f4 and ...g5. Other White systems change the picture: Samisch (f3) is aggressive with opposite-side castling attacks, Four Pawns (f4) maximises space, Averbakh (Bg5) keeps ...e5 in check, and the Fianchetto (g3) is quieter and positional. Sources describe it as dynamic, exceptionally complex and moderately risky for both sides, with a heavy theory burden because White has many fifth-move systems. Considered sound today after being held suspect until the 1930s.",
+  "white_ideas": [
+    { "idea": "Queenside expansion with c4-c5 (and b4) once the centre is locked", "sources": ["s1", "s2"] },
+    { "idea": "Samisch: f3 supports e4, castle queenside and attack with a kingside pawn storm", "sources": ["s1", "s3"] },
+    { "idea": "Four Pawns Attack: f4 for maximum central space, risking overextension", "sources": ["s1"] },
+    { "idea": "Fianchetto: g3/Bg2 for solid positional play with less theory", "sources": ["s1", "s3"] },
+    { "idea": "Averbakh Bg5 to stop ...e5 and keep play flexible; restrain Black's kingside expansion", "sources": ["s1", "s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Kingside pawn storm with ...f5-f4 and ...g5 after the centre locks", "sources": ["s1", "s2"] },
+    { "idea": "Central breaks ...e5 or ...c5 to challenge White's big centre", "sources": ["s1", "s3"] },
+    { "idea": "Rook lift on the g-file and piece sacrifices such as ...Bxh3 to break the king", "sources": ["s2"] },
+    { "idea": "Queenside counterplay with ...b5 in some lines", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Mar del Plata: locked d5/e5 centre, White on queenside (c5), Black on kingside (f5-f4)", "sources": ["s1", "s3"] },
+    { "structure": "Asymmetrical structure: White controls the centre, Black attacks from the flanks", "sources": ["s2"] },
+    { "structure": "Fianchetto lines: more flexible, less locked, positional manoeuvring", "sources": ["s1", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: dynamic, exceptionally complex, unbalanced positions with winning chances for both sides and sharp tactical play in many variations. House of Staunton: mutual attacks decide the game; moderately risky for both sides. Fianchetto Variation is calmer. Main structure combines a locked centre with a pawn race on opposite wings.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the main lines. Only occasional sacrifices (Samisch Gambit 5...0-0 6.Be3 c5; ...Bxh3 ideas) in sublines.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Once regarded as highly suspect, validated by Soviet players in the 1930s; modern theory considers it fundamentally sound in all variations. Kramnik's anti-KID approach reduced its popularity in the early 2000s, but Kramnik himself won with Black in 2012 and Nakamura, Radjabov and Ding Liren play it.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Typical middlegame: pawn centre locked after d5 (Classical/Mar del Plata), with e5 and d5 pawns facing each other and play on opposite wings. Fianchetto and some Averbakh lines stay more fluid. Centre tension with ...e5 and ...c5 breaks.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A recognised defence to 1.d4 with its own theory, not a universal set-up. Mainstream at top level: Kasparov, Fischer, Tal historically; Nakamura, Radjabov, Ding Liren currently.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Wikipedia says it demands both heavy main-line theory (Classical, Samisch) and understanding of plans and timing of breaks; Fianchetto lines need less memorisation. House of Staunton: moderately demanding, heavy theory because White has many fifth-move systems (Samisch, Four Pawns, Averbakh, Makogonov), each needing separate study. Snippets stress understanding the ideas makes the moves natural.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "kingside pawn storm",
+    "queenside expansion with c4-c5",
+    "locked centre",
+    "opposite-wing attack",
+    "fianchettoed bishop on g7",
+    "...e5 break",
+    "...f5-f4 break",
+    "big pawn centre attacked from the flanks",
+    "opposite-side castling"
+  ],
+  "sublines_that_differ": [
+    { "name": "Classical / Mar del Plata", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nc6 8. d5 Ne7", "how": "Locked centre, opposite-wing pawn race; the sharpest and most theoretical main structure." },
+    { "name": "Samisch", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3", "how": "Aggressive, often opposite-side castling and attacks." },
+    { "name": "Four Pawns Attack", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4", "how": "White overextends for space; sharp and open if Black strikes with ...c5." },
+    { "name": "Averbakh", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Be2 O-O 6. Bg5", "how": "Prevents ...e5, flexible and less forcing." },
+    { "name": "Fianchetto Variation", "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3", "how": "Calm, positional, less theory; popular among GMs." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "It is a hypermodern response to 1.d4 where Black allows White to build a large centre before counterattacking", "verdict": "supported", "note": "Core definition.", "sources": ["s1", "s3"] },
+      { "claim": "It is aggressive and leads to complex, unbalanced positions", "verdict": "supported", "note": "Wikipedia: dynamic, exceptionally complex, unbalanced.", "sources": ["s1", "s2"] },
+      { "claim": "Typically features a race between Black's kingside attack and White's queenside expansion", "verdict": "supported", "note": "True of the Classical/Mar del Plata structure, not every sub-line (Fianchetto is calmer).", "sources": ["s1", "s3"] },
+      { "claim": "Suits dynamic fighting players unafraid of risk and excelling in sharp tactical battles", "verdict": "supported", "note": "House of Staunton says the same.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Fianchetto the dark-squared bishop, challenge the centre with ...e5, launch kingside pawn storm with ...f5-f4-g5", "verdict": "supported", "note": "Standard plan; ...g5 is more typical in Samisch/Petrosian lines, ...f5-f4 and ...g5 are both kingside storm moves.", "sources": ["s1", "s2"] },
+      { "claim": "White: Establish a strong pawn centre (d4-e4), control space, expand on the queenside with moves like b4 and c5", "verdict": "supported", "note": "c4-c5 is the usual lever; b4 supports it.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Prepare the ...f5 break to open lines towards the white king, often sacrificing material to maintain the attack's momentum", "verdict": "supported", "note": "Sacrifices such as ...Bxh3 occur; 'often' slightly strong but acceptable.", "sources": ["s2"] },
+      { "claim": "White: Restrain Black's kingside play and seek to open the centre or the c-file to exploit Black's structural commitments", "verdict": "supported", "note": "Restraint with Averbakh/Bg5, c5 and c-file play are standard.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

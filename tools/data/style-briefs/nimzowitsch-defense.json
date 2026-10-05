@@ -1,0 +1,151 @@
+{
+  "slug": "nimzowitsch-defense",
+  "root": {
+    "name": "Nimzowitsch Defense",
+    "eco": "B00",
+    "moves": "1. e4 Nc6",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "The Nimzowitsch Defense: A How to Play Guide (as White & Black)",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/nimzowitsch-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Nimzowitsch Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nimzowitsch_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippet: Nimzowitsch Defense overview (Advance Variation, Bogoljubov 3.Nc3, Kasparov/Keene quote)",
+      "publisher": "Web search snippets",
+      "url": "https://masterinchess.com/nimzowitsch-defence",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black develops a knight on move one and invites White to build a centre, planning to undermine it with timely pieces and pawn breaks (...d5, ...e5 or ...e6). The most common reply to 2.d4 is 2...d5 with 3.exd5 Qxd5 (Scandinavian-type), 3.e5 Bf5 (French-Advance-like with a freed bishop) or the 3.Nc3 dxe4 4.d5 Ne5 line, which is French-like in structure. Alternatively Black plays 2...e5 (Kennedy Variation), which can transpose to the Scotch, or 2...e6/2...g6 (Franco-Hiva, Pirc connection) with flexible set-ups. Kasparov and Keene wrote it has never been fully accepted as dependable, but sources agree it is far from refuted; players choose it to escape preparation and play non-standard but often French/Scandinavian-like middlegames. Roughly 2% of games per Chessable.",
+  "white_ideas": [
+    { "idea": "Seize the centre with 2.d4 and build a pawn centre and space advantage", "sources": ["s1", "s2"] },
+    { "idea": "Meet 2.d4 d5 with 3.e5 Bf5 4.c3, a long pawn chain and dark-square control, or 3.Nc3 dxe4 4.d5 Ne5 chasing the knight", "sources": ["s2", "s3"] },
+    { "idea": "Play 2.Nf3, which forces Black into main-line theory (2...e5) or leaves Black with inferior chances if he resists", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Delay committing and watch what White does; transpose into Scandinavian-like or French-like positions", "sources": ["s1", "s2"] },
+    { "idea": "Hypermodern: invite the centre, then block or restrain it and strike with ...d5, ...e5, or ...e6", "sources": ["s2"] },
+    { "idea": "Use 3...Bf5 against the Advance to get the light-squared bishop out before ...e6", "sources": ["s3"] },
+    { "idea": "Kennedy Variation 2.d4 e5: solid approach favoured by Tony Miles, which may transpose to the Scotch", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "French-Advance-like chain (e5/d4/c3 vs ...e6/...d5) with Black's bishop outside the chain after ...Bf5", "sources": ["s3"] },
+    { "structure": "Scandinavian-type positions after 3.exd5 Qxd5 with White ahead in development", "sources": ["s1", "s2"] },
+    { "structure": "Open Scotch-like centre after 2...e5 and exchanges", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources describe a non-committal, 'test' type of opening with limited theory; main-line positions are French/Scandinavian-like and relatively quiet. Provocative flank-style counterplay is the idea, not sharp forced play. Sideline gambits (Colorado Gambit 2.Nf3 f5, Franco-Hiva) are sharp.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the root. Sidelines: Colorado Gambit (2.Nf3 f5, called sharp but dubious) and Franco-Hiva Gambit in the subtree. The Bogoljubov 3.Nc3 dxe4 line functions like a gambit but Black generally keeps a French-like structure.",
+      "sources": ["s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Kasparov and Keene: 'has never been fully accepted as a dependable opening'. Chessable: 'far from refuted' yet speculative, and it is probably better for Black to transpose earlier into something more main line. Wikipedia: sound for those seeking foreign territory. So respectable but a slight concession against best play.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Depends on branch: French-Advance-like closed chain (3.e5), Scandinavian-like semi-open (3.exd5 Qxd5), or open Scotch (2...e5). Most main-line play is partly open to closed.",
+      "sources": ["s2", "s3"]
+    },
+    "approach": {
+      "notes": "Not a universal system; Black's reply depends on White's move 2. It is a rare opening (about 2% of games per Chessable) chosen to escape preparation. Historically played by Nimzowitsch and Bogoljubov, Hort, Miles and others, so it has had strong players, but it is not a mainstream choice. Chessable calls it an offbeat non-theoretical opening and more of a test than a self-sufficient system.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable: moderate-to-challenging for club players because limited theory plus frequent transpositions means the player must know several structures. Little move memorisation but White can steer into several different set-ups.",
+      "sources": ["s1"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern restraint of the centre",
+    "undermining White's centre",
+    "transposition to Scandinavian or French structures",
+    "...Bf5 before ...e6",
+    "escaping preparation"
+  ],
+  "sublines_that_differ": [
+    { "name": "Scandinavian Variation / 3.e5 Advance", "moves": "1. e4 Nc6 2. d4 d5 3. e5 Bf5", "how": "French-Advance-like chain; Black gets the bishop outside before ...e6." },
+    { "name": "Bogoljubov Variation", "moves": "1. e4 Nc6 2. d4 d5 3. Nc3 dxe4 4. d5 Ne5", "how": "Gambit-like, French-style positions with a knight on e5." },
+    { "name": "Kennedy Variation", "moves": "1. e4 Nc6 2. d4 e5", "how": "Solid approach; Scotch-like." },
+    { "name": "Colorado / Lean Gambit", "moves": "1. e4 Nc6 2. Nf3 f5", "how": "Aggressive Black gambit; sharp but dubious." },
+    { "name": "Franco-Hiva Gambit", "moves": "1. e4 Nc6 2. d4 e6 3. Nf3 f5 4. exf5 Nf6", "how": "Rare Black gambit in the subtree." },
+    { "name": "Williams Variation", "moves": "1. e4 Nc6 2. Nf3 d6", "how": "Solid but less dynamic; Philidor/Pirc-like." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Black develops a knight instead of a pawn to challenge White's central control immediately",
+        "verdict": "supported",
+        "note": "1...Nc6 is a hypermodern idea: invite the centre then challenge it.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "It is a hypermodern opening where Black aims to undermine White's centre from the flanks",
+        "verdict": "supported",
+        "note": "Wikipedia characterises it as hypermodern. 'From the flanks' is loose: Black's main counterplay comes from central breaks (...d5, ...e5) and piece pressure, not flank play.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "It leads to complex and non-standard positions with less theory",
+        "verdict": "supported",
+        "note": "Limited theory and transpositions per Chessable.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "The opening's character is one of patient counter-attack",
+        "verdict": "unverifiable",
+        "note": "Tone; sources describe a non-committal first move waiting to see White's intentions.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: challenge White's centre, typically with an early ...d5",
+        "verdict": "supported",
+        "note": "2...d5 is the main reply to 2.d4.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: fianchetto the king's bishop (...g6, ...Bg7) to pressure d4",
+        "verdict": "supported",
+        "note": "2.d4 g6 is a Pirc connection in the subtree, but it is a minority line, not the main plan.",
+        "sources": []
+      },
+      {
+        "claim": "White: seize the centre with 2.d4 and develop quickly to exploit space",
+        "verdict": "supported",
+        "note": "Matches Chessable and Wikipedia.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: restrain Black's ...d5 pawn break and consolidate before attacking",
+        "verdict": "wrong",
+        "note": "In the main lines White does not try to prevent ...d5; 3.e5 and 3.Nc3 are used after Black plays it. Chessable's best reply is 2.Nf3 with transposition to normal theory instead. Own judgement on 'wrong'; partially misleading rather than incorrect chess.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

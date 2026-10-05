@@ -1,0 +1,46 @@
+{
+  "slug": "neo-grunfeld-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: Classical Variation",
+    "eco": "D77",
+    "moves": "1. d4 Nf6 2. Nf3 g6 3. g3 Bg7 4. Bg2 O-O 5. O-O d5 6. c4",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/5NP1/PP2PPBP/RNBQ1RK1 b - - 0 6"
+  },
+  "parent": "indian-defense-przepiorka-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides fianchetto and Black strikes at the centre with ...d5 against 6.c4. Black chooses between ...c6 (the original defence, solid), ...dxc4 (the modern defence, with Na3 regaining the pawn) and ...c5. White keeps a slight space edge and the long diagonal; Black tries for ...c5 or ...e5 and active piece play.",
+  "white_ideas": [
+    { "idea": "Nc3, cxd5 and a centre pawn pair with the bishop on g2" },
+    { "idea": "After ...dxc4 play Na3 and Nxc4 to regain the pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "...c6 and ...Bf5 or ...Nbd7 with a compact centre" },
+    { "idea": "...dxc4 followed by ...c5 or ...e5 for activity" }
+  ],
+  "typical_structures": [
+    { "structure": "Grünfeld-like centre where White holds d4/c4 and Black has ...c6 or ...c5 against it" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional, with both fianchettos; less tactical than the real Grünfeld." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "After 6...dxc4 White regains the pawn by force." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre is tense with ...d5 against c4 and d4; not locked." },
+    "approach": { "notes": "A standard hypermodern branch for Black against 1.d4." },
+    "level": { "reason": "understanding", "notes": "Needs a feel for the pawn breaks; theory is moderate." }
+  },
+  "plan_phrases": ["Fianchetto", "Hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Modern Defense 6...dxc4", "moves": "1. d4 Nf6 2. Nf3 g6 3. g3 Bg7 4. Bg2 O-O 5. O-O d5 6. c4 dxc4", "how": "Black takes the pawn and White regains it with tempo; sharper piece play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Neither a rock-solid nor a forcing main line." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Pawn on c4 comes back by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respectable main line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Tense centre with fianchettoed bishops." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players against one set-up, not a universal system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans take judgement; theory is limited." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides use the long diagonals and fight for the centre." }
+  }
+}

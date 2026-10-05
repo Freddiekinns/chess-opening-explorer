@@ -1,0 +1,41 @@
+{
+  "slug": "dutch-defense-hopton-attack",
+  "tier": "unsourced",
+  "root": { "name": "Dutch Defense: Hopton Attack", "eco": "A80", "moves": "1. d4 f5 2. Bg5", "fen": "rnbqkbnr/ppppp1pp/8/5pB1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2" },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to g5 at once, a sidestep that avoids the Dutch main lines and hits the f6 square. Black usually replies 2...Nf6 3.Bxf6 exf6 giving doubled pawns but the bishop pair, or 2...h6 3.Bh4 g5 as a provocation. Play is unbalanced but not forcing, with Black getting the pair of bishops and a flexible set-up.",
+  "white_ideas": [
+    { "idea": "Trade the bishop for the knight on f6 to spoil Black's structure, then play e3 and Nf3." },
+    { "idea": "Avoid theory and play a London-like set-up with e3, Nd2 and c3." }
+  ],
+  "black_ideas": [
+    { "idea": "Meet Bxf6 with exf6 and use the bishop pair and open e-file." },
+    { "idea": "Play ...d5 and ...c6 or a Stonewall-like set-up without worrying about the pin." }
+  ],
+  "typical_structures": [
+    { "structure": "Black doubled f-pawns (f5/f6) with the bishop pair, central pawns d5/e6 or c6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet sideline with no forcing play; Black's doubled pawns give an unbalanced pawn structure but neither side risks much." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; 2...h6 3.Bh4 g5 4.e3 is not a gambit." },
+    "soundness": { "notes": "Playable for both; Black has easy equality." },
+    "structure": { "notes": "Dutch centre not yet decided, a flexible QGD-like set-up." },
+    "approach": { "notes": "Rare sideline chosen by few strong players." },
+    "level": { "reason": "understanding", "notes": "Plans are manageable but Black must understand the bishop pair and f-pawn structures." }
+  },
+  "plan_phrases": ["bishop pair", "doubled pawns"],
+  "sublines_that_differ": [
+    { "name": "2...h6 3.Bh4 g5", "moves": "1. d4 f5 2. Bg5 h6 3. Bh4 g5", "how": "Black provokes a tactical fight on the kingside with Bg3 f4." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Unusual structure but neither side is forced into risk." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre undecided in a Dutch-versus-d4 set-up." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rare among strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Simple moves but needs structural judgement." },
+    "plans": { "value": ["bishop_pair", "doubled_pawns"], "reason": "Black takes on doubled pawns for the bishop pair." }
+  }
+}

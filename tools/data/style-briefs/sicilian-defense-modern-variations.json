@@ -1,0 +1,127 @@
+{
+  "slug": "sicilian-defense-modern-variations",
+  "root": {
+    "name": "Sicilian Defense: Modern Variations",
+    "eco": "B50",
+    "moves": "1. e4 c5 2. Nf3 d6",
+    "fen": "rnbqkbnr/pp2pppp/3p4/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Sicilian-Defense",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search results on Sicilian 2.Nf3 d6 3.Bc4 and the 3.Bc4 anti-Sicilian (snippets only)",
+      "publisher": "Chess.com forums, chess-teacher.com, Lichess forum, via web search",
+      "url": "https://chess-teacher.com/anti-sicilian-bc4/",
+      "kind": "forum"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on 2...d6 variations and pawn structure (snippets only)",
+      "publisher": "Wikipedia Scheveningen and Pawn structure articles, via web search",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Scheveningen_Variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "2...d6 is a crossroads, not a single set-up. It is the move order that leads to the Najdorf, Dragon, Scheveningen and Classical/Richter-Rauzer after 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 (s4). The open Sicilian is open and extremely complex: White has a lead in development and extra kingside space, Black has a central pawn majority and the open c-file (s1). White often castles queenside against Black's queenside counterplay, giving opposite-side attacks (Yugoslav Attack, English Attack) (s1). 2...d6 also keeps ...d5 off for a move, which is why White has quieter tries here: 3.Bc4, 3.Nc3 and 3.d3 or the Alapin-like 3.d4 cxd4 4.c3 (Tartakower, in the subtree) (s3). The root is described as combative and unbalanced (s2), but how sharp a game is depends heavily on whether White plays 3.d4 or an anti-Sicilian.",
+  "white_ideas": [
+    { "idea": "Open Sicilian: 3.d4 cxd4 4.Nxd4 and use the development lead and kingside space", "sources": ["s1"] },
+    { "idea": "English Attack against the Najdorf: Be3, f3, Qd2, 0-0-0 and g4", "sources": ["s1"] },
+    { "idea": "Richter-Rauzer 6.Bg5 against the Classical, threatening to double Black's pawns with Bxf6", "sources": ["s1"] },
+    { "idea": "Yugoslav Attack against the Dragon: opposite-side castling and a kingside attack", "sources": ["s1"] },
+    { "idea": "Anti-Sicilian 3.Bc4: stops ...d5 for a move; the bishop can become a target to ...a6/...b5 or ...e6/...d5, so White spends tempi on Bb3 or a3", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Counterplay down the open c-file and on the queenside with the central pawn majority", "sources": ["s1"] },
+    { "idea": "Small centre with pawns on d6 and e6: a solid barrier, control of d5 and e5, flexible ...e5 or ...d5 later", "sources": ["s4"] },
+    { "idea": "Break with ...d5 (or ...b5 in the Scheveningen) to free the position", "sources": ["s3", "s4"] },
+    { "idea": "Najdorf ...a6 to prepare ...e5 and stop Bb5+; Dragon fianchetto and a race on opposite wings", "sources": ["s1"] },
+    { "idea": "Against 3.Bc4, play ...Nf6, ...e6 and ...d5 for a comfortable game", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian: White d4 pawn gone, Black d6/e-pawn centre, half-open c-file for Black and d-file for White", "sources": ["s1"] },
+    { "structure": "Scheveningen small centre (d6 and e6 pawns), Black waiting to break with ...d5", "sources": ["s4"] },
+    { "structure": "Dragon: ...g6 fianchetto with opposite-side castling", "sources": ["s1"] },
+    { "structure": "Najdorf: ...a6 with ...e5 or ...e6 set-ups", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chess.com calls the Sicilian combative and a source of dynamic, sharp, unbalanced positions (s2). The open Sicilian is described as open and extremely complex, with a race between attack and counterattack in the Dragon (s1). The root as a whole leans Sharp, because 3.d4 lines (Najdorf, Dragon, Richter-Rauzer, English Attack) dominate the subtree. The anti-Sicilian branches (3.Bc4, 3.Nc3, 3.d3, c3) are calmer and a few are comfortable for Black (s3). The most-played subtree lines in the input are all 3.d4 Open lines, the next most are 3.Bc4 and 3.Nc3.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines. (Smith-Morra style gambits come after 2...cxd4, not 2...d6.)",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound: Najdorf, Dragon, Scheveningen are mainstream at top level. No source suggests anything dubious about the root. Several of White's anti-Sicilians are not threatening, e.g. 3.Bc4 loses time to retreats and Black is comfortable (s3).",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Typical middlegame: c-pawn traded for d-pawn, so White has e4 against Black's d6 with a half-open c-file for Black. The centre is partly open, with a half-open c-file for Black and d-file for White (s1). Black keeps a pawn majority in the centre (s1). Semi-open fits the Najdorf and Dragon anchors in the taxonomy. The 3.d3 and 3.Nc3 lines are calmer and can be closed Sicilian type set-ups.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "Not a system: a family of replies to 1.e4, played at every level including by world-class players through the Najdorf and Dragon. Standard.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chess.com lists the amount of theory as a drawback (s2). The open lines need a lot of memorised theory (English Attack, Richter-Rauzer, Yugoslav) and understanding of the c-file and ...d5 break. Black is the side that studies it. Dragon and Najdorf are the usual Advanced anchors; the anti-Sicilians against 2...d6 are easier. The root is therefore best read as Advanced, from Black's side.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "opposite-side castling",
+    "half-open c-file",
+    "queenside counterplay",
+    "...d5 break",
+    "small centre",
+    "central pawn majority",
+    "development lead"
+  ],
+  "sublines_that_differ": [
+    { "name": "Najdorf Variation", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6", "how": "Very sharp, theory-heavy; its own root already" },
+    { "name": "Dragon Variation", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6", "how": "Opposite-side castling race (Yugoslav Attack); extremely sharp" },
+    { "name": "Scheveningen Variation", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6", "how": "Small centre; more compact and flexible, still tactical" },
+    { "name": "Classical / Richter-Rauzer", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5", "how": "Pressure on Nf6; sharper if Black castles queenside" },
+    { "name": "3.Bc4 anti-Sicilian", "moves": "1. e4 c5 2. Nf3 d6 3. Bc4", "how": "Quieter, development-based; Black has easy ...Nf6, ...e6, ...d5" },
+    { "name": "3.Nc3 / Closed-type", "moves": "1. e4 c5 2. Nf3 d6 3. Nc3", "how": "Anti-Sicilian that can avoid the open Sicilian (own understanding, unsourced)" },
+    { "name": "3.d3", "moves": "1. e4 c5 2. Nf3 d6 3. d3", "how": "Slow King's Indian Attack style set-up; low theory, not sharp (own understanding, unsourced)" },
+    { "name": "Tartakower / Alapin-type", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. c3", "how": "Pawn gambit-like offer that White can often regain; quieter than the Najdorf (own understanding, unsourced)" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "2...d6 is one of the most popular and combative responses to 1.e4", "verdict": "supported", "note": "The Sicilian is described as combative; 2...d6 is the most common move order into the main open lines.", "sources": ["s2"] },
+      { "claim": "It is a gateway to the Najdorf and Dragon", "verdict": "supported", "note": "Both arise from 2...d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3.", "sources": ["s4", "s1"] },
+      { "claim": "Black challenges White's central control, creating an imbalanced and dynamic struggle", "verdict": "supported", "note": "Described as dynamic and unbalanced.", "sources": ["s2"] },
+      { "claim": "Perfect for ambitious, well-prepared players who thrive in sharp, double-edged battles", "verdict": "supported", "note": "Theory load and sharp lines bear this out. The quieter anti-Sicilian branches are not captured.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: seize space with early d4 and launch a kingside attack (f4-f5, g4-g5), especially with opposite-side castling", "verdict": "supported", "note": "English Attack uses g4; Yugoslav uses a kingside attack against opposite castling. f4-f5 fits 6.Be2 / Scheveningen lines (own understanding).", "sources": ["s1"] },
+      { "claim": "Black: counterplay on the semi-open c-file, pressure on e4, and queenside expansion with ...a6 and ...b5", "verdict": "supported", "note": "c-file and queenside expansion confirmed; ...a6/...b5 is the Najdorf pattern. Pressure on e4 is plausible but not directly sourced.", "sources": ["s1"] },
+      { "claim": "Black: prepare and execute the liberating ...d5 break to challenge White's centre", "verdict": "supported", "note": "...d5 is the central freeing break in the small-centre set-ups.", "sources": ["s3", "s4"] },
+      { "claim": "White: control the critical d5 square to prevent Black's central break and use it as an outpost", "verdict": "supported", "note": "Bc4 and Nc3 aim at d5/stopping ...d5 and the small centre controls d5, so the fight is for it.", "sources": ["s3", "s4"] }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 3 }
+}

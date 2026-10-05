@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-declined-traditional-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Traditional Variation",
+    "eco": "D30",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Bg5",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R b KQkq - 1 4"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins the f6 knight at once with 4.Bg5 and Black plays the usual 4...Be7, then ...O-O and ...Nbd7 with the Orthodox set-up (or ...dxc4 and ...h6 ideas). White usually builds with e3, Nc3, Qc2 or Rc1 and may choose between exchanging on d5 and the Capablanca freeing manoeuvre. Play is positional, with Black solid but slightly cramped.",
+  "white_ideas": [
+    { "idea": "Pin the knight, then e3, Nc3, Bd3 and cxd5 with a minority attack." },
+    { "idea": "Keep the tension and use the space advantage on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Be7, ...O-O and ...Nbd7 and free with ...c5 or ...dxc4." },
+    { "idea": "Use the Lasker simplification (...Ne4) or Tartakower (...b6, ...Bb7) to equalise." }
+  ],
+  "typical_structures": [
+    { "structure": "QGD with pawns c4/d4/e3 against ...d5/...e6, tension on d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Orthodox QGD: very hard to break down, few ways to lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; ...dxc4 is regained." },
+    "soundness": { "notes": "Fully sound main-line theory." },
+    "structure": { "notes": "Central tension; QGD is Flexible." },
+    "approach": { "notes": "Standard main line." },
+    "level": { "reason": "understanding", "notes": "Orthodox QGD anchor is Intermediate: plans plain, memory modest." }
+  },
+  "plan_phrases": ["minority attack", "central tension", "solid development"],
+  "sublines_that_differ": [
+    { "name": "Cambridge Springs", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5", "how": "A different branch with a Black queen sortie." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Orthodox QGD anchor is Solid." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "Declined, nothing given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "QGD central tension is the Flexible anchor." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line system of the QGD." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Orthodox QGD is the Intermediate anchor." },
+    "plans": { "value": ["minority_attack"], "reason": "White's usual plan after cxd5." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense-benoni-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Benoni-Indian Defense",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. d5 Nf6",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2pP4/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White gains space with d5 and Black plays ...e6 and ...exd5 or ...g6 and ...d6 to reach a Modern Benoni structure. White usually plays Nc3, e4 and Nf3 for a central majority; Black counters with queenside play (...b5, ...a6) and pressure on the e-file. The game is an unbalanced space-against-counterplay fight.",
+  "white_ideas": [
+    { "idea": "Nc3, e4, Nf3 and a centre pawn majority supported by the d5 wedge" },
+    { "idea": "Play on the e-file and e5 or f4 breaks" }
+  ],
+  "black_ideas": [
+    { "idea": "...e6 and ...exd5 to open the e-file, ...d6, ...g6 and ...Bg7" },
+    { "idea": "Queenside expansion with ...a6 and ...b5, hitting c4" }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni: White d5/e4 against Black pawns d6/c5/g6 with a queenside pawn majority" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Imbalanced Benoni: Black accepts a weak d6 for active pieces; sharp lines with ...Nxe4 and e5 pushes." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit; the Benko is a different line." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Fixed asymmetrical centre with d5 wedge; play along the e- and c-files, semi-open." },
+    "approach": { "notes": "Played by strong players, not universally; entering via the Old Benoni transposes." },
+    "level": { "reason": "both", "notes": "Needs known theory and good understanding of the pawn breaks." }
+  },
+  "plan_phrases": ["Space advantage", "Queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Old Benoni 3.Nc3 and quiet lines", "moves": "1. d4 c5 2. d5 Nf6 3. Nc3", "how": "More restrained set-ups where White avoids the Modern Benoni main lines." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Imbalanced structure with tactical breaks; some quieter branches." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Main lines are playable." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Fixed asymmetric centre pressed along files." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players now and then." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.5, "reason": "Demands theory and good feel for pawn breaks." },
+    "plans": { "value": ["space_advantage", "queenside_expansion"], "reason": "White's d5 wedge against Black's queenside majority." }
+  }
+}

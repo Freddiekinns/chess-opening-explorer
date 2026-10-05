@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-lasker-pelikan-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Lasker-Pelikan Variation",
+    "eco": "B33",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
+    "fen": "r1bqkb1r/pp1p1ppp/2n2n2/4p3/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black hits the d4 knight with 5...e5, and after 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5 9.Nd5 Be7 White's knights land on d5 and a3 while Black has a hole on d5 and a weak d6 pawn. The line is very theoretical and Black's play is a mix of solid structure and tactical counterplay on the queenside. 6.Nb3 and 6.Nf5 are less common. A mainstay of top players, especially Black.",
+  "white_ideas": [
+    { "idea": "Place a knight on d5 and trade the dark-squared bishop with Bxf6 for a long-term edge" },
+    { "idea": "Exploit the weak d6 pawn and d5 hole, with Nc2 or c4 as a strategic plan" }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the d5 knight with ...Be7, ...O-O and ...f5 or ...b5-b4 break" },
+    { "idea": "Hold the d6 pawn and use the queenside majority for counterplay" }
+  ],
+  "typical_structures": [
+    { "structure": "Sveshnikov-type structure with Black pawn on e5 and d6 and White knight outpost on d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Sharp theoretical main line with concrete tactics, d6 weakness and many forcing moves; Sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given; pawns are exchanged or kept." },
+    "soundness": { "notes": "Sound; a top-level main line." },
+    "structure": { "notes": "Sicilian with a fixed asymmetric centre and a d5 outpost; Semi-open." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "both", "notes": "Heavy theory in the 7.Bg5 lines and a hard plan to execute; Advanced." }
+  },
+  "plan_phrases": ["knight outpost", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Schlechter Variation 6.Nb3", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Nb3", "how": "A quiet line where White avoids the theory and keeps a small edge." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Forcing theoretical Sicilian with concrete tactics." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A top-level main line." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "A Sicilian asymmetric centre with a d5 outpost." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream line." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.8, "reason": "Heavy theory and strategically hard play." },
+    "plans": { "value": ["knight_outpost", "space_advantage"], "reason": "The d5 outpost and weak d6 pawn drive the play." }
+  }
+}

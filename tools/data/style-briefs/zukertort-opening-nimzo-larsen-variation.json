@@ -1,0 +1,44 @@
+{
+  "slug": "zukertort-opening-nimzo-larsen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Nimzo-Larsen Variation",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. b3",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/1P3N2/P1PPPPPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the queen's bishop on b2 and keeps the centre flexible, usually answering ...d5 or ...e6 with Bb2, e3 and a later d4 or c4. Black can build a classical centre with ...d5 and ...e6 or fianchetto with ...g6. The game is a slow manoeuvring fight where White pressures e5 and the long diagonal rather than occupying the centre early.",
+  "white_ideas": [
+    { "idea": "Bb2 on the long diagonal, e3, g3/Bg2 or d3, then c4 or d4 at the right moment" },
+    { "idea": "Pressure e5 and control the centre with pieces rather than pawns" }
+  ],
+  "black_ideas": [
+    { "idea": "Claim the centre with ...d5, ...e6 and ...c5 or ...Bb4" },
+    { "idea": "Mirror the fianchetto with ...g6 and ...Bg7, or hit the b2 bishop with ...b6" }
+  ],
+  "typical_structures": [
+    { "structure": "White queenside fianchetto against a ...d5/...e6 centre, the pawn on d4 delayed" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow flank opening, no early forcing play; steady manoeuvring and few ways to lose quickly, but not especially hard to break down either." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands." },
+    "soundness": { "notes": "Fully respectable; Larsen and Nimzowitsch played it at top level." },
+    "structure": { "notes": "Centre left undecided for many moves; White decides between d4 and c4 later." },
+    "approach": { "notes": "b3/Bb2/e3 can be set up against most replies, though it is usually filed as a Reti-type flank opening rather than a pure system." },
+    "level": { "reason": "understanding", "notes": "Clear piece placement, modest theory, but the right moment for d4 or c4 takes judgement." }
+  },
+  "plan_phrases": ["fianchetto", "long diagonal pressure", "hypermodern centre", "flexible centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet flank play that is neither especially hard to crack nor tactical." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respectable line used by strong players." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "The centre stays undecided, as in the English and Reti." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played at all levels, though the b3/Bb2 set-up could be called a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Simple piece placement but timing of the central break takes judgement." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Bb2 on the long diagonal with the centre contested by pieces." }
+  }
+}

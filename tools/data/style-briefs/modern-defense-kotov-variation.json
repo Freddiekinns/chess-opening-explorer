@@ -1,0 +1,46 @@
+{
+  "slug": "modern-defense-kotov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Kotov Variation",
+    "eco": "A42",
+    "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6 4. e4 Nc6",
+    "fen": "r1bqk1nr/ppp1ppbp/2np2p1/8/2PPP3/2N5/PP3PPP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "modern-defense-averbakh-system",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets White's big centre with ...Nc6 to hit d4 and prepare ...e5. After 5.Be3 e5 6.d5 Nce7 the centre locks and Black has a King's Indian-style structure with ...f5 or ...c6 breaks. White can also play 5.Nf3 e5 or 5.d5 Nb8, gaining space. Black is cramped but solid.",
+  "white_ideas": [
+    { "idea": "Play d5 to gain space and lock the centre, then expand with Nge2, f3 and Qd2." },
+    { "idea": "Build with Be3, Nf3 and Be2 and keep the centre flexible." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge d4 with ...e5 and, after d5, reroute the knight with ...Nce7." },
+    { "idea": "Break with ...f5 or ...c6 later." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian-type locked centre: pawns on c4, d5, e4 against e5 and d6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black takes a cramped but resilient position and waits to strike with ...f5. Not especially forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Playable; White may keep a space edge." },
+    "structure": { "notes": "After d5 the centre locks, giving a closed King's Indian-type structure." },
+    "approach": { "notes": "Modern Defense lines are less common but played by good players; standard rather than offbeat." },
+    "level": { "reason": "understanding", "notes": "Needs good judgement of when to break; theory is moderate." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage", "king's indian structure"],
+  "sublines_that_differ": [
+    { "name": "5.d5", "moves": "5. d5 Nb8", "how": "White gains space at once and Black's knight has lost two tempi." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Locked centre with wing play, neither forcing nor a fortress." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "A playable line." },
+    "structure": { "value": "closed", "confidence": 0.55, "reason": "After d5 e5 the centre is locked." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A less common line that strong players do play." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Middlegame plans matter more than theory." },
+    "plans": { "value": ["hypermodern_centre", "space_advantage"], "reason": "Black lets White take the centre and attacks it." }
+  }
+}

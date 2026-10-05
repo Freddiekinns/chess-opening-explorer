@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-accelerated-panov-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Accelerated Panov Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. c4",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays c4 before d4, aiming for a Panov-type position while keeping options. After 2...d5 3.exd5 cxd5 4.cxd5 Nf6, Black regains the pawn with ...Nxd5 or ...Qxd5 for open play, or White transposes to the Panov Attack with d4 and an isolated d-pawn. Black has an easy game against 2.c4 with ...d5 and ...Nf6, and White gets some early space.",
+  "white_ideas": [
+    { "idea": "Transpose into a Panov-Botvinnik with d4 and Nc3 and an IQP position" },
+    { "idea": "Exchange pawns on d5 and aim for active piece play and the open c-file" }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...d5 and recover the pawn with ...Nf6 and ...Nxd5" },
+    { "idea": "Develop ...Nc6, ...e6 and get an IQP-type structure against White's d4" }
+  ],
+  "typical_structures": [
+    { "structure": "Panov-type isolated queen's pawn for White after d4, or symmetrical open position after the exchanges" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open piece play with a few early tactics but sound for Black; Balanced, unsure of the main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "White pawn on d5 is regained by Black at once." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Pawn exchanges on d5 give an asymmetric or IQP structure with the c-file half-open; Semi-open." },
+    "approach": { "notes": "A respectable anti-Caro line; standard." },
+    "level": { "reason": "understanding", "notes": "Plans are clear and theory is light; Intermediate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "2...d5 3.exd5 cxd5 4.d4", "moves": "1. e4 c6 2. c4 d5 3. exd5 cxd5 4. d4", "how": "Transposes to the Panov Attack with IQP play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open piece play that is even; unsure of the main line." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Any pawn White takes is regained at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Pawn exchanges on d5 and a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A regular anti-Caro-Kann choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Clear plans and light theory." },
+    "plans": { "value": ["isolated_queens_pawn", "half_open_c_file"], "reason": "The Panov-type IQP and open c-file." }
+  }
+}

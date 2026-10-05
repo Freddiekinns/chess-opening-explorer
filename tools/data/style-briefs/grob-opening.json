@@ -1,0 +1,51 @@
+{
+  "slug": "grob-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening",
+    "eco": "A00",
+    "moves": "1. g4",
+    "fen": "rnbqkbnr/pppppppp/8/8/6P1/8/PPPPPP1P/RNBQKBNR b KQkq - 0 1"
+  },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White plays 1.g4, aiming a fianchettoed bishop at b7 down the long diagonal while giving up the g-pawn. After 1...d5 2.Bg2 Bxg4 3.c4 White hopes for play against d5 and b7, or a hit on the c6-square with Qb3. Most strong players take the pawn and White gets little for it; White's kingside is weakened by g4 and the line scores on surprise and traps.",
+  "white_ideas": [
+    { "idea": "Bg2 hitting d5/b7, then c4 and Qb3 for pressure against Black's queenside" },
+    { "idea": "Surprise the opponent in unfamiliar play and hope for ...Bxg4 and a lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the g4 pawn with ...Bxg4 or ...e5 and ...d5 and develop freely" },
+    { "idea": "Hit the weakened kingside with ...h5 and use the open g-file and space in the centre" }
+  ],
+  "typical_structures": [
+    { "structure": "White with a g2-bishop on the long diagonal and weakened kingside pawns, Black with an extra pawn and a big centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced and risky for White with an exposed kingside; Sharp from Black's view too. Not known as a quiet line." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 1...d5 2.Bg2 Bxg4 3.c4 Black can keep the pawn; some lines (2.h3 e5) just weaken White without a gambit."
+    },
+    "soundness": { "notes": "Strong players consider it dubious for White; it works by surprise." },
+    "structure": { "notes": "Flank opening where the centre is open for Black; Flexible with low confidence." },
+    "approach": { "notes": "Anchor Offbeat: strong players hardly ever play it." },
+    "level": { "reason": "memory", "notes": "A dubious line cannot be Beginner; Intermediate for White." }
+  },
+  "plan_phrases": ["fianchetto", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "1...e5 2.d3", "moves": "1. g4 e5 2. d3", "how": "No pawn is given; White plays a slow set-up, so no gambit." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A weakened kingside and early tactics make it double-edged." },
+    "gambit": { "value": "white", "confidence": 0.55, "reason": "The main 1...d5 2.Bg2 Bxg4 line gives a pawn White can't easily regain." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.85, "reason": "Strong players consider 1.g4 inferior." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "A flank opening with the centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.95, "reason": "Seldom played by strong players, like the Grob in the anchors." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.7, "reason": "Dubious lines are never Beginner." },
+    "plans": { "value": ["fianchetto", "lead_in_development"], "reason": "Bg2 on the long diagonal and quick development for a pawn." }
+  }
+}

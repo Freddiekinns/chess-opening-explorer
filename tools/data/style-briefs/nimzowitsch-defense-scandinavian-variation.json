@@ -1,0 +1,46 @@
+{
+  "slug": "nimzowitsch-defense-scandinavian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Scandinavian Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 d5",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black challenges the centre with ...d5 after 1...Nc6. After 3.e5 Bf5 White gets a French-Advance-like space edge with the bishop outside the chain, and 3.exd5 Qxd5 gives Scandinavian-like play with an early queen and tempo for White's Nf3 or Nc3. White has more space and Black aims for ...e6, ...Nge7, ...f6 and ...Qd7 counterplay.",
+  "white_ideas": [
+    { "idea": "Advance e5, Nf3, Be2 and c3 with a space edge and kingside play" },
+    { "idea": "After exd5 Qxd5, Nf3 and Be2 gaining time against the queen" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the d4 pawn with ...Bf5, ...e6, ...Qd7 and ...f6 or ...Nge7" },
+    { "idea": "Develop the queen early in the Scandinavian lines and rely on solid structure" }
+  ],
+  "typical_structures": [
+    { "structure": "Advance structure with White e5/d4 against Black e6/d5 and Bf5 outside the chain" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's structure is French-like, hard to crack but cramped; slow play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Playable, only Kasparov and Keene doubted it; not refuted." },
+    "structure": { "notes": "Advance chain d4/e5 locks the centre; the Exchange variant would be semi-open." },
+    "approach": { "notes": "Rare at the top; mostly a surprise weapon." },
+    "level": { "reason": "understanding", "notes": "Plans clear after the Advance, but it needs a feel for ...f6 breaks." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop avoided"],
+  "sublines_that_differ": [
+    { "name": "Exchange", "moves": "3.exd5 Qxd5", "how": "Scandinavian structure with an early queen, more open." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Black has a sturdy pawn chain in the Advance line, without sharp theory." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable, unproven but not refuted." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "The Advance chain locks the centre." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom use 1...Nc6." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are French-like, little forcing theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space and Black has to find room." }
+  }
+}

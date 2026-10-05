@@ -1,0 +1,156 @@
+{
+  "slug": "queens-gambit-accepted",
+  "root": {
+    "name": "Queen's Gambit Accepted",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Gambit Accepted",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Gambit_Accepted",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Queen's Gambit Accepted For White: Step-By-Step",
+      "publisher": "House of Staunton",
+      "url": "https://www.houseofstaunton.com/blogs/chess-openings/the-queens-gambit-accepted-for-white-step-by-step",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Queen's Gambit Opening",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/queens-gambit-black-white/",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 2...dxc4 Black has taken the c-pawn, but sources agree he cannot keep it without serious concessions; White regains it with Bxc4 once the e-pawn has moved (3.e3 or 3.Nf3 then e3, or 3.e4). Black instead gives up the idea of holding it and fights for central counterplay: ...c5 (and ...cxd4) or ...e5 to undermine d4, and ...a6 with ...b5 to gain queenside space and time for the c8 bishop. The centre is open, White has the d4/e4 pawns and the move, and the usual middlegames are IQP or hanging-pawn positions with piece play. Character varies by line: the 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5 main line is positional and balanced, while 3.e4 lines can be tactical early. It is sound and has been a regular at the elite level since the 1990s.",
+  "white_ideas": [
+    { "idea": "Regain the c4 pawn with Bxc4 after the e-pawn has advanced; White spends a tempo, so the aim is development and central control in return.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Establish a d4 + e4 centre (3.e4 or ...e4 later) to leverage space.", "sources": ["s1", "s2"] },
+    { "idea": "Exploit an isolated queen's pawn or hanging pawns that arise after ...c5 and ...cxd4; accept the IQP for active pieces, or aim for a favourable endgame.", "sources": ["s1"] },
+    { "idea": "In the main line 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5 6.O-O a6, decide how to meet the ...b5 threat: 7.Qe2, 7.Bb3 or 7.dxc5.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Do not hang on to the pawn: after 3.e3, 3...b5? 4.a4 c6? quickly loses a piece; counterplay comes from structure instead.", "sources": ["s3"] },
+    { "idea": "Strike the centre with ...c5 (and ...cxd4) or ...e5, since there is no d5 pawn to defend it.", "sources": ["s1", "s3"] },
+    { "idea": "...a6 and ...b5 to gain queenside space and develop the c8 bishop with tempo (hitting the c4 bishop).", "sources": ["s1", "s3"] },
+    { "idea": "Weaken White's centre in the hope of an endgame advantage.", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...dxc4 and an early central pawn exchange; White d4/e4 pawns vs Black's c- or e-pawn break.", "sources": ["s1"] },
+    { "structure": "Isolated queen's pawn after ...c5 / ...cxd4 and exchanges.", "sources": ["s1"] },
+    { "structure": "Potential hanging pawns on c5 and d5-type structures after ...c5 / ...cxd4.", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed across sub-variations. Wikipedia calls it balanced with middlegame complexity; the main line after 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5 is positional (s1). House of Staunton says the game 'can get tactical quite early' and is 'unbalanced' (s2), and Chessable says it often leads to lively games (s3) because Black must compensate for his lack of central space with piece play. The 3.e4 Central lines (3...e5 4.Nf3 exd4 5.Bxc4) are sharper. Sources do not call it sharp; they call it active and open. My reading: balanced, with the sharpest lines in 3.e4 only.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": false,
+      "notes": "White nominally offers the c4 pawn, and at the root Black has taken it (Black is a pawn up on the board). It cannot be kept without concession: Wikipedia says it is 'not considered a true gambit' because the pawn is 'either regained, or can only be held unprofitably by Black' (s1); Staunton says it is difficult for Black to keep the pawn without serious concessions (s2); and Chessable shows that after 3.e3, 3...b5? 4.a4 c6? loses a piece (s3). Black's compensation is not the pawn but the absence of White's c-pawn and central counterplay. So the material is not 'material the opponent can keep': for the taxonomy this is the textbook case of not a gambit. I found no source naming a line in which Black keeps the pawn for good without concession.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Sound for both. Wikipedia says it had a dubious reputation historically but is now considered sound and became trendy again among elite players in the 1990s (s1). Chessable says accepting and declining yield nearly identical winning percentages (s3). No risk side.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Open. White's c-pawn and Black's d-pawn are gone, the centre is open, and the typical middlegames feature an IQP, hanging pawns and open files for pieces (s1). Wikipedia describes open centre with central tension. This differs from QGD closed structures.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "Not a system: it is a Black response to the Queen's Gambit and arises only after 1.d4 d5 2.c4. It has been played regularly by elite players since the 1990s (s1) and has many named variations (McDonnell, Alekhine, Modern, Rubinstein, Greco), so it is a mainstream opening.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Sources split on difficulty. Wikipedia: moderate theoretical complexity compared with main QG lines, accessible for practical play (s1). Staunton: 'requires a high level of chess understanding' and serious preparation, because structures vary widely by line (s2). I read the main burden as understanding IQP / hanging-pawn structures and timing of ...c5/...b5, rather than long forcing lines.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "regaining the c4 pawn",
+    "...c5 break",
+    "...a6 and ...b5 with tempo on the bishop",
+    "isolated queen's pawn",
+    "hanging pawns",
+    "e4 centre",
+    "central counterplay instead of holding the pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Central / Saduleto Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. e4",
+      "how": "White grabs the centre at once; 3...e5 4.Nf3 exd4 5.Bxc4 gets tactical and sharp; the Alekhine-style ...Nf6 4.e5 lines also differ; more forcing than the 3.Nf3 main line (s1)."
+    },
+    {
+      "name": "3.Nf3 Classical",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6",
+      "how": "The standard main line: balanced and positional, ...a6 and ...b5, IQP-style structures (s1)."
+    },
+    {
+      "name": "3.Nc3",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nc3",
+      "how": "The most-played reply in the database (21.7M games at that position) but Wikipedia calls it less effective since it does not control d4 and e5 well (s1); I did not find detail on its structures. Treated as inheriting from the root."
+    },
+    {
+      "name": "3.e3 Old Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. e3",
+      "how": "Quiet; 3...b5? fails to 4.a4 (s3)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The QGA is a dynamic and classical response to 1.d4 where Black temporarily cedes the centre to accelerate development and create counterplay.",
+        "verdict": "supported",
+        "note": "Black lacks central space and must compensate with piece play and well-timed pawn breaks.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Unlike the Declined, the QGA often leads to open, asymmetrical positions where piece activity and timing matter more than a static pawn structure.",
+        "verdict": "supported",
+        "note": "Open centre, IQP and hanging pawns; lively games.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It is perfect for players who enjoy active piece play and are comfortable with sharp, tactical situations.",
+        "verdict": "unverifiable",
+        "note": "Active piece play is accurate. 'Sharp, tactical' is only true in some lines (3.e4 e5; Staunton: tactical early); Wikipedia calls the resulting positions balanced with middlegame complexity, and the main line is positional.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: seize central space with an early e2-e4, develop pieces to support the centre and launch a kingside attack.",
+        "verdict": "supported",
+        "note": "A d4/e4 centre is White's main strategic asset. A kingside attack is mentioned only as a possible follow-up (s1); in the 4.e3 main line White does not play e4 at all.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: undermine the centre with a quick ...c5, develop rapidly and exert pressure along the semi-open c-file.",
+        "verdict": "supported",
+        "note": "...c5 is the main plan; the semi-open c-file after ...cxd4 is a natural consequence (own understanding).",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "In many lines White accepts an IQP for active pieces and attacking chances; Black blockades it, exchanges pieces and exploits it as an endgame weakness.",
+        "verdict": "supported",
+        "note": "An isolated queen's pawn is a standard outcome after ...cxd4; the blockade-and-exchange plan is the textbook method (own understanding for the detail).",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

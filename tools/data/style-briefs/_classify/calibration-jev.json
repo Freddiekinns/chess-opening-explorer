@@ -1,0 +1,626 @@
+{
+  "kings-indian-defense-orthodox-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0.01,
+          "balanced": 0.26,
+          "sharp": 0.73
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "black": 0,
+          "white": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "closed",
+        "probabilities": {
+          "semi_open": 0,
+          "closed": 1,
+          "open": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "advanced": 0.96,
+          "beginner": 0,
+          "intermediate": 0.04
+        }
+      }
+    }
+  },
+  "queens-pawn-game-london-system": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "balanced": 0,
+          "sharp": 0,
+          "solid": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "closed",
+        "probabilities": {
+          "semi_open": 0.03,
+          "closed": 0.97,
+          "open": 0
+        }
+      },
+      "approach": {
+        "choice": "system",
+        "probabilities": {
+          "system": 1,
+          "standard": 0,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "advanced": 0,
+          "beginner": 0.99,
+          "intermediate": 0.01
+        }
+      }
+    }
+  },
+  "nimzo-indian-defense-rubinstein-system": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "sharp": 0,
+          "solid": 0.16,
+          "balanced": 0.84
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.03,
+          "closed": 0,
+          "semi_open": 0.97
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "offbeat": 0,
+          "system": 0,
+          "standard": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "advanced": 0.46,
+          "intermediate": 0.54,
+          "beginner": 0
+        }
+      }
+    }
+  },
+  "petrovs-defense-stafford-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "black": 1,
+          "white": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "dubious": 1,
+          "sound": 0
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "closed": 0,
+          "open": 1,
+          "semi_open": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "offbeat": 1,
+          "standard": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.01,
+          "intermediate": 0.18,
+          "advanced": 0.81
+        }
+      }
+    }
+  },
+  "queens-gambit-accepted": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "sharp": 0,
+          "solid": 0,
+          "balanced": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 0.96,
+          "black": 0,
+          "white": 0.04
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "dubious": 0,
+          "sound": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "offbeat": 0,
+          "system": 0,
+          "standard": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "intermediate": 0.91,
+          "advanced": 0.09,
+          "beginner": 0
+        }
+      }
+    }
+  },
+  "rapport-jobava-system": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "balanced": 0,
+          "sharp": 1,
+          "solid": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "dubious": 0,
+          "sound": 1
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "closed": 0.01,
+          "semi_open": 0.99,
+          "open": 0
+        }
+      },
+      "approach": {
+        "choice": "system",
+        "probabilities": {
+          "system": 1,
+          "standard": 0,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "intermediate": 0.96,
+          "advanced": 0.03,
+          "beginner": 0.01
+        }
+      }
+    }
+  },
+  "ruy-lopez-marshall-attack": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "black": 1,
+          "white": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "closed": 0,
+          "semi_open": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "offbeat": 0,
+          "standard": 1,
+          "system": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "intermediate": 0,
+          "beginner": 0,
+          "advanced": 1
+        }
+      }
+    }
+  },
+  "sicilian-defense-accelerated-dragon": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "sharp": 0,
+          "solid": 0,
+          "balanced": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "black": 0,
+          "none": 1,
+          "white": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "semi_open": 1,
+          "open": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "offbeat": 0.65,
+          "system": 0,
+          "standard": 0.35
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "intermediate": 0.02,
+          "advanced": 0.98,
+          "beginner": 0
+        }
+      }
+    }
+  },
+  "sicilian-defense-alapin-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "black": 0,
+          "none": 0.93,
+          "white": 0.07
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "semi_open": 0.59,
+          "closed": 0,
+          "open": 0.41
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "offbeat": 0.04,
+          "standard": 0.95,
+          "system": 0.01
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "intermediate": 0.94,
+          "advanced": 0,
+          "beginner": 0.06
+        }
+      }
+    }
+  },
+  "sicilian-defense-najdorf-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 0.74,
+          "white": 0.26,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "closed": 0,
+          "open": 0.02,
+          "semi_open": 0.98
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "offbeat": 0,
+          "standard": 1,
+          "system": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "intermediate": 0,
+          "advanced": 1,
+          "beginner": 0
+        }
+      }
+    }
+  },
+  "vienna-game-vienna-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "balanced": 0,
+          "solid": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "white": 1,
+          "none": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.75,
+          "dubious": 0.25
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "semi_open": 0,
+          "closed": 0,
+          "open": 1
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "intermediate": 0.46,
+          "advanced": 0.52,
+          "beginner": 0.02
+        }
+      }
+    }
+  },
+  "vienna-game": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "solid": 0,
+          "sharp": 0.03,
+          "balanced": 0.97
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "white": 0,
+          "none": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "dubious": 0,
+          "sound": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.89,
+          "semi_open": 0.11,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "standard": 0,
+          "offbeat": 1,
+          "system": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "intermediate": 0.95,
+          "advanced": 0.02,
+          "beginner": 0.03
+        }
+      }
+    }
+  }
+}

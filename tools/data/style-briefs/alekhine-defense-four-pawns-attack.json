@@ -1,0 +1,46 @@
+{
+  "slug": "alekhine-defense-four-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Four Pawns Attack",
+    "eco": "B03",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4",
+    "fen": "rnbqkb1r/ppp1pppp/1n1p4/4P3/2PP1P2/8/PP4PP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White builds a huge pawn centre with c4, d4, e5 and f4; Black attacks it with ...dxe5 fxe5 Nc6 and ...Bf5 or ...Bg4, aiming at d4 and e5. White needs to hold the centre while developing, otherwise it collapses. A sharp, forcing and theory-laden line in which White has space and Black counterattacks.",
+  "white_ideas": [
+    { "idea": "Hold the broad centre with Nc3, Be3, Nf3 and Be2, then use space for a kingside initiative." },
+    { "idea": "Push d5 or e6 when the moment is right, ahead of Black's development." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at d4 and e5 with ...dxe5, ...Nc6, ...Bf5 and ...Qd7, ...O-O-O." },
+    { "idea": "Exploit overextension: if White's centre falls Black is better." }
+  ],
+  "typical_structures": [
+    { "structure": "White centre pawns on c4, d4, e5 against Black's piece pressure, with ...e6/...Bf5 and ...Nb6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced and double-edged; the centre either holds or collapses, with forcing tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is sacrificed deliberately." },
+    "soundness": { "notes": "Sound though risky for both; used by strong players." },
+    "structure": { "notes": "A large central pawn mass under tension rather than a locked chain." },
+    "approach": { "notes": "A well-known main-line attacking try against the Alekhine." },
+    "level": { "reason": "both", "notes": "Forcing lines and a hard-to-judge centre; a standard 4.c4 line is intermediate." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "5...g6 fianchetto", "moves": "5...g6", "how": "Quieter, more solid for Black." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Forcing, tactical, and one inaccuracy can lose the centre." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No pawn is sacrificed." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable at the highest level." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "White centre is under tension and not locked." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised Alekhine main line." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Needs knowledge of forcing lines but the plans are clear." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White space against Black's hypermodern counterplay." }
+  }
+}

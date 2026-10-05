@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const pathResolver = require('../utils/path-resolver');
 const { getGlobalCache } = require('./cache-service');
+const styleTags = require('./style-tags-service');
 
 // A literal require, never a computed path: this is the first runtime API code
 // to read from config/, and Vercel's file tracer cannot follow a path built at
@@ -36,27 +37,15 @@ class BrowseService {
   }
 
   /**
-   * One primary style per opening. Openings carry ~7 style tags each and the
-   * common tags sit on 60%+ of the corpus, so multi-membership buckets would
-   * each match about half of everything — a filter that filters nothing.
-   * Assigning exactly one style makes the facet counts partition the corpus.
+   * Every style an opening is under. The style tags are one value per axis and
+   * each shown value holds well under half the corpus, so an opening can sit
+   * under two styles (Sharp and Gambit) and every filter still filters. The old
+   * LLM tags could not: their common tags were on 60%+ of everything, which is
+   * why this used to pick exactly one bucket per opening.
    */
-  primaryStyle(styleTags) {
-    const tags = new Set(styleTags || []);
-    const override = this.config.gambitOverride;
-    if (override.tags.some((t) => tags.has(t))) return override.value;
-
-    let best = null;
-    let bestScore = 0;
-    for (const bucket of this.config.styles) {
-      const score = bucket.tags.filter((t) => tags.has(t)).length;
-      // Strict `>` means the first bucket in config order wins a tie.
-      if (score > bestScore) {
-        bestScore = score;
-        best = bucket.value;
-      }
-    }
-    return best;
+  stylesOf(axes) {
+    if (!axes) return [];
+    return this.config.styles.filter((s) => s.values.includes(axes[s.axis])).map((s) => s.value);
   }
 
   loadFamilies() {
@@ -98,8 +87,7 @@ class BrowseService {
           const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
           for (const [fen, opening] of Object.entries(data)) {
-            const analysis = opening.analysis_json || {};
-            const styleTags = analysis.style_tags || [];
+            const axes = styleTags.axesFor(fen);
             const stats = popularity[fen];
             const familyId = opening.family_id || 'uncategorised';
             const familyMeta = families[familyId];
@@ -111,9 +99,10 @@ class BrowseService {
               moves: opening.moves || '',
               family_id: familyId,
               family_name: (familyMeta && familyMeta.display_name) || UNCATEGORISED_LABEL,
-              level: analysis.complexity || null,
-              style: this.primaryStyle(styleTags),
-              style_tags: styleTags,
+              // Stored values, middle included: Intermediate is never shown on
+              // a page, but it is a real answer and a level a user can filter on.
+              level: axes ? axes.level.charAt(0).toUpperCase() + axes.level.slice(1) : null,
+              styles: this.stylesOf(axes),
               // Real stats or null. Never a zero standing in for "unknown".
               games_analyzed: stats ? stats.games_analyzed || 0 : 0,
               white_win_rate: stats && stats.white_win_rate != null ? stats.white_win_rate : null,
@@ -133,7 +122,7 @@ class BrowseService {
 
   matches(entry, filters) {
     if (filters.level && entry.level !== filters.level) return false;
-    if (filters.style && entry.style !== filters.style) return false;
+    if (filters.style && !entry.styles.includes(filters.style)) return false;
     if (filters.family && entry.family_id !== filters.family) return false;
     return true;
   }
@@ -145,14 +134,16 @@ class BrowseService {
    */
   countFacet(index, filters, dimension, values) {
     const others = { ...filters, [dimension]: null };
-    const key = dimension === 'family' ? 'family_id' : dimension;
+    const key = { family: 'family_id', style: 'styles' }[dimension] || dimension;
     const counts = new Map();
 
     for (const entry of index) {
       if (!this.matches(entry, others)) continue;
-      const value = entry[key];
-      if (value == null) continue;
-      counts.set(value, (counts.get(value) || 0) + 1);
+      // Styles is a list: an opening under two styles counts under both.
+      for (const value of [].concat(entry[key])) {
+        if (value == null) continue;
+        counts.set(value, (counts.get(value) || 0) + 1);
+      }
     }
 
     const applied = filters[dimension];
@@ -164,8 +155,8 @@ class BrowseService {
         // not.
         .filter((v) => counts.get(v.value) > 0 || v.value === applied)
         // Fields are copied explicitly, never spread: the style buckets in
-        // config/browse_facets.json carry a `tags` array that must not ship in
-        // every response.
+        // config/browse_facets.json carry their axis and values, which must not
+        // ship in every response.
         .map((v) => ({
           value: v.value,
           label: v.label,
@@ -260,8 +251,6 @@ class BrowseService {
     const items = filtered.slice(offset, offset + pageSize);
     const remaining = total - offset - items.length;
 
-    const styleValues = [this.config.gambitOverride, ...this.config.styles];
-
     return {
       items: items.map((entry) => this.toItem(entry)),
       total,
@@ -271,18 +260,14 @@ class BrowseService {
       remaining,
       facets: {
         level: this.countFacet(index, filters, 'level', this.config.levels),
-        style: this.countFacet(index, filters, 'style', styleValues),
+        style: this.countFacet(index, filters, 'style', this.config.styles),
         family: this.countFacet(index, filters, 'family', this.familyFacetValues(index)),
       },
       applied: { ...filters, sort },
     };
   }
 
-  /**
-   * `analysis_json` is included, slimmed: OpeningCard reads
-   * `opening.analysis_json?.complexity`, so a browse item drops straight into
-   * the existing card with no adapter.
-   */
+  /** `style_profile` is what OpeningCard draws: the shown words and plans. */
   toItem(entry) {
     return {
       fen: entry.fen,
@@ -292,13 +277,13 @@ class BrowseService {
       family_id: entry.family_id,
       family_name: entry.family_name,
       level: entry.level,
-      style: entry.style,
+      styles: entry.styles,
       games_analyzed: entry.games_analyzed,
       white_win_rate: entry.white_win_rate,
       draw_rate: entry.draw_rate,
       black_win_rate: entry.black_win_rate,
       avg_rating: entry.avg_rating,
-      analysis_json: { complexity: entry.level, style_tags: entry.style_tags },
+      style_profile: styleTags.profileFor(entry.fen),
     };
   }
 }

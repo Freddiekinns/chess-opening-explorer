@@ -1,0 +1,46 @@
+{
+  "slug": "english-opening-anglo-lithuanian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Anglo-Lithuanian Variation",
+    "eco": "A10",
+    "moves": "1. c4 Nc6",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the queen's knight first and keeps ...e5 or ...Nf6 for later. After 2.Nc3 Black plays ...e5 or ...Nf6, reaching a Reversed Sicilian or Anglo-Indian type of game. White usually keeps the extra tempo with Nc3, g3, Bg2 and d3 or d4. Games are positional and transpose often.",
+  "white_ideas": [
+    { "idea": "Nc3, g3, Bg2 and d3, then e4 or a queenside space grab with a pawn advance." },
+    { "idea": "Strike with d4 after Black commits to ...e5, to take the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Set up a Reversed Sicilian with ...e5, ...Nf6 and ...g6 and ...Bg7." },
+    { "idea": "Transpose to a Four Knights or a King's Indian structure." }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian: White c4 and Nc3, Black pawn on e5 and d6, a fianchettoed bishop on g2." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet developing moves and slow manoeuvring; no early forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Playable for Black. White keeps a small edge at most." },
+    "structure": { "notes": "Flank opening with the centre undecided; both sides can still choose their pawn set-up." },
+    "approach": { "notes": "Black's 1...Nc6 is a rare reply to 1.c4, seldom played by strong players." },
+    "level": { "reason": "understanding", "notes": "Few theoretical lines, but needs sound positional judgement." }
+  },
+  "plan_phrases": ["reversed sicilian", "fianchetto", "flexible development"],
+  "sublines_that_differ": [
+    { "name": "2.d4", "moves": "1. c4 Nc6 2. d4 e5 3. d5 Nce7", "how": "White gains space and Black has a awkward knight." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet flank play, neither forcing nor a fortress." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "A playable reply." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "English-type flank opening with an undecided centre." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "A rare reply for strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Flexible set-ups need judgement." },
+    "plans": { "value": ["fianchetto"], "reason": "White's usual g3 and Bg2." }
+  }
+}

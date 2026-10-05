@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-endgame-offer",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Endgame Offer",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nf3 d5 3. d3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/3P1N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays 3.d3, a quiet King's Indian Attack-like set-up, and invites 3...dxe4 4.dxe4 Qxd1+ 5.Kxd1 into an early queen trade where White loses castling. Black can instead play 3...Nf6 or 3...g6 with ...Bg4 and ...e5 for a Philidor-like set-up. White aims for g3, Bg2, O-O and Nbd2 without fighting for a big edge.",
+  "white_ideas": [
+    { "idea": "Set up with g3, Bg2, O-O and Nbd2, a King's Indian Attack set-up avoiding theory." },
+    { "idea": "Accept the queen trade and play a slightly worse but solid endgame." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on e4 and trade queens to reach a safe endgame, or develop with ...Nf6, ...Bg4 and ...e5." },
+    { "idea": "Build a solid centre with ...e5 and ...Nd7." }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann c6/d5 pawns against e4/d3, or a Philidor-like ...d6/...e5 structure." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet; the early queen trade or slow set-up gives few tactics and little risk for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound but gives Black an easy game; White does not try for an edge." },
+    "structure": { "notes": "Centre tension e4 against d5 is unresolved; after dxe4 dxe4 the d-file is open." },
+    "approach": { "notes": "A quiet, rarely played anti-Caro-Kann line, mainly a way to avoid theory." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn, but the later play needs judgement." }
+  },
+  "plan_phrases": ["avoid theory", "fianchetto", "queen trade endgame"],
+  "sublines_that_differ": [
+    { "name": "Queen trade", "moves": "3... dxe4 4. dxe4 Qxd1+ 5. Kxd1", "how": "A queenless middlegame with White's king stuck in the centre." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Quiet play with trades and few tactics for either side." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A harmless, playable line." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Central tension is not resolved." },
+    "approach": { "value": "offbeat", "confidence": 0.4, "reason": "A rare quiet choice for strong players, used to avoid theory." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Simple moves but not a recommended first repertoire." },
+    "plans": { "value": ["fianchetto"], "reason": "White's g3 and Bg2 set-up." }
+  }
+}

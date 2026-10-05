@@ -1,0 +1,46 @@
+{
+  "slug": "englund-gambit-hartlaub-charlick-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Hartlaub-Charlick Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 d6",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4P3/8/8/PPP1PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black offers a second pawn idea after 2.dxe5: 2...d6 hits the e5 pawn so that exd6 Bxd6 gives open lines and quick development. White can keep a pawn by 3.Nf3 dxe5 4.Nxe5 or 3.exd6 Bxd6 4.Nf3 Nf6. Black scores through activity and traps but gets little compensation against good play.",
+  "white_ideas": [
+    { "idea": "Keep the extra pawn by capturing and developing calmly: exd6 Bxd6 and Nf3, Nc3." },
+    { "idea": "Neutralise Black's lead in development and trade queens." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop rapidly with ...Bxd6, ...Nf6, ...Nc6 and use open lines for the pawn." },
+    { "idea": "Set traps against the queen and king on the d-file or Bg4 ideas." }
+  ],
+  "typical_structures": [
+    { "structure": "Open position with White a pawn up and Black developed on the e/d files." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gambit with rapid development, tactical traps and open lines." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the pawn with accurate play." },
+    "soundness": { "notes": "Considered unsound; scores through traps." },
+    "structure": { "notes": "Central pawns exchanged with open lines." },
+    "approach": { "notes": "Strong players almost never choose it." },
+    "level": { "reason": "both", "notes": "Dubious gambit, so not for beginners; needs trap knowledge." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "3.Nf3 dxe5 4.Nxe5", "moves": "3.Nf3 dxe5 4.Nxe5 Bd6", "how": "Quieter White pawn-up play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "A gambit with open lines and traps where one slip loses fast." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.85, "reason": "White keeps an extra pawn against correct play." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Central pawns come off and pieces get open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players seldom use the Englund." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Dubious, so never beginner; needs trap theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "Development for the pawn." }
+  }
+}

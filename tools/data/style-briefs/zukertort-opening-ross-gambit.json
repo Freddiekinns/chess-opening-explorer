@@ -1,0 +1,44 @@
+{
+  "slug": "zukertort-opening-ross-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Ross Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "I do not recognise the Ross Gambit by name. The root is 1.Nf3 e5, which White can meet by 2.Nxe5 winning a pawn, so the gambit is probably Black's: Black replies ...Nc6 and ...Qe7 or similar for development after 2.Nxe5. More commonly White plays 2.Nc3 or 2.e4 and it transposes to a Four Knights or Petrov-like game.",
+  "white_ideas": [
+    { "idea": "Take the pawn with 2.Nxe5 and trade the active piece." },
+    { "idea": "Or transpose with 2.Nc3 or 2.e4 into a normal open game." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Nc6 and use open lines for the pawn." },
+    { "idea": "Hold the e5 pawn and play the reversed Open Game." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game structure with e-pawns exchanged or Black pawn missing." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unclear; quiet if White transposes, tactical if White takes on e5." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "My assumption: after 2.Nxe5 Black plays on a pawn down." },
+    "soundness": { "notes": "Probably dubious for Black if it is a gambit, but not sure." },
+    "structure": { "notes": "Open lines after Nxe5 and ...Nc6." },
+    "approach": { "notes": "Unrecognised gambit name; surely rare." },
+    "level": { "reason": "neither", "notes": "Dubious, so never Beginner." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.35, "reason": "Unsure; the main line is probably quiet." },
+    "gambit": { "value": "black", "confidence": 0.4, "reason": "Assumed from the gambit name and 2.Nxe5." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.4, "reason": "A pawn down for little if it is a gambit." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "Open game lines after Nxe5." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "An unrecognised rare gambit name." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Never Beginner if dubious." },
+    "plans": { "value": [], "reason": "Position uncertain." }
+  }
+}

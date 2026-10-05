@@ -1,0 +1,47 @@
+{
+  "slug": "trompowsky-attack-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack: Classical Defense",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5 e6",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/6B1/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 3"
+  },
+  "parent": "trompowsky-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops with 2...e6, so the bishop on g5 is not hit at once. White usually plays 3.e4 h6 4.Bxf6 Qxf6 5.Nc3 for a big centre against the bishop pair, or the quieter 3.Nd2 and 3.Nc3, 3.e3. Black aims to undermine the centre with ...d6/...c5/...e5 and use the two bishops; White aims to keep space and avoid being opened up.",
+  "white_ideas": [
+    { "idea": "e4 and d4 centre after Bxf6, with Nc3 and Nf3" },
+    { "idea": "Nd2 and e3 set-up, keeping the bishop on g5 or h4" }
+  ],
+  "black_ideas": [
+    { "idea": "Bishop pair after ...h6 and ...Qxf6" },
+    { "idea": "Strike at the centre with ...c5 or ...d6 and ...e5" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 centre against Black's bishop pair after Bxf6 Qxf6" },
+    { "structure": "Queen's-pawn structure with e3 and c3 when White keeps the bishop" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "3.e4 h6 4.Bxf6 Qxf6 gives an imbalanced but not forcing middlegame; the quieter lines are calm." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn offered in the main lines." },
+    "soundness": { "notes": "All the main lines are playable for both sides." },
+    "structure": { "notes": "Centre is tense or still forming (d4/e4 against ...d6/...c5), not locked and not clearly open." },
+    "approach": { "notes": "Bg5 against 1...Nf6 is a favourite of a few specialists, but it is a standard choice in the sense that strong players use it; it is not played against everything." },
+    "level": { "reason": "understanding", "notes": "Plans are clear, little to memorise, but the bishop pair against the big centre takes judgement." }
+  },
+  "plan_phrases": ["Bishop pair", "Space advantage", "Big centre"],
+  "sublines_that_differ": [
+    { "name": "Trompowsky: 2...e6 3.e4 h6 4.Bxf6 Qxf6", "moves": "1. d4 Nf6 2. Bg5 e6 3. e4 h6 4. Bxf6", "how": "Main line of the root: White's centre against the bishop pair." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Imbalanced pieces but neither side is forced into sharp play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Both sides' main lines are fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre is not yet resolved and varies by branch." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players against one reply, not a universal set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Few lines to learn but handling the bishop pair takes judgement." },
+    "plans": { "value": ["bishop_pair", "space_advantage"], "reason": "Black gets the bishop pair, White the space." }
+  }
+}

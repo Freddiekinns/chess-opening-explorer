@@ -1,0 +1,39 @@
+{
+  "slug": "kings-knight-opening-konstantinopolsky",
+  "tier": "unsourced",
+  "root": { "name": "King's Knight Opening: Konstantinopolsky", "eco": "C44", "moves": "1. e4 e5 2. Nf3 Nc6 3. g3", "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq - 0 3" },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to g2 instead of the usual Bb5 or Bc4, keeping the centre flexible and avoiding main-line theory. Black can play ...d5 to strike at e4 or settle for ...Nf6 and ...Bc5. The game is a quiet King's Indian-Attack-style fight where White pressures d5 and e5 from a fianchetto and Black is usually comfortable.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop and play d3, O-O and Nc3 for a flexible pressure game." },
+    { "idea": "Meet ...d5 with exd5 and Bg2 or d3 to keep pressure on the long diagonal." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at once with ...d5 to take the centre and force White to react." },
+    { "idea": "Develop ...Nf6, ...Bc5 and castle, with ...d6 and ...Be6 for a solid game." }
+  ],
+  "typical_structures": [
+    { "structure": "Open Game with White's bishop on g2 and flexible pawn tension on e4/d3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, slow play with no forcing lines, neither side forced into risk." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A harmless, sound sideline." },
+    "structure": { "notes": "Centre tension between e4 and e5 not yet resolved; flank fianchetto." },
+    "approach": { "notes": "Rare at top level." },
+    "level": { "reason": "neither", "notes": "Easy ideas but gives Black no problems; modest." }
+  },
+  "plan_phrases": ["fianchetto", "flexible centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet development with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Harmless sound sideline." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Centre tension unresolved, flank fianchetto." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose 3.g3 here." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple ideas, not a first repertoire move." },
+    "plans": { "value": ["fianchetto"], "reason": "White's Bg2 on the long diagonal." }
+  }
+}

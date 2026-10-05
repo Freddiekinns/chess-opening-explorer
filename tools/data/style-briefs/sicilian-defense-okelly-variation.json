@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-okelly-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: O'Kelly Variation",
+    "eco": "B28",
+    "moves": "1. e4 c5 2. Nf3 a6",
+    "fen": "rnbqkbnr/1p1ppppp/p7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays ...a6 at once to stop Nb5 and prepare ...b5, keeping the choice between ...e6 (Kan) and ...Nf6/...d6 (Najdorf) for later. After 3.d4 cxd4 4.Nxd4 the game usually transposes to a Kan or Najdorf; White's alternatives 3.c3 (Venice) and 3.Nc3 (Yerevan) steer into Alapin- or Closed-style positions. Black's plan is queenside space and the c-file; White's is to use the d4 knight and kingside space.",
+  "white_ideas": [
+    { "idea": "3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 and play Najdorf-type attacks with Be3/f3/Qd2 or Bg5." },
+    { "idea": "3.c3 e6 4.d4 d5 and an Alapin-style centre, avoiding Open Sicilian theory." }
+  ],
+  "black_ideas": [
+    { "idea": "...b5 and ...Bb7 queenside expansion, with ...a6 denying Nb5/Bb5." },
+    { "idea": "Delay ...e6 or ...d6 to keep Kan, Najdorf or Taimanov set-ups available." }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian after 3.d4: White d4 knight, Black d6/e6 chain with half-open c-file." },
+    { "structure": "Alapin-type centre after 3.c3 e6 4.d4 d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly transposes to Kan/Najdorf-type positions, which are double-edged but not as forcing as Najdorf main lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands." },
+    "soundness": { "notes": "Fully sound; a flexible move order." },
+    "structure": { "notes": "Open Sicilian asymmetry with a half-open c-file, so semi-open." },
+    "approach": { "notes": "A move-order choice inside the Sicilian, played by strong players." },
+    "level": { "reason": "understanding", "notes": "Need to know the Kan/Najdorf structures, but the extra move order adds little memory load." }
+  },
+  "plan_phrases": ["half-open c-file", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Venice System", "moves": "1. e4 c5 2. Nf3 a6 3. c3", "how": "Quieter Alapin-type play." },
+    { "name": "Yerevan System", "moves": "1. e4 c5 2. Nf3 a6 3. Nc3", "how": "Closed-Sicilian style, slower." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Transposes to Kan/Najdorf-type play, double-edged but not a forced race." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respectable move-order choice." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Asymmetric Sicilian centre with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players as a Sicilian move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Kan and Najdorf structures need understanding, not extra memory." },
+    "plans": { "value": ["half_open_c_file", "queenside_expansion"], "reason": "Black pushes ...b5 and uses the c-file." }
+  }
+}

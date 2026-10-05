@@ -1,0 +1,192 @@
+{
+  "slug": "queens-pawn-game-colle-system",
+  "root": {
+    "name": "Queen's Pawn Game: Colle System",
+    "eco": "D04",
+    "moves": "1. d4 d5 2. Nf3 Nf6 3. e3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Colle System",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Colle_System",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Colle System: A Simple, Strong Opening Choice",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/colle-system/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "The Colle System: Safe, Sound, and Strong",
+      "publisher": "USCF Sales (search snippet only)",
+      "url": "https://www.uscfsales.com/blogs/chess-openings/the-colle-system-safe-sound-and-strong",
+      "kind": "article"
+    }
+  ],
+  "overview": "White builds a compact set-up with pawns on d4, e3 and c3, a knight on f3, a bishop on d3 and a knight on d2, castles, and aims for a well-timed e3-e4 break that is supported by Bd3, Nbd2 and sometimes Re1. If the break succeeds the centre opens and White's pieces point at the black king (Bxh7+ ideas, rooks to the h-file); if Black stops it, White keeps a solid cramped-but-safe position. Black usually answers with ...e6 and ...c5, striking at d4 and preparing ...Nc6 or ...Nbd7, or uses an anti-Colle development (3...Bf5, 3...Bg4) or a Queen's Indian style set-up with ...b6 and ...Bb7. The Zukertort version replaces c3 with b3 and Bb2, aiming at the long diagonal. The system is the same whatever Black plays, so little theory is required, and it is a regular choice among club players while occasional at the very top.",
+  "white_ideas": [
+    {
+      "idea": "Play the e3-e4 break, supported by Bd3 and Nbd2 (and Re1), usually after dxc5 deflects Black's bishop; it opens the centre for a kingside attack.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Kingside attack on h7 with Bd3, a rook lift to h-file squares (Rh4), and possibly Bxh7+ or Greek-gift style sacrifices after the break.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Colle-Zukertort: b3 and Bb2 instead of c3, building queenside fianchetto and then e4; Yusupov plays it often at grandmaster level.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Play it as a system with a flexible move order: d4, Nf3, e3, Bd3, c3 in any order, regardless of Black's set-up.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike at the centre with ...c5 (and ...Nc6 or ...Nbd7) to prevent or punish e4; accept an isolated queen's pawn for dynamic piece play in the ...Nc6 line, or recapture on c5 with tempo in the ...Nbd7 line.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Develop the light-squared bishop outside the pawn chain early (3...Bf5 'Anti-Colle', 3...Bg4) so that it is not bottled up behind e6.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Queen's Indian set-up with ...b6 and ...Bb7 to undermine White's centre and attack the queenside.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns d4/e3/c3 against Black d5/e6 (with ...c5 and ...Nc6/...Nbd7): a compact centre where e4 is the key break and the diagonal b1-h7 is the attacking diagonal.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "After the e4 break, a symmetrical or isolated-pawn centre with open lines toward the black king.",
+      "sources": ["s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Safe and solid for White in the build-up (modest, 'totally innocuous' reputation in Wikipedia's wording) but the e4 break can lead to quick kingside attacks. Chessable: 'can lead to some extremely aggressive kingside attacks'. The risk of losing quickly is low for White; for Black the Anti-Colle lines (Bf5) are comfortable.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is offered in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides: Wikipedia calls it unfashionable but sound; Ding Liren used it against Nepomniachtchi in the 2023 World Championship and Wei Yi won with it at Tata Steel 2024. Black can reach equality easily with ...c5 or the anti-Colle moves.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Compact centre with White pawns on d4/e3 and the e4 break held in reserve; Black pawns on d5/e6 (often ...c5). The centre remains closed or in tension until e4 is played. After e4 the position can open sharply.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A genuine system: Wikipedia says it is a sequence of moves played whatever Black does, with the moves permuted at White's discretion. Used by Colle and Koltanowski in the 1920s, and still by Ding Liren (2023 World Championship), Wei Yi (2024) and Yusupov (Zukertort version), but described as 'unfashionable' at the top. Chessable calls it the 'businessman's opening'.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Very light on theory: Chessable says typical middlegame understanding beats memorising lines, and calls it simple and good for busy players and beginners. The hardest part is judging when to play e4 and how to handle the anti-Colle set-ups; it needs 'moderate tactical knowledge' for the attack.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "e3-e4 break",
+    "kingside attack",
+    "rook lift",
+    "Bxh7+ sacrifice",
+    "b1-h7 diagonal",
+    "dxc5 then e4",
+    "queenside fianchetto (Zukertort)",
+    "anti-Colle ...Bf5",
+    "...c5 break",
+    "isolated queen's pawn",
+    "universal set-up"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Colle-Zukertort",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 c5 5. b3",
+      "how": "Queenside fianchetto with Bb2 instead of c3; aims at the long diagonal and still e4."
+    },
+    {
+      "name": "Anti-Colle 3...Bf5 and 3...Bg4",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 Bf5",
+      "how": "Black develops the bishop before ...e6; the game is a different, quieter London-reversed type with less pressure from the b1-h7 diagonal."
+    },
+    {
+      "name": "Grünfeld formation 3...g6 / King's Indian set-ups",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 g6 4. Bd3 Bg7",
+      "how": "Fianchetto reply; Black has a different structure and White plays for e4 against a g7 bishop."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Colle System is a reliable and system-based opening where White aims for a safe, solid pawn structure.",
+        "verdict": "supported",
+        "note": "Wikipedia: a system for White played with moves permuted at White's discretion; sound, if unfashionable.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White develops harmoniously with Bd3, Nbd2 and O-O.",
+        "verdict": "supported",
+        "note": "Standard set-up, with Re1 sometimes added.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White's primary goal is the e3-e4 pawn break to open the centre and create attacking chances against the black king.",
+        "verdict": "supported",
+        "note": "Central theme: a well-timed e4 supported by Bd3, Nbd2 and Re1; Chessable describes aggressive kingside attacks.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "The system lets White avoid sharp, theoretical battles early.",
+        "verdict": "supported",
+        "note": "Chessable: very light on opening theory.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White completes development (Bd3, O-O, Nbd2) and prepares e3-e4 to open lines for a kingside attack, often involving a rook lift.",
+        "verdict": "supported",
+        "note": "Chessable mentions rooks targeting h4 and pressure on h7; the e4 break is typically prepared by dxc5 to deflect the bishop.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black challenges White's set-up with an early ...c5 pawn break.",
+        "verdict": "supported",
+        "note": "The main reply; ...Nc6 (IQP) and ...Nbd7 lines follow.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black neutralises White's light-squared bishop (often via ...Bf5).",
+        "verdict": "supported",
+        "note": "3...Bf5 (Anti-Colle) contests the b1-h7 diagonal and offers a trade; it develops Black's own bishop rather than blocking White's.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black creates queenside counterplay.",
+        "verdict": "supported",
+        "note": "...c5 and a ...b6/...Bb7 Queen's Indian set-up undermine the centre and attack the queenside.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

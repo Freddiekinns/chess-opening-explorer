@@ -1,0 +1,46 @@
+{
+  "slug": "ponziani-opening-neumann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Neumann Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6 4. Bc4",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 2 4"
+  },
+  "parent": "ponziani-opening-jaenisch-counterattack",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "The position is the Italian Two Knights Defense with c3 played, reached by a Ponziani move order. Black takes the e4 pawn with 4...Nxe4 and White answers 5.d4, or Bxf7+ ideas, for development in an open centre. Because it so often transposes, this root is unsure; the play is open with White trying to regain the pawn with tempo.",
+  "white_ideas": [
+    { "idea": "5.d4 d5 and open the centre, regaining e4 with tempo" },
+    { "idea": "Pressure on f7 with Bc4 and Qb3 or Bxf7+" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the e4 pawn and keep it with ...d5 and ...Bd6" },
+    { "idea": "Return the pawn for a solid game with ...Be7 and ...O-O" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after d4, with pawns traded on e4 and d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open, tactical play with White chasing quick development; unsure about exact branching." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the e4 pawn, but unsure; many lines return it or transpose." },
+    "soundness": { "notes": "Considered sound but not better than equal." },
+    "structure": { "notes": "Central pawns exchange quickly; open lines for pieces." },
+    "approach": { "notes": "Seldom chosen by strong players; the Ponziani is occasional and this gambit more so." },
+    "level": { "reason": "memory", "notes": "Tactical lines to know." }
+  },
+  "plan_phrases": ["Pressure on f7", "Lead in development"],
+  "sublines_that_differ": [
+    { "name": "Italian Two Knights with c3", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. c3", "how": "Transposition seen in most games; same position after one more move order." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Open centre and a pawn offer give forcing play." },
+    "gambit": { "value": "white", "confidence": 0.5, "reason": "White offers the e4 pawn for development; unsure it is kept." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "No clear refutation." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Centre opens quickly after d4." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Some tactics to know; no deep theory." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Bc4 aims at f7 and White develops fast." }
+  }
+}

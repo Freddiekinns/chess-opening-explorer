@@ -1,0 +1,46 @@
+{
+  "slug": "duras-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Duras Gambit",
+    "eco": "B00",
+    "moves": "1. e4 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black offers the f-pawn at once with 1...f5, hoping for ...Nf6 and ...e6/...d5 development and a Dutch-like game. After 2.exf5 White is a pawn up and Black has little for it; accurate development leaves White clearly better. It scores through surprise.",
+  "white_ideas": [
+    { "idea": "Take on f5, develop quickly with Nf3, d4 and Nc3, and keep the extra pawn" },
+    { "idea": "Meet ...e5 or ...Nf6 with d4 and develop" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nf6, ...e6 and ...d5 or ...e5 to get pieces out" },
+    { "idea": "Attack the white king if it opens the diagonal with Qh5+ or ...Qh4+" }
+  ],
+  "typical_structures": [
+    { "structure": "White up a pawn with open e-file and f-file after 2.exf5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black takes risks at once and White punishes inaccuracy; open and tactical." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "2.exf5 wins a pawn that White can keep." },
+    "soundness": { "notes": "Considered unsound; Black lacks compensation." },
+    "structure": { "notes": "Open e- and f-files after the exchange." },
+    "approach": { "notes": "Strong players seldom play it." },
+    "level": { "reason": "understanding", "notes": "Dubious line, never a first repertoire choice." }
+  },
+  "plan_phrases": ["Lead in development"],
+  "sublines_that_differ": [
+    { "name": "2.d4", "moves": "1. e4 f5 2. d4", "how": "Declined, reaching Dutch-like set-ups; no material is given." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Black gambits a pawn at move one; lines are forcing and open." },
+    "gambit": { "value": "black", "confidence": 0.8, "reason": "Black offers the f5 pawn." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Little compensation for the pawn." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "Open e- and f-files after exf5." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play it." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Dubious lines are never beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for quick development against the extra pawn." }
+  }
+}

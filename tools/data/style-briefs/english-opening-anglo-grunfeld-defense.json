@@ -1,0 +1,47 @@
+{
+  "slug": "english-opening-anglo-grunfeld-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Anglo-Grünfeld Defense",
+    "eco": "A16",
+    "moves": "1. c4 Nf6 2. Nc3 d5",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2P5/2N5/PP1PPPPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black strikes at the centre at once with ...d5. After 3.cxd5 Nxd5 White usually plays 4.e4 Nb6 (or 4.Nf3, 4.g3) and takes space, while Black counters with ...Nc6 and ...e5 or ...g6 and ...Bg7 to attack the centre like in a Grünfeld. It often transposes into Grünfeld or English structures with 3.Nf3 g6 and 4.cxd5.",
+  "white_ideas": [
+    { "idea": "Take the big centre with e4 and d4 after cxd5 Nxd5 4.e4 Nb6." },
+    { "idea": "Play g3 and Bg2 against the d5 knight or push for Qa4+ pins and a quiet edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...Nb6, ...Nc6, ...g6 and ...Bg7, and break with ...e5 or ...c5." },
+    { "idea": "Trade pieces on c3 and put pressure on the dark squares from the g7-bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "White's e4-d4 centre against Black's Grünfeld-style fianchetto and pieces." },
+    { "structure": "Symmetrical or reversed-Sicilian-like pawn structures in the g3 lines." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A counterattacking Black set-up against White's centre; transpositions to Grünfeld-like play, which is sharp, although some branches are quiet." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The d5 pawn is recaptured immediately." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The centre is dynamic and often unresolved, with White's pawns vs. Black's piece play; flexible." },
+    "approach": { "notes": "A standard Black reply to the English." },
+    "level": { "reason": "understanding", "notes": "Transposition knowledge and Grünfeld plans, with moderate theory." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "3.Nf3 g6 4.Qa4+", "moves": "1. c4 Nf6 2. Nc3 d5 3. Nf3 g6 4. Qa4+", "how": "A pin-and-queen line that differs in aim and is quieter." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Black counterattacks White's big centre as in the Grünfeld, though some branches are quiet." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "The pawn on d5 comes straight back." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A standard, respectable response." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is in tension or undecided in most branches." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A regular reply to the English, not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Needs transposition knowledge and Grünfeld-style plans." },
+    "plans": { "value": ["hypermodern_centre", "space_advantage"], "reason": "Black attacks a White centre with pieces and pawn breaks." }
+  }
+}

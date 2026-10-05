@@ -1,0 +1,39 @@
+{
+  "slug": "old-indian-defense-normal-variation",
+  "tier": "unsourced",
+  "root": { "name": "Old Indian Defense: Normal Variation", "eco": "A55", "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 Nbd7 4. e4 e5 5. Nf3", "fen": "r1bqkb1r/pppn1ppp/3p1n2/4p3/2PPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 1 5" },
+  "parent": "old-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black sets up a Philidor-like structure with ...d6, ...e5, ...Nbd7, ...Be7, ...c6 and castling, keeping the centre tense rather than fianchettoing. White gets a space edge with e4 and d4 and usually plays Be2, O-O and Re1, aiming at d5 or a central break. The game is solid and manoeuvring, with Black cramped but hard to break down.",
+  "white_ideas": [
+    { "idea": "Develop Be2, O-O and Re1, then push d5 or exchange on e5 for a space edge." },
+    { "idea": "Keep the centre tense and use extra space on the queenside with a4 or b4." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 with ...c6 and ...Be7, then play ...exd4 or ...Re8 and ...Bf8 for a solid game." },
+    { "idea": "Wait for White to commit and break with ...exd4 or ...d5 when it is prepared." }
+  ],
+  "typical_structures": [
+    { "structure": "Black d6/e5 chain against White d4/e4, with tension in the centre (Philidor-style)." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Compact, hard-to-break-down structure; slow manoeuvring play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Sound; considered slightly passive, theory gives White a small edge." },
+    "structure": { "notes": "Tension on d4/e5 is kept in the Ukrainian main line, so the centre is undecided." },
+    "approach": { "notes": "Standard Indian line, used by King's Indian players to avoid the Samisch." },
+    "level": { "reason": "understanding", "notes": "Plans are clear; handling the cramped structure takes judgement." }
+  },
+  "plan_phrases": ["space advantage", "central tension"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Philidor-like structure is cramped but hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound if passive defence." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre tension left unresolved in the main line." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised Indian-style defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear set-up, modest theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's central space against Black's cramped set-up." }
+  }
+}

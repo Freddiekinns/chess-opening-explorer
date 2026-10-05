@@ -1,0 +1,47 @@
+{
+  "slug": "ruy-lopez-schliemann-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Schliemann Defense",
+    "eco": "C63",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/1B2pp2/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counterattacks at once with 3...f5, accepting a loosened kingside for dynamic play. After the critical 4.Nc3 fxe4 5.Nxe4 d5 6.Nxe5 dxe4 7.Nxc6 Qg5 Black gets activity against the king for the pawn; the quieter 4.d3 fxe4 5.dxe4 Nf6 keeps more of a normal game. Both sides take risks and White needs to know the main line.",
+  "white_ideas": [
+    { "idea": "Meet 4.Nc3 fxe4 5.Nxe4 d5 6.Nxe5 and keep the extra pawn, then neutralise the attack on g2/c3." },
+    { "idea": "Or play 4.d3 and 4.Bxc6 to keep a solid game with an extra tempo structure." }
+  ],
+  "black_ideas": [
+    { "idea": "Gain rapid development, attack e4 and the white king with ...Qg5 and ...Nf6." },
+    { "idea": "Use open f- and d-files and trade into positions with the bishop pair." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...fxe4 and ...d5, with Black's king slightly exposed." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Counterattacking, mutual risk, loosened king safety for Black and open lines." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "In the 4.Nc3 main line White can keep a pawn; 4.d3 lines give nothing." },
+    "soundness": { "notes": "Playable but slightly worse for Black according to engines; strong players use it occasionally." },
+    "structure": { "notes": "Central pawns exchange early and pieces get open lines." },
+    "approach": { "notes": "A recognised, sharp sideline played by strong players now and then." },
+    "level": { "reason": "memory", "notes": "Main line needs precise theory for Black; a typical surprise weapon." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "4.d3", "moves": "4.d3 fxe4 5.dxe4 Nf6", "how": "No gambit, quieter and more balanced." },
+    { "name": "Jaenisch Gambit Accepted", "moves": "4.exf5", "how": "White grabs a pawn, different structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Counterattacking with open lines and risk to both kings." },
+    "gambit": { "value": "black", "confidence": 0.55, "reason": "In the critical lines Black offers a pawn for activity." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Playable at a high level though not equalising comfortably." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Pawns come off early and open lines decide." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Needs main-line theory but plans are clear." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "Black plays for activity against White's king." }
+  }
+}

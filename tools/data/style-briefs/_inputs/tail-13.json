@@ -1,0 +1,697 @@
+[
+  {
+    "slug": "queens-gambit-declined-three-knights",
+    "rank": 348,
+    "root": {
+      "name": "Queen's Gambit Declined: Three Knights, Vienna Variation",
+      "eco": "D37",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 dxc4",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+    },
+    "alternative_names": [
+      "QGA: 4.Nc3 e6",
+      "Queen's Gambit Declined: Vienna Variation",
+      "Queen's Gambit Declined, Vienna Variation",
+      "Vienna Variation, Semi-Slav",
+      "Vienna Variation, Semi-Slav "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "QGA: 4.Nc3 e6 5.Bg5",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 e6 5. Bg5"
+      }
+    ],
+    "parent": {
+      "slug": "queens-gambit-declined-three-knights-variation",
+      "name": "Queen's Gambit Declined: Three Knights Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3",
+      "overview": "After 4.Nc3 (reached from 3.Nf3 or 3.Nc3) both sides have developed two pieces and the centre is still in tension; neither has committed. White keeps a choice of 5.Bg5 (the classical Orthodox set-ups), 5.cxd5 (Exchange structures with a Carlsbad pawn structure), 5.e3 (quieter) or Bf4, and Black's 4th move (...Be7, ...Bb4 Ragozin, ...Nbd7 Cambridge Springs set-up) picks the structure. In the main Orthodox lines White pins or pressures the f6 knight and tries to exploit Black's passive light-squared bishop behind e6; Black aims to complete development, castle, and free the position with ...c5, ...e5 or ...dxc4 plus ...b6/...Bb7. The game is usually slow and manoeuvring with the d4/d5 pawns holding the centre; wins come from small structural or space edges rather than early tactics. At 2500 level draws spike (11.7 percent in the Chessiverse data), and it is regarded as one of Black's most reliable replies to 1.d4."
+    }
+  },
+  {
+    "slug": "slav-indian",
+    "rank": 349,
+    "root": {
+      "name": "Slav Indian",
+      "eco": "A50",
+      "moves": "1. d4 Nf6 2. c4 c6",
+      "fen": "rnbqkb1r/pp1ppppp/2p2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Indian: Slav-Indian"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Indian: Slav-Indian, 3.Nc3",
+        "moves": "1. d4 Nf6 2. c4 c6 3. Nc3"
+      },
+      {
+        "name": "Indian: Slav-Indian, 3.Nf3",
+        "moves": "1. d4 Nf6 2. c4 c6 3. Nf3"
+      }
+    ],
+    "parent": {
+      "slug": "indian-defense-normal-variation",
+      "name": "Indian Defense: Normal Variation",
+      "moves": "1. d4 Nf6 2. c4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "caro-kann-defense-tartakower-variation",
+    "rank": 350,
+    "root": {
+      "name": "Caro-Kann Defense: Tartakower Variation",
+      "eco": "B15",
+      "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Nxf6+ exf6",
+      "fen": "rnbqkb1r/pp3ppp/2p2p2/8/3P4/8/PPP2PPP/R1BQKBNR w KQkq - 0 6"
+    },
+    "alternative_names": [
+      "Caro-Kann: Tartakower (Nimzowitsch) Variation",
+      "Tartakower Variation, Caro",
+      "Caro-Kann: Tartakower (Nimzovich) variation",
+      "Tartakower Variation, Caro "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Caro-Kann: Tartakower, 6.c3",
+        "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Nxf6+ exf6 6. c3"
+      }
+    ],
+    "parent": {
+      "slug": "caro-kann-defense-main-line",
+      "name": "Caro-Kann Defense: Main Line",
+      "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "sicilian-defense-richter-rauzer-variation",
+    "rank": 351,
+    "root": {
+      "name": "Sicilian Defense: Richter-Rauzer Variation",
+      "eco": "B60",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5",
+      "fen": "r1bqkb1r/pp2pppp/2np1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R b KQkq - 4 6"
+    },
+    "alternative_names": [
+      "Sicilian: Richter-Rauzer",
+      "Richter-Rauzer Variation, Sicilian; B60",
+      "Sicilian: Richter-Rauzer",
+      "Richter-Rauzer Variation, Sicilian; B60 "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Classical Sicilian Richter Rauser variation",
+        "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bg5"
+      },
+      {
+        "name": "Sicilian Defense: Richter-Rauzer Variation",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6"
+      },
+      {
+        "name": "Sicilian Defense: Richter-Rauzer Variation, Traditional Variation",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2"
+      },
+      {
+        "name": "Sicilian: Richter-Rauzer, 6...a6",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 a6"
+      },
+      {
+        "name": "Sicilian Defense: Richter-Rauzer Variation, Neo-Modern Variation, Early Deviations",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2 a6"
+      },
+      {
+        "name": "Sicilian Defense: Richter-Rauzer Variation, Classical Variation",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2 Be7"
+      }
+    ],
+    "parent": {
+      "slug": "sicilian-defense-classical-variation",
+      "name": "Sicilian Defense: Classical Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "philidor-defense-lion-variation",
+    "rank": 352,
+    "root": {
+      "name": "Philidor Defense: Lion Variation",
+      "eco": "C41",
+      "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7",
+      "fen": "r1bqkb1r/pppn1ppp/3p1n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 3 5"
+    },
+    "alternative_names": [
+      "Philidor: Improved Hanham",
+      "Larobok Variation, Philidor",
+      "Philidor: Improved Hanham variation",
+      "Larobok Variation, Philidor "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Philidor: Improved Hanham, 5.Bc4",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4"
+      },
+      {
+        "name": "Philidor: Improved Hanham, 5.Bc4 Be7",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7"
+      },
+      {
+        "name": "Philidor: Improved Hanham 6.O-O",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. O-O"
+      },
+      {
+        "name": "Philidor: Improved Hanham, 6.dxe5 dxe5",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. dxe5 dxe5"
+      },
+      {
+        "name": "Philidor: Improved Hanham, Main Line",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. O-O O-O"
+      },
+      {
+        "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4",
+        "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. O-O O-O 7. Re1 c6 8. a4"
+      }
+    ],
+    "parent": {
+      "slug": "philidor-defense-nimzowitsch-variation",
+      "name": "Philidor Defense: Nimzowitsch Variation",
+      "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "petrovs-defense-classical-attack",
+    "rank": 353,
+    "root": {
+      "name": "Petrov's Defense: Classical Attack",
+      "eco": "C42",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4",
+      "fen": "rnbqkb1r/ppp2ppp/3p4/8/3Pn3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Russian Game: Classical",
+      "Russian Game, Classical Attack",
+      "Classical Attack, Petroff",
+      "Petrov: classical attack",
+      "Classical Attack, Petroff "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Russian Game: Classical, 5...d5",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5"
+      },
+      {
+        "name": "Russian Game: Classical, 6.Bd3",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3"
+      },
+      {
+        "name": "Petrov's Defense: Classical Attack, Marshall Variation",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6"
+      },
+      {
+        "name": "Russian Game: Classical, 6.Bd3 Be7",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Be7"
+      },
+      {
+        "name": "Petrov's Defense: Classical Attack, Mason-Showalter Variation",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Nc6"
+      },
+      {
+        "name": "Petrov's Defense: Classical Attack, Closed Variation",
+        "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 Nf6"
+      }
+    ],
+    "parent": {
+      "slug": "petrovs-defense",
+      "name": "Petrov's Defense",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4",
+      "overview": "Black answers 2.Nf3 by counter-attacking e4 rather than defending e5. After 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 both sides have lost an e-pawn and the structure is symmetrical, with the e-file the main open line. Black's aim is to equalise by quick development and piece trades; White tries to turn a small lead in development or slightly freer play into pressure, often castling and using the e-file or a queenside castling and pawn storm. The 3.d4 Steinitz line (3...Nxe4 4.Bd3 d5 5.Nxe5 Nd7) and 3.Nc3 (Four Knights transposition) or 3.d3 sidelines give quieter or more varied structures. The main lines are widely played at the top and are known as drawish, though some lines hold real attacking chances for both sides."
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-bishops-gambit",
+    "rank": 354,
+    "root": {
+      "name": "King's Gambit Accepted: Bishop's Gambit",
+      "eco": "C33",
+      "moves": "1. e4 e5 2. f4 exf4 3. Bc4",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/2B1Pp2/8/PPPP2PP/RNBQK1NR b KQkq - 1 3"
+    },
+    "alternative_names": [
+      "KGA: Bishop's Gambit",
+      "King's Gambit Accepted, Bishop's Gambit",
+      "King's Gambit, Accepted",
+      "Bishop's Gambit, KGA",
+      "KGA: bishop's gambit",
+      "Bishop's Gambit, KGA "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "King's Gambit Accepted: Bishop's Gambit, Maurian Defense",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 Nc6"
+      },
+      {
+        "name": "King's Bishop Gambit Accepted",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 Qh4+"
+      },
+      {
+        "name": "King's Bishop Gambit Accepted",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 Qh4+ 4. Kf1"
+      },
+      {
+        "name": "King's Gambit Accepted: Bishop's Gambit, Cozio Defense",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 Nf6"
+      },
+      {
+        "name": "King's Gambit Accepted: Bishop's Gambit, Bogoljubow Variation",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 Nf6 4. Nc3"
+      },
+      {
+        "name": "King's Gambit Accepted: Bishop's Gambit, Anderssen Defense",
+        "moves": "1. e4 e5 2. f4 exf4 3. Bc4 g5"
+      }
+    ],
+    "parent": {
+      "slug": "kings-gambit-accepted",
+      "name": "King's Gambit Accepted",
+      "moves": "1. e4 e5 2. f4 exf4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "alekhine-defense-maroczy-variation",
+    "rank": 355,
+    "root": {
+      "name": "Alekhine Defense: Maróczy Variation",
+      "eco": "B02",
+      "moves": "1. e4 Nf6 2. d3",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/3P4/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Alekhine: Maroczy Variation",
+      "Alekhine Defense: Maroczy Variation",
+      "Maroczy Variation, Alekhine",
+      "Alekhine's defence: Maroczy variation",
+      "Maroczy Variation, Alekhine "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "alekhine-defense",
+      "name": "Alekhine Defense",
+      "moves": "1. e4 Nf6",
+      "overview": "Black attacks e4 at once with 1...Nf6 and, after 2.e5 Nd5, invites White to build a broad centre with c4, d4 and perhaps f4, planning to attack that centre later with ...d6, ...Nb6, ...Bg4, ...c5 and ...dxe5. White's job is to keep or use the extra space, either with the most ambitious Four Pawns Attack (4.c4 Nb6 5.f4), the popular Modern Variation 4.Nf3, or the less forcing Exchange 5.exd6; 2.Nc3 avoids the main line entirely. Positions lose symmetry from the start and are unbalanced, with a space edge for White against Black's counterplay on the overextended pawns. The opening is regarded as sound, original and tricky but risky (moderate to high), and is only moderately common at the top: Fischer, Korchnoi, Ivanchuk and occasionally Carlsen have played it."
+    }
+  },
+  {
+    "slug": "dutch-defense-leningrad-variation",
+    "rank": 356,
+    "root": {
+      "name": "Dutch Defense: Leningrad Variation",
+      "eco": "A86",
+      "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6",
+      "fen": "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Dutch: Leningrad Variation",
+      "Leningrad Variation, Dutch",
+      "Dutch: Leningrad variation",
+      "Leningrad Variation, Dutch "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Dutch: Leningrad, Main Line, 7.Nc3",
+        "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nf3 O-O 6. O-O d6 7. Nc3"
+      },
+      {
+        "name": "Dutch: Leningrad, Main Line, 6...d6",
+        "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nf3 O-O 6. O-O d6"
+      },
+      {
+        "name": "Dutch: Leningrad, Main Line, 6.Nc3 d6",
+        "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nf3 O-O 6. Nc3 d6"
+      },
+      {
+        "name": "Dutch: Leningrad, Main Line, 6.O-O",
+        "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nf3 O-O 6. O-O"
+      },
+      {
+        "name": "Dutch Defense: Leningrad Variation, Warsaw Variation",
+        "moves": "1. d4 f5 2. g3 Nf6 3. Bg2 g6 4. Nf3 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 c6"
+      },
+      {
+        "name": "Dutch: Leningrad, 4.Bg2 Bg7 5.Nc3",
+        "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nc3"
+      }
+    ],
+    "parent": {
+      "slug": "dutch-defense-fianchetto-variation",
+      "name": "Dutch Defense: Fianchetto Variation",
+      "moves": "1. d4 f5 2. c4 Nf6 3. g3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "clemenz-opening",
+    "rank": 357,
+    "root": {
+      "name": "Clemenz Opening",
+      "eco": "A00",
+      "moves": "1. h3",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/7P/PPPPPPP1/RNBQKBNR b KQkq - 0 1"
+    },
+    "alternative_names": [
+      "Irregular Openings: Clemenz Opening",
+      "Clemenz Opening, General",
+      "Clemenz (Mead's, Basman's or de Klerk's) opening"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Clemenz Opening, 1...e5",
+        "moves": "1. h3 e5"
+      },
+      {
+        "name": "Clemenz Opening, 1...h5",
+        "moves": "1. h3 h5"
+      }
+    ],
+    "parent": null
+  },
+  {
+    "slug": "elephant-gambit-paulsen-countergambit",
+    "rank": 358,
+    "root": {
+      "name": "Elephant Gambit: Paulsen Countergambit",
+      "eco": "C40",
+      "moves": "1. e4 e5 2. Nf3 d5 3. exd5 e4",
+      "fen": "rnbqkbnr/ppp2ppp/8/3P4/4p3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Elephant Gambit: Paulsen",
+      "Paulsen Counter-Gambit",
+      "Paulsen Counter-Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "elephant-gambit",
+      "name": "Elephant Gambit",
+      "moves": "1. e4 e5 2. Nf3 d5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-pawn-game-mason-attack",
+    "rank": 359,
+    "root": {
+      "name": "Queen's Pawn Game: Mason Attack",
+      "eco": "D00",
+      "moves": "1. d4 d5 2. f4",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1P2/8/PPP1P1PP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Queen's Pawn: 2.f4",
+      "Mason Attack, Queen Pawn Game",
+      "Mason Attack, Queen Pawn Game "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-pawn-game",
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4 d5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-pawn-game-stonewall-attack",
+    "rank": 360,
+    "root": {
+      "name": "Queen's Pawn Game: Stonewall Attack",
+      "eco": "D00",
+      "moves": "1. d4 d5 2. e3 Nf6 3. Bd3",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/3BP3/PPP2PPP/RNBQK1NR b KQkq - 2 3"
+    },
+    "alternative_names": [
+      "Queen's Pawn: Stonewall Attack",
+      "Stonewall Attack, Queen Pawn Game",
+      "Queen's pawn: stonewall attack",
+      "Stonewall Attack, Queen Pawn Game "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Stonewall Attack",
+        "moves": "1. d4 d5 2. e3 Nf6 3. Bd3 c5 4. c3"
+      }
+    ],
+    "parent": {
+      "slug": "queens-pawn-game",
+      "name": "Queen's Pawn Game",
+      "moves": "1. d4 d5 2. e3 Nf6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "anderssens-opening",
+    "rank": 361,
+    "root": {
+      "name": "Anderssen's Opening",
+      "eco": "A00",
+      "moves": "1. a3",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1"
+    },
+    "alternative_names": [
+      "Anderssen Opening",
+      "Anderssen Opening",
+      "Irregular Openings: Anderssen Opening",
+      "Anderssen Opening, General"
+    ],
+    "subtree_most_played": [],
+    "parent": null
+  },
+  {
+    "slug": "sicilian-defense-smith-morra-gambit-declined",
+    "rank": 362,
+    "root": {
+      "name": "Sicilian Defense: Smith-Morra Gambit Declined, Alapin Formation",
+      "eco": "B21",
+      "moves": "1. e4 c5 2. d4 cxd4 3. c3 Nf6",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/8/3pP3/2P5/PP3PPP/RNBQKBNR w KQkq - 1 4"
+    },
+    "alternative_names": [
+      "Sicilian: Smith-Morra, 3.c3 Nf6",
+      "Sicilian Defense, Smith-Morra Gambit",
+      "Alapin Formation, Smith-Morra Declined, Sicilian",
+      "Alapin Formation, Smith-Morra Declined, Sicilian "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Sicilian Defense: Smith-Morra Gambit Declined, Push Variation",
+        "moves": "1. e4 c5 2. d4 cxd4 3. c3 d3"
+      },
+      {
+        "name": "Sicilian Defense: Smith-Morra Gambit Declined, Scandinavian Formation",
+        "moves": "1. e4 c5 2. d4 cxd4 3. c3 d5"
+      },
+      {
+        "name": "Sicilian Defense: Smith-Morra Gambit Declined, Center Formation",
+        "moves": "1. e4 c5 2. d4 cxd4 3. c3 e5"
+      },
+      {
+        "name": "Sicilian Defense: Smith-Morra Gambit Declined, Dubois Variation",
+        "moves": "1. e4 c5 2. d4 cxd4 3. c3 d3 4. c4"
+      },
+      {
+        "name": "Sicilian Defense: Smith-Morra Gambit Declined, Wing Formation",
+        "moves": "1. e4 c5 2. d4 cxd4 3. c3 Qa5"
+      }
+    ],
+    "parent": {
+      "slug": "sicilian-defense-smith-morra-gambit",
+      "name": "Sicilian Defense: Smith-Morra Gambit",
+      "moves": "1. e4 c5 2. d4 cxd4 3. c3",
+      "overview": "White offers a pawn on move 2 (2.d4 cxd4 3.c3) to swap the d-pawn for Black's c-pawn, gain a lead in development and open the c- and d-files. After 3...dxc3 4.Nxc3 White plays Nf3, Bc4 and quick castling, aiming at f7 with the Bc4, a Qe2/Rd1/Rc1 battery and tactical shots such as Nd5 and e5. Black either accepts and consolidates (typically with ...Nc6, ...e6, ...a6, ...Nge7-g6 or a Scheveningen/Kan set-up, trading pieces to hold the pawn) or declines with 3...Nf6, reaching a safe Alapin Sicilian. Play is open and tactical with White chasing the initiative; if Black consolidates the extra pawn he has good endgame chances."
+    }
+  },
+  {
+    "slug": "benoni-defense-classical-variation",
+    "rank": 363,
+    "root": {
+      "name": "Benoni Defense: Classical Variation",
+      "eco": "A70",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. e4",
+      "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/4P3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 7"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Benoni: Classical",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3"
+      },
+      {
+        "name": "Benoni: Classical, 7...Bg7",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7"
+      },
+      {
+        "name": "Benoni: Classical, 8.h3 O-O 9.Bd3",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7 8. h3 O-O 9. Bd3"
+      },
+      {
+        "name": "Benoni Defense: Classical Variation, New York Variation",
+        "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. e4 Bg7 8. h3"
+      },
+      {
+        "name": "Benoni: Classical, 8.Bd3",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7 8. Bd3"
+      },
+      {
+        "name": "Benoni Defense: Classical Variation, Main Line",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7 8. Be2 O-O 9. O-O"
+      }
+    ],
+    "parent": {
+      "slug": "benoni-defense",
+      "name": "Benoni Defense",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "pirc-defense-byrne-variation",
+    "rank": 364,
+    "root": {
+      "name": "Pirc Defense: Byrne Variation",
+      "eco": "B07",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Bg5",
+      "fen": "rnbqkb1r/ppp1pp1p/3p1np1/6B1/3PP3/2N5/PPP2PPP/R2QKBNR b KQkq - 1 4"
+    },
+    "alternative_names": [
+      "Pirc: Byrne 4.Bg5",
+      "Panov; Opatijav; Byrne Variation, Pirc",
+      "Pirc: Byrne variation",
+      "Panov; Opatijav; Byrne Variation, Pirc "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Pirc: 4.Bg5 Bg7",
+        "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Bg5 Bg7"
+      }
+    ],
+    "parent": {
+      "slug": "pirc-defense",
+      "name": "Pirc Defense",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6",
+      "overview": "Black plays 1...d6 and, after 2.d4 Nf6 3.Nc3, ...g6 and ...Bg7, letting White build the broad e4-d4 centre and then undermining it from the flanks with ...c5 or ...e5 (hypermodern: the bigger White's centre, the bigger the target). The root is a crossroads: 1...d6 can transpose to the Philidor (3...e5 or ...c6) or to the Modern. White's replies run from sharp (Austrian Attack 4.f4, 150 Attack 4.Be3 with Qd2, Bh6 and h4-h5, Byrne 4.Bg5, Bayonet h4) to unhurried (Classical 4.Nf3 with Be2 and castling, fianchetto). Typical play is imbalanced: White gets space and often a kingside attack, Black gets a solid fianchettoed king and counterplay on the queenside and with central breaks. It is sound but has a reputation for giving White chances; Kasparov doubted it for the top level (s1), though Caruana, Anand and Grischuk have used it (s2)."
+    }
+  },
+  {
+    "slug": "benoni-defense-french-benoni",
+    "rank": 365,
+    "root": {
+      "name": "Benoni Defense: French Benoni",
+      "eco": "A43",
+      "moves": "1. e4 e6 2. d4 c5 3. d5",
+      "fen": "rnbqkbnr/pp1p1ppp/4p3/2pP4/4P3/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Old Benoni: Franco-Benoni",
+      "Franco-Benoni Defense",
+      "Benoni Defense, Franco-Sicilian Defense",
+      "Franco-Benoni; Franco-Sicilian",
+      "Old Benoni: Franco-Benoni defence",
+      "Franco-Benoni; Franco-Sicilian "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "french-defense-franco-sicilian-defense",
+      "name": "French Defense: Franco-Sicilian Defense",
+      "moves": "1. e4 e6 2. d4 c5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "dutch-defense-raphael-variation",
+    "rank": 366,
+    "root": {
+      "name": "Dutch Defense: Raphael Variation",
+      "eco": "A80",
+      "moves": "1. d4 f5 2. Nc3",
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2"
+    },
+    "alternative_names": [
+      "Dutch: 2.Nc3",
+      "Raphael Variation, Dutch",
+      "Raphael Variation, Dutch "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Dutch: 2.Nc3 Nf6",
+        "moves": "1. d4 f5 2. Nc3 Nf6"
+      },
+      {
+        "name": "Dutch: 2.Nc3 Nf6 3.Bg5",
+        "moves": "1. d4 f5 2. Nc3 Nf6 3. Bg5"
+      },
+      {
+        "name": "Dutch: 2.Nc3 Nf6 3.Bg5 e6",
+        "moves": "1. d4 f5 2. Nc3 Nf6 3. Bg5 e6"
+      },
+      {
+        "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5",
+        "moves": "1. d4 f5 2. Nc3 Nf6 3. Bg5 d5"
+      },
+      {
+        "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6",
+        "moves": "1. d4 f5 2. Nc3 Nf6 3. Bg5 d5 4. Bxf6 exf6"
+      },
+      {
+        "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6 5.e3",
+        "moves": "1. d4 f5 2. Nc3 Nf6 3. Bg5 d5 4. Bxf6 exf6 5. e3"
+      }
+    ],
+    "parent": {
+      "slug": "dutch-defense",
+      "name": "Dutch Defense",
+      "moves": "1. d4 f5",
+      "overview": "Black answers 1.d4 with 1...f5, fighting for e4 and avoiding symmetrical play, at the cost of weakening the kingside (the e8-h5 diagonal) and the e6 square. Three set-ups dominate: the Leningrad (...g6, ...Bg7, KID-style, with ...e5 or ...Ne4 and kingside play), the Stonewall (...e6, ...d5, ...c6 with a knight on e4 and a bad light-squared bishop) and the Classical (...e6, ...Be7, ...d6, later ...e5). White usually fianchettoes with g3/Bg2 and c4 and prepares e4 or queenside expansion, or sidesteps theory with the Staunton Gambit (2.e4), Hopton or Korchnoi Attack (h3 and g4). Sources agree it is sound but double-edged, unbalancing and theoretical, played occasionally by Carlsen, Nakamura and Nepomniachtchi but never a main defence to 1.d4."
+    }
+  },
+  {
+    "slug": "queens-gambit-accepted-rosenthal-variation",
+    "rank": 367,
+    "root": {
+      "name": "Queen's Gambit Accepted: Rosenthal Variation",
+      "eco": "D21",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "QGA: 3.Nf3 e6",
+      "Rosenthal Variation, QGA",
+      "Rosenthal Variation, QGA "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "QGA: 3.Nf3 e6 4.e3",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6 4. e3"
+      },
+      {
+        "name": "QGA: 3.Nf3 e6 4.e4",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6 4. e4"
+      },
+      {
+        "name": "QGA: 3.Nf3 e6 4.e3 c5",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6 4. e3 c5"
+      },
+      {
+        "name": "QGA: 3.Nf3 e6 4.Qa4+",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 e6 4. Qa4+"
+      }
+    ],
+    "parent": {
+      "slug": "queens-gambit-accepted-normal-variation",
+      "name": "Queen's Gambit Accepted: Normal Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3",
+      "overview": null
+    }
+  }
+]

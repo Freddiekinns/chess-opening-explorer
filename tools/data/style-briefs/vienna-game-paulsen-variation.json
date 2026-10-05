@@ -1,0 +1,47 @@
+{
+  "slug": "vienna-game-paulsen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Paulsen Variation",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. g3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N3P1/PPPP1P1P/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "vienna-game-max-lange-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop, avoiding the sharp Vienna Gambit and Bc4 lines, and aims for a slow build-up with Bg2, Nge2 and d3. Black usually replies ...Bc5, ...Nf6 and ...d5, striking the centre. The game is calm and manoeuvring with few forced lines.",
+  "white_ideas": [
+    { "idea": "Play Bg2, Nge2 and d3 or d4, keeping the centre solid." },
+    { "idea": "Use the fianchetto bishop to pressure the long diagonal and f5/d5." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...Bc5, castle and break with ...d5." },
+    { "idea": "Seize the centre quickly since White's fianchetto is slow." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file with symmetric pawns and White's fianchetto bishop." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet fianchetto set-up; no early forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice in the main line." },
+    "soundness": { "notes": "Equal, playable." },
+    "structure": { "notes": "Centre pawns remain with tension on e4/e5." },
+    "approach": { "notes": "A normal Vienna sideline." },
+    "level": { "reason": "neither", "notes": "Simple plans and little theory." }
+  },
+  "plan_phrases": ["fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Mariotti Gambit", "moves": "1. e4 e5 2. Nc3 Nc6 3. g3 Bc5 4. Bg2 h5 5. Nf3 h4", "how": "A rare Black pawn push with kingside play, different in character." },
+    { "name": "Pollock Gambit", "moves": "1. e4 e5 2. Nc3 Nf6 3. g3 Bc5 4. Bg2 Nc6 5. Nge2 d5 6. exd5", "how": "Gambit via a different move order, sharper play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet fianchetto with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No sacrifice in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Equal and fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre undecided with e4/e5 tension." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A normal Vienna sideline." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple plans and little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "g3 and Bg2 is the point." }
+  }
+}

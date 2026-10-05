@@ -1,0 +1,55 @@
+{
+  "slug": "italian-game-evans-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Evans Gambit",
+    "eco": "C51",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "italian-game-giuoco-piano",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White offers the b-pawn so that c3 and d4 follow with tempo, building a big centre with the bishop on c4 aimed at f7. Black usually takes with 4...Bxb4 5.c3 Ba5 and White plays 6.d4 for a lead in development and open lines. Black can give the pawn back to untangle, or decline with 4...Bb6. The game is open and tactical, with White's attack against Black's extra pawn.",
+  "white_ideas": [
+    { "idea": "c3 and d4 with tempo, building a pawn centre and opening lines for the pieces" },
+    { "idea": "Bc4 and Ng5/Qb3 against f7, castling and Re1 for an attack on the king" },
+    { "idea": "Use the lead in development before Black consolidates the extra pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Bxb4 and retreat the bishop to a5 or e7" },
+    { "idea": "Return material (...d6, ...Nf6, ...Bb6) to complete development and castle" },
+    { "idea": "Counter in the centre with ...d5 once the king is safe" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4 and e4 against Black's e-pawn after ...exd4, open centre with queens still on" },
+    { "structure": "Black pawn up on the queenside, White with a lead in development" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open, forcing, mutual tactics. Black has to find accurate defensive moves or White's attack arrives quickly." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "4...Bxb4 wins a pawn that Black can hold if defended accurately."
+    },
+    "soundness": { "notes": "Sound for White: still played by strong players and gives enough compensation, though Black can equalise with accuracy." },
+    "structure": { "notes": "Centre opens quickly after d4 and exd4, pieces fight over open lines." },
+    "approach": { "notes": "A respected gambit line with a long history and modern revival, not offbeat." },
+    "level": { "reason": "memory", "notes": "Main line 6.d4 has forcing, long theory that White must know to keep the initiative." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7", "big centre"],
+  "sublines_that_differ": [
+    { "name": "Evans Gambit Declined", "moves": "4...Bb6", "how": "No material changes hands, so no gambit and a quieter game with White's centre." },
+    { "name": "Anderssen Variation", "moves": "4...Bxb4 5.c3 Be7", "how": "Black retreats to e7 and often returns the pawn for a solid position." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Open gambit play with early forcing tactics for both sides." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives the b-pawn for development, and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Strong players still use it and it is anchored as sound." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "Central pawns come off early and pieces use open lines." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A recognised gambit played at all levels." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Plans are clear but the main line needs known forcing theory." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7", "central_pawn_majority"], "reason": "White trades a pawn for time, pressure on f7 and a big centre." }
+  }
+}

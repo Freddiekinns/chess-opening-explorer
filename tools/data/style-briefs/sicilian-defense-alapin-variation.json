@@ -1,0 +1,297 @@
+{
+  "slug": "sicilian-defense-alapin-variation",
+  "root": {
+    "name": "Sicilian Defense: Alapin Variation",
+    "eco": "B22",
+    "moves": "1. e4 c5 2. c3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence, Alapin Variation",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Alapin_Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Alapin Variation: Playing the Anti-Sicilian as White and Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/the-alapin-variation/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Alapin Variation, Sicilian (B22)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/alapin",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Anti Sicilians: Fighting the Alapin (2.c3)",
+      "publisher": "TheChessWorld",
+      "url": "https://thechessworld.com/articles/openings/anti-sicilians-fighting-the-alapin-2c3/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White plays 2.c3 to follow with d4 and get the ideal e4+d4 pawn centre without entering the heavily analysed Open Sicilian. Black's two real answers are 2...d5 (Barmen: 3.exd5 Qxd5 4.d4) and 2...Nf6 (3.e5 Nd5), with 2...e6 and 2...Nc6 as quieter routes that often transpose to French Advance or Maroczy-like structures. The game usually settles into structure play: an isolated d4 pawn for White after the Barmen exchanges, or an Alekhine-style space-versus-targets fight after 2...Nf6. Sources describe it as solid, theory-light and positional rather than tactical, giving White a small but reliable edge; it is far more common at club level than at the top, though Kasparov, Anand, Kramnik, Carlsen and Sveshnikov have all used it. Note: this brief covers the root 2.c3 only; the database's most-played branch is 2...Nc6 (3.Nf3 / 3.d4), which the sources barely discuss (s3 only says 2...Nc6 dominates at lower ratings). The same position appears as 'Sicilian: Alapin' in alternative names and should classify identically.",
+  "white_ideas": [
+    {
+      "idea": "Support d4 with c3 so White gets pawns on e4 and d4 (ideal centre).",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Against 2...d5: 3.exd5 Qxd5 4.d4, Nf3, Be2 to unpin the knight, then take on d4 and accept an IQP in return for activity; the rupture c3-c4 followed by d4-d5 is often good for White in an open position with bishops.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Against 2...Nf6: 3.e5 Nd5 and then 4.d4, 4.Nf3, 4.g3 or 4.Bc4; White keeps space and tension, in structures resembling the Alekhine Defence.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Sidestep the main-line Open Sicilian and its memorisation burden.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "2...d5 (Barmen Defence): hit e4 at once, recapture 3.exd5 Qxd5, develop Nc6, Bg4, e6 and aim ...Bb4 and ...Ne7; Black must put real pressure on White's central pawns to stop them advancing.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "idea": "2...Nf6 3.e5 Nd5: provoke the e-pawn forward and target it and the d4 point.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "2...e6 then ...d5: a solid route that can transpose to the French Advance after 3.d4 d5 4.e5.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "idea": "Create an isolated queen's pawn for White (...cxd4 cxd4) and play against it with active pieces.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White isolated queen's pawn on d4 after ...cxd4 cxd4 and the e-pawn exchanged (Barmen and 2...e6 ...d5 lines); open position, piece play.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "structure": "Alekhine-style space structure after 2...Nf6 3.e5 Nd5, with White pawns on e5 and d4 and Black pieces aiming at them.",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "structure": "'Maroczy-like' structures are mentioned by s3 without naming the lines; my own understanding (unsourced) is that they arise when White later plays c3-c4 against a ...d6 set-up, with pawns on e4 and c4.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "structure": "French Advance structure when Black plays 2...e6 and White meets ...d5 with e5.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "structure": "Transposition to Smith-Morra-type positions after 2...Nf6 3.e5 Nd5 (the same position can arise when Black declines the Smith-Morra).",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources call it solid and positional with 'positional complexity rather than tactical sharpness' (s3) and 'solid, positional battles rather than explosive tactics' (s2). Not entirely tame: the Barmen lines have the queen out early with Bg4 pins, and 2...d6 3.d4 Nf6 4.dxc5 is a sharp pawn-grab line (s1). Typical play is a plan-driven fight over the d4 point and the resulting IQP, not a race. My reading: quiet to balanced, with risk only in the less common sidelines.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered at the root. Sidelines: 2...d6 3.d4 Nf6 4.dxc5 can become a pawn-for-activity line (s1 calls it a sharp gambit attempt; White can decline with 4.Bd3), and 2...Nf6 3.e5 Nd5 can transpose to Smith-Morra-type positions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "soundness": {
+      "notes": "Sound for both sides. Once dismissed as inferior, it is now called one of the most solid and respectable Anti-Sicilians (s1). Its Barmen line was historically thought good for Black but is now regarded as fine for White (s1). A Chessiverse page gives White a modest, theory-light edge, citing 27.6M Lichess games at 49.5% White wins vs 45.7% Black (s3): that is a database score, not an engine verdict, and it covers all ratings. No source claims a risk for either side beyond ordinary middlegame play.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Depends on Black's reply. After 2...d5 and 2...e6 ...d5 the centre usually opens: pawns come off and White is left with an isolated d4 pawn (open or partly open position). After 2...Nf6 3.e5 Nd5 it is a space-vs-targets structure with the centre tense. 2...e6 can reach a French Advance structure (centre locked). It is a Sicilian, so the c-file is typically half-open for Black in the ...cxd4 lines.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "approach": {
+      "notes": "It is a set-up (c3 and d4) but only against 1...c5; it is an Anti-Sicilian, not a system for any reply. Played at the highest level by Kasparov, Anand, Karpov, Kramnik, Carlsen and Sveshnikov, but 'much more popular at the amateur level than at the top level' (s2). So: established, mainstream-enough, not obscure.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Sources stress low memorisation: the Alapin avoids much of the main-line Sicilian theory and is 'ideal for beginners' (s2). Chessiverse rates it intermediate and says specific variations (2...Nf6, 2...d5) still need learning, with theory adherence about 70% at amateur level and 80% for elite players (s3). The difficulty that remains is handling IQP and Alekhine-like structures, which is understanding rather than memory.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "ideal e4-d4 pawn centre",
+    "isolated queen's pawn",
+    "c4-d5 rupture",
+    "pressure on d4",
+    "transposition to French Advance",
+    "Barmen Defence queen recapture",
+    "avoiding main-line Sicilian theory"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Barmen Defence",
+      "moves": "1. e4 c5 2. c3 d5 3. exd5 Qxd5 4. d4",
+      "how": "Queen out early, Black pins with Bg4, then cxd4 cxd4 leaves White with an IQP; more concrete and tactical in the first dozen moves than the root."
+    },
+    {
+      "name": "2...Nf6 3.e5 Nd5",
+      "moves": "1. e4 c5 2. c3 Nf6 3. e5 Nd5",
+      "how": "Alekhine-style structure; the main line in current practice per s1; can transpose to Smith-Morra positions; different plans from the Barmen."
+    },
+    {
+      "name": "2...d6 3.d4 Nf6 4.dxc5",
+      "moves": "1. e4 c5 2. c3 d6 3. d4 Nf6 4. dxc5",
+      "how": "Sharp pawn-grab line; White can decline with 4.Bd3 (s1)."
+    },
+    {
+      "name": "2...e6 3.d4 d5 4.e5",
+      "moves": "1. e4 c5 2. c3 e6 3. d4 d5 4. e5",
+      "how": "Transposes to the French Advance with a closed centre, a different character from the open Barmen lines."
+    },
+    {
+      "name": "2...Nc6 (3.Nf3 / 3.d4)",
+      "moves": "1. e4 c5 2. c3 Nc6",
+      "how": "Most played branch in the database (about 27M games across its sub-positions) but barely discussed in the sources; not researched separately and left to inherit from the root."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Alapin is a popular Anti-Sicilian system.",
+        "verdict": "supported",
+        "note": "Popular, especially with amateurs (s2). It is a set-up against the Sicilian only, so 'system' is true in the narrow Anti-Sicilian sense.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "White plays 2.c3 to challenge Black's control of d4 and prepare a strong pawn centre with d4.",
+        "verdict": "supported",
+        "note": "The stated idea of 2.c3 is to support d4 and get pawns on e4 and d4.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "It sidesteps the razor-sharp main lines of the Open Sicilian.",
+        "verdict": "supported",
+        "note": "Avoiding main-line theory is the stated attraction.",
+        "sources": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "It leads to a more strategic and positional game.",
+        "verdict": "supported",
+        "note": "Solid, positional play with IQP and Maroczy-like structures; some sidelines (Barmen, 4.dxc5) are more tactical.",
+        "sources": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "It is ideal for players who prefer classical principles to memorising complex tactical variations.",
+        "verdict": "supported",
+        "note": "Lower memorisation burden than main-line Sicilians, though specific lines against 2...Nf6 and 2...d5 still need learning.",
+        "sources": [
+          "s2",
+          "s3"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: achieve the d4 push, develop harmoniously and use the central space to attack or squeeze.",
+        "verdict": "supported",
+        "note": "d4 is the aim; space is used to keep tension or to pursue c4-d5 breaks.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "Black: counter White's centre with ...d5 or ...Nf6, create an isolated pawn for White to target and seek active piece play.",
+        "verdict": "supported",
+        "note": "2...d5 and 2...Nf6 are Black's main replies; an IQP for White is the typical outcome of the Barmen lines.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 3
+  }
+}

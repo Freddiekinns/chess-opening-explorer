@@ -1,0 +1,44 @@
+{
+  "slug": "french-defense-burn-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Burn Variation",
+    "eco": "C11",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/3PP3/2N5/PPP2PPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "french-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black accepts the e-pawn exchange with 4...dxe4 5.Nxe4 Be7 and trades the g5 bishop for the knight, leaving a symmetrical-looking, solid French without the usual locked centre. White has a small lead in space and development but Black has few weaknesses, so play is steady and drawish. Black then plays ...c5 or ...b6 for counterplay.",
+  "white_ideas": [
+    { "idea": "Exchange on f6, then Nf3, Bd3 and castle with a slight space and development edge" },
+    { "idea": "Use the open e-file and the d-pawn for a small initiative" }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...Nbd7, ...Be7 and ...O-O; solid with the e6 pawn and the break ...c5" },
+    { "idea": "Trade pieces to ease the position and reach an equal ending" }
+  ],
+  "typical_structures": [{ "structure": "White d4 against Black e6 with the e-pawn exchanged; half-open lines, no French chain" }],
+  "axis_evidence": {
+    "character": { "notes": "Burn is known as a solid, lower-risk line: few weaknesses for Black, no early forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "d5 and e4 are exchanged: d4 against e6 with a half-open e-file for White; symmetrical-ish semi-open structure." },
+    "approach": { "notes": "A recognised main alternative for White in the Classical French." },
+    "level": { "reason": "neither", "notes": "Plans are clear and theory is limited." }
+  },
+  "plan_phrases": ["space advantage", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "Burn 4...Be7 5.e5", "moves": "4. Bg5 Be7 5. e5 Nfd7 6. Bxe7", "how": "Moves to the Classical lines (with 6...Qxe7) and a locked French pawn chain." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Burn gives few weaknesses and steady play." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream, safe line." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "The French e-pawn exchange leaves a half-open file and a symmetrical centre." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal choice for strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "Plans are simple but equalising requires some care." },
+    "plans": { "value": [], "reason": "Mostly piece play without a standard structural plan." }
+  }
+}

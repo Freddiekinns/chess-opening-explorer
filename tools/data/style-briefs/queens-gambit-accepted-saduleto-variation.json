@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-accepted-saduleto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Saduleto Variation",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. e4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White builds a big d4-e4 centre at once, accepting that the c4 pawn is lost for now. Black usually plays 3...e5 (and after 4.Nf3 exd4 5.Bxc4 Nc6) or 3...Nf6 4.e5 Nd5, fighting the centre. White gets lead in development and open lines for the bishops. It is a rare way of playing against the QGA and the theory is limited.",
+  "white_ideas": [
+    { "idea": "Big centre, then Nf3 and Bxc4 with rapid development" },
+    { "idea": "Push e5 after ...Nf6 to cramp Black and hunt the knight" }
+  ],
+  "black_ideas": [
+    { "idea": "...e5 and ...exd4 to open the centre, or ...Nf6 and ...Nd5 to blockade" },
+    { "idea": "Keep the c4 pawn briefly with ...b5 or return it for development" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...e5 and exchanges on d4; White with a lead in development" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early tactics around the e4/d4 pawns and the Qxd8 trade possibilities; I expect sharper play than the 3.Nf3 line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn is already taken; White expects to regain it with Bxc4, so not a gambit." },
+    "soundness": { "notes": "Sound enough; not refuted." },
+    "structure": { "notes": "Open centre, pieces play from move one." },
+    "approach": { "notes": "Played less often by strong players but respectable, so standard." },
+    "level": { "reason": "understanding", "notes": "Lines are short but tactical." }
+  },
+  "plan_phrases": ["lead in development", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Saduleto: 3...e5 4.Nf3 exd4", "moves": "1. d4 d5 2. c4 dxc4 3. e4 e5 4. Nf3 exd4 5. Bxc4", "how": "White regains the pawn with open lines for development." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Early tactics and open lines; the parent notes 3.e4 lines can be tactical early." },
+    "gambit": { "value": "none", "confidence": 0.55, "reason": "The pawn is regained by Bxc4, not a gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Not refuted." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Open centre after ...e5 and exchanges." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but respectable." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Short lines but tactical decisions." },
+    "plans": { "value": ["lead_in_development"], "reason": "White gets a development lead for the c-pawn." }
+  }
+}

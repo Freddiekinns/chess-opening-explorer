@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-snyder-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Snyder Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. b3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays a quiet anti-Sicilian with 2.b3, aiming for Bb2 on the long diagonal against e5/g7, then Nf3, e3 or f4, and a flexible centre. Black usually responds 2...Nc6, 2...d6 or 2...e6 and takes a normal Sicilian set-up, using the extra space and the half-open c-file. The play is quiet and manoeuvring with little theory, and Black often equalises easily.",
+  "white_ideas": [
+    { "idea": "Develop Bb2, Nf3, e3 and Bb5 to pressure e5 and the long diagonal" },
+    { "idea": "Choose a central plan with c4, d4 or f4 after seeing Black's set-up" },
+    { "idea": "Keep the position flexible and avoid Open Sicilian theory" }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...Nc6, ...e5 or ...d6 and ...Nf6 for a solid centre" },
+    { "idea": "Fianchetto with ...g6 and ...Bg7 to contest the long diagonal" },
+    { "idea": "Use the half-open c-file and queenside expansion" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian with White's e4 and b3 fianchetto against Black's ...c5, ...d6, ...e5 or ...e6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring play with little theory; Black is not under pressure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound but gives Black an easy game; White's centre is undeveloped." },
+    "structure": { "notes": "Centre not fixed; White's e4 against Black's ...c5 and a flexible pawn structure." },
+    "approach": { "notes": "Strong players hardly choose it; it is chosen for surprise." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn but plans need judgement; not Beginner." }
+  },
+  "plan_phrases": ["fianchetto", "avoiding theory"],
+  "sublines_that_differ": [
+    { "name": "2...b6 mirror", "moves": "1. e4 c5 2. b3 b6", "how": "Black mirrors with a queen fianchetto and the play is symmetrical." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet and flexible, neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable but modest." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "No fixed centre; flank fianchetto play." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Few lines but plans need judgement." },
+    "plans": { "value": ["fianchetto"], "reason": "Bb2 on the long diagonal." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "ruy-lopez-nurnberg-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Nürnberg Variation",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 f6",
+    "fen": "r1bqkbnr/pppp2pp/2n2p2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black defends e5 with ...f6, blocking the f6 square and weakening the a2-g8 diagonal and e6. White usually plays 4.O-O or 4.d4 and Bxc6 ideas, gaining space and a lead while Black plays ...Bd6, ...Ne7 and ...O-O. The game is passive for Black, with the king slightly exposed.",
+  "white_ideas": [
+    { "idea": "4.O-O or 4.c3, then d4 to exploit the weakened diagonal and the blocked knight" },
+    { "idea": "Bxc6 and d4 to open the position while Black is behind in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Support e5, play ...Bd6, ...Ne7 and ...O-O, then ...d5" },
+    { "idea": "Hold the centre with the f6/e5 pawns and avoid concessions" }
+  ],
+  "typical_structures": [
+    { "structure": "e5/f6/d6 pawn mass for Black against White's space, with the g8-a2 diagonal slightly weak" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Cramped but not collapsing for Black; not known for tactical mutual attack nor for being unbreakable." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "4.Nxe5 fxe5 5.Qh5+ is a trap line, no gambit by design." },
+    "soundness": { "notes": "Slightly inferior for Black, roughly equal; not refuted." },
+    "structure": { "notes": "Centre pawns on e4/e5 with tension left in place." },
+    "approach": { "notes": "Strong players almost never choose 3...f6; it is a surprise weapon." },
+    "level": { "reason": "understanding", "notes": "Easy to play but needs care with the weakened kingside." }
+  },
+  "plan_phrases": ["space advantage", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Nxe5 trap", "moves": "4.Nxe5 fxe5 5.Qh5+ Ke7 6.Qxe5+", "how": "A trap that gives Black an uncomfortable king; this is not what Black normally has to face" }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Passive for Black but neither forcing nor particularly hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Slightly worse for Black, not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The e4/e5 centre stays in tension for several moves." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players hardly ever choose 3...f6." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Not a good first repertoire choice but not forcing either." },
+    "plans": { "value": ["space_advantage"], "reason": "White takes space against the cramped f6/e5 set-up." }
+  }
+}

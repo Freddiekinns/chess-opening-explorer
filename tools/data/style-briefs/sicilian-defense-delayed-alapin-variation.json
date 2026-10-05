@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-delayed-alapin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Delayed Alapin Variation, with e6",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. c3",
+    "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White plays the Alapin plan of c3 and d4 after 2...e6. The main reply is 3...d5 4.exd5 exd5 5.d4, a symmetrical position where both sides can end up with isolated d-pawns after cxd4. Black also plays 3...Nf6 4.e5 Nd5 5.d4 cxd4 6.cxd4 for a tenser game. White tries for a stable centre, Black equalises without much risk.",
+  "white_ideas": [
+    { "idea": "Build the d4-e4 centre and keep a small space edge." },
+    { "idea": "Play Bd3 and O-O and use the e5 or d5 squares." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre at once with ...d5 and trade into a symmetrical position." },
+    { "idea": "Develop ...Nf6 and ...Nc6 and hit d4." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawn structure with d4 against d5 after the exchanges, isolated d-pawns on both sides." },
+    { "structure": "Open Sicilian-like asymmetry if White gets e5 and Black plays ...d6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and steady. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material given." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Symmetrical exchange structure with an open file. Semi-open." },
+    "approach": { "notes": "Alapin is standard per the anchors." },
+    "level": { "reason": "understanding", "notes": "Plans over theory. Intermediate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "symmetrical structure"],
+  "sublines_that_differ": [
+    { "name": "3...Nf6", "moves": "1. e4 c5 2. Nf3 e6 3. c3 Nf6 4. e5 Nd5 5. d4", "how": "Black accepts a space disadvantage for piece activity." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Neither especially solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respected anti-Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Symmetrical exchange structure with one open file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Alapin is standard in the anchors." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans over memory." },
+    "plans": { "value": ["isolated_queens_pawn", "symmetrical_structure"], "reason": "The 3...d5 line leads to symmetrical IQP positions." }
+  }
+}

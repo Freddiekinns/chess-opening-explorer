@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-tartakower-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Tartakower Variation",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Nxf6+ exf6",
+    "fen": "rnbqkb1r/pp3ppp/2p2p2/8/3P4/8/PPP2PPP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black recaptures with the e-pawn, accepting doubled f-pawns for an open e-file and free development of the light bishop (this is the Bronstein-Larsen set-up). After 6.c3 Bd6 7.Bd3 Black develops with ...Qc7, ...Be6 and ...Nd7, king in the centre or castled short, against a White with a small space edge and chances against the f6/f7 structure.",
+  "white_ideas": [
+    { "idea": "Play c3, Bd3, Qe2+ and Ne2/Nf3, aiming at the e-file and the weakened f-pawns." },
+    { "idea": "Exploit the doubled f-pawns with quick development and target the king." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Bd6, ...Qc7, ...Be6, ...Nd7 and castle, using the e-file and the bishop pair potential." },
+    { "idea": "Use the open e-file and ...f5 later to free the position and play for activity." }
+  ],
+  "typical_structures": [
+    { "structure": "Black with doubled f-pawns (f7, f6) and an open e-file; White with c3/d4 chain." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Sound and defensible but with a damaged structure; Black has to avoid being pushed around, yet there are few quick losses." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "All captures are recaptures; no material is offered." },
+    "soundness": { "notes": "A mainstream, respectable Caro-Kann variation." },
+    "structure": { "notes": "Symmetrical-ish exchange of the e-pawn gives a half-open e-file; centre not locked." },
+    "approach": { "notes": "A recognised main-line Caro-Kann branch." },
+    "level": { "reason": "understanding", "notes": "Black must handle the doubled pawns and piece activity; no long forcing lines." }
+  },
+  "plan_phrases": ["doubled pawns", "open e-file"],
+  "sublines_that_differ": [
+    { "name": "6.Bc4", "moves": "6. Bc4 Bd6 7. Qe2+ Qe7", "how": "Sharper, with exchanges and rapid development." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Caro-Kann structure is hard to break down despite the doubled pawns." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A standard sound Caro-Kann line." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Half-open e-file for Black, pawn centre not locked." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A normal main-line Caro-Kann branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Understanding the doubled-pawn structure matters more than memory." },
+    "plans": { "value": ["doubled_pawns"], "reason": "Black's doubled f-pawns define the position." }
+  }
+}

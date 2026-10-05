@@ -1,12 +1,15 @@
 /**
- * Runs the browse service against the real corpus in api/data/. Guards the
- * measured distribution recorded in the phase-2 plan — if enrichment reruns
- * and the numbers move, this fails loudly rather than the filter bar quietly
- * showing different counts than the plan assumed.
+ * Runs the browse service against the real corpus in api/data/. Level and style
+ * come from api/data/style-tags.json, which grows as more variations are
+ * classified, so those counts are checked against that file rather than pinned:
+ * every tagged position has a level, untagged ones have none, and no style
+ * covers most of what is tagged.
  */
 const BrowseService = require('../../packages/api/src/services/browse-service');
+const styleTagsFile = require('../../api/data/style-tags.json');
 
 const TOTAL = 12377;
+const TAGGED = Object.keys(styleTagsFile.positions).length;
 
 describe('browse over the real corpus', () => {
   let service;
@@ -30,25 +33,29 @@ describe('browse over the real corpus', () => {
     expect(service.browse({}).total).toBe(TOTAL);
   });
 
-  test('level facet matches the measured distribution and sums to the total', () => {
+  test('every tagged position has a level, and only those', () => {
     const { facets } = service.browse({});
-    const byValue = Object.fromEntries(facets.level.map((f) => [f.value, f.count]));
-    expect(byValue).toEqual({ Beginner: 179, Intermediate: 4587, Advanced: 7611 });
-    expect(facets.level.reduce((a, f) => a + f.count, 0)).toBe(TOTAL);
+    expect(facets.level.reduce((a, f) => a + f.count, 0)).toBe(TAGGED);
+    expect(facets.level.map((f) => f.value)).toEqual(['Beginner', 'Intermediate', 'Advanced']);
   });
 
-  test('style facet partitions the corpus, leaving only the 3 unstyled', () => {
+  // The old one-bucket-per-opening styles existed because the LLM tags were on
+  // most of the corpus. A style tag that covered most of it would be the same
+  // failure; the taxonomy's selectivity check caps shown values by games.
+  test('every style filters: none covers half of the tagged positions', () => {
     const { facets } = service.browse({});
-    const byValue = Object.fromEntries(facets.style.map((f) => [f.value, f.count]));
-    expect(byValue).toEqual({
-      positional: 3585,
-      aggressive: 3168,
-      gambit: 2182,
-      solid: 1271,
-      tactical: 1100,
-      system: 1068,
-    });
-    expect(facets.style.reduce((a, f) => a + f.count, 0)).toBe(TOTAL - 3);
+    expect(facets.style.map((f) => f.value)).toEqual([
+      'solid',
+      'sharp',
+      'gambit',
+      'dubious',
+      'system',
+      'offbeat',
+    ]);
+    for (const f of facets.style) {
+      expect(f.count).toBeGreaterThan(0);
+      expect(f.count).toBeLessThan(TAGGED / 2);
+    }
   });
 
   test('family facet sums to the total and labels uncategorised as Other', () => {
@@ -82,7 +89,7 @@ describe('browse over the real corpus', () => {
   });
 
   test('a combined filter still reconciles', () => {
-    const r = service.browse({ level: 'Beginner', style: 'gambit', pageSize: 24 });
+    const r = service.browse({ level: 'Beginner', style: 'solid', pageSize: 24 });
     expect(r.total).toBe(r.offset + r.items.length + r.remaining);
     expect(r.total).toBeGreaterThan(0);
   });

@@ -1,0 +1,89 @@
+{
+  "slug": "kings-pawn-game-beyer-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Beyer Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d4 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "center-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black answers the Center Game with a counter-strike on d5. Most games go 3.dxe5 dxe4 4.Qxd8+ Kxd8 with an early queen trade where Black has lost castling but White has little extra, or 3.exd5 exd4 with an open centre. I am unsure of the exact move distribution, so the notes are general.",
+  "white_ideas": [
+    { "idea": "Trade queens and exploit Black's lost castling rights." },
+    { "idea": "Take on d5 and develop quickly with Nf3 and Bc4." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the e4 pawn and use the open d-file." },
+    { "idea": "Develop rapidly and put the d4 pawn under pressure." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after early exchanges, queens traded on d8." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early exchanges give a steady, simplified game in the main line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level in the main exchanges."
+    },
+    "soundness": {
+      "notes": "Probably sound for Black; the name gambit refers to a rarely tried pawn offer."
+    },
+    "structure": {
+      "notes": "Open lines after pawn exchanges in the centre."
+    },
+    "approach": {
+      "notes": "Rare reply that strong players seldom use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not much theory; the endgame-like play needs understanding."
+    }
+  },
+  "plan_phrases": ["open centre", "exploit lost castling"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Unsure of the main line; early exchanges suggest neither sharp nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material stays level in the usual replies."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Likely a playable if inferior reply."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Central pawns come off immediately."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Little theory, simplified positions."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Unsure of the typical plan."
+    }
+  }
+}

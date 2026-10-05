@@ -1,0 +1,96 @@
+{
+  "slug": "grunfeld-defense-counterthrust-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Counterthrust Variation",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 d5",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 0 5"
+  },
+  "parent": "indian-defense-kings-indian-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "This is the Neo-Grünfeld: White fianchettoes and Black hits the centre with ...d5. After 5.Nf3 O-O 6.O-O Black chooses between ...c6 (Catalan-like, solid) and ...dxc4 grabbing a pawn that White regains. White applies long-diagonal and queenside pressure, Black plays against d4 with ...c5 or ...Nc6. Positions are positional and manoeuvring and rarely tactical.",
+  "white_ideas": [
+    { "idea": "Develop Nf3, O-O, Nc3 or Qb3 and use the Bg2 on the long diagonal." },
+    { "idea": "Pressure d5 and the queenside with cxd5 and Ne5." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge d4 with ...c5 or ...c6 and ...Nc6." },
+    { "idea": "Use the Bg7 on the long diagonal and keep a flexible, sound pawn structure." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical c-file exchange structure with d4/d5 pawns after cxd5 cxd5." },
+    { "structure": "Catalan-like centre where White's c4 pawn is exchanged or kept for pressure." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with a long-term bind; neither side is forced to take risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black's ...dxc4 pawn grab is regained by force."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre in tension between d4, c4 and d5; Black may release it with cxd5."
+    },
+    "approach": {
+      "notes": "A mainstream fianchetto system tried by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than memorised lines."
+    }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "symmetrical structure"],
+  "sublines_that_differ": [
+    {
+      "name": "...dxc4 line",
+      "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 d5 5. cxd5 Nxd5",
+      "how": "Black gets a Grünfeld-like centre with active knights."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet, positional manoeuvring; neither solid nor sharp by reputation."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given for good."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected set-up for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is in tension and not yet fixed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A mainstream branch played at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Needs positional understanding more than long lines."
+    },
+    "plans": {
+      "value": ["fianchetto", "hypermodern_centre"],
+      "reason": "Both sides use fianchettoed bishops to pressure the centre."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-spielmann-indian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Spielmann-Indian",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 c5",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black challenges d4 at once. White usually answers 3.e3 or 3.c3 and keeps a solid d4 centre, or 3.d5 for Benoni-type play or 3.dxc5 for a pawn-grab. After 3.e3 cxd4 4.exd4 White gets an open e-file with an exchange structure, and Black develops ...e6, ...d5 or ...g6. The game is flexible and transposes into Benoni, Benko, QGD or Sicilian-like structures.",
+  "white_ideas": [
+    { "idea": "e3 or c3, Bd3 and O-O with a solid centre, hold d4" },
+    { "idea": "d5 for Benoni-type positions, or dxc5 to win the pawn temporarily" }
+  ],
+  "black_ideas": [
+    { "idea": "...cxd4, ...e6 and ...d5, an easy symmetrical development" },
+    { "idea": "...g6 and ...Bg7 or ...b5 transposing to Benko-like play" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e3 against Black c5/d5; exchange structures after ...cxd4 exd4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Flexible and not very forcing; White's quiet 3.e3 or 3.c3 produces calm play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered in main lines." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not fixed; may become exchange structure or Benoni." },
+    "approach": { "notes": "A sideline strong players do occasionally choose." },
+    "level": { "reason": "understanding", "notes": "Transpositions need knowledge; little memorisation." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Neo-Benoni: 3.dxc5", "moves": "1. d4 Nf6 2. Nf3 c5 3. dxc5", "how": "White grabs the pawn; Black regains it with ...e6 and ...Bxc5." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet flexible play transposing into several structures." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable sideline." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre undecided, many transpositions." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played occasionally by strong players; not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Transposition knowledge more than memory." },
+    "plans": { "value": [], "reason": "Too many possible structures to name a plan." }
+  }
+}

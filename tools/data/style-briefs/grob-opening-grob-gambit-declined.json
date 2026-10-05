@@ -1,0 +1,46 @@
+{
+  "slug": "grob-opening-grob-gambit-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Grob Gambit Declined",
+    "eco": "A00",
+    "moves": "1. g4 d5 2. Bg2 c6",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/6P1/8/PPPPPPBP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "grob-opening-grob-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black declines the pawn with ...c6 and keeps a solid Slav-like centre, so White's g4 push has gained little and weakened the kingside. White follows with h3, d3 or c4 and tries to catch up in development, while Black gets a comfortable game with ...e5 or ...Bxg4 later. White's king is slightly exposed and the position is easier for Black.",
+  "white_ideas": [
+    { "idea": "Fianchetto on the long diagonal, then h3, d3 and c4" },
+    { "idea": "Hope Black overreaches and enter a flexible set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Take a solid centre with ...c6, ...e5 and ...Nf6" },
+    { "idea": "Pick off the weakened g4 pawn later if White errs" }
+  ],
+  "typical_structures": [
+    { "structure": "Black Slav-type d5/c6 centre against White's g4 and long-diagonal bishop" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quirky, not forcing; White has loosened the kingside but Black has no clear attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Declined: the g4 pawn is not taken, so no material has changed hands." },
+    "soundness": { "notes": "Slightly inferior for White but not refuted; Short played it." },
+    "structure": { "notes": "Flank opening; the centre stays flexible." },
+    "approach": { "notes": "Grob is anchored as offbeat." },
+    "level": { "reason": "neither", "notes": "Little theory; White's position is hard to justify." }
+  },
+  "plan_phrases": ["fianchetto", "avoiding theory"],
+  "sublines_that_differ": [
+    { "name": "Grob Gambit accepted", "moves": "2...Bxg4", "how": "Not this root; White gives a pawn for development and the long diagonal" }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quirky flank play without forced tactics." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The pawn was not taken so no material is offered here." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Slightly worse for White but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening with an undecided centre." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "The Grob is anchored as offbeat." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Little theory but not a good first repertoire choice." },
+    "plans": { "value": ["fianchetto"], "reason": "White's bishop on g2 on the long diagonal." }
+  }
+}

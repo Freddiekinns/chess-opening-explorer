@@ -1,0 +1,46 @@
+{
+  "slug": "english-opening-anglo-scandinavian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Anglo-Scandinavian Defense",
+    "eco": "A10",
+    "moves": "1. c4 d5",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black strikes at the centre at once. After 2.cxd5 Black recaptures with the queen (Qxd5, with Nc3 gaining a tempo) or the knight (2...Nf6 3.g3 Nxd5). White gets a small lead in development and a fianchetto, Black a solid position and the c-pawn exchange for a d-pawn. Play is quiet in the main lines, with the Icelandic-like gambits (Schulz, Löhn) rare.",
+  "white_ideas": [
+    { "idea": "g3, Bg2 and Nc3 pressuring d5 and the long diagonal" },
+    { "idea": "Gain tempi on Black's queen with Nc3 and take space" }
+  ],
+  "black_ideas": [
+    { "idea": "Recapture on d5 with the knight, play ...Nb6 and ...g6 or ...e5 and develop smoothly" },
+    { "idea": "Use the queen on a5/d6 with ...Nf6 and ...c6" }
+  ],
+  "typical_structures": [
+    { "structure": "White d-pawn against Black c7/e-pawn, c-file half-open for White" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main 2.cxd5 Nf6 3.g3 Nxd5 is quiet and sound." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Main lines regain the pawn; Schulz and Löhn gambits are rare side lines." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "Asymmetric after cxd5, half-open c-file." },
+    "approach": { "notes": "A respectable reply played by strong players now and then; standard." },
+    "level": { "reason": "neither", "notes": "Clear plans, modest theory." }
+  },
+  "plan_phrases": ["fianchetto", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Löhn Gambit", "moves": "2.cxd5 e6", "how": "Black offers a pawn for activity; rare." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet main lines, with a small edge for White." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "Main lines regain the pawn." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Sound defence." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Asymmetric pawns after cxd5, half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Strong players use it now and then, not offbeat." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Clear plans, modest theory." },
+    "plans": { "value": ["fianchetto"], "reason": "White fianchettoes against the d5 knight or queen." }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "grunfeld-defense-brinckmann-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Brinckmann Attack",
+    "eco": "D82",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bf4",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP1B2/2N5/PP2PPPP/R2QKBNR b KQkq - 1 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to f4 before Black has committed, a London-style anti-Grünfeld approach. After 4...Bg7 5.e3 O-O Black strikes the centre with ...c5 or ...dxc4, or accepts the cxd5 Nxd5 exchanges. White keeps a solid structure and flexible development; Black has comfortable counterplay. The play is positional and less theoretical than the main Grünfeld lines.",
+  "white_ideas": [
+    { "idea": "Build a solid centre with e3, Nf3 and Be2 or Rc1" },
+    { "idea": "Meet ...c5 with dxc5 or Nf3 and keep the pieces active" },
+    { "idea": "Avoid main-line Grünfeld theory with a London-style set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike the centre with ...c5 and ...dxc4" },
+    { "idea": "Put pressure on d4 with ...Bg7 and ...Nc6 or ...Be6" },
+    { "idea": "Let White build the centre and attack it with pieces" }
+  ],
+  "typical_structures": [
+    { "structure": "Grünfeld centre with Black d5/c5 pressure against White's d4 and e3" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, positional White set-up; Black has comfortable counterplay." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; cxd5 Nxd5 exchanges." },
+    "soundness": { "notes": "Sound; a recognised anti-Grünfeld line." },
+    "structure": { "notes": "Centre in tension with exchanges possible." },
+    "approach": { "notes": "A named line used occasionally by strong players." },
+    "level": { "reason": "understanding", "notes": "Plans are straightforward; little forcing theory." }
+  },
+  "plan_phrases": ["hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Grünfeld Gambit-style accept", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bf4 Bg7 5. e3 O-O 6. cxd5 Nxd5", "how": "Simplifying exchanges with a quiet game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet White set-up against a Black counter-attack, neither solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A sound anti-Grünfeld line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre stays in tension, with exchanges possible." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A minor line, but played by strong players, and not a full system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are simple with little forcing theory." },
+    "plans": { "value": ["hypermodern_centre"], "reason": "Black lets White build the centre then attacks it." }
+  }
+}

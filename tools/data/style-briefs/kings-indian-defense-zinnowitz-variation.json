@@ -1,0 +1,47 @@
+{
+  "slug": "kings-indian-defense-zinnowitz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Zinnowitz Variation",
+    "eco": "E90",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Bg5",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/6B1/2PPP3/2N2N2/PP3PPP/R2QKB1R b KQ - 3 6"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the f6 knight at once with 6.Bg5, an Averbakh-style idea in the Normal King's Indian. Black usually breaks with ...c5 or answers 6...h6 7.Bh4 and decides between ...c5, ...Na6 and the ...g5 plan; ...e5 comes later. Play can be sharp when Black goes for ...g5 and ...Nh5, or a quieter ...c5 and Benoni-style game.",
+  "white_ideas": [
+    { "idea": "Pin and pressure the f6 knight, take space with d5 or e5 and keep the centre." },
+    { "idea": "Use Bg5-h4 and Qd2 or Be2 to restrain ...e5, and win a tempo against ...h6." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...c5 (or ...e5) to challenge the d4/d5 centre." },
+    { "idea": "Answer Bh4 with ...g5 and ...Nh5 for counterplay, or trade the pinning bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "After ...c5 d5 a Benoni-type structure with White's e4-d5 against ...e6 or ...b5 breaks." },
+    { "structure": "King's Indian after ...e5 d5, a closed centre with kingside play for Black." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "King's Indian counterattacking set-up where Black takes risks to break the centre, and ...g5 lines are double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit; some ...Nxe4 tricks only." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Usually the centre locks after d5, as in the Benoni or King's Indian, so closed, though not as clearly as the Orthodox." },
+    "approach": { "notes": "A recognised White option in the King's Indian; standard." },
+    "level": { "reason": "understanding", "notes": "Needs King's Indian plans and move-order knowledge but is less forcing than the Mar del Plata." }
+  },
+  "plan_phrases": ["fight for the centre", "...c5 break", "kingside play", "pin on f6"],
+  "sublines_that_differ": [
+    { "name": "6...h6 7.Bh4 g5 8.Bg3 Nh5", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Bg5 h6 7. Bh4 g5 8. Bg3 Nh5", "how": "Black plays for the bishop pair and kingside space; unbalanced and sharp." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "King's Indian structures with mutual risk, and the ...g5 and ...c5 lines are double-edged." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A fully respectable King's Indian line." },
+    "structure": { "value": "closed", "confidence": 0.45, "reason": "Most lines lock the centre with d5, but ...c5 gives Benoni play with an open c-file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal King's Indian sideline with a particular move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "King's Indian plans matter more than memory; this branch is less forcing than the main lines." },
+    "plans": { "value": ["hypermodern_centre", "kingside_attack"], "reason": "Black lets White build a centre and attacks it, often with kingside counterplay." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "modern-defense-standard-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Standard Line",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3",
+    "fen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 2 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White builds the e4-d4 centre with Nc3, and Black keeps the Modern by ...d6, ...c6 or ...c5, delaying ...Nf6. White follows with Be3, Qd2, f4 or Nf3 and Bc4, hoping for a kingside attack against Black's cramped game. Black counters with ...c6, ...Nd7 and ...e5, or ...c5, using the g7 bishop. The positions are less forcing than the Pirc but White usually has more space.",
+  "white_ideas": [
+    { "idea": "Be3, Qd2, f3 and O-O-O or h4 for a kingside attack" },
+    { "idea": "Nf3, Be2 and O-O, a solid space edge" }
+  ],
+  "black_ideas": [
+    { "idea": "...d6, ...c6, ...Nd7 and ...e5 or ...b5 to counter in the centre" },
+    { "idea": "...c5 or ...Nc6 with the g7 bishop pressing d4" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against d6/g6, Black breaks with ...e5 or ...c5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Hypermodern and flexible, Black may be cramped but is hard to break; no forced lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound but slightly passive." },
+    "structure": { "notes": "Centre not yet decided; flexible." },
+    "approach": { "notes": "The g6/Bg7/d6 set-up can be used against almost anything, so system." },
+    "level": { "reason": "understanding", "notes": "Plans matter more than theory." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Modern: 3.Nc3 c6", "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c6", "how": "Black plays ...c6 and ...d5, more Caro-Kann-like." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Space for White, resilient set-up for Black, not forcing." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Sound though cramped." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre not yet resolved." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "Modern set-up playable against nearly everything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Few forced lines, plans need judgement." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White take the centre and attacks it from the flank." }
+  }
+}

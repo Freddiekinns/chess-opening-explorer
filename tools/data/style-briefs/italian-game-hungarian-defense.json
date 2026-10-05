@@ -1,0 +1,47 @@
+{
+  "slug": "italian-game-hungarian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Hungarian Defense",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7",
+    "fen": "r1bqk1nr/ppppbppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "italian-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black declines to mirror White with ...Bc5 and keeps the bishop home on e7, accepting a slightly cramped position for safety. White usually plays 4.d4 and takes the centre; Black either exchanges on d4 or holds with ...d6 and develops with ...Nf6 and ...O-O. The game is steady, with White holding a modest space edge and Black waiting to break with ...d5 or ...exd4.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and c3, keeping the bishop on c4 eyeing f7." },
+    { "idea": "Use the extra space to develop quickly and castle before Black frees the position." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...O-O, ...d6 and keep everything protected." },
+    { "idea": "Break with ...exd4 and ...d5, or hit back with the Tartakower ...Ne4 after 6.e5." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on c3, d4 and e4 against Black's compact ...d6/...e5 centre." },
+    { "structure": "Open game after ...exd4 Nxd4 with symmetrical development." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive, safe Black set-up; White has no forcing attack. Few ways for either side to lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; White keeps a small edge." },
+    "structure": { "notes": "Main line 4.d4 exd4 5.c3 or 5.Nxd4 opens the centre; with ...d6 it stays in tension." },
+    "approach": { "notes": "Recognised sideline, played now and then by strong players as a safe reply; not a system." },
+    "level": { "reason": "understanding", "notes": "Few forced lines; moderate understanding of when to break the centre." }
+  },
+  "plan_phrases": ["space advantage", "solid development", "break with ...d5"],
+  "sublines_that_differ": [
+    { "name": "Tartakower Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7 4. d4 exd4 5. c3 Nf6 6. e5 Ne4", "how": "More tactical, Black's knight sits on e4 and White gambits a pawn on d4 for activity." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Passive but hard-to-break Black set-up with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound if slightly worse reply for Black." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "4.d4 exd4 leads to an open Scotch-like game." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A recognised sideline, not a system and not seldom-used enough for offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plain plans, little forcing theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's d4 centre against Black's cramped set-up." }
+  }
+}

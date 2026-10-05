@@ -1,0 +1,48 @@
+{
+  "slug": "kings-pawn-game-napoleon-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Napoleon Attack",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Qf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5Q2/PPPP1PPP/RNB1KBNR b KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White brings the queen out at once to eye f7, preparing Bc4 for a quick Scholar's-mate-style attack. Black simply develops with 2...Nc6 3.Bc4 Nf6, when White's queen is exposed to ...Nd4 or ...d5 and loses time. The idea is a cheap trap for beginners; against correct play White is worse because the queen blocks the knight on g1 and gets harassed.",
+  "white_ideas": [
+    { "idea": "Qf3 and Bc4 hitting f7 for a quick attack" },
+    { "idea": "Hope Black ignores the threat and falls for a cheap mate" },
+    { "idea": "Retreat with c3 or Nc3 and play a normal game if the attack fails" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nc6 and ...Nf6, protecting f7 and gaining time on the queen" },
+    { "idea": "Strike with ...Nd4 or ...d5 to chase the queen" },
+    { "idea": "Castle and use the extra development for a long-term edge" }
+  ],
+  "typical_structures": [
+    { "structure": "King's pawn open game where White's queen blocks the g1 knight" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early queen sortie with traps; mostly one-sided: Black develops with tempo while White has few real threats. Little forcing play against a prepared opponent." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Dubious for White; early queen move that loses time against correct development." },
+    "structure": { "notes": "e4/e5 centre untouched, open game but undecided." },
+    "approach": { "notes": "Strong players seldom or never play it; a surprise on weaker opponents." },
+    "level": { "reason": "neither", "notes": "No theory but a dubious line is never beginner." }
+  },
+  "plan_phrases": ["early queen", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "2...Nc6 3.Bc4 Nf6", "moves": "2...Nc6 3.Bc4 Nf6 4.Qb3 Nd4", "how": "Black harasses the queen with ...Nd4 and takes the initiative." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "An early-queen line with traps but little real forcing play." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.8, "reason": "The early queen loses time and blocks development." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Central pawns locked in place, nothing decided." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "A dubious line is never Beginner." },
+    "plans": { "value": ["early_queen", "pressure_on_f7"], "reason": "The queen and bishop aim at f7 right away." }
+  }
+}

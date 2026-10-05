@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-declined-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Classical Variation",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Bc5",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black declines with 2...Bc5 and develops, usually answering 3.Nf3 d6 with ...Nf6 and ...Nc6. White can play Nc3, Bc4 and d3 or c3 and d4, with an open f-file and an e5 pawn that may be hit by fxe5. Play is more open than a standard Italian but less forcing than the accepted lines.",
+  "white_ideas": [
+    { "idea": "Develop Nf3, Nc3, Bc4, then fxe5 or d4 to open the centre; the f-file adds pressure." },
+    { "idea": "Pressure f7 along the a2-g8 diagonal." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...d6, ...Nf6, ...Nc6, ...Bg4 and hit the f4 pawn or e4." },
+    { "idea": "Counter in the centre with ...d5 when allowed." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file after fxe5, or e4/f4 pawns against ...e5/...d6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Declined lines are quieter than the accepted ones but still open, with king safety on both sides in play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black has not taken f4, so nothing has changed hands." },
+    "soundness": { "notes": "Sound; Black equalises with sensible development." },
+    "structure": { "notes": "Tension between e4/f4 and e5 with open lines likely; flexible." },
+    "approach": { "notes": "A respectable if rarer way to meet 2.f4; strong players choose it to avoid chaos." },
+    "level": { "reason": "understanding", "notes": "Straightforward development; not heavy theory." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Svenonius", "moves": "3.Nf3 d6 4.Nc3 Nf6 5.Bc4 Nc6 6.d3 Bg4", "how": "Pinning with a Bg4 pin; slightly sharper." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Open development without the forcing tactics of the accepted lines." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Declined, so no material has changed hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Black develops comfortably." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "e4/f4 against e5 is tense and undecided." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "A respectable declined line, less common but not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear and theory is modest." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Quick development against f7." }
+  }
+}

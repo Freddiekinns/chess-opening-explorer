@@ -1,0 +1,150 @@
+{
+  "slug": "english-opening-agincourt-defense",
+  "root": {
+    "name": "English Opening: Agincourt Defense",
+    "eco": "A13",
+    "moves": "1. c4 e6",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Chess Opening Theory/1. c4/1...e6",
+      "publisher": "Wikibooks",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._c4/1...e6",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "English Opening, Agincourt Defense 1...e6 (A13)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/english-opening-e6",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippet: Agincourt Defence overview and transposition summary (Chessiverse, Wikipedia: Franco-Indian, Catalan, Nimzo-Indian)",
+      "publisher": "Web search snippets",
+      "url": "https://en.wikipedia.org/wiki/Catalan_Opening",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 1.c4 with ...e6, preparing ...d5 with full support and keeping nearly every queen-pawn set-up available. The opening is a transposition magnet: 2.Nc3 d5 gives a QGD-like structure, 2.Nf3 d5 3.g3 a Catalan or Reti, 2.d4 c5 an Anglo-Indian or Queen's Pawn-type game, and 2.e4 a French-like game. Black can also choose Nimzo-Indian or Queen's Indian set-ups after ...Nf6. Play is described as calm, positional and non-forcing; the c8-bishop's development is Black's main early question. Master usage is spread among specialists (Miezis, Uhlmann, Korchnoi, Flear, Sveshnikov, Rozentalis) rather than concentrated, and it is a normal solid choice at every level.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop (Nf3, g3, Bg2), a hypermodern framework with control from a distance", "sources": ["s1", "s3"] },
+    { "idea": "Play 2.Nc3 and 3.d4 or 3.e4 to enter a QGD, Nimzo-Indian or French-like game", "sources": ["s1", "s3"] },
+    { "idea": "Transpose into Catalan or Reti structures, or choose English structures with c5 break", "sources": ["s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Prepare ...d5 with full support and own that square, developing behind the pawn chain", "sources": ["s2"] },
+    { "idea": "Keep options open: QGD, Catalan, Nimzo-Indian (...Nf6 and ...Bb4) or Queen's Indian (...Nf6 and ...b6)", "sources": ["s3"] },
+    { "idea": "Meet 2.d4 with ...c5 to challenge the centre immediately", "sources": ["s1"] },
+    { "idea": "Solve the c8-bishop problem (via ...b6 or ...dxc4 ideas)", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Gambit Declined-type structure (c4/d4 versus e6/d5)", "sources": ["s1", "s2"] },
+    { "structure": "Catalan or Reti fianchetto structures after Nf3 and g3", "sources": ["s2", "s3"] },
+    { "structure": "French-like or Sicilian-adjacent structures after 2.e4 or 2.d4 c5", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chessiverse describes 'solid, patient' play and rates sharpness 'Calm' (0.892 at elite level); Wikibooks stresses transpositions into classical frameworks. Typical play is manoeuvring and positional rather than forcing. Risky lines are rare.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines. Queen's Gambit-type pawn offers in transpositions are not true gambits.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Sound. Chessiverse statistics: White 49.9% wins vs Black 45% across 14.6 million games, with draws rising at higher Elo (10.8% at 2500), suggesting Black's counterplay is easier to find with experience. No source calls it dubious.",
+      "sources": ["s2"]
+    },
+    "structure": {
+      "notes": "Mostly closed or tension-based centre (QGD, Catalan, English structures), with central pawns staying on for a long time. Open centres arise in Catalan lines with ...dxc4 or in the 2.d4 c5 branch; the dominant feel is closed/partly closed.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Described as a 'transposition magnet': Black plays ...e6 and ...d5 against almost any English set-up, a flexible system-like reply. Chessiverse lists strong players as practitioners: Miezis, Uhlmann, Korchnoi (White) and Flear, Sveshnikov, Rozentalis (Black). The reply is respected and normal rather than offbeat; frequency is high (about 14.6 million games in the Chessiverse database).",
+      "sources": ["s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse labels it Beginner difficulty. Own understanding: Black has a flexible plan (...d5 supported by ...e6) with relatively little forced theory, but must know several resulting structures (QGD, Catalan, Nimzo) and the c8-bishop issue. Studying side is Black (a defence).",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "control of d5",
+    "transposition to Queen's Gambit Declined",
+    "Catalan fianchetto",
+    "hypermodern fianchetto",
+    "Nimzo-Indian or Queen's Indian set-up",
+    "c8-bishop development",
+    "...c5 challenge to the centre"
+  ],
+  "sublines_that_differ": [
+    { "name": "2.d4 c5 (Queen's Pawn/English Anglo-Indian)", "moves": "1. c4 e6 2. d4 c5", "how": "Immediate challenge to the centre; Sicilian-adjacent / Benoni-like positions." },
+    { "name": "Neo-Catalan", "moves": "1. c4 e6 2. Nf3 d5 3. g3 Nf6 4. Bg2 Be7 5. O-O", "how": "Catalan structure with long-term pressure on Black's queenside." },
+    { "name": "2.e4", "moves": "1. c4 e6 2. e4", "how": "Transposes to a French-like game; different pawn structures." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "1.c4 e6 is known as the Agincourt Defense",
+        "verdict": "supported",
+        "note": "Also called Kurajica Defence per the ECO label.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is a highly flexible and solid system in which Black prepares to challenge for the centre with ...d5",
+        "verdict": "supported",
+        "note": "'Prepare ...d5 with full support' and 'solid, patient'.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "It often transposes into a Queen's Gambit Declined while keeping options for Nimzo-Indian or Queen's Indian set-ups",
+        "verdict": "supported",
+        "note": "Transposition magnet to QGD, Catalan and Reti; Nimzo and Queen's Indian options after ...Nf6.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is positional rather than tactical",
+        "verdict": "supported",
+        "note": "Rated Calm.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White often fianchettoes the king's bishop (g3, Bg2), or plays d4 to transpose to Queen's Pawn openings",
+        "verdict": "supported",
+        "note": "g3 set-up and d4 transpositions both named.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black's primary plan is ...d5, often leading to a QGD structure",
+        "verdict": "supported",
+        "note": "Primary plan in all sources.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black may adopt a hypermodern set-up with ...Nf6 and ...b6 (Queen's Indian) or ...Nf6 and ...Bb4 (Nimzo-Indian)",
+        "verdict": "supported",
+        "note": "Nimzo via 2.Nc3 Nf6 3.d4 Bb4 is cited; the Queen's Indian set-up is cited as a possible transposition.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Both sides maneuver for pawn breaks, such as c5 for White or ...c5/...e5 for Black",
+        "verdict": "unverifiable",
+        "note": "...c5 is cited against 2.d4; the White c5 break and ...e5 are own understanding only.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

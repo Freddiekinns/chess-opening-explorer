@@ -1,0 +1,48 @@
+{
+  "slug": "scandinavian-defense-panov-transfer",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Panov Transfer",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. c4 c6",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3P4/2P5/8/PP1P1PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black hits d5 with ...c6, and White usually plays 4.d4 cxd5 to reach a Caro-Kann Panov-Botvinnik structure with an isolated queen's pawn for White, or 4.dxc6 Nxc6 where Black has given a pawn for development (the Scandinavian Gambit). In the main transposition White has an IQP and active pieces while Black blockades d4 and trades pieces, so it plays like a Panov-Botvinnik Caro-Kann.",
+  "white_ideas": [
+    { "idea": "Build a classical IQP centre with d4, Nc3, Bg5 or Bd3 and use the active pieces" },
+    { "idea": "Attack the kingside before Black trades into an endgame" },
+    { "idea": "Accept the gambit pawn with dxc6 and hold it with accurate development" }
+  ],
+  "black_ideas": [
+    { "idea": "Blockade the d4 isolani and trade pieces, aiming for an endgame" },
+    { "idea": "Develop ...Nc6, ...e6, ...Bb4 and castle short" },
+    { "idea": "Recapture with ...Nxc6 and use the lead in development if White grabs" }
+  ],
+  "typical_structures": [
+    { "structure": "IQP: White d4 pawn isolated with open c- and e-files against Black's blockade" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Standard IQP play in the main line; sharper in the 4.dxc6 gambit; neither especially solid nor risky." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "In the 4.d4 cxd5 main line the pawn is recovered by force and no material is given; the 4.dxc6 gambit branch is minor." },
+    "soundness": { "notes": "Sound; Black reaches a normal Panov structure." },
+    "structure": { "notes": "Exchange-type structure with a half-open file and an isolated queen's pawn; semi-open." },
+    "approach": { "notes": "A recognised branch of the Scandinavian that strong players use, standard." },
+    "level": { "reason": "understanding", "notes": "IQP plans and piece activity matter more than memory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Scandinavian Gambit Accepted", "moves": "1. e4 d5 2. exd5 Nf6 3. c4 c6 4. dxc6", "how": "White takes the pawn and Black plays for development; a sharper gambit." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "IQP middlegame with real play but no forcing theory." },
+    "gambit": { "value": "none", "confidence": 0.7, "reason": "In the main transposition the pawn comes back; the gambit is a minor branch." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Both sides reach a normal position." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Exchange structure with an open c-file and IQP." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A recognised branch of the Scandinavian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "IQP plans need understanding." },
+    "plans": { "value": ["isolated_queens_pawn"], "reason": "The Panov structure gives White an isolated d-pawn." }
+  }
+}

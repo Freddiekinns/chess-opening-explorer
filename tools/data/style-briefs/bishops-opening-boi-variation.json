@@ -1,0 +1,48 @@
+{
+  "slug": "bishops-opening-boi-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Boi Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides mirror with the bishop on its active diagonal. White continues 3.Nf3 Nc6 reaching a Giuoco Piano, or plays 3.c3 Nf6 4.d4 or 3.Qe2 (the Philidor-style set-up) aiming at a flexible centre. The position is symmetrical and quiet, with both sides developing and castling before deciding the centre; it transposes widely to the Italian.",
+  "white_ideas": [
+    { "idea": "Nf3, c3 and d4 to build a centre like the Giuoco Piano" },
+    { "idea": "Qe2 and Nc3 with a flexible, solid set-up avoiding theory" },
+    { "idea": "Use f4 or Nf3 choice to avoid the Petrov and other heavy theory" }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror development with ...Nf6 and ...Nc6, castle and break with ...d5" },
+    { "idea": "Challenge the centre once White commits with c3 and d4 using ...exd4" },
+    { "idea": "Keep a solid structure and equalise easily" }
+  ],
+  "typical_structures": [
+    { "structure": "Giuoco Piano or Pianissimo structure with e4/d3 against e5/d6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Symmetrical, quiet development; lines transpose to Italian lines with no early risk for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is sacrificed in the main lines." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension with d3 or d4 options, Italian-like, so Flexible." },
+    "approach": { "notes": "A less common line that strong players use now and then." },
+    "level": { "reason": "neither", "notes": "Simple development and transposition; easy to learn but needs the Italian ideas." }
+  },
+  "plan_phrases": ["symmetrical structure", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "3.c3 Nf6 4.d4", "moves": "3.c3 Nf6 4.d4 exd4 5.cxd4 Bb4+", "how": "Sharper, with an open centre and tactics like the Italian's Greco lines." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.7, "reason": "Symmetrical and quiet without forcing play or fortress features." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A normal equal position." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Italian-style centre in tension." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Respectable and used by strong players now and then." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Clear development but some transposition know-how." },
+    "plans": { "value": ["pressure_on_f7", "symmetrical_structure"], "reason": "Bishops aim at f7 and f2 in a mirrored set-up." }
+  }
+}

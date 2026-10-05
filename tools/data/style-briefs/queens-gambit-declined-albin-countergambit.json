@@ -1,0 +1,51 @@
+{
+  "slug": "queens-gambit-declined-albin-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Albin Countergambit",
+    "eco": "D08",
+    "moves": "1. d4 d5 2. c4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "queens-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black offers a pawn with 2...e5. After 3.dxe5 d4 4.Nf3 Nc6 Black has a space-gaining pawn on d4, a lead in development and ideas such as ...Bg4, ...Nge7-g6 and ...Bc5, while White tries to return the pawn at a good moment and consolidate with a3, g3 and Bg2. A classic trap is the Lasker trap (...Bg4 and ...Bb4+ ...dxc3 ...Bxc3+ lines). Objectively White keeps a small edge, but Black's play is active and tricky.",
+  "white_ideas": [
+    { "idea": "Develop with Nf3, a3, g3, Bg2 and keep the extra pawn or return it for a safe position" },
+    { "idea": "Neutralise the d4 pawn with e3 and avoid the Lasker trap" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the d4 pawn as a cramping wedge and develop with ...Nc6, ...Be6 or ...Bg4, ...Nge7" },
+    { "idea": "Attack with ...Bb4+ and ...dxc3 tricks and generate a kingside initiative" }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawn on d4 against White's c4, with White a pawn up and Black ahead in development" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Counter-gambit with a forcing, trappy opening and unbalanced positions; Sharp." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.dxe5 White can keep the pawn if he handles the development, as in the Albin anchor."
+    },
+    "soundness": { "notes": "Not refuted but White keeps an edge; I treat it as sound with moderate confidence." },
+    "structure": { "notes": "Black pawn on d4 against White's e-pawn; d4 and c4 pawn wedge but the centre is fluid; Open." },
+    "approach": { "notes": "An established gambit with real theory, played now and then by strong players; standard." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of traps and main lines; Intermediate for Black." }
+  },
+  "plan_phrases": ["lead in development", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3.e3 (decline)", "moves": "1. d4 d5 2. c4 e5 3. e3", "how": "Declined, no pawn changes hands, so no gambit." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "A counter-gambit that leads to unbalanced positions and tactics." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "sound", "side": "black", "confidence": 0.5, "reason": "White keeps a small edge but the gambit is not refuted." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "A fluid, open centre with the d4 pawn clamp." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A recognised gambit with real theory, played now and then by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Needs traps and main lines known." },
+    "plans": { "value": ["lead_in_development", "space_advantage"], "reason": "Black plays for development and a d4 wedge." }
+  }
+}

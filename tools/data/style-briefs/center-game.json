@@ -1,0 +1,146 @@
+{
+  "slug": "center-game",
+  "root": {
+    "name": "Center Game",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d4",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Center Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Center_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Center Game Explained: A Complete Guide by a Grandmaster",
+      "publisher": "ChessMood",
+      "url": "https://chessmood.com/openings/center-game",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Center Game search summary (365chess C21, Wikibooks, thechessworld, Danish Gambit; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.365chess.com/eco/C21_Centre_game",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White strikes the centre at once: 2.d4 exd4 3.Qxd4 regains the pawn and opens the game, at the cost of an early queen that Black hits with 3...Nc6. The queen goes to e3 (Paulsen's Attack, 4.Qe3), and White develops quickly with Nc3, Bd2, Bc4 or Be2, castles queenside and aims the queen and the semi-open d-file at g7 and the kingside, or pushes the h-pawn. Black has calm, sound set-ups (4...Nf6, 4...Be7 preparing ...d5, 4...g6, 4...Bb4+) and equalises with accurate play. Opposite-side castling can turn it into a race. Instead of 3.Qxd4, White can play 3.c3 (Danish Gambit), which is a separate gambit branch.",
+  "white_ideas": [
+    { "idea": "Retreat the queen to e3 (Paulsen's Attack), prevent ...d5, eye g7 and later g3; develop Nc3, Bd2, Bc4.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Castle queenside quickly to connect the rooks, use the semi-open d-file for queen and rook, and attack the kingside, often with the h-pawn.", "sources": ["s1", "s2"] },
+    { "idea": "Tarrasch's pawn sacrifice (8.Qg3) for attacking chances.", "sources": ["s1"] },
+    { "idea": "Rely on rarity: Black often does not know the theory (practical chances at club level).", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Play 3...Nc6 to gain a tempo on the queen; then develop with tempo and exploit the early queen.", "sources": ["s1", "s3"] },
+    { "idea": "Calm set-ups: 4...Nf6 5.Bd2 Be7 6.Nc3 O-O, 4...Be7 preparing ...d5, 4...g6, 4...Bb4+; these equalise and score well.", "sources": ["s2", "s3"] },
+    { "idea": "Break with ...d5 to free the position once development is complete.", "sources": ["s2", "s1"] },
+    { "idea": "Avoid the traps: Bb4+ and early ...d5 lines can lose quickly to forcing play if mishandled.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open game: the d-pawn is exchanged on move 2-3 and the centre is open, Black's e-pawn gone; semi-open d-file for White.", "sources": ["s1", "s2"] },
+    { "structure": "Opposite-side castling (White queenside, Black usually kingside) leading to mutual attack on the enemy king.", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical but not a pure gambit-style sharp line: ChessMood describes it as moderately aggressive with an opposite-side-castling race; Wikipedia says it produces 'an attractive attack against Black's king' and suits faster time controls. The main line evaluates as equal, and Black can pick calm, solid set-ups. Danish Gambit branch (3.c3) is much sharper.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "After 2...exd4 3.Qxd4 material is level at once, so the Center Game main line is not a gambit. The Danish Gambit (3.c3) and Halasz Gambit (3.f4) are separate gambit branches off the same root; Tarrasch's 8.Qg3 is a late pawn sacrifice in one subline.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Objectively equal after the main lines; White has some compensation in sharp variations (Wikipedia). ChessMood: White lacks a decisive edge; with careful play Black equalises. The opening is 'far from refuted' and played by Nepomniachtchi, Erigaisi, Shabalov (Wikipedia and ChessMood). Not dubious; the early queen move costs tempi but not a pawn.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Open centre: central pawns come off at once (2...exd4 3.Qxd4) leaving an open d-file and diagonals; this is the textbook open game by first move and in practice.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Rare at the top level in the modern era but not trivial: abandoned by elite players after about 1900, revived by Shabalov in the 1990s and used by Shirov, Adams, Polgar and, more recently, Nepomniachtchi and Erigaisi (Wikipedia). Chosen for surprise value and for rapid/blitz, but strong players have used it in serious games, so it is not obviously an offbeat joke opening. Not a system against everything; it is only available against 1...e5.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "ChessMood: moderate difficulty, the basic plan (develop, castle queenside, advance the h-pawn) is straightforward but needs tactical awareness to execute attacks and avoid traps; suited to intermediate players seeking practical weapons. Little long theory in the main line. Black's best defences are easy, so White's practical scoring depends on opponent errors.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "early queen development",
+    "Paulsen's Attack",
+    "queenside castling",
+    "opposite-side castling race",
+    "semi-open d-file",
+    "attack on g7",
+    "tempo on the queen with ...Nc6",
+    "central break with ...d5"
+  ],
+  "sublines_that_differ": [
+    { "name": "Paulsen's Attack (main line)", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3", "how": "Standard Center Game; level material, open; queen on e3." },
+    { "name": "Danish Gambit", "moves": "1. e4 e5 2. d4 exd4 3. c3", "how": "White offers one or two pawns for a big lead in development; sharp gambit." },
+    { "name": "Halasz Gambit", "moves": "1. e4 e5 2. d4 exd4 3. f4", "how": "Described as dubious in Wikipedia's summary." },
+    { "name": "Tarrasch pawn sacrifice", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Nc3 Bb4 6. Bd2 O-O 7. O-O-O Re8 8. Qg3", "how": "Pawn sacrifice for kingside attack." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Center Game is a direct, ambitious attempt to challenge Black's central control, forcing an open game from the second move.",
+        "verdict": "supported",
+        "note": "2.d4 exd4 3.Qxd4 opens the centre immediately.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It often involves bringing the queen out early, which can expose it to attack and cede a tempo.",
+        "verdict": "supported",
+        "note": "3...Nc6 gains a tempo on the queen; 4.Qe3 follows.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It seizes the initiative and creates tactical possibilities; best suited to aggressive players who enjoy sharp open positions.",
+        "verdict": "supported",
+        "note": "ChessMood describes it as moderately aggressive; strongest in faster time controls.",
+        "sources": ["s2", "s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White uses the open centre to develop pieces quickly (Nf3, Bc4) and build an attack, justifying the early queen development.",
+        "verdict": "supported",
+        "note": "Sources give Nc3, Bd2 and Bc4 as typical; Nf3 is less commonly mentioned.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black's primary plan is to gain tempi by harassing the queen with ...Nc6.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White often castles queenside to connect the rooks and support a central or kingside attack.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black seeks to neutralise the initiative, complete development and exploit the lost time to gain a positional advantage.",
+        "verdict": "supported",
+        "note": "Sources say Black equalises; a positional advantage is not claimed, so the claim is accurate only at the level of 'neutralise'.",
+        "sources": ["s2", "s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

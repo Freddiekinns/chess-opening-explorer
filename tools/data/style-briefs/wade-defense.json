@@ -1,0 +1,39 @@
+{
+  "slug": "wade-defense",
+  "tier": "unsourced",
+  "root": { "name": "Wade Defense", "eco": "A41", "moves": "1. d4 d6 2. Nf3 Bg4", "fen": "rn1qkbnr/ppp1pppp/3p4/8/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3" },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black pins the f3 knight at once with ...Bg4 after 1...d6, aiming at an early exchange and a solid Old Indian-style set-up. White usually plays 3.e4 or 3.c4 and, after ...Bxf3, takes the bishop pair and a space edge. Black gets a sound but passive position with doubled pawns possible, so the line is rare among strong players.",
+  "white_ideas": [
+    { "idea": "Take the centre with e4 and c4 and use the bishop pair after ...Bxf3." },
+    { "idea": "Play e3 and Be2, aiming for a London-style game, or h3 to force a decision." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin the knight and exchange on f3 to cut White's central influence." },
+    { "idea": "Build an Old Indian set-up with ...Nd7, ...e5 or ...e6 and ...Nf6." }
+  ],
+  "typical_structures": [
+    { "structure": "White centre d4/e4 against Black d6/e6 or e5 with the dark-squared bishop kept." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid Old Indian-style set-up, but Black ends up cramped with few active ideas." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable, but gives White an easy edge; not refuted." },
+    "structure": { "notes": "Fluid centre, White's e4 or c4 and Black's d6; tension unresolved." },
+    "approach": { "notes": "Strong players seldom choose 1...d6 and 2...Bg4 against 1.d4." },
+    "level": { "reason": "neither", "notes": "Simple plan but not a good first repertoire." }
+  },
+  "plan_phrases": ["bishop pair", "space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.45, "reason": "Black's compact set-up is hard to break down but passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Inferior but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not yet settled after 2...Bg4." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Rare at strong level." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple ideas but not a first choice." },
+    "plans": { "value": ["bishop_pair", "space_advantage"], "reason": "White gets the bishops and the centre." }
+  }
+}

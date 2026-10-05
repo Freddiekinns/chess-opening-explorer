@@ -1,0 +1,690 @@
+[
+  {
+    "slug": "queens-pawn-game-anti-torre",
+    "rank": 246,
+    "root": {
+      "name": "Queen's Pawn Game: Anti-Torre",
+      "eco": "D02",
+      "moves": "1. Nf3 d5 2. d4 Bg4",
+      "fen": "rn1qkbnr/ppp1pppp/8/3p4/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 1 3"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Queen's Pawn: 2.Nf3 Bg4",
+        "moves": "1. d4 d5 2. Nf3 Bg4"
+      },
+      {
+        "name": "Anti-Torre",
+        "moves": "1. d4 d5 2. Nf3 Bg4 3. Ne5 Bf5 4. g4"
+      }
+    ],
+    "parent": {
+      "slug": "queens-pawn-game-zukertort-variation",
+      "name": "Queen's Pawn Game: Zukertort Variation",
+      "moves": "1. d4 d5 2. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "ruy-lopez-cozio-defense",
+    "rank": 247,
+    "root": {
+      "name": "Ruy Lopez: Cozio Defense",
+      "eco": "C60",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7",
+      "fen": "r1bqkb1r/ppppnppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+    },
+    "alternative_names": [
+      "Spanish: Cozio Defence",
+      "Spanish Game, Cozio Defense",
+      "Cozio Defense, Ruy Lopez",
+      "Cozio Defense, Ruy Lopez "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Spanish: Cozio, 4.O-O",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. O-O"
+      },
+      {
+        "name": "Spanish: Cozio, 4.O-O",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. c3"
+      },
+      {
+        "name": "Spanish: Cozio, 4.Nc3",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. Nc3"
+      },
+      {
+        "name": "Spanish: Cozio, 4.O-O g6",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. O-O g6"
+      },
+      {
+        "name": "Spanish: Cozio, 4.O-O g6",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. O-O g6 5. c3"
+      },
+      {
+        "name": "Ruy Lopez: Cozio Defense, Paulsen Variation",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. Nc3 g6"
+      }
+    ],
+    "parent": {
+      "slug": "ruy-lopez",
+      "name": "Ruy Lopez",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+      "overview": "The Ruy Lopez is the most extensively developed Open Game. 3.Bb5 attacks the knight that defends e5, building indirect pressure on the e5 pawn without the Italian's vulnerability to ...d5. This root (3.Bb5) is a crossroads: after the most common 3...a6 (about two-thirds of games) the Closed Spanish (4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3) leads to a slow, locked-centre manoeuvring game; the Berlin (3...Nf6 4.O-O Nxe4) gives a solid, drawish endgame-flavoured structure; the Marshall Attack is a sharp Black pawn sacrifice. White's central plan is c3 and d4 plus the Nbd2-f1-g3 knight route, while Black counterattacks on the queenside (...b5, ...Na5, ...c5) or breaks with ...d5. Theory is the deepest of any 1.e4 opening."
+    }
+  },
+  {
+    "slug": "sicilian-defense-wing-gambit",
+    "rank": 248,
+    "root": {
+      "name": "Sicilian Defense: Wing Gambit",
+      "eco": "B20",
+      "moves": "1. e4 c5 2. b4",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Sicilian: Wing Gambit",
+      "Wing Gambit, Sicilian",
+      "Sicilian: wing gambit",
+      "Wing Gambit, Sicilian "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Sicilian, Wing Gambit Accepted",
+        "moves": "1. e4 c5 2. b4 cxb4"
+      },
+      {
+        "name": "Sicilian Defense: Wing Gambit, Marshall Variation",
+        "moves": "1. e4 c5 2. b4 cxb4 3. a3"
+      },
+      {
+        "name": "Sicilian Defense: Wing Gambit, Carlsbad Variation",
+        "moves": "1. e4 c5 2. b4 cxb4 3. a3 bxa3"
+      },
+      {
+        "name": "Sicilian Defense: Wing Gambit, Deferred Variation",
+        "moves": "1. e4 c5 2. Nf3 d6 3. b4"
+      },
+      {
+        "name": "Sicilian: Wing Gambit, Marshall Variation, 3...d5!",
+        "moves": "1. e4 c5 2. b4 cxb4 3. a3 d5"
+      },
+      {
+        "name": "Sicilian Defense: Wing Gambit, Abrahams Variation",
+        "moves": "1. e4 c5 2. b4 cxb4 3. Bb2"
+      }
+    ],
+    "parent": {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5",
+      "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1)."
+    }
+  },
+  {
+    "slug": "modern-defense-averbakh-system",
+    "rank": 249,
+    "root": {
+      "name": "Modern Defense: Averbakh System",
+      "eco": "A42",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6 4. e4",
+      "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Modern: Averbakh",
+      "Modern Defense, Averbakh Variation",
+      "Averbakh Variation, Modern",
+      "Averbakh Variation, Modern "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Modern: Averbakh, 4...c6",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 c6"
+      },
+      {
+        "name": "Modern: Averbakh, 4...c6 5.Nf3",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 c6 5. Nf3"
+      },
+      {
+        "name": "Modern: Averbakh, 4...Nd7",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 Nd7"
+      },
+      {
+        "name": "Modern: Averbakh, 4...Nd7 5.Nf3",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 Nd7 5. Nf3"
+      },
+      {
+        "name": "Modern: Averbakh, 4...e5",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 e5"
+      },
+      {
+        "name": "Modern: Averbakh, 4...e5 5.Nf3 Nd7",
+        "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 e5 5. Nf3 Nd7"
+      }
+    ],
+    "parent": {
+      "slug": "modern-defense",
+      "name": "Modern Defense",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6",
+      "overview": "Black plays 1...g6 and 2...Bg7 and lets White build the e4-d4 centre, delaying ...Nf6 (which separates it from the Pirc), then attacks the centre with ...c5, ...e5 or ...Nc6 and the pressure of the g7 bishop. It is a simple, repeatable set-up that Black can adopt against almost anything, and its flexible move order makes it a practical surprise weapon. White's main tries are the Standard line (2.d4 Bg7 3.Nc3 d6 4.f4 or 3.Nf3), the Averbakh-style 2.c4 / 2.Nc3 set-ups, and c3 to blunt the g7 bishop; White often attacks on the kingside with f4, while Black seeks counterplay against an over-extended centre. Sources call it sound but with a risk of passivity or of letting White build an overwhelming centre; it is moderately popular (about 1.7% of games in 2025 on one database) with occasional master use (Suttles, Davies, McNab, Carlsen)."
+    }
+  },
+  {
+    "slug": "scotch-game-haxo-gambit",
+    "rank": 250,
+    "root": {
+      "name": "Scotch Game: Haxo Gambit",
+      "eco": "C44",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/2BpP3/5N2/PPP2PPP/RNBQK2R w KQkq - 2 5"
+    },
+    "alternative_names": [
+      "Scotch Gambit: 4...Bc5"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Scotch Gambit: 5.c3",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. c3"
+      },
+      {
+        "name": "Scotch Gambit: 5.O-O",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. O-O"
+      },
+      {
+        "name": "Scotch Gambit: 5.c3 d3",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. c3 d3"
+      }
+    ],
+    "parent": {
+      "slug": "scotch-game-scotch-gambit",
+      "name": "Scotch Game: Scotch Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "englund-gambit-main-line",
+    "rank": 251,
+    "root": {
+      "name": "Englund Gambit: Main Line",
+      "eco": "A40",
+      "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7",
+      "fen": "r1b1kbnr/ppppqppp/2n5/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4"
+    },
+    "alternative_names": [
+      "Englund Gambit: 2.dxe5 Nc6 3.Nf3 Qe7",
+      "Englund Gambit Complex, Englund Gambit",
+      "Englund Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "englund-gambit",
+      "name": "Englund Gambit",
+      "moves": "1. d4 e5",
+      "overview": "Black answers 1.d4 with 1...e5, offering the e-pawn after 2.dxe5 to avoid closed queen's-pawn positions and set tactical problems. The main line is 2...Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3, where Black regains the pawn on b2 but loses the queenside attack; the gambit relies on traps such as 6.Bc3?? Bb4! with mate threats on c1. White can simply keep the pawn and, with accurate development, retains an advantage. Strong players and engines consider it unsound for Black, and top-level players almost never choose it. It scores through quick development and traps against an unprepared opponent."
+    }
+  },
+  {
+    "slug": "french-defense-burn-variation",
+    "rank": 252,
+    "root": {
+      "name": "French Defense: Burn Variation",
+      "eco": "C11",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/3PP3/2N5/PPP2PPP/R2QKBNR b KQkq - 3 4"
+    },
+    "alternative_names": [
+      "French: 3.Nc3 Nf6 4.Bg5",
+      "C12"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "French: Burn, 5.Nxe4",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4"
+      },
+      {
+        "name": "French: Burn, 5.Nxe4 Be7",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4 Be7"
+      },
+      {
+        "name": "French: Burn Variation",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4"
+      },
+      {
+        "name": "French: Burn, 6.Bxf6 Bxf6",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4 Be7 6. Bxf6 Bxf6"
+      },
+      {
+        "name": "French: Burn, 5.Nxe4 Nbd7 6.Nf3",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4 Nbd7 6. Nf3"
+      },
+      {
+        "name": "French: Burn, 5.Nxe4 Nbd7 6.Nf3 Be7",
+        "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4 Nbd7 6. Nf3 Be7"
+      }
+    ],
+    "parent": {
+      "slug": "french-defense-classical-variation",
+      "name": "French Defense: Classical Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "scandinavian-defense-gubinsky-melts-defense",
+    "rank": 253,
+    "root": {
+      "name": "Scandinavian Defense: Gubinsky-Melts Defense",
+      "eco": "B01",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6",
+      "fen": "rnb1kbnr/ppp1pppp/3q4/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"
+    },
+    "alternative_names": [
+      "Scandinavian: Schiller Defence",
+      "Gubinsky-Melts Defense, Center Counter",
+      "Scandinavian: Pytel-Wade variation",
+      "Gubinsky-Melts Defense, Center Counter "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Scandinavian: Schiller, 4.d4 Nf6",
+        "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 Nf6"
+      }
+    ],
+    "parent": {
+      "slug": "scandinavian-defense-mieses-kotroc-variation",
+      "name": "Scandinavian Defense: Mieses-Kotroc Variation",
+      "moves": "1. e4 d5 2. exd5 Qxd5",
+      "overview": "After 2...Qxd5 Black recaptures at once, gaining the pawn back but exposing the queen: White's 3.Nc3 hits it with a tempo and Black must move it again, usually 3...Qa5 (the Mieses-Kotroc proper), 3...Qd6 or 3...Qd8. Black then builds a Caro-Kann-like structure with ...c6, ...Nf6, ...Bf5 (or ...Bg4) and ...e6, aiming for central breaks with ...c5 or ...e5 and pressure on the semi-open c- and d-files. White keeps a small lead in development and a space edge, and wins nothing material if Black plays accurately. Sources describe it as solid and positional rather than sharp, low in theory, with plans that repeat from game to game, which makes it popular with club players and improvers; the drawbacks are a small space deficit and early queen exposure with traps to avoid. It is the most popular and most analysed Scandinavian line, used by Carlsen and others."
+    }
+  },
+  {
+    "slug": "zukertort-opening-pirc-invitation",
+    "rank": 254,
+    "root": {
+      "name": "Zukertort Opening: Pirc Invitation",
+      "eco": "A04",
+      "moves": "1. Nf3 d6",
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Reti: 1...d6",
+      "Wade Defense",
+      "Reti opening",
+      "Wade Defense "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "zukertort-opening",
+      "name": "Zukertort Opening",
+      "moves": "1. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "indian-defense-wade-tartakower-defense",
+    "rank": 255,
+    "root": {
+      "name": "Indian Defense: Wade-Tartakower Defense",
+      "eco": "A46",
+      "moves": "1. d4 Nf6 2. Nf3 d6",
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Indian: 2.Nf3 d6",
+      "Indian Game: Wade-Tartakower Defense",
+      "Indian Game, Wade-Tarkatower Defense"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Indian: 2.Nf3 d6 3.Bg5",
+        "moves": "1. d4 Nf6 2. Nf3 d6 3. Bg5"
+      },
+      {
+        "name": "Indian: 2.Nf3 d6 3.g3",
+        "moves": "1. d4 Nf6 2. Nf3 d6 3. g3"
+      },
+      {
+        "name": "Indian: 2.Nf3 d6 3.Bg5 Nbd7",
+        "moves": "1. d4 Nf6 2. Nf3 d6 3. Bg5 Nbd7"
+      }
+    ],
+    "parent": {
+      "slug": "indian-defense-knights-variation",
+      "name": "Indian Defense: Knights Variation",
+      "moves": "1. d4 Nf6 2. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "center-game-kieseritzky-variation",
+    "rank": 256,
+    "root": {
+      "name": "Center Game: Kieseritzky Variation",
+      "eco": "C21",
+      "moves": "1. e4 e5 2. d4 exd4 3. Nf3",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 3"
+    },
+    "alternative_names": [
+      "Centre Game: 3.Nf3"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Center Game: Kieseritzky Variation",
+        "moves": "1. e4 e5 2. d4 exd4 3. Nf3 c5"
+      },
+      {
+        "name": "Center Game: Kieseritzky Variation",
+        "moves": "1. e4 e5 2. d4 exd4 3. Nf3 c5 4. Bc4"
+      },
+      {
+        "name": "Center Game: Kieseritzky Variation",
+        "moves": "1. e4 e5 2. d4 exd4 3. Nf3 c5 4. Bc4 b5"
+      }
+    ],
+    "parent": {
+      "slug": "center-game-accepted",
+      "name": "Center Game Accepted",
+      "moves": "1. e4 e5 2. d4 exd4",
+      "overview": "The root is the crossroads after 2.d4 exd4, with Black a pawn up and White to move. White's main choice is 3.Qxd4 Nc6 4.Qe3 (Paulsen Attack): the pawn is regained, Black gains a tempo on the queen, and White castles queenside after Nc3 and Bd2, using the queen on e3 and the d-file to aim at g7 and the kingside. Black has calm, sound ways to equalise (4...Nf6, 4...Be7 preparing ...d5, 4...g6, 4...Bb4+) and can counterattack White's king on the queenside. The alternative 3.c3 is the Danish Gambit, where White gives one or two pawns for open lines and development. 3.Nf3 or 3.Bc4 lead to Scotch, Scotch Gambit, Petroff-type or Urusov positions. Overall it is old and rarely played at the top level, though with a modern revival (Shabalov, then Nepomniachtchi and Erigaisi, Shirov, Adams) as a practical, objectively equal surprise."
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-macleod-defense",
+    "rank": 257,
+    "root": {
+      "name": "King's Gambit Accepted: MacLeod Defense",
+      "eco": "C34",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Nc6",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+    },
+    "alternative_names": [
+      "King's Gambit Accepted, MacLeod Defense",
+      "King's Gambit, Accepted",
+      "MacLeod Defense, KGA",
+      "MacLeod Defense, KGA "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-accepted-kings-knights-gambit",
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "english-opening-anglo-dutch-defense",
+    "rank": 258,
+    "root": {
+      "name": "English Opening: Anglo-Dutch Defense",
+      "eco": "A10",
+      "moves": "1. c4 f5",
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+    },
+    "alternative_names": [
+      "English: Anglo-Dutch",
+      "Anglo-Dutch Defense",
+      "English: Anglo-Dutch defense",
+      "Anglo-Dutch Defense "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. Nc3"
+      },
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. Nc3 Nf6"
+      },
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. Nc3 Nf6 3. g3"
+      },
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. g3"
+      },
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. Nf3"
+      },
+      {
+        "name": "English: Anglo-Dutch",
+        "moves": "1. c4 f5 2. g3 Nf6"
+      }
+    ],
+    "parent": {
+      "slug": "english-opening",
+      "name": "English Opening",
+      "moves": "1. c4",
+      "overview": "White opens with the c-pawn to contest d5 from the wing, keeping the e4, d4, g3 and b3 options open until Black reveals a set-up. It is a flexible, hypermodern, mostly positional opening: not as sharp as 1.e4 or 1.d4, with the character decided by Black's reply and by transpositions into the Queen's Gambit, Réti or King's Indian. Principal branches are the Reversed Sicilian (1...e5, with an extra tempo for White), the Symmetrical (1...c5, often with a Maroczy bind) and the Anglo-Indian (1...Nf6 and 1...e6/...g6 transpositions). White typically plays Nc3, g3 and Bg2, and expands on the queenside with Rb1 and b4, or takes the classical centre with e4. The database root is a crossroads; its most-played continuations are transpositions to QGD (1.c4 e6 2.Nc3 d5 3.d4), the King's Indian and the Réti."
+    }
+  },
+  {
+    "slug": "benoni-defense-benoni-gambit-accepted",
+    "rank": 259,
+    "root": {
+      "name": "Benoni Defense: Benoni Gambit Accepted",
+      "eco": "A43",
+      "moves": "1. d4 c5 2. dxc5",
+      "fen": "rnbqkbnr/pp1ppppp/8/2P5/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Old Benoni: 2.dxc5",
+      "Benoni Gambit Accepted",
+      "Benoni Gambit Accepted "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "benoni-defense-old-benoni",
+      "name": "Benoni Defense: Old Benoni",
+      "moves": "1. d4 c5",
+      "overview": "Black answers 1.d4 with 1...c5 before committing to ...d5 or ...Nf6; the root is a crossroads. White normally replies 2.d5, gaining space with a wedge, and Black then has to undermine d5 with ...e6, ...e5, ...d6, ...Nf6 or ...b5 so as not to be squeezed. Main branches are 2.d5 e6 (heading for a Modern Benoni structure), 2.d5 d6 3.e4 (the Schmid Benoni, with a King's-Indian-like set-up), and 2.d5 e5 (Czech Benoni, a locked centre with kingside play by f4 and queenside b4 for White). White can also play 2.dxc5, 2.e3 or 2.c3, which tend to transpose to other structures. Sources describe the opening as a long strategic space-versus-counterplay struggle, playable but demanding, rare at top level though used by Alekhine, Kasparov, Torre and Vaganian."
+    }
+  },
+  {
+    "slug": "latvian-gambit",
+    "rank": 260,
+    "root": {
+      "name": "Latvian Gambit",
+      "eco": "C40",
+      "moves": "1. e4 e5 2. Nf3 f5",
+      "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Latvian Gambit, General",
+      "Latvian; Greco Counter-Gambit",
+      "Latvian counter-gambit",
+      "Latvian; Greco Counter-Gambit "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Latvian Gambit: 3.Nxe5",
+        "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5"
+      },
+      {
+        "name": "Latvian Gambit: 3.d3",
+        "moves": "1. e4 e5 2. Nf3 f5 3. d3"
+      },
+      {
+        "name": "Latvian Gambit: 3.Nxe5 Qf6",
+        "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6"
+      }
+    ],
+    "parent": {
+      "slug": "kings-knight-opening",
+      "name": "King's Knight Opening",
+      "moves": "1. e4 e5 2. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "rat-defense-harmonist",
+    "rank": 261,
+    "root": {
+      "name": "Rat Defense: Harmonist",
+      "eco": "B00",
+      "moves": "1. e4 d6 2. f4",
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Pirc: 2.f4"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Pirc: 2.f4 Nf6",
+        "moves": "1. e4 d6 2. f4 Nf6"
+      },
+      {
+        "name": "Pirc: 2.f4 Nf6 3.Nc3",
+        "moves": "1. e4 d6 2. f4 Nf6 3. Nc3"
+      },
+      {
+        "name": "Pirc: 2.f4 Nf6 3.Nc3 g6 4.Nf3 Bg7",
+        "moves": "1. e4 d6 2. f4 Nf6 3. Nc3 g6 4. Nf3 Bg7"
+      }
+    ],
+    "parent": {
+      "slug": "pirc-defense",
+      "name": "Pirc Defense",
+      "moves": "1. e4 d6",
+      "overview": "Black plays 1...d6 and, after 2.d4 Nf6 3.Nc3, ...g6 and ...Bg7, letting White build the broad e4-d4 centre and then undermining it from the flanks with ...c5 or ...e5 (hypermodern: the bigger White's centre, the bigger the target). The root is a crossroads: 1...d6 can transpose to the Philidor (3...e5 or ...c6) or to the Modern. White's replies run from sharp (Austrian Attack 4.f4, 150 Attack 4.Be3 with Qd2, Bh6 and h4-h5, Byrne 4.Bg5, Bayonet h4) to unhurried (Classical 4.Nf3 with Be2 and castling, fianchetto). Typical play is imbalanced: White gets space and often a kingside attack, Black gets a solid fianchettoed king and counterplay on the queenside and with central breaks. It is sound but has a reputation for giving White chances; Kasparov doubted it for the top level (s1), though Caruana, Anand and Grischuk have used it (s2)."
+    }
+  },
+  {
+    "slug": "sicilian-defense-chekhover-variation",
+    "rank": 262,
+    "root": {
+      "name": "Sicilian Defense: Chekhover Variation",
+      "eco": "B53",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4",
+      "fen": "rnbqkbnr/pp2pppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Sicilian, Chekhover Variation",
+      "Chekhover Variation, Sicilian",
+      "Sicilian, Chekhover variation",
+      "Chekhover Variation, Sicilian "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Sicilian, Chekhover, 4...Nc6",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nc6"
+      },
+      {
+        "name": "Sicilian, Chekhover, 4...Nf6",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nf6"
+      },
+      {
+        "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nc6 5. Bb5 Bd7"
+      },
+      {
+        "name": "Sicilian, Chekhover, 4...Nf6 5.Nc3",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nf6 5. Nc3"
+      },
+      {
+        "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7 6.Bxc6 Bxc6",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nc6 5. Bb5 Bd7 6. Bxc6 Bxc6"
+      },
+      {
+        "name": "Sicilian, Chekhover, 7.Nc3",
+        "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4 Nc6 5. Bb5 Bd7 6. Bxc6 Bxc6 7. Nc3"
+      }
+    ],
+    "parent": {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4",
+      "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1)."
+    }
+  },
+  {
+    "slug": "scandinavian-defense-blackburne-kloosterboer-gambit",
+    "rank": 263,
+    "root": {
+      "name": "Scandinavian Defense: Blackburne-Kloosterboer Gambit",
+      "eco": "B01",
+      "moves": "1. e4 d5 2. exd5 c6",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "scandinavian-defense",
+      "name": "Scandinavian Defense",
+      "moves": "1. e4 d5",
+      "overview": "Black strikes at e4 at once with ...d5, and after 2.exd5 chooses between 2...Qxd5 (the 'positional' branch) and 2...Nf6 (the 'tactical' branch). In the main line 2...Qxd5 3.Nc3 the queen must move again, usually Qa5 (or Qd6, Qd8), and White gains time; Black answers with ...c6, ...Nf6, ...Bf5 or ...Bg4 and ...e6, reaching a solid, Caro-Kann-like c6/e6 structure with free piece play. White's lead in development and space is balanced by Black's sound, easily defended position, so the game is typically a quiet fight where White pushes for a slight edge. Sharp sidelines exist: the Portuguese (3...Bg4 after 2...Nf6 lines), Icelandic Gambit (2...Nf6 3.c4 e6) and the Marshall Gambit with 2...Nf6 3.d4 Nxd5 or 3...c6 ideas. It is objectively sound but has never been a mainstream elite weapon, though Carlsen, Anand and Larsen have used it."
+    }
+  },
+  {
+    "slug": "alekhine-defense-exchange-variation",
+    "rank": 264,
+    "root": {
+      "name": "Alekhine Defense: Exchange Variation",
+      "eco": "B03",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6",
+      "fen": "rnbqkb1r/ppp1pppp/1n1P4/8/2PP4/8/PP3PPP/RNBQKBNR b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Alekhine: Exchange Variation",
+      "Alekhine's defence: exchange variation"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Alekhine: Exchange, 5...cxd6",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 cxd6"
+      },
+      {
+        "name": "Alekhine: Exchange, 5...exd6",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 exd6"
+      },
+      {
+        "name": "Alekhine: Exchange, 5...cxd6 6.Nc3",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 cxd6 6. Nc3"
+      },
+      {
+        "name": "Alekhine: Exchange, 5...exd6 6.Nc3",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 exd6 6. Nc3"
+      },
+      {
+        "name": "Alekhine: Exchange, 5...exd6 6.Nc3 Be7",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 exd6 6. Nc3 Be7"
+      },
+      {
+        "name": "Alekhine: Exchange, 5...cxd6 6.Nc3 g6 7.Be3",
+        "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 cxd6 6. Nc3 g6 7. Be3"
+      }
+    ],
+    "parent": {
+      "slug": "alekhine-defense",
+      "name": "Alekhine Defense",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4",
+      "overview": "Black attacks e4 at once with 1...Nf6 and, after 2.e5 Nd5, invites White to build a broad centre with c4, d4 and perhaps f4, planning to attack that centre later with ...d6, ...Nb6, ...Bg4, ...c5 and ...dxe5. White's job is to keep or use the extra space, either with the most ambitious Four Pawns Attack (4.c4 Nb6 5.f4), the popular Modern Variation 4.Nf3, or the less forcing Exchange 5.exd6; 2.Nc3 avoids the main line entirely. Positions lose symmetry from the start and are unbalanced, with a space edge for White against Black's counterplay on the overextended pawns. The opening is regarded as sound, original and tricky but risky (moderate to high), and is only moderately common at the top: Fischer, Korchnoi, Ivanchuk and occasionally Carlsen have played it."
+    }
+  },
+  {
+    "slug": "mieses-opening-reversed-rat",
+    "rank": 265,
+    "root": {
+      "name": "Mieses Opening: Reversed Rat",
+      "eco": "A00",
+      "moves": "1. d3 e5",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Mieses: 1...e5",
+      "Reversed Rat",
+      "Mieses opening",
+      "Reversed Rat "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "mieses-opening",
+      "name": "Mieses Opening",
+      "moves": "1. d3",
+      "overview": "White plays 1.d3, releasing the c1-bishop and making only a modest claim on the centre, and usually heads for an Indian-type set-up with g3, Nf3, Bg2 and short castling, then strikes with e4 (or c4). It generally transposes to the King's Indian Attack (after g3 and Nf3), the Closed Sicilian, or to colour-reversed Pirc, Modern or Philidor structures, so Black can occupy the centre with ...d5 and ...e5 and develop comfortably. Chess Doctrine calls it objectively passive: Black equalises quickly, theory load is minimal, and it is mainly a surprise weapon in rapid and blitz. Kasparov chose it against Deep Blue in 1997 (Game 3) to avoid computer preparation, but at grandmaster level it remains the exception. The play is closed and manoeuvring."
+    }
+  }
+]

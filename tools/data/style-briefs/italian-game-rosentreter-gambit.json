@@ -1,0 +1,46 @@
+{
+  "slug": "italian-game-rosentreter-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Rosentreter Gambit",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2BPP3/5N2/PPP2PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "italian-game-giuoco-piano",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays 4.d4 at once, offering a pawn for the centre and open lines against the Giuoco Piano set-up. Black can take with 4...exd4 or 4...Bxd4, and White hopes for a quick development with O-O, c3 and e5 along with pressure on f7. I am not sure of the best lines, but accurate defence appears to leave Black comfortable, as with the Scotch Gambit family.",
+  "white_ideas": [
+    { "idea": "Open the centre with d4, then play O-O or Ng5/Bxf7 ideas for an attack." },
+    { "idea": "Use the c4 bishop on the f7 diagonal and develop quickly." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on d4, return the pawn or retreat with ...Bb6 and develop ...Nf6 and ...d6." },
+    { "idea": "Neutralise the pin on f7 and consolidate." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after the d-pawn exchange, with White a pawn down for development." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Sacrificial and open; both sides can go wrong with tactics around f7 and d4." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can take on d4 and keep the pawn for a time, though tactical lines may make it hard." },
+    "soundness": { "notes": "Considered inferior to the Evans Gambit and Scotch lines; likely dubious for White but I am unsure." },
+    "structure": { "notes": "Open lines after the central pawns are exchanged." },
+    "approach": { "notes": "A rare gambit, seldom seen among strong players." },
+    "level": { "reason": "memory", "notes": "Needs concrete knowledge of the tactics; unsound lines are not beginner." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "4...Bxd4", "moves": "4... Bxd4 5. Nxd4 exd4 6. Bxf7+", "how": "White gives more material for a king hunt." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "White gambits for open lines and an attack on f7." },
+    "gambit": { "value": "white", "confidence": 0.7, "reason": "White offers the d-pawn for development." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.5, "reason": "A rarely played gambit that Black can probably meet comfortably." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Central pawns come off and lines are open." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players seldom use it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "A dubious gambit is never beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White's bishop on c4 and quick development aim at f7." }
+  }
+}

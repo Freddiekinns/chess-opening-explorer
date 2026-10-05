@@ -3,13 +3,34 @@ const { getOpenings } = require('./opening-data-service');
 
 // Import search modules
 const { 
-  SEMANTIC_MAPPINGS, 
   STYLE_CATEGORIES, 
+  STYLE_AXES,
   FUSE_OPTIONS 
 } = require('./search/SearchConstants');
+const styleTags = require('./style-tags-service');
 const QueryUtils = require('./search/QueryUtils');
 const QueryIntentParser = require('./search/QueryIntentParser');
 const { NameIndex } = require('./search/NameIndex');
+
+/**
+ * Whether an opening's style tags (api/data/style-tags.json) say what a style
+ * word means, per STYLE_AXES. A position with no tags matches no style.
+ */
+function matchesStyle(opening, word) {
+  const spec = STYLE_AXES[word];
+  const axes = spec && styleTags.axesFor(opening.fen);
+  if (!axes) return false;
+  return Object.entries(spec).some(([axis, values]) =>
+    [].concat(axes[axis]).some(value => values.includes(value))
+  );
+}
+
+/** The shown words and plan labels, for Fuse's typo net. */
+function styleWords(fen) {
+  const profile = styleTags.profileFor(fen);
+  if (!profile) return '';
+  return [...profile.words, ...profile.plans].map(w => w.label).join(' ');
+}
 
 class SearchService {
   constructor() {
@@ -81,7 +102,7 @@ class SearchService {
       // Prepare search index with flattened data
       const searchIndex = this.openings.map(opening => ({
         ...opening,
-        style_tags: opening.analysis_json?.style_tags?.join(' ') || '',
+        style_tags: styleWords(opening.fen),
         description: opening.analysis_json?.description || ''
       }));
       
@@ -488,20 +509,7 @@ class SearchService {
    */
   filterBySemanticStyle(openings, styles) {
     if (!styles || styles.length === 0) return openings;
-    
-    return openings.filter(opening => {
-      const styleTags = opening.analysis_json?.style_tags || [];
-      const tacticalTags = opening.analysis_json?.tactical_tags || [];
-      const positionalTags = opening.analysis_json?.positional_tags || [];
-      const allTags = [...styleTags, ...tacticalTags, ...positionalTags].map(tag => tag.toLowerCase());
-      
-      return styles.some(style => {
-        const semanticMappings = SEMANTIC_MAPPINGS[style] || [style];
-        return semanticMappings.some(mapping => 
-          allTags.some(tag => tag.includes(mapping.toLowerCase()))
-        );
-      });
-    });
+    return openings.filter(opening => styles.some(style => matchesStyle(opening, style)));
   }
 
   /**
@@ -566,12 +574,7 @@ class SearchService {
   filterByComplexity(openings, complexity) {
     if (!complexity) return openings;
     
-    const targetComplexity = complexity.charAt(0).toUpperCase() + complexity.slice(1);
-    
-    return openings.filter(opening => {
-      const openingComplexity = opening.analysis_json?.complexity;
-      return openingComplexity === targetComplexity;
-    });
+    return openings.filter(opening => matchesStyle(opening, complexity.toLowerCase()));
   }
 
   /**
@@ -606,19 +609,13 @@ class SearchService {
       
       // Boost for exact style matches
       if (queryIntent.style && queryIntent.style.length > 0) {
-        const styleTags = opening.analysis_json?.style_tags || [];
-        const exactMatches = queryIntent.style.filter(style =>
-          styleTags.some(tag => tag.toLowerCase().includes(style.toLowerCase()))
-        );
+        const exactMatches = queryIntent.style.filter(style => matchesStyle(opening, style));
         score += exactMatches.length * 0.2;
       }
       
       // Boost for complexity matches
-      if (queryIntent.complexity) {
-        const targetComplexity = queryIntent.complexity.charAt(0).toUpperCase() + queryIntent.complexity.slice(1);
-        if (opening.analysis_json?.complexity === targetComplexity) {
-          score += 0.3;
-        }
+      if (queryIntent.complexity && matchesStyle(opening, queryIntent.complexity.toLowerCase())) {
+        score += 0.3;
       }
       
       // Boost for move pattern matches

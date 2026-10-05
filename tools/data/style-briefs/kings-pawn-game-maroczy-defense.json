@@ -1,0 +1,48 @@
+{
+  "slug": "kings-pawn-game-maroczy-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Maróczy Defense",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "The position is the Philidor Defence reached by a different move order; 3.Nf3 transposes. Black holds e5 with ...Nd7, ...Ngf6 and ...Be7 in a solid, cramped set-up (Hanham), or exchanges on d4. White's space edge gives chances for a kingside attack, while 3.dxe5 dxe5 4.Qxd8+ Kxd8 leads to a queenless middlegame with the Black king unable to castle but safe. Black's light-squared bishop is passive.",
+  "white_ideas": [
+    { "idea": "3.Nf3 and Bc4 or Bc4/Ng5 aiming at f7 and using the space edge" },
+    { "idea": "Queen exchange on d8 for an ending with a slight edge" },
+    { "idea": "Build a centre with Nc3, Be3 and Qd2 for a kingside attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the d6 and e5 chain with ...Nd7, ...Ngf6, ...Be7" },
+    { "idea": "Exchange on d4 and play ...Nf6 for an open position" },
+    { "idea": "Break with ...d5 or ...c6 when ready" }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor/Hanham: Black pawns d6, e5 against White pawns d4, e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's set-up is passive but hard to break down; White has few direct ways to win quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; slightly passive." },
+    "structure": { "notes": "d4/e4 against d6/e5 with tension; not locked." },
+    "approach": { "notes": "Standard though uncommon, a respectable Black choice." },
+    "level": { "reason": "understanding", "notes": "Plans in the Hanham structure rather than memory." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop"],
+  "sublines_that_differ": [
+    { "name": "3.dxe5 dxe5 4.Qxd8+", "moves": "1. e4 d6 2. d4 e5 3. dxe5 dxe5 4. Qxd8+", "how": "Queen trade, a quiet middlegame where Black loses castling but is solid." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Philidor-like set-up that is hard to crack." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised Philidor set-up." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre in tension; may close or open." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Respectable though less common." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Passive structures need understanding." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White has space while Black's c8 bishop is hemmed in." }
+  }
+}

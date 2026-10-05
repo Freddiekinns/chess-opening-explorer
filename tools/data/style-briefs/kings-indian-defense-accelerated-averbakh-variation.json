@@ -1,0 +1,95 @@
+{
+  "slug": "kings-indian-defense-accelerated-averbakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Accelerated Averbakh Variation",
+    "eco": "E70",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Bg5",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/6B1/2PPP3/2N5/PP3PPP/R2QKBNR b KQkq - 1 5"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays Bg5 before developing the king's knight, a quieter route into the Averbakh set-up. Black usually castles and meets 6.Qd2 with ...c5 or ...Nc6 and ...e5, or plays 5...h6 and the weakening ...g5 push. White keeps a space edge and avoids the Mar del Plata race, while Black seeks counterplay on the queenside and in the centre. Play is positional with a tense centre.",
+  "white_ideas": [
+    { "idea": "Pin the knight with Bg5, Qd2 and Nf3 and keep the space edge." },
+    { "idea": "Avoid the Mar del Plata race and play for the centre with d5 or Nge2." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...c5 or ...e5 against the centre once developed." },
+    { "idea": "Play ...h6 and ...g5 to exchange the Bg5, or ...Nc6 with queenside play." }
+  ],
+  "typical_structures": [
+    { "structure": "White c4/d4/e4 centre against Black's ...c5 (Benoni-like) or ...e5 (King's Indian) breaks." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quieter than the Classical or Mar del Plata, but Black still has counterplay."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "The centre is in tension and may close with d5 or open with ...c5 or ...e5."
+    },
+    "approach": {
+      "notes": "A recognised branch played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are more important than the theory but need positional feel."
+    }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [
+    {
+      "name": "5...h6",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Bg5 h6",
+      "how": "Black asks the bishop and may play ...g5, with a different, sharper character."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quieter than most KID lines, though counterplay exists."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A mainstream line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre could close with d5 or open with ...c5 and ...e5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A normal KID branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are subtle but there is less theory than in the classical lines."
+    },
+    "plans": {
+      "value": ["space_advantage", "hypermodern_centre"],
+      "reason": "White holds the centre and Black counterattacks it from the flanks."
+    }
+  }
+}

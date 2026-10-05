@@ -1,0 +1,46 @@
+{
+  "slug": "barnes-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Barnes Defense",
+    "eco": "B00",
+    "moves": "1. e4 f6",
+    "fen": "rnbqkbnr/ppppp1pp/5p2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays 1...f6, weakening the king's diagonal and blocking the g8-knight for no clear gain, hoping for ...e5 and ...Nc6 with a solid centre. White plays 2.d4 and takes a big centre, with ideas like Nf3, Bd3, c4 and Qh5+ tricks. White is simply better and Black has to avoid early traps.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4, Nf3, c4 and Bd3, and exploit the weakened e8-h5 diagonal." },
+    { "idea": "Watch for Qh5+ if Black plays ...g6 or ...e5 carelessly." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...e5 or ...Nc6 and ...d5 to challenge the centre." },
+    { "idea": "Develop ...Nh6 or ...Nc6 and castle quickly." }
+  ],
+  "typical_structures": [
+    { "structure": "White's e4-d4 centre against Black's f6 pawn and a weakened king." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's king is weakened and the position is loose, with tactics such as Qh5+ and early e5 breaks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line 2.d4." },
+    "soundness": { "notes": "Strong players regard it as a poor, near-refuted move that costs a tempo and the kingside." },
+    "structure": { "notes": "The centre quickly opens after d4 and ...e5 exchanges." },
+    "approach": { "notes": "Almost never played by strong players." },
+    "level": { "reason": "neither", "notes": "No theory to speak of but a dubious line is never Beginner." }
+  },
+  "plan_phrases": ["space advantage", "attack on the weakened king"],
+  "sublines_that_differ": [
+    { "name": "2.d4 e5 3.dxe5 fxe5 4.Qh5+", "moves": "1. e4 f6 2. d4 e5 3. dxe5 fxe5 4. Qh5+", "how": "A tactical trap line in which White wins material or the initiative." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Black's weakened king means early tactics and one slip can lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given deliberately." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.85, "reason": "Strong players consider it poor, scoring through traps." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "The centre opens quickly after d4 and ...e5." },
+    "approach": { "value": "offbeat", "confidence": 0.95, "reason": "Strong players essentially never play it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "A dubious line is never Beginner and there is nothing to memorise." },
+    "plans": { "value": ["lead_in_development"], "reason": "White's task is to develop quickly and exploit the loose king." }
+  }
+}

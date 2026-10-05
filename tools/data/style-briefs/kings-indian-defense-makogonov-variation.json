@@ -1,0 +1,47 @@
+{
+  "slug": "kings-indian-defense-makogonov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Makogonov Variation",
+    "eco": "E71",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. h3",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N4P/PP3PP1/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the useful waiting move h3 to take g4 from Black's pieces and prepare Be3, Nf3 and Bd3 without allowing ...Bg4 or ...Ng4. After 5...O-O 6.Be3 Black usually plays ...e5, and the centre often locks with d5 followed by the usual opposite-wing play, or White keeps the tension. It is a flexible and less forcing anti-KID line than the Sämisch or Four Pawns.",
+  "white_ideas": [
+    { "idea": "Be3, Nf3, Bd3 and castle with solid central control, then d5 and c5 or queenside play." },
+    { "idea": "Stop ...Ng4 and ...Bg4 pins and keep the option of Bg5 against ...c5 lines." }
+  ],
+  "black_ideas": [
+    { "idea": "...O-O and ...e5, then ...Nbd7 or ...exd4 and ...Re8 for central play." },
+    { "idea": "After d5, ...Ne8 and ...f5 for a kingside pawn storm." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian locked centre after d5 with White on the queenside and Black on the kingside." },
+    { "structure": "Central tension d4 against e5, with a bishop on e3 and pawn on h3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "KID with the centre often locking and flank play on opposite wings; both sides can attack, though White's version is more prophylactic." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound and respectable for both sides." },
+    "structure": { "notes": "Main plan is ...e5 then d5, which locks the centre." },
+    "approach": { "notes": "Played by strong players against the KID; standard." },
+    "level": { "reason": "understanding", "notes": "KID plans are hard to time and judge, although theory here is lighter than the Classical." }
+  },
+  "plan_phrases": ["Kingside attack", "Space advantage"],
+  "sublines_that_differ": [
+    { "name": "6.Bg5 c5 7.d5", "moves": "5...O-O 6.Bg5 c5 7.d5", "how": "Benoni-like structure, with more forcing play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "KID locked centre leads to attacks on opposite wings." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respectable KID branch." },
+    "structure": { "value": "closed", "confidence": 0.6, "reason": "d5 usually locks the centre after ...e5." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A regular anti-KID line at strong level." },
+    "level": { "value": "advanced", "why": "understanding", "confidence": 0.5, "reason": "Black needs deep KID plan understanding for the pawn-storm race." },
+    "plans": { "value": ["kingside_attack", "space_advantage"], "reason": "Black storms the kingside while White takes space." }
+  }
+}

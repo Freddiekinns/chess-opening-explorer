@@ -1,0 +1,46 @@
+{
+  "slug": "slav-defense-quiet-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Quiet Variation",
+    "eco": "D11",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "slav-defense-modern-line",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White supports d4 with e3 and develops quietly, avoiding the sharp ...dxc4 theory. Black develops the light bishop with 4...Bf5 (Schallopp) or 4...Bg4, then plays ...e6, ...Nbd7 and ...Be7 with a solid centre. Play is slow and manoeuvring; White seeks a small edge, Black a solid hold and a later ...c5 or ...e5.",
+  "white_ideas": [
+    { "idea": "Nc3, Bd3 or Nh4 to trade Black's light bishop." },
+    { "idea": "Queenside play with cxd5, Qb3 or a minority attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the light bishop outside the chain first, then ...e6 and ...Nbd7." },
+    { "idea": "Break with ...c5 or ...dxc4 and ...e5 to equalise." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav triangle c6/d5/e6 with tension on c4/d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, sound lines where Black has few weaknesses." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension, not yet decided." },
+    "approach": { "notes": "Standard Slav line." },
+    "level": { "reason": "understanding", "notes": "Clear set-ups, plans over memory." }
+  },
+  "plan_phrases": ["bishop outside the pawn chain", "minority attack"],
+  "sublines_that_differ": [
+    { "name": "Pin Defense", "moves": "4... Bg4", "how": "Pins the knight, slightly more active." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Slav is hard to break down and play is steady." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre tension c4/d5 remains." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream Slav line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans matter more than memory." },
+    "plans": { "value": [], "reason": "No single recognisable plan from the list." }
+  }
+}

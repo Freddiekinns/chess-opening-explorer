@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-nyezhmetdinov-rossolimo-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack",
+    "eco": "B30",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+  },
+  "parent": "sicilian-defense-old-sicilian",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins the knight and often takes on c6 to double Black's pawns, avoiding the heavy Open Sicilian theory. Against 3...g6 White castles and plays Re1, c3 and d4 or Bxc6 followed by d3 and h3; against 3...e6 White plays Bxc6 and d3 or castles with Re1. The play is strategic: White wants a quiet space edge and pressure on e5 and the queenside, Black has the bishop pair and counterplay.",
+  "white_ideas": [
+    { "idea": "Trade on c6 to double Black's pawns, then build with d3, Re1 and c3/d4." },
+    { "idea": "Play on e5 and the long diagonal, with a quiet fianchetto-style game." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7 and attack e4 and the centre." },
+    { "idea": "Use the bishop pair and the b-file after ...bxc6 or ...dxc6." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian asymmetry with Black doubled c-pawns after Bxc6 and a half-open file for Black." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow strategic play, with fewer sharp theory races. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "Every Sicilian is Semi-open per the taxonomy." },
+    "approach": { "notes": "An anti-Sicilian, played by many strong players. Standard." },
+    "level": { "reason": "understanding", "notes": "Positional and low theory, Intermediate." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "pressure on e5"],
+  "sublines_that_differ": [
+    { "name": "Fianchetto Variation", "moves": "1. e4 c5 2. Nf3 Nc6 3. Bb5 g6", "how": "Black plays ...Bg7 and often avoids ...e6, making play sharper after 4.Bxc6 dxc6 5.h3." },
+    { "name": "3...e6", "moves": "1. e4 c5 2. Nf3 Nc6 3. Bb5 e6 4. Bxc6", "how": "Black gets doubled c-pawns with the bishop pair, in a solid structure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Strategic with fewer forcing lines than the Open Sicilian." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Popular at the top." },
+    "structure": { "value": "semi_open", "confidence": 0.75, "reason": "A Sicilian with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "An anti-Sicilian by choice, like the Alapin." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans over theory." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "Bxc6 doubles Black's pawns and gives Black the bishop pair." }
+  }
+}

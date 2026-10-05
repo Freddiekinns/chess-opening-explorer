@@ -1,0 +1,121 @@
+{
+  "slug": "queens-gambit-declined-normal-defense",
+  "root": {
+    "name": "Queen's Gambit Declined: Normal Defense",
+    "eco": "D35",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Gambit Declined, 3...Nf6 Knights (D35)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/queens-gambit-declined-1-d4-d5-2-c4-e6-3-nc3-nf6",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "A Comprehensive Guide to the Queen's Gambit Declined 1.d4 d5 2.c4 e6",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/opening/queens-gambit-declined/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Chess Opening Basics: The Ragozin Defence",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/chess-opening-basics-the-ragozin-defence/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the QGD 3.Nc3 Nf6, Ragozin and Semi-Slav Botvinnik (snippets only)",
+      "publisher": "Wikipedia and Chessable via web search",
+      "url": "https://en.wikipedia.org/wiki/Semi-Slav_Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 3.Nc3 with the natural 3...Nf6, defending d5 and eyeing e4. This is a crossroads in which White chooses between 4.Bg5 (the pin and the classical Orthodox, Lasker, Tartakower and Cambridge Springs lines), 4.cxd5 (the Exchange and Carlsbad structure, dominant at 2500 level) and 4.Nf3, which keeps options open and lets Black pick a QGD, Ragozin (...Bb4) or Semi-Slav (...c6) set-up (s1, s4). The QGD systems are solid with straightforward plans: ...Nf6, ...Be7, ...O-O against most lines, and the ...c5 break (s2). White's typical plans are the minority attack and e4 expansion (s1). The Semi-Slav moves 4.Nf3 c6 5.Bg5 (Botvinnik) are outside the QGD in character, very forcing (s4). The root as a whole is the Orthodox QGD family and its transpositions. The site's current text for this root is a copy of the parent QGD text.",
+  "white_ideas": [
+    { "idea": "Minority attack with b4-b5 in the Carlsbad structure after 4.cxd5 exd5", "sources": ["s1", "s2"] },
+    { "idea": "Pin the knight with 4.Bg5 before Black can play ...Be7; Orthodox, Lasker, Tartakower and Cambridge Springs follow", "sources": ["s1", "s4"] },
+    { "idea": "Central expansion with e4 after Nf3 and e3, or kingside assaults after e2-e4", "sources": ["s1"] },
+    { "idea": "4.Nf3 for maximum flexibility; against ...c6 reach Anti-Meran or Botvinnik with 5.Bg5", "sources": ["s1", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Simple set-up ...Nf6, ...Be7, ...O-O against most White systems with early castling", "sources": ["s2"] },
+    { "idea": "Liberating ...c5 break to gain space and free the position", "sources": ["s2"] },
+    { "idea": "Activate the c8 bishop: Tartakower ...b6 (...Bb7), or ...dxc4 and ...e5, or ...Nbd7/...c6 routes", "sources": ["s2"] },
+    { "idea": "Ragozin ...Bb4: a blend of QGD and Nimzo-Indian with ...c5, ...Nc6 and ...dxc4 for winning chances", "sources": ["s3"] },
+    { "idea": "Lasker ...Ne4 to exchange pieces", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad after cxd5 exd5: White c3/d4 and minority attack vs Black c6/d5", "sources": ["s1", "s2"] },
+    { "structure": "Orthodox QGD: pawns on c4/d4 vs d5/e6 with the centre tense and closed, c8 bishop undeveloped", "sources": ["s2"] },
+    { "structure": "Ragozin: Black pins Nc3, piece play and ...dxc4 with ...c5 break", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as a solid set-up that has been the backbone of grandmaster repertoires for a century (s1). Modern Chess says it offers both solid positional lines and sharp, complex theoretical variations (s2). The Orthodox and Exchange lines are strategic, steady. Ragozin is more active (s3). The Semi-Slav branches under 4.Nf3 c6 are much sharper (Botvinnik, 'one of the most forcing and tactical openings in all of chess') (s4), but those belong to a different opening. Main line: Solid.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; Black has simply declined the c-pawn.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound; the backbone of grandmaster repertoires (s1). White keeps a small edge in the statistics (50.9% wins) that narrows to 46.7% at 2500 (s1).",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Centre tense or closed: d5 and e6 against c4/d4 with pawns staying on until ...c5 or e4. The Carlsbad is semi-closed. Closed matches the taxonomy's QGD example. Ragozin and the ...dxc4 lines open the centre more.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "A main-line opening, standard. At 2500 the Exchange dominates (55.2%) and 4.Bg5 falls from 33.7% at 1600 to 17.1% (s1). Not a system, although Black's ...Nf6, ...Be7, ...O-O set-up works against most lines (s2).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Modern Chess calls basic plans straightforward and easy; the simple set-up reduces theory (s2). Chessiverse rates the theory load high at master level, entropy falling from 2.66 at 1200 to 1.64 at 2500 (s1). The Ragozin has modest theory but tricky move orders (s3). Black studies it. Intermediate.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "minority attack",
+    "Carlsbad structure",
+    "...c5 break",
+    "c8 bishop problem",
+    "Lasker simplification",
+    "pin on Nf6",
+    "e4 break",
+    "Ragozin pin"
+  ],
+  "sublines_that_differ": [
+    { "name": "Semi-Slav Botvinnik (Anti-Meran)", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. Bg5", "how": "Very forcing and tactical; a different opening in character, with 8.5M games in the subtree" },
+    { "name": "Semi-Slav 5.e3", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. e3", "how": "Reaches the Meran or Semi-Slav; sharper and more theory-heavy than the Orthodox" },
+    { "name": "Ragozin", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 Bb4", "how": "Active; pins the knight, blend of QGD and Nimzo, aimed at winning chances" },
+    { "name": "Cambridge Springs", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. Nf3 c6 6. e3 Qa5", "how": "Tactical pin-breaking trap line" },
+    { "name": "Exchange / Carlsbad", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 exd5", "how": "Slower, plan-based, minority attack" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Queen's Gambit Declined is a classical and robust defence, one of the most reliable responses to 1.d4", "verdict": "supported", "note": "Backbone of grandmaster repertoires for a century.", "sources": ["s1"] },
+      { "claim": "It aims to create a solid central pawn structure with long-term planning ahead of immediate tactics", "verdict": "supported", "note": "Accurate for the Orthodox and Exchange lines. Not for the Semi-Slav Botvinnik transposition in this root's subtree.", "sources": ["s1", "s2", "s4"] },
+      { "claim": "Ideal for patient players who understand pawn breaks and manoeuvring", "verdict": "supported", "note": "Consistent with straightforward plans.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "For White: the minority attack (b4-b5) to create a weakness on the queenside", "verdict": "supported", "note": "Applies mainly after 4.cxd5 exd5.", "sources": ["s1", "s2"] },
+      { "claim": "For Black: a liberating pawn break, either ...c5 or ...e5", "verdict": "supported", "note": "...c5 is the key break; ...e5 is available after ...dxc4 and in some set-ups.", "sources": ["s2"] },
+      { "claim": "Black's light-squared bishop is a key battle, often developed via ...b6 and ...Bb7", "verdict": "supported", "note": "Tartakower and other routes.", "sources": ["s2"] },
+      { "claim": "White often creates an isolated queen's pawn on d5, which Black uses as a source of dynamic potential and attacking chances", "verdict": "wrong", "note": "The IQP on d5 is not a standard White plan in the Normal Defense. An isolated d-pawn arises when Black plays ...c5 and exchanges (Tarrasch-style), and the IQP would belong to Black or White depending on the line. The Carlsbad structure is not an IQP structure. Own understanding of the main lines.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

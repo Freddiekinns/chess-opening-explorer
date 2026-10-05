@@ -1,0 +1,46 @@
+{
+  "slug": "st-george-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "St. George Defense",
+    "eco": "B00",
+    "moves": "1. e4 a6",
+    "fen": "rnbqkbnr/1ppppppp/p7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays ...a6 and ...b5, then ...Bb7 and ...Nf6, a Modern-style set-up that lets White build a big centre and attacks it later. After 2.d4 b5 3.Nf3 Bb7 4.Bd3 Nf6 5.Qe2 e6 White has more space; Black hopes to undermine it with ...c5 or ...Nc6. Few strong players choose it, though Miles beat Karpov with it.",
+  "white_ideas": [
+    { "idea": "Build the d4/e4 centre with Nf3, Bd3, Qe2 and then a4 or c4." },
+    { "idea": "Attack the b5 pawn and the queenside with a4." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the queen's bishop and undermine White's centre with ...c5 or ...e6/...d6 and ...Nbd7." },
+    { "idea": "Provoke White into overextending." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4 centre against Black's flank pieces and ...a6/...b5 pawns." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet Modern-style set-up where White has space; not known as forcing. Unsure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Playable but inferior; strong players do not consider it refuted." },
+    "structure": { "notes": "Centre not fixed, Black attacks it later." },
+    "approach": { "notes": "Strong players seldom choose it." },
+    "level": { "reason": "understanding", "notes": "Needs good understanding of how to undermine a centre." }
+  },
+  "plan_phrases": ["hypermodern centre", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Basman's Creepy-Crawly", "moves": "1. e4 a6 2. d4 h6", "how": "Even more eccentric pawn moves." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Modern-style set-up, neither forcing nor especially solid." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Inferior but not refuted; strong players do not call it unsound." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre stays undecided while Black waits to attack it." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom choose it; it is chosen mainly for surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Needs understanding of how to undermine a big centre." },
+    "plans": { "value": ["hypermodern_centre", "queenside_expansion"], "reason": "Black lets White build a centre and then attacks it." }
+  }
+}

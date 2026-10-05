@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-hyperaccelerated-fianchetto",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Hyperaccelerated Fianchetto",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6 3. d4",
+    "fen": "rnbqkbnr/pp1ppp1p/6p1/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-dragon",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White opens the centre at once. After 3...cxd4 4.Nxd4 Bg7 the game is an Accelerated Dragon without ...Nc6 yet; Black can play ...Nc6 or ...Nf6, while White can choose the Maroczy Bind with c4. Black aims for queenside counterplay and the long diagonal; White for space and the bind.",
+  "white_ideas": [
+    { "idea": "5.c4 Maroczy Bind clamping d5 and b5." },
+    { "idea": "Nc3, Be3 and Qd2 in Dragon-like set-ups with castling long." }
+  ],
+  "black_ideas": [
+    { "idea": "...Bg7 and ...Nc6 hitting the d4 knight, then ...d6 and ...Nf6." },
+    { "idea": "Break with ...d5 or ...b5 to relieve the bind." }
+  ],
+  "typical_structures": [
+    { "structure": "Maroczy Bind with c4/e4 against ...d6/...g6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Accelerated Dragon family; Maroczy lines are steady, Yugoslav-like lines are sharper." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Sicilian asymmetry with half-open c-file." },
+    "approach": { "notes": "Standard Dragon family." },
+    "level": { "reason": "understanding", "notes": "Maroczy structures need care; the move order adds some memory." }
+  },
+  "plan_phrases": ["fianchetto", "Maroczy Bind"],
+  "sublines_that_differ": [
+    { "name": "3...Bg7", "moves": "1. e4 c5 2. Nf3 g6 3. d4 Bg7", "how": "Declines to trade, keeps ...cxd4 for later." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Accelerated Dragon family with Maroczy or open play, not a known forcing race." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully respectable." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Sicilian asymmetry with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Maroczy and Dragon structures need understanding." },
+    "plans": { "value": ["fianchetto", "maroczy_bind"], "reason": "Black fianchettoes and White often plays c4." }
+  }
+}

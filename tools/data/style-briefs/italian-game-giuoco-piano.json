@@ -1,0 +1,110 @@
+{
+  "slug": "italian-game-giuoco-piano",
+  "root": {
+    "name": "Italian Game: Giuoco Piano",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Giuoco Piano",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giuoco_Piano",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Italian Game: Giuoco Piano",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/giuoco-piano",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Italian Game / Giuoco Piano search snippets (365chess, Wikibooks, Evans Gambit on Wikipedia)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.365chess.com/chess-openings/Italian-Game",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Both sides develop the king's bishop to its active diagonal (Bc4 and ...Bc5), eyeing f7/f2. White's choice at move 4 decides the character. Slow lines are 4.c3 followed by d3 or d4 and the modern Giuoco Pianissimo with d3 (Re1, Nbd2-f1-g3, a4, h3): White postpones any central clash and the game is a patient manoeuvring battle. The sharper lines are the classical 4.c3 Nf6 5.d4 (Greco's Attack, Moller Attack), where White sacrifices a pawn for initiative, and the Evans Gambit 4.b4, a pawn for rapid development and an attack on f7. The Three Knights 4.Nc3 and 4.O-O are also main subtree moves. Black mirrors development, challenges the centre with ...d5, and has sufficient defensive resources. It is a respected choice used by Karpov and, as a Ruy Lopez sidestep, by Carlsen.",
+  "white_ideas": [
+    { "idea": "c3 followed by d4 to seize central domination", "sources": ["s1", "s2"] },
+    { "idea": "Giuoco Pianissimo: d3, Re1, Nbd2-f1-g3, a4, h3 for patient manoeuvring and space before committing the centre", "sources": ["s1", "s2"] },
+    { "idea": "Evans Gambit 4.b4: pawn for rapid development and attack on f7", "sources": ["s2", "s3"] },
+    { "idea": "Greco's Attack and Moller Attack: sacrifices for initiative after 4.c3 Nf6 5.d4", "sources": ["s1", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror White's development and keep the centre contested", "sources": ["s1"] },
+    { "idea": "Break with ...d5 to challenge White's centre", "sources": ["s1"] },
+    { "idea": "Seek equality through careful defence; Black has sufficient resources even in forcing lines", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Classical lines: White d4/e4 against Black e5, central tension", "sources": ["s1"] },
+    { "structure": "Pianissimo: restrained build-up with d3, closed-ish centre and slow manoeuvring", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: fundamentally quiet and positional despite sharp classical lines. Chessiverse: slow positional manoeuvring over tactical fireworks; the Evans Gambit and immediate d4 sacrifices are the sharp options. Main modern practice (Pianissimo) is low-risk for both sides.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main lines involve no sacrifice; the Evans Gambit (4.b4) and Greco/Moller 4.c3 5.d4 lines give a pawn but are sublines. Some subtree names (Greco, Moller) show gambit-like play.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Theoretically sound for both sides; Black has sufficient defensive resources even in forcing variations and White gets no overwhelming advantage.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Central tension e4 vs e5; Pianissimo delays d4 so the centre stays closed/semi-closed for a long time. Classical lines open the centre with d4. Mix of closed and open, but main modern practice keeps pawns on.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A named opening branch, not a universal set-up. Mainstream, used by Karpov (1981 match with Korchnoi) and by Carlsen as a Ruy Lopez sidestep; at 2500+ Elo 4.c3 appears in 48.4% of positions.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse: theory burden is manageable for club players, with pattern recognition and positional judgement more valuable than memorisation; Carlsen uses it where deep prep matters less than understanding. Sharper lines need more knowledge.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "central domination with c3 and d4",
+    "slow manoeuvring",
+    "knight reroute Nbd2-f1-g3",
+    "pressure on f7",
+    "...d5 break",
+    "delayed d4",
+    "Ruy Lopez sidestep"
+  ],
+  "sublines_that_differ": [
+    { "name": "Evans Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4", "how": "White pawn sacrifice for development and attack; sharp." },
+    { "name": "Greco's Attack / Moller Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O", "how": "Forcing, material sacrifices for initiative; much sharper than the quiet lines." },
+    { "name": "Giuoco Pianissimo", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d3", "how": "Slow manoeuvring game." },
+    { "name": "Three Knights 4.Nc3", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Nc3", "how": "Often transposes to Four Knights-type structures (own understanding)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Giuoco Piano is Italian for 'Quiet Game'", "verdict": "supported", "note": "Name translation confirmed.", "sources": ["s1", "s2"] },
+      { "claim": "It is one of the oldest and most classical chess openings, embodying rapid development and central control", "verdict": "supported", "note": "Classical opening with a long history; Greco-era lines.", "sources": ["s1", "s3"] },
+      { "claim": "While its name suggests a slow strategic battle, it can quickly erupt into sharp, tactical positions depending on White's approach", "verdict": "supported", "note": "Evans, Greco and Moller lines are sharp; Pianissimo is slow.", "sources": ["s1", "s2"] },
+      { "claim": "It is suitable for players building a solid foundation and comfortable with quiet manoeuvring and sudden tactics", "verdict": "supported", "note": "Manageable theory burden for club players per Chessiverse.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: prepare and execute d2-d4, often supported by c2-c3, to seize central space", "verdict": "supported", "note": "Classical plan.", "sources": ["s1", "s2"] },
+      { "claim": "Black: counter in the centre with the ...d5 pawn break", "verdict": "supported", "note": "Challenge the centre with ...d5.", "sources": ["s1"] },
+      { "claim": "White: develop pieces to active squares, maintaining pressure on Black's weak f7-pawn and seeking attacking chances", "verdict": "supported", "note": "f7 is the target in the Evans and Greco lines; Pianissimo is slower.", "sources": ["s2", "s3"] },
+      { "claim": "Black: neutralise the c4 bishop, typically with ...Na5 or by preparing ...a6 and ...b5 for queenside space", "verdict": "unverifiable", "note": "Not found in the sources read for the Giuoco Piano main lines. Own understanding: ...Na5 is common in Evans/Two Knights, while ...a6 and ...Ba7 appear in Pianissimo; ...b5 is less typical.", "sources": []}
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

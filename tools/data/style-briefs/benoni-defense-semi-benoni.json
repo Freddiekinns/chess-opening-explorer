@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense-semi-benoni",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Semi-Benoni",
+    "eco": "A44",
+    "moves": "1. d4 c5 2. d5 e5 3. e4 d6",
+    "fen": "rnbqkbnr/pp3ppp/3p4/2pPp3/4P3/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "A Czech Benoni-style locked centre: White has the space edge with pawns on d5 and e4, and Black holds c5, d6 and e5. Both sides manoeuvre behind the chain, White aiming for Nc3, Nf3, g3 or Bd3 and a kingside f4 break, Black for ...Nf6, ...Be7, ...O-O and a ...Nh5/...f5 or ...b5 break.",
+  "white_ideas": [
+    { "idea": "Develop quietly with Nc3, Nf3, Be2 and O-O, keeping the centre locked and aiming for f4 or b4 breaks." },
+    { "idea": "Use extra space to restrict Black's pieces and press on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the position closed, play ...Be7, ...Nf6, ...O-O and break with ...f5 or ...b5." },
+    { "idea": "Aim for the ...Nd7-f8 regroup and a timely ...Bg5 or ...f5 counter." }
+  ],
+  "typical_structures": [
+    { "structure": "Czech Benoni locked chain: White d5-e4 against Black c5-d6-e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Cramped but robust for Black; pawns are locked and neither side has quick tactical shots." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material sacrifice." },
+    "soundness": { "notes": "A well-known sound defence, though White gets more space." },
+    "structure": { "notes": "The centre locks with pawns on d5/e4 against c5/d6/e5." },
+    "approach": { "notes": "Played by strong players occasionally; not a system." },
+    "level": { "reason": "understanding", "notes": "Locked structure demands patient manoeuvring plans; little forced theory." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "4.Bb5+", "moves": "1. d4 c5 2. d5 e5 3. e4 d6 4. Bb5+", "how": "White inserts the check to disrupt Black's development; slightly different piece placement." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Locked centre is hard to break down and few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Czech Benoni structures are accepted as sound, though passive." },
+    "structure": { "value": "closed", "confidence": 0.85, "reason": "d5/e4 against c5/d6/e5 locks the centre." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Rare at top level but used by strong players; not an offbeat surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Manoeuvring plans in a locked centre, little memorisation." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White has space and Black's light bishop is hemmed in." }
+  }
+}

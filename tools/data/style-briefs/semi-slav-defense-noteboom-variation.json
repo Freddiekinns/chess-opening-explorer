@@ -1,0 +1,95 @@
+{
+  "slug": "semi-slav-defense-noteboom-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Noteboom Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. Nf3 dxc4",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "semi-slav-defense-accelerated-move-order",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes c4 and defends it with ...b5. The main line is 5.a4 Bb4 6.e3 b5 7.Bd2 a5 8.axb5 Bxc3 9.Bxc3 cxb5 10.b3 Bb7 11.bxc4 b4 12.Bb2 Nf6, where the c4 pawn falls but Black gets queenside play and the bishop pair is exchanged for activity. Alternatives such as 5.e4 or 5.Bg5 (the Anti-Noteboom) avoid the pawn grab. Positions are tense and theory-heavy.",
+  "white_ideas": [
+    { "idea": "Break the b5 pawn with a4 and regain c4, often in a position with a bishop pair." },
+    { "idea": "Use the open files and e4 to attack Black's centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold c4 with ...b5 and trade the dark bishop with ...Bb4." },
+    { "idea": "Create queenside play with ...a5, ...Bb7 and ...c5." }
+  ],
+  "typical_structures": [
+    { "structure": "Black queenside pawn chain on b5/c4 against White's d4 and the open a- and b-files." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete play where Black grabs a pawn and White has active compensation; a single slip loses fast."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black holds the pawn only with ...b5 tactics; White often regains it, so it is not a gambit in the main line."
+    },
+    "soundness": {
+      "notes": "A main line of the Semi-Slav; sound for both."
+    },
+    "structure": {
+      "notes": "Tension in the centre with pawns on c4/b5 and half-open files for both."
+    },
+    "approach": {
+      "notes": "A recognised choice at the top level, standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines that must be known."
+    }
+  },
+  "plan_phrases": ["queenside expansion", "bishop pair", "pawn grab"],
+  "sublines_that_differ": [
+    {
+      "name": "Anti-Noteboom",
+      "moves": "5.Bg5 / 5.g3",
+      "how": "White avoids the main theory; different structure and plans."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Forcing and double-edged with long concrete lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Black takes the pawn; not a pawn given by choice and White often regains it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A mainline Semi-Slav."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Half-open files for both while the d4 pawn stays."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played by top players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": ["queenside_expansion"],
+      "reason": "Black's ...b5 and ...a5 expansion is the heart of the line."
+    }
+  }
+}

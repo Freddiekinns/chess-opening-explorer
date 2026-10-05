@@ -134,6 +134,14 @@ load-bearing.
 - **Popularity stats cover all rated Lichess players, not master games.** Label
   UI surfaces accordingly.
 
+- **Style tags come from `api/data/style-tags.json`, not `analysis_json`.** The
+  old LLM fields (`style_tags`, `complexity`, `tactical_tags`…) are still in
+  every ECO record and are wrong in ways that were measured (61% "Advanced",
+  "defensive" on 99% of openings). Read tags through
+  `services/style-tags-service.js`; pages receive them as `style_profile`.
+  `tools/style-tags/export.js` writes the file, and a position it leaves out (a
+  hub such as 1.e4, or a variation not yet classified) shows no tags.
+
 - **Page views are Vercel's, events are PostHog's.** Vercel Web Analytics is on
   (dashboard → Analytics) even though its API answers "Web Analytics not found"
   — a review once reported it disabled on that evidence. Custom events are

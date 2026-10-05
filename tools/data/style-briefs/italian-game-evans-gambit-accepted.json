@@ -1,0 +1,44 @@
+{
+  "slug": "italian-game-evans-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Evans Gambit Accepted",
+    "eco": "C51",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "italian-game-evans-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White has given the b-pawn for time and plays 5.c3 and 6.d4 to build a strong pawn centre while Black's bishop retreats (usually to a5 or e7, or c5 after 5...Ba5 6.d4 d6). White gets a lead in development and attacking chances against f7, while Black can return the pawn at the right moment to get out safely. Both sides need to know the forcing theory.",
+  "white_ideas": [
+    { "idea": "Build a big centre with c3 and d4, hitting the bishop and opening lines." },
+    { "idea": "Use the lead in development and Bc4 against f7 for a kingside attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Retreat the bishop to a5/e7 and return the pawn with ...d6 and ...Bb6 or ...d5." },
+    { "idea": "Neutralise the centre with ...Nf6, ...O-O and a timely ...d5 (Lasker or Pierce defence)." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4 and e4 against Black's e5, d6 centre; open lines after exchanges." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete, forcing lines; both sides can lose fast if they miss a tactic." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the b-pawn; many lines give it back for safety." },
+    "soundness": { "notes": "Sound; played by strong players, compensation is sufficient." },
+    "structure": { "notes": "Central pawns come off early, open lines for the pieces." },
+    "approach": { "notes": "A respectable gambit, standard and played by top players now and then." },
+    "level": { "reason": "memory", "notes": "Needs forcing theory; still approachable, so intermediate." }
+  },
+  "plan_phrases": ["lead in development", "central pawn majority", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Forcing gambit lines where both sides take risks." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives the b-pawn for development, anchor case." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Anchor case: playable and not refuted." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open lines early with the d4 break." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Respectable gambit used by strong players now and then." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Forcing theory but a familiar attacking plan." },
+    "plans": { "value": ["lead_in_development", "central_pawn_majority", "kingside_attack"], "reason": "Pawn sacrificed for development and a big centre." }
+  }
+}

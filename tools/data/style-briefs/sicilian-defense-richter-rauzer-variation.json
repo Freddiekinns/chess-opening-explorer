@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-richter-rauzer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Richter-Rauzer Variation",
+    "eco": "B60",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5",
+    "fen": "r1bqkb1r/pp2pppp/2np1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R b KQkq - 4 6"
+  },
+  "parent": "sicilian-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins the f6 knight with 6.Bg5 to threaten Nxc6 and Bxf6 against Black's structure. The main line goes 6...e6 7.Qd2 and then ...a6 or ...Be7, and White usually castles long while Black castles short or long, leading to attacks on opposite wings with White's kingside pawn storm (f4, g4) against Black's counterplay on the c-file and queenside.",
+  "white_ideas": [
+    { "idea": "Castle long, play f4 and g4-g5 for a kingside pawn storm." },
+    { "idea": "Use the Bg5 pin and Nxc6 to disrupt Black's pieces and gain the bishop pair or a lead." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...d5 or ...Nxd4 and ...Qa5 to ease the pin and trade pieces." },
+    { "idea": "Counterattack on the c-file and queenside with ...a6, ...Bd7, ...Rc8 and ...b5." }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian with a half-open c-file for Black and the d4 knight under tension." },
+    { "structure": "Opposite-side castling with White's pawns advancing on the kingside." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing and double-edged, with opposite-side castling and mutual attacks; a wrong move can lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; exchanges only." },
+    "soundness": { "notes": "A mainstream Sicilian line used at the highest level." },
+    "structure": { "notes": "Standard Open Sicilian asymmetry: half-open c-file for Black." },
+    "approach": { "notes": "A normal Sicilian main-line branch." },
+    "level": { "reason": "memory", "notes": "Long forcing theory in the 7...Be7 and 7...a6 lines." }
+  },
+  "plan_phrases": ["opposite-side castling", "kingside attack", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "6...a6", "moves": "6. Bg5 a6", "how": "Sharper Najdorf-like lines with 7.Bxf6 gxf6." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Opposite-side castling attacks and forcing theory." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is sacrificed at the root." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main-line Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.9, "reason": "Open Sicilian asymmetry, c-file pressure." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A normal Sicilian line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.55, "reason": "Long forcing theory." },
+    "plans": { "value": ["opposite_side_castling", "kingside_attack", "half_open_c_file"], "reason": "White storms the kingside while Black uses the c-file." }
+  }
+}

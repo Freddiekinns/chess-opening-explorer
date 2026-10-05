@@ -1,0 +1,50 @@
+{
+  "slug": "nimzo-indian-defense-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Normal Variation",
+    "eco": "E46",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O",
+    "fen": "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/2N1P3/PP3PPP/R1BQKBNR w KQ - 1 5"
+  },
+  "parent": "nimzo-indian-defense-rubinstein-system",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black castles and waits, and White develops with Bd3 and Nf3 (or Ne2) while accepting doubled pawns if Black takes on c3. The main lines are 5.Bd3 d5 6.Nf3 c5 (Gligoric/Classical) and 5.Nf3 d5 (Ragozin-like), with hanging pawns or an isolated d-pawn for White after ...cxd4 exd4, and a battle over e4 and the bishop pair. The play is positional and manoeuvring, with understanding of the pawn structures more important than memorised lines.",
+  "white_ideas": [
+    { "idea": "Develop Bd3, Nf3, O-O and keep the option of a3 to gain the bishop pair" },
+    { "idea": "Meet ...dxc4 with Bxc4 and play for e4 or a central break" },
+    { "idea": "Play for the bishop pair and a big centre if Black trades on c3" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...d5, ...c5 and ...dxc4" },
+    { "idea": "Develop ...Nc6, ...b6 or ...Bxc3 and trade into hanging pawns or a good knight against bishop" },
+    { "idea": "Fight for e4 and use the pin on the knight" }
+  ],
+  "typical_structures": [
+    { "structure": "Hanging pawns on c3/d4 after ...Bxc3 bxc3 and ...cxd4 exd4" },
+    { "structure": "Isolated queen's pawn for White after ...cxd4 exd4" },
+    { "structure": "Doubled c-pawns with the bishop pair against knights" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A classical positional fight in the Rubinstein family; tactical shots exist but nothing forcing; not hard to break either." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound; a top-level main line." },
+    "structure": { "notes": "Centre in tension (d4 vs ...d5/...c5), with exchanges to hanging pawns or IQP; flexible." },
+    "approach": { "notes": "A main-line variation of a major defence." },
+    "level": { "reason": "understanding", "notes": "Pawn-structure plans and piece placement matter more than long forcing lines." }
+  },
+  "plan_phrases": ["hanging pawns", "isolated queen's pawn", "doubled pawns", "bishop pair"],
+  "sublines_that_differ": [
+    { "name": "Gligoric System", "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 c5", "how": "Black strikes with ...c5 and the game turns on hanging pawns or an IQP." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.7, "reason": "Positional and manoeuvring; neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A top-level main line." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Central tension with exchanges deciding between hanging pawns, IQP or doubled pawns." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main-line variation of a major defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Pawn-structure understanding more than memory." },
+    "plans": { "value": ["hanging_pawns", "isolated_queens_pawn", "doubled_pawns"], "reason": "The characteristic pawn structures from ...cxd4 and ...Bxc3." }
+  }
+}

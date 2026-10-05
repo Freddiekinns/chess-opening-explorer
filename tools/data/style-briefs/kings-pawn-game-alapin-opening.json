@@ -1,0 +1,44 @@
+{
+  "slug": "kings-pawn-game-alapin-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Alapin Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Ne2",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPNPPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the king's knight to e2, keeping the f-pawn free for f4 and the knight flexible for g3, c3 or d4. After 2...Nf6 or 2...Nc6, White typically plays Nbc3, g3 and Bg2, or d4, aiming for a calm game with a King's Gambit-style f4 thrust held in reserve. Black can equalise with ...d5 or a solid ...Nc6 and ...Bc5.",
+  "white_ideas": [
+    { "idea": "Develop Ne2 and Nbc3, then fianchetto with g3 and Bg2, or play f4 and d4 for a big centre." },
+    { "idea": "Keep the king's knight flexible and delay committing the f-pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike the centre with ...d5 or develop ...Nc6, ...Bc5 and castle." },
+    { "idea": "Exploit the slightly awkward knight on e2 by occupying the centre quickly." }
+  ],
+  "typical_structures": [
+    { "structure": "e4 against e5 with White's knight on e2 and a possible g3/Bg2 set-up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet developing system with few forced tactics; neither side is pushed hard." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Equal and playable, if passive-looking." },
+    "structure": { "notes": "Centre stays undecided with e4/e5 and later d3 or d4 choices." },
+    "approach": { "notes": "Strong players seldom play 2.Ne2 at all; it is rare and chosen for surprise." },
+    "level": { "reason": "neither", "notes": "No heavy theory; plans are simple." }
+  },
+  "plan_phrases": ["fianchetto", "knight outpost"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but not especially solid or sharp." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Equal playable development." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre undecided; White can still choose f4, d4 or d3." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple but unusual, not a standard coach pick." },
+    "plans": { "value": ["fianchetto"], "reason": "g3 and Bg2 is the common set-up." }
+  }
+}

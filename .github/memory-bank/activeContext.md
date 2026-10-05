@@ -1,8 +1,37 @@
 # Active Context
 
-**Date:** 2026-10-02
+**Date:** 2026-10-05
 
-## Current Task: Splitting the `irregular` family
+## Current Task: Style tags — merged, tail still to classify
+
+Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing
+the LLM style tags; pipeline in `tools/style-tags/` (README has the steps). 105
+researched variations plus 458 unsourced (`UNSOURCED.md`, tail-01 to tail-23);
+judge pass done, 0 unresolved.
+
+`export.js` writes `api/data/style-tags.json`; `style-tags-service.js` serves it
+as `style_profile` to the detail page, `OpeningCard`, Discover's level and style
+facets (solid, sharp, gambit, dubious, system, offbeat; old values aliased in
+`browse_facets.json`) and style search (`STYLE_AXES`). Coverage by position:
+tagged 80% of pages / 64.8% of games, hubs 4% / 34.5% (no tags by design),
+untagged 16% / 0.8%. Untagged pages and the middleware pre-render show none.
+
+Next: the tail, tail-24 to tail-66 — 848 variations, each under 1.6M games
+(median ~100k). Owner plans to run it late in the week on leftover usage. Waves
+of 4 agents × 20 (~11 waves), each ~25% of a 5-hour window and ~4% of the week,
+so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
+`collect-unsourced.js`, `validate.js`, judge any new lists, `export.js`; commit
+briefs in chunks of ~100. Work on a new branch off `main`.
+
+Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
+Dragon description (describes the Accelerated Dragon); the intent parser
+misreads "solid response to e4", "solid e4 openings", "… for white" and
+"advanced sicilian defence" (all older than the tags); `search-by-category` and
+`search-categories` still read the old tags and have no caller; saved repertoire
+entries keep their old level. A protected preview shows Vercel's login on a
+direct `/opening/` load (middleware fetches `/index.html`).
+
+## Previous Task: Splitting the `irregular` family (#159)
 
 `irregular` held 940 positions, from 1.e4 to the Grob, so its family shelf (the
 video fallback for pages with no videos of their own) was a grab-bag. It was 16
@@ -19,10 +48,3 @@ taxonomy and fails when the committed ECO files drift from the resolver.
 Analysis and decisions: `docs/proposals/2026-10-02-irregular-family-split.md`.
 Left open: 1.g3 (Hungarian, Benko Opening) stays in `irregular` because KIA's
 own shelf is contaminated; the 192 `uncategorised` positions get no shelf.
-
-## Previous Task: Jev rejection filter and video pins
-
-#157 (with #158) ends the video pipeline by dropping pairs Jev confidently
-rejects, then pins 18 Jev-and-judge-agreed videos from `config/video_pins.json`.
-Top-200 own-page coverage 178 → 172 → 181. Open: the scorer gives 0 to Veresov,
-Owen and Nimzo-Larsen videos that name their opening. Full text in `archive.md`.

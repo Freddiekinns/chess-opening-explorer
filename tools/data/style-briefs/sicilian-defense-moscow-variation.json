@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-moscow-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Moscow Variation",
+    "eco": "B51",
+    "moves": "1. e4 c5 2. Nf3 d6 3. Bb5+",
+    "fen": "rnbqkbnr/pp2pppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White checks early and avoids the open Sicilian theory. After 3...Bd7 4.Bxd7+ Qxd7 (or 3...Nc6) White plays c4 and Nc3 with a Maroczy-style bind or d4 on his own terms. The result is a slower, more positional Sicilian where White's structure is healthy and Black seeks ...Nc6, ...g6 and ...cxd4 or ...b6.",
+  "white_ideas": [
+    { "idea": "Trade the bishop on d7, then c4, Nc3, O-O and d4 for a Maroczy-type bind" },
+    { "idea": "Keep a safe, solid structure and avoid Najdorf-type theory" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nc6, ...g6, ...Bg7 and fight for d4 with ...cxd4" },
+    { "idea": "Liquidate with ...Bxb5 or ...Bd7 and aim for ...d5 or ...b5-type counterplay" }
+  ],
+  "typical_structures": [
+    { "structure": "Maroczy-type pawns on c4/e4 against ...d6 after White's d4 break" },
+    { "structure": "Open-Sicilian pawn centre once ...cxd4 Nxd4 is played" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet check line with a trade of bishops; fewer early tactics than the Najdorf-type Sicilian. Balanced rather than extremely solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound anti-Sicilian, used by strong players." },
+    "structure": { "notes": "Sicilian asymmetric centre with a half-open c-file; Semi-open as for every Sicilian." },
+    "approach": { "notes": "Anti-Sicilian standard line, as with the Alapin; not a system against everything." },
+    "level": { "reason": "understanding", "notes": "Plans are clear and theory is light, but it is a good fit for improving players, not first-repertoire; Intermediate." }
+  },
+  "plan_phrases": ["maroczy bind", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3...Nc6 4.O-O", "moves": "1. e4 c5 2. Nf3 d6 3. Bb5+ Nc6 4. O-O", "how": "Rossolimo-like, with a possible Bxc6 and doubled pawns." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet positional anti-Sicilian, not forcing but not a fortress." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected anti-Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "An asymmetric Sicilian centre where Black has a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "An anti-Sicilian choice like the Alapin, which the anchors treat as standard." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.75, "reason": "Light theory and clear structures." },
+    "plans": { "value": ["maroczy_bind", "space_advantage"], "reason": "White's c4/e4 bind after the trade of bishops." }
+  }
+}

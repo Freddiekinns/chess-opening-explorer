@@ -1,0 +1,91 @@
+{
+  "slug": "old-indian-defense",
+  "root": {
+    "name": "Old Indian Defense",
+    "eco": "A41",
+    "moves": "1. d4 d6 2. c4",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Old Indian Defense", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Old_Indian_Defense", "kind": "reference" },
+    { "id": "s2", "title": "Old Indian Defense (A53)", "publisher": "Chessiverse", "url": "https://chessiverse.com/resources/openings/old-indian", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Old Indian / Chigorin Indian results (Wikipedia Chigorin pages and others)", "publisher": "Web search results", "url": "https://en.wikipedia.org/wiki/Old_Indian_Defense", "kind": "reference" }
+  ],
+  "overview": "The Old Indian (1.d4 Nf6 2.c4 d6, here reached by 1.d4 d6 2.c4) is the pre-fianchetto cousin of the King's Indian. Black sets up ...d6, ...e5, ...Nbd7, ...Be7, ...O-O and ...c6, aiming at a Philidor-like central structure that is solid and defensible but a little cramped. The main line is the Ukrainian Variation 3.Nc3 e5 4.Nf3 Nbd7 5.e4 Be7 6.Be2 O-O 7.O-O c6 8.Re1, where theory considers White slightly better. It has never been as popular as the King's Indian; the bishop on e7 is less active than a fianchetto. King's Indian players use it to sidestep the Samisch and Averbakh. The data root also holds the Neo-Old Indian / Modern set-up (1.d4 d6 2.c4 g6), which transposes to King's Indian or Pirc-like structures.",
+  "white_ideas": [
+    { "idea": "Occupy the centre with pawns and pieces (e4 and Nf3), keeping the space advantage.", "sources": ["s1", "s2"] },
+    { "idea": "Main line Ukrainian: 5.e4 Be7 6.Be2 O-O 7.O-O c6 8.Re1, with a slight edge.", "sources": ["s1"] },
+    { "idea": "Maintain central tension and restrict Black's ...e5 break or meet it favourably.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Establish a solid pawn structure with ...d6 and ...e5, pieces behind it.", "sources": ["s1", "s2"] },
+    { "idea": "Develop the bishop modestly to e7 and castle, rather than fianchetto; a Philidor-like structure.", "sources": ["s1", "s3"] },
+    { "idea": "Typical follow-ups named in the search snippet: ...c6, ...a5, ...Na6, ...f6 (the snippet also lists '...Kd8-c7', which looks like a typo for ...Qc7).", "sources": ["s3"] },
+    { "idea": "Janowski Variation 3...Bf5 played by Tal, Larsen, Gheorghiu in the 1980s.", "sources": ["s1"] },
+    { "idea": "Used by King's Indian players to avoid the Samisch and Averbakh systems.", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor-like: Black pawns d6/e5 against White e4/d4 centre, tense; Black slightly cramped, bishops on e7 and c8", "sources": ["s1", "s3"] },
+    { "structure": "Neo-Old Indian / Modern 2...g6: Black fianchetto set-ups resembling the King's Indian or Pirc", "sources": [] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Rated Balanced sharpness and Easy difficulty by Chessiverse. Considered sound and harder to crack than the King's Indian below master level. Black's position is solid but slightly passive; no forcing main line (Ukrainian main line is slow). Black has few ways to lose quickly, although White keeps a small edge.",
+      "sources": ["s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Considered sound; Wikipedia says the main line leaves White slightly better. Less active than the King's Indian fianchetto.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Central pawns on d6/e5 vs d4/e4 usually stay on; the centre is closed or tense with White's space advantage (Philidor-like). An early ...exd4 or e5xd4 opening is possible but not typical.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A semi-system: a flexible d6/e5 set-up, often used as an alternative to the King's Indian. Never reached the popularity of the King's Indian. At 2500+ level, 3.Nc3 is played in 61% and 3.Nf3 in 35% of games; theory adherence is high (about 99% of moves follow known lines). Played by strong players (Tal, Larsen, Gheorghiu, Gligoric as White), though rarely a main weapon.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse rates it Easy. Black needs to understand the cramped Philidor-style structure and the timing of ...c6 and ...a5 plans more than memorising lines, although White's slightly better main line asks for patience. Judged for Black.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "Philidor-like centre",
+    "...e5 break",
+    "solid but cramped",
+    "avoiding Samisch and Averbakh",
+    "...c6, ...a5, ...Na6 manoeuvres",
+    "space advantage for White"
+  ],
+  "sublines_that_differ": [
+    { "name": "Neo-Old Indian: Modern (2...g6)", "moves": "1. d4 d6 2. c4 g6", "how": "Black fianchettoes; transposes to the King's Indian or Pirc-like structures; more dynamic than the e7-bishop set-up." },
+    { "name": "Old Indian: Janowski Variation", "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 Bf5", "how": "Early bishop development outside the pawn chain; played by Tal, Larsen and Gheorghiu." },
+    { "name": "Old Indian: 3.Nf3", "moves": "1. d4 Nf6 2. c4 d6 3. Nf3", "how": "White waits with Nc3; Black can choose ...Nbd7 and ...e5 or fianchetto." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Old Indian is a solid and resilient system.", "verdict": "supported", "note": "Called sound and harder to crack than the King's Indian.", "sources": ["s1", "s3"] },
+      { "claim": "Black prioritises creating a robust, flexible structure, delaying the development of the king's knight.", "verdict": "wrong", "note": "In the standard Old Indian (1.d4 Nf6 2.c4 d6) Black develops the king's knight at once; Black delays ...Nf6 only in the 1.d4 d6 move order, which usually transposes. The delay is in the bishop (e7, no fianchetto), not the knight.", "sources": ["s1"] },
+      { "claim": "Black prepares the crucial ...e5 pawn break to challenge White's spatial advantage.", "verdict": "supported", "note": "...e5 is the key move of the structure.", "sources": ["s1", "s3"] },
+      { "claim": "Leads to strategically complex games; excellent for patient positional players who are comfortable in slightly cramped quarters.", "verdict": "supported", "note": "Cramped but sound; Philidor-like. Chessiverse rates difficulty Easy.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Prepare and execute ...e5 with ...Nbd7, ...Be7 and ...O-O.", "verdict": "supported", "note": "Matches the main line.", "sources": ["s1"] },
+      { "claim": "White: Use the space advantage to restrict Black and prevent or meet ...e5.", "verdict": "supported", "note": "Main line gives White slight edge.", "sources": ["s1"] },
+      { "claim": "Black: If ...e5 is difficult, shift to the queenside with ...c6 and ...b5.", "verdict": "unverifiable", "note": "...c6 is a standard move in the main line; ...b5 is not named; other follow-ups are ...a5 and ...Na6.", "sources": ["s3"] },
+      { "claim": "White: Develop to optimal squares (Nf3, Be2, O-O, Nc3) and exploit weaknesses.", "verdict": "supported", "note": "Matches the main line Nf3, Be2, O-O, Nc3, Re1.", "sources": ["s1"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

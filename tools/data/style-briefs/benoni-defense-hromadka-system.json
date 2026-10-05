@@ -1,0 +1,48 @@
+{
+  "slug": "benoni-defense-hromadka-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Hromádka System",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 d6",
+    "fen": "rnbqkb1r/pp2pppp/3p1n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black skips ...e6 and plays ...d6 and ...g6, avoiding the Modern Benoni's White gambits (and getting a Czech-like structure), aiming to put the bishop on g7 and reach a Benoni by another route. White continues 4.Nc3 g6 5.e4 Bg7, then Bd3, f3 or Nf3 and plays for a big centre and e5, while Black counterattacks with ...O-O, ...e6 or ...Nbd7 and ...b5. The play is double-edged and White's space is the key theme.",
+  "white_ideas": [
+    { "idea": "Take space with e4 and Nf3, Be2 or Bd3 and castle" },
+    { "idea": "Push e5 or attack with f4 and Bb5+" },
+    { "idea": "Keep the d5 pawn supported and the centre closed" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7, castle and play ...e6 or ...e5 later" },
+    { "idea": "Break on the queenside with ...b5 and use the half-open b-file" },
+    { "idea": "Pressure the centre with ...Nbd7 and ...Ne5" }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni structure by transposition: White d5/e4 against Black c5/d6, with Black's e-pawn kept back" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides play for a win with opposite-wing plans; sharper than a standard defence, but with less forced theory than the main Modern Benoni." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered in the main line." },
+    "soundness": { "notes": "Playable; White gets space but Black's structure is flexible." },
+    "structure": { "notes": "White d5 and e4 against c5 and d6, an asymmetric centre with a half-open b-file; semi-open." },
+    "approach": { "notes": "A less common branch that strong players do play; not a universal system." },
+    "level": { "reason": "understanding", "notes": "Less theory than the Modern Benoni but Black's plans are hard to get right." }
+  },
+  "plan_phrases": ["space advantage", "queenside expansion", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "4.Nc3 g6 5.f4", "moves": "1. d4 Nf6 2. c4 c5 3. d5 d6 4. Nc3 g6 5. f4", "how": "An aggressive Four Pawns-style set-up with kingside attacking chances." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Opposite wing play and risk for both sides, as in the Modern Benoni." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "A playable defence." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Asymmetric centre with a half-open b-file; Closed is the alternative." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A less common branch that strong players play." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Less theory than the Modern Benoni, but plans are hard." },
+    "plans": { "value": ["space_advantage", "queenside_expansion", "fianchetto"], "reason": "White's space against Black's queenside play and g7 bishop." }
+  }
+}

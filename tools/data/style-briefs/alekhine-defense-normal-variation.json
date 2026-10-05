@@ -1,0 +1,46 @@
+{
+  "slug": "alekhine-defense-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Normal Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black provokes White into advancing pawns and then attacks the resulting centre. After 3.d4 d6 4.Nf3 Bg4 (Modern) or 4.c4 Nb6 5.f4 (Four Pawns) White has space and Black plays against the overextended pawns with ...dxe5, ...c5 and ...Nc6. 3.Bc4 is a sideline hitting the knight, answered by ...Nb6 4.Bb3 c5 or ...Nb6 and ...d5. White's space is both a strength and a liability, and the game is unbalanced.",
+  "white_ideas": [
+    { "idea": "Build a large centre with d4, c4 and f4 or keep it compact with Nf3 and Be2" },
+    { "idea": "Use the space edge to attack, or exchange on d6 to take the sting out" }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine the centre with ...d6, ...dxe5, ...c5 and ...Nc6" },
+    { "idea": "Develop the bishop to g4 and the knight to b6, then play against the advanced pawns" }
+  ],
+  "typical_structures": [
+    { "structure": "White space centre on d4/e5 or c4/e5 against Black's compact set-up with ...d6 and ...c5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced, with White's space against Black's counterattack on overextended pawns; Sharp, medium confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound, though somewhat risky for Black at top level." },
+    "structure": { "notes": "Centre not decided; Black attacks it with pieces and pawns, Flexible." },
+    "approach": { "notes": "Played by Fischer, Korchnoi and Ivanchuk; respectable, standard." },
+    "level": { "reason": "understanding", "notes": "Black needs to understand when to hit the centre; theory moderate, Intermediate." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Four Pawns Attack", "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4", "how": "Far sharper, with a huge White centre and open attacks." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Unbalanced positions with an attack on the centre." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre is attacked and not yet decided." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A less common but respected defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear; theory moderate." },
+    "plans": { "value": ["hypermodern_centre", "space_advantage"], "reason": "Black lets White build a centre, then attacks it." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "philidor-defense-hanham-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Hanham Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nd7",
+    "fen": "r1bqkbnr/pppn1ppp/3p4/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black supports e5 with the knight on d7, keeping a compact but passive structure. White usually plays 4.Bc4 c6 and then 5.Nc3, 5.O-O or 5.c3, building a space edge with a centre pawn pair. Black plans ...Ngf6, ...Be7, ...O-O and a later ...exd4 or ...d5, and must avoid tactical slips on f7.",
+  "white_ideas": [
+    { "idea": "Bc4, Nc3, O-O and Qe2 or Re1, keeping the d4/e4 centre and an edge in space." },
+    { "idea": "Pressure f7 with Bc4 and Ng5 ideas; play dxe5 and an attack on the king." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 with ...c6, ...Ngf6 and ...Be7, then castle and free the game with ...exd4 or ...d5." },
+    { "idea": "Wait for a White overreach and counter in the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Hanham set-up: pawns on d6, e5, c6 against White d4 and e4, with Black knights on d7 and f6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black accepts a cramped but resilient position with few weaknesses. White's attacks are slow and need effort to break through." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound but passive; theory regards it as equal." },
+    "structure": { "notes": "d4 against e5 stays in tension for some time before a pawn exchange; flexible." },
+    "approach": { "notes": "A less popular but respected defence, played by strong players as a sideline." },
+    "level": { "reason": "understanding", "notes": "Clear plans with a modest amount of theory; Black must understand the cramp." }
+  },
+  "plan_phrases": ["space advantage", "solid pawn centre", "break with exd4 or d5"],
+  "sublines_that_differ": [
+    { "name": "Steiner Variation", "moves": "4. Bc4 c6 5. O-O Be7 6. dxe5", "how": "White trades centre pawns for a lead in development." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "A compact but passive defence that is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Considered sound and equal." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The d4/e5 tension is held for a long time." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Respectable even though less common at the top." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear, with limited memory work." },
+    "plans": { "value": ["space_advantage"], "reason": "White's central pawns give a space edge." }
+  }
+}

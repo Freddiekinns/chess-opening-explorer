@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-reversed-chigorin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Reversed Chigorin Defense",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Nc3 c5",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black meets 2.Nc3 with ...c5, challenging d4 at once. White can play 3.d5 for a Benoni-style game, 3.dxc5 or 3.e4, or 3.Nf3 with a transposition. Black aims for active piece play, often a Benoni or Sicilian-like structure, while White uses the extra move compared to the Chigorin to take space. I am unsure of the details of this branch.",
+  "white_ideas": [
+    { "idea": "Gain space with d5 or e4 and build a centre." },
+    { "idea": "Develop Nf3, e3 and Bd3 and keep the position flexible." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge d4 with ...c5 and ...cxd4, using the half-open c-file." },
+    { "idea": "Develop with ...g6, ...Bg7 and a Benoni or Sicilian-like set-up." }
+  ],
+  "typical_structures": [
+    { "structure": "Benoni-like or Sicilian-like pawn asymmetry after d5 or dxc5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "An unusual move order with several transpositions; not especially forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Playable for both sides." },
+    "structure": { "notes": "Centre tension after ...c5, not yet resolved." },
+    "approach": { "notes": "Rare; chosen mainly to avoid mainstream theory." },
+    "level": { "reason": "neither", "notes": "Little theory; unusual positions." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Von Beivorseen", "moves": "1. d4 Nf6 2. Nc3 c5 3. dxc5", "how": "White grabs the pawn and the game has a more open, tactical flavour." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No sacrifice in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Unusual but not memory-heavy." },
+    "plans": { "value": ["hypermodern_centre"], "reason": "Black attacks the centre rather than occupying it." }
+  }
+}

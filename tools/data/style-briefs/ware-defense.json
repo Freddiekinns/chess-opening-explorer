@@ -1,0 +1,46 @@
+{
+  "slug": "ware-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Defense",
+    "eco": "B00",
+    "moves": "1. e4 a5",
+    "fen": "rnbqkbnr/1ppppppp/8/p7/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays the a-pawn first, with ideas of ...Ra6 and a rook lift or of a later ...e5 and ...d5. White simply takes the centre with d4, Nc3 and Nf3 and is a tempo up. The move gains little and wastes time; it is played for surprise.",
+  "white_ideas": [
+    { "idea": "Occupy the centre with d4, Nf3 and Nc3, and develop naturally." },
+    { "idea": "Gain space on the queenside by playing a4 and Bb5 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...Ra6 to swing the rook into play, then ...e5 or ...d5." },
+    { "idea": "Transpose to a modern or Pirc set-up after ...d6 and ...g6." }
+  ],
+  "typical_structures": [
+    { "structure": "White classical centre on d4 and e4 against a Black set-up with an advanced a-pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's move is slow and mainly a surprise; no forcing theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Wastes a tempo and not on the engines' list of good moves; White gets a comfortable edge." },
+    "structure": { "notes": "Not yet defined; Black has no centre pawn and the set-up is up for grabs." },
+    "approach": { "notes": "Hardly played by strong players; a surprise." },
+    "level": { "reason": "neither", "notes": "Little to learn, but not recommended." }
+  },
+  "plan_phrases": ["surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Corn Stalk with ...Ra6", "moves": "1. e4 a5 2. d4 Ra6", "how": "Black aims at a rook lift." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Quiet, slightly passive play with no forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.55, "reason": "A wasted tempo that strong players do not consider fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is not defined after the first moves." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Dubious, so not beginner, and little to master." },
+    "plans": { "value": [], "reason": "No clear plan from the list." }
+  }
+}

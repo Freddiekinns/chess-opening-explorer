@@ -1102,3 +1102,41 @@ calls now pass `{ quiet: true }`.
 Dependabot PR suppresses only the version closed, and react-refresh 0.4 → 0.5 is
 a `0.x` minor, so it rides along with every future dev bump and takes the group
 red. **Delete the entry when #86 lands.**
+
+## Jev rejection filter for videos (2026-10-02, #157)
+
+Moved out of `activeContext.md` on 2026-10-03. The pipeline ends by removing
+pairs Jev confidently rejects (`mentioned_only`/`not_about`, P(good) < 0.4):
+`tools/video-pipeline/lib/jev-filter.js`, answers cached in
+`tools/data/jev-relation-cache.json`. Applied to the index it removed 31,605 of
+72,283 position pairs; top-200 own-page coverage went 178 → 172, then 181 after
+`config/video_pins.json` added 18 Jev-nominated, judge-confirmed videos. Parked:
+a rubric-scored blind judge baseline of the top-200 pages' top 3 videos
+(`docs/video-matching-and-jev.md`, "What's next"). Full results:
+`docs/proposals/2026-10-02-jev-video-experiment.md`.
+
+## Style tags — pilot (2026-10-03 to 2026-10-04)
+
+Fixed six-axis taxonomy with hidden middle values (`docs/style-taxonomy.md`),
+replacing 265 sprawling LLM tags. 105 variations researched with sources by
+Sonnet subagents, tagged independently by Sonnet (compact states) and Jev, with
+an Opus judge for clashes between shown words. 42/42 anchors, 84% agreement;
+Closed narrowed to a locked centre after it took 42% of games; middle-value
+disputes take Sonnet's answer after a blind audit (13 of 14). Owner reviewed the
+table and set the Old Sicilian to Intermediate (`overrides.json`). Full results:
+`docs/proposals/2026-10-02-opening-style-classification.md`.
+
+## Compressed out of progress.md (2026-10-05)
+
+- **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
+  googleapis 176, react-router 7, lucide-react 1, express 5; green checks lied
+  three times. **`archive.md`.**
+- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
+  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
+  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
+  blocked on #86. Four false greens, every one a bump no workflow covered: a
+  Dependabot branch is tested against the `main` of the day it opened (#75
+  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
+  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
+  suppresses only that version — #76 returned as #89 — so #94 was answered by
+  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.

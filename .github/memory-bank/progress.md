@@ -84,7 +84,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   no CI suite, and its barrels export without extensions.
 - **Video programme**: enable the monthly refresh Action (commit
   `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
-  then V4-V6.
+  then V4-V6. Unused: Jev's video families (`docs/backlog.md` → Enablers).
+- **43 wrong description/plan claims** found by the brief audit, none fixed
+  (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows

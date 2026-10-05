@@ -12,6 +12,8 @@ is the ranked list that review produced.
 - **rev 4** (2026-09-24) — re-checked every item against the code, folded in the
   2026-08-11 product/UX audit and the board-search PRD, added new ideas, and
   archived what no longer earns a place (owner-agreed; see **Archive**).
+- **rev 4.1** (2026-10-05) — the Jev video filter (#157) and style tags (#160)
+  shipped; added two Jev follow-ups under Enablers.
 
 ## The unifying principle
 
@@ -119,15 +121,10 @@ and drill for it.
   board" metric can be measured.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
-- **Opening style classification** _(added 2026-10-02)_ — the LLM style tags
-  barely distinguish one opening from another: "Initiative" is on 99% of
-  positions, and the "solid" filter passes 84%. Replace them with a few
-  exclusive axes of named values (Quiet / Balanced / Sharp, …), classified per
-  named variation and validated by script (anchors, cross-model agreement, draw
-  rate and material checks, a blind judge), with no hand-labelling. Gated on
-  measuring whether anyone searches by style (`query_shape` on `search_select`,
-  added 2026-10-02). Proposal:
-  `docs/proposals/2026-10-02-opening-style-classification.md`.
+- **Style tags tail** — style classification shipped in #160 (see **Archive**).
+  848 variations remain untagged: 16% of pages, 0.8% of games. Plan in
+  `.github/memory-bank/activeContext.md`, runbook in
+  `tools/style-tags/README.md`.
 
 ## Parked
 
@@ -158,10 +155,28 @@ and drill for it.
   metadata says it was built "API-based".
 - **Variation-level video classification** — carried over unassessed from rev 3:
   an endorsed pipeline project that also builds validation tooling for J1/J2.
-  - **Jev video experiment** _(added 2026-10-02, $5 budget)_ — test whether a
-    decision model reading each video's own text catches bad matches the scorer
-    keeps, judged blind. Plan:
+  - ~~**Jev video experiment**~~ — shipped 2026-10-02 as a rejection filter plus
+    18 pinned videos (#157), $1.60 spent. Next steps (a rubric baseline, then a
+    move-order check) are in `docs/video-matching-and-jev.md`.
+  - **Use Jev's video families** _(added 2026-10-05)_ — the experiment's run 2
+    put all 10,239 corpus videos in a family. Where it disagreed with every
+    family the matcher had shown a video under, the blind judge sided with Jev
+    67% and the matcher 13%, and on displayed videos Jev called "not an opening
+    video" it agreed 90%. Nothing reads these answers yet. They feed the family
+    shelves pages without their own videos fall back to. Answers are in
+    `tools/data/experiments/jev-run2.jsonl`, gitignored and on the owner's
+    machine only; re-asking costs about $0.70. Results:
     `docs/proposals/2026-10-02-jev-video-experiment.md`.
+- **Fix the descriptions the briefs proved wrong** _(added 2026-10-05)_ — the
+  105 researched style briefs audited each current description and
+  `common_plans` claim by claim and marked 43 claims wrong, in 32 briefs (e.g.
+  the Dragon page describes the Accelerated Dragon). None are fixed yet. Correct
+  those from the briefs' sources first, then consider Jev as a cheap first pass
+  over the rest: for each claim, supported / wrong / unverifiable against its
+  brief, with only "wrong" going to a Claude fix. Unsourced briefs carry no
+  audit, so the tail needs evidence before Jev can check it. Plan: step 5 and
+  "Research once, use it twice" in
+  `docs/proposals/2026-10-02-opening-style-classification.md`.
 
 ## Open decisions
 
@@ -184,7 +199,7 @@ Next:     personal strip + ?practice= · practice memory · divergence callout
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    J1 · family hubs · /board · report card · style classification
+Later:    J1 · family hubs · /board · report card · style tags tail
 Parked:   slice 3 SRS · J7
 ```
 
@@ -204,6 +219,7 @@ Agreed by the owner on 2026-09-24. The reasoning is in the feature review §3.
 | J8 — Stockfish deviation analysis (client WASM)         | Archived | The mobile CPU and Vercel cost objections go away when the engine runs offline (position facts).                                                    |
 | 3.6 — middlegame bridge                                 | Archived | Cut in rev 3; still holds.                                                                                                                          |
 | J6 — side-by-side comparison                            | Archived | Cut in rev 3; still a chatbot question.                                                                                                             |
+| Opening style classification                            | Shipped  | 2026-10-05, PR #160. A fixed taxonomy (`docs/style-taxonomy.md`) replaces the LLM tags; the tail is in **Later**.                                   |
 
 **Merged, not archived:** the level-check strip → divergence callout · #4 My
 openings v2 → repertoire from your games · TASK013 → position facts · audit #8

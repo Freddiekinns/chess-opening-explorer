@@ -164,10 +164,11 @@ function main() {
 
   // Jev reads an unsourced brief's own evidence, so when the writer judged a
   // rare gambit branch as the main line both classifiers agree on it. A gambit
-  // the name does not mention goes to the judge.
+  // the name does not mention goes to the judge, once.
   console.log('\nUnsourced gambits the name does not mention (for the judge)');
   for (const slug of slugs) {
     if (!A[slug] || A[slug].tier !== 'unsourced' || final[slug].gambit === 'none') continue;
+    if (J[slug] && J[slug].gambit) continue;
     const brief = JSON.parse(fs.readFileSync(path.join(briefs, `${slug}.json`), 'utf8'));
     if (!/gambit/i.test(brief.root.name))
       console.log(`  check  ${slug}: gambit=${final[slug].gambit}`);

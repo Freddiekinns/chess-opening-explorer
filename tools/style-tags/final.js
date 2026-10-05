@@ -14,7 +14,8 @@
  *
  * Plans are A's picks that are also among Jev's three most probable, in A's
  * order; where they share none, A's first pick, so a page is not left empty
- * when the classifiers merely ranked plans differently.
+ * when the classifiers merely ranked plans differently. An override replaces
+ * them outright; the judge does not rule on plans.
  */
 const fs = require('fs');
 const path = require('path');
@@ -109,7 +110,8 @@ function finalAnswers({
         byRule.push(`${slug}.${axis} (A ${a}, Jev ${b})`);
       } else final[slug][axis] = null;
     }
-    final[slug].plans = finalPlans(A[slug], B[slug]);
+    const op = O[slug] && O[slug].plans;
+    final[slug].plans = op ? op.value : finalPlans(A[slug], B[slug]);
   }
   return { final, byRule };
 }

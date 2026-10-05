@@ -3,7 +3,9 @@
     "structure": {
       "value": "semi_open",
       "reason": "The main line 3.exd5 Nxd5 trades White's e-pawn for Black's d-pawn and gives the Scandinavian structure, which both classifiers tag Semi-open on every Scandinavian line; the 3.e5 branches are French-like or locked, which pulls further away from Open, not towards it.",
-      "sources": ["s1"],
+      "sources": [
+        "s1"
+      ],
       "taxonomy_note": null
     }
   },
@@ -11,7 +13,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "The main-line structure is the Exchange French one: e-pawns gone, d4 and d5 fixed against each other, one open file (s1, s3). That matches the Slav Exchange anchor (symmetrical d4/d5 with one file open) and the French Exchange, which both classifiers tag Semi-open, rather than the Scotch, where no central pawns stay in contact.",
-      "sources": ["s1", "s3"],
+      "sources": [
+        "s1",
+        "s3"
+      ],
       "taxonomy_note": "The Semi-open glossary says 'one side gets a half-open file', but the Slav Exchange anchor and the Petrov/French Exchange have a fully open file in a symmetrical structure. Worth a line saying symmetrical exchange structures with fixed d-pawns are Semi-open."
     }
   },
@@ -19,7 +24,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "A named Semi-open anchor: the Carlsbad structure with White's half-open c-file (s1, s2). The d4/d5 pawns face each other but are not a locked chain; the minority attack and ...c5 are pawn exchanges, so Closed contradicts both the anchor and the definition.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -27,7 +35,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "The main line 2.exd5 Qxd5 reaches a Caro-Kann-like c6/e6 against d4 with half-open d- and e-files (s1, s2). Both classifiers tag the main line, Mieses-Kotroc and Modern sub-roots Semi-open, and a root describes its main line.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": "The Scotch (Open anchor) has the mirror-image pawn count of the Scandinavian: each side has traded one central pawn and each has a half-open file. The anchors do not say where Open ends and Semi-open begins for one-for-one central trades; a sentence on why the Scotch is Open would settle the five structure disputes in this batch."
     }
   },
@@ -35,7 +46,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "Accepted, the centre is e4 against Black's d- and e-pawns (Scheveningen-like); declined with 3...Nf6 it is an Alapin (s1, s2). Both are the Sicilian centre that the Najdorf and Dragon anchors call Semi-open; the open lines are the gambit's compensation, not a further central exchange.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -43,7 +57,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "After 4.Nxc3 White's e4 faces Black's d- and e-pawns, exactly the Open Sicilian centre of the Najdorf/Dragon Semi-open anchors; the only extra open file is the c-file, on the wing (s1, s2). The sources' 'open game' describes open lines for the pieces, not the central pawns.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": "Gambit briefs say 'open game' to mean open lines. The structure axis is about the centre; the glossary's 'open files and diagonals for the pieces' invites the looser reading."
     }
   },
@@ -51,7 +68,10 @@
     "structure": {
       "value": "semi_open",
       "reason": "A named Semi-open anchor: symmetrical d4/d5 with the c-file open and rook trades on it (s1, s3). Flexible is not available against an anchor.",
-      "sources": ["s1", "s3"],
+      "sources": [
+        "s1",
+        "s3"
+      ],
       "taxonomy_note": null
     }
   },
@@ -59,7 +79,10 @@
     "character": {
       "value": "balanced",
       "reason": "Black cedes the centre and White gets real attacking chances with f4 or the Monkey's Bum (s1), with a risk of being overrun (s2), so it is not Solid's 'hard to break down'. Play is slow and plan-based rather than forcing, so not Sharp either; Chessiverse's 'solid and balanced' is a generated label.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -67,7 +90,10 @@
     "structure": {
       "value": "open",
       "reason": "The theoretical main line 4.Ng5 d5 5.exd5 and the 4.d4 Open Variation both trade central pawns early and open lines (s1); only 4.d3 keeps a Pianissimo-style tension (s2). The classifiers agreed Sharp for character on the same reading of the main line, so the structure should follow it.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": "Crossroads roots where White's next move splits roughly evenly between a quiet and a sharp branch (Two Knights, Vienna, Old Sicilian) have no rule for which branch is 'the main line'. Character and structure should at least be read from the same branch."
     }
   },
@@ -75,7 +101,10 @@
     "approach": {
       "value": "standard",
       "reason": "System means one set-up against almost anything, but the English's play is decided by Black's reply (Reversed Sicilian, Symmetrical, transpositions to the QGD or King's Indian) and is 'not a single fixed set-up' (s1, s2). It is a first-rank elite opening, and the taxonomy already files it with mainstream flank openings.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -83,13 +112,19 @@
     "character": {
       "value": "balanced",
       "reason": "Closest to the Ruy Lopez: Closed (Balanced anchor): a slow build-up that turns into an opposite-wing race, f4-f5 against ...b5 (s1, s2). White plays for a kingside attack, so it is not Solid in the sense of the Caro-Kann or London anchors.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     },
     "approach": {
       "value": "standard",
       "reason": "The set-up is played only against 1...c5, which makes it an anti-Sicilian like the Alapin (standard anchor), not a set-up against almost anything like the London or the KIA. Spassky and Smyslov played it as a serious main weapon (s3), so it is not Offbeat either.",
-      "sources": ["s2", "s3"],
+      "sources": [
+        "s2",
+        "s3"
+      ],
       "taxonomy_note": "'Against almost anything' should say it means across the opponent's defences, not across their replies within one defence. Otherwise every fixed anti-Sicilian reads as a System, against the Alapin anchor."
     }
   },
@@ -97,7 +132,10 @@
     "structure": {
       "value": "flexible",
       "reason": "d4 against d5 with no early exchange, and White's f3-e4 and Black's ...c5 breaks still to come, is a centre in tension like the London anchor (s2). Closed needs locked chains (French Advance, King's Indian after d5), and none form here. s4's 'closed positions' uses the textbook sense the taxonomy sets aside.",
-      "sources": ["s2", "s4"],
+      "sources": [
+        "s2",
+        "s4"
+      ],
       "taxonomy_note": null
     }
   },
@@ -105,7 +143,10 @@
     "character": {
       "value": "balanced",
       "reason": "The positions filed under this root are the quiet third moves (s2). Of the main continuations, the 3.Bb5 Rossolimo is positional, and Black's Accelerated Dragon and Taimanov are not Sharp by both classifiers; only the Sveshnikov-type lines are. Chessiverse's sharpness index (s1) covers the whole 2...Nc6 family, so Sharp is not established.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -113,7 +154,10 @@
     "structure": {
       "value": "flexible",
       "reason": "The Vienna Gambit (3.f4) is its own root, so this root's main line is 3.Bc4 or 3.g3, where White holds e4 and the centre stays in tension until ...d5 or f4 (s1, s2). That is the Giuoco Pianissimo Flexible anchor's shape. The brief says only that most lines are 'not locked', which rules out Closed, not that the centre opens early.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -121,7 +165,10 @@
     "level": {
       "value": "intermediate",
       "reason": "Black heads for the Kan or Taimanov, which reward understanding the plans (s3) and which both classifiers rate Intermediate (Taimanov). The move order lets Black postpone commitment. The '80% theory' figure (s1) is a generic Sicilian statistic and does not carry Najdorf-level memory.",
-      "sources": ["s1", "s3"],
+      "sources": [
+        "s1",
+        "s3"
+      ],
       "taxonomy_note": null
     }
   },
@@ -129,7 +176,10 @@
     "approach": {
       "value": "standard",
       "reason": "Most of the volume transposes to the Advance French (s2), a main line. The King's Indian Attack branch is a system (s1), but it has its own root with its own tag; 2.Nf3 itself is a move-order choice against one defence.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -137,7 +187,10 @@
     "level": {
       "value": "intermediate",
       "reason": "Little to memorise (s1), but 1.e3 has no plan of its own: White plays the English, Queen's Pawn or Larsen structures it transposes into and must free the c1-bishop (s1, s2). That is unlike the London and Colle Beginner anchors, which give one fixed set-up. Chessiverse's 'beginner' label is generic, and no source recommends it as a first repertoire.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
     }
   },
@@ -145,7 +198,11 @@
     "character": {
       "value": "balanced",
       "reason": "The sources disagree: s3 calls the Modern 'extremely sharp and risky', s2 balanced, s4 sound. s3 and s2 describe 1.e4 g6, while the most-played 1.d4 branch, 2.c4 Bg7 3.Nc3, heads into slower King's Indian/Averbakh structures. Sharp is not established; consistent with the 1.e4 g6 ruling.",
-      "sources": ["s2", "s3", "s4"],
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ],
       "taxonomy_note": null
     }
   },
@@ -153,8 +210,221 @@
     "character": {
       "value": "solid",
       "reason": "The Slav's own lines (Pure Slav, Chebanenko, Exchange) are described as solid with counterplay (s1, s2), and the sharp Semi-Slav is a separate root (Botvinnik anchor). Like the Caro-Kann, it is Solid even where lines have real tactics, and the Slav Exchange is a Solid anchor.",
-      "sources": ["s1", "s2"],
+      "sources": [
+        "s1",
+        "s2"
+      ],
       "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-three-knights-game": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 3...Bb4 4.Nxe5 O-O 5.Be2 Re8 6.Nd3 Bxc3 7.dxc3 Nxe4 the e-pawns are gone and the structure is the Petrov's exchange shape: one open e-file and a half-open d-file for White. The taxonomy names the Petrov as Semi-open and the petrovs-defense ruling already applies it; there is no general opening of the centre as in the Scotch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-cozio-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 5.Qe2 Qe7 6.d3 Nf6 7.Bg5 the pawns are d3 against d6, symmetrical, with only the e-file open: the 'symmetrical exchange structure with one open file' the taxonomy calls Semi-open for the Petrov. It matches the petrovs-defense ruling, not the Scotch Open anchor.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-mediterranean-defense": {
+    "structure": {
+      "value": "flexible",
+      "reason": "Master games split between 3.e5 (77 of 194), an Alekhine-like position with a knight rather than a pawn on d5 and Black breaking with ...d6 or ...c5, and 3.Nc3/3.Bd3 (84), where ...d5 transposes to ordinary French lines. No locked chain is in contact, so Closed fails the definition, and the evidence does not settle Semi-open; the hidden middle value, as on alekhine-defense, is the conservative call.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=617&ms=e4.e6.d4.Nf6&ns=3.16.12.617"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "kings-indian-defense-makogonov-variation": {
+    "character": {
+      "value": "sharp",
+      "reason": "The main line 5...O-O 6.Be3 e5 7.d5 locks the centre, then White plays g4 against ...f5 and is advised to take on f5 and castle long: an opposite-wing race. That is the Mar del Plata pattern the taxonomy calls closed and sharp, and every King's Indian parent is Sharp; Solid ('few ways to lose quickly') does not fit.",
+      "sources": [
+        "https://en.chessbase.com/post/a-trendy-system-against-the-king-s-indian"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening": {
+    "gambit": {
+      "value": "none",
+      "reason": "After 1.g4 d5 2.Bg2 the most popular reply among masters is 2...c6, the Grob Gambit Declined; 2...Bxg4 is second, and 1...e5 is the next most common first move. The root's main line is a declined gambit, which the taxonomy puts at none.",
+      "sources": [
+        "https://www.chess.com/openings/Grob-Opening",
+        "https://www.365chess.com/eco/A00_Grob's_attack"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "center-game-kieseritzky-variation": {
+    "gambit": {
+      "value": "none",
+      "reason": "3...Nc6 is 833 of about 1,370 master replies, and after it White overwhelmingly plays 4.Nxd4: a Scotch Game, with the pawn straight back. 3...c5, the line the brief read as main, is 53 games.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=6&n=2209&ms=e4.e5.d4.exd4.Nf3&ns=3.5.74.130.2209",
+        "https://www.365chess.com/opening.php?m=7&n=288&ms=e4.e5.d4.exd4.Nf3.Nc6&ns=3.5.74.130.2209.288"
+      ],
+      "taxonomy_note": null
+    },
+    "character": {
+      "value": "balanced",
+      "reason": "Sharp rested on the pawn offer Black keeps. The line is in practice a Scotch move order, and scotch-game is Balanced.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=7&n=288&ms=e4.e5.d4.exd4.Nf3.Nc6&ns=3.5.74.130.2209.288"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-la-bourdonnais-variation": {
+    "gambit": {
+      "value": "none",
+      "reason": "After 2...d5 masters play 3.e5 in 705 of 854 games; the Reuter Gambit 3.Nf3 has 2. The main line 3.e5 c5 4.Nf3 Nc6 5.c3 gives up no material.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=477&ms=e4.e6.f4.d5&ns=3.16.209.477"
+      ],
+      "taxonomy_note": null
+    },
+    "character": {
+      "value": "balanced",
+      "reason": "Sharp was read from the Reuter Gambit. The 3.e5 main line is a French Advance with f4 added, a strategic chain game, and french-defense-advance-variation is Balanced.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=477&ms=e4.e6.f4.d5&ns=3.16.209.477"
+      ],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "Dubious judged the Reuter Gambit's loosened king. Engines rate 2.f4 about -0.5: a slightly inferior move order into an Advance structure, not close to refuted.",
+      "sources": [
+        "https://www.bookmoves.net/openings/french-defense-la-bourdonnais-variation-c00"
+      ],
+      "taxonomy_note": null
+    },
+    "structure": {
+      "value": "closed",
+      "reason": "3.e5 locks e5/d4 (and f4) against e6/d5, the French Advance chain that anchors Closed. Open described the rare 3.Nf3 dxe4 line.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=477&ms=e4.e6.f4.d5&ns=3.16.209.477"
+      ],
+      "taxonomy_note": null
+    },
+    "level": {
+      "value": "intermediate",
+      "reason": "Both reasons given (dubious gambit, traps to know) belonged to the Reuter line. The main line is an Advance-type structure with clear but real strategic plans and no long forcing lines, Intermediate like the Advance parent.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=477&ms=e4.e6.f4.d5&ns=3.16.209.477"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "kings-pawn-game-damiano-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "Masters mostly meet 2...f6 with 3.Bc4 or 3.Nc3, winning nothing. After 3.Nxe5 the knight cannot be taken, and the right reply 3...Qe7 4.Nf3 Qxe4+ 5.Be2 regains the pawn at once: Black is worse but level in material, so nothing is given that White can keep.",
+      "sources": [
+        "https://www.365chess.com/eco/C40_Damiano's_defence",
+        "https://en.wikipedia.org/wiki/Damiano_Defence"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-damiano-variation": {
+    "gambit": {
+      "value": "black",
+      "reason": "Confirmed. The best reply 4.Qe2 Qe7 5.Qxe4 d6 6.d4 dxe5 7.dxe5 Nc6 8.Nc3 Qxe5 9.Qxe5+ Nxe5 10.Nb5 is the Kholmov Gambit, where Black is a pawn down and White can keep it; Wikipedia describes Black as sacrificing a pawn for a holdable opposite-coloured bishop ending.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Petrov's_Defence",
+        "https://chessmind.ai/openings/petrovs-defense-damiano-variation-kholmov-gambit"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-schliemann-defense": {
+    "gambit": {
+      "value": "black",
+      "reason": "Confirmed. 4.Nc3 is White's most played reply (3,069 games against 2,187 for 4.d3), and after 4...fxe4 5.Nxe4 the main line is now 5...Nf6 6.Nxf6+ Qxf6 7.Qe2 Be7 8.Bxc6 bxc6 9.Nxe5, where Black commits to a pawn sacrifice White can keep. A countergambit, and countergambits count.",
+      "sources": [
+        "https://www.365chess.com/eco/C63_Spanish_Schliemann_defence",
+        "https://en.wikipedia.org/wiki/Jaenisch_Gambit"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "borg-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "After 1.e4 g5 2.d4 masters defend with 2...h6 (69 games) about twice as often as they gambit with 2...Bg7 (35), and the theory line is 2...h6 3.Bd3 d6 4.Ne2 c5. The main line gives up no material; the Borg Gambit is a sub-line.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=4&n=459&ms=e4.g5.d4&ns=3.1204.459",
+        "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...g5"
+      ],
+      "taxonomy_note": null
+    },
+    "character": {
+      "value": "balanced",
+      "reason": "Sharp rested on 'an aggressive flank gambit'. In the 2...h6 main line Black has a slow, weakened Modern-type set-up and White has clear plans without forcing play; neither shown word fits, so the hidden middle value is the conservative call.",
+      "sources": [
+        "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...g5"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-alekhine-chatard-attack": {
+    "gambit": {
+      "value": "none",
+      "reason": "Masters decline 6.h4 more often than they accept it: 6...a6 664, 6...c5 501, 6...h6 362, against 569 for 6...Bxg5. The single most played move, 6...a6, is a decline, and declined lines are none.",
+      "sources": [
+        "https://www.365chess.com/eco/C13_French_Albin-Alekhine-Chatard_attack"
+      ],
+      "taxonomy_note": "For a root that is the position just after a gambit offer, the taxonomy does not say whether 'main line' means the single most played reply or accepted against declined in total. Both give none here, but a near 50/50 split would need a rule."
+    }
+  },
+  "kings-gambit-accepted-abbazia-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "Confirmed. In the Modern (Abbazia) Defence Black returns the pawn with 3...d5 4.exd5 and plays for piece activity 'rather than keeping the extra pawn' (Wikipedia). The root after 4...Nf6 is level, and White's edge is a central pawn, not compensation for missing material, so no material is net given and kept.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/King%27s_Gambit"
+      ],
+      "taxonomy_note": "The taxonomy covers gambits declined and material that comes back by force, but not a gambit accepted and then voluntarily returned. By the same reading kings-gambit-accepted-modern-defense (3...d5, the same idea one move earlier) is tagged white, which looks inconsistent with this ruling."
+    }
+  },
+  "scandinavian-defense-portuguese-gambit": {
+    "gambit": {
+      "value": "none",
+      "reason": "Confirmed. White's two most played replies, 4.Be2 (1,004 games; 4...Bxe2 5.Qxe2 Qxd5) and 4.Nf3 (844; 4...Qxd5), both let Black win d5 straight back. Only 4.f3 (756) and some 4.Bb5+ lines keep it, so the main line is level despite the name.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=7&n=1835&ms=e4.d5.exd5.Nf6.d4.Bg4&ns=3.20.27.45.58.1835"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "kings-pawn-game-beyer-gambit": {
+    "gambit": {
+      "value": "none",
+      "reason": "Confirmed. White's usual replies, 3.dxe5 dxe4 4.Qxd8+ Kxd8 and 3.exd5 Qxd5 or ...exd4, trade pawn for pawn at once; nothing given can be kept.",
+      "sources": [
+        "https://www.365chess.com/opening.php?m=5&n=1046&ms=e4.e5.d4.d5&ns=3.5.74.1046"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "kings-gambit-accepted-modern-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "With 3...d5 4.exd5 Black gives the gambit pawn back to free his pieces, 'rather than keeping the extra pawn' (Wikipedia). In the main line 4...Nf6 5.Bb5+ c6 6.dxc6 Nxc6 each side has taken two pawns, so material is level and White's edge is a central pawn and development. This matches the kings-gambit-accepted-abbazia-defense ruling: no material is net given and kept. The pawn left on f4 is Black's own e-pawn, not an extra one.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/King%27s_Gambit"
+      ],
+      "taxonomy_note": "Same gap as the Abbazia ruling: a gambit accepted and then voluntarily returned is not named in the gambit notes. No other kings-gambit-accepted- slug in the classified set has a ...d5 main line; the rest (Fischer, Cunningham, Schallopp, MacLeod, Bishop's, King's Knight's) keep the f4 pawn and stay white."
     }
   }
 }

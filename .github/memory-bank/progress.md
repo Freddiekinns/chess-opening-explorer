@@ -66,30 +66,5 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **Style tags tail**: 848 variations (16% of pages, 0.8% of games); plan in
-  `activeContext.md`, runbook in `tools/style-tags/README.md`.
-- **#86's remaining half** — flat config and eslint 10 landed (#97); the
-  react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
-  `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
-- **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
-  `typescript <6.1.0`. `tools/analysis` still has no CI at all.
-- **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
-  ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
-- **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-
-  indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
-  301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical
-  duplicate.
-- **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
-- **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
-  no CI suite, and its barrels export without extensions.
-- **Video programme**: enable the monthly refresh Action (commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
-  then V4-V6.
-- **Search is not a real combobox** — no roles, no live region. Biggest a11y
-  gap.
-- **Search returns near-duplicate names**: four identical "najdorf" rows
-  separated only by ECO — a data problem.
-- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
-  Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
-- **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
-  dedupe. See `archive.md`.
+Open work lives in `docs/backlog.md` only — the list that was here moved there
+on 2026-10-05 (rev 5).

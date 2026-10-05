@@ -23,13 +23,10 @@ so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
 `collect-unsourced.js`, `validate.js`, judge any new lists, `export.js`; commit
 briefs in chunks of ~100. Work on a new branch off `main`.
 
-Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
-Dragon description (describes the Accelerated Dragon); the intent parser
-misreads "solid response to e4", "solid e4 openings", "… for white" and
-"advanced sicilian defence" (all older than the tags); `search-by-category` and
-`search-categories` still read the old tags and have no caller; saved repertoire
-entries keep their old level. A protected preview shows Vercel's login on a
-direct `/opening/` load (middleware fetches `/index.html`).
+Before the tail runs, spell out the gambit rule (KGA …d5 lines are not gambits).
+Every follow-up is in `docs/backlog.md` (rev 5): the gambit rule, Dragon
+description and intent parser under **Now**; the rest under **Later**,
+**Enablers** and **Engineering health**.
 
 ## Previous Task: Splitting the `irregular` family (#159)
 

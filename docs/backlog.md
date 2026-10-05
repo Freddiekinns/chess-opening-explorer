@@ -12,6 +12,10 @@ is the ranked list that review produced.
 - **rev 4** (2026-09-24) — re-checked every item against the code, folded in the
   2026-08-11 product/UX audit and the board-search PRD, added new ideas, and
   archived what no longer earns a place (owner-agreed; see **Archive**).
+- **rev 5** (2026-10-05) — folded in the follow-ups the style-tags, Jev video
+  and `irregular` work (#156–#160) left in `activeContext.md` and the proposal
+  docs, and `progress.md`'s "What's Left" list, which is now gone. **This file
+  is the only list of open work**; see "Keeping docs current" in `AGENTS.md`.
 
 ## The unifying principle
 
@@ -58,6 +62,15 @@ and drill for it.
   them once real traffic has accrued.
 - **Popularity stats refresh:** run the pipeline, and date both game counts on
   screen. _(audit #5)_
+- **Spell out the gambit rule before the style tail runs.** The judge found the
+  King's Gambit Accepted lines where Black returns the pawn with …d5 (Abbazia,
+  Modern) are not gambits under the taxonomy's own rule, which
+  `docs/style-taxonomy.md` does not yet state. The tail would repeat the error.
+- **Dragon description** describes the Accelerated Dragon. Fix the text.
+- **Style search intent parser** misreads "solid response to e4", "solid e4
+  openings", "… for white" and "advanced sicilian defence" (all older than the
+  tags). It also skews the `query_shape` measurement that gates style work. Read
+  the `search-ranking` skill first.
 
 ## Next — close the loop cheaply `1–2 weeks`
 
@@ -127,7 +140,21 @@ and drill for it.
   rate and material checks, a blind judge), with no hand-labelling. Gated on
   measuring whether anyone searches by style (`query_shape` on `search_select`,
   added 2026-10-02). Proposal:
-  `docs/proposals/2026-10-02-opening-style-classification.md`.
+  `docs/proposals/2026-10-02-opening-style-classification.md`. _Shipped for 80%
+  of pages 2026-10-05 (#160), ahead of its gate._ What remains:
+  - **The tail** — 848 variations (16% of pages, 0.8% of games), on leftover
+    usage. Plan in `activeContext.md`, runbook in `tools/style-tags/README.md`.
+    Needs the gambit rule in **Now** first.
+  - **Split the Maróczy Bind (5.c4) out of the Accelerated Dragon.**
+  - **Saved repertoire entries keep their old level** after the taxonomy change.
+  - **Delete `search-by-category` and `search-categories`** — they read the old
+    tags and have no caller.
+  - **Tags in the crawler pre-render** — out of scope in #160; tags reach
+    Googlebot only through the rendered page. `seo-crawl-graph` skill first.
+- **Family taxonomy leftovers** from the `irregular` split
+  (`docs/proposals/2026-10-02-irregular-family-split.md`): the Torre Attack
+  still goes to `london`; 1.g3 stays in `irregular` because KIA's own shelf is
+  contaminated; the 192 `uncategorised` positions get no shelf.
 
 ## Parked
 
@@ -161,7 +188,50 @@ and drill for it.
   - **Jev video experiment** _(added 2026-10-02, $5 budget)_ — test whether a
     decision model reading each video's own text catches bad matches the scorer
     keeps, judged blind. Plan:
-    `docs/proposals/2026-10-02-jev-video-experiment.md`.
+    `docs/proposals/2026-10-02-jev-video-experiment.md`. _Done 2026-10-02; the
+    rejection filter shipped in #157._
+  - **Enable the monthly refresh Action** — commit `tools/data/videos.sqlite`,
+    confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`. Until then the index only
+    moves when someone runs it by hand. Then V4–V6
+    (`docs/reviews/2026-07-02-video-experience-review.md`).
+  - **The scorer gives 0** to some videos whose titles name the opening
+    (Veresov, Owen, Nimzo-Larsen). Fixing it beats adding more pins.
+  - **A move-order check** on the top few hundred pages: most covered top pages
+    still lead with a sibling-line video.
+  - **Measured baseline** _(parked 2026-10-02)_ — a blind judge of the top-200
+    pages' top 3 videos against a teaching rubric, to rank the two fixes above.
+    Set-up in `docs/video-matching-and-jev.md`, "What's next".
+  - **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
+
+## Engineering health
+
+Moved from `progress.md`'s "What's Left" (2026-10-05). Not features, so not
+ranked against them; pick up alongside.
+
+- **#86's remaining half** — flat config and eslint 10 landed (#97); the
+  react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
+  `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
+- **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
+  `typescript <6.1.0`. `tools/analysis` still has no CI at all.
+- **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
+  ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them. Also
+  in **Next**.
+- **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-
+  indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
+  301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical
+  duplicate.
+- **A protected preview shows Vercel's login** on a direct `/opening/` load: the
+  middleware fetches `/index.html`.
+- **`packages/shared` has two latent defects**: its `tests/` runs in no CI
+  suite, and its barrels export without extensions.
+- **Search is not a real combobox** — no roles, no live region. Biggest a11y
+  gap.
+- **Search returns near-duplicate names**: four identical "najdorf" rows
+  separated only by ECO — a data problem.
+- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
+  Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
+- **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
+  dedupe. See `.github/memory-bank/archive.md`.
 
 ## Open decisions
 
@@ -179,12 +249,15 @@ and drill for it.
 
 ```
 Now:      Analyse floors · copy fixes · explorer scroll · stats refresh
+          · gambit rule · Dragon description · style intent parser
 Next:     personal strip + ?practice= · practice memory · divergence callout
           · bridge line · Start here shelf · E2E in CI
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    J1 · family hubs · /board · report card · style classification
+Later:    J1 · family hubs · /board · report card · style tail and leftovers
+          · family taxonomy leftovers
+Enablers: video refresh Action → scorer zeros → move-order check
 Parked:   slice 3 SRS · J7
 ```
 

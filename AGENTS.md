@@ -427,6 +427,15 @@ When a change affects commands, modes, config, or architecture, update the
 related docs in the same PR: this file, the scoped `AGENTS.md` files,
 `.claude/skills/`, `.github/memory-bank/`, and the relevant `tools/*/README.md`.
 
+**Every follow-up goes in `docs/backlog.md`, in the same PR that finds it.**
+That covers anything a task leaves open: a bug noticed in passing, a "not done
+in this step", a parked experiment, an open question in a proposal. The backlog
+is the only list of open work. `activeContext.md` is replaced at the next task
+and `progress.md` records only what is done, so a follow-up written only there,
+or only in a proposal or README, gets lost. The style-tags, Jev and `irregular`
+work (#156–#160) left about a dozen that way; rev 5 of the backlog recovered
+them. Point to the backlog entry from those files rather than restating it.
+
 Memory bank size caps (enforced by hand, so respect them):
 
 | File               | Cap       | Contents                            |

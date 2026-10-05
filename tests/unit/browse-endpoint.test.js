@@ -118,6 +118,17 @@ describe('GET /api/openings/browse', () => {
     expect(res.body.error).toMatch(/style/i);
   });
 
+  // The retired-style lookup is a plain object, so a name it inherits must not
+  // pass for an alias.
+  test.each(['constructor', 'toString', '__proto__'])(
+    'style=%s is an unknown style, not a server error',
+    async (style) => {
+      const res = await request(app).get(`/api/openings/browse?style=${style}`);
+      expect(res.status).toBe(400);
+      expect(res.body.error).toMatch(/style/i);
+    }
+  );
+
   test('an unknown family is a 400', async () => {
     const res = await request(app).get('/api/openings/browse?family=nonesuch');
     expect(res.status).toBe(400);

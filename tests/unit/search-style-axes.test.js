@@ -4,6 +4,9 @@
  */
 const searchService = require('../../packages/api/src/services/search-service');
 const styleTags = require('../../packages/api/src/services/style-tags-service');
+const { STYLE_AXES } = require('../../packages/api/src/services/search/SearchConstants');
+const QueryUtils = require('../../packages/api/src/services/search/QueryUtils');
+const QueryIntentParser = require('../../packages/api/src/services/search/QueryIntentParser');
 
 const tags = (axes) => ({
   character: 'balanced',
@@ -78,5 +81,26 @@ describe('style search over the style tags', () => {
   test('an untagged position and an unknown word match nothing', () => {
     expect(names(['aggressive'])).not.toContain("King's Pawn");
     expect(names(['banana'])).toEqual([]);
+  });
+});
+
+describe('style words inside longer queries', () => {
+  // "sharp openings for black" and "beginner sharp openings" take their style
+  // from extractStylesFromText; a word it does not know is dropped and the query
+  // comes back unfiltered.
+  test.each(Object.keys(STYLE_AXES))('"%s" is read as a style word', (word) => {
+    expect(QueryUtils.extractStylesFromText(`${word} openings`)).toContain(word);
+  });
+
+  test('a colour query keeps its style', () => {
+    const intent = QueryIntentParser.parseQueryIntent('sharp openings for black');
+    expect(intent.type).toBe('color_specific');
+    expect(intent.style).toEqual(['sharp']);
+  });
+
+  test('a level query keeps its style', () => {
+    const intent = QueryIntentParser.parseQueryIntent('beginner sharp openings');
+    expect(intent.complexity).toBe('beginner');
+    expect(intent.style).toEqual(['sharp']);
   });
 });

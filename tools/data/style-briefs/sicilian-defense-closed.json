@@ -1,0 +1,203 @@
+{
+  "slug": "sicilian-defense-closed",
+  "root": {
+    "name": "Sicilian Defense: Closed",
+    "eco": "B23",
+    "moves": "1. e4 c5 2. Nc3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian-phobia Part Two - Closed Sicilian",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/article/view/sicilian-phobia-part-two---closed-sicilian",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Defense: Closed Variation (B23)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/closed-sicilian",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Playing Against Closed Sicilian: The Old Recipe (search snippet only; page returned 403)",
+      "publisher": "TheChessWorld",
+      "url": "https://thechessworld.com/articles/openings/playing-against-closed-sicilian-the-old-recipe/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White declines the Open Sicilian by playing 2.Nc3, keeping d5 covered and delaying d4. The usual plan is a slow kingside build-up with g3, Bg2, d3, Be3 and f4, aiming at f4-f5 and an attack on the black king, with d4 kept as an option. Black develops (...Nc6, ...g6, ...Bg7, ...d6, ...e6 are all common) and looks for queenside counterplay, typically ...b5 and a rook on the c- or b-file, before White's attack arrives. Spassky played it aggressively with an early f4 and Nf3; Smyslov was calmer, with Be3, Qd2 and Nge2. The line 3.f4 (Grand Prix Attack) is a more direct, sharper cousin. Overall it is a low-theory, plans-driven opening in which both sides race on opposite wings.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto the king's bishop (g3, Bg2) to control d5, keep d3 and e4 supported",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Kingside pawn storm with f4 then f4-f5, attacking the black king",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Keep d4 in reserve: play on the kingside first, then decide whether to open the centre",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Spassky set-up: early f4 followed by Nf3. Smyslov set-up: Be3, Qd2 and Nge2 (knight kept off f3)",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "Grand Prix Attack 3.f4 as the sharper way to the same plan",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Queenside counterplay, most often ...b5 (and ...b4), before White's kingside attack lands",
+      "sources": ["s3", "s1"]
+    },
+    {
+      "idea": "Develop with ...Nc6 (the main reply, about 44% at master level per s2), ...d6, ...e6 or ...g6/...Bg7 and fight for d4",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Meet f4 and f4-f5 by challenging the centre and trading pieces to relieve pressure (own understanding, not sourced)",
+      "sources": []
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed centre: White pawns on e4, d3 (or c3/d4 later), f4; Black pawns on c5/d6 or c5/e6. Kingside space for White, queenside space for Black",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Opposite-wing play with White's fianchettoed bishop on g2 aiming at d5/b7",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s1 calls it relatively quiet and positional with flexibility and no immediate tactical complications. s2 says it rewards understanding over memorisation and rates the defender style as 'Solid Defender'. Counter-point: the f4/f5 attack and the 3.f4 Grand Prix versions create real attacking chances for White, and Black's ...b5 counterplay is a race. Typical play is a slow build-up that can turn sharp when a wing attack arrives.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound for White. s2 gives White 48.6% and Black 46.9% on 44.1 million Lichess games (different figures, from the same site, are quoted for the 2...Nc6 Sicilian, so treat them as indicative only). s1 reports an engine (Fruit) showing about half a pawn for White in the main lines. Spassky and Fischer used it with strong results in the 1960s.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "The centre stays closed or in tension: d4 is often delayed or never played, and the e4/d3/f4 pawns against c5/d6 or e6 are not exchanged early. Play is on the wings.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "It is an anti-Sicilian choice by White, a plan-based set-up (g3, Bg2, d3, f4, f5) that does not depend on Black's reply, resembling a reversed King's Indian Attack idea. s2: moderately played at elite level (about 2% of games at 2500 rating, adoption peaking in 2020), with practitioners such as Mitkov (210 games as White) and Gelfand (53 as Black). Not offbeat: Spassky, Smyslov and Fischer played it seriously.",
+      "sources": ["s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Studied from White's side (the side that chooses it). Little theory to memorise; the difficulty is timing: when to open the centre with d4, when to push f4-f5, and how to meet ...b5 counterplay. s2 classes it as 'Easy' and understanding-based; s1 says moderate difficulty because timing needs positional understanding. The 3.f4 Grand Prix versions carry more concrete theory.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "kingside pawn storm",
+    "f4-f5 push",
+    "fianchetto bishop",
+    "queenside counterplay",
+    "opposite-wing attack",
+    "delaying d4",
+    "avoiding Open Sicilian theory"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Grand Prix Attack",
+      "moves": "1. e4 c5 2. Nc3 d6 3. f4",
+      "how": "Direct f4 first, quick Nf3/Bc4 and an early kingside attack; sharper and more tactical than the slow g3/Bg2 build-up (s2 distinguishes it from the traditional set-up)."
+    },
+    {
+      "name": "Closed, Traditional / Fianchetto",
+      "moves": "1. e4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7",
+      "how": "The standard slow set-up and the most-played continuation by volume. This is the main line the root should describe."
+    },
+    {
+      "name": "2...Nc6 3.Bb5 / 2...e6 3.Nf3 Nc6 4.Bb5",
+      "moves": "1. e4 c5 2. Nc3 Nc6 3. Bb5",
+      "how": "Rossolimo-style development of the bishop to b5, White castles and plays d4 later (s1 mentions 4.Bb5 in the e6 move order); more positional and tends to transpose elsewhere."
+    },
+    {
+      "name": "2...e6 3.g3 / 2...d6 3.g3",
+      "moves": "1. e4 c5 2. Nc3 e6 3. g3",
+      "how": "Same fianchetto idea against a ...e6 or ...d6 set-up; closed middlegames with d3 and f4 for White."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Closed Sicilian is a strategic, flexible system against the Sicilian Defense",
+        "verdict": "supported",
+        "note": "s1 and s2 describe a slow, positional, flexible choice.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It sidesteps the razor-sharp main lines of the Open Sicilian",
+        "verdict": "supported",
+        "note": "2.Nc3 avoids d4 and the main Open Sicilian theory (s2). The Grand Prix Attack 3.f4 is sharper, though still avoids the Open lines.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White aims for a slower build-up, often preparing a kingside attack with f2-f4",
+        "verdict": "supported",
+        "note": "g3, Bg2, d3, Be3 then f4-f5 (s2); Spassky's early f4 (s3).",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Black seeks counterplay on the queenside",
+        "verdict": "supported",
+        "note": "Queenside break-through with ...b5 before White gets anywhere on the kingside (s3 snippet).",
+        "sources": ["s3", "s1"]
+      },
+      {
+        "claim": "Suits players who prefer understanding ideas to memorising reams of theory",
+        "verdict": "supported",
+        "note": "s2 says it rewards understanding over memorisation; low-theory per s3 snippet. 3.f4 Grand Prix lines have more theory.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: build up on the kingside with g3, Bg2 and f4, aiming for f4-f5",
+        "verdict": "supported",
+        "note": "Matches s2's description of the typical set-up.",
+        "sources": ["s2", "s1"]
+      },
+      {
+        "claim": "Black: establish a solid set-up (often with ...g6), control d4 and create queenside counterplay with ...b5-b4",
+        "verdict": "supported",
+        "note": "...b5 counterplay is sourced; ...g6 is one of several set-ups (...Nc6 is the main reply at about 44%, ...e6 and ...d6 are also common), so 'often' is a mild overstatement but not wrong; the ...b4 follow-up is not specifically sourced.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: delay Nf3 to keep options open, e.g. Nge2",
+        "verdict": "supported",
+        "note": "Smyslov's Be3/Qd2/Nge2 set-up (s3 snippet). Spassky preferred an early Nf3 with f4, so this is one of two approaches.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Black: challenge White's central ambitions and trade pieces to relieve pressure if White's attack becomes too strong",
+        "verdict": "unverifiable",
+        "note": "Plausible general advice, nothing specific found in the pages read.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

@@ -1,0 +1,155 @@
+{
+  "slug": "italian-game-giuoco-pianissimo",
+  "root": {
+    "name": "Italian Game: Giuoco Pianissimo",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "How to Play the Italian Game: A GM Guide",
+      "publisher": "ChessMind",
+      "url": "https://chessmind.ai/guide/improvement/how-to-play-the-italian-game",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Playing the Italian Game like a Pro! (Includes Giuoco Piano)",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/the-italian-game/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Chess Opening Theory/1. e4/1...e5/2. Nf3/2...Nc6/3. Bc4",
+      "publisher": "Wikibooks",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Bc4",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Giuoco Piano",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giuoco_Piano",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 4.d3 White avoids the central clash and settles for a slow build-up (the 'very quiet game'): c3, d3, h3, Re1, then Nbd2-f1-g3, with the d3-d4 break held back until every piece stands well. Black mirrors with ...Nf6, ...d6, ...O-O (often ...a6 and ...Ba7 to keep the bishop) and aims for the equalising ...d5 break. Positions are normally closed or tense and manoeuvring, with long-term pressure rather than direct attacks. Modern grandmasters generally prefer this slow treatment to the old 4.c3 and 5.d4 lines, and the Wikibooks theory table rates the main line as equal.",
+  "white_ideas": [
+    { "idea": "Build c3/d3 with h3 and Re1, then reroute Nbd2-f1-g3 (towards f5)", "sources": ["s1", "s2"] },
+    { "idea": "Delay d3-d4 until every piece is placed well, or expand on the kingside with f4", "sources": ["s1"] },
+    { "idea": "Queenside space with a4 (to restrain ...Ba7/...b5 ideas); bishop to e3", "sources": ["s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror White's set-up: ...Nf6, ...d6, ...O-O", "sources": ["s1", "s2"] },
+    { "idea": "Play the ...d5 break; achieving it under good conditions equalises 'almost by definition'", "sources": ["s1"] },
+    { "idea": "...a6 to preserve the bishop (...Ba7) or exchange the light-squared bishop via ...Na5; queenside space with ...a5", "sources": ["s2", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Closed centre with White pawns on c3/d3/e4 and Black on d6/e5, both sides manoeuvring behind the pawn chain", "sources": ["s1", "s2"] },
+    { "structure": "Possible d3-d4 break leading to open centre or Italian IQP-type positions after exchanges", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "ChessMind calls it a 'slow-motion fight' and 'patience as a weapon'; Wikibooks describes steadier, more positional play without sharp complications and rates the main line equal. Sources describe a quiet, manoeuvring game; sharp variations (Canal Bg5, Lucchini 4...f5, Dubois) are sidelines. Neither side's king is usually under early threat.",
+      "sources": ["s1", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands in the main line. A sideline Black gambit exists in the subtree: Lucchini Gambit (4...f5) and Dubois Variation (4...f5 5.Ng5 f4), not the main line.",
+      "sources": ["s3"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides; evaluated equal. ChessMind says that if Black achieves ...d5 under good conditions the position equalises. Used successfully by Giri, Short, Hou Yifan, Tiviakov and Gelfand per Chessable.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "White keeps the centre closed with c3, d3 and Re1, and only plays d3-d4 when ready. Wikibooks stresses controlling g5 and defending f7 by castling. Pawns remain on d3/e4 and d6/e5; the centre is closed or in tension for a long time.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "Played mostly against ...Bc5 set-ups, but the c3/d3/Re1/Nbd2-f1-g3 scheme is a reusable plan. 'Modern grandmasters usually prefer the slow treatment' (ChessMind); top players Giri, Short, Hou Yifan, Tiviakov and Gelfand use it (Chessable). So it is a common, respected choice at every level.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable: the Italian is suitable for beginners as White plays natural developing moves with much less theory to memorise than other 1.e4 openings. ChessMind: learn plans rather than move orders. The difficulty is knowing when to play d4 and how to manoeuvre in quiet positions.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "slow manoeuvring game",
+    "Nbd2-f1-g3 reroute",
+    "d3-d4 central break",
+    "...d5 equalising break",
+    "kingside expansion with f4",
+    "keeping the light-squared bishop (...a6, ...Ba7)",
+    "queenside space with a4"
+  ],
+  "sublines_that_differ": [
+    { "name": "Canal Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 Nf6 5. Nc3 d6 6. Bg5", "how": "White pins the knight and plays more actively; the structure is similar but with sharper ideas including Nd5 and f7 pressure." },
+    { "name": "Lucchini Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 f5", "how": "Black gambit with an early counter-thrust; sharp and rare, unlike the main quiet lines." },
+    { "name": "Dubois Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 f5 5. Ng5 f4", "how": "Wild Lucchini sideline with a king-attack flavour." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Giuoco Pianissimo is Italian for 'Very Quiet Game'",
+        "verdict": "supported",
+        "note": "Wikibooks gives 'Very quiet game'.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "By playing 4.d3 White sidesteps the immediate central clashes of other Italian lines",
+        "verdict": "supported",
+        "note": "d3 postpones the d4 break; ChessMind: 'slow-motion fight'.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It leads to a slow, manoeuvring game focused on development and small lasting advantages",
+        "verdict": "supported",
+        "note": "Described as a patient, manoeuvring fight.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White often prepares the central pawn break with c3 and d4",
+        "verdict": "supported",
+        "note": "d3-d4 only when every piece is placed well.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White plays for queenside space with a4",
+        "verdict": "supported",
+        "note": "a4 appears in Wikibooks main line (6.O-O a6 7.a4 Ba7).",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "A key manoeuvre is Nbd2-f1-g3",
+        "verdict": "supported",
+        "note": "Named by ChessMind and Chessable.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black aims to achieve the ...d5 equalising break, often after preparing with ...d6",
+        "verdict": "supported",
+        "note": "ChessMind: ...d5 equalises almost by definition.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black looks for queenside counterplay, sometimes with ...a5-a4",
+        "verdict": "unverifiable",
+        "note": "...a6/...Ba7 and ...Na5 are described; ...a5-a4 was not found in the pages read (own understanding: plausible against Ba2 or Bb3 ideas).",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

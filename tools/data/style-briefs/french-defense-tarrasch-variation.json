@@ -1,0 +1,216 @@
+{
+  "slug": "french-defense-tarrasch-variation",
+  "root": {
+    "name": "French Defense: Tarrasch Variation",
+    "eco": "C03",
+    "moves": "1. e4 e6 2. d4 d5 3. Nd2",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3"
+  },
+  "researched_at": "2026-10-04",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "The French Defence for Beginners II: Key Variations",
+      "publisher": "Exeter Chess Club",
+      "url": "https://exeterchessclub.org.uk/content/french-defence-beginners-ii-key-variations",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "French Tarrasch Variation: 3.Nd2 Replay Lab",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/french-defense-tarrasch-variation.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Counter The French Defense With The Tarrasch Variation",
+      "publisher": "USCF Sales",
+      "url": "https://www.uscfsales.com/blogs/chess-openings/the-tarrasch-variation",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippets: Tarrasch Variation overview and equalising 3...c5 comments (New In Chess sample, Chessiverse, TheChessWorld)",
+      "publisher": "WebSearch results (snippet only)",
+      "url": "https://www.newinchess.com/media/wysiwyg/product_pdf/9044.pdf",
+      "kind": "book"
+    }
+  ],
+  "overview": "White develops the knight to d2 to protect e4 without allowing the ...Bb4 pin, and keeps the c-pawn free for c3. Black chooses between 3...c5 (immediate challenge to d4, leading to open play and often an isolated d-pawn after 4.exd5 exd5), 3...Nf6 (4.e5 Nfd7 gives a closed French chain where White plays c3, Bd3, Ne2 and sometimes f4, and Black hits the chain with ...c5 and ...f6) and the Rubinstein-style 3...dxe4. Sources describe it as a low-risk, practical weapon for White with less theory than the Classical, aiming for a small, safe edge; Black can equalise with accurate play, especially with 3...c5. The structure type depends entirely on Black's third move: closed and manoeuvring, or open with IQP.",
+  "white_ideas": [
+    {
+      "idea": "Protect e4 with Nd2, avoiding the Winawer pin and keeping c3 available to support d4",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "In the closed 3...Nf6 4.e5 Nfd7 line support the chain with c3, Bd3, Ne2 and expand with f4",
+      "sources": ["s2", "s4"]
+    },
+    {
+      "idea": "Against 3...c5 4.exd5 exd5 either develop normally or aim for early exchanges and a better endgame against Black's isolated d-pawn",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Target e6, prevent Black's ...e5 liberation, use the Ne5 outpost and attack on the kingside (including the Bxh6 sacrifice)",
+      "sources": ["s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "3...c5 attacks d4 at once and secures free play at the cost of an isolated d-pawn",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "3...Nf6 gives positions typical of other French lines: attack the chain with ...c5 and ...f6 after 4.e5 Nfd7",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "3...dxe4 (Rubinstein) and waiting moves such as ...Be7 or ...Nc6 as flexible alternatives",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Play ...c5 and ...Nc6 to challenge White's centre; equalise before White's pieces become active",
+      "sources": ["s3", "s4"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed French pawn chain (e5/d4 against e6/d5) after 3...Nf6 4.e5 Nfd7, with White supporting via c3 and Black striking with ...c5 and ...f6",
+      "sources": ["s2"]
+    },
+    {
+      "structure": "Isolated queen's pawn for Black after 3...c5 4.exd5 exd5, with White restraining the pawn and seeking a better endgame; sources also mention IQPs for either side in some lines",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "structure": "Open positions after 3...dxe4 4.Nxe4 where the centre is resolved early",
+      "sources": ["s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Most sources frame it as a low-risk, stable weapon for White ('stable, low-risk French weapon' with practical rather than theoretical sharpness), less theory than the Classical. Black's 3...c5 gives tactical open play, but the line is not described as double-edged for White. USCF Sales calls it 'sharp and attacking' and mentions kingside attacks and the Bxh6 sacrifice, a minority view. Overall the play is positional, with chances for both sides in IQP lines.",
+      "sources": ["s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the main lines.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Fully sound for White. Snippet commentary (New in Chess sample) says that after Karpov's era, the experience in his matches with Korchnoi and later practice showed that 3...c5! practically equalises, so White's edge is small. Used by Adams, Harikrishna, Andreikin, Navara and Nepomniachtchi (2023 World Championship).",
+      "sources": ["s3", "s4"]
+    },
+    "structure": {
+      "notes": "Depends on Black's reply: closed chain after 3...Nf6 4.e5, partly open IQP positions after 3...c5 exd5 exd5, open after 3...dxe4. The most popular 3...Nf6 4.e5 Nfd7 line is closed; the most played 3...c5 line leaves the centre open or semi-open with tension.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A named, specific reply to the French, not a universal system. The Tarrasch is White's second most popular choice at master level behind 3.Nc3, per USCF Sales, with several current elite players using it. Karpov and Short are among the featured practitioners at ChessWorld.net.",
+      "sources": ["s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Exeter Chess Club says 'The Tarrasch is a line for later on in your chess life', preferring Classical or Burn for developing players. USCF Sales says it is easier to learn than the Classical with less memorisation and rates it intermediate to advanced. Difficulty comes from handling IQP and closed-chain plans rather than from forcing lines.",
+      "sources": ["s1", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "isolated queen's pawn",
+    "pawn chain",
+    "f4 expansion",
+    "...c5 and ...f6 breaks",
+    "avoiding the Winawer pin",
+    "pressure on e6",
+    "better endgame",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Tarrasch: Closed Variation",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2 Nf6 4. e5 Nfd7 5. Bd3 c5 6. c3 Nc6",
+      "how": "Locked French chain with manoeuvring, ...c5 and ...f6 breaks and White space; the most played branch of the subtree."
+    },
+    {
+      "name": "Tarrasch: Open System (3...c5)",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2 c5 4. exd5 exd5",
+      "how": "Isolated d-pawn and piece play, more open and symmetrical in feel."
+    },
+    {
+      "name": "Tarrasch: Rubinstein-style 3...dxe4",
+      "moves": "1. e4 e6 2. d4 d5 3. Nd2 dxe4 4. Nxe4",
+      "how": "Centre is resolved at once, with open, simplified play."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Tarrasch is a highly respected and flexible system against the French",
+        "verdict": "supported",
+        "note": "Second most popular White choice at master level and used by elite players; it is a flexible move order choice, though 'system' in the set-up sense is not how sources use it.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Favoured by players who prefer strategic complexity over sharp, tactical melees",
+        "verdict": "supported",
+        "note": "Sources describe it as low-risk and practical with less theory; one source calls it sharp and attacking, so the description is only partly agreed.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Knight to d2 sidesteps the pin after ...Bb4",
+        "verdict": "supported",
+        "note": "Primary stated aim.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White aims for a stable space advantage and long-term pressure",
+        "verdict": "supported",
+        "note": "Mostly true in the closed 4.e5 line; in 3...c5 lines the edge is minor or equal.",
+        "sources": ["s2", "s4"]
+      },
+      {
+        "claim": "Leads to a rich variety of pawn structures",
+        "verdict": "supported",
+        "note": "Closed chain, IQP and open structures all occur.",
+        "sources": ["s1", "s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: secure a central space advantage, often leveraging an isolated queen's pawn for a kingside attack or playing for kingside expansion in closed structures",
+        "verdict": "wrong",
+        "note": "Kingside expansion with f4 in the closed line is supported. The typical IQP after 3...c5 4.exd5 exd5 is Black's, and White's plan is to restrain it and trade pieces, not attack with it. USCF Sales does say IQPs can arise for either side, so partly true in niche lines.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "Black: counter-attack against d4 with the ...c5 pawn break",
+        "verdict": "supported",
+        "note": "Central theme in every Black set-up.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: aim to blockade and attack weak pawns or create queenside play",
+        "verdict": "unverifiable",
+        "note": "Sources describe attacks on the chain with ...c5 and ...f6, not a blockade plan.",
+        "sources": []
+      },
+      {
+        "claim": "White: restrict Black's light-squared bishop and use the d2-knight to flexibly support the centre",
+        "verdict": "unverifiable",
+        "note": "Nd2 supporting e4 is supported; the restriction of the light-squared bishop (c8) is not mentioned in sources read. The knight does block the c1 bishop, a downside.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black: undermine White's chain and trade pieces, believing White's space advantage matters less in the endgame",
+        "verdict": "unverifiable",
+        "note": "Undermining the chain is supported; the endgame rationale is not given by sources read.",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 4 }
+}

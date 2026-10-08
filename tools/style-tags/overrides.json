@@ -1,0 +1,19 @@
+{
+  "_comment": "Owner-reviewed corrections, applied over every classifier and the judge (see final.js). Each one states why. Use for a classification that is wrong on the evidence, not to settle taste.",
+  "overrides": {
+    "sicilian-defense-old-sicilian": {
+      "level": {
+        "value": "intermediate",
+        "reason": "This root holds only White's quiet third moves after 2...Nc6; 3.d4 and 3.Bb5 are their own roots. Both classifiers judged it from evidence about the Open Sicilian with ...Nc6, which belongs to those other roots.",
+        "date": "2026-10-04"
+      }
+    },
+    "french-defense-la-bourdonnais-variation": {
+      "plans": {
+        "value": ["space_advantage", "kingside_attack"],
+        "reason": "The unsourced brief read the rare Reuter Gambit (3.Nf3 dxe4 4.Ng5) as the main line, and the judge (2026-10-05) ruled every axis back to the 2...d5 3.e5 Advance structure. The brief's plans (lead in development first) came from the same misreading; these are the Advance French plans with f4 already in.",
+        "date": "2026-10-05"
+      }
+    }
+  }
+}

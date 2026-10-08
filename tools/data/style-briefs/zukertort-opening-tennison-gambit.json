@@ -1,0 +1,91 @@
+{
+  "slug": "zukertort-opening-tennison-gambit",
+  "root": {
+    "name": "Zukertort Opening: Tennison Gambit",
+    "eco": "A06",
+    "moves": "1. e4 d5 2. Nf3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Tennison Gambit", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Tennison_Gambit", "kind": "reference" },
+    { "id": "s2", "title": "The Tennison Gambit: How to Play it as White and Black", "publisher": "Chessable blog", "url": "https://www.chessable.com/blog/tennison-gambit/", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Tennison Gambit results (Chessable, 365chess, Chess.com opening pages)", "publisher": "Web search results", "url": "https://www.365chess.com/eco/A06_Tennison_(Lemberg_Zukertort)_gambit", "kind": "reference" }
+  ],
+  "overview": "The Tennison (Lemberg, Zukertort) Gambit arises after 1.e4 d5 2.Nf3 or 1.Nf3 d5 2.e4. At this position nothing has been sacrificed yet: the gambit is offered by leaving e4 en prise to 2...dxe4, after which White plays 3.Ng5 aiming at f7, and tries for fast development and tricks (Bc4, Nc3, Qe2, Brigg's Trap, the ICBM trap with Nxf7 and Bg6+). Sources agree it is theoretically unsound for White: Black can keep the pawn with 3...Nf6, 3...Bf5 or 3...e5, or decline with 2...e6 or 2...c6 into French or Caro-Kann structures. It is a trick opening used by amateurs, blitz and bullet players, and it punishes careless Black play.",
+  "white_ideas": [
+    { "idea": "Offer the e-pawn (2.Nf3 leaves e4 attackable) and, after 2...dxe4, harass with 3.Ng5 aiming at f7.", "sources": ["s1", "s2"] },
+    { "idea": "Gain development with Nc3, Bc4 and Qe2 to attack before Black consolidates.", "sources": ["s1", "s2"] },
+    { "idea": "Tactical traps: ICBM (4.d3 exd3 5.Bxd3 h6 6.Nxf7 and 7.Bg6+ discovered attack on the queen) and Brigg's Trap (Qe2 with the ...Qd4 mistake).", "sources": ["s2", "s1"] },
+    { "idea": "Win the pawn back after careless play; use the tempo lead to build an attack on the kingside.", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Accept with 2...dxe4 and keep the pawn with 3...Nf6, 3...Bf5 or 3...e5, developing safely.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Decline with 2...e6 or 2...c6 into French or Caro-Kann structures (also 2...Bg4).", "sources": ["s1", "s2"] },
+    { "idea": "Avoid the ICBM trap with 4...Bg4 forcing 5.Qd2 and ending the gimmick.", "sources": ["s2"] },
+    { "idea": "Consolidate the extra pawn and convert in an endgame (own understanding).", "sources": [] }
+  ],
+  "typical_structures": [
+    { "structure": "After 2...dxe4 3.Ng5 Black has an extra pawn, with fluid central structure and White ahead in development; open centre with attacks on f7", "sources": ["s1", "s2"] },
+    { "structure": "If declined with 2...e6 or 2...c6: a French- or Caro-Kann-type structure with White's Nf3 already developed", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Traps and tactics are the point: the ICBM line is highly forcing with consecutive sacrifices, but Black avoids it with simple moves (4...Bg4). Overall a gambit that relies on tactical awareness from Black; accurate defence leaves White just worse. After declined moves the play is calm.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "At the root position the pawn is still on e4, but the entire opening is a White pawn gambit: 2...dxe4 and White does not regain the pawn by force. Black can keep it (3...Nf6/Bf5/e5). If Black declines (2...e6/c6) nothing changes hands. The FEN shows no material imbalance because the pawn has not yet been taken.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Described as theoretically unsound: White sacrifices a pawn immediately with no solid positional compensation. A 'trick opening', easily refuted whether accepted or not. Main lines are evaluated in Black's favour (3...e5, 3...Bf5 'better position' for Black). White gets slightly better development only.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "In the main line 2...dxe4 the centre is open (Black's pawn on e4 captured, central files open), with fast piece play on the f7 diagonal. Declined lines are French- or Caro-Kann-like (semi-open).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Primarily employed as a trick opening by amateurs and club players; a useful weapon in blitz and bullet. Not a mainstream choice at master level.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory to learn but White's gambit is unsound; for the side studying it (White) a few traps carry it, but strong opponents refute it. For Black, it takes only a simple decline or an accurate 3...Nf6/Bf5. Poses a risk mainly to beginners unfamiliar with its ideas.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "lead in development",
+    "trick opening",
+    "ICBM trap (Nxf7, Bg6+)",
+    "Brigg's Trap",
+    "transposing to French or Caro-Kann by declining"
+  ],
+  "sublines_that_differ": [
+    { "name": "Zukertort Opening: Tennison Gambit, Brigg's Trap", "moves": "1. e4 d5 2. Nf3 dxe4 3. Ng5 Nf6 4. Nc3 Bf5 5. Qe2 Qd4", "how": "A trap line where Black's 5...Qd4? runs into an attack; a tactical branch of the accepted gambit." },
+    { "name": "Reti: Tennison Gambit Accepted (2...dxe4)", "moves": "1. Nf3 d5 2. e4 dxe4", "how": "Gambit accepted; the pawn is actually taken, so material has changed hands here." },
+    { "name": "Tennison Gambit declined 2...e6 / 2...c6", "moves": "1. e4 d5 2. Nf3 e6", "how": "Quiet French- or Caro-Kann-type structure; no gambit." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Tennison Gambit is a sharp and aggressive response to the Scandinavian Defense.", "verdict": "supported", "note": "1.e4 d5 2.Nf3 is White's second move against the Scandinavian move order. 'Sharp' is true only in the accepted traps; Black can choose quiet lines.", "sources": ["s1", "s2"] },
+      { "claim": "White sacrifices their e-pawn to launch a rapid attack against f7 and disrupt Black's development.", "verdict": "supported", "note": "3.Ng5 after 2...dxe4 targets f7; Bc4, Nc3 and Qe2 speed development.", "sources": ["s1", "s2"] },
+      { "claim": "Somewhat unorthodox.", "verdict": "supported", "note": "Called a trick opening.", "sources": ["s1"] },
+      { "claim": "Perfect for tactical players who enjoy chaotic, unbalanced positions.", "verdict": "unverifiable", "note": "The sources call it a trick opening for amateurs and blitz, but also an unsound one, so it is not a good fit for players who want sound unbalanced positions.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Sacrifice the e-pawn after ...dxe4, followed by Ng5 to create threats against f7.", "verdict": "supported", "note": "Main idea.", "sources": ["s1", "s2"] },
+      { "claim": "White: Develop Nc3 and Bc4 to intensify pressure on Black's weak points before Black consolidates.", "verdict": "supported", "note": "Nc3, Bc4, Qe2 appear in main lines.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Accept the gambit and focus on solid development (...Nf6, ...e6, ...Bf5).", "verdict": "supported", "note": "3...Nf6 and 3...Bf5 recommended; ...e6 follows in several lines; 2...e6 is the decline.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Challenge White's active pieces, seek exchanges and secure the king for a favourable endgame with an extra pawn.", "verdict": "unverifiable", "note": "Plausible given the extra pawn, but no source states the endgame plan.", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

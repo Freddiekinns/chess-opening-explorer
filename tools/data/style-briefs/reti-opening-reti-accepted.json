@@ -1,0 +1,52 @@
+{
+  "slug": "reti-opening-reti-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Réti Accepted",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 dxc4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2p5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "reti-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black takes the c-pawn and White regains it at once with 3.e3 and 4.Bxc4 (or 3.Qa4+, 3.Na3), so it is a Queen's Gambit Accepted with the knight already on f3. White gets a slightly freer game and often adds g3/Bg2 or d4; Black aims for ...c5 and ...Nc6 or ...b5 ideas to equalise.",
+  "white_ideas": [
+    { "idea": "Regain the pawn with Bxc4 (after e3) and build a centre with d4." },
+    { "idea": "Fianchetto with g3 and Bg2, or Qa4+/Na3 to win the pawn back by force." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Nf6, ...e6 and ...c5, counting on a free game." },
+    { "idea": "Hit the bishop on c4 and challenge d4 with ...c5 and ...Nc6." }
+  ],
+  "typical_structures": [
+    { "structure": "QGA-style open centre with White pawn on d4 and Black pawn on c5/e6." },
+    { "structure": "Isolated queen's pawn or hanging pawns after ...cxd4 exchanges." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Normal development and early pawn regain; positions are open but not forcing. Neither side needs to take big risks." },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains the c4 pawn at once (3.e3, 3.Qa4+, 3.Na3), so no material is given up for real."
+    },
+    "soundness": { "notes": "Fully sound for both sides, equal-ish." },
+    "structure": { "notes": "Like the QGA: the c-pawn is gone, the centre opens with d4 and ...c5, play with open lines and IQP-type structures." },
+    "approach": { "notes": "A move-order branch of the Réti and the QGA; played by strong players occasionally." },
+    "level": { "reason": "understanding", "notes": "Easy to learn, with QGA-style plans to understand; Intermediate." }
+  },
+  "plan_phrases": ["regain the pawn", "isolated queen's pawn", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Réti Accepted, 3.Qa4+", "moves": "1. Nf3 d5 2. c4 dxc4 3. Qa4+", "how": "White wins the pawn back with the queen out early; Black blocks with ...Bd7 or ...Nc6 and play is more irregular." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "QGA-style open play without forcing tactics or a fortress feel." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "White regains the pawn straight away by force, so no gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Standard, sound development for both sides." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Plays like the QGA with the centre opening up after d4 and ...c5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A respectable branch of the Réti that strong players use occasionally." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Few lines to memorise, but QGA-type structures need understanding." },
+    "plans": { "value": ["isolated_queens_pawn", "lead_in_development"], "reason": "Typical IQP structures and quick development after the regained pawn." }
+  }
+}

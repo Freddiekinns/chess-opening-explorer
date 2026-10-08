@@ -1,0 +1,47 @@
+{
+  "slug": "kings-indian-defense-semi-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Semi-Classical Variation",
+    "eco": "E61",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 O-O 5. e3 d6 6. Be2",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PP4/2N1PN2/PP2BPPP/R1BQK2R b KQ - 1 6"
+  },
+  "parent": "kings-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White chooses a modest set-up with e3 and Be2 instead of the big e4 centre. The usual game goes 6...Nbd7 7.O-O e5, after which White can exchange on e5 for a calm position or play b4 and queenside space. Black can also strike with ...c5 or ...Nc6 (Hollywood). It is a quieter White try that gives Black an easy game if White drifts.",
+  "white_ideas": [
+    { "idea": "Castle, play Qc2 and Rd1, then either dxe5 or hold the d4 pawn." },
+    { "idea": "Queenside expansion with b4 and c5 against the ...e5 set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "...Nbd7 and ...e5, then ...exd4 or ...Re8 for a Hedgehog-like game." },
+    { "idea": "...c5 or ...c6 to restrain the centre and challenge d4." }
+  ],
+  "typical_structures": [
+    { "structure": "After dxe5 dxe5 a symmetrical-ish open d-file with Black's g7 bishop strong." },
+    { "structure": "d4 against e5 with tension, no locked centre until a later d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Many branches (Exchange, Hollywood, Benoni-type c5) are positional, not mutual attacks; lacks the Classical race." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound and reputable for both sides." },
+    "structure": { "notes": "Centre often unresolved: d4 vs ...e5 tension or an exchange; not locked." },
+    "approach": { "notes": "Ordinary KID branch, played by strong players as a sideline." },
+    "level": { "reason": "understanding", "notes": "Black needs to know the KID plans; theory is lighter than the Classical." }
+  },
+  "plan_phrases": ["Fianchetto", "Queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Queenside Storm Line", "moves": "6...Nbd7 7.O-O e5 8.b4", "how": "White gains queenside space; sharper race than the exchange line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Exchange and positional lines dominate; neither forcing nor especially hard to crack." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respectable main-stream KID branch." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "d4 against ...e5 stays in tension or is exchanged, not locked." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by strong players as a regular KID line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Black needs KID plan knowledge but lines are quiet and little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "Black's g7 bishop on the long diagonal defines the middlegame." }
+  }
+}

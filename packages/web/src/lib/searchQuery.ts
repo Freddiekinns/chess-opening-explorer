@@ -119,6 +119,9 @@ const STYLE_WORDS = new Set([
   'easy',
   'simple',
   'advanced',
+  'offbeat',
+  'dubious',
+  'unsound',
 ]);
 
 function isMoveSequence(query: string): boolean {

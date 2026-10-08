@@ -1,0 +1,47 @@
+{
+  "slug": "caro-kann-defense-panov-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Panov Attack",
+    "eco": "B13",
+    "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4",
+    "fen": "rnbqkbnr/pp2pppp/8/3p4/2PP4/8/PP3PPP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "caro-kann-defense-exchange-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White attacks d5 at once, aiming for an open, active position. After 4...Nf6 5.Nc3 e6 6.Nf3 Be7 7.cxd5 Nxd5 White has an isolated d-pawn in return for active pieces, or Black plays 5...Nc6 and 6.Bg5 for a Nimzo-like game. The positions are more combative than other Caro-Kann lines, with piece activity against a pawn weakness.",
+  "white_ideas": [
+    { "idea": "Use the isolated d-pawn for activity, with Bd3, O-O and attacks on the kingside." },
+    { "idea": "Pressure d5 and prepare c5 or d5 breaks in the right moment." }
+  ],
+  "black_ideas": [
+    { "idea": "Blockade the isolated d-pawn with a knight on d5 and trade pieces." },
+    { "idea": "Aim at the d4 pawn with ...Nc6 and ...Bb4 pins." }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn for White after cxd5 Nxd5." },
+    { "structure": "Hanging pawns c4/d4 if Black holds back from the exchange." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Active play for White but Black has a safe position. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn on d5 is traded evenly." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "IQP structures, a symmetrical one open file. Semi-open with moderate confidence." },
+    "approach": { "notes": "Standard, a main anti-Caro." },
+    "level": { "reason": "understanding", "notes": "IQP play is understood from plans. Intermediate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "knight outpost on d5"],
+  "sublines_that_differ": [
+    { "name": "Modern Defense", "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4 Nf6 5. Nc3 Nc6", "how": "Black pins or hits d4, leading to a sharper Nimzo-like game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Active play on both sides but not forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Main-line anti-Caro-Kann." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Symmetrical exchange structure with IQP and open c-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main White try." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "IQP plans are well known." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns"], "reason": "The Panov leads to IQP or hanging pawns." }
+  }
+}

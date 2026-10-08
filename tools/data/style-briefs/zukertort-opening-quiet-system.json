@@ -1,0 +1,46 @@
+{
+  "slug": "zukertort-opening-quiet-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Quiet System",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. e3",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/4PN2/PPPP1PPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops modestly with e3, keeping options for d4, c4 or b3 and a bishop on e2 or b2. Black can set up with ...d5, ...e6, ...g6 or ...c5 and reaches an equal game. There is little forcing theory; play depends on which set-up each side chooses.",
+  "white_ideas": [
+    { "idea": "Develop Be2/O-O or b3/Bb2 and play d4 or c4 when ready" },
+    { "idea": "Transpose to a Queen's Gambit, English or Colle-type structure" },
+    { "idea": "Keep the position flexible and avoid early commitments" }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre with ...d5 and ...e6 or ...c5" },
+    { "idea": "Fianchetto with ...g6 and ...Bg7" },
+    { "idea": "Equalise with simple development and a central break" }
+  ],
+  "typical_structures": [
+    { "structure": "Flexible pawn structure that transposes into QGD, Colle, English or Réti-like set-ups" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Modest development; low-risk, slow play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, if unambitious." },
+    "structure": { "notes": "Not yet decided; flexible centre." },
+    "approach": { "notes": "A quiet development move that can transpose; not a specific system beyond name." },
+    "level": { "reason": "neither", "notes": "Little to memorise, but the plans are loose." }
+  },
+  "plan_phrases": ["flexible development", "transposition"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Quiet development with low risk for either side." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Nothing doubtful about 2.e3." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "The centre is undecided and transposes widely." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A quiet move order choice; not clearly a system or an offbeat try." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Easy to play but plans are not obvious." },
+    "plans": { "value": [], "reason": "No single typical plan from the root." }
+  }
+}

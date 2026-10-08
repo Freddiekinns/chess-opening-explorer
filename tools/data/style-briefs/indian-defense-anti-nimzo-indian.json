@@ -1,0 +1,189 @@
+{
+  "slug": "indian-defense-anti-nimzo-indian",
+  "root": {
+    "name": "Indian Defense: Anti-Nimzo-Indian",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Indian Defense with 3.Nf3 (E10)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/indian-defence-1-d4-nf6-2-c4-e6-3-nf3",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Any creative ideas when White avoids Nimzo-Indian by playing 3. Nf3?",
+      "publisher": "Chess.com forums",
+      "url": "https://www.chess.com/forum/view/chess-openings/any-creative-ideas-when-white-avoids-nimzo-indian-by-playing-3-nf3",
+      "kind": "forum"
+    },
+    {
+      "id": "s3",
+      "title": "Bogo-Indian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bogo-Indian_Defence",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 3.Nf3 White declines to allow the Nimzo-Indian pin (3.Nc3 Bb4) and leaves the structure open until Black reveals it. Black's reply decides the game: 3...d5 transposes to the Queen's Gambit Declined or the Catalan (the most popular, 40.2 percent at lower ratings and 43.4 percent at 2500), 3...b6 is the Queen's Indian, 3...Bb4+ the Bogo-Indian, and 3...c5 leads to Benoni-style structures (or the Blumenfeld Gambit). Chessiverse calls the move 'slightly more restrained' than 3.Nc3, offering numerous paths to a quiet, positional edge, and a flexible move order rather than a fixed system. Posters on the Chess.com forum point out that 3.Nf3 does not entirely avoid the Nimzo, since 3...Bb4+ 4.Nc3 reaches the Three Knights Nimzo, and that the consensus is that no black reply is worse than equal. White's edge shrinks as ratings rise.",
+  "white_ideas": [
+    {
+      "idea": "Keep options open by delaying the commitment of the Nc3 or the e-pawn: choose between Catalan (g3), classical QGD set-ups, Queen's Indian g3/Bb2 or e3 structures depending on Black's reply.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Avoid the Nimzo-Indian pin and its sharp theory (Rubinstein, Sämisch, Classical) with a quiet positional approach.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Against 3...c5, 4.e3 keeps flexibility and avoids f4/f3-type Benoni lines; against 3...Bb4+ choose 4.Bd2 or 4.Nbd2, or 4.Nc3 for the Three Knights Nimzo.",
+      "sources": ["s2", "s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Choose a solid known structure: QGD/Catalan with 3...d5, Queen's Indian 3...b6, or Bogo-Indian 3...Bb4+, each a balanced and sound set-up.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "In the Bogo-Indian trade dark-squared bishops and aim for central pawns on light squares; answer 4.Bd2 with ...a5 or ...c5 rather than trading voluntarily.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "3...c5 invites Benoni-style structures and avoids some White set-ups; the Blumenfeld Gambit is also possible after 3.Nf3.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD/Catalan structure after 3...d5: White c4/d4 against Black d5/e6; centre tense, with White piece pressure down the long diagonal in the Catalan.",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Queen's Indian structure after 3...b6: Black fianchetto on b7 contesting e4; White usually plays g3/Bg2 or a3; semi-closed centre.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Benoni-style structure after 3...c5 4.e3 (or d5): asymmetrical pawn structure with queenside space for Black.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and positional for White; Chessiverse says 'numerous paths to a quiet, positional edge' and 'slightly more restrained' than 3.Nc3. Bogo-Indian is known as balanced and solid. 3...c5 and Blumenfeld branches can be sharper but are minority.",
+      "sources": ["s1", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root and main lines have no material imbalance. The Blumenfeld Gambit (Black, after 3...c5 4.d5 b5) is a Black gambit sub-line that appears under the 3...c5 label in the database.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound. The forum consensus is that 3.Nf3 gives White no clear advantage and all Black replies are viable. Chessiverse: White scores 49.7 percent v Black 44.1 percent in 11.1 million games, with White's advantage shrinking by 3.9 percentage points from 1200 to 2500 Elo, suggesting Black's counterplay is easier to find with experience.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Depends on Black's reply. The most played continuations (3...d5 QGD, Catalan, and Queen's Indian) keep the c4/d4 pawns against d5/e6 or b6 in tension, a closed or tense centre with manoeuvring before contact. Benoni-style 3...c5 structures are asymmetrical.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "Chessiverse: a flexible move order rather than a fixed system, though it also calls it a hypermodern system. It is a mainline choice among strong players: White practitioners are Farago (423 games), Dreev (363) and Van Wely (351), with Black practitioners Korchnoi (299) and Karpov (274). The Bogo-Indian is played about half as often as the Queen's Indian.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse gives an Intermediate difficulty rating. There is little to memorise on move 3 itself, but White must understand several resulting structures (QGD, Catalan, Queen's Indian, Bogo, Benoni), since the structure depends on Black's reply. The consensus on the forum is that it brings no clear advantage, so success depends on manoeuvring skill.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "avoiding the Nimzo-Indian",
+    "flexible move order",
+    "transposition to QGD",
+    "transposition to Catalan",
+    "Queen's Indian",
+    "Bogo-Indian",
+    "dark-squared bishop trade",
+    "long-term pressure",
+    "quiet positional edge"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Queen's Gambit Declined / Catalan",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5",
+      "how": "Most played reply (25 million games in the data); transposes to a different named opening with its own theory and structure."
+    },
+    {
+      "name": "Bogo-Indian",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+      "how": "Solid, balanced pin structure; Black can trade the dark-squared bishop; White can also reach a Three Knights Nimzo with 4.Nc3."
+    },
+    {
+      "name": "Queen's Indian",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6",
+      "how": "Black fianchetto set-up fighting for e4; distinct plans and sub-lines."
+    },
+    {
+      "name": "Benoni / Blumenfeld 3...c5",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5",
+      "how": "Asymmetrical Benoni-style or gambit structures; more dynamic than the QGD."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Anti-Nimzo-Indian, initiated by 3.Nf3, is a flexible and strategic approach for White that sidesteps the sharp theoretical lines of the Nimzo-Indian.",
+        "verdict": "supported",
+        "note": "Flexible move order (Chessiverse). But it does not entirely avoid the Nimzo: after 3...Bb4+ White can play 4.Nc3 for the Three Knights Nimzo (forum).",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "The choice leads to a more positional game, often transposing into the Queen's Indian, Bogo-Indian or Queen's Gambit Declined.",
+        "verdict": "supported",
+        "note": "The Catalan and Benoni-style lines are further common destinations.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Understanding pawn structures and long-term manoeuvring is paramount.",
+        "verdict": "supported",
+        "note": "Quiet positional edge, with structure decided by Black's reply.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White controls the centre (especially the e4-square), develops harmoniously and seeks a small but lasting space or structural advantage.",
+        "verdict": "unverifiable",
+        "note": "The quiet positional edge is supported, but a Chessiverse snippet notes that 3.Nf3 does not directly support the e4 break the way 3.Nc3 does, so the e4-square emphasis is not backed by the sources.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White often transposes to a favourable Queen's Gambit or Catalan set-up.",
+        "verdict": "supported",
+        "note": "3...d5 is the most popular reply; 'favourable' is moderate: the forum consensus is that White has no clear advantage.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black chooses a solid set-up (Queen's Indian, Bogo-Indian or QGD) and challenges White's central ambitions.",
+        "verdict": "supported",
+        "note": "Matches the main replies; 3...c5 is another approach.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black creates counterplay based on piece activity and pressure against White's pawn structure.",
+        "verdict": "supported",
+        "note": "Chessiverse: Black's counterplay is easier to find with experience, White's edge shrinks at higher ratings.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

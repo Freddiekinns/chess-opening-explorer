@@ -1,0 +1,46 @@
+{
+  "slug": "queens-indian-defense-spassky-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Spassky System",
+    "eco": "E14",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. e3",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "queens-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White plays the quiet 4.e3 and develops with Bd3 or Nc3 and castles, while Black develops ...Bb7, ...Be7 and fights for the centre with ...d5 or ...c5. The usual lines run 4...Bb7 5.Bd3 d5 or 5.Nc3 d5, reaching QGD-like positions with the b7 bishop outside the pawn chain. Play is solid and strategic.",
+  "white_ideas": [
+    { "idea": "Develop with Bd3, Nc3 and O-O, then break with e4 or play for the c-file." },
+    { "idea": "Transpose to a Queen's Gambit type structure with Qe2 and Rd1." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre with ...d5 or ...c5, and develop the bishop actively on b7." },
+    { "idea": "Trade pieces and aim for an easy equal position." }
+  ],
+  "typical_structures": [
+    { "structure": "QGD-like with a fianchettoed Black bishop on b7 and a d5/c5 break." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet developing play, resilient for Black with few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "A well-regarded, sound line." },
+    "structure": { "notes": "Centre undecided with ...d5 and ...c5 breaks, like a QGD." },
+    "approach": { "notes": "A standard quiet line against the Queen's Indian." },
+    "level": { "reason": "understanding", "notes": "Little theory; the plans need a feel for the centre." }
+  },
+  "plan_phrases": ["fianchetto", "central break with d5", "solid development"],
+  "sublines_that_differ": [
+    { "name": "5.Bd3 d5", "moves": "4... Bb7 5. Bd3 d5", "how": "QGD-like structure with a locked-in bishop on b7." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Resilient QGD-like set-up with few forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respected line." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre tension undecided, as in the QGD." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal quiet choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans over memory." },
+    "plans": { "value": ["fianchetto"], "reason": "Black's bishop on b7 on the long diagonal." }
+  }
+}

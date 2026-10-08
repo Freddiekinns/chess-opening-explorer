@@ -1,0 +1,49 @@
+{
+  "slug": "scotch-game-schmidt-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Schmidt Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black attacks e4 at once. White's choices are 5.Nc3 (Scotch Four Knights, with ...Bb4) or the forcing 5.Nxc6 bxc6 6.e5 (Mieses), after which Black's ...Qe7 and ...Nd5 hit e5. In the Mieses White gets a space edge and the e5 pawn, Black has doubled c-pawns but active pieces and a half-open b-file; play is concrete and open.",
+  "white_ideas": [
+    { "idea": "5.Nxc6 bxc6 6.e5 Qe7 7.Qe2 Nd5 8.c4 Ba6, forcing play with a space edge" },
+    { "idea": "Scotch Four Knights with Nc3 and Be2 or Bd3, a quieter alternative" },
+    { "idea": "Use the open centre and lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Hit e5 with ...Qe7 and ...Nd5, then trade into an active position" },
+    { "idea": "Ba6 to prevent White castling kingside" },
+    { "idea": "Use the doubled c-pawns for central control and the b-file" }
+  ],
+  "typical_structures": [
+    { "structure": "Mieses: White e5 pawn against Black doubled c-pawns and open b-file" },
+    { "structure": "Open centre with no central pawn for Black after the early exchanges" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mieses is concrete and forcing; tactics on e5 and the c4/Ba6 ideas. Black is not hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "All pieces and pawns are traded evenly." },
+    "soundness": { "notes": "Sound; a long-standing top-level line." },
+    "structure": { "notes": "Open lines for pieces after the early central exchanges; this branch is open rather than a Sicilian-style half-open file." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Black has to know Mieses plans, but the lines are not long." }
+  },
+  "plan_phrases": ["lead in development", "doubled pawns", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Scotch Four Knights", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Bb4", "how": "Quieter and symmetrical; Black has easy equality." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Mieses is forcing with tactics around e5, while the Four Knights branch is calmer." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "Nothing is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A respectable main line for both." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "The centre opens at once and play is for the pieces." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal choice at all levels." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear plans, some theory in the Mieses." },
+    "plans": { "value": ["lead_in_development", "doubled_pawns"], "reason": "Quick piece play with Black's doubled c-pawns in the Mieses." }
+  }
+}

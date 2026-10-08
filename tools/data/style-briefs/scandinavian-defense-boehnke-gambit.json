@@ -1,0 +1,44 @@
+{
+  "slug": "scandinavian-defense-boehnke-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Boehnke Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 e5 3. dxe6 Bxe6",
+    "fen": "rn1qkbnr/ppp2ppp/4b3/8/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays 2...e5 instead of recapturing the pawn, giving a second pawn after 3.dxe6 Bxe6 to get quick development and open lines. White is a pawn up and plays Nf3, d4 and Bd3 or Be2 to consolidate. Black hopes for activity with ...Nc6, ...Qd7 and ...O-O-O, but the compensation is considered lacking.",
+  "white_ideas": [
+    { "idea": "Nf3, d4 and Bd3 to develop and consolidate the extra pawn." },
+    { "idea": "Return the pawn only when it brings a clear edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop fast with ...Nc6, ...Qd7 and castle long." },
+    { "idea": "Pressure on the open e-file and d4." }
+  ],
+  "typical_structures": [
+    { "structure": "Open position with White's extra pawn and Black's rapid piece play." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black sacrifices for open lines and attacks; White can lose track." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White is a pawn up and can hold it with simple development." },
+    "soundness": { "notes": "Considered unsound by strong players; Black's compensation is thin." },
+    "structure": { "notes": "Open centre; the e- and d-files open." },
+    "approach": { "notes": "Strong players seldom use it; surprise value." },
+    "level": { "reason": "memory", "notes": "Trap-based, dubious, so not a beginner choice." }
+  },
+  "plan_phrases": ["Lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Black plays for rapid development against a pawn up." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.7, "reason": "Strong players think Black lacks enough compensation." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open lines and files straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Rarely played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Dubious, so never beginner; traps and lines to memorise." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black gives a pawn for time and piece activity." }
+  }
+}

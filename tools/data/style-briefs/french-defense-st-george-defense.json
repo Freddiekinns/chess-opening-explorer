@@ -1,0 +1,42 @@
+{
+  "slug": "french-defense-st-george-defense",
+  "tier": "unsourced",
+  "root": { "name": "French Defense: St. George Defense", "eco": "C00", "moves": "1. e4 e6 2. d4 a6", "fen": "rnbqkbnr/1ppp1ppp/p3p3/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3" },
+  "parent": "french-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays 2...a6 instead of 2...d5, preparing ...b5, ...Bb7 and ...c5 and keeping the option of ...d5 later. White usually builds a big centre with Nf3, Bd3 and c3 or takes space with 3.c4. Black's queenside play and flexible centre make it a sound surprise, though White's extra space is real.",
+  "white_ideas": [
+    { "idea": "Take a big centre with c4 (Three Pawn Attack) or c3 and Nf3, then play e5 to gain space." },
+    { "idea": "Develop Bd3 and castle, aiming at a kingside attack against Black's slow development." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...b5, ...Bb7 and ...c5 to strike at the centre from the wing, with ...Nf6 and ...d5 later." },
+    { "idea": "Meet 3.c4 with ...b5, offering the Sanky-George or St. George Gambit pawn for activity." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4/c3 centre against Black's e6/c5 with a fianchettoed bishop on b7." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main 3.Nf3 b5 4.Bd3 c5 line is a manoeuvring fight over the centre, neither forced nor especially safe." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The gambits (3.c4 b5 4.cxb5 axb5) are sidelines; in the main line no material is offered." },
+    "soundness": { "notes": "Considered playable; Black gets a flexible set-up but White's space is real." },
+    "structure": { "notes": "Fixed d4/e4 centre against ...c5 strikes, a French-like asymmetrical centre with half-open files." },
+    "approach": { "notes": "Played by a few strong players (Miles) but rare." },
+    "level": { "reason": "understanding", "notes": "Needs sound judgement of when to play ...c5 versus ...d5; little forcing theory." }
+  },
+  "plan_phrases": ["queenside expansion", "...b5 and ...Bb7", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Sanky-George Gambit", "moves": "1. e4 e6 2. d4 a6 3. c4 b5", "how": "Black offers a pawn for queenside play after 4.cxb5 axb5 5.Bxb5." },
+    { "name": "Three Pawn Attack", "moves": "1. e4 e6 2. d4 a6 3. c4", "how": "White takes the whole centre, with a space-advantage fight." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Unusual but not forcing or especially hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "The main line offers no material; gambits are sidelines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable for Black though White holds a space edge." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Fixed centre pressed by ...c5 along a half-open file." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but choosing between ...c5 and ...d5 needs judgement." },
+    "plans": { "value": ["queenside_expansion", "space_advantage"], "reason": "Black expands with ...b5, White holds central space." }
+  }
+}

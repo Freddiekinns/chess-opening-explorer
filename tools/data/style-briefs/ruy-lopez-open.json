@@ -1,0 +1,95 @@
+{
+  "slug": "ruy-lopez-open",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Open",
+    "eco": "C80",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4",
+    "fen": "r1bqkb1r/1ppp1ppp/p1n5/4p3/B3n3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 6"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black grabs the e4 pawn instead of defending e5, and the main line goes 6.d4 b5 7.Bb3 d5 8.dxe5 Be6. White gets a queenside pawn majority and pressure on e5 and the b-file or d-file. Black gets active pieces, a bishop on e6 and ...Bc5, and the e4 knight, trading a loosened queenside for activity.",
+  "white_ideas": [
+    { "idea": "Play c3 and Nbd2 to challenge the e4 knight and bring a piece to d4." },
+    { "idea": "Use the Nd4 outpost and a queenside majority; Bxd5 or Nxe5 tactics." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the pieces active with ...Be6, ...Bc5 and ...Nc5." },
+    { "idea": "Hold e5 with ...Nc5 or ...Bc5 and play against d4 or the b3 bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file after dxe5, White queenside majority (a/b/c) against Black's d-pawn-less centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete tactics around the e4 knight and the d5/e5 pawns; Black's lines are forcing and move-order sensitive."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains e4 by force after d4 and Re1 or d4 and Nxe5."
+    },
+    "soundness": {
+      "notes": "Fully sound, a long-standing main line at the top."
+    },
+    "structure": {
+      "notes": "Centre pawns come off, giving open lines for the pieces, unlike the Closed Ruy."
+    },
+    "approach": {
+      "notes": "A main-line choice, standard."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Deep theory with a number of lines (Dilworth, 9.Nbd2, 9.c3) that must be known and strategic ideas to match."
+    }
+  },
+  "plan_phrases": ["knight outpost on d4", "queenside pawn majority", "active piece play for Black"],
+  "sublines_that_differ": [
+    {
+      "name": "6.Re1",
+      "moves": "6.Re1 d5 7.Nxe5 Nxe5 8.Rxe4",
+      "how": "Quieter, with an early exchange of knights and a pinned or traded centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Concrete play around the e4 knight and open lines where one slip loses material."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "The e4 pawn comes back by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Top-level main line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e-pawns come off and the game turns on open lines and outposts."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A main-line choice at every level."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Long theoretical lines and subtle strategy around e5 and d4."
+    },
+    "plans": {
+      "value": ["knight_outpost"],
+      "reason": "The d4 outpost is the characteristic idea."
+    }
+  }
+}

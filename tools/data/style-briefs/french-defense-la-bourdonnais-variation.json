@@ -1,0 +1,54 @@
+{
+  "slug": "french-defense-la-bourdonnais-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: La Bourdonnais Variation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. f4",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays a King's Gambit-style f4 against the French, preparing a big centre with Nf3 and d4 or a kingside attack. After 2...d5 White can play 3.e5 c5 (an Advance-like structure with f4 supporting e5) or 3.Nf3 dxe4 4.Ng5, the Reuter Gambit, which gives a pawn for quick development. The line is rare and mostly tried by club players for surprise; Black's simplest reply is to take on e4 and develop.",
+  "white_ideas": [
+    { "idea": "f4 supports e5 for an Advance structure with Nf3, Be2 and a kingside space grab" },
+    { "idea": "Reuter Gambit: Nf3 and Ng5 to drive Black's pieces back and develop quickly for a pawn" },
+    { "idea": "Delay d4 and prepare a fast attack against the black king" }
+  ],
+  "black_ideas": [
+    { "idea": "Meet the centre with ...d5 and ...c5, attacking White's pawn chain" },
+    { "idea": "Take on e4 and keep the pawn, then develop with ...Nf6 or ...Nc6" },
+    { "idea": "Exploit the weakened e1-h4 diagonal with ...Qh4+ and ...Bc5" }
+  ],
+  "typical_structures": [
+    { "structure": "Advance French with White f4/e5 against ...c5/...d5" },
+    { "structure": "Open game after the Reuter Gambit, White a pawn down for development" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Read from 3.Nf3 dxe4 4.Ng5, the most played branch in the data: open, forcing and risky for White." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the Reuter Gambit Black takes on e4 and can keep the pawn with accurate play."
+    },
+    "soundness": { "notes": "Considered dubious: Black develops and consolidates against Ng5 with ...Nf6 or ...Nc6, and the weakened king hurts White." },
+    "structure": { "notes": "Open lines after dxe4, central pawns exchanged." },
+    "approach": { "notes": "Seldom chosen by strong players, mainly a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Dubious lines are never beginner; some traps to know." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "3.e5 c5", "moves": "3.e5 c5 4.Nf3 Nc6 5.c3", "how": "Closed Advance-like structure with f4 for White, a quieter game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "The common branch is a gambit with open play and a loosened white king." },
+    "gambit": { "value": "white", "confidence": 0.6, "reason": "White gives the e4 pawn for development in the Reuter Gambit." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Black develops and holds the pawn while White's king is weakened." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Central pawns come off and the pieces use open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players rarely choose 2.f4 against the French." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "A dubious gambit cannot be Beginner; the traps need knowing." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn to get pieces out and attack." }
+  }
+}

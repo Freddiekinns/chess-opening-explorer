@@ -1,0 +1,39 @@
+{
+  "slug": "sicilian-defense-kramnik-variation",
+  "tier": "unsourced",
+  "root": { "name": "Sicilian Defense: Kramnik Variation", "eco": "B40", "moves": "1. e4 c5 2. Nf3 e6 3. c4", "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/2P1P3/5N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3" },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays 3.c4 against the ...e6 Sicilian, aiming for a Maroczy-style bind with Nc3, d4 and a clamp on d5, rather than the open Sicilian. Black can play ...Nc6 and ...Nf6 or ...d5, striking at the centre. I am not certain of the theory, but it is a rare, quiet anti-Sicilian where White seeks space and a lasting positional edge.",
+  "white_ideas": [
+    { "idea": "Set up c4, e4, Nc3 and d4, keeping a Maroczy-style grip on d5." },
+    { "idea": "Develop Be2 and O-O and play on the queenside with b4 and Rb1." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike with ...Nc6 and ...d5 or ...Nf6 to challenge e4 and the centre." },
+    { "idea": "Develop ...b6 and ...Bb7 and ...Nc6, aiming for a Hedgehog-like set-up." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian pawns with White on c4/e4 and Black on c5/e6, a Maroczy or Hedgehog-like structure." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet space-gaining anti-Sicilian with no forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound, a legitimate if rare anti-Sicilian." },
+    "structure": { "notes": "Asymmetrical Sicilian centre with a half-open d-file after exchanges." },
+    "approach": { "notes": "Seldom played by strong players." },
+    "level": { "reason": "understanding", "notes": "Clear plans, little theory." }
+  },
+  "plan_phrases": ["Maroczy bind", "space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet space-gaining play without forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A rare but legitimate line." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Sicilian asymmetrical centre with a half-open file." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but need positional judgement." },
+    "plans": { "value": ["maroczy_bind", "space_advantage"], "reason": "White sets up c4 and e4 to clamp d5." }
+  }
+}

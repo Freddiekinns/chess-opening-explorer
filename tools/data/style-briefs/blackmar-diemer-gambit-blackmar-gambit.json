@@ -1,0 +1,46 @@
+{
+  "slug": "blackmar-diemer-gambit-blackmar-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Blackmar Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. f3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/3Pp3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers a pawn with f3 before developing the knight on c3, so Black has extra options such as 3...Nc6, 3...f5 or 3...e5 4.dxe5 Qxd1+. After 3...exf3 4.Nxf3 White has open lines and a lead in development for a pawn. It is a trappy gambit that is rarely seen from strong players.",
+  "white_ideas": [
+    { "idea": "Recapture on f3 with the knight, develop Bd3 and Bf4, castle and attack f7 or h7." },
+    { "idea": "Use the open f-file and quick development to attack before Black consolidates." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the pawn with ...exf3 and ...e6, ...Nf6." },
+    { "idea": "Decline with ...e5 to trade queens and reach a sound endgame." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn with open e- and f-files; Black pawn on d5 gone, extra pawn on e-file side." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open attacking play for the pawn, with traps; both sides can lose fast." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can accept and hold the pawn with accurate play." },
+    "soundness": { "notes": "Considered dubious: Black has the simple 3...e5 and other good replies; compensation is thought insufficient." },
+    "structure": { "notes": "Open centre and files after exf3; central pawns come off quickly." },
+    "approach": { "notes": "Rarely chosen by strong players; played for surprise and traps." },
+    "level": { "reason": "memory", "notes": "Traps and theory to know; a dubious line is not for a first repertoire." }
+  },
+  "plan_phrases": ["Lead in development", "Kingside attack"],
+  "sublines_that_differ": [
+    { "name": "3...e5", "moves": "3...e5 4.dxe5 Qxd1+ 5.Kxd1", "how": "Queenless endgame with White's king displaced; no real attack." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Open attack against a pawn up, with traps." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives a pawn that Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Compensation is considered inadequate against good defence." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Open lines and files straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Dubious, so never beginner; traps and sidelines to memorise." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "Pawn for time and an attack on the king." }
+  }
+}

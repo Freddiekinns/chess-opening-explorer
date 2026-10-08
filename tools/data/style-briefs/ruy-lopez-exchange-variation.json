@@ -1,0 +1,46 @@
+{
+  "slug": "ruy-lopez-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Exchange Variation",
+    "eco": "C68",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6",
+    "fen": "r1bqkbnr/1ppp1ppp/p1B5/4p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White gives up the bishop pair to double Black's c-pawns, aiming for a healthy kingside 4-v-3 pawn majority and an endgame edge. Black keeps the two bishops and has active pieces, and often castles after ...Bd6 or ...Bg4. Play is strategic and clear, with White pushing d4 or playing d3 and Nbd2.",
+  "white_ideas": [
+    { "idea": "Break with d4 (Lasker) or O-O and d4 to open the position before Black's bishops come alive" },
+    { "idea": "Use the kingside pawn majority to create a passed pawn in the endgame" }
+  ],
+  "black_ideas": [
+    { "idea": "Use the bishop pair and open lines; ...Bg4 and ...Qd7, ...O-O-O" },
+    { "idea": "Attack e4 and use the semi-open b-file/c-file with ...f6 and ...Bd6 set-ups" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns e4/f2/g2/h2 vs Black a6, c6/c7, b7 doubled with the d-pawn gone" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic, low risk for both; Black cannot be attacked quickly, White can steer into a safe endgame." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn on e5 is covered tactically but nothing given up." },
+    "soundness": { "notes": "Fully sound, Fischer and Lasker used it." },
+    "structure": { "notes": "Asymmetric, d-file half-open and e-pawn central; semi-open." },
+    "approach": { "notes": "A standard anti-Morphy line." },
+    "level": { "reason": "understanding", "notes": "Clear plan, little theory, but the endgame play needs care." }
+  },
+  "plan_phrases": ["bishop pair", "doubled pawns", "kingside majority"],
+  "sublines_that_differ": [
+    { "name": "Lutikov Variation", "moves": "4...bxc6", "how": "Black keeps the d-pawn; sharper e4 targeting." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet, low-risk positions where neither side is attacked quickly." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound main-line alternative." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Asymmetric pawn structure with the d-file half-open." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played at every level as a normal option." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs endgame plans but little theory." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "White wrecks Black's queenside pawns while Black keeps the two bishops." }
+  }
+}

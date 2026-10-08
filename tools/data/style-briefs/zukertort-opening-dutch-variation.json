@@ -1,0 +1,46 @@
+{
+  "slug": "zukertort-opening-dutch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Dutch Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays the Dutch against the Réti move order. White usually plays 2.g3 Nf6 3.Bg2 followed by O-O, d3 or d4 and c4, often transposing into a Dutch with a fianchetto, or 2.d4 and 2.e4 ideas. Black builds a Stonewall or Classical set-up with ...e6, ...d5 or ...d6 and fights for e4 and kingside space.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, castle, and play d4 and c4 to keep pressure on e6 and the long diagonal." },
+    { "idea": "Use e4 or d4 to take the centre and meet the Dutch pawn structure." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...f5 and build a Stonewall or Classical set-up." },
+    { "idea": "Play for kingside space and counterplay on the e-file." }
+  ],
+  "typical_structures": [
+    { "structure": "Dutch Stonewall (c6/d5/e6/f5) or Classical with ...d6 and ...e5, against a White fianchetto." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch structures create unbalanced positions with attacking chances for Black and weaknesses on e6/e5; slower here than against 1.d4." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound; the Dutch is used at top level." },
+    "structure": { "notes": "Centre undecided; Stonewall or Classical, d4/d3 options." },
+    "approach": { "notes": "A standard way to meet 1.Nf3 for Dutch players." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of Dutch structures and weaknesses." }
+  },
+  "plan_phrases": ["fianchetto", "stonewall", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "2.d3", "moves": "1. Nf3 f5 2. d3 Nf6", "how": "A slower line where White plays e4 later; closer to a King's Indian Attack with reversed colours." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Dutch structures are unbalanced and known for double-edged play, though this move order is slower." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre is undecided and may become a Stonewall or Classical set-up." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "Played by strong players and a normal Dutch option." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Needs understanding of Dutch pawn structures." },
+    "plans": { "value": ["fianchetto", "stonewall"], "reason": "White fianchettoes against Black's Stonewall or Classical set-up." }
+  }
+}

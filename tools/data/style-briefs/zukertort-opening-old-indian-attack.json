@@ -1,0 +1,49 @@
+{
+  "slug": "zukertort-opening-old-indian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Old Indian Attack",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. d3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White builds a King's Indian Attack-style set-up with d3, g3, Bg2, O-O, Nbd2 and e4, content to let Black take the centre with ...d5 and ...Nf6. Black usually develops freely, often with ...e5 or ...c5 and a kingside fianchetto. The game is a slow manoeuvring fight where White aims for e4 and a later kingside push or central break, and the position is rarely forcing.",
+  "white_ideas": [
+    { "idea": "Set up g3, Bg2, O-O, Nbd2 and e4 as in the King's Indian Attack" },
+    { "idea": "Break with e4 and then e5 or a kingside pawn advance" },
+    { "idea": "Keep the structure flexible and transpose to Réti or KIA lines" }
+  ],
+  "black_ideas": [
+    { "idea": "Take space in the centre with ...d5, ...e5 and ...Nc6" },
+    { "idea": "Fianchetto the king's bishop and castle, mirroring White" },
+    { "idea": "Hit the centre with ...c5 or ...e5 and play for equality or more" }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Attack: pawns d3/e4 with a fianchetto on g2 against ...d5/...e5" },
+    { "structure": "Reversed King's Indian when Black plays ...e5 and ...Nc6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, low-risk and hard for Black to attack; White rarely commits early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound; it concedes the centre but is equal." },
+    "structure": { "notes": "Centre not fixed: d3 and e4 pawn break later, Black usually takes the centre first." },
+    "approach": { "notes": "A set-up White can play against almost anything: g3, Bg2, O-O, d3, Nbd2, e4." },
+    "level": { "reason": "understanding", "notes": "A set-up with clear plans and little to memorise, though knowing when to play e4 takes judgement." }
+  },
+  "plan_phrases": ["King's Indian Attack set-up", "fianchetto", "e4 break", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Reti: Old Indian Attack with ...c5", "moves": "1. Nf3 d5 2. d3 Nf6 3. g3 c5", "how": "Black takes a Sicilian-like set-up; the position becomes a reversed English." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "White's set-up is low-risk and hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respectable if modest set-up." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "The centre is undecided and flank-driven, like the King's Indian Attack." },
+    "approach": { "value": "system", "confidence": 0.75, "reason": "A KIA-type set-up White can use against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Plans are clear but timing the e4 break needs judgement; could be Beginner." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "Bg2 on the long diagonal and an e4 and kingside push." }
+  }
+}

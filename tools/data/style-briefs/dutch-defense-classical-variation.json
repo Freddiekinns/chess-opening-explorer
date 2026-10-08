@@ -1,0 +1,47 @@
+{
+  "slug": "dutch-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Classical Variation",
+    "eco": "A84",
+    "moves": "1. d4 f5 2. c4 e6",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5p2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays ...f5 and ...e6 and usually ...Nf6, ...Be7, ...O-O and ...d6, aiming for ...e5 or a Stonewall with ...d5 and ...c6. White fianchettoes with g3 and Bg2, castles and prepares Nc3, d5 or e4. Black's kingside is weakened but he gets control of e4 and dynamic kingside play. The game is double-edged with real winning and losing chances.",
+  "white_ideas": [
+    { "idea": "g3, Bg2, O-O and Nc3 with a queenside or central expansion (d5, e4)" },
+    { "idea": "Exploit the e8-h5 diagonal and e6 weaknesses with Qc2 and Nd4" }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...Nf6, then ...Be7, ...O-O and ...d6 aiming for ...e5" },
+    { "idea": "Stonewall set-up with ...d5, ...c6 and a knight on e4" }
+  ],
+  "typical_structures": [
+    { "structure": "Classical Dutch: Black pawns on e6, d6, f5 against White c4/d4 and a g2 bishop" },
+    { "structure": "Stonewall with pawns on c6, d5, e6, f5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch is double-edged and unbalancing: weakened kingside and e-file for White, Black's attack on the kingside." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound but double-edged." },
+    "structure": { "notes": "Centre undecided, Black decides between ...e5 and Stonewall." },
+    "approach": { "notes": "Standard defence with a few main set-ups; played occasionally by Carlsen, Nakamura." },
+    "level": { "reason": "understanding", "notes": "Plans and pawn structures need understanding; not very deep theory." }
+  },
+  "plan_phrases": ["kingside attack", "bishop on g2", "control of e4"],
+  "sublines_that_differ": [
+    { "name": "Dutch: Stonewall", "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 c6 5. Nf3 d5", "how": "Closed set-up with a bad light-squared bishop but kingside play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Dutch is unbalancing with weakened kingside and mutual chances." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Respected but risky defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre undecided until ...e5 or ...d5." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "An occasional choice of strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans need understanding; not too heavy on memory." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "White fianchettoes; Black plays for kingside and e4 control." }
+  }
+}

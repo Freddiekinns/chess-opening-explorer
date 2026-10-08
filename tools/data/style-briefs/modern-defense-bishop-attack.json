@@ -1,0 +1,47 @@
+{
+  "slug": "modern-defense-bishop-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Bishop Attack",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Bc4",
+    "fen": "rnbqk1nr/ppppppbp/6p1/8/2BPP3/8/PPP2PPP/RNBQK1NR b KQkq - 2 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to c4 at once, eyeing f7 and the e4-d4 centre, and keeps Nc3 or Nf3 for later. Black usually plays ...d6 and ...Nf6 or ...c6, keeping the g7 bishop behind the centre and striking at it with ...c5 or ...e5 once ready. Play is a quiet hypermodern-against-centre fight with no forced theory.",
+  "white_ideas": [
+    { "idea": "Hold the e4-d4 centre with Nc3, Nf3 and Qe2, keeping the bishop on the a2-g8 diagonal." },
+    { "idea": "Use the bishop on c4 to eye f7 and stop Black getting ...d5 comfortably." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...d6, ...Nf6, ...O-O and hit the centre with ...c5 or ...e5." },
+    { "idea": "Meet an early e5 or a bishop raid with ...Nc6 or ...c6 and ...d5 to block the diagonal." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 centre against Black's fianchettoed kingside and ...d6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "3...d6 and ...Nf6 lead to a quiet, undramatic centre with no forced tactics; neither side is under early pressure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands in the main line; 3...b5 (Bücker Gambit) is a rare Black sacrifice." },
+    "soundness": { "notes": "Both sides are fine; the bishop move is not a threat and Black has several comfortable set-ups." },
+    "structure": { "notes": "Centre is unresolved: White holds e4/d4 while Black waits to attack it with ...c5 or ...e5." },
+    "approach": { "notes": "A less common third move against the Modern; played occasionally at all levels, not a surprise-only line." },
+    "level": { "reason": "neither", "notes": "No long theory and plans are modest; manageable at club level either side." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Bücker Gambit", "moves": "1. e4 g6 2. d4 Bg7 3. Bc4 b5", "how": "Black sacrifices a pawn at once for activity; rare." },
+    { "name": "Monkey's Bum", "moves": "1. e4 g6 2. Bc4 Bg7 3. Qf3 e6 4. d4 Bxd4", "how": "Odd move-order gambit with ...Bxd4; offbeat." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet centre with no forcing play, but not especially hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Main line has no sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Both sides have comfortable set-ups." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre is undecided until Black strikes with ...c5 or ...e5." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Respectable if uncommon try against the Modern, not a surprise-only line." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Modest theory and plans, not a first-repertoire coach choice." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black fianchettoes and attacks White's e4-d4 centre." }
+  }
+}

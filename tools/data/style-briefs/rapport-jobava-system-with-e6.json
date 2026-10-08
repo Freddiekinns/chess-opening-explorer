@@ -1,0 +1,49 @@
+{
+  "slug": "rapport-jobava-system-with-e6",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rapport-Jobava System, with e6",
+    "eco": "D01",
+    "moves": "1. d4 d5 2. Nc3 e6 3. Bf4",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 1 3"
+  },
+  "parent": "queens-pawn-game-chigorin-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays a Jobava London against the French-style set-up: Nc3 and Bf4 first, then e3, Nf3 and Bd3 or Nb5 ideas against c7, often followed by Qd2 and long castling. Black develops with ...Nf6, ...c5 or ...Bd6 to challenge the bishop and hits d4 with ...c5. The game is a flexible, piece-based middlegame with little forced theory in the e6 branch, since Black has closed in the c8-bishop.",
+  "white_ideas": [
+    { "idea": "Develop Bf4, Nc3, e3, Nf3, Bd3 and keep Nb5 in reserve against c7" },
+    { "idea": "Qd2 and Bh6 or long castling with a pawn push on the kingside" },
+    { "idea": "Meet ...c5 with dxc5 or Nb5, using the lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the bishop with ...Bd6 or ...Nh5 and trade it off" },
+    { "idea": "Hit the centre with ...c5 and develop the queenside with ...Nc6" },
+    { "idea": "Free the light bishop with ...dxc4 or ...b6 later" }
+  ],
+  "typical_structures": [
+    { "structure": "d4/e3 pawns against d5/e6, a French-like centre with the white bishop outside the chain" },
+    { "structure": "Isolated or symmetrical structures after ...c5 and dxc5 or ...cxd4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet in the e6 lines, sharper if White castles long and pushes g4 or h4; neither forcing nor especially hard to break." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; early c4 is not played." },
+    "soundness": { "notes": "Sound; the Jobava London is played by super-GMs." },
+    "structure": { "notes": "Centre not locked: d4 and d5 face each other with e3/e6 behind, tension remains with ...c5." },
+    "approach": { "notes": "A Jobava-style set-up (Nc3, Bf4, e3) that White can play against almost any Black reply." },
+    "level": { "reason": "understanding", "notes": "Plans are clear but the piece play and the Nb5 and long-castling tactics need judgement." }
+  },
+  "plan_phrases": ["Jobava London set-up", "lead in development", "Nb5 against c7", "long castling"],
+  "sublines_that_differ": [
+    { "name": "Nb5 line", "moves": "1. d4 d5 2. Nc3 e6 3. Bf4 Nf6 4. e3 c5 5. Nb5", "how": "Immediate tactical play against c7 and a more forcing game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "The e6 branch is a developing game with some tactics but no forcing theory." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable at top level." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The d4/d5 centre stays in tension and is not locked or opened early." },
+    "approach": { "value": "system", "confidence": 0.6, "reason": "A Jobava London set-up used against most Black set-ups." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear but piece placement and Nb5 tactics need care." },
+    "plans": { "value": ["lead_in_development"], "reason": "White aims to use the extra development tempo for Nb5 and an attack." }
+  }
+}

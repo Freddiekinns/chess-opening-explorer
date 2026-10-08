@@ -4,6 +4,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Model routing** (2026-10-08): Haiku `scout`/`verifier`, Sonnet `implementer`
+  and `/docs-sync`, `pipeline-reviewer` pinned to Sonnet high; routing rules in
+  `CLAUDE.md`. Main session stays Opus, effort medium. `AGENTS.md` 441 → ~220
+  lines, tooling and subsystem detail moved to skills and the scoped files.
+- **Style tags** (2026-10-05, #160): a fixed six-axis taxonomy replaces the LLM
+  tags on the detail page, cards, Discover facets and style search. 563
+  variations cover 80% of pages and 65% of games; 848 tail variations remain.
 - **`irregular` family split** (2026-10-02): 519 positions to three new families
   and six re-routes; top-200 pages on the `irregular` shelf 16 → 4. A test now
   fails when the ECO files drift from the resolver.
@@ -40,18 +47,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   split inoperative under vite 5 — JS 373 → 361 kB, builds 4.7s → 0.8s. **Node
   20 had been EOL since March**; CI moved to 24, unblocking jsdom 30 — frontend
   job 2m01s → 1m16s, `testTimeout` restored.
-- **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
-  googleapis 176, react-router 7, lucide-react 1, express 5; green checks lied
-  three times. **`archive.md`.**
-- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
-  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
-  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
-  blocked on #86. Four false greens, every one a bump no workflow covered: a
-  Dependabot branch is tested against the `main` of the day it opened (#75
-  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
-  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
-  suppresses only that version — #76 returned as #89 — so #94 was answered by
-  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.
+- **Fourth Dependabot pass and the backlog to empty** (2026-08-29/31, #71-#114):
+  green checks lied repeatedly. **`archive.md`**, `docs/reviews/2026-08-29-*`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;
@@ -73,6 +70,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
+- **Style tags tail**: 848 variations (16% of pages, 0.8% of games); plan in
+  `activeContext.md`, runbook in `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
@@ -94,7 +93,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows
   separated only by ECO — a data problem.
-- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
+- **Toasts need one host** (two within 4s cover an Undo), and **#166 —
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `archive.md`.

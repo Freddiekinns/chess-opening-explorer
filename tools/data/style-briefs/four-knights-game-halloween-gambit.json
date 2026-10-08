@@ -1,0 +1,46 @@
+{
+  "slug": "four-knights-game-halloween-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Four Knights Game: Halloween Gambit",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Nxe5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4N3/4P3/2N5/PPPP1PPP/R1BQKB1R b KQkq - 0 4"
+  },
+  "parent": "four-knights-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White sacrifices a knight for a pawn with 4.Nxe5 Nxe5 5.d4, hitting the knight and aiming for a big centre with d5, e5 and f4. Black usually retreats and keeps the extra piece, and White tries to use the space and the lead in development. It is a surprise weapon that scores at club level but is considered unsound.",
+  "white_ideas": [
+    { "idea": "5.d4 forking the knight, then d5 and e5 to gain tempi and space." },
+    { "idea": "Attack with f4, Bc4 and Qh5 or Qf3 against the displaced Black pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra piece, retreat to g6 or c6, and return material if needed." },
+    { "idea": "Consolidate with ...Bb4 and ...f5, then castle and use the extra knight." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4/e5 or d5 and f4 against Black's pieces pushed back; Black up a piece for pawns." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Piece sacrifice, forcing play and traps; one error decides the game." },
+    "gambit": { "material_given": "piece", "given_by": "white", "can_be_kept": "true", "notes": "Black keeps the piece after 4...Nxe5 5.d4 Ng6 or Nc6." },
+    "soundness": { "notes": "Considered unsound by strong players; Black is up a piece with a sound defence." },
+    "structure": { "notes": "Open tactical game with the centre opening up quickly." },
+    "approach": { "notes": "Strong players seldom use it; surprise value only." },
+    "level": { "reason": "memory", "notes": "Pure theory and traps; dubious so not a beginner choice." }
+  },
+  "plan_phrases": ["Lead in development", "Space advantage"],
+  "sublines_that_differ": [
+    { "name": "Declined", "moves": "4...Nxe5 5.d4 Bd6", "how": "Black can return a piece to reach a quiet position." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Piece sacrifice with open, forcing play." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives a knight for a pawn that Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.85, "reason": "Strong players consider it unsound." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Central files and diagonals open at once." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Heavy trap memorisation; dubious so never beginner." },
+    "plans": { "value": ["lead_in_development", "space_advantage"], "reason": "White aims for tempo and a big pawn centre for the piece." }
+  }
+}

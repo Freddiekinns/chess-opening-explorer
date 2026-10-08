@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-main-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Main Line",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "caro-kann-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "After 3.Nc3 or 3.Nd2 dxe4 4.Nxe4 Black develops with ...Bf5 (Classical) or ...Nf6 (5.Nxf6+ exf6 or ...Nd7 lines). Black gets a healthy structure and a free light-squared bishop and aims for ...e6 and ...c5. White has a lead in space and development and tries for Qf3 and Bd3 with kingside play, but Black's position is very hard to break down.",
+  "white_ideas": [
+    { "idea": "Develop Ng3, Nf3 and Bd3 against the bishop; sometimes h4-h5 to harass Bf5-g6" },
+    { "idea": "Use the space and any kingside majority; in the 5.Nxf6+ line, play for Bc4 and Ne2" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the bishop outside the chain, then ...e6, ...Nd7 and ...Ngf6" },
+    { "idea": "Break with ...c5 once developed, aiming for a sound middlegame" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 against Black c6/e6 with the bishop outside, asymmetric centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "The Classical Caro-Kann is Solid by anchor: few weaknesses and slow play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn on e4 is taken, none given." },
+    "soundness": { "notes": "Fully sound, a top-level defence." },
+    "structure": { "notes": "d4 against c6/e6, half-open lines, semi-open." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Clear plans, modest theory." }
+  },
+  "plan_phrases": ["solid pawn structure", "...c5 break", "free the light bishop"],
+  "sublines_that_differ": [
+    { "name": "5.f3 gambit", "moves": "4...Nf6 5.f3", "how": "A rare gambit-type line." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Black's structure is hard to break down in the Classical Caro-Kann." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Asymmetric centre with White d4 against c6/e6." },
+    "approach": { "value": "standard", "confidence": 0.95, "reason": "A main-line defence at all levels." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Clear plans, little forcing theory." },
+    "plans": { "value": [], "reason": "No single plan stands out." }
+  }
+}

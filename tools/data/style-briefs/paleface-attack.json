@@ -1,0 +1,47 @@
+{
+  "slug": "paleface-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Paleface Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. f3",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/5P2/PPP1P1PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White prepares e4 with f3, aiming for a big pawn centre with c4, e4 and Nc3 and possibly a Blackmar-Diemer-like or Sämisch-style set-up. Black can strike at once with ...d5 or ...e5 or ...c5, or take on e4 and let White weaken the e1-h4 diagonal. I am unsure of the details and judge it from the moves.",
+  "white_ideas": [
+    { "idea": "Build a broad centre with e4, c4 and Nc3 behind the f3 pawn" },
+    { "idea": "Then develop Be3, Qd2 and aim at the kingside" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at once with ...d5, ...e5 or ...c5 before e4 arrives" },
+    { "idea": "Exploit the weakened e1-h4 diagonal with ...Qh4+ and ...Ne4 ideas" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4/f3 centre against a ...d5 or ...c5 counter" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White's slow but loosening f3 invites counterplay; not known for steadiness or mutual attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Gambits like the Linder and Webster are sublines; no material in the main line." },
+    "soundness": { "notes": "Loosening f3 is slightly inferior but not refuted." },
+    "structure": { "notes": "Centre undecided; breaks like ...e5 or ...d5 are to come." },
+    "approach": { "notes": "Strong players seldom choose 2.f3." },
+    "level": { "reason": "neither", "notes": "Little theory but easy to misplay the weakened diagonal." }
+  },
+  "plan_phrases": ["broad pawn centre", "avoiding theory"],
+  "sublines_that_differ": [
+    { "name": "Linder Counter Gambit", "moves": "2...e6 3.e4 Nxe4", "how": "Black offers a piece-for-pawn exchange sacrifice" },
+    { "name": "Webster Gambit", "moves": "2...c5 3.d5 e6 4.e4 exd5 5.e5", "how": "White gambits a pawn for central space" }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Slightly loosening, neither especially solid nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material is offered in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Slightly inferior for White but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre stays undecided after f3." },
+    "approach": { "value": "offbeat", "confidence": 0.75, "reason": "Strong players seldom choose 2.f3." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few lines but the weakened diagonal makes it risky." },
+    "plans": { "value": [], "reason": "No clear named plan; White just builds the e4 centre." }
+  }
+}

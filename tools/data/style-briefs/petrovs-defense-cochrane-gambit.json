@@ -1,0 +1,48 @@
+{
+  "slug": "petrovs-defense-cochrane-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Cochrane Gambit",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nxf7",
+    "fen": "rnbqkb1r/ppp2Npp/3p1n2/8/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White sacrifices a knight for two pawns with 4.Nxf7 Kxf7, then plays 5.d4 or 5.Bc4+ to attack the exposed king. Black should hold with ...Kg8 and consolidate, and keeps the extra piece. White's compensation is two pawns and an uncomfortable king for Black, which is not enough against accurate play.",
+  "white_ideas": [
+    { "idea": "Open the centre with d4 and Bc4+ to harass the king" },
+    { "idea": "Use e5 and Qh5+ to attack the Black king" },
+    { "idea": "Regain some material and exploit the lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the knight and tuck the king away with ...Kg8" },
+    { "idea": "Develop ...Be6 and ...Nc6 while returning pawns if needed" },
+    { "idea": "Neutralise the initiative and use the extra piece" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White's central pawns and a displaced Black king" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A sacrifice for attack with forcing, tactical lines." },
+    "gambit": { "material_given": "piece", "given_by": "white", "can_be_kept": "true", "notes": "White gives a knight for two pawns; Black can keep the piece." },
+    "soundness": { "notes": "Dubious: strong players consider it unsound." },
+    "structure": { "notes": "Open centre and exposed king." },
+    "approach": { "notes": "Very rare among strong players; chosen for surprise." },
+    "level": { "reason": "memory", "notes": "Needs knowing the attack but dubious, so not Beginner." }
+  },
+  "plan_phrases": ["kingside attack", "rapid development for a piece"],
+  "sublines_that_differ": [
+    { "name": "Bishop check line", "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nxf7 Kxf7 5. Bc4+", "how": "Sharper, attacking the exposed king immediately." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "A knight sacrifice and direct attack on the king." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives a knight for two pawns and Black can keep the piece." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.8, "reason": "Black holds with correct defence." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open centre and exposed king." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Trap-based; dubious so never Beginner." },
+    "plans": { "value": ["kingside_attack", "lead_in_development"], "reason": "White attacks the exposed king with quick development." }
+  }
+}

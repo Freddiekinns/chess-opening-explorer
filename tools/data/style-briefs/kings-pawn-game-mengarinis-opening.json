@@ -1,0 +1,46 @@
+{
+  "slug": "kings-pawn-game-mengarinis-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Mengarini's Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. a3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/P7/1PPP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays the waiting move a3 in an open-game position, perhaps preparing b4 or Nc3 and Bb5 ideas, but losing time. Black can develop freely with ...Nf6, ...Nc6 or ...d5 and gets at least equality. It is a rare, offbeat tempo-loss, not a theoretical system.",
+  "white_ideas": [
+    { "idea": "Prepare b4 or Ba2 ideas and play a Vienna or Italian structure with an extra a3" },
+    { "idea": "Transpose to an open game with Nf3 and Bc4" },
+    { "idea": "Take Black out of known theory" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...Nf6/...d5 and develop with tempo" },
+    { "idea": "Play ...Nc6 and ...Bc5 as in an Italian with an extra move" },
+    { "idea": "Equalise easily and use the spare tempo" }
+  ],
+  "typical_structures": [
+    { "structure": "Open-game structures with e4/e5 and White having lost a tempo" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A waiting move; play is neither forcing nor passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound but slightly inaccurate; gives Black a free tempo." },
+    "structure": { "notes": "Centre undecided; likely transposes into Open Game structures." },
+    "approach": { "notes": "Very rare among strong players; a pure surprise." },
+    "level": { "reason": "neither", "notes": "Few concrete lines; no clear plans." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "A tempo-losing waiting move with no forcing play or special solidity." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Loses a tempo but is not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre is undecided and transposes into several open-game structures." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players hardly use it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Little to learn but no clear plan." },
+    "plans": { "value": [], "reason": "No characteristic plan." }
+  }
+}

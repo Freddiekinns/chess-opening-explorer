@@ -1,0 +1,225 @@
+{
+  "slug": "dutch-defense",
+  "root": {
+    "name": "Dutch Defense",
+    "eco": "A80",
+    "moves": "1. d4 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-04",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Dutch Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dutch_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Dutch Defense",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/dutch-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Dutch Defense Guide: Variations, Ideas & Counters",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/queens-pawn/dutch-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippets: Dutch Defense complete guides (Leningrad / Stonewall / Classical; Staunton Gambit scoring)",
+      "publisher": "WebSearch results (TheChessWorld, chess.com, mated.gg snippets)",
+      "url": "https://thechessworld.com/articles/openings/dutch-defense-the-complete-guide/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black answers 1.d4 with 1...f5, fighting for e4 and avoiding symmetrical play, at the cost of weakening the kingside (the e8-h5 diagonal) and the e6 square. Three set-ups dominate: the Leningrad (...g6, ...Bg7, KID-style, with ...e5 or ...Ne4 and kingside play), the Stonewall (...e6, ...d5, ...c6 with a knight on e4 and a bad light-squared bishop) and the Classical (...e6, ...Be7, ...d6, later ...e5). White usually fianchettoes with g3/Bg2 and c4 and prepares e4 or queenside expansion, or sidesteps theory with the Staunton Gambit (2.e4), Hopton or Korchnoi Attack (h3 and g4). Sources agree it is sound but double-edged, unbalancing and theoretical, played occasionally by Carlsen, Nakamura and Nepomniachtchi but never a main defence to 1.d4.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto the king's bishop (g3, Bg2) and play c4 to pressure e6 and the long diagonal",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Exploit the weakened kingside and e8-h5 diagonal and the dark squares left by ...f5",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Expand on the queenside (c4, b4) before Black's kingside attack develops",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Avoid the main lines with anti-Dutch sidelines: Staunton Gambit 2.e4, Korchnoi Attack 2.h3 and g4, Hopton Attack, Raphael Variation",
+      "sources": ["s1", "s2", "s4"]
+    },
+    {
+      "idea": "Prepare the e2-e4 break to open the centre against Black's king-side commitments (own understanding; consistent with Staunton / Stonewall plans, not stated verbatim in the pages read)",
+      "sources": []
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Control e4 with the f-pawn and a knight, and prevent White's ideal pawn centre",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Launch kingside attacks via ...f4, ...e5 and queen manoeuvres such as ...Qe8-h5",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Leningrad: fianchetto ...g6 and ...Bg7 with ...d6, ...O-O and an ...e5 break (KID-like)",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Stonewall: ...d5, ...e6, ...c6 to grip e4, accepting a bad light-squared bishop and a weak e6 / dark squares",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Classical: ...e6, ...Be7, ...d6 with a flexible later ...e5 break",
+      "sources": ["s1", "s4"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Stonewall: pawns on c6, d5, e6, f5 with the knight outpost on e4; closed, with dark-square weaknesses and a hemmed-in c8 bishop",
+      "sources": ["s1", "s3", "s4"]
+    },
+    {
+      "structure": "Leningrad: ...g6/...Bg7 against fianchettoed White; semi-open with ...e5 or ...f4 breaks",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "structure": "Classical: pawns on d6, e6, f5; flexible, with ...e5 at the right moment",
+      "sources": ["s3", "s4"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chessable: aggressive, fighting, 'high-risk proposition' creating dynamic imbalances, weakening the kingside, not recommended for beginners. Wikipedia: aggressive and unbalancing. Chess Doctrine: asymmetrical from move one, unbalanced pawn structures. The Stonewall is a locked and solid-looking structure but still concedes dark-square weaknesses; the Leningrad is dynamic. Overall double-edged with real kingside risk for Black.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given by Black. White's Staunton Gambit 2.e4 (pawn offered by White) is a sideline, not the main Dutch; the root has no gambit.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "soundness": {
+      "notes": "Wikipedia: historically considered dubious but playable at all levels. Chessable: 'far from refuted', not unsound but demands precision. Chess Doctrine: 'fully respectable' and 'fully sound up to club and master level'. Snippet guide: all three main systems sound. Staunton Gambit scores about 50% for White overall and about 54% at club level.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Depends on set-up: Stonewall is locked/closed with the e4 square contested by pieces; Classical and Leningrad keep the centre tense and semi-open and aim for an ...e5 break or kingside pawn storm. White's c4/g3 fianchetto set-up keeps the centre tense, not open early. Sources do not give a single label.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "approach": {
+      "notes": "A defence to 1.d4 only, not playable against everything, but each variation is a recognised set-up (Leningrad, Stonewall, Classical) with plan-based play. Wikipedia says it is rarely seen in top-level competition, yet Botvinnik and Bronstein played it in the 1951 match and Carlsen, Nakamura, Nepomniachtchi, Kramnik, Simon Williams have used it. Not 'seldom played by strong players' in the Grob sense; more a minority choice among strong players.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessable: 'extremely theoretical' as a drawback, White has many sidelines (Staunton, Hopton, Raphael) to avoid the main lines; not recommended for beginners; intermediate and advanced attacking players can adopt it with study. Chess Doctrine says moderate complexity, less analysed than mainlines, but sharp early sidelines punish careless moves.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "control of e4",
+    "kingside attack",
+    "...e5 break",
+    "Stonewall structure",
+    "Leningrad fianchetto",
+    "weak e6 square",
+    "bad light-squared bishop",
+    "e8-h5 diagonal",
+    "queenside expansion",
+    "knight outpost on e4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Dutch: Stonewall Variation",
+      "moves": "1. d4 f5 2. c4 e6 3. Nc3 Nf6 4. Nf3 d5 5. g3 c6",
+      "how": "Locked pawn wall (c6, d5, e6, f5) with a knight on e4 and dark-square weaknesses, strategic and slow."
+    },
+    {
+      "name": "Dutch: Leningrad Variation",
+      "moves": "1. d4 f5 2. c4 Nf6 3. Nf3 g6 4. g3 Bg7 5. Bg2 d6 6. O-O O-O",
+      "how": "King's-Indian-like fianchetto with ...e5 or kingside pawn storm; dynamic and theoretical."
+    },
+    {
+      "name": "Dutch: Classical (Ilyin-Zhenevsky) Variation",
+      "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O d6",
+      "how": "Flexible with later ...e5; the most natural and positional of the three."
+    },
+    {
+      "name": "Dutch: Staunton Gambit",
+      "moves": "1. d4 f5 2. e4 fxe4 3. Nc3 Nf6 4. Bg5",
+      "how": "White gambits a pawn for quick development; sharp, rarely played at top level today."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Dutch is a fighting, asymmetrical response to 1.d4",
+        "verdict": "supported",
+        "note": "Described as aggressive and unbalancing from move one.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "It stakes a claim on e4 immediately",
+        "verdict": "supported",
+        "note": "Control of e4 is the stated purpose of 1...f5.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black accepts structural weaknesses around the king in exchange for dynamic, attacking chances, particularly on the kingside",
+        "verdict": "supported",
+        "note": "Weakened e8-h5 diagonal and kingside; attacks via ...f4, ...e5 and queen manoeuvres.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Suited to aggressive, creative players not afraid of risk",
+        "verdict": "supported",
+        "note": "High-risk, attacking-minded players recommended.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "The opening leads to complex, strategically demanding positions",
+        "verdict": "supported",
+        "note": "Theory-heavy with many White sidelines.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: establish a Stonewall (d5, e6, f5) or Leningrad (g6, Bg7) structure to control e4 and launch a kingside attack",
+        "verdict": "supported",
+        "note": "The Stonewall controls e4 but its attack is slower; the Leningrad attacks on the kingside.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "Black: manoeuvre pieces, especially a knight, to the e4 outpost",
+        "verdict": "supported",
+        "note": "Standard Stonewall and Classical idea.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "White: prepare the e2-e4 pawn break to open the centre and exploit Black's exposed king",
+        "verdict": "supported",
+        "note": "Understanding rather than directly stated; Staunton Gambit 2.e4 is the immediate version. Sources also give queenside expansion (c4, b4) as White's main plan.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: fianchetto on g2 to control the long diagonal and target weaknesses, particularly the e6 square",
+        "verdict": "supported",
+        "note": "g3/Bg2 plus c4 is White's usual set-up and e6 is a named weakness.",
+        "sources": ["s1", "s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 3 }
+}

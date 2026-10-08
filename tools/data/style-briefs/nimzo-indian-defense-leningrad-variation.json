@@ -1,0 +1,47 @@
+{
+  "slug": "nimzo-indian-defense-leningrad-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Leningrad Variation",
+    "eco": "E30",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Bg5",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/6B1/1bPP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the f6 knight at once with 4.Bg5. Black chooses between 4...h6 5.Bh4 (then ...c5 or ...g5 breaks), 4...c5, and 4...O-O. In the main lines Black gives up the bishop pair on c3, getting doubled c-pawns for White, or White keeps tension and develops quickly. The game is a manoeuvring fight for central control with some sharp options such as ...g5.",
+  "white_ideas": [
+    { "idea": "Pin the knight, play e3, Qc2 or Qb3, and keep the bishop pair." },
+    { "idea": "Meet ...c5 with d5 or dxc5 and use the pin." }
+  ],
+  "black_ideas": [
+    { "idea": "Break the pin with ...h6 and ...g5 or ...Bxc3+, and hit the centre with ...c5." },
+    { "idea": "Double White's pawns with ...Bxc3+ and play against the weak c-pawns, with ...d6 and ...e5." }
+  ],
+  "typical_structures": [
+    { "structure": "White doubled c-pawns after bxc3 with the bishop pair against Black's central play." },
+    { "structure": "After ...c5 d5 Black gets a Benoni-style asymmetric centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Known for double-edged but strategic play; the sharp ...g5 lines exist, but most games are manoeuvring over doubled pawns and the pin." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is sacrificed in the main lines." },
+    "soundness": { "notes": "A main-line sound system for both sides." },
+    "structure": { "notes": "Centre in tension with d4/c4 versus e6/c5; the pin and doubled pawns decide it." },
+    "approach": { "notes": "A mainstream branch of the Nimzo-Indian." },
+    "level": { "reason": "understanding", "notes": "Pawn-structure play and a fair amount of theory; understanding of doubled pawns and bishop pair matters." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "break the pin"],
+  "sublines_that_differ": [
+    { "name": "Spielmann ...g5", "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Bg5 h6 5. Bh4 g5", "how": "Black attacks the bishop at once; the game becomes sharp with ...Ne4 and opposite attacking ideas." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Strategic battle over doubled pawns and the bishop pair, with the sharp ...g5 branch rarer." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A standard Nimzo line used at the top level." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre held in tension by the pin; d4/c4 against ...e6 and ...c5 undecided." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream branch of the Nimzo-Indian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Needs knowledge of the doubled pawn structures but not very long forcing lines." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "Typical Nimzo trade-off of bishop pair against doubled pawns." }
+  }
+}

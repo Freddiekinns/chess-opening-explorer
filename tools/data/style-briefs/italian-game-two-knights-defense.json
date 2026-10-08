@@ -1,0 +1,269 @@
+{
+  "slug": "italian-game-two-knights-defense",
+  "root": {
+    "name": "Italian Game: Two Knights Defense",
+    "eco": "C55",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Two Knights Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Italian Game: Two Knights Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Italian-Game-Two-Knights-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Two Knights Defense search overview: Polerio, Fried Liver, Modern Bishop's Opening (search snippets only)",
+      "publisher": "Wikipedia / Chess.com / Chessiro",
+      "url": "https://en.wikipedia.org/wiki/Fried_Liver_Attack",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black counterattacks with 3...Nf6 instead of the quiet 3...Bc5, inviting White to attack f7. White then chooses between the sharp 4.Ng5 and the calm 4.d3 (Modern Bishop's Opening), which are about equally common in the database. After 4.Ng5 d5 5.exd5 Black can recapture 5...Nxd5 into the dangerous Fried Liver (6.Nxf7) or play the accurate Polerio/Chigorin 5...Na5 6.Bb5+ c6 7.dxc6 bxc6, gambiting a pawn for a lead in development and the initiative; Traxler (4...Bc5) is a wild alternative. After 4.d3 the game is a slow positional Giuoco-style fight with a plan-based middlegame, and 4.d4 (Open) and 4.O-O (Hungarian-ish transposition) are further choices. The root is a crossroads: the sharp Knight Attack and the quiet 4.d3 lines have different characters. Sources describe the opening as more aggressive than the Giuoco Piano, sound for Black, and played by Tal, Spassky, Morozevich and Short.",
+  "white_ideas": [
+    {
+      "idea": "4.Ng5 attacking f7, aiming at the Fried Liver (5...Nxd5 6.Nxf7) or at winning a pawn against the Polerio line.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "4.d3, the Modern Bishop's Opening: a calm positional build-up (c3, Nbd2, Re1 or similar) leading to a rich middlegame.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "4.d4 (Open Variation): open the centre with tension on e5 and d5.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "idea": "In tactical lines, force Black's king toward the centre and exploit the weak f7 square.",
+      "sources": [
+        "s2"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop quickly and fight for the initiative, answering Ng5 with ...d5; the pawn sacrifice gives rapid piece activity.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Polerio / Chigorin line: 5...Na5 6.Bb5+ c6 7.dxc6 bxc6, a pawn for development, attacking the bishop and White's centre; White can practically win a pawn by force but Black gets sufficient counterplay.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Against 4.d3, play a flexible ...Be7 or ...Bc5 set-up and ...h6 to prevent Ng5, with central tension on e5/d5 (own understanding for the move choices).",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "idea": "Traxler Counterattack (4.Ng5 Bc5): wild complications for a sacrifice of material.",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "After the Polerio, Black has given a pawn and has doubled or open c- and b-files, with piece activity versus White's extra pawn on d5/c6.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "structure": "Slow Giuoco-Pianissimo-style structure after 4.d3: central tension on e5 and d5 with a closed or partly closed centre.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "structure": "Open centre after 4.d4 exd4 5.O-O or e5 lines, with piece activity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "structure": "Fried Liver: White's knight sacrifice on f7, king dragged to the centre (Black's king on f7 or e6).",
+      "sources": [
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources say the Two Knights is more aggressive than the Giuoco Piano (Bronstein: 'Chigorin Counterattack' would be a better name) (s1). Chess.com: sharp tactical possibilities combined with solid positional play, depending on White's choice (s2). The 4.Ng5 lines are 'known for extensive theoretical analysis and sharp tactical play' (s1), and the Fried Liver wins 86% for White in the Chess.com database (s2, all ratings). White's 4.d3 is quiet. About half of the games are 4.Ng5 and half 4.d3 (database in the brief input). Overall: sharp as a whole, the root being the sharp-versus-quiet crossroads, but the main critical line is clearly sharp.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Sub-line only: in the Polerio/Chigorin line (4.Ng5 d5 5.exd5 Na5 6.Bb5+ c6 7.dxc6 bxc6) White can practically win and keep a pawn by force but Black gets sufficient counterplay. At the root (after 3...Nf6) no material is given. In the 4.Ng5 d5 branch Black gambits a pawn (Chigorin / Polerio) for a development lead and initiative (s1). In 4.d3 lines no gambit arises. In the Fried Liver White sacrifices a piece, which is a different side. Taxonomy rule: a root's tags describe its main line; the main line here is split between 4.Ng5 and 4.d3, so the classifier must decide.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "soundness": {
+      "notes": "Theoretically sound for Black (s1); Tal and Spassky played it; Morozevich and Short revived it. The Polerio is called the most accurate answer to 4.Ng5 (s3). The greedy 5...Nxd5 allows the Fried Liver, which is dangerous for Black (86% White win rate in the Chess.com database for all ratings, s2), but that is a Black error rather than a flaw of the opening. Sound for both sides.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Open-game structure: central tension on e5 and d5, piece activity and lines open early in the 4.Ng5 and 4.d4 lines. After 4.d3 the centre stays in tension longer (closed or partly closed). Chess.com: central tension on e5/d5 and kingside attacking patterns (s2). So Open for the critical lines, tension in quiet lines.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "approach": {
+      "notes": "A recognised branch of the Italian Game used at master level; not a system and not offbeat. White typically favours 4.d3 at elite level and 4.Ng5 is less frequent there (s2), though Black's choice of 3...Nf6 is mainstream (Tal, Spassky, Morozevich, Short). Standard.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Judged for Black. Chess.com: relatively accessible and 'very common among beginners', but mastering the tactical lines requires study; theory load moderate, with Black needing responses to both 4.d3 and 4.Ng5 (s2). Wikipedia: 4.Ng5 lines have extensive theory and sharp tactics (s1). The danger is memory: knowing the Polerio over the greedy 5...Nxd5 and surviving the Fried Liver traps. Intermediate-leaning with memory as the burden.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "attack on f7",
+    "Fried Liver Attack",
+    "Polerio Defense",
+    "pawn for development and initiative",
+    "Modern Bishop's Opening",
+    "central tension e5 / d5",
+    "king drawn to the centre",
+    "Traxler counterattack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Knight Attack, Polerio / Chigorin line",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6",
+      "how": "Black gambits a pawn for development and the initiative; sharp and theory-heavy. Likely its own root."
+    },
+    {
+      "name": "Fried Liver Attack",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7",
+      "how": "White gives a piece for an attack on the king; very sharp, favours White in the Chess.com database."
+    },
+    {
+      "name": "Modern Bishop's Opening",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3",
+      "how": "Quiet, positional, Giuoco-Pianissimo-like; plans over theory. A completely different character from the Knight Attack."
+    },
+    {
+      "name": "Traxler Counterattack",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5",
+      "how": "Wild complications; a Black sacrifice."
+    },
+    {
+      "name": "Open Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4",
+      "how": "Opens the centre early; tactical but different from the Knight Attack."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Two Knights Defense is a dynamic and combative response to the Italian Game, where Black challenges White's central control by developing the knight to f6.",
+        "verdict": "supported",
+        "note": "More aggressive than the Giuoco Piano; a counterattack on e4.",
+        "sources": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "It often leads to sharp, tactical battles, particularly in the main lines where White attacks the vulnerable f7-pawn.",
+        "verdict": "supported",
+        "note": "4.Ng5 lines are sharp, though 4.d3 is quiet and about as common.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "It is perfect for aggressive and resourceful players who are comfortable with complex, open positions and seizing the initiative through counterplay.",
+        "verdict": "supported",
+        "note": "Black fights for the initiative; in the Polerio Black sacrifices a pawn for it.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: attack the weak f7-pawn with Ng5, aiming to win material or force concessions; alternatively play a quieter d3 or an open d4.",
+        "verdict": "supported",
+        "note": "All three set-ups are described.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black: counter the Ng5 attack by sacrificing a pawn with ...d5 followed by ...Na5, seizing the initiative and developing rapidly.",
+        "verdict": "supported",
+        "note": "The Polerio / Chigorin line, accurately described; White can practically win the pawn by force but Black has enough counterplay.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black: develop pieces harmoniously, control the centre, and create counterplay against White's e4-pawn and exposed pieces.",
+        "verdict": "supported",
+        "note": "Fighting for the initiative and rapid development; more applicable to 4.d3 and 4.d4 lines than Ng5.",
+        "sources": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "benko-gambit-accepted-fully-accepted-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Fully Accepted Variation",
+    "eco": "A58",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6",
+    "fen": "rnbqkb1r/3ppppp/P4n2/2pP4/8/8/PP2PPPP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "benko-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White accepts both pawns, and Black recaptures the pawn on a6 with ...Bxa6, then plays ...g6, ...Bg7, ...d6 and ...O-O. Black gets long-term pressure on the a- and b-files, the long diagonal and White's loosened queenside in return for the pawn, while White consolidates with Nc3, g3 or e4, Nf3 and the extra material. Play is positional but unbalanced.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, Nf3, g3 and Bg2, return the pawn if needed, and neutralise queenside pressure." },
+    { "idea": "Use the extra pawn and central space to reach a safe endgame." }
+  ],
+  "black_ideas": [
+    { "idea": "Open the a- and b-files with rooks on a8 and b8 and pressure b2 and the white king's side." },
+    { "idea": "Play ...Bg7, ...O-O, and a long-term pull for the pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "Benko structure: White pawns e4 and d5 against Black's c5/d6, open a- and b-files for Black rooks." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black is a pawn down for long-term compensation; positions are unbalanced and often double-edged." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the pawn but gives up queenside structure and time." },
+    "soundness": { "notes": "A fully respected gambit, giving Black reliable compensation." },
+    "structure": { "notes": "White d5 pawn fixed, half-open a- and b-files for Black." },
+    "approach": { "notes": "A mainstream gambit choice at all levels, played by top players." },
+    "level": { "reason": "both", "notes": "Needs knowledge of the lines and the understanding of compensation; intermediate." }
+  },
+  "plan_phrases": ["queenside pressure", "fianchetto", "pawn sacrifice"],
+  "sublines_that_differ": [
+    { "name": "5...g6 without Bxa6", "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6", "how": "Black delays the recapture, keeping the gambit pawn out." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Known for unbalanced positions where Black plays a pawn down for the initiative." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn for queenside pressure that White can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "The Benko is a respected gambit with reliable compensation." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Fixed asymmetric centre with Black pressing on the half-open a- and b-files." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised gambit at all levels." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.45, "reason": "Needs some theory and understanding of compensation, but the plans are clear." },
+    "plans": { "value": ["fianchetto", "lead_in_development"], "reason": "Black fianchettoes and uses the a6 bishop and open files for activity." }
+  }
+}

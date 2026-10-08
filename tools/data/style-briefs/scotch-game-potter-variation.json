@@ -1,0 +1,46 @@
+{
+  "slug": "scotch-game-potter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Potter Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Nb3",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/4P3/1N6/PPP2PPP/RNBQKB1R b KQkq - 2 5"
+  },
+  "parent": "scotch-game-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White retreats the knight to b3 to hit the c5 bishop, losing time but keeping a solid centre. After 5...Bb6 6.a4 a6 7.Nc3 Nf6 (Geller) both sides develop naturally and the game is roughly level. White uses the a-pawn to harass the b6 bishop and eyes d4/d5; Black aims to castle and break with ...d6/...d5.",
+  "white_ideas": [
+    { "idea": "a4-a5 to dislodge or trap the bishop on b6" },
+    { "idea": "Nc3, Bd3/Be2 and castle, with d4 or f4 later" },
+    { "idea": "Pressure on d5 and the central e4-pawn supported by Nc3" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the bishop on b6 and develop ...Nf6, ...d6, ...O-O" },
+    { "idea": "Free the game with ...d5 once developed" },
+    { "idea": "Hold the a-pawn push with ...a6 and ...Nf6" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file, White e4 pawn against Black d-pawn after the Scotch exchange" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet Scotch sideline with no forcing tactics; roughly equal and level for both sides." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn d4 was regained on move 4." },
+    "soundness": { "notes": "Fully sound, a sideline of the Classical Scotch." },
+    "structure": { "notes": "Open lines after the d-pawn exchange, pieces active." },
+    "approach": { "notes": "Standard Scotch line, played by strong players occasionally." },
+    "level": { "reason": "understanding", "notes": "Plans are clear: develop, a4-a5 harassment, central break. Little theory." }
+  },
+  "plan_phrases": ["queenside expansion with a4-a5"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet, equal development with no forcing play and no passive set-up." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "The d4 pawn is regained at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respectable sideline of the Classical Scotch." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open e-file and active pieces after the Scotch exchange." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A Scotch sideline played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Plans are simple and theory is light." },
+    "plans": { "value": ["queenside_expansion"], "reason": "a4-a5 harassing the b6 bishop is the characteristic idea." }
+  }
+}

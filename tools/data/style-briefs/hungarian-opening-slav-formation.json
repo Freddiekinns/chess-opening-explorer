@@ -1,0 +1,44 @@
+{
+  "slug": "hungarian-opening-slav-formation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Slav Formation",
+    "eco": "A00",
+    "moves": "1. g3 d5 2. Bg2 c6",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/8/6P1/PPPPPPBP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes on g2 while Black sets up a Slav shape with ...d5 and ...c6. The game usually transposes to a Réti, Catalan-type or English structure after Nf3, O-O and c4, or White plays d4 for a Catalan. Play is slow and positional.",
+  "white_ideas": [
+    { "idea": "Nf3, O-O, d3 or d4, c4, aiming at the long diagonal and Catalan-like pressure." },
+    { "idea": "Play for e4 with a King's Indian Attack set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "Slav structure: ...Nf6, ...Bf5 or ...Bg4 and ...e6, solid development." },
+    { "idea": "Counter with ...e5 or ...Qb6 depending on White's set-up." }
+  ],
+  "typical_structures": [
+    { "structure": "Catalan or Réti set-ups with d5/c6 pawns against White's flank bishop." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, manoeuvring, few early tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Fully sound; Black's set-up is solid." },
+    "structure": { "notes": "Tension in the centre unresolved; flank opening transposition." },
+    "approach": { "notes": "g3/Bg2 plus Nf3, d3 or c4 is a set-up White can use against anything." },
+    "level": { "reason": "understanding", "notes": "Little theory, strategic plans are clear enough." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Quiet manoeuvring where neither side can lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A harmless but sound set-up." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "Flank opening with the centre undecided." },
+    "approach": { "value": "system", "confidence": 0.65, "reason": "g3/Bg2 set-up usable against most defences." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are simple but there is no standard guide for the transpositions." },
+    "plans": { "value": ["fianchetto"], "reason": "Bishop on g2 on the long diagonal." }
+  }
+}

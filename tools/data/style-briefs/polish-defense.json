@@ -1,0 +1,46 @@
+{
+  "slug": "polish-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Defense",
+    "eco": "A40",
+    "moves": "1. d4 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays 1...b5 and, after 2.e4 Bb7, attacks the e4 pawn from the long diagonal and tries to undermine the white centre with ...e6, ...a6 and ...f5 or ...Nf6. White takes the centre with e4 and d4, develops with Bd3 and Nf3, and goes for the big centre and queenside weaknesses. It is an offbeat set-up that gives White an easy edge, but it is not a pure gambit.",
+  "white_ideas": [
+    { "idea": "Hold the e4-d4 centre with Bd3, Nf3 and Nbd2 and then push e5 or f4." },
+    { "idea": "Attack the advanced b5 pawn and the queenside with a4 and Bxb5 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure e4 and d4 with ...Bb7, ...e6 and ...a6, then break with ...c5 or ...f5." },
+    { "idea": "Keep the king safe and use the fianchettoed bishop to hit the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 centre against Black's b5, e6 pawns and the b7 bishop aimed at the centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black has loosened his queenside and the position is unbalanced and double-edged, with real tactics around e4 and the b5 pawn." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "After 2.e4 Bb7 3.Bd3 no material changes hands; 2.e4 Bb7 3.Bxb5 Bxe4 is a rarer pawn trade." },
+    "soundness": { "notes": "Engines give White a clear edge and most strong players consider the set-up inferior, though not refuted." },
+    "structure": { "notes": "A fluid centre, with White's pawns advanced and Black's pieces aimed at them." },
+    "approach": { "notes": "Strong players hardly ever use it; played mainly for surprise." },
+    "level": { "reason": "understanding", "notes": "A dubious line cannot be Beginner; the plans are easy to understand but White's centre is a real test." }
+  },
+  "plan_phrases": ["hypermodern centre", "queenside expansion", "attack on e4"],
+  "sublines_that_differ": [
+    { "name": "2.Bxb5 Bxd4", "moves": "1. d4 b5 2. Bxb5 Bb7", "how": "White grabs the pawn and Black plays for development and tricks; a different, more gambit-like game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Unbalanced, double-edged positions with White's centre against Black's counterplay." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "No pawn is given in the main line 2.e4 Bb7 3.Bd3." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.55, "reason": "Strong players consider 1...b5 inferior and it scores mainly through surprise." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is not locked or cleared and is attacked by pieces from the flanks." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "A dubious line is not Beginner, and it is not heavy on theory." },
+    "plans": { "value": ["hypermodern_centre", "queenside_expansion"], "reason": "Black lets White build the centre and attacks it from the flanks." }
+  }
+}

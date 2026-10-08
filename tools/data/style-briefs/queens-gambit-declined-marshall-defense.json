@@ -1,0 +1,110 @@
+{
+  "slug": "queens-gambit-declined-marshall-defense",
+  "root": {
+    "name": "Queen's Gambit Declined: Marshall Defense",
+    "eco": "D06",
+    "moves": "1. d4 d5 2. c4 Nf6",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Marshall Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Queen's Gambit Marshall Defense: 1.d4 d5 2.c4 Nf6",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/queens-gambit-marshall-defense.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Marshall Defense / Tan Gambit search snippets (dailychess, 365chess)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.dailychess.com/chess-opening/explore/queens-gambit-declined-marshall-defense-tan-gambit",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black meets 2.c4 with 2...Nf6 instead of 2...e6 or 2...c6, inviting 3.cxd5 Nxd5. White can then build the centre with 4.e4 (gaining space, perhaps too early per Wikipedia) or 4.Nf3 (controls e5 first, usually considered the better practical line), after which White keeps a small structural edge. White can also decline the invitation with 3.Nc3 or 3.Nf3, transposing into normal Queen's Gambit Declined, Slav or Grunfeld structures. Black's ideas are active piece play and counterattack against White's advanced centre, including the Tan Gambit 3.cxd5 c6. Sources call it dubious, a surprise weapon rather than a mainstream equaliser, rarely seen in grandmaster play.",
+  "white_ideas": [
+    { "idea": "3.cxd5 Nxd5 then 4.Nf3 to control e5 before playing e4 (best practical line)", "sources": ["s2"] },
+    { "idea": "4.e4 immediately, gaining space and a big centre (possibly too early)", "sources": ["s1", "s2"] },
+    { "idea": "3.Nc3 or 3.Nf3 to transpose into a normal QGD structure and avoid Marshall specifics", "sources": ["s1", "s2"] },
+    { "idea": "Keep a small structural edge and meet Tan Gambit by accepting the pawn", "sources": ["s1", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the knight first and recapture with the knight on d5, then counterattack White's central pawns with ...Nb6/...Nxc3 and ...e5 or ...c5", "sources": ["s2"] },
+    { "idea": "Tan Gambit 3...c6: sacrifice a pawn for ...e5 and piece activity; usually leads to a queenless middlegame where White keeps a small plus", "sources": ["s2", "s3"] },
+    { "idea": "Grunfeld-style trick 3...g6", "sources": ["s2"] },
+    { "idea": "Transpose via ...e6 or ...c6 to QGD or Slav if White declines", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "White has a pawn centre on d4/e4 against Black pieces (after 3.cxd5 Nxd5 4.e4), Black attacks it from the flanks", "sources": ["s1", "s2"] },
+    { "structure": "Transposition to ordinary QGD / Slav structures after 3.Nc3 e6 or ...c6", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Provocative and counter-attacking; positions after 3.cxd5 Nxd5 4.e4 are open-ish with a big White centre and Black counterplay. Sources describe it as risky and dubious rather than solid; tactical opportunities for Black in a surprise setting. If White simply transposes, it is a normal QGD.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The main line 3.cxd5 Nxd5 is an exchange, no pawn sacrificed. The Tan Gambit (3.cxd5 c6) is a Black pawn sacrifice but is a subline, and White can keep the pawn.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Wikipedia: fairly dubious variation of the QGD, no longer used by experienced players (Marshall gave it up after losing to Alekhine at Baden-Baden 1925). ChessWorld: generally considered dubious or risky at serious level; White keeps a small structural edge. Black is the side taking the risk.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "After 3.cxd5 Nxd5 4.e4 White has a large central pawn duo and open lines; Black attacks it with pieces and breaks. Elsewhere it transposes to closed QGD or Slav structures.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Not a universal set-up; a rarely played branch. Very rarely seen in grandmaster play; practical verdict is that it is a surprise weapon, not a mainstream equalising system.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to memorise but the opening is not a good reliable repertoire choice because White keeps a structural edge with correct play; Black must be comfortable defending against a strong central initiative. Sources recommend it only as a surprise weapon.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "recapture with the knight on d5",
+    "attack the advanced white centre",
+    "...e5 break",
+    "Tan Gambit",
+    "transposition to QGD or Slav",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    { "name": "Tan Gambit", "moves": "1. d4 d5 2. c4 Nf6 3. cxd5 c6", "how": "Black pawn sacrifice for ...e5 activity; White keeps a small plus." },
+    { "name": "3.Nc3 / 3.Nf3 transpositions", "moves": "1. d4 d5 2. c4 Nf6 3. Nc3", "how": "Usually becomes a normal QGD, Slav or Grunfeld structure with no Marshall character." },
+    { "name": "4.e4 Nxc3 / 4...Nb6", "moves": "1. d4 d5 2. c4 Nf6 3. cxd5 Nxd5 4. e4", "how": "White's big-centre line; the one with real Marshall character." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Marshall Defense is a provocative and somewhat dubious response to the Queen's Gambit", "verdict": "supported", "note": "Wikipedia: fairly dubious; ChessWorld: provocative but dubious.", "sources": ["s1", "s2"] },
+      { "claim": "Black immediately challenges the centre with the knight", "verdict": "supported", "note": "2...Nf6 develops and pressures d5/e4.", "sources": ["s2"] },
+      { "claim": "It often leads to sharp, open positions where White can seize a significant space advantage after 3.cxd5", "verdict": "supported", "note": "4.e4 gives White a centre, but sources say White may play e4 too early; 4.Nf3 first is preferred. 'Often' sharp is partly true; also frequently transposes to ordinary QGD.", "sources": ["s1", "s2"] },
+      { "claim": "Black relies on counter-attacking chances and exploiting overextension by White", "verdict": "supported", "note": "Black's play is counterattack on the centre.", "sources": ["s2"] },
+      { "claim": "It is a risky choice suited to players who thrive in complex, less-theoretical positions", "verdict": "supported", "note": "Sources call it a surprise weapon for tactical Black players.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Seize the centre with pawns (e2-e4), develop quickly, restrict Black's counterplay", "verdict": "supported", "note": "Matches 4.e4 or 4.Nf3 then e4.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Challenge the centre from the flanks with ...e6 and ...c5, or a fianchetto set-up", "verdict": "supported", "note": "...e6, ...c5 and Grunfeld-style ...g6 are mentioned; ...e6 usually transposes to QGD.", "sources": ["s2"] },
+      { "claim": "White: Convert central control into a lasting positional edge or direct attack", "verdict": "supported", "note": "Small structural edge for White.", "sources": ["s2", "s3"] },
+      { "claim": "Black: Complete development quickly, neutralise White's initiative, and equalise by undermining White's centre", "verdict": "unverifiable", "note": "Sources say White keeps a small edge, so equalising is the hope, not the outcome.", "sources": ["s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

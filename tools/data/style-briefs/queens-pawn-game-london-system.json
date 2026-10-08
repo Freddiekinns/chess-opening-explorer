@@ -1,0 +1,348 @@
+{
+  "slug": "queens-pawn-game-london-system",
+  "root": {
+    "name": "Queen's Pawn Game: London System",
+    "eco": "D02",
+    "moves": "1. d4 d5 2. Nf3 Nf6 3. Bf4",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - 3 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "London System",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/London_System",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "London System Moves & Setup: Model Games",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/london-system.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Accelerated London System, 1.d4 d5 2.Bf4 (D00)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/accelerated-london-system",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "London System: Chess Opening Guide, Moves, Ideas, and Traps",
+      "publisher": "Take Take Take",
+      "url": "https://taketaketake.com/openings/london-system",
+      "kind": "article"
+    }
+  ],
+  "overview": "The London is a set-up rather than a line: White builds d4, e3, c3 with Bf4, Nf3, Nbd2, Bd3 and castles, adjusting the details but not the plan, against almost anything Black plays. The usual aim is a knight on e5 backed by pawns and the bishop, then either a kingside attack (Bxh7+ ideas, Rf3-h3, a queen to the b1-h7 diagonal) or a central break with e4 or c4. Black's main counterplay is ...c5 and ...Qb6 against b2, plus ...Bf5, ...Nh5 or ...Bd6 to challenge the f4 bishop, or a kingside fianchetto. Move order matters: the root here (2.Nf3 Nf6 3.Bf4) is only one way in; the same set-up arises from 2.Bf4 first (Accelerated London, D00), from 1.d4 Nf6 2.Nf3 followed by Bf4, and against Indian set-ups, so a page for this root describes the system as a whole. Sources agree it is solid with low theory and closed or semi-closed play, and that it is criticised as repetitive and short on dynamism at the top, though Carlsen, Kamsky, Aronian, Radjabov and Ding Liren have all used it.",
+  "white_ideas": [
+    {
+      "idea": "Build the d4 / e3 / c3 pyramid with Bf4, Nf3, Nbd2, Bd3 (or Be2) and castle; h3 is often added to keep the bishop's diagonal.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Put a knight on e5, supported by pawns and the f4 bishop; it then supports kingside play.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Kingside attack with Bxh7+, Rf3-h3, Qf3 and pawn advances, sometimes hidden behind a quiet-looking set-up.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Central breaks with e4 or c4 when circumstances allow, instead of attacking immediately.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Preserve the bishop on f4 (retreating to g3 or h2) rather than trading it automatically.",
+      "sources": [
+        "s2"
+      ]
+    },
+    {
+      "idea": "Play Bf4 before Nf3 (2.Bf4) so the bishop is not buried behind the pawn chain and to avoid some early ...c5 lines, per one source.",
+      "sources": [
+        "s3"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...c5 to hit d4, often with ...Qb6 attacking the b2 pawn, which Bf4 leaves undefended.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Challenge the f4 bishop: ...Bf5 to mirror it, ...Nh5, or ...Bd6 offering a trade.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Change the structure with a kingside fianchetto (...g6, ...Bg7), or answer with Queen's Gambit Declined, Queen's Indian or King's Indian type set-ups; a symmetrical set-up forces White to show ambition.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Early central challenge with ...c5 or ...e5.",
+      "sources": [
+        "s4"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d4, e3, c3 against Black's ...d5 / ...e6 (/ ...c5): a compact, closed or semi-closed centre in which White's bishop lives outside the chain.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "structure": "After ...c5 and an exchange on d4, a more open d-file/c-file structure (own understanding, unsourced).",
+      "sources": []
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources describe closed or semi-closed positions with clear, methodical plans (s1, s2). Wikipedia notes criticism for 'repetitive games and a lack of dynamic play' (s1). The attacking ideas (Bxh7+, Ne5, Rf3-h3) mean it can become sharp, and the Jobava London (Nc3 before Bf4) is a sharper cousin (s4), but the classical London root is the slow, manoeuvring one. Reading: quiet, with sharpness only if White chooses the attacking set-up or Black goes for ...Qb6 tactics.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material offered at the root. The b2 pawn can be a target after ...c5 and ...Qb6, which White usually defends with Qb3 or Nbd2/Nc3 rather than sacrificing (a quiet line, not a gambit).",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "soundness": {
+      "notes": "Described as a solid, respectable opening (s1, s2). A Chessiverse page reports White scoring roughly 8 points better than Black across all levels for the accelerated version (s3); that is a database claim I could not verify, covering all ratings. Not seen as a way to win by force; Wikipedia notes reputation as solid but drawish and low on dynamism (s1). Sound for both sides.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Typically closed or semi-closed: pawns on d4, e3, c3 face ...d5 and ...e6, play revolves around the e5 outpost, with breaks at e4 or c4 (s1, s2, s4). If Black plays ...c5 and trades on d4, the centre can become more open.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    "approach": {
+      "notes": "Textbook system: the set-up of d4, Nf3, Bf4, e3, Bd3, Nbd2, c3 'can be played in a variety of move orders' (s1) and works against Queen's Gambit Declined, King's Indian, Queen's Indian and symmetrical set-ups (s1, s2). Though most popular against 1...d5, it is played against nearly everything. Used at the top by Carlsen, Kamsky, Aronian, Radjabov and Ding Liren (reported as used in the 2023 World Championship) (s1), so not offbeat; the Accelerated London page claims a popularity peak of 2.28% of games in 2025 (s3), a figure I could not verify.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to memorise and clear, repeatable plans, so strongly accessible to beginners: 'familiar positions no matter what Black does' (s4), minimal memorisation (s1, s2, s4), suited to 500-1800 players (s4). It also scales: world-class players use it. The main practical lesson is not to play it 'on autopilot' (s2): the details against ...c5/...Qb6 still need understanding.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "Ne5 outpost",
+    "d4-e3-c3 pyramid",
+    "Bxh7+ and Rf3-h3 attack",
+    "e4 or c4 central break",
+    "...c5 and ...Qb6 against b2",
+    "challenging the f4 bishop",
+    "kingside fianchetto against the London",
+    "move-order flexibility"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Accelerated London",
+      "moves": "1. d4 d5 2. Bf4",
+      "how": "Different root (D00) but the same set-up; some sources say it avoids certain ...c5 lines, though ...Qb6 is sharper here (s3). Should inherit this brief's character."
+    },
+    {
+      "name": "Jobava London / Rapport-Jobava",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
+      "how": "Already its own root; quick Nc3, aggressive pawn storms; sharper than the classical London (s4). Not in this subtree."
+    },
+    {
+      "name": "...c5 and ...Qb6",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. Bf4 c5 4. e3 Qb6",
+      "how": "Black's critical attempt, with tactics around b2; more concrete than the usual plan-based play (s2, s3, s4)."
+    },
+    {
+      "name": "Black kingside fianchetto",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. Bf4 g6",
+      "how": "King's-Indian-like structures where White's Ne5 and e4 plans work differently (s2); not among the six positions in the subtree, so outside the data."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The London is a highly popular and universal opening system for White.",
+        "verdict": "supported",
+        "note": "A system 'for White employing the following moves in a variety of move orders'; works against most defences and is very popular at club level.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "Characterised by a solid structure and straightforward plans.",
+        "verdict": "supported",
+        "note": "Clear, repeatable plans and a robust pawn structure are the common description.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White develops the dark-squared bishop to f4 early, creating a robust setup.",
+        "verdict": "supported",
+        "note": "Defining feature.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "It avoids sharp, theoretical lines.",
+        "verdict": "supported",
+        "note": "Low-theory by reputation. The Jobava version and ...c5/...Qb6 lines are sharper, but those are not the classical root.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It leads to a strategically complex middlegame.",
+        "verdict": "unverifiable",
+        "note": "Sources emphasise clarity and simple plans, and Wikipedia notes criticism for repetitive, low-dynamism games. Complexity depends on Black's reply; no source calls the classical London complex.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "Perfect for players who prefer a reliable, low-theory approach, focusing on key ideas and building a gradual kingside attack.",
+        "verdict": "supported",
+        "note": "Reliable, low theory is the headline. A kingside attack (Ne5, Bxh7+, Rf3-h3) is a recognised but optional plan.",
+        "sources": [
+          "s2",
+          "s4"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White establishes the d4/e3/c3 pawn triangle and develops the knight to d2.",
+        "verdict": "supported",
+        "note": "Standard set-up with Nbd2.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White prepares a kingside attack involving Ne5 and potential sacrifices.",
+        "verdict": "supported",
+        "note": "Ne5, Bxh7+ and Rf3-h3 are all named attacking ideas.",
+        "sources": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White's kingside attack involves h4-h5.",
+        "verdict": "unverifiable",
+        "note": "None of the sources names h4-h5; they cite h3 (to keep the bishop's diagonal), Rf3-h3 and Bxh7+. my own understanding (unsourced) is that h4-h5 is more typical of the Jobava system.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "Black challenges the centre with an early ...c5, develops the light-squared bishop actively and seeks queenside counterplay.",
+        "verdict": "supported",
+        "note": "...c5 (often with ...Qb6) is the main reaction, and ...Bf5 is a standard developing move.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White manoeuvres the knight from f3 via e5 to create threats.",
+        "verdict": "supported",
+        "note": "The e5 outpost is the central strategic theme.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White can reroute the knight to support a queenside expansion if Black commits to the kingside.",
+        "verdict": "unverifiable",
+        "note": "Not found in any source.",
+        "sources": []
+      },
+      {
+        "claim": "Black neutralises the f4 bishop through exchanges or by restricting it, heading for a favourable endgame.",
+        "verdict": "supported",
+        "note": "Trade offers (...Bd6, ...Nh5, ...Bf5) are standard; 'favourable endgame' is an overstatement, but the plan to challenge the bishop is sound.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 4
+  }
+}

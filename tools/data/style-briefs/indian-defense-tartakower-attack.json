@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-tartakower-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Tartakower Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. g3",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/6P1/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop on move two and keeps the c-pawn flexible, aiming for a Catalan, Réti or King's Indian Fianchetto set-up depending on Black's reply. Black usually chooses 2...g6 or 2...c5, with 2...e5 (Ueberlinger Gambit) as a rare try. The game is typically a slow positional fight around the long diagonal and the centre.",
+  "white_ideas": [
+    { "idea": "Bg2, Nf3, O-O and c4, transposing to a Catalan or Fianchetto KID." },
+    { "idea": "Pressure along the long diagonal and decide on c4 or c3 later." }
+  ],
+  "black_ideas": [
+    { "idea": "2...g6 3.Bg2 Bg7 for a King's Indian Fianchetto with ...d6 and ...e5." },
+    { "idea": "2...c5 3.d5 b5 for a Benko-style counterplay, or ...e6 and ...d5 for a Catalan-like game." }
+  ],
+  "typical_structures": [
+    { "structure": "Fianchetto structures with a flexible centre: d4 with c4 or c3 and Bg2 against Black's fianchetto or ...d5 set-up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional manoeuvring with long-diagonal bishops; not forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; 2...e5 is Black's gambit sideline." },
+    "soundness": { "notes": "Fully sound, a quiet and respectable second move." },
+    "structure": { "notes": "Centre stays flexible with c-pawn and e-pawn choices left open." },
+    "approach": { "notes": "Played by strong players as part of Catalan-type play, standard rather than a universal system." },
+    "level": { "reason": "understanding", "notes": "Plans matter more than theory; fianchetto play is easy to follow." }
+  },
+  "plan_phrases": ["Fianchetto", "Hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Ueberlinger Gambit", "moves": "2...e5 3.dxe5 Ng4", "how": "Black offers a pawn for activity; unclear and rare." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet positional play that is neither especially hard to crack nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A sound fianchetto set-up." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Fianchetto set-up leaves the centre undecided." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Close to Catalan systems but White's moves vary by Black's reply." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans of the Catalan type are not trivial but there is little theory." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Long-diagonal bishop and pressure on the Black centre." }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "italian-game",
+  "root": {
+    "name": "Italian Game",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Italian Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Italian_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Italian Game: Complete Opening Guide & Variations",
+      "publisher": "365Chess",
+      "url": "https://www.365chess.com/chess-openings/Italian-Game",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Italian Game",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Italian-Game",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the Italian Game, Giuoco Piano, Pianissimo, Evans Gambit and Two Knights (snippets only)",
+      "publisher": "TheChessWorld, Chessworld, Wikipedia via web search",
+      "url": "https://www.chessworld.net/italian-game.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "White develops the bishop to c4 aiming at f7 and prepares to take the centre with c3 and d4 or, more quietly, d3 (s1, s2). The root is a crossroads: 3...Bc5 (Giuoco Piano) mirrors White's set-up, 3...Nf6 (Two Knights) invites sharper play, and 3...Be7 (Hungarian) is passive and solid (own understanding for the last). Today's main practical line is the Giuoco Pianissimo with c3, d3 and slow manoeuvring, which became fashionable in the 1980s-2000s and again in the 21st century as a way to avoid the Berlin (s1). The older 4.c3 and d4 lines and the Evans Gambit are sharper (s1). It is fundamentally sound with modest winning chances (s1). It is described as accessible to beginners yet used by Giri, So and Vachier-Lagrave (s3).",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bc4 hitting f7, castle early and prepare the centre", "sources": ["s1", "s3"] },
+    { "idea": "Giuoco Pianissimo: c3 and d3, improve pieces slowly (Re1, Nbd2-f1-g3, a4) and delay d4 until it is favourable", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Classical 4.c3 and d4: central strike, open play", "sources": ["s1", "s4"] },
+    { "idea": "Evans Gambit 4.b4: pawn for development and attack", "sources": ["s1", "s4"] },
+    { "idea": "Against the Two Knights, 4.Ng5 attacks f7 (Fried Liver) for sharp play", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror development with ...Bc5 and ...Nf6, defend f7 and meet White's centre with a timely ...d5", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Counter central expansion and seek counterplay through active pieces", "sources": ["s1"] },
+    { "idea": "Two Knights Defence 3...Nf6: sharper counterplay against White's centre", "sources": ["s1", "s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Pianissimo: c3, d3 pawn chain against Black's c5/d6 set-up, centre closed or tense with slow manoeuvring", "sources": ["s1", "s2"] },
+    { "structure": "Classical Giuoco Piano: c3/d4 against ...exd4, an open centre with White's pawn centre or an IQP-type position", "sources": ["s1"] },
+    { "structure": "Evans Gambit: open lines after b4, White with centre and development against an extra pawn", "sources": ["s1", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed. Pianissimo is 'more positional' and slower (s1, s2), with 'modest' winning chances (s1); Two Knights, Evans and Fried Liver are sharp (s1, s2). The root is at the quieter end in modern practice, since the main practical lines are Giuoco Pianissimo and the quiet Giuoco Piano. Wikipedia says the Classical and Evans can be sharp 'despite traditional characterizations as quiet'. Best read as Balanced at the root, with sharp sublines.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the root or the Pianissimo. The Evans Gambit (4.b4) is a White gambit in a subline.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fundamentally sound (s1). The Moller Attack in the Classical line was shown to be refutable, and the Evans lost popularity, but neither makes the root dubious. Top players play it regularly (s3).",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Depends on the branch. Pianissimo (c3/d3) keeps the centre tense or closed for a long time; the Classical (c3/d4) opens it; Evans and Two Knights open it fast. The most common modern line is the slow, tense one.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Not a system. A main-line opening used by elite players such as Giri, So and Vachier-Lagrave (s3) and by those avoiding the Berlin (s1). Standard. Pianissimo does have a system-like feel (c3/d3 plan whatever Black does), but sources do not call it a system.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Often taught to beginners (s1); straightforward, teaches natural development and the centre (s2). Chess.com says accessible for beginners yet sophisticated for masters (s3). Moderate theory, requiring plans over memorisation (s2). The Two Knights and Evans demand tactical knowledge. The anchor already puts the Giuoco Pianissimo as Beginner. For White, the studying side, Beginner or Intermediate.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "slow manoeuvring",
+    "central break d4",
+    "natural development",
+    "c3 and d3 set-up",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    { "name": "Giuoco Pianissimo", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d3", "how": "Slow and positional; Balanced or Solid" },
+    { "name": "Evans Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4", "how": "White gambit; sharp and attacking" },
+    { "name": "Two Knights Defense", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6", "how": "Sharper and tactical (Fried Liver, Max Lange-type lines)" },
+    { "name": "Hungarian Defence", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7", "how": "Passive and solid for Black (own understanding, unsourced)" },
+    { "name": "Classical Giuoco Piano with d4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4", "how": "Open centre and tactical play" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "One of the oldest and most classical openings", "verdict": "supported", "note": "Described as one of chess's oldest openings.", "sources": ["s1"] },
+      { "claim": "Defined by White's early development of the bishop to c4", "verdict": "supported", "note": "3.Bc4 is the defining move.", "sources": ["s1", "s2"] },
+      { "claim": "It emphasises rapid development, central control and direct pressure on f7", "verdict": "supported", "note": "Bishop targets f7; natural development and centre.", "sources": ["s2", "s3"] },
+      { "claim": "It can lead to quiet, strategic manoeuvring in the Giuoco Piano or wild tactical battles in lines like the Evans Gambit", "verdict": "supported", "note": "Pianissimo is the quiet line, Evans the sharp one.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: prepare and execute d2-d4 to open the centre, castle quickly and attack f7", "verdict": "supported", "note": "Applies to the Classical line; in the modern Pianissimo White often delays d4.", "sources": ["s1", "s2"] },
+      { "claim": "Black: solidify the centre, often with ...d6 (Giuoco Piano), and prepare the ...d5 counter-break", "verdict": "supported", "note": "Plausible and consistent with the sources: ...d6 in Pianissimo and ...d5 as the freeing break.", "sources": ["s1", "s2"] },
+      { "claim": "White: in quieter lines, build a slow positional advantage with c3 and d3", "verdict": "supported", "note": "Pianissimo plan.", "sources": ["s1", "s2"] },
+      { "claim": "Black: achieve equality through timely development, aiming for a favourable middlegame or endgame where White's initiative has faded", "verdict": "supported", "note": "Wikipedia notes modest winning chances for White; the rest is generic.", "sources": ["s1"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

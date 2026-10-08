@@ -1,0 +1,44 @@
+{
+  "slug": "sicilian-defense-keres-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Keres Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Ne2",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPPNPPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the king's knight to e2, keeping f4, c3 and g3 options and avoiding Open Sicilian theory. After 2...Nf6 or 2...Nc6, White usually plays Nbc3 and g3 or d4 to transpose to a Closed Sicilian or Maróczy-style game. Play is slow and manoeuvring, with Black getting a comfortable Sicilian game.",
+  "white_ideas": [
+    { "idea": "Play Nbc3, g3, Bg2 and d3 or d4, aiming for a Closed Sicilian or an Alapin-like set-up." },
+    { "idea": "Use f4 or c3 and d4 to build a centre without allowing an Open Sicilian." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nc6, ...g6 or ...e6 and strike with ...d5 or ...b5." },
+    { "idea": "Use the c-file and queenside space for counterplay." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian asymmetry with White's e4 against Black's c5/d6 and half-open c-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow flexible build-up with few early tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Playable if passive; Black has no difficulty." },
+    "structure": { "notes": "Sicilian pawn asymmetry; the centre remains fluid." },
+    "approach": { "notes": "Rare at strong levels; chosen mostly to avoid theory." },
+    "level": { "reason": "neither", "notes": "Few forced lines and simple plans." }
+  },
+  "plan_phrases": ["fianchetto", "space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Slow and quiet but not especially solid." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Fully playable." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Sicilian asymmetry with a half-open c-file." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Rare among strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "No heavy theory." },
+    "plans": { "value": ["fianchetto"], "reason": "g3 and Bg2 is the usual set-up." }
+  }
+}

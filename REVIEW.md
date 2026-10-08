@@ -4,10 +4,10 @@ What a review pass over this repository is looking for. Most of the code here is
 agent-authored, so the review bar has to be written down rather than held in one
 person's head.
 
-The passes below are drawn from `AGENTS.md`. That file explains _why_ each rule
-exists, with the incident attached; this one says what to do about a change that
-breaks one. When the two disagree, `AGENTS.md` is right and this file needs
-updating.
+The passes below are drawn from `AGENTS.md`, the scoped `AGENTS.md` files and
+the skills in `.claude/skills/`. Those explain _why_ each rule exists, with the
+incident attached; this one says what to do about a change that breaks one. When
+they disagree, they are right and this file needs updating.
 
 ## Passes
 

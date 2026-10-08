@@ -1,0 +1,47 @@
+{
+  "slug": "tarrasch-defense-symmetrical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Symmetrical Variation",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. e3 Nf6 5. Nf3 Nc6",
+    "fen": "r1bqkb1r/pp3ppp/2n1pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "tarrasch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides have mirrored pawns on c, d and e files and develop knights. White chooses between 6.a3, 6.Bd3 and 6.dxc5 and Black replies ...cxd4 exd4 to reach a symmetrical IQP position or ...a6 and ...dxc4 for a flexible game. The structure is balanced and about manoeuvring, with an eventual IQP or hanging pawns.",
+  "white_ideas": [
+    { "idea": "Play a3 and dxc5 or Bd3 to seek a small edge, with cxd5 to change the structure." },
+    { "idea": "Aim at an IQP structure where White blockades or presses with pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...cxd4 exd4 and ...Be7 for an IQP position with active pieces." },
+    { "idea": "Or ...a6 and ...dxc4 Bxc4 b5 to gain queenside space." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical IQP after cxd4 exd4." },
+    { "structure": "Hanging pawns on c5 and d5 if both sides recapture accordingly." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, manoeuvring play with a symmetrical structure and long-term weaknesses; not forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Sound; a long-established line." },
+    "structure": { "notes": "Symmetric exchange structure with one open file after cxd4 exd4; undecided until then." },
+    "approach": { "notes": "A mainstream Semi-Tarrasch/Tarrasch move order, played by strong players." },
+    "level": { "reason": "understanding", "notes": "IQP and hanging-pawn play need judgement more than memory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "symmetrical structure", "hanging pawns"],
+  "sublines_that_differ": [
+    { "name": "6.dxc5", "moves": "6.dxc5 Bxc5 7.a3", "how": "Leads to hanging pawns on c4/d4 rather than an IQP." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Symmetrical, manoeuvring, and not especially safe or forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "Nothing is sacrificed." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Mainstream line." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Symmetrical exchange structure with an open file; tension until resolved." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Played often by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "IQP plans are well known." },
+    "plans": { "value": ["isolated_queens_pawn", "symmetrical_structure", "hanging_pawns"], "reason": "IQP or hanging pawns in a symmetrical set-up." }
+  }
+}

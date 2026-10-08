@@ -1,0 +1,89 @@
+{
+  "slug": "gunderam-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Gunderam Defense",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 Qe7",
+    "fen": "rnb1kbnr/ppppqppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black defends e5 with the queen, which blocks the f8 bishop and the king's side. White usually plays 3.Nc3 or 3.d4 and gets easy development and a central space edge, while Black has a cramped, passive game. The queen on e7 can become a target and Black rarely gets a good game.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, Bc4 or d4 and gain time against the queen." },
+    { "idea": "Open the centre with d4 while Black is still undeveloped." }
+  ],
+  "black_ideas": [
+    { "idea": "Support e5 with ...Nc6 and ...Nf6 and reach a solid if passive set-up." },
+    { "idea": "Fianchetto the king's bishop since f8-e7 is blocked." }
+  ],
+  "typical_structures": [
+    { "structure": "Black e5 pawn with an early queen on e7 against White's centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Passive and cramped for Black, with no forcing plans; White develops comfortably."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Considered inferior for Black, a clear small disadvantage, though not refuted."
+    },
+    "structure": {
+      "notes": "Centre becomes open after d4 and exd4."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are unclear for Black, and the defence is dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Passive but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Considered inferior for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The centre opens after d4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": ["early_queen", "lead_in_development"],
+      "reason": "Black's queen comes out early while White develops."
+    }
+  }
+}

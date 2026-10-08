@@ -1,0 +1,47 @@
+{
+  "slug": "french-defense-alekhine-chatard-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Alekhine-Chatard Attack",
+    "eco": "C13",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. h4",
+    "fen": "rnbqk2r/pppnbppp/4p3/3pP1B1/3P3P/2N5/PPP2PP1/R2QKBNR b KQkq - 0 6"
+  },
+  "parent": "french-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White threatens Bxe7 and Qg4 ideas with h4 and h5, aiming at the kingside and the g7 pawn. Black usually accepts the pawn offer with 6...Bxg5 7.hxg5 Qxg5, or plays 6...c5 or 6...a6 to avoid the gambit. White gets a lead in development and open h-file chances for the pawn, while Black tries to consolidate and use the extra material.",
+  "white_ideas": [
+    { "idea": "Attack the kingside with h4, Nf3 and Qd3 or Nb5, using the h-file and the weak g7 square." },
+    { "idea": "After ...Bxg5 hxg5 Qxg5 use development and Nb5 raids on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Bxg5 and ...Qxg5, then retreat the queen and consolidate." },
+    { "idea": "Avoid the gambit with ...c5 or ...a6 and strike at White's e5/d4 chain." }
+  ],
+  "typical_structures": [
+    { "structure": "French chain with White's e5/d4 against Black's e6/d5, locked centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Attacking pawn sacrifice on the kingside with a locked centre; both sides can lose fast." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 6...Bxg5 7.hxg5 Qxg5 Black wins a pawn; White gets development and kingside pressure in return." },
+    "soundness": { "notes": "Considered playable and rich in theory; practical rather than refuted." },
+    "structure": { "notes": "The e5/d4 versus e6/d5 chain locks the centre and play moves to the wings." },
+    "approach": { "notes": "A recognised if uncommon French variation, used by strong players now and then." },
+    "level": { "reason": "memory", "notes": "Sharp theory of the gambit lines must be known." }
+  },
+  "plan_phrases": ["kingside attack", "lead in development", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Maróczy Variation", "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. h4 a6", "how": "Black declines the gambit and the game is more positional." },
+    { "name": "Breyer Variation", "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. h4 c5", "how": "Black strikes at once; less forcing than the gambit." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Pawn sacrifice and kingside attack lines." },
+    "gambit": { "value": "white", "confidence": 0.55, "reason": "White offers a pawn that Black can keep in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable and respected in theory." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "e5/d4 versus e6/d5 chain is locked." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Respectable French sideline." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Theory-heavy gambit lines." },
+    "plans": { "value": ["kingside_attack", "lead_in_development", "space_advantage"], "reason": "White attacks the kingside with space and development." }
+  }
+}

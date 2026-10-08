@@ -1,0 +1,48 @@
+{
+  "slug": "italian-game-deutz-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Deutz Gambit",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d4",
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/5N2/PPP2PPP/RNBQ1RK1 b kq - 0 5"
+  },
+  "parent": "italian-game-giuoco-piano",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "After 4.O-O Nf6 White plays 5.d4 in the style of the Møller Attack, striking the centre at once. In the main line 5...exd4 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.Ng5 Qd5 the play is forcing and both kings are exposed. White fights for the initiative with lead in development against Black's extra material.",
+  "white_ideas": [
+    { "idea": "Break the centre with d4 and open lines against the black king" },
+    { "idea": "Regain material with e5 and use the lead in development" },
+    { "idea": "Use Re1 and Ng5 to create threats against the king and f7" }
+  ],
+  "black_ideas": [
+    { "idea": "Accept the pawn and return material to defend with ...d5" },
+    { "idea": "Neutralise the attack with accurate defensive moves and trade queens" },
+    { "idea": "Counterattack the bishop on c4 and the e-pawn" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after d4 exd4 with White pieces aimed at the kingside" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing, tactical lines with open kings and early piece activity." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 5...exd4 6.e5 d5 White's compensation relies on lead in development; Black can choose to return material." },
+    "soundness": { "notes": "Probably sound; viable if not objectively better for White." },
+    "structure": { "notes": "Open centre with exchanged pawns." },
+    "approach": { "notes": "A rare gambit in the Italian that strong players seldom choose." },
+    "level": { "reason": "memory", "notes": "Needs concrete theory but is rare, so Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "5...Bxd4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d4 Bxd4 6. Nxd4 Nxd4", "how": "Black trades the bishop for the d4 pawn and knight for a quieter game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Early d4 break leads to forcing, open play." },
+    "gambit": { "value": "white", "confidence": 0.7, "reason": "White offers material for development and attack." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Compensation is reasonable but unproven, like other Italian gambits." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "The centre opens at once." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose this branch." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Forcing theory but rarely played." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Development lead and Ng5 ideas against f7." }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "scandinavian-defense-main-line",
+  "root": {
+    "name": "Scandinavian Defense: Main Line",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5",
+    "fen": "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Scandinavian Defense", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense", "kind": "reference" },
+    { "id": "s2", "title": "Scandinavian Defense Adviser (3...Qa5 lines)", "publisher": "ChessWorld", "url": "https://www.chessworld.net/scandinavian-defense.asp", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Scandinavian 3...Qa5 setup description", "publisher": "Web search results (Chess.com forum, House of Staunton, Coddy results)", "url": "https://www.houseofstaunton.com/blogs/chess-openings/the-scandinavian-defense", "kind": "article" }
+  ],
+  "overview": "After 3...Qa5 Black keeps the queen out of reach of Nc3 tempo gains, pins down Nc3 on the a5-e1 diagonal, and aims for a Caro-Kann-like shell: ...Nf6, ...c6, ...Bf5 or ...Bg4, ...e6, ...Bd6 or ...Be7, often castling long onto the half-open d-file. White gets a lead in space and development (the cost to Black is a tempo, as the queen has moved twice), plays d4, Nf3, Bc4 and Bd2, and can castle either side. The standard main line runs 4.d4 c6 5.Nf3 Nf6 6.Bc4 Bf5 7.Bd2 e6 with 8.Qe2 or 8.O-O. Play is steady and positional, with fewer forced lines than the Sicilian or 1...e5 openings. It is a repertoire pick for Black players wanting clear structures.",
+  "white_ideas": [
+    { "idea": "Develop naturally (d4, Nf3, Bc4, Bd2) and gain time against the queen without chasing it too much.", "sources": ["s2", "s3"] },
+    { "idea": "Use the extra space and development to play for the centre and keep castling options on either side.", "sources": ["s1", "s2"] },
+    { "idea": "Aggressive set-ups with 8.Qe2 or Nb5 and queenside pressure; quiet 8.O-O.", "sources": ["s1"] },
+    { "idea": "Alternatives to d4: 4.Nf3, 4.Bc4, and the fianchetto 4.g3.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Finish development with ...Nf6, ...c6, ...Bf5 or ...Bg4, ...e6 and ...Bd6/...Be7, reaching a reliable Caro-Kann-like shell.", "sources": ["s2", "s3"] },
+    { "idea": "Pressure d4 with the ...Bg4 pin on the f3-knight and ...Nbd7-b6.", "sources": ["s3"] },
+    { "idea": "Retreat the queen to c7 if White tries a Bd2 x-ray; castle long onto the half-open d-file and aim for a ...c5 break.", "sources": ["s3"] },
+    { "idea": "Solve the light-squared bishop problem early by developing it outside the pawn chain (Bf5 or Bg4) before ...e6.", "sources": ["s2", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann-like pawn shell with Black pawns on c6 and e6 against White's e-pawn-less d4 centre (White's e-pawn was exchanged on move two)", "sources": ["s1", "s2"] },
+    { "structure": "Half-open d-file for Black after exd5 and ...Qxd5; White has a space advantage with a pawn on d4, central majority unchanged", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as the safest and most repeatable Scandinavian structure, with 'fewer all-in tactical commitments', suited to safety-first players. White can choose an aggressive 8.Qe2 line but the default flow is steady development.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black recaptures the pawn on move two (2...Qxd5), so no material is given up. Not a gambit.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Playable and respected for Black, who loses a tempo but gets a free game. Described as the classical mainstream; does not get refuted by the queen move. Engines are not cited.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "White's e-pawn is gone so the centre is semi-open: Black has a half-open d-file and often castles long, while White has a d4 pawn in the centre. Resembles a Caro-Kann shell with ...c6 and ...e6. Few central pawns are exchanged beyond move two.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A structured defence (a set of moves vs 1.e4), not a universal system played against everything. Appears frequently at club and master levels, particularly among Caro-Kann specialists; 3...Qa5 is the 'classical mainstream' of the Scandinavian. The Scandinavian is generally played less than the Sicilian or 1...e5 at the top level, but is a respectable choice.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easiest entry point to defending 1.e4: repeatable development scheme, clear structures, quick decisions, fewer ultra-theoretical battles. Requires understanding that White does not refute it by attacking the queen. Judged for Black, who studies the line.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "Caro-Kann-like structure",
+    "pin on the f3-knight with ...Bg4",
+    "castle long on the d-file",
+    "...c5 break",
+    "light-squared bishop development before ...e6",
+    "time gained against the queen",
+    "tempo lead for White"
+  ],
+  "sublines_that_differ": [
+    { "name": "Scandinavian: 3...Qa5 4.Bc4", "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Bc4", "how": "White develops the bishop first and delays d4; positions can be more open, with tactical chances against f7 (own understanding)." },
+    { "name": "Scandinavian: 3...Qa5 4.Nf3", "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Nf3", "how": "Flexible; transposes to the main line after d4, otherwise quieter." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "3...Qa5 is a solid and reliable system for Black.", "verdict": "supported", "note": "Called the safest, most repeatable structure.", "sources": ["s2"] },
+      { "claim": "It sidesteps immediate harassment of the queen.", "verdict": "supported", "note": "The queen on a5 avoids Nb5 tempo or Nc3 hits and can retreat to c7.", "sources": ["s3"] },
+      { "claim": "It prepares a sound, strategic battle where long-term understanding trumps sharp tactical calculation.", "verdict": "supported", "note": "Consistent with steady, structure-based play.", "sources": ["s1", "s2"] },
+      { "claim": "It immediately challenges White's central control.", "verdict": "unverifiable", "note": "Black already challenged the centre with ...d5; 3...Qa5 itself is more a retreat that costs a tempo.", "sources": ["s1"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Complete development with d4, Nf3, Bc4 and O-O, using the space advantage and perhaps a4 to target the queen.", "verdict": "supported", "note": "d4/Nf3/Bc4 and castling are standard. A pawn move a4 against the queen is not named in the sources; the main line has Bd2 and Qe2 plans.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Solidify with ...c6 and ...e6, develop knights to f6 and c6.", "verdict": "unverifiable", "note": "...c6, ...e6 and ...Nf6 are in the sources. Developing the other knight to c6 is not mentioned and conflicts with a pawn on c6; sources name ...Nbd7-b6 instead. Own understanding: ...Nc6 belongs to set-ups without ...c6.", "sources": ["s1", "s3"] },
+      { "claim": "Black: Prepare queenside counterplay with ...a6 and ...b5.", "verdict": "unverifiable", "note": "Not found in sources; Black's usual counterplay is ...c5 or pressure on d4 with ...Bg4 and ...Nbd7-b6.", "sources": ["s3"] },
+      { "claim": "Black: Solve the light-squared bishop problem, often via ...Bg4 or fianchetto with ...b6 and ...Bb7.", "verdict": "supported", "note": "...Bf5 or ...Bg4 before ...e6 is the main method. The ...b6/...Bb7 fianchetto is not in sources and is unusual with a pawn on c6 (own understanding).", "sources": ["s2", "s3"] },
+      { "claim": "White: Prevent Black's queenside expansion and create threats against Black's passive set-up.", "verdict": "unverifiable", "note": "Generic; no source supports specific queenside prevention.", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

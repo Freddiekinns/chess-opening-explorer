@@ -1,0 +1,47 @@
+{
+  "slug": "semi-slav-defense-main-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Main Line",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black builds the c6-d5-e6 centre and plays ...Nbd7, aiming for ...dxc4 and ...b5 (Meran) or ...dxc4 and ...c5. After 6.Bd3 dxc4 7.Bxc4 b5 8.Bd3 Bb7 9.e4 b4 10.Na4 c5 White gets the centre and Black queenside counterplay; theory is long and double-edged. White's alternatives, such as 6.Qc2 (Anti-Meran), keep things quieter.",
+  "white_ideas": [
+    { "idea": "Bd3 and e4 to build the centre, then e5 or a rook attack on the kingside." },
+    { "idea": "Qc2 or Bd2 to avoid the Meran theory." }
+  ],
+  "black_ideas": [
+    { "idea": "...dxc4 and ...b5 (Meran), then ...c5 to break the centre." },
+    { "idea": "Develop ...Bb7 and counterattack against the d4/e4 centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Meran: Black pawns on a6, b5, c6/c5 versus White d4/e4 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Meran lines are sharp and theory-heavy with tactical risks for both sides." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn is regained." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension and then c5/e4 clashes; flexible." },
+    "approach": { "notes": "Standard main line." },
+    "level": { "reason": "memory", "notes": "Long forcing Meran theory." }
+  },
+  "plan_phrases": ["queenside expansion", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Meran", "moves": "6. Bd3 dxc4 7. Bxc4 b5", "how": "Sharp, theory-heavy." },
+    { "name": "Anti-Meran", "moves": "6. Qc2", "how": "Quieter, avoids forcing lines." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Meran lines are double-edged and forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "Any pawn on c4 comes back." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream line." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre is in tension, with later breaks." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Meran needs long forcing theory." },
+    "plans": { "value": ["queenside_expansion", "space_advantage"], "reason": "Black expands with ...b5 while White builds the centre." }
+  }
+}

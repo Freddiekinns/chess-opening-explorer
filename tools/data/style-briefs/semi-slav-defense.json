@@ -1,0 +1,48 @@
+{
+  "slug": "semi-slav-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense",
+    "eco": "D43",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "slav-defense-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black combines the Slav c6 with ...e6, building a sturdy centre at the cost of a locked c8 bishop. White's main tries are 5.Bg5 (Botvinnik and Anti-Moscow), 5.e3 (Meran and Stonewall-like set-ups) and 5.g3. The mainstream lines are heavily forcing and double-edged, with Black taking on c4 and breaking with ...c5 or ...e5.",
+  "white_ideas": [
+    { "idea": "5.Bg5 dxc4 and e4 with a big centre, or Qc2 and Bd3 against Meran set-ups" },
+    { "idea": "Pressure the c6/d5 centre and the queenside after Black takes on c4" }
+  ],
+  "black_ideas": [
+    { "idea": "Take on c4 and play ...b5 for queenside space, or hit the centre with ...c5 and ...e5" },
+    { "idea": "Free the c8 bishop with ...b6/...Bb7 or ...b5 and ...Bb7" }
+  ],
+  "typical_structures": [
+    { "structure": "Meran: Black pawns on b5/c6 against White d4/e4 centre" },
+    { "structure": "Anti-Moscow/Botvinnik: open centre with both sides ready to castle apart or sacrifice" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main lines (Botvinnik, Meran, Moscow) are known for sharp theory and mutual tactical chances." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn on c4 is regained, no gambit." },
+    "soundness": { "notes": "A main-line top-level defence, sound." },
+    "structure": { "notes": "QGD-like centre with tension; flexible, resolving to semi-open." },
+    "approach": { "notes": "Standard theory; a core reply to the Queen's Gambit." },
+    "level": { "reason": "memory", "notes": "Deep forcing theory in the Botvinnik and Meran lines." }
+  },
+  "plan_phrases": ["queenside space", "central break", "pawn on c4 regained"],
+  "sublines_that_differ": [
+    { "name": "Botvinnik Variation", "moves": "5.Bg5 dxc4 6.e4 b5", "how": "Very sharp and forcing, tactical and sacrificial." },
+    { "name": "Meran Variation", "moves": "5.e3 Nbd7 6.Bd3 dxc4 7.Bxc4 b5", "how": "Strategic with ...c5 break; less tactical." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Main lines are forcing and double-edged in the Botvinnik and Moscow." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Pawns are exchanged, not given up for good." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Top-level main defence." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre stays in tension in most lines, with open play after ...dxc4." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line reply to the Queen's Gambit." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.6, "reason": "Long forcing theory in the main lines." },
+    "plans": { "value": [], "reason": "Plans vary by sub-line." }
+  }
+}

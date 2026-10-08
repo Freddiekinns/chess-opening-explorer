@@ -1,0 +1,46 @@
+{
+  "slug": "torre-attack-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Torre Attack: Classical Defense",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. Bg5",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/6B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White develops the bishop to g5 and follows with e3, Nbd2, c3 and Bd3, a set-up with few moves to learn. Black answers ...Be7, ...c5 or ...h6 and ...b6. White aims for e4 or a kingside initiative with the pin on f6, or exchanges Bxf6 to leave Black with doubled pawns.",
+  "white_ideas": [
+    { "idea": "e3, Nbd2, c3, Bd3 and e4, with the bishop on g5 pinning the f6 knight" },
+    { "idea": "Bxf6 to damage Black's structure and play for e4" }
+  ],
+  "black_ideas": [
+    { "idea": "...h6 and ...c5 to challenge d4 and kick the bishop" },
+    { "idea": "...Be7 and ...O-O, ...d6 and solid development" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e3/c3 pyramid against Black ...d5 or ...c5 set-ups" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Steady development; limited tactics, hard to lose quickly for White." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound; objectively equal." },
+    "structure": { "notes": "Centre not committed; White holds d4 and may play e4 later, so flexible." },
+    "approach": { "notes": "A set-up (Bg5, e3, Nbd2, c3) played against nearly any Black reply." },
+    "level": { "reason": "understanding", "notes": "Anchor-style system: clear plans and little to memorise." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "3...c5 4.e3 Qb6", "moves": "1. d4 Nf6 2. Nf3 e6 3. Bg5 c5 4. e3 Qb6", "how": "Black attacks b2 and the game gets sharper." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet set-up with few ways to lose quickly; Black has some active replies." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A reliable system." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Like the London: tense, undecided centre." },
+    "approach": { "value": "system", "confidence": 0.65, "reason": "A Bg5/e3/Nbd2 set-up played against most defences." },
+    "level": { "value": "beginner", "why": "understanding", "confidence": 0.5, "reason": "Clear plans and little to memorise, like the London." },
+    "plans": { "value": [], "reason": "No plan on the list fits clearly." }
+  }
+}

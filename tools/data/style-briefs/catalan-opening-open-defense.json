@@ -1,0 +1,46 @@
+{
+  "slug": "catalan-opening-open-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Catalan Opening: Open Defense",
+    "eco": "E02",
+    "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 0 5"
+  },
+  "parent": "catalan-opening-closed",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes on c4 and White regains the pawn with Qa4+ or Nf3 and Qc2/Ne5, or by simply building pressure first. White keeps the long-diagonal bishop on g2 and a queenside initiative; Black tries to hold the pawn with ...b5 or gives it back for easy development and ...c5. The game is a slow positional squeeze rather than an attack.",
+  "white_ideas": [
+    { "idea": "Regain c4 with Qc2 or Qa4+ and keep the Bg2 diagonal pressure on b7" },
+    { "idea": "Queenside pressure with Rd1, Nc3, Ne5 and a lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the pawn with ...b5 and ...Bb7, or return it for ...c5" },
+    { "idea": "Develop ...Be7, ...O-O, ...a6 and neutralise the bishop with ...Bb7" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 only against Black e6; the c-file and long diagonal are open" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional pressure with a clear structure; neither side is forced into sharp play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "White regains the c4 pawn by force or Black returns it; not a real gambit." },
+    "soundness": { "notes": "Sound; main line of the Catalan." },
+    "structure": { "notes": "Black's c-pawn is gone and White has d4; semi-open c-file, pieces on the long diagonal; tag cautiously as flexible." },
+    "approach": { "notes": "A standard main-line Catalan; the g3/Bg2 set-up against ...d5, not against everything." },
+    "level": { "reason": "both", "notes": "Needs knowledge of the regaining lines and of the Catalan pressure." }
+  },
+  "plan_phrases": ["Fianchetto", "Half-open c-file", "Queenside pressure"],
+  "sublines_that_differ": [
+    { "name": "5.Nf3 c5 6.O-O Nc6", "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. Nf3 c5 6. O-O Nc6", "how": "Black counterattacks in the centre; more open play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Positional pressure, no forcing attack, but less solid than the Closed lines." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The pawn on c4 returns by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Main line of a respected opening." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre is fluid with c-pawn exchanged; could be read as open." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A main-line system played by strong players." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Some theory and positional understanding; not forcing theory." },
+    "plans": { "value": ["fianchetto", "half_open_c_file"], "reason": "Bg2 diagonal and queenside pressure define the line." }
+  }
+}

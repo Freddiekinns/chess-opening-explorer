@@ -1,0 +1,44 @@
+{
+  "slug": "queens-pawn-game-anti-torre",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Anti-Torre",
+    "eco": "D02",
+    "moves": "1. Nf3 d5 2. d4 Bg4",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p4/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 1 3"
+  },
+  "parent": "queens-pawn-game-zukertort-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black develops the c8-bishop to g4 before ...e6, pre-empting the Torre and London. White usually hits it with 3.Ne5, and after 3...Bf5 or ...Bh5 gains time or space with g4 or Qd3; Black must untangle without falling behind in development. It is a rare sideline and White tends to keep a small edge.",
+  "white_ideas": [
+    { "idea": "3.Ne5 to challenge the bishop and gain tempi, then g4 or Qd3 against Bf5/Bh5" },
+    { "idea": "Build the centre with c4 or e3 and Nc3 once the bishop has been displaced" }
+  ],
+  "black_ideas": [
+    { "idea": "Get the bishop outside the pawn chain before ...e6, avoiding the London bishop trade problem" },
+    { "idea": "Challenge e5 with ...Nd7 and ...f6 or play for ...Bxf3 and a solid pawn structure" }
+  ],
+  "typical_structures": [{ "structure": "White d4/e3 centre against Black d5/e6 with the bishop outside, or Queen's Gambit-type structure after c4" }],
+  "axis_evidence": {
+    "character": { "notes": "Not forcing beyond 3.Ne5 and g4 skirmishes; positions are steady with White a little ahead in space and tempi. Not clearly solid or sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable but concedes tempi after Ne5; White is slightly better with correct play. Not refuted." },
+    "structure": { "notes": "Centre stays in tension d4 against d5 and White can still play c4 or e3, so undecided." },
+    "approach": { "notes": "Strong players seldom meet 1.d4 with an early Bg4; chosen mainly to leave main lines." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn, but Black must know how to regroup the bishop and handle White's space." }
+  },
+  "plan_phrases": ["gain time against the bishop", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Anti-Torre main line", "moves": "3. Ne5 Bf5 4. g4", "how": "White grabs space and kicks the bishop again; sharper than the quiet 3.e3 lines." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Neither a forcing nor a rock-solid line; White keeps a mild initiative." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Black is a little worse but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The d4 and d5 pawns stay in tension and neither centre is decided." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players rarely choose an early Bg4 here." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs care regrouping the bishop but little theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "White's tempo gains on the bishop shape the early play." }
+  }
+}

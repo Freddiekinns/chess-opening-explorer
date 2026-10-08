@@ -1,0 +1,43 @@
+{
+  "slug": "slav-defense-chebanenko-variation",
+  "tier": "unsourced",
+  "root": { "name": "Slav Defense: Chebanenko Variation", "eco": "D15", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 a6", "fen": "rnbqkb1r/1p2pppp/p1p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5" },
+  "parent": "slav-defense-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays 4...a6 to prepare ...b5 or ...dxc4 with the bishop still free to leave later via g4 or f5. It is a flexible set-up where Black can choose between a Slav and a Semi-Slav structure depending on White's reply. The usual game is a calm manoeuvring fight with queenside space gains and few forced lines.",
+  "white_ideas": [
+    { "idea": "Play 5.e3 or 5.Bg5 and keep the centre solid, answering ...b5 with b3 or cxd5." },
+    { "idea": "Play 5.c5 (Advance System) to clamp the queenside and aim for e4." },
+    { "idea": "Use a4 to stop ...b5 and fight for the b5 square." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...b5 and ...Bb7 or ...Bg4 to gain queenside space with a flexible centre." },
+    { "idea": "Choose between ...dxc4 with ...b5 or the Semi-Slav ...e6 set-up once White commits." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav pawns c6/d5 with an advanced ...b5 chain on the queenside." },
+    { "structure": "Semi-Slav triangle c6/d5/e6 after ...e6 with the c8-bishop already developed." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's solid c6/d5 centre with no weak points; sound and rarely forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; ...dxc4 pawns are returned or held without a sacrifice." },
+    "soundness": { "notes": "Main-line, respected by strong players including Sveshnikov-era Slav players." },
+    "structure": { "notes": "Centre is fixed but not locked; tension c4/d5 stays, pieces and wings decide." },
+    "approach": { "notes": "Standard strong-player choice; it avoids the Meran and Botvinnik storms." },
+    "level": { "reason": "understanding", "notes": "Clear plans, modest memorisation, moderate positional judgement." }
+  },
+  "plan_phrases": ["queenside expansion", "...b5 gains space", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Advance System", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 a6 5. c5", "how": "White gains queenside space and plays for e4 and Bf4, a more positional struggle." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Compact centre with few ways for Black to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected defence for Black." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre tension undecided; ...dxc4 or ...e6 chosen later." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream Slav system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are manageable but need positional judgement." },
+    "plans": { "value": ["queenside_expansion", "half_open_c_file"], "reason": "Black plays ...b5 and keeps the c-file." }
+  }
+}

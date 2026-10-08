@@ -1,0 +1,49 @@
+{
+  "slug": "tarrasch-defense-prague-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Prague Variation",
+    "eco": "D33",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6",
+    "fen": "r1bqkb1r/pp3ppp/2n2n2/2pp4/3P4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq - 1 7"
+  },
+  "parent": "tarrasch-defense-rubinstein-system",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes against the Tarrasch with 6.g3 and 7.Bg2, aiming to pressure d5. In the main line Black plays 7...cxd4 8.Nxd4 and 8...Be7 9.O-O O-O, leaving Black with an isolated d-pawn or a symmetrical-looking structure with active pieces. White tries to blockade and exploit the isolated d-pawn; Black counters with piece activity and ...Bg4 or ...Re8 ideas.",
+  "white_ideas": [
+    { "idea": "Fianchetto and attack d5, then blockade the isolated pawn" },
+    { "idea": "Trade pieces to emphasise the isolated d-pawn weakness" },
+    { "idea": "Use Nxd4 and Nb3/Bf4-type moves to dominate the centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Active piece play to compensate for the isolated queen's pawn" },
+    { "idea": "Advance ...d4 or play ...Bg4/...Re8 and ...Bf8-g7 style activity" },
+    { "idea": "Avoid trades and keep pieces on to attack" }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn for Black on d5 against White's d4 gone" },
+    { "structure": "Hanging pawns c5/d5 if White avoids dxc5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dynamic Black piece activity versus a long-term structural weakness; not forcing but double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound for both sides; main line of the Tarrasch." },
+    "structure": { "notes": "Isolated d-pawn structure, partly open with a half-open c-file and e-file." },
+    "approach": { "notes": "Standard Tarrasch main line." },
+    "level": { "reason": "understanding", "notes": "IQP strategy is well known and the theory is moderate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "piece activity against the blockade", "fianchetto pressure on d5"],
+  "sublines_that_differ": [
+    { "name": "7.dxc5", "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 c4", "how": "A quieter queenside-pawn structure with Black space." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Active Black pieces against a structural weakness; neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main line of the Tarrasch." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Symmetrical-ish exchange structure with a half-open file and isolated pawn." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream defensive line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "IQP plans are well known; theory is moderate." },
+    "plans": { "value": ["isolated_queens_pawn", "fianchetto"], "reason": "Black's isolated d-pawn against White's g2 bishop." }
+  }
+}

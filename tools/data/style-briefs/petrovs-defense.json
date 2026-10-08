@@ -1,0 +1,121 @@
+{
+  "slug": "petrovs-defense",
+  "root": {
+    "name": "Petrov's Defense",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Petrov's Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Petrov%27s_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Petrov's Defense - Chess Openings",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Petrovs-Defense",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Start Out Solidly With The Petrov Defense",
+      "publisher": "House of Staunton",
+      "url": "https://www.houseofstaunton.com/blogs/chess-openings/the-petrov-defense",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Petrov's Defense search snippets (TheChessWorld, Simplify Chess, Chess Fandom)",
+      "publisher": "various, search snippets only",
+      "url": "https://thechessworld.com/articles/openings/petrovs-defense/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black answers 2.Nf3 by counter-attacking e4 rather than defending e5. After 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 both sides have lost an e-pawn and the structure is symmetrical, with the e-file the main open line. Black's aim is to equalise by quick development and piece trades; White tries to turn a small lead in development or slightly freer play into pressure, often castling and using the e-file or a queenside castling and pawn storm. The 3.d4 Steinitz line (3...Nxe4 4.Bd3 d5 5.Nxe5 Nd7) and 3.Nc3 (Four Knights transposition) or 3.d3 sidelines give quieter or more varied structures. The main lines are widely played at the top and are known as drawish, though some lines hold real attacking chances for both sides.",
+  "white_ideas": [
+    { "idea": "Use the open e-file after the e-pawns disappear, develop with Re1 and Bd3/Nc3 pressure", "sources": ["s3"] },
+    { "idea": "Jaenisch/c4 plan: 8.c4 to undermine Black's knight on e4 and the d5 pawn", "sources": ["s1"] },
+    { "idea": "Nimzowitsch Attack 5.Nc3 Nxc3 6.dxc3, accepting doubled c-pawns for quick development and queen trade into a slightly better endgame", "sources": ["s2"] },
+    { "idea": "Castle queenside and pawn-storm the kingside for a sharper game", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Counter-attack e4 immediately and trade down the centre to equalise", "sources": ["s1", "s3", "s4"] },
+    { "idea": "Develop rapidly after 5...d5, with the knight on e4 as an active central piece until traded", "sources": ["s2", "s1"] },
+    { "idea": "Time the ...c5 pawn break; it may leave Black an isolated d-pawn but activates the pieces", "sources": ["s3"] },
+    { "idea": "Steinitz line: ...Nd7 (Larsen, later Kramnik) to challenge the knight on e5", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical structure with both e-pawns traded and d-pawns facing each other (resembles Exchange French); e-file open", "sources": ["s1", "s3"] },
+    { "structure": "After ...c5 timing, Black may have an isolated d-pawn with active pieces", "sources": ["s3"] },
+    { "structure": "Nimzowitsch line: White doubled c-pawns after dxc3 for development", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Main lines (3.Nxe5, 3.d4) are symmetrical and low-risk for Black, with early trades; Wikipedia reports a drawish reputation with attacking chances for both sides in a few sharp lines. Chess.com calls it a very sound, solid defence and says the 5.Qe2 sideline draws about 80% of master games. Some sidelines (Marshall Trap on 5.Qe2 Qe7 6.d3? lines, Stafford Gambit) are sharp but are not the main line.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main line involves exchanges only; 3...Nxe4 pawn recaptured at once. The Stafford Gambit (3.Nxe5 Nc6) and Boden-Kieseritzky Gambit (3.Bc4) are separate sidelines.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Regarded as very sound for Black; adopted by Smyslov, Petrosian, Karpov, Kramnik, Caruana. Chess.com says Caruana showed it has more bite than thought. Only the Stafford Gambit is called objectively dubious (s3).",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Typical middlegame: e-pawns traded, central pawns d4/d5 face each other, open e-file; pawn tension at d5/e4 early. Resembles Exchange French. Partly open rather than closed.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A specific reply to 1.e4 e5 2.Nf3, not a set-up played against anything. Played at the very top level by several world champions and by Caruana, so respectable and mainstream. Appeals to players wanting to avoid Ruy Lopez, Italian, Scotch.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "House of Staunton says it favours understanding over memorisation and flows naturally. Chess.com says there is a lot of theory in some lines and less experienced players can fall into traps if they deviate from main lines. For Black the main plan (copy the symmetrical development) is clear.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "symmetrical structure",
+    "open e-file",
+    "piece trades to equalise",
+    "isolated d-pawn with active pieces",
+    "knight on e4 as central outpost",
+    "doubled c-pawns for development",
+    "opposite-side castling and pawn storm"
+  ],
+  "sublines_that_differ": [
+    { "name": "Stafford Gambit", "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6", "how": "Black gambit for rapid development and kingside attack; described as extremely sharp and objectively dubious (s3)." },
+    { "name": "Boden-Kieseritzky Gambit", "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4 Nxe4 4. Nc3", "how": "White gambit line, sharper and different in character (s1)." },
+    { "name": "Steinitz Variation", "moves": "1. e4 e5 2. Nf3 Nf6 3. d4 Nxe4 4. Bd3 d5 5. Nxe5 Nd7", "how": "Different structure, increasingly popular; 5...Nd7 Larsen/Kramnik (s1)." },
+    { "name": "Nimzowitsch Attack", "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. Nc3", "how": "Doubled c-pawns for White and quick queen trade (s2)." },
+    { "name": "3.d3 / 3.Nc3", "moves": "1. e4 e5 2. Nf3 Nf6 3. d3", "how": "Quiet White sidelines; 3.Nc3 can transpose to the Four Knights (s1)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "Petrov's Defense is also known as the Russian Game", "verdict": "supported", "note": "Alternative names confirmed.", "sources": ["s1", "s4"] },
+      { "claim": "It is a highly respected and solid response to 1.e4", "verdict": "supported", "note": "Chess.com calls it very sound and solid; played by multiple world champions.", "sources": ["s1", "s2"] },
+      { "claim": "Black immediately counter-attacks White's e4-pawn", "verdict": "supported", "note": "Standard idea of 2...Nf6.", "sources": ["s1", "s3"] },
+      { "claim": "Black aims to neutralise the first-player initiative and reach a symmetrical, balanced position", "verdict": "supported", "note": "Equalise is stated as Black's first order of business; symmetrical structure.", "sources": ["s3", "s4"] },
+      { "claim": "Suits the well-prepared, strategic player who enjoys clear plans and balanced middlegames and endgames", "verdict": "supported", "note": "House of Staunton: favours understanding over memorisation; suits positional players.", "sources": ["s3"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Challenge White's centre with ...d5, complete development, and trade pieces to reach a balanced endgame", "verdict": "supported", "note": "Main line 5...d5 and equalising by trades.", "sources": ["s1", "s3"] },
+      { "claim": "White: Try to create an imbalance or use a slight space advantage, often by advancing the d-pawn to d4", "verdict": "supported", "note": "5.d4 Classical Attack and 3.d4 Steinitz are the main lines; White space advantage is slight at best.", "sources": ["s1", "s2"] },
+      { "claim": "Black: After trading on e4, Black's knight becomes a central pillar controlling key squares", "verdict": "unverifiable", "note": "Knight on e4 is central until traded off with Bd3/Nc3/Re1; 'after trading on e4' is loosely worded. Own understanding: the e4 knight is an early outpost, not a long-term pillar.", "sources": ["s1"] },
+      { "claim": "White: Develop quickly, castle, and seek to prove the symmetrical structure offers better chances due to the extra tempo", "verdict": "supported", "note": "White tries to exploit a slight development lead.", "sources": ["s2", "s3"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

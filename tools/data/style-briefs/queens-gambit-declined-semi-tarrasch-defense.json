@@ -1,0 +1,50 @@
+{
+  "slug": "queens-gambit-declined-semi-tarrasch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense",
+    "eco": "D40",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 c5",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black strikes at d4 with ...c5 before castling, a more active version of the Tarrasch without the isolated pawn forced on Black. In the main line 5.cxd5 Nxd5 6.e4 Nxc3 7.bxc3 cxd4 8.cxd4 Bb4+ White gets a big centre and Black piece pressure on it; in the quieter 5.e3 Nc6 6.a3 cxd4 7.exd4 Black has an IQP-type structure. White presses with the centre and development, Black aims to attack the centre and trade pieces.",
+  "white_ideas": [
+    { "idea": "Take on d5 and play e4 to build a big pawn centre" },
+    { "idea": "e3, a3 and dxc5 or exd4 for a quieter edge with the IQP" },
+    { "idea": "Bg5 (Pillsbury) pinning the knight and pressing against d5" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the d4 pawn with ...Nc6, ...cxd4 and ...Bb4+ to prove the centre is a target" },
+    { "idea": "Trade pieces with ...Nxc3 and ...Bd7 to reach an easy endgame" },
+    { "idea": "Accept an IQP or hanging pawns in return for active piece play" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawn centre c3/d4/e4 against Black pieces after exchanges" },
+    { "structure": "Isolated queen's pawn for White after exd4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete play with tension around d4/e4 where both sides take some risk; not as sharp as the Botvinnik but not a fortress either." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is given." },
+    "soundness": { "notes": "Sound; a main-line defence at top level." },
+    "structure": { "notes": "Centre in tension with IQP or hanging pawns, so Flexible." },
+    "approach": { "notes": "A mainstream defence in the QGD complex." },
+    "level": { "reason": "both", "notes": "Main lines with 6.e4 need known theory and IQP positions need understanding; intermediate to advanced." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "big centre"],
+  "sublines_that_differ": [
+    { "name": "5.cxd5 Nxd5 6.e4", "moves": "5.cxd5 Nxd5 6.e4 Nxc3 7.bxc3 cxd4 8.cxd4 Bb4+", "how": "Sharper, White's big centre against Black's active pieces." },
+    { "name": "Pillsbury Variation", "moves": "4.Bg5", "how": "Pins the f6 knight for a more forcing game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Active central tension but neither forcing nor a fortress." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No pawn is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main-line, equal position." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The centre stays in tension with IQP or hanging pawns." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream QGD defence." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.55, "reason": "Needs theory in the main lines and IQP understanding but is not Najdorf-heavy." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns"], "reason": "Typical IQP and hanging pawn positions arise." }
+  }
+}

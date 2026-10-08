@@ -1,0 +1,46 @@
+{
+  "slug": "scandinavian-defense-icelandic-palme-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Icelandic-Palme Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. c4 e6",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3P4/2P5/8/PP1P1PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "After 3.c4 Black offers a second pawn with 3...e6, aiming for quick development and open lines. Accepted with 4.dxe6 Bxe6 5.d4 or 5.Nf3, Black plays ...Bb4+, ...Nc6 and ...O-O with active pieces against an extra White pawn, while 4.Nf3 exd5 or 4.Nc3 exd5 let Black recover the pawn in a calm game. It is double-edged, popular as a surprise weapon.",
+  "white_ideas": [
+    { "idea": "Keep the extra pawn and consolidate with d4, Nc3 and Be2." },
+    { "idea": "Decline with Nf3 or Nc3 and exploit Black's loosened structure." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Bxe6, ...Bb4+, ...Nc6 and ...O-O for the pawn." },
+    { "idea": "Use open lines against White's undeveloped king side." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game, White up a pawn, Black fully developed." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gambits a pawn for development; White must consolidate under pressure, both sides take risks." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 4.dxe6 Bxe6 Black is a pawn down and White can keep it." },
+    "soundness": { "notes": "Playable; not refuted, though White is probably better with accurate play." },
+    "structure": { "notes": "Open lines for the pieces early." },
+    "approach": { "notes": "Not a main line at the top; chosen mainly for surprise." },
+    "level": { "reason": "understanding", "notes": "Sharp but not deeply theoretical; Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "open lines for piece play"],
+  "sublines_that_differ": [
+    { "name": "Declined lines", "moves": "1. e4 d5 2. exd5 Nf6 3. c4 e6 4. Nf3 exd5 5. cxd5", "how": "No gambit, quiet play with Black recovering the pawn." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Black gambits a pawn for development; both sides take risks." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn that White can keep after 4.dxe6." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Playable and not refuted, though White can claim an edge." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open lines for pieces straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A sideline gambit chosen mainly for surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear development plan, modest theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "Compensation comes from rapid development." }
+  }
+}

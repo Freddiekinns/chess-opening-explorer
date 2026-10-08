@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-declined-three-knights",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Three Knights, Vienna Variation",
+    "eco": "D37",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 dxc4",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black takes on c4 at once, so this is the Vienna move order, close to a Queen's Gambit Accepted with ...e6. White builds a big centre with 5.e4 (or 5.Bg5 first), and Black hits it with ...Bb4, ...c5 or ...b5 while the pawn on c4 is held or given back. Lines are concrete and theoretical, with White's centre and development against Black's pressure on it.",
+  "white_ideas": [
+    { "idea": "Build a big centre with e4 and Bxc4 or Bg5, using the tempo on the pinned f6 knight." },
+    { "idea": "Recover the c4 pawn with Bxc4 or e3 and Bxc4 and keep a lead in development." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin on c3 with ...Bb4 and strike with ...c5 to undermine the e4/d4 centre." },
+    { "idea": "Hold the extra pawn with ...b5 or give it back for a comfortable position." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against ...c5 with open lines and pins on f6 and c3." },
+    { "structure": "QGA-style structure after e3 and Bxc4, Black playing ...a6 and ...c5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main Vienna lines with 5.e4 Bb4 6.Bg5 c5 are forcing and theory-heavy; the quieter 5.e3 and 5.Bg5 Be7 lines are calmer. Judged from the e4 lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black takes c4 but White regains it by force with Bxc4; QGA-type, not a gambit." },
+    "soundness": { "notes": "Fully respectable for both sides; the Vienna is a recognised top-level Queen's Gambit line." },
+    "structure": { "notes": "Centre in tension: White's e4/d4 against ...c5 and ...Bb4, undecided early." },
+    "approach": { "notes": "A move-order-specific line within the Queen's Gambit family, not a set-up played against everything." },
+    "level": { "reason": "memory", "notes": "The sharp 5.e4 Bb4 6.Bg5 c5 lines need precise knowledge." }
+  },
+  "plan_phrases": ["centre vs pin", "lead in development", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "5.e3", "moves": "5. e3", "how": "Quiet QGA-style position, no sharpness." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "The 5.e4 Bb4 6.Bg5 c5 lines are forcing and tactical." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The c4 pawn comes back by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A top-level QGD/QGA line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre stays in tension between e4/d4 and ...c5." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal Queen's Gambit line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.45, "reason": "Sharp main lines need exact knowledge." },
+    "plans": { "value": ["central_pawn_majority", "lead_in_development"], "reason": "White builds a centre and uses development; low certainty." }
+  }
+}

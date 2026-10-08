@@ -1,0 +1,46 @@
+{
+  "slug": "four-knights-game-scotch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Four Knights Game: Scotch Variation",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 0 4"
+  },
+  "parent": "four-knights-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White opens the centre at once. The main line is 4...exd4 5.Nxd4 Bb4 6.Nxc6 bxc6 7.Bd3 d5 8.exd5 cxd5 9.O-O O-O 10.Bg5 c6, an open game in which Black has doubled pawns on the c-file and White has a slight initiative. Black can also pin with 4...Bb4 5.Nd5. White aims for development and pressure; Black for activity and a pawn centre.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4, then Nxc6 and Bd3, using lead in development." },
+    { "idea": "Bg5 to pin and develop the rooks to the e-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin with ...Bb4 and strike back with ...d5." },
+    { "idea": "Accept doubled c-pawns for central control and the b-file." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with Black doubled pawns on c-file after Nxc6 bxc6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open but fairly symmetrical, tactics exist but nothing forced; Belgrade Gambit is a sideline." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Main lines have no gambit; Belgrade and Oxford gambits are sidelines." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre opens quickly after exd4 and ...d5." },
+    "approach": { "notes": "Standard e4 e5 line." },
+    "level": { "reason": "understanding", "notes": "Little theory; clear piece play." }
+  },
+  "plan_phrases": ["lead in development", "doubled pawns"],
+  "sublines_that_differ": [
+    { "name": "Belgrade Gambit", "moves": "4... exd4 5. Nd5", "how": "White gambits a pawn; sharper." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Open game with nothing forced." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Main lines have no material imbalance." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound main line." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Centre opens with exd4 and ...d5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Moderate theory with clear plans." },
+    "plans": { "value": ["lead_in_development", "doubled_pawns"], "reason": "White uses faster development against Black's doubled c-pawns." }
+  }
+}

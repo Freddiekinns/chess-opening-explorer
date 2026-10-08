@@ -1,0 +1,44 @@
+{
+  "slug": "ruy-lopez-cozio-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Cozio Defense",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7",
+    "fen": "r1bqkb1r/ppppnppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the knight to e7 instead of challenging the bishop with ...a6, usually followed by ...g6 and ...Bg7. White builds the centre with O-O, c3 and d4, or Nc3. The knight on e7 blocks the f-pawn and leaves Black a little passive, so White tends to hold a modest space edge in a quiet game.",
+  "white_ideas": [
+    { "idea": "Castle, play c3 and d4 to take the centre against the passive knight on e7" },
+    { "idea": "Nc3 and d4, sometimes Bxc6 to double the c-pawns when it helps" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7 and free the position with ...d5 or ...exd4" },
+    { "idea": "Keep the structure sound and wait for White to overextend" }
+  ],
+  "typical_structures": [{ "structure": "White e4/d4 centre against Black e5 or ...d6 with a fianchettoed bishop on g7" }],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring with little forcing play; Black's setup is a bit cramped but resilient. Reads as balanced, steady." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound, if slightly passive; played at master level in the past (Cozio, Paulsen)." },
+    "structure": { "notes": "Centre stays in tension, e5 against e4, until White plays d4." },
+    "approach": { "notes": "A recognised third-move alternative, played occasionally by strong players." },
+    "level": { "reason": "neither", "notes": "Few concrete lines to know and plans are straightforward for both sides." }
+  },
+  "plan_phrases": ["fianchetto", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Paulsen Variation", "moves": "4. Nc3 g6", "how": "Same fianchetto idea but White has Nc3 and d4; plays like a Four Knights/Pirc-type centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Steady and not forcing, but Black is not especially hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Passive but fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The e4/e5 centre is under tension and the pawn structure is undecided." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Played by strong players now and then as a legitimate Ruy sidestep." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "Plans are clear and theory is modest." },
+    "plans": { "value": ["fianchetto", "space_advantage"], "reason": "Black fianchettoes while White takes space with c3 and d4." }
+  }
+}

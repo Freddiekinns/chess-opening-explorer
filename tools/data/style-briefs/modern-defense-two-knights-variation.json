@@ -1,0 +1,47 @@
+{
+  "slug": "modern-defense-two-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Two Knights Variation",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Nf3",
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "modern-defense-standard-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops both knights, keeping f4 or Be2 and O-O options. Black can play ...Nf6 (reaching the Pirc Classical), or keep the Modern with ...c6 and ...Nd7 (the Suttles) and ...e5 or ...b5. White aims for a solid central bind while Black waits to strike at the centre. It is a slower, quieter version of the Standard line with less attacking chances.",
+  "white_ideas": [
+    { "idea": "Be2, O-O and Re1 or h3 and Be3, keeping a space edge" },
+    { "idea": "Bg5 and Qd2 for a quick attack against a delayed ...Nf6" }
+  ],
+  "black_ideas": [
+    { "idea": "...c6, ...Nd7, ...e5 or ...b5 striking at the centre" },
+    { "idea": "...Nf6 transposing to the Pirc Classical, or ...c5 with the g7 bishop pressing" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 with both knights out against Black d6/g6, Black breaking with ...e5 or ...c5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quieter than the f4 lines; Black can equalise with few risks but remains cramped." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered (the Tal Gambit ...Qxb2 is a rare sideline)." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not locked, resolved by ...e5 or ...c5: flexible." },
+    "approach": { "notes": "Same Modern set-up of g6, Bg7, d6 playable against almost anything, so system." },
+    "level": { "reason": "understanding", "notes": "Few lines to learn but Black needs the right break timing." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "counterattack on the centre"],
+  "sublines_that_differ": [
+    { "name": "Suttles Variation", "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c6 4. Nf3 d6", "how": "Black plays ...c6 with ...b5 and ...Nd7, a flexible Modern formation." },
+    { "name": "Tal Gambit", "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Nf3 c6 5. Bg5 Qb6 6. Qd2 Qxb2", "how": "Black grabs the b2 pawn with the queen, a risky raid that White answers with Bxf6 and Nb5 ideas." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet positional play with space for White and counterplay for Black." },
+    "gambit": { "value": "none", "confidence": 0.93, "reason": "No material offered in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Respected set-up." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre in tension until a Black break." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "Modern set-up played against nearly anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans over memory." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White take the centre then attacks it from the fianchetto." }
+  }
+}

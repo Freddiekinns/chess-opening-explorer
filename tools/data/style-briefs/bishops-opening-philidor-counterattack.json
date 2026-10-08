@@ -1,0 +1,46 @@
+{
+  "slug": "bishops-opening-philidor-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Philidor Counterattack",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 c6",
+    "fen": "rnbqkbnr/pp1p1ppp/2p5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black prepares ...d5 to hit the bishop on c4 and claim the centre. White usually plays 3.Nf3 or 3.Qe2 and Black goes ...d5, after which exd5 cxd5 leaves a Black pawn on d5 and the bishop must move, often with Bb5+. Play is open and straightforward, and Black is a little passive.",
+  "white_ideas": [
+    { "idea": "Meet ...d5 with exd5 cxd5 Bb5+ or Bb3, then Nc3 and d4 with a small edge." },
+    { "idea": "Delay Nf3 and play Qe2 and f4 or d4 for central control." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...d5 and develop with ...Nf6 and ...Bd6 or ...Bc5." },
+    { "idea": "Trade down to a symmetrical, equal position." }
+  ],
+  "typical_structures": [
+    { "structure": "Black d5 pawn against White e4 or d4; open centre after exd5 cxd5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Moderate. Open centre but no deep forcing theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit in the main continuation; ...d5 trades pawns." },
+    "soundness": { "notes": "Playable for Black, though White keeps a small edge. Not refuted." },
+    "structure": { "notes": "After exd5 cxd5 the centre is split with Black d5 against White e4/d4: open but with tension." },
+    "approach": { "notes": "Strong players seldom play ...c6 against the Bishop's Opening; they prefer 2...Nf6 or 2...Bc5." },
+    "level": { "reason": "neither", "notes": "Simple ideas, little theory." }
+  },
+  "plan_phrases": ["central control", "challenge the centre with d5"],
+  "sublines_that_differ": [
+    { "name": "Immediate d4", "moves": "3. d4 exd4 4. Nf3 d5", "how": "White gets a gambit-like open game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open but without a forcing theory." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable for Black." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The central tension is unresolved." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rare reply at higher levels." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple ideas but a minor reply." },
+    "plans": { "value": [], "reason": "No clear plan from the list." }
+  }
+}

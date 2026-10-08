@@ -1,0 +1,44 @@
+{
+  "slug": "alekhine-defense-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Exchange Variation",
+    "eco": "B03",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6",
+    "fen": "rnbqkb1r/ppp1pppp/1n1P4/8/2PP4/8/PP3PPP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White trades the e5 pawn for Black's d-pawn, giving up the big space grab for a simpler game with a c4/d4 centre. Black recaptures with ...cxd6 or ...exd6 and then plays ...g6, ...Bg7 and ...O-O or ...Nc6, developing against White's centre. White has a small space edge and Black has few weaknesses, leading to calm positional play.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, Be3, Rc1 and Nf3 against a central pawn mass with c4 and d4" },
+    { "idea": "Keep a small space edge and use the c4/d4 duo with a Maroczy-like feel" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7, ...O-O, and counter with ...Nc6 or ...Bg4 and ...e5" },
+    { "idea": "Use the half-open c-file after ...cxd6 or play a flexible ...exd6 structure" }
+  ],
+  "typical_structures": [{ "structure": "White c4/d4 against Black d6 with ...g6 fianchetto; cxd6 gives Black a half-open c-file" }],
+  "axis_evidence": {
+    "character": { "notes": "Simplified, positional play with no early forcing lines; Black has few weaknesses." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "After ...cxd6 Black has a half-open c-file and White has c4/d4; semi-open." },
+    "approach": { "notes": "A regular option at all levels." },
+    "level": { "reason": "understanding", "notes": "Plans are understood positionally, little memorisation." }
+  },
+  "plan_phrases": ["space advantage", "half-open c-file", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "5...exd6", "moves": "5...exd6 6. Nc3 Be7", "how": "Black gets a symmetric structure without the c-file and a solid set-up." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "A quieter line than Four Pawns, neither sharp nor rock-solid." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Well-regarded for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "After ...cxd6 Black has a half-open c-file against the c4/d4 centre." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "A regular line in the Alekhine." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Positional plans matter more than theory." },
+    "plans": { "value": ["space_advantage", "half_open_c_file"], "reason": "White's space and Black's c-file counterplay define the middlegame." }
+  }
+}

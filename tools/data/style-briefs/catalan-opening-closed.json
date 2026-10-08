@@ -1,0 +1,46 @@
+{
+  "slug": "catalan-opening-closed",
+  "tier": "unsourced",
+  "root": {
+    "name": "Catalan Opening: Closed",
+    "eco": "E01",
+    "moves": "1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/6P1/PP2PPBP/RNBQK1NR b KQkq - 1 4"
+  },
+  "parent": "catalan-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes the king's bishop to pressure d5 and the long diagonal toward b7. After 4...Be7 5.Nf3 O-O 6.O-O dxc4 7.Qc2 or 6...c6 Black aims for a solid set-up and ...c5 or ...b5. White seeks a small, lasting initiative and the bishop on g2 as a long-term asset without taking risks.",
+  "white_ideas": [
+    { "idea": "Pressure on the c6/b7 diagonal with Bg2 and Qc2; regain the c4 pawn after ...dxc4." },
+    { "idea": "Slow queenside play with Qc2, Nbd2 and Rd1." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold d5 with ...c6 or take on c4 and return it for activity." },
+    { "idea": "Break with ...c5 or ...b5 to free the position and neutralise Bg2." }
+  ],
+  "typical_structures": [
+    { "structure": "QGD-type centre with White fianchetto; after ...dxc4 White regains the pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, slow and pressing; little forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn comes back, not a gambit." },
+    "soundness": { "notes": "Sound; a safe pressing line." },
+    "structure": { "notes": "Tension in the centre; flexible." },
+    "approach": { "notes": "Standard, played by strong players." },
+    "level": { "reason": "understanding", "notes": "Slow strategic play and subtle move orders." }
+  },
+  "plan_phrases": ["fianchetto", "long diagonal pressure"],
+  "sublines_that_differ": [
+    { "name": "Open Catalan", "moves": "4... dxc4", "how": "Black takes on c4 and White regains it." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet pressure for White with a solid Black set-up; neither extreme." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "Any pawn on c4 comes straight back." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main-line system." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is in tension, as in the QGD." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A mainstream White opening, not a universal system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans and move orders matter more than memory." },
+    "plans": { "value": ["fianchetto", "space_advantage"], "reason": "White's bishop on g2 and a slight edge in space." }
+  }
+}

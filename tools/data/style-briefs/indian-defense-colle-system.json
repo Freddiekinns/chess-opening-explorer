@@ -1,0 +1,44 @@
+{
+  "slug": "indian-defense-colle-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Colle System, King's Indian Variation",
+    "eco": "A48",
+    "moves": "1. d4 Nf6 2. Nf3 g6 3. e3 Bg7 4. Bd3 d6",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "east-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the Colle set-up with e3, Bd3, O-O and Nbd2 against Black's King's Indian fianchetto, aiming for an e4 break with c3 or the c4 and Qe2 options. Black plays ...O-O and ...c5 or ...e5 to challenge d4, and the game is a plan-based fight with no heavy theory. The set-up is easy to play but gives Black a comfortable game.",
+  "white_ideas": [
+    { "idea": "O-O, Nbd2 and c3 then e4 to build a pawn centre." },
+    { "idea": "Qe2 and e4, or Ne5 and f4 for kingside play." }
+  ],
+  "black_ideas": [
+    { "idea": "...O-O and ...c5 or ...e5 to strike d4 before White gets e4." },
+    { "idea": "...Nc6 and ...Bg4 to pressure the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4/e3/c3 with a bishop on d3 against a King's Indian fianchetto." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet developing set-up, low risk for White; Black has a comfortable game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound and low-risk." },
+    "structure": { "notes": "Centre undecided until e4 or ...e5." },
+    "approach": { "notes": "The Colle is a system: same set-up against many defences." },
+    "level": { "reason": "neither", "notes": "Clear plans, little to memorise; a coach would hand it to a new player." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Quiet, sound, hard-to-lose set-up." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respectable system." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre tension d4 against ...e5 or ...c5 undecided." },
+    "approach": { "value": "system", "confidence": 0.75, "reason": "The Colle set-up is played against almost anything." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.55, "reason": "Clear plans and little theory, as with the Colle." },
+    "plans": { "value": [], "reason": "No recognised plan from the list dominates." }
+  }
+}

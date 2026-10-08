@@ -1,0 +1,48 @@
+{
+  "slug": "englund-gambit-declined-reversed-french",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined: Reversed French",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. e3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/4P3/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White declines the gambit with 2.e3, a solid reply that reaches reversed French or Exchange-type positions after ...exd4 exd4 d5. Black has played ...e5 and can strike back in the centre with ...d5 or simply recapture, getting an equal game. No material changes hands, so the game is a quiet pawn-structure battle where White tries for an easy, symmetrical position.",
+  "white_ideas": [
+    { "idea": "Exd4 and a symmetrical Exchange-style structure with a safe, easy game" },
+    { "idea": "Build with Nf3, Bd3, c3 and O-O in a solid set-up" },
+    { "idea": "Avoid the gambit traps and hold a small plus from the extra tempo" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike the centre with ...exd4 and ...d5 for a symmetrical game" },
+    { "idea": "Develop ...Nf6, ...Bd6 and ...Nc6 for easy piece play" },
+    { "idea": "Aim for ...e4 or ...c5 to take space" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical d-pawns after exd4 exd4, Exchange French-like, or a flexible reversed French with e3" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, symmetrical play with no forcing lines; both sides develop calmly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The gambit is declined, so no material has changed hands." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "Symmetrical exchange structure with an open e-file, so Semi-open per the rubric." },
+    "approach": { "notes": "A calm way for White to decline; reaches normal queen-pawn structures, not a set-up played against everything." },
+    "level": { "reason": "neither", "notes": "Easy plans and little theory, but not a recognised first-choice for beginners." }
+  },
+  "plan_phrases": ["symmetrical structure", "reversed French"],
+  "sublines_that_differ": [
+    { "name": "2...Nf6 3.Nf3", "moves": "2...Nf6 3.Nf3 e4 4.Nfd2", "how": "Black gets space with ...e4 and the game is a reversed Alekhine/Dutch-type structure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet symmetrical play, neither sharp nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The gambit is declined, no material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A normal equal structure." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Symmetrical exchange structure with an open e-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Declining with e3 is a standard if unambitious reply." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple plans, little theory." },
+    "plans": { "value": ["symmetrical_structure"], "reason": "Mirror-image pawns and a slow fight for small edges." }
+  }
+}

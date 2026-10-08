@@ -1,0 +1,41 @@
+{
+  "slug": "kangaroo-defense",
+  "tier": "unsourced",
+  "root": { "name": "Kangaroo Defense", "eco": "A40", "moves": "1. d4 e6 2. c4 Bb4+", "fen": "rnbqk1nr/pppp1ppp/4p3/8/1bPP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3" },
+  "parent": "horwitz-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black checks early with the bishop and plans to exchange it on d2, then play ...b6 and ...Bb7 with a flexible Indian-style set-up. White gets space with e4 and Nc3 and the game becomes a manoeuvring one in which Black tries to attack the centre from the wings. It is sound but passive and rare at strong level.",
+  "white_ideas": [
+    { "idea": "Meet ...Bxd2+ with Qxd2 and play Nc3 and e4 to build a big centre." },
+    { "idea": "Develop with Nf3 and g3 and fight for the long diagonal against ...Bb7." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade the bishop on d2, then fianchetto the other bishop to b7 and play against the centre." },
+    { "idea": "Provoke weaknesses with ...a5 and ...Bxd2+ and aim for a Queen's Indian-like game." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4/c4 centre against Black e6/b6 with a bishop on b7." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive but sound; Black exchanges the bishop and waits." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Slightly inferior but not refuted." },
+    "structure": { "notes": "White builds a big centre against Black's flank play, so the centre is flexible at first." },
+    "approach": { "notes": "Rare among strong players." },
+    "level": { "reason": "neither", "notes": "Simple plans but gives White an easy edge." }
+  },
+  "plan_phrases": ["fianchetto", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Kangaroo Variation", "moves": "1. d4 e6 2. c4 Bb4+ 3. Bd2 Bxd2+ 4. Qxd2 b6 5. Nc3 Bb7 6. e4 Nh6", "how": "Black develops the knight to h6 for ...f5, a dubious attempt." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet manoeuvring without forcing play." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Inferior but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre undecided at the root." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rare among strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple ideas but not a first repertoire." },
+    "plans": { "value": ["space_advantage", "fianchetto"], "reason": "White gains space while Black fianchettoes." }
+  }
+}

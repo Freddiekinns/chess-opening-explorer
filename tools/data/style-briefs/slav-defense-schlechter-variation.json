@@ -1,0 +1,41 @@
+{
+  "slug": "slav-defense-schlechter-variation",
+  "tier": "unsourced",
+  "root": { "name": "Slav Defense: Schlechter Variation", "eco": "D15", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 g6", "fen": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5" },
+  "parent": "slav-defense-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black combines the Slav with a Grunfeld-style fianchetto: ...g6, ...Bg7 and ...O-O with the c6/d5 pawns. White can exchange on d5 for the Grunfeld Schlechter structure or play e3 and Be2 for a quiet game. The position is solid and unambitious, with Black safe on the long diagonal and White keeping a small space edge.",
+  "white_ideas": [
+    { "idea": "Exchange on d5 and play Qb3 or Bf4 for a Grunfeld Exchange-style game with the c-file." },
+    { "idea": "Play e3, Be2 and O-O, keeping a small space edge and central tension." }
+  ],
+  "black_ideas": [
+    { "idea": "Complete the fianchetto and castle, then break with ...c5 or ...dxc4." },
+    { "idea": "Develop the c8 bishop actively to f5 or g4, since ...e6 is not needed in this set-up." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav c6/d5 pawns with a g7 fianchetto, or symmetrical d5 after cxd5 cxd5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Compact pawn centre and a fianchetto; few ways to lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "After cxd5 cxd5 a symmetrical structure with a half-open c-file." },
+    "approach": { "notes": "Standard sideline, not a system." },
+    "level": { "reason": "understanding", "notes": "Plans clear but the Slav-Grunfeld structure needs care." }
+  },
+  "plan_phrases": ["fianchetto", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Grunfeld Schlechter via 5.cxd5", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 c6 5. cxd5 cxd5", "how": "The listed subtree transposes to a symmetrical Exchange-type position." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Compact centre and a fianchetto bishop are hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully sound." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Exchange on d5 leaves a half-open c-file in a symmetrical centre." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "A recognised sideline, not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear but need positional judgement." },
+    "plans": { "value": ["fianchetto", "half_open_c_file"], "reason": "Black's bishop on g7 and the c-file after exchanges." }
+  }
+}

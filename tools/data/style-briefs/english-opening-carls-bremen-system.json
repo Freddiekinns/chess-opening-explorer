@@ -1,0 +1,49 @@
+{
+  "slug": "english-opening-carls-bremen-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Carls-Bremen System",
+    "eco": "A22",
+    "moves": "1. c4 e5 2. Nc3 Nf6 3. g3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2P5/2N3P1/PP1PPP1P/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "english-opening-kings-english-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop and plays for the centre with Bg2, d3 or e4, an English with a reversed Sicilian feel. Black chooses between 3...Bb4 (Bremen), 3...Bc5, 3...d5 (Reversed Dragon) and 3...c6, and the game becomes a manoeuvring fight over d5 and e4 with a symmetrical or Maróczy-like structure. White often plays e4 and a Maróczy-style bind or d3 and a slow build-up.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, then play for e4 and a bind on d5" },
+    { "idea": "Develop Nf3, O-O, d3 and play for a slow queenside or central expansion" },
+    { "idea": "Keep the bishop pair and trade into a small endgame advantage" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Bb4 or ...Bc5 and castle, ...Re8 and ...d6" },
+    { "idea": "Strike with ...d5 and ...Nxd5 into a Reversed Dragon" },
+    { "idea": "Trade to a symmetrical structure and equalise" }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian / Dragon with White fianchetto and c4/d3/e4 against ...e5/...d6" },
+    { "structure": "Symmetrical structures after ...d5 cxd5 Nxd5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow manoeuvring play with a fianchettoed bishop; little forced theory, not especially difficult to break." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Sound and a main line at top level." },
+    "structure": { "notes": "Flank opening with centre not fixed; flexible." },
+    "approach": { "notes": "A main-line English set-up, standard rather than a universal system." },
+    "level": { "reason": "understanding", "notes": "The plans are clear but require judgement about when to break with e4 or d4." }
+  },
+  "plan_phrases": ["fianchetto", "knight outpost on d5", "reversed Sicilian"],
+  "sublines_that_differ": [
+    { "name": "Reversed Dragon", "moves": "1. c4 e5 2. Nc3 Nf6 3. g3 d5 4. cxd5 Nxd5 5. Bg2 Nb6", "how": "Symmetrical structure with Black choosing the plan." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Manoeuvring and not forcing but with real counterplay." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A main-line English." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Flank opening with centre tension and no lock." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A standard English line, not a universal system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear but judgement is needed on timing." },
+    "plans": { "value": ["fianchetto", "knight_outpost"], "reason": "Bg2 on the long diagonal and control of d5." }
+  }
+}

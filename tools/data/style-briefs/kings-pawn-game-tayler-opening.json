@@ -1,0 +1,95 @@
+{
+  "slug": "kings-pawn-game-tayler-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Tayler Opening",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Be2",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPPBPPP/RNBQK2R b KQkq - 3 3"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop modestly to e2, an Inverted Hungarian, rather than to b5 or c4. The usual continuation is 3...Nf6 4.d3 d5 5.Nbd2 (Inverted Hanham) or 4.d4 with a Scotch-like game. White is looking for a solid, slow game and Black has easy equality.",
+  "white_ideas": [
+    { "idea": "Play d3, O-O and Nbd2 for a solid set-up." },
+    { "idea": "Challenge the centre later with c3 and d4." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...Nf6 and ...d5." },
+    { "idea": "Develop and equalise easily, then play on the kingside." }
+  ],
+  "typical_structures": [
+    { "structure": "Black e5/d5 centre against a White d3/Be2 set-up (Hanham reversed)." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and slow with no forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The Basman Gambit 4.d4 exd4 5.e5 is a rare sub-line."
+    },
+    "soundness": {
+      "notes": "Sound but passive."
+    },
+    "structure": {
+      "notes": "Centre fluid, with e4 and d3 against Black's e5/d5."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Slow plans, little theory."
+    }
+  },
+  "plan_phrases": ["solid set-up", "flexible centre"],
+  "sublines_that_differ": [
+    {
+      "name": "Basman Gambit",
+      "moves": "3...Nf6 4.d4 exd4 5.e5",
+      "how": "White gives a pawn for quick play against the knight."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Quiet development with a sound structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The main line has no material given; the gambit is a rare sub-line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A passive but fine set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Central tension undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Slow plans and low theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No distinctive plan."
+    }
+  }
+}

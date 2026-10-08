@@ -1,0 +1,48 @@
+{
+  "slug": "ruy-lopez-bird-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Bird Variation",
+    "eco": "C61",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nd4",
+    "fen": "r1bqkbnr/pppp1ppp/8/1B2p3/3nP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plants a knight on d4 at once. The normal reply is 4.Nxd4 exd4 5.O-O or 5.d3 c6 6.Ba4, after which Black has a cramping pawn on d4 and gains space, while White keeps the bishop pair-ish play and central e4 control. 4.Bc4 is a more direct alternative. The game is manoeuvring, with Black's d4 pawn both a strength and a target.",
+  "white_ideas": [
+    { "idea": "Capture on d4 and play d3 or O-O, then attack the d4 pawn with c3" },
+    { "idea": "Retreat the bishop to a4 or c4 and keep a sound game" },
+    { "idea": "Open the position with c3 or f4 to exploit Black's loosened kingside" }
+  ],
+  "black_ideas": [
+    { "idea": "Gain space with the d4 pawn and play ...c6, ...Bc5, ...Ne7" },
+    { "idea": "Hold the d4 pawn and develop with ...d6 and ...Nf6" },
+    { "idea": "Use the half-open e-file and central space for kingside play" }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawn on d4 against White pawn on e4 with a semi-closed centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow positional game after the trade on d4; neither side gets forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pieces are traded evenly." },
+    "soundness": { "notes": "Playable for Black; White keeps a small edge but there is no refutation." },
+    "structure": { "notes": "Black d4 pawn against e4 gives a semi-fixed centre; flexible." },
+    "approach": { "notes": "Strong players seldom choose 3...Nd4; offbeat." },
+    "level": { "reason": "understanding", "notes": "Positional manoeuvring on a fixed centre." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "4.Bc4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nd4 4. Bc4", "how": "Avoids the trade and aims at f7, sharper and trickier." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Neither forcing nor especially solid after 4.Nxd4 exd4." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Slightly worse for Black but playable." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "d4 vs e4 with tension, undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom play 3...Nd4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-based with little theory." },
+    "plans": { "value": ["space_advantage"], "reason": "Black gains space with the d4 pawn." }
+  }
+}

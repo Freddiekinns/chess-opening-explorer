@@ -1,0 +1,95 @@
+{
+  "slug": "caro-kann-defense-campomanes-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Campomanes Attack",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 Nf6",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays 3...Nf6 against 3.Nc3, a French-like set-up that avoids the usual 3...dxe4. I believe the Campomanes Attack is the 4.f3 reply, building a strong e4/f3/d4 centre, but the position here is only the rare 3...Nf6 and the details are uncertain. Black typically reaches a French- or Caro-like structure with ...e6 and ...dxe4, while White keeps space.",
+  "white_ideas": [
+    { "idea": "Support e4 with f3 and build a broad centre." },
+    { "idea": "Develop Be3, Qd2 and Nge2, with a space edge and attacking chances on the kingside." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge e4 with ...dxe4 and a ...e5 break." },
+    { "idea": "Keep a solid structure with ...e6 and ...Bd6 or ...Bb4." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre with f3 against Black's ...c6/...d5 chain." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Roughly balanced; White's space is offset by Black's solid structure, details uncertain."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Both sides are playable."
+    },
+    "structure": {
+      "notes": "The centre is not yet fixed."
+    },
+    "approach": {
+      "notes": "A rare sideline; strong players pick 3...dxe4 or 3.e5 lines."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory; understanding of the centre matters."
+    }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    {
+      "name": "4.e5",
+      "moves": "1. e4 c6 2. d4 d5 3. Nc3 Nf6 4. e5",
+      "how": "Reaches a French-like structure with different plans."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Uncertain line; I read it as an ordinary space-versus-solidity game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A normal-looking position."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension and could become French-like or Caro-like."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "A rarer Caro-Kann sideline, but not unknown to strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Little to memorise."
+    },
+    "plans": {
+      "value": ["space_advantage"],
+      "reason": "White's e4/d4/f3 centre is the main feature."
+    }
+  }
+}

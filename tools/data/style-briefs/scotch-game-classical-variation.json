@@ -1,0 +1,46 @@
+{
+  "slug": "scotch-game-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Classical Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black hits the d4 knight with the bishop. White's main replies are 5.Be3 Qf6 6.c3 Nge7 7.Bc4, keeping the knight and developing, or 5.Nxc6 Qf6 and 5.Nb3. The centre is open and the game is about piece activity, with White holding a small space edge and Black's pieces active.",
+  "white_ideas": [
+    { "idea": "Be3, c3 and Bc4 to support the d4 knight and develop quickly" },
+    { "idea": "Nxc6 and Qd4 or Nb3 to gain time against the c5 bishop" }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure d4 with ...Bc5 and ...Qf6, then ...Nge7 and ...O-O" },
+    { "idea": "Trade pieces and exploit White's slightly loose centre with ...d6 and ...Bb6" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with d-pawn exchanged for e-pawn, pieces on active diagonals" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Even, open piece play with some tactics around d4 and f2 but not a forced race; middle of the road." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawns are exchanged; no material given." },
+    "soundness": { "notes": "Sound, played by elite players." },
+    "structure": { "notes": "Central pawns come off immediately and the pieces play on open lines; same as Scotch anchor (Open)." },
+    "approach": { "notes": "Standard main line of the Scotch." },
+    "level": { "reason": "understanding", "notes": "Theory is moderate and plans are clear; Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "5.Nxc6 Qf6 (Intermezzo)", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Nxc6 Qf6", "how": "Sharper, with Black counterattacking f2 and White needing accurate play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Open, even piece play without a forced race or a fortress." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respected main line for both sides." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "The d4/e5 pawns are exchanged and play turns on open lines." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Played by strong players as a main Scotch line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.75, "reason": "Moderate theory and clear plans." },
+    "plans": { "value": ["lead_in_development", "knight_outpost"], "reason": "Quick development and a strong knight on d4." }
+  }
+}

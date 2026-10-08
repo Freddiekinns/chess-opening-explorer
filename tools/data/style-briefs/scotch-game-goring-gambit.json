@@ -1,0 +1,54 @@
+{
+  "slug": "scotch-game-goring-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Göring Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White offers one or two pawns (4...dxc3 5.Nxc3 or the Double Pawn Sacrifice with 5.Bc4) for rapid development and open lines against f7. Black can take and give material back or decline with 4...d5, which reaches an equal, open position. White aims for central pressure with Bc4, Nxc3, Qb3 and a kingside attack; Black tries to survive the initiative and consolidate the extra pawn.",
+  "white_ideas": [
+    { "idea": "Quick development with Nxc3, Bc4, O-O and Qb3 against f7" },
+    { "idea": "Sacrifice a second pawn with Bc4 for a bigger lead in development" },
+    { "idea": "Use open d-file and e-file for rooks and queen" }
+  ],
+  "black_ideas": [
+    { "idea": "Decline with 4...d5 and trade pieces to a comfortable game" },
+    { "idea": "Take the pawn and defend with ...Bb4, ...Nf6 and ...d6" },
+    { "idea": "Return material at the right time to complete development" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White pawns on e4 and Black a pawn up, queens still on" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A gambit with tactical, forcing lines and quick threats against f7, so Sharp." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can accept on c3 and keep the pawn, or take both in the Double Pawn Sacrifice."
+    },
+    "soundness": { "notes": "Considered sound but Black has safe equalising options, so mostly roughly equal." },
+    "structure": { "notes": "Centre pawns exchanged, lines opened early, so Open, like the Scotch." },
+    "approach": { "notes": "A recognised gambit, played less often at the top, but not offbeat." },
+    "level": { "reason": "memory", "notes": "Need to know the forcing lines on both sides; intermediate." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "4...d5", "moves": "4...d5 5.exd5 Qxd5", "how": "Black declines the gambit, giving an equal open game with no material imbalance." },
+    { "name": "Double Pawn Sacrifice", "moves": "4...dxc3 5.Bc4 cxb2 6.Bxb2", "how": "White gives two pawns for a huge development lead, the sharpest line." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Open gambit with forcing play and mutual tactics." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White offers pawns after 4...dxc3 that Black can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Strong players regard it as playable though Black has good equalising options." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "Central pawns come off and the pieces use open lines." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A recognised gambit line that is seldom but not never played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Forcing lines need to be known but plans are clear." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White trades pawns for development and f7 pressure." }
+  }
+}

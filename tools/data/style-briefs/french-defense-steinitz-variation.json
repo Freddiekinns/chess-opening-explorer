@@ -1,0 +1,116 @@
+{
+  "slug": "french-defense-steinitz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Steinitz Variation, Gledhill Attack",
+    "eco": "C11",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Qg4",
+    "fen": "rnbqkb1r/pppn1ppp/4p3/3pP3/3P2Q1/2N5/PPP2PPP/R1B1KBNR b KQkq - 2 5"
+  },
+  "parent": "french-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "The slug and the most played lines below the root are the Steinitz Variation proper (5.f4 c5 6.Nf3 Nc6 7.Be3), while the root position itself is the rare Gledhill Attack 5.Qg4. This brief describes the Steinitz main line, since that is what strong players choose. White holds the e5 pawn chain with f4 and Nf3 and has more space; Black undermines d4 with ...c5 and ...Nc6, ...cxd4 and ...Bc5 or ...a6/...b5 queenside play.",
+  "white_ideas": [
+    {
+      "idea": "Support e5 with f4, develop Nf3, Be3, and keep the central chain with space."
+    },
+    {
+      "idea": "Meet ...cxd4 with Nxd4 and aim for kingside space and piece pressure on e6/d5."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit d4 with ...c5, ...Nc6, ...cxd4, ...Bc5 and ...f6 or ...Qb6 to erode the e5 chain."
+    },
+    {
+      "idea": "Play on the queenside with ...a6, ...b5, ...Qb6."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French chain with White pawns on e5, f4, d4 and Black pawns on e6, d5, c5; after ...cxd4 White has the e5/f4 duo against Black's e6/d5."
+    },
+    {
+      "structure": "Black’s bad c8 bishop behind the e6/d5 chain."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Strategic fight over the e5 chain with real tactics around d4 and f4; Black's counterplay on the queenside is concrete but not a forced race."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main line; the Gledhill 5.Qg4 can lead to a pawn offer but it is a subline."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; a respected branch of the French Classical."
+    },
+    "structure": {
+      "notes": "Locked e5/e6 chain, d4/d5 tension; the French pawn chain with queenside play."
+    },
+    "approach": {
+      "notes": "A standard main-line branch of the Classical French."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, though French chain play takes understanding. Little theory beyond move order."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "bad bishop",
+    "undermine the pawn chain",
+    "queenside play"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Gledhill Attack",
+      "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Qg4",
+      "how": "White's early queen sortie hits g7 and the kingside; Black answers 5...c5 or 5...Nb6 and play is irregular and trappy, rather than a standard chain game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Strategic chain fight with some tactics but neither side is forced into a race."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is sacrificed in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A well-established French branch."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.6,
+      "reason": "The e5/e6 and d4/d5 pawns lock the centre, as in the French Advance."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal branch of the main French Classical."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans for both sides are clear but chain play must be understood."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White's e5 space against Black's passive c8 bishop and ...c5 breaks."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-grand-prix-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Grand Prix Attack",
+    "eco": "B23",
+    "moves": "1. e4 c5 2. Nc3 Nc6 3. f4",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-closed",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White sets up f4, Nf3, Bc4 or Bb5 and a quick kingside attack, avoiding the Open Sicilian theory. Black answers with ...e6, ...d6 or ...g6, then ...Nf6 or ...Nge7 and counterplay on the queenside; ...d5 is also possible. White aims for f5 breaks, a Bc4 on f7 and rapid attack on the king; Black counters with ...Qb6, ...b5 and the c-file. Play is direct and tactical.",
+  "white_ideas": [
+    { "idea": "f4, Nf3, Bc4 or Bb5, castle and attack with f5 and Qe1-h4" },
+    { "idea": "Pressure on f7 with the bishop and f-pawn" },
+    { "idea": "Avoid Open Sicilian theory while keeping an attacking game" }
+  ],
+  "black_ideas": [
+    { "idea": "Meet f4 with ...d5 or ...e6 and ...d5 to take the centre" },
+    { "idea": "...g6, ...Bg7 and counter on the long diagonal" },
+    { "idea": "Queenside play with ...Qb6, ...b5 and ...Rb8" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian with a White pawn on f4 and e4, a half-open c-file for Black and White king-side space" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Direct kingside attack with f4-f5 and Bc4; Black must be careful about tactics on f7 and e6, though ...d5 counter-strikes are strong." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn sacrifices are not part of the main line; some ...d5 lines." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "Sicilian pawn structure with a half-open c-file; semi-open." },
+    "approach": { "notes": "Standard anti-Sicilian, not a system against everything." },
+    "level": { "reason": "understanding", "notes": "Clear attacking plan with a moderate amount of theory." }
+  },
+  "plan_phrases": ["kingside attack", "pawn storm", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "3...g6 4.Nf3 Bg7 5.Bc4", "moves": "1. e4 c5 2. Nc3 Nc6 3. f4 g6 4. Nf3 Bg7 5. Bc4", "how": "Black fianchettoes and gets a Closed-Sicilian-like game, with White aiming at f7." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "A direct kingside attack with mutual risks." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected anti-Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "A Sicilian with a half-open c-file for Black." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "An anti-Sicilian, used at all levels, not a system for all defences." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-based attack with moderate theory." },
+    "plans": { "value": ["kingside_attack", "pawn_storm"], "reason": "White attacks on the kingside with f4-f5." }
+  }
+}

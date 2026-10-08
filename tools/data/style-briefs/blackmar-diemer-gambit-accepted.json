@@ -1,0 +1,49 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2p2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White offers a pawn with 2.e4 and 4.f3, and after 4...exf3 5.Nxf3 has open lines, a lead in development and the f-file for Bc4, Bf4, Qe2 and castling, aiming at h7, f7 and the kingside. Black can defend with ...e6, ...c6, ...Bg4 or ...g6, consolidate the pawn and head for a better endgame. Engines consider White's compensation insufficient, so the opening scores through traps and attack below master level.",
+  "white_ideas": [
+    { "idea": "Develop Nxf3, Bc4, Bf4 and castle, using the open lines and the f-file" },
+    { "idea": "Attack h7 and f7 with Qe2, Ng5 and Bd3 and sacrifice on h7 or f7" },
+    { "idea": "Push g4 and h4 to open the kingside when Black castles" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the pawn with ...e6, ...c6 or ...Bg4 and return the extra pawn only for a safe position" },
+    { "idea": "Trade pieces and head for an endgame with an extra pawn" },
+    { "idea": "Develop ...Bg4 and ...e6 and castle short without weaknesses" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White d4 and an open f-file against Black pawns on e6 and c6 or a g6 fianchetto" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Tactical and open, with White's attack coming at once and Black walking a tightrope in the opening." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black keeps the extra pawn with accurate defence; it is the classic example of a gambit that can be held." },
+    "soundness": { "notes": "Strong players consider the compensation insufficient and the line is almost absent at top level; it scores through traps and surprise." },
+    "structure": { "notes": "Central pawns come off and the f-file opens early; open lines for the pieces." },
+    "approach": { "notes": "Strong players hardly choose it, and it is played for surprise and the attack." },
+    "level": { "reason": "memory", "notes": "Dubious so never Beginner, with many defences to learn; attacking ideas are easy though." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "attack on h7"],
+  "sublines_that_differ": [
+    { "name": "Lemberger Countergambit", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 e5", "how": "Black counters on move three; the position differs sharply from the accepted lines." },
+    { "name": "Rook Pawn Defence", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 h5", "how": "Black prevents g4 with an odd-looking but playable move." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Open tactical play with an attack against the king from move five." },
+    "gambit": { "value": "white", "confidence": 0.97, "reason": "White gives a pawn that Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.7, "reason": "Engines and strong players consider the compensation insufficient." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open lines and files for the pieces from the opening." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Seldom played by strong players, chosen for surprise." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Never Beginner when Dubious; many defences must be known." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White compensates the pawn with development and an attack." }
+  }
+}

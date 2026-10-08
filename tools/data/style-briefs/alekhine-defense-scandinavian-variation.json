@@ -1,0 +1,93 @@
+{
+  "slug": "alekhine-defense-scandinavian-variation",
+  "root": {
+    "name": "Alekhine Defense: Scandinavian Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. Nc3 d5",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "thin",
+  "sources": [
+    { "id": "s1", "title": "Alekhine Defense Scandinavian Variation", "publisher": "ChessWorld", "url": "https://www.chessworld.net/alekhine-defense-scandinavian-variation.asp", "kind": "article" },
+    { "id": "s2", "title": "Alekhine's Defence (general character; does not cover 2.Nc3)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Alekhine%27s_Defence", "kind": "reference" },
+    { "id": "s3", "title": "Alekhine's Defense: Scandinavian Variation (forum thread on 3.e5)", "publisher": "Chess.com Forums", "url": "https://www.chess.com/forum/view/chess-openings/alekhines-defense-scandinavian-variation", "kind": "forum" },
+    { "id": "s4", "title": "Search snippet only: 365chess/engine evaluation of 3.exd5 Nxd5 4.Bc4 lines", "publisher": "Web search results", "url": "https://www.365chess.com/eco/B02_Alekhine's_defence_Scandinavian_variation", "kind": "reference" }
+  ],
+  "overview": "After 2.Nc3 d5 Black hits e4 at once, a more direct reaction than the main Alekhine (2.e5). White's main choices are 3.exd5, which usually runs 3...Nxd5 and then 4.Bc4 (Black replies 4...Nb6, keeping the knights, or 4...Nxc3) or 4.Nxd5 Qxd5, giving Scandinavian-like structures, or 3.e5 with Black choosing ...d4, ...Nfd7 (French-like) or ...Ne4. The quieter lines are equal and roughly Scandinavian in feel; 3.e5 d4 leads to pawn races with sharper play. The variation is uncommon among strong players (Hector, Adams, Kengis are named). Evidence for strategic content is limited.",
+  "white_ideas": [
+    { "idea": "After 3.exd5: develop with Bc4, Nf3, d4 and castle quickly.", "sources": ["s1"] },
+    { "idea": "After 3.e5: solid Nce2-type retreats, or sharp pawn races with exf6 and fxg7.", "sources": ["s1"] },
+    { "idea": "After 3.e5 Nfd7, play 4.d4 (French-like) or the sharper 4.e6; against 3...Ne4 use Nce2, Qf3 or Nxe4.", "sources": ["s1"] },
+    { "idea": "Exploit Black's loss of tempo if Black plays passively.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "After 3.exd5: recapture with the knight, then ...Nb6 (keeping the pair of knights) or trade on c3 and use queen activity.", "sources": ["s1", "s4"] },
+    { "idea": "After 3.e5: the combative ...d4, French-style ...Nfd7, or provocative ...Ne4.", "sources": ["s1"] },
+    { "idea": "3...d4 is called the better but somewhat boring option giving equality without complex theory.", "sources": ["s3"] },
+    { "idea": "Hypermodern idea of the Alekhine in general: tempt White's pawns forward and undermine them later.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Scandinavian-like after 3.exd5 Nxd5 4.Nxd5 Qxd5: White has a free development with a tempo lead, Black's queen exposed; open e-file, d-file", "sources": ["s1"] },
+    { "structure": "French Steinitz-like structure after 3.e5 Nfd7 4.d4", "sources": ["s1"] },
+    { "structure": "Pawn-race positions after 3.e5 d4 4.exf6 dxc3 5.fxg7", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed. 3.exd5 lines are cleaner and roughly equal. 3.e5 branches are sharper, with pawn races (moderate-to-high sharpness). The Alekhine overall is provocative and unbalanced, good for fighting players.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No sacrifice at the root. The Geschev Gambit (3.exd5 c6) is a Black gambit side branch (Black offers a pawn); the sources do not cover it (own understanding).",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Playable but needs preparation; passive Black play yields a White theoretical edge. 4.Bc4 Nb6 and 4...Nxc3 are roughly equal. Forum view: 3.e5 d4 is not really a problem for Black with care.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "After 3.exd5 and recaptures the centre is open (Scandinavian-like). After 3.e5 it can be locked (French-like) or a pawn race with the centre opening. The e-pawn is exchanged or advanced early.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "A specific reply to 1.e4 combining Alekhine and Scandinavian ideas, not a set-up for everything. Uncommon; notable practitioners include Hector, Adams and Kengis. The wider Alekhine has declined at elite level but is still used (Ivanchuk, Shabalov, Minasian, occasionally Carlsen).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Difficulty intermediate-advanced; demands move-order knowledge across multiple branches (3.exd5 vs 3.e5, three Black replies after 3.e5). Black studies it. The evidence base is thin.",
+      "sources": ["s1"]
+    }
+  },
+  "plan_phrases": [
+    "quick central strike ...d5",
+    "pawn race after ...d4",
+    "French-style ...Nfd7",
+    "Scandinavian-like structure",
+    "keeping the knights with ...Nb6",
+    "tempting White's pawns forward"
+  ],
+  "sublines_that_differ": [
+    { "name": "Alekhine: Scandinavian, 3.e5", "moves": "1. e4 Nf6 2. Nc3 d5 3. e5", "how": "White gains space with a tempo; Black picks ...d4 (pawn race), ...Nfd7 (French structure) or ...Ne4; sharper than the 3.exd5 lines." },
+    { "name": "Alekhine: Scandinavian, Exchange", "moves": "1. e4 Nf6 2. Nc3 d5 3. exd5 Nxd5", "how": "Scandinavian-like open positions, often equal and more positional." },
+    { "name": "Alekhine Defense: Scandinavian Variation, Geschev Gambit", "moves": "1. e4 Nf6 2. Nc3 d5 3. exd5 c6", "how": "Black pawn gambit for development; not covered in the sources read (own understanding)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A dynamic and provocative system where Black immediately challenges White's central control.", "verdict": "supported", "note": "2...d5 hits e4 at once; the Alekhine family is provocative.", "sources": ["s1", "s2"] },
+      { "claim": "Combines the ideas of the Alekhine and Scandinavian defences.", "verdict": "supported", "note": "Described as Alekhine-Scandinavian hybrids.", "sources": ["s1"] },
+      { "claim": "Aims to create an imbalanced position with open files and active piece play.", "verdict": "supported", "note": "The 3.exd5 lines are open; 3.e5 d4 is imbalanced. Quiet lines can be equal and balanced.", "sources": ["s1", "s2"] },
+      { "claim": "Well suited to practical, fighting players comfortable with transpositions.", "verdict": "unverifiable", "note": "Wikipedia says the Alekhine suits aggressive fighting players; transpositions are not discussed.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Challenge White's pawn on e4. If 3.e5, undermine the centre with ...c5.", "verdict": "wrong", "note": "After 3.e5 Black's named replies are ...d4, ...Nfd7 and ...Ne4. ...c5 is possible later but is not the main undermining idea named; in the French-like line it comes after ...Nfd7.", "sources": ["s1"] },
+      { "claim": "Black: If 3.exd5, recapture and develop actively, often leading to a Scandinavian-type structure.", "verdict": "supported", "note": "...Nxd5 then ...Nb6 or Nxc3.", "sources": ["s1"] },
+      { "claim": "White: Solidify a space advantage with d4 after 3.e5 and use it to build an attack.", "verdict": "supported", "note": "4.d4 after 3...Nfd7 is named; an attack is not specifically named.", "sources": ["s1"] },
+      { "claim": "White: Exchange on d5 and develop with tempo against Black's pieces.", "verdict": "supported", "note": "Bc4, Nf3, d4 and quick castling.", "sources": ["s1"] }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 4 }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "zukertort-opening-queens-gambit-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Queen's Gambit Invitation",
+    "eco": "A04",
+    "moves": "1. Nf3 e6",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "A flexible move-order position that most often becomes a Réti or Catalan-style game after 2.g3 d5 3.Bg2, or transposes to a queen's pawn opening or the English with 2.c4 or 2.d4. White develops without committing the centre and usually fianchettoes; Black builds a solid ...d5 set-up with ...Nf6 and ...Be7. The game is slow and manoeuvring rather than tactical.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop with g3 and Bg2, then castle and play c4" },
+    { "idea": "Pressure on d5 and the long diagonal, queenside expansion with b4" },
+    { "idea": "Transpose to a favourite queen's pawn structure by playing d4 or c4" }
+  ],
+  "black_ideas": [
+    { "idea": "...d5 and ...Nf6, a solid French-like or QGD set-up" },
+    { "idea": "Break with ...c5 for a Réti-style game, or ...d5 and ...c5 against the fianchetto" },
+    { "idea": "Challenge the centre as White commits" }
+  ],
+  "typical_structures": [
+    { "structure": "Réti: White pawns c4, g3 against Black d5, e6 with a tense centre" },
+    { "structure": "Catalan-type fianchetto with open diagonal" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow positional play where neither side is under tactical pressure early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "The centre is undecided and often transposes; flexible." },
+    "approach": { "notes": "Standard, a flexible move order; not a fixed system." },
+    "level": { "reason": "understanding", "notes": "Move-order flexibility is easy; the middlegame plans take some understanding." }
+  },
+  "plan_phrases": ["fianchetto", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "2.d4 transposition", "moves": "1. Nf3 e6 2. d4", "how": "Becomes a queen's pawn game; character depends on what Black chooses next." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet but not hard to break down; low evidence on the main branch." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "Nothing is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "A normal flexible opening." },
+    "structure": { "value": "flexible", "confidence": 0.75, "reason": "Flank opening with an undecided centre." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "A flexible choice not tied to one set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans over theory." },
+    "plans": { "value": ["fianchetto"], "reason": "White usually fianchettoes after 2.g3." }
+  }
+}

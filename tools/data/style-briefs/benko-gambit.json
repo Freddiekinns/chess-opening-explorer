@@ -1,0 +1,47 @@
+{
+  "slug": "benko-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black sacrifices a pawn with 3...b5 for open a- and b-files, a long-term queenside initiative and a fianchettoed bishop on g7. In the main line 4.cxb5 a6 5.bxa6 Bxa6 6.Nc3 g6 Black plays ...d6, ...Bg7, ...O-O and puts rooks on the a- and b-files while White tries to consolidate with Kg2 and a solid set-up. White usually keeps the pawn but sits through long pressure.",
+  "white_ideas": [
+    { "idea": "Keep the extra pawn, consolidate with g3, Bg2 or Nf3 and Kg2/Kf1, and return the pawn at the right moment." },
+    { "idea": "Break in the centre with e4 and e5 or push Black back." }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure on the open a- and b-files with rooks and queen, with the g7 bishop on the long diagonal." },
+    { "idea": "Trade White's central pieces, attack b2 and keep the compensation long term." }
+  ],
+  "typical_structures": [
+    { "structure": "Black with a pawn down and half-open a/b files; White with a d5/e4 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced, long-term compensation with real risk for both sides, though not especially forcing." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the pawn for a long time, at the price of passivity." },
+    "soundness": { "notes": "Played by strong players for decades; considered sound compensation." },
+    "structure": { "notes": "White pawns on d5 and e4 with Black half-open files; a fixed asymmetric structure." },
+    "approach": { "notes": "A recognised weapon at top level." },
+    "level": { "reason": "understanding", "notes": "Compensation is positional and hard to judge." }
+  },
+  "plan_phrases": ["fianchetto", "queenside expansion", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Accepted 4.cxb5 a6", "moves": "4.cxb5 a6", "how": "Main line, same as root." },
+    { "name": "Declined 4.Nf3", "moves": "4.Nf3 g6", "how": "No gambit, quieter." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "An unbalanced pawn sacrifice where both sides take risks." },
+    "gambit": { "value": "black", "confidence": 0.97, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Established compensation at top level." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Fixed asymmetric centre with half-open files for Black." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A regular weapon of strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Plans are clear but judging compensation is hard." },
+    "plans": { "value": ["fianchetto", "queenside_expansion"], "reason": "Bishop on g7 and pressure on the queenside." }
+  }
+}

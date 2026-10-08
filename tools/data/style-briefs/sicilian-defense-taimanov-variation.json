@@ -1,0 +1,154 @@
+{
+  "slug": "sicilian-defense-taimanov-variation",
+  "root": {
+    "name": "Sicilian Defense: Taimanov Variation",
+    "eco": "B44",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taimanov Sicilian: Opening Guide for White & Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/taimanov-sicilian/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Taimanov Variation, Sicilian (B44)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/taimanov",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Taimanov Sicilian: Adviser, Plans & Model Games",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/taimanov-sicilian.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Taimanov search summary (365chess B45 guide, Wikipedia Sicilian Defence, chess.com forum; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.365chess.com/eco/B45_Sicilian_Taimanov_variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black develops the queenside knight early and delays committing the d-pawn and the kingside pieces, choosing a set-up after seeing White's plan: usually ...Qc7 (Bastrikov), ...a6, ...Nf6 and ...Be7 or ...Bb4, with queenside play from ...b5, ...Bb7 and ...Rc8, and the central ...d5 break when ready. White chooses between the aggressive English Attack set-up (Be3, Qd2, O-O-O, g4), quieter Be2 and short castling, or 5.Nxc6 / 5.Nb5 / 5.c4 lines. The game is described as more positional and less theory-heavy than the Najdorf or Dragon, but Black must diagnose White's plan correctly or slip into passivity. It is one of the best e6 Sicilians, with equal scores overall, and transposes to the Scheveningen or the Four Knights Sicilian depending on Black's choices.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, then either the English Attack (Be3, Qd2, O-O-O, g4) for a kingside pawn storm or the quieter Be2 and short castling.", "sources": ["s1", "s2"] },
+    { "idea": "5.Nb5 to test the d6 square, and Maroczy-type play with c4 to restrict Black's expansion.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Be3/f4 attacks or g3 systems for long-term pressure.", "sources": ["s3"] },
+    { "idea": "After 5...a6, 6.Nxc6 bxc6 7.Bd3 has given Black difficulty reaching equality.", "sources": ["s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Delay central commitment: ...Qc7, ...a6, ...Nf6, ...Bb4 or ...Be7, chosen after White reveals intentions.", "sources": ["s3", "s4"] },
+    { "idea": "Queenside expansion with ...b5, ...Bb7 and ...Rc8, with queen and rook on the c-file.", "sources": ["s1", "s2"] },
+    { "idea": "The ...d5 central break to equalise and free the position; tactical resources such as ...Nxd4 and ...Bb4 against slow play.", "sources": ["s1", "s3"] },
+    { "idea": "Against the Bind, patient hedgehog-style set-up with ...a6, ...b6, ...d6, ...e6.", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Scheveningen-like / Open Sicilian structure: Black e6 and d6 or d5 break, semi-open c-file against White e4.", "sources": ["s3", "s4"] },
+    { "structure": "Maroczy Bind with a hedgehog-style Black set-up (...a6, ...b6, ...d6, ...e6).", "sources": ["s3"] },
+    { "structure": "English Attack with opposite-side castling and a race when White plays Be3/Qd2/O-O-O.", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chessworld: 'positional over sharp', avoids forcing theoretical battles; Chessable: more positional and less theory-heavy than many Sicilians. But White can choose the English Attack, which leads to opposite-side castling and a race, and Black's ...b5 counterplay is active. So the lines range from steady to double-edged depending on White's set-up.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material offered in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "'One of the best e6 Sicilians', solid and theoretically sound for Black; equal scores over 11M games (Chessiverse: White 47.7%, Black 47.7%, 4.7% draws over 11.4M games). Draws spike at 2500 (9.2%), which signals tight preparation. 5...a6 6.Nxc6 bxc6 7.Bd3 has been annoying for Black.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "structure": {
+      "notes": "Semi-open Sicilian centre: the d-file is open after the early exchange, Black has a half-open c-file and plays ...d5 or keeps ...d6; a Maroczy Bind can arise. Not closed or open.",
+      "sources": ["s3", "s4"]
+    },
+    "approach": {
+      "notes": "A named main-line variation of the Open Sicilian reached after 2...e6 or 2...Nc6, not a universal system. Used by Taimanov, Jansa (Black) and by Shirov and Adams (White); 5.Nc3 dominates at 79.6% at 2500; adoption peaked in 2015 and has fallen 27%. Respectable and popular at all levels.",
+      "sources": ["s2", "s4"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse: Intermediate. Chessable: minimal theory and appeals to positionally-minded players avoiding memorisation-heavy Najdorf lines. Chessworld: moderate difficulty, club-player friendly, but needs understanding of move orders and White's plan to avoid drifting into passive positions.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "Bastrikov set-up with ...Qc7",
+    "queenside expansion with ...b5",
+    "c-file pressure",
+    "...d5 central break",
+    "English Attack",
+    "Maroczy Bind",
+    "hedgehog set-up",
+    "flexible move order"
+  ],
+  "sublines_that_differ": [
+    { "name": "Bastrikov Variation", "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7", "how": "Main line: ...Qc7 first, then ...a6, ...Nf6, queenside expansion; positional." },
+    { "name": "English Attack set-up", "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7 6. Be3 a6 7. Qd2 Nf6 8. O-O-O", "how": "Opposite-side castling with g4 pawn storm; sharper than the quieter Be2 set-ups." },
+    { "name": "Maroczy Bind via 5.Nb5/c4", "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. c4", "how": "Squeeze with c4; Black reacts with a hedgehog-type set-up. Sources describe c4 lines in different ways, so details are unverified." },
+    { "name": "Four Knights Sicilian transposition", "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6", "how": "Transposes directly to the Four Knights Sicilian." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Taimanov is a highly flexible and respected response to the Open Sicilian, characterised by ...e6 and ...Nc6.",
+        "verdict": "supported",
+        "note": "'One of the best e6 Sicilians'; flexibility is the stated key.",
+        "sources": ["s1", "s3", "s4"]
+      },
+      {
+        "claim": "It avoids creating immediate pawn weaknesses and allows many set-ups, often transposing to Scheveningen or Hedgehog structures.",
+        "verdict": "supported",
+        "note": "Scheveningen-like and hedgehog structures are named; 5...Nf6 transposes to the Four Knights Sicilian.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "It suits versatile players who appreciate positional manoeuvring and dynamic counter-attack, leading to strategically rich, complex middlegames.",
+        "verdict": "supported",
+        "note": "Sources describe it as positional, flexible and club-friendly; 'complex' is the author's framing.",
+        "sources": ["s1", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: seize central space with Be3, f3 and g4 to prepare a kingside attack while preventing ...d5.",
+        "verdict": "supported",
+        "note": "English Attack (Be3, Qd2, O-O-O, g4) is named; f3 is not named in the sources read, and the plan does not always prevent ...d5.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: achieve the ...d5 pawn break to equalise and free the position.",
+        "verdict": "supported",
+        "note": "...d5 is named as a central break.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: queenside counterplay with ...b5, ...Qb6 and pressure on the semi-open c-file.",
+        "verdict": "supported",
+        "note": "...b5, c-file play with queen and rook; ...Qb6 is not named in the sources read.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: control d5 and provoke a weakness on d6, which can become a long-term target.",
+        "verdict": "supported",
+        "note": "5.Nb5 tests the d6 square; control of d5 appears with Maroczy-type play.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

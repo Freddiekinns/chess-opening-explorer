@@ -1,0 +1,44 @@
+{
+  "slug": "yusupov-rubinstein-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Yusupov-Rubinstein System",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. e3",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White keeps a flexible, compact set-up with e3, Bd3, O-O and c4 or b3 depending on Black's reply. Black usually plays ...c5, ...b6 or ...d5 and the game often transposes to a Queen's Gambit, Colle or Semi-Tarrasch structure. A quiet system where White plays for a slight pull without early commitments.",
+  "white_ideas": [
+    { "idea": "Develop with Bd3, O-O, c4 or c3, Nbd2 and aim at e4." },
+    { "idea": "Choose between a Colle-style e4 break and a QGD-style c4 depending on Black's set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...c5 and ...b6, Bb7 or ...d5 with a solid development." },
+    { "idea": "Challenge e4 and the centre with timely ...c5 and ...d5 breaks." }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Gambit or Semi-Tarrasch type centre with White pawns on d4, e3, c4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid and flexible; transposes to quiet queen's-pawn structures with little early tactical content." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Centre in tension and flexible with transposition possibilities." },
+    "approach": { "notes": "A set-up White can play against several Black defences." },
+    "level": { "reason": "understanding", "notes": "Little memory needed, though the transpositions need sense." }
+  },
+  "plan_phrases": ["fianchetto"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Quiet development with few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No pawn is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A standard sound set-up." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "The centre is undecided and can transpose." },
+    "approach": { "value": "system", "confidence": 0.55, "reason": "The e3/Bd3 set-up is playable against many defences." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are simple but the transpositions need care." },
+    "plans": { "value": [], "reason": "No single plan from the list stands out." }
+  }
+}

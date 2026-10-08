@@ -6,9 +6,10 @@ and four data pipelines (video, study, LLM enrichment, popularity stats).
 
 Commands live in `package.json`; the ones that verify your work are under
 **Working here** below. Architecture and current state live in
-`.github/memory-bank/` — read `activeContext.md` and `progress.md` first.
-`REVIEW.md` is the review policy: what a pass over a diff looks for here, and
-what to leave alone because CI already covers it.
+`.github/memory-bank/` — read `activeContext.md` first; `progress.md` and
+`archive.md` are history, read on demand. `REVIEW.md` is the review policy: what
+a pass over a diff looks for here, and what to leave alone because CI already
+covers it.
 
 Scoped rules load automatically when you work in these directories:
 
@@ -75,55 +76,35 @@ costs what one printing a page costs.
   notice or a coverage table.
 - **Never relay bot status comments to the owner.** They can see them.
 
-Recorded because it has happened twice: ~14 unsolicited turns on PR #67, five of
-them self-scheduled hourly polls of a PR that was green throughout, and 14+ the
-same on PR #63 the week before.
+Recorded because ~14 unsolicited turns on PR #67 (five of them hourly polls of a
+green PR) and 14+ on PR #63 happened before this rule existed.
 
 ## Gotchas
 
 Non-obvious things that have caused real regressions. Every entry here is
-load-bearing.
+load-bearing. Rules that only matter inside one package or subsystem live with
+it: the scoped `AGENTS.md` files (PostHog analytics, the Lichess explorer proxy,
+search payloads) and the skills (pipelines, dependencies and tooling).
 
 ### Data and API
 
-- **`api/data/` is the single canonical data location.** The API reads
-  video-index/courses/popularity data from `api/data/` in every environment. The
-  old `packages/api/src/data/` mirror and its copy-after-regenerate step were
-  removed 2026-07-06; the pipeline writes `api/data/video-index.json` directly.
+- **`api/data/` is the single canonical data location** in every environment.
+  The `packages/api/src/data/` mirror and its copy step were removed 2026-07-06;
+  pipelines write to `api/data/` directly.
 
 - **Never fetch large payloads on mount.** `/api/openings/all` (24.8 MB) returns
-  a cacheable 410. Use `/api/openings/search-index` for client-side search data,
+  a cacheable 410. Use `/api/openings/search-index` for client-side search data
+  (fetched on the first keystroke, never on load),
   `/api/openings/semantic-search` for server-side queries, and the aggregate
   `/api/openings/page/:fen` for the detail page. Crawlers index 12,000+ pages
-  and will amplify any unbounded payload into a large origin-transfer bill.
+  and will amplify any unbounded payload into a large origin-transfer bill. **Do
+  not return raw service results from a search route** — see
+  `packages/api/AGENTS.md`.
 
-  The search index has two sizes and both are earned by a user action, never by
-  a page load. `?limit=1000` (207 KB) is the slice every search surface ranks
-  against; `lib/searchIndex.ts` fetches it once, on the first character typed
-  into any search box. The full index (3.0 MB) has exactly one caller — the PGN
-  lookup behind "Paste a game", which cannot identify a position outside the
-  popular thousand. The landing page used to pull the slice on mount for the
-  hero alone, so every visitor paid for a search most of them never ran.
-
-  Search responses are projected down to the fields a row draws by
-  `toSearchResult` in `openings.routes.js` — fen, name, eco, moves,
-  games_analyzed, searchScore. Twenty whole opening records was 55 KB, mostly
-  `analysis_json` descriptions, to draw twenty lines of name and ECO code — on
-  every keystroke, mostly on phones. It is now 4.4 KB. **Do not return raw
-  service results from a search route.**
-
-- **Lichess opening explorer requires authentication** (since 2026-03).
-  Anonymous requests to `explorer.lichess.org` get 401 — this is Lichess-wide
-  DDoS defence, not an IP block or a bug (their docs still claim public access;
-  trust the behaviour). Live stats go through the `/api/explorer` proxy
-  (`packages/api/src/routes/explorer.routes.js`), which attaches
-  `LICHESS_EXPLORER_TOKEN`. The token allows 25 requests/min, so CDN caching is
-  load-bearing — never bypass the proxy or call Lichess from the client. **The
-  route owns its Cache-Control headers** (7d masters / 24h bands / no-store
-  failures): do not add an `/api/explorer` entry to `vercel.json`, because
-  config headers override function headers and would clobber the per-band TTLs.
-  The route also 403s known crawler user-agents before touching Lichess. Without
-  the token the route 503s and the Win Rate panel falls back to snapshot stats.
+- **Never call Lichess from the client or bypass `/api/explorer`.** The explorer
+  needs a token limited to 25 requests/min, so the proxy's CDN caching is
+  load-bearing, and the route owns its Cache-Control headers — no
+  `/api/explorer` entry in `vercel.json`. Detail in `packages/api/AGENTS.md`.
 
 - **Search ranking is one rule implemented twice, and both halves must agree.**
   The client paints from a held index slice on the keystroke; the server
@@ -134,23 +115,18 @@ load-bearing.
 - **Popularity stats cover all rated Lichess players, not master games.** Label
   UI surfaces accordingly.
 
-- **Page views are Vercel's, events are PostHog's.** Vercel Web Analytics is on
-  (dashboard → Analytics) even though its API answers "Web Analytics not found"
-  — a review once reported it disabled on that evidence. Custom events are
-  Pro-only there, so `trackEvent` (`lib/analytics.ts`) sends to PostHog EU,
-  lazily and **only on the `openingbook.xyz` host**: dev, tests and previews
-  send nothing, which is why nothing arrives from a local run. No `/ingest`
-  proxy — the middleware matcher would catch it and bill a middleware invocation
-  per event. Never send PII or search text; properties are small enums and
-  ranks. The SDK is `posthog-js/dist/module.slim`, which has **no history
-  autocapture**: `capture_pageview` silently recorded nothing but `$pageleave`
-  on the first deploy. `App` reports `$pageview` from the router instead, and
-  `trackEvent` reads the URL synchronously because callers navigate straight
-  after tracking. Testing it on production: PostHog can take ~5 minutes to show
-  events, so a missing event is not yet a lost one — check the browser's
-  requests to `eu.i.posthog.com` for a 200 first. Test traffic is excluded by
-  the project's test-user filter, keyed on Device ID (= `openingbook:anon-id` in
-  localStorage); add a new test browser's id there.
+- **Style tags come from `api/data/style-tags.json`, not `analysis_json`.** The
+  old LLM fields (`style_tags`, `complexity`, `tactical_tags`…) are still in
+  every ECO record and are wrong in ways that were measured (61% "Advanced",
+  "defensive" on 99% of openings). Read tags through
+  `services/style-tags-service.js`; pages receive them as `style_profile`.
+  `tools/style-tags/export.js` writes the file, and a position it leaves out (a
+  hub such as 1.e4, or a variation not yet classified) shows no tags.
+
+- **Analytics: page views are Vercel's, events are PostHog's**, sent only from
+  the `openingbook.xyz` host, never with PII or search text. Read
+  `packages/web/AGENTS.md` before touching `trackEvent` or concluding an event
+  was lost.
 
 - **Never render fabricated data.** If real stats are missing, omit the element
   or show an explicit "no stats" state. Never synthesise numbers that look like
@@ -188,221 +164,35 @@ Google de-indexed 5,010 pages once already, after a change that looked safe.
 
 ### Pipelines
 
+Read the pipeline's skill before changing or running it — `video-pipeline`,
+`course-discovery`, `popularity-stats` — and `tools/*/README.md` for the deep
+detail. The video skill carries the scorer's regressions (the corpus ratchet,
+description and alias traps, the order decided twice, the Jev filter). Two rules
+that reach beyond any one pipeline:
+
 - **Never guess YouTube channel IDs.** Verify with the user or test via the RSS
   feed (`https://www.youtube.com/feeds/videos.xml?channel_id={ID}`).
-
-- **Channel tiers live in `config/youtube_channels.json`** — the single source
-  of truth. Do not hardcode channel lists in matcher code. Resolve them through
-  `lib/channel-tiers.js`, which normalises titles to letters and digits before
-  comparing: the config's display name is not the YouTube channel title ("Chess
-  Network" vs `ChessNetwork`), and a raw string compare silently demoted that
-  premium channel to the unknown tier — 60 scoring points and a stricter
-  duration gate that withheld 183 of its videos from the corpus.
-
-- **`courses.json` is a full rebuild each run.** Never hand-edit it.
-
-- **The video matching corpus is the enrichment cache, not the `videos` table.**
-  Matching writes back only the top 10 per opening, so the table holds ~1,700 of
-  the ~10,200 videos ever fetched. `pipeline:rematch` reads
-  `tools/data/video_enrichment_cache.json` as well (`lib/enrichment-corpus.js`)
-  — without it, re-scoring is a ratchet where a better scorer can only reshuffle
-  a worse one's survivors, and a video dropped once is gone for good. That is
-  what cost the Accelerated Dragon page Seirawan's 455k-view lecture and two
-  Naroditsky theory speedruns: they score 155–175 today and had simply left the
-  corpus.
-
-- **Per-opening video order is decided twice.** `compareMatches`
-  (`lib/video-matcher.js`) picks the top 10; `getTopVideosForOpening`
-  (`database/schema-manager.js`) re-derives the **displayed** order in SQL. They
-  must break ties identically, which is why `variation_rank` is persisted on
-  `opening_videos` rather than kept in memory. Adding the tie-break to the JS
-  half alone changed nothing — the SQL re-sorted by view count on the way to the
-  JSON, and the symptom looked exactly like the fix not working.
-
-- **An opening's alias list can contain its own family name.** `parseAliases`
-  splits ECO alias strings on commas, so `"Sicilian Defense, O'Kelly Variation"`
-  gives the **Kan** page a bare `"Sicilian Defense"` alias. Matched as a name,
-  that scored every generic Sicilian video 80 on a specific sub-variation page —
-  above any real variation match, and past both guards, because the intra-family
-  guard only fires for family matches and the corroboration rule only for
-  content matches. Aliases equal to the page's family prefix are skipped; the
-  video can still qualify through the family path, which is policed.
-
-- **A video's description is not its subject.** Series descriptions cross-link
-  their sibling episodes ("The theory of the Accelerated Dragon:
-  https://youtu.be/…"), so every Sicilian lecture in a playlist name-matches
-  every other Sicilian page. The scorer only counts a description/tags hit on a
-  sub-variation page when the **title** names the variation too; otherwise the
-  video falls through to the family path where the intra-family guard applies.
-  Until 2026-08-10 an uncorroborated mention scored +60 — above a family match —
-  and bypassed that guard, which is how Alapin, Scheveningen and Prins lectures
-  sat on the Accelerated Dragon page at 100+.
-
-- **The displayed index is filtered after the scorer.** Every pipeline mode ends
-  by removing pairs that Jev (TypeSafe) confidently says are not about their
-  page (`tools/video-pipeline/lib/jev-filter.js`, answers cached in
-  `tools/data/jev-relation-cache.json`). So `video-index.json` holds fewer
-  videos than SQLite's `opening_videos`, and a page the filter empties shows the
-  family shelf. Only rejections with P(good) < 0.4 act. Jev's acceptances proved
-  unreliable on sibling variations, so they never rank anything. It fails open
-  without `JEV_API_KEY`. The key comes from console.typesafe.ai;
-  `jevtypesafeai.com` is an unaffiliated reseller. After the filter,
-  `config/video_pins.json` puts hand-verified videos first on pages the scorer
-  cannot reach, so a page can also show a video SQLite never matched to it.
-
-Pipeline-specific caveats (rematch modes, cache staleness, audit scripts) live
-in the `.claude/skills/` entries for each pipeline and in `tools/*/README.md`.
+- **`courses.json` and `video-index.json` are full rebuilds.** Never hand-edit
+  them.
 
 ### Tooling
 
-- **A failing test comes first, and a hook stops it being unwritten.** For a bug
-  fix: reproduce it as a test, confirm it fails for the reason you expect,
-  commit that test, then fix the code without touching it.
-  `.claude/hooks/test-integrity.js` runs as a `PreToolUse` hook and blocks an
-  edit that adds `.skip` / `.only` / `xit` to a test file, and a shell command
-  that removes a test path or writes a disabled test into one. It is a fence,
-  not a wall — a shell is too expressive to police completely, and the wall is
-  the PR diff. Its patterns are anchored to the start of a line so a disabler
-  quoted inside a string is not mistaken for one being introduced.
+Read the `dependencies-tooling` skill before touching a dependency, the
+lockfile, a Dependabot PR, the audit gate, ESLint config, or a script that
+spawns a process. Every rule in it broke CI or a deploy once. Three that any
+session can trip:
 
-  The deliberate exception is `ALLOW_TEST_SKIP=1`, and using it belongs in the
-  commit message. Hooks inherit the environment of the process Claude Code runs
-  in, so for `Edit` and `Write` it has to be exported **before** starting Claude
-  Code — there is no per-call environment. A `Bash` command can carry it inline,
-  as a prefix, which is also the way out of the fence's one real false positive:
-  a heredoc whose body quotes a command the fence would block. Writing about
-  this hook in a shell heredoc trips it, twice so far. Use `Edit` or `Write` for
-  those files.
-
-- **The two kinds of hook bind at different times.** The Claude Code hook above
-  is read from `.claude/settings.json` and works in any clone. The husky git
-  hooks (`pre-commit` runs prettier + eslint, `pre-push` runs type-check and
-  `test:all`) only bind once `npm install` has run, because `prepare: husky` is
-  what sets `core.hooksPath`. A fresh remote session therefore commits with **no
-  git hooks at all** until you install — run `npm ci` before committing, or rely
-  on CI, which runs lint and `format:check` on every PR regardless.
-
-- **Lint is code quality, Prettier is formatting.** ESLint configs enforce
-  code-quality rules only. Do not re-add stylistic rules
-  (`indent`/`quotes`/`semi`/`linebreak-style`) — they fight Prettier.
-  `packages/api`'s lint script is `eslint src/`; backend tests live at the repo
-  root, not `packages/api/tests/`.
-
-- **ESLint is flat config, and the file set lives in the config, not the CLI.**
-  Each package has an `eslint.config.js` — CommonJS in `packages/api`, ESM in
-  `packages/web` and `packages/shared`, matching each package's `type`. There is
-  no `--ext` flag in ESLint 9+, so `files:` and `ignores:` decide what gets
-  linted; `eslint .` in `packages/web` will otherwise reach `coverage/` and
-  report its generated disable directives. `packages/shared`'s config was
-  unreadable for months — `module.exports` under `"type": "module"` — because CI
-  linted only api and web. It lints all three now; keep it that way.
-
-- **react-hooks 7 is installed but its `recommended` preset is not.** The
-  package enables the React Compiler rules through that preset, and the codebase
-  violates them in ~20 places. `packages/web` enables `rules-of-hooks` and
-  `exhaustive-deps` explicitly instead, which is what it has always enforced.
-  Adopting the preset is #86's remaining half: land the rules at `warn`, clear
-  the sites in batches, then promote to `error`. Do not add the preset without
-  doing that work.
-
-- **The dependency gate is scoped on purpose, and its allowlist expires.**
-  `npm run security:audit` (`scripts/audit-dependencies.js`, run by CI) fails on
-  high and critical advisories in **production** dependencies only. Dev-only
-  findings — the vitest/vite/esbuild dev-server class — are Dependabot's job,
-  not a merge blocker, because a gate that must be overridden every PR teaches
-  the override. **The allowlist is empty, and the bar for adding to it is
-  "unreachable from production _and_ no upgrade exists".** It briefly held
-  `sqlite3`'s native build chain (`tar`, `node-gyp`, `cacache`,
-  `make-fetch-happen`) on the unreachability argument alone, which was true and
-  still the wrong answer — `sqlite3@6` cleared all five including the only
-  critical in the tree. Every entry carries a reason and the condition that
-  removes it, and **an entry whose advisory has gone fails the run**: that check
-  is what forced the upgrade rather than letting the list sit there, and without
-  it the gate quietly becomes decorative. Entries are keyed by package name, not
-  advisory id, because node-tar accrues new GHSA ids faster than a list would
-  stay current. **It fails closed**: `npm audit` answers a registry or proxy
-  failure with a JSON error object and no `vulnerabilities` key, and reading
-  that as an empty result made the gate report "no blocking advisories" and exit
-  0 at the one moment it had checked nothing. A missing `vulnerabilities`/
-  `metadata` pair is an error, never a clean tree. Reasoning and the full
-  triage: `docs/reviews/2026-08-28-dependency-security-scanning.md`.
-
-- **Never spawn `npm` by name from a build script.** npm is `npm.cmd` on
-  Windows, a batch shim: `execFileSync('npm', …)` throws ENOENT, and naming
-  `npm.cmd` explicitly is no better because Node refuses to `execFile` a `.cmd`
-  at all since the fix for CVE-2024-27980 and throws EINVAL. The audit gate did
-  the first of those and so exited 1 before auditing anything, printing
-  "Dependency audit could not be completed" — which reads like a real finding —
-  for every Windows contributor, while Linux CI stayed green.
-
-  `npmInvocation()` in `scripts/audit-dependencies.js` is the pattern: run npm's
-  own `npm-cli.js` with `process.execPath`, taking the path from `npm_execpath`
-  (which `npm run` sets) and falling back to the copy bundled beside the node
-  binary. **Not `shell: true`** — the argv is fixed today, but a shell turns any
-  later interpolation into an injection, and a security gate is the wrong place
-  for that. `audit-dependencies.test.js` asserts the invocation is spawnable on
-  the machine running it, which is the check that would have caught this
-  originally.
-
-- **Regenerate `package-lock.json` with the npm that CI runs.** That is now npm
-  11, because CI moved to Node 24 on 2026-08-31; until then it was npm 10 and
-  regenerating with anything newer broke the build. The rule has not changed,
-  only which npm satisfies it: a lockfile has to be readable by CI's `npm ci`,
-  and the two majors disagree about nested `node_modules/<pkg>/node_modules/*`
-  entries. npm 11 drops them when it rewrites the file and npm 10's `ci` then
-  refuses it outright — `Missing: picomatch@4.0.7 from lock file`, every job
-  dead at install in about sixteen seconds. The reverse is fine: npm 11 reads an
-  npm 10 lockfile, which is why the Node bump did not need a regeneration.
-
-  **Never `npm install --package-lock-only`** — it drops nested entries on
-  either major, and is what caused this in the first place. If you install with
-  `--ignore-scripts`, follow it with `npm rebuild sqlite3` or the native binding
-  is missing and `tools/video-pipeline` tests fail to run.
-
-- **`jsdom` is a root devDependency because vitest hoists and jsdom did not.**
-  `vitest` lands in the root `node_modules`, so its `import('jsdom')` resolves
-  from the root and never sees `packages/web/node_modules/jsdom`. That worked
-  for months only because npm auto-installed vitest's _optional peer_ `jsdom` at
-  the root — an unversioned 20.0.3 nobody asked for. Any lockfile regeneration
-  is free to drop an optional peer, and the first one that did (#100) took the
-  whole frontend suite from 592 passing to `no tests` and 61
-  `Cannot find package 'jsdom'` errors, on a PR that touched only `googleapis`.
-  The root entry is the declaration that makes the resolution deliberate; keep
-  it pinned to the same range as `packages/web`.
-
-- **A Dependabot PR is tested against the `main` of the day it opened.** Run
-  `gh pr update-branch` before believing its CI. #75 went green having silently
-  lost two tests — its branch predated the commit that added them, and a test
-  that vanishes is not a test that fails. Compare per-file test counts against
-  `main`, not the total. Full triage:
-  `docs/reviews/2026-08-29-dependabot-triage.md`.
-
-- **Closing a Dependabot PR suppresses only the version you closed**, so a
-  package blocked on tracked work returns on its next release — #76 came back as
-  #89 twenty-two minutes later. Worse, a `0.x` minor is grouped rather than
-  filed as a major, so it rides along with every future batch and takes the
-  group red. That is why `.github/dependabot.yml` carries exactly one `ignore`
-  entry (`eslint-plugin-react-refresh >=0.5.0`, removed when #86 lands). Like
-  the `security:audit` allowlist, every entry states its reason and the
-  condition that deletes it.
-
-- **Dependabot branches do not deploy to Vercel.** `vercel.json` sets
-  `git.deploymentEnabled` to `false` for `dependabot/**` (minimatch, so the `**`
-  is what reaches `dependabot/npm_and_yarn/…`). Every deployment stores its own
-  copy of the ~78 MB `api/data` in each function, and the Aug 30–31 pass shipped
-  ~100 of them — Functions Storage reached 7.98 of Hobby's 10 GB and build CPU
-  14h48m in a month. CI never read the previews. When a production dependency
-  does want a preview (speed-insights 2 did), push the commit to a
-  non-Dependabot branch: `git push origin <sha>:refs/heads/preview/<name>`.
-
-- **A path computed _for_ a platform must use that platform's path module** —
-  `path.win32` or `path.posix`, never the ambient `path`. On Linux `path` is
-  `path.posix`, which does not treat a backslash as a separator, so
-  `path.dirname('C:\\a\\b')` is `'.'` there. `bundledNpmCli` got this wrong and
-  took CI red: its Windows branch returned a bare relative path on Linux. A test
-  that builds its expected value with the host's `path.join` agrees with the bug
-  on Windows and fails on CI, so **expectations for another platform are written
-  as literal strings**, not composed with `path.join`.
+- **A failing test comes first, and a hook stops it being unwritten.**
+  `.claude/hooks/test-integrity.js` blocks adding `.skip` / `.only` / `xit` and
+  shell commands that remove or disable a test. The deliberate exception,
+  `ALLOW_TEST_SKIP=1`, belongs in the commit message; the skill covers how it
+  binds and the heredoc false positive.
+- **A fresh remote session commits with no git hooks** until `npm ci` has run,
+  because `prepare: husky` is what sets `core.hooksPath`. Install before
+  committing, or rely on CI, which runs lint and `format:check` on every PR.
+- **Never `npm install --package-lock-only`, and regenerate the lockfile only
+  with the npm CI runs (11).** Each has dropped nested entries and failed every
+  CI job at `npm ci`.
 
 ### Design system
 

@@ -1,0 +1,152 @@
+{
+  "slug": "three-knights-opening",
+  "root": {
+    "name": "Three Knights Opening",
+    "eco": "C46",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Three Knights Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Three_Knights_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Four Knights Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Four_Knights_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Three Knights Game",
+      "publisher": "Chess.com blog (AashayWanjari)",
+      "url": "https://www.chess.com/blog/AashayWanjari/three-knights-game",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Three Knights Opening search summary (Chessiverse, Wikibooks, chess.com forums; snippet only)",
+      "publisher": "Web search",
+      "url": "https://chessiverse.com/resources/openings/three-knights-game",
+      "kind": "reference"
+    }
+  ],
+  "overview": "A flexible, classical development move: White puts a second knight on c3 instead of choosing a bishop move. Most games go 3...Nf6, the Four Knights, which has a quiet, somewhat drawish reputation but includes sharp variations (4.Bb5 Spanish, 4.d4 Scotch). Black can avoid that with 3...Bb4, 3...g6 or 3...f5 (the Schliemann-type Gothic/Winawer), or play 3...Bc5 or 3...d6, which White meets with 4.Nxe5 or 4.d4. White's usual plans are d2-d4 to open the centre and Nd5 to dominate it. The 'Three Knights' label in play mostly covers Black's non-Nf6 sidesteps, which are rare among masters.",
+  "white_ideas": [
+    { "idea": "Play d4 to challenge e5 and gain central control; against passive Black set-ups (3...d6, 3...Be7) get a Philidor-style space advantage.", "sources": ["s1", "s3"] },
+    { "idea": "Use Nd5 to dominate the centre against 3...Bb4 and 3...g6 (4.d4 exd4 5.Nd5).", "sources": ["s1"] },
+    { "idea": "Against 3...Bc5, 4.Nxe5 Nxe5 5.d4 Bd6 6.dxe5 Bxe5 is the critical line, favouring White in praxis.", "sources": ["s1", "s4"] },
+    { "idea": "Develop harmoniously, castle and avoid the main lines of the Ruy Lopez and Italian (own understanding; sources describe it as a quieter route).", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Transpose to the Four Knights with 3...Nf6 and aim for symmetrical equality or counterplay with ...d5.", "sources": ["s2"] },
+    { "idea": "Break symmetry to avoid the drawish Four Knights: 3...Bb4, 3...g6 (Steinitz Defence) or the ambitious 3...f5 (Winawer/Gothic) which can transpose to the Schliemann Ruy Lopez.", "sources": ["s1", "s3"] },
+    { "idea": "Pin the c3 knight with ...Bb4 to pressure e4 and the centre.", "sources": ["s1", "s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Four Knights symmetrical structures (e4/e5 centre kept with tension, quiet positional play).", "sources": ["s2"] },
+    { "structure": "Scotch-type open centre after d4 exd4 Nxd4 (in 4.d4 lines).", "sources": ["s2"] },
+    { "structure": "Philidor-like cramped structure for Black after 3...d6 4.d4.", "sources": ["s1", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mainly quiet. Four Knights (the main continuation 3...Nf6) 'often leads to quiet positional play' with a drawish reputation, though there are sharp variations (Scotch 4.d4, Belgrade Gambit 5.Nd5). Black's sidesteps (3...g6, 3...Bb4, 3...f5) lead to more complex or unbalanced play. Nothing in the sources calls the root sharp.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the main lines at the root. Gambit branches exist deeper (Belgrade Gambit 4.d4 exd4 5.Nd5 in the Four Knights; the Schliemann-type 3...f5 is a Black gambit in the Ruy Lopez when it transposes).",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Sound for White; the main line is a reliable development move. Black's alternatives are of uneven soundness: Wikipedia says 3...Bc5 4.Nxe5 'favours White' in tournament praxis and 3...d6 or 3...Be7 give a cramped Philidor-like position. 3...Nf6 is fine.",
+      "sources": ["s1", "s4"]
+    },
+    "structure": {
+      "notes": "Centre pawns normally stay on e4/e5 with tension after 3...Nf6 (Four Knights quiet positional play); d4 can open the centre (Scotch Four Knights), but the root is not an open game by default. Open Game by first move, tense/closed by character in the main line.",
+      "sources": ["s2"]
+    },
+    "approach": {
+      "notes": "Chosen as a classical, easy-to-play alternative to the Italian and Ruy Lopez. Wikipedia: the Three Knights is almost never seen at master level nowadays (this refers to Black's non-Nf6 tries); the Four Knights it usually transposes to was popular in the 19th century, declined, had a 1990s renaissance and remains frequent at GM level. Not a system played against everything; more a standard classical line.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Relatively accessible to beginners and 'practical for study' with relatively simple strategic themes (chess.com blog, Wikipedia). Little memorisation. Mastering Four Knights variations requires classical positional knowledge. Studying White's side: develop knights first and aim for d4 and Nd5.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "central break with d4",
+    "knight outpost on d5",
+    "development before commitment",
+    "pin on the c3 knight with ...Bb4",
+    "symmetrical Four Knights structure",
+    "avoiding main-line theory"
+  ],
+  "sublines_that_differ": [
+    { "name": "Four Knights Game, Spanish Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5", "how": "Symmetrical, slow pressure; quiet and drawish reputation." },
+    { "name": "Four Knights Game, Scotch Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4", "how": "Opens the centre immediately; more tactical, includes the Belgrade Gambit (5.Nd5)." },
+    { "name": "Steinitz Defence", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 g6 4. d4 exd4 5. Nd5", "how": "Complex middlegame; Black avoids Four Knights." },
+    { "name": "Winawer / Gothic Defence", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 f5", "how": "Ambitious Black gambit-type try; 4.Bb5 transposes to the Schliemann Ruy Lopez (sharp)." },
+    { "name": "3...Bc5 4.Nxe5", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Bc5 4. Nxe5", "how": "Tactical line (Nxe5 Nxe5 d4) favouring White in praxis." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Three Knights is a classical and reliable system emphasising solid development and central control.",
+        "verdict": "supported",
+        "note": "It is a natural development move; Wikipedia calls the Four Knights quiet and positional.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "By developing a second knight instead of a bishop, White sidesteps the sharp theoretical main lines of the Ruy Lopez and Italian Game.",
+        "verdict": "supported",
+        "note": "Own understanding supported by the Four Knights' quiet reputation, though the Spanish Four Knights (4.Bb5) re-enters Ruy Lopez-like play and the Scotch Four Knights has sharp lines.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "It leads to a more strategic and less forcing battle.",
+        "verdict": "supported",
+        "note": "Mainly in 3...Nf6 lines.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White prepares and executes the d2-d4 break to challenge Black's centre.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black counters by pinning the c3 knight with ...Bb4 or transposing to the Four Knights with ...Nf6 to maintain equality.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Both sides complete development, castle and fight for central squares.",
+        "verdict": "supported",
+        "note": "Generic but accurate.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Both sides manoeuvre pieces to optimal squares before committing, provoking small weaknesses.",
+        "verdict": "unverifiable",
+        "note": "Generic; no source speaks to this directly.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

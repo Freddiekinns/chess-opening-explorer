@@ -1,0 +1,47 @@
+{
+  "slug": "scotch-game-scotch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Scotch Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop instead of recapturing on d4, offering the d-pawn for quick development. Black can play 4...Bc5 or 4...Nf6; after 4...Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4 White regains the pawn with an open game. Against 4...Bc5 White plays 5.c3 or 5.O-O and Black has the chance to keep the pawn, so play is active and tactical with pressure on f7.",
+  "white_ideas": [
+    { "idea": "Develop fast with c3, O-O and aim at f7 with Bc4 and Ng5." },
+    { "idea": "Break open the centre with e5 and Nxd4 to regain the pawn with a lead in development." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Bc5 and ...Nf6 and hit the e4 pawn." },
+    { "idea": "Return the pawn at the right moment with ...d5 to reach an equal open game." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with Black pawn on d4 until White recaptures, then symmetrical open lines." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open tactical game with early forcing play and attacks on f7. Sharp." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 4...Bc5 5.c3 Black can keep the d4 pawn, but 4...Nf6 5.e5 d5 returns it by force. Gambit by name; the 4...Bc5 5.c3 dxc3 line is what keeps it a gambit." },
+    "soundness": { "notes": "Sound, roughly equal with best play." },
+    "structure": { "notes": "Open from the start, like the Scotch." },
+    "approach": { "notes": "Played by strong players now and then; standard." },
+    "level": { "reason": "memory", "notes": "Needs known lines after 4...Bc5 and 4...Nf6 5.e5, but not long forcing tabiyas. Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7", "open lines for the pieces"],
+  "sublines_that_differ": [
+    { "name": "Advance Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Nf6 5. e5", "how": "Often transposes to the Two Knights 4.d4 line with a quick equal open game." },
+    { "name": "Sarratt Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5", "how": "Very sharp attack on f7." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Open, forcing play with attacks on f7." },
+    "gambit": { "value": "white", "confidence": 0.5, "reason": "White offers the d-pawn, though it often returns by force in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Equal with best play." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Pawns come off at once and the game turns on open lines." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Used by strong players as an alternative to the main Scotch." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Some theory but clear piece play." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White trades a pawn for time and aims at f7." }
+  }
+}

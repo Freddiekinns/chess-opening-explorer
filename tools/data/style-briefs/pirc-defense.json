@@ -1,0 +1,210 @@
+{
+  "slug": "pirc-defense",
+  "root": {
+    "name": "Pirc Defense",
+    "eco": "B00",
+    "moves": "1. e4 d6",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pirc Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pirc_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Pirc Defense",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/pirc-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Pirc Defense overview, 150 Attack and Austrian Attack (search snippets only)",
+      "publisher": "ChessWorld / 365Chess / Wikipedia (Austrian Attack)",
+      "url": "https://www.chessworld.net/pirc-defense-150-attack.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays 1...d6 and, after 2.d4 Nf6 3.Nc3, ...g6 and ...Bg7, letting White build the broad e4-d4 centre and then undermining it from the flanks with ...c5 or ...e5 (hypermodern: the bigger White's centre, the bigger the target). The root is a crossroads: 1...d6 can transpose to the Philidor (3...e5 or ...c6) or to the Modern. White's replies run from sharp (Austrian Attack 4.f4, 150 Attack 4.Be3 with Qd2, Bh6 and h4-h5, Byrne 4.Bg5, Bayonet h4) to unhurried (Classical 4.Nf3 with Be2 and castling, fianchetto). Typical play is imbalanced: White gets space and often a kingside attack, Black gets a solid fianchettoed king and counterplay on the queenside and with central breaks. It is sound but has a reputation for giving White chances; Kasparov doubted it for the top level (s1), though Caruana, Anand and Grischuk have used it (s2).",
+  "white_ideas": [
+    {
+      "idea": "Austrian Attack (4.f4): the broad pawn centre, aiming for the e5 breakthrough; the sharpest, most aggressive treatment.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "150 Attack (4.Be3, Qd2, 0-0-0, Bh6, h4-h5, or f3/f4 ideas): a kingside pawn storm needing modest theory.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Classical system (4.Nf3, Be2, 0-0): unhurried, positionally sound control of the centre without over-committing.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Byrne (4.Bg5): pressure with Qd2 and Bh6 combinations.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Allow White the centre, then strike with ...c5 or ...e5 to undermine d4, with the g7 bishop pressuring it.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Queenside expansion with ...a6, ...b5 and ...c5; the ...Nc6-a5-c4 manoeuvre.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Dark-square control from a fianchettoed kingside; make sure the Nf6 has a retreat square on d7 or e7 after White's e5.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Flexible transpositions: 3...c6 (Czech) or 3...e5 / Nbd7 can reach Philidor-type structures.",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on d6 and g6 with a fianchettoed bishop on g7; White holds the e4-d4 duo and often castles queenside against the 150 Attack.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Austrian Attack: White f4/e4/d4 broad centre; Black counters with ...c5 or ...e5 after the tension resolves, often with doubled or isolated f-pawns possible.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "structure": "Classical: solid fianchetto against an e4/d4 centre, with ...e5 or ...c5 as the break; closed-ish and manoeuvring.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed, but leans sharp and double-edged. Chessable calls it 'sharp and counter-attacking' (s2). Wikipedia describes a dynamic, unbalanced fight with a deliberately conceded centre (s1). The Austrian Attack is 'the sharpest, most aggressive way' to meet it and the 150 Attack pursues a kingside pawn storm (s3, s2). The Classical system is calmer. Risks for Black: a weakened kingside after ...h6 and ...g5 and passivity if the knight retreats badly (s2). Black's king side is solid structurally but the position can become a race. Tentatively sharp or balanced; weighed against the Modern, the Pirc is more forcing because of White's aggressive set-ups.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root. Sidelines with a pawn sacrifice exist (Bayonet h4 sharp lines, 4.f4 Bg7 5.Nf3 c5 lines) but no material is offered in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound but not a favourite at the very top. Kasparov said it is 'hardly worth using in the highest category' tournaments, as it gives White 'too many opportunities' (s1, via Wikipedia). Still viable: it became respectable after the war and has been played by Grischuk, Caruana and Anand (s1, s2). So objectively playable for Black, with some practical risk. Not Dubious.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "White gets a large pawn centre; Black allows it and challenges with ...c5 or ...e5. The centre typically stays tense with White having e4/d4, and many middlegames are closed or semi-closed until the break comes. Classical lines are closed-ish (e4/d4 vs d6/g6); sharp lines open after ...c5 and the e5 break. Judged on the typical middlegame: tense centre, mostly closed or semi-open. The sources do not label it directly (my own reading).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A defence to 1.e4, not played against everything, but its fianchetto-and-d6 set-up resembles a flexible system. Moderately represented at master level, a secondary choice or specialist weapon (s1); used by Grischuk, Caruana, Anand (s2). Standard rather than offbeat.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for Black. Chessable rates it moderate: principles (dark-square control, ...e5 and ...c5 levers, knight retreat squares) matter more than rote memory, though 4.Bg5 and the Austrian Attack require accurate defence (s2). Wikipedia: theory load moderate; the 150 Attack minimises White's memorisation, while the flexibility of move orders makes understanding more important than memorising (s1). So understanding rather than memory, Intermediate-leaning.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre undermining",
+    "fianchettoed bishop on g7",
+    "...c5 break",
+    "...e5 break",
+    "kingside pawn storm",
+    "Austrian Attack f4 centre",
+    "queenside expansion with ...a6 and ...b5",
+    "opposite-side castling"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Austrian Attack",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4",
+      "how": "Sharpest and most aggressive White set-up; heavily theoretical and tactical."
+    },
+    {
+      "name": "150 Attack",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be3",
+      "how": "Qd2, Bh6 and kingside pawn storm; modest theory, sharp middlegames, often opposite-side castling."
+    },
+    {
+      "name": "Classical System",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3",
+      "how": "Quieter and more positional, with Be2 and castling."
+    },
+    {
+      "name": "Czech Defence / transpositions",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 c6",
+      "how": "Reaches Philidor-type structures instead of the Pirc fianchetto."
+    },
+    {
+      "name": "1...d6 2.Nf3 and Modern transpositions",
+      "moves": "1. e4 d6 2. Nf3 / 2. Nc3",
+      "how": "Move-order lines that can reach Pirc, Philidor or Modern; the subtree includes many such transpositions."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Pirc is a hypermodern and ambitious response to 1.e4 where Black allows White to build a large pawn centre before challenging it from the flanks.",
+        "verdict": "supported",
+        "note": "That is the central idea.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It leads to complex, unbalanced, and often sharp middlegames.",
+        "verdict": "supported",
+        "note": "Described as sharp and counter-attacking; the Austrian and 150 Attacks are sharp. The Classical system is calmer.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It requires a deep understanding of counter-attacking principles.",
+        "verdict": "supported",
+        "note": "Principles matter more than memorisation.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "It is ideal for flexible and resilient players who are comfortable defending under pressure.",
+        "verdict": "supported",
+        "note": "Black often defends against a kingside attack before counterplay arrives.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: undermine White's centre with pawn breaks like ...c5 or ...e5 after completing development with ...Nf6 and ...g6/...Bg7.",
+        "verdict": "supported",
+        "note": "Standard plan.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: seize a space advantage, build a strong pawn centre and often launch a kingside attack (e.g. the Austrian Attack with f4).",
+        "verdict": "supported",
+        "note": "Austrian Attack and 150 Attack pursue this.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: create queenside counterplay with moves like ...a6 and ...b5.",
+        "verdict": "supported",
+        "note": "Queenside expansion with ...a6, ...b5, ...c5 is a named plan.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White: restrict Black's pieces, control key squares and convert the space advantage into an attack or a positional bind.",
+        "verdict": "supported",
+        "note": "Broad but consistent with the Classical and attacking set-ups.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "slug": "vienna-game-vienna-gambit",
+  "root": {
+    "name": "Vienna Game: Vienna Gambit",
+    "eco": "C29",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. f4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Vienna Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vienna_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Introduction to the Vienna Game & Gambit",
+      "publisher": "Chess.com (blog, RussBell)",
+      "url": "https://www.chess.com/blog/RussBell/introduction-to-the-vienna-game-gambit",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "How To Play The Vienna Gambit - A Complete Guide For Beginners",
+      "publisher": "Chess.com (blog, vitualis)",
+      "url": "https://www.chess.com/blog/vitualis/how-to-play-the-vienna-gambit-a-complete-guide-for-beginners",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Beat the Vienna Gambit: The 3...d5 Counter",
+      "publisher": "ChessReps",
+      "url": "https://www.chessreps.com/opening/vienna-gambit-counter",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "The Vienna Game - A How to Play Guide for White and Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/vienna-game/",
+      "kind": "article"
+    },
+    {
+      "id": "s6",
+      "title": "Vienna Game: Learn & Train It Free",
+      "publisher": "ChessReps",
+      "url": "https://www.chessreps.com/opening/vienna-game",
+      "kind": "article"
+    },
+    {
+      "id": "s7",
+      "title": "Vienna Gambit (search extract only, page not opened)",
+      "publisher": "Chess Wiki (Fandom)",
+      "url": "https://chess.fandom.com/wiki/Vienna_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s8",
+      "title": "C29: Vienna gambit (search extract only, page not opened)",
+      "publisher": "365Chess",
+      "url": "https://www.365chess.com/eco/C29_Vienna_gambit",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White plays f4 on the third move, a King's Gambit structure with the knight already on c3 protecting e4 and d5. Black's usual answers are 3...d5, 3...exf4 and 3...d6; the sources agree 3...d5 is the principled antidote. After 4.fxe5 Nxe4 the position is material-equal (White traded the f-pawn for the e-pawn) and White chooses between 5.Nf3 (Breyer, the most common, roughly balanced and comfortable for Black), 5.Qf3 (Spielmann, with Ben Finegold behind it, but called flawed after 5...Nc6) and 5.d3 (Oxford, with the Würzburger Trap 5...Qh4+ 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5). If Black accepts with 3...exf4, 4.e5 chases the f6-knight back to g8, giving White a lead in development; Wikipedia says Black should not accept, while a beginner guide says White regains the pawn quickly. The gambit scores well at club level and is considered too risky at grandmaster level.",
+  "white_ideas": [
+    {
+      "idea": "Strike at e5 with f4 so that the f-file opens and White's pieces can aim at the black king; support the centre with d4.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "idea": "After 3...exf4 4.e5 chase the f6-knight, develop with Qe2/Nf3, and recover the f4-pawn while ahead in development.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "After 3...d5 4.fxe5 Nxe4 5.Nf3 (Breyer) build open lines and attacking chances; 5.Qf3 puts the queen on an aggressive diagonal; 5.d3 prepares Qh4+ and traps.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Use sharp tactics and traps (the Würzburger Trap, the h1-rook fork on e4 after a careless 4.exd5) against opponents who do not know the line.",
+      "sources": [
+        "s4",
+        "s8"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "3...d5, the counter-strike in the centre; Black recovers the e5-pawn with ...Nxe4 and reaches an active, roughly equal game.",
+      "sources": [
+        "s2",
+        "s4",
+        "s7"
+      ]
+    },
+    {
+      "idea": "Against 5.Qf3 play 5...Nc6! threatening ...Nd4 and ...Nxc2+ to punish grabbing pawns on the queenside.",
+      "sources": [
+        "s4"
+      ]
+    },
+    {
+      "idea": "Rapid development and timely exchanges to neutralise White's initiative; avoid 3...exf4 where 4.e5 forces ...Ng8.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "idea": "3...exf4 4.e5 Ng8 (or ...Qe7) to keep the pawn at the price of cramped development, if Black is willing.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after 4.fxe5 Nxe4: White pawn on e5 against Black's d5, open f-file, material level; pieces active, kings usually uncastled for a while.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "structure": "After 3...exf4 4.e5: White pawns on e5/e4 absent f-pawn, Black's knight back on g8 and pawn on f4; White leads in development.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp. Sources describe sharp, direct central challenge and tactical positions needing 'concrete sequences, not just general ideas' (s4), a King's Gambit-style attack along the f-file (s2, s3), and traps (s8). The 3...d5 main line can settle to a balanced middlegame after 5.Nf3 (s4) but remains open and tactical.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers the f4-pawn. Black can keep it with 3...exf4 (4.e5 Ng8), which is the most played reply on this site's data (3.6M versus 1.8M games for 3...d5) and almost half of beginner-intermediate games (s3). But sources advise against it (s1) or say White regains the pawn quickly (s3). In the main line 3...d5 4.fxe5 Nxe4 the material is level, so the gambit is declined in effect. The root FEN has equal material (the offer is only on the board, not yet taken); Black is a pawn up only after 3...exf4.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "soundness": {
+      "notes": "Roughly equal with best play by Black. After 3...d5 and 5.Nf3, ChessReps says Black gets an active, fully equal game and 5.Qf3 is flawed due to 5...Nc6 (s4). Wikipedia: 5.Nf3 is the most common and Black can usually hold the balance; Raymond Keene called the gambit too risky at grandmaster level, while Santasiere and Weaver Adams advocated it (s1). Chess.com blog claims both main moves favour White by database, which is a club-level statistic (s2); an unscientific beginner-level figure says White wins about 60 percent (s3). No source gives an engine verdict. I treat it as sound but not best play for White; not refuted.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "structure": {
+      "notes": "Open: pawns on e4/e5 are exchanged, the f-file is open, d5 and e4 are contested, and pieces come into play early.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "approach": {
+      "notes": "A specific gambit line, not a set-up played against anything. Rarely played by elite players (Keene: too risky for grandmasters, s1), but with many advocates historically and a strong practical reputation at club level (s2, s3). The site's data show 14.6M games in the subtree, so it is far from unheard-of; this is a statement about the master level, not about frequency online.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "White's plans are clear and concrete, so beginner guides call it beginner-friendly with little theory (s3, s5). But ChessReps says the 3...d5 counter needs concrete tactical sequences and memorised traps, and a sloppy move order hands White the attack (s4). Conflicting; the line is easy to start but punishes mistakes, which points to memory (specific sequences and traps) rather than deep understanding.",
+      "sources": [
+        "s3",
+        "s4",
+        "s5"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "delayed King's Gambit",
+    "f-file pressure",
+    "...d5 counter-strike",
+    "gambit pawn recovered",
+    "Qf3 attack",
+    "Breyer variation",
+    "Würzburger Trap",
+    "development lead"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...exf4 (accepted)",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 exf4 4. e5",
+      "how": "Black has the pawn and a cramped knight on g8; White leads in development. Different from the balanced 3...d5 lines."
+    },
+    {
+      "name": "3...d5 main line with 5.Nf3 (Breyer)",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Nf3",
+      "how": "Material level, open lines; described as roughly balanced."
+    },
+    {
+      "name": "3...d5 4.fxe5 Nxe4 5.Qf3",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Qf3",
+      "how": "More sharp and tactical; ChessReps calls it flawed after 5...Nc6, other sources call it the critical test."
+    },
+    {
+      "name": "3...d5 4.fxe5 Nxe4 5.d3 (Oxford, Würzburger Trap)",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. d3 Qh4+ 6. g3 Nxg3 7. Nf3 Qh5 8. Nxd5",
+      "how": "Trap-based play that punishes a careless ...Qh4+; a memory point rather than a strategic one."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "White immediately challenges Black's central foothold by offering the f-pawn.",
+        "verdict": "supported",
+        "note": "f4 on move 3 attacks e5, a delayed King's Gambit. 'Immediately' is loose since 2.Nc3 comes first.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "It leads to sharp, tactical positions where White aims for a swift attack, often against the king.",
+        "verdict": "supported",
+        "note": "True of the lines; after the best defence 3...d5 5.Nf3 the middlegame is balanced and less decisive.",
+        "sources": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White aims to open the f-file for the rook, support the centre with d4 and launch a kingside attack.",
+        "verdict": "supported",
+        "note": "",
+        "sources": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black's main responses are accepting with ...exf4 to hold the pawn, or counter-attacking in the centre with ...d5.",
+        "verdict": "supported",
+        "note": "Both are the most played replies (3...exf4 3.6M, 3...d5 1.8M on this site's data). But sources recommend ...d5 and warn that ...exf4 4.e5 forces ...Ng8; 'main responses' is accurate for frequency, not for quality.",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White often develops the queen to f3 to add pressure on Black's kingside.",
+        "verdict": "supported",
+        "note": "5.Qf3 (Spielmann) is a main line. Not a universally good move: ChessReps calls it flawed after 5...Nc6.",
+        "sources": [
+          "s1",
+          "s4",
+          "s2"
+        ]
+      },
+      {
+        "claim": "White often develops the queen to h5 to add pressure on Black's kingside.",
+        "verdict": "unverifiable",
+        "note": "Qh5 appears in the Vienna after 3.Bc4 Nxe4 4.Qh5 (Frankenstein-Dracula), not in the 3.f4 gambit; no gambit source mentions it.",
+        "sources": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "Black seeks to neutralise White's initiative through rapid development and timely exchanges, exploiting White's weakened king position.",
+        "verdict": "supported",
+        "note": "",
+        "sources": [
+          "s4",
+          "s6"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 3,
+    "pages_read": 6
+  }
+}

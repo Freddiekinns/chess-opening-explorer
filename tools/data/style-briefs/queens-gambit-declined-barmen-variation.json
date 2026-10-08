@@ -1,0 +1,49 @@
+{
+  "slug": "queens-gambit-declined-barmen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Barmen Variation",
+    "eco": "D37",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Nbd7",
+    "fen": "r1bqkb1r/pppn1ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5"
+  },
+  "parent": "queens-gambit-declined-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black develops the queen's knight to d7 behind the d5 pawn, the Cambridge Springs/Westphalia family set-up, so that ...c6 and ...Bb4 or ...Qa5 can follow. White usually plays 5.Bg5 or 5.Bf4 or 5.cxd5 with a Carlsbad-type exchange. Play is slow and manoeuvring around the d4/d5 pawns, with Black solid and slightly passive.",
+  "white_ideas": [
+    { "idea": "Pin or pressure the f6 knight with Bg5 or Bf4" },
+    { "idea": "Exchange on d5 for a minority attack" },
+    { "idea": "Keep e3 and Bd3, castle, and expand with e4 later" }
+  ],
+  "black_ideas": [
+    { "idea": "Support d5 with ...c6 and ...Be7, then castle" },
+    { "idea": "Counter the pin with ...Bb4 or ...Qa5 (Cambridge Springs) where it fits" },
+    { "idea": "Free the game with ...dxc4 or ...c5/...e5" }
+  ],
+  "typical_structures": [
+    { "structure": "QGD centre with pawns on d4/c4 against d5/e6 and tension in the centre" },
+    { "structure": "Carlsbad structure after cxd5 exd5 (when White exchanges)" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Standard QGD slow, positional play with a sound, slightly passive Black set-up." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, a main-line QGD set-up." },
+    "structure": { "notes": "Centre stays in tension as in the QGD." },
+    "approach": { "notes": "Standard QGD move-order branch." },
+    "level": { "reason": "understanding", "notes": "Standard QGD understanding, several set-ups to choose between." }
+  },
+  "plan_phrases": ["Carlsbad structure", "minority attack"],
+  "sublines_that_differ": [
+    { "name": "Cambridge Springs", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5", "how": "Sharper, with an immediate queen sortie and tactics against the Bg5 pin." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.7, "reason": "The QGD is hard to break down and the d7 knight adds a compact set-up." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "The c4 pawn is not a gambit; no material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Mainstream QGD." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre in tension with d4/d5 held, as in the QGD anchor." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A normal QGD branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are known but the structures need understanding." },
+    "plans": { "value": ["carlsbad_structure"], "reason": "Exchange lines lead to the Carlsbad structure." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "czech-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Czech Defense",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 c6",
+    "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black answers the Pirc moves with ...c6 instead of ...g6, preparing ...Qa5 or ...Qb6, ...Bg4 and ...e5, or ...e5 at once. White has more space after 4.Nf3 or 4.f4 and plays for a kingside initiative while Black keeps a compact set-up. Sources and chess sense: Black is sound but a little passive, and often reaches Philidor- or Pirc-like positions.",
+  "white_ideas": [
+    { "idea": "Austrian attack with f4, Nf3 and e5 for space" },
+    { "idea": "Classical Nf3, Be2, O-O and slow centre control" }
+  ],
+  "black_ideas": [
+    { "idea": "...Qa5 or ...Qb6 with ...Bg4, ...e5 to challenge the centre" },
+    { "idea": "Compact ...c6/...d6 set-up and ...Nbd7, ...e5" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 (maybe f4) against Black c6-d6 with ...e5 in reserve" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's set-up is compact but White's f4 lines are active; no forcing main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Considered sound but passive; White keeps a slight edge." },
+    "structure": { "notes": "White pawns d4/e4 face c6/d6; the centre stays fluid until ...e5 or ...c5." },
+    "approach": { "notes": "A sideline of the Pirc played by a few specialists; strong players use it only now and then." },
+    "level": { "reason": "understanding", "notes": "Little to memorise, but Black needs good timing for ...e5." }
+  },
+  "plan_phrases": ["Space advantage"],
+  "sublines_that_differ": [
+    { "name": "Czech 4.f4 Qa5", "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. f4 Qa5", "how": "Austrian-style, sharper with kingside chances for White." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Neither a hard-to-break set-up nor a forcing one; White's f4 lines are more active." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Passive but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre unresolved, Black can choose ...e5 or ...c5." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A rarer Pirc branch but used by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but timing of the break needs experience." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space and Black reacts." }
+  }
+}

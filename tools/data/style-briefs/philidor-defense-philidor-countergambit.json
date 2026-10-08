@@ -1,0 +1,48 @@
+{
+  "slug": "philidor-defense-philidor-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Philidor Countergambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 f5",
+    "fen": "rnbqkbnr/ppp3pp/3p4/4pp2/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counters 3.d4 with ...f5, challenging e4 at once instead of the usual passive Philidor set-ups. After 4.dxe5 fxe4 5.Ng5 d5 6.e6 or 6.Nc3 White gets a strong initiative, and Black's king-side is weakened. The line is sharp and double-edged, with White generally better after accurate play.",
+  "white_ideas": [
+    { "idea": "Take on e5 and use Ng5 to hit e4 and f7" },
+    { "idea": "Develop Nc3 and Bc4 and exploit the open f-file and king" },
+    { "idea": "Play e6 at the right moment to disrupt Black's pawn chain" }
+  ],
+  "black_ideas": [
+    { "idea": "Open the f-file with ...fxe4 and gain space with ...d5" },
+    { "idea": "Develop ...Bc5, ...Nc6 and use the queen on h4 or g5 for counterplay" },
+    { "idea": "Hold the e4 pawn and counterattack on the kingside" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with Black pawns on d5/e4 against White's e-pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Direct counterattack with open files and exposed kings." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "Black gives the e5 pawn after 4.dxe5 fxe4 5.Ng5; White can keep the extra pawn." },
+    "soundness": { "notes": "Dubious: White gets a clear initiative and comfortable play." },
+    "structure": { "notes": "Open centre with open e- and f-files." },
+    "approach": { "notes": "Rare; strong players hardly use it." },
+    "level": { "reason": "memory", "notes": "Needs concrete lines; dubious, so not Beginner." }
+  },
+  "plan_phrases": ["rapid development for a pawn", "open f-file", "attack on the kingside"],
+  "sublines_that_differ": [
+    { "name": "Zukertort Variation", "moves": "1. e4 e5 2. Nf3 d6 3. d4 f5 4. Nc3", "how": "A quieter White line that avoids immediate complications." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Early countergambit, open lines and tactics." },
+    "gambit": { "value": "black", "confidence": 0.8, "reason": "Black gives a pawn for activity and counterplay." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.7, "reason": "Strong players consider it close to refuted." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open e- and f-files and a broken centre." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Concrete tactics; dubious so never Beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for activity and open files." }
+  }
+}

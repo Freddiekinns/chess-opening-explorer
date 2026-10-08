@@ -1,0 +1,48 @@
+{
+  "slug": "kings-gambit-accepted-abbazia-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Abbazia Defense",
+    "eco": "C36",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Nf6",
+    "fen": "rnbqkb1r/ppp2ppp/5n2/3P4/5p2/5N2/PPPP2PP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets the King's Gambit with the Modern Defence 3...d5 and, after 4.exd5, plays 4...Nf6 to regain the d5 pawn. White chooses 5.Bb5+ c6 6.dxc6 Nxc6, or 5.Nc3 and 5.Bc4, reaching open positions with a lead in development for White. Material is roughly level, Black's f4 pawn is a liability, and play is open and tactical.",
+  "white_ideas": [
+    { "idea": "Check with Bb5+ and trade the dxc6 pawn to gain development" },
+    { "idea": "Castle quickly and use the open e-file against the Black king" },
+    { "idea": "Regain the f4 pawn with Bc4 or Nc3 and d4" }
+  ],
+  "black_ideas": [
+    { "idea": "Regain the d5 pawn with ...Nxd5 or ...Nxc6" },
+    { "idea": "Develop ...Bd6, ...O-O and use the f4 pawn as a base for ...Bg4" },
+    { "idea": "Get the king safe and exploit White's loosened kingside" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after the pawn exchanges, with Black's f4 pawn advanced and White's f-pawn gone" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "King's Gambit lines are sharp, with early tactics and exposed kings." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "White's f-pawn is traded for the d5 pawn straight away, so material is level." },
+    "soundness": { "notes": "Sound, a respectable counter to the King's Gambit." },
+    "structure": { "notes": "Open centre and open files." },
+    "approach": { "notes": "Standard line within the KGA, played by strong players when the gambit appears." },
+    "level": { "reason": "memory", "notes": "Forcing lines with a few traps; still Intermediate." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "5.Nc3 Nxd5", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Nf6 5. Nc3 Nxd5 6. Nxd5 Qxd5", "how": "A simpler line where White castles and Black's extra f4 pawn is weak." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "King's Gambit with open files and early tactics." },
+    "gambit": { "value": "none", "confidence": 0.55, "reason": "The d5 pawn is regained at once so no net material changes hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A respected defence." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open centre and files." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A recognised branch of the King's Gambit." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Forcing but not deep theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "White uses quick development against the displaced pawns." }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "nimzo-indian-defense-st-petersburg-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: St. Petersburg Variation",
+    "eco": "E43",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 b6",
+    "fen": "rnbqk2r/p1pp1ppp/1p2pn2/8/1bPP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "nimzo-indian-defense-rubinstein-system",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the queen's bishop to b7 to control e4, with 5.Nf3 Bb7 6.Bd3 O-O 7.O-O the usual continuation. White develops harmoniously and may take on c3 or play a3 and Qc2 or Ne5, while Black fights for e4 with ...Ne4 or ...d5 and ...Bxc3 at the right moment. Play is positional with piece manoeuvring and the e4 square as the focal point.",
+  "white_ideas": [
+    { "idea": "Develop with Nf3, Bd3 and O-O, with Ne5 or Qc2 ideas." },
+    { "idea": "Seek the bishop pair if Black plays ...Bxc3 and build a central majority." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...Bb7 and ...Ne4 or ...d5 and ...Bxc3." },
+    { "idea": "Double White's pawns with ...Bxc3 when it helps." }
+  ],
+  "typical_structures": [
+    { "structure": "White c4/d4/e3 with possible doubled c-pawns after ...Bxc3, against ...b6/...Bb7." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional manoeuvring around e4, without forcing tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Fully sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre not fixed; tension around e4, d5 and c4."
+    },
+    "approach": {
+      "notes": "A mainstream Nimzo-Indian line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Piece placement and pawn structure matter more than memorised lines."
+    }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "knight outpost"],
+  "sublines_that_differ": [
+    {
+      "name": "5.Bd3",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 b6 5. Bd3",
+      "how": "Delays Nf3 and keeps Ne2 options."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Positional and not forcing, but Black has dynamic counterplay."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream, sound line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension around e4 and d5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Nimzo-Indian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Structural understanding matters more than memorisation."
+    },
+    "plans": {
+      "value": ["doubled_pawns", "bishop_pair"],
+      "reason": "Black may give up the bishop for doubled c-pawns, White gets the pair."
+    }
+  }
+}

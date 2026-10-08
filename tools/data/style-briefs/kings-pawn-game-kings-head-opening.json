@@ -1,0 +1,46 @@
+{
+  "slug": "kings-pawn-game-kings-head-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: King's Head Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. f3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5P2/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays 2.f3 to support e4 and open the f-pawn, but it blocks the g1-knight, weakens the e1-h4 diagonal and the king, and gives Black free development. Black usually replies 2...Nf6 or 2...d5 and takes the centre, with ...Qh4+ ideas if g3 is forced. The opening is a rare, passive try that is not played by strong players, and I am unsure of its theory so the notes are kept short.",
+  "white_ideas": [
+    { "idea": "Support e4 with f3 and develop Nc3, Bc4 and Ne2" },
+    { "idea": "Build a classical centre with d4 later" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...d5 or ...Nf6 and ...d5" },
+    { "idea": "Use the weak e1-h4 diagonal and the loose king with ...Qh4+ or ...Bc5" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...d5 exd5 with White's f3 pawn blocking the knight" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White's early f3 weakens the king and can lose quickly to ...Qh4+ and ...Bc5 ideas, but Black can also play quietly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Positionally weakening; Black is comfortable at least, and strong players do not consider it fully sound." },
+    "structure": { "notes": "The e-pawns face each other and ...d5 opens the centre early." },
+    "approach": { "notes": "Strong players hardly ever choose it." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn but White must avoid positional and king-safety problems." }
+  },
+  "plan_phrases": ["avoiding theory"],
+  "sublines_that_differ": [
+    { "name": "2...Qh4+ line", "moves": "1. e4 e5 2. f3 Qh4+ 3. g3 Qe7", "how": "Black develops the queen early but loses time; not the main line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Unclear; neither especially forcing nor solid." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.5, "reason": "The f3 move weakens the king and gives Black an easy game." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "Black takes the centre with ...d5 and lines open early." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Rarely played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "A rarity and Dubious, so not Beginner." },
+    "plans": { "value": [], "reason": "No recognised plan from the table fits." }
+  }
+}

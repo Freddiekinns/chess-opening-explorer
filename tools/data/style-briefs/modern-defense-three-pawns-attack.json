@@ -1,0 +1,46 @@
+{
+  "slug": "modern-defense-three-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Three Pawns Attack",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. f4",
+    "fen": "rnbqk1nr/ppppppbp/6p1/8/3PPP2/8/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White builds the e4-d4-f4 pawn trio at once, aiming for a quick kingside attack, and Black answers with ...d6 and ...Nf6 (reaching an Austrian Attack), ...c5 or ...Nc6 to hit the centre. White develops with Nf3, Nc3 and Bd3, and Black counters on the queenside and in the centre with ...c5 and ...Qa5. The position is a double-edged, Pirc-like game.",
+  "white_ideas": [
+    { "idea": "Hold the three-pawn centre with Nf3, Nc3 and Bd3, then push e5 or attack the kingside." },
+    { "idea": "Use the space to launch a kingside attack, castle and push the f-pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...c5 or ...Nc6 and ...e5 before White can consolidate." },
+    { "idea": "Keep the fianchettoed bishop on g7 aimed at d4 and counterattack on the queenside." }
+  ],
+  "typical_structures": [
+    { "structure": "Austrian Attack: White's e4-d4-f4 against Black's d6 and g6 fianchetto, with Black striking at d4 with ...c5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Broad White centre and a king-side attack against Black's counterstrikes; sharp, as the Austrian Attack is in the Pirc." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound for both sides; Black must be precise to avoid being overrun." },
+    "structure": { "notes": "A fixed asymmetric centre that Black attacks with ...c5, with a half-open c-file after exchanges; semi-open." },
+    "approach": { "notes": "A standard anti-Modern/Pirc set-up; not a system." },
+    "level": { "reason": "understanding", "notes": "Black needs to find counterplay accurately; theory is moderate." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "3...c5", "moves": "1. e4 g6 2. d4 Bg7 3. f4 c5", "how": "Black hits d4 at once with a Sicilian-like structure and different play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "White's big centre and kingside attack against Black's counterattack makes it double-edged." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Both sides' play is respectable." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "White holds the centre while Black attacks it from the flank, usually with ...c5." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A standard White set-up against the Modern or Pirc." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Black needs accurate counterplay but there is not much to memorise." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White takes space and Black attacks the centre from the flanks." }
+  }
+}

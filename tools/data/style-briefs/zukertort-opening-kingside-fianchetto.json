@@ -1,0 +1,49 @@
+{
+  "slug": "zukertort-opening-kingside-fianchetto",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Kingside Fianchetto",
+    "eco": "A04",
+    "moves": "1. Nf3 g6",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black mirrors the flank set-up with ...g6, ...Bg7 and ...d6 or ...Nf6, ready to meet a White centre with a hypermodern counter. White usually plays 2.g3 Bg7 3.Bg2 or 2.e4 or 2.d4, transposing to King's Indian, Pirc, Modern and English structures. The play is slow and manoeuvring with both bishops aimed at the long diagonals.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, castle and play c4, d4 or e4" },
+    { "idea": "Gain the centre with e4 and d4 when Black is slow" },
+    { "idea": "Transpose to a favourite structure with c4 or d4" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto and castle, then challenge the centre with ...c5 or ...e5" },
+    { "idea": "Hypermodern: let White occupy the centre and attack it" },
+    { "idea": "...d6 and ...Nf6 for a King's Indian-like set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "Mirrored fianchetto with long-diagonal bishops" },
+    { "structure": "Transposition to King's Indian, Pirc or English structures" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow and manoeuvring; few forcing tactics early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not yet fixed; flexible." },
+    "approach": { "notes": "Standard; Black set-up is flexible but is not a universal system." },
+    "level": { "reason": "understanding", "notes": "Plans over theory." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "2.e4", "moves": "1. Nf3 g6 2. e4", "how": "Transposes to the Modern or Pirc, with White getting a big centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow flank game that is neither forcing nor specially safe." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Normal flexible opening." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening, centre undecided." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "Flexible and respectable, not a rigid system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-based, little theory." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides fianchetto and meet the centre with pieces." }
+  }
+}

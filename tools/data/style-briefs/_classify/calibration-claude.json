@@ -1,0 +1,410 @@
+{
+  "kings-indian-defense-orthodox-variation": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "The Mar del Plata main line is an opposite-wing pawn race decided by who arrives first, though the Petrosian and exd4 sublines are calmer."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No pawn is given on purpose; the kingside pawn storm is a plan, not an opening sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Sources call it objectively sound for Black and the Bayonet revival shows White's tries remain viable."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.85,
+      "reason": "After 8.d5 Ne7 the d5/e4 and d6/e5 pawns lock and play moves to opposite wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A fixed-move-order main-line variation played at the top for decades, not a set-up against everything."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "understanding",
+      "confidence": 0.75,
+      "reason": "Black plays near-identical moves but the timing of the storm and the defence against c4-c5 are hard to judge for club players."
+    }
+  },
+  "queens-pawn-game-london-system": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Sources describe closed or semi-closed, methodical play with a hard-to-break pyramid, criticised for lacking dynamism."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered; the b2 target after ...Qb6 is defended, not sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Sources call it a solid, respectable opening used by Carlsen, Aronian and Ding Liren."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.7,
+      "reason": "The d4/e3/c3 pyramid against ...d5/...e6 gives a compact closed or semi-closed centre with play on e5 and the wings."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.95,
+      "reason": "The same d4, Nf3, Bf4, e3, c3 set-up is played against almost anything in any move order."
+    },
+    "level": {
+      "value": "beginner",
+      "why": "neither",
+      "confidence": 0.85,
+      "reason": "Little to memorise and repeatable plans make it a classic first repertoire choice, though details against ...c5 and ...Qb6 still matter."
+    }
+  },
+  "nimzo-indian-defense-rubinstein-system": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.7,
+      "reason": "Sources call it solid and flexible with a manoeuvring pawn-structure fight, but the 4...O-O 5.Bd3 d5 6.Nf3 c5 lines bring IQP and hanging-pawn piece play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given on purpose; any pawn grab is recaptured by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.98,
+      "reason": "Black reaches full equality in the sound variations and the Nimzo has been a staple of every world champion since Capablanca."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The structure varies by Black's choice (IQP or hanging pawns with tension, fluid ...b6 lines, closed Hubner), so the centre is best called partly open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A mainstream elite main line that depends on the Nimzo move order, not a set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Theory is light but each structure (IQP, hanging pawns, doubled c-pawns) needs its own plan, so the burden is judgement more than depth of memory."
+    }
+  },
+  "petrovs-defense-stafford-gambit": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Trap-driven, forcing attack on f2 and h2 where natural moves lose quickly to Nxe4, Ng4 or queen invasions."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gives the e5 pawn for development and White can keep it with accurate play."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.9,
+      "reason": "Engines give White +1.4 to +2 and it is absent from strong classical play, scoring through surprise and traps."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "After 4.Nxc6 dxc6 Black has no central pawns, and the d-file and diagonals are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.92,
+      "reason": "A surprise sideline of the Petrov, rare in classical play and popular mainly in online blitz and bullet."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Success rests on memorised trap sequences rather than deep understanding, but the lines are short and easy to pick up."
+    }
+  },
+  "queens-gambit-accepted": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.7,
+      "reason": "Sources call it balanced and active with IQP or hanging-pawn piece play, with the main line positional and only 3.e4 lines sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn is regained by force or held only unprofitably, so it is not a true gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Now considered sound and a regular at elite level since the 1990s."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "White's c-pawn and Black's d-pawn are gone, giving an open centre with IQP and open files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.92,
+      "reason": "A mainstream Black reply to the Queen's Gambit with many named variations, not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Moderate theory, with the burden in IQP and hanging-pawn structures and the timing of ...c5 and ...b5."
+    }
+  },
+  "rapport-jobava-system": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Several sources call it sharp and tactical, with Nb5 threats and flank pawn storms while both sides castle late."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.96,
+      "reason": "No material is given; the pawn storms and Nb5 tactics are not a gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Used successfully by 2300 to 2800 players including Jobava and Rapport, with only overextension as a risk."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "Evidence is thin: the centre stays tense until ...c5 or e4 breaks, with flexible, partly open structures and flank storms."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "Sources frame it as a set-up (Bf4, Nc3, f3, long castling, h4-g4) used against most replies, though it is a niche choice at master level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Low theory load, but premature pawn storms are punished and choosing the right plan against ...c5 or ...Ne4 takes judgement."
+    }
+  },
+  "ruy-lopez-marshall-attack": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.92,
+      "reason": "Described as one of the sharpest systems in modern chess, with forcing play and one inaccuracy losing quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.93,
+      "reason": "Black offers the e5 pawn for open lines, active pieces and a kingside attack, and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.93,
+      "reason": "Played by Kramnik, Anand, Aronian and Ding Liren, with compensation held to be sound and a high draw rate at the top."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "After the double capture on e5 the centre is open, with the e-file and long diagonals active."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A mainstream Black counter in the Closed Ruy Lopez, entered only if White plays 8.c3, not a system."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.8,
+      "reason": "Theory runs to move 30 or more and Black also needs separate answers to the Anti-Marshalls."
+    }
+  },
+  "sicilian-defense-accelerated-dragon": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Sources conflict: the Maroczy Bind branch is a positional squeeze, the Modern 5.Nc3 branch more tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.96,
+      "reason": "No material is given on purpose; pawn grabs appear only inside traps."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.93,
+      "reason": "Regarded as fundamentally sound with a modest White edge in the Bind, and used at elite level."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Black has a half-open c-file and White keeps e4, with a semi-open static centre in the Bind."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A specific move-order choice within the Open Sicilian that depends on White's reply, played at master level."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "The Bind demands understanding of the squeeze while the 5.Nc3 and 5.Nxc6 lines carry tactical theory, and sources say it is not for newcomers."
+    }
+  },
+  "sicilian-defense-alapin-variation": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Sources call it solid, theory-light and positional, a plan-driven fight over d4, with risk only in sidelines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.96,
+      "reason": "No material is offered at the root; the 2...d6 4.dxc5 pawn grab is a minor sideline."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Now called one of the most solid and respectable Anti-Sicilians, used by Kasparov, Anand and Carlsen."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "It depends on Black's reply (IQP positions after ...d5, an Alekhine-style space fight after ...Nf6, French Advance after ...e6), but the c-file is half-open in the Sicilian lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "An Anti-Sicilian with mainstream top-level use, not a set-up against everything and not obscure."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "It avoids main-line Sicilian theory, but handling IQP and Alekhine-like structures is a question of understanding."
+    }
+  },
+  "sicilian-defense-najdorf-variation": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Sources call it razor-sharp, with opposite-side castling races and the most analysed theory in chess."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.93,
+      "reason": "No material is offered at the root; the Poisoned Pawn is a later subline."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.98,
+      "reason": "Fully sound and unrefuted, a main weapon at the very top for decades."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.85,
+      "reason": "A Sicilian structure with a half-open c-file for Black and d-file for White, with the centre partly open and play on the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.95,
+      "reason": "A line within a defence that is firmly mainstream and among the most analysed in chess."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.85,
+      "reason": "Huge theory with eight major sixth-move options and extremely well-researched Poisoned Pawn lines, though plans also matter."
+    }
+  },
+  "vienna-game-vienna-gambit": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "A King's Gambit-style f-file attack with concrete tactical sequences and traps, though the 3...d5 Breyer line settles to a balanced middlegame."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers the f4 pawn, which Black can keep with 3...exf4, even though the main 3...d5 line recovers material by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Roughly equal with best play and not refuted, though called too risky for grandmasters."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "The e-pawns are exchanged in the main line, leaving an open f-file, contested d5 and e4, and early piece play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely played by elite players and a club-level surprise weapon, even though it is frequent in online data."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Plans are clear but Black's counters need concrete sequences and trap knowledge, so recall matters more than deep strategy."
+    }
+  },
+  "vienna-game": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.65,
+      "reason": "The root is a family whose character depends on White's third move, from sharp f4 and Qg4 lines to the quiet 3.g3."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The root gives no material, since the Vienna Gambit is a separate branch."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "De Firmian and others judge it equal with best play, so it is sound for both sides."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "A classic 1.e4 e5 open game that usually opens after ...d5 or f4, though 3.g3 keeps more tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare at elite level and chosen for surprise value to avoid the Spanish and Italian, despite heavy club use."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Moderate theory suitable for all levels with understanding over memorisation, though the Qg4 and Gambit sublines are memory-heavy."
+    }
+  }
+}

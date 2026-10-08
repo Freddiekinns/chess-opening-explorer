@@ -1,0 +1,46 @@
+{
+  "slug": "kings-indian-defense-smyslov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Smyslov Variation",
+    "eco": "E61",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. Bg5",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R b KQkq - 1 5"
+  },
+  "parent": "kings-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the knight early with 5.Bg5, aiming to disrupt Black's king's-bishop set-up and stop ...e5 easily. Black usually plays 5...h6 and after 6.Bh4 g5 7.Bg3 Nh5 or ...Nbd7, challenging the bishop at the cost of some kingside weaknesses. The game then runs along KID lines with ...c5 or ...e5 and a fight over the centre.",
+  "white_ideas": [
+    { "idea": "Bg5 and e3, Be2 and O-O, keeping Black's ...e5 break in check." },
+    { "idea": "Use the bishop pin and Nd2/Qd2 ideas to target the kingside." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the bishop with ...h6 and ...g5, then regroup with ...Nh5 or ...Nbd7." },
+    { "idea": "Strike in the centre with ...c5 or ...e5 once the bishop has committed." }
+  ],
+  "typical_structures": [
+    { "structure": "KID set-up with White pawns on c4 and d4; Black weakened kingside after ...h6 and ...g5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Double-edged: Black accepts weakening kingside moves against White's central space; both sides can be punished." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "A sound line used by strong players." },
+    "structure": { "notes": "Centre not yet decided: ...e5 or ...c5 may follow; no lock yet." },
+    "approach": { "notes": "A standard option against the King's Indian." },
+    "level": { "reason": "understanding", "notes": "Black needs to judge the kingside weakening, moderate theory." }
+  },
+  "plan_phrases": ["kingside play", "space advantage", "break with e5 or c5"],
+  "sublines_that_differ": [
+    { "name": "5...h6 6.Bh4 g5", "moves": "5... h6 6. Bh4 g5 7. Bg3 Nh5", "how": "Black attacks the bishop at a cost to the kingside structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Double-edged KID line with weakened kingside and mutual risk." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Established line." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre is not locked yet; Black chooses ...e5 or ...c5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A regular White choice against the KID." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "KID plans are demanding but this branch has limited theory." },
+    "plans": { "value": ["kingside_attack", "space_advantage"], "reason": "White's central space against Black's kingside play." }
+  }
+}

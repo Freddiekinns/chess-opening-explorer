@@ -133,7 +133,8 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   whole frontend suite from 592 passing to `no tests` and 61
   `Cannot find package 'jsdom'` errors, on a PR that touched only `googleapis`.
   The root entry is the declaration that makes the resolution deliberate; keep
-  it pinned to the same range as `packages/web`.
+  it pinned to the same range as `packages/web` — `repo-invariants.test.js`
+  fails if it drifts or goes missing.
 
 ## Dependabot
 
@@ -161,6 +162,7 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   14h48m in a month. CI never read the previews. When a production dependency
   does want a preview (speed-insights 2 did), push the commit to a
   non-Dependabot branch: `git push origin <sha>:refs/heads/preview/<name>`.
+  `repo-invariants.test.js` fails if the `dependabot/**` entry goes.
 
 ## Cross-platform paths
 

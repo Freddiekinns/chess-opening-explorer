@@ -127,7 +127,8 @@ letters and digits before comparing: the config's display name is not the
 YouTube channel title ("Chess Network" vs `ChessNetwork`), and a raw string
 compare silently demoted that premium channel to the unknown tier — 60 scoring
 points and a stricter duration gate that withheld 183 of its videos from the
-corpus.
+corpus. `repo-invariants.test.js` fails on a channel name or ID literal in
+`lib/`.
 
 Never guess a YouTube channel ID. Verify with the user, or test the RSS feed at
 `https://www.youtube.com/feeds/videos.xml?channel_id={ID}`.

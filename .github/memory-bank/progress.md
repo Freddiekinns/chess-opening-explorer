@@ -6,7 +6,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **Model routing** (2026-10-08): Haiku `scout`/`verifier`, Sonnet `implementer`
   and `/docs-sync`, `pipeline-reviewer` pinned to Sonnet high; routing rules in
-  `CLAUDE.md`. Main session stays Opus, effort medium.
+  `CLAUDE.md`. Main session stays Opus, effort medium. `AGENTS.md` 441 → ~220
+  lines, tooling and subsystem detail moved to skills and the scoped files.
 - **Style tags** (2026-10-05, #160): a fixed six-axis taxonomy replaces the LLM
   tags on the detail page, cards, Discover facets and style search. 563
   variations cover 80% of pages and 65% of games; 848 tail variations remain.

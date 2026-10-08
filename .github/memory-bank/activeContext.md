@@ -11,9 +11,12 @@ Delegation only for self-contained, command-verifiable, output-heavy work.
 Pinned agents: `scout` (Haiku, replaces Explore, which inherits Opus),
 `verifier` (Haiku, failures only), `implementer` (Sonnet, written plans),
 `pipeline-reviewer` (Sonnet high); `/docs-sync` skill forks to Sonnet. Table in
-`CLAUDE.md`. Next: cut `AGENTS.md` (441 lines, ~26 KB, loaded by every session
-and subagent) toward ~200 by moving Tooling and pipeline gotchas into skills —
-separate PR, owner wants the claude-md-management plugin's improver run first.
+`CLAUDE.md`. Then `AGENTS.md` cut from 441 lines (26.6 KB) to ~220 (11.7 KB),
+moved not deleted: Tooling into a new `dependencies-tooling` skill, the missing
+video gotchas into `video-pipeline`, PostHog and search-index sizes into
+`packages/web/AGENTS.md`, the explorer proxy and search projection into
+`packages/api/AGENTS.md`. Root keeps one-line pointers plus the cross-cutting
+rules. The claude-md-management plugin was not installed; done by hand.
 
 ## Previous Task: Style tags — merged, tail still to classify
 

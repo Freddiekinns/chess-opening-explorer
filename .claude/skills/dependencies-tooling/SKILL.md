@@ -136,6 +136,16 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   it pinned to the same range as `packages/web` — `repo-invariants.test.js`
   fails if it drifts or goes missing.
 
+- **`vitest` is a root devDependency too, because jest-dom resolves it from
+  there.** jest-dom sits in the root `node_modules` and types its matchers by
+  augmenting the `vitest` module. A bump can leave the old version holding the
+  root slot, so npm nests the new one under each workspace instead — #162's
+  Dependabot lockfile did exactly that, and every jest-dom matcher stopped
+  type-checking (570 errors). npm always installs the root's own dependencies at
+  the root, so the declaration pins it there. Keep it on the same range as
+  `packages/web`; `repo-invariants.test.js` fails if it drifts, or if the
+  lockfile installs vitest anywhere but `node_modules/vitest`.
+
 ## Dependabot
 
 - **A Dependabot PR is tested against the `main` of the day it opened.** Run

@@ -186,6 +186,31 @@ describe('jsdom is declared at the root, in step with packages/web', () => {
   });
 });
 
+describe('vitest is declared at the root, in step with packages/web', () => {
+  /**
+   * jest-dom lives in the root `node_modules` and types its matchers by
+   * augmenting the `vitest` module, resolved from there. #162's lockfile
+   * nested vitest under packages/web and packages/shared with none at the
+   * root, and every jest-dom matcher stopped type-checking (570 errors).
+   * A root declaration is what pins vitest to the root.
+   */
+  const rootPkg = JSON.parse(read('package.json'));
+  const webPkg = JSON.parse(read('packages/web/package.json'));
+  const lock = JSON.parse(read('package-lock.json'));
+
+  test('the root devDependency exists and matches the web range', () => {
+    expect(rootPkg.devDependencies?.vitest).toBeDefined();
+    expect(rootPkg.devDependencies.vitest).toBe(webPkg.devDependencies.vitest);
+  });
+
+  test('the lockfile installs vitest at the root and nowhere else', () => {
+    const vitestPaths = Object.keys(lock.packages).filter((p) =>
+      /(^|\/)node_modules\/vitest$/.test(p)
+    );
+    expect(vitestPaths).toEqual(['node_modules/vitest']);
+  });
+});
+
 describe('the video matcher reads channels from config, never a literal', () => {
   /**
    * `config/youtube_channels.json` is the single source of truth for channels

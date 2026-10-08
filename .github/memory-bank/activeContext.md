@@ -21,7 +21,9 @@ bank: stale facts fixed in `context.md` (token values now point at the CSS,
 Vertex not Gemini, search painted client-side) and `user-journeys.md` (style
 tags); `progress.md` no longer read at start; `tasks/` archived to
 `docs/archive/memory-bank-tasks/`, the rollups spec to `docs/proposals/`,
-TASK006 to issue #166. Next: invariant tests for prose-only rules, own PR.
+TASK006 to issue #166. Merged as #167. Then three guard tests in
+`repo-invariants.test.js`: Dependabot branches stay undeployed, root `jsdom`
+matches `packages/web`, no channel name or ID literal in the video `lib/`.
 
 ## Previous Task: Style tags — merged, tail still to classify
 

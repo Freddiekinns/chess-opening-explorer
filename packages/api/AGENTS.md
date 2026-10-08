@@ -23,7 +23,7 @@ green. Keep that test loading both entry points.
 **Every new API route must declare its caching.** Either add a `Cache-Control`
 entry in `vercel.json`, or set the headers in the route itself — but not both,
 because config headers override function headers. `/api/explorer` owns its own
-headers for this reason (see the root `AGENTS.md`).
+headers for this reason (see below).
 
 Defaults:
 
@@ -39,6 +39,30 @@ This matters more than it looks: crawlers index 12,000+ pages, so an uncached
 route is multiplied across all of them against a Vercel Hobby tier limit of 10 GB
 fast origin transfer.
 
+## The Lichess explorer proxy
+
+**Lichess opening explorer requires authentication** (since 2026-03).
+Anonymous requests to `explorer.lichess.org` get 401 — this is Lichess-wide
+DDoS defence, not an IP block or a bug (their docs still claim public access;
+trust the behaviour). Live stats go through the `/api/explorer` proxy
+(`packages/api/src/routes/explorer.routes.js`), which attaches
+`LICHESS_EXPLORER_TOKEN`. The token allows 25 requests/min, so CDN caching is
+load-bearing — never bypass the proxy or call Lichess from the client. **The
+route owns its Cache-Control headers** (7d masters / 24h bands / no-store
+failures): do not add an `/api/explorer` entry to `vercel.json`, because
+config headers override function headers and would clobber the per-band TTLs.
+The route also 403s known crawler user-agents before touching Lichess. Without
+the token the route 503s and the Win Rate panel falls back to snapshot stats.
+
+## Search responses are projected
+
+Search responses are projected down to the fields a row draws by
+`toSearchResult` in `openings.routes.js` — fen, name, eco, moves,
+games_analyzed, searchScore. Twenty whole opening records was 55 KB, mostly
+`analysis_json` descriptions, to draw twenty lines of name and ECO code — on
+every keystroke, mostly on phones. It is now 4.4 KB. **Do not return raw
+service results from a search route.**
+
 ## Data
 
 Read data from `api/data/` — it is canonical in every environment.
@@ -50,4 +74,4 @@ Read data from `api/data/` — it is canonical in every environment.
 `package.json` excludes most services (search, eco, llm, opening-data, database,
 youtube, chesscom, personal-games) and all of `api/`. The 90% figure therefore
 describes the covered subset, not the backend. Shrinking that exclusion list is
-tracked as TASK006 — when you add tests for an excluded service, remove its line.
+tracked in #166 — when you add tests for an excluded service, remove its line.

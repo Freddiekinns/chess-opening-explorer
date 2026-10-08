@@ -59,6 +59,16 @@ The local pass is paint-ahead and never the final answer — the server sees all
 misspelling. One request per query: the plain-search fallback that used to
 follow an empty semantic search is gone (see the `search-ranking` skill).
 
+### Search index sizes
+
+The search index has two sizes and both are earned by a user action, never by a
+page load. `?limit=1000` (207 KB) is the slice every search surface ranks
+against; `lib/searchIndex.ts` fetches it once, on the first character typed into
+any search box. The full index (3.0 MB) has exactly one caller — the PGN lookup
+behind "Paste a game", which cannot identify a position outside the popular
+thousand. The landing page used to pull the slice on mount for the hero alone,
+so every visitor paid for a search most of them never ran.
+
 ## Imports
 
 **Use relative imports for the shared package, not the package name.**
@@ -135,6 +145,26 @@ its top-level barrels re-export without file extensions, so `dist/index.js` is
 unimportable from Node ESM — import `dist/utils/<module>.js` directly. Vite
 rewrites the extensions for the web build, which is why this only bites in
 scripts.
+
+## Analytics
+
+**Page views are Vercel's, events are PostHog's.** Vercel Web Analytics is on
+(dashboard → Analytics) even though its API answers "Web Analytics not found" —
+a review once reported it disabled on that evidence. Custom events are Pro-only
+there, so `trackEvent` (`lib/analytics.ts`) sends to PostHog EU, lazily and
+**only on the `openingbook.xyz` host**: dev, tests and previews send nothing,
+which is why nothing arrives from a local run. No `/ingest` proxy — the
+middleware matcher would catch it and bill a middleware invocation per event.
+Never send PII or search text; properties are small enums and ranks. The SDK is
+`posthog-js/dist/module.slim`, which has **no history autocapture**:
+`capture_pageview` silently recorded nothing but `$pageleave` on the first
+deploy. `App` reports `$pageview` from the router instead, and `trackEvent`
+reads the URL synchronously because callers navigate straight after tracking.
+Testing it on production: PostHog can take ~5 minutes to show events, so a
+missing event is not yet a lost one — check the browser's requests to
+`eu.i.posthog.com` for a 200 first. Test traffic is excluded by the project's
+test-user filter, keyed on Device ID (= `openingbook:anon-id` in localStorage);
+add a new test browser's id there.
 
 ## Conventions
 

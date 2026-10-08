@@ -1,4 +1,7 @@
-# Tasks Index
+# Tasks Index (archived 2026-10-08)
+
+The memory bank's task files, frozen. Open work lives in `docs/backlog.md` and
+GitHub issues (TASK006 is #166).
 
 ## In Progress
 
@@ -28,7 +31,7 @@ _No tasks currently awaiting merge._
   `Group by family` + `Sort`), built on the 28-family taxonomy +
   `GET /api/families`. Phases 2 (family lens route) and 3 (repertoire grouping)
   still to be planned. Spec:
-  `.github/memory-bank/specs/2026-05-04-opening-family-rollups.md`.
+  `docs/proposals/2026-05-04-opening-family-rollups-spec.md`.
 - **CI Green-Up** - Merged 2026-06-06 (PRs #35/#36/#37). Fixed four pre-existing
   CI bugs (API lint script, ESLint/Prettier conflict, coverage comment
   permissions, codecov tokenless badge) + families route branch tests.

@@ -2,7 +2,7 @@
 
 **Status:** Draft for review **Date:** 2026-05-04 **Branch:**
 `feature/opening-family-rollups` **Source:**
-[TASK008 §2](../tasks/TASK008-competitive-analysis.md#L119)
+[TASK008 §2](../archive/memory-bank-tasks/TASK008-competitive-analysis.md#L119)
 
 ---
 

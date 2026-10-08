@@ -1,0 +1,44 @@
+{
+  "slug": "hungarian-opening-catalan-formation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Catalan Formation",
+    "eco": "A00",
+    "moves": "1. g3 d5 2. Bg2 e6",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/8/6P1/PPPPPPBP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes and Black builds a QGD-like set-up with ...d5 and ...e6. After Nf3, d4 and c4 it becomes a Catalan, or White can aim for a King's Indian Attack with d3, O-O and e4. Slow, manoeuvring play with the bishop on g2 pressing d5.",
+  "white_ideas": [
+    { "idea": "Nf3, d4, c4 for a Catalan with long-diagonal pressure on d5." },
+    { "idea": "Or d3, Nbd2, e4 in KIA style." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...Be7, ...O-O with ...c5 or ...dxc4 to free the game." },
+    { "idea": "Meet the Catalan with ...dxc4 and hold the pawn or play ...c6 solidly." }
+  ],
+  "typical_structures": [
+    { "structure": "Catalan: pawns on d4 and c4 against d5 and e6 with the bishop on g2." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, strategic, sound for both sides." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None in the main line." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Flank set-up with an undecided centre." },
+    "approach": { "notes": "g3/Bg2 plus Nf3 is a general system against most replies." },
+    "level": { "reason": "understanding", "notes": "Plans are clear; transpositions matter more than memory." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Quiet positional play with few early tactics." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "Nothing is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A standard sound set-up." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "Flank opening with the centre not yet decided." },
+    "approach": { "value": "system", "confidence": 0.65, "reason": "g3/Bg2/Nf3 set-up usable against most defences." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are fairly clear but Catalan-like pressure takes skill." },
+    "plans": { "value": ["fianchetto"], "reason": "Bishop on g2 on the long diagonal." }
+  }
+}

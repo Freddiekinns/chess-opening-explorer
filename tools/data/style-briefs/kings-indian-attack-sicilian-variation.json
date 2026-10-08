@@ -1,0 +1,46 @@
+{
+  "slug": "kings-indian-attack-sicilian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Sicilian Variation",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-indian-attack",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes with g3, Bg2 and castles, then plays d3, Nbd2 and e4 against Black's ...c5 and ...d5 set-up (usually ...Nc6, ...e6, ...Nf6). Black has gained space on the queenside and plays ...Be7 and ...O-O or ...b5 ideas. The game is a slow manoeuvring battle where White aims for e4-e5 and a kingside attack and Black for queenside counterplay.",
+  "white_ideas": [
+    { "idea": "Bg2, O-O, d3, Nbd2 and e4, then e5 and a kingside attack" },
+    { "idea": "Re1, Nf1-e3 or h4-h5 for a kingside build-up" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nc6, ...e6, ...Be7 and ...O-O with ...b5 and ...Rb8 queenside play" },
+    { "idea": "Contest e4 with ...d4 or ...Nf6-d7 and ...f5" }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Closed Sicilian / KID: White d3, e4 and g3 against Black c5, d5, e6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Manoeuvring game with no forced theory; both sides can build slowly, so neither Solid nor Sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; Fischer and Petrosian used the KIA." },
+    "structure": { "notes": "Centre undecided with d3/e4 against c5/d5; could be closed or open later: flexible." },
+    "approach": { "notes": "Same set-up against nearly any Black reply; KIA anchor is a system." },
+    "level": { "reason": "understanding", "notes": "Little to memorise, clear plans, but timing against ...d4 and ...b5 needs thought." }
+  },
+  "plan_phrases": ["kingside attack", "fianchetto", "e4-e5 space gain"],
+  "sublines_that_differ": [
+    { "name": "KIA vs ...e6 French set-up", "moves": "1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. Ngf3 c5 5. g3 Nc6 6. Bg2 Be7 7. O-O O-O 8. Re1", "how": "Reached via the French move order; same plans." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow manoeuvring game; attack comes later and is not forced." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.92, "reason": "Established system used at all levels." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre stays undecided with d3 and ...c5/...d5." },
+    "approach": { "value": "system", "confidence": 0.8, "reason": "KIA is a set-up played against nearly everything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but ...c5 lines ask for good timing; could be Beginner for White." },
+    "plans": { "value": ["fianchetto", "kingside_attack", "space_advantage"], "reason": "White fianchettoes then pushes e4-e5 to attack on the kingside." }
+  }
+}

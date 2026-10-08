@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-accepted-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Normal Variation",
+    "eco": "D21",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes c4 but cannot keep the pawn, and plays ...Nf6, ...e6 and ...c5 or ...a6 and ...b5 for central counterplay. White regains it with e3 and Bxc4, then castles and plays Qe2, Rd1 and Nc3. Typical middlegames feature an IQP or hanging pawns, with active pieces on both sides. The game is open, positional and not very forcing.",
+  "white_ideas": [
+    { "idea": "e3, Bxc4, O-O, Qe2 and Nc3 for central pressure" },
+    { "idea": "Create an IQP for Black with dxc5 or exploit the hanging pawns" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nf6, ...e6, ...c5 and ...Nc6 with a central break" },
+    { "idea": "...a6 and ...b5 to gain queenside space and develop the bishop" }
+  ],
+  "typical_structures": [
+    { "structure": "IQP positions for Black after ...cxd4 exd4, or hanging pawns on c5/d5" },
+    { "structure": "Open centre with White d4 pawn against Black's active pieces" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional with open lines but not forcing; neither side takes serious risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The pawn on c4 cannot be kept; it returns with Bxc4." },
+    "soundness": { "notes": "Sound; a regular elite choice." },
+    "structure": { "notes": "Open, QGA anchor structure with exchanges on d4." },
+    "approach": { "notes": "A standard option." },
+    "level": { "reason": "understanding", "notes": "Clear plans, IQP knowledge, moderate memory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "QGA: 3.Nf3 Bg4", "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Bg4", "how": "Black develops the bishop early, a sidestep from the main line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Positional open play, neither Solid nor Sharp." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "The c4 pawn returns by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully respected." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open centre, QGA anchor." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main-line option for Black." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "IQP plans, moderate memory." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns"], "reason": "Black's ...c5 break typically leads to IQP or hanging-pawn structures." }
+  }
+}

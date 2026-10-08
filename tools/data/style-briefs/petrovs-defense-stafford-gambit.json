@@ -1,0 +1,284 @@
+{
+  "slug": "petrovs-defense-stafford-gambit",
+  "root": {
+    "name": "Petrov's Defense: Stafford Gambit",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Stafford Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stafford_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Stafford Gambit Guide: Variations, Key Ideas & Traps",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/stafford-gambit/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Trap Them All With The Stafford Gambit",
+      "publisher": "House of Staunton",
+      "url": "https://www.houseofstaunton.com/blogs/chess-openings/the-stafford-gambit",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Stafford Gambit Trainer, Traps & Refutation",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/stafford-gambit.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Petrov's Defense: Classical, Stafford Gambit",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Petrovs-Defense-Classical-Stafford-Gambit",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 3.Nxe5 (the main-line capture in the Petrov) with 3...Nc6 instead of 3...d6, and after 4.Nxc6 dxc6 has given a pawn for quick development, open diagonals for ...Bc5 and ...Bg4 and threats against f2 and h2. The play is built on traps: Qh4 or Qd4 invasions, ...Ng4, ...Nxe4 shots (the Rosen Trap after 5.d3 Bc5 6.Bg5 Nxe4), and mates on f2. Against accurate play White keeps the extra pawn and an advantage, by playing d3, Be2, castling carefully and neutralising ...Bc5; engines score it about +1.4 to +2 for White, and it is absent from classical games between strong players. Its practical value is in blitz, bullet and rapid against opponents who play natural moves, which is how IM Eric Rosen popularised it. The root as listed is after 3...Nc6, with White a pawn up and to move.",
+  "white_ideas": [
+    {
+      "idea": "Take twice and keep the pawn: 4.Nxc6 dxc6 and then 5.d3 (the main line), 6.Be2, 7.c3, to neutralise ...Bc5 with a dependable set-up.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Alternatives to the quiet line: 5.Nc3 or 5.e5 (aggressive but riskier); or avoid the gambit with 3.Nc3 or a retreat on move 4 (as suggested by s2).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Do not rush to castle kingside, and avoid casual developing moves such as Bg5, Nc3 or Bc4 without checking ...Nxe4, ...Ng4 and f2 tactics.",
+      "sources": [
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Extra time helps White find calm defensive moves, so the line is safer in slower games.",
+      "sources": [
+        "s4"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Lead in development, open d-file and active bishop on c5 with pressure on f2 and h2.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Queen invasion via Qh4, Qd6 or Qd4, combined with ...Ng4 (when h3 has not been played) and ...Bg4.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Rosen Trap: 5.d3 Bc5 6.Bg5 Nxe4! and if 7.Bxd8 then 7...Bxf2+ 8.Ke2 Bg4 is mate.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Sacrificial attacks on f2 or h3; every move should add development, open a line or create a threat.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "After 4.Nxc6 dxc6, Black has no d-pawn and White has lost the e5 knight; open d-file, open c8-h3 and a2-g8 diagonals; White's e4 pawn is the target; Black has doubled c-pawns (c7, c6).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "structure": "White solid set-up with pawns on d3, c3, e4 and bishop on e2 vs Black's ...Bc5 and queen forays.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing, trap-driven, tactical: the style is attack on f2 and h2 and 'every move should add development, open a line or create a forcing question' (s4). Fast time controls amplify White's risk (s3, s5). Risky for both sides in blitz; for Black it is a single-minded attack that fails against accurate defence. Reading: sharp.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black has given the e5 pawn for development (at the root White is a pawn up after 3.Nxe5). White may keep it: with 4.Nxc6 dxc6 5.d3 and calm development the extra pawn is retained and White keeps an advantage (s1, s2, s5). It can only be given back voluntarily; nothing forces White to return it, and sources say accurate play keeps the pawn.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    "soundness": {
+      "notes": "Two separate things. Club / online fast time controls: dangerous, many natural White moves (Bg5, Nc3, Bc4, early d3 lines, premature kingside castling) lose quickly to Nxe4 tricks, Ng4 or Qd4 invasions; the trap lines work 'in seconds online' and the Stafford scores well in blitz and bullet (s2, s3, s4, s5). Strong players and engines: objectively unsound. Engines evaluate White at about +1.4 (s3) or +1.5 to +2.0 (s1, as reported); high-level players generally consider it unsound for classical chess (s1); s2 says it is hardly seen in high-level classical tournaments and absent from games at 2700+; s5 calls it 'dangerous but objectively dubious' and bad in longer time controls; s4 says there is no single refutation, but White succeeds with a dependable set-up and accurate threat recognition, and that extra time helps. I could not verify the exact engine version or depth behind the numbers.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "structure": {
+      "notes": "Open centre. Black has no central pawns after the early exchanges; White's e4 pawn is attacked, files and diagonals are open (s1, s2).",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "approach": {
+      "notes": "A sideline of the Petrov (3...Nc6 instead of the main line 3...d6) played as a surprise weapon; s2 calls it hardly seen in high-level classical play, s5 a weapon for Black in blitz and bullet against the unprepared. Popularised by IM Eric Rosen in online blitz since the early 2020s (s1, s3, s5), not a system for any reply. Mostly a Black option against 1.e4 e5 2.Nf3 Nf6 only. Rarely played at master level in classical chess.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Black has to memorise specific trap variations to execute the attack (s5); for White the challenge is recognising the standard threats (s2, s4). At club level it is easy to play and hard to meet, which is why it scores well in fast games (s3). Not a deep strategic opening, so understanding matters less than recall of tricks.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "development lead for a pawn",
+    "pressure on f2",
+    "Bc5 and Qh4 attack",
+    "Rosen Trap",
+    "Ng4 and Qd4 invasion",
+    "delay kingside castling",
+    "blitz trap opening",
+    "dependable d3 set-up"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rosen Trap",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5 Nxe4",
+      "how": "A mating trap, not an independent line, but the most-cited reason White loses; it shows how thin the line between a pawn up and getting mated is."
+    },
+    {
+      "name": "White avoids the gambit",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nc3",
+      "how": "Not in the subtree; s2 lists 3.Nc3 or a retreat on move 4 as ways to avoid the gambit entirely."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Stafford Gambit is a hyper-aggressive and tricky response to the main-line Petrov.",
+        "verdict": "supported",
+        "note": "It deviates from the main line at move 3 (3...Nc6 instead of 3...d6); trap-rich and aggressive is the standard description.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black sacrifices a pawn to seize a dangerous initiative.",
+        "verdict": "supported",
+        "note": "A pawn for development and attacking chances; the compensation is tactical rather than strategic.",
+        "sources": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It leads to a sharp, tactical battle where Black aims for a swift kingside attack by rapid development.",
+        "verdict": "supported",
+        "note": "Pressure on f2 and h2 is the theme.",
+        "sources": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White must defend accurately to consolidate and convert the material advantage.",
+        "verdict": "supported",
+        "note": "Sources agree White keeps the advantage with accurate play.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "claim": "Ideal for daring, tactical players who enjoy surprising opponents and thrive in chaotic open positions.",
+        "verdict": "supported",
+        "note": "Accurate as a description of who uses it, but note it omits that sources call the opening objectively unsound and mainly a fast-time-control weapon.",
+        "sources": [
+          "s3",
+          "s5"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: develop rapidly with ...Bc5 and ...Qh4, prevent White from castling, and create direct threats against f2 and the king.",
+        "verdict": "supported",
+        "note": "Bc5 and queen forays are named; 'prevent White from castling' is a reasonable reading (s5 warns White not to rush to castle kingside), not a stated aim.",
+        "sources": [
+          "s2",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "claim": "White: consolidate with d3, neutralise Black's threats, complete development safely and trade pieces to reach a winning endgame with the extra pawn.",
+        "verdict": "supported",
+        "note": "d3 and careful development are the main line; 'trade pieces to an endgame' is plausible and unstated in the sources.",
+        "sources": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 5
+  }
+}

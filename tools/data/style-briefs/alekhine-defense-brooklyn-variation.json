@@ -1,0 +1,46 @@
+{
+  "slug": "alekhine-defense-brooklyn-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Brooklyn Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Ng8",
+    "fen": "rnbqkbnr/pppppppp/8/4P3/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black retreats the knight to g8 after 2.e5, having lost two tempi to give White a free hand in the centre. White usually plays 3.d4 and develops with Nf3 and Bd3 or c4, while Black tries ...d6 or the Everglades 3...f5 to break the e5 pawn. White holds a clear space advantage and Black plays for counterplay against the extended centre.",
+  "white_ideas": [
+    { "idea": "3.d4 and a large centre with c4, Nf3, Bd3, using the extra tempi" },
+    { "idea": "Keep e5 supported and cramp Black's development" }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine the centre with ...d6 or ...f5 (Everglades) and ...c5" },
+    { "idea": "Develop quickly with ...Nc6, ...g6 or ...e6 and hope the centre overextends" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e5 chain, space, against ...d6/...c5 breaks or a ...f5 counter" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced: White has the space, Black needs sharp counterplay with ...f5 or ...d6/...c5." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; it is a tempo concession." },
+    "soundness": { "notes": "Black loses two tempi, and engines give White a clear edge; strong players avoid it." },
+    "structure": { "notes": "White's d4/e5 advanced chain; centre not fully locked, ...d6 or ...f5 break will open it." },
+    "approach": { "notes": "A rare retreat strong players hardly play." },
+    "level": { "reason": "understanding", "notes": "Black must know how to counter an overextended centre; a questionable first choice." }
+  },
+  "plan_phrases": ["space advantage", "attack the centre ...d6/...f5"],
+  "sublines_that_differ": [
+    { "name": "Everglades Variation", "moves": "3.d4 f5", "how": "Immediate counter-strike against e5 and White's centre" }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.4, "reason": "Unbalanced fight over an advanced centre with Black needing counterplay, though the retreat itself is passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.5, "reason": "Black loses two tempi and gives White a clear space edge." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is tense and Black has not yet decided how to break it." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players hardly ever retreat the knight to g8." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Dubious, so not a beginner choice, but few lines to learn." },
+    "plans": { "value": ["space_advantage"], "reason": "White enjoys a large space advantage." }
+  }
+}

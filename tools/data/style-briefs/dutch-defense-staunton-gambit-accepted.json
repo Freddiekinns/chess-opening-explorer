@@ -1,0 +1,95 @@
+{
+  "slug": "dutch-defense-staunton-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Staunton Gambit Accepted",
+    "eco": "A82",
+    "moves": "1. d4 f5 2. e4 fxe4",
+    "fen": "rnbqkbnr/ppppp1pp/8/8/3Pp3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "dutch-defense-staunton-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn for development: 3.Nc3 Nf6 4.Bg5 hits the knight and prepares quick central and kingside play. Black can keep the pawn with ...e6 or ...Nc6 but must untangle the king's side while White gets open lines and a lead in development. Black usually comes out fine with accurate play but must avoid traps.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Nc3, Bg5 and Qd2 or Bc4 against the weakened e8-h5 diagonal." },
+    { "idea": "Pressure e4 and the Black king with Bxf6, Qh5 and Nxe4 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn with ...e6 or ...g6 and neutralise the pin." },
+    { "idea": "Return the pawn at the right moment to complete development." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn and open e- and f-files against a Black extra pawn on e4 or e6." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, forcing play where one side is a pawn down for time; wrong moves are punished quickly."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "Black can keep the pawn but White gets development."
+    },
+    "soundness": {
+      "notes": "Black generally holds with accurate play; White's compensation is enough to be playable."
+    },
+    "structure": {
+      "notes": "Lines open on e and f files quickly."
+    },
+    "approach": {
+      "notes": "The Staunton is a recognised anti-Dutch weapon even if strong players choose it only sometimes."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Black needs to know the 4.Bg5 lines and White needs the follow-ups."
+    }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    {
+      "name": "4...c6 5.f3",
+      "moves": "1. d4 f5 2. e4 fxe4 3. Nc3 Nf6 4. f3",
+      "how": "White regains the pawn quietly and the game loses its gambit character."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Open lines, a pawn offered for development and early tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Black is usually fine but White has real compensation; not clearly refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e- and f-files open and pieces play on open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A known anti-Dutch weapon, even if rarely seen at the top."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Specific lines must be known on both sides."
+    },
+    "plans": {
+      "value": ["lead_in_development", "kingside_attack"],
+      "reason": "White's compensation is pieces out and play against the Black king."
+    }
+  }
+}

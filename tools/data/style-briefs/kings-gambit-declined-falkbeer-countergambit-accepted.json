@@ -1,0 +1,47 @@
+{
+  "slug": "kings-gambit-declined-falkbeer-countergambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Falkbeer Countergambit Accepted",
+    "eco": "C31",
+    "moves": "1. e4 e5 2. f4 d5 3. exd5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3Pp3/5P2/8/PPPP2PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kings-gambit-declined-falkbeer-countergambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black has offered the d-pawn and White has taken it, so Black is playing a gambit and has to prove compensation. The main line is 3...e4 4.d3 Nf6 5.dxe4 Nxe4, with Black getting a lead in development and a half-open d-file against White's loosened kingside; 6.Nf3 Bc5 and ...Bf5 follow. White tries to consolidate the extra pawn with Qe2, Nc3 and Be3.",
+  "white_ideas": [
+    { "idea": "Hold the extra pawn on d5 and consolidate with Nf3, Qe2, Nc3 and Be3." },
+    { "idea": "Trade pieces and use the pawn when Black's initiative runs out." }
+  ],
+  "black_ideas": [
+    { "idea": "Gain time with ...e4, ...Nf6, ...Bc5, ...Bf5 and aim at the weak e1-h4 diagonal and the white king." },
+    { "idea": "Use the e-file and active pieces to keep the initiative." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d5 and f4 against Black's lead in development; open e-file and long diagonals." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides play for tactics from move 3: pawn down for development, open e-file, king safety an issue for each side." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 3.exd5 White is a pawn up and can try to keep it with 4.d3 and 5.dxe4 Nxe4 6.Nf3." },
+    "soundness": { "notes": "The Falkbeer is respected; theory sees Black's play as adequate to roughly equal." },
+    "structure": { "notes": "Open centre; e-file and diagonals matter more than pawn chains." },
+    "approach": { "notes": "Less common than the main lines but a known option for those meeting the King's Gambit." },
+    "level": { "reason": "memory", "notes": "Black needs the move order and the typical tactics; moderately theoretical." }
+  },
+  "plan_phrases": ["lead in development", "open e-file"],
+  "sublines_that_differ": [
+    { "name": "3...c6", "moves": "1. e4 e5 2. f4 d5 3. exd5 c6", "how": "A different, quieter gambit idea, less common than 3...e4." },
+    { "name": "Nimzowitsch Variation", "moves": "1. e4 e5 2. f4 d5 3. exd5 e4 4. Nc3", "how": "White declines to play d3, Black may play ...Nf6 5.Qe2 Qe7 6.Bg5 with tricks." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Pawn down for development, open lines and king safety are in question on both sides." },
+    "gambit": { "value": "black", "confidence": 0.85, "reason": "Black has given the d-pawn and plays for compensation, with White able to keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "The Falkbeer is considered a respectable countergambit." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "The central pawns come off and pieces use open lines." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players now and then; not an obscure oddity." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Tactics must be known, but the ideas are direct." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black sacrifices a pawn to get pieces out faster." }
+  }
+}

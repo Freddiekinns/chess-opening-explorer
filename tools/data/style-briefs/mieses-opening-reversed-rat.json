@@ -1,0 +1,42 @@
+{
+  "slug": "mieses-opening-reversed-rat",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mieses Opening: Reversed Rat",
+    "eco": "A00",
+    "moves": "1. d3 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "mieses-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White answers ...e5 with a King's Indian Attack-style set-up: g3, Bg2, Nf3, O-O and then e4 or c4. Black takes the centre with ...d5 and ...Nf6 and develops comfortably. The game is closed and manoeuvring, with White preparing the e4 break; Black has no problems and usually equalises.",
+  "white_ideas": [
+    { "idea": "Nf3, g3, Bg2, O-O and Nbd2 followed by e4 in KIA style" },
+    { "idea": "Or c4 and Nc3 for a reversed Pirc/Modern setup" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...e5, ...d5 and ...Nf6 and develop freely" },
+    { "idea": "Challenge White's set-up with ...c5 or ...Nc6 and seize space" }
+  ],
+  "typical_structures": [{ "structure": "King's Indian Attack structure with White pawns on d3/e4 and a g2 fianchetto; reversed Pirc or Philidor" }],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, manoeuvring play; hard to lose quickly for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound; objectively passive but not refuted." },
+    "structure": { "notes": "Centre not fixed; flexible like the King's Indian Attack." },
+    "approach": { "notes": "A set-up White can play against almost any defence, KIA-style." },
+    "level": { "reason": "neither", "notes": "Clear plans, little to memorise; a good starter set-up." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Steady, low-risk manoeuvring play." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Passive but not unsound." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "A KIA-style centre that is not yet decided." },
+    "approach": { "value": "system", "confidence": 0.6, "reason": "White plays the same set-up against almost any defence." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.45, "reason": "Clear plans, little to memorise, like the King's Indian Attack." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "White fianchettoes and aims for e4 and a kingside attack." }
+  }
+}

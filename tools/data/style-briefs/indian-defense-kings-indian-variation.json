@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-kings-indian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: King's Indian Variation, Fianchetto Variation",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2",
+    "fen": "rnbqk2r/ppppppbp/5np1/8/2PP4/6P1/PP2PPBP/RNBQK1NR b KQkq - 2 4"
+  },
+  "parent": "kings-indian-defense-fianchetto-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Both sides fianchetto. Black usually castles and plays ...d6, ...Nbd7 and ...e5, or the Panno set-up with ...Nc6 and ...a6/...Rb8, while White develops Nc3 and Nf3, castles and aims for e4 or queenside expansion. The game is positional, with a fight over e4 and e5 and slow queenside play.",
+  "white_ideas": [
+    { "idea": "Play Nc3, Nf3, O-O and e4, using the long diagonal and space." },
+    { "idea": "Expand on the queenside with b4 or Rb1 and pressure the c-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...O-O, ...d6, ...Nbd7 and ...e5, then ...Re8 and a kingside or central break." },
+    { "idea": "Use the Panno set-up with ...Nc6, ...a6 and ...Rb8 to counter on the queenside." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian structure with ...e5 against White's d4/c4 and a fianchettoed bishop." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quieter than the classical King's Indian; White's fianchetto avoids sharp pawn storms." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "The centre stays in tension and the pawn structure remains flexible." },
+    "approach": { "notes": "A main anti-King's Indian system, played at all levels." },
+    "level": { "reason": "understanding", "notes": "Positional manoeuvring, but less theory than the main King's Indian lines." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Panno System", "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 d6 5. Nf3 O-O 6. O-O Nc6 7. d5 Na5", "how": "Black's queenside counter set-up; a distinct plan." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quieter than the main King's Indian but not especially solid." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre in tension and unresolved." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A main-line anti-King's Indian system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Less theory than the classical King's Indian but plans matter." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides fianchetto and Black attacks the centre." }
+  }
+}

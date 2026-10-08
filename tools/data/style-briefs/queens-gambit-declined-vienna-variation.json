@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-declined-vienna-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Vienna Variation",
+    "eco": "D30",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Bg5 Bb4+",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p2B1/1bPP4/5N2/PP2PPPP/RN1QKB1R w KQkq - 2 5"
+  },
+  "parent": "queens-gambit-declined-traditional-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black checks on b4 to unbalance the Queen's Gambit, then usually takes on c4 and plays ...c5 to free his game, often giving up the bishop pair or accepting doubled pawns. White answers 5.Nbd2 or 5.Nc3 and tries to use the extra space and bishop pair against Black's central break. The play is more dynamic than the classical QGD.",
+  "white_ideas": [
+    { "idea": "5.Nbd2 dxc4 6.e3 and recapture on c4 with a lead in space" },
+    { "idea": "5.Nc3 h6 6.Bh4 c5 and try for the bishop pair after Bxc3" }
+  ],
+  "black_ideas": [
+    { "idea": "Take on c4 and break with ...c5 to free his game" },
+    { "idea": "Trade the dark-squared bishop for the c3 knight to double the c-pawns" }
+  ],
+  "typical_structures": [
+    { "structure": "White with an e3/d4 centre against ...c5 and open lines after ...dxc4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dynamic but not mutual-attack; Black fights for the centre at once and positions stay balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "...dxc4 takes the c-pawn but White recaptures at once." },
+    "soundness": { "notes": "Fully sound; played at top level (Bronstein, Kramnik)." },
+    "structure": { "notes": "Tension on d4/c5 and c4; the centre is not fixed." },
+    "approach": { "notes": "A recognised branch of the QGD, not a universal set-up." },
+    "level": { "reason": "memory", "notes": "Black needs to know the pin and ...c5 break lines precisely; plans are clear though." }
+  },
+  "plan_phrases": ["bishop pair", "doubled pawns", "central break ...c5"],
+  "sublines_that_differ": [
+    { "name": "Quiet Variation", "moves": "4.Nc3 dxc4 5.e3", "how": "A calmer QGD-type game, not the Vienna proper" }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Active but not forcing, and neither side is hard to crack." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The pawn on c4 is retaken at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A respectable main-line QGD branch." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre stays in tension with ...c5 and ...dxc4 to follow." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A recognised QGD branch." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Needs some theory but plans are clear." },
+    "plans": { "value": ["bishop_pair", "doubled_pawns"], "reason": "Bb4xc3 gives either doubled c-pawns or the bishop pair." }
+  }
+}

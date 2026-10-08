@@ -1,0 +1,46 @@
+{
+  "slug": "englund-gambit-soller-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Soller Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 f6",
+    "fen": "rnbqkbnr/pppp2pp/5p2/4P3/8/8/PPP1PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black offers a pawn with 2...f6, hoping to open the f-file and the e-pawn for quick development. After 3.exf6 Nxf6 White is a pawn up and develops with Nc3, Bg5 or e3, and White's main risk is early queen play and the weakened king. Black has little to show for the pawn against accurate play.",
+  "white_ideas": [
+    { "idea": "Take on f6 or play 3.Nc3/3.e4, then develop and return the pawn only for a clear gain." },
+    { "idea": "Neutralise Black's development with Bg5, Nf3 and e3, and castle." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Nxf6, ...Bc5 or ...Bb4 and ...O-O and play on the open lines." },
+    { "idea": "Set traps against the white king on the e-file or the f2 square." }
+  ],
+  "typical_structures": [
+    { "structure": "Open position, White a pawn up with Black ahead in development." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black plays for traps and initiative at the cost of a pawn; both sides can go wrong." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the pawn by sound development." },
+    "soundness": { "notes": "Considered unsound; White's extra pawn is not under real threat." },
+    "structure": { "notes": "Open lines on the e- and f-files after the centre pawns come off." },
+    "approach": { "notes": "A surprise gambit, rarely played by strong players." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of traps; dubious, so not beginner." }
+  },
+  "plan_phrases": ["lead in development", "surprise weapon", "open lines for pieces"],
+  "sublines_that_differ": [
+    { "name": "3.exf6 Nxf6", "moves": "3. exf6 Nxf6 4. Nc3", "how": "White keeps the extra pawn with a comfortable game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Black gambits a pawn for open lines and traps." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.85, "reason": "Engine-assessed as unsound, consistent with other Englund lines." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open lines after the central pawns are exchanged." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "A surprise line that strong players avoid." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious gambit is never a beginner line." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black aims for development in return for a pawn." }
+  }
+}

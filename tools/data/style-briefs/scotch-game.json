@@ -1,0 +1,115 @@
+{
+  "slug": "scotch-game",
+  "root": {
+    "name": "Scotch Game",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scotch Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scotch_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Scotch Game",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Scotch-Game",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Scotch Game Guide",
+      "publisher": "365Chess",
+      "url": "https://www.365chess.com/chess-openings/Scotch-Game",
+      "kind": "article"
+    }
+  ],
+  "overview": "White strikes at the centre on move three and, after 3...exd4 4.Nxd4, trades the d-pawn for Black's e-pawn, opening the position early and releasing the central tension (s2). White gets space and quick development, Black gets easy piece play and the choice between active set-ups: 4...Bc5 (Classical), 4...Nf6 (Schmidt) and, less often, 4...Qh4 (Steinitz). The structure is open from the outset, so the game turns on piece activity rather than pawn manoeuvring. It can be played either positionally or tactically depending on the line (s2, s3). Objectively roughly equal: the Classical and Schmidt lines give Black good chances of equality, while Mieses (5.Nxc6 bxc6 6.e5) and the Steinitz are sharper (s1). Kasparov revived it in the 1990s as a way of avoiding the heavy Ruy Lopez theory, and Carlsen, Kramnik and Aronian have used it since (s1, s2, s3).",
+  "white_ideas": [
+    { "idea": "Open the centre immediately with d4 and take space with piece play", "sources": ["s1", "s2"] },
+    { "idea": "Nxc6 to inflict doubled c-pawns on Black (Schmidt/Mieses 5.Nxc6 bxc6)", "sources": ["s1"] },
+    { "idea": "Rapid development with Bc4, Nc3, castling, then Ng5 and kingside pressure", "sources": ["s1"] },
+    { "idea": "In the Classical, Be3 and Bc4 against ...Qf6/...Nge7 (Kasparov's 7.Bc4 revival), or Potter 5.Nb3 Bb6", "sources": ["s1"] },
+    { "idea": "Scotch Gambit 4.Bc4 or Goring 4.c3: give the d-pawn for development; Goring scores well at club level", "sources": ["s1", "s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with tempo against the d4 knight (...Bc5 or ...Nf6) instead of chasing pawns", "sources": ["s1", "s3"] },
+    { "idea": "Classical set-up with ...Qf6, ...Nge7 and ...d5 at the right moment", "sources": ["s1"] },
+    { "idea": "After 5.Nxc6 bxc6 use the doubled pawns as a central shield and play ...d5 or ...Bb7 ideas", "sources": ["s1"] },
+    { "idea": "Against the Goring, answer 4.c3 with 4...d5 (Capablanca) for full equality", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after d4 exchange: White has e4 against Black's missing e-pawn, files and diagonals open early", "sources": ["s1", "s2"] },
+    { "structure": "Schmidt/Mieses: Black's doubled c-pawns (c7, c6) against White's healthy structure; e5 push gives forcing play", "sources": ["s1"] },
+    { "structure": "Classical: White d4 knight and e4 against Black's Bc5, usually e4 versus d6/d5 break", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional or tactical depending on the line (s2, s3). Main lines (Classical, Schmidt with 6.Bd3) are even and fairly steady; Mieses, Steinitz and gambit lines are sharper. Early central opening means piece activity and tactics matter from move three. Not a solid-by-reputation opening in the Caro-Kann sense, and not a Najdorf-level knife fight in its main lines either. The main line is best read as balanced, with sharpness in sidelines.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main line 4.Nxd4 recovers the pawn at once, so no gambit. Scotch Gambit (4.Bc4) and Goring (4.c3) are White gambits but are sublines, not the root.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Main lines regarded as roughly equal; 4...Bc5 and 4...Nf6 give Black good chances of equality (s1). Goring Gambit is not common at master level but works at club level (s2); Black's 4...d5 equalises (s1).",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Open centre: the d-pawn is exchanged on move 3-4, leaving e4 against a Black structure with no e-pawn. Chess.com lists the early release of central tension as the opening's drawback and notes it makes the centre open (s2). Typical middlegames have open d- and e-files.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Not a system; it depends on Black's reply and a concrete line is chosen. Played at the highest level (Kasparov, Kramnik, Aronian, Carlsen, Ivanchuk). Standard rather than offbeat.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess.com calls it a good opening for beginners and 365chess says it is accessible to intermediate players because it avoids the Ruy Lopez's heavy theory (s2, s3). Principles are clear (centre, development), though the Classical and Mieses mainlines have real theory (s1). White is the side that studies it. Suited to Beginner or Intermediate.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "open centre",
+    "lead in development",
+    "doubled pawns",
+    "kingside pressure",
+    "piece activity",
+    "central space"
+  ],
+  "sublines_that_differ": [
+    { "name": "Scotch Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4", "how": "White gives the d-pawn for development; often transposes to the Two Knights; a White gambit" },
+    { "name": "Goring Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3", "how": "Delayed Danish Gambit; White offers one or two pawns; 4...d5 equalises" },
+    { "name": "Mieses Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nxc6 bxc6 6. e5", "how": "Forcing and sharper than the 6.Bd3 line" },
+    { "name": "Steinitz Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4", "how": "Early queen sortie; White develops with tempo for attacking chances; sharp" },
+    { "name": "3...d6 (Philidor transposition)", "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 d6", "how": "Black avoids the exchange; plays like a Philidor with ...Nc6 in (own understanding, unsourced)" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "White immediately challenges Black's central pawn with 3.d4", "verdict": "supported", "note": "White strikes at the centre with 3.d4, forcing Black to give up e5.", "sources": ["s1"] },
+      { "claim": "The aim is to open the position and seize the initiative", "verdict": "supported", "note": "The early d4 releases central tension; opens the game.", "sources": ["s2"] },
+      { "claim": "Middlegames are dynamic and often tactical", "verdict": "supported", "note": "Dynamic play from the start per 365chess; but also positional options. 'Often tactical' fits sidelines more than main lines.", "sources": ["s2", "s3"] },
+      { "claim": "Piece activity and central control are paramount", "verdict": "supported", "note": "Consistent with sources.", "sources": ["s1", "s3"] },
+      { "claim": "Excellent for players who appreciate classical principles and want to dictate the early course of the game", "verdict": "supported", "note": "Matches the Kasparov-era rationale and chess.com's beginner recommendation.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White uses central space and the open d-file to develop actively, preparing a kingside attack or pressure on c6", "verdict": "supported", "note": "Kingside pressure with Bc4/Ng5 and pressure on c6 weaknesses after Nxc6 are described.", "sources": ["s1"] },
+      { "claim": "White pressures Black's potential weakness on e5", "verdict": "wrong", "note": "Black has no e-pawn after the exchange on d4; e5 is usually a square White pushes to (Mieses 6.e5), not a Black weakness. Own understanding, unsourced.", "sources": [] },
+      { "claim": "Black completes development quickly and challenges White's centre with ...Bc5 and ...Nf6", "verdict": "supported", "note": "Classical and Schmidt are the two main replies.", "sources": ["s1", "s3"] },
+      { "claim": "Black sometimes accepts a slightly inferior pawn structure for dynamic compensation", "verdict": "supported", "note": "Doubled c-pawns after 5.Nxc6 bxc6 are the clearest example.", "sources": ["s1"] },
+      { "claim": "Both sides fight for control of d4 and the open files that result from the central pawn exchange", "verdict": "unverifiable", "note": "d4 is usually held by White's knight until traded; no source frames the fight as being for d4. Open files exist.", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

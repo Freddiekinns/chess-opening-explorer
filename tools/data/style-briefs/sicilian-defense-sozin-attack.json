@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-sozin-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Sozin Attack",
+    "eco": "B86",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bc4",
+    "fen": "rnbqkb1r/pp3ppp/3ppn2/8/2BNP3/2N5/PPP2PPP/R1BQK2R b KQkq - 1 6"
+  },
+  "parent": "sicilian-defense-scheveningen-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White puts the bishop on c4 against the Scheveningen and Najdorf structures, eyeing e6 and f7 and usually followed by Bb3, Be3, Qe2 or Qf3 and castling long. Black develops with ...Nc6, ...Be7 and ...O-O, or plays ...a6 and ...Bd7/...b5 with the Najdorf Sozin. The game is a race: White pushes f4 and e5 or a kingside attack, Black counterattacks on the c-file and in the centre.",
+  "white_ideas": [
+    { "idea": "Bc4-b3, Be3, Qe2, O-O-O and a kingside pawn storm with f4, g4" },
+    { "idea": "Sacrifices on e6 or Nxe6 to open Black's king" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nc6, ...Be7, ...O-O and ...Bd7 with ...Rc8" },
+    { "idea": "Counter in the centre with ...d5 or ...Nxe4 tactics" }
+  ],
+  "typical_structures": [
+    { "structure": "Scheveningen pawn set-up (d6, e6) against the Sozin bishop on b3" },
+    { "structure": "Opposite-side castling with White long, Black short or also long" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Fischer's weapon: forcing lines, Bxe6 or Nxe6 sacrifices, opposite-side castling." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit in the main line; sacrifices on e6 are tactical." },
+    "soundness": { "notes": "Sound for both sides; Black has several fine answers." },
+    "structure": { "notes": "Sicilian with a half-open c-file; d6/e6 against e4 and the Nd4." },
+    "approach": { "notes": "A main-line Sicilian system for White, a standard choice." },
+    "level": { "reason": "both", "notes": "Heavy theory and tactics for both sides, plus attacking judgement." }
+  },
+  "plan_phrases": ["Kingside attack", "Opposite-side castling", "Pawn storm"],
+  "sublines_that_differ": [
+    { "name": "Sozin-Najdorf", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. Bc4 a6", "how": "Black plays ...a6 and ...b5; similar pawns but a different Black set-up." },
+    { "name": "Leonhardt Variation", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bc4 e6", "how": "Move-order route with an early ...Nc6." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Opposite-side castling and sacrifices on e6 make it forcing and risky." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No pawn is given up in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Both sides have fully respected main lines." },
+    "structure": { "value": "semi_open", "confidence": 0.85, "reason": "Every Sicilian with the c-file half-open is semi-open." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by strong players, not a universal set-up." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.65, "reason": "Long forcing theory and attacking plans for both sides." },
+    "plans": { "value": ["kingside_attack", "opposite_side_castling", "pawn_storm"], "reason": "White attacks the kingside while Black counters on the c-file." }
+  }
+}

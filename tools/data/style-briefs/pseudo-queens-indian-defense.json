@@ -1,0 +1,46 @@
+{
+  "slug": "pseudo-queens-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pseudo Queen's Indian Defense",
+    "eco": "A47",
+    "moves": "1. d4 Nf6 2. Nf3 b6",
+    "fen": "rnbqkb1r/p1pppppp/1p3n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black fianchettoes the queen's bishop on b7 before White has committed the c-pawn, and usually follows with ...e6. White can transpose to the Queen's Indian with c4 or play a London-style 3.Bf4 and e3, or 3.g3 and Bg2. Black aims to control e4 and keep a solid, flexible position, while White tries to take space in the centre. Without White's c4 there is no real Queen's Indian theory.",
+  "white_ideas": [
+    { "idea": "Bf4, e3, h3, Nbd2 and c3, London set-up, or c4 for a Queen's Indian" },
+    { "idea": "g3, Bg2 and O-O with queenside expansion" }
+  ],
+  "black_ideas": [
+    { "idea": "...Bb7, ...e6 and ...Be7, control of e4 with a solid fianchetto" },
+    { "idea": "Strike with ...c5 or ...d5 depending on White's set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Indian-style Black fianchetto against d4/e3 or d4/c4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid, flexible with few weaknesses; Black is hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not committed, d4/e3 against ...e6/...d5 or ...c5: flexible." },
+    "approach": { "notes": "A move order Black uses against many White set-ups, but it is a normal Indian line: standard." },
+    "level": { "reason": "understanding", "notes": "Plans are clear but need judgement; little theory." }
+  },
+  "plan_phrases": ["fianchetto", "control of e4", "flexible set-up"],
+  "sublines_that_differ": [
+    { "name": "Neo-Queen's Indian: 3.Bf4", "moves": "1. d4 Nf6 2. Nf3 b6 3. Bf4 Bb7 4. e3 e6", "how": "London-style structure with Black fianchetto." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Compact Queen's Indian structure, few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A normal Indian set-up." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Centre not yet committed." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "Played at all levels, not a one-move-fits-all system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans need understanding, little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "Black's bishop on b7 on the long diagonal." }
+  }
+}

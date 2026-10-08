@@ -1,0 +1,42 @@
+{
+  "slug": "zukertort-opening-pirc-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Pirc Invitation",
+    "eco": "A04",
+    "moves": "1. Nf3 d6",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black answers 1.Nf3 with ...d6, aiming for a Pirc, Philidor or Old Indian set-up with ...Nf6, ...g6 or ...e5. White usually takes the centre with d4 and e4 or plays c4 and g3. It mostly transposes to Pirc, Philidor or Indian structures and is a flexible, non-committal way to reply.",
+  "white_ideas": [
+    { "idea": "Play d4 and e4 to take the centre and transpose to a Pirc/Philidor with an extra Nf3" },
+    { "idea": "Or c4 and g3 for a Reti/English set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Flexible development with ...Nf6, ...g6, ...Bg7 or ...e5 depending on White's set-up" },
+    { "idea": "Delay committing the centre pawns and hit White's centre later with ...e5 or ...c5" }
+  ],
+  "typical_structures": [{ "structure": "Pirc/Philidor or King's Indian-type structures after White builds a centre; Hypermodern" }],
+  "axis_evidence": {
+    "character": { "notes": "Not clearly forcing or particularly solid; it depends on the set-up chosen. I am unsure what the dominant continuation is." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound; just a slow, passive-looking reply." },
+    "structure": { "notes": "Not decided; transposes into many structures." },
+    "approach": { "notes": "Rarely chosen by strong players against 1.Nf3." },
+    "level": { "reason": "understanding", "notes": "Black has to choose plans from several set-ups; little to memorise." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible and transposing, not forcing and not especially rigid." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A playable if slow reply." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Nothing is fixed after two moves; flank-style flexibility." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Strong players seldom use ...d6 against 1.Nf3." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Needs plans from several structures but little theory." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black leaves the centre to White and attacks it later with a fianchetto." }
+  }
+}

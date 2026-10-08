@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-mengarini-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Mengarini Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. a3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/P7/1PPP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays a quiet 2.a3 to prepare b4 or c3 and d4 without allowing ...Bb4 ideas, a slow anti-Sicilian. Black can reply ...g6, ...Nc6 or ...d5 and often meets c3 and d4 with ...d5 or ...cxd4. White is slightly passive, as a3 is not a developing move.",
+  "white_ideas": [
+    { "idea": "Play c3, d4 and b4 to build a big centre, a Smith-Morra or Alapin type of set-up." },
+    { "idea": "Develop with Nf3, Be2 and castle, keeping the Open Sicilian options." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nc6, ...g6 and ...Bg7 and use the extra tempo for ...d5." },
+    { "idea": "Strike in the centre with ...d5 to equalise." }
+  ],
+  "typical_structures": [
+    { "structure": "Asymmetric Sicilian pawns (c5 against e4) with White pawns on a3 and c3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and slow; White avoids theory and Black has easy development." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit in the main replies; the 'Mengarini Gambit' name is for a rare b4 pawn offer." },
+    "soundness": { "notes": "Playable; White spends a tempo and is not worse." },
+    "structure": { "notes": "Sicilian asymmetric centre; Black c-file and e4 target." },
+    "approach": { "notes": "A rare anti-Sicilian, seldom chosen by strong players." },
+    "level": { "reason": "neither", "notes": "Few theory demands, with simple plans." }
+  },
+  "plan_phrases": ["queenside expansion", "avoid theory"],
+  "sublines_that_differ": [
+    { "name": "b4 gambit ideas", "moves": "2. a3 g6 3. b4", "how": "White gives a pawn for queenside space and the long diagonal." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet, with simple development for both sides." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "No material is given in the main replies." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Playable for White though it spends a tempo." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Sicilian asymmetric centre." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple but not a recommended first repertoire." },
+    "plans": { "value": ["queenside_expansion"], "reason": "a3 prepares b4 and queenside space." }
+  }
+}

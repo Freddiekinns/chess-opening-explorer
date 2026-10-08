@@ -1,0 +1,49 @@
+{
+  "slug": "dutch-defense-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Fianchetto Variation",
+    "eco": "A86",
+    "moves": "1. d4 f5 2. c4 Nf6 3. g3",
+    "fen": "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "dutch-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes against the Dutch, the most popular way to meet it. After 3...e6 4.Bg2 Black chooses between ...d5 (Stonewall/Classical set-ups) and ...Be7 with ...O-O and ...d6 (Classical). White controls e4 and aims for a central break, e4 or d5, while Black plays for kingside space and control of e4. The positions are strategic but unbalanced, with Black's weakened e8-h5 diagonal and e4 square the key issues.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop and control e4 and the long diagonal" },
+    { "idea": "Break with d5 or e4 depending on Black's set-up" },
+    { "idea": "Exploit the weakened e8-h5 diagonal and the e6-pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 and build kingside space with ...d5 or ...d6 and ...Ne4" },
+    { "idea": "Attack on the kingside with ...Qe8-h5 and ...g5-type pawn pushes" },
+    { "idea": "Stay compact in a Stonewall or Classical structure" }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall with Black pawns c6/d5/e6/f5" },
+    { "structure": "Classical Dutch with ...d6, ...Qe8 and ...Ne4 outpost" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dutch positions are unbalanced; both sides seek active kingside or central play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; a recognised main line." },
+    "structure": { "notes": "Main line 3...e6 4.Nf3 d5 (Stonewall) locks the centre; Classical lines keep tension." },
+    "approach": { "notes": "Standard Dutch defence, used by strong players such as Nakamura and Carlsen." },
+    "level": { "reason": "understanding", "notes": "Structures are subtle with e4/f5 imbalances; plans take understanding." }
+  },
+  "plan_phrases": ["kingside attack", "knight outpost on e4", "Stonewall pawn structure"],
+  "sublines_that_differ": [
+    { "name": "Leningrad set-up", "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7", "how": "King's Indian-style Black set-up with ...g6 and ...d6." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "The Dutch gives unbalanced positions with kingside attack chances and structural weaknesses." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised main line against the Dutch." },
+    "structure": { "value": "closed", "confidence": 0.45, "reason": "Stonewall and Classical set-ups lock or fix the centre; some lines stay flexible." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A mainstream Dutch line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "The structures need understanding but theory is not deep." },
+    "plans": { "value": ["kingside_attack", "knight_outpost"], "reason": "Black plays for kingside attack and a knight on e4." }
+  }
+}

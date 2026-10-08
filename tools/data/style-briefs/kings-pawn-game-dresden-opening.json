@@ -1,0 +1,44 @@
+{
+  "slug": "kings-pawn-game-dresden-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Dresden Opening",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2P1P3/5N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays an English-like c4 against 2...Nc6, giving a reversed Sicilian-style game. White usually follows with Nc3 and d3 or g3 and Bg2, keeping the centre flexible. Black can play ...Nf6 and ...Bb4 or ...Bc5, ...d6 for a comfortable game.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, g3 and Bg2 or d3, keeping the centre flexible and aiming for queenside space." },
+    { "idea": "Use c4 to control d5 and prepare a queenside expansion." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...Bc5 or ...Bb4 and play ...d6 with a solid centre." },
+    { "idea": "Strike at the centre with ...Nf6 and ...d5 when possible." }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian with e4/c4 against e5, centre unresolved." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A quiet developing set-up with no forcing theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Equal and fully playable." },
+    "structure": { "notes": "Centre is undecided with pawn tension on e4/e5." },
+    "approach": { "notes": "Rare for strong players; mostly chosen to avoid theory." },
+    "level": { "reason": "neither", "notes": "Few forced lines." }
+  },
+  "plan_phrases": ["fianchetto", "knight outpost"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but flexible." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Equal and playable." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Modest theory." },
+    "plans": { "value": ["fianchetto"], "reason": "g3/Bg2 is a common set-up." }
+  }
+}

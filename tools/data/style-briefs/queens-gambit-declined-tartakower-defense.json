@@ -1,0 +1,44 @@
+{
+  "slug": "queens-gambit-declined-tartakower-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Tartakower Defense",
+    "eco": "D58",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Be7 5. Bg5 h6 6. Bh4 O-O 7. e3 b6",
+    "fen": "rnbq1rk1/p1p1bpp1/1p2pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 8"
+  },
+  "parent": "queens-gambit-declined-neo-orthodox-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black fianchettoes the queen's bishop and, after cxd5 Nxd5, trades pieces to free his position. White tries to use the c-file and a small space edge, usually with 8.cxd5 Nxd5 9.Bxe7 Qxe7 10.Nxd5 exd5 and Rc1, or 8.Bd3 Bb7 9.O-O. Black's position is sound and the play is strategic with real counterplay.",
+  "white_ideas": [
+    { "idea": "Trade on d5, then Rc1 and queenside pressure on a symmetrical structure" },
+    { "idea": "Develop Bd3, O-O and keep a small space edge" }
+  ],
+  "black_ideas": [
+    { "idea": "Exchange pieces to ease the cramp, then break with ...c5" },
+    { "idea": "Bb7 and the fianchetto, hold the centre with ...d5 and ...Nbd7" }
+  ],
+  "typical_structures": [
+    { "structure": "Exchange-style structure with a half-open c-file, or a fianchetto against d4/c4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Piece trades and a stable position; Black is hard to break down and is rarely in danger early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound; a main-line QGD for decades." },
+    "structure": { "notes": "Typically an exchange on d5 gives a half-open c-file; ...c5 break follows." },
+    "approach": { "notes": "A standard theoretical branch of the QGD." },
+    "level": { "reason": "memory", "notes": "Many sub-lines with specific move orders, but plans are clear." }
+  },
+  "plan_phrases": ["half-open c-file", "fianchetto", "minority attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Black trades pieces and is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main-line QGD set-up." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Exchange on d5 leaves a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Played by top players as a standard QGD line." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Specific move orders to know but clear plans." },
+    "plans": { "value": ["half_open_c_file", "fianchetto"], "reason": "White uses the c-file and Black fianchettoes on b7." }
+  }
+}

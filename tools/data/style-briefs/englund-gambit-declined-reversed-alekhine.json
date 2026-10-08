@@ -1,0 +1,46 @@
+{
+  "slug": "englund-gambit-declined-reversed-alekhine",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined: Reversed Alekhine",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. Nf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White declines the gambit with 2.Nf3, and Black can push 2...e4 with tempo, after which 3.Nfd2 d5 4.e3 or c4 gives a Reversed Alekhine with Black's pawns on e4 and d5. White undermines the e4 pawn with f3, c4 and Nc3, while Black enjoys space but has to defend it. Alternatively Black plays 2...Nc6 3.d5 or 2...Bd6.",
+  "white_ideas": [
+    { "idea": "Attack the e4 pawn with Nc3, f3 and c4, rerouting the knight to c3 or b3." },
+    { "idea": "Hold d4 and exploit Black's overextension." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the pawn chain e4/d5 and gain space; develop ...Nf6, ...Bd6, ...c5." },
+    { "idea": "Attack White's d4 pawn and slowly build kingside play." }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Alekhine/Advance-type chain: Black pawns on d5 and e4 against d4 and e3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Declined, with a space-for-targets fight; roughly balanced and strategic." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material has been given; the gambit is declined." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Black's e4 pawn creates a locked centre with d4/e3 for White." },
+    "approach": { "notes": "Black's Englund tries are seldom played by strong players." },
+    "level": { "reason": "understanding", "notes": "Structure-based plans, minimal theory." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "2...Nc6", "moves": "2...Nc6 3.d5", "how": "Different, more open play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Strategic fight over the e4 pawn, neither safe nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Declined, so no material has changed hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Reasonable positions for both." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "Black's e4/d5 chain locks the centre." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Part of the Englund family strong players seldom choose." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are simple and theory light." },
+    "plans": { "value": ["space_advantage"], "reason": "Black space against White's pressure on e4." }
+  }
+}

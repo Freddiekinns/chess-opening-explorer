@@ -1,0 +1,46 @@
+{
+  "slug": "reti-opening-advance-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Advance Variation",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 d4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2Pp4/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "reti-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black gains space with ...d4, giving a reversed Benoni-type structure. White attacks the d4 pawn with e3 (or b4, the Anglo-Polish attack) or builds with g3 and Bg2; Black defends it with ...c5 and ...Nc6 and aims for ...e5. White has queenside play with the c- and b-pawns and Black has the central space.",
+  "white_ideas": [
+    { "idea": "Undermine d4 with e3 and exd4, or b4 to gain queenside space." },
+    { "idea": "Fianchetto with g3 and Bg2, pressure d4 and play on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the d4 pawn with ...c5, ...Nc6, ...e5 and use central space." },
+    { "idea": "Develop the bishops and break with ...e5 or ...f5." }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Benoni with Black pawns on c5/d4/e5 and White play on the queenside." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic fight over the d4 pawn; the Anglo-Polish b4 push is a sharp branch." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is given up in the main lines." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Black's d4 pawn gives a fixed asymmetric centre, not fully resolved." },
+    "approach": { "notes": "A less common Black reply that strong players use occasionally." },
+    "level": { "reason": "understanding", "notes": "Few theory lines, but Benoni-type play needs understanding." }
+  },
+  "plan_phrases": ["space advantage", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Anglo-Polish Attack", "moves": "1. Nf3 d5 2. c4 d4 3. b4", "how": "White gambits a pawn on b4 for queenside play, leading to sharper positions." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Strategic Benoni-type battle with some tactical branches." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No pawn is sacrificed in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Both sides have comfortable play." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The d4 pawn is advanced but the centre can still open or lock." },
+    "approach": { "value": "standard", "confidence": 0.45, "reason": "Less common but played by strong players from time to time." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Needs feel for Benoni-type structures and little theory." },
+    "plans": { "value": ["space_advantage", "queenside_expansion"], "reason": "Black has central space while White expands on the queenside." }
+  }
+}

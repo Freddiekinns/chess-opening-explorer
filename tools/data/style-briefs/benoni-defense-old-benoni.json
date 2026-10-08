@@ -1,0 +1,111 @@
+{
+  "slug": "benoni-defense-old-benoni",
+  "root": {
+    "name": "Benoni Defense: Old Benoni",
+    "eco": "A43",
+    "moves": "1. d4 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Old Benoni Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Old_Benoni_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Old Benoni Defense: Adviser & Replay Lab",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/old-benoni-defense.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Old Benoni search snippets (Wholesale Chess, Wikibooks, Modern Benoni on Wikipedia)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.wholesalechess.com/blogs/chess-openings/the-old-benoni-defense",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black answers 1.d4 with 1...c5 before committing to ...d5 or ...Nf6; the root is a crossroads. White normally replies 2.d5, gaining space with a wedge, and Black then has to undermine d5 with ...e6, ...e5, ...d6, ...Nf6 or ...b5 so as not to be squeezed. Main branches are 2.d5 e6 (heading for a Modern Benoni structure), 2.d5 d6 3.e4 (the Schmid Benoni, with a King's-Indian-like set-up), and 2.d5 e5 (Czech Benoni, a locked centre with kingside play by f4 and queenside b4 for White). White can also play 2.dxc5, 2.e3 or 2.c3, which tend to transpose to other structures. Sources describe the opening as a long strategic space-versus-counterplay struggle, playable but demanding, rare at top level though used by Alekhine, Kasparov, Torre and Vaganian.",
+  "white_ideas": [
+    { "idea": "2.d5 gaining space with a pawn wedge and asking what ...c5 has achieved", "sources": ["s2"] },
+    { "idea": "Czech Benoni plans: kingside break with f4 and queenside b4 against a locked centre", "sources": ["s2"] },
+    { "idea": "2.dxc5 to avoid the squeeze; Black regains the pawn with ...e6 or similar", "sources": ["s2"] },
+    { "idea": "Keep the space grip and restrict Black's counterplay", "sources": ["s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine d5 with ...e6, ...e5, ...d6, ...Nf6", "sources": ["s2", "s3"] },
+    { "idea": "Queenside counterplay with ...b5", "sources": ["s2", "s3"] },
+    { "idea": "Trade pieces to reduce White's space; avoid being squeezed for the whole game", "sources": ["s2"] },
+    { "idea": "Schmid Benoni / ...g6 fianchetto set-ups", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Czech Benoni: locked centre with ...e5 vs d5, White f4/b4 plans", "sources": ["s2"] },
+    { "structure": "Modern Benoni structure after ...e6 and ...exd5 (asymmetrical, White centre majority, Black queenside majority)", "sources": ["s2", "s3"] },
+    { "structure": "Independent Old Benoni: space struggle without clear transposition", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "ChessWorld says strategically demanding rather than tactically sharp: a long strategic race between White's space and Black's counterplay. Another snippet says it can lead to tactical and sharp play. The risk is being squeezed rather than being mated.",
+      "sources": ["s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given in the main line 2.d5. In 2.dxc5 Black temporarily gives a pawn but regains it with ...e6.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Playable for Black but strategically demanding; Wikipedia says it never attracted serious high-level interest and remains somewhat marginal; a snippet says it is not highly regarded at GM level.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "After 2.d5 the centre is a pawn wedge on d5 with tension or lock-in (Czech Benoni: closed; Modern Benoni structure: semi-open with c-pawn gone). Typically closed or tense, not open.",
+      "sources": ["s2"]
+    },
+    "approach": {
+      "notes": "Named opening but rare at top level because strong players avoid giving White the space gain; used by Alekhine (beat Bogoljubow 1934), Blackburne, and, per ChessWorld, Kasparov, Torre and Vaganian as a surprise weapon. Not a universal set-up.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "ChessWorld: suitable for intermediate players seeking positional understanding of space, pawn chains and counterplay timing; requires active defence to avoid being cramped.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "undermine the d5 wedge",
+    "space versus counterplay",
+    "...b5 queenside counterplay",
+    "Czech Benoni locked centre",
+    "f4 and b4 breaks",
+    "transposition to Modern Benoni"
+  ],
+  "sublines_that_differ": [
+    { "name": "Czech Benoni", "moves": "1. d4 c5 2. d5 e5", "how": "Locked centre; kingside plan f4 for White, Black cramped." },
+    { "name": "Schmid Benoni", "moves": "1. d4 c5 2. d5 d6 3. e4", "how": "King's Indian-like set-up; Black solid but cramped." },
+    { "name": "2.d5 e6 3.c4", "moves": "1. d4 c5 2. d5 e6 3. c4 exd5 4. cxd5", "how": "Heads to a Modern Benoni structure with open play by Black on the queenside." },
+    { "name": "2.e3 / 2.c3", "moves": "1. d4 c5 2. e3", "how": "Quiet White set-ups that transpose to Sicilian-like or other structures; Black's ...c5 looks like an English/Sicilian shape." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Old Benoni is a sharp and ambitious defence where Black challenges White's central control by attacking d4", "verdict": "unverifiable", "note": "1...c5 attacks d4 but ChessWorld calls it strategically demanding rather than tactically sharp; another snippet says it can be tactical and sharp.", "sources": ["s2", "s3"] },
+      { "claim": "It leads to asymmetrical pawn structures and double-edged middlegames where Black accepts a space disadvantage for active piece play", "verdict": "supported", "note": "Space versus counterplay struggle.", "sources": ["s2"] },
+      { "claim": "Black has queenside counter-attacking chances", "verdict": "supported", "note": "...b5 is named.", "sources": ["s2", "s3"] },
+      { "claim": "An excellent choice for aggressive players fighting for the initiative from the very beginning", "verdict": "unverifiable", "note": "Sources point to patient strategic play and avoiding a squeeze, and rarity at top level.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Undermine White's d5 pawn with a queenside pawn storm, typically starting with ...a6 and ...b5", "verdict": "unverifiable", "note": "...b5 is named; ...a6 specifically and 'pawn storm' are not in the sources.", "sources": ["s2", "s3"] },
+      { "claim": "White: Use the central space advantage to launch a kingside attack, often involving f2-f4", "verdict": "supported", "note": "f4 break in the Czech Benoni; kingside attack is plausible.", "sources": ["s2"] },
+      { "claim": "Black: Fianchetto the king's bishop to g7 to exert pressure on the long diagonal", "verdict": "supported", "note": "...g6 is listed as a Black set-up; own understanding that it is typical of Schmid/Modern Benoni structures, not all lines.", "sources": ["s3"] },
+      { "claim": "White: Restrict Black's counterplay by controlling e4 and c4 and developing to strong central posts", "verdict": "unverifiable", "note": "General space-grip idea supported; the specific squares are not named in sources.", "sources": ["s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

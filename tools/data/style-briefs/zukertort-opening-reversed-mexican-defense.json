@@ -1,0 +1,44 @@
+{
+  "slug": "zukertort-opening-reversed-mexican-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Reversed Mexican Defense",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. Nc3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/2N2N2/PPPPPPPP/R1BQKB1R b KQkq - 1 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops both knights before committing the pawns, planning e4, d4 or g3 depending on Black's set-up (the Van Geet-style 1.Nc3 d5 2.Nf3 reaches the same position). After 2...Nf6 White usually plays 3.d4 or 3.e4 and the game transposes to Queen's Pawn lines or a Veresov-like structure. It is a flexible development system without a fixed pawn structure.",
+  "white_ideas": [
+    { "idea": "Develop both knights, then choose between d4, e4 or a fianchetto depending on Black's reply." },
+    { "idea": "Push e4 or d4 to gain central space." }
+  ],
+  "black_ideas": [
+    { "idea": "Establish a d5 centre with ...Nf6, ...e6 or ...c6 and equalise." },
+    { "idea": "Meet e4 with ...dxe4 and develop freely." }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Pawn structures after d4, or Four Knights-like positions after e4 and ...Nf6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development with no forcing play at the start; sound pieces and a normal middlegame." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Sound; just a slow move order." },
+    "structure": { "notes": "Not yet decided; White can steer into open, semi-open or closed centres." },
+    "approach": { "notes": "2.Nc3 after 1.Nf3 d5 is a seldom chosen move among strong players." },
+    "level": { "reason": "understanding", "notes": "Few concrete lines but plans depend on the choice of structure." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet development with no early forcing play or fortress." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Perfectly sound developing moves." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is undecided at this stage." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Strong players seldom choose 2.Nc3 here over 2.c4 or 2.d4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans depend on the structure chosen; not obviously beginner-friendly." },
+    "plans": { "value": [], "reason": "No characteristic plan is fixed this early." }
+  }
+}

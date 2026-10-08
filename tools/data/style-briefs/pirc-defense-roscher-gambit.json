@@ -1,0 +1,95 @@
+{
+  "slug": "pirc-defense-roscher-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Roscher Gambit",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nf3",
+    "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 2 3"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "The position is the Pirc with 3.Nf3 played before Nc3, the move order that rules out ...Bg4 trouble and keeps Bc4 or Be2 options open. Black normally continues 3...g6 4.Nc3 Bg7 or 3...c6 and transposes into the Classical Pirc. I am not sure what the named gambit is; it is a rare 3rd or 4th-move try that is not part of the usual play, so the tags describe the ordinary Pirc line reached.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, Be2 and O-O (Classical set-up) with a broad e4/d4 centre." },
+    { "idea": "Use the move order to avoid or steer Black's early ...Bg4." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7, then undermine the centre with ...c5 or ...e5." },
+    { "idea": "Keep a solid king position and counterattack on the queenside." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against Black d6, g6 and a fianchettoed Bg7." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Ordinary Classical Pirc after 3...g6: imbalanced but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root position has no material given; the named gambit is a rare side branch I cannot reconstruct, so I read it as none."
+    },
+    "soundness": {
+      "notes": "The root position is a normal Pirc, sound for both sides."
+    },
+    "structure": {
+      "notes": "White centre faces ...c5 or ...e5 breaks; undecided at this point."
+    },
+    "approach": {
+      "notes": "The Pirc itself is a respected choice for strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Pirc plans are clearer than its move-order subtleties."
+    }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    {
+      "name": "Named gambit branch",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nf3 Nxe4",
+      "how": "A speculative pawn grab I am not sure of; unclear details and not the main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Reads as an ordinary Classical Pirc position; the named gambit is not the main line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The root is a normal Pirc position with no material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The Pirc set-up is sound for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided before ...c5 or ...e5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Pirc is a normal choice; the gambit name is a rarity."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Pirc play rests on understanding the structure."
+    },
+    "plans": {
+      "value": ["hypermodern_centre", "space_advantage"],
+      "reason": "Black undermines a broad White centre."
+    }
+  }
+}

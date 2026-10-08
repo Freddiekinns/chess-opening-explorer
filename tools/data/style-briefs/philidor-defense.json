@@ -1,0 +1,120 @@
+{
+  "slug": "philidor-defense",
+  "root": {
+    "name": "Philidor Defense",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Philidor Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Philidor_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Chess Opening Basics: The Philidor Defense",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/chess-opening-basics-the-philidor-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Philidor Defense Guide: Strategy, Variations, and Modern Ideas for Black",
+      "publisher": "AttackingChess",
+      "url": "https://www.attackingchess.com/philidor-defense-guide-strategy-variations-and-modern-ideas-for-black/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the Philidor Defense and the Hanham set-up (snippets only)",
+      "publisher": "Chessworld, Chesslab and others via web search",
+      "url": "https://www.chessworld.net/philidor-defense.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black defends e5 with the d-pawn instead of the knight, building a compact centre at the cost of space and piece mobility. Wikipedia calls it solid but passive (s1); the dark-squared bishop and sometimes the whole position can be cramped (s2, s4). The usual game is White taking space after 3.d4 or developing with 3.Bc4, and Black setting up the Hanham formation (...Nf6, ...Nbd7, ...Be7, ...c6, ...O-O), then freeing the position by ...exd4 or ...d5 at the right moment (s1, s4). Modern analysis finds it dynamically balanced, not just passive (s3). Strong players use it rarely; Wikipedia says no top player used it regularly as of 2017, though it has grown in rapid, blitz and bullet (s1). Move orders matter: Black must avoid several tactical pitfalls (s2, s4).",
+  "white_ideas": [
+    { "idea": "Take the centre with 3.d4 and use the space advantage", "sources": ["s1", "s2"] },
+    { "idea": "3.Bc4 to hit f7 and delay or avoid d4 (the Philidor Countergambit 3...f5 is met by 4.Bc4)", "sources": ["s1", "s2"] },
+    { "idea": "Antoshin 6.Bf4 and early queen exchanges such as 4.Qxd4 to pose practical problems", "sources": ["s1", "s2"] },
+    { "idea": "Shirov-style g4 gambit ideas against the Hanham move order", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Hanham set-up: ...Nf6, ...Nbd7 (supports e5 and ...d5), ...Be7, ...c6, ...O-O, often ...Qc7", "sources": ["s1", "s4"] },
+    { "idea": "Free the position with a timely ...exd4 and ...c5, or ...d5", "sources": ["s1", "s4"] },
+    { "idea": "Queenside expansion with ...a6 and ...b5, aiming for endgames where White's space is a liability", "sources": ["s3"] },
+    { "idea": "Restraint centre with ...c6 and ...e6 against light-square play", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Hanham: pawns on d6 and e5 against White's d4/e4, tension kept until Black plays ...exd4 or White plays dxe5", "sources": ["s1", "s4"] },
+    { "structure": "After 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Be7: a more open, Black-castles-quickly set-up", "sources": ["s1"] },
+    { "structure": "Good knight vs bad bishop endings after simplification", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as solid but passive (s1), solid at the cost of mobility (s2), and with 'durable positional principles' (s3). Modern analysis says it is dynamically balanced and offers fewer weaknesses with less tactical vulnerability (s3). It is the classic safe, cramped defence, so Solid fits better than Sharp. The Philidor Countergambit (3...f5) is the risky exception.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main lines give no material. The Philidor Countergambit (3...f5, Black) is a sideline considered too risky (s1). 3...f5 is met with 4.Bc4 or 4.Nc3.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Playable and sound for the main lines; gives White practical chances (s1). Modern analysis sees it as equal (s3). The Countergambit 3...f5 is often considered too risky (s1) but is not the root.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Black keeps pawns on d6 and e5, so the centre stays tense or closed for a long time (Hanham). White gets space; Black releases tension with ...exd4 or ...d5 later. After 3.d4 exd4 the centre opens. The typical middlegame has the centre held, not open.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "A real defence with its own theory, but little used by top players: Wikipedia says no top player employed it regularly as of 2017, with more use in blitz, bullet and rapid (s1); Petrosian and Adams are named as successful practitioners (s3). The Hanham plan is a recognisable set-up, though not played 'against anything' like a system. Between standard and offbeat: it is respectable but rarely seen at the top. Judge against the taxonomy rule that less common is not offbeat.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Wikipedia calls it good for amateurs who want a simpler defensive strategy (s1). Chessable says moderate to high difficulty because Black must navigate move-order pitfalls such as 4.Qxd4 and f7 tactics (s2). AttackingChess says it rewards systematic play over memorisation and requires manageable study (s3). Studying side is Black. Intermediate fits.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "Hanham set-up",
+    "compact centre",
+    "space disadvantage",
+    "freeing ...d5 break",
+    "queenside expansion",
+    "restraint centre",
+    "good knight vs bad bishop"
+  ],
+  "sublines_that_differ": [
+    { "name": "Philidor Countergambit", "moves": "1. e4 e5 2. Nf3 d6 3. d4 f5", "how": "Black gambit, often considered too risky; sharp" },
+    { "name": "Lopez Countergambit", "moves": "1. e4 e5 2. Nf3 d6 3. Bc4 f5", "how": "Aggressive Black gambit; transposes to sharp lines after 4.d4" },
+    { "name": "Hanham Variation", "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nd7", "how": "Solid, keeps central tension; the safest Philidor set-up" },
+    { "name": "3.d4 Nf6 4.dxe5 Nxe4 5.Qd5", "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Qd5", "how": "Sharp, often leads to queen exchange and endgames" },
+    { "name": "3.Bc4", "moves": "1. e4 e5 2. Nf3 d6 3. Bc4", "how": "Delays d4; more positional, Black plays ...Be7 or ...Nf6" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A classical, solid, resilient response to 1.e4", "verdict": "supported", "note": "Solid but passive.", "sources": ["s1", "s2"] },
+      { "claim": "It can lead to a passive and cramped position for Black", "verdict": "supported", "note": "Black ends up cramped, in exchange for solidity.", "sources": ["s1", "s4"] },
+      { "claim": "Supporting e5 with ...d6 gives a robust pawn structure at the cost of space and the initiative", "verdict": "supported", "note": "Solidity for mobility and space.", "sources": ["s2", "s3"] },
+      { "claim": "Ideal for patient strategic players who are comfortable defending and neutralising pressure and create counter-attacking chances from a slightly inferior position", "verdict": "supported", "note": "AttackingChess describes counter-punchers waiting for White to overextend. 'Slightly inferior' is stronger than modern analysis, which finds dynamic equality.", "sources": ["s3"] }
+    ],
+    "common_plans": [
+      { "claim": "White: seize the centre with early d4, use the space advantage to restrict Black, and attack on the kingside or pressure e5", "verdict": "supported", "note": "Space and central play with 3.d4 are the main idea; pressure on e5 is natural; a kingside attack is less specifically sourced.", "sources": ["s1"] },
+      { "claim": "Black: challenge White's centre with ...exd4 followed by ...c5", "verdict": "supported", "note": "...exd4 and a later ...c5 free the position.", "sources": ["s1", "s4"] },
+      { "claim": "Black: reposition pieces (Hanham set-up with ...Nbd7-f8-g6)", "verdict": "wrong", "note": "The Hanham knight on d7 supports e5 and ...d5; the text's route Nbd7-f8-g6 is a Spanish/Breyer-style regrouping, not a standard Hanham plan. Own understanding of the Hanham set-up: sources give ...Nf6, ...Nbd7, ...Be7, ...c6, ...O-O.", "sources": ["s4"] },
+      { "claim": "Black: aim for an endgame where White's space advantage is less relevant", "verdict": "supported", "note": "AttackingChess says Black targets endgames where White's space becomes a liability.", "sources": ["s3"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

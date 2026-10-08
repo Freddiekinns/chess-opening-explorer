@@ -1,0 +1,47 @@
+{
+  "slug": "nimzowitsch-defense-franco-nimzowitsch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Franco-Nimzowitsch Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3 e6",
+    "fen": "r1bqkbnr/pppp1ppp/2n1p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense-declined-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays a French-style set-up with the knight already on c6, and after 3.d4 d5 the game is a French where Black may avoid ...Nf6 or ...c5 for a while. White usually takes space with e5 or exchanges and plays Bd3, Nc3 or c3, and Black pushes ...f6 or ...Nge7 to challenge the centre. It is a quiet, rather passive game that suits those who know French structures.",
+  "white_ideas": [
+    { "idea": "Gain space with 4.e5 and a French Advance-style centre, or play 4.Nc3 and Bd3." },
+    { "idea": "Use the extra space to cramp Black's light-squared bishop and attack the d5 pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre with ...d5, then ...f6 or ...Nge7 and ...Bd7 to ease the bad bishop." },
+    { "idea": "Play for the ...Bb4 pin or ...dxe4 and open lines if White allows." }
+  ],
+  "typical_structures": [
+    { "structure": "French pawn chain after e5, with White's e5 and d4 against Black's e6 and d5 and a bad light-squared bishop." },
+    { "structure": "Exchange or semi-open French structures after ...dxe4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A French-style position where Black is rather passive but hard to break; few early tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound but gives White slightly easier play; nothing refuted." },
+    "structure": { "notes": "After 3.d4 d5 4.e5 the pawns lock in French fashion; if White exchanges it is semi-open. I judge it closed, with low confidence." },
+    "approach": { "notes": "Played by few strong players beyond Nimzowitsch's own defence; offbeat." },
+    "level": { "reason": "understanding", "notes": "French-type structure plans, with little theory; intermediate." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop", "challenge the centre"],
+  "sublines_that_differ": [
+    { "name": "3.d4 d5 4.Nc3 Bb4", "moves": "1. e4 Nc6 2. Nf3 e6 3. d4 d5 4. Nc3 Bb4", "how": "A Winawer-like pin, with a quicker fight for the centre and more imbalance." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "A French-style set-up that is compact and hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A passive but playable defence." },
+    "structure": { "value": "closed", "confidence": 0.4, "reason": "After 4.e5 the French pawn chain locks, though exchange lines are semi-open." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "The Nimzowitsch Defense is seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "French-type plans with little to memorise." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White's space against Black's cramped light-squared bishop." }
+  }
+}

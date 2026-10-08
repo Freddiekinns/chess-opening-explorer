@@ -1,0 +1,49 @@
+{
+  "slug": "petrovs-defense-modern-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Modern Attack",
+    "eco": "C43",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. d4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White challenges the centre at once. After 3...exd4 4.e5 Ne4 White gets a space edge but Black gets easy development, and the most common 3...Nxe4 4.Bd3 d5 5.Nxe5 Nd7 6.Nxd7 Bxd7 gives a symmetrical, open position with the e-file in play. Black aims for simple equality and then an endgame-friendly structure; White's small initiative can be neutralised with accurate play.",
+  "white_ideas": [
+    { "idea": "After ...Nxe4 Bd3 and Nxe5 to win the e-pawn and develop quickly" },
+    { "idea": "Use the e5 space after ...exd4 e5 and Qxd4 to harass Black's pieces" },
+    { "idea": "Castle and use open e-file with Re1, hoping Black errs" }
+  ],
+  "black_ideas": [
+    { "idea": "Trade off pieces with ...Nd7 and ...Bd6 to reach a safe symmetrical position" },
+    { "idea": "Hit the centre with ...d5 and develop quickly with ...Nc6 or ...Bd6" },
+    { "idea": "Use the e4 knight to harass White if White overreaches" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawns after 5.Nxe5 with the e-file open and Black's d5 pawn" },
+    { "structure": "White d4/e5 pawn space after 4.e5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Petrov is hard to break down; the Modern Attack leads to symmetrical, open positions where Black equalises with straightforward development." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands for long." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Symmetrical exchange structure with an open e-file, so Semi-open per the rubric." },
+    "approach": { "notes": "A main-line reply to the Petrov, played widely." },
+    "level": { "reason": "neither", "notes": "Intermediate: straightforward plans and a few tactical traps but not heavy theory." }
+  },
+  "plan_phrases": ["symmetrical structure", "open e-file", "piece trades"],
+  "sublines_that_differ": [
+    { "name": "3...exd4 4.e5 Ne4", "moves": "3...exd4 4.e5 Ne4 5.Qxd4 d5 6.exd6 Nxd6", "how": "White gets a space edge and queen pressure, Black gets easy development; more varied." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Symmetrical position that is hard for White to crack." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Material is regained at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Equal for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Symmetrical exchange structure with one open e-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main option against the Petrov." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "Few critical lines and clear plans." },
+    "plans": { "value": ["symmetrical_structure"], "reason": "Mirror pawns and a slow fight for small edges." }
+  }
+}

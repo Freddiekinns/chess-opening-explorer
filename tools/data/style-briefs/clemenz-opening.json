@@ -1,0 +1,46 @@
+{
+  "slug": "clemenz-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Clemenz Opening",
+    "eco": "A00",
+    "moves": "1. h3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/7P/PPPPPPP1/RNBQKBNR b KQkq - 0 1"
+  },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the waiting move 1.h3, preparing g4 or just keeping a flexible set-up and giving Black free development. After 1...e5 or 1...d5 White usually plays g3, Bg2, d4 or e4 in a reversed or transposing structure; there is no theory, and the line mostly serves to leave the book.",
+  "white_ideas": [
+    { "idea": "Wait with h3, then g4, Nf3 and e4 or play a flexible fianchetto set-up." },
+    { "idea": "Transpose into a quiet Réti or London-style position without allowing Black's ...Bg4." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...e5 or ...d5 and develop freely." },
+    { "idea": "Gain time since h3 does little for White's development." }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed-Sicilian or King's Indian-type structures with an early h3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, non-committal first move; positions follow Black's choice and are rarely forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Not refuted; loses a tempo but White remains safe." },
+    "structure": { "notes": "Centre undefined; a flank-type first move." },
+    "approach": { "notes": "Strong players hardly choose 1.h3; chosen for surprise or to avoid theory." },
+    "level": { "reason": "neither", "notes": "Easy to play but a poor first repertoire choice." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "1...h5", "moves": "1. h3 h5", "how": "A joke reply that leads to odd positions." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow and non-forcing, neither especially solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Loses a tempo but is not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "A flank move leaving the centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players hardly use it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple moves but not a sound repertoire foundation." },
+    "plans": { "value": [], "reason": "No characteristic plan." }
+  }
+}

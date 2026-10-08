@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-horwitz-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Horwitz Attack",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. b3",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White skips the usual 2.d4 and prepares a queenside bishop fianchetto with b3 and Bb2, aiming for a Larsen-style set-up. After 2...d5 3.Bb2 Black can play ...Nf6 or ...dxe4 or ...c5, and White tries to use the long diagonal against e5/g7. It is an uncommon way to avoid main-line French theory.",
+  "white_ideas": [
+    { "idea": "Bb2, Nf3 and e5 or exd5 with long-diagonal pressure." },
+    { "idea": "Delay d4 and see how Black sets up." }
+  ],
+  "black_ideas": [
+    { "idea": "...d5 and ...Nf6, then ...c5 to strike the centre." },
+    { "idea": "Take on e4 with ...dxe4 and keep the pawn or hit the b2 bishop with ...Bb4." }
+  ],
+  "typical_structures": [
+    { "structure": "French-type e6/d5 pawns against e4 with a bishop on b2, centre not yet settled." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and slightly offbeat set-up; no forcing main line, though ...dxe4 gambit lines exist." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Not in the main line; 3...dxe4 with Papa-Ticulat ideas is a sideline." },
+    "soundness": { "notes": "Sound but gives Black comfortable equality; not refuted." },
+    "structure": { "notes": "Centre unresolved; e4 against ...d5 and ...c5." },
+    "approach": { "notes": "Strong players seldom use it; chosen to avoid theory." },
+    "level": { "reason": "neither", "notes": "Few forced lines and clear plans." }
+  },
+  "plan_phrases": ["Fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Papa-Ticulat Gambit", "moves": "2...d5 3.Bb2", "how": "Listed in the database as the most played continuation and tied to a gambit try." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Slow flank-style set-up that is neither forcing nor especially solid." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "No material is given in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "No refutation, just a risk-free but toothless sideline." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre undecided in a French-meets-flank-opening set-up." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple plans, little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "Bb2 on the long diagonal is the point of the move." }
+  }
+}

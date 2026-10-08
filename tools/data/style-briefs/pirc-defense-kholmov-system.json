@@ -1,0 +1,95 @@
+{
+  "slug": "pirc-defense-kholmov-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Kholmov System",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Bc4",
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/2BPP3/2N5/PPP2PPP/R1BQK1NR b KQkq - 1 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to c4 and follows with Qe2, Bb3, Nf3 and Bg5 or h3, a quiet set-up that avoids the sharp Austrian and 150 Attacks. Black plays 4...Bg7 5.Qe2 O-O 6.Bb3 and aims for ...c6, ...Nbd7 and ...e5 or ...b5. The game stays manoeuvring with White's space against Black's flexible breaks.",
+  "white_ideas": [
+    { "idea": "Qe2, Bb3 and Nf3, aiming at f7 and keeping the centre solid." },
+    { "idea": "Prepare e5 or a slow kingside expansion with Bg5 and h3." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...e5 or ...c5 once developed, using ...Nc6 or ...c6." },
+    { "idea": "Keep the king safe behind the fianchetto and counter on the queenside." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against a fianchettoed Black king and ...c6/...d6 pawns." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet developing system, not a forcing attack; Black has easy ...e5 and ...c5 breaks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre in tension, with ...e5 or ...c5 undecided."
+    },
+    "approach": {
+      "notes": "A respectable side-line within the Pirc."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory; plans and timing of breaks matter."
+    }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "fianchetto"],
+  "sublines_that_differ": [
+    {
+      "name": "4...Nc6 or 4...c6",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Bc4 c6",
+      "how": "Less common set-ups for Black that avoid the main ...Bg7 lines."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "A quieter White system, but Black's counterplay keeps it from being solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Healthy set-ups for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre has not been decided by ...e5 or ...c5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A normal Pirc sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear without long forcing lines."
+    },
+    "plans": {
+      "value": ["space_advantage", "hypermodern_centre", "fianchetto"],
+      "reason": "White holds the centre, Black counters from a fianchetto."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "blackmar-diemer-gambit-von-popiel-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: von Popiel Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. Bg5",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/6B1/3Pp3/2N5/PPP2PPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the knight with 4.Bg5 instead of 4.f3, offering the e4 pawn in a more flexible way. Black can keep the pawn with 4...Bf5 or 4...Nbd7, or hit the bishop with ...h6, and White continues with Nxe4 or g4 for activity. It is a sideline of the Blackmar-Diemer that avoids the main-line f3 theory but also gives Black clear options.",
+  "white_ideas": [
+    { "idea": "Pressure on f6 and d5, regain the pawn with Nxe4 or Bxf6 and Nxe4 for activity." },
+    { "idea": "Use development and open lines to attack, with g4 or Qe2 ideas against Black's bishop." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the pawn with ...Bf5 or ...Nbd7 and consolidate." },
+    { "idea": "...c6 and ...Qd5 to challenge the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with White d4 against Black pawn on e4 captured; pieces active and files open." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open attacking play with traps, though Black can simplify." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can hold the e4 pawn; White's compensation is activity." },
+    "soundness": { "notes": "Dubious like the BDG as a whole; White has not been shown to have enough compensation." },
+    "structure": { "notes": "Open lines and files after exchanges on e4." },
+    "approach": { "notes": "Rare at strong level; surprise-based." },
+    "level": { "reason": "memory", "notes": "Traps and lines to remember; dubious, so not a first repertoire." }
+  },
+  "plan_phrases": ["Lead in development"],
+  "sublines_that_differ": [
+    { "name": "Zilbermints Variation", "moves": "4...Bf5 5.Bxf6 exf6 6.g4 Bg6 7.Qe2 Bb4 8.Qb5+", "how": "A sharp forcing tactical line." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Open gambit play with traps and forcing lines." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White offers e4 which Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "Compensation judged insufficient against accurate play." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open lines and diagonals for pieces." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Rare among strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Dubious, so never beginner; a trap-heavy line." },
+    "plans": { "value": ["lead_in_development"], "reason": "Pawn given for development and activity." }
+  }
+}

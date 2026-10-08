@@ -1,0 +1,49 @@
+{
+  "slug": "queens-pawn-game-levitsky-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Levitsky Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. Bg5",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p2B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the queen's bishop to g5 at once, a Trompowsky-style pin idea against 1...d5, before playing e3 and Nf3. Black often asks the bishop a question with ...h6 and ...c6 or plays ...f6 or ...Nf6 and ...Ne4. White's aim is a comfortable development with the bishop outside the pawn chain and a flexible pawn centre; there is little theory.",
+  "white_ideas": [
+    { "idea": "Bg5 then e3, Nf3, Bd3 and c3, a Torre or Colle-like set-up" },
+    { "idea": "Pin or harass Black's kingside, pushing Bh4 or Bxf6 when useful" },
+    { "idea": "Keep the pawn centre flexible with a later c4 or e4" }
+  ],
+  "black_ideas": [
+    { "idea": "...h6 and ...c6 to put the question and then play ...Bf5 and ...e6" },
+    { "idea": "...f6 or ...Nf6-e4 to challenge the bishop and take space" },
+    { "idea": "Build a normal Slav or QGD set-up without weaknesses" }
+  ],
+  "typical_structures": [
+    { "structure": "d4/e3 against d5/e6 or c6, flexible centre like a Torre or London" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development with no forcing play; 2...Nf6 or ...f6 can bring some sharpness but main line is a calm game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main lines." },
+    "soundness": { "notes": "Sound, a legitimate if unambitious White try." },
+    "structure": { "notes": "Pawn centre in tension, nothing committed, like a Torre or London." },
+    "approach": { "notes": "Less common than 2.Bf4, used as a side line by some strong players but not a main choice." },
+    "level": { "reason": "neither", "notes": "Few moves to memorise but understanding of the Bg5 placement is helpful." }
+  },
+  "plan_phrases": ["early bishop development", "Torre-like set-up"],
+  "sublines_that_differ": [
+    { "name": "Hodgson Attack 2...f6", "moves": "2...f6 3.Bh4", "how": "Black weakens the kingside but takes space; unusual, tricky play." },
+    { "name": "Hodgson Attack 2...h6", "moves": "2...h6 3.Bh4 c6 4.e3", "how": "Main branch, quiet Slav-like game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet development without forcing tactics or especially solid walls." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Equal play without refutations." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Centre left in tension, like a Torre or London." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but played by strong players, so not offbeat." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple development with some subtlety in bishop placement." },
+    "plans": { "value": [], "reason": "No clear plan from the closed list fits a position this undeveloped." }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "latvian-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. exf5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pP2/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White has taken the f5 pawn and Black plays 3...e4, kicking the knight and hoping for fast development and attacking chances against an exposed White king. White's best reply is 4.Ne5 (or 4.Qe2) and a calm extra pawn, after which Black has to find concrete counterplay at once. The game is tactical and trappy, but a prepared White simply ends up a pawn up with a safe position.",
+  "white_ideas": [
+    { "idea": "Hold the extra pawn: Ne5 or Qe2, then d4 and Nc4 or Nc3 to consolidate." },
+    { "idea": "Develop quickly and trade queens or neutralise ...Qh4+ and ...Qf6 pressure." }
+  ],
+  "black_ideas": [
+    { "idea": "Gain time with ...e4 and ...Qf6 or ...Nf6, aiming for ...d5 and a lead in development." },
+    { "idea": "Attack the king along the e- and f-files and the h4-d8 diagonal with queen and knights." }
+  ],
+  "typical_structures": [
+    { "structure": "Black's e-pawn pushed to e4 and then traded off, with White a pawn up and Black's pieces more active." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides are in forcing tactics from move 3 on. Black's initiative against a king that has not castled makes one slip decisive." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black has lost the f-pawn and does not get it back by force; White keeps it with 4.Ne5 or 4.Qe2."
+    },
+    "soundness": { "notes": "Considered unsound by theory; Black is a pawn down and the compensation is only practical." },
+    "structure": { "notes": "Open lines on the e- and f-files and the diagonal to the white king; the centre opens up quickly." },
+    "approach": { "notes": "Strong players almost never choose it; it is played for surprise and traps." },
+    "level": {
+      "reason": "memory",
+      "notes": "A trappy, dubious line is not a first repertoire pick. Knowing the refutations for White is the main task, though White's plans are simple."
+    }
+  },
+  "plan_phrases": ["lead in development", "attack on the white king", "extra pawn consolidation"],
+  "sublines_that_differ": [
+    { "name": "3...Nf6 and other non-3...e4 moves", "moves": "1. e4 e5 2. Nf3 f5 3. exf5 Nf6", "how": "Black develops first and plays ...e4 later; slower and more normal, not the main line." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Black plays for a quick attack with White's king exposed and tactics from the start." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black has lost the f-pawn on purpose and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "Strong players consider the gambit unsound and Black scores through traps." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Pawns come off the e- and f-files and play runs on open lines to the king." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "A rare surprise weapon that strong players hardly ever use." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.7, "reason": "A dubious line is never beginner, and it is not demanding enough to be advanced." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "Black rushes pieces out and aims at the white king." }
+  }
+}

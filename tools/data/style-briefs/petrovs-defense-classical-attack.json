@@ -1,0 +1,46 @@
+{
+  "slug": "petrovs-defense-classical-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Classical Attack",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4",
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/3Pn3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Both sides have taken an e-pawn and the position is symmetrical. Black plays 5...d5 and the game runs 6.Bd3 with ...Be7, ...Bd6 or ...Nc6, both sides castle and trade pieces. White tries to exploit a small lead in development and the open e-file; Black aims for easy equality. The Marshall 6...Bd6 and the 6...Nc6 line allow more bite, but most games are quiet and often drawn.",
+  "white_ideas": [
+    { "idea": "Develop with Bd3, O-O, c4 and Nc3 to use the e-file and a small initiative." },
+    { "idea": "Trade pieces and aim for a slightly better endgame or pressure on e-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Neutralise with ...d5, ...Be7, ...O-O and ...Nc6, simplifying into equality." },
+    { "idea": "The Marshall 6...Bd6 or ...Nc6 lines give counterplay on the e-file and against d4." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawn structure with d4/d5 and an open e-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Steady and hard to lose for Black; quiet piece trades with few tactics in the main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A top-level main-line defence." },
+    "structure": { "notes": "Symmetrical exchange-type position with the e-file open; the Petrov is the anchor for Semi-open." },
+    "approach": { "notes": "A mainstream defence; not a set-up against everything." },
+    "level": { "reason": "understanding", "notes": "Black learns a short main line; plans are clear but White's c4 and Bf4 lines need care." }
+  },
+  "plan_phrases": ["symmetrical structure", "equalise by trades"],
+  "sublines_that_differ": [
+    { "name": "Closed Variation 5...Nf6", "moves": "5. d4 Nf6", "how": "Black retreats and keeps a different, less common pawn structure." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Symmetrical, hard to break down, few quick losses." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is sacrificed." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main-line defence." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "Symmetrical structure with one open file, as for the Petrov generally." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A normal top-level defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear plans, moderate theory." },
+    "plans": { "value": ["symmetrical_structure"], "reason": "Both sides have mirror pawns and fight for small edges." }
+  }
+}

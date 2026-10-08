@@ -1,0 +1,44 @@
+{
+  "slug": "queens-pawn-game-anglo-slav-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Anglo-Slav Opening",
+    "eco": "A40",
+    "moves": "1. d4 c6 2. c4 d6",
+    "fen": "rnbqkbnr/pp2pppp/2pp4/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black sets up a c6 and d6 pawn pair against the c4-d4 centre, a Philidor- or Old-Indian-style set-up, and plans ...e5 or ...Nf6, ...Nbd7 and ...e5. White takes space with Nc3, e4 and Nf3 and plays against the passive Black bishop on c8. I am not sure of the main continuations, so this is reasoned from the moves.",
+  "white_ideas": [
+    { "idea": "Take the full centre with Nc3, e4 and Nf3, keeping a space advantage." },
+    { "idea": "Watch for ...e5 and meet it with dxe5 or d5, aiming at the c8-bishop." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...Nbd7 and ...e5 with a compact, Old Indian-like structure." },
+    { "idea": "Possibly transpose to a Slav or Old Indian structure after ...Nf6 and ...Nbd7." }
+  ],
+  "typical_structures": [
+    { "structure": "Black's c6, d6 and e5 pawns against White's c4-d4-e4 centre, an Old Indian or Philidor type." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's compact pawn set-up is hard to break down and play is quiet, though passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material given." },
+    "soundness": { "notes": "Sound but slightly passive; White gets more space for free." },
+    "structure": { "notes": "The centre is undecided until Black commits to ...e5 or ...Nf6; flexible." },
+    "approach": { "notes": "A rare move order that strong players seldom pick; a surprise to dodge main lines." },
+    "level": { "reason": "understanding", "notes": "Plans are simple, but there is little theory and it demands handling a cramped game." }
+  },
+  "plan_phrases": ["space advantage", "central pawn majority", "Old Indian set-up"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Black has a compact pawn set-up and White has no early forcing play." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A passive but sound set-up." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is not yet decided after 2...d6." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rare move order that strong players seldom choose." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Simple plans but a cramped game to handle." },
+    "plans": { "value": ["space_advantage"], "reason": "White's main benefit is space from the c4-d4-e4 centre." }
+  }
+}

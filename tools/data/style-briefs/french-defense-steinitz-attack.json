@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-steinitz-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Steinitz Attack",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. e5",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/4P3/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pushes 2.e5 immediately, before d4, which is rare and usually transposes to the Advance French after ...d5 3.d4 c5. Black hits the e5 and d4 points with ...d5, ...c5 and ...Nc6, and White tries to keep the space. Sometimes Black deviates with 2...b6 or 2...d6 ideas, but the main line is 2...d5 3.d4 c5.",
+  "white_ideas": [
+    { "idea": "Keep the e5 spearhead, c3, Nf3, Be2 and a kingside space edge." },
+    { "idea": "Meet ...c5 with dxc5 or c3 and hold the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine d4 and e5 with ...c5, ...Nc6, ...Qb6." },
+    { "idea": "Fix the bad light-squared bishop problem via ...Bd7 or ...b6/...Ba6." }
+  ],
+  "typical_structures": [
+    { "structure": "Advance French: White chain d4-e5, Black chain d5-e6 with ...c5 counterplay." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Transposes to the Advance French, a locked-centre manoeuvring game; Black's structure is sturdy." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Nothing is sacrificed in the main line." },
+    "soundness": { "notes": "Sound; just an unusual move order for the Advance." },
+    "structure": { "notes": "Locked pawn chain d4-e5 versus d5-e6." },
+    "approach": { "notes": "A move-order choice within the French; less common but respectable." },
+    "level": { "reason": "understanding", "notes": "Plans are well known; pawn-structure understanding matters more than memory." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop"],
+  "sublines_that_differ": [
+    { "name": "2...b6 or 2...d6", "moves": "2.e5 b6", "how": "Less usual Black tries that avoid the French structure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Advance French lines are manoeuvring with some tactics, neither especially safe nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.92, "reason": "Reaches a standard Advance French." },
+    "structure": { "value": "closed", "confidence": 0.8, "reason": "The d4-e5 and d5-e6 chains lock the centre." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "An unusual move order but not an offbeat opening." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Advance French plans are learnable without long theory." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White's space against Black's cramped light bishop." }
+  }
+}

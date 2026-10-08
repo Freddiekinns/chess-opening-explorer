@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-two-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Two Knights Variation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. Nf3 d5 3. Nc3",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 1 3"
+  },
+  "parent": "french-defense-knight-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "A move-order choice in the French: with 2.Nf3 White delays d4 and after 3.Nc3 usually transposes to the Classical or Winawer after ...Nf6 or ...Bb4 and d4. Little independent theory; Black can also play ...dxe4 or ...Nf6 4.e5 Nfd7 5.d4. The structure depends on the transposition.",
+  "white_ideas": [
+    { "idea": "Transpose to main French lines with d4, or use the extra option of avoiding the Winawer move order." },
+    { "idea": "Space with e5 and a kingside initiative." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...c5 and ...Nc6 once d4 is played." },
+    { "idea": "Free the light bishop through ...b6 and ...Ba6 or ...Bd7." }
+  ],
+  "typical_structures": [
+    { "structure": "Classical French with locked d4-e5 chain after 3...Nf6 4.e5 Nfd7 5.d4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "French positions are sound and strategic; the structure is solid for Black with a cramped bishop." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Sound; a harmless move order." },
+    "structure": { "notes": "Transposes to a locked French centre or a Winawer, so I call it flexible." },
+    "approach": { "notes": "Standard French move order that keeps options; not a system." },
+    "level": { "reason": "understanding", "notes": "French plans are known; minimal independent theory." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop"],
+  "sublines_that_differ": [
+    { "name": "3...Bb4", "moves": "3...Bb4 4.e5", "how": "Winawer-type play with doubled c-pawns." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Transposes to French lines that are strategic without being especially safe or forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Plain French development." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre has not been decided yet and could become locked or open." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A move-order choice that strong players use occasionally." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are known and the line is sound." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "French centre with a cramped light bishop." }
+  }
+}

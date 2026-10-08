@@ -1,0 +1,44 @@
+{
+  "slug": "kings-indian-attack-french-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: French Variation",
+    "eco": "A08",
+    "moves": "1. Nf3 d5 2. g3 c5 3. Bg2 Nc6",
+    "fen": "r1bqkbnr/pp2pppp/2n5/2pp4/8/5NP1/PPPPPPBP/RNBQK2R w KQkq - 2 4"
+  },
+  "parent": "kings-indian-attack-sicilian-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the King's Indian Attack set-up of Nf3, g3, Bg2, O-O, d3, Nbd2 and e4, while Black meets it with a Sicilian-style ...c5, ...Nc6 and ...e6 and later ...Nf6, ...Be7 and ...O-O. White aims at e4 and a kingside attack with Re1, e5 and Nf1-g3 or h4, and Black hits back on the queenside and in the centre. The game is manoeuvring with a clear plan for each side.",
+  "white_ideas": [
+    { "idea": "Fianchetto, castle, d3, Nbd2 and e4, then e5 and a kingside attack." },
+    { "idea": "Play for h4-h5 and Ng5 or Nf1-e3 pressure on the king." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...e6, ...Nf6, ...Be7 and ...O-O, then queenside play with ...b5 and ...Rb8." },
+    { "idea": "Strike in the centre with ...d4 or ...dxe4 when White commits." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d3, e4, g3 against Black's ...c5, ...d5, ...e6; reversed-Sicilian/French feel." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Plenty of room for slow play with clear plans; moderate risk on both sides." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not locked; tension on d5/e4, flank openings are Flexible." },
+    "approach": { "notes": "KIA is a system White plays against almost anything." },
+    "level": { "reason": "understanding", "notes": "Clear plans and little to memorise; moderate subtlety against ...c5." }
+  },
+  "plan_phrases": ["kingside attack", "fianchetto", "e4 central break"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Manoeuvring game with chances for both sides, neither forcing nor especially solid." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Sound." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Flank-opening centre, tension on e4 and d5." },
+    "approach": { "value": "system", "confidence": 0.85, "reason": "KIA is the anchor System." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Clear plans but real middlegame subtlety." },
+    "plans": { "value": ["kingside_attack", "fianchetto"], "reason": "Typical KIA plan is e4 and a kingside attack with the g2 bishop." }
+  }
+}

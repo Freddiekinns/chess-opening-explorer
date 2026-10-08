@@ -1,0 +1,47 @@
+{
+  "slug": "nimzo-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense",
+    "eco": "E20",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black pins the c3 knight to fight for e4 and is ready to give up the bishop pair to double White's pawns. White chooses between 4.e3 (Rubinstein), 4.Qc2, 4.Bd2 and 4.f3, usually keeping a space edge and the two bishops. Black fights for the e4 and d5 squares and often plays ...d5 or ...c5; the game is positional, with a rich pawn-structure battle.",
+  "white_ideas": [
+    { "idea": "Build the centre with e3, Bd3, Nf3 and keep the bishop pair." },
+    { "idea": "Qc2 or a3 to force the bishop decision and avoid doubled pawns." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin Nc3, control e4 and trade on c3 to double White's pawns." },
+    { "idea": "Strike the centre with ...c5 or ...d5 once developed." }
+  ],
+  "typical_structures": [
+    { "structure": "Doubled c-pawns after ...Bxc3+ bxc3 against Black's blockade of e4." },
+    { "structure": "Hanging pawns or isolated queen's pawn after cxd5/dxc5 lines." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic, sound for Black; tactical lines (Qc2, Sämisch) are not typical." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound; a top-level main defence." },
+    "structure": { "notes": "Centre in tension, no lock; flexible." },
+    "approach": { "notes": "Standard main defence." },
+    "level": { "reason": "understanding", "notes": "Needs good pawn-structure understanding; not Advanced across the board." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "knight outpost on e4"],
+  "sublines_that_differ": [
+    { "name": "Sämisch", "moves": "4. a3 Bxc3+ 5. bxc3", "how": "White gets the bishop pair at the cost of doubled pawns." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Strategic and sound without a forcing race." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "A main-line defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre stays in tension and pawn shapes vary." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Plans and structure matter, with moderate theory." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "The theme is doubled pawns against the bishop pair." }
+  }
+}

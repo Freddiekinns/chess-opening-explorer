@@ -1,0 +1,50 @@
+{
+  "slug": "catalan-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Catalan Opening",
+    "eco": "E00",
+    "moves": "1. d4 Nf6 2. c4 e6 3. g3",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes the king's bishop to hit the long diagonal, putting pressure on d5, c4 and b7 and keeping a slight positional edge. After 3...d5 4.Nf3 Black chooses the Open Catalan (...dxc4) or Closed Catalan (...Be7, ...O-O, ...c6). White presses with queen's knight, Qc2 and rooks on the c-file and queenside while Black aims to equalise by playing ...c5 or ...b5. The game is a slow positional squeeze.",
+  "white_ideas": [
+    { "idea": "Bg2 long-diagonal pressure on d5 and b7, with Qc2 and Nbd2 or Nc3" },
+    { "idea": "Recover c4 in the Open Catalan and keep a small pull on the queenside" },
+    { "idea": "Wait for ...c6 or ...b6 to be answered with a central break" }
+  ],
+  "black_ideas": [
+    { "idea": "Closed Catalan: ...Be7, ...O-O, ...c6 and ...Nbd7, solid and hard to break" },
+    { "idea": "Open Catalan: take c4, hold with ...a6 and ...b5 or return the pawn" },
+    { "idea": "Break with ...c5 or ...e5 to release the pressure" }
+  ],
+  "typical_structures": [
+    { "structure": "White fianchetto against Black solid d5/e6/c6 chain (Closed Catalan)" },
+    { "structure": "Open Catalan with c4 pawn taken, White regaining it with the bishop pair pressure" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional pressure with little immediate danger for either side; steady, hard for Black to break the long diagonal pressure but also hard for White to win." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black takes c4 but White wins it back, so not a gambit." },
+    "soundness": { "notes": "Sound; played at the highest level." },
+    "structure": { "notes": "Tension in the centre, c4/d4 against d5, so Flexible." },
+    "approach": { "notes": "A mainstream White opening and a standard choice, not a pure system." },
+    "level": { "reason": "understanding", "notes": "Plans are subtle with long diagonal squeezes; theory manageable, but understanding matters." }
+  },
+  "plan_phrases": ["long diagonal", "fianchetto", "queenside pressure"],
+  "sublines_that_differ": [
+    { "name": "Open Catalan", "moves": "4.Nf3 dxc4", "how": "Black takes the pawn and White regains it, giving a more open and concrete game." },
+    { "name": "Catalan with Bb4+", "moves": "4.Nf3 Bb4+", "how": "Black checks first to trade a bishop and ease the pressure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow positional pressure, neither sharp nor especially hard to crack." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "c4 is regained at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A top-level main line." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Centre in tension, fianchetto flank play." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A mainstream choice, although the set-up works against many defences." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "The squeeze plans take understanding more than memory." },
+    "plans": { "value": ["fianchetto", "queenside_expansion"], "reason": "A long-diagonal bishop and pressure on the queenside." }
+  }
+}

@@ -4,6 +4,13 @@
 
 // Enhanced semantic mappings for natural language search
 const SEMANTIC_MAPPINGS = {
+  // The taxonomy's own words. First, so "gambit openings" routes to gambit
+  // rather than to aggressive, whose list also holds the word.
+  'gambit': ['gambit', 'sacrifice', 'countergambit'],
+  'dubious': ['dubious', 'unsound', 'trappy', 'tricky'],
+  'offbeat': ['offbeat', 'surprise', 'rare'],
+  'system': ['system', 'set-up', 'setup', 'universal'],
+
   // Style-based intent mappings
   'aggressive': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice', 'risky', 'dynamic'],
   'attacking': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice', 'kingside attack'],
@@ -40,6 +47,40 @@ const SEMANTIC_MAPPINGS = {
   'white openings': ['white']
 };
 
+// What a style word means on the style tags (docs/style-taxonomy.md, "Search
+// words"): an opening matches when any listed axis holds one of the values.
+// This is the whole of style matching. It used to be substrings of the old LLM
+// tags, where "defensive" passed 99% of openings because its list held
+// "counterattack". A word missing here matches nothing.
+const SHARP = { character: ['sharp'] };
+const GAMBIT = { gambit: ['white', 'black'] };
+const STYLE_AXES = {
+  solid: { character: ['solid'] },
+  safe: { character: ['solid'] },
+  defensive: { character: ['solid'] },
+  sharp: SHARP,
+  tactical: SHARP,
+  dynamic: SHARP,
+  risky: SHARP,
+  // "Aggressive" depends on whose side you are on, so it takes gambits too.
+  aggressive: { ...SHARP, ...GAMBIT },
+  attacking: { ...SHARP, ...GAMBIT },
+  positional: { character: ['solid', 'balanced'] },
+  quiet: { character: ['solid', 'balanced'] },
+  classical: { character: ['solid', 'balanced'] },
+  gambit: GAMBIT,
+  dubious: { soundness: ['dubious'] },
+  tricky: { soundness: ['dubious'] },
+  system: { approach: ['system'] },
+  offbeat: { approach: ['offbeat'] },
+  hypermodern: { plans: ['hypermodern_centre', 'fianchetto'] },
+  beginner: { level: ['beginner'] },
+  simple: { level: ['beginner'] },
+  intermediate: { level: ['intermediate'] },
+  advanced: { level: ['advanced'] },
+  complex: { level: ['advanced'] },
+};
+
 // Legacy category mappings (kept for backward compatibility)
 const STYLE_CATEGORIES = {
   'attacking': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice'],
@@ -55,7 +96,7 @@ const STYLE_CATEGORIES = {
 // Common query patterns and their intents
 const QUERY_PATTERNS = {
   // Pattern: "X openings" or "X for Y"
-  STYLE_OPENINGS: /^(aggressive|attacking|solid|defensive|positional|tactical|dynamic|classical|hypermodern|beginner|advanced|simple|complex)\s+(openings?|for\s+\w+|options?)$/i,
+  STYLE_OPENINGS: /^(aggressive|attacking|solid|defensive|positional|tactical|dynamic|classical|hypermodern|beginner|advanced|simple|complex|sharp|quiet|safe|risky|gambit|dubious|tricky|system|offbeat)\s+(openings?|for\s+\w+|options?)$/i,
   
   // Pattern: "response to X" or "defense against X"
   RESPONSE_TO: /^(response|defense|defence|counter)\s+(to|against)\s+(.+)$/i,
@@ -87,6 +128,7 @@ const FUSE_OPTIONS = {
   ignoreLocation: true,
   keys: [
     { name: 'name', weight: 0.7 },
+    // The shown style words and plan labels, not the old LLM tags.
     { name: 'style_tags', weight: 0.3 }
   ]
 };
@@ -108,6 +150,7 @@ const CHESS_MOVE_PATTERNS = [
 
 module.exports = {
   SEMANTIC_MAPPINGS,
+  STYLE_AXES,
   STYLE_CATEGORIES,
   QUERY_PATTERNS,
   FUSE_OPTIONS,

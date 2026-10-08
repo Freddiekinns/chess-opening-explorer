@@ -1,0 +1,376 @@
+{
+  "disputes": [
+    {
+      "slug": "alekhine-defense-scandinavian-variation",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.45,
+        "reason": "After 3.exd5 Nxd5 the e- and d-pawns are traded for a Scandinavian-like half-open d-file, though 3.e5 lines are French-like."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "flexible": 0.13,
+          "semi_open": 0.37,
+          "open": 0.5,
+          "closed": 0
+        }
+      },
+      "kind": "dispute"
+    },
+    {
+      "slug": "petrovs-defense",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.45,
+        "reason": "Both e-pawns are traded for a symmetrical d4/d5 centre with an open e-file, like the French Exchange; it could also be read as open."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "closed": 0,
+          "open": 0.57,
+          "flexible": 0.05,
+          "semi_open": 0.38
+        }
+      },
+      "kind": "dispute"
+    },
+    {
+      "slug": "queens-gambit-declined-exchange-variation",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.9,
+        "reason": "The Semi-open anchor: Carlsbad structure with a half-open c-file."
+      },
+      "jev": {
+        "choice": "closed",
+        "probabilities": {
+          "flexible": 0.15,
+          "closed": 0.61,
+          "semi_open": 0.24,
+          "open": 0
+        }
+      },
+      "kind": "dispute"
+    },
+    {
+      "slug": "scandinavian-defense",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.8,
+        "reason": "White's e-pawn and Black's d-pawn are traded early, leaving a half-open d-file."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.51,
+          "semi_open": 0.49,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "kind": "dispute"
+    },
+    {
+      "slug": "sicilian-defense-smith-morra-gambit",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.5,
+        "reason": "Half-open c- and d-files after the pawn trades; the declined Alapin lines are also semi-open."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "closed": 0,
+          "semi_open": 0.04,
+          "flexible": 0.01,
+          "open": 0.95
+        }
+      },
+      "kind": "dispute"
+    },
+    {
+      "slug": "sicilian-defense-smith-morra-gambit-accepted",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.55,
+        "reason": "White's c- and d-pawns are gone with half-open c- and d-files, a Scheveningen-like set-up, though some would call it open."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "closed": 0,
+          "semi_open": 0.25,
+          "open": 0.75,
+          "flexible": 0
+        }
+      },
+      "kind": "dispute"
+    }
+  ],
+  "audit": [
+    {
+      "slug": "slav-defense-exchange-variation",
+      "axis": "structure",
+      "a": {
+        "value": "semi_open",
+        "confidence": 0.9,
+        "reason": "Semi-open anchor: symmetrical d4/d5 with an open c-file."
+      },
+      "jev": {
+        "choice": "flexible",
+        "probabilities": {
+          "semi_open": 0.17,
+          "closed": 0.02,
+          "flexible": 0.81,
+          "open": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "modern-defense",
+      "axis": "character",
+      "a": {
+        "value": "balanced",
+        "confidence": 0.5,
+        "reason": "Sources split between solid and balanced and a risky, sharp White attack, so plan-based play with counterstrikes."
+      },
+      "jev": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.79,
+          "balanced": 0.21,
+          "sharp": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "italian-game-two-knights-defense",
+      "axis": "structure",
+      "a": {
+        "value": "flexible",
+        "confidence": 0.4,
+        "reason": "4.d3 is a tense Pianissimo-style centre while 4.Ng5 and 4.d4 lines open it, so the mix is close."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "semi_open": 0.07,
+          "flexible": 0.29,
+          "open": 0.64,
+          "closed": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "english-opening",
+      "axis": "approach",
+      "a": {
+        "value": "standard",
+        "confidence": 0.5,
+        "reason": "A first-rank elite choice, though Wikipedia describes it as primarily a system opening."
+      },
+      "jev": {
+        "choice": "system",
+        "probabilities": {
+          "system": 1,
+          "offbeat": 0,
+          "standard": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "sicilian-defense-closed",
+      "axis": "character",
+      "a": {
+        "value": "balanced",
+        "confidence": 0.5,
+        "reason": "A slow positional build-up that can turn into a wing race with f4-f5 against ...b5."
+      },
+      "jev": {
+        "choice": "solid",
+        "probabilities": {
+          "sharp": 0,
+          "solid": 0.66,
+          "balanced": 0.34
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "sicilian-defense-closed",
+      "axis": "approach",
+      "a": {
+        "value": "standard",
+        "confidence": 0.55,
+        "reason": "A plan-based White set-up against 1...c5 only and played seriously by champions, so not offbeat."
+      },
+      "jev": {
+        "choice": "system",
+        "probabilities": {
+          "standard": 0.02,
+          "system": 0.98,
+          "offbeat": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "queens-pawn-game-chigorin-variation",
+      "axis": "structure",
+      "a": {
+        "value": "flexible",
+        "confidence": 0.6,
+        "reason": "The centre stays tense with no early exchanges; Richter-Veresov and Jobava lines open it later."
+      },
+      "jev": {
+        "choice": "closed",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "closed": 0.67,
+          "flexible": 0.33
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "sicilian-defense-old-sicilian",
+      "axis": "character",
+      "a": {
+        "value": "balanced",
+        "confidence": 0.45,
+        "reason": "The positions filed under this exact root are the quieter third moves, though the 2...Nc6 move order leads mainly to sharp Sicilians."
+      },
+      "jev": {
+        "choice": "sharp",
+        "probabilities": {
+          "sharp": 0.93,
+          "solid": 0,
+          "balanced": 0.07
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "vienna-game",
+      "axis": "structure",
+      "a": {
+        "value": "flexible",
+        "confidence": 0.55,
+        "reason": "An e4/e5 open-game family held in tension, with the Vienna Gambit as the opening branch."
+      },
+      "jev": {
+        "choice": "open",
+        "probabilities": {
+          "flexible": 0.23,
+          "closed": 0,
+          "semi_open": 0.06,
+          "open": 0.71
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "sicilian-defense-french-variation",
+      "axis": "level",
+      "a": {
+        "value": "intermediate",
+        "confidence": 0.4,
+        "reason": "Move-order flexibility is friendly but the Open Sicilian after 3.d4 carries deep theory."
+      },
+      "jev": {
+        "choice": "advanced",
+        "probabilities": {
+          "intermediate": 0.07,
+          "advanced": 0.93,
+          "beginner": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "french-defense-knight-variation",
+      "axis": "approach",
+      "a": {
+        "value": "standard",
+        "confidence": 0.45,
+        "reason": "A secondary option, though the KIA branch is system-like."
+      },
+      "jev": {
+        "choice": "system",
+        "probabilities": {
+          "offbeat": 0,
+          "system": 0.9,
+          "standard": 0.1
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "vant-kruijs-opening",
+      "axis": "level",
+      "a": {
+        "value": "intermediate",
+        "confidence": 0.4,
+        "reason": "Little to memorise but the plans come from the target openings it transposes into."
+      },
+      "jev": {
+        "choice": "beginner",
+        "probabilities": {
+          "advanced": 0.01,
+          "beginner": 0.63,
+          "intermediate": 0.36
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "queens-pawn-game-modern-defense",
+      "axis": "character",
+      "a": {
+        "value": "balanced",
+        "confidence": 0.5,
+        "reason": "Sources disagree between sound and balanced and very sharp, while c4 transpositions are slightly tamer."
+      },
+      "jev": {
+        "choice": "sharp",
+        "probabilities": {
+          "balanced": 0.3,
+          "sharp": 0.7,
+          "solid": 0
+        }
+      },
+      "kind": "audit"
+    },
+    {
+      "slug": "slav-defense",
+      "axis": "character",
+      "a": {
+        "value": "solid",
+        "confidence": 0.5,
+        "reason": "Wikipedia says it balances solidity with dynamic counterplay and sources treat it as solid, though the Semi-Slav is much sharper."
+      },
+      "jev": {
+        "choice": "balanced",
+        "probabilities": {
+          "sharp": 0,
+          "solid": 0.5,
+          "balanced": 0.5
+        }
+      },
+      "kind": "audit"
+    }
+  ]
+}

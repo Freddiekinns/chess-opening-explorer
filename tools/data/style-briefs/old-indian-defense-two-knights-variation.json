@@ -1,0 +1,95 @@
+{
+  "slug": "old-indian-defense-two-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Old Indian Defense: Two Knights Variation",
+    "eco": "A54",
+    "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 e5 4. Nf3",
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "old-indian-defense-ukrainian-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black follows 4...Nbd7 with ...Be7, ...O-O and ...c6, a Philidor-like set-up that holds e5 and is hard to break. White usually plays 5.e4 and Be2, castles and tries to find play with d5 or dxe5 and a small space edge. White can also fianchetto or play 5.Bg5. The game is slow with few tactics and Black the more passive side.",
+  "white_ideas": [
+    { "idea": "Play e4, Be2 and O-O, using the space edge." },
+    { "idea": "Release the tension with dxe5 or d5 and play on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Build the ...Nbd7, ...Be7, ...c6 set-up and hold e5." },
+    { "idea": "Break with ...exd4 or ...d5 at the right time." }
+  ],
+  "typical_structures": [
+    { "structure": "Black d6/e5 chain, Philidor-like, against White's c4/d4/e4 centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A compact set-up that is hard to break but cramped; few tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "The centre stays in tension until White plays d5 or dxe5."
+    },
+    "approach": {
+      "notes": "A recognised, less common Black system used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans, little to memorise."
+    }
+  },
+  "plan_phrases": ["space advantage", "central pawn majority"],
+  "sublines_that_differ": [
+    {
+      "name": "4...exd4",
+      "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 e5 4. Nf3 exd4",
+      "how": "Black gives up the e5 pawn tension and plays against an open d-file."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Black's compact d6/e5 set-up is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension until d5 or dxe5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "Less common than the King's Indian but played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Clear plans, modest theory."
+    },
+    "plans": {
+      "value": ["space_advantage", "central_pawn_majority"],
+      "reason": "White's centre gives space and Black holds with a Philidor-like structure."
+    }
+  }
+}

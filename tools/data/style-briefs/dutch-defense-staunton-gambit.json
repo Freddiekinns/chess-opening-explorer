@@ -1,0 +1,95 @@
+{
+  "slug": "dutch-defense-staunton-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Staunton Gambit",
+    "eco": "A82",
+    "moves": "1. d4 f5 2. e4",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn at once: 2...fxe4 3.Nc3 Nf6 4.Bg5. The main line 4...e6 5.Nxe4 Be7 6.Bxf6 Bxf6 7.Nf3 regains the pawn with a space edge and a quicker development, while Black has a weakened kingside and a solid structure. Black can instead hold the pawn with 4...g6 or 4...Nc6 and has to survive the early initiative.",
+  "white_ideas": [
+    { "idea": "Regain e4 and use the lead in development and the e-file." },
+    { "idea": "Trade the f6 knight with Bg5 to weaken Black's king." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn with ...g6 or ...Nc6 and ...e5 breaks." },
+    { "idea": "Trade pieces and play ...d5 to neutralise White's pieces." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn against ...e6/...d5 or ...c6, with an open e-file after Nxe4." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing early tactics around e4, f6 and the g5 bishop where both kings can be hit."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the e4 pawn with 4...g6 or 4...Nc6; in the 4...e6 main line White regains it at once, so the gambit label rests on the options Black has."
+    },
+    "soundness": {
+      "notes": "Theory considers it slightly dubious or equal at best for White, but not refuted."
+    },
+    "structure": {
+      "notes": "The e-file opens after Nxe4 and Black's f-pawn is gone; half-open lines for both."
+    },
+    "approach": {
+      "notes": "A surprise weapon against the Dutch that strong White players seldom use."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Tactical lines to learn plus a king-safety understanding; dubious so never Beginner."
+    }
+  },
+  "plan_phrases": ["lead in development", "regain e4", "pressure on f6/e6"],
+  "sublines_that_differ": [
+    {
+      "name": "Black keeps the pawn",
+      "moves": "4...g6 / 4...Nc6 5.d5",
+      "how": "White is a pawn down for activity; sharper than the 4...e6 main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Early forcing play where both sides take risks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White offers e4 and Black can decline to give it back."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Considered slightly inferior to normal Dutch lines with no full compensation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The e-file opens but the d4 pawn stays fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely chosen by strong players against the Dutch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Tactical but a dubious gambit, so not a beginner choice."
+    },
+    "plans": {
+      "value": ["lead_in_development"],
+      "reason": "White sacrifices the e-pawn for faster piece play."
+    }
+  }
+}

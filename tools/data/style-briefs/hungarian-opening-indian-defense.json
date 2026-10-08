@@ -1,0 +1,44 @@
+{
+  "slug": "hungarian-opening-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Indian Defense",
+    "eco": "A00",
+    "moves": "1. g3 Nf6",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "After 1.g3 Nf6 White continues Bg2 and Nf3 (or c4) and usually plays a King's Indian Attack, Réti or English set-up, while Black develops a king's Indian or Queen's Indian style game. Nothing is forced; it is mostly a move order that transposes.",
+  "white_ideas": [
+    { "idea": "Bg2, Nf3, O-O and d3 or d4 with e4 later" },
+    { "idea": "Transpose into a Catalan, Réti or King's Indian Attack" }
+  ],
+  "black_ideas": [
+    { "idea": "...d5, ...e6 or ...g6 and a King's Indian style set-up" },
+    { "idea": "Seize space with ...d5 and ...e5 and equalise easily" }
+  ],
+  "typical_structures": [
+    { "structure": "Fianchetto pawn shapes, flexible centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow manoeuvring game, rarely forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Fully sound, roughly equal." },
+    "structure": { "notes": "Flank opening: centre not committed." },
+    "approach": { "notes": "g3 and Bg2 can be played against almost anything." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn, plans are clear but not forcing." }
+  },
+  "plan_phrases": ["Fianchetto"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but not especially hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening with the centre undecided." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "The g3/Bg2 set-up can be played against most replies." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Clear plans but vague tension; not obviously beginner." },
+    "plans": { "value": ["fianchetto"], "reason": "The Bg2 diagonal is the point." }
+  }
+}

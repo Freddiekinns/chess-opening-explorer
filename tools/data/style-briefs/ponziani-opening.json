@@ -1,0 +1,47 @@
+{
+  "slug": "ponziani-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White prepares d4 to build a big centre. Black's best reply is 3...d5, hitting e4 at once; after 4.Qa4 Nf6 5.Nxe5 Bd6 or 4.exd5 Qxd5 5.d4 the game opens up quickly with active pieces. White aims for a centre and a small initiative; Black aims to equalise with accurate piece play.",
+  "white_ideas": [
+    { "idea": "Support d4 with c3 and take a central pawn majority." },
+    { "idea": "4.Qa4 pinning the knight, or 4.exd5 Qxd5 5.d4 with a tempo on the queen." }
+  ],
+  "black_ideas": [
+    { "idea": "3...d5 striking the centre before White is ready." },
+    { "idea": "Develop actively and meet d4 with ...exd4 or ...Bd6 piece pressure." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...d5 and exd5 with queens often exchanged or developed early." },
+    { "structure": "White d4/e4 centre against Black's ...e5/...d6 chain if Black declines ...d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open, tactical middlegames after 3...d5 but White has no concrete attack; mixed." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit in the main lines; 3...Nf6 4.d4 is a Black gambit-like try only in side lines." },
+    "soundness": { "notes": "Sound but not the most testing line against 2...Nc6." },
+    "structure": { "notes": "After 3...d5 4.exd5 Qxd5 5.d4 the centre opens and pieces rule." },
+    "approach": { "notes": "Less common than Spanish or Italian but played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Clear centre-building plan, modest theory." }
+  },
+  "plan_phrases": ["central pawn majority", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3...Nf6 4.d4 Nxe4", "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6 4. d4 Nxe4", "how": "Black grabs a pawn with sharp play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open play with equal chances, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A fully playable White set-up." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "After 3...d5 the centre opens at once." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Simple plan, some theory after 3...d5." },
+    "plans": { "value": ["space_advantage"], "reason": "White builds a c3-d4 centre." }
+  }
+}

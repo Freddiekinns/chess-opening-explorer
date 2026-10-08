@@ -1,0 +1,95 @@
+{
+  "slug": "queens-gambit-accepted-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Classical Defense",
+    "eco": "D26",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQK2R w KQkq - 0 6"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black hits the d4 pawn at once. The main line is 6.O-O a6 7.a4 Nc6 8.Qe2 cxd4 9.Rd1 Be7 10.exd4 O-O, leaving White with an isolated queen's pawn and active pieces and Black with a solid position and a target on d4. Other lines go 6.Nc3 or 7.Qe2 with ...b5 queenside play.",
+  "white_ideas": [
+    { "idea": "Active pieces against an isolated queen's pawn, with Qe2, Rd1 and e4-e5 kingside ideas." },
+    { "idea": "Pressure on the d-file and Black's king." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade pieces and attack the d4 isolated pawn with ...Nb4, ...Nd5 and ...Bd7." },
+    { "idea": "Develop the queenside with ...a6, ...b5 and ...Bb7." }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn on d4 for White against a Black pawn majority on the queenside." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Fairly solid for Black, with a sound pawn structure and clear plans; not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains c4 immediately."
+    },
+    "soundness": {
+      "notes": "A mainline QGA."
+    },
+    "structure": {
+      "notes": "Open lines for pieces and an IQP structure after cxd4."
+    },
+    "approach": {
+      "notes": "A standard main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "IQP play is a classic plan; theory moderate."
+    }
+  },
+  "plan_phrases": ["isolated queen's pawn", "queenside majority", "development lead"],
+  "sublines_that_differ": [
+    {
+      "name": "6.Nc3",
+      "moves": "6.Nc3 a6 7.O-O",
+      "how": "A sharper line with more transposition options."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither especially forcing nor especially hard to crack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "White regains the pawn by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Main-line QGA."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "QGA-style open lines, with d4 captured and IQP pieces active."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A mainstream line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "IQP plans with modest theory."
+    },
+    "plans": {
+      "value": ["isolated_queens_pawn"],
+      "reason": "The IQP is the central structure."
+    }
+  }
+}

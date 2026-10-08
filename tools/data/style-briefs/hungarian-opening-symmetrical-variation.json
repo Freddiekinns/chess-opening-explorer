@@ -1,0 +1,49 @@
+{
+  "slug": "hungarian-opening-symmetrical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Symmetrical Variation",
+    "eco": "A00",
+    "moves": "1. g3 g6",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides fianchetto their king's bishop and delay central commitment. White usually continues Bg2, then c4, d4 or Nf3 and d3, and transposes to the King's Indian Attack, English, Réti or a reversed Modern/Pirc structure. The game is a flexible manoeuvring fight with few forcing lines, and a draw is the most common result.",
+  "white_ideas": [
+    { "idea": "Fianchetto with Bg2, then c4 and Nc3 or d4 for a flexible centre" },
+    { "idea": "Build a King's Indian Attack with Nf3, d3, O-O and e4" },
+    { "idea": "Keep options open and transpose to the Catalan or English" }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...Bg7 and ...Nf6, castle and play ...d6 and ...e5" },
+    { "idea": "Take the centre with ...d5 or ...e5 once the bishops are placed" },
+    { "idea": "Equalise by symmetry and look for counterplay on the long diagonal" }
+  ],
+  "typical_structures": [
+    { "structure": "Mirror fianchetto structure, with d3 or d4 against ...d6 or ...d5" },
+    { "structure": "Reversed Modern or Pirc set-ups depending on whether White plays e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and low-risk for both sides; the position is not forcing and hard to attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound, if modest." },
+    "structure": { "notes": "Centre not committed: flank openings with undecided pawns, flexible." },
+    "approach": { "notes": "A fianchetto set-up White uses against almost anything and which transposes to KIA, Réti or English; plans matter more than move order." },
+    "level": { "reason": "understanding", "notes": "Clear plans, little to memorise, but the transpositions and manoeuvring need judgement." }
+  },
+  "plan_phrases": ["fianchetto", "symmetrical structure", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "Benko Opening with 2.Bg2 Bg7 3.c4", "moves": "1. g3 g6 2. Bg2 Bg7 3. c4", "how": "Becomes a reversed English with a symmetrical fianchetto structure." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Both sides play low-risk fianchetto set-ups." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Equal and respectable." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "A flank opening with an undecided centre." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "A g3/Bg2 set-up used against almost anything, transposing to KIA or Réti." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but there is little concrete guidance and the transpositions need judgement." },
+    "plans": { "value": ["fianchetto", "symmetrical_structure"], "reason": "Both bishops on the long diagonal and a mirror structure." }
+  }
+}

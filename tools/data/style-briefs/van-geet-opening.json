@@ -1,0 +1,207 @@
+{
+  "slug": "van-geet-opening",
+  "root": {
+    "name": "Van Geet Opening",
+    "eco": "A00",
+    "moves": "1. Nc3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Dunst Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dunst_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Van Geet Opening (Dunst, 1.Nc3): Lines, Traps & Counters",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/flank/van-geet/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Van Geet / Dunst overview and strategic notes (search snippets only)",
+      "publisher": "Chessiverse / Chess.com / ChessEasy",
+      "url": "https://chessiverse.com/resources/openings/dunst-opening",
+      "kind": "article"
+    }
+  ],
+  "overview": "White develops a knight to c3, controlling e4 and d5, and keeps the pawn structure undecided to choose a set-up once Black replies. The knight blocks the c-pawn, so Queen's Gambit and English structures are not available without reorganising. Main replies: 1...d5 (the cleanest; 2.e4 transposes to obscure Scandinavian lines, or the Van Geet Attack after 2...d4 3.Nce2), 1...e5 (then 2.e4 Vienna Game, the most common transposition in the database, or 2.Nf3 Nc6 3.d4 Napoleon Attack), 1...Nf6 (one of the most unpleasant replies for White) and 1...c5 (transposing to Closed Sicilian or inferior-placed-knight lines). Sources call it sound and low-theory but unambitious: Black equalises with accurate play, so it earns points from surprise rather than from an edge, and masters play it under 1% of the time, though some strong correspondence players use it. The database root has few games itself; most of the subtree (about 290M games) is Vienna, Closed Sicilian and Chigorin-style transpositions that play like those openings.",
+  "white_ideas": [
+    {
+      "idea": "Develop the knight and keep flexibility, choosing among transpositions: Vienna after 1...e5 2.e4, Closed Sicilian after 1...c5 2.e4, Scandinavian-type lines after 1...d5 2.e4, Four Knights, and even Blackmar-Diemer ideas.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Against 1...d5 2.e4 d4 3.Nce2, the Van Geet Attack, followed by Ng3 and kingside piece play.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Against 1...e5 2.Nf3 Nc6 3.d4 (Napoleon Attack) for central play and chances of an early knockout.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "A low-theory surprise weapon for blitz and rapid; play accurate, principled moves rather than memorised lines.",
+      "sources": ["s2", "s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "1...d5 is the cleanest answer: control e4 and prevent White's ideal set-up, threatening ...d4 to gain space.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "1...e5 as a 'Reversed Nimzowitsch' mirroring White to equalise naturally.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "1...Nf6, keeping multiple options open; described as one of the most unpleasant replies for White.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "1...c5 steering to Sicilian structures where the c3 knight can be misplaced.",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Transposed Vienna Game after 1...e5 2.e4 (open or semi-open game with f4 ideas).",
+      "sources": ["s3"]
+    },
+    {
+      "structure": "Closed Sicilian after 1...c5 2.e4 (kingside fianchetto, f4, closed centre).",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Scandinavian-type structure after 1...d5 2.e4 dxe4 3.Nxe4 or 2...d4 3.Nce2 (Van Geet Attack, closed).",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Reversed Nimzowitsch: symmetrical development with White's knight on c3 against Black's mirrored set-up.",
+      "sources": ["s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chess Doctrine: 'fundamentally sound but unambitious', neither sharp nor deeply theoretical, a low-theory weapon (s2). The character depends heavily on the transposition: Vienna and Napoleon lines are open and tactical, Closed Sicilian structures are manoeuvring, Reversed Nimzowitsch is quiet. At the root, play is flexible and low-risk for both sides, with Black able to equalise, so Balanced, with a quiet leaning (my reading).",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given at the root. Blackmar-Diemer ideas via transposition (1...d5 2.e4 dxe4 3.f3) and the Vienna Gambit are sub-lines reached by transposition.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Sound but unambitious. Chess Doctrine: tactically sound, 'loses nothing by force' yet confers no advantage; Black 'equalizes comfortably' (s2). Wikipedia: 'quite playable' (s1). Not refuted and not dubious; its lower White scores (46.75% in one database sample versus 54 to 56% for 1.e4, 1.d4, 1.Nf3) show it is slightly weaker practically (s1, all ratings, not engine).",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Depends on Black's reply and White's transposition: Vienna and Scandinavian-type lines are open or semi-open, Closed Sicilian is closed. The root has no pawn structure yet (only a knight move). Not sourced directly; classifier must decide on the main line or mark low confidence.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "Rarely played by strong players: only the eighth most popular of White's twenty first moves (s1), under 1% at master level (s2), though some strong correspondence players use it frequently (s1). Chosen mainly for surprise value in blitz and rapid (s2, s3: 'sound but offbeat, earns points from surprise, not from a theoretical edge'). It is also a flexible move-order device that transposes into Vienna, Closed Sicilian and others (s3) and is described as 'both opening and system' (s1). Evidence points to Offbeat at the root; the Vienna transposition (the most played branch) is a separate respectable opening.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Judged for White. Minimal memorisation; rewards 'accurate, principled moves' rather than deep theory (s2). Easy to learn at the move level, but a flexible set-up with little structural guidance gives White no clear plan to learn, and it is not an ambitious repertoire foundation. Beginner or Intermediate; the taxonomy rule that a Dubious line is never Beginner does not apply (it is sound).",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "transposition to Vienna Game",
+    "transposition to Closed Sicilian",
+    "Van Geet Attack Nce2-g3",
+    "Napoleon Attack",
+    "flexible move order",
+    "surprise weapon",
+    "reversed Nimzowitsch"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Vienna Game",
+      "moves": "1. Nc3 e5 2. e4",
+      "how": "Transposes into the Vienna Game, the largest part of the subtree (about 103M games); an independent opening with its own page."
+    },
+    {
+      "name": "Closed Sicilian",
+      "moves": "1. Nc3 c5 2. e4",
+      "how": "Transposes into the Closed Sicilian (about 70M games); different character, manoeuvring."
+    },
+    {
+      "name": "Chigorin Variation of the Queen's Pawn Game",
+      "moves": "1. Nc3 d5 2. d4",
+      "how": "Transposes to the Chigorin Defence-type structure (about 46M games); closed, positional."
+    },
+    {
+      "name": "Van Geet Attack",
+      "moves": "1. Nc3 d5 2. e4 d4 3. Nce2",
+      "how": "White's own line; closed, with Ng3 and kingside piece play."
+    },
+    {
+      "name": "1...d5 2.e4 dxe4 and 1...Nf6",
+      "moves": "1. Nc3 d5 2. e4 dxe4 / 1. Nc3 Nf6",
+      "how": "Scandinavian-like and Nimzowitsch-like play, reached by transposition."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Van Geet Opening is a flexible and unconventional choice that aims to sidestep mainstream theory.",
+        "verdict": "supported",
+        "note": "Low-theory weapon; flexibility and surprise are its draw.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It creates unique, often imbalanced positions.",
+        "verdict": "unverifiable",
+        "note": "Sources describe an unambitious, low-risk opening where Black equalises. Imbalanced positions are not the norm, and many lines transpose to standard structures.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White develops a knight to its best square while keeping options open for the central pawns, frequently transposing into other systems.",
+        "verdict": "supported",
+        "note": "Transposing into Vienna, Closed Sicilian and others is the main practical feature. 'Best square' is arguable (it blocks the c-pawn).",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "It is ideal for creative, versatile players who enjoy navigating less-charted territory.",
+        "verdict": "supported",
+        "note": "Surprise value for blitz and rapid; rarely seen at master level.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: transpose into favourable openings (Vienna Game, or against 1...d5, play 2.e4), often followed by a fianchetto with g3 and Bg2.",
+        "verdict": "supported",
+        "note": "Transposition to Vienna and 2.e4 against 1...d5 are named. The g3/Bg2 fianchetto is not described in the sources read (it occurs in Closed Sicilian-type structures, own understanding).",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Black: seize the centre with pawns (...d5, ...e5) to challenge White's flexible set-up and develop classically.",
+        "verdict": "supported",
+        "note": "1...d5 is the cleanest answer; 1...e5 mirrors White.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Strategic goal: White aims for a unique, playable middlegame avoiding heavy theory, while Black tries to equalise by establishing central control and sound development.",
+        "verdict": "supported",
+        "note": "Black equalises comfortably with accurate play; White avoids theory.",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

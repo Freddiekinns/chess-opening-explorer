@@ -1,0 +1,46 @@
+{
+  "slug": "slav-indian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Indian",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 c6",
+    "fen": "rnbqkb1r/pp1ppppp/2p2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 1.d4 Nf6 2.c4 with ...c6 and usually follows with ...d5, which transposes to the Slav or Semi-Slav; ...d5 is not forced, so Black can also set up with ...e6 or ...g6. White chooses 3.Nc3 or 3.Nf3 and the game usually becomes a Slav or Semi-Slav structure with a solid pawn on c6.",
+  "white_ideas": [
+    { "idea": "Take space with 3.Nc3 or 3.Nf3 and e3 or e4 depending on the Slav transposition." },
+    { "idea": "Play for the Catalan-style or Exchange structure if Black commits to ...d5." }
+  ],
+  "black_ideas": [
+    { "idea": "Support ...d5 with ...c6 and develop the light bishop before ...e6." },
+    { "idea": "Keep options open between Slav, Semi-Slav and Indian set-ups (...g6, ...d6)." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav centre with pawns on c6 and d5 against c4 and d4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly Slav and Semi-Slav territory; solid and hard to break down, though Semi-Slav branches can be sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; c4 is not taken here." },
+    "soundness": { "notes": "A transposition to the Slav, which is fully sound." },
+    "structure": { "notes": "A move-order root; the centre is undecided until ...d5 or another set-up." },
+    "approach": { "notes": "A move-order device into the Slav family, played at all levels." },
+    "level": { "reason": "understanding", "notes": "Needs knowledge of which Slav structure it transposes to; not a first-repertoire choice." }
+  },
+  "plan_phrases": ["solid Slav centre", "hold d5"],
+  "sublines_that_differ": [
+    { "name": "Semi-Slav", "moves": "3. Nf3 d5 4. Nc3 e6", "how": "Can lead to sharper Botvinnik and Meran lines." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "The Slav-based structures are hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material changes hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Transposes to the sound Slav." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not yet decided at the root." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal move-order route into the Slav." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Requires judgement among Slav structures." },
+    "plans": { "value": [], "reason": "Too undecided for a characteristic plan." }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "semi-slav-defense-marshall-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Marshall Gambit",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. e4",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/3p4/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "semi-slav-defense-accelerated-move-order",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White strikes at once with 4.e4 and, after 4...dxe4 5.Nxe4, plays for a lead in development, with Bd2 lines when Black checks on b4 (5...Bb4+ 6.Bd2 Qxd4 7.Bxb4 Qxe4+). Black can accept and then play ...Nf6 for a simple game or take the pawn on d4 and defend precisely. It is a sharp, theoretical line in which White gambles on an open centre.",
+  "white_ideas": [
+    { "idea": "Open the centre with e4 and develop quickly with Nxe4, Bd3 and Qe2 or Nf3." },
+    { "idea": "Offer the d4 pawn for activity after ...Bb4+ Bd2 and Bxb4." }
+  ],
+  "black_ideas": [
+    { "idea": "Accept with ...dxe4 and play ...Nf6 to exchange the e4 knight and reach a safe, equal game." },
+    { "idea": "Check on b4 and take on d4 with the queen when it is safe, keeping the extra pawn if possible." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after dxe4, with White's pieces developed and Black's c6-e6 pawns solid." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing play and an open centre with early checks and queen moves; a mistake can lose fast." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the 5...Bb4+ 6.Bd2 Qxd4 line Black can keep the d4 pawn; in the 5...Nf6 line the pawn is simply regained, so the gambit label is partial."
+    },
+    "soundness": { "notes": "Not clearly refuted but Black has easy equality with 5...Nf6; I judge White's compensation as enough to call it sound, with low certainty." },
+    "structure": { "notes": "The centre opens after ...dxe4 and the pieces get open lines." },
+    "approach": { "notes": "Seldom played by strong players; occasionally used for surprise." },
+    "level": { "reason": "memory", "notes": "Forcing lines after 5...Bb4+ need to be known, though it is little played." }
+  },
+  "plan_phrases": ["lead in development", "early queen", "open centre"],
+  "sublines_that_differ": [
+    { "name": "4...Bb4", "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. e4 Bb4", "how": "Black declines the pawn; no gambit, a quieter Semi-Slav-style position." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Open centre and forcing checks and queen moves from move 5." },
+    "gambit": { "value": "white", "confidence": 0.55, "reason": "White offers the d4 or e4 pawn for development, though Black can steer back to equality." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.5, "reason": "Not clearly refuted, though Black has easy equality." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "The centre opens after ...dxe4 and the pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Some forcing lines must be known, but it is rarely met." },
+    "plans": { "value": ["lead_in_development", "early_queen"], "reason": "White gives a pawn for quick development and Black's queen is drawn out." }
+  }
+}

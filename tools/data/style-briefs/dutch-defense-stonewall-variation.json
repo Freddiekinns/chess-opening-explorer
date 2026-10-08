@@ -1,0 +1,41 @@
+{
+  "slug": "dutch-defense-stonewall-variation",
+  "tier": "unsourced",
+  "root": { "name": "Dutch Defense: Stonewall Variation, Modern Variation", "eco": "A90", "moves": "1. d4 f5 2. c4 e6 3. Nf3 Nf6 4. g3 c6 5. Bg2 d5 6. O-O Bd6", "fen": "rnbqk2r/pp4pp/2pbpn2/3p1p2/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w kq - 2 7" },
+  "parent": "dutch-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black builds the Stonewall pawn wall on f5, e6, d5 and c6, develops the bishop to d6 and aims at the e4 outpost and a kingside attack. White fianchettoes and tries to exploit the weak e5 square and Black's bad light-squared bishop, often with b3, Ba3 or Ne5. The centre is locked and the play is a double-edged fight, with Black attacking on the kingside and White playing on the queenside.",
+  "white_ideas": [
+    { "idea": "Play Ne5, b3 and Ba3 to trade the dark-squared bishops and exploit weak dark squares." },
+    { "idea": "Occupy e5 with a knight and aim at the bad c8 bishop and a queenside pawn break." }
+  ],
+  "black_ideas": [
+    { "idea": "Place a knight on e4, play ...Qe8-h5 and ...g5 for a kingside attack." },
+    { "idea": "Keep the pawn wall and use ...Bd6 and ...Ne4 to secure the e4 outpost." }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall: Black pawns f5/e6/d5/c6 against White d4/c4 and a fianchettoed bishop on g2." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Locked centre, kingside attack for Black against White's play on the weak e5 and the bad c8 bishop; double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound, though Black's bishop is passive." },
+    "structure": { "notes": "Pawn wall locks the centre and play moves to the wings." },
+    "approach": { "notes": "A set-up Black can play against almost any White move order, hence a system." },
+    "level": { "reason": "understanding", "notes": "Clear plans but weak squares need judgement." }
+  },
+  "plan_phrases": ["Stonewall", "knight outpost on e4", "bad bishop", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Classical Stonewall with ...Be7", "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O d5", "how": "Black delays ...c6 and keeps the bishop on e7, with similar structures." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Unbalanced fight with Black attacking the kingside while White targets e5." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised sound set-up." },
+    "structure": { "value": "closed", "confidence": 0.8, "reason": "The Stonewall pawns lock the centre." },
+    "approach": { "value": "system", "confidence": 0.7, "reason": "A set-up Black can play against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but the bad bishop needs care." },
+    "plans": { "value": ["stonewall", "knight_outpost", "bad_bishop"], "reason": "Stonewall chain with an e4 outpost and a hemmed-in bishop." }
+  }
+}

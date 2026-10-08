@@ -1,0 +1,47 @@
+{
+  "slug": "italian-game-scotch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Scotch Gambit",
+    "eco": "C55",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 exd4 5. O-O",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/8/2BpP3/5N2/PPP2PPP/RNBQ1RK1 b kq - 1 5"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White castles and leaves the d4 pawn en prise for open lines and quick development. 5...Bc5 6.e5 d5 is the Max Lange Attack with long, forcing tactics; 5...Nxe4 6.Re1 d5 is the main alternative, where Black keeps the extra pawn and White gets pressure on the e-file. Both sides take risks and one inaccurate move can lose quickly.",
+  "white_ideas": [
+    { "idea": "Max Lange Attack: 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.Ng5 with attack on the king." },
+    { "idea": "Re1 and Bxf7+ ideas, using development lead to attack the king." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Nxe4 or ...Bc5 and defend accurately, returning the pawn at the right time." },
+    { "idea": "Play ...d5 to challenge the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, White with fewer pawns, Black king facing e-file pressure." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing, concrete, mutual attacking chances (Max Lange)." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the d-pawn or e4-pawn." },
+    "soundness": { "notes": "Sound; objectively balanced, playable at all levels." },
+    "structure": { "notes": "Open lines at once." },
+    "approach": { "notes": "Standard, played by strong players as a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Max Lange needs long forcing lines." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "Max Lange Attack", "moves": "5... Bc5 6. e5 d5", "how": "Long forcing tactical lines." },
+    { "name": "Double Gambit Accepted", "moves": "5... Nxe4", "how": "Black keeps a pawn, White presses on the e-file." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Forcing tactical lines with mutual attacks." },
+    "gambit": { "value": "white", "confidence": 0.75, "reason": "White gives a pawn that Black can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Objectively balanced, playable." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "The centre opens at once and play is on open lines." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Played by strong players now and then." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Max Lange requires long forcing lines." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White's compensation is development and attack on f7 and the king." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "alekhine-defense-modern-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Modern Variation",
+    "eco": "B04",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3",
+    "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White develops the knight instead of overextending with c4 and f4, and Black plays 4...Bg4, pinning it and aiming at the d4 centre. After 5.Be2 e6 6.O-O Be7 7.h3 Bh5 8.c4 Nb6 White has a space edge against Black's undermining play with ...dxe5, ...c5 and ...Bxf3. The game is a standard hypermodern fight with a space edge for White and counterplay for Black.",
+  "white_ideas": [
+    { "idea": "Keep the centre with c4, Nc3 and exd6 or Be2 and h3, using the space edge." },
+    { "idea": "Exchange or trade the pinning bishop and press on the d5/e6 squares." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin the knight, play ...e6, ...Be7 and ...c5 to attack the d4 and e5 pawns." },
+    { "idea": "Exchange pieces to relieve the cramp and undermine with ...dxe5 and ...Nc6." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on c4, d4, e5 against Black's ...d6, ...e6 with ...c5 breaks." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Asymmetric positions with chances for both sides; neither forcing nor especially solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; played by Fischer, Ivanchuk and others." },
+    "structure": { "notes": "White's centre can be undermined and the structure can open or stay in tension." },
+    "approach": { "notes": "Standard, a main line of the Alekhine." },
+    "level": { "reason": "understanding", "notes": "Plans around ...c5 and timing of ...dxe5 are subtle but not heavy theory." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "undermine the centre"],
+  "sublines_that_differ": [
+    { "name": "Larsen Variation", "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 dxe5", "how": "Black opens the centre at once, leading to open tactical play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Asymmetric but neither especially solid nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.92, "reason": "Sound main line." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre in tension, resolved later by ...dxe5 or ...c5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players, not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans of undermining the centre take understanding." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White's space against Black's attack on the centre." }
+  }
+}

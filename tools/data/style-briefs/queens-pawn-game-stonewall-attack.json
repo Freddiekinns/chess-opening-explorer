@@ -1,0 +1,46 @@
+{
+  "slug": "queens-pawn-game-stonewall-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Stonewall Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e3 Nf6 3. Bd3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/3BP3/PPP2PPP/RNBQK1NR b KQkq - 2 3"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White builds a Stonewall with pawns on c3, d4, e3 and f4, bishop on d3 and a knight heading to e5, aiming for a kingside attack with Qf3 or Qh5 and Rf3-h3. Black usually plays ...c5 and ...Nc6, ...Bg4 or ...Bf5 and challenges the centre and the bishop on d3, and aims for ...Ne4. The plans are clear for White, but a well-prepared Black can equalise.",
+  "white_ideas": [
+    { "idea": "Play c3, f4 and Nf3-e5 to build a Stonewall with a strong knight on e5." },
+    { "idea": "Attack on the kingside with Qf3, Rf3-h3 or Qh5 and Bxh7 tactics." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...c5 and ...Nc6, then ...Bf5 or ...Bg4 to trade the Stonewall's strengths." },
+    { "idea": "Occupy e4 with a knight and exploit White's bad queenside bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "White Stonewall with pawns on c3, d4, e3 and f4 against ...c5 and ...e6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A compact system; the pawn structure is solid but the f4 pawn loosens the e1-h4 diagonal." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound enough, though Black can equalise with accurate play; not refuted." },
+    "structure": { "notes": "Stonewall chain; with ...c5 and c3 the centre is fairly fixed but not fully locked." },
+    "approach": { "notes": "A set-up against almost any Black defence, like the Colle." },
+    "level": { "reason": "neither", "notes": "Clear plans, little to memorise; a good first system for White." }
+  },
+  "plan_phrases": ["Stonewall", "kingside attack", "knight outpost on e5"],
+  "sublines_that_differ": [
+    { "name": "Black fianchetto", "moves": "3... g6", "how": "Black avoids the attack by playing a Grünfeld-like set-up." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "A compact set-up that is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable system, not refuted." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "Stonewall chain, with the centre held in a fixed shape." },
+    "approach": { "value": "system", "confidence": 0.8, "reason": "A set-up against nearly any defence." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.55, "reason": "Clear plans and little theory, like the Colle." },
+    "plans": { "value": ["stonewall", "kingside_attack", "knight_outpost"], "reason": "Stonewall chain, e5 knight and attack on the king." }
+  }
+}

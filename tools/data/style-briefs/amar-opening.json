@@ -1,0 +1,43 @@
+{
+  "slug": "amar-opening",
+  "tier": "unsourced",
+  "root": { "name": "Amar Opening", "eco": "A00", "moves": "1. Nh3", "fen": "rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1" },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the knight to the rim, intending Nf4 or g3/Bxh3-proof set-ups, and keeps the centre flexible. Black normally takes the centre with ...d5 or ...e5 and White follows with f4, g3, Nf4 and c4, or plays for a Reti/English-like set-up. The position is playable but slightly inferior, so the game becomes a slow manoeuvring one where Black has the easier time.",
+  "white_ideas": [
+    { "idea": "Reroute the knight to f4 or f2 and play g3, Bg2 and c4 for a Reti-style fianchetto set-up." },
+    { "idea": "Play f4 and Nf2 (Krazy Kat) to build a Dutch-like centre with e4 later." }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre at once with ...d5 and ...e5 and develop normally." },
+    { "idea": "Play ...Bxh3 to wreck White's kingside pawns, the standard answer after an early g3 and Bg2." }
+  ],
+  "typical_structures": [
+    { "structure": "Reti-style set-up: pawns on c4, d3 or d4, g3 with a bishop on g2." },
+    { "structure": "Dutch-like f4 set-up against Black's e5/d5 centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet flank development with no forcing lines; neither side is forced into risk early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; the Ammonia line 1...Nh6 is a mirror, not a gambit." },
+    "soundness": { "notes": "Playable but slightly worse than central moves because the knight is misplaced on h3; not refuted." },
+    "structure": { "notes": "Flank opening: the centre is undecided after 1.Nh3, so Flexible." },
+    "approach": { "notes": "Strong players seldom choose 1.Nh3; it is a surprise move." },
+    "level": { "reason": "neither", "notes": "Little theory and clear ideas, but inferior to 1.Nf3, so not a first-repertoire choice." }
+  },
+  "plan_phrases": ["flank development", "Nf4 reroute", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Krazy Kat", "moves": "1. Nh3 e5 2. f3 d5 3. Nf2", "how": "A rare attempt at a Dutch-style centre that gives Black an easy lead." },
+    { "name": "Ammonia Opening", "moves": "1. Nh3 Nh6", "how": "Black copies the knight move; a joke-level mirror line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet flank opening with no forcing play and few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Slightly inferior but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.75, "reason": "Flank opening with the centre still undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players seldom play 1.Nh3." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple ideas but not a sound repertoire starting point." },
+    "plans": { "value": ["fianchetto"], "reason": "White usually builds a g3 and Bg2 set-up." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "bird-opening-froms-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: From's Gambit",
+    "eco": "A02",
+    "moves": "1. f4 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black answers 1.f4 with 1...e5. After 2.fxe5 d6 3.exd6 Bxd6 Black has given a pawn for quick development and the open f-file and h4-d8 diagonal, with ...Qh4+ and ...Bxg3 tricks. White usually takes the pawn, answers 4.Nf3 g5 (Lasker) with g3 or d4, and tries to consolidate. The games are tactical and the main danger is falling into the early mating threats, but accurate play leaves White a pawn up.",
+  "white_ideas": [
+    { "idea": "Accept the pawn, meet ...Qh4+ with g3 and keep the extra pawn" },
+    { "idea": "Answer ...g5 with g3, d4 and Nc3, then return the pawn if needed for a safe king" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop fast with ...d6, ...Bxd6, ...Nf6 and ...Qh4+ before White castles" },
+    { "idea": "Lasker idea ...g5 and ...g4 to kick the f3 knight and open lines to White's king" }
+  ],
+  "typical_structures": [
+    { "structure": "White a pawn up with a loosened kingside against open files and diagonals" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mutual attacks and early checks; both kings are exposed so one error loses fast." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 2.fxe5 d6 3.exd6 White can keep the pawn." },
+    "soundness": { "notes": "Strong players consider it unsound for Black; it scores on traps (Qh4+, Bxg3 mate ideas)." },
+    "structure": { "notes": "f-file and diagonals open with the centre cleared; open lines for the pieces." },
+    "approach": { "notes": "Strong players seldom choose this as Black; surprise value." },
+    "level": { "reason": "memory", "notes": "Needs known tactical sequences, and dubious lines are never Beginner." }
+  },
+  "plan_phrases": ["lead in development", "attack on the white king", "Qh4+ tricks"],
+  "sublines_that_differ": [
+    { "name": "From's Gambit, Lasker Variation", "moves": "1. f4 e5 2. fxe5 d6 3. exd6 Bxd6 4. Nf3 g5", "how": "Black adds ...g5 and ...g4 to hit the f3 knight; sharpest main line." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Early forcing play and mutual attacks on exposed kings." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black sacrifices a pawn after 2.fxe5 d6 3.exd6 and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Considered unsound at strong level; scores on traps." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open f-file and diagonals with the centre cleared." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom play it as Black." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Trappy and dubious so not Beginner, but not deep enough for Advanced." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "Black plays for quick development and checks against White's loosened king." }
+  }
+}

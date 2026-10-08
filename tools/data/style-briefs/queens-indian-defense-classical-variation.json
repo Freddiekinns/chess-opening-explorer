@@ -1,0 +1,47 @@
+{
+  "slug": "queens-indian-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Classical Variation",
+    "eco": "E17",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O",
+    "fen": "rn1qk2r/pbppbppp/1p2pn2/8/2PP4/5NP1/PP2PPBP/RNBQ1RK1 b kq - 4 6"
+  },
+  "parent": "queens-indian-defense-traditional-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White has fianchettoed and castled, and Black has done the same on the other flank with ...b6 and ...Bb7. Black usually castles and meets 7.Nc3 with ...Ne4 or ...d5 to contest the centre; White tries for a small space edge with Qc2, d5 or e4. It is a manoeuvring, low-risk game where Black is hard to break down.",
+  "white_ideas": [
+    { "idea": "Build the c4-d4 centre, play Nc3 and Re1 or Qc2, and prepare e4 or d5." },
+    { "idea": "Use the long diagonal and the e5 outpost for the knight." }
+  ],
+  "black_ideas": [
+    { "idea": "Fight for e4 with ...Ne4 or ...d5, exchanging pieces to ease the position." },
+    { "idea": "Fianchetto bishop on b7 against the d5/e4 squares; ...c5 or ...d5 to free the game." }
+  ],
+  "typical_structures": [
+    { "structure": "White c4-d4 against Black's e6-d5 or e6-d6 with both sides fianchettoed." },
+    { "structure": "After 7.Nc3 Ne4 8.Qc2 Nxc3 9.Qxc3 the queens' wings stay symmetrical and the centre fluid." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Few forcing lines and few ways for Black to be hit early; the old main line is known for steady play and many draws." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawns given." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The centre stays in tension and the pawns rarely lock or clear; flexible." },
+    "approach": { "notes": "A mainline defence in the Queen's Indian complex, not a system." },
+    "level": { "reason": "understanding", "notes": "Few forced lines to memorise, but the plans need judgement; an intermediate choice." }
+  },
+  "plan_phrases": ["fianchetto", "knight on e4", "fight for e4", "central tension"],
+  "sublines_that_differ": [
+    { "name": "6...d5 Hungarian-style / Nimzowitsch line 7.Nc3 d5 8.Ne5", "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 d5 8. Ne5", "how": "Black accepts a QGD-type centre and play is more forcing, with White's knight on e5." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Black has a compact fianchetto set-up and few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "The centre stays in tension and is not locked or cleared." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A standard Queen's Indian line, not a universal set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Not much to memorise but the plans need judgement." },
+    "plans": { "value": ["fianchetto", "knight_outpost"], "reason": "Both sides fianchetto and fight for the e4 and e5 squares." }
+  }
+}

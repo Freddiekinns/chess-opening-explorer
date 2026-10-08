@@ -1,0 +1,49 @@
+{
+  "slug": "benoni-defense-kings-pawn-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: King's Pawn Line",
+    "eco": "A65",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4",
+    "fen": "rnbqkb1r/pp3ppp/3p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 6"
+  },
+  "parent": "benoni-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "This is the Modern Benoni main structure: White has a space-gaining pawn centre on d5/e4 and a kingside majority, Black has a queenside majority, the half-open e- and b-files and the long diagonal for the g7 bishop. After 6...g6 White chooses between the Classical (Nf3, Be2), the Fianchetto and sharper tries such as f4 and Bb5+. White aims for e5 and a kingside push, Black for ...b5 and play against the e4 pawn, and both sides know the lines well. The play is double-edged and theory-heavy.",
+  "white_ideas": [
+    { "idea": "Break with e5 or f4 and attack in the centre and on the kingside" },
+    { "idea": "Develop Nf3, Be2, O-O and Nd2 to hold e4" },
+    { "idea": "Use the space advantage and keep the d5 pawn supported" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7, castle and play ...Re8" },
+    { "idea": "Break on the queenside with ...b5 and ...a6, using the half-open b-file" },
+    { "idea": "Pressure e4 and place a knight on e5 or c5 as an outpost" }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni: White d5/e4 against Black c5/d6, a locked-ish centre with the e-file and b-file half open" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides take risks: White attacks the king with f4, e5 or Bb5+, Black counterattacks on the queenside; one slip loses fast." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c5 pawn is exchanged on d5, no pawn is offered (the Benko is a different line)." },
+    "soundness": { "notes": "Sound; Black's structure is dynamic but accepted at top level." },
+    "structure": { "notes": "White d5 and e4 against c5 and d6 gives a fixed asymmetric centre, with half-open e- and b-files rather than a fully locked chain." },
+    "approach": { "notes": "A mainline-style defence with its own theory; not a universal set-up." },
+    "level": { "reason": "both", "notes": "Black must know the White attacks in detail (Taimanov Attack, Bb5+) and also understand the plans." }
+  },
+  "plan_phrases": ["queenside expansion", "space advantage", "central pawn majority", "kingside attack", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "Taimanov Attack", "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Bb5+", "how": "A more forcing attack that Black must meet accurately." },
+    { "name": "Be7 Classical", "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 Be7", "how": "Less common; Black keeps the bishop for a different set-up." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Opposite plans on the wings and a risk of fast tactics." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A well-established top-level defence." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "A fixed asymmetric centre with half-open e- and b-files; Closed is the alternative." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised main-line defence rather than a universal set-up." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.7, "reason": "Heavy theory in the attacking lines and hard plans for Black." },
+    "plans": { "value": ["space_advantage", "queenside_expansion", "central_pawn_majority"], "reason": "White's space and centre against Black's queenside majority." }
+  }
+}

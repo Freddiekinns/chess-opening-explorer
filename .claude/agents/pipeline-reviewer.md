@@ -5,6 +5,8 @@ description:
   idempotency and resumability. Use when changing the video, course-discovery,
   LLM-enrichment or analysis pipelines, or before committing a pipeline run's
   output.
+model: sonnet
+effort: high
 ---
 
 # Pipeline reviewer

@@ -1,0 +1,89 @@
+{
+  "slug": "scotch-game-mieses-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Mieses Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nxc6 bxc6 6. e5",
+    "fen": "r1bqkb1r/p1pp1ppp/2p2n2/4P3/8/8/PPP2PPP/RNBQKB1R b KQkq - 0 6"
+  },
+  "parent": "scotch-game-schmidt-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "After 5.Nxc6 bxc6 White pushes 6.e5, hitting the queen's route and the f6 knight. The main line is 6...Qe7 7.Qe2 Nd5 8.c4 Ba6 9.b3 g6 10.f4, where Black has doubled c-pawns, a bishop on a6 hitting the c4 and f1 area and a knight forced to d5 against a space-gaining White. White's pieces try to harass the knight while Black's active pieces and the c-file give counterplay.",
+  "white_ideas": [
+    { "idea": "Gain space with e5 and c4, kicking the d5 knight." },
+    { "idea": "Exploit the weak c6/c7 pawns and aim for a kingside attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Ba6, ...Qe7 and ...g6 to harass White's king and bishops." },
+    { "idea": "Use the half-open b-file and active pieces to compensate for doubled pawns." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawn on e5 with c4 against Black's doubled c-pawns and ...d6 break." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing: Qe7, Ba6 and the d5 knight create real tactics against White's loose king and the Be2/Qe2 setup."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level in the main line."
+    },
+    "soundness": {
+      "notes": "A standard top-level variation, considered sound for both sides."
+    },
+    "structure": {
+      "notes": "Advanced e5 pawn, doubled c-pawns, half-open b-file: neither fully open nor locked."
+    },
+    "approach": {
+      "notes": "A main-line Scotch choice, standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific move orders with ...Qe7 and ...Ba6 need to be known; plans themselves are fairly clear."
+    }
+  },
+  "plan_phrases": ["doubled pawns", "space advantage", "harass the knight"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Forcing play with tactics around the d5 knight and White's king."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Material stays level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Mainstream line at the top level."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "An advanced e5 pawn and half-open b-file rather than a fully open or locked centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A well-established main line of the Scotch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A handful of key lines to know, but clear ideas."
+    },
+    "plans": {
+      "value": ["doubled_pawns", "space_advantage"],
+      "reason": "Black's doubled c-pawns against White's space."
+    }
+  }
+}

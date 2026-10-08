@@ -1,0 +1,147 @@
+{
+  "slug": "kings-indian-attack",
+  "root": {
+    "name": "King's Indian Attack",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Indian Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King%27s_Indian_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Has the King's Indian Attack Been Forgotten?",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/article/view/has-the-king-s-indian-attack-been-forgotten",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippet: King's Indian Attack (A07) overview, Wikibooks and Chessiverse results",
+      "publisher": "Web search snippets",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._Nf3/1...d5/2._g3",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White builds the mirror image of the King's Indian Defence: Nf3, g3, Bg2, O-O, d3, Nbd2 and e4, usually against any Black set-up, particularly ...d5 with ...e6 or ...c5. The central pawn push e4-e5 gives a kingside bind and space, after which White expands with h4-h5, g4 and knight manoeuvres (Nf1-e3/g3 or Ne1-g2) towards a kingside attack. Black generally seeks counterplay on the queenside with ...c5, ...b5 or ...a5, or contests e4 directly. It has a modest theory load and keeps the same ideas whatever Black plays, so it is popular at club level, though it is uncommon among top grandmasters today. Black's main dilemma is that passive play lets White have a superior version of the King's Indian Defence, while ...e5 can leave Black behind in development.",
+  "white_ideas": [
+    { "idea": "Fianchetto Bg2, castle, play d3 and Nbd2 (Re1, h2-h4 also common), then e4 and e4-e5 for a central bind and kingside space", "sources": ["s1", "s2"] },
+    { "idea": "Kingside pawn storm with h4-h5 and g4, supported by knight manoeuvres (Nf1, Ne3, Ng4) to attack the king", "sources": ["s1", "s2"] },
+    { "idea": "Use the same set-up against the French (after ...e6), Sicilian (after ...c5) and Caro-Kann (after ...c6) structures", "sources": ["s1", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Queenside counterplay with pawn advances while White attacks on the kingside", "sources": ["s2"] },
+    { "idea": "Develop the dark bishop to e7, d6 or g7 and keep the d5-pawn as a strategic fixture or trade it for White's e-pawn", "sources": ["s2"] },
+    { "idea": "Challenge e4 or build French-like (...e6) or Sicilian-like (...c5) structures", "sources": ["s1", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed King's Indian: White pawns on d3, e4/e5, g3, Bg2, with a central bind and kingside space; the position is closed and strategic", "sources": ["s1"] },
+    { "structure": "French-like and Sicilian-like pawn structures for Black (...e6 or ...c5 against d3/e4)", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia calls the opening closed and strategic, with the sharp element coming from a kingside pawn storm (h4-h5, g4) rather than forcing tactics. Chess.com describes the resulting positions as murky but complex without clear advantages. Own understanding: a quiet start, potential for an attack on the kingside, but White can usually play it safely.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered. Sacrifices on the kingside may appear in the middlegame but are not part of the opening.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Chess.com says it is fundamentally sound; Wikipedia calls it solid and strategically sound. Used by Fischer, Botvinnik, Smyslov and Petrosian. Not considered dubious by anyone.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Wikipedia describes it as a closed, strategic opening with a bind on e5 and kingside space. The centre typically has pawns on d3 and e4 (or e5) for White against Black's d5 and e6/c5 pawns. Pawns stay on and the centre is locked or in tension.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "A set-up played against almost anything: Wikipedia and snippet sources describe Fischer using it as a universal weapon against the French, Sicilian and Caro-Kann structures (via move orders). Played by Fischer, Botvinnik, Smyslov, Petrosian, Dvoretsky; today still used by Bassem Amin. Less fashionable at GM level than before but still seen at the highest levels.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess.com: modest theory load because the traps are known, and it remains a 'killer' in amateur chess. Wikipedia: popular at club level due to repeatable plans. Own understanding: studying side is White; the plan (e4, e5, kingside pawn storm) is clear and has little to memorise, so the difficulty is in handling different Black set-ups and choosing when to push e5.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "kingside pawn storm",
+    "e4-e5 central bind",
+    "fianchetto",
+    "kingside space advantage",
+    "reversed King's Indian",
+    "h4-h5 and g4 advance",
+    "queenside counterplay"
+  ],
+  "sublines_that_differ": [
+    { "name": "Reti: King's Indian Attack, Yugoslav", "moves": "1. Nf3 d5 2. g3 c6 3. Bg2 Bg4", "how": "Black pins/develops the bishop first and keeps flexibility; transposes to Caro-Kann-like structures." },
+    { "name": "KIA against ...Nc6 and ...e5", "moves": "1. Nf3 d5 2. g3 Nc6 3. Bg2 e5 4. d3 Nf6 5. O-O", "how": "Black plays a reversed-colour Philidor-like centre; mirror King's Indian structures with e5 and d5 pawns." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "White develops pieces to ideal squares before committing to a central pawn structure",
+        "verdict": "supported",
+        "note": "The KIA is a set-up (Nf3, g3, Bg2, O-O, d3, Nbd2, then e4) played against many Black set-ups.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "By fianchettoing the king's bishop, White often launches a formidable kingside attack",
+        "verdict": "supported",
+        "note": "h4-h5 and g4 pawn storm is the usual plan; 'formidable' is tone.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It rewards understanding plans over memorising concrete theory",
+        "verdict": "supported",
+        "note": "Chess.com says the theory load is modest; Wikipedia says popular at club level because of repeatable plans.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It builds an attack from a solid foundation",
+        "verdict": "supported",
+        "note": "Described as solid and sound by both sources.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: complete the standard set-up (Bg2, O-O, d3, Nbd2) and prepare e2-e4",
+        "verdict": "supported",
+        "note": "Matches the standard set-up in both sources.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: launch a kingside attack using Ne1-f3-g5, h4-h5 and piece sacrifices",
+        "verdict": "unverifiable",
+        "note": "h4-h5 and knight manoeuvres are supported; the specific Ne1-f3-g5 route and piece sacrifices are not mentioned. Chess.com does mention Nf1/Ne3/Ng4 and h4-h5.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: control e4, often with ...c5, and develop queenside counterplay",
+        "verdict": "supported",
+        "note": "Queenside counterplay and Sicilian-like ...c5 set-ups are described. 'Control e4' is own understanding.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: trade pieces to relieve pressure and neutralise White's attacking potential",
+        "verdict": "unverifiable",
+        "note": "Plausible general advice; not found in the sources read.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

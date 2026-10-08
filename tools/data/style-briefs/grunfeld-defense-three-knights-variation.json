@@ -1,0 +1,50 @@
+{
+  "slug": "grunfeld-defense-three-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Three Knights Variation",
+    "eco": "D90",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the king's knight instead of grabbing the centre with e4, so Black gets the Grünfeld pressure on d4 without facing the big centre. After 4...Bg7 White chooses between 5.e3 (Burille, a quiet set-up where cxd5 and Bc4 or ...c5 follow), 5.Bg5 (Petrosian, pinning to provoke ...Ne4) and 5.cxd5 Nxd5 6.e4 which transposes to Exchange structures. Black aims to hit d4 with ...c5 and ...Nc6 and make the White centre a target.",
+  "white_ideas": [
+    { "idea": "Develop quietly with e3, Be2 or Bd3 and castle, keeping d4 solid" },
+    { "idea": "Petrosian: Bg5, pin the knight and meet ...Ne4 with Bf4 or cxd5" },
+    { "idea": "Exchange on d5 and build the centre with e4 if Black allows it" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the bishop and castle, then undermine d4 with ...c5 and ...Nc6" },
+    { "idea": "Meet cxd5 with ...Nxd5 and trade pieces for the centre" },
+    { "idea": "Slav-style ...c6 versus 5.e3 for a solid set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4 and e3 against Black c5 break; open c-file after exchanges" },
+    { "structure": "Grünfeld exchange structure after cxd5 and e4 with a big White centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White's quiet 5.e3 branch gives a controlled game with Black pressure on d4; less forcing than the Exchange Grünfeld." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black's d5 pawn is recaptured, nothing sacrificed." },
+    "soundness": { "notes": "Sound; Black is fully equal." },
+    "structure": { "notes": "d4 held against ...c5 for a long time; the centre is in tension." },
+    "approach": { "notes": "Standard anti-Grünfeld choice; the Three Knights is less ambitious than the Exchange but widely played." },
+    "level": { "reason": "understanding", "notes": "The Grünfeld needs good handling of the central break but this branch has less theory." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Petrosian System", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Bg5", "how": "More forcing with the ...Ne4 tactics." },
+    { "name": "Exchange transposition", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. cxd5 Nxd5 6. e4", "how": "Becomes a sharp Exchange Grünfeld." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet Burille main lines are neither forcing nor especially solid." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Established lines for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "d4 under pressure from ...c5 but the centre is undecided." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised mainstream line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Understanding the ...c5 break matters more than memorising lines in this branch." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black fianchettoes and hits White's centre with pieces and ...c5." }
+  }
+}

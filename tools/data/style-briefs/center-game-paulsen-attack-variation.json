@@ -1,0 +1,48 @@
+{
+  "slug": "center-game-paulsen-attack-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Paulsen Attack Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/4P3/4Q3/PPP2PPP/RNB1KBNR b KQkq - 2 4"
+  },
+  "parent": "center-game-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White recaptures the d-pawn with the queen and, after ...Nc6 hits her, retreats to e3, intending Nc3, Bd2, O-O-O or Nf3 and a lead in development. Black usually plays 4...Nf6 and then 5.Nc3 Bb4 or ...Bb4 and ...Bc5, develops with tempo on the queen and aims for ...d5 or ...Qe7. White's queen can become exposed and the centre is open, so the game is a classical open game where White has to prove his early queen sortie was worth it.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, Bd2, O-O-O or Nf3 and keep the queen safe on e3" },
+    { "idea": "Use the open d-file and lead in development against a king in the centre" },
+    { "idea": "Push d5-style tricks, e5 or a kingside attack if Black loses time" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with tempo with ...Nf6, ...Bb4 and ...Bc5 against the queen" },
+    { "idea": "Play ...d5 or ...Qe7 to equalise and hit the centre" },
+    { "idea": "Castle short and use the extra development" }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with e4 against a Black development lead and an open d-file" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open and tactical in the early moves, but sound for both with limited forcing theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The d-pawn is recaptured immediately; no material is given." },
+    "soundness": { "notes": "Sound but gives Black a development lead for the queen's early excursion; slightly worse for White." },
+    "structure": { "notes": "Centre pawns exchanged and open e- and d-files and diagonals for the pieces." },
+    "approach": { "notes": "A respectable if rare choice, standard in the same way as the Centre Game Accepted." },
+    "level": { "reason": "understanding", "notes": "Few forced lines, but the early queen needs handling." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "4...Bc5 or 4...Nf6 5.Nc3 Bb4", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Nc3 Bb4", "how": "Black develops with a pin; the typical main line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open play with some tactics, but nothing forcing or especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The d-pawn is recaptured by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Playable and not refuted, though White concedes a small edge." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open lines and files with early exchanges in the centre." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players now and then; not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Few lines to learn but the early queen needs care." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "White's queen is out early and must use its tempo." }
+  }
+}

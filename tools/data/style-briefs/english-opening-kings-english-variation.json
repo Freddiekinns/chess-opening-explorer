@@ -1,0 +1,122 @@
+{
+  "slug": "english-opening-kings-english-variation",
+  "root": {
+    "name": "English Opening: King's English Variation",
+    "eco": "A20",
+    "moves": "1. c4 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "English Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/English_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Reversed Sicilian (1.c4 e5)",
+      "publisher": "Chessworld",
+      "url": "https://www.chessworld.net/english-opening-reversed-sicilian.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "English Opening: Variations, Traps & How to Beat 1.c4",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/flank/english-opening/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the King's English, Four Knights and Botvinnik System (snippets only)",
+      "publisher": "Chessiverse, Chess.com wiki and Chessworld via web search",
+      "url": "https://chessiverse.com/resources/openings/reversed-sicilian",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 1.c4 e5 White has what is in effect a Sicilian Defence with colours reversed and an extra tempo (s1, s2). The root is a crossroads with very different set-ups: the Botvinnik System (c4, Nc3, g3, Bg2, d3, e4, Nge2) is a slow bind on d5; the Four Knights (2.Nc3 Nf6 3.Nf3 Nc6) and 3.g3 lines give fianchetto systems; the Flohr-Mikenas-type 3.e4 and 2.Nc3 Nf6 with an early d4 are sharper (s1, s2, s4). White's recurring themes are control of d5, queenside expansion with b4 and Rb1, and the long diagonal (s2, s4). Black neutralises the extra tempo with ...d5 breaks, ...f5 or an early ...Bb4 (s2). Overall the play is flexible and manoeuvring with little forcing theory (s1, s2), though the Four Knights in this move order is described as sharper than its 1.e4 cousin (s4).",
+  "white_ideas": [
+    { "idea": "Control d5 to restrict Black's pieces: Nc3, g3, Bg2 along the long diagonal", "sources": ["s2", "s3", "s4"] },
+    { "idea": "Botvinnik System: pawns c4, d3, e4, fianchetto and Nge2 for a flexible central bind", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Queenside expansion with Rb1 and b4, adding pressure with a fianchetto", "sources": ["s2"] },
+    { "idea": "Use the extra tempo for d4, Nd5, or Flohr-Mikenas 3.e4 sharp play", "sources": ["s1", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre and break with ...d5 to erase White's space advantage", "sources": ["s2", "s3"] },
+    { "idea": "Kingside counterplay with ...f5, or early ...Bb4 and ...Bxc3 to damage the queenside structure", "sources": ["s2"] },
+    { "idea": "Mirror with ...Nc6 and ...g6 (Full Symmetry line) or develop with ...Nf6 and ...Nc6", "sources": ["s1"] },
+    { "idea": "King's Indian-style ...g6, ...Bg7 set-up (own understanding)", "sources": [] }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian: White c4/d3/e4-type structures with a bind on d5 (colours-reversed Closed Sicilian or Maroczy-like)", "sources": ["s1", "s2"] },
+    { "structure": "Botvinnik shell: pawns on c4, d3, e4 with fianchetto and knights on c3 and e2", "sources": ["s2", "s4"] },
+    { "structure": "Four Knights with g3 fianchetto and tension around d5 and e4", "sources": ["s2", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positions range from tactical battles (Flohr-Mikenas, Four Knights) to slow positional manoeuvring (Botvinnik, 3.g3) (s1, s4). The 1.e4-pawn-wide treatment is 'solid' and 'flexible' (s1). Strategic depth is rated top, theory moderate, counterplay risk fairly high (s2). Overall Balanced: neither a fortress nor a knife-fight.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound and used by Botvinnik, Karpov, Kasparov and Carlsen in world championship matches (s1, s3). Engine evaluation after 2.Nc3 is about +0.2 (s4). White scores 34/43/23 win/draw/loss in one count (s3).",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Mostly closed or semi-closed: the centre is fought for with pieces, the d5 square being key, and the Botvinnik and 3.g3 set-ups keep the centre tense with e4 and d3 or c4 versus ...e5. Black's ...d5 break and Flohr-Mikenas lines open it. Closed fits the main manoeuvring lines.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "approach": {
+      "notes": "The English is a flank opening with a flexible, transpositional character (s3). 1.c4 e5 itself is a specific reply, and the Botvinnik System can be played against various defences (s1). It is a standard top-level choice, not offbeat. Whether it counts as System is borderline: the Botvinnik shell is system-like, but the root as a whole branches into many structures.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess Doctrine: accessible to club players but less straightforward than the Italian or the Ruy Lopez because players must prepare for diverse set-ups (s3). Chessworld: rewards structural understanding over memorisation; theory load moderate (s2). White studies it. Intermediate or Advanced on understanding; no big memorisation burden.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "control of d5",
+    "reversed Sicilian",
+    "long diagonal",
+    "queenside expansion",
+    "Botvinnik bind",
+    "kingside fianchetto",
+    "extra tempo",
+    "flexible transposition"
+  ],
+  "sublines_that_differ": [
+    { "name": "Botvinnik System", "moves": "1. c4 e5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. d3 d6 6. e4", "how": "Slow, solid bind; closed structure" },
+    { "name": "Four Knights", "moves": "1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6", "how": "Sharper than the 1.e4 Four Knights; options 4.g3 or 4.e3" },
+    { "name": "Flohr-Mikenas / 3.e4", "moves": "1. c4 e5 2. Nc3 Nf6 3. e4", "how": "Sharp, tactical, open lines (Wikipedia calls the Flohr-Mikenas Attack the 3.e4 line)" },
+    { "name": "Bremen System", "moves": "1. c4 e5 2. Nc3 Nf6 3. g3", "how": "Fianchetto structures, positional" },
+    { "name": "2.g3 and 2.e3", "moves": "1. c4 e5 2. g3", "how": "Flexible, slower; also reaches Botvinnik" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A highly flexible and strategic opening", "verdict": "supported", "note": "Described as flexible and transpositional.", "sources": ["s1", "s3"] },
+      { "claim": "White essentially plays a Sicilian Defence with an extra tempo", "verdict": "supported", "note": "Standard description of the Reversed Sicilian.", "sources": ["s1", "s2"] },
+      { "claim": "The game often revolves around White's control of d5 and queenside space", "verdict": "supported", "note": "d5 is the key square. Queenside expansion with b4 and Rb1 is one plan.", "sources": ["s2", "s4"] },
+      { "claim": "Black seeks to establish a central presence and create counterplay", "verdict": "supported", "note": "...d5 break and counterplay are Black's themes.", "sources": ["s2", "s3"] },
+      { "claim": "Perfect for sophisticated, strategic players who enjoy subtle manoeuvring across many pawn structures and transpositions", "verdict": "supported", "note": "Matches the sources, though the Flohr-Mikenas and Four Knights are sharper.", "sources": ["s1", "s3"] }
+    ],
+    "common_plans": [
+      { "claim": "White plays Nc3, g3 and Bg2 to control the centre and long diagonal, followed by queenside expansion with Rb1 and b4", "verdict": "supported", "note": "Standard fianchetto plan.", "sources": ["s2", "s4"] },
+      { "claim": "White aims to prevent Black from playing the ...d5 pawn break under favourable circumstances", "verdict": "supported", "note": "Control of d5 decides whether Black is cramped or free.", "sources": ["s2", "s4"] },
+      { "claim": "Black typically develops with ...Nf6 and ...Nc6, preparing ...d5 or kingside counterplay", "verdict": "supported", "note": "...d5 and ...f5 are both listed.", "sources": ["s1", "s2"] },
+      { "claim": "Black may adopt a King's Indian set-up (...Nf6, ...g6, ...Bg7) to fight for the dark squares and attack on the kingside", "verdict": "unverifiable", "note": "The Full Symmetry line has ...g6 and ...Bg7 with ...Nc6; a King's Indian-style attack is not described in the sources.", "sources": ["s1"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

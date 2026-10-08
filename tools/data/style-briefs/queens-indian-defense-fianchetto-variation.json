@@ -1,0 +1,47 @@
+{
+  "slug": "queens-indian-defense-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Fianchetto Variation",
+    "eco": "E15",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "queens-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes the king's bishop to pressure the long diagonal, and Black mirrors with ...Bb7 and contests e4. The main line goes 4...Bb7 5.Bg2 Be7 6.O-O O-O 7.Nc3 Ne4, where Black trades a pair of knights to ease the cramp. Play is a long manoeuvring fight over e4, with small edges and few early tactics.",
+  "white_ideas": [
+    { "idea": "Bg2, O-O, Nc3 and Qc2 or d5 to gain space, using the bishop on the long diagonal." },
+    { "idea": "Break with e4 or d5 to seize the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto on b7 and control e4 with ...Ne4 and ...Bb7 to fight the diagonal." },
+    { "idea": "Strike with ...c5 or ...d5 at the right moment." }
+  ],
+  "typical_structures": [
+    { "structure": "Fianchettoed bishops on g2 and b7, centre pawns on d4/c4 against d6/e6, tension over e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mainly strategic, with trades and few forcing lines. It is hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Very sound; a main line of the Queen's Indian." },
+    "structure": { "notes": "Centre fluid; neither side commits d5 or e4 early." },
+    "approach": { "notes": "A mainstream line played by top players." },
+    "level": { "reason": "understanding", "notes": "Little to memorise, but the subtle fight for e4 needs positional judgement." }
+  },
+  "plan_phrases": ["fianchetto", "fight for e4", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Nimzowitsch Variation", "moves": "4... Ba6 5. b3 Bb4+", "how": "Black goes for the c4 pawn with a sharper, more tactical game." },
+    { "name": "Sämisch ...c5", "moves": "4... Bb7 5. Bg2 c5", "how": "Black strikes early at d4." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "A sound, hard-to-break set-up with trades and few forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Main line of a respected defence." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The centre is undecided, as in the QID and Catalan." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A mainstream response, not a set-up against everything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans over theory, with mid-level subtlety." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides use fianchettoed bishops." }
+  }
+}

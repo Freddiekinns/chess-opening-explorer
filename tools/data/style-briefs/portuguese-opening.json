@@ -1,0 +1,46 @@
+{
+  "slug": "portuguese-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Portuguese Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Bb5",
+    "fen": "rnbqkbnr/pppp1ppp/8/1B2p3/4P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops the bishop to b5 before the knight, which mostly transposes to a Ruy Lopez after 2...Nc6 3.Nf3 or to a Berlin-like game after 2...Nf6 3.Nf3. Black can also play 2...c6 or 2...Nf6 3.Nxe5 to exploit the loose e4 pawn. As an independent opening it is rare and gives away the move-order precision of the Spanish.",
+  "white_ideas": [
+    { "idea": "Transpose to the Ruy Lopez with Nf3 and castle." },
+    { "idea": "Hold e4 with d3 or Nc3 once Black has committed." }
+  ],
+  "black_ideas": [
+    { "idea": "2...Nc6 or 2...Nf6 and meet 3.Nf3 as in the Spanish." },
+    { "idea": "2...c6 3.Bc4 Nf6 hits e4 and gains time on the bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "Ruy Lopez pawn structure after transposition: e4 against e5, flexible centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly transposes into quiet Spanish play, with no inherent forcing lines; low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; 2...Nf6 3.Nxe5 is a normal tactical point." },
+    "soundness": { "notes": "Sound but gives Black options such as 2...Nf6 3.Nxe5 Nxe4 or 2...c6; no refutation." },
+    "structure": { "notes": "Centre is tense after e4 e5 and not settled, as in the Ruy Lopez." },
+    "approach": { "notes": "Strong players seldom use this move order, preferring 2.Nf3 first." },
+    "level": { "reason": "neither", "notes": "Few plans to learn beyond the Ruy Lopez; no heavy theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "2...Nf6 3.Nxe5", "moves": "1. e4 e5 2. Bb5 Nf6 3. Nxe5", "how": "Immediate tactics around e4 and the pinned knight on c6 if Black errs." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet Spanish-type play by transposition with no sharp mainline." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Transposes to a respectable Ruy Lopez set-up." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre tension e4 against e5 stays unresolved, as in the Ruy Lopez." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players rarely choose this move order over 2.Nf3." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Spanish-style plans, little independent theory." },
+    "plans": { "value": [], "reason": "No plan distinct from the Ruy Lopez it transposes to." }
+  }
+}

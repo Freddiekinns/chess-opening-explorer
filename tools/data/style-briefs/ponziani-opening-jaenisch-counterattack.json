@@ -1,0 +1,48 @@
+{
+  "slug": "ponziani-opening-jaenisch-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Jaenisch Counterattack",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 3.c3 with a counterattack on e4 instead of allowing d4. After 4.d4 Nxe4 5.d5 Ne7 6.Nxe5 White wins the e5 pawn back and gets a space edge, but Black has active pieces and ...Ng6 and ...d6 ideas; 4.d4 exd4 5.e5 is also played. 4.d3 is a quiet alternative. The game is open and tactical in the main lines.",
+  "white_ideas": [
+    { "idea": "4.d4 Nxe4 5.d5 Ne7 6.Nxe5 for a space edge and active pieces" },
+    { "idea": "Pawn exchanges and open lines to use the lead in development" },
+    { "idea": "4.d3 for a quieter game, a slow build-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Counterattack on e4 and develop quickly" },
+    { "idea": "...Ne7-g6 and ...d6 to hold the position" },
+    { "idea": "Trade pieces and play for ...d5 break" }
+  ],
+  "typical_structures": [
+    { "structure": "Open Game centre where White pawns advance with d5 and Black develops freely" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "The main 4.d4 Nxe4 5.d5 line is open and tactical, with pieces hanging; the 4.d3 branch is quiet." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawns are exchanged; no clear gambit." },
+    "soundness": { "notes": "Sound; White keeps a small edge." },
+    "structure": { "notes": "Open lines in the main line, pawn centre exchanged." },
+    "approach": { "notes": "Standard but uncommon; the Ponziani is a surprise weapon more than a main-line choice." },
+    "level": { "reason": "understanding", "notes": "Some lines to know but nothing deep." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "4.d3", "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6 4. d3", "how": "Quiet, plays like a reversed Philidor structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Main line 4.d4 Nxe4 5.d5 is forcing and tactical." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Pawns are traded." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Playable for both." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Open centre with active pieces." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common, but strong players do choose it from time to time." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Moderate theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "Open game where activity counts." }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "english-opening-neo-catalan-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Neo-Catalan Declined",
+    "eco": "A13",
+    "moves": "1. Nf3 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7",
+    "fen": "rnbqk2r/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "english-opening-neo-catalan",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black keeps the d5 pawn and plays ...Be7 and ...O-O, leading to a Closed Catalan after O-O and d4. White presses on the long diagonal with the g2 bishop and the queenside, while Black builds a solid position and aims for ...dxc4 and ...c5 or ...b6 counterplay. Play is slow and positional.",
+  "white_ideas": [
+    { "idea": "Castle, play d4 and Qc2, keeping the long-diagonal pressure on d5 and b7." },
+    { "idea": "Press on the queenside with Nbd2/Nc3 and a later cxd5 or Qa4." }
+  ],
+  "black_ideas": [
+    { "idea": "Castle, play ...c6 or ...dxc4 and solid development, then free the position with ...c5 or ...e5." },
+    { "idea": "Neutralise the fianchetto bishop with ...c6 and ...Nbd7 and aim for ...b6 and ...Bb7." }
+  ],
+  "typical_structures": [
+    { "structure": "Closed Catalan with d4/c4 against d5/e6, centre in tension and White's long-diagonal bishop." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's set-up is solid and hard to break down; White has pressure but few direct threats." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice; ...dxc4 pawn is regained." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "Centre in tension with d4/c4 against d5; not locked." },
+    "approach": { "notes": "A standard Catalan move order played by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs positional understanding; little forced memory." }
+  },
+  "plan_phrases": ["fianchetto"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Closed Catalan set-up is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Centre in tension, undecided." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A mainstream Catalan move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Positional understanding, moderate theory." },
+    "plans": { "value": ["fianchetto"], "reason": "White's long-diagonal bishop drives the plan." }
+  }
+}

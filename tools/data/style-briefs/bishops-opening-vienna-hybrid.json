@@ -1,0 +1,46 @@
+{
+  "slug": "bishops-opening-vienna-hybrid",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Vienna Hybrid",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. d3 Nc6 4. Nc3",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2NP4/PPP2PPP/R1BQK1NR b KQkq - 2 4"
+  },
+  "parent": "bishops-opening-berlin-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "A Vienna and Bishop's Opening hybrid that reaches an Italian-type position with d3 and Nc3. White develops Bc4, Nc3, Nf3 and later f4 or O-O, keeping options. Black mirrors with ...Bc5 or ...Bb4 and ...d6, and the game is a slow manoeuvring fight.",
+  "white_ideas": [
+    { "idea": "Nf3, O-O and Bg5 pin ideas, sometimes f4 with a kingside plan" },
+    { "idea": "Keep the bishop aimed at f7 and play on the centre with Na4 or Nd5" }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...Bc5, ...d6 and ...O-O" },
+    { "idea": "...Bb4 pins and ...Na5 trade of the bishop" }
+  ],
+  "typical_structures": [
+    { "structure": "Giuoco Pianissimo-style e4/d3 against e5/d6, centre in tension" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring, few tactics early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Pianissimo anchor is Flexible." },
+    "approach": { "notes": "Standard development, not a system." },
+    "level": { "reason": "neither", "notes": "Pianissimo is a Beginner anchor; same scheme here." }
+  },
+  "plan_phrases": ["pressure on f7", "slow manoeuvring"],
+  "sublines_that_differ": [
+    { "name": "Spielmann Attack", "moves": "3.Bc4 Bc5 4.d3", "how": "Transposes into the same hybrid." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet Italian-style play, hard to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "e4/e5 centre with d3, like the Pianissimo." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal development scheme." },
+    "level": { "value": "beginner", "why": "neither", "confidence": 0.5, "reason": "Clear plans and little to memorise, like the Pianissimo." },
+    "plans": { "value": ["pressure_on_f7"], "reason": "The c4 bishop eyes f7." }
+  }
+}

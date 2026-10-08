@@ -1,0 +1,191 @@
+{
+  "slug": "four-knights-game",
+  "root": {
+    "name": "Four Knights Game",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Four Knights Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Four_Knights_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Four Knights Game: Opening Guide for White & Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/four-knights-game/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippet: Four Knights Game, Scotch Four Knights and Spanish variations",
+      "publisher": "Chessable and Wikipedia (search snippet only)",
+      "url": "https://thechessworld.com/articles/openings/four-knights-game-complete-guide/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Both sides develop both knights, so the root position is a symmetrical, classical tabiya from which White chooses the character of the game. The main branches are 4.Bb5 (the Spanish Four Knights), 4.d4 (the Scotch Four Knights), 4.g3 (the Glek System) and 4.Be2/4.Bc4 quieter alternatives. After 4.Bb5 Black can mirror with 4...Bb4 (the Double Spanish, highly symmetrical and drawish) or go for the Rubinstein 4...Nd4 for imbalance; 4.d4 exd4 5.Nxd4 Bb4 6.Nxc6 bxc6 7.Bd3 d5 leads to an open, more active game in which White usually keeps the initiative. The opening has a drawish reputation and often gives quiet positional play, although sharp variations (Belgrade Gambit, Halloween Gambit) exist. It was almost forgotten after the 1930s and enjoyed a renaissance in the 1990s; Short, Adams and Shirov have played it, and it is popular at club level because it needs little theory.",
+  "white_ideas": [
+    {
+      "idea": "Spanish Four Knights: 4.Bb5 pins/pressures the c6 knight, then castle and play d3 or d4, aiming for a Ruy Lopez-like squeeze.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Scotch Four Knights: 4.d4 exd4 5.Nxd4 exploits a development lead; Belgrade Gambit 5.Nd5 and Krause 4...Bb4 5.Nxe5 add complications. Chessable calls it an effective and dangerous option for White that reduces Black's defensive resources.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Glek System 4.g3: a fianchetto set-up that is solid and avoids main theory.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Quiet central build-up with d3 or Be2/d4 after castling, keeping central control.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror White with the Symmetrical/Double Spanish: 4.Bb5 Bb4 5.O-O O-O 6.d3 d6. Chessable recommends following Capablanca's defensive approach with careful piece placement.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Rubinstein Variation 4.Bb5 Nd4: Black plays actively and avoids symmetry; White's choices are 5.Ba4, 5.Bc4, 5.Nxd4 or 5.Nxe5.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Against 4.g3 equalise with 4...Bc5 or 4...d5.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Against 4.Bc4 (Italian Variation) look for the 4...Nxe4 fork trick; that line is regarded as inferior for White.",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical Open Game centre: both sides with e4/e5, Nc3/Nc6, Nf3/Nf6, bishops pinning knights (Double Spanish) or developing to e2/e7; centre closed or in tension until d4/d5 is played.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Scotch Four Knights: after the d-pawn exchange, White has a central majority and open lines, with Black holding doubled c-pawns after Nxc6 bxc6.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: drawish reputation, often quiet positional play, though sharp variations exist. The Double Spanish and Glek are quiet; the Scotch Four Knights is more active and the Belgrade and Halloween gambits are sharp but marginal.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root gives no material. Sub-lines: Halloween Gambit 4.Nxe5 (White sacrifices a knight for a pawn and development; 'dubious and rarely played') and Belgrade Gambit 5.Nd5 in the Scotch Four Knights.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Strategically sound; Wikipedia says even the Halloween Gambit is dubious rather than refuted. Used by GMs without issue.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Symmetrical Open Game with e4/e5 pawns; Spanish and Glek lines keep the centre closed or in tension; Scotch lines open the centre by exchanging on d4. Typically a closed or tense centre in the main Spanish lines.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A recognised main-line opening, not a system. Wikipedia says it appears frequently in the repertoire of players even among grandmasters (Short, Adams, Shirov mentioned), with a renaissance in the 1990s. Chessable adds Ivanchuk and Glek. It appeals to both beginners and experienced players wanting to avoid Petrov's Defence.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Chessable: natural developing moves, an excellent opening for beginners that does not need a lot of theory. Wikipedia: appeals to beginners following development principles. The Scotch Four Knights and Rubinstein lines have more theory, but the main Spanish/Glek lines are simple.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "symmetrical development",
+    "pin on the c6 knight",
+    "d4 break",
+    "central control",
+    "avoiding Petrov theory",
+    "Double Spanish symmetry",
+    "Glek fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Scotch Four Knights",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4 5. Nxd4",
+      "how": "Opens the centre immediately and gives White the initiative; more active than the Spanish lines."
+    },
+    {
+      "name": "Rubinstein Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Nd4",
+      "how": "Black avoids symmetry; asymmetrical middlegame with imbalance."
+    },
+    {
+      "name": "Halloween Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Nxe5",
+      "how": "A White gambit (knight for a pawn); dubious and rarely played."
+    },
+    {
+      "name": "Glek System",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. g3",
+      "how": "White fianchetto; slow and solid, avoiding mainline theory."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Four Knights Game is a classical and highly symmetrical opening that embodies rapid development and central control.",
+        "verdict": "supported",
+        "note": "Both sides develop two knights; the Double Spanish is highly symmetrical. Note that the Scotch and Rubinstein lines break the symmetry.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It leads to a quiet, strategic game where piece coordination and long-term plans matter more than sharp tactical calculation.",
+        "verdict": "supported",
+        "note": "Wikipedia: often quiet positional play and drawish reputation. But the Scotch Four Knights, Belgrade Gambit and Halloween Gambit are sharp and calculation-heavy.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It avoids the wild complications of more aggressive lines.",
+        "verdict": "supported",
+        "note": "True for the main lines; sharp sub-variations exist but are optional for the player.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White plays d2-d4 to open the centre and challenge Black's control, often after castling.",
+        "verdict": "supported",
+        "note": "4.d4 (Scotch) is immediate rather than after castling; in the Spanish lines d4 comes later after O-O and d3.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black equalises through solid development and decides how to react to d4, often leading to symmetrical or slightly asymmetrical pawn structures.",
+        "verdict": "supported",
+        "note": "Black equalises with 4...Bb4 (Double Spanish) or 4...Bc5/...d5 against Glek.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Both sides manoeuvre pieces to optimal squares before committing to a central pawn break.",
+        "verdict": "unverifiable",
+        "note": "Plausible given the closed Spanish structures but no source states it.",
+        "sources": []
+      },
+      {
+        "claim": "The Spanish Variation (4.Bb5) creates more complex, asymmetrical positions by pinning the knight on c6.",
+        "verdict": "wrong",
+        "note": "4.Bb5 usually leads to the Double Spanish 4...Bb4, described as highly symmetrical and drawish. Asymmetry appears only if Black chooses the Rubinstein 4...Nd4.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

@@ -3,12 +3,15 @@ jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getECODataPath: jest.fn(() => '/mock/eco'),
   getPopularityStatsPath: jest.fn(() => '/mock/popularity_stats.json'),
   getDataPath: jest.fn((f) => `/mock/${f}`),
+  getAPIDataPath: jest.fn((f) => `/mock/${f}`),
 }));
 
 const FEN = (n) => `fen-${n}`;
 
-// Nine openings: enough to exercise every bucket, the gambit override, the
-// tie-break, the unstyled case and pagination.
+// Nine openings: enough to exercise every style, an opening under two styles,
+// one under none, an untagged one, and pagination. Their old LLM tags
+// (analysis_json) are deliberately at odds with their style tags: browsing must
+// read only the latter.
 const ECO_FIXTURE = {
   [FEN(1)]: {
     name: 'Alpha Gambit',
@@ -60,8 +63,6 @@ const ECO_FIXTURE = {
     eco: 'A07',
     moves: '1. Nf3 d5',
     family_id: 'english',
-    // One tag from `aggressive` and one from `positional` — a 1-1 tie that must
-    // resolve to `aggressive`, which comes first in the config's styles array.
     analysis_json: { complexity: 'Advanced', style_tags: ['Sharp', 'Positional'] },
   },
   [FEN(8)]: {
@@ -76,12 +77,54 @@ const ECO_FIXTURE = {
     eco: 'B09',
     moves: '1. e4 g6',
     family_id: 'sicilian',
-    // `Sacrificial` also triggers the gambit override, even alongside a
-    // higher-scoring bucket.
     analysis_json: {
       complexity: 'Beginner',
       style_tags: ['Sacrificial', 'Aggressive', 'Sharp', 'Attacking'],
     },
+  },
+};
+
+const MIDDLE = {
+  character: 'balanced',
+  gambit: 'none',
+  soundness: 'sound',
+  structure: 'flexible',
+  approach: 'standard',
+  level: 'intermediate',
+  plans: [],
+};
+const tags = (axes) => ({ ...MIDDLE, ...axes });
+
+// FEN(9) is not in it: a variation not classified yet.
+const STYLE_FIXTURE = {
+  labels: {
+    gambit: { white: { label: 'White gambit', glossary: 'g' } },
+    character: {
+      solid: { label: 'Solid', glossary: 's' },
+      sharp: { label: 'Sharp', glossary: 'x' },
+    },
+    level: { beginner: { label: 'Beginner', glossary: 'b' } },
+  },
+  plans: { fianchetto: { label: 'Fianchetto', glossary: 'f' } },
+  variations: {
+    alpha: tags({ gambit: 'white', level: 'beginner', plans: ['fianchetto'] }),
+    bravo: tags({ character: 'sharp', level: 'advanced' }),
+    charlie: tags({ character: 'solid', approach: 'system' }),
+    delta: tags({ character: 'solid', structure: 'closed', level: 'advanced' }),
+    echo: tags({ character: 'solid' }),
+    foxtrot: tags({ character: 'sharp', soundness: 'dubious', level: 'advanced' }),
+    golf: tags({ approach: 'offbeat', level: 'advanced' }),
+    hotel: tags({}),
+  },
+  positions: {
+    [FEN(1)]: 'alpha',
+    [FEN(2)]: 'bravo',
+    [FEN(3)]: 'charlie',
+    [FEN(4)]: 'delta',
+    [FEN(5)]: 'echo',
+    [FEN(6)]: 'foxtrot',
+    [FEN(7)]: 'golf',
+    [FEN(8)]: 'hotel',
   },
 };
 
@@ -168,6 +211,7 @@ beforeEach(() => {
     if (/eco[BCDE]\.json/.test(file)) return JSON.stringify({});
     if (file.includes('popularity_stats.json')) return JSON.stringify(POPULARITY_FIXTURE);
     if (file.includes('families.json')) return JSON.stringify(FAMILIES_FIXTURE);
+    if (file.includes('style-tags.json')) return JSON.stringify(STYLE_FIXTURE);
     throw new Error(`unexpected read: ${file}`);
   });
   // cache-service's getOrSet logs on every hit and miss; the index build logs
@@ -179,26 +223,24 @@ beforeEach(() => {
   service.clearCache();
 });
 
-describe('BrowseService.primaryStyle', () => {
-  test('gambit wins outright, even against a higher-scoring bucket', () => {
-    expect(service.primaryStyle(['Gambit', 'Positional'])).toBe('gambit');
-    expect(service.primaryStyle(['Sacrificial', 'Aggressive', 'Sharp', 'Attacking'])).toBe(
-      'gambit'
-    );
+describe('BrowseService.stylesOf', () => {
+  test('an opening is under every style its axes match', () => {
+    expect(service.stylesOf(tags({ character: 'sharp', gambit: 'black' }))).toEqual([
+      'sharp',
+      'gambit',
+    ]);
+    expect(service.stylesOf(tags({ character: 'solid', approach: 'system' }))).toEqual([
+      'solid',
+      'system',
+    ]);
   });
 
-  test('highest tag-match count wins', () => {
-    expect(service.primaryStyle(['Aggressive', 'Sharp', 'Solid'])).toBe('aggressive');
-    expect(service.primaryStyle(['System-based', 'Flexible', 'Solid'])).toBe('system');
+  test('middle values put an opening under no style', () => {
+    expect(service.stylesOf(tags({}))).toEqual([]);
   });
 
-  test('a tie breaks by config order — aggressive before positional', () => {
-    expect(service.primaryStyle(['Sharp', 'Positional'])).toBe('aggressive');
-  });
-
-  test('no bucket match is null, not a default bucket', () => {
-    expect(service.primaryStyle(['Strategic', 'Dynamic'])).toBeNull();
-    expect(service.primaryStyle([])).toBeNull();
+  test('a position with no style tags is under none, not a default', () => {
+    expect(service.stylesOf(null)).toEqual([]);
   });
 });
 
@@ -212,7 +254,7 @@ describe('BrowseService.buildIndex', () => {
       name: 'Alpha Gambit',
       eco: 'A01',
       level: 'Beginner',
-      style: 'gambit',
+      styles: ['gambit'],
       family_id: 'sicilian',
       family_name: 'Sicilian Defense',
       games_analyzed: 900,
@@ -223,6 +265,17 @@ describe('BrowseService.buildIndex', () => {
   test('uncategorised gets the label "Other", never the raw id', () => {
     const foxtrot = service.buildIndex().find((o) => o.fen === FEN(6));
     expect(foxtrot.family_name).toBe('Other');
+  });
+
+  test('an untagged opening has no level and no styles', () => {
+    const india = service.buildIndex().find((o) => o.fen === FEN(9));
+    expect(india.level).toBeNull();
+    expect(india.styles).toEqual([]);
+  });
+
+  test('a hidden middle level is still stored for filtering', () => {
+    const hotel = service.buildIndex().find((o) => o.fen === FEN(8));
+    expect(hotel.level).toBe('Intermediate');
   });
 
   test('an opening with no popularity row keeps null rates and zero games', () => {
@@ -265,15 +318,22 @@ describe('BrowseService.browse — sorting', () => {
 });
 
 describe('BrowseService.browse — filtering', () => {
-  test('level filters on complexity', () => {
+  test('level filters on the style tags, never the old complexity', () => {
     const { items, total } = service.browse({ level: 'Beginner', pageSize: 48 });
-    expect(total).toBe(2);
-    expect(items.map((o) => o.fen).sort()).toEqual([FEN(1), FEN(9)].sort());
+    expect(total).toBe(1);
+    expect(items.map((o) => o.fen)).toEqual([FEN(1)]);
   });
 
-  test('style filters on the resolved primary style', () => {
-    const { total } = service.browse({ style: 'gambit', pageSize: 48 });
-    expect(total).toBe(2);
+  test('style filters on the style tags', () => {
+    expect(service.browse({ style: 'gambit', pageSize: 48 }).total).toBe(1);
+    expect(service.browse({ style: 'solid', pageSize: 48 }).total).toBe(3);
+  });
+
+  test('an opening under two styles is found by either', () => {
+    const solid = service.browse({ style: 'solid', pageSize: 48 }).items.map((o) => o.fen);
+    const system = service.browse({ style: 'system', pageSize: 48 }).items.map((o) => o.fen);
+    expect(solid).toContain(FEN(3));
+    expect(system).toEqual([FEN(3)]);
   });
 
   test('family filters on family_id', () => {
@@ -288,13 +348,25 @@ describe('BrowseService.browse — filtering', () => {
       family: 'sicilian',
       pageSize: 48,
     });
-    expect(total).toBe(2);
-    expect(items.map((o) => o.fen).sort()).toEqual([FEN(1), FEN(9)].sort());
+    expect(total).toBe(1);
+    expect(items.map((o) => o.fen)).toEqual([FEN(1)]);
   });
 
-  test('an unstyled opening survives an unfiltered browse', () => {
+  test('unstyled and untagged openings survive an unfiltered browse', () => {
     const { items } = service.browse({ pageSize: 48 });
-    expect(items.find((o) => o.fen === FEN(8)).style).toBeNull();
+    expect(items.find((o) => o.fen === FEN(8)).styles).toEqual([]);
+    expect(items.find((o) => o.fen === FEN(9)).style_profile).toBeNull();
+  });
+
+  test('items carry the style profile a card draws, words in taxonomy order', () => {
+    const { items } = service.browse({ pageSize: 48 });
+    expect(items.find((o) => o.fen === FEN(1)).style_profile).toEqual({
+      words: [
+        { axis: 'gambit', value: 'white', label: 'White gambit', glossary: 'g' },
+        { axis: 'level', value: 'beginner', label: 'Beginner', glossary: 'b' },
+      ],
+      plans: [{ key: 'fianchetto', label: 'Fianchetto', glossary: 'f' }],
+    });
   });
 });
 
@@ -335,27 +407,35 @@ describe('BrowseService.browse — the reconciliation invariant', () => {
 });
 
 describe('BrowseService.browse — facet semantics', () => {
-  test('with no filters, each facet dimension sums to the total', () => {
+  test('with no filters, level and family sum to the tagged and total counts', () => {
     const { facets, total } = service.browse({ pageSize: 48 });
     expect(total).toBe(9);
     const sum = (f) => f.reduce((acc, x) => acc + x.count, 0);
-    expect(sum(facets.level)).toBe(9);
+    // 8, not 9 — the untagged opening has no level.
+    expect(sum(facets.level)).toBe(8);
     expect(sum(facets.family)).toBe(9);
-    // 8, not 9 — one opening has no style and is counted in no bucket.
-    expect(sum(facets.style)).toBe(8);
+  });
+
+  test('styles are counted under each style an opening has, so they need not partition', () => {
+    const { facets } = service.browse({ pageSize: 48 });
+    const count = (v) => facets.style.find((f) => f.value === v).count;
+    expect(count('solid')).toBe(3);
+    expect(count('sharp')).toBe(2);
+    expect(count('system')).toBe(1);
+    expect(count('dubious')).toBe(1);
   });
 
   test('a facet is counted with its own filter excluded', () => {
     const { facets } = service.browse({ level: 'Beginner', pageSize: 48 });
     const advanced = facets.level.find((f) => f.value === 'Advanced');
     // Still visible and non-zero, so the user can switch to it.
-    expect(advanced.count).toBe(5);
+    expect(advanced.count).toBe(4);
   });
 
   test('other dimensions are counted with the active filter applied', () => {
     const { facets } = service.browse({ level: 'Beginner', pageSize: 48 });
     const sicilian = facets.family.find((f) => f.value === 'sicilian');
-    expect(sicilian.count).toBe(2);
+    expect(sicilian.count).toBe(1);
     const english = facets.family.find((f) => f.value === 'english');
     expect(english).toBeUndefined();
   });
@@ -390,9 +470,9 @@ describe('BrowseService.browse — facet zero handling', () => {
     });
   });
 
-  test('style facets do not leak the raw tag lists from config', () => {
+  test('style facets do not leak the axis rules from config', () => {
     const { facets } = service.browse({ pageSize: 48 });
-    expect(facets.style.every((f) => f.tags === undefined)).toBe(true);
+    expect(facets.style.every((f) => f.axis === undefined && f.values === undefined)).toBe(true);
   });
 });
 

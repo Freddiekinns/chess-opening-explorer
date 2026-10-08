@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-declined-neo-orthodox-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Neo-Orthodox Variation",
+    "eco": "D54",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Bg5 Be7 5. e3 O-O 6. Rc1",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/2RQKBNR b K - 2 6"
+  },
+  "parent": "queens-gambit-declined",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White has pinned the f6 knight and moved the rook to c1 (the Anti-Neo-Orthodox line), and Black usually plays ...h6 7.Bh4 b6 and then trades with ...Nxd5 and ...exd5 after cxd5. This leads to a Carlsbad-like structure where White plays for a minority attack and Black for solid defence with ...c5 or ...Bb7. The line is mostly quiet and very solid for Black.",
+  "white_ideas": [
+    { "idea": "Pin on f6, then cxd5 and Bxe7, and play the minority attack with b4-b5." },
+    { "idea": "Use the c-file with Rc1 and pressure on c6/c5." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the pin with ...h6 and ...b6 and trade pieces on d5 and e7 to ease the position." },
+    { "idea": "Hold d5, develop ...Bb7 and play ...c5 or ...c6 to free the c8-bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad structure after cxd5 exd5, with White's minority attack against Black's pawn on d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Queen's Gambit Declined set-up with piece trades and few forcing lines; Black is very hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "After the exchange on d5 there is a half-open c-file for White and a symmetrical-ish structure; semi-open." },
+    "approach": { "notes": "A standard main-line QGD set-up." },
+    "level": { "reason": "understanding", "notes": "Some forcing lines are known, but the typical plans are easy; intermediate." }
+  },
+  "plan_phrases": ["minority attack", "Carlsbad structure", "trade pieces"],
+  "sublines_that_differ": [
+    { "name": "6.Nf3 h6 7.Bh4 b6 (Tartakower)", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6", "how": "The same structure with more flexibility on the sixth move; the Neo-Orthodox name goes with this order." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.7, "reason": "Black is hard to break down and the play is steady, with trades." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Fully sound for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Exchange on d5 gives a half-open c-file and a Carlsbad-like structure." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainline QGD set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Clear plans, moderate theory." },
+    "plans": { "value": ["carlsbad_structure", "minority_attack"], "reason": "White goes for the Carlsbad minority attack." }
+  }
+}

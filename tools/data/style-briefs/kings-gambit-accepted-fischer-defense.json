@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-accepted-fischer-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Fischer Defense",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black holds the extra pawn with ...d6, intending ...Nf6 and ...g6, rather than the ...g5 lines. White's main replies are 4.d4 (often with ...g5 5.h4 g4 6.Ng1) and 4.Bc4, both for fast development and attacking chances. The position is open and tactical, and Black has to avoid the Ng5 and Bxf7+ tricks. The Fischer Defense is considered a reasonable try for Black.",
+  "white_ideas": [
+    { "idea": "d4 and Bxf4 to regain the pawn with a lead in development" },
+    { "idea": "Bc4 and Ng5 against f7, or Ng1 and h-pawn play against ...g5 lines" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the f4 pawn with ...g5 and ...g4, or develop ...Nf6 and ...g6" },
+    { "idea": "...Bg4 or ...Nc6 to break the attack and return the pawn at the right moment" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and f-files with Black's extra f4 pawn and loosened kingside" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Wide-open tactical play where both kings are exposed." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black keeps the f4 pawn with ...d6 and ...g5." },
+    "soundness": { "notes": "Sound for both; considered Black's solid way to hold the pawn." },
+    "structure": { "notes": "Centre pawns exchanged, open lines early." },
+    "approach": { "notes": "King's Gambit lines are played by strong players on occasion; standard rather than offbeat." },
+    "level": { "reason": "memory", "notes": "Tactical sequences matter; Black needs preparation." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Fischer Defense: Schulder Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6 4. b4", "how": "White gives a second pawn for queenside space and a very sharp game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Open tactical play with exposed kings after White's gambit." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives the f-pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.65, "reason": "A playable defence and gambit, not refuted." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Open lines for the pieces right away." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "King's Gambit lines are respected sidelines." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Needs tactical knowledge but not deep theory for most club play." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White trades the pawn for development and attack." }
+  }
+}

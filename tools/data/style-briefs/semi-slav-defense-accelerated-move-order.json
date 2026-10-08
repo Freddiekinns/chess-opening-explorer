@@ -1,0 +1,47 @@
+{
+  "slug": "semi-slav-defense-accelerated-move-order",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Accelerated Move Order",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-declined-queens-knight-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "A Semi-Slav move order where Black plays ...c6 before ...Nf6, so White can choose 4.e3 or 4.Nf3 for the main Semi-Slav, or 4.cxd5 exd5 for an Exchange QGD-like structure. Most games transpose to Meran or Botvinnik lines. Black holds d5 and plans ...dxc4 with ...b5 or the ...c5 break.",
+  "white_ideas": [
+    { "idea": "4.Nf3 or 4.e3, transposing to the main Semi-Slav Meran, Moscow or Botvinnik" },
+    { "idea": "4.cxd5 exd5 for a Carlsbad-style minority attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold d5, take on c4 later and expand with ...b5 or break with ...c5/...e5" },
+    { "idea": "Develop the queenside after ...Nbd7 and ...Bd6" }
+  ],
+  "typical_structures": [
+    { "structure": "Semi-Slav centre with c6/d5/e6 against c4/d4/e3" },
+    { "structure": "Exchange structure with White minority attack" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main transpositions are Meran and Botvinnik, sharp theory; the Exchange option is quieter." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black regains c4 pawn." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "Tension in centre, flexible." },
+    "approach": { "notes": "Standard Semi-Slav move order." },
+    "level": { "reason": "memory", "notes": "Transposes to heavy Semi-Slav theory." }
+  },
+  "plan_phrases": ["central break", "minority attack", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Exchange", "moves": "4.cxd5 exd5", "how": "Quiet Carlsbad-type structure with a minority attack." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Main lines transpose into forcing Meran and Botvinnik theory." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Pawns are regained." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main-line defence." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre stays in tension and the structure depends on the sub-line." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A standard move-order choice." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.45, "reason": "Leads into heavily theoretical Semi-Slav lines." },
+    "plans": { "value": [], "reason": "Plans depend on the transposition." }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "italian-game-anti-fried-liver-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Anti-Fried Liver Defense",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 h6",
+    "fen": "r1bqkbnr/pppp1pp1/2n4p/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "italian-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black spends a tempo on ...h6 to rule out Ng5 and the Fried Liver after ...Nf6. White can play c3 and d4 or d3 and O-O and get a free development advantage. I know this only as a rare waiting move; I am reasoning from the moves rather than from detailed theory.",
+  "white_ideas": [
+    { "idea": "c3, d4 or d3 and O-O, using the extra tempo for development and central space" },
+    { "idea": "Keep options of Ng5-free attacks like d4 and Bg5 pins" }
+  ],
+  "black_ideas": [
+    { "idea": "Follow with ...Nf6, ...Bc5, ...d6 and ...O-O in a solid Italian" }
+  ],
+  "typical_structures": [
+    { "structure": "Giuoco Piano/Pianissimo-type with ...h6 played, e4/d3 against e5/d6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, ...h6 slows Black, no real tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Playable but loses a tempo; not refuted." },
+    "structure": { "notes": "Italian structure, flexible." },
+    "approach": { "notes": "A rare waiting move that strong players seldom choose." },
+    "level": { "reason": "neither", "notes": "Easy plans, little theory." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet position with no sharp theory and no solid-wall reputation." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Loses a tempo but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Italian centre in tension." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rarely chosen move order for strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple plans, no long theory." },
+    "plans": { "value": [], "reason": "No characteristic plan." }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "bird-opening",
+  "root": {
+    "name": "Bird Opening",
+    "eco": "A02",
+    "moves": "1. f4",
+    "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Bird's Opening", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Bird%27s_Opening", "kind": "reference" },
+    { "id": "s2", "title": "Bird's Opening (1.f4): Lines, Traps & How to Counter It", "publisher": "Chess Doctrine", "url": "https://chessdoctrine.com/chess-openings/flank/birds-opening/", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Bird's Opening guides (Chess.com blog, Wikibooks, chesslab.academy)", "publisher": "Web search results", "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._f4", "kind": "reference" }
+  ],
+  "overview": "1.f4 stakes a claim to e5 and gives White attacking chances at the cost of slightly weakening the kingside (the h4-e1 diagonal). Black's most common reply is 1...d5, which gives a reversed Dutch Defence with White a tempo up, and White chooses between a reversed Leningrad (Nf3, g3, Bg2, O-O), a Stonewall (pawns on d4, e3, f4, with a kingside pawn storm) or a queenside fianchetto to hold e5. Black's sharpest answer is 1...e5, From's Gambit, which is notoriously double-edged and shows the Qh4+ danger. Other replies include 1...Nf6, 1...c5 and 1...b6. White scores below 50% (about 47%), and the opening is rare at the very top, but it is a respectable surprise weapon (Larsen, Bird).",
+  "white_ideas": [
+    { "idea": "Control e5 with the f-pawn and prepare an e3-e4 break.", "sources": ["s1", "s3"] },
+    { "idea": "Reversed Leningrad: Nf3, g3, Bg2, O-O, a slower positional set-up with an eventual e4 break.", "sources": ["s2", "s3"] },
+    { "idea": "Stonewall: pawns on d4, e3, f4 with a kingside attack or pawn storm.", "sources": ["s2", "s3"] },
+    { "idea": "Fianchetto the queen's bishop to increase the hold on e5.", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "1...d5, a solid reversed Dutch, calmer approach.", "sources": ["s1", "s2"] },
+    { "idea": "1...e5 From's Gambit, the sharpest reply; 2.fxe5 d6 3.exd6 Bxd6 with quick development and Qh4+ ideas.", "sources": ["s1", "s2"] },
+    { "idea": "1...b6 (long-diagonal fianchetto) or 1...c5 transposing towards Sicilian structures.", "sources": ["s2"] },
+    { "idea": "Exploit the weakened h4-e1 and g1-a7 diagonals with Qh4+ tactics.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Stonewall: White pawns d4, e3, f4 with a bishop outside; closed centre, kingside play", "sources": ["s2", "s3"] },
+    { "structure": "Reversed Leningrad Dutch with the fianchettoed kingside bishop", "sources": ["s1", "s3"] },
+    { "structure": "From's Gambit lines: open f-file and diagonals after fxe5", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as often leading to dynamic and sharp positions for both sides, risky and aggressive, with From's Gambit especially tactical. After 1...d5 the play is calmer. Overall double-edged because of the weakened king-side diagonals.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "1.f4 itself gives no material. From's Gambit (1...e5) is a Black gambit side branch; White can decline with 2.e4 transposing to a King's Gambit-like line.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Strategically sound but objectively challenging. White scores about 46.7% overall, below the 50%+ of mainstream openings.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Typically a closed or tense centre in reversed Dutch structures (Stonewall, Leningrad), with White's pawns on f4 and e3/d4. The central pawn exchanges happen late. From's Gambit opens the position at once.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "A coherent system with consistent plans across several variations. Rarely seen at elite level but works as a surprise weapon; Larsen played it regularly, and its first user was Henry Bird in 1855. Ranked sixth in popularity among first moves per Wikipedia (as summarised).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Less theoretically demanding than main-line systems; plans (Stonewall, Leningrad) matter more than memorised lines, though the From's Gambit demands known answers. Club players favour it. Permanent weaknesses on h4-e1 and g1-a7 diagonals mean White must handle king safety carefully. Judged for White.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "control of e5",
+    "reversed Dutch",
+    "reversed Stonewall",
+    "reversed Leningrad",
+    "kingside pawn storm",
+    "e3-e4 break",
+    "h4-e1 diagonal weakness"
+  ],
+  "sublines_that_differ": [
+    { "name": "Bird Opening: From's Gambit", "moves": "1. f4 e5 2. fxe5 d6", "how": "Black pawn gambit, very sharp and tactical; Qh4+ tricks." },
+    { "name": "Bird Opening: Schlechter Gambit", "moves": "1. f4 e5 2. fxe5 Nc6", "how": "Another Black gambit at move two; sharp and rarer than From's." },
+    { "name": "Bird: Symmetrical (1...f5)", "moves": "1. f4 f5", "how": "Mirror position; Swiss Gambit after 2.e4; quiet or Stonewall-like play." },
+    { "name": "Bird: 1...d5 reversed Dutch", "moves": "1. f4 d5", "how": "Calm, structure-based (Stonewall or Leningrad), the most common reply." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A flank opening staking a claim on the e5 square.", "verdict": "supported", "note": "Both Wikipedia and others describe control of e5.", "sources": ["s1"] },
+      { "claim": "Often leads to positions resembling a reversed Dutch Defense.", "verdict": "supported", "note": "After 1...d5.", "sources": ["s1", "s3"] },
+      { "claim": "Offers flexibility and the chance to sidestep heavy theory.", "verdict": "supported", "note": "Less theory than main-line systems.", "sources": ["s1"] },
+      { "claim": "Creates an early weakness on the h4-e1 diagonal, requiring careful king safety.", "verdict": "supported", "note": "Weakened h4-e1 and g1-a7 diagonals; Qh4+ danger.", "sources": ["s1", "s2"] },
+      { "claim": "Best suited for creative and unconventional players comfortable with a slight element of risk.", "verdict": "unverifiable", "note": "Evaluative; the sources do call it risky and aggressive.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Fianchetto the king's bishop (g3, Bg2) to bolster the kingside and control the long diagonal, then kingside expansion.", "verdict": "supported", "note": "Reversed Leningrad set-up with g3, Bg2, O-O.", "sources": ["s2", "s3"] },
+      { "claim": "White: Control the centre with Nf3, e3 and d4, creating a solid pawn structure before launching an attack.", "verdict": "supported", "note": "Stonewall formation.", "sources": ["s2", "s3"] },
+      { "claim": "Black: Challenge White's set-up immediately with ...d5, aiming to open the centre and exploit weaknesses around White's king.", "verdict": "wrong", "note": "1...d5 is the solid reversed Dutch reply that keeps the centre closed; the sharp central challenge is 1...e5 (From's Gambit).", "sources": ["s1", "s2"] },
+      { "claim": "Black: Develop pieces to target the weakened h4-e1 diagonal, for example with an early ...Qh4+.", "verdict": "supported", "note": "Qh4+ is the main tactical danger, particularly in From's Gambit.", "sources": ["s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

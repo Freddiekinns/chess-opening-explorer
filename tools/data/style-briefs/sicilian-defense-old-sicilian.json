@@ -1,0 +1,187 @@
+{
+  "slug": "sicilian-defense-old-sicilian",
+  "root": {
+    "name": "Sicilian Defense: Old Sicilian",
+    "eco": "B30",
+    "moves": "1. e4 c5 2. Nf3 Nc6",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Nc6 Sicilian (B20)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/nc6-sicilian",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Opening: Sicilian Defense: Old Sicilian",
+      "publisher": "Lichess",
+      "url": "https://lichess.org/opening/Sicilian_Defense_Old_Sicilian",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Sicilian Defense - Chess Openings",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Sicilian-Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "2...Nc6 develops the queen's knight, covers d4 and e5, and keeps both ...d5 and ...e5 available in one move. It is a crossroads: after 3.d4 cxd4 4.Nxd4 Black picks the Sveshnikov (...Nf6, ...e5), the Accelerated Dragon (...g6) or a Taimanov/Classical set-up, all sharp and heavily theoretical with asymmetrical pawns. White can sidestep that with 3.Bb5 (Rossolimo, aiming for doubled c-pawns and positional pressure) or with quieter third moves. The positions filed under this exact root are only those quieter third moves (3.Bc4, 3.Nc3, 3.d3, 3.g3, 3.b3, 3.c3); the main 3.d4 and 3.Bb5 lines sit in separate named roots.",
+  "white_ideas": [
+    {
+      "idea": "3.d4 and the Open Sicilian: play for a lead in development and pressure on weaknesses such as d5 (Sveshnikov) rather than a direct attack",
+      "sources": ["s2", "s1"]
+    },
+    {
+      "idea": "3.Bb5 Rossolimo: pin or trade on c6 to give Black doubled c-pawns, avoid Open Sicilian complications",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Quiet third moves (3.Nc3, 3.Bc4, 3.d3, 3.g3, 3.c3) have little independent significance (s2) and tend to transpose to other Sicilian or Italian-type structures",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep options open: after 3.d4 cxd4 4.Nxd4, choose Sveshnikov (...Nf6, ...e5), Accelerated Dragon (...g6, with Nc6 preventing Qxd4), or Taimanov/Classical. Black accepts a backward d-pawn and d5 hole in the Sveshnikov for active pieces",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "...d5 in one move is available, saving a tempo compared with other Sicilians",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Trade the c-pawn for White's d-pawn and fight for the d4 square (own understanding; the standard Sicilian idea)",
+      "sources": []
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian asymmetry: White e4 against Black d-pawn/e-pawn, half-open c-file for Black",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Sveshnikov: Black backward d6-pawn with a d5 hole in exchange for activity",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Rossolimo: Black doubled c-pawns after Bxc6",
+      "sources": ["s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s1 rates the Nc6 Sicilian as Sharp (about 0.96 across rating bands). s2 says the position typically produces sharp asymmetrical positions where White's edge, if any, is positional (the d5 hole, doubled c-pawns) rather than tactical. Note this describes the 3.d4 and 3.Bb5 branches. The quieter third moves filed under this exact root are less forcing and have little independent significance (s2).",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound and balanced: s1 gives White 48.6%, Black 46.9% and 4.5% draws over 118.8 million games. Nothing in the pages read calls any main line dubious.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "After 3.d4 cxd4 the central d-pawns are exchanged, leaving a half-open c-file for Black and an asymmetrical centre, so semi-open in the usual Sicilian sense. After 3.Bb5 and the quiet third moves the centre stays tense.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A move-order crossroads that keeps several Sicilian systems available, rather than a single set-up. s1: 2...Nc6 appears in 3.21% of games at 2500 Elo and is a standard choice of strong players; s2 calls it 'committal' because it allows the Rossolimo.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Judged for Black, the defender. s1 classes it as a 'Theoretician' opening: theory adherence rises from 62.6% at 400 Elo to 90.7% at 2500, so deep specific knowledge is needed for Sveshnikov and Accelerated Dragon lines. s3 says the Sicilian in general has a lot of theory and White has many ways to meet it. The sources do not claim the plans are hard to find.",
+      "sources": ["s1", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "Open Sicilian",
+    "backward d-pawn with d5 hole",
+    "doubled c-pawns",
+    "avoiding Open Sicilian theory",
+    "transposition to Sveshnikov, Accelerated Dragon, Taimanov",
+    "queenside counterplay",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rossolimo",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
+      "how": "Positional, pawn-structure battle (doubled c-pawns) instead of open-Sicilian tactics."
+    },
+    {
+      "name": "Open Sicilian: Sveshnikov",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
+      "how": "Sharp, theory-heavy, backward d6 pawn and d5 hole; Ndb5 is the critical test (s2)."
+    },
+    {
+      "name": "Open Sicilian: Accelerated Dragon",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
+      "how": "Own root already; Black avoids ...d6 and can meet the Maroczy Bind."
+    },
+    {
+      "name": "Quiet third moves (3.Bc4, 3.Nc3, 3.d3, 3.g3, 3.b3)",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. Bc4",
+      "how": "The lines actually filed under this root: low-theory, closer to English-type or Italian-type set-ups, no forcing sequences."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Old Sicilian is a classical and highly flexible response where Black develops the queenside knight to challenge d4",
+        "verdict": "supported",
+        "note": "Nc6 covers d4 and e5 and keeps ...d5/...e5 available (s2).",
+        "sources": ["s2", "s1"]
+      },
+      {
+        "claim": "It allows Black to transpose into numerous Sicilian systems, from sharp Open Sicilians to more positional lines like the Rossolimo",
+        "verdict": "unverifiable",
+        "note": "Black can reach the Sveshnikov, Accelerated Dragon and Taimanov (supported). The Rossolimo is White's choice (3.Bb5), not a system Black transposes into.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is an excellent choice for players who enjoy a rich strategic battle and are prepared for a wide variety of structures",
+        "verdict": "unverifiable",
+        "note": "s1 stresses sharp, theory-heavy play ('Theoretician' opening), which fits 'wide variety of structures' but not particularly 'strategic'.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: seize the centre with 3.d4, or play 3.Bb5 (Rossolimo) to create positional pressure and disrupt Black's structure",
+        "verdict": "supported",
+        "note": "Doubled c-pawns in the Rossolimo; 3.d4 opens the position.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: exchange the c-pawn for White's d-pawn and develop actively for queenside counterplay, often with ...b5",
+        "verdict": "unverifiable",
+        "note": "The c-for-d trade is standard; ...b5 as a typical plan was not found in these sources.",
+        "sources": []
+      },
+      {
+        "claim": "White (Anti-Sicilian): build a solid centre, e.g. the Alapin with 3.c3",
+        "verdict": "wrong",
+        "note": "The Alapin is 2.c3 (move two) with Black's knight not yet on c6. After 2.Nf3 Nc6, 3.c3 is a different quiet line that s2 says has little independent significance.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Black (vs. Anti-Sicilian): adapt development to White's plan, aiming to equalise in the centre before launching counterplay",
+        "verdict": "unverifiable",
+        "note": "Generic advice.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

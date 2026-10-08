@@ -1,0 +1,42 @@
+{
+  "slug": "rat-defense-small-center-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Small Center Defense",
+    "eco": "C00",
+    "moves": "1. d4 e6 2. e4 d6",
+    "fen": "rnbqkbnr/ppp2ppp/3pp3/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "french-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black allows a big e4-d4 centre and builds a Philidor- or Pirc-like set-up with ...e6 and ...d6, then ...Nf6, ...Be7 and ...O-O or a ...g6 fianchetto. White develops naturally with Nf3, Nc3 and Be2 or goes for a kingside attack. Black is cramped but tries to break with ...c5 or ...e5. It is a rare move-order, strong players seldom choose it.",
+  "white_ideas": [
+    { "idea": "Take space with Nc3, Nf3, Be3 and Qd2, with kingside attack or e5" }
+  ],
+  "black_ideas": [
+    { "idea": "Compact ...Nf6, ...Be7, ...O-O and ...c5 or ...e5 breaks" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 against Black d6/e6; Philidor, Pirc or Hanham-like set-ups" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive and cramped; Black is hard to crack quickly but I expect no forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable though passive." },
+    "structure": { "notes": "Centre tension persists until ...c5 or ...e5: flexible." },
+    "approach": { "notes": "Strong players seldom use it; a move-order surprise." },
+    "level": { "reason": "neither", "notes": "Nothing to memorise but passive; intermediate by default." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.4, "reason": "Compact, passive pawn structure, hard to break but cramped." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Playable, only passive." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not yet resolved." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few lines to learn but passive plans." },
+    "plans": { "value": ["space_advantage"], "reason": "White's extra space in the centre is the main theme." }
+  }
+}

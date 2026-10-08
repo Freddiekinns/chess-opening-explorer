@@ -1,0 +1,47 @@
+{
+  "slug": "tarrasch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-declined-queens-knight-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black strikes at the centre at once with 3...c5, accepting an isolated queen's pawn or hanging pawns for free piece play and active bishops. The main line is 4.cxd5 exd5 5.Nf3 Nc6 6.g3 Nf6 7.Bg2 Be7 8.O-O O-O, where White blockades d4 and Black uses activity. Black's pieces get freedom; the IQP is the long-term weakness.",
+  "white_ideas": [
+    { "idea": "Blockade the isolated d-pawn with a knight on d4, trade pieces, and aim for an endgame against the weakness." },
+    { "idea": "Fianchetto with g3/Bg2 and play dxc5 or Bg5 pins." }
+  ],
+  "black_ideas": [
+    { "idea": "Active piece play, ...Bf5/...Bg4 development and a kingside attack against the IQP." },
+    { "idea": "Push ...d4 or ...c4 to free the position or form hanging pawns." }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn on d5 after cxd5 exd5 dxc5-type trades." },
+    { "structure": "Hanging pawns on c5/d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dynamic play for Black against a structural weakness; some forcing lines but the middlegames are manoeuvring and balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black can lose the d-pawn only temporarily in some lines, never a gambit." },
+    "soundness": { "notes": "Sound, played by strong players; White's blockade is slightly annoying." },
+    "structure": { "notes": "Tension in the centre early; IQP or hanging pawns after exchanges." },
+    "approach": { "notes": "A standard defence to the QGD move order." },
+    "level": { "reason": "both", "notes": "IQP handling is demanding and main lines have 20-move theory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "4.e3 Nf6 5.Nf3", "moves": "4.e3 Nf6 5.Nf3 Nc6", "how": "Symmetrical-style Semi-Tarrasch transposition, quieter." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Dynamic IQP play, neither especially safe nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No pawn is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Established defence at all levels." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Centre opens after cxd5 exd5 with an IQP or half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A recognised main defence in the QGD." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "The IQP plans are well known and the line is sound." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns", "lead_in_development"], "reason": "IQP or hanging pawns for piece activity." }
+  }
+}

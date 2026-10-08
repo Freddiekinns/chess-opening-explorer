@@ -1,0 +1,325 @@
+{
+  "slug": "sicilian-defense-accelerated-dragon",
+  "root": {
+    "name": "Sicilian Defense: Accelerated Dragon",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
+    "fen": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence, Accelerated Dragon",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Accelerated_Dragon",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Maróczy Bind",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%B3czy_Bind",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "The Accelerated Dragon: How to Play It as White and Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/the-accelerated-dragon/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Accelerated Dragon Sicilian: Theory, Maroczy Bind & Traps",
+      "publisher": "ChessDoctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/accelerated-dragon/",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Master the Accelerated Dragon Sicilian!",
+      "publisher": "Alberto Chueca",
+      "url": "https://www.albertochueca.com/blog/accelerated-dragon-sicilian-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s6",
+      "title": "Sicilian Defense: Accelerated Dragon, Maróczy Bind (5...Bg7)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/sicilian-defence-1-e4-c5-2-nf3-nc6-3-d4-cxd4-4-nxd4-g6-5-c4-bg7",
+      "kind": "article"
+    },
+    {
+      "id": "s7",
+      "title": "Sicilian Accelerated Dragon (B34-B39)",
+      "publisher": "The Bishops Bounty (blog)",
+      "url": "https://bishopsbounty.blogspot.com/2009/08/sicilian-accelerated-dragon-b34-b39.html",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays ...Nc6 and ...g6 and delays ...d6, so that ...d5 stays available in one move; that is the whole difference from the Dragon, and it is why the Yugoslav Attack (...d6 first, then f3, Qd2, Bh6, O-O-O) cannot be forced on Black. White chooses the character of the game on move 5. 5.c4 is the Maróczy Bind (c4 and e4 pawns stop ...d5), a squeeze where Black trades pieces with ...Nf6, ...d6, ...Nxd4, ...Bd7-c6 and fights to keep the g7-bishop alive; play is manoeuvring and positional. 5.Nc3 Bg7 6.Be3 Nf6 is the Modern line, where ...d5 is a live threat (7.f3 or 7.Be2 allow it) and White usually plays Bc4, Bb3 and O-O; sharper tactics (the 7...Qa5 trap, opposite-side castling with Qd2 and Bh6 in some 5.Be3 lines) appear here. 5.Nxc6 is a smaller line with early queen sorties. Sources disagree on how sharp the opening is overall; the Maróczy branch is consistently described as strategic, the Modern branch as more tactical.",
+  "white_ideas": [
+    {
+      "idea": "5.c4 Maróczy Bind: pawns on c4 and e4 control d5 and impede ...d5 and ...b5; support the d4-knight with Be3 and squeeze slowly.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s7"
+      ]
+    },
+    {
+      "idea": "In the Bind, complete development, double rooks on the c- or d-file and exploit Black's space deficit; trade off the g7-bishop (Be3, Qd2, Bh6) where possible.",
+      "sources": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "idea": "5.Nc3 Bg7 6.Be3 Nf6 7.Bc4 O-O 8.Bb3: develop with tempo and stop tricks based on ...Nxe4 and ...d5, then castle short.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
+    },
+    {
+      "idea": "Kingside expansion with g- and h-pawn advances (English Attack style: f3, Be3, Qd2) and Bh6 to remove the fianchettoed bishop, accepting opposite castling, in lines where ...d5 is not available.",
+      "sources": [
+        "s5"
+      ]
+    },
+    {
+      "idea": "5.Nxc6 bxc6 6.Qd4: early queen activity against Black's damaged queenside, with 7.e5 tactics.",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep ...d6 in hand so ...d5 comes in one move; it is Black's main equalising resource in the 5.Nc3 lines (an early f3 or Be2 by White allows it).",
+      "sources": [
+        "s1",
+        "s3",
+        "s7"
+      ]
+    },
+    {
+      "idea": "The g7-bishop on the long diagonal is the strategic centrepiece; every plan is about keeping it active.",
+      "sources": [
+        "s6",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Against the Bind: ...Nf6, ...d6, ...O-O, then trade pieces (...Nxd4, ...Ng4 ideas) to relieve the cramp and aim for ...Bd7-c6; breaks ...b5, ...d5 or ...f5 only when circumstances allow.",
+      "sources": [
+        "s4",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "idea": "Queenside counterplay by occupying c4 with a knight (...Nf6-d7-b6-c4) and using the half-open c-file.",
+      "sources": [
+        "s5"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Maróczy Bind: White pawns on c4 and e4 against Black's d6 and the open c-file; Black is cramped, d5 is controlled, the centre is semi-open and fairly static.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    {
+      "structure": "Open Sicilian with Black's d-pawn still on d7: White's e4 and d-file versus Black's half-open c-file, with ...d5 as a threat; the centre stays fluid until ...d5 or e4-e5 is played.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources conflict. Wikipedia and The Bishops Bounty call it generally more positional and less tactical than most Sicilians, and the Maróczy branch is described as manoeuvring and 'positional chess at its most demanding' (s6). Chessable calls it 'highly tactical' with sharp, dynamic battles (s3). Chueca says the 5.Be3 lines produce opposite-castled flank battles (s5). My reading: the Maróczy branch is Quiet-to-Balanced, the Modern 5.Nc3 and 5.Be3 branches are Balanced-to-Sharp; the root as a whole sits in the middle.",
+      "sources": [
+        "s1",
+        "s3",
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose. Pawn grabs appear only inside traps (the 7.Bc4 Qa5 line where White must castle at once, and the 5.Nxc6 e5 lines).",
+      "sources": [
+        "s1"
+      ]
+    },
+    "soundness": {
+      "notes": "Sound for Black and used at elite level, though mostly as a surprise weapon rather than a main line (s4). Roughly equal with accurate play (s3). The Maróczy Bind was once considered a positional blunder for Black; since the 1950s it is regarded as fundamentally sound with a modest White edge if White keeps concentration (s2). Database figures on one site for 5.c4 Bg7 show White 50.1%, Black 43.2%, draws 6.7%, and 12.1% draws at 2500 Elo (s6), which is not a sign of a refuted line.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s6"
+      ]
+    },
+    "structure": {
+      "notes": "Half-open c-file for Black with Black's d-pawn unmoved; White keeps e4. Semi-open in the Modern lines. Maróczy Bind is semi-open but static, with d5 firmly controlled by White. ...d5, when it arrives, opens the centre.",
+      "sources": [
+        "s1",
+        "s2",
+        "s6"
+      ]
+    },
+    "approach": {
+      "notes": "Not a set-up played against anything: it is a specific move-order choice within the Open Sicilian (3...cxd4 4.Nxd4 g6 after ...Nc6) and depends on White's reply. Played at master level but described as a surprise weapon rather than a main line (s4); my own understanding is that it is a regular 2700-level choice for Black though less common than the Najdorf, flagged as unsourced.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessable: moderate-to-high theory load, not ideal for newcomers (s3). ChessDoctrine: sound theoretical knowledge needed but lighter on memorisation than the Classical Dragon or Najdorf (s4). Chueca: 'for the most experienced', flexibility and transpositions need knowledge (s5). Chessiverse calls the Bind positional chess at its most demanding (s6). Leans understanding for the Bind (squeeze, when to trade, when ...d5 works) and memory for the 5.Nc3 and 5.Nxc6 tactical lines.",
+      "sources": [
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "Maróczy Bind",
+    "...d5 break",
+    "long-diagonal g7-bishop",
+    "trade pieces to relieve the cramp",
+    "Gurgenidze set-up",
+    "knight to c4",
+    "Qd2 and Bh6 to trade the dark-squared bishop",
+    "opposite-side castling flank race",
+    "half-open c-file pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Maróczy Bind",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 Bg7",
+      "how": "Strategic squeeze: static semi-open centre, ...d5 largely prevented, Black trades pieces and plays for ...Bd7-c6 or ...b5/...f5 breaks. Quieter than the root and a different test of understanding."
+    },
+    {
+      "name": "Modern Variation with 7.Bc4",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4",
+      "how": "Tactical: ...d5 threats, the 7...Qa5 line where White must castle immediately, and early Bb3 and Nxe4 ideas."
+    },
+    {
+      "name": "Exchange Variation",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nxc6",
+      "how": "Black's pawn structure is damaged after ...bxc6; early Qd4 and e5 tactics (6.Qd4 Nf6 7.e5 Ng8 8.e6) mean concrete forcing play rather than the root's manoeuvring."
+    },
+    {
+      "name": "5.Be3 flank-battle lines",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Be3",
+      "how": "Per Chueca, leads to opposite-side castling and a kingside-versus-queenside race, sharper than the 5.Nc3 mainline; only one source."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Black fianchettoes the dark-squared bishop without first playing ...d6.",
+        "verdict": "supported",
+        "note": "This is the defining feature; ...d6 is delayed so ...d5 can be played in one move.",
+        "sources": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "The move order sidesteps the dreaded Yugoslav Attack.",
+        "verdict": "supported",
+        "note": "Sources agree the Yugoslav set-up is avoided; White can still play Be3, f3, Qd2 in some lines, but an early f3 allows ...d5 (s1, s7), and the Maróczy Bind is the alternative White try.",
+        "sources": [
+          "s1",
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "claim": "Black keeps the core counter-attacking ideas of the Dragon, aiming to pressure White's centre and queenside via the long diagonal.",
+        "verdict": "supported",
+        "note": "The g7-bishop on the long diagonal is the heart of Black's play; counterplay is on the c-file and queenside. 'Counter-attacking ideas of the Dragon' is loose, since the Dragon's typical play is against a White kingside attack, which is mostly absent here.",
+        "sources": [
+          "s5",
+          "s6"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "For Black, complete the fianchetto, control the long diagonal and prepare the ...d5 break.",
+        "verdict": "supported",
+        "note": "...d5 is the main equalising break in the Modern lines. Against the Bind it is usually prevented, so Black relies on piece trades first.",
+        "sources": [
+          "s1",
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "claim": "Black supports the centre break with queenside expansion by ...a6 and ...b5.",
+        "verdict": "unverifiable",
+        "note": "...b5 is listed as a possible break in the Bind (s4) and the Bind is said to impede it (s7), but none of the sources names ...a6 and ...b5 as the standard plan; the sources instead stress ...Nc4 and c-file play.",
+        "sources": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "claim": "For White, the most testing response is the Maróczy Bind (5.c4), clamping d5 and restricting Black's activity.",
+        "verdict": "supported",
+        "note": "Chessable calls 5.c4 arguably White's most critical try.",
+        "sources": [
+          "s3",
+          "s2",
+          "s7"
+        ]
+      },
+      {
+        "claim": "After the Bind White will expand on the queenside or build a slow kingside attack.",
+        "verdict": "supported",
+        "note": "Sources give doubling rooks on the c- or d-file and a squeeze (s6); Chueca gives kingside g/h-pawn pushes and Bh6 (s5). Queenside expansion is not specifically named.",
+        "sources": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "claim": "A key tactical idea for Black is the exchange sacrifice ...Rxc3, a theme common to all Dragon variations.",
+        "verdict": "unverifiable",
+        "note": "None of the Accelerated Dragon sources mention ...Rxc3 (s5 explicitly does not). It is a Yugoslav Dragon theme (own understanding, flagged): it needs a White knight on c3 and a black rook on c8, so it does not arise in the Bind and is not 'common to all' lines. Worth flagging as overstated rather than confirmed wrong.",
+        "sources": [
+          "s5"
+        ]
+      },
+      {
+        "claim": "White often tries to trade Black's dark-squared bishop with Be3, Qd2 and Bh6.",
+        "verdict": "supported",
+        "note": "Named by Chueca as a standard plan; it fits the 5.Nc3 and 5.Be3 lines more than the Bind.",
+        "sources": [
+          "s5"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 7
+  }
+}

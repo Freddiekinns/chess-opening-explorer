@@ -1,0 +1,113 @@
+{
+  "slug": "slav-defense",
+  "root": {
+    "name": "Slav Defense",
+    "eco": "D10",
+    "moves": "1. d4 d5 2. c4 c6",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Slav Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Slav_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Slav Defense",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/slav-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Slav and Semi-Slav search snippets (TheChessWorld, Chess Doctrine, Wikipedia Semi-Slav)",
+      "publisher": "various, search snippets only",
+      "url": "https://thechessworld.com/articles/openings/slav-defense-the-complete-guide/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black supports d5 with ...c6 so that the centre is held by pawns while the light-squared bishop stays free to come out (usually to f5 or g4) before ...e6. The root is a crossroads: after 3.Nf3 Nf6 4.Nc3 Black chooses the Pure Slav with ...dxc4 (active bishop, ...e5/...c5 breaks), the Semi-Slav with ...e6 (c6-d5-e6 triangle, theory-heavy and often sharp: Meran, Botvinnik, Anti-Meran), or the Chebanenko ...a6. White can also play the Exchange (cxd5 cxd5), a symmetrical structure with queenside minority attack ideas that has a drawish reputation, or quiet systems with 3.e3 or 3.Bf4. The Slav is played by many world champions (Botvinnik, Smyslov, Anand, Kramnik) and is regarded as sound; sources treat it as solid with room for counterplay rather than a forced-draw defence.",
+  "white_ideas": [
+    { "idea": "Central expansion with e4 (after Nc3/e4 gambit-style ideas) and kingside pawn advances", "sources": ["s2"] },
+    { "idea": "Pressure on b7 and the queenside before Black plays ...dxc4 or ...a6", "sources": ["s2"] },
+    { "idea": "Exchange Slav: queenside expansion (source summary also mentions minority attacks; own understanding is that with both c-pawns gone the queenside is symmetrical, so a true minority attack is doubtful)", "sources": ["s1"] },
+    { "idea": "Quiet 3.e3 / 3.Bf4 development; aim to recover c4 with the bishop on c4", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the light-squared bishop to f5 or g4 before ...e6", "sources": ["s2", "s3"] },
+    { "idea": "Pawn breaks ...e5 and ...c5 to free the position", "sources": ["s2", "s3"] },
+    { "idea": "Semi-Slav: build the c6-d5-e6 pawn triangle, later ...dxc4 and ...b5/...c5 queenside expansion", "sources": ["s3"] },
+    { "idea": "Hold the centre with pawns, equalise safely", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical Exchange Slav structure (c-pawns exchanged, d4 against d5)", "sources": ["s1"] },
+    { "structure": "Pure Slav after ...dxc4: White centre pawns d4/e4 against Black's flexible c6/e-pawn breaks; open-ish", "sources": ["s2", "s3"] },
+    { "structure": "Semi-Slav c6-d5-e6 triangle; hanging pawns or open c-file after ...c5", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: balances solidity with dynamic counterplay, no forced early tactics. Chessable: solid yet dynamic rather than sterile. The Exchange Slav is drawish; the Semi-Slav branches (Meran, Botvinnik) are much sharper and theory-heavy. Main Pure Slav lines are solid with real tactics possible.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "After 3...dxc4 Black takes a pawn that White normally regains (Queen's Gambit style); not a gambit. Semi-Slav Botvinnik and Marshall lines have sacrifices in sublines.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Fundamentally sound; played by Botvinnik, Smyslov, Anand and Kramnik (six games in the 2006 World Championship match).",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Centre is held by pawns (c6/d5), tension at d5/c4; many lines keep central pawns on (Exchange, Semi-Slav triangle). Pure Slav after ...dxc4 allows e4 and an open game with ...e5 or ...c5 breaks. Pawn structure varies strongly by variation.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "A defined reply to 1.d4 d5 2.c4, not a set-up played against anything. Mainstream at all levels including world-championship matches.",
+      "sources": ["s1"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessable says highly suitable for club players: reliability without excessive theory, understanding over memorisation. Wikipedia says it demands extensive theory in the main lines. Semi-Slav is theory-heavy; a snippet says beginners usually start with the Meran.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "bishop out before ...e6",
+    "c6-d5-e6 pawn triangle",
+    "...e5 break",
+    "...c5 break",
+    "queenside expansion",
+    "minority attack",
+    "hanging pawns",
+    "open c-file"
+  ],
+  "sublines_that_differ": [
+    { "name": "Semi-Slav / Meran / Botvinnik", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6", "how": "Theory-heavy, often very sharp; separate character (Botvinnik is an anchor for Sharp/Advanced)." },
+    { "name": "Exchange Slav", "moves": "1. d4 d5 2. c4 c6 3. cxd5 cxd5", "how": "Symmetrical, solid and drawish; queenside minority attack ideas." },
+    { "name": "Czech / Pure Slav", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4", "how": "Open, active bishop, e4-e5 plans for White; more forcing than the Exchange." },
+    { "name": "Chebanenko", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 a6", "how": "Flexible queenside expansion set-up." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Slav is one of Black's most solid and reliable responses to the Queen's Gambit", "verdict": "supported", "note": "Described as solid; sound at world-champion level. (2.c4 is the Queen's Gambit move order.)", "sources": ["s1", "s2"] },
+      { "claim": "With ...c6 Black prepares to recapture on d5 with a pawn and keeps a robust central structure", "verdict": "supported", "note": "Core idea.", "sources": ["s1", "s2"] },
+      { "claim": "The light-squared bishop is not locked in", "verdict": "supported", "note": "Key difference from the QGD; but in the Semi-Slav ...e6 temporarily blocks it.", "sources": ["s1", "s3"] },
+      { "claim": "Blend of solid defence and dynamic counter-attacking potential leading to structurally complex games", "verdict": "supported", "note": "Wikipedia and Chessable both describe solid plus dynamic.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "Black: Solidify the centre, develop the light-squared bishop (f5 or g4), prepare ...e5 or ...b5 to create counterplay", "verdict": "supported", "note": "Bishop to f5/g4, ...e5 and ...c5 breaks; ...b5 belongs to Meran/Semi-Slav and Pure Slav (after ...dxc4) lines.", "sources": ["s2", "s3"] },
+      { "claim": "White: control the centre, develop to pressure Black's set-up, and often launch a queenside minority attack (b4-b5) to create a weakness on c6", "verdict": "wrong", "note": "Own understanding, flagged as such: in the Exchange Slav both c-pawns are traded, so there is no c6 pawn to target and no pawn-count minority; the article summary mentions minority attacks only in passing. In the main Slav White's plans are e4, pressure on b7 and development, not b4-b5.", "sources": ["s1", "s2"] },
+      { "claim": "Black: After cxd5 cxd5, equalise and use the solid structure to transition into a favourable endgame", "verdict": "wrong", "note": "The Exchange Slav is described as drawish, with Black having little chance to win unless White is overambitious; Black aims for equality, not a favourable endgame.", "sources": ["s1"] },
+      { "claim": "White: In the Exchange Variation, play for a small but lasting space advantage and try to prove Black's set-up is passive", "verdict": "supported", "note": "Modern practice shows White can get legitimate edges with aggressive set-ups; the idea of a small edge is accurate.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

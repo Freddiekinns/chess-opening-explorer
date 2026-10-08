@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-staunton-cochrane-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Staunton-Cochrane Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. c4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "A rare anti-Sicilian that leads to a reversed English structure. White plays c4 and d3 or Nc3, Nf3 and often g3, aiming at a Maróczy-like bind. Black answers with ...Nc6 and ...g6, or ...e6 and ...d6, with an easy game. The play is slow and positional, without much theory.",
+  "white_ideas": [
+    { "idea": "Play Nc3 and g3, with a bishop on g2 and d3 rather than d4" },
+    { "idea": "Control d5 and aim for a Maróczy-like bind if d4 is played" },
+    { "idea": "Slow queenside or kingside expansion" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nc6, ...g6, ...Bg7 for a Dragon-like set-up and queenside play" },
+    { "idea": "...e6 and ...d5 to take the centre" },
+    { "idea": "Equalise comfortably with ...d6 and ...Nf6" }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed English; closed Sicilian pawn structure with c4 and e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and lightly forcing; no big attack for either side, equality is easy." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Sicilian-type asymmetric centre; I take flexible because both sides delay committing." },
+    "approach": { "notes": "Standard but uncommon; a respectable anti-Sicilian." },
+    "level": { "reason": "understanding", "notes": "Clear plans, little theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "2...Nc6 3.Nc3 g6", "moves": "1. e4 c5 2. c4 Nc6 3. Nc3 g6", "how": "Dragon-like set-up, Black fianchettoes and plays for ...d6 and ...Nf6." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Neither forcing nor hard to break down; I am unsure of the main branch." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fine for both." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Sicilian pawn structure but the centre is undecided; Sicilians are usually semi-open." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A less common but respectable anti-Sicilian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Low theory, plan-based." },
+    "plans": { "value": [], "reason": "No clear characteristic plan from memory." }
+  }
+}

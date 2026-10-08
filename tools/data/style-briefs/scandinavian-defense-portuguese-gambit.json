@@ -1,0 +1,46 @@
+{
+  "slug": "scandinavian-defense-portuguese-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Portuguese Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Bg4",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/3P4/3P2b1/8/PPP2PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black pins the knight at once with 3...Bg4 and after 4.Nf3 Qxd5 or 4.Be2 Bxe2 regains the pawn, so the gambit only bites if White plays 4.f3 Bf5 5.c4 and keeps it. The usual lines are 4.Nf3 Qxd5 5.Be2 Nc6, with Black developed quickly and White holding a small space edge. White must watch the pin and Black's queen centralised on d5.",
+  "white_ideas": [
+    { "idea": "Nf3, Be2, O-O and a space edge, hitting the queen with Nc3" },
+    { "idea": "4.f3 Bf5 5.c4, keeping the d5 pawn and kicking the bishop" }
+  ],
+  "black_ideas": [
+    { "idea": "Regain the pawn at once with ...Qxd5 and develop quickly" },
+    { "idea": "Trade the bishop for a knight and play ...Nc6 and ...O-O-O" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 against Black e6/c6-style compact set-up with queen on d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quick development, traps (pin on f3), but the main lines are equal and fairly calm." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Called a gambit, but 4.Nf3 and 4.Be2 let Black regain d5 by force; only 4.f3 keeps the pawn and is rare." },
+    "soundness": { "notes": "Sound; White keeps a slight edge at most." },
+    "structure": { "notes": "Scandinavian, d-file half-open with White's d4 against Black's queen centre." },
+    "approach": { "notes": "A sideline of the Scandinavian that strong players pick now and then." },
+    "level": { "reason": "memory", "notes": "A handful of traps and move orders; plans are simple." }
+  },
+  "plan_phrases": ["Lead in development", "Early queen"],
+  "sublines_that_differ": [
+    { "name": "4.f3 Bf5 5.c4", "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Bg4 4. f3 Bf5 5. c4", "how": "The real gambit line: White holds the extra pawn." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Active piece play but not forcing in the main line." },
+    "gambit": { "value": "none", "confidence": 0.65, "reason": "Pawn comes back by force after 4.Nf3 or 4.Be2." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Black regains the pawn with equal play." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Scandinavian with a half-open d-file." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A rarer branch but played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "A few traps and lines to know." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black recaptures with the queen and develops fast." }
+  }
+}

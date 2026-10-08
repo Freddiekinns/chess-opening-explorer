@@ -1,0 +1,44 @@
+{
+  "slug": "sicilian-defense-chekhover-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Chekhover Variation",
+    "eco": "B53",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Qxd4",
+    "fen": "rnbqkbnr/pp2pppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R b KQkq - 0 4"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White recaptures with the queen, avoiding the heavy Open Sicilian theory. After 4...Nc6 5.Bb5 Bd7 6.Bxc6 Bxc6 7.Nc3, White has the more active pieces and Black has a solid position without weaknesses. The play is quiet and positional, with the early queen forced to move again.",
+  "white_ideas": [
+    { "idea": "Bb5 and Bxc6 to double Black's pawns or fix the structure, then Nc3 and O-O" },
+    { "idea": "Use the early queen's central post and a space lead for a small edge" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nc6, ...Nf6 and ...g6 or ...e6 and neutralise the centralised queen" },
+    { "idea": "Gain time against the queen and play for ...e5 or ...Nf6-d7 and ...Bg7" }
+  ],
+  "typical_structures": [{ "structure": "White e4 against Black d6/e6 or ...g6, symmetrical-looking Sicilian with a half-open c-file for Black" }],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and simple; known as a way to avoid sharp Sicilian theory. Black has few weaknesses." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Sicilian structure with a half-open c-file; Semi-open." },
+    "approach": { "notes": "A real line played occasionally by strong players; standard." },
+    "level": { "reason": "neither", "notes": "Few moves to memorise, plans clear." }
+  },
+  "plan_phrases": ["early queen"],
+  "sublines_that_differ": [
+    { "name": "4...Nf6", "moves": "4...Nf6 5. Nc3", "how": "Black develops with tempo; the queen faces Nc6 and Qd8 ideas, closer to a Dragon move order." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "A quiet line with few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound if unambitious alternative." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "An asymmetric Sicilian centre with the half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Occasionally played by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Plans are simple with little theory; could be beginner for White." },
+    "plans": { "value": ["early_queen"], "reason": "White's queen sits centrally and must be kept safe." }
+  }
+}

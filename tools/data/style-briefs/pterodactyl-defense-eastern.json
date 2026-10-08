@@ -1,0 +1,46 @@
+{
+  "slug": "pterodactyl-defense-eastern",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense: Eastern, Anhanguera",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5 4. Be3",
+    "fen": "rnbqk1nr/pp1pppbp/6p1/2p5/3PP3/2N1B3/PPP2PPP/R2QKBNR b KQkq - 1 4"
+  },
+  "parent": "modern-defense-modern-pterodactyl",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black hits d4 with ...c5 and often follows with ...cxd4 Bxd4 or Nxd4 and ...Qa5, pinning or harassing the c3 knight and the e4 pawn. White protects d4 with Be3 and aims for a Maróczy-like or open-Sicilian-type centre, relying on development and space. Black plays for ...Qa5 and counterplay on the dark squares, with a risk of getting overextended.",
+  "white_ideas": [
+    { "idea": "Hold d4 with Be3 and Nf3, castle and use extra space and a lead in development." },
+    { "idea": "Meet ...cxd4 with Bxd4 or Nxd4, keeping a clamp on the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike with ...cxd4 and ...Qa5, hitting e4 and c3, then trade pieces and use the g7 bishop." },
+    { "idea": "Seek counterplay on the c-file and long diagonal while keeping the queen active." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian-like asymmetry after ...cxd4, with White d4/e4 against Black's d6/e7 and half-open c-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "An early queen sortie and a tension-heavy position give both sides chances to go wrong quickly; unclear and double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material sacrificed in the main line." },
+    "soundness": { "notes": "Playable but Black is often slightly worse; not generally considered refuted." },
+    "structure": { "notes": "After ...cxd4 the structure resembles a Sicilian with a half-open c-file." },
+    "approach": { "notes": "Rare and unorthodox; Black picks it mostly for surprise." },
+    "level": { "reason": "understanding", "notes": "Unusual pawn structures require care, but there is little forced theory." }
+  },
+  "plan_phrases": ["early queen", "fianchetto", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Benoni lines", "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5 4. d5", "how": "White gains space with d5; Black gets Benoni-style play, a different, more closed character." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Early queen moves and tension make play double-edged." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Playable, if slightly worse for Black." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "Sicilian-like with a half-open c-file after ...cxd4." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Needs care but no long theory." },
+    "plans": { "value": ["early_queen", "fianchetto"], "reason": "Black brings the queen to a5 and keeps the g7 bishop on the long diagonal." }
+  }
+}

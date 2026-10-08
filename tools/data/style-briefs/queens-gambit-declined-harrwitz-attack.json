@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-declined-harrwitz-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Harrwitz Attack",
+    "eco": "D35",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bf4",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP1B2/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "queens-gambit-declined-normal-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to f4 before closing the c8-h3 diagonal, avoiding the Bg5 pin theory. Black replies with the standard QGD set-up of ...Be7, ...O-O and either ...c6 or the ...c5 break. White keeps tension, with e3, Nf3 and Bd3, and plays for a small space edge or a minority attack after cxd5.",
+  "white_ideas": [
+    { "idea": "Develop the bishop actively to f4, then e3, Nf3, Qc2 and Bd3." },
+    { "idea": "Pressure d5, possibly exchange on d5 and aim for a minority attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Castle quickly and play ...c5 or ...c6 to free the position." },
+    { "idea": "Meet cxd5 with ...exd5 and aim for easy piece play, or the Fianchetto Defense ...b6." }
+  ],
+  "typical_structures": [
+    { "structure": "QGD with tension on d5, either c6-Orthodox or ...c5 with an isolated d-pawn." },
+    { "structure": "Carlsbad structure if White exchanges on d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Standard QGD steadiness: Black's position is compact, and neither side has a forcing attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Queen's Gambit declined, no material change." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension; the QGD sits on Flexible." },
+    "approach": { "notes": "Standard, a recognised sideline within the QGD." },
+    "level": { "reason": "understanding", "notes": "Familiar QGD plans; little forcing theory." }
+  },
+  "plan_phrases": ["minority attack", "...c5 break", "development with e3 and Bd3"],
+  "sublines_that_differ": [
+    { "name": "Fianchetto Defense", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7 4. Nf3 Nf6 5. Bf4 O-O 6. e3 b6", "how": "Black fianchettos instead of playing ...c6; more flexible, with the long diagonal in play." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "QGD set-up with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "Declined Queen's Gambit, no material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre stays in tension in the QGD." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal choice within mainstream QGD play." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Familiar plans, modest theory." },
+    "plans": { "value": [], "reason": "No single plan dominates the main line." }
+  }
+}

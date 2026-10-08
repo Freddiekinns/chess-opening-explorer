@@ -1,0 +1,46 @@
+{
+  "slug": "dutch-defense-leningrad-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Leningrad Variation",
+    "eco": "A86",
+    "moves": "1. d4 f5 2. c4 Nf6 3. g3 g6",
+    "fen": "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "dutch-defense-fianchetto-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black fianchettoes the king's bishop with ...g6, ...Bg7 and ...O-O, then plays ...d6 and ...Qe8, with a King's Indian-style set-up against White's Bg2, Nc3 and often d5. Black aims at ...e5 or ...Ne4 and kingside play. White pushes d5 to gain space or keeps tension and plays e4, so the game is double-edged and both sides have chances to go wrong.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3, Bg2, Nc3 and O-O and play d5 to gain space." },
+    { "idea": "Challenge with Qc2, b3 and e4 to attack the weakened e-file and king." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto, play ...Qe8 and ...e5 or ...Na6 and ...c6 for central counterplay." },
+    { "idea": "Use ...Ne4 and ...f5-f4 ideas for a kingside attack against the white king." }
+  ],
+  "typical_structures": [
+    { "structure": "Leningrad pawns on f5/d6/g6 against c4/d4, often with d5 and ...e5 dxe6 exchanges." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced, double-edged and theoretical; Black's weakened king side and ...e5 break make it a risky fight." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A mainstream, sound defence used by strong players." },
+    "structure": { "notes": "White often plays d5 and Black ...e5, giving a changeable centre rather than a firm lock." },
+    "approach": { "notes": "A mainstream Dutch set-up, played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Like the King's Indian, plans are hard to get right more than long forcing lines." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack", "...e5 break"],
+  "sublines_that_differ": [
+    { "name": "Warsaw Variation", "moves": "1. d4 f5 2. g3 Nf6 3. Bg2 g6 4. Nf3 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 c6", "how": "Same set-up reached with ...c6 and a slower Black game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Known for unbalanced, double-edged play with risk on both sides." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A top-level Dutch line." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre stays fluid between d5, ...e5 and ...Ne4." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream Dutch set-up." },
+    "level": { "value": "advanced", "why": "understanding", "confidence": 0.45, "reason": "King's Indian-like plans that are hard to get right." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "Black fianchettoes and attacks on the kingside." }
+  }
+}

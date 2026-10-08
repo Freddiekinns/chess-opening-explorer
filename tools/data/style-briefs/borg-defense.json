@@ -1,0 +1,46 @@
+{
+  "slug": "borg-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Borg Defense",
+    "eco": "B00",
+    "moves": "1. e4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays the reversed Grob, 1...g5, offering the g-pawn. White's best is 2.d4 Bg7 3.Nc3 d6 4.h4 or 3.Bxg5, taking the pawn with a big centre. Black fianchettoes the bishop and relies on pressure on d4 and the long diagonal for compensation. It is a surprise weapon that gives White a pawn and a good centre.",
+  "white_ideas": [
+    { "idea": "Take the pawn on g5 with Bxg5 or h4, and build the e4/d4 centre." },
+    { "idea": "Develop and exploit the weakened kingside while avoiding the long diagonal pressure." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the bishop to g7 and hit d4 and the long diagonal for compensation." },
+    { "idea": "Play for ...c5 and ...d6 undermining the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White big centre on d4/e4 with a pawn up; Black fianchetto with a weakened kingside." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's risk-taking surprise; White has clear plans and Black takes most of the risk." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "2.d4 Bg7 3.Nc3 and Bxg5/h4 wins the g5 pawn; Black gets some compensation." },
+    "soundness": { "notes": "Considered unsound; White gets a clear edge with simple play." },
+    "structure": { "notes": "White d4/e4 against Black's fianchetto and no fixed centre." },
+    "approach": { "notes": "A reversed Grob used almost only for surprise." },
+    "level": { "reason": "memory", "notes": "Dubious, so never Beginner; few lines but traps need to be known." }
+  },
+  "plan_phrases": ["fianchetto", "undermine the centre"],
+  "sublines_that_differ": [
+    { "name": "Langhorst Gambit", "moves": "1. e4 g5 2. d4 e6 3. c3 c5 4. dxc5 b6", "how": "Black offers a second pawn for pressure on the long diagonal." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "An aggressive flank gambit with risk for Black, though White's path is clear." },
+    "gambit": { "value": "black", "confidence": 0.65, "reason": "Black offers the g-pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.85, "reason": "Strong players consider 1...g5 unsound." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "White gets a centre while Black fianchettoes, undecided structure." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Seldom used by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "A dubious line is never Beginner; traps matter more than plans." },
+    "plans": { "value": ["fianchetto"], "reason": "The g7 bishop is Black's main source of counterplay." }
+  }
+}

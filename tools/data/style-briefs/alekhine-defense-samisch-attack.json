@@ -1,0 +1,95 @@
+{
+  "slug": "alekhine-defense-samisch-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Sämisch Attack",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. Nc3",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/2N5/PPPP1PPP/R1BQKBNR b KQkq - 2 3"
+  },
+  "parent": "alekhine-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "After 3.Nc3 Black most often takes 3...Nxc3 and White recaptures 4.dxc3, opening the d-file and doubling pawns on the c-file for faster development. Play continues 4...d6 5.Nf3 Nc6 6.Bf4 with White ahead in development and Black fighting the e5 pawn. 3...e6 or 3...d5 4.exd6 e6 are the alternatives. The result is a slightly better, low-risk game for White.",
+  "white_ideas": [
+    { "idea": "Recapture dxc3 to open the d-file and develop quickly with Nf3, Bf4 and Be2." },
+    { "idea": "Keep e5 protected and cramp Black's pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine e5 with ...d6, ...Nc6 and ...Bf5." },
+    { "idea": "Aim for the endgame, where White's doubled c-pawns are a target." }
+  ],
+  "typical_structures": [
+    { "structure": "White doubled c-pawns and an advanced e5 pawn against Black's ...d6 break." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Few forcing lines; White develops quickly and Black plays to undermine e5 and trade queens."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; White doubled pawns are compensated by development."
+    },
+    "structure": {
+      "notes": "Open d-file and a half-open file with an asymmetric pawn structure."
+    },
+    "approach": {
+      "notes": "A normal Alekhine sideline played at all levels."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and theory is short."
+    }
+  },
+  "plan_phrases": ["lead in development", "doubled pawns", "space advantage"],
+  "sublines_that_differ": [
+    {
+      "name": "3...d5 Four Pawns style",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. Nc3 d5",
+      "how": "Rare; leads to e5 pawn structures with different plans."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet development lines with a small White edge and no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Both sides have healthy set-ups."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The d-file is open and White's pawns are asymmetric."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal anti-Alekhine line played at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Clear plans and little theory."
+    },
+    "plans": {
+      "value": ["lead_in_development", "doubled_pawns", "space_advantage"],
+      "reason": "White gets a lead in development and a space edge from e5."
+    }
+  }
+}

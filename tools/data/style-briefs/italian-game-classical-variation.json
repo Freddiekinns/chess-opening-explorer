@@ -1,0 +1,93 @@
+{
+  "slug": "italian-game-classical-variation",
+  "root": {
+    "name": "Italian Game: Classical Variation",
+    "eco": "C53",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Giuoco Piano", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Giuoco_Piano", "kind": "reference" },
+    { "id": "s2", "title": "Italian Game, Classical Main Line 4.c3 (C53)", "publisher": "Chessiverse", "url": "https://chessiverse.com/resources/openings/italian-game-1-e4-e5-2-nf3-nc6-3-bc4-bc5-4-c3", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Italian Game overview results (365chess, Chessable blog, Exeter Chess Club)", "publisher": "Web search results", "url": "https://www.365chess.com/chess-openings/Italian-Game", "kind": "article" }
+  ],
+  "overview": "4.c3 prepares d2-d4 so White can build a pawn pair on d4 and e4 with the bishops behind it, and it denies Black's knight d4. Black usually answers 4...Nf6. White then chooses between the classical 5.d4 exd4 6.cxd4 Bb4+ (7.Bd2 for a roughly equal game with Black's hanging pawns, or 7.Nc3, the Greco Gambit/Moller Attack, which is extremely sharp) and the slower Giuoco Pianissimo with 5.d3 and a later d4, which has been the preferred elite approach since the 1980s. The c3 pawn blocks the queen's knight, so it travels Nbd2-f1-g3. The branches differ greatly: the Pianissimo is a manoeuvring game, the 5.d4 and Moller lines are forcing and heavily analysed.",
+  "white_ideas": [
+    { "idea": "Establish the d4/e4 pawn centre supported by c3, aiming for a quick central or kingside attack.", "sources": ["s2", "s3"] },
+    { "idea": "Greco Gambit 7.Nc3 Nxe4 8.O-O (Moller Attack 8...Bxc3 9.d5): sacrifice a pawn for development and initiative.", "sources": ["s1"] },
+    { "idea": "Giuoco Pianissimo: play d3 first, castle, reroute the knight Nbd2-f1-g3 and prepare d4 later or a slow kingside build-up.", "sources": ["s1", "s2"] },
+    { "idea": "After 7.Bd2 Bxd2+ 8.Nbxd2 d5, fight for the initiative against Black's isolated central pawn (as stated, the d-pawn is a weakness).", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with 4...Nf6 and react to d4 with ...exd4 cxd4 ...Bb4+.", "sources": ["s2", "s3"] },
+    { "idea": "Take the d5 break in the Classical line (7.Bd2 Bxd2+ 8.Nbxd2 d5) to challenge the centre, leaving an isolated d-pawn.", "sources": ["s1"] },
+    { "idea": "Against the Greco Gambit, accept with 7...Nxe4 and play 8...Nxc3 9.bxc3 for a modest White edge, or 8...Bxc3 9.d5 the critical Moller line where Black has many chances to go wrong.", "sources": ["s1"] },
+    { "idea": "Against the Pianissimo: ...d6, ...a6, ...O-O and a solid set-up (own understanding).", "sources": [] }
+  ],
+  "typical_structures": [
+    { "structure": "Classical centre: White d4/e4 duo versus Black isolated or hanging central pawn after exchanges on d5", "sources": ["s1", "s3"] },
+    { "structure": "Giuoco Pianissimo: e4/d3/c3 vs e5/d6, tense and closed-ish centre with slow manoeuvring and later d4 break", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Split. The Pianissimo is quiet, flexible, with reduced theory load, and popular with elite players since the 1980s. The 5.d4 and 7.Nc3 Greco/Moller lines are very forcing and theoretical. A database-style site rates the 4.c3 main line as Sharp overall, which probably reflects the d4 and Moller lines. Per the root's most played moves (Nf6, d3, d4 about equally), both branches are common.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Root has no sacrifice. The Greco Gambit (7.Nc3 Nxe4 8.O-O) and the Moller Attack are White pawn gambits in a side branch; the Pianissimo and 7.Bd2 are not gambits. In the Greco Gambit Black can take the pawn.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Classical and Pianissimo lines are roughly equal and sound. The Moller Attack compensation is called 'doubtful' with Black having to avoid errors; Greco Gambit objectively lets Black equalise.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "White aims for a central d4/e4 duo. In the 5.d4 lines the centre opens with exchanges on d4; in the Pianissimo it stays tense with the pawns on e4/d3 and e5/d6 until a later d4 break.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A main-line classical opening, not a universal system. 4...Nf6 is played in 93% of games at 2500 Elo; top practitioners named: Vachier-Lagrave (White) and Aronian (Black). Elite players have used the c3+d3 systems since the 1980s (Karpov named).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "A theory-heavy opening in the 5.d4 and Moller lines (memory), while the Pianissimo needs positional understanding of long manoeuvres (Nbd2-f1-g3, timing of d4). One site classifies the 4.c3 main line as Advanced. Another source (Exeter Chess Club snippet) frames the Italian as a beginner opening, but not specifically this line. For White, the Pianissimo is an approachable repertoire choice.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "d4/e4 pawn centre",
+    "Nbd2-f1-g3 knight reroute",
+    "isolated d-pawn",
+    "Moller Attack",
+    "slow build-up with d3 and h3",
+    "kingside attack",
+    "bishop pair on c4 and g5"
+  ],
+  "sublines_that_differ": [
+    { "name": "Italian Game: Classical Variation, Giuoco Pianissimo", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d3", "how": "Slow manoeuvring game, low forcing content, popular with elite players." },
+    { "name": "Italian Game: Greco Gambit / Moller Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Bxc3 9. d5", "how": "White pawn gambit with an extremely forcing attack; heavy theory." },
+    { "name": "Giuoco Piano: 6.cxd4 Bb4+ 7.Bd2", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Bd2", "how": "Open centre, Black isolated d-pawn after ...d5, roughly equal and less forcing." },
+    { "name": "Italian Game: Albin Gambit (as named in the data)", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. O-O", "how": "Castle first; Black plays ...Nxe4 and White gets typical compensation (own understanding; not found in sources)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "4.c3 prepares the central push d2-d4.", "verdict": "supported", "note": "The point of the move; also denies d4 to Black's knight.", "sources": ["s2", "s3"] },
+      { "claim": "White aims to seize control of the centre and create an open game.", "verdict": "supported", "note": "True of the 5.d4 lines; in the Pianissimo the centre stays closed and play is slow.", "sources": ["s1", "s2"] },
+      { "claim": "It is a highly principled, ambitious approach for White.", "verdict": "unverifiable", "note": "Evaluative. Equal with best play per sources.", "sources": ["s1"] },
+      { "claim": "Comfortable navigating both tactical and strategic middlegames.", "verdict": "supported", "note": "Pianissimo is strategic, Moller and 5.d4 lines tactical.", "sources": ["s1"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Achieve the d2-d4 pawn break to seize central space, often leading to a kingside attack.", "verdict": "supported", "note": "Main plan; a quick central or kingside attack is mentioned.", "sources": ["s2", "s3"] },
+      { "claim": "Black: Challenge with an immediate ...d5 or develop quickly with ...Nf6.", "verdict": "supported", "note": "...Nf6 is by far the main reply; ...d5 is played in some lines (e.g. after 7.Bd2 Bxd2+ 8.Nbxd2 d5). An immediate ...d5 on move four is rare; own understanding.", "sources": ["s1", "s2"] },
+      { "claim": "Both: Often leads to positions with an isolated d-pawn for one side.", "verdict": "supported", "note": "In the 7.Bd2 line Black ends up with an isolated central pawn; the Pianissimo has no isolated pawn.", "sources": ["s1"] },
+      { "claim": "White: After castling, use the rooks on the d and e-files to support the centre.", "verdict": "unverifiable", "note": "Plausible, but not found in sources; Re1 is standard (own understanding).", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

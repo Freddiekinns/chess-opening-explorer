@@ -1,0 +1,44 @@
+{
+  "slug": "zukertort-opening-slav-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Slav Invitation",
+    "eco": "A04",
+    "moves": "1. Nf3 c6",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black prepares ...d5 with ...c6, a flexible reply that can become a Slav, a Caro-Kann-like set-up or a reversed English set-up. White usually plays 2.d4, 2.g3 or 2.c4 and Black follows with ...d5, reaching Slav, Réti or Catalan-style structures. The root has few games of its own and the play depends on the transposition.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and e4 or go for a fianchetto and c4 pressure." },
+    { "idea": "Keep the move order flexible and choose a set-up after ...d5." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...d5 and develop a Slav-style set-up with ...Bf5 or ...Nf6 and ...e6." },
+    { "idea": "Keep a solid pawn on c6 and meet central play with ...d5." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav or Caro-Kann-type structure with pawns on c6 and d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's c6-d5 formation is solid and hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Not yet fixed; the centre is undecided." },
+    "approach": { "notes": "A flexible reply to 1.Nf3 that strong players use now and then." },
+    "level": { "reason": "neither", "notes": "Simple plans and little theory." }
+  },
+  "plan_phrases": ["solid centre", "flexible move order"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Black builds the solid c6-d5 Slav-type set-up." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A sound waiting reply." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre still undecided after 1...c6." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Respectable, less common reply to 1.Nf3, not a system." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Simple plans, little theory." },
+    "plans": { "value": [], "reason": "Position depends on the transposition." }
+  }
+}

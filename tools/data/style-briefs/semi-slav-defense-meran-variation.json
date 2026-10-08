@@ -1,0 +1,44 @@
+{
+  "slug": "semi-slav-defense-meran-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Meran Variation",
+    "eco": "D47",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5",
+    "fen": "r1bqkb1r/p2n1ppp/2p1pn2/1p6/2BP4/2N1PN2/PP3PPP/R1BQK2R w KQkq - 0 8"
+  },
+  "parent": "semi-slav-defense-semi-meran-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes on c4 and pushes the bishop back with ...b5, then plays ...a6 and ...c5 to break the centre, while White takes space with e4 and tries to use the weakened queenside. The main lines are 8.Bd3 a6 9.e4 c5 10.e5 c4 and the quieter 9.O-O Bb7. The play is rich and theoretical, with real chances for both sides and an unbalanced pawn structure.",
+  "white_ideas": [
+    { "idea": "Bd3, O-O and e4, then e5 and a central or kingside attack" },
+    { "idea": "Aim at the weak queenside with a4 and use the extra space" }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...a6, ...c5 and ...Bb7, freeing the position" },
+    { "idea": "Use the queenside pawn majority and fight for the d5 square" }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on b5/c5 against White's e4/d4 centre, with tension or hanging pawns after exchanges" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides have central breaks and chances; unbalanced pawn structure and long forcing lines, but mutual risk rather than all-out attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "...dxc4 pawn is retaken by Bxc4; no material given." },
+    "soundness": { "notes": "Fully sound, a main-line Semi-Slav." },
+    "structure": { "notes": "Centre in tension with ...c5 and e4-e5 breaks; neither side's pawns are locked early." },
+    "approach": { "notes": "A standard main line for strong players." },
+    "level": { "reason": "memory", "notes": "Long theoretical main lines that Black has to know." }
+  },
+  "plan_phrases": ["queenside expansion", "central pawn majority", "central break ...c5"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Unbalanced structure and forcing central breaks with chances for both sides." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The c4 pawn is retaken at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main-line Semi-Slav." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is in tension for a long time, with ...c5 and e4 to come." },
+    "approach": { "value": "standard", "confidence": 0.95, "reason": "Played by strong players as a main line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Long theoretical lines that must be known." },
+    "plans": { "value": ["queenside_expansion", "central_pawn_majority"], "reason": "Black expands with ...b5 and ...c5 against White's centre." }
+  }
+}

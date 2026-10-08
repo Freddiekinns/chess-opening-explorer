@@ -1,0 +1,45 @@
+{
+  "slug": "modern-defense-averbakh-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Averbakh System",
+    "eco": "A42",
+    "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6 4. e4",
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White takes a broad centre with c4, d4 and e4, and Black, without having committed the g8-knight, undermines it with ...c6, ...Nd7 and ...e5, or ...c5. Positions often resemble a King's Indian or Pirc with the knight still on g8. White has more space and Black has to find counterplay against it.",
+  "white_ideas": [
+    { "idea": "Play Nf3, Be2 and castle with a big centre, then Be3 and Qd2 or a space-gaining push" },
+    { "idea": "Keep pieces coordinated so the centre is not undermined, aiming for an edge in space" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchettoed bishop on g7 and a delayed ...Nf6 or ...Ne7; hit the centre with ...c5 or ...e5" },
+    { "idea": "...c6 and ...Qb6 or ...Nd7 and ...e5 for a King's Indian-style structure" }
+  ],
+  "typical_structures": [{ "structure": "White e4/d4/c4 centre against ...d6/...g6 fianchetto; becomes King's Indian or Maroczy type depending on ...e5 or ...c5" }],
+  "axis_evidence": {
+    "character": { "notes": "Black's setup is resilient but passive; White has space. Not forcing, not high-risk for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Considered sound, with a small risk of passivity." },
+    "structure": { "notes": "The big centre may be locked after ...e5 and d5, or attacked with ...c5; undecided at move four." },
+    "approach": { "notes": "Modern setup (...g6, ...Bg7, ...d6) can be played against almost any White set-up." },
+    "level": { "reason": "understanding", "notes": "Black's plans need judgement about when to break the centre; theory is light." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "4...e5", "moves": "4. e4 e5 5. Nf3 Nd7", "how": "King's Indian-type play with ...Ngf6 to follow." },
+    { "name": "4...c6", "moves": "4. e4 c6 5. Nf3", "how": "Queenside play with ...Qb6, Pirc-like." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Resilient but not extremely hard to break down, and not forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A legitimate if slightly passive set-up." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "White's centre is up against ...e5 or ...c5 and has not yet been fixed." },
+    "approach": { "value": "system", "confidence": 0.55, "reason": "The Modern setup is played against almost any White set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans take understanding but there is little theory." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto", "space_advantage"], "reason": "Black lets White take space, then attacks the centre from the g7 bishop and pawn breaks." }
+  }
+}

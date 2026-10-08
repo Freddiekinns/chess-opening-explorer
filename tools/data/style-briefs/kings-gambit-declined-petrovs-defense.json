@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-declined-petrovs-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Petrov's Defense",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Nf6",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black declines the gambit with 2...Nf6 and White chooses between 3.fxe5 Nxe4 (Wade Variation) and 3.Nf3, transposing to a Petrov with f4 included. After 3.fxe5 Nxe4 4.Nf3 Be7 White has a pawn on e5 for a possibly weakened king and Black can aim for ...d5 and ...O-O. The game is open and somewhat double-edged for White's king, though it is not a gambit as no material changes hands.",
+  "white_ideas": [
+    { "idea": "fxe5 and Nf3, d4 and Bd3 with central space." },
+    { "idea": "Use the half-open f-file and develop quickly." }
+  ],
+  "black_ideas": [
+    { "idea": "...Nxe4 and ...Be7 with ...d5 and quick castling, hitting e5." },
+    { "idea": "Exploit White's weakened king diagonal e1-h4." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file with White pawn on e5 attacked, or a normal e4/e5 centre after 3.Nf3." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "King's Gambit declined; White's king exposed on e1-h4 diagonal; open and double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black declined; 3.fxe5 Nxe4 trades pawns evenly." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Open lines in the e-file area after fxe5 Nxe4." },
+    "approach": { "notes": "Played by strong players now and then; standard." },
+    "level": { "reason": "understanding", "notes": "Open tactical play with moderate theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "3.Nf3 exf4", "moves": "3.Nf3 exf4", "how": "Transposes into a King's Gambit Accepted." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Open play with a slightly exposed White king, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Declined, so no material changes hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable for both sides." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Pawns come off and files open." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "Played by strong players, not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Open game plans with moderate theory." },
+    "plans": { "value": [], "reason": "No recognised plan from the list dominates." }
+  }
+}

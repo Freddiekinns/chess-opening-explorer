@@ -1,0 +1,44 @@
+{
+  "slug": "old-indian-defense-czech-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Old Indian Defense: Czech Variation, with Nc3",
+    "eco": "A53",
+    "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 c6",
+    "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "old-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black plays ...d6 and ...c6 to prepare ...Nbd7 and ...e5, a solid Philidor-style centre without a fianchetto. White usually takes space with e4 and Nf3 and Black waits to strike with ...e5 or ...Qc7. The game is solid and a bit passive, and Black wins by patience and well-timed pawn breaks.",
+  "white_ideas": [
+    { "idea": "e4, Nf3 and Be2, building a big centre and aiming for d5 or dxe5." },
+    { "idea": "Keep space and restrain ...e5." }
+  ],
+  "black_ideas": [
+    { "idea": "...Nbd7 and ...e5, then ...Be7 and ...O-O." },
+    { "idea": "...Qc7 and ...b5 or ...exd4 to counter against the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor/Hanham-style pawns on c6, d6 and e5 against White's d4 and e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid compact set-up, hard to break down but with little space." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound but passive; theory gives White a small edge." },
+    "structure": { "notes": "d4 against ...e5 tension, often unresolved or exchanged." },
+    "approach": { "notes": "Played by strong players now and then; standard." },
+    "level": { "reason": "understanding", "notes": "Plans are straightforward; little theory." }
+  },
+  "plan_phrases": ["Space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Compact Philidor-type set-up that is hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respectable, if slightly passive, defence." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "d4 against ...e5 stays in tension or is released." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players occasionally." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear plans and light theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's space against Black's compact set-up." }
+  }
+}

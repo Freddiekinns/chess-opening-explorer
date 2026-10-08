@@ -1,0 +1,46 @@
+{
+  "slug": "danish-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "center-game-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White offers one or two pawns for open lines and rapid development. After 3...dxc3 4.Bc4 cxb2 5.Bxb2 White has two bishops aimed at f7 and g7 and Black must find accurate moves, usually returning material with ...d5 to equalise. Many club games end quickly in attacks; with correct defence Black is fine.",
+  "white_ideas": [
+    { "idea": "Bishops on c4 and b2 aimed at f7 and g7 with the open lines." },
+    { "idea": "Develop fast with Nc3, Nf3 and Qb3 or Qe2, attacking before Black consolidates." }
+  ],
+  "black_ideas": [
+    { "idea": "Return the pawn with ...d5 to complete development and take the bishop pair." },
+    { "idea": "Decline with 3...d5 4.exd5 Nf6 or 3...Nf6, keeping a safe position." }
+  ],
+  "typical_structures": [
+    { "structure": "White has two pawns less, Black has an open d-file and queenside pawn weakness." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing, unbalanced, attack against material." },
+    "gambit": { "material_given": "two pawns", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep both pawns but gives them back to equalise." },
+    "soundness": { "notes": "Considered dubious: Black equalises with accurate play." },
+    "structure": { "notes": "Open lines straight away." },
+    "approach": { "notes": "Strong players seldom choose it, though it is a revived surprise weapon." },
+    "level": { "reason": "understanding", "notes": "Not for beginners as it is dubious; attacking patterns matter." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "Declined with ...d5", "moves": "3... d5", "how": "Black declines, no gambit." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "A forcing attack for material with risk on both sides." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives up one or two pawns." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Strong players think Black equalises with correct defence." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "Central pawns come off immediately." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Seldom chosen by strong players, mostly as a surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Dubious, so not Beginner; attacking patterns matter more than theory." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White trades pawns for development and bishops aimed at f7 and g7." }
+  }
+}

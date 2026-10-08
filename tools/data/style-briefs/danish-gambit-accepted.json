@@ -1,0 +1,46 @@
+{
+  "slug": "danish-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4P3/2p5/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "danish-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White sacrifices one or two pawns for rapid development, with 4.Bc4 cxb2 5.Bxb2 giving two bishops aimed at f7 and g7. Black can hold the extra pawns by careful play, or return material with ...d5 and equalise. White hopes for a quick attack and traps; against accurate defence White has too little.",
+  "white_ideas": [
+    { "idea": "Bc4 and Bb2 aimed at f7 and g7, Nf3 and Qb3, O-O" },
+    { "idea": "Use open lines and the lead in development to attack the king" }
+  ],
+  "black_ideas": [
+    { "idea": "Return a pawn with ...d5 to blunt the bishops and complete development" },
+    { "idea": "Or take both pawns and defend with ...Nf6, ...Qe7, ...Bb4" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, White has few central pawns and a development lead against extra Black pawns" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open tactical lines with White attacking for pawns; one slip decides." },
+    "gambit": { "material_given": "two pawns", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep both pawns by accurate play or return them." },
+    "soundness": { "notes": "Considered unsound against best play; Black gets an edge by returning pawns with ...d5." },
+    "structure": { "notes": "Open lines straight away." },
+    "approach": { "notes": "Strong players seldom choose it, mainly a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Dubious so never Beginner." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Double Danish", "moves": "4.Bc4 cxb2 5.Bxb2", "how": "Two pawns for two bishops, the classic sacrifice." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Open attacking play where one side is a pawn or two down." },
+    "gambit": { "value": "white", "confidence": 0.97, "reason": "White gives one or two pawns for development." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.65, "reason": "Black can keep material or return it with ...d5 for an edge." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "Central pawns come off, opening lines at once." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Dubious, so not Beginner, with simple attacking ideas." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White sacrifices for fast piece play against f7 and g7." }
+  }
+}

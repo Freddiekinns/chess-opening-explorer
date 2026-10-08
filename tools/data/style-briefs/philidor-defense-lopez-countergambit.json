@@ -1,0 +1,46 @@
+{
+  "slug": "philidor-defense-lopez-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Lopez Countergambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. Bc4 f5",
+    "fen": "rnbqkbnr/ppp3pp/3p4/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counterattacks at once with ...f5, offering a pawn to open the f-file and undermine e4. White can take on f5 and e4 with Ng5 and d4 to win material or take space, while Black aims for lines against the e4 pawn and the weakened f2. White has the better chances with sensible development, and the opening is mostly seen as a surprise weapon.",
+  "white_ideas": [
+    { "idea": "Take on f5 or play Ng5 with pressure on f7 and keep the extra pawn" },
+    { "idea": "Develop with d3 or d4 and exploit Black's weakened kingside" }
+  ],
+  "black_ideas": [
+    { "idea": "Open the f-file with ...fxe4 and hit e4 and f2" },
+    { "idea": "Create tactics down the e8-h5 diagonal and play for ...Nf6 development" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with Black's f-pawn gone and White the extra pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Immediate pawn offer and tactics around e4, f2 and f7; both kings exposed." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can take on f5 or e4 and keep the pawn with careful play." },
+    "soundness": { "notes": "Considered dubious for Black; White's best replies keep an edge." },
+    "structure": { "notes": "Open lines on the f-file and diagonals after the exchanges." },
+    "approach": { "notes": "Strong players hardly ever choose it." },
+    "level": { "reason": "memory", "notes": "Trap-heavy and unsound, so not a good first repertoire choice." }
+  },
+  "plan_phrases": ["pressure on f7", "lead in development", "surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Jaenisch Variation", "moves": "3.d4 f5 4.Bc4 exd4 5.Ng5 Nh6 6.Nxh7", "how": "A different move order with a wild tactical melee" }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "An early pawn offer and open lines make it tactical for both sides." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn with ...f5." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.7, "reason": "Strong players consider the countergambit unsound." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Open lines for the pieces after the pawns come off." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom choose it at all." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious gambit is never beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Black plays for activity, White targets f7." }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "sicilian-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Classical Variation",
+    "eco": "B56",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
+    "fen": "r1bqkb1r/pp2pppp/2np1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black develops the queenside knight before choosing a structure, which allows 6.Bg5 (Richter-Rauzer), 6.Bc4 (Sozin), 6.Be3 (English-Attack-style) or 6.Be2. The strong-player branch is 6.Bg5 e6 7.Qd2 Be7 8.O-O-O O-O with opposite-side castling: White attacks on the kingside with f4 and Black counters with ...a6 and ...b5 or ...Nxd4 and ...Qa5. The play is theoretical and tactical.",
+  "white_ideas": [
+    { "idea": "Richter-Rauzer: Bg5, Qd2, O-O-O and kingside pawn storm" },
+    { "idea": "Sozin: Bc4 pointing at f7 and Be3, Qe2 for a quick attack" },
+    { "idea": "Meet ...a6 and ...b5 with f4, Nxc6 and central breaks" }
+  ],
+  "black_ideas": [
+    { "idea": "...e6, ...Be7, ...O-O and ...a6 with queenside counterplay" },
+    { "idea": "Trade the d4 knight with ...Nxd4 and use the c-file" },
+    { "idea": "...e5 or ...d5 breaks to open the centre in several lines" }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian with half-open c-file and d6 pawn, often with opposite-side castling" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides castle opposite wings in the main lines and the tactics are forcing; one mistake can lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifices as a rule; pawns traded evenly." },
+    "soundness": { "notes": "Sound; main line at the top level." },
+    "structure": { "notes": "Every Sicilian is semi-open with a half-open c-file." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "memory", "notes": "Richter-Rauzer and Sozin lines are long and need to be known; I rate it Advanced with modest confidence." }
+  },
+  "plan_phrases": ["opposite-side castling", "kingside attack", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Richter-Rauzer", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5", "how": "Sharp opposite-side castling lines." },
+    { "name": "Sozin", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bc4", "how": "Direct attack on f7, very theoretical." },
+    { "name": "6.Be2", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Be2", "how": "Calmer, Scheveningen-like." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Opposite-side castling and forcing tactics in the main lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Established top-level theory." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Open Sicilian with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "Mainstream Sicilian." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Richter-Rauzer and Sozin theory is long and must be known." },
+    "plans": { "value": ["opposite_side_castling", "kingside_attack"], "reason": "White attacks the king while Black counters on the queenside." }
+  }
+}

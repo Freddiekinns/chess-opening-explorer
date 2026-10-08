@@ -1,0 +1,46 @@
+{
+  "slug": "slav-defense-geller-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Geller Gambit",
+    "eco": "D15",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. e4",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 5"
+  },
+  "parent": "slav-defense-two-knights-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White gives up the c4 pawn to build a big e4-d4 centre and get a lead in development. After 5...b5 6.e5 Nd5 7.a4 e6 8.axb5 Nxc3 9.bxc3 cxb5 White has open lines against the queenside and a strong centre in return for the pawn. It is known for long forcing theory and has been used by strong players, including Geller.",
+  "white_ideas": [
+    { "idea": "Use the e4-e5 centre and open a-file/b-file lines against Black's queenside pawns." },
+    { "idea": "Develop quickly with Be2, O-O and Ng5 or Qc2 ideas, aiming at the kingside and the b5 pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn with ...b5 and ...Nd5, then trade pieces to blunt White's initiative." },
+    { "idea": "Return the pawn at the right moment, or counterattack in the centre with ...c5 and ...Bb7." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4-e5 centre against Black's extended queenside pawns after ...b5 and ...cxb5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing lines where White sacrifices a pawn for activity and Black must keep finding accurate defensive moves." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 5...b5 Black holds the c4 pawn and White does not regain it by force." },
+    "soundness": { "notes": "Theory holds the balance and strong players have played it, so it is sound for White." },
+    "structure": { "notes": "Open lines on the queenside and in the centre as pawns are exchanged." },
+    "approach": { "notes": "A recognised gambit played by strong players on occasion; not a surprise-only line." },
+    "level": { "reason": "memory", "notes": "Long forcing theory that must be known for both sides." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Spassky Variation", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. e4 b5 6. Qc2", "how": "A quieter, more positional treatment aimed at regaining the pawn." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Pawn sacrifice with forcing play where both sides take risks." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives the c4 pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Strong players have played and held it." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Lines open on the queenside and the centre is fluid." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Respectable gambit used by strong players, not offbeat." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.6, "reason": "Heavy forcing theory." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White trades a pawn for quick development and attacking chances." }
+  }
+}

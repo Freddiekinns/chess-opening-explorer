@@ -1,0 +1,109 @@
+{
+  "slug": "caro-kann-defense-exchange-variation",
+  "root": {
+    "name": "Caro-Kann Defense: Exchange Variation",
+    "eco": "B13",
+    "moves": "1. e4 c6 2. d4 d5 3. exd5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Caro-Kann Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Caro-Kann Defense - Exchange Variation",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/opening/caro-kann-defense-exchange-variation/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Caro-Kann Exchange search snippets (Chessiverse, Wikibooks, Forward Chess, Perlen vom Bodensee)",
+      "publisher": "various, search snippets only",
+      "url": "https://perlenvombodensee.de/2018/08/15/how-to-tackle-the-caro-kann-exchange-an-urgent-recommendation-opening-survey/",
+      "kind": "article"
+    }
+  ],
+  "overview": "White exchanges on d5 and, after 3...cxd5, develops quietly (4.Bd3, 4.Nf3, 4.c3 or 4.Bf4) instead of fighting for a big centre. The structure is the Carlsbad structure of the QGD Exchange with colours reversed: White keeps a queenside pawn majority (a, b, c vs a, b), Black has the extra central e-pawn and the minority on the queenside, so the minority attack is Black's resource and White usually plays on the kingside with a knight outpost on e5 or the manoeuvre Nd3. Black develops the light-squared bishop to f5 or g4 before ...e6 and aims to trade pieces and equalise; White gets slightly better piece placement but less ambition than in the main lines. The Rubinstein line 4.Bd3 Nc6 5.c3 Nf6 6.Bf4 stops ...Bf5. Sources call it very positional, less ambitious than the main lines, a long-time Karpov favourite and difficult for Black to win against, and say it rewards understanding over memorisation.",
+  "white_ideas": [
+    { "idea": "Knight outpost on e5 and transfer of the knight to d3 (its ideal square), play on the kingside", "sources": ["s2", "s3"] },
+    { "idea": "Rubinstein set-up 4.Bd3 Nc6 5.c3 Nf6 6.Bf4 to stop ...Bf5 and develop naturally with Nf3 and O-O", "sources": ["s3"] },
+    { "idea": "Prophylaxis against Black's queenside counterplay and slight lead in piece placement", "sources": ["s2"] },
+    { "idea": "Fischer-type 6.Bf4 Bg4 7.Qb3 aiming at b7", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the light-squared bishop to f5 or g4 before ...e6", "sources": ["s2", "s3"] },
+    { "idea": "Minority attack on the queenside with ...b5-b4 (the Carlsbad structure with colours reversed gives Black the minority)", "sources": ["s2", "s3"] },
+    { "idea": "Central advances with ...f6 and ...e5; semi-open e-file for counterplay", "sources": ["s3"] },
+    { "idea": "Exchange pieces to neutralise White's slight advantage", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad structure with colours reversed: White a,b,c,d vs Black a,b,d,e; White queenside majority, Black e-pawn in the centre", "sources": ["s1", "s2"] },
+    { "structure": "Static central formation with d4 against d5, favouring manoeuvring over tactics", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as a very positional approach and static; less ambitious than the main lines; long a Karpov favourite and famously hard for Black to win against. Potential for attack only if Black misplays (trap 6.Ne2 Bg4 7.O-O e6 8.Qe1 Bd6? 9.f3). Wikipedia calls the Caro-Kann more solid and less dynamic than the Sicilian and says this line gives White a slightly better game.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "An exchange of pawns on d5; no material sacrificed (the Panov-Botvinnik 4.c4 is a separate gambit-free but sharper line).",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides; Wikipedia says White gets a slightly better game. Played by Karpov and Fischer.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Central tension is resolved; d4 vs d5 pawns remain, with a Carlsbad-type structure (reversed) leading to a mostly closed, manoeuvring game with a semi-open e-file for Black.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "White's choice against the Caro-Kann, a quiet branch rather than a universal set-up. Played by Karpov and Fischer; less ambitious than the Advance and Classical but respected.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Modern Chess says the position rewards strategic understanding over memorisation and suits improving club players. Black needs to know Carlsbad ideas and avoid specific traps; not heavily theoretical.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "Carlsbad structure reversed",
+    "minority attack by Black on the queenside",
+    "knight outpost on e5",
+    "knight transfer to d3",
+    "bishop out before ...e6",
+    "semi-open e-file",
+    "...f6 and ...e5 central advance"
+  ],
+  "sublines_that_differ": [
+    { "name": "Panov-Botvinnik Attack", "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4", "how": "White plays for an isolated queen's pawn / open game; more active than the quiet Exchange lines (not in this root's main subtree)." },
+    { "name": "Rubinstein 4.Bd3", "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. Bd3 Nc6 5. c3 Nf6 6. Bf4", "how": "White stops ...Bf5, Carlsbad with reversed colours." },
+    { "name": "3...Qxd5", "moves": "1. e4 c6 2. d4 d5 3. exd5 Qxd5", "how": "Black recaptures with the queen, a different Scandinavian-like set-up (not researched deeply)." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "It is a solid and straightforward response where White resolves the central tension", "verdict": "supported", "note": "White exchanges on d5; the line is called very positional.", "sources": ["s2"] },
+      { "claim": "It leads to a symmetrical pawn structure", "verdict": "wrong", "note": "The structure is a reversed Carlsbad: White has a,b,c,d pawns and Black has a,b,d,e, so it is asymmetrical (the d-pawns are symmetrical).", "sources": ["s1", "s2"] },
+      { "claim": "It steers into quieter, more strategic waters, bypassing the sharp tactical complexities of other Caro-Kann lines", "verdict": "supported", "note": "Less ambitious than the main lines; Panov 4.c4 is the sharper alternative.", "sources": ["s2", "s3"] },
+      { "claim": "It is an excellent opening for players who fight for a small but persistent advantage based on space and development", "verdict": "supported", "note": "Wikipedia: slightly better game for White; superior piece placement.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: leverage a lead in development to launch a queenside minority attack with c3, Rb1, and b4-b5, aiming to create a weakness on c6", "verdict": "wrong", "note": "White has the queenside majority (a,b,c vs a,b) and the c-pawn on c6 no longer exists; the minority attack belongs to Black (...b5-b4). White's usual plans are the e5 knight outpost, Nd3, and kingside play, per sources.", "sources": ["s2", "s3"] },
+      { "claim": "Black: develop the light-squared bishop (to f5 or g4) before committing to ...e6", "verdict": "supported", "note": "Standard plan; White's 4.Bd3/6.Bf4 set-up tries to prevent ...Bf5.", "sources": ["s2", "s3"] },
+      { "claim": "Black achieves easy equality and reaches a solid, balanced position", "verdict": "unverifiable", "note": "Sources say White gets a slightly better game and that Black has traps to avoid; 'easy' is not supported.", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

@@ -1,0 +1,157 @@
+{
+  "slug": "bird-opening-dutch-variation",
+  "root": {
+    "name": "Bird Opening: Dutch Variation",
+    "eco": "A03",
+    "moves": "1. f4 d5",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Bird's Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bird%27s_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Bird's Opening",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Birds-Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "How To Play The Bird's Opening For White And Black",
+      "publisher": "Chess for Sharks",
+      "url": "https://chessforsharks.co/birds-opening/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Bird Opening: Dutch / Lasker Variation search summary (Chess Wiki, 365chess, snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.365chess.com/eco/A03_Bird's_opening_Lasker_variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 1.f4 d5 the game resembles a Dutch Defence with colours reversed and White a tempo up. White's main aims are control of e5 and the dark central squares with the f-pawn, usually 2.Nf3 followed either by a g3/Bg2 fianchetto or by e3, Be2, O-O and d3 or d4/c3 (Stonewall formation). Black meets it by fighting for the centre and the dark squares: a fianchetto with ...g6/...Bg7, or ...Nf6, ...e6 and ...c5, with ...Bg4 as a pin. The play is positional and both sides develop to optimal squares; the downside of f4 is a weakened kingside, so it is 'double-edged' for less experienced players. Sources say there is little theory, it can be a surprise weapon at club level, and the opening has been tried by strong players (Larsen, Carlsen, Nakamura, Karjakin) but is not popular at the top, with White scoring only about 46.7% overall.",
+  "white_ideas": [
+    { "idea": "Control e5 and the dark central squares with f4, then Nf3, e3 or g3, and a later Ne5 outpost.", "sources": ["s1", "s2"] },
+    { "idea": "Fianchetto set-up with g3 and Bg2 (reversed Leningrad pattern), or e3 with Be2, castling and a Stonewall formation (pawns on d4, e3, f4, c3).", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Launch kingside attacks accepting a slight weakening of the kingside.", "sources": ["s1"] },
+    { "idea": "Lasker Variation 2.e3 or 2.Nf3 Nf6 3.e3, a quiet set-up followed by b3/Be2.", "sources": ["s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Reversed Dutch structure: central control with ...d5, ...Nf6, ...e6 and ...c5 to attack White's centre.", "sources": ["s3", "s4"] },
+    { "idea": "Fianchetto with ...g6 and ...Bg7 to compete for the dark squares (Taylor's 2.Nf3 g6 3.e3 Bg7 4.Be2 Nf6 5.O-O O-O 6.d3 c5).", "sources": ["s1", "s3"] },
+    { "idea": "Take advantage of the weakened e8-a4 and e1-h4 diagonals and play on the queenside or in the centre, including ...Bg4 pins.", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Dutch: White pawns f4 and e3 (or g3 with a fianchetto) against Black d5 and c5/e6; the centre is tense and not opened early.", "sources": ["s1", "s2", "s3"] },
+    { "structure": "Stonewall formation for White (pawns on d4, e3, f4, c3) with kingside play.", "sources": ["s1", "s2", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources describe positional play where both sides develop to optimal squares and fight for the centre; f4 is 'double-edged' because it weakens the kingside. Little concrete forcing theory in the main lines, but Black can grab the initiative with ...c5 and ...Bg4. (From's Gambit, 1...e5, is the double-edged reply to 1.f4, but it is not this line.)",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main 1.f4 d5 lines. The subtree includes the Batavo Gambit (1.f4 d5 2.Nf3 c5 3.e4), a rare White pawn offer, and the Mujannah-Sturm Gambit 2.c4, both side branches.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Playable, sound enough but a minor opening: White scores 46.7% overall (Chessgames data quoted by Wikipedia), compared with 54.25% for 1.e4 and 55.95% for 1.d4. Kasparov 'neutralized and crushed' Bird's Opening against Romanishin in 1975; Bird beat Lasker with it in 1892. Search snippet: engine evaluation about -0.2 after 1.f4 d5 2.Nf3 Nf6 3.e3 c5.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Centre tense and typically partly closed: White keeps the e-pawn on e3 and the f-pawn on f4 (Stonewall or fianchetto), Black ...d5 with ...c5 or ...e6. Few early pawn exchanges in the centre. Sources do not call it open.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "Chess.com: 'not popular among the masters of today' but modern GMs including Carlsen, Nakamura and Karjakin occasionally use it, continuing a tradition from Bird, Tartakower, Nimzowitsch and Larsen; Wikipedia lists it sixth in popularity among White's first moves. It is a set-up (f4 with Nf3/e3 or g3) that can be played against many replies but is a specific first-move opening.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Very little theory (Chess.com, search summary), so easy to prepare and 'a good surprise weapon for club-level players'; but Chess for Sharks says the weakening f4 move makes it riskier than mainstream openings for less experienced players. The difficulty is positional (kingside weaknesses, e5 control) rather than memory.",
+      "sources": ["s2", "s3", "s4"]
+    }
+  },
+  "plan_phrases": [
+    "reversed Dutch",
+    "control of e5",
+    "Stonewall formation",
+    "fianchetto with g3 and Bg2",
+    "kingside attack",
+    "weakened kingside",
+    "e8-a4 diagonal weakness",
+    "Ne5 outpost"
+  ],
+  "sublines_that_differ": [
+    { "name": "Lasker Variation", "moves": "1. f4 d5 2. e3 / 2. Nf3 Nf6 3. e3", "how": "Quiet e3 set-up with Be2, O-O and d3 or d4/c3 (Stonewall); more positional." },
+    { "name": "Batavo Gambit", "moves": "1. f4 d5 2. Nf3 c5 3. e4", "how": "White gambit; sharp and rare, a different type of game from the main lines." },
+    { "name": "1.e4 c5 2.f4 d5 transposition", "moves": "1. e4 c5 2. f4 d5 3. Nf3 dxe4", "how": "Listed as 'Bird Opening: Dutch Variation, Batavo Gambit' in the subtree, but it is a Sicilian-based position (own understanding, unsourced: a Grand Prix-type line) and unrelated in character." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Bird's Opening with 1...d5 creates a reversed Dutch Defence where White has an extra tempo.",
+        "verdict": "supported",
+        "note": "Described as a Dutch with colours reversed.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "White aims to control the e5 square and often prepares a kingside attack.",
+        "verdict": "supported",
+        "note": "e5 control and kingside attacks accepting a weakening are named.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black establishes a firm central foothold and seeks to exploit the weaknesses around White's king.",
+        "verdict": "supported",
+        "note": "f4 weakens the kingside; Black's ...c5 and diagonal play are named.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It is ideal for creative, strategic players who enjoy non-standard positions and a less theoretical battle.",
+        "verdict": "supported",
+        "note": "Very little theory; good surprise weapon at club level.",
+        "sources": ["s2", "s4"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: fianchetto the king's bishop with b3 and Bb2, controlling the long diagonal.",
+        "verdict": "wrong",
+        "note": "The sources name a g3/Bg2 fianchetto (king's bishop); b3/Bb2 is the queen's bishop and appears only in the Lasker line after e3. Plans in sources: g3/Bg2 or e3/Be2 set-ups.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "Black: build a solid central structure with ...Nf6, ...e6 and prepare the ...c5 pawn break.",
+        "verdict": "supported",
+        "note": "...Nf6, ...e6 and ...c5 appear in the Lasker lines and the e3 set-up.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "White often manoeuvres to control the e5 square, potentially with a knight outpost after Nf3-e5.",
+        "verdict": "supported",
+        "note": "e5 control is a core idea.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black looks to exploit the potential weakness of White's king, especially along the e8-a4 and e1-h4 diagonals.",
+        "verdict": "unverifiable",
+        "note": "Kingside weakening is named; the specific diagonals are standard knowledge for f4 openings but were not stated in the sources read.",
+        "sources": ["s1", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

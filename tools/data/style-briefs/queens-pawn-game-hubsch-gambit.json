@@ -1,0 +1,46 @@
+{
+  "slug": "queens-pawn-game-hubsch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Hübsch Gambit",
+    "eco": "D00",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. e4",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "queens-pawn-game-chigorin-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn in Blackmar-Diemer style with 3.e4. The Hübsch line goes 3...Nxe4 4.Nxe4 dxe4, where Black is a pawn up and White hopes for development and play against the king. Black can also decline with ...e5 (Lemberger Countergambit) or ...dxe4 and ...Nxe4 lines. Accurate defence leaves White with little for the pawn.",
+  "white_ideas": [
+    { "idea": "Give the pawn for rapid development, open lines and attack with Qd2, Bc4, f3 and O-O-O." },
+    { "idea": "Hit Black's kingside with Bg5, Bc4 and Qh5 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Nxe4 and ...dxe4, then return it or consolidate with ...Bf5, ...e6 and ...Nd7." },
+    { "idea": "Decline with ...e5, ...c6 or ...e6 if White's attack seems too dangerous." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, Black a pawn up, White with more developed pieces." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White plays for the attack from move three, with Black needing care but with the safer position." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 3...Nxe4 4.Nxe4 dxe4 Black is a pawn up and can keep it." },
+    "soundness": { "notes": "The Hübsch line is generally seen as inferior for White; Black gets an easy extra pawn." },
+    "structure": { "notes": "Open lines in the centre after the e-pawn exchanges." },
+    "approach": { "notes": "A BDG-type surprise, seldom played by strong players." },
+    "level": { "reason": "memory", "notes": "Needs the BDG traps and move orders; dubious so not beginner." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Lemberger Countergambit", "moves": "3... e5", "how": "Black counters at once and the game becomes a sharper open fight." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "White gambits a pawn for open lines and attack." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives the e-pawn for development." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Black can take and consolidate with an extra pawn." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Central pawns are exchanged and lines are opened." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Dubious, so never beginner; traps need memorising." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White plays for rapid development and an attack for the pawn." }
+  }
+}

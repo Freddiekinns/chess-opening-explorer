@@ -1,0 +1,215 @@
+{
+  "slug": "queens-gambit-declined-chigorin-defense",
+  "root": {
+    "name": "Queen's Gambit Declined: Chigorin Defense",
+    "eco": "D07",
+    "moves": "1. d4 d5 2. c4 Nc6",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "researched_at": "2026-10-04",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Chigorin Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chigorin_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Chigorin Defense: Active Play in the Queen's Gambit Declined",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/chigorin-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "The Tactical Chigorin, a Review",
+      "publisher": "ChessBase",
+      "url": "https://en.chessbase.com/post/the-tactical-chigorin-a-review-2",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Web search snippet summary (Chigorin 3.Nf3 Bg4 / 3.cxd5 Qxd5 4.e3 e5 / 3.Nc3 dxc4 4.Nf3 Nf6 5.e4 lines)",
+      "publisher": "WebSearch results citing Chess.com-style opening guides and Morozevich book listings",
+      "url": "https://www.365chess.com/chess-openings/Chigorin-Defense",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black answers 2.c4 with 2...Nc6, ignoring the classical rule of defending d5 with ...e6 and the c-pawn, and instead relies on quick piece development and pressure on d4. White has three main replies: 3.Nc3 (Black plays 3...dxc4 or 3...Nf6, then ...e5 or ...Bg4 ideas), 3.Nf3 (3...Bg4 4.cxd5 Bxf3 5.gxf3 or 5.dxc6) and 3.cxd5 Qxd5 where Black hits d4 and breaks with ...e5. White enjoys the bigger centre and often the bishop pair; Black gets active pieces and counterplay, often trading a bishop for a knight voluntarily. Sources call it theoretically playable/equal but under-explored, a surprise weapon that has been used at the top mainly by Morozevich and Smyslov. Play is tactical and piece-based rather than structure-based.",
+  "white_ideas": [
+    {
+      "idea": "Keep the big centre (d4/e4 after 3.Nc3 dxc4 4.Nf3 Nf6 5.e4) and use the space and pawn majority against Black's piece play",
+      "sources": ["s2", "s4"]
+    },
+    {
+      "idea": "Win the bishop pair by provoking ...Bg4xf3 (3.Nf3 Bg4 4.cxd5 Bxf3 5.gxf3 gives doubled f-pawns but bishops and centre; 5.dxc6 is the alternative)",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Against 3.cxd5 Qxd5: develop and neutralise the queen (4.e3 or 4.Nf3 are met by 4...e5), heading for simplified, endgame-leaning positions e.g. 4.e3 e5 5.Nc3 Bb4 6.Bd2 Bxc3",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Develop with Nc3, Nf3, Bg5 / Be3 and treat the c6 knight as a target",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Rapid piece development and pressure on d4 instead of defending d5 with a pawn; pin White's knights with bishops on b4 and g4",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "The ...e5 break (4...e5! after 3.cxd5 Qxd5 or 3.Nf3 lines), often followed by ...c6 and castling",
+      "sources": ["s3", "s4"]
+    },
+    {
+      "idea": "Voluntarily give up a bishop for a knight (...Bg4xf3) to speed up development and disrupt White's pawns",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Play ...e6 where needed to support d5 and prepare ...Bb4 against 3.Nc3 lines",
+      "sources": ["s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White big pawn centre (d4/e4) against Black piece pressure, after 3.Nc3 dxc4 4.Nf3 Nf6 5.e4; Black's c-pawn is blocked by the c6 knight",
+      "sources": ["s2", "s4"]
+    },
+    {
+      "structure": "Doubled f-pawns for White after 3.Nf3 Bg4 4.cxd5 Bxf3 5.gxf3",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Open, queen-early positions after 3.cxd5 Qxd5 4.e3 e5 with Black pieces active and an isolated or symmetrical-leaning centre after exchanges",
+      "sources": ["s1", "s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "ChessBase calls it unconventional, aggressive and tactically sharp with 'big tactical fights'; Chessable calls the defence 'reliable, solid' yet 'tricky' and reliant on piece play and tactics. Black accepts a smaller centre for development, and there is real king safety risk only in the 3.Nc3 dxc4 gambit-like lines. Sources disagree on solid vs sharp wording; the play itself is tactical and piece-driven, with White often having the more stable structure.",
+      "sources": ["s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black gives no material by force. In the 3.Nc3 dxc4 lines Black grabs the c4 pawn and White regains it with Bxc4, so no gambit. The 'Modern Gambit' label in the opening data is only a name for 4.Nf3 Nf6 lines; sources do not describe a pawn sacrifice. Black's 3.cxd5 Qxd5 line is a simple exchange.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Wikipedia: 'generally considered playable for Black' but theory under-developed. Chessable: Black 'achieves equality'. ChessBase review: Morozevich scored 12 wins, 12 losses, 11 draws in 35 games, practical rather than theoretical standing. Not described as refuted or dubious by any source read.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "White usually holds a central pawn majority with d4 and e4 possible; Black strikes with ...e5 and ...dxc4 and the position tends to open quickly, with early queen and piece activity. In 3.cxd5 Qxd5 and 3.Nf3 Bg4 lines the centre opens after exchanges. Not a locked centre; sources do not name a standard pawn structure.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "Not a system played against everything; it is a specific reply to 1.d4 d5 2.c4. Played at master level occasionally: Morozevich is the main advocate (35 games in the ChessBase review, book 'The Chigorin Defence According to Morozevich'), Smyslov beat Kasparov with it in the 1980s, Rapport has used it. Described as a surprise weapon. Rare among elite players overall but used by strong players with serious books and courses, so it is not a joke opening.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable says it is better suited to intermediate players than beginners and relies on piece play and tactical patterns more than memorisation. ChessBase reviewer calls it a perfect weapon at club level because opponents lack preparation. Memory load in the 3.Nc3 dxc4 and 3.cxd5 Qxd5 lines is moderate, with a few key forcing sequences (4...e5!).",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "rapid development",
+    "pressure on d4",
+    "...e5 break",
+    "bishop for knight trade",
+    "pin with ...Bg4 and ...Bb4",
+    "surprise weapon",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Chigorin: 3.Nf3 Bg4 line",
+      "moves": "1. d4 d5 2. c4 Nc6 3. Nf3 Bg4 4. cxd5 Bxf3 5. gxf3",
+      "how": "Black trades bishop for knight, White gets doubled f-pawns, the bishop pair and the centre; play is more positional than the 3.Nc3 lines."
+    },
+    {
+      "name": "Chigorin: 3.cxd5 Qxd5",
+      "moves": "1. d4 d5 2. c4 Nc6 3. cxd5 Qxd5 4. e3 e5",
+      "how": "Open, early-queen positions with quick equalising play for Black and a drift toward simplified middlegames or endings."
+    },
+    {
+      "name": "Chigorin: Janowski / Modern line",
+      "moves": "1. d4 d5 2. c4 Nc6 3. Nc3 dxc4 4. Nf3 Nf6 5. e4",
+      "how": "White builds a big d4/e4 centre against Black piece play with ...Bg4 and ...Bb4; the most theoretical and tactical branch."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "2...Nc6 challenges White's central control immediately",
+        "verdict": "supported",
+        "note": "Black pressures d4 with pieces rather than defending d5 with a pawn.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It eschews the solid pawn structures of traditional QGD for rapid development, initiative and tactical complications",
+        "verdict": "supported",
+        "note": "Matches the sources' description of piece play over pawn structure.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Suited to creative and aggressive players comfortable with imbalanced positions",
+        "verdict": "supported",
+        "note": "ChessBase calls it a tactical, unconventional weapon.",
+        "sources": ["s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: develop pieces rapidly and challenge the centre, often with ...e5",
+        "verdict": "supported",
+        "note": "...e5 is the key break in the cxd5 and Nf3 lines.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "Black: create imbalances, frequently giving up the bishop pair for lasting pressure and initiative",
+        "verdict": "supported",
+        "note": "...Bg4xf3 is standard.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: seize a space advantage and try to punish Black's unorthodox set-up",
+        "verdict": "supported",
+        "note": "White keeps a central pawn majority.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White: exploit Black's structural weaknesses, aiming to secure the bishop pair and convert it into a long-term advantage",
+        "verdict": "supported",
+        "note": "Bishop pair after ...Bxf3 is a White asset, though sources do not describe it as decisive.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: use the knight on c6 to control key squares and support a central break",
+        "verdict": "supported",
+        "note": "The c6 knight pressures d4 and supports ...e5.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black often fianchettoes the queen's bishop to g7 in some lines",
+        "verdict": "wrong",
+        "note": "The queen's bishop cannot go to g7 (that is the king's bishop square), and Black's main plans put the queen's bishop on g4 and the king's bishop on b4 or e7. Fianchetto to g7 is not a Chigorin theme in any source read; own understanding: it would require ...g6, which is a rare sideline.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White: develop with Nc3, Nf3 and Bg5 to pressure Black's set-up, aiming to prove the c6 knight is a target",
+        "verdict": "supported",
+        "note": "Development with Nc3/Nf3 is standard; Bg5 is a possible choice. Sources do not say 'target' exactly but mention pins and trades.",
+        "sources": ["s2", "s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 3 }
+}

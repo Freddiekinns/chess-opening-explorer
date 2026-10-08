@@ -1,0 +1,95 @@
+{
+  "slug": "kings-pawn-game-gunderam-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Gunderam Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 c6",
+    "fen": "rnbqkbnr/pp1p1ppp/2p5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays 2...c6 instead of defending e5 with a developing move, planning ...d5. White can take on e5 or play 3.d4 d5 4.Nc3, and Black is a pawn down or has an inferior version of a Caro-Kann/Scotch structure. It is an obscure line and I am not sure of details; strong players choose the normal 2...Nc6.",
+  "white_ideas": [
+    { "idea": "Take the e5 pawn with Nxe5 and keep the extra pawn." },
+    { "idea": "Or play d4 and Nc3, building a bigger centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike with ...d5 to gain time and open lines." },
+    { "idea": "Develop with ...Bd6 or ...Nf6 for the pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "Black's ...c6/...d5 centre against White's extra e-pawn or a d4/e4 centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is playing for a pawn with unclear compensation; I cannot say how sharp it gets."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "White can simply take e5 with Nxe5 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound; Black gets little for the pawn."
+    },
+    "structure": {
+      "notes": "After Nxe5 d5 the centre is open or semi-open; I am unsure."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious; not a good first choice."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "3.d4 d5",
+      "moves": "1. e4 e5 2. Nf3 c6 3. d4 d5",
+      "how": "White declines the pawn and plays for a space edge."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.35,
+      "reason": "Unclear; it is not known for forcing play, just a pawn deficit."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black allows Nxe5 for ...d5 and development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black gets little for the pawn."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "Unclear; the centre may open after ...d5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious lines are never beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from the evidence."
+    }
+  }
+}

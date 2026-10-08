@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-declined-austrian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Austrian Defense",
+    "eco": "D06",
+    "moves": "1. d4 d5 2. c4 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "queens-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black counterattacks the centre with ...c5 at once. After 3.cxd5 Nf6 4.Nf3 cxd4 5.Nxd4 Nxd5 or 4.dxc5, the position opens quickly with a lead in development and Black's pieces active; the Gusev Countergambit lines give up a pawn for activity. Play is tactical, open and theoretical, with little in the way of a standard system.",
+  "white_ideas": [
+    { "idea": "Take on d5 and c5 to win material, then develop calmly and trade down." },
+    { "idea": "Play for e4 and a lead in the centre against Black's activity." }
+  ],
+  "black_ideas": [
+    { "idea": "Open the position, recapture on d5 with the knight and use the open c-file and diagonals." },
+    { "idea": "In the Gusev lines, lead in development for a pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with a symmetrical pawn skeleton or an isolated queen's pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open and tactical from the start, with forcing sequences and sharp sublines such as Haberditz." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Main line 3.cxd5 Nf6 4.Nf3 cxd4 5.Nxd4 Nxd5 regains the pawn at once; gambit lines are sidelines." },
+    "soundness": { "notes": "Playable but White keeps a small edge; strong players rarely test it." },
+    "structure": { "notes": "Centre opens quickly after cxd5 and cxd4." },
+    "approach": { "notes": "Seldom chosen by strong players." },
+    "level": { "reason": "memory", "notes": "Sharp lines with theory but little standing guidance." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "Haberditz", "moves": "3.cxd5 Nf6 4.e4 Nxe4 5.dxc5 Qa5+", "how": "Sharp tactics." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Open from move three with forcing tactical lines." },
+    "gambit": { "value": "none", "confidence": 0.75, "reason": "The pawn comes back at once in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.65, "reason": "Playable, if slightly worse for Black." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Central pawns are exchanged early and lines open." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Needs concrete theory but plans are clear." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for activity." }
+  }
+}

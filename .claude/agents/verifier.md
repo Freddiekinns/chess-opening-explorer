@@ -17,8 +17,10 @@ You do not edit files, retry to get green, or diagnose beyond the error text.
 
 1. If `node_modules/` is missing, run `npm ci` first. If it fails, report that
    and stop.
-2. Run each command exactly as given. Default, when none is given:
-   `npm run test:all`, then `npm run build`.
+2. Run each command exactly as given, without piping it through `tail`, `head`
+   or `grep` — a pipe hides the exit code, and the exit code is the verdict.
+   Redirect to a file and read the failures from that instead. Default, when
+   none is given: `npm run test:all`, then `npm run build`.
 3. Report, per command: pass or fail, the test counts it printed, and for each
    failure the test file, test name, and the first ~15 lines of the error
    verbatim. Nothing from passing suites.

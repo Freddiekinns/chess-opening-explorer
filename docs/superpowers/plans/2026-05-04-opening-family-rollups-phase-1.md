@@ -20,8 +20,8 @@ Coverage gate (<2% uncategorised) fails the build.
 **Tech Stack:** Node.js build scripts, Express/Vercel serverless API, React 19 +
 TypeScript + CSS Modules, Vitest (frontend), Jest (backend).
 
-**Spec:** `.github/memory-bank/specs/2026-05-04-opening-family-rollups.md`
-**Branch:** `feature/opening-family-rollups`
+**Spec:** `docs/proposals/2026-05-04-opening-family-rollups-spec.md` **Branch:**
+`feature/opening-family-rollups`
 
 ---
 

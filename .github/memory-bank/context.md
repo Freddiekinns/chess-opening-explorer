@@ -15,7 +15,9 @@ guidance; advanced players for quick reference.
    variations
 2. **Popularity Stats** - Win/draw/loss rates from the Lichess rated-games
    database (all rated players, not master games)
-3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas
+3. **LLM Content** - AI-generated descriptions, strategic insights, key ideas.
+   Its old style fields are superseded by the fixed style taxonomy
+   (`api/data/style-tags.json`)
 4. **Video Integration** - Curated YouTube videos matched to openings
 5. **Curated Studies** - 17,079 study chapters from 444 curated Lichess studies,
    matched to 4,500 positions by FEN and sorted by likes. Two-step pipeline:
@@ -47,41 +49,27 @@ guidance; advanced players for quick reference.
 
 - **Python**: Lichess popularity analysis only (`tools/analysis/`)
 - **Node.js**: Video discovery (`tools/video-pipeline/`), study import
-  (`tools/course-discovery/`), LLM enrichment (`tools/llm-enrichment/`)
-- **External APIs**: Lichess, YouTube Data API, Google Gemini
+  (`tools/course-discovery/`), LLM enrichment (`tools/llm-enrichment/`), style
+  tags (`tools/style-tags/`), family taxonomy (`tools/family-taxonomy/`)
+- **External APIs**: Lichess, YouTube Data API, Google Vertex AI, Jev (TypeSafe)
 
 ## Key Architecture Decisions
 
 ### AD-003: CSS Modules + Design Tokens
 
 Component styles use CSS Modules (`.module.css`). Legacy global styles remain in
-`packages/web/src/styles/simplified.css` and are migrated incrementally. A "Warm
-Editorial Dark" design system defines all visual tokens:
-
-- **Surfaces**: `--surface-base` (#1a1816) → `--surface-raised` (#232120) →
-  `--surface-elevated` (#2c2a27) → `--surface-overlay` (#363330)
-- **Typography**: Bricolage Grotesque (headlines), DM Sans (body), monospace for
-  data. Sizes from `--text-2xs` (10px) to `--text-3xl` (30px).
-- **Data viz**: Chess-thematic result colours — amber `--color-result-black`
-  (#c08840), warm grey `--color-result-draw` (#5a554e), cream
-  `--color-result-white` (#d4cfc7)
-- **Accent**: `--color-brand-orange` (#e85d04) with opacity scale `--accent-a6`
-  through `--accent-a50` for subtle tints
-- **Borders/shadows**: `--border-subtle`, `--border-default`, `--border-hover`;
-  `--shadow-sm` through `--shadow-lg`
+`packages/web/src/styles/simplified.css` and are migrated incrementally. The
+"Warm Editorial Dark" tokens are defined there and in
+`design-system/project/colors_and_type.css` — read values from those files (or
+the `openingbook-design` skill), never from a copy.
 
 ### AD-004: Unified Video Pipeline
 
-Single pipeline with three modes: incremental (RSS feeds, free), full (YouTube
-API catalogue rebuild), and rematch (re-score existing, zero API cost). 16
-trusted channels configured in `config/youtube_channels.json`. RSS discovery
-parallelized with `Promise.allSettled`. Scorer uses channel tiers (premium +40,
-good +20, entertainment -30) and targeted player-vs-player penalty.
-Anti-overindexing: 2-word alias minimum, cross-opening title check,
-sub-variation penalty, minMatchScore=60. `api/data/video-index.json` is the
-single canonical copy (the `packages/api/src/data/` mirror was removed
-2026-07-06); the pipeline writes it directly — no copy step. Rematch loses view
-counts/thumbnails; run `backfill-views.js` after.
+One pipeline with three modes — incremental (RSS, free), full (YouTube API
+rebuild) and rematch (re-score, zero API cost) — writing
+`api/data/video-index.json` directly. Channels and tiers live in
+`config/youtube_channels.json`, weights in `config/video_matching.json`. The
+`video-pipeline` skill carries the scorer's rules and regressions.
 
 ### AD-005: Conservative AI Policy
 
@@ -126,11 +114,16 @@ chess-opening-explorer/
 │   ├── web/          # React frontend
 │   └── shared/       # Shared utilities
 ├── api/              # Vercel serverless wrappers
-├── data/             # JSON data files
+├── api/data/         # Canonical production data (ECO, stats, videos, courses)
+├── data/             # Family taxonomy rules and other inputs
+├── config/           # Pipeline config (channels, matching weights, pins)
+├── design-system/    # Warm Editorial Dark reference
 ├── tools/
 │   ├── analysis/         # Python: Lichess stats pipeline
 │   ├── course-discovery/ # Node: Lichess study import pipeline
+│   ├── family-taxonomy/  # Node: family index build
 │   ├── llm-enrichment/   # Node: AI content generation
+│   ├── style-tags/       # Node: style taxonomy classification
 │   └── video-pipeline/   # Node: YouTube video discovery
 ├── tests/            # Backend tests (Jest)
 └── .github/
@@ -142,19 +135,22 @@ chess-opening-explorer/
 ```
 Lichess API → Python Analysis → popularity-stats.json
 YouTube RSS/API → Video Pipeline → video-index.json
-Gemini API → LLM Enrichment → openings.json (enhanced)
+Vertex AI → LLM Enrichment → ECO records (analysis_json)
 Lichess Study API → Course Discovery Pipeline → courses.json
-All JSON → Frontend (static, pre-generated)
+Research + Jev + judge → Style Tags → style-tags.json
+api/data/* → Express API (edge-cached) → Frontend
 ```
 
-### AD-016: Server-Side Search & Edge Caching
+### AD-016: Search Ranked Server-Side, Painted Client-Side; Edge Caching
 
-All search is server-side. Every API route declares edge caching — most via
-`vercel.json`, except `/api/explorer`, which sets its own per-band headers in
-the route (config headers would override and clobber them).
+The server ranks every query over all 12,377 openings; the client paints first
+from a 1,000-opening slice using the same bands (`search-ranking` skill). Every
+API route declares edge caching — most via `vercel.json`, except
+`/api/explorer`, which sets its own per-band headers in the route (config
+headers would override and clobber them).
 
 ## Known Constraints
 
-Lichess (rate limited; explorer needs a token), YouTube (daily quota), Gemini
+Lichess (rate limited; explorer needs a token), YouTube (daily quota), Vertex AI
 (token cost), static data (updates need a rebuild), and the Vercel Hobby tier
 (10 GB fast origin transfer) — see the caching rules in `AGENTS.md`.

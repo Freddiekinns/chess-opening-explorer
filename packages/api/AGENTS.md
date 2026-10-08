@@ -74,4 +74,4 @@ Read data from `api/data/` — it is canonical in every environment.
 `package.json` excludes most services (search, eco, llm, opening-data, database,
 youtube, chesscom, personal-games) and all of `api/`. The 90% figure therefore
 describes the covered subset, not the backend. Shrinking that exclusion list is
-tracked as TASK006 — when you add tests for an excluded service, remove its line.
+tracked in #166 — when you add tests for an excluded service, remove its line.

@@ -16,7 +16,12 @@ moved not deleted: Tooling into a new `dependencies-tooling` skill, the missing
 video gotchas into `video-pipeline`, PostHog and search-index sizes into
 `packages/web/AGENTS.md`, the explorer proxy and search projection into
 `packages/api/AGENTS.md`. Root keeps one-line pointers plus the cross-cutting
-rules. The claude-md-management plugin was not installed; done by hand.
+rules. The claude-md-management plugin was not installed; done by hand. Memory
+bank: stale facts fixed in `context.md` (token values now point at the CSS,
+Vertex not Gemini, search painted client-side) and `user-journeys.md` (style
+tags); `progress.md` no longer read at start; `tasks/` archived to
+`docs/archive/memory-bank-tasks/`, the rollups spec to `docs/proposals/`,
+TASK006 to issue #166. Next: invariant tests for prose-only rules, own PR.
 
 ## Previous Task: Style tags — merged, tail still to classify
 
@@ -39,10 +44,5 @@ so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
 `collect-unsourced.js`, `validate.js`, judge any new lists, `export.js`; commit
 briefs in chunks of ~100. Work on a new branch off `main`.
 
-Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
-Dragon description (describes the Accelerated Dragon); the intent parser
-misreads "solid response to e4", "solid e4 openings", "… for white" and
-"advanced sicilian defence" (all older than the tags); `search-by-category` and
-`search-categories` still read the old tags and have no caller; saved repertoire
-entries keep their old level. A protected preview shows Vercel's login on a
-direct `/opening/` load (middleware fetches `/index.html`).
+Follow-ups (Maróczy split, Dragon description, intent-parser misreads, dead
+category routes): `archive.md`, "Style tags — follow-ups".

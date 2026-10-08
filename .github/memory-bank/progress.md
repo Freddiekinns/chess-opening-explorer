@@ -93,7 +93,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows
   separated only by ECO — a data problem.
-- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
+- **Toasts need one host** (two within 4s cover an Undo), and **#166 —
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `archive.md`.

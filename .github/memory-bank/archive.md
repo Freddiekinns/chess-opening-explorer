@@ -1158,3 +1158,13 @@ taxonomy and fails when the committed ECO files drift from the resolver.
 Analysis and decisions: `docs/proposals/2026-10-02-irregular-family-split.md`.
 Left open: 1.g3 (Hungarian, Benko Opening) stays in `irregular` because KIA's
 own shelf is contaminated; the 192 `uncategorised` positions get no shelf.
+
+## Style tags — follow-ups (2026-10-05)
+
+Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
+Dragon description (describes the Accelerated Dragon); the intent parser
+misreads "solid response to e4", "solid e4 openings", "… for white" and
+"advanced sicilian defence" (all older than the tags); `search-by-category` and
+`search-categories` still read the old tags and have no caller; saved repertoire
+entries keep their old level. A protected preview shows Vercel's login on a
+direct `/opening/` load (middleware fetches `/index.html`).

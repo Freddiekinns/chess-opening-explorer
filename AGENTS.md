@@ -6,9 +6,10 @@ and four data pipelines (video, study, LLM enrichment, popularity stats).
 
 Commands live in `package.json`; the ones that verify your work are under
 **Working here** below. Architecture and current state live in
-`.github/memory-bank/` — read `activeContext.md` and `progress.md` first.
-`REVIEW.md` is the review policy: what a pass over a diff looks for here, and
-what to leave alone because CI already covers it.
+`.github/memory-bank/` — read `activeContext.md` first; `progress.md` and
+`archive.md` are history, read on demand. `REVIEW.md` is the review policy: what
+a pass over a diff looks for here, and what to leave alone because CI already
+covers it.
 
 Scoped rules load automatically when you work in these directories:
 

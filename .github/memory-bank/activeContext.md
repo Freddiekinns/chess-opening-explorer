@@ -1,8 +1,21 @@
 # Active Context
 
-**Date:** 2026-10-05
+**Date:** 2026-10-08
 
-## Current Task: Style tags — merged, tail still to classify
+## Current Task: Model and effort routing for Claude Code
+
+Pro plan, so usage is the constraint. The main session stays on Opus (a wrong
+turn costs more than it saves) with effort as the dial: medium by default, high
+for search ranking, SEO, new design, or a bug unexplained after one attempt.
+Delegation only for self-contained, command-verifiable, output-heavy work.
+Pinned agents: `scout` (Haiku, replaces Explore, which inherits Opus),
+`verifier` (Haiku, failures only), `implementer` (Sonnet, written plans),
+`pipeline-reviewer` (Sonnet high); `/docs-sync` skill forks to Sonnet. Table in
+`CLAUDE.md`. Next: cut `AGENTS.md` (441 lines, ~26 KB, loaded by every session
+and subagent) toward ~200 by moving Tooling and pipeline gotchas into skills —
+separate PR, owner wants the claude-md-management plugin's improver run first.
+
+## Previous Task: Style tags — merged, tail still to classify
 
 Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing
 the LLM style tags; pipeline in `tools/style-tags/` (README has the steps). 105
@@ -30,21 +43,3 @@ misreads "solid response to e4", "solid e4 openings", "… for white" and
 `search-categories` still read the old tags and have no caller; saved repertoire
 entries keep their old level. A protected preview shows Vercel's login on a
 direct `/opening/` load (middleware fetches `/index.html`).
-
-## Previous Task: Splitting the `irregular` family (#159)
-
-`irregular` held 940 positions, from 1.e4 to the Grob, so its family shelf (the
-video fallback for pages with no videos of their own) was a grab-bag. It was 16
-of the 19 top-200 pages that fall back to a shelf. Three new families in
-`data/families.json`: `queens-pawn` (Queen's Pawn Game, 210 positions),
-`kings-pawn` (King's Pawn Game, 157) and `offbeat-e4` (Offbeat 1.e4 Defenses,
-110). Six narrow re-routes in `data/family-overrides.json`: 2…Nc6 → `italian`,
-London-named → `london`, 1.d4 g6 → `pirc-modern`, Neo-Indian → `nimzo-indian`,
-Veresov → `trompowsky`, and a mislabelled B01 → `scandinavian`. `irregular`
-keeps 421 flank and offbeat positions; top-200 pages on its shelf 16 → 4.
-
-`tools/family-taxonomy/tests/family-taxonomy-data.test.js` pins the real
-taxonomy and fails when the committed ECO files drift from the resolver.
-Analysis and decisions: `docs/proposals/2026-10-02-irregular-family-split.md`.
-Left open: 1.g3 (Hungarian, Benko Opening) stays in `irregular` because KIA's
-own shelf is contaminated; the 192 `uncategorised` positions get no shelf.

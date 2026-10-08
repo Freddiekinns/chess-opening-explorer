@@ -1,0 +1,46 @@
+{
+  "slug": "queens-pawn-game-veresov-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Veresov Attack, Dutch System",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Nc3 d5",
+    "fen": "rnbqkbnr/ppp1p1pp/8/3p1p2/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "dutch-defense-raphael-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White plays Nc3 against the Dutch, and Black answers with a Stonewall-like ...d5, giving f5, d5 and e6 pawns. White often plays Bg5, e3, Nf3 and Bd3, aiming at a small edge and the weak e5 square, while Black tries ...Nf6, ...e6 and ...c6. Sources do not make this a major line, and it is played less than 2.Nf3 or 2.g3.",
+  "white_ideas": [
+    { "idea": "Bg5 and Nf3 with e3 to develop and pressure d5 and e5." },
+    { "idea": "Bd3 and Qe2 to use the e5 square and attack f5." }
+  ],
+  "black_ideas": [
+    { "idea": "...Nf6, ...e6 and ...c6 for a solid Stonewall-like set-up." },
+    { "idea": "...h6 and ...g5 to chase the bishop and gain space." }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall-type pawns on f5, e6 and d5 with a hole on e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development against a Stonewall set-up; occasional pawn storms with ...h6 and ...g5; low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Black's f5/d5/e6 pawns lock the centre." },
+    "approach": { "notes": "A less common anti-Dutch, but played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Plans around e5 and bad bishops; little theory." }
+  },
+  "plan_phrases": ["Stonewall"],
+  "sublines_that_differ": [
+    { "name": "3.Bg5 h6 4.Bh4 g5", "moves": "3.Bg5 h6 4.Bh4 g5 5.Bg3 f4", "how": "A sharp pawn storm against the bishop." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Stonewall-type play is neither forcing nor a clear fortress here." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable set-ups for both sides." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "f5, d5 and e6 pawns lock the centre as in the Stonewall." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but played by strong players, not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plan-based, little theory." },
+    "plans": { "value": ["stonewall"], "reason": "Black's f5/d5/e6 set-up with e5 outpost fight." }
+  }
+}

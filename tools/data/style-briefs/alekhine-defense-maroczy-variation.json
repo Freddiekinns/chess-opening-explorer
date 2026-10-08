@@ -1,0 +1,44 @@
+{
+  "slug": "alekhine-defense-maroczy-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Maróczy Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. d3",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/3P4/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White avoids the usual 2.e5 and sets up a quiet Philidor or King's Indian Attack-like structure with d3, Nd2, Ngf3 and often g3 or Be2. Black can play ...d5 or ...e5 and gets an easy, comfortable game. There is no space gain for White and the play is slow.",
+  "white_ideas": [
+    { "idea": "Build a solid centre with d3, Nd2, Ngf3, g3 and Bg2 or Be2." },
+    { "idea": "Keep the position closed and wait for Black to commit." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...e5 and ...d5, or play ...d5 at once with a free game." },
+    { "idea": "Develop naturally with ...Nc6, ...Be7 and castle." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Attack or Philidor-like structure with d3/e4 against ...e5/...d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and slow; Black has easy equality and neither side takes much risk." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound but harmless; it concedes the initiative." },
+    "structure": { "notes": "Centre not defined; White keeps d3 and e4 flexible." },
+    "approach": { "notes": "A rare sideline that strong players hardly choose against the Alekhine." },
+    "level": { "reason": "neither", "notes": "Easy to play but not a first-repertoire pick against the Alekhine." }
+  },
+  "plan_phrases": ["fianchetto", "solid set-up"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet, neither forcing nor especially hard to lose." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A safe if unambitious sideline." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre undecided with d3." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely chosen by strong players against the Alekhine." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple but not a recommended main repertoire choice." },
+    "plans": { "value": ["fianchetto"], "reason": "White's usual g3 and Bg2 set-up; low certainty." }
+  }
+}

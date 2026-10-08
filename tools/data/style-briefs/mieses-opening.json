@@ -1,0 +1,155 @@
+{
+  "slug": "mieses-opening",
+  "root": {
+    "name": "Mieses Opening",
+    "eco": "A00",
+    "moves": "1. d3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Mieses Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mieses_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Mieses Opening (1.d3): Is It Good? Ideas, Lines & Counters",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/queens-pawn/mieses/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippets: Mieses Opening results (Chessiverse, Wikibooks, Chess.com, mieses.info)",
+      "publisher": "Web search snippets",
+      "url": "https://chessiverse.com/resources/openings/mieses-opening",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White plays 1.d3, releasing the c1-bishop and making only a modest claim on the centre, and usually heads for an Indian-type set-up with g3, Nf3, Bg2 and short castling, then strikes with e4 (or c4). It generally transposes to the King's Indian Attack (after g3 and Nf3), the Closed Sicilian, or to colour-reversed Pirc, Modern or Philidor structures, so Black can occupy the centre with ...d5 and ...e5 and develop comfortably. Chess Doctrine calls it objectively passive: Black equalises quickly, theory load is minimal, and it is mainly a surprise weapon in rapid and blitz. Kasparov chose it against Deep Blue in 1997 (Game 3) to avoid computer preparation, but at grandmaster level it remains the exception. The play is closed and manoeuvring.",
+  "white_ideas": [
+    { "idea": "Flexible Indian-type set-up: g3, Nf3, Bg2, O-O, then an e4 or c4 pawn break", "sources": ["s1", "s2"] },
+    { "idea": "Transpose to the King's Indian Attack or Closed Sicilian structures", "sources": ["s3"] },
+    { "idea": "Nbd2 and c3 supporting central expansion (Colle-like or Philidor-reversed set-up)", "sources": ["s1"] },
+    { "idea": "Sidestep theory and play for a surprise with a solid, familiar structure", "sources": ["s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre with pawns on d5 and e5, develop Nc6, Nf6, Be7 and castle short for a comfortable game", "sources": ["s2"] },
+    { "idea": "Equalise quickly with accurate play; alternatives include ...c5, ...Nf6 and ...g6", "sources": ["s1", "s2"] },
+    { "idea": "Treat it as a reversed Philidor/Pirc/Modern with an extra tempo for Black's central pawns", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Attack structure with White pawns on d3/e4, g3 and Bg2, Black centre pawns d5/e5", "sources": ["s1", "s3"] },
+    { "structure": "Reversed Philidor/Rat structure where Black has e5/d5 against White's d3", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chess Doctrine: closed, manoeuvring positions that require positional understanding rather than memorised theory. Objectively passive; Black equalises almost immediately. Low risk of sharp tactics for both sides.",
+      "sources": ["s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered. The Spike Deferred (1.d3 g6 2.g4) is a Black-side variation in the subtree, not a gambit by default.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Playable and theoretically sound in the sense of not being refuted (Wikipedia: theoretically sound but lacks popularity at elite levels), but Chess Doctrine says White cannot expect an edge; Black equalises almost immediately. So sound, with at most a slight concession of the first-move advantage.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Closed, manoeuvring positions: White delays committing the centre and Black typically takes pawns to d5/e5. Transpositions to KIA/Closed Sicilian keep the central pawns on for a long time.",
+      "sources": ["s2", "s3"]
+    },
+    "approach": {
+      "notes": "A flexible system opening played against almost anything (transposes to KIA, Closed Sicilian, reversed Pirc/Modern/Philidor). Ranked tenth in popularity among White's first moves (Wikipedia). At grandmaster level it is the exception and usually chosen for an ulterior motive: Kasparov in 1997 against Deep Blue, David Levy in 1984 against Cray Blitz. Used by amateurs to sidestep theory.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess Doctrine: 'no theory to memorize', so it is accessible for a White player; the plan (g3, Bg2, Nf3, O-O, e4) is easy to learn. Because it is objectively passive, the difficulty is generating winning chances against accurate defence.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "King's Indian Attack set-up",
+    "fianchetto Bg2",
+    "e4 break",
+    "c4 break",
+    "sidestepping theory",
+    "reversed Philidor structure",
+    "surprise weapon in blitz and rapid"
+  ],
+  "sublines_that_differ": [
+    { "name": "Valencia Variation", "moves": "1. d3 e5 2. Nd2", "how": "White plays a Philidor-reversed set-up with Nd2 and Ngf3." },
+    { "name": "Venezolana Variation", "moves": "1. d3 c5 2. Nc3 Nc6 3. g3", "how": "Closed Sicilian-reversed structure." },
+    { "name": "Spike Deferred", "moves": "1. d3 g6 2. g4", "how": "Aggressive kingside expansion; unusual sideline." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "It is a highly flexible and non-committal first move that supports a future e4 push",
+        "verdict": "supported",
+        "note": "A modest claim on the centre that supports e4 and keeps options open.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "1.d3 prepares to develop the light-squared bishop",
+        "verdict": "wrong",
+        "note": "1.d3 releases the dark-squared c1-bishop (Wikipedia: releases the c1-bishop); the light-squared bishop is on f1 and is developed via g3/Bg2 or e4 only afterwards. Own understanding for the f1 bishop part.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It is a system opening often transposing into the King's Indian Attack or the Colle System",
+        "verdict": "supported",
+        "note": "KIA is the standard transposition; Colle-like set-ups (Nbd2, c3, e4) also appear. Closed Sicilian and reversed Philidor are also cited.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It allows White to sidestep heavy theory",
+        "verdict": "supported",
+        "note": "No theory to memorise.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It aims for a solid and patient build-up, perfect for strategic players",
+        "verdict": "supported",
+        "note": "Closed, manoeuvring play; notes that it is objectively passive.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "For White: develop with Nf3, g3, Bg2, 0-0 transposing to a KIA, often followed by a kingside pawn storm with f4-f5",
+        "verdict": "supported",
+        "note": "KIA set-up confirmed; f4-f5 is own understanding (the KIA's standard pawn storm is h4 and g4/e5, with f4 less common).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "For White: build a solid centre with c3 and e3, developing pieces behind the pawn chain (Colle System set-up)",
+        "verdict": "unverifiable",
+        "note": "Nbd2 and c3 are mentioned; e3 as a Colle-style set-up was not found.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "For Black: seize the centre with ...d5 and ...c5 to challenge White's flexible set-up and gain space",
+        "verdict": "supported",
+        "note": "Black occupies the centre with d5/e5; ...c5 is also a recognised reply.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "For Black: develop with ...d6, ...Nf6, ...g6, ...Bg7 into a King's Indian Defense set-up with a move in hand",
+        "verdict": "unverifiable",
+        "note": "...g6 and ...Nf6 are listed as replies; the 'King's Indian with a move in hand' framing was not found.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

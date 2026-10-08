@@ -1,0 +1,47 @@
+{
+  "slug": "grob-opening-grob-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Grob Gambit",
+    "eco": "A00",
+    "moves": "1. g4 d5 2. Bg2",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/6P1/8/PPPPPPBP/RNBQK1NR b KQkq - 1 2"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays 1.g4 and 2.Bg2, offering the g-pawn so the bishop eyes b7 and the long diagonal. After 2...Bxg4 White continues 3.c4 (Fritz Gambit) or 3.c4 c6 with a lead in development and pressure on b7 and the long diagonal; Black can simply keep the pawn and play calmly. It scores through surprise and traps, and strong players seldom use it.",
+  "white_ideas": [
+    { "idea": "Pressure b7 with the Bg2 and open lines with c4 for the gambit pawn." },
+    { "idea": "Use development lead to hit Black's queenside and the d5 pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on g4 and hold the extra pawn, then return it at a good moment." },
+    { "idea": "Ignore the pawn with ...c6 or ...e5 and build a solid centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Open long diagonal with Black pawns on d5 and c6; White's pawn on g4 is gone or h-pawn weakened." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Wild, trappy lines (Bxb7 tricks, Romford Countergambit) where one slip loses fast." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 2...Bxg4 White is a pawn down; Black can keep it." },
+    "soundness": { "notes": "Considered unsound; Black gets a comfortable edge with accurate play." },
+    "structure": { "notes": "Open diagonals for White's bishop, queenside open after ...Bxg4 and c4; centre undecided." },
+    "approach": { "notes": "Strong players seldom play it; a surprise weapon." },
+    "level": { "reason": "neither", "notes": "Dubious, so never Beginner." }
+  },
+  "plan_phrases": ["lead in development", "fianchetto", "surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Basman Gambit", "moves": "1. g4 d5 2. Bg2 h5 3. gxh5", "how": "Black counterattacks the g-pawn; White takes on h5 and the game is wild." },
+    { "name": "Richter-Grob Gambit", "moves": "1. g4 d5 2. Bg2 c6 3. c4 dxc4 4. b3", "how": "White goes for a bigger attack, giving more material." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Tactical, trappy lines where both sides take risks." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives the g-pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.8, "reason": "Considered unsound; works through surprise." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre undecided, with long-diagonal play." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play the Grob." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious, so never Beginner." },
+    "plans": { "value": ["lead_in_development", "fianchetto"], "reason": "Development and bishop on the long diagonal for the pawn." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-nimzowitsch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Nimzowitsch Variation",
+    "eco": "B29",
+    "moves": "1. e4 c5 2. Nf3 Nf6",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black attacks e4 at once with 2...Nf6, hoping to provoke 3.e5 and then undermine the advanced pawn. After 3.e5 Nd5 4.Nc3 Nxc3 5.dxc3 or 4.Nc3 e6, White has space and Black pieces hit the centre; 3.Nc3 d5 4.exd5 Nxd5 gives an open game. The play is less theory-driven than the main Sicilians.",
+  "white_ideas": [
+    { "idea": "Gain space with e5, Nc3 and d4, and keep the pawn chain solid." },
+    { "idea": "Play 3.Nc3 and 3.d3/ 3.d4 to avoid the Black counterattack." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit e5 with ...Nc6 and ...d6, undermine with ...d6 and ...Nb6." },
+    { "idea": "Stay flexible and aim for ...d5 or play like a Sicilian Alekhine-type." }
+  ],
+  "typical_structures": [
+    { "structure": "Space for White with the e5 pawn; Black has a half-open c-file and plays against the centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic with a space-for-targets theme; not especially forcing after 3.e5 Nd5 4.Nc3." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Sound; White's extra space is balanced by Black's counterplay." },
+    "structure": { "notes": "Sicilian asymmetric centre with a half-open c-file." },
+    "approach": { "notes": "A recognised Sicilian sideline, seen occasionally at high level." },
+    "level": { "reason": "understanding", "notes": "Fewer forced lines; plans of attacking an advanced pawn chain." }
+  },
+  "plan_phrases": ["space advantage", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "3.Nc3 d5", "moves": "3.Nc3 d5 4.exd5 Nxd5", "how": "Open Sicilian-type position, more open." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Strategic fight about the e5 pawn, not forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable sideline." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Asymmetric Sicilian with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A less usual but respectable Sicilian line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear and theory modest." },
+    "plans": { "value": ["space_advantage", "half_open_c_file"], "reason": "White space against Black's counterplay on the c-file." }
+  }
+}

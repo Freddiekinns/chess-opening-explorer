@@ -1,0 +1,44 @@
+{
+  "slug": "indian-defense-wade-tartakower-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Wade-Tartakower Defense",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 d6",
+    "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays ...d6 against the Nf3 set-up, heading for an Old Indian or King's Indian-type structure or for ...Nbd7 and ...e5. White usually plays 3.Bg5 or 3.g3, or c4 and Nc3 to reach a King's Indian. Play is flexible and mostly transposes to other Indian structures.",
+  "white_ideas": [
+    { "idea": "3.Bg5 and e3/Nbd7 or c4 and Nc3 to take space against a flexible Black set-up" },
+    { "idea": "3.g3 with a fianchetto and c4, aiming for a slight space edge" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nbd7 and ...e5 or ...g6 and ...Bg7 for a King's Indian structure" },
+    { "idea": "Delay committing the centre and respond to White's choice of set-up" }
+  ],
+  "typical_structures": [{ "structure": "King's Indian or Old Indian structures with ...d6 and ...e5, depending on White's set-up" }],
+  "axis_evidence": {
+    "character": { "notes": "Not forcing; flexible with room for both sides. I am unsure of the main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound; slightly passive." },
+    "structure": { "notes": "Not yet decided; transposes into many structures." },
+    "approach": { "notes": "Played by some strong players as a move-order choice; respectable." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of King's Indian-style plans but little theory." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3.Bg5 Nbd7", "moves": "3. Bg5 Nbd7", "how": "Heading for ...e5 with an Old Indian set-up and Black not committing the bishop." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Flexible and not forcing; neither especially sharp nor rigid." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable Indian set-up." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre is undecided and the move order transposes." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A normal if less common route into Indian set-ups." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans need understanding but there is little theory." },
+    "plans": { "value": ["hypermodern_centre"], "reason": "Black lets White build a centre, then attacks it with ...e5 or ...c5." }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "slug": "ruy-lopez-berlin-defense",
+  "root": {
+    "name": "Ruy Lopez: Berlin Defense",
+    "eco": "C65",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Berlin Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Berlin Defense, Ruy Lopez (C65)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/berlin-defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Chess Opening Basics: Berlin, Rio de Janeiro Variation",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/chess-opening-basics-berlin-rio-de-janeiro-variation/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippets: Berlin Defence and Kramnik v Kasparov 2000 (chess.com, chessworld.net, Wikipedia)",
+      "publisher": "Various (search snippets only)",
+      "url": "https://www.chessworld.net/ruy-lopez-berlin-defense.asp",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black counterattacks e4 at once with 3...Nf6. In the main line 4.O-O Nxe4 5.d4 Nd6 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8 (the Berlin Wall endgame) queens leave the board early, Black gives up castling and accepts doubled c-pawns, and in return gets the bishop pair and a very solid structure; White has a healthy kingside pawn majority and a small, long-term edge that is very hard to convert. Neither side has attacking chances; the game is a technical endgame where Black holds with accurate defence and White tries to squeeze. White can avoid it with 4.d3 (the Anti-Berlin), which keeps queens on and gives slow Italian-like manoeuvring with Black choosing ...Bc5 or ...d6. The line was revived by Kramnik as a drawing weapon against Kasparov in 2000 and is now a staple of elite play.",
+  "white_ideas": [
+    {
+      "idea": "In the Berlin endgame, use the kingside pawn majority (e5/f/g/h against Black's doubled c-pawns), play Nc3, h3 and Rd1+, and try to create a passed pawn while keeping Black's king from reaching a safe, active square.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Avoid the endgame with the Anti-Berlin 4.d3: keep queens on, play c3, O-O and d5 or similar central moves in a closed-ish manoeuvring game.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "The 5.Bxc6 variation (after 4.d3) is gaining ground: with Black already committed to Nf6, ...e5 is harder to defend.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "In the Rio de Janeiro lines (4...Nxe4 5.d4 Be7) open the centre quickly and use the e-file before Black castles.",
+      "sources": ["s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Accept doubled c-pawns and a displaced king in the main line in return for the bishop pair and an extremely solid structure; bring the king to e8 and organise the pieces (...h6, ...Bd7, ...Ke8).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "In the Rio variation (5...Be7 instead of ...Nd6) keep castling rights and play for a strong bishop pair after Qxd8+ Bxd8.",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "Against 4.d3 play 4...Bc5 or 4...d6, a conventional Ruy Lopez/Italian set-up with queens on.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Hold the endgame by accurate defence; the modern consensus is that Black can hold.",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Berlin endgame: White has e5 and a 4 v 3 kingside majority, Black has doubled c-pawns, bishop pair and no castling; no queens.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Anti-Berlin (4.d3) structure: e4/d3 (and c3, d4 or d5 later) against e5/d6: closed-ish Open Game centre with queens on.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Berlin Wall is the textbook example of solid and drawish play: Wikipedia says the endgame is very drawish and difficult for White to win; Chessiverse calls the opening 'exceptionally solid' (elite players drew in 36 seconds at the 2022 World Blitz). Kramnik scored four draws from the Berlin endgame against Kasparov. Practical risk is low for Black. The Rio variation and 4.d3 lines retain queens but remain quiet.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black captures 4...Nxe4 (the database labels it Rio Gambit Accepted) but White regains the pawn by force with 5.d4 or 5.Re1, so no material is really given.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Fully sound: used by world champions (Kramnik, Carlsen, Anand) at the highest level. Modern consensus is that Black can hold the endgame with accurate play; past assessments gave White a slight edge. At 2500 level draws are 13.7 percent (Chessiverse, Lichess data), with White scoring 52 percent overall.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Main line: open centre with queens off, doubled c-pawns for Black. The 4.d3 lines have the e4/e5 pawns on and a closed or tense centre. Neither is a locked centre.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "It is a defence to the Ruy Lopez, not a system. Played at the highest level: Kramnik (150 games as Black) and Anand (127 as White) in Chessiverse data; Carlsen and Anand used it multiple times in their 2013 title match. At 2500 level 4.O-O is 50.5 percent and 4.d3 is 38.9 percent of White replies.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessiverse labels it Advanced with deep, well-studied lines where specific knowledge gives a significant advantage. Wikipedia says the main line demands precise endgame technique and deviations proliferate. Rio lines add sharp tactical options. The 4.d3 systems let a player avoid memorisation but are harder to play with strategic complexity. For the club player the basic Berlin set-up is simple to follow but hard to play perfectly.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "Berlin endgame",
+    "kingside pawn majority",
+    "bishop pair",
+    "doubled c-pawns",
+    "king activity in the endgame",
+    "queen trade",
+    "anti-Berlin 4.d3",
+    "solid defence",
+    "passed pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rio de Janeiro Variation (Rio Gambit Accepted)",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Be7",
+      "how": "Black keeps castling rights and the game is a little more flexible and open than the Berlin Wall."
+    },
+    {
+      "name": "Anti-Berlin 4.d3",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3",
+      "how": "Queens stay on; slow manoeuvring game with c3, d4 or d5, much more like the Italian. Chessiverse shows 38.9 percent of 2500+ replies."
+    },
+    {
+      "name": "Beverwijk Variation 4.O-O Bc5",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Bc5",
+      "how": "Avoids the endgame and plays for central activity; a different structure from the main Berlin Wall."
+    },
+    {
+      "name": "Improved Steinitz 4.O-O d6",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O d6",
+      "how": "Closed Berlin: slow Ruy Lopez-style play with a solid d6/e5 centre."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Berlin Defense is a famously solid and resilient response to the Ruy Lopez, often called the 'Berlin Wall'.",
+        "verdict": "supported",
+        "note": "The Berlin Wall refers to the endgame and the whole defence is widely regarded as exceptionally solid.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "The main line aims to trade queens early, leading to a strategically complex endgame.",
+        "verdict": "supported",
+        "note": "4.O-O Nxe4 5.d4 Nd6 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8. But the Anti-Berlin 4.d3 is almost as popular at 2500 level (38.9 percent v 50.5 percent) and keeps queens on.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Understanding pawn structure and piece activity is paramount in the resulting endgame.",
+        "verdict": "supported",
+        "note": "The endgame depends on the 4v3 majority, doubled c-pawns, and king activity; the sources stress technique.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White uses the kingside pawn majority, controls the d-file and restricts Black's king activity to create a passed pawn in the endgame.",
+        "verdict": "supported",
+        "note": "Kingside majority and Rd1+ are stated; passed-pawn aim is the natural conversion plan.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black leverages the bishop pair and activates the king by bringing it to the centre.",
+        "verdict": "supported",
+        "note": "Bishop pair is the compensation for the doubled pawns; king goes to e8 (9...Ke8).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black creates counterplay against White's central e-pawn.",
+        "verdict": "unverifiable",
+        "note": "No fetched source discusses an attack on e5 specifically; my own understanding is that e5 is a target for ...Bd7/...Ne7 but I did not verify it.",
+        "sources": []
+      },
+      {
+        "claim": "In non-endgame lines White avoids the main line with 4.d3 for a more traditional middlegame while keeping queens on.",
+        "verdict": "supported",
+        "note": "The Anti-Berlin sidesteps the endgame; 4...Bc5 or 4...d6 follow.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "In non-endgame lines Black maintains a solid structure, completes development and prepares ...d5 breaks.",
+        "verdict": "unverifiable",
+        "note": "Black's usual 4.d3 set-ups (...Bc5, ...d6, ...O-O) are solid, but sources do not mention ...d5 breaks.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

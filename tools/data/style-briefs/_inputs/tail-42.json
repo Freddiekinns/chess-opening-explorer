@@ -1,0 +1,516 @@
+[
+  {
+    "slug": "van-geet-opening-dougherty-gambit",
+    "rank": 929,
+    "root": {
+      "name": "Van Geet Opening: Dougherty Gambit",
+      "eco": "A00",
+      "moves": "1. Nc3 d5 2. e4 dxe4 3. f3",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/4p3/2N2P2/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Pseudo-Diemer Gambit, Dunst",
+        "moves": "1. Nc3 d5 2. e4 dxe4 3. f3 exf3 4. Qxf3"
+      }
+    ],
+    "parent": {
+      "slug": "van-geet-opening",
+      "name": "Van Geet Opening",
+      "moves": "1. Nc3",
+      "overview": "White develops a knight to c3, controlling e4 and d5, and keeps the pawn structure undecided to choose a set-up once Black replies. The knight blocks the c-pawn, so Queen's Gambit and English structures are not available without reorganising. Main replies: 1...d5 (the cleanest; 2.e4 transposes to obscure Scandinavian lines, or the Van Geet Attack after 2...d4 3.Nce2), 1...e5 (then 2.e4 Vienna Game, the most common transposition in the database, or 2.Nf3 Nc6 3.d4 Napoleon Attack), 1...Nf6 (one of the most unpleasant replies for White) and 1...c5 (transposing to Closed Sicilian or inferior-placed-knight lines). Sources call it sound and low-theory but unambitious: Black equalises with accurate play, so it earns points from surprise rather than from an edge, and masters play it under 1% of the time, though some strong correspondence players use it. The database root has few games itself; most of the subtree (about 290M games) is Vienna, Closed Sicilian and Chigorin-style transpositions that play like those openings."
+    }
+  },
+  {
+    "slug": "scotch-game-alekhine-gambit",
+    "rank": 930,
+    "root": {
+      "name": "Scotch Game: Alekhine Gambit",
+      "eco": "C45",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. e5",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4P3/3N4/8/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Alekhine Gambit, Scotch",
+      "Alekhine Gambit, Scotch "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "scotch-game-schmidt-variation",
+      "name": "Scotch Game: Schmidt Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "latvian-gambit-clam-gambit",
+    "rank": 931,
+    "root": {
+      "name": "Latvian Gambit: Clam Gambit",
+      "eco": "C44",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d3 f5 4. exf5",
+      "fen": "r1bqkbnr/pppp2pp/2n5/4pP2/8/3P1N2/PPP2PPP/RNBQKB1R b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Clam Gambit, Latvian",
+      "Clam Gambit, Latvian "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-knight-opening-normal-variation",
+      "name": "King's Knight Opening: Normal Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "trompowsky-attack-borg-variation",
+    "rank": 932,
+    "root": {
+      "name": "Trompowsky Attack: Borg Variation",
+      "eco": "A45",
+      "moves": "1. d4 Nf6 2. Bg5 Ne4 3. Bf4 g5",
+      "fen": "rnbqkb1r/pppppp1p/8/6p1/3PnB2/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Trompowsky: Borg Variation",
+      "Borg Variation, Trompowsky",
+      "Borg Variation, Trompowsky "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "trompowsky-attack",
+      "name": "Trompowsky Attack",
+      "moves": "1. d4 Nf6 2. Bg5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "grob-opening-double-grob",
+    "rank": 933,
+    "root": {
+      "name": "Grob Opening: Double Grob",
+      "eco": "A00",
+      "moves": "1. g4 g5",
+      "fen": "rnbqkbnr/pppppp1p/8/6p1/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Grob: Double Grob",
+      "Irregular Openings: Double Grob Variation",
+      "Double Grob",
+      "Double Grob "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Grob Opening: Double Grob, Coca-Cola Gambit",
+        "moves": "1. g4 g5 2. f4"
+      }
+    ],
+    "parent": {
+      "slug": "grob-opening",
+      "name": "Grob Opening",
+      "moves": "1. g4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "sicilian-defense-polish-gambit",
+    "rank": 934,
+    "root": {
+      "name": "Sicilian Defense: Polish Gambit",
+      "eco": "B27",
+      "moves": "1. e4 c5 2. Nf3 b5",
+      "fen": "rnbqkbnr/p2ppppp/8/1pp5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Polish Gambit, Sicilian",
+      "Polish Gambit, Sicilian "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3",
+      "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1)."
+    }
+  },
+  {
+    "slug": "blackmar-diemer-gambit-declined-langeheinicke-defense",
+    "rank": 935,
+    "root": {
+      "name": "Blackmar-Diemer Gambit Declined: Langeheinicke Defense",
+      "eco": "D00",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e3",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N1pP2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Blackmar-Diemer: Langeheinecke Defence",
+      "Blackmar-Diemer Gambit Declined, Langeheinecke Defense",
+      "Blackmar-Diemer Gambit, Declined",
+      "Langeheinecke Variation, BDG",
+      "Langeheinecke Variation, BDG "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "blackmar-diemer-gambit",
+      "name": "Blackmar-Diemer Gambit",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6",
+      "overview": "White offers a pawn with 1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3, aiming for rapid development, the open f-file and a kingside attack with Bc4, Nge2 or Bf4, castling, g4/h4 and Qe1-h4 ideas against h7. Black accepts with 4...exf3 5.Nxf3 and can choose among the Euwe (5...e6), Ziegler (5...c6), Teichmann (5...Bg4) and Bogoljubov (5...g6) defences, or decline with the Lemberger Countergambit 3...e5. With accurate defence Black consolidates the pawn, trades pieces and heads for a better endgame; engines and master opinion call White's compensation insufficient, which is why it is almost never seen at top level. Below master level it scores very well because the attack is easy to play and hard to defend against. The game is typically open and tactical."
+    }
+  },
+  {
+    "slug": "caro-kann-defense-de-bruycker-defense",
+    "rank": 936,
+    "root": {
+      "name": "Caro-Kann Defense: De Bruycker Defense",
+      "eco": "B12",
+      "moves": "1. e4 c6 2. d4 Na6",
+      "fen": "r1bqkbnr/pp1ppppp/n1p5/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+    },
+    "alternative_names": [
+      "Caro-Kann: de Bruycker Defence",
+      "De Bruycker Defense, Caro",
+      "De Bruycker Defense, Caro "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Caro-Kann Defense: De Bruycker Defense",
+        "moves": "1. e4 c6 2. d4 Na6 3. Nc3 Nc7"
+      }
+    ],
+    "parent": {
+      "slug": "caro-kann-defense",
+      "name": "Caro-Kann Defense",
+      "moves": "1. e4 c6 2. d4",
+      "overview": "Black plays ...c6 to support ...d5 and so challenges the e4 pawn with a sound pawn structure, while keeping the light-squared bishop free to come out to f5 or g4 before ...e6 (the French Defence's main drawback, at the cost of a tempo). Black accepts less space early and tends to get a resilient, hard-to-break structure with few weaknesses and good endgame prospects. Play is mostly positional and manoeuvring; it is called more solid and less dynamic than the Sicilian (s1). The Advance (3.e5 Bf5) and Panov-Botvinnik (3.exd5 cxd5 4.c4) lines are more combative, and the Advance became the most popular White try in the 21st century. Main branches: Classical (4...Bf5), Advance, Exchange, Panov, 4...Nf6 lines, Gurgenidze (...g6), Two Knights (2.Nc3 d5 3.Nf3) and Fantasy (3.f3). This is a crossroads root after 1...c6; the pawn structures differ by branch."
+    }
+  },
+  {
+    "slug": "benoni-defense-benoni-gambit",
+    "rank": 937,
+    "root": {
+      "name": "Benoni Defense: Benoni Gambit, Schlenker Defense",
+      "eco": "A43",
+      "moves": "1. d4 c5 2. dxc5 Na6",
+      "fen": "r1bqkbnr/pp1ppppp/n7/2P5/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+    },
+    "alternative_names": [
+      "Benoni Defense, Benoni Gambit",
+      "Schlenker Defense, Benoni",
+      "Schlenker Defense, Benoni "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "benoni-defense-benoni-gambit-accepted",
+      "name": "Benoni Defense: Benoni Gambit Accepted",
+      "moves": "1. d4 c5 2. dxc5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-lolli-gambit",
+    "rank": 938,
+    "root": {
+      "name": "King's Gambit Accepted: Lolli Gambit",
+      "eco": "C37",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+",
+      "fen": "rnbqkbnr/pppp1B1p/8/8/4Ppp1/5N2/PPPP2PP/RNBQK2R b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "KGA: Lolli Gambit (Wild Muzio)",
+      "King's Gambit Accepted, Lolli Gambit",
+      "King's Gambit, Accepted",
+      "Greco-Lolli; Wild Muzio Gambit, KGA",
+      "KGA: Lolli gambit (wild Muzio gambit)",
+      "Greco-Lolli; Wild Muzio Gambit, KGA "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "King's Gambit Accepted: Lolli Gambit",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+ Kxf7 6. O-O gxf3 7. Qxf3 Qf6 8. d4 Qxd4+ 9. Be3"
+      },
+      {
+        "name": "King's Gambit Accepted: Lolli Gambit",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+ Kxf7 6. O-O gxf3 7. Qxf3 Qf6 8. d4 Qxd4+ 9. Be3 Qf6"
+      },
+      {
+        "name": "King's Gambit Accepted: Lolli Gambit, Young Variation",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+ Kxf7 6. O-O gxf3 7. Qxf3 Qf6 8. d4 Qxd4+ 9. Be3 Qf6 10. Nc3"
+      }
+    ],
+    "parent": {
+      "slug": "kings-gambit-accepted-kings-knights-gambit",
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-gianutio-countergambit",
+    "rank": 939,
+    "root": {
+      "name": "King's Gambit Accepted: Gianutio Countergambit",
+      "eco": "C34",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 f5",
+      "fen": "rnbqkbnr/pppp2pp/8/5p2/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "KGA: Gianutio Countergambit",
+      "King's Gambit Accepted, Gianutio Countergambit",
+      "King's Gambit, Accepted",
+      "Gianutio Countergambit, KGA",
+      "KGA: Gianutio counter-gambit",
+      "Gianutio Countergambit, KGA "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-accepted-kings-knights-gambit",
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-quaade-gambit",
+    "rank": 940,
+    "root": {
+      "name": "King's Gambit Accepted: Quaade Gambit",
+      "eco": "C37",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Nc3",
+      "fen": "rnbqkbnr/pppp1p1p/8/6p1/4Pp2/2N2N2/PPPP2PP/R1BQKB1R b KQkq - 1 4"
+    },
+    "alternative_names": [
+      "KGA: Quaade Gambit",
+      "King's Gambit Accepted, Quade Gambit",
+      "King's Gambit, Accepted",
+      "Quaade; Taylor Variation, KGA",
+      "KGA: Quaade gambit",
+      "Quaade; Taylor Variation, KGA "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-accepted-kings-knights-gambit",
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "sicilian-defense-kronberger-variation",
+    "rank": 941,
+    "root": {
+      "name": "Sicilian Defense: Kronberger Variation",
+      "eco": "B20",
+      "moves": "1. e4 c5 2. Na3",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/N7/PPPP1PPP/R1BQKBNR b KQkq - 1 2"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Sicilian Defense: Kronberger Variation, Nemeth Gambit",
+        "moves": "1. e4 c5 2. Na3 Nc6 3. d4 cxd4 4. Bc4"
+      }
+    ],
+    "parent": {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5",
+      "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1)."
+    }
+  },
+  {
+    "slug": "ware-opening-meadow-hay-trap",
+    "rank": 942,
+    "root": {
+      "name": "Ware Opening: Meadow Hay Trap",
+      "eco": "A00",
+      "moves": "1. a4 e5 2. Ra3",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/P7/R7/1PPPPPPP/1NBQKBNR b Kkq - 1 2"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "ware-opening",
+      "name": "Ware Opening",
+      "moves": "1. a4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "ponziani-opening-spanish-variation",
+    "rank": 943,
+    "root": {
+      "name": "Ponziani Opening: Spanish Variation",
+      "eco": "C44",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Bb5",
+      "fen": "r1bqkbnr/ppp2ppp/2n5/1B1pp3/4P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 1 4"
+    },
+    "alternative_names": [
+      "Spanish Variation, Ponziani",
+      "Spanish Variation, Ponziani "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Ponziani Opening: Spanish Variation, Harrwitz Attack, Nikitin Gambit",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Bb5 dxe4 5. Nxe5 Qd5 6. Qa4"
+      }
+    ],
+    "parent": {
+      "slug": "ponziani-opening",
+      "name": "Ponziani Opening",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. c3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "sicilian-defense-brussels-gambit",
+    "rank": 944,
+    "root": {
+      "name": "Sicilian Defense: Brussels Gambit",
+      "eco": "B27",
+      "moves": "1. e4 c5 2. Nf3 f5",
+      "fen": "rnbqkbnr/pp1pp1pp/8/2p2p2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Brussels Gambit, Sicilian",
+      "Brussels Gambit, Sicilian "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "moves": "1. e4 c5 2. Nf3",
+      "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1)."
+    }
+  },
+  {
+    "slug": "bogo-indian-defense-vitolins-variation",
+    "rank": 945,
+    "root": {
+      "name": "Bogo-Indian Defense: Vitolins Variation",
+      "eco": "E11",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 c5",
+      "fen": "rnbqk2r/pp1p1ppp/4pn2/2p5/1bPP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Bogo-Indian: Vitolins Variation"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Bogo-Indian: Vitolins, 6.g3",
+        "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 c5 5. Bxb4 cxb4 6. g3"
+      }
+    ],
+    "parent": {
+      "slug": "bogo-indian-defense",
+      "name": "Bogo-Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+      "overview": null
+    }
+  },
+  {
+    "slug": "alekhine-defense-steiner-variation",
+    "rank": 946,
+    "root": {
+      "name": "Alekhine Defense: Steiner Variation",
+      "eco": "B02",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. b3",
+      "fen": "rnbqkb1r/pppppppp/1n6/4P3/2P5/1P6/P2P1PPP/RNBQKBNR b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Alekhine: Chase, Steiner Variation",
+      "Steiner Variation, Alekhine",
+      "Alekhine's defence: Steiner variation",
+      "Steiner Variation, Alekhine "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "alekhine-defense-two-pawns-attack",
+      "name": "Alekhine Defense: Two Pawns Attack",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. c4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "benko-gambit-accepted-dlugy-variation",
+    "rank": 947,
+    "root": {
+      "name": "Benko Gambit Accepted: Dlugy Variation",
+      "eco": "A57",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. f3",
+      "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/5P2/PP2P1PP/RNBQKBNR b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Benko Gambit: 4.cxb5 a6 5.f3",
+      "Benko Gambit Accepted, Dlugy Variation",
+      "Benko Gambit, Accepted",
+      "Dlugy Variation, Benko Gambit",
+      "Dlugy Variation, Benko Gambit "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Benko Gambit: 4.cxb5 a6 5.f3 axb5",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. f3 axb5"
+      },
+      {
+        "name": "Benko Gambit: 4.cxb5 a6 5.f3 e6",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. f3 e6"
+      }
+    ],
+    "parent": {
+      "slug": "benko-gambit-accepted",
+      "name": "Benko Gambit Accepted",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-gambit-accepted-bogoljubow-defense",
+    "rank": 948,
+    "root": {
+      "name": "Queen's Gambit Accepted: Bogoljubow Defense",
+      "eco": "D24",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4",
+      "fen": "rnbqkb1r/1pp1pppp/p4n2/8/2pPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "QGA: Bogoljubow",
+      "Bogoljubow Defense, QGA",
+      "QGA, Bogolyubov variation",
+      "Bogoljubow Defense, QGA "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "QGA: Bogoljubow, 7.a4",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4"
+      },
+      {
+        "name": "QGA: Bogoljubow, 7.a4 c6",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4 c6"
+      },
+      {
+        "name": "QGA: Bogoljubow, 7.a4 Nxc3",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4 Nxc3"
+      },
+      {
+        "name": "QGA: Bogoljubow, 7.a4 Nxc3",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4 Nxc3 8. bxc3 Bb7"
+      },
+      {
+        "name": "QGA: Bogoljubow, 7.a4 Bb7",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4 Bb7"
+      },
+      {
+        "name": "QGA: Bogoljubow, 7.a4 e6",
+        "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4 b5 6. e5 Nd5 7. a4 e6"
+      }
+    ],
+    "parent": {
+      "slug": "queens-gambit-accepted-showalter-variation",
+      "name": "Queen's Gambit Accepted: Showalter Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3",
+      "overview": null
+    }
+  }
+]

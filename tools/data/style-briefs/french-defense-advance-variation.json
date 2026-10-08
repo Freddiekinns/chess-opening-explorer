@@ -1,0 +1,195 @@
+{
+  "slug": "french-defense-advance-variation",
+  "root": {
+    "name": "French Defense: Advance Variation",
+    "eco": "C02",
+    "moves": "1. e4 e6 2. d4 d5 3. e5",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "French Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/French_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "French Defense: Advance Variation",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/advance-french",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "French Defense: Complete Guide, Variations & Strategy",
+      "publisher": "365chess",
+      "url": "https://www.365chess.com/chess-openings/French-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "The French Defence for Beginners II: Key Variations",
+      "publisher": "Exeter Chess Club",
+      "url": "https://exeterchessclub.org.uk/content/french-defence-beginners-ii-key-variations",
+      "kind": "article"
+    }
+  ],
+  "overview": "White grabs space with 3.e5, shutting out the knight from f6 and fixing a pawn chain. Black immediately attacks the base with 3...c5, then adds ...Nc6 and ...Qb6, with ...f6 as a second lever against e5. White defends d4 with c3 (or Nf3 and dxc5 in the Nimzowitsch line), develops Nf3, Bd3 and castles, and aims for f4-f5 on the kingside. Black's problem piece is the c8-bishop, hemmed in behind e6, so many plans aim to free it, and Black often counterattacks on the queenside with ...c4 and ...a6/...b5. The game is a pawn-structure fight: closed in the centre, flanks active, with sharp options such as the Milner-Barry Gambit (6.Bd3).",
+  "white_ideas": [
+    {
+      "idea": "Gain space with e5, deny f6 to the black knight, then support d4 with c3 and Nf3",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Kingside attack with f4(-f5), Nf3, Bd3, Qe2, sometimes castling long",
+      "sources": ["s3", "s2"]
+    },
+    {
+      "idea": "Support e5 with f4, with the cost that f4 opens the g1-a7 diagonal when Black's queen reaches b6 (s1)",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Nimzowitsch championed 3.e5 as White's best; Sveshnikov revived it in the 1980s and Grischuk has backed it recently",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "3...c5 attacks d4, then ...Nc6 and ...Qb6 for 'fatal pressure' on d4",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "The ...f6 break as a secondary lever against the e5 wedge",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Queenside play with ...a6, ...b5 and ...c4 (the ...c4 space grab)",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "Solve the bad light-squared bishop, the 'French bishop', which is hemmed in by e6",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Locked French chain: White pawns d4/e5 against Black e6/d5, with c5 striking at d4",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "White's d4 pinned down by ...c5 and ...Qb6; after a ...c4 grab, Black has queenside space and White a kingside space edge",
+      "sources": ["s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s2 labels the line 'Balanced' by sharpness measure, with decisive games more frequent in bullet and draws rising at elite level (8.1% at 2500). s4 says the drawback of 3.e5 is lost time, with White on the defensive while Black hits d4: complex, double-edged positions. s3 calls it aggressive space-grabbing with a strategically demanding pawn structure. Typical play is a long pawn-structure fight with attacks on opposite wings; sharp subvariations (Milner-Barry Gambit with Bd3, 5...Qb6 6.a3) exist.",
+      "sources": ["s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given in the main lines. The Milner-Barry Gambit (6.Bd3) is a White pawn offer within a sub-branch, and the main line 5...Qb6 6.a3 is a pawn-structure fight, not a gambit.",
+      "sources": ["s3"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides. s2: Black scores 49.5% against White's 46.4% on the aggregate, suggesting 'strong counterplay'. s1: the line declined in popularity through the 20th century then revived in the 1980s, and is now 'nearly as popular as 3.Nd2'. Nimzowitsch considered it White's best. No source calls it dubious.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "A locked centre: pawns on e5/d4 against e6/d5, with tension from ...c5 and later ...c4 or dxc5. Both sides break on the flanks. s1: locked centre with White controlling space.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A main-line choice rather than a system, but one of the two most-played tries against the French. s1: nearly as popular as 3.Nd2, popular at club level for straightforward attacking chances. s2: championed by Sveshnikov (105 games as White), backed by Grischuk at the top level. Respectable at every level.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Judged for Black, who defends. s2 classes it as a 'Theoretician' opening: players choose the top move 94.7% of the time at 2500 versus 34.6% at 400, so the lines are heavily memorised at the top. But the sources also stress understanding of pawn-structure dynamics (s3: strategically demanding) and the c8-bishop problem. White's plan (c3, Nf3, Bd3, f4) is easy to follow, which is why it is popular with club players (s1).",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "locked pawn chain",
+    "attack on the d4 base",
+    "kingside pawn storm",
+    "f4-f5 push",
+    "bad light-squared bishop",
+    "...c5 and ...Qb6 pressure",
+    "queenside counterplay",
+    "...f6 break"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Milner-Barry Gambit",
+      "moves": "1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3",
+      "how": "White offers a pawn for development and attack (own understanding of the exact pawn and follow-up; s3 snippet only confirms the move order 6.Bd3); sharper than the 6.a3 main line."
+    },
+    {
+      "name": "Nimzowitsch System",
+      "moves": "1. e4 e6 2. d4 d5 3. e5 c5 4. Nf3",
+      "how": "Leaves c3 free: White allows ...cxd4 and uses the knight on f3; less of a gambit risk, positional."
+    },
+    {
+      "name": "Main Line with 6.a3",
+      "moves": "1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. a3",
+      "how": "Stops ...c4 ideas being met by Bd3; Black usually plays ...c4 with a queenside space grab."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "White seizes a space advantage by pushing the e-pawn, creating a locked central pawn structure",
+        "verdict": "supported",
+        "note": "s1, s3.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Long-term plans and understanding pawn breaks are paramount",
+        "verdict": "supported",
+        "note": "s3: strategically demanding, requires understanding pawn-structure dynamics. s2 adds that top-level play is heavily theoretical.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "Positions are tense and double-edged, with White aiming for a kingside attack while Black undermines the centre",
+        "verdict": "supported",
+        "note": "s4: complex, double-edged; s3: kingside attacking plans with f4, Nf3, Bd3.",
+        "sources": ["s3", "s4"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: support d4 with c3, develop for a kingside attack (Nf3, Be2, 0-0) and use the space advantage to restrict Black",
+        "verdict": "supported",
+        "note": "Bd3 and Qe2 are named in the sources (the bishop usually goes to d3 or e2). The c3 and Nf3 set-up is the main line.",
+        "sources": ["s3", "s2"]
+      },
+      {
+        "claim": "Black: challenge the centre with ...c5, pressuring d4 with ...Nc6 and ...Qb6",
+        "verdict": "supported",
+        "note": "s1, s2.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: create queenside counterplay and solve the light-squared bishop problem, often via the ...b6-Ba6 manoeuvre",
+        "verdict": "supported",
+        "note": "Bishop problem and queenside play are sourced (s1, s3). The ...b6/...Ba6 route to exchange the French bishop is an own-understanding detail, not found in these pages.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White: prevent Black's counterplay by controlling the queenside and centre while building an attack on the black king",
+        "verdict": "unverifiable",
+        "note": "Plausible generic wording; the sources describe the kingside attack and holding d4.",
+        "sources": ["s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

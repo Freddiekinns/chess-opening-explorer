@@ -1,0 +1,118 @@
+{
+  "slug": "french-defense-exchange-variation",
+  "root": {
+    "name": "French Defense: Exchange Variation",
+    "eco": "C01",
+    "moves": "1. e4 e6 2. d4 d5 3. exd5",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "French Exchange Variation: Anti-Draw Replay Lab",
+      "publisher": "Chessworld",
+      "url": "https://www.chessworld.net/french-defense-exchange-variation.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "French Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/French_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "French Defense: Exchange Variation",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/exchange-french",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the French Exchange Variation (snippets only)",
+      "publisher": "Wikipedia Exchange variation, ChessBase and others via web search",
+      "url": "https://en.wikipedia.org/wiki/Exchange_variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White trades the e-pawn for Black's d-pawn at once: 3.exd5 exd5 gives a fully symmetrical pawn structure with an open e-file and frees Black's light-squared bishop, the French's usual problem piece (s2, s3). It is nearly risk-free for White and has a reputation for giving Black immediate equality and for being dry and drawish (s2, s3, s4). Both sides can still make imbalances: White with the c2-c4 break (or a minority attack b4-b5, or Ne5 and a kingside build-up), Black with ...c5 and active piece play (...Bd6, ...Bg4, ...Re8), and opposite-side castling can turn the game into a race (s1, s4). Players who just copy moves reach a quiet equal endgame. Statistics are balanced (White 47.1%, Black 47.3%) and draws climb at elite level (s3).",
+  "white_ideas": [
+    { "idea": "c2-c4 break attacking d5 and turning the structure into an active central fight, possibly accepting an isolated d-pawn (Monte Carlo 4.c4)", "sources": ["s1", "s3", "s4"] },
+    { "idea": "Develop naturally with Nf3, Bd3 and O-O and use the e-file (Re1)", "sources": ["s1", "s3"] },
+    { "idea": "Minority attack b4-b5 against the queenside", "sources": ["s4"] },
+    { "idea": "Opposite-side castling (Be3, Qd2, 0-0-0) for an attacking race, or Ne5 and a kingside build-up", "sources": ["s1", "s3", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Exploit the symmetry for easy equality; the queen's bishop is liberated", "sources": ["s2", "s3"] },
+    { "idea": "...c5 to stop passive symmetry and contest d4", "sources": ["s1", "s4"] },
+    { "idea": "Active development with ...Nf6, ...Bd6, ...Bg4 and ...Re8", "sources": ["s1"] },
+    { "idea": "Time central breaks carefully; passive play leads to a cramped position", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawns on d4/d5 with the e-file open; both queen's bishops free", "sources": ["s1", "s2", "s3"] },
+    { "structure": "Isolated queen's pawn or hanging pawns after c4 (Monte Carlo)", "sources": ["s3", "s4"] },
+    { "structure": "Carlsbad-like structure if Black plays ...c6 and White plays Qd3/Bd3 with b4-b5 ideas (own understanding)", "sources": [] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Dry, drawish reputation; fairly risk-free for White and easy for Black (s2, s4). Quiet pieces play along the e-file. Sharpness appears only with opposite-side castling or c4 (s1). Statistics near equal (s3). Solid is a good fit: few ways for either side to lose quickly. Balanced is possible, but Solid matches 'risk-free'.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered; pawns are exchanged.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Fully sound. 'Reputation of giving immediate equality to Black' (s2). Black has no problems if accurate. No refutation or risk for either side.",
+      "sources": ["s2", "s3"]
+    },
+    "structure": {
+      "notes": "Symmetrical with an open e-file, in contrast to the locked pawn chains of other French lines (s1). The centre is partly open with d4/d5 pawns facing each other: tense, with breaks (c4, ...c5) available. Chessworld: 'avoids the locked pawn chains'. A plain reading is Open or Semi-open; Closed does not fit.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A named variation, standard. Kasparov briefly experimented with it (s2); it declined after the 19th century. Mainly seen in club play and as a drawing weapon. Respectable, not offbeat. Not a system.",
+      "sources": ["s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessworld: low theory load, clarity top-rated (s1). Chessiverse tags it as Advanced difficulty with 90% theory adherence at 2500 (s3), which is a database statistic rather than a judgment about club players. The plans are simple and White decides how much to create. White studies it. Beginner fits for clarity, but winning needs understanding of the breaks, so Beginner or Intermediate.",
+      "sources": ["s1", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "symmetrical structure",
+    "c4 break",
+    "open e-file",
+    "minority attack",
+    "opposite-side castling",
+    "...c5 break",
+    "isolated queen's pawn"
+  ],
+  "sublines_that_differ": [
+    { "name": "Monte Carlo Variation", "moves": "1. e4 e6 2. d4 d5 3. exd5 exd5 4. c4", "how": "Immediate c4; unbalanced, with isolated or hanging pawns, more active than the quiet lines" },
+    { "name": "Opposite-side castling set-up", "moves": "1. e4 e6 2. d4 d5 3. exd5 exd5 4. Bd3 Bd6 5. Nf3 Nf6", "how": "With Be3, Qd2, 0-0-0 can become a race; otherwise quiet" },
+    { "name": "4.Nc3", "moves": "1. e4 e6 2. d4 d5 3. exd5 exd5 4. Nc3", "how": "Develops with e-file ideas; often transposes to symmetrical lines" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Exchange Variation creates a symmetrical pawn structure", "verdict": "supported", "note": "Completely symmetrical after 3...exd5.", "sources": ["s1", "s3"] },
+      { "claim": "It often leads to a quiet, strategic game", "verdict": "supported", "note": "Reputation for dry, drawish play.", "sources": ["s2", "s3"] },
+      { "claim": "It is sometimes used with drawish intentions", "verdict": "supported", "note": "Reputation for giving immediate equality to Black.", "sources": ["s2"] },
+      { "claim": "It can be a subtle weapon for White to exploit a small developmental lead, or for Black to equalise comfortably", "verdict": "supported", "note": "Black equalises comfortably (liberated bishop); White's lead is a thin first-move edge.", "sources": ["s2", "s3"] }
+    ],
+    "common_plans": [
+      { "claim": "White: develop rapidly, control the open e-file", "verdict": "supported", "note": "Nf3, Bd3, O-O, Re1.", "sources": ["s1", "s3"] },
+      { "claim": "White: prepare a queenside minority attack with c2-c4 to create weaknesses", "verdict": "wrong", "note": "The minority attack is b4-b5. c2-c4 is a separate central break against d5 that can leave an isolated d-pawn. Own reading of sources.", "sources": ["s1", "s4"] },
+      { "claim": "Black: neutralise White's initiative, complete development, and break the symmetry by challenging for the e-file or creating queenside counterplay", "verdict": "supported", "note": "Black breaks the symmetry with ...c5 and active piece play. Queenside counterplay is not specifically sourced.", "sources": ["s1", "s4"] },
+      { "claim": "Both sides may aim to create or play against an isolated queen's pawn if the position transforms", "verdict": "supported", "note": "After 4.c4 the IQP appears.", "sources": ["s3", "s4"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

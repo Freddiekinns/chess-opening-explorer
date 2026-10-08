@@ -1,0 +1,49 @@
+{
+  "slug": "kings-indian-defense-averbakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Averbakh Variation",
+    "eco": "E73",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Be2 O-O 6. Bg5",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/6B1/2PPP3/2N5/PP2BPPP/R2QK1NR b KQ - 3 6"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to g5, pinning the f6 knight, and keeps Be2 and Qd2 for a flexible plan. Black chooses 6...h6 with ...g5 and ...Nh5 ideas, the Benoni structure with ...c5, or the Geller ...Nbd7 and ...e5. White gains space and aims at the kingside; Black counterattacks with ...e5 and ...f5 or ...c5. The positions are strategic with long-term plans.",
+  "white_ideas": [
+    { "idea": "Use the pin and a space advantage with Qd2, Nf3 and O-O-O or O-O" },
+    { "idea": "Meet ...c5 with d5 to reach a Benoni-style structure" },
+    { "idea": "Keep the centre and prepare f3 and Be3 setups" }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre with ...e5 or ...c5" },
+    { "idea": "Break the pin with ...h6 and ...g5, or play ...Nbd7 and ...e5" },
+    { "idea": "Attack on the kingside with ...f5 after the centre locks" }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian centre with c4/d4/e4 against ...d6/...e5 after the centre locks" },
+    { "structure": "Benoni-style structure after ...c5 d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "King's Indian positions can be double-edged, but Averbakh is a more positional, quieter White set-up." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, a main line against the King's Indian." },
+    "structure": { "notes": "Centre often locks after ...e5 d5 or Benoni structures." },
+    "approach": { "notes": "Standard King's Indian main-line branch." },
+    "level": { "reason": "understanding", "notes": "Black must choose among several plans and understand when to strike." }
+  },
+  "plan_phrases": ["space advantage", "kingside attack", "...f5 break"],
+  "sublines_that_differ": [
+    { "name": "Benoni Defense, Advance Variation", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Be2 O-O 6. Bg5 c5 7. d5", "how": "A Benoni-style structure with more asymmetry and an open e-file." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Positional pin with several Black set-ups, less forcing than the Mar del Plata." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main line." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "The centre locks after ...e5 and d5 in most lines, with Benoni structures a minority." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream King's Indian branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans need understanding but theory is lighter than the Classical." },
+    "plans": { "value": ["space_advantage", "kingside_attack"], "reason": "White's space and Black's ...f5 break." }
+  }
+}

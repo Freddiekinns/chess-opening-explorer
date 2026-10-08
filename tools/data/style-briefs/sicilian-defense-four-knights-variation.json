@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-four-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Four Knights Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
+    "fen": "r1bqkb1r/pp1p1ppp/2n1pn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "This is the Taimanov or Four Knights Sicilian, reached after both sides develop two knights. White chooses between 6.Nxc6 bxc6 7.e5 Nd5 8.Ne4 Qc7, giving Black doubled c-pawns for activity, 6.Ndb5 Bb4 with sharp central play, and quieter 6.Be3 or 6.Bg5. Black aims for ...d5 or ...Bb4 counterplay and ...Qc7; White for e5 space and kingside pieces.",
+  "white_ideas": [
+    { "idea": "6.Nxc6 bxc6 7.e5 Nd5 8.Ne4 Qc7 9.f4, gaining space on the kingside." },
+    { "idea": "6.Ndb5 Bb4 7.a3 Bxc3+ 8.Nxc3 d5, using the bishop pair and development lead." }
+  ],
+  "black_ideas": [
+    { "idea": "Doubled c-pawns for central control and the open b-file, then ...Qc7 and ...Bb7." },
+    { "idea": "...Bb4 pin and ...d5 to hit the centre quickly." }
+  ],
+  "typical_structures": [
+    { "structure": "Black doubled c-pawns (c6/c5) after Nxc6 bxc6." },
+    { "structure": "Taimanov set-up with ...a6, ...Qc7 and ...Be7." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main lines 6.Nxc6 and 6.Ndb5 lead to tactical, unbalanced positions where both sides take risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound; played at the top for decades." },
+    "structure": { "notes": "Sicilian asymmetry with a half-open c-file or b-file." },
+    "approach": { "notes": "Standard Sicilian main line." },
+    "level": { "reason": "memory", "notes": "Needs concrete theory in the Ndb5 lines, but most lines are Intermediate; the Taimanov is not Advanced." }
+  },
+  "plan_phrases": ["doubled pawns", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Exchange", "moves": "6. Nxc6 bxc6", "how": "Black accepts doubled c-pawns for central play." },
+    { "name": "6.Ndb5", "moves": "6. Ndb5 Bb4", "how": "Sharper, with a d6 hole and tactical play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Main lines 6.Nxc6 and 6.Ndb5 are tactical and double-edged." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream Sicilian line." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Sicilian asymmetry with a half-open file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream Sicilian line." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Needs some memory and Sicilian understanding but is not Advanced." },
+    "plans": { "value": ["doubled_pawns", "space_advantage"], "reason": "Black accepts doubled pawns; White gains space with e5." }
+  }
+}

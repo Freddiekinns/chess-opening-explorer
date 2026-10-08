@@ -1,0 +1,198 @@
+{
+  "slug": "queens-pawn-game-modern-defense",
+  "root": {
+    "name": "Queen's Pawn Game: Modern Defense",
+    "eco": "A40",
+    "moves": "1. d4 g6",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Modern Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Modern_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Modern Defence (1.e4 g6 page; does not cover 1.d4 g6 specifically)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/modern-defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "The Ideas Behind the Modern Defence",
+      "publisher": "Exeter Chess Club",
+      "url": "https://www.exeterchessclub.org.uk/content/ideas-behind-modern-defence",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Modern Defense against 1.d4 (search snippet summary)",
+      "publisher": "Web search (Chess Fandom, Taketaketake, Chessworld)",
+      "url": "https://chess.fandom.com/wiki/Queen's_Pawn_Game:_Modern_Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Against 1.d4 Black plays 1...g6, fianchettoing the king's bishop (...Bg7) and delaying the knight on f6 and any central commitment. The idea is hypermodern: let White build a pawn centre, then attack it from the flanks with ...d6 and ...c5 or ...e5, with queenside play (...b5, ...a5) backed by the Bg7. Because ...Nf6 is delayed it can still become a King's Indian (after c4 and Nc3), a Pirc (after e4) or a Grünfeld, or stay a separate Modern. White's common set-ups are a classical centre (c4, e4, Nc3, Be3), the Averbakh with c4, or the pseudo-Austrian or Samisch-like f4/f3 centres with a kingside space attack. Sources disagree on the character: the line is balanced and sound but can become very sharp and awkward for Black if the kingside weakens.",
+  "white_ideas": [
+    {
+      "idea": "Occupy the centre with e4 and d4 and, with c4, Nc3, Be3 or the Averbakh set-up, take space to restrict the Bg7",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Pseudo-Austrian (e4, d4, f4) or pseudo-Samisch (f3, kingside storm) set-ups for a space grab and attack on the g6-weakened kingside",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "Play c2-c3 against the delayed Nf6 to blunt the g7-bishop (a difference from the Pirc)",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "3.c4 leads towards the Averbakh System (King's Indian-like), as in the most-played branch 1.d4 g6 2.c4 Bg7 3.Nc3",
+      "sources": ["s1", "s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Allow White the centre, then attack it with ...c5, ...e5 (usually after ...d6) and queenside ...b5, ...a5 supported by the Bg7 on the long diagonal",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Keep ...Nf6 flexible so the game can transpose to a King's Indian or Pirc when White commits",
+      "sources": ["s3", "s4"]
+    },
+    {
+      "idea": "Dark-square strategy (long diagonal, pressure on e4) or the Gurgenidze light-square blockade, hippopotamus formation",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "Get the king safe before opening lines, since the kingside is weakened by ...g6",
+      "sources": ["s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White broad pawn centre (e4/d4, sometimes c4 or f4) against Black's fianchetto with ...d6 and flank breaks",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "King's Indian type structures (after ...Nf6 and c4/Nc3) where the centre can lock after d5, or a Pirc-like structure after e4",
+      "sources": ["s3", "s4"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s3 calls the Modern Defence 'extremely sharp and risky', one of the most awkward defences played by grandmasters: White's space enables rapid attacks, the kingside is vulnerable after ...g6 and one tactical error is often fatal. s2 rates it balanced but 'sharper than its quiet move order suggests' (sharpness 0.95-0.97). s4 calls it sound with accurate counterattack. s2 and s3 are about 1.e4 g6; against 1.d4 White's c4 transpositions are slightly tamer.",
+      "sources": ["s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound but demanding. s2: White 48.9%, Black 46.8%, draws 4.3% over 78 million games (for the 1.e4 g6 page). s3: theoretically sound but demanding. s1: used by respectable GMs (Nigel Davies, Colin McNab, Nunn, Rublevsky, Polgar). Nothing calls it dubious.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "White's pawn centre stays up while Black holds back and strikes with ...c5/...e5; the centre often stays tense or becomes closed after d5 (King's Indian transposition) or half-open after ...cxd4 (Sicilian-like). Not an early open centre.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A flexible set-up that can be played against 1.e4, 1.d4 or 1.c4 (s4: reached from 1.d4 g6, 1.c4 g6 or 1.Nf3 g6 if Black delays ...Nf6) and used by Black whatever White does. Used by strong players but as a sideline: Davies and McNab are the main specialists; Nunn, Rublevsky, Polgar have used the deferred versions (s1). s3: 'unusual, White may not have a clue how to behave' (a surprise element).",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for Black, who studies it. s3 says it is one of the most difficult and awkward defences, with games often lost without understanding why, and explicitly advises amateurs to prefer the open games. s2 calls difficulty beginner (a generic label on the 1.e4 g6 page). The challenge is understanding when to strike at the centre and where to put the king, not memorising lines.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern",
+    "fianchetto bishop on g7",
+    "long diagonal pressure",
+    "undermine the centre with ...c5 and ...e5",
+    "queenside counterplay",
+    "transposition to King's Indian or Pirc",
+    "dark-square strategy"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Averbakh / King's Indian transposition",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3",
+      "how": "Reaches King's Indian-style structures after ...Nf6 and e4; the most-played branch, with a closed or tense centre rather than the pseudo-Pirc."
+    },
+    {
+      "name": "Modern with ...c5 (Benoni/Sicilian-like)",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 c5 4. d5",
+      "how": "Black strikes at d4 immediately; Benoni-type pawn structures (1,259,812 games)."
+    },
+    {
+      "name": "Fianchetto / Nf3",
+      "moves": "1. d4 g6 2. Nf3",
+      "how": "White delays commitment (17.1M games); Black keeps a Modern, Grünfeld or Pirc-like choice."
+    },
+    {
+      "name": "Pseudo-Austrian / Samisch set-ups",
+      "moves": "1. d4 g6 2. e4 Bg7 3. f4 or 3. f3",
+      "how": "White gets a broad centre with f4/f3; much sharper, with kingside attacking chances (s3)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Modern Defense against 1.d4 is a hypermodern and highly flexible system where Black allows White a central presence and challenges it later from the flanks",
+        "verdict": "supported",
+        "note": "s1, s3, s4.",
+        "sources": ["s1", "s3", "s4"]
+      },
+      {
+        "claim": "Fianchettoing the king's bishop creates a dynamic and strategically complex game, often steering play into less theoretical territory",
+        "verdict": "supported",
+        "note": "s3: unusual, White may not know how to behave; there is still real theory against the Classical and Austrian set-ups.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Perfect for creative and strategic players comfortable with unbalanced positions",
+        "verdict": "unverifiable",
+        "note": "s3 calls it a good system to play for a win but explicitly advises amateurs against it; 'perfect' is not supported.",
+        "sources": ["s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: fianchetto the king's bishop, prepare ...c5 or ...e5 (often after ...d6) and create counterplay against White's centre",
+        "verdict": "supported",
+        "note": "s1, s3.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White: establish a broad pawn centre (e.g. with c4, e4), take space and try to restrict the fianchettoed bishop",
+        "verdict": "supported",
+        "note": "s3 (classical centre, Geller, Averbakh, pseudo-Austrian).",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Black: keep flexibility to transpose into the King's Indian (with ...Nf6) or the Pirc depending on White's set-up",
+        "verdict": "supported",
+        "note": "s3 and s4 mention King's Indian and Pirc transpositions.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "White: develop harmoniously with Nc3 and Be3, and expand on the queenside or attack on the kingside if Black castles short",
+        "verdict": "supported",
+        "note": "Classical set-up with Be3 and f3/f4 kingside storms (s3); the queenside expansion with c4 is also named.",
+        "sources": ["s3", "s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

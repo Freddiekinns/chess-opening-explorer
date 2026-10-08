@@ -1,0 +1,91 @@
+{
+  "slug": "vienna-game-max-lange-defense",
+  "root": {
+    "name": "Vienna Game: Max Lange Defense",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Vienna Game", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Vienna_Game", "kind": "reference" },
+    { "id": "s2", "title": "Vienna Game Max Lange Defense: 4.Qg4 Lab", "publisher": "ChessWorld", "url": "https://www.chessworld.net/vienna-game-max-lange-defense.asp", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Vienna Game guides (wholesalechess, chessable blog results)", "publisher": "Web search results", "url": "https://www.wholesalechess.com/blogs/chess-openings/the-vienna-game", "kind": "article" }
+  ],
+  "overview": "2...Nc6 is the Max Lange Defence, the second most common reply to 2.Nc3 after 2...Nf6. Its point is to allow the Vienna Gambit 3.f4 to be taken (3...exf4), because there is no knight on f6 to be chased by e4-e5. White's other main try is 3.Bc4, usually followed by 4.d3 and f2-f4 ideas, or the sharp 3...Bc5 4.Qg4 attacking g7. Black's usual aims are to develop with ...Nf6 and ...Bc5 and break with ...d5. The position is symmetrical, classical and flexible in the quiet lines, and sharp and tactical in the f4 and Qg4 lines. Strong players meet 3.f4 with accurate play and equality is judged to be the objective result. Often seen as a surprise weapon for White, who avoids Ruy Lopez and Italian theory.",
+  "white_ideas": [
+    { "idea": "3.f4 Vienna Gambit: give the f-pawn for central control and open lines, as in the King's Gambit but with Nc3 added.", "sources": ["s1", "s3"] },
+    { "idea": "3.Bc4 with 4.d3 (or Qg4 at once) and an f2-f4 break, castling kingside and attacking f7.", "sources": ["s3"] },
+    { "idea": "3.Bc4 Bc5 4.Qg4: attack g7 and make Black choose between 4...Kf8 and 4...g6, both concessions.", "sources": ["s2"] },
+    { "idea": "Prepare d2-d4 with Nf3 to take central space (3.Nf3 transposes to Four Knights or Scotch-type positions; own understanding).", "sources": [] }
+  ],
+  "black_ideas": [
+    { "idea": "Accept the Vienna Gambit with 3...exf4 since Nf6 is not on the board to be harassed by e4-e5.", "sources": ["s3"] },
+    { "idea": "Meet 3.Bc4 with ...Nf6 (blocking Qh5 ideas) and ...Bc5, then the ...d5 break to equalise.", "sources": ["s3"] },
+    { "idea": "Against 4.Qg4: 4...Kf8 or 4...g6 are the best practical tries; avoid 4...Qf6? because of 5.Nd5!", "sources": ["s2"] },
+    { "idea": "Use ...Na5 ideas to challenge the Bc4.", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical open-game centre e4/e5 with both knights out; White plays d3 or d4 and f4 later", "sources": ["s3"] },
+    { "structure": "Vienna Gambit accepted: White pawn on e4 and f4 sacrificed, open f-file, King's Gambit-like positions", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet 3.Bc4 d3 lines are steady and symmetrical. The branches with 3.f4 and 4.Qg4 are tactical and demand concrete knowledge. The sources describe 4.Qg4 as a genuine problem on g7, not a cheap trick, while 3.f4 is a gambit and is considered too risky at grandmaster level per Keene.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root position (2...Nc6) is not a gambit. 3.f4 (the Vienna Gambit proper) would be a White gambit if Black accepts, and 3.Bc4 lines are not gambits. A minor branch, not the main line.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "2...Nc6 is a sound reply. With best play the Vienna lines lead to equality. The Vienna Gambit is considered too risky at grandmaster level (Raymond Keene, via Wikipedia). Black must know the 4.Qg4 traps.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Open game: e4 and e5 pawns face each other; in quiet lines the centre stays tense until d4 or f4 breaks. In the gambit lines f-file and the centre open quickly.",
+      "sources": ["s3"]
+    },
+    "approach": {
+      "notes": "Part of a respectable but less played White opening (the Vienna Game), second most common reply 2...Nc6 described as quite common. Not a universal set-up; the sources show model games from 1976 to 2014, so modest but persistent use by strong players.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Fewer forced lines to learn than the Ruy or Italian, with classical development plans. The Qg4 branch needs concrete knowledge and traps for Black. Judged for Black, whose task is to know the 3.f4 and 4.Qg4 answers. Trap knowledge alone is insufficient since strong players defend correctly.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "f2-f4 break",
+    "central d4 break",
+    "pressure on f7",
+    "attack on g7 with Qg4",
+    "...d5 equalising break",
+    "King's Gambit-like open f-file"
+  ],
+  "sublines_that_differ": [
+    { "name": "Vienna Game: Vienna Gambit", "moves": "1. e4 e5 2. Nc3 Nc6 3. f4", "how": "White gambit with King's Gambit-style play; much sharper than the quiet lines." },
+    { "name": "Vienna: 2...Nc6 3.Bc4 Bc5 4.Qg4", "moves": "1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4", "how": "Sharp tactical attack on g7, Black must know 4...Kf8 or 4...g6." },
+    { "name": "Vienna: 2...Nc6 3.Bc4 Bc5 4.d3", "moves": "1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. d3", "how": "Quiet, Giuoco Pianissimo-like with the knight on c3." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Max Lange Defense is a classical and highly reliable response to the Vienna Game.", "verdict": "supported", "note": "Described as sound, quite common, and played by strong players, though not the most common reply (2...Nf6 is).", "sources": ["s1", "s2"] },
+      { "claim": "It creates a symmetrical and balanced position.", "verdict": "supported", "note": "Quiet lines are symmetrical; equal with best play.", "sources": ["s1", "s3"] },
+      { "claim": "The game often develops along strategic lines, focusing on central control and harmonious development.", "verdict": "supported", "note": "Applies to the 3.Bc4 d3 lines.", "sources": ["s3"] },
+      { "claim": "It retains the flexibility to transpose into sharper variations.", "verdict": "supported", "note": "3.f4 and 4.Qg4 are sharp.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Prepare the d2-d4 pawn break, often supported by Nf3.", "verdict": "unverifiable", "note": "Sources focus on f4 and Bc4/d3 set-ups and do not mention d4. Own understanding: d4 is a plausible plan.", "sources": [] },
+      { "claim": "White: Consider the Vienna Gambit with an early f2-f4.", "verdict": "supported", "note": "3.f4 is the Vienna Gambit proper after 2...Nc6. It is a gambit if Black accepts.", "sources": ["s1", "s3"] },
+      { "claim": "Black: Develop symmetrically with ...Nf6 and prepare the ...d5 break to equalize.", "verdict": "supported", "note": "...Nf6 and the ...d5 break are the main Black resources against 3.Bc4.", "sources": ["s3"] },
+      { "claim": "Black: Maintain a solid pawn structure and look for counterattacking chances, especially against an early f4.", "verdict": "supported", "note": "Black can accept 3.f4 exf4 and counterattack, as the Max Lange idea intends.", "sources": ["s3"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

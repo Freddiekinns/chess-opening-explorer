@@ -1,0 +1,46 @@
+{
+  "slug": "ruy-lopez-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Classical Variation",
+    "eco": "C64",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the bishop to c5 and ignores the pin. White usually plays 4.c3 followed by d4, or 4.O-O d6 5.c3 Bd7 6.d4 Bb6, building a big centre. Black defends with ...Nf6, ...d6 and ...Bb6 and aims for ...exd4 and equality. The game is a calm, positional one with White gaining space.",
+  "white_ideas": [
+    { "idea": "Build the c3-d4 centre and gain space." },
+    { "idea": "Keep the bishop on b5 or exchange on c6 to wreck Black's pawns." }
+  ],
+  "black_ideas": [
+    { "idea": "Retreat to b6 and trade the centre pawns with ...exd4." },
+    { "idea": "Develop with ...Nf6, ...d6 and ...Bd7 and wait." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 centre against Black e5 and d6 with tension on d4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring, not forcing. Balanced, unsure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given; the Zukertort and 4.c3 gambits are minor sub-lines." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre tension." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Easier than the Closed Lopez. Intermediate." }
+  },
+  "plan_phrases": ["space advantage", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Exchange", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. Bxc6", "how": "White doubles Black's pawns for a slow endgame plan." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Calm, with some tension but no forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre in tension, as in the Italian." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans clearer than the Closed Lopez." },
+    "plans": { "value": ["space_advantage"], "reason": "White builds a big centre with c3 and d4." }
+  }
+}

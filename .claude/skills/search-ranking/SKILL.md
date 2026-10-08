@@ -44,6 +44,17 @@ replaces that list a moment later. They must agree — see
   `isAmbiguousSemanticTerm` sent "aggressive openings" to a 2.4s fuzzy name
   search that returned the Andersspike.
 
+- **Style words match the style tags, through one table.** `STYLE_AXES` in
+  `search/SearchConstants.js` is the taxonomy's "Search words" section in code:
+  each word names the axis values it means ("aggressive" is Sharp or either
+  gambit, "positional" Solid or Balanced), read from `api/data/style-tags.json`
+  via `style-tags-service.js`. It replaced substring matches over the old LLM
+  tags, where "defensive" passed 99% of openings because its list held
+  "counterattack". A word missing from the table matches nothing, so a new style
+  word needs a row there and, if users type it as "X openings", a place in
+  `QUERY_PATTERNS.STYLE_OPENINGS`. Style search is server-only: the client's
+  index slice carries no tags.
+
 - **Both halves of the search rank by the same bands, and a test says so.**
   `lib/localSearch.ts` (client, paints on the keystroke from the shared index
   slice) and `search/NameIndex.js` + `searchByMove` (server, replaces it a

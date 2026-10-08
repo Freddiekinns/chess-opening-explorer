@@ -1,0 +1,89 @@
+{
+  "slug": "queens-pawn-game-veresov",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Veresov, Richter Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. f3 d5 3. Nc3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2N2P2/PPP1P1PP/R1BQKBNR b KQkq - 1 3"
+  },
+  "parent": "paleface-attack",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White supports an e4 break with f3 and Nc3, a Blackmar-Diemer-flavoured set-up without the gambit pawn. I am unsure of the exact theory. Black can answer with ...c5, ...e6 or ...e5, and White follows with e4 for a broad centre at the cost of a weakened kingside and slower development.",
+  "white_ideas": [
+    { "idea": "Play e4 for a big centre, supported by f3." },
+    { "idea": "Develop with Be3, Qd2 and queenside castling." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...c5 or ...e5 before e4 is played." },
+    { "idea": "Develop quickly and punish the f3 weakness." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4/f3 centre against ...e6/...c5 or ...e5 counters." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slightly loosened king position but White has no direct threats."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given in the main replies, though ...dxe4 fxe4 lines resemble BDG."
+    },
+    "soundness": {
+      "notes": "Playable but probably slightly inferior for White."
+    },
+    "structure": {
+      "notes": "Centre fluid, depending on Black's counter."
+    },
+    "approach": {
+      "notes": "Rare, seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory; plans are clear but easy to misjudge."
+    }
+  },
+  "plan_phrases": ["central pawn majority", "e4 break"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Unsure; quiet development with a slight king-safety risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Probably slightly inferior but playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre undecided before e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rare, mostly a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Not much theory but easy to misplay."
+    },
+    "plans": {
+      "value": ["central_pawn_majority"],
+      "reason": "White aims at e4 with a big centre."
+    }
+  }
+}

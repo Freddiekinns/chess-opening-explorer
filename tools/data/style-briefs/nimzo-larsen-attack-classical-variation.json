@@ -1,0 +1,150 @@
+{
+  "slug": "nimzo-larsen-attack-classical-variation",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Classical Variation",
+    "eco": "A01",
+    "moves": "1. b3 d5",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Nimzowitsch-Larsen Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nimzowitsch%E2%80%93Larsen_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Nimzowitsch-Larsen Attack (1.b3): Lines, Traps & Defense",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/flank/nimzowitsch-larsen-attack/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Nimzo-Larsen Attack 1.b3 d5 (the fetched text covered the 1.b3 e5 line; used only for general plans)",
+      "publisher": "Canberra Academy of Chess",
+      "url": "https://canberraacademyofchess.com.au/nimzo-larsen-attack-1b3-d5",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Nimzo-Larsen search summary (Chessworld Plans & Games, USCF Sales, kingsights; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.chessworld.net/nimzo-larsen.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "White fianchettoes the queen's bishop on b2 to influence the centre from the flank and the long diagonal, while Black takes the classical centre with 1...d5. Against ...d5 White usually develops first (Bb2, Nf3, e3), stays flexible, and only then decides between c4, d3 or d4, keeping the b2 bishop relevant to every central decision. Typical lines are 2.Bb2 Nf6 3.e3 e6 (and 4.Bb5+ or c4 set-ups) or 2...c5. The line is a recognised system: themes (dark-square control, e5, Bb5, Ne5, f4, sometimes queenside castling with g4-h4) matter more than heavy theory. Sources agree Black equalises comfortably with natural development, but White gets practical chances, especially in fast time controls; it is used by strong players (Larsen, Carlsen, Nakamura) mainly as a surprise or to avoid main repertoire lines.",
+  "white_ideas": [
+    { "idea": "Fianchetto Bb2 and open the long diagonal with e3, c4, d4 or timely exchanges.", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Control e5 and the dark squares: Bb5 pins, Ne5 outposts, f4, then possibly queenside castling and a g4-h4 kingside storm.", "sources": ["s1", "s2", "s4"] },
+    { "idea": "Keep flexible against ...d5: develop first and decide between c4, d3 and d4 depending on Black's structure.", "sources": ["s4"] },
+    { "idea": "Use unfamiliar positions and move orders that make Black reveal a structure first; effective in rapid and blitz.", "sources": ["s3", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...d5 supported by ...e6 or ...c6 and ...c5, and develop naturally (Nf6, Be7).", "sources": ["s2", "s3"] },
+    { "idea": "Keep the diagonal in mind and avoid chasing White's flank pawns; equalise through natural development.", "sources": ["s2"] },
+    { "idea": "Counter with a central break such as ...c5 or ...e5, or queenside expansion.", "sources": ["s1", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "d5/c5 or d5/e6 formations for Black against a White fianchetto without a central pawn on d4, with tension rather than early pawn exchanges.", "sources": ["s1", "s4"] },
+    { "structure": "Reversed-Nimzo/Queen's Indian-style set-ups where the b2 bishop works along the long diagonal and the centre is often contested later with c4 or d4.", "sources": ["s1", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as flexible and 'reasonably solid but not forcing'; the play is strategic with long-diagonal pressure and flank pawn moves, not early tactics. Kingside attack (g4-h4) is an option rather than the default. Few forcing lines in the sources read; surprise value more than concrete sharpness.",
+      "sources": ["s2", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the main lines.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Sound but not testing. Wikipedia: many 1.b3 lines are rated only equal by theory, but the 1.b3 player enjoys practical chances, especially at shorter time controls. Chess Doctrine: White wins 33%, draws 37%, Black 30%; lacks the theoretical robustness of 1.e4 or 1.d4. Canberra Academy: 'not as good as the main lines' but leads to fresh positions. Black equalises comfortably with natural development.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "The centre stays in tension or semi-closed rather than opening: neither side exchanges central pawns early, and the b2 bishop is only sometimes opened by c4/d4. Sources do not define the structure precisely, so what the typical middlegame looks like is incompletely documented; the main lines (3.e3 e6, or c5) tend toward a tense, partly closed centre.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "Chess Doctrine: it functions as a coherent system emphasising dark-square control and thematic play over memorised lines; it is also used to avoid main repertoire theory. Wikipedia: Larsen popularised it in the 1970s; Carlsen and Nakamura use it as a surprise weapon in super-GM online blitz. Chess Doctrine: played often in fast time controls but not frequently in top-level classical games.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chess Doctrine: low theory burden, prioritises middlegame ideas over heavy theory, accessible to club players and beginners seeking flexibility without extensive memorisation. Canberra Academy: suits players seeking tactical complexity and unconventional positions, though Black keeps equality. White's difficulty is thematic understanding of the flank set-up.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "long-diagonal bishop on b2",
+    "control of e5",
+    "dark-square control",
+    "Bb5 pin",
+    "Ne5 outpost",
+    "queenside castling and g4-h4 storm",
+    "flexible central break (c4, d4)",
+    "fresh positions out of theory"
+  ],
+  "sublines_that_differ": [
+    { "name": "Reti transposition (1.Nf3 d5 2.b3)", "moves": "1. Nf3 d5 2. b3", "how": "Same set-up reached by a different move order; the subtree lists Reti: Nimzowitsch-Larsen lines separately; move order affects piece placement and tactics." },
+    { "name": "2...c5 and 2...Bg4", "moves": "1. Nf3 d5 2. b3 c5 / 2... Bg4", "how": "Black's alternatives to 2...Nf6; 2...c5 gives an English-like or Queen's Indian-like structure, 2...Bg4 pins the knight; both smaller branches." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Nimzo-Larsen Attack is a hypermodern, flexible opening where White controls the centre from the flank with a fianchettoed bishop.",
+        "verdict": "supported",
+        "note": "Bb2 influences the centre from the flank and White stays flexible about central breaks.",
+        "sources": ["s2", "s4"]
+      },
+      {
+        "claim": "Black's 1...d5 gives a classical pawn centre, leading to a struggle between flank pressure and central control.",
+        "verdict": "supported",
+        "note": "Classical reply; White decides later between c4, d3 and d4.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "It suits creative, strategic players who enjoy less-trodden paths and long-term positional nuances rather than sharp theory.",
+        "verdict": "supported",
+        "note": "Low theory burden, themes over lines.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: fianchetto the bishop to b2, control e5 and prepare c2-c4.",
+        "verdict": "supported",
+        "note": "c4 and the e5 point are named.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "Black: solidify d5 with ...e6 or ...c6, develop actively, and use the central space to create threats.",
+        "verdict": "supported",
+        "note": "...e6 or ...c6 with natural development; 'create threats' is optimistic since sources say equality.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: develop with Nf3 and e3 for a flexible set-up.",
+        "verdict": "supported",
+        "note": "2.Bb2 Nf6 3.e3 is the common line, and Nf3 keeps the Reti transposition.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Black: challenge with ...e5 or queenside expansion with ...c5.",
+        "verdict": "supported",
+        "note": "...c5 is a recognised reply (2...c5); ...e5 is more typical in the 1...e5 branch, and sources describe breaks like ...c5 and ...e4 as general counterplay.",
+        "sources": ["s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

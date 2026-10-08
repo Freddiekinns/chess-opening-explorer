@@ -1,0 +1,159 @@
+{
+  "slug": "caro-kann-defense-advance-variation",
+  "root": {
+    "name": "Caro-Kann Defense: Advance Variation",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. e5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Caro-Kann Defense - Advance Variation",
+      "publisher": "Modern Chess",
+      "url": "https://www.modern-chess.com/opening/caro-kann-defense-advance-variation/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Punish The Caro-Kann With The Advance Variation",
+      "publisher": "Wholesale Chess blog",
+      "url": "https://www.wholesalechess.com/blogs/chess-openings/caro-kann-advance-variation",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Caro–Kann Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Caro-Kann Advance search summary (Chessiverse, Lichess study, attackingchess; snippet only)",
+      "publisher": "Web search",
+      "url": "https://chessiverse.com/resources/openings/advance-caro-kann",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 3.e5 White gains space and fixes the centre; Black normally develops the light-squared bishop outside the chain with 3...Bf5 and then undermines the e5/d4 chain with ...c5 (often after ...e6), at times ...f6. White's set-ups range from the quiet Short System (Nf3, Be2, O-O, Be3 against ...c5) to aggressive kingside expansion with h4, g4 (Tal 4.h4, Bayonet 4.g4, Van der Wiel 4.Nc3 e6 5.g4, 4.Nf3 e6 5.Be2) aiming at a space and attack advantage. Typical positions are closed or semi-closed and French-like, with Black's bishop developed. It is the most popular way to fight the Caro-Kann in the 21st century and is double-edged: a space edge for White against a sound structure for Black.",
+  "white_ideas": [
+    { "idea": "Short System: develop naturally with Nf3, Be2, O-O and answer ...c5 with Be3; a quiet, non-committal approach.", "sources": ["s1", "s3", "s4"] },
+    { "idea": "Aggressive kingside expansion with h4/g4 (Tal 4.h4, Bayonet 4.g4, Van der Wiel 4.Nc3 e6 5.g4), hunting the light-squared bishop and seeking attacking chances.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Space advantage from e5: restrain Black's pieces, use the d6 outpost and c4 break.", "sources": ["s2", "s4"] },
+    { "idea": "Main line 4.h4 h5 5.Bd3 for rapid development and Bg5; requires three or four precise theory moves from Black.", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine White's centre with the ...c5 break (and sometimes ...f6).", "sources": ["s1", "s4"] },
+    { "idea": "Develop the light-squared bishop to f5 (or g4) before ...e6.", "sources": ["s2", "s4"] },
+    { "idea": "Control d5 as a strongpoint and delay castling to keep king flexibility.", "sources": ["s1"] },
+    { "idea": "Immediate 3...c5 (named Botvinnik-Carls by some sources, Arkell–Khenkin Variation in Wikipedia) strikes at once but costs a tempo.", "sources": ["s2", "s3", "s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "French-Advance-like pawn chain d4/e5 against c6/d5 with Black's bishop outside the chain; semi-closed centre where both sides manoeuvre.", "sources": ["s1", "s4"] },
+    { "structure": "After ...c5 and dxc5 or in the Short System, an open-ish centre with the d4 pawn under pressure.", "sources": ["s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed, depends on White's choice. The Short System is solid and positional; 4.h4, 4.g4 and 5.Bd3 lines are complex tactical battles. Modern Chess calls the variation 'double-edged', ranging from solid positional play to complex tactical battles. Wholesale Chess: moderately sharp, positional rather than tactical if Black knows theory. Wikipedia: the Caro-Kann overall has a solid reputation though tactical variations exist, and the Advance Variation lines are expanded aggressively by White.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root. Gambit-like pawn sacrifices appear in some h4/g4 sub-lines (Modern Chess mentions potential gambits in 5.Bd3 lines).",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound for both. Modern Chess: positions favour White slightly because of space but Black reaches equality with precise play. Wholesale Chess: objectively sound for White (43% White wins at master level, in its dataset) and the most popular way to fight the Caro-Kann. Wikipedia: it became the most popular line in the 21st century despite being previously dismissed as inferior.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Closed or semi-closed: White's e5/d4 chain fixes the centre, Black attacks the base with ...c5; often compared to a French with Black's bishop outside. Search summary: results in a closed position where both parties manoeuvre pieces and Black aims for a pawn break eventually.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "A standard main-line variation, not a system. Played widely at the top: Modern Chess names Dreev, Jobava and Vachier-Lagrave; Wikipedia says it became the most popular line in the 21st century; Firouzja and Ding Liren are named as players of the Caro-Kann in general.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Studying Black's side. Substantial theory is needed in main lines: Modern Chess says three or four precise theoretical moves are essential in 5.Bd3 lines; Wholesale Chess says substantial study is necessary (Dreev's book, a 7+ hour video course). The Short System is lighter. Structurally it is clear (a French-like plan of ...c5), so the burden is mainly sharp-line theory rather than plans.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "space advantage with e5",
+    "...c5 break against the pawn chain",
+    "light-squared bishop outside the pawn chain",
+    "kingside expansion with h4 and g4",
+    "Short System",
+    "French-style pawn chain",
+    "d6 outpost"
+  ],
+  "sublines_that_differ": [
+    { "name": "Short System", "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2", "how": "Quiet, positional, lower theory." },
+    { "name": "Tal Variation", "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. h4", "how": "Aggressive kingside expansion; sharp and theory-heavy (4...h5 5.Bd3 main line)." },
+    { "name": "Bayonet Attack", "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. g4", "how": "Direct kingside attack; sharp." },
+    { "name": "Van der Wiel Attack", "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 e6 5. g4", "how": "Sharp kingside expansion." },
+    { "name": "Botvinnik-Carls / Arkell–Khenkin Defence", "moves": "1. e4 c6 2. d4 d5 3. e5 c5", "how": "Black strikes immediately; avoids main-line theory, tactical, costs a tempo." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Advance Variation is highly strategic and combative, with White seizing a space advantage with 3.e5.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It creates a tense, semi-closed game.",
+        "verdict": "supported",
+        "note": "Often closed with manoeuvring and a later pawn break.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "White aims to build a kingside attack.",
+        "verdict": "supported",
+        "note": "Applies to the h4/g4 systems; the Short System is quieter.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Black's primary goal is to undermine White's pawn chain, typically with the ...c5 break.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s4"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Build a kingside attack with Nf3, Be2, O-O, and sometimes g4-h4.",
+        "verdict": "supported",
+        "note": "Nf3/Be2/O-O is the Short System, which is quiet rather than an attack; g4/h4 are the aggressive systems.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: Prepare and execute ...c5. Develop the light-squared bishop to f5 or g4 before playing ...e6.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s2", "s4"]
+      },
+      {
+        "claim": "White: Restrain Black's queenside play and exploit the d4 square if Black plays ...c5.",
+        "verdict": "unverifiable",
+        "note": "Nothing found stating this; d4 is White's own pawn square and the sources discuss the d4 base under attack, with the Be3 defence in the Short System. The claim looks garbled.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "Black: Create queenside counterplay by targeting the d4 pawn and using the c-file.",
+        "verdict": "supported",
+        "note": "Pressure on d4 via ...c5 is supported; the c-file element is own understanding.",
+        "sources": ["s1", "s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "kings-indian-defense-four-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Four Pawns Attack",
+    "eco": "E76",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPPP2/2N5/PP4PP/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White builds a four-pawn centre (c4, d4, e4, f4) and gains space, aiming for e5 or a quick attack. Black castles and strikes with ...c5, ...Na6 or ...Nc6 and ...e5, using the fianchettoed bishop to attack d4. With 7.d5 (Dynamic Attack) the game turns into a Benoni-like fight where White pushes e5 and Black counters on the queenside. Both sides can go wrong quickly.",
+  "white_ideas": [
+    { "idea": "Nf3, Be2, O-O and e5 with a central space advantage" },
+    { "idea": "d5 and e5 to cramp Black, with a kingside attack supported by f4" }
+  ],
+  "black_ideas": [
+    { "idea": "...c5 or ...Na6 and ...c5 to attack d4 and exploit the extended centre" },
+    { "idea": "...Nc6 and ...e5, or ...Bg4 to pin and pressure d4" }
+  ],
+  "typical_structures": [
+    { "structure": "White c4, d4, e4, f4 pawns against Black d6, g6 and the g7 bishop; Benoni-type after d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Dynamic and double-edged: if Black's counterplay arrives first the centre collapses; if White's e5 works Black is squashed." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered in main lines." },
+    "soundness": { "notes": "Sound for both; considered good enough for Black." },
+    "structure": { "notes": "Centre tension with ...c5; not locked in the main line." },
+    "approach": { "notes": "A standard White set-up against the KID." },
+    "level": { "reason": "both", "notes": "Forcing lines and tough strategic decisions for Black." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre", "attack on d4"],
+  "sublines_that_differ": [
+    { "name": "Four Pawns: Dynamic Attack", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5", "how": "A Benoni-style fight with White's centre against Black's queenside play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Both sides attack, one side collapses fast." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Respected main KID line." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre in tension, not yet locked; could be semi-open after ...cxd4." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A standard White set-up against the KID." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.6, "reason": "Forcing theory and hard strategic decisions." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White takes space, Black attacks the centre from the flanks." }
+  }
+}

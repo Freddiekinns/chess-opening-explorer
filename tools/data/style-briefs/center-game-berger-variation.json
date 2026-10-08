@@ -1,0 +1,95 @@
+{
+  "slug": "center-game-berger-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Berger Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/8/4P3/4Q3/PPP2PPP/RNB1KBNR w KQkq - 3 5"
+  },
+  "parent": "center-game-paulsen-attack-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "After the queen retreats to e3 Black develops with tempo: 5.Nc3 Bb4 6.Bd2 O-O 7.O-O-O Re8 8.Bc4, with White castling queenside and Black kingside, so each side attacks on opposite wings. Black has the easier development but White's pieces are active and the king-side attack is real. The queen on e3 can become a target for ...Bb4, ...Re8 and ...d5 breaks.",
+  "white_ideas": [
+    { "idea": "Castle long and attack the king with Bc4, Nf3 and Ng5 or Qh3." },
+    { "idea": "Break in the centre with e5 or Nd5 to hit the Black pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the queen on e3 with ...Bb4 and ...Re8 and win time." },
+    { "idea": "Break with ...d5 once developed and exploit the lead in development." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after dxe4 or ...d5, White d-pawn gone and both kings castled on opposite wings." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Opposite-side castling with the queen on e3 gives both sides concrete attacking chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d-pawn is exchanged on d4 and the queen recaptures; no material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides, if slightly comfortable for Black."
+    },
+    "structure": {
+      "notes": "The d-pawn is gone and the centre is open, so pieces drive the play."
+    },
+    "approach": {
+      "notes": "The Center Game is played by strong players now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are straightforward but the attack must be handled with care."
+    }
+  },
+  "plan_phrases": ["lead in development", "early queen", "opposite-side castling"],
+  "sublines_that_differ": [
+    {
+      "name": "Danish Gambit-style 3.c3",
+      "moves": "1. e4 e5 2. d4 exd4 3. c3",
+      "how": "A different gambit offered by White, not the Berger line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Open centre and opposite-side castling give both sides attacking chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "White's early queen is a nuisance but the line is playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens quickly and pieces play on open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Center Game is a standard option for strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are straightforward, theory is short."
+    },
+    "plans": {
+      "value": ["lead_in_development", "early_queen", "opposite_side_castling"],
+      "reason": "Black gains tempi on the queen and both kings castle on opposite wings."
+    }
+  }
+}

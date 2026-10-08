@@ -1,0 +1,49 @@
+{
+  "slug": "scandinavian-defense-marshall-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Marshall Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Nxd5",
+    "fen": "rnbqkb1r/ppp1pppp/8/3n4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black has regained the d5 pawn with the knight, avoiding the tempo loss of an early queen. White gets a space edge with 4.Nf3 or 4.c4 Nb6, and Black develops with ...g6 and ...Bg7 or ...Bf5, ...e6 and ...c6. Black's position is a bit cramped but sound and easy to play; White tries to use the extra space with Nc3, Bd3 and a kingside castle.",
+  "white_ideas": [
+    { "idea": "4.c4 Nb6 to gain space and attack the knight, with Nc3 and Be3" },
+    { "idea": "Nf3, Be2 and O-O, simply developing with a small space edge" },
+    { "idea": "Exploit the lead in space to attack d5/b6 or kingside" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...g6/...Bg7 or ...Bf5 and ...e6, castle and aim for ...c5" },
+    { "idea": "Hit the centre with ...c5 or ...e5 to free the position" },
+    { "idea": "Aim for a safe, harmonious position and gradually equalise" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/c4 space against Black ...Nb6/...e6/...c6, Caro-like structures" },
+    { "structure": "Black d-pawn missing, half-open d-file" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gets a sound but slightly cramped position with easy development; few early tactics, so steady." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Material is level after ...Nxd5." },
+    "soundness": { "notes": "Sound; played by strong players." },
+    "structure": { "notes": "Asymmetric centre with White pawn on d4 and half-open d-file; Scandinavian is Semi-open per the rubric." },
+    "approach": { "notes": "A recognised reply to 1.e4, less common than main defences but played at every level, so standard." },
+    "level": { "reason": "neither", "notes": "Clear plans, modest theory; intermediate." }
+  },
+  "plan_phrases": ["space advantage", "half-open d-file"],
+  "sublines_that_differ": [
+    { "name": "4.c4 Nb6", "moves": "4.c4 Nb6 5.Nc3", "how": "White gets a big space edge and Black hunts for ...c5 or ...e6 counterplay." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Black's position is sound, if cramped, with few quick ways to lose." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Black regains the pawn at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A recognised sound defence." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Asymmetric centre with a half-open d-file for Black." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Less common than main lines but respectable at every level." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Plans are clear and theory is modest." },
+    "plans": { "value": ["space_advantage"], "reason": "White gets space and Black has to find room for its pieces." }
+  }
+}

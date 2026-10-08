@@ -1,0 +1,51 @@
+{
+  "slug": "bird-opening-williams-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Williams Gambit",
+    "eco": "A03",
+    "moves": "1. f4 d5 2. e4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "bird-opening-dutch-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn at once, hoping for open lines and a quick lead in development against the uncastled Black king. After 2...dxe4 3.Nc3 Nf6 White plays 4.g4 or 4.Qe2 for attack, while Black keeps the pawn, returns it at the right moment and consolidates. It is a Bird counterpart of the Staunton Gambit.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, Qe2 and g4, and attack the kingside quickly." },
+    { "idea": "Win the pawn back on e4 or play for pressure with f5 and Bc4." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...dxe4 and develop ...Nf6, ...Nc6 and ...e6, returning the pawn if needed." },
+    { "idea": "Stay solid and trade pieces to neutralise the attack." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...dxe4 with White's f4 pawn and a lead in development against Black's extra pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early gambit with attacking intentions; the position is open and tactical." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the e4 pawn for a long time after 2...dxe4 3.Nc3 Nf6."
+    },
+    "soundness": { "notes": "Considered unsound; Black has several comfortable ways to consolidate." },
+    "structure": { "notes": "Central pawns come off early and pieces get open lines." },
+    "approach": { "notes": "Played very rarely by strong players; a surprise." },
+    "level": { "reason": "memory", "notes": "A dubious line is never Beginner; knowing the attack and the traps is the main task." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "2...e6 or 2...Nc6", "moves": "1. f4 d5 2. e4 e6", "how": "Black declines the pawn, no material changes hands." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "An early gambit with open lines and attacking intentions." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives the e4 pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.65, "reason": "Strong players consider the compensation insufficient." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Pawns come off the centre and play runs on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious line is never Beginner; the attack needs knowing." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for quick development and a kingside attack." }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "slug": "kings-pawn-game-wayward-queen-attack",
+  "root": {
+    "name": "King's Pawn Game: Wayward Queen Attack",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Qh5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Wayward Queen Attack: How to Defend & Counter It (1.e4 e5 2.Qh5)",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/wayward-queen-attack/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Danvers Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Danvers_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Wayward Queen Attack, 2.Qh5 (C20): Beat Scholar's Mate",
+      "publisher": "Chessiverse (search snippet only)",
+      "url": "https://chessiverse.com/resources/openings/wayward-queen-attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "How to Correctly Defend against Queen's Wayward Attack",
+      "publisher": "Chess.com blog (search snippet only)",
+      "url": "https://www.chess.com/blog/Jackaronian/how-to-correctly-defend-against-queens-wayward-attack",
+      "kind": "article"
+    }
+  ],
+  "overview": "White brings the queen out on move two, attacking e5 and, after 3.Bc4, threatening Scholar's Mate on f7. Black's calm refutation is 2...Nc6 (or 2...d6), then 3.Bc4 g6 kicks the queen away (4.Qf3 Nf6) and Black develops with a lead in tempo. Black must avoid ...Nf6 while the queen still stands on h5 with a bishop on c4 (Qxf7#), and 2...g6 loses a pawn to 3.Qxe5. The 2...Nf6 reply (Kiddie Countergambit) gives a pawn for quick piece play after 3.Qxe5+ Be7. The line is a trap-based beginners' opening and almost disappears above casual-club level, although Nakamura and Carlsen have each played it occasionally.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Qh5 and Bc4 for a quick Scholar's-mate-style win against an unprepared opponent (the Parham/Danvers idea).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Win e5 at once if Black defends carelessly (2...g6? 3.Qxe5, or 2...Nf6 3.Qxe5+).",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "After the queen is chased (3.Bc4 g6 4.Qf3), complete development and hope the queen's early outing can be justified; objectively White has lost time.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend e5 with 2...Nc6 (or 2...d6), meet 3.Bc4 with 3...g6 to gain a tempo on the queen, then ...Nf6 and normal development with ...d5.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Avoid ...Nf6 too early: with queen on h5 and bishop on c4, 4.Qxf7# is mate.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Kiddie Countergambit 2...Nf6!? 3.Qxe5+ Be7, giving a pawn for quick, active piece play; a practical surprise weapon rather than the safest choice.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Trap: after 3.Bc4 g6 4.Qf3 Nf6 5.Qb3? Nd4 wins material (poisoned f7 pawn).",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Game centre with pawns e4/e5 and then ...d5 for Black; Black gets a normal Open Game structure with lead in development while White's queen is displaced.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing and trap-based in the first few moves (Scholar's Mate threat, Qxf7#, Qxe5+ tricks), but once Black plays 2...Nc6 3.Bc4 g6 the game becomes a normal development race in which White is behind. Risk falls on White if Black knows the moves; surprise value is the whole point.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Main line 2.Qh5 Nc6 gives no material. Only the 2...Nf6 Kiddie Countergambit is a Black gambit (pawn on e5, which White may take with 3.Qxe5+ Be7); the Mellon Gambit sub-line is marginal (27 games in the site's data).",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Objectively unsound for White: Chess Doctrine says plainly 'it's not a sound opening' because Black equalises or gains an edge with simple moves. Hans Ree called 2.Qh5 'a provocative but quite sensible move' and Nakamura said it is 'playable', so some strong players regard it as dubious rather than losing. Fits 'close to refuted, scores through surprise and traps'.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Typical middlegame after the queen is chased is a normal Open Game: e4/e5 centre with Black playing ...d5 and getting open lines; Black often gets a comfortable central position while White is behind in development.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "Seldom played by strong players. Wikipedia: rarely seen at elite level; Nakamura played it twice in 2005 and Carlsen once in the 2018 World Rapid (and lost). Chess Doctrine says it is popular at beginner level and almost disappears above casual-club level. Chosen for surprise, not as a repertoire weapon.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Almost nothing to memorise (Qh5, Bc4, Qxf7) but only works against opponents who do not know the 2...Nc6 3.Bc4 g6 refutation. Against any prepared opponent White has lost time with no compensation. For a Black player studying the line, the defence is easy: Nc6, g6, Nf6.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "Scholar's Mate threat",
+    "attack on f7",
+    "early queen development",
+    "gaining tempi on the queen",
+    "kiddie countergambit",
+    "trap",
+    "Open Game centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Kiddie Countergambit",
+      "moves": "1. e4 e5 2. Qh5 Nf6",
+      "how": "Black gambit: Black offers the e5 pawn (3.Qxe5+ Be7) for development, unlike the main 2...Nc6."
+    },
+    {
+      "name": "Parham Attack",
+      "moves": "1. e4 e5 2. Qh5 Nc6 3. Bc4",
+      "how": "Main line: threatens Scholar's Mate and f7; Black answers 3...g6."
+    },
+    {
+      "name": "Mellon Gambit",
+      "moves": "1. e4 e5 2. Qh5 Nc6 3. Bc4 Nh6 4. d3 g6 5. Qf3 f6 6. Ne2 d5",
+      "how": "Rare (27 games in the data); an eccentric Black set-up (...Nh6, ...g6, ...f6, ...d5) I could not find a source for; my own reading only."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Wayward Queen Attack is a highly aggressive and unorthodox opening where White brings the queen out on move two to create immediate threats against e5 and f7.",
+        "verdict": "supported",
+        "note": "2.Qh5 attacks e5 and with Bc4 threatens Qxf7#.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It violates classical opening principles and lets Black gain time and a development advantage by harassing the exposed queen.",
+        "verdict": "supported",
+        "note": "3.Bc4 g6 kicks the queen with tempo.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It can be dangerous against an unprepared opponent.",
+        "verdict": "supported",
+        "note": "Traps and Scholar's Mate threats; popular at beginner level.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is chosen at the cost of objective positional soundness.",
+        "verdict": "supported",
+        "note": "Chess Doctrine: 'not a sound opening'.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White attacks the weak f7 square, often with a bishop on c4, aiming for quick checkmate or material gain.",
+        "verdict": "supported",
+        "note": "Basic idea of 2.Qh5 and 3.Bc4.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black defends e5 with ...Nc6, then develops with tempo by attacking the exposed white queen (e.g. with ...Nf6 and ...g6).",
+        "verdict": "supported",
+        "note": "Move order matters: ...g6 must come first. ...Nf6 before ...g6 with Bc4 on the board allows Qxf7#; the correct order is 2...Nc6 3.Bc4 g6 4.Qf3 Nf6.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black seizes the centre and completes development, capitalising on the misplaced queen for a lasting positional advantage.",
+        "verdict": "supported",
+        "note": "Plan is ...d5 and normal development; 'lasting positional advantage' is a mild overstatement but Black is at least comfortable.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White tries to complete development and justify the early queen sortie, sometimes by castling queenside.",
+        "verdict": "unverifiable",
+        "note": "No source discusses queenside castling in this line; a generic claim.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

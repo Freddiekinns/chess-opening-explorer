@@ -1,0 +1,46 @@
+{
+  "slug": "scotch-game-steinitz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Steinitz Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/8/3NP2q/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black attacks e4 with the queen at once. White usually defends with 5.Nc3 and develops, gaining time on the queen with Nb5 or Be2 ideas, while Black plays ...Bb4 and tries to keep the e4 pressure. The game is open and tactical, and the early queen can become a target.",
+  "white_ideas": [
+    { "idea": "5.Nc3 Bb4 and develop with tempo against the exposed queen" },
+    { "idea": "5.Qd3 or Nb5 ideas to harass the queen and exploit the open centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure e4 and play for a quick lead with ...Bb4, ...Nf6" },
+    { "idea": "Exchange pieces at c6 and keep the queen safe" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White's knight on d4 and Black's early queen on h4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early queen sortie and tactics over e4 and the f2 and d4 squares; unbalanced and risky." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable for Black but considered slightly worse, as the queen is exposed." },
+    "structure": { "notes": "Open lines straight away; the game turns on piece activity." },
+    "approach": { "notes": "Strong players rarely choose 4...Qh4." },
+    "level": { "reason": "understanding", "notes": "Needs concrete tactical care but not a long memorised line." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "5.Nb5 Bb4+", "moves": "5.Nb5 Bb4+ 6.c3 Qxe4+", "how": "A sharp tactical branch where Black regains the pawn" }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "The early queen and open centre bring tactics for both sides." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable, slightly inferior for Black, not refuted." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "The d-pawn trade leaves open lines straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose 4...Qh4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plain plans but tactical alertness needed." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black's queen comes out early and White gains tempi on it." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "four-knights-game-scotch-variation-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Four Knights Game: Scotch Variation Accepted",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/8/3pP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "four-knights-game-scotch-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White opens the centre and the usual line is 5.Nxd4 Bb4 6.Nxc6 bxc6 7.Bd3 d5 8.exd5 cxd5 9.O-O O-O 10.Bg5 c6 11.Qf3. White has active pieces and a small initiative, Black has a sound but slightly passive position with the bishop pair gone and a damaged queenside. Black can also play 5...Bc5 or 5...Nxd4 for different structures.",
+  "white_ideas": [
+    { "idea": "Trade on c6 to damage Black's pawn structure, then develop with Bd3 and O-O." },
+    { "idea": "Pin the knight with Bg5 and use the initiative." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...d5 and trade pieces to simplify." },
+    { "idea": "Use the half-open b-file and the bishop pair to counter." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...d5 and exd5 with Black's doubled c-pawns turned into c6 and d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open, active play but fewer early risks. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The d4 pawn comes straight back." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Pawns come off in the centre early; open lines for the pieces." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Intermediate; plans are easy to see." }
+  },
+  "plan_phrases": ["lead in development", "doubled pawns"],
+  "sublines_that_differ": [
+    { "name": "5...Bc5", "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4 5. Nxd4 Bc5", "how": "Black accepts a worse structure for activity." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Active but not forcing; Black is safe." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "The d4 pawn is recaptured at once." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected line." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Open lines for the pieces early, as in the Scotch." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Moderate theory and clear plans." },
+    "plans": { "value": ["lead_in_development", "doubled_pawns"], "reason": "White's activity plays against Black's damaged queenside." }
+  }
+}

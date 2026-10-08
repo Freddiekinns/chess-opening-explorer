@@ -1,0 +1,46 @@
+{
+  "slug": "pirc-defense-byrne-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Byrne Variation",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Bg5",
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/6B1/3PP3/2N5/PPP2PPP/R2QKBNR b KQkq - 1 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the f6 knight with 4.Bg5 and usually plays Qd2 and O-O-O, or Nf3 with Qd2, keeping the pin and the h6-g5 ideas in reserve. Black plays ...Bg7 and either ...h6 and ...g5 to hit the bishop or ...c6 and ...b5 with queenside play. White has the extra space and often an attack; Black counters with ...c5 or ...e5 once castled.",
+  "white_ideas": [
+    { "idea": "Play Qd2, Nf3 and O-O-O, aiming for a pawn storm with h4 and Bh6." },
+    { "idea": "Use the Bg5 pin to restrain ...e5 and ...c5 and hold the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the bishop with ...h6 and ...g5 and use the Nh5 manoeuvre." },
+    { "idea": "Keep the king safe and hit the centre with ...c5 or ...e5 once castled." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against a fianchettoed Black king and ...c5 or ...e5 breaks." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced: White's kingside play against Black's counterplay; the ...h6/...g5 lines are particularly sharp. Judged from 5.Qd2 and 5.Nf3 lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A mainstream Pirc line; sound for both." },
+    "structure": { "notes": "Centre tension with e4/d4 against ...c5/...e5 breaks, not locked." },
+    "approach": { "notes": "A normal White try against the Pirc." },
+    "level": { "reason": "understanding", "notes": "Black needs to know how to meet the pin and the attack." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "opposite-side castling"],
+  "sublines_that_differ": [
+    { "name": "4...c6", "moves": "4... c6", "how": "Quieter Black set-up with ...Qa5 and ...b5." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Pirc positions are unbalanced; the ...h6/...g5 lines and opposite-side castling are risky." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A mainstream Pirc line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal main-line White try against the Pirc." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans matter more than long forced theory." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White build a centre and attacks it from the flanks." }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "sicilian-defense-wing-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Wing Gambit",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. b4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White offers the b-pawn for 2...cxb4 to deflect Black's c-pawn and build a big e4/d4 centre, usually with a3 and Bb2 or Nf3. Black can keep the pawn and often answers 3.a3 with ...d5 to take the centre. White gets development and open lines for the pawn; if Black simply develops accurately, White's compensation is thin.",
+  "white_ideas": [
+    { "idea": "Gain a centre with d4 and a3 after ...cxb4, then develop with Bb2 and Nf3" },
+    { "idea": "Use the open a- and b-files and the long diagonal for compensation" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn and strike in the centre with ...d5 to cut off White's plan" },
+    { "idea": "Return the pawn at the right moment to consolidate and keep a clean extra tempo" }
+  ],
+  "typical_structures": [{ "structure": "White centre pawns e4/d4 with a-file and b-file open; Black queenside pawns reduced after ...cxb4 and ...bxa3" }],
+  "axis_evidence": {
+    "character": { "notes": "Open and forcing after 3.a3 d5 4.exd5 Qxd5 5.Nf3: White plays for development and the long diagonal, Black must be careful. Known for tactical imbalance." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the b-pawn in the main lines." },
+    "soundness": { "notes": "Strong players consider the compensation insufficient; fine as a surprise weapon only." },
+    "structure": { "notes": "Still a Sicilian with a half-open c-file and an asymmetric centre; the b-file and a-file also open. Semi-open." },
+    "approach": { "notes": "Played by strong players only as an occasional surprise." },
+    "level": { "reason": "both", "notes": "Plenty of tactical traps for both sides; the compensation is hard to judge." }
+  },
+  "plan_phrases": ["lead in development", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Deferred Wing Gambit", "moves": "2. Nf3 d6 3. b4", "how": "Black has not committed yet and can decline with ...Nf6 or ...e5." },
+    { "name": "Marshall Variation", "moves": "2. b4 cxb4 3. a3 d5", "how": "Black gives back nothing and strikes at once, the usual test." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Pawn sacrifice, open lines and a race between White's development and Black's extra pawn." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives the b-pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "Engines and strong players do not think the compensation is enough." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "It is a Sicilian with a half-open c-file and an asymmetric centre." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose it other than as a surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but assessing the compensation takes judgement; dubious so not for beginners." },
+    "plans": { "value": ["lead_in_development", "central_pawn_majority"], "reason": "White builds a centre and development lead for the pawn." }
+  }
+}

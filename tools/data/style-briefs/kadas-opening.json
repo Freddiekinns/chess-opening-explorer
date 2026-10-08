@@ -1,0 +1,46 @@
+{
+  "slug": "kadas-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening",
+    "eco": "A00",
+    "moves": "1. h4",
+    "fen": "rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq - 0 1"
+  },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White opens with the rook's pawn, gaining space on the kingside and preparing h5, Rh3 or a Grob-style bishop on the long diagonal. It loses time against a normal centre, so Black simply builds with ...d5, ...e5 and ...Nf6 and White usually transposes into a queen's pawn or flank game. Almost no theory and it scores mainly through surprise.",
+  "white_ideas": [
+    { "idea": "Gain space with h5, then Nc3, d4, Nf3 as in a delayed queen's pawn game." },
+    { "idea": "Sometimes Rh3 or a Grob-like g3/Bg2 set-up; Croon's Gambit with h5-h6 is a sideline." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...d5 and ...e5 and develop normally." },
+    { "idea": "Exploit the extra tempo and the weakened g4 and kingside squares." }
+  ],
+  "typical_structures": [
+    { "structure": "Normal queen's pawn or flank structures with White's h-pawn advanced and little else gained." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "No fixed character; random-looking play where White is a tempo behind and the position is balanced or slightly worse for White." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line; Croon's Gambit is a rare branch." },
+    "soundness": { "notes": "Strong players consider 1.h4 a wasted tempo that is inaccurate rather than refuted." },
+    "structure": { "notes": "Centre is undecided; White's flank pawn move says nothing about structure." },
+    "approach": { "notes": "Seldom chosen by strong players; picked for surprise." },
+    "level": { "reason": "neither", "notes": "Hardly any theory, but not a good repertoire base, so never beginner." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "Croon's Gambit", "moves": "1.h4 d5 2.h5 e5 3.h6", "how": "Pawn sacrificed for open lines." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet development with no fixed sharpness; low confidence given the oddity." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "No material is given in the main line." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "The h-pawn push wastes time against a normal centre." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Flank opening with the centre undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever choose it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious, so never beginner; little theory." },
+    "plans": { "value": [], "reason": "No recognised plan from the list." }
+  }
+}

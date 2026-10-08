@@ -1,0 +1,312 @@
+{
+  "slug": "sicilian-defense-najdorf-variation",
+  "root": {
+    "name": "Sicilian Defense: Najdorf Variation",
+    "eco": "B90",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+    "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence, Najdorf Variation",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Najdorf_Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Poisoned Pawn Variation",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Poisoned_Pawn_Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Sicilian Najdorf Variation: Lines, Ideas & Traps (2026)",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/sicilian-najdorf/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Sicilian Najdorf: Interactive Model Games & Main Ideas",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/sicilian-najdorf.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays 5...a6 to stop Nb5 and Bb5, prepare ...b5 and keep the choice between ...e5 and ...e6 open. White's sixth move then decides the game: 6.Be3 (English Attack) and 6.Bg5 (Poisoned Pawn lines) lead to opposite-side castling with a kingside pawn storm against ...b5-b4 queenside counterplay, while 6.Be2 and 6.Bc4 are quieter or more positional. The play is concrete, double-edged and heavily analysed, with theory running 25+ moves in the sharpest lines, and it is a main weapon at the top (Fischer, Kasparov, still current). Sources judge it fully sound and unrefuted. For a club player, the full theory is a burden in 6.Bg5 and the Poisoned Pawn, but the plans are learnable and quieter sixth moves exist.",
+  "white_ideas": [
+    {
+      "idea": "English Attack (6.Be3, f3, Qd2, O-O-O, g4, h4): kingside pawn storm after castling queenside, targeting the d6 pawn and Black's king.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "6.Bg5 and 7.f4: pin the f6 knight, build a big kingside attack with f4, Qf3, O-O-O, g4; Poisoned Pawn offers b2.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "idea": "6.Be2 (Classical / Opocensky): safer king, control of d5, a positional squeeze in the style of Karpov.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "6.Bc4 (Fischer-Sozin / Lipnitsky): hit f7 and keep tactical play, endorsed by Fischer but less popular after Black found counterplay with ...Nbd7 and ...Nc5.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Pressure the d6 pawn on the d-file, or castle long and push the f-, g-, h-pawns.",
+      "sources": [
+        "s3"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...b5 (and ...b5-b4) queenside expansion and counterplay with rooks on the c-file.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "...e5 for central space (accepting a weakness on d5), or ...e6 for a Scheveningen-style structure.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "idea": "Timely ...d5 break to free the position.",
+      "sources": [
+        "s4"
+      ]
+    },
+    {
+      "idea": "Poisoned Pawn: 6.Bg5 e6 7.f4 Qb6 8.Qd2 Qxb2, grabbing b2 and defending against the attack; only 10.e5 is regarded as promising for White according to s1/s2's summary.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian: White d4 pawn traded for Black's c-pawn, giving White the open d-file and Black the half-open c-file; Black pawns on a6, d6, e6/e5, b5.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "structure": "...e5 structure: Black pawn on e5 and d6, hole on d5, White knight to b3/f3 and d5 ideas; often more closed in the centre.",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "structure": "Scheveningen-type structure (pawns d6 and e6) after an early ...e6.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sources use 'flexible, sharp, deep theory', 'razor-sharp', and describe opposite-side castling races and sacrificial play (s1, s3, s4). The Poisoned Pawn is 'some of the sharpest, most analysed theory in all of chess' (s3): the slightest inaccuracy is fatal for either side (s2). Quieter White options exist (6.Be2 positional), but the Najdorf as a whole is a concrete, double-edged fight.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material offered at the root. Inside the Najdorf, 6.Bg5 e6 7.f4 Qb6 8.Qd2 is a pawn offer by White that Black accepts with 8...Qxb2 (Poisoned Pawn), and Black can sacrifice an exchange or pawn in other lines; these are sublines, not the character of the root.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "soundness": {
+      "notes": "Fully sound for Black and unrefuted. Wikipedia quotes the 'Cadillac' or 'Rolls-Royce' of openings reputation and says Fischer called it one of the greatest creations in chess theory; Kasparov, Anand, Karpov and others played it (s1, s2). Master-game results are balanced (28% White / 49% draw / 22% Black) per s3, which I could not verify. The Poisoned Pawn has been analysed very deeply; Burgess (2010) judges the b2 pawn 'not too heavily laced with arsenic' (s2). No source reports an objective edge for either side.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "structure": {
+      "notes": "Sicilian Defence structure: the centre is partly open, with a half-open c-file for Black and d-file for White. The ...e5 lines close the centre somewhat and leave d5 weak, but pawn tension and breaks (...d5, e4-e5, f4-f5) persist. Opposite-side castling means play is on the wings, not a locked centre.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "approach": {
+      "notes": "A line within a defence, not a system. It remains 'a main weapon at the very top' (s3) and is among the most-analysed lines in chess, so firmly mainstream. White's sixth-move options (22 distinct moves per s1's summary; eight major per s4) make it different structures against different set-ups.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Memory: huge theory, with the Poisoned Pawn and 6.Bg5/7.f4 'extremely well researched' and demanding specialist preparation (s2, s3); eight major sixth-move options (s4). Understanding: sources say a sub-master player need not memorise every line and can make do with the plans behind 6.Bg5, 6.Be3 and 6.Be2 (s3), and that success needs knowing plans against several different White set-ups, 'the sixth move changes everything' (s4). So the burden is memory in the main sharp lines and understanding in the rest; it is not an opening a beginner gets away with.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "English Attack",
+    "opposite-side castling pawn storm",
+    "...b5-b4 queenside counterplay",
+    "...e5 central break",
+    "pressure on d6",
+    "Poisoned Pawn",
+    "Scheveningen structure",
+    "Fischer-Sozin Bc4",
+    "queenside expansion with a6 and b5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "English Attack",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3",
+      "how": "Current modern main line; opposite-side castling and pawn storms; very concrete (s1, s3, s4)."
+    },
+    {
+      "name": "6.Bg5 and the Poisoned Pawn",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Qb6 8. Qd2 Qxb2",
+      "how": "Hyper-theoretical; White effectively offers a pawn, and the slightest slip is fatal; the sharpest line in the tree (s2)."
+    },
+    {
+      "name": "6.Be2 (Classical / Opocensky)",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2",
+      "how": "Quieter, positional, Karpov-style; White aims for a safe king and squeeze; different character from the English Attack (s1, s3, s4)."
+    },
+    {
+      "name": "6.Bc4 (Fischer-Sozin / Lipnitsky)",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bc4",
+      "how": "Early pressure on f7 with tactical play; less popular since Black found ...Nbd7 and ...Nc5 counterplay (s1, s4)."
+    },
+    {
+      "name": "6.f3 / 6.h3 / 6.a4 / 6.g3",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. f3",
+      "how": "Minor sixth-move options, each leading to a different middlegame (s4); 6.f3 is a high-traffic line in the subtree and can transpose to English Attack set-ups (own understanding)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Najdorf is arguably the most famous and deeply analysed opening in chess.",
+        "verdict": "supported",
+        "note": "Its Rolls-Royce status, Fischer's and Kasparov's loyalty and the depth of Poisoned Pawn analysis support it.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "5...a6 prevents White's knight from jumping to b5 while preparing queenside expansion with ...b5.",
+        "verdict": "supported",
+        "note": "Stated purposes of 5...a6: deny b5 and prepare ...b5, keeping the structure flexible.",
+        "sources": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It leads to sharp and complex middlegames.",
+        "verdict": "supported",
+        "note": "Sharp is the standard description.",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It is the weapon for ambitious, tactical players willing to engage in deep theoretical battles.",
+        "verdict": "supported",
+        "note": "It appeals to players who want sharp, double-edged games.",
+        "sources": [
+          "s3"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: launch a kingside attack with Be3, f3, g4, h4, especially after castling long, while targeting d6.",
+        "verdict": "supported",
+        "note": "This is the English Attack plan; pressure on d6 is a named idea.",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "Black: create queenside counterplay with ...b5-b4 to undermine the centre and attack e4.",
+        "verdict": "supported",
+        "note": "...b5 queenside expansion is Black's main plan; ...b4 attacks the c3 knight that defends e4.",
+        "sources": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "Black: fight for control of d5, often by preparing the ...e5 break to challenge White's central space advantage.",
+        "verdict": "wrong",
+        "note": "...e5 gains space but weakens d5 (s1): White's pieces use d5 as an outpost. Black's central break is ...d5, not control of d5 via ...e5. The claim reverses the relationship between ...e5 and d5.",
+        "sources": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "claim": "Both sides race to attack the opposing king, frequently with opposite-side castling and sacrificial play.",
+        "verdict": "supported",
+        "note": "True for the English Attack and 6.Bg5 lines; not for 6.Be2 (own understanding).",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 4
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "english-opening-caro-kann-defensive-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Caro-Kann Defensive System",
+    "eco": "A11",
+    "moves": "1. c4 c6",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black prepares ...d5 with a Caro-Kann or Slav pawn, so the game usually becomes a Slav-type structure with colours reversed on the tempo. White chooses between Nf3/Nc3 and ...d5 lines that transpose to the Slav or QGD, or g3 and a fianchetto. Quiet, manoeuvring play with few early tactics.",
+  "white_ideas": [
+    { "idea": "Nf3, Nc3 or g3/Bg2, keeping d4 and e4 options open" },
+    { "idea": "Transpose to Slav or Catalan-style set-ups after 2.Nf3 d5 3.e3 or 3.d4" }
+  ],
+  "black_ideas": [
+    { "idea": "...d5 supported by c6, then ...Bf5 or ...e6 and ...Nf6" },
+    { "idea": "Solid pawn chain with easy development and a sound centre" }
+  ],
+  "typical_structures": [
+    { "structure": "Slav structure with c6/d5 against c4 and d3 or d4" },
+    { "structure": "Exchange on d5 giving a symmetrical or half-open c-file position" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet Slav-style positions; Black has a solid centre and few weaknesses." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "Centre not fixed: transposes to Slav/QGD, English fianchetto structures; flexible." },
+    "approach": { "notes": "A reply to 1.c4, not a repertoire system; standard." },
+    "level": { "reason": "neither", "notes": "Clear plans and little theory; fine for Intermediate players." }
+  },
+  "plan_phrases": ["transposition to Slav", "fianchetto", "solid centre"],
+  "sublines_that_differ": [
+    { "name": "2.e4", "moves": "1. c4 c6 2. e4", "how": "Becomes a Caro-Kann like game with extra c4 space for White, sharper." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Black builds a Slav-style pawn chain and few forcing lines arise." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Both sides play standard, sound set-ups." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Pawn centre is undecided and transposes to Slav, QGD or English structures." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal reply to the English, not a system or a surprise." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Easy plans but transpositions need some Slav knowledge." },
+    "plans": { "value": [], "reason": "Too many transpositions to name one plan." }
+  }
+}

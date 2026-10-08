@@ -1,0 +1,39 @@
+{
+  "slug": "kings-gambit-declined-keenes-defense",
+  "tier": "unsourced",
+  "root": { "name": "King's Gambit Declined: Keene's Defense", "eco": "C30", "moves": "1. e4 e5 2. f4 Qh4+", "fen": "rnb1kbnr/pppp1ppp/8/4p3/4PP1q/8/PPPP2PP/RNBQKBNR w KQkq - 1 3" },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black answers the King's Gambit with an early check on h4, trying to disrupt White's king before developing. White usually blocks with 3.g3 and gets a lead in development and open play while the black queen has to run. I am unsure of the exact theory, but it is regarded as a risky early queen sortie that stronger players avoid.",
+  "white_ideas": [
+    { "idea": "Block with g3 to gain a tempo on the queen, then develop quickly with Nf3 and Nc3." },
+    { "idea": "Use the open f- and e-files and a lead in development to punish the early queen." }
+  ],
+  "black_ideas": [
+    { "idea": "Grab e4 with the queen or keep ...exf4 pressure to exploit the weakened kingside." },
+    { "idea": "Develop with tempo against the queen's pursuer and aim for an early queen trade." }
+  ],
+  "typical_structures": [
+    { "structure": "Open position with White's f4/e4 pawns under attack and the black queen exposed on h4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early queen sortie and open files give forcing, risky play for both kings." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Root is a declined line; the f4 pawn is not taken, though Black may later grab e4." },
+    "soundness": { "notes": "Generally rated dubious for Black; White gets development for the exposed queen. Unsure." },
+    "structure": { "notes": "Open lines for pieces after early pawn exchanges." },
+    "approach": { "notes": "Seldom chosen by strong players." },
+    "level": { "reason": "memory", "notes": "Rarely seen; punishing it needs known tactics." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Early queen check and open files make play forcing and risky." },
+    "gambit": { "value": "none", "confidence": 0.55, "reason": "Declined King's Gambit line, no pawn given up in the root." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.55, "reason": "Early queen sortie is generally considered inferior." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open e- and f-files and quick piece play." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose 2...Qh4+." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Rare tactical line, dubious so never beginner." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black's queen is out early and White gains tempi." }
+  }
+}

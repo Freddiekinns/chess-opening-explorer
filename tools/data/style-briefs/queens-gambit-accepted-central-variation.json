@@ -1,0 +1,55 @@
+{
+  "slug": "queens-gambit-accepted-central-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Central Variation, Alekhine System",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. e4 Nf6",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pPP3/8/PP3PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "queens-gambit-accepted-saduleto-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White grabs a big pawn centre with 3.e4 while Black has taken on c4. After 4.e5 Nd5 5.Bxc4 Nb6 6.Bb3 White has space and a lead in development but a target on e5 and d4. After 4.Nc3 Black can play Nxe4 or e5 lines. Black aims to attack the centre with ...c5, ...Nc6 and ...Bg4, and the game is open and tactical.",
+  "white_ideas": [
+    { "idea": "Maintain the big e4/d4 centre and recapture c4 with the bishop for development" },
+    { "idea": "Use space to harass Black's pieces with e5, Nc3 and Bxc4" },
+    { "idea": "Attack quickly against Black's undeveloped queenside" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...c5, ...Nc6 and ...Bg4 or ...e6" },
+    { "idea": "Hit e5 with ...Nc6, ...Bg4, ...Qd7 and trade the space advantage away" },
+    { "idea": "Keep the extra c4 pawn only if it is safe" }
+  ],
+  "typical_structures": [
+    { "structure": "White centre pawns on d4 and e4 or e5 against Black's c-pawn and ...c5 break" },
+    { "structure": "Space advantage for White with a vulnerable chain on d4/e5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete play with White's centre under direct attack; both sides have tactical chances but White's centre can overextend." },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White's c4 pawn is regained with Bxc4 after a few moves; Black's capture is not a real gambit."
+    },
+    "soundness": { "notes": "Considered playable but slightly risky for White; Black gets comfortable play if accurate." },
+    "structure": { "notes": "Large central pawns for White that Black attacks with ...c5, resulting in open lines." },
+    "approach": { "notes": "A recognised, if less common, anti-QGA try, played by strong players occasionally." },
+    "level": { "reason": "both", "notes": "Needs accurate move orders and known critical lines on both sides, but not a Najdorf-level load." }
+  },
+  "plan_phrases": ["big centre", "space advantage", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Greco Variation", "moves": "3.e4 b5", "how": "Black tries to hold the pawn, creating a different, more speculative game." },
+    { "name": "McDonnell Defense", "moves": "3.e4 e5", "how": "Black counterstrikes in the centre and gets an open game with exchanges." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "White's centre is attacked immediately and tactical lines are common." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "The c4 pawn is regained by Bxc4 in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable for both sides, equal-ish." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "White's centre is hit by ...c5 and the game opens quickly." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Less common but played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.55, "reason": "Clear plans but a few critical lines to know." },
+    "plans": { "value": ["central_pawn_majority", "space_advantage"], "reason": "White's big centre and space against Black's ...c5 break." }
+  }
+}

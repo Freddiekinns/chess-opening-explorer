@@ -1,0 +1,46 @@
+{
+  "slug": "slav-defense-slav-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Slav Gambit, Alekhine Attack",
+    "eco": "D10",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 dxc4 4. e4",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/2pPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays 4.e4 instead of retaking c4, building a big centre and offering the pawn. The main reply 4...b5 supports the extra pawn, and White continues 5.a4 to attack the b5 pawn, with a queenside fight and open lines for development. Black can keep the pawn but must be careful with the king and the weakened queenside.",
+  "white_ideas": [
+    { "idea": "5.a4 to undermine b5, then Nf3 and Bxc4 or Bd2 with a lead in development." },
+    { "idea": "Use the e4-d4 centre and open lines to attack before Black consolidates." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the c4 pawn with ...b5 and ...Bb7 or ...e6." },
+    { "idea": "Return the pawn at the right moment to complete development." }
+  ],
+  "typical_structures": [
+    { "structure": "White centre pawns e4 and d4 against Black's b5/c4 advanced pawns and c6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Pawn down for White, open lines and forcing play after 4...b5 5.a4; both kings can be exposed." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can try to hold c4 with ...b5; White has no forced regain." },
+    "soundness": { "notes": "Played by strong players occasionally; thought roughly sound with compensation, not refuted." },
+    "structure": { "notes": "Centre opens as e4 and d4 meet c-pawn and pieces; lines open early." },
+    "approach": { "notes": "Less common sideline but strong players do play it; still standard." },
+    "level": { "reason": "memory", "notes": "Needs specific forcing lines after 4...b5 5.a4 to know the right moves." }
+  },
+  "plan_phrases": ["Lead in development", "Central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Quiet 4...e6", "moves": "4...e6 5.Bxc4", "how": "Black returns the pawn early; no gambit, calm play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Open lines, a pawn down for White and forcing play after 4...b5 5.a4." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White offers c4 and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Compensation is real and the line is still played by strong players." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Game turns on open lines for pieces after e4 against the c4 pawn." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Rare but played by strong players, not a surprise-only line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Forcing queenside lines must be known precisely." },
+    "plans": { "value": ["lead_in_development", "central_pawn_majority"], "reason": "White trades a pawn for time and a broad centre." }
+  }
+}

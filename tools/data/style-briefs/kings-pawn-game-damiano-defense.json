@@ -1,0 +1,46 @@
+{
+  "slug": "kings-pawn-game-damiano-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Damiano Defense",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f6",
+    "fen": "rnbqkbnr/pppp2pp/5p2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black defends e5 with ...f6, which blocks the knight's best square and weakens the king. White wins at least a pawn or a big attack with 3.Nxe5, since 3...fxe5 4.Qh5+ g6 5.Qxe5+ Qe7 6.Qxh8 loses the rook. Black's only decent try is 3...Qe7 4.Nf3 d5, a pawn down, for development. The line is considered a mistake that scores only through surprise.",
+  "white_ideas": [
+    { "idea": "Take the pawn with 3.Nxe5 and, after ...fxe5, win material with Qh5+." },
+    { "idea": "After 3...Qe7 4.Nf3 d5 5.d4, keep the extra pawn and develop calmly." }
+  ],
+  "black_ideas": [
+    { "idea": "Hope White falls into the ...Qe7 and ...d5 lines or takes the wrong way." },
+    { "idea": "Develop quickly with ...Qe7, ...d5 and ...Nc6 for a pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file after the exchange of e-pawns, with White a pawn up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Trappy and loose; Black's king and the f6 square are weak, and a slip loses at once." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 3.Nxe5 Qe7 4.Nf3 d5 Black is a pawn down for development; White can keep it." },
+    "soundness": { "notes": "Strong players consider it a mistake; 3.Nxe5 gives White a clear edge." },
+    "structure": { "notes": "Open centre once the e-pawns are gone." },
+    "approach": { "notes": "Strong players hardly ever play it; chosen for surprise." },
+    "level": { "reason": "neither", "notes": "Dubious line, so never Beginner." }
+  },
+  "plan_phrases": ["lead in development", "surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Damiano Gambit", "moves": "1. e4 e5 2. Nf3 f6 3. Nxe5 fxe5 4. Qh5+ g6 5. Qxe5+ Qe7 6. Qxh8", "how": "Black loses a rook for the knight; refuted." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Trappy with weakened king and early forcing tactics." },
+    "gambit": { "value": "black", "confidence": 0.5, "reason": "Black is a pawn down after 3...Qe7 4.Nf3 d5, and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.95, "reason": "Considered a mistake that White refutes with 3.Nxe5." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open e-file after the central exchanges." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Played almost only for surprise." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.7, "reason": "Dubious, so never Beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black's compensation is quick development for the pawn." }
+  }
+}

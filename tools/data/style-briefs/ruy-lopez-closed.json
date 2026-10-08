@@ -1,0 +1,46 @@
+{
+  "slug": "ruy-lopez-closed",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Closed",
+    "eco": "C84",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7",
+    "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "The main line is 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3, a slow manoeuvring fight in which White builds the c3/d4 centre and reroutes the knight via d2-f1-g3 while Black seeks counterplay with ...Na5, ...c5 and ...Bb7. Black has Breyer, Chigorin, Zaitsev and Smyslov set-ups, and White has Anti-Marshall options. The centre stays in tension and the position is slowly manoeuvring with a small White initiative. A major pillar of 1.e4 e5 theory.",
+  "white_ideas": [
+    { "idea": "Re1, Bb3, c3 and h3 to build a d4 centre, then Nbd2-f1-g3" },
+    { "idea": "Press a small space edge and play d4 or d5 when ready, with kingside attacking chances" }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...b5, ...d6, ...O-O and ...Na5 and ...c5 to challenge d4" },
+    { "idea": "Use the Chigorin or Breyer rerouting to c6/b7 and attack e4" }
+  ],
+  "typical_structures": [
+    { "structure": "Closed Ruy Lopez centre with White c3/d4 vs Black e5/d6 and tension in the centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A strategic fight with a small White initiative and Black holding well; anchor Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line; the Marshall is a separate sub-line." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre in tension and undecided; the taxonomy lists the Closed Ruy Lopez as Flexible." },
+    "approach": { "notes": "A mainstream main line." },
+    "level": { "reason": "both", "notes": "Deep theory, and strategically hard plans for both sides; Advanced." }
+  },
+  "plan_phrases": ["space advantage", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "Marshall Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5", "how": "A Black gambit with forced theory and a kingside attack, Sharp." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.8, "reason": "Anchor Balanced: strategic and not forcing, though not a fortress." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The main line gives no material." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A top-level pillar." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "The Closed Ruy Lopez is Flexible in the taxonomy." },
+    "approach": { "value": "standard", "confidence": 0.95, "reason": "A mainstream line." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.6, "reason": "Deep theory and subtle plans." },
+    "plans": { "value": ["space_advantage", "knight_outpost"], "reason": "White's d4 centre and the Nbd2-f1-g3 rerouting." }
+  }
+}

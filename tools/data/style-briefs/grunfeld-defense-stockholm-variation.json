@@ -1,0 +1,46 @@
+{
+  "slug": "grunfeld-defense-stockholm-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Stockholm Variation",
+    "eco": "D80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bg5",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 1 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the knight with 4.Bg5 and Black usually responds 4...Ne4, when 5.Nxe4 dxe4 or 5.Bh4 Nxc3 6.bxc3 c5 give unbalanced pawn structures. White gets a strong centre and possible bishop pair, while Black has queenside counterplay and the long diagonal. Black has several equalising set-ups and strong players use it as a safe anti-Grünfeld.",
+  "white_ideas": [
+    { "idea": "Build the centre with e3 and Nf3, using the bishop pair or space." },
+    { "idea": "In the Taimanov line accept doubled c-pawns for an open b-file and active pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike the centre with ...c5 and ...Nc6 and use the g7 bishop." },
+    { "idea": "Capture on c3 to give White doubled pawns and use the dark squares." }
+  ],
+  "typical_structures": [
+    { "structure": "White's doubled c-pawns against Black's ...c5 break in the Taimanov line; Grünfeld centre tension otherwise." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced pawn structures and piece play, but White's approach is a calmer sideline than the main Grünfeld." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "Centre is in tension and pawns may be doubled; no locked centre." },
+    "approach": { "notes": "A recognised anti-Grünfeld used by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs structural judgement with doubled pawns more than raw memory." }
+  },
+  "plan_phrases": ["doubled pawns", "hypermodern centre", "bishop pair"],
+  "sublines_that_differ": [
+    { "name": "5.Nxe4 dxe4", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bg5 Ne4 5. Nxe4 dxe4", "how": "Simplifying line leading to a more positional game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Unbalanced structures but a calmer sideline than the main Grünfeld." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No sacrifice." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Centre in tension and pawn structure unsettled." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Structural play with moderate theory." },
+    "plans": { "value": ["doubled_pawns", "hypermodern_centre"], "reason": "Doubled c-pawns for White and Black's attack on the centre." }
+  }
+}

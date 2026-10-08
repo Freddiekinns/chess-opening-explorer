@@ -1,0 +1,46 @@
+{
+  "slug": "zukertort-opening-lisitsyn-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Lisitsyn Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 f5 2. e4",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening-dutch-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White strikes at the Dutch with 2.e4, offering a pawn: 2...fxe4 3.Ng5 hits e4 and eyes f7, and White follows with d3 to open lines. Black can keep the pawn with ...Nf6 or ...d5, but must watch the tricks around f7 and h7. Play is sharp and unbalanced, a surprise weapon rather than a theoretical try.",
+  "white_ideas": [
+    { "idea": "Win back the e4 pawn with Ng5 and d3, or Nxe4 with tempo" },
+    { "idea": "Attack f7 and the kingside with Ng5, Qh5+ and Bc4" },
+    { "idea": "Open the e- and f-files for rapid development" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn with ...Nf6/...d5 and support e4" },
+    { "idea": "Develop quickly and neutralise Ng5 with ...e5 or ...Nf6" },
+    { "idea": "Trade queens and cash in the pawn" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with Black e4 pawn under pressure and White's knight on g5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early gambit with direct attack and tactics for both sides." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 2...fxe4 3.Ng5 d5 4.d3 e5 Black can keep the pawn." },
+    "soundness": { "notes": "Considered dubious: Black has easy ways to hold the pawn." },
+    "structure": { "notes": "Open lines, e- and f-files." },
+    "approach": { "notes": "Very rare among strong players; a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Needs knowing the tricks; dubious so never Beginner." }
+  },
+  "plan_phrases": ["rapid development for a pawn", "attack on f7"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Early gambit and direct tactical play." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White offers the e-pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Black holds the pawn with correct play." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "Open e- and f-files and quick piece play." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Rarely chosen by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Trap-based gambit; dubious so not Beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "Ng5 and open lines hit f7 for the sacrificed pawn." }
+  }
+}

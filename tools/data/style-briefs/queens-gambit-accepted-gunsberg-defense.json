@@ -1,0 +1,49 @@
+{
+  "slug": "queens-gambit-accepted-gunsberg-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Gunsberg Defense",
+    "eco": "D21",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black hits the d4 pawn at once with ...c5 and gives up some central control to hold the c4 pawn. White plays 4.e3 cxd4 5.Bxc4 or 5.exd4, regaining the pawn with the better centre; 4.d5 gives a Benoni-like structure. It is a rare, slightly passive Black try; White generally gets a small edge.",
+  "white_ideas": [
+    { "idea": "Regain the c4 pawn with e3 and Bxc4 and enjoy the space" },
+    { "idea": "Play d5 for a Benoni-type structure with Black's pawn on c4 weak" },
+    { "idea": "Develop quickly and use the lead in development" }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge White's centre with ...cxd4 and ...Nc6" },
+    { "idea": "Develop ...e6 and ...Nf6 and aim for ...a6/...b5" },
+    { "idea": "Keep the c4 pawn only as long as it is useful" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after cxd4 with White pieces active" },
+    { "structure": "Benoni-type structure after d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Moderate, open play; neither forcing nor strongly sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn is regained; the QGA is not a gambit." },
+    "soundness": { "notes": "Sound, slightly worse for Black." },
+    "structure": { "notes": "Centre opens after cxd4, as in the QGA." },
+    "approach": { "notes": "A minor Black option, used occasionally." },
+    "level": { "reason": "understanding", "notes": "Few forcing lines; plans understood by general principles." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "4.d5", "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 c5 4. d5 e6", "how": "A Benoni-like structure with Black's c4 pawn and White's space." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open QGA play, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "The c4 pawn is regained as in the QGA." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Slightly inferior but not refuted." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "The centre opens after ...cxd4; d5 lines are more Benoni-like." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A rare but respectable line; not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "General principles and a few concrete lines." },
+    "plans": { "value": [], "reason": "No dominant plan; structure depends on White's choice." }
+  }
+}

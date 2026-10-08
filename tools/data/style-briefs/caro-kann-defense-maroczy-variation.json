@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-maroczy-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Maróczy Variation",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. f3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White supports e4 with f3, the Fantasy Variation. Black usually plays 3...dxe4 4.fxe4 e5 for open play, or 3...e6 for a French-like game. White gets a strong centre and a quick Nc3 or Bc4 development, while Black strikes with ...e5 or ...Qb6.",
+  "white_ideas": [
+    { "idea": "Keep the e4/d4 centre with fxe4 and develop with Nf3, Bc4, Nc3" },
+    { "idea": "Pressure in the centre with Bd3 and queenside castling-free kingside play" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at once with ...dxe4 and ...e5 for open play" },
+    { "idea": "...e6 and ...Nf6 or ...c5 for a French-like set-up" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after ...dxe4 fxe4 e5, or a French-like set-up with f3 played" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Fantasy lines are open and tactical, with the f3 move weakening White's king." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The Maróczy Gambit with 6.Bc4 is a rare sub-line; the main line gives no pawn." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre opens with ...dxe4 and ...e5 in the main lines." },
+    "approach": { "notes": "Less common than the main Caro-Kann lines but played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Plans are simple but White's king needs care." }
+  },
+  "plan_phrases": ["Lead in development"],
+  "sublines_that_differ": [
+    { "name": "Maróczy Gambit", "moves": "1. e4 c6 2. d4 d5 3. f3 dxe4 4. fxe4 e5 5. Nf3 exd4 6. Bc4", "how": "White gives a pawn for development; a true gambit, rarely played." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Open lines after ...e5 with White's king exposed." },
+    "gambit": { "value": "none", "confidence": 0.7, "reason": "The gambit is a sub-line; the main line gives no pawn." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Both sides' lines are playable." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "Centre opens after ...dxe4 and ...e5; may be semi-open." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Simple plans but tactical care needed." },
+    "plans": { "value": ["lead_in_development"], "reason": "White develops quickly behind the f3/e4 centre." }
+  }
+}

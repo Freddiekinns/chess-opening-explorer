@@ -1,0 +1,47 @@
+{
+  "slug": "semi-slav-defense-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Normal Variation",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 2 6"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black has built the Semi-Slav triangle and developed the queenside knight to d7. White chooses between 6.Bd3 (heading for the Meran after ...dxc4 Bxc4 b5), 6.Qc2 (the Anti-Meran style) and 6.b3 or 6.a3, while Black aims for ...dxc4 and ...b5 or ...e5. It leads to rich, forcing theory in the Meran and quieter play elsewhere.",
+  "white_ideas": [
+    { "idea": "Develop with Bd3 and O-O, then recapture on c4 and play e4 for central space." },
+    { "idea": "Play Qc2 and b3 or Bd3 lines that avoid the Meran, and use e4 later." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on c4 and expand with ...b5 and ...a6 in the Meran, with the ...c5 break." },
+    { "idea": "Keep ...e5 as a central break and free the c8-bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "Meran: White's e4 centre against Black's queenside pawns and ...c5 break." },
+    { "structure": "Anti-Meran: tension in the centre, with the Black light-squared bishop hemmed in until ...e5 or ...b6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Semi-Slav is known for double-edged play and long forcing lines; the Meran in particular is theoretical and the Black king is safe but the play is sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn on c4 is recaptured." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The d5/c6/e6 versus d4/e3 centre stays in tension until the c-pawn trade or ...e5; flexible." },
+    "approach": { "notes": "A main-line defence to the Queen's Gambit, standard." },
+    "level": { "reason": "memory", "notes": "Meran and its sharp offshoots need long forcing lines to be known; I am unsure of the exact main branch." }
+  },
+  "plan_phrases": ["queenside expansion", "central pawn break", "...c5 break", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "6.a3", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. e3 Nbd7 6. a3", "how": "A quieter, preparatory line with b4 and Bd3 later, less forcing than the Meran." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Semi-Slav theory is known for unbalanced, forcing play, especially in the Meran." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "The c4 pawn is regained." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound main-line theory." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre stays in tension and is resolved differently in each branch." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line defence, not a system." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "The Meran and related lines need a lot of forcing theory to be known." },
+    "plans": { "value": ["queenside_expansion", "central_pawn_majority"], "reason": "Black pushes ...b5 and ...c5 to challenge the White centre." }
+  }
+}

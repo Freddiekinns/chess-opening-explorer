@@ -1,0 +1,46 @@
+{
+  "slug": "hungarian-opening-reversed-alekhine",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Reversed Alekhine",
+    "eco": "A00",
+    "moves": "1. g3 e5 2. Nf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/5NP1/PPPPPP1P/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White fianchettoes with g3 and develops the knight to f3, hitting e5, and Black can answer with ...e4 to chase the knight (a reversed Alekhine-style tempo game) or just defend with ...Nc6. The line is a move-order idea more than a theoretical variation. Play is slow and strategic, usually transposing into King's Indian Attack, Réti or English positions.",
+  "white_ideas": [
+    { "idea": "Fianchetto and long-diagonal pressure on e5/b7" },
+    { "idea": "Play d3 and e4 to complete a King's Indian Attack set-up" },
+    { "idea": "Meet ...e4 with Nd4 and aim at the e4 pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Gain space with ...e4 and ...d5, using the loss of tempo by the knight" },
+    { "idea": "Develop ...Nc6, ...Nf6 and keep a central pawn pair" },
+    { "idea": "Fianchetto the bishop and stay compact" }
+  ],
+  "typical_structures": [
+    { "structure": "Flank-opening structures with Black's centre pawns against a g2 bishop" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, low-risk fianchetto play with few early tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound; a slow flank set-up." },
+    "structure": { "notes": "Flank opening, centre undecided." },
+    "approach": { "notes": "Part of the g3/Nf3 family; not a clear system on its own." },
+    "level": { "reason": "neither", "notes": "Easy to play but transposes widely." }
+  },
+  "plan_phrases": ["fianchetto", "flexible move order"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Slow fianchetto set-up without forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Nothing dubious in 1.g3 and 2.Nf3." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "A flank opening with an undecided centre." },
+    "approach": { "value": "standard", "confidence": 0.45, "reason": "Close to a move order; transposes into KIA, Réti or English." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple moves but the structures vary." },
+    "plans": { "value": ["fianchetto"], "reason": "The g2 bishop on the long diagonal is the core idea." }
+  }
+}

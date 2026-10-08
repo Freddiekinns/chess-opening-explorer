@@ -1,0 +1,211 @@
+{
+  "slug": "scandinavian-defense-mieses-kotroc-variation",
+  "root": {
+    "name": "Scandinavian Defense: Mieses-Kotroc Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5",
+    "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scandinavian Defense: Main Lines, Mieses-Kotrc & How to Beat It",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/scandinavian-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s2",
+      "title": "Scandinavian Defense: Complete Guide for Chess Players 2026",
+      "publisher": "Kingdom of Chess",
+      "url": "https://kingdomofchess.com/blog/scandinavian-defense",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Scandinavian Defense",
+      "publisher": "Wikipedia (read in the sibling scandinavian-defense brief, reused here)",
+      "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Scandinavian Defense: Mieses-Kotrc Main Line, Lasker Variation (search snippet only)",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Main-Line-Lasker-Variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 2...Qxd5 Black recaptures at once, gaining the pawn back but exposing the queen: White's 3.Nc3 hits it with a tempo and Black must move it again, usually 3...Qa5 (the Mieses-Kotroc proper), 3...Qd6 or 3...Qd8. Black then builds a Caro-Kann-like structure with ...c6, ...Nf6, ...Bf5 (or ...Bg4) and ...e6, aiming for central breaks with ...c5 or ...e5 and pressure on the semi-open c- and d-files. White keeps a small lead in development and a space edge, and wins nothing material if Black plays accurately. Sources describe it as solid and positional rather than sharp, low in theory, with plans that repeat from game to game, which makes it popular with club players and improvers; the drawbacks are a small space deficit and early queen exposure with traps to avoid. It is the most popular and most analysed Scandinavian line, used by Carlsen and others.",
+  "white_ideas": [
+    {
+      "idea": "Gain a tempo on the queen with 3.Nc3 and develop quickly with d4, Nf3 and Bc4 or Bd3, using the small lead in development.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Hold the d4 pawn to restrict Black's pieces and consider the d5 break; avoid wasting time chasing the queen.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Against 3...Qd6, target the queen with g3 and Bf4 set-ups.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Alternatives to 3.Nc3: 3.Nf3 or 3.d4 give White flexibility on move three.",
+      "sources": ["s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat the queen to a5 (pinning the knight on c3 once White plays d4), d6 or d8, and develop with ...c6, ...Nf6, ...Bf5/g4 and ...e6.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    {
+      "idea": "Strike in the centre with a counterattack, usually ...c5 or ...e5, and open the c- and d-files for the rooks.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Control d5 and exploit the pinned knight on c3.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Avoid tactical traps such as queen entrapment, with precise moves like ...c6.",
+      "sources": ["s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann-like structure: Black pawns on c6 and e6 with bishops outside the chain, a small space disadvantage but no weaknesses.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Semi-open c- and d-files after the central exchanges, with rooks placed on them.",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Both sides may castle on either wing; long castling by Black occurs in some lines (own understanding, unsourced).",
+      "sources": ["s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chess Doctrine: 'solid and positional rather than sharp', 'low-theory' (s1). Kingdom of Chess is more mixed: 'asymmetrical and sharp from move one' but then 'solid, active, and rich with strategic ideas' middlegames (s2). Wikipedia calls the 2...Qxd5 line the more 'positional' branch (s3). Typical play is a steady fight where Black risks little if he avoids early traps. Solid.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given. Black has recaptured the pawn, so material is level (the FEN shows equal material).",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Entirely sound: 'just as relevant and effective today as five centuries ago' (s2); the structure after 3...Qa5 is sound and not refutable (s3). Used by Carlsen. Black accepts a small space disadvantage and a development lag but nothing worse. Sound.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "The centre opens early: Black's d-pawn is gone and White's e-pawn is gone, leaving White with a d4 pawn and Black with ...c6/...e6, with semi-open c- and d-files for the rooks (s1). A Caro-Kann-like structure with central breaks (...c5, ...e5) but no locked centre. Open to semi-open; the sources do not name it, so my reading is a fairly open centre with active pieces.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A variation, not a system; a mainstream line of a recognised defence and used by Carlsen, so Standard. A set-up with a small repertoire: plans repeat in almost every game (s1), but it is played against 1.e4 only.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Judged for Black. Chess Doctrine: low theory, easy to learn, plans repeat in almost every game, ideal for improving players (s1). Kingdom of Chess: 'highly recommended for beginners' for its clear strategic ideas and lower theoretical demands, and much lighter than the Sicilian (s2). Caveat: early queen exposure and traps (queen entrapment) need care. Beginner is defensible.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "tempo on the queen with Nc3",
+    "Qa5 pin on Nc3",
+    "Caro-Kann-like c6/e6 structure",
+    "...c5 / ...e5 central break",
+    "light-squared bishop out before ...e6",
+    "pressure on semi-open c- and d-files",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3.Nc3 Qa5 (Mieses-Kotroc main line)",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5",
+      "how": "The standard line and the one most analysed; solid."
+    },
+    {
+      "name": "3.Nc3 Qd6 (Gubinsky-Melts)",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6",
+      "how": "More flexible queen; White often plays g3 and Bf4 to chase it."
+    },
+    {
+      "name": "3.Nf3 and 3.d4",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nf3 / 3. d4",
+      "how": "White avoids the tempo gain on the queen and keeps flexibility; quieter, with more choices for Black."
+    },
+    {
+      "name": "3.Nc3 Qd8",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8",
+      "how": "The occasional retreat; less popular and less active."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Scandinavian is a direct and robust challenge to 1.e4, immediately contesting the centre.",
+        "verdict": "supported",
+        "note": "True of the opening as a whole.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "By recapturing with the queen, Black accepts a temporary loss of time as White develops with tempo.",
+        "verdict": "supported",
+        "note": "3.Nc3 gains a tempo and White has a small lead in development.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "In return Black gains a solid pawn structure and a clear path for development.",
+        "verdict": "supported",
+        "note": "Caro-Kann-like c6/e6 structure and free bishop development.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It is ideal for practical players who want to avoid dense theory and aim for a playable, if slightly passive, middlegame.",
+        "verdict": "supported",
+        "note": "Low theory is stressed; 'slightly passive' matches the small space disadvantage, though Black has active counterplay with ...c5 and ...e5.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: develop with tempo by attacking the Black queen (Nc3), seize the centre with d4, and use the development lead to create pressure.",
+        "verdict": "supported",
+        "note": "Matches the sources.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: retreat the queen to a safe square (Qa5 most common), complete development (Nc6, Bf5/g4, e6), and neutralise White's initiative, often aiming for queenside counterplay.",
+        "verdict": "supported",
+        "note": "Qa5 is the most common retreat; development with Nf6, c6, Bf5 and e6 is described. The usual knight is Nf6 (the sources read mention ...Nf6 and ...c6; ...Nc6 is also played, my own understanding). Counterplay comes from central breaks and the c- and d-files more than the queenside.",
+        "sources": ["s1", "s2", "s4"]
+      },
+      {
+        "claim": "Black: castle queenside to create an imbalanced, aggressive game, often leading to mutual pawn storms.",
+        "verdict": "unverifiable",
+        "note": "Both sides may castle either way, but the sources read describe castling kingside (s4 snippet) and a solid, low-risk plan, not mutual pawn storms.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "White: control the d5 square and restrict Black's pieces, aiming to convert the space and development advantage into a lasting edge.",
+        "verdict": "supported",
+        "note": "Hold d4, restrict pieces and play for a small edge are named. White's d5 control is a goal in some lines (d5 break named in s2).",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

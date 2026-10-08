@@ -1,0 +1,156 @@
+{
+  "slug": "four-knights-game-italian-variation",
+  "root": {
+    "name": "Four Knights Game: Italian Variation",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Nc3",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Four Knights Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Four_Knights_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Four Knights Italian (win with Black)",
+      "publisher": "Chess.com blog (vitualis)",
+      "url": "https://www.chess.com/blog/vitualis/four-knights-italian-win-with-black",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "C46: Four knights, Italian variation (database statistics)",
+      "publisher": "365Chess",
+      "url": "https://www.365chess.com/eco/C46_Four_knights_Italian_variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippet: Four Knights Game results (Wikipedia, 365chess, Chess.com blog): 'a very drawish line that might be helpful against higher-rated players'",
+      "publisher": "Web search snippets",
+      "url": "https://www.365chess.com/chess-openings/Italian-Game",
+      "kind": "reference"
+    }
+  ],
+  "overview": "The position (1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Nc3, equivalent to the 3.Nc3 Nf6 4.Bc4 move order) puts White's bishop on c4 in a Four Knights set-up. Black has two main choices: 4...Bc5, transposing to a quiet Giuoco Pianissimo-type game (Italian Four Knights), or 4...Nxe4, a pseudo-sacrifice (5.Nxe4 d5 forks the bishop and knight, and after 6.Bd3 dxe4 7.Bxe4 Bd6 material is equal and the game becomes tactical). Wikipedia notes White's typical agenda of d3/d4, castling and central pressure but reports the line as regarded as inferior to the Spanish 4.Bb5 (Evans, via the page), with only occasional master use. Database statistics favour Black (about 46% Black, 36% White in 8,631 games), strongest after 4...Nxe4. The line is described as drawish at the top level.",
+  "white_ideas": [
+    { "idea": "Develop quietly (d3, O-O) and prepare the d4 break for central space", "sources": ["s1", "s2"] },
+    { "idea": "After 4...Bc5 transpose to Giuoco Pianissimo with d3 and O-O, slow manoeuvring game", "sources": ["s1"] },
+    { "idea": "After 4...Nxe4 5.Nxe4 d5 6.Bd3 dxe4 7.Bxe4 and d4 for central play, although 6.Bb5 is a blunder", "sources": ["s1", "s2"] },
+    { "idea": "Draw-ish solid line useful against stronger opposition", "sources": ["s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "4...Bc5: preserve symmetry and reach a quiet Giuoco Pianissimo-type position; ...d6 and ...O-O", "sources": ["s1"] },
+    { "idea": "4...Nxe4! fork trick: 5.Nxe4 d5 regains the piece with an active game and good winning chances", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Equalise with the ...d5 break in quiet lines", "sources": ["s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical Giuoco Pianissimo structure (d3/e4 vs ...d6/e5) after 4...Bc5, closed centre", "sources": ["s1"] },
+    { "structure": "After the 4...Nxe4 line, open centre with Black pawn on e5 and White pawn on d4/e4 traded off, queens exposed on d4 (Tarrasch-Lasker 1916)", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed. With 4...Bc5 it is quiet and symmetrical (Giuoco Pianissimo-like). With 4...Nxe4 the position is tactically sharp but quickly simplifies; the line carries drawish tendencies despite tactical complexity (Wikipedia summary). Search snippet: very drawish. Neither side's king faces serious early danger.",
+      "sources": ["s1", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The 4...Nxe4 line is a pseudo-sacrifice: material comes straight back by force (5.Nxe4 d5 6.Bd3 dxe4 7.Bxe4). Noa Gambit (4...Nxe4 5.Bxf7+) is a White sideline in the subtree: White gives a piece for a king-hunt, but it is not the main line.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "The fetched Wikipedia text describes 4.Bc4 as 'regarded as inferior' (Evans, 'an outright mistake', per the fetch summary) and notes that 4...Nxe4 gives Black good play. It is not refuted: 4...Bc5 transposes to a sound Pianissimo and the 4...Nxe4 main line leads to equal material. 365chess statistics show 61.8% Black wins after 4...Nxe4 (small database). Moderate evidence that White has the harder task, and the claim that the line is objectively bad is not confirmed by engine-based sources.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Depends on branch: 4...Bc5 leads to a closed or tense symmetrical centre (Pianissimo), while 4...Nxe4 5.Nxe4 d5 opens the centre with d4 and queen exchanges possible.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "It is a recognised branch of the Four Knights / Italian but not a set-up played against anything. Wikipedia says occasional master-level play; the 4...Nxe4 reply is played only in about 1 in 10 games in community databases (Chess.com blog), but Bc5 is the most common. Not offbeat in the Grob sense; a niche but respectable Four Knights sideline.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Studying side is White (the Italian Variation is a White choice). White must understand the Nxe4 fork trick and avoid 6.Bb5 blunders. Little theory to memorise but easy to go wrong against 4...Nxe4. Chess.com blog: White often lacks experience against 4...Nxe4 at beginner-intermediate level. Existing site label says Beginner; sources imply White is the side more likely to be outplayed.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "d3-d4 central break",
+    "castle kingside",
+    "Giuoco Pianissimo transposition",
+    "fork trick ...Nxe4 and ...d5",
+    "symmetrical development",
+    "solid drawing line"
+  ],
+  "sublines_that_differ": [
+    { "name": "4...Nxe4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Nc3 Nxe4", "how": "Pseudo-sacrifice; 5.Nxe4 d5 forks the bishop and knight; Black scores strongly (61.8% in 365chess database)." },
+    { "name": "Noa Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Nc3 Nxe4 5. Bxf7+", "how": "White gives a piece for an attack on the king; sharp and speculative." },
+    { "name": "4...Bc5 (Italian Four Knights)", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Nc3 Nf6", "how": "Quiet symmetrical Giuoco Pianissimo-type position." },
+    { "name": "4...Bb4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Nc3 Bb4", "how": "A less common developing move (1,200 games on 365chess), near-equal results." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Four Knights Italian Variation is classical and highly symmetrical",
+        "verdict": "supported",
+        "note": "Symmetry after 4...Bc5; the 4...Nxe4 line is not symmetrical.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It typically leads to quiet, strategic positions where both sides build up harmoniously",
+        "verdict": "wrong",
+        "note": "Only true after 4...Bc5. The most testing reply, 4...Nxe4, produces a tactical, open position and scores 61.8% for Black in the 365chess database. Description also omits that the line is regarded as inferior to 4.Bb5 for White.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It is an excellent choice for players who prefer understanding fundamental principles over memorising sharp tactical lines",
+        "verdict": "wrong",
+        "note": "White must know the 4...Nxe4 5.Nxe4 d5 tactics, and one inaccurate move (6.Bb5) loses; sources do not present it as a safe beginner choice.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "The game often revolves around subtle manoeuvring and long-term planning",
+        "verdict": "supported",
+        "note": "True for the Bc5 branch.",
+        "sources": ["s1", "s4"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: prepare and execute the d2-d4 break to gain central space",
+        "verdict": "supported",
+        "note": "d3/d4 listed as White's typical agenda.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: equalise by challenging the centre, often with the ...Nxe4 tactical shot followed by ...d5",
+        "verdict": "supported",
+        "note": "The sources agree this is Black's main resource and is often more than equal.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Both sides: complete development, castle and manoeuvre",
+        "verdict": "supported",
+        "note": "Generic; consistent with Pianissimo-type play.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: if White plays quietly, aim for the ...d5 break to achieve full equality",
+        "verdict": "supported",
+        "note": "Consistent with the ...d5 theme in Giuoco Pianissimo.",
+        "sources": ["s1", "s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

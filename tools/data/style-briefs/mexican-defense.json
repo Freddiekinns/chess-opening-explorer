@@ -1,0 +1,46 @@
+{
+  "slug": "mexican-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mexican Defense",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 Nc6",
+    "fen": "r1bqkb1r/pppppppp/2n2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the queen's knight before the e- or d-pawn, aiming for a Two Knights Tango. After 3.Nf3 e6 4.Nc3 Bb4 or 3.Nf3 d6 Black builds a solid set-up, and 3.d5 Ne5 gains time for Black. White takes space with d4/c4 and e4 or e3, and Black uses the knight on c6 to pressure d4 and e5.",
+  "white_ideas": [
+    { "idea": "Take the centre with Nc3, e4 or e3 and play for space with the c4/d4 pawns." },
+    { "idea": "Meet ...e5 with d5 and gain time against the c6 knight." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop into Nimzo or other Indian set-ups with the knight on c6, then ...e5 or ...Bb4." },
+    { "idea": "Provoke d5 and attack with ...Ne5 or ...Nb4 ideas." }
+  ],
+  "typical_structures": [
+    { "structure": "Indian-style centre with White pawns on c4/d4 and Black pieces pressuring the centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic Indian-style play with no forced sacrifices; White typically has more space." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Sound for Black though a little passive for the knight on c6." },
+    "structure": { "notes": "Centre not fixed; normal d4/c4 versus ...e6/...d6 possibilities." },
+    "approach": { "notes": "A sideline that strong players seldom use, mostly for surprise." },
+    "level": { "reason": "understanding", "notes": "Fewer main lines to memorise but Indian structures need understanding." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3.d5 Ne5", "moves": "1. d4 Nf6 2. c4 Nc6 3. d5 Ne5", "how": "White chases the knight and Black gets the e5 outpost; very different structures." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet development with no forcing play and no fortress." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No pawn is sacrificed." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "A playable Indian set-up though a little passive." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is undecided with various Indian set-ups available." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Rarely chosen by strong players, used for surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Not much theory but Indian structures need understanding." },
+    "plans": { "value": ["hypermodern_centre"], "reason": "Black lets White build a centre and pressures it with pieces." }
+  }
+}

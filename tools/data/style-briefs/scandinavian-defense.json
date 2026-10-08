@@ -1,0 +1,206 @@
+{
+  "slug": "scandinavian-defense",
+  "root": {
+    "name": "Scandinavian Defense",
+    "eco": "B01",
+    "moves": "1. e4 d5",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scandinavian Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Scandinavian Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Scandinavian-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Take the fight to White with the Scandinavian Defense (search snippet only)",
+      "publisher": "House of Staunton",
+      "url": "https://www.houseofstaunton.com/blogs/chess-openings/the-scandinavian-defense",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black strikes at e4 at once with ...d5, and after 2.exd5 chooses between 2...Qxd5 (the 'positional' branch) and 2...Nf6 (the 'tactical' branch). In the main line 2...Qxd5 3.Nc3 the queen must move again, usually Qa5 (or Qd6, Qd8), and White gains time; Black answers with ...c6, ...Nf6, ...Bf5 or ...Bg4 and ...e6, reaching a solid, Caro-Kann-like c6/e6 structure with free piece play. White's lead in development and space is balanced by Black's sound, easily defended position, so the game is typically a quiet fight where White pushes for a slight edge. Sharp sidelines exist: the Portuguese (3...Bg4 after 2...Nf6 lines), Icelandic Gambit (2...Nf6 3.c4 e6) and the Marshall Gambit with 2...Nf6 3.d4 Nxd5 or 3...c6 ideas. It is objectively sound but has never been a mainstream elite weapon, though Carlsen, Anand and Larsen have used it.",
+  "white_ideas": [
+    {
+      "idea": "Gain tempi on the early queen with Nc3, then develop quickly with d4 and Nf3 and use the lead in development and space.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Keep flexibility on move three (3.Nc3, 3.d4 or 3.Nf3) and restrict Black's light-squared bishop activity.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "In positional lines, seek a space advantage and piece pressure; White may castle on either side.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on d5 with the queen, retreat to a5, d6 or d8, then build a c6/e6 structure with ...Nf6, ...Bf5 or ...Bg4 and ...e6.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Develop the queen and both bishops early with free mobility, avoiding the blocked bishop of the French.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Avoid early queen exposure with 2...Nf6, with a more dynamic game and gambit options (Marshall, Icelandic, Portuguese).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Either side may castle either way, so Black may castle long (queenside) for a mutual-attack game in some lines (own understanding, unsourced).",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on c6 and e6 (Caro-Kann-like, sound), White with a pawn on d4 and extra tempi in development.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Fianchetto structure with ...g6 and ...Bg7 in the 3...Qd6 / 3...Qd8 lines.",
+      "sources": ["s2"]
+    },
+    {
+      "structure": "Open game after 2...Nf6 gambit lines with piece play and a lead for White in development vs a pawn for Black.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed by branch. Wikipedia: 2...Qxd5 lines are 'positional', 2...Nf6 lines 'tactical'; Portuguese and Icelandic are sharp (s1). Chess.com: 'solid yet provocative', emphasising structure over sharpness in the 3...Qa5 line (s2). The main line (2...Qxd5 3.Nc3 Qa5, most played) is the quiet branch, with Black risking little if he follows basic principles; the risk is some time loss and a 'quick knockout' danger if mishandled (s2). Overall: the main line is solid; tactical gambit lines are sub-branches.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given at the root. Black recaptures the pawn on d5 immediately in the main line. Gambit branches exist: Icelandic (3.c4 e6), Marshall / Ross gambit, and Boehnke 2...e5 (the subtree includes a 'Boehnke Gambit' at 2...e5) but they are not the main line.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Objectively sound: nineteenth-century analysis showed it is playable and elite players have used it successfully (s1). 'Do not expect to refute it' (s3, snippet). Lichess database: Black scores 47% from 1.e4 d5 over 375 million games against 45% after 1...e5 (s3, snippet; a rating-agnostic database score, not an engine verdict). Chess.com notes White scores 44% against it, more than against the French (40%) or Sicilian (37%), so it is a slightly worse practical choice (s2). Sound for Black.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Black removes White's e-pawn at once, so the centre tends to open early: pieces come out fast and the position is open or partly open. The typical c6/e6 structure after 2...Qxd5 is Caro-Kann-like. Wikipedia describes the goal as 'forcing an open game' (s1). Black's d-pawn is gone so there is no central tension on d5 afterwards; White retains a d4 pawn.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A recognised defence used by Capablanca, Alekhine, Tartakower, Larsen (beat Karpov in 1979), Anand (1995 World Championship) and Carlsen. Chess.com says elite adoption is 'niche' (s2), but the opening is a respectable choice at every level. Less common than the main lines but not offbeat, matching the taxonomy's guidance (Scandinavian is explicitly named as standard). It is a reply to 1.e4, not a system.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Judged for Black. The theory load is 'moderate to manageable', lighter than the Sicilian or Ruy Lopez, and the structure is intuitive (s1). Chess.com rates difficulty as moderate: Black must handle the time disadvantage after 2.exd5 and a 'danger of a quick knockout', but it remains perfectly playable (s2). One clear plan with little to memorise, so closer to an easy defence than an advanced one; the two main second moves branch into different approaches. Likely Beginner or Intermediate, not Advanced.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "early queen development",
+    "regain the pawn with the queen",
+    "Qa5 retreat",
+    "c6/e6 solid structure",
+    "light-squared bishop out before ...e6",
+    "lead in development for White",
+    "tempo-gaining Nc3"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...Qxd5 Mieses-Kotroc",
+      "moves": "1. e4 d5 2. exd5 Qxd5",
+      "how": "The main and positional line; most games in the database (about 188M); may become its own root (it is rank 7 in the pilot)."
+    },
+    {
+      "name": "Modern Scandinavian 2...Nf6",
+      "moves": "1. e4 d5 2. exd5 Nf6",
+      "how": "Delays recapture to avoid early queen exposure; more tactical, with Icelandic, Portuguese and Marshall ideas."
+    },
+    {
+      "name": "Icelandic Gambit",
+      "moves": "1. e4 d5 2. exd5 Nf6 3. c4 e6",
+      "how": "Black gambit: a pawn for rapid development."
+    },
+    {
+      "name": "Boehnke Gambit / 2.e5 / 2.Nc3 / 2.d3",
+      "moves": "1. e4 d5 2. exd5 e5; 2. e5; 2. Nc3; 2. d3",
+      "how": "Rare sidelines (Boehnke is a Black gambit; 2.e5 is an Advance-style reply); anti-Scandinavian choices."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Scandinavian is a direct and combative response to 1.e4, immediately challenging White's central control.",
+        "verdict": "supported",
+        "note": "The most directly challenging reply to 1.e4.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black aims for rapid development and an open game.",
+        "verdict": "supported",
+        "note": "Forcing an open game is the stated goal.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "The early queen move can become a target.",
+        "verdict": "supported",
+        "note": "The most glaring drawback is the early queen sortie and the time lost.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is perfect for players who steer the game into dynamic, tactical channels from the very first move.",
+        "verdict": "wrong",
+        "note": "Only 2...Nf6 and the gambit lines are tactical. The main line 2...Qxd5 is called positional and solid, with a Caro-Kann-like structure. Taking the initiative is also doubtful: White usually has the initiative early because Black loses time.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black gets rapid development and creates imbalances.",
+        "verdict": "unverifiable",
+        "note": "Free piece play is supported but the imbalance claim is not specifically described in the sources read.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: recapture with the queen, retreat to a safe square like ...Qa5 or ...Qd6, and complete development with ...c6, ...Bf5, ...Nc6, often castling long.",
+        "verdict": "supported",
+        "note": "Qa5, Qd6 and Qd8 are the retreats; ...c6, ...Nf6, ...Bf5/g4 and ...e6 are the usual set-up. ...Nc6 is also played (own understanding). Castling either side is possible; long castling is not stated as typical in the sources read.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "White: gain tempo with Nc3 and develop quickly with d4, Nf3 and Bc4 to seize space and build an attack.",
+        "verdict": "supported",
+        "note": "Nc3 gaining a tempo, d4 and Nf3 are named; Bc4 is common but not named in the sources read.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: aim for rapid piece activity and accept a slightly unorthodox pawn structure for dynamic play.",
+        "verdict": "wrong",
+        "note": "The main-line structure is a regular, sound c6/e6 structure resembling the Caro-Kann; Black does not take on structural damage.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: control d4, complete development, and use the central pawn majority for long-term pressure.",
+        "verdict": "wrong",
+        "note": "After 2.exd5 Qxd5 pawns are level: each side has traded one central pawn, so White has no central majority (own chess reasoning, unsourced). Plans for White are lead in development and space.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 2,
+    "pages_read": 2
+  }
+}

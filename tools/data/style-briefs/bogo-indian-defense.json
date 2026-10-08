@@ -1,0 +1,46 @@
+{
+  "slug": "bogo-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black checks on b4 and invites White to block with 4.Bd2 or 4.Nbd2, usually followed by ...Qe7, ...a5 or ...Bxd2 and ...d6 or ...d5. White keeps a small space edge or the bishop pair, and Black builds a compact set-up with ...b6 or ...d5 and the bishop exchanged. The game is a quiet positional struggle with few early tactics.",
+  "white_ideas": [
+    { "idea": "Develop Bd2, e3 or g3, keeping the c4-d4 centre and perhaps the bishop pair." },
+    { "idea": "Press for a small space edge, then break with e4 or play on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade the dark-squared bishop on d2 or c3, or retreat with ...a5, and complete development with ...d6 or ...d5." },
+    { "idea": "Fianchetto ...b6 and ...Bb7, or play ...c5, to challenge the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Gambit-type centre with c4-d4 against ...e6 and ...d5 or ...d6, often after Bxd2 trades." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black is very hard to break down and few lines are forcing; known as one of the most solid replies to 3.Nf3." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The centre stays fluid and in tension for a long time; flexible." },
+    "approach": { "notes": "A mainstream defence to 1.d4 with its own ideas, not a system." },
+    "level": { "reason": "understanding", "notes": "Little to memorise and clear plans, but not a coach's first pick." }
+  },
+  "plan_phrases": ["bishop pair", "solid centre", "queenside play"],
+  "sublines_that_differ": [
+    { "name": "4.Nbd2 and 4.Nc3", "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Nc3", "how": "4.Nc3 transposes to a Nimzo-Indian, with doubled c-pawns when Black takes on c3." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.7, "reason": "Compact Black set-up that is hard to break and has few early tactics." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Fully sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.75, "reason": "The centre stays in tension and the pawn structure is not fixed." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A standard defence with a normal repertoire role." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Quiet positional play with plans to learn, not much memory work." },
+    "plans": { "value": ["bishop_pair", "space_advantage"], "reason": "White often keeps the bishop pair and a modest space edge." }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-modern-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Modern Variation",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White supports e4 with the knight on d2 and avoids the Advance and Panov lines. After 3...dxe4 4.Nxe4 Black chooses ...Bf5, ...Nd7 (Karpov) or ...Nf6, and the game follows Classical Caro-Kann lines. Black also has 3...g6 (Gurgenidze) or 3...e5. The main aim is a sound Caro-Kann with a freely developed bishop.",
+  "white_ideas": [
+    { "idea": "Recapture on e4 with the knight and develop with Ng3, Nf3 and Bd3" },
+    { "idea": "Keep the centre with c3 and Ngf3 when Black plays ...g6" }
+  ],
+  "black_ideas": [
+    { "idea": "...dxe4 and ...Bf5 or ...Nd7, then ...e6 and ...Ngf6" },
+    { "idea": "Gurgenidze set-up with ...g6, ...Bg7 and ...Nf6" }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann pawns c6/e6 against White d4, with Black's light bishop outside" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main lines are quiet and solid; Gurgenidze is a bit more combative." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Half-open d-file and compact pawns; tag semi-open." },
+    "approach": { "notes": "A standard branch." },
+    "level": { "reason": "understanding", "notes": "Moderate theory; plans are clear." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Gurgenidze 3...g6", "moves": "1. e4 c6 2. d4 d5 3. Nd2 g6", "how": "Black fianchettoes; a more hypermodern Pirc-like game." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Caro-Kann main line: hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main line." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "Caro-Kann with a half-open d-file; could be flexible." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A recognised main-line branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans are clear; some theory." },
+    "plans": { "value": [], "reason": "No plan from the list fits clearly." }
+  }
+}

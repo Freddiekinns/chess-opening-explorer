@@ -1,0 +1,46 @@
+{
+  "slug": "elephant-gambit-paulsen-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Elephant Gambit: Paulsen Countergambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 d5 3. exd5 e4",
+    "fen": "rnbqkbnr/ppp2ppp/8/3P4/4p3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "elephant-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "After 2...d5 3.exd5 Black pushes 3...e4 to kick the knight, in the style of a Latvian or Elephant countergambit. White moves the knight with 4.Qe2 or 4.Nd4 (or 4.Ne5), and Black tries to regain the d5 pawn with ...Qxd5 or ...Nf6 and use quick development. White holds the extra pawn with accurate play, so Black needs White to err.",
+  "white_ideas": [
+    { "idea": "Move the knight with Qe2 or Nd4 and keep the extra pawn on d5." },
+    { "idea": "Develop safely, avoid traps on the e-file and consolidate." }
+  ],
+  "black_ideas": [
+    { "idea": "Regain d5 with ...Qxd5 or ...Nf6 and use quick development." },
+    { "idea": "Hope for tactics on the e-file and against the white queen." }
+  ],
+  "typical_structures": [
+    { "structure": "Open play with Black pawn on e4 and White up a pawn on d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Tactical, with Black betting on development and traps; White must avoid early errors. Judged from 4.Qe2 and 4.Nd4." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the d5 pawn with Nd4 or Qe2; unsure how quickly Black regains it." },
+    "soundness": { "notes": "Strong players consider the Elephant dubious; the Paulsen version does not rescue it." },
+    "structure": { "notes": "Open lines, pawns exchanged early and the e-file open." },
+    "approach": { "notes": "Strong players seldom play it." },
+    "level": { "reason": "memory", "notes": "Trap knowledge; unsure of exact theory." }
+  },
+  "plan_phrases": ["lead in development", "early queen"],
+  "sublines_that_differ": [
+    { "name": "4.Nd4", "moves": "4. Nd4 Qxd5", "how": "Black regains the pawn and the position is more balanced." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Early tactics and traps with both sides at risk." },
+    "gambit": { "value": "black", "confidence": 0.8, "reason": "Black countergambits a pawn for development." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Considered unsound at the top." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Pieces play on open files from the start." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Rarely used by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A Dubious line is never Beginner." },
+    "plans": { "value": ["lead_in_development", "early_queen"], "reason": "Black plays for quick development and early queen sorties." }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "hungarian-opening",
+  "root": {
+    "name": "Hungarian Opening",
+    "eco": "A00",
+    "moves": "1. g3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Fianchetto Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King%27s_Fianchetto_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Learn Surprising Hungarian Opening!",
+      "publisher": "Alberto Chueca (blog)",
+      "url": "https://www.albertochueca.com/blog/hungarian-opening-chess/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Benko's Opening 1.g3 (King's Fianchetto) (A00)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/benkos-opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the Hungarian Opening 1.g3 (snippets only)",
+      "publisher": "Wikibooks, Chess.com blog, Chessiverse via web search",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._g3",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White plays 1.g3 to fianchetto the king's bishop to g2 and hit the long diagonal, deferring any central commitment (s1, s3). It is a flank opening that usually transposes: into the King's Indian Attack (Nf3, d3, O-O, then e4), the Catalan, the Réti or the English, depending on Black's set-up (s1, s3, s4). Black can happily occupy the centre with ...d5 or ...e5, or choose Sicilian, Caro-Kann or King's Indian-style set-ups (s2, s3). Positions are usually closed or flexible, with long-term strategic play rather than early tactics (s1, s3). Engines and statistics find it essentially equal, with White at most slightly more comfortable (s3, s4). Theory is minimal: it is closer to a move order than a distinct variation (s2).",
+  "white_ideas": [
+    { "idea": "Fianchetto Bg2 and control the long diagonal h1-a8", "sources": ["s1", "s3"] },
+    { "idea": "King's Indian Attack set-up: Nf3, d3, O-O, then e4", "sources": ["s1", "s4"] },
+    { "idea": "Keep options open: c4 for an English or Catalan-style d4, or kingside attack versus queenside positional play", "sources": ["s2", "s3"] },
+    { "idea": "Wait and react to Black's set-up rather than commit pawns", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...d5 and ...e5 and develop classically", "sources": ["s1", "s3", "s4"] },
+    { "idea": "Use Sicilian, Caro-Kann or King's Indian Defence set-ups against the flank opening", "sources": ["s2"] },
+    { "idea": "1...Nf6 or 1...g6 at higher levels; challenge the g2 bishop with ...c5 (own understanding, unsourced)", "sources": ["s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Attack: White pawns on d3/e4 and g3, Bg2, with a kingside attack against Black's ...d5/...e5 centre", "sources": ["s1"] },
+    { "structure": "Catalan or English transpositions with a fianchettoed bishop on g2 and a pawn on c4", "sources": ["s1", "s3"] },
+    { "structure": "Reversed hypermodern set-ups after 1.g3 e5 2.Bg2 d5, Black holding the centre", "sources": ["s3", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Calm and flexible (s3). Generally leads to closed positions (s1). Patient, system-based play rather than forcing tactics (s3). Safe king and clear plans without immediate tactical hazards (s4). There are few ways to lose quickly, though solid is a bit strong because the opening is a flexible waiting move. Between Solid and Balanced; Solid is defensible on the sources.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Equal or a slight White edge across variations (s3, s4). Never considered dubious.",
+      "sources": ["s3", "s4"]
+    },
+    "structure": {
+      "notes": "Usually closed or semi-closed positions (s1): the centre is contested late, with White's pawns staying back and the fianchettoed bishop eyeing the diagonal. If Black plays ...d5 and ...e5 the centre can open after c4 or d4. Heavily transpositional, so structure depends on the line (Catalan, KIA, English). Main character is closed.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "Described as a flank opening and system (s1). White can use it as a set-up against almost anything (KIA) or a move-order tool; about 90% of games transpose into other openings (s2). It is the fifth most common first move, far less popular than e4, d4, c4 and Nf3 (s1). Carlsen is said to use it regularly (s2, single source), and Benko, Korchnoi and Réti used it (s1). System.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Minimal theory; 'no real theory', suited to club players who want to avoid memorisation (s2, s3). Yet White needs to understand the structures it transposes into (s2). Studying side is White. Beginner or Intermediate; the need to know several structures argues for Intermediate.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "kingside fianchetto",
+    "long diagonal pressure",
+    "King's Indian Attack",
+    "transposition",
+    "flexible move order",
+    "delayed central commitment"
+  ],
+  "sublines_that_differ": [
+    { "name": "King's Indian Attack", "moves": "1. g3 d5 2. Nf3", "how": "Reaches the KIA; closed, kingside attack; system" },
+    { "name": "Regan Variation / 1...d5 2.Bg2 e5 3.d4", "moves": "1. g3 d5 2. Bg2 e5 3. d4", "how": "White strikes the centre; more open" },
+    { "name": "1...b6 / Benko with ...Bb7", "moves": "1. g3 b6", "how": "Bishop duel on the long diagonal; hypermodern for both sides" },
+    { "name": "Anglo-Indian Gruenfeld formation", "moves": "1. g3 d5 2. Nf3 g6 3. c4 Nf6", "how": "Transposes into an English or Grunfeld-like structure" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A flexible, hypermodern system where White begins by preparing to fianchetto the king's bishop", "verdict": "supported", "note": "Described as a hypermodern, flexible flank system.", "sources": ["s1", "s3"] },
+      { "claim": "It avoids immediate central confrontation and controls key squares from the flank, particularly the long h1-a8 diagonal", "verdict": "supported", "note": "Long-diagonal pressure on the queenside and centre.", "sources": ["s3"] },
+      { "claim": "Ideal for strategic, patient players who prefer plans and systems to memorising sharp theory", "verdict": "supported", "note": "Minimal theory, system-based.", "sources": ["s2", "s3"] },
+      { "claim": "It often transposes into a King's Indian Attack, Catalan or English", "verdict": "supported", "note": "The Wikipedia article names all three; roughly 90% transposition per Chueca.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: complete the kingside fianchetto with Bg2, control the long diagonal, and often transpose to a King's Indian Attack (Nf3, d3, 0-0) to prepare e4", "verdict": "supported", "note": "KIA set-up is the standard route.", "sources": ["s1", "s4"] },
+      { "claim": "Black: seize central space with ...d5 and ...e5, develop classically, and challenge White's control of the long diagonal", "verdict": "supported", "note": "Central pawns are Black's most popular replies.", "sources": ["s3", "s4"] },
+      { "claim": "White: delay commitment of central pawns, possibly c4 for an English or d4 for a Catalan", "verdict": "supported", "note": "Flexibility is the main point.", "sources": ["s2", "s3"] },
+      { "claim": "Black: develop the queenside and challenge the g2 bishop by preparing a ...c5 pawn break", "verdict": "unverifiable", "note": "No source states it; ...c5 is a natural central idea but not documented here.", "sources": [] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

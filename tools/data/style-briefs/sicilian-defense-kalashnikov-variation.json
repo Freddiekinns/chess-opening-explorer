@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-kalashnikov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kalashnikov Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
+    "fen": "r1bqkbnr/pp3ppp/2np4/1N2p3/4P3/8/PPP2PPP/RNBQKB1R w KQkq - 0 6"
+  },
+  "parent": "sicilian-defense-lowenthal-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays ...e5 and ...d6, ceding the d5 square for a solid pawn centre and the c-file. White plays 6.N1c3 and aims at a knight on d5, or 6.c4 for a Maróczy-type bind. Black plays ...a6, ...b5 and ...Be7 to challenge the knight; the dark-squared bishop is often passive but the position is hard to crack.",
+  "white_ideas": [
+    { "idea": "Knight outpost on d5, usually with N1c3 and Nd5" },
+    { "idea": "c4 with a Maróczy-style clamp and Nc3 later" }
+  ],
+  "black_ideas": [
+    { "idea": "...a6, ...b5 to drive the b5 knight and challenge d5" },
+    { "idea": "...Be7, ...Nf6 and exchange the d5 knight; hold d6 and e5" }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns d6/e5, White e4 with a knight on d5 and a backward d6 pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Solid pawn chain, outposts, few forcing lines in the main branch." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn offered." },
+    "soundness": { "notes": "Sound, fully respected." },
+    "structure": { "notes": "Sicilian with fixed d6/e5 chain against e4; d5 hole and d-file pressure." },
+    "approach": { "notes": "Played by strong players, not a universal set-up." },
+    "level": { "reason": "understanding", "notes": "Plans are clear but the d5 fight and Black's bad bishop need judgement." }
+  },
+  "plan_phrases": ["Knight outpost", "Bad bishop"],
+  "sublines_that_differ": [
+    { "name": "6.c4", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6 6. c4", "how": "Maróczy-style clamp where Black plays ...Be7 and ...a6." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Solid chain but White's outpost play gives it bite." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully respected." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Sicilian with d-file pressure; could be read as closed." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main Sicilian branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but need judgement." },
+    "plans": { "value": ["knight_outpost", "bad_bishop"], "reason": "d5 knight against Black's passive bishop." }
+  }
+}

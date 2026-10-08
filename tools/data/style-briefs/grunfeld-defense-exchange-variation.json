@@ -1,0 +1,49 @@
+{
+  "slug": "grunfeld-defense-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Exchange Variation",
+    "eco": "D85",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5",
+    "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White takes the full centre with 5.e4 Nxc3 6.bxc3 and Black attacks it from the flanks with ...Bg7, ...c5, ...Nc6 and pressure on d4, often with ...Qa5 or ...Bg4. White's centre is a strength and a target; if Black cracks it the bishop on g7 dominates, otherwise White's pawns roll. The main lines (7.Nf3 c5 8.Be3 Qa5, 7.Bc4 c5 8.Ne2) are theory-heavy and forcing, with many concrete tactics.",
+  "white_ideas": [
+    { "idea": "Build the e4-d4-c3 centre, then Be3, Qd2 and Rb1 or Bc4 for support" },
+    { "idea": "Meet ...c5 with d5 or dxc5 and Rb1 on the b-file" },
+    { "idea": "Use the space for a kingside attack or an endgame pawn majority" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto bishop on g7 hitting d4 and the long diagonal" },
+    { "idea": "...c5 and ...Nc6 to undermine d4, then ...Qa5 or ...Bg4" },
+    { "idea": "Trade pieces and win the centre, or play on the c-file" }
+  ],
+  "typical_structures": [
+    { "structure": "White big pawn centre on c3, d4, e4 against Black's undermining ...c5" },
+    { "structure": "Symmetry-breaking c-file after ...cxd4 cxd4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing lines with tactics and an exposed centre for both; one slip loses quickly (Qa5 pins, Bg4)." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material sacrificed; Black's d5 is recaptured." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Tension in the centre with d4 attacked and open c-file after exchanges; semi-open." },
+    "approach": { "notes": "Standard main line." },
+    "level": { "reason": "memory", "notes": "Long forcing main lines which both sides must know; anchor Advanced." }
+  },
+  "plan_phrases": ["hypermodern centre", "half-open c-file", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Russian System", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qb3 dxc4 6. Qxc4 O-O 7. e4", "how": "Not in this subtree; White keeps the centre without playing cxd5 first." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Concrete forcing lines with a contested centre." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "Main-line theory." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "c-file opens after ...cxd4, with a half-open file for Black." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A recognised main line." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.8, "reason": "Long forced main lines." },
+    "plans": { "value": ["hypermodern_centre", "half_open_c_file"], "reason": "Black attacks the White centre with pieces and ...c5." }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "nimzowitsch-defense-declined-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Declined Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 2 2"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops the knight and avoids the Nimzowitsch main lines with d4. Black usually answers 2...d6 (a Pirc or Philidor-like set-up after d4), 2...e5 (transposing to open games such as the Four Knights or Scotch) or 2...d5. The character depends on Black's choice; I could not pin down one main branch, so I treat it as a flexible, mostly quiet developing line.",
+  "white_ideas": [
+    { "idea": "Develop naturally with d4, Nc3 and Be2 or Bb5" },
+    { "idea": "Take space in the centre while Black has a knight on c6 blocking the c-pawn" },
+    { "idea": "Transpose into an open game or a Pirc-type structure" }
+  ],
+  "black_ideas": [
+    { "idea": "...d6 and ...Nf6 or ...Bg4, a flexible Pirc-like set-up" },
+    { "idea": "...e5 transposing to a standard open game" },
+    { "idea": "Undermine the centre with ...d5 or ...e6 and ...d5" }
+  ],
+  "typical_structures": [
+    { "structure": "Depends on Black's reply: Pirc/Philidor-like, or open game" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Not enough information; mostly quiet development unless Black chooses ...d5." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound enough; not refuted." },
+    "structure": { "notes": "Undecided centre." },
+    "approach": { "notes": "Offbeat; the Nimzowitsch is seldom chosen by strong players." },
+    "level": { "reason": "understanding", "notes": "Flexible plans, little theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "2...e5", "moves": "1. e4 Nc6 2. Nf3 e5", "how": "Transposes to the Open Game, e.g. Scotch or Four Knights with a different move order." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Mixed set-ups; unsure of the main branch." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre undecided and often transposes." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "The Nimzowitsch Defence is seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plan-based, moderate theory." },
+    "plans": { "value": [], "reason": "No consistent plan across the branches." }
+  }
+}

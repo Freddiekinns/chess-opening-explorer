@@ -1,0 +1,41 @@
+{
+  "slug": "queens-gambit-declined-cambridge-springs-defense",
+  "tier": "unsourced",
+  "root": { "name": "Queen's Gambit Declined: Cambridge Springs Defense", "eco": "D52", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 Nbd7 6. e3 Qa5", "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQkq - 1 7" },
+  "parent": "queens-gambit-declined",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black develops the queen to a5, pinning the c3 knight against Bg5 and threatening ...Ne4 and ...dxc4. White usually avoids the pin trap with 7.Nd2, 7.Bxf6 or 7.cxd5, and Black develops with ...Bb4 and ...O-O. The game is a sound manoeuvring one in which Black gets active pieces and counterplay, but White has a safe space edge if the trap is avoided.",
+  "white_ideas": [
+    { "idea": "Break the pin with Nd2 or exchange on f6, then complete development with Be2 or Bd3." },
+    { "idea": "Keep a small centre edge with cxd5 and Bd3 and aim for a minority attack or e4." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin Nc3 with ...Qa5 and ...Bb4 and threaten ...Ne4 or ...dxc4." },
+    { "idea": "Develop the c8 bishop after ...dxc4 and play ...e5 or ...c5 to free the position." }
+  ],
+  "typical_structures": [
+    { "structure": "QGD Semi-Slav-style triangle c6/d5/e6 with Black's queen active on a5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Active Black pieces and the ...Ne4 trap, but a balanced, sound manoeuvring position." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit; ...dxc4 returns equal." },
+    "soundness": { "notes": "Well respected, played by Capablanca-era masters up to modern times." },
+    "structure": { "notes": "QGD centre with d5/c4 tension that stays unresolved at first." },
+    "approach": { "notes": "Standard QGD line, not a system." },
+    "level": { "reason": "memory", "notes": "Needs trap knowledge and move orders; moderate theory." }
+  },
+  "plan_phrases": ["pin on c3", "early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Capablanca Variation", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5 7. Bxf6", "how": "White gives up the bishop pair-style tension for a simplified position." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Active and trappy but sound for both sides." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "QGD centre with tension between c4 and d5." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream QGD line." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Some traps and move orders to know, not a long forcing line." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black's queen pins a knight and develops quickly." }
+  }
+}

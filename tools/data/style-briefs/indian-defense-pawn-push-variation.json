@@ -1,0 +1,44 @@
+{
+  "slug": "indian-defense-pawn-push-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Pawn Push Variation",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. d5",
+    "fen": "rnbqkb1r/pppppppp/5n2/3P4/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White gains space at once with d5, aiming for a Benoni-like bind with c4 and e4, while Black can play ...e6, ...c5 or ...d6 to undermine the pawn or ...e5 to challenge the centre. The play often transposes into Benoni or Old Indian-type positions after c4. I am unsure of the details and judge it from the moves.",
+  "white_ideas": [
+    { "idea": "Support d5 with c4 and e4, and build a space advantage" },
+    { "idea": "Develop Nc3, Nf3 and Bf4 or g3, keeping the pawn on d5" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack d5 with ...c6, ...e6 or ...c5 and ...b5" },
+    { "idea": "Transpose into Benoni or Old Indian structures with ...g6 and ...d6" }
+  ],
+  "typical_structures": [
+    { "structure": "Benoni-style pawn on d5 with Black's c5/e6 or d6/e5 against a space advantage" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Space-gaining with an early pawn push; play is steady but unbalanced in structure, with no forced tactics." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable; the pawn can be undermined but not refuted." },
+    "structure": { "notes": "Advanced d-pawn; Black's pawn breaks decide whether it locks or opens." },
+    "approach": { "notes": "Strong players seldom play 2.d5 against the Indian." },
+    "level": { "reason": "neither", "notes": "Little theory but Black has easy equality." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Quiet space grab with no forced tactics and no solidity either." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable, Black equalises easily." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is not decided until Black picks a break." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose 2.d5." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few lines to learn but not a first repertoire choice." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space with d5." }
+  }
+}

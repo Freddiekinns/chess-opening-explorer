@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-declined-ragozin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Ragozin Defense",
+    "eco": "D38",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Bb4",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5"
+  },
+  "parent": "queens-gambit-declined-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "A Nimzo-Indian and QGD hybrid: Black pins the c3 knight while keeping ...d5, so White's centre stays under pressure. White chooses between 5.Bg5, 5.cxd5 exd5 with a Carlsbad-type structure, or 5.Qa4+. Play is a tense manoeuvring fight over the centre with real theory in the 5.Bg5 dxc4 lines.",
+  "white_ideas": [
+    { "idea": "5.cxd5 exd5 6.Bg5 and a minority attack or e3/Bd3 set-up" },
+    { "idea": "5.Bg5 to pin f6, then Qa4+ and cxd5 ideas to exploit the pinned c3 knight" }
+  ],
+  "black_ideas": [
+    { "idea": "Pin the c3 knight and take the bishop pair if White allows doubled c-pawns" },
+    { "idea": "Hold the centre with ...Nbd7/...c6 or break with ...c5 and ...dxc4" }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad-type structure after cxd5 exd5, with White minority attack" },
+    { "structure": "Doubled c-pawns for White against the bishop pair after ...Bxc3" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic fight with the centre in tension; sound for Black but the 5.Bg5 dxc4 lines are forcing. Overall between solid and sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit; 4...Bb4 keeps the pawn structure intact." },
+    "soundness": { "notes": "Fully sound, a top-level Black choice vs 1.d4." },
+    "structure": { "notes": "Centre in tension (d4/c4 vs d5/e6) and flexible; exchange lines give a semi-open Carlsbad but the main identity is the tense centre." },
+    "approach": { "notes": "Standard QGD/Nimzo hybrid, played at the top." },
+    "level": { "reason": "understanding", "notes": "Knowing the pin ideas and structures matters more than long lines, though 5.Bg5 has theory." }
+  },
+  "plan_phrases": ["bishop pair", "doubled pawns", "minority attack", "carlsbad structure"],
+  "sublines_that_differ": [
+    { "name": "5.Bg5 dxc4", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 Bb4 5. Bg5 dxc4 6. e4", "how": "Sharper and more forcing, White takes the centre for a pawn." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Strategic Nimzo-like tension, neither fortress nor forcing in the main line." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A top-level main defence." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre stays in tension and the structure is not yet decided." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plan-driven with moderate theory; could be Advanced." },
+    "plans": { "value": ["bishop_pair", "doubled_pawns", "minority_attack"], "reason": "Doubled c-pawns for the bishop pair, and Carlsbad play after exchanges." }
+  }
+}

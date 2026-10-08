@@ -1,0 +1,89 @@
+{
+  "slug": "hungarian-opening-reversed-modern-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Reversed Modern Defense",
+    "eco": "A00",
+    "moves": "1. g3 d5 2. Bg2 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/8/6P1/PPPPPPBP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black takes the centre with ...d5 and ...c5 against White's 1.g3 fianchetto. White follows with Nf3, O-O and d3 or c4, and the game usually reaches a flexible, reversed Sicilian or English structure where White plays on the long diagonal and Black has space. Little theory, long manoeuvring.",
+  "white_ideas": [
+    { "idea": "Fianchetto, castle and pressure d5 and the long diagonal." },
+    { "idea": "Play c4 or d3 and e4 depending on Black's set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the centre with ...Nc6, ...e5 and ...Nf6." },
+    { "idea": "Develop and fianchetto to meet White's flank play." }
+  ],
+  "typical_structures": [
+    { "structure": "Black c5/d5 against a White g2 bishop; flexible English or reversed-Sicilian shapes." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring with no forcing tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Flank opening with the centre undecided."
+    },
+    "approach": {
+      "notes": "White's 1.g3 set-up is playable against nearly anything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Minimal theory, but slow plans take feel."
+    }
+  },
+  "plan_phrases": ["fianchetto", "flexible centre", "long diagonal"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither especially forcing nor especially hard to crack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Flank opening with the centre not yet decided."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.45,
+      "reason": "White's 1.g3 and Bg2 set-up works against many replies."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Little theory but slow plans."
+    },
+    "plans": {
+      "value": ["fianchetto"],
+      "reason": "The long diagonal bishop is the core idea."
+    }
+  }
+}

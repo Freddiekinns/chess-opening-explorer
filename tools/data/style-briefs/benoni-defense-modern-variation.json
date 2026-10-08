@@ -1,0 +1,50 @@
+{
+  "slug": "benoni-defense-modern-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Modern Variation",
+    "eco": "A60",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6",
+    "fen": "rnbqkb1r/pp1p1ppp/4pn2/2pP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White gets a space advantage and a central pawn majority after 4.Nc3 exd5 5.cxd5 d6, with e4-e5 as the big threat. Black has a queenside pawn majority and counterplay with ...g6, ...Bg7, ...O-O and ...b5, with the knight reaching d7 and c5. The result is unbalanced: White attacks in the centre and on the kingside, Black on the queenside and along the long diagonal.",
+  "white_ideas": [
+    { "idea": "Push e4 and e5 to break open the centre using the space advantage" },
+    { "idea": "Fianchetto or play Bd3, Nf3, h3 and Bf4 with a solid centre" },
+    { "idea": "Stop Black's ...b5 and ...Nbd7-c5 counterplay with a3, a4 and Nd2" }
+  ],
+  "black_ideas": [
+    { "idea": "Queenside majority play with ...a6 and ...b5 against White's c-file" },
+    { "idea": "Pressure the e5 square, long diagonal bishop on g7 and the e-file" },
+    { "idea": "Piece play with ...Nbd7-e5 and ...Re8 outposts" }
+  ],
+  "typical_structures": [
+    { "structure": "Benoni structure: White d5/e4 against Black c5/d6, with half-open e-file for Black and a queenside majority" },
+    { "structure": "White's central pawn majority against Black's queenside majority" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Asymmetric, high risk for both sides; White's e5 break and Black's queenside play lead to forcing, dynamic games and Black can be squeezed." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is given, though 4...b5 Benko is a different branch." },
+    "soundness": { "notes": "Sound, though Black can be squeezed with accurate play." },
+    "structure": { "notes": "Fixed asymmetric centre with a half-open e-file for Black and c-file for White, so Semi-open." },
+    "approach": { "notes": "Standard repertoire opening for Black against 1.d4." },
+    "level": { "reason": "both", "notes": "Known to need detailed theory against the Taimanov Attack (f4/Bb5) and Black plans are hard to get right." }
+  },
+  "plan_phrases": ["space advantage", "queenside expansion", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Taimanov Attack", "moves": "4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.f4", "how": "White goes for a direct central and kingside attack, making the game much sharper." },
+    { "name": "Fianchetto Variation", "moves": "6.Nf3 g6 7.g3", "how": "Slower, with White solid and Black aiming for queenside play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Unbalanced structure where Black can be squeezed or counter-attack, one wrong move can lose fast." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No pawn is sacrificed in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A main-line defence at club and master level." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "Fixed asymmetric centre pressed along half-open files." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A recognised defence to 1.d4." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.55, "reason": "Sharp theory against Taimanov and Black plans are hard to get right." },
+    "plans": { "value": ["space_advantage", "queenside_expansion", "central_pawn_majority"], "reason": "White space and e5 break against Black's queenside majority." }
+  }
+}

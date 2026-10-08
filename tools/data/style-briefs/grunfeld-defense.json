@@ -1,0 +1,47 @@
+{
+  "slug": "grunfeld-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense",
+    "eco": "D80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "kings-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black allows White a big pawn centre after 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 and attacks it with ...c5, ...Nc6 and pressure from the g7 bishop. White tries to hold the centre and push d5 or e5, while Black aims to undermine d4 and use the open long diagonal. Play is concrete and heavily theoretical, with the Exchange Variation lines forcing for both sides. The Russian System with Nf3 and Qb3 and the Exchange are the main tests.",
+  "white_ideas": [
+    { "idea": "Build the e4/d4/c3 centre and push d5 or e5 with a space edge" },
+    { "idea": "Bc4, Ne2 and O-O to keep the centre safe, or Nf3, Qb3 against ...Nb6" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack d4 with ...c5, ...Nc6, ...Bg4 and ...Qa5 using the g7 bishop" },
+    { "idea": "Trade pieces to ease the cramp and aim at the weakened centre" }
+  ],
+  "typical_structures": [
+    { "structure": "White big centre with c3, d4, e4 against ...c5 and the g7 bishop" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete forcing play where the centre can collapse or hold; accuracy matters." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main exchange lines." },
+    "soundness": { "notes": "Sound; a fully respected defence used by world champions." },
+    "structure": { "notes": "Centre in tension while Black attacks d4, so flexible rather than closed." },
+    "approach": { "notes": "A main defence to 1.d4 played at the top level, standard." },
+    "level": { "reason": "both", "notes": "Long forcing lines and hard plans; the Exchange Variation anchors this as Advanced." }
+  },
+  "plan_phrases": ["hypermodern centre", "pressure on d4", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Grünfeld: 4.Bf4", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bf4", "how": "Quieter, slower, less theoretical." },
+    { "name": "Grünfeld: 4.Nf3 Bg7 5.Qb3 (Russian)", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qb3", "how": "Black's ...dxc4 and ...a6 plans." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Forcing theory, one move wrong can lose the centre or Black's position." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully respected defence." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre in tension with ...c5 against d4; not locked." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main defence to 1.d4." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.75, "reason": "Heavy theory and hard to judge the centre." },
+    "plans": { "value": ["hypermodern_centre", "central_pawn_majority", "fianchetto"], "reason": "Black attacks White's big centre from the fianchetto and ...c5." }
+  }
+}

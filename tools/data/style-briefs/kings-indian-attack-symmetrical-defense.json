@@ -1,0 +1,46 @@
+{
+  "slug": "kings-indian-attack-symmetrical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Symmetrical Defense",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. g3 g6",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Both sides fianchetto: Bg2, Bg7, O-O, d3 and a later e4 or c4. It is a King's Indian against a King's Indian with White a move up. The game is slow and manoeuvring, with each side choosing between e4/e5 central play and queenside space before piece play decides.",
+  "white_ideas": [
+    { "idea": "Fianchetto, castle, d3 and e4 with Nbd2 and Re1 as a King's Indian Attack" },
+    { "idea": "Or switch to c4 and d4 for a Reti/English set-up with a hypermodern centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror the set-up with ...Bg7, ...O-O, ...d6, then ...e5 or ...c5" },
+    { "idea": "Strike in the centre with ...d5 and ...c5 when White commits" }
+  ],
+  "typical_structures": [
+    { "structure": "Mirrored fianchetto set-ups with pawns on d3/d6 and flexible central breaks" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Very slow double fianchetto; hard to lose quickly and few forcing lines. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre undecided with pawns on d3/d6; flank-opening style, Flexible." },
+    "approach": { "notes": "KIA is on the System anchor list; the same set-up whatever Black plays." },
+    "level": { "reason": "understanding", "notes": "Clear plans but Black's counterplay needs care; Intermediate for White." }
+  },
+  "plan_phrases": ["fianchetto", "symmetrical structure", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Transposition with c4 and Nc3", "moves": "1. Nf3 Nf6 2. g3 g6 3. Bg2 Bg7 4. O-O O-O 5. c4", "how": "Transposes to an English or Reti with a Maroczy-like structure, different from the e4 plan." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Slow double fianchetto with no forcing lines early." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A sound set-up for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Flank opening with the centre undecided." },
+    "approach": { "value": "system", "confidence": 0.85, "reason": "The King's Indian Attack is a set-up played against anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but the middlegame is subtle." },
+    "plans": { "value": ["fianchetto", "symmetrical_structure"], "reason": "Both sides have a fianchetto and a mirrored structure." }
+  }
+}

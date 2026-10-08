@@ -1,0 +1,48 @@
+{
+  "slug": "modern-defense-gellers-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Geller's System",
+    "eco": "B07",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nf3 d6 4. c3",
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the quiet 4.c3, which supports d4 and e4 and blunts the g7 bishop, and follows with Bd3 or Be2, O-O and Nbd2. Black develops with ...Nf6 or ...Nd7, ...O-O and ...e5 or ...c5 to break the centre, a standard Modern/Pirc set-up. The game is a slow manoeuvring fight with little theory, where Black aims for a typical ...e5 break and White for a comfortable centre.",
+  "white_ideas": [
+    { "idea": "Support the centre with c3 and develop Bd3, Nbd2, O-O" },
+    { "idea": "Keep the pawn centre intact and meet ...e5 with dxe5 or a Ruy-like set-up" },
+    { "idea": "Slowly build with Qc2 and a queenside space grab" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nf6, ...O-O, ...Nbd7 and break with ...e5 or ...c5" },
+    { "idea": "Keep the g7 bishop alive by reducing the centre with ...e5" },
+    { "idea": "Wait with ...c6 and ...Qc7 and hit the centre later" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4 with c3 against Black ...d6/...g6 with a ...e5 break coming" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, low-risk set-up for both with no forcing lines; Black is hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre tension: d4/e4 with c3 against ...d6, to be resolved by ...e5 or ...c5; flexible." },
+    "approach": { "notes": "A Modern/Pirc-style set-up Black plays against almost anything; White's 4.c3 is a quiet system." },
+    "level": { "reason": "understanding", "notes": "Few lines to learn, but the plans against the centre need judgement." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "...e5 break"],
+  "sublines_that_differ": [
+    { "name": "3.c3 d6 4.Nf3", "moves": "1. e4 g6 2. d4 Bg7 3. c3 d6 4. Nf3", "how": "Transposes by move order to the same position." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet set-up that is low risk for both sides." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respectable quiet line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Tension in the centre with ...e5 or ...c5 to come; no lock." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "Black's Modern set-up is played against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are clear but timing the ...e5 break needs judgement." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White build the centre and attacks it with the g7 bishop and pawn breaks." }
+  }
+}

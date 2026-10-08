@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-two-knights-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Two Knights Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nc3 d5 3. Nf3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 1 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White develops both knights and keeps the e4 pawn defended instead of fighting for the centre. Black can play 3...dxe4 4.Nxe4 Bf5 (or Nd7 and Nf6) and reach a Caro-Kann Classical set-up with the Nf3 move already in, or 3...Bg4 with the Mindeno Variation. The game is a quiet, positional Caro-Kann in which Black equalises comfortably.",
+  "white_ideas": [
+    { "idea": "Develop naturally with Nf3, Be2 or Bd3, and h3 to meet ...Bg4." },
+    { "idea": "Keep options of d4 for a normal Caro-Kann centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on e4 and develop the light bishop outside the chain." },
+    { "idea": "Play ...Bg4 and ...e6 to pin the f3 knight." }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann Classical structure with d4 against c6-e6 and a half-open d-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet and safe for both. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "e4 pawn comes back by force." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Asymmetric Caro centre with a half-open d-file." },
+    "approach": { "notes": "A normal alternative to 3.e5 and 3.exd5; standard." },
+    "level": { "reason": "understanding", "notes": "Simple development. Intermediate." }
+  },
+  "plan_phrases": ["good light bishop outside the chain"],
+  "sublines_that_differ": [
+    { "name": "Mindeno Variation", "moves": "1. e4 c6 2. Nc3 d5 3. Nf3 Bg4", "how": "Black pins the knight and ...Bxf3 gives an unusual structure." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.75, "reason": "Quiet Caro-Kann lines that are hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected line." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Fixed asymmetric centre with a half-open d-file." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Quiet plans with modest theory." },
+    "plans": { "value": [], "reason": "No list plan stands out." }
+  }
+}

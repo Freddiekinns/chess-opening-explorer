@@ -1,0 +1,153 @@
+{
+  "slug": "scandinavian-defense-modern-variation",
+  "root": {
+    "name": "Scandinavian Defense: Modern Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scandinavian Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Chess Opening Theory/1. e4/1...d5/2. exd5/2...Nf6",
+      "publisher": "Wikibooks",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...d5/2._exd5/2...Nf6",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "The Scandinavian Defense Modern Variation (Best for Beginners)",
+      "publisher": "Wholesale Chess",
+      "url": "https://www.wholesalechess.com/blogs/chess-openings/the-scandinavian-defense-modern-variation",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippet: Marshall Defense / Scandinavian 2...Nf6 results (Wikipedia, 365chess, masterinchess PDF 'The Scandinavian Defence: Winning With 2...Nf6')",
+      "publisher": "Web search snippets",
+      "url": "https://www.365chess.com/eco/B01_Scandinavian_Marshall_variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 2.exd5 by developing the knight and delaying the recapture, avoiding the tempo lost when the queen takes on d5. The main line is 3.d4 Nxd5 (the Marshall, as the old name had it), after which 4.Nf3 and 4.c4 Nb6 or ...Bg4 give White a space edge and Black quick development and easy piece play. White can also hold the pawn with 3.c4 (Black strikes back with ...c6 into Panov-type structures, or the Icelandic Gambit 3...e6) or play 3.Bb5+ Bd7. Wikipedia/Emms describe the 2...Nf6 lines as the more tactical branch of the Scandinavian, though sound for Black; White usually keeps a slight initiative through development. Positions are usually open or semi-open with Caro-Kann-like pawn formations (...c6, ...e6) and Black often castles short while White controls more space.",
+  "white_ideas": [
+    { "idea": "Play 3.d4 Nxd5 and gain space with c4 (kicking the knight to b6), after Nf3", "sources": ["s1", "s2"] },
+    { "idea": "Develop quickly (Nf3, Bg5 or Bf4, Be2, O-O) and exploit Black's displaced pieces/queen after Black recaptures", "sources": ["s1"] },
+    { "idea": "Hold the extra pawn with 3.c4 or 3.Bb5+ Bd7 4.Bxd7+ Qxd7 5.c4", "sources": ["s1"] },
+    { "idea": "After 4.Nf3 Bg4 5.c4 Nb6 6.c5!? N6d7, try to harass Black's knights (6...Nd5? 7.Qb3 loses)", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop first and recapture on d5 with a knight, avoiding the tempo loss of ...Qxd5", "sources": ["s1", "s2"] },
+    { "idea": "Activate pieces fast (...Nf6, ...Bg4 or ...Bf5, ...Nc6, ...e6) and challenge the centre", "sources": ["s1", "s2"] },
+    { "idea": "Meet 3.c4 with ...c6 (transposing to Panov-Botvinnik after 4.d4 cxd5) or the gambit ...e6", "sources": ["s1"] },
+    { "idea": "In the Portuguese Gambit (3.d4 Bg4), dominate the d-file with rook-queen batteries and swap queens to strand White's king in the centre or storm opposite-side castling", "sources": ["s2", "s3"] }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann-like formations after ...c6 or ...e6 with Black's pawns on c6/e6 and White with pawns on c4/d4", "sources": ["s1"] },
+    { "structure": "Open centre where c-pawn or d-pawn trades leave Black with piece activity and White with a small space advantage", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Emms (via Wikipedia) calls the 2...Nf6 branch the more tactical branch of the Scandinavian. Black's pieces are active and White has a small space/initiative edge; Black's position is not passive but not usually dangerous for him either. Gambit sublines (Icelandic 3.c4 e6, Portuguese 3.d4 Bg4) are sharper, but the main 3.d4 Nxd5 4.Nf3 lines are a normal development-based fight. Wholesale Chess describes opposite-side castling and h-file mating attacks as strategic aims of the Portuguese line.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "In the main line (3.d4 Nxd5) Black regains the pawn at once, so no material is given. Pawn gambits exist as sublines: the Icelandic Gambit (3.c4 e6 4.dxe6 Bxe6) and the Portuguese Gambit (3.d4 Bg4) are Black gambits; Marshall Gambit and BDG-style names are alternative labels for the position. The root itself has no material imbalance (White's d5 pawn is simply en prise to the knight).",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Considered sound for Black: Black gets development and central play in return for conceding White a slight edge in space/initiative. Magnus Carlsen played 2...Nf6-type Scandinavian vs Caruana at the 2014 and 2016 Olympiads. The Portuguese Gambit is rated roughly equal in Wikibooks; 3.Nc3 and 3.Bb5+ lines are regarded as lesser tries for White. No source calls the main line dubious.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Typically a partly open centre with Black playing ...c6 or ...e6 (Caro-Kann-like) and White holding d4/c4 space; after d4/c4 pawn trades the centre opens. Tactical positions with open d-file and diagonals are common in Portuguese Gambit and Icelandic lines. Not locked.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Not a set-up: Black's move choices depend on White's 3rd move (3.d4, 3.c4, 3.Bb5+, 3.Nf3). It is a respectable defence: Carlsen and Nakamura have played the Scandinavian, and the 2...Nf6 branch is a long-established, analysed option (Marshall variation), so standard rather than offbeat. Wholesale Chess says it appears rarely at beginner-intermediate levels but regularly among GMs.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Wholesale Chess (a seller of beginner repertoire material) says the same positions repeat and the lines are good for beginners; recurring patterns are easy to learn. Own understanding: critical lines (4.Nf3 Bg4 5.c4 Nb6 6.c5 N6d7; Icelandic and Portuguese gambits) require some move knowledge but the plan set is small. Black must handle several White 3rd-move options.",
+      "sources": ["s1", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "rapid development",
+    "avoiding loss of tempo",
+    "space advantage",
+    "d-file pressure",
+    "opposite-side castling attack",
+    "Caro-Kann-type structure",
+    "challenging the centre with ...c5 or ...e6"
+  ],
+  "sublines_that_differ": [
+    { "name": "Portuguese Gambit", "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Bg4", "how": "Black gives a pawn for rapid development and attacking chances; sharp, queen-trade and opposite-castling themes." },
+    { "name": "Icelandic Gambit", "moves": "1. e4 d5 2. exd5 Nf6 3. c4 e6", "how": "Black sacrifices a pawn for rapid development after 4.dxe6 Bxe6; double-edged." },
+    { "name": "Gipslis Variation (Marshall)", "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Nxd5 4. Nf3 Bg4", "how": "The main modern line; Black pins/pressures d4 and develops the bishop outside the pawn chain; White typically 5.c4 Nb6 6.c5." },
+    { "name": "3.c4 c6 Panov-type", "moves": "1. e4 d5 2. exd5 Nf6 3. c4 c6 4. d4 cxd5", "how": "Transposes to the Panov-Botvinnik Attack of the Caro-Kann with isolated or hanging pawn structures." },
+    { "name": "3.Bb5+ Bd7", "moves": "1. e4 d5 2. exd5 Nf6 3. Bb5+ Bd7", "how": "White keeps the pawn; Black gets piece activity; 4.Bc4 and 4.Bxd7+ Qxd7 5.c4 are main tries." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Black delays recapturing on d5 with 2...Nf6, prioritising rapid piece development over immediate equality in the centre",
+        "verdict": "supported",
+        "note": "Sources say 2...Nf6 avoids the tempo lost in the ...Qxd5 lines and Black develops before regaining the pawn.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is a dynamic and provocative response to 1.e4",
+        "verdict": "supported",
+        "note": "Emms/Wikipedia: more tactical branch of the Scandinavian. 'Provocative' is tone.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It often leads to asymmetrical positions where Black accepts a space disadvantage in exchange for active pieces and counter-attacking chances",
+        "verdict": "supported",
+        "note": "White typically gets a slight initiative and space with d4/c4; Black's compensation is development and piece activity.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: solidify the central space advantage (d4, c4), develop pieces to restrict Black",
+        "verdict": "supported",
+        "note": "d4 and c4 (kicking the knight from d5) are the main White ideas.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: use the space to build an attack",
+        "verdict": "unverifiable",
+        "note": "Sources emphasise development and initiative; a king attack is not described as a standard White plan in the main line.",
+        "sources": []
+      },
+      {
+        "claim": "Black: complete development quickly",
+        "verdict": "supported",
+        "note": "Quick development (Nf6, Bg4/Bf5, Nc6) is the core Black idea.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: challenge White's centre with pawn breaks like ...c5 or ...e6",
+        "verdict": "supported",
+        "note": "...e6 and ...c6 appear in the sources; ...c5 as a lever against d4 is own understanding.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

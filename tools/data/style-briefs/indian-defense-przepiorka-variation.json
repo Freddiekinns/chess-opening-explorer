@@ -1,0 +1,46 @@
+{
+  "slug": "indian-defense-przepiorka-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Przepiorka Variation",
+    "eco": "A49",
+    "moves": "1. d4 Nf6 2. Nf3 g6 3. g3",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "east-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides fianchetto: 3...Bg7 4.Bg2 O-O 5.O-O d6, often with c4 and Nc3 added to reach a Fianchetto King's Indian. White keeps a flexible centre and may play c4, b3 or Nbd2; Black plays ...d6, ...Nbd7 and ...e5 or ...c5. Play is quiet and manoeuvring with little forced theory.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop and add c4, Nc3 or b3 to pressure d5/e5." },
+    { "idea": "Keep the centre flexible and avoid KID attacking lines." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...Bg7, ...O-O, ...d6 and ...e5 or ...c5." },
+    { "idea": "Wait for White to commit c4 before choosing the structure." }
+  ],
+  "typical_structures": [
+    { "structure": "Double fianchetto with flexible pawn centres; Fianchetto King's Indian after c4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, positional; neither side takes early risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre undecided, flank pieces." },
+    "approach": { "notes": "A set-up White can play against most Black set-ups, but here named against the KID move order." },
+    "level": { "reason": "understanding", "notes": "Positional manoeuvres but no big theory." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Double Fianchetto", "moves": "5. b3 d6 6. Bb2", "how": "White adds the queen's bishop on the long diagonal." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet manoeuvring, neither especially forcing nor hard to break." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A standard fianchetto set-up." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The centre is undecided." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players, though it is a flexible set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans, not memory." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides use fianchettoed bishops and indirect centre control." }
+  }
+}

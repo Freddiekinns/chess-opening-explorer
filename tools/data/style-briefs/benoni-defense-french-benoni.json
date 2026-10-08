@@ -1,0 +1,44 @@
+{
+  "slug": "benoni-defense-french-benoni",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: French Benoni",
+    "eco": "A43",
+    "moves": "1. e4 e6 2. d4 c5 3. d5",
+    "fen": "rnbqkbnr/pp1p1ppp/4p3/2pP4/4P3/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "french-defense-franco-sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "After 1.e4 e6 2.d4 c5 White advances 3.d5, gaining space and leaving Black to choose between 3...exd5 4.exd5 d6, 3...d6 and 3...Nf6. The positions resemble a Benoni with White's e-pawn already exchanged, giving White space and Black an open e-file and queenside play. The line is little used and I am not sure of the exact main line.",
+  "white_ideas": [
+    { "idea": "Gain space with d5, play Nc3, Bd3 and Nf3 and keep Black cramped." },
+    { "idea": "Use the e-file and the d5 pawn's support to restrict Black's pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...exd5 and ...d6 and ...g6, ...Bg7 to a Benoni-type structure." },
+    { "idea": "Use the half-open e-file and queenside pawn majority." }
+  ],
+  "typical_structures": [
+    { "structure": "Benoni-like structure with White pawn on d5 and Black c5/d6, usually after the e-pawns are exchanged." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Not much theory I am sure of; space against counterplay, probably balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable for both sides; 3.d5 is not refuted." },
+    "structure": { "notes": "Asymmetric centre with half-open files; not locked." },
+    "approach": { "notes": "Franco-Benoni 2...c5 is rare among strong players." },
+    "level": { "reason": "understanding", "notes": "Benoni-type plans, little theory." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Space for White against counterplay; unsure." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "Asymmetric Benoni-type centre with a half-open file." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rarely used by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans matter, little theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White's d5 pawn gains space." }
+  }
+}

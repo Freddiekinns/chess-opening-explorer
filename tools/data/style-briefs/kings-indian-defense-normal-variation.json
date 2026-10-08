@@ -1,0 +1,106 @@
+{
+  "slug": "kings-indian-defense-normal-variation",
+  "root": {
+    "name": "King's Indian Defense: Normal Variation, King's Knight Variation",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. Nf3 g6 3. c4",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Indian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King%27s_Indian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "King's Indian Defence: Plans, Variations and Model Games",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/kings-indian-defence.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "King's Indian Fianchetto Variation search snippets (365chess, Modern Chess course)",
+      "publisher": "various, search snippets only",
+      "url": "https://www.modern-chess.com/course/kings-indian-defense-for-black-fight-the-fianchetto-variation/12216/",
+      "kind": "course"
+    }
+  ],
+  "overview": "This root is the King's Indian reached by the move order 1.d4 Nf6 2.Nf3 g6 3.c4 (the same position as 3.Nf3 in the 2.c4 move order). It is not a distinct opening: it is the ordinary King's Indian, where Black fianchettoes with ...Bg7, castles, and strikes at White's centre with ...e5, ...c5 or ...f5. White's choice of set-up decides the character: the classical 4.Nc3 and e4 leads to the locked-centre opposite-wing race (c4-c5 against ...f5-f4), while the Fianchetto Variation (g3, Bg2, O-O, Nc3) is quieter, positional, and has less forcing theory. The data subtree groups 4.e4 Normal Variation lines (the majority of games) under this root, so it mixes both. Black's success depends on timing and coordination rather than automatic aggression.",
+  "white_ideas": [
+    { "idea": "Classical set-up: build the c4-d4-e4 centre with Nc3, e4, Be2, O-O, then queenside expansion with c4-c5 after d5", "sources": ["s1", "s2"] },
+    { "idea": "Fianchetto Variation: g3, Bg2 and a slow positional squeeze that reduces Black's direct attacking patterns", "sources": ["s2", "s3"] },
+    { "idea": "Break through on the queenside before Black's kingside attack arrives", "sources": ["s2"] },
+    { "idea": "Neutralise the g7 bishop and restrain ...f5", "sources": ["s2", "s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6/...Bg7, castle quickly, then strike with ...e5, ...c5 or ...f5", "sources": ["s2"] },
+    { "idea": "Kingside pawn storm ...f5-f4 and ...g5 once the centre locks", "sources": ["s1", "s2"] },
+    { "idea": "Time the breaks: launching ...f5 before the position justifies it is the biggest mistake", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Locked centre after ...e5 and d5, opposite-wing race (Classical / Mar del Plata)", "sources": ["s1", "s2"] },
+    { "structure": "Fianchetto lines: flexible, elastic, centre closed but slowly manoeuvred", "sources": ["s2", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: dynamic, exceptionally complex, unbalanced positions. ChessWorld: sharpness varies, Fianchetto is positional while Classical and Samisch give tactical fireworks. The main branch (Classical, where most subtree games sit) is double-edged with both sides racing. This particular move order mixes a calm and a sharp set-up.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Sound: validated by Soviet players in the 1930s and played by modern GMs (Nakamura, Radjabov, Ding Liren).",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "In the main line the central pawns stay on and lock (d5/e5) with play on the wings; Fianchetto lines also keep the centre closed and elastic. Open centre lines are not typical.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "A named defence with its own theory, played by many strong players. This particular move order (3.Nf3 first) is just a transposition to ordinary King's Indian lines, not a separate system.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "ChessWorld says you do not need a lot of theory to start, but success needs understanding of timing; moderate-to-challenging. Wikipedia says main lines (Classical, Samisch) need deeper preparation, Fianchetto less memorisation.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "fianchettoed bishop on g7",
+    "kingside pawn storm",
+    "queenside expansion with c4-c5",
+    "locked centre",
+    "opposite-wing race",
+    "...e5 break",
+    "...c5 break",
+    "...f5 break"
+  ],
+  "sublines_that_differ": [
+    { "name": "Classical / Normal 4.e4", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2", "how": "Locked-centre opposite-wing race; sharp and theory-heavy." },
+    { "name": "Fianchetto Variation", "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3 O-O 5. Bg2 d6 6. O-O", "how": "Positional, little forcing theory, slow squeeze." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "This is a foundational set-up against the King's Indian Defense where White establishes a classical pawn centre and develops logically", "verdict": "unverifiable", "note": "The root is just a move-order of the King's Indian itself; it is Black's defence, not a White set-up against it. White's set-up depends on later moves (Classical vs Fianchetto).", "sources": ["s1"] },
+      { "claim": "Black adopts a hypermodern strategy, preparing to fianchetto the dark-squared bishop to challenge White's central control from the flank", "verdict": "supported", "note": "Standard description of the King's Indian.", "sources": ["s1", "s2"] },
+      { "claim": "Resulting positions are strategically complex and dynamic, ideal for players who like long-term planning and imbalances", "verdict": "supported", "note": "Complex, unbalanced, best for players who enjoy imbalance and counterplay.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Solidify central control, expand on the queenside, neutralise Black's fianchettoed bishop", "verdict": "supported", "note": "Queenside expansion is the Classical plan; neutralising the bishop is a Fianchetto/Bg5 theme.", "sources": ["s2"] },
+      { "claim": "Black: Complete the fianchetto (...Bg7), challenge White's centre with ...e5 or ...c5, and often prepare a kingside attack", "verdict": "supported", "note": "Three breaks ...e5, ...c5, ...f5.", "sources": ["s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 1 }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "english-opening-mikenas-carls-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Mikenas-Carls Variation",
+    "eco": "A18",
+    "moves": "1. c4 Nf6 2. Nc3 e6 3. e4",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2P1P3/2N5/PP1P1PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White grabs the centre with e4 and plans d4, building a big pawn centre against Black's hypermodern set-up. The main line is 3...d5 4.e5 d4 5.exf6 dxc3 6.bxc3 Qxf6 (Flohr), where Black gets development and White a centre and the bishop pair, or 4.cxd5 exd5 5.e5 Ne4. Black may also choose the quieter 3...d6 4.d4 Be7. Play is forcing and concrete.",
+  "white_ideas": [
+    { "idea": "Build a big centre with e4/d4 and use the space and development lead." },
+    { "idea": "Play e5 to gain time on the f6 knight and exploit the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre at once with ...d5, ...d4 and ...c5, trading pieces." },
+    { "idea": "Attack White's c3 pawns and queenside after ...dxc3 and bxc3." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on c3/d4 with Black's Qxf6 development, open lines after exf6." },
+    { "structure": "After 4.cxd5 exd5 5.e5 Ne4 Black has a French-like set-up with the knight on e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing central play where both sides can go wrong early; 3...d5 4.e5 d4 is concrete." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pieces are exchanged on f6 and c3, no pawn is given for free." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Open lines after exchanges in the Flohr line." },
+    "approach": { "notes": "Rare at the top level but a valid English branch, so standard." },
+    "level": { "reason": "memory", "notes": "Needs the forcing early moves, not long forcing lines." }
+  },
+  "plan_phrases": ["central pawn majority", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "3...d6 4.d4", "moves": "1. c4 Nf6 2. Nc3 e6 3. e4 d6 4. d4 Be7", "how": "A quieter King's Indian/Philidor-like set-up for Black." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Early e4, and 4.e5 d4 5.exf6 dxc3 is forcing." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No pawn is sacrificed in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Both sides have playable positions." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "After the exchanges on f6 and c3 lines open early; otherwise semi-open French-like." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but played by strong players from time to time." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Forcing opening moves need to be known." },
+    "plans": { "value": ["central_pawn_majority", "lead_in_development"], "reason": "White's big centre against Black's development." }
+  }
+}

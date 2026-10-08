@@ -1,0 +1,46 @@
+{
+  "slug": "mikenas-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mikenas Defense",
+    "eco": "A40",
+    "moves": "1. d4 Nc6",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the knight to c6 against 1.d4, inviting 2.d5 Ne5 3.e4 or 3.f4 where White gets a large centre and Black tries to attack it, or 2.e4 and 2.Nf3 with ...d5 or ...e5. It is a hypermodern-style offbeat reply with no real theory; White's simplest plan is to take space and the bishop pair is usually available. Not played by strong players regularly.",
+  "white_ideas": [
+    { "idea": "Gain space with d5 and e4 or f4 and kick the knight around" },
+    { "idea": "Play a normal Queen's Pawn set-up with Nf3, c4 and Nc3 and a centre pawn pair" }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...e5 or ...d5 and counterattack on the overextended pawns" },
+    { "idea": "Surprise the opponent with an unusual set-up like ...Nc6 and ...e5" }
+  ],
+  "typical_structures": [
+    { "structure": "White space centre on d5/e4 against Black's knights and a counterattack on e5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unclear and double-edged: White's big centre against Black's counterplay, with tactical lines like Full Metal Jacket; Sharp, low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main lines." },
+    "soundness": { "notes": "Considered inferior for Black; White gets an easy edge with space." },
+    "structure": { "notes": "Centre not decided early; Flexible, low confidence." },
+    "approach": { "notes": "Strong players seldom play it; Offbeat." },
+    "level": { "reason": "memory", "notes": "Dubious line, not Beginner; Intermediate." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Full Metal Jacket", "moves": "1. d4 Nc6 2. d5 Ne5 3. e4 e6 4. f4 exd5 5. fxe5 Qh4+", "how": "A wild tactical line with a queen check and open play." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "A big White centre against counterplay and tactical lines." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material is given in the main lines." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.6, "reason": "White gets space and an easy edge." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre stays undecided early." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "Dubious lines are never Beginner." },
+    "plans": { "value": ["hypermodern_centre", "space_advantage"], "reason": "Black attacks White's space centre." }
+  }
+}

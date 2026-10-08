@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-gurgenidze-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Gurgenidze System",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 g6",
+    "fen": "rnbqkbnr/pp2pp1p/2p3p1/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black combines the Caro-Kann pawns with a kingside fianchetto, so the g7 bishop hits d4 and White's centre is attacked from the flank. White usually plays 4.Nf3 Bg7 5.h3 or 5.Be2 and then e5 or exd5 cxd5 for space, with Black aiming for ...dxe4 or ...Nf6. It gives Black a flexible, solid set-up that avoids the Advance and Panov tabiyas.",
+  "white_ideas": [
+    { "idea": "Nf3, h3 and Bd3 with a space edge, or e5 to gain space and cramp the bishop." },
+    { "idea": "Exchange on d5 and hit the Black centre with c4 and Bg5." }
+  ],
+  "black_ideas": [
+    { "idea": "...Bg7, ...Nf6, ...dxe4 and ...O-O with long-diagonal pressure." },
+    { "idea": "Hit White's pawn centre with ...c5 and ...Nc6 after some preparation." }
+  ],
+  "typical_structures": [
+    { "structure": "Modern/Pirc-like fianchetto against a pawn centre, with the c6/d5 pawns holding the centre until released." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Combines Caro-Kann solidity with a fianchetto; positions are flexible, not forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, played by strong players such as Gurgenidze." },
+    "structure": { "notes": "Centre tension between e4/d4 and ...d5, ...c6." },
+    "approach": { "notes": "Occasionally played by strong players; standard, though with a system-like set-up." },
+    "level": { "reason": "understanding", "notes": "Needs plan understanding of both Caro-Kann and Modern set-ups." }
+  },
+  "plan_phrases": ["Fianchetto", "Hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "4.e5 Bg7 5.f4", "moves": "4.e5 Bg7 5.f4", "how": "Space-gaining White set-up that cramps Black." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Solid pawn structure but dynamic fianchetto, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A reputable Caro-Kann sideline." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played occasionally by strong players, not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Plans clear but mixes two systems." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Black fianchettoes and attacks the centre with pieces and pawn breaks." }
+  }
+}

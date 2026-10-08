@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-scheveningen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Scheveningen Variation",
+    "eco": "B80",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+    "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black builds the compact ...e6 and ...d6 pawn pair with ...Be7, ...O-O and ...Nc6 or ...a6, and waits to break with ...d5 or ...b5. White's main plans are the English Attack (Be3, f3, Qd2, O-O-O, g4) or the Keres Attack with g4, both for a kingside pawn storm against opposite-side castling. The Classical Be2 and O-O line is quieter. The theory is heavy and Black often has to defend precisely before counterplay arrives.",
+  "white_ideas": [
+    { "idea": "English Attack: Be3, f3, Qd2, O-O-O and g4-g5 with a pawn storm" },
+    { "idea": "Keres Attack 6.g4 to cramp Black's pieces before ...Nc6 or ...h6" },
+    { "idea": "Classical Be2, O-O, f4 for a slower kingside build-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Solid ...e6/...d6 pawns, ...Be7, ...O-O and ...Nc6 or ...a6 and ...Qc7" },
+    { "idea": "Break with ...d5 or counterplay with ...b5 and ...Rc8 on the c-file" }
+  ],
+  "typical_structures": [
+    { "structure": "Black e6/d6 pawns against White's e4 pawn with the half-open c-file; Sicilian Scheveningen centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "English Attack and Keres Attack mean opposite-side castling and pawn storms where one slip loses fast." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered in the main lines." },
+    "soundness": { "notes": "Sound; Kasparov and Karpov were regular practitioners." },
+    "structure": { "notes": "Black has a half-open c-file against e4: semi-open Sicilian." },
+    "approach": { "notes": "A main Sicilian branch played at every level, standard." },
+    "level": { "reason": "both", "notes": "Heavy theory in English Attack lines and subtle plans for Black." }
+  },
+  "plan_phrases": ["pawn storm g4", "opposite-side castling", "half-open c-file counterplay"],
+  "sublines_that_differ": [
+    { "name": "Scheveningen: Classical, 6.Be2", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2 e6", "how": "Quieter, castles kingside, less forcing." },
+    { "name": "Scheveningen: Keres Attack", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. g4", "how": "Immediate pawn storm." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "English and Keres attacks bring opposite-side castling and pawn storms." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A fully respected main Sicilian line." },
+    "structure": { "value": "semi_open", "confidence": 0.85, "reason": "Asymmetric Sicilian centre with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main-line Sicilian choice at every level." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.5, "reason": "Heavy English Attack theory and delicate defending for Black." },
+    "plans": { "value": ["pawn_storm", "opposite_side_castling", "half_open_c_file"], "reason": "White storms with g4 while Black counters on the c-file." }
+  }
+}

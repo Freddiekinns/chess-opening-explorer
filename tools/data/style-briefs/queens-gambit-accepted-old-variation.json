@@ -1,0 +1,52 @@
+{
+  "slug": "queens-gambit-accepted-old-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Old Variation",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. e3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/4P3/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White recovers the c4 pawn with Bxc4 after 3.e3 and gets a healthy d4 centre; Black takes space on the queenside or hits d4 with ...c5 or ...e5. The usual game is a piece-play middlegame with an isolated queen's pawn or hanging pawns, positional rather than forcing.",
+  "white_ideas": [
+    { "idea": "Bxc4, Nf3, O-O and Nc3, then e4 or an IQP/hanging-pawn middlegame" },
+    { "idea": "Meet ...c5 with dxc5 or Bxc4 cxd4 exd4 for an IQP with open lines" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nf6, ...e6, ...a6 and ...b5 to gain queenside space" },
+    { "idea": "Strike at d4 with ...c5 or ...e5 to free the position" }
+  ],
+  "typical_structures": [
+    { "structure": "IQP after ...c5 and ...cxd4 exd4, White with active pieces" },
+    { "structure": "Hanging pawns on c5/d5 for Black after ...c5 and ...dxc5-type exchanges" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main lines 3...Nf6 4.Bxc4 e6 are even, open piece play without forced sharp lines; neither solid fortress nor forcing." },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains the c4 pawn at once with Bxc4; Black cannot hold it."
+    },
+    "soundness": { "notes": "Sound for both sides; a mainstream QGA line." },
+    "structure": { "notes": "d-pawn and c-pawn exchanged, open centre with open lines for pieces; same as QGA anchor (Open)." },
+    "approach": { "notes": "Standard QGA line, played at every level including by strong players." },
+    "level": { "reason": "understanding", "notes": "Plans are clear (develop, regain pawn, IQP play) and theory is light; Intermediate." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "hanging pawns", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "3...e5", "moves": "1. d4 d5 2. c4 dxc4 3. e3 e5", "how": "Black hits d4 at once; after Bxc4 exd4 exd4 White gets open lines and an easy game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.7, "reason": "Open piece play that is even and neither forcing nor a fortress." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "White regains c4 at once with Bxc4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream line sound for both sides." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Central pawns come off and pieces take open lines, as in the QGA anchor." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A regular QGA variation for strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.75, "reason": "Clear plans with light theory, not a first-repertoire line." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns", "lead_in_development"], "reason": "IQP and hanging-pawn structures with development lead are the usual themes." }
+  }
+}

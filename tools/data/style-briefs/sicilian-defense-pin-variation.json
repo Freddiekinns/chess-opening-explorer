@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-pin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Pin Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Bb4",
+    "fen": "rnbqk2r/pp1p1ppp/4pn2/8/1b1NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black pins the c3 knight and aims at e4, usually after 6.Bd3 or 6.Nb3 or 6.e5 Ne4 with tactics. White can chase with Bd3 or Qd3 and try to keep the centre, while Black tries to undermine e4 and use the pin. I am unsure of the details and judge it from the moves.",
+  "white_ideas": [
+    { "idea": "6.Bd3 or 6.Nb3 and break the pin, keeping the e4/d4 centre" },
+    { "idea": "6.e5 Ne4 7.Qg4 for tactics around g7 and the knight on e4" }
+  ],
+  "black_ideas": [
+    { "idea": "Pin the c3 knight and hit e4, with ...e5 or ...Nc6 follow-ups" },
+    { "idea": "Trade the dark-squared bishop for the knight and fight for d5" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian asymmetric centre after ...cxd4 with Black's e6/d6 pawns and White's e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Tactical pin and e4 pressure; 6.e5 and 6.Bd3 e5 lines are sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; the Koch and Jaffe variations are tactics, not gambits." },
+    "soundness": { "notes": "Sound; some lines are slightly worse for Black but not refuted." },
+    "structure": { "notes": "Standard Sicilian half-open c-file." },
+    "approach": { "notes": "An occasional Sicilian branch, played by some strong players." },
+    "level": { "reason": "memory", "notes": "Needs concrete tactical knowledge of the e5/Ne4 and Jaffe lines." }
+  },
+  "plan_phrases": ["doubled pawns", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Koch Variation", "moves": "6.e5", "how": "Forcing tactical line with Ne4 and Qg4" },
+    { "name": "Jaffe Variation", "moves": "6.Bd3 e5", "how": "Black hits the knight at once" }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Pin and e4 pressure bring concrete tactics." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Playable without a clear refutation." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Every Sicilian is semi-open." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Occasionally played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Concrete lines to learn but not deep theory." },
+    "plans": { "value": ["doubled_pawns"], "reason": "Black may trade on c3 to double White's c-pawns." }
+  }
+}

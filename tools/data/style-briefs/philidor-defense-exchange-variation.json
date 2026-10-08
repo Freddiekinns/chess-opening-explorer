@@ -1,0 +1,176 @@
+{
+  "slug": "philidor-defense-exchange-variation",
+  "root": {
+    "name": "Philidor Defense: Exchange Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Philidor Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Philidor_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Philidor Defense Adviser, Quiz & Replay Lab",
+      "publisher": "chessworld.net",
+      "url": "https://www.chessworld.net/philidor-defense.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippet: Philidor Defense Guide / 3...exd4 4.Nxd4 Nf6 5.Nc3 Be7 plans",
+      "publisher": "365chess and related (search snippet only)",
+      "url": "https://www.365chess.com/chess-openings/Philidor-Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "After 3.d4 exd4 White recaptures (4.Nxd4 is the main line; Morphy's 4.Qxd4 is the alternative) and then has a space advantage and the more comfortable game. Black replies ...Nf6 and ...Be7, castles quickly and aims for a compact position (often with ...Nbd7 or ...c5/...c6 later) with king safety first, using ...d5 or ...c5 as freeing breaks. The structure is passive but not refuted: White cannot force a tactical win, but must prove an edge. Sources call it a sound, practical defence, an easy entry point for club players that is rarely used by top players because it concedes space; Aronian is mentioned as an occasional user. The Antoshin set-up (6.Be2) is a common White try.",
+  "white_ideas": [
+    {
+      "idea": "Take central space immediately with d4 and keep it; develop with Nc3, Be2 or Bc4, and castle either side, asking Black to prove the set-up.",
+      "sources": ["s2", "s1"]
+    },
+    {
+      "idea": "Antoshin Variation: 5.Nc3 Be7 6.Be2 is a flexible, solid set-up; 6.Bc4 is the sharper alternative.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Morphy's 4.Qxd4 Nc6 gains time on the queen via Bb5 and queens-side castling lines; largely disappeared from modern practice.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop harmoniously with ...Nf6, ...Be7 and rapid kingside castling (6...O-O), putting the second knight on d7 or c6; king safety first.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Prepare a well-timed central or queenside challenge with ...c6 or ...c5 (and ...d5), the freeing breaks that avoid long-term passivity.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Hanham-style set-up (...Nf6, ...Be7, ...Nbd7, ...O-O, ...c6) keeps a compact shell and waits for counterplay.",
+      "sources": ["s2", "s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "After the d-pawns are traded: White e4 against Black d6, White with a space advantage and open d-file; Black develops behind the d6 pawn in a compact, cramped formation. (My own reading: it resembles an Open Sicilian/Scheveningen-type pawn structure.)",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid but passive. Wikipedia says the line is fundamentally sound but restrictive and leads to a position many regard as inferior despite having no tactical refutation. Chessworld calls it a sound and practical opening, especially at club level, where the Exchange route is a clear, structured, easy-to-understand game. Not a forcing or tactical line; risk of a quick loss is low but the long-term squeeze is the danger.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn on e5 is exchanged for the d-pawn; nothing is given.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound. No tactical refutation exists; White enjoys a more comfortable position (more space) but cannot force an advantage. It is not considered dubious.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Central pawns have been exchanged (d4xd4) leaving White e4 against Black d6; the d-file is half-open and the game is a partly open position where White has the space and Black the compact structure. Not a locked centre.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A recognised defence to 1.e4 e5 2.Nf3, played by amateurs and occasionally by strong players. Wikipedia: seldom seen at top level (Aronian occasionally); it almost vanished from top-tier chess by WWI because other defences offer more active chances. Chessworld: stronger players use it as a practical weapon rather than a permanent mainstay. Not a system played against everything.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessworld says it is suitable for beginners and intermediates who want a solid reply to 1.e4 without memorising much theory; plans are straightforward and king safety comes first. The hardest thing is judging when to break with ...c5/...d5 so as not to become too passive. Wikipedia says amateurs choose it because it is simpler and easier to understand than the complex heavily analysed alternatives.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "solid first, active later",
+    "king safety first",
+    "...c5 break",
+    "...d5 break",
+    "space advantage",
+    "cramped position",
+    "compact shell (Hanham)",
+    "central space for White"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Morphy Variation",
+      "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Qxd4",
+      "how": "White's queen comes out early; Black gains time with ...Nc6, giving a different queen-in-centre game rather than the usual Nxd4 structure."
+    },
+    {
+      "name": "Antoshin Variation",
+      "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Be7 6. Be2",
+      "how": "The most flexible and solid White set-up; calmer than 6.Bc4 or the Be3/Qd2 attacking set-ups."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Exchange Variation is a solid and reliable, if somewhat passive, response to White's central push.",
+        "verdict": "supported",
+        "note": "Wikipedia: solid but passive; Chessworld: sound and practical.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "By trading pawns immediately, Black avoids sharp tactical complications.",
+        "verdict": "supported",
+        "note": "Chessworld calls the Exchange route the easiest entry point with a clear structure; there is no tactical refutation to worry about.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black aims for a resilient, cramped but defensible position.",
+        "verdict": "supported",
+        "note": "Matches the sources' description of a restrictive but sound set-up.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White uses the space advantage to build a kingside attack, often with Be3, Qd2 and O-O-O.",
+        "verdict": "unverifiable",
+        "note": "Space advantage is stated; I found no source that mentions the Be3/Qd2/O-O-O set-up against this line.",
+        "sources": []
+      },
+      {
+        "claim": "Black develops solidly with ...Nf6, ...Be7, ...O-O and challenges White's centre with ...c5.",
+        "verdict": "supported",
+        "note": "...c6 or ...c5 are the freeing breaks.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "Black seeks to trade pieces to relieve the cramped position.",
+        "verdict": "unverifiable",
+        "note": "No source mentions piece trades as a plan; it is plausible given the cramped position.",
+        "sources": []
+      },
+      {
+        "claim": "White maintains central control and piece activity, preventing Black's freeing breaks.",
+        "verdict": "supported",
+        "note": "Generic, but consistent with White asking Black to prove the set-up.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black defends resiliently and aims for a favourable, often simplified, endgame.",
+        "verdict": "unverifiable",
+        "note": "Resilience is supported, but no source mentions a favourable endgame as a Black goal.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

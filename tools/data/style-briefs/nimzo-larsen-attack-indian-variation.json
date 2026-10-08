@@ -1,0 +1,49 @@
+{
+  "slug": "nimzo-larsen-attack-indian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Indian Variation",
+    "eco": "A01",
+    "moves": "1. b3 Nf6",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "nimzo-larsen-attack",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the queen's bishop with Bb2 to hit e5 and the long diagonal, and Black usually responds with a kingside fianchetto of their own after 2...g6. Both sides aim at the centre from the flanks and the position is usually quiet and flexible. White chooses e3, Nf3 and a later c4 or f4 depending on Black's set-up.",
+  "white_ideas": [
+    { "idea": "Bb2 on the long diagonal, then e3, Nf3 and a late c4 or f4" },
+    { "idea": "Trade the dark-squared bishops or exploit the long diagonal against e5/g7" },
+    { "idea": "Delay central pawn commitment and react to Black's set-up" }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...g6 and Bg7, fianchetto and meet Bb2 with the same diagonal" },
+    { "idea": "Build the centre with ...d6 and ...e5 or ...c5" },
+    { "idea": "Develop smoothly, castle and wait for White's central commitment" }
+  ],
+  "typical_structures": [
+    { "structure": "Double fianchetto with flexible, undecided centre" },
+    { "structure": "White e3/d3 against Black ...d6/...e5 with both long diagonals contested" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring, few forced sequences. Both sides can switch plans." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound, roughly equal." },
+    "structure": { "notes": "Flank opening with the centre undecided; flexible like the English." },
+    "approach": { "notes": "Bb2/e3/Nf3 set-up used against many defences, close to a system, though 1.b3 is a recognised offbeat-ish alternative." },
+    "level": { "reason": "understanding", "notes": "Little theory but needs feel for when to strike with c4 or f4, intermediate." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "long diagonal"],
+  "sublines_that_differ": [
+    { "name": "Nimzo-Larsen: 2.Bb2 e6 Classical", "moves": "1.b3 Nf6 2.Bb2 e6 3.e3", "how": "Black keeps the centre flexible and may go for a Queen's Indian structure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Quiet flank play, neither especially solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected and equal." },
+    "structure": { "value": "flexible", "confidence": 0.85, "reason": "Flank opening, centre undecided." },
+    "approach": { "value": "system", "confidence": 0.55, "reason": "Bb2, e3, Nf3 set-up playable against almost any reply." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are subtle but there is little to memorise." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Long-diagonal bishops and flank control of the centre." }
+  }
+}

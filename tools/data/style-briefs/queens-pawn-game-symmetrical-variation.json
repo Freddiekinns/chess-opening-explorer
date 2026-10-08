@@ -1,0 +1,155 @@
+{
+  "slug": "queens-pawn-game-symmetrical-variation",
+  "root": {
+    "name": "Queen's Pawn Game: Symmetrical Variation",
+    "eco": "D02",
+    "moves": "1. d4 d5 2. Nf3 Nf6",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "thin",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Pawn Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Pawn_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Queen's Pawn Games",
+      "publisher": "ChessBase Learn",
+      "url": "https://learn.chessbase.com/en/page/queens-pawn-games",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Catalan Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Catalan_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Queen's Pawn Game search result summary (D05 / 2.Nf3 Nf6 branches; snippet only)",
+      "publisher": "Web search (365chess, ChessBase, Wikipedia results)",
+      "url": "https://www.365chess.com/eco/D05_Queen's_pawn_game",
+      "kind": "reference"
+    }
+  ],
+  "overview": "This is a crossroads reached by symmetrical knight development: 1.d4 d5 2.Nf3 Nf6. Nothing is committed in the centre; the character is decided by White's third move. 3.c4 transposes to Queen's Gambit structures (QGD, Slav, Semi-Slav, QGA) and is by far the most played continuation in the database; 3.g3 gives the Pseudo-Catalan (a Catalan-style fianchetto); 3.e3 with Bd3 and c3 is the Colle; 3.Bf4 or 2.Bf4 is the London; 3.c3 is a flexible quiet set-up. Wikipedia and ChessBase describe the non-c4 lines as closed-centre system play with simple development plans and little theory. Black is generally free to develop logically (...e6, ...c5 or ...c6, ...Bf5/Bg4).",
+  "white_ideas": [
+    { "idea": "Play 3.c4 to transpose into the Queen's Gambit family and fight for a space advantage.", "sources": ["s1", "s4"] },
+    { "idea": "Colle System: e3, Bd3, c3 and Nbd2, preparing the e3-e4 advance; the dark-squared bishop stays inside the pawn chain until e4 is achieved.", "sources": ["s2", "s4"] },
+    { "idea": "London System: Bf4 outside the pawn chain, e3, c3, Nbd2, Bd3, a pattern played almost independently of what Black does; simple kingside attacking plans.", "sources": ["s2", "s4"] },
+    { "idea": "Pseudo-Catalan with g3 and Bg2: pressure on the queenside and long diagonal (the Catalan idea without c4).", "sources": ["s3", "s4"] }
+  ],
+  "black_ideas": [
+    { "idea": "Develop logically with ...e6 and complete development; Black faces no serious danger against Colle or London set-ups.", "sources": ["s2"] },
+    { "idea": "Challenge the centre with ...c5 for active piece play.", "sources": ["s4"] },
+    { "idea": "Queenside counterplay with ...b6 and ...Bb7, or ...c6 with ...Bf5/...Bg4 development of the light-squared bishop.", "sources": ["s2"] },
+    { "idea": "Against g3: mirror with ...g6/...Bg7 and ...O-O, or ...c6 with ...Bg4 (both visible in the most played children).", "sources": ["s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Closed or tense centre with d4 vs d5 pawns kept on (Queen's Gambit, Catalan, Colle, London).", "sources": ["s1", "s2"] },
+    { "structure": "Colle / London pyramid: White pawns on c3, d4, e3 with a bishop on d3.", "sources": ["s2"] },
+    { "structure": "Catalan-type fianchetto set-up against a d5/e6 or d5/c6 centre.", "sources": ["s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet at the root. ChessBase says the Colle gives Black comfortable defence with straightforward moves and the London needs minimal theory; Wikipedia describes Queen's Pawn systems leading to closed pawn structures. Catalan is neither extremely sharp nor passive. 3.c4 branches are as sharp as the Queen's Gambit family gets (Semi-Slav) but are not the typical character of this root (own understanding: transposition is common in the data).",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root; 3.c4 is the Queen's Gambit, which is not a true gambit (the pawn is regained).",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides. Catalan used by Kramnik, Anand, Carlsen in title matches; London used by Carlsen and Karjakin (ChessBase). Nothing suggests either side is in difficulty.",
+      "sources": ["s2", "s3"]
+    },
+    "structure": {
+      "notes": "Typically closed or tense: centre pawns stay on d4/d5, pieces manoeuvre before contact (Colle, London, Catalan). Wikipedia: Queen's Pawn lines lead to closed pawn structures in the centre. Via 3.c4 the structure may become QGA or Slav-type, which are more open, but those lines belong to their own openings.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "The root is a flexible waiting move rather than a system itself, but the lines it leads to for White (London, Colle, Pseudo-Catalan) are systems playable against almost any Black set-up. ChessBase: London is set up almost independently of Black's reaction. Used by elite players (Carlsen, Karjakin for London).",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "For White the Colle and London are low-theory with clear plans, described as having minimal theoretical requirements and simple attacking plans. Catalan/Pseudo-Catalan needs more positional understanding (moderately challenging per Wikipedia). 3.c4 requires learning the Queen's Gambit family. The root itself has little to memorise; the level depends on which third move.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "transposition to the Queen's Gambit",
+    "Colle set-up with e3-e4 break",
+    "London pyramid",
+    "kingside fianchetto",
+    "pressure on the long diagonal",
+    "solid low-theory development",
+    "central break with ...c5",
+    "queenside counterplay with ...b6 and ...Bb7"
+  ],
+  "sublines_that_differ": [
+    { "name": "Queen's Gambit transpositions", "moves": "1. d4 d5 2. Nf3 Nf6 3. c4", "how": "Becomes QGD/Slav/Semi-Slav/QGA territory; the most played continuation, with theory-heavy and in places sharp lines." },
+    { "name": "Pseudo-Catalan", "moves": "1. d4 d5 2. Nf3 Nf6 3. g3", "how": "Fianchetto system; positional, queenside pressure on the long diagonal." },
+    { "name": "Colle System", "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 c5 5. c3", "how": "Quiet system aimed at e3-e4; low theory." },
+    { "name": "London System", "moves": "1. d4 d5 2. Nf3 Nf6 3. Bf4", "how": "System with the bishop outside the pawn chain; low theory." },
+    { "name": "3.c3", "moves": "1. d4 d5 2. Nf3 Nf6 3. c3", "how": "Flexible quiet move, can lead to Colle or London structures." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Symmetrical Variation is a flexible, solid opening that often serves as a gateway to other systems.",
+        "verdict": "supported",
+        "note": "Wikipedia: 2.Nf3 tends to transpose into other lines including the Colle or London.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Both sides maintain central influence and prepare to castle without committing to a specific pawn structure.",
+        "verdict": "supported",
+        "note": "True of the root; White's third move decides the structure.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It is perfect for strategic players who enjoy outmanoeuvring the opponent in a complex middlegame rather than tactical fireworks.",
+        "verdict": "unverifiable",
+        "note": "Colle and London are described as simple low-theory systems with simple attacking plans; 'complex middlegame' is not what sources emphasise. Taste claim.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Play c4 to transpose into a Queen's Gambit or Catalan, fighting for a space advantage.",
+        "verdict": "supported",
+        "note": "3.c4 is the most played continuation; Catalan arises with c4 and g3 together (3.g3 also gives the Pseudo-Catalan without c4).",
+        "sources": ["s1", "s3", "s4"]
+      },
+      {
+        "claim": "White: Adopt a system set-up like the Colle (e3, c3) or London (Bf4) for solid, low-theory development.",
+        "verdict": "supported",
+        "note": "Colle uses e3 and c3 with Bd3.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black: Challenge the centre with an early ...c5 aiming for active piece play and equality.",
+        "verdict": "supported",
+        "note": "...c5 is the standard Black response against Colle-type set-ups.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "Black: Create a solid structure with ...e6 to complete development and neutralise White's central pressure.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

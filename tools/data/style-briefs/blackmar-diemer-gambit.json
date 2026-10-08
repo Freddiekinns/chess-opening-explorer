@@ -1,0 +1,140 @@
+{
+  "slug": "blackmar-diemer-gambit",
+  "root": {
+    "name": "Blackmar-Diemer Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Blackmar–Diemer Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Blackmar%E2%80%93Diemer_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Blackmar-Diemer Gambit: Traps, Lines & How to Play",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/queens-pawn/blackmar-diemer-gambit/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Search snippets: Chess.com forum threads, Attacking Chess, Ian's Chess Gambits, TheChessWebsite (BDG soundness: Collins, Martin, Lane)",
+      "publisher": "Web search snippets",
+      "url": "https://www.chess.com/forum/view/chess-openings/verdict-on-the-blackmar-diemer-gambit",
+      "kind": "forum"
+    }
+  ],
+  "overview": "White offers a pawn with 1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3, aiming for rapid development, the open f-file and a kingside attack with Bc4, Nge2 or Bf4, castling, g4/h4 and Qe1-h4 ideas against h7. Black accepts with 4...exf3 5.Nxf3 and can choose among the Euwe (5...e6), Ziegler (5...c6), Teichmann (5...Bg4) and Bogoljubov (5...g6) defences, or decline with the Lemberger Countergambit 3...e5. With accurate defence Black consolidates the pawn, trades pieces and heads for a better endgame; engines and master opinion call White's compensation insufficient, which is why it is almost never seen at top level. Below master level it scores very well because the attack is easy to play and hard to defend against. The game is typically open and tactical.",
+  "white_ideas": [
+    { "idea": "Gain time for development with f3, then Nxf3, Bc4, O-O and quick pressure on f7/h7", "sources": ["s1", "s2"] },
+    { "idea": "Kingside attack with Bf4/Nge2, g4 and h4 pawn advances and Qe1-h4 manoeuvres", "sources": ["s1", "s2"] },
+    { "idea": "Open the f-file and create practical problems; initiative is prioritised over regaining material", "sources": ["s1", "s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Accept the pawn and consolidate, exchange pieces, and press in the endgame with the extra pawn", "sources": ["s2"] },
+    { "idea": "Ziegler (5...c6, followed by ...Bf5 against Bc4) is Black's most critical answer; Bogoljubov (5...g6) also scores well", "sources": ["s1", "s2"] },
+    { "idea": "Euwe (5...e6) leads to a French-style structure an extra pawn up; Teichmann (5...Bg4) pins the knight", "sources": ["s1"] },
+    { "idea": "Decline with the Lemberger Countergambit 3...e5, which simplifies and is the most respected way to decline", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White pawn on d4 and open e- and f-files, Black one pawn up and a French-like (...e6, ...c5) or Caro-Kann-like (...c6) formation", "sources": ["s1", "s2"] },
+    { "structure": "Opposite-wing or kingside attack against Black's castled king with White's pawns advancing g4/h4", "sources": ["s1", "s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's kingside attack, open f-file and rapid development make the game concrete and tactical. Chess Doctrine says the attack is easy to play and hard to defend over the board; it is the sort of play where an unprepared Black can lose quickly. With best defence Black simply consolidates.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives the e-pawn (and in the Ryder line a second pawn after 4...exf3 5.Qxf3). Black may keep it: Ziegler/Bogoljubov scores best statistically; engines say Black emerges with significantly better endgame prospects. Declining with the Lemberger 3...e5 means no material changes hands.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Soundness is contested but leans against White. Avrukh: it 'may not be fully correct' but has potent attacking chances; Cox: 'objectively weak'; Chess Doctrine: engines confirm Black can defend and reach a significantly better endgame. Search snippets: GMs Sam Collins and Andrew Martin dismiss it; Gary Lane defends it as a club weapon. The Ryder Gambit (double pawn sacrifice) is considered less sound by everybody. Almost never seen in top-level play.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Open: the e-pawn is exchanged on move 2/3 and play revolves around open e-/f-files and attacking diagonals. After the Lemberger 3...e5 the centre simplifies. Some Black defences (Euwe) lead to French-style semi-open structures with an extra pawn.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A specific gambit line, not a set-up. Rare to nonexistent at master level (Chess Doctrine); club-popular. Wikipedia: almost never seen in top-level play but maintains club-level popularity. Played mostly as a surprise/attacking weapon, particularly from 1.d4 d5 with a transposition 1.d4 Nf6 2.Nc3 d5 3.e4.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Chess Doctrine: theory load is moderate; five named defences, and the attack is easy to play at club level (scores very well below master level). Because the soundness is doubtful, the studying side (White) is gambling on opponents' mistakes; it works against unprepared opponents but not against a prepared one. Own understanding: the concepts are simple, but accurate play is needed to avoid losing the pawn for nothing.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "rapid development for a pawn",
+    "kingside attack",
+    "open f-file",
+    "Bc4 and Qe1-h4 attack on h7",
+    "initiative over material",
+    "consolidate the extra pawn",
+    "trade pieces and win the endgame"
+  ],
+  "sublines_that_differ": [
+    { "name": "Euwe Defence", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 e6", "how": "French-style structure with an extra pawn; solid but passive. 6.Bg5 Be7 7.Bd3 is critical." },
+    { "name": "Ziegler Defence", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 c6", "how": "Considered Black's most critical response; 6.Bc4 Bf5 leaves White's compensation insufficient." },
+    { "name": "Teichmann Defence", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4", "how": "Pins the knight; the 8.g4 Seidel-Hall Attack is sharp." },
+    { "name": "Lemberger Countergambit", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 e5", "how": "Black counterattacks d4 rather than defend e4; often simplifies; most respected way to decline." },
+    { "name": "Ryder Gambit", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Qxf3", "how": "Double pawn sacrifice, generally considered less sound by everybody." },
+    { "name": "Gunderam / Albrecht-type 4...g6", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 g6", "how": "Fianchetto defence; Black declines to take on f3 immediately." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "White sacrifices a pawn on the second move to accelerate development and launch a kingside attack",
+        "verdict": "supported",
+        "note": "2.e4 offers the pawn; the f3 follow-up is on move 4. Development and kingside play are the stated aims.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It leads to sharp, wide-open tactical battles",
+        "verdict": "supported",
+        "note": "Open files and an attack on the king; Black's accurate defence simplifies, though.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is considered speculative at the highest levels, while remaining a dangerous surprise weapon in club and online play",
+        "verdict": "supported",
+        "note": "Almost never seen at top level; scores very well below master level.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White aims for rapid development (Nf3, Bc4, 0-0) and a direct kingside attack, often opening the f-file to target f7",
+        "verdict": "supported",
+        "note": "Bc4, O-O, open f-file and attacks on f7/h7.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black seeks to accept the gambit, consolidate the material advantage, neutralise White's initiative, and trade pieces for a favourable endgame",
+        "verdict": "supported",
+        "note": "Chess Doctrine states exactly this plan.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "If Black declines (e.g., with 2...c6), they aim for a solid set-up without entering the sharpest lines",
+        "verdict": "wrong",
+        "note": "The sources name 3...e5 (Lemberger Countergambit) and 3...e6 as the main ways to decline; 2...c6 is a Caro-Kann/Slav-type response after 2.e4 and is not a BDG decline. Own understanding: 2...c6 after 2.e4 leads to a Caro-Kann-like structure and is not part of the gambit lines.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

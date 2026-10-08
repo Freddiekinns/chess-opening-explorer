@@ -1,0 +1,47 @@
+{
+  "slug": "kings-gambit-accepted-kings-knights-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: King's Knight's Gambit",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White gives the f-pawn for a centre and open f-file. Black can defend the extra pawn with 3...g5, which leads to wild lines (4.h4 g4 5.Ne5, or 4.Bc4 g4 5.O-O in the Muzio), or with 3...d6 and 3...Nf6. White aims for fast development, a pawn centre with d4 and an attack on the king, while Black tries to keep the pawn and survive the attack.",
+  "white_ideas": [
+    { "idea": "Play d4, Bc4 and O-O, using the open f-file and the weak Black kingside." },
+    { "idea": "Sacrifice more material in the Muzio or Allgaier for a mating attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the pawn with ...g5 and ...Bg7 and counter in the centre with ...d5." },
+    { "idea": "Return the pawn at the right moment to neutralise White's play." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, White without an f-pawn, Black's kingside pawns loosened." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing, mutual attacks with sacrifices. Sharp." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the pawn with ...g5 or ...Be7 lines." },
+    "soundness": { "notes": "Risky for White; engines give Black the edge, but strong players have played it. Treated as Sound not Dubious." },
+    "structure": { "notes": "Open lines and files straight away." },
+    "approach": { "notes": "Played by strong players now and then; standard." },
+    "level": { "reason": "memory", "notes": "Long forcing lines after 3...g5 must be known." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "open f-file"],
+  "sublines_that_differ": [
+    { "name": "Muzio Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O", "how": "White gives a piece for a mating attack." },
+    { "name": "Kieseritzky", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5", "how": "Sharp pawn-grabbing race." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.95, "reason": "Anchor: King's Gambit Accepted is Sharp." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "Anchor: King's Gambit Accepted is a White gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Risky and arguably worse for White but not refuted." },
+    "structure": { "value": "open", "confidence": 0.9, "reason": "Open centre and open f-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Rare at the top but still chosen by strong players." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Long forcing lines to know." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for time and attack." }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "dutch-defense-fianchetto-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Fianchetto Attack",
+    "eco": "A81",
+    "moves": "1. d4 f5 2. g3",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/6P1/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White fianchettoes the king's bishop against the Dutch and aims for c4, Nc3 and a later e4 or Qb3. Black chooses a Leningrad set-up with ...g6, a Classical one with ...e6, ...Be7, ...d6 or the Stonewall with ...d5, and fights for e4 and the kingside. The play is double-edged because of Black's weakened king.",
+  "white_ideas": [
+    { "idea": "Fianchetto with Bg2, castle, c4 and Nc3, then break with e4 or d5." },
+    { "idea": "Exploit the weakened e8-h5 diagonal and the e6 square." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...f5, ...Nf6 and ...d6, and play ...e5 or ...Ne4." },
+    { "idea": "Attack on the kingside after ...Qe8-h5 or ...f4, or build the Stonewall." }
+  ],
+  "typical_structures": [
+    { "structure": "Leningrad: ...g6, ...Bg7, ...d6 with ...e5 breaks." },
+    { "structure": "Stonewall: ...e6, ...d5, ...c6 and ...f5 with a knight on e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "The Dutch is unbalancing, with mutual kingside risks, a weakened king and attacking chances for Black; double-edged." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The centre can stay in tension or lock in the Stonewall or Leningrad; flexible." },
+    "approach": { "notes": "A mainstream White fianchetto against a recognised defence; not a system." },
+    "level": { "reason": "understanding", "notes": "Black needs to understand the pawn breaks and the kingside risks, with moderate theory." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack", "knight on e4", "stonewall"],
+  "sublines_that_differ": [
+    { "name": "Stonewall Dutch 2...e6 3.Nf3 Nf6 4.Bg2 d5", "moves": "1. d4 f5 2. g3 e6 3. Nf3 Nf6 4. Bg2 d5", "how": "A closed Stonewall structure with a bad light-squared bishop for Black and a knight on e4." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "The Dutch is known for unbalanced positions and mutual kingside risks." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Sound double-edged play for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Branches range from Stonewall locks to the open Leningrad ...e5 break." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised line in a mainstream defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Pawn breaks and king safety need judgement more than memory." },
+    "plans": { "value": ["fianchetto", "knight_outpost"], "reason": "Both sides fianchetto and fight for the e4 square." }
+  }
+}

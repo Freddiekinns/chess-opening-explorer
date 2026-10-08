@@ -1,0 +1,49 @@
+{
+  "slug": "sicilian-defense-morphy-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Morphy Gambit",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4 cxd4 3. Nf3",
+    "fen": "rnbqkbnr/pp1ppppp/8/8/3pP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "sicilian-defense-smith-morra-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops with 3.Nf3 and intends c3 to reach a Smith-Morra Gambit structure with a pawn for development, but Black can take the normal route with 3...Nc6, ...e6 or ...d6 and 4.Nxd4 to an Open Sicilian. I am unsure how it is classified in practice: strong players mostly transpose to the Open Sicilian after Nxd4, and the gambit idea (c3) is the minority branch. If White plays c3, the play is an open, tactical Smith-Morra with White's lead in development.",
+  "white_ideas": [
+    { "idea": "Follow with c3 and Nxc3 or Bc4 to reach a Smith-Morra with a lead in development" },
+    { "idea": "Develop Bc4, O-O and Qe2, targeting f7 and the open files" },
+    { "idea": "Or recapture with Nxd4 and transpose into the Open Sicilian" }
+  ],
+  "black_ideas": [
+    { "idea": "Accept the pawn and consolidate with ...Nc6, ...e6, ...a6, ...Nge7-g6" },
+    { "idea": "Develop ...Nf6 or ...d6 and recapture Nxd4 for a normal Sicilian" },
+    { "idea": "Play ...e5 (Andreaschek Gambit) and hold the extra pawn" }
+  ],
+  "typical_structures": [
+    { "structure": "Smith-Morra: White c3/e4/d-file against Black's extra c-pawn or Open Sicilian after Nxd4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "The gambit branch is sharp and tactical with open files; the Nxd4 branch would be a normal Open Sicilian." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "At the root White is a pawn down; if Black chooses ...Nc6 White regains it with Nxd4, so the gambit only exists if White follows with c3. Unsure which branch is the main line." },
+    "soundness": { "notes": "Sound as the Smith-Morra (playable at equal), not refuted." },
+    "structure": { "notes": "Sicilian with an asymmetric centre and open c-file; semi-open." },
+    "approach": { "notes": "A recognised if less common anti-Sicilian that strong players use, standard." },
+    "level": { "reason": "both", "notes": "Lines for both sides need to be learned, but plans are clear." }
+  },
+  "plan_phrases": ["lead in development", "half-open c-file", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "Open Sicilian transposition", "moves": "1. e4 c5 2. d4 cxd4 3. Nf3 Nc6 4. Nxd4", "how": "No gambit and the game is an ordinary Open Sicilian." },
+    { "name": "Andreaschek Gambit", "moves": "1. e4 c5 2. d4 cxd4 3. Nf3 e5 4. c3", "how": "Black holds the pawn with a central counter." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "The gambit branch is tactical with open files." },
+    "gambit": { "value": "white", "confidence": 0.5, "reason": "White is a pawn down and may keep playing for c3, but Nxd4 would regain it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Not refuted; playable at equal." },
+    "structure": { "value": "semi_open", "confidence": 0.7, "reason": "A Sicilian with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "Played by strong players now and then as an anti-Sicilian." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Clear ideas but lines to know for both sides." },
+    "plans": { "value": ["lead_in_development", "half_open_c_file"], "reason": "White trades a pawn for development and open files." }
+  }
+}

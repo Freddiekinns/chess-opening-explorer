@@ -1,0 +1,95 @@
+{
+  "slug": "queens-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense",
+    "eco": "E12",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black fianchettoes the queen's bishop to control e4 and the long diagonal and leaves the centre open to White. The main line is 4.g3 Bb7 5.Bg2 Be7 6.O-O O-O 7.Nc3 Ne4, or 4.a3 and 4.Bg5 sidelines. Positions are quiet and positional with a solid Black structure and a small White space edge.",
+  "white_ideas": [
+    { "idea": "Fianchetto and play Nc3, d5 or e4 to gain central space." },
+    { "idea": "Prevent ...Bb4 with a3 and play for a small edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...Bb7 and ...Ne4, aiming for ...c5 or ...d5." },
+    { "idea": "Trade pieces and aim for a solid, flexible centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/c4 centre against ...e6/...b6 with a bishop on b7 and pressure on e4." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow positional play with few forcing lines; Black's structure is resilient."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "A mainstream defence at top level."
+    },
+    "structure": {
+      "notes": "Centre not fixed; tension and flank pieces."
+    },
+    "approach": {
+      "notes": "A standard defence to 1.d4, though built around a set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are subtle but theory is moderate."
+    }
+  },
+  "plan_phrases": ["control e4", "long diagonal bishop", "flexible centre"],
+  "sublines_that_differ": [
+    {
+      "name": "4.Bg5",
+      "moves": "4.Bg5 Bb7 5.Nc3",
+      "how": "A pin that leads to sharper Nimzo-like play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Positional and resilient, with few forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A top-level main defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre undecided, flank bishops."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A well-established defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Subtle plans but moderate theory."
+    },
+    "plans": {
+      "value": ["fianchetto", "hypermodern_centre"],
+      "reason": "Black controls the centre from the flank."
+    }
+  }
+}

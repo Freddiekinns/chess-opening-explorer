@@ -1,0 +1,46 @@
+{
+  "slug": "zukertort-opening-reversed-grunfeld",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Reversed Grünfeld",
+    "eco": "A08",
+    "moves": "1. Nf3 d5 2. g3 c5 3. Bg2 Nc6 4. d4",
+    "fen": "r1bqkbnr/pp2pppp/2n5/2pp4/3P4/5NP1/PPP1PPBP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "kings-indian-attack-french-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes against ...d5 and ...c5, then strikes with 4.d4 to challenge Black's centre. Black can take on d4 (4...cxd4 5.Nxd4) or defend with ...Nf6 and ...e6, reaching a Catalan-like or Grünfeld-reversed structure with White castling and playing c4 later. The game is positional, with tension on the d- and c-pawns.",
+  "white_ideas": [
+    { "idea": "Castle, then play c4 or dxc5 to open the long diagonal and press on the queenside." },
+    { "idea": "Use the fianchettoed bishop and Nbd2/Nc3 to pressure d5 and the c-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...Nf6, ...e6 and ...Be7 and answer with ...cxd4 or ...c4." },
+    { "idea": "Gain space with ...c4 and hold the bishop pair." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on c5 and d5 against White d4; hanging pawns or an isolated pawn appear after exchanges." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic play around central tension; not a mutual attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "A respectable line." },
+    "structure": { "notes": "Centre pawns in tension; the structure can become an IQP, hanging pawns or a closed centre." },
+    "approach": { "notes": "A less common move order but used by strong players, like the Réti." },
+    "level": { "reason": "understanding", "notes": "Many structures and transpositions; judgment-based." }
+  },
+  "plan_phrases": ["fianchetto", "central tension", "hanging pawns"],
+  "sublines_that_differ": [
+    { "name": "4...cxd4", "moves": "4... cxd4 5. Nxd4 e5", "how": "Black challenges the knight and the position becomes more open." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Strategic with central tension but no forcing theory." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A respectable line." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The centre tension is unresolved." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Used by strong players as a Réti-type option." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Multiple structures demand positional judgement." },
+    "plans": { "value": ["fianchetto"], "reason": "White's bishop on g2." }
+  }
+}

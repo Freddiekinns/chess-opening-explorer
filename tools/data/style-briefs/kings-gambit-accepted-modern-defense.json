@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-accepted-modern-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Modern Defense",
+    "eco": "C36",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black hits back in the centre with 3...d5, returning a pawn so that the lines open for his pieces. After 4.exd5 White plays Nxd5 lines or 4...Nf6 5.Bb5+ c6 6.dxc6 Nxc6 7.d4 Bd6, with Black holding the f4 pawn and White developing quickly. It is sound for Black and objectively best, but White gets open lines and active pieces.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bb5+, d4, O-O and use the open lines against the king" },
+    { "idea": "Regain the f4 pawn or play Nc3 and Bc4 with tempo" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the f4 pawn with ...Bd6 and ...Nf6, develop, and castle" },
+    { "idea": "Hit the centre and take the lead in the centre with ...Nc6 and ...Bg4" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file, White d4 against Black ...Bd6, f4 pawn contested" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open lines, quick development, kings in the centre: forcing play." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "The f4 pawn is Black's to keep, although White regains d5; King's Gambit Accepted is a gambit." },
+    "soundness": { "notes": "Considered one of Black's best replies; White's compensation is ok." },
+    "structure": { "notes": "Open centre after exd5." },
+    "approach": { "notes": "The King's Gambit is a standard though uncommon weapon." },
+    "level": { "reason": "memory", "notes": "Needs known tactics and lines on both sides." }
+  },
+  "plan_phrases": ["Lead in development", "Kingside attack"],
+  "sublines_that_differ": [
+    { "name": "4.exd5 Bd6", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Bd6", "how": "Black holds the f4 pawn; White regains d5 and plays Nc3 or d4." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Open centre and a gambit give forcing play." },
+    "gambit": { "value": "white", "confidence": 0.7, "reason": "Anchor: KGA is a White gambit; Black can keep f4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable, though Black's defence is accurate." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Centre opens right away." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Tactics to learn, but plans are clear." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White develops fast and aims at the black king." }
+  }
+}

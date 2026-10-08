@@ -1,0 +1,47 @@
+{
+  "slug": "kings-gambit-accepted-bishops-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Bishop's Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Bc4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/2B1Pp2/8/PPPP2PP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White gives the f-pawn and develops the bishop to c4 at once, eyeing f7 and keeping the option of castling by hand if Black checks on h4. Black's best answers are ...Nf6 (Cozio/Bogoljubow with 4.Nc3 or 4.e5), ...Nc6 or ...Qh4+ 4.Kf1, and Black may keep the pawn but must avoid being swept off the board. Play is open, tactical and concrete.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bc4, Nc3, Nf3 and d4 to regain f4 and attack f7." },
+    { "idea": "Use the open f-file after castling or Kf1 and lines against Black's king." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nf6, ...d5 or ...Nc6 to hit the centre and return the pawn on good terms." },
+    { "idea": "Hold the f4 pawn with ...g5 and ...Bg7 and try to survive the initiative." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with White missing the f-pawn, king exposed on e1 or f1." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open and tactical from the start; both kings can be attacked and a slip loses quickly. Judged from 3...Nf6 and 3...Nc6." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the f4 pawn if they defend accurately." },
+    "soundness": { "notes": "Objectively slightly worse for White at the top level but a sensible practical gambit; not refuted." },
+    "structure": { "notes": "Open lines, central pawns exchanged early." },
+    "approach": { "notes": "A recognised gambit; strong players use it occasionally." },
+    "level": { "reason": "both", "notes": "Needs concrete theory in the Cozio and Qh4+ lines and tactical judgement." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7", "open lines"],
+  "sublines_that_differ": [
+    { "name": "3...Qh4+ 4.Kf1", "moves": "3... Qh4+ 4. Kf1", "how": "White loses castling but gains time against the queen." },
+    { "name": "3...g5", "moves": "3... g5", "how": "Anderssen Defence, Black defends the pawn at once." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Open, forcing play with both kings exposed." },
+    "gambit": { "value": "white", "confidence": 0.95, "reason": "White gives the f-pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": "white", "confidence": 0.6, "reason": "Not refuted; a playable if slightly risky gambit." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Pieces play on open files and diagonals straight away." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common than the Knight's Gambit but a real line for strong players." },
+    "level": { "value": "intermediate", "why": "both", "confidence": 0.5, "reason": "Needs tactics and some theory; not obviously advanced." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White compensates the pawn with piece play against f7." }
+  }
+}

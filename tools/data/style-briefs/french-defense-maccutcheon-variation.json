@@ -1,0 +1,100 @@
+{
+  "slug": "french-defense-maccutcheon-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: MacCutcheon Variation",
+    "eco": "C12",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Bb4",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p2B1/1b1PP3/2N5/PPP2PPP/R2QKBNR w KQkq - 4 5"
+  },
+  "parent": "french-defense-burn-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black pins the c3 knight rather than taking on g5 or e4. The main line is 5.e5 h6 6.Bd2 Bxc3 7.bxc3 Ne4 8.Qg4 Kf8 (or ...g6), where White has the bishop pair and a kingside initiative and Black has a damaged structure on White's side and a safe if uncomfortable king. It is sharp, with tactical play around g7, e5 and f6 and a sacrifice on d5. The Chigorin 6.exf6 is rarer.",
+  "white_ideas": [
+    { "idea": "Use the bishop pair and a kingside initiative with Qg4 and Bd3." },
+    { "idea": "Expand with f4 and aim at g7 and the black king." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit White's doubled c-pawns with ...c5 and ...Nc6." },
+    { "idea": "Trade the dark bishop, play ...Ne4 and go after c3 and the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "French Advance-style chain d4/e5 against d5/e6, with White's c-pawns doubled after Bxc3 and bxc3." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing: Qg4 hits g7, Black's king stays in the centre or goes to f8, and one slip loses quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "In the main line Black does not give a pawn; g7 is protected or the exchange is avoided."
+    },
+    "soundness": {
+      "notes": "A recognised top-level line, sound for both sides."
+    },
+    "structure": {
+      "notes": "Locked centre after e5 vs d5 with play on the wings."
+    },
+    "approach": {
+      "notes": "Played at every level, standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp theory that must be known: ...Ne4, Qg4 and the sidelines. The ideas are clear though."
+    }
+  },
+  "plan_phrases": ["doubled pawns", "kingside attack", "space advantage"],
+  "sublines_that_differ": [
+    {
+      "name": "Chigorin",
+      "moves": "5.e5 h6 6.exf6",
+      "how": "White takes on f6 for a quiet game with a different structure."
+    },
+    {
+      "name": "Lasker",
+      "moves": "6.Bd2 Bxc3 7.bxc3 Ne4 8.Qg4",
+      "how": "The main tactical line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Forcing play with Qg4, ...Ne4 and king safety issues."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material is given in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A main variation of the French Burn."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.55,
+      "reason": "The e5/d5 chains lock the centre, as in the Advance French."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A recognised main line."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Sharp theory with several branches that must be known."
+    },
+    "plans": {
+      "value": ["doubled_pawns", "kingside_attack"],
+      "reason": "Black's Bxc3 doubles the c-pawns, and White's play is directed at the king."
+    }
+  }
+}

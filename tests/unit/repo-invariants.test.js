@@ -151,3 +151,82 @@ describe('/personal-explorer redirects at the edge, not in the browser', () => {
     expect(app).not.toContain('AnalyseRedirect');
   });
 });
+
+describe('Dependabot branches do not deploy to Vercel', () => {
+  /**
+   * Every deployment stores its own copy of the ~78 MB `api/data` in each
+   * function. The 2026-08-30 Dependabot pass shipped ~100 previews nobody read,
+   * and Functions Storage reached 7.98 of Hobby's 10 GB.
+   *
+   * `**`, not `*`: Vercel matches with minimatch, and Dependabot branches are
+   * `dependabot/npm_and_yarn/<name>` — two segments past the prefix.
+   */
+  const vercel = JSON.parse(read('vercel.json'));
+
+  test('git.deploymentEnabled turns off dependabot/**', () => {
+    expect(vercel.git?.deploymentEnabled?.['dependabot/**']).toBe(false);
+  });
+});
+
+describe('jsdom is declared at the root, in step with packages/web', () => {
+  /**
+   * vitest is hoisted to the root `node_modules`, so its `import('jsdom')`
+   * resolves from there and never sees `packages/web/node_modules/jsdom`. It
+   * worked for months on an optional peer npm happened to install; #100's
+   * lockfile regeneration dropped it and took the frontend suite from 592
+   * passing to "no tests".
+   */
+  const rootPkg = JSON.parse(read('package.json'));
+  const webPkg = JSON.parse(read('packages/web/package.json'));
+
+  test('the root devDependency exists and matches the web range', () => {
+    const webRange = webPkg.devDependencies?.jsdom ?? webPkg.dependencies?.jsdom;
+    expect(rootPkg.devDependencies?.jsdom).toBeDefined();
+    expect(rootPkg.devDependencies.jsdom).toBe(webRange);
+  });
+});
+
+describe('the video matcher reads channels from config, never a literal', () => {
+  /**
+   * `config/youtube_channels.json` is the single source of truth for channels
+   * and tiers, resolved through `lib/channel-tiers.js`. A name or channel ID
+   * copied into matcher code drifts from it silently: a raw "Chess Network"
+   * compare once demoted a premium channel and withheld 183 of its videos.
+   *
+   * Only string literals count — comments may name a channel to explain an
+   * incident. Names compare as letters and digits, as `channel-tiers.js` does.
+   */
+  const { trusted_channels: channels } = JSON.parse(read('config/youtube_channels.json'));
+  const normalise = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const names = new Set(channels.map((c) => normalise(c.name)));
+  const ids = new Set(channels.map((c) => c.channel_id));
+
+  const libDir = path.join(repoRoot, 'tools/video-pipeline/lib');
+  const literalsIn = (source) => {
+    const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s)\/\/.*$/gm, '$1');
+    return [...code.matchAll(/(['"`])((?:\\.|(?!\1)[^\\])*)\1/g)].map((m) => m[2]);
+  };
+  const offenders = (source) =>
+    literalsIn(source).filter((lit) => ids.has(lit) || names.has(normalise(lit)));
+
+  test('the config is where this test expects to find it', () => {
+    expect(channels.length).toBeGreaterThan(0);
+  });
+
+  test.each(fs.readdirSync(libDir).filter((f) => f.endsWith('.js')))(
+    'lib/%s holds no channel name or ID literal',
+    (file) => {
+      expect(offenders(fs.readFileSync(path.join(libDir, file), 'utf8'))).toEqual([]);
+    }
+  );
+
+  test('the guard would catch a hardcoded name or ID', () => {
+    const sample = channels[0];
+    expect(offenders(`const premium = ['${sample.name}'];`)).toEqual([sample.name]);
+    expect(offenders(`if (id === "${sample.channel_id}") {}`)).toEqual([sample.channel_id]);
+  });
+
+  test('a channel named only in a comment is fine', () => {
+    expect(offenders(`// ${channels[0].name} once ranked here\nconst x = 1;`)).toEqual([]);
+  });
+});

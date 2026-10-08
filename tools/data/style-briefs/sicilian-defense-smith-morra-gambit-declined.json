@@ -1,0 +1,47 @@
+{
+  "slug": "sicilian-defense-smith-morra-gambit-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Smith-Morra Gambit Declined, Alapin Formation",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4 cxd4 3. c3 Nf6",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/8/3pP3/2P5/PP3PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "sicilian-defense-smith-morra-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black declines the Smith-Morra pawn with 3...Nf6 and White usually plays 4.e5 Nd5 5.Nf3 (or 5.cxd4), reaching an Alapin-type structure where Black recaptures on d4 and has the d5 knight in front of White's e5 pawn. White has space and an initiative; Black develops with ...Nc6, ...e6 and ...d6, aiming to undermine the e5 pawn.",
+  "white_ideas": [
+    { "idea": "Gain space with e5, recapture on d4 and develop with Nf3, Bc4 and O-O." },
+    { "idea": "Attack Black's d5 knight and the e5 pawn's support." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit e5 with ...d6 and ...Nc6, develop with ...e6 and ...Be7." },
+    { "idea": "Use the half-open c-file and trade pieces against White's space." }
+  ],
+  "typical_structures": [
+    { "structure": "Alapin-style with White's c3/d4/e5 pawns against ...d6 and the knight on d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A calm Alapin-type position; White has space but little forcing play, and Black is comfortable." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The gambit is declined; material is level after recapture on d4 or c3." },
+    "soundness": { "notes": "A sound declined line for Black and fine for White." },
+    "structure": { "notes": "Asymmetric Sicilian with White's pawn centre and Black's half-open c-file." },
+    "approach": { "notes": "A normal Sicilian response; the Alapin is a standard anti-Sicilian." },
+    "level": { "reason": "understanding", "notes": "Understanding the e5 pawn and Black's counterplay; moderate theory." }
+  },
+  "plan_phrases": ["space advantage", "undermine e5"],
+  "sublines_that_differ": [
+    { "name": "Push Variation", "moves": "3... d3", "how": "Black pushes the pawn to d3, a different and trappy structure." },
+    { "name": "Scandinavian Formation", "moves": "3... d5", "how": "Black strikes the centre at once, with exchanges." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Alapin-type structure, neither especially solid nor sharp." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "The pawn is declined and material stays level." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A sound Sicilian line for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "Every Sicilian is Semi-open; Black has the c-file." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal anti-Sicilian response." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Understanding of the e5 pawn matters more than memory." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space with e5 and Black attacks it." }
+  }
+}

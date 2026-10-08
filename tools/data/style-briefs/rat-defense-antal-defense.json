@@ -1,0 +1,46 @@
+{
+  "slug": "rat-defense-antal-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Antal Defense",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. d4 Nd7",
+    "fen": "r1bqkbnr/pppnpppp/3p4/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays ...d6 and ...Nd7 and keeps the options of ...e5 (a Philidor Hanham set-up) or ...g6 and ...Ngf6 (a Pirc or Modern set-up). White takes space with Nc3 and Nf3, perhaps f4 or Bc4, and Black waits to strike with ...e5 or ...c5. I am not certain of the theory here, so this is reasoned from the moves.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, Nf3 and Be2 or Bc4 and keep the e4-d4 centre, perhaps with f4." },
+    { "idea": "Use space against the cramped Black pieces." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...e5 and ...Ngf6 for a Philidor-style solid position." },
+    { "idea": "Or ...g6, ...Bg7 and ...Ngf6 for a Pirc-type fianchetto, striking with ...c5 or ...e5." }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor Hanham: Black's d6-e5 pawns and a knight on d7 against White's centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Passive, hard-to-break Black set-up in the Philidor style; slow play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound but passive; not refuted." },
+    "structure": { "notes": "White's centre is attacked by ...e5 or ...c5 later; the tension is undecided, so flexible." },
+    "approach": { "notes": "Rarely played by strong players; the Rat family is a surprise choice." },
+    "level": { "reason": "understanding", "notes": "Simple plans, but the passive position needs patience." }
+  },
+  "plan_phrases": ["space advantage", "bad bishop", "central break"],
+  "sublines_that_differ": [
+    { "name": "3.Nc3 g6 or 3...Ngf6", "moves": "1. e4 d6 2. d4 Nd7 3. Nc3 Ngf6", "how": "Black switches to a Pirc-like set-up and then ...e5 or ...g6." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "A compact Philidor-style set-up that is hard to break down but passive." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Passive but playable." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is undecided until Black commits to ...e5 or ...g6." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom use the Rat set-ups." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Few lines to memorise but a cramped game to handle." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White's space against Black's cramped bishop on c8." }
+  }
+}

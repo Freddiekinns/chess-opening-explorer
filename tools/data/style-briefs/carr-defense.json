@@ -1,0 +1,89 @@
+{
+  "slug": "carr-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Carr Defense",
+    "eco": "B00",
+    "moves": "1. e4 h6",
+    "fen": "rnbqkbnr/ppppppp1/7p/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays 1...h6, a waiting move that gives White a free central move; the idea is to avoid Bg5 and Ng5 ideas and choose a set-up later. White usually plays 2.d4 and builds a big centre, and Black transposes to a Pirc, Modern or French-like structure. It is a throwaway first move, seldom seen above club level.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and Nc3 or Nf3." },
+    { "idea": "Use the extra tempo to attack on the kingside, since h6 is a target for g4 or h4 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "Transpose to Pirc, Modern or French structures with the extra h6 move." },
+    { "idea": "Challenge the centre with ...d5 or ...e5 next." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against a Pirc or Modern set-up with an extra ...h6." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow start; the play that follows is ordinary and White just has an extra tempo."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "A wasted tempo, not a refutable move; Black stays playable."
+    },
+    "structure": {
+      "notes": "Undecided after one move; the centre depends on which defence Black transposes into."
+    },
+    "approach": {
+      "notes": "Strong players almost never play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little to memorise but no clear plan; not a first-repertoire choice."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "A quiet waiting move that leads to ordinary development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Tempo-losing but not refuted; Black can transpose into sound set-ups."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is not decided after 1...h6."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose 1...h6."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Little theory, but a wasted tempo is not a good first choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No defining plan; it transposes elsewhere."
+    }
+  }
+}

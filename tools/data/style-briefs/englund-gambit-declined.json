@@ -1,0 +1,44 @@
+{
+  "slug": "englund-gambit-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. d5",
+    "fen": "rnbqkbnr/pppp1ppp/8/3Pp3/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White declines the gambit with 2.d5, gaining space and a Benoni-like wedge. Black replies ...Bd6, ...f5 or ...Nf6 and tries to undermine d5 or play on the kingside. No pawn is given up, so it is a space game for White and a counter for Black.",
+  "white_ideas": [
+    { "idea": "Hold the d5 wedge with c4, Nc3, e4 and gain space" },
+    { "idea": "Develop Nf3, Nc3 and play for a slight advantage" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nf6, ...Bd6 and ...O-O, undermining with ...c6 or ...f5" },
+    { "idea": "...f5 for kingside play" }
+  ],
+  "typical_structures": [
+    { "structure": "d5 against e5 (Old Benoni or Czech Benoni-like)" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet space game; unclear and little theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material changes hands in the declined line." },
+    "soundness": { "notes": "White's 2.d5 is playable; nothing is refuted." },
+    "structure": { "notes": "Pawns on d5/e5 and the centre not yet fixed; can become Benoni-like or closed." },
+    "approach": { "notes": "A seldom-chosen way to meet the Englund; most White players take the pawn." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn; space and pawn breaks need judgement." }
+  },
+  "plan_phrases": ["Space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet space game with no forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "Declined; no material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Both sides' set-ups are playable." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre unresolved; could lock to closed." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rare reply seldom seen among strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Little to memorise but plans need judgement." },
+    "plans": { "value": ["space_advantage"], "reason": "White gets the d5 wedge." }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "richter-veresov-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 1 3"
+  },
+  "parent": "queens-pawn-game-chigorin-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White pins the f6 knight with Bg5 and builds a quiet centre with e3 and Nf3, or goes for Qd2, O-O-O, f3 and e4 against ...Bf5 and ...Ne4 set-ups. Black answers with ...e6, ...Bf5 or ...c6 and equalises without much trouble. The game is usually a manoeuvring fight with little forced theory, the central question being whether White can get e4 in.",
+  "white_ideas": [
+    { "idea": "Bxf6 to double or damage Black's structure, then e3, Nf3 and a slow centre" },
+    { "idea": "Qd2, O-O-O, f3 and e4 for a space grab" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...e6, ...Be7 and ...c5 or ...c6 with a solid QGD-like set-up" },
+    { "idea": "...Bf5 and ...Nbd7, or ...Ne4 to trade off the bishop" }
+  ],
+  "typical_structures": [
+    { "structure": "QGD-like d4/e3 against d5/e6 with White's bishop on g5" },
+    { "structure": "Doubled f-pawns for Black after Bxf6 exf6 (or gxf6)" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development with few forcing lines; neither side takes big risks early, so neither Solid nor Sharp stands out." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered in the main lines." },
+    "soundness": { "notes": "Sound for both sides; a respectable surprise weapon (Tal, Spassky, Karpov)." },
+    "structure": { "notes": "Centre stays in tension after 3...e6 4.Nf3 and e3; e4 and c4 breaks are both possible, so flexible." },
+    "approach": { "notes": "Played by strong players now and then as a sound sideline, so standard. Plans stay close to the London family but the move order is specific." },
+    "level": { "reason": "understanding", "notes": "Little to memorise but the plans (when to take on f6, when to go for e4) need judgement." }
+  },
+  "plan_phrases": ["Bxf6 to double pawns", "queenside castling with f3 and e4"],
+  "sublines_that_differ": [
+    { "name": "Richter-Veresov: 3...Bf5 4.Nf3", "moves": "1. d4 d5 2. Nc3 Nf6 3. Bg5 Bf5 4. Nf3", "how": "Black develops the bishop before e6 and White often goes Bxf6 and e3, or Qd2 and f3." },
+    { "name": "Richter-Veresov: 3...c6", "moves": "1. d4 d5 2. Nc3 Nf6 3. Bg5 c6", "how": "Slav-like set-up for Black, quieter." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Quiet manoeuvring sideline with no forcing theory or real attacking chances for either side." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected sideline used by strong players." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Centre in tension with e3 and Nf3 against ...e6 and ...c5 or ...c6." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "A sideline strong players use occasionally, not a system and not a rarity." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans need understanding but there is not much to memorise." },
+    "plans": { "value": ["doubled_pawns"], "reason": "Bxf6 to damage Black's structure is the recurring idea." }
+  }
+}

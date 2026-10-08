@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-franco-sicilian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Franco-Sicilian Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 e6",
+    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays ...e6 before taking on d4, so White can choose between 4.d5 (gaining space after ...exd5 exd5 and a knight retreat) and 4.dxc5 or 4.Nc3 cxd4 which transposes to the Taimanov. I am not sure of the exact main line. The usual practical result is a Sicilian structure where Black has an extra tempo move order choice and White decides the structure.",
+  "white_ideas": [
+    { "idea": "Gain space with d5 or transpose to an open Sicilian with Nc3 and Nxd4." },
+    { "idea": "Develop Nc3, Be3, and aim for a space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Transpose to a Taimanov with ...cxd4 and ...Nf6." },
+    { "idea": "Meet d5 with ...exd5 exd5 and ...Nce7 or ...Nb8 and build a Benoni-like setup." }
+  ],
+  "typical_structures": [
+    { "structure": "Taimanov-style open Sicilian pawn structure, or a space-gaining d5 structure for White." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unclear from memory; play is Sicilian-style with unbalanced pawn structures." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered in the main lines." },
+    "soundness": { "notes": "Sound, since it transposes to the Taimanov, though move-order choices exist for White." },
+    "structure": { "notes": "Asymmetric Sicilian structure with a half-open c-file for Black." },
+    "approach": { "notes": "A less common move order that strong players use occasionally." },
+    "level": { "reason": "understanding", "notes": "Black must know the Taimanov plans; move order adds subtleties." }
+  },
+  "plan_phrases": ["half-open c-file", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "4.d5", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 e6 4. d5", "how": "White gains space and Black's knight must retreat after exd5, a Benoni-like structure." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Taimanov-like unbalanced Sicilian with no known forced sharpness; unsure." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No pawn is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Transposes into the sound Taimanov." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "A Sicilian with an asymmetric centre and half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A less common move order, not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Taimanov understanding needed but few forcing lines." },
+    "plans": { "value": ["half_open_c_file"], "reason": "Black aims to use the c-file as in the Taimanov." }
+  }
+}

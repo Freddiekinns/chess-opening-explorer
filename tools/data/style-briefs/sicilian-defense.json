@@ -1,0 +1,253 @@
+{
+  "slug": "sicilian-defense",
+  "root": {
+    "name": "Sicilian Defense",
+    "eco": "B20",
+    "moves": "1. e4 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Defense",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/sicilian-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Sicilian Defense: Ultimate Guide, Best Variations & Winning Strategies",
+      "publisher": "Chessify (search snippet only, page not read)",
+      "url": "https://chessify.me/blog/sicilian-defense-chess-opening",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Sicilian Defence, Dragon Variation / Scheveningen Variation (search snippets only)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence,_Scheveningen_Variation",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 1.e4 with ...c5 to trade a flank pawn for White's d-pawn, which leaves Black a central pawn majority and a half-open c-file in return for White's lead in development and space. This asymmetry is the point: Black plays for a win rather than equality. The usual pattern is White attacking on the kingside while Black counterattacks on the queenside along the c-file (...b5, ...Rc8), often with opposite-side castling in the sharpest lines. The root is a crossroads: after 2.Nf3 (about 80% of master games, s1) it branches into Najdorf, Dragon, Scheveningen, Classical, Sveshnikov, Taimanov and Kan, which range from forcing and theory-heavy (Najdorf, Dragon, Sveshnikov) to flexible and solid (Kan, Classical, Taimanov). White's anti-Sicilians (Alapin, Closed, Grand Prix, 2.d3) avoid the Open Sicilian and are quieter. The root as a whole is the most played and most analysed opening at club and master level (s1).",
+  "white_ideas": [
+    {
+      "idea": "Use the lead in development and kingside space to attack the king: g4-g5 pawn storms (English Attack with f3, Qd2, 0-0-0, g4 against the Najdorf; Yugoslav Attack against the Dragon; g4-g5 and Qh5/Rf3-h3 in the Classical Scheveningen).",
+      "sources": ["s1", "s2", "s4"]
+    },
+    {
+      "idea": "Keep control of d5 and exploit the weaknesses Black accepts there (notably the d5 hole against the Sveshnikov).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Stop Black's queenside counterplay along the c-file and with ...b5, and trade off the active pieces.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Sidestep the Open Sicilian with an anti-Sicilian: Alapin 2.c3 (ideal e4-d4 centre), Closed 2.Nc3 (slow kingside space), Grand Prix 2.f4 (control e5, kingside attack).",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the c-pawn for the d-pawn to get a central majority and a half-open c-file; play for the win from move one.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Queenside counterplay: ...b5 expansion, rooks on the c-file, piece activity compensating for structural concessions.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Central breaks ...d5 or ...e5, depending on the system (Najdorf prepares ...e5 for a central majority).",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Fianchetto the dark-squared bishop (Dragon, Accelerated Dragon) and counterattack against White's queenside castling with ...Rc8 and exchange sacrifices on c3.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Flexible solid set-ups (Kan, Taimanov, Scheveningen hedgehog with pawns on a6, b6, d6, e6) that delay commitment and avoid early theory.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian: White d4 pawn traded for Black's c-pawn, giving White e4 against Black's d6/e-pawn, a Black central majority and a half-open c-file.",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Dragon / Accelerated Dragon: Black fianchetto bishop on g7 with pawns d6 and g6; White often castles queenside (Yugoslav) giving opposite-side castling and a race.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Scheveningen: Black small centre (pawns d6, e6) with a6, b6 possible (hedgehog), White attacking on the kingside with g4-g5.",
+      "sources": ["s2", "s4"]
+    },
+    {
+      "structure": "Sveshnikov: Black pawn on e5 and d6, a permanent hole on d5 for White's pieces, traded for active piece play.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Anti-Sicilian set-ups (Alapin e4+d4 centre, Closed with Nc3/g3/Bg2) give quieter, more positional pawn structures; Maroczy-style bind is my own unsourced understanding for c4 set-ups.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The opening is described as Black's most dynamic, asymmetrical reply to 1.e4 (s1). Sources split by branch: Dragon, Najdorf, Sveshnikov are sharp, tactical and risky; Kan, Classical, Taimanov are comparatively solid and flexible (s2). Chessable's own table labels the Dragon sharp/tactical, Najdorf dynamic, Kan solid, Classical balanced, Sveshnikov risky. For the root as a whole, with the default 2.Nf3 and the most-played Open Sicilian lines (Najdorf, Dragon, Scheveningen, Sveshnikov), typical play is concrete and double-edged, with opposite-side attacks, but it is not uniformly sharp. This is the clearest case of a root whose character depends on the branch.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given at the root. Specific lines contain gambits or sacrifices (Smith-Morra 2.d4 cxd4 3.c3 as a White gambit, Wing Gambit 2.b4, exchange sacrifices on c3 or c6, 2.f4 Grand Prix lines) but they are sub-lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound and the most heavily played reply to 1.e4 at every level. After centuries of scepticism it was rehabilitated and became dominant in the 20th century; elite players such as Kasparov and Anand repeatedly used fighting Sicilians in world championship matches (s1, s2). Black plays for more than equality but accepts risk from White's initiative. Sound for both sides.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "After the c-pawn for d-pawn trade the centre is asymmetrical and partly open: Black has a half-open c-file, White an e-pawn against Black's d-/e-pawn. This is a semi-open game in the practical sense (s1). Not fully open because several central pawns stay on, and not closed in the main Open Sicilian lines. The Closed Sicilian and some anti-Sicilians are more locked.",
+      "sources": ["s1"]
+    },
+    "approach": {
+      "notes": "Not a system played against anything: it is a defence to 1.e4 specifically, whose main lines depend on move order and White's reply. Mainstream at every level: the most played and most analysed opening at club and master level (s1); about 80% of master games reaching 1.e4 c5 continue 2.Nf3 (s1). Standard, not offbeat.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Level is judged for the studying side, Black. The Sicilian demands significant memorisation in the Dragon, Najdorf and Sveshnikov lines (s1), while Kan, Classical and Taimanov need less forcing theory and reward understanding (s1, s2). Chessable stresses understanding why moves are played rather than rote learning (s2). As a root covering the Najdorf and Dragon and with a theory-heavy reputation, it is demanding overall, but there are accessible branches (Kan, Classical, Alapin for White). The root's tag will have to cover a very wide range.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "opposite-side castling",
+    "kingside pawn storm",
+    "queenside counterplay along the c-file",
+    "central pawn majority",
+    "d5 hole",
+    "Yugoslav Attack",
+    "English Attack",
+    "exchange sacrifice on c3",
+    "hedgehog set-up",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Najdorf Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+      "how": "Most popular Sicilian system; sharp, theory-heavy, aims for ...e5 or ...e6 with ...b5 expansion."
+    },
+    {
+      "name": "Dragon Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
+      "how": "Yugoslav Attack leads to opposite-side castling races; exceptionally sharp and demanding."
+    },
+    {
+      "name": "Sveshnikov Variation",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
+      "how": "Black accepts the d5 hole for central activity; risky and tactical but sound."
+    },
+    {
+      "name": "Scheveningen / Classical Scheveningen",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6",
+      "how": "Small centre; White attacks with g4-g5; Black counters on the c-file. Less sharp than the Dragon."
+    },
+    {
+      "name": "Kan / Taimanov",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 (Kan) or ...Nc6 (Taimanov)",
+      "how": "Flexible and comparatively solid, delaying commitments, less theory to memorise."
+    },
+    {
+      "name": "Alapin Variation",
+      "moves": "1. e4 c5 2. c3",
+      "how": "Anti-Sicilian; quieter, theory-light, IQP and French-Advance-like structures."
+    },
+    {
+      "name": "Closed Sicilian / Grand Prix / 2.d3",
+      "moves": "1. e4 c5 2. Nc3 (Closed), 2. f4 (Grand Prix), 2. d3",
+      "how": "Anti-Sicilians that avoid main-line theory; Closed is slower with kingside space, Grand Prix attacks with f4-f5."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Sicilian is the most popular response to 1.e4.",
+        "verdict": "supported",
+        "note": "Described as the most played defence to 1.e4 and the most played and analysed opening at club and master level.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "The Sicilian is aggressive and creates an imbalanced, dynamic game.",
+        "verdict": "supported",
+        "note": "Described as the most dynamic, asymmetrical reply, with Black playing for a win. Not every branch is aggressive (Kan, Classical, Taimanov are solid).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black challenges White's central control with a flank pawn.",
+        "verdict": "supported",
+        "note": "The c-pawn contests the d4 square and is traded for White's d-pawn.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "It leads to sharp, complex positions with asymmetrical pawn structures.",
+        "verdict": "supported",
+        "note": "True of the Open Sicilian main lines; Kan, Classical, Taimanov and the anti-Sicilians are less sharp.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is perfect for combative, tactical players who are well-prepared and thrive on complications.",
+        "verdict": "supported",
+        "note": "Sources agree the main lines require heavy preparation and tactical readiness; flexible lines suit other temperaments.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black is not afraid to defend against direct attacks while launching potent counter-attacks.",
+        "verdict": "supported",
+        "note": "White attacks the kingside, Black counterattacks on the queenside.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: execute a kingside attack, often involving the f4-f5 pawn push.",
+        "verdict": "unverifiable",
+        "note": "Kingside attacks are supported (g4-g5 storms, Yugoslav and English Attacks). The sources I read do not name f4-f5 specifically; it is a real idea in some lines (my own understanding, unsourced), but g4-g5 is the more commonly described push.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "White: control the d5 square and exploit the space advantage.",
+        "verdict": "supported",
+        "note": "Controlling d5 and exploiting space are stated White plans (d5 hole in the Sveshnikov).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: generate queenside counterplay using the semi-open c-file, often with the ...b5-b4 pawn push.",
+        "verdict": "supported",
+        "note": "Queenside counterplay on the c-file and ...b5 expansion are supported; ...b5-b4 specifically is not named in the sources read (my own understanding: a common follow-up).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: control the d4 square and pressure White's e4-pawn.",
+        "verdict": "supported",
+        "note": "Contesting d4 is the point of ...c5; pressure on e4 comes from ...Nc6, ...Nf6 and ...d5 breaks.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

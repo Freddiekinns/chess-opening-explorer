@@ -1,0 +1,123 @@
+{
+  "slug": "sicilian-defense-open",
+  "root": {
+    "name": "Sicilian Defense: Open",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Classical Variation Replay Lab",
+      "publisher": "Chessworld",
+      "url": "https://www.chessworld.net/sicilian-classical-variation.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Four Knights Sicilian (B56)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/four-knights-sicilian",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search results on the Open Sicilian with 2...Nc6, Richter-Rauzer, Sozin, Four Knights (snippets only)",
+      "publisher": "Wholesale Chess, Wikipedia, Chessiverse via web search",
+      "url": "https://www.wholesalechess.com/blogs/chess-openings/sicilian-defense-the-open-sicilian",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 3.d4 cxd4 4.Nxd4 Black has developed the knight to c6 before choosing a set-up, so the root is a crossroads: Classical (5.Nc3 d6), Sveshnikov (5...e5 after ...Nf6), Four Knights (5...e6), Kalashnikov or Lowenthal (4...e5), Accelerated Dragon (4...g6) and Taimanov-type lines (s1, s2, s3). White gets a development lead and kingside space, Black gets the open c-file and a central pawn majority, so the play is unbalanced and complex (s1). The Richter-Rauzer (6.Bg5) and Sozin (6.Bc4) lead to a race where White attacks on the kingside, often castling queenside, and Black counters with ...a6, ...b5 and c-file pressure (s2). Statistics are balanced (White 47.7%, Black 47.3% in 5.6 million Lichess games, per the Chessiverse page for the Four Knights) (s3).",
+  "white_ideas": [
+    { "idea": "Richter-Rauzer 6.Bg5: pin Nf6, threaten to double Black's pawns with Bxf6, castle long and pressure d6 with a kingside pawn storm (f4, g4)", "sources": ["s1", "s2"] },
+    { "idea": "Sozin 6.Bc4: aggressive bishop on c4 hitting e6 and f7, castle kingside or queenside (Velimirovic Attack)", "sources": ["s1", "s2"] },
+    { "idea": "Use the lead in development and kingside space after 3.d4", "sources": ["s1"] },
+    { "idea": "Four Knights: Bg5 pins and prepares queenside castling and kingside pressure", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Queenside activity: ...a6, ...b5, ...Nxd4, ...Qb6 and central breaks", "sources": ["s2"] },
+    { "idea": "Pressure on the open c-file and use the central pawn majority", "sources": ["s1", "s2"] },
+    { "idea": "Timely exchange on d4 or ...e5 to reduce White's attacking control; Boleslavsky 6.Be2 e5 for independent play", "sources": ["s1", "s2"] },
+    { "idea": "Sveshnikov ...e5 gaining central counterplay and accepting the d5 hole", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian: White d-pawn exchanged for Black's c-pawn, White with e4, Black with d6/e-pawn centre and half-open c-file", "sources": ["s1"] },
+    { "structure": "Richter-Rauzer: d6 pawn as a long-term target; doubled f-pawns after Bxf6 gxf6 giving Black the bishop pair", "sources": ["s1", "s2"] },
+    { "structure": "Sveshnikov: Black pawns on d6/e5, with White's knight on d5 as an outpost (own understanding, unsourced)", "sources": [] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The open Sicilian is described as open and extremely complex with an opposite-wing race (s1, s2). The Richter-Rauzer is White's sharpest reply and gets very sharp if Black drifts (s4). The Classical lines are theory-heavy and pattern-based (s2). The Four Knights is more balanced but a 'theoretician opening' (s3). Overall Sharp is the best fit for the main lines, though some branches (Four Knights, Boleslavsky) are quieter.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines; the c-pawn is exchanged for the d-pawn.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound; 5.6 million Lichess games show near-equal scores (s3). Classical, Sveshnikov and Accelerated Dragon are all top-level choices.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Typical middlegame has the d-pawn traded, Black's half-open c-file and White's e4 pawn. The centre is partly open (s1). The Sveshnikov and Boleslavsky lines have Black ...e5 with a d5 hole and are more closed. Semi-open fits the Najdorf and Dragon anchors.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A crossroads of mainstream defences played by top players. Not a system. Standard.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Chessworld says moderately theoretical, with accessible ideas for club players seeking active repertoires (s2). Chessiverse: a 'theoretician opening' where adherence to theory rises to 78% at 2500 (s3). The Sozin/Velimirovic and Richter-Rauzer lines have a lot of forcing theory (s1, s2). Black studies it. Advanced on memory, though the Four Knights and Boleslavsky are easier.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "opposite-side castling",
+    "kingside pawn storm",
+    "half-open c-file",
+    "queenside counterplay",
+    "pressure on d6",
+    "central pawn majority",
+    "...b5 counterplay",
+    "d5 outpost"
+  ],
+  "sublines_that_differ": [
+    { "name": "Richter-Rauzer", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bg5", "how": "Sharpest White try; queenside castling and kingside pawn storm" },
+    { "name": "Sozin / Velimirovic", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bc4", "how": "Aggressive attacking set-up with heavy theory" },
+    { "name": "Sveshnikov", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5", "how": "Black accepts d5 hole and a backward d6 pawn for activity; more closed, dynamic" },
+    { "name": "Kalashnikov / Lowenthal", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5", "how": "Immediate ...e5; also a d5 hole and less sharp than main Najdorf lines" },
+    { "name": "Accelerated Dragon", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6", "how": "Fianchetto structure, already its own root; must not inherit these tags" },
+    { "name": "Boleslavsky", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Be2 e5", "how": "Central tension, moderate theory, quieter" },
+    { "name": "Four Knights", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6", "how": "Balanced, flexible, transposes to Sveshnikov or Classical" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "3.d4 immediately creates a dynamic and unbalanced struggle", "verdict": "supported", "note": "Open and extremely complex per Wikipedia.", "sources": ["s1"] },
+      { "claim": "White gains a central space advantage", "verdict": "supported", "note": "White gets a lead in development and extra kingside space; the central pawn majority belongs to Black.", "sources": ["s1"] },
+      { "claim": "Black obtains a semi-open c-file and a central pawn majority", "verdict": "supported", "note": "Both are listed as Black's compensation.", "sources": ["s1"] },
+      { "claim": "Promising rich, tactical counterplay for players who thrive on sharp, complex positions", "verdict": "supported", "note": "True of the Richter-Rauzer and Sozin; less so of the Four Knights.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: use space to launch a kingside attack (f4-f5 or g4-g5)", "verdict": "supported", "note": "Richter-Rauzer: f4, g4 and h-pawn advances.", "sources": ["s2"] },
+      { "claim": "White: control the d5-square and restrain Black's queenside activity", "verdict": "unverifiable", "note": "d5 is more a hole White can't control in the Sveshnikov; no source frames White's plans this way.", "sources": [] },
+      { "claim": "Black: exert pressure on the c-file and generate queenside counterplay with the a- and b-pawns", "verdict": "supported", "note": "...a6, ...b5 and c-file pressure.", "sources": ["s1", "s2"] },
+      { "claim": "Black: prepare the ...d5 pawn break to challenge the centre", "verdict": "unverifiable", "note": "...d5 is an equalising break in Scheveningen/Taimanov-like set-ups. In the Classical, Richter-Rauzer and Sveshnikov sources, Black's central ideas are ...e5 and exchanges on d4, not ...d5.", "sources": ["s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

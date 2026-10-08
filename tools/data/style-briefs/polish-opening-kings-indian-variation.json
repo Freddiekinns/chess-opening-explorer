@@ -1,0 +1,49 @@
+{
+  "slug": "polish-opening-kings-indian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: King's Indian Variation",
+    "eco": "A00",
+    "moves": "1. b4 Nf6 2. Bb2 g6",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 0 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black answers the Polish with a King's Indian fianchetto, ...Nf6, ...g6, ...Bg7 and ...d6. White usually plays 3.c4 Bg7 4.e3 d6 5.Nf3 O-O, with the b2 bishop on the long diagonal and queenside space, or the sharper Spike and Schiffler tries with g4 or e4. Play is flank-oriented, with unbalanced pawn structures and no early forcing theory.",
+  "white_ideas": [
+    { "idea": "Use the b2 bishop on the long diagonal and gain queenside space" },
+    { "idea": "Build with c4, e3 and Nf3, then d4 or a4-b5" },
+    { "idea": "Spike with g4 or e4 for a surprise attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto and challenge the long diagonal with ...Bg7" },
+    { "idea": "Strike in the centre with ...d5 or ...e5" },
+    { "idea": "Aim at the advanced b4 pawn with ...a5 or ...c5" }
+  ],
+  "typical_structures": [
+    { "structure": "Flank structure with White b4/c4 and a b2 bishop against a Black kingside fianchetto" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Flank play with unbalanced structures but little early forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered in the main line." },
+    "soundness": { "notes": "Sound; an unorthodox but not refuted set-up." },
+    "structure": { "notes": "Flank opening; the centre is not fixed." },
+    "approach": { "notes": "Played rarely by strong players, mainly as a surprise." },
+    "level": { "reason": "understanding", "notes": "Few theoretical lines but plans need understanding." }
+  },
+  "plan_phrases": ["queenside expansion", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Polish Spike", "moves": "1. b4 Nf6 2. Bb2 g6 3. g4", "how": "A wild kingside pawn thrust, rarer and riskier." },
+    { "name": "Schiffler Attack", "moves": "1. b4 Nf6 2. Bb2 g6 3. e4", "how": "An early central push for a sharper, unbalanced game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Unorthodox flank play, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Not refuted, just irregular." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "A flank opening with an undecided centre." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom play it, mostly as a surprise." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Small theory but unusual plans." },
+    "plans": { "value": ["queenside_expansion", "fianchetto"], "reason": "b4 space and the b2 bishop are the core idea." }
+  }
+}

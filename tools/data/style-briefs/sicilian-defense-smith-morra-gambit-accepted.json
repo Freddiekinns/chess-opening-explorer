@@ -1,0 +1,151 @@
+{
+  "slug": "sicilian-defense-smith-morra-gambit-accepted",
+  "root": {
+    "name": "Sicilian Defense: Smith-Morra Gambit Accepted",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4 cxd4 3. c3 dxc3",
+    "fen": "rnbqkbnr/pp1ppppp/8/8/4P3/2p5/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Smith-Morra Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Smith%E2%80%93Morra_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Smith-Morra Gambit: Ideas, Traps & Games",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/smith-morra-gambit.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Smith-Morra Gambit Guide: How to Play It & Beat It",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/smith-morra-gambit/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Smith-Morra Gambit searches (chess.com history, TheChessWorld, Siberian Trap pages; snippet only)",
+      "publisher": "Web search",
+      "url": "https://thechessworld.com/articles/openings/smith-morra-gambit-complete-guide/",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 3...dxc3 White offers a pawn and recaptures 4.Nxc3, leaving White a piece up in development and a pawn down, with half-open c- and d-files. The aim is Nf3, Bc4 (hitting f7), O-O, Qe2, Rd1 and Rac1, with thematic Nd5 or e5 breaks and sometimes sacrifices on d5. Black develops with ...Nc6, ...e6 and ...d6 (Scheveningen-like set-ups with ...Nf6 and ...Be7, the Siberian ...Ng4, the Chicago ...a6/...b5), takes care of the king on the c4-g8 diagonal, and may return the pawn if needed. Sources describe it as objectively around equal or slightly favouring Black with best play but a serious practical weapon, especially below top level; many Sicilian players avoid it by declining with 3...Nf6 (Alapin-type) or 3...d3. Little theory is needed on White's side, but Black has to know specific defensive set-ups and traps such as the Siberian Trap.",
+  "white_ideas": [
+    { "idea": "Develop rapidly with Nc3, Nf3, Bc4, castle, then Qe2, Rd1 and Rac1 to pressure the c- and d-files.", "sources": ["s2", "s3"] },
+    { "idea": "Bishop on c4 aiming at f7 and the dark squares, forcing Black to solve king-safety problems before consolidating the extra pawn.", "sources": ["s1", "s2"] },
+    { "idea": "Thematic Nd5 jumps, knight or bishop sacrifices on d5, and the e5 break when Black lags in development (Esserman's 'Mayhem in the Morra' line with Nd5).", "sources": ["s1", "s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Finish development and reduce the force of the c4 bishop; hold the extra pawn if possible, or return material to neutralise the initiative.", "sources": ["s1", "s2"] },
+    { "idea": "Set-ups with ...Nc6, ...e6, ...d6, ...Nf6, ...Be7 (Scheveningen formation), or ...Nc6 with ...e6 and ...Nge7; control e5 and avoid early king exposure.", "sources": ["s1", "s3"] },
+    { "idea": "Siberian Variation with ...Ng4 and its trap (9.h3?? Nd4! wins the queen), and Chicago set-up with ...a6 and ...b5.", "sources": ["s1", "s4"] },
+    { "idea": "If Black consolidates and keeps the pawn, the extra pawn gives good chances in the endgame.", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with half-open c- and d-files: White has an e4 pawn and developed pieces, Black has an extra pawn (a Scheveningen-like d6/e6 formation).", "sources": ["s1", "s2"] },
+    { "structure": "Piece play on the c4-g8 diagonal and c-file instead of a pawn centre; White's compensation is activity rather than space.", "sources": ["s2", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Initiative and direct attack: rapid development, open lines, tactical pressure, queen traps (Siberian). Black can steer to quiet play by returning the pawn, but the standard play is concrete and double-edged with a risk of Black collapsing quickly on the c4-g8 diagonal.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3...dxc3 White is a pawn down. Black may keep it: sources say good endgame chances follow if Black consolidates, and White has no forced win of the pawn back. White's compensation is activity.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "soundness": {
+      "notes": "Not refuted; 'sound enough to be a serious practical weapon, especially below top elite level', though Black may equalise with best preparation. Chess Doctrine: objectively close to equal with best play; statistics quoted as 26% White wins, 36% draws, 38% Black wins (source does not say which games). Played occasionally by Nakamura (against Caruana, 2023 rapid) and Nepomniachtchi.",
+      "sources": ["s2", "s3", "s1"]
+    },
+    "structure": {
+      "notes": "Open lines with half-open c- and d-files and piece activity; typical play does not close the centre. The c-pawn is gone, the d-pawn is gone, and e4 versus Black's d6/e6 pawns forms a Scheveningen-like set-up.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A specific gambit against the Sicilian, not a set-up played against anything. 'Popular at the club level and played occasionally by masters'; 'less commonly seen at the highest levels'. Esserman wrote a book on it; Nakamura and Nepomniachtchi have used it. Many Sicilian players decline with 3...Nf6.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessworld: minimal theory load for White; 'ideas before memorizing sidelines', six to ten model games enough. Chess Doctrine: White's plans are straightforward, Black needs memorisation of specific defensive set-ups. For the side that studies the line (White), few lines but tactical hazards (Siberian Trap, Nd5 sacrifices).",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on the c- and d-files",
+    "bishop on c4 against f7",
+    "Nd5 jump or sacrifice",
+    "e5 break",
+    "Scheveningen formation",
+    "Siberian Trap",
+    "return the pawn"
+  ],
+  "sublines_that_differ": [
+    { "name": "Siberian Variation", "moves": "1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 e6 5. Nf3 Nc6 6. Bc4 Nf6 7. O-O Qc7", "how": "Black sets a queen trap with ...Ng4 and ...Nd4 (9.h3?? Nd4!); sharper and trickier than the Scheveningen set-ups." },
+    { "name": "Chicago Defense", "moves": "1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 ... a6 and ...b5", "how": "Black expands on the queenside with ...a6 and ...b5 to drive away the bishop." },
+    { "name": "Scheveningen Formation", "moves": "1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 d6 6. Bc4 e6", "how": "Quiet, solid Black set-up behind d6 and e6 with ...Nf6 and ...Be7; White keeps the initiative with rapid development." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Smith-Morra Gambit is a sharp and aggressive response to the Sicilian where White sacrifices a pawn to accelerate development and seize the initiative.",
+        "verdict": "supported",
+        "note": "Pawn offered for rapid development and open lines.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "By opening the c and d-files, White aims for a swift attack, putting immediate pressure on Black's position.",
+        "verdict": "supported",
+        "note": "Pressure on the c- and d-files is the stated compensation.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is perfect for tactical players who thrive on the initiative and are comfortable with a material deficit.",
+        "verdict": "supported",
+        "note": "Sources call it a practical weapon and note it scores well through initiative and tactical pressure, especially below the top level.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: develop pieces rapidly (Nc3, Nf3, Bc4, Bg5/f4) to control the centre and open files, pressuring Black's queen and f7.",
+        "verdict": "supported",
+        "note": "Nc3, Nf3, Bc4, and f7 pressure are named; Bg5/f4 are not named in the sources read.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: launch a direct attack against the Black king, often with further sacrifices.",
+        "verdict": "supported",
+        "note": "Sacrifices on d5 (knight or bishop) and attack on the king's diagonal are named.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: consolidate the extra pawn and complete development safely, often adopting a hedgehog-like set-up.",
+        "verdict": "wrong",
+        "note": "Consolidation and safe development are named, but the usual set-ups are Scheveningen-style (...d6, ...e6, ...Nf6, ...Be7), the Siberian and the Chicago, not a hedgehog (own understanding, unsourced: a hedgehog has pawns on a6, b6, d6, e6).",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: neutralise White's initiative with piece exchanges and use the material advantage in the endgame.",
+        "verdict": "supported",
+        "note": "Wikipedia says Black has good endgame chances if the extra pawn is kept; returning material is a recognised alternative.",
+        "sources": ["s1", "s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 3 }
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "slug": "ruy-lopez-old-steinitz-defense",
+    "rank": 1209,
+    "root": {
+      "name": "Ruy Lopez: Old Steinitz Defense, Semi-Duras Variation",
+      "eco": "C62",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. d4 Bd7 5. c4",
+      "fen": "r2qkbnr/pppb1ppp/2np4/1B2p3/2PPP3/5N2/PP3PPP/RNBQK2R b KQkq - 0 5"
+    },
+    "alternative_names": [
+      "Spanish: Old Steinitz, Semi-Duras Variation",
+      "Ruy Lopez: Old Steinitz Defense: Semi-Duras Variation",
+      "Ruy Lopez: old Steinitz defence, semi-Duras variation"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "ruy-lopez-steinitz-defense",
+      "name": "Ruy Lopez: Steinitz Defense",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6",
+      "overview": "Black defends e5 with 3...d6 at once and accepts a compact, somewhat cramped position: the f8-bishop is hemmed in and kingside development is slowed. The critical reply is 4.d4, when Black either breaks the pin with 4...Bd7 (then 5.Nc3 Nf6 6.O-O Be7 7.Re1, where Black often has to concede the centre with ...exd4) or trades with 4...exd4. White can instead go slowly with 4.O-O, 4.c3 or 4.Nc3, or damage the structure with Bxc6 (4.Bxc6+ bxc6, or the Nimzowitsch Attack 6.Bxc6 after 4.d4 Bd7 5.Nc3 Nf6). The game is steady and positional, with White holding a small space edge and Black waiting for the moment to challenge the centre. Sources call it sound but strategically demanding: Black drifts into passivity if the ...exd4 or ...Bg4 counter-pin timing is wrong. It is a minor sideline among masters but fairly common at club level."
+    }
+  },
+  {
+    "slug": "benko-gambit-nd2-variation",
+    "rank": 1210,
+    "root": {
+      "name": "Benko Gambit: Nd2 Variation",
+      "eco": "A58",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. Nf3 g6 8. Nd2",
+      "fen": "rn1qkb1r/4pp1p/b2p1np1/2pP4/8/2N5/PP1NPPPP/R1BQKB1R b KQkq - 1 8"
+    },
+    "alternative_names": [
+      "Benko Gambit: Accepted, 7.Nf3 g6 8.Nd2"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Benko Gambit: Accepted, 7.Nf3 g6 8.Nd2 Bg7",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. Nf3 g6 8. Nd2 Bg7"
+      },
+      {
+        "name": "Benko Gambit: Accepted, 7.Nf3 g6 8.Nd2 Qa5",
+        "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. Nf3 g6 8. Nd2 Qa5"
+      }
+    ],
+    "parent": {
+      "slug": "benko-gambit-accepted-fully-accepted-variation",
+      "name": "Benko Gambit Accepted: Fully Accepted Variation",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-declined-soller-zilbermints-gambit",
+    "rank": 1211,
+    "root": {
+      "name": "King's Gambit Declined: Soller-Zilbermints Gambit",
+      "eco": "C30",
+      "moves": "1. e4 e5 2. f4 f6 3. fxe5 Nc6",
+      "fen": "r1bqkbnr/pppp2pp/2n2p2/4P3/4P3/8/PPPP2PP/RNBQKBNR w KQkq - 1 4"
+    },
+    "alternative_names": [
+      "King's Gambit Declined, Soller-Zilbermints Gambit",
+      "King's Gambit, Declined",
+      "Soller-Zilbermints Gambit, KGD",
+      "Soller-Zilbermints Gambit, KGD "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit",
+      "name": "King's Gambit",
+      "moves": "1. e4 e5 2. f4",
+      "overview": "2.f4 offers a pawn at once to deflect Black's e-pawn, build a big centre with d4, develop quickly and use the half-open f-file against f7 (Bc4, Nf3, castling). The root covers both the Accepted lines (2...exf4: Kieseritzky 3.Nf3 g5 4.h4 g4 5.Ne5, Muzio, Bishop's Gambit 3.Bc4) and Declined lines (Falkbeer 2...d5, Classical 2...Bc5, and 2...d6 which is the most played move in the database). Accepted lines are sharp and tactically dense; Black tries to hold the pawn with ...g5 or return it with ...d5/...d6 to ease development. Declined lines are more solid and are chosen by stronger players who want to avoid the chaos. Play is open and double-edged for White's king as well."
+    }
+  },
+  {
+    "slug": "queens-gambit-declined-pillsbury-attack",
+    "rank": 1212,
+    "root": {
+      "name": "Queen's Gambit Declined: Pillsbury Attack",
+      "eco": "D55",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. Nc3 d5 5. cxd5 exd5 6. Bg5 Be7 7. e3 O-O 8. Bd3 Bb7 9. Ne5",
+      "fen": "rn1q1rk1/pbp1bppp/1p3n2/3pN1B1/3P4/2NBP3/PP3PPP/R2QK2R b KQ - 4 9"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Queen's Gambit Declined, Pillsbury Attack",
+        "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 b6 7. Bd3 Bb7 8. cxd5 exd5 9. Ne5"
+      }
+    ],
+    "parent": {
+      "slug": "queens-indian-defense-kasparov-variation",
+      "name": "Queen's Indian Defense: Kasparov Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. Nc3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "grunfeld-defense-flohr-defense",
+    "rank": 1213,
+    "root": {
+      "name": "Grünfeld Defense: Flohr Defense",
+      "eco": "D94",
+      "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 g6 5. Nf3 Bg7 6. Bd3 O-O 7. O-O Bf5",
+      "fen": "rn1q1rk1/pp2ppbp/2p2np1/3p1b2/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 6 8"
+    },
+    "alternative_names": [
+      "Gruenfeld Defense: Flohr Defense"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Gruenfeld: Flohr Defence",
+        "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Bd3 c6 7. O-O Bf5"
+      }
+    ],
+    "parent": {
+      "slug": "slav-defense",
+      "name": "Slav Defense",
+      "moves": "1. d4 d5 2. c4 c6 3. Nc3",
+      "overview": "Black supports d5 with ...c6 so that the centre is held by pawns while the light-squared bishop stays free to come out (usually to f5 or g4) before ...e6. The root is a crossroads: after 3.Nf3 Nf6 4.Nc3 Black chooses the Pure Slav with ...dxc4 (active bishop, ...e5/...c5 breaks), the Semi-Slav with ...e6 (c6-d5-e6 triangle, theory-heavy and often sharp: Meran, Botvinnik, Anti-Meran), or the Chebanenko ...a6. White can also play the Exchange (cxd5 cxd5), a symmetrical structure with queenside minority attack ideas that has a drawish reputation, or quiet systems with 3.e3 or 3.Bf4. The Slav is played by many world champions (Botvinnik, Smyslov, Anand, Kramnik) and is regarded as sound; sources treat it as solid with room for counterplay rather than a forced-draw defence."
+    }
+  },
+  {
+    "slug": "scandinavian-defense-zilbermints-gambit",
+    "rank": 1214,
+    "root": {
+      "name": "Scandinavian Defense: Zilbermints Gambit",
+      "eco": "B01",
+      "moves": "1. e4 d5 2. b4",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+    },
+    "alternative_names": [
+      "Zilbermints Gambit, Center Counter",
+      "Zilbermints Gambit, Center Counter "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "scandinavian-defense",
+      "name": "Scandinavian Defense",
+      "moves": "1. e4 d5",
+      "overview": "Black strikes at e4 at once with ...d5, and after 2.exd5 chooses between 2...Qxd5 (the 'positional' branch) and 2...Nf6 (the 'tactical' branch). In the main line 2...Qxd5 3.Nc3 the queen must move again, usually Qa5 (or Qd6, Qd8), and White gains time; Black answers with ...c6, ...Nf6, ...Bf5 or ...Bg4 and ...e6, reaching a solid, Caro-Kann-like c6/e6 structure with free piece play. White's lead in development and space is balanced by Black's sound, easily defended position, so the game is typically a quiet fight where White pushes for a slight edge. Sharp sidelines exist: the Portuguese (3...Bg4 after 2...Nf6 lines), Icelandic Gambit (2...Nf6 3.c4 e6) and the Marshall Gambit with 2...Nf6 3.d4 Nxd5 or 3...c6 ideas. It is objectively sound but has never been a mainstream elite weapon, though Carlsen, Anand and Larsen have used it."
+    }
+  },
+  {
+    "slug": "grunfeld-defense-botvinnik-variation",
+    "rank": 1215,
+    "root": {
+      "name": "Grünfeld Defense: Botvinnik Variation",
+      "eco": "D95",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Qb3 e6",
+      "fen": "rnbq1rk1/ppp2pbp/4pnp1/3p4/2PP4/1QN1PN2/PP3PPP/R1B1KB1R w KQ - 0 7"
+    },
+    "alternative_names": [
+      "Gruenfeld: Botvinnik Variation",
+      "Gruenfeld Defense: Botvinnik Variation",
+      "Botvinnik Variation, Grunfeld",
+      "Gruenfeld: Botvinnik variation",
+      "Botvinnik Variation, Grunfeld "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Gruenfeld: Botvinnik, 7.Bd2",
+        "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Qb3 e6 7. Bd2"
+      }
+    ],
+    "parent": {
+      "slug": "grunfeld-defense-three-knights-variation",
+      "name": "Grünfeld Defense: Three Knights Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Qb3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "vienna-game-philidor-countergambit",
+    "rank": 1216,
+    "root": {
+      "name": "Vienna Game: Philidor Countergambit",
+      "eco": "C25",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. d4 f5",
+      "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Philidor Countergambit, Vienna",
+      "Philidor Countergambit, Vienna "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "vienna-game-fyfe-gambit",
+      "name": "Vienna Game: Fyfe Gambit",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. d4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-gambit-accepted-furman-variation",
+    "rank": 1217,
+    "root": {
+      "name": "Queen's Gambit Accepted: Furman Variation",
+      "eco": "D27",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. dxc5 Bxc5",
+      "fen": "rnbqk2r/1p3ppp/p3pn2/2b5/2B5/4PN2/PP3PPP/RNBQ1RK1 w kq - 0 8"
+    },
+    "alternative_names": [
+      "Furman Variation, QGA",
+      "Furman Variation, QGA "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-gambit-accepted-classical-defense",
+      "name": "Queen's Gambit Accepted: Classical Defense",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "french-defense-reversed-philidor-formation",
+    "rank": 1218,
+    "root": {
+      "name": "French Defense: Reversed Philidor Formation",
+      "eco": "C00",
+      "moves": "1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. Ngf3 Nc6 5. Be2",
+      "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3p4/4P3/3P1N2/PPPNBPPP/R1BQK2R b KQkq - 5 5"
+    },
+    "alternative_names": [
+      "Reversed Philidor, French",
+      "French: Reversed Philidor formation",
+      "Reversed Philidor, French "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "french-defense-kings-indian-attack",
+      "name": "French Defense: King's Indian Attack",
+      "moves": "1. e4 e6 2. d3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "benoni-defense-hawk-variation",
+    "rank": 1219,
+    "root": {
+      "name": "Benoni Defense: Hawk Variation",
+      "eco": "A43",
+      "moves": "1. d4 Nf6 2. Nf3 c5 3. d5 c4",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/3P4/2p5/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Old Benoni: Hawk",
+      "Habichd; Hawk Variation, Benoni",
+      "Hawk (Habichd) defence",
+      "Habichd; Hawk Variation, Benoni "
+    ],
+    "subtree_most_played": [
+      {
+        "name": "Old Benoni: Hawk, 4.e4",
+        "moves": "1. d4 c5 2. d5 Nf6 3. Nf3 c4 4. e4"
+      }
+    ],
+    "parent": {
+      "slug": "benoni-defense-benoni-indian-defense",
+      "name": "Benoni Defense: Benoni-Indian Defense",
+      "moves": "1. d4 c5 2. d5 Nf6 3. Nf3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "bishops-opening-horwitz-gambit",
+    "rank": 1220,
+    "root": {
+      "name": "Bishop's Opening: Horwitz Gambit",
+      "eco": "C26",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. Nc3 b5",
+      "fen": "rnbqkb1r/p1pp1ppp/5n2/1p2p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Vienna: Horwitz Gambit",
+      "Horwitz Gambit, Bishop",
+      "Horwitz Gambit, Bishop "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "vienna-game-stanley-variation",
+      "name": "Vienna Game: Stanley Variation",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-pawn-mengarini-attack",
+    "rank": 1221,
+    "root": {
+      "name": "Queen's Pawn, Mengarini Attack",
+      "eco": "E60",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Qc2",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PPQ1PPPP/RNB1KBNR b KQkq - 1 3"
+    },
+    "alternative_names": [
+      "King's Indian: Mengarini Attack"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "indian-defense-west-indian-defense",
+      "name": "Indian Defense: West Indian Defense",
+      "moves": "1. d4 Nf6 2. c4 g6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "polish-opening-wolferts-gambit",
+    "rank": 1222,
+    "root": {
+      "name": "Polish Opening: Wolferts Gambit",
+      "eco": "A00",
+      "moves": "1. b4 e5 2. Bb2 c5",
+      "fen": "rnbqkbnr/pp1p1ppp/8/2p1p3/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Polish: Wolfertz Gambit",
+      "Irregular Openings: Polish Opening, Wolferts Gambit",
+      "Wolferts Gambit, Polish",
+      "Wolferts Gambit, Polish "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "polish-opening",
+      "name": "Polish Opening",
+      "moves": "1. b4",
+      "overview": "White plays 1.b4 to grab queenside space and fianchetto the bishop to b2, putting long-diagonal pressure on e5, f6 and g7. It is an irregular flank opening: Black chooses the set-up with 1...e5 (2.Bb2 Bxb4 3.Bxe5, the Exchange Variation, which equalises), 1...d5 (the German Defence 2...Qd6 etc.), or 1...Nf6 and 1...e6 reaching Indian-like or Queen's Gambit-like set-ups. The opening is sound and not refuted but gives Black no real problems, so it is rarely seen at elite level and chosen as a surprise weapon (Carlsen used it against Nakamura and So in 2021). Theory is small and the play is flank-oriented, with unbalanced pawn structures but typically no early forced tactics. Alekhine's complaint was that it reveals White's intentions before knowing Black's."
+    }
+  },
+  {
+    "slug": "kings-pawn-opening-van-hooydoon-gambit",
+    "rank": 1223,
+    "root": {
+      "name": "King's Pawn Opening: Van Hooydoon Gambit",
+      "eco": "C20",
+      "moves": "1. e4 e5 2. Qe2 Nc6 3. c3 Nf6 4. Nf3 Bc5 5. d4 exd4 6. cxd4 Nxd4",
+      "fen": "r1bqk2r/pppp1ppp/5n2/2b5/3nP3/5N2/PP2QPPP/RNB1KB1R w KQkq - 0 7"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-pawn-game",
+      "name": "King's Pawn Game",
+      "moves": "1. e4 e5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "barnes-opening-gedult-gambit",
+    "rank": 1224,
+    "root": {
+      "name": "Barnes Opening: Gedult Gambit",
+      "eco": "A00",
+      "moves": "1. f3 f5 2. e4 fxe4 3. Nc3",
+      "fen": "rnbqkbnr/ppppp1pp/8/8/4p3/2N2P2/PPPP2PP/R1BQKBNR b KQkq - 1 3"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Barnes Opening: Gedult Gambit",
+        "moves": "1. f3 d5 2. e4 g6 3. d4 dxe4 4. c3"
+      }
+    ],
+    "parent": {
+      "slug": "barnes-opening",
+      "name": "Barnes Opening",
+      "moves": "1. f3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-carrera-gambit",
+    "rank": 1225,
+    "root": {
+      "name": "King's Gambit Accepted: Carrera Gambit",
+      "eco": "C33",
+      "moves": "1. e4 e5 2. f4 exf4 3. Qh5",
+      "fen": "rnbqkbnr/pppp1ppp/8/7Q/4Pp2/8/PPPP2PP/RNB1KBNR b KQkq - 1 3"
+    },
+    "alternative_names": [
+      "KGA: Carrera Gambit",
+      "King's Gambit Accepted, Carrera Gambit",
+      "King's Gambit, Accepted",
+      "Carrera Gambit, KGA",
+      "Carrera Gambit, KGA "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-accepted",
+      "name": "King's Gambit Accepted",
+      "moves": "1. e4 e5 2. f4 exf4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "center-game-charousek-variation",
+    "rank": 1226,
+    "root": {
+      "name": "Center Game: Charousek Variation",
+      "eco": "C22",
+      "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. c3 Be7",
+      "fen": "r1bqk1nr/ppppbppp/2n5/8/4P3/2P1Q3/PP3PPP/RNB1KBNR w KQkq - 1 6"
+    },
+    "alternative_names": [
+      "Centre Game: Charousek Variation"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "center-game-paulsen-attack-variation",
+      "name": "Center Game: Paulsen Attack Variation",
+      "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "scotch-game-cochrane-shumov-defense",
+    "rank": 1227,
+    "root": {
+      "name": "Scotch Game: Cochrane-Shumov Defense",
+      "eco": "C44",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5 Nh6 6. Nxf7 Nxf7 7. Bxf7+ Kxf7 8. Qh5+ g6 9. Qxc5 d5",
+      "fen": "r1bq3r/ppp2k1p/2n3p1/2Qp4/3pP3/8/PPP2PPP/RNB1K2R w KQ - 0 10"
+    },
+    "alternative_names": [
+      "Scotch gambit: Cochrane-Shumov defence"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "scotch-game-scotch-gambit",
+      "name": "Scotch Game: Scotch Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-kieseritzky",
+    "rank": 1228,
+    "root": {
+      "name": "King's Gambit Accepted: Kieseritzky, Polerio Defense",
+      "eco": "C39",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Be7",
+      "fen": "rnbqk1nr/ppppbp1p/8/4N3/4PppP/8/PPPP2P1/RNBQKB1R w KQkq - 2 6"
+    },
+    "alternative_names": [
+      "KGA: Kieseritsky, Polerio Defence",
+      "KGA: Kieseritsky, Polerio defence"
+    ],
+    "subtree_most_played": [
+      {
+        "name": "King's Gambit Accepted: Kieseritzky, Long Whip Defense, Jaenisch Variation",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 h5 6. Bc4 Rh7 7. d4 Bh6 8. Nc3"
+      },
+      {
+        "name": "King's Gambit Accepted: Kieseritzky, Rice Gambit",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Nf6 6. Bc4 d5 7. exd5 Bd6 8. O-O"
+      },
+      {
+        "name": "King's Gambit Accepted: Kieseritzky, Salvio Defense, Cozio Variation",
+        "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Qe7 6. d4 f5 7. Bc4"
+      }
+    ],
+    "parent": {
+      "slug": "kings-gambit-accepted-kieseritzky-gambit",
+      "name": "King's Gambit Accepted: Kieseritzky Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5",
+      "overview": null
+    }
+  }
+]

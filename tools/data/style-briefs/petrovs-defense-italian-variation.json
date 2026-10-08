@@ -1,0 +1,46 @@
+{
+  "slug": "petrovs-defense-italian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Italian Variation",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop to c4 instead of taking on e5, inviting Black to play ...Nxe4 or transpose with ...Bc5 into an Italian or Two Knights type game. After 3...Nxe4 4.Nc3 Nxc3 5.dxc3 f6 Black holds the pawn at the cost of a loosened king, and 4.Nxe5 lines give White a small initiative. Not a main Petrov line; play is open and fairly even.",
+  "white_ideas": [
+    { "idea": "Meet ...Nxe4 with Nc3 and Nxc3 dxc3 for quick development and pressure on f7/e-file" },
+    { "idea": "Play for Nxe5 and f7 tricks if Black is careless" }
+  ],
+  "black_ideas": [
+    { "idea": "Take on e4 and hold the pawn with ...f6, ...d5 or ...Bc5" },
+    { "idea": "Transpose to the Italian with 3...Bc5 or play ...Nc6 and ...Be7" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file after Nxe4 trades, Black king slightly exposed after ...f6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Sidelines of the Petrov with early tactics around e4 and f7 but nothing forced; Balanced, with low confidence because I am unsure of the main line." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Alternative names say Urusov Gambit but the positions here mostly regain e5 or e4; treated as no gambit." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Pawns come off the e-file early after trades; open lines for the pieces, with a possible Flexible reading if it transposes to the Italian." },
+    "approach": { "notes": "A less common but respectable White try; standard." },
+    "level": { "reason": "understanding", "notes": "Light theory, moderate play; Intermediate." }
+  },
+  "plan_phrases": ["pressure on f7", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "3...Bc5", "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4 Bc5", "how": "Transposes to the Italian Game, a slow flexible game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Even, open play without a forced race; unsure of the main line." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "Material is regained quickly or never given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respectable for both sides." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Early e-pawn exchanges open the e-file and pieces." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Less common but played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Light theory and plain plans." },
+    "plans": { "value": ["pressure_on_f7", "lead_in_development"], "reason": "The c4 bishop eyes f7 and White tries to be ahead in development." }
+  }
+}

@@ -16,6 +16,10 @@ name: Video Refresh
 #     without it the pipeline would regenerate the index from an empty DB and
 #     wipe it). Rebuildable from scratch via `npm run pipeline:full`.
 #   - YOUTUBE_API_KEY repository secret (enrichment of newly discovered videos).
+#
+# Optional: JEV_API_KEY repository secret (TypeSafe Jev). The pipeline drops
+# videos Jev confidently says are not about their page; without the key only
+# cached answers act and new videos are kept unfiltered.
 
 on:
   schedule:
@@ -65,6 +69,7 @@ jobs:
       - name: Run incremental pipeline (RSS discovery, new videos only)
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          JEV_API_KEY: ${{ secrets.JEV_API_KEY }}
         run: npm run pipeline
 
       - name: Audit — after
@@ -112,7 +117,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json; then
+          if git diff --quiet -- api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json tools/data/jev-relation-cache.json; then
             echo "No index changes this month — nothing to PR."
             exit 0
           fi
@@ -120,7 +125,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
-          git add api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json
+          git add api/data/video-index.json tools/data/videos.sqlite tools/data/video_enrichment_cache.json tools/data/jev-relation-cache.json
           git commit -m "chore(videos): monthly index refresh $(date -u +%Y-%m)"
           git push -u origin "$BRANCH" --force
           if ! gh pr create \

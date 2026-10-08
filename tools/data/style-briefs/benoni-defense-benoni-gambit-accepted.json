@@ -1,0 +1,44 @@
+{
+  "slug": "benoni-defense-benoni-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Benoni Gambit Accepted",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. dxc5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2P5/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White takes the c-pawn and Black normally regains it with ...e6 and ...Bxc5, or ...Nf6 and ...Na6/...Nxc5, so material returns. The positions that result are open and close to a symmetrical or Queen's Gambit-type game. It is a rare line; I am unsure which branch is the main line.",
+  "white_ideas": [
+    { "idea": "Hold the pawn with b4 or Nf3 and Nc3, or give it back for a development lead" },
+    { "idea": "Develop quickly with e4, Nc3 and Bf4/Be3, taking a small centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Regain the pawn with ...e6 and ...Bxc5 or ...Na6 and ...Nxc5" },
+    { "idea": "Play for ...d5 with free development and a symmetrical, active position" }
+  ],
+  "typical_structures": [{ "structure": "Open symmetrical-like position after the c-pawn is regained, or a Queen's Gambit-type centre" }],
+  "axis_evidence": {
+    "character": { "notes": "Not forcing; no early tactics beyond regaining the pawn." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "false", "notes": "Black regains the c5 pawn by force with ...e6 and ...Bxc5 or ...Na6, so no lasting gambit." },
+    "soundness": { "notes": "Sound; Black regains material without trouble." },
+    "structure": { "notes": "Centre not decided after the pawn is regained." },
+    "approach": { "notes": "Played now and then by strong players." },
+    "level": { "reason": "neither", "notes": "Plans are straightforward and theory is minimal." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "2...e6 3.e4", "moves": "2...e6 3. e4 Bxc5", "how": "Black regains the pawn with an active bishop; White has the e4 centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Material comes back and play is open but not especially forcing." },
+    "gambit": { "value": "none", "confidence": 0.65, "reason": "Black regains the pawn at once, so it is not a lasting gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Black regains the pawn without risk." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is undecided after the exchange." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common but not an unusual choice for strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Plans are simple and there is little theory." },
+    "plans": { "value": [], "reason": "Position can go several ways and no plan dominates." }
+  }
+}

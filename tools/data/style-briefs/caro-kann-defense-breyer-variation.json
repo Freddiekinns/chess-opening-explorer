@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-breyer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Breyer Variation",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. d3",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/3P4/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White avoids Caro-Kann theory with a King's Indian Attack-like set-up: d3, Nd2, Ngf3, g3 and Bg2. Black replies 2...d5 3.Nd2 and builds a Philidor-like centre with ...e5 and ...Nf6 or ...g6 and ...Bg7. Slow manoeuvring and flexible pawn breaks follow; White aims for a small edge, Black for equality.",
+  "white_ideas": [
+    { "idea": "Nd2, Ngf3, g3, Bg2 and O-O, with e5 or c4 breaks." },
+    { "idea": "Avoid theory and keep a safe position." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...e5, ...Nf6, ...Bd6 or ...g6 and ...Bg7." },
+    { "idea": "Hit the centre with ...dxe4 or ...f5 timing." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian Attack vs Philidor-like centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, quiet, little forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre not decided; tension on e4/d5." },
+    "approach": { "notes": "Played now and then by strong players, a standard anti-Caro try." },
+    "level": { "reason": "understanding", "notes": "Easy plans for White, little theory." }
+  },
+  "plan_phrases": ["fianchetto", "flexible centre"],
+  "sublines_that_differ": [
+    { "name": "Stein Attack", "moves": "3. Nd2 g6 4. Ngf3 Bg7 5. g3 e5 6. Bg2 Ne7 7. O-O O-O 8. b4", "how": "White expands on the queenside." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet, slow and hard to lose for either side." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A recognised anti-Caro choice, though it is used for a quiet game." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Simple plans but no clear beginner advantage." },
+    "plans": { "value": ["fianchetto"], "reason": "White follows the King's Indian Attack with a g2 fianchetto." }
+  }
+}

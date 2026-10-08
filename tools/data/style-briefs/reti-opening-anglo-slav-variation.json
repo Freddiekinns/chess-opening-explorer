@@ -1,0 +1,49 @@
+{
+  "slug": "reti-opening-anglo-slav-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Anglo-Slav Variation, Bogoljubow Variation",
+    "eco": "A12",
+    "moves": "1. Nf3 d5 2. c4 c6 3. b3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2P5/1P3N2/P2PPPPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "reti-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White builds a Réti set-up with b3, Bb2 and a g3 or e3 fianchetto against Black's Slav-style ...c6/...d5 centre. Black usually plays ...Nf6, ...e6 and ...Be7, or ...Bf5 (New York System); the centre stays in tension and the game is a slow manoeuvring fight. Chances are level and play depends on timely central breaks.",
+  "white_ideas": [
+    { "idea": "Fianchetto both bishops and press the long diagonal, then play d4 or cxd5" },
+    { "idea": "Keep e3/d3 flexible and choose a Stonewall or Catalan-type set-up" },
+    { "idea": "Break with d4 or c4xd5 when Black commits" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold d5 with ...e6/...Nf6 and develop ...Be7, ...O-O" },
+    { "idea": "Develop the light bishop outside the pawn chain with ...Bf5" },
+    { "idea": "Break with ...c5 or ...e5 to challenge the centre" }
+  ],
+  "typical_structures": [
+    { "structure": "Slav-type c6/d5 pawns against c4/b3 with both sides fianchettoing" },
+    { "structure": "Stonewall-style pawns on d4/e3/c3/f4 when White plays e3" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow positional manoeuvring, hard to lose for either side." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn offered." },
+    "soundness": { "notes": "Sound, standard flank set-up." },
+    "structure": { "notes": "Tension in the centre, nothing locked or exchanged early." },
+    "approach": { "notes": "Réti-style piece set-up against the Slav; played by strong players but not a universal system." },
+    "level": { "reason": "understanding", "notes": "Clear fianchetto plans but flexible move orders to learn." }
+  },
+  "plan_phrases": ["fianchetto both bishops", "hypermodern centre", "control the long diagonal"],
+  "sublines_that_differ": [
+    { "name": "Stonewall Line", "moves": "1. Nf3 d5 2. c4 e6 3. g3 Nf6 4. Bg2 Be7 5. O-O O-O 6. b3 c6 7. Bb2", "how": "A closed Stonewall-like structure after a different move order." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Slow, symmetrical fianchetto play with few early tactics." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream flank set-up." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Centre stays in tension in a Réti-style flank opening." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A named line against the Slav, not a universal system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear but move orders vary." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both bishops on the long diagonals, centre contested from the flank." }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "nimzo-indian-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Classical Variation",
+    "eco": "E32",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PPQ1PPPP/R1B1KBNR b KQkq - 3 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White prevents doubled c-pawns by recapturing with the queen on c3 and so keeps the bishop pair. Black castles and then plays ...d6 and ...Nc6 or ...c5, or fights for the e4 square with ...Nc6 and ...e5, or the Noa ...d5 line. White usually gets the bishop pair and a small space edge, while Black has solid structure and active pieces; the game is positional.",
+  "white_ideas": [
+    { "idea": "Meet ...Bxc3 with Qxc3, keeping the bishop pair and healthy pawns." },
+    { "idea": "Build the centre with a3, Nf3, e3 or e4 and press on the c-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Fight for e4 with ...d6, ...Nc6 and ...e5, or hit with ...c5 and ...Nc6." },
+    { "idea": "Trade the dark-squared bishop and use piece activity and the e4 square." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on c4 and d4 with bishop pair; Black ...d6 and ...e5 or ...c5 structures." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional, with real chances for both sides but no early forcing attack." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, a main line at the top." },
+    "structure": { "notes": "Centre not locked; c5 and e5 breaks leave it open to change." },
+    "approach": { "notes": "Standard main line of the Nimzo-Indian." },
+    "level": { "reason": "understanding", "notes": "Several move orders and plans but little forced theory; intermediate." }
+  },
+  "plan_phrases": ["bishop pair", "fight for e4", "doubled pawns avoided"],
+  "sublines_that_differ": [
+    { "name": "Noa Variation", "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5", "how": "Black strikes at once; QGD-like with the bishop on b4." },
+    { "name": "Berlin Variation", "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5", "how": "Black goes for Benoni-style counterplay." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Positional but neither especially solid nor forcing; the Rubinstein anchor is Balanced." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A main line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre not locked or opened early." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line variation." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.45, "reason": "Several plans to understand, modest memory load." },
+    "plans": { "value": ["bishop_pair", "knight_outpost"], "reason": "White's bishops against the fight for e4." }
+  }
+}

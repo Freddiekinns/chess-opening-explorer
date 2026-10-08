@@ -1,0 +1,44 @@
+{
+  "slug": "modern-defense-modern-pterodactyl",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Modern Pterodactyl",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5",
+    "fen": "rnbqk1nr/pp1pppbp/6p1/2p5/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "modern-defense-standard-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black hits d4 at once with ...c5, and after 4.Nf3 cxd4 5.Nxd4 plays ...Qa5 or ...Nf6, using the early queen to hit e4 and c3. White gets space and a lead in development and tries to exploit the queen's position, while Black plays for counterplay on the dark squares and c-file. The position is unbalanced and not especially solid.",
+  "white_ideas": [
+    { "idea": "Nf3, Be2 or Bd3 and O-O, defending e4 and developing with tempo on the queen" },
+    { "idea": "Use the extra space and aim for a kingside initiative" }
+  ],
+  "black_ideas": [
+    { "idea": "Put pressure on e4 and c3 with ...Qa5 and ...Nf6, then ...O-O" },
+    { "idea": "Use the half-open c-file and the g7 bishop to counter on the dark squares" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian-style asymmetric centre with Black's g7 bishop and an early queen on a5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unbalanced: White gets a lead and space, Black counters with the early queen; both sides can go wrong quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered; 4.dxc5 Qa5 regains the pawn." },
+    "soundness": { "notes": "Slightly inferior for Black but sound enough for strong players." },
+    "structure": { "notes": "Half-open c-file after ...cxd4 and a Sicilian-type centre." },
+    "approach": { "notes": "Played now and then, but strong players hardly choose it as a main weapon." },
+    "level": { "reason": "understanding", "notes": "Black needs to handle the early queen and e4 pressure; little long theory." }
+  },
+  "plan_phrases": ["early queen", "fianchetto", "half-open c-file"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Early queen and a lead for White make for unbalanced play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Slightly worse for Black but playable." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Sicilian-type asymmetric centre with a half-open c-file." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose the Pterodactyl." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Clear ideas but the early queen needs care." },
+    "plans": { "value": ["early_queen", "fianchetto"], "reason": "Black plays ...Qa5 early and fianchettoes the bishop on g7." }
+  }
+}

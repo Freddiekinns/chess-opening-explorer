@@ -1,0 +1,291 @@
+<title>Video Match Spot-Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one reading column of numbered cards, a sticky progress bar on top.
+     Opening Book's "Warm Editorial Dark": single dark theme by design. */
+  :root {
+    --bg: #1a1816;
+    --raised: #232120;
+    --elevated: #2c2a27;
+    --overlay: #363330;
+    --fg: #ece8e1;
+    --fg-2: #9a958e;
+    --muted: #8e887f;
+    --accent: #e85d04;
+    --accent-soft: rgba(232, 93, 4, 0.12);
+    --line: rgba(255, 255, 255, 0.10);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --good: #9dbd7c;
+    --good-bg: rgba(133, 166, 99, 0.18);
+    --part: #e8a838;
+    --part-bg: rgba(232, 168, 56, 0.16);
+    --bad: #c98579;
+    --bad-bg: rgba(165, 92, 81, 0.22);
+    --font-display: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+    --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.55 var(--font-body);
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header.intro { padding-block: 36px 20px; display: grid; gap: 10px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  .intro p { margin: 0; color: var(--fg-2); max-width: 62ch; }
+  .key { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; color: var(--fg-2); }
+  .key b { color: var(--fg); font-weight: 500; }
+
+  .bar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    padding-block: 10px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .track { flex: 1; height: 6px; background: var(--overlay); border-radius: 3px; overflow: hidden; }
+  .fill { height: 100%; width: 0; background: var(--accent); transition: width 0.25s ease; }
+  .count { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--fg-2); min-width: 9ch; text-align: right; }
+  .status { font-size: 12px; color: var(--muted); }
+  .notice { margin-top: 16px; padding: 10px 14px; border: 1px solid var(--part); color: var(--part); border-radius: 8px; font-size: 14px; }
+
+  ol.items { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
+  .item { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 14px; }
+  .item.answered { border-color: var(--line-strong); }
+  .head { display: flex; gap: 12px; align-items: baseline; }
+  .num { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ask { font-size: 13px; color: var(--fg-2); }
+  .opening { font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.25; margin: 2px 0 0; text-wrap: balance; }
+  .moves { font-family: var(--font-mono); font-size: 13px; color: var(--fg-2); margin-top: 4px; overflow-wrap: anywhere; }
+
+  .videos { display: grid; gap: 12px; }
+  .videos.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .video { background: var(--elevated); border-radius: 8px; padding: 12px 14px; display: grid; gap: 6px; min-width: 0; }
+  .video .tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .video a { color: var(--fg); font-weight: 500; text-decoration: none; overflow-wrap: anywhere; }
+  .video a:hover, .video a:focus-visible { color: var(--accent); text-decoration: underline; }
+  .video a::after { content: " ↗"; color: var(--muted); }
+  .meta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  details { font-size: 13px; color: var(--fg-2); }
+  summary { cursor: pointer; color: var(--muted); }
+  details p { white-space: pre-wrap; overflow-wrap: anywhere; margin: 6px 0 0; max-height: 220px; overflow-y: auto; }
+
+  .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+  .choices button {
+    font: 500 14px var(--font-body); color: var(--fg); background: transparent;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; cursor: pointer;
+  }
+  .choices button:hover { border-color: var(--fg-2); }
+  .choices button:focus-visible, .note:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .choices button[aria-pressed="true"][data-tone="good"] { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .choices button[aria-pressed="true"][data-tone="part"] { background: var(--part-bg); border-color: var(--part); color: var(--part); }
+  .choices button[aria-pressed="true"][data-tone="bad"] { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  .choices button[aria-pressed="true"][data-tone="none"] { background: var(--overlay); border-color: var(--fg-2); }
+  .note {
+    width: 100%; font: 14px var(--font-body); color: var(--fg); background: var(--elevated);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  }
+  .note::placeholder { color: var(--muted); }
+  footer { margin-top: 28px; color: var(--fg-2); font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <div class="eyebrow">Jev experiment · owner check</div>
+    <h1>Does the video belong on the page?</h1>
+    <p>Twenty pairs drawn from the blind judging set. For each, decide whether the video is worth showing on that opening's page, as if you were a club player studying the line. The title is often enough; open the video when it isn't. Nothing here shows what the matcher, Jev or the judge said.</p>
+    <div class="key">
+      <span><b>Good match</b> the video is about this opening</span>
+      <span><b>Partly</b> one useful part of a broader video</span>
+      <span><b>Bad match</b> a different line, or only a passing mention</span>
+    </div>
+  </header>
+
+  <div class="bar" role="status">
+    <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+    <span class="count" id="count">0 of 0</span>
+    <span class="status" id="status">Connecting…</span>
+  </div>
+  <div class="notice" id="notice" hidden>Answers can't be saved in this view. Open the page on claude.ai while signed in, so Claude can read your verdicts.</div>
+
+  <ol class="items" id="items"></ol>
+  <footer id="done">Answers save as you click. When you've finished, tell Claude in the chat.</footer>
+</div>
+
+<script>
+  const ITEMS = /*ITEMS*/[];
+
+  const RELATION = [
+    ["good", "Good match", "good"],
+    ["partly", "Partly", "part"],
+    ["bad", "Bad match", "bad"],
+    ["cant_tell", "Can't tell", "none"],
+  ];
+  const PAIRWISE = [
+    ["video_1", "First is better", "good"],
+    ["video_2", "Second is better", "good"],
+    ["equal", "About the same", "part"],
+    ["cant_tell", "Can't tell", "none"],
+  ];
+
+  const answers = {};
+  let db = null;
+
+  function splitOpening(label) {
+    const m = /^(.*?) \((1\..*)\)$/.exec(label);
+    return m ? [m[1], m[2]] : [label, ""];
+  }
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function videoBlock(v, tag) {
+    const box = el("div", "video");
+    if (tag) box.append(el("span", "tag", tag));
+    const a = el("a", null, v.title);
+    a.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(v.id);
+    a.target = "_blank";
+    a.rel = "noopener";
+    box.append(a);
+    const mins = v.minutes != null ? ` · ${v.minutes < 1 ? "<1" : Math.round(v.minutes)} min` : "";
+    box.append(el("div", "meta", v.channel + mins));
+    if (v.description) {
+      const d = el("details");
+      d.append(el("summary", null, "Description"));
+      d.append(el("p", null, v.description));
+      box.append(d);
+    }
+    return box;
+  }
+
+  function render() {
+    const list = document.getElementById("items");
+    list.textContent = "";
+    ITEMS.forEach((item, i) => {
+      const li = el("li", "item");
+      li.id = "item-" + item.id;
+      const head = el("div", "head");
+      head.append(el("span", "num", String(i + 1).padStart(2, "0")));
+      const [name, moves] = splitOpening(item.opening);
+      const title = el("div");
+      title.append(el("div", "ask", item.type === "pairwise" ? "Which is the better first video for" : "Does this video belong on"));
+      title.append(el("div", "opening", name));
+      if (moves) title.append(el("div", "moves", moves));
+      head.append(title);
+      li.append(head);
+
+      const vids = el("div", item.type === "pairwise" ? "videos two" : "videos");
+      if (item.type === "pairwise") item.videos.forEach((v, k) => vids.append(videoBlock(v, k ? "Second" : "First")));
+      else vids.append(videoBlock(item.video));
+      li.append(vids);
+
+      const choices = el("div", "choices");
+      choices.setAttribute("role", "group");
+      choices.setAttribute("aria-label", "Verdict for item " + (i + 1));
+      (item.type === "pairwise" ? PAIRWISE : RELATION).forEach(([value, label, tone]) => {
+        const b = el("button", null, label);
+        b.type = "button";
+        b.id = `btn-${item.id}-${value}`;
+        b.dataset.tone = tone;
+        b.dataset.value = value;
+        b.setAttribute("aria-pressed", "false");
+        b.addEventListener("click", () => choose(item.id, value));
+        choices.append(b);
+      });
+      li.append(choices);
+
+      const note = el("input", "note");
+      note.id = "note-" + item.id;
+      note.type = "text";
+      note.placeholder = "Optional note";
+      note.addEventListener("change", () => saveNote(item.id, note.value.trim()));
+      li.append(note);
+
+      list.append(li);
+    });
+    paint();
+  }
+
+  function paint() {
+    let done = 0;
+    for (const item of ITEMS) {
+      const a = answers[item.id];
+      const li = document.getElementById("item-" + item.id);
+      li.classList.toggle("answered", !!(a && a.answer));
+      li.querySelectorAll(".choices button").forEach((b) =>
+        b.setAttribute("aria-pressed", String(!!a && a.answer === b.dataset.value))
+      );
+      const note = document.getElementById("note-" + item.id);
+      if (a && a.note != null && document.activeElement !== note) note.value = a.note;
+      if (a && a.answer) done++;
+    }
+    document.getElementById("count").textContent = `${done} of ${ITEMS.length}`;
+    document.getElementById("fill").style.width = `${(100 * done) / ITEMS.length}%`;
+    document.getElementById("done").textContent =
+      done === ITEMS.length
+        ? "All twenty done. Tell Claude in the chat and it will compare your verdicts with the judge's."
+        : "Answers save as you click. When you've finished, tell Claude in the chat.";
+  }
+
+  function setStatus(text) {
+    document.getElementById("status").textContent = text;
+  }
+
+  async function write(id) {
+    if (!db) return;
+    setStatus("Saving…");
+    try {
+      await db.collection("spotcheck").doc(id).set({ ...answers[id], at: new Date().toISOString() });
+      setStatus("Saved");
+    } catch (e) {
+      setStatus(e && e.code === "invalid_argument" ? "You can't save answers here" : "Not saved, try again");
+    }
+  }
+
+  function choose(id, value) {
+    answers[id] = { ...(answers[id] || {}), answer: value };
+    paint();
+    write(id);
+  }
+
+  function saveNote(id, text) {
+    if ((answers[id] && answers[id].note) === text) return;
+    answers[id] = { ...(answers[id] || {}), note: text };
+    write(id);
+  }
+
+  render();
+
+  (async () => {
+    db = window.claude && window.claude.use ? await window.claude.use("db") : null;
+    if (!db) {
+      setStatus("Not saving");
+      document.getElementById("notice").hidden = false;
+      return;
+    }
+    setStatus("Ready");
+    db.collection("spotcheck").onSnapshot(
+      (snap) => {
+        for (const d of snap.docs) {
+          const body = d.data();
+          answers[d.id] = { answer: body.answer, note: body.note };
+        }
+        paint();
+      },
+      () => setStatus("Live updates stopped; answers still save")
+    );
+  })();
+</script>

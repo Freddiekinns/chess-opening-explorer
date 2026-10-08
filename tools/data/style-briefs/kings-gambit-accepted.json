@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White has offered the f-pawn for a big centre with d4, quick development and the half-open f-file against f7 and Black's king. Black can try to keep the pawn with ...g5 (Kieseritzky and Muzio lines) or give it back with ...d5 to ease development. Lines are open, tactical and risky for both kings.",
+  "white_ideas": [
+    { "idea": "Nf3, Bc4, d4 and O-O (or h4 against ...g5) to attack f7 and the black king" },
+    { "idea": "Regain the pawn on f4 and use the open f-file and the centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the pawn with ...g5 and ...Bg7, or ...d5 to return it for development" },
+    { "idea": "Neutralise the attack and rely on the extra pawn in the endgame" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with e4 and d4 against Black broken kingside pawns (f4/g5)" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Tactically dense open play, both kings exposed; anchor Sharp." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the f-pawn if it avoids the tactics." },
+    "soundness": { "notes": "Playable and not refuted by force, though engines give Black a small edge." },
+    "structure": { "notes": "Open lines, the f-file and the centre are open." },
+    "approach": { "notes": "Strong players play it occasionally; standard, not offbeat." },
+    "level": { "reason": "memory", "notes": "Sharp theory in Kieseritzky and Muzio, though the plans are simple." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Bishop's Gambit", "moves": "3.Bc4", "how": "Quicker piece play, risk of ...Qh4+." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.95, "reason": "Open, mutual attacks where one error loses fast." },
+    "gambit": { "value": "white", "confidence": 0.97, "reason": "White gives a pawn for development and attack." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Playable, no forced refutation, though it scores below the main lines." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "Open lines for the pieces right away." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Chosen by strong players now and then." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.45, "reason": "Plans are simple but sharp theory must be known." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7", "kingside_attack"], "reason": "White gives a pawn for speed and an attack on f7 and the king." }
+  }
+}

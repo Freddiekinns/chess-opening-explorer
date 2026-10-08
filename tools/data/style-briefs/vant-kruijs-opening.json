@@ -1,0 +1,164 @@
+{
+  "slug": "vant-kruijs-opening",
+  "root": {
+    "name": "Van't Kruijs Opening",
+    "eco": "A00",
+    "moves": "1. e3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Van 't Kruijs Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Van_%27t_Kruijs_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Van't Kruijs Opening 1.e3 (Pasadena Opening) (A00)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/van-t-kruijs-opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Van 't Kruijs Opening and related pages (search snippet only)",
+      "publisher": "Chess.com / Wikibooks (web search summary)",
+      "url": "https://www.chess.com/openings/Van-t-Kruijs-Opening-1...e5",
+      "kind": "reference"
+    }
+  ],
+  "overview": "1.e3 opens lines for the f1-bishop and the queen, claims the e4 square lightly and commits to nothing else; it blocks the c1-bishop, so White plans to free that bishop early (b3, or d4 and Nd2/Bd2). It is mainly a transposition device: c4 gives English-type positions, d4 Queen's Pawn structures, b3 Larsen's Opening, and f4 Bird-type set-ups, and 1...e5 2.e4 is a reversed Open Game. Black has maximum freedom and the opening invites him to over-commit in the centre. It is considered passive but sound and gives White no particular advantage; its popularity has declined and strong players use it mainly to reach known structures.",
+  "white_ideas": [
+    {
+      "idea": "Use 1.e3 as a transposition tool: English (c4), Queen's Pawn (d4), Larsen (b3), Bird-like (f4), or French reversed structures",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Free the queen's bishop early because e3 blocks the c1-bishop",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Develop the kingside quickly (Nf3, Be2, 0-0) and challenge a Black centre that has over-committed",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with 1...e5 or 1...d5; keep options open with 1...Nf6 (Reti transposition) or 1...c5, or fianchetto with 1...g6",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "1...e5 2.e4 leads to a reversed Open Game, a curiosity",
+      "sources": ["s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Highly transpositional: depends on Black's central choice and White's follow-up (English, Queen's Pawn, Larsen, reversed French)",
+      "sources": ["s2", "s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s2 describes the play as calm (sharpness about 0.94-0.97) and the opening as passive but solid. s1 calls it a 'chameleon' and says it is not aggressive compared to 1.e4. Typical play is steady, manoeuvring, without forcing sequences.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given. A rare delayed Keoni-Hiva gambit appears in the input (14 games) but is not a real line.",
+      "sources": ["s2"]
+    },
+    "soundness": {
+      "notes": "Sound. s2: passive but solid, strong players equalise; playable for White if the c1-bishop finds an active diagonal. s1: the opening remains playable for Black regardless of reply, and 1.e3 gains little except as a transposition. s3 snippet: a fine opening used even by Carlsen.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "No fixed centre: the pawn structure depends on the transposition. Most volume goes to 1...e5 and 1...d5, where White then chooses d4 or c4/e4 set-ups. In many lines the centre stays tense or closed with e3/d4 pawns (Queen's Pawn) or open with e4 (reversed Open Game).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A set-up that can be played against almost anything, mainly because of its transposition value: s2 says elite players use it primarily as a transposition device; s1 says it is a 'chameleon' and ranks sixth among the twenty first moves in ChessBase. Used by Nimzowitsch, Larsen, Blatny, and even Carlsen (s1, s3). Popularity is falling: s2 reports adoption peaking at 2.35% in 2013 and falling to 1.62% in 2025 (which rating band these are is not stated). Respectable but a sideline for strong players.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for White. Little to memorise because the first move commits to no line (s1: preferred by players prioritising adaptability over theoretical depth), and s2 labels difficulty beginner level. But playing it well means knowing the structures of the English, Queen's Pawn or Larsen set-ups it transposes into, and freeing the c1-bishop. The plans come from those target openings.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "transposition to English, Queen's Pawn or Larsen",
+    "free the queen's bishop",
+    "flexible set-up",
+    "reversed opening",
+    "avoiding main-line theory",
+    "kingside development and castling"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "1.e3 e5 2.e4",
+      "moves": "1. e3 e5 2. e4",
+      "how": "Reversed Open Game with Black to move; mostly a curiosity (s3)."
+    },
+    {
+      "name": "1.e3 d5",
+      "moves": "1. e3 d5",
+      "how": "White usually plays 2.d4 or 2.c4 into Queen's Pawn or English-style set-ups; the second most played branch (26.8M games)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "1.e3 is a highly flexible and unassuming first move that opens a line for the queen and king's bishop",
+        "verdict": "supported",
+        "note": "s1, s2.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It avoids early confrontation and theory, often transposing into Queen's Pawn, English or reversed French setups",
+        "verdict": "supported",
+        "note": "s1 lists English, Queen's Pawn, French, Bird and Larsen. 'Reversed French' is s1's French Defense (1.e3 d5 2.e4 transposition).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Perfect for creative, patient players who sidestep mainstream theory and outmanoeuvre opponents in a less-defined strategic battle",
+        "verdict": "unverifiable",
+        "note": "s1 says it suits players prioritising adaptability over theoretical depth; 'creative' and 'outmanoeuvre' are not sourced.",
+        "sources": ["s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: transpose into a favourable Queen's Pawn, English or Reti setup by playing d4, c4 and Nf3 in a flexible order",
+        "verdict": "supported",
+        "note": "c4 gives the English, d4 Queen's Pawn, b3 Larsen (s2). The Reti arises via 1...Nf6 transposition (s1).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: develop the kingside quickly (Nf3, Be2, 0-0) then challenge Black's central control",
+        "verdict": "supported",
+        "note": "s2.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black: seize the centre immediately with ...d5 and ...e5 to claim a space advantage",
+        "verdict": "supported",
+        "note": "s2 lists central claims with 1...e5 or 1...d5, and notes the opening invites Black to overcommit. Both pawns at once is possible but not what the sources describe.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black: develop pieces actively to punish White's passive opening and prevent a comfortable transposition",
+        "verdict": "unverifiable",
+        "note": "s2 calls it passive but solid, allowing strong players to equalise, so 'punish' overstates; no source describes Black punishing it.",
+        "sources": ["s2"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

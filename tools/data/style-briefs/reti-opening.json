@@ -1,0 +1,54 @@
+{
+  "slug": "reti-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White challenges d5 from the flank without committing a central pawn, then usually fianchettoes with g3 and Bg2 and castles. Black can take on c4, hold d5 with ...c6 or ...e6 (a Slav or QGD-like set-up), or push ...d4. The game stays flexible, with transpositions to the English, Catalan or Queen's Gambit.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop (g3, Bg2) and pressure d5 and the long diagonal" },
+    { "idea": "Keep d-pawn flexible, choose between d4 and a slower e4 break later" },
+    { "idea": "Regain c4 pawn if Black takes, with Qa4+ or Ne5 and queenside pressure" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the d5 centre with ...c6 or ...e6 and develop naturally" },
+    { "idea": "Take on c4 and aim to hold or give back the pawn for free development" },
+    { "idea": "Gain space with ...d4 or ...c5 and ...Nc6" }
+  ],
+  "typical_structures": [
+    { "structure": "Slav or QGD-like structures with White's bishop on g2 instead of d3" },
+    { "structure": "Reversed Benoni or English structures after ...d4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional manoeuvring, small edges, little forced theory. Neither sharp nor especially hard to crack." },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "2...dxc4 can be won back by force or without risk, so not a gambit."
+    },
+    "soundness": { "notes": "Sound, played by top players." },
+    "structure": { "notes": "Centre not yet determined, flank opening with tension on d5 and c4." },
+    "approach": { "notes": "Typical flexible set-up (Nf3, c4, g3, Bg2, O-O) playable against most defences, a hypermodern system." },
+    "level": { "reason": "neither", "notes": "Clear flexible plans, little to memorise, accessible to club players." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "Réti: 2...d4 Benoni-style", "moves": "1.Nf3 d5 2.c4 d4 3.e3 Nc6", "how": "Black grabs space, gives a reversed Benoni with a more open game." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.65, "reason": "Flexible and positional without being especially hard to break or tactical." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given that cannot be regained." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Played regularly at the top level." },
+    "structure": { "value": "flexible", "confidence": 0.8, "reason": "Flank opening with the centre left undecided." },
+    "approach": { "value": "system", "confidence": 0.7, "reason": "Nf3, c4, g3, Bg2 set-up playable against most defences." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Flexible plans but subtle move orders against varied defences." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Long diagonal bishop and flank pressure on d5." }
+  }
+}

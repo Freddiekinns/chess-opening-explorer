@@ -1,0 +1,95 @@
+{
+  "slug": "queens-gambit-declined-charousek-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Charousek Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7",
+    "fen": "rnbqk1nr/ppp1bppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "queens-gambit-declined-queens-knight-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black delays ...Nf6 with 3...Be7, avoiding the Bg5 pin and keeping options. After 4.Nf3 Nf6 White usually reaches a normal QGD, while 4.cxd5 exd5 5.Bf4 gives an Exchange structure with a ...c6 and ...Bd6 set-up for Black. White plays the minority attack or central play, Black the solid structure and ...c5 or ...Bf5.",
+  "white_ideas": [
+    { "idea": "Transpose to a normal QGD with Nf3 and Bg5 or Bf4." },
+    { "idea": "In the Exchange, play the minority attack with b4-b5." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold d5 with ...e6 and free the c8 bishop with ...c6 and ...Bf5." },
+    { "idea": "Break with ...c5 or ...e5 when ready." }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad structure after cxd5 exd5, White minority attack against ...c6/...d5." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow and technical with a strong reputation for soundness."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; the QGD is not a real gambit."
+    },
+    "soundness": {
+      "notes": "A sound, mainstream set-up."
+    },
+    "structure": {
+      "notes": "A QGD centre with the tension between c4 and d5 unresolved."
+    },
+    "approach": {
+      "notes": "A respected, less common move order choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Structure-based play with modest theory."
+    }
+  },
+  "plan_phrases": ["minority attack", "carlsbad structure"],
+  "sublines_that_differ": [
+    {
+      "name": "Alatortsev Exchange",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7 4. cxd5 exd5 5. Bf4",
+      "how": "An Exchange structure with Black playing ...c6 and ...Bd6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "A sturdy QGD pawn structure with slow, technical play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream, sound defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays in tension in the QGD set-up."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal QGD move order."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Needs structural understanding but little memorisation."
+    },
+    "plans": {
+      "value": ["minority_attack", "carlsbad_structure"],
+      "reason": "The Exchange branch leads to the classic minority attack."
+    }
+  }
+}

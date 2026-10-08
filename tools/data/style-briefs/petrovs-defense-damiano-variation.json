@@ -1,0 +1,46 @@
+{
+  "slug": "petrovs-defense-damiano-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Damiano Variation",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4",
+    "fen": "rnbqkb1r/pppp1ppp/8/4N3/4n3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black takes on e4 at once, skipping the ...d6 kick that makes the Petrov work. White plays 4.Qe2, and after 4...Qe7 5.Qxe4 d6 6.d4 dxe5 7.dxe5 White has an extra pawn, while Black has development and the e-file (Kholmov Gambit). Black must find ...Qe7 and avoid 4...Nf6?? 5.Nc6+ winning the queen, so it is a trap-based line that strong players consider a mistake.",
+  "white_ideas": [
+    { "idea": "Play 4.Qe2 to pin the knight and punish 4...Nf6 with Nc6+." },
+    { "idea": "Keep the extra pawn and consolidate with d4, Nc3, Bd3 and O-O." }
+  ],
+  "black_ideas": [
+    { "idea": "Hope for 4...Nf6?? and otherwise gambit with 4...Qe7 5.Qxe4 d6 for development." },
+    { "idea": "Use the open e-file and lead in development against White's queen and king." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file, White a pawn up, Black's pieces active." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Trappy; White must avoid queen tricks, Black risks falling behind in pawns." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "Kholmov Gambit: White is a pawn up after 5.Qxe4 d6 6.d4 dxe5 7.dxe5; it can be kept." },
+    "soundness": { "notes": "Considered a mistake: White wins a pawn at least." },
+    "structure": { "notes": "Open e-file and open centre." },
+    "approach": { "notes": "Seldom chosen by strong players; played for surprise." },
+    "level": { "reason": "neither", "notes": "Dubious, so never Beginner." }
+  },
+  "plan_phrases": ["lead in development", "early queen"],
+  "sublines_that_differ": [
+    { "name": "Kholmov Gambit", "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Qe7", "how": "Black's gambit try to get development for a pawn." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Trappy open play with early queen tactics." },
+    "gambit": { "value": "black", "confidence": 0.5, "reason": "Black is a pawn down in the Kholmov line and White can keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.85, "reason": "A known mistake; 3...d6 is correct." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open e-file." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Played for surprise rather than by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious, so never Beginner." },
+    "plans": { "value": ["lead_in_development", "early_queen"], "reason": "Black seeks development with queen sorties." }
+  }
+}

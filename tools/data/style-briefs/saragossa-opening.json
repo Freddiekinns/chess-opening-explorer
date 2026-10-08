@@ -1,0 +1,46 @@
+{
+  "slug": "saragossa-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Saragossa Opening",
+    "eco": "A00",
+    "moves": "1. c3",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/2P5/PP1PPPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "parent": null,
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays c3 to prepare d4 and a big centre while keeping options open. Black often replies 1...e5 or 1...c5 or 1...d5, and the game can transpose to a Slav-like, Ponziani or Sicilian Alapin-like structure. It is rarely played by strong players and can transpose to many things.",
+  "white_ideas": [
+    { "idea": "Follow with d4 and e4, for a broad centre." },
+    { "idea": "Transpose to Alapin-type or Queen's-Pawn-type structures." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the centre with ...e5 and ...d5." },
+    { "idea": "Fianchetto or play the Sicilian-style ...c5." }
+  ],
+  "typical_structures": [
+    { "structure": "Flexible centre; White c3/d4 against Black e5/d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, slightly passive; Black gets an easy game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound but gives Black comfortable equality." },
+    "structure": { "notes": "Flank opening; centre undecided." },
+    "approach": { "notes": "Strong players seldom play 1.c3." },
+    "level": { "reason": "understanding", "notes": "Simple but needs some knowledge of transpositions." }
+  },
+  "plan_phrases": ["central pawn majority", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "Cabbage Attack", "moves": "1. c3 e5 2. a3 d5 3. b3", "how": "Eccentric pawn set-up." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet, equalising, neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully playable." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "A flank opening with an undecided centre." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose 1.c3." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Simple set-up but needs transposition know-how." },
+    "plans": { "value": [], "reason": "No specific plan; transposes widely." }
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "slug": "ruy-lopez-marshall-attack",
+  "root": {
+    "name": "Ruy Lopez: Marshall Attack",
+    "eco": "C89",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5",
+    "fen": "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 0 9"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Ruy Lopez, Marshall Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ruy_Lopez,_Marshall_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Marshall Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Marshall Attack / Anti-Marshall (opening course description)",
+      "publisher": "ChessBase Shop",
+      "url": "https://shop.chessbase.com/en/openings/spanish_marshall",
+      "kind": "course"
+    },
+    {
+      "id": "s4",
+      "title": "Ruy Lopez Anti-Marshall: Choose 8.a4, 8.h3 or 8.d4",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/ruy-lopez-anti-marshall.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Marshall Attack: Adviser, Boards & Replay Lab",
+      "publisher": "ChessWorld.net",
+      "url": "https://www.chessworld.net/marshall-attack.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s6",
+      "title": "Marshall Gambit",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/marshall-gambit/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays 8...d5 and offers the e5 pawn: after 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6 12.d4 Bd6 13.Re1 Qh4 Black has given a pawn for open lines, active pieces and a kingside attack, with the queen going to h4/h3, a rook lift via ...Re6 and ...Rh6, and the bishop on d6. White defends with Be3, Qd3 and Nd2 (or the sharper Re4) and tries to consolidate and trade down. The positions are forcing and extremely well analysed, with lines running to move 30 or more. It is considered fully sound: Kramnik, Anand, Aronian, Leko, Adams and Ding Liren have used it, and between well-prepared players the usual result is a draw. That drawishness, and the burden of preparation, is why many top White players avoid it with 8.a4, 8.h3 or 8.d4, rather than because the gambit is refuted.",
+  "white_ideas": [
+    {
+      "idea": "Accept with 9.exd5 and take on e5 twice (10.Nxe5 Nxe5 11.Rxe5), then 12.d4 to open the position on White's own terms and challenge Black's centre.",
+      "sources": [
+        "s1",
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Defensive regrouping against the kingside attack: Be3, Qd3, Nd2, with the classical 15.Be3 blocking the e-file; modern 15.Re4 is a sharper defensive try.",
+      "sources": [
+        "s5"
+      ]
+    },
+    {
+      "idea": "Avoid the Marshall entirely with an Anti-Marshall: 8.a4 (concrete queenside pressure on b5), 8.h3 (flexible waiting move, stops ...Bg4), 8.d4 (immediate central contact), also 8.d3, 8.Bd5, 8.Nc3, 8.a3.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s6"
+      ]
+    },
+    {
+      "idea": "Keep the extra pawn and aim to trade queens and bishops; White usually does keep the pawn, but conversion at the top is rare.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Sacrifice the e5 pawn with 8...d5 for rapid development, open lines and kingside pressure.",
+      "sources": [
+        "s1",
+        "s2",
+        "s6"
+      ]
+    },
+    {
+      "idea": "Queen to h4 and h3, dark-squared bishop on d6, and rook lifts ...Re6-h6 and ...Rae8 to attack the white king.",
+      "sources": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "idea": "Keep initiative with further sacrifices; Black wins when the pawn sacrifice becomes continuous activity before White consolidates.",
+      "sources": [
+        "s5"
+      ]
+    },
+    {
+      "idea": "The modern main line is 11...c6 (Spassky, 1965, improvement on Marshall's original 11...Nf6), supported by the centralised knight on d5 and the f5-f4 advance.",
+      "sources": [
+        "s2",
+        "s3",
+        "s6"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has given the e5 pawn: White has the extra pawn and the e-file, Black has active pieces, an advanced knight on d5, and an open b-file/h-file attack on the king; centre mostly open after the double capture on e5.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "structure": "Where White declines, Anti-Marshall structures: with 8.a4 queenside pawn battles, 8.h3 a typical slow Closed Ruy Lopez with ...Bb7, 8.d4 Yates-like or central clashes.",
+      "sources": [
+        "s4"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp and forcing when accepted: described as one of the sharpest systems in modern chess (s3), with lines analysed to move 30 or more (s2) and a very high draw rate at the top (s1/s2) because both sides know the theory. The play is concrete: tactics around the e-file, h4/h3 queen, and rook lifts; one inaccurate move loses quickly. When White declines with 8.h3 or 8.a4 the game is a quiet, manoeuvring Closed Ruy Lopez, but that is a different line.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "At the root Black has played 8...d5 and has not yet lost the pawn (material equal in the FEN); the offer is 9.exd5 and the e5 pawn, which falls to 10.Nxe5. White may keep the pawn: in the main line he does hold an extra pawn (s5 says White often keeps it), and Black's compensation is activity, not an immediate win back. White can also avoid the whole question by not allowing 8...d5 at all, through 8.a4 / 8.h3 / 8.d4 (s2, s3, s4, s6); that is the Anti-Marshall route, and it is why the gambit is optional for White.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    "soundness": {
+      "notes": "Sound for Black. Sources say it is sound, with 'excellent' compensation (s2), 'entirely sound' (s6, citing Kramnik, Anand, Aronian), the modern 11...c6 line sound (s3), and 'sound at high level when Black knows the theory' but not objectively equal, since White often keeps the extra pawn (s5). Wikipedia: between two well-prepared players the usual result is a draw (s1/s2); the main practical weakness is that Black must know a lot. Top White players often avoid the Marshall because of its drawing tendency rather than to avoid complications (s2), and s4 says the Anti-Marshalls give White workload alternatives, not a refutation. Played by Aronian, Leko, Adams, Ding Liren at the top level (s2, s3).",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    "structure": {
+      "notes": "Open once the pawns on d5 and e5 are exchanged: after 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 the centre is open, with the e-file and long diagonals open for Black's pieces. Opposite to the closed Ruy Lopez plans White wanted.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "approach": {
+      "notes": "A Black counter within the Closed Ruy Lopez, entered only if White plays 8.c3; not a system. Mainstream at the top: Kramnik, Anand, Aronian, Leko, Adams and Ding Liren have played it (s2, s3, s6). White's Anti-Marshall choices (8.a4, 8.h3, 8.d4) mean it is not forced on Black.",
+      "sources": [
+        "s2",
+        "s3",
+        "s4",
+        "s6"
+      ]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory is deep: variations run to move 30+ (s2), and a Black player must also prepare separate answers to 8.a4, 8.h3, 8.d4 (s4). Understanding is easier than for White: Black's attacking patterns are 'often easier to understand than White's defensive resources' (s5), and s5 recommends it for club players who like forcing play. On balance the burden is memory; against a club player who does not know the defence it can score heavily (s1).",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "pawn sacrifice for initiative",
+    "queen to h4 and h3",
+    "rook lift ...Re6-h6",
+    "dark-squared bishop on d6",
+    "central d4 break",
+    "Anti-Marshall (8.a4, 8.h3, 8.d4)",
+    "kingside attack",
+    "consolidating the extra pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Anti-Marshall 8.a4",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. a4",
+      "how": "Not in the subtree. Queenside pawn tension; no pawn sacrifice; positional (s4)."
+    },
+    {
+      "name": "Anti-Marshall 8.h3",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. h3",
+      "how": "Not in the subtree. A quiet Closed Ruy Lopez; Black often plays ...Bb7 and may still look for ...d5 ideas (s4)."
+    },
+    {
+      "name": "Older 11...Nf6",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 Nf6",
+      "how": "Marshall's original idea, now considered outdated; replaced by 11...c6 (s2, s3)."
+    },
+    {
+      "name": "Early deviations for White after 8...d5",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. d3",
+      "how": "9.d3 and 9.d4 are lesser options that avoid some theory (my own understanding; no source read covers them), so these inherit from the root. 35 positions in the subtree are mostly the 9.exd5 lines."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Marshall Attack is a sharp and aggressive gambit where Black sacrifices a pawn to seize the initiative and launch an attack against the white king.",
+        "verdict": "supported",
+        "note": "Pawn sacrifice for kingside initiative is the whole idea.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "claim": "It leads to highly tactical and dynamic positions, demanding precise calculation and excellent theoretical knowledge from both sides.",
+        "verdict": "supported",
+        "note": "Lines are analysed to move 30 or more; both sides must know them, with a heavier burden on Black.",
+        "sources": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "claim": "It is the perfect weapon for daring, well-prepared players who thrive on creating immediate threats and fighting for a decisive result from the very beginning.",
+        "verdict": "wrong",
+        "note": "At master level the main line is very drawish: between well-prepared players the usual result is a draw, and many White players avoid it for that reason (s2). Decisive results come mostly at club level against an unprepared White. 'Well-prepared' and 'immediate threats' are fine; 'fighting for a decisive result' is true only at club level.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: rapidly develop pieces towards the kingside (...Bb7, ...Qh4, ...Re8-g8) to create overwhelming threats against the white king, often using further sacrifices.",
+        "verdict": "wrong",
+        "note": "...Qh4 and later ...Qh3 are real; ...Bb7 and ...Re8-g8 are not. In the main line the c8 bishop does not go to b7 (the b7 bishop belongs to the Anti-Marshall 8.h3 Bb7 lines). The sourced piece routes are ...Bd6, ...Qh4-h3 and rook lifts via ...Re6 and ...Rh6 (s5), with a bishop on g4 as my own understanding (unsourced).",
+        "sources": [
+          "s5",
+          "s6",
+          "s4"
+        ]
+      },
+      {
+        "claim": "White: survive the initial attack by defending precisely, exchanging Black's key attacking pieces and consolidating the extra pawn to win the resulting endgame.",
+        "verdict": "supported",
+        "note": "Defensive regrouping with Be3, Qd3 and Nd2 and keeping the pawn are described. Winning the endgame is optimistic: the usual master result is a draw.",
+        "sources": [
+          "s5",
+          "s2"
+        ]
+      },
+      {
+        "claim": "Black: use the bishop pair and active queen to probe for weaknesses all over the board, preventing White from untangling.",
+        "verdict": "unverifiable",
+        "note": "s6 claims bishop-pair advantage and an active queen. In the main line both sides keep both bishops (Black's Bd6 and Bc8, White's Bb3 and Bc1), so a bishop-pair edge is doubtful (own understanding). Active queen and keeping White tied up fit the sources.",
+        "sources": [
+          "s6"
+        ]
+      },
+      {
+        "claim": "White: challenge Black's central influence with a timely d4 push, opening the position on his own terms and neutralising the pressure.",
+        "verdict": "supported",
+        "note": "12.d4 is the main-line move; 8.d4 is an Anti-Marshall, a different idea.",
+        "sources": [
+          "s2",
+          "s5"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 6
+  }
+}

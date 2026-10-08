@@ -1,0 +1,42 @@
+{
+  "slug": "sicilian-defense-prins-variation",
+  "tier": "unsourced",
+  "root": { "name": "Sicilian Defense: Prins Variation", "eco": "B54", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. f3", "fen": "rnbqkb1r/pp2pppp/3p1n2/8/3NP3/5P2/PPP3PP/RNBQKB1R b KQkq - 0 5" },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays 5.f3 to support e4 and prepare Be3, Qd2 and a kingside pawn storm or a Maroczy-style clamp, delaying Nc3. Black can answer 5...e5 with a Najdorf-like structure after Nb3, or 5...a6 and ...e6 with a Scheveningen feel. Positions often resemble the English Attack, with opposite-side castling and mutual attacks, but 5...e5 6.Nb3 steers toward a slower game.",
+  "white_ideas": [
+    { "idea": "Build the English Attack set-up: Be3, Qd2, Nc3, O-O-O and a g4 pawn storm." },
+    { "idea": "Meet ...e5 with Nb3 and play c4 or Nc3 for a space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike with ...e5 to claim the centre and the d5 square, or ...a6 and ...e6 for Scheveningen play." },
+    { "idea": "Counterattack on the queenside with ...b5 and ...Nbd7 after White commits to opposite-side castling." }
+  ],
+  "typical_structures": [
+    { "structure": "Black d6/e5 chain (Najdorf-like) against White e4/f3 with a knight on b3." },
+    { "structure": "Scheveningen small centre d6/e6 with White's f3/e4 pawns." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "5.f3 invites English Attack-style opposite-side attacks and an unbalanced race; the 5...e5 6.Nb3 branch is slower." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Open Sicilian with an asymmetrical centre and the half-open c-file." },
+    "approach": { "notes": "Standard anti-Najdorf move order, occasionally chosen by strong players." },
+    "level": { "reason": "understanding", "notes": "Plans are clear but the attack versus counterattack race needs judgement." }
+  },
+  "plan_phrases": ["English Attack set-up", "kingside pawn storm", "knight outpost on d5"],
+  "sublines_that_differ": [
+    { "name": "5...e5 6.Nb3", "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. f3 e5 6. Nb3", "how": "A slower, positional game around the d5 hole, less sharp than the English Attack branches." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Open Sicilian with f3 usually leads to opposite-side attacks, though 5...e5 is quieter." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respected variation for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.65, "reason": "Asymmetrical Sicilian centre with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A recognised option versus ...d6 Sicilians." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans clearer than the Najdorf, less theory." },
+    "plans": { "value": ["kingside_attack", "opposite_side_castling", "knight_outpost"], "reason": "English Attack-style race and the d5 hole after ...e5." }
+  }
+}

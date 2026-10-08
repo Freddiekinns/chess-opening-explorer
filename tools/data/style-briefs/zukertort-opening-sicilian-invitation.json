@@ -1,0 +1,47 @@
+{
+  "slug": "zukertort-opening-sicilian-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Sicilian Invitation",
+    "eco": "A04",
+    "moves": "1. Nf3 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 1.Nf3 with a Sicilian pawn. White can play 2.e4 for a normal Open Sicilian, 2.c4 for an English, or fianchetto with 2.g3 and Bg2. The most played lines here are quiet fianchetto set-ups with symmetrical-ish pawns where both sides manoeuvre, with 2.b3 as a Nimzowitsch-Larsen idea.",
+  "white_ideas": [
+    { "idea": "g3, Bg2 and O-O, then c4 or d4 as Black commits" },
+    { "idea": "Keep transposition options to English, Open Sicilian or Réti" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nc6, ...g6 and ...Bg7 with a Dragon-like fianchetto" },
+    { "idea": "Or play ...d5 for a Reversed Sicilian style structure" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical English with both bishops fianchettoed" },
+    { "structure": "Maróczy bind after c4 and d4 against a ...g6 fianchetto" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow fianchetto manoeuvring, few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Fully sound for both." },
+    "structure": { "notes": "Centre undecided, flank play; flexible." },
+    "approach": { "notes": "A standard move-order reply, not a system." },
+    "level": { "reason": "neither", "notes": "Plans are clear and theory modest." }
+  },
+  "plan_phrases": ["fianchetto", "symmetrical structure", "flexible move order"],
+  "sublines_that_differ": [
+    { "name": "2.e4", "moves": "1. Nf3 c5 2. e4", "how": "Open Sicilian: sharp and semi-open." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet fianchetto play but with real chances for either side." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Flank opening with an undecided centre." },
+    "approach": { "value": "standard", "confidence": 0.75, "reason": "Mainstream reply to 1.Nf3 played by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Plans are clear and theory is modest." },
+    "plans": { "value": ["fianchetto", "symmetrical_structure"], "reason": "Both sides fianchetto into symmetrical English-type structures." }
+  }
+}

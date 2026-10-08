@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Classical Variation",
+    "eco": "A70",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. e4",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/4P3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 7"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White has a broad centre with pawns on d5 and e4 and a space advantage; Black has a queenside pawn majority and the long diagonal, and plays ...Bg7, ...O-O and ...a6 with ...b5 or ...Re8 and ...Nbd7 against e4-e5. White aims for e5 or a kingside attack, Black for queenside play and a knight on e5 or c5. Imbalanced, tactical and theoretical, with strong counterplay for Black.",
+  "white_ideas": [
+    { "idea": "Support e4-e5 with Bd3, Nd2 and O-O, or play h3 and Bf4 to prepare it." },
+    { "idea": "Keep the space edge and the passed d-pawn potential." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...b5 and ...a6 on the queenside and play on the open b- and e-files." },
+    { "idea": "Pressure e4 with ...Nbd7, ...Re8 and a knight on e5 or c5." }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni: White d5/e4 centre against Black's queenside majority (a6, b5, c5, d6)." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Double-edged, with Black seeking counterplay and White's central break; any slip can lose quickly." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; pawn exchanges only." },
+    "soundness": { "notes": "A mainstream, theory-heavy defence." },
+    "structure": { "notes": "Asymmetric central pawns with half-open e- and b-files for Black." },
+    "approach": { "notes": "A recognised defence to 1.d4 played at the top." },
+    "level": { "reason": "both", "notes": "Heavy theory in the main lines and difficult plans." }
+  },
+  "plan_phrases": ["queenside expansion", "space advantage", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "Modern Benoni via 3...c5 4.d5 e6", "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3", "how": "Same structure by transposition; the 3.Nf3 move order allows White more options." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Unbalanced, double-edged, with real risk on both sides." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised top-level defence." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Asymmetric centre with half-open files; arguably closed." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal defence to 1.d4." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.6, "reason": "Heavy theory and hard plans." },
+    "plans": { "value": ["queenside_expansion", "space_advantage"], "reason": "Black plays on the queenside against White's central space." }
+  }
+}

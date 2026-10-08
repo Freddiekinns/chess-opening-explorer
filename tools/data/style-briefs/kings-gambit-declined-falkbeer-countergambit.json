@@ -1,0 +1,55 @@
+{
+  "slug": "kings-gambit-declined-falkbeer-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Falkbeer Countergambit",
+    "eco": "C31",
+    "moves": "1. e4 e5 2. f4 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black answers the King's Gambit with an immediate counterblow, 2...d5, offering a pawn to open the centre. After 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nf3 Bc5 Black has quick development against White's loosened king, while 3.exd5 exf4 transposes to a calmer line. White tries to keep the extra pawn and consolidate with Qe2 and Nc3; Black plays for development and attack.",
+  "white_ideas": [
+    { "idea": "Keep the extra pawn with Nf3, Nc3, Qe2 and consolidate" },
+    { "idea": "Neutralise Black's development by trading pieces and castling" },
+    { "idea": "Use the f-pawn as a lever when Black overextends" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Nf6, ...Bc5 and ...Qh4+ ideas for an attack" },
+    { "idea": "Gain time with ...e4 and ...Nxe4, hitting the king on e1" },
+    { "idea": "Exploit White's loosened kingside" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre where White has traded the e-pawn and f-pawn weakened the king" },
+    { "structure": "Black pawn on e4 cramping White, then ...Nxe4 recapture" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both kings are exposed, Black plays for initiative and the lines are tactical, so Sharp." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.exd5 White has won a pawn that Black recovers only after sound development, and some lines let White keep it."
+    },
+    "soundness": { "notes": "Considered sound for Black; strong players have used it, with theory around equality." },
+    "structure": { "notes": "Open centre with exchanged e/d pawns and open lines." },
+    "approach": { "notes": "A recognised countergambit used by decent players, not a rare novelty." },
+    "level": { "reason": "memory", "notes": "Forcing tactical lines need to be known, especially for Black." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Staunton Line", "moves": "3.exd5 e4 4.d3 Nf6", "how": "Black sacrifices a pawn for lasting initiative." },
+    { "name": "Modern Transfer", "moves": "3.exd5 exf4", "how": "Black takes the f-pawn and the game transposes to a more solid King's Gambit structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "Open centre and exposed kings with tactical, forcing play." },
+    "gambit": { "value": "black", "confidence": 0.7, "reason": "Black counter-sacrifices a pawn after exd5 for development." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Equal in theory and used by strong players." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "The centre opens at once with exchanged central pawns." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A recognised reply to the King's Gambit." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Forcing lines must be known but not exceptionally long." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "Black plays for quick development against White's open king." }
+  }
+}

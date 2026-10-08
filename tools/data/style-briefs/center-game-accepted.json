@@ -1,0 +1,161 @@
+{
+  "slug": "center-game-accepted",
+  "root": {
+    "name": "Center Game Accepted",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Center Game",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Center_Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Center Game Explained: A Complete Guide by a Grandmaster",
+      "publisher": "ChessMood",
+      "url": "https://chessmood.com/openings/center-game",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Center Game",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Center-Game",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Danish Gambit: Adviser, Diagrams & Replay Lab",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/danish-gambit.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Center Game search summary (Paulsen Attack, Danish Gambit, Goring Gambit; snippet only)",
+      "publisher": "Web search",
+      "url": "https://www.chessworld.net/center-game-paulsen-attack.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "The root is the crossroads after 2.d4 exd4, with Black a pawn up and White to move. White's main choice is 3.Qxd4 Nc6 4.Qe3 (Paulsen Attack): the pawn is regained, Black gains a tempo on the queen, and White castles queenside after Nc3 and Bd2, using the queen on e3 and the d-file to aim at g7 and the kingside. Black has calm, sound ways to equalise (4...Nf6, 4...Be7 preparing ...d5, 4...g6, 4...Bb4+) and can counterattack White's king on the queenside. The alternative 3.c3 is the Danish Gambit, where White gives one or two pawns for open lines and development. 3.Nf3 or 3.Bc4 lead to Scotch, Scotch Gambit, Petroff-type or Urusov positions. Overall it is old and rarely played at the top level, though with a modern revival (Shabalov, then Nepomniachtchi and Erigaisi, Shirov, Adams) as a practical, objectively equal surprise.",
+  "white_ideas": [
+    { "idea": "3.Qxd4 Nc6 4.Qe3 (Paulsen Attack) to hinder ...d5, then Nc3, Bd2, Bc4 or Be2, with the queen eyeing g7 and g3.", "sources": ["s1", "s2", "s5"] },
+    { "idea": "Castle queenside and attack the kingside, with Qg3 hitting g7 and an h-pawn push, against a Black king that castled short.", "sources": ["s2"] },
+    { "idea": "Tarrasch's pawn sacrifice 8.Qg3 or Polgar's 8.Qf4 as sharper tries in the main line.", "sources": ["s1"] },
+    { "idea": "Danish Gambit 3.c3: give one or two pawns for open diagonals, rapid development and attack on f7 and b7.", "sources": ["s3", "s4"] },
+    { "idea": "Rely on rarity: the opening is a practical weapon, especially in faster time controls, when Black is unprepared.", "sources": ["s2", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the queen at once with 3...Nc6 after 3.Qxd4 and develop with tempo.", "sources": ["s1", "s3"] },
+    { "idea": "Solid set-ups that equalise: ...Nf6, ...Be7 preparing ...d5, ...g6, or ...Bb4+; then ...O-O.", "sources": ["s1", "s2"] },
+    { "idea": "Counter White's kingside attack with queenside pressure against the king that castled long.", "sources": ["s2"] },
+    { "idea": "In the Danish Gambit, return material rather than hang on to pawns, or decline with 3...d5.", "sources": ["s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after the pawn trades: White d-pawn gone, semi-open d-file for White, Black's e-pawn gone; both sides develop fast and White often castles long.", "sources": ["s1", "s2"] },
+    { "structure": "Opposite-side castling: White queenside, Black kingside, with pawn storms and queen activity.", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, tactical positions with an early queen; opposite-side castling can make it a race. Chessmood: Black can equalise with careful play, so the main line is not very dangerous for a prepared Black. The Danish Gambit branch is sharper. Wikipedia: results in an open centre with a lot of tactics.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "In the main line 3.Qxd4 White regains the pawn at once, so no gambit. At the root FEN Black is a pawn up only because White has not yet recaptured. 3.c3 (Danish Gambit) is a separate White gambit: one or two pawns, and Black can keep them if he defends accurately (Chessworld says Black should be ready to return material). It is only a branch, not the main line.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "soundness": {
+      "notes": "Chessmood: practically sound but not theoretically winning; 'with careful play, Black equalizes'. Wikipedia: lines are objectively equal but playable after the Shabalov revival, though it was abandoned after 1900 as offering no advantage. Chess.com summary calls it 'relatively unsound compared to modern theory' and says it has not been popular in more than a century. The Danish Gambit is 'not refuted' but not an objective advantage.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Open centre: both centre pawns are traded early, with the d-file open and fast piece play. After 3.Qxd4 White has no d-pawn and Black no e-pawn, leaving the d-file and diagonals open.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A specific opening move (2.d4), not a set-up played against everything. Described as 'rarely played at the top level in the modern era', old, never in a World Championship match, but not unused: Nepomniachtchi, Erigaisi, Shirov and Adams have used it in serious games, and Shabalov revived it in the 1990s. Chessmood calls it a secondary weapon rather than a main repertoire choice.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessmood: 'a fun, practical weapon' for intermediate and advanced players, with a straightforward plan (develop, castle long, attack) that needs tactical awareness. Chess.com summary: requires tactical awareness and knowledge of transpositions after 3.Nf3. Chessworld on the Danish Gambit: moderate-to-high difficulty, with Black solving development and king-safety problems quickly. Little theory to memorise in the main line.",
+      "sources": ["s2", "s3", "s4"]
+    }
+  },
+  "plan_phrases": [
+    "Paulsen Attack",
+    "queen on e3",
+    "opposite-side castling",
+    "attack on g7",
+    "rapid development",
+    "tempo on the queen with ...Nc6",
+    "Danish Gambit",
+    "semi-open d-file"
+  ],
+  "sublines_that_differ": [
+    { "name": "Center Game: Paulsen Attack", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3", "how": "Main line: pawn regained, queen on e3, queenside castling and a kingside attack; sound for Black with equal play." },
+    { "name": "Danish Gambit", "moves": "1. e4 e5 2. d4 exd4 3. c3", "how": "White gambit, one or two pawns for rapid development; sharp, with Black returning material or declining via 3...d5." },
+    { "name": "3.Nf3 transpositions", "moves": "1. e4 e5 2. d4 exd4 3. Nf3", "how": "Less forcing: transposes to the Scotch, Petroff or Philidor depending on Black's reply." },
+    { "name": "3.Bc4 (Center Gambit, Scotch/Urusov-type)", "moves": "1. e4 e5 2. d4 exd4 3. Bc4", "how": "Leads to Scotch Gambit or Urusov Gambit positions; a gambit for White." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Center Game is a direct and ambitious attempt by White to seize the initiative by opening the centre.",
+        "verdict": "supported",
+        "note": "2.d4 opens the centre at once for rapid development.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White aims for rapid development and a spatial advantage, often leading to sharp, tactical positions.",
+        "verdict": "supported",
+        "note": "Rapid development and tactics are named; 'spatial advantage' is not a source claim and Black equalises with careful play.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is perfect for aggressive players who enjoy open games and are comfortable using their queen early, at the risk of it becoming a target.",
+        "verdict": "supported",
+        "note": "Chessmood says it suits aggressive players who like sharp, tactical battles; the queen is hit by ...Nc6.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: recapture on d4 (usually with the queen), develop rapidly (Nc3, Bc4), castle quickly and use the open files to attack.",
+        "verdict": "supported",
+        "note": "Details: the queen retreats to e3 and White castles queenside (not just 'quickly').",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: develop with tempo by attacking the queen (...Nc6), complete development (Nf6, Bc5/Be7) and challenge White's centre or exploit his exposed king.",
+        "verdict": "supported",
+        "note": "...Nc6, ...Nf6 and ...Be7 are named. ...Bc5 is not named in the sources read.",
+        "sources": ["s1", "s2", "s3"]
+      },
+      {
+        "claim": "White: in gambit lines (e.g. 3.c3) White sacrifices a pawn for a lead in development and a strong pawn centre.",
+        "verdict": "supported",
+        "note": "Danish Gambit gives one or two pawns for development and open lines; 'strong pawn centre' is not in the sources. This is a different branch from the main line.",
+        "sources": ["s3", "s4"]
+      },
+      {
+        "claim": "Black: accept gambits where offered, consolidate the extra pawn, and weather the storm before using the material advantage in the endgame.",
+        "verdict": "supported",
+        "note": "Accepting is normal but Chessworld cautions Black to be ready to return material rather than defend pawns at any cost.",
+        "sources": ["s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

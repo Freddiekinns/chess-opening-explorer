@@ -1,0 +1,95 @@
+{
+  "slug": "slav-defense-two-knights-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Two Knights Attack",
+    "eco": "D15",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "slav-defense-three-knights-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes the c4 pawn and keeps the light-squared bishop outside the chain. The main line is 5.a4 Bf5 6.e3 e6 7.Bxc4 Bb4 8.O-O Nbd7, where White regains the pawn and gets a central majority and Black a solid structure with a sound bishop. 5.Ne5 and other lines are less common.",
+  "white_ideas": [
+    { "idea": "Regain c4 with Bxc4 and use the centre with e4." },
+    { "idea": "Play a4 to stop ...b5 and develop quickly." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the c8 bishop to f5 before ...e6." },
+    { "idea": "Pin on b4 and prepare ...c5 or ...e5." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e3 against ...c6/...e6 with a half-open c-file after Bxc4 and ...c5 breaks." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's structure is sound with the bishop outside the chain; few ways to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains c4 by force; Black's pawn grab is only temporary."
+    },
+    "soundness": {
+      "notes": "Standard mainline theory."
+    },
+    "structure": {
+      "notes": "Centre in tension (d4 against c6/e6), White to play e4; QGD-like flexible."
+    },
+    "approach": {
+      "notes": "A main-line choice, standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Moderate theory with clear plans; typical Intermediate Slav."
+    }
+  },
+  "plan_phrases": ["regain the pawn", "light-squared bishop outside the chain", "central pawns"],
+  "sublines_that_differ": [
+    {
+      "name": "5.Ne5",
+      "moves": "5.Ne5",
+      "how": "White aims for quick development and a Qa4 pin; more tactical than the main 5.a4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black's Slav structure is hard to break down with a good bishop."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "White regains the c4 pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A main line of the Slav."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Central tension rather than a locked or open centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "Mainstream queen's pawn theory."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear, theory is moderate."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan is characteristic."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "hungarian-opening-sicilian-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Sicilian Invitation",
+    "eco": "A00",
+    "moves": "1. g3 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black meets 1.g3 with a Sicilian pawn. White plays Bg2 and Nf3, then c4 for an English or e4 for a reversed-Sicilian-style game. It is mostly a move order into English or Closed Sicilian-like positions.",
+  "white_ideas": [
+    { "idea": "Bg2, Nf3, O-O and then c4 or e4" },
+    { "idea": "Transpose into an English or a Closed Sicilian from the other side" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nc6, ...g6 and ...Bg7, a symmetrical fianchetto" },
+    { "idea": "Take the centre with ...d5 and ...e5" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical or English-type pawn structure" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow manoeuvring; rarely forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Flank opening, centre undecided." },
+    "approach": { "notes": "The g3/Bg2 set-up can be played against most things." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn but no sharp plan." }
+  },
+  "plan_phrases": ["Fianchetto"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet manoeuvring game." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Flank opening, centre undecided." },
+    "approach": { "value": "system", "confidence": 0.45, "reason": "A g3/Bg2 set-up, but also close to standard." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans are vague; not obviously beginner." },
+    "plans": { "value": ["fianchetto"], "reason": "Bg2 is the point." }
+  }
+}

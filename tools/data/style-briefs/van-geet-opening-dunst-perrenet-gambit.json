@@ -1,0 +1,44 @@
+{
+  "slug": "van-geet-opening-dunst-perrenet-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Dunst-Perrenet Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. e4 dxe4 3. d3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/4p3/2NP4/PPP2PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White offers a second pawn after 2.e4 dxe4, trying to open the d-file and develop quickly with Bxd3 or Qxd3 ideas. Black can take again on d3 or decline with ...e5, ...Nf6 or ...Nc6, usually with a comfortable extra pawn. It is a rare gambit that relies on surprise and activity rather than a proven edge.",
+  "white_ideas": [
+    { "idea": "Open lines with d3, recapture with Bxd3 or Qxd3 and develop rapidly." },
+    { "idea": "Seek a lead in development and pressure on the d-file and kingside." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn, develop ...Nf6 and ...Nc6, and trade queens if White overreaches." },
+    { "idea": "Decline with ...e5 and play for a solid position." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with an extra Black pawn on e4 or d3 and White's pieces developed quickly." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A gambit with an open centre and loose pieces; Black has easy ways to hold the material." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the extra pawn with careful play." },
+    "soundness": { "notes": "Generally considered unsound; scores through surprise." },
+    "structure": { "notes": "Open centre, pawns exchanged early." },
+    "approach": { "notes": "Very rare; chosen for surprise." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of gambit lines; not a first repertoire choice." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Pawn gambit with open lines and risks." },
+    "gambit": { "value": "white", "confidence": 0.8, "reason": "White gives a pawn that Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "Considered unsound; scores through surprise." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open centre." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Dubious gambit, never beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "White trades a pawn for development." }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "french-defense-marshall-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Marshall Gambit",
+    "eco": "C10",
+    "moves": "1. e4 c5 2. Nc3 e6 3. d4 d5",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-closed",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "After 2.Nc3 e6 White plays 3.d4 and Black hits the centre with ...d5, reaching a French-Tarrasch or Sicilian hybrid with an IQP-type structure. White can play 4.exd5 exd5 5.Nf3 with a tarrasch-like game or 4.e5 for a French Advance with an extra Nc3. Black's c5 pawn may be taken (dxc5), the source of the 'gambit' name, but Black normally regains it.",
+  "white_ideas": [
+    { "idea": "Play exd5 exd5 and Nf3, Bb5 and castle, putting pressure on the isolated d5 pawn." },
+    { "idea": "Advance with e5 for a space edge and attack the c5 pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Support the centre with ...Nc6 and ...Nf6 and play for active pieces and the IQP." },
+    { "idea": "Take d4 with ...cxd4 to open the centre and attack the knight on c3." }
+  ],
+  "typical_structures": [
+    { "structure": "Tarrasch-like isolated queen's pawn for Black, or a French Advance structure after e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic with an isolated pawn or tension; I am not sure of the main theory." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Any pawn on c5 is usually regained, so no lasting gambit in the main branch." },
+    "soundness": { "notes": "Playable; I am unsure of the exact assessment." },
+    "structure": { "notes": "Tarrasch-like asymmetric centre with half-open files." },
+    "approach": { "notes": "A rare mix of Sicilian and French; strong players seldom choose it." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of IQP and French structures." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "4.e5", "moves": "4. e5", "how": "A French Advance-type position with White space." },
+    { "name": "5.dxc5", "moves": "4. exd5 exd5 5. dxc5", "how": "White takes the pawn and Black regains it with ...d4 and ...Bxc5." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Strategic tension with no clear forcing line." },
+    "gambit": { "value": "none", "confidence": 0.65, "reason": "Material usually returns; main line has none given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable with accurate play." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Tarrasch-like structure with open files." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rare hybrid line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Structures need understanding." },
+    "plans": { "value": ["isolated_queens_pawn"], "reason": "Black's d5 pawn becomes isolated after exchanges." }
+  }
+}

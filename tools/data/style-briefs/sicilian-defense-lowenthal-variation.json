@@ -1,0 +1,48 @@
+{
+  "slug": "sicilian-defense-lowenthal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Löwenthal Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5",
+    "fen": "r1bqkbnr/pp1p1ppp/2n5/4p3/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black kicks the d4 knight with ...e5, so White plays 5.Nb5 a6 6.Nd6+ Bxd6 7.Qxd6 Qf6 and then 8.Qd1 or 8.Qxf6. Black has the bishop pair and development for a slight weakness on d6; White has an easy game and a small edge. The queen swap leads to a quiet endgame-like position with little attacking play.",
+  "white_ideas": [
+    { "idea": "5.Nb5 a6 6.Nd6+ Bxd6 7.Qxd6 and exploit the d6 square" },
+    { "idea": "Trade queens with Qxf6 to reach a quiet, slightly better ending" },
+    { "idea": "Develop with Nc3 and control d5, play for a knight outpost" }
+  ],
+  "black_ideas": [
+    { "idea": "Bishop pair and open lines in return for the ceded bishop" },
+    { "idea": "Gain a tempo against the knight on b5 with ...a6 and ...Nge7" },
+    { "idea": "Use the d6 hole by ...Qf6 and ...Nge7 or ...d6" }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on d7 and e5, White pawn on e4; a hole at d5 and a half-open c-file" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet after the queen exchange or 8.Qd1; not especially sharp or solid. I am unsure." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material sacrificed." },
+    "soundness": { "notes": "Playable for Black; White is a little better but it is not refuted." },
+    "structure": { "notes": "Sicilian with Black e5 pawn, a half-open c-file; semi-open." },
+    "approach": { "notes": "Offbeat: strong players seldom choose the Löwenthal as Black." },
+    "level": { "reason": "understanding", "notes": "Understanding of the bishop pair and weak squares." }
+  },
+  "plan_phrases": ["bishop pair", "knight outpost"],
+  "sublines_that_differ": [
+    { "name": "5...a6 6.Nd6+ Bxd6 7.Qxd6 Qf6 8.Qxf6", "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 a6 6. Nd6+ Bxd6 7. Qxd6 Qf6 8. Qxf6", "how": "Queenless middlegame where White has a small edge." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet lines with no attacks for either side." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No pawn offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "White is slightly better but Black is not in danger." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Sicilian with a half-open c-file." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Moderate theory." },
+    "plans": { "value": ["bishop_pair", "knight_outpost"], "reason": "Black takes the bishop pair, White has the d5 and d6 squares." }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "nimzo-indian-defense-samisch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Sämisch Variation",
+    "eco": "E24",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. a3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/P1N5/1P2PPPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White asks the bishop to decide, and after 4...Bxc3+ 5.bxc3 gets the bishop pair, a big centre and doubled c-pawns, at the cost of structural weaknesses on c3 and c4. Black targets the weak pawns with ...c5, ...Nc6, ...b6, ...Ba6 and ...Na5 (often with ...d6, ...e5), while White plays e3 or f3 and e4 and aims for a kingside attack or a central break. The plans are well defined but the play is double-edged.",
+  "white_ideas": [
+    { "idea": "Build a centre with e3/f3, Bd3 and e4, using the bishop pair" },
+    { "idea": "Attack on the kingside or break with e4-e5 when Black's knight leaves f6" },
+    { "idea": "Keep the doubled c-pawns solid with Ne2 and Ng3" }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure c4 with ...b6, ...Ba6, ...Na5 and ...Qc8" },
+    { "idea": "Strike the centre with ...c5 and ...d5 to open lines against the doubled pawns" },
+    { "idea": "Hold the position with ...d6, ...e5 and put a knight on e8 or d7" }
+  ],
+  "typical_structures": [
+    { "structure": "White doubled c-pawns with a big centre against Black's ...c5/...d6/...e5 set-up" },
+    { "structure": "Closed centre with ...e5, ...d6 and a knight on e8 after f3 and e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic, with White's structural weaknesses against the bishop pair; there are tactical lines, but the game is not forcing from move to move." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound and a main line at top level." },
+    "structure": { "notes": "Centre tension with doubled c-pawns, d4/e4 against ...d5 or ...e5; neither open nor locked early." },
+    "approach": { "notes": "A main-line defence against 4.a3, standard." },
+    "level": { "reason": "understanding", "notes": "Plans around the doubled pawns and bishop pair matter more than long forced lines." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "central pawn majority", "pressure on c4"],
+  "sublines_that_differ": [
+    { "name": "4...Bxc3+ 5.bxc3 d5", "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. a3 Bxc3+ 5. bxc3 d5", "how": "A Queen's Gambit-like structure where Black fights the centre directly." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Strategic and double-edged without being forcing." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A top-level main line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre is in tension with doubled pawns and no early lock." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A main-line variation of a major defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Plans about structure and bishop pair matter more than memory." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair", "central_pawn_majority"], "reason": "White's doubled c-pawns, bishop pair and central pawns." }
+  }
+}

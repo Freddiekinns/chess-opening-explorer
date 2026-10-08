@@ -1,0 +1,46 @@
+{
+  "slug": "alekhine-defense-krejcik-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Krejcik Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. Bc4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 2 2"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White develops the bishop to c4 instead of chasing the knight with e5, so 2...Nxe4 is possible and White can play 3.Bxf7+ (the Krejcik Gambit) Kxf7 4.Qh5+ for a king hunt that mostly just regains material with a loose Black king. Black can also play 2...d5 or 2...e6 and reach comfortable positions. It is mostly a surprise and trap line, not a main-line approach.",
+  "white_ideas": [
+    { "idea": "3.Bxf7+ Kxf7 4.Qh5+ and Qd5+ to win back the knight with the Black king exposed." },
+    { "idea": "Develop quickly with Nc3, d3 or Qe2 and aim at f7." }
+  ],
+  "black_ideas": [
+    { "idea": "2...Nxe4 and survive the king hunt with ...g6 and ...e6." },
+    { "idea": "2...d5 3.exd5 Nxd5 for a comfortable game." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with exposed black king or a normal e4/d5 structure if Black plays 2...d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Bxf7+ lines are a forced king hunt; both sides can go wrong quickly; low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "At the root nothing is offered; the 3.Bxf7+ sacrifice mostly regains material by force." },
+    "soundness": { "notes": "Thought dubious as a way to claim advantage, since Black can defend; not quite refuted." },
+    "structure": { "notes": "Open centre when e4 is taken; otherwise e4/d5 tension." },
+    "approach": { "notes": "Strong players seldom choose it over 2.e5." },
+    "level": { "reason": "memory", "notes": "Forced tactical lines to know." }
+  },
+  "plan_phrases": ["Pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Krejcik Gambit", "moves": "2...Nxe4 3.Bxf7+ Kxf7 4.Qh5+", "how": "Forced king hunt; White regains the knight with a displaced Black king." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Forcing Bxf7+ lines and traps." },
+    "gambit": { "value": "none", "confidence": 0.5, "reason": "Nothing offered at the root; the sacrifice comes back by force." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.5, "reason": "A surprise attempt Black can meet well; not a mainstream try." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "The e4 pawn goes and lines open." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Rarely played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Forced lines to know; dubious, so never beginner." },
+    "plans": { "value": ["pressure_on_f7"], "reason": "The bishop aims at f7 from move two." }
+  }
+}

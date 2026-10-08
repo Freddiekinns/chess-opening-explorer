@@ -1,0 +1,46 @@
+{
+  "slug": "four-knights-game-glek-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Four Knights Game: Glek System",
+    "eco": "C47",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. g3",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2NP1/PPPP1P1P/R1BQKB1R b KQkq - 0 4"
+  },
+  "parent": "four-knights-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop instead of committing it to b5 or c4, aiming for a quiet Italian-like set-up with d3, Bg2 and O-O. The usual game goes 4...Bc5 5.Bg2 d6 6.d3 with slow manoeuvring, while 4...d5 5.exd5 Nxd5 6.Bg2 gives a more open centre. Little theory, steady play for both sides.",
+  "white_ideas": [
+    { "idea": "Bg2, O-O, d3 and a slow build-up, with Nd5 or Nh4 ideas" },
+    { "idea": "Keep the centre closed and aim for a later f4 or d4 break" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Bc5, ...d6, ...a6 and ...Be6 or ...O-O, keeping the e5 pawn secure" },
+    { "idea": "Hit the centre at once with ...d5 and open the game" }
+  ],
+  "typical_structures": [
+    { "structure": "Italian-style pawns: White e4/d3, Black e5/d6, tension left in the centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, symmetrical, few tactics; both sides develop calmly, and neither can be hit early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound, an old quiet alternative to 4.Bb5 and 4.d4." },
+    "structure": { "notes": "Centre in tension with d3 and e5 left in place, like Giuoco Pianissimo." },
+    "approach": { "notes": "A recognised branch of the Four Knights played by strong players now and then; not a universal system." },
+    "level": { "reason": "neither", "notes": "Clear development plan and little to memorise, but it asks for patience and judgement in manoeuvring." }
+  },
+  "plan_phrases": ["fianchetto", "slow build-up", "knight outpost on d5"],
+  "sublines_that_differ": [
+    { "name": "4...d5 line", "moves": "4...d5 5.exd5 Nxd5 6.Bg2", "how": "More open centre with piece play" }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Quiet development with little for Black to attack and little for White to lose." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Perfectly respectable equal position." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "The e4/e5 centre stays in tension with d3, as in the Pianissimo." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Played at all levels as an alternative in the Four Knights, not a universal system." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few lines to learn, but quiet positions ask for judgement." },
+    "plans": { "value": ["fianchetto"], "reason": "White plays g3 and Bg2." }
+  }
+}

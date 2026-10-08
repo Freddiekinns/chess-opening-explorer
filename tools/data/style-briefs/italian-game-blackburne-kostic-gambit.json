@@ -1,0 +1,46 @@
+{
+  "slug": "italian-game-blackburne-kostic-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Blackburne-Kostić Gambit",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4",
+    "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "italian-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black plays 3...Nd4 hoping White grabs 4.Nxe5. After 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3 White is mated, so the line is mainly a trap. White's safe replies, such as 4.Nxd4 exd4 or 4.Nxe5 Qg5 5.Bxf7+, leave Black a pawn down with little compensation.",
+  "white_ideas": [
+    { "idea": "4.Nxd4 exd4 5.0-0 or 5.c3, taking the centre and the bishop pair." },
+    { "idea": "4.Nxe5 Qg5 5.Bxf7+, avoiding the mating trap and keeping the extra pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Set the trap 4.Nxe5? Qg5! attacking e5 and g2, with ...Nf3 mate threats." },
+    { "idea": "Hope for a mistake in the early moves." }
+  ],
+  "typical_structures": [
+    { "structure": "Open game after Nxd4 exd4 with White a clear lead in centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Trap-based: forced wins for Black if White errs, forced wins for White otherwise." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the e5 pawn." },
+    "soundness": { "notes": "Dubious; White simply gains material or a good position." },
+    "structure": { "notes": "Open lines straight away." },
+    "approach": { "notes": "Strong players do not choose it; surprise value only." },
+    "level": { "reason": "understanding", "notes": "Dubious, so not Beginner." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Blackburne Shilling trap", "moves": "4. Nxe5 Qg5 5. Nxf7 Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3#", "how": "The mating trap if White errs." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "A trap line with concrete tactics and a forced mate if White errs." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black offers the e5 pawn." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "Strong players consider it unsound and it scores through traps." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open lines straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Played for surprise, never by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Dubious so not Beginner, but little to learn." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black's queen comes out early to attack with a development lead." }
+  }
+}

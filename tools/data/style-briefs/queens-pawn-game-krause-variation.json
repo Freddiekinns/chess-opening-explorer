@@ -1,0 +1,50 @@
+{
+  "slug": "queens-pawn-game-krause-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Krause Variation",
+    "eco": "D02",
+    "moves": "1. d4 d5 2. Nf3 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "queens-pawn-game-zukertort-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black strikes at the centre at once with ...c5, a reversed Queen's Gambit idea. White chooses between 3.e3 (reversed QGD with ...Nc6), 3.c4 (transposing to Semi-Tarrasch or a Symmetrical structure), 3.dxc5 and 3.c3 (reversed Slav). Positions are normal queen's-pawn structures with Black spending a tempo on c5, so White keeps a small edge in space. The game is mostly positional with typical hanging pawns or isolated queen's pawn structures.",
+  "white_ideas": [
+    { "idea": "e3, c4 and Nc3 to exploit the extra tempo in a QGD-type centre" },
+    { "idea": "dxc5 followed by a quick Nc3 and e4 to attack the isolated d5 pawn" },
+    { "idea": "Calm development with c3 and Bf4/Bg5, aiming at a solid centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the d4 pawn with ...Nc6 and ...cxd4 to get open lines" },
+    { "idea": "Accept an isolated d5 pawn for active piece play" },
+    { "idea": "Develop ...Nf6, ...e6 and ...Bd6 with a symmetrical or Tarrasch structure" }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated queen's pawn for Black on d5 after exchanges" },
+    { "structure": "Reversed Slav or QGD structures with an extra tempo" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open, principled central fights but positional and not especially forcing; both sides play normal developing moves." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "3.dxc5 wins a pawn that Black regains with ...e6 and ...Bxc5, so no gambit." },
+    "soundness": { "notes": "Sound, a normal playable defence." },
+    "structure": { "notes": "Tension in the centre with isolated pawn possibilities, flexible but leaning to a QGD-type semi-open." },
+    "approach": { "notes": "A recognised way to meet 2.Nf3, played often enough by decent players." },
+    "level": { "reason": "understanding", "notes": "IQP and Tarrasch structures need understanding rather than long theory." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "reversed Queen's Gambit", "hanging pawns"],
+  "sublines_that_differ": [
+    { "name": "Krause: 3.dxc5", "moves": "3.dxc5 e6 4.e4", "how": "A reversed QGA where White takes the pawn and strikes in the centre." },
+    { "name": "Krause: 3.c4", "moves": "3.c4 d4", "how": "Black can push to a Benoni-like structure for space." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.65, "reason": "Normal central play without forcing risk or fortress features." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given that cannot be won back." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A normal, equal position." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is under tension, with IQP or hanging pawns possible." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Pawn-structure plans matter more than theory." },
+    "plans": { "value": ["isolated_queens_pawn", "hanging_pawns"], "reason": "Exchanges on d4/c5 leave an isolated or hanging pawn centre." }
+  }
+}

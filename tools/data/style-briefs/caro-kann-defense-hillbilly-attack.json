@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-hillbilly-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Hillbilly Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Bc4",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the bishop before d4, hoping for an Italian-like game or traps like the Schaeffer Gambit (3.Bb3 dxe4 4.Qh5). After 2...d5 3.exd5 cxd5 4.Bb5+ Black gets a comfortable Exchange-type position, with White having delayed d4. White's idea is surprise; Black simply equalises with ...d5 and ...Nf6.",
+  "white_ideas": [
+    { "idea": "Bb3 or Bb5+, then d4 and Nf3, getting a Caro-Kann Exchange with the bishop already out" },
+    { "idea": "Set traps with Qh5 against ...dxe4" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at once with ...d5, then ...Nf6 and ...e6 or ...Bg4" },
+    { "idea": "Meet Bb5+ with ...Bd7 or ...Nc6 and take the centre" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical d4/d5 Exchange structure after cxd5, or Isolated d-pawn-free open centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly quiet once Black takes the centre; traps only if Black errs." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Main 3.exd5 cxd5 line keeps material; Schaeffer Gambit is a side line." },
+    "soundness": { "notes": "Not refuted but gives Black an easy game." },
+    "structure": { "notes": "Symmetrical d-pawns, half-open files; semi-open." },
+    "approach": { "notes": "Strong players seldom choose it; chosen for surprise." },
+    "level": { "reason": "neither", "notes": "Few moves to learn, not a Beginner choice because it cedes the initiative." }
+  },
+  "plan_phrases": ["surprise weapon"],
+  "sublines_that_differ": [
+    { "name": "Schaeffer Gambit", "moves": "2...d5 3.Bb3 dxe4 4.Qh5", "how": "A pawn for quick attack and traps; dubious." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Quiet after ...d5 with some trappy side lines." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "The main 3.exd5 cxd5 line keeps material even." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Not refuted but gives Black an easy equal game." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Exchange-style symmetrical pawns with the c-file half-open." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom choose 2.Bc4 against the Caro-Kann." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Few moves to learn, but it concedes an easy game for Black." },
+    "plans": { "value": [], "reason": "No characteristic plan." }
+  }
+}

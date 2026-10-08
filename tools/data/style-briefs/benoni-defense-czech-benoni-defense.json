@@ -1,0 +1,48 @@
+{
+  "slug": "benoni-defense-czech-benoni-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Czech Benoni Defense",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e5",
+    "fen": "rnbqkb1r/pp1p1ppp/5n2/2pPp3/2P5/8/PP2PPPP/RNBQKBNR w KQkq e6 0 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black answers 3.d5 by locking the centre with ...e5 and ...d6, accepting a cramped position behind a solid pawn chain. After 4.Nc3 d6 5.e4 Be7 6.Nf3 O-O 7.Be2 the centre is closed; White has more space and plays on the queenside with b4 or Nd2-c4, while Black aims for ...Ne8, ...f5 or ...Nh5, ...f5 on the kingside. It is a slow, strategic fight in which Black's bad dark-squared bishop and lack of space are the main issues.",
+  "white_ideas": [
+    { "idea": "Use extra space with Nd2-c4, a4 and b4 to open the queenside" },
+    { "idea": "Keep the closed centre and restrain ...f5 with Nd2 and f3 if needed" },
+    { "idea": "Exploit Black's passive pieces and the bad bishop on g7/e7" }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...f5 after ...Ne8 or ...Nh5 preparing kingside play" },
+    { "idea": "Meet queenside play with ...a6/...b5 breaks and ...Nbd7-c5" },
+    { "idea": "Stay compact and wait for White to overreach" }
+  ],
+  "typical_structures": [
+    { "structure": "Locked centre with White pawns c4/d5/e4 against Black c5/d6/e5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Cramped but compact Black set-up, hard to attack quickly; plans are slow." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound though passive; strong players rate it as slightly worse for Black." },
+    "structure": { "notes": "Locked pawn chains, play on the wings." },
+    "approach": { "notes": "Standard defence, used occasionally by strong players (Petrosian, Ivanchuk)." },
+    "level": { "reason": "understanding", "notes": "Plans are strategic and need long-term judgement; theory is light." }
+  },
+  "plan_phrases": ["space advantage for White", "bad dark-squared bishop", "kingside ...f5 break"],
+  "sublines_that_differ": [
+    { "name": "Early ...Bg4 or other sidelines", "moves": "1. d4 Nf6 2. c4 c5 3. d5 e5 4. Nc3 d6 5. e4 g6", "how": "A King's Indian-style set-up with the kingside fianchetto." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "A compact, locked Black set-up that is hard to break down but cramped." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Passive but a respected Black defence." },
+    "structure": { "value": "closed", "confidence": 0.9, "reason": "Locked centre with c4/d5/e4 against c5/d6/e5." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Played by strong players now and then, not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Slow strategic plans, little forced theory." },
+    "plans": { "value": ["space_advantage", "bad_bishop"], "reason": "White's space and Black's hemmed-in pieces define the structure." }
+  }
+}

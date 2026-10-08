@@ -1,0 +1,46 @@
+{
+  "slug": "englund-gambit-declined-reversed-krebs",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined: Reversed Krebs",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. Nf3 e4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3Pp3/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "englund-gambit-declined-reversed-alekhine",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black answers 1.d4 with ...e5, and after 2.Nf3 pushes ...e4 instead of waiting for dxe5, so no material changes hands. White's knight must move (3.Ne5 or 3.Nfd2) and Black gets a French or Alekhine-like space grip on e4 that White tries to undermine with e3, c4 and Nc3. Games usually become a slow fight over whether the e4 pawn is strong or a target.",
+  "white_ideas": [
+    { "idea": "Retreat with 3.Nfd2 or 3.Ne5 and attack the e4 pawn with Nc3, e3, c4 and f3." },
+    { "idea": "Play d4-d5 or c4 for a space edge in the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e4 with ...d5 and ...f5, and cramp White's pieces." },
+    { "idea": "Develop ...Nf6, ...Bf5 and ...c5 to hit d4." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on e4 and d5 against White d4 and e3, like a reversed Advance French." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet manoeuvring around the e4 pawn, with no forcing sequence in the main lines. Neither side has a clear tactical plan early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "2...e4 is declined by White's move order. No pawn is offered." },
+    "soundness": { "notes": "2...e4 is playable; White keeps a slight edge at best. Not refuted." },
+    "structure": { "notes": "e4 and d5 pawns face d4 and e3, fixed but not fully locked, so the centre is undecided." },
+    "approach": { "notes": "Rare Black choice at all levels; a surprise sideline to 1.d4." },
+    "level": { "reason": "understanding", "notes": "Few moves to learn; the skill is in fighting for e4 and for space." }
+  },
+  "plan_phrases": ["space advantage", "attack the e4 pawn"],
+  "sublines_that_differ": [
+    { "name": "Ne5 main try", "moves": "3. Ne5 d6 4. Nc4 d5 5. Ne3", "how": "White chases the knight and gets Black's centre to over-extend." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but unclear play around e4, neither a solid wall nor a forcing fight." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "No material is given up after 2...e4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable for Black, if slightly worse." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The d4-e3 against e4-d5 centre is fixed but not locked." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom play 2...e4 against 1.d4." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Few moves to memorise but unusual structures." },
+    "plans": { "value": ["space_advantage"], "reason": "Black's e4 pawn gains space and White works to undermine it." }
+  }
+}

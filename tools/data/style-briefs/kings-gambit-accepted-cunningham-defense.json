@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-accepted-cunningham-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Cunningham Defense",
+    "eco": "C35",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Be7",
+    "fen": "rnbqk1nr/ppppbppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black keeps the f4 pawn and develops the bishop to e7 to prevent a quick g4 and set up ...Bh4+. The main line is 4.Bc4 Bh4+ 5.Kf1 or the Bertin Gambit 5.g3 fxg3 6.O-O, where White gives a second pawn for attack. Both sides play for open files and king safety; the position is sharp with a lot of theory.",
+  "white_ideas": [
+    { "idea": "Develop with Bc4, d4 and Nc3, aiming at f7 and the open f-file." },
+    { "idea": "Sacrifice with g3 or Nc3 to open lines against Black's king." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the f4 pawn, check on h4, then ...Nf6, ...d5 to free the position." },
+    { "idea": "Return the pawn at the right moment to neutralise White's attack." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and f-files with White's king slightly exposed and Black a pawn up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete and tactical; both kings are exposed and one slip loses fast." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black has taken f4 and can hold it if careful." },
+    "soundness": { "notes": "Reasonable for both; engines give Black a small edge but practical chances are good." },
+    "structure": { "notes": "The e-file and f-file open and central pawns are exchanged; pieces play on open lines." },
+    "approach": { "notes": "Played by strong players now and then as a weapon." },
+    "level": { "reason": "memory", "notes": "Needs concrete King's Gambit theory." }
+  },
+  "plan_phrases": ["kingside attack", "lead in development", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Bertin Gambit", "moves": "4.Bc4 Bh4+ 5.g3 fxg3 6.O-O", "how": "A further pawn is given for development." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "King's Gambit lines with exposed kings and forcing tactics." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives the f-pawn and Black can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Playable at a high level though Black is comfortable." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "Central and f-file open early." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Played by strong players occasionally, not offbeat." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Needs known tactical lines, but plans are clear." },
+    "plans": { "value": ["kingside_attack", "lead_in_development", "pressure_on_f7"], "reason": "White's compensation is attack and development." }
+  }
+}

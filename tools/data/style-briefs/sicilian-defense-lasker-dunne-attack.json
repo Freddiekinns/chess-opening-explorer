@@ -1,0 +1,46 @@
+{
+  "slug": "sicilian-defense-lasker-dunne-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Lasker-Dunne Attack",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. g3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/6P1/PPPP1P1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the kingside bishop against the Sicilian, aiming for a Closed Sicilian set-up with Bg2, Ne2 or Nc3, d3 and f4. After 2...g6 3.Bg2 Bg7 White often plays 4.f4 for a kingside pawn push. Black counterattacks on the queenside with ...Nc6, ...d6, ...Nf6 and ...Rb8/...b5.",
+  "white_ideas": [
+    { "idea": "Bg2, d3, Nc3/Ne2 and f4, then Nf3 and a kingside pawn advance with f5." },
+    { "idea": "Keep d4 in reserve as a break." }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror with ...g6, ...Bg7, ...Nc6, ...d6 and queenside play with ...b5 or ...Rb8." },
+    { "idea": "Strike in the centre with ...d5 when White's pieces are not ready." }
+  ],
+  "typical_structures": [
+    { "structure": "Closed Sicilian-type: White f4 and e4 against Black c5 and d6, kingside fianchettoes on both sides." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow build-up with each side attacking on opposite wings, but few early tactics. Less forcing than the Open Sicilian." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main line 2...g6." },
+    "soundness": { "notes": "A sound, long-standing anti-Sicilian." },
+    "structure": { "notes": "Asymmetric Sicilian centre; White's e4 against Black's c5 pawn and the c-file. Tension is kept until late." },
+    "approach": { "notes": "A standard anti-Sicilian, like the Closed Sicilian. Played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Plans are clear, but the right moment to push f4-f5 or hit back with ...d5 is a matter of judgement." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack with f4", "queenside counterplay"],
+  "sublines_that_differ": [
+    { "name": "Black ...d5 at once", "moves": "2. g3 d5 3. exd5 Qxd5 4. Nf3", "how": "Black challenges e4 immediately and play is more open." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Manoeuvring with opposite-wing plans but little forcing play." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Respected anti-Sicilian." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Sicilian asymmetric centre with the c-file for Black." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "Respectable anti-Sicilian choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-based, with moderate theory." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "Bg2 and an f4-f5 push." }
+  }
+}

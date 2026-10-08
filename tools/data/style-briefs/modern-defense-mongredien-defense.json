@@ -1,0 +1,46 @@
+{
+  "slug": "modern-defense-mongredien-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Mongredien Defense, with Nc3",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 b6",
+    "fen": "rnbqk1nr/p1ppppbp/1p4p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "modern-defense-standard-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black adds a queenside fianchetto with 3...b6 and ...Bb7, so both bishops eye the long diagonals and Black keeps the centre under pressure. White builds with Nf3, Be3, Qd2 or Bd3 and pushes for a big centre; Black plans ...e6, ...Ne7 or ...Nf6 and ...c5 or ...e5. The set-up is hypermodern and tricky but a little passive.",
+  "white_ideas": [
+    { "idea": "Take the broad centre with Nf3 or Be3, Qd2 and Bd3, and push e5 or f4." },
+    { "idea": "Use the extra space and aim for an attack as Black's pieces have little room." }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure e4 and d4 with ...Bb7 and ...Bg7 and strike with ...e5 or ...c5." },
+    { "idea": "Develop ...Nf6 or ...Ne7, ...e6 and ...d6 and wait for White to overextend." }
+  ],
+  "typical_structures": [
+    { "structure": "White's e4-d4 centre against Black's double fianchetto with ...e6 or ...d6." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A patient hypermodern set-up that is hard to attack quickly but passive; few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit; ...e5 dxe5 Bxe4 tricks only." },
+    "soundness": { "notes": "Sound, if slightly passive." },
+    "structure": { "notes": "The centre is undecided and challenged from the flanks, so flexible." },
+    "approach": { "notes": "A rare sideline that strong players seldom choose; played for surprise." },
+    "level": { "reason": "understanding", "notes": "Easy to learn, but timing the breaks takes judgement." }
+  },
+  "plan_phrases": ["fianchetto", "hypermodern centre", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "3.Nf3 b6 (Mongredien with Nf3)", "moves": "1. e4 g6 2. d4 Bg7 3. Nf3 b6", "how": "A more common move order, with the same set-up and slightly different ideas for White." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.45, "reason": "Compact hypermodern set-up that is hard to break down and slow." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A passive but playable set-up." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre is attacked from the flanks and stays undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "A rare variation strong players seldom choose." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Little to memorise but the breaks need good timing." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Black fianchettoes both bishops and lets White build a centre." }
+  }
+}

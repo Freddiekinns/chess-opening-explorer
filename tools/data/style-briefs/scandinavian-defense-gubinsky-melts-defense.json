@@ -1,0 +1,44 @@
+{
+  "slug": "scandinavian-defense-gubinsky-melts-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Gubinsky-Melts Defense",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6",
+    "fen": "rnb1kbnr/ppp1pppp/3q4/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "scandinavian-defense-mieses-kotroc-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black retreats the queen to d6 rather than a5, keeping it central and the a5 square free for ...a6 or ...Nf6. After 4.d4 Nf6 5.Nf3 Black builds a ...c6/...e6 or ...a6 structure and a Caro-Kann-like position. White has more space and a lead in development; Black stays solid but must avoid traps on the d-file.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4, Nf3 and Bd2 or Bf4/Bb5 to harass the queen on d6" },
+    { "idea": "Use the space and development lead; Nb5 and Bf4 ideas against the queen" }
+  ],
+  "black_ideas": [
+    { "idea": "...Nf6, ...a6, ...Bg4 or ...Bf5 and ...e6; keep the structure sound and use ...c5 or ...e5" },
+    { "idea": "Develop quickly and neutralise the early queen exposure" }
+  ],
+  "typical_structures": [{ "structure": "White d4 centre against Black c6/e6 or ...a6 set-up; Scandinavian semi-open d-file" }],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, solid Scandinavian development; Black's position is hard to break down but the queen on d6 is slightly exposed." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black has already regained the pawn." },
+    "soundness": { "notes": "Sound; White keeps a small edge." },
+    "structure": { "notes": "Fixed asymmetric centre with the d-file semi-open for Black; Scandinavian standard is semi-open." },
+    "approach": { "notes": "A respectable, if less common, queen retreat; some strong players use it." },
+    "level": { "reason": "understanding", "notes": "Few concrete lines, but handling the exposed queen takes judgement." }
+  },
+  "plan_phrases": ["early queen", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Schiller main line", "moves": "4. d4 Nf6 5. Nf3 a6", "how": "Black prevents Nb5 and sets up ...Bg4 or ...c5." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Few ways to lose quickly and Black's position is hard to attack." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Considered a sound Scandinavian line." },
+    "structure": { "value": "semi_open", "confidence": 0.75, "reason": "Scandinavian: asymmetric centre with half-open d-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Less common than 3...Qa5 but respectable." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs care with the exposed queen but low theory." },
+    "plans": { "value": ["early_queen"], "reason": "Black's queen sits in the centre and has to avoid being harried." }
+  }
+}

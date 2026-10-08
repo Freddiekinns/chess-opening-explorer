@@ -1,0 +1,173 @@
+{
+  "slug": "english-opening-symmetrical-variation",
+  "root": {
+    "name": "English Opening: Symmetrical Variation",
+    "eco": "A30",
+    "moves": "1. c4 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "English Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/English_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Chess Opening Basics: The Symmetrical English",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/chess-opening-basics-the-symmetrical-english/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "The Ideas behind the English Opening",
+      "publisher": "Exeter Chess Club",
+      "url": "https://www.exeterchessclub.org.uk/content/ideas-behind-english-opening",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Hedgehog (chess)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hedgehog_(chess)",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "Symmetrical English: Adviser & Replay Lab (search snippet only)",
+      "publisher": "chessworld.net",
+      "url": "https://www.chessworld.net/english-opening-symmetrical-variation.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 1.c4 c5 the opening can stay quiet for several moves and then branch: White chooses between an early d4 break (2.Nf3 Nf6 3.d4, or the Anti-Benoni move order), a slow fianchetto set-up (2.g3 or 2.Nc3 Nc6 3.g3 with Bg2, then often Rb1 and b4), or a Maróczy-type bind with e4. Black either mirrors White, plays the double-fianchetto 'ultra-symmetrical' set-up, or adopts a Hedgehog formation. The game is a manoeuvring fight for d5 and d4, rarely forcing in the early middlegame. White tends to want to break the symmetry with d4 to get an unbalanced pawn structure.",
+  "white_ideas": [
+    { "idea": "Break symmetry with d2-d4 (for example 7.d4 in the mirrored lines) to create unequal pawn structures with winning chances.", "sources": ["s2"] },
+    { "idea": "Fianchetto (g3, Bg2) to control the long diagonal and d5, then queenside expansion with Rb1 and b4.", "sources": ["s3", "s5"] },
+    { "idea": "Maróczy bind with pawns on c4 and e4, restricting Black's pieces, though White lacks an obvious way to attack Black's pawn structure.", "sources": ["s4", "s1"] },
+    { "idea": "Botvinnik set-up: Nc3, g3, Bg2, d3, e4, Ne2, a flexible solid system that gains a grip on the centre and prepares b4 or f4.", "sources": ["s1", "s3"] },
+    { "idea": "Place a knight on d5 once the centre is clarified (own understanding; sources stress control of d5).", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Mirror White's moves to keep symmetry and prepare a central break with ...d5.", "sources": ["s2"] },
+    { "idea": "Hedgehog set-up (...b6, ...e6, ...d6, ...a6, Bb7, Be7) waiting for ...b5 or ...d5 at the right time.", "sources": ["s4", "s2"] },
+    { "idea": "Double fianchetto ('ultra-symmetrical' ...g6, ...Bg7, ...Nc6), described as fairly solid and hard to defeat at GM level.", "sources": ["s1"] },
+    { "idea": "Early asymmetry such as Fischer's ...e6 and ...Nge7 for direct pressure.", "sources": ["s2"] },
+    { "idea": "Queenside counterplay with ...a6 and ...b5; knights to c5/e5 from d7 in Hedgehog.", "sources": ["s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawn structure (both sides c-pawns on c4/c5, d-pawns on d3/d6 or d4 breaks).", "sources": ["s2"] },
+    { "structure": "Maróczy bind (White c4+e4 against Black's c5 traded for d4 pawn) producing a Hedgehog for Black.", "sources": ["s4", "s1"] },
+    { "structure": "Hedgehog: Black pawns a6, b6, d6, e6 behind a cramped but weakness-free position.", "sources": ["s4"] },
+    { "structure": "Double fianchetto symmetrical structure.", "sources": ["s1"] },
+    { "structure": "Transpositions to Queen's Gambit, Benoni or Reti-type structures after d4.", "sources": ["s5"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Moderately forcing at most. Exeter: positions are moderately forcing, favouring flexibility and creativity over sharp tactics. Wikipedia: Botvinnik system prioritises solid manoeuvring, double fianchetto is solid; Hedgehog is 'solid but flexible' and 'cramped but free of weaknesses' (Wikipedia). Chessable notes the opening offers flexibility and strategic complexity rather than memorisation. Sharper branch: Anti-Benoni/Four Knights lines with an early d4 (own understanding, not sourced).",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the root or main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound. English is used by Botvinnik, Petrosian, Karpov, Kasparov, Carlsen and Ding Liren in world championship matches (Wikipedia). Black's Hedgehog 'has proved its resilience' against the Maróczy bind.",
+      "sources": ["s1", "s5"]
+    },
+    "structure": {
+      "notes": "Depends on whether White breaks with d4. Mirrored or fianchetto lines keep the centre pawns on with tension (c-pawns face each other, d-pawn tension), pieces manoeuvre before contact: closed or tense. After d4 cxd4 Qxd4 / Maróczy structures give a semi-open centre with a half-open c- or d-file. The Hedgehog is a compact semi-open structure. A pure symmetrical centre is not locked but not opened either.",
+      "sources": ["s2", "s3", "s4", "s5"]
+    },
+    "approach": {
+      "notes": "Played at the top. The English is the fourth most popular opening and among the four most successful first moves; the symmetrical lines (Botvinnik system, Hedgehog, double fianchetto) are established GM choices. White can reach many of these set-ups (Botvinnik, fianchetto) against several Black defences, so it is system-like, but 1...c5 is a Black reply and the root has a full tree of theory.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little forced theory early, but the quality of play depends on understanding pawn structures that arise after White's d4 break, Maróczy bind and Hedgehog; Chessable says players are seeking flexibility rather than theoretical memorisation. Hedgehog needs sophisticated handling (Wikipedia). Studying White's side: fianchetto set-up plus a choice of d4 timing; many transpositions to learn.",
+      "sources": ["s2", "s4"]
+    }
+  },
+  "plan_phrases": [
+    "break symmetry with d4",
+    "Maróczy bind",
+    "Hedgehog structure",
+    "kingside fianchetto",
+    "queenside expansion with Rb1 and b4",
+    "control of d5",
+    "double fianchetto",
+    "central break with ...d5",
+    "knight outpost on d5"
+  ],
+  "sublines_that_differ": [
+    { "name": "Hedgehog Defense", "moves": "1. c4 c5 2. Nf3 Nf6 3. g3 b6 4. Bg2 Bb7 5. Nc3 e6 6. O-O Be7 7. d4 cxd4 8. Qxd4 d6", "how": "Black builds a cramped but resilient a6/b6/d6/e6 structure, waiting for ...b5 or ...d5; manoeuvring, solid." },
+    { "name": "Ultra-Symmetrical (double fianchetto)", "moves": "1. c4 c5 2. g3 g6 3. Bg2 Bg7 4. Nc3 Nc6", "how": "Both sides fianchetto; fairly solid and hard to beat at GM level." },
+    { "name": "Anti-Benoni", "moves": "1. d4 Nf6 2. c4 c5 3. Nf3", "how": "Reached from d4 move orders; White avoids the sharp Benoni and keeps it a symmetrical/Queen's-pawn type game." },
+    { "name": "Two Knights, Fianchetto", "moves": "1. c4 c5 2. Nc3 Nc6 3. g3", "how": "Botvinnik/Staunton-style quiet development." },
+    { "name": "Fischer's approach", "moves": "1. c4 c5 2. Nf3 Nf6 3. Nc3 Nc6 4. g3 g6 5. Bg2 Bg7 6. O-O O-O (then ...e6 and ...Nge7)", "how": "Early asymmetry by Black for direct pressure." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "Both sides mirror each other's first move, leading to a subtle battle for control of key squares, particularly d5.",
+        "verdict": "supported",
+        "note": "Sources emphasise control of d5 and d4.",
+        "sources": ["s3", "s5"]
+      },
+      {
+        "claim": "The game often transposes into Queen's Pawn or Reti-style positions.",
+        "verdict": "supported",
+        "note": "Queen's Gambit and Benoni transpositions are named; 'Reti-style' is loosely true (the same position arises via 1.Nf3 c5 2.c4). Own understanding for Reti.",
+        "sources": ["s5"]
+      },
+      {
+        "claim": "It demands a deep understanding of different pawn structures and long-term plans.",
+        "verdict": "supported",
+        "note": "Hedgehog and Maróczy structures need handling.",
+        "sources": ["s4", "s2"]
+      },
+      {
+        "claim": "It suits patient strategic players who prefer manoeuvring to immediate sharp confrontation.",
+        "verdict": "supported",
+        "note": "Exeter and Wikipedia describe manoeuvring/solid character; note Black can pick sharper branches.",
+        "sources": ["s3", "s1"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White develops with Nf3, g3, Bg2 for the long diagonal and d5, then Rb1 and b4.",
+        "verdict": "supported",
+        "note": "Queenside attack with Rb1 and b4 named for symmetrical structures.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Black mirrors White's set-up, prepares ...d5, or plays ...a6 and ...b5 for queenside counterplay.",
+        "verdict": "supported",
+        "note": "...b5 is a Hedgehog break; ...d5 central break named.",
+        "sources": ["s2", "s4"]
+      },
+      {
+        "claim": "Both sides aim to prove their set-up is slightly better or exploit the symmetry by breaking it first.",
+        "verdict": "supported",
+        "note": "White typically plays d4 to break symmetry.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Knights are manoeuvred to outposts such as d5 (White) or d4 (Black) once the centre is clarified.",
+        "verdict": "unverifiable",
+        "note": "Plausible; sources stress d5 control; d4 outpost for Black after d4 trades is own understanding.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "ruy-lopez-morphy-defense",
+  "root": {
+    "name": "Ruy Lopez: Morphy Defense",
+    "eco": "C70",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6",
+    "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    { "id": "s1", "title": "Ruy Lopez (Morphy Defense section)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Ruy_Lopez", "kind": "reference" },
+    { "id": "s2", "title": "Ruy Lopez Opening Guide: Main Lines, Ideas & Traps", "publisher": "Chess Doctrine", "url": "https://chessdoctrine.com/chess-openings/kings-pawn/ruy-lopez/", "kind": "article" },
+    { "id": "s3", "title": "Search snippet only: Ruy Lopez guide results (not opened; summary aggregated from several result pages)", "publisher": "oldschoolchess.com and others", "url": "https://oldschoolchess.com/learn/openings/ruy-lopez", "kind": "article" }
+  ],
+  "overview": "3...a6 is the main road of the Ruy Lopez (roughly two thirds to 90 per cent of Ruy games per the sources). It asks White's bishop an immediate question: Bxc6 (Exchange) or the retreat 4.Ba4, after which Black can play ...b5 to kick the bishop again. The main line is the Closed Ruy (5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3), a locked, slow centre where White builds the c3-d4 pawn duo and reroutes the knight Nb1-d2-f1-g3, and Black seeks queenside counterplay with ...c5/...c4 or ...Bb7 and ...Re8/...Bf8. Alternatives at move five or later include the Open Variation (5...Nxe4), the Arkhangelsk (5...b5), and Marshall Attack (8...d5), with Anti-Marshall systems used by White to dodge it. Play is typically slow positional manoeuvring (the 'Spanish torture': a small White edge pressed for forty moves) with very deep theory. It has been a main weapon of nearly every world champion.",
+  "white_ideas": [
+    { "idea": "Build the c3-d4 centre after castling and Re1, supporting e4.", "sources": ["s1", "s2"] },
+    { "idea": "Spanish manoeuvre: Nb1-d2-f1-g3 reinforcing e4 and heading for the kingside.", "sources": ["s1", "s2"] },
+    { "idea": "Keep pressure on e5 and d6 with the Bb3 and Re1; apply long-term pressure rather than seek immediate material.", "sources": ["s3"] },
+    { "idea": "Avoid the Marshall with Anti-Marshall systems (8.a4 or 8.h3).", "sources": ["s2"] },
+    { "idea": "Alternatives: Exchange with 4.Bxc6 dxc6 for a better pawn structure and endgame; Anderssen 5.d3 and Tarrasch 5.Nc3 for quieter play.", "sources": ["s1", "s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Kick the bishop with ...a6 then ...b5, gaining queenside space and the ...a6-b5-d6 chain.", "sources": ["s1", "s2"] },
+    { "idea": "Closed set-up with ...Be7, ...d6, ...O-O, then Chigorin (...Na5, ...c5), Breyer (...Nb8-d7) or Zaitsev (...Bb7, ...Re8) set-ups.", "sources": ["s1"] },
+    { "idea": "Queenside counterplay with ...c5 and ...c4.", "sources": ["s2"] },
+    { "idea": "Open Variation 5...Nxe4 for active piece play and the ...d5 break.", "sources": ["s1"] },
+    { "idea": "Marshall Attack, a pawn sacrifice with ...d5 for a strong attack; considered so sound that White often avoids it.", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Closed Ruy Lopez: pawns on e4/d3 or c3 vs e5/d6 locked or in tension, White later plays d4; centre mostly closed with slow manoeuvring", "sources": ["s1", "s2"] },
+    { "structure": "Exchange Variation: White gets 4v3 kingside majority, Black has doubled c-pawns and bishop pair", "sources": ["s3"] },
+    { "structure": "Open Variation: after ...Nxe4 and d4 exd4 the centre opens and pieces become active", "sources": ["s1"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Main Closed lines are slow and manoeuvring, rarely forcing early, and Black has few ways to lose quickly, but the root as a whole includes the Marshall and Open lines which are forcing. Described as a slow positional struggle ('Spanish torture') with deep theory rather than tactical fireworks.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root position has no gambit. The Marshall Attack sub-line is a Black pawn gambit (8...d5) and the Open Variation briefly leaves e4 pawn, but neither is the main line.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound at every level; main weapon of nearly every world champion. Equal or very slight White edge with best play. Marshall Attack is described as 'so sound' White often sidesteps it.",
+      "sources": ["s2"]
+    },
+    "structure": {
+      "notes": "Main line is the Closed Ruy: e4/e5 pawns stay, c3-d4 prepared, centre locked or in tension for a long time. Open and Exchange branches open the centre. The central pawn skeleton usually stays on early.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "Not a set-up; a heavily theoretical main line played by world champions and elite players. Berlin (3...Nf6) is the preferred drawing weapon at the top, but the Morphy remains regularly played in top-level competition.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Theory extends well beyond move thirty and most lines are deeply explored. The closed structures also demand a good understanding of piece manoeuvres (Nbd2-f1-g3, Black's counterplay timings). One source says it requires learners to master heavy theory but you need not memorise twenty moves to play well. Judged for Black as the defending side studying 3...a6 lines; for White the Closed Ruy is the same.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "c3-d4 central build-up",
+    "Spanish knight manoeuvre (Nbd2-f1-g3)",
+    "queenside expansion ...b5 ...c5",
+    "pressure on e5",
+    "Marshall Attack counterplay",
+    "bishop pair vs structure in the Exchange",
+    "kingside attack from a locked centre"
+  ],
+  "sublines_that_differ": [
+    { "name": "Ruy Lopez: Marshall Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5", "how": "Black gives a pawn for a sharp initiative and attack; forcing and heavily analysed." },
+    { "name": "Ruy Lopez: Open Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4", "how": "Open centre, active piece play, more tactical than the Closed." },
+    { "name": "Ruy Lopez: Exchange Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6", "how": "Simplifying, pawn-structure-based endgame plans, little early theory." },
+    { "name": "Ruy Lopez: Morphy Defense, Anderssen Variation", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. d3", "how": "Quiet, low-theory set-up that avoids the main lines." },
+    { "name": "Ruy Lopez: Arkhangelsk", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O b5 6. Bb3 Bb7", "how": "Black develops the bishop to b7 early, an active alternative to the Closed." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Morphy Defense is the cornerstone of the Ruy Lopez, the most classical response.", "verdict": "supported", "note": "Described as the main road and most prominent response; most Ruy games go this way.", "sources": ["s2", "s3"] },
+      { "claim": "3...a6 questions the Spanish bishop immediately.", "verdict": "supported", "note": "It forces White to decide between Bxc6 and retreat.", "sources": ["s1", "s3"] },
+      { "claim": "It initiates a deep, complex struggle for central control and initiative.", "verdict": "supported", "note": "Deep theory and long-term strategic struggle; 'initiative' is less apt for the slow Closed lines but not wrong.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Execute the c3-d4 central push.", "verdict": "supported", "note": "Standard White plan in the Closed Ruy.", "sources": ["s1", "s2"] },
+      { "claim": "White: Reroute the knight (Nf3-d2-f1-g3).", "verdict": "wrong", "note": "The standard manoeuvre is with the queen's knight, Nb1-d2-f1-g3, not Nf3-d2. The Nf3 stays on f3 to support d4.", "sources": ["s1", "s2"] },
+      { "claim": "White: Prepare a kingside attack.", "verdict": "supported", "note": "Knight to g3, Nf5/h4 ideas; the 'Spanish torture' often meets with pressure on both wings.", "sources": ["s2"] },
+      { "claim": "Black: Solidify the centre with ...d6.", "verdict": "supported", "note": "Standard in the Closed (...Be7, ...b5, ...d6, ...O-O).", "sources": ["s1"] },
+      { "claim": "Black: Prepare a queenside counter-attack with ...b5.", "verdict": "supported", "note": "...b5 kicks the bishop and gains space; ...c5/...c4 follow.", "sources": ["s1", "s2"] },
+      { "claim": "Black: Challenge White's bishop pair.", "verdict": "unverifiable", "note": "No source names challenging White's bishop pair as a Black plan in the Morphy. In the Exchange Variation it is Black who has the bishop pair. Own understanding: Black's usual plan against the Bb3 is ...Na5 (Chigorin) to trade it off.", "sources": ["s3"] },
+      { "claim": "Black: Seek the ...d5 pawn break.", "verdict": "supported", "note": "...d5 is the central break in the Open Variation and the Marshall (and the Berlin/Arkhangelsk lines).", "sources": ["s1", "s2"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

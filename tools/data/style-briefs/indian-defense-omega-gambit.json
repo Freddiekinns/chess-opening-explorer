@@ -1,0 +1,51 @@
+{
+  "slug": "indian-defense-omega-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Omega Gambit",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. e4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White offers the e4 pawn at once. After 2...Nxe4 White plays 3.Bd3 (the Arafat idea) and after ...Nf6 develops with Nf3 or Bg5 for a lead in development. Black can keep the pawn and return it at a convenient time, or decline with ...e6 or ...d6. The line is a trappy surprise weapon.",
+  "white_ideas": [
+    { "idea": "Gain time with Bd3, Nf3 or Bg5 and Qe2, building a lead in development." },
+    { "idea": "Take the centre with d4 and e4 if Black does not take the pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Nxe4 and bring the knight back with ...Nf6, then ...d5 and ...e6." },
+    { "idea": "Return the pawn when needed and trade pieces." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with White's d4 pawn and a lead in development against Black's extra pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early pawn offer and fast development; one slip by Black or White can lose quickly." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2...Nxe4 3.Bd3 Nf6 White has no immediate way to regain the pawn."
+    },
+    "soundness": { "notes": "White's compensation is considered insufficient against sound play." },
+    "structure": { "notes": "The centre opens after ...Nxe4 and White's pieces aim at it." },
+    "approach": { "notes": "Strong players do not use it; played for surprise." },
+    "level": { "reason": "memory", "notes": "A dubious line is never a first repertoire choice; needs to know the traps." }
+  },
+  "plan_phrases": ["lead in development", "early queen", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "2...e6 or 2...d6 (declined)", "moves": "1. d4 Nf6 2. e4 e6", "how": "No material changes hands, so a quiet game with a big White centre." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Early gambit with development leads and quick tactics." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives the e4 pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.7, "reason": "Strong players consider the compensation insufficient." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "The centre opens after ...Nxe4 and play is on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "A dubious line is never Beginner; the traps need knowing." },
+    "plans": { "value": ["lead_in_development", "early_queen"], "reason": "White gives a pawn for development, with the queen often active early." }
+  }
+}

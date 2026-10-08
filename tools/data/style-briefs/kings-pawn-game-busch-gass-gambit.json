@@ -1,0 +1,47 @@
+{
+  "slug": "kings-pawn-game-busch-gass-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Busch-Gass Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 Bc5",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black leaves e5 undefended and meets 3.Nxe5 with ...Nc6 (Chiodini Gambit) or the bishop sacrifice ...Bxf2+. White takes the pawn and then has to survive threats on f2 and the king; if White declines or trades cleanly, Black is simply a pawn down. Black plays for quick development and tricks on f2, with little sound compensation.",
+  "white_ideas": [
+    { "idea": "Take e5 with the knight and then trade or kick the Nc6 to cash in the extra pawn" },
+    { "idea": "Meet ...Bxf2+ with Kxf2 and keep the king safe, returning material if needed" },
+    { "idea": "Develop quickly with d4 or Nxc6" }
+  ],
+  "black_ideas": [
+    { "idea": "Use the f2 weakness and ...Nc6 for development in return for the e5 pawn" },
+    { "idea": "Piece sacrifice on f2 for an exposed king" }
+  ],
+  "typical_structures": [
+    { "structure": "White a pawn up with Black pieces developed and no central pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black takes risks for development and tricks; one wrong White move gives Black attacking chances. Concrete tactics on f2 and the e-file." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can take e5 and keep it; Black must justify with development." },
+    "soundness": { "notes": "Dubious; White can safely take the pawn." },
+    "structure": { "notes": "Open Game, quickly open lines." },
+    "approach": { "notes": "Offbeat; strong players do not choose 2...Bc5 as Black." },
+    "level": { "reason": "neither", "notes": "Easy to learn but dubious, so never beginner." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f2"],
+  "sublines_that_differ": [
+    { "name": "Chiodini Gambit", "moves": "1. e4 e5 2. Nf3 Bc5 3. Nxe5 Nc6", "how": "Black offers the pawn and plays on development; if 4.Nxc6 dxc6 White is simply a pawn up." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Gambit lines with tricks on f2 and the e-file." },
+    "gambit": { "value": "black", "confidence": 0.85, "reason": "Black allows Nxe5 and plays for development." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "White can keep the pawn with little risk." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open lines and quick development." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.7, "reason": "Dubious gambit, not a beginner choice." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for development in return for a pawn." }
+  }
+}

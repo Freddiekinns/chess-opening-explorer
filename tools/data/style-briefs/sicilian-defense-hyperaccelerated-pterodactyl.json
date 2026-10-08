@@ -1,0 +1,49 @@
+{
+  "slug": "sicilian-defense-hyperaccelerated-pterodactyl",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Hyperaccelerated Pterodactyl",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6 3. d4 Bg7",
+    "fen": "rnbqk1nr/pp1pppbp/6p1/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-fianchetto",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black skips ...Nc6 and ...d6 to put the bishop on g7 and use the early ...Qa5 sortie to pin or harass the c3 knight, aiming for ...cxd4 and ...Nf6. White's main replies are 4.Nc3 (cxd4 Nxd4 Qa5 and Black works with the queen to restrain the pawn), 4.c4 (Maróczy-style bind) and 4.dxc5 Qa5+ with tactical chances, and the position is a flexible Sicilian where Black avoids the main-line Dragon theory but keeps a flexible structure. The play is unusual but sound.",
+  "white_ideas": [
+    { "idea": "Take the Maróczy bind with c4 and Be2, Nc3 and play against the g7 bishop" },
+    { "idea": "Develop Nc3 and Be3 and play Bb5+ or Nb5 ideas against ...Qa5" },
+    { "idea": "Take the c5 pawn with dxc5 Qa5+ and keep the extra material" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the g7 bishop and play ...Qa5 to harass Nc3 and e4" },
+    { "idea": "Capture ...cxd4 and fight for the d5 square with ...Nf6 and ...d6" },
+    { "idea": "Keep the move order flexible and transpose to the Accelerated Dragon" }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian with White e4 against ...d6/...g6 and Black's queenside pawn majority, half-open c-file" },
+    { "structure": "Maróczy bind after c4 with White pawns on c4 and e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unorthodox with an early queen move, but the main line 4.Nc3 or 4.c4 is not forcing; neither solid nor consistently sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given in the main lines; 4.dxc5 Qa5+ regains the pawn." },
+    "soundness": { "notes": "Playable and sound, if less theory-backed than the Accelerated Dragon." },
+    "structure": { "notes": "Typical Sicilian structure with a fixed asymmetric centre and half-open c-file." },
+    "approach": { "notes": "Played by strong players occasionally, a sideline rather than a main-line defence." },
+    "level": { "reason": "understanding", "notes": "Fewer main lines to memorise than the Dragon, but the ...Qa5 tactics need care." }
+  },
+  "plan_phrases": ["fianchetto", "early queen", "Maróczy bind"],
+  "sublines_that_differ": [
+    { "name": "Exchange Variation", "moves": "1. e4 c5 2. Nf3 g6 3. d4 Bg7 4. dxc5 Qa5+ 5. Nc3 Bxc3+ 6. bxc3 Qxc3+", "how": "Black wins back the pawn with a forcing sequence that opens the position." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Unorthodox but not forcing in the main 4.Nc3 and 4.c4 lines." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable at top level." },
+    "structure": { "value": "semi_open", "confidence": 0.8, "reason": "A Sicilian with a fixed asymmetric centre and a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "A less common branch that strong players do use, so not offbeat." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Less memorisation than the main Sicilians, but the early queen needs care." },
+    "plans": { "value": ["fianchetto", "early_queen"], "reason": "Bg7 and an early ...Qa5 sortie." }
+  }
+}

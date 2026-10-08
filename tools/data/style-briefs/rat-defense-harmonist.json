@@ -1,0 +1,44 @@
+{
+  "slug": "rat-defense-harmonist",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Harmonist",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. f4",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays f4 at once, taking space and building an Austrian Attack-style centre; Black usually plays 2...Nf6 3.Nc3 g6 4.Nf3 Bg7, reaching a Pirc with f4 already played. White aims for e5 and a kingside attack with Bc4 and O-O, while Black counterattacks the centre with ...c5 or ...e5. Positions are imbalanced with White's space against Black's flank counterplay.",
+  "white_ideas": [
+    { "idea": "Use f4 and e4 with Nf3, Bc4 and castle for a kingside attack or e5 space gain" },
+    { "idea": "Take a broad centre with d4 and push e5 to cramp Black" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the bishop on g7 and undermine the centre with ...c5 or ...e5" },
+    { "idea": "Strike at the overextended f4/e4 pawns with ...c5 and ...Nc6, or ...d5" }
+  ],
+  "typical_structures": [{ "structure": "Austrian-style Pirc: White e4/f4 centre against ...d6/g6 fianchetto" }],
+  "axis_evidence": {
+    "character": { "notes": "Austrian-style centre invites mutual attacks and sharp tactics; imbalanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The e4/f4 centre against a ...d6 fianchetto; may be attacked or locked; undecided." },
+    "approach": { "notes": "A recognised line against the Pirc and played by strong players; less common than 2.d4." },
+    "level": { "reason": "understanding", "notes": "Plans are clear for White, but Black needs accurate timing of ...c5 or ...e5." }
+  },
+  "plan_phrases": ["kingside attack", "space advantage", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Quiet 2.f4 lines", "moves": "2. f4 Nf6 3. Nc3 g6 4. Nf3 Bg7 5. Bc4 O-O 6. O-O Nc6 7. d3", "how": "White skips d4 and plays a slower game with d3." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "White's Austrian-style set-up means mutual attacks and one-move errors." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A mainstream Pirc set-up." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The e4/f4 centre faces breaks and is not yet fixed." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A recognised line in the Pirc family." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Needs a feel for Austrian Attack plans but not a long tree." },
+    "plans": { "value": ["kingside_attack", "space_advantage"], "reason": "White's f4 and e4 aim at space and an attack on the king." }
+  }
+}

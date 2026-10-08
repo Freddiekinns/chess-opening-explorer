@@ -1,0 +1,44 @@
+{
+  "slug": "zukertort-opening-lemberger-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Lemberger Gambit",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. e4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White offers the e-pawn at once with 2.e4, a move-order trick related to the Alekhine-style attack on an advanced knight. After 2...Nxe4 White plays 3.Qe2 or 3.Nc3 for quick development, hoping for a lead in development against Black's centralised knight. Black can keep the pawn and neutralise by returning it, so White's compensation is thin.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Nc3, Qe2 and d3 to harass the e4 knight" }
+  ],
+  "black_ideas": [
+    { "idea": "Take on e4, retreat the knight (...Nf6 or ...Nc5) and return the pawn for a safe, equal position" }
+  ],
+  "typical_structures": [
+    { "structure": "White a pawn down with an open e-file and development lead" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "White gives a pawn and plays for tricks; I expect sharp, tactical play, but I am unsure of the lines." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "2...Nxe4 can be kept if Black avoids the early traps." },
+    "soundness": { "notes": "Strong players regard it as unsound for White; scores through surprise." },
+    "structure": { "notes": "Centre cleared on the e-file; open lines." },
+    "approach": { "notes": "Strong players hardly ever play it." },
+    "level": { "reason": "memory", "notes": "Dubious so not Beginner; intermediate by default." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "John Tracy Gambit", "moves": "1. e4 Nf6 2. Nf3", "how": "Same position by transposition." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "A pawn sacrificed for early initiative; forcing play." },
+    "gambit": { "value": "white", "confidence": 0.8, "reason": "White gives the e-pawn which Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.7, "reason": "Considered unsound by strong players." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Open e-file and lines after ...Nxe4." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.55, "reason": "Dubious so never Beginner; limited depth." },
+    "plans": { "value": ["lead_in_development"], "reason": "White hopes to use a development lead for the pawn." }
+  }
+}

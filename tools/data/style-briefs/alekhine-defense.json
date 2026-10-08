@@ -1,0 +1,110 @@
+{
+  "slug": "alekhine-defense",
+  "root": {
+    "name": "Alekhine Defense",
+    "eco": "B02",
+    "moves": "1. e4 Nf6",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Alekhine's Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alekhine%27s_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Alekhine's Defense - Chess Openings",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Alekhines-Defense",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Alekhine Defence search snippets (ChessBase Learn, Simplify Chess, TheChessWebsite)",
+      "publisher": "various, search snippets only",
+      "url": "https://learn.chessbase.com/en/page/the-alekhine-defence",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black attacks e4 at once with 1...Nf6 and, after 2.e5 Nd5, invites White to build a broad centre with c4, d4 and perhaps f4, planning to attack that centre later with ...d6, ...Nb6, ...Bg4, ...c5 and ...dxe5. White's job is to keep or use the extra space, either with the most ambitious Four Pawns Attack (4.c4 Nb6 5.f4), the popular Modern Variation 4.Nf3, or the less forcing Exchange 5.exd6; 2.Nc3 avoids the main line entirely. Positions lose symmetry from the start and are unbalanced, with a space edge for White against Black's counterplay on the overextended pawns. The opening is regarded as sound, original and tricky but risky (moderate to high), and is only moderately common at the top: Fischer, Korchnoi, Ivanchuk and occasionally Carlsen have played it.",
+  "white_ideas": [
+    { "idea": "Use the space advantage and big pawn centre (c4, d4, f4) before Black's counterplay arrives", "sources": ["s1", "s3"] },
+    { "idea": "Modern Variation 4.Nf3: modest space advantage with piece play and flexibility", "sources": ["s1"] },
+    { "idea": "Four Pawns Attack for a kingside attack on an overextended centre; sharp tactical positions", "sources": ["s1", "s3"] },
+    { "idea": "Exchange Variation 5.exd6 for a stable edge, symmetrical (...exd6) or imbalanced (...cxd6) structure", "sources": ["s1", "s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Provoke weaknesses in White's centre (d4, c4, e5) and attack the overextended pawns with ...d6, ...Bg4, ...g6, ...c5", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Capture the overextended e5 pawn, the main liability in the Four Pawns", "sources": ["s3"] },
+    { "idea": "Develop actively and counterattack; trade pieces to relieve space disadvantage", "sources": ["s1", "s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "White's big pawn centre (c4, d4, e5, f4) against Black's piece pressure; unbalanced, with no symmetry", "sources": ["s1", "s3"] },
+    { "structure": "Exchange Variation: symmetric after 5...exd6, imbalanced after 5...cxd6", "sources": ["s2"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: provocative, hypermodern, the game immediately loses symmetry and balance; sharp tactical positions in the Four Pawns. Chess.com: original and tricky but risky, moderate to high risk; Black must move the knight repeatedly and accept space disadvantage. Exchange Variation is calmer (31% draws). Main lines are double-edged and unbalanced.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material sacrificed; Black gives up space not pawns.",
+      "sources": ["s1", "s2"]
+    },
+    "soundness": {
+      "notes": "Fundamentally sound; Black has good practical results according to theory experts, though it requires precise play. Regarded as risky by Chess.com.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "White advances pawns to e5, d4, c4 (and f4), so the centre is a large pawn mass with tension that Black attacks; fluid rather than locked in the Four Pawns, symmetric in some Exchange lines. Not a locked centre in general.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "A specific reply to 1.e4, not a universal set-up. Relatively uncommon at top level (only the eighth-most popular reply to 1.e4 per Chess.com) but scores competitively; Fischer, Korchnoi, Ivanchuk and occasionally Carlsen have used it.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Wikipedia: moderate theoretical demands, requiring specific knowledge of main variations to avoid pitfalls. Chess.com: needs solid understanding and tactical acumen; suits counterattacking players wanting a less-studied weapon.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "undermine the overextended centre",
+    "space advantage for White",
+    "piece play against pawn centre",
+    "Four Pawns Attack",
+    "...Bg4 pin",
+    "...dxe5 capture",
+    "counterattack on e5"
+  ],
+  "sublines_that_differ": [
+    { "name": "Four Pawns Attack", "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4", "how": "Sharp and tactical; White's most ambitious try." },
+    { "name": "Modern Variation", "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3", "how": "Most popular today; positional, modest space edge." },
+    { "name": "Exchange Variation", "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6", "how": "Less forcing; symmetric or imbalanced pawn structures depending on recapture." },
+    { "name": "Scandinavian Variation (2.Nc3)", "moves": "1. e4 Nf6 2. Nc3", "how": "Declines the e5 advance; transposes to different positions such as Scandinavian or Pirc-like structures." }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "The Alekhine Defense is a provocative and hypermodern response to 1.e4", "verdict": "supported", "note": "Wikipedia says provocative and hypermodern.", "sources": ["s1"] },
+      { "claim": "Black lures White's pawns forward and concedes a space advantage with a plan of undermining the extended pawn structure later", "verdict": "supported", "note": "Core idea.", "sources": ["s1", "s2"] },
+      { "claim": "It leads to sharp, unbalanced positions", "verdict": "supported", "note": "Unbalanced from move two; Four Pawns is sharp, Exchange and Modern are calmer, so 'sharp' fits the main idea more than every line.", "sources": ["s1", "s2"] },
+      { "claim": "It is ideal for dynamic, counter-attacking players comfortable defending", "verdict": "supported", "note": "Chess.com: players comfortable with counterattacking strategy.", "sources": ["s2"] }
+    ],
+    "common_plans": [
+      { "claim": "White: Solidify the central space advantage, develop rapidly, and use extra territory to launch an attack before Black generates counterplay", "verdict": "supported", "note": "Space advantage and kingside attack in the Four Pawns.", "sources": ["s1", "s3"] },
+      { "claim": "Black: Undermine White's centre with ...d6 followed by ...c5 or ...d5, targeting advanced pawns", "verdict": "supported", "note": "...d6 is standard; ...c5 and ...dxe5 are used; ...d5 less typical since the pawn is on d6 and d5 is occupied by the knight early; own understanding that ...d5 is less common.", "sources": ["s1", "s2"] },
+      { "claim": "White: Control key squares (d4, f4) to restrict Black's pieces and prevent pawn breaks", "verdict": "supported", "note": "Space-based restriction is the White idea.", "sources": ["s1"] },
+      { "claim": "Black: Trade pieces to relieve pressure and simplify into an endgame where White's advanced pawns may become weaknesses", "verdict": "supported", "note": "Overextended pawns can become targets; piece trades help the cramped side.", "sources": ["s1", "s3"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 2 }
+}

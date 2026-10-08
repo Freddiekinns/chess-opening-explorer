@@ -1,0 +1,48 @@
+{
+  "slug": "english-opening-the-whale",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: The Whale",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. c4",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "White adds c4 to e4, a reversed Sicilian-style grip on d5 that is also seen after 1.c4 e5 2.Nc3 and 3.e4 or the Botvinnik System. Black usually answers 2...Nf6 or 2...Nc6, takes space with ...d6 or aims for ...d5, and White follows with Nc3, g3, Bg2 and d3 or Ne2. The play is slow and manoeuvring with White's centre not yet fixed; I am not sure how it is tested in practice, so the evidence is kept short.",
+  "white_ideas": [
+    { "idea": "Control d5 with c4 and e4 and develop Nc3, g3, Bg2" },
+    { "idea": "Expand on the queenside with b4 and Rb1 or build a bind" },
+    { "idea": "Transpose to Botvinnik or Four Knights English lines" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...d5 or ...f5" },
+    { "idea": "Develop ...Nf6, ...Nc6, ...Bc5 and castle" },
+    { "idea": "Use the extra space in the centre and aim for ...d5" }
+  ],
+  "typical_structures": [
+    { "structure": "Reversed Sicilian: White c4/e4/d3 against Black e5/d6 or a ...d5 break" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A slow, positional game; no sharp forcing lines expected." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No pawn is offered." },
+    "soundness": { "notes": "Sound but not testing; Black can take the centre with ...d5." },
+    "structure": { "notes": "Centre not locked: e4/c4 against e5, with ...d5 break pending." },
+    "approach": { "notes": "A less common but respectable choice, not a set-up played against everything." },
+    "level": { "reason": "understanding", "notes": "Few memorised lines; reversed Sicilian plans need judgement." }
+  },
+  "plan_phrases": ["reversed Sicilian", "control of d5", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "Black takes the centre", "moves": "1. e4 e5 2. c4 Nf6 3. Nc3 d5", "how": "Black strikes back at once and can equalise easily." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Slow, manoeuvring play that is neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "A playable if modest choice." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre tension with e4/c4 against e5 and no lock." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Less common than the main lines but played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Few lines to learn but reversed Sicilian plans need understanding." },
+    "plans": { "value": ["knight_outpost", "queenside_expansion"], "reason": "Control d5 and expand on the queenside." }
+  }
+}

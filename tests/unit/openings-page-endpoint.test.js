@@ -100,6 +100,8 @@ describe('GET /api/openings/page/:fen (aggregate detail-page payload)', () => {
     expect(courses).toHaveProperty('searchLinks');
     // Tree context resolves for a known position
     expect(tree === null || typeof tree === 'object').toBe(true);
+    // No style-tags file in this fixture: the page still loads, with no tags.
+    expect(opening.style_profile).toBeNull();
   });
 
   it('returns null stats when no popularity data exists for the FEN', async () => {

@@ -1,7 +1,7 @@
 # Opening Family Rollups — Phase 1 Completion Report
 
 **Branch:** `feature/opening-family-rollups` **Shipped:** 2026-05-08 **Spec:**
-`.github/memory-bank/specs/2026-05-04-opening-family-rollups.md` **Plan:**
+`docs/proposals/2026-05-04-opening-family-rollups-spec.md` **Plan:**
 `docs/superpowers/plans/2026-05-04-opening-family-rollups-phase-1.md`
 
 ---

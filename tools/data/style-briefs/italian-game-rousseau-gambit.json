@@ -1,0 +1,46 @@
+{
+  "slug": "italian-game-rousseau-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Rousseau Gambit",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "italian-game",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black counterattacks at once with 3...f5, opening the f-file but weakening the king. White's best is usually 4.d3 fxe4 5.dxe4 or 4.exf5, or 4.Nxe5 Nxe5 5.d4 with a pawn up and a big centre. Black gets tempo and open lines for the pawn but the king is exposed on the e8-h5 diagonal. It is a trappy line that sound play refutes.",
+  "white_ideas": [
+    { "idea": "Take the pawns on e5 or f5 and use d4 to attack the knight and bishop." },
+    { "idea": "Exploit the weakened e8-h5 diagonal and kingside with Qh5+ and Nxe5 tactics." }
+  ],
+  "black_ideas": [
+    { "idea": "Open the f-file and play for tempo with ...fxe4, ...Nf6 and ...d5." },
+    { "idea": "Set traps in the opening and attack the white king if White errs." }
+  ],
+  "typical_structures": [
+    { "structure": "Open position with the f-file and Black's weakened kingside, White usually ahead a pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Wild tactical play where Black's king is exposed; mutual tactics but heavily weighted to White." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can take on e5 or f5 and keep the pawn." },
+    "soundness": { "notes": "Considered unsound; strong players refute it with 4.exf5 or 4.d3 and Nxe5." },
+    "structure": { "notes": "Open centre and open f-file." },
+    "approach": { "notes": "Hardly played by strong players; a surprise line." },
+    "level": { "reason": "memory", "notes": "Trappy; Black needs to know the traps, but the line is not a good first repertoire choice." }
+  },
+  "plan_phrases": ["lead in development", "countergambit"],
+  "sublines_that_differ": [
+    { "name": "4.exf5 Nf6", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 f5 4. exf5 Nf6", "how": "A quieter pawn grab where Black has some development but remains a pawn down." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.8, "reason": "Early counter-gambit with open lines and king exposure." },
+    "gambit": { "value": "black", "confidence": 0.85, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Strong players consider it unsound; it works on traps." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open centre and open f-file straight away." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Played mostly for surprise and seldom by strong players." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious line is never Beginner; needs traps and theory." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for tempo and open lines rather than a structural plan." }
+  }
+}

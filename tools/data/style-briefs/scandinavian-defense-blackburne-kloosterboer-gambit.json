@@ -1,0 +1,42 @@
+{
+  "slug": "scandinavian-defense-blackburne-kloosterboer-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Blackburne-Kloosterboer Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 c6",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "scandinavian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black offers a second pawn with 2...c6; after 3.dxc6 Nxc6 Black has two pawns' worth of development, with open lines and quick piece play, though White can keep the material with careful development. White's usual plan is d4, Nf3 and Be2 or Nc3 and a sound pawn extra. Black aims for fast development and an attack but is objectively worse.",
+  "white_ideas": [
+    { "idea": "Take the pawn with dxc6 and develop sensibly with d4, Nf3, Nc3 and Be2" },
+    { "idea": "Return material at the right moment to neutralise Black's attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Recapture with ...Nc6 and develop rapidly with ...e5, ...Nf6 and ...Bc5 or ...Bg4" },
+    { "idea": "Create tactical problems and open the position for the pieces" }
+  ],
+  "typical_structures": [{ "structure": "White extra centre pawn; Black pieces developed and open e- and d-files" }],
+  "axis_evidence": {
+    "character": { "notes": "Gambit with open lines and quick development; double-edged with real risk for Black." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 2...c6 3.dxc6 Nxc6 Black has given a pawn and White can keep it." },
+    "soundness": { "notes": "Considered dubious; White can consolidate the extra pawn." },
+    "structure": { "notes": "Lines open early after dxc6 and ...Nxc6." },
+    "approach": { "notes": "Rarely chosen by strong players; a surprise weapon." },
+    "level": { "reason": "memory", "notes": "Needs the traps and move orders; dubious so not beginner." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A pawn gambit with open lines and risk for Black." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives a pawn that White can keep." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.55, "reason": "Considered to give Black too little for the pawn." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Open lines come quickly after the recapture on c6." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "Traps matter and it is dubious, so not beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black gambits a pawn for development." }
+  }
+}

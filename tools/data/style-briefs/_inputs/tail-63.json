@@ -1,0 +1,426 @@
+[
+  {
+    "slug": "kadas-opening-myers-variation",
+    "rank": 1349,
+    "root": {
+      "name": "Kádas Opening: Myers Variation",
+      "eco": "A00",
+      "moves": "1. h4 d5 2. d4 c5 3. e4",
+      "fen": "rnbqkbnr/pp2pppp/8/2pp4/3PP2P/8/PPP2PP1/RNBQKBNR b KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Kadas Opening: Myers Variation",
+      "Irregular Openings: Myers Variation"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kadas-opening",
+      "name": "Kádas Opening",
+      "moves": "1. h4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "van-geet-opening-pfeiffer-gambit",
+    "rank": 1350,
+    "root": {
+      "name": "Van Geet Opening: Pfeiffer Gambit",
+      "eco": "A00",
+      "moves": "1. Nc3 d5 2. f4 d4 3. Ne4 e5",
+      "fen": "rnbqkbnr/ppp2ppp/8/4p3/3pNP2/8/PPPPP1PP/R1BQKBNR w KQkq - 0 4"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [
+      {
+        "name": "Van Geet Opening: Pfeiffer Gambit, Sleipnir Countergambit",
+        "moves": "1. Nc3 d5 2. f4 d4 3. Ne4 e5 4. Nf3"
+      }
+    ],
+    "parent": {
+      "slug": "van-geet-opening",
+      "name": "Van Geet Opening",
+      "moves": "1. Nc3",
+      "overview": "White develops a knight to c3, controlling e4 and d5, and keeps the pawn structure undecided to choose a set-up once Black replies. The knight blocks the c-pawn, so Queen's Gambit and English structures are not available without reorganising. Main replies: 1...d5 (the cleanest; 2.e4 transposes to obscure Scandinavian lines, or the Van Geet Attack after 2...d4 3.Nce2), 1...e5 (then 2.e4 Vienna Game, the most common transposition in the database, or 2.Nf3 Nc6 3.d4 Napoleon Attack), 1...Nf6 (one of the most unpleasant replies for White) and 1...c5 (transposing to Closed Sicilian or inferior-placed-knight lines). Sources call it sound and low-theory but unambitious: Black equalises with accurate play, so it earns points from surprise rather than from an edge, and masters play it under 1% of the time, though some strong correspondence players use it. The database root has few games itself; most of the subtree (about 290M games) is Vienna, Closed Sicilian and Chigorin-style transpositions that play like those openings."
+    }
+  },
+  {
+    "slug": "hungarian-opening-paris-gambit",
+    "rank": 1351,
+    "root": {
+      "name": "Hungarian Opening: Paris Gambit",
+      "eco": "A00",
+      "moves": "1. g3 e5 2. Nh3 d5 3. f4 Bxh3 4. Bxh3 exf4 5. O-O",
+      "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQ1RK1 b kq - 1 5"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "amar-gambit",
+      "name": "Amar Gambit",
+      "moves": "1. Nh3 d5 2. g3 e5 3. f4 Bxh3 4. Bxh3 exf4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-indian-defense-averbakh-variation",
+    "rank": 1352,
+    "root": {
+      "name": "Queen's Indian Defense: Averbakh Variation",
+      "eco": "E14",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. e3 Bb7 5. Bd3 c5 6. O-O Be7 7. b3 O-O 8. Bb2 cxd4 9. Nxd4",
+      "fen": "rn1q1rk1/pb1pbppp/1p2pn2/8/2PN4/1P1BP3/PB3PPP/RN1Q1RK1 b - - 0 9"
+    },
+    "alternative_names": [
+      "Queen's Indian: Averbakh Variation",
+      "Queen's Indian, Averbakh Variation",
+      "Averbakh Variation, QID",
+      "Queen's Indian: Averbakh variation",
+      "Averbakh Variation, QID "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-indian-defense-spassky-system",
+      "name": "Queen's Indian Defense: Spassky System",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. e3",
+      "overview": null
+    }
+  },
+  {
+    "slug": "bishops-opening-thorold-gambit",
+    "rank": 1353,
+    "root": {
+      "name": "Bishop's Opening: Thorold Gambit",
+      "eco": "C23",
+      "moves": "1. e4 e5 2. Bc4 b5 3. Bxb5 f5",
+      "fen": "rnbqkbnr/p1pp2pp/8/1B2pp2/4P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Thorold Gambit",
+      "Thorold Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "bishops-opening",
+      "name": "Bishop's Opening",
+      "moves": "1. e4 e5 2. Bc4",
+      "overview": "White develops the bishop to c4 at once, eyeing f7 and discouraging ...d5, while keeping the f-pawn free for f4 and delaying the knight on g1. Unlike the Italian, White does not commit a knight to f3 on move two, so the opening is highly transpositional: after 2...Nc6 it tends to become an Italian or Vienna, after 2...Nf6 White usually plays 3.d3 (or the sharp Urusov Gambit 3.d4), and after 2...Bc5 play is symmetrical and can reach a Giuoco Piano. Theory judges it equal with best play. At master level it is a surprise weapon used to avoid Petrov preparation, not a main line."
+    }
+  },
+  {
+    "slug": "colle-system-pterodactyl-variation",
+    "rank": 1354,
+    "root": {
+      "name": "Colle System: Pterodactyl Variation",
+      "eco": "A40",
+      "moves": "1. d4 g6 2. Nf3 Bg7 3. e3 c5 4. Bd3 Qa5+",
+      "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq - 2 5"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-pawn-game-modern-defense",
+      "name": "Queen's Pawn Game: Modern Defense",
+      "moves": "1. d4 g6",
+      "overview": "Against 1.d4 Black plays 1...g6, fianchettoing the king's bishop (...Bg7) and delaying the knight on f6 and any central commitment. The idea is hypermodern: let White build a pawn centre, then attack it from the flanks with ...d6 and ...c5 or ...e5, with queenside play (...b5, ...a5) backed by the Bg7. Because ...Nf6 is delayed it can still become a King's Indian (after c4 and Nc3), a Pirc (after e4) or a Grünfeld, or stay a separate Modern. White's common set-ups are a classical centre (c4, e4, Nc3, Be3), the Averbakh with c4, or the pseudo-Austrian or Samisch-like f4/f3 centres with a kingside space attack. Sources disagree on the character: the line is balanced and sound but can become very sharp and awkward for Black if the kingside weakens."
+    }
+  },
+  {
+    "slug": "queens-indian-defense-buerger-variation",
+    "rank": 1355,
+    "root": {
+      "name": "Queen's Indian Defense: Buerger Variation",
+      "eco": "E15",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 c5 6. d5 exd5 7. Ng5",
+      "fen": "rn1qkb1r/pb1p1ppp/1p3n2/2pp2N1/2P5/6P1/PP2PPBP/RNBQK2R b KQkq - 1 7"
+    },
+    "alternative_names": [
+      "Queen's Indian: Buerger Variation",
+      "Queen's Indian, Buerger Variation",
+      "Buerger Variation, QID",
+      "Queen's Indian: Buerger variation",
+      "Buerger Variation, QID "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-indian-defense-fianchetto-variation",
+      "name": "Queen's Indian Defense: Fianchetto Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 c5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "latvian-gambit-accepted-bronstein-gambit",
+    "rank": 1356,
+    "root": {
+      "name": "Latvian Gambit Accepted: Bronstein Gambit",
+      "eco": "C40",
+      "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4 fxe4 6. Qh5+ g6 7. Qe2",
+      "fen": "rnb1kbnr/ppp4p/3p1qp1/8/2NPp3/8/PPP1QPPP/RNB1KB1R b KQkq - 1 7"
+    },
+    "alternative_names": [
+      "Latvian Gambit Accepted, Bronstein Gambit",
+      "Latvian Gambit, Accepted",
+      "Bronstein Gambit, Latvian",
+      "Bronstein Gambit, Latvian "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "latvian-gambit-accepted-bilguer-variation",
+      "name": "Latvian Gambit Accepted: Bilguer Variation",
+      "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "queens-gambit-declined-uhlmann-variation",
+    "rank": 1357,
+    "root": {
+      "name": "Queen's Gambit Declined: Uhlmann Variation",
+      "eco": "D31",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7 4. Nf3 Nf6 5. Bg5 h6 6. Bh4 O-O 7. Rc1 dxc4",
+      "fen": "rnbq1rk1/ppp1bpp1/4pn1p/8/2pP3B/2N2N2/PP2PPPP/2RQKB1R w K - 0 8"
+    },
+    "alternative_names": [
+      "Uhlmann Variation, QGD",
+      "Uhlmann Variation, QGD "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-gambit-declined-charousek-variation",
+      "name": "Queen's Gambit Declined: Charousek Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7",
+      "overview": null
+    }
+  },
+  {
+    "slug": "van-geet-opening-twyble-attack",
+    "rank": 1358,
+    "root": {
+      "name": "Van Geet Opening: Twyble Attack",
+      "eco": "A00",
+      "moves": "1. Nc3 c5 2. Rb1",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/2N5/PPPPPPPP/1RBQKBNR b Kkq - 1 2"
+    },
+    "alternative_names": [
+      "Twyble Attack, Dunst",
+      "Twyble Attack, Dunst "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "van-geet-opening",
+      "name": "Van Geet Opening",
+      "moves": "1. Nc3",
+      "overview": "White develops a knight to c3, controlling e4 and d5, and keeps the pawn structure undecided to choose a set-up once Black replies. The knight blocks the c-pawn, so Queen's Gambit and English structures are not available without reorganising. Main replies: 1...d5 (the cleanest; 2.e4 transposes to obscure Scandinavian lines, or the Van Geet Attack after 2...d4 3.Nce2), 1...e5 (then 2.e4 Vienna Game, the most common transposition in the database, or 2.Nf3 Nc6 3.d4 Napoleon Attack), 1...Nf6 (one of the most unpleasant replies for White) and 1...c5 (transposing to Closed Sicilian or inferior-placed-knight lines). Sources call it sound and low-theory but unambitious: Black equalises with accurate play, so it earns points from surprise rather than from an edge, and masters play it under 1% of the time, though some strong correspondence players use it. The database root has few games itself; most of the subtree (about 290M games) is Vienna, Closed Sicilian and Chigorin-style transpositions that play like those openings."
+    }
+  },
+  {
+    "slug": "kings-gambit-accepted-kotov-gambit",
+    "rank": 1359,
+    "root": {
+      "name": "King's Gambit Accepted: Kotov Gambit",
+      "eco": "C37",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. d4 gxf3 6. Bxf4",
+      "fen": "rnbqkbnr/pppp1p1p/8/8/2BPPB2/5p2/PPP3PP/RN1QK2R b KQkq - 0 6"
+    },
+    "alternative_names": [
+      "King's Gambit Accepted, Kotov Gambit",
+      "King's Gambit, Accepted",
+      "Kotov Gambit",
+      "Kotov Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-accepted-ghulam-kassim-gambit",
+      "name": "King's Gambit Accepted: Ghulam-Kassim Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. d4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "portuguese-opening-miguel-gambit",
+    "rank": 1360,
+    "root": {
+      "name": "Portuguese Opening: Miguel Gambit",
+      "eco": "C20",
+      "moves": "1. e4 e5 2. Bb5 Bc5 3. b4",
+      "fen": "rnbqk1nr/pppp1ppp/8/1Bb1p3/1P2P3/8/P1PP1PPP/RNBQK1NR b KQkq - 0 3"
+    },
+    "alternative_names": [
+      "Miguel Gambit",
+      "Miguel Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "portuguese-opening",
+      "name": "Portuguese Opening",
+      "moves": "1. e4 e5 2. Bb5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "van-geet-opening-gladbacher-gambit",
+    "rank": 1361,
+    "root": {
+      "name": "Van Geet Opening: Gladbacher Gambit",
+      "eco": "A00",
+      "moves": "1. Nc3 e5 2. b3 d5 3. e4 dxe4 4. d3",
+      "fen": "rnbqkbnr/ppp2ppp/8/4p3/4p3/1PNP4/P1P2PPP/R1BQKBNR b KQkq - 0 4"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "van-geet-opening-reversed-nimzowitsch",
+      "name": "Van Geet Opening: Reversed Nimzowitsch",
+      "moves": "1. Nc3 e5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "bird-opening-swiss-gambit",
+    "rank": 1362,
+    "root": {
+      "name": "Bird Opening: Swiss Gambit",
+      "eco": "A02",
+      "moves": "1. f4 f5 2. e4 fxe4 3. Nc3 Nf6 4. g4",
+      "fen": "rnbqkb1r/ppppp1pp/5n2/8/4pPP1/2N5/PPPP3P/R1BQKBNR b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Bird: Swiss Gambit",
+      "Swiss Gambit, Bird",
+      "Bird's opening, Swiss gambit",
+      "Swiss Gambit, Bird "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "bird-opening-wagner-zwitersch-gambit",
+      "name": "Bird Opening: Wagner-Zwitersch Gambit",
+      "moves": "1. f4 f5 2. e4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "zukertort-opening-myers-polish-attack",
+    "rank": 1363,
+    "root": {
+      "name": "Zukertort Opening: Myers Polish Attack",
+      "eco": "A05",
+      "moves": "1. Nf3 Nf6 2. a4 g6 3. b4",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/PP6/5N2/2PPPPPP/RNBQKB1R b KQkq - 0 3"
+    },
+    "alternative_names": [],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "zukertort-opening",
+      "name": "Zukertort Opening",
+      "moves": "1. Nf3 Nf6",
+      "overview": null
+    }
+  },
+  {
+    "slug": "ware-opening-ware-gambit",
+    "rank": 1364,
+    "root": {
+      "name": "Ware Opening: Ware Gambit",
+      "eco": "A00",
+      "moves": "1. a4 e5 2. a5 d5 3. e3 f5 4. a6",
+      "fen": "rnbqkbnr/ppp3pp/P7/3ppp2/8/4P3/1PPP1PPP/RNBQKBNR b KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Irregular Openings: Ware Opening, Ware Gambit",
+      "Ware Gambit",
+      "Ware Gambit "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "ware-opening",
+      "name": "Ware Opening",
+      "moves": "1. a4",
+      "overview": null
+    }
+  },
+  {
+    "slug": "kings-gambit-declined-hobbs-zilbermints-gambit",
+    "rank": 1365,
+    "root": {
+      "name": "King's Gambit Declined: Hobbs-Zilbermints Gambit",
+      "eco": "C30",
+      "moves": "1. e4 e5 2. f4 Nc6 3. Nf3 g5 4. fxg5 h6",
+      "fen": "r1bqkbnr/pppp1p2/2n4p/4p1P1/4P3/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 5"
+    },
+    "alternative_names": [
+      "King's Gambit Declined, Hobbs-Zilbermints Gambit",
+      "King's Gambit, Declined"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "kings-gambit-declined-zilbermints-double-gambit",
+      "name": "King's Gambit Declined: Zilbermints Double Gambit",
+      "moves": "1. e4 e5 2. f4 Nc6 3. Nf3 g5",
+      "overview": null
+    }
+  },
+  {
+    "slug": "vant-kruijs-opening-bouncing-bishop-variation",
+    "rank": 1366,
+    "root": {
+      "name": "Van't Kruijs Opening: Bouncing Bishop Variation",
+      "eco": "A00",
+      "moves": "1. e3 e5 2. Bc4 b5 3. Bb3",
+      "fen": "rnbqkbnr/p1pp1ppp/8/1p2p3/8/1B2P3/PPPP1PPP/RNBQK1NR b KQkq - 1 3"
+    },
+    "alternative_names": [
+      "Bouncing Bishop Variation",
+      "Bouncing Bishop Variation "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "vant-kruijs-opening",
+      "name": "Van't Kruijs Opening",
+      "moves": "1. e3",
+      "overview": "1.e3 opens lines for the f1-bishop and the queen, claims the e4 square lightly and commits to nothing else; it blocks the c1-bishop, so White plans to free that bishop early (b3, or d4 and Nd2/Bd2). It is mainly a transposition device: c4 gives English-type positions, d4 Queen's Pawn structures, b3 Larsen's Opening, and f4 Bird-type set-ups, and 1...e5 2.e4 is a reversed Open Game. Black has maximum freedom and the opening invites him to over-commit in the centre. It is considered passive but sound and gives White no particular advantage; its popularity has declined and strong players use it mainly to reach known structures."
+    }
+  },
+  {
+    "slug": "queens-gambit-declined-rochlin-variation",
+    "rank": 1367,
+    "root": {
+      "name": "Queen's Gambit Declined: Rochlin Variation",
+      "eco": "D51",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. Nf3 c6 6. Rc1 Qa5 7. Bd2",
+      "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p4/2PP4/2N2N2/PP1BPPPP/2RQKB1R b Kkq - 3 7"
+    },
+    "alternative_names": [
+      "QGD: Rochlin Variation",
+      "QGD: Rochlin variation"
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "queens-gambit-declined-modern-variation",
+      "name": "Queen's Gambit Declined: Modern Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7",
+      "overview": null
+    }
+  },
+  {
+    "slug": "catalan-opening-hungarian-gambit",
+    "rank": 1368,
+    "root": {
+      "name": "Catalan Opening: Hungarian Gambit",
+      "eco": "E00",
+      "moves": "1. d4 Nf6 2. c4 e6 3. g3 e5",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+    },
+    "alternative_names": [
+      "Catalan: Hungarian Gambit",
+      "Hungarian Gambit, Catalan",
+      "Hungarian Gambit, Catalan "
+    ],
+    "subtree_most_played": [],
+    "parent": {
+      "slug": "catalan-opening",
+      "name": "Catalan Opening",
+      "moves": "1. d4 Nf6 2. c4 e6 3. g3",
+      "overview": null
+    }
+  }
+]

@@ -1,0 +1,121 @@
+{
+  "slug": "queens-gambit-declined",
+  "root": {
+    "name": "Queen's Gambit Declined",
+    "eco": "D30",
+    "moves": "1. d4 d5 2. c4 e6",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Gambit Declined",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Queen%27s_Gambit_Declined",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Queen's Gambit Declined",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/queens-gambit-declined/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Carlsbad Pawn Structure",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/terms/carlsbad-pawn-structure-chess",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Queen's Gambit Declined: Complete Guide for Black (search snippet only; page returned 403)",
+      "publisher": "TheChessWorld",
+      "url": "https://thechessworld.com/articles/openings/queens-gambit-declined-explained-complete-guide-for-black/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black meets 2.c4 with 2...e6, holding d5 and keeping a secure, compact centre rather than taking the pawn. It is one of Black's most reliable defences to 1.d4 (s1). The price is the light-squared bishop on c8, which is shut in behind the e6-pawn and is Black's main strategic problem (s1). The game then usually becomes a manoeuvring fight: White uses the minority attack (b4-b5) in Carlsbad structures or central expansion with e4 or e4-e5 (Botvinnik plan), while Black aims for the freeing ...c5 or ...e5 break, a Lasker-style exchange of pieces, or a bishop fianchetto (s1, s2, s3). Both Wikipedia and Chessable stress that it is extremely sound yet can turn double-edged when both sides pursue their plans (s2). It was the staple of the Alekhine-Capablanca match (s1) and is played from beginner level to world champions (s2).",
+  "white_ideas": [
+    { "idea": "Minority attack: b4-b5 against the Carlsbad structure to create a weak c6-pawn", "sources": ["s3", "s4"] },
+    { "idea": "Central break e3-e4, usually supported by f3 (and the Botvinnik plan e4-e5 to dislodge kingside defenders)", "sources": ["s1", "s2", "s3"] },
+    { "idea": "Kingsbury attack: Ne5 supported by f4 for a kingside assault", "sources": ["s3"] },
+    { "idea": "Exploit the passive c8-bishop, pin Nf6 with Bg5 in the traditional 4.Bg5 lines", "sources": ["s1"] }
+  ],
+  "black_ideas": [
+    { "idea": "Liberating pawn break ...c5 (or ...e5), accepting isolated or hanging pawns for activity", "sources": ["s1", "s4"] },
+    { "idea": "Solve the c8-bishop problem: ...b6/...Bb7 fianchetto, Lasker's ...Ne4 exchanging pieces, or Ragozin ...Bb4", "sources": ["s1", "s2"] },
+    { "idea": "Queenside counterplay with ...a5 and ...b5 against White's plans", "sources": ["s2"] },
+    { "idea": "Time the ...c5 break carefully because exchanges can leave Black with an isolated pawn; piece activity matters", "sources": ["s4"] }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad: White c3/d4 vs Black c6/d5 after cxd5 exd5; White's minority attack against Black's queenside majority", "sources": ["s3"] },
+    { "structure": "Pawn tension on c4/d5 kept in the Orthodox lines, with the centre closed until a pawn break", "sources": ["s1"] },
+    { "structure": "Isolated queen's pawn or hanging pawns after Black's ...c5 break", "sources": ["s1", "s4"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as a fundamentally solid, defensive approach and one of Black's most reliable defences to 1.d4 (s1). Chessable calls it 'extremely sound' with possibilities for both sides (s2). The play is strategic: the minority attack, central breaks and manoeuvring around the c8-bishop dominate, with fewer early forcing lines than in the Slav or Semi-Slav. Chess.com's taxonomy anchor treats the QGD Orthodox as Solid.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black declines, so no material changes hands. The name is historical; the taxonomy states the Queen's Gambit is not a gambit.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Regarded as one of the most reliable defences for Black, played at championship level for a century (s1). No source suggests any dubious line in the main variations.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "The centre stays tense or closed. The Carlsbad structure is called semi-closed (s3), with the d5 pawn held and the central break (e4 or ...c5) deferred. The typical middlegame has White's c4/d4 and Black's d5/e6 pawns in contact, exchanges coming later.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A main-line defence with a wide range of replies, not a universal system. Played at the highest level since Capablanca. Standard.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessable says it suits players from beginner to World Champion and that the theory load is moderate; plans matter more than memorisation (s2). Black must still learn the ...c5 timing and how to free the c8-bishop. The side that studies it is Black. Intermediate fits.",
+      "sources": ["s1", "s2", "s4"]
+    }
+  },
+  "plan_phrases": [
+    "minority attack",
+    "Carlsbad structure",
+    "...c5 break",
+    "bad light-squared bishop",
+    "isolated queen's pawn",
+    "hanging pawns",
+    "e4 break",
+    "Botvinnik plan"
+  ],
+  "sublines_that_differ": [
+    { "name": "Exchange Variation (Carlsbad)", "moves": "1. d4 d5 2. c4 e6 3. cxd5 exd5", "how": "Symmetrical, minority attack vs kingside play; slower and more positional" },
+    { "name": "Tartakower / Lasker / Cambridge Springs", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5", "how": "Traditional 4.Bg5 lines; Cambridge Springs has tactical traps" },
+    { "name": "Ragozin", "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 Bb4", "how": "Pins the knight rather than ...Be7; active, between QGD and Nimzo" },
+    { "name": "Semi-Slav (via 3.Nf3 c6)", "moves": "1. d4 d5 2. c4 e6 3. Nf3 c6", "how": "Reaches the Semi-Slav; much sharper than QGD main lines (Botvinnik, Meran) (own understanding, unsourced)" },
+    { "name": "Tarrasch Defence", "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5", "how": "Isolated queen's pawn; open and dynamic (own understanding, unsourced)" }
+  ],
+  "audit": {
+    "description": [
+      { "claim": "A classical and robust defence, considered one of the most reliable responses to 1.d4", "verdict": "supported", "note": "Wikipedia: one of Black's most reliable defences to 1.d4.", "sources": ["s1"] },
+      { "claim": "It aims to create a solid central pawn structure", "verdict": "supported", "note": "d5 and e6 give a secure foothold.", "sources": ["s1"] },
+      { "claim": "It leads to a strategically rich game where long-term planning takes precedence over immediate tactical skirmishes", "verdict": "supported", "note": "Strategic plans such as the minority attack dominate, though the opening can become double-edged.", "sources": ["s2"] },
+      { "claim": "Ideal for patient players who understand pawn breaks, manoeuvring and small lasting advantages", "verdict": "supported", "note": "Consistent with the plans described.", "sources": ["s1", "s2"] }
+    ],
+    "common_plans": [
+      { "claim": "For White: execute the minority attack (b4-b5) to create a weakness on c6, or use a space advantage", "verdict": "supported", "note": "Applies in the Carlsbad structure from the Exchange, not every QGD line.", "sources": ["s3", "s4"] },
+      { "claim": "For Black: a liberating break, typically ...c5 or ...e5", "verdict": "supported", "note": "Both are named as liberating breaks.", "sources": ["s1", "s4"] },
+      { "claim": "For Black: solve the problem of the light-squared bishop via fianchetto (...b6, ...Bb7), the Lasker manoeuvre (...Ne4) or the Ragozin set-up (...Bb4)", "verdict": "supported", "note": "Fianchetto, Lasker and the Ragozin are all QGD ways of dealing with the c8-bishop. Ragozin's ...Bb4 is more about activity than the bishop (own understanding).", "sources": ["s1", "s2"] },
+      { "claim": "Both sides often enter the Carlsbad pawn structure, where White plays on the queenside and Black seeks counterplay on the kingside or in the centre", "verdict": "supported", "note": "Carlsbad arises after cxd5 exd5; Black's play there is usually kingside or central, though Chessable also lists queenside ...a5/...b5 counterplay.", "sources": ["s2", "s3"] }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

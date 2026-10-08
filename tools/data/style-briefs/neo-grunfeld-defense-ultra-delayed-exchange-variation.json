@@ -1,0 +1,95 @@
+{
+  "slug": "neo-grunfeld-defense-ultra-delayed-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: Ultra-Delayed Exchange Variation",
+    "eco": "D79",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3 O-O 5. Bg2 c6 6. O-O d5 7. cxd5 cxd5",
+    "fen": "rnbq1rk1/pp2ppbp/5np1/3p4/3P4/5NP1/PP2PPBP/RNBQ1RK1 w - - 0 8"
+  },
+  "parent": "neo-grunfeld-defense-classical-variation",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Both sides have fianchettoed and the c-pawns are exchanged, leaving a symmetrical d4/d5 structure with the c-file open. White develops with 8.Nc3 and Ne5 or Bf4 and Black replies with ...Nc6 and ...Bg4 or ...e6. The game is slow, positional and symmetrical, with small differences in piece activity and little risk of a quick loss.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, Ne5 and Bf4 and fight for the c-file." },
+    { "idea": "Pressure d5 and use the long diagonal and the half-open c-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nc6, ...Bg4 or ...e6 and contest the c-file." },
+    { "idea": "Hold the symmetrical structure and play for ...Ne4 or ...Qb6." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical d4/d5 pawns with both kings fianchettoed and the c-file open." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Symmetrical exchange structure, hard to lose and slow; small piece-activity edges."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "The c-pawns are exchanged, leaving a symmetrical structure and an open c-file."
+    },
+    "approach": {
+      "notes": "A mainstream line used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines, small positional nuances matter."
+    }
+  },
+  "plan_phrases": ["symmetrical structure", "half-open c-file", "fianchetto"],
+  "sublines_that_differ": [
+    {
+      "name": "8.Ne5",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3 O-O 5. Bg2 c6 6. O-O d5 7. cxd5 cxd5 8. Ne5",
+      "how": "An immediate knight outpost, with a different move order of piece play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "A symmetrical exchange structure that is hard to lose."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "A symmetrical exchange structure with an open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal main line of the Neo-Grünfeld."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Little theory but small positional nuances matter."
+    },
+    "plans": {
+      "value": ["symmetrical_structure", "half_open_c_file", "fianchetto"],
+      "reason": "Both sides play for the c-file from fianchettoed set-ups."
+    }
+  }
+}

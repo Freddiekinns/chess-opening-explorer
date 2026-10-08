@@ -20,8 +20,8 @@ jest.mock('../../packages/api/src/services/browse-service', () =>
     getConfig: () => ({
       pageSize: { default: 24, max: 48 },
       levels: [{ value: 'Beginner', label: 'Beginner' }],
-      gambitOverride: { value: 'gambit', label: 'Gambit', tags: [] },
-      styles: [{ value: 'aggressive', label: 'Aggressive', tags: [] }],
+      styles: [{ value: 'sharp', label: 'Sharp', axis: 'character', values: ['sharp'] }],
+      retiredStyles: { aggressive: 'sharp' },
       sorts: [
         { value: 'popular', label: 'Most played' },
         { value: 'name', label: 'A–Z' },
@@ -65,11 +65,11 @@ describe('GET /api/openings/browse', () => {
 
   test('passes filters through to the service', async () => {
     await request(app).get(
-      '/api/openings/browse?level=Beginner&style=aggressive&family=sicilian&sort=name&page=2&pageSize=12'
+      '/api/openings/browse?level=Beginner&style=sharp&family=sicilian&sort=name&page=2&pageSize=12'
     );
     expect(mockBrowse).toHaveBeenCalledWith({
       level: 'Beginner',
-      style: 'aggressive',
+      style: 'sharp',
       family: 'sicilian',
       sort: 'name',
       page: '2',
@@ -79,21 +79,29 @@ describe('GET /api/openings/browse', () => {
 
   // Filter state lives in the URL, so these values get shared, bookmarked and
   // retyped — and the required casing differs per facet (Beginner, but
-  // aggressive). A case slip used to 400 and blank the whole grid.
+  // sharp). A case slip used to 400 and blank the whole grid.
   test('matches facet values without regard to case', async () => {
     const res = await request(app).get(
-      '/api/openings/browse?level=beginner&style=AGGRESSIVE&family=Sicilian&sort=NAME'
+      '/api/openings/browse?level=beginner&style=SHARP&family=Sicilian&sort=NAME'
     );
 
     expect(res.status).toBe(200);
     expect(mockBrowse).toHaveBeenCalledWith(
       expect.objectContaining({
         level: 'Beginner',
-        style: 'aggressive',
+        style: 'sharp',
         family: 'sicilian',
         sort: 'name',
       })
     );
+  });
+
+  // Discover's styles were renamed onto the style taxonomy; a link saved
+  // before that still filters, on the nearest new value.
+  test('a retired style value filters on the value that replaced it', async () => {
+    const res = await request(app).get('/api/openings/browse?style=Aggressive');
+    expect(res.status).toBe(200);
+    expect(mockBrowse).toHaveBeenCalledWith(expect.objectContaining({ style: 'sharp' }));
   });
 
   test('an unknown level is a 400, not a silent empty result', async () => {
@@ -109,6 +117,17 @@ describe('GET /api/openings/browse', () => {
     expect(res.status).toBe(400);
     expect(res.body.error).toMatch(/style/i);
   });
+
+  // The retired-style lookup is a plain object, so a name it inherits must not
+  // pass for an alias.
+  test.each(['constructor', 'toString', '__proto__'])(
+    'style=%s is an unknown style, not a server error',
+    async (style) => {
+      const res = await request(app).get(`/api/openings/browse?style=${style}`);
+      expect(res.status).toBe(400);
+      expect(res.body.error).toMatch(/style/i);
+    }
+  );
 
   test('an unknown family is a 400', async () => {
     const res = await request(app).get('/api/openings/browse?family=nonesuch');

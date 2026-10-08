@@ -1,0 +1,89 @@
+{
+  "slug": "nimzowitsch-defense-mikenas-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Mikenas Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 d6",
+    "fen": "r1bqkbnr/ppp1pppp/2np4/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black meets 2.d4 with ...d6, a Pirc or Philidor-like set-up with the knight already on c6. After 3.Nc3 Nf6 4.Nf3 White has a free centre and a small space edge; Black waits and aims for ...e5 or ...g6/...Bg7 and ...Bg4. Black is a little cramped, but sound.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, Nf3, Be2 or Bd3 and castle, keeping a space edge." },
+    { "idea": "Push d5 to drive the knight back, or play Be3 and Qd2." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...Nf6, ...g6 and ...Bg7 or ...e5 to challenge d4." },
+    { "idea": "Pin or exchange to relieve the cramp." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4/e4 against ...d6 and a ...g6/...e5 set-up." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's position is cramped but hard to break down; White has no easy forcing continuation."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Playable if slightly passive for Black."
+    },
+    "structure": {
+      "notes": "Centre tension with ...e5 or ...d5 yet to come."
+    },
+    "approach": {
+      "notes": "Strong players seldom use the Nimzowitsch at all."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Pirc-style plans with little theory."
+    }
+  },
+  "plan_phrases": ["space advantage for White", "undermine the centre", "...e5 break"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither especially forcing nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Slightly passive but playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Centre not yet decided with ...e5/...d5 still pending."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The Nimzowitsch is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Pirc-like plans without heavy theory."
+    },
+    "plans": {
+      "value": ["space_advantage"],
+      "reason": "White's central space is the theme."
+    }
+  }
+}

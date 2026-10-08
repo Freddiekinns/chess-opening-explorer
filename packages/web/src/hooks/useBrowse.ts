@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import type { StyleProfile } from '../lib/styleProfile';
 
 /**
  * Everything the Discover grid knows about browsing. Filter state lives in the
@@ -41,13 +42,14 @@ export interface BrowseItem {
   family_id: string;
   family_name: string;
   level: string | null;
-  style: string | null;
+  /** Every style the opening is under — it can be Sharp and a Gambit. */
+  styles: string[];
   games_analyzed: number;
   white_win_rate: number | null;
   draw_rate: number | null;
   black_win_rate: number | null;
   avg_rating: number | null;
-  analysis_json?: { complexity?: string | null; style_tags?: string[] };
+  style_profile: StyleProfile | null;
 }
 
 export const SORT_OPTIONS = [

@@ -1,0 +1,331 @@
+{
+  "slug": "kings-indian-defense-orthodox-variation",
+  "root": {
+    "name": "King's Indian Defense: Orthodox Variation",
+    "eco": "E91",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Indian Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King's_Indian_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "King's Indian Defense: Variations, Plans & Theory Guide",
+      "publisher": "ChessDoctrine",
+      "url": "https://chessdoctrine.com/chess-openings/queens-pawn/kings-indian-defense/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "King's Indian Defense: Lines, Plans & Free Trainer",
+      "publisher": "Chessigma",
+      "url": "https://www.chessigma.com/openings/kings-indian-defense",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "King's Indian Defense: Theory Section (Lichess study)",
+      "publisher": "Lichess",
+      "url": "https://lichess.org/study/embed/fIllSlje/BcsQEMML",
+      "kind": "article"
+    },
+    {
+      "id": "s5",
+      "title": "Mar Del Plata (search extract only, page not opened)",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/article/view/mar-del-plata",
+      "kind": "article"
+    },
+    {
+      "id": "s6",
+      "title": "King's Indian Defence, Petrosian Variation (search extract only, page not opened)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Petrosian_Variation",
+      "kind": "reference"
+    },
+    {
+      "id": "s7",
+      "title": "10 Reasons to Play King's Indian Defense (search extract only, page not opened)",
+      "publisher": "TheChessWorld",
+      "url": "https://thechessworld.com/articles/openings/10-reasons-to-play-kings-indian-defense/",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black has allowed White a broad pawn centre (c4, d4, e4) and now contests it with ...e5, the move that defines the Orthodox (Classical) set-up. The main line is 7.O-O Nc6 8.d5 Ne7, the Mar del Plata, where the centre locks and the game becomes a race on opposite wings: Black reroutes the f6-knight, plays ...f5-f4 and ...g5 against the king, while White plays b4/c5 (or the Bayonet 9.b4) to open the queenside before Black's attack lands. 7.d5 (Petrosian) is a slower, positional alternative in which Black plays ...a5 and ...Na6 first; 7...exd4 and 7...Nbd7 lines are older and calmer; ...c5 at move 6 gives a Benoni-like game. The set-up is learned as a pattern (Black plays nearly the same moves each game) but the timing of the pawn storm and the defence against c5 are hard to get right.",
+  "white_ideas": [
+    {
+      "idea": "Clamp the centre with d4-d5 once ...Nc6 or ...Nbd7 appears, locking the e5 pawn and restricting Black's pieces.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    {
+      "idea": "Queenside expansion with c4-c5 (and b4, the Bayonet Attack 9.b4 after 8...Ne7) to undermine d6 and enter Black's camp before the kingside attack arrives.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Ignore Black's attack where possible, blockade what must be blockaded, and pour everything into c5.",
+      "sources": [
+        "s7"
+      ]
+    },
+    {
+      "idea": "Petrosian 7.d5: space advantage, stop the immediate kingside attack and prepare a slow queenside pawn storm (a4, b4).",
+      "sources": [
+        "s6"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...e5 to challenge d4 and fight for space; in the Mar del Plata the e5-pawn then locks the centre.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Kingside pawn storm: remove the f6-knight (Ne8, Nd7 or Nh5), play ...f5, ...f4 and ...g5; the attack is dangerous and must arrive before White's c5.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "idea": "Against 7.O-O exd4 lines: ...exd4, ...Re8 and ...c6 to prepare a freeing ...d5.",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "idea": "Against 7.d5: ...a5, ...Na6 and ...Nc5 to put a knight on a good square and slow White's queenside play, then switch to kingside activity.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    {
+      "idea": "...c5 at move 6 or 7 gives a Benoni character with piece play and pressure on the centre and the e-file rather than a pawn storm.",
+      "sources": [
+        "s5"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Mar del Plata: White pawns c4, d5, e4 against Black's d6, e5; central pawns locked, g7-bishop blocked behind e5; the play is on the wings, with Black's f-pawn advancing and White's c- and b-pawns advancing.",
+      "sources": [
+        "s1",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "structure": "Petrosian: d5/e4/c4 against d6/e5 with a locked centre but a slower manoeuvring game; Black's queenside is shielded by ...a5.",
+      "sources": [
+        "s6"
+      ]
+    },
+    {
+      "structure": "7...exd4 8.Nxd4 lines: centre opened, Black's bishop on the long diagonal, White's extra space against Black's piece activity.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The defining Mar del Plata line is described as sharp and double-edged, 'decided by who arrives first' on opposite wings (s4, s5), with real risk for White (s1: Black has various attacking resources) and for Black (positions demand concrete calculation, s3). The wider subtree is not uniform: 7.d5 Petrosian is described as solid and positional and avoiding sharp tactical lines (s6), 7...exd4 and 7...Nbd7 are older, calmer lines (s1), and ...c5 is a Benoni-like piece game (s5). The Mar del Plata should be weighed most heavily because it is the most played main line and the identity of the opening.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given on purpose. The Mar del Plata attack involves pawn storms and occasional piece sacrifices later but not an opening gambit.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "soundness": {
+      "notes": "Objectively sound for Black. Wikipedia describes Black's defensive set-up as fundamentally sound despite looking passive, with scope for both sides to play for a win (s1). ChessDoctrine: 'one of the best practical winning weapons for Black against 1.d4' and objectively sound (s2). The Bayonet Attack was revived by Radjabov, which shows White's attempts remain viable (s1). Search-extract source says both sides have objectively sound continuations (s7).",
+      "sources": [
+        "s1",
+        "s2",
+        "s7"
+      ]
+    },
+    "structure": {
+      "notes": "The main line closes the centre: after 8.d5 Ne7 the d5/e4 and d6/e5 pawns are locked and play moves to the wings (s1, s4, s5). Not every subline closes (7...exd4 and ...c5 lines are more open; 7.d5 locks it differently).",
+      "sources": [
+        "s1",
+        "s4",
+        "s5"
+      ]
+    },
+    "approach": {
+      "notes": "A main-line variation, not a set-up played against anything: it arises from a fixed move order and White chooses it. Played at the highest level for decades (Bayonet revival by Radjabov, s1); the Orthodox is the most played KID line below 1600 (over 40% of KID games, s3).",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "ChessDoctrine: easy to learn because Black plays nearly the same moves, but it demands concrete calculation and White can dictate the structure (s2). Search extracts: positions are hard for club players without understanding of the dynamics; success depends on the right motifs (e.g. ...f5 without ...Ne8 and the storm fizzles) rather than memorised lines (s7). Memory matters in sidelines (Bayonet, Petrosian systems) but the difficulty is timing and judgement, in line with the taxonomy's treatment of the King's Indian as the understanding case.",
+      "sources": [
+        "s2",
+        "s3",
+        "s7"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "kingside pawn storm",
+    "...f5-f4 and ...g5",
+    "c4-c5 queenside break",
+    "Bayonet Attack",
+    "opposite-wing pawn race",
+    "locked centre",
+    "Petrosian system",
+    "...a5 and ...Na6",
+    "...exd4 and ...Re8",
+    "reroute f6-knight"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Mar del Plata",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nc6 8. d5 Ne7",
+      "how": "The race: closed centre, opposite-wing attacks, sharp and double-edged. This is the identity of the Orthodox and most of its mass."
+    },
+    {
+      "name": "Petrosian Variation",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5",
+      "how": "Slower, positional; Black delays the pawn storm and plays ...a5 and ...Na6 first. Much less forcing than the Mar del Plata. Could become its own root."
+    },
+    {
+      "name": "6...Nbd7 / 7...Nbd7",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 Nbd7",
+      "how": "Older main line, keeps tension (often ...e5 with ...c6 and ...Re8) and avoids the Mar del Plata; calmer."
+    },
+    {
+      "name": "6...c5 Benoni-style",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 c5",
+      "how": "Piece play and pressure on the centre rather than a pawn storm; a different structure from the root."
+    },
+    {
+      "name": "7...exd4 8.Nxd4",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O exd4 8. Nxd4",
+      "how": "Open Maróczy-flavoured game; White's extra space against Black's activity; Black prepares ...d5 via ...Re8 and ...c6."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The King's Indian is a hypermodern response to 1.d4 where Black allows White a large pawn centre before launching a counter-attack.",
+        "verdict": "supported",
+        "note": "Definitional and consistent with every source; none of the excerpts used the word 'hypermodern', so this rests partly on my own understanding.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "The Orthodox Variation is the classical and most tested set-up.",
+        "verdict": "supported",
+        "note": "Chessigma: 6.Be2 e5 is over 40% of King's Indian games below 1600. Wikipedia calls it one of the most theoretically important lines.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "Black typically seeks a kingside assault with ...f5, while White plays on the queenside and in the centre.",
+        "verdict": "supported",
+        "note": "True of the main line (Mar del Plata). Not true of every subline, e.g. Petrosian or ...c5 lines.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4",
+          "s5"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "For Black, launch a kingside attack, typically initiated by ...f7-f5, aiming to open lines against the white king.",
+        "verdict": "supported",
+        "note": "Plus the knight reroute and ...f4, ...g5.",
+        "sources": [
+          "s1",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "claim": "For Black, the ...e7-e5 pawn break undermines White's centre and fights for space.",
+        "verdict": "supported",
+        "note": "...e5 challenges d4 and gains space; it is the move that defines the Orthodox.",
+        "sources": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "claim": "...e7-e5 frees the g7-bishop.",
+        "verdict": "wrong",
+        "note": "In the main line White answers d5 and the e5-pawn blocks the g7-bishop behind it; the bishop only becomes active if the centre opens (7...exd4 lines) or via ...f5-f4 later. Chessigma says Black's bishop becomes dangerously active once White's central control fractures, implying it is passive while the centre holds. The 'freeing' reading is true only in the exchange lines.",
+        "sources": [
+          "s3"
+        ]
+      },
+      {
+        "claim": "For White, expand on the queenside with b4 and c5, aiming to create a passed pawn and distract Black from the kingside.",
+        "verdict": "supported",
+        "note": "b4 (Bayonet) and c4-c5 are the standard plan. Sources describe it as undermining the d6 root and entering Black's camp before the attack lands, not as creating a passed pawn; that detail is not supported.",
+        "sources": [
+          "s1",
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "claim": "For White, clamp down on the centre with d4-d5, restricting Black's pieces and preparing to meet the kingside attack.",
+        "verdict": "supported",
+        "note": "d5 locks the centre; in the Petrosian version it also prevents an immediate kingside attack.",
+        "sources": [
+          "s3",
+          "s6"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 4,
+    "pages_read": 4
+  }
+}

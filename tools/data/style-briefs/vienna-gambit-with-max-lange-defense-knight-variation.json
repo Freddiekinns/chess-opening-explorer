@@ -1,0 +1,95 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-knight-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Knight Variation",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/4Pp2/2N2N2/PPPP2PP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White has offered the f-pawn in the Vienna Gambit and develops the king's knight. Black can keep the pawn with ...g5, which leads to the Hamppe-Allgaier (5.h4 g4 6.Ng5) or the Steinitz-style 5.d4, or can play ...d5 or ...Bb4 and return the pawn to equalise. Play is open and tactical: White aims at f7 and the open f-file, Black wants to consolidate the extra pawn.",
+  "white_ideas": [
+    { "idea": "Regain the f4 pawn with d4 and Bxf4 and use the lead in development." },
+    { "idea": "Attack f7 with Bc4 and Ng5, with h4 against ...g5." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra pawn with ...g5 and ...Bg7, or return it with ...d5." },
+    { "idea": "Challenge e4 with ...d5 and develop quickly." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and f-files, with White's f-pawn gone and Black's kingside pawns advanced." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The main 4...g5 lines are forcing and risky for both; 4...d5 is calmer but still open."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "Black has taken f4 and can try to keep it with ...g5, or return it with ...d5."
+    },
+    "soundness": {
+      "notes": "Black can equalise with ...d5, so White's compensation is real but not decisive; the Hamppe-Allgaier is dubious."
+    },
+    "structure": {
+      "notes": "Open centre after e4 is traded or exchanged."
+    },
+    "approach": {
+      "notes": "The Vienna Gambit is played by strong players now and then."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Both sides need theory in the ...g5 lines."
+    }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "pressure on f7"],
+  "sublines_that_differ": [
+    {
+      "name": "Hamppe-Allgaier Gambit",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. h4",
+      "how": "White sacrifices a knight after ...g4 6.Ng5 and Nxf7; considered dubious."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Gambit lines with open files and mutual attacking chances."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives the f-pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Black can equalise with ...d5, White's compensation is playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The e- and f-files and diagonals open quickly."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "The Vienna Gambit is a recognised, if less common, choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "The tactical lines need to be known."
+    },
+    "plans": {
+      "value": ["lead_in_development", "kingside_attack", "pressure_on_f7"],
+      "reason": "White's compensation is development and pressure on the king's side and f7."
+    }
+  }
+}

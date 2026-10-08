@@ -1,0 +1,47 @@
+{
+  "slug": "queens-gambit-accepted-showalter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Showalter Variation",
+    "eco": "D24",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the knight to c3 and prepares e4 to build a big centre rather than win the pawn back at once. The main line is 4...a6 5.e4 b5 6.Be2/6.a4, where Black holds the extra pawn for a while and White gets central space, or 4...c5 5.d5 e6 6.e4. Black tries to keep the pawn or counter with ...c5 and ...b5; White uses the centre to break through or regains c4.",
+  "white_ideas": [
+    { "idea": "Build the e4/d4 centre and attack the queenside pawn chain with a4 or Bxb5+." },
+    { "idea": "Regain the pawn on c4 or e5 and keep a central majority." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the pawn with ...a6 and ...b5, developing the bishop to b7." },
+    { "idea": "Strike back at the centre with ...c5 and ...e6 or ...e5." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4 centre against Black's queenside pawn advance ...a6, ...b5." },
+    { "structure": "Benoni-like structure after ...c5 d5 e6 e4 exd5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both sides have real tactical chances in the e4 lines but play is mostly strategic." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black takes the pawn; White gets it back or has compensation; classic QGA, not a gambit." },
+    "soundness": { "notes": "Sound; played by top players." },
+    "structure": { "notes": "Open centre of the QGA with queenside play." },
+    "approach": { "notes": "A mainstream line in the QGA." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of the centre versus queenside structure; moderate theory." }
+  },
+  "plan_phrases": ["central pawn majority", "queenside expansion"],
+  "sublines_that_differ": [
+    { "name": "4...c5 5.d5", "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 c5 5. d5", "how": "Benoni-like, more asymmetrical and sharper than the 4...a6 lines." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Strategic central play with some tactics; neither solid nor risky." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "A QGA is not a gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Established QGA line at the top level." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "The QGA centre opens with c4 gone and White's central pawns active." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream QGA branch." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but central structures need understanding." },
+    "plans": { "value": ["central_pawn_majority", "queenside_expansion"], "reason": "White builds the centre while Black expands with ...a6 and ...b5." }
+  }
+}

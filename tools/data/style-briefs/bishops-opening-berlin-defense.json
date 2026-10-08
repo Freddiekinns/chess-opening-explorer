@@ -1,0 +1,195 @@
+{
+  "slug": "bishops-opening-berlin-defense",
+  "root": {
+    "name": "Bishop's Opening: Berlin Defense",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Bishop's Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bishop%27s_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Bishop's Opening",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/the-bishops-opening/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "C24: Bishop's opening, Greco gambit",
+      "publisher": "365chess (search snippet only)",
+      "url": "https://www.365chess.com/eco/C24_Bishop's_opening_Greco_gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippets on the Paulsen Defense and Giuoco Pianissimo transposition (Wikipedia, chessworld.net)",
+      "publisher": "Various (search snippets only)",
+      "url": "https://www.chessworld.net/bishops-opening.asp",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White's bishop on c4 eyes f7 and Black answers with 2...Nf6, hitting e4 at once. White's standard reply is 3.d3 (defending e4 and keeping f4 and later c3/d4 available); 3.Nc3 transposes to a Vienna Game and 3.Nf3 to the Italian or Two Knights. Black usually continues 3...c6 (Paulsen) planning ...d5 to hit the bishop with tempo, or 3...Nc6/...Bc5 reaching the quiet Giuoco Pianissimo. Most play is therefore a calm Italian-style game with a small White space edge. Sharper options exist but are rare: 3.d4 (Urusov Gambit, a pawn for attack) and 3.f4 (Greco Gambit, transposing to the Bishop's Gambit after ...exf4). Nick de Firmian's verdict is that the Berlin leads to equality with best play.",
+  "white_ideas": [
+    {
+      "idea": "Play 3.d3 to defend e4, then Nf3, O-O and c3, keeping the option of the d4 break or f4 later; the position often transposes into the Giuoco Pianissimo.",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Use the move order as a transpositional device: 3.Nc3 reaches Vienna Game positions and 3.Nf3 reaches the Italian or Two Knights, letting White avoid Petrov-type or Open Game theory.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Sharper try 3.d4 exd4 4.Nf3 (Urusov Gambit): a pawn for piece activity and attacking chances. Evaluation: not quite worth a pawn.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "3.f4 (Greco Gambit) gives up e4 or f4 for central and kingside attacking chances and transposes to the Bishop's Gambit after 3...exf4; rarely seen.",
+      "sources": ["s1", "s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Paulsen: 3...c6 and ...d5, building a centre and gaining time against the bishop (4.Nf3 d5 5.Bb3).",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "3...Nc6 with ...Bc5 (Pianissimo) or the Two Knights move order, then ...d6, ...O-O: a standard solid development.",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Immediately challenge e4 with the 2...Nf6 move itself, then meet 3.d3 with ...d5 for central equality.",
+      "sources": ["s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Italian-style structure: White pawns on e4/d3 (with c3 and d4 to come) against Black e5/d6 or c6/d5; centre mostly closed or in tension until d4 is played.",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "structure": "Paulsen structure with ...c6 and ...d5 against e4/d3, giving Black a firm centre and White a small space plus option of exd5 / Bb3.",
+      "sources": ["s4"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mostly calm and developmental: Chessable calls the opening 'solid and principled' with little complexity at most levels. The gambit sidelines (Urusov, Greco) are sharp but are minority choices. Main line play is quiet and Italian-style.",
+      "sources": ["s2", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The root and main line 3.d3 involve no material. The gambit options are separate sublines: Urusov Gambit 3.d4 (White gives a pawn, which Black can keep; not quite sufficient compensation) and Greco Gambit 3.f4 (White).",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Sound for both sides in the main line: Nick de Firmian concludes the opening leads to equality with best play. The Urusov gambit is judged not quite worth a pawn but still playable; Greco Gambit stats in a small database sample were about even (28 games).",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "After 3.d3 the centre is closed or in tension: White e4/d3, Black e5 with ...d6 or ...c6/...d5. Central tension may be released later by d4 but early exchanges are rare.",
+      "sources": ["s1", "s4"]
+    },
+    "approach": {
+      "notes": "Not a system played against everything, but a flexible move order that transposes to Italian, Two Knights and Vienna. Wikipedia: modern top players rarely use it, apart from Larsen, though Kasparov tried it, Nunn used it to avoid the Petrov and Leko played it in the 2007 World Championship, so it is a respectable surprise weapon rather than a regular main line. Chessable says it appeals to both beginners and masters.",
+      "sources": ["s1", "s2"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory in the 3.d3 main line and clear Italian-style plans; Chessable says it avoids the heavy theory of other 1.e4 e5 lines without being complicated. For White it is easy to play; Black needs to know the Paulsen set-up. Gambit sidelines (Urusov, Greco) need concrete knowledge but are optional.",
+      "sources": ["s2"]
+    }
+  },
+  "plan_phrases": [
+    "central break d4",
+    "pressure on f7",
+    "transposition to Giuoco Pianissimo",
+    "transposition to Vienna Game",
+    "Paulsen ...c6/...d5",
+    "kingside attack with f4",
+    "slow central build-up"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Urusov Gambit",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3",
+      "how": "White gives a pawn for piece activity; a sharp gambit line unlike the quiet 3.d3 main line."
+    },
+    {
+      "name": "Greco Gambit",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. f4",
+      "how": "Aggressive, rare; after 3...exf4 it transposes to the Bishop's Gambit, 3...Nxe4 4.d3 Nd6 is the alternative."
+    },
+    {
+      "name": "3.Nc3 (Vienna transposition)",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. Nc3",
+      "how": "Reaches Vienna Game positions rather than Bishop's Opening ones."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Berlin Defense to the Bishop's Opening is a classical and reliable response where Black immediately challenges White's e4-pawn.",
+        "verdict": "supported",
+        "note": "2...Nf6 attacks e4 directly; it is Black's most common reply and Chessable calls the opening solid and principled.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White's bishop on c4 eyes the weak f7-square.",
+        "verdict": "supported",
+        "note": "Bc4 pressure on f7 is the opening's basic idea.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black's set-up is solid and flexible, leading to a strategically rich game of central control and piece activity.",
+        "verdict": "supported",
+        "note": "Paulsen and Pianissimo set-ups are solid with clear central plans.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Sharp tactical skirmishes can arise if White pushes for a central break.",
+        "verdict": "supported",
+        "note": "3.d4 (Urusov) and 3.f4 (Greco) are sharp, but both are rare choices.",
+        "sources": ["s1", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White prepares and executes the d2-d4 pawn break to challenge Black's e5 pawn.",
+        "verdict": "supported",
+        "note": "The quiet 3.d3 set-ups keep d4 as a later break (own understanding: usually after c3); the immediate 3.d4 is the Urusov Gambit.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black solidifies the centre with ...c6 and ...d5, neutralising White's bishop on c4.",
+        "verdict": "supported",
+        "note": "This is the Paulsen Defense: ...d5 gains time against the bishop.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "White adopts a quieter set-up with d3, Nf3 and O-O, transposing to lines similar to the Italian Game (Giuoco Piano).",
+        "verdict": "supported",
+        "note": "3.d3 Nc6 4.Nf3 Bc5 is the Giuoco Pianissimo.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Black develops actively (...Be7, ...O-O, ...d6) and prepares counter-attacking chances on the queenside or centre.",
+        "verdict": "unverifiable",
+        "note": "Generic development; sources do not speak of queenside counterattack here. ...Be7/...d6 is plausible but Black more often uses ...Bc5 in the Pianissimo.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 2 }
+}

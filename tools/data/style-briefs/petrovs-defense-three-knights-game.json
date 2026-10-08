@@ -1,0 +1,47 @@
+{
+  "slug": "petrovs-defense-three-knights-game",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Three Knights Game",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nc3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White declines the main Petrov and develops a third knight, aiming for a quiet Four Knights type game. The main line is 3...Bb4 4.Nxe5 O-O 5.Be2 Re8 6.Nd3 Bxc3 7.dxc3 Nxe4, where Black grabs the e-pawn and gets easy piece play. White gets the bishop pair and doubled c-pawns for Black or himself depending on the capture, and the game is steady and drawish.",
+  "white_ideas": [
+    { "idea": "Keep the e4 pawn defended and gain the bishop pair after Bxc3." },
+    { "idea": "Use the d- and e-files after the exchanges with Nd3 and quick castling." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin the c3 knight with ...Bb4 and win the e4 pawn back with ...Nxe4 after the trades." },
+    { "idea": "Equalise with simple piece trades and ...Re8 pressure on the e-file." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-file after 4.Nxe5 and the exchanges, with White's c-pawns often doubled." },
+    { "structure": "Symmetrical e5/e4 centre if White keeps tension." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Mostly symmetrical and drawish; Black has few ways to go wrong. Solid." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "4.Nxe5 wins a pawn but Black regains it at once with ...Nxe4." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "Symmetrical exchange structure with the e-file as the main open line, like the Petrov generally." },
+    "approach": { "notes": "A normal choice against the Petrov." },
+    "level": { "reason": "understanding", "notes": "Few forced lines; plans are simple, Intermediate. Low confidence on the sub-branch details." }
+  },
+  "plan_phrases": ["bishop pair", "doubled pawns", "symmetrical structure", "e-file pressure"],
+  "sublines_that_differ": [
+    { "name": "Three Knights, 3...Nc6", "moves": "1. e4 e5 2. Nf3 Nf6 3. Nc3 Nc6", "how": "Transposes to the Four Knights Game." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "Symmetrical, low-risk Petrov lines that are hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The e5 pawn is taken and the e4 pawn comes straight back." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Respected main-line development for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "Symmetrical exchange structure with the e-file as the one open line." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal anti-Petrov choice played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Simple plans but the structures take some feel." },
+    "plans": { "value": ["doubled_pawns", "symmetrical_structure"], "reason": "Bxc3 and dxc3 give doubled pawns in a mirror-image set-up." }
+  }
+}

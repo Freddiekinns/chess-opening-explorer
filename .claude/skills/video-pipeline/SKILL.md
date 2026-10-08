@@ -38,7 +38,7 @@ and nothing else, so it carries ~1,700 of the ~10,200 videos ever fetched.
 Scoring it alone is a ratchet: a better scorer can only reshuffle the previous
 one's survivors. Never "simplify" rematch back to a DB-only read.
 
-## Two things the scorer deliberately distrusts
+## Three things the scorer deliberately distrusts
 
 - **A description mention is not a subject.** Series descriptions cross-link
   their sibling episodes, so on a sub-variation page a description/tags hit only
@@ -47,6 +47,24 @@ one's survivors. Never "simplify" rematch back to a DB-only read.
   O'Kelly) get no specificity swing by design, so their candidates all tie;
   `compareMatches` breaks that on how much of the variation the title names,
   before view count. Do not reduce it to popularity again.
+- **An opening's alias list can contain its own family name.** `parseAliases`
+  splits ECO alias strings on commas, so `"Sicilian Defense, O'Kelly Variation"`
+  gives the **Kan** page a bare `"Sicilian Defense"` alias. Matched as a name,
+  that scored every generic Sicilian video 80 on a specific sub-variation page —
+  above any real variation match, and past both guards, because the intra-family
+  guard only fires for family matches and the corroboration rule only for
+  content matches. Aliases equal to the page's family prefix are skipped; the
+  video can still qualify through the family path, which is policed.
+
+## Per-opening order is decided twice
+
+`compareMatches` (`lib/video-matcher.js`) picks the top 10;
+`getTopVideosForOpening` (`database/schema-manager.js`) re-derives the
+**displayed** order in SQL. They must break ties identically, which is why
+`variation_rank` is persisted on `opening_videos` rather than kept in memory.
+Adding the tie-break to the JS half alone changed nothing — the SQL re-sorted by
+view count on the way to the JSON, and the symptom looked exactly like the fix
+not working.
 
 ## Before a rematch, backfill
 
@@ -73,12 +91,44 @@ Checks coverage, variation specificity, cross-family contamination, and ranking
 ties. Treat a rise in contamination or a fall in top-200 coverage as a
 regression.
 
+## Jev filters the index after the scorer
+
+Every mode ends with `scripts/apply-jev-filter.js`, which removes a pair from
+`video-index.json` when Jev says the video is `mentioned_only` or `not_about`
+that page with P(good) < 0.4. The scorer's output in SQLite is untouched, so **a
+video the matcher kept can still be missing from the page** — check
+`tools/data/jev-relation-cache.json` before debugging the scorer.
+
+- Only confident rejections act. Jev's acceptances are unreliable on sibling
+  variations, so never use them to rank.
+- Answers are cached per video and named opening and committed; only new pairs
+  are paid for. It fails open without `JEV_API_KEY`. The key comes from
+  console.typesafe.ai; `jevtypesafeai.com` is an unaffiliated reseller.
+- `video-index.json` therefore holds fewer videos than SQLite's
+  `opening_videos`, and a page the filter empties shows its family shelf.
+- Then `config/video_pins.json` puts hand-verified videos first on their named
+  opening's pages (`lib/video-pins.js`). A video on a page that the scorer never
+  matched is probably a pin. Pin only what Jev and the judge agree on, never on
+  Jev's word alone.
+- After a scorer change, the audit's "#1 names the variation" dips slightly
+  under the filter. That metric is a keyword test, and most of what Jev removes
+  there is a keyword false positive. Sample the changed pages before treating it
+  as a regression.
+
 ## Configuration
 
 - `config/video_matching.json` — scoring weights, `variation_modifiers`
   (accelerated/semi/anti/…), `specific_variation_keywords`
 - `config/youtube_channels.json` — the 16 trusted channels and their tiers. This
   is the single source of truth; never hardcode channel lists in matcher code.
+
+Resolve channel tiers through `lib/channel-tiers.js`, which normalises titles to
+letters and digits before comparing: the config's display name is not the
+YouTube channel title ("Chess Network" vs `ChessNetwork`), and a raw string
+compare silently demoted that premium channel to the unknown tier — 60 scoring
+points and a stricter duration gate that withheld 183 of its videos from the
+corpus. `repo-invariants.test.js` fails on a channel name or ID literal in
+`lib/`.
 
 Never guess a YouTube channel ID. Verify with the user, or test the RSS feed at
 `https://www.youtube.com/feeds/videos.xml?channel_id={ID}`.
@@ -88,7 +138,8 @@ Never guess a YouTube channel ID. Verify with the user, or test the RSS feed at
 `.github/workflows/video-refresh.yml` runs the incremental pipeline monthly,
 audits before and after, and opens a PR with the metric diff. It fails fast at
 guard steps until `tools/data/videos.sqlite` is committed and the
-`YOUTUBE_API_KEY` repo secret is set.
+`YOUTUBE_API_KEY` repo secret is set. The `JEV_API_KEY` secret is optional:
+without it, new pairs go unfiltered.
 
 Full architecture, matcher internals and troubleshooting:
 `tools/video-pipeline/README.md`.

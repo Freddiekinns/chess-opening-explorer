@@ -1,0 +1,196 @@
+{
+  "slug": "sicilian-defense-french-variation",
+  "root": {
+    "name": "Sicilian Defense: French Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6",
+    "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sicilian 2...e6 (Sicilian Defence 1.e4 c5 2.Nf3 e6)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/sicilian-defence-1-e4-c5-2-nf3-e6",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Sicilian Defense - Chess Openings",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Sicilian-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Taimanov, O'Kelly, Paulsen, and Kan",
+      "publisher": "Chess.com forums",
+      "url": "https://www.chess.com/forum/view/chess-openings/taimanov-okelly-paulsen-and-kan",
+      "kind": "forum"
+    },
+    {
+      "id": "s4",
+      "title": "Sicilian Defence (search snippet on 3.b3 Westerinen)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Defence",
+      "kind": "reference"
+    }
+  ],
+  "overview": "2...e6 is a gateway rather than a set-up: after 3.d4 cxd4 4.Nxd4 Black chooses the Taimanov (...Nc6), the Kan (...a6) or the Scheveningen (...d6, ...Nf6), with 3.Nc3 giving the Paulsen/Kan/Taimanov move orders. Black opens the diagonal for the f8-bishop and prepares ...d5 or ...Nc6/...a6 in a flexible way, with a solid ...e6/...d6 pawn chain and queenside counterplay. The name 'French' is only a naming convention: the pawn structure is Sicilian, not a French one. White's main choice is 3.d4 (about 61% of moves at 2500); rarer third moves are 3.d3, 3.g3, 3.c3 and Westerinen's 3.b3 (Bb2, occasional in the 1970s). At higher levels play is heavily theoretical.",
+  "white_ideas": [
+    {
+      "idea": "3.d4 and the Open Sicilian: establish a classical centre, then choose Maroczy-bind or Nb5 ideas depending on Black's set-up",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "3.Nc3 (Paulsen move order) keeping options of d4 later; transposes to Taimanov or Kan",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Quiet alternatives: 3.d3, 3.g3, 3.b3 (Westerinen, Bb2) to avoid Open Sicilian theory",
+      "sources": ["s4", "s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f8-bishop's diagonal and prepare ...Nc6 (Taimanov) or ...a6 (Kan) while keeping ...d5 and ...d6 flexible",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Kan 4...a6 avoids the early Nb5 pressure of the Taimanov and gives manoeuvres such as ...Nd7-c5",
+      "sources": ["s3"]
+    },
+    {
+      "idea": "...d5 break prepared by ...e6, with recapture options, to liberate Black's position",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with ...e6 and ...d6/...d7: solid chain, Black has good dark squares while White controls light squares and the centre, sometimes a Maroczy bind",
+      "sources": ["s3", "s1"]
+    },
+    {
+      "structure": "Paulsen/Kan: pawns on c-file exchanged, half-open c-file for Black, small pawn centre",
+      "sources": ["s3"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s1 rates it Sharp and reports about 80% of moves at higher levels are known theory, meaning forcing, well-mapped positions. s2 describes the French Variation as a more flexible set-up that usually avoids the more tactical lines. These conflict somewhat: the move itself is flexible and solid-looking, but the lines after 3.d4 (Taimanov, Kan, Scheveningen) are theory-heavy with real attacking chances for White. Typical play depends on the move order White picks.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound and balanced: s1 gives White 46.8%, Black 48.7%, draws 4.5% over 51 million games. Black scores slightly better than White at this level of aggregate. Nothing calls it dubious.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "After 3.d4 cxd4 4.Nxd4 the d-pawns are traded and the centre becomes semi-open: White has e4, Black has a half-open c-file. Rarer 3.d3/3.g3/3.b3 keep the centre closed or in tension.",
+      "sources": ["s1", "s3"]
+    },
+    "approach": {
+      "notes": "A flexible set of pawn moves (...c5, ...e6) that can be played against 1.e4 with several piece set-ups. Not a system that ignores White's reply, since Black's piece placement depends on White's third move. Moderately popular at strong level: s1 reports 1.03% of games at 2500 in 2025 (peak 1.28% in 2015); Pia Cramling (351 games as Black) and Gyula Sax (134 as White) are named practitioners. The Taimanov and Kan are main-line choices of strong players.",
+      "sources": ["s1"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Judged for Black. Move-order flexibility with ...e6 is friendly because Black can postpone commitment, and the Taimanov/Kan plans are clear (s3: understand ideas and plans over names). But s1 notes about 80% of moves are theory at higher levels and the Open Sicilian after 3.d4 is a deep theory area, and s2 notes the Sicilian carries a lot of theory.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "Taimanov / Kan / Scheveningen set-ups",
+    "Maroczy bind",
+    "...d5 break",
+    "queenside counterplay",
+    "Nb5 pressure",
+    "move-order flexibility",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Taimanov",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
+      "how": "Piece-play with ...Nc6, ...Qc7, ...a6; considered the most comfortable e6 Sicilian for Black (snippet)."
+    },
+    {
+      "name": "Kan",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+      "how": "Flexible, avoids Nb5; compact structure with ...Nd7-c5 ideas."
+    },
+    {
+      "name": "Scheveningen / Open (...d6)",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+      "how": "Sharper small-centre structure with attacking Keres-type options for White (own understanding, not sourced)."
+    },
+    {
+      "name": "Westerinen Attack",
+      "moves": "1. e4 c5 2. Nf3 e6 3. b3",
+      "how": "Rare independent try with Bb2; quiet, avoids theory."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Sicilian French Variation is a highly flexible and resilient response to 1.e4",
+        "verdict": "supported",
+        "note": "s2 calls the French Variation a more flexible set-up; s1 notes the transposition flexibility into Taimanov, Kan and Scheveningen.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It blends the counter-attacking spirit of the Sicilian with the structural solidity of the French Defense",
+        "verdict": "wrong",
+        "note": "'French' is a naming convention for 2...e6; the position has a Sicilian pawn structure, not a French one. The main lines after 3.d4 cxd4 are Taimanov, Kan and Scheveningen (s1), which are theory-heavy and rated Sharp, not 'French solidity'.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black aims to control the d5-square and launch a counter-thrust after completing development",
+        "verdict": "supported",
+        "note": "...e6 prepares the ...d5 break with recapture options (s1).",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Perfect for versatile players adept at both positional manoeuvring and sharp tactics",
+        "verdict": "unverifiable",
+        "note": "Opinion; no source frames it this way.",
+        "sources": []
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: prepare and execute the ...d5 pawn break to challenge White and liberate the position",
+        "verdict": "supported",
+        "note": "s1.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: queenside counterplay with ...a6, ...b5 and ...Rc8, creating pressure against the e4-pawn",
+        "verdict": "unverifiable",
+        "note": "...a6 and queenside play fit the Kan (s3). ...Rc8 pressure on e4 specifically was not found.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "White: use the central space advantage to develop an attack, often on the kingside, while restraining Black's counterplay",
+        "verdict": "unverifiable",
+        "note": "s3 notes White controls light squares and the centre with Maroczy-bind possibilities; kingside attack was not specifically found.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "White: control d5 and target a backward d6-pawn if it appears",
+        "verdict": "unverifiable",
+        "note": "d5/d6 themes are real in Sveshnikov-type Sicilians, but not found as a stated plan for the e6 lines.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 3 }
+}

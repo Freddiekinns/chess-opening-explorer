@@ -1,0 +1,159 @@
+{
+  "slug": "sicilian-defense-smith-morra-gambit",
+  "root": {
+    "name": "Sicilian Defense: Smith-Morra Gambit",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Smith–Morra Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Smith%E2%80%93Morra_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The Smith-Morra Gambit opening for White & Black",
+      "publisher": "Chessable blog",
+      "url": "https://www.chessable.com/blog/smith-morra/",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Smith-Morra Gambit Guide: How to Play It & Beat It",
+      "publisher": "Chess Doctrine",
+      "url": "https://chessdoctrine.com/chess-openings/kings-pawn/smith-morra-gambit/",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "A Bust to the Smith-Morra Gambit",
+      "publisher": "US Chess Federation (Elijah Logozar)",
+      "url": "https://new.uschess.org/theory/bust-smith-morra-gambit",
+      "kind": "article"
+    }
+  ],
+  "overview": "White offers a pawn on move 2 (2.d4 cxd4 3.c3) to swap the d-pawn for Black's c-pawn, gain a lead in development and open the c- and d-files. After 3...dxc3 4.Nxc3 White plays Nf3, Bc4 and quick castling, aiming at f7 with the Bc4, a Qe2/Rd1/Rc1 battery and tactical shots such as Nd5 and e5. Black either accepts and consolidates (typically with ...Nc6, ...e6, ...a6, ...Nge7-g6 or a Scheveningen/Kan set-up, trading pieces to hold the pawn) or declines with 3...Nf6, reaching a safe Alapin Sicilian. Play is open and tactical with White chasing the initiative; if Black consolidates the extra pawn he has good endgame chances.",
+  "white_ideas": [
+    { "idea": "Recapture 4.Nxc3, then Nf3 and Bc4 hitting f7, with quick castling and active development.", "sources": ["s1", "s3"] },
+    { "idea": "Control the open c- and d-files with rooks (Bc4-Qe2-Rd1-Rc1 battery).", "sources": ["s3", "s2"] },
+    { "idea": "Tactical shots Nd5 and Bxf7+, and the e4-e5 break with tempo against Black's queen or knights.", "sources": ["s3", "s4"] },
+    { "idea": "Keep the initiative; passive play lets Black consolidate the extra pawn.", "sources": ["s2"] }
+  ],
+  "black_ideas": [
+    { "idea": "Accept with 3...dxc3 and consolidate: ...Nc6, ...e6, ...a6 (stops Nb5), ...Nge7-g6 to control e5, or Scheveningen/Paulsen/Kan/Chicago formations.", "sources": ["s1", "s3", "s4"] },
+    { "idea": "Decline with 3...Nf6, transposing into an Alapin Sicilian (safe, equalising).", "sources": ["s2", "s3"] },
+    { "idea": "Trade pieces to relieve pressure and aim for an endgame with the extra pawn.", "sources": ["s1"] },
+    { "idea": "Siberian Variation (with the Siberian Trap 9...Nd4) as a specific accept line.", "sources": ["s1"] }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with White's c-pawn and d-pawn gone from the centre; semi-open/open c- and d-files; Black has an extra c-pawn (queenside majority after consolidation) against White's lead in development.", "sources": ["s2", "s1"] },
+    { "structure": "If declined with 3...Nf6, an Alapin-type structure (White c3 and d4 vs e5 push).", "sources": ["s2", "s3"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Very sharp and tactical (Chessable: 'one of the most exciting gambits'; Wikipedia: tactically sharp). White needs to keep the initiative; Black needs specific defensive knowledge to avoid traps. Chess Doctrine says it can be played with plans rather than long memorisation, but remains tactically demanding.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black may keep the pawn after 3...dxc3 4.Nxc3, which is the critical test; if Black holds on and consolidates, Black has good chances in the endgame (Wikipedia). Black can also decline with 3...Nf6 (Alapin) or 3...d5/3...d3, after which no material is lost.",
+      "sources": ["s1", "s3"]
+    },
+    "soundness": {
+      "notes": "Not refuted. Engines evaluate around -0.2 for White, so objectively playable though difficult for White to prove compensation (Chessable). Chess Doctrine: White gets no edge with accurate play, close to equal, but the practical score is far better than the objective reputation. A US Chess article by an expert-level author (Logozar, 2019) argues a refutation with 3...dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Nge7 7.Bg5 h6 aimed at stopping e5 with tempo (single author, not widely accepted; sourced only to that article). Wikipedia: popular at club level, played occasionally by masters.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "structure": {
+      "notes": "Open: White's d-pawn is exchanged for Black's c-pawn on move 2-3, giving open c- and d-files. After Black accepts, centre is fluid with e4/e5 tension; if declined with 3...Nf6 it resembles an Alapin (semi-open).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A specific anti-Sicilian gambit, not a set-up played against everything. Rarely seen at elite level (Chess Doctrine: occasional use by Nepomniachtchi, Nakamura, Adams, Kamsky; Chessable: not popular at GM level; Wikipedia: Nakamura used it against Caruana in rapid games in 2023). Popular in club, blitz and bullet play; modern advocate IM Marc Esserman. Less common than the Alapin or open Sicilian, but used by strong players occasionally.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "White needs few long lines but must know the specific tactical themes (Nd5, Bxf7+, e5 break, Siberian Trap). Chess Doctrine says you do not need to memorise long lines and plans are formulaic; Chessable says difficulty for club players is moderate to high, as it requires keeping the initiative and tactical awareness (passive players should avoid it) and is moderately theoretical (e.g. ...a6 to stop Nb5). Black needs specific defensive knowledge to avoid traps.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pawn sacrifice for development",
+    "attack on f7 with Bc4",
+    "open c- and d-files",
+    "initiative",
+    "e4-e5 break",
+    "Nd5 sacrifice",
+    "consolidate the extra pawn",
+    "decline into an Alapin"
+  ],
+  "sublines_that_differ": [
+    { "name": "Siberian Variation", "moves": "1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 d6 6. Bc4 e6 7. O-O Nf6 8. Qe2 Be7 9. Rd1 e5", "how": "Black's accepted line with the Siberian Trap ...Nd4 winning White's queen if White plays inaccurately." },
+    { "name": "Alapin (declined) 3...Nf6", "moves": "1. e4 c5 2. d4 cxd4 3. c3 Nf6", "how": "No material changes hands; it becomes an Alapin-type Sicilian (solid)." },
+    { "name": "3...d3 / 3...d5 declines", "moves": "1. e4 c5 2. d4 cxd4 3. c3 d3", "how": "Black refuses the pawn; non-gambit lines." },
+    { "name": "2...d5", "moves": "1. e4 c5 2. d4 d5", "how": "Black declines the gambit before the pawn is exchanged; no gambit." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Smith-Morra Gambit is a sharp and aggressive response to the Sicilian where White sacrifices a pawn for a lead in development and open lines.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White aims for a quick attack against the Black king before Black can consolidate the extra pawn.",
+        "verdict": "supported",
+        "note": "White targets f7 and the central files; a fair summary.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It leads to highly tactical battles.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s2", "s1"]
+      },
+      {
+        "claim": "It is perfect for aggressive, tactical players comfortable with material imbalances.",
+        "verdict": "supported",
+        "note": "Chessable: 'passive players best steer away'.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: Rapidly develop (Nc3, Nf3, Bc4), control open c and d files and attack the king, often targeting f7.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "Black: Accept the pawn, develop carefully to neutralise White's initiative, trade pieces and aim to convert in the endgame.",
+        "verdict": "supported",
+        "note": "Wikipedia: if Black holds the pawn, good chances in the endgame.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White: Prevent Black from achieving key breaks like ...d5 or ...e5.",
+        "verdict": "unverifiable",
+        "note": "Sources instead stress that Black's ...Ng6 controlling e5 stops White's e5 break; ...d5 as a Black break is not discussed in sources read.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "Black: Complete development, connect rooks, and use the extra c-pawn to create a queenside pawn majority.",
+        "verdict": "unverifiable",
+        "note": "Nothing found stating the queenside majority plan directly; consolidating and heading for an endgame is supported.",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

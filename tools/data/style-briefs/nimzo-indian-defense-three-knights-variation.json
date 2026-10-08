@@ -1,0 +1,47 @@
+{
+  "slug": "nimzo-indian-defense-three-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Three Knights Variation",
+    "eco": "E21",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Nf3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White develops the knight instead of Qc2 or e3, keeping options open. Black chooses ...O-O, ...c5 or ...b6; typical play is e3, Bd3, O-O against doubled c-pawns or the bishop pair. Positions are strategic with Black fighting for e4 and White for the centre.",
+  "white_ideas": [
+    { "idea": "Develop quickly with e3, Bd3, O-O and d5/e4 central play, or Qc2 to recapture on c3 without doubling." },
+    { "idea": "Seek the bishop pair if Black captures on c3, and use the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Pin Nc3, control e4, castle and take on c3 to ruin White's pawns." },
+    { "idea": "Hit the centre with ...c5 or ...d5, or play ...b6 and ...Bb7." }
+  ],
+  "typical_structures": [
+    { "structure": "Doubled c-pawns for White against the bishop pair." },
+    { "structure": "Hanging pawns or IQP after ...c5 and ...d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic, with a tense centre; few forced lines compared with the main Nimzo lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "None." },
+    "soundness": { "notes": "Sound; mainstream." },
+    "structure": { "notes": "Centre in tension; flexible with doubled pawns options." },
+    "approach": { "notes": "A mainline Nimzo-Indian development; standard." },
+    "level": { "reason": "understanding", "notes": "Strategic piece play and structure judgement more than memorisation." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "half-open c-file"],
+  "sublines_that_differ": [
+    { "name": "Nimzo-Queen's Hybrid", "moves": "4...b6 5.Bg5", "how": "Sharper pin and more complex." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Strategic and flexible without forced sharp lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "Nothing is sacrificed." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Main line with a long pedigree." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "Centre in tension, with pawn structure decided by later exchanges." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A top-level main line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Strategic ideas matter more than forced lines." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair"], "reason": "Black trades on c3 for White's structure." }
+  }
+}

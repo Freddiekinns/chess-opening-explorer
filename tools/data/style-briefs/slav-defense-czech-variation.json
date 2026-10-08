@@ -1,0 +1,46 @@
+{
+  "slug": "slav-defense-czech-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Czech Variation",
+    "eco": "D17",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "slav-defense-alapin-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black takes on c4 and develops the light-squared bishop outside the pawn chain, while White stops ...b5 with a4. The main line is 6.e3 e6 7.Bxc4 Bb4 8.O-O Nbd7, with Black developed and sound and White having a small space edge. Sharper options include 6.Ne5 (Krause Attack).",
+  "white_ideas": [
+    { "idea": "e3, Bxc4 and O-O, then Qe2 or e4 to claim space and use the pawn centre." },
+    { "idea": "Ne5 and Qb3 ideas against Black's queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "...e6, ...Bb4 and ...Nbd7, with ...Bg6 or ...O-O and ...c5 or ...e5 break." },
+    { "idea": "Develop the c8 bishop actively and hit the centre with ...c5 or ...e5." }
+  ],
+  "typical_structures": [
+    { "structure": "Slav structure with the c-pawn exchanged for the c4 pawn, White d4/e3 against Black c6/e6 or ...e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gets a sound, developed position, hard to break down; the Krause Attack is sharper." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn is regained by White." },
+    "soundness": { "notes": "Fully sound; one of the main Slav lines." },
+    "structure": { "notes": "Asymmetric semi-open centre with d4 and ...c6/e6, or an open e-file after ...e5." },
+    "approach": { "notes": "Played by strong players routinely." },
+    "level": { "reason": "understanding", "notes": "Black needs sound plans and a few forced lines; no deep theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Krause Attack", "moves": "6.Ne5", "how": "Sharper, hitting c4 and f7 with tactics." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.6, "reason": "Slav set-up that is sound and hard to break down." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "The pawn is regained by Bxc4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Main-line Slav." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "One side has an asymmetrical centre and the c- and d-files are partly open." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A regular line at all levels." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear development plans and moderate theory." },
+    "plans": { "value": [], "reason": "No single recognised plan from the list dominates." }
+  }
+}

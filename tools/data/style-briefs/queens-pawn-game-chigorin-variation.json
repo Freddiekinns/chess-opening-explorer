@@ -1,0 +1,228 @@
+{
+  "slug": "queens-pawn-game-chigorin-variation",
+  "root": {
+    "name": "Queen's Pawn Game: Chigorin Variation",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. Nc3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Richter-Veresov Attack, 1.d4 d5 2.Nc3 Nf6 3.Bg5 (D01)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/richter-veresov-attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Richter-Veresov Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Richter%E2%80%93Veresov_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Openings for Tactical Players: Veresov Opening",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/article/view/openings-for-tactical-players-veresov-opening",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Chess Opening Theory/1. d4/1...d5/2. Nc3",
+      "publisher": "Wikibooks",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._d4/1...d5/2._Nc3",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "Chigorin Defence (read only for the 2.Nf3 Nc6 branch in the subtree)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chigorin_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s6",
+      "title": "Jobava London / 2.Nc3 Nf6 3.Bf4 and Alburt Defence (search snippets only)",
+      "publisher": "Web search (365chess, Modern Chess, ChessBase)",
+      "url": "https://www.modern-chess.com/course/the-jobava-london-top-level-repertoire-for-white/89906/",
+      "kind": "course"
+    }
+  ],
+  "overview": "1.d4 d5 2.Nc3 is a crossroads, not one system: White develops the b1-knight before committing the c-pawn, which blocks White's own c-pawn and so gives up the usual c4 challenge to d5. The usual continuation is 2...Nf6, after which White chooses between 3.Bg5 (Richter-Veresov: pin on f6, queenside castling, f3 and e4) and 3.Bf4 (Jobava London: Nb5 ideas against c7, Qd2 and Bh6 against a fianchetto), or 3.Nf3 and transpositions. Other Black replies are 2...Bf5 (Alburt Defence, assessed as equal, rare in master play), 2...c5 (Irish Gambit, little explored) and 2...e6. The openings are rarely used by top players as a main weapon but are sound; Spassky, Tal, Karpov, Bronstein, Morozevich, Aronian and Gashimov have played them as surprise weapons. The subtree also swallows a different opening by transposition: 1.d4 d5 2.Nf3 Nc6 is the Chigorin Defence, Black's choice, not White's.",
+  "white_ideas": [
+    {
+      "idea": "3.Bg5 pins the f6-knight so Bxf6 can wreck Black's kingside pawns, with Nc3 adding pressure on d5",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Queenside castling then f3 and e4 to build the centre and attack (Richter's 4.f3 against ...Bf5); Veresov's own preference was 4.Bxf6 to damage the structure",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Jobava set-up 3.Bf4: Nb5 jump against c7, Qd2 and Bh6 against a fianchetto, e4 break; easy to learn and aimed at attacking chances without heavy preparation",
+      "sources": ["s6", "s4"]
+    },
+    {
+      "idea": "Keep options open: the position often transposes to other lines (s4)",
+      "sources": ["s4"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and challenge the pin with ...Nbd7 (dominant reply at 2500+, 36.8% per s1) or ...Bf5, ...c5, ...c6; avoid the passive ...e6, which tends to give White the attack they wanted",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Alburt Defence 2...Bf5 (typically 3.Bf4 Nc6/Nf6 4.e3 e6) reaches equal positions",
+      "sources": ["s4", "s6"]
+    },
+    {
+      "idea": "2...c5 Irish Gambit: counter in the centre, rarely tested",
+      "sources": ["s4"]
+    },
+    {
+      "idea": "Black's own ...Nc6 Chigorin Defence set-up (2.Nf3 Nc6 3.Bf4 or 2.c4 Nc6): quick development and piece pressure on the centre in return for ceding the bishop pair or a blocked c-pawn",
+      "sources": ["s5"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed positions with slow strategic manoeuvring, since White's c-pawn is blocked and cannot challenge d5 (s4)",
+      "sources": ["s4"]
+    },
+    {
+      "structure": "Richter-Veresov: kingside pawns of Black may be doubled on f6 after Bxf6; the set-up resembles a Ruy Lopez mirrored onto the queenside but plays differently",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Transposition to French structures after 3.Bg5 e6, or to London-type set-ups after 3.Bf4",
+      "sources": ["s4"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed by branch. s1 classes the Richter-Veresov as Sharp (sharpness index about 0.95-0.97) and 'genuinely dangerous' at club level, though judged to give White nothing concrete at master level. s3 says it suits attacking players. s4 says the 2.Nc3 variation as a whole leads to closed positions with slow strategic manoeuvring. The Jobava 3.Bf4 line is an attacking but quieter pawn structure. So typical play is not forcing in the way a gambit is, but White often plays for an attack.",
+      "sources": ["s1", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines. The Irish Gambit (2...c5) is a Black pawn offer in a rare sub-branch only.",
+      "sources": ["s4"]
+    },
+    "soundness": {
+      "notes": "Sound (s4 calls the variation sound). s1: White scores 49% over 4.4M games, with the edge falling 4.2 points from 1200 to 2500 Elo; at 2500+ it is 45% White, 46.3% Black, 8.7% draws, 'judged to give White nothing concrete' at master level. No source calls it unsound.",
+      "sources": ["s1", "s4"]
+    },
+    "structure": {
+      "notes": "Mostly a tense or closed centre with d4/e3 or d4/e4 pawns against Black's d5, no early central exchange. s4: closed positions, slow strategic manoeuvring. With the Richter-Veresov f3/e4 plan the centre can open, but it does so later.",
+      "sources": ["s4", "s2"]
+    },
+    "approach": {
+      "notes": "Rarely a main weapon: s2 says 'never very popular at the top level', and s4 says rarely played by masters and tournament players. Used as an occasional surprise weapon by Spassky, Tal, Karpov and Bronstein (s2), and by Morozevich, Aronian and Gashimov (s3). Zvonimir Mestrovic is the most prolific user (71 games per s1). The Jobava London branch (3.Bf4) is a current top-level system (Jobava's name; s6). It is a set-up rather than a single opening, partly because 2.Nc3 transposes freely (s4). Respectable, not offbeat.",
+      "sources": ["s1", "s2", "s3", "s4", "s6"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for White, the side that studies it. s1 says success depends on understanding the f6 pin, the timing of f3-e4 and spotting when Black's passive defence collapses, not rote memorisation. s3 recommends learning from Veresov's own games and says it suits players for whom creativity beats knowledge of lines. s6 says the Jobava version gives attacking chances without massive preparation, like the London. Low theory, but the plans need judgement.",
+      "sources": ["s1", "s3", "s6"]
+    }
+  },
+  "plan_phrases": [
+    "pin on the f6 knight",
+    "queenside castling and kingside pawn storm",
+    "f3 and e4 break",
+    "Bxf6 doubled pawns",
+    "Nb5 jump against c7",
+    "blocked c-pawn",
+    "transposition to London or French structures",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Richter-Veresov Attack",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bg5",
+      "how": "Sharper and more forcing than the root as a whole: pin on f6, queenside castling, f3 and e4 (s1 rates it Sharp)."
+    },
+    {
+      "name": "Jobava London",
+      "moves": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
+      "how": "A distinct system (already its own brief via Rapport-Jobava): Nb5, Qd2 and Bh6 attacking plans on a London-type pawn structure."
+    },
+    {
+      "name": "Alburt Defence",
+      "moves": "1. d4 d5 2. Nc3 Bf5",
+      "how": "Black develops the light-squared bishop at once; equal and rarely seen in master games (32 master games on 365chess per snippet)."
+    },
+    {
+      "name": "Irish Gambit",
+      "moves": "1. d4 d5 2. Nc3 c5",
+      "how": "Black counter-gambit in the centre; fairly unexplored (s4). Only branch where material is offered."
+    },
+    {
+      "name": "Chigorin Defence via 2.Nf3",
+      "moves": "1. d4 d5 2. Nf3 Nc6",
+      "how": "A different opening folded into the subtree by transposition: it is Black's choice, uncommon at top level (Morozevich the main modern exponent per s5), with White usually playing 3.Bf4 or 3.g3."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Chigorin Variation is a flexible, somewhat unorthodox system that sidesteps the heavy theory of the main Queen's Gambit lines",
+        "verdict": "supported",
+        "note": "s4: unconventional, avoids c4, rarely played by masters and tournament players, may transpose.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "By developing the b1-knight first, White maintains options to transpose into various other openings",
+        "verdict": "supported",
+        "note": "s4: 'may often transpose to other lines' (London, French structures).",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "It often leads to unique, less-explored middlegame positions",
+        "verdict": "supported",
+        "note": "The Irish Gambit is described as fairly unexplored (s4), but the main line 2...Nf6 3.Bg5/Bf4 is well mapped. Partly true.",
+        "sources": ["s4", "s1"]
+      },
+      {
+        "claim": "Suits creative, versatile players where understanding ideas matters more than memorising long theoretical variations",
+        "verdict": "supported",
+        "note": "s1 and s3 both emphasise ideas over memorisation.",
+        "sources": ["s1", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: play Bg5 to pin the f6 knight and prepare a kingside attack (Richter-Veresov set-up)",
+        "verdict": "supported",
+        "note": "Pin on f6 and kingside attacking potential (s1, s2). The attack is usually after queenside castling plus f3/e4, so 'prepare a kingside attack' is accurate in effect.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White: prepare and execute the e2-e4 break",
+        "verdict": "supported",
+        "note": "f3-e4 expansion is the characteristic White plan (s1, s2).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: solidify with ...Nf6 and ...e6, then challenge with a timely ...c5",
+        "verdict": "supported",
+        "note": "3...c5 and ...Nf6 are standard (s2). But s1 calls the ...e6 set-up slightly passive; ...Nbd7 and ...Bf5 are more common at 2500+.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: develop pieces rapidly to safe squares, neutralise White's initiative and exploit the c3-knight blocking the c-pawn",
+        "verdict": "unverifiable",
+        "note": "The c-pawn block is real but it blocks White's c-pawn (s4); the rest is generic advice.",
+        "sources": ["s4"]
+      }
+    ]
+  },
+  "research_log": { "searches": 4, "pages_read": 5 }
+}

@@ -1,0 +1,227 @@
+{
+  "slug": "englund-gambit",
+  "root": {
+    "name": "Englund Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Englund Gambit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Englund_Gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Englund Gambit",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/englund-gambit",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Englund Gambit (search snippets: engine evaluation and refutation line)",
+      "publisher": "Chess Fandom wiki / Chess.com (web search summary)",
+      "url": "https://chess.fandom.com/wiki/Englund_Gambit",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black answers 1.d4 with 1...e5, offering the e-pawn after 2.dxe5 to avoid closed queen's-pawn positions and set tactical problems. The main line is 2...Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3, where Black regains the pawn on b2 but loses the queenside attack; the gambit relies on traps such as 6.Bc3?? Bb4! with mate threats on c1. White can simply keep the pawn and, with accurate development, retains an advantage. Strong players and engines consider it unsound for Black, and top-level players almost never choose it. It scores through quick development and traps against an unprepared opponent.",
+  "white_ideas": [
+    {
+      "idea": "Accept the pawn with 2.dxe5 and keep it, developing carefully (Nf3, Bf4, Nc3) to neutralise Black's lead",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "idea": "Main line 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3 maintains the extra pawn; Bucker called 8.Nd5! very strong. Alternatives 4.Qd5 (Stockholm Variation) and 4.Nc3",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "idea": "Avoid the trap 6.Bc3?? Bb4! (7.Bxb4 Nxb4 or 7.Qd2 Bxc3 8.Qxc3 Qc1#)",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Sacrifice the e-pawn for quick development: ...Nc6, ...Qe7, then ...Bb4+/...Qb4+ to regain material (b2) and disrupt White's coordination",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "idea": "Create threats along the queenside, hoping White errs tactically (trappy, open, tactical struggle)",
+      "sources": [
+        "s2"
+      ]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White a pawn up (no e-pawn for Black), open e-file and open lines for Black's bishops and queen",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s2 rates the Englund 'Very Sharp': concrete tactical sequences where 'one careless bishop move can even allow a quick mate on c1'. s1 says the opening prioritises tactical complications over positional soundness. Typical play is forcing, early queen moves and traps; both sides risk a quick loss.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "The e-pawn is offered at 1...e5 2.dxe5 and White may keep it: in the key line 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3 White stays a pawn up after Black regains b2 at the cost of his queenside attack, and Bucker rates 8.Nd5! as very strong for White. Nothing forces the pawn back.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "soundness": {
+      "notes": "Unsound for Black. Boris Avrukh calls 1...e5 'the worst possible reply to White's first move' (s1, s3). s3 gives an engine evaluation of about +1.2 for White after 3...Qe7 (win/draw/loss 48/3/49 in games). s2 says it is generally considered unsound under accurate play although the aggregate scores are close (White 49.2%, draws 3.9%, Black 46.9%).",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "structure": {
+      "notes": "Open centre: Black's e-pawn is gone, the e-file and diagonals are open, with early queen and bishop checks on b4. Pawn structure is lopsided.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "approach": {
+      "notes": "Very rare among strong players. s1: almost never seen in top-level play (Keres tried it once); amateur and correspondence use. s2: 0.16% at 2500 Elo against 1.59% at 1200; practitioners include Ivan Farago (White, 1,797 games) and Viktor Korchnoi (Black, 841 games), but it is 'seldom seen in serious tournament play'. A set-up chosen mainly for surprise.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Judged for Black, who studies it. Success needs specific trap lines and the move orders (Qe7, Bb4+, Qxb2 and the c1 mate patterns). s2 classes difficulty at beginner level, yet White's accurate play refutes it, so a little knowledge of the right responses defeats the gambit. Dubious lines are not a safe first repertoire.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "plan_phrases": [
+    "pawn sacrifice for development",
+    "trap-laden tactics",
+    "early queen checks",
+    "Qxb2 pawn grab",
+    "surprise weapon",
+    "mate on c1 trap"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Englund Gambit: Stockholm Variation",
+      "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Qd5",
+      "how": "White tries to disrupt immediately; a White alternative, not a different plan for Black."
+    },
+    {
+      "name": "Zilbermints Gambit",
+      "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 h6",
+      "how": "A rarely played Black try with an early ...h6 instead of ...Qe7 (61,769 games in the input data); not discussed in the sources read."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Englund Gambit is a highly aggressive and speculative response to 1.d4, challenging White's central pawn at the cost of material",
+        "verdict": "supported",
+        "note": "Black gives the e-pawn after 2.dxe5 (s1).",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "It is considered objectively dubious",
+        "verdict": "supported",
+        "note": "Avrukh: worst possible reply; engines about +1.2; s2: generally considered unsound.",
+        "sources": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "claim": "It relies on surprise value and quick development to generate attacking chances against an unprepared opponent",
+        "verdict": "supported",
+        "note": "s2: trappy, tactical struggle, hoping White errs.",
+        "sources": [
+          "s2"
+        ]
+      },
+      {
+        "claim": "It is for players who enjoy high-risk, chaotic positions",
+        "verdict": "supported",
+        "note": "s1 (tactical complications over positional soundness).",
+        "sources": [
+          "s1"
+        ]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: sacrifice the e-pawn to accelerate development with ...Nc6, ...Bc5, and ...Qe7/Qh4, creating immediate threats against White's kingside and centre",
+        "verdict": "wrong",
+        "note": "The main plan is ...Nc6, ...Qe7 and ...Bb4+/...Qb4+ to win back b2; the threats are along the queenside and c1 (s1, s2), not the kingside. ...Bc5 and ...Qh4 are not the main line.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "White: accept the gambit, develop safely (e.g. Nf3, e4, Be2), neutralise Black's early threats and consolidate the extra pawn",
+        "verdict": "supported",
+        "note": "Principle supported; the recommended development is Nf3, Bf4, Nc3 (s1), not e4/Be2 as such.",
+        "sources": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "claim": "Black often aims to prevent White from castling safely",
+        "verdict": "unverifiable",
+        "note": "The sources describe queenside and c1 threats; castling prevention was not mentioned.",
+        "sources": []
+      },
+      {
+        "claim": "White must focus on solidifying the centre, completing development and proving Black's compensation is insufficient",
+        "verdict": "supported",
+        "note": "s2: 2.dxe5 puts pressure on Black to demonstrate compensation.",
+        "sources": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

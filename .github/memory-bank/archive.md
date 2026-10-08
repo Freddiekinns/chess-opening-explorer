@@ -5,6 +5,43 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Jev rejection filter and video pins — full activeContext text (2026-10-02, #157)
+
+Branch `feat/jev-video-filter`. The pipeline now ends by removing pairs Jev
+confidently rejects (`mentioned_only`/`not_about`, P(good) < 0.4) from
+`video-index.json`: `tools/video-pipeline/lib/jev-filter.js`, run by
+`scripts/apply-jev-filter.js`. Answers are cached in
+`tools/data/jev-relation-cache.json`, seeded from the experiment's 32,005
+answers. It fails open without `JEV_API_KEY`.
+
+Applied to the current index: 31,605 of 72,283 position pairs removed. Top-200
+own-page coverage fell from 178 to 172; those pages show the family shelf. The
+0.4 cut-off spares parent-variation lectures on their own sub-lines (~0.47),
+which the owner counts as useful.
+
+Then `config/video_pins.json` (`lib/video-pins.js`) adds 18 videos Jev nominated
+(P(main) >= 0.85) and the blind judge confirmed, across 9 named openings the
+scorer cannot reach. Top-200 coverage 172 -> 181. The `JEV_API_KEY` repo secret
+is set.
+
+Open: the scorer scores 0 for Veresov, Owen and Nimzo-Larsen videos whose titles
+do name the opening; worth a look before adding more pins. The `irregular`
+family shelf is a grab-bag (a cloud task is giving Queen's Pawn systems a
+family). Parked next step: a rubric-scored blind judge baseline of the top-200
+pages' top 3 videos; plan and judge set-up are in
+`docs/video-matching-and-jev.md`, "What's next".
+
+---
+
+## Style tags and the Jev experiment (2026-09-28 to 2026-10-02)
+
+Style tags barely discriminate; the classification proposal is gated on ~2 weeks
+of `query_shape` data. The Jev experiment ran on 2026-10-02 for $1.60: its
+rejections were 99% right and its acceptances half wrong. Results are in
+`docs/proposals/2026-10-02-jev-video-experiment.md`.
+
+---
+
 ## Logo refresh (2026-09-27)
 
 Critiqued with the `logo-design` skill (kaankiziltug/logo-design-skill): the old
@@ -1065,3 +1102,69 @@ calls now pass `{ quiet: true }`.
 Dependabot PR suppresses only the version closed, and react-refresh 0.4 → 0.5 is
 a `0.x` minor, so it rides along with every future dev bump and takes the group
 red. **Delete the entry when #86 lands.**
+
+## Jev rejection filter for videos (2026-10-02, #157)
+
+Moved out of `activeContext.md` on 2026-10-03. The pipeline ends by removing
+pairs Jev confidently rejects (`mentioned_only`/`not_about`, P(good) < 0.4):
+`tools/video-pipeline/lib/jev-filter.js`, answers cached in
+`tools/data/jev-relation-cache.json`. Applied to the index it removed 31,605 of
+72,283 position pairs; top-200 own-page coverage went 178 → 172, then 181 after
+`config/video_pins.json` added 18 Jev-nominated, judge-confirmed videos. Parked:
+a rubric-scored blind judge baseline of the top-200 pages' top 3 videos
+(`docs/video-matching-and-jev.md`, "What's next"). Full results:
+`docs/proposals/2026-10-02-jev-video-experiment.md`.
+
+## Style tags — pilot (2026-10-03 to 2026-10-04)
+
+Fixed six-axis taxonomy with hidden middle values (`docs/style-taxonomy.md`),
+replacing 265 sprawling LLM tags. 105 variations researched with sources by
+Sonnet subagents, tagged independently by Sonnet (compact states) and Jev, with
+an Opus judge for clashes between shown words. 42/42 anchors, 84% agreement;
+Closed narrowed to a locked centre after it took 42% of games; middle-value
+disputes take Sonnet's answer after a blind audit (13 of 14). Owner reviewed the
+table and set the Old Sicilian to Intermediate (`overrides.json`). Full results:
+`docs/proposals/2026-10-02-opening-style-classification.md`.
+
+## Compressed out of progress.md (2026-10-05)
+
+- **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
+  googleapis 176, react-router 7, lucide-react 1, express 5; green checks lied
+  three times. **`archive.md`.**
+- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
+  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
+  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
+  blocked on #86. Four false greens, every one a bump no workflow covered: a
+  Dependabot branch is tested against the `main` of the day it opened (#75
+  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
+  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
+  suppresses only that version — #76 returned as #89 — so #94 was answered by
+  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.
+
+## Splitting the `irregular` family (2026-10-02, #159)
+
+`irregular` held 940 positions, from 1.e4 to the Grob, so its family shelf (the
+video fallback for pages with no videos of their own) was a grab-bag. It was 16
+of the 19 top-200 pages that fall back to a shelf. Three new families in
+`data/families.json`: `queens-pawn` (Queen's Pawn Game, 210 positions),
+`kings-pawn` (King's Pawn Game, 157) and `offbeat-e4` (Offbeat 1.e4 Defenses,
+110). Six narrow re-routes in `data/family-overrides.json`: 2…Nc6 → `italian`,
+London-named → `london`, 1.d4 g6 → `pirc-modern`, Neo-Indian → `nimzo-indian`,
+Veresov → `trompowsky`, and a mislabelled B01 → `scandinavian`. `irregular`
+keeps 421 flank and offbeat positions; top-200 pages on its shelf 16 → 4.
+
+`tools/family-taxonomy/tests/family-taxonomy-data.test.js` pins the real
+taxonomy and fails when the committed ECO files drift from the resolver.
+Analysis and decisions: `docs/proposals/2026-10-02-irregular-family-split.md`.
+Left open: 1.g3 (Hungarian, Benko Opening) stays in `irregular` because KIA's
+own shelf is contaminated; the 192 `uncategorised` positions get no shelf.
+
+## Style tags — follow-ups (2026-10-05)
+
+Follow-ups: split the Maróczy Bind (5.c4) out of the Accelerated Dragon; fix the
+Dragon description (describes the Accelerated Dragon); the intent parser
+misreads "solid response to e4", "solid e4 openings", "… for white" and
+"advanced sicilian defence" (all older than the tags); `search-by-category` and
+`search-categories` still read the old tags and have no caller; saved repertoire
+entries keep their old level. A protected preview shows Vercel's login on a
+direct `/opening/` load (middleware fetches `/index.html`).

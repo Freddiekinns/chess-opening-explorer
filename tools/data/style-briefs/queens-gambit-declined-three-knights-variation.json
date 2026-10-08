@@ -1,0 +1,213 @@
+{
+  "slug": "queens-gambit-declined-three-knights-variation",
+  "root": {
+    "name": "Queen's Gambit Declined: Three Knights Variation",
+    "eco": "D37",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Queen's Gambit Declined",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Queen%27s_Gambit_Declined",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Queen's Gambit Declined (ChessBase Learn)",
+      "publisher": "ChessBase",
+      "url": "https://learn.chessbase.com/en/page/queens-gambit-declined",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "Queen's Gambit Declined, 4.Nf3 Flexible (D37)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/queens-gambit-declined-1-d4-d5-2-c4-e6-3-nc3-nf6-4-nf3",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Search snippets: Queen's Gambit Declined guides (thechessworld.com, modern-chess.com, chessiverse D35 page)",
+      "publisher": "Various (search snippets only, not read in full)",
+      "url": "https://thechessworld.com/articles/openings/queens-gambit-declined-explained-complete-guide-for-black/",
+      "kind": "article"
+    }
+  ],
+  "overview": "After 4.Nc3 (reached from 3.Nf3 or 3.Nc3) both sides have developed two pieces and the centre is still in tension; neither has committed. White keeps a choice of 5.Bg5 (the classical Orthodox set-ups), 5.cxd5 (Exchange structures with a Carlsbad pawn structure), 5.e3 (quieter) or Bf4, and Black's 4th move (...Be7, ...Bb4 Ragozin, ...Nbd7 Cambridge Springs set-up) picks the structure. In the main Orthodox lines White pins or pressures the f6 knight and tries to exploit Black's passive light-squared bishop behind e6; Black aims to complete development, castle, and free the position with ...c5, ...e5 or ...dxc4 plus ...b6/...Bb7. The game is usually slow and manoeuvring with the d4/d5 pawns holding the centre; wins come from small structural or space edges rather than early tactics. At 2500 level draws spike (11.7 percent in the Chessiverse data), and it is regarded as one of Black's most reliable replies to 1.d4.",
+  "white_ideas": [
+    {
+      "idea": "Pin or pressure the f6 knight with Bg5, aiming to keep Black's light-squared bishop passive behind e6 and exploit the tension on d5.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Keep options open: delay the choice between Bg5, cxd5, e3 and Bf4 until Black has revealed their set-up. The 3.Nf3/4.Nc3 move order also avoids the Nimzo-Indian (3.Nc3 Bb4).",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Exchange on d5 (5.cxd5) to reach a Carlsbad structure, then play the queenside minority attack with b4-b5, or alternatively hold the centre and push e2-e4 at the right moment.",
+      "sources": ["s4"]
+    },
+    {
+      "idea": "Quiet development with e3, Bd3, O-O and Rc1 against Black's Classical set-up (6...Nbd7 7.Rc1 c6 8.Bd3 dxc4 9.Bxc4), gaining a modest space edge.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop solidly with ...Be7, ...O-O and ...Nbd7/...c6, then free the game with a central break (...c5 or ...e5), accepting a slightly passive light-squared bishop in the meantime.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Tartakower set-up (...h6, ...b6, ...Bb7) solves the light-squared bishop and prepares ...c5; the Lasker set-up (...Ne4) forces piece exchanges to relieve the cramped position.",
+      "sources": ["s1", "s4"]
+    },
+    {
+      "idea": "Capablanca's freeing manoeuvre ...dxc4 and ...e5 (the 12...e5 line) leads to sharper play where White can roll a kingside pawn majority.",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "Alternative 4th moves choose the strategy: Ragozin (...Bb4, popular at lower ratings), Cambridge Springs (...Nbd7 and ...Qa5 pinning the Nc3).",
+      "sources": ["s3", "s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Orthodox QGD: White pawns c4/d4/e3 against Black d5/e6 with the centre tense and neither side exchanging early; piece manoeuvring before any central break.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Carlsbad (after cxd5 exd5): symmetrical-looking but asymmetrical queenside, with the b4-b5 minority attack against c6.",
+      "sources": ["s4"]
+    },
+    {
+      "structure": "Hanging pawns or an isolated queen's pawn after Black's ...c5 break gives dynamic compensation for structural weakness.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, manoeuvring and low-risk for Black. Sources call the QGD one of Black's most reliable defences to 1.d4 and stress patient manoeuvring over immediate tactical resolution. Some sub-lines are sharper (Capablanca ...e5 freeing lines, Cambridge Springs trap with ...Qa5, Semi-Slav transpositions) but the main Orthodox lines are steady.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines. If Black takes on c4 the pawn comes straight back, and the name 'gambit' is historical.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Objectively sound for Black; described as one of Black's most reliable defences to 1.d4. Elite results are near-equal (White 51.3 percent, Black 43.3 percent over 18.6 million games in the Chessiverse data, elite draw rate rising to 11.7 percent). The Anti-Tartakower 7.Bxf6 was held by Gelfand in the 2011 Candidates and Anand used the Lasker in the 2010 World Championship decider.",
+      "sources": ["s1", "s3"]
+    },
+    "structure": {
+      "notes": "Central pawns d4/c4 against d5/e6 stay on and in tension for many moves; plans are built around a held centre and later breaks (...c5, ...e5, e4). Exchange variations reach the Carlsbad structure, still a centre with pawns locked or in tension rather than open.",
+      "sources": ["s1", "s2", "s4"]
+    },
+    "approach": {
+      "notes": "A mainline opening, not a system. It is played against 1.d4 d5 2.c4 e6 and is a standard choice at every level including elite. Chessiverse shows 1.71 percent of games at 2500 Elo, with White practitioners such as Dreev, Farago and Van Wely and Black practitioners Beliavsky and Sveshnikov. White's 4.Nc3 choice is in part a flexible way to avoid Nimzo-Indian lines.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Chessiverse labels it an Advanced, theory-heavy opening ('Theoretician' type, the QGD tabiya from which a dozen serious classical lines branch). Black must know many sub-variations (Tartakower, Lasker, Cambridge Springs, Capablanca) and also understand the pawn structures (hanging pawns, Carlsbad). ChessBase calls the Bg5 main line highly theoretical. Ragozin 4...Bb4 is popular at lower ratings (41.4 percent at 1200) as a simpler path. For the club player the opening is learnable; my own understanding is that the Orthodox plan is clear but conversion requires structure knowledge.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pressure on d5",
+    "pin on the f6 knight (Bg5)",
+    "passive light-squared bishop",
+    "minority attack",
+    "Carlsbad structure",
+    "...c5 break",
+    "...e5 break",
+    "hanging pawns",
+    "isolated queen's pawn",
+    "queen's bishop development (...b6/...Bb7)",
+    "piece exchanges to relieve cramp"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Exchange lines (5.cxd5)",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Be7 5. cxd5 Nxd5",
+      "how": "White releases the tension and play heads to Carlsbad or open-ish piece play; subtree games show 5...Nxd5 about 174,000 times."
+    },
+    {
+      "name": "Ragozin and Cambridge Springs set-ups",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Bb4",
+      "how": "Black pins the knight in Nimzo-style fashion, giving a different, more dynamic structure; Cambridge Springs (...Nbd7, ...c6, ...Qa5) brings a tactical trap on g5."
+    },
+    {
+      "name": "Tartakower / Lasker",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Bg5 Be7 5. Nf3 h6 6. Bh4 b6",
+      "how": "Neo-Orthodox lines that give Black more active counterplay than the standard Classical set-up; the Lasker ...Ne4 trades pieces."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Three Knights Variation is a cornerstone of classical chess and one of the most solid and respectable ways for both sides to enter the middlegame.",
+        "verdict": "supported",
+        "note": "Wikipedia calls the QGD one of Black's most reliable defences to 1.d4; the line is a standard tabiya in elite play.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "White develops logically while controlling the centre; Black establishes a firm foothold with the d5-pawn aiming for equality and counterplay.",
+        "verdict": "supported",
+        "note": "Black's d5/e6 pawns hold the centre and equality plus ...c5/...e5 counterplay is the stated plan.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "The opening leads to strategically complex positions where pawn structure, piece activity and long-term plans are paramount.",
+        "verdict": "supported",
+        "note": "Sources stress patient manoeuvring and structure over tactics.",
+        "sources": ["s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White exerts pressure on d5, often with Bg5.",
+        "verdict": "supported",
+        "note": "Bg5 pins/pressures the f6 knight to increase pressure on d5.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "In certain structures (like the Carlsbad) White initiates a queenside minority attack with b4-b5.",
+        "verdict": "supported",
+        "note": "Correct, but the Carlsbad only arises after White exchanges on d5 (5.cxd5 exd5), not in the Orthodox main line with Bg5/e3.",
+        "sources": ["s4"]
+      },
+      {
+        "claim": "White controls the centre and restricts Black's pieces.",
+        "verdict": "supported",
+        "note": "Generic but consistent with the exploiting of the passive light-squared bishop.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black achieves the liberating ...c5 or ...e5 pawn breaks to challenge White's centre.",
+        "verdict": "supported",
+        "note": "Both breaks are standard; ...c5 produces hanging pawns or an IQP, ...e5 is the Capablanca freeing manoeuvre.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black solves the development of the light-squared bishop, often via ...b6 and ...Ba6 or ...Bb7.",
+        "verdict": "supported",
+        "note": "...b6/...Bb7 is the Tartakower idea. ...Ba6 belongs to the lines after ...dxc4 and is less central.",
+        "sources": ["s1", "s4"]
+      },
+      {
+        "claim": "Black neutralises White's pressure and aims for equality or a favourable endgame.",
+        "verdict": "unverifiable",
+        "note": "Equality is the stated aim; no source speaks of a favourable endgame as a typical Black goal.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 3, "pages_read": 3 }
+}

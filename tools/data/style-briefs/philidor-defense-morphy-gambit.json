@@ -1,0 +1,44 @@
+{
+  "slug": "philidor-defense-morphy-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Morphy Gambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Bc4",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "philidor-defense-exchange-variation",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "After the d-pawn trade White does not recapture at once but develops the bishop, aiming for a Scotch Gambit-like game. Black can hold the d4 pawn with ...c5 or ...Nc6, or return it, and White gets a lead in development with an open centre. I am unsure of the exact main line, so I judge it as a quick-development gambit that Black can usually neutralise.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bc4, O-O and Re1 or Ng5, regaining the pawn with Nxd4 when useful." },
+    { "idea": "Use the lead in development and open lines to attack f7." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold d4 with ...c5 or return the pawn, then complete development with ...Nf6 and ...Be7." },
+    { "idea": "Neutralise the bishop with ...Be6 and trade pieces." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after d-pawn trades, pieces active." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open lines and tempo play, but Black can simplify; known as tactical rather than solid." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "White does not recapture immediately; Black can hold the pawn with ...c5, though White often regains it by force." },
+    "soundness": { "notes": "Not refuted; Black has several comfortable options." },
+    "structure": { "notes": "Central pawns come off and lines open." },
+    "approach": { "notes": "Rarely chosen by strong players; a surprise try." },
+    "level": { "reason": "neither", "notes": "Little theory; plans are simple but unusual." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Open play and quick development, though Black can simplify." },
+    "gambit": { "value": "white", "confidence": 0.45, "reason": "A pawn is nominally offered but Black can hold it only with care and White often regains it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Equal-ish; not refuted." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Central pawns exchanged and open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple but unusual." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White aims pieces at f7 and develops fast." }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "semi-slav-defense-chigorin-defense",
+  "tier": "unsourced",
+  "root": { "name": "Semi-Slav Defense: Chigorin Defense", "eco": "D46", "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 Bd6", "fen": "r1bqk2r/pp1n1ppp/2pbpn2/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq - 4 7" },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black develops the bishop to d6 instead of the Meran's ...dxc4, keeping the centre closed and preparing ...e5. White usually castles and plays e4, after which both sides open the centre: 8.e4 dxe4 9.Nxe4 Nxe4 10.Bxe4 leaves White with active bishops and Black aiming for ...e5. The positions are sound and the sharpest theory is avoided, but the play is open and double-edged.",
+  "white_ideas": [
+    { "idea": "Castle and play e4 to open the centre, using the bishop pair-style activity on d3 and e4." },
+    { "idea": "Target the king with Bxh7+ ideas and pressure on the e-file after exchanges." }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...e5 or ...dxc4 and ...e5 to free the position and equalise." },
+    { "idea": "Develop the queenside with ...b6 and ...Bb7 where needed." }
+  ],
+  "typical_structures": [
+    { "structure": "After e4 and exchanges, open centre with White bishops on e4/c2 and Black pawns on c6/e5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main 8.e4 dxe4 9.Nxe4 Nxe4 10.Bxe4 gives open, piece-active play with kingside tactics but Black is sound." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No sacrifice; central exchanges only." },
+    "soundness": { "notes": "Accepted as a sound Semi-Slav line." },
+    "structure": { "notes": "After e4 and exchanges on e4 the centre opens for pieces." },
+    "approach": { "notes": "Standard Semi-Slav choice, not a system or a surprise." },
+    "level": { "reason": "memory", "notes": "Needs known move orders and tactics, but less forcing than Botvinnik/Meran." }
+  },
+  "plan_phrases": ["central break e4", "...e5 break", "kingside attack"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open and active but not forcing; neither side takes big risks." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A recognised Semi-Slav line." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "The e4 break opens the centre for the pieces." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream line played at all levels." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Some theory but not as long as the Meran." },
+    "plans": { "value": ["kingside_attack"], "reason": "White's Bd3 and e4 aim at the king." }
+  }
+}

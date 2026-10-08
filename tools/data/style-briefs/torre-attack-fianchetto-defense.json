@@ -1,0 +1,44 @@
+{
+  "slug": "torre-attack-fianchetto-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Torre Attack: Fianchetto Defense",
+    "eco": "A48",
+    "moves": "1. d4 Nf6 2. Nf3 g6 3. Bg5",
+    "fen": "rnbqkb1r/pppppp1p/5np1/6B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3"
+  },
+  "parent": "east-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White plays the Torre set-up with Bg5, e3, Nbd2 and c3 against Black's King's Indian-style fianchetto. Black plays ...Bg7, ...O-O and ...d6 or ...d5, often hitting the centre with ...c5 or ...Ne4. White aims for a solid, easy-to-play structure with e4 or c4 later, and the game stays quiet and manoeuvring.",
+  "white_ideas": [
+    { "idea": "Develop Bg5, e3, Nbd2, Bd3 or c3 and later e4." },
+    { "idea": "Play without long theory, answering Black's set-up with the same system." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the king's bishop and castle, then challenge with ...c5 or ...d5." },
+    { "idea": "Hit the Bg5 with ...Ne4 or ...h6 and gain the bishop pair or tempi." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d4, e3 and c3 with a bishop on g5; Black fianchetto with ...d6 and ...c5 or ...d5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, manoeuvring play; neither side takes early risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Centre not yet fixed: d4 against ...d6 or ...d5, tension on c5/e5." },
+    "approach": { "notes": "The Torre is a system played against most Black set-ups." },
+    "level": { "reason": "understanding", "notes": "Clear plans, little to memorise; the Bg5 is exposed to ...Ne4 though." }
+  },
+  "plan_phrases": ["fianchetto", "pressure on e4/e5 square", "system play"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but not especially hard to break down for White." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.92, "reason": "Sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "Centre stays undecided in the Torre." },
+    "approach": { "value": "system", "confidence": 0.7, "reason": "The Torre set-up is played against almost anything." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Clear plans but real positional subtleties." },
+    "plans": { "value": ["fianchetto"], "reason": "Black's g7 bishop on the long diagonal." }
+  }
+}

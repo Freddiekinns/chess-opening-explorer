@@ -1,0 +1,44 @@
+{
+  "slug": "goldsmith-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Goldsmith Defense",
+    "eco": "B00",
+    "moves": "1. e4 h5",
+    "fen": "rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black plays a rim pawn move that weakens the kingside and gives White a free hand to take the centre with d4 and Nf3. White simply develops and builds a big centre, and Black tries to answer with ...d5 or ...e5 and a later ...Nf6 or ...Bg4. It is a joke or surprise reply that relies on White taking it lightly.",
+  "white_ideas": [
+    { "idea": "d4, Nf3 and Bd3, taking the centre while ignoring the h-pawn." },
+    { "idea": "Push the e-pawn or attack the weakened kingside with Ng5 or Bd3 ideas." }
+  ],
+  "black_ideas": [
+    { "idea": "...d5, ...Nf6 and ...Bg4, reaching a playable position with the h-pawn advanced." },
+    { "idea": "...Rh6 or ...Nf6 with an odd rook lift." }
+  ],
+  "typical_structures": [
+    { "structure": "Ordinary centre with Black's h5 pawn weakening g5 and the kingside." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "No forcing line, just an odd move; low confidence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Dubious: gives White a free tempo and a weakened kingside, though no forced refutation." },
+    "structure": { "notes": "Centre undecided after 1...h5 2.d4." },
+    "approach": { "notes": "Played by almost no strong players, for surprise." },
+    "level": { "reason": "neither", "notes": "Easy to understand but a poor choice; dubious so not beginner." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Neither a forcing nor a solid line; low confidence." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Wastes a tempo and weakens the kingside." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "Centre not yet decided, no clear structure." },
+    "approach": { "value": "offbeat", "confidence": 0.95, "reason": "Seldom played by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Dubious so never beginner; no theory to memorise." },
+    "plans": { "value": [], "reason": "No recognised plan." }
+  }
+}

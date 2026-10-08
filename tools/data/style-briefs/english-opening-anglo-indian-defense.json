@@ -1,0 +1,174 @@
+{
+  "slug": "english-opening-anglo-indian-defense",
+  "root": {
+    "name": "English Opening: Anglo-Indian Defense",
+    "eco": "A15",
+    "moves": "1. c4 Nf6",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Chess Opening Theory/1. c4/1...Nf6",
+      "publisher": "Wikibooks",
+      "url": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._c4/1...Nf6",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "English Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/English_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "The Ideas behind the English Opening",
+      "publisher": "Exeter Chess Club",
+      "url": "https://www.exeterchessclub.org.uk/content/ideas-behind-english-opening",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Hedgehog (chess)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hedgehog_(chess)",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "English Opening, Anglo-Indian Defense 1...Nf6 (A15) (search snippet only)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/english-opening-nf6",
+      "kind": "article"
+    }
+  ],
+  "overview": "1.c4 Nf6 is a crossroads, not a single structure. Black develops a piece, covers e4 and d5, and waits to see whether White wants d4 (which usually transposes into the King's Indian, Nimzo-Indian, Queen's Indian or Grünfeld) or a pure English set-up. The main branches are 2.Nc3 (with ...e6 giving Nimzo or Hedgehog-type play, ...g6 a King's Indian set-up, ...d5 a reversed Grünfeld, ...c5 or ...e5 symmetrical or reversed-Sicilian structures), 2.g3 and 2.Nf3. The typical English middlegame is a manoeuvring game with White's pressure on d5 and queenside space against Black's central break (...d5 or ...e5), but 2.Nc3 e6 3.e4 (Mikėnas-Carls) can be sharper. Black's choice of branch decides almost everything about character and structure.",
+  "white_ideas": [
+    { "idea": "Fianchetto the king's bishop (g3, Bg2) and pressure d5 and the long diagonal (Staunton-style set-up with Nc3, g3, Bg2, e3).", "sources": ["s3", "s1"] },
+    { "idea": "Take the centre with e4 against ...e6 or ...g6 (Mikėnas-Carls with 2.Nc3 e6 3.e4; 2.Nc3 g6 3.e4 heads for a King's Indian or avoids the Grünfeld).", "sources": ["s2", "s5"] },
+    { "idea": "Play d2-d4 at the right moment to open the game, or transpose into an Indian Defence if Black allows it.", "sources": ["s3", "s5"] },
+    { "idea": "Queenside expansion with Rb1 and b4 (this is the theme sources attach to symmetrical English structures; not found stated for Anglo-Indian specifically).", "sources": ["s3"] }
+  ],
+  "black_ideas": [
+    { "idea": "Wait: develop Nf6 and decide on a structure (Nimzo-style ...e6/...Bb4, King's Indian ...g6/...Bg7, Queen's Indian, Grünfeld) after seeing White's set-up.", "sources": ["s5", "s1"] },
+    { "idea": "Strike in the centre with ...d5 (reversed Grünfeld, 2.Nc3 d5) or ...e5 (reversed Sicilian type).", "sources": ["s3", "s5"] },
+    { "idea": "Hedgehog-type set-up (2.Nc3 e6, ...b6, ...d6, ...a6) with later ...b5 or ...d5 breaks against White's c4/e4 space.", "sources": ["s4"] },
+    { "idea": "Transpose to symmetrical structures with ...c5.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Indian Defence structures after d4 (King's Indian, Nimzo-Indian, Queen's Indian, Grünfeld).", "sources": ["s5", "s1"] },
+    { "structure": "Hedgehog (Black pawns a6, b6, d6, e6) against White pawns on c4/e4, a Maróczy-type bind.", "sources": ["s4"] },
+    { "structure": "Reversed Sicilian / reversed Grünfeld type positions with White c4 and Black pawn on e5 or d5.", "sources": ["s3", "s5"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Overall moderately forcing at most: Exeter says positions are moderately forcing, with maneuvering battles over tactics; Wikibooks calls it a solid, flexible defence. The Mikėnas-Carls (2.Nc3 e6 3.e4) is the exception and can lead to forcing tactical play. The Hedgehog branch is solid-but-cramped rather than sharp. Character depends on which branch Black picks.",
+      "sources": ["s1", "s2", "s3", "s4"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the root or main lines.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Fully sound. Wikipedia: the English Opening is considered reliable and flexible; world championship players (Botvinnik, Petrosian, Karpov, Kasparov, Carlsen, Ding Liren) have used the English. 1...Nf6 is the most common reply to 1.c4. No claim that either side is worse.",
+      "sources": ["s2", "s5"]
+    },
+    "structure": {
+      "notes": "Not one answer: root is a crossroads. If White plays d4 the game becomes an Indian Defence (semi-open or closed centre depending on branch). 2.Nc3 e6 3.e4 or 2.Nc3 g6 3.e4 give a White centre. Hedgehog branch has Black pawns on a6/b6/d6/e6 against c4/e4 (partly open d-file, centre not locked). The typical English with ...d5 or ...e5 breaks gives tension in the centre with pawns kept on for a time rather than early central pawn trades.",
+      "sources": ["s1", "s3", "s4", "s5"]
+    },
+    "approach": {
+      "notes": "Played at the very top: 1.c4 Nf6 is the most common reply to the English, which is the fourth most popular first move and one of the four most successful (Wikipedia). It is a reply to 1.c4, not a fixed set-up played against everything, but Black's flexibility (waiting to choose the structure) is its identity. Wikipedia and Exeter describe the English as flexible and usable as a transposition tool.",
+      "sources": ["s2", "s3", "s5"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little forced theory at move 2 because Black chooses the structure, so the burden is knowing plans in whichever Indian, Hedgehog or reversed-Sicilian structure arises. Black must know enough of the King's Indian, Nimzo-Indian, Queen's Indian and Grünfeld if White transposes with d4. Hedgehog requires sophisticated handling per Wikipedia. Studying Black's side, a player needs a repertoire answer to 2.Nc3, 2.g3 and 2.Nf3.",
+      "sources": ["s1", "s4", "s5"]
+    }
+  },
+  "plan_phrases": [
+    "transposition to Indian defences",
+    "kingside fianchetto",
+    "control of d5",
+    "Hedgehog structure",
+    "Maróczy bind",
+    "central break with ...d5",
+    "reversed Sicilian",
+    "queenside expansion with Rb1 and b4"
+  ],
+  "sublines_that_differ": [
+    { "name": "Mikėnas-Carls Variation", "moves": "1. c4 Nf6 2. Nc3 e6 3. e4", "how": "White takes the centre immediately; can lead to forcing tactical positions (sharper than the English norm)." },
+    { "name": "Hedgehog System", "moves": "1. c4 Nf6 2. Nc3 e6", "how": "Black builds a compact a6/b6/d6/e6 structure and waits for ...b5 or ...d5; solid but cramped." },
+    { "name": "King's Indian set-up", "moves": "1. c4 Nf6 2. Nc3 g6", "how": "3.e4 transposes to the King's Indian; 3.g3 Bg7 4.Bg2 is the English fianchetto version." },
+    { "name": "Reversed Grünfeld", "moves": "1. c4 Nf6 2. Nc3 d5", "how": "Black strikes at once for the centre; open and tactical compared with quiet English lines." },
+    { "name": "Symmetrical transposition", "moves": "1. c4 Nf6 2. Nc3 c5", "how": "Reaches the Symmetrical English structure." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Anglo-Indian is a flexible response to the English.",
+        "verdict": "supported",
+        "note": "Black keeps all options open and decides the structure after White commits.",
+        "sources": ["s1", "s5"]
+      },
+      {
+        "claim": "It immediately challenges White's control of d5.",
+        "verdict": "supported",
+        "note": "Nf6 covers d5 and e4 and prepares ...d5; White's c4 pawn aims at d5 as well, so the knight contests rather than takes the square.",
+        "sources": ["s5"]
+      },
+      {
+        "claim": "Black often transposes into King's Indian, Queen's Indian or Grünfeld depending on White's set-up.",
+        "verdict": "supported",
+        "note": "Also Nimzo-Indian. Transposition mostly happens when White plays d4.",
+        "sources": ["s1", "s5"]
+      },
+      {
+        "claim": "It leads to a complex positional game where plans and pawn structures matter more than memorising sharp tactical lines.",
+        "verdict": "supported",
+        "note": "True for the main English lines; the Mikėnas-Carls (3.e4) and ...d5 lines are more forcing.",
+        "sources": ["s1", "s2", "s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White completes a kingside fianchetto (g3, Bg2) and controls d5.",
+        "verdict": "supported",
+        "note": "Staunton-style set-up.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "White often expands on the queenside with Rb1 and b4.",
+        "verdict": "unverifiable",
+        "note": "Sources tie Rb1/b4 to symmetrical English structures; not found for Anglo-Indian specifically. Own understanding: plausible in the 2.Nc3 g6 3.g3 lines.",
+        "sources": ["s3"]
+      },
+      {
+        "claim": "Black stays flexible by choosing an Indian set-up.",
+        "verdict": "supported",
+        "note": "",
+        "sources": ["s5", "s1"]
+      },
+      {
+        "claim": "Black challenges the centre with a timely ...d5 or ...e5.",
+        "verdict": "supported",
+        "note": "Reversed Grünfeld and reversed Sicilian ideas.",
+        "sources": ["s3", "s5"]
+      },
+      {
+        "claim": "A common dynamic is White's queenside pressure versus Black's counter-strike in the centre or on the kingside.",
+        "verdict": "unverifiable",
+        "note": "Plausible but no source states it for this root.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 1, "pages_read": 4 }
+}

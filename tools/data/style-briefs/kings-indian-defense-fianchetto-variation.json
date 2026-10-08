@@ -1,0 +1,50 @@
+{
+  "slug": "kings-indian-defense-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Fianchetto Variation, Immediate Fianchetto",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. g3",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "indian-defense-west-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop and keeps the centre flexible instead of building the big e4 centre. Black normally reaches the King's Indian set-up with ...Bg7, ...d6, ...O-O and ...Nc6 or ...Nbd7, then plays ...e5 or ...c6 or ...a6 and ...Rb8 for queenside play. The game is slower and less tactical than the Classical or Sämisch: White squeezes with Nc3, Nf3, O-O and e4, Black looks for ...e5 or ...c5 counterplay.",
+  "white_ideas": [
+    { "idea": "Bg2, Nc3, Nf3, O-O, then e4 to build a centre behind the fianchetto" },
+    { "idea": "Pressure on the long diagonal and the d5 and e5 squares" },
+    { "idea": "Queenside play with b4 and c5 or Rb1 against ...a6 and ...Rb8" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the king's bishop and castle, then challenge the centre with ...e5" },
+    { "idea": "...c6 and ...Qa5 or ...Nbd7 and ...e5 for a flexible set-up" },
+    { "idea": "...a6, ...Rb8 and ...b5 against the c4 pawn" }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian pawn chain with Black pawns on d6 and e5 against White c4 and d4/d5" },
+    { "structure": "Closed centre after d5 with ...e6 or ...c6, play on the wings" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Fianchetto KID is positional with less kingside-attack danger than the Classical or Sämisch; both kings are safe. Not forcing early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material change." },
+    "soundness": { "notes": "Fully sound; a main line at elite level." },
+    "structure": { "notes": "Centre often held in tension with c4 and d4 versus ...d6 and ...e5; may close with d5 later. Flexible, not decided." },
+    "approach": { "notes": "Standard branch of the King's Indian, not a universal system." },
+    "level": { "reason": "understanding", "notes": "Plans matter more than move orders, but nothing needs long forced lines. Intermediate." }
+  },
+  "plan_phrases": ["fianchetto", "queenside expansion", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Fianchetto with ...c6", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c6", "how": "Quieter, Black avoids ...e5 commitments and often plays ...Qa5." },
+    { "name": "Fianchetto with ...Nc6", "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nc6 7. O-O a6", "how": "Black plays ...Rb8 and ...b5 on the queenside; a bit sharper." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.6, "reason": "Positional squeeze against ...e5 counterplay, neither forcing nor especially hard to crack." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.98, "reason": "A main-line system at the top level." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre stays in tension and may or may not close with d5." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A normal choice against the King's Indian, not a system." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-driven rather than theory-heavy." },
+    "plans": { "value": ["fianchetto", "queenside_expansion"], "reason": "Both bishops on the long diagonals and play on the queenside." }
+  }
+}

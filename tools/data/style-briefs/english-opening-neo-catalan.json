@@ -1,0 +1,46 @@
+{
+  "slug": "english-opening-neo-catalan",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Neo-Catalan",
+    "eco": "A13",
+    "moves": "1. Nf3 Nf6 2. c4 e6 3. g3 d5",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2P5/5NP1/PP1PPP1P/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop and Black takes the centre with ...d5, reaching a Catalan-like position without White's d-pawn on d4. After 4.Bg2 Be7 5.O-O O-O White plays d4 for a normal Catalan or keeps it flexible with Qc2 and Nc3; Black may also play ...c5 or ...dxc4. White presses on the long diagonal and the queenside; Black has a solid position.",
+  "white_ideas": [
+    { "idea": "Fianchetto on g2, castle, and play d4 with long-diagonal pressure on d5 and b7." },
+    { "idea": "Win back the c4 pawn after ...dxc4 with Qa4 or Ne5 and keep a small edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...Be7, ...O-O, ...c6 or ...dxc4, and ...b6 ...Bb7 or ...c5." },
+    { "idea": "Neutralise the g2 bishop and equalise in a solid structure." }
+  ],
+  "typical_structures": [
+    { "structure": "Catalan structure with White pawns on c4/d4 against Black's d5/e6 and the g2 bishop on the long diagonal." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow, pressure-based play where Black's position is hard to break and White maintains a small edge." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Any c4 pawn taken by ...dxc4 is regained." },
+    "soundness": { "notes": "Fully sound." },
+    "structure": { "notes": "Centre not yet resolved; d4 usually follows, then QGD-like tension." },
+    "approach": { "notes": "A mainstream White set-up used by top players." },
+    "level": { "reason": "understanding", "notes": "Plans are positional and need understanding; limited memorisation." }
+  },
+  "plan_phrases": ["fianchetto", "pressure on the long diagonal"],
+  "sublines_that_differ": [
+    { "name": "4...c5", "moves": "1. Nf3 Nf6 2. c4 e6 3. g3 d5 4. Bg2 c5", "how": "Black challenges the centre at once, leading to more open asymmetrical play." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.45, "reason": "Catalan-style play in which Black's position is hard to break and White presses slowly." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given up for real." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "Fully sound for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre in tension with the d-pawn and c-pawn undecided, like the Catalan." },
+    "approach": { "value": "standard", "confidence": 0.6, "reason": "A mainstream English/Réti set-up, though it needs d5 from Black." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Long-diagonal pressure plans need understanding but little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "White's g2 bishop on the long diagonal is the central idea." }
+  }
+}

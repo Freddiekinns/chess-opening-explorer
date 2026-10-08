@@ -1,0 +1,195 @@
+{
+  "slug": "french-defense-knight-variation",
+  "root": {
+    "name": "French Defense: Knight Variation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. Nf3",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "thin",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "King's Indian Attack",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/King's_Indian_Attack",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The French Defence for Beginners II: Key Variations",
+      "publisher": "Exeter Chess Club",
+      "url": "https://exeterchessclub.org.uk/content/french-defence-beginners-ii-key-variations",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "French Defence",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/French_Defence",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "French Defense: Complete Guide (Exchange, King's Indian Attack minor lines)",
+      "publisher": "365chess",
+      "url": "https://www.365chess.com/chess-openings/French-Defense",
+      "kind": "reference"
+    }
+  ],
+  "overview": "2.Nf3 is a waiting move that leaves White's central structure undecided. After 2...d5 White can transpose to the Advance (3.e5 c5 4.d4, the subtree's main line), the Exchange (3.exd5 exd5 4.d4), main French lines (3.Nc3) or play for a King's Indian Attack set-up with d3, g3, Bg2 and castling. In the KIA the e5 square is held by pieces (Nf3, Re1) rather than the d4 pawn, which sidesteps the French d4 target. Black's replies are 2...d5 (by far the most common) and the rare 2...f5 (Franco-Hiva Gambit). It is treated in the sources as a secondary option rather than a main-line weapon, and the sources give little independent material on it.",
+  "white_ideas": [
+    {
+      "idea": "Transpose to the Advance Variation after 2...d5 3.e5 c5 4.d4 (the most-played branch in this subtree), or to the Exchange or other French lines with d4 and Nc3",
+      "sources": ["s2"]
+    },
+    {
+      "idea": "King's Indian Attack: e4, d3, Nd2, Ngf3, g3, Bg2, 0-0, then e4-e5 for a kingside bind and attack, with e5 held by pieces (Nf3, Re1, Bf4)",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "The Exchange French (3.exd5 exd5 4.d4) gives a symmetrical pawn structure and an easy equalising game for Black according to s2",
+      "sources": ["s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with 2...d5 as in the French; against the KIA, choose open (...c5) or closed (...Nf6) set-ups, or the Keres/reversed King's Indian",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Against 3.e5: ...c5 striking at d4, with queenside play; the extra White knight move on f3 gives White an extra option to defend d4",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "2...f5 Franco-Hiva Gambit is a rare Black pawn offer",
+      "sources": []
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Advance French structure (pawns e5/d4 against e6/d5/c5) when White plays 3.e5",
+      "sources": ["s2"]
+    },
+    {
+      "structure": "King's Indian Attack set-up: pawns e4, d3, g3 with fianchettoed bishop; Black's pawns on e6/d5/c5, often closed in the centre",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Symmetrical pawn structure after exchange on d5",
+      "sources": ["s2"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Depends on the transposition. s2 says the Exchange French is harmless for Black, the KIA solid but unambitious (a space advantage with fianchettoed bishop but little central tension), and the Advance a straightforward space-gaining line that puts White on the defensive vs ...c5. s1 says the KIA grants White modest practical advantages without forcing theory. Typical play is steady, not forcing.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given in the main lines. Black's 2...f5 Franco-Hiva Gambit is a rare Black pawn offer (460,947 games on the site per the input data, not a master-level line).",
+      "sources": []
+    },
+    "soundness": {
+      "notes": "Sound. s1 calls the KIA respectable but unspectacular; s2 says Exchange lines are balanced. No source calls any White set-up dubious.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "Depends on branch: the Advance transposition gives a locked centre (e5 against d5/e6), the KIA a closed or tense centre with d3 and e4, and the Exchange a symmetrical, more open structure. Most volume goes to the Advance transposition, so the typical centre is closed or in tension.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A waiting move that keeps both d4 and d3 options open; the KIA branch is explicitly a universal system (s1: playable against diverse openings, popular at club level, 'relatively uncommon at grandmaster level' today, Bassem Amin the leading modern user; Fischer, Botvinnik, Petrosian and Stein used it historically). s2 presents 2.Nf3 as a secondary option without detail. s3 offers no coverage of 2.Nf3.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for White, the side choosing the line. The KIA works by repeatable plans rather than long theory (s1: popular at club level because of its systematic nature and repeatable middlegame plans), and the Exchange French is simple. But White must know the intended transposition and cope with Black's choice of ...c5 counterplay. No source rates difficulty directly.",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "King's Indian Attack",
+    "kingside bind",
+    "fianchetto bishop",
+    "transposition to Advance or Exchange French",
+    "space advantage",
+    "e4-e5 push",
+    "avoiding main-line theory"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Advance transposition",
+      "moves": "1. e4 e6 2. Nf3 d5 3. e5 c5",
+      "how": "Locked centre, Black's ...c5 target on d4; reached with Nf3 inserted, so White has already committed a knight."
+    },
+    {
+      "name": "King's Indian Attack",
+      "moves": "1. e4 e6 2. Nf3 d5 3. d3",
+      "how": "Closed set-up (g3, Bg2, 0-0) with a bind and slower attack; a system that does not depend on Black's reply."
+    },
+    {
+      "name": "Franco-Hiva Gambit",
+      "moves": "1. e4 e6 2. Nf3 f5",
+      "how": "The only line with a material offer; rare and not respected at master level (own understanding, no source found)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Knight Variation is a flexible way for White to meet the French, often sidestepping the complex main lines",
+        "verdict": "supported",
+        "note": "s2: often transposes, treated as a secondary option; s1: the KIA avoids the usual d4 target.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It is a popular way to meet the French",
+        "verdict": "unverifiable",
+        "note": "s2 presents 2.Nf3 as a secondary option; no master-level popularity figures were found. The site's own game counts are not evidence.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White frequently transposes into Exchange Variation structures or a King's Indian Attack set-up",
+        "verdict": "supported",
+        "note": "KIA is sourced (s1). s2 says 2.Nf3 often transposes into Advance lines; the Exchange is possible but the Advance transposition is what the move-by-move data shows (3.e5 c5 is the most played).",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Suited to players who prefer a more classical, open game and want to avoid the Winawer or Tarrasch",
+        "verdict": "unverifiable",
+        "note": "The sources do not describe the resulting positions as open; the KIA and Advance branches are closed or locked.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: transpose to an Exchange French (exd5) and use superior development to create pressure",
+        "verdict": "unverifiable",
+        "note": "s2 calls the Exchange 'harmless for Black', a symmetrical structure where Black equalises easily, which does not support the pressure claim.",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "White: adopt a King's Indian Attack set-up (g3, Bg2, 0-0) to build a kingside attack",
+        "verdict": "supported",
+        "note": "s1: the KIA aims for e4-e5 bind, kingside space and attack on the castled king.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: challenge the centre with ...d5, aiming for symmetrical and equal positions",
+        "verdict": "supported",
+        "note": "...d5 is the main reply; the symmetrical structure arises only after the Exchange (s2).",
+        "sources": ["s2"]
+      },
+      {
+        "claim": "Black: in symmetrical structures, neutralise White's initiative and prepare a queenside minority attack with ...b5-b4",
+        "verdict": "unverifiable",
+        "note": "Nothing found on a Black minority attack in these structures.",
+        "sources": []
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 4 }
+}

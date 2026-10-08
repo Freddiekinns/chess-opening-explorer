@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-declined-modern-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Modern Variation",
+    "eco": "D50",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "queens-gambit-declined-normal-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White pins the f6 knight. Black normally plays ...Be7, then castles and meets Nf3 with the Orthodox, Tartakower (...h6, ...b6) or Lasker (...Ne4) set-ups. Black's centre is bulletproof and the play is slow, with Black freeing his game via ...c5 or ...Ne4 trades. 4...Nbd7 and 4...Bb4 lead to Cambridge Springs-type play.",
+  "white_ideas": [
+    { "idea": "Pressure d5, Rc1 and cxd5 exchange with a minority attack" },
+    { "idea": "e3, Nf3, Bd3 and queenside play before any e4 break" }
+  ],
+  "black_ideas": [
+    { "idea": "...Be7, ...O-O, ...Nbd7 and ...c6 with a rock-solid centre" },
+    { "idea": "Free the c8 bishop by ...b6 or ...dxc4, or trade pieces with ...Ne4" }
+  ],
+  "typical_structures": [
+    { "structure": "Orthodox QGD with pawns d5/e6 against c4/d4/e3, tension in the centre" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Orthodox QGD is a Solid anchor; slow, technical play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No gambit." },
+    "soundness": { "notes": "Sound for both." },
+    "structure": { "notes": "QGD anchor is Flexible." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Intermediate by the Orthodox anchor." }
+  },
+  "plan_phrases": ["minority attack", "freeing break ...c5", "solid centre"],
+  "sublines_that_differ": [
+    { "name": "Cambridge Springs", "moves": "4...Nbd7 5.e3 c6 6.Nf3 Qa5", "how": "Trappy and more tactical." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.8, "reason": "Orthodox QGD is hard to break down and play is steady." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "Classical main line." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "Centre tension persists, as with the QGD anchor." },
+    "approach": { "value": "standard", "confidence": 0.95, "reason": "Main-line theory." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plans are clear and standard." },
+    "plans": { "value": [], "reason": "The plans differ with sub-line choice." }
+  }
+}

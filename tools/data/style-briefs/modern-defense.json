@@ -1,0 +1,190 @@
+{
+  "slug": "modern-defense",
+  "root": {
+    "name": "Modern Defense",
+    "eco": "B06",
+    "moves": "1. e4 g6",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Modern Defense",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Modern_Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Modern Defense (B06) - Robatsch Variation",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/modern",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Modern Defense Guide and overview (search snippets only)",
+      "publisher": "365Chess / Wikibooks / ChessEasy",
+      "url": "https://www.365chess.com/chess-openings/Modern-Defense",
+      "kind": "article"
+    }
+  ],
+  "overview": "Black plays 1...g6 and 2...Bg7 and lets White build the e4-d4 centre, delaying ...Nf6 (which separates it from the Pirc), then attacks the centre with ...c5, ...e5 or ...Nc6 and the pressure of the g7 bishop. It is a simple, repeatable set-up that Black can adopt against almost anything, and its flexible move order makes it a practical surprise weapon. White's main tries are the Standard line (2.d4 Bg7 3.Nc3 d6 4.f4 or 3.Nf3), the Averbakh-style 2.c4 / 2.Nc3 set-ups, and c3 to blunt the g7 bishop; White often attacks on the kingside with f4, while Black seeks counterplay against an over-extended centre. Sources call it sound but with a risk of passivity or of letting White build an overwhelming centre; it is moderately popular (about 1.7% of games in 2025 on one database) with occasional master use (Suttles, Davies, McNab, Carlsen).",
+  "white_ideas": [
+    {
+      "idea": "Take the broad centre (e4, d4, c4 or f4) and use the space for a kingside attack, usually with f4.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Blunt the g7 bishop with c3 or play the Averbakh set-up (c4, Nc3) to reach Pirc-like or Maroczy-like positions.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Exploit Black's delayed ...Nf6 by building the centre quickly, for example Monkey's Bum Deferred with early Bc4 and Qf3.",
+      "sources": ["s1"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto the bishop to g7, make waiting moves and strike at the centre with ...c5, ...e5 or ...Nc6 when White commits.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Delay ...Nf6 to keep flexibility and the option of transposing to Pirc, Philidor or other structures.",
+      "sources": ["s2", "s3"]
+    },
+    {
+      "idea": "Queenside counterplay with ...a6/...b5 or ...c6 and ...Bg4 in the Standard line.",
+      "sources": ["s1"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on d6, e7 and g6 with a bishop on g7; White holds e4, d4 and often c4 or f4 (a broad centre).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Pirc-style or Maroczy-like structures when c4/Nc3 reach the Averbakh set-up (the subtree includes 1.d4 g6 2.c4 Bg7 3.Nc3 d6).",
+      "sources": ["s1"]
+    },
+    {
+      "structure": "Standard line with f4: Black c6 and ...Bg4 pressure on White's overextended centre.",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Chessiverse labels it 'solid and balanced' (s2); Wikipedia calls it sound but risking passivity if Black is careless, and says White can generate real attacking chances (e.g. Monkey's Bum Deferred) (s1). The set-up is slow and flexible: White usually gets space and the attack, Black waits and counters. Risk: allowing White to build 'an overwhelming centre' (s2). Typical play is plan-based rather than forcing. Leaning balanced to solid.",
+      "sources": ["s1", "s2"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit at the root. Sidelines exist where White offers a pawn but none are central.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound. Wikipedia: considered sound, though precise play is required (s1). Statistics from a large database are essentially balanced (White 49.4%, Black 46.2%, 38.1 million games, all ratings, not an engine verdict) (s2). No source claims it is refuted. Not Dubious.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "White keeps a big pawn centre and Black allows it, then challenges with a pawn break. The centre is typically tense and often semi-closed until ...c5/...e5; later pawns can come off for an open game. The sources do not label it, so my reading is: tense centre, closed-leaning (my own understanding, unsourced).",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A repeatable set-up: Black 'follows a simple, repeatable set-up rather than a forcing line' (s3 snippet) and can play ...g6/...Bg7/...d6 against many first moves (the subtree includes 1.d4 g6 2.c4 Bg7 3.Nc3 d6). That fits a System. Frequency is modest (1.71% of games in 2025, s2) and master use is occasional but includes Carlsen, Suttles and Davies (s1, s2), so not Offbeat.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for Black. Chessiverse: 'accessible across all skill levels', emphasising strategic understanding over memorisation; theory adherence is 78.7% at 1200 Elo versus 92.1% at 2500 (s2). Wikipedia: moderate theory (s1). The skill is in knowing when and how to hit the centre and avoiding passivity. Intermediate rather than Beginner (my own judgment: a good first repertoire needs clear plans, and the Modern needs timing judgment).",
+      "sources": ["s1", "s2"]
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre undermining",
+    "fianchettoed bishop on g7",
+    "...c5 break",
+    "...e5 break",
+    "delayed ...Nf6 flexibility",
+    "kingside attack with f4",
+    "transposition to Pirc"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Standard line",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 c6",
+      "how": "White's f4 centre against Black's ...c6 and ...Bg4, sharper than the quiet Nf3 lines."
+    },
+    {
+      "name": "Averbakh / Maroczy-style",
+      "moves": "1. e4 g6 2. c4 Bg7 3. Nc3 d6 (also reached from 1.d4 g6)",
+      "how": "Pirc and King's Indian-like structures with c4; quiet, positional."
+    },
+    {
+      "name": "Monkey's Bum Deferred",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c6 4. Bc4 (or similar) with Qf3",
+      "how": "Early Bc4 and Qf3 for White, a more aggressive set-up."
+    },
+    {
+      "name": "3.c3 / blunting the bishop",
+      "moves": "1. e4 g6 2. d4 Bg7 3. c3",
+      "how": "White blunts the g7 bishop and builds a solid centre; quiet."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Modern Defense is a dynamic and highly flexible hypermodern system where Black invites White to build a large pawn centre and challenges it from the flanks.",
+        "verdict": "supported",
+        "note": "Matches the standard description; 'dynamic' is arguable, as Chessiverse says solid and balanced.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "The core idea is to fianchetto the dark-squared bishop to g7, creating a long-range piece that fuels counterattacks.",
+        "verdict": "supported",
+        "note": "Bg7 pressing the centre is the central idea.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is perfect for creative, independent-minded players who enjoy unbalanced positions and understand strategic plans rather than long forced variations.",
+        "verdict": "supported",
+        "note": "Understanding emphasised over memorisation.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "Black: fianchetto the king's bishop, cede the centre temporarily, and then attack it with pawn breaks like ...c5 or ...e5.",
+        "verdict": "supported",
+        "note": "Core plan.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: seize a space advantage with a large pawn centre (e.g. d4, c4) and use it to develop pieces and launch an attack.",
+        "verdict": "supported",
+        "note": "Broad centre and a kingside attack with f4 are named.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: create counterplay on the queenside with moves like ...a6 and ...b5, or directly challenge White's king.",
+        "verdict": "unverifiable",
+        "note": "Queenside play is plausible (my own understanding) but the sources read mention ...c5, ...e5 and ...c6 more than ...a6/...b5.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "White: restrict the power of the g7 bishop and challenge Black's kingside structure, often with an h-pawn push.",
+        "verdict": "unverifiable",
+        "note": "Restricting the g7 bishop (c3) is supported; the h-pawn push is not mentioned in the sources read, though h4-h5 does occur in lines (own understanding).",
+        "sources": ["s1"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

@@ -1,0 +1,291 @@
+<title>Video Match Spot-Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one reading column of numbered cards, a sticky progress bar on top.
+     Opening Book's "Warm Editorial Dark": single dark theme by design. */
+  :root {
+    --bg: #1a1816;
+    --raised: #232120;
+    --elevated: #2c2a27;
+    --overlay: #363330;
+    --fg: #ece8e1;
+    --fg-2: #9a958e;
+    --muted: #8e887f;
+    --accent: #e85d04;
+    --accent-soft: rgba(232, 93, 4, 0.12);
+    --line: rgba(255, 255, 255, 0.10);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --good: #9dbd7c;
+    --good-bg: rgba(133, 166, 99, 0.18);
+    --part: #e8a838;
+    --part-bg: rgba(232, 168, 56, 0.16);
+    --bad: #c98579;
+    --bad-bg: rgba(165, 92, 81, 0.22);
+    --font-display: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+    --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.55 var(--font-body);
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header.intro { padding-block: 36px 20px; display: grid; gap: 10px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  .intro p { margin: 0; color: var(--fg-2); max-width: 62ch; }
+  .key { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; color: var(--fg-2); }
+  .key b { color: var(--fg); font-weight: 500; }
+
+  .bar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    padding-block: 10px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .track { flex: 1; height: 6px; background: var(--overlay); border-radius: 3px; overflow: hidden; }
+  .fill { height: 100%; width: 0; background: var(--accent); transition: width 0.25s ease; }
+  .count { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--fg-2); min-width: 9ch; text-align: right; }
+  .status { font-size: 12px; color: var(--muted); }
+  .notice { margin-top: 16px; padding: 10px 14px; border: 1px solid var(--part); color: var(--part); border-radius: 8px; font-size: 14px; }
+
+  ol.items { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
+  .item { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 14px; }
+  .item.answered { border-color: var(--line-strong); }
+  .head { display: flex; gap: 12px; align-items: baseline; }
+  .num { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ask { font-size: 13px; color: var(--fg-2); }
+  .opening { font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.25; margin: 2px 0 0; text-wrap: balance; }
+  .moves { font-family: var(--font-mono); font-size: 13px; color: var(--fg-2); margin-top: 4px; overflow-wrap: anywhere; }
+
+  .videos { display: grid; gap: 12px; }
+  .videos.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .video { background: var(--elevated); border-radius: 8px; padding: 12px 14px; display: grid; gap: 6px; min-width: 0; }
+  .video .tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .video a { color: var(--fg); font-weight: 500; text-decoration: none; overflow-wrap: anywhere; }
+  .video a:hover, .video a:focus-visible { color: var(--accent); text-decoration: underline; }
+  .video a::after { content: " ↗"; color: var(--muted); }
+  .meta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  details { font-size: 13px; color: var(--fg-2); }
+  summary { cursor: pointer; color: var(--muted); }
+  details p { white-space: pre-wrap; overflow-wrap: anywhere; margin: 6px 0 0; max-height: 220px; overflow-y: auto; }
+
+  .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+  .choices button {
+    font: 500 14px var(--font-body); color: var(--fg); background: transparent;
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; cursor: pointer;
+  }
+  .choices button:hover { border-color: var(--fg-2); }
+  .choices button:focus-visible, .note:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .choices button[aria-pressed="true"][data-tone="good"] { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .choices button[aria-pressed="true"][data-tone="part"] { background: var(--part-bg); border-color: var(--part); color: var(--part); }
+  .choices button[aria-pressed="true"][data-tone="bad"] { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  .choices button[aria-pressed="true"][data-tone="none"] { background: var(--overlay); border-color: var(--fg-2); }
+  .note {
+    width: 100%; font: 14px var(--font-body); color: var(--fg); background: var(--elevated);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  }
+  .note::placeholder { color: var(--muted); }
+  footer { margin-top: 28px; color: var(--fg-2); font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <div class="eyebrow">Jev experiment · owner check</div>
+    <h1>Does the video belong on the page?</h1>
+    <p>Twenty pairs drawn from the blind judging set. For each, decide whether the video is worth showing on that opening's page, as if you were a club player studying the line. The title is often enough; open the video when it isn't. Nothing here shows what the matcher, Jev or the judge said.</p>
+    <div class="key">
+      <span><b>Good match</b> the video is about this opening</span>
+      <span><b>Partly</b> one useful part of a broader video</span>
+      <span><b>Bad match</b> a different line, or only a passing mention</span>
+    </div>
+  </header>
+
+  <div class="bar" role="status">
+    <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+    <span class="count" id="count">0 of 0</span>
+    <span class="status" id="status">Connecting…</span>
+  </div>
+  <div class="notice" id="notice" hidden>Answers can't be saved in this view. Open the page on claude.ai while signed in, so Claude can read your verdicts.</div>
+
+  <ol class="items" id="items"></ol>
+  <footer id="done">Answers save as you click. When you've finished, tell Claude in the chat.</footer>
+</div>
+
+<script>
+  const ITEMS = [{"id":"e11","type":"relation","opening":"King's Knight Opening: Normal Variation (1. e4 e5 2. Nf3 Nc6)","video":{"id":"tOZKaAEZ0A0","title":"Punish These Chess Opening MISTAKES in the Italian Game","channel":"Remote Chess Academy","minutes":12.2,"description":"Learn 3 Simple Rules To Reach 2000+ ELO Rating Faster\nFREE Masterclass ► https://chess-teacher.net/masterclassyt/\n\nTake Your Chess Skills To The Next Level With High-Quality Courses\nLearn here ► https://online.chess-teacher.com/shopyd\n\n💰💲 Join the RCA Affiliate Program, promote our courses, and get 50% commission - https://chess-teacher.com/partnership/\n\n🔹 How My Student Became a FIDE Master in the 2024 Chess Olympiad! - https://www.youtube.com/watch?v=oIRAjlyGrN4\n\n♛ Find the Italian Game variations and traps shown in the video in this blog-post - https://chess-teacher.com/italian-game-mistakes/\n\nThe Italian Game is one of the most popular chess openings among beginner and intermediate players. It arises after the moves: 1.e4 e5 2.Nf3 Nc6 3.Bc4, making it highly likely that you'll encounter it in your games.\n\nThat’s why, in this video lesson, GM Igor Smirnov highlights the 4 most common opening mistakes in the Italian Game. After watching this video, you’ll learn how to capitalize on these mistakes early on and crush your opponents. Plus, you’ll ensure that you don’t fall into these traps yourself.\n\nThese aren’t just simple one-move blunders or cheap tricks. Instead, they are st"}},{"id":"j230","type":"relation","opening":"Alekhine Defense: Four Pawns Attack, Main Line (1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4 dxe5 6. fxe5 Nc6 7. Be3)","video":{"id":"aGqrrBLcaMM","title":"Alekhine Defense  | Ideas, Principles and Common Variations","channel":"Hanging Pawns","minutes":18.8,"description":"For extra content and daily exercises, visit my Patreon page: https://www.patreon.com/hangingpawns\n\nAn introduction to the hyper-aggressive Alekhine (or Aljehin) Defense with plans and setups for both colors.\n\nThe eight main variations of the opening are going to be covered in depth in separate videos.\n\nThe Alekhine Defense is part of the modern school of chess. It neglects the classical principles and openly provokes white to take up central space and chase the lone black knight to the edge of the board (a knight on the rim is dim). On the other hand, by doing so, black is also provoking white to weaken his center, overextend his pawns and turn them into a potential liability black could later exploit.\n\nThe goal for black is to strike at white’s overextended pawn center and either break through it with equality, or even emerge slightly better with targets to attack.\n\nThe opening was named after Alexander Aleksandrovič Aljohin (known as Alekhine), the fourth world champion and one of the best players of the 20th century. He introduced it in the 1921 Budapest Tournament. Alekhine managed to defeat Capablanca, retain the title for 20 years and was great in all areas of chess, so the "}},{"id":"j018","type":"pairwise","opening":"Pirc: 2.Nf3 (1. e4 d6 2. Nf3)","videos":[{"id":"7W2dB74VcUQ","title":"The Austrian Attack | Pirc Defense Opening Theory","channel":"Hanging Pawns","minutes":22.7,"description":"Taking up the center is the best way to counter hyper-modern defenses such as the Pirc, and the Austrian Attack is the most aggressive and most direct way to do so.\n\nFor the basics of the Pirc Defense, watch this introductory video: https://youtu.be/UecuOK_miKA\n\nThe Austrian Attack is the most aggressive setup white can choose against the Pirc. Bringing the third pawn to the center with f4, white prepares a strong central and kingside attack. This variation almost always leads to attacking games with no time to waste for either side. The Austrian Attack is also the most popular way for white to play with thousands of grandmaster games.\n\nThe idea behind the move f4 is pretty simple; white wants to expand in the center with the move e5, gaining space, and reducing the scope of black’s main defensive piece, the fianchettoed g7 bishop. If white manages to go unpunished and he gets e5 in with no direct counter play for white, then he indeed will have reduced black’s pieces to the first three rows and condemned them to passivity.\n\nTherefore, black must react as soon as possible to make sure that doesn’t happen. Black plays in hyper-modern style; he fianchettoes and castles kingside as so"},{"id":"TIpUDMzQVmU","title":"TRAP THE QUEEN!! | Deep Dive - Pirc Defense: Classical | GM Naroditsky’s Top Theory Speedrun","channel":"Daniel Naroditsky","minutes":59.6,"description":"00:00 Intro\n01:04 First Move\n01:10 Game\n25:20 Analysis\n30:46 Example Position\n31:50 Back To Game\n39:00 Example Position\n41:15 Back To Game\n52:00 Example Position\n56:35 Back To Game\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Join The Reddit https://www.reddit.com/r/DanielNaroditsky\n\nThe Pirc Defense (also known as the Pirc-Ufimtsev Defense) is a chess opening characterized by the moves 1. e4 d6 2. d4 Nf6. It is named after the Slovenian chess player Vasja Pirc, who popularized the defense in the 1950s.\n\nThe Pirc Defense is classified as a \"hypermodern\" defense, meaning that it allows the opponent to occupy the center of the board with pawns, while the defender develops their pieces on the flanks. The idea behind the Pirc Defense is to challenge the opponent's control of the center and to create counterattacking opportunities on the kingside.\n\nOne of the main variations of the Pirc Defense is the \"Classical Pirc,\" which continues with the moves 3. Nc3 g6 4. f4 Bg7. This variation is characterized by a solid and f"}]},{"id":"j014","type":"relation","opening":"Slav: 3.Nf3 Bf5 (1. d4 d5 2. c4 c6 3. Nf3 Bf5)","video":{"id":"WmCImz1fv5s","title":"Tearing Down The Slavic Wall | Slav Defense | The Sensei Speedrun | GM Naroditsky","channel":"Daniel Naroditsky","minutes":27.9,"description":"00:00 Intro\n00:15 First Move\n13:50 Analysis\n26:37 Computer Analysis\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Daniels Discord https://discord.gg/WfcfMt5hqS\n\nJoin Chess.com: chess.com/membership?ref_id=1715324\n\nEdited by  @ClydeBarber   (check out some of my original music on YT)\n\n\n#speedrun #grandmaster #chess"}},{"id":"j269","type":"relation","opening":"Sicilian Defense: Nyezhmetdinov-Rossolimo Attack: 3...a6?! (1. e4  c5 2. Nf3  Nc6 3. Bb5  a6 )","video":{"id":"Qe6L7y3bdjM","title":"Forcing Positional Weaknesses | Sicilian Defense | GM Naroditsky’s Top Theory Speedrun","channel":"Daniel Naroditsky","minutes":36.9,"description":"00:00 Intro\n00:25 First Move\n00:35 Game\n18:20 Analysis\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Join The Reddit https://www.reddit.com/r/DanielNaroditsky\n\nJoin Chess.com: chess.com/membership?ref_id=1715324\n\nBackground created using Midjourney! \nhttps://midjourney.com/\n\nThe opening played in this game is the Sicilian Defense. The Sicilian Defense is a chess opening played by Black in response to White's first move 1.e4. Black responds with the move 1...c5, occupying the central d4 square and challenging White's control of the center of the board. The Sicilian Defense is a popular and highly respected opening that has been played by many top grandmasters and world champions. It is known for its sharp, tactical nature and offers Black a good chance to fight for an equal or even better position. There are many different variations of the Sicilian Defense, but the one played in this game is the Sicilian Defense with the Najdorf Variation. This variation is named after the grandmaster Miguel Najdorf, who was a lea"}},{"id":"j259","type":"pairwise","opening":"French Defense: Normal Variation (1. e4 e6 2. d4)","videos":[{"id":"k6GFC7QUxBI","title":"Longer Games #24 Climbing the 2500 mountain... Lesson in the Classical French","channel":"GingerGM","minutes":21.4,"description":"In this online game I pick a longer time limit, 15+10, my aim is to really explain the thought processes behind the moves that I am playing. \nAnother battle on the Black side of the Classical French Defence.\n\nSign up to the GingerGM newsletter via here - https://learn.gingergm.com/ - Every 50th sign up wins a free GIngerGM download!\n\n* Facebook - https://www.facebook.com/GingerGMchess\n* Twitter - ginger_gm\n* Website - www.gingergm.com\n* Twitch channel - www.twitch.tv/gingergm"},{"id":"ngKFZPlhP2c","title":"Tempo Vs Pawns | French Defence: Tarrasch Variation | The Sensei Speedrun | GM Naroditsky","channel":"Daniel Naroditsky","minutes":27.2,"description":"00:00 Intro\n00:09 First Move\n11:20 Analysis\n18:20 Example (Danya Vs Wesley So)\n20:10 Back To Game\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Daniels Discord https://discord.gg/WfcfMt5hqS\n\nJoin Chess.com: chess.com/membership?ref_id=1715324\n\nEdited by  @ClydeBarber   (check out some of my original music on YT)\n\n\n#speedrun #grandmaster #chess"}]},{"id":"j195","type":"relation","opening":"Ruy Lopez: Exchange Variation, King's Bishop Variation (1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O Bd6)","video":{"id":"MP0K_rMCjok","title":"How to WIN FAST with the Ruy Lopez Exchange | Beginner-Friendly Traps","channel":"Remote Chess Academy","minutes":11.5,"description":"Get The Crystal-Clear Guide To Reach 2000+ ELO Rating Faster\nFREE Masterclass ► https://chess-teacher.com/masterclass\n\nTake Your Chess Skills To The Next Level With High-Quality Courses\nLearn here ► https://online.chess-teacher.com/\n\n💰💲 Join the RCA Affiliate Program, promote our courses, and get 50% commission - https://chess-teacher.com/partnership/\n\n🔹 Learn Ruy Lopez Theory and Attacking Plans - https://youtu.be/IQrtrPvU3bQ\n\n♛ Find the variations shown in the video in this blog-post - https://chess-teacher.com/ruy-lopez-exchange-variation\n\nAll the greatest chess players of all time including Magnus Carlsen, Bobby Fischer, Garry Kasparov, Vishy Anand, have one thing in common; they've been playing the Ruy Lopez chess opening from beginner till the world championship level. \n\nWith that being said, it's common to believe among amateur players that the Ruy Lopez chess opening is too tricky to understand and one should stay away from it and leave it to the pros. \n\nIn this video lesson, GM Igor Smirnov shares with you one of his secret opening weapons that uses all the advantages of the Ruy Lopez without much complexity and disadvantages. And this secret variation gives you 70% win"}},{"id":"j067","type":"relation","opening":"Dutch Defense: Leningrad Variation, Matulovic Variation (1. d4 f5 2. g3 Nf6 3. Bg2 g6 4. Nf3 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 Nc6)","video":{"id":"XhCUF8yaMYA","title":"An attacking Dutch and Bird repertoire - full opening repertoire for black and white","channel":"Hanging Pawns","minutes":45.3,"description":"A full aggressive opening repertoire for both colors based on the Dutch Defense for black and the Bird for white!\nPractice the Dutch and Bird repertoire here: https://app.noctie.ai/repertoires/0d1d2810-8ddf-479a-972f-7cabf396333e?aff=q9yKD\nFull Dutch and Bird repertoire available here: https://www.patreon.com/posts/dutch-and-bird-137538566\nIf you decide to upgrade to premium on https://noctie.ai/?aff=q9yKD, use the code HANGINGPAWNS to get a 64% discount, or the code HPYEAR for 20% off the (already discounted) yearly membership.\n\nThe Dutch Defense is a very powerful weapon to add to your repertoire. It’s an opening system rather than an opening with an exact move order, and it can be reached via many different moves, and played against many different openings white chooses.\n\nIt can be employed against the Reti, English, and even Nimzo-Larsen, but the main line Dutch is played against d4.\n\nThe idea behind the Dutch is to challenge the center straight away by playing f5, thus taking control of the e4 square, and making it very hard for white to expand in the center. The downside of the move f5 is that it weakens the black king in more ways than one. It weakens the seventh rank, and b"}},{"id":"j155","type":"pairwise","opening":"Sicilian Defense: McDonnell Attack (1. e4 c5 2. f4)","videos":[{"id":"Oj04sSCzraE","title":"Mastering the Maróczy Bind | Sicilian Defense | GM Naroditsky’s Top Theory Speedrun","channel":"Daniel Naroditsky","minutes":49.2,"description":"00:00 Intro\n00:18 First Move\n00:20 Game\n36:00 Analysis\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Join The Reddit https://www.reddit.com/r/DanielNaroditsky\n\nJoin Chess.com: chess.com/membership?ref_id=1715324\n\nBackground created using Stable Diffusion V2!\n\nEdited by  @ClydeBarber   (check out some of my original music on YT)\n\n#speedrun  #grandmaster #chess #stablediffusion"},{"id":"C14ui8o_esM","title":"Master Class | Sicilian Defense | Chess Speedrun | Grandmaster Naroditsky","channel":"Daniel Naroditsky","minutes":38.9,"description":"30:40 Analysis\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Daniels Discord https://discord.gg/sgYvSVGFmm\n\n#speedrun #grandmaster #chess"}]},{"id":"j223","type":"relation","opening":"Romanishin Variation, Ruy Lopez  (1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Bb7 12.Bc2 Re8 13.Nf1 Bf8 14.Bg5 )","video":{"id":"uT0d4oNck8s","title":"A complete Spanish Opening Repertoire for White","channel":"Hanging Pawns","minutes":71.8,"description":"A full Spanish (Ruy Lopez) Repertoire that covers every defense black could play. \nPractice the Spanish Repertoire here: https://app.noctie.ai/repertoires/e7babca7-8e63-4bdf-a631-741f185f92d3?aff=q9yKD \nSpanish Repertoire PGN available here: https://www.patreon.com/posts/spanish-for-126629722\n\nThe Spanish Opening, or the Ruy Lopez, is the most important opening in chess, and an opening every strong player should be able to play with both sides. I remember Ben Finegold saying that you have to play e4 e5 with both sides if you wanna become a GM. This repertoire covers every defense black could play againt the Spanish Game. I have gone over every closed Spanish variation, the Open Spanish, the Berlin, the Marshall, the Archangel, and all the deviations as well.\nIf you learn this repertoire, you should be ready for anything black could play against the Ruy Lopez.\n\nTest yourself against a human-like AI for free https://noctie.ai/?aff=q9yKD. You can play Premium games 10 times as a free user once your rating has been calibrated.\nIf you decide to upgrade to Premium, use the code HANGINGPAWNS to get Noctie at a 64% discount, or the code HPYEAR for 20% off the (already discounted) yearly me"}},{"id":"e04","type":"relation","opening":"Four Knights Game: Italian Variation (1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Nc3)","video":{"id":"HizPoJ_2GPs","title":"Four Knights Game: Italian Variation [Opening Mistake]","channel":"Remote Chess Academy","minutes":12.2,"description":"Get The Crystal-Clear Guide To Reach 2000+ ELO Rating Faster\nFREE Masterclass ► https://chess-teacher.com/masterclass\n\nTake Your Chess Skills To The Next Level With High-Quality Courses\nLearn here ► https://online.chess-teacher.com/\n\n💰💲 Join the RCA Affiliate Program, promote our courses, and get 50% commission - https://chess-teacher.com/partnership/\n\n🔹 Punish Bg5/Bg4 Pin - https://youtu.be/RIFihcygk94\n🔹 More about this mistake - https://youtu.be/6SLL-9vz1LE\n\n♛ Find the variations shown in the video in this blog-post - https://chess-teacher.com/most-common-opening-mistake\n\nIn the world of chess, openings can be a critical battleground. One common opening mistake that many players make can lead to quick and unexpected defeats. In this video lesson, GM Igor Smirnov shares with you a common chess opening mistake and show you how to capitalize on it as both Black and White.\n\nIt happens in one of the most common chess opening positions after the moves 1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bc4, White intending to develop their pieces naturally. This is where the fun begins! Black can take advantage of White's setup with a simple yet powerful tactic: 4...Nxe4! This move temporarily sacrifice"}},{"id":"j048","type":"relation","opening":"English: Symmetrical, Two Knights (1. c4 c5 2. Nf3 Nf6 3. d4)","video":{"id":"BHsUA9Y3_L8","title":"Anti-Grünfeld Systems · English Opening Theory","channel":"Hanging Pawns","minutes":52.3,"description":"Learn how to avoid the Grünfeld Defense and enter Anti-Grünfeld systems which are going to force black outside of their comfort zone and give white an edge in almost all variations.\n\nWatch the introduction to the English Opening first if you haven't yet https://youtu.be/3aedSwUI9UU\n\nThe PGN with all the Anti-Grünfeld variations is available on https://www.patreon.com/hangingpawns\n\n00:00 Part 1: Introduction and transpositions\n10:37 Part 2: Adorjan Defense\n17:19 Part 3: Anti-Grünfeld with 4.g3\n40:57 Part 4: Anti-Grünfeld with 4.Nf3\n\n😎 Become a Patron (extra daily content): https://www.patreon.com/hangingpawns \n👕 New chess merch!: https://hanging-pawns-chess-merch.myteespring.co/\nMore Merch on weird stuff like pillows: https://www.redbubble.com/people/hangingpawns/shop \n♘ Follow me on lichess (write, ask, challenge): https://lichess.org/@/hpy  \n💲 Support the channel: https://www.paypal.me/HangingPawns \n\n\n#chess"}},{"id":"e19","type":"relation","opening":"Nimzo-Larsen Attack: Modern Variation (1. b3 e5)","video":{"id":"21ZQnlIJJKM","title":"1.b3 Opening Strategy – Nimzowitsch-Larsen Attack for White Players [Part-1]","channel":"Remote Chess Academy","minutes":33.7,"description":"Learn 3 Simple Rules To Reach 2000+ ELO Rating Faster\nFREE Masterclass ► https://chess-teacher.net/masterclassyt/\n\nTake Your Chess Skills To The Next Level With High-Quality Courses\nLearn here ► https://online.chess-teacher.com/shopyd\n\n💰💲 Join the RCA Affiliate Program, promote our courses, and get 50% commission - https://chess-teacher.com/partnership/\n\nIn this video, GM Igor Smirnov will be explaining to you about the opening move 1.b3 and this part contains the explanation for Black's reply 1...e5 for 1.b3. It is known as the Larsen Attack chess opening.\n\n► Follow RCA on social media \nFacebook: https://www.facebook.com/RemoteChessAcademy\nInstagram: https://www.instagram.com/gm.igorsmirnov/\nTikTok: https://www.tiktok.com/@gmigorsmirnov\n\n#IgorNation #ChessOpenings #ChessOpening"}},{"id":"j071","type":"relation","opening":"Semi-Slav Defense: Accelerated Meran Variation (1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 a6)","video":{"id":"nuEQFyZARlU","title":"The Complete Semi-Slav Part 8: Botvinnik (16. Na4 Main Line) | Chess Openings Explained","channel":"Saint Louis Chess Club","minutes":41.3,"description":"Jonathan Schrantz analyzes the Botvinnik variation if the Semi-Slav Defense, with the most popular continuation, 16. Na4.  See games from Alexei Shirov and Magnus Carlsen.\n\n2017.01.23\nLoek van Wely vs Alexey Shirov, 13th Amber Blindfold (2004): D44 Queen's Gambit Declined semi-Slav, anti-Meran, Lilienthal variation\nhttp://www.chessgames.com/perl/chessgame?gid=1282112\nVassily Ivanchuk vs Alexey Shirov, Hoogovens (1996): D44 Queen's Gambit Declined semi-Slav, anti-Meran, Lilienthal variation\nhttp://www.chessgames.com/perl/chessgame?gid=1060750\nMagnus Carlsen vs Jan Smeets, Corus (2010): D44 Queen's Gambit Declined semi-Slav, anti-Meran, Lilienthal variation\nhttp://www.chessgames.com/perl/chessgame?gid=1569703"}},{"id":"e09","type":"relation","opening":"Hungarian Opening (1. g3)","video":{"id":"8FVUvCPA2YI","title":"The UNBEATABLE Opening Strikes Again!! | Titled Tuesday","channel":"chessbrah","minutes":85.4,"description":"Intro- 0:00\ng1- 0:08\ng2- 7:09 (Unbeatable)\ng3- 14:09\ng4- 22:32\ng5- 30:05\ng6- 38:44\ng7- 47:45\ng8- 51:16\ng9- 1:00:35\ng10- 1:08:37\ng11- 1:15:57\n\n▶ WATCH US LIVE  https://kick.com/chessbrah/\n▶ SUBSCRIBE http://youtube.com/chessbrah\n▶ Play Chess https://go.chess.com/chessbrah\n▶ https://instagram.com/chessbrahTV\n▶ https://www.twitch.tv/chessbrah\n\nFOLLOW THE BRAHS:\nhttps://instagram.com/amanhambleton\nhttps://instagram.com/eric.hansen\n\nhttps://twitter.com/hansenchess\nhttps://twitter.com/amanhambleton\n\nCheck out our clothing store! ▶ https://chessbrahstore.com  ​\nChess Books ▶ https://www.amazon.com/shop/chessbrah\nChess Memberships ▶ https://go.chess.com/chessbrah\n\n\nFor all business inquiries: advertising@chessbrah.tv\n\n#amanhambleton #titledtuesday #chess #chessbrah #chessopenings"}},{"id":"j205","type":"pairwise","opening":"French Defense: Queen's Knight (1. e4 e6 2. Nc3)","videos":[{"id":"k6GFC7QUxBI","title":"Longer Games #24 Climbing the 2500 mountain... Lesson in the Classical French","channel":"GingerGM","minutes":21.4,"description":"In this online game I pick a longer time limit, 15+10, my aim is to really explain the thought processes behind the moves that I am playing. \nAnother battle on the Black side of the Classical French Defence.\n\nSign up to the GingerGM newsletter via here - https://learn.gingergm.com/ - Every 50th sign up wins a free GIngerGM download!\n\n* Facebook - https://www.facebook.com/GingerGMchess\n* Twitter - ginger_gm\n* Website - www.gingergm.com\n* Twitch channel - www.twitch.tv/gingergm"},{"id":"ngKFZPlhP2c","title":"Tempo Vs Pawns | French Defence: Tarrasch Variation | The Sensei Speedrun | GM Naroditsky","channel":"Daniel Naroditsky","minutes":27.2,"description":"00:00 Intro\n00:09 First Move\n11:20 Analysis\n18:20 Example (Danya Vs Wesley So)\n20:10 Back To Game\n\nDaniel now has a Patreon! Check it out at https://patreon.com/danielnaroditsky\n\n- Follow Daniel on Twitter at https://twitter.com/GMNaroditsky\n- Daniel streams regularly on Twitch at https://twitch.tv/GMNaroditsky\n- Daniels Discord https://discord.gg/WfcfMt5hqS\n\nJoin Chess.com: chess.com/membership?ref_id=1715324\n\nEdited by  @ClydeBarber   (check out some of my original music on YT)\n\n\n#speedrun #grandmaster #chess"}]},{"id":"j293","type":"relation","opening":"Reti: Nimzowitsch-Larsen (1. Nf3 d5 2. b3 c5)","video":{"id":"fGcUOQVtKug","title":"Rapid Chess #269 vs Pat6578 Reti Opening White","channel":"Chessexplained","minutes":39.3,"description":"Check out my Chessable Repertoires:\nBlack vs 1 d4 based on the Benko Gambit: https://goo.gl/V8cNHo\nWhite based on 1 c4 (English/Reti Opening): https://goo.gl/BR2FpN\n\nSupport the Channel by donating: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8SVSSDEUXZPPN\nCheck Out: http://www.chessclub.com/refer/id/164288\n\nCheck all my playlists:\nhttp://www.youtube.com/user/Chessexplained/playlists\n\nFollow me on Twitter: http://www.twitter.com/ChessExplained\nMeet me on Facebook: https://www.facebook.com/christof.sielecki"}},{"id":"j263","type":"relation","opening":"QGD: Orthodox, Rauzer Variation (1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. Qb3)","video":{"id":"GxGM-_WdZn8","title":"Queen's Gambit Declined, Tartakower variation - Standard chess #26","channel":"ChessNetwork","minutes":49.2,"description":"I played a standard chess game as white with time controls set at 15 minutes with a 2 second increment. The opening played was the Queen's Gambit Declined, Tartakower variation without h6. It's a game of many even trades! A heavy piece endgame arises where one side holds an extra pawn. One must be very delicate in such positions however if the goal is to convert the full point. Plenty of rook endgames have a high draw rate, and it's paramount to maintain excellent piece activity at all times.\n\nhttps://en.lichess.org/Vwcf5WAo\n\nPGN:\n1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 { D55 Queen's Gambit Declined: Modern Variation, Normal Line } b6 7. cxd5 Nxd5 8. Bxe7 Qxe7 9. Nxd5 exd5 10. Be2 Bb7 11. Ne5 Nd7 12. Nxd7 Qxd7 13. O-O c5 14. dxc5 bxc5 15. Rc1 Qd6 16. Bf3 Rfd8 17. Qa4 Qb6 18. h3 h6 19. Rfd1 Rac8 20. Rd2 d4 21. Bxb7 Qxb7 22. exd4 cxd4 23. Rxc8 Rxc8 24. Qxd4 Rc1+ 25. Kh2 Qc7+ 26. f4 Kh7 27. b3 g6 28. Qd6 Qc3 29. Qd7 Qf6 30. Qd6 Qa1 31. Qe5 h5 32. Rd7 Rh1+ 33. Kg3 Qxe5 34. fxe5 Re1 35. Rxf7+ Kh6 36. Rxa7 Rxe5 37. Kf3 Rc5 38. Ra4 Rc2 39. g3 Rc3+ 40. Kf2 Rc2+ 41. Ke3 Rc3+ 42. Kf4 g5+ 43. Ke4 Rxg3 44. Ra6+ Kg7 45. Kf5 g4 46. hxg4 h4 47. Kf4 Rg1 48. Ra5 Rf1+ 49. Ke3 Rg1 50"}},{"id":"j047","type":"relation","opening":"Old Indian: Ukranian (1. d4 Nf6 2. c4 d6 3. Nc3 e5 4. e4)","video":{"id":"Ph802JkrXgE","title":"Standard Chess #166: pax vs. IM Bartholomew (Old Indian Defense)","channel":"John Bartholomew","minutes":37.3,"description":"1.d4 d6 is an offbeat yet reasonable weapon for Black, as the \"queenless middlegame\" after 2.c4 e5 3.dxe5 dxe5 4.Qxd8+ Kxd8 is considered to be entirely acceptable for the second player, (his king will find a comfy home on c7). The superior technical player will typically prevail in such queenless battles, but it's worth understanding why moves like 12.e4 and 17.a4 ought to be avoided!"}},{"id":"j200","type":"relation","opening":"Philidor: Improved Hanham (1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4)","video":{"id":"10pmjMxGkbU","title":"Philidor Defense, Exchange variation - Standard chess #33","channel":"ChessNetwork","minutes":42.2,"description":"I played a standard chess game as black with time controls set at 15 minutes with a 2 second increment. The opening played was the Philidor Defense, Exchange variation. As is typical in the Philidor Defense, white inherits a slight central space advantage (e4 vs d6). Of the 2 pawns, e4 is potentially more vulnerable. Would this be something black could take advantage of? Moreover, what factors are most important in an opposite sides castling position? We have just that in this game.\n\nhttps://lichess.org/62CgOUWn\n\nPGN:\n1. e4 d6 2. d4 e5 3. Nf3 exd4 { C41 Philidor Defense: Exchange Variation #3 } 4. Qxd4 Nf6 5. Nc3 Be7 6. Bg5 O-O 7. O-O-O Nc6 8. Qd2 Be6 9. Be2 a6 10. h3 Re8 11. g4 b5 12. Bxf6 Bxf6 13. Nd5 Bxd5 14. exd5 Ne5 15. Rhe1 Nxf3 16. Bxf3 Rxe1 17. Qxe1 Be5 18. Kb1 Qf6 19. Rd3 Bxb2 20. g5 Qxg5 21. Kxb2 a5 22. Qc3 Qd8 23. Qc6 Rb8 24. Re3 g6 25. Qc3 b4 26. Qd4 a4 27. h4 h5 28. Be2 Kh7 29. Rf3 Kg8 30. Rg3 Kh7 31. Bd3 Qf8 32. Qf6 Qg7 33. Qxg7+ Kxg7\n\nI'm a self-taught National Master in chess out of Pennsylvania, USA who learned how to play from my father in 1988 at the age of 8. The purpose of this channel is to share my knowledge of chess to help others improve their game. I enjoy"}}];
+
+  const RELATION = [
+    ["good", "Good match", "good"],
+    ["partly", "Partly", "part"],
+    ["bad", "Bad match", "bad"],
+    ["cant_tell", "Can't tell", "none"],
+  ];
+  const PAIRWISE = [
+    ["video_1", "First is better", "good"],
+    ["video_2", "Second is better", "good"],
+    ["equal", "About the same", "part"],
+    ["cant_tell", "Can't tell", "none"],
+  ];
+
+  const answers = {};
+  let db = null;
+
+  function splitOpening(label) {
+    const m = /^(.*?) \((1\..*)\)$/.exec(label);
+    return m ? [m[1], m[2]] : [label, ""];
+  }
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function videoBlock(v, tag) {
+    const box = el("div", "video");
+    if (tag) box.append(el("span", "tag", tag));
+    const a = el("a", null, v.title);
+    a.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(v.id);
+    a.target = "_blank";
+    a.rel = "noopener";
+    box.append(a);
+    const mins = v.minutes != null ? ` · ${v.minutes < 1 ? "<1" : Math.round(v.minutes)} min` : "";
+    box.append(el("div", "meta", v.channel + mins));
+    if (v.description) {
+      const d = el("details");
+      d.append(el("summary", null, "Description"));
+      d.append(el("p", null, v.description));
+      box.append(d);
+    }
+    return box;
+  }
+
+  function render() {
+    const list = document.getElementById("items");
+    list.textContent = "";
+    ITEMS.forEach((item, i) => {
+      const li = el("li", "item");
+      li.id = "item-" + item.id;
+      const head = el("div", "head");
+      head.append(el("span", "num", String(i + 1).padStart(2, "0")));
+      const [name, moves] = splitOpening(item.opening);
+      const title = el("div");
+      title.append(el("div", "ask", item.type === "pairwise" ? "Which is the better first video for" : "Does this video belong on"));
+      title.append(el("div", "opening", name));
+      if (moves) title.append(el("div", "moves", moves));
+      head.append(title);
+      li.append(head);
+
+      const vids = el("div", item.type === "pairwise" ? "videos two" : "videos");
+      if (item.type === "pairwise") item.videos.forEach((v, k) => vids.append(videoBlock(v, k ? "Second" : "First")));
+      else vids.append(videoBlock(item.video));
+      li.append(vids);
+
+      const choices = el("div", "choices");
+      choices.setAttribute("role", "group");
+      choices.setAttribute("aria-label", "Verdict for item " + (i + 1));
+      (item.type === "pairwise" ? PAIRWISE : RELATION).forEach(([value, label, tone]) => {
+        const b = el("button", null, label);
+        b.type = "button";
+        b.id = `btn-${item.id}-${value}`;
+        b.dataset.tone = tone;
+        b.dataset.value = value;
+        b.setAttribute("aria-pressed", "false");
+        b.addEventListener("click", () => choose(item.id, value));
+        choices.append(b);
+      });
+      li.append(choices);
+
+      const note = el("input", "note");
+      note.id = "note-" + item.id;
+      note.type = "text";
+      note.placeholder = "Optional note";
+      note.addEventListener("change", () => saveNote(item.id, note.value.trim()));
+      li.append(note);
+
+      list.append(li);
+    });
+    paint();
+  }
+
+  function paint() {
+    let done = 0;
+    for (const item of ITEMS) {
+      const a = answers[item.id];
+      const li = document.getElementById("item-" + item.id);
+      li.classList.toggle("answered", !!(a && a.answer));
+      li.querySelectorAll(".choices button").forEach((b) =>
+        b.setAttribute("aria-pressed", String(!!a && a.answer === b.dataset.value))
+      );
+      const note = document.getElementById("note-" + item.id);
+      if (a && a.note != null && document.activeElement !== note) note.value = a.note;
+      if (a && a.answer) done++;
+    }
+    document.getElementById("count").textContent = `${done} of ${ITEMS.length}`;
+    document.getElementById("fill").style.width = `${(100 * done) / ITEMS.length}%`;
+    document.getElementById("done").textContent =
+      done === ITEMS.length
+        ? "All twenty done. Tell Claude in the chat and it will compare your verdicts with the judge's."
+        : "Answers save as you click. When you've finished, tell Claude in the chat.";
+  }
+
+  function setStatus(text) {
+    document.getElementById("status").textContent = text;
+  }
+
+  async function write(id) {
+    if (!db) return;
+    setStatus("Saving…");
+    try {
+      await db.collection("spotcheck").doc(id).set({ ...answers[id], at: new Date().toISOString() });
+      setStatus("Saved");
+    } catch (e) {
+      setStatus(e && e.code === "invalid_argument" ? "You can't save answers here" : "Not saved, try again");
+    }
+  }
+
+  function choose(id, value) {
+    answers[id] = { ...(answers[id] || {}), answer: value };
+    paint();
+    write(id);
+  }
+
+  function saveNote(id, text) {
+    if ((answers[id] && answers[id].note) === text) return;
+    answers[id] = { ...(answers[id] || {}), note: text };
+    write(id);
+  }
+
+  render();
+
+  (async () => {
+    db = window.claude && window.claude.use ? await window.claude.use("db") : null;
+    if (!db) {
+      setStatus("Not saving");
+      document.getElementById("notice").hidden = false;
+      return;
+    }
+    setStatus("Ready");
+    db.collection("spotcheck").onSnapshot(
+      (snap) => {
+        for (const d of snap.docs) {
+          const body = d.data();
+          answers[d.id] = { answer: body.answer, note: body.note };
+        }
+        paint();
+      },
+      () => setStatus("Live updates stopped; answers still save")
+    );
+  })();
+</script>

@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-winawer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Winawer Variation",
+    "eco": "C15",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Bb4",
+    "fen": "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "french-defense-paulsen-variation",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "Black pins the c3 knight. After 4.e5 c5 5.a3 Bxc3+ 6.bxc3 Ne7 White gets the bishop pair and a kingside space advantage, and Black has a damaged-pawn-structure target on the queenside plus the c4 square. White attacks on the kingside (Qg4 hitting g7), Black counters on the queenside and the dark squares. Strategically unbalanced and tense, with a great deal of theory.",
+  "white_ideas": [
+    { "idea": "Qg4 to hit g7 and h8, then h4-h5 and a kingside attack with the bishop pair" },
+    { "idea": "Hold the c3 pawns and play Bd3, Ne2, and f4 or Nf3 with space" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the c3 and d4 pawns with ...c5, ...Qc7, ...Nbc6 and ...c4" },
+    { "idea": "Close the position with ...c4 to make White's bishop a bad one, and defend g7 with ...O-O or ...Qc7" }
+  ],
+  "typical_structures": [
+    { "structure": "French chain with White doubled c-pawns on b-c files and Black pawn on c5 and ...c4 lock" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Known as the sharpest French: g7 attack, doubled pawns, unbalanced play; Sharp." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The g7 pawn is exchanged or defended; no material is truly given in the main line." },
+    "soundness": { "notes": "Sound; a main weapon of Korchnoi and others." },
+    "structure": { "notes": "d4/e5 against d5/e6 locks the centre in the main line; Closed, though Delayed Exchange is more open." },
+    "approach": { "notes": "A standard main-line variation." },
+    "level": { "reason": "memory", "notes": "Heavy theory and sharp lines that must be known; Advanced." }
+  },
+  "plan_phrases": ["doubled pawns", "bishop pair", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Delayed Exchange 4.exd5", "moves": "1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. exd5", "how": "Quiet, symmetric and Semi-open; Black has an easy game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "The best-known sharp French line with g7 attacks and opposing wing play." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material given in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A main-line variation." },
+    "structure": { "value": "closed", "confidence": 0.55, "reason": "The d4/e5 chain locks the centre after 4.e5 c5." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream variation." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.7, "reason": "Long forcing theory to know." },
+    "plans": { "value": ["doubled_pawns", "bishop_pair", "kingside_attack"], "reason": "White's doubled c-pawns, the bishop pair and the g7 attack." }
+  }
+}

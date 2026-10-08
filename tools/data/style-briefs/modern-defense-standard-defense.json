@@ -1,0 +1,46 @@
+{
+  "slug": "modern-defense-standard-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Standard Defense",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6",
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "modern-defense-standard-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "Black lets White build the e4-d4 centre and fianchettoes, then strikes with ...c6, ...Nd7 and ...e5 or ...c5 and ...Nc6. White usually develops with Be3, Qd2 and f3 or Bc4 and Qf3, aiming at the kingside. Black often has a flexible move order, delaying ...Nf6 to avoid the Pirc theory, and counterplays against the over-extended centre.",
+  "white_ideas": [
+    { "idea": "Be3, Qd2 and Nf3 or f3 with a kingside attack" },
+    { "idea": "Bc4 and Qf3 against f7, keeping a big centre" }
+  ],
+  "black_ideas": [
+    { "idea": "...c6, ...b5 and ...Nd7 or ...e5 to break the centre" },
+    { "idea": "...Nc6 and ...e5, or ...c5, with the g7 bishop pressing d4" }
+  ],
+  "typical_structures": [
+    { "structure": "White e4/d4 centre against Black d6, g6 fianchetto, then ...e5 or ...c5 breaks" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Hypermodern set-up; White gets space and often a kingside attack but Black's position is hard to break and not overly forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered except in side lines like the Tal Gambit." },
+    "soundness": { "notes": "Sound but gives White more space; used by Suttles, Davies and occasionally Carlsen." },
+    "structure": { "notes": "Centre is not decided: Black breaks with ...e5 or ...c5 after White has built a big centre." },
+    "approach": { "notes": "The Modern is a set-up (g6, Bg7, d6) that Black can play against almost any White move order." },
+    "level": { "reason": "understanding", "notes": "Few forced lines but plans against an over-extended centre need judgement." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto bishop on g7", "counterattack on d4"],
+  "sublines_that_differ": [
+    { "name": "Modern: 3.Nc3 d6 4.Be3 a6", "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Be3 a6", "how": "Black waits with ...a6 and ...b5, a queenside plan." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Neither a forcing attack nor a fortress; White gets space, Black counterplays." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material offered in the main lines." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "Sound though passive against a big centre." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "Centre in tension until Black decides between ...e5 and ...c5." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "The g6/Bg7/d6 set-up is playable against nearly any first move." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans need judgement, little forced theory." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White take the centre and attacks it from the g7 bishop and pawn breaks." }
+  }
+}

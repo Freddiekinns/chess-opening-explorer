@@ -1,0 +1,157 @@
+{
+  "slug": "ruy-lopez-steinitz-defense",
+  "root": {
+    "name": "Ruy Lopez: Steinitz Defense",
+    "eco": "C62",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6",
+    "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "moderate",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Ruy López Opening: Old Steinitz Defense",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Ruy-Lopez-Opening-Old-Steinitz-Defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Ruy Lopez: Steinitz Defense (C62)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/steinitz-defense",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Ruy Lopez Steinitz Defence: Replay Lab",
+      "publisher": "Chessworld.net",
+      "url": "https://www.chessworld.net/ruy-lopez-steinitz-defense.asp",
+      "kind": "article"
+    },
+    {
+      "id": "s4",
+      "title": "Ruy Lopez (Steinitz Defence section; the page mentions 3...d6 only as a third-move alternative)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ruy_Lopez",
+      "kind": "reference"
+    },
+    {
+      "id": "s5",
+      "title": "C62 Old Steinitz Defence / Nimzovich attack; search snippets only (365chess, chessgames, chess.com forum)",
+      "publisher": "Web search",
+      "url": "https://www.365chess.com/eco/C62_Ruy_Lopez_old_Steinitz_defence",
+      "kind": "reference"
+    }
+  ],
+  "overview": "Black defends e5 with 3...d6 at once and accepts a compact, somewhat cramped position: the f8-bishop is hemmed in and kingside development is slowed. The critical reply is 4.d4, when Black either breaks the pin with 4...Bd7 (then 5.Nc3 Nf6 6.O-O Be7 7.Re1, where Black often has to concede the centre with ...exd4) or trades with 4...exd4. White can instead go slowly with 4.O-O, 4.c3 or 4.Nc3, or damage the structure with Bxc6 (4.Bxc6+ bxc6, or the Nimzowitsch Attack 6.Bxc6 after 4.d4 Bd7 5.Nc3 Nf6). The game is steady and positional, with White holding a small space edge and Black waiting for the moment to challenge the centre. Sources call it sound but strategically demanding: Black drifts into passivity if the ...exd4 or ...Bg4 counter-pin timing is wrong. It is a minor sideline among masters but fairly common at club level.",
+  "white_ideas": [
+    { "idea": "4.d4 to hit e5 twice and force Black to choose between 4...exd4 and 4...Bd7.", "sources": ["s1", "s2", "s3"] },
+    { "idea": "After 4.d4 Bd7 5.Nc3 Nf6 develop with 6.O-O Be7 7.Re1 and pressure the centre so Black has to release it with ...exd4.", "sources": ["s2", "s3"] },
+    { "idea": "Bxc6 to double Black's pawns (4.Bxc6+ bxc6, or the Nimzowitsch Attack 6.Bxc6 after 5.Nc3 Nf6) and exploit the structural weakness.", "sources": ["s3", "s5"] },
+    { "idea": "Slow build with 4.c3, 4.O-O or 4.Nc3, keeping the choice between d4, c3 and Re1; d5 to gain space if Black is passive.", "sources": ["s3", "s2"] },
+    { "idea": "Queenside initiative: White has the queenside advantage and can open that side when it wants.", "sources": ["s5"] }
+  ],
+  "black_ideas": [
+    { "idea": "Break the pin with ...Bd7, or counter-pin with ...Bg4.", "sources": ["s1", "s2"] },
+    { "idea": "Accept a cramped but solid pawn structure in exchange for clear development; wait for the right moment to challenge the centre (...exd4) rather than drift.", "sources": ["s2", "s3"] },
+    { "idea": "...Nf6, ...Be7 and ...O-O as a compact set-up.", "sources": ["s2"] }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on d6/e5 against White e4/d4; centre often resolved by ...exd4 and Nxd4 giving White more space and Black a compact, slightly passive position.", "sources": ["s2", "s3"] },
+    { "structure": "After Bxc6 and recapture on c6, doubled c-pawns for Black against White's kingside pawn majority.", "sources": ["s3", "s5"] }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Described as very solid ('a very solid defense', 'very hard to crack with accurate play'), though strategically demanding and passive if mishandled. Few forcing sharp lines; the main tactical moment is 4.d4 and the Nimzowitsch Attack. Slow 4.c3/4.O-O lines are quiet.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed in the main lines. The database lists a 'Center Gambit' (4.d4 exd4 5.O-O), a White pawn offer, but it is a rare sideline (about 35k games against 29 million for the root).",
+      "sources": ["s5"]
+    },
+    "soundness": {
+      "notes": "Chess.com calls it theoretically sound with strong central control; Chessiverse says very hard to crack with accurate play; Chessworld says sound but strategically demanding and risky without central counterplay. White scores 51.8% overall in the Chessiverse database, a modest edge, and sources say White keeps a small space advantage. No source calls it dubious.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "structure": {
+      "notes": "Centre is usually partly open or in tension: d4 exd4 Nxd4 is common, giving an open-ish centre with Black cramped; alternatively tension with e5/d6 versus e4/d4 and d5 space gain by White. Sources describe 'compact' and 'cramped' rather than open or locked. Black often concedes the centre with ...exd4.",
+      "sources": ["s2", "s3"]
+    },
+    "approach": {
+      "notes": "Not a system played against everything; it is a specific reply to the Ruy Lopez. Chessiverse: 'very minor sideline among masters', 0.02% of games at 2500 against 0.64% at 1200, declining since a 2013 peak; historical champions (Steinitz, Lasker, Alekhine, Capablanca) played it. Modern strong players prefer the Modern Steinitz (3...a6 4.Ba4 d6) or other third moves.",
+      "sources": ["s2", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Chessiverse rates it Advanced and as a theoretician's opening needing 'preparation and memorization of key lines', but this conflicts with its own data showing it is far more common at 1200 than at 2500 and its description of the plans as simple (break the pin, ...Nf6, ...Be7, ...O-O). Chessworld says it needs patient defenders who know when to challenge the centre. My own understanding (unsourced): few forcing lines to memorise; the difficulty is judging passive versus active play, and the 4.d4 and Nimzowitsch Attack lines need care.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pin break with ...Bd7",
+    "central tension",
+    "space advantage",
+    "doubled pawns on c6",
+    "queenside initiative",
+    "timely ...exd4"
+  ],
+  "sublines_that_differ": [
+    { "name": "Nimzowitsch Attack", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. d4 Bd7 5. Nc3 Nf6 6. Bxc6", "how": "White trades the bishop for the knight to double Black's pawns after the pin break; a structural fight rather than the slower main plan." },
+    { "name": "4.Bxc6+ exchange", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. Bxc6+ bxc6", "how": "Doubled c-pawns early; Black gets a semi-open b-file and the c6 pawn pair, White aims at the kingside majority." },
+    { "name": "Center Gambit", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. d4 exd4 5. O-O", "how": "White offers a pawn for development; rare (about 35k games)." }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "3...d6 is a classical and resilient system against the Spanish; it shores up the e5-pawn immediately.",
+        "verdict": "supported",
+        "note": "Sources call it very solid and hard to crack with accurate play; the move defends e5 directly.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It leads to a more closed and strategic battle compared with more popular lines.",
+        "verdict": "unverifiable",
+        "note": "Sources say 'compact' and 'cramped' but also that Black often concedes the centre with ...exd4 after 4.d4; main lines are not especially closed.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It suits patient, strategic players building a solid foundation and neutralising White's initiative before launching counter-plans.",
+        "verdict": "supported",
+        "note": "Chessworld says it suits patient defenders who like compact structures; it also warns the plan fails without central counterplay.",
+        "sources": ["s3"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: play d4 to open the centre, use the space advantage, often targeting the kingside.",
+        "verdict": "supported",
+        "note": "4.d4 is the critical move and White keeps a space edge. Sources mention the queenside advantage rather than a kingside target.",
+        "sources": ["s2", "s5"]
+      },
+      {
+        "claim": "Black: play ...Bd7 to break the pin, then ...Nf6 and ...O-O.",
+        "verdict": "supported",
+        "note": "Main line 4.d4 Bd7 5.Nc3 Nf6, then ...Be7 and ...O-O.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "White: exchange on c6 (Bxc6) to double Black's pawns and exploit the weakness.",
+        "verdict": "supported",
+        "note": "4.Bxc6+ and the Nimzowitsch Attack 6.Bxc6 are named lines.",
+        "sources": ["s3", "s5"]
+      },
+      {
+        "claim": "Black: maintain a cramp-free position, neutralise White's pressure and aim for a favourable endgame.",
+        "verdict": "wrong",
+        "note": "Sources describe the position as cramped and say Black is often forced to concede the centre; a favourable endgame is not a stated goal.",
+        "sources": ["s2", "s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 2, "pages_read": 4 }
+}

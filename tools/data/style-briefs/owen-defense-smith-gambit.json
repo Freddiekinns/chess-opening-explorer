@@ -1,0 +1,95 @@
+{
+  "slug": "owen-defense-smith-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Smith Gambit",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 Bb7 3. Nf3",
+    "fen": "rn1qkbnr/pbpppppp/1p6/8/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 2 3"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White defends e4 with a knight, inviting 3...Bxe4 4.Nc3 and the Smith Gambit idea of a lead in development for a pawn. Strong players usually decline with 3...e6, after which 4.Bd3 Nf6 gives a normal Owen with White's centre against Black's fianchetto. Black undermines the centre with ...c5 or ...d5 and ...Bb4.",
+  "white_ideas": [
+    { "idea": "Build a broad centre with Bd3, c3 or Nc3 and a space edge." },
+    { "idea": "If Black takes on e4, develop with Nc3 and Bd3 for the pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Undermine d4 with ...c5 and ...e6, ...Nf6." },
+    { "idea": "Use the long diagonal bishop and ...Bb4 pins." }
+  ],
+  "typical_structures": [
+    { "structure": "White centre pawns on d4/e4 against a fianchettoed bishop and ...e6/...c5 breaks." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "After 3...e6 play is manoeuvring, White gets space and Black keeps a slightly loose kingside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "In the position and the usual 3...e6 reply no material is given. Only after 3...Bxe4 4.Nc3 does White give a pawn that Black can keep."
+    },
+    "soundness": {
+      "notes": "The Owen is thought slightly unsound but not refuted; it is Black taking the risk."
+    },
+    "structure": {
+      "notes": "White's centre is not locked and Black's breaks are undecided, so tension rather than a fixed structure."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players outside blitz, so offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear for Black but he must avoid a space deficit; not a first repertoire choice."
+    }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "...c5 break"],
+  "sublines_that_differ": [
+    {
+      "name": "Smith Gambit accepted",
+      "moves": "3...Bxe4 4.Nc3 Bb7 5.Bd3",
+      "how": "White is a pawn down for development and a kingside lead; a true gambit line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Steady manoeuvring after 3...e6, neither forcing nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The usual 3...e6 declines the gambit; the pawn grab is a sub-line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "The Owen is considered slightly unsound for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "White centre against ...c5/...d5 breaks, undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen by strong players except in online blitz."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Clear plans but Black is a little worse; not for beginners."
+    },
+    "plans": {
+      "value": ["hypermodern_centre", "fianchetto"],
+      "reason": "Black lets White build a centre and attacks it from the long diagonal and with breaks."
+    }
+  }
+}

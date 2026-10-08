@@ -1,0 +1,44 @@
+{
+  "slug": "englund-gambit-felbecker-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Felbecker Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Bc5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black has sacrificed the e-pawn and develops the bishop to c5 instead of the main-line ...Qe7. White has an extra pawn and can consolidate with e3 or e4 and quick development, while Black aims for rapid piece play and traps on f2 and the dark squares. I am unsure of the exact theory here; it is a rare branch of an already unsound gambit.",
+  "white_ideas": [
+    { "idea": "Hold the extra pawn with e3 or e4 and develop calmly" },
+    { "idea": "Avoid early queen moves and punish loose play on f2 and the dark squares" }
+  ],
+  "black_ideas": [
+    { "idea": "Lead in development, ...Qe7, ...Nge7 or ...Nf6 and win back the pawn on e5" },
+    { "idea": "Set traps against an unprepared White on f2 and b2" }
+  ],
+  "typical_structures": [
+    { "structure": "White with an extra pawn on e5 against Black's quick development" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gambits a pawn for activity and traps; mutual risk and unbalanced play." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can keep the e5 pawn with accurate development." },
+    "soundness": { "notes": "Strong players consider the Englund unsound; this branch no better." },
+    "structure": { "notes": "Open lines after dxe5 and quick piece play." },
+    "approach": { "notes": "Strong players almost never play the Englund." },
+    "level": { "reason": "memory", "notes": "A trap-based line; White simply develops sensibly but Black must know the tricks." }
+  },
+  "plan_phrases": ["lead in development", "regain the pawn", "traps"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.7, "reason": "Pawn sacrifice for rapid development with early tactical chances." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives the e-pawn." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "Strong players consider the Englund unsound." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Early exchange leaves open lines for the pieces." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Englund Gambit is anchored as offbeat." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious gambit is never beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for development in exchange for a pawn." }
+  }
+}

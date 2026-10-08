@@ -1,0 +1,47 @@
+{
+  "slug": "bishops-opening-urusov-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Urusov Gambit",
+    "eco": "C43",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "bishops-opening-ponziani-gambit",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "White gives a pawn for rapid development and open lines against the Black king. Black usually plays 4...Nxe4 5.Qxd4 Nf6 6.Bg5 Be7 7.Nc3 and then ...c6 or ...Nc6, keeping the extra pawn and aiming to castle and consolidate. White seeks quick castling long and kingside pressure; Black has to avoid falling for the many early tactics.",
+  "white_ideas": [
+    { "idea": "Lead in development with Qxd4, Bg5, Nc3 and castling long, then push for kingside or e-file tactics." },
+    { "idea": "Use the bishop on c4 and the queen on d4 to attack f7 and the g7 pawn." }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn, complete development with ...Be7, ...c6 and ...O-O, and trade queens if possible." },
+    { "idea": "Exploit White's loose king after long castling with ...d5 and counterplay." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after the d-pawn trade; White pieces developed against Black's solid but slightly passive kingside." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Gambit with open lines and early tactics; both kings can come under fire." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 4...Nxe4 5.Qxd4 Nf6 Black keeps a pawn and has to consolidate." },
+    "soundness": { "notes": "Playable but Black can reach a safe extra pawn; considered roughly sound for White, with practical chances." },
+    "structure": { "notes": "Open lines in the centre after the d-pawn trade; pieces drive the game." },
+    "approach": { "notes": "Strong players seldom choose it; a surprise-oriented gambit." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of the 6.Bg5 and 7.Nc3 tactical lines." }
+  },
+  "plan_phrases": ["lead in development", "early queen", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Keidansky Gambit", "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 Nxe4 5. Qxd4", "how": "The main gambit line; here Black can also try other fifth moves." },
+    { "name": "Marshall Variation", "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 Nxe4 5. Qxd4 Nf6 6. Nc3 Nc6 7. Qh4", "how": "Queen sortie, more forcing and different structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "Pawn gambit with early tactics on both sides." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives a pawn that Black can keep." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Holds up, though Black has an easy extra pawn." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open central lines decide the game." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Rare among strong players, chosen for surprise." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "Tactical theory needed but not heavy." },
+    "plans": { "value": ["lead_in_development", "early_queen"], "reason": "White gives a pawn for development and the queen comes out early." }
+  }
+}

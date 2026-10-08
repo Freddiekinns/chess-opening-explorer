@@ -1,0 +1,95 @@
+{
+  "slug": "petrovs-defense-cozio-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Cozio Attack",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. Qe2",
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/4n3/5N2/PPPPQPPP/RNB1KB1R b KQkq - 1 5"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White attacks the e4 knight with the queen. The main line is 5...Qe7 6.d3 Nf6 7.Bg5, where Black either allows the queen trade on e2 or plays 7...Nbd7 (Milner-Barry). The positions are quiet and symmetrical, with an equal game and little risk for Black.",
+  "white_ideas": [
+    { "idea": "Trade queens and use a small lead in development." },
+    { "idea": "Pin the knight with Bg5 and play on the e-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Equalise by trading queens and developing quickly." },
+    { "idea": "Keep a symmetrical structure and hold e5." }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawn structure with the e-file open after the queen trade." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Drawish and hard for White to crack, with a queenswap that is easy for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; it is a sideline that equalises."
+    },
+    "structure": {
+      "notes": "Symmetrical exchange structure with one open file."
+    },
+    "approach": {
+      "notes": "A standard sideline in the Petrov."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple plans with moderate theory."
+    }
+  },
+  "plan_phrases": ["queen trade", "symmetrical structure"],
+  "sublines_that_differ": [
+    {
+      "name": "Milner-Barry",
+      "moves": "7...Nbd7",
+      "how": "Black keeps the queens on for a livelier game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Symmetrical, drawish and hard for White to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A sound sideline."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Symmetrical structure with one open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Simple plans with moderate theory."
+    },
+    "plans": {
+      "value": ["symmetrical_structure"],
+      "reason": "Mirror pawns and a slow fight for small edges."
+    }
+  }
+}

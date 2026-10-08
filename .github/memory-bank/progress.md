@@ -4,6 +4,20 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Model routing** (2026-10-08): Haiku `scout`/`verifier`, Sonnet `implementer`
+  and `/docs-sync`, `pipeline-reviewer` pinned to Sonnet high; routing rules in
+  `CLAUDE.md`. Main session stays Opus, effort medium. `AGENTS.md` 441 → ~220
+  lines, tooling and subsystem detail moved to skills and the scoped files.
+- **Style tags** (2026-10-05, #160): a fixed six-axis taxonomy replaces the LLM
+  tags on the detail page, cards, Discover facets and style search. 563
+  variations cover 80% of pages and 65% of games; 848 tail variations remain.
+- **`irregular` family split** (2026-10-02): 519 positions to three new families
+  and six re-routes; top-200 pages on the `irregular` shelf 16 → 4. A test now
+  fails when the ECO files drift from the resolver.
+- **Jev video experiment and filter** (2026-10-02): Jev rejections 99% right,
+  acceptances half wrong; pipeline now drops confident rejections (31,605 of
+  72,283 pairs), then pins 18 Jev-and-judge-agreed videos (top-200 own-page
+  coverage 181). Style tags proposal gated on `query_shape` data.
 - **Sixth Dependabot pass** (2026-09-28, #149-#152): both groups; vitest 5 pair
   as one PR, unblocked by importing `@testing-library/jest-dom/vitest`.
 - **Logo refresh** (2026-09-27): the raster pawn-on-a-book became a flat SVG of
@@ -33,21 +47,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   split inoperative under vite 5 — JS 373 → 361 kB, builds 4.7s → 0.8s. **Node
   20 had been EOL since March**; CI moved to 24, unblocking jsdom 30 — frontend
   job 2m01s → 1m16s, `testTimeout` restored.
-- **Fourth pass: nine majors, five merged** (2026-08-31, #98-#114): helmet 8,
-  googleapis 176, react-router 7, lucide-react 1, express 5 in;
-  google-auth-library 11 answered by deleting the unused declaration. **Green
-  checks lied three times** — the jsdom optional-peer drop, #106's coverage
-  board, and #109's `app.all('*')`, which throws under Express 5 with no test
-  loading `server.js`. **`archive.md`.**
-- **Worked the Dependabot backlog to empty, bar #86** (2026-08-29/30, #71–#75,
-  #79, #85, #88, #90–#93, #95, #96): sixteen PRs across three passes — eleven
-  merged, #76 split to drop `eslint-plugin-react-refresh` 0.5, #77/#78/#89 left
-  blocked on #86. Four false greens, every one a bump no workflow covered: a
-  Dependabot branch is tested against the `main` of the day it opened (#75
-  silently lost two tests); local npm 11 writes a lockfile CI's npm 10 rejects;
-  `tools/analysis` has no CI; nothing runs `concurrently`. Closing a PR
-  suppresses only that version — #76 returned as #89 — so #94 was answered by
-  deleting the dead dependency. `docs/reviews/2026-08-29-dependabot-triage.md`.
+- **Fourth Dependabot pass and the backlog to empty** (2026-08-29/31, #71-#114):
+  green checks lied repeatedly. **`archive.md`**, `docs/reviews/2026-08-29-*`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;
@@ -55,15 +56,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
   twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
   Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
-- **Opening pages carry their content in the HTML** (2026-08-07): Google dropped
-  5,010 indexed pages on 30/31 July with no deploy and a healthy site — a
-  quality purge, all 12,377 advertising the same template sentence over an empty
-  `#root`. The middleware now renders each opening's own description and real
-  win rates, unknown FENs 404, only the 271 same-board URLs canonicalise, and
-  sitemaps got their first generator. **`archive.md`.**
-- Everything up to 2026-08-10 — **all detail in `archive.md`**: video matching
-  stopped trusting descriptions (2026-08-10); search answers in milliseconds via
-  `NameIndex` (2026-08-04); the UX-stack review pass; search consolidated into
+- Everything up to 2026-08-10 — **all detail in `archive.md`**: opening pages
+  carry their content in the HTML (2026-08-07); video matching stopped trusting
+  descriptions (2026-08-10); search answers in milliseconds via `NameIndex`
+  (2026-08-04); the UX-stack review pass; search consolidated into
   `useOpeningSearch`; the UX review programme (phases 0–5,
   `GET /api/openings/browse`); shared `PerfBar`; the opening-detail mobile
   overhaul; the `/api/explorer` proxy; Deviation Trainer slice 1; Study matching
@@ -74,6 +70,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
+- **Style tags tail**: 848 variations (16% of pages, 0.8% of games); plan in
+  `activeContext.md`, runbook in `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
@@ -89,12 +87,13 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, and its barrels export without extensions.
 - **Video programme**: enable the monthly refresh Action (commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`), then V4-V6.
+  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
+  then V4-V6.
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows
   separated only by ECO — a data problem.
-- **Toasts need one host** (two within 4s cover an Undo), and **TASK006 —
+- **Toasts need one host** (two within 4s cover an Undo), and **#166 —
   Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `archive.md`.

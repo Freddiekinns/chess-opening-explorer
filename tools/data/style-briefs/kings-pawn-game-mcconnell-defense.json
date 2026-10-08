@@ -1,0 +1,47 @@
+{
+  "slug": "kings-pawn-game-mcconnell-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: McConnell Defense",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 Qf6",
+    "fen": "rnb1kbnr/pppp1ppp/5q2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "kings-knight-opening",
+  "written_at": "2026-10-04",
+  "confidence": "low",
+  "overview": "Black defends e5 with the queen, which blocks the f6 square and exposes her to Nc3, Bc4 and d4 with tempo. White simply develops (3.Bc4 or 3.Nc3 or 3.d4) and gains time against the queen. Black aims for a compact set-up with ...Nc6 and ...Nge7 or ...Bc5, but is behind in development.",
+  "white_ideas": [
+    { "idea": "Develop with tempo: Bc4, Nc3, d3 or d4 against the early queen" },
+    { "idea": "Aim at f7 with Bc4" },
+    { "idea": "Open the centre with d4 while Black is underdeveloped" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 and avoid early simplification, then ...Nc6 and ...Nge7" },
+    { "idea": "Hope for tricks on the f-file or against an unprotected knight" }
+  ],
+  "typical_structures": [
+    { "structure": "Open Game centre with Black queen on f6 and e5 pawn defended" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Not sharp as such: White is simply better developed. Black's queen can be harassed but the position is not forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Playable but inferior; White gains time and strong players do not choose it." },
+    "structure": { "notes": "Open Game, centre opens quickly with d4." },
+    "approach": { "notes": "Offbeat; an early queen move chosen for surprise." },
+    "level": { "reason": "neither", "notes": "Easy to play but not a good repertoire choice." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "La Bourdonnais Gambit", "moves": "1. e4 e5 2. Nf3 Qf6 3. Bc4", "how": "White develops the bishop on its best diagonal with threats; the name suggests a gambit but nothing is sacrificed." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Not especially forcing or especially safe, and I am unsure how it plays." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material changes hands." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.6, "reason": "The exposed early queen costs time against simple development." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Open Game lines after d4." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players seldom play 2...Qf6." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.7, "reason": "Dubious, so never beginner." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "Black's queen is out early and White develops against it." }
+  }
+}

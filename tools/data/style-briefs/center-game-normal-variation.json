@@ -1,0 +1,46 @@
+{
+  "slug": "center-game-normal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Normal Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3QP3/8/PPP2PPP/RNB1KBNR w KQkq - 1 4"
+  },
+  "parent": "center-game",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White's early queen is hit by 3...Nc6 and retreats, usually 4.Qe3 (Paulsen Attack). White develops with Nc3, Bd2 or Bc4 and often castles long, hoping for a quick attack; Black develops calmly with ...Nf6, ...Be7 or ...g6 and equalises. The position is open and White gets a small lead in development but no lasting advantage.",
+  "white_ideas": [
+    { "idea": "4.Qe3, Nc3, Bd2, O-O-O, using the d-file and queen to attack." },
+    { "idea": "Develop quickly and aim at g7 or the kingside." }
+  ],
+  "black_ideas": [
+    { "idea": "Gain tempi on the queen with ...Nc6 and ...Nf6." },
+    { "idea": "Develop calmly and strike with ...d5 once ready." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre, half-open d-file for White, ...d5 break." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open and fairly equal; opposite-side castling occasionally races." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawn is regained at once." },
+    "soundness": { "notes": "Sound; Black equalises easily." },
+    "structure": { "notes": "Open, since the centre pawns have been exchanged." },
+    "approach": { "notes": "Played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "The early queen needs care but there is little theory." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Paulsen Attack", "moves": "4. Qe3", "how": "The standard retreat, with long castling." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Open and equal, neither forcing nor passive." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "The pawn is regained immediately." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Fully playable if Black plays accurately." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "The d- and e-pawns are gone and pieces play on open lines." },
+    "approach": { "value": "standard", "confidence": 0.65, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Early-queen play needs care but little theory." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "White's queen is out early and he aims to use his development." }
+  }
+}

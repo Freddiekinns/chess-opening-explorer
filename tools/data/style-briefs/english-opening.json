@@ -1,0 +1,210 @@
+{
+  "slug": "english-opening",
+  "root": {
+    "name": "English Opening",
+    "eco": "A10",
+    "moves": "1. c4",
+    "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "English Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/English_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "The English Opening",
+      "publisher": "ChessBase Learn",
+      "url": "https://learn.chessbase.com/en/page/english-opening",
+      "kind": "article"
+    },
+    {
+      "id": "s3",
+      "title": "English Opening (1.c4): Adviser, Plans & Replay Lab, and Four Knights, Botvinnik System (search snippets only)",
+      "publisher": "ChessWorld / Wikibooks / Chessiverse",
+      "url": "https://www.chessworld.net/english-opening.asp",
+      "kind": "article"
+    }
+  ],
+  "overview": "White opens with the c-pawn to contest d5 from the wing, keeping the e4, d4, g3 and b3 options open until Black reveals a set-up. It is a flexible, hypermodern, mostly positional opening: not as sharp as 1.e4 or 1.d4, with the character decided by Black's reply and by transpositions into the Queen's Gambit, Réti or King's Indian. Principal branches are the Reversed Sicilian (1...e5, with an extra tempo for White), the Symmetrical (1...c5, often with a Maroczy bind) and the Anglo-Indian (1...Nf6 and 1...e6/...g6 transpositions). White typically plays Nc3, g3 and Bg2, and expands on the queenside with Rb1 and b4, or takes the classical centre with e4. The database root is a crossroads; its most-played continuations are transpositions to QGD (1.c4 e6 2.Nc3 d5 3.d4), the King's Indian and the Réti.",
+  "white_ideas": [
+    {
+      "idea": "Control d5 from the flank and fianchetto the king's bishop (g3, Bg2).",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "Queenside expansion with Rb1 and b4-b5, especially in fianchetto structures.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Build a Maroczy bind in Symmetrical lines, or play e4 to set up a classical centre; the Botvinnik System builds c4-d3-e4 with g3 and Bg2.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "Use move-order flexibility to transpose into favourable QGD, Reti or King's Indian structures and avoid specific Black defences.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "1...e5, the Reversed Sicilian: Black takes the centre and plays like White in a Sicilian with a tempo less; sharper counterplay with ...Bb4, ...d5 and ...f5 in the Four Knights.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "idea": "1...c5, the Symmetrical English: mirror White's set-up for solid, balanced positions.",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Develop harmoniously and prepare a central break (...d5) at the right moment, or transpose into Indian or Queen's Gambit structures.",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Sicilian: White c4 and e-pawn central structure with a fianchetto and often d3, mirroring Black's side of a Sicilian.",
+      "sources": ["s1", "s3"]
+    },
+    {
+      "structure": "Symmetrical English: Maroczy bind possibilities with c4 and e4 against ...d6, or symmetrical pawns with fianchettoed bishops on both sides.",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "structure": "Botvinnik System: c4-d3-e4 pawn chain with g3 and Bg2.",
+      "sources": ["s3"]
+    },
+    {
+      "structure": "Transposed QGD, Reti or King's Indian structures (closed, with tension in the centre).",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wikipedia: 'reliable and flexible', fundamentally positional rather than tactical (s1). ChessBase: 'closed character' with strategic rather than tactical play that develops gradually (s2). Search snippet (s3): not as sharp as 1.e4 or 1.d4. Sharp moments exist (Four Knights with ...Bb4/...d5/...f5; Reversed Sicilian with ...d5 pushes; the Dragon-like lines) but the typical game is a manoeuvring fight. Leans solid / balanced.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit in the main lines. Sidelines (for example the English Gambit 1.c4 b5 lines, or 2.e4 Nxe4 sacrifices) are rare.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound and respected: played by Botvinnik, Petrosian, Karpov, Kasparov, Carlsen and Ding in championship matches (s1). No source suggests any refutation. Not Dubious.",
+      "sources": ["s1"]
+    },
+    "structure": {
+      "notes": "Varies by Black's reply, but typically closed or semi-closed with the centre in tension and flank play (fianchettoes, queenside expansion). ChessBase: 'closed character' (s2). Reversed Sicilian and Symmetrical lines can open up after ...d5 or d4 breaks. Closed-leaning.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "approach": {
+      "notes": "Wikipedia says it functions primarily as a system opening rather than a theoretically sharp line (s1). It is the fourth most common first move (s3, snippet) and a first-rank choice at the elite level, so Standard or System. Plans matter more than move orders given the many transpositions; but the options (Reversed Sicilian, Symmetrical, Anglo-Indian) differ so much that the root is not a single fixed set-up. Evidence leans System.",
+      "sources": ["s1", "s3"]
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judged for White. ChessBase emphasises structural understanding over memorisation, with many move orders and transpositions rather than rigid sequences (s2). Difficulty comes from the sheer variety of structures White must handle (Maroczy, reversed Sicilian, transposed Indian systems) and from knowing which one to head for, not from forcing lines. Intermediate or Advanced; the sources do not rate it directly.",
+      "sources": ["s1", "s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "control of d5 from the flank",
+    "kingside fianchetto",
+    "queenside expansion with Rb1 and b4",
+    "Maroczy bind",
+    "reversed Sicilian",
+    "transposition to QGD, Reti or King's Indian",
+    "Botvinnik System c4-d3-e4",
+    "flexible move order"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Reversed Sicilian",
+      "moves": "1. c4 e5",
+      "how": "White plays a Sicilian with an extra tempo; Four Knights (2.Nc3 Nc6 3.Nf3 Nf6) can branch into d4 breaks, g3 or sharp ...Bb4 / ...d5 / ...f5 play."
+    },
+    {
+      "name": "Symmetrical English",
+      "moves": "1. c4 c5",
+      "how": "Balanced, solid, mirrored set-ups; Maroczy-like or fianchetto structures."
+    },
+    {
+      "name": "Anglo-Indian transpositions",
+      "moves": "1. c4 Nf6 2. Nc3 g6 3. d4 (King's Indian) / 1. c4 e6 2. Nc3 d5 3. d4 (QGD)",
+      "how": "Reaches King's Indian or Queen's Gambit structures; these are the most-played paths in the database and play very differently from the English proper, with most of the subtree being transpositions."
+    },
+    {
+      "name": "Reti Opening",
+      "moves": "1. c4 d5 2. Nf3",
+      "how": "Transposes to Reti-type play with 1...d5 2.cxd5 or 2.Nf3; flexible and positional."
+    },
+    {
+      "name": "1...b6 / 1...d6 sidelines",
+      "moves": "1. c4 b6 / 1. c4 d6",
+      "how": "Hypermodern set-ups for Black, giving a quieter English (own understanding)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The English Opening is a sophisticated and highly flexible flank opening beginning with 1.c4.",
+        "verdict": "supported",
+        "note": "Reliable, flexible and hypermodern.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White aims to control the key d5 square from the side rather than with central pawns.",
+        "verdict": "supported",
+        "note": "Control of d5 from the wing is the core idea.",
+        "sources": ["s1", "s3"]
+      },
+      {
+        "claim": "It often leads to a complex, strategic game where understanding transpositions is key.",
+        "verdict": "supported",
+        "note": "Move order and transpositions are described as decisive.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It is perfect for patient, versatile players who enjoy manoeuvring and outplaying opponents in a variety of pawn structures.",
+        "verdict": "supported",
+        "note": "Structural understanding is emphasised; positional character.",
+        "sources": ["s1", "s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "For White, fianchetto the king's bishop (g3, Bg2), control d5, and expand on the queenside with Rb1 and b4-b5.",
+        "verdict": "supported",
+        "note": "All three named plans appear in the sources.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "For Black, a common response is an early ...e5 (Reversed Sicilian) or ...c5 (Symmetrical English), neutralising White's flank pressure.",
+        "verdict": "supported",
+        "note": "The two principal variations alongside Anglo-Indian ...Nf6.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White often maintains flexibility to transpose into Queen's Gambit or Reti-style positions depending on Black's set-up.",
+        "verdict": "supported",
+        "note": "Transposition into QGD, Reti and King's Indian is a named advantage.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black seeks to develop harmoniously and prepare a central break (like ...d5) at an opportune moment.",
+        "verdict": "supported",
+        "note": "A general plan consistent with the sources; ...d5 is a standard break.",
+        "sources": ["s1", "s3"]
+      }
+    ]
+  },
+  "research_log": {
+    "searches": 1,
+    "pages_read": 2
+  }
+}

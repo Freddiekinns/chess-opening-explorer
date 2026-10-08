@@ -1,0 +1,49 @@
+{
+  "slug": "slav-defense-three-knights-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Three Knights Variation",
+    "eco": "D15",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "slav-defense-modern-line",
+  "written_at": "2026-10-04",
+  "confidence": "medium",
+  "overview": "A crossroads of the Slav: Black chooses 4...dxc4 (main Slav), 4...Bf5 or 4...e6 (Semi-Slav). The branches in the subtree are 4...Bf5, where White has 5.Qb3 and Black plays ...Qb6, and 4...c5. In the Slav proper Black solidly holds the c4 pawn or the d5 pawn while developing the light-squared bishop outside the chain. The game is sound and strategic.",
+  "white_ideas": [
+    { "idea": "Develop with e3, Bd3 or Bxc4, and keep a central presence" },
+    { "idea": "Qb3 to pressure b7 and d5 against the Bf5 line" },
+    { "idea": "Retake c4 and build a centre with e4 or e3" }
+  ],
+  "black_ideas": [
+    { "idea": "Bishop outside the pawn chain with ...Bf5 or ...dxc4 then ...Bf5" },
+    { "idea": "...e6 and ...Nbd7 for a solid set-up, or ...c5 for a Slav counter" },
+    { "idea": "Equalise with sound development and trade queenside pieces" }
+  ],
+  "typical_structures": [
+    { "structure": "Slav chain d5-c6 with the light bishop outside" },
+    { "structure": "Tension on c4 and d4 with a fixed pawn chain" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black's pawn chain is sturdy and the bishop is active; hard to attack. The Slav is a solid system for Black." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "c4 pawn is recovered; Slav is not a gambit." },
+    "soundness": { "notes": "Sound." },
+    "structure": { "notes": "Centre in tension, flexible." },
+    "approach": { "notes": "Standard." },
+    "level": { "reason": "understanding", "notes": "Clear plans and not too much theory in the main lines; I am unsure how the sub-branches go." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    { "name": "Advance System", "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 c5", "how": "Transposes into a tense, more open game; harder to predict." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.65, "reason": "The Slav is hard to break down and has few ways to lose quickly." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.99, "reason": "Main-line Slav." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "Tension on c4/d4, not locked or open." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "Mainstream defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans clear, theory moderate." },
+    "plans": { "value": [], "reason": "No single characteristic plan stands out across the branches." }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "slug": "bishops-opening",
+  "root": {
+    "name": "Bishop's Opening",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "researched_at": "2026-10-03",
+  "evidence_quality": "strong",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Bishop's Opening",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bishop's_Opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Bishop's Opening (1.e4 e5 2.Bc4)",
+      "publisher": "Chessiverse",
+      "url": "https://chessiverse.com/resources/openings/bishops-opening",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Bishop's Opening",
+      "publisher": "Chess.com",
+      "url": "https://www.chess.com/openings/Bishops-Opening",
+      "kind": "reference"
+    }
+  ],
+  "overview": "White develops the bishop to c4 at once, eyeing f7 and discouraging ...d5, while keeping the f-pawn free for f4 and delaying the knight on g1. Unlike the Italian, White does not commit a knight to f3 on move two, so the opening is highly transpositional: after 2...Nc6 it tends to become an Italian or Vienna, after 2...Nf6 White usually plays 3.d3 (or the sharp Urusov Gambit 3.d4), and after 2...Bc5 play is symmetrical and can reach a Giuoco Piano. Theory judges it equal with best play. At master level it is a surprise weapon used to avoid Petrov preparation, not a main line.",
+  "white_ideas": [
+    {
+      "idea": "Bishop on c4 pressures f7 and discourages ...d5; keep the f-pawn flexible for f2-f4 (King's Gambit or Vienna transpositions)",
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "idea": "Against 2...Nf6: 3.d3, then Nf3 and 0-0 (quiet), or Urusov Gambit 3.d4 for attacking compensation for a pawn",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "Avoid forced Petrov-type defensive set-ups and keep a flexible knight development, delaying Nf3",
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "2...Nf6 contests e4 and is Black's most challenging reply (Berlin Defence); the Paulsen 3...c6 is the most common independent line, with ...d5 to follow",
+      "sources": ["s1"]
+    },
+    {
+      "idea": "2...Bc5 mirrors White's bishop and leads to symmetrical play and Giuoco Piano transpositions",
+      "sources": ["s1", "s2"]
+    },
+    {
+      "idea": "...d5 to hit the bishop and free Black's pieces",
+      "sources": ["s3"]
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game (e4/e5) with the pawn centre normally unlocked later, often transposing to Italian or Vienna set-ups",
+      "sources": ["s2", "s1"]
+    },
+    {
+      "structure": "After the Urusov Gambit, an open game with White ahead in development",
+      "sources": ["s1"]
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "s2 gives a Balanced sharpness reading (0.96) and describes the opening as easy, and s3 calls it solid but without immediate pressure on Black. s1 notes the Urusov Gambit (3.d4) as a sharp sacrificial branch and that f4 ideas shade into King's Gambit structures. Typical play in the main 3.d3 lines is steady, with a slower build-up than the Italian.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main line. Sub-branches have gambits: the Urusov Gambit (White pawn) and the Anderssen Gambit 2...b5 (Black pawn, 114,834 games, not a master line), but those are not the root's character.",
+      "sources": ["s1"]
+    },
+    "soundness": {
+      "notes": "Sound. s1: modern theory concludes equality with best play; Weaver Adams's claim of a forced White win is unsubstantiated. s2: White scores 51% against 45.1% over 142.7 million games, the edge eroding by 3.4 points from 1200 to 2500 Elo.",
+      "sources": ["s1", "s2"]
+    },
+    "structure": {
+      "notes": "An open-game family where the e4/e5 pawns are not exchanged straight away; the typical middlegame is an Italian- or Vienna-like open or semi-closed centre with d3 and f4/d4 options. The Urusov and 3.d4 branches open the centre early.",
+      "sources": ["s1", "s2"]
+    },
+    "approach": {
+      "notes": "A flexible first-moves choice and a surprise weapon rather than a universal set-up (it needs 1...e5). s1: uncommon today but used by Larsen, Kasparov, Nunn and Leko, especially to avoid Petrov preparation. s2: Carlsen and Caruana use it as a surprise weapon. s3: 'less common' and historically 'The Truth' in the 19th century. Respectable at all levels, not offbeat.",
+      "sources": ["s1", "s2", "s3"]
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Judged for White. s2 classes difficulty as Easy and accessible to beginners while viable at all levels. Fundamentals (development, f7 pressure, d3-Nf3-castle) are simple, and the sources give no heavy theory to learn. s3 adds that it is a reliable but understated approach. Some depth in transpositions to the Vienna or King's Gambit exists but is optional.",
+      "sources": ["s2", "s3"]
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "f2-f4 option",
+    "quick development and castling",
+    "transposition to Italian or Vienna",
+    "avoiding Petrov theory",
+    "d3 and Nf3 set-up"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Urusov Gambit",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. d4",
+      "how": "Sharp pawn sacrifice for attacking compensation; very different from the steady 3.d3 main line."
+    },
+    {
+      "name": "Anderssen Gambit",
+      "moves": "1. e4 e5 2. Bc4 b5",
+      "how": "A Black pawn offer (b5) hitting the bishop; rare, not a master line."
+    },
+    {
+      "name": "Vienna Hybrid",
+      "moves": "1. e4 e5 2. Bc4 Nf6 3. d3 Nc6 4. Nc3",
+      "how": "Transposes to a Vienna Game; quiet, positional (s1)."
+    }
+  ],
+  "audit": {
+    "description": [
+      {
+        "claim": "The Bishop's Opening is a classical and flexible system where White develops the light-squared bishop immediately to pressure f7",
+        "verdict": "supported",
+        "note": "s1, s2.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "It often leads to open, tactical games",
+        "verdict": "unverifiable",
+        "note": "s2 and s3 describe it as balanced and solid; only the Urusov branch is described as sharp.",
+        "sources": ["s2", "s3"]
+      },
+      {
+        "claim": "It can transpose into more strategic lines like the Italian or Vienna",
+        "verdict": "supported",
+        "note": "s1, s2.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Suited to players who want to focus on fundamental principles without memorising extensive theory",
+        "verdict": "supported",
+        "note": "s2: easy and accessible, viable at all levels.",
+        "sources": ["s2"]
+      }
+    ],
+    "common_plans": [
+      {
+        "claim": "White: support the centre with d3, develop with Nf3, castle quickly and maintain pressure on f7; prepare d4",
+        "verdict": "supported",
+        "note": "3.d3 is the standard against 2...Nf6 (s1); 3.d4 is the Urusov Gambit.",
+        "sources": ["s1"]
+      },
+      {
+        "claim": "Black: ...Nf6 (Berlin Defence) to challenge e4, or ...Bc5 for a symmetrical position",
+        "verdict": "supported",
+        "note": "s1.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "White may opt for a gambit-style f4, transposing to a King's Gambit or Vienna Game",
+        "verdict": "supported",
+        "note": "s1 and s2 say it keeps f2-f4 in reserve and transposes into Vienna or King's Gambit structures.",
+        "sources": ["s1", "s2"]
+      },
+      {
+        "claim": "Black: counterattack with a timely ...d5 to trade off White's bishop and free their pieces",
+        "verdict": "supported",
+        "note": "s3: the bishop can come under attack by ...d5.",
+        "sources": ["s3"]
+      }
+    ]
+  },
+  "research_log": { "searches": 0, "pages_read": 3 }
+}

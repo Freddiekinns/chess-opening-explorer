@@ -1,0 +1,47 @@
+{
+  "slug": "pirc-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Classical Variation",
+    "eco": "B08",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3",
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-04",
+  "confidence": "high",
+  "overview": "White develops without committing to an attack. Black plays 4...Bg7 and White chooses 5.Be2 O-O 6.O-O for the quiet main line, or 5.Be3 and 5.h3. Black then breaks with ...c5 or ...e5 and uses the fianchetto bishop on the long diagonal. White has more space, Black has a flexible position and counter-attacks on the centre.",
+  "white_ideas": [
+    { "idea": "Hold the e4-d4 centre and gain space with Be2, O-O and Re1." },
+    { "idea": "Meet ...c5 with d5 or dxc5 and keep a small edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Hit the centre with ...c5 or ...e5 and use the bishop on g7." },
+    { "idea": "Develop with ...Nc6 and ...Bg4, aiming at the d4 pawn." }
+  ],
+  "typical_structures": [
+    { "structure": "White e4-d4 centre against Black d6, g6 fianchetto, with ...e5 or ...c5 tension." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet Classical line; counterattack but no early forcing play. Balanced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound, played by Caruana and Anand." },
+    "structure": { "notes": "Centre tension with ...e5 or ...c5 breaks. Flexible." },
+    "approach": { "notes": "A standard defence." },
+    "level": { "reason": "understanding", "notes": "Black needs good timing for the centre breaks; Intermediate." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "Quiet System", "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3 Bg7 5. Be2", "how": "The slow main line." },
+    { "name": "5.Bc4", "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3 Bg7 5. Bc4", "how": "Aims at f7 with more attacking play." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Counterplay for Black against a slow White build-up." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "Sound though White has more space." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Centre tension ahead of ...e5 or ...c5." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Used by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Hypermodern plans need timing." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White build the centre and attacks it from the flanks." }
+  }
+}

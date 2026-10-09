@@ -11,6 +11,7 @@ import {
   formatDistinguishingMoves,
   getLossRate,
   getWinRate,
+  MIN_CARD_GAMES,
   sortAgg,
   readSavedFormState,
   SIDE_OPTIONS,
@@ -31,6 +32,10 @@ import {
   SortMenu,
   UserIcon,
 } from './PersonalStatsControls';
+
+// Shown in place of the highlight cards when no line clears the floor — an
+// empty slot says more than a 1-game "Top-performing" line would.
+const NO_HIGHLIGHTS = `No line has ${MIN_CARD_GAMES} games yet — analyse a longer history to see your strongest and weakest openings.`;
 
 /* ==============================
    MAIN COMPONENT
@@ -497,6 +502,11 @@ export const PersonalOpeningStats: React.FC<{
                 </div>
 
                 {/* Highlight cards */}
+                {!bestOpening && (
+                  <div className={styles.highlightCard}>
+                    <span className={styles.highlightMeta}>{NO_HIGHLIGHTS}</span>
+                  </div>
+                )}
                 {bestOpening && (
                   <Link className={styles.highlightCard} to={openingLink(bestOpening)}>
                     <span className={`${styles.highlightPill} ${styles.highlightPillWin}`}>
@@ -507,7 +517,8 @@ export const PersonalOpeningStats: React.FC<{
                       <span className={styles.highlightMoves}>{bestOpeningMoves}</span>
                     )}
                     <span className={styles.highlightMeta}>
-                      {getWinRate(bestOpening)}% win rate &middot; {bestOpening.games} games
+                      {getWinRate(bestOpening)}% win rate &middot; won {bestOpening.win} of{' '}
+                      {bestOpening.games}
                     </span>
                   </Link>
                 )}
@@ -521,7 +532,8 @@ export const PersonalOpeningStats: React.FC<{
                       <span className={styles.highlightMoves}>{weakestOpeningMoves}</span>
                     )}
                     <span className={styles.highlightMeta}>
-                      {getLossRate(weakestOpening)}% loss rate &middot; {weakestOpening.games} games
+                      {getLossRate(weakestOpening)}% loss rate &middot; lost {weakestOpening.loss}{' '}
+                      of {weakestOpening.games}
                     </span>
                   </Link>
                 )}
@@ -672,6 +684,12 @@ export const PersonalOpeningStats: React.FC<{
                     {recordStats}
                   </div>
 
+                  {!bestOpening && (
+                    <div className={styles.card}>
+                      <div className={styles.cardLabel}>Highlights</div>
+                      <div className={styles.cardContext}>{NO_HIGHLIGHTS}</div>
+                    </div>
+                  )}
                   {bestOpening && (
                     <Link
                       className={`${styles.card} ${styles.cardClickable}`}
@@ -693,7 +711,9 @@ export const PersonalOpeningStats: React.FC<{
                           <div className={styles.cardMoves}>{bestOpeningMoves}</div>
                         )}
                       </div>
-                      <div className={styles.cardContext}>{bestOpening.games} games</div>
+                      <div className={styles.cardContext}>
+                        Won {bestOpening.win} of {bestOpening.games} games
+                      </div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueWin}`}>
                           {getWinRate(bestOpening)}%
@@ -726,7 +746,9 @@ export const PersonalOpeningStats: React.FC<{
                           <div className={styles.cardMoves}>{weakestOpeningMoves}</div>
                         )}
                       </div>
-                      <div className={styles.cardContext}>{weakestOpening.games} games</div>
+                      <div className={styles.cardContext}>
+                        Lost {weakestOpening.loss} of {weakestOpening.games} games
+                      </div>
                       <div className={styles.winRateRow}>
                         <span className={`${styles.winRateValue} ${styles.winRateValueLoss}`}>
                           {getLossRate(weakestOpening)}%

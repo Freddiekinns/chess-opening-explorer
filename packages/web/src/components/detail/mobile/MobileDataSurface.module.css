@@ -439,3 +439,21 @@
     transition: none;
   }
 }
+
+/* ── Column legend over the move rows ── */
+.rowLegend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  /* The rows' own inset plus their 1px border, so the labels sit over the
+     figures they name. */
+  padding: 0 calc(var(--space-2) + 1px);
+}
+
+.rowLegendGap {
+  flex: 1 1 auto;
+}
+
+.rowLegendCount {
+  visibility: hidden;
+}

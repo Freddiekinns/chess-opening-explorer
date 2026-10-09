@@ -107,7 +107,7 @@ describe('PopularOpeningsGrid', () => {
     await screen.findByText('Sicilian Defence');
     const url = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
     expect(url).toContain('level=Beginner');
-    expect(screen.getByRole('button', { name: 'Level Beginner' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Difficulty Beginner' })).toBeInTheDocument();
   });
 
   it('says the filters matched nothing, and offers a way out', async () => {

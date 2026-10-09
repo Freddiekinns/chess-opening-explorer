@@ -66,6 +66,16 @@ const MoveRows: React.FC<MoveRowsProps> = ({
   alternatives,
 }) => (
   <div className={styles.rows}>
+    {/* The two figures are coloured, not named, and their meaning lived in a
+        hover-only title — so name them once, over their columns. */}
+    {rows.some((row) => row.stats) && (
+      <div className={styles.rowLegend} aria-hidden="true">
+        <span className={styles.rowPctWhite}>White wins</span>
+        <span className={styles.rowLegendGap} />
+        <span className={styles.rowPctBlack}>Black wins</span>
+        <span className={`${styles.rowCount} ${styles.rowLegendCount}`}>00.0k games</span>
+      </div>
+    )}
     {rows.map((row, i) => {
       const movePrefix = getMoveNumber(ply);
       const barPercent = maxCount > 0 ? Math.max((row.count / maxCount) * 100, 2) : 0;
@@ -139,6 +149,9 @@ const MoveRows: React.FC<MoveRowsProps> = ({
           className={`${styles.contRow} ${alternatives ? styles.altRow : ''}`}
           style={{ animationDelay: `${i * 30}ms` }}
           title={statsTitle(row)}
+          aria-label={
+            row.stats ? `${movePrefix}${row.san} ${row.name ?? ''} — ${statsTitle(row)}` : undefined
+          }
         >
           {inner}
         </Link>

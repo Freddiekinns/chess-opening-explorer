@@ -317,10 +317,10 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
 
               <div className={styles.body} ref={bodyRef}>
                 <PillRow
-                  legend="Level"
+                  legend="Difficulty"
                   options={facets.level}
                   value={filters.level}
-                  anyLabel="All levels"
+                  anyLabel="Any difficulty"
                   onSelect={(value) => onFacetChange('level', value)}
                 />
                 <PillRow

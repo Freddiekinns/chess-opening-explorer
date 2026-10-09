@@ -105,6 +105,11 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
       to={`/opening/${encodeURIComponent(row.fen)}`}
       className={styles.moveRow}
       title={rowStatsTitle(row)}
+      aria-label={
+        row.stats
+          ? `${getMoveNumber(ply)}${row.san} ${row.name ?? ''} — ${rowStatsTitle(row)}`
+          : undefined
+      }
     >
       {inner}
     </Link>
@@ -123,6 +128,16 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
   return (
     <>
       <div className={styles.rowList}>
+        {/* Name the two coloured figures once, over their columns — the title
+            that explained them never shows on touch. */}
+        {rows.some((row) => row.stats) && (
+          <div className={styles.rowLegend} aria-hidden="true">
+            <span className={styles.rowPctWhite}>White wins</span>
+            <span className={styles.rowLegendGap} />
+            <span className={styles.rowPctBlack}>Black wins</span>
+            <span className={`${styles.rowGames} ${styles.rowLegendCount}`}>00.0k games</span>
+          </div>
+        )}
         {visible.map((row) => (
           <MoveRow key={row.key} row={row} ply={ply} countLabel={countLabel} />
         ))}

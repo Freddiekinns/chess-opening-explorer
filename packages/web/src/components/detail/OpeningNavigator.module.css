@@ -45,6 +45,11 @@
   color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1.2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
 }
 
 /* Stagger animation for sections */
@@ -476,4 +481,34 @@
   .contRow {
     animation: none;
   }
+}
+
+/* ── Key for the move-row figures, in the caption line ── */
+.rowKey {
+  display: inline-flex;
+  gap: var(--space-2-5);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.rowKeyItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.swatchWhite {
+  background-color: var(--color-result-white);
+}
+
+.swatchBlack {
+  background-color: var(--color-result-black);
 }

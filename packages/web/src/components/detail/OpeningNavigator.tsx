@@ -12,6 +12,7 @@ import {
   pliesFromFen,
   sortNodesByPopularity,
   stripMoveNumber,
+  EXPLORER_STEP,
 } from '../../lib/openingBook';
 import styles from './OpeningNavigator.module.css';
 
@@ -56,6 +57,22 @@ interface MoveRowsProps {
   hasStats: boolean;
   alternatives?: boolean;
 }
+
+/* The two figures on each row are coloured, not named, and their meaning
+   lived in a hover-only title. Named once per card, in the caption, in the
+   swatch style of the win-rate legend above. */
+const RowKey: React.FC = () => (
+  <span className={styles.rowKey} aria-hidden="true">
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchWhite}`} />
+      White wins
+    </span>
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchBlack}`} />
+      Black wins
+    </span>
+  </span>
+);
 
 const MoveRows: React.FC<MoveRowsProps> = ({
   rows,
@@ -136,9 +153,13 @@ const MoveRows: React.FC<MoveRowsProps> = ({
         <Link
           key={row.key}
           to={`/opening/${encodeURIComponent(row.fen)}`}
+          state={EXPLORER_STEP}
           className={`${styles.contRow} ${alternatives ? styles.altRow : ''}`}
           style={{ animationDelay: `${i * 30}ms` }}
           title={statsTitle(row)}
+          aria-label={
+            row.stats ? `${movePrefix}${row.san} ${row.name ?? ''} — ${statsTitle(row)}` : undefined
+          }
         >
           {inner}
         </Link>
@@ -239,6 +260,10 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
     { excludeSans: currentSan ? [currentSan] : [] }
   );
 
+  // One key per card, on the first list that shows the two figures.
+  const keyOnNext = childRows.length > 0 && childRows.some((row) => row.stats);
+  const keyOnAlternatives = !keyOnNext && siblingRows.some((row) => row.stats);
+
   // "Instead of 3.e3" — anchor the alternatives to the move actually played
   const alternativesLabel =
     currentSan && currentMoveIdx >= 0
@@ -261,6 +286,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 <Link
                   to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                   className={styles.breadcrumbLink}
+                  state={EXPLORER_STEP}
                 >
                   {ancestor.name}
                 </Link>
@@ -289,7 +315,10 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
               className={`${styles.section} ${breadcrumbAncestors.length === 0 ? styles.sectionFirst : ''}`}
             >
               <div className={styles.sectionLabel}>Next moves</div>
-              <div className={styles.sectionSublabel}>{movesCaption(band, live)}</div>
+              <div className={styles.sectionSublabel}>
+                <span>{movesCaption(band, live)}</span>
+                {keyOnNext && <RowKey />}
+              </div>
               <MoveRows
                 rows={visibleRows}
                 ply={pliesPlayed}
@@ -322,7 +351,10 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
           return (
             <div className={styles.section}>
               <div className={styles.sectionLabel}>{alternativesLabel}</div>
-              <div className={styles.sectionSublabel}>{alternativesCaption(band, live)}</div>
+              <div className={styles.sectionSublabel}>
+                <span>{alternativesCaption(band, live)}</span>
+                {keyOnAlternatives && <RowKey />}
+              </div>
               <MoveRows
                 rows={visibleRows}
                 ply={currentMoveIdx}

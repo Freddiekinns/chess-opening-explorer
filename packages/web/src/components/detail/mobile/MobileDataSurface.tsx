@@ -12,6 +12,7 @@ import {
   pliesFromFen,
   sortNodesByPopularity,
   stripMoveNumber,
+  EXPLORER_STEP,
 } from '../../../lib/openingBook';
 import type { BandId, ExplorerResult } from '../../../lib/lichessExplorer';
 import {
@@ -56,6 +57,22 @@ function rowStatsTitle(row: MergedMoveRow): string | undefined {
     `black wins ${Math.round(blackPct)}% (${formatCount(games)} games)`
   );
 }
+
+/* The two figures on each row are coloured, not named, and the title that
+   explained them never shows on touch. Named once per card, in the caption,
+   in the swatch style of the win-rate legend above. */
+const RowKey: React.FC = () => (
+  <span className={styles.rowKey} aria-hidden="true">
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchWhite}`} />
+      White wins
+    </span>
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchBlack}`} />
+      Black wins
+    </span>
+  </span>
+);
 
 const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }> = ({
   row,
@@ -103,8 +120,14 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
   return (
     <Link
       to={`/opening/${encodeURIComponent(row.fen)}`}
+      state={EXPLORER_STEP}
       className={styles.moveRow}
       title={rowStatsTitle(row)}
+      aria-label={
+        row.stats
+          ? `${getMoveNumber(ply)}${row.san} ${row.name ?? ''} — ${rowStatsTitle(row)}`
+          : undefined
+      }
     >
       {inner}
     </Link>
@@ -219,6 +242,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
     { excludeSans: currentSan ? [currentSan] : [] }
   );
 
+  // One key per card, on the first list that shows the two figures.
+  const keyOnNext = childRows.length > 0 && childRows.some((row) => row.stats);
+  const keyOnAlternatives = !keyOnNext && siblingRows.some((row) => row.stats);
+
   const alternativesLabel =
     currentSan && currentMoveIdx >= 0
       ? `Instead of ${getMoveNumber(currentMoveIdx)}${currentSan}`
@@ -313,6 +340,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                       <Link
                         to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                         className={styles.crumbLink}
+                        state={EXPLORER_STEP}
                       >
                         {ancestor.name}
                       </Link>
@@ -359,7 +387,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
           {childRows.length > 0 && (
             <>
               <div className={styles.bookHeading}>Next moves</div>
-              <div className={styles.bookSubheading}>{movesCaption(band, live)}</div>
+              <div className={styles.bookSubheading}>
+                <span>{movesCaption(band, live)}</span>
+                {keyOnNext && <RowKey />}
+              </div>
               <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
             </>
           )}
@@ -369,7 +400,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
               <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
                 {alternativesLabel}
               </div>
-              <div className={styles.bookSubheading}>{alternativesCaption(band, live)}</div>
+              <div className={styles.bookSubheading}>
+                <span>{alternativesCaption(band, live)}</span>
+                {keyOnAlternatives && <RowKey />}
+              </div>
               <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
             </>
           )}

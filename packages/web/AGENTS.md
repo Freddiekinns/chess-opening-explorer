@@ -103,7 +103,11 @@ import { SomeType } from '@chess-trainer/shared'; // fails the Vercel build
 
 React Router does not reset scroll on navigation, so a new page inherits the
 previous page's offset and opens mid-page. The route-change `ScrollToTop` in
-`App.tsx` handles this — don't remove it.
+`App.tsx` handles this — don't remove it. The exception is a step inside the
+explorer: move rows, alternatives and breadcrumbs pass `EXPLORER_STEP` router
+state (`lib/openingBook.ts`) and keep the offset, because the move rows sit
+~800px down and walking a line is one task, not a new page. A new explorer link
+should pass it too.
 
 `element.scrollIntoView()` scrolls **every** scrollable ancestor including the
 document, so using it to reveal the active move in a horizontal strip yanks the

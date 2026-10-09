@@ -5,9 +5,21 @@
  */
 
 export function formatCount(n: number): string {
+  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1).replace(/\.0$/, '')}B`;
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(/\.0$/, '')}M`;
   if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
   return String(n);
+}
+
+/**
+ * Router state for links that step through the explorer (move rows,
+ * alternatives, breadcrumbs). `ScrollToTop` leaves the offset alone for these:
+ * walking a line is one task on one page, not a new page.
+ */
+export const EXPLORER_STEP = { explorerStep: true } as const;
+
+export function isExplorerStep(state: unknown): boolean {
+  return (state as { explorerStep?: boolean } | null)?.explorerStep === true;
 }
 
 /** Strip move numbers like "1. ", "1... ", "12." from a move string */

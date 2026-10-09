@@ -42,16 +42,16 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     <>
       <div className={styles.bar}>
         <FacetSelect
-          label="Level"
-          display={facetDisplay(facets.level, filters.level, 'All')}
+          label="Difficulty"
+          display={facetDisplay(facets.level, filters.level, 'Any')}
           active={Boolean(filters.level)}
-          menuLabel="Filter by level"
+          menuLabel="Filter by difficulty"
         >
           {(close) => (
             <FacetOptionList
               options={facets.level}
               value={filters.level}
-              anyLabel="All levels"
+              anyLabel="Any difficulty"
               onSelect={(value) => {
                 onFacetChange('level', value);
                 close();

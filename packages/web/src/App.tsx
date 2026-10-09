@@ -8,6 +8,7 @@ import TopBar from './components/layout/TopBar';
 import BottomTabBar from './components/layout/BottomTabBar';
 import { Footer } from './components/layout/Footer';
 import { trackEvent } from './lib/analytics';
+import { isExplorerStep } from './lib/openingBook';
 
 // Route-level code splitting: each page loads on demand, so the landing
 // bundle no longer carries the Analyse page or the detail page's chess stack
@@ -19,11 +20,12 @@ const RepertoirePage = lazy(() => import('./pages/RepertoirePage'));
 
 /** SPA navigation keeps the previous page's scroll offset — reset to the top
  *  whenever the route changes so every page opens at its heading. */
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+export const ScrollToTop = () => {
+  const { pathname, state } = useLocation();
+  const explorerStep = isExplorerStep(state);
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!explorerStep) window.scrollTo(0, 0);
+  }, [pathname, explorerStep]);
   return null;
 };
 

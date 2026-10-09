@@ -21,6 +21,14 @@ const renderCard = (props = {}) =>
     </MemoryRouter>
   );
 
+describe('OpeningCard game count', () => {
+  it('writes billions as B, not thousands of millions', () => {
+    renderCard({ opening: { ...opening, games_analyzed: 3_778_178_876 } });
+
+    expect(screen.getByText('3.8B games')).toBeInTheDocument();
+  });
+});
+
 describe('OpeningCard result bars', () => {
   it('names the segments on the card variant', () => {
     renderCard();

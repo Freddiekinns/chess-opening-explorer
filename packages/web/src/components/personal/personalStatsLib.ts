@@ -105,24 +105,33 @@ export function getLossRate(o: OpeningAgg): number {
   return Math.round((o.loss / o.games) * 100);
 }
 
-// Featured cards need a few games behind them — a 2-game 100% line shouldn't
-// headline "Top-performing". (The opening list/sort have no such floor.)
-export const MIN_CARD_GAMES = 4;
+// Featured cards need a few games behind them — a 1-game 100% line shouldn't
+// headline "Top-performing". Players spread games thin (the 100-game sample
+// reports have 3–4 lines with 3+ games), so a higher floor would leave the
+// cards empty for almost everyone. Below it the card is omitted, never filled.
+// (The opening list/sort have no such floor.)
+export const MIN_CARD_GAMES = 3;
 
 export function findBestOpening(list: OpeningAgg[]): OpeningAgg | null {
-  if (list.length === 0) return null;
   const qualified = list.filter((o) => o.games >= MIN_CARD_GAMES);
-  if (qualified.length === 0) return list[0];
-  return qualified.reduce((best, curr) => (getWinRate(curr) > getWinRate(best) ? curr : best));
+  if (qualified.length === 0) return null;
+  // On a tied rate the larger sample wins: 9 of 9 says more than 4 of 4.
+  return qualified.reduce((best, curr) => {
+    const diff = getWinRate(curr) - getWinRate(best);
+    return diff > 0 || (diff === 0 && curr.games > best.games) ? curr : best;
+  });
 }
 
 export function findWeakestOpening(list: OpeningAgg[]): OpeningAgg | null {
-  if (list.length === 0) return null;
-  const qualified = list.filter((o) => o.games >= MIN_CARD_GAMES);
+  const qualified = list.filter((o) => o.games >= MIN_CARD_GAMES && o.loss > 0);
   if (qualified.length === 0) return null;
-  // Select by highest loss rate so "Needs work" matches the loss rate the card
-  // displays (lowest win rate could flag a safe, drawish line as a weakness).
-  return qualified.reduce((worst, curr) => (getLossRate(curr) > getLossRate(worst) ? curr : worst));
+  // Rank by games lost: losing 5 of 12 in a main line costs more than 3 of 3
+  // in a sideline. Loss rate (what the card displays) breaks ties, so a safe,
+  // drawish line is never flagged over one that actually loses.
+  return qualified.reduce((worst, curr) => {
+    const diff = curr.loss - worst.loss;
+    return diff > 0 || (diff === 0 && getLossRate(curr) > getLossRate(worst)) ? curr : worst;
+  });
 }
 
 // Featured cards must distinguish sibling variations ("Vienna Gambit: 3...d6"

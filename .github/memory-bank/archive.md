@@ -5,6 +5,32 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Style tags tail — plan, full activeContext text (2026-10-05, #160)
+
+Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing
+the LLM style tags; pipeline in `tools/style-tags/` (README has the steps). 105
+researched variations plus 458 unsourced (`UNSOURCED.md`, tail-01 to tail-23);
+judge pass done, 0 unresolved.
+
+`export.js` writes `api/data/style-tags.json`; `style-tags-service.js` serves it
+as `style_profile` to the detail page, `OpeningCard`, Discover's level and style
+facets (solid, sharp, gambit, dubious, system, offbeat; old values aliased in
+`browse_facets.json`) and style search (`STYLE_AXES`). Coverage by position:
+tagged 80% of pages / 64.8% of games, hubs 4% / 34.5% (no tags by design),
+untagged 16% / 0.8%. Untagged pages and the middleware pre-render show none.
+
+Next: the tail, tail-24 to tail-66 — 848 variations, each under 1.6M games
+(median ~100k). Owner plans to run it late in the week on leftover usage. Waves
+of 4 agents × 20 (~11 waves), each ~25% of a 5-hour window and ~4% of the week,
+so it needs at least three 5-hour windows. Per wave: `jev-classify.js --new`,
+`collect-unsourced.js`, `validate.js`, judge any new lists, `export.js`; commit
+briefs in chunks of ~100. Work on a new branch off `main`.
+
+Follow-ups (Maróczy split, Dragon description, intent-parser misreads, dead
+category routes): `archive.md`, "Style tags — follow-ups".
+
+---
+
 ## Jev rejection filter and video pins — full activeContext text (2026-10-02, #157)
 
 Branch `feat/jev-video-filter`. The pipeline now ends by removing pairs Jev

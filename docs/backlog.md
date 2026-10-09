@@ -14,6 +14,9 @@ is the ranked list that review produced.
   archived what no longer earns a place (owner-agreed; see **Archive**).
 - **rev 4.1** (2026-10-05) — the Jev video filter (#157) and style tags (#160)
   shipped; added two Jev follow-ups under Enablers.
+- **rev 4.2** (2026-10-09) — **Now** items 1–3 done. The Analyse floor is 3, not
+  10/20 (owner decision: players spread games too thin for 10), and "off-book"
+  keeps its name.
 
 ## The unifying principle
 
@@ -45,16 +48,14 @@ and drill for it.
 
 ## Now — credibility and sight `days`
 
-- **Analyse statistics:** drop the `list[0]` fallback in `findBestOpening`
-  (`personalStatsLib.ts:115`), raise the floors (≥10 games for a variation card,
-  ≥20 for a family card), print sample sizes inside the percentage, and rank
-  "needs work" by games lost. _(audit #2)_
-- **Copy and formatting:** add the billions branch to `formatGamesPlayed`
-  (`OpeningCard.tsx`); rename the Discover facet to **Difficulty** so **Level**
-  means only the rating band; give "off-book" a learner's wording; label the two
-  bare percentages on move rows. _(audit #4, #6, #10, E3)_
-- **Explorer scroll:** no `ScrollToTop` reset when the new route is a move step
-  from the current position. _(audit E1)_
+- ~~**Analyse statistics**~~ — done 2026-10-09: no `list[0]` fallback, a floor
+  of **3** games (10/20 would empty the cards for nearly everyone), "won X of Y"
+  on the cards, "needs work" ranked by games lost. _(audit #2)_
+- ~~**Copy and formatting**~~ — done 2026-10-09: billions as `B`, Discover's
+  facet is **Difficulty**, move rows carry a White/Black wins legend. "off-book"
+  stays — the site is an opening book. _(audit #4, #6, #10)_
+- ~~**Explorer scroll**~~ — done 2026-10-09: explorer steps keep the offset.
+  _(audit E1)_
 - ~~**Measurement**~~ — done 2026-09-24; see Enablers. The funnels and the
   `analyse_run` retention insight are saved in PostHog; what remains is reading
   them once real traffic has accrued.
@@ -123,8 +124,7 @@ and drill for it.
   Analyse statistics fix.
 - **Style tags tail** — style classification shipped in #160 (see **Archive**).
   848 variations remain untagged: 16% of pages, 0.8% of games. Plan in
-  `.github/memory-bank/activeContext.md`, runbook in
-  `tools/style-tags/README.md`.
+  `.github/memory-bank/archive.md`, runbook in `tools/style-tags/README.md`.
 
 ## Parked
 
@@ -193,7 +193,7 @@ and drill for it.
 ## Build order
 
 ```
-Now:      Analyse floors · copy fixes · explorer scroll · stats refresh
+Now:      stats refresh
 Next:     personal strip + ?practice= · practice memory · divergence callout
           · bridge line · Start here shelf · E2E in CI
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games

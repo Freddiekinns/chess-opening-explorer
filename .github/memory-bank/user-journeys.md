@@ -132,7 +132,9 @@ Connect your real-game performance with the opening database.
   (default on) and `Sort` control (most played / highest / lowest win rate);
   uncategorised openings collapse into a single footnote line.
 - **Strengths & Weaknesses**: Identification of "Top-performing" openings vs.
-  those "Needing Work" (based on personal history).
+  those "Needing Work" (based on personal history). Only a line with 3+ games
+  can headline, stated as "won X of Y"; "Needs work" ranks by games lost. With
+  no such line the cards are replaced by one line saying so.
 - **Distribution Bars**: Every row shows a win/draw/loss distribution bar with
   counts and percentages — the same graph in both the family and all-openings
   views.

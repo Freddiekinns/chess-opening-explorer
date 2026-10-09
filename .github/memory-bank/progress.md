@@ -4,6 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
+  X of Y", needs-work by games lost; billions as B; Discover "Difficulty";
+  move-row legend; explorer steps keep their scroll offset.
 - **Model routing** (2026-10-08): Haiku `scout`/`verifier`, Sonnet `implementer`
   and `/docs-sync`, `pipeline-reviewer` pinned to Sonnet high; routing rules in
   `CLAUDE.md`. Main session stays Opus, effort medium. `AGENTS.md` 441 → ~220
@@ -39,14 +42,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   ~100 Dependabot deployments filled Functions Storage to 7.98/10 GB, so
   `dependabot/**` no longer deploys. 81 soft 404s were "Opening not found"
   painted on any failed fetch; the 568 KB site icon is 46 KB. **`archive.md`.**
-- **Fifth Dependabot pass: all but typescript 7** (2026-08-31, #99-#129). jest
-  30; vite 8 / vitest 4 / coverage-v8 4 / plugin-react 6 as one branch, #106
-  being green only by hoisting vitest 4 to the root over `^1.0.4` declarations
-  it left in place; supertest 7, jest-dom 7, speed-insights 2, jsdom 30; `glob`
-  deleted not bumped. `manualChunks` → `codeSplitting.groups` exposed a vendor
-  split inoperative under vite 5 — JS 373 → 361 kB, builds 4.7s → 0.8s. **Node
-  20 had been EOL since March**; CI moved to 24, unblocking jsdom 30 — frontend
-  job 2m01s → 1m16s, `testTimeout` restored.
+- **Fifth Dependabot pass: all but typescript 7** (2026-08-31, #99-#129): jest
+  30, vite 8 / vitest 4, jsdom 30; CI on Node 24 (20 was EOL). Detail in
+  `archive.md`.
 - **Fourth Dependabot pass and the backlog to empty** (2026-08-29/31, #71-#114):
   green checks lied repeatedly. **`archive.md`**, `docs/reviews/2026-08-29-*`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
@@ -71,7 +69,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 ## What's Left
 
 - **Style tags tail**: 848 variations (16% of pages, 0.8% of games); plan in
-  `activeContext.md`, runbook in `tools/style-tags/README.md`.
+  `archive.md`, runbook in `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.

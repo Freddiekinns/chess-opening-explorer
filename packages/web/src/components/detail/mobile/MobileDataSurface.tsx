@@ -58,6 +58,22 @@ function rowStatsTitle(row: MergedMoveRow): string | undefined {
   );
 }
 
+/* The two figures on each row are coloured, not named, and the title that
+   explained them never shows on touch. Named once per card, in the caption,
+   in the swatch style of the win-rate legend above. */
+const RowKey: React.FC = () => (
+  <span className={styles.rowKey} aria-hidden="true">
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchWhite}`} />
+      White wins
+    </span>
+    <span className={styles.rowKeyItem}>
+      <span className={`${styles.swatch} ${styles.swatchBlack}`} />
+      Black wins
+    </span>
+  </span>
+);
+
 const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }> = ({
   row,
   ply,
@@ -130,16 +146,6 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
   return (
     <>
       <div className={styles.rowList}>
-        {/* Name the two coloured figures once, over their columns — the title
-            that explained them never shows on touch. */}
-        {rows.some((row) => row.stats) && (
-          <div className={styles.rowLegend} aria-hidden="true">
-            <span className={styles.rowPctWhite}>White wins</span>
-            <span className={styles.rowLegendGap} />
-            <span className={styles.rowPctBlack}>Black wins</span>
-            <span className={`${styles.rowGames} ${styles.rowLegendCount}`}>000.0M games</span>
-          </div>
-        )}
         {visible.map((row) => (
           <MoveRow key={row.key} row={row} ply={ply} countLabel={countLabel} />
         ))}
@@ -235,6 +241,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
     parentExplorer?.moves ?? null,
     { excludeSans: currentSan ? [currentSan] : [] }
   );
+
+  // One key per card, on the first list that shows the two figures.
+  const keyOnNext = childRows.length > 0 && childRows.some((row) => row.stats);
+  const keyOnAlternatives = !keyOnNext && siblingRows.some((row) => row.stats);
 
   const alternativesLabel =
     currentSan && currentMoveIdx >= 0
@@ -377,7 +387,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
           {childRows.length > 0 && (
             <>
               <div className={styles.bookHeading}>Next moves</div>
-              <div className={styles.bookSubheading}>{movesCaption(band, live)}</div>
+              <div className={styles.bookSubheading}>
+                <span>{movesCaption(band, live)}</span>
+                {keyOnNext && <RowKey />}
+              </div>
               <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
             </>
           )}
@@ -387,7 +400,10 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
               <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
                 {alternativesLabel}
               </div>
-              <div className={styles.bookSubheading}>{alternativesCaption(band, live)}</div>
+              <div className={styles.bookSubheading}>
+                <span>{alternativesCaption(band, live)}</span>
+                {keyOnAlternatives && <RowKey />}
+              </div>
               <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
             </>
           )}

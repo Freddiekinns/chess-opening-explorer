@@ -45,6 +45,11 @@
   color: var(--color-text-secondary);
   margin-bottom: var(--space-3);
   line-height: 1.2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
 }
 
 /* Stagger animation for sections */
@@ -478,20 +483,32 @@
   }
 }
 
-/* ── Column legend over the move rows ── */
-.rowLegend {
-  display: flex;
+/* ── Key for the move-row figures, in the caption line ── */
+.rowKey {
+  display: inline-flex;
+  gap: var(--space-2-5);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.rowKeyItem {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  /* The rows' own inset plus their 1px border, so the labels sit over the
-     figures they name. */
-  padding: 0 calc(var(--space-2-5) + 1px);
+  gap: var(--space-1);
 }
 
-.rowLegendGap {
-  flex: 1 1 auto;
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
 }
 
-.rowLegendCount {
-  visibility: hidden;
+.swatchWhite {
+  background-color: var(--color-result-white);
+}
+
+.swatchBlack {
+  background-color: var(--color-result-black);
 }

@@ -685,6 +685,29 @@ describe('PersonalOpeningStats - dashboard honesty', () => {
     expect(screen.getAllByText(expected).length).toBeGreaterThan(0);
   });
 
+  it('states the card samples as counts, so "100%" never stands alone', async () => {
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    expect(screen.getAllByText(/won 2 of 3/i).length).toBeGreaterThan(0);
+  });
+
+  it('says why there are no highlight cards instead of headlining a thin line', async () => {
+    const thin = {
+      ...mockDashboardData,
+      asWhite: [{ ...mockDashboardData.asWhite[0], games: 2, win: 2, draw: 0, loss: 0 }],
+    };
+    sessionStorage.setItem(
+      buildCacheKey('tester', 'chess.com', 500),
+      JSON.stringify({ dashboard: thin, cachedAt: Date.now() })
+    );
+    renderComponent();
+
+    await screen.findByRole('heading', { name: 'Your record' });
+    expect(screen.queryByText('Top-performing opening')).not.toBeInTheDocument();
+    expect(screen.getAllByText(/No line has 3 games yet/).length).toBeGreaterThan(0);
+  });
+
   it('names the games column in full, matching mobile', async () => {
     renderComponent();
 

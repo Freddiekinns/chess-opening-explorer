@@ -55,7 +55,7 @@ describe('FilterSheet', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Filters' }));
 
     expect(screen.getByRole('dialog', { name: 'Filters' })).toBeInTheDocument();
-    expect(screen.getByRole('group', { name: 'Level' })).toBeInTheDocument();
+    expect(screen.getByRole('group', { name: 'Difficulty' })).toBeInTheDocument();
     expect(screen.getByRole('group', { name: 'Style' })).toBeInTheDocument();
     expect(screen.getByRole('group', { name: 'Sort' })).toBeInTheDocument();
     expect(screen.getByRole('button', { expanded: false, name: /family/i })).toBeInTheDocument();
@@ -153,7 +153,7 @@ describe('FilterSheet - the family list is opt-in', () => {
     // Every level/style/sort option is on screen; the families are behind a
     // row that states the current one. Expanded by default, the sheet opened
     // at ~2,000px of scroll for a facet most visits never touch.
-    expect(screen.getByRole('button', { name: 'All levels' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Any difficulty' })).toBeInTheDocument();
     expect(screen.queryByLabelText('Search families')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /^Any family/ })).toHaveAttribute(
       'aria-expanded',

@@ -30,7 +30,7 @@ describe('FilterBar', () => {
   it('every facet button states what it filters and what it is set to', () => {
     setup();
 
-    expect(screen.getByRole('button', { name: 'Level All' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Difficulty Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Style Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Family Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Sort Most played' })).toBeInTheDocument();
@@ -44,7 +44,7 @@ describe('FilterBar', () => {
 
   it('still labels a selection whose count has fallen to zero', () => {
     // The API keeps the applied value in its own facet list at count 0 exactly
-    // so the trigger can name it; without that this would read "Level All"
+    // so the trigger can name it; without that this would read "Difficulty Any"
     // while the grid was filtered to Beginner.
     const zeroed = {
       ...facets,
@@ -57,13 +57,13 @@ describe('FilterBar', () => {
       total: 0,
     });
 
-    expect(screen.getByRole('button', { name: 'Level Beginner' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Difficulty Beginner' })).toBeInTheDocument();
   });
 
   it('opens a menu of options with their counts and reports the choice', async () => {
     const { onFacetChange } = setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Level All' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
     const option = screen.getByRole('option', { name: /Intermediate/ });
     expect(option).toHaveTextContent('10');
 
@@ -74,7 +74,7 @@ describe('FilterBar', () => {
   it('closes the menu after a choice', async () => {
     setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Level All' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
     await userEvent.click(screen.getByRole('option', { name: /Intermediate/ }));
 
     expect(screen.queryByRole('option', { name: /Intermediate/ })).not.toBeInTheDocument();
@@ -86,8 +86,8 @@ describe('FilterBar', () => {
       activeCount: 1,
     });
 
-    await userEvent.click(screen.getByRole('button', { name: 'Level Beginner' }));
-    await userEvent.click(screen.getByRole('option', { name: 'All levels' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Beginner' }));
+    await userEvent.click(screen.getByRole('option', { name: 'Any difficulty' }));
 
     expect(onFacetChange).toHaveBeenCalledWith('level', null);
   });
@@ -95,7 +95,7 @@ describe('FilterBar', () => {
   it('closes the menu on Escape', async () => {
     setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Level All' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
     await userEvent.keyboard('{Escape}');
 
     expect(screen.queryByRole('option', { name: /Intermediate/ })).not.toBeInTheDocument();

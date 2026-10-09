@@ -250,6 +250,16 @@ describe('OpeningNavigator', () => {
       expect(classical.textContent).toContain('48%');
     });
 
+    test('labels the two percentages, which the colour alone cannot explain', () => {
+      renderNavigator(treeData, explorerWithMoves([explorerMove('Nf6', 50_000)]));
+
+      expect(screen.getAllByText('White wins').length).toBeGreaterThan(0);
+      expect(screen.getAllByText('Black wins').length).toBeGreaterThan(0);
+      expect(
+        screen.getByRole('link', { name: /classical variation.*white wins 48%.*black wins 47%/i })
+      ).toBeInTheDocument();
+    });
+
     test('shows popular unnamed moves as inert off-book rows', () => {
       renderNavigator(
         treeData,

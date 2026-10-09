@@ -177,6 +177,21 @@ describe('MobileDataSurface', () => {
     expect(screen.getByText('off-book')).toBeInTheDocument();
   });
 
+  test('labels the two percentages, which the colour alone cannot explain', () => {
+    renderSurface({
+      explorer: query({
+        result: explorerResult({
+          moves: [{ san: 'Qxd5', games: 800, whitePct: 42, drawPct: 6, blackPct: 52 }],
+        }),
+      }),
+    });
+    expect(screen.getAllByText('White wins').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Black wins').length).toBeGreaterThan(0);
+    expect(
+      screen.getByRole('link', { name: /4\.\.\.Qxd5.*white wins 42%.*black wins 52%/i })
+    ).toBeInTheDocument();
+  });
+
   test('breadcrumb collapses to one line and expands into ancestor links', async () => {
     const user = userEvent.setup();
     renderSurface();

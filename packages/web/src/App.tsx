@@ -19,7 +19,7 @@ const RepertoirePage = lazy(() => import('./pages/RepertoirePage'));
 
 /** SPA navigation keeps the previous page's scroll offset — reset to the top
  *  whenever the route changes so every page opens at its heading. */
-const ScrollToTop = () => {
+export const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);

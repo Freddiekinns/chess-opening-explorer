@@ -12,6 +12,7 @@ import {
   pliesFromFen,
   sortNodesByPopularity,
   stripMoveNumber,
+  EXPLORER_STEP,
 } from '../../lib/openingBook';
 import styles from './OpeningNavigator.module.css';
 
@@ -73,7 +74,7 @@ const MoveRows: React.FC<MoveRowsProps> = ({
         <span className={styles.rowPctWhite}>White wins</span>
         <span className={styles.rowLegendGap} />
         <span className={styles.rowPctBlack}>Black wins</span>
-        <span className={`${styles.rowCount} ${styles.rowLegendCount}`}>00.0k games</span>
+        <span className={`${styles.rowCount} ${styles.rowLegendCount}`}>000.0M games</span>
       </div>
     )}
     {rows.map((row, i) => {
@@ -146,6 +147,7 @@ const MoveRows: React.FC<MoveRowsProps> = ({
         <Link
           key={row.key}
           to={`/opening/${encodeURIComponent(row.fen)}`}
+          state={EXPLORER_STEP}
           className={`${styles.contRow} ${alternatives ? styles.altRow : ''}`}
           style={{ animationDelay: `${i * 30}ms` }}
           title={statsTitle(row)}
@@ -274,6 +276,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 <Link
                   to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                   className={styles.breadcrumbLink}
+                  state={EXPLORER_STEP}
                 >
                   {ancestor.name}
                 </Link>

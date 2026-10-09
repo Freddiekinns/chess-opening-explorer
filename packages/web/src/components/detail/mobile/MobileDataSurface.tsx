@@ -12,6 +12,7 @@ import {
   pliesFromFen,
   sortNodesByPopularity,
   stripMoveNumber,
+  EXPLORER_STEP,
 } from '../../../lib/openingBook';
 import type { BandId, ExplorerResult } from '../../../lib/lichessExplorer';
 import {
@@ -103,6 +104,7 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
   return (
     <Link
       to={`/opening/${encodeURIComponent(row.fen)}`}
+      state={EXPLORER_STEP}
       className={styles.moveRow}
       title={rowStatsTitle(row)}
       aria-label={
@@ -135,7 +137,7 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
             <span className={styles.rowPctWhite}>White wins</span>
             <span className={styles.rowLegendGap} />
             <span className={styles.rowPctBlack}>Black wins</span>
-            <span className={`${styles.rowGames} ${styles.rowLegendCount}`}>00.0k games</span>
+            <span className={`${styles.rowGames} ${styles.rowLegendCount}`}>000.0M games</span>
           </div>
         )}
         {visible.map((row) => (
@@ -328,6 +330,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                       <Link
                         to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                         className={styles.crumbLink}
+                        state={EXPLORER_STEP}
                       >
                         {ancestor.name}
                       </Link>

@@ -2,25 +2,29 @@
 
 **Date:** 2026-10-10
 
-## Current Task: E2E specs green and in CI
+## Current Task: Search intent-parser misreads
 
-Branch `test/e2e-green`, stacked on #171. All 9 Playwright specs failed on
-`main` — the first eight on stale selectors and mocks, and locally on a missing
-Chromium. Fixes, specs only (no app code changed): `mockApi.ts` answers
-`/api/openings/browse` (honouring `level` and `family`) and serves studies in
-schema v2 (`study_title`, `chapters_matched`, `match`), which had rendered an
-empty title. Selectors follow today's copy: "Paste a game", "Surprise me" on the
-landing page, the hero search rows (buttons), the Difficulty/Family menus
-(Family is a dialog of buttons, not a listbox), "Analyse your games" and the
-"Username" textbox. Mobile detail folds learning resources into "Videos (n)" /
-"Studies (n)" buttons, so the overflow spec waits on those.
+Branch `fix/search-intent-misreads`, stacked on #172 (itself on #171). The four
+queries noted with the style tags, each with its own cause, plus one found on
+the way; failing tests committed first (`search-intent-misreads.test.js`).
 
-`webServer` now starts only `dev:web` — every `/api` call is mocked. CI job
-**Test E2E** installs Chromium and uploads the report on failure. 27 of 27 with
-`--repeat-each=3` under `CI=1`.
+- **"solid response to e4"** gave nothing: `RESPONSE_TO` had to start with
+  "response", so the modifier pattern took "response to e4" as a name. And
+  `filterByResponseToMoves` kept the opposite of replies — lines merely
+  _containing_ e4 and _not_ starting 1.e4 (1.d4 d5 2.e4).
+- **"solid e4 openings"** was the same modifier misread; style-plus-move now
+  runs first. Its ordering then exposed `Math.min(1, score)` in
+  `scoreSemanticResults`, which tied every style-plus-move result.
+- **"… for white"** kept nearly everything (`^1\.` and "two moves"). Side is now
+  the mover of the shallowest ply carrying the line's "Family: first variation"
+  name, normalised so "Defence" rows join their line. Alternative-name rows
+  ("Pirc: 2.Nf3") still start their own line — a corpus naming limit.
+- **"advanced sicilian defence"** dropped the name; it now narrows by it
+  (spelling-normalised), ignoring a name that matches nothing. Style words come
+  from `STYLE_AXES` only — "defense" was being used as a style.
 
-## Previous Task: Brief-audited description fixes (#171)
+## Previous Task: E2E specs green and in CI (#172)
 
-All 43 claims the style briefs marked wrong, in 32 pages, plus a mislabelled Ruy
-Lopez one, fixed in `api/data/eco/`. Merging is the owner's: auto mode refuses
-`gh pr merge`. Full text: `archive.md`.
+9 of 9 Playwright specs pass against `mockApi.ts` (browse route, schema-v2
+studies, today's labels); CI job **Test E2E**; `webServer` runs `dev:web` only.
+Full text: `archive.md`.

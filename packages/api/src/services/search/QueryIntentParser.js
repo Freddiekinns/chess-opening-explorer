@@ -5,6 +5,9 @@
 const { QUERY_PATTERNS, SEMANTIC_MAPPINGS } = require('./SearchConstants');
 const QueryUtils = require('./QueryUtils');
 
+// Words after a level word that name no opening ("beginner openings").
+const GENERIC_WORDS = new Set(['opening', 'openings', 'line', 'lines', 'option', 'options']);
+
 class QueryIntentParser {
   /**
    * Parse query intent from natural language
@@ -71,10 +74,30 @@ class QueryIntentParser {
       intent.type = 'complexity_search';
       intent.complexity = complexityMatch[1];
       
-      // Parse the opening part
+      // Parse the opening part: style words, and whatever names an opening
       const openingPart = complexityMatch[2];
       intent.style = QueryUtils.extractStylesFromText(openingPart);
+      const nameWords = openingPart
+        .split(/\s+/)
+        .filter(word => !intent.style.includes(word) && !GENERIC_WORDS.has(word));
+      if (nameWords.length > 0) {
+        intent.openingName = nameWords.join(' ');
+      }
       
+      return intent;
+    }
+
+    // Check for style + move patterns (e.g., "attacking d4", "solid e4 openings").
+    // Before the modifier pattern, which would read "e4 openings" as a name.
+    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
+    const queryParts = query.split(/\s+/);
+    const styleInQuery = styleWords.find(s => queryParts.includes(s));
+    const movesInQuery = QueryUtils.extractMoves(query);
+
+    if (styleInQuery && movesInQuery.length > 0) {
+      intent.type = 'style_with_move';
+      intent.style = [styleInQuery];
+      intent.targetMoves = movesInQuery;
       return intent;
     }
 
@@ -85,19 +108,6 @@ class QueryIntentParser {
       intent.style = [modifierMatch[1]];
       intent.openingName = modifierMatch[2];
 
-      return intent;
-    }
-
-    // Check for style + move patterns (e.g., "attacking d4", "solid e4 openings")
-    const styleWords = ['attacking', 'aggressive', 'solid', 'defensive', 'tactical', 'positional', 'sharp', 'quiet'];
-    const queryParts = query.split(/\s+/);
-    const styleInQuery = styleWords.find(s => queryParts.includes(s));
-    const movesInQuery = QueryUtils.extractMoves(query);
-
-    if (styleInQuery && movesInQuery.length > 0) {
-      intent.type = 'style_with_move';
-      intent.style = [styleInQuery];
-      intent.targetMoves = movesInQuery;
       return intent;
     }
 

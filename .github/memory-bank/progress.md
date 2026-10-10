@@ -4,10 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **E2E green and in CI** (2026-10-10): 9 of 9 specs pass; `mockApi.ts` gained
-  `/api/openings/browse` and schema-v2 studies; CI job **Test E2E**.
-- **Brief-audited description fixes** (2026-10-10): all 43 claims the style
-  briefs marked wrong, in 32 pages, plus one mislabelled Ruy Lopez claim.
+- **2026-10-10 (#171–#173)**: the 43 description claims the briefs marked wrong
+  fixed; E2E 9/9 green and in CI (**Test E2E**); search intent misreads ("solid
+  response to e4", "for white", "advanced sicilian defence").
 - **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
   X of Y", needs-work by games lost; billions as B; Discover "Difficulty";
   move-row legend; explorer steps keep their scroll offset.

@@ -18,7 +18,7 @@ is the ranked list that review produced.
   10/20 (owner decision: players spread games too thin for 10), and "off-book"
   keeps its name.
 - **rev 4.3** (2026-10-10) — the 43 description claims the briefs marked wrong
-  are fixed; the popularity refresh is parked.
+  are fixed; the popularity refresh is parked; E2E specs are green and in CI.
 
 ## The unifying principle
 
@@ -82,8 +82,8 @@ and drill for it.
   in this line? Check your games." Replaces the card cut on 2026-07-13.
 - **"Start here" shelf** — 20–30 hand-picked learnable openings leading
   Discover, split by colour. The cheap half of J5. _(review §4.8, audit #3)_
-- **E2E specs green and in CI** — 8 of 9 fail on `main`; a prerequisite for
-  slice 2.
+- ~~**E2E specs green and in CI**~~ — done 2026-10-10: all 9 pass against
+  `mockApi.ts`, and CI runs them as **Test E2E**.
 
 ## Then — the differentiator `M each`
 

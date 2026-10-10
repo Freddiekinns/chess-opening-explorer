@@ -62,15 +62,19 @@ const testVideos = [
   },
 ];
 
+// Schema v2, as /api/courses/:fen and the page payload return it.
 const testStudies = [
   {
-    course_title: 'Sicilian Defense Essentials',
+    study_title: 'Sicilian Defense Essentials',
+    chapter_title: 'Introduction',
+    study_url: 'https://lichess.org/study/abc123',
+    chapter_url: 'https://lichess.org/study/abc123/ch1',
     author: 'Study Author',
     platform: 'lichess',
-    source_url: 'https://lichess.org/study/abc123',
-    anchor_fens: [testOpenings[0].fen],
-    curated: true,
     likes: 1200,
+    chapters_matched: 1,
+    curated: true,
+    match: { score: 1, depth: 0, reason: 'covers-position' },
     discovered_at: '2024-01-10',
   },
 ];
@@ -96,6 +100,59 @@ function buildPopularByEco(openings: TestOpening[]) {
     data[key].push(opening);
   }
   return data;
+}
+
+const FAMILIES: Record<string, string> = {
+  'Sicilian Defense': 'sicilian',
+  'French Defense': 'french',
+  "Queen's Gambit": 'queens-gambit',
+};
+
+/** One /api/openings/browse page, honouring the level and family facets. */
+function buildBrowse(level: string | null, family: string | null) {
+  const toItem = (opening: TestOpening) => ({
+    fen: opening.fen,
+    name: opening.name,
+    eco: opening.eco,
+    moves: opening.moves,
+    family_id: FAMILIES[opening.name],
+    family_name: opening.name,
+    level: opening.analysis_json?.complexity ?? null,
+    styles: [],
+    games_analyzed: opening.games_analyzed ?? 0,
+    white_win_rate: 0.45,
+    draw_rate: 0.3,
+    black_win_rate: 0.25,
+    avg_rating: 1800,
+  });
+  const all = testOpenings.map(toItem);
+  const items = all.filter(
+    (item) => (!level || item.level === level) && (!family || item.family_id === family)
+  );
+  const facet = (values: (string | null)[]) =>
+    [...new Set(values)]
+      .filter((value): value is string => !!value)
+      .map((value) => ({ value, label: value, count: values.filter((v) => v === value).length }));
+  return {
+    success: true,
+    items,
+    total: items.length,
+    page: 1,
+    pageSize: 12,
+    offset: 0,
+    remaining: 0,
+    facets: {
+      level: facet(all.map((item) => item.level)),
+      style: [],
+      family: all.map((item) => ({
+        value: item.family_id,
+        label: item.family_name,
+        count: 1,
+        first_move: item.moves.startsWith('1. e4') ? 'e4' : 'd4',
+      })),
+    },
+    applied: { level, style: null, family, sort: 'popular' },
+  };
 }
 
 function fulfillJson(route: Route, payload: unknown, status = 200) {
@@ -218,6 +275,13 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
         searchType: 'mock',
         totalResults: results.length,
       });
+    }
+
+    if (path === '/api/openings/browse') {
+      return fulfillJson(
+        route,
+        buildBrowse(url.searchParams.get('level'), url.searchParams.get('family'))
+      );
     }
 
     if (path === '/api/openings/random') {

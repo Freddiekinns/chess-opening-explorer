@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **E2E green and in CI** (2026-10-10): 9 of 9 specs pass; `mockApi.ts` gained
+  `/api/openings/browse` and schema-v2 studies; CI job **Test E2E**.
 - **Brief-audited description fixes** (2026-10-10): all 43 claims the style
   briefs marked wrong, in 32 pages, plus one mislabelled Ruy Lopez claim.
 - **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
@@ -77,8 +79,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.
-- **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
-  ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-
   indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
   301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical

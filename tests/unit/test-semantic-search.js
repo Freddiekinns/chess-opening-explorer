@@ -71,34 +71,6 @@ async function testSemanticSearch() {
       }
     }
 
-    // Test category search
-    console.log('📂 Testing category search...');
-    try {
-      const categories = await searchService.getCategories();
-      console.log(`✅ Found ${categories.length} categories:`);
-      categories.slice(0, 5).forEach((cat) => {
-        console.log(`   - ${cat.displayName}: ${cat.count} openings`);
-      });
-      console.log('');
-
-      // Test searching within a category
-      if (categories.length > 0) {
-        const testCategory = categories[0].name;
-        console.log(`🔍 Testing category search for "${testCategory}"...`);
-        const categoryResults = await searchService.searchByCategory(testCategory, { limit: 3 });
-
-        if (categoryResults.results.length > 0) {
-          console.log(`✅ Found ${categoryResults.results.length} results in ${testCategory}:`);
-          categoryResults.results.forEach((opening, index) => {
-            console.log(`   ${index + 1}. ${opening.name} (${opening.eco})`);
-          });
-        }
-        console.log('');
-      }
-    } catch (error) {
-      console.error('❌ Error testing categories:', error.message);
-    }
-
     // Test suggestions
     console.log('💡 Testing search suggestions...');
     try {

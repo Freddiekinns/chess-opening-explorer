@@ -23,6 +23,10 @@ the way; failing tests committed first (`search-intent-misreads.test.js`).
   (spelling-normalised), ignoring a name that matches nothing. Style words come
   from `STYLE_AXES` only — "defense" was being used as a style.
 
+Also removed `/api/openings/search-by-category` and `/search-categories` with
+`searchByCategory`/`getCategories`: no caller, and they read the old LLM tags.
+`STYLE_CATEGORIES` stays — `filterByCategory` and multi-pass filtering use it.
+
 ## Previous Task: E2E specs green and in CI (#172)
 
 9 of 9 Playwright specs pass against `mockApi.ts` (browse route, schema-v2

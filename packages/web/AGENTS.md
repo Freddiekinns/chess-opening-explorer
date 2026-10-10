@@ -170,6 +170,16 @@ missing event is not yet a lost one — check the browser's requests to
 test-user filter, keyed on Device ID (= `openingbook:anon-id` in localStorage);
 add a new test browser's id there.
 
+## E2E specs
+
+`tests/e2e/` (Playwright) runs in CI as **Test E2E**. Every `/api` call is
+answered by `tests/e2e/utils/mockApi.ts`, so only the web dev server starts; a
+page that calls a new endpoint needs a mock there, or it renders its error
+state. Specs select by role and accessible name, so a renamed button or heading
+breaks them on purpose — they had sat at 8 of 9 failing for months on exactly
+that before they were wired into CI. First run on a machine:
+`npx playwright install chromium`.
+
 ## Conventions
 
 - Functional components only

@@ -17,6 +17,8 @@ is the ranked list that review produced.
 - **rev 4.2** (2026-10-09) — **Now** items 1–3 done. The Analyse floor is 3, not
   10/20 (owner decision: players spread games too thin for 10), and "off-book"
   keeps its name.
+- **rev 4.3** (2026-10-10) — the 43 description claims the briefs marked wrong
+  are fixed; the popularity refresh is parked; E2E specs are green and in CI.
 
 ## The unifying principle
 
@@ -80,8 +82,8 @@ and drill for it.
   in this line? Check your games." Replaces the card cut on 2026-07-13.
 - **"Start here" shelf** — 20–30 hand-picked learnable openings leading
   Discover, split by colour. The cheap half of J5. _(review §4.8, audit #3)_
-- **E2E specs green and in CI** — 8 of 9 fail on `main`; a prerequisite for
-  slice 2.
+- ~~**E2E specs green and in CI**~~ — done 2026-10-10: all 9 pass against
+  `mockApi.ts`, and CI runs them as **Test E2E**.
 
 ## Then — the differentiator `M each`
 
@@ -170,13 +172,12 @@ and drill for it.
 - **Fix the descriptions the briefs proved wrong** _(added 2026-10-05)_ — the
   105 researched style briefs audited each current description and
   `common_plans` claim by claim and marked 43 claims wrong, in 32 briefs (e.g.
-  the Dragon page describes the Accelerated Dragon). None are fixed yet. Correct
-  those from the briefs' sources first, then consider Jev as a cheap first pass
-  over the rest: for each claim, supported / wrong / unverifiable against its
-  brief, with only "wrong" going to a Claude fix. Unsourced briefs carry no
-  audit, so the tail needs evidence before Jev can check it. Plan: step 5 and
-  "Research once, use it twice" in
-  `docs/proposals/2026-10-02-opening-style-classification.md`.
+  the Dragon page describes the Accelerated Dragon). _Those 43 are fixed
+  (2026-10-10)._ What remains: consider Jev as a cheap first pass over the rest:
+  for each claim, supported / wrong / unverifiable against its brief, with only
+  "wrong" going to a Claude fix. Unsourced briefs carry no audit, so the tail
+  needs evidence before Jev can check it. Plan: step 5 and "Research once, use
+  it twice" in `docs/proposals/2026-10-02-opening-style-classification.md`.
 
 ## Open decisions
 

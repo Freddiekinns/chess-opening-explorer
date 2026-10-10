@@ -1,34 +1,26 @@
 # Active Context
 
-**Date:** 2026-10-09
+**Date:** 2026-10-10
 
-## Current Task: Backlog "Now" items 1–3 — Analyse cards, copy, explorer scroll
+## Current Task: E2E specs green and in CI
 
-Branch `claude/modest-lovelace-koa39l`. Each fix landed test-first.
+Branch `test/e2e-green`, stacked on #171. All 9 Playwright specs failed on
+`main` — the first eight on stale selectors and mocks, and locally on a missing
+Chromium. Fixes, specs only (no app code changed): `mockApi.ts` answers
+`/api/openings/browse` (honouring `level` and `family`) and serves studies in
+schema v2 (`study_title`, `chapters_matched`, `match`), which had rendered an
+empty title. Selectors follow today's copy: "Paste a game", "Surprise me" on the
+landing page, the hero search rows (buttons), the Difficulty/Family menus
+(Family is a dialog of buttons, not a listbox), "Analyse your games" and the
+"Username" textbox. Mobile detail folds learning resources into "Videos (n)" /
+"Studies (n)" buttons, so the overflow spec waits on those.
 
-- **Analyse highlight cards** (`personalStatsLib.ts`): the `list[0]` fallback is
-  gone; with no line at 3+ games the cards give way to one explanatory line.
-  `MIN_CARD_GAMES` is **3, not the audit's 10/20** — owner decision: players
-  spread games thin (the 100-game Hikaru and Magnus samples have 3–4 lines with
-  3+ games), so 10 would empty the cards for nearly everyone. Honesty comes from
-  framing instead: cards say "won X of Y"; "Needs work" ranks by games lost
-  (loss rate breaks ties) and skips lossless lines; win-rate ties go to the
-  bigger sample. The list itself has no floor and sorts by "Most played".
-- **Copy**: `formatCount` and `formatGamesPlayed` print billions as `B`.
-  Discover's facet is **Difficulty** (`?level=` and the values unchanged), so
-  "Level" means only the rating band. Move rows carry a "White wins / Black
-  wins" legend and an `aria-label` with the stats. **"off-book" stays** — owner
-  decision: the site is an opening book.
-- **Explorer scroll**: move rows, alternatives and breadcrumbs pass
-  `EXPLORER_STEP` router state (`lib/openingBook.ts`) and `ScrollToTop` leaves
-  the offset alone. Verified in Chromium: 548 → 548 desktop, 858 → 858 mobile.
+`webServer` now starts only `dev:web` — every `/api` call is mocked. CI job
+**Test E2E** installs Chromium and uploads the report on failure. 27 of 27 with
+`--repeat-each=3` under `CI=1`.
 
-Left in **Now**: the popularity stats refresh (its own pipeline run).
+## Previous Task: Brief-audited description fixes (#171)
 
-## Previous Task: Model and effort routing for Claude Code
-
-Merged as #167 and #168. Main session on Opus at medium effort; `scout`,
-`verifier` (Haiku), `implementer`, `pipeline-reviewer`, `/docs-sync` (Sonnet);
-table in `CLAUDE.md`. `AGENTS.md` cut to ~220 lines, detail moved to skills and
-scoped files. Style tags tail plan (848 variations, ~11 waves): `archive.md`,
-"Style tags tail — plan".
+All 43 claims the style briefs marked wrong, in 32 pages, plus a mislabelled Ruy
+Lopez one, fixed in `api/data/eco/`. Merging is the owner's: auto mode refuses
+`gh pr merge`. Full text: `archive.md`.

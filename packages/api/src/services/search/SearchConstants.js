@@ -98,8 +98,10 @@ const QUERY_PATTERNS = {
   // Pattern: "X openings" or "X for Y"
   STYLE_OPENINGS: /^(aggressive|attacking|solid|defensive|positional|tactical|dynamic|classical|hypermodern|beginner|advanced|simple|complex|sharp|quiet|safe|risky|gambit|dubious|tricky|system|offbeat)\s+(openings?|for\s+\w+|options?)$/i,
   
-  // Pattern: "response to X" or "defense against X"
-  RESPONSE_TO: /^(response|defense|defence|counter)\s+(to|against)\s+(.+)$/i,
+  // Pattern: "response to X" or "defense against X", optionally after a style
+  // word ("solid response to e4"), which the modifier pattern below would
+  // otherwise take for an opening name
+  RESPONSE_TO: /^(?:\w+\s+)?(response|defense|defence|counter)\s+(to|against)\s+(.+)$/i,
   
   // Pattern: "X for color"
   COLOR_SPECIFIC: /^(.+)\s+(for|as)\s+(white|black)$/i,

@@ -76,6 +76,18 @@ replaces that list a moment later. They must agree — see
   repaints the older list under the newer one. Clearing the field must bump the
   id too, or the list comes back a moment after the user emptied it.
 
+- **Descriptive queries are parsed in a fixed order, and the order is the
+  rule.** `QueryIntentParser` tries style-only, response, colour, level,
+  style-plus-move, then style-plus-name. "solid response to e4" and "solid e4
+  openings" were both read as a style word in front of an opening _name_ until
+  2026-10-10, because the modifier pattern ran first; a style word only counts
+  if `STYLE_AXES` has it (a `SEMANTIC_MAPPINGS`-only word such as "defense"
+  matches nothing and emptied the list). "For white/black" is the side whose
+  move first gave the line its "Family: first variation" name — the Sicilian is
+  Black's at every depth, the Smith-Morra White's. `scoreSemanticResults` is not
+  capped at 1: style plus move already reaches 0.95, and the cap tied every
+  result. `tests/unit/search-intent-misreads.test.js` pins all of it.
+
 - **`eco` is not a Fuse key, so ECO codes need `searchByEcoCode`.** Before the
   explicit branch in `search-service.js`, `B90` returned **0** results against
   31 openings carrying the code — while the UI told users to "try an ECO code".

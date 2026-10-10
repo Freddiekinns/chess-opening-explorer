@@ -16,8 +16,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+  // The specs mock every /api route (tests/e2e/utils/mockApi.ts), so the API
+  // server is not needed.
   webServer: {
-    command: 'npm run dev',
+    command: 'npm run dev:web',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,

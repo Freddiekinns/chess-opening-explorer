@@ -4,6 +4,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-10-10 (#171–#173)**: the 43 description claims the briefs marked wrong
+  fixed; E2E 9/9 green and in CI (**Test E2E**); search intent misreads ("solid
+  response to e4", "for white", "advanced sicilian defence"); dead category
+  routes removed.
 - **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
   X of Y", needs-work by games lost; billions as B; Discover "Difficulty";
   move-row legend; explorer steps keep their scroll offset.
@@ -75,8 +79,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.
-- **`npm run test:e2e` fails 8 of 9 specs on `main`** — selectors gone stale
-  ("Search by pasting PGN" vs "Paste a game"), and no workflow runs them.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-
   indexed, sitemaps 5–7 never read, impressions flat. Next lever: slug URLs with
   301s. Also: `/opening/a/b/…` (unencoded FEN) serves a self-canonical
@@ -87,7 +89,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Video programme**: enable the monthly refresh Action (commit
   `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
   then V4-V6. Unused: Jev's video families (`docs/backlog.md` → Enablers).
-- **43 wrong description claims** unfixed (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows

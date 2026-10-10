@@ -72,6 +72,7 @@ beforeAll(() =>
       'f-london': 'london',
       'f-sic': 'sic',
       'f-sic-nf3': 'sic',
+      'f-caro-adv': 'caro',
     },
   })
 );
@@ -131,6 +132,13 @@ describe('"for white" and "for black"', () => {
     ]);
   });
 
+  test('a British spelling joins its line rather than starting a new one', () => {
+    const transposed = { fen: 'f-sic-uk', name: 'Sicilian Defence', moves: '1. Nf3 c5 2. e4' };
+    expect(names(searchService.filterByColor([...OPENINGS, transposed], 'white'))).not.toContain(
+      'Sicilian Defence'
+    );
+  });
+
   test('black openings are the ones Black chose, at every depth of the line', () => {
     expect(names(searchService.filterByColor(OPENINGS, 'black'))).toEqual([
       'Sicilian Defense',
@@ -159,5 +167,25 @@ describe('a level word in front of an opening name', () => {
     expect(names(searchService.filterByOpeningName(OPENINGS, 'sicilian defence'))).toContain(
       'Sicilian Defense'
     );
+  });
+});
+
+describe('style and move together', () => {
+  test('equal matches are ordered by games played, not left tied', () => {
+    const rare = {
+      fen: 'f-caro',
+      name: 'Caro-Kann Defense',
+      moves: '1. e4 c6',
+      games_analyzed: 1000,
+    };
+    const common = {
+      fen: 'f-caro-adv',
+      name: 'Caro-Kann Defense: Advance Variation',
+      moves: '1. e4 c6 2. d4 d5 3. e5',
+      games_analyzed: 5000000,
+    };
+    const scored = searchService.scoreSemanticResults([rare, common], parse('solid e4 openings'));
+    expect(names(scored)).toEqual(['Caro-Kann Defense: Advance Variation', 'Caro-Kann Defense']);
+    expect(scored[0].searchScore).toBeGreaterThan(scored[1].searchScore);
   });
 });

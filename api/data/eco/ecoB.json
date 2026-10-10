@@ -2336,7 +2336,7 @@
         "Black: Challenge White's center, typically with an early ...d5, aiming to liquidate White's central pawns or provoke weaknesses.",
         "Black: Fianchetto the king's bishop (...g6, ...Bg7) to exert long-term pressure on White's d4-pawn and the long diagonal.",
         "White: Seize the center with 2. d4, develop pieces quickly to capitalize on the space advantage, and try to prove Black's setup is passive.",
-        "White: Restrain Black's counter-play, particularly the ...d5 pawn break, and consolidate central control before launching an attack."
+        "White: Meet Black's ...d5 break with e5 or Nc3 rather than trying to prevent it (or steer towards familiar positions with 2.Nf3), and consolidate central control before launching an attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:39:18.630Z"
@@ -7247,7 +7247,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Scandinavian Defense is a direct and combative response to 1.e4, immediately challenging White's central control. Black aims for rapid development and an open game, often at the cost of bringing the queen out early, which can become a target. This opening is perfect for players who enjoy taking the initiative, creating imbalances, and steering the game into dynamic, tactical channels from the very first move.",
+      "description": "The Scandinavian Defense is a direct and combative response to 1.e4, immediately challenging White's central control. Black aims for rapid development and an open game, often at the cost of bringing the queen out early, which can become a target. The main line, 2...Qxd5, gives a sound, Caro-Kann-like structure at the cost of some time, while 2...Nf6 and the gambit lines lead to sharper, more tactical play. It suits players who want a direct answer to 1.e4 and are happy to defend a solid position while White has the early initiative.",
       "style_tags": [
         "Counter-attacking",
         "Dynamic",
@@ -7289,8 +7289,8 @@
       "common_plans": [
         "Black: Recapture with the queen (...Qxd5), retreat to a safe square like ...Qa5 or ...Qd6, and complete development with moves like ...c6, ...Bf5, and ...Nc6, often castling long.",
         "White: Exploit Black's early queen moves by gaining tempo with Nc3 and developing quickly with d4, Nf3, and Bc4 to seize a space advantage and build an attack.",
-        "Black: Aim for rapid piece activity and pressure on White's center, accepting a slightly unorthodox pawn structure in exchange for dynamic play.",
-        "White: Control the d4-square, complete development, and use the central pawn majority to create long-term pressure and restrict Black's pieces."
+        "Black: Aim for rapid piece activity and pressure on White's centre from a sound ...c6 and ...e6 structure, similar to the Caro-Kann.",
+        "White: Hold the centre with the d4-pawn, complete development, and use the lead in development and extra space to create long-term pressure and restrict Black's pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T19:05:46.450Z"
@@ -9851,7 +9851,7 @@
       "scid": "Scandinavian: 2...Qxd5 3.Nc3 Qd8"
     },
     "analysis_json": {
-      "description": "The Valencian Variation is a highly solid and safe, albeit somewhat passive, approach to the Scandinavian Defense. By retreating the queen to its starting square, Black avoids further tempo losses and aims for a robust, if slightly cramped, setup. This opening is ideal for patient, strategic players who are comfortable defending a position with less space, aiming to neutralize White's early initiative and outplay them in a long, strategic middlegame.",
+      "description": "The Valencian Variation is a highly solid and safe, albeit somewhat passive, approach to the Scandinavian Defense. By retreating the queen to its starting square, Black spends time but keeps the queen safe from further attacks, aiming for a robust, if slightly cramped, set-up. This opening is ideal for patient, strategic players who are comfortable defending a position with less space, aiming to neutralize White's early initiative and outplay them in a long, strategic middlegame.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -16279,7 +16279,7 @@
         "Transpositional Play"
       ],
       "common_plans": [
-        "Black's Plan: Challenge White's central pawn on e4. If White plays 3.e5, undermine the center with ...c5. If White plays 3.exd5, recapture and develop actively, often leading to a Scandinavian-type structure.",
+        "Black's Plan: Challenge White's central pawn on e4. If White plays 3.e5, choose between the combative ...d4, the French-like ...Nfd7 and the provocative ...Ne4. If White plays 3.exd5, recapture and develop actively, often leading to a Scandinavian-type structure.",
         "White's Plan: Either solidify a space advantage with d4 after 3.e5 and use it to build an attack, or exchange on d5 and develop with tempo against Black's pieces."
       ],
       "version": "1.0",
@@ -41587,7 +41587,7 @@
       "icsbot": "Exchange Variation, Caro; B13 "
     },
     "analysis_json": {
-      "description": "The Caro-Kann Exchange Variation is a solid and straightforward response where White immediately resolves the central tension, leading to a symmetrical pawn structure. This choice often steers the game into quieter, more strategic waters, bypassing the sharp tactical complexities of other Caro-Kann lines. It's an excellent opening for players who enjoy clear plans, developing their pieces logically, and fighting for a small but persistent advantage based on space and development.",
+      "description": "The Caro-Kann Exchange Variation is a solid and straightforward response where White immediately resolves the central tension, leading to a reversed Carlsbad structure in which White keeps the c-pawn and Black the e-pawn. This choice often steers the game into quieter, more strategic waters, bypassing the sharp tactical complexities of other Caro-Kann lines. It's an excellent opening for players who enjoy clear plans, developing their pieces logically, and fighting for a small but persistent advantage based on space and development.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -41627,7 +41627,7 @@
         "Good vs. Bad Bishop"
       ],
       "common_plans": [
-        "For White, a primary plan is to leverage a slight lead in development to launch a queenside minority attack with moves like c3, Rb1, and b4-b5, aiming to create a weakness on c6.",
+        "For White, a primary plan is to use the slight lead in development for kingside play, typically with Bd3, Bf4 and a knight on e5. In this structure the queenside minority attack (...b5-b4) belongs to Black.",
         "For Black, the main goal is to achieve easy equality by developing the light-squared bishop (to f5 or g4) before committing to ...e6, thereby solving the main problem of the Caro-Kann and reaching a solid, balanced position."
       ],
       "version": "1.0",
@@ -58636,7 +58636,7 @@
       "common_plans": [
         "For White: Develop pieces rapidly (Nc3, Nf3, Bc4, Bg5/f4) to control the center and open files, utilizing them to pressure Black's queen and f7-pawn.",
         "For White: Launch a direct attack against the Black king, often involving further sacrifices to break through the defense.",
-        "For Black: Consolidate the extra pawn and complete development safely, often adopting a hedgehog-like setup.",
+        "For Black: Consolidate the extra pawn and complete development safely, often with a Scheveningen-style set-up (...d6, ...e6, ...Nf6 and ...Be7).",
         "For Black: Neutralize White's initiative through timely piece exchanges and aim to exploit the material advantage in the endgame."
       ],
       "version": "1.0",
@@ -73687,7 +73687,7 @@
       "common_plans": [
         "For White: Seize the center with 3.d4 to open the position, or play an Anti-Sicilian like 3.Bb5 (Rossolimo) to create positional pressure and disrupt Black's structure.",
         "For Black: Challenge White's central control, typically by exchanging the c-pawn for White's d-pawn. Develop pieces actively to generate queenside counterplay, often involving a ...b5 pawn push.",
-        "For White (Anti-Sicilian): Avoid sharp theory, build a solid center (e.g., Alapin with 3.c3), and aim for a long-term spatial or structural advantage.",
+        "For White (Anti-Sicilian): Avoid sharp theory, build a solid centre (e.g., 3.c3, reaching Alapin-type positions), and aim for a long-term spatial or structural advantage.",
         "For Black (vs. Anti-Sicilian): Adapt development to counter White's specific plan, often aiming to equalize in the center before launching counterplay."
       ],
       "version": "1.0",
@@ -88830,7 +88830,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Sicilian Defense: French Variation is a highly flexible and resilient response to 1.e4, blending the counter-attacking spirit of the Sicilian with the structural solidity of the French Defense. It leads to a strategically complex game where Black aims to control the d5-square and launch a counter-thrust after completing development. This opening is perfect for versatile players who appreciate a solid foundation and are adept at navigating both positional maneuvering and sharp tactical possibilities.",
+      "description": "The Sicilian Defense: French Variation is named after 2...e6, the French Defense's first move, but after 3.d4 cxd4 the game usually reaches Sicilian structures such as the Taimanov, Kan or Scheveningen rather than French ones. It leads to a strategically complex game where Black aims to control the d5-square and launch a counter-thrust after completing development. This opening is perfect for versatile players who appreciate a solid foundation and are adept at navigating both positional maneuvering and sharp tactical possibilities.",
       "style_tags": [
         "Flexible",
         "Solid",
@@ -108767,7 +108767,7 @@
       "eco_js": "Sicilian Defense: Accelerated Dragon"
     },
     "analysis_json": {
-      "description": "The Accelerated Dragon is a flexible and dynamic response to the Open Sicilian, where Black fianchettoes the dark-squared bishop to g7 at the earliest opportunity. This system aims to exert immediate pressure on the long diagonal and often seeks to achieve the ...d5 pawn break in a single move, sidestepping the ultra-sharp Yugoslav Attack common in the main line Dragon. It's ideal for strategic players who enjoy dynamic, double-edged positions and are adept at creating counterplay against White's central space advantage.",
+      "description": "The Dragon Variation is one of Black's sharpest answers to the Open Sicilian: Black fianchettoes the dark-squared bishop on g7, castles short and counterattacks along the c-file and the long diagonal. Against the Yugoslav Attack (Be3, f3, Qd2, O-O-O and a kingside pawn storm) both sides race to attack the opposing king, a heavily analysed line that is sound for Black but demands precise knowledge; White can also choose the quieter Maróczy Bind with 5.c4. It suits players who enjoy dynamic, double-edged positions and creating counterplay against White's central space advantage.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -139720,7 +139720,7 @@
       "common_plans": [
         "White: Launch a kingside attack, often with moves like Be3, f3, g4, and h4, especially after castling long, while targeting the d6-pawn.",
         "Black: Create queenside counterplay with the ...b5-b4 pawn push to undermine White's center and attack the e4-pawn.",
-        "Black: Fight for control of the d5 square, often by preparing the ...e5 pawn break to challenge White's central space advantage.",
+        "Black: Often play ...e5 to gain central space and drive the knight from d4, then fight for the d5-square this weakens, aiming for the freeing ...d5 break.",
         "Both Sides: Engage in a race to attack the opposing king, frequently leading to opposite-side castling and sharp sacrificial play."
       ],
       "version": "1.0",

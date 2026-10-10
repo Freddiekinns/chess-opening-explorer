@@ -5,6 +5,29 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Backlog Now 1–3 — full activeContext text (2026-10-09, #170)
+
+Branch `claude/modest-lovelace-koa39l`. Each fix landed test-first.
+
+- **Analyse highlight cards** (`personalStatsLib.ts`): the `list[0]` fallback is
+  gone; with no line at 3+ games the cards give way to one explanatory line.
+  `MIN_CARD_GAMES` is **3, not the audit's 10/20** — owner decision: players
+  spread games thin (the 100-game Hikaru and Magnus samples have 3–4 lines with
+  3+ games), so 10 would empty the cards for nearly everyone. Honesty comes from
+  framing instead: cards say "won X of Y"; "Needs work" ranks by games lost
+  (loss rate breaks ties) and skips lossless lines; win-rate ties go to the
+  bigger sample. The list itself has no floor and sorts by "Most played".
+- **Copy**: `formatCount` and `formatGamesPlayed` print billions as `B`.
+  Discover's facet is **Difficulty** (`?level=` and the values unchanged), so
+  "Level" means only the rating band. Move rows carry a "White wins / Black
+  wins" legend and an `aria-label` with the stats. **"off-book" stays** — owner
+  decision: the site is an opening book.
+- **Explorer scroll**: move rows, alternatives and breadcrumbs pass
+  `EXPLORER_STEP` router state (`lib/openingBook.ts`) and `ScrollToTop` leaves
+  the offset alone. Verified in Chromium: 548 → 548 desktop, 858 → 858 mobile.
+
+Left in **Now**: the popularity stats refresh (its own pipeline run).
+
 ## Style tags tail — plan, full activeContext text (2026-10-05, #160)
 
 Merged 2026-10-05 as #160. Fixed taxonomy (`docs/style-taxonomy.md`) replacing

@@ -1,34 +1,29 @@
 # Active Context
 
-**Date:** 2026-10-09
+**Date:** 2026-10-10
 
-## Current Task: Backlog "Now" items 1–3 — Analyse cards, copy, explorer scroll
+## Current Task: Fix the description claims the style briefs proved wrong
 
-Branch `claude/modest-lovelace-koa39l`. Each fix landed test-first.
+Branch `fix/brief-audited-descriptions`. The 105 researched briefs in
+`tools/data/style-briefs/` audit each root position's `analysis_json`
+description and `common_plans` claim by claim; 43 claims in 32 briefs were
+"wrong". All 43 are corrected in `api/data/eco/` with narrow edits (41 lines,
+one per field), plus one the audit mislabelled: the Ruy Lopez brief marks
+"Nf3-d2-f1-g3" supported while its note says the route is the b1 knight's, the
+same error flagged on the Morphy page. New text is British English; opening
+names keep the data's spelling. Three audit verdicts were debatable (Old
+Sicilian 3.c3 does transpose to the Alapin, BDG 2...c6, Najdorf ...e5 and d5),
+so those fixes are worded to be true either way. The Dragon page's description
+is rewritten whole — it described the Accelerated Dragon.
 
-- **Analyse highlight cards** (`personalStatsLib.ts`): the `list[0]` fallback is
-  gone; with no line at 3+ games the cards give way to one explanatory line.
-  `MIN_CARD_GAMES` is **3, not the audit's 10/20** — owner decision: players
-  spread games thin (the 100-game Hikaru and Magnus samples have 3–4 lines with
-  3+ games), so 10 would empty the cards for nearly everyone. Honesty comes from
-  framing instead: cards say "won X of Y"; "Needs work" ranks by games lost
-  (loss rate breaks ties) and skips lossless lines; win-rate ties go to the
-  bigger sample. The list itself has no floor and sorts by "Most played".
-- **Copy**: `formatCount` and `formatGamesPlayed` print billions as `B`.
-  Discover's facet is **Difficulty** (`?level=` and the values unchanged), so
-  "Level" means only the rating band. Move rows carry a "White wins / Black
-  wins" legend and an `aria-label` with the stats. **"off-book" stays** — owner
-  decision: the site is an opening book.
-- **Explorer scroll**: move rows, alternatives and breadcrumbs pass
-  `EXPLORER_STEP` router state (`lib/openingBook.ts`) and `ScrollToTop` leaves
-  the offset alone. Verified in Chromium: 548 → 548 desktop, 858 → 858 mobile.
+Follow-ups: the B54 name itself reads "Dragon Variation, Accelerated Dragon",
+which is where the confusion started; the unsourced tail has no audit, so a Jev
+pass needs evidence first (backlog → Enablers).
 
-Left in **Now**: the popularity stats refresh (its own pipeline run).
+## Previous Task: Backlog "Now" items 1–3 (#170)
 
-## Previous Task: Model and effort routing for Claude Code
-
-Merged as #167 and #168. Main session on Opus at medium effort; `scout`,
-`verifier` (Haiku), `implementer`, `pipeline-reviewer`, `/docs-sync` (Sonnet);
-table in `CLAUDE.md`. `AGENTS.md` cut to ~220 lines, detail moved to skills and
-scoped files. Style tags tail plan (848 variations, ~11 waves): `archive.md`,
-"Style tags tail — plan".
+Analyse cards floor 3 with no `list[0]` fallback (owner decision, not 10/20),
+"won X of Y", needs-work by games lost; billions as `B`; Discover facet
+"Difficulty"; move-row legend; explorer steps keep their scroll. "off-book"
+stays. Full text: `archive.md`. Left in **Now**: the popularity stats refresh
+(parked by the owner 2026-10-10).

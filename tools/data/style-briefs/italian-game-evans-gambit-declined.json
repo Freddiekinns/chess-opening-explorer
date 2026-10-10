@@ -1,0 +1,46 @@
+{
+  "slug": "italian-game-evans-gambit-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Evans Gambit Declined",
+    "eco": "C51",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bb6",
+    "fen": "r1bqk1nr/pppp1ppp/1bn5/4p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq - 1 5"
+  },
+  "parent": "italian-game-evans-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black retreats the bishop to b6 instead of taking on b4, so no material has been given. The main line is 5.a4 a6 6.Nc3 Nf6 7.d3 with a Giuoco-like position where White has gained queenside space; sharper tries are 5.b5 Na5 6.Nxe5. White has the initiative and a pawn on b4, while Black has a solid position.",
+  "white_ideas": [
+    { "idea": "Play a4, Nc3 and d3 to get space and a safe game" },
+    { "idea": "Seek the centre with d4 or sharp tactics around e5 and f7 after b5" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the bishop on b6 and develop normally with ...Nf6 and ...d6" },
+    { "idea": "Counter in the centre with ...d5 when possible" }
+  ],
+  "typical_structures": [
+    { "structure": "Italian structure with White pawns on b4, a4, e4, d3 against e5/d6" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main lines are calm, with sharper tactical options for White after b5." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Declined; no material changes hands." },
+    "soundness": { "notes": "A fully playable line for both sides." },
+    "structure": { "notes": "Centre in tension, as in the Giuoco Pianissimo." },
+    "approach": { "notes": "A normal branch of the Italian." },
+    "level": { "reason": "understanding", "notes": "Positional plans with moderate theory." }
+  },
+  "plan_phrases": ["space on the queenside", "slow Italian build-up"],
+  "sublines_that_differ": [
+    { "name": "5.b5 lines", "moves": "5.b5 Na5 6.Nxe5", "how": "Much sharper, with tactics around f7 and the a5 knight." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Main line is a quiet Italian but sharper side lines exist." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "Declined gambit, no material changes hands." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable line for both." },
+    "structure": { "value": "flexible", "confidence": 0.55, "reason": "The centre is in tension, like the Giuoco with d3." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal branch of the Italian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plan-based play with moderate theory." },
+    "plans": { "value": ["queenside_expansion", "space_advantage"], "reason": "White's b4 and a4 advance the queenside." }
+  }
+}

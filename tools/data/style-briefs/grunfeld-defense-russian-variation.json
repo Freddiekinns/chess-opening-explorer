@@ -1,0 +1,46 @@
+{
+  "slug": "grunfeld-defense-russian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Russian Variation, Accelerated Variation",
+    "eco": "D81",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Qb3",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/1QN5/PP2PPPP/R1B1KBNR b KQkq - 1 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White puts the queen on b3 to pressure d5 and prepare cxd5, instead of the exchange with e4. The main Russian System runs 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4, and Black responds with ...a6, ...b5 and ...Bg4 or ...Na6, challenging the centre. White gets a big centre and Black strikes at it with pieces.",
+  "white_ideas": [
+    { "idea": "Win the c4 pawn back with Qxc4 and build an e4/d4 centre" },
+    { "idea": "Use the queen on the c-file and attack d5 and b7" }
+  ],
+  "black_ideas": [
+    { "idea": "Attack the white centre with ...Bg7, ...c5 and ...Nc6" },
+    { "idea": "Gain time against the queen with ...Na6 or ...Be6 and ...Nc6" }
+  ],
+  "typical_structures": [
+    { "structure": "Grünfeld centre: White pawns d4/e4 against Black pieces and ...c5 break" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Concrete central fights with tactics on d4 and the long diagonal." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawns trade but no gambit." },
+    "soundness": { "notes": "A mainstream line for both sides." },
+    "structure": { "notes": "Centre tension where White's pawns are targets of Black's pieces." },
+    "approach": { "notes": "A mainstream White choice against the Grünfeld." },
+    "level": { "reason": "both", "notes": "Needs theory, and the plans against a big centre are hard." }
+  },
+  "plan_phrases": ["hypermodern centre", "fianchetto on g7"],
+  "sublines_that_differ": [
+    { "name": "Main Russian System", "moves": "4.Nf3 Bg7 5.Qb3", "how": "Same set-up by a more usual move order; the accelerated 4.Qb3 allows more Black options." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Concrete central tactics against a big pawn centre." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "Any pawn is regained by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream line." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is in tension between White's pawns and Black's pieces." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream choice." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.65, "reason": "Grünfeld theory is long and plans are hard." },
+    "plans": { "value": ["hypermodern_centre", "fianchetto"], "reason": "Black lets White build the centre then attacks it from the g7 bishop." }
+  }
+}

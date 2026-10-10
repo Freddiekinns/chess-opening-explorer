@@ -1,0 +1,111 @@
+{
+  "slug": "indian-defense-anti-grunfeld",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Anti-Grünfeld, Advance Variation",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. d5",
+    "fen": "rnbqkb1r/pppppp1p/5np1/3P4/2P5/8/PP2PPPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "indian-defense-west-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White grabs space with 3.d5 before Black has committed to ...d5 or ...Bg7. Black normally plays 3...Bg7 4.Nc3 d6 5.e4 O-O and reaches a King's Indian Orthodox/Normal structure, or builds a Benoni-style game with ...c6 or ...c5; the ...b5 Adorjan Gambit is a rare try. White keeps a space edge and aims for e4, Nf3 and Be2, with a locked centre and queenside play; Black prepares ...e5 or ...c6 breaks. Most games transpose into familiar KID structures. The subtree also holds other anti-Grünfeld branches (3.f3, 3.h4) that are different systems.",
+  "white_ideas": [
+    { "idea": "Take space with d5, e4 and a quick Nf3 and Be2, transposing to a favourable King's Indian" },
+    { "idea": "Keep the centre closed and play on the queenside with b4/c5 ideas" },
+    { "idea": "Meet the Adorjan ...b5 gambit by taking or ignoring it and keeping extra pawns" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto ...Bg7, ...d6, ...O-O and hit the centre with ...e5 or ...c6" },
+    { "idea": "Break with ...c6 or ...c5 to attack the d5 pawn and gain counterplay" },
+    { "idea": "Use the half-open e-file and later ...b5 to undermine the pawn chain" }
+  ],
+  "typical_structures": [
+    { "structure": "White c4/d5/e4 chain against Black d6/e5 (King's Indian locked centre) or c5/d6 (Benoni-like)" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black usually reaches a King's Indian or Benoni structure, which is double-edged, but 3.d5 itself is less forcing. I read it as Balanced with low confidence; Sharp is plausible."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main continuation; ...b5 gambits are sublines."
+    },
+    "soundness": {
+      "notes": "Sound for both; White gets a space edge, Black gets counterplay."
+    },
+    "structure": {
+      "notes": "The pawn chain c4-d5 with a locked centre after ...e5 resembles the King's Indian, so Closed, though ...c6 or ...c5 setups would be Semi-open."
+    },
+    "approach": {
+      "notes": "3.d5 is a rare anti-KID/Grünfeld choice for strong players, who prefer 3.Nc3. Offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs KID-style judgement; there is little forced theory. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "space advantage with d5",
+    "King's Indian type locked centre",
+    "fianchetto bishop on g7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Adorjan Gambit",
+      "moves": "1. d4 Nf6 2. c4 g6 3. d5 b5",
+      "how": "Black sacrifices a pawn at once, a Benko-style gambit."
+    },
+    {
+      "name": "Alekhine Variation (3.f3)",
+      "moves": "1. d4 Nf6 2. c4 g6 3. f3",
+      "how": "A different White system, not an advance, shown here because the data groups it with this root."
+    },
+    {
+      "name": "Basman-Williams Attack (3.h4)",
+      "moves": "1. d4 Nf6 2. c4 g6 3. h4",
+      "how": "An unusual attacking try, far from the 3.d5 main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Mostly King's Indian or Benoni-type positions after a quiet start, with no forced play early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given in the main continuation."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A reasonable space-gaining move that Black can meet in standard ways."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "After ...d6 and ...e5 the centre locks as in the KID; ...c5 or ...c6 lines are Semi-open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose 3.d5 over 3.Nc3 against the KID/Grünfeld."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "KID-like structures need judgement but there is little forced theory."
+    },
+    "plans": {
+      "value": ["space_advantage", "fianchetto"],
+      "reason": "White grabs space and Black fianchettoes the g7 bishop."
+    }
+  }
+}

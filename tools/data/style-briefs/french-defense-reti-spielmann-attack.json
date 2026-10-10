@@ -1,0 +1,109 @@
+{
+  "slug": "french-defense-reti-spielmann-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Réti-Spielmann Attack",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. g3",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/6P1/PPPP1P1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "White plays 2.g3 against the French, fianchettoing the bishop and aiming for e4-e5 or d4 later. Black normally plays 2...d5 and the game resembles a reversed King's Indian Attack or a quiet fianchetto set-up. The line is rare and unforcing.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on g2 and play Nf3"
+    },
+    {
+      "idea": "Choose between d3 and d4"
+    },
+    {
+      "idea": "Pressure on d5 and e5 with the bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...d5 and ...Nf6 with a comfortable French structure"
+    },
+    {
+      "idea": "Break with ...c5"
+    },
+    {
+      "idea": "Challenge the bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "KIA-like set-up for White vs a French pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and slow; neither side takes risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "The centre stays undecided."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over memorisation."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Quiet fianchetto set-up."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Harmless but sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans over theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettos the king's bishop."
+    }
+  }
+}

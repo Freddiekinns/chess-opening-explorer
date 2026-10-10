@@ -1,0 +1,105 @@
+{
+  "slug": "bogo-indian-defense-nimzowitsch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Nimzowitsch Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Qe7",
+    "fen": "rnb1k2r/ppppqppp/4pn2/8/1bPP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 4 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "Black develops 4...Qe7 against Bd2 and plays ...O-O, ...d6 and ...Nc6 or ...b6. White usually fianchettoes with 5.g3 or develops with Nc3 to keep the bishop pair. The play is a slow manoeuvring game with few forcing lines.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2 and keep the bishop pair"
+    },
+    {
+      "idea": "Play Nc3 and e4 for a centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the dark bishop or keep it, and aim for ...d6 and ...e5"
+    },
+    {
+      "idea": "Develop with ...Nc6 and ...O-O and use the queen on e7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit-style pawn centre with flexible tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Safe Black set-up with few early weaknesses."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Flexible: pawns on c4 and d4 against e6 and d6 with tension."
+    },
+    "approach": {
+      "notes": "A standard Bogo-Indian line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional plans."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Bogo-Indian is safe and steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Fully sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre stays flexible with tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Bogo-Indian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional plans."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "bishop_pair"
+      ],
+      "reason": "White fianchettoes and keeps the bishops."
+    }
+  }
+}

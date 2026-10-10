@@ -1,0 +1,114 @@
+{
+  "slug": "kings-indian-attack-double-fianchetto",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Double Fianchetto",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3 g6",
+    "fen": "rnbqkbnr/ppp1pp1p/6p1/3p4/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-indian-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays the King's Indian Attack set-up (Nf3, g3, Bg2, O-O, d3, Nbd2, e4) against Black's own fianchetto with ...g6. With both sides having kingside bishops on the long diagonals, the game is slow and manoeuvring, and White can choose between a central break e4 and a queenside c4. The play often reaches Reversed King's Indian or Réti structures.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto the king's bishop and castle"
+    },
+    {
+      "idea": "Play d3, Nbd2 and e4 or switch to c4 with a Réti structure"
+    },
+    {
+      "idea": "Expand with e4-e5 or queenside play depending on Black's set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror the fianchetto with ...Bg7 and ...Nf6"
+    },
+    {
+      "idea": "Challenge the centre with ...c5 or ...e5"
+    },
+    {
+      "idea": "Develop calmly and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Double fianchetto with symmetrical pawns"
+    },
+    {
+      "structure": "Reversed King's Indian after ...d6 and ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with little early tension; difficult to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "Sound; common solid set-up."
+    },
+    "structure": {
+      "notes": "The centre is open to either e4 or c4 plans and remains flexible for many moves."
+    },
+    "approach": {
+      "notes": "The KIA is the textbook system: White plays the same set-up against nearly anything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the double-fianchetto symmetry needs understanding to unbalance it."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Kingside expansion",
+    "Flexible centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Slow, compact symmetrical development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "No known weakness."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "Matches the anchor structure for the Reti and KIA."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.85,
+      "reason": "The same set-up can be played against almost anything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Clear plans, but symmetry makes it harder to find a plan."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides place bishops on the long diagonals."
+    }
+  }
+}

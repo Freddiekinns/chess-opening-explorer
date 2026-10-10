@@ -1,0 +1,105 @@
+{
+  "slug": "caro-kann-defense-ulysses-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Ulysses Gambit",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. Nf3 dxe4 4. Ng5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/6N1/3Pp3/8/PPP2PPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.e4 c6 2.d4 d5 3.Nf3 dxe4 4.Ng5 White offers the e4 pawn for a lead in development and an attack on f7 and the kingside. Black can hold the extra pawn with ...Bf5, ...Nf6 or ...h6, and a well-timed ...e6 or ...h6 leaves White with little. The line is a rare trappy gambit that strong players avoid.",
+  "white_ideas": [
+    {
+      "idea": "Pressure e4 and f7 with the Ng5, then regain the pawn with Nxe4 or Bc4/Qe2"
+    },
+    {
+      "idea": "Use quick development and the open e-file to attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...Bf5, ...Nf6 and ...h6, kick the knight out with ...h6"
+    },
+    {
+      "idea": "Develop calmly and return the pawn at the right moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre d4 against Black e4 pawn and c6, open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A speculative gambit with early tactics on f7; sharp for both sides. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "4.Ng5 leaves White a pawn down; Black can keep it with ...Bf5 or ...Nf6."
+    },
+    "soundness": {
+      "notes": "Considered unsound; Black can keep the pawn with accurate play."
+    },
+    "structure": {
+      "notes": "The e-file opens and pieces are active: Open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players; a surprise."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious lines are never Beginner; both sides need to be careful. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A gambit with early tactical threats on f7."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the e4 pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Black keeps the pawn with accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Central pawns come off and the pieces use open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Short lines but tactical; Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for development and pressure on f7."
+    }
+  }
+}

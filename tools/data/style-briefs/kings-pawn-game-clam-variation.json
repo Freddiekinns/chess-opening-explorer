@@ -1,0 +1,105 @@
+{
+  "slug": "kings-pawn-game-clam-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Clam Variation, King's Gambit Reversed",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d3 f5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/3P4/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "kings-pawn-game-leonardis-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 e5 2.d3 Black grabs space with 2...f5, a King's-Gambit-style reversal of White's quiet d3 set-up. White usually answers 3.Nf3 or 3.exf5, and the game is a slow open game in which Black's kingside is slightly loosened by ...f5. The name is confusing: the data also shows the Radisch Gambit (2...Nf6 3.f4), which is White's reversed King's Gambit. Evidence on how this is actually played is thin.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nf3 and Nc3 and keep a solid centre, using d3 as a support for e4"
+    },
+    {
+      "idea": "Take on f5 or hit the kingside weaknesses in the e8-h5 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take space with ...f5 and develop ...Nf6, ...d5, ...Bd6"
+    },
+    {
+      "idea": "Exploit the passive d3 by controlling the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on e5/f5 against White pawns on d3/e4, a reversed Philidor-style set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, flexible game without forcing lines, but Black's kingside is loosened. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main continuation; exf5 lines are not forced."
+    },
+    "soundness": {
+      "notes": "Probably sound but a little passive for White."
+    },
+    "structure": {
+      "notes": "Centre pawns in tension on e4/e5/f5 and d3; Flexible."
+    },
+    "approach": {
+      "notes": "A rare sideline that strong players seldom choose."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a theory line; Intermediate."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Radisch Gambit",
+      "moves": "2.d3 Nf6 3.f4 Bc5",
+      "how": "White plays a reversed King's Gambit and sacrifices a pawn after 3...exf4; a different, more tactical game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Quiet development without forcing play; thin evidence."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "No gambit in the 3.Nf3 line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Nothing here is obviously unsound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The central pawns are in tension without being locked."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Unclear theory but nothing hard to play."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan from the table clearly applies."
+    }
+  }
+}

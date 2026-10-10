@@ -1,0 +1,106 @@
+{
+  "slug": "polish-opening-bugayev-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Bugayev Attack",
+    "eco": "A00",
+    "moves": "1. b4 e5 2. a3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/1P6/P7/2PPPPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White supports the b4 pawn with 2.a3 instead of the immediate 2.Bb2, avoiding the 2...Bxb4 trade. Black usually takes the centre with 2...d5 or 2...Nf6 and White follows with Bb2 and e3 or c4, playing for queenside space and the long diagonal. The play is slow and flank-based, without early tactics. White gives Black the centre and hopes to undermine it later.",
+  "white_ideas": [
+    { "idea": "Develop Bb2, e3, Nf3 and hit e5 along the long diagonal" },
+    { "idea": "Gain queenside space with b4 and a3, later c4 or c4-c5 to cramp Black" },
+    { "idea": "Keep the position closed enough to avoid a quick Black attack on the centre" }
+  ],
+  "black_ideas": [
+    { "idea": "Occupy the centre with ...e5, ...d5 and ...Nf6" },
+    { "idea": "Hit b4 with ...a5 or ...c6 and ...a5 to prove it overextended" },
+    { "idea": "Develop quickly and meet Bb2 with ...Bd6, ...f6 or ...Nf6" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on a3, b4, c3/c4 with a fianchettoed bishop; Black holds e5/d5 centre" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No early forcing play and nothing to defend quickly; the game is positional and unbalanced in pawn structure. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "2.a3 specifically avoids giving the b-pawn, so no gambit."
+    },
+    "soundness": {
+      "notes": "Sound; a slow flank set-up that gives Black no problems but is not refuted."
+    },
+    "structure": {
+      "notes": "White's centre is undeveloped and Black may occupy it; flank play. Flexible."
+    },
+    "approach": {
+      "notes": "Polish ideas are used by strong players as a surprise now and then, but 2.a3 is a rare side line of an irregular opening. Offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines; the plans are the hard part. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "queenside space with b4",
+    "long diagonal fianchetto",
+    "avoid theory"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...d5 3.Bb2",
+      "moves": "1. b4 e5 2. a3 d5 3. Bb2",
+      "how": "Black takes the centre; White continues with Nf3, e3 and c4."
+    },
+    {
+      "name": "2...Bxb4?",
+      "moves": "1. b4 e5 2. a3 Bxb4 3. axb4 Nf6",
+      "how": "Not recommended for Black; the pawn grab gives White open lines on the a-file."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Slow flank play without early tactics, but not especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "2.a3 protects the pawn so no material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Not refuted; Black has no easy way to punish the slow set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "A flank opening where the centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "A rare side line of an irregular opening, chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Little theory, but the plans are subtle."
+    },
+    "plans": {
+      "value": ["fianchetto", "queenside_expansion", "space_advantage"],
+      "reason": "Bb2 plus b4/a3 expansion is the point of the line."
+    }
+  }
+}

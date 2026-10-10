@@ -1,0 +1,101 @@
+{
+  "slug": "petrovs-defense-french-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: French Attack",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d3",
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/4n3/3P1N2/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White hits the e4 knight with 5.d3 instead of the main 5.d4. Black retreats 5...Nf6 and White continues with 6.d4 d5, reaching a symmetrical Petrov position, or plays Be2 and O-O with a slower set-up. Both sides develop quietly and the structure stays symmetrical with an open e-file; the game is steady and rarely tactical early. White hopes for a small initiative, Black for easy equality.",
+  "white_ideas": [
+    { "idea": "Gain a tempo on the knight and go 6.d4 d5 with a safe symmetrical position" },
+    { "idea": "Develop Be2, O-O, Nc3 and use the open e-file" },
+    { "idea": "Keep options of Bg5 or Nbd2 to avoid the main-line symmetry" }
+  ],
+  "black_ideas": [
+    { "idea": "Retreat ...Nf6 and play ...d5 for a symmetrical structure" },
+    { "idea": "Develop ...Be7, ...O-O and ...Nc6 with no weaknesses" },
+    { "idea": "Challenge e4 or d4 pawns only if White errs" }
+  ],
+  "typical_structures": [
+    { "structure": "Symmetrical pawns on a-b-c-d-f-g-h with the e-file open" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Symmetrical, steady and hard for White to crack. Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "Symmetrical exchange structure with an open e-file; Semi-open per taxonomy."
+    },
+    "approach": {
+      "notes": "A respectable variation within the Petrov; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy to play but little to learn; Intermediate. Could be Beginner for a quiet repertoire, but Black's plans take some judgement."
+    }
+  },
+  "plan_phrases": [
+    "symmetrical structure",
+    "open e-file",
+    "equalise and trade pieces"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5...Nf6 6.d4 d5",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d3 Nf6 6. d4 d5",
+      "how": "The main continuation, transposing to a symmetrical Petrov."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.75,
+      "reason": "Symmetrical, low-risk play where Black is very hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal, healthy Petrov line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "The taxonomy places symmetrical Petrov structures with an open e-file here."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A mainstream, if less common, White option against the Petrov."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Easy to play but requires understanding of the Petrov's early traps."
+    },
+    "plans": {
+      "value": ["symmetrical_structure"],
+      "reason": "Both sides have mirror-image pawns and play for small edges."
+    }
+  }
+}

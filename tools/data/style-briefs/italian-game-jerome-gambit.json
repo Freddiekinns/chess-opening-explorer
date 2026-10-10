@@ -1,0 +1,113 @@
+{
+  "slug": "italian-game-jerome-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Jerome Gambit",
+    "eco": "C50",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Bxf7+",
+    "fen": "r1bqk1nr/pppp1Bpp/2n5/2b1p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "italian-game-giuoco-piano",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "The Jerome Gambit plays 4.Bxf7+ Kxf7 and then 5.Nxe5+ Nxe5 6.d4 or 5.Nxe5+ Nxe5 6.Qh5+, giving up a bishop (and often a knight) for two pawns and the black king in the open. Black keeps the extra material and consolidates by returning at the right moment; the line is a club-level trap opening that strong players avoid. The attack is quick but not enough against correct play.",
+  "white_ideas": [
+    {
+      "idea": "Sacrifice the bishop on f7, follow with Nxe5+ and Qh5+ to drag the king into the open"
+    },
+    {
+      "idea": "Use d4 and the open lines to attack the exposed black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the sacrifices, keep the king safe on g8 after ...Ke6/...Kg8 and consolidate the extra piece"
+    },
+    {
+      "idea": "Trade queens and win the endgame a piece up"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White gets two pawns for a piece with an open centre; Black king exposed on f7 or e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A speculative sacrificial attack for the initiative: Sharp."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "4.Bxf7+ Kxf7 gives a bishop for a pawn, and Black can keep the extra material."
+    },
+    "soundness": {
+      "notes": "Considered unsound; Black wins with correct defence."
+    },
+    "structure": {
+      "notes": "Open lines and an exposed king: Open."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play it; offbeat."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious lines are never Beginner; both sides need to calculate. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "kingside attack",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declining the sacrifice",
+      "moves": "4.Bxf7+ Kxf7 5.Nxe5+ Nxe5 6.d4 Bd6",
+      "how": "Black returns material and consolidates with ...Bd6 and ...Nc6, killing the attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice for an attack on the king in the open."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.97,
+      "reason": "White gives a bishop (and more) for two pawns."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.9,
+      "reason": "Considered unsound against accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open centre and an exposed king."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.92,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Short and tactical; Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "The whole line is an attack on f7 and the king."
+    }
+  }
+}

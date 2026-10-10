@@ -1,0 +1,121 @@
+{
+  "slug": "rat-defense-accelerated-gurgenidze",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Accelerated Gurgenidze",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 d6 3. Nc3 c6",
+    "fen": "rnbqkbnr/pp2pp1p/2pp2p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black sets up the Gurgenidze structure with ...g6, ...d6, ...c6, ...Bg7 and ...Nf6 without ...Nf6 first, heading for ...Qb6 or ...b5 and ...Nbd7. White usually builds a centre with Be3, Qd2 and f3 or f4 and castles queenside for a kingside attack, or develops with Nf3 and Be2. Black has a solid structure but gives White space, and counterplay comes from ...b5 and ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Build a big centre with Be3, f3 or f4, Qd2 and castle queenside"
+    },
+    {
+      "idea": "Attack with h4-h5 and Bh6 against the g7 bishop"
+    },
+    {
+      "idea": "Play Nf3, Be2 and O-O for a safe space advantage"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Nf6, ...Bg7, ...Nbd7 and strike with ...e5 or ...b5"
+    },
+    {
+      "idea": "Use ...Qb6 or ...Qa5 to hit the centre and the queenside"
+    },
+    {
+      "idea": "Keep a solid structure and counterattack on the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 against Black c6/d6/g6 (Pirc-Modern type)"
+    },
+    {
+      "structure": "Austrian or 150 attack set-ups against a fianchetto bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's compact c6/d6/g6 set-up is sound and hard to break, though White gets space."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "notes": "Sound; a recognised set-up."
+    },
+    "structure": {
+      "notes": "White's centre against hypermodern pieces; tension is unresolved: flexible."
+    },
+    "approach": {
+      "notes": "The Modern is a set-up Black can play against almost anything, so I lean to system, with low confidence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and there is not too much theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g7",
+    "hypermodern centre",
+    "queenside counterplay with ...b5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Austrian-style 4.f4",
+      "moves": "1. e4 g6 2. d4 d6 3. Nc3 c6 4. f4",
+      "how": "White goes for a big centre and the f4-f5 attack; Black has to react with ...Nf6 and ...Bg7."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "A compact structure that is hard to break down, though White gets space."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A recognised set-up.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided and Black waits."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.5,
+      "reason": "Black can use the set-up against almost anything."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Clear plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Black lets White build a centre and attacks it with pieces and breaks."
+    }
+  }
+}

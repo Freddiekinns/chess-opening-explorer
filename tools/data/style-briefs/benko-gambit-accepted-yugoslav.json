@@ -1,0 +1,126 @@
+{
+  "slug": "benko-gambit-accepted-yugoslav",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Yugoslav",
+    "eco": "A59",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. e4",
+    "fen": "rn1qkb1r/4pppp/b2p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 7"
+  },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White keeps the pawn, develops with Nc3 and e4, and trades Black's light-squared bishop with Bxf1 so that Kxf1 gives up castling. Black has the a- and b-files, a fianchettoed bishop on g7 and pressure on b2 and the queenside, and is content to play for the long term. The usual run is 8.Kxf1 g6 9.Nf3 Bg7 10.h3 (or 9.g4), with White trying to consolidate the extra pawn with the king tucked away on g2.",
+  "white_ideas": [
+    {
+      "idea": "Take the bishop on f1, play Kxf1 and later Kg2 with Nf3, h3 and Re1 to consolidate the extra pawn"
+    },
+    {
+      "idea": "Hold the d5/e4 centre and push the kingside pawns (g4 in the sharper line)"
+    },
+    {
+      "idea": "Trade queens or the dark-squared bishops to blunt Black's queenside pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Put rooks on the a- and b-files and the queen on a5 against b2 and the queenside"
+    },
+    {
+      "idea": "Fianchetto with ...g6 and ...Bg7 and aim ...Nbd7-b6 and ...Nc4 ideas"
+    },
+    {
+      "idea": "Make White's king awkward on f1 and keep the long-term compensation for the pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d5 and e4 against Black's c5 and d6, with Black's a- and b-files half-open"
+    },
+    {
+      "structure": "Black fianchetto on g7, White queenside reduced to a2 and b2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Benko positions are strategic: Black has long-term pressure and White consolidates slowly, with no forcing play for the first ten moves (some tension when White plays g4). Neither solid nor sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black's b-pawn is given in 4.cxb5 and White can keep it; Black never regains it by force, he plays for pressure on the open files."
+    },
+    "soundness": {
+      "notes": "The Benko is a sound gambit, played by strong players for decades; White's extra pawn is hard to use against the open files."
+    },
+    "structure": {
+      "notes": "Asymmetric centre, d5 against c5/d6, with half-open a- and b-files for Black: semi-open, in the Sicilian style."
+    },
+    "approach": {
+      "notes": "A named variation of a main-line gambit. It is standard, not a set-up played against everything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to understand why the long-term compensation works, but the plans (rooks on the files, Bg7, queen to a5) are clear and the main line is not very long."
+    }
+  },
+  "plan_phrases": [
+    "pressure on the a- and b-files",
+    "fianchetto on g7",
+    "White consolidates the extra pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Yugoslav, 9.Nge2 line",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. e4 Bxf1 8. Kxf1 d6 9. Nge2",
+      "how": "Same structure but White keeps the knight on e2 and avoids ...Qa5 ideas against Nf3."
+    },
+    {
+      "name": "9.g4",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. e4 Bxf1 8. Kxf1 g6 9. g4",
+      "how": "More aggressive: White grabs kingside space instead of consolidating."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Long-term strategic compensation with no early forcing play, not clearly solid or sharp."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.93,
+      "reason": "Black gives the b-pawn for pressure on the open files and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "The Benko is a respected gambit with accepted compensation.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Asymmetric d5/e4 centre with half-open a- and b-files for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A named line of a mainstream gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "Plans are clear but the compensation has to be understood.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Black fianchettoes on g7 and pushes against the queenside with rooks on the open files."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "valencia-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Valencia Opening",
+    "eco": "A00",
+    "moves": "1. d3 e5 2. Nd2",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/3P4/PPPNPPPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "parent": "mieses-opening-reversed-rat",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White plays 1.d3 and 2.Nd2, a Reversed Philidor set-up that prepares e4, Ngf3 and a slow development without committing the c- and g-pawns. Black can seize the centre with ...d5 and ...Nf6, so White usually answers with e4 and Be2 or g3 to keep a flexible, slightly cramped position. There is little theory and the game is more about manoeuvring than early tactics.",
+  "white_ideas": [
+    {
+      "idea": "Prepare e4 with Nd2 and Ngf3"
+    },
+    {
+      "idea": "Develop with g3/Bg2 or Be2 and castle"
+    },
+    {
+      "idea": "Keep a compact position and wait for the centre to take shape"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Occupy the centre with ...e5, ...d5 and ...Nf6"
+    },
+    {
+      "idea": "Develop freely and aim for ...Bc5 or ...Be7"
+    },
+    {
+      "idea": "Challenge White's centre with ...f5 or ...c5 depending on White's set-up"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Philidor with White pawns on d3, e4"
+    },
+    {
+      "structure": "King's Indian Attack-like set-ups with g3 and Bg2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, manoeuvring play where neither side is under early pressure; hard to lose but also hard to play for a win."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound and playable; not a refuted opening."
+    },
+    "structure": {
+      "notes": "Centre is not decided early: tension and later pawn breaks."
+    },
+    "approach": {
+      "notes": "Strong players seldom start with 1.d3 and 2.Nd2; chosen mainly to avoid theory."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs middlegame understanding; little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "Flexible development",
+    "Reversed Philidor"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "Quiet development with a compact pawn structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Slow but not unsound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre is not committed early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely chosen by strong players over main-line openings; could be read as a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than moves, but the set-up is not trivial."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is plainly characteristic from memory."
+    }
+  }
+}

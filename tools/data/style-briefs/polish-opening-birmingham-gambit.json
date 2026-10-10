@@ -1,0 +1,120 @@
+{
+  "slug": "polish-opening-birmingham-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Birmingham Gambit",
+    "eco": "A00",
+    "moves": "1. b4 c5",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black hits the b4 pawn with 1...c5. If White takes with 2.bxc5, Black can regain with ...e6 and ...Bxc5, getting the centre while White has spent a tempo; White can also play 2.Bb2 cxb4 or 2.b5. It is sound for Black and not really a gambit. I am not sure of the main branch.",
+  "white_ideas": [
+    {
+      "idea": "Take on c5, then Bb2 and develop with a pawn up temporarily"
+    },
+    {
+      "idea": "Fianchetto with Bb2 and play for the long diagonal"
+    },
+    {
+      "idea": "Play 2.b5 or Bb2 and keep a flank set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the c5 pawn with ...e6 and ...Bxc5, getting a good centre"
+    },
+    {
+      "idea": "Capture ...cxb4 and develop quickly"
+    },
+    {
+      "idea": "Play ...Qa5 or ...Nf6 to hit the b-pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White flank set-up with a pawn on b4 or b5 against a Black centre"
+    },
+    {
+      "structure": "Black c-pawn exchanged and Black has d- and e-pawns in the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank play with unbalanced pawns but no early forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White takes on c5 and Black normally regains with ...Bxc5 at once, so no material is lost by force. I tag it none."
+    },
+    "soundness": {
+      "notes": "Sound; gives Black no problems and White no edge."
+    },
+    "structure": {
+      "notes": "Neither side has a fixed centre; flexible."
+    },
+    "approach": {
+      "notes": "The Polish is a surprise weapon used rarely by strong players; offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are flank-oriented and not very difficult."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside space"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2.Bb2",
+      "moves": "1. b4 c5 2. Bb2 cxb4",
+      "how": "White offers the b-pawn instead of taking on c5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play with unbalanced pawns but no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "The pawn on c5 comes back easily after ...e6 and ...Bxc5."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.8,
+      "reason": "No problems for either side.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "No fixed centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The Polish is a surprise weapon for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Flank play with clear plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White fianchettoes on b2 and plays on the queenside."
+    }
+  }
+}

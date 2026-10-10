@@ -1,0 +1,115 @@
+{
+  "slug": "queens-gambit-accepted-alekhine-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Alekhine Defense",
+    "eco": "D22",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 a6",
+    "fen": "rnbqkbnr/1pp1pppp/p7/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.c4 dxc4 3.Nf3 Black plays 3...a6, a flexible waiting move that prepares ...b5 to hold the c4 pawn and often keeps ...Nf6 or ...c5 in reserve. White usually plays 4.e3 e6 5.Bxc4 c5, regaining the pawn with a normal QGA position, or 4.a4 or 4.e4. The game leads to open central play with Black using ...c5 and ...Nc6 against an isolated or hanging pawn White centre.",
+  "white_ideas": [
+    {
+      "idea": "Regain the c4 pawn with e3 and Bxc4, then castle and play Qe2 and Rd1"
+    },
+    {
+      "idea": "Use a4 or e4 to prevent ...b5 and take a central space advantage"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...a6 and ...b5 to keep the pawn if possible, else regain central equality with ...c5 and ...Nc6"
+    },
+    {
+      "idea": "Develop the bishop to b7 and trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Standard QGA with c4 pawn captured; White often gets an IQP or hanging pawn after ...c5 and dxc5 or Nc3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet queenside-opening line with little forcing play; neither side is at risk. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn comes back by force in most lines."
+    },
+    "soundness": {
+      "notes": "Sound; the Alekhine move 3...a6 is a respectable if less common choice."
+    },
+    "structure": {
+      "notes": "QGA-type open centre once White takes with a pawn on c5/d4."
+    },
+    "approach": {
+      "notes": "3...a6 is played by strong players now and then as an alternative to 3...Nf6; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little to memorise; the plans are clear once White has regained c4. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "regain c4 pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Haberditz Variation",
+      "moves": "4.e3 b5",
+      "how": "Black keeps the pawn with ...b5, leading to messier complications after 5.a4 c6 or 5.Qe2."
+    },
+    {
+      "name": "Borisenko-Furman Variation",
+      "moves": "4.e4",
+      "how": "White takes a space-gaining centre immediately, more aggressive."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "A QGA-type position with trades and no sharp tactics or very hard-to-break structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn on c4 comes back, a QGA."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound for both sides."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The QGA structure is open, like its anchor."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A less common but respectable branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans are straightforward; little long theory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Black can aim at ...b5 and queenside space."
+    }
+  }
+}

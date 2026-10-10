@@ -1,0 +1,112 @@
+{
+  "slug": "benko-gambit-accepted-king-walk-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: King Walk Variation",
+    "eco": "A59",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. Nf3 d6 8. e4 Bxf1 9. Kxf1 Bg7 10. g3 O-O 11. Kg2",
+    "fen": "rn1q1rk1/4ppbp/3p1np1/2pP4/4P3/2N2NP1/PP3PKP/R1BQ3R b - - 2 11"
+  },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the fully accepted Benko, White plays g3, trades the f1 bishop for Black's a6 bishop with Bxf1 Kxf1 and walks the king to g2. Black has given a pawn for pressure on the a- and b-files and the long diagonal with ...Bg7. White sits solid with a pawn up and tries to keep Black's rooks out, while Black builds with ...Qa5/Qb6, ...Nbd7, ...Nb6 and ...Rfb8.",
+  "white_ideas": [
+    {
+      "idea": "Walk the king to g2, develop Nf3 and Re1, and keep the extra pawn safe"
+    },
+    {
+      "idea": "Add Nd2-c4 or Qc2 to block Black's queenside pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Put rooks on the a- and b-files and queen on a5 or b6, aiming at the weak queenside"
+    },
+    {
+      "idea": "Use the Bg7 and ...Nb6/...Nbd7 to trade the white pieces and regain the pawn in the endgame if possible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d5/e4 against Black pawns on c5/d6 with open a- and b-files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The king walk leads to quiet, manoeuvring play where Black has long-term compensation rather than immediate tactics: Balanced, though unbalanced in material."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gave the b-pawn on move 4 and White can try to keep it; compensation is long-term."
+    },
+    "soundness": {
+      "notes": "Sound; the Benko is a respected, reliable gambit at all levels."
+    },
+    "structure": {
+      "notes": "White's asymmetrical centre against open a- and b-files for Black: Semi-open."
+    },
+    "approach": {
+      "notes": "Played by strong players, a well-known gambit and a standard choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation is positional and slow, which takes understanding to play well; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "half-open a- and b-files",
+    "long diagonal",
+    "queenside pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Fianchetto with Nf3",
+      "moves": "9.g3 Bg7 10.Kg2 O-O 11.Nf3 Nbd7",
+      "how": "The main game transposition; the move order in this root gets the same set-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet manoeuvring phase after the bishop trade; unbalanced material but no forced sequences."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black has sacrificed the b-pawn for long-term pressure."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Benko is regarded as a sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Asymmetrical centre with the a- and b-files opened for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream gambit played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Compensation takes understanding more than memory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "Black pushes on the queenside files with a fianchettoed bishop on g7."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "nimzo-larsen-attack-dutch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Dutch Variation",
+    "eco": "A01",
+    "moves": "1. b3 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "nimzo-larsen-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White opens 1.b3 and Black meets it with the Dutch-style 1...f5. White continues 2.Bb2 Nf6 3.e3 (often followed by Nf3, Be2 or Bb5-style ideas) and aims the b2-bishop at e5 and g7. The game is a flexible hypermodern fight where White controls e5 and Black builds a Stonewall or Dutch-like formation.",
+  "white_ideas": [
+    {
+      "idea": "Play Bb2, e3, Nf3 and keep the e5 square under control"
+    },
+    {
+      "idea": "Use the bishop on b2 against Black's kingside and prepare f4 or c4 depending on the set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build a Dutch/Stonewall with ...e6, ...Nf6, ...d5 and ...Bd6"
+    },
+    {
+      "idea": "Aim for ...e5 or kingside play with ...f4 once the bishops are placed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch pawn on f5 against a White pawn set-up on b3/e3 with a fianchettoed bishop on b2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow development battle with low theory and no forcing lines; neither solid nor sharp: Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Perfectly sound for both sides."
+    },
+    "structure": {
+      "notes": "Pawn structure stays flexible, with e5 contested by pieces; Flexible."
+    },
+    "approach": {
+      "notes": "White plays the same b3/Bb2/e3/Nf3 pieces against almost every defence, which is System-like; the parent is a surprise weapon for super-GMs."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines; plans are clear but the Dutch structure takes understanding. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "long diagonal",
+    "control of e5",
+    "flexible set-up"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "A slow flank opening against a Dutch with neither forcing play nor a rock-solid structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal, safe set-up for both."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "A flank opening with the centre undecided."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.5,
+      "reason": "White's b3/Bb2/e3/Nf3 set-up is played against almost anything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are simple but the middlegame needs judgement."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Bb2 on the long diagonal and control of the centre from the flank."
+    }
+  }
+}

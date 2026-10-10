@@ -1,0 +1,120 @@
+{
+  "slug": "bogo-indian-defense-retreat-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Retreat Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Be7",
+    "fen": "rnbqk2r/ppppbppp/4pn2/8/2PP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 4 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "Black retreats the bishop to e7 after 4.Bd2, giving a solid Queen's Gambit-style position with the bishop already out. White usually plays 5.g3 with Bg2 and O-O, or e3 and Bc3-style set-ups, while Black plays ...d5, castles and prepares ...c6 or ...dxc4. The game is steady and manoeuvring, with a Catalan-like feel.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2, then castle"
+    },
+    {
+      "idea": "Keep a slight space edge with Qc2, Bc3 or Nc3"
+    },
+    {
+      "idea": "Press on the c-file and the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Set up a solid centre with ...d5, ...O-O and ...c6"
+    },
+    {
+      "idea": "Challenge with ...dxc4 and ...b5 or ...c5 at the right moment"
+    },
+    {
+      "idea": "Reach a safe, equal Queen's Gambit-style structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit Declined structure with c4/d4 against c6/d5/e6"
+    },
+    {
+      "structure": "Semi-open c-file after exchanges on c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid, low-risk set-up for Black with few ways to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Sound and respectable for both sides."
+    },
+    "structure": {
+      "notes": "Tension in the c4/d4 v d5/e6 centre; a QGD-style structure, so flexible."
+    },
+    "approach": {
+      "notes": "A mainstream defence, played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the subtle positional play against a fianchetto takes practice."
+    }
+  },
+  "plan_phrases": [
+    "solid centre",
+    "fianchetto on g2",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.g3 d5 line",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Be7 5. g3 d5 6. Bg2",
+      "how": "The main line, a Catalan-style set-up with Bg2 against Black's QGD shell."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "Black gets a compact, safe QGD-style position."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A standard respectable line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre in tension with c4/d4 against d5/e6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played regularly by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Clear plans, modest theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White's g2 bishop on the long diagonal."
+    }
+  }
+}

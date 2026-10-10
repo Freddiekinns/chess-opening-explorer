@@ -1,0 +1,105 @@
+{
+  "slug": "sicilian-defense-godiva-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Godiva Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Qb6",
+    "fen": "r1b1kbnr/pp1ppppp/1qn5/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "In the Open Sicilian Black plays 4...Qb6 attacking the knight on d4 and b2. White commonly responds 5.Nb3 or 5.Ndb5 and Black has to be careful with his queen. The play is uneven: White develops quickly, Black has early queen activity and a Sicilian pawn structure.",
+  "white_ideas": [
+    {
+      "idea": "Retreat with Nb3 or jump to b5 and develop with Nc3"
+    },
+    {
+      "idea": "Use the tempo from the queen's outing to build the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure d4 and b2 with the queen"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...e6 and aim for the usual Sicilian counterplay"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian half-open c-file against a White e4 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen sortie in a sharp Sicilian."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Probably sound but gives White an easy lead."
+    },
+    "structure": {
+      "notes": "Semi-open: the c-file is open for Black as in all Sicilians."
+    },
+    "approach": {
+      "notes": "A rare Sicilian line but played at all levels."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Move-order and queen safety."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen activity and sharp Sicilian lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Black is not worse by force."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.85,
+      "reason": "Sicilians are semi-open by the taxonomy."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Rare but not shunned by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Queen safety and move order."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Early queen and a development race."
+    }
+  }
+}

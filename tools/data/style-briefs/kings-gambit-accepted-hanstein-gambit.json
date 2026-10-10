@@ -1,0 +1,113 @@
+{
+  "slug": "kings-gambit-accepted-hanstein-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Hanstein Gambit",
+    "eco": "C38",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 Bg7 5. O-O",
+    "fen": "rnbqk1nr/pppp1pbp/8/6p1/2B1Pp2/5N2/PPPP2PP/RNBQ1RK1 b kq - 3 5"
+  },
+  "parent": "kings-gambit-accepted-traditional-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Bc4 King's Gambit Accepted White castles on move five instead of pushing a pawn, offering to give up more material than usual: 4.Bc4 Bg7 5.O-O h6 6.d4 d6 followed by c3, and the f4 pawn is not recaptured for a long time. White sits a pawn down with a lead in development and open lines, aiming at f7 and the kingside. Black needs to find accurate, sometimes risky, defensive moves.",
+  "white_ideas": [
+    {
+      "idea": "Castle early and play d4, c3 and Qb3 to pressure f7 and the centre"
+    },
+    {
+      "idea": "Use the open f-file and quick development to compensate for the lost pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...h6 and ...d6, ...Nc6 and ...Be6, trading White's attacking bishop"
+    },
+    {
+      "idea": "Return the pawn at the right moment to neutralise the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn on g5/f4 chain against White's e4/d4 centre, open f-file and diagonals"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gambits a pawn with castling to boot; mutual risk and attacks, so Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave the f-pawn on move two and does not recapture it in the main line."
+    },
+    "soundness": {
+      "notes": "Playable and sound for White, though Black has several safe-looking answers; not refuted."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces on the f-file and the diagonals."
+    },
+    "approach": {
+      "notes": "A standard (if rare) sideline of the King's Gambit, which strong players have tried now and then."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing King's Gambit lines need to be known; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7",
+    "f-file pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Hanstein with 5.d4",
+      "moves": "5.d4 d6 6.c3",
+      "how": "Skips castling and keeps more central tension, a slightly different and quieter treatment."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "King's Gambit with an early castle and open lines; both kings take risks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.92,
+      "reason": "White gives the f-pawn for initiative."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "White's compensation is real and the line is not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Open f-file and diagonals from the start."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Rare but played by strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "King's Gambit theory is sharp and needs to be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7",
+        "kingside_attack"
+      ],
+      "reason": "White develops fast and aims at f7 and the king."
+    }
+  }
+}

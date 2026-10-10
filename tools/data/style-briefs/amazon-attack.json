@@ -1,0 +1,46 @@
+{
+  "slug": "amazon-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Amazon Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. Qd3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "White brings the queen out to d3 on move two, an odd move that blocks the d-pawn and the c1 bishop's path to nothing in particular. It aims for Nc3 and e4 or a London-like build with the queen on d3. The main sideline is 2...Nc6 3.Nc3 (Siberian Attack). Black usually develops freely and is comfortable.",
+  "white_ideas": [
+    { "idea": "Develop the knights and play e4 with the queen well placed on d3" },
+    { "idea": "Provoke a surprise and avoid mainstream theory" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Nf6, ...Nc6 and ...e5 and take the centre" },
+    { "idea": "Exploit White's slow, queen-first development" }
+  ],
+  "typical_structures": [
+    { "structure": "d4/d5 with the white queen on d3 in front of the d-pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unforced and rather slow; no clear forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Not refuted but strong players think the queen is misplaced." },
+    "structure": { "notes": "Centre pawns facing each other, undecided." },
+    "approach": { "notes": "Played almost never at strong level, a surprise." },
+    "level": { "reason": "understanding", "notes": "Not a first repertoire choice since Black can easily gain the better game." }
+  },
+  "plan_phrases": ["early queen"],
+  "sublines_that_differ": [
+    { "name": "Siberian Attack", "moves": "2...Nc6 3.Nc3", "how": "Black develops the knight and White continues with the plan of e4." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Slow, unforced play with no clear risk either way." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.5, "reason": "The early queen on d3 is considered inferior but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The d-pawns face each other and the centre is undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players practically never play 2.Qd3." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "A dubious line, so never Beginner." },
+    "plans": { "value": ["early_queen"], "reason": "The queen comes out on move two." }
+  }
+}

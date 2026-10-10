@@ -1,0 +1,46 @@
+{
+  "slug": "queens-pawn-game-barry-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Barry Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. Nc3 Nf6 3. Nf3 g6 4. Bf4",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/3P1B2/2N2N2/PPP1PPPP/R2QKB1R b KQkq - 1 4"
+  },
+  "parent": "queens-pawn-game-chigorin-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White develops Nc3, Nf3 and Bf4 against Black's ...g6 and ...d5 set-up, a London-like build-up that avoids main-line Grünfeld and King's Indian theory. The usual plan is e3, Be2, h3 and 0-0 with pressure on d5 and e5, while Black replies with ...Bg7, ...O-O and ...c5 or ...Nc6. The Tarzan Attack with Qd2 and Bh6 is a sharper side branch.",
+  "white_ideas": [
+    { "idea": "Develop Nf3, Nc3, Bf4, e3 and Be2 without committing the c-pawn" },
+    { "idea": "Trade Black's fianchettoed bishop with Qd2 and Bh6 in the Tarzan Attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...Bg7 and castle, then strike with ...c5 or ...Nc6 and ...e5 ideas" },
+    { "idea": "Pressure d4 and use the queenside majority to equalise" }
+  ],
+  "typical_structures": [
+    { "structure": "d4/e3 against d5/g6 fianchetto, London-like with the bishop on f4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Main line is a steady development; only the Tarzan Attack brings forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "A respectable set-up, if lacking sting." },
+    "structure": { "notes": "Tension between d4 and d5 with undecided centre, like the London." },
+    "approach": { "notes": "A development scheme White uses against ...g6/...d5 set-ups, with plans mattering more than move order." },
+    "level": { "reason": "understanding", "notes": "Few forcing lines, but it is a less standard set-up than the London." }
+  },
+  "plan_phrases": ["London-style development", "pressure on the e5 square"],
+  "sublines_that_differ": [
+    { "name": "Tarzan Attack", "moves": "4...Bg7 5.Qd2", "how": "White aims for Bh6 and a kingside attack; sharper than the main line." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Development-led play without forcing lines, though Black has active counterplay." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A respectable set-up." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The d4/d5 centre stays in tension, as in the London." },
+    "approach": { "value": "system", "confidence": 0.5, "reason": "A set-up played against ...g6 and ...d5 where plans matter more than move order." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Easy to learn but Black's active replies need judgement." },
+    "plans": { "value": [], "reason": "No plan from the table characterises the main line clearly." }
+  }
+}

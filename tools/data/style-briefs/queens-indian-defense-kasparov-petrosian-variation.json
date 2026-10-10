@@ -1,0 +1,46 @@
+{
+  "slug": "queens-indian-defense-kasparov-petrosian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Kasparov-Petrosian Variation",
+    "eco": "E12",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. a3 Bb7 5. Nc3",
+    "fen": "rn1qkb1r/pbpp1ppp/1p2pn2/8/2PP4/P1N2N2/1P2PPPP/R1BQKB1R b KQkq - 2 5"
+  },
+  "parent": "queens-indian-defense-petrosian-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White spends a tempo on a3 to stop ...Bb4 and prepares e4 or a quiet build-up, while Black fights for e4 with ...Bb7 and the ...d5 or ...Be7 set-ups. The main line 5...d5 6.cxd5 Nxd5 7.Qc2 or 6.Bg5 leads to a QGD-like centre with tension on d4/d5. Play is manoeuvring, with both sides keeping options open until a central break.",
+  "white_ideas": [
+    { "idea": "Claim central space with e4 after preparing it with Qc2 or Bg5" },
+    { "idea": "Keep the position flexible and pose a slow positional problem" }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with Bb7 and Nf6, then challenge the centre with ...d5 or ...c5" },
+    { "idea": "Reach a QGD-style set-up with the bishop on b7 outside the pawn chain" }
+  ],
+  "typical_structures": [
+    { "structure": "QGD-type centre with White pawns on c4/d4 and Black on d5/e6, tension unresolved" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Manoeuvring play with few forced lines; the Queen's Indian is hard to break down but not purely passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A respectable main-line system for both sides." },
+    "structure": { "notes": "The d4/d5 and c4 tension stays in the air for many moves, as in the QGD." },
+    "approach": { "notes": "A normal choice against the Queen's Indian, not a set-up played against everything." },
+    "level": { "reason": "understanding", "notes": "Needs feel for piece placement and timing of breaks, but little long forcing theory." }
+  },
+  "plan_phrases": ["fianchetto on the long diagonal", "control of e4", "flexible queenside set-up"],
+  "sublines_that_differ": [
+    { "name": "Marco Defense", "moves": "5...Be7", "how": "Black delays ...d5 and keeps more flexibility." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Manoeuvring play with tension in the centre, neither forcing nor especially hard to break." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream system for both sides." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The centre stays in tension in the QGD manner." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal main-line choice, not a universal set-up." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Plans are positional and need judgement but there is little forcing theory." },
+    "plans": { "value": ["fianchetto"], "reason": "Black's Bb7 on the long diagonal is the defining piece." }
+  }
+}

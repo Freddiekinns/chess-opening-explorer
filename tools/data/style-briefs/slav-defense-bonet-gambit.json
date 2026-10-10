@@ -1,0 +1,113 @@
+{
+  "slug": "slav-defense-bonet-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Bonet Gambit",
+    "eco": "D11",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Bg5",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R b KQkq - 3 4"
+  },
+  "parent": "slav-defense-modern-line",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 4.Bg5 in the Slav, White develops the bishop to pin or pressure f6 and is ready to meet 4...dxc4 with e4, offering a central pawn for development, hence the 'gambit' label. I only half remember the details of the Bonet Gambit. Black can usually take the c4 pawn and hold it, while White hopes for an open centre and quick play; I would expect Black to equalise.",
+  "white_ideas": [
+    {
+      "idea": "Pin or trade the f6 knight with Bg5"
+    },
+    {
+      "idea": "Meet ...dxc4 with e4 for a big centre and quick development"
+    },
+    {
+      "idea": "Regain the c4 pawn later by Nbd2 or e4-e5 pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on c4 and support it with ...b5"
+    },
+    {
+      "idea": "Challenge the Bg5 with ...Ne4 or ...Qb6"
+    },
+    {
+      "idea": "Complete development with ...e6/...Bb7 and neutralise the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4/e4 against Black pawns on c6/b5"
+    },
+    {
+      "structure": "Slav queenside with an extra pawn that White tries to regain"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unclear from memory; the gambit tag implies concrete, open play with White seeking development for a pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Name and plan suggest White gives the c4 pawn for the e4 centre, which Black can keep."
+    },
+    "soundness": {
+      "notes": "I believe Black can safely hold the pawn and the line is regarded as not fully sound for White; low confidence."
+    },
+    "structure": {
+      "notes": "White builds a d4/e4 centre against the Slav pawns, opening the position."
+    },
+    "approach": {
+      "notes": "A rarely played sideline; strong players choose the main Slav lines instead."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious sidelines are never Beginner; the ideas are straightforward but need care."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Big centre with e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A gambit of the c-pawn that opens the centre quickly."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "The name and the e4 idea point to a white pawn sacrifice that can be kept."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Rare sideline, probably unable to prove compensation against correct play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "White opens the centre with e4 and d4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players against the Slav."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A dubious gambit cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development rather than long-term structure."
+    }
+  }
+}

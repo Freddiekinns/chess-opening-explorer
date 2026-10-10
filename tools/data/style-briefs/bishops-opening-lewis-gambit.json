@@ -1,0 +1,114 @@
+{
+  "slug": "bishops-opening-lewis-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Lewis Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. d4",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/2BPP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "bishops-opening-boi-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 2.Bc4 Bc5 White plays 3.d4, offering the d-pawn for a strong centre and development, with Nf3 and often c3 to follow. Black can take the pawn with ...exd4 or ...Bxd4 and then White has quick development and pressure on f7 in an open position. I recall it as a rare gambit that offers White fun play rather than a full advantage.",
+  "white_ideas": [
+    {
+      "idea": "Offer d4 for development and a big centre"
+    },
+    {
+      "idea": "Develop Nf3, O-O and c3 and attack f7 with Bc4"
+    },
+    {
+      "idea": "Open lines against the black king with Qh5 or Ng5 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on d4 and return the pawn to neutralise the attack"
+    },
+    {
+      "idea": "Develop Nf6 and castle, avoiding f7 tricks"
+    },
+    {
+      "idea": "Hit the centre with ...d5 or ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...exd4 with White fast development"
+    },
+    {
+      "structure": "Italian-style pressure on f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical, with White giving a pawn for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers d4 for quick development; Black can take it."
+    },
+    "soundness": {
+      "notes": "Rarely played by strong players because Black can equalise; dubious with low confidence."
+    },
+    "structure": {
+      "notes": "Pawns come off the centre early and lines open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious gambit is not Beginner; the ideas are straightforward."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Open gambit play with attack on f7."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White offers the d4 pawn for activity."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can equalise with accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns exchange early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Quick development aimed at f7."
+    }
+  }
+}

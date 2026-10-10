@@ -1,0 +1,99 @@
+{
+  "slug": "kings-pawn-game-tortoise-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Tortoise Opening",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Bd3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/3B4/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays 2.Bd3, a modest development that blocks the d-pawn and does nothing about e5. Black has easy equality with 2...Nf6 or 2...d5 and a free central game. White usually follows with Nf3, c3 or Ne2 and a slow build-up; there is no attack and no theory to speak of.",
+  "white_ideas": [
+    {
+      "idea": "Develop the bishop to d3 and keep a compact set-up with Nf3, c3, O-O"
+    },
+    {
+      "idea": "Hold e4 and wait for Black to commit"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5 or ...Nf6 and develop freely"
+    },
+    {
+      "idea": "Use the blocked d-pawn: White cannot easily play d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-pawn game where White has a passive bishop on d3 and a delayed d2-d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, nothing forcing for either side; Black can equalise by simple development."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable but passive; Black can take the initiative with ...d5 or ...Nf6, so it is mildly inferior rather than dubious."
+    },
+    "structure": {
+      "notes": "Tension in the e4/e5 centre with the d-pawn held back by Bd3; undecided, so flexible."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose 2.Bd3; it is a pure oddity."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No theory and clear ideas, but it asks nothing of the player and gains nothing, so not a first-repertoire pick."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet development with no forcing lines, but not especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Passive but not losing; Black has no refutation to force."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The e-pawns face each other and White has not yet decided on d4 or d3."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Hardly ever chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Easy to play but not a recommended choice, so not beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan is characteristic."
+    }
+  }
+}

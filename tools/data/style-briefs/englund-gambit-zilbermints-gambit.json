@@ -1,0 +1,114 @@
+{
+  "slug": "englund-gambit-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Zilbermints Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Nge7",
+    "fen": "r1bqkb1r/ppppnppp/2n5/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "Black sacrifices the e-pawn with 1...e5 and, after 2.dxe5 Nc6 3.Nf3, plays 3...Nge7 instead of the usual ...Qe7, planning ...Ng6 to regain e5 and finish development. White keeps the extra pawn and can build a solid position with accurate moves such as Bf4, e3 or g3. It is a surprise weapon that engines judge unsound.",
+  "white_ideas": [
+    {
+      "idea": "Hold the extra pawn on e5 with Nbd2, g3 or Bf4"
+    },
+    {
+      "idea": "Develop calmly and avoid early tricks such as ...Qe7 ideas"
+    },
+    {
+      "idea": "Trade pieces to cash in the material"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...Ng6 or ...Bc5"
+    },
+    {
+      "idea": "Develop quickly and try to create threats against the white king"
+    },
+    {
+      "idea": "Look for traps with ...Qe7 and ...Bb4 pins"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after dxe5, White with an extra pawn on e5"
+    },
+    {
+      "structure": "Black knights on c6 and g6 hitting e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with trappy development and uncertain pawn recovery, but there are few forced lines; play is open and double-edged for Black only."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the e5 pawn with simple development and Black must prove compensation."
+    },
+    "soundness": {
+      "notes": "Like the parent Englund, the gambit is unsound against correct play; White can keep the pawn."
+    },
+    "structure": {
+      "notes": "The d-pawn is traded early and the e-pawn captured, leaving an open centre."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play the Englund family."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious gambit with traps; never a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Regain e5 with ...Ng6",
+    "Traps"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Gambit lines with traps where Black takes risks to catch up in development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black sacrifices a pawn for quick development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Engines and strong players consider the Englund unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns are exchanged on move two."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Same as the Englund Gambit, an anchor offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Dubious gambit, so not Beginner; little to memorise."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Development in exchange for a pawn."
+    }
+  }
+}

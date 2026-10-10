@@ -1,0 +1,105 @@
+{
+  "slug": "three-knights-opening-steinitz-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Three Knights Opening: Steinitz Defense",
+    "eco": "C46",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 g6",
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 0 4"
+  },
+  "parent": "three-knights-opening",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black fianchettoes with 3...g6 and White usually opens the centre with 4.d4 exd4 5.Nxd4 Bg7 6.Be3 Nf6. Black gets a sound but slightly passive Modern-style set-up, while White has more space and easy development. Play is open and straightforward.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre with d4 and recapture with Nxd4"
+    },
+    {
+      "idea": "Develop with Be3, Qd2 and Bc4 and aim for a small space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto the king's bishop and castle"
+    },
+    {
+      "idea": "Challenge the d4 knight with ...Nf6 and ...Nxd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exd4 Nxd4, Black in a fianchetto set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black takes a solid fianchetto but gives White the initiative."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; Black is slightly worse but safe."
+    },
+    "structure": {
+      "notes": "Open: the e- and d-pawns are exchanged early."
+    },
+    "approach": {
+      "notes": "A rare Black choice, but a normal sideline."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear development plans for White."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side takes big risks; White has the easier game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Black's fianchetto is safe."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The d- and e-pawns come off and pieces have open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Seldom played but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Little theory, clear plans."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "Black fianchettoes; White develops fast."
+    }
+  }
+}

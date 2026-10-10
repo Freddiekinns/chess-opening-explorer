@@ -1,0 +1,46 @@
+{
+  "slug": "kings-gambit-accepted-blachly-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Blachly Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Nc6 4. Bc4 g5",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/6p1/2B1Pp2/5N2/PPPP2PP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "kings-gambit-accepted-macleod-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black accepts the King's Gambit and holds the f4 pawn with ...g5, developing the knight to c6 as well, which White meets by castling or d4 and attacking the g5 pawn and the weakened kingside. The reading is from the moves; the line is rare. White is a pawn down and plays for development and attack against Black's loosened king.",
+  "white_ideas": [
+    { "idea": "Attack g5 with h4, d4 and Nxg5 ideas and open the position" },
+    { "idea": "Use the bishop on c4 and quick development to hit f7 and the king" }
+  ],
+  "black_ideas": [
+    { "idea": "Keep the extra pawn with ...g5 and ...Bg7 and complete development" },
+    { "idea": "Neutralise the initiative by returning material when needed" }
+  ],
+  "typical_structures": [
+    { "structure": "Open game with Black's f4/g5 pawn chain and White's central pawn on e4" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A King's Gambit with both kings exposed and forcing play." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can hold the f4 pawn for some time." },
+    "soundness": { "notes": "The King's Gambit is playable for White, and this branch is not known to refute it." },
+    "structure": { "notes": "Lines open fast through d4 and the f-file." },
+    "approach": { "notes": "The King's Gambit is a respectable if less common choice." },
+    "level": { "reason": "memory", "notes": "Gambit lines must be known." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [
+    { "name": "Transposition to 3...g5", "moves": "3...g5 4.Bc4 Nc6", "how": "Same position by a different order." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "A King's Gambit with exposed kings and forcing play." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gave the f-pawn and Black has taken it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "The gambit is playable and this branch is not known to refute it." },
+    "structure": { "value": "open", "confidence": 0.65, "reason": "Open lines and a central break are expected." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A less common but respectable choice." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.5, "reason": "Gambit theory must be known on both sides." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for time and an attack." }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "semi-slav-defense-anti-moscow-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Anti-Moscow Gambit",
+    "eco": "D43",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 h6 6. Bh4",
+    "fen": "rnbqkb1r/pp3pp1/2p1pn1p/3p4/2PP3B/2N2N2/PP2PPPP/R2QKB1R b KQkq - 1 6"
+  },
+  "parent": "semi-slav-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White pins with Bg5, and after 5...h6 6.Bh4 Black can take on c4 and White plays 7.e4 g5 8.Bg3 b5 9.Be2, a sharp pawn race in which Black has an extra pawn and White has the centre and development. Black can also decline with 6...Be7. Theory is long and forcing.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with e4 and e5"
+    },
+    {
+      "idea": "Develop and use the open lines against Black's weakened kingside"
+    },
+    {
+      "idea": "Regain the pawn with a4 or pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Grab the pawn with ...dxc4 and ...b5"
+    },
+    {
+      "idea": "Play ...g5 and ...Bb7 to hold e4"
+    },
+    {
+      "idea": "Complete development and castle safely"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre pawns d4/e4 vs Black pawns b5/c6/g5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mutual risk with a pawn race and many forcing lines."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the c4 pawn that Black can keep."
+    },
+    "soundness": {
+      "notes": "Anti-Moscow is a respected top-level line."
+    },
+    "structure": {
+      "notes": "Open centre with White e4."
+    },
+    "approach": {
+      "notes": "Standard line; Moscow Variation is mainstream."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6...Be7",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. Bg5 h6 6. Bh4 Be7",
+      "how": "Black declines and the position is a quiet Semi-Slav; no material changes hands."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Forcing pawn race."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the c4 pawn in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Top-level theory."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "White central pawns versus open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Standard."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White tries to use the centre and speed."
+    }
+  }
+}

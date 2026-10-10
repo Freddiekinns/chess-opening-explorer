@@ -1,0 +1,105 @@
+{
+  "slug": "philidor-defense-bird-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Bird Gambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. c3",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "philidor-defense-exchange-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 3.d4 exd4 White plays 4.c3 instead of recapturing on d4, offering a pawn (or two after ...dxc3 Bc4) for rapid development, like a Danish Gambit versus the Philidor. Black can accept with 4...dxc3 5.Nxc3 or decline with ...Nf6 and ...Be7, returning the pawn at the right moment. It is a rare, speculative line and strong players rarely play it.",
+  "white_ideas": [
+    {
+      "idea": "Play c3, Bc4, Nxc3 and quick development, aiming at f7 and the open files"
+    },
+    {
+      "idea": "Castle and attack the exposed king for the pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn, develop with ...Nf6 and ...Be7 and return the pawn to neutralise the attack"
+    },
+    {
+      "idea": "Decline with ...Nf6 and ...Be7 to get a Philidor with extra space"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White gets a pawn down with c3 and d4 centre; Black pawn on d6 and open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit giving a pawn for initiative against a solid defence, with open play. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 4.c3 dxc3 White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Playable, like other c3 gambits versus the Philidor, but White's compensation is limited."
+    },
+    "structure": {
+      "notes": "Open centre once the pawns come off."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose it; offbeat."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Gambit lines need concrete play; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "A pawn gambit with open lines and early threats."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the pawn for development if Black takes."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Black can accept and consolidate, but White keeps the compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central pawns come off."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Some theory but short; gambit play."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for time and pressure on f7."
+    }
+  }
+}

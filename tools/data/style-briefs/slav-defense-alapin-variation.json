@@ -1,0 +1,111 @@
+{
+  "slug": "slav-defense-alapin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Alapin Variation",
+    "eco": "D16",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R b KQkq - 0 5"
+  },
+  "parent": "slav-defense-two-knights-attack",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "In the Slav Two Knights Attack White plays 5.a4 after ...dxc4 to stop ...b5 and keep control of c4 and e5. Black develops the bishop with ...Bf5 and plays ...e6, ...Bb4, castles and often ...Nbd7. White regains the pawn with e3 and Bxc4, then e4 for a big centre.",
+  "white_ideas": [
+    {
+      "idea": "Prevent ...b5 with a4"
+    },
+    {
+      "idea": "Regain the pawn with e3 and Bxc4"
+    },
+    {
+      "idea": "Play e4 or the Ne5 outpost"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop with ...Bf5"
+    },
+    {
+      "idea": "Play ...e6 and ...Bb4 to pin"
+    },
+    {
+      "idea": "Challenge the centre with ...c5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav structure with White centre and Black hold on c4 gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid Slav lines; Black is hard to break down."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawn regained by White."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Slav pawn structure leaves a half-open file."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans more than memory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Murey Variation",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 a5",
+      "how": "Black stops White and holds b4/b5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Slav lines are hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Mainstream."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Slav structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Standard theory."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Moderate theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan stands out enough to name."
+    }
+  }
+}

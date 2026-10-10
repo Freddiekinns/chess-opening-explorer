@@ -1,0 +1,106 @@
+{
+  "slug": "neo-grunfeld-defense-delayed-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: Delayed Exchange Variation",
+    "eco": "D74",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3 O-O 5. Bg2 d5 6. cxd5 Nxd5 7. O-O",
+    "fen": "rnbq1rk1/ppp1ppbp/6p1/3n4/3P4/5NP1/PP2PPBP/RNBQ1RK1 b - - 1 7"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "White has the g3 set-up against the Grünfeld: after ...d5 6.cxd5 Nxd5 7.O-O Black chooses ...Nb6, ...c6, ...Nc6 or ...c5 and White develops with Nc3 or Nbd2, e3 and Re1. There is no big e4 pawn centre for White to attack, so the play is quieter than in the Exchange Grünfeld: both sides manoeuvre on the long diagonals and Black tries ...c5 and ...e5 to free the position. Theory is moderate.",
+  "white_ideas": [
+    {
+      "idea": "Keep the Bg2 on the long diagonal, play Nc3 or Nbd2, e3 and Re1 to build a flexible centre"
+    },
+    {
+      "idea": "Aim for e4 or a queenside space grab with b3 and Bb2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the d4 pawn with ...c5 or ...Nc6 and ...Bg4 and aim for a hypermodern break"
+    },
+    {
+      "idea": "Trade pieces to ease the position and play ...e5 when ready"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4 against Black c5/c6 with fianchettoed bishops on g2 and g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Manoeuvring play with moderate tension and no forced sequences. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Sound for both; a main-line Grünfeld branch."
+    },
+    "structure": {
+      "notes": "Centre in tension on d4/c5 with flank bishops: Flexible."
+    },
+    "approach": {
+      "notes": "A normal, regular line of the Grünfeld / Neo-Grünfeld: standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional plans on both sides; not long theory. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "hypermodern centre",
+    "pressure on d4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet manoeuvring without forcing lines or a rock-solid structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "A regular, safe line for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre stays in tension with flank bishops."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal branch of the Grünfeld."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional play over memorised lines."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Fianchettoed bishops and Black challenging the centre with pieces."
+    }
+  }
+}

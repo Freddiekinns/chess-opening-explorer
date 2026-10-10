@@ -1,0 +1,108 @@
+{
+  "slug": "grob-opening-spike",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Spike, Hurst Attack",
+    "eco": "A00",
+    "moves": "1. g4 e5 2. Bg2 d5 3. c4",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2P3P1/8/PP1PPPBP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays 1.g4 and after 1...e5 2.Bg2 d5 3.c4 fights for the centre from the flank, offering pawns on g4 and c4. Black can take with ...dxc4 or push ...d4 and often gets an extra pawn and a good centre. White hopes for quick development and the long diagonal.",
+  "white_ideas": [
+    {
+      "idea": "Use the Bg2 on the long diagonal and play c4 to challenge d5"
+    },
+    {
+      "idea": "Develop fast with Nc3 and Nf3 and attack the Black centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on c4 or g4 and keep the extra pawn"
+    },
+    {
+      "idea": "Build a big centre with ...e5 and ...d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black central pawns on d5/e5 against White flank pawns"
+    },
+    {
+      "structure": "White fianchetto against an advanced Black centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with a loosened White king and few forcing continuations."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers the g4 or c4 pawn and Black can take it."
+    },
+    "soundness": {
+      "notes": "Dubious for White, who risks falling behind in the centre."
+    },
+    "structure": {
+      "notes": "Open: central pawns exchange or Black takes space."
+    },
+    "approach": {
+      "notes": "The Grob is an anchor offbeat opening."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific traps; a dubious line."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Gambit with a loosened king and tactical chances."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives a pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Strong players regard the Grob as unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pieces fight on open lines after pawn exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "The Grob is an anchor offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never beginner."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "White aims the bishop at b7."
+    }
+  }
+}

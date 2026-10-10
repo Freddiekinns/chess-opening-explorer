@@ -1,0 +1,115 @@
+{
+  "slug": "benko-gambit-accepted-pawn-return-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Pawn Return Variation",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. b6",
+    "fen": "rnbqkb1r/3ppppp/pP3n2/2pP4/8/8/PP2PPPP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "benko-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays 5.b6, returning the pawn to avoid the Benko compensation. After 5...Qxb6 (or 5...d6, 5...e6) Black has regained the pawn and gets an easy game with the queen out early; White usually develops with Nc3 and e4 and takes the d5/e4 centre. The position becomes a Benoni-like structure.",
+  "white_ideas": [
+    {
+      "idea": "Return the pawn with b6 to avoid the long-term Benko pressure"
+    },
+    {
+      "idea": "Play Nc3 and e4 to take the centre"
+    },
+    {
+      "idea": "Develop with Bd3 and Nge2 or Nf3 and keep a space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture with ...Qxb6 and develop with ...g6 and ...Bg7"
+    },
+    {
+      "idea": "Play ...d6 and ...e6 for a Benoni-style set-up"
+    },
+    {
+      "idea": "Challenge the d5 pawn with ...e6 or ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like structure with White d5/e4 against Black c5/d6"
+    },
+    {
+      "structure": "Black queen on b6 early with a fianchetto bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The pawn comes back at once, leaving a quiet Benoni-like position with small edges."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White returns the pawn with b6 and Black wins it back by force with ...Qxb6."
+    },
+    "soundness": {
+      "notes": "Sound; just an easy equal game for Black."
+    },
+    "structure": {
+      "notes": "Asymmetric centre, d5 against c5/d6: semi-open."
+    },
+    "approach": {
+      "notes": "A known way for White to avoid the Benko; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Typical Benoni-like plans, not much to memorise."
+    }
+  },
+  "plan_phrases": [
+    "Benoni-style centre",
+    "fianchetto on g7",
+    "space for White"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Pawn comes back and a quiet middlegame follows."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "White returns the pawn immediately; no material is lost by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "No weaknesses for either side.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Asymmetric d5 against c5/d6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A known branch of the Benko."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Benoni-style plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettoes while White holds the space with d5 and e4."
+    }
+  }
+}

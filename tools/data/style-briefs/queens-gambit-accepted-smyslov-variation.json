@@ -1,0 +1,115 @@
+{
+  "slug": "queens-gambit-accepted-smyslov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Smyslov Variation",
+    "eco": "D25",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 g6",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 3.Nf3 Nf6 4.e3 Black fianchettos with 4...g6 instead of the usual ...e6 and ...c5. White takes the pawn back with Bxc4, castles and builds with Nc3, Qe2 and e4; Black has ...Bg7, ...O-O and aims at ...c5 or ...c6/...b5. The game is a positional fight over the d4/e4 centre.",
+  "white_ideas": [
+    {
+      "idea": "Regain the pawn with Bxc4 and castle"
+    },
+    {
+      "idea": "Occupy the centre with e4 and Qe2/Rd1"
+    },
+    {
+      "idea": "Press on d4/e5 and restrain ...c5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop on g7 and castle"
+    },
+    {
+      "idea": "Strike with ...c5 or ...c6 and ...b5 to challenge the centre"
+    },
+    {
+      "idea": "Trade pieces and fight against the d4/e4 pawns"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d4 and e3 against a fianchettoed Black bishop"
+    },
+    {
+      "structure": "Black queenside majority against White centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A fianchetto QGA where neither side takes early risks; play is manoeuvring around the centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains the c4 pawn at once with Bxc4."
+    },
+    "soundness": {
+      "notes": "A sensible Black set-up; no sign it is anything other than sound."
+    },
+    "structure": {
+      "notes": "The c-pawn is gone, so White holds d4/e3 against a fianchetto and the centre is not locked."
+    },
+    "approach": {
+      "notes": "A secondary line of the Queen's Gambit Accepted, played by some strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs a feel for the centre and the ...c5 break rather than many forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "central break ...c5",
+    "regain the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Positional play with neither side forced into risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn returns at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A recognised setup."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "QGA anchor is Open; White holds d4/e3 against the fianchetto with an open centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A secondary but respectable choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Positional with modest theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettos, White holds the larger centre."
+    }
+  }
+}

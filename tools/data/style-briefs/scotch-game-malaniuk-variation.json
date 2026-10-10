@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-game-malaniuk-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Malaniuk Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bb4+",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/8/1b1NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black meets 4.Nxd4 with an early check, 4...Bb4+, rather than the usual ...Bc5 or ...Nf6. White can block with c3 or Nc3, and after 5.c3 the bishop must retreat, often to c5 or a5, so Black has spent time for little. The position stays open, and play resembles the Classical Scotch with an extra tempo for White if Black retreats. I do not remember the theory well.",
+  "white_ideas": [
+    {
+      "idea": "Block the check with c3 or Nc3"
+    },
+    {
+      "idea": "Use the d4 knight and the tempo gained for a lead in development"
+    },
+    {
+      "idea": "Aim for Be2/O-O and a small initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat the bishop to c5 or take on c3 and break with ...d5"
+    },
+    {
+      "idea": "Trade pieces and aim for solid development"
+    },
+    {
+      "idea": "Hit d4 with ...Nf6 and ...Nxd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Scotch centre with White knight on d4"
+    },
+    {
+      "structure": "Black bishop pair traded for knights on c3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's early check does not create a mutual attack; the play is open, roughly balanced and slightly better for White."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; at worst it is a slight concession of time."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces as in the Scotch."
+    },
+    "approach": {
+      "notes": "A rarely played sideline; strong players choose it now and then, so standard, low confidence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of the open Scotch is enough; there is little long theory."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Open but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Probably slightly better for White but playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The Scotch anchor for open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but played by strong players now and then; could be offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Open Scotch play."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is clearly named from memory."
+    }
+  }
+}

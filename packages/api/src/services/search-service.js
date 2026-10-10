@@ -10,7 +10,7 @@ const {
 const styleTags = require('./style-tags-service');
 const QueryUtils = require('./search/QueryUtils');
 const QueryIntentParser = require('./search/QueryIntentParser');
-const { NameIndex } = require('./search/NameIndex');
+const { NameIndex, normalise } = require('./search/NameIndex');
 
 /**
  * Whether an opening's style tags (api/data/style-tags.json) say what a style
@@ -23,6 +23,19 @@ function matchesStyle(opening, word) {
   return Object.entries(spec).some(([axis, values]) =>
     [].concat(axes[axis]).some(value => values.includes(value))
   );
+}
+
+/** The moves of "1. e4 c5 2. Nf3", without the move numbers. */
+function plies(moves) {
+  return (moves || '').split(/\s+/).filter(token => token && !/^\d+\.+$/.test(token));
+}
+
+/**
+ * "Family: first variation", the unit an opening's side is judged on,
+ * normalised as NameIndex does so "Defence" rows join their "Defense" line.
+ */
+function variationKey(name) {
+  return normalise((name || '').split(',')[0]);
 }
 
 /** The shown words and plan labels, for Fuse's typo net. */
@@ -458,6 +471,13 @@ class SearchService {
         
       case 'complexity_search':
         results = this.filterByComplexity(results, queryIntent.complexity);
+        // "advanced sicilian defence": narrow by the name when it names
+        // something. A word that names nothing ("beginner gambits") is ignored
+        // rather than allowed to empty the list.
+        if (queryIntent.openingName) {
+          const named = this.filterByOpeningName(results, queryIntent.openingName);
+          if (named.length > 0) results = named;
+        }
         if (queryIntent.style.length > 0) {
           results = this.filterBySemanticStyle(results, queryIntent.style);
         }
@@ -522,15 +542,12 @@ class SearchService {
   filterByResponseToMoves(openings, targetMoves, modifiers = []) {
     if (!targetMoves || targetMoves.length === 0) return openings;
     
+    // A reply to e4 starts 1.e4 and goes on to Black's move. This used to keep
+    // the opposite: lines that merely contained the move and did not start with
+    // it, such as 1.d4 d5 2.e4 for "response to e4".
     const filtered = openings.filter(opening => {
-      const moves = opening.moves?.toLowerCase() || '';
-      
-      // Check if this opening starts with or responds to the target moves
-      return targetMoves.some(move => {
-        const movePattern = move.toLowerCase();
-        // For responses, we want openings that contain the target move but aren't just that move
-        return moves.includes(movePattern) && !moves.startsWith(`1. ${movePattern}`);
-      });
+      const played = plies(opening.moves);
+      return played.length >= 2 && targetMoves.some(move => played[0].toLowerCase() === move.toLowerCase());
     });
     
     // If modifiers are specified, filter further
@@ -548,20 +565,24 @@ class SearchService {
    * @returns {Array} Filtered openings
    */
   filterByColor(openings, color) {
-    if (!color) return openings;
-    
+    if (color !== 'white' && color !== 'black') return openings;
+
+    // An opening belongs to the side whose move first gave it its name: the
+    // shallowest position carrying its "Family: first variation". The Sicilian
+    // is Black's at every depth, the Smith-Morra White's, the Two Knights
+    // Black's inside the Italian. The old test asked whether the moves started
+    // "1." (every opening) or held two moves (nearly every opening).
+    const rootPlies = new Map();
+    for (const opening of openings) {
+      const key = variationKey(opening.name);
+      const depth = plies(opening.moves).length;
+      if (!rootPlies.has(key) || depth < rootPlies.get(key)) rootPlies.set(key, depth);
+    }
+
     return openings.filter(opening => {
-      const moves = opening.moves?.toLowerCase() || '';
-      
-      if (color === 'white') {
-        // White openings typically start with "1." 
-        return moves.match(/^1\.\s*[a-h1-8]/);
-      } else if (color === 'black') {
-        // Black responses typically have both white and black moves
-        return moves.includes('1...') || moves.match(/1\.\s*\w+\s+\w+/);
-      }
-      
-      return true;
+      const depth = rootPlies.get(variationKey(opening.name));
+      const side = depth % 2 === 1 ? 'white' : 'black';
+      return side === color;
     });
   }
 
@@ -586,12 +607,13 @@ class SearchService {
   filterByOpeningName(openings, name) {
     if (!name) return openings;
     
-    const namePattern = name.toLowerCase();
+    // Normalised as NameIndex does, so "defence" finds "Defense".
+    const namePattern = normalise(name);
     
     return openings.filter(opening => {
-      const openingName = opening.name?.toLowerCase() || '';
+      const openingName = normalise(opening.name || '');
       const aliases = opening.aliases || {};
-      const aliasValues = Object.values(aliases).join(' ').toLowerCase();
+      const aliasValues = normalise(Object.values(aliases).join(' '));
       
       return openingName.includes(namePattern) || aliasValues.includes(namePattern);
     });
@@ -647,81 +669,13 @@ class SearchService {
       const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
       score += Math.log10(Math.max(popularity, 0) + 1) / 50;
       
+      // Not capped at 1: a style and a move match already reach 0.95, and the
+      // cap tied every such result so the list fell back to corpus order.
       return {
         ...opening,
-        searchScore: Math.min(1, score)
+        searchScore: score
       };
     }).sort((a, b) => b.searchScore - a.searchScore);
-  }
-
-  /**
-   * Search by category for discovery
-   * @param {string} category - The category to search for
-   * @param {Object} options - Search options
-   * @returns {Array} Array of categorized results
-   */
-  async searchByCategory(category, options = {}) {
-    await this.initialize();
-    
-    const categoryTags = STYLE_CATEGORIES[category.toLowerCase()];
-    if (!categoryTags) {
-      throw new Error(`Unknown category: ${category}`);
-    }
-    
-    const results = this.openings.filter(opening => {
-      const styleTags = opening.analysis_json?.style_tags || [];
-      return styleTags.some(tag => 
-        categoryTags.some(categoryTag => 
-          tag.toLowerCase().includes(categoryTag.toLowerCase())
-        )
-      );
-    });
-    
-    // Sort by popularity if available
-    const sortedResults = results.sort((a, b) => {
-      const popularityA = a.analysis_json?.popularity_score || 0;
-      const popularityB = b.analysis_json?.popularity_score || 0;
-      return popularityB - popularityA;
-    });
-    
-    const { limit = 50, offset = 0 } = options;
-    const totalResults = sortedResults.length;
-    const paginatedResults = sortedResults.slice(offset, offset + limit);
-    
-    return {
-      results: paginatedResults,
-      totalResults,
-      hasMore: offset + limit < totalResults,
-      category
-    };
-  }
-
-  /**
-   * Get all available categories
-   * @returns {Array} Array of category objects with counts
-   */
-  async getCategories() {
-    await this.initialize();
-    
-    const categories = Object.keys(STYLE_CATEGORIES).map(category => {
-      const count = this.openings.filter(opening => {
-        const styleTags = opening.analysis_json?.style_tags || [];
-        const categoryTags = STYLE_CATEGORIES[category];
-        return styleTags.some(tag => 
-          categoryTags.some(categoryTag => 
-            tag.toLowerCase().includes(categoryTag.toLowerCase())
-          )
-        );
-      }).length;
-      
-      return {
-        name: category,
-        displayName: category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' '),
-        count
-      };
-    });
-    
-    return categories.filter(category => category.count > 0);
   }
 
   /**

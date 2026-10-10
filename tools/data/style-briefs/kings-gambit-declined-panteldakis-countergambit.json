@@ -1,0 +1,126 @@
+{
+  "slug": "kings-gambit-declined-panteldakis-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Panteldakis Countergambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 f5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black answers 2.f4 with the counterblow 2...f5, so that after 3.exf5 White wins a pawn and Black must regain it with ...exf4 or ...Qh4+ at the cost of kingside safety. White can castle, bring the queen out with Qh5+ in some lines and use the open e-file and weakened black king. It is rarely seen above club level, and White keeps the extra pawn in several lines.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and hold the extra pawn, then develop with Nf3 and d4"
+    },
+    {
+      "idea": "Use Qh5+ checks and the open e-file against the black king"
+    },
+    {
+      "idea": "Return the pawn only when it gives a clear lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the f5 pawn with ...exf4 or ...Qh4+"
+    },
+    {
+      "idea": "Take the centre with ...d5 and ...Bd6 in the Symmetrical line"
+    },
+    {
+      "idea": "Use the exposed white king after Qh5+ and Kd1 pawn-sacrifice lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawns exchanged on e4/f4/f5"
+    },
+    {
+      "structure": "Black king stranded on e7 or in the centre after Qh5+"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides have exposed kings, early queen checks and open lines; White can be given check ideas such as ...Qh4+ and Qh5+ with the king caught in the middle."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 2...f5 3.exf5 White is a pawn up; Black may regain it, but White can keep it with accurate play."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black: 3.exf5 simply wins a pawn and Black has to prove compensation through exposed white king ideas that rarely materialise."
+    },
+    "structure": {
+      "notes": "Pawns leave e4, f4 and f5 early, leaving open e and f files and diagonals."
+    },
+    "approach": {
+      "notes": "A rare countergambit that strong players hardly choose; it scores through surprise."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Not a good first repertoire pick (dubious); the tactics are concrete and best judged by understanding."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen checks",
+    "Exposed king"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Greco Variation",
+      "moves": "1. e4 e5 2. f4 f5 3. exf5 Qh4+",
+      "how": "Black checks at once and regains the pawn only at the cost of the queen being a target."
+    },
+    {
+      "name": "Shirazi Line",
+      "moves": "1. e4 e5 2. f4 f5 3. exf5 exf4 4. Qh5+ Ke7",
+      "how": "Black gives up castling for a pawn-down attack on the open e-file."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Early checks, open files and exposed kings on both sides."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black plays 2...f5 as a countergambit; White can keep a pawn after 3.exf5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "Strong players view it as refuted or close to it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns come off early and lines open for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom chosen by strong players; scores through surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner; the tactics are concrete."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black plays for development and queen checks against the open white king."
+    }
+  }
+}

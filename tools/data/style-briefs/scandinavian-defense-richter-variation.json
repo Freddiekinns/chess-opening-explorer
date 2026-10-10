@@ -1,0 +1,120 @@
+{
+  "slug": "scandinavian-defense-richter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Richter Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. d4 g6",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3P4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black recaptures on d5 with the knight, or plays ...g6 first, preparing ...Bg7 and ...Nxd5 with a hypermodern set-up against White's centre. White gains space with Nf3, c4 and Be2 and develops easily, while Black develops with ...Bg7, ...O-O and ...Nb6 to hit the centre. The position is Caro-Kann-like in solidity but with a fianchettoed bishop.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, Be2 and O-O and gain space with c4"
+    },
+    {
+      "idea": "Kick the d5 knight with c4 and c3 pawn structures"
+    },
+    {
+      "idea": "Use the space and pieces to aim for a slight edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bg7 and ...Nxd5 or ...Nb6"
+    },
+    {
+      "idea": "Castle short and break with ...c5 or ...e5 at the right moment"
+    },
+    {
+      "idea": "Play for a compact set-up and counter-strike on the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c4, d4 vs Black ...Nb6/...Bg7"
+    },
+    {
+      "structure": "Semi-open structure with an open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid enough for Black with a fianchetto, and White has an easy space edge; not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn is regained at once with ...Nxd5."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Scandinavian semi-open structure with Black pieces hitting the centre."
+    },
+    "approach": {
+      "notes": "The Modern Scandinavian is played by strong players, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear for Black."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Icelandic Gambit (3.c4 e6)",
+      "moves": "1. e4 d5 2. exd5 Nf6 3. c4 e6",
+      "how": "A different branch: Black offers a pawn for development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Black fianchetto against White space; neither forcing nor impregnable."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn is regained at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Respectable line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.75,
+      "reason": "Scandinavian structure with the d-file open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Clear plans with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black sets a bishop on g7 and hits the centre with the knight."
+    }
+  }
+}

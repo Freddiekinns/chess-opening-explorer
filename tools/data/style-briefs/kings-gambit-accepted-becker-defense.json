@@ -1,0 +1,114 @@
+{
+  "slug": "kings-gambit-accepted-becker-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Becker Defense",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 h6",
+    "fen": "rnbqkbnr/pppp1pp1/7p/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "In the King's Gambit Accepted Black plays 3...h6 to prepare ...g5 without allowing Ng5 or the Kieseritzky h4 ideas. White usually answers with 4.d4 g5 5.h4 or 4.Bc4 and a quick central break. Black keeps the f4 pawn at the price of weakening the kingside, and play is open and sharp.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 and Bxf4 to recover the pawn with a strong centre"
+    },
+    {
+      "idea": "Attack on the kingside with h4 and Bc4 against the g5/h6 pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support f4 with ...g5 and ...Bg7"
+    },
+    {
+      "idea": "Consolidate with ...d6 and ...Nf6 and use the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and kingside with Black pawns on f4, g5 and h6"
+    },
+    {
+      "structure": "White centre of d4 and e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An open gambit position with an exposed Black king and a pawn race."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White's f-pawn is gone and Black can try to hold it with ...g5."
+    },
+    "soundness": {
+      "notes": "A respectable, objectively sound defence."
+    },
+    "structure": {
+      "notes": "Open: the f- and e-files open early."
+    },
+    "approach": {
+      "notes": "A sideline of the King's Gambit, but a normal choice in that opening."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp tactical lines to know on both sides."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet 4.d4",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 h6 4. d4 g5 5. h4",
+      "how": "White strikes at the g5 pawn at once."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "King's Gambit open play with exposed kings."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives up the f-pawn in the KGA."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "The Becker is a recognised defence for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Files and diagonals open quickly."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Rarer than main KGA lines but not an eccentric choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Tactics must be known but the theory is limited."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White chases a development lead and attack."
+    }
+  }
+}

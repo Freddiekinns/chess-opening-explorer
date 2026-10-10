@@ -1,0 +1,100 @@
+{
+  "slug": "van-geet-opening-grunfeld-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Grünfeld Defense",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. Nc3 dxe4 3. Nxe4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/4N3/8/PPPP1PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 d5 2.Nc3 dxe4 3.Nxe4 Black strikes in the centre at once with 3...e5, a rare move that gives the e5 pawn a chance to support piece play. White usually develops with 4.Nf3 and 5.Bc4 or d4 and aims at e5 with a lead in space and development, while Black rushes ...Nc6, ...Bd6 or ...Bf5 to defend the pawn. I do not know this line well; from the moves it looks like an off-the-wall Black reply with a level material count and an open centre, where White has a small edge in development.",
+  "white_ideas": [
+    { "idea": "Attack e5 with Nf3 and d4 and exploit the lead in development" },
+    { "idea": "Hit the king with Bc4 and Qe2 before Black is castled" },
+    { "idea": "Trade queens early if Black lashes out" }
+  ],
+  "black_ideas": [
+    { "idea": "Support e5 with ...Nc6, ...Bd6 or ...Bf5 and reach an open, symmetrical-ish position" },
+    { "idea": "Harass the e4 knight with ...f5 or ...Bf5 and gain time" },
+    { "idea": "Play for activity rather than safety" }
+  ],
+  "typical_structures": [
+    { "structure": "Black has a pawn on e5 and no d-pawn, White has a pawn on d2 and no e-pawn; open centre with the White knight on e4" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines and a loose e5 pawn lead to quick tactics. I read it as Balanced with low confidence; Black's centre is not especially hard to break and not especially risky."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at the root. The Steiner Gambit in the subtree is a White move order (f4) rather than this line."
+    },
+    "soundness": {
+      "notes": "Probably playable; White keeps a small edge."
+    },
+    "structure": {
+      "notes": "Black has an e-pawn centre, White has none, and the d-file is open. Open."
+    },
+    "approach": {
+      "notes": "Very rarely played by strong players. Offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory but the position is unusual; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "unusual reply for surprise",
+    "central pawn on e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Steiner Gambit",
+      "moves": "1. e4 e5 2. f4 d5 3. Nc3 dxe4 4. Nxe4",
+      "how": "A different move order with f4 played; this is a gambit-style Black structure not the root line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Open and slightly loose but not clearly forcing or hard to break; low-confidence middle value."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Probably playable for Black, with White slightly better."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is gone and the centre is open for pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "A rare idea that strong players seldom pick."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Hard to judge; little theory but unusual plans."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan from the plans table is clearly characteristic."
+    }
+  }
+}

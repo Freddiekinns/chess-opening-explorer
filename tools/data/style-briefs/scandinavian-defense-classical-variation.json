@@ -1,0 +1,114 @@
+{
+  "slug": "scandinavian-defense-classical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Classical Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Bf5",
+    "fen": "rn2kb1r/ppp1pppp/5n2/q4b2/3P4/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "scandinavian-defense-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black recaptures the pawn with the queen, retreats to a5 after Nc3, and develops with ...Nf6 and ...Bf5, aiming for ...c6, ...e6 and ...Bd6 or ...Be7 with queenside castling. White has more space and a lead in development, but Black's position is solid with few weaknesses. The play is steady and positional with simple plans for both sides.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, Bc4 and Bd2"
+    },
+    {
+      "idea": "Use the space and development lead to attack the queen on a5"
+    },
+    {
+      "idea": "Castle short or long and pressure along the e- and d-files"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...c6, ...e6 and ...Bd6"
+    },
+    {
+      "idea": "Castle long onto the half-open d-file"
+    },
+    {
+      "idea": "Trade pieces and keep a compact Caro-Kann-like structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on c6, e6 with White d4"
+    },
+    {
+      "structure": "Half-open d-file after exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black builds a solid shell with few ways to lose quickly; White has some initiative but no forcing attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d5 pawn is recaptured immediately."
+    },
+    "soundness": {
+      "notes": "Sound; a long-established respectable line."
+    },
+    "structure": {
+      "notes": "Black has an asymmetric pawn structure with a half-open file; Scandinavian is semi-open in the anchors."
+    },
+    "approach": {
+      "notes": "Played regularly by strong players, not a system and not offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans and modest theory but White's initiative takes care to meet."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Solid shell",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.75,
+      "reason": "Black has a Caro-Kann-like shell with few weaknesses."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Respectable line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Scandinavian is a semi-open anchor."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played by strong players; matches the Vienna and Scandinavian standard note."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Clear plans, modest theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has more space; Black must find room."
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "english-opening-jaenisch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Jaenisch Gambit",
+    "eco": "A10",
+    "moves": "1. c4 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "1.c4 b5 offers the b-pawn so that Black can take the long diagonal with ...Bb7 and push ...e6. White accepts with 2.cxb5 Bb7 and then develops with Nc3, e3 and Nf3 and keeps the extra pawn once the bishop on b7 is neutralised. Strong players think White is simply better, so this is a surprise weapon that scores through development and traps.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with cxb5 and neutralise the b7 bishop with e3, Nf3 or Nc3"
+    },
+    {
+      "idea": "Return the pawn if needed for a safe position with the bishop pair or a good structure"
+    },
+    {
+      "idea": "Develop quickly and castle before Black organises an attack on g2 and b2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bb7 and ...e6, hitting the long diagonal against g2 and b2"
+    },
+    {
+      "idea": "Recapture on b5 with ...a6 or play ...Bxg2 if White neglects it"
+    },
+    {
+      "idea": "Develop quickly with ...Nf6, ...e6 and ...Qb6 on the open lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra b-pawn on b5 or the gambit pawn exchanged; Black bishop on b7 on the long diagonal"
+    },
+    {
+      "structure": "Open a- and b-files with Black's queenside pawns gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gambits a pawn at move 1, so play is unbalanced; tactics on the long diagonal and the open files appear early."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "2.cxb5 wins a pawn and Black has nothing forcing to regain it."
+    },
+    "soundness": {
+      "notes": "Strong players consider it dubious: White keeps the extra pawn with simple development."
+    },
+    "structure": {
+      "notes": "Open queenside files, bishops on long diagonals, no fixed centre. I call it flexible, with low confidence."
+    },
+    "approach": {
+      "notes": "A surprise gambit that strong players seldom choose, hence offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "It is dubious, so not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "long diagonal pressure",
+    "lead in development",
+    "play on the open b-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "White ignores the pawn with 2.e4",
+      "moves": "1. c4 b5 2. e4",
+      "how": "White plays for the centre instead; Black can keep ...Bb7 and ...a6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "An early Black gambit with an open long diagonal and open files."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the b-pawn on move 1 and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.7,
+      "reason": "Strong players think White is better with simple play.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "No fixed centre; open queenside files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "A surprise gambit seldom played at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.65,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black plays for activity and the bishop on b7."
+    }
+  }
+}

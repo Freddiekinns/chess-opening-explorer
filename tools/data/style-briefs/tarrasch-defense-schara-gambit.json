@@ -1,0 +1,111 @@
+{
+  "slug": "tarrasch-defense-schara-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Schara Gambit",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 cxd4",
+    "fen": "rnbqkbnr/pp3ppp/4p3/3P4/3p4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "tarrasch-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.cxd5 cxd4 White usually grabs with 5.Qxd4 Nc6 or 5.Qa4+ Bd7 6.Qxd4 exd5 7.Qxd5. Black gives a pawn for rapid development and queen harassment: ...Nc6, ...Nf6, ...Bc5 and queenside castling. The main-line positions are open and double-edged, with Black chasing the white king and queen; correct defence leaves White a clear pawn, so it is a gambit that needs accurate memory.",
+  "white_ideas": [
+    {
+      "idea": "Take the d4 pawn and retreat the queen to d1 or d3, develop Nf3 and e3 to consolidate"
+    },
+    {
+      "idea": "Keep the extra pawn and trade queens when possible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi against the queen with ...Nc6 and ...Nf6, castle long and open the e- and d-files"
+    },
+    {
+      "idea": "Build Bc5 and ...Qe7 with attack on the king in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White a pawn up (extra pawn on d5 or d4 gone) with open central files and Black ahead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black sacrifices a pawn for initiative and the queens come into play early. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 7.Qxd5 Nc6 White is a pawn up and can keep it with careful play."
+    },
+    "soundness": {
+      "notes": "Theory gives White an edge but Black gets real compensation; not refuted, so Sound, with doubts."
+    },
+    "structure": {
+      "notes": "The centre opens quickly with files and diagonals for the pieces."
+    },
+    "approach": {
+      "notes": "A rare gambit that strong players seldom choose as Black, mainly a surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing queen-chase lines must be known on both sides. Intermediate leaning Advanced."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "harass the queen",
+    "castle long"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.Qxd4 Nc6 6.Qd1 exd5",
+      "moves": "5.Qxd4 Nc6 6.Qd1 exd5 7.e3",
+      "how": "White returns the queen to d1 and Black regains the pawn with an isolated pawn structure, less of a gambit."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Open lines, queen harassment and a pawn sacrificed for initiative."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives the d-pawn for time in the Qa4+ main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "White keeps an edge but Black gets sufficient play; not close to refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central pawns come off early and the pieces use open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Not a regular choice for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing lines to know, but short and clear."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black develops quickly for the sacrificed pawn."
+    }
+  }
+}

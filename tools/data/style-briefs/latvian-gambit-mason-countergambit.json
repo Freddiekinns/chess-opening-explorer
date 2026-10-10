@@ -1,0 +1,106 @@
+{
+  "slug": "latvian-gambit-mason-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Mason Countergambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. d4",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White answers the Latvian 2...f5 with the direct 3.d4, hitting the e5 pawn. The usual continuation is 3...fxe4 4.Nxe5 Nf6, after which White plays 5.Bg5 or 5.Bc4 and tries to win the e4 pawn or exploit the loose king while Black fights for ...d6, ...d5 and piece activity. White is slightly better with accurate play; Black relies on tactics around the e-file and f-file. Strong players almost never play the Black side.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4 and Nxe5, then win or hold the e4 pawn" },
+    { "idea": "Develop with Bg5, Bc4, Nc3 and castle; use the weakened king on g8/e8 diagonal" },
+    { "idea": "Trade pieces and cash in the extra pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Get ...Nf6, ...d6 or ...d5 to hit the knight on e5 and win back the pawn" },
+    { "idea": "Use the half-open f-file and e-file for quick counterplay and Qh4 ideas" },
+    { "idea": "Avoid early simplification and play for tricks" }
+  ],
+  "typical_structures": [
+    { "structure": "White has d4 and the e5 knight, Black has an advanced e4 pawn and a weakened kingside" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Black position is loose and the play is tactical; Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.d4 fxe4 4.Nxe5 Nf6 5.Bg5 White usually wins the e4 pawn; the Latvian family is a Black gambit. I take the main branch, 3...fxe4, as the gambit and call it medium confidence because material is level at the root FEN."
+    },
+    "soundness": {
+      "notes": "The Latvian is considered unsound; White gets a clear edge with simple play."
+    },
+    "structure": {
+      "notes": "The e- and f-pawns come off and the centre opens up; Open."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose the Latvian at all, like the Elephant and Englund. Offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit, so never Beginner; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "early counterattack",
+    "quick development for a pawn",
+    "open e- and f-files"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...exd4",
+      "moves": "1. e4 e5 2. Nf3 f5 3. d4 exd4 4. Bc4",
+      "how": "Black takes d4 instead and White gets a fast attack on f7."
+    },
+    {
+      "name": "3...fxe4 4.Nxe5 Nf6 5.Bg5",
+      "moves": "1. e4 e5 2. Nf3 f5 3. d4 fxe4 4. Nxe5 Nf6 5. Bg5",
+      "how": "The usual main continuation: White develops with tempo and aims to win or keep the e4 pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Loose kingside and open lines make this concrete and tactical for both sides."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.6,
+      "reason": "A Latvian-family Black gambit, though the d4 line leads to level material at the root."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Latvian is regarded as unsound and White's simple 3.d4 gives a clear edge."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The central pawns are traded off and lines open at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly play the Latvian at all."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "A dubious gambit is never a good first repertoire choice; it relies on knowing the traps."
+    },
+    "plans": {
+      "value": ["lead_in_development"],
+      "reason": "Black plays for activity and speed rather than structure."
+    }
+  }
+}

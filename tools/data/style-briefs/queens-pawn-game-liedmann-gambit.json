@@ -1,0 +1,112 @@
+{
+  "slug": "queens-pawn-game-liedmann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Liedmann Gambit",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. c4 cxd4 3. e3",
+    "fen": "rnbqkbnr/pp1ppppp/8/8/2Pp4/4P3/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.d4 c5 2.c4 cxd4 3.e3 White offers the d4 pawn for development and open lines. If Black plays 3...dxe3 4.Bxe3 White has a Benoni-like lead in development; if Black holds the pawn with 3...e5, White recaptures with exd4 and plays for the centre. White gets an active position but nothing forced; the line is rare.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with exd4 or Bxe3 and develop quickly"
+    },
+    {
+      "idea": "Play Nc3, Nf3 and Bd3 and use the lead in development"
+    },
+    {
+      "idea": "Target the e5 centre with open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...e5 or ...Nf6"
+    },
+    {
+      "idea": "Take on e3 and trade the extra pawn for safety"
+    },
+    {
+      "idea": "Keep the extra pawn and develop with ...Nc6 and ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn on d4 or e5 against White's c4 and e3"
+    },
+    {
+      "structure": "Open c-file and d-file with White's lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with open lines and quick development for White; Black has the pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2...cxd4 White is a pawn down and Black can hold it with ...e5."
+    },
+    "soundness": {
+      "notes": "Considered not quite enough for the pawn; dubious."
+    },
+    "structure": {
+      "notes": "The c-pawn gone for the d-pawn, asymmetrical: semi-open."
+    },
+    "approach": {
+      "notes": "A rare gambit that strong players seldom use: offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line is not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A gambit with open lines and quick development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White offers the d-pawn for development and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.5,
+      "reason": "Not enough for the pawn, in my judgement.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "A c-pawn against no c-pawn, asymmetrical."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White offers a pawn for quick development."
+    }
+  }
+}

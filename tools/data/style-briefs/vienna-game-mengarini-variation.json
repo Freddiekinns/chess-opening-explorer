@@ -1,0 +1,113 @@
+{
+  "slug": "vienna-game-mengarini-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Mengarini Variation",
+    "eco": "C26",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. a3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/P1N5/1PPP1PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "vienna-game-falkbeer-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White plays the quiet 3.a3 in the Vienna, stopping ...Bb4 and preparing g3 and Bg2 or f4 and d4. Black can answer ...d5 and play for equality, or choose ...Bc5 or ...d6. The play is slow and flexible, and the white set-up is positional.",
+  "white_ideas": [
+    {
+      "idea": "Prevent ...Bb4 and play g3, Bg2 and d3"
+    },
+    {
+      "idea": "Prepare f4 and d4 for a big centre"
+    },
+    {
+      "idea": "Develop calmly and keep the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...d5 to equalise in the centre"
+    },
+    {
+      "idea": "Play ...Bc5 and ...d6 for a standard development"
+    },
+    {
+      "idea": "Use the tempo to build the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Vienna centre with e4 against e5, pieces developed on both sides"
+    },
+    {
+      "structure": "Open centre after ...d5 exd5 Nxd5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet, patient move with little risk for either side."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given."
+    },
+    "soundness": {
+      "notes": "Sound, but gives Black a free hand and does not threaten."
+    },
+    "structure": {
+      "notes": "The centre stays in tension: flexible."
+    },
+    "approach": {
+      "notes": "A rare Vienna branch that is respectable: standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A calm set-up with clear plans."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "flexible centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet move in the Vienna without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "No weakness for either side.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A branch of the standard Vienna."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Calm plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White plans g3 and Bg2."
+    }
+  }
+}

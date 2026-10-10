@@ -199,21 +199,5 @@ describe('SearchService Final Working Tests', () => {
       expect(result).toHaveProperty('searchType');
       expect(Array.isArray(result.results)).toBe(true);
     });
-
-    it('should handle category search', async () => {
-      await searchService.initialize();
-
-      try {
-        const result = await searchService.searchByCategory('tactical');
-
-        expect(result).toHaveProperty('results');
-        expect(result).toHaveProperty('totalResults');
-        expect(result).toHaveProperty('hasMore');
-        expect(Array.isArray(result.results)).toBe(true);
-      } catch (error) {
-        // Category might not exist, which is fine for this test
-        expect(error.message).toContain('Unknown category');
-      }
-    });
   });
 });

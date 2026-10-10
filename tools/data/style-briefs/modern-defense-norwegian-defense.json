@@ -1,0 +1,111 @@
+{
+  "slug": "modern-defense-norwegian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Norwegian Defense",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Nf6",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black develops the knight immediately with 2...Nf6, and after 3.e5 Nh5 4.Be2 d6 tries to undermine White's advanced pawn, with the knight on h5 aiming at g3 or f4. White has space; Black counters with ...c5, ...dxe5 and the fianchetto. The line is unusual and my knowledge of it is thin.",
+  "white_ideas": [
+    {
+      "idea": "Keep the e5 pawn and develop"
+    },
+    {
+      "idea": "Use the space to attack on the kingside"
+    },
+    {
+      "idea": "Trade the h5 knight with Bxh5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the e5 pawn with ...d6"
+    },
+    {
+      "idea": "Fianchetto with ...Bg7"
+    },
+    {
+      "idea": "Undermine with ...c5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White advanced e5 pawn against a Black fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced: White has space and Black counterattacks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Not clear; a Norwegian gambit idea exists, but the main line gives no material."
+    },
+    "soundness": {
+      "notes": "Probably sound."
+    },
+    "structure": {
+      "notes": "Centre in tension."
+    },
+    "approach": {
+      "notes": "Rare sideline of the Modern."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Unclear."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Unbalanced centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "Main line gives no pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Probably sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Unclear."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettos against White's space."
+    }
+  }
+}

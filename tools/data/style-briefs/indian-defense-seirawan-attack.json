@@ -1,0 +1,111 @@
+{
+  "slug": "indian-defense-seirawan-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Seirawan Attack",
+    "eco": "E00",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Bg5",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/6B1/2PP4/8/PP2PPPP/RN1QKBNR b KQkq - 1 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White pins the knight with 3.Bg5 against the move-order ...e6, usually continuing Nc3, e3 and Qc2 or an early e4. Black answers with ...h6, ...Bb4+ or ...c5 and the game transposes to Nimzo- or Queen's Gambit-type positions. It is a sound, flexible line with few forcing lines.",
+  "white_ideas": [
+    {
+      "idea": "Pin the knight and prepare e4"
+    },
+    {
+      "idea": "Develop Nc3, e3 and Qc2"
+    },
+    {
+      "idea": "Avoid mainline Nimzo and Catalan theory"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break the pin with ...h6 or ...Be7"
+    },
+    {
+      "idea": "Play ...c5 or ...d5 to challenge the centre"
+    },
+    {
+      "idea": "Use ...Bb4+ and ...Ne4 ideas to trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit Declined-style centre"
+    },
+    {
+      "structure": "Nimzo-Indian structures after ...Bb4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A sound developing move with no forcing lines; the position is balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Entirely sound."
+    },
+    "structure": {
+      "notes": "Centre pawns stay in tension, as in the QGD."
+    },
+    "approach": {
+      "notes": "A normal line, played by strong players now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs feel for Nimzo/QGD structures."
+    }
+  },
+  "plan_phrases": [
+    "pin on f6",
+    "flexible set-up"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Quiet developing line without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal developing move."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays undecided like the QGD."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Respectable choice for White."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Understanding of QGD/Nimzo structures."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is distinctive enough to name."
+    }
+  }
+}

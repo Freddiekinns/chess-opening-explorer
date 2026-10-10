@@ -1,0 +1,116 @@
+{
+  "slug": "danish-gambit-accepted-copenhagen-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted: Copenhagen Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Bb4+",
+    "fen": "rnbqk1nr/pppp1ppp/8/8/1bB1P3/8/PB3PPP/RN1QK1NR w KQkq - 1 6"
+  },
+  "parent": "danish-gambit-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White has offered two pawns with 3.c3 and 4.Bc4 and has taken back one with Bxb2; Black replies with the Copenhagen ...Bb4+ idea to return material and neutralise the attack. White has two bishops aimed at b7 and f7, a lead in development and open lines.",
+  "white_ideas": [
+    {
+      "idea": "Use the bishop pair on b2/c4 for pressure on b7 and f7"
+    },
+    {
+      "idea": "Develop quickly with Nc3, Nf3 and castle"
+    },
+    {
+      "idea": "Open the e-file against the Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the dangerous bishops with ...Bb4+ and ...Qf6"
+    },
+    {
+      "idea": "Return the extra pawns to neutralise the attack"
+    },
+    {
+      "idea": "Consolidate and win the endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White missing b- and c-pawns"
+    },
+    {
+      "structure": "Bishops pointed at the Black kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, tactical play in which Black must find the right trade."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives two pawns and Black can keep material if careful."
+    },
+    "soundness": {
+      "notes": "A strong player's verdict is that Black can equalise; the gambit is unsound but playable."
+    },
+    "structure": {
+      "notes": "Central pawns are gone, so lines are open."
+    },
+    "approach": {
+      "notes": "Played at club level mainly; strong players seldom choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs memorising the main attacks and Black's defensive tries."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair",
+    "lead in development",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Gambit with attacking play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives two pawns."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can equalise or better with accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Not Beginner for a dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "bishop_pair",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for quick development and the bishops."
+    }
+  }
+}

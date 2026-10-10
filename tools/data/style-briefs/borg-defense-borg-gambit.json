@@ -1,0 +1,46 @@
+{
+  "slug": "borg-defense-borg-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Borg Defense: Borg Gambit",
+    "eco": "A40",
+    "moves": "1. d4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black plays ...g5 at once, offering the pawn: after 2.Bxg5 Bg7 or 2.e4 Bg7 Black uses the long diagonal and counterattacks. Strong players take the pawn and play for a development lead. The sample line in the subtree is the Borg Defense against 1.e4 (1.e4 g5 2.d4 Bg7).",
+  "white_ideas": [
+    { "idea": "Take on g5 or play e4 and develop quickly, using the extra pawn" },
+    { "idea": "Meet ...Bg7 with c3 and Nf3, shutting the diagonal" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the bishop on g7 against b2 and the centre" },
+    { "idea": "Hope White grabs pawns and falls behind in development" }
+  ],
+  "typical_structures": [
+    { "structure": "Open lines on the kingside, Black with a bishop on g7 and an advanced g-pawn" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Unusual, tactical, with both kings loosened." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can take on g5 and keep the pawn." },
+    "soundness": { "notes": "Regarded as inferior; Black's king is weakened for little." },
+    "structure": { "notes": "Lines open early on the kingside and long diagonal." },
+    "approach": { "notes": "Strong players almost never play 1...g5." },
+    "level": { "reason": "memory", "notes": "A dubious line is not a good first choice." }
+  },
+  "plan_phrases": ["fianchetto", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Borg Defense vs 1.e4", "moves": "1.e4 g5 2.d4 Bg7", "how": "Same idea against the king's pawn, different pawn structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A gambit with loosened kings and tactics." },
+    "gambit": { "value": "black", "confidence": 0.85, "reason": "Black offers the g-pawn." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "The pawn sacrifice is not enough for the weakened kingside." },
+    "structure": { "value": "open", "confidence": 0.4, "reason": "Lines open early on the kingside and long diagonal." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players hardly ever play 1...g5." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious line is never Beginner." },
+    "plans": { "value": ["fianchetto", "lead_in_development"], "reason": "Black fianchettoes the bishop and hopes for faster development." }
+  }
+}

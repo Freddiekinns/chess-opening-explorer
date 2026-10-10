@@ -1,0 +1,121 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-vienna-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Vienna Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 Bf5",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black has taken the e-pawn with 3...dxe4, and after 4.f3 develops the bishop outside the pawn chain with 4...Bf5, avoiding 4...exf3. The common reply 5.fxe4 Nxe4 6.Nxe4 Bxe4 gives White fast development and the f-file against a solid Black set-up that equalises. The gambit is not really on offer here: White usually regains the pawn at once. White can try 5.g4 Bg6 6.h4 for an attack. The game is open and tactical.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with fxe4 and aim for quick development"
+    },
+    {
+      "idea": "Use the f-file and Nf3, Bd3 to build an attack"
+    },
+    {
+      "idea": "Try g4 and h4 to harass the f5 bishop in sharper lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade pieces and neutralise the attack with ...Nxe4 and ...Bxe4"
+    },
+    {
+      "idea": "Develop ...e6, ...Be7 and castle"
+    },
+    {
+      "idea": "Stay a pawn up if White overreaches"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White's e-file and f-file half open after fxe4"
+    },
+    {
+      "structure": "Black e6/d-pawn gone structure with queenside majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open play with attacking chances for White in the sharper lines, but the main fxe4 line is calmer."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn returns by 5.fxe4; the g4 and Gunderam lines are gambits."
+    },
+    "soundness": {
+      "notes": "The main lines are sound; the speculative g4/h4 attacks are not."
+    },
+    "structure": {
+      "notes": "Pawns come off in the centre, giving open files for the pieces."
+    },
+    "approach": {
+      "notes": "The BDG is rare among strong players, who rarely choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The sharp lines need theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "f-file pressure",
+    "attack on h7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Gunderam Attack",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 Bf5 5. g4 Bg6 6. h4",
+      "how": "White sacrifices a pawn and goes all out for a kingside attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The main fxe4 line is calm, but the BDG often leads to sharp attacks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The pawn is regained by fxe4; gambit lines are sublines."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The main line is sound; sharper branches are dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central pawns are exchanged and files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The BDG is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Some theory but clear plans."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White develops quickly and aims at the kingside."
+    }
+  }
+}

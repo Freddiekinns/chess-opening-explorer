@@ -1,0 +1,46 @@
+{
+  "slug": "zukertort-opening-vos-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Vos Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 d6 2. d4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "zukertort-opening-pirc-invitation",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black meets 2.d4 with ...e5, the Philidor-style break, but with White's knight on f3 rather than e4 the pawn can be captured. After 3.dxe5 dxe5 4.Qxd8+ Kxd8 5.Nxe5 White wins a pawn, and Black's compensation is the lost castling. The reading is from the moves; no data was supplied.",
+  "white_ideas": [
+    { "idea": "Take on e5 and either trade queens or win the pawn" },
+    { "idea": "Use the extra pawn and Black's lost castling rights to press" }
+  ],
+  "black_ideas": [
+    { "idea": "Gain time with ...Nd7 or ...Nc6 and play for a quick lead in development" },
+    { "idea": "Hold the centre and make use of White's loose pieces" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after exchanges on e5, White a pawn up and Black with an uncastled king" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early forcing exchanges but not a true attack; practical risk falls on Black." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White can take on e5 and keep the pawn." },
+    "soundness": { "notes": "Likely inferior for Black since the pawn is not clearly recovered." },
+    "structure": { "notes": "Central pawns come off early." },
+    "approach": { "notes": "Rarely chosen by strong players." },
+    "level": { "reason": "understanding", "notes": "A dubious gambit is not a first repertoire choice." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "Quiet 3.Nc3", "moves": "3.Nc3", "how": "Transposes to a Philidor-type game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "An early gambit with open lines and risk for Black." },
+    "gambit": { "value": "black", "confidence": 0.65, "reason": "Black pushes ...e5 and White can take and keep the pawn." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.55, "reason": "White wins a pawn without a clear Black recovery." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Central pawns are exchanged early." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players hardly ever play 2...e5 here." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "A dubious line is never Beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black must develop faster to make up for the pawn." }
+  }
+}

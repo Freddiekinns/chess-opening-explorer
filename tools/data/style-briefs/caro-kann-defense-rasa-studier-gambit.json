@@ -1,0 +1,46 @@
+{
+  "slug": "caro-kann-defense-rasa-studier-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Rasa-Studier Gambit",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. f3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn back with 4.f3, hoping for ...exf3 Nxf3 and quick development, with the e5 and Bd3 ideas against Black's kingside. Black can keep the pawn with 4...exf3 5.Nxf3 and Bg4, or play 4...e5. Few strong players choose it and Black has easy equality.",
+  "white_ideas": [
+    { "idea": "Open lines with f3 and develop Nxf3, Bc4 and Qe2 for fast attack" },
+    { "idea": "Keep the initiative and pose practical problems before Black is developed" }
+  ],
+  "black_ideas": [
+    { "idea": "Take on f3, return the pawn when needed and develop with ...Bg4 or ...e6" },
+    { "idea": "Hold the extra pawn and play ...Nf6 and ...Bf5 with a solid position" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre where White is a pawn down for development and Black holds a Caro-Kann structure" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A gambit with fast development and open lines; White accepts risk." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the pawn after 4...exf3." },
+    "soundness": { "notes": "Considered inferior; Black has several good replies." },
+    "structure": { "notes": "Open lines after exf3 and quick development." },
+    "approach": { "notes": "Played seldom by strong players, mainly a surprise." },
+    "level": { "reason": "memory", "notes": "A dubious gambit is not a good first choice." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [
+    { "name": "4...e5", "moves": "4...e5 5.dxe5", "how": "Black gives a counter-offer and the queens come off." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A gambit with open lines and a development race." },
+    "gambit": { "value": "white", "confidence": 0.8, "reason": "White gives a pawn for development." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "Black can keep the pawn and develop safely." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Open lines after exf3." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom choose it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "A dubious gambit is never Beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "White gives a pawn for time." }
+  }
+}

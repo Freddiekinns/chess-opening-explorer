@@ -1,0 +1,105 @@
+{
+  "slug": "center-game-hall-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Hall Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qc4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/2Q1P3/8/PPP2PPP/RNB1KBNR b KQkq - 2 4"
+  },
+  "parent": "center-game-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 the queen usually retreats to a5, d1 or e3; the Hall Variation puts her on c4 instead, hitting f7 with the bishop and keeping an eye on the c-file. Black develops with tempo (...Nf6, ...d5 or ...Bb4+), and White's early queen needs care. It is rare and rated roughly equal.",
+  "white_ideas": [
+    {
+      "idea": "Keep the queen on c4 pressuring f7 and the c-file, develop Nc3 and Nf3"
+    },
+    {
+      "idea": "Aim for quick piece development and a normal open game"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the queen with ...Nf6, ...Bb4+ or ...d5 and gain tempi"
+    },
+    {
+      "idea": "Develop quickly and challenge the centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a White queen on c4 and Black pieces developed with tempo"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Queen moves and open lines, but no forced attack from either side. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White regains the d4 pawn at once; no material is given."
+    },
+    "soundness": {
+      "notes": "Sound; White's early queen loses time but nothing is refuted."
+    },
+    "structure": {
+      "notes": "Centre pawns are traded early and the pieces use open lines: Open."
+    },
+    "approach": {
+      "notes": "The 4.Qc4 retreat is a rare sideline that strong players seldom choose, as opposed to the Center Game proper."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy to play and light on theory, but not a good first repertoire pick: Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "tempo gain on the queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "An early-queen open game with no forcing play and no locked structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Nothing is refuted; White simply loses a little time."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Centre pawns off early and the pieces use open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "A rare queen retreat strong players seldom choose, though the Center Game itself is standard."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Light theory but the early queen needs care."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "White's queen is out early, and development is the point."
+    }
+  }
+}

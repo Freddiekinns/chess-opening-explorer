@@ -1,0 +1,110 @@
+{
+  "slug": "sicilian-defense-jalalabad-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Jalalabad Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 e5",
+    "fen": "rnbqkbnr/pp1p1ppp/8/2p1p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "An unusual Black reply 2...e5 that invites 3.Nxe5. Black has a pawn less, but gets open lines and quick development (...Qa5, ...d6) and the c5/e5 pawn structure is unbalanced. The line is rare and speculative; I am unsure of the exact main line.",
+  "white_ideas": [
+    {
+      "idea": "Take the e5 pawn and develop"
+    },
+    {
+      "idea": "Play d4 or Bc4 for central control"
+    },
+    {
+      "idea": "Avoid early tricks and consolidate"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Qa5, ...Nf6 and ...d6"
+    },
+    {
+      "idea": "Use open lines against the exposed e5 knight"
+    },
+    {
+      "idea": "Recover the pawn with active piece play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian with c5 and a missing e-pawn"
+    },
+    {
+      "structure": "Open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Speculative, tactical play after an unorthodox Sicilian move."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black lets White capture e5 and the pawn can be kept."
+    },
+    "soundness": {
+      "notes": "Probably unsound against accurate play."
+    },
+    "structure": {
+      "notes": "Any Sicilian is Semi-open under the taxonomy."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Not enough information to say more."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Speculative tactical play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Black probably offers the e5 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Probably unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Sicilian with a half-open file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious line, not Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Not clear enough to name a plan."
+    }
+  }
+}

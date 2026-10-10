@@ -1,0 +1,104 @@
+{
+  "slug": "mikenas-defense-lithuanian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mikenas Defense: Lithuanian Variation",
+    "eco": "A40",
+    "moves": "1. d4 Nc6 2. c4 e5 3. d5 Nce7",
+    "fen": "r1bqkbnr/ppppnppp/8/3Pp3/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "mikenas-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Mikenas's 1.d4 Nc6 2.c4 e5 3.d5 Nce7 is an offbeat defence in which Black's knight retreats to e7 and White gets a big space advantage with e4 and Nc3. Black's pieces are somewhat tangled and the position looks like a King's Indian or Old Indian with Black short of space. It is a rare sideline and seldom played at a high level.",
+  "white_ideas": [
+    {
+      "idea": "Build a pawn centre with e4, Nc3 and Nf3, using the space advantage to cramp Black"
+    },
+    {
+      "idea": "Castle and prepare f4 or a queenside break against the awkward knights"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute with ...Ng6, ...d6 and ...f5 to get counterplay on the kingside"
+    },
+    {
+      "idea": "Prepare ...c6 or ...f5 to undermine the d5/e4 centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d5/e4 against Black e5 and d6, a locked centre with space for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is cramped and passive; White has an easy game. Balanced in the sense of no sharp play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Passive and dubious for Black; White gets an easy edge with natural moves."
+    },
+    "structure": {
+      "notes": "The central pawns lock on d5/e4 against e5 and play shifts to the wings: Closed."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play it; offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy for White to play; Black struggles with a cramped game. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "locked centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "No sharp tactics but Black is cramped; a slow, passive defence."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black ends up cramped and White gets an easy edge."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.55,
+      "reason": "The d5/e4 vs e5 chain locks the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Easy for White; hard for Black to get right."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gets space in the centre with d5 and e4."
+    }
+  }
+}

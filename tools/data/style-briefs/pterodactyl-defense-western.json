@@ -1,0 +1,121 @@
+{
+  "slug": "pterodactyl-defense-western",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense: Western, Anhanguera",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nf3 c5 4. Be3 Qa5+",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3PP3/4BN2/PPP2PPP/RN1QKB1R w KQkq - 2 5"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-pterodactyl",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black plays ...g6, ...Bg7 and ...c5 and puts the queen on a5 with check against the e3 bishop, an early-queen hypermodern idea. White can reply with Bd2, Nbd2 or c3 and a centre with dxc5, aiming for a space advantage, while Black tries to exploit the half-open c-file and the pin on the e-file. Play is unusual and tactical, with Black's queen sometimes hunted.",
+  "white_ideas": [
+    {
+      "idea": "Build a pawn centre with c3, Nbd2 and e5 ideas"
+    },
+    {
+      "idea": "Chase the queen with Bd2 or Nbd2 and take space"
+    },
+    {
+      "idea": "Capture on c5 and use the extra development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...c5 and ...cxd4 and use the long diagonal"
+    },
+    {
+      "idea": "Keep the queen active on a5"
+    },
+    {
+      "idea": "Counterattack e4 and the d4 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hypermodern Sicilian-style structure with Black fianchetto and open c-file"
+    },
+    {
+      "structure": "Maroczy-like bind if White plays c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unusual and tactical; the early queen means mistakes are punished."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d4 pawn is usually regained, so no gambit in the main lines."
+    },
+    "soundness": {
+      "notes": "Sound but risky; White has a comfortable game with accurate play."
+    },
+    "structure": {
+      "notes": "Asymmetric Sicilian-style centre with the c-file half open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players; it is mainly a surprise weapon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The early queen needs careful handling."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "fianchetto on g7",
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rhamphorhynchus",
+      "moves": "1. e4 c5 2. Nf3 g6 3. d4 Bg7 4. dxc5 Qa5+",
+      "how": "White takes on c5 and Black regains the pawn with ...Qxc5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "An early queen on a5 makes the play double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit in the main lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Probably playable but risky."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Sicilian-style asymmetry with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Early queen play needs care."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "fianchetto"
+      ],
+      "reason": "The early queen and the g7 bishop are the main ideas."
+    }
+  }
+}

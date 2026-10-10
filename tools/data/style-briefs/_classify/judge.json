@@ -426,5 +426,98 @@
       ],
       "taxonomy_note": "Same gap as the Abbazia ruling: a gambit accepted and then voluntarily returned is not named in the gambit notes. No other kings-gambit-accepted- slug in the classified set has a ...d5 main line; the rest (Fischer, Cunningham, Schallopp, MacLeod, Bishop's, King's Knight's) keep the f4 pawn and stay white."
     }
+  },
+  "french-defense-reti-spielmann-attack": {
+    "approach": {
+      "value": "offbeat",
+      "reason": "System is ruled out by definition: 2.g3 is a reply to one defence, not a set-up across defences, the same reason the Knight Variation (2.Nf3) is not a System, and the KIA set-up has its own root. On Lichess 2.g3 has 1.35M games against 185M for 2.d4 and 15M for 2.d3, at a lower average rating (1596 against 1634), so strong players hardly use it.",
+      "sources": [
+        "api/data/popularity_stats.json",
+        "https://www.uchess.com/chess-opening/french-reti-spielmann-variation-c00"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "semi-slav-defense-botvinnik-variation": {
+    "structure": {
+      "value": "open",
+      "reason": "In the main line (11.exf6 Bb7 12.g3 c5 13.d5) White holds the centre shut for a moment and then blasts it open with dxe6; the game turns on the long diagonal, the d-file and Black's exposed king straight away. That is the Open definition, not the Sicilian-style fixed asymmetric centre pressed along one file, and it matches the agreed Open on the sibling Anti-Moscow Gambit (5...h6 6.Bh4 dxc4 7.e4 g5).",
+      "sources": [
+        "https://en.chessbase.com/newsroom/post/the-beasty-botvinnik-in-the-semi-slav",
+        "https://gameknot.com/annotation.pl/botvinnik-3-this-time-a-gm-game?gm=5873"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening-spike": {
+    "gambit": {
+      "value": "none",
+      "reason": "3.c4 is not a pawn White can lose: after 3...dxc4 the usual 4.Qa4+ (1,550 of 2,062 games, Lichess 2200+) takes it back. Black's most common reply is 3...c6 (4,890 games) and masters prefer 3...d4 (4 of 6); in both the g4 pawn is left alone. The main line declines, as on the parent Grob root, which the judge also ruled none.",
+      "sources": [
+        "https://openingbook.xyz/api/explorer (Lichess 2200+ and masters, 1.g4 e5 2.Bg2 d5 3.c4)",
+        "https://www.chess.com/openings/Grob-Opening"
+      ],
+      "taxonomy_note": null
+    },
+    "structure": {
+      "value": "flexible",
+      "reason": "Open rested on 'central pawns exchange'. After 3...c6 or 3...d4 Black keeps a d5/e5 or d4/e5 centre against White's flank pawns, with no central exchange and no locked chain. That is a centre still to be decided, as on the parent Grob root (agreed Flexible), so the hidden middle value applies.",
+      "sources": [
+        "https://openingbook.xyz/api/explorer (Lichess 2200+ and masters, 1.g4 e5 2.Bg2 d5 3.c4)"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "scandinavian-defense-anderssen-counterattack": {
+    "gambit": {
+      "value": "none",
+      "reason": "After the main 5.dxe5 (32 of 57 master games) Black can recapture at once with ...Qxe5+, and the cloud engine's line does so: 5...Bb4 6.Bd2 Qxe5+ 7.Qe2 Qxe2+. Masters chose 6...Qxe5+ in 4 of 9 games. In the other main reply, 5.Nf3 (Göteborg), no material changes hands. Material Black can take back whenever it likes is not a pawn White can keep, so this is not a gambit.",
+      "sources": [
+        "https://openingbook.xyz/api/explorer (masters, 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 e5)",
+        "https://lichess.org/api/cloud-eval (depth 37)",
+        "https://365chess.com/eco/B01_Scandinavian_Anderssen_counter-attack_orthodox_attack"
+      ],
+      "taxonomy_note": "The gambit definition tests whether the opponent can keep the material. It does not say what happens when the giving side can win it back at will (here ...Qxe5+), and an unsourced brief read 'Black delays recapturing' as a gambit. A line saying such material is not a gambit unless the main line declines to recapture would settle it."
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "Dubious rested on 'Black's compensation is doubtful', which assumes a pawn sacrifice. With material level, the cloud engine gives White about +0.85 at depth 37: an edge, not a refutation. Below the Dubious anchors, so the hidden middle value applies.",
+      "sources": [
+        "https://lichess.org/api/cloud-eval (depth 37)"
+      ],
+      "taxonomy_note": null
+    },
+    "character": {
+      "value": "balanced",
+      "reason": "Sharp rested on 'Black plays on pins and development for a pawn'. The main lines either exchange queens (5.dxe5 Bb4 6.Bd2 Qxe5+ 7.Qe2) or give an open position with level material (5.Nf3 exd4 6.Qxd4). Neither shown word fits clearly, so this is the conservative call.",
+      "sources": [
+        "https://lichess.org/api/cloud-eval (depth 37)",
+        "https://openingbook.xyz/api/explorer (masters)"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-jalalabad-variation": {
+    "gambit": {
+      "value": "black",
+      "reason": "Confirmed. 2...e5 leaves the pawn en prise, and 3.Nxe5 is the most common reply at 2200+ (2,575 games against 1,218 for 3.Bc4) and the only master reply. The cloud engine rates 3.Nxe5 best at +1.9, keeping the pawn after 3...Qe7 4.d4. Black gives a pawn White can keep.",
+      "sources": [
+        "https://openingbook.xyz/api/explorer (Lichess 2200+ and masters, 1.e4 c5 2.Nf3 e5)",
+        "https://lichess.org/api/cloud-eval (depth 30)"
+      ],
+      "taxonomy_note": null
+    }
+  },
+  "three-knights-opening-winawer-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "The main reply is 4.d4 (13 of 18 master games; 7,457 at 2200+ against 4,261 for 4.exf5 and 2,864 for 4.Bb5). After 4...fxe4 5.Nxe5 each side has taken a pawn and material is level. The pawn-down lines, 4.exf5 and the Schliemann transposition 4.Bb5, are sub-lines. Soundness stays Dubious on its own evidence: the cloud engine gives White +1.4 at depth 44.",
+      "sources": [
+        "https://openingbook.xyz/api/explorer (Lichess 2200+ and masters, 1.e4 e5 2.Nf3 Nc6 3.Nc3 f5)",
+        "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Nc3/3...f5",
+        "https://lichess.org/api/cloud-eval (depth 44)"
+      ],
+      "taxonomy_note": null
+    }
   }
 }

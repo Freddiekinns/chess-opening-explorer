@@ -1,0 +1,113 @@
+{
+  "slug": "kings-gambit-accepted-traditional-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Traditional Variation",
+    "eco": "C38",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 Bg7",
+    "fen": "rnbqk1nr/pppp1pbp/8/6p1/2B1Pp2/5N2/PPPP2PP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "The oldest main line of the King's Knight's Gambit: 1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 Bg7, after which White tries 5.d4 d6 6.c3 or 5.h4 (the Kieseritzky-like push) with a lead in development for the lost pawn. Black holds the f4 pawn with ...g5 and aims for ...h6, ...d6 and ...Nc6. The game is open and double-edged, with attacks on f7 and along the f-file and a high theory load.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre with d4 and c3 or h4 to undermine g5 and attack the weak kingside"
+    },
+    {
+      "idea": "Pressure f7 with the bishop, queen and knight"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...g5, ...h6 and ...d6, and neutralise the c4-bishop with ...Nc6 and ...Ne7-g6"
+    },
+    {
+      "idea": "Return the extra pawn only if needed to defend"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn chain g5/f4 against White e4/d4, open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The classic sharp King's Gambit; both kings are exposed. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave the f-pawn on move two and Black can hold it with ...g5."
+    },
+    "soundness": {
+      "notes": "Playable for both sides; theory is unclear and the line is not refuted."
+    },
+    "structure": {
+      "notes": "Open lines on the f-file and the centre diagonals."
+    },
+    "approach": {
+      "notes": "A standard King's Gambit line, played by strong players now and then."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Heavy theory and forcing lines to know on both sides; Intermediate to Advanced."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "f-file pressure",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Hanstein Gambit",
+      "moves": "5.O-O h6 6.d4 d6",
+      "how": "White castles before pushing d4, keeping more gambit material and a quieter build-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "King's Gambit Accepted is a Sharp anchor and this is its classical main line."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.96,
+      "reason": "White gives the f-pawn for initiative."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable and respected, though some hold Black has the safer game."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open lines from the start."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A main King's Gambit line, not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Heavy forcing theory but chosen by many club players; Intermediate."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack",
+        "pressure_on_f7"
+      ],
+      "reason": "White develops fast and targets f7 and the king."
+    }
+  }
+}

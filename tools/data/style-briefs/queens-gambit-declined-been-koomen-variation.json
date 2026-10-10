@@ -1,0 +1,121 @@
+{
+  "slug": "queens-gambit-declined-been-koomen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Been-Koomen Variation",
+    "eco": "D50",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 c5",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-modern-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black meets 4.Bg5 not with the Orthodox ...Be7 but with an immediate ...c5, hitting the d4 centre before White finishes development. After 5.e3 cxd4 6.exd4 (or 5.cxd5 cxd4 6.Qxd4 exd5) the game heads for Tarrasch-like positions with an isolated d-pawn on one side or the other and an open c-file. White's Bg5 pin and quicker development are set against Black's freer pieces.",
+  "white_ideas": [
+    {
+      "idea": "Complete development with e3 and Bd3 or Nf3, keep the pin on f6"
+    },
+    {
+      "idea": "Recapture on d4 with a pawn or queen and aim for an edge in the centre"
+    },
+    {
+      "idea": "Use the c-file and pressure on d5 once the position opens"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break the centre at once with ...c5 and ...cxd4"
+    },
+    {
+      "idea": "Take an isolated or hanging d-pawn structure with active pieces"
+    },
+    {
+      "idea": "Trade pieces with ...Be7/...Nc6 and exchange the Bg5 pin"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Isolated d-pawn for one side after the d4/c5 exchanges"
+    },
+    {
+      "structure": "Symmetrical-ish open c-file positions after cxd5 exd5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early ...c5 against the Bg5 set-up gives open, concrete play with the c-file contested, but it is a well-understood theoretical sideline rather than a mutual attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn on d4 or d5 comes straight back after 5.cxd5 cxd4 6.Qxd4, so no material changes hands in the main play."
+    },
+    "soundness": {
+      "notes": "Sound for Black; the old gambit idea (5.cxd5 cxd4 or Dutch-Peruvian pawn offers) regains the pawn and White gets no more than a slight edge."
+    },
+    "structure": {
+      "notes": "After the d-pawn exchanges the centre is asymmetric with a half-open c-file and an isolated pawn, which fits semi-open rather than fully open."
+    },
+    "approach": {
+      "notes": "A sideline of the QGD Modern Variation that strong players meet occasionally; not a system and not a surprise-only choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs understanding of isolated-pawn positions more than a long list of moves."
+    }
+  },
+  "plan_phrases": [
+    "Isolated queen's pawn",
+    "Open c-file",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Dutch-Peruvian Gambit",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 c5 5. cxd5 cxd4",
+      "how": "Black offers the d4 pawn to open lines; White can take on d4 with the queen and keep a small plus."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Open c-file and an isolated pawn give real play but no forced mutual attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level after 5.e3 cxd4 6.exd4 or 5.cxd5 cxd4 6.Qxd4."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Black equalises or stays close in the main line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Exchanges on d4 leave a half-open c-file and a lone d-pawn."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "An accepted sideline of the QGD, played by strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Isolated-pawn play is conceptual rather than memory-heavy."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "lead_in_development"
+      ],
+      "reason": "Isolated d-pawn positions and development versus the Bg5 pin."
+    }
+  }
+}

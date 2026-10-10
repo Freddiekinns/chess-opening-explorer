@@ -1,0 +1,115 @@
+{
+  "slug": "kings-indian-attack-wahls-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Wahls Defense",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. g3 g6 3. Bg2 Bg7 4. O-O O-O 5. d3 d5",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/8/3P1NP1/PPP1PPBP/RNBQ1RK1 w - - 0 6"
+  },
+  "parent": "kings-indian-attack-symmetrical-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black mirrors White with a King's Indian set-up (...g6, ...Bg7, ...O-O) and also plays ...d5, a reversed Réti or KID structure. The game is slow and manoeuvring: White plays e4 and Nbd2, Black plays ...c5 and ...Nc6 with queenside play. There is little forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 supported by d3 and Nbd2, then expand in the centre"
+    },
+    {
+      "idea": "Prepare Re1, e5 and a kingside space grab"
+    },
+    {
+      "idea": "Keep the structure compact and wait"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror the fianchetto and challenge with ...c5, ...Nc6 and ...e5"
+    },
+    {
+      "idea": "Seek queenside play with ...b6 or ...a5"
+    },
+    {
+      "idea": "Keep a symmetrical, safe structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical fianchetto structure with pawns on d3/d5"
+    },
+    {
+      "structure": "Flexible centre where e4 or e5 may be played"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Steady manoeuvring with few forcing lines, hard to break down for either side."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "Centre undecided; pawns on d3 and d5 with e4/e5 still to come, flexible."
+    },
+    "approach": {
+      "notes": "A set-up that Black can play against many White set-ups and that mirrors the KIA."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, but timing the pawn breaks needs experience."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g2",
+    "symmetrical structure",
+    "e4 break"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Slow, compact set-ups for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A mainstream set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre tension unresolved."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "A set-up played regardless of White's reply."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Moderate theory, plans need understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "symmetrical_structure"
+      ],
+      "reason": "Both sides fianchetto with a symmetrical structure."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "lasker-simul-special",
+  "tier": "unsourced",
+  "root": {
+    "name": "Lasker Simul Special",
+    "eco": "A00",
+    "moves": "1. g3 h5",
+    "fen": "rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "After 1.g3 h5 Black pushes the h-pawn at once, weakening g5 and the kingside without developing. White simply develops with Bg2, Nf3, d4 and can castle on either side, gaining a free hand in the centre. I do not recognise this as a studied line, so these notes come from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Develop normally with Bg2, Nf3, d4 and c4"
+    },
+    {
+      "idea": "Exploit the weakened g5 square and the slow h-pawn push"
+    },
+    {
+      "idea": "Take the centre while Black has spent a tempo"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hope for a kingside pawn storm with ...h4"
+    },
+    {
+      "idea": "Use the h-file if the rook gets there after ...h4xg3"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank fianchetto set-up with White centre and an advanced Black h-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Eccentric, not forcing; White just develops."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "The h-pawn push loses a tempo and weakens the kingside without a concrete gain, so close to dubious for Black."
+    },
+    "structure": {
+      "notes": "Centre undecided, White fianchetto, flexible."
+    },
+    "approach": {
+      "notes": "A joke or simul trick; strong players do not choose 1...h5."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Easy to play against, but it is not a repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g2"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Quiet development for White; Black's idea is slow."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "1...h5 loses a tempo and weakens g5 for no compensation."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre not yet fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "A joke move that strong players do not play."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a good first repertoire choice and dubious, so never beginner."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettoes on g2."
+    }
+  }
+}

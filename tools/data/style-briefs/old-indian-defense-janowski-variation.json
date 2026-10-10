@@ -1,0 +1,119 @@
+{
+  "slug": "old-indian-defense-janowski-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Old Indian Defense: Janowski Variation",
+    "eco": "A53",
+    "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 Bf5",
+    "fen": "rn1qkb1r/ppp1pppp/3p1n2/5b2/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "old-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black develops the bishop to f5 before playing ...e6 or ...e5, so that it stays outside the pawn chain. White usually plays 4.Nf3 Nbd7 5.g3 or 4.f3 with e4, gaining space, and Black develops with ...e6, ...Be7 and ...O-O or plays ...e5. The position is a quiet space-against-development struggle.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with e4, f3 or g3 and Bg2"
+    },
+    {
+      "idea": "Attack the f5 bishop with Nh4 or Qb3 and gain a tempo"
+    },
+    {
+      "idea": "Keep a space advantage in the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the bishop outside the pawn chain and play ...e6 or ...e5"
+    },
+    {
+      "idea": "Develop ...Nbd7, ...Be7 and ...O-O and break with ...e5"
+    },
+    {
+      "idea": "Challenge the centre with ...c5 or ...e5 at the right moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White c4/d4/e4 centre against Black ...d6 and ...e5"
+    },
+    {
+      "structure": "Black set-up with bishop on f5 and pawns on d6 and e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development battles with no early tactics; Black's position is solid, if slightly passive."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No sacrifice in the main lines; 4.e4 (Grinberg Gambit) is a rare exception."
+    },
+    "soundness": {
+      "notes": "Sound; White has a small space edge at most."
+    },
+    "structure": {
+      "notes": "White's centre is in tension with Black's ...d6/...e5; flexible."
+    },
+    "approach": {
+      "notes": "A sensible sideline that strong players play occasionally; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and there is little theory."
+    }
+  },
+  "plan_phrases": [
+    "space advantage for White",
+    "bishop outside the pawn chain"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Grinberg Gambit",
+      "moves": "1. d4 Nf6 2. c4 d6 3. Nc3 Bf5 4. e4",
+      "how": "White offers the e4 pawn for a lead in development, which Black may take with ...Nxe4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Quiet development with a safe Black structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given in the main lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "No refutation.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A respectable sideline, played at times by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Clear plans and little theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White tries to use the extra space in the centre."
+    }
+  }
+}

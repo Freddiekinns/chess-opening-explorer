@@ -1,0 +1,106 @@
+{
+  "slug": "nimzo-indian-defense-spielmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Spielmann Variation",
+    "eco": "E22",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qb3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/1QN5/PP2PPPP/R1B1KBNR b KQkq - 3 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays 4.Qb3 to defend c3 and pressure b4 and b7, so that ...Bxc3+ can be met by Qxc3 and White keeps the pawn structure and the bishop pair in view. Black usually plays 4...c5, and after 5.dxc5 Nc6 (the Romanovsky Gambit) or 5.Nf3 Nc6 the game becomes tactical, with Black regaining the c5 pawn and hitting the queen or the c3 knight. Black's alternative is 4...Nc6, a solid central set-up. Both sides need concrete calculation early.",
+  "white_ideas": [
+    { "idea": "Keep the bishop pair and avoid doubled c-pawns by supporting c3 with the queen" },
+    { "idea": "Pressure b7 and the c-file; push e4 after Nf3 and e3" },
+    { "idea": "Pick up c5 with dxc5 and use the extra queenside pawn" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...c5 and ...Nc6, regaining any pawn" },
+    { "idea": "Play ...Bxc3+ and doubled pawns for activity when White recaptures bxc3" },
+    { "idea": "Develop ...Ne4 to attack c3 and the queen's flank" }
+  ],
+  "typical_structures": [
+    { "structure": "White's doubled c-pawns after ...Bxc3+ against Black's bishop pair; or open c-file after dxc5" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The queen is out early and there are concrete tactics on c5, b7 and e4 from the first moves; both sides must be accurate. I read it as Sharp, with moderate confidence since it often simplifies."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "5.dxc5 Nc6 offers nothing real: Black regains the c5 pawn at once."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; the line is old and respected."
+    },
+    "structure": {
+      "notes": "After ...c5 and dxc5 the pawn structure is asymmetrical, with the d- and c-files in play. Semi-open."
+    },
+    "approach": {
+      "notes": "A regular, respected White anti-Nimzo choice; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Concrete play, but not heavy theory like the Rubinstein or Classical; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair versus doubled pawns",
+    "early queen on b3",
+    "pressure on c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4...Nc6",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qb3 Nc6 5. Nf3 d6",
+      "how": "Black delays ...c5 and aims for a quieter central set-up."
+    },
+    {
+      "name": "Romanovsky Gambit",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qb3 c5 5. dxc5 Nc6",
+      "how": "Black plays for quick development and tactics against the queen."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The early queen and 4...c5 5.dxc5 lead to concrete tactical lines for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Any pawn on c5 comes straight back."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A long-established, respected variation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "After dxc5 and ...Bxc3 the asymmetrical pawns leave open files; it might be read as Flexible."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream side line against the Nimzo-Indian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Less theory than the main Nimzo lines; the plans need judgement."
+    },
+    "plans": {
+      "value": ["doubled_pawns", "bishop_pair", "early_queen"],
+      "reason": "Ideas revolve around ...Bxc3 doubled pawns, the bishop pair and White's early queen."
+    }
+  }
+}

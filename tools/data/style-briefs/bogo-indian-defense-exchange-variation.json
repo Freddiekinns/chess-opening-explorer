@@ -1,0 +1,46 @@
+{
+  "slug": "bogo-indian-defense-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Exchange Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Bxd2+",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/2PP4/5N2/PP1bPPPP/RN1QKB1R w KQkq - 0 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "Black trades the check bishop for White's dark-squared bishop, and after 5.Qxd2 O-O 6.Nc3 d5 7.e3 the game becomes a QGD-style position with White's slight extra space. Black has solid, simple development and few weaknesses. Play is quiet and manoeuvring.",
+  "white_ideas": [
+    { "idea": "Develop Nc3, e3 and Be2 and keep a small space edge" },
+    { "idea": "Prepare e4 or a minority attack on the queenside" }
+  ],
+  "black_ideas": [
+    { "idea": "Equalise with ...d5, ...Nbd7 and ...c5 or ...b6 and ...Bb7" },
+    { "idea": "Hold the solid structure and trade pieces" }
+  ],
+  "typical_structures": [
+    { "structure": "QGD-like d4/c4 against d5/e6 with the queen's bishops off the board" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A calm, low-risk position where Black is hard to break down." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Fully sound for both sides." },
+    "structure": { "notes": "Centre tension like the QGD, not yet resolved." },
+    "approach": { "notes": "A mainstream choice, not a system." },
+    "level": { "reason": "understanding", "notes": "Quiet plans, little theory." }
+  },
+  "plan_phrases": ["flexible QGD centre", "small space advantage"],
+  "sublines_that_differ": [
+    { "name": "Nbxd2", "moves": "5.Nbxd2", "how": "Knight recapture, a less ambitious route that keeps queens on." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.75, "reason": "A steady, low-risk position that is hard for either side to break." },
+    "gambit": { "value": "none", "confidence": 0.99, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.97, "reason": "A mainstream line." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The QGD-style centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A normal choice against the Bogo-Indian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.7, "reason": "Quiet plans with little to memorise." },
+    "plans": { "value": [], "reason": "No plan from the table characterises the line well." }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "kings-gambit-accepted-villemson-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Villemson Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. d4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3PPp2/8/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "White plays 3.d4 to build a central pawn duo and retake on f4 with the bishop, as in the Polerio-style lines. Black can hold the pawn with ...g5 or strike back with ...d5. The result is open play with White ahead in development and a risky Black king.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with d4 and recapture on f4"
+    },
+    {
+      "idea": "Develop with Nc3 and Nf3 and use the open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the f4 pawn with ...g5 or play ...d5 to equalise"
+    },
+    {
+      "idea": "Counterattack with ...Qh4+"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and a White d4/e4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open gambit play where White plays for the centre."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "The f-pawn was given up and Black can try to keep it."
+    },
+    "soundness": {
+      "notes": "Probably playable but less trusted than main lines."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "A rare 19th-century line."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Open tactical play."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Open gambit play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the f-pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Likely playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Tactics to know."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White builds a centre and develops."
+    }
+  }
+}

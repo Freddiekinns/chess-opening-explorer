@@ -1,0 +1,44 @@
+{
+  "slug": "nimzowitsch-defense-colorado-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Colorado Countergambit",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3 f5",
+    "fen": "r1bqkbnr/ppppp1pp/2n5/5p2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense-declined-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black answers 2.Nf3 with the countergambit ...f5, attacking e4 at once. White can take on f5 or play 3.d4 or 3.exf5, and Black's king is left exposed for little. Strong players seldom play it; White wins with careful development.",
+  "white_ideas": [
+    { "idea": "Take on f5 or play d4, develop and exploit the weakened diagonal" },
+    { "idea": "Keep the extra pawn and trade into a favourable endgame" }
+  ],
+  "black_ideas": [
+    { "idea": "Open the f-file and play for quick development with ...Nf6 or ...e5" },
+    { "idea": "Hope for tactics against an unprepared opponent" }
+  ],
+  "typical_structures": [
+    { "structure": "Open kingside with Black's pawn structure loosened and the e8-h5 diagonal exposed" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A tactical countergambit with exposed kings." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 3.exf5 White keeps the pawn." },
+    "soundness": { "notes": "Regarded as unsound; the king diagonal is weak." },
+    "structure": { "notes": "The e- and f-files open early." },
+    "approach": { "notes": "Practically never played by strong players." },
+    "level": { "reason": "memory", "notes": "A dubious line, not a first choice." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "A tactical countergambit with exposed kings." },
+    "gambit": { "value": "black", "confidence": 0.85, "reason": "Black offers the f-pawn for activity." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.8, "reason": "White gets a pawn and a safer position." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "The e- and f-files open early." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players practically never play it." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "A dubious line is never Beginner." },
+    "plans": { "value": [], "reason": "No plan from the table fits clearly." }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "scandinavian-defense-bronstein-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Bronstein Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 Nf6 5. Nf3 a6",
+    "fen": "rnb1kb1r/1pp1pppp/p2q1n2/8/3P4/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "scandinavian-defense-gubinsky-melts-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black plays the Gubinsky-Melts ...Qd6 and then adds ...a6, a quiet waiting move that prepares ...Bf5 or ...g6 and denies Bb5 ideas. White has a space advantage and easy development with Nf3, Be3 and Bd3, while Black's position is compact. The play is slow and positional rather than forcing. I know little about the line beyond its reputation as a solid sideline.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nf3, Be3 and Bd3 and take the space with d4"
+    },
+    {
+      "idea": "Look at Nb5 ideas if the queen leaves the d6 square"
+    },
+    {
+      "idea": "Castle and attack with e4-e5 or Nd5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...a6 and ...Bf5 or ...g6 and ...Bg7"
+    },
+    {
+      "idea": "Keep the queen on d6, castle and challenge with ...c5"
+    },
+    {
+      "idea": "Trade pieces to ease the cramp"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4 against Black pawns on a6, e6/g6"
+    },
+    {
+      "structure": "Black queen on d6 on the semi-open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black holds a solid cramped position and White has some lead in space but no attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d5 pawn is recaptured immediately."
+    },
+    "soundness": {
+      "notes": "Sound, a sideline of a respectable line."
+    },
+    "structure": {
+      "notes": "Scandinavian semi-open with the queen on d6."
+    },
+    "approach": {
+      "notes": "Less common than the main Scandinavian lines but played by strong players now and then, so standard with low confidence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and there is little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Compact Black set-up with few weaknesses."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "No known problems."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.75,
+      "reason": "Scandinavian half-open d-file structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Less common, but a normal sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Clear plans, little theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has the space; Black must hold."
+    }
+  }
+}

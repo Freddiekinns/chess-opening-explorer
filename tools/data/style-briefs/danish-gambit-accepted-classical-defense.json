@@ -1,0 +1,107 @@
+{
+  "slug": "danish-gambit-accepted-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted: Classical Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Nf6",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/2B1P3/8/PB3PPP/RN1QK1NR w KQkq - 1 6"
+  },
+  "parent": "danish-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White has given two pawns for open lines, the bishops on b2 and c4 and a lead in development. Black has taken both and now develops with 5...Nf6, hitting e4. White usually plays 6.Nc3 (or 6.e5 / 6.Nc3 Bb4 lines) and goes after f7 and the e-file with Nge2 or Qd2 and castling queenside or kingside. Black's task is to return a pawn or two at the right moment, trade queens and neutralise the bishops; if Black untangles, the extra material tells.",
+  "white_ideas": [
+    { "idea": "Use Bb2 and Bc4 on the long diagonal and f7 for a quick attack" },
+    { "idea": "Develop with Nc3, Nge2, Qd2 or Qe2 and open the e-file" },
+    { "idea": "Hit the centre with e5 to drive the knight from f6" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Bb4+, ...d5 or ...Nxe4 to meet the attack" },
+    { "idea": "Challenge the bishops with ...d5 to relieve the pressure on f7" },
+    { "idea": "Trade queens and keep the extra pawns" }
+  ],
+  "typical_structures": [
+    { "structure": "White has only a, f, g, h pawns on the queenside and kingside; Black is two pawns up with an open centre and has moved few pawns" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines, two pawns down, bishops aimed at f7 and g7: both sides must find forcing moves quickly. Sharp."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "At the FEN White is two pawns down and nothing forces them back; Black has to give material back to survive."
+    },
+    "soundness": {
+      "notes": "Engines give Black a clear edge with correct play; White's compensation is not considered enough, but it is dangerous at club level."
+    },
+    "structure": {
+      "notes": "Central pawns have gone; the game turns on open files and diagonals."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose it as a serious weapon; offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit, so never Beginner; Intermediate because success depends on knowing the traps and the tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for two pawns",
+    "attack on f7",
+    "open e-file and long diagonal",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Classical Defense 5...Bb4+",
+      "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Bb4+",
+      "how": "The true Classical Defence; Black develops with check and heads for ...Nf6 and ...d5."
+    },
+    {
+      "name": "Declined with 3...d5",
+      "moves": "1. e4 e5 2. d4 exd4 3. c3 d5",
+      "how": "Black gives one pawn back at once and White has no gambit left."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Open position, two pawns down, bishops aimed at the king: forcing play for both."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White gives two pawns and Black can keep them."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Two pawns for development is generally judged insufficient against accurate defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Most central pawns are gone and open lines decide the game."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose the Danish; it works mainly through surprise and quick attack."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "A dubious gambit is not for beginners; the attack rests on traps and concrete lines."
+    },
+    "plans": {
+      "value": ["lead_in_development", "pressure_on_f7", "kingside_attack"],
+      "reason": "White's bishops and tempo are the compensation, aimed at f7 and the king."
+    }
+  }
+}

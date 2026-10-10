@@ -1,0 +1,99 @@
+{
+  "slug": "nimzowitsch-defense-pseudo-spanish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Pseudo-Spanish Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Bb5",
+    "fen": "r1bqkbnr/pppppppp/2n5/1B6/4P3/8/PPPP1PPP/RNBQK1NR b KQkq - 2 2"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "White plays 2.Bb5 against the Nimzowitsch Defence, hoping for Ruy Lopez-like play. Black usually answers 2...e5, 2...Nd4 or 2...Nf6, and many lines transpose to Ruy Lopez or Bird structures. The game is quiet and balanced.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3 and castle"
+    },
+    {
+      "idea": "Aim for a Ruy Lopez-type pin on c6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...e5 and ...Nf6 or ...Nd4 to challenge the bishop"
+    },
+    {
+      "idea": "Develop and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Ruy Lopez-type centre once ...e5 and Nf3 are played"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Balanced, transpositional."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Flexible: transposes into varied centre structures."
+    },
+    "approach": {
+      "notes": "A rare sideline."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Transposition awareness."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither sharp nor especially safe."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound for both."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Transpositional centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Less common but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Transposition awareness."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans depend on the transposition."
+    }
+  }
+}

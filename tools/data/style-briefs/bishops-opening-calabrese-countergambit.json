@@ -1,0 +1,46 @@
+{
+  "slug": "bishops-opening-calabrese-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Calabrese Countergambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 f5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black plays a King's Gambit in reverse with 2...f5, challenging the e4 pawn at once. White's usual answer is 3.d3 (Jaenisch Variation), keeping the centre closed, or 3.exf5 to take the pawn. Black is behind in development and weakened on the e8-h5 diagonal and g8-a2 diagonal, and strong players regard the move as dubious.",
+  "white_ideas": [
+    { "idea": "Meet the gambit with d3 and Nf3, keep the extra space and punish the weakened kingside" },
+    { "idea": "Take on f5 and use the bishop on c4 and Qh5+ ideas" }
+  ],
+  "black_ideas": [
+    { "idea": "Open the f-file and attack e4, aiming for ...Nf6 and quick development" },
+    { "idea": "Get a pawn centre with ...fxe4 and ...d5" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and f-files after exchanges on e4; Black king slightly exposed" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Both kings are exposed and play is forcing, with tactical chances for both sides." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "If White takes 3.exf5 the pawn is Black's gift; with 3.d3 fxe4 dxe4 material stays level." },
+    "soundness": { "notes": "Considered inferior for Black; the king's position is loosened for little." },
+    "structure": { "notes": "Lines open early in the e- and f-files." },
+    "approach": { "notes": "Played rarely by strong players, chosen as a surprise." },
+    "level": { "reason": "memory", "notes": "Needs tactical knowledge for Black; a dubious line is not a good first choice." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7"],
+  "sublines_that_differ": [
+    { "name": "Jaenisch Variation", "moves": "3.d3", "how": "Closes the centre and gives a quieter game where White keeps a small edge." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Early countergambit with exposed kings and forcing tactics." },
+    "gambit": { "value": "black", "confidence": 0.7, "reason": "Black counters with ...f5 and can lose a pawn after exf5." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.6, "reason": "The f5 push weakens Black's king and gives White easy play." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "The e- and f-files open early." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose 2...f5." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.65, "reason": "A dubious line, never Beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White's bishop eyes f7 and Black needs quick development." }
+  }
+}

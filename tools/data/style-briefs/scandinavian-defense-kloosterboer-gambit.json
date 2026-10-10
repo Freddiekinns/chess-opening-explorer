@@ -1,0 +1,109 @@
+{
+  "slug": "scandinavian-defense-kloosterboer-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Kloosterboer Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 c6 3. dxc6 e5",
+    "fen": "rnbqkbnr/pp3ppp/2P5/4p3/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "scandinavian-defense-blackburne-kloosterboer-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "After 2.exd5 c6 3.dxc6 Black plays 3...e5, offering two pawns to open lines for development. White usually returns material with Nf3 or Nc3 and the game becomes open and tactical. Black has a rapid development but little to show if White plays carefully.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawns and develop Nf3/Nc3"
+    },
+    {
+      "idea": "Trade queens or return material at the right moment"
+    },
+    {
+      "idea": "Castle and consolidate"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop pieces quickly with ...Bd6, ...Nf6 and ...O-O"
+    },
+    {
+      "idea": "Attack on the e-file and f2"
+    },
+    {
+      "idea": "Recapture on c6 only when it is safe"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra pawn on c6 or d5, Black centre pawn e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A speculative gambit where Black sacrifices two pawns for open lines."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives two pawns."
+    },
+    "soundness": {
+      "notes": "Unsound against accurate play."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Traps rather than understanding."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Gambit with open lines."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.92,
+      "reason": "Black offers two pawns."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Black is two pawns down for development."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black sacrifices pawns for development."
+    }
+  }
+}

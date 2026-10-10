@@ -1,0 +1,121 @@
+{
+  "slug": "center-game-halasz-mcdonnell-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Halasz-McDonnell Gambit",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. f4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3pPP2/8/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "center-game-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays 3.f4 after the Centre Game exchange, a pawn down, aiming for a big pawn centre with Nf3, Bc4 and e5. Black can take the pawn with 3...Bc5 and 3...Nc6 and is ahead in material, and defends with ...d6 and ...Nf6. White gets an attack but if Black defends accurately White does not have enough. The game is open and fast.",
+  "white_ideas": [
+    {
+      "idea": "Build the e4/f4 centre and develop quickly"
+    },
+    {
+      "idea": "Play e5 and Bc4 to attack f7"
+    },
+    {
+      "idea": "Use open lines against Black's king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn and develop with ...Bc5, ...Nc6"
+    },
+    {
+      "idea": "Return material if necessary to neutralise the attack"
+    },
+    {
+      "idea": "Counter in the centre with ...d6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pawns e4/f4 and Black a pawn up"
+    },
+    {
+      "structure": "Open lines after e5 and f5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical, with White looking for a quick attack and Black a pawn up."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the d4 pawn if it defends accurately."
+    },
+    "soundness": {
+      "notes": "Considered unsound for White; Black can hold the extra pawn."
+    },
+    "structure": {
+      "notes": "Open centre with exchanges and rapid piece play."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose this gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Concrete lines must be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Crocodile Variation",
+      "moves": "1. e4 e5 2. d4 exd4 3. f4 Bc5 4. Nf3 Nc6 5. c3",
+      "how": "White offers a second pawn for the initiative."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "White's gambit leads to open, tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives up a pawn for development and attack."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Likely unsound; Black can hold the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open lines for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious gambit, so not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for quick development and f7."
+    }
+  }
+}

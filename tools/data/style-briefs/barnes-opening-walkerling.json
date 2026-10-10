@@ -1,0 +1,100 @@
+{
+  "slug": "barnes-opening-walkerling",
+  "tier": "unsourced",
+  "root": {
+    "name": "Barnes Opening: Walkerling",
+    "eco": "C20",
+    "moves": "1. f3 e5 2. e4 Nf6 3. Bc4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/5P2/PPPP2PP/RNBQK1NR b KQkq - 2 3"
+  },
+  "parent": "kings-pawn-game-kings-head-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "This is the Bishop's Opening 1.e4 e5 2.Bc4 Nf6 3.f3 reached by a Barnes move order: White has played f3 for the centre and a Bc4 that eyes f7. The pawn on f3 takes away the natural square from the knight and weakens the e1-h4 diagonal, so Black has the easy 3...Bc5 or 3...d5 and can try 3...Nxe4?! 4.fxe4 Qh4+. White's idea is a slow d4/c3 build-up and to castle quickly; there is little theory. I do not know the line well and rate White's set-up as dubious, as it weakens the king more than it gains.",
+  "white_ideas": [
+    { "idea": "Build a pawn centre with f3, e4, d4 and c3 without ceding space" },
+    { "idea": "Aim Bc4 at f7 and develop Ne2, Nbc3 and O-O" },
+    { "idea": "Avoid the Qh4+ idea by keeping the king safe on e2 or f2 early" }
+  ],
+  "black_ideas": [
+    { "idea": "Use the weakened e1-h4 diagonal for ...Qh4+ and ...Nxe4 tricks" },
+    { "idea": "Play ...Bc5 and ...d6 or ...d5 to take the centre with a lead in development" },
+    { "idea": "Castle quickly and punish the f3 pawn" }
+  ],
+  "typical_structures": [
+    { "structure": "White f3/e4 pawns with the king's bishop on c4 against Black e5/d6 or d5; open diagonal h4-e1" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The weakened king and the h4-e1 diagonal produce early tactics such as ...Nxe4 and ...Qh4+; both sides must calculate. Sharp, with low confidence."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given by force; 3...Nxe4 is a Black tactic that mostly loses a piece."
+    },
+    "soundness": {
+      "notes": "The f3 move is considered a loss of time and a weakening; I treat it as dubious for White."
+    },
+    "structure": {
+      "notes": "Open lines along the e- and d-files, with a likely ...d5 or ...d6 and open diagonals. Open."
+    },
+    "approach": {
+      "notes": "Almost never chosen by strong players. Offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious, so never Beginner. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "pawn centre with f3 and e4",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...Nxe4?!",
+      "moves": "1. f3 e5 2. e4 Nf6 3. Bc4 Nxe4 4. fxe4 Qh4+",
+      "how": "A tempting but unsound shot where White consolidates with Ke2 or g3."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A weakened king on the h4-e1 diagonal brings early tactics for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given by force."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The f3 move wastes time and weakens the king."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Open e-file and diagonals; Flexible is possible."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players practically never choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner; mainly about knowing the tactics."
+    },
+    "plans": {
+      "value": ["pressure_on_f7"],
+      "reason": "Bc4 aimed at f7 is White's one clear idea."
+    }
+  }
+}

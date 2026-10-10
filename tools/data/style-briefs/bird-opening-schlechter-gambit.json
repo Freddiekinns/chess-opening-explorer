@@ -1,0 +1,114 @@
+{
+  "slug": "bird-opening-schlechter-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Schlechter Gambit",
+    "eco": "A02",
+    "moves": "1. f4 e5 2. fxe5 Nc6",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4P3/8/8/PPPPP1PP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "bird-opening-froms-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White has taken on e5 and Black plays 2...Nc6 as a gambit, wanting ...g5 and ...g4 or quick piece play against the f-file. White keeps the pawn with 3.Nf3 and returns it when necessary, with a big lead in material. Black's counterplay is thin, and the line is rare.",
+  "white_ideas": [
+    {
+      "idea": "Hold the extra e5 pawn with Nf3 and d4 and develop safely"
+    },
+    {
+      "idea": "Return the pawn to deal with the attack on the kingside"
+    },
+    {
+      "idea": "Use the half-open f-file against Black's kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...g5 and ...g4 with a pawn storm"
+    },
+    {
+      "idea": "Develop quickly with ...Nc6, ...Bc5 and ...Qh4+ ideas"
+    },
+    {
+      "idea": "Win the e5 pawn back with ...Nxe5 or ...Qe7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra pawn on e5 with Black attacking it"
+    },
+    {
+      "structure": "Open f-file and a pawn storm on the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with an exposed white king; one slip loses fast for either side."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the e5 pawn; Black has only development for it."
+    },
+    "soundness": {
+      "notes": "Black's counterplay is thin, so it is dubious (low confidence)."
+    },
+    "structure": {
+      "notes": "Open e- and f-files, no pawn centre; open."
+    },
+    "approach": {
+      "notes": "A rare gambit; strong players seldom play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line is not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm on the kingside",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A gambit with open lines and mutual risk."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black has given the e-pawn and White can hold it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "Black gets little for the pawn.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The e5 pawn and the f-file are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pawn_storm"
+      ],
+      "reason": "Black develops fast and storms with ...g5."
+    }
+  }
+}

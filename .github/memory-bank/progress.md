@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **Brief-audited description fixes** (2026-10-10): all 43 claims the style
+  briefs marked wrong, in 32 pages, plus one mislabelled Ruy Lopez claim.
 - **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
   X of Y", needs-work by games lost; billions as B; Discover "Difficulty";
   move-row legend; explorer steps keep their scroll offset.
@@ -87,7 +89,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Video programme**: enable the monthly refresh Action (commit
   `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
   then V4-V6. Unused: Jev's video families (`docs/backlog.md` → Enablers).
-- **43 wrong description claims** unfixed (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search returns near-duplicate names**: four identical "najdorf" rows

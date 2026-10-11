@@ -57,7 +57,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // The query itself belongs to the hook every surface shares. This component
   // owns only the parts a dropdown under a hero field needs: focus, the
   // keyboard cursor, and what happens to a chosen result.
-  const { query, setQuery, results, noResults, hasQuery, reset } = useOpeningSearch();
+  const { query, setQuery, results, noResults, hasQuery, reset } = useOpeningSearch('hero');
 
   // Only to name a hub row's opening on the way out — see the select handler.
   // The hook loads the same slice for searching; this is the one copy of it.

@@ -3,7 +3,13 @@ import { useRepertoire } from './useRepertoire';
 import { findAndRankOpenings, type Opening } from '../lib/localSearch';
 import { promoteSaved } from '../lib/searchRanking';
 import { useSearchIndex } from '../lib/searchIndex';
-import { MIN_QUERY_LENGTH, SEARCH_DEBOUNCE_MS, expandAbbreviations } from '../lib/searchQuery';
+import {
+  MIN_QUERY_LENGTH,
+  SEARCH_DEBOUNCE_MS,
+  expandAbbreviations,
+  queryShape,
+} from '../lib/searchQuery';
+import { trackEvent } from '../lib/analytics';
 
 /**
  * One query behaviour, for all three search surfaces.
@@ -34,6 +40,9 @@ export interface SearchResult extends Partial<Opening> {
 
 const RESULT_LIMIT = 20;
 
+/** Which search box asked; reported with the analytics events, nothing else. */
+export type SearchSurface = 'hero' | 'topbar' | 'overlay';
+
 /**
  * One request per query.
  *
@@ -54,7 +63,7 @@ async function search(query: string): Promise<Partial<Opening>[]> {
   return data?.success && Array.isArray(data.data) ? data.data : [];
 }
 
-export function useOpeningSearch() {
+export function useOpeningSearch(surface: SearchSurface) {
   const [query, setQuery] = useState('');
   const [served, setServed] = useState<Partial<Opening>[]>([]);
   const [searching, setSearching] = useState(false);
@@ -137,6 +146,24 @@ export function useOpeningSearch() {
     // not re-issue the request. It re-ranks the list we already have, below.
   }, [query, hasQuery, localIndex]);
 
+  // A search starts when the field first holds a real query, and ends when it
+  // is emptied — which is also what every surface's reset does after a pick.
+  // With search_select this says how many searches end without one.
+  useEffect(() => {
+    if (hasQuery) trackEvent('search_start', { surface });
+    // Keyed on hasQuery alone: each keystroke inside a search is not a new one.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasQuery]);
+
+  const noResults = hasQuery && cameBackEmpty && served.length === 0;
+
+  // Once per dead end, however many more characters are typed into it. The
+  // shape, never the text.
+  useEffect(() => {
+    if (noResults) trackEvent('search_no_results', { surface, query_shape: queryShape(query) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [noResults]);
+
   const results = useMemo(
     () =>
       promoteSaved(
@@ -166,10 +193,10 @@ export function useOpeningSearch() {
       results,
       searching,
       /** True only once the search has actually come back empty. */
-      noResults: hasQuery && cameBackEmpty && results.length === 0,
+      noResults,
       hasQuery,
       reset,
     }),
-    [query, results, searching, cameBackEmpty, hasQuery, reset]
+    [query, results, searching, noResults, hasQuery, reset]
   );
 }

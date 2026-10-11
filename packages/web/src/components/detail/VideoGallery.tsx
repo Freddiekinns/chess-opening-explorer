@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Video } from '../../../../shared/src/types/video.js';
 import { isVideoWatched, markVideoWatched } from '../../lib/watchedVideos';
 import { trackEvent } from '../../lib/analytics';
@@ -212,6 +212,25 @@ const VideoMetadata: React.FC<VideoMetadataProps> = ({ video, watched }) => {
 // Main Component
 const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, hideTitle = false }) => {
   const [showAll, setShowAll] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  // The denominator for video_click: was the gallery ever on screen? Once per
+  // set of videos, because the detail page keeps this mounted from one opening
+  // to the next.
+  const videoKey = videos?.map((video) => video.id).join(',') ?? '';
+  useEffect(() => {
+    const el = galleryRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const count = videoKey.split(',').length;
+    const observer = new IntersectionObserver((entries, obs) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        trackEvent('video_gallery_view', { videos: count });
+        obs.disconnect();
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [videoKey]);
 
   if (!videos || videos.length === 0) {
     return null;
@@ -222,7 +241,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, hideTitle = false }
   const remainingCount = videos.length - INITIAL_DISPLAY_COUNT;
 
   return (
-    <div className={styles.gallery}>
+    <div ref={galleryRef} className={styles.gallery}>
       {!hideTitle && <h3>Video lessons</h3>}
 
       <div className={styles.videoList}>
